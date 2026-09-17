@@ -1,6 +1,6 @@
 # Sensitivity sweep
 
-Generated `2026-09-17T21:57:43.582Z` by `scripts/sensitivity-sweep.mjs`.
+Generated `2026-09-17T22:05:59.410Z` by `scripts/sensitivity-sweep.mjs`.
 
 The previous session suggested a **regime sweep** (strategies × market regimes). Implemented literally that would
 re-price the real captured candlesticks into synthetic bull/bear/volatile paths — inventing history, which this
@@ -10,7 +10,14 @@ the **seed** (the modelled depth behind the touch), the **market universe**, the
 
 Matrix: 12 strategies × 3 seed(s) × 3 universe(s) × 3 scenario(s) = **27 competitions / 324 strategy runs**.
 
-| # | Username | Mean return | Best | Worst | σ | Profitable cells | Best rank | Worst rank | Mean max DD |
+> ⚠️ **Read the per-scenario tables before quoting any number from the table below.** The mean column averages
+across all three settlement scenarios, and two of them are **hypothetical** — every contract forced to resolve
+YES, or forced to resolve NO. A strategy that buys YES convexity therefore prints a four-figure mean that is
+purely an artefact of the "resolves YES" cell. The only **observed** row is
+[Mark to last real quote](#mark-to-last-real-quote-observed), where every position is valued at the last real
+captured price because none of these contracts had resolved when the data was captured.
+
+| # | Username | Mean return (mixes hypothetical scenarios) | Best | Worst | σ | Profitable cells | Best rank | Worst rank | Mean max DD |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | **PanicDip_ShockTiming** | 868.61% | 3776.19% | -99.35% | 1503.33% | 21/27 (77.78%) | 1 | 10 | 62.33% |
 | 2 | **ContrarianKing_100x** | 151.06% | 1027.97% | -99.36% | 368.13% | 9/27 (33.33%) | 2 | 11 | 52.67% |

@@ -251,7 +251,16 @@ function main() {
   md.push('');
   md.push(`Matrix: ${report.matrix.strategies} strategies × ${seeds.length} seed(s) × ${unis.length} universe(s) × ${scen.length} scenario(s) = **${cells.length} competitions / ${cells.length * report.matrix.strategies} strategy runs**.`);
   md.push('');
-  md.push('| # | Username | Mean return | Best | Worst | σ | Profitable cells | Best rank | Worst rank | Mean max DD |');
+  md.push(
+    '> ⚠️ **Read the per-scenario tables before quoting any number from the table below.** The mean column averages\n' +
+      'across all three settlement scenarios, and two of them are **hypothetical** — every contract forced to resolve\n' +
+      'YES, or forced to resolve NO. A strategy that buys YES convexity therefore prints a four-figure mean that is\n' +
+      'purely an artefact of the "resolves YES" cell. The only **observed** row is\n' +
+      '[Mark to last real quote](#mark-to-last-real-quote-observed), where every position is valued at the last real\n' +
+      'captured price because none of these contracts had resolved when the data was captured.'
+  );
+  md.push('');
+  md.push('| # | Username | Mean return (mixes hypothetical scenarios) | Best | Worst | σ | Profitable cells | Best rank | Worst rank | Mean max DD |');
   md.push('| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |');
   summary.forEach((s, i) => {
     md.push(
