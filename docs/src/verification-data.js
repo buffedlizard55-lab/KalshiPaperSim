@@ -1,0 +1,724 @@
+/**
+ * KalshiPaperSim — Verification Ledger & Irregularity Register
+ * =====================================================================
+ * SINGLE SOURCE OF TRUTH for the "Verification" and "Irregularities" tabs and
+ * for VERIFICATION.md / IRREGULARITIES.md. Every entry carries the URL that a
+ * human can open to check the claim manually.
+ *
+ * Status vocabulary (deliberately narrow — nothing is marked verified unless it
+ * was read from an official page or a real API response):
+ *   DOCUMENTED     the specification says so (docs.kalshi.com / kalshi.com PDF)
+ *   CAPTURED       a real response from the live production API on 2026-09-17
+ *   NEGATIVE       a real response that DISPROVED an assumption (e.g. 404)
+ *   DERIVED        arithmetic on a documented formula — the inputs are official,
+ *                  the conclusion is ours and is labelled as such
+ *   OBSERVATION    something noticed in captured data that is not explained by
+ *                  any official document (flagged, not assumed away)
+ */
+
+const D = 'https://docs.kalshi.com';
+
+export const VERIFICATION_STATUS = Object.freeze({
+  DOCUMENTED: 'DOCUMENTED',
+  CAPTURED: 'CAPTURED',
+  NEGATIVE: 'NEGATIVE',
+  DERIVED: 'DERIVED',
+  OBSERVATION: 'OBSERVATION'
+});
+
+/** Every external fact this app relies on. */
+export const VERIFIED_FACTS = Object.freeze([
+  /* ── 1. Endpoints & environments ─────────────────────────────────── */
+  {
+    id: 'V01', group: 'Endpoints & environments', status: 'DOCUMENTED',
+    fact: 'Production REST base URL',
+    value: 'https://external-api.kalshi.com/trade-api/v2',
+    url: `${D}/getting_started/api_environments`,
+    usedIn: 'src/kalshi-config.js → KALSHI_ENDPOINTS.rest.production'
+  },
+  {
+    id: 'V02', group: 'Endpoints & environments', status: 'DOCUMENTED',
+    fact: 'Production WebSocket URL',
+    value: 'wss://external-api-ws.kalshi.com/trade-api/ws/v2',
+    url: `${D}/getting_started/api_environments`,
+    usedIn: 'src/kalshi-config.js → KALSHI_ENDPOINTS.websocket.production'
+  },
+  {
+    id: 'V03', group: 'Endpoints & environments', status: 'DOCUMENTED',
+    fact: 'Demo environment REST base URL',
+    value: 'https://external-api.demo.kalshi.co/trade-api/v2',
+    url: `${D}/getting_started/api_environments`,
+    usedIn: 'src/kalshi-config.js; selectable via KALSHI_ENVIRONMENT=demo'
+  },
+  {
+    id: 'V04', group: 'Endpoints & environments', status: 'DOCUMENTED',
+    fact: 'Also-supported legacy host (REST and WS)',
+    value: 'api.elections.kalshi.com / demo-api.kalshi.co',
+    url: `${D}/getting_started/api_environments`,
+    usedIn: 'src/kalshi-config.js → *AlsoSupported fields'
+  },
+  {
+    id: 'V05', group: 'Endpoints & environments', status: 'CAPTURED',
+    fact: 'Exchange status is live and all four exchange indices are trading',
+    value: 'exchange_active=true; indices 0 Default, 1 Combos, 2 Crypto & Commodities, 3 Tennis/Baseball/Basketball',
+    url: 'https://external-api.kalshi.com/trade-api/v2/exchange/status',
+    doc: `${D}/api-reference/exchange/get-exchange-status`,
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-snapshot.js → EXCHANGE_STATUS; shown in the Verification tab'
+  },
+
+  /* ── 2. Fees ─────────────────────────────────────────────────────── */
+  {
+    id: 'V06', group: 'Fees', status: 'DOCUMENTED',
+    fact: 'Taker fee formula',
+    value: 'fees = round up(M × 0.07 × C × P × (1−P))',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    usedIn: 'src/kalshi-fees.js → computeKalshiFee({isMaker:false})'
+  },
+  {
+    id: 'V07', group: 'Fees', status: 'DOCUMENTED',
+    fact: 'Maker fee formula',
+    value: 'fees = round up(M × 0.0175 × C × P × (1−P))',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    usedIn: 'src/kalshi-fees.js → makerFee(); applied to resting-order fills'
+  },
+  {
+    id: 'V08', group: 'Fees', status: 'DOCUMENTED',
+    fact: 'Multiplier defaults: taker M = 1, maker M = 0 unless the series says otherwise',
+    value: 'M is taken from series.fee_multiplier; the maker default is 0',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    usedIn: 'src/kalshi-fees.js; per-series resolution in src/backtest-replay.js'
+  },
+  {
+    id: 'V09', group: 'Fees', status: 'DOCUMENTED',
+    fact: 'No settlement fee and no membership fee',
+    value: 'settlement fee = $0.00',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    usedIn: 'src/simulation-engine.js → settleMarket() charges nothing; stated in /api/settle'
+  },
+  {
+    id: 'V10', group: 'Fees', status: 'CAPTURED',
+    fact: 'KXNASDAQ100Y series fee configuration',
+    value: 'fee_type="quadratic_with_maker_fees", fee_multiplier=1 → taker AND maker fees apply',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-snapshot.js → SERIES.KXNASDAQ100Y'
+  },
+  {
+    id: 'V11', group: 'Fees', status: 'CAPTURED',
+    fact: 'KXBTCY series fee configuration — ZERO fees',
+    value: 'fee_type="quadratic", fee_multiplier=0 → every fee computes to $0.00',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXBTCY',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-snapshot.js → SERIES.KXBTCY; drives the replay fee config',
+    irregularity: '#8'
+  },
+  {
+    id: 'V12', group: 'Fees', status: 'CAPTURED',
+    fact: 'KXINXY (S&P 500 yearly range) fee configuration',
+    value: 'fee_type="quadratic_with_maker_fees", fee_multiplier=1',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXINXY',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-snapshot.js → SERIES.KXINXY'
+  },
+  {
+    id: 'V13', group: 'Fees', status: 'CAPTURED',
+    fact: 'KXTSLA (Tesla KPI) fee configuration',
+    value: 'fee_type="quadratic", fee_multiplier=1 → taker fees only, maker default 0',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXTSLA',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-snapshot.js → SERIES.KXTSLA'
+  },
+  {
+    id: 'V14', group: 'Fees', status: 'DERIVED',
+    fact: 'Fee as a fraction of capital deployed differs by side',
+    value: 'buying YES at P costs 0.07×(1−P) of premium in fees; buying NO at (1−P) costs 0.07×P',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    usedIn: 'src/strategies.js → FeeArb_PremiumBuyer entry rule (algebra on the official formula)',
+    note: 'DERIVED by us from the published formula, not stated verbatim in any Kalshi document.'
+  },
+  {
+    id: 'V15', group: 'Fees', status: 'DERIVED',
+    fact: 'Fee burden on the captured replay universe',
+    value: 'At the observed YES prices (0.06–0.28) a taker pays 5.0%–6.6% of premium in fees buying YES, versus 0.4%–2.0% buying NO',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    usedIn: 'Strategy theses in src/strategies.js; post-mortems in src/analysis.js'
+  },
+  {
+    id: 'V47', group: 'Fees', status: 'DOCUMENTED',
+    fact: 'The official definition of "round up" in the fee formula',
+    value: '"round up = rounds up such that the fee + positionCost is rounded to a centicent" — verbatim, stated identically under both the taker and maker formulas',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/kalshi-fees.js roundUpToIncrement(ROUNDING_INCREMENT = 0.0001)'
+  },
+  {
+    id: 'V48', group: 'Fees', status: 'DERIVED',
+    fact: 'The published General Trading Fees Table is the formula rounded UP to whole cents, not to a centicent',
+    value: 'All 21 rows satisfy tableFee = ceil_to_cent(formulaFee). Example: 100 contracts at $0.01 → formula $0.0693, table $0.07. 100 at $0.25 → $1.3125 vs $1.32.',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    capturedAt: '2026-09-17',
+    usedIn: 'test/simulation.test.js test 2 (oracle: OFFICIAL_FEE_TABLE_PER_100); src/kalshi-config.js FEE_TABLE_ROUNDING',
+    irregularity: '#19'
+  },
+  {
+    id: 'V49', group: 'Fees', status: 'DOCUMENTED',
+    fact: 'KXBTCY is listed in the official "Non-Standard Fees" table with maker 0 / taker 0',
+    value: 'Second, independent confirmation of the zero-fee BTC series (the first is the live GET /series/KXBTCY capture, V11)',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/kalshi-config.js NON_STANDARD_FEE_MULTIPLIERS; seriesFeeConfig().pdfCrossCheck'
+  },
+  {
+    id: 'V50', group: 'Fees', status: 'DOCUMENTED',
+    fact: 'KXNASDAQ100Y, KXINXY, KXFEDDECISION and KXCPIYOY are all listed maker 1 / taker 1',
+    value: 'Matches the live fee_multiplier = 1 captured per series (V10, V12)',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    capturedAt: '2026-09-17',
+    usedIn: 'seriesFeeConfig().pdfCrossCheck — every simulated series resolves to "agrees"'
+  },
+  {
+    id: 'V51', group: 'Fees', status: 'DOCUMENTED',
+    fact: 'KXTSLA and KXFA are ABSENT from the Non-Standard Fees table, so the documented defaults apply',
+    value: '"M = the multiplier for each contract (default is 1 unless otherwise indicated)" for takers, "(default is 0 unless otherwise indicated)" for makers — consistent with the live fee_multiplier = 1 on both series (V13)',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/kalshi-fees.js computeKalshiFee() defaultM branch'
+  },
+  {
+    id: 'V52', group: 'Fees', status: 'DOCUMENTED',
+    fact: 'When fees are and are not charged',
+    value: '"Trading fees are only charged for orders that are immediately matched with orders sitting on the orderbook." Resting orders are charged maker fees only when ultimately executed; "there are no fees associated with canceling a resting order."',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/simulation-engine.js — maker fills charged at 0.0175 coefficient only on execution; cancelOrder() charges nothing'
+  },
+  {
+    id: 'V53', group: 'Fees', status: 'DOCUMENTED',
+    fact: 'Fee schedule version in force',
+    value: '"Last updated and effective: July 7, 2026" — appears on every page of the PDF',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/kalshi-config.js KALSHI_FEES.effective'
+  },
+
+  /* ── 3. Prices, ticks & the order book ───────────────────────────── */
+  {
+    id: 'V16', group: 'Prices & order book', status: 'DOCUMENTED',
+    fact: 'Prices are FixedPointDollars strings with 4 decimals',
+    value: 'e.g. "0.1200" = 12 cents',
+    url: `${D}/getting_started/fixed_point_migration`,
+    usedIn: 'src/price-grid.js → dollarsToNumber/toDollarsString'
+  },
+  {
+    id: 'V17', group: 'Prices & order book', status: 'DOCUMENTED',
+    fact: 'Tick size comes from each market’s price_ranges array — never hard-coded',
+    value: 'price_ranges: [{start, end, step}] with step "0.0100" (linear_cent) or "0.0010" (deci_cent)',
+    url: `${D}/getting_started/fixed_point_migration`,
+    usedIn: 'src/price-grid.js → resolvePriceGrid(); src/kalshi-config.js → PRICE_LEVEL_STRUCTURES',
+    irregularity: '#6'
+  },
+  {
+    id: 'V18', group: 'Prices & order book', status: 'DOCUMENTED',
+    fact: 'The order book publishes BIDS ONLY, and a YES bid at X is the same liquidity as a NO ask at 1−X',
+    value: 'orderbook_fp: { yes_dollars: [[price, count], …], no_dollars: [[price, count], …] }',
+    url: `${D}/getting_started/orderbook_responses`,
+    usedIn: 'src/kalshi-api.js → parseKalshiOrderbook(); src/simulation-engine.js → OrderBook (reciprocal)',
+    irregularity: '#10'
+  },
+  {
+    id: 'V19', group: 'Prices & order book', status: 'CAPTURED',
+    fact: 'A real order book is sparse and fractional, not a uniform 5-tier ladder',
+    value: 'KXNASDAQ100Y-26DEC31H1600-T33000: 9 YES levels, 35 NO levels, sizes from 3.43 to 4991.32 contracts',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000/orderbook',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-snapshot.js → ORDERBOOKS (capture-2, primary)'
+  },
+  {
+    id: 'V20', group: 'Prices & order book', status: 'DERIVED',
+    fact: 'Reciprocal check passes on the captured book',
+    value: 'best NO bid 0.8700 ⇒ implied YES ask 0.1300, which matches yes_ask_dollars "0.1300" on the market object; YES mid 0.1200 + NO mid 0.8800 = 1.0000',
+    url: `${D}/getting_started/orderbook_responses`,
+    usedIn: 'src/kalshi-api.js → reciprocalCheck(); asserted in test/simulation.test.js'
+  },
+  {
+    id: 'V21', group: 'Prices & order book', status: 'CAPTURED',
+    fact: 'Book arrays are returned ASCENDING by price',
+    value: 'the best bid is the LAST element of yes_dollars / no_dollars',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000/orderbook',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/kalshi-api.js → parseKalshiOrderbook() sorts before computing best/mid'
+  },
+
+  /* ── 4. Markets, series & candlesticks ───────────────────────────── */
+  {
+    id: 'V22', group: 'Markets & history', status: 'DOCUMENTED',
+    fact: 'Candlesticks live under the SERIES path, not under /markets/{ticker}',
+    value: 'GET /series/{series_ticker}/markets/{ticker}/candlesticks?start_ts&end_ts&period_interval',
+    url: `${D}/api-reference/market/get-market-candlesticks`,
+    usedIn: 'src/kalshi-config.js → KALSHI_PATHS.candlesticks(); src/kalshi-api.js',
+    irregularity: '#5'
+  },
+  {
+    id: 'V23', group: 'Markets & history', status: 'DOCUMENTED',
+    fact: 'period_interval enum is minutes: 1, 60 or 1440',
+    value: '[1, 60, 1440]',
+    url: `${D}/api-reference/market/get-market-candlesticks`,
+    usedIn: 'src/kalshi-config.js → CANDLE_PERIODS_MINUTES; validated by /api/candlesticks'
+  },
+  {
+    id: 'V24', group: 'Markets & history', status: 'DOCUMENTED',
+    fact: 'Live candlestick history only covers roughly the last 3 months; older data needs the historical endpoints',
+    value: 'GET /historical/cutoff reports the boundary; GET /historical/markets/{ticker}/candlesticks serves older data',
+    url: `${D}/getting_started/historical_data`,
+    usedIn: 'src/kalshi-api.js → getCandlesticks({historical:true}); IRREGULARITIES #13',
+    irregularity: '#13'
+  },
+  {
+    id: 'V25', group: 'Markets & history', status: 'CAPTURED',
+    fact: 'Historical cutoff on the capture date',
+    value: '2026-07-19T00:00:00Z (all four timestamps identical)',
+    url: 'https://external-api.kalshi.com/trade-api/v2/historical/cutoff',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-snapshot.js → HISTORICAL_CUTOFF; explains why the 61-bar series starts 2026-07-19'
+  },
+  {
+    id: 'V26', group: 'Markets & history', status: 'CAPTURED',
+    fact: '61 contiguous real daily bars for KXNASDAQ100Y-26DEC31H1600-T33000',
+    value: 'end_period_ts 1784433600 → 1789617600 (2026-07-19 → 2026-09-17), every step exactly 86400 s, closes 0.0600–0.2800, total volume 172,805.18 contracts',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-candles.js → KXNASDAQ100Y_T33000_DAILY (primary replay series)'
+  },
+  {
+    id: 'V27', group: 'Markets & history', status: 'CAPTURED',
+    fact: 'Candlestick response schema (real fields)',
+    value: 'end_period_ts, open_interest_fp, volume_fp, price{open,high,low,close,mean,previous}_dollars, yes_bid{open,high,low,close}_dollars, yes_ask{…}',
+    url: `${D}/api-reference/market/get-market-candlesticks`,
+    capturedAt: '2026-09-17',
+    usedIn: 'src/backtest-replay.js → parseCandle()'
+  },
+  {
+    id: 'V28', group: 'Markets & history', status: 'CAPTURED',
+    fact: 'Market status vocabulary in RESPONSES',
+    value: 'initialized, inactive, active, closed, determined, disputed, amended, finalized',
+    url: `${D}/api-reference/market/get-markets`,
+    usedIn: 'src/kalshi-config.js → MARKET_STATUS_RESPONSE',
+    irregularity: '#9'
+  },
+  {
+    id: 'V29', group: 'Markets & history', status: 'DOCUMENTED',
+    fact: 'Market status vocabulary in QUERY FILTERS is different',
+    value: 'unopened, open, paused, closed, settled — an "active" market is queried with status=open',
+    url: `${D}/api-reference/market/get-markets`,
+    usedIn: 'src/kalshi-api.js → mapStatusToFilter()',
+    irregularity: '#9'
+  },
+  {
+    id: 'V30', group: 'Markets & history', status: 'CAPTURED',
+    fact: 'Real, currently-listed series tickers',
+    value: 'KXINXY, KXNASDAQ100Y, KXFEDDECISION, KXTSLA, KXFA, KXCPIYOY, KXBTCY, KXABNBA, KXKLAR, KXGRAB, KXRELYA, KXTOLA',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series?category=Companies',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/strategies.js → VERIFIED_SERIES'
+  },
+  {
+    id: 'V31', group: 'Markets & history', status: 'CAPTURED',
+    fact: 'Real market ticker formats (event-scoped, not bare series names)',
+    value: 'KXNASDAQ100Y-26DEC31H1600-T33000 · KXINXY-27DEC31H1600-T4600 · KXTSLA-26OCTPROD-510000 · KXBTCY-27JAN0100-T149999.99 · KXCPIYOY-26DEC-T4.9',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNASDAQ100Y&status=open&limit=12',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-snapshot.js → MARKETS'
+  },
+  {
+    id: 'V32', group: 'Markets & history', status: 'NEGATIVE',
+    fact: 'KXSP500, KXNVDA, KXAAPL and KXNDX DO NOT EXIST',
+    value: 'each returns {"error":{"code":"not_found","message":"not found"}}',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNVDA',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-snapshot.js → SERIES_NOT_FOUND; src/strategies.js → REJECTED_FABRICATED_TICKERS',
+    irregularity: '#1'
+  },
+
+  /* ── 5. WebSocket & authentication ───────────────────────────────── */
+  {
+    id: 'V33', group: 'WebSocket & auth', status: 'DOCUMENTED',
+    fact: 'WebSocket connections require authentication during the handshake',
+    value: 'headers KALSHI-ACCESS-KEY, KALSHI-ACCESS-SIGNATURE, KALSHI-ACCESS-TIMESTAMP',
+    url: `${D}/getting_started/quick_start_websockets`,
+    usedIn: 'src/kalshi-auth.js → buildWsAuthHeaders(); src/kalshi-ws.js → UpstreamFeedManager',
+    irregularity: '#3'
+  },
+  {
+    id: 'V34', group: 'WebSocket & auth', status: 'DOCUMENTED',
+    fact: 'Signature scheme',
+    value: 'RSA-PSS, SHA-256, salt length = digest length; message = timestamp_ms + METHOD + path_without_query; for WS the path is "/trade-api/ws/v2"',
+    url: `${D}/getting_started/api_keys`,
+    usedIn: 'src/kalshi-auth.js → signPssText(); src/kalshi-config.js → KALSHI_AUTH, WS_SIGN_PATH'
+  },
+  {
+    id: 'V35', group: 'WebSocket & auth', status: 'DOCUMENTED',
+    fact: 'Subscribe command shape',
+    value: '{"id":1,"cmd":"subscribe","params":{"channels":["ticker"],"market_tickers":["…"]}}',
+    url: `${D}/getting_started/quick_start_websockets`,
+    usedIn: 'src/kalshi-ws.js → subscribeMessage()'
+  },
+  {
+    id: 'V36', group: 'WebSocket & auth', status: 'DOCUMENTED',
+    fact: 'Channel names',
+    value: 'public: ticker, trade, market_lifecycle_v2, multivariate, multivariate_market_lifecycle · private: orderbook_delta, fill, market_positions, communications, order_group_updates',
+    url: `${D}/getting_started/quick_start_websockets`,
+    usedIn: 'src/kalshi-config.js → WS_CHANNELS; channel picker in the UI'
+  },
+  {
+    id: 'V37', group: 'WebSocket & auth', status: 'DOCUMENTED',
+    fact: 'Clients must implement reconnection with exponential backoff',
+    value: '“Handle Disconnects: Implement reconnection logic with exponential backoff.”',
+    url: `${D}/getting_started/quick_start_websockets`,
+    usedIn: 'src/kalshi-ws.js → backoffDelay() (500 ms × 2^n, capped 30 s)'
+  },
+  {
+    id: 'V38', group: 'WebSocket & auth', status: 'DOCUMENTED',
+    fact: 'Rate limits are token-based and 429 carries no Retry-After header',
+    value: '10 tokens per request; basic tier 200 reads/s and 100 writes/s; burst window 2 s',
+    url: `${D}/getting_started/rate_limits`,
+    usedIn: 'src/kalshi-config.js → RATE_LIMITS; src/kalshi-api.js treats 429 as backoff',
+    irregularity: '#16'
+  },
+  {
+    id: 'V39', group: 'WebSocket & auth', status: 'DERIVED',
+    fact: 'A browser can never connect to Kalshi’s WebSocket directly',
+    value: 'the WebSocket API cannot set request headers, and Kalshi requires signed headers at handshake',
+    url: `${D}/getting_started/quick_start_websockets`,
+    usedIn: 'server.js /ws/feed relay; src/kalshi-ws.js → RelayFeedClient',
+    irregularity: '#3'
+  },
+
+  /* ── 6. Observations that are not explained by any document ──────── */
+  {
+    id: 'V40', group: 'Observations', status: 'OBSERVATION',
+    fact: 'liquidity_dollars is "0.0000" on active markets that have real volume and open interest',
+    value: 'e.g. KXNASDAQ100Y-26DEC31H1600-T33000: liquidity_dollars "0.0000" with volume_fp 395554.67 and open_interest_fp 162977.28',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNASDAQ100Y&status=open&limit=12',
+    capturedAt: '2026-09-17',
+    usedIn: 'Not used for any calculation. Displayed raw, as captured.',
+    irregularity: '#15'
+  },
+  {
+    id: 'V41', group: 'Observations', status: 'OBSERVATION',
+    fact: 'Two depth sizes in an earlier capture could not be re-confirmed and contradicted the market object',
+    value: 'capture-1 reported YES 0.1200 @ 100242.25 while the market object reported yes_bid_size_fp "242.25" at the same price',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000/orderbook',
+    capturedAt: '2026-09-17',
+    usedIn: 'Archived as evidence only; the simulator uses capture-2',
+    irregularity: '#17'
+  },
+  {
+    id: 'V42', group: 'Observations', status: 'OBSERVATION',
+    fact: 'updated_time on active markets can be months older than the live quote',
+    value: 'KXNASDAQ100Y-26DEC31H1600-T33000: updated_time 2026-04-09 while last_price_dollars changes intraday',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNASDAQ100Y&status=open&limit=12',
+    capturedAt: '2026-09-17',
+    usedIn: 'Never treated as a quote timestamp; provenance uses our own capture time',
+    irregularity: '#18'
+  },
+
+  /* ── 7. Rules of this project (self-imposed, verifiable in code) ─── */
+  {
+    id: 'V43', group: 'Project rules', status: 'DERIVED',
+    fact: 'No performance number is hard-coded anywhere',
+    value: 'validateStrategies() rejects any strategy carrying a literal returnPct or currentEquity',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/strategies.js',
+    evidenceLabel: 'validateStrategies() in src/strategies.js — reviewable in the repository',
+    usedIn: 'src/strategies.js → validateStrategies(); asserted in test/simulation.test.js'
+  },
+  {
+    id: 'V44', group: 'Project rules', status: 'DERIVED',
+    fact: 'Every strategy carries riskManagement: "NONE (by mandate)"',
+    value: 'asserted at import time; no stop-loss, position cap or volatility target exists in any decide()',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/strategies.js',
+    evidenceLabel: 'riskManagement field on all 10 strategies — reviewable in the repository',
+    usedIn: 'src/strategies.js; competition metadata in src/strategy-runner.js'
+  },
+  {
+    id: 'V45', group: 'Project rules', status: 'DERIVED',
+    fact: 'Post-mortem prose interpolates computed values only',
+    value: 'generatePostMortem() reads result.stats and the attribution object; it has no literal performance strings',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/analysis.js',
+    evidenceLabel: 'generatePostMortem() in src/analysis.js — reviewable in the repository',
+    usedIn: 'src/analysis.js'
+  },
+  {
+    id: 'V46', group: 'Project rules', status: 'DERIVED',
+    fact: 'Oversized orders are never filled at an invented price',
+    value: 'exhaustionPolicy defaults to "partial": the remainder is reported as unfilled; the legacy "penalty" mode is opt-in and labelled',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/simulation-engine.js',
+    evidenceLabel: 'exhaustionPolicy in src/simulation-engine.js — reviewable in the repository',
+    usedIn: 'src/simulation-engine.js; src/backtest-replay.js',
+    irregularity: '#12'
+  }
+]);
+
+/** Numbered irregularity register. Severity: high | med | low | info. */
+export const IRREGULARITIES = Object.freeze([
+  {
+    id: 1, severity: 'high',
+    title: 'The previous market catalog was fabricated — four series tickers do not exist',
+    assumed: 'That KXSP500, KXNVDA, KXAAPL and KXNDX were real Kalshi series usable as a market catalog.',
+    truth: 'All four return {"error":{"code":"not_found","message":"not found"}} from the production API. Real series use different naming (KXINXY for the S&P 500 yearly range, KXNASDAQ100Y for the Nasdaq-100) and real markets are event-scoped tickers such as KXINXY-27DEC31H1600-T4600.',
+    evidence: [
+      { label: '404 proof', url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNVDA' },
+      { label: 'Real series list', url: 'https://external-api.kalshi.com/trade-api/v2/series?category=Companies' },
+      { label: 'Recorded in code', url: null, text: 'src/verified-snapshot.js → SERIES_NOT_FOUND; src/strategies.js → REJECTED_FABRICATED_TICKERS' }
+    ],
+    action: 'The fabricated catalog was deleted. Every market and series in this app now comes from a captured live response, and the rejected tickers are kept in an explicit deny-list so they can never silently return.',
+    userAction: 'Open the 404 links yourself, then compare with the captured series in src/verified-snapshot.js.'
+  },
+  {
+    id: 2, severity: 'high',
+    title: 'The fee model was wrong — Kalshi fees are quadratic, not a flat 0.5% per contract',
+    assumed: 'A flat fee of 0.5% of contract value.',
+    truth: 'The official schedule is taker = round up(M × 0.07 × C × P × (1−P)) and maker = round up(M × 0.0175 × C × P × (1−P)), with M read from series.fee_multiplier. The fee is largest at P = 0.50 (1.75¢ per contract for a taker) and falls toward the extremes.',
+    evidence: [
+      { label: 'Official fee schedule (PDF)', url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf' },
+      { label: 'Implementation', url: null, text: 'src/kalshi-fees.js — computeKalshiFee(), roundUpToIncrement(), rawQuadraticFee()' }
+    ],
+    action: 'Replaced with the official formula, including the round-up-to-the-cent rule, per-series multipliers and separate maker/taker coefficients. Fees are itemised per fill and attributed in the post-mortems.',
+    userAction: 'Check any fill in the trade log: fee = round up(0.07 × contracts × P × (1−P)) for a taker.'
+  },
+  {
+    id: 3, severity: 'high',
+    title: 'A browser cannot use Kalshi’s WebSocket — signed headers are required at handshake',
+    assumed: 'The front end could open wss://external-api-ws.kalshi.com/trade-api/ws/v2 directly for real-time prices.',
+    truth: 'Kalshi requires KALSHI-ACCESS-KEY / -SIGNATURE / -TIMESTAMP on the handshake, and the browser WebSocket API cannot set request headers. A server-side relay is mandatory, and the relay needs an API key.',
+    evidence: [
+      { label: 'WebSocket guide', url: 'https://docs.kalshi.com/getting_started/quick_start_websockets' },
+      { label: 'API keys & signing', url: 'https://docs.kalshi.com/getting_started/api_keys' },
+      { label: 'Relay implementation', url: null, text: 'src/ws-lite.js (zero-dependency client that CAN set headers) + server.js /ws/feed' }
+    ],
+    action: 'Built a server relay with an RFC 6455 client that signs the handshake. Without credentials the app serves a labelled SIMULATED market-maker feed and says so in the header pill, the feed panel and the API response.',
+    userAction: 'Set KALSHI_API_KEY_ID and KALSHI_API_PRIVATE_KEY, restart the server, and the feed pill switches from SIMULATED to LIVE.'
+  },
+  {
+    id: 4, severity: 'med',
+    title: 'Direct TLS connections to *.kalshi.com are dropped from this sandbox',
+    assumed: 'That curl/fetch from the build host would reach the API.',
+    truth: 'Handshakes to external-api.kalshi.com fail from this datacenter IP (edge security), so the server’s live path returns "fetch failed" here while the same code works from a normal network. All captures in this repo were obtained through the agent fetch path and are reproducible.',
+    evidence: [
+      { label: 'Live check endpoint', url: null, text: 'GET /api/transport reports upstreamReachable, the exact error and the fallback used' }
+    ],
+    action: 'Every endpoint degrades explicitly: it returns the real captured snapshot, labels it VERIFIED_SNAPSHOT, and includes the upstream error. Nothing silently pretends to be live.',
+    userAction: 'Run `npm start` on your own machine and open /api/transport — upstreamReachable should be true there.'
+  },
+  {
+    id: 5, severity: 'med',
+    title: 'The candlestick path was wrong',
+    assumed: 'GET /markets/{ticker}/candlesticks.',
+    truth: 'The documented path is GET /series/{series_ticker}/markets/{ticker}/candlesticks — the series ticker is mandatory.',
+    evidence: [{ label: 'Candlesticks reference', url: 'https://docs.kalshi.com/api-reference/market/get-market-candlesticks' }],
+    action: 'Corrected in KALSHI_PATHS.candlesticks() and in every fetch the app makes.',
+    userAction: 'Compare the URL in /api/candlesticks responses with the reference page.'
+  },
+  {
+    id: 6, severity: 'med',
+    title: 'A single 0.01 tick size is wrong — the grid is per market',
+    assumed: 'DEFAULT_TICK_SIZE = 0.01 everywhere.',
+    truth: 'Tick size comes from each market’s price_ranges. Captured markets use linear_cent (step 0.0100) while KXBTCY uses deci_cent (step 0.0010), so a hard-coded cent grid mis-prices BTC markets by 10x.',
+    evidence: [
+      { label: 'Fixed-point & price grid', url: 'https://docs.kalshi.com/getting_started/fixed_point_migration' },
+      { label: 'Captured structures', url: null, text: 'src/kalshi-config.js → PRICE_LEVEL_STRUCTURES (11 structures)' }
+    ],
+    action: 'resolvePriceGrid() reads price_ranges first and only falls back to price_level_structure; snapToGrid/nextTick/isOnGrid enforce it, and limit orders are validated against the grid.',
+    userAction: 'Open a KXBTCY market in the Markets tab — the ladder increments by 0.001, not 0.01.'
+  },
+  {
+    id: 7, severity: 'high',
+    title: 'Browser JavaScript cannot be truly sandboxed — the Strategy Lab is an isolation layer, not a security boundary',
+    assumed: 'That user-supplied strategy code could be safely executed.',
+    truth: 'Compiling user code with new Function() in a page cannot prevent a determined author from reaching page globals. True isolation needs an iframe with a strict CSP, a hardened worker realm, or a separate server runtime such as isolated-vm.',
+    evidence: [{ label: 'Statement in code', url: null, text: 'src/strategy-sandbox.js header — HONEST SECURITY STATEMENT' }],
+    action: 'Applied defence in depth: static deny-list (fetch, WebSocket, eval, document, window, localStorage, privateKey, …), no globals injected, whitelisted frozen ctx, validated actions, capped actions per period, and runtime errors captured instead of thrown. Server-side execution of user code is DISABLED by default (ALLOW_USER_CODE=false).',
+    userAction: 'Do not expose the Lab to untrusted users without a real isolation runtime. This is listed as remaining work.'
+  },
+  {
+    id: 8, severity: 'high',
+    title: 'KXBTCY has fee_multiplier 0 — assuming M = 1 everywhere overcharged every BTC trade',
+    assumed: 'A fee multiplier of 1 for all markets.',
+    truth: 'The captured series object for KXBTCY returns fee_type "quadratic" with fee_multiplier 0, so the official formula yields $0.00 fees on that series, while KXNASDAQ100Y returns fee_multiplier 1 with quadratic_with_maker_fees.',
+    evidence: [
+      { label: 'KXBTCY series', url: 'https://external-api.kalshi.com/trade-api/v2/series/KXBTCY' },
+      { label: 'KXNASDAQ100Y series', url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y' }
+    ],
+    action: 'Fees are now resolved per series from the captured Series objects; ReplayEngine passes no global multiplier, and each competition result records the feeConfiguration it actually used.',
+    userAction: 'Open /api/run-competition and read competition.dataProvenance.feeConfiguration — KXBTCY shows fee_multiplier 0.'
+  },
+  {
+    id: 9, severity: 'low',
+    title: 'Two different status vocabularies for the same concept',
+    assumed: 'That a market’s status value could be used as a query filter.',
+    truth: 'Responses use initialized/inactive/active/closed/determined/disputed/amended/finalized, while the GET /markets filter accepts unopened/open/paused/closed/settled. Passing "active" as a filter is invalid.',
+    evidence: [{ label: 'get-markets reference', url: 'https://docs.kalshi.com/api-reference/market/get-markets' }],
+    action: 'mapStatusToFilter() translates between the two, and both enums are exported from src/kalshi-config.js.',
+    userAction: 'Filter the Markets tab — the UI only ever sends valid filter values.'
+  },
+  {
+    id: 10, severity: 'med',
+    title: 'Real books are sparse and fractional; a uniform 5-tier model was unrealistic',
+    assumed: 'Five symmetric tiers per side with round sizes.',
+    truth: 'The captured book has 9 YES levels and 35 NO levels with sizes ranging from 3.43 to 4991.32 contracts, at irregular price points (0.01, 0.04, 0.06, 0.13, 0.17 …).',
+    evidence: [{ label: 'Captured order book', url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000/orderbook' }],
+    action: 'OrderBook is built from the real levels and keeps reciprocity (YES bid X ≡ NO ask 1−X). Synthetic depth is only added BEHIND the captured touch, is labelled SIMULATED, and is scaled by topSize/depthScale.',
+    userAction: 'The Markets tab shows the real ladder; the badge states which part is captured and which is modelled.'
+  },
+  {
+    id: 11, severity: 'high',
+    title: 'Candlesticks carry no depth, so fills behind the touch cannot be verified',
+    assumed: 'That historical replay could reproduce real execution quality.',
+    truth: 'A candlestick gives OHLC of the trade price plus OHLC of the yes_bid and yes_ask, and volume/open interest — but no size at any level. Any fill that walks beyond the touch is a model, not an observation.',
+    evidence: [{ label: 'Candlestick schema', url: 'https://docs.kalshi.com/api-reference/market/get-market-candlesticks' }],
+    action: 'The replay drives each period from the REAL bid/ask/trade range (resting bids fill only when the period low reaches them, asks only when the high does), and reports depth-model assumptions in competition.dataProvenance.depthModelNote. Anything beyond captured depth is disclosed, never presented as observed.',
+    userAction: 'Read the depth note under any strategy detail — it states exactly which part of the fill is modelled.'
+  },
+  {
+    id: 12, severity: 'high',
+    title: 'The engine used to invent an execution price beyond the book, and that invention dominated results',
+    assumed: 'That an order larger than all depth should fill at "the last level plus 5 ticks".',
+    truth: 'Kalshi does not execute beyond available depth. With 100%-of-cash sizing the invented penalty fill accounted for −$76,966 of one strategy’s −$66,578 equity change — i.e. the headline result was mostly an artefact of our own model, not of the market.',
+    evidence: [{ label: 'Attribution before the fix', url: null, text: 'factors listed "Liquidity shortfall (book exhausted)" as the largest term for 6 of 8 strategies' }],
+    action: 'exhaustionPolicy now defaults to "partial": only real depth fills, the remainder is reported as UNFILLED, and the leaderboard discloses unfilled contracts per strategy. The legacy "penalty" mode still exists for stress tests, is opt-in, and is labelled as an invented price wherever it appears.',
+    userAction: 'Compare the Unfilled column on the leaderboard with each strategy’s attribution — no fabricated price appears anywhere.'
+  },
+  {
+    id: 13, severity: 'med',
+    title: 'The live candlestick window is only ~3 months, which caps how long a replay can be',
+    assumed: 'That a full year of daily history was available from the standard endpoint.',
+    truth: 'GET /historical/cutoff returned 2026-07-19T00:00:00Z, and the longest contiguous daily series obtainable on the capture date is 61 bars (2026-07-19 → 2026-09-17). Older history requires the separate historical endpoints.',
+    evidence: [
+      { label: 'Historical data guide', url: 'https://docs.kalshi.com/getting_started/historical_data' },
+      { label: 'Cutoff capture', url: 'https://external-api.kalshi.com/trade-api/v2/historical/cutoff' }
+    ],
+    action: 'The replay uses all 61 available bars and states the horizon in every result. The 52-week competition calendar is a memory/tracking structure, not a claim that 52 weeks of candlesticks were replayed. Historical-endpoint ingestion is listed as remaining work.',
+    userAction: 'The leaderboard header shows "61 real daily periods" — that number comes from the data, not from a config constant.'
+  },
+  {
+    id: 14, severity: 'med',
+    title: 'None of the captured contracts had settled, so no real settlement outcome can be used',
+    assumed: 'That final positions could be resolved to $1.00 / $0.00 from observed results.',
+    truth: 'KXNASDAQ100Y-26DEC31H1600-T33000 closes 2026-12-31 and KXBTCY-27JAN0100-T149999.99 closes 2027-01-01 — both after the capture date, with result "" and status "active".',
+    evidence: [{ label: 'Market object', url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000' }],
+    action: 'By default the replay marks open positions at the last REAL captured quote and reports them as unrealized. Settlement is an explicit opt-in (settleAtEnd + finalResult) and the UI labels any settled run as a hypothetical scenario, never as an observed outcome.',
+    userAction: 'Tick "Settle at end" and choose an outcome — the banner states that the outcome is hypothetical.'
+  },
+  {
+    id: 15, severity: 'low',
+    title: 'liquidity_dollars reads "0.0000" on markets that clearly have liquidity',
+    assumed: 'That liquidity_dollars could be used to rank markets by depth.',
+    truth: 'Captured active markets return liquidity_dollars "0.0000" while reporting volume_fp of 395,554.67 and open_interest_fp of 162,977.28. No document explains this field’s semantics.',
+    evidence: [{ label: 'Market list capture', url: 'https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNASDAQ100Y&status=open&limit=12' }],
+    action: 'The field is displayed raw with a "not used in calculations" note. Liquidity in this app is measured from the captured order book and from volume/open interest only.',
+    userAction: 'Ask Kalshi support what liquidity_dollars measures; until then treat it as unexplained.'
+  },
+  {
+    id: 16, severity: 'low',
+    title: '429 responses carry no Retry-After header',
+    assumed: 'That a throttled response would tell the client when to retry.',
+    truth: 'The rate-limit documentation describes a token bucket (10 tokens per request, 200 reads/s and 100 writes/s on the basic tier, 2 s burst) and a 429 body of {"error":"too many requests"} with no Retry-After.',
+    evidence: [{ label: 'Rate limits', url: 'https://docs.kalshi.com/getting_started/rate_limits' }],
+    action: 'The client applies its own exponential backoff on 429 and records every transport attempt in an audit log surfaced by /api/transport.',
+    userAction: 'None required; just do not expect a server-provided retry hint.'
+  },
+  {
+    id: 17, severity: 'med',
+    title: 'Two depth values in the first order-book capture could not be re-confirmed',
+    assumed: 'That the first captured book was accurate as transcribed.',
+    truth: 'Capture 1 showed YES 0.1200 @ 100242.25 and NO 0.8300 @ 100076.49. A second capture of the same endpoint the same day showed no 0.1200 YES level at all and NO 0.8300 @ 81.49, while the market object reported yes_bid_size_fp "242.25" at 0.1200 — contradicting 100242.25 at the same price.',
+    evidence: [
+      { label: 'Endpoint (re-fetch it yourself)', url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000/orderbook' },
+      { label: 'Both captures retained', url: null, text: 'src/verified-snapshot.js → ORDERBOOKS (capture-2 primary, capture-1 archived as evidence)' }
+    ],
+    action: 'Capture 1 is archived, marked usedBySimulator:false, and replaced by capture 2, which passes a reciprocal cross-check against the market object (best NO bid 0.8700 ⇒ implied YES ask 0.1300 = the market’s yes_ask_dollars). The discrepancy is recorded rather than silently resolved.',
+    userAction: 'Depth is time-varying: re-fetch the endpoint and compare with capture-2’s _capture metadata.'
+  },
+  {
+    id: 18, severity: 'info',
+    title: 'updated_time is not a quote timestamp',
+    assumed: 'That a market’s updated_time indicated when its price last changed.',
+    truth: 'Captured active markets show updated_time 2026-04-09T09:41:46Z while their last_price_dollars, yes_bid and yes_ask change intraday.',
+    evidence: [{ label: 'Market list capture', url: 'https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNASDAQ100Y&status=open&limit=12' }],
+    action: 'All freshness indicators in this app use our own capture timestamp and the candlestick end_period_ts, never updated_time.',
+    userAction: 'None — informational.'
+  },
+  {
+    id: 19, severity: 'low',
+    title: 'Kalshi’s own fee table does not match Kalshi’s own fee formula',
+    assumed: 'That the "General Trading Fees Table" in the fee schedule PDF is the literal amount charged.',
+    truth: 'The table is the formula rounded UP to whole cents. The formula rounds "such that the fee + positionCost is rounded to a centicent" ($0.0001). For 100 contracts at $0.01 the formula gives $0.0693 while the table prints $0.07; at $0.25 it gives $1.3125 vs $1.32. All 21 published rows follow the cent-rounding rule exactly.',
+    evidence: [
+      { label: 'Fee schedule PDF (formula + table, same document)', url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf' },
+      { label: 'Transcribed oracle used by the test suite', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/kalshi-config.js', text: 'OFFICIAL_FEE_TABLE_PER_100 / FEE_TABLE_ROUNDING' }
+    ],
+    action: 'The engine charges the FORMULA value (centicent rounding), because that is the rule stated for the calculation itself, and asserts the cent-rounding relationship against all 21 published rows so neither number is invented. Both values are shown side by side in the Verification tab.',
+    userAction: 'Expect fees a fraction of a cent BELOW the published table on small orders. If Kalshi states the table is authoritative, flip FEE_TABLE_ROUNDING.publishedTableIncrement handling in src/kalshi-fees.js.'
+  }
+]);
+
+/** Reverse-engineered structure of the reference competition sites. */
+export const COMPETITION_SITE_ANALYSIS = Object.freeze([
+  {
+    site: 'kalshi.com',
+    url: 'https://kalshi.com/',
+    whatWeTook: 'Market-card layout (YES/NO price pair, volume, open interest), the order-book depth ladder, the trade ticket with explicit fee preview, and the reciprocal YES/NO framing.',
+    whatWeDidNotTake: 'No market data, copy or branding. All prices shown here come from captured API responses or are labelled simulations.',
+    implementedIn: 'Markets & Depth tab (src/app.js renderMarkets), OrderBook reciprocity (src/simulation-engine.js)'
+  },
+  {
+    site: 'tradingview.com/the-leap',
+    url: 'https://www.tradingview.com/the-leap/',
+    whatWeTook: 'A ranked leaderboard with participant identity, a podium for the top three, a fixed competition window, and rules/eligibility presented next to the standings.',
+    whatWeDidNotTake: 'No participant data or branding.',
+    implementedIn: 'Leaderboard tab: podium, qualification rule, mandate notice, competition window'
+  },
+  {
+    site: 'trade-ideas.com stock trading competition',
+    url: 'https://www.trade-ideas.com/stock-trading-competition/',
+    whatWeTook: 'Registration with a unique username, a starting-capital allowance, periodic (daily/weekly) standings snapshots, and a published result history.',
+    whatWeDidNotTake: 'No participant data or branding.',
+    implementedIn: 'Competition Memory tab: registration, 52-week calendar, weekly snapshots, export/import'
+  },
+  {
+    site: 'specials.candlecharts.com/contest',
+    url: 'https://specials.candlecharts.com/contest',
+    whatWeTook: 'A contest calendar with entry periods and a scoring summary per entrant.',
+    whatWeDidNotTake: 'No entries or branding.',
+    implementedIn: 'Calendar strip + per-trader computed stats (return, drawdown, fees, unfilled)'
+  }
+]);
+
+/** Group facts for rendering. */
+export function groupFacts(facts = VERIFIED_FACTS, filter = '') {
+  const q = String(filter || '').trim().toLowerCase();
+  const groups = new Map();
+  for (const f of facts) {
+    if (q) {
+      const hay = `${f.id} ${f.group} ${f.fact} ${f.value} ${f.url || ''} ${f.usedIn || ''}`.toLowerCase();
+      if (!hay.includes(q)) continue;
+    }
+    if (!groups.has(f.group)) groups.set(f.group, []);
+    groups.get(f.group).push(f);
+  }
+  return [...groups.entries()].map(([group, items]) => ({ group, items }));
+}
+
+/** Counts by status, for the summary line. */
+export function factStats(facts = VERIFIED_FACTS) {
+  const out = { total: facts.length };
+  for (const s of Object.values(VERIFICATION_STATUS)) {
+    out[s] = facts.filter((f) => f.status === s).length;
+  }
+  out.withUrl = facts.filter((f) => f.url).length;
+  return out;
+}

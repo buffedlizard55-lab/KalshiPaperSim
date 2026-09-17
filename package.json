@@ -7,7 +7,10 @@
   "scripts": {
     "start": "node server.js",
     "test": "node --test test/simulation.test.js",
-    "build": "node build.js"
+    "test:ui": "node test/ui-smoke.mjs",
+    "test:all": "node --test test/simulation.test.js && node test/ui-smoke.mjs",
+    "build": "node scripts/render-docs.js && node build.js",
+    "docs": "node scripts/render-docs.js"
   },
   "keywords": [
     "kalshi",
