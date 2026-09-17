@@ -571,6 +571,68 @@ export const VERIFIED_FACTS = Object.freeze([
     capturedAt: '2026-09-17',
     usedIn: 'src/settlement-tracker.js → classifySettlement(); test 57 asserts nothing is booked'
   },
+  {
+    id: 'V74', group: 'Historical data', status: 'CAPTURED',
+    fact: 'Market candlesticks go back far beyond the /historical/cutoff date — the cutoff does NOT bound them',
+    value: 'GET /historical/cutoff returns 2026-07-19T00:00:00Z for market_positions / market_settled / orders / trades, but the SAME market\u2019s candlesticks are served back to its open_time: a 1-day probe at 2026-01-01 (start_ts=1767225600&end_ts=1767312000) on KXNASDAQ100Y-26DEC31H1600-T33000 returned a real bar (end_period_ts 1767243600, close 0.0700, volume 247.00). Probes at 2026-03-01 and 2026-05-01 also returned real bars.',
+    url: 'https://api.elections.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1767225600&end_ts=1767312000&period_interval=1440',
+    doc: 'https://docs.kalshi.com/getting_started/historical_data',
+    capturedAt: '2026-09-17',
+    usedIn: 'scripts/ingest-history.mjs (--days=0 backfills from each market\u2019s open_time); see IRREGULARITIES.md #26'
+  },
+  {
+    id: 'V75', group: 'Historical data', status: 'CAPTURED',
+    fact: 'The daily ingest job ran against production and grew the dataset to 30 markets / 7,189 daily bars with zero conflicts',
+    value: 'GET /series/{series}/markets/{ticker}/candlesticks paged in 180-day windows from each market\u2019s open_time: 4,666 bars added in one run, 7,189 stored, 0 conflicts between the re-fetched bars and the in-repo 2026-09-17 captures, 0 failed requests. Window 2025-12-24 \u2192 2026-09-17 (268 daily periods vs the 61 the in-repo captures held).',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1766524800&end_ts=1789689600&period_interval=1440',
+    doc: 'https://docs.kalshi.com/api-reference/market/get-market-candlesticks',
+    capturedAt: '2026-09-17',
+    usedIn: 'data/history/*.json + data/history/_manifest.json; src/accumulated-history.js (generated); src/history-merge.js'
+  },
+  {
+    id: 'V76', group: 'Historical data', status: 'CAPTURED',
+    fact: 'A no-trade period returns the resting quotes but NO OHLC — only price.previous_dollars',
+    value: 'Bar end_period_ts 1781928000 on KXINXY-26DEC31H1600-T4000: {price:{previous_dollars:"0.0200"}, volume_fp:"0.00", yes_bid:{...0.0200}, yes_ask:{...0.0300}} — no open/high/low/close/mean. 352 of the 7,189 stored bars (4.9%) are of this kind.',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1781841600&end_ts=1781928000&period_interval=1440',
+    capturedAt: '2026-09-17',
+    usedIn: 'scripts/ingest-history.mjs (stores the bar as returned); src/accumulated-history.js expandAccumulatedBar() omits unreported prices; getCandleCoverage().noTradeBars'
+  },
+  {
+    id: 'V77', group: 'Historical data', status: 'OBSERVATION',
+    fact: 'Fixed-point precision is consistent across every stored bar — 4 decimals for dollars, 2 for *_fp',
+    value: '33,562 price values across 2,523 bars were all exactly 4 decimal places and every open_interest_fp / volume_fp exactly 2. No counter-example was found, which is what makes the compact integer encoding in src/accumulated-history.js lossless. Flagged as an OBSERVATION because Kalshi does not publish this guarantee: the encoder asserts it on every value and refuses to write the file if it ever fails.',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440',
+    doc: 'https://docs.kalshi.com/getting_started/fixed_point_migration',
+    capturedAt: '2026-09-17',
+    usedIn: 'scripts/generate-history-module.mjs → assertDecimals() throws if this ever stops being true'
+  },
+  {
+    id: 'V78', group: 'Engine correctness', status: 'DERIVED',
+    fact: 'A stored series is admitted to the replay only as a verified superset of the in-repo capture',
+    value: 'For every bar the store and the capture share, all 16 fields must match (stableEqual, not JSON.stringify with a key array). Only then may the stored series replace the capture, and only when it is longer. Otherwise the capture is kept and the disagreement is reported. On the 2026-09-17 data this promoted T33000 to 263 bars, T19000 to 264 and KXBTCY to 204, with 0 conflicts.',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/history-merge.js',
+    evidenceLabel: 'src/history-merge.js → chooseCandleSeries()',
+    usedIn: 'src/history-merge.js → chooseCandleSeries(); tests 60 and 61'
+  },
+  {
+    id: 'V80', group: 'Historical data', status: 'DERIVED',
+    fact: 'A candlestick\u2019s volume_fp is the contracts traded in that period — proven by summing them',
+    value: 'Summing the 204 daily volume_fp values of KXBTCY-27JAN0100-T149999.99 gives 2,032,361.22, exactly the market\u2019s lifetime volume_fp (2,032,361.22). KXINXY-26DEC31H1600-B6900: 294,789.96 = 294,789.96. KXNASDAQ100Y-26DEC31H1600-T33000: 394,165.05 vs 395,852.67 — the 1,687.62 difference is the trading done since the last bar closed. No fill may therefore exceed the contracts that actually changed hands in a period.',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1771975529&end_ts=1789689600&period_interval=1440',
+    doc: 'https://docs.kalshi.com/api-reference/market/get-market-candlesticks',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/backtest-replay.js → ReplayEngine.maxFillFractionOfPeriodVolume (default 0.10 of the period\u2019s real volume)'
+  },
+  {
+    id: 'V79', group: 'Engine correctness', status: 'DERIVED',
+    fact: 'Per-market capital allocation is an OPTION, off by default, and the cap never invents a fill',
+    value: 'maxNotionalPerMarketPct caps the notional one market may hold (positions + resting orders) at that fraction of equity. Orders are scaled down before execution; whatever the cap refuses is counted (cappedOrders / cappedContracts) and reported next to the unfilled remainder. Default null, because the competition brief is highest-return-only.',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/backtest-replay.js',
+    evidenceLabel: 'src/backtest-replay.js → ReplayEngine._applyMarketCap()',
+    usedIn: 'src/backtest-replay.js → ReplayEngine._applyMarketCap(); scripts/cap-comparison.mjs'
+  },
 ]);
 
 /** Numbered irregularity register. Severity: high | med | low | info. */
@@ -845,6 +907,69 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'The engine charges the FORMULA value (centicent rounding), because that is the rule stated for the calculation itself, and asserts the cent-rounding relationship against all 21 published rows so neither number is invented. Both values are shown side by side in the Verification tab.',
     userAction: 'Expect fees a fraction of a cent BELOW the published table on small orders. If Kalshi states the table is authoritative, flip FEE_TABLE_ROUNDING.publishedTableIncrement handling in src/kalshi-fees.js.'
+  },
+  {
+    id: 26, severity: 'high',
+    title: 'The replay window was capped at 61 bars by our own start_ts, not by Kalshi — the real window was 268',
+    assumed: 'That live market candlesticks only go back to the /historical/cutoff date (2026-07-19), so a 61-bar window was the most the public API would give.',
+    truth: 'The cutoff bounds the *historical tier* datasets (market_positions, market_settled, orders, trades), not candlesticks. Probing the same market with a one-day window at 2026-01-01, 2026-03-01 and 2026-05-01 each returned a real daily bar, and a full backfill from each market\u2019s open_time returned 263 bars for T33000 (2025-12-24 \u2192 2026-09-17). The 61-bar series was an artefact of the start_ts we asked for.',
+    evidence: [
+      { label: 'Cutoff endpoint (the date we trusted)', url: 'https://api.elections.kalshi.com/trade-api/v2/historical/cutoff', text: 'market_positions_last_updated_ts / market_settled_ts / orders_updated_ts / trades_created_ts = 2026-07-19T00:00:00Z' },
+      { label: 'One-day probe at 2026-01-01 — a REAL bar came back', url: 'https://api.elections.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1767225600&end_ts=1767312000&period_interval=1440', text: 'end_period_ts 1767243600, close_dollars 0.0700, volume_fp 247.00' },
+      { label: 'One-day probe at 2026-03-01 — a REAL bar came back', url: 'https://api.elections.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1772323200&end_ts=1772409600&period_interval=1440' },
+      { label: 'One-day probe at 2026-05-01 — a REAL bar came back', url: 'https://api.elections.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1777593600&end_ts=1777680000&period_interval=1440' },
+      { label: 'Resulting store', url: null, text: 'data/history/_manifest.json — 30 markets, 7,189 bars, 4,666 added in one run, 0 conflicts' }
+    ],
+    action: 'The ingest job now backfills from each market\u2019s real open_time (--days=0, paged in 180-day windows) instead of a fixed 90-day window, and the replay reads the longer stored series wherever it is a verified superset of the capture. Only the market\u2019s own open_time bounds the series.',
+    userAction: 'Run `node scripts/ingest-history.mjs --verify` to see each market\u2019s real window, or open data/history/_manifest.json. Do not assume any window length — read the coverage table.'
+  },
+  {
+    id: 27, severity: 'med',
+    title: 'Two of our own failures hid behind a green CI step',
+    assumed: 'That a successful GitHub Actions step means the ingest actually ran.',
+    truth: '(a) scripts/ingest-history.mjs threw ReferenceError: url is not defined after the windowed-backfill refactor, so it aborted before writing its manifest; (b) the workflow ran `node ... | tee log` without `set -o pipefail`, so the non-zero exit still reported success. One run therefore ingested nothing and looked fine.',
+    evidence: [
+      { label: 'The run that ingested nothing', url: null, text: 'commit 9ceb180 changed only data/settlements.json and src/accumulated-history.js — no bars' },
+      { label: 'The crash', url: null, text: 'ingest-history failed: ReferenceError: url is not defined at ingestMarket (scripts/ingest-history.mjs)' }
+    ],
+    action: 'Fixed the stale variable, added `set -o pipefail` to the workflow step, and the job now commits its log to data/history/_last-run.log so every run is auditable after the fact.',
+    userAction: 'After any scheduled run, read data/history/_last-run.log — a run that added no bars says so explicitly.'
+  },
+  {
+    id: 28, severity: 'low',
+    title: 'The competition universe grew from 3 markets to 30, so per-market statistics now rest on very unequal samples',
+    assumed: 'That every market in the universe offers a comparable amount of data.',
+    truth: 'After the backfill the 30 replayable markets hold between 204 and 268 bars (7,189 total), and 352 of those bars (4.9%) are no-trade periods with no OHLC at all. Two KXINXY strikes are no-trade in roughly half their bars. Correlations and win rates computed across markets therefore rest on unequal samples.',
+    evidence: [
+      { label: 'Per-market coverage', url: null, text: 'GET /api/history → markets[].bars, .noTradeBars, .origin, .excludedReason' },
+      { label: 'No-trade bar shape', url: 'https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1781841600&end_ts=1781928000&period_interval=1440' }
+    ],
+    action: 'Every market reports its own bar count, no-trade count and origin in the competition universe panel and in each result\u2019s dataProvenance; markets with fewer than 10 bars (or no captured market object) are tracked but never replayed, and the reason is shown.',
+    userAction: 'Read the Bars / no-trade columns before comparing two markets, and check the "tracked, not replayable" list — it is not an error, it is the floor doing its job.'
+  },
+  {
+    id: 29, severity: 'high',
+    title: 'Modelled depth let a strategy "buy" 250,000 contracts on a 400-contract day and book +2,005%',
+    assumed: 'That a fill only had to respect the order book — so if the book (whose size behind the touch is MODELLED, because candlesticks carry no depth) offered size at the period\u2019s low, taking all of it was a legitimate trade.',
+    truth: 'The bar for that day records the contracts that actually traded. KXINXY-26DEC31H1600-B6900 traded 389 contracts on a median day; the replay was filling orders of 250,000 at the intraday low and then marking them at the close. Under the first 30-market, 268-period run this produced PanicDip_ShockTiming +2,005.93% (+146,402% under a 50% per-market cap), 19 single-day equity moves above 20%, and one of +63.95%. Those numbers were an artefact of our modelled depth, not an edge anyone could trade.',
+    evidence: [
+      { label: 'Bar volume is the period\u2019s traded contracts', url: 'https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B6900/candlesticks?start_ts=1781841600&end_ts=1789689600&period_interval=1440', text: 'median daily volume_fp 389.00 across 264 bars' },
+      { label: 'The run that exposed it', url: null, text: 'seed 20260917, 268 periods, 30 markets: PanicDip_ShockTiming +2005.93%, 1,027 trades, 19 days with >20% equity moves' }
+    ],
+    action: 'Fills are now bounded by the period\u2019s REAL traded volume: no order — taker or resting maker — may take more than maxFillFractionOfPeriodVolume (default 10%) of the contracts that traded in that bar, and a resting order can fill partially against it. Whatever the bound refuses is counted and reported (volumeCappedContracts) exactly like an unfilled remainder. The same roster on the same data now returns between +9.25% and -16.30%.',
+    userAction: 'Treat any double-digit-percent-per-DAY compounding in a result as a modelling artefact until you have checked volumeCappedContracts for that strategy. The bound is a parameter, not a law: `--max-fill-fraction=null` restores the old behaviour for stress tests.'
+  },
+  {
+    id: 30, severity: 'med',
+    title: 'A market-making quote still pays no attention to whether the market is open or how wide the spread is',
+    assumed: 'That a two-sided quote placed on every period is a fair test of a market-making strategy.',
+    truth: 'VolatilityArb_MM places 4,358 trades across 268 periods and 30 markets, including 352 no-trade bars where no price was printed at all. On those bars the book is anchored on the last real quote, so a "fill" can occur against a stale touch. The strategy still finishes first (+9.25%), which is plausible for a spread harvester, but its trade count is inflated by quotes that no one could have hit.',
+    evidence: [
+      { label: 'No-trade bar shape', url: 'https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1781841600&end_ts=1781928000&period_interval=1440', text: 'price.previous_dollars only — no OHLC' },
+      { label: 'Counts', url: null, text: 'GET /api/history → markets[].noTradeBars; 352 of 7,189 stored bars (4.9%)' }
+    ],
+    action: 'No-trade bars are counted and displayed per market, and resting orders still fill only within the period\u2019s real traded range (which is empty on those bars, so the volume bound now blocks the fill). The remaining exposure is that the touch itself is carried forward from the last real quote.',
+    userAction: 'When reading a market-maker\u2019s trade count, compare it with the no-trade bars of the markets it quoted.'
   }
 ]);
 

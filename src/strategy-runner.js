@@ -310,6 +310,7 @@ export function runCompetition(options = {}) {
       },
       exhaustionPolicy: engine.exhaustionPolicy,
       maxNotionalPerMarketPct: engine.maxNotionalPerMarketPct ?? null,
+      maxFillFractionOfPeriodVolume: engine.maxFillFractionOfPeriodVolume,
       mandate: 'Highest return only. No risk management, per the competition brief.',
       regime: options.regime || 'baseline',
       regimeNote:

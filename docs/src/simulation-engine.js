@@ -731,8 +731,18 @@ export class OrderBook {
    *
    * @param {{low?:number|null, high?:number|null}|null} [range]
    */
-  processRestingFills(range = null) {
+  /**
+   * @param {object} [range]          {low, high} — the period's REAL traded range
+   * @param {number} [maxContracts]   hard ceiling on contracts filled by THIS call.
+   *   The replay passes the share of the period's REAL traded volume a strategy is
+   *   allowed to take: you cannot buy 250,000 contracts in a day the whole market
+   *   traded 400. Without it, modelled depth behind the touch let a strategy take
+   *   unlimited size at an intraday low and be marked at the close, which produced
+   *   returns like +2,005% (see IRREGULARITIES.md #29).
+   */
+  processRestingFills(range = null, maxContracts = Infinity) {
     const results = [];
+    let budget = Number.isFinite(maxContracts) ? maxContracts : Infinity;
     for (const order of [...this.restingOrders]) {
       if (order.status !== 'resting') continue;
       const o = order.outcome.toLowerCase();
@@ -765,9 +775,13 @@ export class OrderBook {
         order.status = 'executed';
         continue;
       }
-      const feeInfo = computeKalshiFee({ count: remaining, price: fillPrice, multiplier: this.feeMultiplier, isMaker: true });
-      order.filled = round2(order.count);
-      order.status = 'executed';
+      if (budget <= 0) break; // no traded volume left to match against this period
+      // A resting order may fill PARTIALLY against the period's real volume.
+      const qty = budget >= remaining ? remaining : round2(Math.floor(budget * 100) / 100);
+      budget = round2(budget - qty);
+      const feeInfo = computeKalshiFee({ count: qty, price: fillPrice, multiplier: this.feeMultiplier, isMaker: true });
+      order.filled = round2((order.filled || 0) + qty);
+      order.status = order.filled >= order.count - MIN_COUNT / 2 ? 'executed' : 'resting';
       order.filledAt = new Date().toISOString();
       if (order.direction === 'bid') this._removeBidLevel(o, order.price, order.orderId);
 
@@ -777,14 +791,16 @@ export class OrderBook {
         orderId: order.orderId,
         action: order.direction === 'bid' ? 'BUY' : 'SELL',
         side: order.outcome,
-        contracts: remaining,
+        contracts: qty,
         fillPrice,
         maker: true,
         fee: feeInfo.fee,
         feeFormula: feeInfo.formula,
         feeMultiplier: this.feeMultiplier,
-        gross: round6(remaining * fillPrice),
-        queuePositionAhead: order.queuePositionAhead
+        gross: round6(qty * fillPrice),
+        queuePositionAhead: order.queuePositionAhead,
+        partial: qty < remaining - 1e-9,
+        volumeLimited: budget <= 0 && qty < remaining - 1e-9
       });
     }
     this.restingOrders = this.restingOrders.filter((o) => o.status === 'resting');

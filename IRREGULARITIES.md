@@ -1,8 +1,8 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-17 by `scripts/render-docs.js` from `src/verification-data.js`.
-**25 irregularities** flagged during this build: 9 high, 10 medium,
-5 low, 1 informational.
+**30 irregularities** flagged during this build: 11 high, 12 medium,
+6 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
 about it**, and **what you should do**. Nothing here is speculation: each item was found by comparing an
@@ -168,6 +168,45 @@ assumption against an official document or a real API response.
 
 - Runner disclosure — `src/strategy-runner.js → competition.regimeNote: "This replay always uses the REAL captured candlesticks UNMODIFIED"`
 - Honest replacement — `scripts/sensitivity-sweep.mjs: 10 strategies × 3 seeds × 3 universes × 3 settlement scenarios = 270 strategy runs`
+
+---
+
+## #26 — The replay window was capped at 61 bars by our own start_ts, not by Kalshi — the real window was 268
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That live market candlesticks only go back to the /historical/cutoff date (2026-07-19), so a 61-bar window was the most the public API would give. |
+| **Verified truth** | The cutoff bounds the *historical tier* datasets (market_positions, market_settled, orders, trades), not candlesticks. Probing the same market with a one-day window at 2026-01-01, 2026-03-01 and 2026-05-01 each returned a real daily bar, and a full backfill from each market’s open_time returned 263 bars for T33000 (2025-12-24 → 2026-09-17). The 61-bar series was an artefact of the start_ts we asked for. |
+| **What the code does** | The ingest job now backfills from each market’s real open_time (--days=0, paged in 180-day windows) instead of a fixed 90-day window, and the replay reads the longer stored series wherever it is a verified superset of the capture. Only the market’s own open_time bounds the series. |
+| **What you should do** | Run `node scripts/ingest-history.mjs --verify` to see each market’s real window, or open data/history/_manifest.json. Do not assume any window length — read the coverage table. |
+
+**Evidence**
+
+- Cutoff endpoint (the date we trusted): <https://api.elections.kalshi.com/trade-api/v2/historical/cutoff> — `market_positions_last_updated_ts / market_settled_ts / orders_updated_ts / trades_created_ts = 2026-07-19T00:00:00Z`
+- One-day probe at 2026-01-01 — a REAL bar came back: <https://api.elections.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1767225600&end_ts=1767312000&period_interval=1440> — `end_period_ts 1767243600, close_dollars 0.0700, volume_fp 247.00`
+- One-day probe at 2026-03-01 — a REAL bar came back: <https://api.elections.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1772323200&end_ts=1772409600&period_interval=1440>
+- One-day probe at 2026-05-01 — a REAL bar came back: <https://api.elections.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1777593600&end_ts=1777680000&period_interval=1440>
+- Resulting store — `data/history/_manifest.json — 30 markets, 7,189 bars, 4,666 added in one run, 0 conflicts`
+
+---
+
+## #29 — Modelled depth let a strategy "buy" 250,000 contracts on a 400-contract day and book +2,005%
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That a fill only had to respect the order book — so if the book (whose size behind the touch is MODELLED, because candlesticks carry no depth) offered size at the period’s low, taking all of it was a legitimate trade. |
+| **Verified truth** | The bar for that day records the contracts that actually traded. KXINXY-26DEC31H1600-B6900 traded 389 contracts on a median day; the replay was filling orders of 250,000 at the intraday low and then marking them at the close. Under the first 30-market, 268-period run this produced PanicDip_ShockTiming +2,005.93% (+146,402% under a 50% per-market cap), 19 single-day equity moves above 20%, and one of +63.95%. Those numbers were an artefact of our modelled depth, not an edge anyone could trade. |
+| **What the code does** | Fills are now bounded by the period’s REAL traded volume: no order — taker or resting maker — may take more than maxFillFractionOfPeriodVolume (default 10%) of the contracts that traded in that bar, and a resting order can fill partially against it. Whatever the bound refuses is counted and reported (volumeCappedContracts) exactly like an unfilled remainder. The same roster on the same data now returns between +9.25% and -16.30%. |
+| **What you should do** | Treat any double-digit-percent-per-DAY compounding in a result as a modelling artefact until you have checked volumeCappedContracts for that strategy. The bound is a parameter, not a law: `--max-fill-fraction=null` restores the old behaviour for stress tests. |
+
+**Evidence**
+
+- Bar volume is the period’s traded contracts: <https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B6900/candlesticks?start_ts=1781841600&end_ts=1789689600&period_interval=1440> — `median daily volume_fp 389.00 across 264 bars`
+- The run that exposed it — `seed 20260917, 268 periods, 30 markets: PanicDip_ShockTiming +2005.93%, 1,027 trades, 19 days with >20% equity moves`
 
 ---
 
@@ -347,6 +386,42 @@ assumption against an official document or a real API response.
 
 ---
 
+## #27 — Two of our own failures hid behind a green CI step
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That a successful GitHub Actions step means the ingest actually ran. |
+| **Verified truth** | (a) scripts/ingest-history.mjs threw ReferenceError: url is not defined after the windowed-backfill refactor, so it aborted before writing its manifest; (b) the workflow ran `node ... | tee log` without `set -o pipefail`, so the non-zero exit still reported success. One run therefore ingested nothing and looked fine. |
+| **What the code does** | Fixed the stale variable, added `set -o pipefail` to the workflow step, and the job now commits its log to data/history/_last-run.log so every run is auditable after the fact. |
+| **What you should do** | After any scheduled run, read data/history/_last-run.log — a run that added no bars says so explicitly. |
+
+**Evidence**
+
+- The run that ingested nothing — `commit 9ceb180 changed only data/settlements.json and src/accumulated-history.js — no bars`
+- The crash — `ingest-history failed: ReferenceError: url is not defined at ingestMarket (scripts/ingest-history.mjs)`
+
+---
+
+## #30 — A market-making quote still pays no attention to whether the market is open or how wide the spread is
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That a two-sided quote placed on every period is a fair test of a market-making strategy. |
+| **Verified truth** | VolatilityArb_MM places 4,358 trades across 268 periods and 30 markets, including 352 no-trade bars where no price was printed at all. On those bars the book is anchored on the last real quote, so a "fill" can occur against a stale touch. The strategy still finishes first (+9.25%), which is plausible for a spread harvester, but its trade count is inflated by quotes that no one could have hit. |
+| **What the code does** | No-trade bars are counted and displayed per market, and resting orders still fill only within the period’s real traded range (which is empty on those bars, so the volume bound now blocks the fill). The remaining exposure is that the touch itself is carried forward from the last real quote. |
+| **What you should do** | When reading a market-maker’s trade count, compare it with the no-trade bars of the markets it quoted. |
+
+**Evidence**
+
+- No-trade bar shape: <https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1781841600&end_ts=1781928000&period_interval=1440> — `price.previous_dollars only — no OHLC`
+- Counts — `GET /api/history → markets[].noTradeBars; 352 of 7,189 stored bars (4.9%)`
+
+---
+
 ## #9 — Two different status vocabularies for the same concept
 
 **Severity:** `LOW`
@@ -431,6 +506,24 @@ assumption against an official document or a real API response.
 
 - Coverage — `GET /api/history and GET /api/market-stats both report per-market bar counts`
 - Window: <https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1788393600&end_ts=1789603200&period_interval=1440>
+
+---
+
+## #28 — The competition universe grew from 3 markets to 30, so per-market statistics now rest on very unequal samples
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That every market in the universe offers a comparable amount of data. |
+| **Verified truth** | After the backfill the 30 replayable markets hold between 204 and 268 bars (7,189 total), and 352 of those bars (4.9%) are no-trade periods with no OHLC at all. Two KXINXY strikes are no-trade in roughly half their bars. Correlations and win rates computed across markets therefore rest on unequal samples. |
+| **What the code does** | Every market reports its own bar count, no-trade count and origin in the competition universe panel and in each result’s dataProvenance; markets with fewer than 10 bars (or no captured market object) are tracked but never replayed, and the reason is shown. |
+| **What you should do** | Read the Bars / no-trade columns before comparing two markets, and check the "tracked, not replayable" list — it is not an error, it is the floor doing its job. |
+
+**Evidence**
+
+- Per-market coverage — `GET /api/history → markets[].bars, .noTradeBars, .origin, .excludedReason`
+- No-trade bar shape: <https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1781841600&end_ts=1781928000&period_interval=1440>
 
 ---
 

@@ -28,7 +28,7 @@ import { fileURLToPath } from 'node:url';
 import { KALSHI_ENDPOINTS, KALSHI_PATHS, CANDLE_PERIODS_MINUTES, RATE_LIMITS } from './src/kalshi-config.js';
 import { KalshiApiClient, normalizeMarket, DATA_SOURCE, parseKalshiOrderbook } from './src/kalshi-api.js';
 import { getVerifiedMarkets, getVerifiedCandlesticks, CAPTURE_META, EXCHANGE_STATUS, HISTORICAL_CUTOFF, SERIES, getVerifiedOrderbook } from './src/verified-snapshot.js';
-import { runCompetition, getReplayableMarkets, getVerifiedCandleMap } from './src/strategy-runner.js';
+import { runCompetition, getReplayableMarkets, getVerifiedCandleMap, getHistoryAudit } from './src/strategy-runner.js';
 import { CompetitionMemoryEngine, REGIMES, validateUsername } from './src/competition-memory.js';
 import { OrderBook, PaperPortfolio, round2 } from './src/simulation-engine.js';
 import { computeKalshiFee } from './src/kalshi-fees.js';
@@ -467,6 +467,11 @@ const server = http.createServer(async (req, res) => {
         });
       }
       return sendJSON(res, 200, { present: true, dir: HISTORY_DIR, manifest });
+    }
+
+    /* What the daily ingest has added, what it may use and what it refused. */
+    if (p === '/api/history-audit') {
+      return sendJSON(res, 200, getHistoryAudit());
     }
 
     if (p === '/api/leaderboard') {

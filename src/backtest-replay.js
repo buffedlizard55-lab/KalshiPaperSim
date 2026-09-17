@@ -203,6 +203,21 @@ export class ReplayEngine {
      */
     this.maxNotionalPerMarketPct = options.maxNotionalPerMarketPct ?? null;
 
+    /**
+     * VOLUME-BOUNDED FILLS (see IRREGULARITIES.md #29).
+     *
+     * A candlestick's volume_fp is the number of contracts traded in that period
+     * (verified by arithmetic: the bar volumes of KXBTCY-27JAN0100-T149999.99 sum
+     * to exactly its lifetime volume_fp of 2,032,361.22). So no order — taker or
+     * maker — may fill more than a fraction of the period's REAL traded volume.
+     * Default 0.10. Set null to disable (stress mode only; it is what let a
+     * strategy book +2,005% by "buying" 250,000 contracts on a 400-contract day).
+     */
+    // NB: `?? 0.1` would treat an explicit null (disable) as "not supplied" and
+    // silently keep the cap. undefined => default; null => disabled.
+    this.maxFillFractionOfPeriodVolume =
+      options.maxFillFractionOfPeriodVolume !== undefined ? options.maxFillFractionOfPeriodVolume : 0.1;
+
     /** Normalized, time-merged timeline across all markets. */
     this.timeline = this._buildTimeline();
     if (this.timeline.length === 0) {
@@ -293,8 +308,16 @@ export class ReplayEngine {
       // Settle resting maker orders using THIS market's REAL traded range.
       // (Each book is processed on its own market's period, so a NO-side or
       //  cross-market order is never matched against the wrong price series.)
-      for (const fill of books[t].processRestingFills({ low: candle.trade.low, high: candle.trade.high })) {
+      //
+      // The fill is bounded by the period's REAL traded volume: a resting order
+      // cannot take more contracts than actually changed hands.
+      let volumeLeft = this.maxFillFractionOfPeriodVolume === null
+        ? Infinity
+        : round2(Number(candle.volume || 0) * this.maxFillFractionOfPeriodVolume);
+      const makerFills = books[t].processRestingFills({ low: candle.trade.low, high: candle.trade.high }, volumeLeft);
+      for (const fill of makerFills) {
         portfolio.applyMakerFill(fill, { strategy: username });
+        volumeLeft = round2(volumeLeft - fill.contracts);
       }
 
       const ctx = {
@@ -315,6 +338,9 @@ export class ReplayEngine {
         timestamp: candle.endTs,
         date: candle.endDate,
         isLast: row.indexInSeries === row.seriesLength - 1,
+        // Shared, mutable budget for this (market, period): contracts that may
+        // still be filled before the period's real traded volume runs out.
+        volumeLeft,
         helpers: { round2, round6, clamp, computeKalshiFee, snapToGrid, mulberry32 }
       };
 
@@ -414,6 +440,9 @@ export class ReplayEngine {
       maxNotionalPerMarketPct: this.maxNotionalPerMarketPct,
       cappedOrders: portfolio.cappedOrders || 0,
       cappedContracts: portfolio.cappedContracts || 0,
+      maxFillFractionOfPeriodVolume: this.maxFillFractionOfPeriodVolume,
+      volumeCappedOrders: portfolio.volumeCappedOrders || 0,
+      volumeCappedContracts: portfolio.volumeCappedContracts || 0,
       stats,
       finalEquity: stats.equity,
       returnPct: stats.returnPct,
@@ -430,6 +459,30 @@ export class ReplayEngine {
       positionsOpen: [...portfolio.positions.values()],
       portfolio
     };
+  }
+
+  /**
+   * Cap an order by the contracts that actually traded in this period.
+   * Whatever it refuses is reported as VOLUME-capped, not as a fill.
+   */
+  _applyVolumeCap(requestedCount, ticker, ctx) {
+    if (this.maxFillFractionOfPeriodVolume === null || !(requestedCount > 0)) {
+      return { count: requestedCount, volumeCapped: false };
+    }
+    const left = ctx.volumeLeft ?? 0;
+    if (!(left > 0)) {
+      ctx.portfolio.volumeCappedOrders = (ctx.portfolio.volumeCappedOrders || 0) + 1;
+      ctx.portfolio.volumeCappedContracts = round2((ctx.portfolio.volumeCappedContracts || 0) + requestedCount);
+      return { count: 0, volumeCapped: true };
+    }
+    if (requestedCount <= left) {
+      ctx.volumeLeft = round2(left - requestedCount);
+      return { count: requestedCount, volumeCapped: false };
+    }
+    ctx.volumeLeft = 0;
+    ctx.portfolio.volumeCappedOrders = (ctx.portfolio.volumeCappedOrders || 0) + 1;
+    ctx.portfolio.volumeCappedContracts = round2((ctx.portfolio.volumeCappedContracts || 0) + (requestedCount - left));
+    return { count: left, volumeCapped: true };
   }
 
   /** Notional already committed to one market: open positions + resting orders. */
@@ -477,7 +530,8 @@ export class ReplayEngine {
         case 'market_buy': {
           if (count <= 0) return { status: 'skipped_zero_size' };
           const touch = side === 'yes' ? book.getBestYesAsk() : book.getBestNoAsk();
-          const cap = this._applyMarketCap(count, touch ?? 0.5, ticker, ctx, books);
+          const vol = this._applyVolumeCap(count, ticker, ctx);
+          const cap = this._applyMarketCap(vol.count, touch ?? 0.5, ticker, ctx, books);
           if (cap.count <= 0) {
             ctx.portfolio.cappedOrders = (ctx.portfolio.cappedOrders || 0) + 1;
             ctx.portfolio.cappedContracts = round2((ctx.portfolio.cappedContracts || 0) + count);
@@ -494,7 +548,11 @@ export class ReplayEngine {
         case 'sell':
         case 'market_sell': {
           if (count <= 0) return { status: 'skipped_zero_size' };
-          const exec = portfolio.sellPosition(book, side, count, { strategy: ctx.username, note: action.reason || '' });
+          const sellVol = this._applyVolumeCap(count, ticker, ctx);
+          const exec = sellVol.count > 0
+            ? portfolio.sellPosition(book, side, sellVol.count, { strategy: ctx.username, note: action.reason || '' })
+            : { fillStatus: 'unfilled', requested: count, contracts: 0, unfilled: count, vwap: null, fee: 0, realizedPnl: 0 };
+          if (sellVol.volumeCapped && sellVol.count === 0) return { status: 'capped_no_volume', detail: { requested: count, capReason: 'the period\'s real traded volume was already taken' } };
           const status = exec.fillStatus === 'unfilled' ? 'unfilled_no_depth' : exec.fillStatus === 'partial' ? 'partial_fill' : 'filled';
           return { status, detail: { requested: exec.requested, contracts: exec.contracts, unfilled: exec.unfilled, vwap: exec.vwap, fee: exec.fee, realizedPnl: exec.realizedPnl } };
         }
@@ -502,7 +560,10 @@ export class ReplayEngine {
         case 'limit_order': {
           if (count <= 0) return { status: 'skipped_zero_size' };
           const limitPrice = action.price ?? (action.direction === 'ask' ? book.getBestYesAsk() : book.getBestYesBid());
-          const cap = this._applyMarketCap(count, limitPrice ?? 0.5, ticker, ctx, books);
+          // A resting order is only an INTENT to trade; it is still bounded by the
+          // period's real volume when it fills (see processRestingFills).
+          const volLimit = this._applyVolumeCap(count, ticker, ctx);
+          const cap = this._applyMarketCap(volLimit.count, limitPrice ?? 0.5, ticker, ctx, books);
           if (cap.count <= 0) {
             ctx.portfolio.cappedOrders = (ctx.portfolio.cappedOrders || 0) + 1;
             ctx.portfolio.cappedContracts = round2((ctx.portfolio.cappedContracts || 0) + count);

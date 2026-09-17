@@ -16,7 +16,9 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import {
   KALSHI_CONFIG,
@@ -1235,6 +1237,9 @@ test('46. every verified fact carries a reviewable link and a status', () => {
   //     for exchange documentation.
   const hosts = new Set([
     'docs.kalshi.com', 'kalshi.com', 'external-api.kalshi.com', 'external-api.demo.kalshi.co',
+    // api.elections.kalshi.com is Kalshi's own also-supported production host
+    // (fact V04); the manual candlestick probes in V74 were run against it.
+    'api.elections.kalshi.com',
     'assets.kalshi.com', 'github.com', 'www.cfbenchmarks.com', 'cfbenchmarks.com',
     'tc39.es', 'developer.mozilla.org',
     'laikalabs.ai', 'pith.science', 'www.reddit.com', 'reddit.com', 'www.oddsshopper.com'
@@ -1775,5 +1780,155 @@ test('63. the history audit reports what the store added and what it refused', (
   }
   for (const row of audit.markets.filter((m) => !m.replayable)) {
     assert.ok(row.excludedReason, `${row.ticker}: an excluded market must say why`);
+  }
+});
+
+test('64. a fill can never exceed the contracts that really traded in the period', () => {
+  // Two markets, one deliberately thin: 40 contracts traded in the period.
+  const market = (ticker) => ({
+    ticker,
+    series_ticker: 'KXTEST',
+    status: 'active',
+    price_level_structure: 'linear_cent',
+    price_ranges: [{ start: '0.0000', end: '1.0000', step: '0.0100' }],
+    yes_bid_dollars: '0.4000',
+    yes_ask_dollars: '0.4200',
+    notional_value_dollars: '1.0000'
+  });
+  const candle = (ts, close, volume) => ({
+    end_period_ts: ts,
+    open_interest_fp: '1000.00',
+    volume_fp: volume,
+    price: { open_dollars: String(close), high_dollars: String(close), low_dollars: String(close), close_dollars: String(close), mean_dollars: String(close), previous_dollars: String(close) },
+    yes_bid: { open_dollars: '0.4000', high_dollars: '0.4000', low_dollars: '0.4000', close_dollars: '0.4000' },
+    yes_ask: { open_dollars: '0.4200', high_dollars: '0.4200', low_dollars: '0.4200', close_dollars: '0.4200' }
+  });
+  const thin = 'THIN-TEST';
+  const engine = new ReplayEngine({
+    markets: [market(thin)],
+    candlesByTicker: { [thin]: [candle(1000, 0.41, '40.00'), candle(1000 + 86400, 0.41, '40.00')] },
+    initialCapital: 1000000,
+    maxFillFractionOfPeriodVolume: 0.1 // 4 contracts per period
+  });
+
+  const greedy = {
+    username: 'Greedy_Taker',
+    decide: (ctx) => [{ type: 'buy', side: 'YES', count: 100000, reason: 'take everything' }]
+  };
+  const res = engine.run(greedy, { username: 'Greedy_Taker', seed: 1 });
+  const filled = res.tradeLog.filter((t) => Number(t.contracts) > 0);
+  assert.ok(filled.length > 0, 'some contracts should fill — the book is not empty');
+  for (const t of filled) {
+    assert.ok(Number(t.contracts) <= 4 + 1e-9, `a fill may not exceed 10% of 40 contracts, got ${t.contracts}`);
+  }
+  assert.ok(res.volumeCappedContracts > 0, 'the refused size must be reported, not silently dropped');
+  assert.equal(res.maxFillFractionOfPeriodVolume, 0.1);
+
+  // And with the bound disabled the same strategy takes far more — which is why
+  // the bound exists (see IRREGULARITIES.md #29).
+  const unbounded = new ReplayEngine({
+    markets: [market(thin)],
+    candlesByTicker: { [thin]: [candle(1000, 0.41, '40.00'), candle(1000 + 86400, 0.41, '40.00')] },
+    initialCapital: 1000000,
+    maxFillFractionOfPeriodVolume: null
+  }).run(greedy, { username: 'Greedy_Taker', seed: 1 });
+  const unboundedFilled = unbounded.tradeLog.reduce((s, t) => s + Number(t.contracts || 0), 0);
+  const boundedFilled = res.tradeLog.reduce((s, t) => s + Number(t.contracts || 0), 0);
+  assert.ok(unboundedFilled > boundedFilled * 100, 'without the bound the same order fills orders of magnitude more');
+  assert.equal(unbounded.volumeCappedContracts, 0);
+});
+
+test('65. per-market capital allocation scales an order down without inventing a fill', () => {
+  const market = {
+    ticker: 'CAP-TEST',
+    series_ticker: 'KXTEST',
+    status: 'active',
+    price_level_structure: 'linear_cent',
+    price_ranges: [{ start: '0.0000', end: '1.0000', step: '0.0100' }],
+    yes_bid_dollars: '0.5000',
+    yes_ask_dollars: '0.5200',
+    notional_value_dollars: '1.0000'
+  };
+  const candles = Array.from({ length: 5 }, (_, i) => ({
+    end_period_ts: 1000 + i * 86400,
+    open_interest_fp: '1000000.00',
+    volume_fp: '1000000.00',
+    price: { open_dollars: '0.5100', high_dollars: '0.5100', low_dollars: '0.5100', close_dollars: '0.5100', mean_dollars: '0.5100', previous_dollars: '0.5100' },
+    yes_bid: { open_dollars: '0.5000', high_dollars: '0.5000', low_dollars: '0.5000', close_dollars: '0.5000' },
+    yes_ask: { open_dollars: '0.5200', high_dollars: '0.5200', low_dollars: '0.5200', close_dollars: '0.5200' }
+  }));
+
+  // topSize makes the modelled book deep enough that the CAP is the binding
+  // constraint — otherwise modelled depth is what limits the order and the two
+  // runs are identical, which is itself worth knowing.
+  const allIn = { username: 'AllIn_Test', decide: (ctx) => (ctx.periodIndex === 0 ? [{ type: 'buy', side: 'YES', count: 150000 }] : []) };
+  const runOpts = { username: 'AllIn_Test', seed: 3, topSize: 500000 };
+  const capped = new ReplayEngine({
+    markets: [market],
+    candlesByTicker: { 'CAP-TEST': candles },
+    initialCapital: 100000,
+    maxNotionalPerMarketPct: 0.25,
+    maxFillFractionOfPeriodVolume: null
+  }).run(allIn, runOpts);
+
+  // 25% of $100,000 at ~$0.52 ≈ 48,076 contracts — and never more than the cap.
+  const bought = capped.tradeLog.filter((t) => Number(t.contracts) > 0).reduce((s, t) => s + Number(t.contracts), 0);
+  const notional = bought * 0.52;
+  assert.ok(notional <= 25000 + 1, `notional in one market must stay inside 25% of equity, got $${notional.toFixed(2)}`);
+  // The cap is a ceiling, not a target: modelled depth behind the touch is what
+  // actually limits this order, so only assert the ceiling is respected.
+  assert.ok(notional > 20000, `the cap should still let the strategy take most of its 25%, got $${notional.toFixed(2)}`);
+  assert.ok(capped.cappedContracts > 0, 'the size the cap refused is reported');
+
+  const uncapped = new ReplayEngine({
+    markets: [market],
+    candlesByTicker: { 'CAP-TEST': candles },
+    initialCapital: 100000,
+    maxNotionalPerMarketPct: null,
+    maxFillFractionOfPeriodVolume: null
+  }).run(allIn, runOpts);
+  const uncappedBought = uncapped.tradeLog.filter((t) => Number(t.contracts) > 0).reduce((s, t) => s + Number(t.contracts), 0);
+  const uncappedNotional = uncappedBought * 0.52;
+  assert.ok(uncappedNotional > 25000, `without a cap the same strategy concentrates: $${uncappedNotional.toFixed(2)} in one market`);
+  assert.ok(uncappedBought > bought, 'so it holds strictly more contracts than the capped run');
+  assert.equal(uncapped.cappedContracts, 0);
+  assert.equal(uncapped.maxNotionalPerMarketPct, null);
+});
+
+test('66. the static (GitHub Pages) build never pulls a Node-only module into the browser', () => {
+  // The Pages build imports src/app.js directly in the browser. A single static
+  // `import ... from 'node:fs'` anywhere in that graph breaks the whole site at
+  // load time — and it broke silently, because the module is only *reached* in
+  // server mode. history-store.js and kalshi-auth.js are Node-only by design and
+  // must therefore only ever be imported dynamically.
+  const srcDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'src');
+  // Node-only by design: they import node: builtins and are only ever reached
+  // in server mode (or behind `await import()` inside a server-only branch).
+  const nodeOnly = new Set(['history-store.js', 'kalshi-auth.js', 'ws-lite.js']);
+  const staticImporters = [];
+
+  for (const file of readdirSync(srcDir).filter((f) => f.endsWith('.js'))) {
+    const src = readFileSync(path.join(srcDir, file), 'utf8');
+    // Strip comments so a documented `import` in prose is not read as code.
+    const code = src.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
+    const re = /\bimport\s+[^;]*?\sfrom\s*['"]([^'"]+)['"]/g;
+    let m;
+    while ((m = re.exec(code))) {
+      const spec = m[1];
+      const target = spec.startsWith('./') ? spec.slice(2) : null;
+      if (target && nodeOnly.has(target)) staticImporters.push(`${file} statically imports ${target}`);
+      if (spec.startsWith('node:')) {
+        assert.ok(nodeOnly.has(file), `${file} imports ${spec} but is not declared Node-only`);
+      }
+    }
+  }
+  assert.deepEqual(staticImporters, [], 'Node-only modules must be imported with await import() only');
+
+  // And the modules the browser does load must not import Node built-ins at all.
+  const browserRoots = ['app.js', 'strategy-runner.js', 'simulation-engine.js', 'accumulated-history.js', 'history-merge.js'];
+  for (const root of browserRoots) {
+    const src = readFileSync(path.join(srcDir, root), 'utf8');
+    const code = src.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
+    assert.ok(!/\bfrom\s*['"]node:/.test(code), `${root} must stay browser-safe (no static node: imports)`);
   }
 });
