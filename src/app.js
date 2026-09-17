@@ -418,7 +418,7 @@ function renderLeaderboard() {
     starting capital ${esc(money(c.initialCapital, 0))} · generated ${esc(new Date(c.generatedAt || Date.now()).toISOString().slice(0, 19).replace('T', ' '))}Z.
     ${sourcePill('VERIFIED_SNAPSHOT')} <span class="pill pill-muted" title="${esc(prov.depthModelNote || '')}">depth behind touch: SIMULATED</span>
     ${c.maxFillFractionOfPeriodVolume === null
-      ? '<span class="pill pill-sim" title="Fills are NOT bounded by the period\'s real traded volume — stress mode.">VOLUME BOUND: OFF</span>'
+      ? '<span class="pill pill-sim" title="Fills are NOT bounded by that period\'s real traded volume. This reproduces the artefact recorded as Irregularity #29 — returns no real order book would have paid.">VOLUME BOUND: OFF — unrealistic</span>'
       : `<span class="pill pill-live" title="No order may fill more than this share of the contracts that really traded in that daily bar.">fills &le; ${esc(Math.round((c.maxFillFractionOfPeriodVolume ?? 0.1) * 100))}% of each bar\'s real volume</span>`}
     ${c.maxNotionalPerMarketPct ? `<span class="pill pill-muted">cap ${esc(Math.round(c.maxNotionalPerMarketPct * 100))}% of equity per market</span>` : ''}
     ${c.settleAtEnd ? '<span class="pill pill-sim">SETTLEMENT: HYPOTHETICAL</span>' : '<span class="pill pill-muted">positions marked at last real quote</span>'}

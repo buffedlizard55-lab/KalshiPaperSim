@@ -110,12 +110,19 @@ let competitionCache = null;
 let competitionCacheKey = null;
 
 function getCompetition(options = {}) {
+  // Every option that changes the numbers must be in this key, or a request for
+  // an unusual configuration is silently answered with the default run. The two
+  // replay bounds are the important ones: `null` means "disabled" and must not
+  // be folded into the default by `??`.
   const key = JSON.stringify({
     seed: options.seed ?? 20260917,
     settleAtEnd: Boolean(options.settleAtEnd),
     finalResult: options.finalResult || null,
     regime: options.regime || 'baseline',
-    capital: options.initialCapital ?? 100000
+    capital: options.initialCapital ?? 100000,
+    maxNotionalPerMarketPct: options.maxNotionalPerMarketPct === undefined ? 'default' : options.maxNotionalPerMarketPct,
+    maxFillFractionOfPeriodVolume:
+      options.maxFillFractionOfPeriodVolume === undefined ? 'default' : options.maxFillFractionOfPeriodVolume
   });
   if (competitionCache && competitionCacheKey === key) return competitionCache;
   const result = runCompetition(options);
@@ -486,6 +493,21 @@ const server = http.createServer(async (req, res) => {
 
     if (p === '/api/run-competition' && req.method === 'POST') {
       const body = await readBody(req);
+
+      // Fill realism (Irregularity #29). Every fill — taker or resting maker —
+      // is bounded by the contracts that really traded in that daily bar, 10% by
+      // default. `null` switches the bound off and is accepted deliberately, so
+      // the artefact it removes can be reproduced; the response says so.
+      let fillBound;
+      if (body.maxFillFractionOfPeriodVolume !== undefined && body.maxFillFractionOfPeriodVolume !== null) {
+        fillBound = Number(body.maxFillFractionOfPeriodVolume);
+        if (!Number.isFinite(fillBound) || fillBound <= 0 || fillBound > 1) {
+          return sendJSON(res, 400, { error: 'maxFillFractionOfPeriodVolume must be null or a number in (0, 1]' });
+        }
+      } else if (body.maxFillFractionOfPeriodVolume === null) {
+        fillBound = null;
+      }
+
       const comp = getCompetition({
         seed: Number(body.seed ?? 20260917),
         settleAtEnd: Boolean(body.settleAtEnd),
@@ -495,9 +517,14 @@ const server = http.createServer(async (req, res) => {
         // Per-market capital allocation (item #7): null = no cap (the
         // competition default). A number caps each market's notional as a
         // fraction of equity, e.g. 0.25.
-        maxNotionalPerMarketPct: body.maxNotionalPerMarketPct ?? null
+        maxNotionalPerMarketPct: body.maxNotionalPerMarketPct ?? null,
+        maxFillFractionOfPeriodVolume: fillBound
       });
       return sendJSON(res, 200, {
+        notice:
+          comp.competition.maxFillFractionOfPeriodVolume === null
+            ? 'The volume bound is OFF. Fills are then limited only by modelled depth, which reproduces the artefact recorded as Irregularity #29 (returns of +2,005% that the real order book would never have paid). Every number in this response is unrealistic.'
+            : null,
         competition: comp.competition,
         leaderboard: comp.leaderboard,
         marketStats: comp.marketStats,
