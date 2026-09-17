@@ -1,0 +1,22 @@
+{
+  "name": "kalshi-paper-sim",
+  "version": "1.0.0",
+  "description": "Paper Trading Kalshi Simulation Competition Platform with Real-Time Prices, Reciprocal Liquidity, Market Making, and 1-Year Strategy Performance Tracking",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/simulation.test.js",
+    "build": "node build.js"
+  },
+  "keywords": [
+    "kalshi",
+    "paper-trading",
+    "prediction-markets",
+    "algorithmic-trading",
+    "market-making",
+    "trading-competition"
+  ],
+  "author": "buffedlizard55-lab",
+  "license": "MIT"
+}
