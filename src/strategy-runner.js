@@ -16,7 +16,7 @@ import { getVerifiedMarkets, getVerifiedCandlesticks, CANDLESTICKS, CAPTURE_META
 import {
   EXTENDED_CAPTURE_META, getExtendedCandlesticks, summarizeExtendedSeries, EXTENDED_SERIES
 } from './verified-candles.js';
-import { ACCUMULATED_HISTORY } from './accumulated-history.js';
+import { ACCUMULATED_HISTORY, getAccumulatedBars } from './accumulated-history.js';
 import { buildReplayUniverse, summarizeUniverse, MIN_REPLAY_BARS, CANDLE_ORIGIN } from './history-merge.js';
 
 /** Data-source label for bars that came from the daily ingest job, not a capture. */
@@ -37,6 +37,22 @@ export function getRepoCandleMap(tickers = null) {
 }
 
 /**
+ * The accumulated store with its compact tuples expanded back into real bars.
+ * Built once and reused: the competition, the coverage table and the audit all
+ * ask for it, and re-expanding thousands of bars on every call is wasteful.
+ */
+let __accumulatedView = null;
+export function accumulatedView() {
+  if (__accumulatedView) return __accumulatedView;
+  const markets = {};
+  for (const [ticker, m] of Object.entries(ACCUMULATED_HISTORY.markets || {})) {
+    markets[ticker] = { ...m, bars: getAccumulatedBars(ticker) || [] };
+  }
+  __accumulatedView = { ...ACCUMULATED_HISTORY, markets };
+  return __accumulatedView;
+}
+
+/**
  * The replay universe.
  *
  * Recommended-work item #3: this is where the accumulated store finally feeds
@@ -49,7 +65,7 @@ export function buildUniverse(options = {}) {
   return buildReplayUniverse({
     verifiedMarkets: getVerifiedMarkets(),
     repoCandles: getRepoCandleMap(),
-    accumulated: options.accumulated || ACCUMULATED_HISTORY,
+    accumulated: options.accumulated || accumulatedView(),
     minBars: options.minBars ?? MIN_REPLAY_BARS
   });
 }

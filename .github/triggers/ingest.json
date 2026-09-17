@@ -1,11 +1,16 @@
 {
-  "_README": "Commit a change to this file to request an ingest run (.github/workflows/ingest-now.yml). It runs on a GitHub-hosted runner, which — unlike the build sandbox — can reach external-api.kalshi.com. Every field is passed straight to scripts/ingest-history.mjs.",
+  "_README": "Commit a change to this file to request an ingest run (.github/workflows/ingest-now.yml). It runs on a GitHub-hosted runner, which \u2014 unlike the build sandbox \u2014 can reach external-api.kalshi.com. Every field is passed straight to scripts/ingest-history.mjs.",
   "enabled": true,
-  "days": 90,
+  "days": 0,
   "with_books": true,
   "with_market": true,
   "min_volume": 20000,
   "max_markets": 10,
-  "series": ["KXNASDAQ100Y", "KXBTCY", "KXINXY"],
-  "tickers": []
+  "series": [
+    "KXNASDAQ100Y",
+    "KXBTCY",
+    "KXINXY"
+  ],
+  "tickers": [],
+  "full_backfill": true
 }

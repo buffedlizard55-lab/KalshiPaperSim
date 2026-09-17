@@ -55,7 +55,8 @@ jobs:
               "--with-books=" + (t.with_books ? "true" : "false"),
               "--with-market=" + (t.with_market === false ? "false" : "true"),
               "--min-volume=" + (t.min_volume ?? 0),
-              "--max-markets=" + (t.max_markets ?? 0)
+              "--max-markets=" + (t.max_markets ?? 0),
+              (t.full_backfill ? "--full-backfill" : "--no-full-backfill")
             ];
             if (Array.isArray(t.series) && t.series.length) args.push("--series=" + t.series.join(","));
             if (Array.isArray(t.tickers) && t.tickers.length) args.push("--tickers=" + t.tickers.join(","));

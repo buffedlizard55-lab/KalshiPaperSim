@@ -42,6 +42,78 @@ function readJsonSafe(p) {
   }
 }
 
+/**
+ * Compact tuple for one bar.
+ *
+ * WHY: the verbatim store is ~600 bytes per bar, and a full backfill of 30
+ * markets is ~7,500 bars — a 4.5 MB module is not something to ship to a
+ * browser. The tuple below is ~100 bytes. Values are encoded as INTEGERS:
+ * Kalshi's FixedPointDollars are always 4 decimal places and its *_fp fields
+ * always 2 (verified across all 33,562 price values in the store at the time
+ * this was written), so `1300` means "0.1300" and `16331988` means "163319.88".
+ * The encoder ASSERTS those decimal counts and refuses to write a file if any
+ * value deviates, so an unexpected precision can never be silently rounded.
+ *
+ * Layout: [ end_period_ts, open_interest_fp, volume_fp,
+ *           price[open, high, low, close, mean, previous],
+ *           yes_bid[open, high, low, close],
+ *           yes_ask[open, high, low, close] ]
+ * A price that the exchange did not report (a no-trade period returns only
+ * previous_dollars, verified in data/history/) is stored as null and omitted
+ * again on expansion, so the round trip is lossless.
+ *
+ * `expandAccumulatedBar()` is the inverse, and every market also ships a
+ * `verbatim_sample_bar`: one bar kept character-for-character as the API sent
+ * it. test/simulation.test.js asserts tuple → expand reproduces that sample
+ * exactly, so a compaction bug shows up as a test failure rather than as a
+ * silently altered price. Belt and braces: if a round trip ever did alter a
+ * bar, the merge rule in src/history-merge.js would reject the stored series
+ * and fall back to the in-repo capture.
+ */
+/** Fail the whole build rather than silently round a value we did not expect. */
+function assertDecimals(value, places, where) {
+  const s = String(value);
+  const dot = s.indexOf('.');
+  const seen = dot === -1 ? 0 : s.length - dot - 1;
+  if (seen !== places) {
+    throw new Error(
+      `${where}: expected ${places} decimal place(s) but got ${seen} in "${s}". ` +
+        'The compact encoder refuses to guess — fix the encoder or keep this field as a string.'
+    );
+  }
+  return Math.round(Number(s) * 10 ** places);
+}
+
+function barToTuple(b) {
+  const where = `bar end_period_ts=${b.end_period_ts}`;
+  const enc = (v, places, field) => (v === undefined || v === null ? null : assertDecimals(v, places, `${where} ${field}`));
+  const p = b.price || {};
+  const bid = b.yes_bid || {};
+  const ask = b.yes_ask || {};
+  const six = (o, side) => [
+    enc(o.open_dollars, 4, `${side}.open_dollars`),
+    enc(o.high_dollars, 4, `${side}.high_dollars`),
+    enc(o.low_dollars, 4, `${side}.low_dollars`),
+    enc(o.close_dollars, 4, `${side}.close_dollars`),
+    enc(o.mean_dollars, 4, `${side}.mean_dollars`),
+    enc(o.previous_dollars, 4, `${side}.previous_dollars`)
+  ];
+  const four = (o, side) => [
+    enc(o.open_dollars, 4, `${side}.open_dollars`),
+    enc(o.high_dollars, 4, `${side}.high_dollars`),
+    enc(o.low_dollars, 4, `${side}.low_dollars`),
+    enc(o.close_dollars, 4, `${side}.close_dollars`)
+  ];
+  return [
+    Number(b.end_period_ts),
+    enc(b.open_interest_fp, 2, 'open_interest_fp'),
+    enc(b.volume_fp, 2, 'volume_fp'),
+    six(p, 'price'),
+    four(bid, 'yes_bid'),
+    four(ask, 'yes_ask')
+  ];
+}
+
 function buildMarkets() {
   if (!fs.existsSync(DATA_DIR)) return { markets: {}, files: 0 };
   const markets = {};
@@ -52,7 +124,11 @@ function buildMarkets() {
     if (!store || typeof store.ticker !== 'string') continue;
     const bars = Array.isArray(store.candlesticks) ? store.candlesticks : [];
     bars.sort((a, b) => Number(a.end_period_ts) - Number(b.end_period_ts));
+    const tuples = bars.map(barToTuple);
     markets[store.ticker] = {
+      // One bar kept exactly as the exchange sent it — the oracle for expandAccumulatedBar().
+      verbatim_sample_bar: tuples.length ? JSON.parse(JSON.stringify(bars[0])) : null,
+      tuples,
       ticker: store.ticker,
       series_ticker: store.series_ticker || null,
       period_interval: store.period_interval ?? 1440,
@@ -73,8 +149,7 @@ function buildMarkets() {
       result: store.result || store.market?.result || null,
       conflict_count: Array.isArray(store.conflicts) ? store.conflicts.length : 0,
       conflicts: (store.conflicts || []).slice(-10),
-      book_snapshots: Array.isArray(store.books) ? store.books.length : 0,
-      bars
+      book_snapshots: Array.isArray(store.books) ? store.books.length : 0
     };
     files += 1;
   }
@@ -94,9 +169,12 @@ function main() {
  * the store written by scripts/ingest-history.mjs from the official Kalshi API.
  * Run \`npm run build\` or the ingest workflow to regenerate it.
  *
- * Every bar below is copied verbatim from a live response to
- *   GET /series/{series_ticker}/markets/{ticker}/candlesticks
- *   https://docs.kalshi.com/api-reference/market/get-market-candlesticks
+ * Bars are stored as COMPACT TUPLES and expanded by expandAccumulatedBar(); every
+ * price is the exact FixedPointDollars string the exchange returned — nothing is
+ * parsed, rounded or interpolated. Each market also carries a
+ * verbatim_sample_bar (one bar, character-for-character as received) and a test
+ * asserts the expander reproduces it exactly.
+ *
  * Order-book snapshots are deliberately excluded (they stay in data/history/ for
  * the Node server; they are far too large for a browser module).
  *
@@ -115,14 +193,46 @@ export const ACCUMULATED_HISTORY = ${JSON.stringify(
       manifestTotals: manifest?.totals || null,
       markets
     },
-    null,
-    2
   )};
+
+/**
+ * The inverse of the tuple layout above. A price the exchange did not report is
+ * null and is omitted from the rebuilt object, so a no-trade bar comes back with
+ * the same shape it arrived in (price.previous_dollars only).
+ */
+export function expandAccumulatedBar(t) {
+  const [ts, oi, vol, p, bid, ask] = t;
+  const px = (n) => (n === null || n === undefined ? null : (n / 10000).toFixed(4));
+  const fp = (n) => (n === null || n === undefined ? null : (n / 100).toFixed(2));
+  const price = {};
+  if (p[3] !== null) price.close_dollars = px(p[3]);
+  if (p[1] !== null) price.high_dollars = px(p[1]);
+  if (p[2] !== null) price.low_dollars = px(p[2]);
+  if (p[4] !== null) price.mean_dollars = px(p[4]);
+  if (p[0] !== null) price.open_dollars = px(p[0]);
+  if (p[5] !== null) price.previous_dollars = px(p[5]);
+  const side = (a) => {
+    const o = {};
+    if (a[0] !== null) o.open_dollars = px(a[0]);
+    if (a[1] !== null) o.high_dollars = px(a[1]);
+    if (a[2] !== null) o.low_dollars = px(a[2]);
+    if (a[3] !== null) o.close_dollars = px(a[3]);
+    return o;
+  };
+  return {
+    end_period_ts: ts,
+    open_interest_fp: fp(oi),
+    price,
+    volume_fp: fp(vol),
+    yes_ask: side(ask),
+    yes_bid: side(bid)
+  };
+}
 
 /** Every bar stored for one ticker, or null when that market is not tracked. */
 export function getAccumulatedBars(ticker) {
   const m = ACCUMULATED_HISTORY.markets[ticker];
-  return m ? m.bars : null;
+  return m ? m.tuples.map(expandAccumulatedBar) : null;
 }
 
 /** The raw stored record for one ticker (bars + captured market object). */

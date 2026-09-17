@@ -40,9 +40,14 @@
  *   node scripts/ingest-history.mjs --tickers=A,B          # explicit tickers
  *   node scripts/ingest-history.mjs --series=KXNASDAQ100Y  # every market of a series
  *   node scripts/ingest-history.mjs --with-books           # also capture depth
- *   node scripts/ingest-history.mjs --days=120             # backfill window on a cold store
+ *   node scripts/ingest-history.mjs --days=120             # backfill a fixed 120-day window
+ *                                                          # (--days=0, the default, backfills from
+ *                                                          #  the market's real open_time, capped by
+ *                                                          #  --max-backfill-days=400)
  *   node scripts/ingest-history.mjs --dry-run              # show what would be fetched
  *   node scripts/ingest-history.mjs --verify               # no network: audit the store
+ *   node scripts/ingest-history.mjs --full-backfill        # re-read the whole history from each
+ *                                                          # market's open_time (merge is additive)
  *   node scripts/ingest-history.mjs --cutoff               # print the live retention cutoff
  *
  * NOTE ON THIS SANDBOX: direct TLS to *.kalshi.com is blocked from the build
@@ -74,7 +79,9 @@ function parseArgs(argv) {
   const args = {
     tickers: null,
     series: null,
-    days: 90,
+    days: 0, // 0 = backfill from the market's real open_time (see WINDOW_DAYS)
+    maxBackfillDays: 400,
+    fullBackfill: false,
     withBooks: false,
     // Capture GET /markets/{ticker} alongside the bars. The replay needs the real
     // market object (price_level_structure, strike, series, status) to build a
@@ -94,6 +101,8 @@ function parseArgs(argv) {
     if (k === 'tickers') args.tickers = v.split(',').map((s) => s.trim()).filter(Boolean);
     else if (k === 'series') args.series = v.split(',').map((s) => s.trim()).filter(Boolean);
     else if (k === 'days') args.days = Number(v);
+    else if (k === 'max-backfill-days') args.maxBackfillDays = Number(v);
+    else if (k === 'full-backfill') args.fullBackfill = v !== 'false';
     else if (k === 'min-volume') args.minVolume = Number(v);
     else if (k === 'max-markets') args.maxMarkets = Number(v);
     else if (k === 'with-market') args.withMarket = v !== 'false';
@@ -326,6 +335,17 @@ async function discoverSeriesMarkets(seriesTicker, args) {
   return kept.map((r) => r.ticker);
 }
 
+/**
+ * Backfill in bounded windows. No bar cap is documented for the candlesticks
+ * endpoint, so rather than assume one we page through fixed windows and let the
+ * merge de-duplicate. Verified: the previous session's 61-bar T33000 series was
+ * not the API's limit — it was the start_ts that was asked for. Probing the same
+ * market with a 1-day window at 2026-01-01, 2026-03-01 and 2026-05-01 each
+ * returned a real bar, all of them BEFORE the /historical/cutoff date of
+ * 2026-07-19 (see src/verified-history-window.js).
+ */
+const WINDOW_DAYS = 180;
+
 async function ingestMarket(ticker, args) {
   const seriesTicker = deriveSeriesTicker(ticker);
   let store = readStore(ticker);
@@ -343,35 +363,9 @@ async function ingestMarket(ticker, args) {
     }
   }
 
-  const last = store.candlesticks.length ? Number(store.candlesticks[store.candlesticks.length - 1].end_period_ts) : null;
-  const endTs = Math.floor(Date.now() / 1000);
-  const startTs = last ? last + 1 : endTs - args.days * DAY;
-
-  if (startTs >= endTs) {
-    return { ticker, series: seriesTicker, added: 0, total: store.candlesticks.length, skipped: 'store_already_current' };
-  }
-
-  const url =
-    `${BASE}${KALSHI_PATHS.candlesticks(seriesTicker, ticker)}` +
-    `?start_ts=${startTs}&end_ts=${endTs}&period_interval=1440`;
-
-  if (args.dryRun) {
-    console.log(`[dry-run] ${ticker}: would GET ${url} (store has ${store.candlesticks.length} bar(s), last ${last ? new Date(last * 1000).toISOString() : 'none'})`);
-    return { ticker, series: seriesTicker, added: 0, total: store.candlesticks.length, skipped: 'dry_run', url };
-  }
-
-  const res = await getJson(url, { timeoutMs: args.timeoutMs });
-  if (!res.ok) {
-    return { ticker, series: seriesTicker, error: res.error, url, total: store.candlesticks.length };
-  }
-
-  const fetched = res.json.candlesticks || [];
-  const { bars, added, conflicts } = mergeBars(store.candlesticks, fetched);
-
-  // Real market object for this ticker. Candlesticks alone are not enough to
-  // replay a market: the engine needs price_level_structure, strike, series and
-  // status, and none of those are in a bar. Captured from the official endpoint
-  // and stored verbatim; a failure is recorded, never guessed.
+  // Real market object FIRST: candlesticks alone cannot be replayed (the engine
+  // needs price_level_structure, strike, series and status), and the market's
+  // open_time is what a full backfill starts from.
   let marketCaptured = false;
   if (args.withMarket) {
     const marketUrl = `${BASE}${KALSHI_PATHS.market(ticker)}`;
@@ -390,6 +384,76 @@ async function ingestMarket(ticker, args) {
       ];
     }
     await sleep(args.minIntervalMs);
+  }
+
+  const last = store.candlesticks.length ? Number(store.candlesticks[store.candlesticks.length - 1].end_period_ts) : null;
+  const endTs = Math.floor(Date.now() / 1000);
+  const openTs = store.market?.open_time ? Math.floor(new Date(store.market.open_time).getTime() / 1000) : null;
+  const capTs = endTs - args.maxBackfillDays * DAY;
+  // Backfill start: newest stored bar + 1 (incremental), else the market's real
+  // open time, else args.days, else the cap.
+  let startTs;
+  if (last && !args.fullBackfill) startTs = last + 1;
+  else if (args.days > 0) startTs = endTs - args.days * DAY;
+  else if (openTs) startTs = Math.max(openTs - DAY, capTs);
+  else startTs = capTs;
+
+  if (args.fullBackfill && last) {
+    console.log(`• ${ticker}: --full-backfill — re-reading from ${new Date(startTs * 1000).toISOString()} (store keeps its ${store.candlesticks.length} bar(s); the merge never overwrites one)`);
+  }
+
+  if (startTs >= endTs) {
+    return { ticker, series: seriesTicker, added: 0, total: store.candlesticks.length, skipped: 'store_already_current', market: marketCaptured ? 'captured' : (args.withMarket ? 'FAILED' : 'not_requested') };
+  }
+
+  const windows = [];
+  for (let w = startTs; w < endTs; w += WINDOW_DAYS * DAY) {
+    windows.push([w, Math.min(w + WINDOW_DAYS * DAY - 1, endTs)]);
+  }
+
+  if (args.dryRun) {
+    console.log(
+      `[dry-run] ${ticker}: would GET ${windows.length} window(s) from ` +
+        `${new Date(startTs * 1000).toISOString()} (store has ${store.candlesticks.length} bar(s)` +
+        `${openTs ? `, market opened ${new Date(openTs * 1000).toISOString()}` : ''})`
+    );
+    for (const [a, b] of windows) {
+      console.log(`    ${`${BASE}${KALSHI_PATHS.candlesticks(seriesTicker, ticker)}`}?start_ts=${a}&end_ts=${b}&period_interval=1440`);
+    }
+    return { ticker, series: seriesTicker, added: 0, total: store.candlesticks.length, skipped: 'dry_run', windows: windows.length };
+  }
+
+  let added = 0;
+  let conflicts = [];
+  let bars = store.candlesticks;
+  let firstError = null;
+  let lastUrl = null;
+
+  for (const [a, b] of windows) {
+    const url =
+      `${BASE}${KALSHI_PATHS.candlesticks(seriesTicker, ticker)}` +
+      `?start_ts=${a}&end_ts=${b}&period_interval=1440`;
+    lastUrl = url;
+    const res = await getJson(url, { timeoutMs: args.timeoutMs });
+    if (!res.ok) {
+      firstError = res.error;
+      store.fetchErrors = [...(store.fetchErrors || []), { at: new Date().toISOString(), url, error: res.error }];
+      await sleep(args.minIntervalMs);
+      continue;
+    }
+    const merge = mergeBars(bars, res.json.candlesticks || []);
+    bars = merge.bars;
+    added += merge.added;
+    conflicts = conflicts.concat(merge.conflicts);
+    await sleep(args.minIntervalMs);
+  }
+
+  if (conflicts.length > 0) {
+    store.conflicts = [...(store.conflicts || []), ...conflicts.map((c) => ({ detected_at: new Date().toISOString(), ...c }))];
+  }
+
+  if (firstError && added === 0 && store.candlesticks.length === 0) {
+    return { ticker, series: seriesTicker, error: firstError, url: lastUrl, total: store.candlesticks.length, market: marketCaptured ? 'captured' : 'FAILED' };
   }
 
   store.candlesticks = bars;
@@ -434,7 +498,9 @@ async function ingestMarket(ticker, args) {
     market: marketCaptured ? 'captured' : (args.withMarket ? 'FAILED' : 'not_requested'),
     status: store.status || null,
     result: store.result || null,
-    url
+    windows: windows.length,
+    error: firstError || null,
+    url: lastUrl
   };
 }
 
@@ -462,9 +528,13 @@ async function main() {
   for (const ticker of tickers) {
     const row = await ingestMarket(ticker, args);
     summary.push(row);
-    if (row.error) {
+    if (row.error && !row.added) {
       failures += 1;
       console.error(`✗ ${ticker}: ${row.error}`);
+    } else if (row.error && row.added) {
+      // Some windows succeeded and some did not: say so, do not hide it.
+      failures += 0;
+      console.error(`⚠ ${ticker}: +${row.added} bar(s) stored, but ${row.error} (see store.fetchErrors)`);
     } else if (row.skipped) {
       console.log(`• ${ticker}: ${row.skipped} (${money(row.total)} bar(s) stored)`);
     } else {
