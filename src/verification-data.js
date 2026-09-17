@@ -460,7 +460,117 @@ export const VERIFIED_FACTS = Object.freeze([
     evidenceLabel: 'exhaustionPolicy in src/simulation-engine.js — reviewable in the repository',
     usedIn: 'src/simulation-engine.js; src/backtest-replay.js',
     irregularity: '#12'
-  }
+  },
+
+  /* ── 9. Second verified market (session 2 capture) ───────────────── */
+  {
+    id: 'V60', group: 'Captured market data', status: 'CAPTURED',
+    fact: 'KXNASDAQ100Y-26DEC31H1600-T19000 has a full 61-bar daily window, aligned period-for-period with T33000',
+    value: '61 daily bars, 1784433600 (2026-07-19) → 1789617600 (2026-09-17), 86400 s apart with no gaps; 5 no-trade periods',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440',
+    doc: 'https://docs.kalshi.com/api-reference/market/get-market-candlesticks',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-candles.js → KXNASDAQ100Y_T19000_DAILY / EXTENDED_CAPTURE_META_T19000'
+  },
+  {
+    id: 'V61', group: 'Captured market data', status: 'CAPTURED',
+    fact: 'The new 61-bar capture is a deep-verified superset of the earlier 14-bar snapshot of the same market',
+    value: 'All 14 overlapping bars match field-for-field (end_period_ts, open_interest_fp, volume_fp, price.*, yes_bid.*, yes_ask.*) under a sorted-key deep comparison',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1788393600&end_ts=1789603200&period_interval=1440',
+    capturedAt: '2026-09-17',
+    usedIn: 'test/simulation.test.js → test 54 ("deep-verified superset")'
+  },
+  {
+    id: 'V62', group: 'Captured market data', status: 'CAPTURED',
+    fact: 'A period with no trades returns an empty price object — only previous_dollars',
+    value: '{"price":{"previous_dollars":"0.0300"},"volume_fp":"0.00"} — 5 of 61 bars in the T19000 capture',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/verified-candles.js → expandBar() null handling; src/backtest-replay.js → normalizeCandles()'
+  },
+  {
+    id: 'V63', group: 'Captured market data', status: 'DERIVED',
+    fact: 'Cross-market correlation of the two Nasdaq-100 strikes over the shared window',
+    value: 'Pearson ρ = +0.147 on 55 usable daily close-to-close dollar changes (61 shared periods, 5 no-trade periods excluded)',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440',
+    usedIn: 'src/market-analytics.js → computeUniverseCorrelation(); test 56'
+  },
+  {
+    id: 'V64', group: 'Captured market data', status: 'CAPTURED',
+    fact: 'KXBTCY has only 14 captured daily bars, so its correlation with the Nasdaq markets is NOT reported',
+    value: '11–13 usable overlapping periods vs the 20-period minimum; the pair is reported as "not computed" rather than extrapolated',
+    url: 'https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1788393600&end_ts=1789603200&period_interval=1440',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/market-analytics.js → computeUniverseCorrelation() minOverlap guard'
+  },
+  {
+    id: 'V65', group: 'Engine correctness', status: 'DERIVED',
+    fact: 'Rounding the average cost to 6 decimals breaks the accounting identity on large positions',
+    value: '0.5e-6 × ~900,000 contracts ≈ $0.45 of phantom cost basis per position, compounding across fills — measured identity error $2.16 on ContrarianKing_100x',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/simulation-engine.js',
+    evidenceLabel: 'round10() in src/simulation-engine.js — reviewable in the repository',
+    usedIn: 'src/simulation-engine.js → round10() applied to avgCost only; test 25'
+  },
+  {
+    id: 'V66', group: 'Engine correctness', status: 'DERIVED',
+    fact: 'JSON.stringify(value, keyArray) filters nested objects, so "verbatim" comparisons of candlestick bars were silently shallow',
+    value: 'JSON.stringify(bar, ["end_period_ts","price"]) serialises the nested price object as {} — two bars with different prices compare equal',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#the_replacer_parameter',
+    usedIn: 'src/json-utils.js → stableStringify/stableEqual'
+  },
+  {
+    id: 'V67', group: 'Engine correctness', status: 'DERIVED',
+    fact: 'The equity curve now always terminates at finalEquity even when the last timestamp spans several markets',
+    value: 'Before the fix the two-market universe ended the curve $9,086.73 away from finalEquity (36,789.43 vs 27,702.70)',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/backtest-replay.js',
+    evidenceLabel: 'final curve point reconciliation in src/backtest-replay.js — reviewable in the repository',
+    usedIn: 'src/backtest-replay.js → final curve point reconciliation'
+  },
+  {
+    id: 'V68', group: 'Settlement', status: 'DOCUMENTED',
+    fact: 'A binary contract pays notional_value_dollars ($1.00) to the winning side and $0.00 to the losing side, with no settlement fee',
+    value: '"There is no settlement fee." — fee schedule effective 2026-07-07',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    usedIn: 'src/settlement-tracker.js → buildSettlementPlan(); SETTLEMENT_FEE_USD = 0'
+  },
+  {
+    id: 'V70', group: 'Strategy sources', status: 'DOCUMENTED',
+    fact: 'Favorite-longshot bias: "fade the longshot" is a published retail/systematic approach on Kalshi',
+    value: 'Filter contracts priced 5c-15c and sell/Yes-fade them as maker; buy heavy favorites in the 85c-95c band',
+    url: 'https://laikalabs.ai/prediction-markets/kalshi-prediction-market-trading-strategies',
+    usedIn: 'src/strategies.js → longshot_fader_flb (LongshotFader_FLB)'
+  },
+  {
+    id: 'V71', group: 'Strategy sources', status: 'DOCUMENTED',
+    fact: 'The favorite-longshot bias is aggregation-dependent — the sign of longshot returns flips between weighting schemes',
+    value: 'Polymarket study (588M trades): longshots lose 6.3c per dollar weighted per contract, but gain 4.1c per dollar when grouped by parent event',
+    url: 'https://pith.science/paper/2609.12878',
+    usedIn: 'src/strategies.js → longshot_fader_flb thesis (stated as a caveat, not a proven edge)'
+  },
+  {
+    id: 'V72', group: 'Strategy sources', status: 'DOCUMENTED',
+    fact: 'Shock-timing: rest limit buys below the pre-shock price at historical drop depths and exit with a resting offer 4-6c higher',
+    value: 'r/PredictionsMarkets build log — "keeping both entry and exit on resting limit orders completely sidesteps the fee drag"',
+    url: 'https://www.reddit.com/r/PredictionsMarkets/comments/1u3rn8s/i_built_a_39_kalshi_trading_bot_to_exploit_world/',
+    usedIn: 'src/strategies.js → panic_dip_shock_timing (PanicDip_ShockTiming)'
+  },
+  {
+    id: 'V73', group: 'Strategy sources', status: 'DOCUMENTED',
+    fact: 'Maker orders are the recommended way to avoid paying the spread, and exiting before settlement is the recommended exit',
+    value: 'OddsHopper Kalshi playbook: "rest limit orders instead of paying the spread", "take profit by selling your position before settlement"',
+    url: 'https://www.oddsshopper.com/articles/prediction-markets/kalshi-trading-strategy',
+    usedIn: 'src/strategies.js → panic_dip_shock_timing exit rule (resting maker offer 5c above cost)'
+  },
+  {
+    id: 'V69', group: 'Settlement', status: 'CAPTURED',
+    fact: 'Every market captured on 2026-09-17 was still unresolved (status "active", result "")',
+    value: 'KXNASDAQ100Y-26DEC31H1600-T33000 / -T19000 and KXBTCY-27JAN0100-T149999.99 all return status=active, result="" ',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000',
+    capturedAt: '2026-09-17',
+    usedIn: 'src/settlement-tracker.js → classifySettlement(); test 57 asserts nothing is booked'
+  },
 ]);
 
 /** Numbered irregularity register. Severity: high | med | low | info. */
@@ -642,6 +752,78 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'Capture 1 is archived, marked usedBySimulator:false, and replaced by capture 2, which passes a reciprocal cross-check against the market object (best NO bid 0.8700 ⇒ implied YES ask 0.1300 = the market’s yes_ask_dollars). The discrepancy is recorded rather than silently resolved.',
     userAction: 'Depth is time-varying: re-fetch the endpoint and compare with capture-2’s _capture metadata.'
+  },
+  {
+    id: 20, severity: 'high',
+    title: 'The "verbatim" comparison used by the expander oracle was shallow — it never compared prices',
+    assumed: 'That JSON.stringify(bar, Object.keys(sample).sort()) proves an expanded tuple equals the captured bar field-for-field.',
+    truth: 'The array form of the replacer argument filters property names at EVERY depth, so nested price / yes_bid / yes_ask objects serialise as {}. Two bars with completely different prices compared equal, meaning the expander oracle (and the ingest merge check) could not have detected a transcription error in any price field.',
+    evidence: [
+      { label: 'MDN: the replacer parameter', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#the_replacer_parameter' },
+      { label: 'Fix + regression test', url: null, text: 'src/json-utils.js → stableStringify(); test 51 asserts the naive comparison is blind and stableEqual is not' }
+    ],
+    action: 'Added src/json-utils.js with stableStringify/stableEqual (recursive, sorted keys) and switched every deep comparison — the expander oracle, the ingest merge conflict check and test 14 / test 54 — to it. Re-running the strict comparison on the existing captures found zero differences, so no stored bar was wrong, but the earlier "verified" claim was weaker than stated.',
+    userAction: 'Run test 51 and 54; both now compare every nested field. Any future "verbatim" check must use stableEqual, never the key-array replacer.'
+  },
+  {
+    id: 21, severity: 'high',
+    title: 'A regime sweep over the replay would require inventing price history',
+    assumed: 'That a 10 strategies × 6 regimes × N seeds matrix could be run against the captured candlesticks.',
+    truth: 'Regime presets change how prices evolve. Applying them to a replay means overwriting real captured bars with synthetic bull/bear/volatile paths — fabricating history, which this repository forbids. The runner has always stated that the replay uses real candles UNMODIFIED.',
+    evidence: [
+      { label: 'Runner disclosure', url: null, text: 'src/strategy-runner.js → competition.regimeNote: "This replay always uses the REAL captured candlesticks UNMODIFIED"' },
+      { label: 'Honest replacement', url: null, text: 'scripts/sensitivity-sweep.mjs: 10 strategies × 3 seeds × 3 universes × 3 settlement scenarios = 270 strategy runs' }
+    ],
+    action: 'Built a sensitivity sweep that varies only what is ours to vary — the seed (modelled depth behind the touch), the market universe, the settlement scenario and the exhaustion policy — and reports the result in SENSITIVITY.md. Every cell replays the same real bars.',
+    userAction: 'Read SENSITIVITY.md. Treat the hypothetical settlement rows as scenarios, not outcomes: none of these contracts had resolved at capture time.'
+  },
+  {
+    id: 22, severity: 'med',
+    title: 'Average cost rounded to 6 decimals broke the accounting identity on 900k-contract positions',
+    assumed: 'That round6 (1e-6) precision on a position\'s average cost is far below any material amount.',
+    truth: 'avgCost is re-rounded on every fill and then multiplied by the contract count. On a 873,542.98-contract position, 0.5e-6 of rounding is up to $0.44 of phantom cost basis, and it compounds across fills: the identity equityChange = realizedPnl + unrealizedPnl − feesPaid was off by $2.16 on ContrarianKing_100x once the market universe was broadened.',
+    evidence: [
+      { label: 'Measured before the fix', url: null, text: 'identityGap = $2.16 vs a $1.04 tolerance (test 25)' },
+      { label: 'Fix in src/simulation-engine.js', url: null, text: 'round10() applied to avgCost only; money values stay at cents for display' }
+    ],
+    action: 'avgCost now uses 10 decimals while all money stays rounded to cents. The identity gap fell to ≤ $0.05 across every strategy, and the settlement/payout code reuses the same helper.',
+    userAction: 'Run test 25; the worst identity gap across the roster is now under five cents.'
+  },
+  {
+    id: 23, severity: 'med',
+    title: 'The equity curve could end somewhere other than finalEquity once more than one market shared the last timestamp',
+    assumed: 'That the last equity-curve point always equals the reported final equity.',
+    truth: 'The replay timeline is ordered by (timestamp, ticker) and a curve point is written only when the timestamp changes. With the broadened universe the final timestamp spans two markets, so the curve was written before the second market was marked: the curve ended at $27,702.70 while finalEquity was $36,789.43.',
+    evidence: [
+      { label: 'Detected by test 24', url: null, text: 'assert.equal(r.finalEquity, last curve point) — expected 27702.7, actual 36789.43' },
+      { label: 'Fix in src/backtest-replay.js', url: null, text: 'the curve always terminates on the final equity (update-in-place when the last point shares the final timestamp)' }
+    ],
+    action: 'The curve is now reconciled to the final equity before settlement, so the chart and the headline number can never disagree.',
+    userAction: 'Compare the last sparkline point with the "Final equity" stat for any strategy — they match.'
+  },
+  {
+    id: 24, severity: 'med',
+    title: 'The daily-history ingest job cannot run from this sandbox',
+    assumed: 'That a scheduled job could append each day\'s candles from the build environment.',
+    truth: 'Direct TLS to *.kalshi.com is dropped from this datacenter IP (irregularity #4). The script works from any normal network and is shipped with a GitHub Actions workflow, which has unrestricted egress, but it has never completed a live run here — so data/history/ is empty and every result still comes from the 2026-09-17 captures.',
+    evidence: [
+      { label: 'Live failure', url: null, text: 'node scripts/ingest-history.mjs → "fetch failed" for all 3 markets; the script exits 1 with the sandbox explanation' },
+      { label: 'Workflow', url: null, text: '.github/workflows/daily-history.yml runs it daily at 06:15 UTC and commits data/history/' }
+    ],
+    action: 'The script refuses to fabricate: on total failure it records the error per market in data/history/_manifest.json and exits non-zero. A --verify mode audits an existing store with no network at all, and --dry-run prints the exact URLs it would call for manual review.',
+    userAction: 'Run `node scripts/ingest-history.mjs --dry-run` to see the URLs, then run it (or let the workflow run it) from a network that can reach external-api.kalshi.com.'
+  },
+  {
+    id: 25, severity: 'low',
+    title: 'KXBTCY has only 14 captured bars, so it joins the replay part-way through',
+    assumed: 'That every market in the universe covers the same window.',
+    truth: 'KXBTCY-27JAN0100-T149999.99 has 14 daily bars (2026-09-03 → 2026-09-17) while both Nasdaq-100 strikes have 61. In the merged timeline the BTC market simply appears in the final 14 periods; it is not back-filled.',
+    evidence: [
+      { label: 'Coverage', url: null, text: 'GET /api/history and GET /api/market-stats both report per-market bar counts' },
+      { label: 'Window', url: 'https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1788393600&end_ts=1789603200&period_interval=1440' }
+    ],
+    action: 'Per-market bar counts are shown in the competition universe panel and in every result\'s dataProvenance, so a shorter window is visible rather than hidden.',
+    userAction: 'Compare the "Bars" column in the Competition universe panel before reading any cross-market comparison.'
   },
   {
     id: 18, severity: 'info',

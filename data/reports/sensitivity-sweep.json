@@ -1,0 +1,4392 @@
+{
+  "generatedAt": "2026-09-17T21:57:43.582Z",
+  "method": "Deterministic replay over the REAL captured candlesticks. Only the seed (modelled depth behind the touch), the market universe, the settlement scenario and the exhaustion policy are varied. Prices are never re-generated.",
+  "matrix": {
+    "strategies": 12,
+    "seeds": [
+      20260917,
+      7,
+      42
+    ],
+    "universes": [
+      {
+        "id": "single_T33000",
+        "label": "1 market (KXNASDAQ100Y-26DEC31H1600-T33000)",
+        "markets": [
+          "KXNASDAQ100Y-26DEC31H1600-T33000"
+        ]
+      },
+      {
+        "id": "same_event_pair",
+        "label": "2 markets, same event (KXNASDAQ100Y-26DEC31H1600-T33000 + KXNASDAQ100Y-26DEC31H1600-T19000)",
+        "markets": [
+          "KXNASDAQ100Y-26DEC31H1600-T33000",
+          "KXNASDAQ100Y-26DEC31H1600-T19000"
+        ]
+      },
+      {
+        "id": "full_universe",
+        "label": "3 markets (everything with real bars)",
+        "markets": [
+          "KXNASDAQ100Y-26DEC31H1600-T33000",
+          "KXNASDAQ100Y-26DEC31H1600-T19000",
+          "KXBTCY-27JAN0100-T149999.99"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "mark_to_market",
+        "label": "Mark to last real quote (observed)",
+        "hypothetical": false
+      },
+      {
+        "id": "settle_yes",
+        "label": "Hypothetical: every contract resolves YES",
+        "hypothetical": true
+      },
+      {
+        "id": "settle_no",
+        "label": "Hypothetical: every contract resolves NO",
+        "hypothetical": true
+      }
+    ],
+    "cells": 27
+  },
+  "dataProvenance": {
+    "candleCoverage": [
+      {
+        "ticker": "KXBTCY-27JAN0100-T149999.99",
+        "bars": 14,
+        "firstTs": 1788408000,
+        "lastTs": 1789531200,
+        "firstDate": "2026-09-03T04:00:00.000Z",
+        "lastDate": "2026-09-16T04:00:00.000Z",
+        "periodIntervalMinutes": 1440,
+        "source": "snapshot_capture",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1788393600&end_ts=1789603200&period_interval=1440",
+        "capturedAt": "2026-09-17",
+        "noTradeBars": 0
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "bars": 61,
+        "firstTs": 1784433600,
+        "lastTs": 1789617600,
+        "firstDate": "2026-07-19T04:00:00.000Z",
+        "lastDate": "2026-09-17T04:00:00.000Z",
+        "periodIntervalMinutes": 1440,
+        "source": "extended_capture_61_bars",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440",
+        "capturedAt": "2026-09-17",
+        "noTradeBars": 0
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "bars": 61,
+        "firstTs": 1784433600,
+        "lastTs": 1789617600,
+        "firstDate": "2026-07-19T04:00:00.000Z",
+        "lastDate": "2026-09-17T04:00:00.000Z",
+        "periodIntervalMinutes": 1440,
+        "source": "extended_capture_61_bars",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440",
+        "capturedAt": "2026-09-17",
+        "noTradeBars": 5
+      }
+    ],
+    "capturedAt": "2026-09-17",
+    "note": "Every cell replays the same real bars. Nothing is bootstrapped, re-sampled or synthetically generated."
+  },
+  "summary": [
+    {
+      "username": "PanicDip_ShockTiming",
+      "title": "Shock-Timing Panic-Dip Buyer (maker ladder)",
+      "cells": 27,
+      "meanReturnPct": 868.61,
+      "worstReturnPct": -99.35,
+      "bestReturnPct": 3776.19,
+      "stdevReturnPct": 1503.33,
+      "profitableCells": 21,
+      "profitablePct": 77.78,
+      "bestRank": 1,
+      "worstRank": 10,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": 80.95,
+          "min": 14.55,
+          "max": 213.52,
+          "stdev": 93.74,
+          "positiveCells": 9,
+          "positivePct": 100
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 2518.49,
+          "min": 213.52,
+          "max": 3776.19,
+          "stdev": 1632.12,
+          "positiveCells": 9,
+          "positivePct": 100
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 6.38,
+          "min": -99.35,
+          "max": 213.52,
+          "stdev": 146.48,
+          "positiveCells": 3,
+          "positivePct": 33.33
+        }
+      ],
+      "meanFeesUsd": 8698.74,
+      "meanMaxDrawdownPct": 62.33,
+      "meanTrades": 32.33,
+      "classification": "CONDITIONAL"
+    },
+    {
+      "username": "ContrarianKing_100x",
+      "title": "Deep-OTM Longshot Convexity Hunter",
+      "cells": 27,
+      "meanReturnPct": 151.06,
+      "worstReturnPct": -99.36,
+      "bestReturnPct": 1027.97,
+      "stdevReturnPct": 368.13,
+      "profitableCells": 9,
+      "profitablePct": 33.33,
+      "bestRank": 2,
+      "worstRank": 11,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": -42.47,
+          "min": -70.05,
+          "max": -0.31,
+          "stdev": 30.01,
+          "positiveCells": 0,
+          "positivePct": 0
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 558.03,
+          "min": 14.36,
+          "max": 1027.97,
+          "stdev": 393.96,
+          "positiveCells": 9,
+          "positivePct": 100
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": -62.38,
+          "min": -99.36,
+          "max": -2.31,
+          "stdev": 42.63,
+          "positiveCells": 0,
+          "positivePct": 0
+        }
+      ],
+      "meanFeesUsd": 3573.4,
+      "meanMaxDrawdownPct": 52.67,
+      "meanTrades": 33.33,
+      "classification": "CONDITIONAL"
+    },
+    {
+      "username": "AlphaApex_Momentum",
+      "title": "Maximum Convexity Momentum Chaser",
+      "cells": 27,
+      "meanReturnPct": 64.69,
+      "worstReturnPct": -100,
+      "bestReturnPct": 435.14,
+      "stdevReturnPct": 209.65,
+      "profitableCells": 9,
+      "profitablePct": 33.33,
+      "bestRank": 1,
+      "worstRank": 11,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": -60.46,
+          "min": -63.21,
+          "max": -55.89,
+          "stdev": 2.72,
+          "positiveCells": 0,
+          "positivePct": 0
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 354.08,
+          "min": 250.88,
+          "max": 435.14,
+          "stdev": 73.88,
+          "positiveCells": 9,
+          "positivePct": 100
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": -99.56,
+          "min": -100,
+          "max": -98.99,
+          "stdev": 0.33,
+          "positiveCells": 0,
+          "positivePct": 0
+        }
+      ],
+      "meanFeesUsd": 4971.68,
+      "meanMaxDrawdownPct": 86.08,
+      "meanTrades": 18.78,
+      "classification": "CONDITIONAL"
+    },
+    {
+      "username": "GammaWhale_Squeeze",
+      "title": "High-Gamma Volume-Spike Breakout",
+      "cells": 27,
+      "meanReturnPct": 49.54,
+      "worstReturnPct": -100,
+      "bestReturnPct": 332.46,
+      "stdevReturnPct": 162.84,
+      "profitableCells": 9,
+      "profitablePct": 33.33,
+      "bestRank": 1,
+      "worstRank": 11,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": -40.52,
+          "min": -58.34,
+          "max": -12.07,
+          "stdev": 14.22,
+          "positiveCells": 0,
+          "positivePct": 0
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 273.19,
+          "min": 143.41,
+          "max": 332.46,
+          "stdev": 55.52,
+          "positiveCells": 9,
+          "positivePct": 100
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": -84.06,
+          "min": -100,
+          "max": -44.93,
+          "stdev": 17.06,
+          "positiveCells": 0,
+          "positivePct": 0
+        }
+      ],
+      "meanFeesUsd": 4187.98,
+      "meanMaxDrawdownPct": 71.87,
+      "meanTrades": 16.33,
+      "classification": "CONDITIONAL"
+    },
+    {
+      "username": "EventCatalyst_Max",
+      "title": "Range-Breakout Catalyst Frontrunner",
+      "cells": 27,
+      "meanReturnPct": 30.49,
+      "worstReturnPct": -97.19,
+      "bestReturnPct": 356.07,
+      "stdevReturnPct": 120.49,
+      "profitableCells": 9,
+      "profitablePct": 33.33,
+      "bestRank": 2,
+      "worstRank": 10,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": -30.59,
+          "min": -57.41,
+          "max": -16.61,
+          "stdev": 15.95,
+          "positiveCells": 0,
+          "positivePct": 0
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 176.19,
+          "min": 80.46,
+          "max": 356.07,
+          "stdev": 102.44,
+          "positiveCells": 9,
+          "positivePct": 100
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": -54.13,
+          "min": -97.19,
+          "max": -32.3,
+          "stdev": 26.22,
+          "positiveCells": 0,
+          "positivePct": 0
+        }
+      ],
+      "meanFeesUsd": 2699.62,
+      "meanMaxDrawdownPct": 47.16,
+      "meanTrades": 7.33,
+      "classification": "CONDITIONAL"
+    },
+    {
+      "username": "TrendRide_FullTilt",
+      "title": "Trend-Following Pyramider",
+      "cells": 27,
+      "meanReturnPct": 21.17,
+      "worstReturnPct": -37.34,
+      "bestReturnPct": 225.99,
+      "stdevReturnPct": 68.78,
+      "profitableCells": 9,
+      "profitablePct": 33.33,
+      "bestRank": 5,
+      "worstRank": 8,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": -14.13,
+          "min": -26.73,
+          "max": -7.11,
+          "stdev": 7.09,
+          "positiveCells": 0,
+          "positivePct": 0
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 98.3,
+          "min": 23.18,
+          "max": 225.99,
+          "stdev": 71.5,
+          "positiveCells": 9,
+          "positivePct": 100
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": -20.65,
+          "min": -37.34,
+          "max": -11.4,
+          "stdev": 9.23,
+          "positiveCells": 0,
+          "positivePct": 0
+        }
+      ],
+      "meanFeesUsd": 986.15,
+      "meanMaxDrawdownPct": 19.01,
+      "meanTrades": 4.67,
+      "classification": "CONDITIONAL"
+    },
+    {
+      "username": "VolatilityArb_MM",
+      "title": "Two-Sided Spread Harvester (Market Maker)",
+      "cells": 27,
+      "meanReturnPct": 17.29,
+      "worstReturnPct": -8.53,
+      "bestReturnPct": 67.3,
+      "stdevReturnPct": 30.42,
+      "profitableCells": 12,
+      "profitablePct": 44.44,
+      "bestRank": 4,
+      "worstRank": 7,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": -1.45,
+          "min": -4.38,
+          "max": 0.33,
+          "stdev": 2.09,
+          "positiveCells": 3,
+          "positivePct": 33.33
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 59.19,
+          "min": 43.34,
+          "max": 67.3,
+          "stdev": 11.21,
+          "positiveCells": 9,
+          "positivePct": 100
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": -5.86,
+          "min": -8.53,
+          "max": -4.21,
+          "stdev": 1.9,
+          "positiveCells": 0,
+          "positivePct": 0
+        }
+      ],
+      "meanFeesUsd": 6642.95,
+      "meanMaxDrawdownPct": 13.02,
+      "meanTrades": 116,
+      "classification": "CONDITIONAL"
+    },
+    {
+      "username": "YieldVulture_Arb",
+      "title": "Late-Stage High-Probability Sweep",
+      "cells": 27,
+      "meanReturnPct": 0,
+      "worstReturnPct": 0,
+      "bestReturnPct": 0,
+      "stdevReturnPct": 0,
+      "profitableCells": 0,
+      "profitablePct": 0,
+      "bestRank": null,
+      "worstRank": null,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stdev": 0,
+          "positiveCells": 0,
+          "positivePct": 0
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stdev": 0,
+          "positiveCells": 0,
+          "positivePct": 0
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stdev": 0,
+          "positiveCells": 0,
+          "positivePct": 0
+        }
+      ],
+      "meanFeesUsd": 0,
+      "meanMaxDrawdownPct": 0,
+      "meanTrades": 0,
+      "classification": "NOT_PROFITABLE_ON_ANY_TESTED_CONFIGURATION"
+    },
+    {
+      "username": "FedPivotSniper",
+      "title": "Macro Print Mean-Reversion Sniper",
+      "cells": 27,
+      "meanReturnPct": -7.94,
+      "worstReturnPct": -13.89,
+      "bestReturnPct": 2.38,
+      "stdevReturnPct": 4.77,
+      "profitableCells": 2,
+      "profitablePct": 7.41,
+      "bestRank": 5,
+      "worstRank": 8,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": -10.47,
+          "min": -13.44,
+          "max": -5.02,
+          "stdev": 2.68,
+          "positiveCells": 0,
+          "positivePct": 0
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": -2.33,
+          "min": -4.97,
+          "max": 2.38,
+          "stdev": 2.53,
+          "positiveCells": 2,
+          "positivePct": 22.22
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": -11.01,
+          "min": -13.89,
+          "max": -5.43,
+          "stdev": 2.72,
+          "positiveCells": 0,
+          "positivePct": 0
+        }
+      ],
+      "meanFeesUsd": 1414.16,
+      "meanMaxDrawdownPct": 10.65,
+      "meanTrades": 23,
+      "classification": "NOT_PROFITABLE_ON_ANY_TESTED_CONFIGURATION"
+    },
+    {
+      "username": "LongshotFader_FLB",
+      "title": "Favorite–Longshot Bias Fader",
+      "cells": 27,
+      "meanReturnPct": -11.32,
+      "worstReturnPct": -82.95,
+      "bestReturnPct": 11.64,
+      "stdevReturnPct": 26.32,
+      "profitableCells": 12,
+      "profitablePct": 44.44,
+      "bestRank": 3,
+      "worstRank": 9,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": -0.04,
+          "min": -0.49,
+          "max": 0.74,
+          "stdev": 0.55,
+          "positiveCells": 3,
+          "positivePct": 33.33
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": -38.73,
+          "min": -82.95,
+          "max": -12.81,
+          "stdev": 30.28,
+          "positiveCells": 0,
+          "positivePct": 0
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 4.82,
+          "min": 1.28,
+          "max": 11.64,
+          "stdev": 4.79,
+          "positiveCells": 9,
+          "positivePct": 100
+        }
+      ],
+      "meanFeesUsd": 312.31,
+      "meanMaxDrawdownPct": 17.43,
+      "meanTrades": 1.67,
+      "classification": "CONDITIONAL"
+    },
+    {
+      "username": "FeeArb_PremiumBuyer",
+      "title": "Fee-Optimal Favourite Buyer",
+      "cells": 27,
+      "meanReturnPct": -25.46,
+      "worstReturnPct": -100,
+      "bestReturnPct": 23.29,
+      "stdevReturnPct": 53.01,
+      "profitableCells": 18,
+      "profitablePct": 66.67,
+      "bestRank": 1,
+      "worstRank": 10,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": 5.48,
+          "min": 2.6,
+          "max": 8.49,
+          "stdev": 1.99,
+          "positiveCells": 9,
+          "positivePct": 100
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": -100,
+          "min": -100,
+          "max": -100,
+          "stdev": 0,
+          "positiveCells": 0,
+          "positivePct": 0
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 18.13,
+          "min": 12.2,
+          "max": 23.29,
+          "stdev": 3.52,
+          "positiveCells": 9,
+          "positivePct": 100
+        }
+      ],
+      "meanFeesUsd": 1095.73,
+      "meanMaxDrawdownPct": 42.12,
+      "meanTrades": 9.89,
+      "classification": "CONDITIONAL"
+    },
+    {
+      "username": "ThetaHarvest_ShortOTM",
+      "title": "Deep-OTM Decay Harvester (buys NO)",
+      "cells": 27,
+      "meanReturnPct": -27.05,
+      "worstReturnPct": -100,
+      "bestReturnPct": 20.77,
+      "stdevReturnPct": 51.9,
+      "profitableCells": 18,
+      "profitablePct": 66.67,
+      "bestRank": 1,
+      "worstRank": 11,
+      "byScenario": [
+        {
+          "scenario": "mark_to_market",
+          "label": "Mark to last real quote (observed)",
+          "hypothetical": false,
+          "n": 9,
+          "mean": 2.87,
+          "min": 1,
+          "max": 6.28,
+          "stdev": 2.27,
+          "positiveCells": 9,
+          "positivePct": 100
+        },
+        {
+          "scenario": "settle_yes",
+          "label": "Hypothetical: every contract resolves YES",
+          "hypothetical": true,
+          "n": 9,
+          "mean": -100,
+          "min": -100,
+          "max": -100,
+          "stdev": 0,
+          "positiveCells": 0,
+          "positivePct": 0
+        },
+        {
+          "scenario": "settle_no",
+          "label": "Hypothetical: every contract resolves NO",
+          "hypothetical": true,
+          "n": 9,
+          "mean": 15.99,
+          "min": 13.23,
+          "max": 20.77,
+          "stdev": 2.71,
+          "positiveCells": 9,
+          "positivePct": 100
+        }
+      ],
+      "meanFeesUsd": 994.32,
+      "meanMaxDrawdownPct": 44.63,
+      "meanTrades": 8.89,
+      "classification": "CONDITIONAL"
+    }
+  ],
+  "stressTest": {
+    "policy": "penalty (invented fill price beyond modelled depth) vs partial (honest)",
+    "rows": [
+      {
+        "username": "PanicDip_ShockTiming",
+        "returnPctPartial": 14.55,
+        "returnPctPenalty": 14.55,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": 0
+      },
+      {
+        "username": "LongshotFader_FLB",
+        "returnPctPartial": 0.73,
+        "returnPctPenalty": 0.36,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": -0.37
+      },
+      {
+        "username": "VolatilityArb_MM",
+        "returnPctPartial": 0.33,
+        "returnPctPenalty": 0.33,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": 0
+      },
+      {
+        "username": "ThetaHarvest_ShortOTM",
+        "returnPctPartial": 1.4,
+        "returnPctPenalty": -4.9,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": -6.3
+      },
+      {
+        "username": "FeeArb_PremiumBuyer",
+        "returnPctPartial": 2.6,
+        "returnPctPenalty": -4.96,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": -7.56
+      },
+      {
+        "username": "AlphaApex_Momentum",
+        "returnPctPartial": -63.21,
+        "returnPctPenalty": -70.15,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": -6.94
+      },
+      {
+        "username": "GammaWhale_Squeeze",
+        "returnPctPartial": -34.4,
+        "returnPctPenalty": -82.53,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": -48.13
+      },
+      {
+        "username": "EventCatalyst_Max",
+        "returnPctPartial": -57.41,
+        "returnPctPenalty": -83.34,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": -25.93
+      },
+      {
+        "username": "FedPivotSniper",
+        "returnPctPartial": -13.44,
+        "returnPctPenalty": -84.96,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": -71.52
+      },
+      {
+        "username": "TrendRide_FullTilt",
+        "returnPctPartial": -26.73,
+        "returnPctPenalty": -85.98,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": -59.25
+      },
+      {
+        "username": "ContrarianKing_100x",
+        "returnPctPartial": -70.05,
+        "returnPctPenalty": -87.54,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": -17.49
+      },
+      {
+        "username": "YieldVulture_Arb",
+        "returnPctPartial": 0,
+        "returnPctPenalty": 0,
+        "note": "STRESS ONLY: the unfilled remainder executes at an invented price. Not real exchange behaviour.",
+        "differencePct": 0
+      }
+    ],
+    "note": "Included so the cost of the depth model is visible. Penalty numbers are NOT presented as achievable results."
+  },
+  "cells": [
+    {
+      "universe": "single_T33000",
+      "universeLabel": "1 market (KXNASDAQ100Y-26DEC31H1600-T33000)",
+      "scenario": "mark_to_market",
+      "scenarioLabel": "Mark to last real quote (observed)",
+      "hypothetical": false,
+      "seed": 20260917,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 213.52,
+          "finalEquity": 313521.25,
+          "trades": 27,
+          "feesPaid": 17767.8,
+          "maxDrawdownPct": 28.02,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 3.38,
+          "finalEquity": 103379.97,
+          "trades": 11,
+          "feesPaid": 1072.28,
+          "maxDrawdownPct": 15.42,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 1.53,
+          "finalEquity": 101529.63,
+          "trades": 8,
+          "feesPaid": 970.93,
+          "maxDrawdownPct": 20.09,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "LongshotFader_FLB",
+          "returnPct": 0.74,
+          "finalEquity": 100736.83,
+          "trades": 1,
+          "feesPaid": 738.76,
+          "maxDrawdownPct": 13.61,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "ContrarianKing_100x",
+          "returnPct": -0.31,
+          "finalEquity": 99688.76,
+          "trades": 2,
+          "feesPaid": 131.79,
+          "maxDrawdownPct": 0.48,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "VolatilityArb_MM",
+          "returnPct": -4.38,
+          "finalEquity": 95615.85,
+          "trades": 86,
+          "feesPaid": 5902.06,
+          "maxDrawdownPct": 12.32,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -7.67,
+          "finalEquity": 92330.11,
+          "trades": 3,
+          "feesPaid": 551.75,
+          "maxDrawdownPct": 10.23,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "FedPivotSniper",
+          "returnPct": -9.02,
+          "finalEquity": 90977.16,
+          "trades": 13,
+          "feesPaid": 1197.28,
+          "maxDrawdownPct": 9.02,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -12.07,
+          "finalEquity": 87933.13,
+          "trades": 13,
+          "feesPaid": 2253.76,
+          "maxDrawdownPct": 32.4,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "EventCatalyst_Max",
+          "returnPct": -41.55,
+          "finalEquity": 58446.01,
+          "trades": 6,
+          "feesPaid": 3756.38,
+          "maxDrawdownPct": 62.5,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -55.89,
+          "finalEquity": 44111.41,
+          "trades": 15,
+          "feesPaid": 4782.32,
+          "maxDrawdownPct": 80.86,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "single_T33000",
+      "universeLabel": "1 market (KXNASDAQ100Y-26DEC31H1600-T33000)",
+      "scenario": "mark_to_market",
+      "scenarioLabel": "Mark to last real quote (observed)",
+      "hypothetical": false,
+      "seed": 7,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 213.52,
+          "finalEquity": 313521.25,
+          "trades": 27,
+          "feesPaid": 17767.8,
+          "maxDrawdownPct": 28.02,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 8.49,
+          "finalEquity": 108492.44,
+          "trades": 8,
+          "feesPaid": 1374.23,
+          "maxDrawdownPct": 15.29,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 1,
+          "finalEquity": 101003.14,
+          "trades": 10,
+          "feesPaid": 933.76,
+          "maxDrawdownPct": 18.21,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "ContrarianKing_100x",
+          "returnPct": -0.41,
+          "finalEquity": 99589.01,
+          "trades": 2,
+          "feesPaid": 140.96,
+          "maxDrawdownPct": 0.55,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "LongshotFader_FLB",
+          "returnPct": -0.49,
+          "finalEquity": 99512.64,
+          "trades": 1,
+          "feesPaid": 85.07,
+          "maxDrawdownPct": 2.84,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "VolatilityArb_MM",
+          "returnPct": -4.38,
+          "finalEquity": 95615.85,
+          "trades": 86,
+          "feesPaid": 5902.06,
+          "maxDrawdownPct": 12.32,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -7.11,
+          "finalEquity": 92894.68,
+          "trades": 3,
+          "feesPaid": 522.55,
+          "maxDrawdownPct": 9.73,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "FedPivotSniper",
+          "returnPct": -7.85,
+          "finalEquity": 92150.11,
+          "trades": 14,
+          "feesPaid": 1237.76,
+          "maxDrawdownPct": 7.85,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "EventCatalyst_Max",
+          "returnPct": -16.61,
+          "finalEquity": 83394.63,
+          "trades": 6,
+          "feesPaid": 1743.94,
+          "maxDrawdownPct": 25.76,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -32.49,
+          "finalEquity": 67508.21,
+          "trades": 13,
+          "feesPaid": 4003.51,
+          "maxDrawdownPct": 63.21,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -57.19,
+          "finalEquity": 42812.1,
+          "trades": 14,
+          "feesPaid": 4762.36,
+          "maxDrawdownPct": 80.61,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "single_T33000",
+      "universeLabel": "1 market (KXNASDAQ100Y-26DEC31H1600-T33000)",
+      "scenario": "mark_to_market",
+      "scenarioLabel": "Mark to last real quote (observed)",
+      "hypothetical": false,
+      "seed": 42,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 213.52,
+          "finalEquity": 313521.25,
+          "trades": 27,
+          "feesPaid": 17767.8,
+          "maxDrawdownPct": 28.02,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 6.66,
+          "finalEquity": 106655.66,
+          "trades": 6,
+          "feesPaid": 1277.55,
+          "maxDrawdownPct": 15.29,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 6.28,
+          "finalEquity": 106277.87,
+          "trades": 6,
+          "feesPaid": 1256.77,
+          "maxDrawdownPct": 15.29,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "LongshotFader_FLB",
+          "returnPct": -0.41,
+          "finalEquity": 99593.63,
+          "trades": 1,
+          "feesPaid": 84.89,
+          "maxDrawdownPct": 2.66,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "ContrarianKing_100x",
+          "returnPct": -0.63,
+          "finalEquity": 99374.35,
+          "trades": 2,
+          "feesPaid": 172.32,
+          "maxDrawdownPct": 0.76,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "VolatilityArb_MM",
+          "returnPct": -4.38,
+          "finalEquity": 95615.85,
+          "trades": 86,
+          "feesPaid": 5902.06,
+          "maxDrawdownPct": 12.32,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "FedPivotSniper",
+          "returnPct": -5.02,
+          "finalEquity": 94982.48,
+          "trades": 12,
+          "feesPaid": 894.38,
+          "maxDrawdownPct": 5.02,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -7.71,
+          "finalEquity": 92286.26,
+          "trades": 3,
+          "feesPaid": 525.9,
+          "maxDrawdownPct": 10.37,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "EventCatalyst_Max",
+          "returnPct": -18.77,
+          "finalEquity": 81227.08,
+          "trades": 6,
+          "feesPaid": 1534.13,
+          "maxDrawdownPct": 29.7,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -55.77,
+          "finalEquity": 44234.38,
+          "trades": 11,
+          "feesPaid": 4846.25,
+          "maxDrawdownPct": 81.5,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -57.09,
+          "finalEquity": 42911.59,
+          "trades": 19,
+          "feesPaid": 4784,
+          "maxDrawdownPct": 80.8,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "single_T33000",
+      "universeLabel": "1 market (KXNASDAQ100Y-26DEC31H1600-T33000)",
+      "scenario": "settle_yes",
+      "scenarioLabel": "Hypothetical: every contract resolves YES",
+      "hypothetical": true,
+      "seed": 20260917,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "AlphaApex_Momentum",
+          "returnPct": 260.21,
+          "finalEquity": 360211.01,
+          "trades": 15,
+          "feesPaid": 4782.32,
+          "maxDrawdownPct": 80.86,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "EventCatalyst_Max",
+          "returnPct": 214.47,
+          "finalEquity": 314465.96,
+          "trades": 6,
+          "feesPaid": 3756.38,
+          "maxDrawdownPct": 62.5,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 213.52,
+          "finalEquity": 313521.25,
+          "trades": 27,
+          "feesPaid": 17767.8,
+          "maxDrawdownPct": 28.02,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": 143.41,
+          "finalEquity": 243408.07,
+          "trades": 13,
+          "feesPaid": 2253.76,
+          "maxDrawdownPct": 32.4,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "VolatilityArb_MM",
+          "returnPct": 43.34,
+          "finalEquity": 143341.26,
+          "trades": 86,
+          "feesPaid": 5902.06,
+          "maxDrawdownPct": 12.32,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": 25.18,
+          "finalEquity": 125177.68,
+          "trades": 3,
+          "feesPaid": 551.75,
+          "maxDrawdownPct": 10.23,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "ContrarianKing_100x",
+          "returnPct": 14.36,
+          "finalEquity": 114355.24,
+          "trades": 2,
+          "feesPaid": 131.79,
+          "maxDrawdownPct": 0.48,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "FedPivotSniper",
+          "returnPct": -0.55,
+          "finalEquity": 99447.23,
+          "trades": 13,
+          "feesPaid": 1197.28,
+          "maxDrawdownPct": 9.02,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "LongshotFader_FLB",
+          "returnPct": -78.19,
+          "finalEquity": 21808.2,
+          "trades": 1,
+          "feesPaid": 738.76,
+          "maxDrawdownPct": 79.45,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 11,
+          "feesPaid": 1072.28,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 8,
+          "feesPaid": 970.93,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "single_T33000",
+      "universeLabel": "1 market (KXNASDAQ100Y-26DEC31H1600-T33000)",
+      "scenario": "settle_yes",
+      "scenarioLabel": "Hypothetical: every contract resolves YES",
+      "hypothetical": true,
+      "seed": 7,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "AlphaApex_Momentum",
+          "returnPct": 250.88,
+          "finalEquity": 350879.38,
+          "trades": 14,
+          "feesPaid": 4762.36,
+          "maxDrawdownPct": 80.61,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": 223.46,
+          "finalEquity": 323462.81,
+          "trades": 13,
+          "feesPaid": 4003.51,
+          "maxDrawdownPct": 63.21,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 213.52,
+          "finalEquity": 313521.25,
+          "trades": 27,
+          "feesPaid": 17767.8,
+          "maxDrawdownPct": 28.02,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "EventCatalyst_Max",
+          "returnPct": 116,
+          "finalEquity": 216002.74,
+          "trades": 6,
+          "feesPaid": 1743.94,
+          "maxDrawdownPct": 25.76,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "VolatilityArb_MM",
+          "returnPct": 43.34,
+          "finalEquity": 143341.26,
+          "trades": 86,
+          "feesPaid": 5902.06,
+          "maxDrawdownPct": 12.32,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": 24.38,
+          "finalEquity": 124381.31,
+          "trades": 3,
+          "feesPaid": 522.55,
+          "maxDrawdownPct": 9.73,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "ContrarianKing_100x",
+          "returnPct": 14.8,
+          "finalEquity": 114802.38,
+          "trades": 2,
+          "feesPaid": 140.96,
+          "maxDrawdownPct": 0.55,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "FedPivotSniper",
+          "returnPct": 2.38,
+          "finalEquity": 102384.54,
+          "trades": 14,
+          "feesPaid": 1237.76,
+          "maxDrawdownPct": 7.85,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "LongshotFader_FLB",
+          "returnPct": -13.45,
+          "finalEquity": 86551.74,
+          "trades": 1,
+          "feesPaid": 85.07,
+          "maxDrawdownPct": 13.79,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 8,
+          "feesPaid": 1374.23,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 10,
+          "feesPaid": 933.76,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "single_T33000",
+      "universeLabel": "1 market (KXNASDAQ100Y-26DEC31H1600-T33000)",
+      "scenario": "settle_yes",
+      "scenarioLabel": "Hypothetical: every contract resolves YES",
+      "hypothetical": true,
+      "seed": 42,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": 268.55,
+          "finalEquity": 368553.21,
+          "trades": 11,
+          "feesPaid": 4846.25,
+          "maxDrawdownPct": 81.5,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "AlphaApex_Momentum",
+          "returnPct": 253.44,
+          "finalEquity": 353444.78,
+          "trades": 19,
+          "feesPaid": 4784,
+          "maxDrawdownPct": 80.8,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 213.52,
+          "finalEquity": 313521.25,
+          "trades": 27,
+          "feesPaid": 17767.8,
+          "maxDrawdownPct": 28.02,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "EventCatalyst_Max",
+          "returnPct": 80.46,
+          "finalEquity": 180461.25,
+          "trades": 6,
+          "feesPaid": 1534.13,
+          "maxDrawdownPct": 29.7,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "VolatilityArb_MM",
+          "returnPct": 43.34,
+          "finalEquity": 143341.26,
+          "trades": 86,
+          "feesPaid": 5902.06,
+          "maxDrawdownPct": 12.32,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": 23.18,
+          "finalEquity": 123178.52,
+          "trades": 3,
+          "feesPaid": 525.9,
+          "maxDrawdownPct": 10.37,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "ContrarianKing_100x",
+          "returnPct": 17.28,
+          "finalEquity": 117279.52,
+          "trades": 2,
+          "feesPaid": 172.32,
+          "maxDrawdownPct": 0.76,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "FedPivotSniper",
+          "returnPct": 0.69,
+          "finalEquity": 100688.44,
+          "trades": 12,
+          "feesPaid": 894.38,
+          "maxDrawdownPct": 5.02,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "LongshotFader_FLB",
+          "returnPct": -12.81,
+          "finalEquity": 87192.35,
+          "trades": 1,
+          "feesPaid": 84.89,
+          "maxDrawdownPct": 13.19,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 6,
+          "feesPaid": 1277.55,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 6,
+          "feesPaid": 1256.77,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "single_T33000",
+      "universeLabel": "1 market (KXNASDAQ100Y-26DEC31H1600-T33000)",
+      "scenario": "settle_no",
+      "scenarioLabel": "Hypothetical: every contract resolves NO",
+      "hypothetical": true,
+      "seed": 20260917,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 213.52,
+          "finalEquity": 313521.25,
+          "trades": 27,
+          "feesPaid": 17767.8,
+          "maxDrawdownPct": 28.02,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 17.48,
+          "finalEquity": 117477.24,
+          "trades": 11,
+          "feesPaid": 1072.28,
+          "maxDrawdownPct": 15.42,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 15.37,
+          "finalEquity": 115374.58,
+          "trades": 8,
+          "feesPaid": 970.93,
+          "maxDrawdownPct": 20.09,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "LongshotFader_FLB",
+          "returnPct": 11.5,
+          "finalEquity": 111499.82,
+          "trades": 1,
+          "feesPaid": 738.76,
+          "maxDrawdownPct": 13.61,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "ContrarianKing_100x",
+          "returnPct": -2.31,
+          "finalEquity": 97688.79,
+          "trades": 2,
+          "feesPaid": 131.79,
+          "maxDrawdownPct": 2.31,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "VolatilityArb_MM",
+          "returnPct": -8.53,
+          "finalEquity": 91465.81,
+          "trades": 86,
+          "feesPaid": 5902.06,
+          "maxDrawdownPct": 12.32,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "FedPivotSniper",
+          "returnPct": -9.47,
+          "finalEquity": 90531.79,
+          "trades": 13,
+          "feesPaid": 1197.28,
+          "maxDrawdownPct": 9.47,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -12.15,
+          "finalEquity": 87850.9,
+          "trades": 3,
+          "feesPaid": 551.75,
+          "maxDrawdownPct": 12.46,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -44.93,
+          "finalEquity": 55071.16,
+          "trades": 13,
+          "feesPaid": 2253.76,
+          "maxDrawdownPct": 45.98,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "EventCatalyst_Max",
+          "returnPct": -76.47,
+          "finalEquity": 23534.2,
+          "trades": 6,
+          "feesPaid": 3756.38,
+          "maxDrawdownPct": 78.47,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -98.99,
+          "finalEquity": 1006.92,
+          "trades": 15,
+          "feesPaid": 4782.32,
+          "maxDrawdownPct": 99.15,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "single_T33000",
+      "universeLabel": "1 market (KXNASDAQ100Y-26DEC31H1600-T33000)",
+      "scenario": "settle_no",
+      "scenarioLabel": "Hypothetical: every contract resolves NO",
+      "hypothetical": true,
+      "seed": 7,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 213.52,
+          "finalEquity": 313521.25,
+          "trades": 27,
+          "feesPaid": 17767.8,
+          "maxDrawdownPct": 28.02,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 23.29,
+          "finalEquity": 123286.86,
+          "trades": 8,
+          "feesPaid": 1374.23,
+          "maxDrawdownPct": 15.29,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 14.78,
+          "finalEquity": 114776.3,
+          "trades": 10,
+          "feesPaid": 933.76,
+          "maxDrawdownPct": 18.21,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "LongshotFader_FLB",
+          "returnPct": 1.28,
+          "finalEquity": 101280.03,
+          "trades": 1,
+          "feesPaid": 85.07,
+          "maxDrawdownPct": 2.84,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "ContrarianKing_100x",
+          "returnPct": -2.49,
+          "finalEquity": 97514.46,
+          "trades": 2,
+          "feesPaid": 140.96,
+          "maxDrawdownPct": 2.49,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "VolatilityArb_MM",
+          "returnPct": -8.53,
+          "finalEquity": 91465.81,
+          "trades": 86,
+          "feesPaid": 5902.06,
+          "maxDrawdownPct": 12.32,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "FedPivotSniper",
+          "returnPct": -8.61,
+          "finalEquity": 91388.94,
+          "trades": 14,
+          "feesPaid": 1237.76,
+          "maxDrawdownPct": 8.61,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -11.4,
+          "finalEquity": 88601.05,
+          "trades": 3,
+          "feesPaid": 522.55,
+          "maxDrawdownPct": 11.87,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "EventCatalyst_Max",
+          "returnPct": -34.69,
+          "finalEquity": 65311.71,
+          "trades": 6,
+          "feesPaid": 1743.94,
+          "maxDrawdownPct": 34.79,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -82.39,
+          "finalEquity": 17608.73,
+          "trades": 13,
+          "feesPaid": 4003.51,
+          "maxDrawdownPct": 83.25,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -99.2,
+          "finalEquity": 802.93,
+          "trades": 14,
+          "feesPaid": 4762.36,
+          "maxDrawdownPct": 99.29,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "single_T33000",
+      "universeLabel": "1 market (KXNASDAQ100Y-26DEC31H1600-T33000)",
+      "scenario": "settle_no",
+      "scenarioLabel": "Hypothetical: every contract resolves NO",
+      "hypothetical": true,
+      "seed": 42,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 213.52,
+          "finalEquity": 313521.25,
+          "trades": 27,
+          "feesPaid": 17767.8,
+          "maxDrawdownPct": 28.02,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 21.2,
+          "finalEquity": 121199.61,
+          "trades": 6,
+          "feesPaid": 1277.55,
+          "maxDrawdownPct": 15.29,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 20.77,
+          "finalEquity": 120770.31,
+          "trades": 6,
+          "feesPaid": 1256.77,
+          "maxDrawdownPct": 15.29,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "LongshotFader_FLB",
+          "returnPct": 1.28,
+          "finalEquity": 101284.71,
+          "trades": 1,
+          "feesPaid": 84.89,
+          "maxDrawdownPct": 2.66,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "ContrarianKing_100x",
+          "returnPct": -3.07,
+          "finalEquity": 96932.74,
+          "trades": 2,
+          "feesPaid": 172.32,
+          "maxDrawdownPct": 3.07,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "FedPivotSniper",
+          "returnPct": -5.43,
+          "finalEquity": 94565.97,
+          "trades": 12,
+          "feesPaid": 894.38,
+          "maxDrawdownPct": 5.43,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "VolatilityArb_MM",
+          "returnPct": -8.53,
+          "finalEquity": 91465.81,
+          "trades": 86,
+          "feesPaid": 5902.06,
+          "maxDrawdownPct": 12.32,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -11.93,
+          "finalEquity": 88073.68,
+          "trades": 3,
+          "feesPaid": 525.9,
+          "maxDrawdownPct": 12.46,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "EventCatalyst_Max",
+          "returnPct": -32.3,
+          "finalEquity": 67695.15,
+          "trades": 6,
+          "feesPaid": 1534.13,
+          "maxDrawdownPct": 36.08,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -99.43,
+          "finalEquity": 566.15,
+          "trades": 19,
+          "feesPaid": 4784,
+          "maxDrawdownPct": 99.5,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -99.99,
+          "finalEquity": 9.08,
+          "trades": 11,
+          "feesPaid": 4846.25,
+          "maxDrawdownPct": 99.99,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "same_event_pair",
+      "universeLabel": "2 markets, same event (KXNASDAQ100Y-26DEC31H1600-T33000 + KXNASDAQ100Y-26DEC31H1600-T19000)",
+      "scenario": "mark_to_market",
+      "scenarioLabel": "Mark to last real quote (observed)",
+      "hypothetical": false,
+      "seed": 20260917,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 14.78,
+          "finalEquity": 114783.04,
+          "trades": 34,
+          "feesPaid": 4216.77,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 2.6,
+          "finalEquity": 102600.5,
+          "trades": 15,
+          "feesPaid": 761.12,
+          "maxDrawdownPct": 10.7,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 1.4,
+          "finalEquity": 101395.49,
+          "trades": 10,
+          "feesPaid": 895.57,
+          "maxDrawdownPct": 18.25,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "LongshotFader_FLB",
+          "returnPct": 0.73,
+          "finalEquity": 100733.23,
+          "trades": 2,
+          "feesPaid": 749.05,
+          "maxDrawdownPct": 13.76,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "VolatilityArb_MM",
+          "returnPct": -0.3,
+          "finalEquity": 99703.86,
+          "trades": 120,
+          "feesPaid": 7011.69,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "FedPivotSniper",
+          "returnPct": -13.44,
+          "finalEquity": 86559.61,
+          "trades": 28,
+          "feesPaid": 1644.72,
+          "maxDrawdownPct": 13.44,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -25.97,
+          "finalEquity": 74027.23,
+          "trades": 5,
+          "feesPaid": 1874.16,
+          "maxDrawdownPct": 30.68,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -34.38,
+          "finalEquity": 65615.66,
+          "trades": 18,
+          "feesPaid": 3861.72,
+          "maxDrawdownPct": 55.78,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "EventCatalyst_Max",
+          "returnPct": -57.41,
+          "finalEquity": 42589.39,
+          "trades": 8,
+          "feesPaid": 4947.15,
+          "maxDrawdownPct": 75.35,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -63.21,
+          "finalEquity": 36789.43,
+          "trades": 16,
+          "feesPaid": 5212.15,
+          "maxDrawdownPct": 77.59,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ContrarianKing_100x",
+          "returnPct": -69.85,
+          "finalEquity": 30145.79,
+          "trades": 46,
+          "feesPaid": 5675.9,
+          "maxDrawdownPct": 77.31,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "same_event_pair",
+      "universeLabel": "2 markets, same event (KXNASDAQ100Y-26DEC31H1600-T33000 + KXNASDAQ100Y-26DEC31H1600-T19000)",
+      "scenario": "mark_to_market",
+      "scenarioLabel": "Mark to last real quote (observed)",
+      "hypothetical": false,
+      "seed": 7,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 14.78,
+          "finalEquity": 114783.04,
+          "trades": 34,
+          "feesPaid": 4216.77,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 6.89,
+          "finalEquity": 106894.82,
+          "trades": 10,
+          "feesPaid": 1154.5,
+          "maxDrawdownPct": 12.25,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 1.13,
+          "finalEquity": 101125.52,
+          "trades": 11,
+          "feesPaid": 840.98,
+          "maxDrawdownPct": 17.85,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "VolatilityArb_MM",
+          "returnPct": -0.3,
+          "finalEquity": 99703.86,
+          "trades": 120,
+          "feesPaid": 7011.69,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "LongshotFader_FLB",
+          "returnPct": -0.47,
+          "finalEquity": 99533.83,
+          "trades": 2,
+          "feesPaid": 101.32,
+          "maxDrawdownPct": 3.03,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -10.46,
+          "finalEquity": 89543.51,
+          "trades": 5,
+          "feesPaid": 740.53,
+          "maxDrawdownPct": 12.6,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "FedPivotSniper",
+          "returnPct": -12.52,
+          "finalEquity": 87482.2,
+          "trades": 29,
+          "feesPaid": 1679.43,
+          "maxDrawdownPct": 12.52,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "EventCatalyst_Max",
+          "returnPct": -18.64,
+          "finalEquity": 81364.33,
+          "trades": 8,
+          "feesPaid": 1882.4,
+          "maxDrawdownPct": 27.68,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -39.44,
+          "finalEquity": 60564.78,
+          "trades": 18,
+          "feesPaid": 4478.63,
+          "maxDrawdownPct": 69.74,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -61.87,
+          "finalEquity": 38125.83,
+          "trades": 19,
+          "feesPaid": 5006.51,
+          "maxDrawdownPct": 78.46,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ContrarianKing_100x",
+          "returnPct": -62.81,
+          "finalEquity": 37193.43,
+          "trades": 46,
+          "feesPaid": 5463.72,
+          "maxDrawdownPct": 73.83,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "same_event_pair",
+      "universeLabel": "2 markets, same event (KXNASDAQ100Y-26DEC31H1600-T33000 + KXNASDAQ100Y-26DEC31H1600-T19000)",
+      "scenario": "mark_to_market",
+      "scenarioLabel": "Mark to last real quote (observed)",
+      "hypothetical": false,
+      "seed": 42,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 14.78,
+          "finalEquity": 114783.04,
+          "trades": 34,
+          "feesPaid": 4216.77,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 5.96,
+          "finalEquity": 105958.48,
+          "trades": 7,
+          "feesPaid": 1157.18,
+          "maxDrawdownPct": 13.39,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 5.91,
+          "finalEquity": 105910.2,
+          "trades": 7,
+          "feesPaid": 1153.15,
+          "maxDrawdownPct": 13.39,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "VolatilityArb_MM",
+          "returnPct": -0.3,
+          "finalEquity": 99703.86,
+          "trades": 120,
+          "feesPaid": 7011.69,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "LongshotFader_FLB",
+          "returnPct": -0.38,
+          "finalEquity": 99619.02,
+          "trades": 2,
+          "feesPaid": 100.67,
+          "maxDrawdownPct": 2.83,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "FedPivotSniper",
+          "returnPct": -10.21,
+          "finalEquity": 89789.33,
+          "trades": 27,
+          "feesPaid": 1374.84,
+          "maxDrawdownPct": 10.21,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -14.49,
+          "finalEquity": 85511.51,
+          "trades": 5,
+          "feesPaid": 1022.9,
+          "maxDrawdownPct": 18.7,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "EventCatalyst_Max",
+          "returnPct": -23.15,
+          "finalEquity": 76850.28,
+          "trades": 8,
+          "feesPaid": 1801.53,
+          "maxDrawdownPct": 32.06,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "ContrarianKing_100x",
+          "returnPct": -57.31,
+          "finalEquity": 42688.77,
+          "trades": 46,
+          "feesPaid": 4718.13,
+          "maxDrawdownPct": 61.46,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -58.34,
+          "finalEquity": 41658.18,
+          "trades": 18,
+          "feesPaid": 4953.8,
+          "maxDrawdownPct": 80.89,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -61.73,
+          "finalEquity": 38272.66,
+          "trades": 22,
+          "feesPaid": 5008.61,
+          "maxDrawdownPct": 79.38,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "same_event_pair",
+      "universeLabel": "2 markets, same event (KXNASDAQ100Y-26DEC31H1600-T33000 + KXNASDAQ100Y-26DEC31H1600-T19000)",
+      "scenario": "settle_yes",
+      "scenarioLabel": "Hypothetical: every contract resolves YES",
+      "hypothetical": true,
+      "seed": 20260917,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 3565.76,
+          "finalEquity": 3665760.86,
+          "trades": 34,
+          "feesPaid": 4216.77,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "ContrarianKing_100x",
+          "returnPct": 792.15,
+          "finalEquity": 892148.96,
+          "trades": 46,
+          "feesPaid": 5675.9,
+          "maxDrawdownPct": 77.31,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "AlphaApex_Momentum",
+          "returnPct": 435.14,
+          "finalEquity": 535137.57,
+          "trades": 16,
+          "feesPaid": 5212.15,
+          "maxDrawdownPct": 77.59,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "EventCatalyst_Max",
+          "returnPct": 356.07,
+          "finalEquity": 456071.14,
+          "trades": 8,
+          "feesPaid": 4947.15,
+          "maxDrawdownPct": 75.35,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": 318.67,
+          "finalEquity": 418665.86,
+          "trades": 18,
+          "feesPaid": 3861.72,
+          "maxDrawdownPct": 55.78,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": 168.35,
+          "finalEquity": 268352.86,
+          "trades": 5,
+          "feesPaid": 1874.16,
+          "maxDrawdownPct": 30.68,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "VolatilityArb_MM",
+          "returnPct": 66.93,
+          "finalEquity": 166926.31,
+          "trades": 120,
+          "feesPaid": 7011.69,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "FedPivotSniper",
+          "returnPct": -4.97,
+          "finalEquity": 95029.68,
+          "trades": 28,
+          "feesPaid": 1644.72,
+          "maxDrawdownPct": 13.44,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "LongshotFader_FLB",
+          "returnPct": -82.95,
+          "finalEquity": 17053.05,
+          "trades": 2,
+          "feesPaid": 749.05,
+          "maxDrawdownPct": 83.93,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 15,
+          "feesPaid": 761.12,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 10,
+          "feesPaid": 895.57,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "same_event_pair",
+      "universeLabel": "2 markets, same event (KXNASDAQ100Y-26DEC31H1600-T33000 + KXNASDAQ100Y-26DEC31H1600-T19000)",
+      "scenario": "settle_yes",
+      "scenarioLabel": "Hypothetical: every contract resolves YES",
+      "hypothetical": true,
+      "seed": 7,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 3565.76,
+          "finalEquity": 3665760.86,
+          "trades": 34,
+          "feesPaid": 4216.77,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "ContrarianKing_100x",
+          "returnPct": 878.74,
+          "finalEquity": 978742.35,
+          "trades": 46,
+          "feesPaid": 5463.72,
+          "maxDrawdownPct": 73.83,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "AlphaApex_Momentum",
+          "returnPct": 398.15,
+          "finalEquity": 498154.84,
+          "trades": 19,
+          "feesPaid": 5006.51,
+          "maxDrawdownPct": 78.46,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": 270.87,
+          "finalEquity": 370867.71,
+          "trades": 18,
+          "feesPaid": 4478.63,
+          "maxDrawdownPct": 69.74,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "EventCatalyst_Max",
+          "returnPct": 129.88,
+          "finalEquity": 229878.6,
+          "trades": 8,
+          "feesPaid": 1882.4,
+          "maxDrawdownPct": 27.68,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "VolatilityArb_MM",
+          "returnPct": 66.93,
+          "finalEquity": 166926.31,
+          "trades": 120,
+          "feesPaid": 7011.69,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "TrendRide_FullTilt",
+          "returnPct": 42.93,
+          "finalEquity": 142926.32,
+          "trades": 5,
+          "feesPaid": 740.53,
+          "maxDrawdownPct": 12.6,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "FedPivotSniper",
+          "returnPct": -2.28,
+          "finalEquity": 97716.63,
+          "trades": 29,
+          "feesPaid": 1679.43,
+          "maxDrawdownPct": 12.52,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "LongshotFader_FLB",
+          "returnPct": -20.04,
+          "finalEquity": 79959.03,
+          "trades": 2,
+          "feesPaid": 101.32,
+          "maxDrawdownPct": 20.37,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 10,
+          "feesPaid": 1154.5,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 11,
+          "feesPaid": 840.98,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "same_event_pair",
+      "universeLabel": "2 markets, same event (KXNASDAQ100Y-26DEC31H1600-T33000 + KXNASDAQ100Y-26DEC31H1600-T19000)",
+      "scenario": "settle_yes",
+      "scenarioLabel": "Hypothetical: every contract resolves YES",
+      "hypothetical": true,
+      "seed": 42,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 3565.76,
+          "finalEquity": 3665760.86,
+          "trades": 34,
+          "feesPaid": 4216.77,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "ContrarianKing_100x",
+          "returnPct": 682.72,
+          "finalEquity": 782718.65,
+          "trades": 46,
+          "feesPaid": 4718.13,
+          "maxDrawdownPct": 61.46,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "AlphaApex_Momentum",
+          "returnPct": 360.01,
+          "finalEquity": 460009.72,
+          "trades": 22,
+          "feesPaid": 5008.61,
+          "maxDrawdownPct": 79.38,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": 310.4,
+          "finalEquity": 410399.57,
+          "trades": 18,
+          "feesPaid": 4953.8,
+          "maxDrawdownPct": 80.89,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "EventCatalyst_Max",
+          "returnPct": 101.42,
+          "finalEquity": 201418.65,
+          "trades": 8,
+          "feesPaid": 1801.53,
+          "maxDrawdownPct": 32.06,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": 79.04,
+          "finalEquity": 179035.95,
+          "trades": 5,
+          "feesPaid": 1022.9,
+          "maxDrawdownPct": 18.7,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "VolatilityArb_MM",
+          "returnPct": 66.93,
+          "finalEquity": 166926.31,
+          "trades": 120,
+          "feesPaid": 7011.69,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "FedPivotSniper",
+          "returnPct": -4.5,
+          "finalEquity": 95495.29,
+          "trades": 27,
+          "feesPaid": 1374.84,
+          "maxDrawdownPct": 10.21,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "LongshotFader_FLB",
+          "returnPct": -19.07,
+          "finalEquity": 80930.68,
+          "trades": 2,
+          "feesPaid": 100.67,
+          "maxDrawdownPct": 19.44,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 7,
+          "feesPaid": 1153.15,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 7,
+          "feesPaid": 1157.18,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "same_event_pair",
+      "universeLabel": "2 markets, same event (KXNASDAQ100Y-26DEC31H1600-T33000 + KXNASDAQ100Y-26DEC31H1600-T19000)",
+      "scenario": "settle_no",
+      "scenarioLabel": "Hypothetical: every contract resolves NO",
+      "hypothetical": true,
+      "seed": 20260917,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 14.15,
+          "finalEquity": 114151.8,
+          "trades": 10,
+          "feesPaid": 895.57,
+          "maxDrawdownPct": 18.25,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 12.2,
+          "finalEquity": 112203.61,
+          "trades": 15,
+          "feesPaid": 761.12,
+          "maxDrawdownPct": 10.7,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "LongshotFader_FLB",
+          "returnPct": 11.64,
+          "finalEquity": 111643.18,
+          "trades": 2,
+          "feesPaid": 749.05,
+          "maxDrawdownPct": 13.76,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "VolatilityArb_MM",
+          "returnPct": -4.85,
+          "finalEquity": 95145.06,
+          "trades": 120,
+          "feesPaid": 7011.69,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "FedPivotSniper",
+          "returnPct": -13.89,
+          "finalEquity": 86114.24,
+          "trades": 28,
+          "feesPaid": 1644.72,
+          "maxDrawdownPct": 13.89,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -35.45,
+          "finalEquity": 64553.85,
+          "trades": 5,
+          "feesPaid": 1874.16,
+          "maxDrawdownPct": 37.67,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -73.36,
+          "finalEquity": 26643.12,
+          "trades": 18,
+          "feesPaid": 3861.72,
+          "maxDrawdownPct": 74.15,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": -95.04,
+          "finalEquity": 4958.98,
+          "trades": 34,
+          "feesPaid": 4216.77,
+          "maxDrawdownPct": 98.09,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "EventCatalyst_Max",
+          "returnPct": -97.19,
+          "finalEquity": 2807.63,
+          "trades": 8,
+          "feesPaid": 4947.15,
+          "maxDrawdownPct": 97.25,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "ContrarianKing_100x",
+          "returnPct": -98.06,
+          "finalEquity": 1939.53,
+          "trades": 46,
+          "feesPaid": 5675.9,
+          "maxDrawdownPct": 98.32,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -99.7,
+          "finalEquity": 299.13,
+          "trades": 16,
+          "feesPaid": 5212.15,
+          "maxDrawdownPct": 99.71,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "same_event_pair",
+      "universeLabel": "2 markets, same event (KXNASDAQ100Y-26DEC31H1600-T33000 + KXNASDAQ100Y-26DEC31H1600-T19000)",
+      "scenario": "settle_no",
+      "scenarioLabel": "Hypothetical: every contract resolves NO",
+      "hypothetical": true,
+      "seed": 7,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 19.37,
+          "finalEquity": 119365.17,
+          "trades": 10,
+          "feesPaid": 1154.5,
+          "maxDrawdownPct": 12.25,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 13.23,
+          "finalEquity": 113229.78,
+          "trades": 11,
+          "feesPaid": 840.98,
+          "maxDrawdownPct": 17.85,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "LongshotFader_FLB",
+          "returnPct": 1.51,
+          "finalEquity": 101505.78,
+          "trades": 2,
+          "feesPaid": 101.32,
+          "maxDrawdownPct": 3.03,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "VolatilityArb_MM",
+          "returnPct": -4.85,
+          "finalEquity": 95145.06,
+          "trades": 120,
+          "feesPaid": 7011.69,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "FedPivotSniper",
+          "returnPct": -13.28,
+          "finalEquity": 86721.03,
+          "trades": 29,
+          "feesPaid": 1679.43,
+          "maxDrawdownPct": 13.28,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -15.43,
+          "finalEquity": 84572.68,
+          "trades": 5,
+          "feesPaid": 740.53,
+          "maxDrawdownPct": 15.43,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "EventCatalyst_Max",
+          "returnPct": -37.21,
+          "finalEquity": 62789.46,
+          "trades": 8,
+          "feesPaid": 1882.4,
+          "maxDrawdownPct": 37.21,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -91.02,
+          "finalEquity": 8984.42,
+          "trades": 18,
+          "feesPaid": 4478.63,
+          "maxDrawdownPct": 91.1,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "ContrarianKing_100x",
+          "returnPct": -93.53,
+          "finalEquity": 6469.33,
+          "trades": 46,
+          "feesPaid": 5463.72,
+          "maxDrawdownPct": 94.94,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": -95.04,
+          "finalEquity": 4958.98,
+          "trades": 34,
+          "feesPaid": 4216.77,
+          "maxDrawdownPct": 98.09,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -99.29,
+          "finalEquity": 705.65,
+          "trades": 19,
+          "feesPaid": 5006.51,
+          "maxDrawdownPct": 99.34,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "same_event_pair",
+      "universeLabel": "2 markets, same event (KXNASDAQ100Y-26DEC31H1600-T33000 + KXNASDAQ100Y-26DEC31H1600-T19000)",
+      "scenario": "settle_no",
+      "scenarioLabel": "Hypothetical: every contract resolves NO",
+      "hypothetical": true,
+      "seed": 42,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 19.1,
+          "finalEquity": 119097.93,
+          "trades": 7,
+          "feesPaid": 1157.18,
+          "maxDrawdownPct": 13.39,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 19.04,
+          "finalEquity": 119042.48,
+          "trades": 7,
+          "feesPaid": 1153.15,
+          "maxDrawdownPct": 13.39,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "LongshotFader_FLB",
+          "returnPct": 1.5,
+          "finalEquity": 101504.55,
+          "trades": 2,
+          "feesPaid": 100.67,
+          "maxDrawdownPct": 2.83,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "VolatilityArb_MM",
+          "returnPct": -4.85,
+          "finalEquity": 95145.06,
+          "trades": 120,
+          "feesPaid": 7011.69,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "FedPivotSniper",
+          "returnPct": -10.63,
+          "finalEquity": 89372.82,
+          "trades": 27,
+          "feesPaid": 1374.84,
+          "maxDrawdownPct": 10.63,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -20.64,
+          "finalEquity": 79361.85,
+          "trades": 5,
+          "feesPaid": 1022.9,
+          "maxDrawdownPct": 22.64,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "EventCatalyst_Max",
+          "returnPct": -37.47,
+          "finalEquity": 62534.82,
+          "trades": 8,
+          "feesPaid": 1801.53,
+          "maxDrawdownPct": 39.38,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "ContrarianKing_100x",
+          "returnPct": -82.09,
+          "finalEquity": 17913.4,
+          "trades": 46,
+          "feesPaid": 4718.13,
+          "maxDrawdownPct": 83.83,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": -95.04,
+          "finalEquity": 4958.98,
+          "trades": 34,
+          "feesPaid": 4216.77,
+          "maxDrawdownPct": 98.09,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -99.74,
+          "finalEquity": 260.8,
+          "trades": 22,
+          "feesPaid": 5008.61,
+          "maxDrawdownPct": 99.76,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 18,
+          "feesPaid": 4953.8,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "full_universe",
+      "universeLabel": "3 markets (everything with real bars)",
+      "scenario": "mark_to_market",
+      "scenarioLabel": "Mark to last real quote (observed)",
+      "hypothetical": false,
+      "seed": 20260917,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 14.55,
+          "finalEquity": 114550.1,
+          "trades": 36,
+          "feesPaid": 4111.66,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 2.6,
+          "finalEquity": 102600.5,
+          "trades": 15,
+          "feesPaid": 761.12,
+          "maxDrawdownPct": 10.7,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 1.4,
+          "finalEquity": 101395.49,
+          "trades": 10,
+          "feesPaid": 895.57,
+          "maxDrawdownPct": 18.25,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "LongshotFader_FLB",
+          "returnPct": 0.73,
+          "finalEquity": 100733.23,
+          "trades": 2,
+          "feesPaid": 749.05,
+          "maxDrawdownPct": 13.76,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "VolatilityArb_MM",
+          "returnPct": 0.33,
+          "finalEquity": 100325.92,
+          "trades": 142,
+          "feesPaid": 7015.11,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "FedPivotSniper",
+          "returnPct": -13.44,
+          "finalEquity": 86559.61,
+          "trades": 28,
+          "feesPaid": 1644.72,
+          "maxDrawdownPct": 13.44,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -26.73,
+          "finalEquity": 73269.4,
+          "trades": 6,
+          "feesPaid": 1874.16,
+          "maxDrawdownPct": 31.87,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -34.4,
+          "finalEquity": 65604.56,
+          "trades": 19,
+          "feesPaid": 3861.72,
+          "maxDrawdownPct": 55.9,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "EventCatalyst_Max",
+          "returnPct": -57.41,
+          "finalEquity": 42589.39,
+          "trades": 8,
+          "feesPaid": 4947.15,
+          "maxDrawdownPct": 75.35,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -63.21,
+          "finalEquity": 36789.43,
+          "trades": 16,
+          "feesPaid": 5212.15,
+          "maxDrawdownPct": 77.59,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ContrarianKing_100x",
+          "returnPct": -70.05,
+          "finalEquity": 29948.73,
+          "trades": 52,
+          "feesPaid": 5675.9,
+          "maxDrawdownPct": 77.44,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "full_universe",
+      "universeLabel": "3 markets (everything with real bars)",
+      "scenario": "mark_to_market",
+      "scenarioLabel": "Mark to last real quote (observed)",
+      "hypothetical": false,
+      "seed": 7,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 14.55,
+          "finalEquity": 114550.1,
+          "trades": 36,
+          "feesPaid": 4111.66,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 6.89,
+          "finalEquity": 106894.82,
+          "trades": 10,
+          "feesPaid": 1154.5,
+          "maxDrawdownPct": 12.25,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 1.13,
+          "finalEquity": 101125.52,
+          "trades": 11,
+          "feesPaid": 840.98,
+          "maxDrawdownPct": 17.85,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "VolatilityArb_MM",
+          "returnPct": 0.33,
+          "finalEquity": 100325.92,
+          "trades": 142,
+          "feesPaid": 7015.11,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "LongshotFader_FLB",
+          "returnPct": -0.47,
+          "finalEquity": 99533.83,
+          "trades": 2,
+          "feesPaid": 101.32,
+          "maxDrawdownPct": 3.03,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -11.71,
+          "finalEquity": 88294,
+          "trades": 6,
+          "feesPaid": 740.53,
+          "maxDrawdownPct": 14.72,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "FedPivotSniper",
+          "returnPct": -12.52,
+          "finalEquity": 87482.2,
+          "trades": 29,
+          "feesPaid": 1679.43,
+          "maxDrawdownPct": 12.52,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "EventCatalyst_Max",
+          "returnPct": -18.64,
+          "finalEquity": 81364.33,
+          "trades": 8,
+          "feesPaid": 1882.4,
+          "maxDrawdownPct": 27.68,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -39.42,
+          "finalEquity": 60582.27,
+          "trades": 19,
+          "feesPaid": 4478.63,
+          "maxDrawdownPct": 69.8,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -62.22,
+          "finalEquity": 37777.69,
+          "trades": 23,
+          "feesPaid": 5006.52,
+          "maxDrawdownPct": 78.92,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ContrarianKing_100x",
+          "returnPct": -63.33,
+          "finalEquity": 36666.44,
+          "trades": 52,
+          "feesPaid": 5463.72,
+          "maxDrawdownPct": 74.04,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "full_universe",
+      "universeLabel": "3 markets (everything with real bars)",
+      "scenario": "mark_to_market",
+      "scenarioLabel": "Mark to last real quote (observed)",
+      "hypothetical": false,
+      "seed": 42,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 14.55,
+          "finalEquity": 114550.1,
+          "trades": 36,
+          "feesPaid": 4111.66,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 5.96,
+          "finalEquity": 105958.48,
+          "trades": 7,
+          "feesPaid": 1157.18,
+          "maxDrawdownPct": 13.39,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 5.91,
+          "finalEquity": 105910.2,
+          "trades": 7,
+          "feesPaid": 1153.15,
+          "maxDrawdownPct": 13.39,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "VolatilityArb_MM",
+          "returnPct": 0.33,
+          "finalEquity": 100325.92,
+          "trades": 142,
+          "feesPaid": 7015.11,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "LongshotFader_FLB",
+          "returnPct": -0.38,
+          "finalEquity": 99619.02,
+          "trades": 2,
+          "feesPaid": 100.67,
+          "maxDrawdownPct": 2.83,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "FedPivotSniper",
+          "returnPct": -10.21,
+          "finalEquity": 89789.33,
+          "trades": 27,
+          "feesPaid": 1374.84,
+          "maxDrawdownPct": 10.21,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -15.3,
+          "finalEquity": 84701.66,
+          "trades": 6,
+          "feesPaid": 1022.9,
+          "maxDrawdownPct": 20.04,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "EventCatalyst_Max",
+          "returnPct": -23.15,
+          "finalEquity": 76850.28,
+          "trades": 8,
+          "feesPaid": 1801.53,
+          "maxDrawdownPct": 32.06,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "ContrarianKing_100x",
+          "returnPct": -57.52,
+          "finalEquity": 42479.72,
+          "trades": 52,
+          "feesPaid": 4718.13,
+          "maxDrawdownPct": 61.65,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -58.34,
+          "finalEquity": 41658.18,
+          "trades": 18,
+          "feesPaid": 4953.8,
+          "maxDrawdownPct": 80.89,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -61.74,
+          "finalEquity": 38261.47,
+          "trades": 25,
+          "feesPaid": 4970.5,
+          "maxDrawdownPct": 79.58,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "full_universe",
+      "universeLabel": "3 markets (everything with real bars)",
+      "scenario": "settle_yes",
+      "scenarioLabel": "Hypothetical: every contract resolves YES",
+      "hypothetical": true,
+      "seed": 20260917,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 3776.19,
+          "finalEquity": 3876190.99,
+          "trades": 36,
+          "feesPaid": 4111.66,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "ContrarianKing_100x",
+          "returnPct": 848.92,
+          "finalEquity": 948924.05,
+          "trades": 52,
+          "feesPaid": 5675.9,
+          "maxDrawdownPct": 77.44,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "AlphaApex_Momentum",
+          "returnPct": 435.14,
+          "finalEquity": 535137.57,
+          "trades": 16,
+          "feesPaid": 5212.15,
+          "maxDrawdownPct": 77.59,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "EventCatalyst_Max",
+          "returnPct": 356.07,
+          "finalEquity": 456071.14,
+          "trades": 8,
+          "feesPaid": 4947.15,
+          "maxDrawdownPct": 75.35,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": 332.46,
+          "finalEquity": 432459.19,
+          "trades": 19,
+          "feesPaid": 3861.72,
+          "maxDrawdownPct": 55.9,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": 225.99,
+          "finalEquity": 325994.96,
+          "trades": 6,
+          "feesPaid": 1874.16,
+          "maxDrawdownPct": 31.87,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "VolatilityArb_MM",
+          "returnPct": 67.3,
+          "finalEquity": 167302.18,
+          "trades": 142,
+          "feesPaid": 7015.11,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "FedPivotSniper",
+          "returnPct": -4.97,
+          "finalEquity": 95029.68,
+          "trades": 28,
+          "feesPaid": 1644.72,
+          "maxDrawdownPct": 13.44,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "LongshotFader_FLB",
+          "returnPct": -82.95,
+          "finalEquity": 17053.05,
+          "trades": 2,
+          "feesPaid": 749.05,
+          "maxDrawdownPct": 83.93,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 15,
+          "feesPaid": 761.12,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 10,
+          "feesPaid": 895.57,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "full_universe",
+      "universeLabel": "3 markets (everything with real bars)",
+      "scenario": "settle_yes",
+      "scenarioLabel": "Hypothetical: every contract resolves YES",
+      "hypothetical": true,
+      "seed": 7,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 3776.19,
+          "finalEquity": 3876190.99,
+          "trades": 36,
+          "feesPaid": 4111.66,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "ContrarianKing_100x",
+          "returnPct": 1027.97,
+          "finalEquity": 1127973.19,
+          "trades": 52,
+          "feesPaid": 5463.72,
+          "maxDrawdownPct": 74.04,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "AlphaApex_Momentum",
+          "returnPct": 416.26,
+          "finalEquity": 516264.09,
+          "trades": 23,
+          "feesPaid": 5006.52,
+          "maxDrawdownPct": 78.92,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": 280.5,
+          "finalEquity": 380495.77,
+          "trades": 19,
+          "feesPaid": 4478.63,
+          "maxDrawdownPct": 69.8,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "TrendRide_FullTilt",
+          "returnPct": 148.47,
+          "finalEquity": 248473.11,
+          "trades": 6,
+          "feesPaid": 740.53,
+          "maxDrawdownPct": 14.72,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "EventCatalyst_Max",
+          "returnPct": 129.88,
+          "finalEquity": 229878.6,
+          "trades": 8,
+          "feesPaid": 1882.4,
+          "maxDrawdownPct": 27.68,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "VolatilityArb_MM",
+          "returnPct": 67.3,
+          "finalEquity": 167302.18,
+          "trades": 142,
+          "feesPaid": 7015.11,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "FedPivotSniper",
+          "returnPct": -2.28,
+          "finalEquity": 97716.63,
+          "trades": 29,
+          "feesPaid": 1679.43,
+          "maxDrawdownPct": 12.52,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "LongshotFader_FLB",
+          "returnPct": -20.04,
+          "finalEquity": 79959.03,
+          "trades": 2,
+          "feesPaid": 101.32,
+          "maxDrawdownPct": 20.37,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 10,
+          "feesPaid": 1154.5,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 11,
+          "feesPaid": 840.98,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "full_universe",
+      "universeLabel": "3 markets (everything with real bars)",
+      "scenario": "settle_yes",
+      "scenarioLabel": "Hypothetical: every contract resolves YES",
+      "hypothetical": true,
+      "seed": 42,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": 3776.19,
+          "finalEquity": 3876190.99,
+          "trades": 36,
+          "feesPaid": 4111.66,
+          "maxDrawdownPct": 69.76,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "ContrarianKing_100x",
+          "returnPct": 745.37,
+          "finalEquity": 845367.38,
+          "trades": 52,
+          "feesPaid": 4718.13,
+          "maxDrawdownPct": 61.65,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "AlphaApex_Momentum",
+          "returnPct": 377.52,
+          "finalEquity": 477524.29,
+          "trades": 25,
+          "feesPaid": 4970.5,
+          "maxDrawdownPct": 79.58,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": 310.4,
+          "finalEquity": 410400.08,
+          "trades": 18,
+          "feesPaid": 4953.8,
+          "maxDrawdownPct": 80.89,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "TrendRide_FullTilt",
+          "returnPct": 147.14,
+          "finalEquity": 247137.79,
+          "trades": 6,
+          "feesPaid": 1022.9,
+          "maxDrawdownPct": 20.04,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "EventCatalyst_Max",
+          "returnPct": 101.42,
+          "finalEquity": 201418.65,
+          "trades": 8,
+          "feesPaid": 1801.53,
+          "maxDrawdownPct": 32.06,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "VolatilityArb_MM",
+          "returnPct": 67.3,
+          "finalEquity": 167302.18,
+          "trades": 142,
+          "feesPaid": 7015.11,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "FedPivotSniper",
+          "returnPct": -4.5,
+          "finalEquity": 95495.29,
+          "trades": 27,
+          "feesPaid": 1374.84,
+          "maxDrawdownPct": 10.21,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "LongshotFader_FLB",
+          "returnPct": -19.07,
+          "finalEquity": 80930.68,
+          "trades": 2,
+          "feesPaid": 100.67,
+          "maxDrawdownPct": 19.44,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 7,
+          "feesPaid": 1153.15,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 7,
+          "feesPaid": 1157.18,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "full_universe",
+      "universeLabel": "3 markets (everything with real bars)",
+      "scenario": "settle_no",
+      "scenarioLabel": "Hypothetical: every contract resolves NO",
+      "hypothetical": true,
+      "seed": 20260917,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 14.15,
+          "finalEquity": 114151.8,
+          "trades": 10,
+          "feesPaid": 895.57,
+          "maxDrawdownPct": 18.25,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 12.2,
+          "finalEquity": 112203.61,
+          "trades": 15,
+          "feesPaid": 761.12,
+          "maxDrawdownPct": 10.7,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "LongshotFader_FLB",
+          "returnPct": 11.64,
+          "finalEquity": 111643.18,
+          "trades": 2,
+          "feesPaid": 749.05,
+          "maxDrawdownPct": 13.76,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "VolatilityArb_MM",
+          "returnPct": -4.21,
+          "finalEquity": 95790.37,
+          "trades": 142,
+          "feesPaid": 7015.11,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "FedPivotSniper",
+          "returnPct": -13.89,
+          "finalEquity": 86114.24,
+          "trades": 28,
+          "feesPaid": 1644.72,
+          "maxDrawdownPct": 13.89,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -37.34,
+          "finalEquity": 62664.93,
+          "trades": 6,
+          "feesPaid": 1874.16,
+          "maxDrawdownPct": 39.49,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -73.64,
+          "finalEquity": 26364.66,
+          "trades": 19,
+          "feesPaid": 3861.72,
+          "maxDrawdownPct": 74.42,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "EventCatalyst_Max",
+          "returnPct": -97.19,
+          "finalEquity": 2807.63,
+          "trades": 8,
+          "feesPaid": 4947.15,
+          "maxDrawdownPct": 97.25,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": -99.35,
+          "finalEquity": 645.92,
+          "trades": 36,
+          "feesPaid": 4111.66,
+          "maxDrawdownPct": 99.75,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "ContrarianKing_100x",
+          "returnPct": -99.36,
+          "finalEquity": 639.03,
+          "trades": 52,
+          "feesPaid": 5675.9,
+          "maxDrawdownPct": 99.45,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -99.7,
+          "finalEquity": 299.13,
+          "trades": 16,
+          "feesPaid": 5212.15,
+          "maxDrawdownPct": 99.71,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "full_universe",
+      "universeLabel": "3 markets (everything with real bars)",
+      "scenario": "settle_no",
+      "scenarioLabel": "Hypothetical: every contract resolves NO",
+      "hypothetical": true,
+      "seed": 7,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 19.37,
+          "finalEquity": 119365.17,
+          "trades": 10,
+          "feesPaid": 1154.5,
+          "maxDrawdownPct": 12.25,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 13.23,
+          "finalEquity": 113229.78,
+          "trades": 11,
+          "feesPaid": 840.98,
+          "maxDrawdownPct": 17.85,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "LongshotFader_FLB",
+          "returnPct": 1.51,
+          "finalEquity": 101505.78,
+          "trades": 2,
+          "feesPaid": 101.32,
+          "maxDrawdownPct": 3.03,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "VolatilityArb_MM",
+          "returnPct": -4.21,
+          "finalEquity": 95790.37,
+          "trades": 142,
+          "feesPaid": 7015.11,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "FedPivotSniper",
+          "returnPct": -13.28,
+          "finalEquity": 86721.03,
+          "trades": 29,
+          "feesPaid": 1679.43,
+          "maxDrawdownPct": 13.28,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -18.75,
+          "finalEquity": 81254.74,
+          "trades": 6,
+          "feesPaid": 740.53,
+          "maxDrawdownPct": 18.75,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "EventCatalyst_Max",
+          "returnPct": -37.21,
+          "finalEquity": 62789.46,
+          "trades": 8,
+          "feesPaid": 1882.4,
+          "maxDrawdownPct": 37.21,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -91.18,
+          "finalEquity": 8815.77,
+          "trades": 19,
+          "feesPaid": 4478.63,
+          "maxDrawdownPct": 91.26,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "ContrarianKing_100x",
+          "returnPct": -96.96,
+          "finalEquity": 3041.83,
+          "trades": 52,
+          "feesPaid": 5463.72,
+          "maxDrawdownPct": 97.62,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": -99.35,
+          "finalEquity": 645.92,
+          "trades": 36,
+          "feesPaid": 4111.66,
+          "maxDrawdownPct": 99.75,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 23,
+          "feesPaid": 5006.52,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    },
+    {
+      "universe": "full_universe",
+      "universeLabel": "3 markets (everything with real bars)",
+      "scenario": "settle_no",
+      "scenarioLabel": "Hypothetical: every contract resolves NO",
+      "hypothetical": true,
+      "seed": 42,
+      "horizonPeriods": 61,
+      "results": [
+        {
+          "rank": 1,
+          "username": "ThetaHarvest_ShortOTM",
+          "returnPct": 19.1,
+          "finalEquity": 119097.93,
+          "trades": 7,
+          "feesPaid": 1157.18,
+          "maxDrawdownPct": 13.39,
+          "qualified": true
+        },
+        {
+          "rank": 2,
+          "username": "FeeArb_PremiumBuyer",
+          "returnPct": 19.04,
+          "finalEquity": 119042.48,
+          "trades": 7,
+          "feesPaid": 1153.15,
+          "maxDrawdownPct": 13.39,
+          "qualified": true
+        },
+        {
+          "rank": 3,
+          "username": "LongshotFader_FLB",
+          "returnPct": 1.5,
+          "finalEquity": 101504.55,
+          "trades": 2,
+          "feesPaid": 100.67,
+          "maxDrawdownPct": 2.83,
+          "qualified": true
+        },
+        {
+          "rank": 4,
+          "username": "VolatilityArb_MM",
+          "returnPct": -4.21,
+          "finalEquity": 95790.37,
+          "trades": 142,
+          "feesPaid": 7015.11,
+          "maxDrawdownPct": 13.37,
+          "qualified": true
+        },
+        {
+          "rank": 5,
+          "username": "FedPivotSniper",
+          "returnPct": -10.63,
+          "finalEquity": 89372.82,
+          "trades": 27,
+          "feesPaid": 1374.84,
+          "maxDrawdownPct": 10.63,
+          "qualified": true
+        },
+        {
+          "rank": 6,
+          "username": "TrendRide_FullTilt",
+          "returnPct": -22.78,
+          "finalEquity": 77217.32,
+          "trades": 6,
+          "feesPaid": 1022.9,
+          "maxDrawdownPct": 24.73,
+          "qualified": true
+        },
+        {
+          "rank": 7,
+          "username": "EventCatalyst_Max",
+          "returnPct": -37.47,
+          "finalEquity": 62534.82,
+          "trades": 8,
+          "feesPaid": 1801.53,
+          "maxDrawdownPct": 39.38,
+          "qualified": true
+        },
+        {
+          "rank": 8,
+          "username": "ContrarianKing_100x",
+          "returnPct": -83.51,
+          "finalEquity": 16486.92,
+          "trades": 52,
+          "feesPaid": 4718.13,
+          "maxDrawdownPct": 85.12,
+          "qualified": true
+        },
+        {
+          "rank": 9,
+          "username": "PanicDip_ShockTiming",
+          "returnPct": -99.35,
+          "finalEquity": 645.92,
+          "trades": 36,
+          "feesPaid": 4111.66,
+          "maxDrawdownPct": 99.75,
+          "qualified": true
+        },
+        {
+          "rank": 10,
+          "username": "AlphaApex_Momentum",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 25,
+          "feesPaid": 4970.5,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": 11,
+          "username": "GammaWhale_Squeeze",
+          "returnPct": -100,
+          "finalEquity": 0,
+          "trades": 18,
+          "feesPaid": 4953.8,
+          "maxDrawdownPct": 100,
+          "qualified": true
+        },
+        {
+          "rank": null,
+          "username": "YieldVulture_Arb",
+          "returnPct": 0,
+          "finalEquity": 100000,
+          "trades": 0,
+          "feesPaid": 0,
+          "maxDrawdownPct": 0,
+          "qualified": false
+        }
+      ]
+    }
+  ]
+}

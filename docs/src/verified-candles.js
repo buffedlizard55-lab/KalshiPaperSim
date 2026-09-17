@@ -34,6 +34,8 @@
  *     yes_ask   [open, high, low, close] ]
  */
 
+import { stableEqual } from './json-utils.js';
+
 export const EXTENDED_CAPTURE_META = Object.freeze({
   ticker: 'KXNASDAQ100Y-26DEC31H1600-T33000',
   series_ticker: 'KXNASDAQ100Y',
@@ -87,6 +89,14 @@ function fp(n) {
 
 /**
  * Expand a compact tuple into the exact Kalshi candlestick wire object.
+ *
+ * NO-TRADE PERIODS: when nothing trades in a period the live API omits the
+ * OHLC/mean fields entirely and returns only previous_dollars (verified in the
+ * KXNASDAQ100Y-26DEC31H1600-T19000 capture, bars 1786161600 / 1788235200 /
+ * 1789358400 / 1789531200 / 1789617600 → {"price":{"previous_dollars":"0.0300"}}
+ * with volume_fp "0.00"). Those tuples store `null` in slots 0-4 and the
+ * expander reproduces the sparse wire shape instead of inventing a price.
+ *
  * @param {Array} t tuple in the layout documented above
  */
 export function expandBar(t) {
@@ -95,14 +105,16 @@ export function expandBar(t) {
     end_period_ts: ts,
     open_interest_fp: String(oi),
     volume_fp: String(vol),
-    price: {
-      open_dollars: fp(price[0]),
-      high_dollars: fp(price[1]),
-      low_dollars: fp(price[2]),
-      close_dollars: fp(price[3]),
-      mean_dollars: fp(price[4]),
-      previous_dollars: fp(price[5])
-    },
+    price: price[0] === null || price[0] === undefined
+      ? { previous_dollars: fp(price[5]) }
+      : {
+        open_dollars: fp(price[0]),
+        high_dollars: fp(price[1]),
+        low_dollars: fp(price[2]),
+        close_dollars: fp(price[3]),
+        mean_dollars: fp(price[4]),
+        previous_dollars: fp(price[5])
+      },
     yes_bid: {
       open_dollars: fp(bid[0]),
       high_dollars: fp(bid[1]),
@@ -187,33 +199,181 @@ export const KXNASDAQ100Y_T33000_DAILY = Object.freeze([
   [1789617600, '163319.88', '5891.38', [0.10, 0.13, 0.08, 0.12, 0.1002, 0.08], [0.08, 0.10, 0.07, 0.09], [0.10, 0.13, 0.08, 0.12]]
 ]);
 
+/* ═════════════════════════════════════════════════════════════════════════
+ * SECOND VERIFIED SERIES — KXNASDAQ100Y-26DEC31H1600-T19000
+ * ("Will the Nasdaq-100 be at or below 18,999.99 at the end of Dec 31, 2026
+ *   at 4pm EST?") — the OTHER tail of the same event, which is what lets the
+ * competition run across more than one market.
+ *
+ * SOURCE (live Kalshi production API, retrieved 2026-09-17):
+ *   GET https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/
+ *       KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks
+ *       ?start_ts=1784419200&end_ts=1789689600&period_interval=1440
+ *   Docs: https://docs.kalshi.com/api-reference/market/get-market-candlesticks
+ *
+ * CROSS-CHECK (independently captured, not assumed): this full 61-bar window
+ *   CONTAINS the earlier 14-bar snapshot captured the same day
+ *   (src/verified-snapshot.js → CANDLESTICKS['KXNASDAQ100Y-26DEC31H1600-T19000']).
+ *   All 14 overlapping bars match field-for-field — end_period_ts,
+ *   open_interest_fp, volume_fp and every price field — and test 51 asserts it.
+ *   Five of the 61 bars are NO-TRADE periods (volume_fp "0.00", price object
+ *   carrying previous_dollars only); they are stored as nulls, not filled in.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+export const EXTENDED_CAPTURE_META_T19000 = Object.freeze({
+  ticker: 'KXNASDAQ100Y-26DEC31H1600-T19000',
+  series_ticker: 'KXNASDAQ100Y',
+  capturedAt: '2026-09-17',
+  periodIntervalMinutes: 1440,
+  periodIntervalLabel: 'daily',
+  windows: Object.freeze([Object.freeze({ start_ts: 1784419200, end_ts: 1789689600, bars: 61 })]),
+  firstTs: 1784433600,
+  lastTs: 1789617600,
+  barCount: 61,
+  contiguous: true,
+  noTradeBars: 5,
+  url: 'https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440',
+  doc: 'https://docs.kalshi.com/api-reference/market/get-market-candlesticks',
+  dataStatus: 'REAL_EXCHANGE_DATA_POINT_IN_TIME'
+});
+
+/** One NO-TRADE bar copied VERBATIM from the live response — expander oracle. */
+export const VERBATIM_SAMPLE_BAR_T19000 = Object.freeze({
+  end_period_ts: 1789617600,
+  open_interest_fp: '1112967.95',
+  price: { previous_dollars: '0.0300' },
+  volume_fp: '0.00',
+  yes_ask: {
+    close_dollars: '0.0400',
+    high_dollars: '0.0400',
+    low_dollars: '0.0400',
+    open_dollars: '0.0400'
+  },
+  yes_bid: {
+    close_dollars: '0.0300',
+    high_dollars: '0.0300',
+    low_dollars: '0.0300',
+    open_dollars: '0.0300'
+  }
+});
+
+/** 61 real daily bars for KXNASDAQ100Y-26DEC31H1600-T19000, oldest first. */
+export const KXNASDAQ100Y_T19000_DAILY = Object.freeze([
+  [1784433600, '1025952.73', '47.00', [0.10, 0.10, 0.10, 0.10, 0.1000, 0.05], [0.05, 0.05, 0.05, 0.05], [0.09, 0.10, 0.09, 0.10]],
+  [1784520000, '1026187.91', '329.24', [0.05, 0.10, 0.05, 0.10, 0.0929, 0.10], [0.05, 0.06, 0.05, 0.06], [0.10, 0.10, 0.10, 0.10]],
+  [1784606400, '1026237.91', '50.00', [0.07, 0.07, 0.07, 0.07, 0.0700, 0.10], [0.06, 0.09, 0.06, 0.06], [0.10, 0.10, 0.07, 0.07]],
+  [1784692800, '1026450.94', '250.65', [0.07, 0.08, 0.06, 0.08, 0.0705, 0.07], [0.06, 0.06, 0.06, 0.06], [0.07, 0.08, 0.07, 0.08]],
+  [1784779200, '1028477.21', '2230.93', [0.08, 0.09, 0.06, 0.09, 0.0879, 0.08], [0.06, 0.06, 0.06, 0.06], [0.08, 0.10, 0.08, 0.09]],
+  [1784865600, '1080731.34', '52348.19', [0.09, 0.16, 0.08, 0.13, 0.1003, 0.09], [0.06, 0.10, 0.06, 0.10], [0.09, 0.17, 0.09, 0.13]],
+  [1784952000, '1081085.56', '946.57', [0.13, 0.13, 0.08, 0.10, 0.0997, 0.13], [0.10, 0.10, 0.08, 0.10], [0.13, 0.13, 0.09, 0.11]],
+  [1785038400, '1081171.43', '269.70', [0.10, 0.11, 0.09, 0.11, 0.1050, 0.10], [0.10, 0.10, 0.09, 0.09], [0.11, 0.11, 0.10, 0.11]],
+  [1785124800, '1081189.72', '62.56', [0.10, 0.11, 0.10, 0.10, 0.1053, 0.11], [0.09, 0.10, 0.09, 0.10], [0.11, 0.11, 0.10, 0.11]],
+  [1785211200, '1081266.26', '299.42', [0.10, 0.10, 0.09, 0.10, 0.0991, 0.10], [0.10, 0.10, 0.09, 0.09], [0.11, 0.11, 0.10, 0.10]],
+  [1785297600, '1084892.34', '5589.88', [0.10, 0.14, 0.08, 0.10, 0.1064, 0.10], [0.09, 0.13, 0.08, 0.10], [0.10, 0.14, 0.09, 0.11]],
+  [1785384000, '1086333.48', '2932.96', [0.11, 0.12, 0.09, 0.09, 0.0999, 0.10], [0.10, 0.12, 0.08, 0.08], [0.11, 0.13, 0.10, 0.10]],
+  [1785470400, '1086663.56', '508.80', [0.10, 0.11, 0.08, 0.10, 0.0982, 0.09], [0.08, 0.10, 0.08, 0.10], [0.10, 0.11, 0.09, 0.11]],
+  [1785556800, '1086906.87', '587.17', [0.10, 0.10, 0.07, 0.07, 0.0810, 0.10], [0.10, 0.10, 0.07, 0.07], [0.11, 0.11, 0.08, 0.08]],
+  [1785643200, '1087015.29', '933.60', [0.07, 0.09, 0.06, 0.09, 0.0704, 0.07], [0.07, 0.08, 0.05, 0.08], [0.08, 0.09, 0.06, 0.09]],
+  [1785729600, '1087015.29', '27.89', [0.08, 0.08, 0.07, 0.07, 0.0700, 0.09], [0.08, 0.08, 0.06, 0.07], [0.09, 0.09, 0.08, 0.08]],
+  [1785816000, '1087441.73', '616.56', [0.08, 0.08, 0.02, 0.07, 0.0750, 0.07], [0.07, 0.07, 0.02, 0.06], [0.08, 0.08, 0.07, 0.07]],
+  [1785902400, '1087499.82', '59.09', [0.07, 0.07, 0.06, 0.06, 0.0645, 0.07], [0.06, 0.06, 0.05, 0.05], [0.07, 0.07, 0.06, 0.06]],
+  [1785988800, '1092138.33', '4939.36', [0.06, 0.07, 0.05, 0.05, 0.0602, 0.06], [0.05, 0.06, 0.05, 0.05], [0.06, 0.07, 0.06, 0.07]],
+  [1786075200, '1092192.67', '648.02', [0.07, 0.07, 0.05, 0.07, 0.0569, 0.05], [0.05, 0.06, 0.05, 0.05], [0.07, 0.07, 0.07, 0.07]],
+  [1786161600, '1092192.67', '0.00', [null, null, null, null, null, 0.07], [0.05, 0.06, 0.05, 0.06], [0.07, 0.07, 0.07, 0.07]],
+  [1786248000, '1092055.87', '174.32', [0.07, 0.07, 0.06, 0.06, 0.0602, 0.07], [0.06, 0.06, 0.05, 0.05], [0.07, 0.07, 0.06, 0.06]],
+  [1786334400, '1096819.49', '5236.38', [0.06, 0.06, 0.05, 0.05, 0.0595, 0.06], [0.05, 0.06, 0.05, 0.06], [0.06, 0.07, 0.06, 0.07]],
+  [1786420800, '1096807.81', '57.66', [0.07, 0.07, 0.05, 0.05, 0.0580, 0.05], [0.06, 0.06, 0.05, 0.05], [0.07, 0.07, 0.07, 0.07]],
+  [1786507200, '1096823.64', '37.81', [0.07, 0.07, 0.06, 0.06, 0.0671, 0.05], [0.05, 0.06, 0.05, 0.06], [0.07, 0.07, 0.07, 0.07]],
+  [1786593600, '1096812.05', '23.59', [0.06, 0.07, 0.06, 0.06, 0.0621, 0.06], [0.06, 0.06, 0.05, 0.05], [0.07, 0.07, 0.06, 0.06]],
+  [1786680000, '1096812.05', '193.00', [0.05, 0.05, 0.05, 0.05, 0.0500, 0.06], [0.05, 0.05, 0.05, 0.05], [0.06, 0.06, 0.06, 0.06]],
+  [1786766400, '1097124.42', '312.37', [0.06, 0.06, 0.06, 0.06, 0.0600, 0.05], [0.05, 0.05, 0.05, 0.05], [0.06, 0.06, 0.06, 0.06]],
+  [1786852800, '1098227.27', '3232.62', [0.05, 0.06, 0.05, 0.06, 0.0579, 0.06], [0.05, 0.06, 0.05, 0.05], [0.06, 0.07, 0.06, 0.06]],
+  [1786939200, '1098261.27', '166.00', [0.06, 0.06, 0.05, 0.05, 0.0560, 0.06], [0.05, 0.05, 0.05, 0.05], [0.06, 0.06, 0.06, 0.06]],
+  [1787025600, '1098255.86', '11.41', [0.05, 0.06, 0.05, 0.05, 0.0535, 0.05], [0.05, 0.05, 0.05, 0.05], [0.06, 0.06, 0.06, 0.06]],
+  [1787112000, '1098255.86', '600.00', [0.05, 0.05, 0.05, 0.05, 0.0500, 0.05], [0.05, 0.05, 0.05, 0.05], [0.06, 0.06, 0.06, 0.06]],
+  [1787198400, '1098572.85', '381.18', [0.06, 0.06, 0.05, 0.06, 0.0597, 0.05], [0.05, 0.05, 0.05, 0.05], [0.06, 0.06, 0.06, 0.06]],
+  [1787284800, '1098545.23', '967.62', [0.05, 0.05, 0.05, 0.05, 0.0500, 0.06], [0.05, 0.05, 0.04, 0.04], [0.06, 0.06, 0.05, 0.05]],
+  [1787371200, '1098645.23', '100.00', [0.05, 0.05, 0.05, 0.05, 0.0500, 0.05], [0.04, 0.04, 0.04, 0.04], [0.05, 0.05, 0.05, 0.05]],
+  [1787457600, '1098646.33', '1.10', [0.05, 0.05, 0.05, 0.05, 0.0500, 0.05], [0.04, 0.04, 0.04, 0.04], [0.05, 0.05, 0.05, 0.05]],
+  [1787544000, '1099131.92', '552.56', [0.05, 0.05, 0.04, 0.04, 0.0488, 0.05], [0.04, 0.04, 0.02, 0.02], [0.05, 0.05, 0.04, 0.04]],
+  [1787630400, '1099111.89', '387.62', [0.03, 0.04, 0.03, 0.03, 0.0352, 0.04], [0.02, 0.03, 0.02, 0.03], [0.04, 0.05, 0.04, 0.04]],
+  [1787716800, '1100522.01', '1607.74', [0.04, 0.04, 0.04, 0.04, 0.0400, 0.03], [0.03, 0.04, 0.03, 0.04], [0.04, 0.05, 0.04, 0.05]],
+  [1787803200, '1100774.23', '474.47', [0.04, 0.04, 0.04, 0.04, 0.0400, 0.04], [0.04, 0.04, 0.03, 0.03], [0.05, 0.05, 0.04, 0.04]],
+  [1787889600, '1100774.23', '2.00', [0.04, 0.04, 0.03, 0.03, 0.0350, 0.04], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1787976000, '1101587.20', '833.00', [0.04, 0.04, 0.04, 0.04, 0.0400, 0.03], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1788062400, '1102437.44', '867.26', [0.03, 0.04, 0.03, 0.04, 0.0396, 0.04], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1788148800, '1103270.44', '833.00', [0.04, 0.04, 0.04, 0.04, 0.0400, 0.04], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1788235200, '1103270.44', '0.00', [null, null, null, null, null, 0.04], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1788321600, '1103272.39', '2.00', [0.03, 0.03, 0.03, 0.03, 0.0300, 0.04], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1788408000, '1103262.39', '2656.00', [0.03, 0.04, 0.03, 0.04, 0.0300, 0.03], [0.03, 0.03, 0.02, 0.02], [0.04, 0.04, 0.03, 0.04]],
+  [1788494400, '1104086.52', '833.16', [0.04, 0.04, 0.04, 0.04, 0.0400, 0.04], [0.02, 0.03, 0.02, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1788580800, '1104892.70', '989.82', [0.04, 0.04, 0.03, 0.03, 0.0387, 0.04], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1788667200, '1104962.23', '338.50', [0.04, 0.04, 0.02, 0.02, 0.0338, 0.03], [0.03, 0.03, 0.02, 0.02], [0.04, 0.04, 0.03, 0.03]],
+  [1788753600, '1106142.13', '1254.93', [0.03, 0.04, 0.03, 0.03, 0.0314, 0.02], [0.02, 0.02, 0.02, 0.02], [0.03, 0.04, 0.03, 0.03]],
+  [1788840000, '1106088.72', '106.53', [0.02, 0.04, 0.02, 0.02, 0.0240, 0.03], [0.02, 0.02, 0.02, 0.02], [0.03, 0.04, 0.03, 0.03]],
+  [1788926400, '1110982.72', '6358.14', [0.03, 0.04, 0.02, 0.04, 0.0378, 0.02], [0.02, 0.03, 0.01, 0.01], [0.03, 0.04, 0.03, 0.03]],
+  [1789012800, '1110983.84', '1025.15', [0.03, 0.03, 0.03, 0.03, 0.0300, 0.04], [0.01, 0.03, 0.01, 0.02], [0.03, 0.04, 0.03, 0.03]],
+  [1789099200, '1113087.95', '2136.57', [0.03, 0.07, 0.03, 0.07, 0.0411, 0.03], [0.02, 0.03, 0.02, 0.03], [0.03, 0.07, 0.03, 0.06]],
+  [1789185600, '1113087.95', '154.61', [0.04, 0.04, 0.03, 0.03, 0.0330, 0.07], [0.03, 0.04, 0.02, 0.03], [0.06, 0.06, 0.04, 0.04]],
+  [1789272000, '1113037.95', '50.00', [0.03, 0.03, 0.03, 0.03, 0.0300, 0.03], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1789358400, '1113037.95', '0.00', [null, null, null, null, null, 0.03], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1789444800, '1112967.95', '70.00', [0.03, 0.03, 0.03, 0.03, 0.0300, 0.03], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1789531200, '1112967.95', '0.00', [null, null, null, null, null, 0.03], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]],
+  [1789617600, '1112967.95', '0.00', [null, null, null, null, null, 0.03], [0.03, 0.03, 0.03, 0.03], [0.04, 0.04, 0.04, 0.04]]
+]);
+
+/**
+ * Registry of every full-window verified candle series in this module.
+ * Keyed by market ticker so the runner can resolve history per market.
+ */
+export const EXTENDED_SERIES = Object.freeze({
+  [EXTENDED_CAPTURE_META.ticker]: { meta: EXTENDED_CAPTURE_META, tuples: KXNASDAQ100Y_T33000_DAILY, verbatim: VERBATIM_SAMPLE_BAR },
+  [EXTENDED_CAPTURE_META_T19000.ticker]: { meta: EXTENDED_CAPTURE_META_T19000, tuples: KXNASDAQ100Y_T19000_DAILY, verbatim: VERBATIM_SAMPLE_BAR_T19000 }
+});
+
+/** Tickers that have a full verified daily window in this module. */
+export function getExtendedTickers() {
+  return Object.keys(EXTENDED_SERIES);
+}
+
 /** Expanded wire-format candlesticks (the shape the ReplayEngine consumes). */
 export function getExtendedCandlesticks(ticker = EXTENDED_CAPTURE_META.ticker) {
-  if (ticker !== EXTENDED_CAPTURE_META.ticker) return null;
-  return KXNASDAQ100Y_T33000_DAILY.map(expandBar);
+  const entry = EXTENDED_SERIES[ticker];
+  if (!entry) return null;
+  return entry.tuples.map(expandBar);
 }
 
 /** Self-check used by the test suite: expander must reproduce the live shape. */
-export function verifyExpanderAgainstVerbatim() {
-  const last = KXNASDAQ100Y_T33000_DAILY[KXNASDAQ100Y_T33000_DAILY.length - 1];
+export function verifyExpanderAgainstVerbatim(ticker = EXTENDED_CAPTURE_META.ticker) {
+  const entry = EXTENDED_SERIES[ticker] || EXTENDED_SERIES[EXTENDED_CAPTURE_META.ticker];
+  const verbatim = entry.verbatim;
+  const last = entry.tuples[entry.tuples.length - 1];
   const expanded = expandBar(last);
-  const a = JSON.stringify(expanded, Object.keys(VERBATIM_SAMPLE_BAR).sort());
-  const b = JSON.stringify(VERBATIM_SAMPLE_BAR, Object.keys(VERBATIM_SAMPLE_BAR).sort());
-  return { ok: a === b, expanded, verbatim: VERBATIM_SAMPLE_BAR };
+  // stableEqual serialises the WHOLE tree with sorted keys. (JSON.stringify's
+  // key-array replacer filters nested objects too — see src/json-utils.js — which
+  // would silently skip every price field.)
+  const ok = stableEqual(expanded, verbatim);
+  return { ok, expanded, verbatim, ticker };
 }
 
 /** Cheap structural assertions over the whole series (used by tests + docs). */
-export function summarizeExtendedSeries() {
-  const bars = KXNASDAQ100Y_T33000_DAILY;
+export function summarizeExtendedSeries(ticker = EXTENDED_CAPTURE_META.ticker) {
+  const entry = EXTENDED_SERIES[ticker] || EXTENDED_SERIES[EXTENDED_CAPTURE_META.ticker];
+  const meta = entry.meta;
+  const bars = entry.tuples;
   const gaps = [];
   for (let i = 1; i < bars.length; i++) {
     const delta = bars[i][0] - bars[i - 1][0];
     if (delta !== 86400) gaps.push({ from: bars[i - 1][0], to: bars[i][0], deltaSeconds: delta });
   }
-  const closes = bars.map((b) => b[3][3]);
+  // No-trade periods store close = null; they are excluded from price
+  // statistics instead of being silently counted as $0.00.
+  const closes = bars.map((b) => b[3][3]).filter((v) => v !== null && v !== undefined);
+  const noTradeBars = bars.length - closes.length;
   const totalVolume = bars.reduce((s, b) => s + Number(b[2]), 0);
   return {
-    ticker: EXTENDED_CAPTURE_META.ticker,
+    ticker: meta.ticker,
+    series: meta.series_ticker,
     bars: bars.length,
     firstTs: bars[0][0],
     lastTs: bars[bars.length - 1][0],
@@ -221,10 +381,12 @@ export function summarizeExtendedSeries() {
     lastDate: new Date(bars[bars.length - 1][0] * 1000).toISOString(),
     contiguous: gaps.length === 0,
     gaps,
-    closeMin: Math.min(...closes),
-    closeMax: Math.max(...closes),
-    closeFirst: closes[0],
-    closeLast: closes[closes.length - 1],
+    noTradeBars,
+    tradedBars: closes.length,
+    closeMin: closes.length ? Math.min(...closes) : null,
+    closeMax: closes.length ? Math.max(...closes) : null,
+    closeFirst: closes[0] ?? null,
+    closeLast: closes[closes.length - 1] ?? null,
     totalVolume: Number(totalVolume.toFixed(2))
   };
 }

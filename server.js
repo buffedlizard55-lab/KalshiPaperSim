@@ -36,6 +36,8 @@ import { attachWebSocketServer } from './src/ws-lite.js';
 import { UpstreamFeedManager, FEED_MODE, parseFeedMessage } from './src/kalshi-ws.js';
 import { compileUserStrategy, lintSource } from './src/strategy-sandbox.js';
 import { credentialsFromEnv, buildAuthHeaders } from './src/kalshi-auth.js';
+import { classifySettlement, buildSettlementPlan, fetchMarketSettlements, FINAL_STATUS, PENDING_FINAL_STATUSES, SETTLEMENT_FEE_USD } from './src/settlement-tracker.js';
+import { readHistoryManifest, HISTORY_DIR } from './src/history-store.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -402,6 +404,71 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
+    /* Real settlement tracking: reads the exchange's OWN status/result fields
+       for the markets this competition trades. Only `finalized` + yes/no books a
+       payout; `determined`/`disputed`/`amended` are reported as PENDING_FINAL.
+       https://docs.kalshi.com/api-reference/market/get-market */
+    if (p === '/api/settlements') {
+      const tracked = getReplayableMarkets().map((m) => m.ticker);
+      const tickers = url.searchParams.get('tickers')
+        ? url.searchParams.get('tickers').split(',').map((t) => t.trim()).filter(Boolean)
+        : tracked;
+      if (url.searchParams.get('source') !== 'live') {
+        // Offline: classify the CAPTURED market objects. Honest and instant.
+        const local = tickers.map((t) => {
+          const m = getVerifiedMarkets().find((x) => x.ticker === t);
+          return m
+            ? { ticker: t, status: m.status, result: m.result, close_time: m.close_time, classification: classifySettlement(m), source: DATA_SOURCE.VERIFIED_SNAPSHOT, capturedAt: m._provenance?.capturedAt || CAPTURE_META.capturedAt }
+            : { ticker: t, error: 'not present in the verified snapshot' };
+        });
+        return sendJSON(res, 200, {
+          source: DATA_SOURCE.VERIFIED_SNAPSHOT,
+          checkedAt: new Date().toISOString(),
+          markets: local,
+          settlementFeeUsd: SETTLEMENT_FEE_USD,
+          note: 'Classified from the captured market objects (status/result). Every captured market was still active on 2026-09-17, so nothing has settled yet. Use ?source=live to poll the exchange now.'
+        });
+      }
+      const polled = await fetchMarketSettlements(tickers);
+      return sendJSON(res, 200, {
+        source: polled.errors.length === tickers.length ? 'LIVE_FAILED' : 'LIVE',
+        checkedAt: polled.checkedAt,
+        endpoint: polled.endpoint,
+        markets: polled.markets,
+        errors: polled.errors,
+        settlementFeeUsd: SETTLEMENT_FEE_USD,
+        finalStatus: FINAL_STATUS,
+        pendingStatuses: PENDING_FINAL_STATUSES,
+        note: 'A payout is booked only for status=finalized with result yes/no. No settlement fee (verified).'
+      });
+    }
+
+    /* Multi-market portfolio accounting for the current competition run. */
+    if (p === '/api/market-stats') {
+      const comp = getCompetition({ regime: memory.state.regime });
+      return sendJSON(res, 200, {
+        competition: { id: comp.competition.id, seed: comp.competition.seed, horizonPeriods: comp.competition.horizonPeriods },
+        marketStats: comp.marketStats,
+        perStrategy: comp.results.map((r) => ({
+          username: r.username,
+          marketAnalytics: r.marketAnalytics
+        }))
+      });
+    }
+
+    /* The accumulated history store written by scripts/ingest-history.mjs. */
+    if (p === '/api/history') {
+      const manifest = readHistoryManifest();
+      if (!manifest) {
+        return sendJSON(res, 200, {
+          present: false,
+          dir: HISTORY_DIR,
+          note: 'No accumulated history yet. Run `node scripts/ingest-history.mjs` from a network that can reach external-api.kalshi.com (the build sandbox cannot — IRREGULARITIES.md #4), or let .github/workflows/daily-history.yml run it daily.'
+        });
+      }
+      return sendJSON(res, 200, { present: true, dir: HISTORY_DIR, manifest });
+    }
+
     if (p === '/api/leaderboard') {
       const comp = getCompetition({ regime: memory.state.regime });
       return sendJSON(res, 200, {
@@ -424,7 +491,10 @@ const server = http.createServer(async (req, res) => {
       return sendJSON(res, 200, {
         competition: comp.competition,
         leaderboard: comp.leaderboard,
+        marketStats: comp.marketStats,
         results: comp.results.map((r) => ({
+          username: r.username,
+          strategyId: r.strategyId,
           strategy: r.strategy,
           stats: r.stats,
           returnPct: r.returnPct,
@@ -435,6 +505,10 @@ const server = http.createServer(async (req, res) => {
           curveAnalysis: r.curveAnalysis,
           equityCurve: r.equityCurve,
           recentTrades: r.recentTrades,
+          // Multi-market accounting for this one entry (per-market exposure,
+          // fees and concentration), computed from its own trade log.
+          marketAnalytics: r.marketAnalytics,
+          unfilledContracts: r.unfilledContracts,
           actionLogCount: (r.actionLog || []).length
         }))
       });

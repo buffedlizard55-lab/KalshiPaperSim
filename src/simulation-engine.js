@@ -991,7 +991,7 @@ export class PaperPortfolio {
     if (existing) {
       const totalContracts = round2(existing.count + execution.contracts);
       const totalCostBasis = existing.count * existing.avgCost + execution.contracts * execution.vwap;
-      existing.avgCost = round6(totalCostBasis / totalContracts);
+      existing.avgCost = round10(totalCostBasis / totalContracts);
       existing.count = totalContracts;
       existing.currentPrice = execution.vwap;
       existing.feesPaid = round6(existing.feesPaid + execution.fee);
@@ -1089,7 +1089,7 @@ export class PaperPortfolio {
       const existing = this.positions.get(key);
       if (existing) {
         const totalContracts = round2(existing.count + fill.contracts);
-        existing.avgCost = round6((existing.count * existing.avgCost + gross) / totalContracts);
+        existing.avgCost = round10((existing.count * existing.avgCost + gross) / totalContracts);
         existing.count = totalContracts;
         existing.currentPrice = fill.fillPrice;
         existing.feesPaid = round6(existing.feesPaid + fill.fee);
@@ -1299,6 +1299,20 @@ export function clamp(v, lo, hi) {
 }
 export function round6(v) {
   return Number.isFinite(v) ? parseFloat(v.toFixed(6)) : 0;
+}
+/**
+ * Ten decimal places, for AVERAGE COST only.
+ *
+ * Why not round6: avgCost is re-rounded on every fill and then multiplied by a
+ * contract count that can exceed 900,000 in this competition. 0.5e-6 of rounding
+ * on a 900k-contract position is up to $0.45 of phantom cost basis per position,
+ * and the error compounds across fills — broad enough to break the accounting
+ * identity (equityChange = realizedPnl + unrealizedPnl − feesPaid) by whole
+ * dollars on the most aggressive strategies. Ten decimals keeps the residual
+ * below 1e-4 dollars while leaving money values rounded to cents for display.
+ */
+export function round10(v) {
+  return Number.isFinite(v) ? parseFloat(v.toFixed(10)) : 0;
 }
 export function round2(v) {
   return Number.isFinite(v) ? parseFloat(v.toFixed(2)) : 0;

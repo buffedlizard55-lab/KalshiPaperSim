@@ -334,6 +334,33 @@ export class ReplayEngine {
       }
     }
 
+    /**
+     * Land the equity curve on the FINAL equity.
+     *
+     * The timeline is ordered by (timestamp, ticker), so the last timestamp can
+     * cover several markets: the curve point pushed mid-loop is written when the
+     * first market of that timestamp is processed and can pre-date the last
+     * market's marks and fills. Without this correction the curve would end
+     * somewhere other than finalEquity (it did — by $9,086.73 on a two-market
+     * universe), which would make every headline number disagree with the chart.
+     */
+    const finalRow = this.timeline[this.timeline.length - 1];
+    const finalStats = portfolio.updateEquity();
+    const finalPoint = {
+      ts: finalRow.candle.endTs,
+      date: finalRow.candle.endDate,
+      equity: finalStats.equity,
+      returnPct: finalStats.returnPct,
+      trades: finalStats.totalTrades,
+      drawdownPct: finalStats.maxDrawdownPct
+    };
+    if (equityCurve.length > 0 && equityCurve[equityCurve.length - 1].ts === finalPoint.ts) {
+      equityCurve[equityCurve.length - 1] = finalPoint;
+    } else {
+      equityCurve.push(finalPoint);
+    }
+    const lastTsFinal = finalPoint.ts;
+
     // Final settlement (optional) — pays notional for winners, $0 for losers.
     let settlementDetail = null;
     if (this.settleAtEnd && this.finalResult) {
@@ -346,7 +373,7 @@ export class ReplayEngine {
       }
       settlementDetail = settled;
       const s = portfolio.updateEquity();
-      equityCurve.push({ ts: lastTs, date: 'SETTLEMENT', equity: s.equity, returnPct: s.returnPct, trades: s.totalTrades, drawdownPct: s.maxDrawdownPct, settlement: true });
+      equityCurve.push({ ts: lastTsFinal, date: 'SETTLEMENT', equity: s.equity, returnPct: s.returnPct, trades: s.totalTrades, drawdownPct: s.maxDrawdownPct, settlement: true });
     }
 
     const stats = portfolio.updateEquity();

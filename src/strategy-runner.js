@@ -10,9 +10,12 @@
 import { STRATEGIES, getStrategy } from './strategies.js';
 import { ReplayEngine, analyzeEquityCurve } from './backtest-replay.js';
 import { computeAttribution, generatePostMortem, buildLeaderboard } from './analysis.js';
+import { computePortfolioExposure, computeCompetitionMarketStats } from './market-analytics.js';
 import { normalizeMarket, DATA_SOURCE } from './kalshi-api.js';
 import { getVerifiedMarkets, getVerifiedCandlesticks, CANDLESTICKS, CAPTURE_META, seriesFeeConfig } from './verified-snapshot.js';
-import { EXTENDED_CAPTURE_META, getExtendedCandlesticks, summarizeExtendedSeries } from './verified-candles.js';
+import {
+  EXTENDED_CAPTURE_META, getExtendedCandlesticks, summarizeExtendedSeries, EXTENDED_SERIES
+} from './verified-candles.js';
 
 /** Markets in the verified snapshot that actually have candlestick history. */
 export function getReplayableMarkets() {
@@ -41,17 +44,22 @@ export function getVerifiedCandleMap(tickers = null) {
 /** Provenance + bar counts per replayable market (shown in the UI and docs). */
 export function getCandleCoverage() {
   const map = getVerifiedCandleMap();
-  return Object.entries(map).map(([ticker, bars]) => ({
-    ticker,
-    bars: bars.length,
-    firstTs: bars[0]?.end_period_ts ?? null,
-    lastTs: bars[bars.length - 1]?.end_period_ts ?? null,
-    firstDate: bars[0] ? new Date(bars[0].end_period_ts * 1000).toISOString() : null,
-    lastDate: bars.length ? new Date(bars[bars.length - 1].end_period_ts * 1000).toISOString() : null,
-    periodIntervalMinutes: ticker === EXTENDED_CAPTURE_META.ticker ? EXTENDED_CAPTURE_META.periodIntervalMinutes : 1440,
-    source: ticker === EXTENDED_CAPTURE_META.ticker ? 'extended_capture_61_bars' : 'snapshot_capture',
-    url: ticker === EXTENDED_CAPTURE_META.ticker ? EXTENDED_CAPTURE_META.url : CANDLESTICKS[ticker]?._provenance?.url || null
-  }));
+  return Object.entries(map).map(([ticker, bars]) => {
+    const ext = EXTENDED_SERIES[ticker]?.meta || null;
+    return {
+      ticker,
+      bars: bars.length,
+      firstTs: bars[0]?.end_period_ts ?? null,
+      lastTs: bars[bars.length - 1]?.end_period_ts ?? null,
+      firstDate: bars[0] ? new Date(bars[0].end_period_ts * 1000).toISOString() : null,
+      lastDate: bars.length ? new Date(bars[bars.length - 1].end_period_ts * 1000).toISOString() : null,
+      periodIntervalMinutes: ext ? ext.periodIntervalMinutes : 1440,
+      source: ext ? 'extended_capture_61_bars' : 'snapshot_capture',
+      url: ext ? ext.url : CANDLESTICKS[ticker]?._provenance?.url || null,
+      capturedAt: ext ? ext.capturedAt : CANDLESTICKS[ticker]?._provenance?.capturedAt || null,
+      noTradeBars: bars.filter((b) => !b.price || b.price.close_dollars === undefined).length
+    };
+  });
 }
 
 export { EXTENDED_CAPTURE_META, summarizeExtendedSeries, seriesFeeConfig };
@@ -81,7 +89,11 @@ export function runCompetition(options = {}) {
     feeMultiplier: options.feeMultiplier ?? null, // null => resolve per series from captured Series objects
     notional: options.notional ?? 1.0,
     settleAtEnd: options.settleAtEnd ?? false,
-    finalResult: options.finalResult || null
+    finalResult: options.finalResult || null,
+    // 'partial' (default) fills only real depth and reports the rest as unfilled.
+    // 'penalty' is a STRESS mode that invents a price beyond the book; it is
+    // never used for headline results and is labelled wherever it appears.
+    exhaustionPolicy: options.exhaustionPolicy === 'penalty' ? 'penalty' : 'partial'
   });
 
   const results = strategies.map((strategy) => {
@@ -101,16 +113,21 @@ export function runCompetition(options = {}) {
             feeMultiplier: options.feeMultiplier ?? null, // null => resolve per series from captured Series objects
             notional: options.notional ?? 1.0,
             settleAtEnd: options.settleAtEnd ?? false,
-            finalResult: options.finalResult || null
+            finalResult: options.finalResult || null,
+            exhaustionPolicy: options.exhaustionPolicy === 'penalty' ? 'penalty' : 'partial'
           });
 
     const result = universeEngine.run(strategy, { username: strategy.username, capital: initialCapital, seed });
     const attribution = computeAttribution(result);
     const analysis = generatePostMortem(strategy, result, attribution);
     const curve = analyzeEquityCurve(result.equityCurve, initialCapital);
+    // Multi-market accounting: per-market exposure, fees and concentration,
+    // computed from this strategy's own trade log (never hard-coded).
+    const marketAnalytics = computePortfolioExposure(result);
 
     return {
       ...result,
+      marketAnalytics,
       strategy: {
         id: strategy.id,
         username: strategy.username,
@@ -139,8 +156,10 @@ export function runCompetition(options = {}) {
   });
 
   const leaderboard = buildLeaderboard(results.map((r) => ({ ...r, analysis: r.analysis })));
+  const marketStats = computeCompetitionMarketStats(results, candlesByTicker);
 
   return {
+    marketStats,
     competition: {
       id: `KALSHI-PAPER-CHAMPIONSHIP-${new Date().toISOString().slice(0, 4)}`,
       engine: 'ReplayEngine (deterministic, seeded)',
@@ -166,6 +185,7 @@ export function runCompetition(options = {}) {
         depthModelNote:
           'Prices/quotes are REAL captured Kalshi data. Depth BEHIND the quoted touch is modelled because candlesticks do not carry depth; those fills are labelled SIMULATED.'
       },
+      exhaustionPolicy: engine.exhaustionPolicy,
       mandate: 'Highest return only. No risk management, per the competition brief.',
       regime: options.regime || 'baseline',
       regimeNote:
