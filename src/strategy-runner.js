@@ -16,23 +16,18 @@ import { getVerifiedMarkets, getVerifiedCandlesticks, CANDLESTICKS, CAPTURE_META
 import {
   EXTENDED_CAPTURE_META, getExtendedCandlesticks, summarizeExtendedSeries, EXTENDED_SERIES
 } from './verified-candles.js';
+import { ACCUMULATED_HISTORY } from './accumulated-history.js';
+import { buildReplayUniverse, summarizeUniverse, MIN_REPLAY_BARS, CANDLE_ORIGIN } from './history-merge.js';
 
-/** Markets in the verified snapshot that actually have candlestick history. */
-export function getReplayableMarkets() {
-  return getVerifiedMarkets()
-    .filter((m) => CANDLESTICKS[m.ticker])
-    .map((m) => normalizeMarket(m, { source: DATA_SOURCE.VERIFIED_SNAPSHOT, source_url: m._provenance?.url, captured_at: m._provenance?.capturedAt }));
-}
+/** Data-source label for bars that came from the daily ingest job, not a capture. */
+export const DATA_SOURCE_ACCUMULATED = 'accumulated_history_store';
 
 /**
- * Build the { ticker: candlesticks } map from the verified captures.
- *
- * The extended capture is preferred when one exists: it is a verified SUPERSET
- * of the original short capture — every overlapping bar was compared
- * field-by-field and matched exactly (see test/simulation.test.js
- * "extended candle capture is a verified superset of the snapshot capture").
+ * The in-repo verified captures, before any accumulated history is considered.
+ * Kept separate so tests and docs can always compare "what we captured" with
+ * "what the daily job has since added".
  */
-export function getVerifiedCandleMap(tickers = null) {
+export function getRepoCandleMap(tickers = null) {
   const out = {};
   for (const [ticker, block] of Object.entries(CANDLESTICKS)) {
     if (tickers && !tickers.includes(ticker)) continue;
@@ -41,26 +36,134 @@ export function getVerifiedCandleMap(tickers = null) {
   return out;
 }
 
+/**
+ * The replay universe.
+ *
+ * Recommended-work item #3: this is where the accumulated store finally feeds
+ * the competition. `buildReplayUniverse()` applies the strict rule in
+ * src/history-merge.js — a stored series is used only when it is a verified
+ * superset of the in-repo capture — so growing the dataset can lengthen a
+ * window but can never rewrite one.
+ */
+export function buildUniverse(options = {}) {
+  return buildReplayUniverse({
+    verifiedMarkets: getVerifiedMarkets(),
+    repoCandles: getRepoCandleMap(),
+    accumulated: options.accumulated || ACCUMULATED_HISTORY,
+    minBars: options.minBars ?? MIN_REPLAY_BARS
+  });
+}
+
+/** Markets that may be traded in the replay: in-repo captures + accumulated store. */
+export function getReplayableMarkets(options = {}) {
+  return buildUniverse(options).entries.map((e) =>
+    normalizeMarket(e.market, {
+      source: e.marketSource === 'verified_snapshot' ? DATA_SOURCE.VERIFIED_SNAPSHOT : DATA_SOURCE_ACCUMULATED,
+      source_url: e.market_url,
+      captured_at: e.market_captured_at,
+      candle_origin: e.origin,
+      stored_bar_count: e.storedBarCount,
+      repo_bar_count: e.repoBarCount
+    })
+  );
+}
+
+/**
+ * The competition's candle map: in-repo captures, upgraded in place by the
+ * accumulated store wherever the store is a verified superset.
+ *
+ * The extended capture is preferred over the short snapshot capture for the same
+ * reason: it is a verified SUPERSET — every overlapping bar was compared
+ * field-by-field and matched exactly (see test/simulation.test.js
+ * "extended candle capture is a verified superset of the snapshot capture").
+ */
+export function getVerifiedCandleMap(tickers = null) {
+  const universe = buildUniverse();
+  const out = {};
+  for (const e of universe.entries) {
+    if (tickers && !tickers.includes(e.ticker)) continue;
+    out[e.ticker] = e.bars;
+  }
+  return out;
+}
+
 /** Provenance + bar counts per replayable market (shown in the UI and docs). */
 export function getCandleCoverage() {
-  const map = getVerifiedCandleMap();
-  return Object.entries(map).map(([ticker, bars]) => {
-    const ext = EXTENDED_SERIES[ticker]?.meta || null;
+  const universe = buildUniverse();
+  return universe.entries.map((e) => {
+    const bars = e.bars;
+    const ext = EXTENDED_SERIES[e.ticker]?.meta || null;
     return {
-      ticker,
+      ticker: e.ticker,
       bars: bars.length,
       firstTs: bars[0]?.end_period_ts ?? null,
       lastTs: bars[bars.length - 1]?.end_period_ts ?? null,
       firstDate: bars[0] ? new Date(bars[0].end_period_ts * 1000).toISOString() : null,
       lastDate: bars.length ? new Date(bars[bars.length - 1].end_period_ts * 1000).toISOString() : null,
       periodIntervalMinutes: ext ? ext.periodIntervalMinutes : 1440,
-      source: ext ? 'extended_capture_61_bars' : 'snapshot_capture',
-      url: ext ? ext.url : CANDLESTICKS[ticker]?._provenance?.url || null,
-      capturedAt: ext ? ext.capturedAt : CANDLESTICKS[ticker]?._provenance?.capturedAt || null,
-      noTradeBars: bars.filter((b) => !b.price || b.price.close_dollars === undefined).length
+      // Where these bars came from — displayed verbatim in the UI so a lengthened
+      // window is never mistaken for the original 2026-09-17 capture.
+      origin: e.origin,
+      source:
+        e.origin === CANDLE_ORIGIN.STORE || e.origin === CANDLE_ORIGIN.STORE_ONLY
+          ? 'accumulated_history_store'
+          : ext
+            ? 'extended_capture_61_bars'
+            : 'snapshot_capture',
+      repoBars: e.repoBarCount,
+      storedBars: e.storedBarCount,
+      barsAddedByIngest: Math.max(0, bars.length - e.repoBarCount),
+      url: e.origin === CANDLE_ORIGIN.STORE || e.origin === CANDLE_ORIGIN.STORE_ONLY
+        ? ACCUMULATED_HISTORY.markets[e.ticker]?.last_ingest_url || e.market_url
+        : ext
+          ? ext.url
+          : CANDLESTICKS[e.ticker]?._provenance?.url || null,
+      capturedAt: ext ? ext.capturedAt : CANDLESTICKS[e.ticker]?._provenance?.capturedAt || null,
+      lastIngestedAt: ACCUMULATED_HISTORY.markets[e.ticker]?.last_ingested_at || null,
+      noTradeBars: bars.filter((b) => !b.price || b.price.close_dollars === undefined).length,
+      conflicts: (e.conflicts || []).length
     };
   });
 }
+
+/**
+ * The audit trail for the accumulated store: what it added, what it could not
+ * use and why. Surfaced in the UI and VERIFICATION.md so the growing dataset is
+ * as reviewable as the captures it extends.
+ */
+export function getHistoryAudit() {
+  const universe = buildUniverse();
+  return {
+    store: {
+      present: Boolean(ACCUMULATED_HISTORY.present),
+      generatedAt: ACCUMULATED_HISTORY.generatedAt,
+      marketCount: ACCUMULATED_HISTORY.marketCount,
+      barCount: ACCUMULATED_HISTORY.barCount,
+      lastManifest: ACCUMULATED_HISTORY.manifestGeneratedAt,
+      manifestTotals: ACCUMULATED_HISTORY.manifestTotals
+    },
+    summary: summarizeUniverse(universe),
+    replayable: universe.replayableTickers,
+    markets: universe.audit.map((e) => ({
+      ticker: e.ticker,
+      series: e.series_ticker,
+      replayable: e.replayable,
+      bars: e.bars.length,
+      origin: e.origin,
+      reason: e.reason,
+      excludedReason: e.excludedReason,
+      repoBars: e.repoBarCount,
+      storedBars: e.storedBarCount,
+      conflicts: (e.conflicts || []).length,
+      status: e.status,
+      result: e.result,
+      marketSource: e.marketSource
+    })),
+    conflicts: universe.conflicts
+  };
+}
+
+export { ACCUMULATED_HISTORY, summarizeUniverse, MIN_REPLAY_BARS, CANDLE_ORIGIN };
 
 export { EXTENDED_CAPTURE_META, summarizeExtendedSeries, seriesFeeConfig };
 

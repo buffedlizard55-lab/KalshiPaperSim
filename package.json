@@ -9,7 +9,9 @@
     "test": "node --test test/simulation.test.js",
     "test:ui": "node test/ui-smoke.mjs",
     "test:all": "node --test test/simulation.test.js && node test/ui-smoke.mjs",
-    "build": "node scripts/render-docs.js && node build.js",
+    "ingest": "node scripts/ingest-history.mjs",
+    "history:module": "node scripts/generate-history-module.mjs",
+    "build": "node scripts/generate-history-module.mjs && node scripts/render-docs.js && node build.js",
     "docs": "node scripts/render-docs.js"
   },
   "keywords": [
