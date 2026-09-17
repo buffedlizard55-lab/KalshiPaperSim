@@ -89,6 +89,7 @@ function serverRuntime() {
     async regimes() { const d = await jfetch('/api/regimes'); return d.regimes; },
     async transport() { return jfetch('/api/transport'); },
     async verified() { return jfetch('/api/verified'); },
+    async historyAudit() { return jfetch('/api/history-audit'); },
     async backtest(payload) { return jfetch('/api/backtest', { method: 'POST', body: JSON.stringify(payload) }); },
     exportJsonUrl: '/api/export/json',
     exportCsvUrl: '/api/export/csv',
@@ -215,6 +216,7 @@ async function staticRuntime() {
         staticMode: true
       };
     },
+    async historyAudit() { return runner.getHistoryAudit(); },
     async verified() {
       return {
         captureMeta: snap.CAPTURE_META, exchangeStatus: snap.EXCHANGE_STATUS, historicalCutoff: snap.HISTORICAL_CUTOFF,
@@ -272,13 +274,21 @@ async function boot() {
   }
 
   renderHeader();
-  await Promise.all([loadRegimes(), loadMarkets(), loadCompetition()]);
+  await Promise.all([loadRegimes(), loadMarkets(), loadCompetition(), loadHistoryAudit()]);
   renderVerification();
   renderIrregularities();
   renderMemory();
   initLab();
   wireGlobalEvents();
   renderTransport();
+}
+
+async function loadHistoryAudit() {
+  try {
+    state.historyAudit = await state.runtime.historyAudit();
+  } catch (err) {
+    state.historyAudit = { error: String(err && err.message ? err.message : err) };
+  }
 }
 
 /* ------------------------------------------------------------------ *
@@ -407,6 +417,10 @@ function renderLeaderboard() {
     ${esc((prov.markets || []).length)} market(s) · seed <code>${esc(c.seed)}</code> ·
     starting capital ${esc(money(c.initialCapital, 0))} · generated ${esc(new Date(c.generatedAt || Date.now()).toISOString().slice(0, 19).replace('T', ' '))}Z.
     ${sourcePill('VERIFIED_SNAPSHOT')} <span class="pill pill-muted" title="${esc(prov.depthModelNote || '')}">depth behind touch: SIMULATED</span>
+    ${c.maxFillFractionOfPeriodVolume === null
+      ? '<span class="pill pill-sim" title="Fills are NOT bounded by that period\'s real traded volume. This reproduces the artefact recorded as Irregularity #29 — returns no real order book would have paid.">VOLUME BOUND: OFF — unrealistic</span>'
+      : `<span class="pill pill-live" title="No order may fill more than this share of the contracts that really traded in that daily bar.">fills &le; ${esc(Math.round((c.maxFillFractionOfPeriodVolume ?? 0.1) * 100))}% of each bar\'s real volume</span>`}
+    ${c.maxNotionalPerMarketPct ? `<span class="pill pill-muted">cap ${esc(Math.round(c.maxNotionalPerMarketPct * 100))}% of equity per market</span>` : ''}
     ${c.settleAtEnd ? '<span class="pill pill-sim">SETTLEMENT: HYPOTHETICAL</span>' : '<span class="pill pill-muted">positions marked at last real quote</span>'}
   `);
 
@@ -474,15 +488,35 @@ function renderUniverse() {
   const box = $('#universeBlock');
   if (!box) return;
 
+  const ORIGIN_LABEL = {
+    repo_capture: 'in-repo capture',
+    accumulated_store: 'capture + daily ingest',
+    accumulated_store_only: 'daily ingest only',
+    repo_capture_store_conflict: 'capture (store conflict)'
+  };
   const coverageRows = coverage.map((c) => `<tr>
       <td style="font-family:var(--mono);font-size:.72rem">${esc(c.ticker)}</td>
-      <td class="num">${esc(c.bars)}</td>
+      <td class="num">${esc(c.bars)}${c.barsAddedByIngest ? ` <span class="pos" title="bars added by the daily ingest job">+${esc(c.barsAddedByIngest)}</span>` : ''}</td>
       <td class="num">${esc(dateShort(c.firstDate))}</td>
       <td class="num">${esc(dateShort(c.lastDate))}</td>
       <td class="num">${esc(c.noTradeBars ?? 0)}</td>
-      <td>${esc(c.source === 'extended_capture_61_bars' ? 'full window' : 'short window')}</td>
+      <td>${esc(ORIGIN_LABEL[c.origin] || c.source || 'capture')}</td>
       <td><a href="${esc(c.url || '#')}" target="_blank" rel="noopener">endpoint</a></td>
     </tr>`).join('');
+
+  const audit = state.historyAudit || {};
+  const excludedRows = (audit.markets || []).filter((m) => !m.replayable).map((m) => `<tr>
+      <td style="font-family:var(--mono);font-size:.72rem">${esc(m.ticker)}</td>
+      <td class="num">${esc(m.bars)}</td>
+      <td class="muted" style="font-size:.74rem">${esc(m.excludedReason || m.reason || '')}</td>
+    </tr>`).join('');
+  const ingestNote = audit.store?.present
+    ? `<p class="muted fineprint">The daily ingest job has stored <strong>${esc(audit.store.barCount)} daily bars</strong> across
+       <strong>${esc(audit.store.marketCount)} market(s)</strong> (last manifest ${esc((audit.store.lastManifest || '').slice(0, 19).replace('T', ' '))}Z,
+       ${esc(audit.summary?.conflicts ?? 0)} conflicts). A stored series only replaces a capture when every bar they share matches
+       field-for-field and the stored one is longer — so the dataset can grow, never rewrite itself.</p>`
+    : `<p class="muted fineprint">No accumulated history yet. <code>node scripts/ingest-history.mjs</code> (or the daily workflow) appends
+       one real day at a time; the replay falls back to the in-repo captures until it does.</p>`;
 
   const corr = ms?.correlation;
   const pairRows = (corr?.pairs || []).map((pr) => `<tr>
@@ -496,10 +530,11 @@ function renderUniverse() {
     <div class="detail-grid">
       <div>
         <h4>Markets replayed</h4>
-        <div class="table-wrap"><table class="grid"><thead><tr>
+        <div class="table-wrap" style="max-height:24rem;overflow:auto"><table class="grid"><thead><tr>
           <th>Market</th><th class="num">Bars</th><th class="num">First</th><th class="num">Last</th>
-          <th class="num">No-trade</th><th>Window</th><th>Source</th>
+          <th class="num">No-trade</th><th>Where the bars came from</th><th>Source</th>
         </tr></thead><tbody>${coverageRows || '<tr><td colspan="7" class="muted">No coverage data.</td></tr>'}</tbody></table></div>
+        ${ingestNote}
       </div>
       <div>
         <h4>Cross-market correlation <span class="muted" style="font-weight:400">(daily close-to-close changes)</span></h4>
@@ -509,6 +544,14 @@ function renderUniverse() {
         <p class="fineprint muted">${esc(corr?.method || '')} ${corr ? `· minimum overlap ${esc(corr.minOverlap)} periods` : ''}</p>
       </div>
     </div>
+    ${excludedRows ? `<div style="margin-top:1rem">
+        <h4>Tracked, but not replayed <span class="muted" style="font-weight:400">(${esc(excludedRows.length)})</span></h4>
+        <div class="table-wrap"><table class="grid"><thead><tr>
+          <th>Market</th><th class="num">Bars</th><th>Why it is excluded</th>
+        </tr></thead><tbody>${excludedRows}</tbody></table></div>
+        <p class="muted fineprint">Excluded is not an error: a market with no captured market object cannot have a book built for it,
+        and one with fewer than ${esc(audit.minBars ?? 10)} bars would produce per-market statistics nobody should act on.</p>
+      </div>` : ''}
     <p class="muted fineprint">${esc(ms?.note || 'Multi-market statistics are computed from the replay trade logs and the captured candlesticks.')}</p>
   `);
 }

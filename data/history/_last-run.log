@@ -1,0 +1,963 @@
+• discovered KXNASDAQ100Y: 30 open market(s), 10 with volume ≥ 20000 contracts (capped at 10)
+    ✓ KXNASDAQ100Y-26DEC31H1600-T19000  volume=1269612.01 contracts, liquidity=$0
+    ✓ KXNASDAQ100Y-26DEC31H1600-T33000  volume=395852.67 contracts, liquidity=$0
+    ✓ KXNASDAQ100Y-26DEC31H1600-B32750  volume=154670.98 contracts, liquidity=$0
+    ✓ KXNASDAQ100Y-26DEC31H1600-B32250  volume=130401.43 contracts, liquidity=$0
+    ✓ KXNASDAQ100Y-26DEC31H1600-B25750  volume=121318.09 contracts, liquidity=$0
+    ✓ KXNASDAQ100Y-26DEC31H1600-B29750  volume=117611.56 contracts, liquidity=$0
+    ✓ KXNASDAQ100Y-26DEC31H1600-B31750  volume=117485.01 contracts, liquidity=$0
+    ✓ KXNASDAQ100Y-26DEC31H1600-B31250  volume=116467.95 contracts, liquidity=$0
+    ✓ KXNASDAQ100Y-26DEC31H1600-B30750  volume=115666.98 contracts, liquidity=$0
+    ✓ KXNASDAQ100Y-26DEC31H1600-B30250  volume=111427.84 contracts, liquidity=$0
+    ✗ 20 market(s) below the volume floor — e.g. KXNASDAQ100Y-26DEC31H1600-B29250(110306.98), KXNASDAQ100Y-26DEC31H1600-B26250(98069.31), KXNASDAQ100Y-26DEC31H1600-B25250(97835.75)
+• discovered KXBTCY: 28 open market(s), 10 with volume ≥ 20000 contracts (capped at 10)
+    ✓ KXBTCY-27JAN0100-B77500  volume=2684128.78 contracts, liquidity=$0
+    ✓ KXBTCY-27JAN0100-B47500  volume=2379916.66 contracts, liquidity=$0
+    ✓ KXBTCY-27JAN0100-B52500  volume=2369848.07 contracts, liquidity=$0
+    ✓ KXBTCY-27JAN0100-B72500  volume=2364493.98 contracts, liquidity=$0
+    ✓ KXBTCY-27JAN0100-B67500  volume=2338504.27 contracts, liquidity=$0
+    ✓ KXBTCY-27JAN0100-B62500  volume=2305175.74 contracts, liquidity=$0
+    ✓ KXBTCY-27JAN0100-B82500  volume=2286988.09 contracts, liquidity=$0
+    ✓ KXBTCY-27JAN0100-B57500  volume=2202936.39 contracts, liquidity=$0
+    ✓ KXBTCY-27JAN0100-T149999.99  volume=2032361.22 contracts, liquidity=$0
+    ✓ KXBTCY-27JAN0100-B87500  volume=2010361.38 contracts, liquidity=$0
+    ✗ 18 market(s) below the volume floor — e.g. KXBTCY-27JAN0100-B42500(1717013.83), KXBTCY-27JAN0100-B37500(1624577.67), KXBTCY-27JAN0100-B92500(1275228.81)
+• discovered KXINXY: 59 open market(s), 10 with volume ≥ 20000 contracts (capped at 10)
+    ✓ KXINXY-26DEC31H1600-B8100  volume=507649.94 contracts, liquidity=$0
+    ✓ KXINXY-26DEC31H1600-B7700  volume=479405.56 contracts, liquidity=$0
+    ✓ KXINXY-26DEC31H1600-B7900  volume=467594.67 contracts, liquidity=$0
+    ✓ KXINXY-26DEC31H1600-B7500  volume=461452.57 contracts, liquidity=$0
+    ✓ KXINXY-26DEC31H1600-T4000  volume=454964.33 contracts, liquidity=$0
+    ✓ KXINXY-26DEC31H1600-B7300  volume=330636.89 contracts, liquidity=$0
+    ✓ KXINXY-26DEC31H1600-B8300  volume=309207.03 contracts, liquidity=$0
+    ✓ KXINXY-26DEC31H1600-B6900  volume=294789.96 contracts, liquidity=$0
+    ✓ KXINXY-26DEC31H1600-B7100  volume=285629.64 contracts, liquidity=$0
+    ✓ KXINXY-26DEC31H1600-B8900  volume=267333.23 contracts, liquidity=$0
+    ✗ 49 market(s) below the volume floor — e.g. KXINXY-26DEC31H1600-T9000(259945.89), KXINXY-26DEC31H1600-B6500(245677.97), KXINXY-26DEC31H1600-B6300(242249.54)
+Ingesting 30 market(s) from https://external-api.kalshi.com/trade-api/v2
+• KXBTCY-27JAN0100-B47500: --full-backfill — re-reading from 2026-02-24T23:25:29.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXBTCY-27JAN0100-B47500: +114 new bar(s), 204 total, 2 book snapshot(s)
+• KXBTCY-27JAN0100-B52500: --full-backfill — re-reading from 2026-02-24T23:25:29.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXBTCY-27JAN0100-B52500: +114 new bar(s), 204 total, 2 book snapshot(s)
+• KXBTCY-27JAN0100-B57500: --full-backfill — re-reading from 2026-02-24T23:25:29.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXBTCY-27JAN0100-B57500: +114 new bar(s), 204 total, 2 book snapshot(s)
+• KXBTCY-27JAN0100-B62500: --full-backfill — re-reading from 2026-02-24T23:25:29.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXBTCY-27JAN0100-B62500: +114 new bar(s), 204 total, 2 book snapshot(s)
+• KXBTCY-27JAN0100-B67500: --full-backfill — re-reading from 2026-02-24T23:25:29.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXBTCY-27JAN0100-B67500: +114 new bar(s), 204 total, 2 book snapshot(s)
+• KXBTCY-27JAN0100-B72500: --full-backfill — re-reading from 2026-02-24T23:25:29.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXBTCY-27JAN0100-B72500: +114 new bar(s), 204 total, 2 book snapshot(s)
+• KXBTCY-27JAN0100-B77500: --full-backfill — re-reading from 2026-02-24T23:25:29.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXBTCY-27JAN0100-B77500: +114 new bar(s), 204 total, 2 book snapshot(s)
+• KXBTCY-27JAN0100-B82500: --full-backfill — re-reading from 2026-02-24T23:25:29.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXBTCY-27JAN0100-B82500: +114 new bar(s), 204 total, 2 book snapshot(s)
+• KXBTCY-27JAN0100-B87500: --full-backfill — re-reading from 2026-02-24T23:25:29.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXBTCY-27JAN0100-B87500: +114 new bar(s), 204 total, 2 book snapshot(s)
+• KXBTCY-27JAN0100-T149999.99: --full-backfill — re-reading from 2026-02-24T23:25:29.000Z (store keeps its 15 bar(s); the merge never overwrites one)
+✓ KXBTCY-27JAN0100-T149999.99: +189 new bar(s), 204 total, 2 book snapshot(s)
+• KXINXY-26DEC31H1600-B6900: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 88 bar(s); the merge never overwrites one)
+✓ KXINXY-26DEC31H1600-B6900: +176 new bar(s), 264 total, 2 book snapshot(s)
+• KXINXY-26DEC31H1600-B7100: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 88 bar(s); the merge never overwrites one)
+✓ KXINXY-26DEC31H1600-B7100: +177 new bar(s), 265 total, 2 book snapshot(s)
+• KXINXY-26DEC31H1600-B7300: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXINXY-26DEC31H1600-B7300: +178 new bar(s), 268 total, 2 book snapshot(s)
+• KXINXY-26DEC31H1600-B7500: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXINXY-26DEC31H1600-B7500: +177 new bar(s), 267 total, 2 book snapshot(s)
+• KXINXY-26DEC31H1600-B7700: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXINXY-26DEC31H1600-B7700: +177 new bar(s), 267 total, 2 book snapshot(s)
+• KXINXY-26DEC31H1600-B7900: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXINXY-26DEC31H1600-B7900: +177 new bar(s), 267 total, 2 book snapshot(s)
+• KXINXY-26DEC31H1600-B8100: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXINXY-26DEC31H1600-B8100: +177 new bar(s), 267 total, 2 book snapshot(s)
+• KXINXY-26DEC31H1600-B8300: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXINXY-26DEC31H1600-B8300: +172 new bar(s), 262 total, 2 book snapshot(s)
+• KXINXY-26DEC31H1600-B8900: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 77 bar(s); the merge never overwrites one)
+✓ KXINXY-26DEC31H1600-B8900: +170 new bar(s), 247 total, 2 book snapshot(s)
+• KXINXY-26DEC31H1600-T4000: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 82 bar(s); the merge never overwrites one)
+✓ KXINXY-26DEC31H1600-T4000: +173 new bar(s), 255 total, 2 book snapshot(s)
+• KXNASDAQ100Y-26DEC31H1600-B25750: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 83 bar(s); the merge never overwrites one)
+✓ KXNASDAQ100Y-26DEC31H1600-B25750: +171 new bar(s), 254 total, 2 book snapshot(s)
+• KXNASDAQ100Y-26DEC31H1600-B29750: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 86 bar(s); the merge never overwrites one)
+✓ KXNASDAQ100Y-26DEC31H1600-B29750: +162 new bar(s), 248 total, 2 book snapshot(s)
+• KXNASDAQ100Y-26DEC31H1600-B30250: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 88 bar(s); the merge never overwrites one)
+✓ KXNASDAQ100Y-26DEC31H1600-B30250: +164 new bar(s), 252 total, 2 book snapshot(s)
+• KXNASDAQ100Y-26DEC31H1600-B30750: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 88 bar(s); the merge never overwrites one)
+✓ KXNASDAQ100Y-26DEC31H1600-B30750: +162 new bar(s), 250 total, 2 book snapshot(s)
+• KXNASDAQ100Y-26DEC31H1600-B31250: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 88 bar(s); the merge never overwrites one)
+✓ KXNASDAQ100Y-26DEC31H1600-B31250: +158 new bar(s), 246 total, 2 book snapshot(s)
+• KXNASDAQ100Y-26DEC31H1600-B31750: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXNASDAQ100Y-26DEC31H1600-B31750: +159 new bar(s), 249 total, 2 book snapshot(s)
+• KXNASDAQ100Y-26DEC31H1600-B32250: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 90 bar(s); the merge never overwrites one)
+✓ KXNASDAQ100Y-26DEC31H1600-B32250: +157 new bar(s), 247 total, 2 book snapshot(s)
+• KXNASDAQ100Y-26DEC31H1600-B32750: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 88 bar(s); the merge never overwrites one)
+✓ KXNASDAQ100Y-26DEC31H1600-B32750: +159 new bar(s), 247 total, 2 book snapshot(s)
+• KXNASDAQ100Y-26DEC31H1600-T19000: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 61 bar(s); the merge never overwrites one)
+✓ KXNASDAQ100Y-26DEC31H1600-T19000: +203 new bar(s), 264 total, 2 book snapshot(s)
+• KXNASDAQ100Y-26DEC31H1600-T33000: --full-backfill — re-reading from 2025-12-22T15:00:00.000Z (store keeps its 61 bar(s); the merge never overwrites one)
+✓ KXNASDAQ100Y-26DEC31H1600-T33000: +202 new bar(s), 263 total, 2 book snapshot(s)
+
+Bars added: 4666 · stored: 7189 · conflicts: 0 · failures: 0
+{
+  "verifiedAt": "2026-09-17T23:26:45.115Z",
+  "markets": [
+    {
+      "ticker": "KXBTCY-27JAN0100-B47500",
+      "series": "KXBTCY",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 5,
+      "gapCount": 1,
+      "gaps": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B52500",
+      "series": "KXBTCY",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 9,
+      "gapCount": 1,
+      "gaps": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B57500",
+      "series": "KXBTCY",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 7,
+      "gapCount": 1,
+      "gaps": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B62500",
+      "series": "KXBTCY",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 4,
+      "gapCount": 1,
+      "gaps": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B67500",
+      "series": "KXBTCY",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 5,
+      "gapCount": 1,
+      "gaps": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B72500",
+      "series": "KXBTCY",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 1,
+      "gapCount": 1,
+      "gaps": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B77500",
+      "series": "KXBTCY",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 2,
+      "gapCount": 1,
+      "gaps": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B82500",
+      "series": "KXBTCY",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 2,
+      "gapCount": 1,
+      "gaps": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B87500",
+      "series": "KXBTCY",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 4,
+      "gapCount": 1,
+      "gaps": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-T149999.99",
+      "series": "KXBTCY",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 5,
+      "gapCount": 1,
+      "gaps": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B6900",
+      "series": "KXINXY",
+      "bars": 264,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 37,
+      "gapCount": 5,
+      "gaps": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        },
+        {
+          "from": 1781668800,
+          "to": 1781841600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1781841600,
+          "to": 1782014400,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1786248000,
+          "to": 1786420800,
+          "deltaSeconds": 172800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7100",
+      "series": "KXINXY",
+      "bars": 265,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 23,
+      "gapCount": 4,
+      "gaps": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        },
+        {
+          "from": 1784952000,
+          "to": 1785124800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1788062400,
+          "to": 1788235200,
+          "deltaSeconds": 172800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7300",
+      "series": "KXINXY",
+      "bars": 268,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 11,
+      "gapCount": 1,
+      "gaps": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7500",
+      "series": "KXINXY",
+      "bars": 267,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 7,
+      "gapCount": 2,
+      "gaps": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7700",
+      "series": "KXINXY",
+      "bars": 267,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 10,
+      "gapCount": 2,
+      "gaps": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7900",
+      "series": "KXINXY",
+      "bars": 267,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 17,
+      "gapCount": 2,
+      "gaps": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B8100",
+      "series": "KXINXY",
+      "bars": 267,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 32,
+      "gapCount": 2,
+      "gaps": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B8300",
+      "series": "KXINXY",
+      "bars": 262,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 57,
+      "gapCount": 5,
+      "gaps": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1770786000,
+          "to": 1770958800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1771045200,
+          "to": 1771390800,
+          "deltaSeconds": 345600
+        },
+        {
+          "from": 1771736400,
+          "to": 1771909200,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B8900",
+      "series": "KXINXY",
+      "bars": 247,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 128,
+      "gapCount": 18,
+      "gaps": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1770786000,
+          "to": 1770958800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1771218000,
+          "to": 1771390800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1772168400,
+          "to": 1772427600,
+          "deltaSeconds": 259200
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-T4000",
+      "series": "KXINXY",
+      "bars": 255,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-16T04:00:00.000Z",
+      "noTradePeriods": 79,
+      "gapCount": 10,
+      "gaps": [
+        {
+          "from": 1766811600,
+          "to": 1767070800,
+          "deltaSeconds": 259200
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1770786000,
+          "to": 1770958800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1770958800,
+          "to": 1771131600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B25750",
+      "series": "KXNASDAQ100Y",
+      "bars": 254,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 95,
+      "gapCount": 13,
+      "gaps": [
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        },
+        {
+          "from": 1776571200,
+          "to": 1776744000,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1777694400,
+          "to": 1777867200,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1778299200,
+          "to": 1778472000,
+          "deltaSeconds": 172800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B29750",
+      "series": "KXNASDAQ100Y",
+      "bars": 248,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 139,
+      "gapCount": 20,
+      "gaps": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768626000,
+          "to": 1768798800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768798800,
+          "to": 1768971600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1770440400,
+          "to": 1770613200,
+          "deltaSeconds": 172800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B30250",
+      "series": "KXNASDAQ100Y",
+      "bars": 252,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 127,
+      "gapCount": 13,
+      "gaps": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768626000,
+          "to": 1768798800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768798800,
+          "to": 1768971600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1770440400,
+          "to": 1770613200,
+          "deltaSeconds": 172800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B30750",
+      "series": "KXNASDAQ100Y",
+      "bars": 250,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 136,
+      "gapCount": 16,
+      "gaps": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768626000,
+          "to": 1768885200,
+          "deltaSeconds": 259200
+        },
+        {
+          "from": 1770440400,
+          "to": 1770613200,
+          "deltaSeconds": 172800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B31250",
+      "series": "KXNASDAQ100Y",
+      "bars": 246,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 134,
+      "gapCount": 20,
+      "gaps": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768626000,
+          "to": 1768798800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768798800,
+          "to": 1768971600,
+          "deltaSeconds": 172800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B31750",
+      "series": "KXNASDAQ100Y",
+      "bars": 249,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 121,
+      "gapCount": 12,
+      "gaps": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1766811600,
+          "to": 1767070800,
+          "deltaSeconds": 259200
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768626000,
+          "to": 1768971600,
+          "deltaSeconds": 345600
+        },
+        {
+          "from": 1770440400,
+          "to": 1770699600,
+          "deltaSeconds": 259200
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B32250",
+      "series": "KXNASDAQ100Y",
+      "bars": 247,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 101,
+      "gapCount": 15,
+      "gaps": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768626000,
+          "to": 1768798800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768798800,
+          "to": 1768971600,
+          "deltaSeconds": 172800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B32750",
+      "series": "KXNASDAQ100Y",
+      "bars": 247,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 85,
+      "gapCount": 18,
+      "gaps": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768626000,
+          "to": 1768798800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1770786000,
+          "to": 1770958800,
+          "deltaSeconds": 172800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
+      "series": "KXNASDAQ100Y",
+      "bars": 264,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 13,
+      "gapCount": 4,
+      "gaps": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1766811600,
+          "to": 1767070800,
+          "deltaSeconds": 259200
+        },
+        {
+          "from": 1767243600,
+          "to": 1767416400,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
+      "series": "KXNASDAQ100Y",
+      "bars": 263,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "noTradePeriods": 31,
+      "gapCount": 4,
+      "gaps": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "deltaSeconds": 172800
+        },
+        {
+          "from": 1768626000,
+          "to": 1768971600,
+          "deltaSeconds": 345600
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "deltaSeconds": 82800
+        }
+      ],
+      "books": 2
+    }
+  ]
+}
+✓ src/accumulated-history.js — 30 market(s), 7189 bar(s), 731.2 KB
+    KXBTCY-27JAN0100-B47500: 204 bar(s) + market object
+    KXBTCY-27JAN0100-B52500: 204 bar(s) + market object
+    KXBTCY-27JAN0100-B57500: 204 bar(s) + market object
+    KXBTCY-27JAN0100-B62500: 204 bar(s) + market object
+    KXBTCY-27JAN0100-B67500: 204 bar(s) + market object
+    KXBTCY-27JAN0100-B72500: 204 bar(s) + market object
+    KXBTCY-27JAN0100-B77500: 204 bar(s) + market object
+    KXBTCY-27JAN0100-B82500: 204 bar(s) + market object
+    KXBTCY-27JAN0100-B87500: 204 bar(s) + market object
+    KXBTCY-27JAN0100-T149999.99: 204 bar(s) + market object
+    KXINXY-26DEC31H1600-B6900: 264 bar(s) + market object
+    KXINXY-26DEC31H1600-B7100: 265 bar(s) + market object
+    KXINXY-26DEC31H1600-B7300: 268 bar(s) + market object
+    KXINXY-26DEC31H1600-B7500: 267 bar(s) + market object
+    KXINXY-26DEC31H1600-B7700: 267 bar(s) + market object
+    KXINXY-26DEC31H1600-B7900: 267 bar(s) + market object
+    KXINXY-26DEC31H1600-B8100: 267 bar(s) + market object
+    KXINXY-26DEC31H1600-B8300: 262 bar(s) + market object
+    KXINXY-26DEC31H1600-B8900: 247 bar(s) + market object
+    KXINXY-26DEC31H1600-T4000: 255 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B25750: 254 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B29750: 248 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B30250: 252 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B30750: 250 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B31250: 246 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B31750: 249 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B32250: 247 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B32750: 247 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-T19000: 264 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-T33000: 263 bar(s) + market object
+
+Settlement status @ 2026-09-17T23:26:45.659Z (source: LIVE)
+  KXBTCY-27JAN0100-T149999.99
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNASDAQ100Y-26DEC31H1600-T19000
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNASDAQ100Y-26DEC31H1600-T33000
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+
+Wrote data/settlements.json

@@ -1,0 +1,107 @@
+name: On-demand Kalshi history ingest
+
+# WHY THIS WORKFLOW EXISTS
+# ------------------------
+# `daily-history.yml` is scheduled and can also be started with
+# `workflow_dispatch` — but the GitHub App token this repository is automated
+# with is NOT permitted to create workflow_dispatch events (HTTP 403 on
+# /actions/workflows/{id}/dispatches), and the build sandbox cannot open TLS to
+# *.kalshi.com (IRREGULARITIES.md #4). This workflow closes both gaps: an ingest
+# is requested by COMMITTING `.github/triggers/ingest.json`, which is something
+# the automation can always do, and the run itself happens on a GitHub-hosted
+# runner with unrestricted egress.
+#
+# It runs on the branch that was pushed (unlike repository_dispatch, which always
+# uses the default branch), so a feature branch can accumulate its own history.
+#
+# OFFICIAL ENDPOINTS USED (see scripts/ingest-history.mjs):
+#   GET /series/{series_ticker}/markets/{ticker}/candlesticks
+#     https://docs.kalshi.com/api-reference/market/get-market-candlesticks
+#   GET /markets/{ticker}                 https://docs.kalshi.com/api-reference/market/get-market
+#   GET /markets/{ticker}/orderbook       https://docs.kalshi.com/getting_started/orderbook_responses
+#   GET /historical/cutoff                https://docs.kalshi.com/getting_started/historical_data
+
+on:
+  push:
+    branches: ['**']
+    paths:
+      - '.github/triggers/ingest.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Read the request
+        id: req
+        run: |
+          node -e '
+            const fs = require("fs");
+            const t = JSON.parse(fs.readFileSync(".github/triggers/ingest.json", "utf8"));
+            if (t.enabled === false) { console.log("enabled=false — nothing requested"); process.exit(0); }
+            const args = [
+              "--days=" + (t.days ?? 90),
+              "--with-books=" + (t.with_books ? "true" : "false"),
+              "--with-market=" + (t.with_market === false ? "false" : "true"),
+              "--min-volume=" + (t.min_volume ?? 0),
+              "--max-markets=" + (t.max_markets ?? 0),
+              (t.full_backfill ? "--full-backfill" : "--no-full-backfill")
+            ];
+            if (Array.isArray(t.series) && t.series.length) args.push("--series=" + t.series.join(","));
+            if (Array.isArray(t.tickers) && t.tickers.length) args.push("--tickers=" + t.tickers.join(","));
+            fs.writeFileSync(process.env.GITHUB_OUTPUT, "args=" + args.join(" ") + "\n");
+            console.log("requested args: " + args.join(" "));
+          '
+
+      - name: Ingest the latest real candlesticks
+        run: |
+          # pipefail: without it `node ... | tee` reports success even when the
+          # script exits non-zero, which is exactly how a crash hid for a run.
+          set -o pipefail
+          node scripts/ingest-history.mjs ${{ steps.req.outputs.args }} 2>&1 | tee ingest.log
+
+      - name: Audit the store (no network)
+        run: node scripts/ingest-history.mjs --verify | tee -a ingest.log
+
+      - name: Regenerate the browser-safe accumulated-history module
+        run: node scripts/generate-history-module.mjs | tee -a ingest.log
+
+      - name: Check whether the tracked markets have settled
+        run: node scripts/track-settlements.mjs --write | tee -a ingest.log
+        continue-on-error: true
+
+      - name: Keep the run log with the data
+        if: always()
+        run: cp ingest.log data/history/_last-run.log
+
+      - name: Commit the new history
+        run: |
+          if [ -z "$(git status --porcelain data/ src/accumulated-history.js)" ]; then
+            echo "No new bars — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "kalshi-history-bot"
+          git config user.email "kalshi-history-bot@users.noreply.github.com"
+          git pull --rebase --autostash origin "${GITHUB_REF#refs/heads/}" || true
+          git add data/ src/accumulated-history.js
+          git commit -m "chore(history): append real Kalshi candlesticks $(date -u +%F)"
+          git push origin "HEAD:${GITHUB_REF}"
+
+      - name: Upload the ingest log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ingest-log-${{ github.run_number }}
+          path: ingest.log
+          if-no-files-found: warn

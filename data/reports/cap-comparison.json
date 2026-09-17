@@ -1,0 +1,517 @@
+{
+  "generatedAt": "2026-09-17T23:39:51.701Z",
+  "computedBy": "ReplayEngine (deterministic) — src/backtest-replay.js",
+  "universe": {
+    "markets": 30,
+    "periods": 268,
+    "bars": 7189,
+    "replayable": 30,
+    "trackedNotReplayable": 6
+  },
+  "caps": [
+    "none",
+    0.5,
+    0.25,
+    0.1
+  ],
+  "seeds": [
+    20260917,
+    7,
+    42
+  ],
+  "runs": 144,
+  "strategies": [
+    {
+      "username": "ContrarianKing_100x",
+      "runs": 12,
+      "baseline": {
+        "returnPct": 9.343333333333334,
+        "maxDrawdownPct": 29.356666666666666,
+        "trades": 3196
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": 9.343333333333334,
+          "maxDrawdownPct": 29.356666666666666,
+          "trades": 3196,
+          "cappedContracts": 177270345.74666667,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": 9.343333333333334,
+          "maxDrawdownPct": 29.356666666666666,
+          "trades": 3196,
+          "cappedContracts": 177270345.74666667,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": 9.236666666666666,
+          "maxDrawdownPct": 28.98,
+          "trades": 3159.6666666666665,
+          "cappedContracts": 180881847.07000002,
+          "deltaReturnVsNoCap": -0.10666666666666735,
+          "deltaDrawdownVsNoCap": -0.37666666666666515
+        }
+      ]
+    },
+    {
+      "username": "VolatilityArb_MM",
+      "runs": 12,
+      "baseline": {
+        "returnPct": 9.25,
+        "maxDrawdownPct": 31.62,
+        "trades": 4358
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": 9.25,
+          "maxDrawdownPct": 31.62,
+          "trades": 4358,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": 9.25,
+          "maxDrawdownPct": 31.62,
+          "trades": 4358,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": 9.82,
+          "maxDrawdownPct": 29.81,
+          "trades": 3790,
+          "cappedContracts": 3151114.99,
+          "deltaReturnVsNoCap": 0.5700000000000003,
+          "deltaDrawdownVsNoCap": -1.8100000000000023
+        }
+      ]
+    },
+    {
+      "username": "FeeArb_PremiumBuyer",
+      "runs": 12,
+      "baseline": {
+        "returnPct": 3.146666666666667,
+        "maxDrawdownPct": 3.896666666666667,
+        "trades": 795.6666666666666
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": 3.146666666666667,
+          "maxDrawdownPct": 3.896666666666667,
+          "trades": 795.6666666666666,
+          "cappedContracts": 6224016.136666667,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": 2.3633333333333333,
+          "maxDrawdownPct": 3.543333333333333,
+          "trades": 795.6666666666666,
+          "cappedContracts": 6591289.636666667,
+          "deltaReturnVsNoCap": -0.7833333333333337,
+          "deltaDrawdownVsNoCap": -0.35333333333333394
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": -0.023333333333333334,
+          "maxDrawdownPct": 2.9933333333333336,
+          "trades": 820,
+          "cappedContracts": 8141420.413333333,
+          "deltaReturnVsNoCap": -3.1700000000000004,
+          "deltaDrawdownVsNoCap": -0.9033333333333333
+        }
+      ]
+    },
+    {
+      "username": "PanicDip_ShockTiming",
+      "runs": 12,
+      "baseline": {
+        "returnPct": 1.82,
+        "maxDrawdownPct": 0.81,
+        "trades": 961
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": 1.82,
+          "maxDrawdownPct": 0.81,
+          "trades": 961,
+          "cappedContracts": 1274412292.9,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": 1.82,
+          "maxDrawdownPct": 0.81,
+          "trades": 961,
+          "cappedContracts": 1274412292.9,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": 1.82,
+          "maxDrawdownPct": 0.81,
+          "trades": 960,
+          "cappedContracts": 1275662179.39,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        }
+      ]
+    },
+    {
+      "username": "YieldVulture_Arb",
+      "runs": 12,
+      "baseline": {
+        "returnPct": 0,
+        "maxDrawdownPct": 0,
+        "trades": 0
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": 0,
+          "maxDrawdownPct": 0,
+          "trades": 0,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": 0,
+          "maxDrawdownPct": 0,
+          "trades": 0,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": 0,
+          "maxDrawdownPct": 0,
+          "trades": 0,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        }
+      ]
+    },
+    {
+      "username": "LongshotFader_FLB",
+      "runs": 12,
+      "baseline": {
+        "returnPct": -0.03,
+        "maxDrawdownPct": 0.06,
+        "trades": 29
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": -0.03,
+          "maxDrawdownPct": 0.06,
+          "trades": 29,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": -0.03,
+          "maxDrawdownPct": 0.06,
+          "trades": 29,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": -0.03,
+          "maxDrawdownPct": 0.06,
+          "trades": 29,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        }
+      ]
+    },
+    {
+      "username": "FedPivotSniper",
+      "runs": 12,
+      "baseline": {
+        "returnPct": -0.36999999999999994,
+        "maxDrawdownPct": 0.57,
+        "trades": 845
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": -0.36999999999999994,
+          "maxDrawdownPct": 0.57,
+          "trades": 845,
+          "cappedContracts": 2231144.43,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": -0.36999999999999994,
+          "maxDrawdownPct": 0.57,
+          "trades": 845,
+          "cappedContracts": 2231144.43,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": -0.36999999999999994,
+          "maxDrawdownPct": 0.57,
+          "trades": 845,
+          "cappedContracts": 2231144.43,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        }
+      ]
+    },
+    {
+      "username": "ThetaHarvest_ShortOTM",
+      "runs": 12,
+      "baseline": {
+        "returnPct": -2.1333333333333333,
+        "maxDrawdownPct": 3.283333333333333,
+        "trades": 407.6666666666667
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": -2.1333333333333333,
+          "maxDrawdownPct": 3.283333333333333,
+          "trades": 407.6666666666667,
+          "cappedContracts": 1187980.59,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": -2.1333333333333333,
+          "maxDrawdownPct": 3.283333333333333,
+          "trades": 407.6666666666667,
+          "cappedContracts": 1187980.59,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": -1.8,
+          "maxDrawdownPct": 3.34,
+          "trades": 454.3333333333333,
+          "cappedContracts": 1538949.11,
+          "deltaReturnVsNoCap": 0.33333333333333326,
+          "deltaDrawdownVsNoCap": 0.05666666666666664
+        }
+      ]
+    },
+    {
+      "username": "TrendRide_FullTilt",
+      "runs": 12,
+      "baseline": {
+        "returnPct": -2.183333333333333,
+        "maxDrawdownPct": 11.883333333333333,
+        "trades": 480
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": -2.183333333333333,
+          "maxDrawdownPct": 11.883333333333333,
+          "trades": 480,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": -2.183333333333333,
+          "maxDrawdownPct": 11.883333333333333,
+          "trades": 480,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": -2.183333333333333,
+          "maxDrawdownPct": 11.883333333333333,
+          "trades": 480,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        }
+      ]
+    },
+    {
+      "username": "EventCatalyst_Max",
+      "runs": 12,
+      "baseline": {
+        "returnPct": -2.6533333333333333,
+        "maxDrawdownPct": 12.676666666666668,
+        "trades": 687
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": -2.6533333333333333,
+          "maxDrawdownPct": 12.676666666666668,
+          "trades": 687,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": -2.6533333333333333,
+          "maxDrawdownPct": 12.676666666666668,
+          "trades": 687,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": -2.6533333333333333,
+          "maxDrawdownPct": 12.676666666666668,
+          "trades": 687,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        }
+      ]
+    },
+    {
+      "username": "AlphaApex_Momentum",
+      "runs": 12,
+      "baseline": {
+        "returnPct": -4.813333333333333,
+        "maxDrawdownPct": 32.36666666666667,
+        "trades": 2120.3333333333335
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": -4.813333333333333,
+          "maxDrawdownPct": 32.36666666666667,
+          "trades": 2120.3333333333335,
+          "cappedContracts": 16514700.036666667,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": -4.813333333333333,
+          "maxDrawdownPct": 32.36666666666667,
+          "trades": 2120.3333333333335,
+          "cappedContracts": 16514700.036666667,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": -4.576666666666667,
+          "maxDrawdownPct": 29.963333333333335,
+          "trades": 2222.3333333333335,
+          "cappedContracts": 22232258.8,
+          "deltaReturnVsNoCap": 0.23666666666666547,
+          "deltaDrawdownVsNoCap": -2.4033333333333324
+        }
+      ]
+    },
+    {
+      "username": "GammaWhale_Squeeze",
+      "runs": 12,
+      "baseline": {
+        "returnPct": -14.836666666666668,
+        "maxDrawdownPct": 20,
+        "trades": 540
+      },
+      "caps": [
+        {
+          "cap": 0.5,
+          "capLabel": "50%",
+          "returnPct": -14.836666666666668,
+          "maxDrawdownPct": 20,
+          "trades": 540,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.25,
+          "capLabel": "25%",
+          "returnPct": -14.836666666666668,
+          "maxDrawdownPct": 20,
+          "trades": 540,
+          "cappedContracts": 0,
+          "deltaReturnVsNoCap": 0,
+          "deltaDrawdownVsNoCap": 0
+        },
+        {
+          "cap": 0.1,
+          "capLabel": "10%",
+          "returnPct": -14.663333333333334,
+          "maxDrawdownPct": 19.816666666666666,
+          "trades": 540,
+          "cappedContracts": 17102.986666666668,
+          "deltaReturnVsNoCap": 0.17333333333333378,
+          "deltaDrawdownVsNoCap": -0.18333333333333357
+        }
+      ]
+    }
+  ]
+}
