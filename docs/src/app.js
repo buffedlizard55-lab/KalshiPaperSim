@@ -387,6 +387,8 @@ async function loadCompetition() {
     state.competition = d.competition;
     state.results = d.results || [];
     state.leaderboard = d.leaderboard || [];
+    state.marketStats = d.marketStats || null;
+    renderUniverse();
     renderLeaderboard();
   } catch (err) {
     setHTML('#competitionLede', `<span class="neg">Competition run failed: ${esc(err.message)}</span>`);
@@ -465,6 +467,51 @@ function renderHumanBoard() {
 /* ------------------------------------------------------------------ *
  * Strategies
  * ------------------------------------------------------------------ */
+
+function renderUniverse() {
+  const ms = state.marketStats;
+  const coverage = state.competition?.dataProvenance?.candleCoverage || [];
+  const box = $('#universeBlock');
+  if (!box) return;
+
+  const coverageRows = coverage.map((c) => `<tr>
+      <td style="font-family:var(--mono);font-size:.72rem">${esc(c.ticker)}</td>
+      <td class="num">${esc(c.bars)}</td>
+      <td class="num">${esc(dateShort(c.firstDate))}</td>
+      <td class="num">${esc(dateShort(c.lastDate))}</td>
+      <td class="num">${esc(c.noTradeBars ?? 0)}</td>
+      <td>${esc(c.source === 'extended_capture_61_bars' ? 'full window' : 'short window')}</td>
+      <td><a href="${esc(c.url || '#')}" target="_blank" rel="noopener">endpoint</a></td>
+    </tr>`).join('');
+
+  const corr = ms?.correlation;
+  const pairRows = (corr?.pairs || []).map((pr) => `<tr>
+      <td style="font-family:var(--mono);font-size:.7rem">${esc(pr.a.slice(-14))} ↔ ${esc(pr.b.slice(-14))}</td>
+      <td class="num">${esc(pr.usablePeriods)}</td>
+      <td class="num ${pr.correlation === null ? 'muted' : pr.correlation >= 0 ? 'pos' : 'neg'}">${pr.correlation === null ? '—' : esc(pr.correlation.toFixed(3))}</td>
+      <td class="muted" style="font-size:.74rem">${esc(pr.note)}</td>
+    </tr>`).join('');
+
+  setHTML('#universeBlock', `
+    <div class="detail-grid">
+      <div>
+        <h4>Markets replayed</h4>
+        <div class="table-wrap"><table class="grid"><thead><tr>
+          <th>Market</th><th class="num">Bars</th><th class="num">First</th><th class="num">Last</th>
+          <th class="num">No-trade</th><th>Window</th><th>Source</th>
+        </tr></thead><tbody>${coverageRows || '<tr><td colspan="7" class="muted">No coverage data.</td></tr>'}</tbody></table></div>
+      </div>
+      <div>
+        <h4>Cross-market correlation <span class="muted" style="font-weight:400">(daily close-to-close changes)</span></h4>
+        <div class="table-wrap"><table class="grid"><thead><tr>
+          <th>Pair</th><th class="num">Overlap</th><th class="num">ρ</th><th>Note</th>
+        </tr></thead><tbody>${pairRows || '<tr><td colspan="4" class="muted">Not computed.</td></tr>'}</tbody></table></div>
+        <p class="fineprint muted">${esc(corr?.method || '')} ${corr ? `· minimum overlap ${esc(corr.minOverlap)} periods` : ''}</p>
+      </div>
+    </div>
+    <p class="muted fineprint">${esc(ms?.note || 'Multi-market statistics are computed from the replay trade logs and the captured candlesticks.')}</p>
+  `);
+}
 
 function renderStrategies() {
   const cards = state.results.map((r) => {
@@ -568,13 +615,24 @@ function renderStrategyDetail(username) {
 
     <div class="detail-grid">
       <div>
-        <h4>Per-market breakdown</h4>
-        <div class="table-wrap"><table class="grid"><thead><tr><th>Market</th><th class="num">Fills</th><th class="num">Contracts</th><th class="num">Fees</th><th class="num">Realized</th></tr></thead>
-        <tbody>${(a.byTicker || []).map((t) => `<tr>
+        <h4>Per-market breakdown &amp; exposure</h4>
+        <div class="table-wrap"><table class="grid"><thead><tr>
+          <th>Market</th><th class="num">Fills</th><th class="num">Contracts</th><th class="num">Fees</th>
+          <th class="num">Realized</th><th class="num">Open</th><th class="num">At risk</th><th class="num">Share</th>
+        </tr></thead>
+        <tbody>${(r.marketAnalytics?.markets?.length ? r.marketAnalytics.markets : (a.byTicker || []).map((t) => ({
+          ticker: t.ticker, trades: t.trades, contractsTraded: t.contracts, feesUsd: t.fees, realizedPnlUsd: t.pnl,
+          openContracts: 0, costBasisAtRisk: 0, shareOfCapitalAtRisk: 0
+        }))).map((t) => `<tr>
           <td style="font-family:var(--mono);font-size:.74rem">${esc(t.ticker)}</td>
-          <td class="num">${esc(t.trades)}</td><td class="num">${esc(compact(t.contracts))}</td>
-          <td class="num">${esc(money(t.fees))}</td><td class="num ${signedClass(t.pnl)}">${esc(money(t.pnl))}</td></tr>`).join('') || '<tr><td colspan="5" class="muted">No fills.</td></tr>'}
+          <td class="num">${esc(t.trades)}</td><td class="num">${esc(compact(t.contractsTraded ?? t.contracts))}</td>
+          <td class="num">${esc(money(t.feesUsd ?? t.fees))}</td>
+          <td class="num ${signedClass(t.realizedPnlUsd ?? t.pnl)}">${esc(money(t.realizedPnlUsd ?? t.pnl))}</td>
+          <td class="num">${esc(compact(t.openContracts || 0))}</td>
+          <td class="num">${esc(money(t.costBasisAtRisk || 0))}</td>
+          <td class="num">${t.shareOfCapitalAtRisk ? `${esc(Number(t.shareOfCapitalAtRisk).toFixed(1))}%` : '—'}</td></tr>`).join('') || '<tr><td colspan="8" class="muted">No fills.</td></tr>'}
         </tbody></table></div>
+        ${r.marketAnalytics ? `<p class="fineprint muted">${esc(r.marketAnalytics.concentrationNote)}${r.marketAnalytics.hhi ? ` HHI ${esc(r.marketAnalytics.hhi)}.` : ''}</p>` : ''}
       </div>
       <div>
         <h4>Recent fills</h4>

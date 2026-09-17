@@ -7,12 +7,12 @@ Nothing is inferred from a language model's memory of Kalshi.
 
 | Status | Meaning | Count |
 | --- | --- | --- |
-| `DOCUMENTED` | Quoted from official Kalshi docs / the fee schedule PDF | 27 |
-| `CAPTURED` | Copied from a real production API response | 13 |
+| `DOCUMENTED` | Quoted from official Kalshi docs / the fee schedule PDF | 32 |
+| `CAPTURED` | Copied from a real production API response | 18 |
 | `NEGATIVE` | A verified 404 / contradiction (proof something is NOT true) | 1 |
-| `DERIVED` | Computed by arithmetic on official formulas | 9 |
+| `DERIVED` | Computed by arithmetic on official formulas | 13 |
 | `OBSERVATION` | Seen in real data, not explained by any document | 3 |
-| **Total** | 49 of 53 carry a URL you can open yourself | **53** |
+| **Total** | 61 of 67 carry a URL you can open yourself | **67** |
 
 ---
 
@@ -105,6 +105,40 @@ Nothing is inferred from a language model's memory of Kalshi.
 | `V44` | DERIVED | Every strategy carries riskManagement: "NONE (by mandate)" | asserted at import time; no stop-loss, position cap or volatility target exists in any decide() | [riskManagement field on all 10 strategies — reviewable in the repository](https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/strategies.js) | `src/strategies.js; competition metadata in src/strategy-runner.js` |
 | `V45` | DERIVED | Post-mortem prose interpolates computed values only | generatePostMortem() reads result.stats and the attribution object; it has no literal performance strings | [generatePostMortem() in src/analysis.js — reviewable in the repository](https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/analysis.js) | `src/analysis.js` |
 | `V46` | DERIVED | Oversized orders are never filled at an invented price | exhaustionPolicy defaults to "partial": the remainder is reported as unfilled; the legacy "penalty" mode is opt-in and labelled | [exhaustionPolicy in src/simulation-engine.js — reviewable in the repository](https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/simulation-engine.js) | `src/simulation-engine.js; src/backtest-replay.js` |
+
+### Captured market data
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V60` | CAPTURED | KXNASDAQ100Y-26DEC31H1600-T19000 has a full 61-bar daily window, aligned period-for-period with T33000 | 61 daily bars, 1784433600 (2026-07-19) → 1789617600 (2026-09-17), 86400 s apart with no gaps; 5 no-trade periods | [external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/mar](https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440) | `src/verified-candles.js → KXNASDAQ100Y_T19000_DAILY / EXTENDED_CAPTURE_META_T19000` |
+| `V61` | CAPTURED | The new 61-bar capture is a deep-verified superset of the earlier 14-bar snapshot of the same market | All 14 overlapping bars match field-for-field (end_period_ts, open_interest_fp, volume_fp, price.*, yes_bid.*, yes_ask.*) under a sorted-key deep comparison | [external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/mar](https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1788393600&end_ts=1789603200&period_interval=1440) | `test/simulation.test.js → test 54 ("deep-verified superset")` |
+| `V62` | CAPTURED | A period with no trades returns an empty price object — only previous_dollars | {"price":{"previous_dollars":"0.0300"},"volume_fp":"0.00"} — 5 of 61 bars in the T19000 capture | [external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/mar](https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440) | `src/verified-candles.js → expandBar() null handling; src/backtest-replay.js → normalizeCandles()` |
+| `V63` | DERIVED | Cross-market correlation of the two Nasdaq-100 strikes over the shared window | Pearson ρ = +0.147 on 55 usable daily close-to-close dollar changes (61 shared periods, 5 no-trade periods excluded) | [external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/mar](https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440) | `src/market-analytics.js → computeUniverseCorrelation(); test 56` |
+| `V64` | CAPTURED | KXBTCY has only 14 captured daily bars, so its correlation with the Nasdaq markets is NOT reported | 11–13 usable overlapping periods vs the 20-period minimum; the pair is reported as "not computed" rather than extrapolated | [external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/K](https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1788393600&end_ts=1789603200&period_interval=1440) | `src/market-analytics.js → computeUniverseCorrelation() minOverlap guard` |
+
+### Engine correctness
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V65` | DERIVED | Rounding the average cost to 6 decimals breaks the accounting identity on large positions | 0.5e-6 × ~900,000 contracts ≈ $0.45 of phantom cost basis per position, compounding across fills — measured identity error $2.16 on ContrarianKing_100x | [round10() in src/simulation-engine.js — reviewable in the repository](https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/simulation-engine.js) | `src/simulation-engine.js → round10() applied to avgCost only; test 25` |
+| `V66` | DERIVED | JSON.stringify(value, keyArray) filters nested objects, so "verbatim" comparisons of candlestick bars were silently shallow | JSON.stringify(bar, ["end_period_ts","price"]) serialises the nested price object as {} — two bars with different prices compare equal | [developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Gl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#the_replacer_parameter) | `src/json-utils.js → stableStringify/stableEqual` |
+| `V67` | DERIVED | The equity curve now always terminates at finalEquity even when the last timestamp spans several markets | Before the fix the two-market universe ended the curve $9,086.73 away from finalEquity (36,789.43 vs 27,702.70) | [final curve point reconciliation in src/backtest-replay.js — reviewable in the repository](https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/backtest-replay.js) | `src/backtest-replay.js → final curve point reconciliation` |
+
+### Settlement
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V68` | DOCUMENTED | A binary contract pays notional_value_dollars ($1.00) to the winning side and $0.00 to the losing side, with no settlement fee | "There is no settlement fee." — fee schedule effective 2026-07-07 | [kalshi.com/docs/kalshi-fee-schedule.pdf](https://kalshi.com/docs/kalshi-fee-schedule.pdf) | `src/settlement-tracker.js → buildSettlementPlan(); SETTLEMENT_FEE_USD = 0` |
+| `V69` | CAPTURED | Every market captured on 2026-09-17 was still unresolved (status "active", result "") | KXNASDAQ100Y-26DEC31H1600-T33000 / -T19000 and KXBTCY-27JAN0100-T149999.99 all return status=active, result=""  | [external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26](https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000) | `src/settlement-tracker.js → classifySettlement(); test 57 asserts nothing is booked` |
+
+### Strategy sources
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V70` | DOCUMENTED | Favorite-longshot bias: "fade the longshot" is a published retail/systematic approach on Kalshi | Filter contracts priced 5c-15c and sell/Yes-fade them as maker; buy heavy favorites in the 85c-95c band | [laikalabs.ai/prediction-markets/kalshi-prediction-market-tra](https://laikalabs.ai/prediction-markets/kalshi-prediction-market-trading-strategies) | `src/strategies.js → longshot_fader_flb (LongshotFader_FLB)` |
+| `V71` | DOCUMENTED | The favorite-longshot bias is aggregation-dependent — the sign of longshot returns flips between weighting schemes | Polymarket study (588M trades): longshots lose 6.3c per dollar weighted per contract, but gain 4.1c per dollar when grouped by parent event | [pith.science/paper/2609.12878](https://pith.science/paper/2609.12878) | `src/strategies.js → longshot_fader_flb thesis (stated as a caveat, not a proven edge)` |
+| `V72` | DOCUMENTED | Shock-timing: rest limit buys below the pre-shock price at historical drop depths and exit with a resting offer 4-6c higher | r/PredictionsMarkets build log — "keeping both entry and exit on resting limit orders completely sidesteps the fee drag" | [www.reddit.com/r/PredictionsMarkets/comments/1u3rn8s/i_built](https://www.reddit.com/r/PredictionsMarkets/comments/1u3rn8s/i_built_a_39_kalshi_trading_bot_to_exploit_world/) | `src/strategies.js → panic_dip_shock_timing (PanicDip_ShockTiming)` |
+| `V73` | DOCUMENTED | Maker orders are the recommended way to avoid paying the spread, and exiting before settlement is the recommended exit | OddsHopper Kalshi playbook: "rest limit orders instead of paying the spread", "take profit by selling your position before settlement" | [www.oddsshopper.com/articles/prediction-markets/kalshi-tradi](https://www.oddsshopper.com/articles/prediction-markets/kalshi-trading-strategy) | `src/strategies.js → panic_dip_shock_timing exit rule (resting maker offer 5c above cost)` |
 
 ---
 
@@ -201,6 +235,6 @@ Structure and interaction patterns only. **No data, copy or branding was taken f
 | Every strategy carries `riskManagement: NONE (by mandate)` | test 21 |
 | Post-mortem prose interpolates computed values only | `generatePostMortem()`; test 26 |
 | Oversized orders are never filled at an invented price | `exhaustionPolicy: 'partial'`; tests 17–19 |
-| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 10 strategies) |
+| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 12 strategies) |
 | A strategy that never traded is not ranked | `LEADERBOARD_QUALIFICATION.minTrades = 1`; test 27 |
 | Fabricated tickers cannot re-enter the catalog | test 10 |

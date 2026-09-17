@@ -547,7 +547,160 @@ export const STRATEGIES = [
         }
       ];
     }
+  },
+
+  {
+    ...BASE,
+    id: 'longshot_fader_flb',
+    username: 'LongshotFader_FLB',
+    handle: '@LongshotFader_FLB',
+    avatar: '🎯',
+    title: 'Favorite–Longshot Bias Fader',
+    category: 'Behavioral / Bias Harvest',
+    tagline: 'Systematically fades the 5c–15c longshot band and buys heavy favorites at 85c+ — the two bands the bias literature says are mispriced in opposite directions.',
+    sizingPct: 1.0,
+    maxParticipation: 4,
+    sourceNote:
+      'Recreated from published favorite-longshot-bias (FLB) material: laikalabs.ai ("Filter Kalshi markets for contracts priced between 5c and 15c ... place limit sell orders on overpriced Yes contracts"; "Buy Heavy Favorites ... 85c to 95c"), ' +
+      'the Polymarket FLB study (longshots lose 6.3c per dollar when contracts are weighted equally but GAIN 4.1c when grouped by parent event — the sign is aggregation-dependent) and the Grokipedia FLB overview ' +
+      '("high-price contracts resolve favorably more frequently than their trading prices imply"). Links are listed in the Verification tab and in README "Strategy sources".',
+    thesis:
+      'DESIGN INTENT: the FLB literature claims low-price contracts win less often than their price implies and high-price contracts win more often. ' +
+      'This entry operationalises exactly that: short the 5c–15c band by buying NO, and buy YES outright in the 85c+ band. ' +
+      'HONEST CAVEAT, stated up front: the Polymarket study found the sign of the effect depends on how contracts are aggregated, so this is a hypothesis under test, not a proven edge — ' +
+      'and the captured universe contains NO contract above 28c, so the favorite leg cannot fire here. Only the longshot leg is measured.',
+    rules: {
+      entry: 'YES close in [0.05, 0.15] → buy NO (fade the overpriced longshot). YES close >= 0.85 → buy YES (underpriced favorite).',
+      sizing: '100% of available cash, capped at 4x visible depth on the traded side.',
+      exit: 'None. Both legs are held to settlement (no stop-loss, by mandate).',
+      untestedLeg: 'The >= 0.85 favorite leg has no eligible market in the captured universe; it is coded and will fire on a future universe, but it contributes nothing to this result.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, book, portfolio, ticker } = ctx;
+      const close = candle.trade.close;
+      if (close === null) return [];
+
+      // Leg 1 — fade the longshot band.
+      if (close >= 0.05 && close <= 0.15) {
+        const noAsk = book.getBestNoAsk();
+        if (noAsk === null) return [];
+        const heldNo = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.side === 'NO' && p.count > 0);
+        if (heldNo) return [];
+        const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'NO');
+        if (count <= 0) return [];
+        return [
+          {
+            type: 'buy',
+            side: 'NO',
+            count,
+            reason: `FLB fade: YES ${close} is in the 5c-15c longshot band → buy NO at ${noAsk}`
+          }
+        ];
+      }
+
+      // Leg 2 — buy the heavy favorite band (no eligible market in this universe).
+      if (close >= 0.85) {
+        const yesAsk = book.getBestYesAsk();
+        if (yesAsk === null) return [];
+        const heldYes = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.side === 'YES' && p.count > 0);
+        if (heldYes) return [];
+        const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+        if (count <= 0) return [];
+        return [
+          {
+            type: 'buy',
+            side: 'YES',
+            count,
+            reason: `FLB favorite: YES ${close} >= 0.85 → buy YES at ${yesAsk}`
+          }
+        ];
+      }
+
+      return [];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'panic_dip_shock_timing',
+    username: 'PanicDip_ShockTiming',
+    handle: '@PanicDip_ShockTiming',
+    avatar: '🪂',
+    title: 'Shock-Timing Panic-Dip Buyer (maker ladder)',
+    category: 'Shock / Mean Reversion (maker)',
+    tagline: 'Waits for a violent intraperiod dump, then rests a three-rung maker bid ladder under the panic low and exits with a resting offer 5c higher.',
+    sizingPct: 0.6,
+    maxParticipation: 3,
+    sourceNote:
+      'Recreated from a r/PredictionsMarkets build log ("rest limit buys below the pre-shock price at the historical P50/P75/P90 drop depths ... exit with a resting limit sell 4-6c higher ... ' +
+      'keeping both entry and exit on resting limit orders completely sidesteps the fee drag") and the OddsHopper Kalshi playbook ("rest limit orders instead of paying the spread", "take profit by selling your position before settlement"). ' +
+      'Links are listed in the Verification tab and in README "Strategy sources".',
+    thesis:
+      'DESIGN INTENT: violent repricings overshoot because liquidity thins out exactly when it is needed. A resting maker bid under the panic low gets filled by the overshoot itself and pays the MAKER fee ' +
+      '(0.0175 x P x (1-P) vs the taker 0.07 x P x (1-P) — a 4x discount under the official schedule), which is the only structural edge in this universe that does not depend on predicting direction. ' +
+      'The exit is also a resting offer, so the round trip is maker→maker. HONEST CAVEAT: fills behind the touch depend on the modelled depth ladder, and a daily candle cannot show the intraperiod path, so a resting bid is ' +
+      'marked as filled only if the period low actually reached it.',
+    rules: {
+      entry: 'Shock = period low <= 0.70 x the prior 5-period mean close. Then rest three maker bids one grid step apart starting 2 ticks under the panic low.',
+      sizing: '60% of cash split across three rungs (25% / 35% / 40%, deepest rung largest, as in the source build log), capped at 3x visible depth.',
+      exit: 'Rest a maker offer 5c above the position average cost; cancel and re-quote each period. No stop-loss (by mandate).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, history, book, portfolio, ticker } = ctx;
+      const actions = [];
+
+      // Exit first: a resting offer 5c above cost closes a filled dip buy as maker.
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ticker || pos.side !== 'YES' || pos.count <= 0) continue;
+        if (book.cancelExisting) book.cancelExisting();
+        const target = snapToGrid(Number(pos.avgCost) + 0.05, book.grid, 'up');
+        if (!(target > 0) || target >= book.notional) continue;
+        actions.push({
+          type: 'limit',
+          direction: 'ask',
+          side: 'YES',
+          count: pos.count,
+          price: target,
+          reason: `shock exit: rest a maker offer at ${target} (cost ${round6(pos.avgCost)} + 5c)`
+        });
+      }
+
+      const close = candle.trade.close;
+      const low = candle.trade.low;
+      if (close === null || low === null) return actions;
+      const mean5 = rollingMean(history.slice(0, -1), (c) => c.trade.close, 5);
+      if (mean5 === null || mean5 <= 0) return actions;
+
+      const shock = low <= round6(mean5 * 0.7);
+      if (!shock) return actions;
+
+      // Three-rung maker ladder under the panic low.
+      const rungs = [
+        { frac: 0.25, offset: 1 },
+        { frac: 0.35, offset: 2 },
+        { frac: 0.40, offset: 3 }
+      ];
+      for (const rung of rungs) {
+        const price = snapToGrid(low - rung.offset * book.tick, book.grid, 'down');
+        if (!(price > 0)) continue;
+        const cashSlice = portfolio.cash * this.sizingPct * rung.frac;
+        const count = Math.floor((cashSlice / price) * 100) / 100;
+        if (!(count > 0)) continue;
+        actions.push({
+          type: 'limit',
+          direction: 'bid',
+          side: 'YES',
+          count: round2(count),
+          price,
+          reason: `shock dip: low ${low} <= 0.70 x 5-period mean ${round6(mean5)} → rest maker bid ${count} @ ${price}`
+        });
+      }
+      return actions;
+    }
   }
+
 ];
 
 /** Legacy export name kept for compatibility with server.js and older tests. */

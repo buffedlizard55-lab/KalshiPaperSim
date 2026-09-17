@@ -1,0 +1,80 @@
+name: Daily Kalshi history ingest
+
+# Recommended-work item #1: grow a genuine multi-month dataset, one day at a
+# time, from the official Kalshi API.
+#
+# WHY A WORKFLOW: the build sandbox cannot open TLS connections to
+# *.kalshi.com (IRREGULARITIES.md #4). GitHub-hosted runners have unrestricted
+# egress, so this is where the daily append can actually run.
+#
+# WHAT IT WRITES: data/history/<ticker>.json (merged, never overwritten) and
+# data/history/_manifest.json (counts, source URLs, conflicts). The job commits
+# only when something changed, so a no-op day produces no commit.
+#
+# OFFICIAL ENDPOINTS USED (see scripts/ingest-history.mjs):
+#   GET /series/{series_ticker}/markets/{ticker}/candlesticks
+#     https://docs.kalshi.com/api-reference/market/get-market-candlesticks
+#   GET /markets/{ticker}/orderbook
+#     https://docs.kalshi.com/getting_started/orderbook_responses
+
+on:
+  schedule:
+    # 06:15 UTC — after the daily Kalshi session boundary, before US hours.
+    - cron: '15 6 * * *'
+  workflow_dispatch:
+    inputs:
+      with_books:
+        description: 'Also capture an order-book snapshot per market'
+        required: false
+        default: 'false'
+      days:
+        description: 'Backfill window in days when the store is empty'
+        required: false
+        default: '90'
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Ingest the latest real candlesticks
+        id: ingest
+        run: |
+          ARGS="--with-books=${{ github.event.inputs.with_books || 'false' }} --days=${{ github.event.inputs.days || '90' }}"
+          node scripts/ingest-history.mjs $ARGS | tee ingest.log
+          echo "exit=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+
+      - name: Audit the store (no network)
+        run: node scripts/ingest-history.mjs --verify | tee -a ingest.log
+
+      - name: Check whether the tracked markets have settled
+        run: node scripts/track-settlements.mjs --write | tee -a ingest.log
+        continue-on-error: true
+
+      - name: Commit the new history
+        run: |
+          if [ -z "$(git status --porcelain data/)" ]; then
+            echo "No new bars — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "kalshi-history-bot"
+          git config user.email "kalshi-history-bot@users.noreply.github.com"
+          git add data/
+          git commit -m "chore(history): append real Kalshi candlesticks $(date -u +%F)"
+          git push
+
+      - name: Upload the ingest log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ingest-log
+          path: ingest.log
+          if-no-files-found: warn

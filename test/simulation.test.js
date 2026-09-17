@@ -69,19 +69,32 @@ import {
 } from '../src/verified-snapshot.js';
 import {
   getExtendedCandlesticks,
+  getExtendedTickers,
   expandBar,
   KXNASDAQ100Y_T33000_DAILY,
+  KXNASDAQ100Y_T19000_DAILY,
   VERBATIM_SAMPLE_BAR,
+  VERBATIM_SAMPLE_BAR_T19000,
   verifyExpanderAgainstVerbatim,
   summarizeExtendedSeries,
-  EXTENDED_CAPTURE_META
+  EXTENDED_CAPTURE_META,
+  EXTENDED_CAPTURE_META_T19000,
+  EXTENDED_SERIES
 } from '../src/verified-candles.js';
+import { stableStringify, stableEqual } from '../src/json-utils.js';
+import { computePortfolioExposure, computeUniverseCorrelation, pearson } from '../src/market-analytics.js';
+import {
+  buildSettlementPlan,
+  applySettlementToPositions,
+  summarizeSettlements,
+  classifySettlement
+} from '../src/settlement-tracker.js';
 import { parseKalshiOrderbook, reciprocalCheck, normalizeMarket, DATA_SOURCE } from '../src/kalshi-api.js';
 import { OrderBook, PaperPortfolio } from '../src/simulation-engine.js';
 import { ReplayEngine, analyzeEquityCurve, normalizeCandles } from '../src/backtest-replay.js';
 import { STRATEGIES, validateStrategies, VERIFIED_SERIES, REJECTED_FABRICATED_TICKERS } from '../src/strategies.js';
 import { computeAttribution, generatePostMortem, buildLeaderboard, LEADERBOARD_QUALIFICATION } from '../src/analysis.js';
-import { runCompetition, runCustomStrategy, getCandleCoverage } from '../src/strategy-runner.js';
+import { runCompetition, runCustomStrategy, getCandleCoverage, getVerifiedCandleMap } from '../src/strategy-runner.js';
 import {
   lintSource,
   compileUserStrategy,
@@ -436,9 +449,13 @@ test('14. the compact candle encoding reproduces the verbatim API bar exactly', 
   const last = KXNASDAQ100Y_T33000_DAILY[KXNASDAQ100Y_T33000_DAILY.length - 1];
   assert.ok(Array.isArray(last), 'stored bars are compact tuples');
   const expanded = expandBar(last);
+  // Deep compare every field. NOTE: JSON.stringify(value, keyArray) filters
+  // property names at EVERY depth, so `JSON.stringify(bar, ['end_period_ts','price'])`
+  // serialises the price object as `{}` — two bars with different prices would
+  // compare equal. stableStringify has no such blind spot (see src/json-utils.js).
   assert.deepEqual(
-    JSON.parse(JSON.stringify(expanded, Object.keys(VERBATIM_SAMPLE_BAR).sort())),
-    JSON.parse(JSON.stringify(VERBATIM_SAMPLE_BAR, Object.keys(VERBATIM_SAMPLE_BAR).sort())),
+    JSON.parse(stableStringify(expanded)),
+    JSON.parse(stableStringify(VERBATIM_SAMPLE_BAR)),
     'the last expanded tuple must equal the verbatim API bar field for field'
   );
   assert.equal(typeof expanded.volume_fp, 'string', 'counts stay fixed-point strings');
@@ -564,7 +581,7 @@ test('21. the roster validates itself and carries no hard-coded results', () => 
   const v = validateStrategies();
   assert.deepEqual(v.problems, [], `validateStrategies reported: ${v.problems.join('; ')}`);
   assert.equal(v.count, STRATEGIES.length);
-  assert.equal(STRATEGIES.length, 10);
+  assert.equal(STRATEGIES.length, 12);
 
   const ids = new Set(STRATEGIES.map((s) => s.id));
   const names = new Set(STRATEGIES.map((s) => s.username));
@@ -1175,7 +1192,22 @@ test('45. the browser cannot sign the WS handshake, and the code says so', () =>
 
 test('46. every verified fact carries a reviewable link and a status', () => {
   const allowed = /^(DOCUMENTED|CAPTURED|NEGATIVE|DERIVED|OBSERVATION)$/;
-  const hosts = new Set(['docs.kalshi.com', 'kalshi.com', 'external-api.kalshi.com', 'external-api.demo.kalshi.co', 'assets.kalshi.com', 'github.com', 'www.cfbenchmarks.com', 'cfbenchmarks.com']);
+  // Host policy, deliberately narrow:
+  //   • EXCHANGE facts (markets, fees, endpoints, settlement) may only cite
+  //     Kalshi hosts — no third party may vouch for what Kalshi does.
+  //   • project-internal rules cite github.com (reviewable in this repo).
+  //   • language claims (e.g. how JSON.stringify's replacer behaves) cite
+  //     tc39.es / developer.mozilla.org — no Kalshi page covers them.
+  //   • 'Strategy sources' facts cite the public write-ups a strategy was
+  //     recreated from (reddit, research preprints, trading playbooks). These
+  //     are clearly separated by group so a reader never mistakes a forum post
+  //     for exchange documentation.
+  const hosts = new Set([
+    'docs.kalshi.com', 'kalshi.com', 'external-api.kalshi.com', 'external-api.demo.kalshi.co',
+    'assets.kalshi.com', 'github.com', 'www.cfbenchmarks.com', 'cfbenchmarks.com',
+    'tc39.es', 'developer.mozilla.org',
+    'laikalabs.ai', 'pith.science', 'www.reddit.com', 'reddit.com', 'www.oddsshopper.com'
+  ]);
   let withLink = 0;
 
   for (const f of VERIFIED_FACTS) {
@@ -1189,6 +1221,14 @@ test('46. every verified fact carries a reviewable link and a status', () => {
       const u = new URL(f.url);
       assert.equal(u.protocol, 'https:');
       assert.ok(hosts.has(u.host), `${f.id}: unexpected source host ${u.host}`);
+      // A fact about the EXCHANGE may never be sourced from a third party.
+      if (f.group !== 'Strategy sources') {
+        assert.ok(
+          u.host.endsWith('kalshi.com') || u.host.endsWith('kalshi.co') || u.host === 'github.com' ||
+            u.host === 'tc39.es' || u.host === 'developer.mozilla.org',
+          `${f.id}: "${f.group}" facts must cite Kalshi (or a language/project reference), not ${u.host}`
+        );
+      }
     } else {
       // Internal project rules: still reviewable, via the code that enforces them.
       assert.equal(f.status, 'DERIVED', `${f.id}: only derived internal rules may lack an external URL`);
@@ -1317,4 +1357,213 @@ test('50. ReplayEngine refuses to run without real data', () => {
   // anything else rather than returning [] (which would look like "no trades").
   assert.throws(() => normalizeCandles({ nope: true }), /expected an array of candlesticks/i);
   assert.equal(normalizeCandles(null).length, 0);
+});
+
+/* ================================================================== *
+ * 11. DEEP JSON COMPARISON — regression for the key-array replacer bug
+ * ================================================================== */
+
+test('51. stableStringify compares nested fields (JSON.stringify replacer does not)', () => {
+  const a = { end_period_ts: 100, price: { close_dollars: '0.1000' } };
+  const b = { end_period_ts: 100, price: { close_dollars: '0.9900' } };
+
+  // The bug this guards: the key-array replacer filters at EVERY depth, so the
+  // nested price object collapses to {} and these two bars compare equal.
+  assert.equal(
+    JSON.stringify(a, Object.keys(b).sort()),
+    JSON.stringify(b, Object.keys(b).sort()),
+    'demonstrates the trap: the naive comparison calls these equal'
+  );
+  assert.equal(stableEqual(a, b), false, 'stableEqual must see the nested difference');
+  assert.equal(stableEqual(a, { price: { close_dollars: '0.1000' }, end_period_ts: 100 }), true, 'key order must not matter');
+  assert.equal(stableStringify([1, { b: 2, a: [3, 4] }]), '[1,{"a":[3,4],"b":2}]', 'arrays and nesting are handled');
+});
+
+/* ================================================================== *
+ * 12. SECOND VERIFIED SERIES — KXNASDAQ100Y-26DEC31H1600-T19000
+ * ================================================================== */
+
+test('52. the T19000 capture is contiguous, aligned with T33000, and keeps no-trade bars empty', () => {
+  const T19000 = EXTENDED_CAPTURE_META_T19000.ticker;
+  const bars = getExtendedCandlesticks(T19000);
+
+  assert.equal(bars.length, 61, '61 daily bars captured');
+  assert.equal(EXTENDED_CAPTURE_META_T19000.barCount, 61);
+  assert.equal(bars[0].end_period_ts, EXTENDED_CAPTURE_META.firstTs, 'same first period as the T33000 capture');
+  assert.equal(bars[bars.length - 1].end_period_ts, EXTENDED_CAPTURE_META.lastTs, 'same last period as the T33000 capture');
+
+  const summary = summarizeExtendedSeries(T19000);
+  assert.equal(summary.contiguous, true, `gaps: ${JSON.stringify(summary.gaps)}`);
+  assert.equal(summary.noTradeBars, 5, 'five periods had zero volume in the real data');
+  assert.equal(summary.tradedBars, 56);
+
+  let prev = null;
+  for (const bar of bars) {
+    if (prev !== null) assert.equal(bar.end_period_ts - prev, 86400, 'daily bars are exactly 24h apart');
+    prev = bar.end_period_ts;
+    assert.ok(dollarsToNumber(bar.volume_fp) >= 0);
+  }
+
+  // No-trade periods must stay EMPTY — filling them would be fabrication.
+  const noTrade = bars.filter((b) => Number(b.volume_fp) === 0);
+  assert.equal(noTrade.length, 5);
+  for (const bar of noTrade) {
+    assert.equal(bar.price.close_dollars, undefined, 'a no-trade bar has no close');
+    assert.equal(bar.price.high_dollars, undefined, 'a no-trade bar has no high');
+    assert.match(bar.price.previous_dollars, /^\d\.\d{4}$/, 'it carries previous_dollars only, exactly as the API returned it');
+  }
+});
+
+test('53. the expander reproduces the T19000 verbatim no-trade bar field for field', () => {
+  const v = verifyExpanderAgainstVerbatim(EXTENDED_CAPTURE_META_T19000.ticker);
+  assert.equal(v.ok, true, `expander disagrees with the verbatim capture: ${stableStringify(v.expanded)} vs ${stableStringify(v.verbatim)}`);
+  assert.deepEqual(JSON.parse(stableStringify(v.expanded)), JSON.parse(stableStringify(VERBATIM_SAMPLE_BAR_T19000)));
+  assert.ok(Array.isArray(KXNASDAQ100Y_T19000_DAILY) && KXNASDAQ100Y_T19000_DAILY.length === 61);
+  assert.ok(getExtendedTickers().includes(EXTENDED_CAPTURE_META_T19000.ticker));
+  assert.ok(Object.keys(EXTENDED_SERIES).length >= 2, 'the registry holds every full-window series');
+});
+
+test('54. the T19000 full capture is a deep-verified superset of the earlier 14-bar snapshot', () => {
+  const T19000 = EXTENDED_CAPTURE_META_T19000.ticker;
+  const extended = getExtendedCandlesticks(T19000);
+  const snapshot = getVerifiedCandlesticks(T19000)?.candlesticks || [];
+  assert.ok(snapshot.length > 0, 'the earlier independent capture must still be present');
+
+  const byTs = new Map(extended.map((b) => [Number(b.end_period_ts), b]));
+  for (const bar of snapshot) {
+    const mine = byTs.get(Number(bar.end_period_ts));
+    assert.ok(mine, `snapshot bar ${bar.end_period_ts} missing from the full capture`);
+    assert.ok(
+      stableEqual(mine, bar),
+      `bar ${bar.end_period_ts} differs between the two independent captures:\n  full: ${stableStringify(mine)}\n  snap: ${stableStringify(bar)}`
+    );
+  }
+});
+
+/* ================================================================== *
+ * 13. MULTI-MARKET PORTFOLIO ACCOUNTING
+ * ================================================================== */
+
+test('55. multi-market exposure accounting reconciles with the trade log', () => {
+  const comp = runCompetition({ seed: 20260917 });
+  const universe = comp.competition.dataProvenance.markets.length;
+  assert.ok(universe >= 2, 'the competition universe now spans more than one market');
+
+  for (const r of comp.results) {
+    const ma = r.marketAnalytics;
+    assert.ok(ma, `${r.username} must carry market analytics`);
+    const sumFees = Math.round(ma.markets.reduce((s, m) => s + m.feesUsd, 0) * 100) / 100;
+    assert.equal(sumFees, ma.totalFeesUsd, 'per-market fees must sum to the total');
+    const sumRisk = Math.round(ma.markets.reduce((s, m) => s + m.costBasisAtRisk, 0) * 100) / 100;
+    assert.equal(sumRisk, ma.totalCostBasisAtRisk, 'per-market exposure must sum to the total');
+    if (ma.totalCostBasisAtRisk > 0) {
+      assert.ok(ma.hhi > 0 && ma.hhi <= 1, 'HHI is bounded by (0, 1]');
+      const shares = Math.round(ma.markets.reduce((s, m) => s + m.shareOfCapitalAtRisk, 0));
+      assert.equal(shares, 100, 'per-market shares must sum to 100%');
+    }
+    assert.equal(ma.markets.some((m) => m.ticker.includes('UNKNOWN')), false, 'every filled trade is attributed to a real ticker');
+  }
+
+  // A strategy that traded is attributed; one that never traded has zero markets.
+  const traded = comp.results.filter((r) => r.totalTrades > 0);
+  assert.ok(traded.length > 0);
+  for (const r of traded) assert.ok(r.marketAnalytics.marketsTraded >= 1);
+});
+
+test('56. cross-market correlation is computed only when the data supports it', () => {
+  const map = getVerifiedCandleMap();
+  const corr = computeUniverseCorrelation(map);
+  assert.ok(corr.markets.length >= 2, 'at least two markets have captured bars');
+
+  for (const pair of corr.pairs) {
+    if (pair.correlation === null) {
+      assert.match(pair.note, /Not computed/, 'a null correlation must explain itself');
+    } else {
+      assert.ok(pair.correlation >= -1 && pair.correlation <= 1, 'correlation is bounded');
+      assert.ok(pair.usablePeriods >= corr.minOverlap, 'correlation is only reported above the overlap floor');
+    }
+  }
+
+  // The two Nasdaq-100 strikes share 61 real periods, so a value IS reported.
+  const nasdaqPair = corr.pairs.find((p) => p.a.includes('KXNASDAQ100Y') && p.b.includes('KXNASDAQ100Y'));
+  assert.ok(nasdaqPair && nasdaqPair.correlation !== null, 'the same-event pair has enough overlap to correlate');
+  assert.ok(nasdaqPair.usablePeriods <= 61);
+
+  // Known-value check: pearson of a perfect positive line is 1.
+  assert.equal(pearson([1, 2, 3, 4], [2, 4, 6, 8]), 1);
+  assert.equal(pearson([1, 2, 3, 4], [4, 3, 2, 1]), -1);
+  assert.equal(pearson([1, 2], [1, 2]), null, 'fewer than three points → no correlation is claimed');
+  assert.equal(pearson([1, 1, 1], [2, 3, 4]), null, 'a constant series has no defined correlation');
+});
+
+/* ================================================================== *
+ * 14. SETTLEMENT TRACKING
+ * ================================================================== */
+
+test('57. settlement is booked only on a final result, and pays $1 / $0 with no fee', () => {
+  const markets = [
+    { ticker: 'A', status: 'finalized', result: 'yes', notional_value_dollars: '1.0000' },
+    { ticker: 'B', status: 'determined', result: 'no', notional_value_dollars: '1.0000' },
+    { ticker: 'C', status: 'active', result: '', notional_value_dollars: '1.0000' },
+    { ticker: 'D', status: 'finalized', result: '', notional_value_dollars: '1.0000' }
+  ];
+  const positions = [
+    { ticker: 'A', side: 'YES', count: 1000, avgCost: 0.12 },
+    { ticker: 'A', side: 'NO', count: 500, avgCost: 0.88 },
+    { ticker: 'B', side: 'NO', count: 100, avgCost: 0.5 },
+    { ticker: 'C', side: 'YES', count: 10, avgCost: 0.2 },
+    { ticker: 'D', side: 'YES', count: 10, avgCost: 0.2 }
+  ];
+
+  const plan = buildSettlementPlan(markets, positions);
+  assert.equal(plan.settled.length, 2, 'only the finalized market with a result settles');
+  assert.equal(plan.pending.length, 1, 'determined is reported as pending, never booked');
+  assert.equal(plan.unresolved.length, 2, 'active and empty-result markets stay unresolved');
+
+  const win = plan.settled.find((s) => s.side === 'YES');
+  const lose = plan.settled.find((s) => s.side === 'NO');
+  assert.equal(win.payout, 1000, '1000 winning contracts × $1.00');
+  assert.equal(win.realizedPnl, 880, '$1,000 payout − $120 cost basis');
+  assert.equal(lose.payout, 0);
+  assert.equal(lose.realizedPnl, -440);
+  assert.equal(plan.totals.settlementFees, 0, 'there is no settlement fee (verified)');
+  assert.equal(plan.totals.realizedPnl, 440);
+
+  const applied = applySettlementToPositions(positions, plan);
+  assert.equal(applied.cashDelta, 1000);
+  assert.equal(applied.realizedPnl, 440);
+  assert.equal(applied.remainingPositions.length, 3, 'pending and unresolved positions stay open');
+
+  // Every market captured on 2026-09-17 was still active: nothing has settled.
+  for (const m of getVerifiedMarkets()) {
+    const cls = classifySettlement(m);
+    assert.equal(cls.state, 'UNRESOLVED', `${m.ticker} had not resolved at capture time (status ${m.status})`);
+  }
+  assert.equal(summarizeSettlements([]).positions, 0);
+});
+
+/* ================================================================== *
+ * 15. HISTORY INGEST — merge integrity (no silent history rewriting)
+ * ================================================================== */
+
+test('58. the ingest merge adds new bars and flags conflicts instead of rewriting them', async () => {
+  const { mergeBars } = await import('../scripts/ingest-history.mjs');
+  const stored = [{ end_period_ts: 100, price: { close_dollars: '0.1000' }, volume_fp: '10.00' }];
+
+  const fresh = mergeBars(stored, [
+    { end_period_ts: 100, price: { close_dollars: '0.1000' }, volume_fp: '10.00' },
+    { end_period_ts: 100 + 86400, price: { close_dollars: '0.2000' }, volume_fp: '0.00' }
+  ]);
+  assert.equal(fresh.added, 1, 'only the new bar is added');
+  assert.equal(fresh.conflicts.length, 0, 'an identical re-fetch is not a conflict');
+  assert.equal(fresh.bars.length, 2);
+
+  const restated = mergeBars(stored, [{ end_period_ts: 100, price: { close_dollars: '0.9900' }, volume_fp: '10.00' }]);
+  assert.equal(restated.added, 0);
+  assert.equal(restated.conflicts.length, 1, 'a restated bar is flagged, not overwritten');
+  assert.equal(restated.bars[0].price.close_dollars, '0.1000', 'the stored value is kept');
+
+  const empty = mergeBars([], [{ end_period_ts: 5, price: { previous_dollars: '0.0300' } }]);
+  assert.equal(empty.added, 1, 'a no-trade bar is stored as returned, without being filled in');
+  assert.equal(empty.bars[0].price.close_dollars, undefined);
 });

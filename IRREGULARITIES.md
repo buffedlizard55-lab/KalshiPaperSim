@@ -1,8 +1,8 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-17 by `scripts/render-docs.js` from `src/verification-data.js`.
-**19 irregularities** flagged during this build: 7 high, 7 medium,
-4 low, 1 informational.
+**25 irregularities** flagged during this build: 9 high, 10 medium,
+5 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
 about it**, and **what you should do**. Nothing here is speculation: each item was found by comparing an
@@ -135,6 +135,42 @@ assumption against an official document or a real API response.
 
 ---
 
+## #20 — The "verbatim" comparison used by the expander oracle was shallow — it never compared prices
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That JSON.stringify(bar, Object.keys(sample).sort()) proves an expanded tuple equals the captured bar field-for-field. |
+| **Verified truth** | The array form of the replacer argument filters property names at EVERY depth, so nested price / yes_bid / yes_ask objects serialise as {}. Two bars with completely different prices compared equal, meaning the expander oracle (and the ingest merge check) could not have detected a transcription error in any price field. |
+| **What the code does** | Added src/json-utils.js with stableStringify/stableEqual (recursive, sorted keys) and switched every deep comparison — the expander oracle, the ingest merge conflict check and test 14 / test 54 — to it. Re-running the strict comparison on the existing captures found zero differences, so no stored bar was wrong, but the earlier "verified" claim was weaker than stated. |
+| **What you should do** | Run test 51 and 54; both now compare every nested field. Any future "verbatim" check must use stableEqual, never the key-array replacer. |
+
+**Evidence**
+
+- MDN: the replacer parameter: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#the_replacer_parameter>
+- Fix + regression test — `src/json-utils.js → stableStringify(); test 51 asserts the naive comparison is blind and stableEqual is not`
+
+---
+
+## #21 — A regime sweep over the replay would require inventing price history
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That a 10 strategies × 6 regimes × N seeds matrix could be run against the captured candlesticks. |
+| **Verified truth** | Regime presets change how prices evolve. Applying them to a replay means overwriting real captured bars with synthetic bull/bear/volatile paths — fabricating history, which this repository forbids. The runner has always stated that the replay uses real candles UNMODIFIED. |
+| **What the code does** | Built a sensitivity sweep that varies only what is ours to vary — the seed (modelled depth behind the touch), the market universe, the settlement scenario and the exhaustion policy — and reports the result in SENSITIVITY.md. Every cell replays the same real bars. |
+| **What you should do** | Read SENSITIVITY.md. Treat the hypothetical settlement rows as scenarios, not outcomes: none of these contracts had resolved at capture time. |
+
+**Evidence**
+
+- Runner disclosure — `src/strategy-runner.js → competition.regimeNote: "This replay always uses the REAL captured candlesticks UNMODIFIED"`
+- Honest replacement — `scripts/sensitivity-sweep.mjs: 10 strategies × 3 seeds × 3 universes × 3 settlement scenarios = 270 strategy runs`
+
+---
+
 ## #4 — Direct TLS connections to *.kalshi.com are dropped from this sandbox
 
 **Severity:** `MED`
@@ -257,6 +293,60 @@ assumption against an official document or a real API response.
 
 ---
 
+## #22 — Average cost rounded to 6 decimals broke the accounting identity on 900k-contract positions
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That round6 (1e-6) precision on a position's average cost is far below any material amount. |
+| **Verified truth** | avgCost is re-rounded on every fill and then multiplied by the contract count. On a 873,542.98-contract position, 0.5e-6 of rounding is up to $0.44 of phantom cost basis, and it compounds across fills: the identity equityChange = realizedPnl + unrealizedPnl − feesPaid was off by $2.16 on ContrarianKing_100x once the market universe was broadened. |
+| **What the code does** | avgCost now uses 10 decimals while all money stays rounded to cents. The identity gap fell to ≤ $0.05 across every strategy, and the settlement/payout code reuses the same helper. |
+| **What you should do** | Run test 25; the worst identity gap across the roster is now under five cents. |
+
+**Evidence**
+
+- Measured before the fix — `identityGap = $2.16 vs a $1.04 tolerance (test 25)`
+- Fix in src/simulation-engine.js — `round10() applied to avgCost only; money values stay at cents for display`
+
+---
+
+## #23 — The equity curve could end somewhere other than finalEquity once more than one market shared the last timestamp
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That the last equity-curve point always equals the reported final equity. |
+| **Verified truth** | The replay timeline is ordered by (timestamp, ticker) and a curve point is written only when the timestamp changes. With the broadened universe the final timestamp spans two markets, so the curve was written before the second market was marked: the curve ended at $27,702.70 while finalEquity was $36,789.43. |
+| **What the code does** | The curve is now reconciled to the final equity before settlement, so the chart and the headline number can never disagree. |
+| **What you should do** | Compare the last sparkline point with the "Final equity" stat for any strategy — they match. |
+
+**Evidence**
+
+- Detected by test 24 — `assert.equal(r.finalEquity, last curve point) — expected 27702.7, actual 36789.43`
+- Fix in src/backtest-replay.js — `the curve always terminates on the final equity (update-in-place when the last point shares the final timestamp)`
+
+---
+
+## #24 — The daily-history ingest job cannot run from this sandbox
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That a scheduled job could append each day's candles from the build environment. |
+| **Verified truth** | Direct TLS to *.kalshi.com is dropped from this datacenter IP (irregularity #4). The script works from any normal network and is shipped with a GitHub Actions workflow, which has unrestricted egress, but it has never completed a live run here — so data/history/ is empty and every result still comes from the 2026-09-17 captures. |
+| **What the code does** | The script refuses to fabricate: on total failure it records the error per market in data/history/_manifest.json and exits non-zero. A --verify mode audits an existing store with no network at all, and --dry-run prints the exact URLs it would call for manual review. |
+| **What you should do** | Run `node scripts/ingest-history.mjs --dry-run` to see the URLs, then run it (or let the workflow run it) from a network that can reach external-api.kalshi.com. |
+
+**Evidence**
+
+- Live failure — `node scripts/ingest-history.mjs → "fetch failed" for all 3 markets; the script exits 1 with the sandbox explanation`
+- Workflow — `.github/workflows/daily-history.yml runs it daily at 06:15 UTC and commits data/history/`
+
+---
+
 ## #9 — Two different status vocabularies for the same concept
 
 **Severity:** `LOW`
@@ -323,6 +413,24 @@ assumption against an official document or a real API response.
 
 - Fee schedule PDF (formula + table, same document): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
 - Transcribed oracle used by the test suite: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/kalshi-config.js> — `OFFICIAL_FEE_TABLE_PER_100 / FEE_TABLE_ROUNDING`
+
+---
+
+## #25 — KXBTCY has only 14 captured bars, so it joins the replay part-way through
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That every market in the universe covers the same window. |
+| **Verified truth** | KXBTCY-27JAN0100-T149999.99 has 14 daily bars (2026-09-03 → 2026-09-17) while both Nasdaq-100 strikes have 61. In the merged timeline the BTC market simply appears in the final 14 periods; it is not back-filled. |
+| **What the code does** | Per-market bar counts are shown in the competition universe panel and in every result's dataProvenance, so a shorter window is visible rather than hidden. |
+| **What you should do** | Compare the "Bars" column in the Competition universe panel before reading any cross-market comparison. |
+
+**Evidence**
+
+- Coverage — `GET /api/history and GET /api/market-stats both report per-market bar counts`
+- Window: <https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1788393600&end_ts=1789603200&period_interval=1440>
 
 ---
 
