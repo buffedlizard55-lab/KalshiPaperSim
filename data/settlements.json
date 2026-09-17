@@ -158,7 +158,7 @@
         "notional_value_dollars": "1.0000",
         "open_interest_fp": "162713.12",
         "open_time": "2025-12-23T15:00:00Z",
-        "previous_price_dollars": "0.1000",
+        "previous_price_dollars": "0.1200",
         "previous_yes_ask_dollars": "0.1200",
         "previous_yes_bid_dollars": "0.0900",
         "price_level_structure": "linear_cent",
@@ -179,7 +179,7 @@
         "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
         "title": "Will the Nasdaq-100 be above 33000 at the end of Dec 31, 2026 at 4pm EST?",
         "updated_time": "2026-04-09T09:41:46.616883Z",
-        "volume_24h_fp": "2223.05",
+        "volume_24h_fp": "2032.05",
         "volume_fp": "395852.67",
         "yes_ask_dollars": "0.1300",
         "yes_ask_size_fp": "107.07",
@@ -190,7 +190,7 @@
     }
   ],
   "errors": [],
-  "checkedAt": "2026-09-17T23:08:01.194Z",
+  "checkedAt": "2026-09-17T23:18:23.472Z",
   "endpoint": "https://external-api.kalshi.com/trade-api/v2",
   "source": "LIVE",
   "settlementPlan": {
