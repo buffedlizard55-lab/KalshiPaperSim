@@ -66,8 +66,10 @@ jobs:
 
       - name: Ingest the latest real candlesticks
         run: |
-          node scripts/ingest-history.mjs ${{ steps.req.outputs.args }} | tee ingest.log
-          echo "exit=${PIPESTATUS[0]}"
+          # pipefail: without it `node ... | tee` reports success even when the
+          # script exits non-zero, which is exactly how a crash hid for a run.
+          set -o pipefail
+          node scripts/ingest-history.mjs ${{ steps.req.outputs.args }} 2>&1 | tee ingest.log
 
       - name: Audit the store (no network)
         run: node scripts/ingest-history.mjs --verify | tee -a ingest.log
@@ -78,6 +80,10 @@ jobs:
       - name: Check whether the tracked markets have settled
         run: node scripts/track-settlements.mjs --write | tee -a ingest.log
         continue-on-error: true
+
+      - name: Keep the run log with the data
+        if: always()
+        run: cp ingest.log data/history/_last-run.log
 
       - name: Commit the new history
         run: |

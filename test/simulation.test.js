@@ -94,7 +94,18 @@ import { OrderBook, PaperPortfolio } from '../src/simulation-engine.js';
 import { ReplayEngine, analyzeEquityCurve, normalizeCandles } from '../src/backtest-replay.js';
 import { STRATEGIES, validateStrategies, VERIFIED_SERIES, REJECTED_FABRICATED_TICKERS } from '../src/strategies.js';
 import { computeAttribution, generatePostMortem, buildLeaderboard, LEADERBOARD_QUALIFICATION } from '../src/analysis.js';
-import { runCompetition, runCustomStrategy, getCandleCoverage, getVerifiedCandleMap } from '../src/strategy-runner.js';
+import {
+  runCompetition,
+  runCustomStrategy,
+  getCandleCoverage,
+  getVerifiedCandleMap,
+  getHistoryAudit,
+  DATA_SOURCE_ACCUMULATED,
+  buildUniverse,
+  CANDLE_ORIGIN
+} from '../src/strategy-runner.js';
+import { ACCUMULATED_HISTORY, expandAccumulatedBar, getAccumulatedBars } from '../src/accumulated-history.js';
+import { chooseCandleSeries, buildReplayUniverse, MIN_REPLAY_BARS, CANDLE_ORIGIN as MERGE_ORIGIN } from '../src/history-merge.js';
 import {
   lintSource,
   compileUserStrategy,
@@ -123,6 +134,19 @@ const COMPETITION = runCompetition({ seed: SEED });
 const T33000 = 'KXNASDAQ100Y-26DEC31H1600-T33000';
 const BTC = 'KXBTCY-27JAN0100-T149999.99';
 const ceilToCent = (x) => Math.ceil(x * 100 - 1e-9) / 100;
+
+/**
+ * The replay window is DERIVED from the data, never hard-coded.
+ *
+ * The accumulated store (data/history/, grown daily from the official API and
+ * compiled into src/accumulated-history.js) can only ever LENGTHEN a series —
+ * the merge rule in src/history-merge.js rejects anything that is not a verified
+ * superset — so 61 periods is a floor, not a constant.
+ */
+const COVERAGE = getCandleCoverage();
+const REPLAY_PERIODS = COMPETITION.competition.horizonPeriods;
+const EXPECTED_PERIODS = Math.max(...COVERAGE.map((c) => c.bars));
+const BAR_COUNT = (ticker) => (COVERAGE.find((c) => c.ticker === ticker) || {}).bars;
 
 /* ================================================================== *
  * 1. OFFICIAL FEE FORMULA
@@ -636,9 +660,10 @@ test('22. the competition is deterministic for a fixed seed', () => {
   }
 });
 
-test('23. the replay runs on the real 61-bar window with full provenance', () => {
+test('23. the replay runs on the real window with full provenance', () => {
   const c = COMPETITION.competition;
-  assert.equal(c.horizonPeriods, 61);
+  assert.equal(c.horizonPeriods, EXPECTED_PERIODS, 'the horizon is the longest series actually available');
+  assert.ok(c.horizonPeriods >= 61, 'the accumulated store can only lengthen the window, never shorten it');
   assert.equal(c.initialCapital, 100000);
   assert.match(c.engine, /^ReplayEngine/, 'the engine identifies itself');
   assert.match(c.engine, /deterministic|seeded/i, 'and states that it is deterministic');
@@ -652,11 +677,17 @@ test('23. the replay runs on the real 61-bar window with full provenance', () =>
 
   assert.ok(Array.isArray(p.markets) && p.markets.length >= 3);
   for (const m of p.markets) {
-    assert.equal(m.source, DATA_SOURCE.VERIFIED_SNAPSHOT);
-    assert.match(m.source_url, /^https:\/\/external-api\.kalshi\.com/);
-    assert.equal(m.captured_at, '2026-09-17');
+    // Either an in-repo capture or a market the ingest job captured — both are
+    // real Kalshi responses, and both carry the URL they came from.
+    assert.ok(
+      m.source === DATA_SOURCE.VERIFIED_SNAPSHOT || m.source === DATA_SOURCE_ACCUMULATED,
+      `${m.ticker}: unknown data source ${m.source}`
+    );
+    assert.match(m.source_url, /^https:\/\/(external-api|api\.elections)\.kalshi\.com/);
+    assert.ok(m.captured_at, `${m.ticker}: a captured-at date is mandatory`);
   }
-  assert.equal(p.candlesticks[T33000], 61, 'the replay uses the 61-bar extended capture');
+  assert.equal(p.candlesticks[T33000], BAR_COUNT(T33000), 'the replay uses the full captured series');
+  assert.ok(p.candlesticks[T33000] >= 61, 'and that series is at least the original 61 bars');
   assert.ok(p.candlesticks[BTC] > 0);
   assert.ok(Array.isArray(p.candleCoverage));
 
@@ -679,7 +710,7 @@ test('23. the replay runs on the real 61-bar window with full provenance', () =>
 
 test('24. every result is numerically sane and fully populated', () => {
   for (const r of COMPETITION.results) {
-    assert.equal(r.periods, 61);
+    assert.equal(r.periods, REPLAY_PERIODS);
     assert.equal(r.equityCurve.length, r.periods, 'one equity point per replayed period');
     assert.ok(Number.isFinite(r.returnPct), `${r.username}: returnPct must be finite`);
     assert.ok(Number.isFinite(r.finalEquity));
@@ -828,7 +859,7 @@ test('30. user strategies compile in every documented shape', () => {
     assert.equal(typeof strategy.decide, 'function', name);
     const res = runCustomStrategy(strategy, {});
     assert.ok(Number.isFinite(res.returnPct), `${name}: result must be numeric`);
-    assert.equal(res.periods, 61);
+    assert.equal(res.periods, REPLAY_PERIODS);
   }
 
   assert.throws(() => compileUserStrategy('const nothing = 1;', {}), /decide|LINT/i);
@@ -873,7 +904,7 @@ test('32. a throwing strategy is contained and reported, never fatal', () => {
     { username: 'Throws_Alot' }
   );
   const res = runCustomStrategy(strategy, {});
-  assert.equal(res.periods, 61, 'the replay completes despite the throw');
+  assert.equal(res.periods, REPLAY_PERIODS, 'the replay completes despite the throw');
   assert.ok(Number.isFinite(res.returnPct));
   assert.ok(strategy.runtimeErrors.length >= 1, 'the error must be recorded');
   assert.match(JSON.stringify(strategy.runtimeErrors), /boom/);
@@ -1566,4 +1597,183 @@ test('58. the ingest merge adds new bars and flags conflicts instead of rewritin
   const empty = mergeBars([], [{ end_period_ts: 5, price: { previous_dollars: '0.0300' } }]);
   assert.equal(empty.added, 1, 'a no-trade bar is stored as returned, without being filled in');
   assert.equal(empty.bars[0].price.close_dollars, undefined);
+});
+
+/* ================================================================== *
+ * 16. ACCUMULATED HISTORY — the daily store feeding the replay
+ *
+ * Recommended-work item #3. The daily ingest job grows data/history/ from the
+ * official API; scripts/generate-history-module.mjs compiles it into
+ * src/accumulated-history.js; src/history-merge.js decides what the replay may
+ * use. These tests pin down the three promises that make growing the dataset
+ * safe: the compaction is lossless, a stored series is used only as a VERIFIED
+ * SUPERSET, and nothing can shorten or rewrite a captured bar.
+ * ================================================================== */
+
+test('59. the compact tuple round trip is lossless for every stored market', () => {
+  if (!ACCUMULATED_HISTORY.present) {
+    assert.ok(true, 'no accumulated store yet — nothing to verify');
+    return;
+  }
+  let checked = 0;
+  for (const [ticker, rec] of Object.entries(ACCUMULATED_HISTORY.markets)) {
+    assert.ok(rec.verbatim_sample_bar, `${ticker}: a verbatim oracle bar is mandatory`);
+    const bars = getAccumulatedBars(ticker);
+    assert.equal(bars.length, rec.bar_count, `${ticker}: tuple count matches the recorded bar count`);
+    // stableEqual, not JSON.stringify with a key array — the latter silently
+    // skipped every nested price object (Irregularity #20).
+    assert.ok(
+      stableEqual(bars[0], rec.verbatim_sample_bar),
+      `${ticker}: expandAccumulatedBar() must reproduce the verbatim bar field-for-field`
+    );
+    // Every price comes back as the exchange's 4-decimal FixedPointDollars string.
+    for (const bar of bars) {
+      for (const side of ['price', 'yes_bid', 'yes_ask']) {
+        for (const [k, v] of Object.entries(bar[side] || {})) {
+          assert.match(v, /^\d+\.\d{4}$/, `${ticker} ${side}.${k} must stay a 4-decimal string, got ${v}`);
+        }
+      }
+      assert.match(String(bar.volume_fp), /^\d+\.\d{2}$/, `${ticker}: volume_fp stays 2-decimal`);
+    }
+    checked += 1;
+  }
+  assert.ok(checked >= 1, 'at least one market was checked');
+});
+
+test('60. a stored series is used ONLY as a verified superset, never as a rewrite', () => {
+  const repo = [
+    { end_period_ts: 100, price: { close_dollars: '0.1000' }, volume_fp: '10.00' },
+    { end_period_ts: 100 + 86400, price: { close_dollars: '0.2000' }, volume_fp: '20.00' }
+  ];
+
+  // (a) identical → the capture is kept (the store adds nothing).
+  const same = chooseCandleSeries('X', repo, repo.map((b) => ({ ...b })));
+  assert.equal(same.origin, MERGE_ORIGIN.REPO);
+  assert.equal(same.bars.length, 2);
+
+  // (b) a strict superset with matching overlaps → the longer stored series wins.
+  const superset = [...repo.map((b) => ({ ...b })), { end_period_ts: 100 + 2 * 86400, price: { close_dollars: '0.3000' }, volume_fp: '30.00' }];
+  const supersetChoice = chooseCandleSeries('X', repo, superset);
+  assert.equal(supersetChoice.origin, MERGE_ORIGIN.STORE);
+  assert.equal(supersetChoice.bars.length, 3, 'the extra bar is used');
+
+  // (c) a stored bar that disagrees → the capture is kept AND the difference is reported.
+  const mutated = repo.map((b) => ({ ...b, price: { ...b.price } }));
+  mutated[1].price.close_dollars = '0.9999';
+  const mutatedChoice = chooseCandleSeries('X', repo, [...mutated, { end_period_ts: 100 + 2 * 86400, price: { close_dollars: '0.3000' } }]);
+  assert.equal(mutatedChoice.origin, MERGE_ORIGIN.REPO_AFTER_CONFLICT);
+  assert.equal(mutatedChoice.bars.length, 2, 'the capture is not replaced by a longer but disagreeing series');
+  assert.equal(mutatedChoice.conflicts.length, 1);
+  assert.equal(mutatedChoice.conflicts[0].end_period_ts, 100 + 86400);
+  assert.equal(mutatedChoice.bars[1].price.close_dollars, '0.2000', 'the captured value survives');
+
+  // (d) a market that exists only in the store is used as-is.
+  const onlyStored = chooseCandleSeries('Y', [], [{ end_period_ts: 1, price: { close_dollars: '0.0500' } }]);
+  assert.equal(onlyStored.origin, MERGE_ORIGIN.STORE_ONLY);
+
+  // (e) nothing at all.
+  const none = chooseCandleSeries('Z', [], []);
+  assert.equal(none.origin, MERGE_ORIGIN.NONE);
+  assert.equal(none.bars.length, 0);
+});
+
+test('61. the real accumulated store never contradicts an in-repo capture', () => {
+  if (!ACCUMULATED_HISTORY.present) {
+    assert.ok(true, 'no accumulated store yet — nothing to cross-check');
+    return;
+  }
+  const universe = buildUniverse();
+  for (const row of universe.audit) {
+    // The merge rule guarantees this; assert it so a regression cannot slip in.
+    if (row.origin === MERGE_ORIGIN.REPO_AFTER_CONFLICT) {
+      assert.fail(`${row.ticker}: the store disagrees with the in-repo capture — ${row.reason}`);
+    }
+    if (row.repoBarCount > 0) {
+      assert.ok(
+        row.bars.length >= row.repoBarCount,
+        `${row.ticker}: the replay window can only grow (${row.bars.length} < ${row.repoBarCount})`
+      );
+    }
+  }
+  assert.equal(universe.conflicts.length, 0, 'no stored bar may contradict a captured bar');
+
+  // And every bar the replay uses is either a captured bar or a stored bar that
+  // was checked against one — there is no third kind.
+  for (const row of universe.entries) {
+    assert.ok(Object.values(MERGE_ORIGIN).includes(row.origin), `${row.ticker}: unknown origin ${row.origin}`);
+    assert.ok(row.bars.length > 0);
+    const ts = row.bars.map((b) => Number(b.end_period_ts));
+    assert.equal(new Set(ts).size, ts.length, `${row.ticker}: no duplicate periods`);
+    assert.deepEqual(ts, [...ts].sort((a, b) => a - b), `${row.ticker}: bars are chronological`);
+    assert.ok(ts[ts.length - 1] * 1000 <= Date.now() + 86400000, `${row.ticker}: no bar from the future`);
+  }
+});
+
+test('62. a market with no market object is tracked but never replayed', () => {
+  const universe = buildReplayUniverse({
+    verifiedMarkets: [],
+    repoCandles: {},
+    accumulated: {
+      present: true,
+      markets: {
+        'GHOST-NO-BOOK': {
+          ticker: 'GHOST-NO-BOOK',
+          series_ticker: 'GHOST',
+          bar_count: 50,
+          market: null,
+          bars: Array.from({ length: 50 }, (_, i) => ({ end_period_ts: 1000 + i * 86400, price: { close_dollars: '0.1000' } }))
+        },
+        'SHORT-WINDOW': {
+          ticker: 'SHORT-WINDOW',
+          series_ticker: 'GHOST',
+          bar_count: 3,
+          market: { ticker: 'SHORT-WINDOW', series_ticker: 'GHOST', status: 'active', yes_bid_dollars: '0.1000', yes_ask_dollars: '0.1200' },
+          bars: Array.from({ length: 3 }, (_, i) => ({ end_period_ts: 1000 + i * 86400, price: { close_dollars: '0.1000' } }))
+        }
+      }
+    }
+  });
+  assert.equal(universe.entries.length, 0, 'neither can be traded');
+  assert.equal(universe.trackedNotReplayable.length, 2);
+  assert.match(universe.trackedNotReplayable[0].excludedReason, /market object/i);
+  assert.match(universe.trackedNotReplayable[1].excludedReason, /replay floor/i);
+
+  // The floor itself is a stated number, not an accident.
+  assert.equal(MIN_REPLAY_BARS, 10);
+  const withFloor = buildReplayUniverse({
+    verifiedMarkets: [],
+    repoCandles: {},
+    accumulated: {
+      markets: {
+        OK: {
+          ticker: 'OK',
+          series_ticker: 'GHOST',
+          market: { ticker: 'OK', series_ticker: 'GHOST', status: 'active' },
+          bars: Array.from({ length: MIN_REPLAY_BARS }, (_, i) => ({ end_period_ts: 1000 + i * 86400, price: { close_dollars: '0.1000' } }))
+        }
+      }
+    }
+  });
+  assert.equal(withFloor.entries.length, 1, 'a market exactly at the floor is replayed');
+});
+
+test('63. the history audit reports what the store added and what it refused', () => {
+  const audit = getHistoryAudit();
+  assert.ok(Array.isArray(audit.markets));
+  assert.ok(Array.isArray(audit.replayable));
+  assert.equal(typeof audit.summary.minBars, 'number');
+  if (!audit.store.present) {
+    assert.equal(audit.summary.markets, 3, 'with no store the universe is the three in-repo captures');
+    return;
+  }
+  assert.equal(audit.summary.markets, audit.replayable.length);
+  // Every replayable market says where its bars came from.
+  for (const row of audit.markets.filter((m) => m.replayable)) {
+    assert.ok(row.origin, `${row.ticker}: origin is mandatory`);
+    assert.ok(row.reason, `${row.ticker}: the reason is shown in the UI`);
+    assert.ok(row.bars > 0);
+  }
+  for (const row of audit.markets.filter((m) => !m.replayable)) {
+    assert.ok(row.excludedReason, `${row.ticker}: an excluded market must say why`);
+  }
 });

@@ -460,7 +460,7 @@ async function ingestMarket(ticker, args) {
   store.series_ticker = seriesTicker;
   store.period_interval = 1440;
   store.last_ingested_at = new Date().toISOString();
-  store.last_ingest_url = url;
+  store.last_ingest_url = lastUrl;
   store.source = store.source === 'repo_extended_capture' || store.source === 'repo_snapshot_capture'
     ? `${store.source}+live_api`
     : 'live_api';
