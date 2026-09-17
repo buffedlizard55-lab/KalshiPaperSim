@@ -1,0 +1,27 @@
+# Runtime state — the 1-year paper competition store is per-deployment, not source.
+# It is created on first boot and can be regenerated with POST /api/reset.
+data/store/*.json
+data/store/
+
+# Local scratch / experiment files
+.scratch/
+*.local.js
+
+# Dependencies & build artefacts that are regenerated (docs/ IS committed: GitHub Pages)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Editors & OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Secrets — never commit Kalshi API credentials
+.env
+.env.*
+*.pem
+*.key
+kalshi-credentials.json

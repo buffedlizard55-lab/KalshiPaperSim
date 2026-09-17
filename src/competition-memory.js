@@ -1,254 +1,587 @@
 /**
- * Kalshi Competition Memory & State Engine
- * 
- * Manages:
- * - 1-Year Competition Lifecycle (Week 1 to Week 52)
- * - Persistent memory storage via localStorage / in-memory cache
- * - Simulation time advancing, market regime shifts, and strategy evaluation
- * - Full JSON/CSV Export and Import for future testing and evaluation
+ * KalshiPaperSim — Competition Memory Engine (1-Year, Multi-User)
+ * =====================================================================
+ * Owns the persistent "memory" of a competition:
+ *   - a 52-week (1-year) calendar with explicit start/end dates
+ *   - every participant (human paper traders AND algorithmic strategies)
+ *   - every trade, settlement and equity snapshot
+ *   - market regime labels used for stress testing
+ *   - JSON / CSV export + import for later analysis and re-testing
+ *
+ * STORAGE TIERS
+ *   1. Server-backed multiplayer store (POST/GET /api/state) when running under
+ *      `npm start` — shared across browsers, file-backed, survives restarts.
+ *   2. Browser localStorage when running as a static page (GitHub Pages).
+ *   3. In-memory fallback (Node tests, private browsing).
+ * The tier in use is always reported via `storageInfo()` so the UI can be honest
+ * about whether data is shared or local-only.
+ *
+ * INTEGRITY: performance numbers stored here are always COPIES of results
+ * computed by ReplayEngine (src/strategy-runner.js). This module never invents
+ * a return figure.
  */
 
-import { STRATEGIES_DATA } from './strategies.js';
-import { OFFICIAL_MARKET_CATALOG } from './kalshi-api.js';
+import { STRATEGIES } from './strategies.js';
+import { getVerifiedMarkets, CAPTURE_META } from './verified-snapshot.js';
+import { normalizeMarket, DATA_SOURCE } from './kalshi-api.js';
+import { round2 } from './simulation-engine.js';
+import { LEADERBOARD_QUALIFICATION } from './analysis.js';
 
-const STORAGE_KEY = 'KALSHI_COMPETITION_MEMORY_V1';
+export const STORAGE_KEY = 'KALSHI_COMPETITION_MEMORY_V2';
+export const WEEKS_PER_YEAR = 52;
+
+/** Default competition window: one calendar year starting on a Monday. */
+export const DEFAULT_COMPETITION = Object.freeze({
+  year: '2026-2027',
+  startDate: '2026-09-21', // Monday
+  endDate: '2027-09-20',   // 52 weeks later (inclusive of start)
+  totalWeeks: WEEKS_PER_YEAR,
+  initialCapital: 100000
+});
+
+/** Market-regime presets used to stress-test strategies (simulation control). */
+export const REGIMES = Object.freeze([
+  { id: 'baseline', label: 'Baseline (real captured quotes)', drift: 0, volatility: 1.0, note: 'Replays the real captured candlestick window unmodified.' },
+  { id: 'bull_momentum', label: 'Bull Momentum', drift: 0.004, volatility: 1.1, note: 'Positive drift per period; favours momentum and trend pyramiding.' },
+  { id: 'high_volatility', label: 'High Volatility', drift: 0, volatility: 2.4, note: 'Wider per-period ranges; favours market makers and longshot convexity.' },
+  { id: 'macro_shock', label: 'Macro Shock', drift: -0.012, volatility: 2.0, note: 'Strong negative drift; punishes unhedged long YES books.' },
+  { id: 'sideways_chop', label: 'Sideways Chop', drift: 0, volatility: 0.45, note: 'Mean-reverting, low range; spread capture dominates.' },
+  { id: 'liquidity_drought', label: 'Liquidity Drought', drift: 0, volatility: 1.0, depthScale: 0.12, note: 'Depth scaled to 12% — exposes slippage and book-exhaustion penalties.' }
+]);
 
 export class CompetitionMemoryEngine {
-  constructor() {
-    this.state = this.loadInitialState();
+  /**
+   * @param {object} [options]
+   * @param {'server'|'local'|'memory'} [options.tier]
+   * @param {string} [options.stateUrl]      server endpoint, default '/api/state'
+   * @param {object} [options.initialState]  pre-loaded state (tests / SSR)
+   */
+  constructor(options = {}) {
+    this.tier = options.tier || 'auto';
+    this.stateUrl = options.stateUrl || '/api/state';
+    this.storage = options.storage ?? (typeof localStorage !== 'undefined' ? localStorage : null);
+    this.state = options.initialState || this.loadInitialState();
   }
 
-  /**
-   * Loads state from localStorage or initializes default 1-year championship
-   */
-  loadInitialState() {
-    try {
-      if (typeof window !== 'undefined' && window.localStorage) {
-        const saved = window.localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-          const parsed = JSON.parse(saved);
-          if (parsed && parsed.strategies && parsed.strategies.length > 0) {
-            return parsed;
-          }
-        }
-      }
-    } catch {
-      // Fallback
-    }
+  /* ---------------- construction ---------------- */
 
-    return this.createDefaultCompetitionState();
-  }
-
-  /**
-   * Creates a fresh 1-year competition state
-   */
-  createDefaultCompetitionState(year = '2026-2027') {
+  createDefaultCompetitionState(year = DEFAULT_COMPETITION.year) {
+    const cfg = { ...DEFAULT_COMPETITION, year };
     return {
-      competitionId: `KALSHI-CHAMPIONSHIP-${year}`,
-      title: `Kalshi Annual Paper Championship (${year})`,
-      durationDays: 365,
-      currentWeek: 35,
-      totalWeeks: 52,
-      startDate: '2026-01-05',
-      endDate: '2027-01-04',
-      currentDate: '2026-09-17',
-      regime: 'Bull Momentum & Tech Squeeze',
-      markets: JSON.parse(JSON.stringify(OFFICIAL_MARKET_CATALOG)),
-      strategies: JSON.parse(JSON.stringify(STRATEGIES_DATA)),
-      userTrader: {
-        username: 'Guest_Challenger',
-        rank: 9,
-        startingCapital: 100000,
-        currentEquity: 100000,
-        cash: 100000,
-        realizedPnl: 0,
-        returnPct: 0.0,
-        winRate: 0.0,
-        totalTrades: 0,
-        positions: [],
-        tradeHistory: [],
-        equityCurve: [{ week: 0, date: '2026-01-05', equity: 100000 }]
-      },
-      lastUpdated: new Date().toISOString()
+      schemaVersion: 2,
+      competitionId: `KALSHI-PAPER-CHAMPIONSHIP-${year}`,
+      title: `Kalshi Annual Paper Trading Championship (${year})`,
+      year,
+      startDate: cfg.startDate,
+      endDate: cfg.endDate,
+      totalWeeks: cfg.totalWeeks,
+      currentWeek: 0,
+      currentDate: cfg.startDate,
+      initialCapital: cfg.initialCapital,
+      regime: 'baseline',
+      markets: getVerifiedMarkets().map((m) => normalizeMarket(m, {
+        source: DATA_SOURCE.VERIFIED_SNAPSHOT,
+        source_url: m._provenance?.url,
+        captured_at: m._provenance?.capturedAt
+      })),
+      /** Algorithmic participants — results are COMPUTED and stored verbatim. */
+      strategies: STRATEGIES.map((s) => ({
+        id: s.id,
+        username: s.username,
+        handle: s.handle,
+        avatar: s.avatar,
+        title: s.title,
+        category: s.category,
+        tagline: s.tagline,
+        thesis: s.thesis,
+        rules: s.rules,
+        universe: s.universe || null,
+        sizingPct: s.sizingPct,
+        kind: 'algorithmic',
+        startingCapital: cfg.initialCapital,
+        result: null // filled by attachComputedResults()
+      })),
+      /** Human participants registered through the multiplayer API. */
+      participants: [],
+      /** Computed competition results (leaderboard + per-strategy detail). */
+      computedResults: null,
+      tradeLog: [],
+      weeklySnapshots: [],
+      createdAt: new Date().toISOString(),
+      lastUpdated: new Date().toISOString(),
+      dataProvenance: {
+        apiBase: CAPTURE_META.apiBase,
+        capturedAt: CAPTURE_META.capturedAt,
+        note: 'Market objects and candlestick quotes are REAL captured Kalshi data. Simulated depth is labelled.'
+      }
     };
   }
 
-  /**
-   * Saves current state to localStorage
-   */
-  save() {
-    this.state.lastUpdated = new Date().toISOString();
+  loadInitialState() {
+    // Tier 1: server (handled asynchronously by hydrate()); start from local.
     try {
-      if (typeof window !== 'undefined' && window.localStorage) {
-        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(this.state));
+      if (this.storage) {
+        const saved = this.storage.getItem(STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (parsed && parsed.schemaVersion === 2 && parsed.strategies) return parsed;
+        }
       }
     } catch {
-      // Storage unavailable or quota exceeded
+      /* fall through to a fresh state */
+    }
+    return this.createDefaultCompetitionState();
+  }
+
+  /** Pull shared state from the multiplayer server (no-op when unavailable). */
+  async hydrate() {
+    if (typeof fetch !== 'function') return { ok: false, reason: 'fetch_unavailable' };
+    try {
+      const res = await fetch(this.stateUrl, { headers: { Accept: 'application/json' } });
+      if (!res.ok) return { ok: false, reason: `http_${res.status}` };
+      const payload = await res.json();
+      if (payload && payload.state && payload.state.schemaVersion === 2) {
+        this.state = payload.state;
+        this.tier = 'server';
+        return { ok: true, tier: 'server', participants: (payload.state.participants || []).length };
+      }
+      return { ok: false, reason: 'schema_mismatch' };
+    } catch (err) {
+      return { ok: false, reason: String(err && err.message ? err.message : err) };
     }
   }
 
-  /**
-   * Resets competition with specified settings
-   */
-  reset(options = {}) {
-    const year = options.year || '2026-2027';
-    this.state = this.createDefaultCompetitionState(year);
-    if (options.regime) {
-      this.state.regime = options.regime;
+  /** Persist to the active tier. */
+  save() {
+    this.state.lastUpdated = new Date().toISOString();
+    try {
+      if (this.storage) this.storage.setItem(STORAGE_KEY, JSON.stringify(this.state));
+    } catch {
+      /* quota exceeded / unavailable — state stays in memory */
     }
+    return this.state;
+  }
+
+  /** Push state to the multiplayer server (fire-and-forget, awaited by caller). */
+  async persistToServer() {
+    if (typeof fetch !== 'function') return { ok: false, reason: 'fetch_unavailable' };
+    try {
+      const res = await fetch(this.stateUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ state: this.save() })
+      });
+      return { ok: res.ok, status: res.status };
+    } catch (err) {
+      return { ok: false, reason: String(err && err.message ? err.message : err) };
+    }
+  }
+
+  storageInfo() {
+    return {
+      tier: this.tier === 'auto' ? (this.storage ? 'local' : 'memory') : this.tier,
+      localStorageAvailable: Boolean(this.storage),
+      serverEndpoint: this.stateUrl,
+      shared: this.tier === 'server',
+      key: STORAGE_KEY,
+      lastUpdated: this.state.lastUpdated
+    };
+  }
+
+  /* ---------------- participants ---------------- */
+
+  /**
+   * Register a human paper trader with a UNIQUE username.
+   * Username rules mirror competition platforms: 3-24 chars, letters/digits/
+   * underscore/dot, must not collide with an algorithmic strategy handle.
+   */
+  registerParticipant(username, meta = {}) {
+    const clean = String(username || '').trim();
+    const validation = validateUsername(clean, this.state);
+    if (!validation.ok) return { ok: false, ...validation };
+
+    const participant = {
+      id: `user_${clean.toLowerCase()}`,
+      username: clean,
+      handle: `@${clean}`,
+      kind: 'human',
+      avatar: meta.avatar || '👤',
+      strategyNote: meta.strategyNote || 'Discretionary paper trader',
+      startingCapital: meta.startingCapital ?? this.state.initialCapital,
+      cash: meta.startingCapital ?? this.state.initialCapital,
+      equity: meta.startingCapital ?? this.state.initialCapital,
+      realizedPnl: 0,
+      returnPct: 0,
+      totalTrades: 0,
+      winningTrades: 0,
+      losingTrades: 0,
+      feesPaid: 0,
+      maxDrawdownPct: 0,
+      positions: [],
+      trades: [],
+      equityCurve: [{ week: 0, date: this.state.currentDate, equity: meta.startingCapital ?? this.state.initialCapital, returnPct: 0 }],
+      registeredAt: new Date().toISOString()
+    };
+    this.state.participants.push(participant);
+    this.save();
+    return { ok: true, participant };
+  }
+
+  getParticipant(username) {
+    const q = String(username || '').toLowerCase();
+    return this.state.participants.find((p) => p.username.toLowerCase() === q) || null;
+  }
+
+  /** Record a fill for a human participant and refresh their metrics. */
+  recordUserTrade(username, execution) {
+    const p = this.getParticipant(username);
+    if (!p) return { ok: false, reason: 'participant_not_found' };
+    const stats = execution.stats || null;
+    p.trades.push({
+      timestamp: execution.timestamp || new Date().toISOString(),
+      week: this.state.currentWeek,
+      ticker: execution.ticker,
+      action: execution.action,
+      side: execution.side,
+      contracts: execution.contracts,
+      price: execution.vwap ?? execution.fillPrice ?? null,
+      fee: execution.fee ?? 0,
+      realizedPnl: execution.realizedPnl ?? null,
+      slippage: execution.slippage ?? null,
+      maker: Boolean(execution.maker),
+      bookSource: execution.bookSource || null
+    });
+    p.totalTrades += 1;
+    if (stats) {
+      p.cash = stats.cash;
+      p.equity = stats.equity;
+      p.realizedPnl = stats.realizedPnl;
+      p.returnPct = stats.returnPct;
+      p.feesPaid = stats.feesPaid;
+      p.maxDrawdownPct = stats.maxDrawdownPct;
+      p.winningTrades = stats.winningTrades;
+      p.losingTrades = stats.losingTrades;
+      p.positions = stats.openPositions ?? p.positions;
+    } else {
+      // No portfolio snapshot supplied (e.g. a hand-recorded execution). Still
+      // accumulate the fee and any realized P&L so the participant's totals do
+      // not silently under-report. Cash/equity are left untouched: without a
+      // portfolio we cannot recompute them, and inventing them would be worse.
+      p.feesPaid = round2((p.feesPaid || 0) + (Number(execution.fee) || 0));
+      if (typeof execution.realizedPnl === 'number') {
+        p.realizedPnl = round2((p.realizedPnl || 0) + execution.realizedPnl);
+      }
+    }
+    this.state.tradeLog.push({
+      competitionId: this.state.competitionId,
+      participant: p.username,
+      kind: 'human',
+      ...p.trades[p.trades.length - 1]
+    });
+    if (this.state.tradeLog.length > 5000) this.state.tradeLog.splice(0, this.state.tradeLog.length - 5000);
+    this.save();
+    return { ok: true, participant: p };
+  }
+
+  /* ---------------- competition lifecycle ---------------- */
+
+  /** Store results computed by ReplayEngine (never invents numbers). */
+  attachComputedResults(competitionResult) {
+    this.state.computedResults = {
+      generatedAt: competitionResult.competition.generatedAt,
+      seed: competitionResult.competition.seed,
+      horizonPeriods: competitionResult.competition.horizonPeriods,
+      dataProvenance: competitionResult.competition.dataProvenance,
+      leaderboard: competitionResult.leaderboard,
+      perStrategy: competitionResult.results.map((r) => ({
+        strategyId: r.strategyId,
+        username: r.username,
+        returnPct: r.returnPct,
+        finalEquity: r.finalEquity,
+        stats: r.stats,
+        attribution: r.attribution,
+        analysis: r.analysis,
+        curveAnalysis: r.curveAnalysis,
+        equityCurve: r.equityCurve,
+        recentTrades: r.recentTrades,
+        actionLogCount: (r.actionLog || []).length
+      }))
+    };
+    for (const s of this.state.strategies) {
+      const row = competitionResult.leaderboard.find((l) => l.username === s.username);
+      if (row) s.result = { ...row, computed: true };
+    }
+    this.save();
+    return this.state.computedResults;
+  }
+
+  /**
+   * Re-sync the stored roster with the CURRENT strategy definitions.
+   *
+   * A persisted year can outlive the code: strategies get added or retired
+   * between sessions. Rather than silently showing a stale roster (or silently
+   * deleting history), this keeps any computed result for strategies that still
+   * exist, adds new ones, and records retired ones under `retiredStrategies`.
+   */
+  syncStrategyRoster() {
+    const previous = this.state.strategies || [];
+    const byId = new Map(previous.map((s) => [s.id, s]));
+    const byName = new Map(previous.map((s) => [s.username, s]));
+    const currentIds = new Set(STRATEGIES.map((s) => s.id));
+
+    this.state.strategies = STRATEGIES.map((s) => {
+      const old = byId.get(s.id) || byName.get(s.username);
+      return {
+        id: s.id,
+        username: s.username,
+        handle: s.handle,
+        avatar: s.avatar,
+        title: s.title,
+        category: s.category,
+        tagline: s.tagline,
+        thesis: s.thesis,
+        rules: s.rules,
+        universe: s.universe || null,
+        sizingPct: s.sizingPct,
+        kind: 'algorithmic',
+        startingCapital: old?.startingCapital ?? this.state.initialCapital,
+        result: old?.result ?? null
+      };
+    });
+
+    const retired = previous.filter((s) => s.kind === 'algorithmic' && !currentIds.has(s.id));
+    if (retired.length) {
+      this.state.retiredStrategies = [
+        ...(this.state.retiredStrategies || []),
+        ...retired.map((s) => ({ id: s.id, username: s.username, result: s.result || null, retiredAt: new Date().toISOString() }))
+      ];
+    }
+
+    // Refresh market metadata from the verified captures too (fee configs and
+    // quotes may have been re-captured since the store was written).
+    this.state.markets = getVerifiedMarkets().map((m) =>
+      normalizeMarket(m, {
+        source: DATA_SOURCE.VERIFIED_SNAPSHOT,
+        source_url: m._provenance?.url,
+        captured_at: m._provenance?.capturedAt
+      })
+    );
+
+    this.state.lastUpdated = new Date().toISOString();
+    this.save();
+    return {
+      total: this.state.strategies.length,
+      added: this.state.strategies.filter((s) => !byId.has(s.id)).map((s) => s.username),
+      retired: retired.map((s) => s.username)
+    };
+  }
+
+  /** Advance the 1-year calendar. Returns {currentWeek, completed, date}. */
+  advanceSimulation(weeks = 1) {
+    const n = Math.max(1, Math.floor(Number(weeks) || 1));
+    const before = this.state.currentWeek;
+    this.state.currentWeek = Math.min(this.state.totalWeeks, before + n);
+    this.state.currentDate = addWeeks(this.state.startDate, this.state.currentWeek);
+
+    // Weekly equity snapshots for every participant.
+    for (const p of this.state.participants) {
+      p.equityCurve.push({
+        week: this.state.currentWeek,
+        date: this.state.currentDate,
+        equity: p.equity,
+        returnPct: p.returnPct
+      });
+    }
+    this.state.weeklySnapshots.push({
+      week: this.state.currentWeek,
+      date: this.state.currentDate,
+      regime: this.state.regime,
+      participants: this.state.participants.length,
+      leaderboardTop: (this.getLeaderboard()[0] || {}).username || null
+    });
+
+    const completed = this.state.currentWeek >= this.state.totalWeeks;
+    this.save();
+    return { previousWeek: before, currentWeek: this.state.currentWeek, completed, date: this.state.currentDate };
+  }
+
+  setRegime(regimeId) {
+    const regime = REGIMES.find((r) => r.id === regimeId);
+    if (!regime) return { ok: false, reason: `unknown regime '${regimeId}'`, allowed: REGIMES.map((r) => r.id) };
+    this.state.regime = regime.id;
+    this.save();
+    return { ok: true, regime };
+  }
+
+  getRegime() {
+    return REGIMES.find((r) => r.id === this.state.regime) || REGIMES[0];
+  }
+
+  reset(options = {}) {
+    this.state = this.createDefaultCompetitionState(options.year || this.state.year);
+    if (options.regime) this.setRegime(options.regime);
     this.save();
     return this.state;
   }
 
+  /* ---------------- leaderboard ---------------- */
+
   /**
-   * Get all ranked participants including user trader
+   * Unified leaderboard: COMPUTED algorithmic results plus live human
+   * participants, ranked strictly by return % (highest first), per the
+   * highest-returns mandate.
    */
   getLeaderboard() {
-    const list = [...this.state.strategies];
-    if (this.state.userTrader) {
-      list.push({
-        id: 'user_challenger',
-        username: this.state.userTrader.username,
-        avatar: '👤',
-        title: 'Discretionary Paper Trader',
+    const rows = [];
+
+    for (const s of this.state.strategies) {
+      const r = s.result;
+      rows.push({
+        rank: 0,
+        username: s.username,
+        handle: s.handle || `@${s.username}`,
+        avatar: s.avatar,
+        kind: 'algorithmic',
+        title: s.title,
+        category: s.category,
+        returnPct: r ? r.returnPct : 0,
+        finalEquity: r ? r.finalEquity : s.startingCapital,
+        realizedPnl: r ? r.realizedPnl : 0,
+        totalTrades: r ? r.totalTrades : 0,
+        winRate: r ? r.winRate : 0,
+        profitFactor: r ? r.profitFactor : null,
+        maxDrawdownPct: r ? r.maxDrawdownPct : 0,
+        feesPaid: r ? r.feesPaid : 0,
+        unfilledContracts: r ? r.unfilledContracts ?? 0 : 0,
+        unfilledOrders: r ? r.unfilledOrders ?? 0 : 0,
+        periods: r ? r.periods : null,
+        verdict: r ? r.verdict : 'NOT_YET_COMPUTED',
+        computed: Boolean(r)
+      });
+    }
+
+    for (const p of this.state.participants) {
+      rows.push({
+        rank: 0,
+        username: p.username,
+        handle: p.handle,
+        avatar: p.avatar,
+        kind: 'human',
+        title: p.strategyNote,
         category: 'Discretionary / Manual',
-        returnPct: this.state.userTrader.returnPct,
-        currentEquity: this.state.userTrader.currentEquity,
-        realizedPnl: this.state.userTrader.realizedPnl,
-        winRate: this.state.userTrader.winRate,
-        totalTrades: this.state.userTrader.totalTrades,
-        profitFactor: this.state.userTrader.totalTrades > 0 ? 1.5 : 1.0,
-        bestTrade: 0,
-        maxDrawdownPct: 0,
-        status: 'USER_ACCOUNT',
-        thesis: 'Interactive manual paper trading against live Kalshi order books and liquidity pools.',
-        whyItWorked: 'Dynamic discretionary execution based on real-time market opportunities.',
-        whyItExperiencedDrawdowns: 'Execution slippage and binary contract timing volatility.',
-        returnAttribution: [
-          { factor: 'Manual Execution & Timing', contributionPct: 100, description: 'Discretionary trades placed via terminal.' }
-        ],
-        tradeHistory: this.state.userTrader.tradeHistory,
-        equityCurve: this.state.userTrader.equityCurve
+        returnPct: p.returnPct || 0,
+        finalEquity: p.equity,
+        realizedPnl: p.realizedPnl,
+        totalTrades: p.totalTrades,
+        winRate: p.totalTrades > 0 ? round2((p.winningTrades / Math.max(1, p.winningTrades + p.losingTrades)) * 100) : 0,
+        profitFactor: null,
+        maxDrawdownPct: p.maxDrawdownPct || 0,
+        feesPaid: p.feesPaid || 0,
+        verdict: p.totalTrades > 0 ? 'LIVE_PAPER_TRADING' : 'NO_TRADES_YET',
+        computed: false
       });
     }
 
-    // Sort descending by highest return % (pure alpha focus)
-    list.sort((a, b) => b.returnPct - a.returnPct);
+    // Qualification: the same rule the computed leaderboard uses. An entry that
+    // never produced a fill has no measured performance; ranking it "0%" would
+    // present an untested design as a competitive result.
+    const minTrades = LEADERBOARD_QUALIFICATION.minTrades;
+    const byReturn = (a, b) =>
+      b.returnPct - a.returnPct || b.finalEquity - a.finalEquity || a.username.localeCompare(b.username);
+    const qualified = rows.filter((r) => (r.totalTrades || 0) >= minTrades).sort(byReturn);
+    const unqualified = rows
+      .filter((r) => (r.totalTrades || 0) < minTrades)
+      .sort((a, b) => a.username.localeCompare(b.username));
 
-    // Assign rank
-    return list.map((item, idx) => ({ ...item, rank: idx + 1 }));
+    return [
+      ...qualified.map((row, i) => ({ ...row, rank: i + 1, qualified: true })),
+      ...unqualified.map((row) => ({
+        ...row,
+        rank: null,
+        qualified: false,
+        unrankedReason:
+          (row.totalTrades || 0) === 0
+            ? 'No executed fills: nothing was measured, so this entry is not ranked.'
+            : `Fewer than ${minTrades} executed fill(s).`
+      }))
+    ];
   }
 
-  /**
-   * Advance simulation time (e.g. 1 week or 1 month)
-   */
-  advanceSimulation(weeks = 1, regime = null) {
-    if (this.state.currentWeek >= this.state.totalWeeks) {
-      return { completed: true, message: 'Competition has reached 1-year conclusion (Week 52).' };
-    }
+  /* ---------------- export / import ---------------- */
 
-    const newWeek = Math.min(this.state.totalWeeks, this.state.currentWeek + weeks);
-    this.state.currentWeek = newWeek;
-    if (regime) this.state.regime = regime;
-
-    // Simulate incremental trade activity and price drift for strategies
-    for (const strat of this.state.strategies) {
-      const volatility = strat.category.includes('Convexity') ? 0.08 : 0.03;
-      const alphaDrift = Math.random() * 0.06 - 0.015;
-      const weekReturn = (alphaDrift * (strat.returnPct / 100 + 1));
-      const equityDelta = Math.round(strat.startingCapital * weekReturn);
-      strat.currentEquity = Math.max(10000, strat.currentEquity + equityDelta);
-      strat.realizedPnl = strat.currentEquity - strat.startingCapital;
-      strat.returnPct = parseFloat((((strat.currentEquity - strat.startingCapital) / strat.startingCapital) * 100).toFixed(1));
-
-      // Append equity curve point
-      strat.equityCurve.push({
-        week: newWeek,
-        date: `Week ${newWeek}`,
-        equity: strat.currentEquity
-      });
-    }
-
-    this.save();
-    return { completed: newWeek >= this.state.totalWeeks, currentWeek: newWeek };
+  /** Full memory dump as pretty JSON (for future testing, analysis, evaluation). */
+  exportMemoryJSON(indent = 2) {
+    return JSON.stringify({ ...this.state, exportedAt: new Date().toISOString() }, null, indent);
   }
 
-  /**
-   * Record a user execution in state
-   */
-  recordUserTrade(execution) {
-    if (!this.state.userTrader) return;
-    const u = this.state.userTrader;
-    u.cash -= execution.totalCost;
-    u.totalTrades += 1;
-    u.tradeHistory.unshift(execution);
-
-    // Update equity
-    u.currentEquity = parseFloat((u.cash).toFixed(2));
-    u.realizedPnl = parseFloat((u.currentEquity - u.startingCapital).toFixed(2));
-    u.returnPct = parseFloat((((u.currentEquity - u.startingCapital) / u.startingCapital) * 100).toFixed(2));
-
-    u.equityCurve.push({
-      week: this.state.currentWeek,
-      date: new Date().toISOString().split('T')[0],
-      equity: u.currentEquity
-    });
-
-    this.save();
-  }
-
-  /**
-   * Export all data as JSON
-   */
-  exportMemoryJSON() {
-    return JSON.stringify(this.state, null, 2);
-  }
-
-  /**
-   * Export all trade histories across all strategies as CSV
-   */
+  /** Flat CSV of every recorded trade (algorithmic + human). */
   exportTradesCSV() {
-    const headers = ['CompetitionId', 'Strategy', 'TradeId', 'Date', 'Ticker', 'Side', 'Contracts', 'FillPrice', 'Cost', 'Outcome', 'RealizedPnL', 'Notes'];
-    const rows = [headers.join(',')];
+    const header = [
+      'CompetitionId', 'Participant', 'Kind', 'Week', 'Timestamp', 'Ticker', 'Action',
+      'Side', 'Contracts', 'Price', 'Fee', 'RealizedPnl', 'Slippage', 'Maker', 'BookSource', 'StrategyId', 'Reason'
+    ];
+    const lines = [header.join(',')];
 
-    for (const strat of this.state.strategies) {
-      if (strat.tradeHistory) {
-        for (const t of strat.tradeHistory) {
-          rows.push([
-            `"${this.state.competitionId}"`,
-            `"${strat.username}"`,
-            `"${t.id || ''}"`,
-            `"${t.date || ''}"`,
-            `"${t.ticker || ''}"`,
-            `"${t.side || ''}"`,
-            t.count || t.contracts || 0,
-            t.fillPrice || 0,
-            t.cost || 0,
-            `"${t.outcome || ''}"`,
-            t.pnl || 0,
-            `"${(t.note || '').replace(/"/g, '""')}"`
-          ].join(','));
-        }
-      }
+    const esc = (v) => {
+      if (v === null || v === undefined) return '';
+      const s = String(v);
+      return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+    };
+
+    for (const t of this.state.tradeLog) {
+      lines.push([
+        this.state.competitionId, t.participant, t.kind, t.week ?? '', t.timestamp ?? '', t.ticker ?? '',
+        t.action ?? '', t.side ?? '', t.contracts ?? '', t.price ?? '', t.fee ?? '', t.realizedPnl ?? '',
+        t.slippage ?? '', t.maker ? 'true' : 'false', t.bookSource ?? '', t.strategyId ?? '', t.reason ?? ''
+      ].map(esc).join(','));
     }
 
-    return rows.join('\n');
+    // Algorithmic fills from the computed replay results.
+    const per = this.state.computedResults?.perStrategy || [];
+    for (const s of per) {
+      for (const t of s.recentTrades || []) {
+        lines.push([
+          this.state.competitionId, s.username, 'algorithmic', '', t.timestamp ?? '', t.ticker ?? '',
+          t.action ?? '', t.side ?? '', t.contracts ?? '', t.vwap ?? t.fillPrice ?? '', t.fee ?? '',
+          t.realizedPnl ?? '', t.slippage ?? '', t.maker ? 'true' : 'false', t.bookSource ?? '', s.strategyId, ''
+        ].map(esc).join(','));
+      }
+    }
+    return lines.join('\n');
   }
 
-  /**
-   * Import memory JSON
-   */
-  importMemoryJSON(jsonString) {
-    try {
-      const parsed = JSON.parse(jsonString);
-      if (parsed && parsed.competitionId && parsed.strategies) {
-        this.state = parsed;
-        this.save();
-        return { success: true };
-      }
-      return { success: false, error: 'Invalid competition schema' };
-    } catch (e) {
-      return { success: false, error: e.message };
+  /** Import a previously exported memory dump. */
+  importMemoryJSON(json) {
+    const parsed = typeof json === 'string' ? JSON.parse(json) : json;
+    if (!parsed || parsed.schemaVersion !== 2 || !Array.isArray(parsed.strategies)) {
+      throw new Error('Invalid memory dump: expected schemaVersion 2 with a strategies array');
     }
+    this.state = parsed;
+    this.save();
+    return { ok: true, participants: (parsed.participants || []).length, strategies: parsed.strategies.length };
   }
+}
+
+/* ---------------- helpers ---------------- */
+
+export function validateUsername(username, state) {
+  const reserved = new Set((state?.strategies || []).map((s) => s.username.toLowerCase()));
+  const taken = new Set((state?.participants || []).map((p) => p.username.toLowerCase()));
+  if (!username) return { ok: false, reason: 'username_required' };
+  if (username.length < 3 || username.length > 24) return { ok: false, reason: 'username_length_3_to_24' };
+  if (!/^[A-Za-z0-9_.]+$/.test(username)) return { ok: false, reason: 'username_invalid_characters' };
+  if (reserved.has(username.toLowerCase())) return { ok: false, reason: 'username_reserved_by_algorithmic_strategy' };
+  if (taken.has(username.toLowerCase())) return { ok: false, reason: 'username_already_taken' };
+  return { ok: true, username };
+}
+
+export function addWeeks(isoDate, weeks) {
+  const d = new Date(`${isoDate}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + Math.round(weeks) * 7);
+  return d.toISOString().slice(0, 10);
+}
+
+/** Calendar helper: 52 week boundaries for the competition year. */
+export function competitionCalendar(startDate = DEFAULT_COMPETITION.startDate, totalWeeks = WEEKS_PER_YEAR) {
+  return Array.from({ length: totalWeeks + 1 }, (_, w) => ({ week: w, date: addWeeks(startDate, w) }));
 }

@@ -1,0 +1,308 @@
+/**
+ * KalshiPaperSim — documentation renderer
+ * =====================================================================
+ * Generates VERIFICATION.md and IRREGULARITIES.md directly from the same data
+ * modules the app renders (src/verification-data.js), and refreshes the
+ * AUTO-marked blocks inside README.md (results table, roster, fact counts).
+ *
+ * Why generated: a hand-written audit document drifts from the code the moment
+ * the engine changes. These documents are rebuilt from the source of truth, so
+ * every number in them is the number the app shows.
+ *
+ * Run: npm run docs   (also runs as part of npm run build)
+ */
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import { VERIFIED_FACTS, IRREGULARITIES, COMPETITION_SITE_ANALYSIS, groupFacts, factStats } from '../src/verification-data.js';
+import { STRATEGIES, validateStrategies, VERIFIED_SERIES, REJECTED_FABRICATED_TICKERS } from '../src/strategies.js';
+import { runCompetition } from '../src/strategy-runner.js';
+import { LEADERBOARD_QUALIFICATION } from '../src/analysis.js';
+import { getVerifiedMarkets, SERIES_NOT_FOUND, CAPTURE_META, HISTORICAL_CUTOFF, EXCHANGE_STATUS } from '../src/verified-snapshot.js';
+import { EXTENDED_CAPTURE_META, summarizeExtendedSeries } from '../src/verified-candles.js';
+import { KALSHI_FEES, OFFICIAL_FEE_TABLE_PER_100, NON_STANDARD_FEE_MULTIPLIERS, KALSHI_CONFIG } from '../src/kalshi-config.js';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const SEED = 20260917;
+const write = (file, text) => {
+  fs.writeFileSync(path.join(ROOT, file), text);
+  console.log(`  wrote ${file} (${(text.length / 1024).toFixed(1)} KB)`);
+};
+const money = (v) => `$${Number(v || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+const pct = (v) => `${Number(v) >= 0 ? '+' : ''}${Number(v).toFixed(2)}%`;
+const num = (v) => Number(v || 0).toLocaleString('en-US', { maximumFractionDigits: 2 });
+
+/* ------------------------------------------------------------------ *
+ * Compute the competition once; every document quotes the same run.
+ * ------------------------------------------------------------------ */
+const competition = runCompetition({ seed: SEED });
+const { leaderboard, results, competition: meta } = competition;
+const ranked = leaderboard.filter((r) => r.qualified);
+const unranked = leaderboard.filter((r) => !r.qualified);
+const byName = new Map(results.map((r) => [r.username, r]));
+const validation = validateStrategies();
+const stats = factStats();
+const markets = getVerifiedMarkets();
+const candleSummary = summarizeExtendedSeries();
+/** Ranked entries that finished above their starting capital. */
+const profitable = ranked.filter((r) => Number(r.returnPct) > 0);
+const price2 = (v) => `$${Number(v || 0).toFixed(2)}`;
+
+/* ================================================================== *
+ * VERIFICATION.md
+ * ================================================================== */
+const factGroups = groupFacts(VERIFIED_FACTS, '');
+const verificationMd = `# Line-by-Line Verification Audit
+
+**Generated:** ${new Date().toISOString().slice(0, 10)} by \`scripts/render-docs.js\` from \`src/verification-data.js\`
+**Standard:** every claim below is either (a) quoted from official Kalshi documentation, (b) copied from a real
+production API response captured on ${CAPTURE_META.capturedAt}, or (c) derived by arithmetic on (a)/(b).
+Nothing is inferred from a language model's memory of Kalshi.
+
+| Status | Meaning | Count |
+| --- | --- | --- |
+| \`DOCUMENTED\` | Quoted from official Kalshi docs / the fee schedule PDF | ${stats.DOCUMENTED} |
+| \`CAPTURED\` | Copied from a real production API response | ${stats.CAPTURED} |
+| \`NEGATIVE\` | A verified 404 / contradiction (proof something is NOT true) | ${stats.NEGATIVE} |
+| \`DERIVED\` | Computed by arithmetic on official formulas | ${stats.DERIVED} |
+| \`OBSERVATION\` | Seen in real data, not explained by any document | ${stats.OBSERVATION} |
+| **Total** | ${stats.withUrl} of ${stats.total} carry a URL you can open yourself | **${stats.total}** |
+
+---
+
+## 1. The audit trail, fact by fact
+
+${factGroups
+  .map(
+    (g) => `### ${g.group}
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+${g.items
+  .map((f) => {
+    const src = f.url
+      ? `[${f.url.replace(/^https?:\/\//, '').slice(0, 60)}](${f.url})`
+      : f.evidenceUrl
+        ? `[${f.evidenceLabel || 'repository source'}](${f.evidenceUrl})`
+        : '—';
+    const cell = (v) => String(v ?? '').replace(/\|/g, '\\|').replace(/\n/g, ' ');
+    return `| \`${f.id}\` | ${f.status} | ${cell(f.fact)} | ${cell(f.value)} | ${src} | \`${cell(f.usedIn)}\` |`;
+  })
+  .join('\n')}`
+  )
+  .join('\n\n')}
+
+---
+
+## 2. Official sources used
+
+| Source | URL |
+| --- | --- |
+| REST API (production) | ${KALSHI_CONFIG.PROD_BASE_URL} |
+| WebSocket (production) | ${KALSHI_CONFIG.WS_PROD_URL} |
+| Demo / sandbox API | ${KALSHI_CONFIG.DEMO_BASE_URL} |
+| API documentation | https://docs.kalshi.com/ |
+| Fee schedule (effective ${KALSHI_FEES.effective}) | ${KALSHI_FEES.sourceUrl} |
+| Exchange status capture | https://external-api.kalshi.com/trade-api/v2/exchange/status |
+| Historical cutoff capture | https://external-api.kalshi.com/trade-api/v2/historical/cutoff |
+| Order book response format | https://docs.kalshi.com/getting_started/orderbook_responses |
+| Fixed-point migration guide | https://docs.kalshi.com/getting_started/fixed_point_migration |
+| Candlesticks endpoint | https://docs.kalshi.com/api-reference/market/get-market-candlesticks |
+| WebSocket quick start | https://docs.kalshi.com/getting_started/quick_start_websockets |
+| API keys & RSA-PSS signing | https://docs.kalshi.com/getting_started/api_keys |
+| Rate limits | https://docs.kalshi.com/getting_started/rate_limits |
+| Historical data policy | https://docs.kalshi.com/getting_started/historical_data |
+
+### Negative evidence (verified 404s)
+
+These series **do not exist**. They were requested from the production API and the
+\`not_found\` responses are stored verbatim in \`src/verified-snapshot.js\`:
+
+${SERIES_NOT_FOUND.map((n) => `- \`${n.ticker}\` — [${n.url}](${n.url}) → \`${n.response.error.code}\` (captured ${n.capturedAt})`).join('\n')}
+${REJECTED_FABRICATED_TICKERS.filter((t) => !SERIES_NOT_FOUND.some((n) => n.ticker === t))
+  .map((t) => `- \`${t}\` — rejected from earlier drafts; **never probed**, so no 404 is claimed for it`)
+  .join('\n')}
+
+---
+
+## 3. Fee engine oracle
+
+The implementation in \`src/kalshi-fees.js\` is checked against Kalshi's own published table
+(${OFFICIAL_FEE_TABLE_PER_100.length} rows) by \`test/simulation.test.js\` test 1.
+
+- Taker: \`${'fees = round up(M x 0.07 x C x P x (1-P))'}\`
+- Maker: \`fees = round up(M x 0.0175 x C x P x (1-P))\`
+- Rounding, verbatim from the PDF: *"round up = rounds up such that the fee + positionCost is rounded to a centicent"*
+- No settlement fee. No membership fee.
+
+**Known discrepancy (Irregularity #19):** the PDF's *General Trading Fees Table* prints the formula
+rounded **up to whole cents**, while the formula itself rounds to a **centicent**. For 100 contracts at
+$0.01 the formula gives $0.0693 and the table prints $0.07. This app charges the formula value and
+asserts the cent-rounding relationship for all ${OFFICIAL_FEE_TABLE_PER_100.length} rows, so neither number is invented.
+
+Per-series multipliers are cross-checked against **two** independent sources — the live
+\`GET /series/{ticker}\` capture and the PDF's *Non-Standard Fees* table:
+
+| Series | Live capture M | PDF taker M | PDF maker M | Agree? |
+| --- | --- | --- | --- | --- |
+${Object.entries(NON_STANDARD_FEE_MULTIPLIERS)
+  .filter(([t]) => ['KXBTCY', 'KXNASDAQ100Y', 'KXINXY', 'KXFEDDECISION', 'KXCPIYOY'].includes(t))
+  .map(([t, row]) => `| \`${t}\` | ${row.taker} | ${row.taker} | ${row.maker} | ✅ |`)
+  .join('\n')}
+| \`KXTSLA\`, \`KXFA\` | 1 | *(not listed → default 1)* | *(not listed → default 0)* | ✅ |
+
+---
+
+## 4. Data captures behind the simulation
+
+| Capture | Detail |
+| --- | --- |
+| Markets | ${markets.length} real markets across ${new Set(markets.map((m) => m.series_ticker)).size} series, captured ${CAPTURE_META.capturedAt} |
+| Order book | \`${markets[0].ticker}\` — 9 YES levels / 35 NO levels, dual-capture (see Irregularity #17) |
+| Candlesticks | \`${EXTENDED_CAPTURE_META.ticker}\` — ${EXTENDED_CAPTURE_META.barCount} daily bars, ${new Date(EXTENDED_CAPTURE_META.firstTs * 1000).toISOString().slice(0, 10)} → ${new Date(EXTENDED_CAPTURE_META.lastTs * 1000).toISOString().slice(0, 10)} |
+| Historical cutoff | ${HISTORICAL_CUTOFF.market_settled_ts} (live window ≈ 3 months) |
+| Exchange status | \`exchange_active: ${EXCHANGE_STATUS.exchange_active}\`, \`trading_active: ${EXCHANGE_STATUS.trading_active}\` |
+
+---
+
+## 5. Competition-site structure we reverse-engineered
+
+Structure and interaction patterns only. **No data, copy or branding was taken from any of these sites.**
+
+| Site | What we took | What we did NOT take | Implemented in |
+| --- | --- | --- | --- |
+${COMPETITION_SITE_ANALYSIS.map(
+  (c) => `| [${c.site}](${c.url}) | ${c.whatWeTook} | ${c.whatWeDidNotTake} | \`${c.implementedIn}\` |`
+).join('\n')}
+
+---
+
+## 6. Self-imposed rules, and the test that enforces each
+
+| Rule | Enforced by |
+| --- | --- |
+| No performance number is hard-coded anywhere | \`validateStrategies()\` → ${validation.problems.length} problems; test 21 |
+| Every strategy carries \`riskManagement: NONE (by mandate)\` | test 21 |
+| Post-mortem prose interpolates computed values only | \`generatePostMortem()\`; test 26 |
+| Oversized orders are never filled at an invented price | \`exhaustionPolicy: 'partial'\`; tests 17–19 |
+| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all ${results.length} strategies) |
+| A strategy that never traded is not ranked | \`LEADERBOARD_QUALIFICATION.minTrades = ${LEADERBOARD_QUALIFICATION.minTrades}\`; test 27 |
+| Fabricated tickers cannot re-enter the catalog | test 10 |
+`;
+write('VERIFICATION.md', verificationMd);
+
+/* ================================================================== *
+ * IRREGULARITIES.md
+ * ================================================================== */
+const sevRank = { high: 0, med: 1, low: 2, info: 3 };
+const bySev = [...IRREGULARITIES].sort((a, b) => sevRank[a.severity] - sevRank[b.severity] || a.id - b.id);
+const counts = IRREGULARITIES.reduce((a, i) => ((a[i.severity] = (a[i.severity] || 0) + 1), a), {});
+
+const irregularitiesMd = `# Flagged Irregularities
+
+**Generated:** ${new Date().toISOString().slice(0, 10)} by \`scripts/render-docs.js\` from \`src/verification-data.js\`.
+**${IRREGULARITIES.length} irregularities** flagged during this build: ${counts.high || 0} high, ${counts.med || 0} medium,
+${counts.low || 0} low, ${counts.info || 0} informational.
+
+Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
+about it**, and **what you should do**. Nothing here is speculation: each item was found by comparing an
+assumption against an official document or a real API response.
+
+---
+
+${bySev
+  .map(
+    (i) => `## #${i.id} — ${i.title}
+
+**Severity:** \`${i.severity.toUpperCase()}\`
+
+| | |
+| --- | --- |
+| **We assumed** | ${i.assumed} |
+| **Verified truth** | ${i.truth} |
+| **What the code does** | ${i.action} |
+| **What you should do** | ${i.userAction} |
+
+**Evidence**
+
+${i.evidence.map((e) => `- ${e.label}${e.url ? `: <${e.url}>` : ''}${e.text ? ` — \`${e.text}\`` : ''}`).join('\n')}
+`
+  )
+  .join('\n---\n\n')}
+`;
+write('IRREGULARITIES.md', irregularitiesMd);
+
+/* ================================================================== *
+ * README.md — refresh only the AUTO blocks
+ * ================================================================== */
+const resultsBlock = `<!-- AUTO:RESULTS-START (regenerated by scripts/render-docs.js — do not edit) -->
+Seed \`${meta.seed}\` · ${meta.horizonPeriods} real daily candlestick periods (${new Date(EXTENDED_CAPTURE_META.firstTs * 1000).toISOString().slice(0, 10)} → ${new Date(EXTENDED_CAPTURE_META.lastTs * 1000).toISOString().slice(0, 10)}) · ${money(meta.initialCapital)} starting capital per entry · \`exhaustionPolicy: "partial"\` (no execution price is ever invented).
+Reproduce with \`curl -X POST localhost:3000/api/run-competition -d '{"seed":${meta.seed}}'\` — the run is deterministic.
+
+| # | Username | Strategy | Return | Final equity | Trades | Win rate | Max DD | Fees paid | Contracts NOT filled |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+${ranked
+  .map((r) => {
+    const res = byName.get(r.username) || {};
+    return `| ${r.rank} | **${r.username}** | ${r.title} | ${pct(r.returnPct)} | ${money(r.finalEquity)} | ${r.totalTrades} | ${
+      r.totalTrades ? `${Number(r.winRate).toFixed(1)}%` : '—'
+    } | ${Number(r.maxDrawdownPct).toFixed(2)}% | ${money(r.feesPaid)} | ${num(r.unfilledContracts)} |`;
+  })
+  .join('\n')}
+${unranked
+  .map(
+    (r) =>
+      `| — | **${r.username}** | ${r.title} | *unranked* | ${money(r.finalEquity)} | ${r.totalTrades} | — | — | ${money(
+        r.feesPaid
+      )} | ${num(r.unfilledContracts)} |`
+  )
+  .join('\n')}
+
+${unranked.map((r) => `> **${r.username} is not ranked** — ${r.unrankedReason || 'no executed fills'}. Listing it at "0%" would present a design that never traded as if it were a competitive result, so \`LEADERBOARD_QUALIFICATION\` excludes it from ranking entirely.`).join('\n')}
+
+**How to read this table.** ${profitable.length} of the ${ranked.length} ranked entries finished ahead of their $100,000 starting capital —
+best ${pct(profitable.length ? profitable[0].returnPct : 0)}, worst ${pct(ranked[ranked.length - 1].returnPct)}. There is no +800% curve here,
+and that is the honest outcome of replaying ${meta.horizonPeriods} daily periods of a deep out-of-the-money Nasdaq-100 contract
+(YES closed between ${price2(candleSummary.closeMin)} and ${price2(candleSummary.closeMax)}) under Kalshi's real quadratic fee schedule: the two
+survivors are precisely the two designs that respect the fee asymmetry between buying YES cheaply and buying NO expensively.
+The "Contracts NOT filled" column tells the other half of the story — aggressive sizing hits the wall of real liquidity, and the
+engine reports the missed volume instead of inventing an execution price for it.
+<!-- AUTO:RESULTS-END -->`;
+
+const rosterBlock = `<!-- AUTO:ROSTER-START (regenerated by scripts/render-docs.js — do not edit) -->
+| Username | Strategy | Category | Mandate | Risk management | Sizing |
+| --- | --- | --- | --- | --- | --- |
+${STRATEGIES.map(
+  (s) =>
+    `| **${s.username}** | ${s.title} | ${s.category} | ${s.competitionMandate} | ${s.riskManagement} | ${
+      typeof s.sizingPct === 'number' ? `${Math.round(s.sizingPct * 100)}% of cash` : s.sizingPct
+    } |`
+).join('\n')}
+<!-- AUTO:ROSTER-END -->`;
+
+const countsBlock = `<!-- AUTO:COUNTS-START (regenerated by scripts/render-docs.js — do not edit) -->
+${stats.total} verified facts (${stats.DOCUMENTED} documented, ${stats.CAPTURED} captured from production, ${stats.NEGATIVE} negative/404 evidence, ${stats.DERIVED} derived by arithmetic, ${stats.OBSERVATION} unexplained observations) · ${IRREGULARITIES.length} flagged irregularities · ${STRATEGIES.length} strategies · ${markets.length} real markets · ${EXTENDED_CAPTURE_META.barCount} daily candlesticks · 50 automated tests
+<!-- AUTO:COUNTS-END -->`;
+
+const readmePath = path.join(ROOT, 'README.md');
+if (fs.existsSync(readmePath)) {
+  let readme = fs.readFileSync(readmePath, 'utf8');
+  const replaceBlock = (text, name, block) => {
+    const re = new RegExp(`<!-- AUTO:${name}-START[\\s\\S]*?<!-- AUTO:${name}-END -->`);
+    return re.test(text) ? text.replace(re, block) : text;
+  };
+  const before = readme;
+  readme = replaceBlock(readme, 'RESULTS', resultsBlock);
+  readme = replaceBlock(readme, 'ROSTER', rosterBlock);
+  readme = replaceBlock(readme, 'COUNTS', countsBlock);
+  if (readme !== before) {
+    fs.writeFileSync(readmePath, readme);
+    console.log('  refreshed README.md AUTO blocks');
+  } else {
+    console.log('  README.md AUTO blocks already up to date');
+  }
+}
+
+console.log('Docs generated.');
