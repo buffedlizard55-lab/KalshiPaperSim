@@ -486,7 +486,11 @@ const server = http.createServer(async (req, res) => {
         settleAtEnd: Boolean(body.settleAtEnd),
         finalResult: body.finalResult || null,
         initialCapital: Number(body.initialCapital ?? 100000),
-        regime: body.regime || memory.state.regime
+        regime: body.regime || memory.state.regime,
+        // Per-market capital allocation (item #7): null = no cap (the
+        // competition default). A number caps each market's notional as a
+        // fraction of equity, e.g. 0.25.
+        maxNotionalPerMarketPct: body.maxNotionalPerMarketPct ?? null
       });
       return sendJSON(res, 200, {
         competition: comp.competition,

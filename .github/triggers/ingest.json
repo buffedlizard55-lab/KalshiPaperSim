@@ -1,7 +1,9 @@
 {
-  "_README": "Commit a change to this file to request an ingest run (.github/workflows/ingest-now.yml). It runs on a GitHub-hosted runner, which \u2014 unlike the build sandbox \u2014 can reach external-api.kalshi.com. Every field is passed straight to scripts/ingest-history.mjs.",
+  "_README": "Commit a change to this file to request an ingest run (.github/workflows/ingest-now.yml). It runs on a GitHub-hosted runner, which - unlike the build sandbox - can reach external-api.kalshi.com. Every field is passed straight to scripts/ingest-history.mjs. Bump `request` so the push is a real change: GitHub only starts the workflow when this file actually differs.",
+  "request": 2,
   "enabled": true,
   "days": 0,
+  "full_backfill": true,
   "with_books": true,
   "with_market": true,
   "min_volume": 20000,
@@ -11,6 +13,5 @@
     "KXBTCY",
     "KXINXY"
   ],
-  "tickers": [],
-  "full_backfill": true
+  "tickers": []
 }

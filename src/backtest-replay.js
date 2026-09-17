@@ -188,6 +188,21 @@ export class ReplayEngine {
     this.finalResult = options.finalResult || null;
     this.notional = options.notional ?? 1.0;
 
+    /**
+     * PER-MARKET CAPITAL ALLOCATION (recommended-work item #7).
+     *
+     * null (the competition default) = no cap: the brief is "highest return
+     * only", so every strategy may put the whole account into one market.
+     * A number (0.25 = 25% of equity) caps the notional any single market may
+     * hold — positions, plus resting orders that could fill — so the same
+     * strategies can be measured with and without concentration limits.
+     *
+     * The cap NEVER invents a fill: it reduces the order size before execution.
+     * Whatever it refuses to trade is counted and reported, exactly like an
+     * unfilled remainder.
+     */
+    this.maxNotionalPerMarketPct = options.maxNotionalPerMarketPct ?? null;
+
     /** Normalized, time-merged timeline across all markets. */
     this.timeline = this._buildTimeline();
     if (this.timeline.length === 0) {
@@ -395,6 +410,10 @@ export class ReplayEngine {
       exhaustionPolicy: this.exhaustionPolicy,
       unfilledOrders: portfolio.unfilledOrders || 0,
       unfilledContracts: portfolio.unfilledContracts || 0,
+      // Per-market capital allocation (item #7): how much the cap refused.
+      maxNotionalPerMarketPct: this.maxNotionalPerMarketPct,
+      cappedOrders: portfolio.cappedOrders || 0,
+      cappedContracts: portfolio.cappedContracts || 0,
       stats,
       finalEquity: stats.equity,
       returnPct: stats.returnPct,
@@ -413,6 +432,36 @@ export class ReplayEngine {
     };
   }
 
+  /** Notional already committed to one market: open positions + resting orders. */
+  _marketExposure(ticker, portfolio, books) {
+    let notional = 0;
+    for (const pos of portfolio.positions.values()) {
+      if (pos.ticker !== ticker) continue;
+      notional += Number(pos.count || 0) * Number(pos.currentPrice || 0);
+    }
+    for (const o of books[ticker]?.restingOrders || []) {
+      notional += Number(o.count || 0) * Number(o.price || 0);
+    }
+    return notional;
+  }
+
+  /**
+   * Scale an order down to the per-market cap, if one is configured.
+   * @returns {{count:number, capped:boolean, cappedFrom:number, headroom:number|null, capPct:number|null}}
+   */
+  _applyMarketCap(requestedCount, price, ticker, ctx, books) {
+    const capPct = this.maxNotionalPerMarketPct;
+    if (!capPct || !(requestedCount > 0)) return { count: requestedCount, capped: false, cappedFrom: requestedCount, headroom: null, capPct: capPct ?? null };
+    const equity = Number(ctx.stats?.equity ?? ctx.portfolio.cash ?? 0);
+    const cap = capPct * equity;
+    const headroom = cap - this._marketExposure(ticker, ctx.portfolio, books);
+    if (!(headroom > 0) || !(price > 0)) return { count: 0, capped: true, cappedFrom: requestedCount, headroom: Math.max(0, headroom), capPct };
+    // Floor to the cent of a contract — never round a capped size UP.
+    const allowed = Math.floor((headroom / price) * 100) / 100;
+    if (requestedCount <= allowed) return { count: requestedCount, capped: false, cappedFrom: requestedCount, headroom, capPct };
+    return { count: allowed, capped: true, cappedFrom: requestedCount, headroom, capPct };
+  }
+
   /** Execute one strategy action against the paper portfolio. */
   _applyAction(action, ctx, portfolio, books) {
     const ticker = action.ticker || ctx.ticker;
@@ -420,15 +469,27 @@ export class ReplayEngine {
     if (!book) return { status: 'no_book' };
     const side = String(action.side || 'YES').toLowerCase();
     const count = round2(Number(action.count || 0));
+    const capPct = this.maxNotionalPerMarketPct;
 
     try {
       switch (String(action.type).toLowerCase()) {
         case 'buy':
         case 'market_buy': {
           if (count <= 0) return { status: 'skipped_zero_size' };
-          const exec = portfolio.buyPosition(book, side, count, { strategy: ctx.username, note: action.reason || '' });
+          const touch = side === 'yes' ? book.getBestYesAsk() : book.getBestNoAsk();
+          const cap = this._applyMarketCap(count, touch ?? 0.5, ticker, ctx, books);
+          if (cap.count <= 0) {
+            ctx.portfolio.cappedOrders = (ctx.portfolio.cappedOrders || 0) + 1;
+            ctx.portfolio.cappedContracts = round2((ctx.portfolio.cappedContracts || 0) + count);
+            return { status: 'capped_no_headroom', detail: { requested: count, capPct, capReason: 'per-market capital limit reached' } };
+          }
+          const exec = portfolio.buyPosition(book, side, cap.count, { strategy: ctx.username, note: action.reason || '' });
+          if (cap.capped) {
+            ctx.portfolio.cappedOrders = (ctx.portfolio.cappedOrders || 0) + 1;
+            ctx.portfolio.cappedContracts = round2((ctx.portfolio.cappedContracts || 0) + (count - cap.count));
+          }
           const status = exec.fillStatus === 'unfilled' ? 'unfilled_no_depth' : exec.fillStatus === 'partial' ? 'partial_fill' : 'filled';
-          return { status, detail: { requested: exec.requested, contracts: exec.contracts, unfilled: exec.unfilled, vwap: exec.vwap, fee: exec.fee, slippage: exec.slippage, totalCost: exec.totalCost, bookExhausted: exec.bookExhausted } };
+          return { status, detail: { requested: exec.requested, contracts: exec.contracts, unfilled: exec.unfilled, vwap: exec.vwap, fee: exec.fee, slippage: exec.slippage, totalCost: exec.totalCost, bookExhausted: exec.bookExhausted, capped: cap.capped, cappedFrom: cap.capped ? cap.cappedFrom : undefined, capPct: cap.capped ? capPct : undefined } };
         }
         case 'sell':
         case 'market_sell': {
@@ -440,13 +501,24 @@ export class ReplayEngine {
         case 'limit':
         case 'limit_order': {
           if (count <= 0) return { status: 'skipped_zero_size' };
+          const limitPrice = action.price ?? (action.direction === 'ask' ? book.getBestYesAsk() : book.getBestYesBid());
+          const cap = this._applyMarketCap(count, limitPrice ?? 0.5, ticker, ctx, books);
+          if (cap.count <= 0) {
+            ctx.portfolio.cappedOrders = (ctx.portfolio.cappedOrders || 0) + 1;
+            ctx.portfolio.cappedContracts = round2((ctx.portfolio.cappedContracts || 0) + count);
+            return { status: 'capped_no_headroom', detail: { requested: count, capPct, capReason: 'per-market capital limit reached' } };
+          }
           const order = book.placeLimitOrder({
             side: action.direction || 'bid',
             outcome: side,
-            count,
-            price: action.price ?? (action.direction === 'ask' ? book.getBestYesAsk() : book.getBestYesBid())
+            count: cap.count,
+            price: limitPrice
           });
-          return { status: 'resting', detail: { orderId: order.orderId, price: order.price, queueAhead: order.queuePositionAhead, onGrid: order.onGrid } };
+          if (cap.capped) {
+            ctx.portfolio.cappedOrders = (ctx.portfolio.cappedOrders || 0) + 1;
+            ctx.portfolio.cappedContracts = round2((ctx.portfolio.cappedContracts || 0) + (count - cap.count));
+          }
+          return { status: 'resting', detail: { orderId: order.orderId, price: order.price, queueAhead: order.queuePositionAhead, onGrid: order.onGrid, capped: cap.capped, cappedFrom: cap.capped ? cap.cappedFrom : undefined, capPct: cap.capped ? capPct : undefined } };
         }
         case 'cancel': {
           const r = book.cancelOrder(action.orderId);
@@ -461,13 +533,29 @@ export class ReplayEngine {
           const mid = book.getMid();
           const bidPx = snapToGrid(mid - spreadTicks * book.tick, book.grid, 'down');
           const askPx = snapToGrid(mid + spreadTicks * book.tick, book.grid, 'up');
-          const qty = round2(Number(action.count || count || 100));
+          let qty = round2(Number(action.count || count || 100));
           if (!(qty > 0) || !(bidPx >= book.tick) || !(askPx <= book.notional - book.tick)) {
             return { status: 'quote_skipped', detail: { bidPx, askPx, qty } };
           }
+          // A two-sided quote can fill on EITHER side, so both count against the
+          // per-market cap — otherwise a market maker could be 2x over it.
+          const cap = this._applyMarketCap(qty * 2, askPx ?? 0.5, ticker, ctx, books);
+          let quoteCapped = false;
+          let qtyRequested = qty;
+          if (cap.count <= 0) {
+            ctx.portfolio.cappedOrders = (ctx.portfolio.cappedOrders || 0) + 1;
+            ctx.portfolio.cappedContracts = round2((ctx.portfolio.cappedContracts || 0) + qty * 2);
+            return { status: 'capped_no_headroom', detail: { requested: qty * 2, capPct, capReason: 'per-market capital limit reached' } };
+          }
+          if (cap.capped) {
+            quoteCapped = true;
+            qty = Math.floor((cap.count / 2) * 100) / 100;
+            ctx.portfolio.cappedOrders = (ctx.portfolio.cappedOrders || 0) + 1;
+            ctx.portfolio.cappedContracts = round2((ctx.portfolio.cappedContracts || 0) + (qtyRequested * 2 - cap.count));
+          }
           const bid = book.placeLimitOrder({ side: 'bid', outcome: side, count: qty, price: bidPx });
           const ask = book.placeLimitOrder({ side: 'ask', outcome: side, count: qty, price: askPx });
-          return { status: 'quoting', detail: { bidPrice: bid.price, askPrice: ask.price, qty, bidOrderId: bid.orderId, askOrderId: ask.orderId, queueAhead: bid.queuePositionAhead } };
+          return { status: 'quoting', detail: { bidPrice: bid.price, askPrice: ask.price, qty, bidOrderId: bid.orderId, askOrderId: ask.orderId, queueAhead: bid.queuePositionAhead, capped: quoteCapped, cappedFrom: quoteCapped ? qtyRequested * 2 : undefined, capPct: quoteCapped ? capPct : undefined } };
         }
         case 'hold':
         default:

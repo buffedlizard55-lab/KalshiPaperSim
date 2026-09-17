@@ -209,6 +209,9 @@ export function runCompetition(options = {}) {
     notional: options.notional ?? 1.0,
     settleAtEnd: options.settleAtEnd ?? false,
     finalResult: options.finalResult || null,
+    // Per-market capital allocation (item #7). null = the competition default:
+    // the brief is "highest return only", so no cap is imposed unless asked for.
+    maxNotionalPerMarketPct: options.maxNotionalPerMarketPct ?? null,
     // 'partial' (default) fills only real depth and reports the rest as unfilled.
     // 'penalty' is a STRESS mode that invents a price beyond the book; it is
     // never used for headline results and is labelled wherever it appears.
@@ -233,6 +236,7 @@ export function runCompetition(options = {}) {
             notional: options.notional ?? 1.0,
             settleAtEnd: options.settleAtEnd ?? false,
             finalResult: options.finalResult || null,
+            maxNotionalPerMarketPct: options.maxNotionalPerMarketPct ?? null,
             exhaustionPolicy: options.exhaustionPolicy === 'penalty' ? 'penalty' : 'partial'
           });
 
@@ -305,6 +309,7 @@ export function runCompetition(options = {}) {
           'Prices/quotes are REAL captured Kalshi data. Depth BEHIND the quoted touch is modelled because candlesticks do not carry depth; those fills are labelled SIMULATED.'
       },
       exhaustionPolicy: engine.exhaustionPolicy,
+      maxNotionalPerMarketPct: engine.maxNotionalPerMarketPct ?? null,
       mandate: 'Highest return only. No risk management, per the competition brief.',
       regime: options.regime || 'baseline',
       regimeNote:
