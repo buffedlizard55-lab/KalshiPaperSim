@@ -31,6 +31,18 @@ on:
         description: 'Backfill window in days when the store is empty'
         required: false
         default: '90'
+      series:
+        description: 'Comma-separated series to discover liquid markets in (e.g. KXNASDAQ100Y,KXBTCY,KXINXY)'
+        required: false
+        default: 'KXNASDAQ100Y,KXBTCY,KXINXY'
+      min_volume:
+        description: 'Minimum lifetime contract volume for a discovered market to be tracked'
+        required: false
+        default: '20000'
+      max_markets:
+        description: 'Cap on newly discovered markets per run (0 = no cap)'
+        required: false
+        default: '10'
 
 permissions:
   contents: write
@@ -49,6 +61,12 @@ jobs:
         id: ingest
         run: |
           ARGS="--with-books=${{ github.event.inputs.with_books || 'false' }} --days=${{ github.event.inputs.days || '90' }}"
+          if [ -n "${{ github.event.inputs.series }}" ]; then
+            ARGS="$ARGS --series=${{ github.event.inputs.series }}"
+          else
+            ARGS="$ARGS --series=KXNASDAQ100Y,KXBTCY,KXINXY"
+          fi
+          ARGS="$ARGS --min-volume=${{ github.event.inputs.min_volume || '20000' }} --max-markets=${{ github.event.inputs.max_markets || '10' }}"
           node scripts/ingest-history.mjs $ARGS | tee ingest.log
           echo "exit=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
 

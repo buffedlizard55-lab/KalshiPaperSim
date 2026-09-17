@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-09-17T23:01:29.248Z",
+  "apiBase": "https://external-api.kalshi.com/trade-api/v2",
+  "endpoints": {
+    "candlesticks": "GET /series/{series_ticker}/markets/{ticker}/candlesticks (period_interval=1440)",
+    "orderbook": "GET /markets/{ticker}/orderbook",
+    "cutoff": "GET /historical/cutoff"
+  },
+  "docs": {
+    "candlesticks": "https://docs.kalshi.com/api-reference/market/get-market-candlesticks",
+    "orderbook": "https://docs.kalshi.com/getting_started/orderbook_responses",
+    "historical": "https://docs.kalshi.com/getting_started/historical_data",
+    "rateLimits": "https://docs.kalshi.com/getting_started/rate_limits"
+  },
+  "markets": [
+    {
+      "ticker": "KXBTCY-27JAN0100-T149999.99",
+      "series": "KXBTCY",
+      "added": 0,
+      "total": 14,
+      "skipped": "dry_run",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1789531201&end_ts=1789686088&period_interval=1440"
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
+      "series": "KXNASDAQ100Y",
+      "added": 0,
+      "total": 61,
+      "skipped": "dry_run",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1789617601&end_ts=1789686088&period_interval=1440"
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
+      "series": "KXNASDAQ100Y",
+      "added": 0,
+      "total": 61,
+      "skipped": "dry_run",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1789617601&end_ts=1789686088&period_interval=1440"
+    }
+  ],
+  "totals": {
+    "markets": 3,
+    "barsAdded": 0,
+    "barsStored": 136,
+    "conflicts": 0,
+    "failures": 0
+  },
+  "integrity": "Bars are stored verbatim from the live API. Existing bars are never overwritten; a re-fetched bar that differs is recorded as a conflict. No gap is filled and no bar is interpolated."
+}

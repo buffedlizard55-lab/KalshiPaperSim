@@ -71,12 +71,32 @@ const DAY = 86400;
  * CLI
  * ------------------------------------------------------------------ */
 function parseArgs(argv) {
-  const args = { tickers: null, series: null, days: 90, withBooks: false, dryRun: false, verify: false, cutoff: false, minIntervalMs: 250, timeoutMs: 15000 };
+  const args = {
+    tickers: null,
+    series: null,
+    days: 90,
+    withBooks: false,
+    // Capture GET /markets/{ticker} alongside the bars. The replay needs the real
+    // market object (price_level_structure, strike, series, status) to build a
+    // book for a market that is not in the in-repo snapshot — without it a newly
+    // discovered market could never be replayed (recommended-work item #3).
+    withMarket: true,
+    minVolume: 0,
+    maxMarkets: 0,
+    dryRun: false,
+    verify: false,
+    cutoff: false,
+    minIntervalMs: 250,
+    timeoutMs: 15000
+  };
   for (const a of argv.slice(2)) {
     const [k, v = 'true'] = a.replace(/^--/, '').split('=');
     if (k === 'tickers') args.tickers = v.split(',').map((s) => s.trim()).filter(Boolean);
     else if (k === 'series') args.series = v.split(',').map((s) => s.trim()).filter(Boolean);
     else if (k === 'days') args.days = Number(v);
+    else if (k === 'min-volume') args.minVolume = Number(v);
+    else if (k === 'max-markets') args.maxMarkets = Number(v);
+    else if (k === 'with-market') args.withMarket = v !== 'false';
     else if (k === 'with-books' || k === 'books') args.withBooks = v !== 'false';
     else if (k === 'dry-run') args.dryRun = v !== 'false';
     else if (k === 'verify') args.verify = v !== 'false';
@@ -113,11 +133,35 @@ function writeJson(p, obj) {
   fs.writeFileSync(p, `${JSON.stringify(obj, null, 2)}\n`);
 }
 
-/** The tracked universe: every market the repository already holds real data for. */
+/**
+ * The tracked universe:
+ *   1. every market the repository already holds real data for (in-repo captures);
+ *   2. every market already in the accumulated store — so the universe is
+ *      SELF-GROWING. A market discovered by a `--series=` run on day 1 keeps
+ *      receiving bars on day 2 without anyone re-listing it.
+ */
 function defaultUniverse() {
   const tickers = new Set(Object.keys(CANDLESTICKS));
   for (const t of Object.keys(EXTENDED_SERIES)) tickers.add(t);
+  if (fs.existsSync(DATA_DIR)) {
+    for (const file of fs.readdirSync(DATA_DIR)) {
+      if (!file.endsWith('.json') || file.startsWith('_')) continue;
+      try {
+        const store = JSON.parse(fs.readFileSync(path.join(DATA_DIR, file), 'utf8'));
+        if (store && typeof store.ticker === 'string' && store.ticker) tickers.add(store.ticker);
+      } catch {
+        console.error(`⚠ unreadable store file ${file} — skipped, never guessed`);
+      }
+    }
+  }
   return [...tickers].sort();
+}
+
+/** Lifetime volume in contracts, read from the live market object. */
+function marketVolume(m) {
+  const raw = m.volume_fp ?? m.volume ?? m.volume_24h_fp ?? 0;
+  const n = Number(raw);
+  return Number.isFinite(n) ? n : 0;
 }
 
 /** Seed a cold store from the verified in-repo captures (so nothing is lost). */
@@ -243,8 +287,18 @@ function verifyStore(tickers) {
   return 0;
 }
 
+/**
+ * Expand a series into its open markets, keeping only markets with real traded
+ * volume. A prediction-market series routinely lists dozens of strikes that have
+ * never traded (verified: KXINXY-27DEC31H1600-T4600 has volume_fp 0.00); ingesting
+ * those would add empty series and dilute every statistic computed from them.
+ *
+ * Selection is by LIFETIME CONTRACT VOLUME reported by the exchange itself —
+ * not by any preference of ours — and every rejected market is logged so the
+ * filter is auditable.
+ */
 async function discoverSeriesMarkets(seriesTicker, args) {
-  const url = `${BASE}${KALSHI_PATHS.markets}?series_ticker=${encodeURIComponent(seriesTicker)}&status=open&limit=50`;
+  const url = `${BASE}${KALSHI_PATHS.markets}?series_ticker=${encodeURIComponent(seriesTicker)}&status=open&limit=200`;
   if (args.dryRun) {
     console.log(`[dry-run] would GET ${url}`);
     return [];
@@ -254,7 +308,22 @@ async function discoverSeriesMarkets(seriesTicker, args) {
     console.error(`✗ market discovery failed for ${seriesTicker}: ${res.error}`);
     return [];
   }
-  return (res.json.markets || []).map((m) => m.ticker);
+  const markets = res.json.markets || [];
+  const ranked = markets
+    .map((m) => ({ ticker: m.ticker, volume: marketVolume(m), liquidity: Number(m.liquidity_dollars ?? 0) || 0 }))
+    .sort((a, b) => b.volume - a.volume);
+  const kept = ranked.filter((r) => r.volume >= args.minVolume).slice(0, args.maxMarkets > 0 ? args.maxMarkets : ranked.length);
+  console.log(
+    `• discovered ${seriesTicker}: ${markets.length} open market(s), ` +
+      `${kept.length} with volume ≥ ${args.minVolume} contracts` +
+      (args.maxMarkets > 0 ? ` (capped at ${args.maxMarkets})` : '')
+  );
+  for (const r of kept) console.log(`    ✓ ${r.ticker}  volume=${r.volume} contracts, liquidity=$${r.liquidity}`);
+  if (kept.length < ranked.length) {
+    const dropped = ranked.slice(kept.length);
+    console.log(`    ✗ ${dropped.length} market(s) below the volume floor — e.g. ${dropped.slice(0, 3).map((r) => `${r.ticker}(${r.volume})`).join(', ')}`);
+  }
+  return kept.map((r) => r.ticker);
 }
 
 async function ingestMarket(ticker, args) {
@@ -299,6 +368,30 @@ async function ingestMarket(ticker, args) {
   const fetched = res.json.candlesticks || [];
   const { bars, added, conflicts } = mergeBars(store.candlesticks, fetched);
 
+  // Real market object for this ticker. Candlesticks alone are not enough to
+  // replay a market: the engine needs price_level_structure, strike, series and
+  // status, and none of those are in a bar. Captured from the official endpoint
+  // and stored verbatim; a failure is recorded, never guessed.
+  let marketCaptured = false;
+  if (args.withMarket) {
+    const marketUrl = `${BASE}${KALSHI_PATHS.market(ticker)}`;
+    const marketRes = await getJson(marketUrl, { timeoutMs: args.timeoutMs });
+    if (marketRes.ok && marketRes.json?.market) {
+      store.market = marketRes.json.market;
+      store.market_url = marketUrl;
+      store.market_captured_at = new Date().toISOString();
+      if (store.market.result) store.result = store.market.result;
+      if (store.market.status) store.status = store.market.status;
+      marketCaptured = true;
+    } else {
+      store.marketErrors = [
+        ...(store.marketErrors || []),
+        { at: new Date().toISOString(), url: marketUrl, error: marketRes.ok ? 'no market object in response' : marketRes.error }
+      ];
+    }
+    await sleep(args.minIntervalMs);
+  }
+
   store.candlesticks = bars;
   store.series_ticker = seriesTicker;
   store.period_interval = 1440;
@@ -338,6 +431,9 @@ async function ingestMarket(ticker, args) {
     total: bars.length,
     conflicts: conflicts.length,
     books: (store.books || []).length,
+    market: marketCaptured ? 'captured' : (args.withMarket ? 'FAILED' : 'not_requested'),
+    status: store.status || null,
+    result: store.result || null,
     url
   };
 }
