@@ -38,6 +38,15 @@ import { compileUserStrategy, lintSource } from './src/strategy-sandbox.js';
 import { credentialsFromEnv, buildAuthHeaders } from './src/kalshi-auth.js';
 import { classifySettlement, buildSettlementPlan, fetchMarketSettlements, FINAL_STATUS, PENDING_FINAL_STATUSES, SETTLEMENT_FEE_USD } from './src/settlement-tracker.js';
 import { readHistoryManifest, HISTORY_DIR } from './src/history-store.js';
+import {
+  DESK_DATA
+} from './src/desk-data.js';
+import {
+  buildDeskUniverse, runDeskSession, createDeskBook, placeDeskOrder, sizeDeskOrder,
+  deskLedgerJsonl, deskFillsCsv, summarizeDesk, explainDeskStrategy, auditDesk,
+  auditorFacts, describeAudit, DESK_LIMITS, DESK_VERSION, buildDeskReport, deskCutoffs
+} from './src/live-desk.js';
+import { DESK_STRATEGIES, deskStrategyById } from './src/desk-strategies.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -338,6 +347,78 @@ const CORS = {
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type'
 };
+
+/* ------------------------------------------------------------------ *
+ * Live Desk — paper orders on real captured open contracts
+ * ------------------------------------------------------------------ */
+
+/**
+ * The desk is DETERMINISTIC and computed on demand: the same cut-off and
+ * capital always produce the same ledger. Sessions are cached per cut-off so a
+ * browser tab can re-read it without re-running the tournament.
+ *
+ * The desk runs the SAME report builder the static build uses
+ * (src/live-desk.js buildDeskReport), so server mode and GitHub Pages mode can
+ * never disagree about a number. Sessions are cached per (cut-off, capital).
+ */
+const deskSessionCache = new Map();
+const DESK_MAX_CACHED = 8;
+const DESK_ORDER_LOG = path.join(STORE_DIR, 'live-desk-orders.jsonl');
+
+function deskSession(asOf, capital) {
+  const key = `${asOf || 'live'}|${capital}`;
+  let payload = deskSessionCache.get(key);
+  if (!payload) {
+    payload = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: asOf || null, startingCapital: capital });
+    if (deskSessionCache.size >= DESK_MAX_CACHED) deskSessionCache.delete(deskSessionCache.keys().next().value);
+    deskSessionCache.set(key, payload);
+  }
+  // Attach every time, including cache hits: a year reset must not leave the
+  // UI showing a desk session the store no longer holds. attachDeskSession is
+  // idempotent per asOf (it replaces that cut-off's desk rows).
+  try {
+    memory.attachDeskSession(payload);
+    persistStore();
+  } catch (err) {
+    console.error('[desk] attach to competition memory failed:', err && err.message ? err.message : err);
+  }
+  return payload;
+}
+
+const deskRecordCache = new Map();
+function deskCacheRecords(key) {
+  if (!deskRecordCache.has(key)) {
+    const [asOfPart, capitalPart] = key.split('|');
+    const desk = runDeskSession({
+      data: DESK_DATA,
+      strategies: DESK_STRATEGIES,
+      asOf: asOfPart === 'live' ? null : asOfPart,
+      startingCapital: Number(capitalPart)
+    });
+    deskRecordCache.set(key, desk.records);
+    if (deskRecordCache.size > DESK_MAX_CACHED) deskRecordCache.delete(deskRecordCache.keys().next().value);
+  }
+  return deskRecordCache.get(key);
+}
+
+/** The cut-offs the UI may offer: only ones with a real captured ladder. */
+function deskCutoffList() {
+  return deskCutoffs(DESK_DATA);
+}
+
+function readDeskOrderLog() {
+  try {
+    if (!fs.existsSync(DESK_ORDER_LOG)) return [];
+    return fs.readFileSync(DESK_ORDER_LOG, 'utf8').split('\n').filter(Boolean).map((line) => JSON.parse(line));
+  } catch {
+    return [];
+  }
+}
+
+function appendDeskOrders(records) {
+  fs.mkdirSync(STORE_DIR, { recursive: true });
+  fs.appendFileSync(DESK_ORDER_LOG, records.map((r) => JSON.stringify(r)).join('\n') + '\n');
+}
 
 /* ------------------------------------------------------------------ *
  * Server
@@ -761,6 +842,8 @@ const server = http.createServer(async (req, res) => {
       userPortfolios.clear();
       liveBooks.clear();
       competitionCache = null;
+      deskSessionCache.clear();
+      deskRecordCache.clear();
       persistStore();
       return sendJSON(res, 200, { ok: true, state: memory.state });
     }
@@ -811,6 +894,122 @@ const server = http.createServer(async (req, res) => {
       } catch (err) {
         return sendJSON(res, 400, { ok: false, error: err.message, code: err.code || null });
       }
+    }
+
+    /* ---------------- Live Desk (paper orders on real open contracts) ---------------- */
+
+    if (p === '/api/live-desk' && req.method === 'GET') {
+      const asOf = url.searchParams.get('asOf') || null;
+      const capital = Number(url.searchParams.get('capital') || 100000);
+      return sendJSON(res, 200, deskSession(asOf, capital));
+    }
+
+    if (p === '/api/live-desk/cutoffs') {
+      return sendJSON(res, 200, { ok: true, ...deskCutoffList() });
+    }
+
+    if (p === '/api/live-desk/universe' && req.method === 'GET') {
+      const asOf = url.searchParams.get('asOf') || null;
+      const u = buildDeskUniverse({ asOf });
+      return sendJSON(res, 200, {
+        ok: true,
+        asOf: u.asOf,
+        coverage: u.coverage,
+        rule: u.rule,
+        docs: u.docs,
+        markets: u.markets.map((m) => ({
+          ticker: m.ticker, series: m.seriesTicker, title: m.title, status: m.status, isOpen: m.isOpen,
+          closeTime: m.closeTime, expirationTime: m.expirationTime, tradeable: m.tradeable,
+          notTradeableReason: m.notTradeableReason, feeMultiplier: m.feeMultiplier, feeType: m.feeType,
+          tick: m.tick, quote: m.quote, touch: m.touch, ladderAt: m.ladderAt, ladderUrl: m.ladderUrl,
+          marketCapturedAt: m.marketCapturedAt, marketUrl: m.marketUrl, lookAheadFields: m.lookAheadFields,
+          yesLevels: m.ladder?.yes?.levelCount ?? 0, noLevels: m.ladder?.no?.levelCount ?? 0,
+          yesDepth: m.ladder?.yes?.totalCount ?? null, noDepth: m.ladder?.no?.totalCount ?? null,
+          bestYesBid: m.ladder?.yes?.best ?? null, bestNoBid: m.ladder?.no?.best ?? null,
+          volume24h: m.volume24h, openInterest: m.openInterest, lifetimeVolume: m.volume,
+          liquidity: m.liquidityBase
+        })),
+        quotedOnly: u.quotedOnly
+      });
+    }
+
+    if (p === '/api/live-desk/ticket' && req.method === 'GET') {
+      const asOf = url.searchParams.get('asOf') || null;
+      const ticker = url.searchParams.get('ticker');
+      const u = buildDeskUniverse({ asOf });
+      const market = u.byTicker.get(ticker);
+      if (!market) return sendJSON(res, 404, { ok: false, error: 'unknown_ticker', ticker });
+      if (!market.ladder) return sendJSON(res, 200, { ok: false, error: 'no_captured_ladder', reason: market.notTradeableReason, ticker });
+      const book = createDeskBook(market);
+      const preview = sizeDeskOrder(book, {
+        action: url.searchParams.get('action') || 'buy',
+        side: url.searchParams.get('side') || 'yes',
+        count: Number(url.searchParams.get('count') || 10),
+        type: url.searchParams.get('type') || 'market',
+        limitPrice: url.searchParams.get('limit') ? Number(url.searchParams.get('limit')) : undefined
+      });
+      return sendJSON(res, 200, { ok: true, ticker, asOf: u.asOf, market: { ticker, closeTime: market.closeTime, feeType: market.feeType, feeMultiplier: market.feeMultiplier, ladderAt: market.ladderAt, ladderUrl: market.ladderUrl }, preview });
+    }
+
+    if (p === '/api/live-desk/order' && req.method === 'POST') {
+      const body = await readBody(req);
+      const asOf = body.asOf || null;
+      const strategy = body.strategy || 'Manual_Desk_Ticket';
+      const u = buildDeskUniverse({ asOf });
+      const market = u.byTicker.get(body.ticker);
+      if (!market) return sendJSON(res, 404, { ok: false, error: 'unknown_ticker', ticker: body.ticker });
+      const book = createDeskBook(market);
+      const seq = readDeskOrderLog().filter((r) => r.k === 'ORDER').length + 1;
+      const result = placeDeskOrder(book, {
+        strategy,
+        action: body.action || 'buy',
+        side: body.side || 'yes',
+        count: body.count,
+        type: body.type || 'market',
+        limitPrice: body.limit,
+        postOnly: Boolean(body.postOnly),
+        reason: body.reason || 'placed from the Live Desk order ticket'
+      }, { seq, at: u.asOf });
+      const records = [result.order, ...result.fills];
+      appendDeskOrders(records);
+      return sendJSON(res, 200, {
+        ok: !result.rejected,
+        rejected: result.rejected || null,
+        order: result.order,
+        fills: result.fills,
+        preview: result.preview,
+        note:
+          'This order is recorded against the newest real captured ladder at or before the cut-off. ' +
+          'It is NOT sent to Kalshi: the desk holds paper positions only, and every price it quotes came from the captured book.'
+      });
+    }
+
+    if (p === '/api/live-desk/orders' && req.method === 'GET') {
+      const records = readDeskOrderLog();
+      return sendJSON(res, 200, { ok: true, count: records.length, records });
+    }
+
+    if (p === '/api/live-desk/orders' && req.method === 'DELETE') {
+      if (fs.existsSync(DESK_ORDER_LOG)) fs.unlinkSync(DESK_ORDER_LOG);
+      return sendJSON(res, 200, { ok: true, cleared: true });
+    }
+
+    if (p === '/api/live-desk/ledger.jsonl') {
+      const capital = Number(url.searchParams.get('capital') || 100000);
+      const asOf = url.searchParams.get('asOf') || null;
+      const key = `${asOf || 'live'}|${capital}`;
+      if (!deskSessionCache.has(key)) deskSession(asOf, capital);
+      res.writeHead(200, { 'Content-Type': 'application/x-ndjson; charset=UTF-8', 'Content-Disposition': 'attachment; filename="kalshi-live-desk-ledger.jsonl"', ...CORS });
+      return res.end(deskLedgerJsonl(deskCacheRecords(key)));
+    }
+
+    if (p === '/api/live-desk/fills.csv') {
+      const capital = Number(url.searchParams.get('capital') || 100000);
+      const asOf = url.searchParams.get('asOf') || null;
+      const key = `${asOf || 'live'}|${capital}`;
+      if (!deskSessionCache.has(key)) deskSession(asOf, capital);
+      res.writeHead(200, { 'Content-Type': 'text/csv; charset=UTF-8', 'Content-Disposition': 'attachment; filename="kalshi-live-desk-fills.csv"', ...CORS });
+      return res.end(deskFillsCsv(deskCacheRecords(key)));
     }
 
     /* ---------------- Kalshi REST proxy ---------------- */

@@ -439,7 +439,7 @@ export const VERIFIED_FACTS = Object.freeze([
     value: 'asserted at import time; no stop-loss, position cap or volatility target exists in any decide()',
     url: null,
     evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/strategies.js',
-    evidenceLabel: 'riskManagement field on all 10 strategies — reviewable in the repository',
+    evidenceLabel: 'riskManagement field on the entire roster — reviewable in the repository',
     usedIn: 'src/strategies.js; competition metadata in src/strategy-runner.js'
   },
   {
@@ -830,6 +830,25 @@ export const VERIFIED_FACTS = Object.freeze([
     capturedAt: '2026-09-18',
     usedIn: 'data/history/ (the commit it pushed); IRREGULARITIES.md #41',
     irregularity: '#41'
+  },
+  {
+    id: 'V104', group: 'Project rules', status: 'DERIVED',
+    fact: 'Desk usernames are reserved even when the stored year is stale, and a desk session attaches to one-year memory',
+    value: 'validateUsername() always unions STRATEGIES + DESK_RESERVED_USERNAMES (13 Live* handles, kept in sync with DESK_STRATEGIES by test 104). attachDeskSession() copies the compact results + FILL/SETTLE rows into competition-memory with kind:\'desk\'. Positions are still not carried across cut-offs.',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/competition-memory.js',
+    evidenceLabel: 'validateUsername() + DESK_RESERVED_USERNAMES + attachDeskSession() — reviewable in the repository',
+    usedIn: 'src/competition-memory.js; server.js deskSession(); src/app.js static liveDesk(); tests 35, 87, 104',
+    irregularity: '#45'
+  },
+  {
+    id: 'V105', group: 'Research sources', status: 'CAPTURED',
+    fact: 'The MasterSite directory card for THIS repository (KalshiPaperSim) is stale relative to the in-repo AUTO counts',
+    value: 'MasterSite (fetched 2026-09-18) listed KalshiPaperSim as 53 facts / 19 irregularities / 10 strategies / 9 markets / 61 candles / 50 tests. The in-repo AUTO block at the same date is 97 facts / 43 irregularities / 41 strategies / 9 markets / 10,905 candles / 111 tests (plus the Live Desk). Same class of directory drift as StockPaperSim (#42), but for this project.',
+    url: 'https://github.com/buffedlizard55-lab/MasterSite/blob/main/data/sites.js',
+    capturedAt: '2026-09-18',
+    usedIn: 'IRREGULARITIES.md #44; README AUTO:COUNTS; src/verification-data.js',
+    irregularity: '#44'
   }
 ]);
 
@@ -1193,7 +1212,7 @@ export const IRREGULARITIES = Object.freeze([
       { label: 'MasterSite directory (38 published, 1 excluded by owner request)', url: 'https://buffedlizard55-lab.github.io/MasterSite/' },
       { label: 'Recorded in the ledger', url: null, text: 'src/signal-sources.js → S00 (status NOT_FOUND, flagged); test 76 asserts the missing project is named and flagged' }
     ],
-    action: 'The review records S00 with status NOT_FOUND and a flag instead of silently skipping the request. No strategy was invented for a project that could not be examined.',
+    action: 'The review records S00 with status NOT_FOUND and a flag instead of silently skipping the request. No strategy was invented from a project that could not be examined. Independent of that missing project, Kalshi lists CEO-change series which this repo already trades (CEOExit_Drift on daily bars; LiveCEO_ChangeFav on the Live Desk) — those entries cite the exchange, not a MasterSite CEO repo.',
     userAction: 'Owner review needed: rename the repo, confirm the excluded repository is the one meant, or correct the name.'
   },
   {
@@ -1352,6 +1371,30 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'The CEO strategy (CEOExit_Drift) trades TESLACEOCHANGE — the series with real bars — and its universe names that ticker explicitly. The empty twin is kept in the store as captured (deleting it would hide the fact) and the calendar audit now REPORTS zero-bar stores instead of crashing on them (`emptyStores` in data/reports/calendar-audit.json; the crash was found when the request-9 ingest introduced the empty market).',
     userAction: 'Open both market links and compare volume_fp; a strategy that discovered "the Tesla CEO market" by keyword alone could easily trade the dead twin, so universe choices cite their bars.'
+  },
+  {
+    id: 44, severity: 'med',
+    title: 'The MasterSite directory card for THIS repository (KalshiPaperSim) is stale',
+    assumed: 'That the MasterSite directory would stay current with this repository as the project grew, so a reader of the owner\'s directory would see the same counts the repo publishes.',
+    truth: 'Fetched 2026-09-18, the MasterSite card listed KalshiPaperSim as 53 facts / 19 irregularities / 10 strategies / 9 markets / 61 candles / 50 tests. The in-repo AUTO block at the same date is 97 facts / 43 irregularities / 41 strategies / 9 markets / 10,905 candles / 111 tests (plus the Live Desk). Same class of directory drift as StockPaperSim (#42), but for this project.',
+    evidence: [
+      { label: 'MasterSite sites.js (the directory export)', url: 'https://github.com/buffedlizard55-lab/MasterSite/blob/main/data/sites.js' },
+      { label: 'This repository AUTO:COUNTS (regenerated, never typed)', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/README.md' }
+    ],
+    action: 'Flagged as V105. The directory is a sibling project this repo does not write to; the honest action is to name the drift so a reader is not shown the 10-strategy card as current. Updating MasterSite is the owner\'s directory pipeline, not a KalshiPaperSim code change.',
+    userAction: 'Open the MasterSite directory and this repository\'s README AUTO:COUNTS block and compare the published numbers.'
+  },
+  {
+    id: 45, severity: 'med',
+    title: 'Desk usernames were not reserved, so a human could impersonate a Live Desk entry',
+    assumed: 'That validateUsername() reserved every algorithmic handle because it walked the stored year\'s strategies array.',
+    truth: 'Desk entrants live in DESK_STRATEGIES, not STRATEGIES. A stored year that predated the desk had no Live* rows, so a human could register LiveFavourite_Settle. The Live Desk also did not attach its session to the one-year memory, so desk fills were not in the exportable year.',
+    evidence: [
+      { label: 'validateUsername + DESK_RESERVED_USERNAMES (reviewable in this repo)', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/competition-memory.js' },
+      { label: 'Desk roster (13 Live* usernames)', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/desk-strategies.js' }
+    ],
+    action: 'validateUsername() now always unions STRATEGIES + DESK_RESERVED_USERNAMES (kept set-equal to DESK_STRATEGIES by test 104) plus any stored deskMemory.results. attachDeskSession() copies compact results and FILL/SETTLE rows into the year with kind desk. Positions are still not carried across cut-offs — that remaining gap is stated on the README.',
+    userAction: 'Try registering LiveFavourite_Settle as a human participant; the platform must refuse it as reserved.'
   }
 ]);
 

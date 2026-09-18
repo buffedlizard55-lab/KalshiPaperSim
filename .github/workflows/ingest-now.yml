@@ -100,8 +100,13 @@ jobs:
       - name: Audit the store (no network)
         run: node scripts/ingest-history.mjs --verify | tee -a ingest.log
 
-      - name: Regenerate the browser-safe accumulated-history module
-        run: node scripts/generate-history-module.mjs | tee -a ingest.log
+      - name: Regenerate the browser-safe modules and the Pages bundle
+        run: |
+          set -o pipefail
+          node scripts/generate-history-module.mjs | tee -a ingest.log
+          node scripts/generate-desk-module.mjs | tee -a ingest.log
+          node scripts/render-docs.js | tee -a ingest.log
+          node build.js | tee -a ingest.log
 
       # Store vs. exchange, bar by bar. Re-fetches stored windows from the
       # official endpoint and compares them FIELD-FOR-FIELD with stableEqual().

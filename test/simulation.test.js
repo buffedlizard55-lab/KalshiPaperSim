@@ -153,7 +153,8 @@ import {
   competitionCalendar,
   WEEKS_PER_YEAR,
   DEFAULT_COMPETITION,
-  REGIMES
+  REGIMES,
+  DESK_RESERVED_USERNAMES
 } from '../src/competition-memory.js';
 import { acceptKey, encodeFrame, FrameParser, WS_OPCODES } from '../src/ws-lite.js';
 import { subscribeMessage, parseFeedMessage, backoffDelay } from '../src/kalshi-ws.js';
@@ -1091,6 +1092,12 @@ test('35. usernames are validated and collisions are refused', () => {
   for (const s of STRATEGIES) {
     assert.equal(validateUsername(s.username, state).reason, 'username_reserved_by_algorithmic_strategy');
     assert.equal(validateUsername(s.username.toLowerCase(), state).reason, 'username_reserved_by_algorithmic_strategy');
+  }
+  // Desk handles are reserved even when the stored year is empty / predates the desk.
+  for (const name of DESK_RESERVED_USERNAMES) {
+    assert.equal(validateUsername(name, { strategies: [], participants: [] }).reason, 'username_reserved_by_algorithmic_strategy');
+    assert.equal(validateUsername(name, state).reason, 'username_reserved_by_algorithmic_strategy');
+    assert.equal(validateUsername(name.toLowerCase(), state).reason, 'username_reserved_by_algorithmic_strategy');
   }
 
   const first = engine.registerParticipant('Alpha_Tester', { startingCapital: 50000 });
@@ -2606,8 +2613,12 @@ test('76. the signal-source ledger is complete, linked and consistent with the r
   assert.equal(notFound.length, 1);
   assert.equal(notFound[0].requested, 'CEO', 'the missing project is named, flagged and reviewable — not silently dropped');
   assert.ok(notFound[0].flagged, 'the missing project carries an irregularity flag');
-  // Every referenced strategy username exists in the roster.
-  const usernames = new Set(STRATEGIES.map((s) => s.username));
+  // Every referenced strategy username exists on the replay roster OR the Live Desk.
+  // S00/S05/S06/S07 cite Live* desk handles that are not STRATEGIES entries.
+  const usernames = new Set([
+    ...STRATEGIES.map((s) => s.username),
+    ...DESK_STRATEGIES.map((s) => s.username)
+  ]);
   for (const u of signalSourceStrategyUsernames()) {
     assert.ok(usernames.has(u), `signal-source ledger references unknown strategy ${u}`);
   }
@@ -3021,6 +3032,17 @@ test('87. every strategy username satisfies the platform\'s own username rule', 
     // the roster to the ledger rows.
     assert.equal(s.handle, `@${s.username}`, `${s.id}: handle must be @username`);
   }
+  // Desk handles satisfy the same length/charset rule and are reserved even
+  // against a stored year that never heard of the desk.
+  for (const s of DESK_STRATEGIES) {
+    assert.ok(s.username.length >= 3 && s.username.length <= 24, `${s.id}: desk username \"${s.username}\" is ${s.username.length} chars, outside 3..24`);
+    assert.match(s.username, /^[A-Za-z0-9_.]+$/, `${s.id}: desk username has characters the platform refuses`);
+    assert.equal(
+      validateUsername(s.username, { strategies: [], participants: [] }).reason,
+      'username_reserved_by_algorithmic_strategy',
+      `${s.id}: a human could take \"${s.username}\" because the desk list is not reserved`
+    );
+  }
 });
 
 test('88. ledger rows state the fee regime that produced their fee', () => {
@@ -3404,4 +3426,319 @@ test('91. the three R14 recreations (MEE board sum, 5-minute spike fade, 1-minut
     assert.ok((r14.testedBy || []).includes(u), `R14 records which entry tests ${u}`);
   }
   assert.ok(/adaptation/.test(r14.caveat), 'R14 states the granularity adaptation openly');
+});
+
+/* ------------------------------------------------------------------ *
+ * LIVE DESK — paper orders on REAL captured open contracts.
+ * The desk is the "place a real trade" surface: every price it quotes must
+ * come from a captured Kalshi ladder, every fee from the official schedule,
+ * and every settlement from the exchange's own result. These tests attack
+ * the engine's honesty, not its profitability.
+ * ------------------------------------------------------------------ */
+
+import {
+  buildDeskUniverse,
+  createDeskBook,
+  sizeDeskOrder,
+  placeDeskOrder,
+  crossRestingOrders,
+  cancelResting,
+  settleDeskMarket,
+  runDeskSession,
+  buildDeskReport,
+  deskCutoffs,
+  auditorFacts,
+  auditDesk,
+  deskLedgerJsonl,
+  deskFillsCsv,
+  DESK_LIMITS,
+  DESK_VERSION
+} from '../src/live-desk.js';
+import { DESK_STRATEGIES, deskStrategyById, rosterCoverageEntries } from '../src/desk-strategies.js';
+import { DESK_DATA } from '../src/desk-data.js';
+
+const NEWEST = DESK_DATA.coverage.newestCapture;
+
+function deskAt(asOf = NEWEST) {
+  return buildDeskUniverse({ data: DESK_DATA, asOf });
+}
+
+test('92. every desk contract carries real dates, a real source and a captured ladder or a stated reason', () => {
+  const u = deskAt();
+  assert.ok(u.markets.length >= 40, `the desk tracks a real universe (${u.markets.length} contracts)`);
+  for (const m of u.markets) {
+    assert.ok(/^[A-Z0-9.-]+$/.test(m.ticker), `ticker looks like a Kalshi ticker: ${m.ticker}`);
+    assert.ok(m.marketUrl && m.marketUrl.includes('external-api.kalshi.com/trade-api/v2/markets/'), `${m.ticker} links its market object`);
+    assert.ok(m.marketCapturedAt, `${m.ticker} states when the market object was captured`);
+    assert.ok(m.closeTime, `${m.ticker} states the exchange's own close_time`);
+    if (m.tradeable) {
+      assert.ok(m.ladderAt, `${m.ticker} states when its ladder was captured`);
+      assert.ok(m.ladderUrl && m.ladderUrl.includes('/orderbook'), `${m.ticker} links the captured order book`);
+      assert.ok(m.ladder.yes.levelCount > 0 || m.ladder.no.levelCount > 0, `${m.ticker} has real levels`);
+    } else {
+      assert.match(m.notTradeableReason, /NO_CAPTURED_LADDER|NO_LADDER_AT_OR_BEFORE_ASOF|LOOK_AHEAD|NOT_TRADEABLE_AT_CUTOFF|CLOSED|FINALIZED|NO_DATED/, `${m.ticker} states why it cannot be priced`);
+    }
+  }
+  const quoted = u.quotedOnly;
+  assert.ok(quoted.length > 0, 'open contracts with quotes but no ladder are listed');
+  for (const q of quoted.slice(0, 5)) {
+    assert.equal(q.tradeable, false, `${q.ticker} is never marked tradeable without a ladder`);
+    assert.match(q.notTradeableReason, /NO_CAPTURED_LADDER/);
+  }
+});
+
+test('93. the desk refuses to price an order from a ladder captured AFTER the order time', () => {
+  const u = deskAt();
+  const m = u.markets.find((x) => x.tradeable);
+  assert.ok(m, 'a tradeable contract exists');
+  const book = createDeskBook(m);
+  const before = new Date(Date.parse(m.ladderAt) - 60_000).toISOString();
+  const r = placeDeskOrder(book, { action: 'buy', side: 'yes', count: 1000, type: 'market' }, { at: before, seq: 1 });
+  assert.equal(r.order.status, 'rejected');
+  assert.match(r.order.rejectCode, /LOOK_AHEAD_LADDER/, 'the only ladder post-dates the order');
+  assert.equal(r.fills.length, 0, 'no fill is invented from future knowledge');
+});
+
+test('94. an order larger than the real ladder fills what exists and reports the rest UNFILLED', () => {
+  const u = deskAt();
+  const m = u.markets.find((x) => x.tradeable && (x.ladder.yes.totalCount || 0) > 0);
+  const book = createDeskBook(m);
+  const huge = Math.round((m.ladder.yes.totalCount + m.ladder.no.totalCount) * 10);
+  const preview = sizeDeskOrder(book, { action: 'buy', side: 'yes', count: huge, type: 'market' });
+  assert.ok(preview.filled > 0, 'the real depth fills something');
+  assert.ok(preview.unfilled > 0, 'the remainder is reported, not silently filled');
+  assert.equal(preview.fillStatus, 'partial');
+  // Gross must equal the sum of the levels actually consumed.
+  const levelSum = preview.levels.reduce((s, l) => s + l.count * l.price, 0);
+  assert.ok(Math.abs(preview.gross - levelSum) < 1e-6, 'gross is the sum of real levels');
+  // And a taker never pays less than the touch.
+  assert.ok(preview.vwap + 1e-9 >= preview.bestPrice, 'VWAP can never beat the touch');
+});
+
+test('95. buying YES consumes NO bids at 1 − price (the reciprocal ask), never a made-up ladder', () => {
+  const u = deskAt();
+  const m = u.markets.find((x) => x.tradeable && (x.ladder.no.totalCount || 0) > 0);
+  const book = createDeskBook(m);
+  const preview = sizeDeskOrder(book, { action: 'buy', side: 'yes', count: Math.min(50, m.ladder.no.totalCount), type: 'market' });
+  const reciprocal = preview.levels.filter((l) => l.from.side === 'no_bid');
+  assert.ok(reciprocal.length > 0, 'the fill used real NO bids to price YES');
+  for (const l of reciprocal) {
+    assert.ok(Math.abs(l.price - (1 - l.from.price)) < 1e-9, `${l.price} == 1 − ${l.from.price}`);
+  }
+});
+
+test('96. fees come from the official schedule with the series multiplier the exchange reported', () => {
+  const u = deskAt();
+  const session = runDeskSession({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
+  for (const f of session.records.filter((r) => r.k === 'FILL')) {
+    const m = u.byTicker.get(f.ticker);
+    assert.equal(f.feeMultiplier, m.feeMultiplier, `${f.ticker} carries the captured multiplier`);
+    assert.equal(f.feeType, m.feeType, `${f.ticker} carries the captured fee_type`);
+    // A multi-level fill pays the schedule PER LEVEL (each level's fee rounds up
+    // on its own), so the check recomputes it from the levels the fill names.
+    const expected = computeFeeForFills(
+      (f.levels || []).map(([levelPrice, levelCount]) => ({ price: levelPrice, count: levelCount })),
+      { isMaker: f.maker, multiplier: m.feeMultiplier }
+    ).fee;
+    assert.ok(Math.abs(expected - f.fee) < 1e-6, `${f.ticker} fee matches the schedule level-by-level (${expected} vs ${f.fee})`);
+    // Fee regime: a plain "quadratic" series charges only orders that immediately
+    // match (a resting maker fill pays nothing), while a series that carries
+    // maker fees charges the maker too. Either way it is the captured fee_type
+    // that decides, never an assumption.
+    if (m.feeType === 'quadratic' && f.maker) assert.equal(f.fee, 0, `${f.ticker} is a plain quadratic series, so the resting fill pays 0`);
+    if (m.feeType === 'quadratic_with_maker_fees' && f.maker) assert.ok(f.fee > 0, `${f.ticker} carries maker fees, so the resting fill pays them`);
+    if (m.feeType === 'quadratic' && !f.maker) {
+      // A taker pays round up(M × 0.07 × C × P × (1−P)); with the captured
+      // multiplier 0 (the fee-free index series) that is exactly nothing.
+      if (m.feeMultiplier === 0) assert.equal(f.fee, 0, `${f.ticker} carries the fee-free multiplier 0, so the taker pays 0`);
+      else assert.ok(f.fee > 0, `${f.ticker} is a plain quadratic series, so the immediate (taker) fill pays the schedule`);
+    }
+  }
+});
+
+test('97. equity is realized + unrealized − fees for every desk entrant, and nothing is silently dropped', () => {
+  const report = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
+  assert.equal(report.audit.ok, true, `desk audit fails nothing: ${JSON.stringify(report.audit.mismatches || [])}`);
+  for (const r of report.results) {
+    assert.ok(typeof r.returnPct === 'number');
+    // The engine's accounting identity, recomputed from the entrant's own row:
+    // equity is cash plus the marked value of what is still held.
+    assert.ok(Math.abs(r.equity - (r.cash + r.marketValue)) < 0.01, `${r.strategy}: equity = cash + marketValue`);
+    assert.ok(Math.abs(r.attribution - (r.equity - r.startingCapital)) < 0.01, `${r.strategy}: attribution = equity − startingCapital`);
+  }
+  // Every record the ledger carries is accounted for by some entrant.
+  const names = new Set(report.results.map((r) => r.strategy));
+  for (const rec of report.records) {
+    if (rec.strategy) assert.ok(names.has(rec.strategy), `${rec.k} names a real entrant (${rec.strategy})`);
+  }
+});
+
+test('98. each desk entrant explains itself with real numbers, including why it did NOT trade', () => {
+  const report = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
+  assert.ok(report.explanations.length >= 9, 'every entrant has an explanation');
+  for (const e of report.explanations) {
+    assert.ok(e.strategy && e.headline, `${e.strategy} has a headline`);
+    assert.ok(Array.isArray(e.worked) && Array.isArray(e.hurt) && Array.isArray(e.evidence));
+    assert.ok(e.evidence.every((x) => x.label && x.value !== undefined), `${e.strategy} evidence rows are labelled`);
+  }
+  const idle = report.results.filter((r) => r.fills === 0);
+  for (const r of idle) {
+    const e = report.explanations.find((x) => x.strategy === r.strategy);
+    assert.ok(/no|not|never|zero/i.test(`${e.headline} ${e.hurt.join(' ')} ${e.worked.join(' ')}`), `${r.strategy} states why it did not trade`);
+  }
+});
+
+test('99. a resting maker order fills only when a LATER real quote crosses it, capped by real volume', () => {
+  const u = deskAt();
+  const m = u.markets.find((x) => x.tradeable && (x.ladder.yes.best || 0) > 0.02 && (x.ladder.yes.best || 0) < 0.98);
+  const book = createDeskBook(m);
+  const price = Math.max(0.01, Math.round((m.ladder.yes.best - 0.05) * 100) / 100);
+  const placed = placeDeskOrder(book, { action: 'buy', side: 'yes', count: 100, type: 'limit', limitPrice: price, postOnly: true }, { at: m.ladderAt, seq: 1 });
+  assert.equal(placed.order.status, 'resting', 'an order below the touch rests');
+  assert.equal(placed.resting.queueAhead >= 0, true, 'queue position is measured from the real ladder');
+  // A later bar whose ask is still above our price fills nothing.
+  const early = { at: new Date(Date.parse(m.ladderAt) + 3_600_000).toISOString(), yesBid: price - 0.01, yesAsk: price + 0.01, volume: 1e9, source: 'test' };
+  assert.equal(crossRestingOrders(book, early).length, 0, 'no cross, no fill');
+  // A later bar whose ask crosses our price fills, capped by that bar's real volume.
+  const late = { at: new Date(Date.parse(m.ladderAt) + 7_200_000).toISOString(), yesBid: price - 0.01, yesAsk: price - 0.005, volume: 40, source: 'test' };
+  const fills = crossRestingOrders(book, late);
+  assert.equal(fills.length, 1, 'a real later cross fills the resting order');
+  assert.ok(fills[0].count <= 40, `the fill is capped by the bar's real volume (${fills[0].count} <= 40)`);
+  assert.ok(fills[0].price <= price + 1e-9, 'the maker never pays worse than its own limit');
+  // Cancelling a still-resting order is free and recorded (fees are charged only
+  // on orders that trade); cancelResting returns the CANCEL records it wrote.
+  const never = placeDeskOrder(book, { action: 'buy', side: 'yes', count: 500, type: 'limit', limitPrice: 0.01, postOnly: true }, { at: late.at, seq: 2 });
+  assert.equal(never.order.status, 'resting', 'the far-away limit rests');
+  const cancelled = cancelResting(book, late.at, 'TEST_CANCEL');
+  assert.ok(cancelled.length >= 1, 'the resting order is cancelled');
+  assert.equal(cancelled[0].k, 'CANCEL');
+  assert.ok(cancelled[0].remaining > 0, 'the cancel reports what never filled');
+  assert.match(cancelled[0].feeNote, /no fee/i, 'the cancel states that it costs nothing');
+});
+
+test('100. settlement pays the exchange\'s own result, marks the losing side at 1 − value and charges no fee', () => {
+  const u = deskAt();
+  const finals = u.markets.filter((m) => m.isFinal && m.result);
+  assert.ok(finals.length > 0, 'the desk tracks at least one real finalized contract');
+  const m = finals[0];
+  const s = settleDeskMarket(m);
+  assert.equal(s.result, m.result, 'the settlement carries the exchange result');
+  assert.ok(s.source.settlementTs, 'the settlement carries the exchange timestamp');
+  assert.ok(s.source.marketUrl.includes('/markets/'), 'the settlement links the market object');
+  const yesPay = s.result === 'yes' ? 1 : 0;
+  assert.ok(Math.abs(s.value - yesPay) < 1e-9, 'the YES payout is the exchange value exactly');
+  assert.ok(Math.abs(1 - s.value - (1 - yesPay)) < 1e-9, 'NO pays the complement (1 − value)');
+  // A position in a settled contract must be marked on its OWN side, which is
+  // what the desk's marks do — the bug this guard exists for.
+  const desk = runDeskSession({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
+  for (const rec of desk.records.filter((r) => r.k === 'MARK')) {
+    assert.ok(rec.markSide === 'yes' || rec.markSide === 'no', `${rec.ticker} records which side was marked`);
+    assert.ok(rec.mark > 0 && rec.mark < 1, `${rec.ticker} mark ${rec.mark} is inside (0,1)`);
+  }
+});
+
+test('101. the desk ledger round-trips to JSONL and CSV without losing a field, and the audit names its sources', () => {
+  const report = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
+  const jsonl = deskLedgerJsonl(report.records);
+  const lines = jsonl.trim().split('\n');
+  assert.equal(lines.length, report.records.length, 'one JSON line per record');
+  for (const line of lines) JSON.parse(line);
+  const csv = deskFillsCsv(report.records);
+  assert.ok(csv.split('\n')[0].includes('ticker'), 'the CSV has a header');
+  assert.ok(csv.includes('external-api.kalshi.com') || report.records.every((r) => r.k !== 'FILL'), 'fill rows carry the source URL');
+  const facts = auditorFacts();
+  assert.ok(facts.length >= 12, `the auditor publishes its invariants (${facts.length})`);
+  for (const f of facts) {
+    assert.ok(f.id && f.rule && f.source, `invariant ${f.id} names its rule and source`);
+  }
+  assert.ok(facts.some((f) => /docs\.kalshi\.com|kalshi\.com/.test(f.source)), 'at least one invariant cites official Kalshi documentation');
+});
+
+test('102. the desk is deterministic: the same cut-off and capital rebuild the same ledger', () => {
+  const a = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
+  const b = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
+  assert.deepEqual(a.results.map((r) => [r.strategy, r.equity]), b.results.map((r) => [r.strategy, r.equity]));
+  assert.equal(a.records.length, b.records.length);
+  assert.equal(deskLedgerJsonl(a.records), deskLedgerJsonl(b.records));
+  const cut = deskCutoffs(DESK_DATA);
+  assert.ok(cut.cutoffs.length >= 4, 'several cut-offs are offered');
+  assert.ok(cut.cutoffs.every((c) => c.tradeable >= 0 && c.asOf), 'each cut-off states its instant and how many contracts were tradeable');
+});
+
+test('103. desk entrants carry unique usernames, a stated edge and a maximum-return mandate', () => {
+  const names = DESK_STRATEGIES.map((s) => s.username);
+  assert.equal(new Set(names).size, names.length, 'usernames are unique');
+  for (const s of DESK_STRATEGIES) {
+    assert.ok(deskStrategyById(s.id) === s, `${s.id} is resolvable by id`);
+    assert.ok(s.thesis && s.thesis.length > 40, `${s.username} states its edge`);
+    assert.ok(s.rules && s.rules.length >= 3, `${s.username} states its entry/exit rules`);
+    assert.ok(/maximum return/i.test(s.mandate || ''), `${s.username} carries the maximum-return mandate`);
+    assert.ok(!/stop-loss|risk management|position cap/i.test(s.thesis + ' ' + (s.rules || []).join(' ')), `${s.username} is not framed as risk management`);
+    assert.equal(typeof s.decide, 'function', `${s.username} exposes an executable decide()`);
+  }
+  assert.ok(DESK_LIMITS.maxShareOfRealVolume <= 0.25, 'the liquidity cap stays conservative');
+  // Roster coverage is stated, not implied: every desk entry says where it trades.
+  const coverage = rosterCoverageEntries(DESK_STRATEGIES);
+  assert.equal(coverage.length, DESK_STRATEGIES.length);
+  assert.ok(DESK_STRATEGIES.length >= 13, `desk roster must not shrink below the 13-entry set, got ${DESK_STRATEGIES.length}`);
+  assert.ok(coverage.every((c) => c.strategy && c.note), 'coverage rows name the strategy and where its trades are tracked');
+  assert.equal(DESK_VERSION, 1);
+});
+
+test('104. DESK_RESERVED_USERNAMES is set-equal to the live desk roster, and a desk session attaches to the year', () => {
+  const reserved = [...DESK_RESERVED_USERNAMES].sort();
+  const live = DESK_STRATEGIES.map((s) => s.username).sort();
+  assert.deepEqual(reserved, live, 'a desk entrant that is not reserved (or a reserved name with no desk entry) is a hole');
+  assert.equal(reserved.length, DESK_STRATEGIES.length);
+
+  const engine = new CompetitionMemoryEngine({ tier: 'test', storage: null });
+  const empty = { strategies: [], participants: [] };
+  for (const name of DESK_RESERVED_USERNAMES) {
+    assert.equal(validateUsername(name, empty).reason, 'username_reserved_by_algorithmic_strategy');
+    assert.equal(validateUsername(name, engine.state).reason, 'username_reserved_by_algorithmic_strategy');
+  }
+
+  const asOf = '2026-09-18T18:46:22.458Z';
+  const attached = engine.attachDeskSession({
+    asOf,
+    audit: { ok: true },
+    records: [
+      {
+        k: 'FILL', strategy: 'LiveFavourite_Settle', ticker: 'KXTEST-1', action: 'buy', side: 'yes',
+        count: 10, price: 0.5, fee: 0.07, at: asOf, slippage: 0, maker: false,
+        ladderUrl: 'https://external-api.kalshi.com/trade-api/v2/markets/KXTEST-1/orderbook',
+        explain: 'test fill'
+      },
+      {
+        k: 'SETTLE', strategy: 'LiveFavourite_Settle', ticker: 'KXTEST-1', side: 'yes',
+        count: 10, payoffPerContract: 1, fee: 0, at: asOf, settledAt: asOf, explain: 'test settle'
+      }
+    ],
+    results: [{
+      strategy: 'LiveFavourite_Settle', returnPct: 0, equity: 100000, cash: 100000,
+      fills: 1, contracts: 10, unfilled: 0, feesPaid: 0.07, slippageCost: 0,
+      settlementPnl: 0, startingCapital: 100000
+    }],
+    explanations: [{ strategy: 'LiveFavourite_Settle', verdict: 'TEST', headline: 'attached', worked: [], hurt: [] }]
+  });
+  assert.ok(attached);
+  assert.equal(engine.state.deskMemory.fillCount, 1);
+  assert.equal(engine.state.deskMemory.settlementCount, 1);
+  assert.equal(engine.state.deskMemory.asOf, asOf);
+  const deskRows = engine.state.tradeLog.filter((t) => t.kind === 'desk');
+  assert.equal(deskRows.length, 2);
+  assert.ok(deskRows.every((t) => t.participant === 'LiveFavourite_Settle'));
+  const csv = engine.exportTradesCSV();
+  assert.match(csv, /LiveFavourite_Settle/);
+  assert.match(csv, /,desk,/);
+
+  // Re-attaching the same cut-off replaces, it does not duplicate.
+  engine.attachDeskSession({
+    asOf,
+    audit: { ok: true },
+    records: [{ k: 'FILL', strategy: 'LiveFavourite_Settle', ticker: 'KXTEST-1', action: 'buy', side: 'yes', count: 1, price: 0.4, fee: 0, at: asOf }],
+    results: [{ strategy: 'LiveFavourite_Settle', returnPct: 0, equity: 100000, fills: 1, contracts: 1, unfilled: 0, feesPaid: 0, slippageCost: 0, settlementPnl: 0, startingCapital: 100000 }],
+    explanations: []
+  });
+  assert.equal(engine.state.tradeLog.filter((t) => t.kind === 'desk').length, 1);
 });

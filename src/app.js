@@ -56,6 +56,9 @@ const state = {
   tape: [],
   options: { seed: 20260917, settleAtEnd: false, regime: 'baseline', depthMode: 'captured', flight: 'daily' },
   researchLoaded: false,
+  deskLoaded: false,
+  desk: null,
+  deskModules: null,
   reports: {}
 };
 
@@ -100,6 +103,24 @@ function serverRuntime() {
     async transport() { return jfetch('/api/transport'); },
     async verified() { return jfetch('/api/verified'); },
     async historyAudit() { return jfetch('/api/history-audit'); },
+    async liveDesk({ asOf = null, capital = 100000 } = {}) {
+      const qs = new URLSearchParams();
+      if (asOf) qs.set('asOf', asOf);
+      qs.set('capital', String(capital));
+      return jfetch(`/api/live-desk?${qs}`);
+    },
+    async liveDeskOrder(payload) { return jfetch('/api/live-desk/order', { method: 'POST', body: JSON.stringify(payload) }); },
+    async liveDeskTicket(params) { return jfetch(`/api/live-desk/ticket?${new URLSearchParams(params)}`); },
+    deskLedgerJsonlUrl: ({ asOf = null, capital = 100000 } = {}) => {
+      const qs = new URLSearchParams({ capital: String(capital) });
+      if (asOf) qs.set('asOf', asOf);
+      return `/api/live-desk/ledger.jsonl?${qs}`;
+    },
+    deskFillsCsvUrl: ({ asOf = null, capital = 100000 } = {}) => {
+      const qs = new URLSearchParams({ capital: String(capital) });
+      if (asOf) qs.set('asOf', asOf);
+      return `/api/live-desk/fills.csv?${qs}`;
+    },
     async backtest(payload) { return jfetch('/api/backtest', { method: 'POST', body: JSON.stringify(payload) }); },
     exportJsonUrl: '/api/export/json',
     exportCsvUrl: '/api/export/csv',
@@ -259,9 +280,85 @@ async function staticRuntime() {
         runtimeErrors: strategy.runtimeErrors, dataProvenance: result.dataProvenance
       };
     },
+    /**
+     * LIVE DESK (static mode).
+     * The GitHub-Pages build has no server, so the desk runs the SAME modules in
+     * the browser: src/desk-data.js (real captured ladders, quotes and dates),
+     * src/live-desk.js (the desk engine and its audit) and src/desk-strategies.js.
+     * Server mode calls src/live-desk.js buildDeskReport() — this path calls the
+     * identical function, so the hosted page and a local run cannot disagree.
+     */
+    async deskModules() {
+      if (!state.deskModules) {
+        const [desk, strategies, data] = await Promise.all([
+          import('./live-desk.js'),
+          import('./desk-strategies.js'),
+          import('./desk-data.js')
+        ]);
+        state.deskModules = { desk, strategies, data };
+      }
+      return state.deskModules;
+    },
+    async liveDesk({ asOf = null, capital = 100000 } = {}) {
+      const { desk, strategies, data } = await this.deskModules();
+      const report = desk.buildDeskReport({ data: data.DESK_DATA, strategies: strategies.DESK_STRATEGIES, asOf, startingCapital: capital });
+      // Same attach the server performs: the year keeps the compact desk
+      // results + FILL/SETTLE rows (kind: 'desk'). One session per asOf — not
+      // a running multi-day book.
+      memory.attachDeskSession(report);
+      memory.save();
+      return report;
+    },
+    async liveDeskTicket(params) {
+      const { desk, data } = await this.deskModules();
+      const u = desk.buildDeskUniverse({ data: data.DESK_DATA, asOf: params.asOf || null });
+      const market = u.byTicker.get(params.ticker);
+      if (!market) throw new Error('unknown_ticker');
+      if (!market.ladder) return { ok: false, error: 'no_captured_ladder', reason: market.notTradeableReason, ticker: params.ticker };
+      const book = desk.createDeskBook(market);
+      const preview = desk.sizeDeskOrder(book, {
+        action: params.action || 'buy',
+        side: params.side || 'yes',
+        count: Number(params.count || 10),
+        type: params.type || 'market',
+        limitPrice: params.limit ? Number(params.limit) : undefined
+      });
+      return {
+        ok: true,
+        ticker: market.ticker,
+        asOf: u.asOf,
+        market: {
+          ticker: market.ticker,
+          closeTime: market.closeTime,
+          feeType: market.feeType,
+          feeMultiplier: market.feeMultiplier,
+          ladderAt: market.ladderAt,
+          ladderUrl: market.ladderUrl
+        },
+        preview
+      };
+    },
+    async liveDeskOrder(payload) {
+      const { desk, data } = await this.deskModules();
+      const u = desk.buildDeskUniverse({ data: data.DESK_DATA, asOf: payload.asOf || null });
+      const market = u.byTicker.get(payload.ticker);
+      if (!market) throw new Error('unknown_ticker');
+      const book = desk.createDeskBook(market);
+      const result = desk.placeDeskOrder(book, { ...payload, reason: payload.reason || 'placed from the Live Desk order ticket' }, { seq: Date.now() % 100000, at: u.asOf });
+      return {
+        ok: !result.rejected,
+        rejected: result.rejected || null,
+        order: result.order,
+        fills: result.fills,
+        preview: result.preview,
+        note: 'Static mode: this order is recorded in your browser session only (no server store). Every price came from the captured ladder named on the fill.'
+      };
+    },
     exportJsonUrl: null,
     exportCsvUrl: null,
     wsUrl: null,
+    deskLedgerJsonlUrl: null,
+    deskFillsCsvUrl: null,
     lintSource: sandbox.lintSource,
     EXAMPLE: sandbox.EXAMPLE_USER_STRATEGY,
     REGIMES: memMod.REGIMES
@@ -302,6 +399,7 @@ async function boot() {
   renderIrregularities();
   renderMemory();
   initLab();
+  loadLiveDesk();
   wireGlobalEvents();
   renderTransport();
 }
@@ -374,6 +472,7 @@ function wireTabs() {
       if (id === 'markets' && state.selectedTicker) selectMarket(state.selectedTicker);
       if (id === 'research' && !state.researchLoaded) { state.researchLoaded = true; renderResearch(); }
       if (id === 'ledger' && !state.ledgerLoaded) { state.ledgerLoaded = true; renderLedger(); }
+      if (id === 'desk' && !state.deskLoaded) { state.deskLoaded = true; loadLiveDesk(); }
     });
   });
 }
@@ -975,6 +1074,10 @@ async function renderMemory() {
     ${statRow('Regime', m.regime || 'baseline')}
     ${statRow('Participants', (m.participants || []).length)}
     ${statRow('Algorithmic strategies', (m.strategies || []).length)}
+    ${statRow('Desk session', m.deskMemory
+      ? `${m.deskMemory.asOf || 'live'} · ${m.deskMemory.fillCount ?? 0} fill(s) · ${m.deskMemory.settlementCount ?? 0} settlement(s)${m.deskMemory.auditOk ? ' · audit ok' : ''}`
+      : 'none attached (run the Live Desk tab)')}
+    ${statRow('Desk entries', (m.deskMemory?.results || []).length)}
     ${statRow('Trade log entries', (m.tradeLog || []).length)}
     ${statRow('Weekly snapshots', (m.weeklySnapshots || []).length)}
     ${statRow('Schema', `v${m.schemaVersion}`)}
@@ -1129,6 +1232,322 @@ function banner(title, body, kind = 'info') {
  * COLUMNS in src/trade-ledger.js), and each row links to the official API URL
  * of the bar that priced it, so a reader can open the source and compare.
  * ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------ *
+ * LIVE DESK — paper orders on REAL Kalshi open contracts
+ * ------------------------------------------------------------------ */
+
+async function loadLiveDesk() {
+  setHTML('#deskStatus', '<div class="notice">Running the desk from the captured ladders…</div>');
+  try {
+    const capital = Number($('#deskCapital')?.value) || 100000;
+    const asOf = $('#deskCutoff')?.value || null;
+    const data = await state.runtime.liveDesk({ asOf: asOf || null, capital });
+    state.desk = data;
+    renderDeskCutoffs(data);
+    renderLiveDesk(data);
+    // Server and static liveDesk() both attach the session to the year; refresh
+    // the memory panel so the desk block is not a visit-the-tab-twice surprise.
+    renderMemory().catch(() => {});
+  } catch (err) {
+    setHTML('#deskStatus', `<div class="notice notice-bad">The desk could not run: ${esc(err.message)}</div>`);
+  }
+}
+
+function renderDeskCutoffs(data) {
+  const sel = $('#deskCutoff');
+  if (!sel) return;
+  const rows = data?.cutoffs?.cutoffs || [];
+  const current = sel.value;
+  sel.innerHTML = rows.map((c) => {
+    const label = `${c.label}${c.tradeable !== undefined ? ` — ${c.tradeable} tradeable` : ''}${c.settlementsAfter ? `, ${c.settlementsAfter} settlement(s) ahead` : ''}`;
+    const disabled = c.tradeable === 0;
+    return `<option value="${esc(c.asOf || '')}"${disabled ? ' disabled' : ''}${current === (c.asOf || '') ? ' selected' : ''}>${esc(label)}</option>`;
+  }).join('');
+}
+
+function renderLiveDesk(data) {
+  const a = data.audit || {};
+  const t = a.totals || {};
+  const cov = data.coverage || {};
+
+  setHTML('#deskStatus', `
+    <div class="notice ${a.ok ? 'notice-good' : 'notice-bad'}">
+      <strong>${a.ok ? 'Audit passed' : 'AUDIT FAILED'}</strong> — ${esc(a.description || 'no audit available')}.
+      Every fill below was re-derived from the captured ladder it names; a single disagreement would fail this line.
+      ${a.mismatches && a.mismatches.length ? `<ul>${a.mismatches.map((m) => `<li>${esc(m.name)}: ${esc(m.detail)}</li>`).join('')}</ul>` : ''}
+    </div>
+    <div class="notice">
+      <strong>Cut-off ${esc(data.asOf)}</strong> · ${esc(String(cov.tradeable))} of ${esc(String(cov.inUniverse))} tracked contracts are tradeable here
+      (a real ladder captured at or before the cut-off). ${esc(String(cov.notTradeable))} are listed with the reason they cannot be priced.
+      Data module generated ${esc(data.dataGeneratedAt || '—')} · ${esc(String((data.dataCoverage || {}).ladderCaptures ?? 0))} captured ladders ·
+      newest capture ${esc((data.dataCoverage || {}).newestCapture || '—')}.
+    </div>
+  `);
+
+  const ranked = (data.results || []).filter((r) => r.fills > 0 || r.settlementPnl !== 0);
+  const unranked = (data.results || []).filter((r) => !(r.fills > 0 || r.settlementPnl !== 0));
+  const best = ranked[0];
+  setHTML('#deskKpis', `
+    <div class="card"><span class="card-label">Contracts on the desk</span><span class="card-value">${esc(String(cov.inUniverse))}</span><span class="card-note">${esc(String(cov.tradeable))} with a captured ladder at the cut-off</span></div>
+    <div class="card"><span class="card-label">Orders · fills</span><span class="card-value">${esc(String(t.orders ?? 0))} · ${esc(String(t.fills ?? 0))}</span><span class="card-note">${esc(String(t.cancels ?? 0))} resting order(s) never crossed and were cancelled</span></div>
+    <div class="card"><span class="card-label">Real settlements booked</span><span class="card-value">${esc(String(t.settlements ?? 0))}</span><span class="card-note">paid $1.00 / $0.00 by the exchange's own result</span></div>
+    <div class="card"><span class="card-label">Official fees paid</span><span class="card-value">${esc(money(t.fees ?? 0, 4))}</span><span class="card-note">quadratic schedule, captured per-series multiplier</span></div>
+    <div class="card"><span class="card-label">Best desk return</span><span class="card-value ${signedClass(best?.returnPct)}">${best ? pct(best.returnPct, 4) : '—'}</span><span class="card-note">${best ? esc(best.strategy) : 'no strategy filled an order here'}</span></div>
+  `);
+
+  setHTML('#deskResults tbody', (data.results || []).map((r, i) => `
+    <tr>
+      <td>${r.fills > 0 || r.settlementPnl !== 0 ? i + 1 : '—'}</td>
+      <td class="cell-trader">${esc(r.strategy)}</td>
+      <td class="cell-sub">${esc(deskStrategyOf(data, r.strategy)?.name || '')}</td>
+      <td class="num ${signedClass(r.returnPct)}">${pct(r.returnPct, 4)}</td>
+      <td class="num">${money(r.equity, 2)}</td>
+      <td class="num">${esc(String(r.fills))}</td>
+      <td class="num">${compact(r.contracts)}</td>
+      <td class="num">${compact(r.unfilled)}</td>
+      <td class="num">${money(r.slippageCost, 4)}</td>
+      <td class="num">${money(r.feesPaid, 4)}</td>
+      <td class="num ${signedClass(r.settlementPnl)}">${money(r.settlementPnl, 2)}</td>
+      <td>${r.attributionOk ? '<span class="tag">equity = realized + unrealized − fees</span>' : '<span class="tag tag-bad">MISMATCH</span>'}</td>
+    </tr>`).join('') || '<tr><td colspan="12" class="muted">No desk entry placed a fillable order at this cut-off.</td></tr>');
+
+  setHTML('#deskExplanations', `
+    <h3>Why each desk entry made or lost money</h3>
+    ${(data.explanations || []).map((e) => `
+      <article class="postmortem">
+        <div class="postmortem-head"><strong>${esc(e.strategy)}</strong> <span class="tag">${esc(e.verdict)}</span></div>
+        <p>${esc(e.headline)}</p>
+        ${e.worked.length ? `<p><span class="label">What worked:</span> ${e.worked.map(esc).join('; ')}</p>` : ''}
+        ${e.hurt.length ? `<p><span class="label">What hurt:</span> ${e.hurt.map(esc).join('; ')}</p>` : ''}
+        ${e.evidence.length ? `<p class="fineprint">${e.evidence.map((x) => `${esc(x.label)}: <code>${esc(String(x.value))}</code>`).join(' · ')}</p>` : ''}
+      </article>`).join('')}
+    ${unranked.length ? `<div class="notice"><strong>${unranked.length} entry(ies) placed no fillable order at this cut-off</strong> — reported as such rather than shown at 0%: ${unranked.map((r) => esc(r.strategy)).join(', ')}.</div>` : ''}
+  `);
+
+  const markets = (data.universe?.markets || []).slice().sort((x, y) => (y.tradeable - x.tradeable) || String(x.ticker).localeCompare(String(y.ticker)));
+  setHTML('#deskUniverse tbody', markets.map((m) => `
+    <tr>
+      <td>
+        <strong>${esc(m.ticker)}</strong>
+        <div class="cell-sub">${esc(m.title || m.series || '')}${m.marketUrl ? ` · ${link(m.marketUrl, 'market object')}` : ''}</div>
+      </td>
+      <td>${esc(dateShort(m.closeTime) || '—')}<div class="cell-sub">${esc(m.expirationTime ? `exp ${dateShort(m.expirationTime)}` : '')}</div></td>
+      <td class="num">${esc(price(m.touch?.yesBid))}</td>
+      <td class="num">${esc(price(m.touch?.yesAsk))}</td>
+      <td class="num">${m.liquidity?.yes?.depth ? compact(m.liquidity.yes.depth.touch) : '—'}<div class="cell-sub">${m.liquidity?.yes?.depth ? `${compact(m.liquidity.yes.depth.ticks1)} @1t · ${compact(m.liquidity.yes.depth.ticks5)} @5t` : 'sizing not computable'}</div></td>
+      <td class="num">${m.liquidity?.no?.depth ? compact(m.liquidity.no.depth.touch) : '—'}<div class="cell-sub">${m.liquidity?.no?.depth ? `${compact(m.liquidity.no.depth.ticks1)} @1t` : ''}</div></td>
+      <td class="num">${m.volume24h === null || m.volume24h === undefined ? '—' : compact(m.volume24h)}</td>
+      <td class="num">${m.openInterest === null || m.openInterest === undefined ? '—' : compact(m.openInterest)}</td>
+      <td class="num">${m.liquidity?.yes?.cap ? compact(m.liquidity.yes.cap.cap) : '—'}<div class="cell-sub">${esc(String(m.liquidity?.yes?.cap?.baseField || ''))}</div></td>
+      <td>${esc(String(m.feeMultiplier))} / <span class="cell-sub">${esc(String(m.feeType || ''))}</span></td>
+      <td>${m.ladderAt ? `${esc(timeShort(m.ladderAt))}<div class="cell-sub">${m.ladderUrl ? link(m.ladderUrl, 'ladder') : ''}</div>` : '<span class="tag tag-bad">none</span>'}</td>
+      <td>${m.tradeable ? '<span class="tag tag-good">tradeable</span>' : `<span class="tag tag-bad">not priceable</span><div class="cell-sub">${esc(m.notTradeableReason || '')}</div>`}</td>
+    </tr>`).join(''));
+
+  setHTML('#deskQuoted', (data.universe?.quotedOnly || []).length ? `
+    <h3>Open contracts with real quotes but NO captured ladder (listed, never priceable)</h3>
+    <p class="fineprint">A price without a ladder is a price with no size behind it. These contracts carry real quotes, real
+    volume and real close dates from the discovery run, but the desk will not price an order against them until an order-book
+    ladder is captured. The capture command is printed on each row.</p>
+    <div class="table-wrap">
+      <table class="grid">
+        <thead><tr><th>Contract</th><th>Status</th><th>Closes (UTC)</th><th class="num">YES bid</th><th class="num">YES ask</th><th class="num">24h vol</th><th>Capture</th></tr></thead>
+        <tbody>${(data.universe.quotedOnly || []).map((q) => `
+          <tr>
+            <td><strong>${esc(q.ticker)}</strong><div class="cell-sub">${esc(q.title || '')}</div></td>
+            <td>${esc(q.status || '')}</td>
+            <td>${esc(dateShort(q.closeTime) || '—')}</td>
+            <td class="num">${esc(price(q.yesBid))}</td>
+            <td class="num">${esc(price(q.yesAsk))}</td>
+            <td class="num">${q.volume ? compact(q.volume) : '—'}</td>
+            <td class="cell-sub">${esc(q.capturedAt ? timeShort(q.capturedAt) : '—')}${q.marketUrl ? ` · ${link(q.marketUrl, 'source')}` : ''}</td>
+          </tr>`).join('')}</tbody>
+      </table>
+    </div>` : '');
+
+  renderDeskFills(data);
+  renderDeskInvars(data);
+  renderDeskTickerOptions(data);
+}
+
+function deskStrategyOf(data, username) {
+  return (data.strategies || []).find((s) => s.username === username || s.id === username) || null;
+}
+
+function renderDeskFills(data) {
+  const records = data.records || [];
+  const fills = records.filter((r) => r.k === 'FILL');
+  const settles = records.filter((r) => r.k === 'SETTLE');
+  if (!fills.length && !settles.length) {
+    setHTML('#deskFills', '<div class="notice">No fill was possible at this cut-off: no desk entry found real size at a price it wanted. Nothing is filled at an invented price.</div>');
+    return;
+  }
+  setHTML('#deskFills', `
+    <p class="fineprint">${fills.length} fill(s) and ${settles.length} settlement(s). “Ladder” links to the exact captured book
+    the fill was priced from; “market” links to the captured market object that supplied the dates and the settlement.</p>
+    <div class="table-wrap">
+      <table class="grid">
+        <thead><tr><th>Time (UTC)</th><th>Trader</th><th>Contract</th><th>Side</th><th class="num">Count</th><th class="num">Price</th>
+        <th class="num">Touch</th><th class="num">Slip</th><th class="num">Fee</th><th>Kind</th><th class="num">Unfilled</th><th>Source</th><th>Detail</th></tr></thead>
+        <tbody>
+        ${fills.map((f) => `
+          <tr>
+            <td>${esc(timeShort(f.at))}</td>
+            <td class="cell-trader">${esc(f.strategy)}</td>
+            <td><strong>${esc(f.ticker)}</strong>${f.closeTime ? `<div class="cell-sub">closes ${esc(dateShort(f.closeTime))}</div>` : ''}</td>
+            <td>${f.action === 'buy' ? 'BUY' : 'SELL'} ${esc(String(f.side).toUpperCase())}</td>
+            <td class="num">${compact(f.count)}</td>
+            <td class="num">${esc(price(f.price))}</td>
+            <td class="num">${esc(price(f.bestPrice))}</td>
+            <td class="num ${f.slippageTicks > 0 ? 'neg' : ''}">${f.slippageTicks === null ? '—' : `${f.slippageTicks}t`}</td>
+            <td class="num">${money(f.fee, 4)}</td>
+            <td>${f.maker ? '<span class="tag">maker</span>' : '<span class="tag">taker</span>'}</td>
+            <td class="num">${f.unfilled ? compact(f.unfilled) : '—'}</td>
+            <td class="cell-sub">${f.ladderUrl ? link(f.ladderUrl, 'ladder') : ''}${f.marketUrl ? ` · ${link(f.marketUrl, 'market')}` : ''}</td>
+            <td class="cell-sub">${esc(f.explain || '')}<div class="fineprint">${esc((f.levels || []).map(([p, c, src]) => `${c} @ ${p} (${src})`).join(' + '))}</div></td>
+          </tr>`).join('')}
+        ${settles.map((s) => `
+          <tr>
+            <td>${esc(timeShort(s.settledAt || s.at))}</td>
+            <td class="cell-trader">${esc(s.strategy)}</td>
+            <td><strong>${esc(s.ticker)}</strong><div class="cell-sub">${s.marketUrl ? link(s.marketUrl, 'settlement source') : ''}</div></td>
+            <td>HELD ${esc(String(s.side).toUpperCase())}</td>
+            <td class="num">${compact(s.count)}</td>
+            <td class="num">${esc(price(s.payoffPerContract))}</td>
+            <td class="num">${esc(price(s.value))}</td>
+            <td class="num">—</td>
+            <td class="num">${money(s.fee, 4)}</td>
+            <td><span class="tag">settlement</span></td>
+            <td class="num">—</td>
+            <td class="cell-sub">result ${esc(String(s.result).toUpperCase())}</td>
+            <td class="cell-sub">${esc(s.explain || '')}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  `);
+}
+
+function renderDeskInvars(data) {
+  setHTML('#deskInvars', `
+    <div class="detail-grid">
+      <div class="detail">
+        <h4>Limits applied to every order</h4>
+        <ul class="rule-list">
+          <li>Liquidity cap: <strong>${esc(String((data.limits || {}).maxShareOfRealVolume * 100))}%</strong> of a market's real 24h volume / open interest — the binding constraint is always the captured ladder itself.</li>
+          <li>Levels per side kept: <strong>${esc(String((data.limits || {}).maxLevelsPerSide))}</strong>; contract granularity <strong>${esc(String((data.limits || {}).minContracts))}</strong>.</li>
+          <li>Exhaustion policy: <strong>${esc(String((data.limits || {}).exhaustionPolicy))}</strong> — an order larger than the real book fills what exists and reports the rest as UNFILLED.</li>
+        </ul>
+      </div>
+      <div class="detail">
+        <h4>Invariants the audit enforces (${(data.invars || []).length})</h4>
+        <ul class="rule-list">
+          ${(data.invars || []).map((v) => `<li><code>${esc(v.id)}</code> ${esc(v.rule)} <span class="cell-sub">— ${esc(v.source)}</span></li>`).join('')}
+        </ul>
+      </div>
+    </div>
+    <div class="detail-grid">
+      <div class="detail">
+        <h4>Official sources</h4>
+        <ul class="rule-list">
+          ${Object.entries(data.docs || {}).map(([k, v]) => `<li>${esc(k)}: ${link(v, v)}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="detail">
+        <h4>Endpoints used</h4>
+        <ul class="rule-list">
+          ${Object.entries(data.endpoints || {}).map(([k, v]) => `<li>${esc(k)}: <code>${esc(v)}</code></li>`).join('')}
+        </ul>
+      </div>
+    </div>
+    <div class="notice">
+      <strong>Limitations, stated plainly.</strong> ${esc((data.rule || {}).note || '')}
+      A captured ladder is a <em>snapshot</em> of the book, not a history of it: the desk re-anchors nothing and invents nothing, so a
+      contract whose book was captured hours ago is priced at the prices that book showed, and the capture time travels with the fill.
+      Sizes are bounded by that ladder and by ${esc(String((data.limits || {}).maxShareOfRealVolume * 100))}% of the market's real volume base.
+      The desk is a paper simulator: no order is transmitted to Kalshi, and no result here is a claim about a real account's fills.
+    </div>
+  `);
+}
+
+function renderDeskTickerOptions(data) {
+  const sel = $('#dtTicker');
+  if (!sel) return;
+  const tradeable = (data.universe?.markets || []).filter((m) => m.tradeable);
+  const current = sel.value;
+  sel.innerHTML = tradeable.map((m) => `<option value="${esc(m.ticker)}"${m.ticker === current ? ' selected' : ''}>${esc(m.ticker)} — closes ${esc(dateShort(m.closeTime) || '—')}</option>`).join('');
+}
+
+function deskTicketParams() {
+  // The select always carries the loaded universe; when the DOM stub used by
+  // the smoke test cannot parse <option> elements the value is empty, so fall
+  // back to the first tradeable contract instead of failing the ticket.
+  let ticker = $('#dtTicker')?.value || '';
+  if (!ticker) {
+    const markets = (state.desk?.universe?.markets || []).filter((m) => m.tradeable);
+    ticker = (markets[0] || {}).ticker || '';
+    if (ticker) setText('#dtTickerHint', `using ${ticker} (first tradeable contract at this cut-off)`);
+  }
+  return {
+    asOf: $('#deskCutoff')?.value || null,
+    ticker,
+    action: $('#dtAction')?.value || 'buy',
+    side: $('#dtSide')?.value || 'yes',
+    count: Number($('#dtCount')?.value || 100),
+    type: $('#dtType')?.value || 'market',
+    limit: $('#dtLimit')?.value ? Number($('#dtLimit').value) : null
+  };
+}
+
+function renderDeskTicketResult(preview, extra = '') {
+  setHTML('#dtResult', `
+    <div class="notice">
+      <strong>${esc(String(preview.fillStatus).toUpperCase())}</strong> — requested ${compact(preview.requested)},
+      filled <strong>${compact(preview.filled)}</strong>${preview.unfilled ? `, UNFILLED ${compact(preview.unfilled)}` : ''}.
+      VWAP ${esc(price(preview.vwap))} vs touch ${esc(price(preview.bestPrice))} ⇒ slippage
+      ${preview.slippageTicks === null ? '—' : `${preview.slippageTicks} tick(s) / ${esc(price(preview.slippage))}`}
+      ($${esc(String(preview.slippageCost))} on the fill).
+      Fee ${money(preview.fee, 4)} (M=${esc(String(preview.feeMultiplier))}, ${esc(String(preview.feeType))}).
+      ${preview.capApplied ? `<span class="tag tag-bad">liquidity cap removed ${compact(preview.capRemoved)}</span>` : ''}
+      <div class="fineprint">${esc(preview.explain || '')}</div>
+      <div class="fineprint">Ladder: ${preview.ladderUrl ? link(preview.ladderUrl, preview.ladderUrl) : '—'} captured ${esc(preview.ladderAt || '—')}
+      · market object: ${preview.marketUrl ? link(preview.marketUrl, 'source') : '—'} captured ${esc(preview.marketCapturedAt || '—')}</div>
+      ${(preview.levels || []).length ? `<div class="fineprint">Levels consumed: ${preview.levels.map((l) => `${compact(l.count)} @ ${price(l.price)} (${esc(l.from.side)} ${price(l.from.price)})`).join(' + ')}</div>` : ''}
+    </div>
+    ${extra}
+  `);
+}
+
+async function previewDeskTicket() {
+  try {
+    const p = deskTicketParams();
+    const r = await state.runtime.liveDeskTicket({ ...p, asOf: p.asOf });
+    if (!r.ok) { setHTML('#dtResult', `<div class="notice notice-warn">${esc(r.error)} — ${esc(r.reason || '')}</div>`); return; }
+    renderDeskTicketResult(r.preview);
+  } catch (err) {
+    setHTML('#dtResult', `<div class="notice notice-bad">Preview failed: ${esc(err.message)}</div>`);
+  }
+}
+
+async function placeDeskOrder() {
+  try {
+    const p = deskTicketParams();
+    const r = await state.runtime.liveDeskOrder({ ...p, strategy: ($('#dtStrategy')?.value || 'Manual_Desk_Ticket').trim() });
+    if (!r.ok && r.rejected) {
+      setHTML('#dtResult', `<div class="notice notice-bad"><strong>Rejected:</strong> ${esc(r.rejected)}</div>`);
+      return;
+    }
+    const preview = r.preview || (r.fills[0] ? { ...r.fills[0], requested: r.order.count, bestPrice: r.fills[0].bestPrice, fillStatus: r.fills[0].partial ? 'partial' : 'filled', capApplied: r.fills[0].capApplied, capRemoved: 0, feeMultiplier: r.fills[0].feeMultiplier, feeType: r.fills[0].feeType, explain: r.fills[0].explain, levels: (r.fills[0].levels || []).map(([price, count, src]) => ({ price, count, from: { side: String(src).split('@')[0], price: Number(String(src).split('@')[1]) } })), slippageCost: (r.fills[0].slippage || 0) * r.fills[0].count, ladderUrl: r.fills[0].ladderUrl, ladderAt: r.fills[0].ladderAt, marketUrl: r.fills[0].marketUrl, marketCapturedAt: r.fills[0].marketCapturedAt } : null);
+    if (!preview) { setHTML('#dtResult', `<div class="notice notice-warn">No fill: ${esc(r.order?.rejectReason || 'the captured ladder had no size on that side.')}</div>`); return; }
+    renderDeskTicketResult(preview, `<div class="notice notice-good"><strong>Paper order recorded</strong> — ${esc(r.note || '')}</div>`);
+    toast(`Desk order: ${esc(r.order?.status || 'recorded')} on ${esc(p.ticker)}`, 'ok');
+    loadLiveDesk();
+  } catch (err) {
+    setHTML('#dtResult', `<div class="notice notice-bad">Order failed: ${esc(err.message)}</div>`);
+  }
+}
+
 
 async function renderLedger() {
   let data = null;
@@ -1801,6 +2220,29 @@ function wireGlobalEvents() {
   on('#verifySearch', 'input', (e) => renderVerification(e.target.value));
   on('#btnResearchReload', 'click', () => { state.researchLoaded = true; renderResearch().then(() => toast('Reports reloaded.', 'ok')); });
   on('#btnLedgerReload', 'click', () => { state.ledgerLoaded = true; renderLedger().then(() => toast('Ledger reloaded.', 'ok')); });
+  on('#deskRun', 'click', () => loadLiveDesk());
+  on('#deskCutoff', 'change', () => loadLiveDesk());
+  on('#dtPreview', 'click', () => previewDeskTicket());
+  on('#dtPlace', 'click', () => placeDeskOrder());
+  on('#dtTicker', 'change', () => previewDeskTicket());
+  on('#dtSide', 'change', () => previewDeskTicket());
+  on('#dtAction', 'change', () => previewDeskTicket());
+  on('#dtType', 'change', () => previewDeskTicket());
+  on('#dtCount', 'change', () => previewDeskTicket());
+  on('#deskLedgerJsonl', 'click', () => {
+    const asOf = $('#deskCutoff')?.value || null;
+    const capital = Number($('#deskCapital')?.value) || 100000;
+    const url = state.runtime.deskLedgerJsonlUrl?.({ asOf, capital });
+    if (!url) { toast('Static mode: the ledger lives in this browser session only. Every fill is listed on screen.', 'info'); return; }
+    window.location.href = url;
+  });
+  on('#deskFillsCsv', 'click', () => {
+    const asOf = $('#deskCutoff')?.value || null;
+    const capital = Number($('#deskCapital')?.value) || 100000;
+    const url = state.runtime.deskFillsCsvUrl?.({ asOf, capital });
+    if (!url) { toast('Static mode: no CSV endpoint — the fill table on screen carries the same fields.', 'info'); return; }
+    window.location.href = url;
+  });
   on('#ledgerStrategy', 'change', () => { if (state.ledger) renderLedgerTrades(state.ledger); });
   on('#ledgerFlight', 'change', () => { if (state.ledger) renderLedgerTrades(state.ledger); });
   on('#ledgerKind', 'change', () => { if (state.ledger) renderLedgerTrades(state.ledger); });

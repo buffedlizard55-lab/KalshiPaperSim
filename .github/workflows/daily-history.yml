@@ -97,10 +97,14 @@ jobs:
 
       - name: Commit the new history
         run: |
-          # Regenerate the browser-safe modules so the deployed site carries
-          # today's bars without waiting for the next forecast-archive run
-          # (that run regenerates them too — the script is deterministic).
+          # Regenerate every browser-safe module AND the Pages bundle so the
+          # deployed site carries today's bars, today's captured ladders and
+          # the rebuilt desk report without waiting for a local build. All of
+          # these are deterministic: only `generatedAt` and the new data change.
           node scripts/generate-history-module.mjs | tee -a ingest.log
+          node scripts/generate-desk-module.mjs | tee -a ingest.log
+          node scripts/render-docs.js | tee -a ingest.log
+          node build.js | tee -a ingest.log
           # One shared, locally-tested implementation of "commit everything
           # this run changed and survive the push race with the forecast bot"
           # (test/workflow-race-guard.sh reproduces the races, including the

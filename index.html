@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KalshiPaperSim — Paper Trading Championship on Real Kalshi Market Data</title>
-<meta name="description" content="A paper-trading competition platform built on real Kalshi exchange data: official quadratic fee schedule, reciprocal order books, market making, 10 algorithmic strategies with unique usernames, a 52-week competition memory, and a fully verified source list. No real money, no invented prices.">
+<meta name="description" content="A paper-trading competition platform built on real Kalshi exchange data: official quadratic fee schedule, reciprocal order books, market making, 41 algorithmic strategies plus a 13-entrant Live Desk with unique usernames, a 52-week competition memory, and a fully verified source list. No real money, no invented prices.">
 <link rel="stylesheet" href="./src/styles.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
 </head>
@@ -41,6 +41,7 @@
   <button class="tab" data-tab="markets">📊 Markets &amp; Depth</button>
   <button class="tab" data-tab="memory">🧠 Competition Memory</button>
   <button class="tab" data-tab="lab">🧪 Strategy Lab</button>
+  <button class="tab" data-tab="desk">💵 Live Desk</button>
   <button class="tab" data-tab="ledger">🧾 Trade Ledger</button>
   <button class="tab" data-tab="research">🔬 Research</button>
   <button class="tab" data-tab="verification">✅ Verification</button>
@@ -290,6 +291,113 @@
       See <code>src/strategy-sandbox.js</code> and Irregularity #7.
     </div>
   </section>
+
+  <!-- ══════════════ TAB: LIVE DESK (paper orders on REAL open contracts) ══════════════ -->
+  <section class="panel" id="panel-desk">
+    <div class="panel-head">
+      <div>
+        <h2>Live Desk — paper orders on real Kalshi open contracts</h2>
+        <p class="lede">
+          The desk places paper orders against <strong>OPEN event contracts</strong> priced ONLY from data this repository
+          captured from the official Kalshi API: the real bid ladder (<code>GET /markets/{ticker}/orderbook</code>), the real
+          quoted touch, the contract's own <code>close_time</code> / <code>expiration_time</code>, the real traded volume and open
+          interest, the official quadratic fee with the <strong>captured series multiplier</strong>, and the exchange's own
+          settlement. An order is never filled at a price no real resting order was showing, and a ladder captured
+          <em>after</em> the order time is refused rather than used.
+        </p>
+      </div>
+      <div class="controls">
+        <label class="field">
+          <span>Desk cut-off</span>
+          <select id="deskCutoff"></select>
+        </label>
+        <label class="field">
+          <span>Starting capital</span>
+          <input type="number" id="deskCapital" value="100000" step="1000" min="1000">
+        </label>
+        <button class="btn btn-primary" id="deskRun">Run the desk</button>
+        <button class="btn btn-ghost" id="deskLedgerJsonl">Download ledger (.jsonl)</button>
+        <button class="btn btn-ghost" id="deskFillsCsv">Download fills (.csv)</button>
+      </div>
+    </div>
+
+    <div id="deskStatus"></div>
+    <div id="deskKpis" class="card-grid"></div>
+
+    <div class="notice">
+      <strong>Where these prices come from:</strong> every ladder on this desk carries the <em>timestamp it was captured</em>
+      and the <em>exact URL</em> it came from. A ladder is a snapshot, not a live stream: the desk is a paper simulator that
+      re-prices itself every time the ingest job captures a new book, and it labels each contract that has no captured
+      ladder as <strong>not tradeable here</strong> instead of inventing depth.
+    </div>
+
+    <h3>Order ticket (real prices, real depth, official fees)</h3>
+    <div class="ticket" id="deskTicket">
+      <div class="ticket-row">
+        <label class="field"><span>Contract</span><select id="dtTicker"></select></label>
+        <span class="fineprint" id="dtTickerHint"></span>
+        <label class="field"><span>Action</span>
+          <select id="dtAction"><option value="buy">Buy</option><option value="sell">Sell</option></select>
+        </label>
+        <label class="field"><span>Side</span>
+          <select id="dtSide"><option value="yes">YES</option><option value="no">NO</option></select>
+        </label>
+        <label class="field"><span>Contracts</span><input type="number" id="dtCount" value="100" min="0.01" step="0.01"></label>
+        <label class="field"><span>Type</span>
+          <select id="dtType"><option value="market">Market (taker)</option><option value="limit">Limit (rests if it does not cross)</option></select>
+        </label>
+        <label class="field"><span>Limit price</span><input type="number" id="dtLimit" placeholder="0.42" step="0.001" min="0.001" max="0.999"></label>
+        <label class="field"><span>Trader</span><input type="text" id="dtStrategy" value="Manual_Desk_Ticket" autocomplete="off"></label>
+        <button class="btn" id="dtPreview">Preview (no order)</button>
+        <button class="btn btn-accent" id="dtPlace">Place paper order</button>
+      </div>
+      <div class="ticket-result" id="dtResult"></div>
+    </div>
+
+    <h3>Desk competition — measured on real fills, real fees, real settlements</h3>
+    <div class="table-wrap">
+      <table class="grid" id="deskResults">
+        <thead>
+          <tr>
+            <th>Rank</th><th>Trader</th><th>Strategy</th><th class="num">Return</th><th class="num">Equity</th>
+            <th class="num">Fills</th><th class="num">Contracts</th><th class="num">Unfilled</th>
+            <th class="num">Slippage cost</th><th class="num">Fees</th><th class="num">Settlement PnL</th><th>Accounting</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div id="deskExplanations"></div>
+
+    <h3>Open contracts on the desk (real dates · real quotes · real ladders)</h3>
+    <div class="table-wrap">
+      <table class="grid" id="deskUniverse">
+        <thead>
+          <tr>
+            <th>Contract</th><th>Closes (UTC)</th><th class="num">YES bid</th><th class="num">YES ask</th>
+            <th class="num">YES size (real ladder)</th><th class="num">NO size</th><th class="num">24h vol</th><th class="num">Open int.</th>
+            <th>Fee (M / type)</th><th class="num">Desk cap (10%)</th><th>Ladder captured</th><th>Tradeable</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="fineprint">
+      “YES ask” is the reciprocal of the best captured NO bid (1 − noBid) — Kalshi publishes bids on both sides, so that is
+      the offer a buyer would actually have paid. Depth is the sum of the contract counts on that captured ladder; the desk
+      reports the ladder's capture time next to it so an old book cannot be mistaken for a current one.
+    </p>
+
+    <div id="deskQuoted"></div>
+
+    <h3>Verified fill log (every field traceable)</h3>
+    <div id="deskFills"></div>
+
+    <h3>Desk invariants and limits</h3>
+    <div id="deskInvars"></div>
+  </section>
+
 
   <!-- ══════════════ TAB: RESEARCH ══════════════ -->
   <section class="panel" id="panel-ledger">
