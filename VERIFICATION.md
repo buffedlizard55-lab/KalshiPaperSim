@@ -8,11 +8,11 @@ Nothing is inferred from a language model's memory of Kalshi.
 | Status | Meaning | Count |
 | --- | --- | --- |
 | `DOCUMENTED` | Quoted from official Kalshi docs / the fee schedule PDF | 34 |
-| `CAPTURED` | Copied from a real production API response | 34 |
+| `CAPTURED` | Copied from a real production API response | 35 |
 | `NEGATIVE` | A verified 404 / contradiction (proof something is NOT true) | 1 |
 | `DERIVED` | Computed by arithmetic on official formulas | 19 |
 | `OBSERVATION` | Seen in real data, not explained by any document | 5 |
-| **Total** | 84 of 93 carry a URL you can open yourself | **93** |
+| **Total** | 85 of 94 carry a URL you can open yourself | **94** |
 
 ---
 
@@ -195,6 +195,7 @@ Nothing is inferred from a language model's memory of Kalshi.
 | --- | --- | --- | --- | --- | --- |
 | `V98` | CAPTURED | All nine weather cities this repo trades have a VERIFIED NWS point identity | GET https://api.weather.gov/points/{lat},{lon} fetched live 2026-09-18 -> KXHIGHNY 40.7829,-73.9654 = OKX grid 34,45 / zone NYZ072; KXHIGHLAX 33.9425,-118.4081 = LOX 148,41 / CAZ366; KXHIGHCHI 41.7868,-87.7522 (Midway) = LOT 72,69 / ILZ104; KXHIGHMIA 25.7959,-80.287 = MFL 106,51 / FLZ074; KXHIGHAUS 30.3167,-97.7667 (Camp Mabry) = EWX 155,93 / TXZ192; KXHIGHDEN 39.8561,-104.6737 = BOU 74,66 / COZ040; KXHIGHPHIL 39.8729,-75.2437 = PHI 48,75 / PAZ070; KXHIGHTPHX 33.4342,-112.0116 = PSR 161,57 / AZZ543; KXHIGHTSEA 47.4502,-122.3088 = SEW 124,61 / WAZ316. | [api.weather.gov/points/40.7829,-73.9654](https://api.weather.gov/points/40.7829,-73.9654) | `scripts/archive-forecasts.mjs -> FORECAST_LOCATIONS[].verifiedNote; test 90 asserts every note cites the point response and names the grid` |
 | `V99` | CAPTURED | Kalshi names the settlement station for every weather market and it is not always the city airport | Captured rules text: KXHIGHCHI settles on "the maximum temperature recorded at Chicago (CLIMDW)" - Midway, not O'Hare; the full set is CLINYC, CLILAX, CLIMDW, CLIMIA, CLIAUS, CLIDEN, CLIPHL, CLIPHX, CLISEA, all "according to The Weather Company". The archive now follows the settlement station, and cites its exact rules string in verifiedNote. | [api.weather.gov/points/41.7868,-87.7522](https://api.weather.gov/points/41.7868,-87.7522) | `scripts/archive-forecasts.mjs -> FORECAST_LOCATIONS[].settlementStation; IRREGULARITIES.md #39` |
+| `V100` | CAPTURED | Every captured forecast URL independently confirms the grid identity of the archived city | The nine stores captured on 2026-09-18 all point at the grid configured in scripts/archive-forecasts.mjs -> nwsGrid: NYC OKX 34,45; LAX LOX 148,41; CHI LOT 72,69; MIA MFL 106,51; AUS EWX 155,93; DEN BOU 74,66; PHL PHI 48,75; PHX PSR 161,57; SEA SEW 124,61. That cross-check is what exposed the null-resolved-identity bug (#40): the forecast URL had always encoded the right grid, so the identity was available all along and the nulls could only come from reading the wrong response body. | [api.weather.gov/gridpoints/MFL/106,51/forecast](https://api.weather.gov/gridpoints/MFL/106,51/forecast) | `scripts/archive-forecasts.mjs -> verifyStore() grid cross-check; test 90 asserts the shipped forecast_url encodes the configured grid` |
 
 ---
 

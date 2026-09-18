@@ -1,7 +1,7 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-18 by `scripts/render-docs.js` from `src/verification-data.js`.
-**39 irregularities** flagged during this build: 12 high, 16 medium,
+**40 irregularities** flagged during this build: 12 high, 17 medium,
 9 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
@@ -518,6 +518,26 @@ assumption against an official document or a real API response.
 - O'Hare, the wrong point the first draft used: <https://api.weather.gov/points/41.9786,-87.9048>
 - Austin alternative (Bergstrom): <https://api.weather.gov/points/30.1975,-97.6664>
 - Station list in the captured rules — `data/history/.../rules_primary: KXHIGH* markets name CLINYC/CLILAX/CLIMDW/CLIMIA/CLIAUS/CLIDEN/CLIPHL/CLIPHX/CLISEA`
+
+---
+
+## #40 — The first nine-city capture stored a full set of nulls under the name "resolved identity"
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That reading gridId/gridX/gridY/forecastZone/timeZone off the response used to build a snapshot was enough to record what api.weather.gov said the point is. |
+| **Verified truth** | The capture fetched two different documents: GET /points/{lat},{lon} (which carries the identity) and GET {properties.forecast} (which carries only the forecast). captureLocation() returned the FORECAST document under the name properties, and the resolved block read identity fields out of it - so every store written by commit ae16030 recorded gridId/gridX/gridY/forecastZone/county/relativeLocation/timeZone as null while still stamping resolvedAt: it claimed a resolution it had not stored. The forecast rows themselves were correct; the identity metadata was not. |
+| **What the code does** | captureLocation() now returns the two documents separately (pointProperties vs forecastProperties) and identity is read from the point document only. Three guards make the failure mode impossible to repeat silently: the capture compares the live identity against the nwsGrid written in the configuration and refuses to write on a mismatch; the offline audit (--verify) fails on an incomplete or mismatched resolution and on a forecast URL that encodes a different grid; and test 90 asserts the shipped module agrees with the configuration field for field. The workflow now runs the audit under set -o pipefail and fails the run when any location did not capture. |
+| **What you should do** | Compare data/forecasts/miami-mia.json with the two links: the forecast URL always said MFL/106,51, which is exactly what the point response says and what the store now records instead of nulls. |
+
+**Evidence**
+
+- The capture that wrote the nulls: <https://github.com/buffedlizard55-lab/KalshiPaperSim/commit/ae16030>
+- Point response that carries the identity (Miami): <https://api.weather.gov/points/25.7959,-80.287>
+- Forecast response the code was reading instead: <https://api.weather.gov/gridpoints/MFL/106,51/forecast>
+- What the store showed — `data/forecasts/miami-mia.json (ae16030): location.resolved = { gridId: null, gridX: null, gridY: null, forecastZone: null, county: null, relativeLocation: null, timeZone: null, resolvedAt: "2026-09-18T13:24:29.350Z" } while snapshots[0].forecast_url = ".../gridpoints/MFL/106,51/forecast"`
 
 ---
 

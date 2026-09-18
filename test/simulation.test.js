@@ -1375,7 +1375,9 @@ test('46. every verified fact carries a reviewable link and a status', () => {
   let withLink = 0;
 
   for (const f of VERIFIED_FACTS) {
-    assert.match(f.id, /^V\d{2}$/, 'fact ids are V01..Vnn');
+    // The register began at V01; it has since grown past V99, so the id is
+    // two digits at minimum and may run to three. Ordering is still V01..Vnn.
+    assert.match(f.id, /^V\d{2,3}$/, 'fact ids are V01..Vnn');
     assert.match(f.status, allowed, `${f.id}: unknown status ${f.status}`);
     assert.ok(f.fact && f.fact.length > 10, `${f.id}: fact text required`);
     assert.ok(f.value && String(f.value).length > 3, `${f.id}: the verified value is required`);
