@@ -1,0 +1,5644 @@
+{
+  "generatedAt": "2026-09-18T00:54:02.576Z",
+  "source": "GET /markets/{ticker}/orderbook — real captured ladders (orderbook_fp with dollar strings). One ladder is stored per market; the capture timestamp and URL are on every row so a human can re-check it.",
+  "docs": "https://docs.kalshi.com/getting_started/orderbook_responses",
+  "endpoint": "GET /markets/{ticker}/orderbook",
+  "maxLevelsPerSideKept": 40,
+  "method": "Levels are consumed in ascending distance from the captured touch until the requested size is filled. The VWAP of that walk is the quoted impact. If the ladder runs out, the remainder is reported as unfilled rather than filled at a fabricated price.",
+  "aggregate": {
+    "markets": 30,
+    "totalYesContracts": 2248082.61,
+    "medianYesContractsWithin1Tick": 1641.765,
+    "medianYesContractsWithin5Ticks": 4029.08,
+    "marketsExhaustedBy1000Contracts": 3,
+    "marketsExhaustedBy10000Contracts": 15
+  },
+  "markets": [
+    {
+      "ticker": "KXBTCY-27JAN0100-B47500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:32.371Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B47500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.016,
+        "levelCount": 11,
+        "totalContracts": 344435.36,
+        "contractsWithinTicks": {
+          "1": 296.52,
+          "2": 385.83,
+          "5": 633.36,
+          "10": 633.36
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.016965,
+            "slippageTicksFromTouch": 0.96,
+            "slippageProbability": 0.000965,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.021495,
+            "slippageTicksFromTouch": 5.49,
+            "slippageProbability": 0.005495,
+            "deepestLevelTicks": 11,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.027306,
+            "slippageTicksFromTouch": 11.31,
+            "slippageProbability": 0.011306,
+            "deepestLevelTicks": 12,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.981,
+        "levelCount": 40,
+        "totalContracts": 52125.27,
+        "contractsWithinTicks": {
+          "1": 1750.09,
+          "2": 2699.37,
+          "5": 3604.37,
+          "10": 6261.27
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.981,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.981518,
+            "slippageTicksFromTouch": 0.52,
+            "slippageProbability": 0.000518,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.98789,
+            "slippageTicksFromTouch": 6.89,
+            "slippageProbability": 0.00689,
+            "deepestLevelTicks": 11,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B52500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:33.908Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B52500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.024,
+        "levelCount": 22,
+        "totalContracts": 219728.47,
+        "contractsWithinTicks": {
+          "1": 1049.56,
+          "2": 1049.56,
+          "5": 4147.75,
+          "10": 7463.07
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.024,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.024526,
+            "slippageTicksFromTouch": 0.53,
+            "slippageProbability": 0.000526,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.031602,
+            "slippageTicksFromTouch": 7.6,
+            "slippageProbability": 0.007602,
+            "deepestLevelTicks": 15,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.975,
+        "levelCount": 40,
+        "totalContracts": 47586,
+        "contractsWithinTicks": {
+          "1": 2236,
+          "2": 3002.38,
+          "5": 4191.63,
+          "10": 6661.6
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.975,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.975,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.982977,
+            "slippageTicksFromTouch": 7.98,
+            "slippageProbability": 0.007977,
+            "deepestLevelTicks": 15,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B57500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:35.435Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B57500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.04,
+        "levelCount": 33,
+        "totalContracts": 387422.48,
+        "contractsWithinTicks": {
+          "1": 1794.42,
+          "2": 2699.42,
+          "5": 2983.27,
+          "10": 6210.28
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.04,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.040108,
+            "slippageTicksFromTouch": 0.11,
+            "slippageProbability": 0.000108,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.049722,
+            "slippageTicksFromTouch": 9.72,
+            "slippageProbability": 0.009722,
+            "deepestLevelTicks": 20,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.959,
+        "levelCount": 40,
+        "totalContracts": 32187.7,
+        "contractsWithinTicks": {
+          "1": 1286.31,
+          "2": 2327.07,
+          "5": 3232.07,
+          "10": 5187.01
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.959221,
+            "slippageTicksFromTouch": 0.22,
+            "slippageProbability": 0.000221,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.959922,
+            "slippageTicksFromTouch": 0.92,
+            "slippageProbability": 0.000922,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.975752,
+            "slippageTicksFromTouch": 16.75,
+            "slippageProbability": 0.016752,
+            "deepestLevelTicks": 49,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B62500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:36.961Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B62500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.07,
+        "levelCount": 40,
+        "totalContracts": 25052.74,
+        "contractsWithinTicks": {
+          "1": 1628,
+          "2": 2635,
+          "5": 2856.32,
+          "10": 4147.61
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.07,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.07,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.081694,
+            "slippageTicksFromTouch": 11.69,
+            "slippageProbability": 0.011694,
+            "deepestLevelTicks": 21,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.929,
+        "levelCount": 40,
+        "totalContracts": 17402.25,
+        "contractsWithinTicks": {
+          "1": 32.63,
+          "2": 32.63,
+          "5": 937.84,
+          "10": 3449.12
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.93118,
+            "slippageTicksFromTouch": 2.18,
+            "slippageProbability": 0.00218,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.932634,
+            "slippageTicksFromTouch": 3.63,
+            "slippageProbability": 0.003634,
+            "deepestLevelTicks": 7,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.955101,
+            "slippageTicksFromTouch": 26.1,
+            "slippageProbability": 0.026101,
+            "deepestLevelTicks": 99,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B67500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:38.485Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B67500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.108,
+        "levelCount": 40,
+        "totalContracts": 16358.28,
+        "contractsWithinTicks": {
+          "1": 1997.9,
+          "2": 3018.05,
+          "5": 3206.52,
+          "10": 3409.52
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.108,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.108,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.123539,
+            "slippageTicksFromTouch": 15.54,
+            "slippageProbability": 0.015539,
+            "deepestLevelTicks": 33,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.891,
+        "levelCount": 40,
+        "totalContracts": 24921.15,
+        "contractsWithinTicks": {
+          "1": 449.58,
+          "2": 500.24,
+          "5": 604.18,
+          "10": 3388.91
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.891,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.894395,
+            "slippageTicksFromTouch": 3.4,
+            "slippageProbability": 0.003395,
+            "deepestLevelTicks": 7,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.929182,
+            "slippageTicksFromTouch": 38.18,
+            "slippageProbability": 0.038182,
+            "deepestLevelTicks": 71,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B72500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:40.007Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B72500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.137,
+        "levelCount": 40,
+        "totalContracts": 24302.33,
+        "contractsWithinTicks": {
+          "1": 563.47,
+          "2": 570.47,
+          "5": 884.55,
+          "10": 2072.86
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.137,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.139387,
+            "slippageTicksFromTouch": 2.39,
+            "slippageProbability": 0.002387,
+            "deepestLevelTicks": 7,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.157356,
+            "slippageTicksFromTouch": 20.36,
+            "slippageProbability": 0.020356,
+            "deepestLevelTicks": 38,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.862,
+        "levelCount": 40,
+        "totalContracts": 24733.97,
+        "contractsWithinTicks": {
+          "1": 134.07,
+          "2": 1185.63,
+          "5": 3162.26,
+          "10": 3568.96
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.862,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.86376,
+            "slippageTicksFromTouch": 1.76,
+            "slippageProbability": 0.00176,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.875974,
+            "slippageTicksFromTouch": 13.97,
+            "slippageProbability": 0.013974,
+            "deepestLevelTicks": 22,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B77500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:41.535Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B77500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.148,
+        "levelCount": 40,
+        "totalContracts": 23359.51,
+        "contractsWithinTicks": {
+          "1": 336.79,
+          "2": 889.49,
+          "5": 1233.29,
+          "10": 5789.77
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.148,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.149463,
+            "slippageTicksFromTouch": 1.46,
+            "slippageProbability": 0.001463,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.160984,
+            "slippageTicksFromTouch": 12.98,
+            "slippageProbability": 0.012984,
+            "deepestLevelTicks": 30,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.851,
+        "levelCount": 40,
+        "totalContracts": 21459.14,
+        "contractsWithinTicks": {
+          "1": 1075.59,
+          "2": 1755.65,
+          "5": 2125.88,
+          "10": 2437.26
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.851,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.851302,
+            "slippageTicksFromTouch": 0.3,
+            "slippageProbability": 0.000302,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.875942,
+            "slippageTicksFromTouch": 24.94,
+            "slippageProbability": 0.024942,
+            "deepestLevelTicks": 48,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B82500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:43.058Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B82500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.122,
+        "levelCount": 40,
+        "totalContracts": 29948.13,
+        "contractsWithinTicks": {
+          "1": 2108,
+          "2": 3147.96,
+          "5": 3910.41,
+          "10": 6772.41
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.122,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.122,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.129211,
+            "slippageTicksFromTouch": 7.21,
+            "slippageProbability": 0.007211,
+            "deepestLevelTicks": 19,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.877,
+        "levelCount": 40,
+        "totalContracts": 26747.2,
+        "contractsWithinTicks": {
+          "1": 1302.64,
+          "2": 2328.25,
+          "5": 3998.95,
+          "10": 4483.97
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.877,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.87774,
+            "slippageTicksFromTouch": 0.74,
+            "slippageProbability": 0.00074,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.899469,
+            "slippageTicksFromTouch": 22.47,
+            "slippageProbability": 0.022469,
+            "deepestLevelTicks": 57,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B87500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:44.575Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B87500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.09,
+        "levelCount": 40,
+        "totalContracts": 31240.55,
+        "contractsWithinTicks": {
+          "1": 150.59,
+          "2": 154.04,
+          "5": 429.48,
+          "10": 1883.4
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.09,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.095753,
+            "slippageTicksFromTouch": 5.75,
+            "slippageProbability": 0.005753,
+            "deepestLevelTicks": 10,
+            "exhaustedLadder": true
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.111168,
+            "slippageTicksFromTouch": 21.17,
+            "slippageProbability": 0.021168,
+            "deepestLevelTicks": 38,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.909,
+        "levelCount": 40,
+        "totalContracts": 42257.59,
+        "contractsWithinTicks": {
+          "1": 35.72,
+          "2": 521.05,
+          "5": 918.58,
+          "10": 926.15
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.910305,
+            "slippageTicksFromTouch": 1.3,
+            "slippageProbability": 0.001305,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.912127,
+            "slippageTicksFromTouch": 3.13,
+            "slippageProbability": 0.003127,
+            "deepestLevelTicks": 11,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.93439,
+            "slippageTicksFromTouch": 25.39,
+            "slippageProbability": 0.02539,
+            "deepestLevelTicks": 44,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-T149999.99",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:46.096Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-T149999.99/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.015,
+        "levelCount": 14,
+        "totalContracts": 963797.16,
+        "contractsWithinTicks": {
+          "1": 134.55,
+          "2": 2063.73,
+          "5": 22724.66,
+          "10": 33151.51
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.015857,
+            "slippageTicksFromTouch": 0.86,
+            "slippageProbability": 0.000857,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.016851,
+            "slippageTicksFromTouch": 1.85,
+            "slippageProbability": 0.001851,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.019347,
+            "slippageTicksFromTouch": 4.35,
+            "slippageProbability": 0.004347,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.984,
+        "levelCount": 40,
+        "totalContracts": 272607.47,
+        "contractsWithinTicks": {
+          "1": 2718.53,
+          "2": 3111.18,
+          "5": 3141.18,
+          "10": 3141.18
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.984,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.984,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 1.027255,
+            "slippageTicksFromTouch": 43.25,
+            "slippageProbability": 0.043255,
+            "deepestLevelTicks": 184,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B6900",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:47.628Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.03,
+        "levelCount": 3,
+        "totalContracts": 3203.61,
+        "contractsWithinTicks": {
+          "1": 3099.61,
+          "2": 3203.61,
+          "5": 3203.61,
+          "10": 3203.61
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.039588,
+            "slippageTicksFromTouch": 0.96,
+            "slippageProbability": 0.009588,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.039959,
+            "slippageTicksFromTouch": 1,
+            "slippageProbability": 0.009959,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 3203.61,
+            "unfilled": 6796.39,
+            "vwap": 0.040312,
+            "slippageTicksFromTouch": 1.03,
+            "slippageProbability": 0.010312,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.96,
+        "levelCount": 19,
+        "totalContracts": 209936.91,
+        "contractsWithinTicks": {
+          "1": 15757.33,
+          "2": 21003.33,
+          "5": 27553.33,
+          "10": 28753.33
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.96,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.96,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.96302,
+            "slippageTicksFromTouch": 0.3,
+            "slippageProbability": 0.00302,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7100",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:49.157Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7100/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.04,
+        "levelCount": 4,
+        "totalContracts": 5040.22,
+        "contractsWithinTicks": {
+          "1": 398.79,
+          "2": 4437.22,
+          "5": 5040.22,
+          "10": 5040.22
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.049884,
+            "slippageTicksFromTouch": 0.99,
+            "slippageProbability": 0.009884,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.056001,
+            "slippageTicksFromTouch": 1.6,
+            "slippageProbability": 0.016001,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 5040.22,
+            "unfilled": 4959.78,
+            "vwap": 0.060403,
+            "slippageTicksFromTouch": 2.04,
+            "slippageProbability": 0.020403,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.95,
+        "levelCount": 21,
+        "totalContracts": 186408.18,
+        "contractsWithinTicks": {
+          "1": 6322.91,
+          "2": 13472.91,
+          "5": 15022.91,
+          "10": 16267.41
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.961927,
+            "slippageTicksFromTouch": 1.19,
+            "slippageProbability": 0.011927,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7300",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:50.682Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7300/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.06,
+        "levelCount": 6,
+        "totalContracts": 13147.39,
+        "contractsWithinTicks": {
+          "1": 1946.69,
+          "2": 2602.19,
+          "5": 13147.39,
+          "10": 13147.39
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.06,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.065125,
+            "slippageTicksFromTouch": 0.51,
+            "slippageProbability": 0.005125,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.090607,
+            "slippageTicksFromTouch": 3.06,
+            "slippageProbability": 0.030607,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.93,
+        "levelCount": 22,
+        "totalContracts": 188956.55,
+        "contractsWithinTicks": {
+          "1": 5769.05,
+          "2": 12929.05,
+          "5": 17561.41,
+          "10": 18896.91
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.93,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.93,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.942462,
+            "slippageTicksFromTouch": 1.25,
+            "slippageProbability": 0.012462,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7500",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:52.204Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.11,
+        "levelCount": 11,
+        "totalContracts": 12157.57,
+        "contractsWithinTicks": {
+          "1": 2845.37,
+          "2": 4434.37,
+          "5": 7093.57,
+          "10": 12157.57
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.11,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.112322,
+            "slippageTicksFromTouch": 0.23,
+            "slippageProbability": 0.002322,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.147986,
+            "slippageTicksFromTouch": 3.8,
+            "slippageProbability": 0.037986,
+            "deepestLevelTicks": 9,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.88,
+        "levelCount": 22,
+        "totalContracts": 180071.42,
+        "contractsWithinTicks": {
+          "1": 255.68,
+          "2": 5185.68,
+          "5": 9510.68,
+          "10": 11320.68
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.889788,
+            "slippageTicksFromTouch": 0.98,
+            "slippageProbability": 0.009788,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.897422,
+            "slippageTicksFromTouch": 1.74,
+            "slippageProbability": 0.017422,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.907003,
+            "slippageTicksFromTouch": 2.7,
+            "slippageProbability": 0.027003,
+            "deepestLevelTicks": 8,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7700",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:53.733Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7700/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.15,
+        "levelCount": 15,
+        "totalContracts": 21395.63,
+        "contractsWithinTicks": {
+          "1": 1625.9,
+          "2": 2153.9,
+          "5": 4406.65,
+          "10": 17128.97
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.15,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.151036,
+            "slippageTicksFromTouch": 0.1,
+            "slippageProbability": 0.001036,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.203378,
+            "slippageTicksFromTouch": 5.34,
+            "slippageProbability": 0.053378,
+            "deepestLevelTicks": 9,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.84,
+        "levelCount": 32,
+        "totalContracts": 192630.22,
+        "contractsWithinTicks": {
+          "1": 9475.09,
+          "2": 15980.09,
+          "5": 19029.6,
+          "10": 19531.13
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.84,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.84,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.846816,
+            "slippageTicksFromTouch": 0.68,
+            "slippageProbability": 0.006816,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7900",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:55.255Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7900/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.16,
+        "levelCount": 16,
+        "totalContracts": 12049.41,
+        "contractsWithinTicks": {
+          "1": 2402.03,
+          "2": 3461.96,
+          "5": 7286.94,
+          "10": 8246.42
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.16,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.16,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.20718,
+            "slippageTicksFromTouch": 4.72,
+            "slippageProbability": 0.04718,
+            "deepestLevelTicks": 14,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.82,
+        "levelCount": 40,
+        "totalContracts": 48929.78,
+        "contractsWithinTicks": {
+          "1": 8804.99,
+          "2": 15043.29,
+          "5": 19797.1,
+          "10": 19843.2
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.82,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.82,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.827702,
+            "slippageTicksFromTouch": 0.77,
+            "slippageProbability": 0.007702,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B8100",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:56.778Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8100/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.16,
+        "levelCount": 16,
+        "totalContracts": 20907.05,
+        "contractsWithinTicks": {
+          "1": 5660.6,
+          "2": 6218.08,
+          "5": 10630.56,
+          "10": 14881.05
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.16,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.16,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.179762,
+            "slippageTicksFromTouch": 1.98,
+            "slippageProbability": 0.019762,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.83,
+        "levelCount": 40,
+        "totalContracts": 42228.03,
+        "contractsWithinTicks": {
+          "1": 2388.51,
+          "2": 5085.23,
+          "5": 12694.72,
+          "10": 13880.07
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.83,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.836246,
+            "slippageTicksFromTouch": 0.62,
+            "slippageProbability": 0.006246,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.852378,
+            "slippageTicksFromTouch": 2.24,
+            "slippageProbability": 0.022378,
+            "deepestLevelTicks": 4,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B8300",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:58.304Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8300/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.08,
+        "levelCount": 8,
+        "totalContracts": 13896.93,
+        "contractsWithinTicks": {
+          "1": 5541.49,
+          "2": 6391.49,
+          "5": 9230.21,
+          "10": 13896.93
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.08,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.088929,
+            "slippageTicksFromTouch": 0.89,
+            "slippageProbability": 0.008929,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.102902,
+            "slippageTicksFromTouch": 2.29,
+            "slippageProbability": 0.022902,
+            "deepestLevelTicks": 6,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.91,
+        "levelCount": 25,
+        "totalContracts": 212996.44,
+        "contractsWithinTicks": {
+          "1": 11279.21,
+          "2": 18570.87,
+          "5": 33528.31,
+          "10": 43394.76
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.91,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.91,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.91496,
+            "slippageTicksFromTouch": 0.5,
+            "slippageProbability": 0.00496,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B8900",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:59.831Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8900/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.01,
+        "levelCount": 1,
+        "totalContracts": 2788,
+        "contractsWithinTicks": {
+          "1": 2788,
+          "2": 2788,
+          "5": 2788,
+          "10": 2788
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 2788,
+            "unfilled": 7212,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.98,
+        "levelCount": 14,
+        "totalContracts": 231027.29,
+        "contractsWithinTicks": {
+          "1": 32865.06,
+          "2": 47633.78,
+          "5": 59987.78,
+          "10": 61574.78
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-T4000",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:01.351Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-T4000/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": null,
+        "levelCount": 0,
+        "totalContracts": 0,
+        "contractsWithinTicks": {
+          "1": 0,
+          "2": 0,
+          "5": 0,
+          "10": 0
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 0,
+            "unfilled": 100,
+            "exhaustedLadder": true,
+            "note": "no levels on this side in the captured response"
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 0,
+            "unfilled": 1000,
+            "exhaustedLadder": true,
+            "note": "no levels on this side in the captured response"
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 0,
+            "unfilled": 10000,
+            "exhaustedLadder": true,
+            "note": "no levels on this side in the captured response"
+          }
+        },
+        "emptySide": true
+      },
+      "no": {
+        "touch": 0.99,
+        "levelCount": 15,
+        "totalContracts": 204516.02,
+        "contractsWithinTicks": {
+          "1": 50046.05,
+          "2": 50313.05,
+          "5": 55119.65,
+          "10": 56507.65
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.99,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.99,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.99,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B25750",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:02.874Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B25750/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.01,
+        "levelCount": 1,
+        "totalContracts": 2951.5,
+        "contractsWithinTicks": {
+          "1": 2951.5,
+          "2": 2951.5,
+          "5": 2951.5,
+          "10": 2951.5
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 2951.5,
+            "unfilled": 7048.5,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.98,
+        "levelCount": 12,
+        "totalContracts": 208470.12,
+        "contractsWithinTicks": {
+          "1": 20548.01,
+          "2": 25112.95,
+          "5": 38274.7,
+          "10": 39885.12
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B29750",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:04.396Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B29750/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.05,
+        "levelCount": 5,
+        "totalContracts": 20018,
+        "contractsWithinTicks": {
+          "1": 1140.81,
+          "2": 12984.58,
+          "5": 20018,
+          "10": 20018
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.053407,
+            "slippageTicksFromTouch": 0.34,
+            "slippageProbability": 0.003407,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.059341,
+            "slippageTicksFromTouch": 0.93,
+            "slippageProbability": 0.009341,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.068793,
+            "slippageTicksFromTouch": 1.88,
+            "slippageProbability": 0.018793,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.93,
+        "levelCount": 11,
+        "totalContracts": 181201.64,
+        "contractsWithinTicks": {
+          "1": 11064.66,
+          "2": 11064.66,
+          "5": 11064.66,
+          "10": 11064.66
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.93,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.93,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.938351,
+            "slippageTicksFromTouch": 0.84,
+            "slippageProbability": 0.008351,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B30250",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:05.918Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30250/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.06,
+        "levelCount": 6,
+        "totalContracts": 5145.72,
+        "contractsWithinTicks": {
+          "1": 1390.71,
+          "2": 1706.94,
+          "5": 5145.72,
+          "10": 5145.72
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.062843,
+            "slippageTicksFromTouch": 0.28,
+            "slippageProbability": 0.002843,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.069284,
+            "slippageTicksFromTouch": 0.93,
+            "slippageProbability": 0.009284,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 5145.72,
+            "unfilled": 4854.28,
+            "vwap": 0.090951,
+            "slippageTicksFromTouch": 3.1,
+            "slippageProbability": 0.030951,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.92,
+        "levelCount": 17,
+        "totalContracts": 179699.32,
+        "contractsWithinTicks": {
+          "1": 5761.24,
+          "2": 10109.24,
+          "5": 10458.62,
+          "10": 10458.62
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.92,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.920679,
+            "slippageTicksFromTouch": 0.07,
+            "slippageProbability": 0.000679,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.933307,
+            "slippageTicksFromTouch": 1.33,
+            "slippageProbability": 0.013307,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B30750",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:07.447Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30750/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.07,
+        "levelCount": 7,
+        "totalContracts": 18472.02,
+        "contractsWithinTicks": {
+          "1": 960.31,
+          "2": 1437.31,
+          "5": 14880.56,
+          "10": 18472.02
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.07,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.077101,
+            "slippageTicksFromTouch": 0.71,
+            "slippageProbability": 0.007101,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.105424,
+            "slippageTicksFromTouch": 3.54,
+            "slippageProbability": 0.035424,
+            "deepestLevelTicks": 4,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.92,
+        "levelCount": 19,
+        "totalContracts": 189847.29,
+        "contractsWithinTicks": {
+          "1": 5297.36,
+          "2": 9703.46,
+          "5": 21703.46,
+          "10": 21703.46
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.92,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.92,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.933977,
+            "slippageTicksFromTouch": 1.4,
+            "slippageProbability": 0.013977,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B31250",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:08.969Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31250/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.04,
+        "levelCount": 4,
+        "totalContracts": 6413.18,
+        "contractsWithinTicks": {
+          "1": 2059.12,
+          "2": 5829.2,
+          "5": 6413.18,
+          "10": 6413.18
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.04,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.041032,
+            "slippageTicksFromTouch": 0.1,
+            "slippageProbability": 0.001032,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 6413.18,
+            "unfilled": 3586.82,
+            "vwap": 0.056302,
+            "slippageTicksFromTouch": 1.63,
+            "slippageProbability": 0.016302,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.94,
+        "levelCount": 16,
+        "totalContracts": 184622.06,
+        "contractsWithinTicks": {
+          "1": 6723.04,
+          "2": 10153.09,
+          "5": 14814.13,
+          "10": 15814.13
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.94,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.94,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.949574,
+            "slippageTicksFromTouch": 0.96,
+            "slippageProbability": 0.009574,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B31750",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:10.493Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31750/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.04,
+        "levelCount": 4,
+        "totalContracts": 12472.26,
+        "contractsWithinTicks": {
+          "1": 5964.43,
+          "2": 10496.42,
+          "5": 12472.26,
+          "10": 12472.26
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.04,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.04,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.049577,
+            "slippageTicksFromTouch": 0.96,
+            "slippageProbability": 0.009577,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.95,
+        "levelCount": 17,
+        "totalContracts": 179264.32,
+        "contractsWithinTicks": {
+          "1": 5663.45,
+          "2": 6735.18,
+          "5": 10173.18,
+          "10": 10173.18
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.965603,
+            "slippageTicksFromTouch": 1.56,
+            "slippageProbability": 0.015603,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B32250",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:12.021Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32250/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.04,
+        "levelCount": 4,
+        "totalContracts": 6298.43,
+        "contractsWithinTicks": {
+          "1": 2042.23,
+          "2": 5795.43,
+          "5": 6298.43,
+          "10": 6298.43
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.04,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.044628,
+            "slippageTicksFromTouch": 0.46,
+            "slippageProbability": 0.004628,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 6298.43,
+            "unfilled": 3701.57,
+            "vwap": 0.056703,
+            "slippageTicksFromTouch": 1.67,
+            "slippageProbability": 0.016703,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.95,
+        "levelCount": 15,
+        "totalContracts": 185831.06,
+        "contractsWithinTicks": {
+          "1": 12635.69,
+          "2": 14667.69,
+          "5": 16714.15,
+          "10": 16714.15
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B32750",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:13.541Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32750/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.03,
+        "levelCount": 3,
+        "totalContracts": 1762.45,
+        "contractsWithinTicks": {
+          "1": 1655.53,
+          "2": 1762.45,
+          "5": 1762.45,
+          "10": 1762.45
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.035179,
+            "slippageTicksFromTouch": 0.52,
+            "slippageProbability": 0.005179,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.039518,
+            "slippageTicksFromTouch": 0.95,
+            "slippageProbability": 0.009518,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 1762.45,
+            "unfilled": 8237.55,
+            "vwap": 0.040333,
+            "slippageTicksFromTouch": 1.03,
+            "slippageProbability": 0.010333,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.96,
+        "levelCount": 18,
+        "totalContracts": 179011.08,
+        "contractsWithinTicks": {
+          "1": 5422.4,
+          "2": 6735.12,
+          "5": 8248.25,
+          "10": 9835.25
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.96,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.96,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.981113,
+            "slippageTicksFromTouch": 2.11,
+            "slippageProbability": 0.021113,
+            "deepestLevelTicks": 16,
+            "exhaustedLadder": true
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:15.067Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T19000/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.03,
+        "levelCount": 3,
+        "totalContracts": 3393.53,
+        "contractsWithinTicks": {
+          "1": 552.53,
+          "2": 3393.53,
+          "5": 3393.53,
+          "10": 3393.53
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.031558,
+            "slippageTicksFromTouch": 0.16,
+            "slippageProbability": 0.001558,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.04363,
+            "slippageTicksFromTouch": 1.36,
+            "slippageProbability": 0.01363,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 3393.53,
+            "unfilled": 6606.47,
+            "vwap": 0.048123,
+            "slippageTicksFromTouch": 1.81,
+            "slippageProbability": 0.018123,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.94,
+        "levelCount": 32,
+        "totalContracts": 338902,
+        "contractsWithinTicks": {
+          "1": 631,
+          "2": 757,
+          "5": 1057,
+          "10": 30500.04
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.94,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.95498,
+            "slippageTicksFromTouch": 1.5,
+            "slippageProbability": 0.01498,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 1.012971,
+            "slippageTicksFromTouch": 7.3,
+            "slippageProbability": 0.072971,
+            "deepestLevelTicks": 8,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:16.600Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.11,
+        "levelCount": 11,
+        "totalContracts": 924.7,
+        "contractsWithinTicks": {
+          "1": 72,
+          "2": 177.64,
+          "5": 338.09,
+          "10": 924.7
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.1193,
+            "slippageTicksFromTouch": 0.93,
+            "slippageProbability": 0.0093,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 924.7,
+            "unfilled": 75.3,
+            "vwap": 0.178646,
+            "slippageTicksFromTouch": 6.86,
+            "slippageProbability": 0.068646,
+            "deepestLevelTicks": 10,
+            "exhaustedLadder": true
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 924.7,
+            "unfilled": 9075.3,
+            "vwap": 0.178646,
+            "slippageTicksFromTouch": 6.86,
+            "slippageProbability": 0.068646,
+            "deepestLevelTicks": 10,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.87,
+        "levelCount": 36,
+        "totalContracts": 8369.92,
+        "contractsWithinTicks": {
+          "1": 5090.2,
+          "2": 5300.2,
+          "5": 5576.69,
+          "10": 5653.99
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.870112,
+            "slippageTicksFromTouch": 0.01,
+            "slippageProbability": 0.000112,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.879011,
+            "slippageTicksFromTouch": 0.9,
+            "slippageProbability": 0.009011,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 8369.92,
+            "unfilled": 1630.08,
+            "vwap": 1.077313,
+            "slippageTicksFromTouch": 20.73,
+            "slippageProbability": 0.207313,
+            "deepestLevelTicks": 86,
+            "exhaustedLadder": true
+          }
+        }
+      }
+    }
+  ],
+  "byTicker": {
+    "KXBTCY-27JAN0100-B47500": {
+      "ticker": "KXBTCY-27JAN0100-B47500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:32.371Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B47500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.016,
+        "levelCount": 11,
+        "totalContracts": 344435.36,
+        "contractsWithinTicks": {
+          "1": 296.52,
+          "2": 385.83,
+          "5": 633.36,
+          "10": 633.36
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.016965,
+            "slippageTicksFromTouch": 0.96,
+            "slippageProbability": 0.000965,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.021495,
+            "slippageTicksFromTouch": 5.49,
+            "slippageProbability": 0.005495,
+            "deepestLevelTicks": 11,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.027306,
+            "slippageTicksFromTouch": 11.31,
+            "slippageProbability": 0.011306,
+            "deepestLevelTicks": 12,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.981,
+        "levelCount": 40,
+        "totalContracts": 52125.27,
+        "contractsWithinTicks": {
+          "1": 1750.09,
+          "2": 2699.37,
+          "5": 3604.37,
+          "10": 6261.27
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.981,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.981518,
+            "slippageTicksFromTouch": 0.52,
+            "slippageProbability": 0.000518,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.98789,
+            "slippageTicksFromTouch": 6.89,
+            "slippageProbability": 0.00689,
+            "deepestLevelTicks": 11,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXBTCY-27JAN0100-B52500": {
+      "ticker": "KXBTCY-27JAN0100-B52500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:33.908Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B52500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.024,
+        "levelCount": 22,
+        "totalContracts": 219728.47,
+        "contractsWithinTicks": {
+          "1": 1049.56,
+          "2": 1049.56,
+          "5": 4147.75,
+          "10": 7463.07
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.024,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.024526,
+            "slippageTicksFromTouch": 0.53,
+            "slippageProbability": 0.000526,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.031602,
+            "slippageTicksFromTouch": 7.6,
+            "slippageProbability": 0.007602,
+            "deepestLevelTicks": 15,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.975,
+        "levelCount": 40,
+        "totalContracts": 47586,
+        "contractsWithinTicks": {
+          "1": 2236,
+          "2": 3002.38,
+          "5": 4191.63,
+          "10": 6661.6
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.975,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.975,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.982977,
+            "slippageTicksFromTouch": 7.98,
+            "slippageProbability": 0.007977,
+            "deepestLevelTicks": 15,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXBTCY-27JAN0100-B57500": {
+      "ticker": "KXBTCY-27JAN0100-B57500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:35.435Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B57500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.04,
+        "levelCount": 33,
+        "totalContracts": 387422.48,
+        "contractsWithinTicks": {
+          "1": 1794.42,
+          "2": 2699.42,
+          "5": 2983.27,
+          "10": 6210.28
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.04,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.040108,
+            "slippageTicksFromTouch": 0.11,
+            "slippageProbability": 0.000108,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.049722,
+            "slippageTicksFromTouch": 9.72,
+            "slippageProbability": 0.009722,
+            "deepestLevelTicks": 20,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.959,
+        "levelCount": 40,
+        "totalContracts": 32187.7,
+        "contractsWithinTicks": {
+          "1": 1286.31,
+          "2": 2327.07,
+          "5": 3232.07,
+          "10": 5187.01
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.959221,
+            "slippageTicksFromTouch": 0.22,
+            "slippageProbability": 0.000221,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.959922,
+            "slippageTicksFromTouch": 0.92,
+            "slippageProbability": 0.000922,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.975752,
+            "slippageTicksFromTouch": 16.75,
+            "slippageProbability": 0.016752,
+            "deepestLevelTicks": 49,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXBTCY-27JAN0100-B62500": {
+      "ticker": "KXBTCY-27JAN0100-B62500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:36.961Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B62500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.07,
+        "levelCount": 40,
+        "totalContracts": 25052.74,
+        "contractsWithinTicks": {
+          "1": 1628,
+          "2": 2635,
+          "5": 2856.32,
+          "10": 4147.61
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.07,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.07,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.081694,
+            "slippageTicksFromTouch": 11.69,
+            "slippageProbability": 0.011694,
+            "deepestLevelTicks": 21,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.929,
+        "levelCount": 40,
+        "totalContracts": 17402.25,
+        "contractsWithinTicks": {
+          "1": 32.63,
+          "2": 32.63,
+          "5": 937.84,
+          "10": 3449.12
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.93118,
+            "slippageTicksFromTouch": 2.18,
+            "slippageProbability": 0.00218,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.932634,
+            "slippageTicksFromTouch": 3.63,
+            "slippageProbability": 0.003634,
+            "deepestLevelTicks": 7,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.955101,
+            "slippageTicksFromTouch": 26.1,
+            "slippageProbability": 0.026101,
+            "deepestLevelTicks": 99,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXBTCY-27JAN0100-B67500": {
+      "ticker": "KXBTCY-27JAN0100-B67500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:38.485Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B67500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.108,
+        "levelCount": 40,
+        "totalContracts": 16358.28,
+        "contractsWithinTicks": {
+          "1": 1997.9,
+          "2": 3018.05,
+          "5": 3206.52,
+          "10": 3409.52
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.108,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.108,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.123539,
+            "slippageTicksFromTouch": 15.54,
+            "slippageProbability": 0.015539,
+            "deepestLevelTicks": 33,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.891,
+        "levelCount": 40,
+        "totalContracts": 24921.15,
+        "contractsWithinTicks": {
+          "1": 449.58,
+          "2": 500.24,
+          "5": 604.18,
+          "10": 3388.91
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.891,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.894395,
+            "slippageTicksFromTouch": 3.4,
+            "slippageProbability": 0.003395,
+            "deepestLevelTicks": 7,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.929182,
+            "slippageTicksFromTouch": 38.18,
+            "slippageProbability": 0.038182,
+            "deepestLevelTicks": 71,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXBTCY-27JAN0100-B72500": {
+      "ticker": "KXBTCY-27JAN0100-B72500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:40.007Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B72500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.137,
+        "levelCount": 40,
+        "totalContracts": 24302.33,
+        "contractsWithinTicks": {
+          "1": 563.47,
+          "2": 570.47,
+          "5": 884.55,
+          "10": 2072.86
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.137,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.139387,
+            "slippageTicksFromTouch": 2.39,
+            "slippageProbability": 0.002387,
+            "deepestLevelTicks": 7,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.157356,
+            "slippageTicksFromTouch": 20.36,
+            "slippageProbability": 0.020356,
+            "deepestLevelTicks": 38,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.862,
+        "levelCount": 40,
+        "totalContracts": 24733.97,
+        "contractsWithinTicks": {
+          "1": 134.07,
+          "2": 1185.63,
+          "5": 3162.26,
+          "10": 3568.96
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.862,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.86376,
+            "slippageTicksFromTouch": 1.76,
+            "slippageProbability": 0.00176,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.875974,
+            "slippageTicksFromTouch": 13.97,
+            "slippageProbability": 0.013974,
+            "deepestLevelTicks": 22,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXBTCY-27JAN0100-B77500": {
+      "ticker": "KXBTCY-27JAN0100-B77500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:41.535Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B77500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.148,
+        "levelCount": 40,
+        "totalContracts": 23359.51,
+        "contractsWithinTicks": {
+          "1": 336.79,
+          "2": 889.49,
+          "5": 1233.29,
+          "10": 5789.77
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.148,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.149463,
+            "slippageTicksFromTouch": 1.46,
+            "slippageProbability": 0.001463,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.160984,
+            "slippageTicksFromTouch": 12.98,
+            "slippageProbability": 0.012984,
+            "deepestLevelTicks": 30,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.851,
+        "levelCount": 40,
+        "totalContracts": 21459.14,
+        "contractsWithinTicks": {
+          "1": 1075.59,
+          "2": 1755.65,
+          "5": 2125.88,
+          "10": 2437.26
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.851,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.851302,
+            "slippageTicksFromTouch": 0.3,
+            "slippageProbability": 0.000302,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.875942,
+            "slippageTicksFromTouch": 24.94,
+            "slippageProbability": 0.024942,
+            "deepestLevelTicks": 48,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXBTCY-27JAN0100-B82500": {
+      "ticker": "KXBTCY-27JAN0100-B82500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:43.058Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B82500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.122,
+        "levelCount": 40,
+        "totalContracts": 29948.13,
+        "contractsWithinTicks": {
+          "1": 2108,
+          "2": 3147.96,
+          "5": 3910.41,
+          "10": 6772.41
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.122,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.122,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.129211,
+            "slippageTicksFromTouch": 7.21,
+            "slippageProbability": 0.007211,
+            "deepestLevelTicks": 19,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.877,
+        "levelCount": 40,
+        "totalContracts": 26747.2,
+        "contractsWithinTicks": {
+          "1": 1302.64,
+          "2": 2328.25,
+          "5": 3998.95,
+          "10": 4483.97
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.877,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.87774,
+            "slippageTicksFromTouch": 0.74,
+            "slippageProbability": 0.00074,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.899469,
+            "slippageTicksFromTouch": 22.47,
+            "slippageProbability": 0.022469,
+            "deepestLevelTicks": 57,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXBTCY-27JAN0100-B87500": {
+      "ticker": "KXBTCY-27JAN0100-B87500",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:44.575Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B87500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.09,
+        "levelCount": 40,
+        "totalContracts": 31240.55,
+        "contractsWithinTicks": {
+          "1": 150.59,
+          "2": 154.04,
+          "5": 429.48,
+          "10": 1883.4
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.09,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.095753,
+            "slippageTicksFromTouch": 5.75,
+            "slippageProbability": 0.005753,
+            "deepestLevelTicks": 10,
+            "exhaustedLadder": true
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.111168,
+            "slippageTicksFromTouch": 21.17,
+            "slippageProbability": 0.021168,
+            "deepestLevelTicks": 38,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.909,
+        "levelCount": 40,
+        "totalContracts": 42257.59,
+        "contractsWithinTicks": {
+          "1": 35.72,
+          "2": 521.05,
+          "5": 918.58,
+          "10": 926.15
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.910305,
+            "slippageTicksFromTouch": 1.3,
+            "slippageProbability": 0.001305,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.912127,
+            "slippageTicksFromTouch": 3.13,
+            "slippageProbability": 0.003127,
+            "deepestLevelTicks": 11,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.93439,
+            "slippageTicksFromTouch": 25.39,
+            "slippageProbability": 0.02539,
+            "deepestLevelTicks": 44,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXBTCY-27JAN0100-T149999.99": {
+      "ticker": "KXBTCY-27JAN0100-T149999.99",
+      "series_ticker": "KXBTCY",
+      "tick": 0.001,
+      "capturedAt": "2026-09-17T23:51:46.096Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-T149999.99/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.015,
+        "levelCount": 14,
+        "totalContracts": 963797.16,
+        "contractsWithinTicks": {
+          "1": 134.55,
+          "2": 2063.73,
+          "5": 22724.66,
+          "10": 33151.51
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.015857,
+            "slippageTicksFromTouch": 0.86,
+            "slippageProbability": 0.000857,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.016851,
+            "slippageTicksFromTouch": 1.85,
+            "slippageProbability": 0.001851,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.019347,
+            "slippageTicksFromTouch": 4.35,
+            "slippageProbability": 0.004347,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.984,
+        "levelCount": 40,
+        "totalContracts": 272607.47,
+        "contractsWithinTicks": {
+          "1": 2718.53,
+          "2": 3111.18,
+          "5": 3141.18,
+          "10": 3141.18
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.984,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.984,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 1.027255,
+            "slippageTicksFromTouch": 43.25,
+            "slippageProbability": 0.043255,
+            "deepestLevelTicks": 184,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXINXY-26DEC31H1600-B6900": {
+      "ticker": "KXINXY-26DEC31H1600-B6900",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:47.628Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.03,
+        "levelCount": 3,
+        "totalContracts": 3203.61,
+        "contractsWithinTicks": {
+          "1": 3099.61,
+          "2": 3203.61,
+          "5": 3203.61,
+          "10": 3203.61
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.039588,
+            "slippageTicksFromTouch": 0.96,
+            "slippageProbability": 0.009588,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.039959,
+            "slippageTicksFromTouch": 1,
+            "slippageProbability": 0.009959,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 3203.61,
+            "unfilled": 6796.39,
+            "vwap": 0.040312,
+            "slippageTicksFromTouch": 1.03,
+            "slippageProbability": 0.010312,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.96,
+        "levelCount": 19,
+        "totalContracts": 209936.91,
+        "contractsWithinTicks": {
+          "1": 15757.33,
+          "2": 21003.33,
+          "5": 27553.33,
+          "10": 28753.33
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.96,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.96,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.96302,
+            "slippageTicksFromTouch": 0.3,
+            "slippageProbability": 0.00302,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXINXY-26DEC31H1600-B7100": {
+      "ticker": "KXINXY-26DEC31H1600-B7100",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:49.157Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7100/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.04,
+        "levelCount": 4,
+        "totalContracts": 5040.22,
+        "contractsWithinTicks": {
+          "1": 398.79,
+          "2": 4437.22,
+          "5": 5040.22,
+          "10": 5040.22
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.049884,
+            "slippageTicksFromTouch": 0.99,
+            "slippageProbability": 0.009884,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.056001,
+            "slippageTicksFromTouch": 1.6,
+            "slippageProbability": 0.016001,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 5040.22,
+            "unfilled": 4959.78,
+            "vwap": 0.060403,
+            "slippageTicksFromTouch": 2.04,
+            "slippageProbability": 0.020403,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.95,
+        "levelCount": 21,
+        "totalContracts": 186408.18,
+        "contractsWithinTicks": {
+          "1": 6322.91,
+          "2": 13472.91,
+          "5": 15022.91,
+          "10": 16267.41
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.961927,
+            "slippageTicksFromTouch": 1.19,
+            "slippageProbability": 0.011927,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXINXY-26DEC31H1600-B7300": {
+      "ticker": "KXINXY-26DEC31H1600-B7300",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:50.682Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7300/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.06,
+        "levelCount": 6,
+        "totalContracts": 13147.39,
+        "contractsWithinTicks": {
+          "1": 1946.69,
+          "2": 2602.19,
+          "5": 13147.39,
+          "10": 13147.39
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.06,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.065125,
+            "slippageTicksFromTouch": 0.51,
+            "slippageProbability": 0.005125,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.090607,
+            "slippageTicksFromTouch": 3.06,
+            "slippageProbability": 0.030607,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.93,
+        "levelCount": 22,
+        "totalContracts": 188956.55,
+        "contractsWithinTicks": {
+          "1": 5769.05,
+          "2": 12929.05,
+          "5": 17561.41,
+          "10": 18896.91
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.93,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.93,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.942462,
+            "slippageTicksFromTouch": 1.25,
+            "slippageProbability": 0.012462,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXINXY-26DEC31H1600-B7500": {
+      "ticker": "KXINXY-26DEC31H1600-B7500",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:52.204Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7500/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.11,
+        "levelCount": 11,
+        "totalContracts": 12157.57,
+        "contractsWithinTicks": {
+          "1": 2845.37,
+          "2": 4434.37,
+          "5": 7093.57,
+          "10": 12157.57
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.11,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.112322,
+            "slippageTicksFromTouch": 0.23,
+            "slippageProbability": 0.002322,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.147986,
+            "slippageTicksFromTouch": 3.8,
+            "slippageProbability": 0.037986,
+            "deepestLevelTicks": 9,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.88,
+        "levelCount": 22,
+        "totalContracts": 180071.42,
+        "contractsWithinTicks": {
+          "1": 255.68,
+          "2": 5185.68,
+          "5": 9510.68,
+          "10": 11320.68
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.889788,
+            "slippageTicksFromTouch": 0.98,
+            "slippageProbability": 0.009788,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.897422,
+            "slippageTicksFromTouch": 1.74,
+            "slippageProbability": 0.017422,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.907003,
+            "slippageTicksFromTouch": 2.7,
+            "slippageProbability": 0.027003,
+            "deepestLevelTicks": 8,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXINXY-26DEC31H1600-B7700": {
+      "ticker": "KXINXY-26DEC31H1600-B7700",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:53.733Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7700/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.15,
+        "levelCount": 15,
+        "totalContracts": 21395.63,
+        "contractsWithinTicks": {
+          "1": 1625.9,
+          "2": 2153.9,
+          "5": 4406.65,
+          "10": 17128.97
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.15,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.151036,
+            "slippageTicksFromTouch": 0.1,
+            "slippageProbability": 0.001036,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.203378,
+            "slippageTicksFromTouch": 5.34,
+            "slippageProbability": 0.053378,
+            "deepestLevelTicks": 9,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.84,
+        "levelCount": 32,
+        "totalContracts": 192630.22,
+        "contractsWithinTicks": {
+          "1": 9475.09,
+          "2": 15980.09,
+          "5": 19029.6,
+          "10": 19531.13
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.84,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.84,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.846816,
+            "slippageTicksFromTouch": 0.68,
+            "slippageProbability": 0.006816,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXINXY-26DEC31H1600-B7900": {
+      "ticker": "KXINXY-26DEC31H1600-B7900",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:55.255Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7900/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.16,
+        "levelCount": 16,
+        "totalContracts": 12049.41,
+        "contractsWithinTicks": {
+          "1": 2402.03,
+          "2": 3461.96,
+          "5": 7286.94,
+          "10": 8246.42
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.16,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.16,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.20718,
+            "slippageTicksFromTouch": 4.72,
+            "slippageProbability": 0.04718,
+            "deepestLevelTicks": 14,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.82,
+        "levelCount": 40,
+        "totalContracts": 48929.78,
+        "contractsWithinTicks": {
+          "1": 8804.99,
+          "2": 15043.29,
+          "5": 19797.1,
+          "10": 19843.2
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.82,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.82,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.827702,
+            "slippageTicksFromTouch": 0.77,
+            "slippageProbability": 0.007702,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXINXY-26DEC31H1600-B8100": {
+      "ticker": "KXINXY-26DEC31H1600-B8100",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:56.778Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8100/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.16,
+        "levelCount": 16,
+        "totalContracts": 20907.05,
+        "contractsWithinTicks": {
+          "1": 5660.6,
+          "2": 6218.08,
+          "5": 10630.56,
+          "10": 14881.05
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.16,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.16,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.179762,
+            "slippageTicksFromTouch": 1.98,
+            "slippageProbability": 0.019762,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.83,
+        "levelCount": 40,
+        "totalContracts": 42228.03,
+        "contractsWithinTicks": {
+          "1": 2388.51,
+          "2": 5085.23,
+          "5": 12694.72,
+          "10": 13880.07
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.83,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.836246,
+            "slippageTicksFromTouch": 0.62,
+            "slippageProbability": 0.006246,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.852378,
+            "slippageTicksFromTouch": 2.24,
+            "slippageProbability": 0.022378,
+            "deepestLevelTicks": 4,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXINXY-26DEC31H1600-B8300": {
+      "ticker": "KXINXY-26DEC31H1600-B8300",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:58.304Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8300/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.08,
+        "levelCount": 8,
+        "totalContracts": 13896.93,
+        "contractsWithinTicks": {
+          "1": 5541.49,
+          "2": 6391.49,
+          "5": 9230.21,
+          "10": 13896.93
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.08,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.088929,
+            "slippageTicksFromTouch": 0.89,
+            "slippageProbability": 0.008929,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.102902,
+            "slippageTicksFromTouch": 2.29,
+            "slippageProbability": 0.022902,
+            "deepestLevelTicks": 6,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.91,
+        "levelCount": 25,
+        "totalContracts": 212996.44,
+        "contractsWithinTicks": {
+          "1": 11279.21,
+          "2": 18570.87,
+          "5": 33528.31,
+          "10": 43394.76
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.91,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.91,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.91496,
+            "slippageTicksFromTouch": 0.5,
+            "slippageProbability": 0.00496,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXINXY-26DEC31H1600-B8900": {
+      "ticker": "KXINXY-26DEC31H1600-B8900",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:51:59.831Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8900/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.01,
+        "levelCount": 1,
+        "totalContracts": 2788,
+        "contractsWithinTicks": {
+          "1": 2788,
+          "2": 2788,
+          "5": 2788,
+          "10": 2788
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 2788,
+            "unfilled": 7212,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.98,
+        "levelCount": 14,
+        "totalContracts": 231027.29,
+        "contractsWithinTicks": {
+          "1": 32865.06,
+          "2": 47633.78,
+          "5": 59987.78,
+          "10": 61574.78
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXINXY-26DEC31H1600-T4000": {
+      "ticker": "KXINXY-26DEC31H1600-T4000",
+      "series_ticker": "KXINXY",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:01.351Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-T4000/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": null,
+        "levelCount": 0,
+        "totalContracts": 0,
+        "contractsWithinTicks": {
+          "1": 0,
+          "2": 0,
+          "5": 0,
+          "10": 0
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 0,
+            "unfilled": 100,
+            "exhaustedLadder": true,
+            "note": "no levels on this side in the captured response"
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 0,
+            "unfilled": 1000,
+            "exhaustedLadder": true,
+            "note": "no levels on this side in the captured response"
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 0,
+            "unfilled": 10000,
+            "exhaustedLadder": true,
+            "note": "no levels on this side in the captured response"
+          }
+        },
+        "emptySide": true
+      },
+      "no": {
+        "touch": 0.99,
+        "levelCount": 15,
+        "totalContracts": 204516.02,
+        "contractsWithinTicks": {
+          "1": 50046.05,
+          "2": 50313.05,
+          "5": 55119.65,
+          "10": 56507.65
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.99,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.99,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.99,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXNASDAQ100Y-26DEC31H1600-B25750": {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B25750",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:02.874Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B25750/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.01,
+        "levelCount": 1,
+        "totalContracts": 2951.5,
+        "contractsWithinTicks": {
+          "1": 2951.5,
+          "2": 2951.5,
+          "5": 2951.5,
+          "10": 2951.5
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 2951.5,
+            "unfilled": 7048.5,
+            "vwap": 0.01,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.98,
+        "levelCount": 12,
+        "totalContracts": 208470.12,
+        "contractsWithinTicks": {
+          "1": 20548.01,
+          "2": 25112.95,
+          "5": 38274.7,
+          "10": 39885.12
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.98,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXNASDAQ100Y-26DEC31H1600-B29750": {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B29750",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:04.396Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B29750/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.05,
+        "levelCount": 5,
+        "totalContracts": 20018,
+        "contractsWithinTicks": {
+          "1": 1140.81,
+          "2": 12984.58,
+          "5": 20018,
+          "10": 20018
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.053407,
+            "slippageTicksFromTouch": 0.34,
+            "slippageProbability": 0.003407,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.059341,
+            "slippageTicksFromTouch": 0.93,
+            "slippageProbability": 0.009341,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.068793,
+            "slippageTicksFromTouch": 1.88,
+            "slippageProbability": 0.018793,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.93,
+        "levelCount": 11,
+        "totalContracts": 181201.64,
+        "contractsWithinTicks": {
+          "1": 11064.66,
+          "2": 11064.66,
+          "5": 11064.66,
+          "10": 11064.66
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.93,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.93,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.938351,
+            "slippageTicksFromTouch": 0.84,
+            "slippageProbability": 0.008351,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXNASDAQ100Y-26DEC31H1600-B30250": {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B30250",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:05.918Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30250/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.06,
+        "levelCount": 6,
+        "totalContracts": 5145.72,
+        "contractsWithinTicks": {
+          "1": 1390.71,
+          "2": 1706.94,
+          "5": 5145.72,
+          "10": 5145.72
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.062843,
+            "slippageTicksFromTouch": 0.28,
+            "slippageProbability": 0.002843,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.069284,
+            "slippageTicksFromTouch": 0.93,
+            "slippageProbability": 0.009284,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 5145.72,
+            "unfilled": 4854.28,
+            "vwap": 0.090951,
+            "slippageTicksFromTouch": 3.1,
+            "slippageProbability": 0.030951,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.92,
+        "levelCount": 17,
+        "totalContracts": 179699.32,
+        "contractsWithinTicks": {
+          "1": 5761.24,
+          "2": 10109.24,
+          "5": 10458.62,
+          "10": 10458.62
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.92,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.920679,
+            "slippageTicksFromTouch": 0.07,
+            "slippageProbability": 0.000679,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.933307,
+            "slippageTicksFromTouch": 1.33,
+            "slippageProbability": 0.013307,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXNASDAQ100Y-26DEC31H1600-B30750": {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B30750",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:07.447Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30750/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.07,
+        "levelCount": 7,
+        "totalContracts": 18472.02,
+        "contractsWithinTicks": {
+          "1": 960.31,
+          "2": 1437.31,
+          "5": 14880.56,
+          "10": 18472.02
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.07,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.077101,
+            "slippageTicksFromTouch": 0.71,
+            "slippageProbability": 0.007101,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.105424,
+            "slippageTicksFromTouch": 3.54,
+            "slippageProbability": 0.035424,
+            "deepestLevelTicks": 4,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.92,
+        "levelCount": 19,
+        "totalContracts": 189847.29,
+        "contractsWithinTicks": {
+          "1": 5297.36,
+          "2": 9703.46,
+          "5": 21703.46,
+          "10": 21703.46
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.92,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.92,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.933977,
+            "slippageTicksFromTouch": 1.4,
+            "slippageProbability": 0.013977,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXNASDAQ100Y-26DEC31H1600-B31250": {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B31250",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:08.969Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31250/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.04,
+        "levelCount": 4,
+        "totalContracts": 6413.18,
+        "contractsWithinTicks": {
+          "1": 2059.12,
+          "2": 5829.2,
+          "5": 6413.18,
+          "10": 6413.18
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.04,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.041032,
+            "slippageTicksFromTouch": 0.1,
+            "slippageProbability": 0.001032,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 6413.18,
+            "unfilled": 3586.82,
+            "vwap": 0.056302,
+            "slippageTicksFromTouch": 1.63,
+            "slippageProbability": 0.016302,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.94,
+        "levelCount": 16,
+        "totalContracts": 184622.06,
+        "contractsWithinTicks": {
+          "1": 6723.04,
+          "2": 10153.09,
+          "5": 14814.13,
+          "10": 15814.13
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.94,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.94,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.949574,
+            "slippageTicksFromTouch": 0.96,
+            "slippageProbability": 0.009574,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXNASDAQ100Y-26DEC31H1600-B31750": {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B31750",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:10.493Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31750/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.04,
+        "levelCount": 4,
+        "totalContracts": 12472.26,
+        "contractsWithinTicks": {
+          "1": 5964.43,
+          "2": 10496.42,
+          "5": 12472.26,
+          "10": 12472.26
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.04,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.04,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.049577,
+            "slippageTicksFromTouch": 0.96,
+            "slippageProbability": 0.009577,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          }
+        }
+      },
+      "no": {
+        "touch": 0.95,
+        "levelCount": 17,
+        "totalContracts": 179264.32,
+        "contractsWithinTicks": {
+          "1": 5663.45,
+          "2": 6735.18,
+          "5": 10173.18,
+          "10": 10173.18
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.965603,
+            "slippageTicksFromTouch": 1.56,
+            "slippageProbability": 0.015603,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXNASDAQ100Y-26DEC31H1600-B32250": {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B32250",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:12.021Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32250/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.04,
+        "levelCount": 4,
+        "totalContracts": 6298.43,
+        "contractsWithinTicks": {
+          "1": 2042.23,
+          "2": 5795.43,
+          "5": 6298.43,
+          "10": 6298.43
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.04,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.044628,
+            "slippageTicksFromTouch": 0.46,
+            "slippageProbability": 0.004628,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 6298.43,
+            "unfilled": 3701.57,
+            "vwap": 0.056703,
+            "slippageTicksFromTouch": 1.67,
+            "slippageProbability": 0.016703,
+            "deepestLevelTicks": 3,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.95,
+        "levelCount": 15,
+        "totalContracts": 185831.06,
+        "contractsWithinTicks": {
+          "1": 12635.69,
+          "2": 14667.69,
+          "5": 16714.15,
+          "10": 16714.15
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.95,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXNASDAQ100Y-26DEC31H1600-B32750": {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B32750",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:13.541Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32750/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.03,
+        "levelCount": 3,
+        "totalContracts": 1762.45,
+        "contractsWithinTicks": {
+          "1": 1655.53,
+          "2": 1762.45,
+          "5": 1762.45,
+          "10": 1762.45
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.035179,
+            "slippageTicksFromTouch": 0.52,
+            "slippageProbability": 0.005179,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.039518,
+            "slippageTicksFromTouch": 0.95,
+            "slippageProbability": 0.009518,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 1762.45,
+            "unfilled": 8237.55,
+            "vwap": 0.040333,
+            "slippageTicksFromTouch": 1.03,
+            "slippageProbability": 0.010333,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.96,
+        "levelCount": 18,
+        "totalContracts": 179011.08,
+        "contractsWithinTicks": {
+          "1": 5422.4,
+          "2": 6735.12,
+          "5": 8248.25,
+          "10": 9835.25
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.96,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.96,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 0.981113,
+            "slippageTicksFromTouch": 2.11,
+            "slippageProbability": 0.021113,
+            "deepestLevelTicks": 16,
+            "exhaustedLadder": true
+          }
+        }
+      }
+    },
+    "KXNASDAQ100Y-26DEC31H1600-T19000": {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:15.067Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T19000/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.03,
+        "levelCount": 3,
+        "totalContracts": 3393.53,
+        "contractsWithinTicks": {
+          "1": 552.53,
+          "2": 3393.53,
+          "5": 3393.53,
+          "10": 3393.53
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.031558,
+            "slippageTicksFromTouch": 0.16,
+            "slippageProbability": 0.001558,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.04363,
+            "slippageTicksFromTouch": 1.36,
+            "slippageProbability": 0.01363,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 3393.53,
+            "unfilled": 6606.47,
+            "vwap": 0.048123,
+            "slippageTicksFromTouch": 1.81,
+            "slippageProbability": 0.018123,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.94,
+        "levelCount": 32,
+        "totalContracts": 338902,
+        "contractsWithinTicks": {
+          "1": 631,
+          "2": 757,
+          "5": 1057,
+          "10": 30500.04
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.94,
+            "slippageTicksFromTouch": 0,
+            "slippageProbability": 0,
+            "deepestLevelTicks": 0,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.95498,
+            "slippageTicksFromTouch": 1.5,
+            "slippageProbability": 0.01498,
+            "deepestLevelTicks": 5,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 10000,
+            "unfilled": 0,
+            "vwap": 1.012971,
+            "slippageTicksFromTouch": 7.3,
+            "slippageProbability": 0.072971,
+            "deepestLevelTicks": 8,
+            "exhaustedLadder": false
+          }
+        }
+      }
+    },
+    "KXNASDAQ100Y-26DEC31H1600-T33000": {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
+      "series_ticker": "KXNASDAQ100Y",
+      "tick": 0.01,
+      "capturedAt": "2026-09-17T23:52:16.600Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000/orderbook",
+      "origin": "data/history store",
+      "yes": {
+        "touch": 0.11,
+        "levelCount": 11,
+        "totalContracts": 924.7,
+        "contractsWithinTicks": {
+          "1": 72,
+          "2": 177.64,
+          "5": 338.09,
+          "10": 924.7
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.1193,
+            "slippageTicksFromTouch": 0.93,
+            "slippageProbability": 0.0093,
+            "deepestLevelTicks": 2,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 924.7,
+            "unfilled": 75.3,
+            "vwap": 0.178646,
+            "slippageTicksFromTouch": 6.86,
+            "slippageProbability": 0.068646,
+            "deepestLevelTicks": 10,
+            "exhaustedLadder": true
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 924.7,
+            "unfilled": 9075.3,
+            "vwap": 0.178646,
+            "slippageTicksFromTouch": 6.86,
+            "slippageProbability": 0.068646,
+            "deepestLevelTicks": 10,
+            "exhaustedLadder": true
+          }
+        }
+      },
+      "no": {
+        "touch": 0.87,
+        "levelCount": 36,
+        "totalContracts": 8369.92,
+        "contractsWithinTicks": {
+          "1": 5090.2,
+          "2": 5300.2,
+          "5": 5576.69,
+          "10": 5653.99
+        },
+        "impact": {
+          "100": {
+            "requested": 100,
+            "filled": 100,
+            "unfilled": 0,
+            "vwap": 0.870112,
+            "slippageTicksFromTouch": 0.01,
+            "slippageProbability": 0.000112,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "1000": {
+            "requested": 1000,
+            "filled": 1000,
+            "unfilled": 0,
+            "vwap": 0.879011,
+            "slippageTicksFromTouch": 0.9,
+            "slippageProbability": 0.009011,
+            "deepestLevelTicks": 1,
+            "exhaustedLadder": false
+          },
+          "10000": {
+            "requested": 10000,
+            "filled": 8369.92,
+            "unfilled": 1630.08,
+            "vwap": 1.077313,
+            "slippageTicksFromTouch": 20.73,
+            "slippageProbability": 0.207313,
+            "deepestLevelTicks": 86,
+            "exhaustedLadder": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2086 @@
+{
+  "generatedAt": "2026-09-18T00:54:02.571Z",
+  "method": "For each stored market, every pair of consecutive end_period_ts values is compared with the documented period length. A difference that is not an exact period is recorded here with both timestamps. Nothing is filled, interpolated or shifted.",
+  "evidence": {
+    "holiday": {
+      "claim": "A day on which the market had NO quotes at all produces NO candlestick.",
+      "verifiedBy": "Live re-fetch of the window 2025-12-26T00:00:00Z → 2025-12-27T23:00:00Z returned a single bar (end_period_ts 1766811600 = 2025-12-27T05:00:00Z); the ET day 2025-12-25 (Christmas) is absent from the API response itself, not from our store. URL is recorded in data/reports/store-verification.json.",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1766707200&end_ts=1766880000&period_interval=1440"
+    },
+    "dst": {
+      "claim": "Daily bar boundaries follow US Eastern time, so the UTC timestamp moves by one hour at each DST change.",
+      "observed": "2026-03-09T05:00:00Z → 2026-03-10T04:00:00Z (delta 82,800 s = 23 h), present in both KXNASDAQ100Y and KXBTCY series"
+    }
+  },
+  "totals": {
+    "markets": 30,
+    "gaps": 196,
+    "marketsWithWholeBarGaps": 19
+  },
+  "markets": [
+    {
+      "ticker": "KXBTCY-27JAN0100-B47500",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 5
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B52500",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 9
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B57500",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 7
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B62500",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 4
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B67500",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 5
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B72500",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B77500",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B82500",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B87500",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 4
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-T149999.99",
+      "bars": 204,
+      "first": "2026-02-26T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 5
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B6900",
+      "bars": 264,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 5,
+      "gapDetail": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1781668800,
+          "to": 1781841600,
+          "fromIso": "2026-06-17T04:00:00.000Z",
+          "toIso": "2026-06-19T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1781841600,
+          "to": 1782014400,
+          "fromIso": "2026-06-19T04:00:00.000Z",
+          "toIso": "2026-06-21T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1786248000,
+          "to": 1786420800,
+          "fromIso": "2026-08-09T04:00:00.000Z",
+          "toIso": "2026-08-11T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 37
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7100",
+      "bars": 265,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 4,
+      "gapDetail": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1784952000,
+          "to": 1785124800,
+          "fromIso": "2026-07-25T04:00:00.000Z",
+          "toIso": "2026-07-27T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1788062400,
+          "to": 1788235200,
+          "fromIso": "2026-08-30T04:00:00.000Z",
+          "toIso": "2026-09-01T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 23
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7300",
+      "bars": 268,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 11
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7500",
+      "bars": 267,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 2,
+      "gapDetail": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 7
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7700",
+      "bars": 267,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 2,
+      "gapDetail": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 10
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7900",
+      "bars": 267,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 2,
+      "gapDetail": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 17
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B8100",
+      "bars": 267,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 2,
+      "gapDetail": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 32
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B8300",
+      "bars": 262,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 5,
+      "gapDetail": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770786000,
+          "to": 1770958800,
+          "fromIso": "2026-02-11T05:00:00.000Z",
+          "toIso": "2026-02-13T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771045200,
+          "to": 1771390800,
+          "fromIso": "2026-02-14T05:00:00.000Z",
+          "toIso": "2026-02-18T05:00:00.000Z",
+          "deltaSeconds": 345600,
+          "missingBars": 3,
+          "classification": "WHOLE-BAR GAP: 3 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771736400,
+          "to": 1771909200,
+          "fromIso": "2026-02-22T05:00:00.000Z",
+          "toIso": "2026-02-24T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 57
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B8900",
+      "bars": 247,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 18,
+      "gapDetail": [
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770786000,
+          "to": 1770958800,
+          "fromIso": "2026-02-11T05:00:00.000Z",
+          "toIso": "2026-02-13T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771218000,
+          "to": 1771390800,
+          "fromIso": "2026-02-16T05:00:00.000Z",
+          "toIso": "2026-02-18T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1772168400,
+          "to": 1772427600,
+          "fromIso": "2026-02-27T05:00:00.000Z",
+          "toIso": "2026-03-02T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1775880000,
+          "to": 1776052800,
+          "fromIso": "2026-04-11T04:00:00.000Z",
+          "toIso": "2026-04-13T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1776744000,
+          "to": 1776916800,
+          "fromIso": "2026-04-21T04:00:00.000Z",
+          "toIso": "2026-04-23T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1780804800,
+          "to": 1780977600,
+          "fromIso": "2026-06-07T04:00:00.000Z",
+          "toIso": "2026-06-09T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1781841600,
+          "to": 1782014400,
+          "fromIso": "2026-06-19T04:00:00.000Z",
+          "toIso": "2026-06-21T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1782705600,
+          "to": 1782964800,
+          "fromIso": "2026-06-29T04:00:00.000Z",
+          "toIso": "2026-07-02T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1784001600,
+          "to": 1784174400,
+          "fromIso": "2026-07-14T04:00:00.000Z",
+          "toIso": "2026-07-16T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1784952000,
+          "to": 1785124800,
+          "fromIso": "2026-07-25T04:00:00.000Z",
+          "toIso": "2026-07-27T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1785470400,
+          "to": 1785816000,
+          "fromIso": "2026-07-31T04:00:00.000Z",
+          "toIso": "2026-08-04T04:00:00.000Z",
+          "deltaSeconds": 345600,
+          "missingBars": 3,
+          "classification": "WHOLE-BAR GAP: 3 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1786766400,
+          "to": 1786939200,
+          "fromIso": "2026-08-15T04:00:00.000Z",
+          "toIso": "2026-08-17T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1787544000,
+          "to": 1787716800,
+          "fromIso": "2026-08-24T04:00:00.000Z",
+          "toIso": "2026-08-26T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1788062400,
+          "to": 1788235200,
+          "fromIso": "2026-08-30T04:00:00.000Z",
+          "toIso": "2026-09-01T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1788321600,
+          "to": 1788494400,
+          "fromIso": "2026-09-02T04:00:00.000Z",
+          "toIso": "2026-09-04T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1788753600,
+          "to": 1788926400,
+          "fromIso": "2026-09-07T04:00:00.000Z",
+          "toIso": "2026-09-09T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 128
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-T4000",
+      "bars": 255,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-16T04:00:00.000Z",
+      "gaps": 10,
+      "gapDetail": [
+        {
+          "from": 1766811600,
+          "to": 1767070800,
+          "fromIso": "2025-12-27T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "fromIso": "2026-01-10T05:00:00.000Z",
+          "toIso": "2026-01-12T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770786000,
+          "to": 1770958800,
+          "fromIso": "2026-02-11T05:00:00.000Z",
+          "toIso": "2026-02-13T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770958800,
+          "to": 1771131600,
+          "fromIso": "2026-02-13T05:00:00.000Z",
+          "toIso": "2026-02-15T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1788321600,
+          "to": 1788494400,
+          "fromIso": "2026-09-02T04:00:00.000Z",
+          "toIso": "2026-09-04T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1788494400,
+          "to": 1788667200,
+          "fromIso": "2026-09-04T04:00:00.000Z",
+          "toIso": "2026-09-06T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1788753600,
+          "to": 1788926400,
+          "fromIso": "2026-09-07T04:00:00.000Z",
+          "toIso": "2026-09-09T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1789012800,
+          "to": 1789358400,
+          "fromIso": "2026-09-10T04:00:00.000Z",
+          "toIso": "2026-09-14T04:00:00.000Z",
+          "deltaSeconds": 345600,
+          "missingBars": 3,
+          "classification": "WHOLE-BAR GAP: 3 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1789358400,
+          "to": 1789531200,
+          "fromIso": "2026-09-14T04:00:00.000Z",
+          "toIso": "2026-09-16T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 79
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B25750",
+      "bars": 254,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 13,
+      "gapDetail": [
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "fromIso": "2026-01-10T05:00:00.000Z",
+          "toIso": "2026-01-12T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1776571200,
+          "to": 1776744000,
+          "fromIso": "2026-04-19T04:00:00.000Z",
+          "toIso": "2026-04-21T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1777694400,
+          "to": 1777867200,
+          "fromIso": "2026-05-02T04:00:00.000Z",
+          "toIso": "2026-05-04T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1778299200,
+          "to": 1778472000,
+          "fromIso": "2026-05-09T04:00:00.000Z",
+          "toIso": "2026-05-11T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1779595200,
+          "to": 1779854400,
+          "fromIso": "2026-05-24T04:00:00.000Z",
+          "toIso": "2026-05-27T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1780113600,
+          "to": 1780286400,
+          "fromIso": "2026-05-30T04:00:00.000Z",
+          "toIso": "2026-06-01T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1781841600,
+          "to": 1782014400,
+          "fromIso": "2026-06-19T04:00:00.000Z",
+          "toIso": "2026-06-21T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1782014400,
+          "to": 1782187200,
+          "fromIso": "2026-06-21T04:00:00.000Z",
+          "toIso": "2026-06-23T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1785470400,
+          "to": 1785643200,
+          "fromIso": "2026-07-31T04:00:00.000Z",
+          "toIso": "2026-08-02T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1786766400,
+          "to": 1787025600,
+          "fromIso": "2026-08-15T04:00:00.000Z",
+          "toIso": "2026-08-18T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1788580800,
+          "to": 1788753600,
+          "fromIso": "2026-09-05T04:00:00.000Z",
+          "toIso": "2026-09-07T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1788753600,
+          "to": 1788926400,
+          "fromIso": "2026-09-07T04:00:00.000Z",
+          "toIso": "2026-09-09T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 95
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B29750",
+      "bars": 248,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 20,
+      "gapDetail": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "fromIso": "2025-12-25T05:00:00.000Z",
+          "toIso": "2025-12-27T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "fromIso": "2026-01-10T05:00:00.000Z",
+          "toIso": "2026-01-12T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768626000,
+          "to": 1768798800,
+          "fromIso": "2026-01-17T05:00:00.000Z",
+          "toIso": "2026-01-19T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768798800,
+          "to": 1768971600,
+          "fromIso": "2026-01-19T05:00:00.000Z",
+          "toIso": "2026-01-21T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770440400,
+          "to": 1770613200,
+          "fromIso": "2026-02-07T05:00:00.000Z",
+          "toIso": "2026-02-09T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770699600,
+          "to": 1770872400,
+          "fromIso": "2026-02-10T05:00:00.000Z",
+          "toIso": "2026-02-12T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771045200,
+          "to": 1771218000,
+          "fromIso": "2026-02-14T05:00:00.000Z",
+          "toIso": "2026-02-16T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771218000,
+          "to": 1771390800,
+          "fromIso": "2026-02-16T05:00:00.000Z",
+          "toIso": "2026-02-18T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771736400,
+          "to": 1771909200,
+          "fromIso": "2026-02-22T05:00:00.000Z",
+          "toIso": "2026-02-24T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1775966400,
+          "to": 1776139200,
+          "fromIso": "2026-04-12T04:00:00.000Z",
+          "toIso": "2026-04-14T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1776571200,
+          "to": 1776744000,
+          "fromIso": "2026-04-19T04:00:00.000Z",
+          "toIso": "2026-04-21T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1777694400,
+          "to": 1777953600,
+          "fromIso": "2026-05-02T04:00:00.000Z",
+          "toIso": "2026-05-05T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1779508800,
+          "to": 1779681600,
+          "fromIso": "2026-05-23T04:00:00.000Z",
+          "toIso": "2026-05-25T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1779681600,
+          "to": 1779854400,
+          "fromIso": "2026-05-25T04:00:00.000Z",
+          "toIso": "2026-05-27T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1780113600,
+          "to": 1780286400,
+          "fromIso": "2026-05-30T04:00:00.000Z",
+          "toIso": "2026-06-01T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1785038400,
+          "to": 1785211200,
+          "fromIso": "2026-07-26T04:00:00.000Z",
+          "toIso": "2026-07-28T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1785556800,
+          "to": 1785729600,
+          "fromIso": "2026-08-01T04:00:00.000Z",
+          "toIso": "2026-08-03T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1786852800,
+          "to": 1787025600,
+          "fromIso": "2026-08-16T04:00:00.000Z",
+          "toIso": "2026-08-18T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1787457600,
+          "to": 1787630400,
+          "fromIso": "2026-08-23T04:00:00.000Z",
+          "toIso": "2026-08-25T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 139
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B30250",
+      "bars": 252,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 13,
+      "gapDetail": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "fromIso": "2025-12-25T05:00:00.000Z",
+          "toIso": "2025-12-27T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "fromIso": "2026-01-10T05:00:00.000Z",
+          "toIso": "2026-01-12T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768626000,
+          "to": 1768798800,
+          "fromIso": "2026-01-17T05:00:00.000Z",
+          "toIso": "2026-01-19T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768798800,
+          "to": 1768971600,
+          "fromIso": "2026-01-19T05:00:00.000Z",
+          "toIso": "2026-01-21T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770440400,
+          "to": 1770613200,
+          "fromIso": "2026-02-07T05:00:00.000Z",
+          "toIso": "2026-02-09T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770699600,
+          "to": 1770958800,
+          "fromIso": "2026-02-10T05:00:00.000Z",
+          "toIso": "2026-02-13T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771218000,
+          "to": 1771390800,
+          "fromIso": "2026-02-16T05:00:00.000Z",
+          "toIso": "2026-02-18T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1772946000,
+          "to": 1773115200,
+          "fromIso": "2026-03-08T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 169200,
+          "missingBars": 1,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1774065600,
+          "to": 1774324800,
+          "fromIso": "2026-03-21T04:00:00.000Z",
+          "toIso": "2026-03-24T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1777176000,
+          "to": 1777348800,
+          "fromIso": "2026-04-26T04:00:00.000Z",
+          "toIso": "2026-04-28T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1777780800,
+          "to": 1777953600,
+          "fromIso": "2026-05-03T04:00:00.000Z",
+          "toIso": "2026-05-05T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1779595200,
+          "to": 1779768000,
+          "fromIso": "2026-05-24T04:00:00.000Z",
+          "toIso": "2026-05-26T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1787371200,
+          "to": 1787630400,
+          "fromIso": "2026-08-22T04:00:00.000Z",
+          "toIso": "2026-08-25T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 127
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B30750",
+      "bars": 250,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 16,
+      "gapDetail": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "fromIso": "2025-12-25T05:00:00.000Z",
+          "toIso": "2025-12-27T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "fromIso": "2026-01-10T05:00:00.000Z",
+          "toIso": "2026-01-12T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768626000,
+          "to": 1768885200,
+          "fromIso": "2026-01-17T05:00:00.000Z",
+          "toIso": "2026-01-20T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770440400,
+          "to": 1770613200,
+          "fromIso": "2026-02-07T05:00:00.000Z",
+          "toIso": "2026-02-09T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770699600,
+          "to": 1770958800,
+          "fromIso": "2026-02-10T05:00:00.000Z",
+          "toIso": "2026-02-13T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771045200,
+          "to": 1771218000,
+          "fromIso": "2026-02-14T05:00:00.000Z",
+          "toIso": "2026-02-16T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771218000,
+          "to": 1771390800,
+          "fromIso": "2026-02-16T05:00:00.000Z",
+          "toIso": "2026-02-18T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771650000,
+          "to": 1771909200,
+          "fromIso": "2026-02-21T05:00:00.000Z",
+          "toIso": "2026-02-24T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1774756800,
+          "to": 1774929600,
+          "fromIso": "2026-03-29T04:00:00.000Z",
+          "toIso": "2026-03-31T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1775188800,
+          "to": 1775361600,
+          "fromIso": "2026-04-03T04:00:00.000Z",
+          "toIso": "2026-04-05T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1780200000,
+          "to": 1780372800,
+          "fromIso": "2026-05-31T04:00:00.000Z",
+          "toIso": "2026-06-02T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1781409600,
+          "to": 1781582400,
+          "fromIso": "2026-06-14T04:00:00.000Z",
+          "toIso": "2026-06-16T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1783828800,
+          "to": 1784001600,
+          "fromIso": "2026-07-12T04:00:00.000Z",
+          "toIso": "2026-07-14T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1787371200,
+          "to": 1787544000,
+          "fromIso": "2026-08-22T04:00:00.000Z",
+          "toIso": "2026-08-24T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 136
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B31250",
+      "bars": 246,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 20,
+      "gapDetail": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "fromIso": "2025-12-25T05:00:00.000Z",
+          "toIso": "2025-12-27T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "fromIso": "2026-01-10T05:00:00.000Z",
+          "toIso": "2026-01-12T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768626000,
+          "to": 1768798800,
+          "fromIso": "2026-01-17T05:00:00.000Z",
+          "toIso": "2026-01-19T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768798800,
+          "to": 1768971600,
+          "fromIso": "2026-01-19T05:00:00.000Z",
+          "toIso": "2026-01-21T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770440400,
+          "to": 1770613200,
+          "fromIso": "2026-02-07T05:00:00.000Z",
+          "toIso": "2026-02-09T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770699600,
+          "to": 1770958800,
+          "fromIso": "2026-02-10T05:00:00.000Z",
+          "toIso": "2026-02-13T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771045200,
+          "to": 1771218000,
+          "fromIso": "2026-02-14T05:00:00.000Z",
+          "toIso": "2026-02-16T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771218000,
+          "to": 1771390800,
+          "fromIso": "2026-02-16T05:00:00.000Z",
+          "toIso": "2026-02-18T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1772254800,
+          "to": 1772427600,
+          "fromIso": "2026-02-28T05:00:00.000Z",
+          "toIso": "2026-03-02T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1774756800,
+          "to": 1774929600,
+          "fromIso": "2026-03-29T04:00:00.000Z",
+          "toIso": "2026-03-31T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1775880000,
+          "to": 1776139200,
+          "fromIso": "2026-04-11T04:00:00.000Z",
+          "toIso": "2026-04-14T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1776484800,
+          "to": 1776744000,
+          "fromIso": "2026-04-18T04:00:00.000Z",
+          "toIso": "2026-04-21T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1777176000,
+          "to": 1777348800,
+          "fromIso": "2026-04-26T04:00:00.000Z",
+          "toIso": "2026-04-28T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1777780800,
+          "to": 1777953600,
+          "fromIso": "2026-05-03T04:00:00.000Z",
+          "toIso": "2026-05-05T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1779508800,
+          "to": 1779681600,
+          "fromIso": "2026-05-23T04:00:00.000Z",
+          "toIso": "2026-05-25T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1779681600,
+          "to": 1779854400,
+          "fromIso": "2026-05-25T04:00:00.000Z",
+          "toIso": "2026-05-27T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1784433600,
+          "to": 1784606400,
+          "fromIso": "2026-07-19T04:00:00.000Z",
+          "toIso": "2026-07-21T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1786852800,
+          "to": 1787025600,
+          "fromIso": "2026-08-16T04:00:00.000Z",
+          "toIso": "2026-08-18T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 134
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B31750",
+      "bars": 249,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 12,
+      "gapDetail": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "fromIso": "2025-12-25T05:00:00.000Z",
+          "toIso": "2025-12-27T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1766811600,
+          "to": 1767070800,
+          "fromIso": "2025-12-27T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "fromIso": "2026-01-10T05:00:00.000Z",
+          "toIso": "2026-01-12T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768626000,
+          "to": 1768971600,
+          "fromIso": "2026-01-17T05:00:00.000Z",
+          "toIso": "2026-01-21T05:00:00.000Z",
+          "deltaSeconds": 345600,
+          "missingBars": 3,
+          "classification": "WHOLE-BAR GAP: 3 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770440400,
+          "to": 1770699600,
+          "fromIso": "2026-02-07T05:00:00.000Z",
+          "toIso": "2026-02-10T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770699600,
+          "to": 1770958800,
+          "fromIso": "2026-02-10T05:00:00.000Z",
+          "toIso": "2026-02-13T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770958800,
+          "to": 1771218000,
+          "fromIso": "2026-02-13T05:00:00.000Z",
+          "toIso": "2026-02-16T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771304400,
+          "to": 1771650000,
+          "fromIso": "2026-02-17T05:00:00.000Z",
+          "toIso": "2026-02-21T05:00:00.000Z",
+          "deltaSeconds": 345600,
+          "missingBars": 3,
+          "classification": "WHOLE-BAR GAP: 3 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771650000,
+          "to": 1771822800,
+          "fromIso": "2026-02-21T05:00:00.000Z",
+          "toIso": "2026-02-23T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1777780800,
+          "to": 1777953600,
+          "fromIso": "2026-05-03T04:00:00.000Z",
+          "toIso": "2026-05-05T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1778385600,
+          "to": 1778558400,
+          "fromIso": "2026-05-10T04:00:00.000Z",
+          "toIso": "2026-05-12T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 121
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B32250",
+      "bars": 247,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 15,
+      "gapDetail": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "fromIso": "2025-12-25T05:00:00.000Z",
+          "toIso": "2025-12-27T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "fromIso": "2026-01-10T05:00:00.000Z",
+          "toIso": "2026-01-12T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768626000,
+          "to": 1768798800,
+          "fromIso": "2026-01-17T05:00:00.000Z",
+          "toIso": "2026-01-19T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768798800,
+          "to": 1768971600,
+          "fromIso": "2026-01-19T05:00:00.000Z",
+          "toIso": "2026-01-21T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770440400,
+          "to": 1770613200,
+          "fromIso": "2026-02-07T05:00:00.000Z",
+          "toIso": "2026-02-09T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771045200,
+          "to": 1771218000,
+          "fromIso": "2026-02-14T05:00:00.000Z",
+          "toIso": "2026-02-16T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771218000,
+          "to": 1771650000,
+          "fromIso": "2026-02-16T05:00:00.000Z",
+          "toIso": "2026-02-21T05:00:00.000Z",
+          "deltaSeconds": 432000,
+          "missingBars": 4,
+          "classification": "WHOLE-BAR GAP: 4 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771650000,
+          "to": 1772082000,
+          "fromIso": "2026-02-21T05:00:00.000Z",
+          "toIso": "2026-02-26T05:00:00.000Z",
+          "deltaSeconds": 432000,
+          "missingBars": 4,
+          "classification": "WHOLE-BAR GAP: 4 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1772082000,
+          "to": 1772254800,
+          "fromIso": "2026-02-26T05:00:00.000Z",
+          "toIso": "2026-02-28T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1772686800,
+          "to": 1772859600,
+          "fromIso": "2026-03-05T05:00:00.000Z",
+          "toIso": "2026-03-07T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1775880000,
+          "to": 1776139200,
+          "fromIso": "2026-04-11T04:00:00.000Z",
+          "toIso": "2026-04-14T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1776484800,
+          "to": 1776657600,
+          "fromIso": "2026-04-18T04:00:00.000Z",
+          "toIso": "2026-04-20T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1777176000,
+          "to": 1777348800,
+          "fromIso": "2026-04-26T04:00:00.000Z",
+          "toIso": "2026-04-28T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 101
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-B32750",
+      "bars": 247,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 18,
+      "gapDetail": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "fromIso": "2025-12-25T05:00:00.000Z",
+          "toIso": "2025-12-27T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768021200,
+          "to": 1768194000,
+          "fromIso": "2026-01-10T05:00:00.000Z",
+          "toIso": "2026-01-12T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768626000,
+          "to": 1768798800,
+          "fromIso": "2026-01-17T05:00:00.000Z",
+          "toIso": "2026-01-19T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770786000,
+          "to": 1770958800,
+          "fromIso": "2026-02-11T05:00:00.000Z",
+          "toIso": "2026-02-13T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1770958800,
+          "to": 1771131600,
+          "fromIso": "2026-02-13T05:00:00.000Z",
+          "toIso": "2026-02-15T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771218000,
+          "to": 1771390800,
+          "fromIso": "2026-02-16T05:00:00.000Z",
+          "toIso": "2026-02-18T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771390800,
+          "to": 1771650000,
+          "fromIso": "2026-02-18T05:00:00.000Z",
+          "toIso": "2026-02-21T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1771650000,
+          "to": 1772082000,
+          "fromIso": "2026-02-21T05:00:00.000Z",
+          "toIso": "2026-02-26T05:00:00.000Z",
+          "deltaSeconds": 432000,
+          "missingBars": 4,
+          "classification": "WHOLE-BAR GAP: 4 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1772082000,
+          "to": 1772254800,
+          "fromIso": "2026-02-26T05:00:00.000Z",
+          "toIso": "2026-02-28T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1772254800,
+          "to": 1772427600,
+          "fromIso": "2026-02-28T05:00:00.000Z",
+          "toIso": "2026-03-02T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        },
+        {
+          "from": 1776571200,
+          "to": 1776744000,
+          "fromIso": "2026-04-19T04:00:00.000Z",
+          "toIso": "2026-04-21T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1776744000,
+          "to": 1776916800,
+          "fromIso": "2026-04-21T04:00:00.000Z",
+          "toIso": "2026-04-23T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1777176000,
+          "to": 1777348800,
+          "fromIso": "2026-04-26T04:00:00.000Z",
+          "toIso": "2026-04-28T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1778990400,
+          "to": 1779163200,
+          "fromIso": "2026-05-17T04:00:00.000Z",
+          "toIso": "2026-05-19T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1783828800,
+          "to": 1784001600,
+          "fromIso": "2026-07-12T04:00:00.000Z",
+          "toIso": "2026-07-14T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1786248000,
+          "to": 1786420800,
+          "fromIso": "2026-08-09T04:00:00.000Z",
+          "toIso": "2026-08-11T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 85
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
+      "bars": 264,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 4,
+      "gapDetail": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "fromIso": "2025-12-25T05:00:00.000Z",
+          "toIso": "2025-12-27T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1766811600,
+          "to": 1767070800,
+          "fromIso": "2025-12-27T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1767243600,
+          "to": 1767416400,
+          "fromIso": "2026-01-01T05:00:00.000Z",
+          "toIso": "2026-01-03T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 13
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
+      "bars": 263,
+      "first": "2025-12-24T05:00:00.000Z",
+      "last": "2026-09-17T04:00:00.000Z",
+      "gaps": 4,
+      "gapDetail": [
+        {
+          "from": 1766638800,
+          "to": 1766811600,
+          "fromIso": "2025-12-25T05:00:00.000Z",
+          "toIso": "2025-12-27T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1766898000,
+          "to": 1767070800,
+          "fromIso": "2025-12-28T05:00:00.000Z",
+          "toIso": "2025-12-30T05:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1768626000,
+          "to": 1768971600,
+          "fromIso": "2026-01-17T05:00:00.000Z",
+          "toIso": "2026-01-21T05:00:00.000Z",
+          "deltaSeconds": 345600,
+          "missingBars": 3,
+          "classification": "WHOLE-BAR GAP: 3 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1773032400,
+          "to": 1773115200,
+          "fromIso": "2026-03-09T05:00:00.000Z",
+          "toIso": "2026-03-10T04:00:00.000Z",
+          "deltaSeconds": 82800,
+          "missingBars": 0,
+          "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
+        }
+      ],
+      "noTradeBars": 31
+    }
+  ]
+}

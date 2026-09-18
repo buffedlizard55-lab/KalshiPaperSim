@@ -141,6 +141,11 @@ export function bookFromCandle(market, candle, opts = {}) {
     exhaustionPolicy: opts.exhaustionPolicy || 'partial',
     spread: yesBid !== null && yesAsk !== null ? Math.max(tick, round6(yesAsk - yesBid)) : 2 * tick,
     depthScale: opts.depthScale ?? 1,
+    // CAPTURED DEPTH (recommended-work item #5): when a real ladder was captured
+    // for this market the book trades against that real shape instead of the
+    // modelled one, and says so in depthModel/depthModelNote.
+    depthProfile: opts.depthProfile || null,
+    depthProfileScale: opts.depthProfileScale ?? 1,
     seed: opts.seed ?? seedFromString(`${market.ticker}:${candle.endTs}`),
     source: opts.source || market.source || 'replay'
   });
@@ -218,6 +223,47 @@ export class ReplayEngine {
     this.maxFillFractionOfPeriodVolume =
       options.maxFillFractionOfPeriodVolume !== undefined ? options.maxFillFractionOfPeriodVolume : 0.1;
 
+    /**
+     * DEPTH SOURCE (recommended-work item #5).
+     *
+     *   'modelled' (default) — the ladder behind each bar's real quoted touch is
+     *      synthetic, shaped to the calibration in simulation-engine.js, and
+     *      labelled SIMULATED wherever a fill from it is reported.
+     *   'captured' — the ladder is a REAL captured order book (GET
+     *      /markets/{ticker}/orderbook, stored by the ingest job) re-anchored to
+     *      each period's real quote; markets without a capture fall back to
+     *      'modelled' individually and are reported as such.
+     *
+     * `depthProfiles` is a { ticker: profile } map (see src/depth-profile.js).
+     */
+    /**
+     * FORWARD TESTING (walk-forward).
+     *
+     * A number (unix seconds) means: the strategy sees every bar (so its
+     * indicators are warm and its history is real) but NO ORDER may be executed
+     * before that timestamp. Everything before the split is therefore reported
+     * as suppressed intent, and the account starts the forward window with its
+     * full opening capital and no inherited position.
+     *
+     * That is the difference between "performance on data I could see when I
+     * designed this" (in-sample) and "performance on data that did not exist
+     * yet" (forward). See src/forward-test.js.
+     */
+    this.noTradeBeforeTs = options.noTradeBeforeTs ?? null;
+    this.suppressedActions = 0;
+    this.suppressedBeforeTs = this.noTradeBeforeTs;
+
+    this.depthMode = options.depthMode === 'captured' ? 'captured' : 'modelled';
+    this.depthProfiles = options.depthProfiles || null;
+    this.depthProfileScale = options.depthProfileScale ?? 1;
+    /** Which markets in this run actually traded on a captured ladder. */
+    this.depthCoverage = this.markets.map((m) => ({
+      ticker: m.ticker,
+      depthModel: this.depthMode === 'captured' && this.depthProfiles?.[m.ticker] ? 'captured_orderbook_reanchored' : 'anchored_synthetic',
+      capturedAt: this.depthProfiles?.[m.ticker]?.capturedAt || null,
+      url: this.depthProfiles?.[m.ticker]?.url || null
+    }));
+
     /** Normalized, time-merged timeline across all markets. */
     this.timeline = this._buildTimeline();
     if (this.timeline.length === 0) {
@@ -270,12 +316,15 @@ export class ReplayEngine {
 
     // One book per market for the whole replay, so resting maker orders persist
     // across periods exactly as they would on a live exchange.
+    const profileFor = (ticker) => (this.depthMode === 'captured' ? this.depthProfiles?.[ticker] || null : null);
     for (const market of this.markets) {
       const first = normalizeCandles(this.candlesByTicker[market.ticker] || [])[0];
       books[market.ticker] = bookFromCandle(market, first || { trade: { close: 0.5 }, yesBid: { close: 0.49 }, yesAsk: { close: 0.51 }, endTs: 0 }, {
         feeMultiplier: this.feeMultiplier,
         exhaustionPolicy: this.exhaustionPolicy,
         notional: this.notional,
+        depthProfile: profileFor(market.ticker),
+        depthProfileScale: this.depthProfileScale,
         seed: (opts.seed ?? 12345) + market.ticker.length
       });
     }
@@ -352,6 +401,24 @@ export class ReplayEngine {
       }
       if (!Array.isArray(actions)) actions = [actions];
 
+      // FORWARD TEST gate: before the split, orders are counted and dropped —
+      // never executed, never partially filled, never marked to market.
+      if (this.noTradeBeforeTs !== null && candle.endTs < this.noTradeBeforeTs) {
+        const wanted = actions.filter((a) => a && a.type && String(a.type).toLowerCase() !== 'hold');
+        this.suppressedActions += wanted.length;
+        if (wanted.length) {
+          actionsLog.push({
+            period: candle.endTs,
+            date: candle.endDate,
+            ticker: t,
+            suppressed: true,
+            reason: `before the forward-test split ${new Date(this.noTradeBeforeTs * 1000).toISOString()}`,
+            requested: wanted.length
+          });
+        }
+        actions = [];
+      }
+
       for (const action of actions) {
         if (!action || !action.type) continue;
         const outcome = this._applyAction(action, ctx, portfolio, books);
@@ -426,13 +493,20 @@ export class ReplayEngine {
       dataProvenance: {
         markets: this.markets.map((m) => ({ ticker: m.ticker, source: m.source, source_url: m.source_url || m._provenance?.url || null })),
         candleCounts: Object.fromEntries(Object.entries(this.candlesByTicker).map(([k, v]) => [k, (v || []).length])),
-        note: 'Performance is COMPUTED from fills against real captured candlestick quotes. Depth behind the touch is modelled and labelled SIMULATED.',
+        depthMode: this.depthMode,
+        depthCoverage: this.depthCoverage,
+        note:
+          this.depthMode === 'captured'
+            ? 'Performance is COMPUTED from fills against real captured candlestick quotes. Depth comes from REAL captured order-book ladders re-anchored to each period\'s real quoted touch; markets without a captured ladder fall back to the MODELLED ladder and are labelled per market in depthCoverage.'
+            : 'Performance is COMPUTED from fills against real captured candlestick quotes. Depth behind the touch is modelled and labelled SIMULATED.',
         exhaustionPolicy: this.exhaustionPolicy,
         exhaustionPolicyNote: this.exhaustionPolicy === 'partial'
           ? 'Orders larger than all modelled depth fill only what exists; the remainder is reported as UNFILLED. No execution price is invented.'
           : 'STRESS MODE: the unfilled remainder is executed at an invented price 5 ticks beyond the last level. Not real exchange behaviour.'
       },
       periods: this.periodCount,
+      noTradeBeforeTs: this.noTradeBeforeTs,
+      suppressedActions: this.suppressedActions,
       exhaustionPolicy: this.exhaustionPolicy,
       unfilledOrders: portfolio.unfilledOrders || 0,
       unfilledContracts: portfolio.unfilledContracts || 0,

@@ -1,7 +1,7 @@
 # Flagged Irregularities
 
-**Generated:** 2026-09-17 by `scripts/render-docs.js` from `src/verification-data.js`.
-**30 irregularities** flagged during this build: 11 high, 12 medium,
+**Generated:** 2026-09-18 by `scripts/render-docs.js` from `src/verification-data.js`.
+**31 irregularities** flagged during this build: 11 high, 13 medium,
 6 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
@@ -419,6 +419,25 @@ assumption against an official document or a real API response.
 
 - No-trade bar shape: <https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1781841600&end_ts=1781928000&period_interval=1440> — `price.previous_dollars only — no OHLC`
 - Counts — `GET /api/history → markets[].noTradeBars; 352 of 7,189 stored bars (4.9%)`
+
+---
+
+## #31 — A published claim about the traded price range was wrong ("no contract above 28c")
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That no contract in the captured universe trades above 28 cents, so the favourite leg of the longshot-bias rule and the near-certainty entries provably cannot fire. |
+| **Verified truth** | The stored window contains 47 closes above 28c, all of them in two Nasdaq-100 strikes (KXNASDAQ100Y-26DEC31H1600-T33000: 45 bars, max close $0.45; T19000: 2 bars, max $0.40). The published sentence was false. The CONCLUSION it supported survives a stronger test: across all 30 markets and 5,762 numeric closes the maximum close is $0.45, so no close reaches the 0.85+ band the favourite leg needs and none reaches the 0.92-0.99 band a near-certainty entry needs. |
+| **What the code does** | The sentence and two related captions were rewritten to state the measured range, and to say in place that the earlier number was wrong (src/strategies.js). Test 77 recomputes the range from the store on every run so the claim cannot drift again, and the range is now a published fact (V81). |
+| **What you should do** | When a caption quotes a range, re-run the count before relying on it — and read the retraction next to the corrected sentence, not only the headline number. |
+
+**Evidence**
+
+- Counted from the store, not from an opinion — `node -e over src/accumulated-history.js: 5,762 closes, min $0.01, max $0.45, 47 above $0.28, 0 above $0.50`
+- The bars are real API responses — `data/history/KXNASDAQ100Y-26DEC31H1600-T33000.json (263 bars) + data/reports/store-verification.json (re-fetched from the official endpoint, compared field-for-field)`
+- Official endpoint the closes come from: <https://docs.kalshi.com/api-reference/market/get-market-candlesticks>
 
 ---
 

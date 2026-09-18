@@ -1,0 +1,702 @@
+{
+  "generatedAt": "2026-09-18T00:54:02.583Z",
+  "note": "Series of controlled family experiments. Every variant is a separate replay of the SAME real bars with the same fees; the distributions are published instead of a single hero number because the best of N variants is expected to look good by luck. Rows marked postSplit come from a second run in which no order could execute before the split date (the account keeps its opening capital) — a stability check on the later bars, NOT evidence of out-of-sample skill, because the designs were written after that date existed in the store. Full per-variant rows are in the referenced files.",
+  "runs": [
+    {
+      "file": "data/reports/strategy-sweep-1440m-captured.json",
+      "periodIntervalMinutes": 1440,
+      "depthMode": "captured",
+      "seed": 20260918,
+      "elapsedSeconds": 96.8,
+      "dataSource": {
+        "store": "data/history (daily)",
+        "note": "daily bars for every replayable market"
+      },
+      "families": {
+        "panic_fade": {
+          "variants": 96,
+          "profitable": 0,
+          "medianReturnPct": -1.575,
+          "best": {
+            "username": "PanicFade_t04_s25_tp6",
+            "returnPct": -0.86,
+            "trades": 160,
+            "params": {
+              "family": "panic_fade",
+              "threshold": 0.04,
+              "sizePct": 0.25,
+              "exit": 0.06,
+              "phaseShift": 0
+            }
+          },
+          "worst": {
+            "username": "PanicFade_t02_s100_hold",
+            "returnPct": -5.5,
+            "params": {
+              "family": "panic_fade",
+              "threshold": 0.02,
+              "sizePct": 1,
+              "exit": "hold",
+              "phaseShift": 0
+            }
+          },
+          "luckBenchmark": "best -0.86% vs the family's own p95 of -1.02% and a median of -1.57% across 96 variants",
+          "postSplit": {
+            "profitable": 24,
+            "medianReturnPct": 0,
+            "best": {
+              "username": "PanicFade_t04_s25_tp4",
+              "returnPct": 0.22,
+              "trades": 54
+            },
+            "worst": {
+              "username": "PanicFade_t02_s100_hold",
+              "returnPct": -1.02
+            },
+            "variantsTraded": 80,
+            "ofVariants": 96
+          }
+        },
+        "mean_reversion": {
+          "variants": 12,
+          "profitable": 3,
+          "medianReturnPct": -11.965,
+          "best": {
+            "username": "MeanRev_e10_x50",
+            "returnPct": 4.52,
+            "trades": 1485,
+            "params": {
+              "family": "mean_reversion",
+              "entryBand": 0.1,
+              "exitBand": 0.5,
+              "sizePct": 0.5,
+              "cooldown": 0
+            }
+          },
+          "worst": {
+            "username": "MeanRev_e40_x70",
+            "returnPct": -12.42,
+            "params": {
+              "family": "mean_reversion",
+              "entryBand": 0.4,
+              "exitBand": 0.7,
+              "sizePct": 0.5,
+              "cooldown": 0
+            }
+          },
+          "luckBenchmark": "best 4.52% vs the family's own p95 of 4.4% and a median of -11.96% across 12 variants",
+          "postSplit": {
+            "profitable": 3,
+            "medianReturnPct": -3.36,
+            "best": {
+              "username": "MeanRev_e10_x50",
+              "returnPct": 0.14,
+              "trades": 1565
+            },
+            "worst": {
+              "username": "MeanRev_e40_x50",
+              "returnPct": -5.18
+            },
+            "variantsTraded": 12,
+            "ofVariants": 12
+          }
+        },
+        "tight_scalp": {
+          "variants": 8,
+          "profitable": 2,
+          "medianReturnPct": -38.045,
+          "best": {
+            "username": "TightScalp_5to9",
+            "returnPct": 4.07,
+            "trades": 3043,
+            "params": {
+              "family": "tight_scalp",
+              "buyAt": 0.05,
+              "target": 0.04,
+              "sizePct": 0.25
+            }
+          },
+          "worst": {
+            "username": "TightScalp_20to24",
+            "returnPct": -61.45,
+            "params": {
+              "family": "tight_scalp",
+              "buyAt": 0.2,
+              "target": 0.04,
+              "sizePct": 0.25
+            }
+          },
+          "luckBenchmark": "best 4.07% vs the family's own p95 of 3.75% and a median of -38.05% across 8 variants",
+          "postSplit": {
+            "profitable": 0,
+            "medianReturnPct": -12.21,
+            "best": {
+              "username": "TightScalp_5to9",
+              "returnPct": -0.6,
+              "trades": 1060
+            },
+            "worst": {
+              "username": "TightScalp_20to22",
+              "returnPct": -33.04
+            },
+            "variantsTraded": 8,
+            "ofVariants": 8
+          }
+        },
+        "panic_fade_placebo": {
+          "variants": 6,
+          "profitable": 0,
+          "medianReturnPct": -3.025,
+          "best": {
+            "username": "PanicFade_t06_s100_hold_shift1",
+            "returnPct": -1.26,
+            "trades": 31,
+            "params": {
+              "family": "panic_fade_placebo",
+              "threshold": 0.06,
+              "sizePct": 1,
+              "exit": "hold",
+              "phaseShift": 1
+            }
+          },
+          "worst": {
+            "username": "PanicFade_t02_s100_hold_shift1",
+            "returnPct": -8.38,
+            "params": {
+              "family": "panic_fade_placebo",
+              "threshold": 0.02,
+              "sizePct": 1,
+              "exit": "hold",
+              "phaseShift": 1
+            }
+          },
+          "luckBenchmark": "best -1.26% vs the family's own p95 of -1.6% and a median of -3.02% across 6 variants",
+          "postSplit": {
+            "profitable": 0,
+            "medianReturnPct": -0.615,
+            "best": {
+              "username": "PanicFade_t06_s100_hold_shift1",
+              "returnPct": -0.28,
+              "trades": 9
+            },
+            "worst": {
+              "username": "PanicFade_t02_s100_hold_shift4",
+              "returnPct": -1.2
+            },
+            "variantsTraded": 6,
+            "ofVariants": 6
+          }
+        }
+      },
+      "verdicts": {
+        "panicFadeVsPlacebo": "best panic_fade -0.86% (median -1.575%) vs best delayed-signal placebo -1.26% (median -3.025%): the real-timing family's best variant is ahead by 0.4 percentage points",
+        "interpretationRule": "A family is only reported as a candidate edge when its median is positive AND its best variant is meaningfully above the family p95. Otherwise the family is reported as a distribution in which some settings happened to win."
+      },
+      "oosSplit": {
+        "date": "2026-06-30",
+        "splitTs": 1782777600,
+        "label": "POST-SPLIT WINDOW (stability check, not a forward test)",
+        "why": "Every bar is still replayed so the strategy has real, warm history, but no order may execute before this date and the account keeps its opening capital. This shows whether a family that looked good over the whole window also held up on the later bars. It is NOT evidence of out-of-sample skill: these designs were written after this date existed in the store. The only true forward window is post-designedAt and is reported by src/forward-test.js.",
+        "variantsTradedAfterSplit": 106,
+        "variantsWithNoPostSplitTrade": 16
+      },
+      "translatedFrom": {
+        "source": "R01 — \"Backtested 5,000 Strategies on Kalshi 15-min BTC Markets\" (see src/research-sources.js)",
+        "sizeNote": "The source sized in fixed contract counts (fade_size=100). Sizes here are fractions of available cash so a variant is scale-free and comparable on the competition's capital. This is a translation, not a copy, and the two sets of numbers are not comparable.",
+        "seriesNote": "The source traded KXBTC15M; this sweep runs on the series actually stored in this repository."
+      }
+    },
+    {
+      "file": "data/reports/strategy-sweep-1440m-modelled.json",
+      "periodIntervalMinutes": 1440,
+      "depthMode": "modelled",
+      "seed": 20260918,
+      "elapsedSeconds": 73.7,
+      "dataSource": {
+        "store": "data/history (daily)",
+        "note": "daily bars for every replayable market"
+      },
+      "families": {
+        "panic_fade": {
+          "variants": 96,
+          "profitable": 0,
+          "medianReturnPct": -1.27,
+          "best": {
+            "username": "PanicFade_t04_s25_tp2",
+            "returnPct": -0.03,
+            "trades": 258,
+            "params": {
+              "family": "panic_fade",
+              "threshold": 0.04,
+              "sizePct": 0.25,
+              "exit": 0.02,
+              "phaseShift": 0
+            }
+          },
+          "worst": {
+            "username": "PanicFade_t02_s100_hold",
+            "returnPct": -4.41,
+            "params": {
+              "family": "panic_fade",
+              "threshold": 0.02,
+              "sizePct": 1,
+              "exit": "hold",
+              "phaseShift": 0
+            }
+          },
+          "luckBenchmark": "best -0.03% vs the family's own p95 of -0.3% and a median of -1.27% across 96 variants",
+          "postSplit": {
+            "profitable": 32,
+            "medianReturnPct": 0,
+            "best": {
+              "username": "PanicFade_t04_s25_tp4",
+              "returnPct": 0.22,
+              "trades": 54
+            },
+            "worst": {
+              "username": "PanicFade_t03_s100_hold",
+              "returnPct": -0.87
+            },
+            "variantsTraded": 80,
+            "ofVariants": 96
+          }
+        },
+        "mean_reversion": {
+          "variants": 12,
+          "profitable": 3,
+          "medianReturnPct": -2.21,
+          "best": {
+            "username": "MeanRev_e10_x50",
+            "returnPct": 15.28,
+            "trades": 1528,
+            "params": {
+              "family": "mean_reversion",
+              "entryBand": 0.1,
+              "exitBand": 0.5,
+              "sizePct": 0.5,
+              "cooldown": 0
+            }
+          },
+          "worst": {
+            "username": "MeanRev_e40_x50",
+            "returnPct": -3.15,
+            "params": {
+              "family": "mean_reversion",
+              "entryBand": 0.4,
+              "exitBand": 0.5,
+              "sizePct": 0.5,
+              "cooldown": 0
+            }
+          },
+          "luckBenchmark": "best 15.28% vs the family's own p95 of 15.25% and a median of -2.21% across 12 variants",
+          "postSplit": {
+            "profitable": 3,
+            "medianReturnPct": -2.145,
+            "best": {
+              "username": "MeanRev_e10_x50",
+              "returnPct": 0.32,
+              "trades": 1565
+            },
+            "worst": {
+              "username": "MeanRev_e40_x50",
+              "returnPct": -3.97
+            },
+            "variantsTraded": 12,
+            "ofVariants": 12
+          }
+        },
+        "tight_scalp": {
+          "variants": 8,
+          "profitable": 2,
+          "medianReturnPct": -38.045,
+          "best": {
+            "username": "TightScalp_5to9",
+            "returnPct": 4.07,
+            "trades": 3043,
+            "params": {
+              "family": "tight_scalp",
+              "buyAt": 0.05,
+              "target": 0.04,
+              "sizePct": 0.25
+            }
+          },
+          "worst": {
+            "username": "TightScalp_20to24",
+            "returnPct": -61.45,
+            "params": {
+              "family": "tight_scalp",
+              "buyAt": 0.2,
+              "target": 0.04,
+              "sizePct": 0.25
+            }
+          },
+          "luckBenchmark": "best 4.07% vs the family's own p95 of 3.75% and a median of -38.05% across 8 variants",
+          "postSplit": {
+            "profitable": 0,
+            "medianReturnPct": -12.21,
+            "best": {
+              "username": "TightScalp_5to9",
+              "returnPct": -0.6,
+              "trades": 1060
+            },
+            "worst": {
+              "username": "TightScalp_20to22",
+              "returnPct": -33.04
+            },
+            "variantsTraded": 8,
+            "ofVariants": 8
+          }
+        },
+        "panic_fade_placebo": {
+          "variants": 6,
+          "profitable": 0,
+          "medianReturnPct": -2.63,
+          "best": {
+            "username": "PanicFade_t06_s100_hold_shift1",
+            "returnPct": -1.18,
+            "trades": 31,
+            "params": {
+              "family": "panic_fade_placebo",
+              "threshold": 0.06,
+              "sizePct": 1,
+              "exit": "hold",
+              "phaseShift": 1
+            }
+          },
+          "worst": {
+            "username": "PanicFade_t02_s100_hold_shift1",
+            "returnPct": -7.06,
+            "params": {
+              "family": "panic_fade_placebo",
+              "threshold": 0.02,
+              "sizePct": 1,
+              "exit": "hold",
+              "phaseShift": 1
+            }
+          },
+          "luckBenchmark": "best -1.18% vs the family's own p95 of -1.44% and a median of -2.63% across 6 variants",
+          "postSplit": {
+            "profitable": 0,
+            "medianReturnPct": -0.54,
+            "best": {
+              "username": "PanicFade_t06_s100_hold_shift1",
+              "returnPct": -0.26,
+              "trades": 9
+            },
+            "worst": {
+              "username": "PanicFade_t02_s100_hold_shift4",
+              "returnPct": -1.02
+            },
+            "variantsTraded": 6,
+            "ofVariants": 6
+          }
+        }
+      },
+      "verdicts": {
+        "panicFadeVsPlacebo": "best panic_fade -0.03% (median -1.27%) vs best delayed-signal placebo -1.18% (median -2.63%): the real-timing family's best variant is ahead by 1.15 percentage points",
+        "interpretationRule": "A family is only reported as a candidate edge when its median is positive AND its best variant is meaningfully above the family p95. Otherwise the family is reported as a distribution in which some settings happened to win."
+      },
+      "oosSplit": {
+        "date": "2026-06-30",
+        "splitTs": 1782777600,
+        "label": "POST-SPLIT WINDOW (stability check, not a forward test)",
+        "why": "Every bar is still replayed so the strategy has real, warm history, but no order may execute before this date and the account keeps its opening capital. This shows whether a family that looked good over the whole window also held up on the later bars. It is NOT evidence of out-of-sample skill: these designs were written after this date existed in the store. The only true forward window is post-designedAt and is reported by src/forward-test.js.",
+        "variantsTradedAfterSplit": 106,
+        "variantsWithNoPostSplitTrade": 16
+      },
+      "translatedFrom": {
+        "source": "R01 — \"Backtested 5,000 Strategies on Kalshi 15-min BTC Markets\" (see src/research-sources.js)",
+        "sizeNote": "The source sized in fixed contract counts (fade_size=100). Sizes here are fractions of available cash so a variant is scale-free and comparable on the competition's capital. This is a translation, not a copy, and the two sets of numbers are not comparable.",
+        "seriesNote": "The source traded KXBTC15M; this sweep runs on the series actually stored in this repository."
+      }
+    },
+    {
+      "file": "data/reports/strategy-sweep-60m-captured.json",
+      "periodIntervalMinutes": 60,
+      "depthMode": "captured",
+      "seed": 20260918,
+      "elapsedSeconds": 34.4,
+      "dataSource": {
+        "store": "data/history/intraday/60m (curated)",
+        "markets": 12,
+        "bars": 4032,
+        "firstDate": "2026-08-21T11:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z"
+      },
+      "families": {
+        "panic_fade": {
+          "variants": 96,
+          "profitable": 0,
+          "medianReturnPct": 0,
+          "best": {
+            "username": "PanicFade_t04_s25_hold",
+            "returnPct": 0,
+            "trades": 2,
+            "params": {
+              "family": "panic_fade",
+              "threshold": 0.04,
+              "sizePct": 0.25,
+              "exit": "hold",
+              "phaseShift": 0
+            }
+          },
+          "worst": {
+            "username": "PanicFade_t03_s100_tp6",
+            "returnPct": -0.01,
+            "params": {
+              "family": "panic_fade",
+              "threshold": 0.03,
+              "sizePct": 1,
+              "exit": 0.06,
+              "phaseShift": 0
+            }
+          },
+          "luckBenchmark": "best 0% vs the family's own p95 of 0% and a median of 0% across 96 variants",
+          "postSplit": null
+        },
+        "mean_reversion": {
+          "variants": 12,
+          "profitable": 12,
+          "medianReturnPct": 0.61,
+          "best": {
+            "username": "MeanRev_e20_x50",
+            "returnPct": 0.61,
+            "trades": 1968,
+            "params": {
+              "family": "mean_reversion",
+              "entryBand": 0.2,
+              "exitBand": 0.5,
+              "sizePct": 0.5,
+              "cooldown": 0
+            }
+          },
+          "worst": {
+            "username": "MeanRev_e10_x90",
+            "returnPct": 0.18,
+            "params": {
+              "family": "mean_reversion",
+              "entryBand": 0.1,
+              "exitBand": 0.9,
+              "sizePct": 0.5,
+              "cooldown": 0
+            }
+          },
+          "luckBenchmark": "best 0.61% vs the family's own p95 of 0.61% and a median of 0.61% across 12 variants",
+          "postSplit": null
+        },
+        "tight_scalp": {
+          "variants": 8,
+          "profitable": 0,
+          "medianReturnPct": -2.32,
+          "best": {
+            "username": "TightScalp_5to7",
+            "returnPct": -0.44,
+            "trades": 528,
+            "params": {
+              "family": "tight_scalp",
+              "buyAt": 0.05,
+              "target": 0.02,
+              "sizePct": 0.25
+            }
+          },
+          "worst": {
+            "username": "TightScalp_20to24",
+            "returnPct": -5.99,
+            "params": {
+              "family": "tight_scalp",
+              "buyAt": 0.2,
+              "target": 0.04,
+              "sizePct": 0.25
+            }
+          },
+          "luckBenchmark": "best -0.44% vs the family's own p95 of -0.44% and a median of -2.32% across 8 variants",
+          "postSplit": null
+        },
+        "panic_fade_placebo": {
+          "variants": 6,
+          "profitable": 0,
+          "medianReturnPct": 0,
+          "best": {
+            "username": "PanicFade_t02_s100_hold_shift1",
+            "returnPct": 0,
+            "trades": 3,
+            "params": {
+              "family": "panic_fade_placebo",
+              "threshold": 0.02,
+              "sizePct": 1,
+              "exit": "hold",
+              "phaseShift": 1
+            }
+          },
+          "worst": {
+            "username": "PanicFade_t06_s100_hold_shift4",
+            "returnPct": 0,
+            "params": {
+              "family": "panic_fade_placebo",
+              "threshold": 0.06,
+              "sizePct": 1,
+              "exit": "hold",
+              "phaseShift": 4
+            }
+          },
+          "luckBenchmark": "best 0% vs the family's own p95 of 0% and a median of 0% across 6 variants",
+          "postSplit": null
+        }
+      },
+      "verdicts": {
+        "panicFadeVsPlacebo": "best panic_fade 0% (median 0%) vs best delayed-signal placebo 0% (median 0%): the real-timing family's best variant is ahead by 0 percentage points",
+        "interpretationRule": "A family is only reported as a candidate edge when its median is positive AND its best variant is meaningfully above the family p95. Otherwise the family is reported as a distribution in which some settings happened to win."
+      },
+      "oosSplit": null,
+      "translatedFrom": {
+        "source": "R01 — \"Backtested 5,000 Strategies on Kalshi 15-min BTC Markets\" (see src/research-sources.js)",
+        "sizeNote": "The source sized in fixed contract counts (fade_size=100). Sizes here are fractions of available cash so a variant is scale-free and comparable on the competition's capital. This is a translation, not a copy, and the two sets of numbers are not comparable.",
+        "seriesNote": "The source traded KXBTC15M; this sweep runs on the series actually stored in this repository."
+      }
+    },
+    {
+      "file": "data/reports/strategy-sweep-60m-modelled.json",
+      "periodIntervalMinutes": 60,
+      "depthMode": "modelled",
+      "seed": 20260918,
+      "elapsedSeconds": 21.5,
+      "dataSource": {
+        "store": "data/history/intraday/60m (curated)",
+        "markets": 12,
+        "bars": 4032,
+        "firstDate": "2026-08-21T11:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z"
+      },
+      "families": {
+        "panic_fade": {
+          "variants": 96,
+          "profitable": 0,
+          "medianReturnPct": 0,
+          "best": {
+            "username": "PanicFade_t04_s25_hold",
+            "returnPct": 0,
+            "trades": 2,
+            "params": {
+              "family": "panic_fade",
+              "threshold": 0.04,
+              "sizePct": 0.25,
+              "exit": "hold",
+              "phaseShift": 0
+            }
+          },
+          "worst": {
+            "username": "PanicFade_t03_s100_tp6",
+            "returnPct": -0.01,
+            "params": {
+              "family": "panic_fade",
+              "threshold": 0.03,
+              "sizePct": 1,
+              "exit": 0.06,
+              "phaseShift": 0
+            }
+          },
+          "luckBenchmark": "best 0% vs the family's own p95 of 0% and a median of 0% across 96 variants",
+          "postSplit": null
+        },
+        "mean_reversion": {
+          "variants": 12,
+          "profitable": 12,
+          "medianReturnPct": 0.67,
+          "best": {
+            "username": "MeanRev_e20_x50",
+            "returnPct": 0.67,
+            "trades": 1968,
+            "params": {
+              "family": "mean_reversion",
+              "entryBand": 0.2,
+              "exitBand": 0.5,
+              "sizePct": 0.5,
+              "cooldown": 0
+            }
+          },
+          "worst": {
+            "username": "MeanRev_e10_x90",
+            "returnPct": 0.22,
+            "params": {
+              "family": "mean_reversion",
+              "entryBand": 0.1,
+              "exitBand": 0.9,
+              "sizePct": 0.5,
+              "cooldown": 0
+            }
+          },
+          "luckBenchmark": "best 0.67% vs the family's own p95 of 0.67% and a median of 0.67% across 12 variants",
+          "postSplit": null
+        },
+        "tight_scalp": {
+          "variants": 8,
+          "profitable": 0,
+          "medianReturnPct": -2.32,
+          "best": {
+            "username": "TightScalp_5to7",
+            "returnPct": -0.44,
+            "trades": 528,
+            "params": {
+              "family": "tight_scalp",
+              "buyAt": 0.05,
+              "target": 0.02,
+              "sizePct": 0.25
+            }
+          },
+          "worst": {
+            "username": "TightScalp_20to24",
+            "returnPct": -5.99,
+            "params": {
+              "family": "tight_scalp",
+              "buyAt": 0.2,
+              "target": 0.04,
+              "sizePct": 0.25
+            }
+          },
+          "luckBenchmark": "best -0.44% vs the family's own p95 of -0.44% and a median of -2.32% across 8 variants",
+          "postSplit": null
+        },
+        "panic_fade_placebo": {
+          "variants": 6,
+          "profitable": 0,
+          "medianReturnPct": 0,
+          "best": {
+            "username": "PanicFade_t02_s100_hold_shift1",
+            "returnPct": 0,
+            "trades": 3,
+            "params": {
+              "family": "panic_fade_placebo",
+              "threshold": 0.02,
+              "sizePct": 1,
+              "exit": "hold",
+              "phaseShift": 1
+            }
+          },
+          "worst": {
+            "username": "PanicFade_t06_s100_hold_shift4",
+            "returnPct": 0,
+            "params": {
+              "family": "panic_fade_placebo",
+              "threshold": 0.06,
+              "sizePct": 1,
+              "exit": "hold",
+              "phaseShift": 4
+            }
+          },
+          "luckBenchmark": "best 0% vs the family's own p95 of 0% and a median of 0% across 6 variants",
+          "postSplit": null
+        }
+      },
+      "verdicts": {
+        "panicFadeVsPlacebo": "best panic_fade 0% (median 0%) vs best delayed-signal placebo 0% (median 0%): the real-timing family's best variant is ahead by 0 percentage points",
+        "interpretationRule": "A family is only reported as a candidate edge when its median is positive AND its best variant is meaningfully above the family p95. Otherwise the family is reported as a distribution in which some settings happened to win."
+      },
+      "oosSplit": null,
+      "translatedFrom": {
+        "source": "R01 — \"Backtested 5,000 Strategies on Kalshi 15-min BTC Markets\" (see src/research-sources.js)",
+        "sizeNote": "The source sized in fixed contract counts (fade_size=100). Sizes here are fractions of available cash so a variant is scale-free and comparable on the competition's capital. This is a translation, not a copy, and the two sets of numbers are not comparable.",
+        "seriesNote": "The source traded KXBTC15M; this sweep runs on the series actually stored in this repository."
+      }
+    }
+  ]
+}

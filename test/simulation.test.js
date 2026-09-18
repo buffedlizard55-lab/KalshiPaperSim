@@ -98,6 +98,8 @@ import { STRATEGIES, validateStrategies, VERIFIED_SERIES, REJECTED_FABRICATED_TI
 import { computeAttribution, generatePostMortem, buildLeaderboard, LEADERBOARD_QUALIFICATION } from '../src/analysis.js';
 import {
   runCompetition,
+  runCompetitionFlights,
+  runStrategy,
   runCustomStrategy,
   getCandleCoverage,
   getVerifiedCandleMap,
@@ -607,7 +609,10 @@ test('21. the roster validates itself and carries no hard-coded results', () => 
   const v = validateStrategies();
   assert.deepEqual(v.problems, [], `validateStrategies reported: ${v.problems.join('; ')}`);
   assert.equal(v.count, STRATEGIES.length);
-  assert.equal(STRATEGIES.length, 12);
+  // The roster grows as new strategies are recreated from researched sources;
+  // what must hold is that the count is the roster's own length and that every
+  // entry passes the same validation.
+  assert.ok(STRATEGIES.length >= 12, 'the original twelve-strategy roster must never shrink');
 
   const ids = new Set(STRATEGIES.map((s) => s.id));
   const names = new Set(STRATEGIES.map((s) => s.username));
@@ -1931,4 +1936,235 @@ test('66. the static (GitHub Pages) build never pulls a Node-only module into th
     const code = src.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
     assert.ok(!/\bfrom\s*['"]node:/.test(code), `${root} must stay browser-safe (no static node: imports)`);
   }
+});
+
+/* ==================================================================== *
+ * PASS-2 ADDITIONS — research ledger, family sweeps, liquidity, flights
+ * ==================================================================== */
+
+import {
+  RESEARCH_SOURCES, RESEARCH_META, RESEARCH_GAPS, RESEARCH_CAPTURE_METHODS,
+  researchStats, recreatedStrategyMap
+} from '../src/research-sources.js';
+import { buildSweep, buildPanicFade, SWEEP_DEFINITION } from '../src/sweep-families.js';
+import { CAPTURED_DEPTH, getCapturedDepthTickers } from '../src/captured-depth.js';
+
+const REPORTS_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'reports');
+const readReport = (name) => JSON.parse(readFileSync(path.join(REPORTS_DIR, name), 'utf8'));
+
+test('67. every researched source is complete, citable and honestly labelled', () => {
+  assert.ok(RESEARCH_SOURCES.length >= 13, 'the ledger should carry every source that was actually read');
+  for (const src of RESEARCH_SOURCES) {
+    assert.ok(src.id && /^R\d+$/.test(src.id), `${src.id}: stable id`);
+    assert.ok(src.title && src.host, `${src.id}: title and host`);
+    assert.ok(src.url || (src.urls && src.urls.length), `${src.id}: at least one URL a human can open`);
+    assert.ok(src.verifiedOn, `${src.id}: the date it was read`);
+    assert.ok(src.capturedVia, `${src.id}: how it was read`);
+    assert.ok(
+      [RESEARCH_CAPTURE_METHODS.FETCHED, RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT].includes(src.capturedVia),
+      `${src.id}: capture method must be one of the two declared values`
+    );
+    assert.ok(src.claim && src.claim.length > 40, `${src.id}: the claim that is being tested`);
+    assert.ok(src.taken, `${src.id}: what was taken from it`);
+    // A source that cannot be tested here MUST say why, and must not claim a test.
+    if (src.testable === false) {
+      assert.ok(src.notTestableReason, `${src.id}: not-testable entries must explain the blocker`);
+      assert.equal((src.testedBy || []).length, 0, `${src.id}: cannot claim a test and be untestable`);
+    } else {
+      assert.ok((src.testedBy || []).length > 0 || src.testable === 'partially', `${src.id}: testable sources must name the strategy that tests them`);
+    }
+  }
+  assert.ok(RESEARCH_GAPS.length >= 4, 'the gaps list is part of the deliverable');
+  for (const gap of RESEARCH_GAPS) {
+    assert.ok(gap.gap && gap.blockedBy && gap.toClose, `gap "${gap.gap}": name, blocker and the action that would close it`);
+  }
+  const stats = researchStats();
+  assert.equal(stats.sources, RESEARCH_SOURCES.length);
+  assert.equal(stats.fetchedPages + stats.searchExcerpts, RESEARCH_SOURCES.length, 'every source declares exactly one capture method');
+});
+
+test('68. every strategy credited to a source in the ledger actually exists', () => {
+  const usernames = new Set(STRATEGIES.map((s) => s.username));
+  const map = recreatedStrategyMap();
+  for (const [username, sources] of Object.entries(map)) {
+    assert.ok(usernames.has(username), `${username} is credited to ${sources.map((s) => s.id).join(', ')} but is not in the roster`);
+    for (const s of sources) assert.ok(s.url, `${username}: the source it came from must carry a URL`);
+  }
+});
+
+test('69. the recreated panic-fade family reproduces the roster entry EXACTLY', () => {
+  // This is the regression test for a real bug: the first version of the family
+  // measured the drop one bar early, so the family and the roster disagreed
+  // (-2.75%/86 fills vs -2.64%/88). Two independent implementations of the same
+  // rule must agree to the cent, or one of them is wrong.
+  const family = buildPanicFade({ threshold: 0.04, sizePct: 1.0, exit: 'hold' });
+  const familyResult = runStrategy(family, { periodIntervalMinutes: 1440, seed: 20260918, settleAtEnd: false, depthMode: 'captured' });
+  const rosterResult = runStrategy('PanicFade_T4_S100', { periodIntervalMinutes: 1440, seed: 20260918, settleAtEnd: false, depthMode: 'captured' });
+  assert.equal(familyResult.stats.totalTrades, rosterResult.stats.totalTrades, 'fill counts must match');
+  assert.equal(familyResult.stats.returnPct, rosterResult.stats.returnPct, 'returns must match to the recorded precision');
+  assert.equal(familyResult.stats.equity, rosterResult.stats.equity, 'final equity must match to the cent');
+});
+
+test('70. the sweep placebo is a genuine delay of the same signal, not a different rule', () => {
+  const immediate = runStrategy(buildPanicFade({ threshold: 0.04, sizePct: 1.0, exit: 'hold' }), { periodIntervalMinutes: 1440, seed: 20260918, depthMode: 'captured' });
+  const delayed = runStrategy(buildPanicFade({ threshold: 0.04, sizePct: 1.0, exit: 'hold', phaseShift: 1 }), { periodIntervalMinutes: 1440, seed: 20260918, depthMode: 'captured' });
+  assert.notEqual(immediate.stats.returnPct, delayed.stats.returnPct, 'acting one bar later must change the result');
+  // Both take the same side on the same data, so the trade counts stay in the
+  // same neighbourhood — if they collapsed to 0 vs N, the "delay" would be a
+  // different strategy rather than a control.
+  const ratio = immediate.stats.totalTrades / Math.max(1, delayed.stats.totalTrades);
+  assert.ok(ratio > 0.5 && ratio < 2, `delayed vs immediate fill ratio out of range: ${ratio}`);
+});
+
+test('71. the filtered control fires ZERO times, which is the finding it exists to measure', () => {
+  const control = STRATEGIES.find((s) => s.username === 'ShockTiming_ModerateFav');
+  assert.ok(control && control.control, 'the control entry must declare its claim and its falsification condition');
+  const result = runStrategy(control, { periodIntervalMinutes: 1440, seed: 20260918, depthMode: 'captured' });
+  assert.equal(result.stats.totalTrades, 0, 'no tracked contract trades near 0.80, so the filter cannot fire');
+  assert.equal(result.stats.returnPct, 0, 'a strategy that never trades returns zero — it is not allowed to earn a phantom fill');
+  // Tuples are stored as integers: price fields are ten-thousandths of a dollar
+  // (4500 = $0.45), so the close is index 3 of the price group, divided by 1e4.
+  const prices = Object.values(ACCUMULATED_HISTORY.markets)
+    .flatMap((m) => m.tuples.map((t) => t[3][3]))
+    .filter((p) => typeof p === 'number')
+    .map((p) => p / 10000);
+  assert.ok(prices.length > 5000, 'the claim must be checked against the whole stored window');
+  assert.ok(Math.max(...prices) < 0.76, `the control claim depends on no close reaching 0.76 (observed max ${Math.max(...prices)})`);
+});
+
+test('72. the sweep grid is the declared size and every variant is distinct', () => {
+  const all = buildSweep();
+  const expected =
+    SWEEP_DEFINITION.panicFade.thresholds.length * SWEEP_DEFINITION.panicFade.sizes.length * SWEEP_DEFINITION.panicFade.exits.length +
+    SWEEP_DEFINITION.meanReversion.entryBands.length * SWEEP_DEFINITION.meanReversion.exitBands.length +
+    SWEEP_DEFINITION.tightScalp.buyPrices.length * SWEEP_DEFINITION.tightScalp.targets.length +
+    SWEEP_DEFINITION.placebo.thresholds.length * SWEEP_DEFINITION.placebo.sizes.length * SWEEP_DEFINITION.placebo.exits.length * SWEEP_DEFINITION.placebo.shifts.length;
+  assert.equal(all.length, expected, 'the grid must contain exactly the declared variants');
+  assert.equal(all.length, 122, '96 panic-fade + 12 mean-reversion + 8 tight-scalp + 6 placebo');
+  const ids = new Set(all.map((v) => v.id));
+  assert.equal(ids.size, all.length, 'variant ids must be unique — a duplicate id would silently overwrite a report row');
+  assert.ok(all.every((v) => typeof v.decide === 'function'), 'every variant must be runnable');
+});
+
+test('73. a reported sweep records the depth mode and period it was run with', () => {
+  const files = readdirSync(REPORTS_DIR).filter((f) => /^strategy-sweep-\d+m-(captured|modelled)\.json$/.test(f));
+  assert.ok(files.length >= 2, 'at least a captured and a modelled daily sweep must exist');
+  for (const f of files) {
+    const d = readReport(f);
+    assert.ok([1, 60, 1440].includes(d.periodIntervalMinutes), `${f}: period must be a documented enum value`);
+    assert.ok(['captured', 'modelled'].includes(d.depthMode), `${f}: depth mode must be declared`);
+    assert.ok(d.seed !== undefined && d.seed !== null, `${f}: the seed must be recorded so the run is reproducible`);
+    const variantCount = Object.values(d.families).reduce((n, rows) => n + rows.length, 0);
+    const summaryCount = Object.values(d.summaries).reduce((n, s) => n + s.variants, 0);
+    assert.equal(variantCount, summaryCount, `${f}: the summary must cover every variant that ran (no quiet dropping of losers)`);
+    for (const rows of Object.values(d.families)) {
+      for (const row of rows) {
+        assert.ok(typeof row.returnPct === 'number' && Number.isFinite(row.returnPct), `${f}: every variant reports a finite return`);
+        assert.ok(typeof row.totalTrades === 'number', `${f}: every variant reports its fill count`);
+      }
+    }
+  }
+});
+
+test('74. the two flights never mix, and "both" strategies appear in each', () => {
+  const flights = runCompetitionFlights({ depthMode: 'captured' });
+  const dailyNames = flights.daily.leaderboard.map((r) => r.username);
+  const hourlyNames = (flights.hourly ? flights.hourly.leaderboard : []).map((r) => r.username);
+  const both = STRATEGIES.filter((s) => s.flight === 'both').map((s) => s.username);
+  const hourly = STRATEGIES.filter((s) => s.flight === 'hourly').map((s) => s.username);
+  for (const name of hourly) {
+    assert.ok(hourlyNames.includes(name), `${name} is an hourly strategy and must appear in the hourly flight`);
+    assert.ok(!dailyNames.includes(name), `${name} must NOT be ranked on daily bars it was not designed for`);
+  }
+  for (const name of both) {
+    assert.ok(dailyNames.includes(name) && hourlyNames.includes(name), `${name} declares both flights and must appear in both`);
+  }
+  const dailyOnly = STRATEGIES.filter((s) => (s.flight || 'daily') === 'daily').map((s) => s.username);
+  for (const name of dailyOnly) assert.ok(!hourlyNames.includes(name), `${name} is daily-only and must not appear in the hourly flight`);
+});
+
+test('75. liquidity is reported from the real ladder, never fabricated', () => {
+  const liquidity = readReport('liquidity-depth.json');
+  assert.equal(liquidity.markets.length, getCapturedDepthTickers().length, 'every captured market must be in the report');
+  let emptySides = 0;
+  for (const m of liquidity.markets) {
+    const rec = CAPTURED_DEPTH.markets[m.ticker];
+    assert.ok(rec, `${m.ticker}: the report must correspond to a captured record`);
+    assert.equal(m.capturedAt, rec.capturedAt, `${m.ticker}: the capture time travels with the numbers`);
+    assert.ok(m.url.includes('orderbook'), `${m.ticker}: the source URL is the orderbook endpoint`);
+    for (const sideName of ['yes', 'no']) {
+      const side = m[sideName];
+      if (side.emptySide) {
+        emptySides += 1;
+        assert.equal(side.totalContracts, 0, `${m.ticker}/${sideName}: an absent side must be zero, not filled in`);
+        assert.ok(Object.values(side.impact).every((i) => i.filled === 0 && i.exhaustedLadder), `${m.ticker}/${sideName}: no fill may be invented on an empty side`);
+        continue;
+      }
+      assert.ok(side.touch > 0 && side.touch < 1, `${m.ticker}/${sideName}: a real touch`);
+      assert.ok(side.levelCount > 0, `${m.ticker}/${sideName}: at least one real level`);
+      // Walking deeper can never produce a better average price.
+      const v100 = side.impact[100].filled ? side.impact[100].vwap : null;
+      const v1000 = side.impact[1000].filled ? side.impact[1000].vwap : null;
+      const v10000 = side.impact[10000].filled ? side.impact[10000].vwap : null;
+      if (v100 && v1000) assert.ok(v1000 >= v100 - 1e-9, `${m.ticker}/${sideName}: a larger order must not get a better VWAP`);
+      if (v1000 && v10000) assert.ok(v10000 >= v1000 - 1e-9, `${m.ticker}/${sideName}: impact must be monotone in size`);
+      if (side.impact[1000].filled < 1000) assert.equal(side.impact[1000].exhaustedLadder, true, `${m.ticker}/${sideName}: a partial fill means the ladder ran out`);
+    }
+  }
+  assert.ok(emptySides >= 1, 'at least one captured response really is one-sided — the report must show it rather than hide it');
+});
+
+test('76. the depth source changes the numbers, and both are labelled', () => {
+  const captured = runCompetition({ depthMode: 'captured', periodIntervalMinutes: 1440 });
+  const modelled = runCompetition({ depthMode: 'modelled', periodIntervalMinutes: 1440 });
+  assert.equal(captured.competition.depthMode, 'captured');
+  assert.equal(modelled.competition.depthMode, 'modelled');
+  const byName = new Map(captured.leaderboard.map((r) => [r.username, r]));
+  let differing = 0;
+  for (const row of modelled.leaderboard) {
+    if (Math.abs(row.returnPct - byName.get(row.username).returnPct) > 1e-9) differing += 1;
+  }
+  assert.ok(differing > 0, 'the depth assumption must actually reach the fills, otherwise the label is decoration');
+  assert.ok(captured.leaderboard.every((r) => r.depthMode === 'captured' || r.depthMix), 'every captured-depth row must carry its depth provenance');
+});
+
+test('77. the published price range of the stored universe is recomputed, not remembered', () => {
+  // Irregularity #31: a caption claimed "no contract above 28c" and was wrong.
+  // This test recomputes the range from the store on every run so the claim in
+  // src/strategies.js (and fact V81) cannot drift away from the data again.
+  let closes = 0;
+  let min = 1;
+  let max = 0;
+  let above28 = 0;
+  let above50 = 0;
+  for (const market of Object.values(ACCUMULATED_HISTORY.markets)) {
+    for (const t of market.tuples) {
+      const raw = t[3][3];
+      if (typeof raw !== 'number') continue;
+      const close = raw / 10000; // tuple layout: price group is ten-thousandths
+      closes += 1;
+      if (close < min) min = close;
+      if (close > max) max = close;
+      if (close > 0.28) above28 += 1;
+      if (close > 0.5) above50 += 1;
+    }
+  }
+  assert.equal(closes, 5762, 'the stored window is the one the caption describes');
+  assert.equal(min, 0.01);
+  assert.equal(max, 0.45);
+  assert.equal(above28, 47);
+  assert.equal(above50, 0, 'no close reaches the 0.85+ band the longshot-bias favourite leg needs');
+
+  // The claims that depend on this range, checked against the roster text itself.
+  const fader = STRATEGIES.find((s) => s.username === 'LongshotFader_FLB');
+  const retracted = (fader.thesis.match(/NO contract above 28c/g) || []).length;
+  assert.equal(retracted, 1, 'the phrase may appear ONLY inside the retraction, never as a live claim');
+  assert.ok(/said the universe "contains NO contract above 28c"; that was WRONG/.test(fader.thesis), 'the retraction must name the old sentence and call it wrong');
+  assert.ok(/5,762 numeric closes/.test(fader.thesis), 'the correction states the counted range');
+  assert.ok(/WRONG/.test(fader.thesis), 'the correction says in place that the earlier number was wrong');
+
+  // The control's premise (a 0.70-0.85 band that never trades) is checked here too.
+  const control = STRATEGIES.find((s) => s.username === 'ShockTiming_ModerateFav');
+  assert.ok(control.control && control.control.falsifiedIf, 'the control declares how it could be falsified');
+  assert.ok(max < 0.7, `the control premise needs no close at or above 0.70 (observed max ${max})`);
 });

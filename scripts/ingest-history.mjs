@@ -44,11 +44,27 @@
  *                                                          # (--days=0, the default, backfills from
  *                                                          #  the market's real open_time, capped by
  *                                                          #  --max-backfill-days=400)
+ *   node scripts/ingest-history.mjs --period=60            # 60-MINUTE bars (recommended-work
+ *                                                          # item #2) stored separately under
+ *                                                          # data/history/intraday/60m/
+ *   node scripts/ingest-history.mjs --period=60 --days=14  # a two-week intraday window
  *   node scripts/ingest-history.mjs --dry-run              # show what would be fetched
  *   node scripts/ingest-history.mjs --verify               # no network: audit the store
  *   node scripts/ingest-history.mjs --full-backfill        # re-read the whole history from each
  *                                                          # market's open_time (merge is additive)
  *   node scripts/ingest-history.mjs --cutoff               # print the live retention cutoff
+ *
+ * THE INGEST REQUEST FILE (data/history/_ingest-request.json)
+ *   Anything that must be configured without editing a workflow lives in that
+ *   repo-tracked JSON file, because the automation token used by this repository
+ *   is not permitted to modify workflow files:
+ *     { "intraday": { "enabled": true, "period": 60, "days": 14,
+ *                     "series": ["KXNASDAQ100Y"], "min_volume": 20000,
+ *                     "max_markets": 6, "max_bars": 2000, "with_books": false,
+ *                     "with_market": false } }
+ *   When `intraday.enabled` is true, EVERY daily run also performs an intraday
+ *   pass with its own settings, its own directory and its own manifest. The
+ *   daily pass is never affected by it.
  *
  * NOTE ON THIS SANDBOX: direct TLS to *.kalshi.com is blocked from the build
  * container (see IRREGULARITIES.md #4), so this script cannot run here. It is
@@ -61,7 +77,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { KALSHI_ENDPOINTS, KALSHI_PATHS, RATE_LIMITS } from '../src/kalshi-config.js';
+import { KALSHI_ENDPOINTS, KALSHI_PATHS, RATE_LIMITS, CANDLE_PERIODS_MINUTES } from '../src/kalshi-config.js';
 import { deriveSeriesTicker } from '../src/kalshi-api.js';
 import { CANDLESTICKS } from '../src/verified-snapshot.js';
 import { EXTENDED_SERIES, getExtendedCandlesticks } from '../src/verified-candles.js';
@@ -69,8 +85,30 @@ import { stableEqual } from '../src/json-utils.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = path.join(ROOT, 'data', 'history');
+/** Repo-tracked settings for anything that cannot be passed by the workflow. */
+const REQUEST_FILE = path.join(DATA_DIR, '_ingest-request.json');
 const BASE = KALSHI_ENDPOINTS.rest.production;
 const DAY = 86400;
+
+/**
+ * Where a period's bars live. Daily bars (1440) keep the historical path so
+ * nothing that already reads data/history/<ticker>.json has to change; intraday
+ * bars get their own tree so a finer series can never be mistaken for the daily
+ * one (or merged into it).
+ */
+export function periodDir(period = 1440) {
+  return Number(period) === 1440 ? DATA_DIR : path.join(DATA_DIR, 'intraday', `${Number(period)}m`);
+}
+
+/** How many days one HTTP window may span for a given period. */
+export function windowDaysFor(period = 1440) {
+  if (Number(period) === 1440) return 180;
+  if (Number(period) === 60) return 30;
+  return 1; // 1-minute bars: one day per request
+}
+
+/** Documented enum of period_interval values, in minutes. */
+const VALID_PERIODS = CANDLE_PERIODS_MINUTES;
 
 /* ------------------------------------------------------------------ *
  * CLI
@@ -83,6 +121,16 @@ function parseArgs(argv) {
     maxBackfillDays: 400,
     fullBackfill: false,
     withBooks: false,
+    // Candlestick granularity in MINUTES: 1440 daily (default), 60 hourly, 1 minute.
+    // Documented enum (verified): period_interval ∈ {1, 60, 1440}.
+    //   https://docs.kalshi.com/api-reference/market/get-market-candlesticks
+    period: 1440,
+    // Keep only the newest N bars per market (0 = keep everything). Intraday
+    // storage would otherwise grow without bound; trimming is EXPLICIT and
+    // recorded in the store (never a silent rewrite — see trimStore()).
+    maxBars: 0,
+    // Read data/history/_ingest-request.json for settings the workflow cannot pass.
+    request: true,
     // Capture GET /markets/{ticker} alongside the bars. The replay needs the real
     // market object (price_level_structure, strike, series, status) to build a
     // book for a market that is not in the in-repo snapshot — without it a newly
@@ -105,6 +153,10 @@ function parseArgs(argv) {
     else if (k === 'full-backfill') args.fullBackfill = v !== 'false';
     else if (k === 'min-volume') args.minVolume = Number(v);
     else if (k === 'max-markets') args.maxMarkets = Number(v);
+    else if (k === 'period' || k === 'period-interval') args.period = Number(v);
+    else if (k === 'max-bars') args.maxBars = Number(v);
+    else if (k === 'trim-only') args.trimOnly = v !== 'false';
+    else if (k === 'request') args.request = v !== 'false';
     else if (k === 'with-market') args.withMarket = v !== 'false';
     else if (k === 'with-books' || k === 'books') args.withBooks = v !== 'false';
     else if (k === 'dry-run') args.dryRun = v !== 'false';
@@ -117,24 +169,107 @@ function parseArgs(argv) {
   return args;
 }
 
+/**
+ * Read data/history/_ingest-request.json — the repo-tracked place to configure
+ * runs the workflow cannot describe on its own (the automation token may not
+ * edit .github/workflows/*). Returns {} when the file is absent or disabled.
+ */
+export function readIngestRequest(file = REQUEST_FILE) {
+  if (!fs.existsSync(file)) return {};
+  try {
+    const parsed = JSON.parse(fs.readFileSync(file, 'utf8'));
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch (err) {
+    throw new Error(`Unreadable ingest request ${file}: ${err.message} — refusing to guess its contents`);
+  }
+}
+
+/**
+ * Turn the request file's intraday block into ingest arguments.
+ * Returns null when nothing was requested or `enabled` is false.
+ */
+export function intradayArgsFromRequest(request, baseArgs = {}) {
+  const block = request?.intraday;
+  if (!block || block.enabled !== true) return null;
+  const period = Number(block.period ?? 60);
+  if (!VALID_PERIODS.includes(period)) {
+    throw new Error(`intraday.period must be one of ${VALID_PERIODS.join(', ')} (minutes), got ${block.period}`);
+  }
+  // IMPORTANT: the daily pass and the intraday pass must not fight over the
+  // same universe. The workflow passes --series/--tickers for the DAILY run; if
+  // the intraday block did not ask for a universe of its own, the intraday pass
+  // would silently ingest every open market of those series (observed: 117
+  // markets x 24 bars/day instead of the 6 requested). So:
+  //   • block.tickers  → use exactly those;
+  //   • block.series   → discover within those series only;
+  //   • neither        → inherit the CLI universe ONLY when inherit_cli_universe
+  //                      is explicitly true; otherwise request nothing new.
+  const hasOwnUniverse = (Array.isArray(block.tickers) && block.tickers.length > 0) || (Array.isArray(block.series) && block.series.length > 0);
+  return {
+    ...baseArgs,
+    period,
+    days: Number(block.days ?? 14),
+    maxBackfillDays: Number(block.max_backfill_days ?? Math.max(1, Number(block.days ?? 14))),
+    fullBackfill: block.full_backfill === true,
+    withBooks: block.with_books === true,
+    withMarket: block.with_market !== false,
+    maxBars: Number(block.max_bars ?? 2000),
+    minVolume: Number(block.min_volume ?? 0),
+    maxMarkets: Number(block.max_markets ?? 0),
+    series: Array.isArray(block.series) && block.series.length ? block.series : block.inherit_cli_universe === true ? baseArgs.series : null,
+    tickers: Array.isArray(block.tickers) && block.tickers.length
+      ? block.tickers
+      : block.inherit_cli_universe === true
+        ? baseArgs.tickers
+        : hasOwnUniverse
+          ? null
+          : baseArgs.tickers,
+    // --trim-only must survive the request-file translation: it means "no network".
+    trimOnly: baseArgs.trimOnly === true,
+    minIntervalMs: Number(block.min_interval_ms ?? baseArgs.minIntervalMs ?? 250)
+  };
+}
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const money = (n) => Number(n || 0).toLocaleString('en-US');
 
 /* ------------------------------------------------------------------ *
  * Store I/O
  * ------------------------------------------------------------------ */
-function storePath(ticker) {
-  return path.join(DATA_DIR, `${ticker.replace(/[^A-Za-z0-9._-]/g, '_')}.json`);
+function storePath(ticker, period = 1440) {
+  return path.join(periodDir(period), `${ticker.replace(/[^A-Za-z0-9._-]/g, '_')}.json`);
 }
 
-function readStore(ticker) {
-  const p = storePath(ticker);
+function readStore(ticker, period = 1440) {
+  const p = storePath(ticker, period);
   if (!fs.existsSync(p)) return null;
   try {
     return JSON.parse(fs.readFileSync(p, 'utf8'));
   } catch (err) {
     throw new Error(`Corrupt history store ${p}: ${err.message} — refusing to guess its contents`);
   }
+}
+
+/**
+ * Bound a store's size by dropping the OLDEST bars — and record exactly what was
+ * dropped. A silent truncation would be indistinguishable from history that never
+ * existed, so the store carries a `trims[]` ledger with the count, the timestamp
+ * range and the time it happened.
+ */
+export function trimStore(store, maxBars) {
+  const bars = store.candlesticks || [];
+  if (!maxBars || bars.length <= maxBars) return { store, trimmed: 0 };
+  const dropped = bars.slice(0, bars.length - maxBars);
+  const kept = bars.slice(bars.length - maxBars);
+  const record = {
+    at: new Date().toISOString(),
+    dropped: dropped.length,
+    dropped_from_ts: dropped[0]?.end_period_ts ?? null,
+    dropped_to_ts: dropped[dropped.length - 1]?.end_period_ts ?? null,
+    kept: kept.length,
+    reason: `--max-bars=${maxBars}: the store keeps the newest ${maxBars} bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently.`
+  };
+  return { store: { ...store, candlesticks: kept, trims: [...(store.trims || []), record] }, trimmed: dropped.length };
 }
 
 function writeJson(p, obj) {
@@ -274,25 +409,72 @@ function verifyStore(tickers) {
       continue;
     }
     const bars = store.candlesticks || [];
+    const expected = Number(store.period_interval || 1440) * 60;
     const gaps = [];
     for (let i = 1; i < bars.length; i++) {
       const delta = Number(bars[i].end_period_ts) - Number(bars[i - 1].end_period_ts);
-      if (delta !== DAY) gaps.push({ from: bars[i - 1].end_period_ts, to: bars[i].end_period_ts, deltaSeconds: delta });
+      if (delta !== expected) gaps.push({ from: bars[i - 1].end_period_ts, to: bars[i].end_period_ts, deltaSeconds: delta });
     }
     const noTrade = bars.filter((b) => !b.price || b.price.close_dollars === undefined).length;
     rows.push({
       ticker,
       series: store.series_ticker,
+      period_interval: store.period_interval || 1440,
       bars: bars.length,
       first: bars[0] ? new Date(bars[0].end_period_ts * 1000).toISOString() : null,
       last: bars.length ? new Date(bars[bars.length - 1].end_period_ts * 1000).toISOString() : null,
       noTradePeriods: noTrade,
       gapCount: gaps.length,
       gaps: gaps.slice(0, 5),
-      books: store.books ? store.books.length : 0
+      books: store.books ? store.books.length : 0,
+      trims: store.trims ? store.trims.length : 0
     });
   }
   console.log(JSON.stringify({ verifiedAt: new Date().toISOString(), markets: rows }, null, 2));
+  return 0;
+}
+
+/** Same audit as verifyStore(), for every intraday period directory present. */
+function verifyIntradayStores(tickers) {
+  const base = path.join(DATA_DIR, 'intraday');
+  const out = { verifiedAt: new Date().toISOString(), periods: {} };
+  if (!fs.existsSync(base)) {
+    out.note = 'No intraday store yet (data/history/intraday/ does not exist).';
+    return out;
+  }
+  for (const dir of fs.readdirSync(base).sort()) {
+    const full = path.join(base, dir);
+    if (!fs.statSync(full).isDirectory()) continue;
+    const period = Number(String(dir).replace(/m$/, ''));
+    const rows = [];
+    for (const file of fs.readdirSync(full).sort()) {
+      if (!file.endsWith('.json') || file.startsWith('_')) continue;
+      let store = null;
+      try {
+        store = JSON.parse(fs.readFileSync(path.join(full, file), 'utf8'));
+      } catch (err) {
+        rows.push({ file, status: 'UNREADABLE', error: err.message });
+        continue;
+      }
+      const bars = store.candlesticks || [];
+      const expected = period * 60;
+      let gaps = 0;
+      for (let i = 1; i < bars.length; i++) {
+        if (Number(bars[i].end_period_ts) - Number(bars[i - 1].end_period_ts) !== expected) gaps += 1;
+      }
+      rows.push({
+        ticker: store.ticker,
+        bars: bars.length,
+        first: bars[0] ? new Date(bars[0].end_period_ts * 1000).toISOString() : null,
+        last: bars.length ? new Date(bars[bars.length - 1].end_period_ts * 1000).toISOString() : null,
+        gapCount: gaps,
+        noTradePeriods: bars.filter((b) => !b.price || b.price.close_dollars === undefined).length,
+        trims: (store.trims || []).length
+      });
+    }
+    out.periods[`${period}m`] = { at: full, markets: rows.length, rows };
+  }
+  console.log(JSON.stringify(out, null, 2));
   return 0;
 }
 
@@ -346,21 +528,71 @@ async function discoverSeriesMarkets(seriesTicker, args) {
  */
 const WINDOW_DAYS = 180;
 
+/**
+ * --trim-only: apply --max-bars to the stored series WITHOUT any network access.
+ * Used to bound a store that a previous run made larger than intended; the trim
+ * ledger in each store records exactly which bars were dropped and why.
+ */
+/** Every ticker with a store file in a period's directory (offline). */
+function storeTickersIn(period) {
+  const dir = periodDir(period);
+  if (!fs.existsSync(dir)) return [];
+  const out = [];
+  for (const file of fs.readdirSync(dir).sort()) {
+    if (!file.endsWith('.json') || file.startsWith('_')) continue;
+    try {
+      const store = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
+      if (store && typeof store.ticker === 'string') out.push(store.ticker);
+    } catch {
+      console.error(`⚠ ${file}: unreadable — not trimmed, never guessed`);
+    }
+  }
+  return out;
+}
+
+async function trimOnly(ticker, args) {
+  const period = Number(args.period || 1440);
+  const store = readStore(ticker, period);
+  if (!store) return { ticker, period, skipped: 'no_store' };
+  const before = (store.candlesticks || []).length;
+  const trimmed = trimStore(store, args.maxBars);
+  if (trimmed.trimmed > 0) {
+    writeJson(storePath(ticker, period), trimmed.store);
+    console.log(`✓ ${ticker}: trimmed ${trimmed.trimmed} oldest ${period}-minute bar(s), kept ${(trimmed.store.candlesticks || []).length} (ledger entry added)`);
+  } else {
+    console.log(`• ${ticker}: ${before} bar(s), nothing to trim`);
+  }
+  return { ticker, period, before, added: 0, total: (trimmed.store.candlesticks || []).length, trimmed: trimmed.trimmed || 0, kept: (trimmed.store.candlesticks || []).length };
+}
+
 async function ingestMarket(ticker, args) {
+  const period = Number(args.period || 1440);
+  const windowDays = windowDaysFor(period);
   const seriesTicker = deriveSeriesTicker(ticker);
-  let store = readStore(ticker);
+  let store = readStore(ticker, period);
   if (!store) {
-    store = seedFromRepo(ticker) || {
-      ticker,
-      series_ticker: seriesTicker,
-      period_interval: 1440,
-      source: 'live_api',
-      candlesticks: [],
-      books: []
-    };
+    // The in-repo captures are DAILY bars. Seeding an intraday store from them
+    // would silently put 1440-minute bars into a 60-minute series, so seeding is
+    // only ever done for the daily period.
+    const seeded = period === 1440 ? seedFromRepo(ticker) : null;
+    store =
+      seeded || {
+        ticker,
+        series_ticker: seriesTicker,
+        period_interval: period,
+        source: 'live_api',
+        candlesticks: [],
+        books: []
+      };
     if (store.candlesticks.length > 0) {
       console.log(`• ${ticker}: seeded ${store.candlesticks.length} bar(s) from the verified in-repo capture`);
     }
+  }
+  if (Number(store.period_interval || period) !== period) {
+    throw new Error(
+      `${ticker}: ${storePath(ticker, period)} holds period_interval=${store.period_interval} but this run is period=${period}. ` +
+        'Refusing to mix two granularities in one file — pass --max-bars/--period to the matching store or move the file.'
+    );
   }
 
   // Real market object FIRST: candlesticks alone cannot be replayed (the engine
@@ -407,20 +639,20 @@ async function ingestMarket(ticker, args) {
   }
 
   const windows = [];
-  for (let w = startTs; w < endTs; w += WINDOW_DAYS * DAY) {
-    windows.push([w, Math.min(w + WINDOW_DAYS * DAY - 1, endTs)]);
+  for (let w = startTs; w < endTs; w += windowDays * DAY) {
+    windows.push([w, Math.min(w + windowDays * DAY - 1, endTs)]);
   }
 
   if (args.dryRun) {
     console.log(
-      `[dry-run] ${ticker}: would GET ${windows.length} window(s) from ` +
+      `[dry-run] ${ticker}: would GET ${windows.length} window(s) of ${period}-minute bars from ` +
         `${new Date(startTs * 1000).toISOString()} (store has ${store.candlesticks.length} bar(s)` +
         `${openTs ? `, market opened ${new Date(openTs * 1000).toISOString()}` : ''})`
     );
     for (const [a, b] of windows) {
-      console.log(`    ${`${BASE}${KALSHI_PATHS.candlesticks(seriesTicker, ticker)}`}?start_ts=${a}&end_ts=${b}&period_interval=1440`);
+      console.log(`    ${`${BASE}${KALSHI_PATHS.candlesticks(seriesTicker, ticker)}`}?start_ts=${a}&end_ts=${b}&period_interval=${period}`);
     }
-    return { ticker, series: seriesTicker, added: 0, total: store.candlesticks.length, skipped: 'dry_run', windows: windows.length };
+    return { ticker, series: seriesTicker, period, added: 0, total: store.candlesticks.length, skipped: 'dry_run', windows: windows.length };
   }
 
   let added = 0;
@@ -432,7 +664,7 @@ async function ingestMarket(ticker, args) {
   for (const [a, b] of windows) {
     const url =
       `${BASE}${KALSHI_PATHS.candlesticks(seriesTicker, ticker)}` +
-      `?start_ts=${a}&end_ts=${b}&period_interval=1440`;
+      `?start_ts=${a}&end_ts=${b}&period_interval=${period}`;
     lastUrl = url;
     const res = await getJson(url, { timeoutMs: args.timeoutMs });
     if (!res.ok) {
@@ -458,7 +690,7 @@ async function ingestMarket(ticker, args) {
 
   store.candlesticks = bars;
   store.series_ticker = seriesTicker;
-  store.period_interval = 1440;
+  store.period_interval = period;
   store.last_ingested_at = new Date().toISOString();
   store.last_ingest_url = lastUrl;
   store.source = store.source === 'repo_extended_capture' || store.source === 'repo_snapshot_capture'
@@ -487,12 +719,20 @@ async function ingestMarket(ticker, args) {
     await sleep(args.minIntervalMs);
   }
 
-  writeJson(storePath(ticker), store);
+  const trimmed = trimStore(store, args.maxBars);
+  store = trimmed.store;
+  if (trimmed.trimmed > 0) {
+    console.log(`  ⚠ ${ticker}: trimmed ${trimmed.trimmed} oldest ${period}-minute bar(s) to honour --max-bars=${args.maxBars} (recorded in store.trims)`);
+  }
+  writeJson(storePath(ticker, period), store);
   return {
     ticker,
     series: seriesTicker,
+    period,
     added,
     total: bars.length,
+    kept: (store.candlesticks || []).length,
+    trimmed: trimmed.trimmed || 0,
     conflicts: conflicts.length,
     books: (store.books || []).length,
     market: marketCaptured ? 'captured' : (args.withMarket ? 'FAILED' : 'not_requested'),
@@ -514,19 +754,71 @@ async function main() {
 
   if (args.cutoff) return fetchCutoff(args);
 
+  const request = args.request ? readIngestRequest() : {};
+
   let tickers = args.tickers ? [...args.tickers] : defaultUniverse();
   if (args.series) {
     for (const s of args.series) tickers.push(...(await discoverSeriesMarkets(s, args)));
     tickers = [...new Set(tickers)];
   }
-  if (args.verify) return verifyStore(tickers);
+  if (args.verify) {
+    const code = verifyStore(tickers);
+    verifyIntradayStores(tickers);
+    return code;
+  }
 
-  console.log(`Ingesting ${tickers.length} market(s) from ${BASE}`);
+  if (args.trimOnly) {
+    // Offline: bound the requested period's whole store and stop. No HTTP at all.
+    const inStore = storeTickersIn(args.period);
+    console.log(`Trimming ${inStore.length} stored ${args.period}-minute series to --max-bars=${args.maxBars} (no network)`);
+    return runPass(inStore, { ...args, trimOnly: true });
+  }
+
+  const dailyCode = await runPass(tickers, args);
+  if (dailyCode !== 0) return dailyCode;
+
+  // ---------------------------------------------------------------------
+  // INTRADAY PASS (recommended-work item #2)
+  //   Configured in data/history/_ingest-request.json because the automation
+  //   token may not edit .github/workflows/*. Runs AFTER the daily pass, writes
+  //   to data/history/intraday/<period>m/, and can never touch daily bars.
+  // ---------------------------------------------------------------------
+  const intraday = intradayArgsFromRequest(request, args);
+  if (intraday) {
+    console.log(
+      `\n— Intraday pass requested by data/history/_ingest-request.json: ${intraday.period}-minute bars, ` +
+        `${intraday.days} day(s), max ${intraday.maxBars} bar(s)/market —`
+    );
+    let iTickers = intraday.tickers ? [...intraday.tickers] : args.tickers ? [...args.tickers] : [];
+    if (intraday.series) {
+      for (const s of intraday.series) iTickers.push(...(await discoverSeriesMarkets(s, intraday)));
+    }
+    if (iTickers.length === 0) iTickers = tickers;
+    iTickers = [...new Set(iTickers)];
+    const code = await runPass(iTickers, intraday);
+    if (code !== 0) return code;
+  }
+  return 0;
+}
+
+/** One ingest pass (one period_interval) with its own directory and manifest. */
+async function runPass(tickers, args) {
+  const period = Number(args.period || 1440);
+  if (Array.isArray(tickers) && tickers.length === 0 && !args.trimOnly) {
+    console.log('\n(no markets requested for this pass — nothing to do)');
+    return 0;
+  }
+  const dir = periodDir(period);
+  fs.mkdirSync(dir, { recursive: true });
+  console.log(
+    `\n=== ${period === 1440 ? 'DAILY' : `${period}-MINUTE`} ${args.trimOnly ? 'TRIM (offline)' : 'PASS'} — ` +
+      `${tickers.length} market(s) ${args.trimOnly ? '' : `from ${BASE} `}→ ${path.relative(ROOT, dir)}/ ===`
+  );
   const summary = [];
   let failures = 0;
 
   for (const ticker of tickers) {
-    const row = await ingestMarket(ticker, args);
+    const row = args.trimOnly ? await trimOnly(ticker, args) : await ingestMarket(ticker, args);
     summary.push(row);
     if (row.error && !row.added) {
       failures += 1;
@@ -536,10 +828,11 @@ async function main() {
       failures += 0;
       console.error(`⚠ ${ticker}: +${row.added} bar(s) stored, but ${row.error} (see store.fetchErrors)`);
     } else if (row.skipped) {
-      console.log(`• ${ticker}: ${row.skipped} (${money(row.total)} bar(s) stored)`);
+      console.log(`• ${ticker}: ${row.skipped} (${money(row.total ?? row.before ?? 0)} bar(s) stored)`);
     } else {
       console.log(
         `✓ ${ticker}: +${row.added} new bar(s), ${money(row.total)} total` +
+          (row.trimmed ? `, ${money(row.trimmed)} oldest trimmed` : '') +
           (row.conflicts ? `, ${row.conflicts} CONFLICT(S) flagged` : '') +
           (row.books ? `, ${row.books} book snapshot(s)` : '')
       );
@@ -550,8 +843,10 @@ async function main() {
   const manifest = {
     generatedAt: new Date().toISOString(),
     apiBase: BASE,
+    periodIntervalMinutes: period,
+    storeDir: path.relative(ROOT, dir),
     endpoints: {
-      candlesticks: 'GET /series/{series_ticker}/markets/{ticker}/candlesticks (period_interval=1440)',
+      candlesticks: `GET /series/{series_ticker}/markets/{ticker}/candlesticks (period_interval=${period})`,
       orderbook: 'GET /markets/{ticker}/orderbook',
       cutoff: 'GET /historical/cutoff'
     },
@@ -566,15 +861,20 @@ async function main() {
       markets: summary.length,
       barsAdded: summary.reduce((s, r) => s + (r.added || 0), 0),
       barsStored: summary.reduce((s, r) => s + (r.total || 0), 0),
+      barsKept: summary.reduce((s, r) => s + (r.kept ?? r.total ?? 0), 0),
+      barsTrimmed: summary.reduce((s, r) => s + (r.trimmed || 0), 0),
       conflicts: summary.reduce((s, r) => s + (r.conflicts || 0), 0),
       failures
     },
     integrity:
-      'Bars are stored verbatim from the live API. Existing bars are never overwritten; a re-fetched bar that differs is recorded as a conflict. No gap is filled and no bar is interpolated.'
+      'Bars are stored verbatim from the live API. Existing bars are never overwritten; a re-fetched bar that differs is recorded as a conflict. No gap is filled and no bar is interpolated. Trimming (--max-bars) drops the OLDEST bars and writes a ledger entry in store.trims.'
   };
-  writeJson(path.join(DATA_DIR, '_manifest.json'), manifest);
+  writeJson(path.join(dir, '_manifest.json'), manifest);
 
-  console.log(`\nBars added: ${manifest.totals.barsAdded} · stored: ${manifest.totals.barsStored} · conflicts: ${manifest.totals.conflicts} · failures: ${failures}`);
+  console.log(
+    `\n${period === 1440 ? 'Daily' : `${period}-minute`} bars added: ${manifest.totals.barsAdded} · stored: ${manifest.totals.barsStored} · ` +
+      `conflicts: ${manifest.totals.conflicts} · failures: ${failures}`
+  );
   if (failures === summary.length && summary.length > 0) {
     console.error(
       '\nEvery request failed. If this machine is the build sandbox, direct TLS to *.kalshi.com is blocked ' +

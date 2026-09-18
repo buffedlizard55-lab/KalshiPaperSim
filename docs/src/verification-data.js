@@ -633,6 +633,16 @@ export const VERIFIED_FACTS = Object.freeze([
     evidenceLabel: 'src/backtest-replay.js → ReplayEngine._applyMarketCap()',
     usedIn: 'src/backtest-replay.js → ReplayEngine._applyMarketCap(); scripts/cap-comparison.mjs'
   },
+  {
+    id: 'V81', group: 'Prices', status: 'DERIVED',
+    fact: 'Traded price range of the stored universe (what strategies can actually touch)',
+    value: 'The 30 stored markets hold 5,762 numeric closes spanning $0.01 to $0.45; NO close reaches $0.50; only two markets ever print above $0.28 (KXNASDAQ100Y-26DEC31H1600-T33000: 45 bars, max $0.45; T19000: 2 bars, max $0.40). Reported highs reach $0.99 on T33000, but a high is not a tradeable close and is not treated as one.',
+    url: `${D}/api-reference/market/get-market-candlesticks`,
+    doc: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/data/reports/calendar-audit.json',
+    derivation: 'Min/max over price.close in every tuple of src/accumulated-history.js (markets[*].tuples[*][3][3] / 10000), every tuple being a verbatim response from the official candlesticks endpoint above; reproducible offline and re-asserted by test 77.',
+    usedIn: 'src/strategies.js -> LongshotFader_FLB thesis and AdjacentStrike_Ladder thesis; test 77 in test/simulation.test.js',
+    note: 'This fact exists because a sentence in src/strategies.js said the universe "contains NO contract above 28c" — it was wrong. See Irregularity #31.'
+  }
 ]);
 
 /** Numbered irregularity register. Severity: high | med | low | info. */
@@ -970,6 +980,19 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'No-trade bars are counted and displayed per market, and resting orders still fill only within the period\u2019s real traded range (which is empty on those bars, so the volume bound now blocks the fill). The remaining exposure is that the touch itself is carried forward from the last real quote.',
     userAction: 'When reading a market-maker\u2019s trade count, compare it with the no-trade bars of the markets it quoted.'
+  },
+  {
+    id: 31, severity: 'med',
+    title: 'A published claim about the traded price range was wrong ("no contract above 28c")',
+    assumed: 'That no contract in the captured universe trades above 28 cents, so the favourite leg of the longshot-bias rule and the near-certainty entries provably cannot fire.',
+    truth: 'The stored window contains 47 closes above 28c, all of them in two Nasdaq-100 strikes (KXNASDAQ100Y-26DEC31H1600-T33000: 45 bars, max close $0.45; T19000: 2 bars, max $0.40). The published sentence was false. The CONCLUSION it supported survives a stronger test: across all 30 markets and 5,762 numeric closes the maximum close is $0.45, so no close reaches the 0.85+ band the favourite leg needs and none reaches the 0.92-0.99 band a near-certainty entry needs.',
+    evidence: [
+      { label: 'Counted from the store, not from an opinion', url: null, text: 'node -e over src/accumulated-history.js: 5,762 closes, min $0.01, max $0.45, 47 above $0.28, 0 above $0.50' },
+      { label: 'The bars are real API responses', url: null, text: 'data/history/KXNASDAQ100Y-26DEC31H1600-T33000.json (263 bars) + data/reports/store-verification.json (re-fetched from the official endpoint, compared field-for-field)' },
+      { label: 'Official endpoint the closes come from', url: 'https://docs.kalshi.com/api-reference/market/get-market-candlesticks' }
+    ],
+    action: 'The sentence and two related captions were rewritten to state the measured range, and to say in place that the earlier number was wrong (src/strategies.js). Test 77 recomputes the range from the store on every run so the claim cannot drift again, and the range is now a published fact (V81).',
+    userAction: 'When a caption quotes a range, re-run the count before relying on it — and read the retraction next to the corrected sentence, not only the headline number.'
   }
 ]);
 

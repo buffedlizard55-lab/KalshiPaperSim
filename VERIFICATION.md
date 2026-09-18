@@ -1,6 +1,6 @@
 # Line-by-Line Verification Audit
 
-**Generated:** 2026-09-17 by `scripts/render-docs.js` from `src/verification-data.js`
+**Generated:** 2026-09-18 by `scripts/render-docs.js` from `src/verification-data.js`
 **Standard:** every claim below is either (a) quoted from official Kalshi documentation, (b) copied from a real
 production API response captured on 2026-09-17, or (c) derived by arithmetic on (a)/(b).
 Nothing is inferred from a language model's memory of Kalshi.
@@ -10,9 +10,9 @@ Nothing is inferred from a language model's memory of Kalshi.
 | `DOCUMENTED` | Quoted from official Kalshi docs / the fee schedule PDF | 32 |
 | `CAPTURED` | Copied from a real production API response | 21 |
 | `NEGATIVE` | A verified 404 / contradiction (proof something is NOT true) | 1 |
-| `DERIVED` | Computed by arithmetic on official formulas | 16 |
+| `DERIVED` | Computed by arithmetic on official formulas | 17 |
 | `OBSERVATION` | Seen in real data, not explained by any document | 4 |
-| **Total** | 66 of 74 carry a URL you can open yourself | **74** |
+| **Total** | 67 of 75 carry a URL you can open yourself | **75** |
 
 ---
 
@@ -152,6 +152,12 @@ Nothing is inferred from a language model's memory of Kalshi.
 | `V77` | OBSERVATION | Fixed-point precision is consistent across every stored bar — 4 decimals for dollars, 2 for *_fp | 33,562 price values across 2,523 bars were all exactly 4 decimal places and every open_interest_fp / volume_fp exactly 2. No counter-example was found, which is what makes the compact integer encoding in src/accumulated-history.js lossless. Flagged as an OBSERVATION because Kalshi does not publish this guarantee: the encoder asserts it on every value and refuses to write the file if it ever fails. | [external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/mar](https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1784419200&end_ts=1789689600&period_interval=1440) | `scripts/generate-history-module.mjs → assertDecimals() throws if this ever stops being true` |
 | `V80` | DERIVED | A candlestick’s volume_fp is the contracts traded in that period — proven by summing them | Summing the 204 daily volume_fp values of KXBTCY-27JAN0100-T149999.99 gives 2,032,361.22, exactly the market’s lifetime volume_fp (2,032,361.22). KXINXY-26DEC31H1600-B6900: 294,789.96 = 294,789.96. KXNASDAQ100Y-26DEC31H1600-T33000: 394,165.05 vs 395,852.67 — the 1,687.62 difference is the trading done since the last bar closed. No fill may therefore exceed the contracts that actually changed hands in a period. | [external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/K](https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1771975529&end_ts=1789689600&period_interval=1440) | `src/backtest-replay.js → ReplayEngine.maxFillFractionOfPeriodVolume (default 0.10 of the period’s real volume)` |
 
+### Prices
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V81` | DERIVED | Traded price range of the stored universe (what strategies can actually touch) | The 30 stored markets hold 5,762 numeric closes spanning $0.01 to $0.45; NO close reaches $0.50; only two markets ever print above $0.28 (KXNASDAQ100Y-26DEC31H1600-T33000: 45 bars, max $0.45; T19000: 2 bars, max $0.40). Reported highs reach $0.99 on T33000, but a high is not a tradeable close and is not treated as one. | [docs.kalshi.com/api-reference/market/get-market-candlesticks](https://docs.kalshi.com/api-reference/market/get-market-candlesticks) | `src/strategies.js -> LongshotFader_FLB thesis and AdjacentStrike_Ladder thesis; test 77 in test/simulation.test.js` |
+
 ---
 
 ## 2. Official sources used
@@ -247,6 +253,6 @@ Structure and interaction patterns only. **No data, copy or branding was taken f
 | Every strategy carries `riskManagement: NONE (by mandate)` | test 21 |
 | Post-mortem prose interpolates computed values only | `generatePostMortem()`; test 26 |
 | Oversized orders are never filled at an invented price | `exhaustionPolicy: 'partial'`; tests 17–19 |
-| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 12 strategies) |
+| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 22 strategies) |
 | A strategy that never traded is not ranked | `LEADERBOARD_QUALIFICATION.minTrades = 1`; test 27 |
 | Fabricated tickers cannot re-enter the catalog | test 10 |

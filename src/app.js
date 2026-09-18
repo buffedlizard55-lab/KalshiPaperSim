@@ -23,6 +23,9 @@ import {
 import {
   VERIFIED_FACTS, IRREGULARITIES, COMPETITION_SITE_ANALYSIS, groupFacts, factStats
 } from './verification-data.js';
+import {
+  RESEARCH_SOURCES, RESEARCH_META, RESEARCH_GAPS, researchStats, recreatedStrategyMap, RESEARCH_CAPTURE_METHODS
+} from './research-sources.js';
 
 /* ------------------------------------------------------------------ *
  * State
@@ -46,7 +49,9 @@ const state = {
   feed: null,
   feedStatus: null,
   tape: [],
-  options: { seed: 20260917, settleAtEnd: false, regime: 'baseline' }
+  options: { seed: 20260917, settleAtEnd: false, regime: 'baseline' },
+  researchLoaded: false,
+  reports: {}
 };
 
 /* ------------------------------------------------------------------ *
@@ -349,6 +354,7 @@ function wireTabs() {
       const id = btn.dataset.tab;
       $$('.panel').forEach((p) => p.classList.toggle('is-active', p.id === `panel-${id}`));
       if (id === 'markets' && state.selectedTicker) selectMarket(state.selectedTicker);
+      if (id === 'research' && !state.researchLoaded) { state.researchLoaded = true; renderResearch(); }
     });
   });
 }
@@ -1051,6 +1057,185 @@ async function runLab() {
   }
 }
 
+
+/* ------------------------------------------------------------------ *
+ * Research & Sources
+ * ------------------------------------------------------------------ */
+
+/**
+ * Reports are generated offline by scripts/run-reports.mjs and
+ * scripts/strategy-sweep.mjs, then written to BOTH data/reports/ (canonical)
+ * and docs/data/reports/ (what GitHub Pages serves). Loading them here means the
+ * page shows the same computed artefacts a reader can download and check, and
+ * never a number typed into the HTML.
+ */
+async function loadReport(name) {
+  try {
+    const res = await fetch(`data/reports/${name}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    return { __error: String(err && err.message ? err.message : err), __name: name };
+  }
+}
+
+function pctCell(v) {
+  if (typeof v !== 'number' || !Number.isFinite(v)) return '<span class="muted">—</span>';
+  return `<span class="${signedClass(v)}">${v > 0 ? '+' : ''}${v.toFixed(2)}%</span>`;
+}
+
+async function renderResearch() {
+  const [sweep, liquidity, depth, flights] = await Promise.all([
+    loadReport('sweep-summary.json'),
+    loadReport('liquidity-depth.json'),
+    loadReport('depth-comparison.json'),
+    loadReport('flights.json')
+  ]);
+  state.reports = { sweep, liquidity, depth, flights };
+  renderResearchStats(sweep);
+  renderResearchSweep(sweep);
+  renderResearchLiquidity(liquidity);
+  renderResearchLedger();
+  renderResearchGaps();
+  renderResearchReports();
+}
+
+function renderResearchStats(sweep) {
+  const stats = researchStats();
+  const runs = (sweep && !sweep.__error && sweep.runs) || [];
+  const variants = runs.reduce((n, r) => n + Object.values(r.families).reduce((m, f) => m + f.variants, 0), 0);
+  setHTML('#researchStats', `
+    <div class="card card-wide">
+      <div class="stat-row"><span>Public sources logged</span><b>${stats.sources}</b></div>
+      <div class="stat-row"><span>Read in full (page fetch)</span><b>${stats.fetchedPages}</b></div>
+      <div class="stat-row"><span>Read via search excerpt (page returns HTTP 403 to this sandbox)</span><b>${stats.searchExcerpts}</b></div>
+      <div class="stat-row"><span>Sources this repository can test</span><b>${stats.sourcesWithAReplay}</b></div>
+      <div class="stat-row"><span>Sources it cannot test here</span><b>${stats.notTestableHere}</b></div>
+      <div class="stat-row"><span>Sweep variants replayed</span><b>${variants || '—'}</b></div>
+      <div class="stat-row"><span>Ledger captured</span><b>${esc(RESEARCH_META.capturedOn)}</b></div>
+    </div>
+    <div class="notice">${esc(RESEARCH_META.note)}</div>
+  `);
+}
+
+function renderResearchSweep(sweep) {
+  if (!sweep || sweep.__error) {
+    setHTML('#researchSweep', `<div class="notice notice-warn">Sweep report unavailable (${esc((sweep && sweep.__error) || 'not generated')}). Run <code>node scripts/strategy-sweep.mjs --period=1440 --depth-mode=captured</code>.</div>`);
+    return;
+  }
+  const rows = [];
+  for (const run of sweep.runs) {
+    for (const [family, f] of Object.entries(run.families)) {
+      rows.push(`
+        <tr>
+          <td>${esc(String(run.periodIntervalMinutes))}m</td>
+          <td><span class="pill pill-sim">${esc(run.depthMode)}</span></td>
+          <td><code>${esc(family)}</code></td>
+          <td>${f.variants}</td>
+          <td>${f.profitable} <span class="muted">of ${f.variants}</span></td>
+          <td class="num">${pctCell(f.medianReturnPct)}</td>
+          <td>${f.best ? pctCell(f.best.returnPct) : '<span class="muted">—</span>'}</td>
+          <td>${f.worst ? pctCell(f.worst.returnPct) : '<span class="muted">—</span>'}</td>
+        </tr>`);
+    }
+  }
+  setHTML('#researchSweep', `
+    <h3>Recreated strategy families — measured distributions</h3>
+    <p class="lede">Each row is a family of parameter variants replayed one by one on the real bars. The distributions are shown
+    because the best of many variants is expected to look good by luck; a family is only a candidate when its <em>median</em> is positive.
+    <strong>Post-split median</strong> is a second run in which no order could execute before ${esc((sweep.runs.find((r) => r.oosSplit) || {}).oosSplit?.date || 'the split date') || '—'}
+    (pre-split bars are still replayed so the strategy has real history, and the account keeps its opening capital). It is a stability check, not a forward test —
+    the designs were written after that date existed in the store.</p>
+    <div class="table-wrap"><table class="grid">
+      <thead><tr><th>Period</th><th>Depth</th><th>Family</th><th class="num">Variants</th><th class="num">Profitable</th><th class="num">Median</th><th class="num">Best</th><th class="num">Worst</th><th class="num">Post-split median</th></tr></thead>
+      <tbody>${rows.join('')}</tbody>
+    </table></div>
+    <div class="notice">${esc(sweep.note || '')}</div>
+  `);
+}
+
+function renderResearchLiquidity(liquidity) {
+  if (!liquidity || liquidity.__error) {
+    setHTML('#researchLiquidity', `<div class="notice notice-warn">Liquidity report unavailable (${esc((liquidity && liquidity.__error) || 'not generated')}).</div>`);
+    return;
+  }
+  const rows = liquidity.markets.slice().sort((a, b) => (b.yes.contractsWithinTicks[5] || 0) - (a.yes.contractsWithinTicks[5] || 0)).map((m) => `
+    <tr>
+      <td><code>${esc(m.ticker)}</code></td>
+      <td class="num">${m.yes.touch === null ? '<span class="pill pill-off">empty side</span>' : priceCents(m.yes.touch)}</td>
+      <td class="num">${m.yes.levelCount}</td>
+      <td class="num">${compact(m.yes.contractsWithinTicks[1])}</td>
+      <td class="num">${compact(m.yes.contractsWithinTicks[5])}</td>
+      <td class="num">${m.yes.impact[1000]?.filled ? `${priceCents(m.yes.impact[1000].vwap)} <span class="muted">(+${m.yes.impact[1000].slippageTicksFromTouch} ticks)</span>` : '<span class="pill pill-off">ladder exhausted</span>'}</td>
+      <td><a href="${esc(m.url)}" target="_blank" rel="noopener">API</a></td>
+    </tr>`).join('');
+  setHTML('#researchLiquidity', `
+    <h3>Real liquidity at the captured touch</h3>
+    <p class="lede">Read straight off the captured order books (<code>${esc(liquidity.endpoint)}</code>). The impact column is a walk
+    through the real ladder for a 1,000-contract buy — no impact model is used, and a ladder that runs out is reported as exhausted.</p>
+    <div class="card card-wide">
+      <div class="stat-row"><span>Markets with a captured ladder</span><b>${liquidity.aggregate.markets}</b></div>
+      <div class="stat-row"><span>Median contracts within 1 tick of the YES touch</span><b>${compact(liquidity.aggregate.medianYesContractsWithin1Tick || 0)}</b></div>
+      <div class="stat-row"><span>Markets a 10,000-contract buy exhausts</span><b>${liquidity.aggregate.marketsExhaustedBy10000Contracts}</b></div>
+    </div>
+    <div class="table-wrap"><table class="grid">
+      <thead><tr><th>Ticker</th><th class="num">YES touch</th><th class="num">Levels</th><th class="num">Contracts ≤1 tick</th><th class="num">Contracts ≤5 ticks</th><th class="num">1,000-contract buy</th><th>Source</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+  `);
+}
+
+function renderResearchLedger() {
+  const map = recreatedStrategyMap();
+  const cards = RESEARCH_SOURCES.map((src) => {
+    const tested = (src.testedBy || []).length
+      ? `<div class="muted" style="margin-top:.4rem">Tested here by ${src.testedBy.map((u) => `<code>${esc(u)}</code>`).join(', ')}</div>`
+      : `<div class="badge badge-review" style="margin-top:.4rem">not testable with the data held here</div>`;
+    return `
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;gap:.6rem;align-items:flex-start">
+          <strong>${esc(src.id)} · ${esc(src.title)}</strong>
+          <span class="pill pill-${src.capturedVia === RESEARCH_CAPTURE_METHODS.FETCHED ? 'live' : 'sim'}">${src.capturedVia === RESEARCH_CAPTURE_METHODS.FETCHED ? 'read in full' : 'search excerpt'}</span>
+        </div>
+        <div class="muted">read ${esc(src.verifiedOn)}${src.published ? ` · published ${esc(src.published)}` : ''}</div>
+        <blockquote class="quote">${esc(src.claim)}</blockquote>
+        <div class="muted">${esc(src.host)}</div>
+        <div><strong>Taken:</strong> ${esc(src.taken)}</div>
+        ${src.howTested ? `<div><strong>How it was tested:</strong> ${esc(src.howTested)}</div>` : ''}
+        ${src.notTestableReason ? `<div><strong>Why it cannot be tested here:</strong> ${esc(src.notTestableReason)}</div>` : ''}
+        ${src.caveat ? `<div><strong>Caveat:</strong> ${esc(src.caveat)}</div>` : ''}
+        ${tested}
+        <div style="margin-top:.5rem">
+          ${[src.url].concat(src.urls || []).filter(Boolean).map((u) => `<a class="source-link" href="${esc(u)}" target="_blank" rel="noopener">open source ↗</a>`).join(' ')}
+        </div>
+      </div>`;
+  }).join('');
+  setHTML('#researchLedger', `<h3>Source ledger</h3><p class="lede">Quotes are transcribed from what was read, because the quote is the
+    claim being tested. Reddit blocks this sandbox (HTTP 403), so those threads were read through the search engine's full-text excerpt — labelled per entry.</p>
+    <div class="card-grid">${cards}</div>`);
+}
+
+function renderResearchGaps() {
+  const cards = RESEARCH_GAPS.map((g) => `
+    <div class="card">
+      <strong>${esc(g.gap)}</strong>
+      <div class="muted">${esc(g.why)}</div>
+      <div><strong>Blocked by:</strong> ${esc(g.blockedBy)}</div>
+      <div><strong>To close it:</strong> ${esc(g.toClose)}</div>
+    </div>`).join('');
+  setHTML('#researchGaps', `<h3>What this project cannot test yet — and what it would take</h3><div class="card-grid">${cards}</div>`);
+}
+
+function renderResearchReports() {
+  const names = ['forward-test.json', 'flights.json', 'depth-comparison.json', 'liquidity-depth.json', 'sweep-summary.json', 'calendar-audit.json', 'candle-coverage.json', 'store-verification.json'];
+  setHTML('#researchReports', `
+    <h3>Raw reports</h3>
+    <p class="lede">Every number on this site comes from one of these files, generated offline from the stored bars. Open one to check any figure.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:.4rem">${names.map((n) => `<a class="btn btn-ghost" href="data/reports/${esc(n)}" target="_blank" rel="noopener">${esc(n)}</a>`).join('')}</div>
+    <div class="notice">Regenerate with <code>node scripts/run-reports.mjs</code> and <code>node scripts/strategy-sweep.mjs --period=1440 --depth-mode=captured</code>.</div>
+  `);
+}
+
 /* ------------------------------------------------------------------ *
  * Verification & irregularities
  * ------------------------------------------------------------------ */
@@ -1222,6 +1407,7 @@ function wireGlobalEvents() {
   });
 
   on('#verifySearch', 'input', (e) => renderVerification(e.target.value));
+  on('#btnResearchReload', 'click', () => { state.researchLoaded = true; renderResearch().then(() => toast('Reports reloaded.', 'ok')); });
 }
 
 async function advance(weeks) {
