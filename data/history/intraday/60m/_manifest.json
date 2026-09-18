@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-09-18T00:00:39.289Z",
+  "apiBase": "https://external-api.kalshi.com/trade-api/v2",
+  "periodIntervalMinutes": 60,
+  "storeDir": "data/history/intraday/60m",
+  "endpoints": {
+    "candlesticks": "GET /series/{series_ticker}/markets/{ticker}/candlesticks (period_interval=60)",
+    "orderbook": "GET /markets/{ticker}/orderbook",
+    "cutoff": "GET /historical/cutoff"
+  },
+  "docs": {
+    "candlesticks": "https://docs.kalshi.com/api-reference/market/get-market-candlesticks",
+    "orderbook": "https://docs.kalshi.com/getting_started/orderbook_responses",
+    "historical": "https://docs.kalshi.com/getting_started/historical_data",
+    "rateLimits": "https://docs.kalshi.com/getting_started/rate_limits"
+  },
+  "markets": [
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
+      "series": "KXNASDAQ100Y",
+      "period": 60,
+      "added": 0,
+      "total": 0,
+      "skipped": "dry_run",
+      "windows": 1
+    },
+    {
+      "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
+      "series": "KXNASDAQ100Y",
+      "period": 60,
+      "added": 0,
+      "total": 0,
+      "skipped": "dry_run",
+      "windows": 1
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7300",
+      "series": "KXINXY",
+      "period": 60,
+      "added": 0,
+      "total": 0,
+      "skipped": "dry_run",
+      "windows": 1
+    },
+    {
+      "ticker": "KXINXY-26DEC31H1600-B7500",
+      "series": "KXINXY",
+      "period": 60,
+      "added": 0,
+      "total": 0,
+      "skipped": "dry_run",
+      "windows": 1
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-T149999.99",
+      "series": "KXBTCY",
+      "period": 60,
+      "added": 0,
+      "total": 0,
+      "skipped": "dry_run",
+      "windows": 1
+    },
+    {
+      "ticker": "KXBTCY-27JAN0100-B72500",
+      "series": "KXBTCY",
+      "period": 60,
+      "added": 0,
+      "total": 0,
+      "skipped": "dry_run",
+      "windows": 1
+    }
+  ],
+  "totals": {
+    "markets": 6,
+    "barsAdded": 0,
+    "barsStored": 0,
+    "barsKept": 0,
+    "barsTrimmed": 0,
+    "conflicts": 0,
+    "failures": 0
+  },
+  "integrity": "Bars are stored verbatim from the live API. Existing bars are never overwritten; a re-fetched bar that differs is recorded as a conflict. No gap is filled and no bar is interpolated. Trimming (--max-bars) drops the OLDEST bars and writes a ledger entry in store.trims."
+}

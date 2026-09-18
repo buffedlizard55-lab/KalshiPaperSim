@@ -1,0 +1,29 @@
+{
+  "_what": "Repo-tracked ingest settings. scripts/ingest-history.mjs reads this file on every run, because the GitHub App token that automates this repository is NOT permitted to modify .github/workflows/* (HTTP 403 on workflow dispatch, and a ruleset blocks workflow-file pushes). Anything that must be configurable without editing a workflow belongs here.",
+  "_schema": {
+    "intraday.enabled": "boolean — when true, every daily run also performs a second pass at the given period_interval",
+    "intraday.period": "minutes: 1 | 60 | 1440 (official enum: https://docs.kalshi.com/api-reference/market/get-market-candlesticks)",
+    "intraday.days": "backfill window in days when the intraday store is empty",
+    "intraday.max_bars": "keep only the newest N bars per market (0 = unbounded); trimming is recorded in store.trims",
+    "intraday.tickers": "explicit markets. Kept short on purpose: intraday bars are ~24x as many rows as daily bars"
+  },
+  "intraday": {
+    "enabled": true,
+    "period": 60,
+    "days": 30,
+    "max_bars": 720,
+    "max_backfill_days": 90,
+    "with_books": true,
+    "with_market": false,
+    "min_interval_ms": 300,
+    "tickers": [
+      "KXNASDAQ100Y-26DEC31H1600-T33000",
+      "KXNASDAQ100Y-26DEC31H1600-T19000",
+      "KXINXY-26DEC31H1600-B7300",
+      "KXINXY-26DEC31H1600-B7500",
+      "KXBTCY-27JAN0100-T149999.99",
+      "KXBTCY-27JAN0100-B72500"
+    ],
+    "_why_these": "The six most-liquid markets in the stored universe (by stored daily bar count and lifetime volume, see data/history/_manifest.json). Six markets x 720 bars keeps the intraday store near 2 MB and the browser module under 500 KB, while still covering all three series (Nasdaq-100, S&P 500, BTC)."
+  }
+}
