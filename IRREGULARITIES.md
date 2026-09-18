@@ -1,7 +1,7 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-18 by `scripts/render-docs.js` from `src/verification-data.js`.
-**36 irregularities** flagged during this build: 11 high, 15 medium,
+**38 irregularities** flagged during this build: 12 high, 15 medium,
 9 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
@@ -207,6 +207,28 @@ assumption against an official document or a real API response.
 
 - Bar volume is the period’s traded contracts: <https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B6900/candlesticks?start_ts=1781841600&end_ts=1789689600&period_interval=1440> — `median daily volume_fp 389.00 across 264 bars`
 - The run that exposed it — `seed 20260917, 268 periods, 30 markets: PanicDip_ShockTiming +2005.93%, 1,027 trades, 19 days with >20% equity moves`
+
+---
+
+## #37 — Maker fees were charged on series that do not have them — the maker/taker split is a PER-SERIES property the engine ignored
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That any resting order pays the maker coefficient: fees = round up(M x 0.0175 x C x P x (1-P)). KALSHI_FEES.makerCoefficient was applied unconditionally in OrderBook.processRestingFills(). |
+| **Verified truth** | The official schedule charges a resting order only if the series is in its Maker Fees section: "Trading fees are only charged for orders that are immediately matched with orders sitting on the orderbook. Trading fees are not charged for orders placed that are not immediately matched and are instead left as resting orders on the orderbook unless they are included in our Maker Fees section." The live Series object marks exactly those series with fee_type = "quadratic_with_maker_fees". In the 2026-09-18 capture of 14,154 series, KXNFLGAME, KXMLBGAME, KXNBAGAME, KXWNBAGAME, KXNCAAFGAME, KXFEDDECISION, KXCPIYOY, KXINXY and KXNASDAQ100Y carry that flag, while every KXHIGH* weather series (and KXGOLD15M, KXBTC15M, KXETH15M, KXSOL15M, KXUFCFIGHT) is plain "quadratic" and pays NOTHING for a resting order. The same capture also shows multipliers that are not 1: the MLB series 0.5, KXBTCY 0. |
+| **What the code does** | Fees are resolved per series from a capture, and every fill states the regime that produced its fee. Maker strategies that traded plain-quadratic series were being over-charged before this fix; the ledger, the reports and the Pages data were regenerated. Any strategy text that asserted "the maker coefficient is a quarter of the taker fee" was corrected to the per-series rule. |
+| **What you should do** | Open the Trade Ledger tab: the Fee Regimes table counts the fills and dollars under each rule, and any row can be traced back to its series ticker in src/series-fee-registry.js. |
+
+**Evidence**
+
+- Official fee schedule (PDF) — the sentence quoted above: <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
+- The real per-series configuration — `data/discovered/series-fees.json (GET /series?include_volume=true, capturedAt 2026-09-18T06:42:31Z) -> src/series-fee-registry.js`
+- Endpoint documentation: <https://docs.kalshi.com/api-reference/market/get-series-list>
+- The fix — `src/simulation-engine.js -> OrderBook.makerFeesApply (set from the series fee_type); a plain-quadratic maker fill now records fee 0 and puts the rule that produced it in feeFormula`
+- The guard — `test 86 proves both branches: $0.00 on a plain-quadratic series, exactly $0.42 on 100 contracts at $0.40 for a maker-fee series`
+- Visible per fill — `src/trade-ledger.js -> feeRegime column (taker_0.07 | taker_zero | maker_0.0175 | maker_free | settlement) and the Fee Regimes table on the Trade Ledger tab`
 
 ---
 
@@ -621,21 +643,22 @@ assumption against an official document or a real API response.
 
 ---
 
-## #36 — KXHIGHNY / KXGOLD15M fee multipliers are not yet captured — fees default to the documented M=1
+## #38 — The settlement tracker was rate-limited (HTTP 429) partway through the 2026-09-18 pass
 
 **Severity:** `LOW`
 
 | | |
 | --- | --- |
-| **We assumed** | That the fee multiplier of the two new series is known from a captured Series object (as it is for KXBTCY=0, V11). |
-| **Verified truth** | The ingest captures MARKET objects, not SERIES objects, so seriesFeeConfig() falls back to the documented default multiplier M=1 (taker 0.07×P×(1−P)) with a "captured: false" note. If either series carries a non-standard multiplier in the official Non-Standard Fees table, fees for those flights would be over- or under-charged. |
-| **What the code does** | Every fee number for the two new series is computed with the documented default AND labelled as such. Closing this needs one GET /series/{ticker} capture per series (a listed roadmap item). |
-| **What you should do** | Open the fee schedule PDF and check whether KXHIGHNY / KXGOLD15M appear in the Non-Standard Fees table; if they do, capture the series objects and re-run the reports. |
+| **We assumed** | That every tracked market could be re-checked for its final result in the same run as hundreds of candlestick requests. |
+| **Verified truth** | data/history/_last-run.log (committed with the data) records http_429 for 13 markets — KXINXY-26DEC31H1600-T4000, six KXNASDAQ100Y strikes, KXNCAAFGAME-26SEP26ILLOSU-OSU, KXNFLGAME-26SEP10SFLAR-SF, two KXUFCFIGHT and KXWNBAGAME-26AUG10CHISEA-CHI — after the candlestick passes had already issued hundreds of requests. The markets are neither settled nor marked settled by the run; the fetch simply failed. No price or result is guessed to cover it. |
+| **What the code does** | The failures are logged and committed instead of hidden. Closing this needs a slower cadence (min_interval_ms) or a settlement pass in its own run — both are one-line changes to the request file. |
+| **What you should do** | Open data/history/_last-run.log and search for http_429: each line names a market whose settlement check did not complete. |
 
 **Evidence**
 
-- Fee schedule (check the Non-Standard table for these series): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
-- The honest fallback — `src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"`
+- The run log committed with the data — `data/history/_last-run.log — "✗ <ticker>: http_429"`
+- Rate-limit documentation: <https://docs.kalshi.com/getting_started/rate_limits>
+- Implementation — `scripts/track-settlements.mjs (retries via scripts/kalshi-http.mjs; failures are reported, never invented)`
 
 ---
 
@@ -653,4 +676,22 @@ assumption against an official document or a real API response.
 **Evidence**
 
 - Market list capture: <https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNASDAQ100Y&status=open&limit=12>
+
+---
+
+## #36 — RESOLVED 2026-09-18 — KXHIGHNY / KXGOLD15M fee multipliers were uncaptured; the fee configuration of ALL 14,154 series is now captured
+
+**Severity:** `CLOSED`
+
+| | |
+| --- | --- |
+| **We assumed** | That the fee multiplier of the two new series is known from a captured Series object (as it is for KXBTCY=0, V11). |
+| **Verified truth** | The ingest captures MARKET objects, not SERIES objects, so seriesFeeConfig() falls back to the documented default multiplier M=1 (taker 0.07×P×(1−P)) with a "captured: false" note. If either series carries a non-standard multiplier in the official Non-Standard Fees table, fees for those flights would be over- or under-charged. |
+| **What the code does** | CLOSED 2026-09-18. The on-demand ingest job now runs scripts/discover-universe.mjs, which calls GET /series?include_volume=true and stores the fee configuration of every series the exchange lists (14,154 series) in data/discovered/series-fees.json. scripts/generate-fee-registry.mjs narrows that to the 47 series this build can price a fill for and emits src/series-fee-registry.js; seriesFeeConfig() now resolves snapshot -> registry -> documented default and labels which one it used (captureSource). MEASURED ANSWERS: KXHIGHNY fee_multiplier 1 / quadratic and KXGOLD15M fee_multiplier 1 / quadratic — the documented default was right for both, but it is now a capture rather than an assumption. The same capture exposed a real, material bug: irregularity #37. |
+| **What you should do** | Open https://docs.kalshi.com/api-reference/market/get-series-list, call it with include_volume=true, and compare any ticker against src/series-fee-registry.js. |
+
+**Evidence**
+
+- Fee schedule (check the Non-Standard table for these series): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
+- The honest fallback — `src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"`
 

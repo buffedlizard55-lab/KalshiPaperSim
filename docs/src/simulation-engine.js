@@ -103,6 +103,23 @@ export class OrderBook {
     this.notional = options.notional ?? 1.0;
     this.feeMultiplier = options.feeMultiplier ?? 1;
     this.feeType = options.feeType || 'quadratic';
+    /**
+     * DO RESTING ORDERS PAY A FEE ON THIS SERIES?
+     * The official schedule (quoted verbatim at the top of src/kalshi-fees.js):
+     *   "Trading fees are only charged for orders that are immediately matched
+     *    with orders sitting on the orderbook. Trading fees are not charged for
+     *    orders placed that are not immediately matched and are instead left as
+     *    resting orders on the orderbook unless they are included in our 'Maker
+     *    Fees' section."
+     * The live Series object marks exactly the Maker-Fees series with
+     * fee_type "quadratic_with_maker_fees" (captured for 47 series in
+     * src/series-fee-registry.js). Everything else is plain "quadratic", where
+     * a resting order pays NOTHING. Before 2026-09-18 this engine charged the
+     * maker coefficient unconditionally, which overstated the cost of every
+     * maker strategy (BookWall_BidLadder, MakerFlip_SpreadHarvest) on every
+     * plain-quadratic series in the universe.
+     */
+    this.makerFeesApply = options.makerFeesApply ?? (String(this.feeType) === 'quadratic_with_maker_fees');
     this.exhaustionPolicy = options.exhaustionPolicy === 'penalty' ? 'penalty' : 'partial';
     this.grid = resolvePriceGrid(options.priceRanges?.length ? options.priceRanges : options.priceLevelStructure);
     this.tick = minTick(this.grid);
@@ -541,6 +558,43 @@ export class OrderBook {
   }
 
   /* ---------------------------------------------------------------- *
+   * MARKET CLOCK (verified trade dates)
+   * ---------------------------------------------------------------- */
+
+  /**
+   * Attach the VERIFIED market period this book is currently standing in.
+   *
+   * WHY: `timestamp` on an execution report is wall-clock time — when the
+   * replay (or a live page) executed the order. For a backtest that is useless
+   * as an audit trail: the trade happened in a real market period, and that
+   * period is the one thing a reader can check against the exchange's own
+   * candlestick (`end_period_ts` from GET
+   * /series/{series_ticker}/markets/{ticker}/candlesticks).
+   *
+   * The replay calls this once per bar, before any order for that bar is
+   * executed, so EVERY fill — taker or maker — carries the same, single,
+   * verifiable market clock. When no clock is set (a manual order ticket on a
+   * live page), the field is null and is reported as null rather than filled
+   * in from the wall clock.
+   *
+   * @param {{ts:number, iso:string, periodMinutes?:number, index?:number, sourceUrl?:string}|null} clock
+   */
+  setClock(clock) {
+    this.clock = clock
+      ? Object.freeze({
+          ts: Number(clock.ts),
+          iso: clock.iso ?? new Date(Number(clock.ts) * 1000).toISOString(),
+          periodMinutes: clock.periodMinutes ?? null,
+          index: clock.index ?? null,
+          barVolume: clock.barVolume ?? null,
+          barOpenInterest: clock.barOpenInterest ?? null,
+          sourceUrl: clock.sourceUrl ?? null
+        })
+      : null;
+    return this.clock;
+  }
+
+  /* ---------------------------------------------------------------- *
    * EXECUTION
    * ---------------------------------------------------------------- */
 
@@ -617,6 +671,9 @@ export class OrderBook {
 
     const report = {
       timestamp: new Date().toISOString(),
+      // VERIFIED market period (unix seconds + ISO) this fill belongs to, set
+      // by the replay from the real candlestick. null = no market clock.
+      marketTime: this.clock ? { ...this.clock } : null,
       ticker: this.ticker,
       action: 'BUY',
       side: s.toUpperCase(),
@@ -711,6 +768,7 @@ export class OrderBook {
 
     const report = {
       timestamp: new Date().toISOString(),
+      marketTime: this.clock ? { ...this.clock } : null,
       ticker: this.ticker,
       action: 'SELL',
       side: s.toUpperCase(),
@@ -859,7 +917,18 @@ export class OrderBook {
       // A resting order may fill PARTIALLY against the period's real volume.
       const qty = budget >= remaining ? remaining : round2(Math.floor(budget * 100) / 100);
       budget = round2(budget - qty);
-      const feeInfo = computeKalshiFee({ count: qty, price: fillPrice, multiplier: this.feeMultiplier, isMaker: true });
+      const feeInfo = this.makerFeesApply
+        ? computeKalshiFee({ count: qty, price: fillPrice, multiplier: this.feeMultiplier, isMaker: true })
+        : {
+            // Plain-quadratic series: a resting order pays no trading fee. The
+            // zero is EXPLICIT and labelled, not a missing computation.
+            fee: 0,
+            positionCost: round6(qty * fillPrice),
+            feePlusPositionCost: round6(qty * fillPrice),
+            coefficient: 'none',
+            multiplier: this.feeMultiplier,
+            formula: 'maker fill on a fee_type="quadratic" series => NO trading fee (resting orders are only charged on series in the Maker Fees section)'
+          };
       order.filled = round2((order.filled || 0) + qty);
       order.status = order.filled >= order.count - MIN_COUNT / 2 ? 'executed' : 'resting';
       order.filledAt = new Date().toISOString();
@@ -867,6 +936,7 @@ export class OrderBook {
 
       results.push({
         timestamp: order.filledAt,
+        marketTime: this.clock ? { ...this.clock } : null,
         ticker: this.ticker,
         orderId: order.orderId,
         action: order.direction === 'bid' ? 'BUY' : 'SELL',
@@ -877,6 +947,8 @@ export class OrderBook {
         fee: feeInfo.fee,
         feeFormula: feeInfo.formula,
         feeMultiplier: this.feeMultiplier,
+        feeType: this.feeType,
+        makerFeesApply: this.makerFeesApply,
         gross: round6(qty * fillPrice),
         queuePositionAhead: order.queuePositionAhead,
         partial: qty < remaining - 1e-9,
@@ -1250,6 +1322,10 @@ export class PaperPortfolio {
 
       const settlement = {
         timestamp: opts.settledAt || new Date().toISOString(),
+        // The market period (or the market's real close_time) the payout is
+        // booked against, when the caller knows it. Real settlements pass the
+        // market's own close_time / bar date here, never the replay clock.
+        marketTime: opts.marketTime ? { ...opts.marketTime } : null,
         ticker,
         side: s,
         contracts: pos.count,

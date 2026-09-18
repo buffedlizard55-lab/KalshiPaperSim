@@ -7,12 +7,12 @@ Nothing is inferred from a language model's memory of Kalshi.
 
 | Status | Meaning | Count |
 | --- | --- | --- |
-| `DOCUMENTED` | Quoted from official Kalshi docs / the fee schedule PDF | 33 |
-| `CAPTURED` | Copied from a real production API response | 28 |
+| `DOCUMENTED` | Quoted from official Kalshi docs / the fee schedule PDF | 34 |
+| `CAPTURED` | Copied from a real production API response | 32 |
 | `NEGATIVE` | A verified 404 / contradiction (proof something is NOT true) | 1 |
-| `DERIVED` | Computed by arithmetic on official formulas | 18 |
-| `OBSERVATION` | Seen in real data, not explained by any document | 4 |
-| **Total** | 75 of 84 carry a URL you can open yourself | **84** |
+| `DERIVED` | Computed by arithmetic on official formulas | 19 |
+| `OBSERVATION` | Seen in real data, not explained by any document | 5 |
+| **Total** | 82 of 91 carry a URL you can open yourself | **91** |
 
 ---
 
@@ -79,6 +79,8 @@ Nothing is inferred from a language model's memory of Kalshi.
 | `V82` | DOCUMENTED | KXHIGHNY is the NYC daily high-temperature series, documented by Kalshi’s own API quick-start | The quick-start fetches series KXHIGHNY, "Highest temperature in NYC today?" — this series tracks the highest temperature recorded in Central Park, New York on a given day. | [docs.kalshi.com/getting_started/quick_start_market_data](https://docs.kalshi.com/getting_started/quick_start_market_data) | `data/history/_ingest-request.json (intraday block hourly-weather-settled); src/strategies.js → VERIFIED_SERIES.KXHIGHNY` |
 | `V87` | CAPTURED | The NWS point API resolves Central Park to gridpoint OKX 34,45 with a daily forecast resource | GET api.weather.gov/points/40.7829,-73.9654 → properties.forecast = https://api.weather.gov/gridpoints/OKX/34,45/forecast, forecastZone NYZ072 (Manhattan), relativeLocation New York NY, timeZone America/New_York. | [api.weather.gov/points/40.7829,-73.9654](https://api.weather.gov/points/40.7829,-73.9654) | `scripts/archive-forecasts.mjs → FORECAST_LOCATIONS (the point-in-time signal archive)` |
 | `V88` | CAPTURED | NWS forecast periods carry the daily HIGH in °F on daytime periods with local timestamps | GET api.weather.gov/gridpoints/OKX/34,45/forecast → properties.periods[] e.g. {name "Friday", startTime "2026-09-18T06:00:00-04:00", isDaytime true, temperature 80, temperatureUnit "F", probabilityOfPrecipitation {value 2}}; night periods carry the low (isDaytime false, temperature 70). | [api.weather.gov/gridpoints/OKX/34,45/forecast](https://api.weather.gov/gridpoints/OKX/34,45/forecast) | `scripts/archive-forecasts.mjs → extractDailyHighs(); src/forecast-store.js` |
+| `V94` | CAPTURED | How many weather-city series exist and how liquid each is | 54 KXHIGH* series, all fee_multiplier 1 / quadratic. Lifetime contracts: KXHIGHLAX 166.2M, KXHIGHNY 144.6M, KXHIGHCHI 110.1M, KXHIGHMIA 98.5M, KXHIGHAUS 77.2M, KXHIGHDEN 50.8M, KXHIGHTBOS 30.0M, KXHIGHTATL 27.6M, KXHIGHTSEA 25.6M, KXHIGHTPHX 24.8M | [docs.kalshi.com/api-reference/market/get-series-list](https://docs.kalshi.com/api-reference/market/get-series-list) | `data/history/intraday/60m/ (194 markets across 20 series) - the universe of the weather entries in src/strategies.js` |
+| `V96` | CAPTURED | A series ticker that 404s is usually a PREFIX of real series, not a wrong URL | KXSP500, KXNVDA, KXAAPL and KXNDX each 404 as series, yet KXSP500ADDQ, KXNVDAMENTION, KXAAPLPRICEFOLD and KXNDXADDQ are real listed series in the same 2026-09-18 capture | [docs.kalshi.com/api-reference/market/get-series](https://docs.kalshi.com/api-reference/market/get-series) | `src/strategies.js -> REJECTED_FABRICATED_TICKERS; scripts/generate-fee-registry.mjs prefix detection` |
 
 ### WebSocket & auth
 
@@ -166,6 +168,26 @@ Nothing is inferred from a language model's memory of Kalshi.
 | ID | Status | Fact | Value as verified | Source | Used in |
 | --- | --- | --- | --- | --- | --- |
 | `V81` | DERIVED | Traded price range of the stored universe (what strategies can actually touch) | The 30 stored markets hold 5,762 numeric closes spanning $0.01 to $0.45; NO close reaches $0.50; only two markets ever print above $0.28 (KXNASDAQ100Y-26DEC31H1600-T33000: 45 bars, max $0.45; T19000: 2 bars, max $0.40). Reported highs reach $0.99 on T33000, but a high is not a tradeable close and is not treated as one. | [docs.kalshi.com/api-reference/market/get-market-candlesticks](https://docs.kalshi.com/api-reference/market/get-market-candlesticks) | `src/strategies.js -> LongshotFader_FLB thesis and AdjacentStrike_Ladder thesis; test 77 in test/simulation.test.js` |
+
+### Fees & series
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V91` | CAPTURED | The exchange lists every series WITH its fee configuration in a single call | GET /series?include_volume=true returned 14,154 series on 2026-09-18T06:42:31Z, each with fee_type, fee_multiplier, category and lifetime volume_fp (data/discovered/series-fees.json) | [docs.kalshi.com/api-reference/market/get-series-list](https://docs.kalshi.com/api-reference/market/get-series-list) | `data/discovered/series-fees.json -> scripts/generate-fee-registry.mjs -> src/series-fee-registry.js -> seriesFeeConfig()` |
+| `V92` | CAPTURED | Fee multipliers in the tradeable universe are NOT all 1, and the maker flag is PER SERIES | MLB series (KXMLBGAME and family) 0.5 / quadratic_with_maker_fees; KXBTCY 0 / quadratic; maker fees apply on KXNFLGAME, KXMLBGAME, KXNBAGAME, KXWNBAGAME, KXNCAAFGAME, KXFEDDECISION, KXCPIYOY, KXINXY, KXNASDAQ100Y; every KXHIGH* weather series plus KXGOLD15M, KXBTC15M, KXETH15M, KXSOL15M and KXUFCFIGHT are plain quadratic, so a resting order there is FREE | [docs.kalshi.com/api-reference/market/get-series-list](https://docs.kalshi.com/api-reference/market/get-series-list) | `src/series-fee-registry.js (47 series) -> seriesFeeConfig() -> OrderBook.makerFeesApply` |
+| `V93` | DOCUMENTED | A resting order is charged ONLY on series in the Maker Fees section | "Trading fees are only charged for orders that are immediately matched with orders sitting on the orderbook. Trading fees are not charged for orders placed that are not immediately matched and are instead left as resting orders on the orderbook unless they are included in our Maker Fees section." | [kalshi.com/docs/kalshi-fee-schedule.pdf](https://kalshi.com/docs/kalshi-fee-schedule.pdf) | `src/kalshi-fees.js (quoted verbatim), OrderBook.makerFeesApply, ledger column feeRegime` |
+
+### Ingest & verification
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V95` | OBSERVATION | Kalshi rate-limits the settlement tracker mid-pass (HTTP 429) | The 2026-09-18 06:33Z settlement pass logged http_429 for 13 markets (KXINXY-26DEC31H1600-T4000, six KXNASDAQ100Y strikes, KXNCAAFGAME-26SEP26ILLOSU-OSU, KXNFLGAME-26SEP10SFLAR-SF, two KXUFCFIGHT, KXWNBAGAME-26AUG10CHISEA-CHI) after the candlestick passes had already made hundreds of requests in the same run | [docs.kalshi.com/getting_started/rate_limits](https://docs.kalshi.com/getting_started/rate_limits) | `data/history/_last-run.log (committed with the data) - scripts/track-settlements.mjs` |
+
+### Trade ledger
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V97` | DERIVED | Ledger v2 records the fee regime that produced every fill fee | feeRegime is one of taker_0.07, taker_zero, maker_0.0175, maker_free, settlement; the 2026-09-18 export counted 14,062 maker_free fills ($0.00), 9,645 maker_0.0175 fills ($16,279.65), 9,458 taker_0.07 fills ($22,730.39), 4,111 taker_zero fills ($0.00) and 629 settlements ($0.00) | [kalshi.com/docs/kalshi-fee-schedule.pdf](https://kalshi.com/docs/kalshi-fee-schedule.pdf) | `src/trade-ledger.js -> feeRegimeBreakdown(); data/ledger/summary.json; Trade Ledger tab` |
 
 ---
 
@@ -262,6 +284,6 @@ Structure and interaction patterns only. **No data, copy or branding was taken f
 | Every strategy carries `riskManagement: NONE (by mandate)` | test 21 |
 | Post-mortem prose interpolates computed values only | `generatePostMortem()`; test 26 |
 | Oversized orders are never filled at an invented price | `exhaustionPolicy: 'partial'`; tests 17–19 |
-| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 25 strategies) |
+| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 37 strategies) |
 | A strategy that never traded is not ranked | `LEADERBOARD_QUALIFICATION.minTrades = 1`; test 27 |
 | Fabricated tickers cannot re-enter the catalog | test 10 |

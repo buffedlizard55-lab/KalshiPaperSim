@@ -41,6 +41,7 @@
   <button class="tab" data-tab="markets">📊 Markets &amp; Depth</button>
   <button class="tab" data-tab="memory">🧠 Competition Memory</button>
   <button class="tab" data-tab="lab">🧪 Strategy Lab</button>
+  <button class="tab" data-tab="ledger">🧾 Trade Ledger</button>
   <button class="tab" data-tab="research">🔬 Research</button>
   <button class="tab" data-tab="verification">✅ Verification</button>
   <button class="tab" data-tab="irregularities">⚠️ Irregularities</button>
@@ -291,6 +292,48 @@
   </section>
 
   <!-- ══════════════ TAB: RESEARCH ══════════════ -->
+  <section class="panel" id="panel-ledger">
+    <div class="panel-head">
+      <div>
+        <h2>Verified Trade Ledger</h2>
+        <p class="lede">Every fill and every round trip this engine has booked, with the <strong>real market period</strong>
+        it traded in (the candlestick's own <code>end_period_ts</code> — never the wall clock of a run), the executed
+        price, the slippage paid into the real quoted touch, which order-book ladder priced it, the share of the bar's
+        <strong>real traded volume</strong> it took, the official fee, and the exchange's own settlement where one exists.
+        The ledger is re-derived from the engine on every export and refused if a single field disagrees
+        (<code>scripts/export-ledger.mjs</code> → <code>data/ledger/</code>).</p>
+      </div>
+      <div class="controls">
+        <label class="field">
+          <span>Strategy</span>
+          <select id="ledgerStrategy"><option value="">All strategies</option></select>
+        </label>
+        <label class="field">
+          <span>Flight</span>
+          <select id="ledgerFlight">
+            <option value="">All flights</option>
+            <option value="daily">daily (1440m)</option>
+            <option value="hourly">hourly (60m)</option>
+            <option value="micro">micro (1m)</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Exit kind</span>
+          <select id="ledgerKind">
+            <option value="">SELL + real settlement</option>
+            <option value="SELL">SELL only</option>
+            <option value="SETTLE_REAL">exchange settlement only</option>
+          </select>
+        </label>
+        <button class="btn btn-ghost" id="btnLedgerReload">Reload ledger</button>
+      </div>
+    </div>
+    <div id="ledgerStatus"></div>
+    <div id="ledgerSummary"></div>
+    <div id="ledgerTrades"></div>
+    <div id="ledgerSources"></div>
+  </section>
+
   <section class="panel" id="panel-research">
     <div class="panel-head">
       <div>

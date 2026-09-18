@@ -718,6 +718,65 @@ export const VERIFIED_FACTS = Object.freeze([
     evidenceLabel: 'src/forecast-store.js → forecastHighAt()',
     derivation: 'Point-in-time rule of scripts/archive-forecasts.mjs; asserted by test 73 in test/simulation.test.js.',
     usedIn: 'src/strategy-runner.js → buildForecastSignalProvider(); src/strategies.js → ForecastEdge_Weather'
+  },
+  {
+    id: 'V91', group: 'Fees & series', status: 'CAPTURED',
+    fact: 'The exchange lists every series WITH its fee configuration in a single call',
+    value: 'GET /series?include_volume=true returned 14,154 series on 2026-09-18T06:42:31Z, each with fee_type, fee_multiplier, category and lifetime volume_fp (data/discovered/series-fees.json)',
+    url: 'https://docs.kalshi.com/api-reference/market/get-series-list',
+    capturedAt: '2026-09-18T06:42:31.141Z',
+    usedIn: 'data/discovered/series-fees.json -> scripts/generate-fee-registry.mjs -> src/series-fee-registry.js -> seriesFeeConfig()',
+    irregularity: '#36'
+  },
+  {
+    id: 'V92', group: 'Fees & series', status: 'CAPTURED',
+    fact: 'Fee multipliers in the tradeable universe are NOT all 1, and the maker flag is PER SERIES',
+    value: 'MLB series (KXMLBGAME and family) 0.5 / quadratic_with_maker_fees; KXBTCY 0 / quadratic; maker fees apply on KXNFLGAME, KXMLBGAME, KXNBAGAME, KXWNBAGAME, KXNCAAFGAME, KXFEDDECISION, KXCPIYOY, KXINXY, KXNASDAQ100Y; every KXHIGH* weather series plus KXGOLD15M, KXBTC15M, KXETH15M, KXSOL15M and KXUFCFIGHT are plain quadratic, so a resting order there is FREE',
+    url: 'https://docs.kalshi.com/api-reference/market/get-series-list',
+    capturedAt: '2026-09-18T06:42:31.141Z',
+    usedIn: 'src/series-fee-registry.js (47 series) -> seriesFeeConfig() -> OrderBook.makerFeesApply',
+    irregularity: '#37'
+  },
+  {
+    id: 'V93', group: 'Fees & series', status: 'DOCUMENTED',
+    fact: 'A resting order is charged ONLY on series in the Maker Fees section',
+    value: '"Trading fees are only charged for orders that are immediately matched with orders sitting on the orderbook. Trading fees are not charged for orders placed that are not immediately matched and are instead left as resting orders on the orderbook unless they are included in our Maker Fees section."',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    usedIn: 'src/kalshi-fees.js (quoted verbatim), OrderBook.makerFeesApply, ledger column feeRegime',
+    irregularity: '#37'
+  },
+  {
+    id: 'V94', group: 'Markets & history', status: 'CAPTURED',
+    fact: 'How many weather-city series exist and how liquid each is',
+    value: '54 KXHIGH* series, all fee_multiplier 1 / quadratic. Lifetime contracts: KXHIGHLAX 166.2M, KXHIGHNY 144.6M, KXHIGHCHI 110.1M, KXHIGHMIA 98.5M, KXHIGHAUS 77.2M, KXHIGHDEN 50.8M, KXHIGHTBOS 30.0M, KXHIGHTATL 27.6M, KXHIGHTSEA 25.6M, KXHIGHTPHX 24.8M',
+    url: 'https://docs.kalshi.com/api-reference/market/get-series-list',
+    capturedAt: '2026-09-18T06:42:31.141Z',
+    usedIn: 'data/history/intraday/60m/ (194 markets across 20 series) - the universe of the weather entries in src/strategies.js'
+  },
+  {
+    id: 'V95', group: 'Ingest & verification', status: 'OBSERVATION',
+    fact: 'Kalshi rate-limits the settlement tracker mid-pass (HTTP 429)',
+    value: 'The 2026-09-18 06:33Z settlement pass logged http_429 for 13 markets (KXINXY-26DEC31H1600-T4000, six KXNASDAQ100Y strikes, KXNCAAFGAME-26SEP26ILLOSU-OSU, KXNFLGAME-26SEP10SFLAR-SF, two KXUFCFIGHT, KXWNBAGAME-26AUG10CHISEA-CHI) after the candlestick passes had already made hundreds of requests in the same run',
+    url: 'https://docs.kalshi.com/getting_started/rate_limits',
+    capturedAt: '2026-09-18',
+    usedIn: 'data/history/_last-run.log (committed with the data) - scripts/track-settlements.mjs',
+    irregularity: '#38'
+  },
+  {
+    id: 'V96', group: 'Markets & history', status: 'CAPTURED',
+    fact: 'A series ticker that 404s is usually a PREFIX of real series, not a wrong URL',
+    value: 'KXSP500, KXNVDA, KXAAPL and KXNDX each 404 as series, yet KXSP500ADDQ, KXNVDAMENTION, KXAAPLPRICEFOLD and KXNDXADDQ are real listed series in the same 2026-09-18 capture',
+    url: 'https://docs.kalshi.com/api-reference/market/get-series',
+    capturedAt: '2026-09-18T06:42:31.141Z',
+    usedIn: 'src/strategies.js -> REJECTED_FABRICATED_TICKERS; scripts/generate-fee-registry.mjs prefix detection',
+    irregularity: '#1'
+  },
+  {
+    id: 'V97', group: 'Trade ledger', status: 'DERIVED',
+    fact: 'Ledger v2 records the fee regime that produced every fill fee',
+    value: 'feeRegime is one of taker_0.07, taker_zero, maker_0.0175, maker_free, settlement; the 2026-09-18 export counted 14,062 maker_free fills ($0.00), 9,645 maker_0.0175 fills ($16,279.65), 9,458 taker_0.07 fills ($22,730.39), 4,111 taker_zero fills ($0.00) and 629 settlements ($0.00)',
+    url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
+    usedIn: 'src/trade-ledger.js -> feeRegimeBreakdown(); data/ledger/summary.json; Trade Ledger tab'
   }
 ]);
 
@@ -1123,16 +1182,52 @@ export const IRREGULARITIES = Object.freeze([
     userAction: 'None — this is a documented property of capturing a moving market, not an error.'
   },
   {
-    id: 36, severity: 'low',
-    title: 'KXHIGHNY / KXGOLD15M fee multipliers are not yet captured — fees default to the documented M=1',
+    id: 36, severity: 'closed',
+    title: 'RESOLVED 2026-09-18 — KXHIGHNY / KXGOLD15M fee multipliers were uncaptured; the fee configuration of ALL 14,154 series is now captured',
     assumed: 'That the fee multiplier of the two new series is known from a captured Series object (as it is for KXBTCY=0, V11).',
     truth: 'The ingest captures MARKET objects, not SERIES objects, so seriesFeeConfig() falls back to the documented default multiplier M=1 (taker 0.07\u00d7P\u00d7(1\u2212P)) with a "captured: false" note. If either series carries a non-standard multiplier in the official Non-Standard Fees table, fees for those flights would be over- or under-charged.',
     evidence: [
       { label: 'Fee schedule (check the Non-Standard table for these series)', url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf' },
       { label: 'The honest fallback', url: null, text: 'src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"' }
     ],
-    action: 'Every fee number for the two new series is computed with the documented default AND labelled as such. Closing this needs one GET /series/{ticker} capture per series (a listed roadmap item).',
-    userAction: 'Open the fee schedule PDF and check whether KXHIGHNY / KXGOLD15M appear in the Non-Standard Fees table; if they do, capture the series objects and re-run the reports.'
+    action:
+      'CLOSED 2026-09-18. The on-demand ingest job now runs scripts/discover-universe.mjs, which calls GET /series?include_volume=true and stores the fee configuration of every series the exchange lists (14,154 series) in data/discovered/series-fees.json. scripts/generate-fee-registry.mjs narrows that to the 47 series this build can price a fill for and emits src/series-fee-registry.js; seriesFeeConfig() now resolves snapshot -> registry -> documented default and labels which one it used (captureSource). MEASURED ANSWERS: KXHIGHNY fee_multiplier 1 / quadratic and KXGOLD15M fee_multiplier 1 / quadratic — the documented default was right for both, but it is now a capture rather than an assumption. The same capture exposed a real, material bug: irregularity #37.',
+    userAction:
+      'Open https://docs.kalshi.com/api-reference/market/get-series-list, call it with include_volume=true, and compare any ticker against src/series-fee-registry.js.'
+  },
+  {
+    id: 37, severity: 'high',
+    title: 'Maker fees were charged on series that do not have them — the maker/taker split is a PER-SERIES property the engine ignored',
+    assumed: 'That any resting order pays the maker coefficient: fees = round up(M x 0.0175 x C x P x (1-P)). KALSHI_FEES.makerCoefficient was applied unconditionally in OrderBook.processRestingFills().',
+    truth:
+      'The official schedule charges a resting order only if the series is in its Maker Fees section: "Trading fees are only charged for orders that are immediately matched with orders sitting on the orderbook. Trading fees are not charged for orders placed that are not immediately matched and are instead left as resting orders on the orderbook unless they are included in our Maker Fees section." The live Series object marks exactly those series with fee_type = "quadratic_with_maker_fees". In the 2026-09-18 capture of 14,154 series, KXNFLGAME, KXMLBGAME, KXNBAGAME, KXWNBAGAME, KXNCAAFGAME, KXFEDDECISION, KXCPIYOY, KXINXY and KXNASDAQ100Y carry that flag, while every KXHIGH* weather series (and KXGOLD15M, KXBTC15M, KXETH15M, KXSOL15M, KXUFCFIGHT) is plain "quadratic" and pays NOTHING for a resting order. The same capture also shows multipliers that are not 1: the MLB series 0.5, KXBTCY 0.',
+    evidence: [
+      { label: 'Official fee schedule (PDF) — the sentence quoted above', url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf' },
+      { label: 'The real per-series configuration', url: null, text: 'data/discovered/series-fees.json (GET /series?include_volume=true, capturedAt 2026-09-18T06:42:31Z) -> src/series-fee-registry.js' },
+      { label: 'Endpoint documentation', url: 'https://docs.kalshi.com/api-reference/market/get-series-list' },
+      { label: 'The fix', url: null, text: 'src/simulation-engine.js -> OrderBook.makerFeesApply (set from the series fee_type); a plain-quadratic maker fill now records fee 0 and puts the rule that produced it in feeFormula' },
+      { label: 'The guard', url: null, text: 'test 86 proves both branches: $0.00 on a plain-quadratic series, exactly $0.42 on 100 contracts at $0.40 for a maker-fee series' },
+      { label: 'Visible per fill', url: null, text: 'src/trade-ledger.js -> feeRegime column (taker_0.07 | taker_zero | maker_0.0175 | maker_free | settlement) and the Fee Regimes table on the Trade Ledger tab' }
+    ],
+    action:
+      'Fees are resolved per series from a capture, and every fill states the regime that produced its fee. Maker strategies that traded plain-quadratic series were being over-charged before this fix; the ledger, the reports and the Pages data were regenerated. Any strategy text that asserted "the maker coefficient is a quarter of the taker fee" was corrected to the per-series rule.',
+    userAction:
+      'Open the Trade Ledger tab: the Fee Regimes table counts the fills and dollars under each rule, and any row can be traced back to its series ticker in src/series-fee-registry.js.'
+  },
+  {
+    id: 38, severity: 'low',
+    title: 'The settlement tracker was rate-limited (HTTP 429) partway through the 2026-09-18 pass',
+    assumed: 'That every tracked market could be re-checked for its final result in the same run as hundreds of candlestick requests.',
+    truth:
+      'data/history/_last-run.log (committed with the data) records http_429 for 13 markets — KXINXY-26DEC31H1600-T4000, six KXNASDAQ100Y strikes, KXNCAAFGAME-26SEP26ILLOSU-OSU, KXNFLGAME-26SEP10SFLAR-SF, two KXUFCFIGHT and KXWNBAGAME-26AUG10CHISEA-CHI — after the candlestick passes had already issued hundreds of requests. The markets are neither settled nor marked settled by the run; the fetch simply failed. No price or result is guessed to cover it.',
+    evidence: [
+      { label: 'The run log committed with the data', url: null, text: 'data/history/_last-run.log — "✗ <ticker>: http_429"' },
+      { label: 'Rate-limit documentation', url: 'https://docs.kalshi.com/getting_started/rate_limits' },
+      { label: 'Implementation', url: null, text: 'scripts/track-settlements.mjs (retries via scripts/kalshi-http.mjs; failures are reported, never invented)' }
+    ],
+    action:
+      'The failures are logged and committed instead of hidden. Closing this needs a slower cadence (min_interval_ms) or a settlement pass in its own run — both are one-line changes to the request file.',
+    userAction: 'Open data/history/_last-run.log and search for http_429: each line names a market whose settlement check did not complete.'
   }
 ]);
 

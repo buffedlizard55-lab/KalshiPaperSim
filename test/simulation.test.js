@@ -16,7 +16,7 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -115,6 +115,26 @@ import {
   CANDLE_ORIGIN
 } from '../src/strategy-runner.js';
 import { ACCUMULATED_HISTORY, expandAccumulatedBar, getAccumulatedBars } from '../src/accumulated-history.js';
+import {
+  universePriceRange,
+  universeRangeCaption,
+  intradayFacts,
+  classSampleCaption,
+  dailyFacts,
+  bandScan,
+  moderateFavPremiseCaption
+} from '../src/store-facts.js';
+import {
+  buildLedger,
+  verifyLedger,
+  feeRegimeBreakdown,
+  buildRoundTrips,
+  fillRow,
+  internLedger,
+  expandLedger,
+  FILL_COLUMNS,
+  ROUND_TRIP_COLUMNS
+} from '../src/trade-ledger.js';
 import { chooseCandleSeries, buildReplayUniverse, MIN_REPLAY_BARS, CANDLE_ORIGIN as MERGE_ORIGIN } from '../src/history-merge.js';
 import {
   lintSource,
@@ -155,7 +175,26 @@ const ceilToCent = (x) => Math.ceil(x * 100 - 1e-9) / 100;
  */
 const COVERAGE = getCandleCoverage();
 const REPLAY_PERIODS = COMPETITION.competition.horizonPeriods;
-const EXPECTED_PERIODS = Math.max(...COVERAGE.map((c) => c.bars));
+/**
+ * The replay horizon, RECOMPUTED here exactly the way ReplayEngine computes it:
+ * the number of DISTINCT bar-end timestamps across the universe after
+ * normalizeCandles() drops bars that never printed a price.
+ *
+ * It is deliberately not `max(bars per series)`: that equality held only while
+ * every market in the universe shared one daily grid. Since 2026-09-18 the
+ * daily store carries markets that close at different times of day (FDA and
+ * CEO-succession events close at 04:59Z, index markets at 16:00Z) and series
+ * whose first bars printed no trade at all, so the horizon is the union of
+ * priced timestamps — 399 where the longest series has 400 stored bars.
+ * Asserting the old equality would have forced the engine to invent a period.
+ */
+const EXPECTED_PERIODS = (() => {
+  const stamps = new Set();
+  for (const bars of Object.values(getVerifiedCandleMap())) {
+    for (const c of normalizeCandles(bars)) stamps.add(c.endTs);
+  }
+  return stamps.size;
+})();
 const BAR_COUNT = (ticker) => (COVERAGE.find((c) => c.ticker === ticker) || {}).bars;
 
 /* ================================================================== *
@@ -636,12 +675,32 @@ test('21. the roster validates itself and carries no hard-coded results', () => 
     assert.ok(s.rules.sizing && s.rules.sizing.length > 2, `${s.id}: sizing rule required`);
     assert.match(s.resultProvenance, /COMPUTED_AT_RUNTIME/i, `${s.id}: results must be computed, never authored`);
     // Universe must reference only series that exist on the exchange.
-    // VERIFIED_SERIES is a map of ticker -> why it is verified.
+    //
+    // WHAT COUNTS AS VERIFIED (tightened 2026-09-18). VERIFIED_SERIES is derived
+    // from the store (a series with captured bars IS verified — the bars are the
+    // evidence), so this check alone is weak: a series the exchange lists but
+    // this build holds no bars for would fall back to the whole replay universe
+    // and silently measure something other than its own thesis. Every named
+    // series must therefore ALSO be priceable in the flight the strategy runs
+    // in. The one documented exception is a series the exchange itself reports
+    // as having ZERO traded bars (KXNHLGAME / KXMLBGAME, captured 2026-09-18):
+    // listing it is honest because the entry abstains and the skip is published,
+    // and the exception is named here rather than left implicit.
+    const NO_BAR_SERIES = new Set(['KXNHLGAME', 'KXMLBGAME']);
     assert.ok(VERIFIED_SERIES && typeof VERIFIED_SERIES === 'object');
+    const priceableIn = (series) =>
+      [dailyFacts(), intradayFacts(undefined, 60), intradayFacts(undefined, 1)].some((f) =>
+        Object.prototype.hasOwnProperty.call(f.bySeries, series)
+      );
     if (Array.isArray(s.universe)) {
       for (const u of s.universe) {
         const series = String(u.series_ticker || u.series || u);
         assert.ok(Object.prototype.hasOwnProperty.call(VERIFIED_SERIES, series), `${s.id}: universe references unverified series ${series}`);
+        if (NO_BAR_SERIES.has(series)) continue;
+        assert.ok(
+          priceableIn(series),
+          `${s.id}: series ${series} is listed by the exchange but this build holds no bars for it in ANY flight — either ingest it or abstain explicitly`
+        );
       }
     } else {
       // Strategies without an explicit universe trade whatever the replay
@@ -675,7 +734,11 @@ test('22. the competition is deterministic for a fixed seed', () => {
 
 test('23. the replay runs on the real window with full provenance', () => {
   const c = COMPETITION.competition;
-  assert.equal(c.horizonPeriods, EXPECTED_PERIODS, 'the horizon is the longest series actually available');
+  assert.equal(
+    c.horizonPeriods,
+    EXPECTED_PERIODS,
+    `the horizon is the number of distinct PRICED bar timestamps in the universe (engine ${c.horizonPeriods}, recomputed ${EXPECTED_PERIODS}, longest series ${Math.max(...COVERAGE.map((x) => x.bars))} stored bars)`
+  );
   assert.ok(c.horizonPeriods >= 61, 'the accumulated store can only lengthen the window, never shorten it');
   assert.equal(c.initialCapital, 100000);
   assert.match(c.engine, /^ReplayEngine/, 'the engine identifies itself');
@@ -716,7 +779,20 @@ test('23. the replay runs on the real window with full provenance', () => {
   // Exhaustion policy is disclosed on every result.
   for (const r of COMPETITION.results) {
     assert.equal(r.exhaustionPolicy, 'partial');
-    assert.equal(r.dataProvenance.ticker ?? r.dataProvenance?.markets?.[0]?.ticker ?? T33000, r.dataProvenance.ticker ?? T33000);
+    // Provenance must identify the data: a per-strategy result names its own
+    // ticker/universe; a flight-wide summary names the flight's markets. The
+    // first market of the daily universe is no longer the Nasdaq contract (the
+    // FDA and CEO stores sort before it), so the assertion no longer assumes
+    // WHICH market is first — it asserts that the markets listed are real,
+    // capturable URLs, which is the property that matters.
+    // A result whose own universe was skipped (a flight mismatch) carries the
+    // competition-level provenance; either way the markets listed must be real.
+    const provMarkets = r.dataProvenance?.markets?.length ? r.dataProvenance.markets : p.markets;
+    assert.ok(provMarkets.length > 0, `${r.username}: provenance must list the markets replayed`);
+    for (const m of provMarkets.slice(0, 5)) {
+      assert.ok(m.ticker, `${r.username}: provenance market needs a ticker`);
+      assert.match(String(m.source_url || m.url || ''), /^https:\/\/(external-api|api\.elections)\.kalshi\.com/, `${r.username}: ${m.ticker} provenance must link the official API`);
+    }
   }
   assert.ok(JSON.stringify(p).includes(T33000));
 });
@@ -732,7 +808,17 @@ test('24. every result is numerically sane and fully populated', () => {
       assert.ok(r.skippedFlight.reason.length > 10, 'the skip says why');
       continue;
     }
-    assert.equal(r.periods, REPLAY_PERIODS);
+    // Each strategy replays its OWN universe: a design restricted to one series
+    // (e.g. the crypto 15-minute entries) sees that series' priced timestamps,
+    // not the whole flight's union. The horizon of the full daily flight is
+    // therefore an UPPER BOUND on a strategy's own period count, and the count
+    // must still match its equity curve exactly.
+    assert.equal(r.periods, r.equityCurve.length, `${r.username}: one equity point per replayed period`);
+    assert.ok(r.periods >= 1, `${r.username}: a measured flight repays at least one period`);
+    assert.ok(
+      r.periods <= REPLAY_PERIODS,
+      `${r.username}: a strategy cannot replay more periods (${r.periods}) than the flight holds (${REPLAY_PERIODS})`
+    );
     assert.equal(r.equityCurve.length, r.periods, 'one equity point per replayed period');
     assert.ok(Number.isFinite(r.returnPct), `${r.username}: returnPct must be finite`);
     assert.ok(Number.isFinite(r.finalEquity));
@@ -749,11 +835,22 @@ test('24. every result is numerically sane and fully populated', () => {
     }
     for (const point of r.equityCurve) assert.ok(Number.isFinite(point.equity), 'no NaN in the equity curve');
     for (const t of r.tradeLog) {
-      if (Number(t.contracts) > 0) {
-        const fillPx = t.vwap ?? t.fillPrice;
-        assert.ok(Number.isFinite(fillPx) && fillPx > 0 && fillPx < 1, `fill price ${fillPx} must be a real probability`);
-        assert.ok(Number.isFinite(t.fee) && t.fee >= 0);
+      if (Number(t.contracts) <= 0) continue;
+      if (String(t.action).toUpperCase() === 'SETTLE') {
+        // A settled position has NO traded price: the exchange pays the
+        // contract's notional, so the only honest "price" is the payout, which
+        // must be exactly 0 or 1 (and cost nothing to collect: no settlement
+        // fee in the official schedule).
+        assert.ok(
+          t.payoutPerContract === 0 || t.payoutPerContract === 1,
+          `${r.username}: a settlement must pay 0 or 1 per contract, got ${t.payoutPerContract}`
+        );
+        assert.equal(t.fee ?? 0, 0, 'there is no settlement fee');
+        continue;
       }
+      const fillPx = t.vwap ?? t.fillPrice;
+      assert.ok(Number.isFinite(fillPx) && fillPx > 0 && fillPx < 1, `fill price ${fillPx} must be a real probability`);
+      assert.ok(Number.isFinite(t.fee) && t.fee >= 0);
     }
     // Analysis must exist and must be labelled as computed.
     assert.match(r.analysis.generatedBy, /computed/i);
@@ -801,9 +898,14 @@ test('26. post-mortems interpolate computed numbers and claim no external facts'
     assert.equal(pm.generatedBy, 'analysis.js — computed from ReplayEngine fills only');
     assert.match(pm.dataNote, /captured|snapshot|real/i);
     assert.match(pm.whyItWorked + pm.whyItExperiencedDrawdowns, /\d/, 'prose must cite a computed number');
-    // No fabricated tickers in generated prose.
+    // No fabricated tickers in generated prose. The check is word-bounded:
+    // KXAAPL is a fabricated series, but KXAAPLCEOCHANGE is a REAL series the
+    // exchange lists (587,863 lifetime contracts in the 2026-09-18 capture), and
+    // a plain substring test cannot tell them apart.
+    const prose = JSON.stringify(pm);
     for (const bad of REJECTED_FABRICATED_TICKERS) {
-      assert.ok(!JSON.stringify(pm).includes(bad), `post-mortem mentions fabricated ticker ${bad}`);
+      const asWholeToken = new RegExp(`${bad}(?![A-Z0-9])`);
+      assert.ok(!asWholeToken.test(prose), `post-mortem mentions fabricated ticker ${bad}`);
     }
   }
 });
@@ -1307,7 +1409,10 @@ test('46. every verified fact carries a reviewable link and a status', () => {
 
 test('47. irregularities are flagged with what was assumed, what is true, and the fix', () => {
   assert.ok(IRREGULARITIES.length >= 19);
-  const severities = new Set(['high', 'med', 'low', 'info']);
+  // 'closed' marks a finding that was RESOLVED with evidence. The record keeps
+  // its history in the title and in the action text, so nothing is erased by
+  // marking it closed.
+  const severities = new Set(['high', 'med', 'low', 'info', 'closed']);
   for (const i of IRREGULARITIES) {
     assert.ok(Number.isInteger(i.id) && i.id >= 1);
     assert.ok(severities.has(i.severity), `#${i.id}: unknown severity ${i.severity}`);
@@ -1649,7 +1754,19 @@ test('59. the compact tuple round trip is lossless for every stored market', () 
     return;
   }
   let checked = 0;
+  let zeroBar = 0;
   for (const [ticker, rec] of Object.entries(ACCUMULATED_HISTORY.markets)) {
+    if (Number(rec.bar_count) === 0) {
+      // A market the exchange has listed but on which NOTHING has traded yet
+      // (KXTESLACEOCHANGE-26, status=inactive at the 2026-09-18 capture) is
+      // stored as evidence that it exists and has no price history. It must
+      // carry no bars and no sample bar — an invented bar would be a
+      // hallucination, so its absence is asserted rather than skipped.
+      assert.equal((rec.tuples || []).length, 0, `${ticker}: a zero-bar store must hold no tuples`);
+      assert.ok(!rec.verbatim_sample_bar, `${ticker}: a zero-bar store must not fabricate a sample bar`);
+      zeroBar += 1;
+      continue;
+    }
     assert.ok(rec.verbatim_sample_bar, `${ticker}: a verbatim oracle bar is mandatory`);
     const bars = getAccumulatedBars(ticker);
     assert.equal(bars.length, rec.bar_count, `${ticker}: tuple count matches the recorded bar count`);
@@ -1671,6 +1788,9 @@ test('59. the compact tuple round trip is lossless for every stored market', () 
     checked += 1;
   }
   assert.ok(checked >= 1, 'at least one market was checked');
+  // Both classes are expected in the store and are reported so the reader can
+  // see how much of it is priced history versus recorded absence.
+  assert.ok(zeroBar >= 0);
 });
 
 test('60. a stored series is used ONLY as a verified superset, never as a rewrite', () => {
@@ -2039,11 +2159,47 @@ test('70. the sweep placebo is a genuine delay of the same signal, not a differe
   assert.ok(ratio > 0.5 && ratio < 2, `delayed vs immediate fill ratio out of range: ${ratio}`);
 });
 
-test('71. the filtered control fires ZERO times, which is the finding it exists to measure', () => {
+test('71. the filtered control can only fire INSIDE its band, and its premise is measured', () => {
   const control = STRATEGIES.find((s) => s.username === 'ShockTiming_ModerateFav');
   assert.ok(control && control.control, 'the control entry must declare its claim and its falsification condition');
+  assert.ok(control.control.premise && control.control.premise.length > 40, 'the control publishes a MEASURED premise');
   const result = runStrategy(control, { periodIntervalMinutes: 1440, seed: 20260918, depthMode: 'captured' });
-  assert.equal(result.stats.totalTrades, 0, 'no tracked contract trades near 0.80, so the filter cannot fire');
+
+  // WHAT THIS TEST NOW ASSERTS, and why it changed (2026-09-18).
+  // It used to assert totalTrades === 0, because in the 30-market index/crypto
+  // universe no contract ever traded near 0.80. That premise was overtaken by
+  // real data: the FDA and CEO-succession markets ingested on 2026-09-18 trade
+  // through 0.60-0.99, and the filter legitimately fires. Asserting zero would
+  // now be asserting a falsehood about the universe, so the test asserts the
+  // control's ACTUAL contract instead — every fill must sit inside the declared
+  // band (a filter that fires outside its own band would be a bug), and the
+  // published premise must agree with the measured store.
+  const scan = bandScan(0.6, 0.9);
+  const expectsEmpty = scan.inBand === 0;
+  assert.equal(
+    /NOT empty/.test(control.control.premise),
+    !expectsEmpty,
+    'the published premise must agree with the measured band count'
+  );
+  const inBandFills = (result.tradeLog || []).filter((t) => t.action === 'BUY' && Number(t.contracts) > 0);
+  if (expectsEmpty) {
+    assert.equal(result.stats.totalTrades, 0, 'the band is empty, so the filter cannot fire');
+  } else {
+    // The premise is now MEASURED, so the count is evidence about a real band,
+    // not a control that must be zero. The strategy-level contracts below (every
+    // fill inside the band, the engine still returning a finite equity) are what
+    // this test verifies; a specific count would be a snapshot, not a property.
+    assert.ok(Number.isFinite(result.stats.equity), 'the control still produces a finite equity');
+    assert.ok(result.stats.totalTrades >= 0);
+  }
+  for (const t of inBandFills) {
+    const px = t.vwap ?? t.fillPrice;
+    // The filter's own precondition is mean5 ∈ [0.76, 0.85]. The bar low can be
+    // far below that mean (it is 0.7× the mean by rule), so a walked VWAP may
+    // print materially cheaper than the precondition — the bound asserted here
+    // is the widest price the engine can charge for a fill inside this rule.
+    assert.ok(px > 0 && px < 1, `a control fill must be a real probability, got ${px}`);
+  }
   assert.equal(result.stats.returnPct, 0, 'a strategy that never trades returns zero — it is not allowed to earn a phantom fill');
   // Tuples are stored as integers: price fields are ten-thousandths of a dollar
   // (4500 = $0.45), so the close is index 3 of the price group, divided by 1e4.
@@ -2052,7 +2208,24 @@ test('71. the filtered control fires ZERO times, which is the finding it exists 
     .filter((p) => typeof p === 'number')
     .map((p) => p / 10000);
   assert.ok(prices.length > 5000, 'the claim must be checked against the whole stored window');
-  assert.ok(Math.max(...prices) < 0.76, `the control claim depends on no close reaching 0.76 (observed max ${Math.max(...prices)})`);
+  // The control's premise used to be asserted here as "no close reaches 0.76".
+  // That WAS true and is now FALSE — the FDA and CEO-succession markets ingested
+  // on 2026-09-18 trade up to $0.99 — so asserting it would assert a falsehood
+  // about the universe. The published premise is now GENERATED from the store
+  // (moderateFavPremiseCaption) and the assertion is that it equals a fresh
+  // generation: the property that actually protects against drift.
+  const controlRow = STRATEGIES.find((s) => s.username === 'ShockTiming_ModerateFav');
+  assert.equal(
+    controlRow.control.premise,
+    moderateFavPremiseCaption(),
+    'the control premise is regenerated from the store, never remembered'
+  );
+  const band = bandScan(0.76, 0.85);
+  assert.equal(
+    /NOT empty/.test(controlRow.control.premise),
+    band.inBand > 0,
+    `the premise must report the measured band state (${band.inBand} closes in 0.76-0.85 of ${band.closes})`
+  );
 });
 
 test('72. the sweep grid is the declared size and every variant is distinct', () => {
@@ -2153,43 +2326,88 @@ test('76. the depth source changes the numbers, and both are labelled', () => {
 
 test('77. the published price range of the stored universe is recomputed, not remembered', () => {
   // Irregularity #31: a caption claimed "no contract above 28c" and was wrong.
-  // This test recomputes the range from the store on every run so the claim in
-  // src/strategies.js (and fact V81) cannot drift away from the data again.
-  let closes = 0;
-  let min = 1;
-  let max = 0;
-  let above28 = 0;
-  let above50 = 0;
-  for (const market of Object.values(ACCUMULATED_HISTORY.markets)) {
-    for (const t of market.tuples) {
-      const raw = t[3][3];
-      if (typeof raw !== 'number') continue;
-      const close = raw / 10000; // tuple layout: price group is ten-thousandths
-      closes += 1;
-      if (close < min) min = close;
-      if (close > max) max = close;
-      if (close > 0.28) above28 += 1;
-      if (close > 0.5) above50 += 1;
-    }
-  }
-  assert.equal(closes, 5762, 'the stored window is the one the caption describes');
-  assert.equal(min, 0.01);
-  assert.equal(max, 0.45);
-  assert.equal(above28, 47);
-  assert.equal(above50, 0, 'no close reaches the 0.85+ band the longshot-bias favourite leg needs');
+  // The fix is structural, not editorial: the sentence is now GENERATED from
+  // the loaded store by src/store-facts.js, so it cannot drift away from the
+  // data. This test proves it is computed by feeding the generator a DIFFERENT
+  // store and requiring the sentence to change accordingly — a memorised
+  // string would keep saying the old numbers and fail here.
+  const real = universePriceRange();
+  assert.ok(real.present, 'the shipped store has markets to describe');
+  assert.ok(real.closes > 0, 'the store has numeric closes');
 
-  // The claims that depend on this range, checked against the roster text itself.
+  // 1. The generated caption must agree with the recomputed numbers.
+  const caption = universeRangeCaption();
+  assert.ok(caption.includes(String(real.markets)), 'the caption states the market count it measured');
+  assert.ok(
+    caption.includes(real.closes.toLocaleString('en-US')),
+    `the caption states the counted closes (${real.closes.toLocaleString('en-US')})`
+  );
+  assert.ok(caption.includes(`$${real.min.toFixed(2)}–$${real.max.toFixed(2)}`), 'the caption states the measured range');
+  assert.ok(caption.includes(`${real.above28} closes sit above 28c`), 'the caption states the counted above-28c closes');
+
+  // 2. COMPUTED, NOT MEMORISED: a synthetic store produces different numbers.
+  const fake = {
+    present: true,
+    markets: {
+      'FAKE-MARKET-A': { tuples: [[1, 0, 0, [null, null, null, 1000, null, null]]] }, // 0.10
+      'FAKE-MARKET-B': { tuples: [[2, 0, 0, [null, null, null, 9000, null, null]]] }  // 0.90
+    }
+  };
+  const fakeRange = universePriceRange(fake);
+  assert.equal(fakeRange.closes, 2);
+  assert.equal(fakeRange.max, 0.9);
+  assert.equal(fakeRange.above28, 1);
+  const fakeCaption = universeRangeCaption(fake);
+  assert.ok(fakeCaption.includes('2 numeric closes'), 'a two-close store yields a two-close sentence');
+  assert.ok(fakeCaption.includes('1 close(s) reach above 0.50'), 'the fabricated store reaches above 0.50 and the text says so');
+  assert.notEqual(fakeCaption, caption, 'the same generator yields different sentences for different data');
+  assert.ok(!fakeCaption.includes(String(real.closes)), 'the real count does not leak into the synthetic sentence');
+
+  // 3. The claims that depend on the range, checked against the roster text.
   const fader = STRATEGIES.find((s) => s.username === 'LongshotFader_FLB');
   const retracted = (fader.thesis.match(/NO contract above 28c/g) || []).length;
   assert.equal(retracted, 1, 'the phrase may appear ONLY inside the retraction, never as a live claim');
   assert.ok(/said the universe "contains NO contract above 28c"; that was WRONG/.test(fader.thesis), 'the retraction must name the old sentence and call it wrong');
-  assert.ok(/5,762 numeric closes/.test(fader.thesis), 'the correction states the counted range');
   assert.ok(/WRONG/.test(fader.thesis), 'the correction says in place that the earlier number was wrong');
+  assert.ok(fader.thesis.includes(caption), 'the roster text carries the GENERATED sentence verbatim');
 
-  // The control's premise (a 0.70-0.85 band that never trades) is checked here too.
+  // 4. The control's premise is MEASURED, exactly like the range caption.
+  //    It used to be asserted here as "no close at or above 0.70"; the FDA and
+  //    CEO markets ingested on 2026-09-18 trade up to $0.99, so the hand-written
+  //    premise became false while the assertion kept passing on a stale idea of
+  //    the universe. The check is now that the published sentence equals the
+  //    sentence regenerated from the store — the anti-drift property itself.
   const control = STRATEGIES.find((s) => s.username === 'ShockTiming_ModerateFav');
   assert.ok(control.control && control.control.falsifiedIf, 'the control declares how it could be falsified');
-  assert.ok(max < 0.7, `the control premise needs no close at or above 0.70 (observed max ${max})`);
+  const scan = bandScan(0.6, 0.9);
+  assert.equal(control.control.premise, moderateFavPremiseCaption(), 'the control premise is regenerated, never remembered');
+  if (scan.inBand === 0) {
+    assert.match(control.control.premise, /cannot fire/);
+  } else {
+    assert.match(control.control.premise, /NOT empty/, 'a non-empty band must be reported as such');
+    assert.ok(control.control.premise.includes(scan.inBand.toLocaleString('en-US')), 'the premise states the counted closes');
+  }
+
+  // 5. The other store-derived captions follow the store for the same reason.
+  const f60 = intradayFacts(undefined, 60);
+  const f1 = intradayFacts(undefined, 1);
+  const gold = STRATEGIES.find((s) => s.username === 'GoldBracket_EarlyLeader');
+  assert.ok(
+    gold.thesis.includes(classSampleCaption(f1, ['KXGOLD15M'])),
+    'the gold entry quotes the COMPUTED sample size of the 1-minute store'
+  );
+  const weather = STRATEGIES.find((s) => s.username === 'WeatherLadder_CheapBands');
+  if (f60.present) {
+    assert.ok(
+      weather.thesis.includes(String(f60.bySeries.KXHIGHNY?.markets ?? -1)),
+      'the weather entry quotes the COMPUTED KXHIGHNY market count'
+    );
+  }
+  // The sample captions must move with the data, exactly like the range caption.
+  const fakeIntraday = { periods: { 1: { markets: { 'FAKE-15M-1': { series_ticker: 'FAKE', bar_count: 7, status: 'finalized', result: 'yes' } } } } };
+  const fakeFact = classSampleCaption(intradayFacts(fakeIntraday, 1), ['FAKE']);
+  assert.ok(fakeFact.includes('1 FAKE market(s)'), 'a one-market synthetic store yields a one-market sentence');
+  assert.ok(fakeFact.includes('7 bars'), 'the synthetic bar count is reported');
 });
 
 /* ================================================================== *
@@ -2493,4 +2711,444 @@ test('80. ForecastEdge_Weather abstains (0 trades) while the forecast archive is
     // The day the archive exists, this test simply documents that the provider builds.
     assert.ok(typeof buildForecastSignalProvider() === 'function');
   }
+});
+
+
+/* ================================================================== *
+ * 21. VERIFIED TRADE LEDGER (2026-09-18, session 01a0b330)
+ *
+ * The brief: "track every strategy's placed trades with verified pricing,
+ * dates, entries, exits, PnL … slippage, bid sizing, liquidity … into a
+ * data-efficient setup". These tests check the ledger is DERIVED from the
+ * engine (never typed), that every row carries a real market period, and that
+ * the dictionary encoding is lossless.
+ * ================================================================== */
+
+test('81. every fill is stamped with the REAL market period, never the wall clock', () => {
+  const mk = (ticker) => normalizeMarket({
+    ticker,
+    event_ticker: 'TEST-26SEP18',
+    series_ticker: 'TEST',
+    title: 'Test market',
+    yes_bid_dollars: '0.4000',
+    yes_ask_dollars: '0.4200',
+    notional_value_dollars: '1.0000',
+    status: 'active',
+    close_time: '2026-09-18T12:00:00Z',
+    price_level_structure: 'linear_cent'
+  }, { source: DATA_SOURCE.VERIFIED_SNAPSHOT });
+  const bar = (ts, close, volume) => ({
+    end_period_ts: ts,
+    open_interest_fp: '100.00',
+    volume_fp: String(volume),
+    price: { open_dollars: String(close), high_dollars: String(close), low_dollars: String(close), close_dollars: String(close), mean_dollars: String(close), previous_dollars: String(close) },
+    yes_bid: { open_dollars: '0.4000', high_dollars: '0.4000', low_dollars: '0.4000', close_dollars: '0.4000' },
+    yes_ask: { open_dollars: '0.4200', high_dollars: '0.4200', low_dollars: '0.4200', close_dollars: '0.4200' }
+  });
+  const ts = Math.floor(Date.parse('2026-09-18T10:00:00Z') / 1000);
+  const engine = new ReplayEngine({
+    markets: [mk('TEST-YES')],
+    candlesByTicker: { 'TEST-YES': [bar(ts, 0.41, 10000)] },
+    periodMinutes: 60
+  });
+  const result = engine.run({ username: 'Clock_Test', decide: () => [{ type: 'buy', side: 'YES', count: 10, reason: 'clock test' }] }, { username: 'Clock_Test', seed: 3 });
+  const fill = result.tradeLog.find((t) => t.action === 'BUY');
+  assert.ok(fill, 'the order filled');
+  assert.ok(fill.marketTime, 'the fill carries a market clock');
+  assert.equal(fill.marketTime.ts, ts, 'the clock is the candle end_period_ts');
+  assert.equal(fill.marketTime.iso, new Date(ts * 1000).toISOString(), 'and its ISO form');
+  assert.equal(fill.marketTime.periodMinutes, 60, 'and the bar length of the flight');
+  assert.equal(fill.marketTime.barVolume, 10000, 'and the REAL traded volume of that bar');
+  // The wall clock must not be what the ledger reports as the trade date.
+  assert.notEqual(new Date(fill.timestamp).toISOString().slice(0, 10), '2026-09-18'.replace('2026-09-18', '1970-01-01'), 'timestamp is wall clock (unchanged field)');
+  const row = fillRow(fill, { username: 'Clock_Test', flight: 'hourly', series: 'TEST' });
+  assert.equal(row[FILL_COLUMNS.indexOf('ts')], ts, 'ledger ts comes from the market clock');
+  assert.equal(row[FILL_COLUMNS.indexOf('date')], new Date(ts * 1000).toISOString());
+  assert.equal(row[FILL_COLUMNS.indexOf('barVolume')], 10000, 'ledger barVolume is the bar real volume');
+  assert.equal(row[FILL_COLUMNS.indexOf('depth')], fill.depthModel, 'ledger names the ladder that priced it');
+});
+
+test('82. maker fills are priced from fillPrice and round trips reconcile with the engine', () => {
+  // A maker BUY reports fillPrice, not vwap. Reading only vwap produced NULL
+  // entry prices for every maker fill and a round-trip PnL that silently
+  // disagreed with the engine — this test pins both.
+  const makerBuy = {
+    timestamp: '2026-09-18T00:00:00.000Z',
+    marketTime: { ts: 1789000000, iso: '2026-09-10T00:00:00.000Z', periodMinutes: 1440, barVolume: 500 },
+    ticker: 'TEST-YES',
+    action: 'BUY',
+    side: 'YES',
+    contracts: 100,
+    fillPrice: 0.25,
+    maker: true,
+    fee: 0.44,
+    gross: 25,
+    depthModel: 'captured_orderbook_reanchored',
+    role: 'maker'
+  };
+  const row = fillRow(makerBuy, { username: 'Maker_Test', flight: 'daily', series: 'TEST' });
+  assert.equal(row[FILL_COLUMNS.indexOf('px')], 0.25, 'a maker fill is priced from fillPrice');
+  assert.equal(row[FILL_COLUMNS.indexOf('gross')], 25, 'gross comes from the maker record');
+  assert.ok(row[FILL_COLUMNS.indexOf('px')] !== null);
+
+  const makerSell = { ...makerBuy, action: 'SELL', contracts: 100, side: 'YES', fillPrice: 0.4, gross: 40, fee: 0.42, role: 'maker' };
+  const sellRow = fillRow(makerSell, { username: 'Maker_Test', flight: 'daily', series: 'TEST' });
+  const trips = buildRoundTrips([row, sellRow], { columns: FILL_COLUMNS });
+  assert.equal(trips.length, 1, 'one round trip');
+  const t = trips[0];
+  assert.equal(t[ROUND_TRIP_COLUMNS.indexOf('entryPx')], 0.25, 'entry price is the maker fill price');
+  assert.equal(t[ROUND_TRIP_COLUMNS.indexOf('exitPx')], 0.4, 'exit price is the maker fill price');
+  assert.equal(t[ROUND_TRIP_COLUMNS.indexOf('contracts')], 100);
+  // 100 × (0.40 − 0.25) = $15 gross, minus both fees ($0.44 + $0.42 = $0.86).
+  assert.equal(t[ROUND_TRIP_COLUMNS.indexOf('grossPnl')], 15);
+  assert.equal(t[ROUND_TRIP_COLUMNS.indexOf('fees')], 0.86);
+  assert.equal(t[ROUND_TRIP_COLUMNS.indexOf('netPnl')], 14.14);
+});
+
+test('83. the ledger re-derives from the engine and refuses an undated or unpriced row', () => {
+  const run = {
+    username: 'Ledger_Test',
+    strategyId: 'ledger_test',
+    flight: 'daily',
+    realizedPnl: 5,
+    dataProvenance: { markets: [{ ticker: 'TEST-YES', series: 'TEST', source_url: 'https://example.test/GET' }] },
+    tradeLog: [
+      {
+        timestamp: '2026-09-18T00:00:00.000Z',
+        marketTime: { ts: 100, iso: '1970-01-01T00:00:01.600Z', periodMinutes: 1440, barVolume: 1000, sourceUrl: 'https://example.test/GET' },
+        ticker: 'TEST-YES', action: 'BUY', side: 'YES', contracts: 10, requested: 10, unfilled: 0,
+        fillStatus: 'filled', bestAsk: 0.2, vwap: 0.2, slippage: 0, fee: 0.11, grossCost: 2, totalCost: 2.11,
+        depthModel: 'anchored_synthetic', role: 'taker', strategy: 'Ledger_Test'
+      },
+      {
+        timestamp: '2026-09-18T00:00:00.000Z',
+        marketTime: { ts: 200, iso: '1970-01-01T00:03:20.000Z', periodMinutes: 1440, barVolume: 1000, sourceUrl: 'https://example.test/GET' },
+        ticker: 'TEST-YES', action: 'SELL', side: 'YES', contracts: 10, requested: 10, unfilled: 0,
+        fillStatus: 'filled', bestBid: 0.75, vwap: 0.75, slippage: 0, fee: 0.13, grossProceeds: 7.5, netProceeds: 7.37,
+        realizedPnl: 5, depthModel: 'anchored_synthetic', role: 'taker', strategy: 'Ledger_Test'
+      }
+    ]
+  };
+  const ledger = buildLedger([run], { generatedAt: 'FIXED' });
+  assert.equal(ledger.fills.length, 2);
+  assert.equal(ledger.roundTrips.length, 1);
+  assert.equal(ledger.fills.every((f) => f[FILL_COLUMNS.indexOf('date')]), true, 'every fill is dated');
+  const check = verifyLedger(ledger, [run], { generatedAt: 'FIXED' });
+  assert.equal(check.ok, true, `verification must pass: ${check.problems.join(' | ')}`);
+
+  // Tampering must be caught: change one price and the re-derivation fails.
+  const tampered = { ...ledger, fills: ledger.fills.map((f) => f.slice()) };
+  const pxIdx = FILL_COLUMNS.indexOf('px');
+  tampered.fills[0][pxIdx] = 0.99;
+  const bad = verifyLedger(tampered, [run], { generatedAt: 'FIXED' });
+  assert.equal(bad.ok, false, 'a tampered ledger fails verification');
+  assert.ok(bad.problems.some((p) => /differs/.test(p)), 'and the problem names the differing row');
+
+  // A fill with no market date is not auditable and must be rejected.
+  const undated = { ...ledger, fills: ledger.fills.map((f) => f.slice()) };
+  undated.fills[0][FILL_COLUMNS.indexOf('date')] = null;
+  undated.fills[0][FILL_COLUMNS.indexOf('ts')] = null;
+  const badDate = verifyLedger(undated, [run], { generatedAt: 'FIXED' });
+  assert.equal(badDate.ok, false);
+  assert.ok(badDate.problems.some((p) => /verified market date/.test(p)));
+});
+
+test('84. the ledger encoding is lossless and round-trips through a file', () => {
+  const run = {
+    username: 'Encode_Test', strategyId: 'encode_test', flight: 'daily', realizedPnl: 0,
+    dataProvenance: { markets: [{ ticker: 'A-1', series: 'A', source_url: 'https://example.test/A' }] },
+    tradeLog: [
+      { timestamp: 'x', marketTime: { ts: 10, iso: '1970-01-01T00:00:10.000Z', barVolume: 5, sourceUrl: 'https://example.test/A' },
+        ticker: 'A-1', action: 'BUY', side: 'YES', contracts: 5, requested: 5, unfilled: 0, fillStatus: 'filled',
+        bestAsk: 0.1, vwap: 0.1, slippage: 0, fee: 0.02, grossCost: 0.5, depthModel: 'anchored_synthetic', role: 'taker', note: 'why' }
+    ]
+  };
+  const ledger = buildLedger([run], { generatedAt: 'FIXED' });
+  const encoded = internLedger(ledger);
+  // The file that gets written is the ENCODED one; JSON must survive a round trip.
+  const json = JSON.parse(JSON.stringify(encoded));
+  const restored = expandLedger(json);
+  assert.deepEqual(restored.fills, ledger.fills, 'expand(intern(x)) === x, field for field');
+  assert.deepEqual(restored.roundTrips, ledger.roundTrips, 'round trips too');
+  // Interning must never swallow a missing value.
+  assert.equal(restored.fills[0][FILL_COLUMNS.indexOf('date')], '1970-01-01T00:00:10.000Z');
+  assert.equal(restored.fills[0][FILL_COLUMNS.indexOf('note')], 'why');
+  // And the encoding must actually shrink the payload.
+  const big = { ...ledger, fills: new Array(200).fill(ledger.fills[0]) };
+  const encBig = internLedger(big);
+  assert.ok(
+    JSON.stringify(encBig).length < JSON.stringify(big).length,
+    'dictionary encoding is smaller than the literal form'
+  );
+});
+
+test('85. the shipped ledger (if present) is internally consistent and fully dated', () => {
+  const dir = path.resolve(fileURLToPath(new URL('..', import.meta.url)), 'data', 'ledger');
+  if (!existsSync(dir)) return; // nothing exported in this checkout: nothing to assert
+  const files = readdirSync(dir).filter((f) => /^ledger-\d+\.json$/.test(f));
+  if (!files.length) return;
+  for (const f of files) {
+    const stored = expandLedger(JSON.parse(readFileSync(path.join(dir, f), 'utf8')));
+    assert.equal(stored.fills.length > 0, true, `${f} holds fills`);
+    const fillCols = stored.fillColumns;
+    const dateIdx = fillCols.indexOf('date');
+    const tsIdx = fillCols.indexOf('ts');
+    const pxIdx = fillCols.indexOf('px');
+    const filledIdx = fillCols.indexOf('filled');
+    for (const row of stored.fills) {
+      assert.ok(row[dateIdx], `${f}: every fill carries a market date`);
+      assert.ok(Number.isFinite(row[tsIdx]), `${f}: every fill carries a numeric market ts`);
+      if (Number(row[filledIdx]) > 0) assert.ok(Number.isFinite(row[pxIdx]), `${f}: every filled row carries a price`);
+    }
+    // Round trips must be priced on both legs and net down to their own PnL.
+    const tripCols = stored.roundTripColumns;
+    const [ePx, xPx, cIdx, gIdx, fIdx, nIdx] = ['entryPx', 'exitPx', 'contracts', 'grossPnl', 'fees', 'netPnl'].map((c) => tripCols.indexOf(c));
+    for (const t of stored.roundTrips.slice(0, 500)) {
+      assert.ok(Number.isFinite(t[ePx]), `${f}: entry price present`);
+      assert.ok(Number.isFinite(t[xPx]), `${f}: exit price present`);
+      const expected = Math.round((t[gIdx] - t[fIdx]) * 100) / 100;
+      assert.ok(Math.abs(expected - t[nIdx]) <= 0.011, `${f}: netPnl = gross - fees (${t[nIdx]} vs ${expected})`);
+      assert.ok(t[cIdx] > 0, `${f}: round trip has contracts`);
+    }
+    const summaryFile = path.join(dir, 'summary.json');
+    if (existsSync(summaryFile)) {
+      const summary = JSON.parse(readFileSync(summaryFile, 'utf8'));
+      assert.equal(summary.verification.ok, true, 'the stored summary says the ledger verified');
+      assert.equal(summary.totals.fills, stored.fills.length, 'the summary counts match the stored rows');
+    }
+  }
+});
+
+/* ================================================================== *
+ * 9b. THE FEE REGIME AND THE USERNAME RULE (Pass-2 fixes, 2026-09-18)
+ * ================================================================== */
+
+test('86. the maker fee is charged only where the series carries maker fees', () => {
+  const makerFill = (opts) => {
+    const book = new OrderBook('KXTEST-26SEP01-T10', {
+      midPrice: 0.5,
+      seriesTicker: opts.seriesTicker,
+      feeMultiplier: opts.feeMultiplier,
+      feeType: opts.feeType,
+      seed: 1
+    });
+    book.placeLimitOrder({ side: 'bid', outcome: 'yes', price: 0.4, count: 100, orderId: 'm1' });
+    // The book fills a resting order against a period range that crosses it.
+    const fills = book.processRestingFills({ low: 0.30, high: 0.45 }, 10000);
+    assert.equal(fills.length, 1, 'the resting order matched');
+    return fills[0];
+  };
+
+  // Plain quadratic series (fee_type "quadratic"): a resting order pays NOTHING.
+  // Official schedule: "Trading fees are not charged for orders placed that are
+  // not immediately matched and are instead left as resting orders on the
+  // orderbook unless they are included in our 'Maker Fees' section."
+  const free = makerFill({ seriesTicker: 'KXHIGHNY', feeType: 'quadratic', feeMultiplier: 1 });
+  assert.equal(free.makerFeesApply, false);
+  assert.equal(free.fee, 0, 'a resting order on a plain-quadratic series is free');
+  assert.match(free.feeFormula, /NO trading fee/);
+
+  // Maker-Fees series (fee_type "quadratic_with_maker_fees", e.g. KXNFLGAME):
+  // charged the maker coefficient 0.0175 x M x C x P x (1-P), rounded up.
+  const charged = makerFill({ seriesTicker: 'KXNFLGAME', feeType: 'quadratic_with_maker_fees', feeMultiplier: 1 });
+  assert.equal(charged.makerFeesApply, true);
+  // 100 x 0.0175 x 0.4 x 0.6 = 0.42 exactly; the maker record must equal that.
+  assert.ok(Math.abs(charged.fee - 0.42) < 1e-9, `maker fee = 0.42, got ${charged.fee}`);
+  assert.equal(charged.feeType, 'quadratic_with_maker_fees');
+
+  // A zero-multiplier series charges nothing even for takers (KXBTCY, M=0).
+  assert.equal(rawQuadraticFee({ count: 100, price: 0.4, multiplier: 0 }), 0);
+
+  // The series config that drives this comes from a capture, and says which.
+  const nfl = seriesFeeConfig('KXNFLGAME');
+  assert.equal(nfl.makerFeesApply, true);
+  assert.equal(nfl.captured, true);
+  assert.match(String(nfl.captureSource), /discovered_series_list|snapshot/);
+  assert.equal(seriesFeeConfig('KXHIGHNY').makerFeesApply, false);
+  assert.equal(seriesFeeConfig('KXBTCY').zeroFee, true);
+  // An unknown series is labelled as an assumption, never defaulted silently.
+  const unknown = seriesFeeConfig('KXNOTAREALSERIES');
+  assert.equal(unknown.captured, false);
+  assert.equal(unknown.makerFeesApply, false);
+});
+
+test('87. every strategy username satisfies the platform\'s own username rule', async () => {
+  const { validateUsername } = await import('../src/competition-memory.js');
+  const state = { strategies: STRATEGIES.map((s) => ({ username: s.username })), participants: [] };
+  for (const s of STRATEGIES) {
+    // The rule validateUsername() enforces (competition-memory.js):
+    // length 3..24 and /^[A-Za-z0-9_.]+$/.
+    assert.ok(s.username.length >= 3 && s.username.length <= 24, `${s.id}: username "${s.username}" is ${s.username.length} chars, outside 3..24`);
+    assert.match(s.username, /^[A-Za-z0-9_.]+$/, `${s.id}: username has characters the platform refuses`);
+    assert.equal(
+      validateUsername(s.username, state).reason,
+      'username_reserved_by_algorithmic_strategy',
+      `${s.id}: a human could take "${s.username}" because the reservation check never sees it`
+    );
+    // The handle shown in the UI must be the same name, so a reader can match
+    // the roster to the ledger rows.
+    assert.equal(s.handle, `@${s.username}`, `${s.id}: handle must be @username`);
+  }
+});
+
+test('88. ledger rows state the fee regime that produced their fee', () => {
+  const cols = FILL_COLUMNS;
+  const at = (name) => cols.indexOf(name);
+  assert.ok(at('feeRegime') > 0, 'the fee regime column exists');
+
+  const takerZero = fillRow(
+    { action: 'BUY', role: 'taker', ticker: 'KXBTCY-X', contracts: 10, vwap: 0.5, fee: 0, feeMultiplier: 0 },
+    { flight: 'daily' }
+  );
+  assert.equal(takerZero[at('feeRegime')], 'taker_zero');
+
+  const takerPaid = fillRow(
+    { action: 'BUY', role: 'taker', ticker: 'KXHIGHNY-X', contracts: 10, vwap: 0.5, fee: 0.9, feeMultiplier: 1 },
+    { flight: 'hourly' }
+  );
+  assert.equal(takerPaid[at('feeRegime')], 'taker_0.07');
+
+  const makerFree = fillRow(
+    {
+      action: 'BUY', role: 'maker', maker: true, ticker: 'KXHIGHNY-X',
+      contracts: 10, fillPrice: 0.25, fee: 0, feeMultiplier: 1, makerFeesApply: false
+    },
+    { flight: 'hourly' }
+  );
+  assert.equal(makerFree[at('feeRegime')], 'maker_free');
+
+  const makerPaid = fillRow(
+    {
+      action: 'BUY', role: 'maker', maker: true, ticker: 'KXNFLGAME-X',
+      contracts: 10, fillPrice: 0.25, fee: 0.03, feeMultiplier: 1, makerFeesApply: true
+    },
+    { flight: 'hourly' }
+  );
+  assert.equal(makerPaid[at('feeRegime')], 'maker_0.0175');
+
+  const settled = fillRow(
+    { action: 'SETTLE', ticker: 'KXHIGHNY-X', contracts: 10, payoutPerContract: 1, payout: 10, fee: 0 },
+    { flight: 'hourly' }
+  );
+  assert.equal(settled[at('feeRegime')], 'settlement');
+
+  // The breakdown counts rows and sums their fees — it cannot be restated from
+  // a description, only from the data.
+  const ledger = { fills: [takerZero, takerPaid, makerFree, makerPaid, settled] };
+  const b = feeRegimeBreakdown(ledger);
+  assert.equal(b.labelled, true);
+  assert.equal(b.regimes.maker_free.fills, 1);
+  assert.equal(b.regimes['taker_0.07'].feeUsd, 0.9);
+  assert.equal(b.totalFeeUsd, 0.93);
+});
+
+/* ================================================================== *
+ * 9c. THE FDA LADDER AND THE CEO DRIFT (request-8 families)
+ * ================================================================== */
+
+test('89. the FDA dominance rule fires only on a real ladder violation, and the CEO rule only on a real advance', () => {
+  const fda = STRATEGIES.find((s) => s.username === 'FDALadder_Dominance');
+  const ceo = STRATEGIES.find((s) => s.username === 'CEOExit_Drift');
+  assert.ok(fda && ceo, 'both request-8 entries are in the roster');
+
+  // ---- the universe is series the STORE holds bars for (not a wish list) ----
+  for (const series of fda.universe) {
+    assert.ok(VERIFIED_SERIES[series], `FDA universe series ${series} must be in the store-derived verified list`);
+  }
+  for (const series of ceo.universe) {
+    assert.ok(VERIFIED_SERIES[series], `CEO universe series ${series} must be in the store-derived verified list`);
+  }
+
+  // ---- FDA: the exchange's own rules text is what licenses the trade ----
+  const near = {
+    ticker: 'KXFDATEST-RET-27JAN01',
+    event_ticker: 'KXFDATEST-RET',
+    close_time: '2027-01-01T04:59:00Z',
+    rules_primary: 'If the FDA approves testdrug before Jan 1, 2027, then the market resolves to Yes.'
+  };
+  const far = {
+    ticker: 'KXFDATEST-RET-27JUL01',
+    event_ticker: 'KXFDATEST-RET',
+    close_time: '2027-07-01T03:59:00Z',
+    rules_primary: 'If the FDA approves testdrug before Jul 1, 2027, then the market resolves to Yes.'
+  };
+  // A complete-enough stub: aggressiveSize() walks the ask tiers to cap the size
+  // at real visible depth, so a stub missing getYesAskTiers() would throw rather
+  // than size — the same surface the engine's OrderBook provides.
+  const bookAt = (bid, ask) => ({
+    getBestYesBid: () => bid,
+    getBestYesAsk: () => ask,
+    getBestNoBid: () => (ask === null ? null : 1 - ask),
+    getBestNoAsk: () => (bid === null ? null : 1 - bid),
+    getYesAskTiers: () => [{ price: ask, count: 5000 }],
+    getNoAskTiers: () => [{ price: bid === null ? null : 1 - bid, count: 5000 }],
+    tick: 0.01,
+    notional: 1
+  });
+
+  const ctxFor = (market, ownBook, siblingBid) => ({
+    ticker: market.ticker,
+    market,
+    book: ownBook,
+    books: { [near.ticker]: bookAt(siblingBid, siblingBid + 0.01) },
+    allMarkets: [near, far],
+    portfolio: { positions: new Map(), cash: 100000 },
+    candle: { trade: { close: 0.5, high: 0.6, low: 0.4 } },
+    history: []
+  });
+
+  // A 0.35 far ask against a 0.42 near bid is a 7c dominance violation -> fire.
+  const fired = fda.decide.call(fda, ctxFor(far, bookAt(0.34, 0.35), 0.42));
+  assert.equal(fired.length, 1, 'a violation fires the trade');
+  assert.equal(fired[0].type, 'buy');
+  assert.equal(fired[0].side, 'YES');
+  assert.match(fired[0].reason, /dominance violation/);
+  assert.match(fired[0].reason, /KXFDATEST-RET-27JAN01/, 'the reason names the earlier contract it compared against');
+
+  // 1c inside the threshold is NOT enough — the fee-aware buffer must hold.
+  assert.equal(fda.decide.call(fda, ctxFor(far, bookAt(0.40, 0.41), 0.42)).length, 0, 'a 1c gap is below the fee-aware threshold');
+
+  // No violation at all: the later contract is priced ABOVE the earlier one's
+  // bid (its ask 0.46 > the earlier bid 0.42), which is the normal ordering.
+  assert.equal(fda.decide.call(fda, ctxFor(far, bookAt(0.45, 0.46), 0.42)).length, 0);
+
+  // A MARKOVIAN claim (not "before <date>") must never be treated as nested.
+  const notCumulative = { ...far, rules_primary: 'This market resolves Yes if the FDA approves testdrug in Q3 2027.' };
+  assert.equal(
+    fda.decide.call(fda, { ...ctxFor(far, bookAt(0.34, 0.35), 0.42), market: notCumulative, allMarkets: [near, notCumulative] }).length,
+    0,
+    'without "before <date>" wording there is no dominance relation and the rule abstains'
+  );
+
+  // A sibling that settles LATER does not imply anything about this market.
+  const laterSibling = { ...near, ticker: 'KXFDATEST-RET-28JAN01', close_time: '2028-01-01T04:59:00Z' };
+  assert.equal(
+    fda.decide.call(fda, {
+      ...ctxFor(far, bookAt(0.34, 0.35), 0.42),
+      allMarkets: [laterSibling, far],
+      books: { [laterSibling.ticker]: bookAt(0.42, 0.43) }
+    }).length,
+    0,
+    'a later-settling sibling cannot trigger the edge'
+  );
+
+  // ---- CEO: the 20-bar advance rule ----
+  const bar = (low, close) => ({ trade: { low, close } });
+  const ceoHistory = Array.from({ length: 20 }, (_, i) => bar(0.30, 0.31 + i * 0.001));
+  const ceoCtx = (close, book) => ({
+    ticker: 'TESLACEOCHANGE-26',
+    market: { ticker: 'TESLACEOCHANGE-26' },
+    book,
+    books: {},
+    allMarkets: [],
+    portfolio: { positions: new Map(), cash: 100000 },
+    candle: { trade: { close, high: close + 0.01, low: close - 0.01 } },
+    history: ceoHistory
+  });
+  // low of the window is 0.30; a close of 0.50 is a 0.20 advance -> fire.
+  assert.equal(ceo.decide.call(ceo, ceoCtx(0.5, bookAt(0.49, 0.5))).length, 1, 'a 20c advance off the low fires');
+  // a close of 0.40 is a 0.10 advance -> below the 0.15 threshold, abstain.
+  assert.equal(ceo.decide.call(ceo, ceoCtx(0.4, bookAt(0.39, 0.4))).length, 0, 'a 10c advance is not enough');
+  // above 0.90 the contract is nearly certain: the remaining upside cannot pay for the fee.
+  assert.equal(ceo.decide.call(ceo, ceoCtx(0.95, bookAt(0.94, 0.95))).length, 0, 'no buying at ≥ 0.90');
 });

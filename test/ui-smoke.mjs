@@ -51,7 +51,7 @@ function el(sel) {
   return elements.get(sel);
 }
 
-const TABS = ['leaderboard', 'strategies', 'markets', 'memory', 'lab', 'research', 'verification', 'irregularities'];
+const TABS = ['leaderboard', 'strategies', 'markets', 'memory', 'lab', 'ledger', 'research', 'verification', 'irregularities'];
 
 globalThis.document = {
   querySelector: (sel) => el(sel),
@@ -86,6 +86,18 @@ globalThis.Blob = class { constructor(parts) { this.parts = parts; } };
 const FORCE = process.env.FORCE_MODE || 'static';
 const { readFileSync: readDiskFile, existsSync: diskExists } = await import('node:fs');
 globalThis.fetch = async (url) => {
+  // The ledger the Trade Ledger tab renders. Served from docs/data/ exactly as
+  // GitHub Pages would serve it, so the tab is tested with its real, verified
+  // content instead of its "no ledger" fallback.
+  const ledgerMatch = /(?:^|\/)data\/ledger\.json$/.exec(String(url));
+  if (ledgerMatch) {
+    const full = new URL('../docs/data/ledger.json', import.meta.url);
+    if (diskExists(full)) {
+      const text = readDiskFile(full, 'utf8');
+      return { ok: true, status: 200, json: async () => JSON.parse(text), text: async () => text };
+    }
+    return { ok: false, status: 404, json: async () => ({}), text: async () => 'not found' };
+  }
   const m = /(?:^|\/)data\/reports\/([A-Za-z0-9._-]+)$/.exec(String(url));
   if (m) {
     const full = new URL(`../data/reports/${m[1]}`, import.meta.url);
@@ -116,6 +128,12 @@ const want = [
 ];
 
 let fail = 0;
+// The unranked block is a render of the computed leaderboard, so the assertion
+// below compares against the data the page itself derives.
+import { runCompetition } from '../src/strategy-runner.js';
+import { buildLeaderboard } from '../src/analysis.js';
+const LEADERBOARD = buildLeaderboard(runCompetition({ seed: 20260917 }).results);
+
 console.log(`\n=== UI smoke (${FORCE} mode) ===`);
 for (const sel of want) {
   const v = written.get(sel) ?? el(sel).textContent ?? '';
@@ -131,7 +149,19 @@ const checks = [
   ['leaderboard has rows', /<tr/.test(lb)],
   ['leaderboard shows FeeArb_PremiumBuyer', lb.includes('FeeArb_PremiumBuyer')],
   ['leaderboard shows a computed return', /[-+]\d+\.\d+%/.test(lb)],
-  ['unranked block populated (YieldVulture untested)', (written.get('#unrankedList') || '').includes('YieldVulture_Arb')],
+  // WHICH strategy is unranked is a function of the roster and the universe, so
+  // the check is derived from the same data the page renders instead of naming a
+  // strategy from memory. (YieldVulture_Arb used to be the never-trading entry
+  // and now trades — a hard-coded name would have failed for the wrong reason.)
+  [
+    'unranked block matches the leaderboard',
+    (() => {
+      const unranked = LEADERBOARD.filter((r) => !r.qualified);
+      if (!unranked.length) return (written.get('#unrankedList') || '').trim() === '';
+      const html = written.get('#unrankedList') || '';
+      return unranked.every((r) => html.includes(r.username)) && unranked.some((r) => /not ranked|no .* market|Flight mismatch/i.test(html));
+    })()
+  ],
   ['strategy cards rendered', (written.get('#strategyCards') || '').includes('s-card')],
   ['provenance mentions capture date', (written.get('#provenanceText') || '').includes('2026-09-17')],
   ['provenance says NOT live quotes', /not live quotes/i.test(written.get('#provenanceText') || '')],
@@ -225,6 +255,23 @@ interact.push(['research ledger cites numbered sources with URLs', /R0\d/.test(l
 interact.push(['research gaps name the blocker and the way to close it', /Blocked by:/.test(written.get('#researchGaps') || '') && /To close it:/.test(written.get('#researchGaps') || '')]);
 interact.push(['research reports link the raw JSON', (written.get('#researchReports') || '').includes('.json')]);
 interact.push(['research stats state no source number is reused', /no source(?:&#39;|')s performance number is reused/i.test(written.get('#researchStats') || '')]);
+// ── Verified Trade Ledger tab ───────────────────────────────────────
+el('.tab:ledger').click();
+await new Promise((r) => setTimeout(r, 600));
+const ledgerStatus = written.get('#ledgerStatus') || '';
+const ledgerSummary = written.get('#ledgerSummary') || '';
+const ledgerTrades = written.get('#ledgerTrades') || '';
+const ledgerSources = written.get('#ledgerSources') || '';
+interact.push(['ledger tab renders a verification verdict', /verified|did NOT pass/i.test(ledgerStatus)]);
+interact.push(['ledger status states the anti-hallucination checks', /re-derived|FIFO|market period/i.test(ledgerStatus)]);
+interact.push(['ledger status states the date rule', /REAL market period|end_period_ts|candlestick/i.test(ledgerStatus)]);
+interact.push(['ledger summary lists per-strategy totals', /Per-strategy ledger totals/.test(ledgerSummary) && /Slippage cost/.test(ledgerSummary)]);
+interact.push(['ledger summary names a real roster username', /[A-Za-z]+_[A-Za-z]+/.test(ledgerSummary)]);
+interact.push(['ledger round trips are shown with both real dates', /Round trips/.test(ledgerTrades) && /Entry \(real\)/.test(ledgerTrades) && /Exit \(real\)/.test(ledgerTrades)]);
+interact.push(['ledger round trips state how the exit happened', /exchange result|SELL/.test(ledgerTrades)]);
+interact.push(['ledger round trips name the ladder that priced each entry', /REAL captured ladder|modelled ladder/.test(ledgerTrades)]);
+interact.push(['ledger round trips link the official API source', /https:\/\/external-api\.kalshi\.com/.test(ledgerTrades)]);
+interact.push(['ledger sources cite the official endpoints and docs', /candlesticks/.test(ledgerSources) && /docs\.kalshi\.com/.test(ledgerSources)]);
 
 // 6. Calendar advance + re-run competition with a different seed.
 el('#btnAdvance').click();

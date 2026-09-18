@@ -130,6 +130,12 @@ export function getReplayableMarkets(options = {}) {
     normalizeMarket(e.market, {
       source: e.marketSource === 'verified_snapshot' ? DATA_SOURCE.VERIFIED_SNAPSHOT : DATA_SOURCE_ACCUMULATED,
       source_url: e.market_url,
+      // WHERE THE PRICES CAME FROM. Distinct from source_url (which documents
+      // the market OBJECT): this is the candlestick endpoint URL the ingest job
+      // actually fetched the bars with, recorded in the store per market. The
+      // trade ledger links each fill to this URL so a reader can fetch the same
+      // bar the fill was priced on (see OrderBook.setClock).
+      candle_source_url: ACCUMULATED_HISTORY.markets[e.ticker]?.last_ingest_url || null,
       captured_at: e.market_captured_at,
       candle_origin: e.origin,
       stored_bar_count: e.storedBarCount,
@@ -348,6 +354,7 @@ export function runCompetition(options = {}) {
       const normalized = normalizeMarket(record.market, {
         source: DATA_SOURCE_ACCUMULATED,
         source_url: record.market_url || null,
+        candle_source_url: record.last_ingest_url || null,
         captured_at: record.market_captured_at || null,
         candle_origin: 'intraday_store',
         stored_bar_count: record.bar_count
@@ -395,7 +402,11 @@ export function runCompetition(options = {}) {
     // 'partial' (default) fills only real depth and reports the rest as unfilled.
     // 'penalty' is a STRESS mode that invents a price beyond the book; it is
     // never used for headline results and is labelled wherever it appears.
-    exhaustionPolicy: options.exhaustionPolicy === 'penalty' ? 'penalty' : 'partial'
+    exhaustionPolicy: options.exhaustionPolicy === 'penalty' ? 'penalty' : 'partial',
+    // The bar length of this flight (1440 / 60 / 1). Used only to stamp every
+    // fill with the real market period it traded in (OrderBook.setClock) so a
+    // trade log carries an auditable date instead of the replay's wall clock.
+    periodMinutes: periodIntervalMinutes
   });
 
   const results = strategies.map((strategy) => {
@@ -501,7 +512,8 @@ export function runCompetition(options = {}) {
             depthProfiles,
             depthProfileScale: options.depthProfileScale ?? 1,
             noTradeBeforeTs: options.noTradeBeforeTs ?? null,
-            exhaustionPolicy: options.exhaustionPolicy === 'penalty' ? 'penalty' : 'partial'
+            exhaustionPolicy: options.exhaustionPolicy === 'penalty' ? 'penalty' : 'partial',
+            periodMinutes: periodIntervalMinutes
           });
 
     const result = universeEngine.run(strategy, { username: strategy.username, capital: initialCapital, seed });

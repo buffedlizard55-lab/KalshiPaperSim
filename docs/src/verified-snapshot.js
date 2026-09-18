@@ -25,23 +25,39 @@
 
 /** Capture metadata shared by every block below. */
 import { NON_STANDARD_FEE_MULTIPLIERS, NON_STANDARD_FEE_TABLE_SOURCE } from './kalshi-config.js';
+import { SERIES_FEE_REGISTRY, FEE_REGISTRY_PROVENANCE } from './series-fee-registry.js';
 
 /**
  * Cross-check a live-captured series fee_multiplier against the official
  * "Non-Standard Fees" table in https://kalshi.com/docs/kalshi-fee-schedule.pdf
  * (effective 2026-07-07). Two independent sources, so a disagreement is loud.
  */
-function pdfFeeCrossCheck(seriesTicker, capturedMultiplier) {
+function pdfFeeCrossCheck(seriesTicker, capturedMultiplier, capturedFeeType = null) {
   const row = NON_STANDARD_FEE_MULTIPLIERS[seriesTicker];
   if (!row) {
+    // ABSENT FROM **OUR TRANSCRIPTION** IS NOT THE SAME AS ABSENT FROM THE PDF.
+    // NON_STANDARD_FEE_MULTIPLIERS is a subset (the series relevant to this
+    // universe plus every zero-fee row); the real table is ~90 rows of
+    // sports/awards markets. An earlier version of this function reported
+    // "documented default applies; live capture agrees" for any absent series,
+    // which asserted a maker multiplier of 0 for series the live API marks
+    // quadratic_with_maker_fees (e.g. KXNFLGAME). It now says only what is
+    // known, and records what the live capture says about maker fees.
     return {
       listed: false,
+      transcribed: false,
       agrees: capturedMultiplier === NON_STANDARD_FEE_TABLE_SOURCE.defaultWhenAbsent.taker,
       pdfTaker: NON_STANDARD_FEE_TABLE_SOURCE.defaultWhenAbsent.taker,
-      pdfMaker: NON_STANDARD_FEE_TABLE_SOURCE.defaultWhenAbsent.maker,
-      verdict: capturedMultiplier === 1
-        ? 'not listed in the official table => documented default taker M=1 applies; live capture agrees'
-        : `not listed in the official table (default taker M=1) but live capture says M=${capturedMultiplier} — INVESTIGATE`,
+      pdfMaker: null,
+      makerFeesApplyPerLiveCapture: capturedFeeType === 'quadratic_with_maker_fees',
+      verdict:
+        capturedMultiplier === 1
+          ? 'row not transcribed in this repo\'s subset of the Non-Standard Fees table => the documented default taker M=1 applies; the live capture agrees on the taker value'
+          : `row not transcribed in this repo's subset of the Non-Standard Fees table (documented default taker M=1) but the live capture says M=${capturedMultiplier} — INVESTIGATE`,
+      note:
+        capturedFeeType === 'quadratic_with_maker_fees'
+          ? 'This series carries maker fees (fee_type=quadratic_with_maker_fees), so the maker coefficient applies to resting orders; its maker multiplier is taken as the captured fee_multiplier and labelled as such.'
+          : 'This series is plain quadratic: a resting (maker) order pays NOTHING per the fee schedule quote at the top of src/kalshi-fees.js.',
       source: NON_STANDARD_FEE_TABLE_SOURCE.sourceUrl
     };
   }
@@ -223,12 +239,40 @@ export const SERIES = Object.freeze({
 export function seriesFeeConfig(seriesTicker) {
   const s = SERIES[seriesTicker];
   if (!s || typeof s.fee_multiplier !== 'number') {
+    // Second source: the fee configuration of every series the exchange lists,
+    // captured by the ingest job with GET /series?include_volume=true and
+    // narrowed to this build's tradeable universe by
+    // scripts/generate-fee-registry.mjs. It is a LATER capture than the
+    // snapshot (2026-09-18 vs 2026-09-17) and covers 47 series instead of 4.
+    const reg = SERIES_FEE_REGISTRY[seriesTicker];
+    if (reg && typeof reg.fee_multiplier === 'number') {
+      return {
+        series_ticker: seriesTicker,
+        fee_multiplier: reg.fee_multiplier,
+        fee_type: reg.fee_type || 'quadratic',
+        captured: true,
+        captureSource: 'discovered_series_list',
+        zeroFee: reg.fee_multiplier === 0,
+        makerFeesApply: reg.fee_type === 'quadratic_with_maker_fees',
+        category: reg.category ?? null,
+        title: reg.title ?? null,
+        seriesVolumeFp: reg.volume_fp ?? null,
+        pdfCrossCheck: pdfFeeCrossCheck(seriesTicker, reg.fee_multiplier, reg.fee_type),
+        url: FEE_REGISTRY_PROVENANCE.docs || `https://external-api.kalshi.com/trade-api/v2/series/${seriesTicker}`
+      };
+    }
     return {
       series_ticker: seriesTicker,
       fee_multiplier: 1,
       fee_type: 'quadratic',
       captured: false,
-      note: 'Series object not captured — using the documented taker default M=1. Verify with GET /series/{ticker}.',
+      captureSource: 'documented_default',
+      zeroFee: false,
+      makerFeesApply: false,
+      // Absent from BOTH captures. The registry names it in
+      // FEE_REGISTRY_COVERAGE.missing when the build knows the build could
+      // trade it, which is the honest way to show a gap.
+      note: 'Series object not captured in either the 2026-09-17 snapshot or the 2026-09-18 GET /series capture — using the documented taker default M=1. Verify with GET /series/{ticker}.',
       pdfCrossCheck: pdfFeeCrossCheck(seriesTicker, 1)
     };
   }
@@ -237,9 +281,10 @@ export function seriesFeeConfig(seriesTicker) {
     fee_multiplier: s.fee_multiplier,
     fee_type: s.fee_type || 'quadratic',
     captured: true,
+    captureSource: 'snapshot_2026-09-17',
     zeroFee: s.fee_multiplier === 0,
     makerFeesApply: s.fee_type === 'quadratic_with_maker_fees',
-    pdfCrossCheck: pdfFeeCrossCheck(seriesTicker, s.fee_multiplier),
+    pdfCrossCheck: pdfFeeCrossCheck(seriesTicker, s.fee_multiplier, s.fee_type),
     url: s._provenance?.url || `https://external-api.kalshi.com/trade-api/v2/series/${seriesTicker}`
   };
 }
