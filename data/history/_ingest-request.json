@@ -72,6 +72,90 @@
     "with_market": true,
     "min_interval_ms": 300,
     "_why_this": "ROADMAP item #4 (one-minute candles). KXGOLD15M is Kalshi's 15-minute gold series (verified to trade heavily: third-party archives list individual 15-minute contracts with 3,000-7,000 trades). A 15-minute market has ~15 one-minute bars, so max_markets=8 x ~15 bars is tiny; the 96-bar cap and the 2-day window keep a cold store from pulling a long history. 1-minute bars are the resolution the R01 panic-fade source actually traded, so this store lets that family be tested at its native granularity."
+   },
+   {
+    "name": "hourly-weather-cities",
+    "period": 60,
+    "status": "all",
+    "series": [
+     "KXHIGHLAX",
+     "KXHIGHCHI",
+     "KXHIGHMIA",
+     "KXHIGHAUS",
+     "KXHIGHDEN",
+     "KXHIGHPHIL",
+     "KXHIGHTPHX",
+     "KXHIGHTSEA"
+    ],
+    "days": 0,
+    "max_backfill_days": 30,
+    "max_bars": 200,
+    "min_volume": 1000,
+    "max_markets": 10,
+    "with_books": true,
+    "with_market": true,
+    "min_interval_ms": 300,
+    "_why_this": "ROADMAP item #3 (more weather cities) as answered by the REAL series list captured by scripts/discover-universe.mjs on 2026-09-18: 54 KXHIGH* series exist and the eight ingested here are the highest by exchange-reported lifetime volume (KXHIGHLAX 166.2M, KXHIGHNY 144.6M, KXHIGHCHI 110.1M, KXHIGHMIA 98.5M, KXHIGHAUS 77.2M, KXHIGHDEN 50.8M, KXHIGHPHIL 41.5M, KXHIGHTPHX 16.8M, KXHIGHTSEA 16.5M). status=all ingests FINALIZED brackets so each carries the exchange result the replay settles on. Every one of these series has fee_multiplier 1 (data/discovered/series-fees.json), so the documented default fee model is the REAL configuration for all of them."
+   },
+   {
+    "name": "hourly-sports-game-lines",
+    "period": 60,
+    "status": "all",
+    "series": [
+     "KXNFLGAME",
+     "KXMLBGAME",
+     "KXNBAGAME",
+     "KXNHLGAME",
+     "KXNCAAFGAME",
+     "KXWNBAGAME",
+     "KXUFCFIGHT"
+    ],
+    "days": 0,
+    "max_backfill_days": 30,
+    "max_bars": 200,
+    "min_volume": 1000,
+    "max_markets": 8,
+    "with_books": true,
+    "with_market": true,
+    "min_interval_ms": 300,
+    "_why_this": "ROADMAP item #5: a SPORTS series was the biggest signal-ledger gap. These seven are the highest-volume game market classes the exchange reports (KXNFLGAME 6.01B, KXMLBGAME 9.80B, KXNBAGAME 11.68B, KXNHLGAME 1.57B, KXNCAAFGAME 4.78B, KXWNBAGAME 1.08B, KXUFCFIGHT 1.28B lifetime contracts). A game market lives hours, so 60-minute bars are its natural resolution, and status=all keeps the FINALIZED games whose result the exchange published — the only markets whose settlement this replay may book. NOTE the real fee config: the MLB series carry fee_multiplier 0.5 (data/discovered/series-fees.json), which the fee engine applies per series."
+   },
+   {
+    "name": "minute-crypto-15m",
+    "period": 1,
+    "status": "all",
+    "series": [
+     "KXBTC15M",
+     "KXETH15M",
+     "KXSOL15M"
+    ],
+    "days": 2,
+    "max_backfill_days": 3,
+    "max_bars": 96,
+    "min_volume": 1000,
+    "max_markets": 8,
+    "with_books": true,
+    "with_market": true,
+    "min_interval_ms": 300,
+    "_why_this": "The three highest-volume 15-minute crypto series (KXBTC15M 18.15B, KXETH15M 972M, KXSOL15M 347M lifetime contracts) at one-minute resolution — the same treatment KXGOLD15M already gets. These are the fastest-settling markets on the exchange (15 minutes), so they produce the most independent settlement events per day for the micro flight."
+   },
+   {
+    "name": "hourly-macro-settled",
+    "period": 60,
+    "status": "all",
+    "series": [
+     "KXFEDDECISION",
+     "KXCPIYOY"
+    ],
+    "days": 0,
+    "max_backfill_days": 120,
+    "max_bars": 200,
+    "min_volume": 1000,
+    "max_markets": 8,
+    "with_books": true,
+    "with_market": true,
+    "min_interval_ms": 300,
+    "_why_this": "The two macro series the roster already names but has no bars for: KXFEDDECISION (611.7M lifetime contracts, fee_multiplier 1, mutually exclusive buckets) and KXCPIYOY (36.1M, BLS settlement). Both settle on a published official number, which makes their real result an unambiguous settlement input."
    }
   ]
  }
