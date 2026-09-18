@@ -57,37 +57,15 @@ jobs:
 
       - name: Commit the new snapshots
         run: |
-          if [ -z "$(git status --porcelain data/forecasts src/forecast-data.js src/accumulated-history.js)" ]; then
-            echo "No new forecast data — nothing to commit."
-            exit 0
-          fi
-          git config user.name  "kalshi-forecast-bot"
-          git config user.email "kalshi-forecast-bot@users.noreply.github.com"
-          git add data/forecasts src/forecast-data.js src/accumulated-history.js
-          git commit -m "chore(forecasts): archive point-in-time NWS forecast $(date -u +%F' '%H:%M)"
-          # PUSH-RACE GUARD: the history-ingest bot can commit to this branch
-          # between our checkout and our push (it happened on 2026-09-18: the
-          # ingest lost this exact race). On rejection, rebase on the remote
-          # tip and retry. Generated modules are a pure function of data/, so
-          # a rebase conflict on one is resolved by REGENERATING it from the
-          # merged data tree, never by hand-editing.
-          BRANCH="${GITHUB_REF_NAME}"
-          pushed=0
-          for attempt in 1 2 3; do
-            if git push origin "HEAD:${BRANCH}"; then pushed=1; break; fi
-            echo "::warning::push rejected (attempt ${attempt}) — rebasing on origin/${BRANCH}"
-            git fetch --deepen=50 origin "${BRANCH}"
-            if ! git rebase "origin/${BRANCH}"; then
-              node scripts/generate-history-module.mjs >/dev/null 2>&1 || true
-              git add src/accumulated-history.js src/forecast-data.js 2>/dev/null || true
-              if ! GIT_EDITOR=true git rebase --continue; then
-                git rebase --abort
-                echo "::error::could not rebase onto origin/${BRANCH} — rerun this job"
-                exit 1
-              fi
-            fi
-          done
-          [ "$pushed" = "1" ] || { echo "::error::push still rejected after 3 attempts"; exit 1; }
+          # One shared, locally-tested implementation of "commit everything
+          # this run changed and survive the push race with the ingest bot"
+          # (test/workflow-race-guard.sh reproduces the races, including the
+          # one that killed the first post-merge ingest run on 2026-09-18).
+          BOT_NAME="kalshi-forecast-bot" \
+          BOT_EMAIL="kalshi-forecast-bot@users.noreply.github.com" \
+          bash scripts/push-with-race-guard.sh \
+            "chore(forecasts): archive point-in-time NWS forecast $(date -u +%F' '%H:%M)" \
+            "${GITHUB_REF_NAME}"
 
       # An incomplete capture must be visible on the run, not buried in the log:
       # the script writes the failure list into the request file it just commits.
