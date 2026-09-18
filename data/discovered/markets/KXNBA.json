@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNBA&limit=200",
-  "capturedAt": "2026-09-18T18:05:40.306Z",
+  "capturedAt": "2026-09-18T18:46:37.977Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },
@@ -19,9 +19,9 @@
    "title": "Will Philadelphia win the 2027 Pro Basketball Finals?",
    "status": "active",
    "result": "",
-   "volume_fp": "7933618.56",
-   "volume_24h_fp": "11940.88",
-   "open_interest_fp": "5251880.81",
+   "volume_fp": "7933676.72",
+   "volume_24h_fp": "11999.04",
+   "open_interest_fp": "5251938.97",
    "liquidity_dollars": "0.0000",
    "yes_bid_dollars": "0.0900",
    "yes_ask_dollars": "0.1000",

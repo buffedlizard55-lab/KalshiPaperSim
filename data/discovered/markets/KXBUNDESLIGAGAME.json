@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXBUNDESLIGAGAME&limit=200",
-  "capturedAt": "2026-09-18T18:05:49.320Z",
+  "capturedAt": "2026-09-18T18:46:45.240Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },
@@ -10,7 +10,7 @@
  "series_title": "Bundesliga Game",
  "markets_returned": 108,
  "kept": 6,
- "settled_kept": 6,
+ "settled_kept": 5,
  "markets": [
   {
    "ticker": "KXBUNDESLIGAGAME-26SEP05SCHBMU-BMU",
@@ -138,29 +138,29 @@
    "rules_primary": "If Elversberg wins the Elversberg vs Leverkusen professional Bundesliga soccer game originally scheduled for Aug 29, 2026 after 90 minutes plus stoppage time (does not include extra time or penalties), then the market resolves to Yes."
   },
   {
-   "ticker": "KXBUNDESLIGAGAME-26SEP11UNISCH-SCH",
-   "event_ticker": "KXBUNDESLIGAGAME-26SEP11UNISCH",
+   "ticker": "KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU",
+   "event_ticker": "KXBUNDESLIGAGAME-26SEP18BMUUNI",
    "series_ticker": null,
-   "title": "Schalke wins",
-   "status": "finalized",
-   "result": "yes",
-   "volume_fp": "1157482.24",
-   "volume_24h_fp": "0.00",
-   "open_interest_fp": "677253.87",
+   "title": "Bayern Munich wins",
+   "status": "active",
+   "result": "",
+   "volume_fp": "1323533.88",
+   "volume_24h_fp": "859660.98",
+   "open_interest_fp": "1039566.78",
    "liquidity_dollars": "0.0000",
-   "yes_bid_dollars": "0.0000",
-   "yes_ask_dollars": "1.0000",
-   "last_price_dollars": "0.9900",
-   "open_time": "2026-08-28T00:36:00Z",
-   "close_time": "2026-09-11T21:03:26Z",
-   "settlement_ts": "2026-09-11T21:04:58.466961Z",
-   "settlement_value_dollars": "1.0000",
-   "expiration_value": "Schalke",
+   "yes_bid_dollars": "0.9300",
+   "yes_ask_dollars": "0.9400",
+   "last_price_dollars": "0.9300",
+   "open_time": "2026-09-04T00:35:00Z",
+   "close_time": "2026-09-21T00:30:00Z",
+   "settlement_ts": null,
+   "settlement_value_dollars": null,
+   "expiration_value": "",
    "strike_type": "structured",
    "floor_strike": null,
    "cap_strike": null,
    "price_level_structure": "linear_cent",
-   "rules_primary": "If Schalke wins the Union Berlin vs Schalke professional Bundesliga soccer game originally scheduled for Sep 11, 2026 after 90 minutes plus stoppage time (does not include extra time or penalties), then the market resolves to Yes."
+   "rules_primary": "If Bayern Munich wins the Bayern Munich vs Union Berlin professional Bundesliga soccer game originally scheduled for Sep 18, 2026 after 90 minutes plus stoppage time (does not include extra time or penalties), then the market resolves to Yes."
   }
  ]
 }

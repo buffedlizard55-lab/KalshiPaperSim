@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXMLBF5&limit=200",
-  "capturedAt": "2026-09-18T18:05:48.659Z",
+  "capturedAt": "2026-09-18T18:46:44.960Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },
@@ -45,7 +45,7 @@
    "status": "finalized",
    "result": "yes",
    "volume_fp": "228854.83",
-   "volume_24h_fp": "193197.80",
+   "volume_24h_fp": "145563.93",
    "open_interest_fp": "191426.58",
    "liquidity_dollars": "0.0000",
    "yes_bid_dollars": "0.0000",
@@ -95,7 +95,7 @@
    "status": "finalized",
    "result": "no",
    "volume_fp": "187380.02",
-   "volume_24h_fp": "8553.65",
+   "volume_24h_fp": "0.00",
    "open_interest_fp": "88752.11",
    "liquidity_dollars": "0.0000",
    "yes_bid_dollars": "0.0000",

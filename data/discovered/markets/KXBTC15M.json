@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXBTC15M&limit=200",
-  "capturedAt": "2026-09-18T18:05:28.297Z",
+  "capturedAt": "2026-09-18T18:46:28.038Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },
@@ -36,6 +36,31 @@
    "cap_strike": null,
    "price_level_structure": "tapered_deci_cent",
    "rules_primary": "If the simple average of the sixty seconds of CF Benchmarks' BRTI before 12:45 PM EDT on Sep 18, 2026 is at least the simple average of the sixty seconds of CF Benchmarks' BRTI before 12:30 PM EDT on September 18, 2026, then the market resolves to Yes."
+  },
+  {
+   "ticker": "KXBTC15M-26SEP181445-45",
+   "event_ticker": "KXBTC15M-26SEP181445",
+   "series_ticker": null,
+   "title": "BTC price up in next 15 mins?",
+   "status": "finalized",
+   "result": "no",
+   "volume_fp": "4788282.26",
+   "volume_24h_fp": "2237188.54",
+   "open_interest_fp": "789090.37",
+   "liquidity_dollars": "0.0000",
+   "yes_bid_dollars": "0.0000",
+   "yes_ask_dollars": "1.0000",
+   "last_price_dollars": "0.0010",
+   "open_time": "2026-09-18T18:30:00Z",
+   "close_time": "2026-09-18T18:45:00Z",
+   "settlement_ts": "2026-09-18T18:45:04.550575Z",
+   "settlement_value_dollars": "0.0000",
+   "expiration_value": "80939.12",
+   "strike_type": "greater_or_equal",
+   "floor_strike": 80955.52,
+   "cap_strike": null,
+   "price_level_structure": "tapered_deci_cent",
+   "rules_primary": "If the simple average of the sixty seconds of CF Benchmarks' BRTI before 2:45 PM EDT on Sep 18, 2026 is at least the simple average of the sixty seconds of CF Benchmarks' BRTI before 2:30 PM EDT on September 18, 2026, then the market resolves to Yes."
   },
   {
    "ticker": "KXBTC15M-26SEP181200-00",
@@ -136,31 +161,6 @@
    "cap_strike": null,
    "price_level_structure": "tapered_deci_cent",
    "rules_primary": "If the simple average of the sixty seconds of CF Benchmarks' BRTI before 1:30 AM EDT on Sep 18, 2026 is at least the simple average of the sixty seconds of CF Benchmarks' BRTI before 1:15 AM EDT on September 18, 2026, then the market resolves to Yes."
-  },
-  {
-   "ticker": "KXBTC15M-26SEP172115-15",
-   "event_ticker": "KXBTC15M-26SEP172115",
-   "series_ticker": null,
-   "title": "BTC price up in next 15 mins?",
-   "status": "finalized",
-   "result": "no",
-   "volume_fp": "4059639.18",
-   "volume_24h_fp": "4059639.18",
-   "open_interest_fp": "809601.80",
-   "liquidity_dollars": "0.0000",
-   "yes_bid_dollars": "0.0000",
-   "yes_ask_dollars": "1.0000",
-   "last_price_dollars": "0.0010",
-   "open_time": "2026-09-18T01:00:00Z",
-   "close_time": "2026-09-18T01:15:00Z",
-   "settlement_ts": "2026-09-18T01:15:04.5877Z",
-   "settlement_value_dollars": "0.0000",
-   "expiration_value": "76511.91",
-   "strike_type": "greater_or_equal",
-   "floor_strike": 76521.86,
-   "cap_strike": null,
-   "price_level_structure": "tapered_deci_cent",
-   "rules_primary": "If the simple average of the sixty seconds of CF Benchmarks' BRTI before 9:15 PM EDT on Sep 17, 2026 is at least the simple average of the sixty seconds of CF Benchmarks' BRTI before 9:00 PM EDT on September 17, 2026, then the market resolves to Yes."
   }
  ]
 }

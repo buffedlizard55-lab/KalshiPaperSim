@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNCAAFTOTAL&limit=200",
-  "capturedAt": "2026-09-18T18:05:42.007Z",
+  "capturedAt": "2026-09-18T18:46:39.384Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },
@@ -61,6 +61,31 @@
    "cap_strike": null,
    "price_level_structure": "linear_cent",
    "rules_primary": "If the teams collectively score more than 36.5 points in the Syracuse vs Pittsburgh college football game originally scheduled for Sep 17, 2026, then the market resolves to Yes."
+  },
+  {
+   "ticker": "KXNCAAFTOTAL-26SEP19USDCP-57",
+   "event_ticker": "KXNCAAFTOTAL-26SEP19USDCP",
+   "series_ticker": null,
+   "title": "Over 56.5 points scored",
+   "status": "active",
+   "result": "",
+   "volume_fp": "878.88",
+   "volume_24h_fp": "0.00",
+   "open_interest_fp": "878.88",
+   "liquidity_dollars": "0.0000",
+   "yes_bid_dollars": "0.4700",
+   "yes_ask_dollars": "0.6100",
+   "last_price_dollars": "0.6100",
+   "open_time": "2026-09-16T04:06:00Z",
+   "close_time": "2026-09-22T00:00:00Z",
+   "settlement_ts": null,
+   "settlement_value_dollars": null,
+   "expiration_value": "",
+   "strike_type": "greater",
+   "floor_strike": 56.5,
+   "cap_strike": null,
+   "price_level_structure": "linear_cent",
+   "rules_primary": "If the teams collectively score more than 56.5 points in the San Diego vs Cal Poly college football game originally scheduled for Sep 19, 2026, then the market resolves to Yes."
   },
   {
    "ticker": "KXNCAAFTOTAL-26SEP19MRMKTARL-59",
@@ -136,31 +161,6 @@
    "cap_strike": null,
    "price_level_structure": "linear_cent",
    "rules_primary": "If the teams collectively score more than 58.5 points in the Houston Christian vs Incarnate Word college football game originally scheduled for Sep 19, 2026, then the market resolves to Yes."
-  },
-  {
-   "ticker": "KXNCAAFTOTAL-26SEP19PRINBRY-44",
-   "event_ticker": "KXNCAAFTOTAL-26SEP19PRINBRY",
-   "series_ticker": null,
-   "title": "Over 43.5 points scored",
-   "status": "active",
-   "result": "",
-   "volume_fp": "36.52",
-   "volume_24h_fp": "36.52",
-   "open_interest_fp": "36.52",
-   "liquidity_dollars": "0.0000",
-   "yes_bid_dollars": "0.4700",
-   "yes_ask_dollars": "0.5100",
-   "last_price_dollars": "0.4700",
-   "open_time": "2026-09-16T22:06:00Z",
-   "close_time": "2026-09-21T17:00:00Z",
-   "settlement_ts": null,
-   "settlement_value_dollars": null,
-   "expiration_value": "",
-   "strike_type": "greater",
-   "floor_strike": 43.5,
-   "cap_strike": null,
-   "price_level_structure": "linear_cent",
-   "rules_primary": "If the teams collectively score more than 43.5 points in the Princeton vs Bryant college football game originally scheduled for Sep 19, 2026, then the market resolves to Yes."
   }
  ]
 }
