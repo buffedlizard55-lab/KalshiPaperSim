@@ -24,7 +24,7 @@
     ✗ 18 market(s) below the volume floor — e.g. KXBTCY-27JAN0100-B42500(1717013.83), KXBTCY-27JAN0100-B37500(1624577.67), KXBTCY-27JAN0100-B92500(1275441.41)
 • discovered KXINXY (status=open): 59 market(s), 10 with volume ≥ 20000 contracts (capped at 10)
     ✓ KXINXY-26DEC31H1600-B8100  volume=511406.1 contracts, liquidity=$0
-    ✓ KXINXY-26DEC31H1600-B7700  volume=479776.77 contracts, liquidity=$0
+    ✓ KXINXY-26DEC31H1600-B7700  volume=479890.77 contracts, liquidity=$0
     ✓ KXINXY-26DEC31H1600-B7900  volume=472990.03 contracts, liquidity=$0
     ✓ KXINXY-26DEC31H1600-B7500  volume=461469.57 contracts, liquidity=$0
     ✓ KXINXY-26DEC31H1600-T4000  volume=454964.33 contracts, liquidity=$0
@@ -36,66 +36,56 @@
     ✗ 49 market(s) below the volume floor — e.g. KXINXY-26DEC31H1600-T9000(260413.79), KXINXY-26DEC31H1600-B6500(245677.97), KXINXY-26DEC31H1600-B6300(242249.54)
 
 === DAILY PASS — 30 market(s) from https://external-api.kalshi.com/trade-api/v2 → data/history/ ===
-✓ KXBTCY-27JAN0100-B47500: +0 new bar(s), 205 total, 8 book snapshot(s)
-✓ KXBTCY-27JAN0100-B52500: +0 new bar(s), 205 total, 8 book snapshot(s)
-✓ KXBTCY-27JAN0100-B57500: +0 new bar(s), 205 total, 8 book snapshot(s)
-✓ KXBTCY-27JAN0100-B62500: +0 new bar(s), 205 total, 8 book snapshot(s)
-✓ KXBTCY-27JAN0100-B67500: +0 new bar(s), 205 total, 8 book snapshot(s)
-✓ KXBTCY-27JAN0100-B72500: +0 new bar(s), 205 total, 8 book snapshot(s)
-✓ KXBTCY-27JAN0100-B77500: +0 new bar(s), 205 total, 8 book snapshot(s)
-✓ KXBTCY-27JAN0100-B82500: +0 new bar(s), 205 total, 8 book snapshot(s)
-✓ KXBTCY-27JAN0100-B87500: +0 new bar(s), 205 total, 8 book snapshot(s)
-✓ KXBTCY-27JAN0100-T149999.99: +0 new bar(s), 205 total, 8 book snapshot(s)
-✓ KXINXY-26DEC31H1600-B6900: +0 new bar(s), 265 total, 8 book snapshot(s)
-✓ KXINXY-26DEC31H1600-B7100: +0 new bar(s), 266 total, 8 book snapshot(s)
-✓ KXINXY-26DEC31H1600-B7300: +0 new bar(s), 269 total, 8 book snapshot(s)
-✓ KXINXY-26DEC31H1600-B7500: +0 new bar(s), 268 total, 8 book snapshot(s)
-✓ KXINXY-26DEC31H1600-B7700: +0 new bar(s), 268 total, 8 book snapshot(s)
-✓ KXINXY-26DEC31H1600-B7900: +0 new bar(s), 268 total, 8 book snapshot(s)
-✓ KXINXY-26DEC31H1600-B8100: +0 new bar(s), 268 total, 8 book snapshot(s)
-✓ KXINXY-26DEC31H1600-B8300: +0 new bar(s), 263 total, 8 book snapshot(s)
-✓ KXINXY-26DEC31H1600-B8900: +0 new bar(s), 248 total, 8 book snapshot(s)
-✓ KXINXY-26DEC31H1600-T4000: +0 new bar(s), 255 total, 8 book snapshot(s)
-✓ KXNASDAQ100Y-26DEC31H1600-B25750: +0 new bar(s), 255 total, 8 book snapshot(s)
-✓ KXNASDAQ100Y-26DEC31H1600-B29750: +0 new bar(s), 249 total, 8 book snapshot(s)
-✓ KXNASDAQ100Y-26DEC31H1600-B30250: +0 new bar(s), 253 total, 8 book snapshot(s)
-✓ KXNASDAQ100Y-26DEC31H1600-B30750: +0 new bar(s), 251 total, 8 book snapshot(s)
-✓ KXNASDAQ100Y-26DEC31H1600-B31250: +0 new bar(s), 247 total, 8 book snapshot(s)
-✓ KXNASDAQ100Y-26DEC31H1600-B31750: +0 new bar(s), 250 total, 8 book snapshot(s)
-✓ KXNASDAQ100Y-26DEC31H1600-B32250: +0 new bar(s), 248 total, 8 book snapshot(s)
-✓ KXNASDAQ100Y-26DEC31H1600-B32750: +0 new bar(s), 248 total, 8 book snapshot(s)
-✓ KXNASDAQ100Y-26DEC31H1600-T19000: +0 new bar(s), 265 total, 8 book snapshot(s)
-✓ KXNASDAQ100Y-26DEC31H1600-T33000: +0 new bar(s), 264 total, 8 book snapshot(s)
+✓ KXBTCY-27JAN0100-B47500: +0 new bar(s), 205 total, 9 book snapshot(s)
+✓ KXBTCY-27JAN0100-B52500: +0 new bar(s), 205 total, 9 book snapshot(s)
+✓ KXBTCY-27JAN0100-B57500: +0 new bar(s), 205 total, 9 book snapshot(s)
+✓ KXBTCY-27JAN0100-B62500: +0 new bar(s), 205 total, 9 book snapshot(s)
+✓ KXBTCY-27JAN0100-B67500: +0 new bar(s), 205 total, 9 book snapshot(s)
+✓ KXBTCY-27JAN0100-B72500: +0 new bar(s), 205 total, 9 book snapshot(s)
+✓ KXBTCY-27JAN0100-B77500: +0 new bar(s), 205 total, 9 book snapshot(s)
+✓ KXBTCY-27JAN0100-B82500: +0 new bar(s), 205 total, 9 book snapshot(s)
+✓ KXBTCY-27JAN0100-B87500: +0 new bar(s), 205 total, 9 book snapshot(s)
+✓ KXBTCY-27JAN0100-T149999.99: +0 new bar(s), 205 total, 9 book snapshot(s)
+✓ KXINXY-26DEC31H1600-B6900: +0 new bar(s), 265 total, 9 book snapshot(s)
+✓ KXINXY-26DEC31H1600-B7100: +0 new bar(s), 266 total, 9 book snapshot(s)
+✓ KXINXY-26DEC31H1600-B7300: +0 new bar(s), 269 total, 9 book snapshot(s)
+✓ KXINXY-26DEC31H1600-B7500: +0 new bar(s), 268 total, 9 book snapshot(s)
+✓ KXINXY-26DEC31H1600-B7700: +0 new bar(s), 268 total, 9 book snapshot(s)
+✓ KXINXY-26DEC31H1600-B7900: +0 new bar(s), 268 total, 9 book snapshot(s)
+✓ KXINXY-26DEC31H1600-B8100: +0 new bar(s), 268 total, 9 book snapshot(s)
+✓ KXINXY-26DEC31H1600-B8300: +0 new bar(s), 263 total, 9 book snapshot(s)
+✓ KXINXY-26DEC31H1600-B8900: +0 new bar(s), 248 total, 9 book snapshot(s)
+✓ KXINXY-26DEC31H1600-T4000: +0 new bar(s), 255 total, 9 book snapshot(s)
+✓ KXNASDAQ100Y-26DEC31H1600-B25750: +0 new bar(s), 255 total, 9 book snapshot(s)
+✓ KXNASDAQ100Y-26DEC31H1600-B29750: +0 new bar(s), 249 total, 9 book snapshot(s)
+✓ KXNASDAQ100Y-26DEC31H1600-B30250: +0 new bar(s), 253 total, 9 book snapshot(s)
+✓ KXNASDAQ100Y-26DEC31H1600-B30750: +0 new bar(s), 251 total, 9 book snapshot(s)
+✓ KXNASDAQ100Y-26DEC31H1600-B31250: +0 new bar(s), 247 total, 9 book snapshot(s)
+✓ KXNASDAQ100Y-26DEC31H1600-B31750: +0 new bar(s), 250 total, 9 book snapshot(s)
+✓ KXNASDAQ100Y-26DEC31H1600-B32250: +0 new bar(s), 248 total, 9 book snapshot(s)
+✓ KXNASDAQ100Y-26DEC31H1600-B32750: +0 new bar(s), 248 total, 9 book snapshot(s)
+✓ KXNASDAQ100Y-26DEC31H1600-T19000: +0 new bar(s), 265 total, 9 book snapshot(s)
+✓ KXNASDAQ100Y-26DEC31H1600-T33000: +0 new bar(s), 264 total, 9 book snapshot(s)
 
 Daily bars added: 0 · stored: 7218 · conflicts: 0 · failures: 0
 
 — Intraday pass requested by data/history/_ingest-request.json: 60-minute bars, 20 day(s), max 336 bar(s)/market, discovery status=open —
 
 === 60-MINUTE PASS — 12 market(s) from https://external-api.kalshi.com/trade-api/v2 → data/history/intraday/60m/ ===
-  ⚠ KXBTCY-27JAN0100-B77500: trimmed 1 oldest 60-minute bar(s) to honour --max-bars=336 (recorded in store.trims)
-✓ KXBTCY-27JAN0100-B77500: +1 new bar(s), 337 total, 1 oldest trimmed, 5 book snapshot(s)
-  ⚠ KXBTCY-27JAN0100-B47500: trimmed 1 oldest 60-minute bar(s) to honour --max-bars=336 (recorded in store.trims)
-✓ KXBTCY-27JAN0100-B47500: +1 new bar(s), 337 total, 1 oldest trimmed, 5 book snapshot(s)
-  ⚠ KXBTCY-27JAN0100-B52500: trimmed 1 oldest 60-minute bar(s) to honour --max-bars=336 (recorded in store.trims)
-✓ KXBTCY-27JAN0100-B52500: +1 new bar(s), 337 total, 1 oldest trimmed, 5 book snapshot(s)
-  ⚠ KXBTCY-27JAN0100-B72500: trimmed 1 oldest 60-minute bar(s) to honour --max-bars=336 (recorded in store.trims)
-✓ KXBTCY-27JAN0100-B72500: +1 new bar(s), 337 total, 1 oldest trimmed, 5 book snapshot(s)
-  ⚠ KXBTCY-27JAN0100-B67500: trimmed 1 oldest 60-minute bar(s) to honour --max-bars=336 (recorded in store.trims)
-✓ KXBTCY-27JAN0100-B67500: +1 new bar(s), 337 total, 1 oldest trimmed, 5 book snapshot(s)
-  ⚠ KXBTCY-27JAN0100-B62500: trimmed 1 oldest 60-minute bar(s) to honour --max-bars=336 (recorded in store.trims)
-✓ KXBTCY-27JAN0100-B62500: +1 new bar(s), 337 total, 1 oldest trimmed, 5 book snapshot(s)
-  ⚠ KXBTCY-27JAN0100-B82500: trimmed 1 oldest 60-minute bar(s) to honour --max-bars=336 (recorded in store.trims)
-✓ KXBTCY-27JAN0100-B82500: +1 new bar(s), 337 total, 1 oldest trimmed, 5 book snapshot(s)
-  ⚠ KXBTCY-27JAN0100-B57500: trimmed 1 oldest 60-minute bar(s) to honour --max-bars=336 (recorded in store.trims)
-✓ KXBTCY-27JAN0100-B57500: +1 new bar(s), 337 total, 1 oldest trimmed, 5 book snapshot(s)
-✓ KXBTCY-27JAN0100-T149999.99: +0 new bar(s), 336 total, 5 book snapshot(s)
-  ⚠ KXBTCY-27JAN0100-B87500: trimmed 1 oldest 60-minute bar(s) to honour --max-bars=336 (recorded in store.trims)
-✓ KXBTCY-27JAN0100-B87500: +1 new bar(s), 337 total, 1 oldest trimmed, 5 book snapshot(s)
-✓ KXNASDAQ100Y-26DEC31H1600-T19000: +0 new bar(s), 336 total, 5 book snapshot(s)
-  ⚠ KXINXY-26DEC31H1600-B8100: trimmed 1 oldest 60-minute bar(s) to honour --max-bars=336 (recorded in store.trims)
-✓ KXINXY-26DEC31H1600-B8100: +1 new bar(s), 337 total, 1 oldest trimmed, 5 book snapshot(s)
+✓ KXBTCY-27JAN0100-B77500: +0 new bar(s), 336 total, 6 book snapshot(s)
+✓ KXBTCY-27JAN0100-B47500: +0 new bar(s), 336 total, 6 book snapshot(s)
+✓ KXBTCY-27JAN0100-B52500: +0 new bar(s), 336 total, 6 book snapshot(s)
+✓ KXBTCY-27JAN0100-B72500: +0 new bar(s), 336 total, 6 book snapshot(s)
+✓ KXBTCY-27JAN0100-B67500: +0 new bar(s), 336 total, 6 book snapshot(s)
+✓ KXBTCY-27JAN0100-B62500: +0 new bar(s), 336 total, 6 book snapshot(s)
+✓ KXBTCY-27JAN0100-B82500: +0 new bar(s), 336 total, 6 book snapshot(s)
+✓ KXBTCY-27JAN0100-B57500: +0 new bar(s), 336 total, 6 book snapshot(s)
+✓ KXBTCY-27JAN0100-T149999.99: +0 new bar(s), 336 total, 6 book snapshot(s)
+✓ KXBTCY-27JAN0100-B87500: +0 new bar(s), 336 total, 6 book snapshot(s)
+✓ KXNASDAQ100Y-26DEC31H1600-T19000: +0 new bar(s), 336 total, 6 book snapshot(s)
+✓ KXINXY-26DEC31H1600-B8100: +0 new bar(s), 336 total, 6 book snapshot(s)
 
-60-minute bars added: 10 · stored: 4042 · conflicts: 0 · failures: 0
+60-minute bars added: 0 · stored: 4032 · conflicts: 0 · failures: 0
 
 — Intraday pass requested by data/history/_ingest-request.json: 60-minute bars, 0 day(s), max 200 bar(s)/market, discovery status=all —
 • discovered KXHIGHNY (status=all): 200 market(s), 40 with volume ≥ 1000 contracts (capped at 40) — 39 already finalized with an exchange result
@@ -142,48 +132,48 @@ Daily bars added: 0 · stored: 7218 · conflicts: 0 · failures: 0
     ✗ 160 market(s) below the volume floor — e.g. KXHIGHNY-26AUG23-B80.5(44498.03), KXHIGHNY-26SEP17-B80.5(44035.77), KXHIGHNY-26AUG23-B82.5(43756.55)
 
 === 60-MINUTE PASS — 40 market(s) from https://external-api.kalshi.com/trade-api/v2 → data/history/intraday/60m/ ===
-✓ KXHIGHNY-26SEP08-T80: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG27-T80: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG23-T80: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP11-T79: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG27-B80.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP07-B77.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG21-B77.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP05-T79: +0 new bar(s), 39 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP10-T85: +0 new bar(s), 39 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP13-B80.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP08-B82.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP07-B79.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP11-B81.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP03-B85.5: +0 new bar(s), 39 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG24-B78.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP09-B86.5: +0 new bar(s), 38 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP14-B76.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP10-B85.5: +0 new bar(s), 39 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP09-T84: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG24-B80.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP01-T83: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP06-B73.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG28-B82.5: +0 new bar(s), 39 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP13-T78: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP10-B87.5: +0 new bar(s), 39 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP14-B74.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG18-T85: +0 new bar(s), 37 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP13-B78.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG22-B77.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP09-B84.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG21-T77: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP03-B83.5: +0 new bar(s), 39 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP17-B82.5: +1 new bar(s), 39 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP16-B75.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP16-B79.5: +0 new bar(s), 38 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG21-B79.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP04-B84.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26AUG18-B87.5: +0 new bar(s), 37 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP15-B70.5: +0 new bar(s), 40 total, 3 book snapshot(s)
-✓ KXHIGHNY-26SEP04-B82.5: +0 new bar(s), 40 total, 3 book snapshot(s)
+✓ KXHIGHNY-26SEP08-T80: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG27-T80: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG23-T80: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP11-T79: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG27-B80.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP07-B77.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG21-B77.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP05-T79: +0 new bar(s), 39 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP10-T85: +0 new bar(s), 39 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP13-B80.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP08-B82.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP07-B79.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP11-B81.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP03-B85.5: +0 new bar(s), 39 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG24-B78.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP09-B86.5: +0 new bar(s), 38 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP14-B76.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP10-B85.5: +0 new bar(s), 39 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP09-T84: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG24-B80.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP01-T83: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP06-B73.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG28-B82.5: +0 new bar(s), 39 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP13-T78: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP10-B87.5: +0 new bar(s), 39 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP14-B74.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG18-T85: +0 new bar(s), 37 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP13-B78.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG22-B77.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP09-B84.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG21-T77: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP03-B83.5: +0 new bar(s), 39 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP17-B82.5: +0 new bar(s), 39 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP16-B75.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP16-B79.5: +0 new bar(s), 38 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG21-B79.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP04-B84.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26AUG18-B87.5: +0 new bar(s), 37 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP15-B70.5: +0 new bar(s), 40 total, 4 book snapshot(s)
+✓ KXHIGHNY-26SEP04-B82.5: +0 new bar(s), 40 total, 4 book snapshot(s)
 
-60-minute bars added: 1 · stored: 1582 · conflicts: 0 · failures: 0
+60-minute bars added: 0 · stored: 1582 · conflicts: 0 · failures: 0
 
 — Intraday pass requested by data/history/_ingest-request.json: 1-minute bars, 2 day(s), max 96 bar(s)/market, discovery status=all —
 • discovered KXGOLD15M (status=all): 200 market(s), 8 with volume ≥ 1000 contracts (capped at 8) — 8 already finalized with an exchange result
@@ -198,19 +188,444 @@ Daily bars added: 0 · stored: 7218 · conflicts: 0 · failures: 0
     ✗ 192 market(s) below the volume floor — e.g. KXGOLD15M-26SEP171630-30(429355.91), KXGOLD15M-26SEP172345-45(428527.73), KXGOLD15M-26SEP172330-30(419725.4)
 
 === 1-MINUTE PASS — 8 market(s) from https://external-api.kalshi.com/trade-api/v2 → data/history/intraday/1m/ ===
-✓ KXGOLD15M-26SEP171300-00: +0 new bar(s), 16 total, 3 book snapshot(s)
-✓ KXGOLD15M-26SEP162200-00: +0 new bar(s), 16 total, 3 book snapshot(s)
-✓ KXGOLD15M-26SEP171645-45: +0 new bar(s), 16 total, 3 book snapshot(s)
-✓ KXGOLD15M-26SEP171315-15: +0 new bar(s), 16 total, 3 book snapshot(s)
-✓ KXGOLD15M-26SEP172315-15: +0 new bar(s), 16 total, 2 book snapshot(s)
-✓ KXGOLD15M-26SEP180145-45: +0 new bar(s), 16 total, 2 book snapshot(s)
-✓ KXGOLD15M-26SEP171915-15: +0 new bar(s), 16 total, 3 book snapshot(s)
-✓ KXGOLD15M-26SEP162030-30: +0 new bar(s), 16 total, 3 book snapshot(s)
+✓ KXGOLD15M-26SEP171300-00: +0 new bar(s), 16 total, 4 book snapshot(s)
+✓ KXGOLD15M-26SEP162200-00: +0 new bar(s), 16 total, 4 book snapshot(s)
+✓ KXGOLD15M-26SEP171645-45: +0 new bar(s), 16 total, 4 book snapshot(s)
+✓ KXGOLD15M-26SEP171315-15: +0 new bar(s), 16 total, 4 book snapshot(s)
+✓ KXGOLD15M-26SEP172315-15: +0 new bar(s), 16 total, 3 book snapshot(s)
+✓ KXGOLD15M-26SEP180145-45: +0 new bar(s), 16 total, 3 book snapshot(s)
+✓ KXGOLD15M-26SEP171915-15: +0 new bar(s), 16 total, 4 book snapshot(s)
+✓ KXGOLD15M-26SEP162030-30: +0 new bar(s), 16 total, 4 book snapshot(s)
 
 1-minute bars added: 0 · stored: 128 · conflicts: 0 · failures: 0
+
+— Intraday pass requested by data/history/_ingest-request.json: 60-minute bars, 0 day(s), max 200 bar(s)/market, discovery status=all —
+• discovered KXHIGHLAX (status=all): 200 market(s), 10 with volume ≥ 1000 contracts (capped at 10) — 10 already finalized with an exchange result
+    ✓ KXHIGHLAX-26AUG27-T89  volume=773216.09 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHLAX-26SEP03-B76.5  volume=525060.56 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHLAX-26AUG18-T82  volume=470871.63 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHLAX-26SEP15-B81.5  volume=402758.71 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHLAX-26SEP08-T89  volume=376503.85 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHLAX-26SEP16-T80  volume=364839.54 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHLAX-26SEP15-T82  volume=345886.74 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHLAX-26AUG26-T89  volume=345548.05 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHLAX-26SEP14-T82  volume=327794.51 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHLAX-26AUG28-T89  volume=326121.99 contracts, liquidity=$0, status=finalized result=no
+    ✗ 190 market(s) below the volume floor — e.g. KXHIGHLAX-26AUG29-T86(309923.75), KXHIGHLAX-26AUG21-B78.5(291421.6), KXHIGHLAX-26SEP12-T84(275543.2)
+• discovered KXHIGHCHI (status=all): 200 market(s), 10 with volume ≥ 1000 contracts (capped at 10) — 10 already finalized with an exchange result
+    ✓ KXHIGHCHI-26SEP14-T72  volume=97755.48 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHCHI-26SEP05-T83  volume=94701.89 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHCHI-26SEP15-B82.5  volume=92408.66 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHCHI-26AUG29-B80.5  volume=89679.17 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHCHI-26AUG27-B78.5  volume=55557.29 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHCHI-26SEP03-B90.5  volume=48367.92 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHCHI-26SEP04-B93.5  volume=47604.84 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHCHI-26SEP04-T89  volume=46294.87 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHCHI-26AUG31-B91.5  volume=44018.93 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHCHI-26AUG17-T78  volume=43770.39 contracts, liquidity=$0, status=finalized result=no
+    ✗ 190 market(s) below the volume floor — e.g. KXHIGHCHI-26SEP13-B72.5(42528.85), KXHIGHCHI-26AUG18-B82.5(41396.26), KXHIGHCHI-26SEP17-B80.5(41189.1)
+• discovered KXHIGHMIA (status=all): 200 market(s), 10 with volume ≥ 1000 contracts (capped at 10) — 9 already finalized with an exchange result
+    ✓ KXHIGHMIA-26SEP09-B87.5  volume=118643.3 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHMIA-26SEP14-B88.5  volume=104633.42 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHMIA-26AUG21-B94.5  volume=99521.77 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHMIA-26SEP17-T84  volume=78585.1 contracts, liquidity=$0, status=closed
+    ✓ KXHIGHMIA-26SEP13-B89.5  volume=76522.92 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHMIA-26AUG21-B92.5  volume=73436.08 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHMIA-26SEP09-B89.5  volume=72259.52 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHMIA-26AUG25-B90.5  volume=70679.48 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHMIA-26AUG18-B97.5  volume=66292.24 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHMIA-26AUG24-B90.5  volume=65116.54 contracts, liquidity=$0, status=finalized result=yes
+    ✗ 190 market(s) below the volume floor — e.g. KXHIGHMIA-26SEP16-B88.5(63296.8), KXHIGHMIA-26AUG31-B87.5(61414.11), KXHIGHMIA-26SEP10-B88.5(60065.83)
+• discovered KXHIGHAUS (status=all): 200 market(s), 10 with volume ≥ 1000 contracts (capped at 10) — 10 already finalized with an exchange result
+    ✓ KXHIGHAUS-26SEP08-B100.5  volume=126644.26 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHAUS-26SEP12-B99.5  volume=73083.23 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHAUS-26AUG23-B104.5  volume=69623.72 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHAUS-26AUG23-B106.5  volume=68474.55 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHAUS-26SEP11-B100.5  volume=54724.68 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHAUS-26SEP04-T93  volume=39906.87 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHAUS-26SEP09-B98.5  volume=37932.05 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHAUS-26AUG25-B101.5  volume=32478.4 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHAUS-26AUG22-B104.5  volume=30092.37 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHAUS-26SEP11-B98.5  volume=28410.88 contracts, liquidity=$0, status=finalized result=no
+    ✗ 190 market(s) below the volume floor — e.g. KXHIGHAUS-26SEP11-B102.5(28356.24), KXHIGHAUS-26SEP16-B100.5(26058.92), KXHIGHAUS-26SEP09-B96.5(25335.98)
+• discovered KXHIGHDEN (status=all): 200 market(s), 10 with volume ≥ 1000 contracts (capped at 10) — 9 already finalized with an exchange result
+    ✓ KXHIGHDEN-26SEP15-B70.5  volume=25525.56 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHDEN-26AUG31-B84.5  volume=24633.19 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHDEN-26SEP15-B72.5  volume=23998.71 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHDEN-26SEP12-T80  volume=23565.34 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHDEN-26SEP06-B89.5  volume=23220.82 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHDEN-26AUG17-T92  volume=19928.6 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHDEN-26SEP12-B80.5  volume=19577.54 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHDEN-26SEP16-B81.5  volume=18925.69 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHDEN-26SEP17-T82  volume=18044.17 contracts, liquidity=$0
+    ✓ KXHIGHDEN-26AUG17-B91.5  volume=17736.93 contracts, liquidity=$0, status=finalized result=no
+    ✗ 190 market(s) below the volume floor — e.g. KXHIGHDEN-26AUG16-T87(16339.06), KXHIGHDEN-26SEP14-B87.5(16006.66), KXHIGHDEN-26AUG31-B82.5(15935.59)
+• discovered KXHIGHPHIL (status=all): 200 market(s), 10 with volume ≥ 1000 contracts (capped at 10) — 10 already finalized with an exchange result
+    ✓ KXHIGHPHIL-26AUG21-B82.5  volume=91764.66 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHPHIL-26AUG17-B87.5  volume=89015.29 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHPHIL-26AUG17-B89.5  volume=56082.56 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHPHIL-26SEP15-B77.5  volume=39327.25 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHPHIL-26AUG18-B86.5  volume=33496.87 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHPHIL-26AUG20-T80  volume=27157.64 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHPHIL-26AUG20-T87  volume=22816.29 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHPHIL-26SEP15-B79.5  volume=20538.57 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHPHIL-26AUG25-B80.5  volume=20333.96 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHPHIL-26AUG21-B84.5  volume=20223.52 contracts, liquidity=$0, status=finalized result=yes
+    ✗ 190 market(s) below the volume floor — e.g. KXHIGHPHIL-26AUG20-B86.5(20190.38), KXHIGHPHIL-26AUG20-B84.5(19238.69), KXHIGHPHIL-26AUG20-B82.5(17382.38)
+• discovered KXHIGHTPHX (status=all): 200 market(s), 10 with volume ≥ 1000 contracts (capped at 10) — 8 already finalized with an exchange result
+    ✓ KXHIGHTPHX-26SEP16-B91.5  volume=111713.46 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHTPHX-26SEP16-T91  volume=86356.05 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHTPHX-26SEP16-B93.5  volume=62380.28 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHTPHX-26AUG20-T107  volume=43950.51 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHTPHX-26SEP10-B107.5  volume=41259.62 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHTPHX-26AUG20-B107.5  volume=34766.93 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHTPHX-26AUG21-B110.5  volume=34302.12 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHTPHX-26SEP16-B95.5  volume=33042.81 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHTPHX-26SEP17-T91  volume=29619.3 contracts, liquidity=$0
+    ✓ KXHIGHTPHX-26SEP17-B91.5  volume=29199.96 contracts, liquidity=$0
+    ✗ 190 market(s) below the volume floor — e.g. KXHIGHTPHX-26SEP11-B103.5(29133.93), KXHIGHTPHX-26SEP14-B101.5(26838.38), KXHIGHTPHX-26SEP15-T97(25228.43)
+• discovered KXHIGHTSEA (status=all): 200 market(s), 10 with volume ≥ 1000 contracts (capped at 10) — 9 already finalized with an exchange result
+    ✓ KXHIGHTSEA-26SEP16-B70.5  volume=58264.5 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHTSEA-26AUG21-B79.5  volume=44620.98 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHTSEA-26SEP03-B67.5  volume=39967.79 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHTSEA-26AUG17-B77.5  volume=34545.16 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHTSEA-26SEP17-B72.5  volume=33646.11 contracts, liquidity=$0
+    ✓ KXHIGHTSEA-26SEP16-B72.5  volume=29287.42 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHTSEA-26AUG21-B81.5  volume=26411.48 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHTSEA-26SEP15-B65.5  volume=25584.9 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXHIGHTSEA-26AUG17-B79.5  volume=24097.47 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXHIGHTSEA-26AUG28-B71.5  volume=24069.32 contracts, liquidity=$0, status=finalized result=no
+    ✗ 190 market(s) below the volume floor — e.g. KXHIGHTSEA-26SEP10-B69.5(22301.81), KXHIGHTSEA-26AUG18-B78.5(21841.28), KXHIGHTSEA-26AUG25-B83.5(20083.81)
+
+=== 60-MINUTE PASS — 80 market(s) from https://external-api.kalshi.com/trade-api/v2 → data/history/intraday/60m/ ===
+✓ KXHIGHLAX-26AUG27-T89: +42 new bar(s), 42 total, 1 book snapshot(s)
+✓ KXHIGHLAX-26SEP03-B76.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHLAX-26AUG18-T82: +3 new bar(s), 3 total, 1 book snapshot(s)
+✓ KXHIGHLAX-26SEP15-B81.5: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHLAX-26SEP08-T89: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHLAX-26SEP16-T80: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHLAX-26SEP15-T82: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHLAX-26AUG26-T89: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHLAX-26SEP14-T82: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHLAX-26AUG28-T89: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHCHI-26SEP14-T72: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHCHI-26SEP05-T83: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHCHI-26SEP15-B82.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHCHI-26AUG29-B80.5: +38 new bar(s), 38 total, 1 book snapshot(s)
+✓ KXHIGHCHI-26AUG27-B78.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHCHI-26SEP03-B90.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHCHI-26SEP04-B93.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHCHI-26SEP04-T89: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHCHI-26AUG31-B91.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHCHI-26AUG17-T78: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXHIGHMIA-26SEP09-B87.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHMIA-26SEP14-B88.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHMIA-26AUG21-B94.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHMIA-26SEP17-T84: +39 new bar(s), 39 total, 1 book snapshot(s)
+✓ KXHIGHMIA-26SEP13-B89.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHMIA-26AUG21-B92.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHMIA-26SEP09-B89.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHMIA-26AUG25-B90.5: +38 new bar(s), 38 total, 1 book snapshot(s)
+✓ KXHIGHMIA-26AUG18-B97.5: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXHIGHMIA-26AUG24-B90.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHAUS-26SEP08-B100.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHAUS-26SEP12-B99.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHAUS-26AUG23-B104.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHAUS-26AUG23-B106.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHAUS-26SEP11-B100.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHAUS-26SEP04-T93: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHAUS-26SEP09-B98.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHAUS-26AUG25-B101.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHAUS-26AUG22-B104.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHAUS-26SEP11-B98.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHDEN-26SEP15-B70.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHDEN-26AUG31-B84.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHDEN-26SEP15-B72.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHDEN-26SEP12-T80: +42 new bar(s), 42 total, 1 book snapshot(s)
+✓ KXHIGHDEN-26SEP06-B89.5: +39 new bar(s), 39 total, 1 book snapshot(s)
+✓ KXHIGHDEN-26AUG17-T92: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXHIGHDEN-26SEP12-B80.5: +42 new bar(s), 42 total, 1 book snapshot(s)
+✓ KXHIGHDEN-26SEP16-B81.5: +42 new bar(s), 42 total, 1 book snapshot(s)
+✓ KXHIGHDEN-26SEP17-T82: +39 new bar(s), 39 total, 1 book snapshot(s)
+✓ KXHIGHDEN-26AUG17-B91.5: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXHIGHPHIL-26AUG21-B82.5: +37 new bar(s), 37 total, 1 book snapshot(s)
+✓ KXHIGHPHIL-26AUG17-B87.5: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXHIGHPHIL-26AUG17-B89.5: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXHIGHPHIL-26SEP15-B77.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHPHIL-26AUG18-B86.5: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXHIGHPHIL-26AUG20-T80: +34 new bar(s), 34 total, 1 book snapshot(s)
+✓ KXHIGHPHIL-26AUG20-T87: +39 new bar(s), 39 total, 1 book snapshot(s)
+✓ KXHIGHPHIL-26SEP15-B79.5: +37 new bar(s), 37 total, 1 book snapshot(s)
+✓ KXHIGHPHIL-26AUG25-B80.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHPHIL-26AUG21-B84.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHTPHX-26SEP16-B91.5: +42 new bar(s), 42 total, 1 book snapshot(s)
+✓ KXHIGHTPHX-26SEP16-T91: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHTPHX-26SEP16-B93.5: +42 new bar(s), 42 total, 1 book snapshot(s)
+✓ KXHIGHTPHX-26AUG20-T107: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHTPHX-26SEP10-B107.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHTPHX-26AUG20-B107.5: +42 new bar(s), 42 total, 1 book snapshot(s)
+✓ KXHIGHTPHX-26AUG21-B110.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHTPHX-26SEP16-B95.5: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHTPHX-26SEP17-T91: +39 new bar(s), 39 total, 1 book snapshot(s)
+✓ KXHIGHTPHX-26SEP17-B91.5: +40 new bar(s), 40 total, 1 book snapshot(s)
+✓ KXHIGHTSEA-26SEP16-B70.5: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHTSEA-26AUG21-B79.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHTSEA-26SEP03-B67.5: +41 new bar(s), 41 total, 1 book snapshot(s)
+✓ KXHIGHTSEA-26AUG17-B77.5: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXHIGHTSEA-26SEP17-B72.5: +39 new bar(s), 39 total, 1 book snapshot(s)
+✓ KXHIGHTSEA-26SEP16-B72.5: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHTSEA-26AUG21-B81.5: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHTSEA-26SEP15-B65.5: +43 new bar(s), 43 total, 1 book snapshot(s)
+✓ KXHIGHTSEA-26AUG17-B79.5: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXHIGHTSEA-26AUG28-B71.5: +43 new bar(s), 43 total, 1 book snapshot(s)
+
+60-minute bars added: 2857 · stored: 2857 · conflicts: 0 · failures: 0
+
+— Intraday pass requested by data/history/_ingest-request.json: 60-minute bars, 0 day(s), max 200 bar(s)/market, discovery status=all —
+• discovered KXNFLGAME (status=all): 194 market(s), 8 with volume ≥ 1000 contracts (capped at 8) — 8 already finalized with an exchange result
+    ✓ KXNFLGAME-26SEP13DALNYG-DAL  volume=36685711.54 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXNFLGAME-26SEP09NESEA-SEA  volume=30984968.89 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXNFLGAME-26SEP17DETBUF-DET  volume=30421098.89 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXNFLGAME-26SEP09NESEA-NE  volume=27849974.41 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXNFLGAME-26SEP14DENKC-DEN  volume=26328492.77 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXNFLGAME-26SEP10SFLAR-LAR  volume=24291527.75 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXNFLGAME-26SEP14DENKC-KC  volume=21755136.78 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXNFLGAME-26SEP10SFLAR-SF  volume=21659538.04 contracts, liquidity=$0, status=finalized result=yes
+    ✗ 186 market(s) below the volume floor — e.g. KXNFLGAME-26SEP13DALNYG-NYG(19681004.46), KXNFLGAME-26SEP13WASPHI-PHI(16438562.2), KXNFLGAME-26SEP17DETBUF-BUF(15688713.41)
+• discovered KXMLBGAME (status=all): 200 market(s), 8 with volume ≥ 1000 contracts (capped at 8) — 8 already finalized with an exchange result
+    ✓ KXMLBGAME-26SEP161340NYYMIN-NYY  volume=8108474.01 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXMLBGAME-26SEP152140MIAAZ-MIA  volume=7523291 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXMLBGAME-26SEP172138MINLAA-MIN  volume=7069794.31 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXMLBGAME-26SEP172138MINLAA-LAA  volume=5683733.72 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXMLBGAME-26SEP161840LADCIN-LAD  volume=5329331.05 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXMLBGAME-26SEP152140MIAAZ-AZ  volume=5215054.57 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXMLBGAME-26SEP142140MIAAZ-AZ  volume=4540733.68 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXMLBGAME-26SEP131920SDSF-SF  volume=4207451.24 contracts, liquidity=$0, status=finalized result=no
+    ✗ 192 market(s) below the volume floor — e.g. KXMLBGAME-26SEP161340NYYMIN-MIN(3980575.25), KXMLBGAME-26SEP162138SEALAA-SEA(3843832.72), KXMLBGAME-26SEP162140MIAAZ-AZ(3626538.94)
+• discovered KXNBAGAME (status=all): 6 market(s), 6 with volume ≥ 1000 contracts (capped at 8)
+    ✓ KXNBAGAME-26OCT20PHINYK-PHI  volume=29850.36 contracts, liquidity=$0
+    ✓ KXNBAGAME-26OCT20BOSDET-BOS  volume=17070.2 contracts, liquidity=$0
+    ✓ KXNBAGAME-26OCT20BOSDET-DET  volume=12382.63 contracts, liquidity=$0
+    ✓ KXNBAGAME-26OCT20PHINYK-NYK  volume=10191.75 contracts, liquidity=$0
+    ✓ KXNBAGAME-26OCT20OKCSAS-SAS  volume=5679.29 contracts, liquidity=$0
+    ✓ KXNBAGAME-26OCT20OKCSAS-OKC  volume=2865.63 contracts, liquidity=$0
+• discovered KXNHLGAME (status=all): 40 market(s), 0 with volume ≥ 1000 contracts (capped at 8)
+    ✗ 40 market(s) below the volume floor — e.g. KXNHLGAME-26SEP19DALSTL-DAL(259.26), KXNHLGAME-26SEP19CHIMIN-MIN(225.17), KXNHLGAME-26SEP19VGKLA-VGK(148.77)
+• discovered KXNCAAFGAME (status=all): 200 market(s), 8 with volume ≥ 1000 contracts (capped at 8)
+    ✓ KXNCAAFGAME-26SEP26CMUMIA-CMU  volume=19454.35 contracts, liquidity=$0
+    ✓ KXNCAAFGAME-26SEP26CMUMIA-MIA  volume=18542.04 contracts, liquidity=$0
+    ✓ KXNCAAFGAME-26SEP26CARKFSU-FSU  volume=8365.66 contracts, liquidity=$0
+    ✓ KXNCAAFGAME-26SEP26SHSUTTU-TTU  volume=7624.05 contracts, liquidity=$0
+    ✓ KXNCAAFGAME-26SEP26MOSUSMU-SMU  volume=5649.55 contracts, liquidity=$0
+    ✓ KXNCAAFGAME-26SEP26OREUSC-ORE  volume=4947.53 contracts, liquidity=$0
+    ✓ KXNCAAFGAME-26SEP26TXAMLSU-LSU  volume=4579.13 contracts, liquidity=$0
+    ✓ KXNCAAFGAME-26SEP26ILLOSU-OSU  volume=4252.64 contracts, liquidity=$0
+    ✗ 192 market(s) below the volume floor — e.g. KXNCAAFGAME-26SEP26HCUUNT-UNT(3656.25), KXNCAAFGAME-26SEP26OREUSC-USC(3626.91), KXNCAAFGAME-26SEP26TXAMLSU-TXAM(3205.21)
+• discovered KXWNBAGAME (status=all): 200 market(s), 8 with volume ≥ 1000 contracts (capped at 8) — 8 already finalized with an exchange result
+    ✓ KXWNBAGAME-26AUG16INDATL-IND  volume=5259836.33 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXWNBAGAME-26AUG06LVIND-LV  volume=4018892.12 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXWNBAGAME-26AUG06LVIND-IND  volume=3606958.86 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXWNBAGAME-26AUG06LAMIN-LA  volume=3573486.03 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXWNBAGAME-26AUG20INDDAL-IND  volume=3442532.1 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXWNBAGAME-26AUG10CHISEA-CHI  volume=3398153.93 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXWNBAGAME-26AUG24GSMIN-MIN  volume=3328355.01 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXWNBAGAME-26AUG14DALIND-IND  volume=3306197.55 contracts, liquidity=$0, status=finalized result=yes
+    ✗ 192 market(s) below the volume floor — e.g. KXWNBAGAME-26AUG17DALGS-GS(3238988), KXWNBAGAME-26AUG27WSHPHX-WSH(3206779.35), KXWNBAGAME-26AUG14PDXSEA-PDX(3191035.24)
+• discovered KXUFCFIGHT (status=all): 200 market(s), 8 with volume ≥ 1000 contracts (capped at 8) — 8 already finalized with an exchange result
+    ✓ KXUFCFIGHT-26AUG22HERROD-ROD  volume=5397595.56 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXUFCFIGHT-26SEP05HOOPAR-HOO  volume=4376493.31 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXUFCFIGHT-26AUG22HERROD-HER  volume=4333794.99 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXUFCFIGHT-26SEP12MCMRAH-MCM  volume=2722877.82 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXUFCFIGHT-26SEP12SILDEL-DEL  volume=2690952.52 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXUFCFIGHT-26SEP12FIOGRA-GRA  volume=2297608.42 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXUFCFIGHT-26SEP12MORMORA-MOR  volume=2247462.21 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXUFCFIGHT-26AUG15JOHDA-JOH  volume=2151935.85 contracts, liquidity=$0, status=finalized result=yes
+    ✗ 192 market(s) below the volume floor — e.g. KXUFCFIGHT-26AUG29NURSON-SON(2018413.38), KXUFCFIGHT-26SEP12MCMRAH-RAH(1881512.05), KXUFCFIGHT-26SEP05PAGRUZ-RUZ(1769727.14)
+
+=== 60-MINUTE PASS — 46 market(s) from https://external-api.kalshi.com/trade-api/v2 → data/history/intraday/60m/ ===
+  ⚠ KXNFLGAME-26SEP13DALNYG-DAL: trimmed 416 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNFLGAME-26SEP13DALNYG-DAL: +616 new bar(s), 616 total, 416 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNFLGAME-26SEP09NESEA-SEA: trimmed 322 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNFLGAME-26SEP09NESEA-SEA: +522 new bar(s), 522 total, 322 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNFLGAME-26SEP17DETBUF-DET: trimmed 336 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNFLGAME-26SEP17DETBUF-DET: +536 new bar(s), 536 total, 336 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNFLGAME-26SEP09NESEA-NE: trimmed 324 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNFLGAME-26SEP09NESEA-NE: +524 new bar(s), 524 total, 324 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNFLGAME-26SEP14DENKC-DEN: trimmed 438 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNFLGAME-26SEP14DENKC-DEN: +638 new bar(s), 638 total, 438 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNFLGAME-26SEP10SFLAR-LAR: trimmed 346 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNFLGAME-26SEP10SFLAR-LAR: +546 new bar(s), 546 total, 346 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNFLGAME-26SEP14DENKC-KC: trimmed 431 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNFLGAME-26SEP14DENKC-KC: +631 new bar(s), 631 total, 431 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNFLGAME-26SEP10SFLAR-SF: trimmed 346 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNFLGAME-26SEP10SFLAR-SF: +546 new bar(s), 546 total, 346 oldest trimmed, 1 book snapshot(s)
+✓ KXMLBGAME-26SEP161340NYYMIN-NYY: +69 new bar(s), 69 total, 1 book snapshot(s)
+✓ KXMLBGAME-26SEP152140MIAAZ-MIA: +65 new bar(s), 65 total, 1 book snapshot(s)
+✓ KXMLBGAME-26SEP172138MINLAA-MIN: +69 new bar(s), 69 total, 1 book snapshot(s)
+✓ KXMLBGAME-26SEP172138MINLAA-LAA: +69 new bar(s), 69 total, 1 book snapshot(s)
+✓ KXMLBGAME-26SEP161840LADCIN-LAD: +73 new bar(s), 73 total, 1 book snapshot(s)
+✓ KXMLBGAME-26SEP152140MIAAZ-AZ: +76 new bar(s), 76 total, 1 book snapshot(s)
+✓ KXMLBGAME-26SEP142140MIAAZ-AZ: +67 new bar(s), 67 total, 1 book snapshot(s)
+✓ KXMLBGAME-26SEP131920SDSF-SF: +67 new bar(s), 67 total, 1 book snapshot(s)
+  ⚠ KXNBAGAME-26OCT20PHINYK-PHI: trimmed 477 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNBAGAME-26OCT20PHINYK-PHI: +677 new bar(s), 677 total, 477 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNBAGAME-26OCT20BOSDET-BOS: trimmed 469 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNBAGAME-26OCT20BOSDET-BOS: +669 new bar(s), 669 total, 469 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNBAGAME-26OCT20BOSDET-DET: trimmed 461 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNBAGAME-26OCT20BOSDET-DET: +661 new bar(s), 661 total, 461 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNBAGAME-26OCT20PHINYK-NYK: trimmed 478 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNBAGAME-26OCT20PHINYK-NYK: +678 new bar(s), 678 total, 478 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNBAGAME-26OCT20OKCSAS-SAS: trimmed 452 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNBAGAME-26OCT20OKCSAS-SAS: +652 new bar(s), 652 total, 452 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXNBAGAME-26OCT20OKCSAS-OKC: trimmed 448 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXNBAGAME-26OCT20OKCSAS-OKC: +648 new bar(s), 648 total, 448 oldest trimmed, 1 book snapshot(s)
+✓ KXNCAAFGAME-26SEP26CMUMIA-CMU: +71 new bar(s), 71 total, 1 book snapshot(s)
+✓ KXNCAAFGAME-26SEP26CMUMIA-MIA: +49 new bar(s), 49 total, 1 book snapshot(s)
+✓ KXNCAAFGAME-26SEP26CARKFSU-FSU: +111 new bar(s), 111 total, 1 book snapshot(s)
+✓ KXNCAAFGAME-26SEP26SHSUTTU-TTU: +94 new bar(s), 94 total, 1 book snapshot(s)
+✓ KXNCAAFGAME-26SEP26MOSUSMU-SMU: +121 new bar(s), 121 total, 1 book snapshot(s)
+✓ KXNCAAFGAME-26SEP26OREUSC-ORE: +129 new bar(s), 129 total, 1 book snapshot(s)
+✓ KXNCAAFGAME-26SEP26TXAMLSU-LSU: +124 new bar(s), 124 total, 1 book snapshot(s)
+✓ KXNCAAFGAME-26SEP26ILLOSU-OSU: +125 new bar(s), 125 total, 1 book snapshot(s)
+✓ KXWNBAGAME-26AUG16INDATL-IND: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXWNBAGAME-26AUG06LVIND-LV: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXWNBAGAME-26AUG06LVIND-IND: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXWNBAGAME-26AUG06LAMIN-LA: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXWNBAGAME-26AUG20INDDAL-IND: +44 new bar(s), 44 total, 1 book snapshot(s)
+✓ KXWNBAGAME-26AUG10CHISEA-CHI: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXWNBAGAME-26AUG24GSMIN-MIN: +75 new bar(s), 75 total, 1 book snapshot(s)
+✓ KXWNBAGAME-26AUG14DALIND-IND: +0 new bar(s), 0 total, 1 book snapshot(s)
+✓ KXUFCFIGHT-26AUG22HERROD-ROD: +93 new bar(s), 93 total, 1 book snapshot(s)
+✓ KXUFCFIGHT-26SEP05HOOPAR-HOO: +161 new bar(s), 161 total, 1 book snapshot(s)
+✓ KXUFCFIGHT-26AUG22HERROD-HER: +93 new bar(s), 93 total, 1 book snapshot(s)
+✓ KXUFCFIGHT-26SEP12MCMRAH-MCM: +102 new bar(s), 102 total, 1 book snapshot(s)
+✓ KXUFCFIGHT-26SEP12SILDEL-DEL: +103 new bar(s), 103 total, 1 book snapshot(s)
+✓ KXUFCFIGHT-26SEP12FIOGRA-GRA: +101 new bar(s), 101 total, 1 book snapshot(s)
+✓ KXUFCFIGHT-26SEP12MORMORA-MOR: +102 new bar(s), 102 total, 1 book snapshot(s)
+✓ KXUFCFIGHT-26AUG15JOHDA-JOH: +0 new bar(s), 0 total, 1 book snapshot(s)
+
+60-minute bars added: 10797 · stored: 10797 · conflicts: 0 · failures: 0
+
+— Intraday pass requested by data/history/_ingest-request.json: 1-minute bars, 2 day(s), max 96 bar(s)/market, discovery status=all —
+• discovered KXBTC15M (status=all): 200 market(s), 8 with volume ≥ 1000 contracts (capped at 8) — 8 already finalized with an exchange result
+    ✓ KXBTC15M-26SEP171600-00  volume=4377194.24 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXBTC15M-26SEP180115-15  volume=4374252.58 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXBTC15M-26SEP180130-30  volume=4223240.72 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXBTC15M-26SEP172115-15  volume=4059639.18 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXBTC15M-26SEP172215-15  volume=4018659.99 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXBTC15M-26SEP172330-30  volume=3985731.92 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXBTC15M-26SEP180030-30  volume=3905305.97 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXBTC15M-26SEP172015-15  volume=3751104.89 contracts, liquidity=$0, status=finalized result=yes
+    ✗ 192 market(s) below the volume floor — e.g. KXBTC15M-26SEP171530-30(3725213.12), KXBTC15M-26SEP172345-45(3662108.37), KXBTC15M-26SEP180045-45(3646037.27)
+• discovered KXETH15M (status=all): 200 market(s), 8 with volume ≥ 1000 contracts (capped at 8) — 8 already finalized with an exchange result
+    ✓ KXETH15M-26SEP171600-00  volume=212571.54 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXETH15M-26SEP180115-15  volume=182847.16 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXETH15M-26SEP172330-30  volume=179841.1 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXETH15M-26SEP172130-30  volume=174737.61 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXETH15M-26SEP180145-45  volume=170862.57 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXETH15M-26SEP172300-00  volume=169055.49 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXETH15M-26SEP172200-00  volume=165154.21 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXETH15M-26SEP171745-45  volume=163268.27 contracts, liquidity=$0, status=finalized result=no
+    ✗ 192 market(s) below the volume floor — e.g. KXETH15M-26SEP170130-30(162334.43), KXETH15M-26SEP172215-15(160181.08), KXETH15M-26SEP171215-15(159792.21)
+• discovered KXSOL15M (status=all): 200 market(s), 8 with volume ≥ 1000 contracts (capped at 8) — 8 already finalized with an exchange result
+    ✓ KXSOL15M-26SEP172345-45  volume=177448.81 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXSOL15M-26SEP172230-30  volume=136068.15 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXSOL15M-26SEP180130-30  volume=133904.85 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXSOL15M-26SEP170145-45  volume=133167.27 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXSOL15M-26SEP180015-15  volume=125672.21 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXSOL15M-26SEP171945-45  volume=113095.22 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXSOL15M-26SEP180115-15  volume=103270.28 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXSOL15M-26SEP180145-45  volume=91158.73 contracts, liquidity=$0, status=finalized result=no
+    ✗ 192 market(s) below the volume floor — e.g. KXSOL15M-26SEP180030-30(90374.38), KXSOL15M-26SEP180200-00(84083.14), KXSOL15M-26SEP162145-45(83876.48)
+
+=== 1-MINUTE PASS — 24 market(s) from https://external-api.kalshi.com/trade-api/v2 → data/history/intraday/1m/ ===
+✓ KXBTC15M-26SEP171600-00: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXBTC15M-26SEP180115-15: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXBTC15M-26SEP180130-30: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXBTC15M-26SEP172115-15: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXBTC15M-26SEP172215-15: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXBTC15M-26SEP172330-30: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXBTC15M-26SEP180030-30: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXBTC15M-26SEP172015-15: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXETH15M-26SEP171600-00: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXETH15M-26SEP180115-15: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXETH15M-26SEP172330-30: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXETH15M-26SEP172130-30: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXETH15M-26SEP180145-45: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXETH15M-26SEP172300-00: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXETH15M-26SEP172200-00: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXETH15M-26SEP171745-45: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXSOL15M-26SEP172345-45: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXSOL15M-26SEP172230-30: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXSOL15M-26SEP180130-30: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXSOL15M-26SEP170145-45: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXSOL15M-26SEP180015-15: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXSOL15M-26SEP171945-45: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXSOL15M-26SEP180115-15: +16 new bar(s), 16 total, 1 book snapshot(s)
+✓ KXSOL15M-26SEP180145-45: +16 new bar(s), 16 total, 1 book snapshot(s)
+
+1-minute bars added: 384 · stored: 384 · conflicts: 0 · failures: 0
+
+— Intraday pass requested by data/history/_ingest-request.json: 60-minute bars, 0 day(s), max 200 bar(s)/market, discovery status=all —
+• discovered KXFEDDECISION (status=all): 65 market(s), 8 with volume ≥ 1000 contracts (capped at 8) — 8 already finalized with an exchange result
+    ✓ KXFEDDECISION-26SEP-H0  volume=48286115.02 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXFEDDECISION-26JUL-H0  volume=23802367.03 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXFEDDECISION-26SEP-H26  volume=19945019.56 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXFEDDECISION-26JUL-H25  volume=19713687.51 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXFEDDECISION-26SEP-H25  volume=18770408.08 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXFEDDECISION-26JUL-H26  volume=15632302.75 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXFEDDECISION-26SEP-C25  volume=13833555.97 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXFEDDECISION-26JUL-C25  volume=7276758.07 contracts, liquidity=$0, status=finalized result=no
+    ✗ 57 market(s) below the volume floor — e.g. KXFEDDECISION-26SEP-C26(2370153.9), KXFEDDECISION-26JUL-C26(2330631.58), KXFEDDECISION-26OCT-H0(543133.23)
+• discovered KXCPIYOY (status=all): 131 market(s), 8 with volume ≥ 1000 contracts (capped at 8) — 8 already finalized with an exchange result
+    ✓ KXCPIYOY-26JUN-T4.0  volume=307484.25 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXCPIYOY-26JUN-T3.7  volume=302609.61 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXCPIYOY-26JUL-T3.4  volume=288990.29 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXCPIYOY-26JUN-T3.8  volume=277976.18 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXCPIYOY-26JUL-T3.3  volume=277886.34 contracts, liquidity=$0, status=finalized result=yes
+    ✓ KXCPIYOY-26JUN-T3.9  volume=258201.67 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXCPIYOY-26AUG-T3.4  volume=216735.44 contracts, liquidity=$0, status=finalized result=no
+    ✓ KXCPIYOY-26AUG-T3.3  volume=197935.8 contracts, liquidity=$0, status=finalized result=yes
+    ✗ 123 market(s) below the volume floor — e.g. KXCPIYOY-26JUL-T3.5(190017.03), KXCPIYOY-26JUN-T3.6(189286.82), KXCPIYOY-26JUL-T3.2(153737.49)
+
+=== 60-MINUTE PASS — 16 market(s) from https://external-api.kalshi.com/trade-api/v2 → data/history/intraday/60m/ ===
+  ⚠ KXFEDDECISION-26SEP-H0: trimmed 2125 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXFEDDECISION-26SEP-H0: +2325 new bar(s), 2,325 total, 2,125 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXFEDDECISION-26JUL-H0: trimmed 1252 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXFEDDECISION-26JUL-H0: +1452 new bar(s), 1,452 total, 1,252 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXFEDDECISION-26SEP-H26: trimmed 898 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXFEDDECISION-26SEP-H26: +1098 new bar(s), 1,098 total, 898 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXFEDDECISION-26JUL-H25: trimmed 1366 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXFEDDECISION-26JUL-H25: +1566 new bar(s), 1,566 total, 1,366 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXFEDDECISION-26SEP-H25: trimmed 1945 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXFEDDECISION-26SEP-H25: +2145 new bar(s), 2,145 total, 1,945 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXFEDDECISION-26JUL-H26: trimmed 470 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXFEDDECISION-26JUL-H26: +670 new bar(s), 670 total, 470 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXFEDDECISION-26SEP-C25: trimmed 1933 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXFEDDECISION-26SEP-C25: +2133 new bar(s), 2,133 total, 1,933 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXFEDDECISION-26JUL-C25: trimmed 1235 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXFEDDECISION-26JUL-C25: +1435 new bar(s), 1,435 total, 1,235 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXCPIYOY-26JUN-T4.0: trimmed 800 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXCPIYOY-26JUN-T4.0: +1000 new bar(s), 1,000 total, 800 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXCPIYOY-26JUN-T3.7: trimmed 760 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXCPIYOY-26JUN-T3.7: +960 new bar(s), 960 total, 760 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXCPIYOY-26JUL-T3.4: trimmed 1030 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXCPIYOY-26JUL-T3.4: +1230 new bar(s), 1,230 total, 1,030 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXCPIYOY-26JUN-T3.8: trimmed 878 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXCPIYOY-26JUN-T3.8: +1078 new bar(s), 1,078 total, 878 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXCPIYOY-26JUL-T3.3: trimmed 757 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXCPIYOY-26JUL-T3.3: +957 new bar(s), 957 total, 757 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXCPIYOY-26JUN-T3.9: trimmed 829 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXCPIYOY-26JUN-T3.9: +1029 new bar(s), 1,029 total, 829 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXCPIYOY-26AUG-T3.4: trimmed 930 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXCPIYOY-26AUG-T3.4: +1130 new bar(s), 1,130 total, 930 oldest trimmed, 1 book snapshot(s)
+  ⚠ KXCPIYOY-26AUG-T3.3: trimmed 895 oldest 60-minute bar(s) to honour --max-bars=200 (recorded in store.trims)
+✓ KXCPIYOY-26AUG-T3.3: +1095 new bar(s), 1,095 total, 895 oldest trimmed, 1 book snapshot(s)
+
+60-minute bars added: 21303 · stored: 21303 · conflicts: 0 · failures: 0
 Kalshi universe discovery → https://external-api.kalshi.com/trade-api/v2
   keywords : HIGH, WEATHER, GOLD, FDA, CEO, INSIDER, NFL, NBA, MLB, NHL, NCAA, NCAAB, NCAAF, UFC, SOCCER, GAME, SPREAD, CPI, FED, GDP, JOBS, UNEMPLOY, INX, NASDAQ, BTC, ETH, SOL, OIL, TSLA
-  series   : KXHIGHNY, KXGOLD15M
+  series   : KXHIGHNY, KXGOLD15M, KXHIGHLAX, KXHIGHCHI, KXHIGHMIA, KXHIGHAUS, KXHIGHDEN, KXHIGHPHIL, KXHIGHTPHX, KXHIGHTSEA, KXNFLGAME, KXMLBGAME, KXNBAGAME, KXNHLGAME, KXNCAAFGAME, KXWNBAGAME, KXUFCFIGHT, KXBTC15M, KXETH15M, KXSOL15M, KXFEDDECISION, KXCPIYOY
   dry-run  : false
 • GET /series → 14154 series
   ✓ category Sports: 3822 series
@@ -226,29 +641,29 @@ Kalshi universe discovery → https://external-api.kalshi.com/trade-api/v2
   ✓ category World: 149 series
   ✓ category Entertainment: 2486 series
 • keyword matches: 4189 series (showing the top 25 by reported volume)
-    KXBTC15M                 vol=18154658182.00  fee_mult=1  [BTC]
+    KXBTC15M                 vol=18155844389.00  fee_mult=1  [BTC]
     KXNBAGAME                vol=11676027344.00  fee_mult=1  [NBA,GAME]
-    KXMLBGAME                vol=9801983745.00  fee_mult=0.5  [MLB,GAME]
-    KXBTCD                   vol=7537344728.00  fee_mult=1  [BTC]
-    KXNFLGAME                vol=6010901748.00  fee_mult=1  [NFL,GAME]
+    KXMLBGAME                vol=9801998040.00  fee_mult=0.5  [MLB,GAME]
+    KXBTCD                   vol=7537532055.00  fee_mult=1  [BTC]
+    KXNFLGAME                vol=6010908990.00  fee_mult=1  [NFL,GAME]
     KXNCAAMBGAME             vol=5936932933.00  fee_mult=1  [NCAA,GAME]
-    KXNCAAFGAME              vol=4775918610.00  fee_mult=1  [NCAA,NCAAF,GAME]
+    KXNCAAFGAME              vol=4775926187.00  fee_mult=1  [NCAA,NCAAF,GAME]
     KXWCGAME                 vol=4494733439.00  fee_mult=1  [SOCCER,GAME]
     KXWCADVANCE              vol=2502023069.00  fee_mult=1  [SOCCER]
-    KXMLBTOTAL               vol=2378894328.00  fee_mult=0.5  [MLB]
+    KXMLBTOTAL               vol=2378894519.00  fee_mult=0.5  [MLB]
     KXNBASPREAD              vol=1590362212.00  fee_mult=1  [NBA,SPREAD]
     KXNHLGAME                vol=1567230249.00  fee_mult=1  [NHL,GAME]
     KXMENWORLDCUP            vol=1540161824.00  fee_mult=1  [SOCCER]
-    KXMLBSPREAD              vol=1336323400.00  fee_mult=0.5  [MLB,SPREAD]
+    KXMLBSPREAD              vol=1336324201.00  fee_mult=0.5  [MLB,SPREAD]
     KXNBATOTAL               vol=1331875601.00  fee_mult=1  [NBA]
-    KXUFCFIGHT               vol=1281831821.00  fee_mult=1  [UFC]
-    KXWNBAGAME               vol=1084083079.00  fee_mult=1  [NBA,GAME]
+    KXUFCFIGHT               vol=1281832441.00  fee_mult=1  [UFC]
+    KXWNBAGAME               vol=1084084299.00  fee_mult=1  [NBA,GAME]
     KXIPLGAME                vol=1048617590.00  fee_mult=1  [GAME]
     KXWCSCORE                vol=1019572887.00  fee_mult=1  [SOCCER]
-    KXETH15M                 vol=972223912.00  fee_mult=1  [ETH]
+    KXETH15M                 vol=972280379.00  fee_mult=1  [ETH]
     KXNCAAMBSPREAD           vol=971784193.00  fee_mult=1  [NCAA,SPREAD]
-    KXNFLSPREAD              vol=935273708.00  fee_mult=1  [NFL,SPREAD]
-    KXEPLGAME                vol=788095250.00  fee_mult=1  [SOCCER,GAME]
+    KXNFLSPREAD              vol=935274907.00  fee_mult=1  [NFL,SPREAD]
+    KXEPLGAME                vol=788098380.00  fee_mult=1  [SOCCER,GAME]
     KXWCTOTAL                vol=763654856.00  fee_mult=1  [SOCCER]
     KXNCAAMBTOTAL            vol=731561736.00  fee_mult=1  [NCAA]
   ✓ markets KXBTC15M: 6 kept of 200 (6 finalized)
@@ -289,7 +704,7 @@ Kalshi universe discovery → https://external-api.kalshi.com/trade-api/v2
   ✓ markets KXMLBRFI: 6 kept of 200 (6 finalized)
   ✓ markets KXNBA: 6 kept of 30 (0 finalized)
   ✓ markets KXBTC: 6 kept of 200 (0 finalized)
-  ✓ markets KXMLBHR: 6 kept of 200 (2 finalized)
+  ✓ markets KXMLBHR: 6 kept of 200 (6 finalized)
   ✓ markets KXMLSGAME: 6 kept of 200 (6 finalized)
   ✓ markets KXSOL15M: 6 kept of 200 (6 finalized)
   ✓ markets KXNCAAFTOTAL: 6 kept of 200 (2 finalized)
@@ -321,13 +736,53 @@ Kalshi universe discovery → https://external-api.kalshi.com/trade-api/v2
   ✓ markets KXMLB: 6 kept of 30 (0 finalized)
   ✓ markets KXWCMOV: 6 kept of 24 (6 finalized)
   ✓ markets KXWC1HTOTAL: 6 kept of 16 (6 finalized)
+  ✓ markets KXWTI15M: 6 kept of 200 (6 finalized)
+  ✓ markets KXMLBKS: 6 kept of 200 (6 finalized)
+  ✓ markets KXNBAWEST: 6 kept of 15 (0 finalized)
+  ✓ markets KXHIGHNY: 6 kept of 200 (6 finalized)
+  ✓ markets KXWC1HSCORE: 6 kept of 54 (6 finalized)
+  ✓ markets KXNASDAQ100U: 6 kept of 200 (0 finalized)
+  ✓ markets KXINX: 6 kept of 200 (6 finalized)
+  ✓ markets KXARGPREMDIVGAME: 6 kept of 200 (6 finalized)
+  ✓ markets KXLIGUE1GAME: 6 kept of 138 (6 finalized)
+  ✓ markets KXNFLANYTD: 0 kept of 0 (0 finalized)
+  ✓ markets KXNFLNFCCHAMP: 6 kept of 16 (0 finalized)
+  ✓ markets KXWCCORNERS: 6 kept of 20 (6 finalized)
+  ✓ markets KXFIRSTSUPERBOWLSONG: 0 kept of 0 (0 finalized)
+  ✓ markets KXMLBTEAMTOTAL: 6 kept of 200 (4 finalized)
+  ✓ markets KXWC2H: 6 kept of 12 (6 finalized)
+  ✓ markets KXHIGHCHI: 6 kept of 200 (6 finalized)
+  ✓ markets KXEUROLEAGUEGAME: 0 kept of 0 (0 finalized)
+  ✓ markets KXBRASILEIROGAME: 6 kept of 200 (6 finalized)
+  ✓ markets KXNBAPTS: 0 kept of 0 (0 finalized)
+  ✓ markets KXNASDAQ100: 6 kept of 200 (6 finalized)
+  ✓ markets KXETH: 6 kept of 200 (0 finalized)
+  ✓ markets KXNPBGAME: 6 kept of 200 (6 finalized)
+  ✓ markets KXHIGHMIA: 6 kept of 200 (5 finalized)
+  ✓ markets KXWTI: 6 kept of 200 (6 finalized)
+  ✓ markets KXUELGAME: 6 kept of 200 (6 finalized)
+  ✓ markets KXSAUDIPLGAME: 6 kept of 189 (6 finalized)
+  ✓ markets KXECULPGAME: 6 kept of 200 (6 finalized)
+  ✓ markets KXNHLSPREAD: 6 kept of 80 (0 finalized)
+  ✓ markets KXWCTCORNERS: 6 kept of 24 (6 finalized)
+  ✓ markets KXNFLAFCCHAMP: 6 kept of 16 (0 finalized)
+  ✓ markets KXEPLTOTAL: 6 kept of 200 (6 finalized)
+  ✓ markets KXLALIGATOTAL: 6 kept of 200 (6 finalized)
+  ✓ markets KXNFLPREPACKSGP: 6 kept of 36 (0 finalized)
+  ✓ markets KXUECLGAME: 6 kept of 200 (6 finalized)
+  ✓ markets KXEFLCHAMPIONSHIPGAME: 6 kept of 200 (6 finalized)
+  ✓ markets KXNFLFIRSTTD: 6 kept of 200 (2 finalized)
+  ✓ markets KXCBAGAME: 0 kept of 0 (0 finalized)
+  ✓ markets KXHIGHAUS: 6 kept of 200 (6 finalized)
+  ✓ markets KXDIMAYORGAME: 6 kept of 200 (6 finalized)
+  ✓ markets KXNHL: 6 kept of 32 (0 finalized)
 
 Wrote data/discovered/ ...
   series-list.json : 14154 series
   series-fees.json : 14154 fee configs
   matches.json     : 4189 matched series
-  markets/         : 70 series market files
-  requests         : 84 (0 failed)
+  markets/         : 110 series market files
+  requests         : 124 (0 failed)
 
 Suggested ingest blocks (paste into data/history/_ingest-request.json):
 [
@@ -771,7 +1226,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
   "with_books": true,
   "with_market": true,
   "min_interval_ms": 300,
-  "_why_this": "discovered by scripts/discover-universe.mjs: 2 finalized market(s) with an exchange result out of 6 kept."
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
  },
  {
   "name": "discovered-kxmlsgame",
@@ -1163,10 +1618,469 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
   "with_market": true,
   "min_interval_ms": 300,
   "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxwti15m",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXWTI15M"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxmlbks",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXMLBKS"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxhighny",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXHIGHNY"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxwc1hscore",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXWC1HSCORE"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxinx",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXINX"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxargpremdivgame",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXARGPREMDIVGAME"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxligue1game",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXLIGUE1GAME"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxwccorners",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXWCCORNERS"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxmlbteamtotal",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXMLBTEAMTOTAL"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 4 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxwc2h",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXWC2H"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxhighchi",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXHIGHCHI"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxbrasileirogame",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXBRASILEIROGAME"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxnasdaq100",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXNASDAQ100"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxnpbgame",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXNPBGAME"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxhighmia",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXHIGHMIA"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 5 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxwti",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXWTI"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxuelgame",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXUELGAME"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxsaudiplgame",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXSAUDIPLGAME"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxeculpgame",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXECULPGAME"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxwctcorners",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXWCTCORNERS"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxepltotal",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXEPLTOTAL"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxlaligatotal",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXLALIGATOTAL"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxueclgame",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXUECLGAME"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxeflchampionshipgame",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXEFLCHAMPIONSHIPGAME"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxnflfirsttd",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXNFLFIRSTTD"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 2 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxhighaus",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXHIGHAUS"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
+ },
+ {
+  "name": "discovered-kxdimayorgame",
+  "period": 60,
+  "status": "all",
+  "series": [
+   "KXDIMAYORGAME"
+  ],
+  "days": 0,
+  "max_backfill_days": 60,
+  "max_bars": 200,
+  "min_volume": 1000,
+  "max_markets": 40,
+  "with_books": true,
+  "with_market": true,
+  "min_interval_ms": 300,
+  "_why_this": "discovered by scripts/discover-universe.mjs: 6 finalized market(s) with an exchange result out of 6 kept."
  }
 ]
 {
-  "verifiedAt": "2026-09-18T06:32:57.729Z",
+  "verifiedAt": "2026-09-18T06:42:31.435Z",
   "markets": [
     {
       "ticker": "KXBTCY-27JAN0100-B47500",
@@ -1184,7 +2098,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1203,7 +2117,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1222,7 +2136,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1241,7 +2155,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1260,7 +2174,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1279,7 +2193,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1298,7 +2212,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1317,7 +2231,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1336,7 +2250,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1355,7 +2269,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1394,7 +2308,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 172800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1428,7 +2342,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 172800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1447,7 +2361,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1471,7 +2385,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1495,7 +2409,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1519,7 +2433,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1543,7 +2457,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1582,7 +2496,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1621,7 +2535,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1660,7 +2574,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1699,7 +2613,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 172800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1738,7 +2652,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 172800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1777,7 +2691,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 172800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1816,7 +2730,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 172800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1855,7 +2769,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 172800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1894,7 +2808,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 259200
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1933,7 +2847,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 172800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -1972,7 +2886,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 172800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -2006,7 +2920,7 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     },
     {
@@ -2040,18 +2954,162 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "deltaSeconds": 82800
         }
       ],
-      "books": 8,
+      "books": 9,
       "trims": 0
     }
   ]
 }
 {
-  "verifiedAt": "2026-09-18T06:32:57.733Z",
+  "verifiedAt": "2026-09-18T06:42:31.438Z",
   "periods": {
     "1m": {
       "at": "/home/runner/work/KalshiPaperSim/KalshiPaperSim/data/history/intraday/1m",
-      "markets": 10,
+      "markets": 34,
       "rows": [
+        {
+          "ticker": "KXBTC15M-26SEP171600-00",
+          "bars": 16,
+          "first": "2026-09-17T19:46:00.000Z",
+          "last": "2026-09-17T20:01:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXBTC15M-26SEP172015-15",
+          "bars": 16,
+          "first": "2026-09-18T00:01:00.000Z",
+          "last": "2026-09-18T00:16:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXBTC15M-26SEP172115-15",
+          "bars": 16,
+          "first": "2026-09-18T01:01:00.000Z",
+          "last": "2026-09-18T01:16:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXBTC15M-26SEP172215-15",
+          "bars": 16,
+          "first": "2026-09-18T02:01:00.000Z",
+          "last": "2026-09-18T02:16:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXBTC15M-26SEP172330-30",
+          "bars": 16,
+          "first": "2026-09-18T03:16:00.000Z",
+          "last": "2026-09-18T03:31:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXBTC15M-26SEP180030-30",
+          "bars": 16,
+          "first": "2026-09-18T04:16:00.000Z",
+          "last": "2026-09-18T04:31:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXBTC15M-26SEP180115-15",
+          "bars": 16,
+          "first": "2026-09-18T05:01:00.000Z",
+          "last": "2026-09-18T05:16:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXBTC15M-26SEP180130-30",
+          "bars": 16,
+          "first": "2026-09-18T05:16:00.000Z",
+          "last": "2026-09-18T05:31:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXETH15M-26SEP171600-00",
+          "bars": 16,
+          "first": "2026-09-17T19:46:00.000Z",
+          "last": "2026-09-17T20:01:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXETH15M-26SEP171745-45",
+          "bars": 16,
+          "first": "2026-09-17T21:31:00.000Z",
+          "last": "2026-09-17T21:46:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXETH15M-26SEP172130-30",
+          "bars": 16,
+          "first": "2026-09-18T01:16:00.000Z",
+          "last": "2026-09-18T01:31:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXETH15M-26SEP172200-00",
+          "bars": 16,
+          "first": "2026-09-18T01:46:00.000Z",
+          "last": "2026-09-18T02:01:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXETH15M-26SEP172300-00",
+          "bars": 16,
+          "first": "2026-09-18T02:46:00.000Z",
+          "last": "2026-09-18T03:01:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXETH15M-26SEP172330-30",
+          "bars": 16,
+          "first": "2026-09-18T03:16:00.000Z",
+          "last": "2026-09-18T03:31:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXETH15M-26SEP180115-15",
+          "bars": 16,
+          "first": "2026-09-18T05:01:00.000Z",
+          "last": "2026-09-18T05:16:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXETH15M-26SEP180145-45",
+          "bars": 16,
+          "first": "2026-09-18T05:31:00.000Z",
+          "last": "2026-09-18T05:46:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
         {
           "ticker": "KXGOLD15M-26SEP162030-30",
           "bars": 16,
@@ -2141,12 +3199,84 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "gapCount": 0,
           "noTradePeriods": 1,
           "trims": 0
+        },
+        {
+          "ticker": "KXSOL15M-26SEP170145-45",
+          "bars": 16,
+          "first": "2026-09-17T05:31:00.000Z",
+          "last": "2026-09-17T05:46:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXSOL15M-26SEP171945-45",
+          "bars": 16,
+          "first": "2026-09-17T23:31:00.000Z",
+          "last": "2026-09-17T23:46:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXSOL15M-26SEP172230-30",
+          "bars": 16,
+          "first": "2026-09-18T02:16:00.000Z",
+          "last": "2026-09-18T02:31:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXSOL15M-26SEP172345-45",
+          "bars": 16,
+          "first": "2026-09-18T03:31:00.000Z",
+          "last": "2026-09-18T03:46:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXSOL15M-26SEP180015-15",
+          "bars": 16,
+          "first": "2026-09-18T04:01:00.000Z",
+          "last": "2026-09-18T04:16:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXSOL15M-26SEP180115-15",
+          "bars": 16,
+          "first": "2026-09-18T05:01:00.000Z",
+          "last": "2026-09-18T05:16:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXSOL15M-26SEP180130-30",
+          "bars": 16,
+          "first": "2026-09-18T05:16:00.000Z",
+          "last": "2026-09-18T05:31:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXSOL15M-26SEP180145-45",
+          "bars": 16,
+          "first": "2026-09-18T05:31:00.000Z",
+          "last": "2026-09-18T05:46:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
         }
       ]
     },
     "60m": {
       "at": "/home/runner/work/KalshiPaperSim/KalshiPaperSim/data/history/intraday/60m",
-      "markets": 52,
+      "markets": 194,
       "rows": [
         {
           "ticker": "KXBTCY-27JAN0100-B47500",
@@ -2237,6 +3367,600 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "gapCount": 85,
           "noTradePeriods": 214,
           "trims": 3
+        },
+        {
+          "ticker": "KXCPIYOY-26AUG-T3.3",
+          "bars": 200,
+          "first": "2026-09-03T01:00:00.000Z",
+          "last": "2026-09-11T13:00:00.000Z",
+          "gapCount": 5,
+          "noTradePeriods": 33,
+          "trims": 1
+        },
+        {
+          "ticker": "KXCPIYOY-26AUG-T3.4",
+          "bars": 200,
+          "first": "2026-09-02T17:00:00.000Z",
+          "last": "2026-09-11T13:00:00.000Z",
+          "gapCount": 10,
+          "noTradePeriods": 44,
+          "trims": 1
+        },
+        {
+          "ticker": "KXCPIYOY-26JUL-T3.3",
+          "bars": 200,
+          "first": "2026-08-04T03:00:00.000Z",
+          "last": "2026-08-12T13:00:00.000Z",
+          "gapCount": 3,
+          "noTradePeriods": 29,
+          "trims": 1
+        },
+        {
+          "ticker": "KXCPIYOY-26JUL-T3.4",
+          "bars": 200,
+          "first": "2026-08-03T16:00:00.000Z",
+          "last": "2026-08-12T13:00:00.000Z",
+          "gapCount": 14,
+          "noTradePeriods": 47,
+          "trims": 1
+        },
+        {
+          "ticker": "KXCPIYOY-26JUN-T3.7",
+          "bars": 200,
+          "first": "2026-07-06T04:00:00.000Z",
+          "last": "2026-07-14T13:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 22,
+          "trims": 1
+        },
+        {
+          "ticker": "KXCPIYOY-26JUN-T3.8",
+          "bars": 200,
+          "first": "2026-07-06T02:00:00.000Z",
+          "last": "2026-07-14T13:00:00.000Z",
+          "gapCount": 4,
+          "noTradePeriods": 21,
+          "trims": 1
+        },
+        {
+          "ticker": "KXCPIYOY-26JUN-T3.9",
+          "bars": 200,
+          "first": "2026-07-05T21:00:00.000Z",
+          "last": "2026-07-14T13:00:00.000Z",
+          "gapCount": 7,
+          "noTradePeriods": 56,
+          "trims": 1
+        },
+        {
+          "ticker": "KXCPIYOY-26JUN-T4.0",
+          "bars": 200,
+          "first": "2026-07-01T17:00:00.000Z",
+          "last": "2026-07-14T13:00:00.000Z",
+          "gapCount": 42,
+          "noTradePeriods": 71,
+          "trims": 1
+        },
+        {
+          "ticker": "KXFEDDECISION-26JUL-C25",
+          "bars": 200,
+          "first": "2026-07-20T19:00:00.000Z",
+          "last": "2026-07-29T18:00:00.000Z",
+          "gapCount": 12,
+          "noTradePeriods": 8,
+          "trims": 1
+        },
+        {
+          "ticker": "KXFEDDECISION-26JUL-H0",
+          "bars": 200,
+          "first": "2026-07-21T10:00:00.000Z",
+          "last": "2026-07-29T18:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 1,
+          "trims": 1
+        },
+        {
+          "ticker": "KXFEDDECISION-26JUL-H25",
+          "bars": 200,
+          "first": "2026-07-21T10:00:00.000Z",
+          "last": "2026-07-29T18:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 4,
+          "trims": 1
+        },
+        {
+          "ticker": "KXFEDDECISION-26JUL-H26",
+          "bars": 200,
+          "first": "2026-07-18T15:00:00.000Z",
+          "last": "2026-07-29T18:00:00.000Z",
+          "gapCount": 33,
+          "noTradePeriods": 41,
+          "trims": 1
+        },
+        {
+          "ticker": "KXFEDDECISION-26SEP-C25",
+          "bars": 200,
+          "first": "2026-09-07T22:00:00.000Z",
+          "last": "2026-09-16T18:00:00.000Z",
+          "gapCount": 10,
+          "noTradePeriods": 16,
+          "trims": 1
+        },
+        {
+          "ticker": "KXFEDDECISION-26SEP-H0",
+          "bars": 200,
+          "first": "2026-09-08T10:00:00.000Z",
+          "last": "2026-09-16T18:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 1,
+          "trims": 1
+        },
+        {
+          "ticker": "KXFEDDECISION-26SEP-H25",
+          "bars": 200,
+          "first": "2026-09-08T10:00:00.000Z",
+          "last": "2026-09-16T18:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 1,
+          "trims": 1
+        },
+        {
+          "ticker": "KXFEDDECISION-26SEP-H26",
+          "bars": 200,
+          "first": "2026-09-08T04:00:00.000Z",
+          "last": "2026-09-16T18:00:00.000Z",
+          "gapCount": 3,
+          "noTradePeriods": 12,
+          "trims": 1
+        },
+        {
+          "ticker": "KXHIGHAUS-26AUG22-B104.5",
+          "bars": 40,
+          "first": "2026-08-21T15:00:00.000Z",
+          "last": "2026-08-23T07:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 4,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHAUS-26AUG23-B104.5",
+          "bars": 41,
+          "first": "2026-08-22T15:00:00.000Z",
+          "last": "2026-08-24T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 3,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHAUS-26AUG23-B106.5",
+          "bars": 40,
+          "first": "2026-08-22T15:00:00.000Z",
+          "last": "2026-08-24T07:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHAUS-26AUG25-B101.5",
+          "bars": 40,
+          "first": "2026-08-24T15:00:00.000Z",
+          "last": "2026-08-26T07:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 7,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHAUS-26SEP04-T93",
+          "bars": 41,
+          "first": "2026-09-03T15:00:00.000Z",
+          "last": "2026-09-05T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 5,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHAUS-26SEP08-B100.5",
+          "bars": 41,
+          "first": "2026-09-07T15:00:00.000Z",
+          "last": "2026-09-09T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHAUS-26SEP09-B98.5",
+          "bars": 41,
+          "first": "2026-09-08T15:00:00.000Z",
+          "last": "2026-09-10T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHAUS-26SEP11-B100.5",
+          "bars": 41,
+          "first": "2026-09-10T15:00:00.000Z",
+          "last": "2026-09-12T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHAUS-26SEP11-B98.5",
+          "bars": 41,
+          "first": "2026-09-10T15:00:00.000Z",
+          "last": "2026-09-12T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 5,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHAUS-26SEP12-B99.5",
+          "bars": 40,
+          "first": "2026-09-11T15:00:00.000Z",
+          "last": "2026-09-13T07:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 8,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHCHI-26AUG17-T78",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHCHI-26AUG27-B78.5",
+          "bars": 41,
+          "first": "2026-08-26T15:00:00.000Z",
+          "last": "2026-08-28T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 9,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHCHI-26AUG29-B80.5",
+          "bars": 38,
+          "first": "2026-08-28T15:00:00.000Z",
+          "last": "2026-08-30T07:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 5,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHCHI-26AUG31-B91.5",
+          "bars": 41,
+          "first": "2026-08-30T15:00:00.000Z",
+          "last": "2026-09-01T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHCHI-26SEP03-B90.5",
+          "bars": 40,
+          "first": "2026-09-02T15:00:00.000Z",
+          "last": "2026-09-04T07:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 11,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHCHI-26SEP04-B93.5",
+          "bars": 41,
+          "first": "2026-09-03T15:00:00.000Z",
+          "last": "2026-09-05T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHCHI-26SEP04-T89",
+          "bars": 41,
+          "first": "2026-09-03T15:00:00.000Z",
+          "last": "2026-09-05T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 10,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHCHI-26SEP05-T83",
+          "bars": 41,
+          "first": "2026-09-04T15:00:00.000Z",
+          "last": "2026-09-06T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHCHI-26SEP14-T72",
+          "bars": 41,
+          "first": "2026-09-13T15:00:00.000Z",
+          "last": "2026-09-15T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 5,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHCHI-26SEP15-B82.5",
+          "bars": 41,
+          "first": "2026-09-14T15:00:00.000Z",
+          "last": "2026-09-16T07:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHDEN-26AUG17-B91.5",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHDEN-26AUG17-T92",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHDEN-26AUG31-B84.5",
+          "bars": 40,
+          "first": "2026-08-30T15:00:00.000Z",
+          "last": "2026-09-01T08:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 4,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHDEN-26SEP06-B89.5",
+          "bars": 39,
+          "first": "2026-09-05T15:00:00.000Z",
+          "last": "2026-09-07T08:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 5,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHDEN-26SEP12-B80.5",
+          "bars": 42,
+          "first": "2026-09-11T15:00:00.000Z",
+          "last": "2026-09-13T08:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 7,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHDEN-26SEP12-T80",
+          "bars": 42,
+          "first": "2026-09-11T15:00:00.000Z",
+          "last": "2026-09-13T08:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 5,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHDEN-26SEP15-B70.5",
+          "bars": 40,
+          "first": "2026-09-14T15:00:00.000Z",
+          "last": "2026-09-16T08:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 7,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHDEN-26SEP15-B72.5",
+          "bars": 41,
+          "first": "2026-09-14T15:00:00.000Z",
+          "last": "2026-09-16T08:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 7,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHDEN-26SEP16-B81.5",
+          "bars": 42,
+          "first": "2026-09-15T15:00:00.000Z",
+          "last": "2026-09-17T10:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 9,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHDEN-26SEP17-T82",
+          "bars": 39,
+          "first": "2026-09-16T15:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHLAX-26AUG18-T82",
+          "bars": 3,
+          "first": "2026-08-19T07:00:00.000Z",
+          "last": "2026-08-19T09:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHLAX-26AUG26-T89",
+          "bars": 43,
+          "first": "2026-08-25T15:00:00.000Z",
+          "last": "2026-08-27T10:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHLAX-26AUG27-T89",
+          "bars": 42,
+          "first": "2026-08-26T15:00:00.000Z",
+          "last": "2026-08-28T09:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHLAX-26AUG28-T89",
+          "bars": 43,
+          "first": "2026-08-27T15:00:00.000Z",
+          "last": "2026-08-29T09:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHLAX-26SEP03-B76.5",
+          "bars": 41,
+          "first": "2026-09-02T15:00:00.000Z",
+          "last": "2026-09-04T09:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHLAX-26SEP08-T89",
+          "bars": 43,
+          "first": "2026-09-07T15:00:00.000Z",
+          "last": "2026-09-09T09:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHLAX-26SEP14-T82",
+          "bars": 43,
+          "first": "2026-09-13T15:00:00.000Z",
+          "last": "2026-09-15T09:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHLAX-26SEP15-B81.5",
+          "bars": 43,
+          "first": "2026-09-14T15:00:00.000Z",
+          "last": "2026-09-16T09:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHLAX-26SEP15-T82",
+          "bars": 43,
+          "first": "2026-09-14T15:00:00.000Z",
+          "last": "2026-09-16T09:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 3,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHLAX-26SEP16-T80",
+          "bars": 43,
+          "first": "2026-09-15T15:00:00.000Z",
+          "last": "2026-09-17T10:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 3,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHMIA-26AUG18-B97.5",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHMIA-26AUG21-B92.5",
+          "bars": 40,
+          "first": "2026-08-20T15:00:00.000Z",
+          "last": "2026-08-22T06:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHMIA-26AUG21-B94.5",
+          "bars": 40,
+          "first": "2026-08-20T15:00:00.000Z",
+          "last": "2026-08-22T06:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 3,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHMIA-26AUG24-B90.5",
+          "bars": 40,
+          "first": "2026-08-23T15:00:00.000Z",
+          "last": "2026-08-25T06:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 3,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHMIA-26AUG25-B90.5",
+          "bars": 38,
+          "first": "2026-08-24T15:00:00.000Z",
+          "last": "2026-08-26T06:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 4,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHMIA-26SEP09-B87.5",
+          "bars": 40,
+          "first": "2026-09-08T15:00:00.000Z",
+          "last": "2026-09-10T06:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHMIA-26SEP09-B89.5",
+          "bars": 40,
+          "first": "2026-09-08T15:00:00.000Z",
+          "last": "2026-09-10T06:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHMIA-26SEP13-B89.5",
+          "bars": 40,
+          "first": "2026-09-12T15:00:00.000Z",
+          "last": "2026-09-14T06:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHMIA-26SEP14-B88.5",
+          "bars": 40,
+          "first": "2026-09-13T15:00:00.000Z",
+          "last": "2026-09-15T06:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHMIA-26SEP17-T84",
+          "bars": 39,
+          "first": "2026-09-16T15:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 11,
+          "trims": 0
         },
         {
           "ticker": "KXHIGHNY-26AUG18-B87.5",
@@ -2599,6 +4323,276 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "trims": 0
         },
         {
+          "ticker": "KXHIGHPHIL-26AUG17-B87.5",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHPHIL-26AUG17-B89.5",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHPHIL-26AUG18-B86.5",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHPHIL-26AUG20-T80",
+          "bars": 34,
+          "first": "2026-08-19T15:00:00.000Z",
+          "last": "2026-08-21T06:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 4,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHPHIL-26AUG20-T87",
+          "bars": 39,
+          "first": "2026-08-19T15:00:00.000Z",
+          "last": "2026-08-21T06:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 6,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHPHIL-26AUG21-B82.5",
+          "bars": 37,
+          "first": "2026-08-20T15:00:00.000Z",
+          "last": "2026-08-22T06:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 4,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHPHIL-26AUG21-B84.5",
+          "bars": 40,
+          "first": "2026-08-20T15:00:00.000Z",
+          "last": "2026-08-22T06:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 8,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHPHIL-26AUG25-B80.5",
+          "bars": 40,
+          "first": "2026-08-24T15:00:00.000Z",
+          "last": "2026-08-26T06:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 5,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHPHIL-26SEP15-B77.5",
+          "bars": 40,
+          "first": "2026-09-14T15:00:00.000Z",
+          "last": "2026-09-16T06:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHPHIL-26SEP15-B79.5",
+          "bars": 37,
+          "first": "2026-09-14T15:00:00.000Z",
+          "last": "2026-09-16T06:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 3,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTPHX-26AUG20-B107.5",
+          "bars": 42,
+          "first": "2026-08-19T15:00:00.000Z",
+          "last": "2026-08-21T08:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 8,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTPHX-26AUG20-T107",
+          "bars": 41,
+          "first": "2026-08-19T15:00:00.000Z",
+          "last": "2026-08-21T08:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 9,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTPHX-26AUG21-B110.5",
+          "bars": 41,
+          "first": "2026-08-20T15:00:00.000Z",
+          "last": "2026-08-22T08:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 5,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTPHX-26SEP10-B107.5",
+          "bars": 41,
+          "first": "2026-09-09T15:00:00.000Z",
+          "last": "2026-09-11T08:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 4,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTPHX-26SEP16-B91.5",
+          "bars": 42,
+          "first": "2026-09-15T15:00:00.000Z",
+          "last": "2026-09-17T10:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 5,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTPHX-26SEP16-B93.5",
+          "bars": 42,
+          "first": "2026-09-15T15:00:00.000Z",
+          "last": "2026-09-17T10:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 4,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTPHX-26SEP16-B95.5",
+          "bars": 43,
+          "first": "2026-09-15T15:00:00.000Z",
+          "last": "2026-09-17T10:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 8,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTPHX-26SEP16-T91",
+          "bars": 43,
+          "first": "2026-09-15T15:00:00.000Z",
+          "last": "2026-09-17T10:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 4,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTPHX-26SEP17-B91.5",
+          "bars": 40,
+          "first": "2026-09-16T15:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 7,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTPHX-26SEP17-T91",
+          "bars": 39,
+          "first": "2026-09-16T15:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 3,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTSEA-26AUG17-B77.5",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTSEA-26AUG17-B79.5",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTSEA-26AUG21-B79.5",
+          "bars": 41,
+          "first": "2026-08-20T15:00:00.000Z",
+          "last": "2026-08-22T09:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 9,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTSEA-26AUG21-B81.5",
+          "bars": 43,
+          "first": "2026-08-20T15:00:00.000Z",
+          "last": "2026-08-22T09:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 4,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTSEA-26AUG28-B71.5",
+          "bars": 43,
+          "first": "2026-08-27T15:00:00.000Z",
+          "last": "2026-08-29T09:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 9,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTSEA-26SEP03-B67.5",
+          "bars": 41,
+          "first": "2026-09-02T15:00:00.000Z",
+          "last": "2026-09-04T09:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 3,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTSEA-26SEP15-B65.5",
+          "bars": 43,
+          "first": "2026-09-14T15:00:00.000Z",
+          "last": "2026-09-16T09:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTSEA-26SEP16-B70.5",
+          "bars": 43,
+          "first": "2026-09-15T15:00:00.000Z",
+          "last": "2026-09-17T10:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 4,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTSEA-26SEP16-B72.5",
+          "bars": 43,
+          "first": "2026-09-15T15:00:00.000Z",
+          "last": "2026-09-17T10:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 4,
+          "trims": 0
+        },
+        {
+          "ticker": "KXHIGHTSEA-26SEP17-B72.5",
+          "bars": 39,
+          "first": "2026-09-16T15:00:00.000Z",
+          "last": "2026-09-18T05:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 9,
+          "trims": 0
+        },
+        {
           "ticker": "KXINXY-26DEC31H1600-B8100",
           "bars": 336,
           "first": "2026-09-02T00:00:00.000Z",
@@ -2608,6 +4602,78 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "trims": 4
         },
         {
+          "ticker": "KXMLBGAME-26SEP131920SDSF-SF",
+          "bars": 67,
+          "first": "2026-09-11T00:00:00.000Z",
+          "last": "2026-09-14T03:00:00.000Z",
+          "gapCount": 6,
+          "noTradePeriods": 24,
+          "trims": 0
+        },
+        {
+          "ticker": "KXMLBGAME-26SEP142140MIAAZ-AZ",
+          "bars": 67,
+          "first": "2026-09-12T02:00:00.000Z",
+          "last": "2026-09-15T05:00:00.000Z",
+          "gapCount": 6,
+          "noTradePeriods": 29,
+          "trims": 0
+        },
+        {
+          "ticker": "KXMLBGAME-26SEP152140MIAAZ-AZ",
+          "bars": 76,
+          "first": "2026-09-13T02:00:00.000Z",
+          "last": "2026-09-16T06:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 35,
+          "trims": 0
+        },
+        {
+          "ticker": "KXMLBGAME-26SEP152140MIAAZ-MIA",
+          "bars": 65,
+          "first": "2026-09-13T02:00:00.000Z",
+          "last": "2026-09-16T06:00:00.000Z",
+          "gapCount": 6,
+          "noTradePeriods": 27,
+          "trims": 0
+        },
+        {
+          "ticker": "KXMLBGAME-26SEP161340NYYMIN-NYY",
+          "bars": 69,
+          "first": "2026-09-13T18:00:00.000Z",
+          "last": "2026-09-16T22:00:00.000Z",
+          "gapCount": 6,
+          "noTradePeriods": 22,
+          "trims": 0
+        },
+        {
+          "ticker": "KXMLBGAME-26SEP161840LADCIN-LAD",
+          "bars": 73,
+          "first": "2026-09-13T23:00:00.000Z",
+          "last": "2026-09-17T02:00:00.000Z",
+          "gapCount": 3,
+          "noTradePeriods": 12,
+          "trims": 0
+        },
+        {
+          "ticker": "KXMLBGAME-26SEP172138MINLAA-LAA",
+          "bars": 69,
+          "first": "2026-09-15T02:00:00.000Z",
+          "last": "2026-09-18T05:00:00.000Z",
+          "gapCount": 4,
+          "noTradePeriods": 36,
+          "trims": 0
+        },
+        {
+          "ticker": "KXMLBGAME-26SEP172138MINLAA-MIN",
+          "bars": 69,
+          "first": "2026-09-15T02:00:00.000Z",
+          "last": "2026-09-18T05:00:00.000Z",
+          "gapCount": 4,
+          "noTradePeriods": 34,
+          "trims": 0
+        },
+        {
           "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
           "bars": 336,
           "first": "2026-08-21T20:00:00.000Z",
@@ -2615,12 +4681,354 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
           "gapCount": 98,
           "noTradePeriods": 273,
           "trims": 3
+        },
+        {
+          "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
+          "bars": 200,
+          "first": "2026-09-09T16:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 3,
+          "noTradePeriods": 91,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
+          "bars": 200,
+          "first": "2026-09-09T19:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 4,
+          "noTradePeriods": 128,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
+          "bars": 200,
+          "first": "2026-09-09T03:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 14,
+          "noTradePeriods": 139,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
+          "bars": 200,
+          "first": "2026-09-09T17:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 5,
+          "noTradePeriods": 125,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNBAGAME-26OCT20PHINYK-NYK",
+          "bars": 200,
+          "first": "2026-09-09T19:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 3,
+          "noTradePeriods": 79,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
+          "bars": 200,
+          "first": "2026-09-09T22:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 78,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+          "bars": 111,
+          "first": "2026-09-12T20:00:00.000Z",
+          "last": "2026-09-18T05:00:00.000Z",
+          "gapCount": 15,
+          "noTradePeriods": 97,
+          "trims": 0
+        },
+        {
+          "ticker": "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+          "bars": 71,
+          "first": "2026-09-13T02:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 25,
+          "noTradePeriods": 55,
+          "trims": 0
+        },
+        {
+          "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
+          "bars": 49,
+          "first": "2026-09-13T02:00:00.000Z",
+          "last": "2026-09-16T00:00:00.000Z",
+          "gapCount": 18,
+          "noTradePeriods": 42,
+          "trims": 0
+        },
+        {
+          "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+          "bars": 125,
+          "first": "2026-09-12T20:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 5,
+          "noTradePeriods": 80,
+          "trims": 0
+        },
+        {
+          "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+          "bars": 121,
+          "first": "2026-09-12T20:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 6,
+          "noTradePeriods": 105,
+          "trims": 0
+        },
+        {
+          "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
+          "bars": 129,
+          "first": "2026-09-12T20:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 68,
+          "trims": 0
+        },
+        {
+          "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+          "bars": 94,
+          "first": "2026-09-12T20:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 20,
+          "noTradePeriods": 81,
+          "trims": 0
+        },
+        {
+          "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
+          "bars": 124,
+          "first": "2026-09-12T20:00:00.000Z",
+          "last": "2026-09-18T06:00:00.000Z",
+          "gapCount": 4,
+          "noTradePeriods": 75,
+          "trims": 0
+        },
+        {
+          "ticker": "KXNFLGAME-26SEP09NESEA-NE",
+          "bars": 200,
+          "first": "2026-09-01T20:00:00.000Z",
+          "last": "2026-09-10T04:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 1,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNFLGAME-26SEP09NESEA-SEA",
+          "bars": 200,
+          "first": "2026-09-01T20:00:00.000Z",
+          "last": "2026-09-10T04:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 1,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNFLGAME-26SEP10SFLAR-LAR",
+          "bars": 200,
+          "first": "2026-09-02T19:00:00.000Z",
+          "last": "2026-09-11T04:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 2,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNFLGAME-26SEP10SFLAR-SF",
+          "bars": 200,
+          "first": "2026-09-02T19:00:00.000Z",
+          "last": "2026-09-11T04:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 2,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNFLGAME-26SEP13DALNYG-DAL",
+          "bars": 200,
+          "first": "2026-09-05T20:00:00.000Z",
+          "last": "2026-09-14T04:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 1,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNFLGAME-26SEP14DENKC-DEN",
+          "bars": 200,
+          "first": "2026-09-06T20:00:00.000Z",
+          "last": "2026-09-15T04:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 1,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNFLGAME-26SEP14DENKC-KC",
+          "bars": 200,
+          "first": "2026-09-06T20:00:00.000Z",
+          "last": "2026-09-15T04:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 4,
+          "trims": 1
+        },
+        {
+          "ticker": "KXNFLGAME-26SEP17DETBUF-DET",
+          "bars": 200,
+          "first": "2026-09-09T19:00:00.000Z",
+          "last": "2026-09-18T04:00:00.000Z",
+          "gapCount": 2,
+          "noTradePeriods": 10,
+          "trims": 1
+        },
+        {
+          "ticker": "KXUFCFIGHT-26AUG15JOHDA-JOH",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXUFCFIGHT-26AUG22HERROD-HER",
+          "bars": 93,
+          "first": "2026-08-19T07:00:00.000Z",
+          "last": "2026-08-23T04:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 3,
+          "trims": 0
+        },
+        {
+          "ticker": "KXUFCFIGHT-26AUG22HERROD-ROD",
+          "bars": 93,
+          "first": "2026-08-19T07:00:00.000Z",
+          "last": "2026-08-23T04:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 2,
+          "trims": 0
+        },
+        {
+          "ticker": "KXUFCFIGHT-26SEP05HOOPAR-HOO",
+          "bars": 161,
+          "first": "2026-08-30T05:00:00.000Z",
+          "last": "2026-09-05T22:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXUFCFIGHT-26SEP12FIOGRA-GRA",
+          "bars": 101,
+          "first": "2026-09-08T18:00:00.000Z",
+          "last": "2026-09-12T23:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXUFCFIGHT-26SEP12MCMRAH-MCM",
+          "bars": 102,
+          "first": "2026-09-08T18:00:00.000Z",
+          "last": "2026-09-13T00:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXUFCFIGHT-26SEP12MORMORA-MOR",
+          "bars": 102,
+          "first": "2026-09-08T18:00:00.000Z",
+          "last": "2026-09-13T00:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 7,
+          "trims": 0
+        },
+        {
+          "ticker": "KXUFCFIGHT-26SEP12SILDEL-DEL",
+          "bars": 103,
+          "first": "2026-09-08T18:00:00.000Z",
+          "last": "2026-09-13T01:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 3,
+          "trims": 0
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG06LAMIN-LA",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG06LVIND-IND",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG06LVIND-LV",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG10CHISEA-CHI",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG14DALIND-IND",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG16INDATL-IND",
+          "bars": 0,
+          "first": null,
+          "last": null,
+          "gapCount": 0,
+          "noTradePeriods": 0,
+          "trims": 0
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG20INDDAL-IND",
+          "bars": 44,
+          "first": "2026-08-19T07:00:00.000Z",
+          "last": "2026-08-21T03:00:00.000Z",
+          "gapCount": 1,
+          "noTradePeriods": 1,
+          "trims": 0
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG24GSMIN-MIN",
+          "bars": 75,
+          "first": "2026-08-22T01:00:00.000Z",
+          "last": "2026-08-25T03:00:00.000Z",
+          "gapCount": 0,
+          "noTradePeriods": 6,
+          "trims": 0
         }
       ]
     }
   }
 }
-✓ src/accumulated-history.js — 30 market(s), 7218 bar(s), 1501.7 KB
+✓ src/accumulated-history.js — 30 market(s), 7218 bar(s), 3191.7 KB
 ✓ src/forecast-data.js — 1 location(s), 2 snapshot(s), 5.4 KB
     KXBTCY-27JAN0100-B47500: 205 bar(s) + market object
     KXBTCY-27JAN0100-B52500: 205 bar(s) + market object
@@ -2652,8 +5060,8 @@ Suggested ingest blocks (paste into data/history/_ingest-request.json):
     KXNASDAQ100Y-26DEC31H1600-B32750: 248 bar(s) + market object
     KXNASDAQ100Y-26DEC31H1600-T19000: 265 bar(s) + market object
     KXNASDAQ100Y-26DEC31H1600-T33000: 264 bar(s) + market object
-    intraday 1m: 10 market(s), 160 shipped bar(s) (cap 400/market) from data/history/intraday/1m
-    intraday 60m: 52 market(s), 5614 shipped bar(s) (cap 400/market) from data/history/intraday/60m
+    intraday 1m: 34 market(s), 544 shipped bar(s) (cap 400/market) from data/history/intraday/1m
+    intraday 60m: 194 market(s), 16724 shipped bar(s) (cap 400/market) from data/history/intraday/60m
 Verifying 6/30 stored 1440-minute market(s) against https://external-api.kalshi.com/trade-api/v2
 seed=20260918 windows/market=2 bars/window=60
 
@@ -2671,21 +5079,45 @@ seed=20260918 windows/market=2 bars/window=60
 ✓ KXINXY-26DEC31H1600-B6900 2026-04-06 → 2026-06-04: MATCH (60/60 bars identical)
 
 720/720 bars identical across 12 window(s) · 0 window(s) not matching → data/reports/store-verification.json
-Verifying 4/52 stored 60-minute market(s) against https://external-api.kalshi.com/trade-api/v2
+Verifying 4/178 stored 60-minute market(s) against https://external-api.kalshi.com/trade-api/v2
 seed=20260918 windows/market=2 bars/window=24
 
-✓ KXBTCY-27JAN0100-B77500 2026-09-04 → 2026-09-05: MATCH (24/24 bars identical)
-✓ KXBTCY-27JAN0100-B77500 2026-09-10 → 2026-09-11: MATCH (24/24 bars identical)
-✓ KXHIGHNY-26SEP03-B83.5 2026-09-02 → 2026-09-03: MATCH (24/24 bars identical)
-✓ KXHIGHNY-26SEP03-B83.5 2026-09-02 → 2026-09-03: MATCH (24/24 bars identical)
-✓ KXBTCY-27JAN0100-B62500 2026-08-31 → 2026-09-01: MATCH (24/24 bars identical)
-✓ KXBTCY-27JAN0100-B62500 2026-09-08 → 2026-09-09: MATCH (24/24 bars identical)
-✓ KXBTCY-27JAN0100-B47500 2026-09-01 → 2026-09-02: MATCH (24/24 bars identical)
-✓ KXBTCY-27JAN0100-B47500 2026-09-09 → 2026-09-10: MATCH (24/24 bars identical)
+✓ KXCPIYOY-26AUG-T3.3 2026-09-03 → 2026-09-04: MATCH (24/24 bars identical)
+✓ KXCPIYOY-26AUG-T3.3 2026-09-06 → 2026-09-07: MATCH (24/24 bars identical)
+✓ KXBTCY-27JAN0100-B87500 2026-09-03 → 2026-09-04: MATCH (24/24 bars identical)
+✓ KXBTCY-27JAN0100-B87500 2026-09-10 → 2026-09-11: MATCH (24/24 bars identical)
+✓ KXHIGHNY-26SEP09-T84 2026-09-08 → 2026-09-09: MATCH (24/24 bars identical)
+✓ KXHIGHNY-26SEP09-T84 2026-09-08 → 2026-09-09: MATCH (24/24 bars identical)
+✓ KXHIGHTPHX-26SEP10-B107.5 2026-09-09 → 2026-09-10: MATCH (24/24 bars identical)
+✓ KXHIGHTPHX-26SEP10-B107.5 2026-09-09 → 2026-09-10: MATCH (24/24 bars identical)
 
 192/192 bars identical across 8 window(s) · 0 window(s) not matching → data/reports/store-verification.json
 
-Settlement status @ 2026-09-18T06:33:10.265Z (source: LIVE)
+Settlement status @ 2026-09-18T06:42:43.892Z (source: LIVE)
+  KXBTC15M-26SEP171600-00
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXBTC15M-26SEP172015-15
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXBTC15M-26SEP172115-15
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXBTC15M-26SEP172215-15
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXBTC15M-26SEP172330-30
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXBTC15M-26SEP180030-30
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXBTC15M-26SEP180115-15
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXBTC15M-26SEP180130-30
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
   KXBTCY-27JAN0100-B47500
      status=active result="" → UNRESOLVED
      status=active: the market has not reached a final result
@@ -2716,6 +5148,78 @@ Settlement status @ 2026-09-18T06:33:10.265Z (source: LIVE)
   KXBTCY-27JAN0100-T149999.99
      status=active result="" → UNRESOLVED
      status=active: the market has not reached a final result
+  KXCPIYOY-26AUG-T3.3
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXCPIYOY-26AUG-T3.4
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXCPIYOY-26JUL-T3.3
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXCPIYOY-26JUL-T3.4
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXCPIYOY-26JUN-T3.7
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXCPIYOY-26JUN-T3.8
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXCPIYOY-26JUN-T3.9
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXCPIYOY-26JUN-T4.0
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXETH15M-26SEP171600-00
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXETH15M-26SEP171745-45
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXETH15M-26SEP172130-30
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXETH15M-26SEP172200-00
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXETH15M-26SEP172300-00
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXETH15M-26SEP172330-30
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXETH15M-26SEP180115-15
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXETH15M-26SEP180145-45
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXFEDDECISION-26JUL-C25
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXFEDDECISION-26JUL-H0
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXFEDDECISION-26JUL-H25
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXFEDDECISION-26JUL-H26
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXFEDDECISION-26SEP-C25
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXFEDDECISION-26SEP-H0
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXFEDDECISION-26SEP-H25
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXFEDDECISION-26SEP-H26
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
   KXGOLD15M-26SEP162030-30
      status=finalized result="no" → SETTLED (NO)
      status=finalized, result=NO
@@ -2746,6 +5250,156 @@ Settlement status @ 2026-09-18T06:33:10.265Z (source: LIVE)
   KXGOLD15M-26SEP180145-45
      status=finalized result="yes" → SETTLED (YES)
      status=finalized, result=YES
+  KXHIGHAUS-26AUG22-B104.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHAUS-26AUG23-B104.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHAUS-26AUG23-B106.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHAUS-26AUG25-B101.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHAUS-26SEP04-T93
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHAUS-26SEP08-B100.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHAUS-26SEP09-B98.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHAUS-26SEP11-B100.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHAUS-26SEP11-B98.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHAUS-26SEP12-B99.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHCHI-26AUG17-T78
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHCHI-26AUG27-B78.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHCHI-26AUG29-B80.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHCHI-26AUG31-B91.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHCHI-26SEP03-B90.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHCHI-26SEP04-B93.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHCHI-26SEP04-T89
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHCHI-26SEP05-T83
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHCHI-26SEP14-T72
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHCHI-26SEP15-B82.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHDEN-26AUG17-B91.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHDEN-26AUG17-T92
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHDEN-26AUG31-B84.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHDEN-26SEP06-B89.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHDEN-26SEP12-B80.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHDEN-26SEP12-T80
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHDEN-26SEP15-B70.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHDEN-26SEP15-B72.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHDEN-26SEP16-B81.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHDEN-26SEP17-T82
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXHIGHLAX-26AUG18-T82
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHLAX-26AUG26-T89
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHLAX-26AUG27-T89
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHLAX-26AUG28-T89
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHLAX-26SEP03-B76.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHLAX-26SEP08-T89
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHLAX-26SEP14-T82
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHLAX-26SEP15-B81.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHLAX-26SEP15-T82
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHLAX-26SEP16-T80
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHMIA-26AUG18-B97.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHMIA-26AUG21-B92.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHMIA-26AUG21-B94.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHMIA-26AUG24-B90.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHMIA-26AUG25-B90.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHMIA-26SEP09-B87.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHMIA-26SEP09-B89.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHMIA-26SEP13-B89.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHMIA-26SEP14-B88.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHMIA-26SEP17-T84
+     status=closed result="" → UNRESOLVED
+     status=closed: the market has not reached a final result
   KXHIGHNY-26AUG18-B87.5
      status=finalized result="no" → SETTLED (NO)
      status=finalized, result=NO
@@ -2866,6 +5520,96 @@ Settlement status @ 2026-09-18T06:33:10.265Z (source: LIVE)
   KXHIGHNY-26SEP17-B82.5
      status=closed result="" → UNRESOLVED
      status=closed: the market has not reached a final result
+  KXHIGHPHIL-26AUG17-B87.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHPHIL-26AUG17-B89.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHPHIL-26AUG18-B86.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHPHIL-26AUG20-T80
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHPHIL-26AUG20-T87
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHPHIL-26AUG21-B82.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHPHIL-26AUG21-B84.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHPHIL-26AUG25-B80.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHPHIL-26SEP15-B77.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHPHIL-26SEP15-B79.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHTPHX-26AUG20-B107.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTPHX-26AUG20-T107
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHTPHX-26AUG21-B110.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTPHX-26SEP10-B107.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTPHX-26SEP16-B91.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTPHX-26SEP16-B93.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTPHX-26SEP16-B95.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHTPHX-26SEP16-T91
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTPHX-26SEP17-B91.5
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXHIGHTPHX-26SEP17-T91
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXHIGHTSEA-26AUG17-B77.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTSEA-26AUG17-B79.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHTSEA-26AUG21-B79.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTSEA-26AUG21-B81.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHTSEA-26AUG28-B71.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTSEA-26SEP03-B67.5
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXHIGHTSEA-26SEP15-B65.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTSEA-26SEP16-B70.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTSEA-26SEP16-B72.5
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXHIGHTSEA-26SEP17-B72.5
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
   KXINXY-26DEC31H1600-B6900
      status=active result="" → UNRESOLVED
      status=active: the market has not reached a final result
@@ -2893,31 +5637,34 @@ Settlement status @ 2026-09-18T06:33:10.265Z (source: LIVE)
   KXINXY-26DEC31H1600-B8900
      status=active result="" → UNRESOLVED
      status=active: the market has not reached a final result
-  KXINXY-26DEC31H1600-T4000
-     status=active result="" → UNRESOLVED
-     status=active: the market has not reached a final result
-  KXNASDAQ100Y-26DEC31H1600-B25750
-     status=active result="" → UNRESOLVED
-     status=active: the market has not reached a final result
+  KXMLBGAME-26SEP131920SDSF-SF
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXMLBGAME-26SEP142140MIAAZ-AZ
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXMLBGAME-26SEP152140MIAAZ-AZ
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXMLBGAME-26SEP152140MIAAZ-MIA
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXMLBGAME-26SEP161340NYYMIN-NYY
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXMLBGAME-26SEP161840LADCIN-LAD
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXMLBGAME-26SEP172138MINLAA-LAA
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXMLBGAME-26SEP172138MINLAA-MIN
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
   KXNASDAQ100Y-26DEC31H1600-B29750
      status=active result="" → UNRESOLVED
      status=active: the market has not reached a final result
   KXNASDAQ100Y-26DEC31H1600-B30250
-     status=active result="" → UNRESOLVED
-     status=active: the market has not reached a final result
-  KXNASDAQ100Y-26DEC31H1600-B30750
-     status=active result="" → UNRESOLVED
-     status=active: the market has not reached a final result
-  KXNASDAQ100Y-26DEC31H1600-B31250
-     status=active result="" → UNRESOLVED
-     status=active: the market has not reached a final result
-  KXNASDAQ100Y-26DEC31H1600-B31750
-     status=active result="" → UNRESOLVED
-     status=active: the market has not reached a final result
-  KXNASDAQ100Y-26DEC31H1600-B32250
-     status=active result="" → UNRESOLVED
-     status=active: the market has not reached a final result
-  KXNASDAQ100Y-26DEC31H1600-B32750
      status=active result="" → UNRESOLVED
      status=active: the market has not reached a final result
   KXNASDAQ100Y-26DEC31H1600-T19000
@@ -2926,5 +5673,138 @@ Settlement status @ 2026-09-18T06:33:10.265Z (source: LIVE)
   KXNASDAQ100Y-26DEC31H1600-T33000
      status=active result="" → UNRESOLVED
      status=active: the market has not reached a final result
+  KXNBAGAME-26OCT20BOSDET-BOS
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNBAGAME-26OCT20BOSDET-DET
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNBAGAME-26OCT20OKCSAS-OKC
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNBAGAME-26OCT20OKCSAS-SAS
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNBAGAME-26OCT20PHINYK-NYK
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNBAGAME-26OCT20PHINYK-PHI
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNCAAFGAME-26SEP26CARKFSU-FSU
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNCAAFGAME-26SEP26CMUMIA-CMU
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNCAAFGAME-26SEP26CMUMIA-MIA
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNCAAFGAME-26SEP26MOSUSMU-SMU
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNCAAFGAME-26SEP26OREUSC-ORE
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNCAAFGAME-26SEP26SHSUTTU-TTU
+     status=active result="" → UNRESOLVED
+     status=active: the market has not reached a final result
+  KXNFLGAME-26SEP09NESEA-NE
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXNFLGAME-26SEP09NESEA-SEA
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXNFLGAME-26SEP10SFLAR-LAR
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXNFLGAME-26SEP13DALNYG-DAL
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXNFLGAME-26SEP14DENKC-DEN
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXNFLGAME-26SEP14DENKC-KC
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXNFLGAME-26SEP17DETBUF-DET
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXSOL15M-26SEP170145-45
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXSOL15M-26SEP171945-45
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXSOL15M-26SEP172230-30
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXSOL15M-26SEP172345-45
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXSOL15M-26SEP180015-15
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXSOL15M-26SEP180115-15
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXSOL15M-26SEP180130-30
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXSOL15M-26SEP180145-45
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXUFCFIGHT-26AUG15JOHDA-JOH
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXUFCFIGHT-26AUG22HERROD-HER
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXUFCFIGHT-26AUG22HERROD-ROD
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXUFCFIGHT-26SEP05HOOPAR-HOO
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXUFCFIGHT-26SEP12FIOGRA-GRA
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXUFCFIGHT-26SEP12SILDEL-DEL
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXWNBAGAME-26AUG06LAMIN-LA
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXWNBAGAME-26AUG06LVIND-IND
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXWNBAGAME-26AUG06LVIND-LV
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXWNBAGAME-26AUG14DALIND-IND
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXWNBAGAME-26AUG16INDATL-IND
+     status=finalized result="yes" → SETTLED (YES)
+     status=finalized, result=YES
+  KXWNBAGAME-26AUG20INDDAL-IND
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  KXWNBAGAME-26AUG24GSMIN-MIN
+     status=finalized result="no" → SETTLED (NO)
+     status=finalized, result=NO
+  ✗ KXINXY-26DEC31H1600-T4000: http_429
+  ✗ KXNASDAQ100Y-26DEC31H1600-B25750: http_429
+  ✗ KXNASDAQ100Y-26DEC31H1600-B30750: http_429
+  ✗ KXNASDAQ100Y-26DEC31H1600-B31250: http_429
+  ✗ KXNASDAQ100Y-26DEC31H1600-B31750: http_429
+  ✗ KXNASDAQ100Y-26DEC31H1600-B32250: http_429
+  ✗ KXNASDAQ100Y-26DEC31H1600-B32750: http_429
+  ✗ KXNCAAFGAME-26SEP26ILLOSU-OSU: http_429
+  ✗ KXNCAAFGAME-26SEP26TXAMLSU-LSU: http_429
+  ✗ KXNFLGAME-26SEP10SFLAR-SF: http_429
+  ✗ KXUFCFIGHT-26SEP12MCMRAH-MCM: http_429
+  ✗ KXUFCFIGHT-26SEP12MORMORA-MOR: http_429
+  ✗ KXWNBAGAME-26AUG10CHISEA-CHI: http_429
 
 Wrote data/settlements.json

@@ -6513,6 +6513,122 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-18T06:36:36.777Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30750/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142916.41"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.2300",
+              "35.23"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5600",
+              "176.14"
+            ],
+            [
+              "0.5900",
+              "156.68"
+            ],
+            [
+              "0.7000",
+              "2134.07"
+            ],
+            [
+              "0.7100",
+              "3.80"
+            ],
+            [
+              "0.7300",
+              "313.35"
+            ],
+            [
+              "0.7600",
+              "362.06"
+            ],
+            [
+              "0.8000",
+              "198.00"
+            ],
+            [
+              "0.8100",
+              "3.80"
+            ],
+            [
+              "0.8700",
+              "4000.00"
+            ],
+            [
+              "0.8800",
+              "4000.00"
+            ],
+            [
+              "0.8900",
+              "4001.00"
+            ],
+            [
+              "0.9000",
+              "4407.10"
+            ],
+            [
+              "0.9100",
+              "4275.73"
+            ],
+            [
+              "0.9200",
+              "964.56"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3591.46"
+            ],
+            [
+              "0.0200",
+              "2307.66"
+            ],
+            [
+              "0.0300",
+              "10723.88"
+            ],
+            [
+              "0.0400",
+              "413.70"
+            ],
+            [
+              "0.0500",
+              "477.00"
+            ],
+            [
+              "0.0600",
+              "630.49"
+            ],
+            [
+              "0.0700",
+              "329.34"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6566,8 +6682,8 @@
     "yes_sub_title": "30,500 to 30,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30750",
-  "market_captured_at": "2026-09-18T06:30:55.588Z",
+  "market_captured_at": "2026-09-18T06:36:36.237Z",
   "status": "active",
-  "last_ingested_at": "2026-09-18T06:30:56.150Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B30750/candlesticks?start_ts=1789704001&end_ts=1789713055&period_interval=1440"
+  "last_ingested_at": "2026-09-18T06:36:36.758Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B30750/candlesticks?start_ts=1789704001&end_ts=1789713396&period_interval=1440"
 }

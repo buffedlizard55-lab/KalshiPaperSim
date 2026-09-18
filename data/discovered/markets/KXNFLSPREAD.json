@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNFLSPREAD&limit=200",
-  "capturedAt": "2026-09-18T06:32:41.835Z",
+  "capturedAt": "2026-09-18T06:42:06.168Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },
@@ -95,7 +95,7 @@
    "status": "active",
    "result": "",
    "volume_fp": "132452.26",
-   "volume_24h_fp": "98177.53",
+   "volume_24h_fp": "98148.55",
    "open_interest_fp": "119346.44",
    "liquidity_dollars": "0.0000",
    "yes_bid_dollars": "0.4800",
