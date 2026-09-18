@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/ILC031",
       "relativeLocation": "Chicago, IL",
       "timeZone": "America/Chicago",
-      "resolvedAt": "2026-09-18T13:44:48.504Z",
+      "resolvedAt": "2026-09-18T17:06:49.920Z",
       "pointsUrl": "https://api.weather.gov/points/41.7868,-87.7522"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -168,6 +168,72 @@
           "startTime": "2026-09-18T08:00:00-05:00",
           "endTime": "2026-09-18T18:00:00-05:00",
           "probabilityOfPrecipitationPct": 3
+        },
+        {
+          "date": "2026-09-19",
+          "highF": 74,
+          "periodName": "Saturday",
+          "startTime": "2026-09-19T06:00:00-05:00",
+          "endTime": "2026-09-19T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 97
+        },
+        {
+          "date": "2026-09-20",
+          "highF": 69,
+          "periodName": "Sunday",
+          "startTime": "2026-09-20T06:00:00-05:00",
+          "endTime": "2026-09-20T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 91
+        },
+        {
+          "date": "2026-09-21",
+          "highF": 63,
+          "periodName": "Monday",
+          "startTime": "2026-09-21T06:00:00-05:00",
+          "endTime": "2026-09-21T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 62
+        },
+        {
+          "date": "2026-09-22",
+          "highF": 62,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-22T06:00:00-05:00",
+          "endTime": "2026-09-22T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 32
+        },
+        {
+          "date": "2026-09-23",
+          "highF": 64,
+          "periodName": "Wednesday",
+          "startTime": "2026-09-23T06:00:00-05:00",
+          "endTime": "2026-09-23T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 9
+        },
+        {
+          "date": "2026-09-24",
+          "highF": 67,
+          "periodName": "Thursday",
+          "startTime": "2026-09-24T06:00:00-05:00",
+          "endTime": "2026-09-24T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 6
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-18T17:06:49.920Z",
+      "points_url": "https://api.weather.gov/points/41.7868,-87.7522",
+      "forecast_url": "https://api.weather.gov/gridpoints/LOT/72,69/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-18T16:36:14+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-18",
+          "highF": 72,
+          "periodName": "Today",
+          "startTime": "2026-09-18T11:00:00-05:00",
+          "endTime": "2026-09-18T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 21
         },
         {
           "date": "2026-09-19",
