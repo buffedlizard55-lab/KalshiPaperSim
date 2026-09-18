@@ -309,6 +309,20 @@ export class ReplayEngine {
     this.depthMode = options.depthMode === 'captured' ? 'captured' : 'modelled';
     this.depthProfiles = options.depthProfiles || null;
     this.depthProfileScale = options.depthProfileScale ?? 1;
+
+    /**
+     * POINT-IN-TIME EXTERNAL SIGNALS (2026-09-18, roadmap item #3).
+     *
+     * An optional `signalProvider(ticker, market, tsSeconds)` returns whatever
+     * VERIFIED external information was knowable at `tsSeconds` for a market —
+     * for now the NWS forecast snapshot behind a weather bracket — or null when
+     * nothing was captured yet. The provider is the ONLY way a strategy sees
+     * external data: it must implement the point-in-time rule itself (see
+     * src/forecast-store.js, which refuses any snapshot captured after the
+     * decision time). ctx.signal carries the result; a strategy that gets null
+     * abstains.
+     */
+    this.signalProvider = typeof options.signalProvider === 'function' ? options.signalProvider : null;
     /** Which markets in this run actually traded on a captured ladder. */
     this.depthCoverage = this.markets.map((m) => ({
       ticker: m.ticker,
@@ -440,6 +454,9 @@ export class ReplayEngine {
         market: redactMarketForReplay(market),
         ticker: t,
         candle,
+        // Point-in-time external signal for THIS market at THIS bar's end, or
+        // null when nothing verified was captured by then (see signalProvider).
+        signal: this.signalProvider ? this.signalProvider(t, market, candle.endTs) : null,
         history: history[t],
         historyAll: history,
         books,

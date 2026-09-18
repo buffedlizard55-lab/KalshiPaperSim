@@ -26,6 +26,10 @@ import {
 import {
   RESEARCH_SOURCES, RESEARCH_META, RESEARCH_GAPS, researchStats, recreatedStrategyMap, RESEARCH_CAPTURE_METHODS
 } from './research-sources.js';
+import {
+  SIGNAL_SOURCES, signalSourceStats, SIGNAL_SOURCE_STATUS
+} from './signal-sources.js';
+import { forecastCoverage, hasForecastArchive } from './forecast-store.js';
 
 /* ------------------------------------------------------------------ *
  * State
@@ -1102,6 +1106,8 @@ async function renderResearch() {
   ]);
   state.reports = { sweep, liquidity, depth, flights };
   renderResearchStats(sweep);
+  renderSignalSources();
+  renderForecastStatus();
   renderResearchSweep(sweep);
   renderResearchLiquidity(liquidity);
   renderResearchLedger();
@@ -1125,6 +1131,72 @@ function renderResearchStats(sweep) {
     </div>
     <div class="notice">${esc(RESEARCH_META.note)}</div>
   `);
+}
+
+/**
+ * The MasterSite signal-source review: every project the owner asked about,
+ * what verified signal it could provide, which Kalshi market class it maps to,
+ * and whether THIS repository can honestly test it today. Built from
+ * src/signal-sources.js — the same ledger the tests validate — so the page can
+ * never show a project this repo has not reviewed with links.
+ */
+function renderSignalSources() {
+  const stats = signalSourceStats();
+  const cards = SIGNAL_SOURCES.map((src) => {
+    const statusPill =
+      src.status === SIGNAL_SOURCE_STATUS.LIVE_SIGNAL ? '<span class="pill pill-live">live signal</span>'
+      : src.status === SIGNAL_SOURCE_STATUS.CANDIDATE ? '<span class="pill pill-muted">candidate</span>'
+      : src.status === SIGNAL_SOURCE_STATUS.NOT_A_SIGNAL ? '<span class="pill pill-sim">not a market signal</span>'
+      : '<span class="pill pill-review">not found — flagged</span>';
+    const urls = Object.entries(src.urls || {})
+      .map(([label, u]) => `<a class="source-link" href="${esc(u)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`)
+      .join(' ');
+    return `
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;gap:.6rem;align-items:flex-start">
+          <strong>${esc(src.id)} · ${esc(src.name)}</strong>${statusPill}
+        </div>
+        <div class="muted">requested as “${esc(src.requested)}”</div>
+        <div>${esc(src.whatItIs)}</div>
+        ${src.verifiableClaim ? `<div><strong>What it verifies:</strong> ${esc(src.verifiableClaim)}</div>` : ''}
+        ${src.kalshiMarketClass ? `<div><strong>Kalshi market class:</strong> ${esc(src.kalshiMarketClass)}</div>` : ''}
+        ${src.howTested ? `<div><strong>How it is tested here:</strong> ${esc(src.howTested)}</div>` : ''}
+        ${src.blockedBy ? `<div><strong>Blocked by:</strong> ${esc(src.blockedBy)}</div>` : ''}
+        ${src.flagged ? `<div class="badge badge-review">${esc(src.flagged)}</div>` : ''}
+        ${(src.strategyUsername || []).length ? `<div class="muted" style="margin-top:.4rem">Traded here by ${src.strategyUsername.map((u) => `<code>${esc(u)}</code>`).join(', ')}</div>` : ''}
+        <div style="margin-top:.5rem">${urls}</div>
+      </div>`;
+  }).join('');
+  setHTML('#signalSources', `
+    <h3>MasterSite signal sources — reviewed ${new Date().toISOString().slice(0, 10)}</h3>
+    <p class="lede">Every project the owner asked about (“CEO, weather, insider trades, TheLeap, NFL Injury, NBA Injury, FDA Decisions, NCAA Scoreboard, NFL scoreboard, MLB Scoreboard, Sports Pred, Gold, PinePilot”),
+    reviewed against one question: could it supply a verified, point-in-time signal a Kalshi strategy here could trade on?
+    ${stats.testableHere} of ${stats.requested} are testable with the data this repository holds; ${stats.liveSignal} already feed a live strategy; ${stats.notFound} requested name was not found and is flagged.</p>
+    <div class="card-grid">${cards}</div>`);
+}
+
+/** Point-in-time forecast archive status: how much signal exists, over what window. */
+function renderForecastStatus() {
+  const cov = forecastCoverage();
+  const present = hasForecastArchive();
+  const cards = cov.length
+    ? cov.map((c) => `
+      <div class="card">
+        <strong>${esc(c.city || c.key)} → <code>${esc(c.series || '')}</code></strong>
+        <div class="stat-row"><span>Point-in-time snapshots</span><b>${c.snapshots}</b></div>
+        <div class="stat-row"><span>First capture</span><b>${esc(c.firstCapturedAt || '—')}</b></div>
+        <div class="stat-row"><span>Last capture</span><b>${esc(c.lastCapturedAt || '—')}</b></div>
+        <div class="stat-row"><span>Distinct forecast dates</span><b>${c.distinctDates}</b></div>
+      </div>`).join('')
+    : `<div class="card"><strong>Forecast archive: EMPTY</strong><div class="muted">No snapshot has been captured yet — the archive job (weather-signals workflow) has not run.
+      Until it has, <code>ForecastEdge_Weather</code> abstains on every bar by design (no point-in-time forecast = no trade) and stays unranked with that reason.
+      This is the honest state: a forecast strategy must never trade on a forecast it did not have at decision time.</div></div>`;
+  setHTML('#forecastStatus', `
+    <h3>Point-in-time forecast archive (official NWS, api.weather.gov)</h3>
+    <p class="lede">Archived several times a day by <code>scripts/archive-forecasts.mjs</code>. Each snapshot is what the official NWS point forecast said at
+    capture time — <code>ForecastEdge_Weather</code> may only read a snapshot captured at or before each decision bar, so the signal can never look ahead.
+    Basis note: KXHIGHNY settles on The Weather Company (CLINYC) per the market rules; the signal is the NWS forecast for the same point (mismatch flagged in IRREGULARITIES.md).</p>
+    <div class="card-grid">${cards}</div>`);
 }
 
 function renderResearchSweep(sweep) {

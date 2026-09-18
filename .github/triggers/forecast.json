@@ -1,0 +1,7 @@
+{
+  "_README": "Commit a change to this file to request an immediate forecast-archive run (.github/workflows/weather-signals.yml). The workflow also runs five times a day on a schedule; this trigger exists for on-demand captures (and because the automation token cannot create workflow_dispatch events). Bump `request` so the push is a real change.",
+  "request": 1,
+  "enabled": true,
+  "requested_at": "2026-09-18T04:10:00.000Z",
+  "requested_by": "arena session 01a0b254 — first capture of the point-in-time NWS archive for KXHIGHNY (NYC Central Park), roadmap item #3"
+}

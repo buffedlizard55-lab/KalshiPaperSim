@@ -285,7 +285,7 @@ export function intradayBlockArgs(block, baseArgs = {}) {
  */
 export function intradayBlocksFromRequest(request, baseArgs = {}) {
   const raw = request?.intraday;
-  if (!raw) return [];
+  if (!raw || raw.enabled === false) return [];
   const blocks = Array.isArray(raw) ? raw : Array.isArray(raw.blocks) && raw.blocks.length ? raw.blocks : [raw];
   const out = [];
   for (const b of blocks) {

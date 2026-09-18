@@ -32,6 +32,64 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = path.join(ROOT, 'data', 'history');
 const OUT_FILE = path.join(ROOT, 'src', 'accumulated-history.js');
 const MANIFEST = path.join(DATA_DIR, '_manifest.json');
+const FORECAST_DIR = path.join(ROOT, 'data', 'forecasts');
+const FORECAST_OUT_FILE = path.join(ROOT, 'src', 'forecast-data.js');
+/** Browser cap for forecast snapshots per location (newest kept). */
+const MAX_BROWSER_FORECAST_SNAPSHOTS = 240;
+
+/**
+ * Compile data/forecasts/*.json (the point-in-time NWS archive grown by
+ * scripts/archive-forecasts.mjs) into src/forecast-data.js, so the static
+ * browser build queries the SAME point-in-time archive the Node tools read.
+ * Snapshots are copied verbatim, newest-only up to the browser cap, and the
+ * header says exactly what was dropped. An absent archive still writes a
+ * `present: false` module so imports can never fail — and a strategy that
+ * needs the archive abstains rather than guessing.
+ */
+function writeForecastModule() {
+  const locations = {};
+  if (fs.existsSync(FORECAST_DIR)) {
+    for (const file of fs.readdirSync(FORECAST_DIR).sort()) {
+      if (!file.endsWith('.json') || file.startsWith('_')) continue;
+      const store = readJsonSafe(path.join(FORECAST_DIR, file));
+      if (!store || typeof store !== 'object') continue;
+      const key = (store.location && store.location.key) || file.replace(/\.json$/, '');
+      const snaps = Array.isArray(store.snapshots) ? store.snapshots : [];
+      const dropped = Math.max(0, snaps.length - MAX_BROWSER_FORECAST_SNAPSHOTS);
+      const shipped = dropped > 0 ? snaps.slice(-MAX_BROWSER_FORECAST_SNAPSHOTS) : snaps;
+      locations[key] = {
+        location: store.location || null,
+        what: store.what || null,
+        snapshotCount: snaps.length,
+        shippedSnapshots: shipped.length,
+        droppedOldestSnapshots: dropped,
+        snapshots: shipped
+      };
+    }
+  }
+  const present = Object.keys(locations).length > 0;
+  const body = `/**
+ * KalshiPaperSim — Point-in-Time Forecast Archive (GENERATED — do not edit)
+ * =====================================================================
+ * Compiled by scripts/generate-history-module.mjs from data/forecasts/*.json,
+ * which scripts/archive-forecasts.mjs grows from the official NWS API
+ * (api.weather.gov) on the weather-signals workflow schedule.
+ *
+ * Each snapshot is VERBATIM what api.weather.gov returned at captured_at —
+ * the point-in-time record a weather strategy is allowed to read. Read it
+ * only through src/forecast-store.js, which refuses any snapshot captured
+ * AFTER the decision time (the anti-lookahead rule).
+ *
+ * ${present ? `${Object.keys(locations).length} location(s) · ${Object.values(locations).reduce((a, l) => a + l.shippedSnapshots, 0)} shipped snapshot(s)` : 'NO ARCHIVE YET — no snapshots have been captured; every forecast-dependent strategy abstains until the archive exists.'} · generated ${new Date().toISOString()}
+ */
+
+export const FORECAST_DATA = ${JSON.stringify({ generatedAt: new Date().toISOString(), present, locations }, null, 1)};
+`;
+  fs.mkdirSync(path.dirname(FORECAST_OUT_FILE), { recursive: true });
+  fs.writeFileSync(FORECAST_OUT_FILE, body);
+  const kb = (fs.statSync(FORECAST_OUT_FILE).size / 1024).toFixed(1);
+  console.log(`✓ src/forecast-data.js — ${Object.keys(locations).length} location(s), ${Object.values(locations).reduce((a, l) => a + l.shippedSnapshots, 0)} snapshot(s), ${kb} KB${present ? '' : ' (no archive yet — forecast strategies abstain)'}`);
+}
 
 function readJsonSafe(p) {
   try {
@@ -334,6 +392,7 @@ export function getIntradayMarket(ticker, period = 60) {
   fs.writeFileSync(OUT_FILE, body);
   const kb = (fs.statSync(OUT_FILE).size / 1024).toFixed(1);
   console.log(`✓ src/accumulated-history.js — ${tickers.length} market(s), ${totalBars} bar(s), ${kb} KB`);
+  writeForecastModule();
   for (const t of tickers) {
     const m = markets[t];
     console.log(
