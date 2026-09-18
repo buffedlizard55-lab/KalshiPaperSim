@@ -9042,11 +9042,11 @@
     "no_bid_dollars": "0.8730",
     "no_sub_title": "80,000 to 84,999.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "281769.54",
+    "open_interest_fp": "281765.84",
     "open_time": "2026-02-25T23:25:29Z",
     "previous_price_dollars": "0.1210",
-    "previous_yes_ask_dollars": "0.1220",
-    "previous_yes_bid_dollars": "0.1210",
+    "previous_yes_ask_dollars": "0.1210",
+    "previous_yes_bid_dollars": "0.1200",
     "price_level_structure": "deci_cent",
     "price_ranges": [
       {
@@ -9064,17 +9064,17 @@
     "ticker": "KXBTCY-27JAN0100-B82500",
     "title": "BTC price  on Jan 1, 2027?",
     "updated_time": "2026-04-09T10:30:27.083437Z",
-    "volume_24h_fp": "5237.10",
-    "volume_fp": "2287978.16",
+    "volume_24h_fp": "3574.12",
+    "volume_fp": "2287997.18",
     "yes_ask_dollars": "0.1270",
-    "yes_ask_size_fp": "88.53",
+    "yes_ask_size_fp": "89.14",
     "yes_bid_dollars": "0.1260",
-    "yes_bid_size_fp": "468.76",
+    "yes_bid_size_fp": "1087.30",
     "yes_sub_title": "80,000 to 84,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B82500",
-  "market_captured_at": "2026-09-18T05:49:15.821Z",
+  "market_captured_at": "2026-09-18T11:17:38.390Z",
   "status": "active",
-  "last_ingested_at": "2026-09-18T05:49:16.398Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B82500/candlesticks?start_ts=1789617601&end_ts=1789710556&period_interval=1440"
+  "last_ingested_at": "2026-09-18T11:17:38.928Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B82500/candlesticks?start_ts=1789704001&end_ts=1789730258&period_interval=1440"
 }
