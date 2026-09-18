@@ -1,6 +1,6 @@
 {
   "_README": "Commit a change to this file to request an ingest run (.github/workflows/ingest-now.yml). It runs on a GitHub-hosted runner, which - unlike the build sandbox - can reach external-api.kalshi.com. Every field is passed straight to scripts/ingest-history.mjs. Bump `request` so the push is a real change: GitHub only starts the workflow when this file actually differs. NEW (2026-09-18): the optional `discover` block runs scripts/discover-universe.mjs first \u2014 it records every real series with its real fee configuration (closes IRREGULARITY #36) and every real market of every series whose ticker/title/tags match the keywords below, which is how the sports / FDA / weather-city universe gets verified instead of assumed.",
-  "request": 7,
+  "request": 8,
   "enabled": true,
   "days": 30,
   "full_backfill": false,
@@ -68,12 +68,24 @@
       "KXETH15M",
       "KXSOL15M",
       "KXFEDDECISION",
-      "KXCPIYOY"
+      "KXCPIYOY",
+      "KXFDAAPPROVALPSYCHEDELIC",
+      "KXFDAAPPROVE",
+      "KXFDAANNOUNCE",
+      "KXFDARETATRUTIDE",
+      "KXFDAAPPROVALDATELLY",
+      "KXFDAAPPROVALDATECMPS",
+      "KXAAPLCEOCHANGE",
+      "KXTESLACEOCHANGE",
+      "KXOPENAICEOCHANGE",
+      "KXJPMCEOCHANGE",
+      "KXBOEINGCEOCHANGE",
+      "KXGOOGLECEOCHANGE"
     ],
-    "max_series": 110,
+    "max_series": 130,
     "top_markets": 6,
     "min_volume": 0
   },
-  "requested_at": "2026-09-18T07:05:00.000Z",
-  "requested_by": "arena session 01a0b330 \u2014 second pass after the discovery run answered WHICH series exist: (1) ingest the highest-volume weather cities (KXHIGHLAX/CHI/MIA/AUS/DEN/PHIL/TPHX/TSEA), sports game lines (KXNFLGAME/KXMLBGAME/KXNBAGAME/KXNHLGAME/KXNCAAFGAME/KXWNBAGAME/KXUFCFIGHT), 15-minute crypto (KXBTC15M/KXETH15M/KXSOL15M) and macro (KXFEDDECISION/KXCPIYOY) as settled 60-minute and 1-minute stores; (2) refresh the daily index/BTC bars. Every series here was returned by GET /series on the runner, with its real fee_multiplier recorded in data/discovered/series-fees.json."
+  "requested_at": "2026-09-18T07:40:00.000Z",
+  "requested_by": "arena session 01a0b330 \u2014 request 8: adds the two families the project brief names that no strategy could previously trade for lack of real bars: FDA drug-approval series (KXFDAAPPROVALPSYCHEDELIC 387,164 lifetime contracts, KXFDAANNOUNCE 100,001, KXFDAAPPROVE 74,690, KXFDARETATRUTIDE 38,989, KXFDAAPPROVALDATELLY 23,650, KXFDAAPPROVALDATECMPS 19,567) and CEO-exit series (KXAAPLCEOCHANGE 587,863, KXTESLACEOCHANGE 512,304, KXOPENAICEOCHANGE 223,770, KXBOEINGCEOCHANGE 151,313, KXJPMCEOCHANGE 119,462, KXGOOGLECEOCHANGE 88,680) \u2014 all volumes as reported by GET /series?include_volume=true in data/discovered/series-fees.json. They are ingested as 1440-minute blocks (the daily store the daily flight replays) with status=all so any finalized market carries the exchange's own result. The discover.series list below is extended with the same tickers so their fee configuration and market rules are captured in the same run."
 }
