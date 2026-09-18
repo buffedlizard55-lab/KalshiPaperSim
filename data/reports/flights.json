@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T00:54:02.551Z",
+  "generatedAt": "2026-09-18T01:04:30.714Z",
   "note": "Two flights, two windows. DAILY = period_interval 1440 over the full stored history. HOURLY = period_interval 60 over the curated intraday store. They are reported separately and are never merged into one ranking, because a strategy that needs intraday bars cannot be judged on daily ones.",
   "intradayCoverage": {
     "present": true,

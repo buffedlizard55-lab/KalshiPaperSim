@@ -39,10 +39,13 @@ What is **real**: market objects, series fee configs, order-book levels, **7,189
 candlesticks across 30 markets (2025-12-24 → 2026-09-17, 268 daily periods)**, every bar's traded
 volume, exchange status, the historical cutoff, the fee formula and its published table.
 
-What is **modelled** (and labelled): depth *behind* the quoted touch during a replay (Kalshi's
-candlesticks carry no depth — which is why fills are additionally bounded by the volume that really
-traded), the market-maker feed that moves prices when no API credentials are configured, and the
-one-year calendar clock.
+What is **modelled** (and labelled): the market-maker feed that moves prices when no API credentials
+are configured, and the one-year calendar clock. Depth *behind* the quoted touch is no longer a model
+for the tracked universe: `src/captured-depth.js` holds a real ladder captured from
+`GET /markets/{ticker}/orderbook` for every one of the 30 markets, and the default run fills against
+those ladders re-anchored to each bar's real quoted touch (switch to *Modelled ladder* in the
+leaderboard controls to see the comparison — it moves results by up to ~13pp). Fills are *additionally*
+bounded by the volume that really traded, and any market without a capture says so per market.
 
 ---
 
@@ -368,10 +371,11 @@ Two honesty notes, both visible in the app:
    will be from candlesticks alone: a market that opened last week cannot have a year of bars. The
    one-year competition calendar is therefore still a clock, and the oldest series in the universe
    sets how much of it can be measured.
-2. **Depth behind the touch is modelled.** Candlesticks carry no order book, so replay fills walk a
-   ladder anchored on each bar's real bid/ask with modelled size behind it. Real fills would differ.
-   That is exactly why fills are *also* bounded by the bar's real traded volume (Irregularity #29) —
-   but the price you get within that volume is still a model.
+2. **Depth behind the touch is captured, but re-anchored — not point-in-time.** The ladder is real
+   (captured from the official orderbook endpoint), yet it is a single snapshot per market that is
+   *re-anchored* to each bar's real quoted touch. A point-in-time ladder for every period would need
+   streaming captures. Fills are also bounded by the bar's real traded volume (Irregularity #29), so
+   the remaining exposure is the shape of the book between snapshots, not an invented one.
 3. **No settlement outcome yet.** Every tracked market is still `status: active, result: ""`
    (re-polled live on 2026-09-17), so positions are marked at the last real quote. `POST /api/settle`
    and the sensitivity sweep's YES/NO rows are labelled **hypothetical scenarios**. T33000 and T19000
@@ -402,9 +406,11 @@ Two honesty notes, both visible in the app:
 4. **Real settlement, end to end.** `scripts/track-settlements.mjs` now polls live successfully
    (everything is still `active`). The `$1/$0` booking path needs one market that has actually
    finalized — 2026-12-31 is the first date that can provide one.
-5. **Replace modelled depth with captured depth.** The ingest already stores order-book snapshots
-   (`--with-books`). The next step is to replay against those real books instead of a modelled
-   ladder, at least for the periods where a snapshot exists.
+5. **Stream the captured ladders.** Done for one snapshot per market (30/30 now replay against real
+   captured depth, and it is the default). Still open: capture repeatedly during the trading day so
+   the touch *and* the ladder behind it are point-in-time, then re-run the depth-comparison report
+   (`node scripts/run-reports.mjs` → `depth-comparison.json`) to measure how much of the ~13pp
+   sensitivity disappears.
 6. **Headless browser test.** `test/ui-smoke.mjs` renders against a DOM stub. A Playwright run would
    also verify layout, the WebSocket feed and the Pages build; the browser download is not reachable
    from this sandbox (nor is `cdn.playwright.dev`).

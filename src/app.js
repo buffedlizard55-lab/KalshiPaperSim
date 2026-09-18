@@ -49,7 +49,7 @@ const state = {
   feed: null,
   feedStatus: null,
   tape: [],
-  options: { seed: 20260917, settleAtEnd: false, regime: 'baseline' },
+  options: { seed: 20260917, settleAtEnd: false, regime: 'baseline', depthMode: 'captured' },
   researchLoaded: false,
   reports: {}
 };
@@ -422,7 +422,16 @@ function renderLeaderboard() {
     <strong>${esc(c.id)}</strong> · ${esc(c.horizonPeriods)} real daily periods across
     ${esc((prov.markets || []).length)} market(s) · seed <code>${esc(c.seed)}</code> ·
     starting capital ${esc(money(c.initialCapital, 0))} · generated ${esc(new Date(c.generatedAt || Date.now()).toISOString().slice(0, 19).replace('T', ' '))}Z.
-    ${sourcePill('VERIFIED_SNAPSHOT')} <span class="pill pill-muted" title="${esc(prov.depthModelNote || '')}">depth behind touch: SIMULATED</span>
+    ${(() => {
+      // Depth provenance, counted from the run itself: how many markets actually
+      // traded against a real captured ladder vs the fallback synthetic one.
+      const rows = Array.isArray(c.depthCoverage) ? c.depthCoverage : [];
+      const captured = rows.filter((r) => /captured/.test(String(r.depthModel))).length;
+      if (c.depthMode !== 'captured') {
+        return `<span class="pill pill-sim" title="${esc(c.depthModeNote || prov.depthModelNote || '')}">depth behind touch: MODELLED (comparison — not the published default)</span>`;
+      }
+      return `<span class="pill pill-live" title="${esc(c.depthModeNote || '')}">depth behind touch: CAPTURED REAL LADDERS (${captured}/${rows.length} markets)</span>`;
+    })()}
     ${c.maxFillFractionOfPeriodVolume === null
       ? '<span class="pill pill-sim" title="Fills are NOT bounded by that period\'s real traded volume. This reproduces the artefact recorded as Irregularity #29 — returns no real order book would have paid.">VOLUME BOUND: OFF — unrealistic</span>'
       : `<span class="pill pill-live" title="No order may fill more than this share of the contracts that really traded in that daily bar.">fills &le; ${esc(Math.round((c.maxFillFractionOfPeriodVolume ?? 0.1) * 100))}% of each bar\'s real volume</span>`}
@@ -1318,11 +1327,16 @@ function wireGlobalEvents() {
     state.options.seed = Number($('#ctlSeed').value) || 20260917;
     state.options.settleAtEnd = $('#ctlSettle').checked;
     state.options.regime = $('#ctlRegime').value;
+    state.options.depthMode = $('#ctlDepth').value === 'modelled' ? 'modelled' : 'captured';
     if (state.options.settleAtEnd) {
       toast('Settlement outcomes for these contracts are HYPOTHETICAL — they had not settled at capture time (Irregularity #14).', 'warn', 7000);
     }
     await loadCompetition();
-    toast('Competition recomputed from the real captured candles.', 'ok');
+    toast(
+      `Competition recomputed from the real captured candles — depth: ${state.options.depthMode === 'captured' ? 'captured ladders' : 'MODELLED (comparison only)'}.`,
+      state.options.depthMode === 'captured' ? 'ok' : 'warn',
+      6000
+    );
   });
 
   on('#ctlRegime', 'change', async () => {
