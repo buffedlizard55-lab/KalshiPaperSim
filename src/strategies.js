@@ -101,7 +101,20 @@ const BASE = {
   riskManagement: 'NONE (by mandate)',
   /** Universe filter: which verified series this strategy trades. */
   universe: null, // null == all markets in the replay universe
-  resultProvenance: 'COMPUTED_AT_RUNTIME_BY_ReplayEngine — never hard-coded'
+  resultProvenance: 'COMPUTED_AT_RUNTIME_BY_ReplayEngine — never hard-coded',
+  /**
+   * WHEN THE DESIGN EXISTED. This is what makes a forward test mean anything:
+   * bars before this date are IN-SAMPLE (the design could have been informed by
+   * them), bars after it are FORWARD (they did not exist when the design was
+   * written). src/forward-test.js splits on the LATEST designedAt in the roster.
+   *
+   * For a recreated public strategy the date is the day its source was captured
+   * and read (recorded in src/verification-data.js STRATEGY_SOURCES with the
+   * URL), not the day the article was published — the conservative choice.
+   */
+  designedAt: '2026-09-17',
+  designSource: 'Original design in this repository (no external strategy source)',
+  designSourceUrl: null
 };
 
 export const STRATEGIES = [
@@ -560,6 +573,9 @@ export const STRATEGIES = [
     tagline: 'Systematically fades the 5c–15c longshot band and buys heavy favorites at 85c+ — the two bands the bias literature says are mispriced in opposite directions.',
     sizingPct: 1.0,
     maxParticipation: 4,
+    designedAt: '2026-09-17',
+    designSource: 'Recreated from published favorite-longshot-bias (FLB) material (third-party sources — see STRATEGY_SOURCES)',
+    designSourceUrl: 'https://laikalabs.ai/prediction-markets/kalshi-prediction-market-trading-strategies',
     sourceNote:
       'Recreated from published favorite-longshot-bias (FLB) material: laikalabs.ai ("Filter Kalshi markets for contracts priced between 5c and 15c ... place limit sell orders on overpriced Yes contracts"; "Buy Heavy Favorites ... 85c to 95c"), ' +
       'the Polymarket FLB study (longshots lose 6.3c per dollar when contracts are weighted equally but GAIN 4.1c when grouped by parent event — the sign is aggregation-dependent) and the Grokipedia FLB overview ' +
@@ -632,6 +648,9 @@ export const STRATEGIES = [
     tagline: 'Waits for a violent intraperiod dump, then rests a three-rung maker bid ladder under the panic low and exits with a resting offer 5c higher.',
     sizingPct: 0.6,
     maxParticipation: 3,
+    designedAt: '2026-09-17',
+    designSource: 'Recreated from a public r/PredictionsMarkets build log (third-party source — see STRATEGY_SOURCES)',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/',
     sourceNote:
       'Recreated from a r/PredictionsMarkets build log ("rest limit buys below the pre-shock price at the historical P50/P75/P90 drop depths ... exit with a resting limit sell 4-6c higher ... ' +
       'keeping both entry and exit on resting limit orders completely sidesteps the fee drag") and the OddsHopper Kalshi playbook ("rest limit orders instead of paying the spread", "take profit by selling your position before settlement"). ' +

@@ -155,6 +155,7 @@ function parseArgs(argv) {
     else if (k === 'max-markets') args.maxMarkets = Number(v);
     else if (k === 'period' || k === 'period-interval') args.period = Number(v);
     else if (k === 'max-bars') args.maxBars = Number(v);
+    else if (k === 'trim-only') args.trimOnly = v !== 'false';
     else if (k === 'request') args.request = v !== 'false';
     else if (k === 'with-market') args.withMarket = v !== 'false';
     else if (k === 'with-books' || k === 'books') args.withBooks = v !== 'false';
@@ -194,6 +195,16 @@ export function intradayArgsFromRequest(request, baseArgs = {}) {
   if (!VALID_PERIODS.includes(period)) {
     throw new Error(`intraday.period must be one of ${VALID_PERIODS.join(', ')} (minutes), got ${block.period}`);
   }
+  // IMPORTANT: the daily pass and the intraday pass must not fight over the
+  // same universe. The workflow passes --series/--tickers for the DAILY run; if
+  // the intraday block did not ask for a universe of its own, the intraday pass
+  // would silently ingest every open market of those series (observed: 117
+  // markets x 24 bars/day instead of the 6 requested). So:
+  //   • block.tickers  → use exactly those;
+  //   • block.series   → discover within those series only;
+  //   • neither        → inherit the CLI universe ONLY when inherit_cli_universe
+  //                      is explicitly true; otherwise request nothing new.
+  const hasOwnUniverse = (Array.isArray(block.tickers) && block.tickers.length > 0) || (Array.isArray(block.series) && block.series.length > 0);
   return {
     ...baseArgs,
     period,
@@ -205,8 +216,16 @@ export function intradayArgsFromRequest(request, baseArgs = {}) {
     maxBars: Number(block.max_bars ?? 2000),
     minVolume: Number(block.min_volume ?? 0),
     maxMarkets: Number(block.max_markets ?? 0),
-    series: Array.isArray(block.series) && block.series.length ? block.series : baseArgs.series,
-    tickers: Array.isArray(block.tickers) && block.tickers.length ? block.tickers : baseArgs.tickers,
+    series: Array.isArray(block.series) && block.series.length ? block.series : block.inherit_cli_universe === true ? baseArgs.series : null,
+    tickers: Array.isArray(block.tickers) && block.tickers.length
+      ? block.tickers
+      : block.inherit_cli_universe === true
+        ? baseArgs.tickers
+        : hasOwnUniverse
+          ? null
+          : baseArgs.tickers,
+    // --trim-only must survive the request-file translation: it means "no network".
+    trimOnly: baseArgs.trimOnly === true,
     minIntervalMs: Number(block.min_interval_ms ?? baseArgs.minIntervalMs ?? 250)
   };
 }
@@ -509,6 +528,43 @@ async function discoverSeriesMarkets(seriesTicker, args) {
  */
 const WINDOW_DAYS = 180;
 
+/**
+ * --trim-only: apply --max-bars to the stored series WITHOUT any network access.
+ * Used to bound a store that a previous run made larger than intended; the trim
+ * ledger in each store records exactly which bars were dropped and why.
+ */
+/** Every ticker with a store file in a period's directory (offline). */
+function storeTickersIn(period) {
+  const dir = periodDir(period);
+  if (!fs.existsSync(dir)) return [];
+  const out = [];
+  for (const file of fs.readdirSync(dir).sort()) {
+    if (!file.endsWith('.json') || file.startsWith('_')) continue;
+    try {
+      const store = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
+      if (store && typeof store.ticker === 'string') out.push(store.ticker);
+    } catch {
+      console.error(`⚠ ${file}: unreadable — not trimmed, never guessed`);
+    }
+  }
+  return out;
+}
+
+async function trimOnly(ticker, args) {
+  const period = Number(args.period || 1440);
+  const store = readStore(ticker, period);
+  if (!store) return { ticker, period, skipped: 'no_store' };
+  const before = (store.candlesticks || []).length;
+  const trimmed = trimStore(store, args.maxBars);
+  if (trimmed.trimmed > 0) {
+    writeJson(storePath(ticker, period), trimmed.store);
+    console.log(`✓ ${ticker}: trimmed ${trimmed.trimmed} oldest ${period}-minute bar(s), kept ${(trimmed.store.candlesticks || []).length} (ledger entry added)`);
+  } else {
+    console.log(`• ${ticker}: ${before} bar(s), nothing to trim`);
+  }
+  return { ticker, period, before, added: 0, total: (trimmed.store.candlesticks || []).length, trimmed: trimmed.trimmed || 0, kept: (trimmed.store.candlesticks || []).length };
+}
+
 async function ingestMarket(ticker, args) {
   const period = Number(args.period || 1440);
   const windowDays = windowDaysFor(period);
@@ -711,6 +767,13 @@ async function main() {
     return code;
   }
 
+  if (args.trimOnly) {
+    // Offline: bound the requested period's whole store and stop. No HTTP at all.
+    const inStore = storeTickersIn(args.period);
+    console.log(`Trimming ${inStore.length} stored ${args.period}-minute series to --max-bars=${args.maxBars} (no network)`);
+    return runPass(inStore, { ...args, trimOnly: true });
+  }
+
   const dailyCode = await runPass(tickers, args);
   if (dailyCode !== 0) return dailyCode;
 
@@ -741,14 +804,21 @@ async function main() {
 /** One ingest pass (one period_interval) with its own directory and manifest. */
 async function runPass(tickers, args) {
   const period = Number(args.period || 1440);
+  if (Array.isArray(tickers) && tickers.length === 0 && !args.trimOnly) {
+    console.log('\n(no markets requested for this pass — nothing to do)');
+    return 0;
+  }
   const dir = periodDir(period);
   fs.mkdirSync(dir, { recursive: true });
-  console.log(`\n=== ${period === 1440 ? 'DAILY' : `${period}-MINUTE`} PASS — ${tickers.length} market(s) from ${BASE} → ${path.relative(ROOT, dir)}/ ===`);
+  console.log(
+    `\n=== ${period === 1440 ? 'DAILY' : `${period}-MINUTE`} ${args.trimOnly ? 'TRIM (offline)' : 'PASS'} — ` +
+      `${tickers.length} market(s) ${args.trimOnly ? '' : `from ${BASE} `}→ ${path.relative(ROOT, dir)}/ ===`
+  );
   const summary = [];
   let failures = 0;
 
   for (const ticker of tickers) {
-    const row = await ingestMarket(ticker, args);
+    const row = args.trimOnly ? await trimOnly(ticker, args) : await ingestMarket(ticker, args);
     summary.push(row);
     if (row.error && !row.added) {
       failures += 1;
@@ -758,7 +828,7 @@ async function runPass(tickers, args) {
       failures += 0;
       console.error(`⚠ ${ticker}: +${row.added} bar(s) stored, but ${row.error} (see store.fetchErrors)`);
     } else if (row.skipped) {
-      console.log(`• ${ticker}: ${row.skipped} (${money(row.total)} bar(s) stored)`);
+      console.log(`• ${ticker}: ${row.skipped} (${money(row.total ?? row.before ?? 0)} bar(s) stored)`);
     } else {
       console.log(
         `✓ ${ticker}: +${row.added} new bar(s), ${money(row.total)} total` +
