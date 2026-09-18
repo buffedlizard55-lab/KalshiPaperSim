@@ -1,0 +1,2145 @@
+{
+  "generatedAt": "2026-09-18T00:53:37.902Z",
+  "method": {
+    "splitTs": 1789689600,
+    "forwardStart": "2026-09-18T00:00:00.000Z",
+    "strictForwardBars": 0,
+    "strictForwardStart": null,
+    "strictForwardEnd": null,
+    "heldOutTs": 1782360000,
+    "heldOutStart": "2026-06-25T04:00:00.000Z",
+    "windowStart": "2025-12-24T05:00:00.000Z",
+    "windowEnd": "2026-09-17T04:00:00.000Z",
+    "rule": "STRICT FORWARD = bars strictly after max(designedAt), replayed on a fresh account forbidden to trade before that timestamp. HELD-OUT = a later real window, labelled as a robustness check because the designs were authored with knowledge of it.",
+    "minMeaningfulForwardBars": 20,
+    "strictForwardNote": "The strict forward window is EMPTY.",
+    "emptyForwardExplanation": "No real bar exists after 2026-09-18 yet: this build's stored window ends 2026-09-17. The daily ingest (scripts/ingest-history.mjs) appends one real day per run, so this window fills itself in from the first new bar onward. Reporting 0.00% here would be a fabricated result, so no forward number is shown until a bar exists.",
+    "depthMode": "captured",
+    "feeSchedule": "Kalshi quadratic schedule, effective 2026-07-07 (https://kalshi.com/docs/kalshi-fee-schedule.pdf)",
+    "volumeBound": "Each fill is capped at 10% of the bar's real traded volume (default) — no order may consume more liquidity than actually traded.",
+    "isLiveTrading": false,
+    "limitation": "Neither measurement is live trading. Both replay real stored bars; the strict forward window simply contains bars that did not exist when the design was written."
+  },
+  "totals": {
+    "strategies": 22,
+    "strictForwardMeasured": 0,
+    "heldOutMeasured": 20,
+    "bestStrictForward": null,
+    "bestHeldOut": {
+      "username": "PanicDip_ShockTiming",
+      "returnPct": 0.66
+    }
+  },
+  "rows": [
+    {
+      "username": "AlphaApex_Momentum",
+      "strategyId": "alpha_apex_momentum",
+      "title": "Maximum Convexity Momentum Chaser",
+      "category": "Convexity Momentum",
+      "designedAt": "2026-09-17",
+      "designSource": "Original design in this repository (no external strategy source)",
+      "designSourceUrl": null,
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 86733.17,
+        "returnPct": -13.27,
+        "totalTrades": 1879,
+        "winRate": 0,
+        "maxDrawdownPct": 36.47,
+        "feesPaid": 1645.33,
+        "unfilledContracts": 3883.96,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 1084170.82,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 1084170.82,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 86733.17,
+        "returnPct": -13.27
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 95718.58,
+        "returnPct": -4.28,
+        "totalTrades": 906,
+        "winRate": 0,
+        "maxDrawdownPct": 8.11,
+        "feesPaid": 776.98,
+        "unfilledContracts": 0,
+        "suppressedActions": 1486,
+        "depthMix": {
+          "contractsOnCapturedDepth": 347730.8,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 347730.8,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "GammaWhale_Squeeze",
+      "strategyId": "gamma_whale_squeeze",
+      "title": "High-Gamma Volume-Spike Breakout",
+      "category": "Gamma / Volume Shock",
+      "designedAt": "2026-09-17",
+      "designSource": "Original design in this repository (no external strategy source)",
+      "designSourceUrl": null,
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 72893.11,
+        "returnPct": -27.11,
+        "totalTrades": 540,
+        "winRate": 0,
+        "maxDrawdownPct": 32.9,
+        "feesPaid": 1918.69,
+        "unfilledContracts": 3883.96,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 583317.61,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 583317.61,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 72893.11,
+        "returnPct": -27.11
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 95756.21,
+        "returnPct": -4.24,
+        "totalTrades": 219,
+        "winRate": 0,
+        "maxDrawdownPct": 6.47,
+        "feesPaid": 555.23,
+        "unfilledContracts": 0,
+        "suppressedActions": 321,
+        "depthMix": {
+          "contractsOnCapturedDepth": 200560.62,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 200560.62,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "ContrarianKing_100x",
+      "strategyId": "contrarian_king_100x",
+      "title": "Deep-OTM Longshot Convexity Hunter",
+      "category": "Tail Convexity",
+      "designedAt": "2026-09-17",
+      "designSource": "Original design in this repository (no external strategy source)",
+      "designSourceUrl": null,
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 95657.95,
+        "returnPct": -4.34,
+        "totalTrades": 2579,
+        "winRate": 0,
+        "maxDrawdownPct": 32.88,
+        "feesPaid": 719.43,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 1328875.9,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 1328875.9,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 95657.95,
+        "returnPct": -4.34
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 100057.59,
+        "returnPct": 0.06,
+        "totalTrades": 1127,
+        "winRate": 0,
+        "maxDrawdownPct": 3.26,
+        "feesPaid": 271.43,
+        "unfilledContracts": 0,
+        "suppressedActions": 3013,
+        "depthMix": {
+          "contractsOnCapturedDepth": 234642.33,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 234642.33,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "YieldVulture_Arb",
+      "strategyId": "yield_vulture_arb",
+      "title": "Late-Stage High-Probability Sweep",
+      "category": "Expiry Harvest",
+      "designedAt": "2026-09-17",
+      "designSource": "Original design in this repository (no external strategy source)",
+      "designSourceUrl": null,
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 100000,
+        "returnPct": 0
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "FedPivotSniper",
+      "strategyId": "fed_pivot_sniper",
+      "title": "Macro Print Mean-Reversion Sniper",
+      "category": "Macro / Event",
+      "designedAt": "2026-09-17",
+      "designSource": "Original design in this repository (no external strategy source)",
+      "designSourceUrl": null,
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 99527.74,
+        "returnPct": -0.47,
+        "totalTrades": 872,
+        "winRate": 31.7,
+        "maxDrawdownPct": 0.65,
+        "feesPaid": 242.43,
+        "unfilledContracts": 2422.38,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 68266.8,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 68266.8,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 99527.74,
+        "returnPct": -0.47
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 99794.98,
+        "returnPct": -0.21,
+        "totalTrades": 272,
+        "winRate": 24.7,
+        "maxDrawdownPct": 0.21,
+        "feesPaid": 81.64,
+        "unfilledContracts": 0,
+        "suppressedActions": 236,
+        "depthMix": {
+          "contractsOnCapturedDepth": 23198.78,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 23198.78,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "VolatilityArb_MM",
+      "strategyId": "volatility_arb_mm",
+      "title": "Two-Sided Spread Harvester (Market Maker)",
+      "category": "Market Making",
+      "designedAt": "2026-09-17",
+      "designSource": "Original design in this repository (no external strategy source)",
+      "designSourceUrl": null,
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 109249.6,
+        "returnPct": 9.25,
+        "totalTrades": 4358,
+        "winRate": 64,
+        "maxDrawdownPct": 31.62,
+        "feesPaid": 641.51,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 2361555.58,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 2361555.58,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 109249.6,
+        "returnPct": 9.25
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 99506.49,
+        "returnPct": -0.49,
+        "totalTrades": 1517,
+        "winRate": 76.7,
+        "maxDrawdownPct": 10.65,
+        "feesPaid": 223.49,
+        "unfilledContracts": 0,
+        "suppressedActions": 4209,
+        "depthMix": {
+          "contractsOnCapturedDepth": 563214.79,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 563214.79,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "TrendRide_FullTilt",
+      "strategyId": "trend_ride_full_tilt",
+      "title": "Trend-Following Pyramider",
+      "category": "Trend / Pyramiding",
+      "designedAt": "2026-09-17",
+      "designSource": "Original design in this repository (no external strategy source)",
+      "designSourceUrl": null,
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 94523.57,
+        "returnPct": -5.48,
+        "totalTrades": 480,
+        "winRate": 0,
+        "maxDrawdownPct": 15.66,
+        "feesPaid": 608.25,
+        "unfilledContracts": 3883.96,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 412940.46,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 412940.46,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 94523.57,
+        "returnPct": -5.48
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 98221.07,
+        "returnPct": -1.78,
+        "totalTrades": 202,
+        "winRate": 0,
+        "maxDrawdownPct": 3.52,
+        "feesPaid": 176.72,
+        "unfilledContracts": 0,
+        "suppressedActions": 278,
+        "depthMix": {
+          "contractsOnCapturedDepth": 113577.91,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 113577.91,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "EventCatalyst_Max",
+      "strategyId": "event_catalyst_max",
+      "title": "Range-Breakout Catalyst Frontrunner",
+      "category": "Breakout / Catalyst",
+      "designedAt": "2026-09-17",
+      "designSource": "Original design in this repository (no external strategy source)",
+      "designSourceUrl": null,
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 95169.67,
+        "returnPct": -4.83,
+        "totalTrades": 687,
+        "winRate": 0,
+        "maxDrawdownPct": 13.6,
+        "feesPaid": 852.34,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 471308.1,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 471308.1,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 95169.67,
+        "returnPct": -4.83
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 96915.74,
+        "returnPct": -3.08,
+        "totalTrades": 266,
+        "winRate": 0,
+        "maxDrawdownPct": 5.16,
+        "feesPaid": 360.52,
+        "unfilledContracts": 0,
+        "suppressedActions": 421,
+        "depthMix": {
+          "contractsOnCapturedDepth": 171640.89,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 171640.89,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "ThetaHarvest_ShortOTM",
+      "strategyId": "theta_harvest_short_otm",
+      "title": "Deep-OTM Decay Harvester (buys NO)",
+      "category": "Theta / Short Convexity",
+      "designedAt": "2026-09-17",
+      "designSource": "Original design in this repository (no external strategy source)",
+      "designSourceUrl": null,
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 97469.4,
+        "returnPct": -2.53,
+        "totalTrades": 421,
+        "winRate": 0,
+        "maxDrawdownPct": 3.62,
+        "feesPaid": 123.67,
+        "unfilledContracts": 1473.41,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 105121.42,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 105121.42,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 97469.4,
+        "returnPct": -2.53
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 98079.37,
+        "returnPct": -1.92,
+        "totalTrades": 336,
+        "winRate": 0,
+        "maxDrawdownPct": 1.94,
+        "feesPaid": 88.98,
+        "unfilledContracts": 2007.86,
+        "suppressedActions": 2803,
+        "depthMix": {
+          "contractsOnCapturedDepth": 99424.7,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 99424.7,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "FeeArb_PremiumBuyer",
+      "strategyId": "fee_aware_premium_buyer",
+      "title": "Fee-Optimal Favourite Buyer",
+      "category": "Fee Structure / Favourite",
+      "designedAt": "2026-09-17",
+      "designSource": "Original design in this repository (no external strategy source)",
+      "designSourceUrl": null,
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 101857.67,
+        "returnPct": 1.86,
+        "totalTrades": 814,
+        "winRate": 0,
+        "maxDrawdownPct": 3.42,
+        "feesPaid": 587.19,
+        "unfilledContracts": 10921.11,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 109531.97,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 109531.97,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 101857.67,
+        "returnPct": 1.86
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 98833.49,
+        "returnPct": -1.17,
+        "totalTrades": 472,
+        "winRate": 0,
+        "maxDrawdownPct": 2.48,
+        "feesPaid": 199.74,
+        "unfilledContracts": 2616.08,
+        "suppressedActions": 4546,
+        "depthMix": {
+          "contractsOnCapturedDepth": 108065.92,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 108065.92,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "LongshotFader_FLB",
+      "strategyId": "longshot_fader_flb",
+      "title": "Favorite–Longshot Bias Fader",
+      "category": "Behavioral / Bias Harvest",
+      "designedAt": "2026-09-17",
+      "designSource": "Recreated from published favorite-longshot-bias (FLB) material (third-party sources — see RESEARCH_SOURCES in src/research-sources.js)",
+      "designSourceUrl": "https://laikalabs.ai/prediction-markets/kalshi-prediction-market-trading-strategies",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 99968.52,
+        "returnPct": -0.03,
+        "totalTrades": 29,
+        "winRate": 0,
+        "maxDrawdownPct": 0.06,
+        "feesPaid": 2.64,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 1237.77,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 1237.77,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 99968.52,
+        "returnPct": -0.03
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 99851.71,
+        "returnPct": -0.15,
+        "totalTrades": 27,
+        "winRate": 0,
+        "maxDrawdownPct": 0.29,
+        "feesPaid": 16.34,
+        "unfilledContracts": 1696.83,
+        "suppressedActions": 2781,
+        "depthMix": {
+          "contractsOnCapturedDepth": 5624.64,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 5624.64,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "PanicDip_ShockTiming",
+      "strategyId": "panic_dip_shock_timing",
+      "title": "Shock-Timing Panic-Dip Buyer (maker ladder)",
+      "category": "Shock / Mean Reversion (maker)",
+      "designedAt": "2026-09-17",
+      "designSource": "Recreated from a public r/PredictionsMarkets build log (third-party source — see RESEARCH_SOURCES in src/research-sources.js)",
+      "designSourceUrl": "https://www.reddit.com/r/PredictionsMarkets/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 101820.82,
+        "returnPct": 1.82,
+        "totalTrades": 961,
+        "winRate": 100,
+        "maxDrawdownPct": 0.81,
+        "feesPaid": 83.28,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 106748.78,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 106748.78,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 101820.82,
+        "returnPct": 1.82
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 100662.9,
+        "returnPct": 0.66,
+        "totalTrades": 293,
+        "winRate": 100,
+        "maxDrawdownPct": 0.25,
+        "feesPaid": 20.38,
+        "unfilledContracts": 0,
+        "suppressedActions": 866,
+        "depthMix": {
+          "contractsOnCapturedDepth": 42720.96,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 42720.96,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "PanicFade_HourlyVol",
+      "strategyId": "panic_fade_hourly_vol",
+      "title": "Hourly Panic-Fade Volatility Reversion",
+      "category": "Intraday Mean Reversion",
+      "designedAt": "2026-09-18",
+      "designSource": "Recreated from a public r/PredictionsMarkets backtest write-up (panic_fade archetype)",
+      "designSourceUrl": "https://www.reddit.com/r/PredictionsMarkets/comments/1szxy8h/backtested_5000_strategies_on_kalshi_15min_btc/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 98980.05,
+        "returnPct": -1.02,
+        "totalTrades": 188,
+        "winRate": 100,
+        "maxDrawdownPct": 1.6,
+        "feesPaid": 207.26,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 41537.36,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 41537.36,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 98980.05,
+        "returnPct": -1.02
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 100219.2,
+        "returnPct": 0.22,
+        "totalTrades": 56,
+        "winRate": 100,
+        "maxDrawdownPct": 0.16,
+        "feesPaid": 41.25,
+        "unfilledContracts": 0,
+        "suppressedActions": 58,
+        "depthMix": {
+          "contractsOnCapturedDepth": 13219.52,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 13219.52,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "BookWall_BidLadder",
+      "strategyId": "book_wall_bid_ladder",
+      "title": "Order-Book Wall Maker Ladder",
+      "category": "Liquidity Provision",
+      "designedAt": "2026-09-18",
+      "designSource": "Recreated from a public r/Kalshi thread on what winning traders actually do",
+      "designSourceUrl": "https://www.reddit.com/r/Kalshi/comments/1qd4ubf/people_who_actually_win_money_on_kalshi_whats/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 101362.13,
+        "returnPct": 1.36,
+        "totalTrades": 1083,
+        "winRate": 100,
+        "maxDrawdownPct": 6.42,
+        "feesPaid": 38.82,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 414110.5,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 414110.5,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 101362.13,
+        "returnPct": 1.36
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 99697.63,
+        "returnPct": -0.3,
+        "totalTrades": 417,
+        "winRate": 100,
+        "maxDrawdownPct": 1.66,
+        "feesPaid": 33.49,
+        "unfilledContracts": 0,
+        "suppressedActions": 5926,
+        "depthMix": {
+          "contractsOnCapturedDepth": 92977.82,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 92977.82,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "AdjacentStrike_Ladder",
+      "strategyId": "adjacent_strike_ladder",
+      "title": "Adjacent-Strike Cheap Bracket Ladder",
+      "category": "Bracket Laddering",
+      "designedAt": "2026-09-18",
+      "designSource": "Recreated from a public r/PredictionsMarkets thread on temperature-market laddering",
+      "designSourceUrl": "https://www.reddit.com/r/PredictionsMarkets/comments/1s4n4wp/what_are_the_best_strategies_youve_seen_or_used/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 106564.85,
+        "returnPct": 6.56,
+        "totalTrades": 1464,
+        "winRate": 0,
+        "maxDrawdownPct": 21.05,
+        "feesPaid": 242.88,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 746226.05,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 746226.05,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 106564.85,
+        "returnPct": 6.56
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 100131.31,
+        "returnPct": 0.13,
+        "totalTrades": 529,
+        "winRate": 0,
+        "maxDrawdownPct": 1.44,
+        "feesPaid": 76.83,
+        "unfilledContracts": 0,
+        "suppressedActions": 1385,
+        "depthMix": {
+          "contractsOnCapturedDepth": 132077.84,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 132077.84,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "ShockTiming_StopOut",
+      "strategyId": "shock_timing_stopout",
+      "title": "Shock-Timing with the Source's Stop-Out",
+      "category": "Shock / Mean Reversion (stopped)",
+      "designedAt": "2026-09-18",
+      "designSource": "Recreated from the public out-of-sample replication of a \"shock-timing\" bot on r/PredictionsMarkets",
+      "designSourceUrl": "https://www.reddit.com/r/PredictionsMarkets/comments/1u3rn8s/i_built_a_39_kalshi_trading_bot_to_exploit_world/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 97342.29,
+        "returnPct": -2.66,
+        "totalTrades": 594,
+        "winRate": 31.7,
+        "maxDrawdownPct": 4.78,
+        "feesPaid": 801.02,
+        "unfilledContracts": 5771.87,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 205228.95,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 205228.95,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 97342.29,
+        "returnPct": -2.66
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 100399.09,
+        "returnPct": 0.4,
+        "totalTrades": 193,
+        "winRate": 66.7,
+        "maxDrawdownPct": 0.65,
+        "feesPaid": 111.45,
+        "unfilledContracts": 0,
+        "suppressedActions": 353,
+        "depthMix": {
+          "contractsOnCapturedDepth": 76763.93,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 76763.93,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "PanicFade_T4_S100",
+      "strategyId": "panic_fade_t4_s100",
+      "title": "Panic Fade — the source's own best configuration",
+      "category": "Intraday Mean Reversion",
+      "designedAt": "2026-09-18",
+      "designSource": "Recreated from R01 — a public 4,904-strategy sweep on Kalshi 15-minute BTC markets",
+      "designSourceUrl": "https://www.reddit.com/r/PredictionsMarkets/comments/1szxy8h/backtested_5000_strategies_on_kalshi_15min_btc/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 97355.62,
+        "returnPct": -2.64,
+        "totalTrades": 88,
+        "winRate": 0,
+        "maxDrawdownPct": 3.3,
+        "feesPaid": 225.31,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 28951.08,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 28951.08,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 97355.62,
+        "returnPct": -2.64
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 99850.79,
+        "returnPct": -0.15,
+        "totalTrades": 29,
+        "winRate": 0,
+        "maxDrawdownPct": 0.38,
+        "feesPaid": 37.42,
+        "unfilledContracts": 0,
+        "suppressedActions": 59,
+        "depthMix": {
+          "contractsOnCapturedDepth": 7607.68,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 7607.68,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "PanicFadeDeep_T6_TP6",
+      "strategyId": "panic_fade_deep_t6_tp6",
+      "title": "Deep Panic Fade with a 6-cent Take-Profit",
+      "category": "Intraday Mean Reversion",
+      "designedAt": "2026-09-18",
+      "designSource": "Promoted from this repository's own family sweep (a recreation of R01's archetype)",
+      "designSourceUrl": "https://www.reddit.com/r/PredictionsMarkets/comments/1szxy8h/backtested_5000_strategies_on_kalshi_15min_btc/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 98818.25,
+        "returnPct": -1.18,
+        "totalTrades": 75,
+        "winRate": 100,
+        "maxDrawdownPct": 1.48,
+        "feesPaid": 126.71,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 15192.19,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 15192.19,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 98818.25,
+        "returnPct": -1.18
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 100095.03,
+        "returnPct": 0.1,
+        "totalTrades": 20,
+        "winRate": 100,
+        "maxDrawdownPct": 0.06,
+        "feesPaid": 10.23,
+        "unfilledContracts": 0,
+        "suppressedActions": 22,
+        "depthMix": {
+          "contractsOnCapturedDepth": 4010.27,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 4010.27,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "MeanRev_CheapBand",
+      "strategyId": "mean_rev_cheap_band",
+      "title": "Cheap-Band Mean Reversion (enter ≤ 0.10, exit ≥ 0.50)",
+      "category": "Mean Reversion",
+      "designedAt": "2026-09-18",
+      "designSource": "Recreated from R01's mean_reversion family (the archetype the source measured as 0-for-432)",
+      "designSourceUrl": "https://www.reddit.com/r/PredictionsMarkets/comments/1szxy8h/backtested_5000_strategies_on_kalshi_15min_btc/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 104515.14,
+        "returnPct": 4.52,
+        "totalTrades": 1485,
+        "winRate": 100,
+        "maxDrawdownPct": 33.67,
+        "feesPaid": 423.6,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 1373923.78,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 1373923.78,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 104515.14,
+        "returnPct": 4.52
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 100153.35,
+        "returnPct": 0.15,
+        "totalTrades": 1662,
+        "winRate": 0,
+        "maxDrawdownPct": 4.48,
+        "feesPaid": 469.66,
+        "unfilledContracts": 0,
+        "suppressedActions": 3957,
+        "depthMix": {
+          "contractsOnCapturedDepth": 396725.12,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 396725.12,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "TightScalp_Fixed5",
+      "strategyId": "tight_scalp_fixed5",
+      "title": "Tight Scalp — the family's best setting, promoted as a control",
+      "category": "Spread Scalping",
+      "designedAt": "2026-09-18",
+      "designSource": "Recreated from R01's tight-band price-threshold family",
+      "designSourceUrl": "https://www.reddit.com/r/PredictionsMarkets/comments/1szxy8h/backtested_5000_strategies_on_kalshi_15min_btc/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 103168.44,
+        "returnPct": 3.17,
+        "totalTrades": 3333,
+        "winRate": 100,
+        "maxDrawdownPct": 7.83,
+        "feesPaid": 126.3,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 531175.65,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 531175.65,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 103168.44,
+        "returnPct": 3.17
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 99047.02,
+        "returnPct": -0.95,
+        "totalTrades": 1182,
+        "winRate": 100,
+        "maxDrawdownPct": 1.54,
+        "feesPaid": 37.95,
+        "unfilledContracts": 0,
+        "suppressedActions": 4548,
+        "depthMix": {
+          "contractsOnCapturedDepth": 124696.65,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 124696.65,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "MakerFlip_SpreadHarvest",
+      "strategyId": "maker_flip_spread_harvest",
+      "title": "Maker Flip — rest the bid, flip the fill to the offer",
+      "category": "Spread Harvest",
+      "designedAt": "2026-09-18",
+      "designSource": "Recreated from R02 — a public r/Kalshi thread on what consistently profitable traders actually do",
+      "designSourceUrl": "https://www.reddit.com/r/Kalshi/comments/1qd4ubf/people_who_actually_win_money_on_kalshi_whats/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 100627.45,
+        "returnPct": 0.63,
+        "totalTrades": 1778,
+        "winRate": 100,
+        "maxDrawdownPct": 4.43,
+        "feesPaid": 87.75,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 568198.12,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 568198.12,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 100627.45,
+        "returnPct": 0.63
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 100267.13,
+        "returnPct": 0.27,
+        "totalTrades": 985,
+        "winRate": 100,
+        "maxDrawdownPct": 1.59,
+        "feesPaid": 61.35,
+        "unfilledContracts": 0,
+        "suppressedActions": 3788,
+        "depthMix": {
+          "contractsOnCapturedDepth": 160453.64,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 160453.64,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "ShockTiming_ModerateFav",
+      "strategyId": "shock_timing_moderate_fav",
+      "title": "Shock Timing — the source's favourite-bucket filter, as a measured control",
+      "category": "Shock / Mean Reversion (control)",
+      "designedAt": "2026-09-18",
+      "designSource": "Recreated from R04 — the \"moderate_fav\" filter in a public shock-timing bot spec, disputed by an out-of-sample replication in the same thread",
+      "designSourceUrl": "https://www.reddit.com/r/PredictionsMarkets/comments/1u3rn8s/i_built_a_39_kalshi_trading_bot_to_exploit_world/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET"
+      },
+      "inSample": {
+        "points": 268,
+        "startTs": 1766552400,
+        "endTs": 1789617600,
+        "equityAtSplit": 100000,
+        "returnPct": 0
+      },
+      "strictForward": null,
+      "heldOut": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    }
+  ],
+  "rankedStrictForward": [],
+  "rankedHeldOut": [
+    {
+      "username": "PanicDip_ShockTiming",
+      "returnPct": 0.66,
+      "trades": 293
+    },
+    {
+      "username": "ShockTiming_StopOut",
+      "returnPct": 0.4,
+      "trades": 193
+    },
+    {
+      "username": "MakerFlip_SpreadHarvest",
+      "returnPct": 0.27,
+      "trades": 985
+    },
+    {
+      "username": "PanicFade_HourlyVol",
+      "returnPct": 0.22,
+      "trades": 56
+    },
+    {
+      "username": "MeanRev_CheapBand",
+      "returnPct": 0.15,
+      "trades": 1662
+    },
+    {
+      "username": "AdjacentStrike_Ladder",
+      "returnPct": 0.13,
+      "trades": 529
+    },
+    {
+      "username": "PanicFadeDeep_T6_TP6",
+      "returnPct": 0.1,
+      "trades": 20
+    },
+    {
+      "username": "ContrarianKing_100x",
+      "returnPct": 0.06,
+      "trades": 1127
+    },
+    {
+      "username": "LongshotFader_FLB",
+      "returnPct": -0.15,
+      "trades": 27
+    },
+    {
+      "username": "PanicFade_T4_S100",
+      "returnPct": -0.15,
+      "trades": 29
+    },
+    {
+      "username": "FedPivotSniper",
+      "returnPct": -0.21,
+      "trades": 272
+    },
+    {
+      "username": "BookWall_BidLadder",
+      "returnPct": -0.3,
+      "trades": 417
+    },
+    {
+      "username": "VolatilityArb_MM",
+      "returnPct": -0.49,
+      "trades": 1517
+    },
+    {
+      "username": "TightScalp_Fixed5",
+      "returnPct": -0.95,
+      "trades": 1182
+    },
+    {
+      "username": "FeeArb_PremiumBuyer",
+      "returnPct": -1.17,
+      "trades": 472
+    },
+    {
+      "username": "TrendRide_FullTilt",
+      "returnPct": -1.78,
+      "trades": 202
+    },
+    {
+      "username": "ThetaHarvest_ShortOTM",
+      "returnPct": -1.92,
+      "trades": 336
+    },
+    {
+      "username": "EventCatalyst_Max",
+      "returnPct": -3.08,
+      "trades": 266
+    },
+    {
+      "username": "GammaWhale_Squeeze",
+      "returnPct": -4.24,
+      "trades": 219
+    },
+    {
+      "username": "AlphaApex_Momentum",
+      "returnPct": -4.28,
+      "trades": 906
+    }
+  ],
+  "splitDefaultSource": "max(designedAt) across the roster = 2026-09-18T00:00:00.000Z"
+}

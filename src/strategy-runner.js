@@ -305,6 +305,11 @@ export function runCompetition(options = {}) {
     depthMode,
     depthProfiles,
     depthProfileScale: options.depthProfileScale ?? 1,
+    // WALK-FORWARD / OUT-OF-SAMPLE GATE. A unix-seconds split: every bar before
+    // it is still replayed (so indicators are warm and history is real) but no
+    // order may execute. Passing it produces an out-of-sample number from a
+    // fresh account — the only honest way to quote one. See src/forward-test.js.
+    noTradeBeforeTs: options.noTradeBeforeTs ?? null,
     // 'partial' (default) fills only real depth and reports the rest as unfilled.
     // 'penalty' is a STRESS mode that invents a price beyond the book; it is
     // never used for headline results and is labelled wherever it appears.
@@ -333,6 +338,7 @@ export function runCompetition(options = {}) {
             depthMode,
             depthProfiles,
             depthProfileScale: options.depthProfileScale ?? 1,
+            noTradeBeforeTs: options.noTradeBeforeTs ?? null,
             exhaustionPolicy: options.exhaustionPolicy === 'penalty' ? 'penalty' : 'partial'
           });
 
@@ -427,6 +433,37 @@ export function runCompetition(options = {}) {
     leaderboard,
     results
   };
+}
+
+/**
+ * THE TWO FLIGHTS.
+ *
+ * DAILY (period_interval 1440): every strategy flagged 'daily' or 'both', on the
+ *   full captured history (2025-12-24 → the newest stored bar).
+ * HOURLY (period_interval 60): every strategy flagged 'hourly' or 'both', on the
+ *   curated intraday store. A shorter window, a finer bar — so the two are
+ *   reported separately and never merged into one ranking.
+ */
+export function runCompetitionFlights(options = {}) {
+  const all = options.strategies || STRATEGIES;
+  const dailyStrategies = all.filter((s) => (s.flight || 'daily') !== 'hourly');
+  const hourlyStrategies = all.filter((s) => (s.flight || 'daily') === 'hourly' || s.flight === 'both');
+
+  const daily = dailyStrategies.length
+    ? runCompetition({ ...options, strategies: dailyStrategies, periodIntervalMinutes: 1440 })
+    : null;
+  let hourly = null;
+  let hourlyError = null;
+  if (hourlyStrategies.length) {
+    try {
+      hourly = runCompetition({ ...options, strategies: hourlyStrategies, periodIntervalMinutes: 60 });
+    } catch (err) {
+      // An empty intraday store is not a failure of the app: it means the ingest
+      // has not run the intraday pass yet. Say so instead of inventing a flight.
+      hourlyError = String(err && err.message ? err.message : err);
+    }
+  }
+  return { daily, hourly, hourlyError, flights: { daily: dailyStrategies.length, hourly: hourlyStrategies.length } };
 }
 
 /** Run a single strategy by id/username. */

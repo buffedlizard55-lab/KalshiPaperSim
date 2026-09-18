@@ -1,0 +1,1073 @@
+{
+  "generatedAt": "2026-09-18T00:54:02.551Z",
+  "note": "Two flights, two windows. DAILY = period_interval 1440 over the full stored history. HOURLY = period_interval 60 over the curated intraday store. They are reported separately and are never merged into one ranking, because a strategy that needs intraday bars cannot be judged on daily ones.",
+  "intradayCoverage": {
+    "present": true,
+    "periodIntervalMinutes": 60,
+    "storeDir": "data/history/intraday/60m",
+    "browserBarCap": 400,
+    "marketCount": 12,
+    "barCount": 4032,
+    "markets": [
+      {
+        "ticker": "KXBTCY-27JAN0100-B47500",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-08-31T18:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:07:54.703Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B47500/candlesticks?start_ts=1789689601&end_ts=1789690071&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B52500",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-08-28T18:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:08:04.368Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B52500/candlesticks?start_ts=1789689601&end_ts=1789690081&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B57500",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-08-28T20:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:08:52.747Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B57500/candlesticks?start_ts=1789689601&end_ts=1789690129&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B62500",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-08-31T11:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:08:33.409Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B62500/candlesticks?start_ts=1789689601&end_ts=1789690110&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B67500",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-09-01T00:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:08:23.734Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B67500/candlesticks?start_ts=1789689601&end_ts=1789690100&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B72500",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-09-03T15:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:08:14.053Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B72500/candlesticks?start_ts=1789689601&end_ts=1789690090&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B77500",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-09-03T22:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:07:45.013Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B77500/candlesticks?start_ts=1789689601&end_ts=1789690061&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B82500",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-09-03T10:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:08:43.079Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B82500/candlesticks?start_ts=1789689601&end_ts=1789690119&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B87500",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-09-03T01:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:09:12.083Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B87500/candlesticks?start_ts=1789689601&end_ts=1789690148&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-T149999.99",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-08-27T12:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:09:02.415Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1789689601&end_ts=1789690139&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      },
+      {
+        "ticker": "KXINXY-26DEC31H1600-B8100",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-09-01T18:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:09:31.418Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B8100/candlesticks?start_ts=1789689601&end_ts=1789690168&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "bars": 336,
+        "barsInStore": 336,
+        "truncated": false,
+        "firstDate": "2026-08-21T11:00:00.000Z",
+        "lastDate": "2026-09-18T00:00:00.000Z",
+        "lastIngestedAt": "2026-09-18T00:09:21.743Z",
+        "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1789689601&end_ts=1789690158&period_interval=60",
+        "bookSnapshots": 1,
+        "periodIntervalMinutes": 60
+      }
+    ]
+  },
+  "daily": {
+    "periodIntervalMinutes": 1440,
+    "horizonPeriods": 268,
+    "markets": 30,
+    "leaderboard": [
+      {
+        "rank": 1,
+        "username": "VolatilityArb_MM",
+        "handle": "@VolatilityArb_MM",
+        "strategyId": "volatility_arb_mm",
+        "title": "Two-Sided Spread Harvester (Market Maker)",
+        "returnPct": 9.25,
+        "finalEquity": 109249.6,
+        "initialCapital": 100000,
+        "realizedPnl": -325.73,
+        "totalTrades": 4358,
+        "winRate": 64,
+        "profitFactor": 0.92,
+        "maxDrawdownPct": 31.62,
+        "feesPaid": 641.51,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 2361555.58,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 2361555.58,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 2,
+        "username": "AdjacentStrike_Ladder",
+        "handle": "@AdjacentStrike_Ladder",
+        "strategyId": "adjacent_strike_ladder",
+        "title": "Adjacent-Strike Cheap Bracket Ladder",
+        "returnPct": 6.56,
+        "finalEquity": 106564.85,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 1464,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 21.05,
+        "feesPaid": 242.88,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 746226.05,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 746226.05,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 3,
+        "username": "MeanRev_CheapBand",
+        "handle": "@MeanRev_CheapBand",
+        "strategyId": "mean_rev_cheap_band",
+        "title": "Cheap-Band Mean Reversion (enter ≤ 0.10, exit ≥ 0.50)",
+        "returnPct": 4.52,
+        "finalEquity": 104515.14,
+        "initialCapital": 100000,
+        "realizedPnl": 213.68,
+        "totalTrades": 1485,
+        "winRate": 100,
+        "profitFactor": null,
+        "maxDrawdownPct": 33.67,
+        "feesPaid": 423.6,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 1373923.78,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 1373923.78,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 4,
+        "username": "TightScalp_Fixed5",
+        "handle": "@TightScalp_Fixed5",
+        "strategyId": "tight_scalp_fixed5",
+        "title": "Tight Scalp — the family's best setting, promoted as a control",
+        "returnPct": 3.17,
+        "finalEquity": 103168.44,
+        "initialCapital": 100000,
+        "realizedPnl": 2576.34,
+        "totalTrades": 3333,
+        "winRate": 100,
+        "profitFactor": null,
+        "maxDrawdownPct": 7.83,
+        "feesPaid": 126.3,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 531175.65,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 531175.65,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 5,
+        "username": "FeeArb_PremiumBuyer",
+        "handle": "@FeeArb_PremiumBuyer",
+        "strategyId": "fee_aware_premium_buyer",
+        "title": "Fee-Optimal Favourite Buyer",
+        "returnPct": 1.86,
+        "finalEquity": 101857.67,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 814,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 3.42,
+        "feesPaid": 587.19,
+        "periods": 268,
+        "unfilledOrders": 13,
+        "unfilledContracts": 10921.11,
+        "depthMix": {
+          "contractsOnCapturedDepth": 109531.97,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 109531.97,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 6,
+        "username": "PanicDip_ShockTiming",
+        "handle": "@PanicDip_ShockTiming",
+        "strategyId": "panic_dip_shock_timing",
+        "title": "Shock-Timing Panic-Dip Buyer (maker ladder)",
+        "returnPct": 1.82,
+        "finalEquity": 101820.82,
+        "initialCapital": 100000,
+        "realizedPnl": 2120.78,
+        "totalTrades": 961,
+        "winRate": 100,
+        "profitFactor": null,
+        "maxDrawdownPct": 0.81,
+        "feesPaid": 83.28,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 106748.78,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 106748.78,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 7,
+        "username": "BookWall_BidLadder",
+        "handle": "@BookWall_BidLadder",
+        "strategyId": "book_wall_bid_ladder",
+        "title": "Order-Book Wall Maker Ladder",
+        "returnPct": 1.36,
+        "finalEquity": 101362.13,
+        "initialCapital": 100000,
+        "realizedPnl": 4429.7,
+        "totalTrades": 1083,
+        "winRate": 100,
+        "profitFactor": null,
+        "maxDrawdownPct": 6.42,
+        "feesPaid": 38.82,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 414110.5,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 414110.5,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 8,
+        "username": "MakerFlip_SpreadHarvest",
+        "handle": "@MakerFlip_SpreadHarvest",
+        "strategyId": "maker_flip_spread_harvest",
+        "title": "Maker Flip — rest the bid, flip the fill to the offer",
+        "returnPct": 0.63,
+        "finalEquity": 100627.45,
+        "initialCapital": 100000,
+        "realizedPnl": 3506.98,
+        "totalTrades": 1778,
+        "winRate": 100,
+        "profitFactor": null,
+        "maxDrawdownPct": 4.43,
+        "feesPaid": 87.75,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 568198.12,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 568198.12,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 9,
+        "username": "LongshotFader_FLB",
+        "handle": "@LongshotFader_FLB",
+        "strategyId": "longshot_fader_flb",
+        "title": "Favorite–Longshot Bias Fader",
+        "returnPct": -0.03,
+        "finalEquity": 99968.52,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 29,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 0.06,
+        "feesPaid": 2.64,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 1237.77,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 1237.77,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 10,
+        "username": "FedPivotSniper",
+        "handle": "@FedPivotSniper",
+        "strategyId": "fed_pivot_sniper",
+        "title": "Macro Print Mean-Reversion Sniper",
+        "returnPct": -0.47,
+        "finalEquity": 99527.74,
+        "initialCapital": 100000,
+        "realizedPnl": -229.53,
+        "totalTrades": 872,
+        "winRate": 31.7,
+        "profitFactor": 0.41,
+        "maxDrawdownPct": 0.65,
+        "feesPaid": 242.43,
+        "periods": 268,
+        "unfilledOrders": 11,
+        "unfilledContracts": 2422.38,
+        "depthMix": {
+          "contractsOnCapturedDepth": 68266.8,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 68266.8,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 11,
+        "username": "PanicFadeDeep_T6_TP6",
+        "handle": "@PanicFadeDeep_T6_TP6",
+        "strategyId": "panic_fade_deep_t6_tp6",
+        "title": "Deep Panic Fade with a 6-cent Take-Profit",
+        "returnPct": -1.18,
+        "finalEquity": 98818.25,
+        "initialCapital": 100000,
+        "realizedPnl": 269.65,
+        "totalTrades": 75,
+        "winRate": 100,
+        "profitFactor": null,
+        "maxDrawdownPct": 1.48,
+        "feesPaid": 126.71,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 15192.19,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 15192.19,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 12,
+        "username": "ThetaHarvest_ShortOTM",
+        "handle": "@ThetaHarvest_ShortOTM",
+        "strategyId": "theta_harvest_short_otm",
+        "title": "Deep-OTM Decay Harvester (buys NO)",
+        "returnPct": -2.53,
+        "finalEquity": 97469.4,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 421,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 3.62,
+        "feesPaid": 123.67,
+        "periods": 268,
+        "unfilledOrders": 15,
+        "unfilledContracts": 1473.41,
+        "depthMix": {
+          "contractsOnCapturedDepth": 105121.42,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 105121.42,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 13,
+        "username": "PanicFade_T4_S100",
+        "handle": "@PanicFade_T4_S100",
+        "strategyId": "panic_fade_t4_s100",
+        "title": "Panic Fade — the source's own best configuration",
+        "returnPct": -2.64,
+        "finalEquity": 97355.62,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 88,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 3.3,
+        "feesPaid": 225.31,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 28951.08,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 28951.08,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 14,
+        "username": "ShockTiming_StopOut",
+        "handle": "@ShockTiming_StopOut",
+        "strategyId": "shock_timing_stopout",
+        "title": "Shock-Timing with the Source's Stop-Out",
+        "returnPct": -2.66,
+        "finalEquity": 97342.29,
+        "initialCapital": 100000,
+        "realizedPnl": -2328.31,
+        "totalTrades": 594,
+        "winRate": 31.7,
+        "profitFactor": 0.25,
+        "maxDrawdownPct": 4.78,
+        "feesPaid": 801.02,
+        "periods": 268,
+        "unfilledOrders": 2,
+        "unfilledContracts": 5771.87,
+        "depthMix": {
+          "contractsOnCapturedDepth": 205228.95,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 205228.95,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 15,
+        "username": "ContrarianKing_100x",
+        "handle": "@ContrarianKing_100x",
+        "strategyId": "contrarian_king_100x",
+        "title": "Deep-OTM Longshot Convexity Hunter",
+        "returnPct": -4.34,
+        "finalEquity": 95657.95,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 2579,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 32.88,
+        "feesPaid": 719.43,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 1328875.9,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 1328875.9,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 16,
+        "username": "EventCatalyst_Max",
+        "handle": "@EventCatalyst_Max",
+        "strategyId": "event_catalyst_max",
+        "title": "Range-Breakout Catalyst Frontrunner",
+        "returnPct": -4.83,
+        "finalEquity": 95169.67,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 687,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 13.6,
+        "feesPaid": 852.34,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 471308.1,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 471308.1,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 17,
+        "username": "TrendRide_FullTilt",
+        "handle": "@TrendRide_FullTilt",
+        "strategyId": "trend_ride_full_tilt",
+        "title": "Trend-Following Pyramider",
+        "returnPct": -5.48,
+        "finalEquity": 94523.57,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 480,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 15.66,
+        "feesPaid": 608.25,
+        "periods": 268,
+        "unfilledOrders": 1,
+        "unfilledContracts": 3883.96,
+        "depthMix": {
+          "contractsOnCapturedDepth": 412940.46,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 412940.46,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 18,
+        "username": "AlphaApex_Momentum",
+        "handle": "@AlphaApex_Momentum",
+        "strategyId": "alpha_apex_momentum",
+        "title": "Maximum Convexity Momentum Chaser",
+        "returnPct": -13.27,
+        "finalEquity": 86733.17,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 1879,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 36.47,
+        "feesPaid": 1645.33,
+        "periods": 268,
+        "unfilledOrders": 1,
+        "unfilledContracts": 3883.96,
+        "depthMix": {
+          "contractsOnCapturedDepth": 1084170.82,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 1084170.82,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 19,
+        "username": "GammaWhale_Squeeze",
+        "handle": "@GammaWhale_Squeeze",
+        "strategyId": "gamma_whale_squeeze",
+        "title": "High-Gamma Volume-Spike Breakout",
+        "returnPct": -27.11,
+        "finalEquity": 72893.11,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 540,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 32.9,
+        "feesPaid": 1918.69,
+        "periods": 268,
+        "unfilledOrders": 1,
+        "unfilledContracts": 3883.96,
+        "depthMix": {
+          "contractsOnCapturedDepth": 583317.61,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 583317.61,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": null,
+        "username": "ShockTiming_ModerateFav",
+        "handle": "@ShockTiming_ModerateFav",
+        "strategyId": "shock_timing_moderate_fav",
+        "title": "Shock Timing — the source's favourite-bucket filter, as a measured control",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "depthMode": null,
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "qualified": false,
+        "computed": true
+      },
+      {
+        "rank": null,
+        "username": "YieldVulture_Arb",
+        "handle": "@YieldVulture_Arb",
+        "strategyId": "yield_vulture_arb",
+        "title": "Late-Stage High-Probability Sweep",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "periods": 268,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "depthMode": null,
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "qualified": false,
+        "computed": true
+      }
+    ],
+    "postMortems": [
+      {
+        "username": "AlphaApex_Momentum",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "GammaWhale_Squeeze",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "ContrarianKing_100x",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "YieldVulture_Arb",
+        "verdict": "UNTESTED_ON_THIS_DATASET"
+      },
+      {
+        "username": "FedPivotSniper",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "VolatilityArb_MM",
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "TrendRide_FullTilt",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "EventCatalyst_Max",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "ThetaHarvest_ShortOTM",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "FeeArb_PremiumBuyer",
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "LongshotFader_FLB",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "PanicDip_ShockTiming",
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "BookWall_BidLadder",
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "AdjacentStrike_Ladder",
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "ShockTiming_StopOut",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "PanicFade_T4_S100",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "PanicFadeDeep_T6_TP6",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "MeanRev_CheapBand",
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "TightScalp_Fixed5",
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "MakerFlip_SpreadHarvest",
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "ShockTiming_ModerateFav",
+        "verdict": "UNTESTED_ON_THIS_DATASET"
+      }
+    ]
+  },
+  "hourly": {
+    "periodIntervalMinutes": 60,
+    "horizonPeriods": 586,
+    "markets": 12,
+    "leaderboard": [
+      {
+        "rank": 1,
+        "username": "VolatilityArb_MM",
+        "handle": "@VolatilityArb_MM",
+        "strategyId": "volatility_arb_mm",
+        "title": "Two-Sided Spread Harvester (Market Maker)",
+        "returnPct": 0.69,
+        "finalEquity": 100689.39,
+        "initialCapital": 100000,
+        "realizedPnl": 56.19,
+        "totalTrades": 1476,
+        "winRate": 77.3,
+        "profitFactor": 2.96,
+        "maxDrawdownPct": 0.38,
+        "feesPaid": 2.25,
+        "periods": 586,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 91910.74,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 91910.74,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 2,
+        "username": "MakerFlip_SpreadHarvest",
+        "handle": "@MakerFlip_SpreadHarvest",
+        "strategyId": "maker_flip_spread_harvest",
+        "title": "Maker Flip — rest the bid, flip the fill to the offer",
+        "returnPct": 0.09,
+        "finalEquity": 100086,
+        "initialCapital": 100000,
+        "realizedPnl": 77.62,
+        "totalTrades": 653,
+        "winRate": 100,
+        "profitFactor": null,
+        "maxDrawdownPct": 0.02,
+        "feesPaid": 2.02,
+        "periods": 586,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 22552.22,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 22552.22,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 3,
+        "username": "PanicDip_ShockTiming",
+        "handle": "@PanicDip_ShockTiming",
+        "strategyId": "panic_dip_shock_timing",
+        "title": "Shock-Timing Panic-Dip Buyer (maker ladder)",
+        "returnPct": 0.01,
+        "finalEquity": 100008.25,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 14,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 0.02,
+        "feesPaid": 0,
+        "periods": 586,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 1652.32,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 1652.32,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      },
+      {
+        "rank": 4,
+        "username": "PanicFade_HourlyVol",
+        "handle": "@PanicFade_HourlyVol",
+        "strategyId": "panic_fade_hourly_vol",
+        "title": "Hourly Panic-Fade Volatility Reversion",
+        "returnPct": 0,
+        "finalEquity": 99999.75,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 2,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0.25,
+        "periods": 586,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 29.56,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 29.56,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "computed": true
+      }
+    ],
+    "postMortems": [
+      {
+        "username": "VolatilityArb_MM",
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "PanicDip_ShockTiming",
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "PanicFade_HourlyVol",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "MakerFlip_SpreadHarvest",
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      }
+    ]
+  },
+  "hourlyError": null
+}

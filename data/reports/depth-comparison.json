@@ -1,0 +1,957 @@
+{
+  "generatedAt": "2026-09-18T00:53:52.977Z",
+  "why": "Depth behind a candlestick is not published, so a replay must either model it or use a real captured ladder. This report runs the SAME roster over the SAME real bars twice and reports both, because the difference is a measure of how much the depth assumption matters.",
+  "capturedDepthSource": {
+    "marketsWithCapturedLadder": 30,
+    "endpoint": "GET /markets/{ticker}/orderbook",
+    "docs": "https://docs.kalshi.com/getting_started/orderbook_responses",
+    "maxLevelsPerSide": 40,
+    "capturedAt": "2026-09-17T23:52:16.600Z",
+    "sources": [
+      {
+        "ticker": "KXBTCY-27JAN0100-B47500",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B47500/orderbook",
+        "capturedAt": "2026-09-17T23:51:32.371Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 11,
+          "no": 64
+        }
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B52500",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B52500/orderbook",
+        "capturedAt": "2026-09-17T23:51:33.908Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 22,
+          "no": 66
+        }
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B57500",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B57500/orderbook",
+        "capturedAt": "2026-09-17T23:51:35.435Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 33,
+          "no": 66
+        }
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B62500",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B62500/orderbook",
+        "capturedAt": "2026-09-17T23:51:36.961Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 57,
+          "no": 93
+        }
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B67500",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B67500/orderbook",
+        "capturedAt": "2026-09-17T23:51:38.485Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 84,
+          "no": 90
+        }
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B72500",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B72500/orderbook",
+        "capturedAt": "2026-09-17T23:51:40.007Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 69,
+          "no": 81
+        }
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B77500",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B77500/orderbook",
+        "capturedAt": "2026-09-17T23:51:41.535Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 66,
+          "no": 83
+        }
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B82500",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B82500/orderbook",
+        "capturedAt": "2026-09-17T23:51:43.058Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 58,
+          "no": 79
+        }
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-B87500",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B87500/orderbook",
+        "capturedAt": "2026-09-17T23:51:44.575Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 47,
+          "no": 68
+        }
+      },
+      {
+        "ticker": "KXBTCY-27JAN0100-T149999.99",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-T149999.99/orderbook",
+        "capturedAt": "2026-09-17T23:51:46.096Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 14,
+          "no": 40
+        }
+      },
+      {
+        "ticker": "KXINXY-26DEC31H1600-B6900",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900/orderbook",
+        "capturedAt": "2026-09-17T23:51:47.628Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 3,
+          "no": 19
+        }
+      },
+      {
+        "ticker": "KXINXY-26DEC31H1600-B7100",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7100/orderbook",
+        "capturedAt": "2026-09-17T23:51:49.157Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 4,
+          "no": 21
+        }
+      },
+      {
+        "ticker": "KXINXY-26DEC31H1600-B7300",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7300/orderbook",
+        "capturedAt": "2026-09-17T23:51:50.682Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 6,
+          "no": 22
+        }
+      },
+      {
+        "ticker": "KXINXY-26DEC31H1600-B7500",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7500/orderbook",
+        "capturedAt": "2026-09-17T23:51:52.204Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 11,
+          "no": 22
+        }
+      },
+      {
+        "ticker": "KXINXY-26DEC31H1600-B7700",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7700/orderbook",
+        "capturedAt": "2026-09-17T23:51:53.733Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 15,
+          "no": 32
+        }
+      },
+      {
+        "ticker": "KXINXY-26DEC31H1600-B7900",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7900/orderbook",
+        "capturedAt": "2026-09-17T23:51:55.255Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 16,
+          "no": 41
+        }
+      },
+      {
+        "ticker": "KXINXY-26DEC31H1600-B8100",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8100/orderbook",
+        "capturedAt": "2026-09-17T23:51:56.778Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 16,
+          "no": 42
+        }
+      },
+      {
+        "ticker": "KXINXY-26DEC31H1600-B8300",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8300/orderbook",
+        "capturedAt": "2026-09-17T23:51:58.304Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 8,
+          "no": 25
+        }
+      },
+      {
+        "ticker": "KXINXY-26DEC31H1600-B8900",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8900/orderbook",
+        "capturedAt": "2026-09-17T23:51:59.831Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 1,
+          "no": 14
+        }
+      },
+      {
+        "ticker": "KXINXY-26DEC31H1600-T4000",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-T4000/orderbook",
+        "capturedAt": "2026-09-17T23:52:01.351Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 0,
+          "no": 15
+        }
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B25750/orderbook",
+        "capturedAt": "2026-09-17T23:52:02.874Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 1,
+          "no": 12
+        }
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B29750/orderbook",
+        "capturedAt": "2026-09-17T23:52:04.396Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 5,
+          "no": 11
+        }
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30250/orderbook",
+        "capturedAt": "2026-09-17T23:52:05.918Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 6,
+          "no": 17
+        }
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30750/orderbook",
+        "capturedAt": "2026-09-17T23:52:07.447Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 7,
+          "no": 19
+        }
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31250/orderbook",
+        "capturedAt": "2026-09-17T23:52:08.969Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 4,
+          "no": 16
+        }
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31750/orderbook",
+        "capturedAt": "2026-09-17T23:52:10.493Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 4,
+          "no": 17
+        }
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32250/orderbook",
+        "capturedAt": "2026-09-17T23:52:12.021Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 4,
+          "no": 15
+        }
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-B32750",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32750/orderbook",
+        "capturedAt": "2026-09-17T23:52:13.541Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 3,
+          "no": 18
+        }
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T19000/orderbook",
+        "capturedAt": "2026-09-17T23:52:15.067Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 3,
+          "no": 32
+        }
+      },
+      {
+        "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000/orderbook",
+        "capturedAt": "2026-09-17T23:52:16.600Z",
+        "origin": "data/history store",
+        "levels": {
+          "yes": 11,
+          "no": 36
+        }
+      }
+    ]
+  },
+  "modelled": {
+    "depthMode": "modelled",
+    "depthModeNote": "Depth behind each bar's real quoted touch is MODELLED (candlesticks carry no depth). Every fill from it is labelled depthModel=anchored_synthetic. Run with depthMode \"captured\" to trade against real captured ladders instead.",
+    "rows": [
+      {
+        "rank": 1,
+        "username": "MeanRev_CheapBand",
+        "returnPct": 15.23,
+        "finalEquity": 115228.24,
+        "totalTrades": 1528,
+        "maxDrawdownPct": 33.26,
+        "feesPaid": 458.9,
+        "unfilledContracts": 32221.96,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 2,
+        "username": "AdjacentStrike_Ladder",
+        "returnPct": 10.87,
+        "finalEquity": 110869.88,
+        "totalTrades": 1464,
+        "maxDrawdownPct": 19.44,
+        "feesPaid": 260.48,
+        "unfilledContracts": 21628.47,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 3,
+        "username": "VolatilityArb_MM",
+        "returnPct": 9.25,
+        "finalEquity": 109249.6,
+        "totalTrades": 4358,
+        "maxDrawdownPct": 31.62,
+        "feesPaid": 641.51,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 4,
+        "username": "ContrarianKing_100x",
+        "returnPct": 9.08,
+        "finalEquity": 109077.56,
+        "totalTrades": 3196,
+        "maxDrawdownPct": 29.39,
+        "feesPaid": 894.11,
+        "unfilledContracts": 31982.3,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 5,
+        "username": "FeeArb_PremiumBuyer",
+        "returnPct": 3.37,
+        "finalEquity": 103372.79,
+        "totalTrades": 796,
+        "maxDrawdownPct": 3.9,
+        "feesPaid": 674.66,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 6,
+        "username": "TightScalp_Fixed5",
+        "returnPct": 3.17,
+        "finalEquity": 103168.44,
+        "totalTrades": 3333,
+        "maxDrawdownPct": 7.83,
+        "feesPaid": 126.3,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 7,
+        "username": "PanicDip_ShockTiming",
+        "returnPct": 1.82,
+        "finalEquity": 101820.82,
+        "totalTrades": 961,
+        "maxDrawdownPct": 0.81,
+        "feesPaid": 83.28,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 8,
+        "username": "BookWall_BidLadder",
+        "returnPct": 1.36,
+        "finalEquity": 101362.13,
+        "totalTrades": 1083,
+        "maxDrawdownPct": 6.42,
+        "feesPaid": 38.82,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 9,
+        "username": "MakerFlip_SpreadHarvest",
+        "returnPct": 0.63,
+        "finalEquity": 100627.45,
+        "totalTrades": 1778,
+        "maxDrawdownPct": 4.43,
+        "feesPaid": 87.75,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 10,
+        "username": "LongshotFader_FLB",
+        "returnPct": -0.03,
+        "finalEquity": 99972.81,
+        "totalTrades": 29,
+        "maxDrawdownPct": 0.06,
+        "feesPaid": 2.95,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 11,
+        "username": "FedPivotSniper",
+        "returnPct": -0.37,
+        "finalEquity": 99628.78,
+        "totalTrades": 845,
+        "maxDrawdownPct": 0.57,
+        "feesPaid": 244.85,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 12,
+        "username": "PanicFadeDeep_T6_TP6",
+        "returnPct": -0.94,
+        "finalEquity": 99057.72,
+        "totalTrades": 77,
+        "maxDrawdownPct": 1.34,
+        "feesPaid": 120.34,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 13,
+        "username": "TrendRide_FullTilt",
+        "returnPct": -1.78,
+        "finalEquity": 98224.27,
+        "totalTrades": 480,
+        "maxDrawdownPct": 11.75,
+        "feesPaid": 555.41,
+        "unfilledContracts": 15336.97,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 14,
+        "username": "ThetaHarvest_ShortOTM",
+        "returnPct": -2.12,
+        "finalEquity": 97876.78,
+        "totalTrades": 410,
+        "maxDrawdownPct": 3.29,
+        "feesPaid": 132.62,
+        "unfilledContracts": 509.93,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 15,
+        "username": "PanicFade_T4_S100",
+        "returnPct": -2.22,
+        "finalEquity": 97775.64,
+        "totalTrades": 88,
+        "maxDrawdownPct": 2.92,
+        "feesPaid": 210.53,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 16,
+        "username": "ShockTiming_StopOut",
+        "returnPct": -2.85,
+        "finalEquity": 97150.1,
+        "totalTrades": 653,
+        "maxDrawdownPct": 5.26,
+        "feesPaid": 700.14,
+        "unfilledContracts": 1363.17,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 17,
+        "username": "EventCatalyst_Max",
+        "returnPct": -2.93,
+        "finalEquity": 97073.9,
+        "totalTrades": 687,
+        "maxDrawdownPct": 12.59,
+        "feesPaid": 819.74,
+        "unfilledContracts": 7858.28,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 18,
+        "username": "AlphaApex_Momentum",
+        "returnPct": -4.75,
+        "finalEquity": 95246.72,
+        "totalTrades": 2122,
+        "maxDrawdownPct": 32.17,
+        "feesPaid": 1830.54,
+        "unfilledContracts": 30212.43,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 19,
+        "username": "GammaWhale_Squeeze",
+        "returnPct": -16.3,
+        "finalEquity": 83704.23,
+        "totalTrades": 540,
+        "maxDrawdownPct": 21.08,
+        "feesPaid": 1733.18,
+        "unfilledContracts": 47435.35,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": null,
+        "username": "ShockTiming_ModerateFav",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
+        "username": "YieldVulture_Arb",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      }
+    ]
+  },
+  "captured": {
+    "depthMode": "captured",
+    "depthModeNote": "Depth came from REAL captured order-book ladders (GET /markets/{ticker}/orderbook), re-anchored to each period's real quoted touch. Markets without a captured ladder fell back to the modelled ladder — see depthCoverage per market.",
+    "rows": [
+      {
+        "rank": 1,
+        "username": "VolatilityArb_MM",
+        "returnPct": 9.25,
+        "finalEquity": 109249.6,
+        "totalTrades": 4358,
+        "maxDrawdownPct": 31.62,
+        "feesPaid": 641.51,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 2,
+        "username": "AdjacentStrike_Ladder",
+        "returnPct": 6.56,
+        "finalEquity": 106564.85,
+        "totalTrades": 1464,
+        "maxDrawdownPct": 21.05,
+        "feesPaid": 242.88,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 3,
+        "username": "MeanRev_CheapBand",
+        "returnPct": 4.52,
+        "finalEquity": 104515.14,
+        "totalTrades": 1485,
+        "maxDrawdownPct": 33.67,
+        "feesPaid": 423.6,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 4,
+        "username": "TightScalp_Fixed5",
+        "returnPct": 3.17,
+        "finalEquity": 103168.44,
+        "totalTrades": 3333,
+        "maxDrawdownPct": 7.83,
+        "feesPaid": 126.3,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 5,
+        "username": "FeeArb_PremiumBuyer",
+        "returnPct": 1.86,
+        "finalEquity": 101857.67,
+        "totalTrades": 814,
+        "maxDrawdownPct": 3.42,
+        "feesPaid": 587.19,
+        "unfilledContracts": 10921.11,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 6,
+        "username": "PanicDip_ShockTiming",
+        "returnPct": 1.82,
+        "finalEquity": 101820.82,
+        "totalTrades": 961,
+        "maxDrawdownPct": 0.81,
+        "feesPaid": 83.28,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 7,
+        "username": "BookWall_BidLadder",
+        "returnPct": 1.36,
+        "finalEquity": 101362.13,
+        "totalTrades": 1083,
+        "maxDrawdownPct": 6.42,
+        "feesPaid": 38.82,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 8,
+        "username": "MakerFlip_SpreadHarvest",
+        "returnPct": 0.63,
+        "finalEquity": 100627.45,
+        "totalTrades": 1778,
+        "maxDrawdownPct": 4.43,
+        "feesPaid": 87.75,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 9,
+        "username": "LongshotFader_FLB",
+        "returnPct": -0.03,
+        "finalEquity": 99968.52,
+        "totalTrades": 29,
+        "maxDrawdownPct": 0.06,
+        "feesPaid": 2.64,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 10,
+        "username": "FedPivotSniper",
+        "returnPct": -0.47,
+        "finalEquity": 99527.74,
+        "totalTrades": 872,
+        "maxDrawdownPct": 0.65,
+        "feesPaid": 242.43,
+        "unfilledContracts": 2422.38,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 11,
+        "username": "PanicFadeDeep_T6_TP6",
+        "returnPct": -1.18,
+        "finalEquity": 98818.25,
+        "totalTrades": 75,
+        "maxDrawdownPct": 1.48,
+        "feesPaid": 126.71,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 12,
+        "username": "ThetaHarvest_ShortOTM",
+        "returnPct": -2.53,
+        "finalEquity": 97469.4,
+        "totalTrades": 421,
+        "maxDrawdownPct": 3.62,
+        "feesPaid": 123.67,
+        "unfilledContracts": 1473.41,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 13,
+        "username": "PanicFade_T4_S100",
+        "returnPct": -2.64,
+        "finalEquity": 97355.62,
+        "totalTrades": 88,
+        "maxDrawdownPct": 3.3,
+        "feesPaid": 225.31,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 14,
+        "username": "ShockTiming_StopOut",
+        "returnPct": -2.66,
+        "finalEquity": 97342.29,
+        "totalTrades": 594,
+        "maxDrawdownPct": 4.78,
+        "feesPaid": 801.02,
+        "unfilledContracts": 5771.87,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 15,
+        "username": "ContrarianKing_100x",
+        "returnPct": -4.34,
+        "finalEquity": 95657.95,
+        "totalTrades": 2579,
+        "maxDrawdownPct": 32.88,
+        "feesPaid": 719.43,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 16,
+        "username": "EventCatalyst_Max",
+        "returnPct": -4.83,
+        "finalEquity": 95169.67,
+        "totalTrades": 687,
+        "maxDrawdownPct": 13.6,
+        "feesPaid": 852.34,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 17,
+        "username": "TrendRide_FullTilt",
+        "returnPct": -5.48,
+        "finalEquity": 94523.57,
+        "totalTrades": 480,
+        "maxDrawdownPct": 15.66,
+        "feesPaid": 608.25,
+        "unfilledContracts": 3883.96,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 18,
+        "username": "AlphaApex_Momentum",
+        "returnPct": -13.27,
+        "finalEquity": 86733.17,
+        "totalTrades": 1879,
+        "maxDrawdownPct": 36.47,
+        "feesPaid": 1645.33,
+        "unfilledContracts": 3883.96,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 19,
+        "username": "GammaWhale_Squeeze",
+        "returnPct": -27.11,
+        "finalEquity": 72893.11,
+        "totalTrades": 540,
+        "maxDrawdownPct": 32.9,
+        "feesPaid": 1918.69,
+        "unfilledContracts": 3883.96,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": null,
+        "username": "ShockTiming_ModerateFav",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
+        "username": "YieldVulture_Arb",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      }
+    ]
+  },
+  "deltas": [
+    {
+      "username": "ContrarianKing_100x",
+      "modelledPct": 9.08,
+      "capturedPct": -4.34,
+      "deltaPct": -13.42,
+      "modelledTrades": 3196,
+      "capturedTrades": 2579
+    },
+    {
+      "username": "GammaWhale_Squeeze",
+      "modelledPct": -16.3,
+      "capturedPct": -27.11,
+      "deltaPct": -10.81,
+      "modelledTrades": 540,
+      "capturedTrades": 540
+    },
+    {
+      "username": "MeanRev_CheapBand",
+      "modelledPct": 15.23,
+      "capturedPct": 4.52,
+      "deltaPct": -10.71,
+      "modelledTrades": 1528,
+      "capturedTrades": 1485
+    },
+    {
+      "username": "AlphaApex_Momentum",
+      "modelledPct": -4.75,
+      "capturedPct": -13.27,
+      "deltaPct": -8.52,
+      "modelledTrades": 2122,
+      "capturedTrades": 1879
+    },
+    {
+      "username": "AdjacentStrike_Ladder",
+      "modelledPct": 10.87,
+      "capturedPct": 6.56,
+      "deltaPct": -4.31,
+      "modelledTrades": 1464,
+      "capturedTrades": 1464
+    },
+    {
+      "username": "TrendRide_FullTilt",
+      "modelledPct": -1.78,
+      "capturedPct": -5.48,
+      "deltaPct": -3.7,
+      "modelledTrades": 480,
+      "capturedTrades": 480
+    },
+    {
+      "username": "EventCatalyst_Max",
+      "modelledPct": -2.93,
+      "capturedPct": -4.83,
+      "deltaPct": -1.9,
+      "modelledTrades": 687,
+      "capturedTrades": 687
+    },
+    {
+      "username": "FeeArb_PremiumBuyer",
+      "modelledPct": 3.37,
+      "capturedPct": 1.86,
+      "deltaPct": -1.51,
+      "modelledTrades": 796,
+      "capturedTrades": 814
+    },
+    {
+      "username": "PanicFade_T4_S100",
+      "modelledPct": -2.22,
+      "capturedPct": -2.64,
+      "deltaPct": -0.42,
+      "modelledTrades": 88,
+      "capturedTrades": 88
+    },
+    {
+      "username": "ThetaHarvest_ShortOTM",
+      "modelledPct": -2.12,
+      "capturedPct": -2.53,
+      "deltaPct": -0.41,
+      "modelledTrades": 410,
+      "capturedTrades": 421
+    },
+    {
+      "username": "PanicFadeDeep_T6_TP6",
+      "modelledPct": -0.94,
+      "capturedPct": -1.18,
+      "deltaPct": -0.24,
+      "modelledTrades": 77,
+      "capturedTrades": 75
+    },
+    {
+      "username": "ShockTiming_StopOut",
+      "modelledPct": -2.85,
+      "capturedPct": -2.66,
+      "deltaPct": 0.19,
+      "modelledTrades": 653,
+      "capturedTrades": 594
+    },
+    {
+      "username": "FedPivotSniper",
+      "modelledPct": -0.37,
+      "capturedPct": -0.47,
+      "deltaPct": -0.1,
+      "modelledTrades": 845,
+      "capturedTrades": 872
+    },
+    {
+      "username": "VolatilityArb_MM",
+      "modelledPct": 9.25,
+      "capturedPct": 9.25,
+      "deltaPct": 0,
+      "modelledTrades": 4358,
+      "capturedTrades": 4358
+    },
+    {
+      "username": "TightScalp_Fixed5",
+      "modelledPct": 3.17,
+      "capturedPct": 3.17,
+      "deltaPct": 0,
+      "modelledTrades": 3333,
+      "capturedTrades": 3333
+    },
+    {
+      "username": "PanicDip_ShockTiming",
+      "modelledPct": 1.82,
+      "capturedPct": 1.82,
+      "deltaPct": 0,
+      "modelledTrades": 961,
+      "capturedTrades": 961
+    },
+    {
+      "username": "BookWall_BidLadder",
+      "modelledPct": 1.36,
+      "capturedPct": 1.36,
+      "deltaPct": 0,
+      "modelledTrades": 1083,
+      "capturedTrades": 1083
+    },
+    {
+      "username": "MakerFlip_SpreadHarvest",
+      "modelledPct": 0.63,
+      "capturedPct": 0.63,
+      "deltaPct": 0,
+      "modelledTrades": 1778,
+      "capturedTrades": 1778
+    },
+    {
+      "username": "LongshotFader_FLB",
+      "modelledPct": -0.03,
+      "capturedPct": -0.03,
+      "deltaPct": 0,
+      "modelledTrades": 29,
+      "capturedTrades": 29
+    },
+    {
+      "username": "ShockTiming_ModerateFav",
+      "modelledPct": 0,
+      "capturedPct": 0,
+      "deltaPct": 0,
+      "modelledTrades": 0,
+      "capturedTrades": 0
+    },
+    {
+      "username": "YieldVulture_Arb",
+      "modelledPct": 0,
+      "capturedPct": 0,
+      "deltaPct": 0,
+      "modelledTrades": 0,
+      "capturedTrades": 0
+    }
+  ]
+}

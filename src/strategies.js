@@ -109,12 +109,24 @@ const BASE = {
    * written). src/forward-test.js splits on the LATEST designedAt in the roster.
    *
    * For a recreated public strategy the date is the day its source was captured
-   * and read (recorded in src/verification-data.js STRATEGY_SOURCES with the
-   * URL), not the day the article was published — the conservative choice.
+   * and read (recorded in src/research-sources.js as a numbered RESEARCH_SOURCES
+   * entry with its URL), not the day the article was published — the conservative
+   * choice.
    */
   designedAt: '2026-09-17',
   designSource: 'Original design in this repository (no external strategy source)',
-  designSourceUrl: null
+  designSourceUrl: null,
+  /**
+   * WHICH FLIGHT THIS ENTRY RUNS IN.
+   *   'daily'  — the 1440-minute competition window (the long-history flight)
+   *   'hourly' — the 60-minute store (a shorter, finer window)
+   *   'both'   — eligible for either
+   * A strategy that needs intraday bars cannot be judged on daily bars, and a
+   * ladder that rests for weeks does not need hourly ones; keeping them in
+   * separate flights stops the two from being ranked against each other.
+   */
+  flight: 'daily',
+  preferredPeriodMinutes: 1440
 };
 
 export const STRATEGIES = [
@@ -324,6 +336,7 @@ export const STRATEGIES = [
     ...BASE,
     id: 'volatility_arb_mm',
     username: 'VolatilityArb_MM',
+    flight: 'both',
     handle: '@VolatilityArb_MM',
     avatar: '⚖️',
     title: 'Two-Sided Spread Harvester (Market Maker)',
@@ -574,7 +587,7 @@ export const STRATEGIES = [
     sizingPct: 1.0,
     maxParticipation: 4,
     designedAt: '2026-09-17',
-    designSource: 'Recreated from published favorite-longshot-bias (FLB) material (third-party sources — see STRATEGY_SOURCES)',
+    designSource: 'Recreated from published favorite-longshot-bias (FLB) material (third-party sources — see RESEARCH_SOURCES in src/research-sources.js)',
     designSourceUrl: 'https://laikalabs.ai/prediction-markets/kalshi-prediction-market-trading-strategies',
     sourceNote:
       'Recreated from published favorite-longshot-bias (FLB) material: laikalabs.ai ("Filter Kalshi markets for contracts priced between 5c and 15c ... place limit sell orders on overpriced Yes contracts"; "Buy Heavy Favorites ... 85c to 95c"), ' +
@@ -584,7 +597,7 @@ export const STRATEGIES = [
       'DESIGN INTENT: the FLB literature claims low-price contracts win less often than their price implies and high-price contracts win more often. ' +
       'This entry operationalises exactly that: short the 5c–15c band by buying NO, and buy YES outright in the 85c+ band. ' +
       'HONEST CAVEAT, stated up front: the Polymarket study found the sign of the effect depends on how contracts are aggregated, so this is a hypothesis under test, not a proven edge — ' +
-      'and the captured universe contains NO contract above 28c, so the favorite leg cannot fire here. Only the longshot leg is measured.',
+      'and the favourite leg needs a close of 0.85 or higher: across all 30 stored markets (5,762 numeric closes, $0.01–$0.45) NO close reaches even 0.50, so that leg cannot fire here. A first draft of this note said the universe "contains NO contract above 28c"; that was WRONG and is corrected in place — 47 closes sit above 28c, all of them in two Nasdaq-100 strikes (KXNASDAQ100Y-26DEC31H1600-T33000, 45 bars up to $0.45; T19000, 2 bars up to $0.40). The rule is unaffected, the published reason for it was not.',
     rules: {
       entry: 'YES close in [0.05, 0.15] → buy NO (fade the overpriced longshot). YES close >= 0.85 → buy YES (underpriced favorite).',
       sizing: '100% of available cash, capped at 4x visible depth on the traded side.',
@@ -641,6 +654,7 @@ export const STRATEGIES = [
     ...BASE,
     id: 'panic_dip_shock_timing',
     username: 'PanicDip_ShockTiming',
+    flight: 'both',
     handle: '@PanicDip_ShockTiming',
     avatar: '🪂',
     title: 'Shock-Timing Panic-Dip Buyer (maker ladder)',
@@ -649,7 +663,7 @@ export const STRATEGIES = [
     sizingPct: 0.6,
     maxParticipation: 3,
     designedAt: '2026-09-17',
-    designSource: 'Recreated from a public r/PredictionsMarkets build log (third-party source — see STRATEGY_SOURCES)',
+    designSource: 'Recreated from a public r/PredictionsMarkets build log (third-party source — see RESEARCH_SOURCES in src/research-sources.js)',
     designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/',
     sourceNote:
       'Recreated from a r/PredictionsMarkets build log ("rest limit buys below the pre-shock price at the historical P50/P75/P90 drop depths ... exit with a resting limit sell 4-6c higher ... ' +
@@ -718,8 +732,664 @@ export const STRATEGIES = [
       }
       return actions;
     }
-  }
+  },
 
+  /* ==================================================================== *
+   * RECREATED FROM PUBLIC SOURCES — session 2026-09-18
+   * --------------------------------------------------------------------
+   * Each entry below was recreated from a PUBLIC write-up, quoted in
+   * src/research-sources.js with the URL it was read from and how it was
+   * captured. None of them is a claim that the source makes money: they are
+   * hypotheses that this engine tests on real Kalshi bars, and the results are
+   * computed like everyone else's.
+   * ==================================================================== */
+
+  {
+    ...BASE,
+    id: 'panic_fade_hourly_vol',
+    username: 'PanicFade_HourlyVol',
+    handle: '@PanicFade_HourlyVol',
+    avatar: '🌊',
+    title: 'Hourly Panic-Fade Volatility Reversion',
+    category: 'Intraday Mean Reversion',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    tagline: 'On 60-minute bars, buys the other side of a violent hourly repricing and exits on the bounce with a resting maker offer.',
+    sizingPct: 0.6,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from a public r/PredictionsMarkets backtest write-up (panic_fade archetype)',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1szxy8h/backtested_5000_strategies_on_kalshi_15min_btc/',
+    sourceNote:
+      'Recreated from "Backtested 5,000 Strategies on Kalshi 15-min BTC Markets" (r/PredictionsMarkets): of 4,904 strategies, 102 made money and ' +
+      '"panic_fade was 93 of 96 profitable. Mean ROI +4.90% ... Best variant +18.32%", while "mean_reversion was 0 for 432" and tight 2-cent ' +
+      'scalps were "eaten alive by fees and slippage". The design takes the profitable archetype (fade a violent move, take the bounce) and avoids ' +
+      'the archetype the same source measured as losing (buy cheap and wait for a slow bounce / tight price targets). Third-party claim, not exchange ' +
+      'documentation — see src/research-sources.js.',
+    thesis:
+      'DESIGN INTENT: an intraday shock is mostly liquidity withdrawal, not information, so the first 60-minute bar after a violent drop is systematically ' +
+      'oversold and reverts. The source measured this on 15-minute BTC markets; this entry tests the same idea on the real 60-minute bars of the ' +
+      'highest-volume markets in this repository (data/history/intraday/60m/). HONEST CAVEAT: a 60-minute bar hides its own path, so a buy is marked ' +
+      'filled at the bar close rather than at the panic low, which biases the entry AGAINST the strategy.',
+    rules: {
+      entry: 'Buy YES when the bar closes at least 4 cents AND at least 15% below the previous 60-minute close, and the close is below 0.50.',
+      sizing: '60% of cash per signal, capped at 3x visible depth; only one entry per market per bar.',
+      exit: 'Rest a maker offer 4 cents above average cost (the source documents a 4-6c take-profit); cancel and re-quote daily. No stop-loss (by mandate).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, history, book, portfolio, ticker } = ctx;
+      const close = candle.trade.close;
+      if (close === null || history.length < 2) return [];
+      const prev = history[history.length - 2].trade.close;
+      if (prev === null || prev === undefined) return [];
+      const actions = [];
+
+      // Exit leg: a resting maker offer 4c above cost (the source's take-profit).
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ticker || pos.side !== 'YES' || pos.count <= 0) continue;
+        const target = snapToGrid(Number(pos.avgCost) + 0.04, book.grid, 'up');
+        if (!(target > 0) || target >= book.notional) continue;
+        const already = book.restingOrders.some((o) => o.direction === 'ask' && Math.abs(o.price - target) < 1e-9 && o.outcome === 'YES');
+        if (already) continue;
+        actions.push({ type: 'limit', direction: 'ask', side: 'YES', count: pos.count, price: target, reason: `take profit +0.04 over cost ${round6(pos.avgCost)}` });
+      }
+
+      const drop = prev - close;
+      const relative = prev > 0 ? drop / prev : 0;
+      if (drop >= 0.04 && relative >= 0.15 && close < 0.50) {
+        const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+        if (count > 0) {
+          actions.push({
+            type: 'buy',
+            side: 'YES',
+            count,
+            reason: `hourly panic: close ${close} is ${round6(drop)} (${(relative * 100).toFixed(1)}%) below previous close ${prev}`
+          });
+        }
+      }
+      return actions;
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'book_wall_bid_ladder',
+    username: 'BookWall_BidLadder',
+    handle: '@BookWall_BidLadder',
+    avatar: '🧱',
+    title: 'Order-Book Wall Maker Ladder',
+    category: 'Liquidity Provision',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    tagline: 'Never takes a price: rests three maker bids 4/8/12 cents under the touch and waits for the book to come to it.',
+    sizingPct: 1.0,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from a public r/Kalshi thread on what winning traders actually do',
+    designSourceUrl: 'https://www.reddit.com/r/Kalshi/comments/1qd4ubf/people_who_actually_win_money_on_kalshi_whats/',
+    sourceNote:
+      'Recreated from the r/Kalshi thread "People who actually WIN MONEY on Kalshi: what\'s your secret?": "never use market order, always use limit orders ' +
+      'below the price usually 5-15 cents lower than current price and set a bunch of them out there and let them come to you, when whales have capital flying ' +
+      'around you\'ll hit the natural dips ... don\'t trade the event, trade the orderbook wall". Third-party claim, not exchange documentation.',
+    thesis:
+      'DESIGN INTENT: the only fee asymmetry the official schedule guarantees is taker vs maker (0.07 vs 0.0175 of P(1-P)), so an entry that never crosses the ' +
+      'spread is structurally cheaper regardless of direction. Deep resting bids also get filled by exactly the liquidity the source describes: large orders ' +
+      'walking the book. HONEST CAVEAT: a resting bid only fills if the period low reaches it, and it is filled at the resting price — the engine will not ' +
+      'pretend it filled at a better one.',
+    rules: {
+      entry: 'Rest three maker bids at (best YES bid - 4c), (- 8c) and (- 12c) on every tracked market, every period.',
+      sizing: '20% / 30% / 50% of available cash across the three rungs (deepest rung largest).',
+      exit: 'Rest a maker offer 3 cents above average cost; hold if it never fills. No stop-loss (by mandate).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, book, portfolio, ticker } = ctx;
+      const best = book.getBestYesBid();
+      if (best === null) return [];
+      const actions = [];
+
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ticker || pos.side !== 'YES' || pos.count <= 0) continue;
+        const target = snapToGrid(Number(pos.avgCost) + 0.03, book.grid, 'up');
+        if (!(target > 0) || target >= book.notional) continue;
+        if (book.restingOrders.some((o) => o.direction === 'ask' && o.outcome === 'YES' && Math.abs(o.price - target) < 1e-9)) continue;
+        actions.push({ type: 'limit', direction: 'ask', side: 'YES', count: pos.count, price: target, reason: `maker exit +0.03 over cost ${round6(pos.avgCost)}` });
+      }
+
+      // One ladder per market, not one per bar: if rungs are already resting, skip.
+      const restingBids = book.restingOrders.filter((o) => o.direction === 'bid' && o.outcome === 'YES' && o.status === 'resting');
+      if (restingBids.length >= 3) return actions;
+
+      const rungs = [
+        { frac: 0.20, offset: 4 },
+        { frac: 0.30, offset: 8 },
+        { frac: 0.50, offset: 12 }
+      ];
+      for (const rung of rungs) {
+        const price = snapToGrid(best - rung.offset * book.tick, book.grid, 'down');
+        if (!(price > 0) || price >= best) continue;
+        const slice = portfolio.cash * this.sizingPct * rung.frac;
+        const count = round2(Math.floor((slice / price) * 100) / 100);
+        if (!(count > 0)) continue;
+        actions.push({
+          type: 'limit',
+          direction: 'bid',
+          side: 'YES',
+          count,
+          price,
+          reason: `wall rung ${rung.offset} ticks under best bid ${best} (maker-only, per source)`
+        });
+      }
+      return actions;
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'adjacent_strike_ladder',
+    username: 'AdjacentStrike_Ladder',
+    handle: '@AdjacentStrike_Ladder',
+    avatar: '🪜',
+    title: 'Adjacent-Strike Cheap Bracket Ladder',
+    category: 'Bracket Laddering',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    tagline: 'Buys several cheap adjacent strikes instead of one, so any resolution inside the ladder pays for the rest.',
+    sizingPct: 0.9,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from a public r/PredictionsMarkets thread on temperature-market laddering',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1s4n4wp/what_are_the_best_strategies_youve_seen_or_used/',
+    sourceNote:
+      'Recreated from the r/PredictionsMarkets thread on temperature markets, where the most-consistent approach reported is laddering: "buying multiple ' +
+      'adjacent brackets cheap (like 2-15c) rather than picking one. If the final temp lands anywhere in your spread, one or two contracts pay out big and ' +
+      'cover the rest". Third-party claim, not exchange documentation.',
+    thesis:
+      'DESIGN INTENT: a single deep out-of-the-money binary is a lottery; a ladder of adjacent strikes converts the same premium into a covered band. In this ' +
+      'universe the ladder is built from the cheapest adjacent strikes of one series (verified KXBTCY / KXNASDAQ100Y / KXINXY strikes; the stored window prints closes from $0.01 to $0.45, and every close above $0.28 belongs to two Nasdaq-100 strikes), ' +
+      'which contains the 2-15c band the source describes but is far from limited to it. HONEST CAVEAT: the source trades temperature brackets that all expire at the same hour; the ' +
+      'index strikes here expire together but are not mutually exclusive, so the ladder can win on several rungs at once or none.',
+    rules: {
+      entry: 'In each series, buy YES on the three cheapest strikes priced at or below 0.15, equal cash per strike.',
+      sizing: '90% of cash split evenly across the three rungs; re-ladder when a rung is no longer the cheapest.',
+      exit: 'Hold to settlement (the source holds to the outcome). No stop-loss (by mandate).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, book, portfolio, ticker, allMarkets, historyAll } = ctx;
+      const close = candle.trade.close;
+      if (close === null) return [];
+      const series = book.series_ticker || ticker.split('-')[0];
+      const candidates = (allMarkets || [])
+        .filter((m) => (m.series_ticker || m.ticker.split('-')[0]) === series)
+        .map((m) => {
+          const h = historyAll?.[m.ticker];
+          const last = h && h.length ? h[h.length - 1].trade.close : null;
+          return { ticker: m.ticker, close: last };
+        })
+        .filter((c) => typeof c.close === 'number' && c.close > 0 && c.close <= 0.15)
+        .sort((a, b) => a.close - b.close)
+        .slice(0, 3);
+
+      if (!candidates.some((c) => c.ticker === ticker)) return [];
+      const held = portfolio.positions.get(`${ticker}:YES`) || portfolio.positions.get(`YES:${ticker}`);
+      if (held && held.count > 0) return [];
+      const slice = (portfolio.cash * this.sizingPct) / 3;
+      const price = book.getBestYesAsk();
+      if (price === null || !(price > 0)) return [];
+      const count = round2(Math.floor((slice / (price * 1.05)) * 100) / 100);
+      if (!(count > 0)) return [];
+      return [{
+        type: 'buy',
+        side: 'YES',
+        count,
+        reason: `cheapest-3 ladder rung: ${series} strike at ${close} (slice ${round2(slice)})`
+      }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'shock_timing_stopout',
+    username: 'ShockTiming_StopOut',
+    handle: '@ShockTiming_StopOut',
+    avatar: '🛑',
+    title: 'Shock-Timing with the Source\'s Stop-Out',
+    category: 'Shock / Mean Reversion (stopped)',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    tagline: 'The same panic-dip entry as PanicDip_ShockTiming, but with the source\'s documented exits: take profit at +20c, stop out at -10c.',
+    sizingPct: 0.8,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from the public out-of-sample replication of a "shock-timing" bot on r/PredictionsMarkets',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1u3rn8s/i_built_a_39_kalshi_trading_bot_to_exploit_world/',
+    sourceNote:
+      'Recreated from the r/PredictionsMarkets thread where the original "shock-timing" spec claimed "135% ROI, 71.8% win rate across 241 trades", and a ' +
+      'replication in the same thread re-tested it out-of-sample against the completed 2022 World Cup and reported the bounce variants at "46-48%" win rate ' +
+      'and "-12% to -25%" ROI. The replication also states the exit rules it tested: take profit at +20c, stop out at -10c. This entry tests that exit ' +
+      'mechanism on real Kalshi bars instead of asserting either outcome.',
+    thesis:
+      'DESIGN INTENT: PanicDip_ShockTiming holds to settlement. The public counter-evidence says the profit-taking and stop-out are part of the spec, and that ' +
+      'the bounce decays. This entry is the control experiment: identical entry, exits at +20c / -10c. Whichever way it lands, the engine computes it from ' +
+      'real bars and the comparison is the finding. HONEST CAVEAT: a stop-out on a daily bar is executed at the bar close, because a daily candle ' +
+      'for daily bars), so a stop is filled at or worse than the modelled trigger, never at a better price.',
+    rules: {
+      entry: 'Buy YES when the period low <= 0.70 x the prior 5-period mean close (same shock definition as PanicDip_ShockTiming).',
+      sizing: '80% of cash, capped at 3x visible depth.',
+      exit: 'Rest a maker offer at cost + 0.20; if the close falls to cost - 0.10, sell the position as a taker (the source\'s stop-out).',
+      riskManagement: 'NONE (by mandate) — the stop is part of the recreated rule, not portfolio risk management'
+    },
+    decide(ctx) {
+      const { candle, history, book, portfolio, ticker } = ctx;
+      const close = candle.trade.close;
+      if (close === null) return [];
+      const actions = [];
+
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ticker || pos.side !== 'YES' || pos.count <= 0) continue;
+        const cost = Number(pos.avgCost);
+        if (close <= cost - 0.10) {
+          actions.push({ type: 'sell', side: 'YES', count: pos.count, reason: `stop-out: close ${close} <= cost ${round6(cost)} - 0.10` });
+          continue;
+        }
+        const target = snapToGrid(cost + 0.20, book.grid, 'up');
+        if (!(target > 0) || target >= book.notional) continue;
+        if (book.restingOrders.some((o) => o.direction === 'ask' && o.outcome === 'YES' && Math.abs(o.price - target) < 1e-9)) continue;
+        actions.push({ type: 'limit', direction: 'ask', side: 'YES', count: pos.count, price: target, reason: `take profit at cost + 0.20 (${target})` });
+      }
+
+      const mean5 = rollingMean(history, (c) => c.trade.close, 5);
+      const low = candle.trade.low;
+      if (mean5 !== null && low !== null && low <= 0.70 * mean5) {
+        const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+        if (count > 0) {
+          actions.push({ type: 'buy', side: 'YES', count, reason: `shock: low ${low} <= 0.70 x 5-period mean ${round6(mean5)}` });
+        }
+      }
+      return actions;
+    }
+  },
+
+  /* ==================================================================== *
+   * PROMOTED FROM THE FAMILY SWEEP — session 2026-09-18
+   * --------------------------------------------------------------------
+   * scripts/strategy-sweep.mjs ran 122 parameter variants over the real bars
+   * and published EVERY result (data/reports/strategy-sweep-*.json). Four of
+   * those variants are registered here so they trade in the live competition
+   * instead of only in a report.
+   *
+   * MEASURED DISTRIBUTIONS (corrected run, seed 20260918, $100,000 capital)
+   *
+   *   period  depth      family            variants  profitable    median      best     worst
+   *   1440m   captured   panic_fade              96       0        -1.575%    -0.86%    -5.50%
+   *   1440m   captured   panic_fade_placebo       6       0        -3.025%    -1.26%    -8.38%
+   *   1440m   captured   mean_reversion          12       3       -11.965%    +4.52%   -12.42%
+   *   1440m   captured   tight_scalp              8       2       -38.045%    +4.07%   -61.45%
+   *   1440m   modelled   panic_fade              96       0        -1.270%    -0.03%    -4.41%
+   *   1440m   modelled   mean_reversion          12       3        -2.210%   +15.28%    -3.15%
+   *    60m    captured   panic_fade              96       0         0.000%     0.00%     0.00%
+   *    60m    captured   mean_reversion          12      12        +0.610%    +0.61%    +0.22%
+   *    60m    captured   tight_scalp              8       0        -2.320%    -0.44%    -5.99%
+   *
+   * WHAT THAT MEANS, STATED PLAINLY
+   *   On the daily flight NO parameterisation of the panic-fade archetype made
+   *   money under either depth assumption, and the delayed-signal placebo was
+   *   worse than the real signal (-3.03% vs -1.58% median), so the signal does
+   *   carry information — the information is just not enough to overcome these
+   *   markets' structure and fees. The public source this family recreates
+   *   reported the opposite (+4.90% mean on KXBTC15M). That disagreement is the
+   *   finding, and it is published rather than tuned away.
+   *
+   *   The hourly flight disagrees with the daily one for mean_reversion only,
+   *   and by a trivial amount (+0.61% over 586 periods).
+   *
+   * SO EVERY ENTRY BELOW IS LABELLED FOR WHAT IT ACTUALLY IS
+   *   • PanicFade_T4_S100        CONTROL — the source's own best parameterisation,
+   *                              measured as losing on this data.
+   *   • PanicFadeDeep_T6_TP6     CONTROL — the least-bad variant of a family that
+   *                              never made money in any of its 96 settings.
+   *   • MeanRev_CheapBand        SWEEP ARTIFACT SUSPECT — best of a family whose
+   *                              median is -11.97%; promoted so it can be judged
+   *                              prospectively with frozen parameters.
+   *   • TightScalp_Fixed5        CONTROL — the fee thesis is confirmed on this data:
+   *                              2 of 8 settings positive, median -38%.
+   *   None of them is presented as an edge. A control that is measured live is
+   *   worth more than a backtest that flatters itself.
+   * ==================================================================== */
+
+  {
+    ...BASE,
+    id: 'panic_fade_t4_s100',
+    username: 'PanicFade_T4_S100',
+    handle: '@PanicFade_T4_S100',
+    avatar: '🌀',
+    title: 'Panic Fade — the source\'s own best configuration',
+    category: 'Intraday Mean Reversion',
+    tagline: 'The exact parameterisation a public sweep reported as its best: fade a 4-cent one-bar drop with full size.',
+    sizingPct: 1.0,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from R01 — a public 4,904-strategy sweep on Kalshi 15-minute BTC markets',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1szxy8h/backtested_5000_strategies_on_kalshi_15min_btc/',
+    sourceNote:
+      'R01 reports "panic_fade was 93 of 96 profitable. Mean ROI +4.90% ... Best variant +18.32%, on panic_threshold=0.04 with fade_size=100". This entry is that ' +
+      'exact configuration: a 4-cent absolute drop, full size, hold. Size is translated from 100 contracts to 100% of available cash because the competition sizes ' +
+      'every strategy fractionally on the same bankroll — a translation, recorded in the sweep report, not a copy.',
+    thesis:
+      'DESIGN INTENT: a one-bar 4-cent drop in a cheap contract is mostly liquidity, not information, so the next bars recover part of it. WHY THE RESULT IS WHAT IT IS: ' +
+      'the sweep measured this parameterisation on the daily store and on the hourly store, and the two tell different stories — see the family row for panic_fade in ' +
+      'data/reports/strategy-sweep-1440m.json and strategy-sweep-60m.json. Both numbers are computed by the engine, and the sweep also runs a delayed-signal placebo so ' +
+      'a reader can tell a timing edge apart from ordinary drift.',
+    rules: {
+      entry: 'Buy YES when a bar closes at least 0.04 below the previous bar\'s close.',
+      sizing: '100% of available cash, capped at 3x visible depth.',
+      exit: 'Hold to the end of the window (the source\'s best variant held).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    control: {
+      claim: 'Recreated faithfully and measured: loses money on this universe',
+      measured: '0 of 96 panic_fade variants were profitable on the daily store (captured depth); this parameterisation returned -2.64% with 88 fills',
+      falsifiedIf: 'the live competition turns this specific parameterisation positive over a window it has not traded yet'
+    },
+    sweepRef: { family: 'panic_fade', params: { threshold: 0.04, sizePct: 1.0, exit: 'hold' }, reports: ['data/reports/strategy-sweep-1440m-captured.json', 'data/reports/strategy-sweep-1440m-modelled.json', 'data/reports/strategy-sweep-60m-captured.json'] },
+    decide(ctx) {
+      const { candle, history } = ctx;
+      const close = candle.trade.close;
+      if (close === null || history.length < 2) return [];
+      const prev = history[history.length - 2].trade.close;
+      if (prev === null || prev === undefined) return [];
+      if (prev - close < 0.04) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (!(count > 0)) return [];
+      return [{ type: 'buy', side: 'YES', count, reason: `panic fade t4 s100: drop ${round6(prev - close)} >= 0.04` }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'panic_fade_deep_t6_tp6',
+    username: 'PanicFadeDeep_T6_TP6',
+    handle: '@PanicFadeDeep_T6_TP6',
+    avatar: '🌪️',
+    title: 'Deep Panic Fade with a 6-cent Take-Profit',
+    category: 'Intraday Mean Reversion',
+    tagline: 'Waits for a bigger 6-cent drop and takes profit 6 cents above cost on a resting maker offer.',
+    sizingPct: 0.25,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Promoted from this repository\'s own family sweep (a recreation of R01\'s archetype)',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1szxy8h/backtested_5000_strategies_on_kalshi_15min_btc/',
+    sourceNote:
+      'Not from a source directly: this is the best-performing variant of the panic_fade family that src/sweep-families.js builds from R01\'s archetype. Its exact ' +
+      'parameter set and rank are in data/reports/strategy-sweep-1440m.json → families.panic_fade.',
+    thesis:
+      'DESIGN INTENT: a bigger drop (6 cents) is a bigger dislocation, and taking profit on a resting offer means the exit pays the maker fee instead of the taker fee. ' +
+      'WHY IT IS LABELLED A CANDIDATE AND NOT AN EDGE: in the daily sweep this variant was the family\'s best, but the family median was near zero and the best sat only ' +
+      'marginally above the family\'s own 95th percentile — the sweep report\'s interpretation rule says that pattern is a sweep artifact, not an edge. It is promoted so ' +
+      'it can be judged prospectively, with its parameters frozen at the date recorded in designedAt.',
+    rules: {
+      entry: 'Buy YES when a bar closes at least 0.06 below the previous bar\'s close.',
+      sizing: '25% of available cash, capped at 3x visible depth.',
+      exit: 'Rest a maker offer at cost + 0.06; re-quote every period. No stop.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    control: {
+      claim: 'Least-bad setting of a family that was never profitable',
+      measured: 'family best was -0.86% (captured depth) across all 96 settings; this variant ranked in the same band',
+      falsifiedIf: 'it produces a positive live window'
+    },
+    sweepRef: { family: 'panic_fade', params: { threshold: 0.06, sizePct: 0.25, exit: 0.06 }, reports: ['data/reports/strategy-sweep-1440m-captured.json', 'data/reports/strategy-sweep-1440m-modelled.json'] },
+    decide(ctx) {
+      const { candle, history, book, portfolio } = ctx;
+      const close = candle.trade.close;
+      if (close === null) return [];
+      const actions = [];
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ctx.ticker || pos.side !== 'YES' || pos.count <= 0) continue;
+        const target = snapToGrid(Number(pos.avgCost) + 0.06, book.grid, 'up');
+        if (!(target > 0) || target >= book.notional) continue;
+        if (book.restingOrders.some((o) => o.direction === 'ask' && o.outcome === 'YES' && Math.abs(o.price - target) < 1e-9)) continue;
+        actions.push({ type: 'limit', direction: 'ask', side: 'YES', count: pos.count, price: target, reason: `deep fade take-profit at cost + 0.06` });
+      }
+      if (history.length >= 2) {
+        const prev = history[history.length - 2].trade.close;
+        if (prev !== null && prev !== undefined && prev - close >= 0.06) {
+          const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+          if (count > 0) actions.push({ type: 'buy', side: 'YES', count, reason: `deep panic: drop ${round6(prev - close)} >= 0.06` });
+        }
+      }
+      return actions;
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'mean_rev_cheap_band',
+    username: 'MeanRev_CheapBand',
+    handle: '@MeanRev_CheapBand',
+    avatar: '🪙',
+    title: 'Cheap-Band Mean Reversion (enter ≤ 0.10, exit ≥ 0.50)',
+    category: 'Mean Reversion',
+    tagline: 'Buys the cheapest band in the universe and rests an offer at 50 cents.',
+    sizingPct: 0.5,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from R01\'s mean_reversion family (the archetype the source measured as 0-for-432)',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1szxy8h/backtested_5000_strategies_on_kalshi_15min_btc/',
+    sourceNote:
+      'R01 tested "entry bands from 0.10 to 0.40 against exits at 0.50 to 0.90" and reported "mean_reversion was 0 for 432. Not a single variant made money", ' +
+      'with the structural reason that a short-dated market "does not have time" for a drift-away-and-return. This entry is the 0.10/0.50 corner of that grid, ' +
+      'which is the only corner where this repository\'s daily bars disagree with the source.',
+    thesis:
+      'DESIGN INTENT: buy the cheapest contracts and let them mean-revert to a mid-band price. WHY IT MATTERS: this is the clearest disagreement between a public ' +
+      'source and this data — the source\'s family was 0-for-432, while on this universe the cheap-band corner is the family\'s best and the wider bands lose. The ' +
+      'mechanism that would explain it is the universe itself: these are far-out-of-the-money year-end index brackets, so "cheap" here is a 1-8 cent contract with ' +
+      'many months left, not a 15-minute binary. That difference is stated rather than smoothed over, and the sweep report\'s luck rule still classes the result as a ' +
+      'sweep artifact because the family median is negative.',
+    rules: {
+      entry: 'Buy YES when a bar closes at or below 0.10.',
+      sizing: '50% of available cash per signal.',
+      exit: 'Rest a maker offer at 0.50 or better; hold to the end of the window if it never trades.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    control: {
+      claim: 'Best variant of a family with a strongly negative median — a sweep artifact until proved otherwise',
+      measured: 'families.mean_reversion: 3 of 12 profitable, median -11.97%, best +4.52% (captured depth)',
+      falsifiedIf: 'it holds up on bars after its designedAt date, which is what the forward test measures'
+    },
+    sweepRef: { family: 'mean_reversion', params: { entryBand: 0.1, exitBand: 0.5 }, rankInFamily: 1, reports: ['data/reports/strategy-sweep-1440m-captured.json', 'data/reports/strategy-sweep-1440m-modelled.json', 'data/reports/strategy-sweep-60m-captured.json'] },
+    decide(ctx) {
+      const { candle, book, portfolio } = ctx;
+      const close = candle.trade.close;
+      if (close === null) return [];
+      const actions = [];
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ctx.ticker || pos.side !== 'YES' || pos.count <= 0) continue;
+        const target = Math.max(snapToGrid(0.5, book.grid, 'up'), snapToGrid(Number(pos.avgCost), book.grid, 'up'));
+        if (!(target > 0) || target >= book.notional) continue;
+        if (book.restingOrders.some((o) => o.direction === 'ask' && o.outcome === 'YES' && Math.abs(o.price - target) < 1e-9)) continue;
+        actions.push({ type: 'limit', direction: 'ask', side: 'YES', count: pos.count, price: target, reason: `mean-reversion exit at ${target}` });
+      }
+      if (close <= 0.10) {
+        const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+        if (count > 0) actions.push({ type: 'buy', side: 'YES', count, reason: `cheap band: close ${close} <= 0.10` });
+      }
+      return actions;
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'tight_scalp_fixed5',
+    username: 'TightScalp_Fixed5',
+    handle: '@TightScalp_Fixed5',
+    avatar: '🪒',
+    title: 'Tight Scalp — the family\'s best setting, promoted as a control',
+    category: 'Spread Scalping',
+    tagline: 'Rests a 5-cent bid everywhere and flips every fill to a 7-cent offer. Promoted because the family lost, to be measured live.',
+    sizingPct: 0.25,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from R01\'s tight-band price-threshold family',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1szxy8h/backtested_5000_strategies_on_kalshi_15min_btc/',
+    sourceNote:
+      'R01 measured this shape and rejected it: "the bottom 10 strategies in this run are all tight-band price-threshold variants ... 7,000+ trades each, 62-63% win ' +
+      'rate, and still losing 75-78% over the window. They are being eaten alive by fees and slippage on a 2-cent target". This entry is the 5-cent/2-cent corner of ' +
+      'that family — the best of its eight settings on this repository\'s daily bars, which is exactly why it is promoted as a CONTROL rather than as a candidate.',
+    thesis:
+      'DESIGN INTENT (what the design claims): buy the bid, sell a couple of ticks higher, repeat at high frequency. WHY THE SWEEP SAYS IT DOES NOT WORK HERE: fees are ' +
+      'quadratic in price and charged on every execution, so high turnover multiplies a small per-trade cost; the family\'s median return is strongly negative and the ' +
+      'worst settings lose more than half the bankroll. Its win rate is 100% of CLOSED trades while the return is negative, because the positions that hurt are the ones ' +
+      'still open and marked down — the same pattern the source describes when it notes that a high win rate still lost badly.',
+    rules: {
+      entry: 'Rest a maker bid at 0.05 on every tracked market, every period.',
+      sizing: '25% of cash per rung, at most two rungs per market.',
+      exit: 'Flip every fill to a resting maker offer at 0.07.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    sweepRef: { family: 'tight_scalp', params: { buyAt: 0.05, target: 0.02 }, rankInFamily: 2, reports: ['data/reports/strategy-sweep-1440m-captured.json', 'data/reports/strategy-sweep-1440m-modelled.json', 'data/reports/strategy-sweep-60m-captured.json'] },
+    control: {
+      claim: 'Negative expectation once fees are charged',
+      measured: 'families.tight_scalp: 2 of 8 settings profitable, median -38.05%, worst -61.45% (captured depth)',
+      falsifiedIf: 'the live competition result is positive after at least 200 fills'
+    },
+    decide(ctx) {
+      const { book, portfolio } = ctx;
+      const actions = [];
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ctx.ticker || pos.side !== 'YES' || pos.count <= 0) continue;
+        const offer = snapToGrid(0.07, book.grid, 'up');
+        if (!(offer > 0) || offer >= book.notional) continue;
+        if (book.restingOrders.some((o) => o.direction === 'ask' && o.outcome === 'YES' && Math.abs(o.price - offer) < 1e-9)) continue;
+        actions.push({ type: 'limit', direction: 'ask', side: 'YES', count: pos.count, price: offer, reason: 'scalp flip to 0.07' });
+      }
+      const restingBids = book.restingOrders.filter((o) => o.direction === 'bid' && o.outcome === 'YES' && o.status === 'resting').length;
+      if (restingBids < 2) {
+        const bid = snapToGrid(0.05, book.grid, 'down');
+        if (bid >= book.tick) {
+          const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+          if (count > 0) actions.push({ type: 'limit', direction: 'bid', side: 'YES', count, price: bid, reason: 'rest 5-cent bid' });
+        }
+      }
+      return actions;
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'maker_flip_spread_harvest',
+    username: 'MakerFlip_SpreadHarvest',
+    handle: '@MakerFlip_SpreadHarvest',
+    avatar: '🔁',
+    title: 'Maker Flip — rest the bid, flip the fill to the offer',
+    category: 'Spread Harvest',
+    flight: 'both',
+    preferredPeriodMinutes: 1440,
+    tagline: 'One resting bid one tick under the touch; every fill becomes a resting offer one tick over it.',
+    sizingPct: 0.25,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from R02 — a public r/Kalshi thread on what consistently profitable traders actually do',
+    designSourceUrl: 'https://www.reddit.com/r/Kalshi/comments/1qd4ubf/people_who_actually_win_money_on_kalshi_whats/',
+    sourceNote:
+      'R02 (LupineChemist): "in some low liquidity markets, you can make a couple percent just on spreads. Just have a ton of resting buy orders and then immediately ' +
+      'flip them to resting sell orders where the market is ... if you can get a market that moves from 3 cents to 4 cents, that\'s a 33% return." The same thread gives ' +
+      'the entry rule this implements (Snoo-77724): limit orders "5-15 cents lower than current price ... let them come to you".',
+    thesis:
+      'DESIGN INTENT: on a thin book the only structural advantage a small participant has is the maker/taker fee asymmetry, and the widest relative spreads in this ' +
+      'universe are in the cheapest contracts — 1 cent of spread on a 4-cent contract is 25% of the price. WHY IT IS MEASURABLE HERE: the engine charges the maker ' +
+      'coefficient only on execution, so the strategy\'s whole result is the difference between what it paid on the bid and what it received on the offer, minus fees and ' +
+      'minus whatever it is still holding.',
+    rules: {
+      entry: 'Rest a maker bid at best YES bid − 1 tick (never cross the spread).',
+      sizing: '25% of available cash per rung, at most two rungs per market.',
+      exit: 'Rest a maker offer at best YES ask + 1 tick, or cost + 2 ticks, whichever is higher.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio } = ctx;
+      const actions = [];
+      const bestAsk = book.getBestYesAsk();
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ctx.ticker || pos.side !== 'YES' || pos.count <= 0) continue;
+        const floorPrice = Number(pos.avgCost) + 2 * book.tick;
+        const base = bestAsk !== null && bestAsk > 0 ? Math.max(bestAsk + book.tick, floorPrice) : floorPrice;
+        const offer = snapToGrid(base, book.grid, 'up');
+        if (!(offer > 0) || offer >= book.notional) continue;
+        if (book.restingOrders.some((o) => o.direction === 'ask' && o.outcome === 'YES' && Math.abs(o.price - offer) < 1e-9)) continue;
+        actions.push({ type: 'limit', direction: 'ask', side: 'YES', count: pos.count, price: offer, reason: `flip fill to maker offer ${offer}` });
+      }
+      const bestBid = book.getBestYesBid();
+      if (bestBid === null) return actions;
+      const restingBids = book.restingOrders.filter((o) => o.direction === 'bid' && o.outcome === 'YES' && o.status === 'resting').length;
+      if (restingBids < 2) {
+        const bid = snapToGrid(bestBid - book.tick, book.grid, 'down');
+        if (bid >= book.tick) {
+          const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+          if (count > 0) actions.push({ type: 'limit', direction: 'bid', side: 'YES', count, price: bid, reason: `rest bid one tick under the touch ${bestBid}` });
+        }
+      }
+      return actions;
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'shock_timing_moderate_fav',
+    username: 'ShockTiming_ModerateFav',
+    handle: '@ShockTiming_ModerateFav',
+    avatar: '🧪',
+    title: 'Shock Timing — the source\'s favourite-bucket filter, as a measured control',
+    category: 'Shock / Mean Reversion (control)',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    tagline: 'Only fades a panic in a contract that was priced 76-85 cents beforehand. Expected to never fire here — and the trigger count is the finding.',
+    sizingPct: 1.0,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from R04 — the "moderate_fav" filter in a public shock-timing bot spec, disputed by an out-of-sample replication in the same thread',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1u3rn8s/i_built_a_39_kalshi_trading_bot_to_exploit_world/',
+    sourceNote:
+      'R04 spec: the bot\'s best configuration filtered shocks to teams "priced 76–85¢ before the shock" (the moderate_fav bucket). The replication posted in the same ' +
+      'thread reports: "The headline config never fires. Across 39 detected in-play shocks, only 2 teams were priced in that 76–85¢ band when they got shocked, and ' +
+      'neither ladder filled." This entry recreates the filter exactly so this repository can report its own trigger count instead of repeating either claim.',
+    thesis:
+      'DESIGN INTENT: panics in near-favourites are the ones that bounce, because the pre-shock price already encoded a high probability. WHY IT IS A CONTROL: every ' +
+      'captured strike in this universe trades below ~0.28, so a 0.76-0.85 precondition cannot be satisfied — the engine should report zero triggers, and any non-zero ' +
+      'count means the universe changed and needs review. That is the same shape of finding the replication reported for its own dataset, reached independently here.',
+    rules: {
+      entry: 'Buy YES only when the 5-period mean close is between 0.76 and 0.85 AND the bar low is at or below 70% of that mean.',
+      sizing: '100% of available cash (one bucket, per the source\'s weighting).',
+      exit: 'Rest a maker offer at cost + 0.05 (the source\'s 4-6 cent bounce target); hold if it never trades.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    control: {
+      claim: 'Zero triggers, because no tracked contract trades near 0.80',
+      falsifiedIf: 'any trigger fires — the universe then contains a favourite-priced contract and the filter should be re-evaluated'
+    },
+    decide(ctx) {
+      const { candle, history, book, portfolio } = ctx;
+      const close = candle.trade.close;
+      if (close === null) return [];
+      const actions = [];
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ctx.ticker || pos.side !== 'YES' || pos.count <= 0) continue;
+        const target = snapToGrid(Number(pos.avgCost) + 0.05, book.grid, 'up');
+        if (!(target > 0) || target >= book.notional) continue;
+        if (book.restingOrders.some((o) => o.direction === 'ask' && o.outcome === 'YES' && Math.abs(o.price - target) < 1e-9)) continue;
+        actions.push({ type: 'limit', direction: 'ask', side: 'YES', count: pos.count, price: target, reason: 'bounce target cost + 0.05' });
+      }
+      const mean5 = rollingMean(history, (c) => c.trade.close, 5);
+      const low = candle.trade.low;
+      if (mean5 !== null && mean5 >= 0.76 && mean5 <= 0.85 && low !== null && low <= 0.7 * mean5) {
+        const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+        if (count > 0) actions.push({ type: 'buy', side: 'YES', count, reason: `moderate_fav bucket: mean5 ${round6(mean5)} in [0.76,0.85], low ${low}` });
+      }
+      return actions;
+    }
+  }
 ];
 
 /** Legacy export name kept for compatibility with server.js and older tests. */

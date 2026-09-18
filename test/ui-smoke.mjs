@@ -51,7 +51,7 @@ function el(sel) {
   return elements.get(sel);
 }
 
-const TABS = ['leaderboard', 'strategies', 'markets', 'memory', 'lab', 'verification', 'irregularities'];
+const TABS = ['leaderboard', 'strategies', 'markets', 'memory', 'lab', 'research', 'verification', 'irregularities'];
 
 globalThis.document = {
   querySelector: (sel) => el(sel),
@@ -78,9 +78,23 @@ globalThis.URL.createObjectURL = () => 'blob:stub';
 globalThis.URL.revokeObjectURL = () => {};
 globalThis.Blob = class { constructor(parts) { this.parts = parts; } };
 
-// fetch fails => forces STATIC mode (the harsher path: everything computed locally)
+// fetch fails => forces STATIC mode (the harsher path: everything computed locally).
+// EXCEPTION: the offline reports under data/reports/ are read straight off disk.
+// They are static JSON files the page is expected to render, so serving them here
+// is what the browser would do over HTTP - and it lets the Research tab be tested
+// with its real generated content instead of its "report unavailable" fallback.
 const FORCE = process.env.FORCE_MODE || 'static';
+const { readFileSync: readDiskFile, existsSync: diskExists } = await import('node:fs');
 globalThis.fetch = async (url) => {
+  const m = /(?:^|\/)data\/reports\/([A-Za-z0-9._-]+)$/.exec(String(url));
+  if (m) {
+    const full = new URL(`../data/reports/${m[1]}`, import.meta.url);
+    if (diskExists(full)) {
+      const text = readDiskFile(full, 'utf8');
+      return { ok: true, status: 200, json: async () => JSON.parse(text), text: async () => text };
+    }
+    return { ok: false, status: 404, json: async () => ({}), text: async () => 'not found' };
+  }
   if (FORCE === 'static') throw new Error('static mode: no server');
   throw new Error(`unexpected fetch in static smoke test: ${url}`);
 };
@@ -126,7 +140,7 @@ const checks = [
   ['irregularities rendered', (written.get('#irregularityBody') || '').includes('severity')],
   ['calendar has 52 weeks', ((written.get('#calendarStrip') || '').match(/class="week/g) || []).length === 52],
   ['market ladder rendered', (written.get('#ladderYesBid') || '').includes('rung')],
-  ['feed pill labelled', /SIMULATED|LIVE/.test(written.get('#pillFeed') || '')]
+  ['feed pill labelled', /SIMULATED|LIVE/.test(written.get('#pillFeed') || '')],
 ];
 console.log('\n=== content checks ===');
 for (const [name, ok] of checks) {
@@ -192,7 +206,25 @@ await new Promise((r) => setTimeout(r, 900));
 const tr3 = written.get('#ticketResult') || '';
 interact.push(['oversized order reports unfilled', /Unfilled/.test(tr3) && !/NaN/.test(tr3)]);
 
-// 5. Calendar advance + re-run competition with a different seed.
+// 5. Research tab: switch to it and confirm it renders from the real report files.
+el('.tab:research').click();
+await new Promise((r) => setTimeout(r, 1500));
+const sweepHtml = written.get('#researchSweep') || '';
+const ledgerHtml = written.get('#researchLedger') || '';
+const liqHtml = written.get('#researchLiquidity') || '';
+interact.push(['research stats rendered from the ledger', /Public sources logged/.test(written.get('#researchStats') || '') && /Sweep variants replayed/.test(written.get('#researchStats') || '')]);
+interact.push(['research stats disclose the capture method', /search excerpt/.test(written.get('#researchStats') || '')]);
+interact.push(['research sweep table shows the measured distributions', sweepHtml.includes('panic_fade') && sweepHtml.includes('Median')]);
+interact.push(['research sweep table labels the depth mode', /captured|modelled/.test(sweepHtml)]);
+interact.push(['research liquidity table shows a real ticker and its impact', /KX[A-Z0-9-]+/.test(liqHtml) && /1,000-contract buy/.test(liqHtml)]);
+interact.push(['research tab renders measured liquidity with impact', liqHtml.includes('1,000-contract buy') || liqHtml.includes('contracts')]);
+interact.push(['research ledger shows capture method per source', /read in full|search excerpt/.test(ledgerHtml)]);
+interact.push(['research ledger cites numbered sources with URLs', /R0\d/.test(ledgerHtml) && /https:\/\//.test(ledgerHtml)]);
+interact.push(['research gaps name the blocker and the way to close it', /Blocked by:/.test(written.get('#researchGaps') || '') && /To close it:/.test(written.get('#researchGaps') || '')]);
+interact.push(['research reports link the raw JSON', (written.get('#researchReports') || '').includes('.json')]);
+interact.push(['research stats state no source number is reused', /no source(?:&#39;|')s performance number is reused/i.test(written.get('#researchStats') || '')]);
+
+// 6. Calendar advance + re-run competition with a different seed.
 el('#btnAdvance').click();
 await new Promise((r) => setTimeout(r, 900));
 interact.push(['week advanced', (written.get('#competitionWindow') || '').includes('Weeks')]);

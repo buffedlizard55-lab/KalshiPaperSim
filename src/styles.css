@@ -423,3 +423,16 @@ table.grid td.num, table.grid th.num { text-align: right; font-family: var(--mon
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* ───────────── research ledger ───────────── */
+blockquote.quote {
+  margin: .5rem 0;
+  padding: .55rem .7rem;
+  border-left: 2px solid var(--accent-dim, #2c4a76);
+  background: var(--bg-inset);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: .82rem;
+  color: var(--text-dim);
+  white-space: pre-wrap;
+}
+.source-link { font-size: .78rem; }

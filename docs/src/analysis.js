@@ -209,8 +209,30 @@ export function computeAttribution(result) {
     reconciles: Math.abs(equityChange - factors.reduce((a, f) => a + f.amountUsd, 0)) < 0.01
   };
 
+  /* ------------------------------------------------------------------ *
+   * DEPTH PROVENANCE (recommended-work item #5)
+   * How much of the traded volume came out of a REAL captured ladder versus
+   * the modelled one. A run can be honest whichever it used; what matters is
+   * that the two are never mixed without saying so.
+   * ------------------------------------------------------------------ */
+  const contractsOnCapturedDepth = round2(
+    trades.filter((t) => t.depthModel === 'captured_orderbook_reanchored').reduce((s, t) => s + (Number(t.contracts) || 0), 0)
+  );
+  const contractsOnModelledDepth = round2(
+    trades.filter((t) => t.depthModel && t.depthModel !== 'captured_orderbook_reanchored').reduce((s, t) => s + (Number(t.contracts) || 0), 0)
+  );
+  const totalFilledContracts = round2(contractsOnCapturedDepth + contractsOnModelledDepth);
+  const depthMix = {
+    contractsOnCapturedDepth,
+    contractsOnModelledDepth,
+    totalFilledContracts,
+    capturedPct: totalFilledContracts > 0 ? round2((contractsOnCapturedDepth / totalFilledContracts) * 100) : null,
+    depthModels: [...new Set(trades.map((t) => t.depthModel).filter(Boolean))]
+  };
+
   return {
     computedFrom: 'ReplayEngine fills (deterministic, seeded)',
+    depthMix,
     netRealizedPnl: netPnl,
     equityChange,
     feesPaid,
@@ -337,6 +359,9 @@ export function buildLeaderboard(results) {
       periods: r.periods,
       unfilledOrders: r.unfilledOrders || r.attribution?.counts?.ordersFullyUnfilled || 0,
       unfilledContracts: r.unfilledContracts || r.attribution?.unfilledContracts || 0,
+      // Where the fills came from: real captured ladders vs the modelled one.
+      depthMix: r.attribution?.depthMix || null,
+      depthMode: r.dataProvenance?.depthMode || null,
       verdict: r.analysis?.verdict || 'UNKNOWN',
       qualified: (r.totalTrades || 0) >= LEADERBOARD_QUALIFICATION.minTrades,
       computed: true

@@ -41,6 +41,7 @@
   <button class="tab" data-tab="markets">📊 Markets &amp; Depth</button>
   <button class="tab" data-tab="memory">🧠 Competition Memory</button>
   <button class="tab" data-tab="lab">🧪 Strategy Lab</button>
+  <button class="tab" data-tab="research">🔬 Research</button>
   <button class="tab" data-tab="verification">✅ Verification</button>
   <button class="tab" data-tab="irregularities">⚠️ Irregularities</button>
 </nav>
@@ -272,6 +273,27 @@
       boundary</em>. Server-side execution of user code is disabled by default (<code>ALLOW_USER_CODE=false</code>).
       See <code>src/strategy-sandbox.js</code> and Irregularity #7.
     </div>
+  </section>
+
+  <!-- ══════════════ TAB: RESEARCH ══════════════ -->
+  <section class="panel" id="panel-research">
+    <div class="panel-head">
+      <div>
+        <h2>Research &amp; Sources</h2>
+        <p class="lede">Every public strategy this project looked at, how it was read, what was taken from it, and whether
+        the data here can actually test it. Sources are <strong>hypotheses</strong>; the numbers below are computed by this
+        engine on real Kalshi bars. Nothing on this page is copied from a source.</p>
+      </div>
+      <div class="controls">
+        <button class="btn btn-ghost" id="btnResearchReload">Reload reports</button>
+      </div>
+    </div>
+    <div id="researchStats"></div>
+    <div id="researchSweep"></div>
+    <div id="researchLiquidity"></div>
+    <div id="researchLedger"></div>
+    <div id="researchGaps"></div>
+    <div id="researchReports"></div>
   </section>
 
   <!-- ══════════════ TAB: VERIFICATION ══════════════ -->

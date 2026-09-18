@@ -40,6 +40,7 @@ import { snapToGrid, tickSizeAt, resolvePriceGrid, minTick, dollarsToNumber } fr
 import { parseKalshiOrderbook } from './kalshi-api.js';
 import { FIXED_POINT } from './kalshi-config.js';
 import { seriesFeeConfig } from './verified-snapshot.js';
+import { reanchorSide } from './depth-profile.js';
 
 /* ------------------------------------------------------------------ *
  * Deterministic PRNG
@@ -132,6 +133,43 @@ export class OrderBook {
      */
     this.depthModel = options.depthModel || (options.yesBids && options.noBids ? 'captured_orderbook' : 'synthetic');
     this.depthModelNote = options.depthModelNote || null;
+
+    /**
+     * CAPTURED DEPTH PROFILE (recommended-work item #5).
+     *
+     * When a real ladder was captured for this market (GET /markets/{ticker}/orderbook,
+     * stored by the ingest job), the replay can trade against THAT shape instead
+     * of a modelled one. The profile holds each level's distance from the
+     * captured touch in ticks plus the real contract count; applyQuotes()
+     * re-anchors it onto each period's real quoted touch.
+     *
+     * Labelling is deliberately precise: this is real depth at a real price, at
+     * the capture time, MOVED to the period's price. It is not a claim that the
+     * same orders were resting then, so the model name says `reanchored` and the
+     * capture timestamp and URL travel with it.
+     */
+    this.depthProfile = options.depthProfile || null;
+    this.depthProfileScale = options.depthProfileScale ?? 1;
+    if (this.depthProfile) {
+      this.depthModel = 'captured_orderbook_reanchored';
+      const levels = (this.depthProfile.yes?.levelCount || 0) + (this.depthProfile.no?.levelCount || 0);
+      const sides = [this.depthProfile.yes ? `${this.depthProfile.yes.levelCount} YES` : null, this.depthProfile.no ? `${this.depthProfile.no.levelCount} NO` : null]
+        .filter(Boolean)
+        .join(' / ');
+      this.depthModelNote =
+        `Real captured ladder (${sides || 'no usable levels'}, ${levels} level(s) in total) captured ` +
+        `${this.depthProfile.capturedAt || 'at an unrecorded time'} from ${this.depthProfile.url || 'the official orderbook endpoint'}, ` +
+        're-anchored to each period\'s real quoted touch. Sizes are the captured ones; the price level is the real quote.';
+      // A side with no captured bids means this market only ever showed one
+      // side of the book at capture time. Say it out loud rather than letting an
+      // empty ladder look like "no liquidity existed".
+      if (!this.depthProfile.yes || !this.depthProfile.no) {
+        this.depthModelNote +=
+          ' NOTE: the capture contained no levels on ' +
+          [!this.depthProfile.yes ? 'the YES bid side' : null, !this.depthProfile.no ? 'the NO bid side' : null].filter(Boolean).join(' or ') +
+          ', so that side falls back to the modelled ladder for this market.';
+      }
+    }
     /**
      * Provenance of MUTATION. A book built from a real capture keeps that label
      * only until something changes it; the first market-maker tick re-labels the
@@ -291,11 +329,34 @@ export class OrderBook {
             : this.midPrice;
     this.midPrice = clamp(round6(newMid), lo, hi);
     this.targetSpread = snappedBid !== null && snappedAsk !== null ? Math.max(tick, round6(snappedAsk - snappedBid)) : this.targetSpread;
-    this.rebuildBook();
 
-    // ...then pin the touch to the REAL observed quotes and sizes.
-    if (snappedBid !== null) this.anchorTouch('yes', snappedBid, topSize);
-    if (noBidFromAsk !== null) this.anchorTouch('no', noBidFromAsk, topSize);
+    if (this.depthProfile) {
+      // CAPTURED DEPTH: rebuild from the real ladder, re-anchored on this
+      // period's real touch. No modelled size is added on top — if the real
+      // ladder is thin, the book is thin and the fill model will say so.
+      //
+      // A side the capture did not contain (some markets show only one side of
+      // the book) falls back to the MODELLED ladder, and the per-fill
+      // depthModel label records which of the two produced each fill.
+      const yesLevels = snappedBid !== null ? reanchorSide(this.depthProfile.yes, snappedBid, tick, this.notional, this.depthProfileScale) : [];
+      const noLevels = noBidFromAsk !== null ? reanchorSide(this.depthProfile.no, noBidFromAsk, tick, this.notional, this.depthProfileScale) : [];
+      this.yesBids = yesLevels.length
+        ? yesLevels
+        : snappedBid !== null
+          ? buildSyntheticDepth(snappedBid, this.grid, this.tick, this.rng, this.depthScale, this.notional)
+          : this.yesBids;
+      this.noBids = noLevels.length
+        ? noLevels
+        : noBidFromAsk !== null
+          ? buildSyntheticDepth(noBidFromAsk, this.grid, this.tick, this.rng, this.depthScale, this.notional)
+          : this.noBids;
+    } else {
+      // MODELLED: rebuild the synthetic ladder around the new fair value...
+      this.rebuildBook();
+      // ...then pin the touch to the REAL observed quotes and sizes.
+      if (snappedBid !== null) this.anchorTouch('yes', snappedBid, topSize);
+      if (noBidFromAsk !== null) this.anchorTouch('no', noBidFromAsk, topSize);
+    }
 
     // Re-display any still-resting maker bids (they survive the rebuild).
     for (const order of this.restingOrders) {
@@ -394,6 +455,19 @@ export class OrderBook {
     const halfSpread = Math.max(this.tick, this.targetSpread / 2);
     const bestYesBid = clamp(snapToGrid(this.midPrice - halfSpread, this.grid, 'down'), this.tick, this.notional - this.tick);
     const bestNoBid = clamp(snapToGrid(this.notional - this.midPrice - halfSpread, this.grid, 'down'), this.tick, this.notional - this.tick);
+
+    // CAPTURED DEPTH stays captured across a period. Without this, the first
+    // fill inside a period would call rebuildBook() and silently replace the real
+    // ladder with the synthetic one — the run would then be labelled captured
+    // while trading modelled liquidity (exactly the kind of mismatch this
+    // project exists to avoid).
+    if (this.depthProfile) {
+      const yes = reanchorSide(this.depthProfile.yes, bestYesBid, this.tick, this.notional, this.depthProfileScale);
+      const no = reanchorSide(this.depthProfile.no, bestNoBid, this.tick, this.notional, this.depthProfileScale);
+      if (yes.length) this.yesBids = yes;
+      if (no.length) this.noBids = no;
+      return;
+    }
 
     this.yesBids = buildSyntheticDepth(bestYesBid, this.grid, this.tick, this.rng, this.depthScale, this.notional);
     this.noBids = buildSyntheticDepth(bestNoBid, this.grid, this.tick, this.rng, this.depthScale, this.notional);
@@ -564,6 +638,10 @@ export class OrderBook {
       exhaustionPolicy: this.exhaustionPolicy,
       maker: false,
       bookSource: this.source,
+      // Which liquidity did this fill come out of? 'captured_orderbook_reanchored'
+      // = a REAL ladder; 'anchored_synthetic' = real touch, MODELLED depth.
+      depthModel: this.depthModel,
+      depthModelNote: this.depthModelNote,
       priceGridTick: this.tick
     };
     this.tradeHistory.unshift(report);
@@ -654,6 +732,8 @@ export class OrderBook {
       exhaustionPolicy: this.exhaustionPolicy,
       maker: false,
       bookSource: this.source,
+      depthModel: this.depthModel,
+      depthModelNote: this.depthModelNote,
       priceGridTick: this.tick
     };
     this.tradeHistory.unshift(report);
@@ -800,7 +880,9 @@ export class OrderBook {
         gross: round6(qty * fillPrice),
         queuePositionAhead: order.queuePositionAhead,
         partial: qty < remaining - 1e-9,
-        volumeLimited: budget <= 0 && qty < remaining - 1e-9
+        volumeLimited: budget <= 0 && qty < remaining - 1e-9,
+        // Resting orders live in the same book, so the same depth label applies.
+        depthModel: this.depthModel
       });
     }
     this.restingOrders = this.restingOrders.filter((o) => o.status === 'resting');
