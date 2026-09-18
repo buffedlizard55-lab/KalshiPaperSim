@@ -1,9 +1,9 @@
 {
   "_README": "Commit a change to this file to request an ingest run (.github/workflows/ingest-now.yml). It runs on a GitHub-hosted runner, which - unlike the build sandbox - can reach external-api.kalshi.com. Every field is passed straight to scripts/ingest-history.mjs. Bump `request` so the push is a real change: GitHub only starts the workflow when this file actually differs.",
-  "request": 3,
+  "request": 4,
   "enabled": true,
   "days": 30,
-  "full_backfill": true,
+  "full_backfill": false,
   "with_books": true,
   "with_market": true,
   "min_volume": 20000,
@@ -14,6 +14,6 @@
     "KXINXY"
   ],
   "tickers": [],
-  "requested_at": "2026-09-18T00:01:40.913960+00:00",
-  "requested_by": "arena session 01a0b1cd \u2014 recommended-work items #1 (grow the dataset), #2 (intraday bars), #5 (captured depth) and a full-backfill re-derivation of every stored bar"
+  "requested_at": "2026-09-18T03:20:00.000Z",
+  "requested_by": "arena session 01a0b254 — roadmap item #3 (weather: 60m KXHIGHNY brackets incl. settled, with real exchange results) + item #4 (1-minute KXGOLD15M bars), via the new intraday.blocks config in data/history/_ingest-request.json. Daily pass stays incremental."
 }

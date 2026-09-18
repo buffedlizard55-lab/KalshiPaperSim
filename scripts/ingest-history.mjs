@@ -45,13 +45,19 @@
  *                                                          #  the market's real open_time, capped by
  *                                                          #  --max-backfill-days=400)
  *   node scripts/ingest-history.mjs --period=60            # 60-MINUTE bars (recommended-work
- *                                                          # item #2) stored separately under
- *                                                          # data/history/intraday/60m/
+ *                                                          #  item #2) stored separately under
+ *                                                          #  data/history/intraday/60m/
  *   node scripts/ingest-history.mjs --period=60 --days=14  # a two-week intraday window
+ *   node scripts/ingest-history.mjs --status=settled       # DISCOVER settled markets of a
+ *                                                          #  series (real exchange result +
+ *                                                          #  complete bar lifecycle) — the
+ *                                                          #  honest way to backfill series
+ *                                                          #  whose markets expire in days
+ *   node scripts/ingest-history.mjs --status=all           # discover open AND settled
  *   node scripts/ingest-history.mjs --dry-run              # show what would be fetched
  *   node scripts/ingest-history.mjs --verify               # no network: audit the store
  *   node scripts/ingest-history.mjs --full-backfill        # re-read the whole history from each
- *                                                          # market's open_time (merge is additive)
+ *                                                          #  market's open_time (merge is additive)
  *   node scripts/ingest-history.mjs --cutoff               # print the live retention cutoff
  *
  * THE INGEST REQUEST FILE (data/history/_ingest-request.json)
@@ -65,6 +71,21 @@
  *   When `intraday.enabled` is true, EVERY daily run also performs an intraday
  *   pass with its own settings, its own directory and its own manifest. The
  *   daily pass is never affected by it.
+ *
+ *   Since 2026-09-18 the file may instead carry SEVERAL intraday passes:
+ *     { "intraday": { "enabled": true, "blocks": [
+ *         { "period": 60, "tickers": ["KXBTCY-..."],  "max_bars": 336 },
+ *         { "period": 60, "series": ["KXHIGHNY"], "status": "all",
+ *           "min_volume": 1000, "max_markets": 40, "days": 0,
+ *           "max_backfill_days": 60, "max_bars": 200, "with_books": true },
+ *         { "period": 1,  "series": ["KXGOLD15M"], "status": "all",
+ *           "min_volume": 1000, "max_markets": 8, "days": 2, "max_bars": 96 }
+ *       ] } }
+ *   Each block becomes its own pass with its own universe and settings, in file
+ *   order; a pass with period=60 writes to intraday/60m/ and one with period=1
+ *   writes to intraday/1m/. `status` per block selects the GET /markets
+ *   discovery filter ('open' by default; 'settled'/'all' also ingest finalized
+ *   markets so their REAL result travels with the bars).
  *
  * NOTE ON THIS SANDBOX: direct TLS to *.kalshi.com is blocked from the build
  * container (see IRREGULARITIES.md #4), so this script cannot run here. It is
@@ -118,6 +139,13 @@ function parseArgs(argv) {
     tickers: null,
     series: null,
     days: 0, // 0 = backfill from the market's real open_time (see WINDOW_DAYS)
+    // Discovery status filter sent to GET /markets. 'open' keeps the historical
+    // behaviour (only markets that can still trade). 'settled'/'all' exist for
+    // series whose markets expire in DAYS (weather brackets, 15-minute gold):
+    // a settled market is the only one that carries the exchange's REAL result
+    // (status=finalized, result yes/no) and a COMPLETE bar lifecycle, which is
+    // what an honest backtest of a daily-settling series needs.
+    status: 'open',
     maxBackfillDays: 400,
     fullBackfill: false,
     withBooks: false,
@@ -148,6 +176,7 @@ function parseArgs(argv) {
     const [k, v = 'true'] = a.replace(/^--/, '').split('=');
     if (k === 'tickers') args.tickers = v.split(',').map((s) => s.trim()).filter(Boolean);
     else if (k === 'series') args.series = v.split(',').map((s) => s.trim()).filter(Boolean);
+    else if (k === 'status') args.status = String(v).toLowerCase();
     else if (k === 'days') args.days = Number(v);
     else if (k === 'max-backfill-days') args.maxBackfillDays = Number(v);
     else if (k === 'full-backfill') args.fullBackfill = v !== 'false';
@@ -188,26 +217,42 @@ export function readIngestRequest(file = REQUEST_FILE) {
  * Turn the request file's intraday block into ingest arguments.
  * Returns null when nothing was requested or `enabled` is false.
  */
-export function intradayArgsFromRequest(request, baseArgs = {}) {
-  const block = request?.intraday;
-  if (!block || block.enabled !== true) return null;
+/**
+ * Translate ONE intraday block from data/history/_ingest-request.json into the
+ * args of a single intraday pass.
+ *
+ * A block may be the legacy `intraday: {...}` object or an item of the newer
+ * `intraday.blocks: [...]` array (2026-09-18), which allows several intraday
+ * passes with different periods AND different universes — e.g. 60-minute bars
+ * of the index/BTC strikes, 60-minute bars of settled weather brackets, and
+ * 1-minute bars of 15-minute gold markets, each with its own volume floor and
+ * bar cap. Every field of a block is optional except `period`.
+ *
+ * IMPORTANT: the daily pass and an intraday pass must not fight over the same
+ * universe. The workflow passes --series/--tickers for the DAILY run; if an
+ * intraday block did not ask for a universe of its own, the pass would silently
+ * ingest every open market of those series (observed: 117 markets x 24 bars/day
+ * instead of the 6 requested). So:
+ *   • block.tickers  → use exactly those;
+ *   • block.series   → discover within those series only;
+ *   • neither        → inherit the CLI universe ONLY when inherit_cli_universe
+ *                      is explicitly true; otherwise request nothing new.
+ *
+ * `block.status` (default 'open') selects the GET /markets discovery filter for
+ * block.series — 'settled' or 'all' are what let a short-lived series (weather
+ * brackets, 15-minute gold) be ingested WITH its real exchange result.
+ */
+export function intradayBlockArgs(block, baseArgs = {}) {
+  if (!block || typeof block !== 'object' || block.enabled === false) return null;
   const period = Number(block.period ?? 60);
   if (!VALID_PERIODS.includes(period)) {
-    throw new Error(`intraday.period must be one of ${VALID_PERIODS.join(', ')} (minutes), got ${block.period}`);
+    throw new Error(`intraday block period must be one of ${VALID_PERIODS.join(', ')} (minutes), got ${block.period}`);
   }
-  // IMPORTANT: the daily pass and the intraday pass must not fight over the
-  // same universe. The workflow passes --series/--tickers for the DAILY run; if
-  // the intraday block did not ask for a universe of its own, the intraday pass
-  // would silently ingest every open market of those series (observed: 117
-  // markets x 24 bars/day instead of the 6 requested). So:
-  //   • block.tickers  → use exactly those;
-  //   • block.series   → discover within those series only;
-  //   • neither        → inherit the CLI universe ONLY when inherit_cli_universe
-  //                      is explicitly true; otherwise request nothing new.
   const hasOwnUniverse = (Array.isArray(block.tickers) && block.tickers.length > 0) || (Array.isArray(block.series) && block.series.length > 0);
   return {
     ...baseArgs,
     period,
+    status: String(block.status ?? 'open').toLowerCase(),
     days: Number(block.days ?? 14),
     maxBackfillDays: Number(block.max_backfill_days ?? Math.max(1, Number(block.days ?? 14))),
     fullBackfill: block.full_backfill === true,
@@ -228,6 +273,32 @@ export function intradayArgsFromRequest(request, baseArgs = {}) {
     trimOnly: baseArgs.trimOnly === true,
     minIntervalMs: Number(block.min_interval_ms ?? baseArgs.minIntervalMs ?? 250)
   };
+}
+
+/**
+ * Every intraday pass requested by data/history/_ingest-request.json, in file
+ * order. Accepted shapes (checked in this order):
+ *   { intraday: { ... } }               legacy single block (one pass)
+ *   { intraday: [ {...}, {...} ] }      array of blocks (several passes)
+ *   { intraday: { ..., blocks: [...] } } legacy object that also carries blocks
+ * Returns [] when nothing is requested.
+ */
+export function intradayBlocksFromRequest(request, baseArgs = {}) {
+  const raw = request?.intraday;
+  if (!raw) return [];
+  const blocks = Array.isArray(raw) ? raw : Array.isArray(raw.blocks) && raw.blocks.length ? raw.blocks : [raw];
+  const out = [];
+  for (const b of blocks) {
+    const args = intradayBlockArgs(b, baseArgs);
+    if (args) out.push(args);
+  }
+  return out;
+}
+
+/** Backwards-compatible single-block accessor (the first requested pass). */
+export function intradayArgsFromRequest(request, baseArgs = {}) {
+  const blocks = intradayBlocksFromRequest(request, baseArgs);
+  return blocks.length ? blocks[0] : null;
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -487,9 +558,26 @@ function verifyIntradayStores(tickers) {
  * Selection is by LIFETIME CONTRACT VOLUME reported by the exchange itself —
  * not by any preference of ours — and every rejected market is logged so the
  * filter is auditable.
+ *
+ * STATUS FILTER (2026-09-18): the GET /markets `status` QUERY parameter uses the
+ * FILTER vocabulary {unopened, open, paused, closed, settled} — NOT the response
+ * vocabulary {active, closed, determined, ...} (see src/settlement-tracker.js,
+ * IRREGULARITIES.md #9). The default 'open' keeps the historical behaviour.
+ * 'all' sends no status filter so a series page can rank BOTH tradable and
+ * settled markets by volume; 'settled' asks the exchange for finalized ones
+ * directly. Settled markets are the only source of the exchange's REAL result,
+ * which is what makes a settled-market backtest honest.
  */
 async function discoverSeriesMarkets(seriesTicker, args) {
-  const url = `${BASE}${KALSHI_PATHS.markets}?series_ticker=${encodeURIComponent(seriesTicker)}&status=open&limit=200`;
+  const status = String(args.status || 'open').toLowerCase();
+  const VALID = ['unopened', 'open', 'paused', 'closed', 'settled', 'all'];
+  if (!VALID.includes(status)) {
+    throw new Error(`--status must be one of ${VALID.join(', ')} (the GET /markets filter vocabulary), got '${status}'`);
+  }
+  const url =
+    `${BASE}${KALSHI_PATHS.markets}?series_ticker=${encodeURIComponent(seriesTicker)}` +
+    (status === 'all' ? '' : `&status=${status}`) +
+    '&limit=200';
   if (args.dryRun) {
     console.log(`[dry-run] would GET ${url}`);
     return [];
@@ -501,15 +589,22 @@ async function discoverSeriesMarkets(seriesTicker, args) {
   }
   const markets = res.json.markets || [];
   const ranked = markets
-    .map((m) => ({ ticker: m.ticker, volume: marketVolume(m), liquidity: Number(m.liquidity_dollars ?? 0) || 0 }))
+    .map((m) => ({ ticker: m.ticker, volume: marketVolume(m), liquidity: Number(m.liquidity_dollars ?? 0) || 0, status: m.status || null, result: m.result || null }))
     .sort((a, b) => b.volume - a.volume);
   const kept = ranked.filter((r) => r.volume >= args.minVolume).slice(0, args.maxMarkets > 0 ? args.maxMarkets : ranked.length);
+  const settledKept = kept.filter((r) => r.status === 'finalized' && (r.result === 'yes' || r.result === 'no')).length;
   console.log(
-    `• discovered ${seriesTicker}: ${markets.length} open market(s), ` +
+    `• discovered ${seriesTicker} (status=${status}): ${markets.length} market(s), ` +
       `${kept.length} with volume ≥ ${args.minVolume} contracts` +
-      (args.maxMarkets > 0 ? ` (capped at ${args.maxMarkets})` : '')
+      (args.maxMarkets > 0 ? ` (capped at ${args.maxMarkets})` : '') +
+      (settledKept > 0 ? ` — ${settledKept} already finalized with an exchange result` : '')
   );
-  for (const r of kept) console.log(`    ✓ ${r.ticker}  volume=${r.volume} contracts, liquidity=$${r.liquidity}`);
+  for (const r of kept) {
+    console.log(
+      `    ✓ ${r.ticker}  volume=${r.volume} contracts, liquidity=$${r.liquidity}` +
+        (r.status && r.status !== 'active' ? `, status=${r.status}${r.result ? ` result=${r.result}` : ''}` : '')
+    );
+  }
   if (kept.length < ranked.length) {
     const dropped = ranked.slice(kept.length);
     console.log(`    ✗ ${dropped.length} market(s) below the volume floor — e.g. ${dropped.slice(0, 3).map((r) => `${r.ticker}(${r.volume})`).join(', ')}`);
@@ -778,16 +873,21 @@ async function main() {
   if (dailyCode !== 0) return dailyCode;
 
   // ---------------------------------------------------------------------
-  // INTRADAY PASS (recommended-work item #2)
+  // INTRADAY PASS(ES) (recommended-work items #2 and #4)
   //   Configured in data/history/_ingest-request.json because the automation
   //   token may not edit .github/workflows/*. Runs AFTER the daily pass, writes
   //   to data/history/intraday/<period>m/, and can never touch daily bars.
+  //   Since 2026-09-18 the request file may list SEVERAL blocks — e.g. a
+  //   60-minute pass for the index/BTC strikes, a 60-minute pass that backfills
+  //   SETTLED weather brackets with their real exchange results, and a
+  //   1-minute pass for 15-minute gold markets — each with its own universe,
+  //   volume floor and bar cap.
   // ---------------------------------------------------------------------
-  const intraday = intradayArgsFromRequest(request, args);
-  if (intraday) {
+  const intradayBlocks = intradayBlocksFromRequest(request, args);
+  for (const intraday of intradayBlocks) {
     console.log(
       `\n— Intraday pass requested by data/history/_ingest-request.json: ${intraday.period}-minute bars, ` +
-        `${intraday.days} day(s), max ${intraday.maxBars} bar(s)/market —`
+        `${intraday.days} day(s), max ${intraday.maxBars} bar(s)/market, discovery status=${intraday.status} —`
     );
     let iTickers = intraday.tickers ? [...intraday.tickers] : args.tickers ? [...args.tickers] : [];
     if (intraday.series) {
