@@ -37,12 +37,24 @@
  *   their real contract counts; the desk converts back.
  *
  * USAGE
- *   node scripts/generate-desk-module.mjs [--max-markets=80] [--max-levels=40]
+ *   node scripts/generate-desk-module.mjs [--max-markets=200] [--max-levels=40]
  *                                         [--max-captures=12] [--max-bars=72]
- *                                         [--max-quoted=120] [--out=src/desk-data.js]
+ *                                         [--max-quoted=250] [--out=src/desk-data.js]
  *
  * The capture selection is deliberately time-diverse (see HORIZON_HOURS): a
  * forward test needs a real ladder captured AT its cut-off, not just today's.
+ *
+ * WHY THE CAPS ARE WHAT THEY ARE (2026-09-18, request 10)
+ *   `--max-markets` used to be 80, which was above the 68 laddered markets the
+ *   store held — so it never bound. The moment the 120 quoted-only open
+ *   contracts get their ladders captured (the ingest command each one is listed
+ *   with), 188 markets have real depth and a cap of 80 would silently drop 108
+ *   of them from the desk. The cap is a BROWSER-PAYLOAD bound, not a honesty
+ *   bound, so it is set above the whole laddered universe and `droppedForCap`
+ *   is published in the module either way. Same reasoning for `--max-quoted`:
+ *   the quoted-only list must never be shorter than reality without saying so,
+ *   so `quotedSeen` (everything discovery really returned) is published next to
+ *   `quotedWithoutLadder` (what the module carries).
  */
 
 import fs from 'node:fs';
@@ -58,11 +70,11 @@ function arg(name, fallback) {
   const hit = process.argv.find((a) => a.startsWith(`--${name}=`));
   return hit ? hit.split('=').slice(1).join('=') : fallback;
 }
-const MAX_MARKETS = Number(arg('max-markets', 80));
+const MAX_MARKETS = Number(arg('max-markets', 200));
 const MAX_LEVELS = Number(arg('max-levels', 40));
 const MAX_CAPTURES = Number(arg("max-captures", 12));
 const MAX_BARS = Number(arg('max-bars', 72));
-const MAX_QUOTED = Number(arg('max-quoted', 120));
+const MAX_QUOTED = Number(arg('max-quoted', 250));
 const OUT = path.resolve(ROOT, arg('out', 'src/desk-data.js'));
 
 /* ------------------------------------------------------------------ *
@@ -396,6 +408,8 @@ const output = {
     horizonHoursKept: HORIZON_HOURS,
     maxBarsPerMarket: MAX_BARS,
     quotedWithoutLadder: quotedKept.length,
+    quotedSeen: quoted.length,
+    quotedCap: MAX_QUOTED,
     quotedRule: 'discovered markets with status active/initialized and real quotes but no captured ladder — listed, never priceable',
     note: 'Levels are integer MILLI-DOLLARS (1/1000 $, i.e. tenths of a cent — the finest grid Kalshi publishes); counts are the exchange-reported contract counts verbatim. Nothing is re-anchored or interpolated.'
   },
