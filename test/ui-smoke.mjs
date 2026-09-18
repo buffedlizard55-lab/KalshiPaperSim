@@ -141,6 +141,8 @@ const checks = [
   ['calendar has 52 weeks', ((written.get('#calendarStrip') || '').match(/class="week/g) || []).length === 52],
   ['market ladder rendered', (written.get('#ladderYesBid') || '').includes('rung')],
   ['feed pill labelled', /SIMULATED|LIVE/.test(written.get('#pillFeed') || '')],
+  ['leaderboard declares its depth source', /depth behind touch: (CAPTURED REAL LADDERS|MODELLED)/.test(written.get('#competitionLede') || '')],
+  ['leaderboard default run uses the captured ladders', /CAPTURED REAL LADDERS/.test(written.get('#competitionLede') || '')],
 ];
 console.log('\n=== content checks ===');
 for (const [name, ok] of checks) {

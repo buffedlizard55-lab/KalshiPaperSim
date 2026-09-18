@@ -115,6 +115,7 @@ function getCompetition(options = {}) {
   // replay bounds are the important ones: `null` means "disabled" and must not
   // be folded into the default by `??`.
   const key = JSON.stringify({
+    depthMode: options.depthMode === 'modelled' ? 'modelled' : 'captured',
     seed: options.seed ?? 20260917,
     settleAtEnd: Boolean(options.settleAtEnd),
     finalResult: options.finalResult || null,
@@ -508,7 +509,16 @@ const server = http.createServer(async (req, res) => {
         fillBound = null;
       }
 
+      // Depth source (pass 3): the captured ladder is the REAL book, so it is the
+      // default everywhere results are published. 'modelled' is kept as an
+      // explicit comparison and is always labelled wherever it is used.
+      const depthMode = body.depthMode === undefined ? 'captured' : String(body.depthMode);
+      if (!['captured', 'modelled'].includes(depthMode)) {
+        return sendJSON(res, 400, { error: 'depthMode must be "captured" or "modelled"' });
+      }
+
       const comp = getCompetition({
+        depthMode,
         seed: Number(body.seed ?? 20260917),
         settleAtEnd: Boolean(body.settleAtEnd),
         finalResult: body.finalResult || null,
