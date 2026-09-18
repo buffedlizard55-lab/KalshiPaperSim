@@ -135,15 +135,15 @@ Every number here is recomputed on demand; nothing in this table is stored.
 
 `flights.json` · The hourly flight replays the 60-minute store; the micro flight replays the 1-minute store. Both paragraphs below are **computed from the store at build time** (`flightCaption` in `src/store-facts.js`), so a market that settles or a bar that lands changes the sentence. A strategy that needs intraday bars cannot be judged on daily ones, so these are separate leaderboards.
 
-**HOURLY STORE** — 194 market(s) across 20 series, 162 of them finalized with the exchange's own result (12,366 numeric closes spanning $0.00–$0.99); largest: KXHIGHNY (40 markets, 39 settled, 1,582 bars); KXBTCY (10 markets, 3,360 bars); KXHIGHTPHX (10 markets, 8 settled, 416 bars)
+**HOURLY STORE** — 194 market(s) across 20 series, 163 of them finalized with the exchange's own result (12,381 numeric closes spanning $0.00–$0.99); largest: KXHIGHNY (40 markets, 40 settled, 1,582 bars); KXBTCY (10 markets, 3,406 bars); KXHIGHTPHX (10 markets, 8 settled, 416 bars)
 
 **MICRO STORE** — 34 market(s) across 4 series, 34 of them finalized with the exchange's own result (510 numeric closes spanning $0.00–$1.00); largest: KXGOLD15M (10 markets, 10 settled, 160 bars); KXBTC15M (8 markets, 8 settled, 128 bars); KXETH15M (8 markets, 8 settled, 128 bars)
 
-**HOURLY (period_interval 60)** — 1457 hourly periods across 178 markets
+**HOURLY (period_interval 60)** — 1461 hourly periods across 178 markets
 
 | # | Username | Return | Trades | Real settlements booked | Real payout |
 | --- | --- | --- | --- | --- | --- |
-| 1 | **PanicFade_HourlyVol** | +62.83% | 1066 | 93 | $177,877.36 |
+| 1 | **PanicFade_HourlyVol** | +62.83% | 1067 | 93 | $177,877.36 |
 | 2 | **SportsUnderdog_Sweep** | +42.68% | 10 | 10 | $72,197.05 |
 | 3 | **SportsLine_Momentum** | +28.98% | 18 | 10 | $126,896.53 |
 | 4 | **SportsSteam_Fade** | +3.09% | 18 | 15 | $73,673.21 |
@@ -152,8 +152,8 @@ Every number here is recomputed on demand; nothing in this table is stored.
 | 7 | **SportsFavourite_Settle** | -0.12% | 18 | 13 | $169.43 |
 | 8 | **WeatherFavourite_Decay** | -2.19% | 55 | 51 | $19,075.28 |
 | 9 | **FedBucket_Ladder** | -4.34% | 6 | 6 | $0.00 |
-| 10 | **VolatilityArb_MM** | -89.51% | 6771 | 138 | $215,162.65 |
-| 11 | **MakerFlip_SpreadHarvest** | -93.79% | 3624 | 118 | $167,897.69 |
+| 10 | **VolatilityArb_MM** | -89.54% | 6781 | 139 | $215,209.31 |
+| 11 | **MakerFlip_SpreadHarvest** | -93.78% | 3629 | 118 | $167,897.69 |
 | 12 | **PanicDip_ShockTiming** | -99.93% | 1087 | 79 | $75,014.76 |
 | — | **CPI_PrintFade** *(unranked)* | *no trades* | 0 | 0 | $0.00 |
 | — | **ForecastEdge_MultiCity** *(unranked)* | *no trades* | 0 | 0 | $0.00 |

@@ -1,10 +1,10 @@
 {
  "ledgerVersion": 2,
- "generatedAt": "2026-09-18T13:34:49.949Z",
+ "generatedAt": "2026-09-18T13:43:22.725Z",
  "seed": 20260917,
  "provenance": {
   "seed": 20260917,
-  "generatedAt": "2026-09-18T13:34:49.949Z",
+  "generatedAt": "2026-09-18T13:43:22.725Z",
   "engine": "ReplayEngine (deterministic, seeded)",
   "flights": {
    "daily": {
@@ -45,13 +45,13 @@
   {
    "section": "fills",
    "kept": 40000,
-   "dropped": 7090,
+   "dropped": 7107,
    "reason": "--max-fills=40000"
   },
   {
    "section": "roundTrips",
    "kept": 20000,
-   "dropped": 3195,
+   "dropped": 3206,
    "reason": "--max-trips=20000"
   }
  ],
@@ -121,26 +121,26 @@
  },
  "totals": {
   "strategies": 38,
-  "fills": 47090,
-  "roundTrips": 23195,
+  "fills": 47107,
+  "roundTrips": 23206,
   "byStrategy": [
    {
     "username": "PanicFade_HourlyVol",
     "flight": "hourly",
-    "fills": 1159,
-    "contractsFilled": 1558362.63,
+    "fills": 1160,
+    "contractsFilled": 1558367.41,
     "contractsUnfilled": 1047010.14,
-    "fees": 5726.6445,
-    "realizedPnl": 68867.8,
+    "fees": 5726.6514,
+    "realizedPnl": 68867.99,
     "slippageCost": 21416.76,
     "settlements": 93,
-    "trades": 790,
-    "grossProfit": 131901.73,
+    "trades": 791,
+    "grossProfit": 131901.9,
     "grossLoss": 39876.76,
     "key": "PanicFade_HourlyVol@hourly",
-    "winRate": 75.06,
-    "profitFactor": 3.307734,
-    "netPnl": 92024.97
+    "winRate": 75.09,
+    "profitFactor": 3.307739,
+    "netPnl": 92025.14
    },
    {
     "username": "SportsUnderdog_Sweep",
@@ -757,38 +757,38 @@
    {
     "username": "VolatilityArb_MM",
     "flight": "hourly",
-    "fills": 6909,
-    "contractsFilled": 3357160.84,
+    "fills": 6920,
+    "contractsFilled": 3357398.98,
     "contractsUnfilled": 0,
-    "fees": 5607.088,
-    "realizedPnl": -83137.46,
+    "fees": 5607.1015,
+    "realizedPnl": -83120.16,
     "slippageCost": 0,
-    "settlements": 138,
-    "trades": 6081,
-    "grossProfit": 110978.93,
+    "settlements": 139,
+    "trades": 6085,
+    "grossProfit": 110983.81,
     "grossLoss": 197109.15,
     "key": "VolatilityArb_MM@hourly",
-    "winRate": 55.68,
-    "profitFactor": 0.563033,
-    "netPnl": -86130.22
+    "winRate": 55.71,
+    "profitFactor": 0.563058,
+    "netPnl": -86125.34
    },
    {
     "username": "MakerFlip_SpreadHarvest",
     "flight": "hourly",
-    "fills": 3742,
-    "contractsFilled": 3176726.94,
+    "fills": 3747,
+    "contractsFilled": 3176822.69,
     "contractsUnfilled": 0,
-    "fees": 4548.0946,
-    "realizedPnl": -88948.71,
+    "fees": 4548.2011,
+    "realizedPnl": -88944.47,
     "slippageCost": 0,
     "settlements": 118,
-    "trades": 3020,
-    "grossProfit": 118776.93,
+    "trades": 3026,
+    "grossProfit": 118780.66,
     "grossLoss": 211148.72,
     "key": "MakerFlip_SpreadHarvest@hourly",
-    "winRate": 81.52,
-    "profitFactor": 0.562527,
-    "netPnl": -92371.79
+    "winRate": 81.56,
+    "profitFactor": 0.562545,
+    "netPnl": -92368.06
    },
    {
     "username": "PanicDip_ShockTiming",
@@ -811,26 +811,26 @@
   ]
  },
  "feeRegimes": {
-  "totalFeeUsd": 36661.69,
+  "totalFeeUsd": 36661.7,
   "regimes": {
    "maker_free": {
-    "fills": 17991,
+    "fills": 17999,
     "feeUsd": 0
    },
    "maker_0.0175": {
-    "fills": 8525,
-    "feeUsd": 15855.98
+    "fills": 8527,
+    "feeUsd": 15856.12
    },
    "taker_0.07": {
-    "fills": 9053,
-    "feeUsd": 20805.61
+    "fills": 9052,
+    "feeUsd": 20805.57
    },
    "settlement": {
-    "fills": 678,
+    "fills": 679,
     "feeUsd": 0
    },
    "taker_zero": {
-    "fills": 3753,
+    "fills": 3743,
     "feeUsd": 0
    }
   },
@@ -840,20 +840,20 @@
   {
    "username": "PanicFade_HourlyVol",
    "flight": "hourly",
-   "fills": 1159,
-   "roundTrips": 790,
-   "contractsFilled": 1558362.63,
+   "fills": 1160,
+   "roundTrips": 791,
+   "contractsFilled": 1558367.41,
    "contractsUnfilled": 1047010.14,
-   "fees": 5726.6445,
+   "fees": 5726.6514,
    "slippageCost": 21416.76,
-   "realizedPnl": 68867.8,
-   "winRate": 75.06,
-   "profitFactor": 3.307734,
+   "realizedPnl": 68867.99,
+   "winRate": 75.09,
+   "profitFactor": 3.307739,
    "profitFactorInfinity": false,
    "settlements": 93,
    "medianHoldMinutes": 360,
    "firstTrade": "2026-07-02T21:00:00.000Z",
-   "lastTrade": "2026-09-18T06:00:00.000Z"
+   "lastTrade": "2026-09-18T11:00:00.000Z"
   },
   {
    "username": "SportsUnderdog_Sweep",
@@ -1470,38 +1470,38 @@
   {
    "username": "VolatilityArb_MM",
    "flight": "hourly",
-   "fills": 6909,
-   "roundTrips": 6081,
-   "contractsFilled": 3357160.84,
+   "fills": 6920,
+   "roundTrips": 6085,
+   "contractsFilled": 3357398.98,
    "contractsUnfilled": 0,
-   "fees": 5607.088,
+   "fees": 5607.1015,
    "slippageCost": 0,
-   "realizedPnl": -83137.46,
-   "winRate": 55.68,
-   "profitFactor": 0.563033,
+   "realizedPnl": -83120.16,
+   "winRate": 55.71,
+   "profitFactor": 0.563058,
    "profitFactorInfinity": false,
-   "settlements": 138,
+   "settlements": 139,
    "medianHoldMinutes": 840,
    "firstTrade": "2026-07-02T15:00:00.000Z",
-   "lastTrade": "2026-09-18T07:00:00.000Z"
+   "lastTrade": "2026-09-18T11:00:00.000Z"
   },
   {
    "username": "MakerFlip_SpreadHarvest",
    "flight": "hourly",
-   "fills": 3742,
-   "roundTrips": 3020,
-   "contractsFilled": 3176726.94,
+   "fills": 3747,
+   "roundTrips": 3026,
+   "contractsFilled": 3176822.69,
    "contractsUnfilled": 0,
-   "fees": 4548.0946,
+   "fees": 4548.2011,
    "slippageCost": 0,
-   "realizedPnl": -88948.71,
-   "winRate": 81.52,
-   "profitFactor": 0.562527,
+   "realizedPnl": -88944.47,
+   "winRate": 81.56,
+   "profitFactor": 0.562545,
    "profitFactorInfinity": false,
    "settlements": 118,
-   "medianHoldMinutes": 389.88,
-   "firstTrade": "2026-09-02T10:00:00.000Z",
-   "lastTrade": "2026-09-18T07:00:00.000Z"
+   "medianHoldMinutes": 300,
+   "firstTrade": "2026-09-02T05:00:00.000Z",
+   "lastTrade": "2026-09-18T11:00:00.000Z"
   },
   {
    "username": "PanicDip_ShockTiming",

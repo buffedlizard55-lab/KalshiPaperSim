@@ -1,206 +1,206 @@
 {
- "_what": "Repo-tracked ingest settings. scripts/ingest-history.mjs reads this file on every run. Two things made this file necessary: the automation token cannot CREATE a workflow dispatch event (HTTP 403 on /actions/workflows/{id}/dispatches), and the daily workflow passes a fixed set of flags. Pushing a change to this file (or to .github/triggers/ingest.json) triggers the on-demand workflow, which then picks these settings up on the GitHub-hosted runner \u2014 the sandbox itself cannot open TLS to *.kalshi.com. NB: the earlier version of this note claimed a ruleset blocks workflow-file pushes; that was tested (commit c23be4d, reverted in eb1bfd2) and is FALSE \u2014 workflow files push fine, only the dispatch API is forbidden. 2026-09-18 REQUEST 8: two 1440-minute blocks added (daily-fda-approvals, daily-ceo-exits) so the FDA / CEO strategy families named in the project brief trade on real captured bars instead of being described only.",
- "_schema": {
-  "intraday.enabled": "boolean \u2014 when true, every daily run also performs the intraday passes listed in intraday.blocks",
-  "intraday.blocks[].period": "minutes: 1 | 60 | 1440 (official enum: https://docs.kalshi.com/api-reference/market/get-market-candlesticks)",
-  "intraday.blocks[].status": "GET /markets discovery filter for block.series: open (default) | settled | all. 'settled'/'all' also ingest FINALIZED markets so their real exchange result (status=finalized, result yes/no) is stored with the bars \u2014 the only honest input for backtesting a series whose markets expire in days",
-  "intraday.blocks[].days": "backfill window in days (0 = from each market's real open_time)",
-  "intraday.blocks[].max_bars": "keep only the newest N bars per market (0 = unbounded); trimming is recorded in store.trims",
-  "intraday.blocks[].tickers": "explicit markets. Kept short on purpose: intraday bars are ~24x as many rows as daily bars",
-  "intraday.blocks[].series": "discover markets inside these series (ranked by the exchange's own lifetime volume, capped by max_markets, floored by min_volume)"
- },
- "intraday": {
-  "enabled": true,
-  "blocks": [
-   {
-    "name": "hourly-indices",
-    "period": 60,
-    "days": 20,
-    "max_bars": 336,
-    "max_backfill_days": 30,
-    "with_books": true,
-    "with_market": true,
-    "min_interval_ms": 300,
-    "tickers": [
-     "KXBTCY-27JAN0100-B77500",
-     "KXBTCY-27JAN0100-B47500",
-     "KXBTCY-27JAN0100-B52500",
-     "KXBTCY-27JAN0100-B72500",
-     "KXBTCY-27JAN0100-B67500",
-     "KXBTCY-27JAN0100-B62500",
-     "KXBTCY-27JAN0100-B82500",
-     "KXBTCY-27JAN0100-B57500",
-     "KXBTCY-27JAN0100-T149999.99",
-     "KXBTCY-27JAN0100-B87500",
-     "KXNASDAQ100Y-26DEC31H1600-T19000",
-     "KXINXY-26DEC31H1600-B8100"
-    ],
-    "_why_these": "Curated by LIFETIME CONTRACT VOLUME reported by the exchange (market.volume_fp in the daily store, see data/history/_manifest.json): the ten highest-volume KXBTCY strikes (the fee-free series; 2.0M-2.7M contracts each) plus KXNASDAQ100Y-26DEC31H1600-T19000 (1.27M) and KXINXY-26DEC31H1600-B8100 (507k). 12 markets x <=336 hourly bars keeps the store near 2 MB and the browser module near 400 KB, and the universe is described by a rule rather than by preference.",
-    "inherit_cli_universe": false,
-    "_why_not_all": "The first intraday run inherited the daily run's --series flag and ingested all 117 open markets of the three series (40,039 bars, 22 MB, ~1.3 MB/day of growth, ~630 HTTP requests per run, mostly zero-volume strikes). scripts/prune-intraday.mjs removed them and recorded every one in data/history/intraday/60m/_prune-ledger.json with its own restore command. inherit_cli_universe is now false by default."
-   },
-   {
-    "name": "hourly-weather-settled",
-    "period": 60,
-    "status": "all",
-    "series": [
-     "KXHIGHNY"
-    ],
-    "days": 0,
-    "max_backfill_days": 60,
-    "max_bars": 200,
-    "min_volume": 1000,
-    "max_markets": 40,
-    "with_books": true,
-    "with_market": true,
-    "min_interval_ms": 300,
-    "_why_this": "ROADMAP item #3 (weather markets \u2014 the most-reported retail edge in the research ledger, R06/R03/R10). KXHIGHNY is the NYC daily-high series used by Kalshi's own API quick-start (https://docs.kalshi.com/getting_started/quick_start_market_data). status=all also ingests FINALIZED brackets, each of which carries the exchange's REAL result \u2014 the first tracked markets in this repository that actually settle, which is what the replay needs to book real $1/$0 cash flows instead of marking to the last quote. days=0 backfills each bracket from its own open_time (a bracket lives ~1-3 days); max_backfill_days=60 bounds the lookback; the top-40-by-volume cap keeps the pass bounded (~40 markets x <=48 hourly bars)."
-   },
-   {
-    "name": "minute-gold-15m-markets",
-    "period": 1,
-    "status": "all",
-    "series": [
-     "KXGOLD15M"
-    ],
-    "days": 2,
-    "max_backfill_days": 3,
-    "max_bars": 96,
-    "min_volume": 1000,
-    "max_markets": 8,
-    "with_books": true,
-    "with_market": true,
-    "min_interval_ms": 300,
-    "_why_this": "ROADMAP item #4 (one-minute candles). KXGOLD15M is Kalshi's 15-minute gold series (verified to trade heavily: third-party archives list individual 15-minute contracts with 3,000-7,000 trades). A 15-minute market has ~15 one-minute bars, so max_markets=8 x ~15 bars is tiny; the 96-bar cap and the 2-day window keep a cold store from pulling a long history. 1-minute bars are the resolution the R01 panic-fade source actually traded, so this store lets that family be tested at its native granularity."
-   },
-   {
-    "name": "hourly-weather-cities",
-    "period": 60,
-    "status": "all",
-    "series": [
-     "KXHIGHLAX",
-     "KXHIGHCHI",
-     "KXHIGHMIA",
-     "KXHIGHAUS",
-     "KXHIGHDEN",
-     "KXHIGHPHIL",
-     "KXHIGHTPHX",
-     "KXHIGHTSEA"
-    ],
-    "days": 0,
-    "max_backfill_days": 30,
-    "max_bars": 200,
-    "min_volume": 1000,
-    "max_markets": 10,
-    "with_books": true,
-    "with_market": true,
-    "min_interval_ms": 300,
-    "_why_this": "ROADMAP item #3 (more weather cities) as answered by the REAL series list captured by scripts/discover-universe.mjs on 2026-09-18: 54 KXHIGH* series exist and the eight ingested here are the highest by exchange-reported lifetime volume (KXHIGHLAX 166.2M, KXHIGHNY 144.6M, KXHIGHCHI 110.1M, KXHIGHMIA 98.5M, KXHIGHAUS 77.2M, KXHIGHDEN 50.8M, KXHIGHPHIL 41.5M, KXHIGHTPHX 16.8M, KXHIGHTSEA 16.5M). status=all ingests FINALIZED brackets so each carries the exchange result the replay settles on. Every one of these series has fee_multiplier 1 (data/discovered/series-fees.json), so the documented default fee model is the REAL configuration for all of them."
-   },
-   {
-    "name": "hourly-sports-game-lines",
-    "period": 60,
-    "status": "all",
-    "series": [
-     "KXNFLGAME",
-     "KXMLBGAME",
-     "KXNBAGAME",
-     "KXNHLGAME",
-     "KXNCAAFGAME",
-     "KXWNBAGAME",
-     "KXUFCFIGHT"
-    ],
-    "days": 0,
-    "max_backfill_days": 30,
-    "max_bars": 200,
-    "min_volume": 1000,
-    "max_markets": 8,
-    "with_books": true,
-    "with_market": true,
-    "min_interval_ms": 300,
-    "_why_this": "ROADMAP item #5: a SPORTS series was the biggest signal-ledger gap. These seven are the highest-volume game market classes the exchange reports (KXNFLGAME 6.01B, KXMLBGAME 9.80B, KXNBAGAME 11.68B, KXNHLGAME 1.57B, KXNCAAFGAME 4.78B, KXWNBAGAME 1.08B, KXUFCFIGHT 1.28B lifetime contracts). A game market lives hours, so 60-minute bars are its natural resolution, and status=all keeps the FINALIZED games whose result the exchange published \u2014 the only markets whose settlement this replay may book. NOTE the real fee config: the MLB series carry fee_multiplier 0.5 (data/discovered/series-fees.json), which the fee engine applies per series."
-   },
-   {
-    "name": "minute-crypto-15m",
-    "period": 1,
-    "status": "all",
-    "series": [
-     "KXBTC15M",
-     "KXETH15M",
-     "KXSOL15M"
-    ],
-    "days": 2,
-    "max_backfill_days": 3,
-    "max_bars": 96,
-    "min_volume": 1000,
-    "max_markets": 8,
-    "with_books": true,
-    "with_market": true,
-    "min_interval_ms": 300,
-    "_why_this": "The three highest-volume 15-minute crypto series (KXBTC15M 18.15B, KXETH15M 972M, KXSOL15M 347M lifetime contracts) at one-minute resolution \u2014 the same treatment KXGOLD15M already gets. These are the fastest-settling markets on the exchange (15 minutes), so they produce the most independent settlement events per day for the micro flight."
-   },
-   {
-    "name": "hourly-macro-settled",
-    "period": 60,
-    "status": "all",
-    "series": [
-     "KXFEDDECISION",
-     "KXCPIYOY"
-    ],
-    "days": 0,
-    "max_backfill_days": 120,
-    "max_bars": 200,
-    "min_volume": 1000,
-    "max_markets": 8,
-    "with_books": true,
-    "with_market": true,
-    "min_interval_ms": 300,
-    "_why_this": "The two macro series the roster already names but has no bars for: KXFEDDECISION (611.7M lifetime contracts, fee_multiplier 1, mutually exclusive buckets) and KXCPIYOY (36.1M, BLS settlement). Both settle on a published official number, which makes their real result an unambiguous settlement input."
-   },
-   {
-    "name": "daily-fda-approvals",
-    "period": 1440,
-    "status": "all",
-    "series": [
-     "KXFDAAPPROVALPSYCHEDELIC",
-     "KXFDAAPPROVE",
-     "KXFDAANNOUNCE",
-     "KXFDARETATRUTIDE",
-     "KXFDAAPPROVALDATELLY",
-     "KXFDAAPPROVALDATECMPS"
-    ],
-    "days": 0,
-    "max_backfill_days": 400,
-    "max_bars": 400,
-    "min_volume": 0,
-    "max_markets": 5,
-    "with_books": true,
-    "with_market": true,
-    "min_interval_ms": 300,
-    "_why_this": "The user's own source list names 'FDA Decisions Drug Analysis' as a strategy family, and the discovery run (data/discovered/series-fees.json) returned these series as REAL: KXFDAAPPROVALPSYCHEDELIC (387,164 lifetime contracts), KXFDAANNOUNCE (100,001), KXFDAAPPROVE (74,690), KXFDARETATRUTIDE (38,989), plus two dated-approval series. A 1440-minute block (periodDir(1440) == data/history/, i.e. the DAILY store the daily flight replays) gives each market a real daily price path from its own open_time, and status=all stores whatever the exchange has already finalized so the replay books the REAL result. min_volume 0 on purpose: approval markets are thin (some have 0 lifetime volume), and the strategy that reads them must abstain on a market with no tradable path rather than be fed a filtered sample."
-   },
-   {
-    "name": "daily-ceo-exits",
-    "period": 1440,
-    "status": "all",
-    "series": [
-     "KXAAPLCEOCHANGE",
-     "KXTESLACEOCHANGE",
-     "KXOPENAICEOCHANGE",
-     "KXJPMCEOCHANGE",
-     "KXBOEINGCEOCHANGE",
-     "KXGOOGLECEOCHANGE"
-    ],
-    "days": 0,
-    "max_backfill_days": 400,
-    "max_bars": 400,
-    "min_volume": 0,
-    "max_markets": 5,
-    "with_books": true,
-    "with_market": true,
-    "min_interval_ms": 300,
-    "_why_this": "The user's source list names 'CEO' (MasterSite) as a strategy family and 'insider trades' alongside it. These are the highest-volume real CEO-exit series returned by the discovery run: KXAAPLCEOCHANGE (587,863), KXTESLACEOCHANGE (512,304), KXOPENAICEOCHANGE (223,770), KXJPMCEOCHANGE (119,462), KXGOOGLECEOCHANGE (88,680), KXBOEINGCEOCHANGE (151,313). Same storage reasoning as daily-fda-approvals: 1440-minute bars land in the daily store, status=all captures the exchange's own result for any market it has finalized."
-   }
-  ]
- }
+  "_what": "Repo-tracked ingest settings. scripts/ingest-history.mjs reads this file on every run. Two things made this file necessary: the automation token cannot CREATE a workflow dispatch event (HTTP 403 on /actions/workflows/{id}/dispatches), and the daily workflow passes a fixed set of flags. Pushing a change to this file (or to .github/triggers/ingest.json) triggers the on-demand workflow, which then picks these settings up on the GitHub-hosted runner \u2014 the sandbox itself cannot open TLS to *.kalshi.com. NB: the earlier version of this note claimed a ruleset blocks workflow-file pushes; that was tested (commit c23be4d, reverted in eb1bfd2) and is FALSE \u2014 workflow files push fine, only the dispatch API is forbidden.",
+  "_schema": {
+    "intraday.enabled": "boolean \u2014 when true, every daily run also performs the intraday passes listed in intraday.blocks",
+    "intraday.blocks[].period": "minutes: 1 | 60 | 1440 (official enum: https://docs.kalshi.com/api-reference/market/get-market-candlesticks)",
+    "intraday.blocks[].status": "GET /markets discovery filter for block.series: open (default) | settled | all. 'settled'/'all' also ingest FINALIZED markets so their real exchange result (status=finalized, result yes/no) is stored with the bars \u2014 the only honest input for backtesting a series whose markets expire in days",
+    "intraday.blocks[].days": "backfill window in days (0 = from each market's real open_time)",
+    "intraday.blocks[].max_bars": "keep only the newest N bars per market (0 = unbounded); trimming is recorded in store.trims",
+    "intraday.blocks[].tickers": "explicit markets. Kept short on purpose: intraday bars are ~24x as many rows as daily bars",
+    "intraday.blocks[].series": "discover markets inside these series (ranked by the exchange's own lifetime volume, capped by max_markets, floored by min_volume)"
+  },
+  "intraday": {
+    "enabled": true,
+    "blocks": [
+      {
+        "name": "hourly-indices",
+        "period": 60,
+        "days": 20,
+        "max_bars": 336,
+        "max_backfill_days": 30,
+        "with_books": true,
+        "with_market": true,
+        "min_interval_ms": 300,
+        "tickers": [
+          "KXBTCY-27JAN0100-B77500",
+          "KXBTCY-27JAN0100-B47500",
+          "KXBTCY-27JAN0100-B52500",
+          "KXBTCY-27JAN0100-B72500",
+          "KXBTCY-27JAN0100-B67500",
+          "KXBTCY-27JAN0100-B62500",
+          "KXBTCY-27JAN0100-B82500",
+          "KXBTCY-27JAN0100-B57500",
+          "KXBTCY-27JAN0100-T149999.99",
+          "KXBTCY-27JAN0100-B87500",
+          "KXNASDAQ100Y-26DEC31H1600-T19000",
+          "KXINXY-26DEC31H1600-B8100"
+        ],
+        "_why_these": "Curated by LIFETIME CONTRACT VOLUME reported by the exchange (market.volume_fp in the daily store, see data/history/_manifest.json): the ten highest-volume KXBTCY strikes (the fee-free series; 2.0M-2.7M contracts each) plus KXNASDAQ100Y-26DEC31H1600-T19000 (1.27M) and KXINXY-26DEC31H1600-B8100 (507k). 12 markets x <=336 hourly bars keeps the store near 2 MB and the browser module near 400 KB, and the universe is described by a rule rather than by preference.",
+        "inherit_cli_universe": false,
+        "_why_not_all": "The first intraday run inherited the daily run's --series flag and ingested all 117 open markets of the three series (40,039 bars, 22 MB, ~1.3 MB/day of growth, ~630 HTTP requests per run, mostly zero-volume strikes). scripts/prune-intraday.mjs removed them and recorded every one in data/history/intraday/60m/_prune-ledger.json with its own restore command. inherit_cli_universe is now false by default."
+      },
+      {
+        "name": "hourly-weather-cities",
+        "period": 60,
+        "status": "all",
+        "series": [
+          "KXHIGHLAX",
+          "KXHIGHCHI",
+          "KXHIGHMIA",
+          "KXHIGHAUS",
+          "KXHIGHDEN",
+          "KXHIGHPHIL",
+          "KXHIGHTPHX",
+          "KXHIGHTSEA"
+        ],
+        "days": 0,
+        "max_backfill_days": 30,
+        "max_bars": 200,
+        "min_volume": 1000,
+        "max_markets": 10,
+        "with_books": true,
+        "with_market": true,
+        "min_interval_ms": 300,
+        "_why_this": "ROADMAP item #3 (more weather cities) as answered by the REAL series list captured by scripts/discover-universe.mjs on 2026-09-18: 54 KXHIGH* series exist and the eight ingested here are the highest by exchange-reported lifetime volume (KXHIGHLAX 166.2M, KXHIGHNY 144.6M, KXHIGHCHI 110.1M, KXHIGHMIA 98.5M, KXHIGHAUS 77.2M, KXHIGHDEN 50.8M, KXHIGHPHIL 41.5M, KXHIGHTPHX 16.8M, KXHIGHTSEA 16.5M). status=all ingests FINALIZED brackets so each carries the exchange result the replay settles on. Every one of these series has fee_multiplier 1 (data/discovered/series-fees.json), so the documented default fee model is the REAL configuration for all of them."
+      },
+      {
+        "name": "hourly-weather-settled",
+        "period": 60,
+        "status": "all",
+        "series": [
+          "KXHIGHNY"
+        ],
+        "days": 0,
+        "max_backfill_days": 60,
+        "max_bars": 200,
+        "min_volume": 1000,
+        "max_markets": 40,
+        "with_books": true,
+        "with_market": true,
+        "min_interval_ms": 300,
+        "_why_this": "ROADMAP item #3 (weather markets \u2014 the most-reported retail edge in the research ledger, R06/R03/R10). KXHIGHNY is the NYC daily-high series used by Kalshi's own API quick-start (https://docs.kalshi.com/getting_started/quick_start_market_data). status=all also ingests FINALIZED brackets, each of which carries the exchange's REAL result \u2014 the first tracked markets in this repository that actually settle, which is what the replay needs to book real $1/$0 cash flows instead of marking to the last quote. days=0 backfills each bracket from its own open_time (a bracket lives ~1-3 days); max_backfill_days=60 bounds the lookback; the top-40-by-volume cap keeps the pass bounded (~40 markets x <=48 hourly bars)."
+      },
+      {
+        "name": "minute-gold-15m-markets",
+        "period": 1,
+        "status": "all",
+        "series": [
+          "KXGOLD15M"
+        ],
+        "days": 2,
+        "max_backfill_days": 3,
+        "max_bars": 96,
+        "min_volume": 1000,
+        "max_markets": 8,
+        "with_books": true,
+        "with_market": true,
+        "min_interval_ms": 300,
+        "_why_this": "ROADMAP item #4 (one-minute candles). KXGOLD15M is Kalshi's 15-minute gold series (verified to trade heavily: third-party archives list individual 15-minute contracts with 3,000-7,000 trades). A 15-minute market has ~15 one-minute bars, so max_markets=8 x ~15 bars is tiny; the 96-bar cap and the 2-day window keep a cold store from pulling a long history. 1-minute bars are the resolution the R01 panic-fade source actually traded, so this store lets that family be tested at its native granularity."
+      },
+      {
+        "name": "hourly-sports-game-lines",
+        "period": 60,
+        "status": "all",
+        "series": [
+          "KXNFLGAME",
+          "KXMLBGAME",
+          "KXNBAGAME",
+          "KXNHLGAME",
+          "KXNCAAFGAME",
+          "KXWNBAGAME",
+          "KXUFCFIGHT"
+        ],
+        "days": 0,
+        "max_backfill_days": 30,
+        "max_bars": 200,
+        "min_volume": 1000,
+        "max_markets": 8,
+        "with_books": true,
+        "with_market": true,
+        "min_interval_ms": 300,
+        "_why_this": "ROADMAP item #5: a SPORTS series was the biggest signal-ledger gap. These seven are the highest-volume game market classes the exchange reports (KXNFLGAME 6.01B, KXMLBGAME 9.80B, KXNBAGAME 11.68B, KXNHLGAME 1.57B, KXNCAAFGAME 4.78B, KXWNBAGAME 1.08B, KXUFCFIGHT 1.28B lifetime contracts). A game market lives hours, so 60-minute bars are its natural resolution, and status=all keeps the FINALIZED games whose result the exchange published \u2014 the only markets whose settlement this replay may book. NOTE the real fee config: the MLB series carry fee_multiplier 0.5 (data/discovered/series-fees.json), which the fee engine applies per series."
+      },
+      {
+        "name": "minute-crypto-15m",
+        "period": 1,
+        "status": "all",
+        "series": [
+          "KXBTC15M",
+          "KXETH15M",
+          "KXSOL15M"
+        ],
+        "days": 2,
+        "max_backfill_days": 3,
+        "max_bars": 96,
+        "min_volume": 1000,
+        "max_markets": 8,
+        "with_books": true,
+        "with_market": true,
+        "min_interval_ms": 300,
+        "_why_this": "The three highest-volume 15-minute crypto series (KXBTC15M 18.15B, KXETH15M 972M, KXSOL15M 347M lifetime contracts) at one-minute resolution \u2014 the same treatment KXGOLD15M already gets. These are the fastest-settling markets on the exchange (15 minutes), so they produce the most independent settlement events per day for the micro flight."
+      },
+      {
+        "name": "hourly-macro-settled",
+        "period": 60,
+        "status": "all",
+        "series": [
+          "KXFEDDECISION",
+          "KXCPIYOY"
+        ],
+        "days": 0,
+        "max_backfill_days": 120,
+        "max_bars": 200,
+        "min_volume": 1000,
+        "max_markets": 8,
+        "with_books": true,
+        "with_market": true,
+        "min_interval_ms": 300,
+        "_why_this": "The two macro series the roster already names but has no bars for: KXFEDDECISION (611.7M lifetime contracts, fee_multiplier 1, mutually exclusive buckets) and KXCPIYOY (36.1M, BLS settlement). Both settle on a published official number, which makes their real result an unambiguous settlement input."
+      },
+      {
+        "name": "daily-fda-approvals",
+        "period": 1440,
+        "status": "all",
+        "series": [
+          "KXFDAAPPROVALPSYCHEDELIC",
+          "KXFDAAPPROVE",
+          "KXFDAANNOUNCE",
+          "KXFDARETATRUTIDE",
+          "KXFDAAPPROVALDATELLY",
+          "KXFDAAPPROVALDATECMPS"
+        ],
+        "days": 0,
+        "max_backfill_days": 400,
+        "max_bars": 400,
+        "min_volume": 0,
+        "max_markets": 5,
+        "with_books": true,
+        "with_market": true,
+        "min_interval_ms": 300,
+        "_why_this": "The user's own source list names 'FDA Decisions Drug Analysis' as a strategy family, and the discovery run (data/discovered/series-fees.json) returned these series as REAL: KXFDAAPPROVALPSYCHEDELIC (387,164 lifetime contracts), KXFDAANNOUNCE (100,001), KXFDAAPPROVE (74,690), KXFDARETATRUTIDE (38,989), plus two dated-approval series. A 1440-minute block (periodDir(1440) == data/history/, i.e. the DAILY store the daily flight replays) gives each market a real daily price path from its own open_time, and status=all stores whatever the exchange has already finalized so the replay books the REAL result. min_volume 0 on purpose: approval markets are thin (some have 0 lifetime volume), and the strategy that reads them must abstain on a market with no tradable path rather than be fed a filtered sample."
+      },
+      {
+        "name": "daily-ceo-exits",
+        "period": 1440,
+        "status": "all",
+        "series": [
+          "KXAAPLCEOCHANGE",
+          "KXTESLACEOCHANGE",
+          "KXOPENAICEOCHANGE",
+          "KXJPMCEOCHANGE",
+          "KXBOEINGCEOCHANGE",
+          "KXGOOGLECEOCHANGE"
+        ],
+        "days": 0,
+        "max_backfill_days": 400,
+        "max_bars": 400,
+        "min_volume": 0,
+        "max_markets": 5,
+        "with_books": true,
+        "with_market": true,
+        "min_interval_ms": 300,
+        "_why_this": "The user's source list names 'CEO' (MasterSite) as a strategy family and 'insider trades' alongside it. These are the highest-volume real CEO-exit series returned by the discovery run: KXAAPLCEOCHANGE (587,863), KXTESLACEOCHANGE (512,304), KXOPENAICEOCHANGE (223,770), KXJPMCEOCHANGE (119,462), KXGOOGLECEOCHANGE (88,680), KXBOEINGCEOCHANGE (151,313). Same storage reasoning as daily-fda-approvals: 1440-minute bars land in the daily store, status=all captures the exchange's own result for any market it has finalized."
+      }
+    ]
+  }
 }
