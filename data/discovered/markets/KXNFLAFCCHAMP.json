@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNFLAFCCHAMP&limit=200",
-  "capturedAt": "2026-09-18T06:42:28.078Z",
+  "capturedAt": "2026-09-18T07:04:52.501Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },
@@ -144,9 +144,9 @@
    "title": "Will Kansas City win the Pro Football AFC Championship?",
    "status": "active",
    "result": "",
-   "volume_fp": "450976.50",
-   "volume_24h_fp": "5542.71",
-   "open_interest_fp": "392553.01",
+   "volume_fp": "450983.50",
+   "volume_24h_fp": "5549.71",
+   "open_interest_fp": "392560.01",
    "liquidity_dollars": "0.0000",
    "yes_bid_dollars": "0.1300",
    "yes_ask_dollars": "0.1400",

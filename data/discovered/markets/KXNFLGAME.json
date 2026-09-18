@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNFLGAME&limit=200",
-  "capturedAt": "2026-09-18T06:42:01.428Z",
+  "capturedAt": "2026-09-18T07:04:24.304Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },
@@ -70,7 +70,7 @@
    "status": "finalized",
    "result": "no",
    "volume_fp": "30421098.89",
-   "volume_24h_fp": "29608606.81",
+   "volume_24h_fp": "29599985.21",
    "open_interest_fp": "16869704.61",
    "liquidity_dollars": "0.0000",
    "yes_bid_dollars": "0.0000",

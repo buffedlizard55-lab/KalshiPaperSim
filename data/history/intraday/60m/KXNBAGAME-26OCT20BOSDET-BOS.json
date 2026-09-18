@@ -5,31 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1788969600,
-      "open_interest_fp": "6066.75",
-      "price": {
-        "close_dollars": "0.5000",
-        "high_dollars": "0.5000",
-        "low_dollars": "0.4900",
-        "mean_dollars": "0.4923",
-        "open_dollars": "0.4900",
-        "previous_dollars": "0.4600"
-      },
-      "volume_fp": "3.90",
-      "yes_ask": {
-        "close_dollars": "0.5000",
-        "high_dollars": "0.5100",
-        "low_dollars": "0.4900",
-        "open_dollars": "0.4900"
-      },
-      "yes_bid": {
-        "close_dollars": "0.4600",
-        "high_dollars": "0.4600",
-        "low_dollars": "0.4600",
-        "open_dollars": "0.4600"
-      }
-    },
-    {
       "end_period_ts": 1788973200,
       "open_interest_fp": "6067.03",
       "price": {
@@ -4548,6 +4523,26 @@
         "low_dollars": "0.4700",
         "open_dollars": "0.4700"
       }
+    },
+    {
+      "end_period_ts": 1789714800,
+      "open_interest_fp": "8216.77",
+      "price": {
+        "previous_dollars": "0.4900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.5000",
+        "high_dollars": "0.5000",
+        "low_dollars": "0.5000",
+        "open_dollars": "0.5000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4800",
+        "high_dollars": "0.4800",
+        "low_dollars": "0.4800",
+        "open_dollars": "0.4800"
+      }
     }
   ],
   "books": [
@@ -4926,6 +4921,382 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-18T07:02:08.529Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "232100.94"
+            ],
+            [
+              "0.0200",
+              "18774.01"
+            ],
+            [
+              "0.0300",
+              "8037.01"
+            ],
+            [
+              "0.0400",
+              "0.01"
+            ],
+            [
+              "0.0500",
+              "500.01"
+            ],
+            [
+              "0.0600",
+              "4127.01"
+            ],
+            [
+              "0.0700",
+              "2000.01"
+            ],
+            [
+              "0.0800",
+              "6523.02"
+            ],
+            [
+              "0.0900",
+              "2.66"
+            ],
+            [
+              "0.1000",
+              "0.01"
+            ],
+            [
+              "0.1100",
+              "28.66"
+            ],
+            [
+              "0.1200",
+              "650.01"
+            ],
+            [
+              "0.1300",
+              "500.01"
+            ],
+            [
+              "0.1400",
+              "2229.94"
+            ],
+            [
+              "0.1500",
+              "0.01"
+            ],
+            [
+              "0.1600",
+              "530.01"
+            ],
+            [
+              "0.1700",
+              "22.01"
+            ],
+            [
+              "0.1800",
+              "0.01"
+            ],
+            [
+              "0.1900",
+              "13.39"
+            ],
+            [
+              "0.2000",
+              "0.01"
+            ],
+            [
+              "0.2100",
+              "2221.01"
+            ],
+            [
+              "0.2200",
+              "23.96"
+            ],
+            [
+              "0.2300",
+              "2018.01"
+            ],
+            [
+              "0.2400",
+              "0.01"
+            ],
+            [
+              "0.2500",
+              "195.91"
+            ],
+            [
+              "0.2600",
+              "0.01"
+            ],
+            [
+              "0.2700",
+              "0.01"
+            ],
+            [
+              "0.2800",
+              "0.01"
+            ],
+            [
+              "0.2900",
+              "1251.01"
+            ],
+            [
+              "0.3000",
+              "0.01"
+            ],
+            [
+              "0.3100",
+              "0.01"
+            ],
+            [
+              "0.3200",
+              "0.01"
+            ],
+            [
+              "0.3300",
+              "2.06"
+            ],
+            [
+              "0.3400",
+              "0.01"
+            ],
+            [
+              "0.3500",
+              "0.01"
+            ],
+            [
+              "0.3600",
+              "0.01"
+            ],
+            [
+              "0.3700",
+              "0.01"
+            ],
+            [
+              "0.3800",
+              "0.01"
+            ],
+            [
+              "0.3900",
+              "0.01"
+            ],
+            [
+              "0.4000",
+              "0.01"
+            ],
+            [
+              "0.4100",
+              "0.01"
+            ],
+            [
+              "0.4200",
+              "0.01"
+            ],
+            [
+              "0.4300",
+              "0.01"
+            ],
+            [
+              "0.4400",
+              "0.01"
+            ],
+            [
+              "0.4500",
+              "2487.95"
+            ],
+            [
+              "0.4600",
+              "377.01"
+            ],
+            [
+              "0.4700",
+              "1229.78"
+            ],
+            [
+              "0.4800",
+              "2282.00"
+            ],
+            [
+              "0.4900",
+              "50.00"
+            ],
+            [
+              "0.5000",
+              "50.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "231312.01"
+            ],
+            [
+              "0.0200",
+              "18884.01"
+            ],
+            [
+              "0.0300",
+              "5572.01"
+            ],
+            [
+              "0.0400",
+              "2000.01"
+            ],
+            [
+              "0.0500",
+              "500.01"
+            ],
+            [
+              "0.0600",
+              "6593.01"
+            ],
+            [
+              "0.0700",
+              "0.01"
+            ],
+            [
+              "0.0800",
+              "0.01"
+            ],
+            [
+              "0.0900",
+              "0.01"
+            ],
+            [
+              "0.1000",
+              "0.01"
+            ],
+            [
+              "0.1100",
+              "500.01"
+            ],
+            [
+              "0.1200",
+              "300.01"
+            ],
+            [
+              "0.1300",
+              "500.01"
+            ],
+            [
+              "0.1400",
+              "1111.00"
+            ],
+            [
+              "0.1500",
+              "0.01"
+            ],
+            [
+              "0.1600",
+              "1.01"
+            ],
+            [
+              "0.1700",
+              "0.01"
+            ],
+            [
+              "0.1800",
+              "0.01"
+            ],
+            [
+              "0.1900",
+              "31.01"
+            ],
+            [
+              "0.2000",
+              "1410.01"
+            ],
+            [
+              "0.2100",
+              "423.01"
+            ],
+            [
+              "0.2200",
+              "0.01"
+            ],
+            [
+              "0.2300",
+              "63.01"
+            ],
+            [
+              "0.2400",
+              "1220.01"
+            ],
+            [
+              "0.2500",
+              "0.01"
+            ],
+            [
+              "0.2600",
+              "0.01"
+            ],
+            [
+              "0.2700",
+              "0.01"
+            ],
+            [
+              "0.2800",
+              "0.01"
+            ],
+            [
+              "0.2900",
+              "0.01"
+            ],
+            [
+              "0.3000",
+              "0.01"
+            ],
+            [
+              "0.3100",
+              "0.01"
+            ],
+            [
+              "0.3200",
+              "441.01"
+            ],
+            [
+              "0.3300",
+              "82.34"
+            ],
+            [
+              "0.3400",
+              "44.16"
+            ],
+            [
+              "0.3500",
+              "44.17"
+            ],
+            [
+              "0.3600",
+              "0.01"
+            ],
+            [
+              "0.4400",
+              "111.00"
+            ],
+            [
+              "0.4500",
+              "42.09"
+            ],
+            [
+              "0.4600",
+              "50.00"
+            ],
+            [
+              "0.4700",
+              "50.00"
+            ],
+            [
+              "0.4800",
+              "7.99"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4953,7 +5324,7 @@
     "open_interest_fp": "8216.77",
     "open_time": "2026-08-20T15:28:00Z",
     "previous_price_dollars": "0.5000",
-    "previous_yes_ask_dollars": "0.5000",
+    "previous_yes_ask_dollars": "0.4900",
     "previous_yes_bid_dollars": "0.4800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -4981,16 +5352,24 @@
     "yes_sub_title": "Boston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS",
-  "market_captured_at": "2026-09-18T06:40:04.150Z",
+  "market_captured_at": "2026-09-18T07:02:07.858Z",
   "status": "active",
-  "last_ingested_at": "2026-09-18T06:40:04.780Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1787153280&end_ts=1789713604&period_interval=60",
+  "last_ingested_at": "2026-09-18T07:02:08.491Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1789711201&end_ts=1789714928&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T06:40:05.100Z",
       "dropped": 469,
       "dropped_from_ts": 1787241600,
       "dropped_to_ts": 1788966000,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-18T07:02:08.829Z",
+      "dropped": 1,
+      "dropped_from_ts": 1788969600,
+      "dropped_to_ts": 1788969600,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }

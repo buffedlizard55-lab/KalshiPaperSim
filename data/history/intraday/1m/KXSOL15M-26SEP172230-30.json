@@ -409,6 +409,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-18T07:03:08.641Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXSOL15M-26SEP172230-30/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -476,9 +486,9 @@
     "yes_sub_title": "Target Price: $102.4162"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXSOL15M-26SEP172230-30",
-  "market_captured_at": "2026-09-18T06:41:07.980Z",
+  "market_captured_at": "2026-09-18T07:03:07.976Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-18T06:41:08.924Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP172230-30/candlesticks?start_ts=1789627268&end_ts=1789713667&period_interval=1"
+  "last_ingested_at": "2026-09-18T07:03:08.609Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP172230-30/candlesticks?start_ts=1789698661&end_ts=1789714988&period_interval=1"
 }

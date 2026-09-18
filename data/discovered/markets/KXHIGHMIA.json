@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXHIGHMIA&limit=200",
-  "capturedAt": "2026-09-18T06:42:26.106Z",
+  "capturedAt": "2026-09-18T07:04:50.404Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },
@@ -95,7 +95,7 @@
    "status": "closed",
    "result": "",
    "volume_fp": "78585.10",
-   "volume_24h_fp": "76978.51",
+   "volume_24h_fp": "76977.51",
    "open_interest_fp": "33546.44",
    "liquidity_dollars": "0.0000",
    "yes_bid_dollars": "0.0000",

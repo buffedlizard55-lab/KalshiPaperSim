@@ -1859,6 +1859,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-18T07:02:33.294Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG24GSMIN-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1916,9 +1926,9 @@
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG24GSMIN-MIN",
-  "market_captured_at": "2026-09-18T06:40:28.265Z",
+  "market_captured_at": "2026-09-18T07:02:32.626Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-18T06:40:28.892Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG24GSMIN-MIN/candlesticks?start_ts=1787271000&end_ts=1789713628&period_interval=60"
+  "last_ingested_at": "2026-09-18T07:02:33.261Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG24GSMIN-MIN/candlesticks?start_ts=1787626801&end_ts=1789714952&period_interval=60"
 }

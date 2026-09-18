@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXMLBTEAMTOTAL&limit=200",
-  "capturedAt": "2026-09-18T06:42:23.587Z",
+  "capturedAt": "2026-09-18T07:04:47.708Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },
@@ -113,6 +113,31 @@
    "rules_primary": "If Chicago C scores 5+ runs in the Chicago C vs Cincinnati professional baseball game originally scheduled for Sep 18, 2026 at 6:40 PM EDT, then the market resolves to Yes."
   },
   {
+   "ticker": "KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE5",
+   "event_ticker": "KXMLBTEAMTOTAL-26SEP181910ATHCLE",
+   "series_ticker": null,
+   "title": "Will Cleveland score over 4.5 runs?",
+   "status": "active",
+   "result": "",
+   "volume_fp": "1469.39",
+   "volume_24h_fp": "1469.39",
+   "open_interest_fp": "1469.38",
+   "liquidity_dollars": "0.0000",
+   "yes_bid_dollars": "0.5000",
+   "yes_ask_dollars": "0.5100",
+   "last_price_dollars": "0.5200",
+   "open_time": "2026-09-17T23:00:00Z",
+   "close_time": "2026-09-21T23:10:00Z",
+   "settlement_ts": null,
+   "settlement_value_dollars": null,
+   "expiration_value": "",
+   "strike_type": "greater",
+   "floor_strike": 4.5,
+   "cap_strike": null,
+   "price_level_structure": "linear_cent",
+   "rules_primary": "If Cleveland scores 5+ runs in the A's vs Cleveland professional baseball game originally scheduled for Sep 18, 2026 at 7:10 PM EDT, then the market resolves to Yes."
+  },
+  {
    "ticker": "KXMLBTEAMTOTAL-26SEP172005BOSTEX-TEX8",
    "event_ticker": "KXMLBTEAMTOTAL-26SEP172005BOSTEX",
    "series_ticker": null,
@@ -136,31 +161,6 @@
    "cap_strike": null,
    "price_level_structure": "linear_cent",
    "rules_primary": "If Texas scores 8+ runs in the Boston vs Texas professional baseball game originally scheduled for Sep 17, 2026 at 8:05 PM EDT, then the market resolves to Yes."
-  },
-  {
-   "ticker": "KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE5",
-   "event_ticker": "KXMLBTEAMTOTAL-26SEP181910ATHCLE",
-   "series_ticker": null,
-   "title": "Will Cleveland score over 4.5 runs?",
-   "status": "active",
-   "result": "",
-   "volume_fp": "902.00",
-   "volume_24h_fp": "902.00",
-   "open_interest_fp": "901.99",
-   "liquidity_dollars": "0.0000",
-   "yes_bid_dollars": "0.5000",
-   "yes_ask_dollars": "0.5200",
-   "last_price_dollars": "0.5200",
-   "open_time": "2026-09-17T23:00:00Z",
-   "close_time": "2026-09-21T23:10:00Z",
-   "settlement_ts": null,
-   "settlement_value_dollars": null,
-   "expiration_value": "",
-   "strike_type": "greater",
-   "floor_strike": 4.5,
-   "cap_strike": null,
-   "price_level_structure": "linear_cent",
-   "rules_primary": "If Cleveland scores 5+ runs in the A's vs Cleveland professional baseball game originally scheduled for Sep 18, 2026 at 7:10 PM EDT, then the market resolves to Yes."
   }
  ]
 }

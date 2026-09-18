@@ -1513,6 +1513,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-18T07:02:00.711Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-LAA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1561,7 +1571,7 @@
     "ticker": "KXMLBGAME-26SEP172138MINLAA-LAA",
     "title": "Los Angeles A wins",
     "updated_time": "2026-09-18T04:43:04.903649Z",
-    "volume_24h_fp": "5676476.73",
+    "volume_24h_fp": "5676463.94",
     "volume_fp": "5683733.72",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1570,9 +1580,9 @@
     "yes_sub_title": "Los Angeles A"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-LAA",
-  "market_captured_at": "2026-09-18T06:39:56.548Z",
+  "market_captured_at": "2026-09-18T07:02:00.045Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-18T06:39:57.169Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP172138MINLAA-LAA/candlesticks?start_ts=1789350900&end_ts=1789713596&period_interval=60"
+  "last_ingested_at": "2026-09-18T07:02:00.679Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP172138MINLAA-LAA/candlesticks?start_ts=1789707601&end_ts=1789714920&period_interval=60"
 }
