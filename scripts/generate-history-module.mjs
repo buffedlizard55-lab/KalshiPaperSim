@@ -114,16 +114,22 @@ function barToTuple(b) {
   ];
 }
 
-function buildMarkets() {
-  if (!fs.existsSync(DATA_DIR)) return { markets: {}, files: 0 };
+function buildMarkets(dir = DATA_DIR, { maxBars = 0 } = {}) {
+  if (!fs.existsSync(dir)) return { markets: {}, files: 0 };
   const markets = {};
   let files = 0;
-  for (const file of fs.readdirSync(DATA_DIR).sort()) {
+  for (const file of fs.readdirSync(dir).sort()) {
     if (!file.endsWith('.json') || file.startsWith('_')) continue;
-    const store = readJsonSafe(path.join(DATA_DIR, file));
+    const store = readJsonSafe(path.join(dir, file));
     if (!store || typeof store.ticker !== 'string') continue;
-    const bars = Array.isArray(store.candlesticks) ? store.candlesticks : [];
-    bars.sort((a, b) => Number(a.end_period_ts) - Number(b.end_period_ts));
+    const allBars = Array.isArray(store.candlesticks) ? store.candlesticks.slice() : [];
+    allBars.sort((a, b) => Number(a.end_period_ts) - Number(b.end_period_ts));
+    // An explicit browser cap (intraday only) keeps the shipped module small. It
+    // drops the OLDEST bars and says so: bars_in_store and browser_bar_cap record
+    // exactly how many exist and how many are shipped, so a truncated module can
+    // never be mistaken for a complete series. The Node server and the tests read
+    // the full store from data/history/, where nothing is capped.
+    const bars = maxBars > 0 && allBars.length > maxBars ? allBars.slice(allBars.length - maxBars) : allBars;
     const tuples = bars.map(barToTuple);
     markets[store.ticker] = {
       // One bar kept exactly as the exchange sent it — the oracle for expandAccumulatedBar().
@@ -140,6 +146,10 @@ function buildMarkets() {
       first_ts: bars.length ? Number(bars[0].end_period_ts) : null,
       last_ts: bars.length ? Number(bars[bars.length - 1].end_period_ts) : null,
       bar_count: bars.length,
+      bars_in_store: allBars.length,
+      browser_bar_cap: maxBars || null,
+      truncated: bars.length < allBars.length,
+      trims: Array.isArray(store.trims) ? store.trims.length : 0,
       // The real market object captured by the ingest job. Without it a market
       // that is not in the in-repo snapshot could never be replayed.
       market: store.market || null,
@@ -156,11 +166,43 @@ function buildMarkets() {
   return { markets, files };
 }
 
+/** Trailing-bar cap for the intraday module shipped to browsers (see buildMarkets). */
+const MAX_BROWSER_INTRADAY_BARS = 400;
+
 function main() {
-  const { markets, files } = buildMarkets();
+  const { markets, files } = buildMarkets(DATA_DIR);
   const manifest = fs.existsSync(MANIFEST) ? readJsonSafe(MANIFEST) : null;
   const tickers = Object.keys(markets);
   const totalBars = tickers.reduce((s, t) => s + markets[t].bar_count, 0);
+
+  // ------------------------------------------------------------------
+  // INTRADAY (recommended-work item #2)
+  //   Same tuples, same expander, one module. Bounded per market so the
+  //   browser build stays a few hundred KB; the Node server reads the full
+  //   store (data/history/intraday/<period>m/) with src/history-store.js.
+  // ------------------------------------------------------------------
+  const intradayPeriods = {};
+  if (fs.existsSync(path.join(DATA_DIR, 'intraday'))) {
+    for (const dir of fs.readdirSync(path.join(DATA_DIR, 'intraday')).sort()) {
+      const full = path.join(DATA_DIR, 'intraday', dir);
+      if (!fs.statSync(full).isDirectory()) continue;
+      const period = Number(String(dir).replace(/m$/, ''));
+      const built = buildMarkets(full, { maxBars: MAX_BROWSER_INTRADAY_BARS });
+      const t = Object.keys(built.markets);
+      const bars = t.reduce((s, k) => s + built.markets[k].bar_count, 0);
+      if (t.length === 0) continue;
+      intradayPeriods[String(period)] = {
+        periodIntervalMinutes: period,
+        storeDir: `data/history/intraday/${dir}`,
+        marketCount: t.length,
+        barCount: bars,
+        browserBarCap: MAX_BROWSER_INTRADAY_BARS,
+        markets: built.markets
+      };
+    }
+  }
+  const intradayMarketCount = Object.values(intradayPeriods).reduce((s, p) => s + p.marketCount, 0);
+  const intradayBarCount = Object.values(intradayPeriods).reduce((s, p) => s + p.barCount, 0);
 
   const body = `/**
  * KalshiPaperSim — Accumulated Kalshi history (GENERATED — DO NOT EDIT)
@@ -175,10 +217,19 @@ function main() {
  * verbatim_sample_bar (one bar, character-for-character as received) and a test
  * asserts the expander reproduces it exactly.
  *
+ * Two granularities ship here:
+ *   ACCUMULATED_HISTORY  — daily bars (period_interval 1440), the competition window
+ *   ACCUMULATED_INTRADAY — hourly/minute bars (period_interval 60 or 1), capped to
+ *                          the newest ${MAX_BROWSER_INTRADAY_BARS} bars per market for the browser.
+ *                          Each market reports bars_in_store and truncated, so a
+ *                          capped module can never be mistaken for a full series;
+ *                          the Node server reads the uncapped store from
+ *                          data/history/intraday/<period>m/ (src/history-store.js).
+ *
  * Order-book snapshots are deliberately excluded (they stay in data/history/ for
  * the Node server; they are far too large for a browser module).
  *
- * ${tickers.length} market(s) · ${totalBars} daily bar(s) · generated ${new Date().toISOString()}
+ * ${tickers.length} market(s) · ${totalBars} daily bar(s) · ${intradayMarketCount} intraday market(s) · ${intradayBarCount} intraday bar(s) · generated ${new Date().toISOString()}
  */
 
 export const ACCUMULATED_HISTORY = ${JSON.stringify(
@@ -192,6 +243,14 @@ export const ACCUMULATED_HISTORY = ${JSON.stringify(
       manifestGeneratedAt: manifest?.generatedAt || null,
       manifestTotals: manifest?.totals || null,
       markets
+    },
+  )};
+
+export const ACCUMULATED_INTRADAY = ${JSON.stringify(
+    {
+      generatedAt: new Date().toISOString(),
+      present: intradayMarketCount > 0,
+      periods: intradayPeriods
     },
   )};
 
@@ -247,6 +306,28 @@ export function getAccumulatedTickers(minBars = 0) {
     .map((m) => m.ticker)
     .sort();
 }
+
+/* ------------------------------------------------------------------ *
+ * INTRADAY ACCESSORS
+ * ------------------------------------------------------------------ */
+
+/** Periods (in minutes) that ship an intraday series, e.g. [60]. */
+export function getIntradayPeriods() {
+  return Object.keys(ACCUMULATED_INTRADAY.periods || {}).map(Number).sort((a, b) => a - b);
+}
+
+/** Every shipped bar for one ticker at one intraday period, or null. */
+export function getIntradayBars(ticker, period = 60) {
+  const p = ACCUMULATED_INTRADAY.periods?.[String(period)];
+  if (!p) return null;
+  const m = p.markets[ticker];
+  return m ? m.tuples.map(expandAccumulatedBar) : null;
+}
+
+/** Raw shipped record (bar counts, truncation flag, source URLs). */
+export function getIntradayMarket(ticker, period = 60) {
+  return ACCUMULATED_INTRADAY.periods?.[String(period)]?.markets?.[ticker] || null;
+}
 `;
 
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
@@ -262,6 +343,15 @@ export function getAccumulatedTickers(minBars = 0) {
     );
   }
   if (tickers.length === 0) console.log('    (no accumulated history yet — the replay will use the in-repo captures)');
+  for (const [period, p] of Object.entries(intradayPeriods)) {
+    console.log(
+      `    intraday ${period}m: ${p.marketCount} market(s), ${p.barCount} shipped bar(s) ` +
+        `(cap ${p.browserBarCap}/market) from ${p.storeDir}`
+    );
+  }
+  if (Object.keys(intradayPeriods).length === 0) {
+    console.log('    (no intraday store yet — enable it in data/history/_ingest-request.json)');
+  }
   return 0;
 }
 

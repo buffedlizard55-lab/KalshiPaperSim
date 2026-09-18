@@ -77,6 +77,23 @@ jobs:
       - name: Regenerate the browser-safe accumulated-history module
         run: node scripts/generate-history-module.mjs | tee -a ingest.log
 
+      # Store vs. exchange, bar by bar. Re-fetches stored windows from the
+      # official endpoint and compares them FIELD-FOR-FIELD with stableEqual().
+      # A disagreement fails the step, so a drifted store cannot be committed
+      # quietly. (Runs only on a runner with egress — the build sandbox cannot
+      # open TLS to *.kalshi.com, IRREGULARITIES.md #4.)
+      - name: Verify the stored bars against the live API (deep comparison)
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          node scripts/verify-store-live.mjs --markets=6 --windows=2 | tee -a ingest.log
+          echo "live_verify_exit=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+        id: live_verify
+
+      - name: Verify the intraday store against the live API
+        continue-on-error: true
+        run: node scripts/verify-store-live.mjs --period=60 --markets=4 --windows=2 --bars-per-window=24 | tee -a ingest.log
+
       - name: Check whether the tracked markets have settled
         run: node scripts/track-settlements.mjs --write | tee -a ingest.log
         continue-on-error: true
@@ -91,6 +108,8 @@ jobs:
             echo "No new bars — nothing to commit."
             exit 0
           fi
+          du -sh data/history 2>/dev/null || true
+          du -sh data/history/intraday 2>/dev/null || true
           git config user.name  "kalshi-history-bot"
           git config user.email "kalshi-history-bot@users.noreply.github.com"
           git pull --rebase --autostash origin "${GITHUB_REF#refs/heads/}" || true
