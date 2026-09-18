@@ -3205,6 +3205,15 @@ test('90. every archived forecast city names a real series, a real point, and a 
       assert.match(c.verifiedNote, /gridId \w{3}/, `${c.key}: a confirmed point must name the NWS grid office`);
       assert.ok(c.settlementStation, `${c.key}: record the settlement station the market rules name`);
     }
+    // The machine-readable twin of that note: the capture compares this against
+    // the live api.weather.gov answer and refuses to write when they differ.
+    const grid = c.nwsGrid;
+    assert.ok(grid && grid.gridId && grid.forecastZone && grid.timeZone, `${c.key}: the configured NWS identity must be complete`);
+    assert.ok(Number.isFinite(grid.gridX) && Number.isFinite(grid.gridY), `${c.key}: the configured NWS identity must carry numeric grid x/y`);
+    assert.ok(
+      c.verifiedNote.includes(`gridId ${grid.gridId}`),
+      `${c.key}: the human note must name the same grid office the configuration asserts (${grid.gridId})`
+    );
     // Every covered series must be one the store can trade (no orphan archive).
     assert.ok(hourly.bySeries[c.series] || dailyFacts().bySeries[c.series], `${c.key}: series ${c.series} has no bars in any store`);
   }
@@ -3218,11 +3227,25 @@ test('90. every archived forecast city names a real series, a real point, and a 
     assert.ok(configured, `${loc.key}: the archive holds a location that is not configured`);
     assert.equal(loc.points_url, configured.pointsUrl, `${loc.key}: archive points_url must match the configuration`);
     if (loc.resolved) {
-      // Captured by the runner: the resolution must be self-consistent.
+      // Captured by the runner: the resolution must be self-consistent AND must
+      // be the identity this repo claims. A resolution read from the wrong
+      // response bag (all nulls, as one capture wrote) fails right here.
       assert.equal(loc.resolved.pointsUrl, configured.pointsUrl, `${loc.key}: resolved identity must name the same point`);
       assert.ok(loc.resolved.gridId, `${loc.key}: a resolution must name the NWS grid office`);
       assert.ok(Number.isFinite(Number(loc.resolved.gridX)) && Number.isFinite(Number(loc.resolved.gridY)), `${loc.key}: a resolution must name grid x/y`);
       assert.ok(loc.resolved.resolvedAt, `${loc.key}: a resolution must carry when it was resolved`);
+      assert.equal(loc.resolved.gridId, configured.nwsGrid.gridId, `${loc.key}: the captured grid office must be the configured one`);
+      assert.equal(Number(loc.resolved.gridX), configured.nwsGrid.gridX, `${loc.key}: the captured grid x must be the configured one`);
+      assert.equal(Number(loc.resolved.gridY), configured.nwsGrid.gridY, `${loc.key}: the captured grid y must be the configured one`);
+      assert.equal(String(loc.resolved.forecastZone || '').split('/').pop(), configured.nwsGrid.forecastZone, `${loc.key}: the captured forecast zone must be the configured one`);
+      assert.equal(loc.resolved.timeZone, configured.nwsGrid.timeZone, `${loc.key}: the captured time zone must be the configured one`);
+      const capturedUrl = (loc.snapshots?.[loc.snapshots.length - 1] || {}).forecast_url || '';
+      if (capturedUrl) {
+        assert.ok(
+          capturedUrl.includes(`gridpoints/${configured.nwsGrid.gridId}/${configured.nwsGrid.gridX},${configured.nwsGrid.gridY}/`),
+          `${loc.key}: the captured forecast URL must encode the configured grid (${configured.nwsGrid.gridId}/${configured.nwsGrid.gridX},${configured.nwsGrid.gridY})`
+        );
+      }
     }
   }
 

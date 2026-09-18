@@ -795,6 +795,15 @@ export const VERIFIED_FACTS = Object.freeze([
     capturedAt: '2026-09-18',
     usedIn: 'scripts/archive-forecasts.mjs -> FORECAST_LOCATIONS[].settlementStation; IRREGULARITIES.md #39',
     irregularity: '#39'
+  },
+  {
+    id: 'V100', group: 'Weather signals', status: 'CAPTURED',
+    fact: 'Every captured forecast URL independently confirms the grid identity of the archived city',
+    value: 'The nine stores captured on 2026-09-18 all point at the grid configured in scripts/archive-forecasts.mjs -> nwsGrid: NYC OKX 34,45; LAX LOX 148,41; CHI LOT 72,69; MIA MFL 106,51; AUS EWX 155,93; DEN BOU 74,66; PHL PHI 48,75; PHX PSR 161,57; SEA SEW 124,61. That cross-check is what exposed the null-resolved-identity bug (#40): the forecast URL had always encoded the right grid, so the identity was available all along and the nulls could only come from reading the wrong response body.',
+    url: 'https://api.weather.gov/gridpoints/MFL/106,51/forecast',
+    capturedAt: '2026-09-18',
+    usedIn: 'scripts/archive-forecasts.mjs -> verifyStore() grid cross-check; test 90 asserts the shipped forecast_url encodes the configured grid',
+    irregularity: '#40'
   }
 ]);
 
@@ -1260,6 +1269,20 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'The archive point for every city is now the point named by that market\'s own settlement rules. Chicago moved to Midway, Austin is recorded as an explicit, documented choice, and test 90 requires each entry to carry the NWS point response it was verified against - a note that cites no observation fails the build.',
     userAction: 'Open the two Chicago links and compare their relativeLocation fields: 41.7868,-87.7522 answers "Chicago, IL" on grid LOT 72,69 because Midway is the station Kalshi settles on.'
+  },
+  {
+    id: 40, severity: 'med',
+    title: 'The first nine-city capture stored a full set of nulls under the name "resolved identity"',
+    assumed: 'That reading gridId/gridX/gridY/forecastZone/timeZone off the response used to build a snapshot was enough to record what api.weather.gov said the point is.',
+    truth: 'The capture fetched two different documents: GET /points/{lat},{lon} (which carries the identity) and GET {properties.forecast} (which carries only the forecast). captureLocation() returned the FORECAST document under the name properties, and the resolved block read identity fields out of it - so every store written by commit ae16030 recorded gridId/gridX/gridY/forecastZone/county/relativeLocation/timeZone as null while still stamping resolvedAt: it claimed a resolution it had not stored. The forecast rows themselves were correct; the identity metadata was not.',
+    evidence: [
+      { label: 'The capture that wrote the nulls', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/commit/ae16030' },
+      { label: 'Point response that carries the identity (Miami)', url: 'https://api.weather.gov/points/25.7959,-80.287' },
+      { label: 'Forecast response the code was reading instead', url: 'https://api.weather.gov/gridpoints/MFL/106,51/forecast' },
+      { label: 'What the store showed', url: null, text: 'data/forecasts/miami-mia.json (ae16030): location.resolved = { gridId: null, gridX: null, gridY: null, forecastZone: null, county: null, relativeLocation: null, timeZone: null, resolvedAt: "2026-09-18T13:24:29.350Z" } while snapshots[0].forecast_url = ".../gridpoints/MFL/106,51/forecast"' }
+    ],
+    action: 'captureLocation() now returns the two documents separately (pointProperties vs forecastProperties) and identity is read from the point document only. Three guards make the failure mode impossible to repeat silently: the capture compares the live identity against the nwsGrid written in the configuration and refuses to write on a mismatch; the offline audit (--verify) fails on an incomplete or mismatched resolution and on a forecast URL that encodes a different grid; and test 90 asserts the shipped module agrees with the configuration field for field. The workflow now runs the audit under set -o pipefail and fails the run when any location did not capture.',
+    userAction: 'Compare data/forecasts/miami-mia.json with the two links: the forecast URL always said MFL/106,51, which is exactly what the point response says and what the store now records instead of nulls.'
   }
 ]);
 
@@ -1292,7 +1315,7 @@ export const COMPETITION_SITE_ANALYSIS = Object.freeze([
     whatWeTook: 'A contest calendar with entry periods and a scoring summary per entrant.',
     whatWeDidNotTake: 'No entries or branding.',
     implementedIn: 'Calendar strip + per-trader computed stats (return, drawdown, fees, unfilled)'
-  },
+  }
 ]);
 
 /** Group facts for rendering. */

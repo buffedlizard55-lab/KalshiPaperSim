@@ -106,6 +106,7 @@ const LOCATIONS = [
     latitude: 40.7829,
     longitude: -73.9654,
     pointsUrl: 'https://api.weather.gov/points/40.7829,-73.9654',
+    nwsGrid: { gridId: 'OKX', gridX: 34, gridY: 45, forecastZone: 'NYZ072', timeZone: 'America/New_York' },
     verifiedNote:
       'GET https://api.weather.gov/points/40.7829,-73.9654 (2026-09-18): gridId OKX, gridX 34, gridY 45, forecastZone NYZ072, relativeLocation "New York, NY", timeZone America/New_York. First archived 2026-09-18T03:19:26Z.'
   },
@@ -116,6 +117,7 @@ const LOCATIONS = [
     settlementStation: 'CLILAX',
     latitude: 33.9425,
     longitude: -118.4081,
+    nwsGrid: { gridId: 'LOX', gridX: 148, gridY: 41, forecastZone: 'CAZ366', timeZone: 'America/Los_Angeles' },
     verifiedNote:
       'GET https://api.weather.gov/points/33.9425,-118.4081 (2026-09-18): gridId LOX, gridX 148, gridY 41, forecastZone CAZ366, relativeLocation "Los Angeles, CA", timeZone America/Los_Angeles.'
   },
@@ -126,6 +128,7 @@ const LOCATIONS = [
     settlementStation: 'CLIMDW',
     latitude: 41.7868,
     longitude: -87.7522,
+    nwsGrid: { gridId: 'LOT', gridX: 72, gridY: 69, forecastZone: 'ILZ104', timeZone: 'America/Chicago' },
     verifiedNote:
       'THE POINT FOLLOWS THE SETTLEMENT STATION. The captured KXHIGHCHI market rules name CLIMDW — "the maximum temperature recorded at Chicago (CLIMDW)" — which is Midway, not O\'Hare, so the archive point is Midway (verified: GET https://api.weather.gov/points/41.7868,-87.7522 on 2026-09-18 -> gridId LOT, gridX 72, gridY 69, forecastZone ILZ104, relativeLocation "Chicago, IL"). An earlier draft of this file used O\'Hare (41.9786,-87.9048, grid LOT 66,77) — a real ~30 km basis error that the rules text caught.'
   },
@@ -136,6 +139,7 @@ const LOCATIONS = [
     settlementStation: 'CLIMIA',
     latitude: 25.7959,
     longitude: -80.287,
+    nwsGrid: { gridId: 'MFL', gridX: 106, gridY: 51, forecastZone: 'FLZ074', timeZone: 'America/New_York' },
     verifiedNote:
       'GET https://api.weather.gov/points/25.7959,-80.287 (2026-09-18): gridId MFL, gridX 106, gridY 51, forecastZone FLZ074, relativeLocation "Miami Springs, FL" (the airport is in Miami Springs), timeZone America/New_York.'
   },
@@ -147,6 +151,7 @@ const LOCATIONS = [
     latitude: 30.3167,
     longitude: -97.7667,
     pointsUrl: 'https://api.weather.gov/points/30.3167,-97.7667',
+    nwsGrid: { gridId: 'EWX', gridX: 155, gridY: 93, forecastZone: 'TXZ192', timeZone: 'America/Chicago' },
     verifiedNote:
       'AMBIGUOUS SETTLEMENT STATION, RECORDED RATHER THAN GUESSED. The captured KXHIGHAUS rules say only "the maximum temperature recorded at Austin (CLIAUS)" — The Weather Company\'s Austin climate record. Two points are plausible and both resolve on the official API: Camp Mabry (GET https://api.weather.gov/points/30.3167,-97.7667 (2026-09-18) -> gridId EWX, gridX 155, gridY 93, forecastZone TXZ192, relativeLocation "Austin, TX") and Austin-Bergstrom (GET https://api.weather.gov/points/30.1975,-97.6664 -> gridId EWX, gridX 159, gridY 88, forecastZone TXZ192). THIS ENTRY USES CAMP MABRY, the NWS Austin climate station; the alternative is recorded here so the choice is auditable instead of invisible.'
   },
@@ -157,6 +162,7 @@ const LOCATIONS = [
     settlementStation: 'CLIDEN',
     latitude: 39.8561,
     longitude: -104.6737,
+    nwsGrid: { gridId: 'BOU', gridX: 74, gridY: 66, forecastZone: 'COZ040', timeZone: 'America/Denver' },
     verifiedNote:
       'GET https://api.weather.gov/points/39.8561,-104.6737 (2026-09-18): gridId BOU, gridX 74, gridY 66, forecastZone COZ040, relativeLocation "Denver, CO", timeZone America/Denver.'
   },
@@ -167,6 +173,7 @@ const LOCATIONS = [
     settlementStation: 'CLIPHL',
     latitude: 39.8729,
     longitude: -75.2437,
+    nwsGrid: { gridId: 'PHI', gridX: 48, gridY: 75, forecastZone: 'PAZ070', timeZone: 'America/New_York' },
     verifiedNote:
       'GET https://api.weather.gov/points/39.8729,-75.2437 (2026-09-18): gridId PHI, gridX 48, gridY 75, forecastZone PAZ070, relativeLocation "Philadelphia, PA", timeZone America/New_York.'
   },
@@ -177,6 +184,7 @@ const LOCATIONS = [
     settlementStation: 'CLIPHX',
     latitude: 33.4342,
     longitude: -112.0116,
+    nwsGrid: { gridId: 'PSR', gridX: 161, gridY: 57, forecastZone: 'AZZ543', timeZone: 'America/Phoenix' },
     verifiedNote:
       'GET https://api.weather.gov/points/33.4342,-112.0116 (2026-09-18): gridId PSR, gridX 161, gridY 57, forecastZone AZZ543, relativeLocation "Phoenix, AZ", timeZone America/Phoenix.'
   },
@@ -187,6 +195,7 @@ const LOCATIONS = [
     settlementStation: 'CLISEA',
     latitude: 47.4502,
     longitude: -122.3088,
+    nwsGrid: { gridId: 'SEW', gridX: 124, gridY: 61, forecastZone: 'WAZ316', timeZone: 'America/Los_Angeles' },
     verifiedNote:
       'GET https://api.weather.gov/points/47.4502,-122.3088 (2026-09-18): gridId SEW, gridX 124, gridY 61, forecastZone WAZ316, relativeLocation "SeaTac, WA", timeZone America/Los_Angeles.'
   }
@@ -301,6 +310,31 @@ export function verifyStore() {
         }
       }
     }
+    // A stored resolution is a claim about the world; it must be complete and it
+    // must agree with the identity written in this file. A half-filled
+    // resolution (fields read from the wrong response bag) fails the audit.
+    const res = store.location?.resolved;
+    if (res) {
+      const missing = ['gridId', 'gridX', 'gridY', 'forecastZone', 'timeZone'].filter((k) => res[k] === null || res[k] === undefined);
+      if (missing.length) {
+        console.log(`  ✗ ${loc.key}: resolved identity is incomplete — missing ${missing.join(', ')}`);
+        problems += 1;
+      }
+      const want = loc.nwsGrid || {};
+      const wrong = Object.entries(want).filter(([k, v]) => {
+        const got = k === 'forecastZone' ? String(res[k] || '').split('/').pop() : res[k];
+        return got !== v;
+      });
+      if (wrong.length) {
+        console.log(`  ✗ ${loc.key}: resolved identity disagrees with the configured NWS grid — ${wrong.map(([k, v]) => `${k}: file says ${v}, store says ${res[k]}`).join('; ')}`);
+        problems += 1;
+      }
+      const encoded = (snaps[snaps.length - 1]?.forecast_url || '').match(/gridpoints\/(\w+)\/(\d+),(\d+)\//);
+      if (encoded && `${encoded[1]}/${encoded[2]},${encoded[3]}` !== `${want.gridId}/${want.gridX},${want.gridY}`) {
+        console.log(`  ✗ ${loc.key}: the forecast URL encodes grid ${encoded[1]}/${encoded[2]},${encoded[3]}, not the configured ${want.gridId}/${want.gridX},${want.gridY}`);
+        problems += 1;
+      }
+    }
     console.log(
       `${ordered ? '✓' : '✗'} ${loc.key}: ${snaps.length} snapshot(s), ` +
         `${snaps.reduce((a, s) => a + (s.days || []).length, 0)} day-row(s), ` +
@@ -328,13 +362,46 @@ async function captureLocation(loc) {
     console.error(`✗ ${loc.key}: forecast fetch failed — ${fcRes.error}`);
     return { ok: false };
   }
+  // THE CLAIM vs THE ANSWER. nwsGrid is what a human read off api.weather.gov
+  // and wrote into this file; the live response is what the API says today. If
+  // they disagree, the archive would silently record the wrong identity, so the
+  // capture refuses to write and shouts instead.
+  const identity = {
+    gridId: pointsRes.json?.properties?.gridId ?? null,
+    gridX: pointsRes.json?.properties?.gridX ?? null,
+    gridY: pointsRes.json?.properties?.gridY ?? null,
+    forecastZone: pointsRes.json?.properties?.forecastZone ?? null,
+    timeZone: pointsRes.json?.properties?.timeZone ?? null
+  };
+  const mismatched = Object.entries(loc.nwsGrid || {}).filter(([k, want]) => {
+    const got = k === 'forecastZone' ? (identity.forecastZone || '').split('/').pop() : identity[k];
+    return got !== want;
+  });
+  if (mismatched.length) {
+    console.error(
+      `✗ ${loc.key}: the live NWS point disagrees with the configured identity — ` +
+        mismatched.map(([k, want]) => `${k}: configured ${want}, API said ${identity[k]}`).join('; ') +
+        '. No snapshot written; fix the configuration or the point.'
+    );
+    return { ok: false, mismatch: mismatched };
+  }
   const periods = fcRes.json?.properties?.periods || [];
   const days = extractDailyHighs(periods);
   if (days.length === 0) {
     console.error(`✗ ${loc.key}: forecast carried no usable daytime °F periods`);
     return { ok: false };
   }
-  return { ok: true, forecastUrl, properties: fcRes.json.properties, days };
+  // TWO different property bags, and they are not interchangeable: the POINT
+  // RESOLUTION (grid office, grid x/y, zone, time zone, relative location) is
+  // only in the /points response; the forecast metadata lives in the gridpoint
+  // response. Reading identity out of the forecast bag returns nulls.
+  return {
+    ok: true,
+    forecastUrl,
+    pointProperties: pointsRes.json?.properties || {},
+    forecastProperties: fcRes.json?.properties || {},
+    days
+  };
 }
 
 async function main() {
@@ -348,34 +415,38 @@ async function main() {
   if (args.verify) return verifyStore();
 
   const capturedAt = new Date().toISOString();
+  const failures = [];
   for (const loc of FORECAST_LOCATIONS) {
     if (args.dryRun) {
       console.log(`[dry-run] would GET ${loc.pointsUrl} then its properties.forecast`);
       continue;
     }
     const res = await captureLocation(loc);
-    if (!res.ok) continue;
+    if (!res.ok) {
+      failures.push({ key: loc.key, reason: res.mismatch ? `point/resolution mismatch (${res.mismatch.map(([k, v]) => k).join(', ')})` : 'capture failed (see log)' });
+      continue;
+    }
     const snapshot = {
       captured_at: capturedAt,
       points_url: loc.pointsUrl,
       forecast_url: res.forecastUrl,
-      forecastGenerator: res.properties.forecastGenerator || null,
-      updateTime: res.properties.updateTime || null,
-      units: res.properties.units || null,
+      forecastGenerator: res.forecastProperties.forecastGenerator || null,
+      updateTime: res.forecastProperties.updateTime || null,
+      units: res.forecastProperties.units || null,
       days: res.days
     };
     // THE RESOLVED IDENTITY, written down at capture time. The coordinate above
     // is a claim; this is what api.weather.gov said the point actually is.
     const resolved = {
-      gridId: res.properties.gridId ?? null,
-      gridX: res.properties.gridX ?? null,
-      gridY: res.properties.gridY ?? null,
-      forecastZone: res.properties.forecastZone ?? null,
-      county: res.properties.county ?? null,
-      relativeLocation: res.properties.relativeLocation?.properties
-        ? `${res.properties.relativeLocation.properties.city ?? ''}, ${res.properties.relativeLocation.properties.state ?? ''}`.trim()
+      gridId: res.pointProperties.gridId ?? null,
+      gridX: res.pointProperties.gridX ?? null,
+      gridY: res.pointProperties.gridY ?? null,
+      forecastZone: res.pointProperties.forecastZone ?? null,
+      county: res.pointProperties.county ?? null,
+      relativeLocation: res.pointProperties.relativeLocation?.properties
+        ? `${res.pointProperties.relativeLocation.properties.city ?? ''}, ${res.pointProperties.relativeLocation.properties.state ?? ''}`.trim()
         : null,
-      timeZone: res.properties.timeZone ?? null,
+      timeZone: res.pointProperties.timeZone ?? null,
       resolvedAt: capturedAt,
       pointsUrl: loc.pointsUrl
     };
@@ -415,9 +486,24 @@ async function main() {
     } catch {
       req = {};
     }
-    req.last_run = { at: capturedAt, locations: FORECAST_LOCATIONS.map((l) => l.key), workflow: '.github/workflows/weather-signals.yml' };
+    req.last_run = {
+      at: capturedAt,
+      locations: FORECAST_LOCATIONS.map((l) => l.key),
+      captured: FORECAST_LOCATIONS.length - failures.length,
+      failures,
+      workflow: '.github/workflows/weather-signals.yml'
+    };
     writeJson(reqPath, req);
   }
+  if (failures.length) {
+    console.error(
+      `✗ ${failures.length}/${FORECAST_LOCATIONS.length} location(s) did not capture: ` +
+        failures.map((f) => `${f.key} (${f.reason})`).join('; ') +
+        '. Snapshots that DID succeed are written; the workflow reports this run as failed so it cannot pass unnoticed.'
+    );
+    return 1;
+  }
+  console.log(`✓ all ${FORECAST_LOCATIONS.length} locations captured at ${capturedAt}`);
   return 0;
 }
 
