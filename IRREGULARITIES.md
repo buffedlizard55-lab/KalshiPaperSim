@@ -1,8 +1,8 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-18 by `scripts/render-docs.js` from `src/verification-data.js`.
-**31 irregularities** flagged during this build: 11 high, 13 medium,
-6 low, 1 informational.
+**36 irregularities** flagged during this build: 11 high, 15 medium,
+9 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
 about it**, and **what you should do**. Nothing here is speculation: each item was found by comparing an
@@ -441,6 +441,44 @@ assumption against an official document or a real API response.
 
 ---
 
+## #32 — The requested "CEO" project does not exist in the verified directory
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That a project named "CEO" exists among the owner’s GitHub Pages sites and could supply a trading signal. |
+| **Verified truth** | The official GitHub API lists 39 public repositories for buffedlizard55-lab on 2026-09-18; none is named CEO or close to it. The MasterSite directory publishes 38 of the 39 and states that one repository is "permanently excluded by owner request" without naming it. The requested project is therefore either renamed, the excluded repository, or a misremembered name. |
+| **What the code does** | The review records S00 with status NOT_FOUND and a flag instead of silently skipping the request. No strategy was invented for a project that could not be examined. |
+| **What you should do** | Owner review needed: rename the repo, confirm the excluded repository is the one meant, or correct the name. |
+
+**Evidence**
+
+- Official repository list (39, no CEO): <https://api.github.com/users/buffedlizard55-lab/repos?per_page=100>
+- MasterSite directory (38 published, 1 excluded by owner request): <https://buffedlizard55-lab.github.io/MasterSite/>
+- Recorded in the ledger — `src/signal-sources.js → S00 (status NOT_FOUND, flagged); test 76 asserts the missing project is named and flagged`
+
+---
+
+## #34 — Weather basis mismatch: the archived signal is NWS, the settlement is The Weather Company
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That a forecast from the National Weather Service and the market’s settlement source measure the same number. |
+| **Verified truth** | KXHIGHNY rules name "The Weather Company" data for New York City (CLINYC) as the settlement source (V84). The point-in-time archive holds the NWS gridded forecast for Central Park (V87/V88) — a different provider. On most days the two agree closely, but they are not the same measurement, and on disagreement days a forecast-confirming strategy loses even when its forecast was "right". |
+| **What the code does** | The mismatch is published on the strategy, in the forecast-status panel and here. It is a real source of noise the forward test will measure, not something to hide. If The Weather Company ever exposes a free point-in-time API, the archive can add it as a second provider. |
+| **What you should do** | When reading ForecastEdge_Weather results, remember the signal and the settlement come from different providers. |
+
+**Evidence**
+
+- Settlement source (captured rules): <https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP07-B77.5>
+- Signal source (NWS point forecast): <https://api.weather.gov/gridpoints/OKX/34,45/forecast>
+- Stated on the strategy — `src/strategies.js → ForecastEdge_Weather thesis (BASIS MISMATCH paragraph); the UI Research tab repeats it`
+
+---
+
 ## #9 — Two different status vocabularies for the same concept
 
 **Severity:** `LOW`
@@ -543,6 +581,61 @@ assumption against an official document or a real API response.
 
 - Per-market coverage — `GET /api/history → markets[].bars, .noTradeBars, .origin, .excludedReason`
 - No-trade bar shape: <https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1781841600&end_ts=1781928000&period_interval=1440>
+
+---
+
+## #33 — The "Gold" project is a ring buyer’s directory, not a gold-market signal (name collision)
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That the GOLD project could supply gold-price information for a Kalshi gold strategy. |
+| **Verified truth** | GOLD is an evidence-based buyer’s reference for solid gold RINGS — 482 jewelry listings ranked by price per pure-gold gram. Retail jewelry quotes are not a financial gold price, and wiring them into a market strategy would be a category error. Kalshi’s actual gold markets (KXGOLD15M and siblings) are now tracked directly from the exchange. |
+| **What the code does** | The mismatch is flagged on the signal-source ledger and on the strategy itself. The gold strategy uses only the exchange’s own captured bars and results. |
+| **What you should do** | If a gold-price signal is wanted later, the source must be an official price (e.g. LBMA/CME archive), not a jewelry directory. |
+
+**Evidence**
+
+- GOLD project (rings): <https://buffedlizard55-lab.github.io/GOLD/>
+- The real gold market, captured from the exchange: <https://external-api.kalshi.com/trade-api/v2/markets/KXGOLD15M-26SEP162030-30>
+- Recorded in the ledger — `src/signal-sources.js → S11 (status NOT_A_SIGNAL, flagged); GoldBracket_EarlyLeader sourceNote states the project contributes nothing to its inputs`
+
+---
+
+## #35 — An ACTIVE market’s lifetime volume can exceed the sum of its stored bars — only finalized markets reconcile exactly
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That summing a market’s stored volume_fp always reproduces its lifetime volume_fp (V80). |
+| **Verified truth** | For FINALIZED markets the sum reconciles exactly (all 39 settled weather brackets and all 8 gold contracts do). For an ACTIVE market the market object is captured at a different instant than the last stored bar, and trading continues after it — observed: KXHIGHNY-26SEP17-B82.5 (status active) whose stored bars sum to less than its lifetime volume at capture. |
+| **What the code does** | The store audit and test 79 assert exact reconciliation for finalized markets only, and treat an active market’s shortfall as expected ongoing trading rather than data corruption. |
+| **What you should do** | None — this is a documented property of capturing a moving market, not an error. |
+
+**Evidence**
+
+- The active bracket that exposed it: <https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP17-B82.5>
+- The exact-reconciliation rule for finalized markets — `test 79 in test/simulation.test.js reconciles only status=finalized stores`
+
+---
+
+## #36 — KXHIGHNY / KXGOLD15M fee multipliers are not yet captured — fees default to the documented M=1
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That the fee multiplier of the two new series is known from a captured Series object (as it is for KXBTCY=0, V11). |
+| **Verified truth** | The ingest captures MARKET objects, not SERIES objects, so seriesFeeConfig() falls back to the documented default multiplier M=1 (taker 0.07×P×(1−P)) with a "captured: false" note. If either series carries a non-standard multiplier in the official Non-Standard Fees table, fees for those flights would be over- or under-charged. |
+| **What the code does** | Every fee number for the two new series is computed with the documented default AND labelled as such. Closing this needs one GET /series/{ticker} capture per series (a listed roadmap item). |
+| **What you should do** | Open the fee schedule PDF and check whether KXHIGHNY / KXGOLD15M appear in the Non-Standard Fees table; if they do, capture the series objects and re-run the reports. |
+
+**Evidence**
+
+- Fee schedule (check the Non-Standard table for these series): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
+- The honest fallback — `src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"`
 
 ---
 

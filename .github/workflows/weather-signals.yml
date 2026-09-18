@@ -1,0 +1,64 @@
+name: Weather signal archive
+
+# ROADMAP item #3 (weather markets): archive the official NWS point forecast
+# several times a day so a weather strategy can only ever read the forecast
+# that existed AT DECISION TIME (no archive = no honest test; a re-fetched
+# "forecast" for a past date is a lookahead).
+#
+# WHAT IT WRITES: data/forecasts/<location>.json — append-only snapshots, each
+# with captured_at, the api.weather.gov URLs, and one row per forecast day
+# (local date, forecast high °F). Bounded to the newest 1000 snapshots per
+# location with a trims[] ledger, exactly like the candlestick store.
+#
+# WHY A WORKFLOW: api.weather.gov is not reachable from the build sandbox
+# (only github.com egress works there). GitHub-hosted runners have
+# unrestricted egress, so this is where the capture can actually run.
+#
+# TRIGGER: every 3 hours on schedule, plus any push that changes
+# .github/triggers/forecast.json (the same commit-to-request pattern as the
+# ingest workflow — the automation token cannot create workflow_dispatch
+# events, but it can commit a file).
+
+on:
+  schedule:
+    # Five captures/day spread across the NY weather-trading day (UTC).
+    - cron: '23 1,7,13,19,23 * * *'
+  push:
+    paths:
+      - '.github/triggers/forecast.json'
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Capture the point-in-time NWS forecast
+        run: |
+          set -o pipefail
+          node scripts/archive-forecasts.mjs 2>&1 | tee forecast.log
+
+      - name: Audit the forecast store (no network)
+        run: node scripts/archive-forecasts.mjs --verify | tee -a forecast.log
+
+      - name: Regenerate the browser-safe forecast + history modules
+        run: node scripts/generate-history-module.mjs | tee -a forecast.log
+
+      - name: Commit the new snapshots
+        run: |
+          if [ -z "$(git status --porcelain data/forecasts src/forecast-data.js src/accumulated-history.js)" ]; then
+            echo "No new forecast data — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "kalshi-forecast-bot"
+          git config user.email "kalshi-forecast-bot@users.noreply.github.com"
+          git add data/forecasts src/forecast-data.js src/accumulated-history.js
+          git commit -m "chore(forecasts): archive point-in-time NWS forecast $(date -u +%F' '%H:%M)"
+          git push

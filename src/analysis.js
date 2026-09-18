@@ -364,6 +364,20 @@ export function buildLeaderboard(results) {
       depthMode: r.dataProvenance?.depthMode || null,
       verdict: r.analysis?.verdict || 'UNKNOWN',
       qualified: (r.totalTrades || 0) >= LEADERBOARD_QUALIFICATION.minTrades,
+      // Why an entry is unranked, published instead of left blank: a 0-trade
+      // strategy is either a design that found no eligible market OR one whose
+      // point-in-time signal (e.g. the forecast archive) does not overlap the
+      // window — two very different findings.
+      disqualificationReason:
+        (r.totalTrades || 0) >= LEADERBOARD_QUALIFICATION.minTrades
+          ? null
+          : r.skippedFlight
+            ? `Flight mismatch — ${r.skippedFlight.reason} (this design runs in another flight.)`
+            : `No executed fills — ${LEADERBOARD_QUALIFICATION.rule} Listed unranked: ${
+                r.realSettlements?.eligibleMarkets?.length
+                  ? 'the universe is tradeable, but this design\'s entry condition never fired on it (for a signal-driven design, the point-in-time signal may not cover the window).'
+                  : 'no eligible market in this flight\'s universe for this design.'
+              }`,
       computed: true
     }))
     .sort((a, b) => {

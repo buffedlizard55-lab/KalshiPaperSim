@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T01:04:21.051Z",
+  "generatedAt": "2026-09-18T03:35:35.999Z",
   "why": "Depth behind a candlestick is not published, so a replay must either model it or use a real captured ladder. This report runs the SAME roster over the SAME real bars twice and reports both, because the difference is a measure of how much the depth assumption matters.",
   "capturedDepthSource": {
     "marketsWithCapturedLadder": 30,
@@ -525,6 +525,17 @@
       },
       {
         "rank": null,
+        "username": "GoldBracket_EarlyLeader",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
         "username": "ShockTiming_ModerateFav",
         "returnPct": 0,
         "finalEquity": 100000,
@@ -762,6 +773,17 @@
       },
       {
         "rank": null,
+        "username": "GoldBracket_EarlyLeader",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
         "username": "ShockTiming_ModerateFav",
         "returnPct": 0,
         "finalEquity": 100000,
@@ -936,6 +958,14 @@
       "deltaPct": 0,
       "modelledTrades": 29,
       "capturedTrades": 29
+    },
+    {
+      "username": "GoldBracket_EarlyLeader",
+      "modelledPct": 0,
+      "capturedPct": 0,
+      "deltaPct": 0,
+      "modelledTrades": 0,
+      "capturedTrades": 0
     },
     {
       "username": "ShockTiming_ModerateFav",

@@ -26,6 +26,10 @@ import {
 import {
   RESEARCH_SOURCES, RESEARCH_META, RESEARCH_GAPS, researchStats, recreatedStrategyMap, RESEARCH_CAPTURE_METHODS
 } from './research-sources.js';
+import {
+  SIGNAL_SOURCES, signalSourceStats, SIGNAL_SOURCE_STATUS
+} from './signal-sources.js';
+import { forecastCoverage, hasForecastArchive } from './forecast-store.js';
 
 /* ------------------------------------------------------------------ *
  * State
@@ -49,7 +53,7 @@ const state = {
   feed: null,
   feedStatus: null,
   tape: [],
-  options: { seed: 20260917, settleAtEnd: false, regime: 'baseline', depthMode: 'captured' },
+  options: { seed: 20260917, settleAtEnd: false, regime: 'baseline', depthMode: 'captured', flight: 'daily' },
   researchLoaded: false,
   reports: {}
 };
@@ -142,9 +146,22 @@ async function staticRuntime() {
       return { markets, source: apiMod.DATA_SOURCE.VERIFIED_SNAPSHOT, capturedAt: snap.CAPTURE_META.capturedAt, notice: 'REAL Kalshi market objects captured 2026-09-17 (static mode: computed in your browser).' };
     },
     async competition(opts) {
-      const c = runner.runCompetition({ ...opts, regime: memory.state.regime });
-      memory.attachComputedResults(c);
-      memory.save();
+      // Flight (2026-09-18): 'daily' is the original daily-bar universe;
+      // 'hourly'/'micro' replay the 60-minute / 1-minute stores — separate
+      // leaderboards, never merged (same filtering the server applies).
+      const FLIGHT_INTERVAL = { hourly: 60, micro: 1 };
+      const flight = FLIGHT_INTERVAL[opts.flight] ? opts.flight : 'daily';
+      const runOpts = { ...opts, regime: memory.state.regime };
+      if (FLIGHT_INTERVAL[flight]) {
+        runOpts.periodIntervalMinutes = FLIGHT_INTERVAL[flight];
+        // Same roster rule the server and runCompetitionFlights apply:
+        // 'both' = daily+hourly; micro runs its declared roster only.
+        runOpts.strategies = flight === 'hourly'
+          ? runner.STRATEGIES.filter((st) => st.flight === 'hourly' || st.flight === 'both')
+          : runner.STRATEGIES.filter((st) => st.flight === 'micro');
+      }
+      const c = runner.runCompetition(runOpts);
+      if (flight === 'daily') { memory.attachComputedResults(c); memory.save(); }
       return { competition: c.competition, results: c.results, leaderboard: c.leaderboard };
     },
     async leaderboard() {
@@ -419,7 +436,7 @@ function renderLeaderboard() {
   const prov = c.dataProvenance || {};
   setText('#competitionLede', '');
   setHTML('#competitionLede', `
-    <strong>${esc(c.id)}</strong> · ${esc(c.horizonPeriods)} real daily periods across
+    <strong>${esc(c.id)}</strong> · ${esc(c.horizonPeriods)} real ${c.periodIntervalMinutes === 60 ? 'hourly' : c.periodIntervalMinutes === 1 ? 'one-minute' : 'daily'} periods across
     ${esc((prov.markets || []).length)} market(s) · seed <code>${esc(c.seed)}</code> ·
     starting capital ${esc(money(c.initialCapital, 0))} · generated ${esc(new Date(c.generatedAt || Date.now()).toISOString().slice(0, 19).replace('T', ' '))}Z.
     ${(() => {
@@ -437,6 +454,15 @@ function renderLeaderboard() {
       : `<span class="pill pill-live" title="No order may fill more than this share of the contracts that really traded in that daily bar.">fills &le; ${esc(Math.round((c.maxFillFractionOfPeriodVolume ?? 0.1) * 100))}% of each bar\'s real volume</span>`}
     ${c.maxNotionalPerMarketPct ? `<span class="pill pill-muted">cap ${esc(Math.round(c.maxNotionalPerMarketPct * 100))}% of equity per market</span>` : ''}
     ${c.settleAtEnd ? '<span class="pill pill-sim">SETTLEMENT: HYPOTHETICAL</span>' : '<span class="pill pill-muted">positions marked at last real quote</span>'}
+    ${(() => {
+      // Real settlements booked in THIS run: markets captured as finalized with
+      // an exchange result paid out $1.00/$0.00 mid-replay. Zero in a flight
+      // whose markets are all still active — the pill then says so.
+      const eligible = state.results.reduce((n, r) => Math.max(n, r.realSettlements?.eligibleMarkets?.length || 0), 0);
+      const booked = state.results.reduce((n, r) => Math.max(n, r.realSettlements?.bookedCount || 0), 0);
+      if (!eligible) return '';
+      return `<span class="pill pill-live" title="Markets captured with status=finalized and an exchange result settled open positions at their real close_time: \$1.00 per winning contract, \$0.00 per losing one, no settlement fee.">REAL SETTLEMENTS: ${booked} booked across ${eligible} finalized market(s)</span>`;
+    })()}
   `);
 
   setHTML('#podium', renderPodium(state.leaderboard.map((r) => enrichRow(r))));
@@ -456,7 +482,7 @@ function renderLeaderboard() {
             <div class="s-card-cat">${esc(r.title || '')}</div>
           </div>
         </div>
-        <div class="muted" style="font-size:.82rem">${esc(r.analysis?.whyItFailed || 'Entry conditions were never satisfied by the captured data.')}</div>
+        <div class="muted" style="font-size:.82rem">${esc(r.disqualificationReason || r.analysis?.whyItFailed || 'Entry conditions were never satisfied by the captured data.')}</div>
       </div>`).join(''));
   } else ub.hidden = true;
 
@@ -616,6 +642,7 @@ function renderStrategyDetail(username) {
 
   setHTML('#strategyDetail', `
   <div class="detail">
+    ${r.skippedFlight ? `<div class="notice" style="margin-bottom:.8rem"><b>Not run in this flight.</b> ${esc(r.skippedFlight.reason)} The design is flight-specific (universe: <code>${esc((s.universe || []).join(', ') || 'all')}</code>, bar length ${esc(String(r.skippedFlight.periodIntervalMinutes))}m) — switch to the flight that holds its markets to see it measured.</div>` : ''}
     <div class="detail-head">
       <div>
         <h3><span class="avatar">${esc(s.avatar || '🤖')}</span> ${esc(s.username)} <span class="muted">${esc(s.handle || '')}</span></h3>
@@ -1102,6 +1129,8 @@ async function renderResearch() {
   ]);
   state.reports = { sweep, liquidity, depth, flights };
   renderResearchStats(sweep);
+  renderSignalSources();
+  renderForecastStatus();
   renderResearchSweep(sweep);
   renderResearchLiquidity(liquidity);
   renderResearchLedger();
@@ -1125,6 +1154,72 @@ function renderResearchStats(sweep) {
     </div>
     <div class="notice">${esc(RESEARCH_META.note)}</div>
   `);
+}
+
+/**
+ * The MasterSite signal-source review: every project the owner asked about,
+ * what verified signal it could provide, which Kalshi market class it maps to,
+ * and whether THIS repository can honestly test it today. Built from
+ * src/signal-sources.js — the same ledger the tests validate — so the page can
+ * never show a project this repo has not reviewed with links.
+ */
+function renderSignalSources() {
+  const stats = signalSourceStats();
+  const cards = SIGNAL_SOURCES.map((src) => {
+    const statusPill =
+      src.status === SIGNAL_SOURCE_STATUS.LIVE_SIGNAL ? '<span class="pill pill-live">live signal</span>'
+      : src.status === SIGNAL_SOURCE_STATUS.CANDIDATE ? '<span class="pill pill-muted">candidate</span>'
+      : src.status === SIGNAL_SOURCE_STATUS.NOT_A_SIGNAL ? '<span class="pill pill-sim">not a market signal</span>'
+      : '<span class="pill pill-review">not found — flagged</span>';
+    const urls = Object.entries(src.urls || {})
+      .map(([label, u]) => `<a class="source-link" href="${esc(u)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`)
+      .join(' ');
+    return `
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;gap:.6rem;align-items:flex-start">
+          <strong>${esc(src.id)} · ${esc(src.name)}</strong>${statusPill}
+        </div>
+        <div class="muted">requested as “${esc(src.requested)}”</div>
+        <div>${esc(src.whatItIs)}</div>
+        ${src.verifiableClaim ? `<div><strong>What it verifies:</strong> ${esc(src.verifiableClaim)}</div>` : ''}
+        ${src.kalshiMarketClass ? `<div><strong>Kalshi market class:</strong> ${esc(src.kalshiMarketClass)}</div>` : ''}
+        ${src.howTested ? `<div><strong>How it is tested here:</strong> ${esc(src.howTested)}</div>` : ''}
+        ${src.blockedBy ? `<div><strong>Blocked by:</strong> ${esc(src.blockedBy)}</div>` : ''}
+        ${src.flagged ? `<div class="badge badge-review">${esc(src.flagged)}</div>` : ''}
+        ${(src.strategyUsername || []).length ? `<div class="muted" style="margin-top:.4rem">Traded here by ${src.strategyUsername.map((u) => `<code>${esc(u)}</code>`).join(', ')}</div>` : ''}
+        <div style="margin-top:.5rem">${urls}</div>
+      </div>`;
+  }).join('');
+  setHTML('#signalSources', `
+    <h3>MasterSite signal sources — reviewed ${new Date().toISOString().slice(0, 10)}</h3>
+    <p class="lede">Every project the owner asked about (“CEO, weather, insider trades, TheLeap, NFL Injury, NBA Injury, FDA Decisions, NCAA Scoreboard, NFL scoreboard, MLB Scoreboard, Sports Pred, Gold, PinePilot”),
+    reviewed against one question: could it supply a verified, point-in-time signal a Kalshi strategy here could trade on?
+    ${stats.testableHere} of ${stats.requested} are testable with the data this repository holds; ${stats.liveSignal} already feed a live strategy; ${stats.notFound} requested name was not found and is flagged.</p>
+    <div class="card-grid">${cards}</div>`);
+}
+
+/** Point-in-time forecast archive status: how much signal exists, over what window. */
+function renderForecastStatus() {
+  const cov = forecastCoverage();
+  const present = hasForecastArchive();
+  const cards = cov.length
+    ? cov.map((c) => `
+      <div class="card">
+        <strong>${esc(c.city || c.key)} → <code>${esc(c.series || '')}</code></strong>
+        <div class="stat-row"><span>Point-in-time snapshots</span><b>${c.snapshots}</b></div>
+        <div class="stat-row"><span>First capture</span><b>${esc(c.firstCapturedAt || '—')}</b></div>
+        <div class="stat-row"><span>Last capture</span><b>${esc(c.lastCapturedAt || '—')}</b></div>
+        <div class="stat-row"><span>Distinct forecast dates</span><b>${c.distinctDates}</b></div>
+      </div>`).join('')
+    : `<div class="card"><strong>Forecast archive: EMPTY</strong><div class="muted">No snapshot has been captured yet — the archive job (weather-signals workflow) has not run.
+      Until it has, <code>ForecastEdge_Weather</code> abstains on every bar by design (no point-in-time forecast = no trade) and stays unranked with that reason.
+      This is the honest state: a forecast strategy must never trade on a forecast it did not have at decision time.</div></div>`;
+  setHTML('#forecastStatus', `
+    <h3>Point-in-time forecast archive (official NWS, api.weather.gov)</h3>
+    <p class="lede">Archived several times a day by <code>scripts/archive-forecasts.mjs</code>. Each snapshot is what the official NWS point forecast said at
+    capture time — <code>ForecastEdge_Weather</code> may only read a snapshot captured at or before each decision bar, so the signal can never look ahead.
+    Basis note: KXHIGHNY settles on The Weather Company (CLINYC) per the market rules; the signal is the NWS forecast for the same point (mismatch flagged in IRREGULARITIES.md).</p>
+    <div class="card-grid">${cards}</div>`);
 }
 
 function renderResearchSweep(sweep) {
@@ -1324,6 +1419,7 @@ function renderIrregularities() {
 
 function wireGlobalEvents() {
   on('#btnRerun', 'click', async () => {
+    state.options.flight = ['hourly', 'micro'].includes($('#ctlFlight')?.value) ? $('#ctlFlight').value : 'daily';
     state.options.seed = Number($('#ctlSeed').value) || 20260917;
     state.options.settleAtEnd = $('#ctlSettle').checked;
     state.options.regime = $('#ctlRegime').value;
@@ -1336,6 +1432,21 @@ function wireGlobalEvents() {
       `Competition recomputed from the real captured candles — depth: ${state.options.depthMode === 'captured' ? 'captured ladders' : 'MODELLED (comparison only)'}.`,
       state.options.depthMode === 'captured' ? 'ok' : 'warn',
       6000
+    );
+  });
+
+  on('#ctlFlight', 'change', async () => {
+    const v = $('#ctlFlight').value;
+    state.options.flight = ['hourly', 'micro'].includes(v) ? v : 'daily';
+    await loadCompetition();
+    toast(
+      state.options.flight === 'daily'
+        ? 'Daily flight — the 30-market daily-bar universe.'
+        : state.options.flight === 'hourly'
+          ? 'Hourly flight — 60-minute bars, including the settling KXHIGHNY weather brackets.'
+          : 'Micro flight — 1-minute bars, the KXGOLD15M 15-minute gold markets.',
+      'ok',
+      5000
     );
   });
 

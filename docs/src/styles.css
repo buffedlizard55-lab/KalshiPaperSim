@@ -100,6 +100,14 @@ code { font-family: var(--mono); font-size: .86em; background: var(--bg-inset); 
 .pill-sim  { color: #d9d2ff; border-color: #3b3470; background: rgba(139,124,246,.1); }
 .pill-off  { color: #ffc9cb; border-color: var(--no-dim); background: rgba(242,85,90,.1); }
 .pill-muted{ color: var(--text-mute); }
+.pill-review { color: #ffd28f; border-color: var(--warn-dim); background: rgba(245,165,36,.12); }
+/* Badges: review flags inside cards (was unstyled before 2026-09-18). */
+.badge {
+  display: inline-block; font-family: var(--mono); font-size: .66rem; letter-spacing: .03em;
+  padding: .16rem .45rem; border-radius: 6px; border: 1px solid var(--line);
+  background: var(--bg-inset); color: var(--text-dim); margin-top: .25rem;
+}
+.badge-review { color: #ffd28f; border-color: var(--warn-dim); background: rgba(245,165,36,.1); }
 .tag { background: var(--bg-inset); }
 .dot { width: .45rem; height: .45rem; border-radius: 50%; background: currentColor; box-shadow: 0 0 6px currentColor; }
 

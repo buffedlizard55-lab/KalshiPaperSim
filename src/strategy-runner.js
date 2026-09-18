@@ -8,6 +8,10 @@
  */
 
 import { STRATEGIES, getStrategy } from './strategies.js';
+
+// Re-exported for callers (server.js, the static-site runtime) that build a
+// flight-specific roster from the same declaration the runner itself uses.
+export { STRATEGIES };
 import { ReplayEngine, analyzeEquityCurve } from './backtest-replay.js';
 import { computeAttribution, generatePostMortem, buildLeaderboard } from './analysis.js';
 import { computePortfolioExposure, computeCompetitionMarketStats } from './market-analytics.js';
@@ -16,12 +20,61 @@ import { getVerifiedMarkets, getVerifiedCandlesticks, CANDLESTICKS, CAPTURE_META
 import {
   EXTENDED_CAPTURE_META, getExtendedCandlesticks, summarizeExtendedSeries, EXTENDED_SERIES
 } from './verified-candles.js';
-import { ACCUMULATED_HISTORY, getAccumulatedBars, ACCUMULATED_INTRADAY, getIntradayBars, getIntradayPeriods } from './accumulated-history.js';
+import { ACCUMULATED_HISTORY, getAccumulatedBars, ACCUMULATED_INTRADAY, getIntradayBars, getIntradayPeriods, getIntradayMarket } from './accumulated-history.js';
 import { buildReplayUniverse, summarizeUniverse, MIN_REPLAY_BARS, CANDLE_ORIGIN } from './history-merge.js';
 import { CAPTURED_DEPTH, getCapturedDepthProfile, getCapturedDepthTickers } from './captured-depth.js';
+import { forecastLocations, forecastHighAt } from './forecast-store.js';
 
 /** Data-source label for bars that came from the daily ingest job, not a capture. */
 export const DATA_SOURCE_ACCUMULATED = 'accumulated_history_store';
+
+/* ------------------------------------------------------------------ *
+ * POINT-IN-TIME EXTERNAL SIGNALS (roadmap item #3 — weather)
+ * ------------------------------------------------------------------ */
+
+/**
+ * The calendar date a KXHIGHNY event measures, parsed from the event ticker
+ * (KXHIGHNY-26SEP07 → '2026-09-07'). Verified against every captured weather
+ * market: the title says "…on Sep 7, 2026?" and close_time is 05:00Z the next
+ * day, so the ticker's date is the measurement day.
+ */
+const MONTHS = { JAN: '01', FEB: '02', MAR: '03', APR: '04', MAY: '05', JUN: '06', JUL: '07', AUG: '08', SEP: '09', OCT: '10', NOV: '11', DEC: '12' };
+export function weatherEventDate(eventTicker) {
+  const m = /^KXHIGH\w*-(\d{2})([A-Z]{3})(\d{2})(?:-|$)/.exec(String(eventTicker || ''));
+  if (!m) return null;
+  const month = MONTHS[m[2]];
+  if (!month) return null;
+  return `20${m[1]}-${month}-${m[3]}`;
+}
+
+/**
+ * Build the engine's signal provider from the point-in-time forecast archive.
+ * A provider is built ONCE per competition and is pure: given a ticker, its
+ * market and a decision timestamp it returns the newest NWS forecast snapshot
+ * captured at or before that time for the market's measurement date — or null.
+ *
+ * The provider knows about weather brackets only; every other series gets null
+ * (which makes a signal-dependent strategy abstain there — by design, not by
+ * accident).
+ */
+export function buildForecastSignalProvider() {
+  const bySeries = new Map();
+  for (const loc of forecastLocations()) {
+    if (!loc.series || !(loc.snapshots || []).length) continue;
+    bySeries.set(loc.series, loc);
+  }
+  if (bySeries.size === 0) return null;
+  return (ticker, market, tsSeconds) => {
+    const series = (market && market.series_ticker) || String(ticker || '').split('-')[0];
+    const loc = bySeries.get(series);
+    if (!loc) return null;
+    const eventDate = weatherEventDate((market && market.event_ticker) || ticker);
+    if (!eventDate) return null;
+    const hit = forecastHighAt(loc.snapshots, eventDate, tsSeconds);
+    if (!hit) return null;
+    return { kind: 'nws-forecast-high', series, eventDate, highF: hit.highF, capturedAt: hit.capturedAt, periodName: hit.periodName, source: 'api.weather.gov point-in-time archive (data/forecasts)' };
+  };
+}
 
 /**
  * The in-repo verified captures, before any accumulated history is considered.
@@ -272,9 +325,36 @@ export function runCompetition(options = {}) {
   const periodIntervalMinutes = Number(options.periodIntervalMinutes ?? 1440);
   const intradayMap = periodIntervalMinutes !== 1440 ? getIntradayCandleMap(periodIntervalMinutes, options.tickers || null) : null;
   const allMarkets = options.markets || getReplayableMarkets();
-  const markets = intradayMap
+  let markets = intradayMap
     ? allMarkets.filter((m) => intradayMap[m.ticker])
     : allMarkets;
+
+  /**
+   * INTRADAY-ONLY MARKETS (2026-09-18). The weather brackets (KXHIGHNY) and
+   * the 15-minute gold markets (KXGOLD15M) live ONLY in the intraday store —
+   * they have no daily file and were therefore absent from the daily replay
+   * universe, which used to make every intraday flight that needed them fail
+   * with "no markets". Their shipped intraday record carries the SAME captured
+   * market object the daily store does, so they are normalized here and added
+   * to the flight. Nothing is invented: source, URL and capture time travel
+   * with each market exactly as elsewhere.
+   */
+  if (intradayMap) {
+    const known = new Set(markets.map((m) => m.ticker));
+    for (const ticker of Object.keys(intradayMap)) {
+      if (known.has(ticker)) continue;
+      const record = getIntradayMarket(ticker, periodIntervalMinutes);
+      if (!record || !record.market) continue;
+      const normalized = normalizeMarket(record.market, {
+        source: DATA_SOURCE_ACCUMULATED,
+        source_url: record.market_url || null,
+        captured_at: record.market_captured_at || null,
+        candle_origin: 'intraday_store',
+        stored_bar_count: record.bar_count
+      });
+      if (normalized) markets.push(normalized);
+    }
+  }
   const candlesByTicker = options.candlesByTicker || (intradayMap ? intradayMap : getVerifiedCandleMap(markets.map((m) => m.ticker)));
   const initialCapital = options.initialCapital ?? 100000;
   if (markets.length === 0) {
@@ -289,6 +369,7 @@ export function runCompetition(options = {}) {
   const depthMode = options.depthMode === 'captured' ? 'captured' : 'modelled';
   const depthProfiles = options.depthProfiles || (depthMode === 'captured' ? getCapturedDepthProfiles() : null);
 
+  const signalProvider = options.signalProvider !== undefined ? options.signalProvider : buildForecastSignalProvider();
   const engine = new ReplayEngine({
     markets,
     candlesByTicker,
@@ -297,6 +378,7 @@ export function runCompetition(options = {}) {
     notional: options.notional ?? 1.0,
     settleAtEnd: options.settleAtEnd ?? false,
     finalResult: options.finalResult || null,
+    signalProvider,
     // Per-market capital allocation (item #7). null = the competition default:
     // the brief is "highest return only", so no cap is imposed unless asked for.
     maxNotionalPerMarketPct: options.maxNotionalPerMarketPct ?? null,
@@ -320,6 +402,85 @@ export function runCompetition(options = {}) {
     const universeMarkets = strategy.universe
       ? markets.filter((m) => strategy.universe.includes(m.series_ticker))
       : markets;
+
+    /**
+     * A strategy whose universe has NO market in this flight cannot trade here.
+     * That is a fact to publish (the design is flight-specific — e.g. a weather
+     * bracket strategy in the daily index/BTC flight), never a crash and never
+     * a fabricated 0% result pretending to be a measurement. The entry is
+     * returned with zero trades, its capital untouched, and skippedFlight
+     * carrying the reason; buildLeaderboard keeps it unranked.
+     */
+    if (universeMarkets.length === 0) {
+      const skippedResult = {
+        strategyId: strategy.id || strategy.username,
+        username: strategy.username,
+        strategyTitle: strategy.title || '',
+        initialCapital,
+        skippedFlight: {
+          universe: strategy.universe,
+          reason: `no ${strategy.universe ? strategy.universe.join(' / ') : ''} market in this flight's universe — this design cannot trade here`,
+          periodIntervalMinutes
+        },
+        dataProvenance: { markets: [], candles: {} },
+        periods: 0,
+        noTradeBeforeTs: null,
+        suppressedActions: 0,
+        exhaustionPolicy: 'partial',
+        unfilledOrders: 0,
+        unfilledContracts: 0,
+        maxNotionalPerMarketPct: null,
+        cappedOrders: 0,
+        cappedContracts: 0,
+        maxFillFractionOfPeriodVolume: null,
+        volumeCappedOrders: 0,
+        volumeCappedContracts: 0,
+        stats: { equity: initialCapital, returnPct: 0, totalTrades: 0, winRate: 0, profitFactor: null, maxDrawdownPct: 0, feesPaid: 0, realizedPnl: 0 },
+        finalEquity: initialCapital,
+        returnPct: 0,
+        totalTrades: 0,
+        winRate: 0,
+        profitFactor: null,
+        maxDrawdownPct: 0,
+        feesPaid: 0,
+        realizedPnl: 0,
+        equityCurve: [{ ts: 0, date: 'SKIPPED', equity: initialCapital, returnPct: 0, trades: 0, drawdownPct: 0 }],
+        tradeLog: [],
+        actionLog: [],
+        settlements: [],
+        realSettlements: { eligibleMarkets: [], bookedCount: 0, bookedPayout: 0, lateWindowSettlements: 0 },
+        positionsOpen: []
+      };
+      const attribution = computeAttribution(skippedResult);
+      return {
+        ...skippedResult,
+        marketAnalytics: computePortfolioExposure(skippedResult),
+        strategy: {
+          id: strategy.id,
+          username: strategy.username,
+          handle: strategy.handle,
+          avatar: strategy.avatar,
+          title: strategy.title,
+          category: strategy.category,
+          tagline: strategy.tagline,
+          thesis: strategy.thesis,
+          rules: strategy.rules,
+          sizingPct: strategy.sizingPct,
+          universe: strategy.universe
+        },
+        attribution,
+        analysis: generatePostMortem(strategy, skippedResult, attribution),
+        curveAnalysis: analyzeEquityCurve(skippedResult.equityCurve, initialCapital),
+        dataProvenance: {
+          markets: [],
+          candles: {},
+          capturedAt: CAPTURE_META.capturedAt,
+          apiBase: CAPTURE_META.apiBase
+        },
+        recentTrades: []
+      };
+    }
+
     const universeCandles = {};
     for (const m of universeMarkets) if (candlesByTicker[m.ticker]) universeCandles[m.ticker] = candlesByTicker[m.ticker];
 
@@ -334,6 +495,7 @@ export function runCompetition(options = {}) {
             notional: options.notional ?? 1.0,
             settleAtEnd: options.settleAtEnd ?? false,
             finalResult: options.finalResult || null,
+            signalProvider,
             maxNotionalPerMarketPct: options.maxNotionalPerMarketPct ?? null,
             depthMode,
             depthProfiles,
@@ -436,18 +598,26 @@ export function runCompetition(options = {}) {
 }
 
 /**
- * THE TWO FLIGHTS.
+ * THE THREE FLIGHTS.
  *
- * DAILY (period_interval 1440): every strategy flagged 'daily' or 'both', on the
- *   full captured history (2025-12-24 → the newest stored bar).
- * HOURLY (period_interval 60): every strategy flagged 'hourly' or 'both', on the
- *   curated intraday store. A shorter window, a finer bar — so the two are
- *   reported separately and never merged into one ranking.
+ * DAILY (period_interval 1440): every strategy flagged 'daily' (or unflagged)
+ *   or 'both', on the full captured history (2025-12-24 → the newest bar).
+ * HOURLY (period_interval 60): every strategy flagged 'hourly' or 'both', on
+ *   the curated intraday 60-minute store — which since 2026-09-18 also holds
+ *   the settled KXHIGHNY weather brackets, each with its real exchange result.
+ * MICRO (period_interval 1): every strategy flagged 'micro', on the 1-minute
+ *   store (the KXGOLD15M 15-minute gold markets, ~15 bars per market). Added
+ *   2026-09-18 because the R01 source traded 15-minute markets and hourly bars
+ *   cannot represent them.
+ *
+ * The three are reported separately and never merged into one ranking, because
+ * a strategy's edge can live at one granularity only.
  */
 export function runCompetitionFlights(options = {}) {
   const all = options.strategies || STRATEGIES;
-  const dailyStrategies = all.filter((s) => (s.flight || 'daily') !== 'hourly');
-  const hourlyStrategies = all.filter((s) => (s.flight || 'daily') === 'hourly' || s.flight === 'both');
+  const dailyStrategies = all.filter((s) => !s.flight || s.flight === 'daily' || s.flight === 'both');
+  const hourlyStrategies = all.filter((s) => s.flight === 'hourly' || s.flight === 'both');
+  const microStrategies = all.filter((s) => s.flight === 'micro');
 
   const daily = dailyStrategies.length
     ? runCompetition({ ...options, strategies: dailyStrategies, periodIntervalMinutes: 1440 })
@@ -463,7 +633,23 @@ export function runCompetitionFlights(options = {}) {
       hourlyError = String(err && err.message ? err.message : err);
     }
   }
-  return { daily, hourly, hourlyError, flights: { daily: dailyStrategies.length, hourly: hourlyStrategies.length } };
+  let micro = null;
+  let microError = null;
+  if (microStrategies.length) {
+    try {
+      micro = runCompetition({ ...options, strategies: microStrategies, periodIntervalMinutes: 1 });
+    } catch (err) {
+      microError = String(err && err.message ? err.message : err);
+    }
+  }
+  return {
+    daily,
+    hourly,
+    hourlyError,
+    micro,
+    microError,
+    flights: { daily: dailyStrategies.length, hourly: hourlyStrategies.length, micro: microStrategies.length }
+  };
 }
 
 /** Run a single strategy by id/username. */

@@ -6140,6 +6140,122 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-18T02:46:12.204Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30750/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142916.41"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.2300",
+              "35.23"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5600",
+              "117.43"
+            ],
+            [
+              "0.5900",
+              "156.68"
+            ],
+            [
+              "0.7000",
+              "2134.07"
+            ],
+            [
+              "0.7100",
+              "3.80"
+            ],
+            [
+              "0.7300",
+              "313.35"
+            ],
+            [
+              "0.7600",
+              "362.06"
+            ],
+            [
+              "0.8000",
+              "198.00"
+            ],
+            [
+              "0.8100",
+              "3.80"
+            ],
+            [
+              "0.8700",
+              "4000.00"
+            ],
+            [
+              "0.8800",
+              "4000.00"
+            ],
+            [
+              "0.8900",
+              "4000.00"
+            ],
+            [
+              "0.9000",
+              "4406.10"
+            ],
+            [
+              "0.9100",
+              "4274.73"
+            ],
+            [
+              "0.9200",
+              "1022.63"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3591.46"
+            ],
+            [
+              "0.0200",
+              "2306.67"
+            ],
+            [
+              "0.0300",
+              "10723.88"
+            ],
+            [
+              "0.0400",
+              "420.70"
+            ],
+            [
+              "0.0500",
+              "477.00"
+            ],
+            [
+              "0.0600",
+              "630.69"
+            ],
+            [
+              "0.0700",
+              "329.62"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6184,7 +6300,7 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-B30750",
     "title": "Will the Nasdaq-100 be between 30500 and 30999.99 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:46.117275Z",
-    "volume_24h_fp": "845.53",
+    "volume_24h_fp": "598.92",
     "volume_fp": "115666.98",
     "yes_ask_dollars": "0.0800",
     "yes_ask_size_fp": "1022.63",
@@ -6193,8 +6309,8 @@
     "yes_sub_title": "30,500 to 30,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30750",
-  "market_captured_at": "2026-09-18T00:57:39.915Z",
+  "market_captured_at": "2026-09-18T02:46:11.556Z",
   "status": "active",
-  "last_ingested_at": "2026-09-18T00:57:40.431Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B30750/candlesticks?start_ts=1787101060&end_ts=1789693060&period_interval=1440"
+  "last_ingested_at": "2026-09-18T02:46:12.132Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B30750/candlesticks?start_ts=1789617601&end_ts=1789699571&period_interval=1440"
 }

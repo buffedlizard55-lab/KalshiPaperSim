@@ -26,6 +26,7 @@ import { fileURLToPath } from 'node:url';
 
 import { STRATEGIES } from '../src/strategies.js';
 import { runCompetition, runCompetitionFlights, getCapturedDepthProfiles, getIntradayCoverage, getCandleCoverage } from '../src/strategy-runner.js';
+import { forecastCoverage } from '../src/forecast-store.js';
 import { runForwardTest, defaultSplitTs } from '../src/forward-test.js';
 import { CAPTURED_DEPTH } from '../src/captured-depth.js';
 import { ACCUMULATED_HISTORY } from '../src/accumulated-history.js';
@@ -362,9 +363,10 @@ function main() {
   write('flights.json', {
     generatedAt: new Date().toISOString(),
     note:
-      'Two flights, two windows. DAILY = period_interval 1440 over the full stored history. HOURLY = period_interval 60 over the curated intraday store. ' +
-      'They are reported separately and are never merged into one ranking, because a strategy that needs intraday bars cannot be judged on daily ones.',
-    intradayCoverage: getIntradayCoverage(60),
+      'Three flights, three windows. DAILY = period_interval 1440 over the full stored history. HOURLY = period_interval 60 over the curated intraday store ' +
+      '(which since 2026-09-18 includes the settled KXHIGHNY weather brackets with real exchange results). MICRO = period_interval 1 over the 1-minute store ' +
+      '(the KXGOLD15M 15-minute gold markets). They are reported separately and are never merged into one ranking, because a strategy that needs intraday bars cannot be judged on daily ones.',
+    intradayCoverage: { 60: getIntradayCoverage(60), 1: getIntradayCoverage(1) },
     daily: flights.daily
       ? {
           periodIntervalMinutes: 1440,
@@ -383,7 +385,28 @@ function main() {
           postMortems: flights.hourly.results.map((r) => ({ username: r.username, verdict: r.analysis?.verdict, summary: r.analysis?.summary }))
         }
       : null,
-    hourlyError: flights.hourlyError
+    hourlyError: flights.hourlyError,
+    micro: flights.micro
+      ? {
+          periodIntervalMinutes: 1,
+          horizonPeriods: flights.micro.competition.horizonPeriods,
+          markets: flights.micro.competition.dataProvenance.markets.length,
+          leaderboard: flights.micro.leaderboard,
+          postMortems: flights.micro.results.map((r) => ({ username: r.username, verdict: r.analysis?.verdict, summary: r.analysis?.summary }))
+        }
+      : null,
+    microError: flights.microError,
+    /** Real settlements booked across the flights (the exchange's own results). */
+    realSettlements: {
+      hourly: flights.hourly
+        ? flights.hourly.results.map((r) => ({ username: r.username, eligibleMarkets: r.realSettlements.eligibleMarkets.length, booked: r.realSettlements.bookedCount, payout: r.realSettlements.bookedPayout }))
+        : null,
+      micro: flights.micro
+        ? flights.micro.results.map((r) => ({ username: r.username, eligibleMarkets: r.realSettlements.eligibleMarkets.length, booked: r.realSettlements.bookedCount, payout: r.realSettlements.bookedPayout }))
+        : null
+    },
+    /** Point-in-time forecast archive feeding ForecastEdge_Weather. */
+    forecastArchive: forecastCoverage()
   });
 
   write('calendar-audit.json', calendarAudit());

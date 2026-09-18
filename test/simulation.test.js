@@ -95,6 +95,12 @@ import { parseKalshiOrderbook, reciprocalCheck, normalizeMarket, DATA_SOURCE } f
 import { OrderBook, PaperPortfolio } from '../src/simulation-engine.js';
 import { ReplayEngine, analyzeEquityCurve, normalizeCandles } from '../src/backtest-replay.js';
 import { STRATEGIES, validateStrategies, VERIFIED_SERIES, REJECTED_FABRICATED_TICKERS } from '../src/strategies.js';
+import { redactMarketForReplay } from '../src/backtest-replay.js';
+import { weatherEventDate, buildForecastSignalProvider } from '../src/strategy-runner.js';
+import { forecastHighAt, hasForecastArchive } from '../src/forecast-store.js';
+import { extractDailyHighs } from '../scripts/archive-forecasts.mjs';
+import { intradayArgsFromRequest, intradayBlockArgs, intradayBlocksFromRequest } from '../scripts/ingest-history.mjs';
+import { SIGNAL_SOURCES, signalSourceStats, signalSourceStrategyUsernames, SIGNAL_SOURCE_STATUS } from '../src/signal-sources.js';
 import { computeAttribution, generatePostMortem, buildLeaderboard, LEADERBOARD_QUALIFICATION } from '../src/analysis.js';
 import {
   runCompetition,
@@ -717,6 +723,15 @@ test('23. the replay runs on the real window with full provenance', () => {
 
 test('24. every result is numerically sane and fully populated', () => {
   for (const r of COMPETITION.results) {
+    // A flight-specific design (e.g. a weather strategy in the daily flight)
+    // is published as skipped with its capital untouched — it has NO
+    // measurement here, so the numeric contract below does not apply to it.
+    if (r.skippedFlight) {
+      assert.equal(r.totalTrades, 0);
+      assert.equal(r.finalEquity, r.initialCapital);
+      assert.ok(r.skippedFlight.reason.length > 10, 'the skip says why');
+      continue;
+    }
     assert.equal(r.periods, REPLAY_PERIODS);
     assert.equal(r.equityCurve.length, r.periods, 'one equity point per replayed period');
     assert.ok(Number.isFinite(r.returnPct), `${r.username}: returnPct must be finite`);
@@ -1247,6 +1262,11 @@ test('46. every verified fact carries a reviewable link and a status', () => {
     'api.elections.kalshi.com',
     'assets.kalshi.com', 'github.com', 'www.cfbenchmarks.com', 'cfbenchmarks.com',
     'tc39.es', 'developer.mozilla.org',
+    // api.weather.gov is the OFFICIAL US National Weather Service API (NOAA) —
+    // the source of the point-in-time forecast SIGNAL behind the weather
+    // strategies (facts V87/V88). It is a signal source, never a source about
+    // the exchange itself, which is why the group check below still applies.
+    'api.weather.gov',
     'laikalabs.ai', 'pith.science', 'www.reddit.com', 'reddit.com', 'www.oddsshopper.com'
   ]);
   let withLink = 0;
@@ -1263,10 +1283,13 @@ test('46. every verified fact carries a reviewable link and a status', () => {
       assert.equal(u.protocol, 'https:');
       assert.ok(hosts.has(u.host), `${f.id}: unexpected source host ${u.host}`);
       // A fact about the EXCHANGE may never be sourced from a third party.
+      // api.weather.gov is admitted for SIGNAL-source facts only (the official
+      // NOAA API the forecast archive captures — a US government source, and
+      // the archive is what makes the weather strategies point-in-time).
       if (f.group !== 'Strategy sources') {
         assert.ok(
           u.host.endsWith('kalshi.com') || u.host.endsWith('kalshi.co') || u.host === 'github.com' ||
-            u.host === 'tc39.es' || u.host === 'developer.mozilla.org',
+            u.host === 'tc39.es' || u.host === 'developer.mozilla.org' || u.host === 'api.weather.gov',
           `${f.id}: "${f.group}" facts must cite Kalshi (or a language/project reference), not ${u.host}`
         );
       }
@@ -2167,4 +2190,307 @@ test('77. the published price range of the stored universe is recomputed, not re
   const control = STRATEGIES.find((s) => s.username === 'ShockTiming_ModerateFav');
   assert.ok(control.control && control.control.falsifiedIf, 'the control declares how it could be falsified');
   assert.ok(max < 0.7, `the control premise needs no close at or above 0.70 (observed max ${max})`);
+});
+
+/* ================================================================== *
+ * 20. WEATHER + GOLD EXPANSION (2026-09-18) — real settlements,
+ *     point-in-time forecasts, the signal-source ledger, the micro flight
+ * ================================================================== */
+
+test('70. a finalized market settles open positions at its REAL result mid-replay', () => {
+  const mk = (ticker, extra = {}) => normalizeMarket({
+    ticker,
+    event_ticker: 'TEST-26SEP18',
+    series_ticker: 'TEST',
+    title: 'Test market',
+    yes_bid_dollars: '0.4000',
+    yes_ask_dollars: '0.4200',
+    notional_value_dollars: '1.0000',
+    status: 'finalized',
+    result: 'yes',
+    close_time: '2026-09-18T12:00:00Z',
+    ...extra
+  }, { source: DATA_SOURCE.VERIFIED_SNAPSHOT });
+  const bar = (ts, close) => ({
+    end_period_ts: ts,
+    open_interest_fp: '100.00',
+    volume_fp: '10000.00',
+    price: { open_dollars: String(close), high_dollars: String(close), low_dollars: String(close), close_dollars: String(close), mean_dollars: String(close), previous_dollars: String(close) },
+    yes_bid: { open_dollars: '0.4000', high_dollars: '0.4000', low_dollars: '0.4000', close_dollars: '0.4000' },
+    yes_ask: { open_dollars: '0.4200', high_dollars: '0.4200', low_dollars: '0.4200', close_dollars: '0.4200' }
+  });
+  // Three bars; close_time (2026-09-18T12:00Z = ts 1789464000) falls between bar 2 and 3.
+  const ts1 = Math.floor(Date.parse('2026-09-18T10:00:00Z') / 1000);
+  const candles = [bar(ts1, 0.41), bar(ts1 + 3600, 0.41), bar(ts1 + 7200, 0.41)];
+  const engine = new ReplayEngine({ markets: [mk('TEST-YES')], candlesByTicker: { 'TEST-YES': candles } });
+  const result = engine.run({
+    username: 'BuyAndHold_Settle',
+    decide: (ctx) => (ctx.periodIndex === 0 ? [{ type: 'buy', side: 'YES', count: 100, reason: 'buy the winner' }] : [])
+  }, { username: 'BuyAndHold_Settle', seed: 7 });
+
+  // The exchange's own result settled the position at $1.00/contract.
+  const real = result.settlements.filter((s) => s.real === true);
+  assert.equal(real.length, 1, 'exactly one real settlement');
+  assert.equal(real[0].result, 'YES');
+  assert.ok(real[0].payout > 0, 'a winning YES position pays out');
+  assert.equal(real[0].settlementFee, 0, 'verified: there is no settlement fee');
+  assert.equal(result.positionsOpen.length, 0, 'the settled position is closed');
+  assert.ok(result.realSettlements.bookedCount >= 1);
+  assert.ok(result.actionLog.some((a) => a.type === 'real_settlement'), 'the settlement is logged as an action with its reason');
+
+  // A NO result pays $0 — same bookkeeping, opposite cash flow.
+  const engineNo = new ReplayEngine({ markets: [mk('TEST-NO', { result: 'no' })], candlesByTicker: { 'TEST-NO': candles } });
+  const resNo = engineNo.run({
+    username: 'BuyAndHold_SettleNo',
+    decide: (ctx) => (ctx.periodIndex === 0 ? [{ type: 'buy', side: 'YES', count: 100, reason: 'buy the loser' }] : [])
+  }, { username: 'BuyAndHold_SettleNo', seed: 7 });
+  const realNo = resNo.settlements.filter((s) => s.real === true);
+  assert.equal(realNo.length, 1);
+  assert.equal(realNo[0].payout, 0, 'a losing YES position pays $0.00');
+  assert.equal(realNo[0].realizedPnl < 0, true);
+});
+
+test('71. strategies can NEVER see market.result before settlement (lookahead guard)', () => {
+  const mk = () => normalizeMarket({
+    ticker: 'SECRET-RESULT',
+    series_ticker: 'TEST',
+    yes_bid_dollars: '0.4000',
+    yes_ask_dollars: '0.4200',
+    notional_value_dollars: '1.0000',
+    status: 'finalized',
+    result: 'yes',
+    close_time: '2026-09-18T12:00:00Z'
+  }, { source: DATA_SOURCE.VERIFIED_SNAPSHOT });
+  const bar = (ts) => ({
+    end_period_ts: ts,
+    volume_fp: '10000.00',
+    price: { open_dollars: '0.4100', high_dollars: '0.4100', low_dollars: '0.4100', close_dollars: '0.4100', mean_dollars: '0.4100', previous_dollars: '0.4100' },
+    yes_bid: { open_dollars: '0.4000', high_dollars: '0.4000', low_dollars: '0.4000', close_dollars: '0.4000' },
+    yes_ask: { open_dollars: '0.4200', high_dollars: '0.4200', low_dollars: '0.4200', close_dollars: '0.4200' }
+  });
+  const ts = Math.floor(Date.parse('2026-09-18T10:00:00Z') / 1000);
+  const engine = new ReplayEngine({ markets: [mk()], candlesByTicker: { 'SECRET-RESULT': [bar(ts), bar(ts + 3600)] } });
+  let sawResult = null;
+  let sawSettlementValue = null;
+  engine.run({
+    username: 'Peeker',
+    decide: (ctx) => {
+      sawResult = ctx.market.result;
+      sawSettlementValue = ctx.market.settlement_value_dollars;
+      return [];
+    }
+  }, { username: 'Peeker', seed: 3 });
+  assert.equal(sawResult, undefined, 'ctx.market.result must be redacted before the strategy sees it');
+  assert.equal(sawSettlementValue, undefined, 'settlement_value_dollars must be redacted too');
+  // The engine itself still settles correctly from the UNREDACTED market.
+  assert.ok(engine.realSettlements.get('SECRET-RESULT'), 'the engine keeps its own copy of the result');
+});
+
+test('72. running the SAME engine twice settles identically (no cross-strategy state leak)', () => {
+  const mk = () => normalizeMarket({
+    ticker: 'TWICE-TEST',
+    series_ticker: 'TEST',
+    yes_bid_dollars: '0.4000',
+    yes_ask_dollars: '0.4200',
+    notional_value_dollars: '1.0000',
+    status: 'finalized',
+    result: 'yes',
+    close_time: '2026-09-18T12:00:00Z'
+  }, { source: DATA_SOURCE.VERIFIED_SNAPSHOT });
+  const bar = (ts) => ({
+    end_period_ts: ts,
+    volume_fp: '10000.00',
+    price: { open_dollars: '0.4100', high_dollars: '0.4100', low_dollars: '0.4100', close_dollars: '0.4100', mean_dollars: '0.4100', previous_dollars: '0.4100' },
+    yes_bid: { open_dollars: '0.4000', high_dollars: '0.4000', low_dollars: '0.4000', close_dollars: '0.4000' },
+    yes_ask: { open_dollars: '0.4200', high_dollars: '0.4200', low_dollars: '0.4200', close_dollars: '0.4200' }
+  });
+  const ts = Math.floor(Date.parse('2026-09-18T10:00:00Z') / 1000);
+  const engine = new ReplayEngine({ markets: [mk()], candlesByTicker: { 'TWICE-TEST': [bar(ts), bar(ts + 3600), bar(ts + 7200)] } });
+  const strat = { username: 'Same_Twice', decide: (ctx) => (ctx.periodIndex === 0 ? [{ type: 'buy', side: 'YES', count: 50, reason: 'hold' }] : []) };
+  const r1 = engine.run(strat, { username: 'Same_Twice', seed: 9 });
+  const r2 = engine.run(strat, { username: 'Same_Twice', seed: 9 });
+  assert.equal(r1.realSettlements.bookedCount, r2.realSettlements.bookedCount, 'the second run must settle the same way');
+  assert.equal(r1.finalEquity, r2.finalEquity, 'identical runs produce identical equity');
+});
+
+test('73. forecastHighAt enforces the point-in-time rule', () => {
+  const snaps = [
+    { captured_at: '2026-09-16T00:00:00.000Z', days: [{ date: '2026-09-18', highF: 82, periodName: 'Friday' }] },
+    { captured_at: '2026-09-17T12:00:00.000Z', days: [{ date: '2026-09-18', highF: 79, periodName: 'Friday' }] }
+  ];
+  const ts = (iso) => Math.floor(Date.parse(iso) / 1000);
+  assert.equal(forecastHighAt(snaps, '2026-09-18', ts('2026-09-15T00:00:00Z')), null, 'before any capture: not knowable, abstain');
+  assert.equal(forecastHighAt(snaps, '2026-09-18', ts('2026-09-17T00:00:00Z')).highF, 82, 'between captures: the OLDER snapshot is the knowable one');
+  assert.equal(forecastHighAt(snaps, '2026-09-18', ts('2026-09-18T00:00:00Z')).highF, 79, 'after both: the newest snapshot wins');
+  assert.equal(forecastHighAt(snaps, '2026-09-25', ts('2026-09-18T00:00:00Z')), null, 'a date no snapshot covers: abstain');
+  assert.equal(forecastHighAt([], '2026-09-18', ts('2026-09-18T00:00:00Z')), null, 'an empty archive can never produce a signal');
+});
+
+test('74. extractDailyHighs parses the verified NWS forecast shape (daytime °F periods)', () => {
+  // Shape verified 2026-09-18 from https://api.weather.gov/gridpoints/OKX/34,45/forecast
+  const days = extractDailyHighs([
+    { name: 'Tonight', startTime: '2026-09-17T18:00:00-04:00', isDaytime: false, temperature: 70, temperatureUnit: 'F' },
+    { name: 'Friday', startTime: '2026-09-18T06:00:00-04:00', isDaytime: true, temperature: 80, temperatureUnit: 'F' },
+    { name: 'Friday Night', startTime: '2026-09-18T18:00:00-04:00', isDaytime: false, temperature: 61, temperatureUnit: 'F' },
+    { name: 'Saturday', startTime: '2026-09-19T06:00:00-04:00', isDaytime: true, temperature: 71, temperatureUnit: 'F' }
+  ]);
+  assert.equal(days.length, 2, 'only the daytime periods are daily highs');
+  assert.equal(days[0].date, '2026-09-18');
+  assert.equal(days[0].highF, 80);
+  assert.equal(days[1].date, '2026-09-19');
+  assert.equal(days[1].highF, 71);
+});
+
+test('75. weatherEventDate parses KXHIGHNY event tickers and rejects others', () => {
+  assert.equal(weatherEventDate('KXHIGHNY-26SEP07-B77.5'), '2026-09-07');
+  assert.equal(weatherEventDate('KXHIGHNY-26AUG18-T85'), '2026-08-18');
+  assert.equal(weatherEventDate('KXHIGHNY-26DEC31'), '2026-12-31');
+  assert.equal(weatherEventDate('KXBTCY-27JAN0100-B77500'), null, 'a non-weather ticker must yield null, not a wrong date');
+  assert.equal(weatherEventDate(null), null);
+});
+
+test('76. the signal-source ledger is complete, linked and consistent with the roster', () => {
+  // Every requested project has an entry with reviewable links.
+  for (const s of SIGNAL_SOURCES) {
+    assert.ok(s.id && s.requested && s.name, `${s.id}: identity fields`);
+    assert.ok(s.urls && s.urls.masterSite, `${s.id}: must link the master directory for manual review`);
+    assert.ok(Object.values(SIGNAL_SOURCE_STATUS).includes(s.status), `${s.id}: known status`);
+    assert.equal(typeof s.testableHere, 'boolean');
+    if (s.testableHere) assert.ok(s.howTested, `${s.id}: testable entries must say HOW`);
+    for (const u of Object.values(s.urls)) assert.ok(/^https:\/\//.test(u), `${s.id}: https links only`);
+  }
+  // The 13 requested names are all accounted for, including the one that does not exist.
+  assert.equal(SIGNAL_SOURCES.length, 13);
+  const notFound = SIGNAL_SOURCES.filter((s) => s.status === SIGNAL_SOURCE_STATUS.NOT_FOUND);
+  assert.equal(notFound.length, 1);
+  assert.equal(notFound[0].requested, 'CEO', 'the missing project is named, flagged and reviewable — not silently dropped');
+  assert.ok(notFound[0].flagged, 'the missing project carries an irregularity flag');
+  // Every referenced strategy username exists in the roster.
+  const usernames = new Set(STRATEGIES.map((s) => s.username));
+  for (const u of signalSourceStrategyUsernames()) {
+    assert.ok(usernames.has(u), `signal-source ledger references unknown strategy ${u}`);
+  }
+  // Stats derived from the ledger add up.
+  const st = signalSourceStats();
+  assert.equal(st.requested, 13);
+  assert.equal(st.liveSignal + st.candidate + st.notASignal + st.notFound, 13, 'every entry has exactly one status');
+  assert.ok(st.testableHere >= 3);
+});
+
+test('77. the three new strategies validate, abstain without their signal, and stay honest', () => {
+  const ladder = STRATEGIES.find((s) => s.username === 'WeatherLadder_CheapBands');
+  const forecast = STRATEGIES.find((s) => s.username === 'ForecastEdge_Weather');
+  const gold = STRATEGIES.find((s) => s.username === 'GoldBracket_EarlyLeader');
+  assert.ok(ladder && forecast && gold, 'all three new entries are in the roster');
+  assert.equal(ladder.flight, 'hourly');
+  assert.equal(forecast.flight, 'hourly');
+  assert.equal(gold.flight, 'micro', 'the gold entry runs in the 1-minute flight');
+  assert.deepEqual(ladder.universe, ['KXHIGHNY']);
+  assert.deepEqual(forecast.universe, ['KXHIGHNY']);
+  assert.deepEqual(gold.universe, ['KXGOLD15M']);
+  // The forecast entry must abstain with no signal — no fallback is allowed.
+  assert.equal(forecast.decide({ candle: { trade: { close: 0.5 } }, book: { getBestYesAsk: () => 0.2 }, portfolio: { positions: new Map(), cash: 100000 }, market: { floor_strike: 77, cap_strike: 78, strike_type: 'between' }, ticker: 'X', signal: null }).length, 0);
+  // ...and fire on a confirming, cheap, point-in-time signal.
+  const withSignal = forecast.decide({
+    candle: { trade: { close: 0.3 } },
+    book: { getBestYesAsk: () => 0.3, getYesAskTiers: () => [{ count: 100 }], tick: 0.01, grid: { step: 0.01 }, notional: 1 },
+    portfolio: { positions: new Map(), cash: 100000 },
+    market: { floor_strike: 77, cap_strike: 78, strike_type: 'between' },
+    ticker: 'X',
+    signal: { kind: 'nws-forecast-high', highF: 78, capturedAt: '2026-09-18T01:00:00Z' }
+  });
+  assert.equal(withSignal.length, 1);
+  assert.equal(withSignal[0].side, 'YES');
+  // The gold entry buys the early leader within the first five minutes only.
+  assert.equal(gold.decide({ candle: { trade: { close: 0.58 } }, book: { getBestYesAsk: () => 0.58, getYesAskTiers: () => [{ count: 100 }], tick: 0.01, grid: { step: 0.01 }, notional: 1 }, portfolio: { positions: new Map(), cash: 100000 }, ticker: 'X', periodIndex: 3 }).length, 1);
+  assert.equal(gold.decide({ candle: { trade: { close: 0.58 } }, book: { getBestYesAsk: () => 0.58, getYesAskTiers: () => [{ count: 100 }], tick: 0.01, grid: { step: 0.01 }, notional: 1 }, portfolio: { positions: new Map(), cash: 100000 }, ticker: 'X', periodIndex: 9 }).length, 0, 'after minute five the entry window is closed');
+});
+
+test('78. intraday request blocks parse in every accepted shape and reject bad periods', () => {
+  // Legacy single object still works.
+  const legacy = intradayArgsFromRequest({ intraday: { enabled: true, period: 60, tickers: ['A'] } });
+  assert.equal(legacy.period, 60);
+  assert.equal(legacy.status, 'open', 'the legacy default discovery status is open');
+  // Array form — several passes with their own universes and statuses.
+  const blocks = intradayBlocksFromRequest({
+    intraday: {
+      enabled: true,
+      blocks: [
+        { period: 60, tickers: ['A', 'B'] },
+        { period: 60, series: ['KXHIGHNY'], status: 'all', max_bars: 200 },
+        { period: 1, series: ['KXGOLD15M'], status: 'settled', max_bars: 96 }
+      ]
+    }
+  });
+  assert.equal(blocks.length, 3);
+  assert.deepEqual(blocks[1].series, ['KXHIGHNY']);
+  assert.equal(blocks[1].status, 'all');
+  assert.equal(blocks[2].period, 1);
+  assert.equal(blocks[2].status, 'settled');
+  assert.equal(blocks[0].status, 'open', 'a block without a status discovers open markets only');
+  // blocks[] nested inside a legacy object is honoured too.
+  assert.equal(intradayBlocksFromRequest({ intraday: { enabled: true, period: 60, blocks: [{ period: 1, tickers: ['Z'] }] } }).length, 1);
+  // An invalid period is rejected loudly, never guessed.
+  assert.throws(() => intradayBlockArgs({ period: 7 }), /period must be one of/);
+  // disabled blocks are skipped.
+  assert.equal(intradayBlocksFromRequest({ intraday: { enabled: false, blocks: [{ period: 60 }] } }).length, 0);
+});
+
+test('79. the weather and gold stores are real, settled and internally consistent', () => {
+  const dir = (p) => path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'history', 'intraday', p);
+  // Weather: KXHIGHNY at 60 minutes, settled brackets with exchange results.
+  const weatherDir = dir('60m');
+  const weatherFiles = readdirSync(weatherDir).filter((f) => f.startsWith('KXHIGHNY'));
+  assert.ok(weatherFiles.length >= 30, `expected the ingested KXHIGHNY brackets, found ${weatherFiles.length}`);
+  let finalized = 0;
+  for (const f of weatherFiles) {
+    const store = JSON.parse(readFileSync(path.join(weatherDir, f), 'utf8'));
+    if (store.market?.status === 'finalized' && ['yes', 'no'].includes(store.market?.result)) finalized += 1;
+    // Bar volume must reconcile with the exchange's own lifetime volume.
+    const sum = (store.candlesticks || []).reduce((a, b) => a + Number(b.volume_fp || 0), 0);
+    if (store.market?.volume_fp && store.market?.status === 'finalized') {
+      // Only a FINALIZED market owes an exact reconciliation: an active market
+      // keeps trading after its last stored bar, so its lifetime volume can be
+      // larger than the sum of ingested bars (observed: KXHIGHNY-26SEP17-B82.5).
+      assert.ok(Math.abs(sum - Number(store.market.volume_fp)) < 0.5, `${f}: bar volumes must sum to the finalized market's lifetime volume`);
+    }
+  }
+  assert.ok(finalized >= 30, `expected mostly finalized brackets, found ${finalized}`);
+
+  // Gold: KXGOLD15M at 1 minute, 15-minute lifecycle.
+  const goldDir = dir('1m');
+  const goldFiles = readdirSync(goldDir).filter((f) => f.startsWith('KXGOLD15M'));
+  assert.ok(goldFiles.length >= 1);
+  for (const f of goldFiles) {
+    const store = JSON.parse(readFileSync(path.join(goldDir, f), 'utf8'));
+    assert.ok((store.candlesticks || []).length <= 20, 'a 15-minute market cannot carry more than ~16 one-minute bars');
+  }
+
+  // Both series actually feed their flights.
+  const flights = runCompetitionFlights({ depthMode: 'captured' });
+  assert.ok(flights.hourly, `hourly flight must run: ${flights.hourlyError || ''}`);
+  assert.ok(flights.micro, `micro flight must run: ${flights.microError || ''}`);
+  const hourlySeries = new Set(flights.hourly.competition.dataProvenance.markets.map((m) => m.series));
+  assert.ok(hourlySeries.has('KXHIGHNY'), 'the hourly flight contains the weather brackets');
+  assert.ok(new Set(flights.micro.competition.dataProvenance.markets.map((m) => m.series)).has('KXGOLD15M'), 'the micro flight contains the gold markets');
+  // At least one strategy must have booked a REAL settlement (exchange result, $1/$0).
+  const bookedSomewhere = [...flights.hourly.results, ...flights.micro.results].some((r) => (r.realSettlements?.bookedCount || 0) > 0);
+  assert.ok(bookedSomewhere, 'with settled markets in the universe, real settlements must book');
+});
+
+test('80. ForecastEdge_Weather abstains (0 trades) while the forecast archive is empty', () => {
+  // The archive starts empty by design: it grows only from real captures.
+  // Until a snapshot exists at decision time the strategy MUST not trade.
+  if (!hasForecastArchive()) {
+    const flights = runCompetitionFlights({ depthMode: 'captured' });
+    const fe = flights.hourly.results.find((r) => r.username === 'ForecastEdge_Weather');
+    assert.ok(fe, 'the forecast strategy runs in the hourly flight');
+    assert.equal(fe.totalTrades, 0, 'no point-in-time forecast in the window => no trades, ever');
+    const row = flights.hourly.leaderboard.find((r) => r.username === 'ForecastEdge_Weather');
+    assert.equal(row.qualified, false, 'a 0-trade entry is unranked');
+    assert.ok(row.disqualificationReason, 'the unranked row says WHY');
+  } else {
+    // The day the archive exists, this test simply documents that the provider builds.
+    assert.ok(typeof buildForecastSignalProvider() === 'function');
+  }
 });
