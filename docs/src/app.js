@@ -15,6 +15,7 @@
  * and no placeholder prices.
  */
 
+import { depthLabel } from './trade-ledger.js';
 import {
   esc, money, compact, pct, signedClass, price, priceCents, dateShort, timeShort,
   sourcePill, verdictPill, tag, renderPodium, renderLeaderboardRows, sparkline,
@@ -372,6 +373,7 @@ function wireTabs() {
       $$('.panel').forEach((p) => p.classList.toggle('is-active', p.id === `panel-${id}`));
       if (id === 'markets' && state.selectedTicker) selectMarket(state.selectedTicker);
       if (id === 'research' && !state.researchLoaded) { state.researchLoaded = true; renderResearch(); }
+      if (id === 'ledger' && !state.ledgerLoaded) { state.ledgerLoaded = true; renderLedger(); }
     });
   });
 }
@@ -1105,6 +1107,270 @@ async function runLab() {
  * page shows the same computed artefacts a reader can download and check, and
  * never a number typed into the HTML.
  */
+/* ------------------------------------------------------------------ *
+ * Inline notice banner (used by the ledger tab and the research tab).
+ * A notice is never a silent failure: it names what is missing and how to
+ * produce it, so an absent report can never be mistaken for a real result.
+ * ------------------------------------------------------------------ */
+function banner(title, body, kind = 'info') {
+  const cls = kind === 'warn' ? 'notice-warn' : kind === 'err' ? 'notice-bad' : 'notice-good';
+  return `<div class="notice ${cls}"><strong>${esc(title)}</strong><div class="note">${body}</div></div>`;
+}
+
+/* ------------------------------------------------------------------ *
+ * Verified Trade Ledger tab
+ *
+ * READS: docs/data/ledger.json — written by scripts/export-ledger.mjs, which
+ * builds the ledger from the replay engine and REFUSES to write it unless
+ * verifyLedger() can re-derive every row field-for-field. So what is drawn
+ * here is the engine's own output, twice checked, not a rendering of a claim.
+ *
+ * Every column shown maps to a ledger tuple column (see FILL/ROUND_TRIP
+ * COLUMNS in src/trade-ledger.js), and each row links to the official API URL
+ * of the bar that priced it, so a reader can open the source and compare.
+ * ------------------------------------------------------------------ */
+
+async function renderLedger() {
+  let data = null;
+  let error = null;
+  try {
+    const res = await fetch('data/ledger.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    data = await res.json();
+  } catch (err) {
+    error = err;
+  }
+  state.ledger = data;
+  renderLedgerStatus(data, error);
+  if (!data) return;
+
+  const sel = $('#ledgerStrategy');
+  const names = [...new Set((data.roundTrips || []).map((t) => t[0]))].sort();
+  const current = sel.value;
+  sel.innerHTML =
+    '<option value="">All strategies</option>' +
+    names.map((n) => `<option value="${esc(n)}">${esc(n)}</option>`).join('');
+  if (names.includes(current)) sel.value = current;
+
+  renderLedgerSummary(data);
+  renderLedgerTrades(data);
+  renderLedgerSources(data);
+}
+
+function ledgerFiltered() {
+  const data = state.ledger;
+  if (!data) return [];
+  const who = $('#ledgerStrategy')?.value || '';
+  const flight = $('#ledgerFlight')?.value || '';
+  const kind = $('#ledgerKind')?.value || '';
+  // Look the columns up BY NAME: a tuple layout change must not silently
+  // filter on the wrong field (the set of columns is shipped with the data).
+  const cols = data.columns?.roundTrips || [];
+  const [iu, ifl, ik] = ['username', 'flight', 'exitKind'].map((c) => cols.indexOf(c));
+  return (data.roundTrips || []).filter((t) => {
+    if (who && iu >= 0 && t[iu] !== who) return false;
+    if (flight && ifl >= 0 && t[ifl] !== flight) return false;
+    if (kind && ik >= 0 && t[ik] !== kind) return false;
+    return true;
+  });
+}
+
+function renderLedgerStatus(data, error) {
+  if (error) {
+    setHTML('#ledgerStatus', banner(
+      'No ledger exported in this build',
+      `docs/data/ledger.json could not be loaded (${esc(String(error.message || error))}). Run <code>node scripts/export-ledger.mjs</code> (server mode) — the GitHub Pages build ships the last committed ledger.`,
+      'warn'
+    ));
+    return;
+  }
+  const v = data.verification || {};
+  const rows = data.sampleTruncated
+    ? `Showing the newest ${compact(data.sampleSize)} of ${compact(data.sampleSize)} exported round trips in this page; the full ledger (data/ledger/ledger-${esc(data.seed)}.json) carries every fill.`
+    : `All ${compact(data.sampleSize || 0)} exported round trips are shown.`;
+  setHTML('#ledgerStatus', `
+    ${banner(
+      v.ok ? 'Ledger verified against the engine' : 'Ledger verification did NOT pass — treat these rows as unverified',
+      `${esc((v.checks || []).join(' · '))}${v.problems && v.problems.length ? ` — problems: ${esc(v.problems.join(' | '))}` : ''}`,
+      v.ok ? 'ok' : 'err'
+    )}
+    <div class="card-grid">
+      <div class="card"><div class="card-label">Seed</div><div class="card-value">${esc(data.seed)}</div><div class="card-note">deterministic replay</div></div>
+      <div class="card"><div class="card-label">Exported</div><div class="card-value" style="font-size:.95rem">${esc(String(data.generatedAt || '').slice(0, 19))}Z</div><div class="card-note">every row dated by the market, not the run</div></div>
+      <div class="card"><div class="card-label">Round trips shown</div><div class="card-value">${compact((data.roundTrips || []).length)}</div><div class="card-note">${esc(rows)}</div></div>
+    </div>
+    <p class="note">${esc(data.provenance?.dateRule || '')}</p>
+    <p class="note">${esc(data.provenance?.liquidityRule || '')}</p>
+    ${feeRegimePanel(data)}
+  `);
+}
+
+/**
+ * WHICH FEE REGIME EACH FILL WAS CHARGED UNDER — counted from the rows.
+ * A maker fill on a plain-quadratic series legitimately pays $0, and a $0 next
+ * to a filled row is indistinguishable from a bug unless it is labelled. This
+ * renders the counts the export computed (feeRegimeBreakdown in
+ * src/trade-ledger.js) with the rule each label stands for.
+ */
+function feeRegimePanel(data) {
+  const fr = data.feeRegimes;
+  if (!fr || !fr.regimes) return '';
+  const RULES = {
+    'taker_0.07': 'immediately matched against the book — official taker coefficient 0.07',
+    taker_zero: 'taker on a series whose captured fee_multiplier is 0 (e.g. KXBTCY) — the exchange charges nothing',
+    'maker_0.0175': 'resting order on a series the exchange flags quadratic_with_maker_fees — maker coefficient 0.0175',
+    maker_free: 'resting order on a plain-quadratic series — the schedule charges resting orders only in the Maker Fees section, so $0',
+    settlement: 'market finalized; the contract pays its notional and there is no settlement fee'
+  };
+  const rows = Object.entries(fr.regimes)
+    .sort((a, b) => b[1].fills - a[1].fills)
+    .map(([regime, b]) => `<tr><td><code>${esc(regime)}</code></td><td>${compact(b.fills)}</td><td>${money(b.feeUsd)}</td><td class="note">${esc(RULES[regime] || 'regime not described — reported verbatim')}</td></tr>`)
+    .join('');
+  return `
+    <h3>Fee regimes <span class="tag">counted per fill</span></h3>
+    <p class="note">Total fees charged by this ledger: <strong>${money(fr.totalFeeUsd)}</strong>${fr.labelled ? '' : ' — some fills carry no regime label'}. Counted from the rows themselves, not restated from a description.</p>
+    <div class="table-wrap"><table class="grid">
+      <thead><tr><th>Regime</th><th>Fills</th><th>Fees</th><th>Rule applied</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>`;
+}
+
+function renderLedgerSummary(data) {
+  const rows = data.strategies || [];
+  if (!rows.length) {
+    setHTML('#ledgerSummary', '<p class="note">No strategy totals in this ledger.</p>');
+    return;
+  }
+  setHTML('#ledgerSummary', `
+    <h3>Per-strategy ledger totals <span class="tag">computed from every fill</span></h3>
+    <p class="note">A strategy judged in two flights has two entries, because they are two separate accounts.
+    <code>slippage cost</code> = contracts × (executed price − real quoted touch), summed over the fills that crossed a quote.</p>
+    <div class="table-wrap">
+      <table class="grid">
+        <thead><tr>
+          <th>Username</th><th>Flight</th><th>Trades</th><th>Fills</th><th>Contracts filled</th>
+          <th>Unfilled</th><th>Slippage cost</th><th>Fees</th><th>Realized PnL</th><th>Win rate</th>
+          <th>Median hold</th><th>Settlements</th><th>First trade</th><th>Last trade</th>
+        </tr></thead>
+        <tbody>
+          ${rows.map((r) => `
+            <tr>
+              <td><strong>${esc(r.username)}</strong></td>
+              <td>${esc(r.flight || '—')}</td>
+              <td>${compact(r.roundTrips)}</td>
+              <td>${compact(r.fills)}</td>
+              <td>${compact(r.contractsFilled)}</td>
+              <td>${r.contractsUnfilled ? compact(r.contractsUnfilled) : '0'}</td>
+              <td>${money(r.slippageCost)}</td>
+              <td>${money(r.fees)}</td>
+              <td class="${signedClass(r.realizedPnl)}">${money(r.realizedPnl)}</td>
+              <td>${r.winRate === null || r.winRate === undefined ? '—' : `${r.winRate}%`}</td>
+              <td>${r.medianHoldMinutes === null || r.medianHoldMinutes === undefined ? '—' : holdLabel(r.medianHoldMinutes)}</td>
+              <td>${r.settlements || 0}</td>
+              <td>${esc(String(r.firstTrade || '—').slice(0, 16).replace('T', ' '))}</td>
+              <td>${esc(String(r.lastTrade || '—').slice(0, 16).replace('T', ' '))}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  `);
+}
+
+function holdLabel(minutes) {
+  const m = Number(minutes);
+  if (!Number.isFinite(m)) return '—';
+  if (m < 90) return `${Math.round(m)}m`;
+  if (m < 60 * 48) return `${(m / 60).toFixed(1)}h`;
+  return `${(m / 1440).toFixed(1)}d`;
+}
+
+function renderLedgerTrades(data) {
+  const trips = ledgerFiltered();
+  const cols = data.columns?.roundTrips || [];
+  const i = (name) => cols.indexOf(name);
+  const capped = trips.slice(0, 300);
+  if (!trips.length) {
+    setHTML('#ledgerTrades', '<p class="note">No round trip matches this filter.</p>');
+    return;
+  }
+  setHTML('#ledgerTrades', `
+    <h3>Round trips <span class="tag">${compact(trips.length)} matching</span></h3>
+    <p class="note">Entry and exit dates are the REAL market periods of the bars the fills happened in. An exit of
+    <em>SETTLE_REAL</em> means the exchange finalized the market and the contract paid $1.00 or $0.00 — a real cash
+    flow, not a mark-to-market. Every row links to the API URL of the entry bar.</p>
+    <div class="table-wrap">
+      <table class="grid">
+        <thead><tr>
+          <th>Username</th><th>Flight</th><th>Market</th><th>Side</th><th>Contracts</th>
+          <th>Entry (real)</th><th>Entry px</th><th>Entry slip</th><th>Ladder</th>
+          <th>Exit (real)</th><th>Exit px</th><th>Exit via</th><th>Hold</th>
+          <th>Gross</th><th>Fees</th><th>Net</th><th>% of bar volume</th><th>Source</th>
+        </tr></thead>
+        <tbody>
+          ${capped.map((t) => `
+            <tr>
+              <td>${esc(t[i('username')])}</td>
+              <td>${esc(t[i('flight')] || '—')}</td>
+              <td title="${esc(t[i('ticker')])}"><code>${esc(String(t[i('ticker')]).slice(0, 26))}</code><div class="note">${esc(t[i('series')] || '')}</div></td>
+              <td>${esc(t[i('side')])}</td>
+              <td>${compact(t[i('contracts')])}</td>
+              <td>${esc(String(t[i('entryDate')] || '—').slice(0, 16).replace('T', ' '))}</td>
+              <td>${fmtPrice(t[i('entryPx')])}</td>
+              <td>${Number(t[i('entrySlip')]) ? `${(Number(t[i('entrySlip')]) * 100).toFixed(2)}¢` : '—'}</td>
+              <td>${esc(ladderLabel(t[i('entryDepth')]))}</td>
+              <td>${esc(String(t[i('exitDate')] || '—').slice(0, 16).replace('T', ' '))}</td>
+              <td>${fmtPrice(t[i('exitPx')])}</td>
+              <td>${t[i('exitKind')] === 'SETTLE_REAL' ? '<span class="tag">exchange result</span>' : 'SELL'}</td>
+              <td>${holdLabel(t[i('holdMinutes')])}</td>
+              <td class="${signedClass(t[i('grossPnl')])}">${money(t[i('grossPnl')])}</td>
+              <td>${money(t[i('fees')])}</td>
+              <td class="${signedClass(t[i('netPnl')])}"><strong>${money(t[i('netPnl')])}</strong></td>
+              <td>${t[i('pctVolEntry')] ? `${(Number(t[i('pctVolEntry')]) * 100).toFixed(1)}%` : '—'}</td>
+              <td>${t[i('entrySrc')] ? `<a class="btn btn-ghost" href="${esc(t[i('entrySrc')])}" target="_blank" rel="noopener">API</a>` : '—'}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+    ${trips.length > capped.length ? `<p class="note">Table capped at ${capped.length} rows for the browser; the committed ledger file carries all ${compact(trips.length)} matching rows.</p>` : ''}
+  `);
+}
+
+function fmtPrice(v) {
+  return v === null || v === undefined ? '—' : `$${Number(v).toFixed(2)}`;
+}
+
+/**
+ * Ladder label. The mapping lives in src/trade-ledger.js (DEPTH_LABELS) so the
+ * page, the ledger and the tests cannot disagree about what a depth value
+ * means; an unknown value is shown verbatim rather than prettified.
+ */
+function ladderLabel(depth) {
+  const { label } = depthLabel(depth);
+  return label || '—';
+}
+
+function renderLedgerSources(data) {
+  const p = data.provenance || {};
+  setHTML('#ledgerSources', `
+    <h3>Where every number above comes from</h3>
+    <div class="table-wrap">
+      <table class="grid">
+        <thead><tr><th>Field</th><th>Official source</th><th>Documentation</th></tr></thead>
+        <tbody>
+          <tr><td>Prices, quotes, bar volume, market period (ts/date)</td><td><code>${esc(p.sources?.candlesticks || '')}</code> — each row links the exact URL the ingest job fetched that market's bars with</td>
+              <td><a href="${esc(p.sources?.candlesticksDocs || '')}" target="_blank" rel="noopener">Kalshi docs</a></td></tr>
+          <tr><td>Order-book ladders used for depth</td><td><code>${esc(p.sources?.orderbook || '')}</code></td>
+              <td><a href="${esc(p.sources?.orderbookDocs || '')}" target="_blank" rel="noopener">Kalshi docs</a></td></tr>
+          <tr><td>Fees (per series multiplier)</td><td><code>round up(M × 0.07 × C × P × (1−P))</code></td>
+              <td><a href="${esc(p.sources?.fees || '')}" target="_blank" rel="noopener">Fee schedule</a></td></tr>
+          <tr><td>Raw ledger files</td><td><code>data/ledger/ledger-${esc(data.seed)}.json</code> (dictionary-encoded tuples)</td>
+              <td><code>scripts/export-ledger.mjs</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  `);
+}
+
 async function loadReport(name) {
   try {
     const res = await fetch(`data/reports/${name}`, { cache: 'no-store' });
@@ -1533,6 +1799,10 @@ function wireGlobalEvents() {
 
   on('#verifySearch', 'input', (e) => renderVerification(e.target.value));
   on('#btnResearchReload', 'click', () => { state.researchLoaded = true; renderResearch().then(() => toast('Reports reloaded.', 'ok')); });
+  on('#btnLedgerReload', 'click', () => { state.ledgerLoaded = true; renderLedger().then(() => toast('Ledger reloaded.', 'ok')); });
+  on('#ledgerStrategy', 'change', () => { if (state.ledger) renderLedgerTrades(state.ledger); });
+  on('#ledgerFlight', 'change', () => { if (state.ledger) renderLedgerTrades(state.ledger); });
+  on('#ledgerKind', 'change', () => { if (state.ledger) renderLedgerTrades(state.ledger); });
 }
 
 async function advance(weeks) {

@@ -1,0 +1,157 @@
+{
+  "location": {
+    "key": "denver-den",
+    "city": "Denver (DEN)",
+    "series": "KXHIGHDEN",
+    "latitude": 39.8561,
+    "longitude": -104.6737,
+    "points_url": "https://api.weather.gov/points/39.8561,-104.6737",
+    "resolved": {
+      "gridId": "BOU",
+      "gridX": 74,
+      "gridY": 66,
+      "forecastZone": "https://api.weather.gov/zones/forecast/COZ040",
+      "county": "https://api.weather.gov/zones/county/COC031",
+      "relativeLocation": "Denver, CO",
+      "timeZone": "America/Denver",
+      "resolvedAt": "2026-09-18T13:28:58.995Z",
+      "pointsUrl": "https://api.weather.gov/points/39.8561,-104.6737"
+    },
+    "firstResolvedAt": "2026-09-18T13:24:29.350Z"
+  },
+  "what": "Point-in-time NWS gridded forecast captures (see scripts/archive-forecasts.mjs). Each snapshot is what api.weather.gov returned at captured_at — the archive is what makes a point-in-time weather strategy testable.",
+  "snapshots": [
+    {
+      "captured_at": "2026-09-18T13:24:29.350Z",
+      "points_url": "https://api.weather.gov/points/39.8561,-104.6737",
+      "forecast_url": "https://api.weather.gov/gridpoints/BOU/74,66/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-18T06:46:21+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-18",
+          "highF": 84,
+          "periodName": "Today",
+          "startTime": "2026-09-18T06:00:00-06:00",
+          "endTime": "2026-09-18T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 60
+        },
+        {
+          "date": "2026-09-19",
+          "highF": 79,
+          "periodName": "Saturday",
+          "startTime": "2026-09-19T06:00:00-06:00",
+          "endTime": "2026-09-19T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 68
+        },
+        {
+          "date": "2026-09-20",
+          "highF": 73,
+          "periodName": "Sunday",
+          "startTime": "2026-09-20T06:00:00-06:00",
+          "endTime": "2026-09-20T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 52
+        },
+        {
+          "date": "2026-09-21",
+          "highF": 75,
+          "periodName": "Monday",
+          "startTime": "2026-09-21T06:00:00-06:00",
+          "endTime": "2026-09-21T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 5
+        },
+        {
+          "date": "2026-09-22",
+          "highF": 79,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-22T06:00:00-06:00",
+          "endTime": "2026-09-22T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 25
+        },
+        {
+          "date": "2026-09-23",
+          "highF": 79,
+          "periodName": "Wednesday",
+          "startTime": "2026-09-23T06:00:00-06:00",
+          "endTime": "2026-09-23T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 5
+        },
+        {
+          "date": "2026-09-24",
+          "highF": 81,
+          "periodName": "Thursday",
+          "startTime": "2026-09-24T06:00:00-06:00",
+          "endTime": "2026-09-24T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 12
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-18T13:28:58.995Z",
+      "points_url": "https://api.weather.gov/points/39.8561,-104.6737",
+      "forecast_url": "https://api.weather.gov/gridpoints/BOU/74,66/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-18T06:46:21+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-18",
+          "highF": 84,
+          "periodName": "Today",
+          "startTime": "2026-09-18T06:00:00-06:00",
+          "endTime": "2026-09-18T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 60
+        },
+        {
+          "date": "2026-09-19",
+          "highF": 79,
+          "periodName": "Saturday",
+          "startTime": "2026-09-19T06:00:00-06:00",
+          "endTime": "2026-09-19T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 68
+        },
+        {
+          "date": "2026-09-20",
+          "highF": 73,
+          "periodName": "Sunday",
+          "startTime": "2026-09-20T06:00:00-06:00",
+          "endTime": "2026-09-20T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 52
+        },
+        {
+          "date": "2026-09-21",
+          "highF": 75,
+          "periodName": "Monday",
+          "startTime": "2026-09-21T06:00:00-06:00",
+          "endTime": "2026-09-21T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 5
+        },
+        {
+          "date": "2026-09-22",
+          "highF": 79,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-22T06:00:00-06:00",
+          "endTime": "2026-09-22T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 25
+        },
+        {
+          "date": "2026-09-23",
+          "highF": 79,
+          "periodName": "Wednesday",
+          "startTime": "2026-09-23T06:00:00-06:00",
+          "endTime": "2026-09-23T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 5
+        },
+        {
+          "date": "2026-09-24",
+          "highF": 81,
+          "periodName": "Thursday",
+          "startTime": "2026-09-24T06:00:00-06:00",
+          "endTime": "2026-09-24T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 12
+        }
+      ]
+    }
+  ]
+}

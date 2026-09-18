@@ -309,6 +309,12 @@ export class ReplayEngine {
     this.depthMode = options.depthMode === 'captured' ? 'captured' : 'modelled';
     this.depthProfiles = options.depthProfiles || null;
     this.depthProfileScale = options.depthProfileScale ?? 1;
+    /**
+     * Candlestick period length in MINUTES for this run (1 | 60 | 1440), used
+     * only to stamp each fill with the period it traded in (see setClock).
+     * null when the caller did not say — never guessed from the bars.
+     */
+    this.periodMinutes = options.periodMinutes ?? null;
 
     /**
      * POINT-IN-TIME EXTERNAL SIGNALS (2026-09-18, roadmap item #3).
@@ -420,6 +426,29 @@ export class ReplayEngine {
         topSize: opts.topSize ?? 2500
       });
 
+      // VERIFIED TRADE CLOCK (2026-09-18): every fill made in this period is
+      // stamped with the real period it happened in — the candlestick's own
+      // end_period_ts, its ISO date, the period length and the exact API URL
+      // the bar came from. Without this a trade log could only say WHEN THE
+      // REPLAY RAN, which is not an auditable date.
+      books[t].setClock({
+        ts: candle.endTs,
+        iso: candle.endDate,
+        periodMinutes: this.periodMinutes ?? null,
+        index: row.indexInSeries,
+        // The REAL liquidity of this bar: contracts that traded (volume_fp) and
+        // contracts still open (open_interest_fp). Both are exchange fields on
+        // the very candlestick that prices this period, so a fill can state
+        // exactly what share of the real market it consumed.
+        barVolume: candle.volume,
+        barOpenInterest: candle.openInterest,
+        // Prefer the CANDLESTICK endpoint the bars came from (the price
+        // source); fall back to the market-object URL, which documents the
+        // market rather than the bar, and is labelled as such in the ledger.
+        sourceUrl: market.candle_source_url || market.source_url || market._provenance?.url || null,
+        sourceKind: market.candle_source_url ? 'candlesticks_endpoint' : 'market_object_endpoint'
+      });
+
       // Mark all open positions to this period's real closing quotes.
       const priceMap = {};
       for (const [key, pos] of portfolio.positions.entries()) {
@@ -527,7 +556,15 @@ export class ReplayEngine {
           real.due = true;
           const settledHere = portfolio.settleMarket(t, real.result, {
             notional: this.notional,
-            settledAt: candle.endDate
+            settledAt: candle.endDate,
+            // The MARKET's real close when it is known — that is the instant
+            // the exchange resolved it — else the bar the payout was booked on.
+            marketTime: {
+              ts: real.closeTs ?? candle.endTs,
+              iso: real.closeTs !== null && real.closeTs !== undefined ? new Date(real.closeTs * 1000).toISOString() : candle.endDate,
+              kind: real.closeTs !== null && real.closeTs !== undefined ? 'market_close_time' : 'last_stored_bar',
+              sourceUrl: real.source
+            }
           });
           if (settledHere.length) {
             for (const s of settledHere) s.real = true;

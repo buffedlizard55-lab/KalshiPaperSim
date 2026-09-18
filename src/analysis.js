@@ -132,10 +132,17 @@ export function computeAttribution(result) {
     );
   }
   if (feesPaidStat !== 0) {
+    // The maker half of this sentence depends on the SERIES: a resting order is
+    // charged only where the series is flagged quadratic_with_maker_fees.
+    // Count from the fills themselves so the sentence can never assert a
+    // coefficient that was not applied.
+    const makerCharged = makerFills.filter((t) => t.makerFeesApply !== false);
+    const makerFree = makerFills.filter((t) => t.makerFeesApply === false);
     push(
       'Exchange trading fees',
       -feesPaidStat,
-      `Official quadratic schedule: round up(M x 0.07 x C x P x (1-P)) for takers, 0.0175 for makers. Paid across ${takerFills.length + makerFills.length} fill(s).`
+      `Official quadratic schedule: round up(M x 0.07 x C x P x (1-P)) for takers; makers are charged 0.0175 only on series the exchange flags quadratic_with_maker_fees. ` +
+        `Paid across ${takerFills.length + makerFills.length} fill(s) — ${makerCharged.length} maker fill(s) on maker-fee series, ${makerFree.length} maker fill(s) on plain quadratic series (charged $0).`
     );
   }
 
@@ -173,10 +180,14 @@ export function computeAttribution(result) {
     );
   }
   if (makerFills.length) {
+    const charged = makerFills.filter((t) => t.makerFeesApply !== false).length;
+    const free = makerFills.length - charged;
     disclose(
       'Market-making (maker fills) (memo)',
       makerFills.reduce((s, t) => s + (Number(t.realizedPnl) || 0), 0),
-      `${makerFills.length} resting order(s) matched, charged at the maker coefficient 0.0175 instead of the taker 0.07. Their P&L is already inside the realized buckets above — not additive.`
+      `${makerFills.length} resting order(s) matched — ${charged} charged at the maker coefficient 0.0175 (series in the exchange's Maker Fees section), ` +
+        `${free} charged NOTHING (plain quadratic series: the schedule only charges resting orders on maker-fee series). ` +
+        'Their P&L is already inside the realized buckets above — not additive.'
     );
   }
   if (penaltyCost !== 0) {

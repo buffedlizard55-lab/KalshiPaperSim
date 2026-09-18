@@ -5,9 +5,9 @@ change, what it needs, and how a reader could check it. Nothing here is a
 promise; items leave this file only when the work is committed **and** measured.
 
 Last reviewed: 2026-09-18 (the Arena session on branch
-`arena/01a0b254-kalshipapersim` — weather markets, one-minute gold candles,
-real mid-replay settlements, the point-in-time forecast archive and the
-MasterSite signal-source review).
+`arena/01a0b330-kalshipapersim` — Pass 3 added the nine-city forecast archive
+with verified NWS point identities, the `ForecastEdge_MultiCity` forward test,
+and the guards that caught a real capture bug, irregularity #40).
 
 ## Shipped (with the evidence a reader can rerun)
 
@@ -27,6 +27,8 @@ MasterSite signal-source review).
 | 12 | **Point-in-time forecast archive.** The official NWS point forecast for Central Park captured ~5×/day, each snapshot time-stamped; queries refuse any snapshot captured after the decision bar | `scripts/archive-forecasts.mjs`, workflow `weather-signals.yml`, `data/forecasts/nyc-central-park.json`, `src/forecast-store.js` (facts V87, V88, V90) |
 | 13 | **MasterSite signal-source review.** All 13 projects the owner asked about (CEO … PinePilot) catalogued with links, testability verdicts and flags (CEO missing, GOLD is rings) | `src/signal-sources.js` → Research tab; irregularities #32, #33; test 76 |
 | 14 | Third flight: MICRO (period_interval 1) so 15-minute-market strategies are judged at their own granularity | `runCompetitionFlights` micro; `flights.json` |
+| 15 | **Nine-city forecast archive (was Next #2/#3).** All nine KXHIGH* cities archived ~5×/day, each store carrying the NWS identity (grid office, grid x/y, zone, time zone) that the live API answered for its coordinates, cross-checked against the configuration on every capture and against the captured forecast URL in the offline audit | `data/forecasts/*.json`, `nwsGrid` in `scripts/archive-forecasts.mjs`, facts V98–V100, irregularity #40, test 90 |
+| 16 | **Per-series fee registry, incl. every weather city and KXGOLD15M** (was Next #4). Fee multiplier is now the captured one, not a default | `src/series-fee-registry.js` (47 priceable series), `data/discovered/series-fees.json` (14,154 series) |
 
 ## Next, in priority order
 
@@ -38,32 +40,26 @@ MasterSite signal-source review).
    workflows only — then re-run the reports and read the post-split numbers.
    *Check:* `data/reports/flights.json` → `forecastArchive` + the hourly
    leaderboard.
-2. **Capture the Series objects for KXHIGHNY / KXGOLD15M** (fee multipliers —
-   Irregularity #36). Fees currently use the documented default M=1, labelled.
-   *Needs:* one `GET /series/{ticker}` capture per series on the runner.
-3. **More weather cities.** The archive and the ingest are location-generic
-   (KXHIGHCHI, KXHIGHMIA…); one more liquid city doubles the forward sample.
-   *Needs:* a `FORECAST_LOCATIONS` entry + an ingest block, nothing else.
-4. **True forward windows for the original roster.** `designedAt` is
+2. **True forward windows for the original roster.** `designedAt` is
    2026-09-17/18, so bars from 2026-09-19 onward are genuinely out-of-sample
    for every entry. *Check:* `data/reports/forward-test.json` →
    `strictForward.bars`.
-5. **A sports or FDA series (the biggest signal-ledger gaps).** The
+3. **A sports or FDA series (the biggest signal-ledger gaps).** The
    signal-source review (Research tab) lists exactly what each project
    (NFL/NBA injury, FDA PDUFA, scoreboards) would need: an ingested Kalshi
    series plus that project's data archived point-in-time. The machinery now
    exists (any period, settled markets, real settlements, signal providers).
-6. **Captured depth on every fill.** The ladders are re-anchored from single
+4. **Captured depth on every fill.** The ladders are re-anchored from single
    captures; repeated `--with-books` snapshots during the trading day would
    make the touch itself point-in-time. *Needs:* an extra scheduled ingest
    with `with_books=true` mid-day.
-7. **Authenticated WebSocket smoke test.** `KALSHI_API_KEY_ID` /
+5. **Authenticated WebSocket smoke test.** `KALSHI_API_KEY_ID` /
    `KALSHI_API_PRIVATE_KEY` are not configured here, so the private channels
    are documented but untested. *Needs:* an RSA key in the runner environment.
-8. **A browser-level UI test.** No headless browser can be installed in this
+6. **A browser-level UI test.** No headless browser can be installed in this
    environment, so `test/ui-smoke.mjs` exercises `src/app.js` against a DOM
    stub. *Needs:* a runner with network access to a browser download.
-9. **Second venue for cross-venue arbitrage.** Every arbitrage source reviewed
+7. **Second venue for cross-venue arbitrage.** Every arbitrage source reviewed
    trades two venues; this project holds Kalshi only, deliberately.
    *Needs:* a second venue feed with the same verification standard.
 
@@ -72,12 +68,21 @@ MasterSite signal-source review).
 - Depth behind the touch is modelled unless a captured ladder exists, and the
   label travels with every number that uses it.
 - The weather universe is the top-40 KXHIGHNY brackets by exchange-reported
-  lifetime volume (2–3 bands per event), not the full ~15-band board a live
-  trader could buy — measured on a sample, stated on the strategy.
+  lifetime volume plus the 60-minute stores for the other eight cities (2–3
+  bands per event each), not the full ~15-band board a live trader could buy —
+  measured on a sample, stated on the strategy.
+- `ForecastEdge_MultiCity` is a genuine forward test: the archive begins
+  2026-09-18 and the ingested bars end the same day, so it reports
+  `UNTESTED_ON_THIS_DATASET` (0 fills) rather than a fabricated backtest number.
+- The archived point is the NWS forecast grid for the city; Kalshi settles on
+  The Weather Company observations (Irregularity #34). The basis is real and
+  published on the strategy, never netted out of the numbers.
 - The forecast signal (NWS) and the settlement source (The Weather Company)
   are different providers (Irregularity #34) — real noise, published.
-- KXHIGHNY / KXGOLD15M fee multipliers are not yet captured (Irregularity #36);
-  fees default to the documented M=1, labelled.
+- The fee multiplier now comes from the captured Series object for every
+  priceable series (irregularity #36 is closed for those). A series absent from
+  the registry still falls back to the documented M=1, and the fill records
+  which regime it used.
 - The gold micro-flight sample is 8 settled contracts so far — the post-mortem
   says so; more settle every day the ingest runs.
 - Human participants are paper-only: the store is a single-process JSON file

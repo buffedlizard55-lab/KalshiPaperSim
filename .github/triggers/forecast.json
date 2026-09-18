@@ -1,7 +1,8 @@
 {
   "_README": "Commit a change to this file to request an immediate forecast-archive run (.github/workflows/weather-signals.yml). The workflow also runs five times a day on a schedule; this trigger exists for on-demand captures (and because the automation token cannot create workflow_dispatch events). Bump `request` so the push is a real change.",
-  "request": 1,
+  "request": 3,
   "enabled": true,
-  "requested_at": "2026-09-18T04:10:00.000Z",
-  "requested_by": "arena session 01a0b254 — first capture of the point-in-time NWS archive for KXHIGHNY (NYC Central Park), roadmap item #3"
+  "requested_at": "2026-09-18T13:35:00.000Z",
+  "requested_by": "arena session 01a0b330 \u2014 the archive now covers the 9 weather cities this repository can trade (KXHIGHNY/LAX/CHI/MIA/AUS/DEN/PHIL/TPHX/TSEA). This capture is what resolves the 8 new points on api.weather.gov and writes each city's NWS identity (grid office, grid x/y, forecast zone) into data/forecasts/<key>.json, which is the verification the coordinates are missing until the runner confirms them.",
+  "why": "Nine-city archive captured, but the resolved identity was read from the forecast response instead of the point response, so every store recorded gridId/gridX/gridY/zone/timeZone as null. The capture now reads identity from the /points bag, compares it against the configured nwsGrid, and the offline audit fails on an incomplete or mismatched resolution. Re-run to record the real identities."
 }

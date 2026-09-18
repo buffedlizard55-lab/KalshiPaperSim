@@ -155,6 +155,14 @@ export function normalizeMarket(raw, extra = {}) {
     // provenance
     source: extra.source || DATA_SOURCE.LIVE,
     source_url: extra.source_url || null,
+    /**
+     * The URL the PRICE BARS for this market were fetched from (the
+     * candlesticks endpoint, as recorded per market by the ingest job). Kept
+     * separate from source_url, which documents the market OBJECT. When it is
+     * absent the field stays null — a fill then reports no price-source link
+     * rather than a link to something that did not produce the price.
+     */
+    candle_source_url: extra.candle_source_url || null,
     captured_at: extra.captured_at || null,
     raw
   };

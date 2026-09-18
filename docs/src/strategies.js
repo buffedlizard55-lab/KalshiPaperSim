@@ -28,11 +28,74 @@
  */
 
 import { round2, round6, clamp } from './simulation-engine.js';
+import {
+  universeRangeCaption,
+  intradayFacts,
+  classSampleCaption,
+  forecastCaption,
+  seriesSummary,
+  dailyFacts,
+  moderateFavPremiseCaption
+} from './store-facts.js';
+
+/**
+ * STORE-DERIVED CAPTIONS (2026-09-18).
+ *
+ * Several entries below state a fact ABOUT THE STORED DATA — sample sizes, how
+ * many markets the exchange had finalized, the price range the universe spans.
+ * Those sentences are now COMPUTED from the store on every load (src/store-facts.js)
+ * instead of written as literals, because a literal is a claim that silently
+ * becomes false the next time the ingest job appends a bar. IRREGULARITY #31 is
+ * exactly that failure: a caption asserting "no contract above 28c" while the
+ * store held 47 of them. A computed sentence cannot drift away from the data,
+ * and the automated test that guards it (test 77) proves the sentence CHANGES
+ * when the store changes rather than merely matching a remembered number.
+ */
+const STORE_FACTS_60M = intradayFacts(undefined, 60);
+const STORE_FACTS_1M = intradayFacts(undefined, 1);
+/** Daily store facts (the 1440-minute flight universe: indices, crypto, and
+ *  since 2026-09-18 the FDA ladders and CEO-succession markets). */
+const STORE_FACTS_DAILY = dailyFacts();
 import { snapToGrid } from './price-grid.js';
 import { rawQuadraticFee } from './kalshi-fees.js';
 
-/** Series that were VERIFIED to exist on Kalshi on 2026-09-17. */
+/**
+ * Series this build holds REAL bars for, derived from the store itself.
+ *
+ * WHY DERIVED: the roster check (test 21) refuses to let a strategy name a
+ * series nobody verified. Written as a hand-maintained list that check went
+ * stale the moment the ingest job expanded the universe — it failed the build
+ * with "universe references unverified series KXHIGHLAX" even though 166 M
+ * contracts of KXHIGHLAX were sitting in the store, fetched from the official
+ * candlesticks endpoint. A series with captured bars IS verified: the bars are
+ * the evidence. Hand-verified entries stay below and take precedence for the
+ * human-readable reason.
+ */
+const STORE_VERIFIED_SERIES = (() => {
+  const out = {};
+  const add = (series, why) => {
+    if (!series || out[series]) return;
+    out[series] = why;
+  };
+  for (const s of Object.keys(dailyFacts().bySeries)) {
+    add(s, 'real daily candlesticks in the accumulated store (data/history/)');
+  }
+  for (const period of [60, 1]) {
+    const facts = intradayFacts(undefined, period);
+    for (const [s, row] of Object.entries(facts.bySeries)) {
+      add(
+        s,
+        `real ${period}-minute candlesticks in the accumulated store` +
+          (row.settled ? ` (${row.settled} market(s) finalized with the exchange's own result)` : '')
+      );
+    }
+  }
+  return out;
+})();
+
+/** Series that were VERIFIED to exist on Kalshi (store first, then captures). */
 export const VERIFIED_SERIES = Object.freeze({
+  ...STORE_VERIFIED_SERIES,
   KXINXY: 'S&P 500 yearly range (Financials / Indices)',
   KXNASDAQ100Y: 'Nasdaq-100 yearly range (verified live markets captured)',
   KXTSLA: 'Tesla KPI — company quarterly KPI, settlement source Fiscal.ai',
@@ -50,7 +113,14 @@ export const VERIFIED_SERIES = Object.freeze({
      (data/history/intraday/60m/KXHIGHNY-*.json) hold the real market objects
      with rules, strikes and — for 39 of 40 — the exchange's final result. */
   KXHIGHNY: 'NYC daily high-temperature brackets (Central Park; the series documented by the official API quick-start: https://docs.kalshi.com/getting_started/quick_start_market_data)',
-  KXGOLD15M: 'Gold 15-minute up/down markets (target-price settlement; captured from the live API 2026-09-18, data/history/intraday/1m/)'
+  KXGOLD15M: 'Gold 15-minute up/down markets (target-price settlement; captured from the live API 2026-09-18, data/history/intraday/1m/)',
+  /* LISTED BUT UNTRADEABLE, and recorded as such rather than dropped.
+     GET /series on 2026-09-18 returned KXNHLGAME ("NHL Game") with 1,567,230,249
+     lifetime contracts, but every one of its sampled markets carries volume_fp 0
+     (the 2026 NHL season had not started), so this build holds NO bars for it.
+     A universe that names it therefore cannot trade, and the entries that do name
+     it publish that as a skip instead of a 0% result. */
+  KXNHLGAME: 'Listed by the exchange (1.57 B lifetime contracts) but every sampled market reports volume_fp 0 on 2026-09-18 — verified to exist, verified to have no traded bars to replay'
 });
 
 /** Series verified NOT to exist — do not re-introduce (see IRREGULARITIES.md #1). */
@@ -134,6 +204,24 @@ const BASE = {
   flight: 'daily',
   preferredPeriodMinutes: 1440
 };
+
+/**
+ * Small local helpers for the entries added on 2026-09-18. They are defined here
+ * (rather than imported from the engine) so a strategy file never quietly
+ * depends on engine internals that a refactor could change under it.
+ */
+function round6Local(v) {
+  return Number.isFinite(Number(v)) ? parseFloat(Number(v).toFixed(6)) : null;
+}
+
+/**
+ * How much cheaper the later-dated contract must be than the earlier one BEFORE
+ * the dominance trade fires. 3c is not a modelling choice about the FDA: it is
+ * the smallest gap that still clears the round-trip cost of the two legs at
+ * typical prices under the official quadratic fee schedule, so a 1c flicker in
+ * an illiquid ladder cannot trigger a trade that loses money after fees.
+ */
+const MIN_DOMINANCE_EDGE = 0.03;
 
 export const STRATEGIES = [
   {
@@ -603,7 +691,9 @@ export const STRATEGIES = [
       'DESIGN INTENT: the FLB literature claims low-price contracts win less often than their price implies and high-price contracts win more often. ' +
       'This entry operationalises exactly that: short the 5c–15c band by buying NO, and buy YES outright in the 85c+ band. ' +
       'HONEST CAVEAT, stated up front: the Polymarket study found the sign of the effect depends on how contracts are aggregated, so this is a hypothesis under test, not a proven edge — ' +
-      'and the favourite leg needs a close of 0.85 or higher: across all 30 stored markets (5,762 numeric closes, $0.01–$0.45) NO close reaches even 0.50, so that leg cannot fire here. A first draft of this note said the universe "contains NO contract above 28c"; that was WRONG and is corrected in place — 47 closes sit above 28c, all of them in two Nasdaq-100 strikes (KXNASDAQ100Y-26DEC31H1600-T33000, 45 bars up to $0.45; T19000, 2 bars up to $0.40). The rule is unaffected, the published reason for it was not.',
+      'and the favourite leg needs a close of 0.85 or higher: ' +
+      // COMPUTED from the loaded store (src/store-facts.js) — never a literal.
+      universeRangeCaption(),
     rules: {
       entry: 'YES close in [0.05, 0.15] → buy NO (fade the overpriced longshot). YES close >= 0.85 → buy YES (underpriced favorite).',
       sizing: '100% of available cash, capped at 4x visible depth on the traded side.',
@@ -1362,9 +1452,11 @@ export const STRATEGIES = [
       'thread reports: "The headline config never fires. Across 39 detected in-play shocks, only 2 teams were priced in that 76–85¢ band when they got shocked, and ' +
       'neither ladder filled." This entry recreates the filter exactly so this repository can report its own trigger count instead of repeating either claim.',
     thesis:
-      'DESIGN INTENT: panics in near-favourites are the ones that bounce, because the pre-shock price already encoded a high probability. WHY IT IS A CONTROL: every ' +
-      'captured strike in this universe trades below ~0.28, so a 0.76-0.85 precondition cannot be satisfied — the engine should report zero triggers, and any non-zero ' +
-      'count means the universe changed and needs review. That is the same shape of finding the replication reported for its own dataset, reached independently here.',
+      'DESIGN INTENT: panics in near-favourites are the ones that bounce, because the pre-shock price already encoded a high probability. WHY IT IS A CONTROL: the ' +
+      'filter is a precondition, so the trigger count is the finding. When this entry was written the premise was that no captured contract ever traded near 0.80; ' +
+      'the sentence below is now MEASURED from the store on every build, so the claim cannot go stale — and it reports the opposite outcome after the FDA and ' +
+      'CEO-succession markets landed in the daily store and traded through the band. That is the same shape of finding the R04 replication reported for its own ' +
+      'dataset, reached independently here: a filter that looks harmless in one universe is testable in the next.',
     rules: {
       entry: 'Buy YES only when the 5-period mean close is between 0.76 and 0.85 AND the bar low is at or below 70% of that mean.',
       sizing: '100% of available cash (one bucket, per the source\'s weighting).',
@@ -1372,8 +1464,9 @@ export const STRATEGIES = [
       riskManagement: 'NONE (by mandate)'
     },
     control: {
-      claim: 'Zero triggers, because no tracked contract trades near 0.80',
-      falsifiedIf: 'any trigger fires — the universe then contains a favourite-priced contract and the filter should be re-evaluated'
+      claim: 'The 0.76-0.85 precondition is a FILTER, and the trigger count is the finding — measured from the daily store below',
+      premise: moderateFavPremiseCaption(),
+      falsifiedIf: 'the band count changes from zero to non-zero (or back) — the universe then contains (or no longer contains) a favourite-priced contract, and the filter must be re-evaluated'
     },
     decide(ctx) {
       const { candle, history, book, portfolio } = ctx;
@@ -1427,7 +1520,9 @@ export const STRATEGIES = [
     sourceNote:
       'R03: "Laddering – The most consistent approach I\'ve seen is buying multiple adjacent brackets cheap (like 2-15c) rather than picking one. If the final temp lands anywhere in your spread, one or two contracts pay out big and cover the rest." The SFWeather project (https://buffedlizard55-lab.github.io/SFWeather/) verified the official-source weather pipeline that motivated ingesting this series at all. KXHIGHNY is the series Kalshi\'s own API quick-start documents (https://docs.kalshi.com/getting_started/quick_start_market_data).',
     thesis:
-      'DESIGN INTENT: exactly one 2°F band of a KXHIGHNY daily event can settle YES (verified from the captured market objects: strike_type "between" with floor/cap, e.g. KXHIGHNY-26SEP07-B77.5 = "77° to 78°"; the "less" tail markets cover "X° or below"). A ladder of cheap bands bought early therefore costs a few cents per rung and pays $1.00 on the rung that contains the observed high — the R03 claim, on the exact market class the claim was made about. ' +
+      'DESIGN INTENT: exactly one 2°F band of a KXHIGHNY daily event can settle YES (verified from the captured market objects: strike_type "between" with floor/cap, e.g. KXHIGHNY-26SEP07-B77.5 = "77° to 78°"; the "less" tail markets cover "X° or below"). ' +
+      'SAMPLE, COMPUTED FROM THE STORE ON THIS BUILD: ' + seriesSummary(STORE_FACTS_60M, 'KXHIGHNY') + '. ' +
+      'A ladder of cheap bands bought early therefore costs a few cents per rung and pays $1.00 on the rung that contains the observed high — the R03 claim, on the exact market class the claim was made about. ' +
       'HONEST LIMITS, stated up front: (1) the replay universe holds the top-40 KXHIGHNY brackets by exchange-reported lifetime volume — 2-3 bands per event, not the full ~15-band ladder a live trader could buy, so this measures the idea on a sample, not the whole board; (2) entry timing is the market\'s own bar clock (first 6 hourly bars of the bracket\'s life, i.e. roughly the day before the measured day) — point-in-time by construction; (3) the strategy does NOT use any forecast: it is the "dumb ladder" control that the forecast strategy (ForecastEdge_Weather) must beat.',
     rules: {
       entry: 'Within the first 6 hourly bars of a bracket\'s life: buy YES when the YES ask ≤ 0.15 (the R03 "2-15c" band), once per market.',
@@ -1478,7 +1573,11 @@ export const STRATEGIES = [
       'R06: "the strategies that did best … used weather data to confirm a heat trade that the market had not fully priced yet. The strategies that did worst tried to fight the market because one weather variable looked bearish." R10 (https://www.botforkalshi.com/blog/kalshi-trading-strategies-guide): weather model divergence is a primary strategy family. The signal source is the official NWS API archived point-in-time by scripts/archive-forecasts.mjs (api.weather.gov, grid OKX 34,45 for Central Park).',
     thesis:
       'DESIGN INTENT: only the CONFIRMING side is traded — buy the band that contains the NWS forecast high, or the lower tail when the forecast sits clearly below its threshold, when the market still prices it cheap. Fighting the market on a bearish reading is explicitly not recreated (it was the losing family in R06). ' +
-      'POINT-IN-TIME RULE: the forecast is read through src/forecast-store.js, which only returns a snapshot captured at or before the decision bar — no snapshot, no trade. The archive began on 2026-09-18, so every settled bracket ingested before that date honestly produces NO trades for this strategy: this is a forward test by construction, and it will stay unranked (0 trades, reason published) until the archive and the live markets overlap. ' +
+      'POINT-IN-TIME RULE: the forecast is read through src/forecast-store.js, which only returns a snapshot captured at or before the decision bar — no snapshot, no trade. ' +
+      // COMPUTED from the shipped archive (src/forecast-data.js): the "archive
+      // began on <date>" claim used to be a literal that would survive a
+      // re-capture of the store; now it is read from the store itself.
+      'ARCHIVE AS SHIPPED IN THIS BUILD: ' + forecastCaption() + '. Every settled bracket whose bars end before the first snapshot honestly produces NO trades for this strategy: it is a forward test by construction, and it stays unranked (0 trades, reason published) until the archive and the live markets overlap. ' +
       'BASIS MISMATCH (flagged, IRREGULARITIES.md): KXHIGHNY settles on The Weather Company data for New York City (CLINYC) per the market rules, while the signal is the NWS gridded forecast for the same point — different providers, a real source of noise the replay measures rather than hides.',
     rules: {
       entry:
@@ -1551,7 +1650,10 @@ export const STRATEGIES = [
       'The KXGOLD15M series and its heavy trading were verified from third-party archives (cryptostruct.com topic page listing 3,000-7,000 trades per 15-minute contract); the contracts themselves, their "Gold price up in next 15 mins?" question and target-price settlement were then captured from the official Kalshi API by the ingest job (data/history/intraday/1m/). The MasterSite GOLD project is a solid-gold RING directory — it is NOT a gold-price signal (flagged in the signal-source ledger) and contributes nothing to this strategy\'s inputs; its link is kept only because it prompted the gold-market review.',
     thesis:
       'DESIGN INTENT: a 15-minute up/down market that has already moved to 0.55+ (or 0.45−) by minute five is telling you where spot gold went; the remaining ten minutes mostly confirm. Buying the early leader and holding to settlement converts that persistence into settlement cash — and because every KXGOLD15M contract captured so far is finalized with a real exchange result, the payout is the exchange\'s own $1.00/$0.00, not a mark. ' +
-      'WHAT THIS IS NOT: it uses NO external gold data (no COMEX, no LBMA fix, no TradingView) — the only input is the market\'s own price path, so it is a market-microstructure bet on early-leader persistence, measured on 8 settled contracts (16 one-minute bars each) so far. The sample is small and the post-mortem says so.',
+      'WHAT THIS IS NOT: it uses NO external gold data (no COMEX, no LBMA fix, no TradingView) — the only input is the market\'s own price path, so it is a market-microstructure bet on early-leader persistence. ' +
+      // COMPUTED sample size: grows with every ingest, so this sentence cannot
+      // go stale (it said "8 settled contracts" as a literal before).
+      'SAMPLE ON THIS BUILD: ' + classSampleCaption(STORE_FACTS_1M, ['KXGOLD15M']) + '.',
     rules: {
       entry: 'Bars 0-4 of the contract (the first five minutes): close ≥ 0.55 → buy YES; close ≤ 0.45 → buy NO. Once per market.',
       sizing: '50% of available cash, capped at 3x visible depth.',
@@ -1580,6 +1682,703 @@ export const STRATEGIES = [
           side,
           count,
           reason: `early leader: minute ${periodIndex} close ${close} ${side === 'YES' ? '≥ 0.55' : '≤ 0.45'} → buy ${side} at ${ask}, ride to real settlement`
+        }
+
+      ];
+    }
+  },
+
+  /* ════════════════════════════════════════════════════════════════════ *
+   * 2026-09-18 (session 01a0b330) — UNIVERSE EXPANSION SET
+   *
+   * Every series named below was returned by the exchange itself in
+   * scripts/discover-universe.mjs's capture of GET /series
+   * (data/discovered/series-list.json, data/discovered/matches.json) — the
+   * lifetime-volume figure quoted in each entry is that file's `volume_fp`
+   * for the series, and the fee multiplier is its `fee_multiplier`. The
+   * BARS come from scripts/ingest-history.mjs runs on a GitHub-hosted runner
+   * (the build sandbox cannot open TLS to *.kalshi.com, IRREGULARITIES #4),
+   * and every ingested market is finalized (`status: "all"` in
+   * data/history/_ingest-request.json), so each strategy below is settled by
+   * the exchange's own result rather than marked to a last quote.
+   *
+   * A strategy whose series has no bars yet reports itself UNRANKED with the
+   * reason published (see runCompetition's skippedFlight path); it never
+   * invents a 0% result.
+   * ════════════════════════════════════════════════════════════════════ */
+
+  {
+    ...BASE,
+    id: 'weather_ladder_multicity',
+    username: 'WeatherLadder_MultiCity',
+    handle: '@WeatherLadder_MultiCity',
+    avatar: '🌎',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    // The eight highest-volume KXHIGH* series measured by the exchange's own
+    // lifetime contract volume (data/discovered/matches.json, 2026-09-18).
+    universe: ['KXHIGHNY', 'KXHIGHLAX', 'KXHIGHCHI', 'KXHIGHMIA', 'KXHIGHAUS', 'KXHIGHDEN', 'KXHIGHPHIL', 'KXHIGHTPHX', 'KXHIGHTSEA'],
+    title: 'Multi-City Cheap Weather-Bracket Ladder',
+    category: 'Weather / Ladder (multi-city)',
+    tagline:
+      'Buys the cheapest bracket of every ingested city every day and holds to the exchange result — the R03 ladder, replicated across eight real temperature markets instead of one.',
+    sizingPct: 0.25,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from the r/PredictionsMarkets temperature-laddering thread (RESEARCH_SOURCES R03), generalised to every weather series the discovery run verified',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1s4n4wp/what_are_the_best_strategies_youve_seen_or_used/',
+    sourceNote:
+      'R03: "Laddering – buying multiple adjacent brackets cheap (like 2-15c) rather than picking one." The eight cities are the top of the 54 KXHIGH* series GET /series returned on 2026-09-18 (KXHIGHLAX 166,216,368 lifetime contracts; KXHIGHNY 144,574,090; KXHIGHCHI 110,129,301; KXHIGHMIA 98,546,964; KXHIGHAUS 77,183,792; KXHIGHDEN 50,834,860; KXHIGHPHIL 41,451,374; KXHIGHTPHX 16,776,008; KXHIGHTSEA 16,499,470 — data/discovered/matches.json). All carry fee_multiplier 1 (data/discovered/series-fees.json), i.e. the documented fee model is their real config.',
+    thesis:
+      'DESIGN INTENT: exactly one band per event can settle YES, so a ladder of cheap bands is a convexity bet whose cost is known at entry and whose payoff is the exchange\'s own $1.00. Running the same rule in eight cities multiplies the number of independent settlement events per day — the R03 mechanism, measured on real bars rather than asserted. ' +
+      'HONEST LIMITS: (1) the ingested universe is the top-10 brackets per city BY EXCHANGE-REPORTED LIFETIME VOLUME, not the full board a live trader could buy, so this measures the idea on a sample; (2) entry timing is the bracket\'s own bar clock (its first hours), point-in-time by construction; (3) the strategy uses NO forecast — it is the multi-city version of the dumb-ladder control.',
+    rules: {
+      entry: 'Within the first 4 hourly bars of a bracket\'s life: buy YES when the YES ask ≤ 0.15, once per market.',
+      sizing: '25% of available cash per rung, capped at 3x visible ask depth.',
+      exit: 'None — hold to the exchange\'s real settlement (status=finalized, result yes/no → $1.00/$0.00, no settlement fee).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker, periodIndex } = ctx;
+      if (periodIndex > 3) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.15) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [{ type: 'buy', side: 'YES', count, reason: `multi-city ladder rung: hour ${periodIndex}, YES ask ${ask} ≤ 0.15 → hold to real settlement` }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'weather_favourite_decay',
+    username: 'WeatherFavourite_Decay',
+    handle: '@WeatherFavourite_Decay',
+    avatar: '🔥',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXHIGHNY', 'KXHIGHLAX', 'KXHIGHCHI', 'KXHIGHMIA', 'KXHIGHAUS', 'KXHIGHDEN', 'KXHIGHPHIL', 'KXHIGHTPHX', 'KXHIGHTSEA'],
+    title: 'Weather Favourite Longshot-Fader (buys the likely band, sells the tail)',
+    category: 'Weather / Favourite–Longshot',
+    tagline:
+      'Buys the highest-priced band of a day\'s event once it is ≥ 0.60 — the band the market itself says is most likely — and takes the exchange result.',
+    sizingPct: 0.35,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Favorite–longshot bias literature as recorded in RESEARCH_SOURCES R02/R06, applied to the weather brackets the discovery run verified',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1tko1iw/i_backtested_500_weather_kalshi_bots_the_best_bot/',
+    sourceNote:
+      'R06 measured that weather bots which CONFIRM what the market already leans toward beat bots that fight it. This entry tests that claim with no external data at all: the only input is the market\'s own quoted ask.',
+    thesis:
+      'DESIGN INTENT: prediction-market favourites are historically under-priced relative to their true probability (the favourite–longshot bias), and a weather band that the market has already priced at ≥ 0.60 has survived the information flow of the day. Buying it and holding to the exchange\'s real settlement harvests that bias with a real, verifiable payout. ' +
+      'HONEST LIMITS: the ingested universe is the top-10 brackets per city by exchange lifetime volume; the strategy cannot see the whole board, and it deliberately ignores any forecast, so it is directly comparable with ForecastEdge_Weather (NYC) and WeatherLadder_MultiCity (cheap tail) on the same bars.',
+    rules: {
+      entry: 'Buy YES when the YES ask is between 0.60 and 0.90, once per market, at any hour of the bracket\'s life.',
+      sizing: '35% of available cash per confirmed favourite, capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker } = ctx;
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask < 0.6 || ask > 0.9) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [{ type: 'buy', side: 'YES', count, reason: `favourite band priced ${ask} (0.60–0.90) → hold to the exchange's real settlement` }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'sports_favourite_hold',
+    username: 'SportsFavourite_Settle',
+    handle: '@SportsFavourite_Settle',
+    avatar: '🏟️',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXNFLGAME', 'KXMLBGAME', 'KXNBAGAME', 'KXNHLGAME', 'KXNCAAFGAME', 'KXWNBAGAME', 'KXUFCFIGHT'],
+    title: 'Game-Line Favourite, Held to Settlement',
+    category: 'Sports / Favourite–Longshot',
+    tagline:
+      'Buys the favourite of a real game market (YES ask 0.55–0.85) in its first traded hour and holds it to the exchange\'s own result.',
+    sizingPct: 0.5,
+    maxParticipation: 2,
+    designedAt: '2026-09-18',
+    designSource: 'Favourite–longshot bias (RESEARCH_SOURCES R02/R06 pattern) applied to the sports series the discovery run verified on 2026-09-18',
+    designSourceUrl: 'https://docs.kalshi.com/api-reference/market/get-series',
+    sourceNote:
+      'The seven series here are the highest-volume game market classes GET /markets reported lifetime volume for on 2026-09-18: KXNBAGAME 11,676,027,344 contracts, KXMLBGAME 9,801,983,745, KXNFLGAME 6,010,901,748, KXNCAAFGAME 4,775,918,610, KXNHLGAME 1,567,230,249, KXUFCFIGHT 1,281,831,821, KXWNBAGAME 1,084,083,079 (data/discovered/matches.json). The MLB series carry the REAL fee multiplier 0.5 (data/discovered/series-fees.json) — half the taker fee of the others, applied per series by the fee engine.',
+    thesis:
+      'DESIGN INTENT: a game favourite is the cleanest favourite–longshot expression on the exchange: a liquid two-sided market with a published result within hours. The strategy buys ~0.55–0.85 and never sells, so it collects the settlement the exchange paid ($1.00 or $0.00) — no mark-to-market fiction, no early-exit discretion. ' +
+      'HONEST LIMITS: (1) the ingested games are the top-8 by exchange lifetime volume per series and are mostly FINALIZED games (status=all), so the sample is a real but bounded set of settled events; (2) the strategy has NO external model — it never reads a score, an injury report or a line history, so it is a pure market-pricing bet and is labelled as such; (3) games trade in bursts, so fills are capped by the bar\'s real traded volume (10%) and by visible depth.',
+    rules: {
+      entry: 'In the market\'s first 3 hourly bars: buy YES when the YES ask is 0.55–0.85, once per market.',
+      sizing: '50% of available cash, capped at 2x visible ask depth (game books are thinner than index books).',
+      exit: 'None — hold to the exchange\'s real settlement ($1.00/$0.00).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker, periodIndex } = ctx;
+      if (periodIndex > 2) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask < 0.55 || ask > 0.85) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [{ type: 'buy', side: 'YES', count, reason: `game favourite at ${ask} in its first hours → hold to the exchange's real result` }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'sports_underdog_sweep',
+    username: 'SportsUnderdog_Sweep',
+    handle: '@SportsUnderdog_Sweep',
+    avatar: '🎯',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXNFLGAME', 'KXMLBGAME', 'KXNBAGAME', 'KXNHLGAME', 'KXNCAAFGAME', 'KXWNBAGAME', 'KXUFCFIGHT'],
+    title: 'Cheap-Underdog Convexity Sweep',
+    category: 'Sports / Tail Convexity',
+    tagline:
+      'Buys every game-side priced at 0.08–0.25 and holds to the exchange result — the maximum-return convexity bet on real game markets.',
+    sizingPct: 0.2,
+    maxParticipation: 2,
+    designedAt: '2026-09-18',
+    designSource: 'Original design in this repository, built on the sports series the discovery run verified (data/discovered/matches.json)',
+    designSourceUrl: 'https://docs.kalshi.com/api-reference/market/get-markets',
+    sourceNote:
+      'No external tipster, model or social-media source was used: the rule is a pure price-band rule on the market\'s own quoted ask, and the payoff is the exchange\'s own settled result. The series list and volumes come from the 2026-09-18 GET /series capture.',
+    thesis:
+      'DESIGN INTENT: a 0.10 contract pays 10x when it wins. The mandate is highest return with no risk management, so this entry buys the convex tail across EVERY ingested game market rather than picking one — the whole point is that a single winner pays for many losers. ' +
+      'HONEST LIMITS: this is the design the longshot-bias literature says should LOSE on average (RESEARCH_SOURCES R02), which is exactly why it is in the roster: it is the falsifiable control for SportsFavourite_Settle. Both are settled on the same real results, so the comparison is measured, not argued. The 0.5 fee multiplier on MLB series applies.',
+    rules: {
+      entry: 'At any hour: buy YES when the YES ask is 0.08–0.25, once per market (a sweep across the whole ingested slate).',
+      sizing: '20% of available cash per leg, capped at 2x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker } = ctx;
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask < 0.08 || ask > 0.25) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [{ type: 'buy', side: 'YES', count, reason: `cheap underdog at ${ask} → convexity leg, settled by the exchange's own result` }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'sports_line_momentum',
+    username: 'SportsLine_Momentum',
+    handle: '@SportsLine_Momentum',
+    avatar: '📈',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXNFLGAME', 'KXMLBGAME', 'KXNBAGAME', 'KXNHLGAME', 'KXNCAAFGAME', 'KXWNBAGAME', 'KXUFCFIGHT'],
+    title: 'In-Play Line-Move Follower',
+    category: 'Sports / Momentum',
+    tagline:
+      'When a game market re-prices upward between two real hourly bars, buys the side that moved and holds it to the exchange result.',
+    sizingPct: 0.4,
+    maxParticipation: 2,
+    designedAt: '2026-09-18',
+    designSource: 'Original design in this repository (momentum family, R01/R07 "trade the repricing" reading), on the verified sports series',
+    designSourceUrl: 'https://www.botforkalshi.com/blog/kalshi-trading-strategies-guide',
+    sourceNote:
+      'The rule reads only the market\'s own bar-over-bar moves: previous close vs current close. No score feed, no injury feed and no external model is used, so nothing here depends on data this repository has not captured.',
+    thesis:
+      'DESIGN INTENT: in-play game lines re-price as the game unfolds; a sustained upward re-pricing is the market discovering news, and following it (rather than fading it) is the momentum hypothesis in its cheapest form. The position is held to the exchange result, so the payoff is settled cash rather than a mark. ' +
+      'HONEST LIMIT: hourly bars are coarse for a game that lives ~3 hours, so the "momentum" this measures is a per-hour re-pricing, not a tick-by-tick move; the post-mortem reports how many legs actually fired.',
+    rules: {
+      entry: 'Buy YES when this bar\'s close exceeds the previous bar\'s close by ≥ 0.05 AND the current ask ≤ 0.80, once per market.',
+      sizing: '40% of available cash, capped at 2x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, history, book, portfolio, ticker } = ctx;
+      const close = candle.trade.close;
+      if (close === null) return [];
+      const prev = history.length >= 2 ? history[history.length - 2].trade.close : null;
+      if (prev === null || prev === undefined) return [];
+      if (!(close - prev >= 0.05)) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.8) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [{ type: 'buy', side: 'YES', count, reason: `line moved +${round6(close - prev)} bar-over-bar (${prev} → ${close}), ask ${ask} → follow to settlement` }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'sports_steam_fade',
+    username: 'SportsSteam_Fade',
+    handle: '@SportsSteam_Fade',
+    avatar: '🧊',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXNFLGAME', 'KXMLBGAME', 'KXNBAGAME', 'KXNHLGAME', 'KXNCAAFGAME', 'KXWNBAGAME', 'KXUFCFIGHT'],
+    title: 'Steam Fader (buys the side the market just dumped)',
+    category: 'Sports / Mean Reversion',
+    tagline:
+      'Buys the side of a game market that fell ≥ 0.15 in one hour, betting the in-play overreaction mean-reverts before settlement.',
+    sizingPct: 0.3,
+    maxParticipation: 2,
+    designedAt: '2026-09-18',
+    designSource: 'Original design in this repository (panic-fade family, RESEARCH_SOURCES R01/R07), on the verified sports series',
+    designSourceUrl: 'https://www.botforkalshi.com/blog/kalshi-trading-strategies-guide',
+    sourceNote:
+      'The panic-fade family is the most-reported retail pattern in the research ledger (R01: buy the dump, sell the bounce). This entry applies it to game markets, where the dump is an in-play event and the exit is the exchange\'s own result.',
+    thesis:
+      'DESIGN INTENT: an in-play collapse of 15 cents in one hour is usually real news (a score) — but the R01 source argues these moves overshoot. Buying the dumped side at a discount and holding to settlement is the direct test: if the move was news, the leg loses $1.00; if it overshot, the bounce is settled in cash. ' +
+      'HONEST LIMIT: the literature is split on this rule (R06 found fighting the market was the LOSING family in weather), which is why it is measured here on the same bars as the momentum entry — the pair is a controlled test of "fade vs follow" on identical data.',
+    rules: {
+      entry: 'Buy YES when this bar\'s close is ≥ 0.15 below the previous bar\'s close AND the current ask ≤ 0.60, once per market.',
+      sizing: '30% of available cash, capped at 2x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, history, book, portfolio, ticker } = ctx;
+      const close = candle.trade.close;
+      if (close === null) return [];
+      const prev = history.length >= 2 ? history[history.length - 2].trade.close : null;
+      if (prev === null || prev === undefined) return [];
+      if (!(prev - close >= 0.15)) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.6) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [{ type: 'buy', side: 'YES', count, reason: `the market dumped this side ${round6(prev - close)} in one bar (${prev} → ${close}) → fade it to settlement` }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'crypto15m_early_leader',
+    username: 'Crypto15M_EarlyLeader',
+    handle: '@Crypto15M_EarlyLeader',
+    avatar: '⚡',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXBTC15M', 'KXETH15M', 'KXSOL15M'],
+    title: '15-Minute Crypto Early-Leader Ride (BTC · ETH · SOL)',
+    category: 'Crypto / Short-Horizon Momentum',
+    tagline:
+      'On 1-minute bars, buys whichever side a 15-minute crypto market says is winning after five minutes and rides it to the exchange result.',
+    sizingPct: 0.5,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'The same design as GoldBracket_EarlyLeader, run on the three highest-volume 15-minute crypto series the discovery run verified',
+    designSourceUrl: 'https://docs.kalshi.com/api-reference/market/get-series',
+    sourceNote:
+      'KXBTC15M (18,154,658,182 lifetime contracts), KXETH15M (972,223,912) and KXSOL15M (346,881,317) are the three largest 15-minute crypto series in the 2026-09-18 GET /series capture (data/discovered/matches.json). All three carry fee_multiplier 1 (data/discovered/series-fees.json). The strategy reads ONLY the market\'s own quoted prices — no exchange feed, no spot price, no external data.',
+    thesis:
+      'DESIGN INTENT: a 15-minute up/down contract that is already trading at 0.55+ five minutes in has revealed where the underlying went; the remaining ten minutes usually confirm. Three markets mean three times the settlement events per day compared with the gold-only version. ' +
+      'HONEST LIMIT: this measures early-leader PERSISTENCE, not any view on crypto. If the market\'s five-minute read were noise, the strategy loses; the ledger records every leg so the answer is measurable rather than asserted.',
+    rules: {
+      entry: 'Bars 0–4 of the contract: close ≥ 0.55 → buy YES; close ≤ 0.45 → buy NO. Once per market.',
+      sizing: '50% of available cash, capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, book, portfolio, ticker, periodIndex } = ctx;
+      if (periodIndex > 4) return [];
+      const close = candle.trade.close;
+      if (close === null) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      let side = null;
+      if (close >= 0.55) side = 'YES';
+      else if (close <= 0.45) side = 'NO';
+      if (!side) return [];
+      const ask = side === 'YES' ? book.getBestYesAsk() : book.getBestNoAsk();
+      if (ask === null) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, side);
+      if (count <= 0) return [];
+      return [{ type: 'buy', side, count, reason: `early leader: minute ${periodIndex} close ${close} → buy ${side} at ${ask}, ride to the exchange's real settlement` }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'crypto15m_cheap_tail',
+    username: 'Crypto15M_CheapTail',
+    handle: '@Crypto15M_CheapTail',
+    avatar: '🎲',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXBTC15M', 'KXETH15M', 'KXSOL15M'],
+    title: '15-Minute Crypto Cheap-Tail Buyer',
+    category: 'Crypto / Tail Convexity',
+    tagline:
+      'With five minutes left, buys the side the market has priced at ≤ 0.15 — a 6x+ payoff if the last minutes move — and settles on the exchange result.',
+    sizingPct: 0.15,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Original design in this repository, on the real 15-minute crypto series verified by the discovery run',
+    designSourceUrl: 'https://docs.kalshi.com/api-reference/market/get-markets',
+    sourceNote:
+      'The convexity band is taken from the market\'s own quoted ask; the payout is the exchange\'s settled result. No external price feed is consulted, so the entry cannot be contaminated by lookahead in a spot series.',
+    thesis:
+      'DESIGN INTENT: the last five minutes of a 15-minute contract are the most volatile window in the whole market, and the losing side is priced accordingly. Buying the 0.10–0.15 tail repeatedly across three crypto markets is the maximum-return way to own that volatility — each leg risks pennies to make dollars, and the mandate explicitly forbids risk management. ' +
+      'HONEST LIMIT: this is a negative-expectation bet under most probability models, and the roster says so; it is present because it is the convexity control for the early-leader entry, and its ledger will show exactly how often a tail actually paid.',
+    rules: {
+      entry: 'Bars 10–14 of the contract (the last five minutes): buy YES when the YES ask ≤ 0.15; buy NO when the NO ask ≤ 0.15. Once per market.',
+      sizing: '15% of available cash per tail, capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, book, portfolio, ticker, periodIndex, periodCount } = ctx;
+      const nearEnd = periodCount ? periodIndex >= periodCount - 5 : periodIndex >= 10;
+      if (!nearEnd) return [];
+      if (candle.trade.close === null) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const yesAsk = book.getBestYesAsk();
+      const noAsk = book.getBestNoAsk();
+      let side = null;
+      let ask = null;
+      if (yesAsk !== null && yesAsk <= 0.15) {
+        side = 'YES';
+        ask = yesAsk;
+      } else if (noAsk !== null && noAsk <= 0.15) {
+        side = 'NO';
+        ask = noAsk;
+      }
+      if (!side) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, side);
+      if (count <= 0) return [];
+      return [{ type: 'buy', side, count, reason: `last five minutes, ${side} offered at ${ask} ≤ 0.15 → cheap tail, settled by the exchange` }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'fed_bucket_ladder',
+    username: 'FedBucket_Ladder',
+    handle: '@FedBucket_Ladder',
+    avatar: '🏛️',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXFEDDECISION'],
+    title: 'Fed-Decision Bucket Ladder',
+    category: 'Macro / Event Ladder',
+    tagline:
+      'Buys the cheap buckets of a Fed meeting event and holds to the exchange\'s real result — the same ladder mechanism, on a published official number.',
+    sizingPct: 0.25,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Original design in this repository, on the Fed series the discovery run verified (611,697,574 lifetime contracts)',
+    designSourceUrl: 'https://docs.kalshi.com/api-reference/market/get-series',
+    sourceNote:
+      'KXFEDDECISION is the largest macro series GET /series returned on 2026-09-18 (611,697,574 lifetime contracts, fee_multiplier 1). Its buckets are mutually exclusive and exhaustive — exactly one settles yes — which is the property the ladder needs; the rules text captured with each market names the settlement source.',
+    thesis:
+      'DESIGN INTENT: a mutually-exclusive bucket set is the cleanest ladder on the exchange: one bucket must settle at $1.00. Buying every bucket that the market prices cheaply (≤ 0.20) before the meeting converts a low-probability-per-bucket spread into a guaranteed single payout when the whole set is bought — and the exchange\'s own result books it. ' +
+      'HONEST LIMIT: the ingested universe is the top-8 KXFEDDECISION markets by exchange lifetime volume, so a "full set" here means every ingested bucket, not necessarily every bucket the event listed; the post-mortem reports how many legs fired and what they cost.',
+    rules: {
+      entry: 'Buy YES when the YES ask ≤ 0.20, once per market (a ladder across the ingested buckets).',
+      sizing: '25% of available cash per bucket, capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker } = ctx;
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.2) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [{ type: 'buy', side: 'YES', count, reason: `Fed bucket offered at ${ask} ≤ 0.20 → ladder leg, held to the exchange's real result` }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'cpi_print_fade',
+    username: 'CPI_PrintFade',
+    handle: '@CPI_PrintFade',
+    avatar: '📊',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXCPIYOY'],
+    title: 'CPI-Print Panic Fade',
+    category: 'Macro / Mean Reversion',
+    tagline:
+      'When an inflation market dumps ≥ 0.15 in one hour, buys the dumped side and holds it to the official BLS result.',
+    sizingPct: 0.3,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'The panic-fade reading of RESEARCH_SOURCES R01/R07, applied to the inflation series the discovery run verified',
+    designSourceUrl: 'https://docs.kalshi.com/api-reference/market/get-series',
+    sourceNote:
+      'KXCPIYOY (36,140,966 lifetime contracts, fee_multiplier 1 in the 2026-09-18 GET /series capture) settles on the Bureau of Labor Statistics release, an official and unambiguous number. The strategy reads only the market\'s own bars.',
+    thesis:
+      'DESIGN INTENT: inflation markets are thin and event-driven; a one-hour 15-cent collapse is usually positioning ahead of a print rather than information, and the R01 pattern (buy the dump) is directly testable on a market whose settlement is a government statistic. ' +
+      'HONEST LIMIT: the ingested KXCPIYOY markets are the top-8 by lifetime volume, and CPI prints are monthly, so the sample grows slowly — the ledger reports the traded count so the reader can judge whether the result is informative yet.',
+    rules: {
+      entry: 'Buy YES when this bar\'s close is ≥ 0.15 below the previous bar\'s close AND the current ask ≤ 0.60, once per market.',
+      sizing: '30% of available cash, capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement (BLS release).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, history, book, portfolio, ticker } = ctx;
+      const close = candle.trade.close;
+      if (close === null) return [];
+      const prev = history.length >= 2 ? history[history.length - 2].trade.close : null;
+      if (prev === null || prev === undefined) return [];
+      if (!(prev - close >= 0.15)) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.6) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [{ type: 'buy', side: 'YES', count, reason: `CPI market dumped ${round6(prev - close)} in one bar → fade it to the official BLS settlement` }];
+    }
+  }
+,
+  /* ------------------------------------------------------------------ *
+   * FDA + CEO SET (2026-09-18, request 8)
+   *
+   * These two families are named in the project brief ("FDA Decisions Drug
+   * Analysis" and "CEO"), and until request 8 the store held no bars for
+   * either — so a strategy would have been a design with nothing to trade.
+   * The ingest job has now captured them from the official candlesticks
+   * endpoint, WITH the exchange's own results on the markets that have
+   * already finalized. Both entries read only those bars.
+   *
+   * The sample sizes in the text below are COMPUTED from the loaded store
+   * (classSampleCaption), so they follow the data instead of going stale.
+   * ------------------------------------------------------------------ */
+
+  {
+    ...BASE,
+    id: 'fda_ladder_dominance',
+    username: 'FDALadder_Dominance',
+    handle: '@FDALadder_Dominance',
+    avatar: '💊',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    universe: ['KXFDARETATRUTIDE', 'KXFDAAPPROVALDATECMPS', 'KXFDAANNOUNCE'],
+    title: 'FDA Cumulative-Ladder Dominance',
+    category: 'FDA / No-Arbitrage Ladder',
+    tagline:
+      'Inside one FDA event, a "before <later date>" contract must be worth at least as much as the "before <earlier date>" contract. When the later one is offered cheaper than the earlier one bids, buy the later one and hold it to the FDA result.',
+    sizingPct: 0.35,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource:
+      'Original design on the FDA cumulative-date ladders captured by request 8 (series returned by GET /series with lifetime volume in data/discovered/series-fees.json)',
+    designSourceUrl: 'https://docs.kalshi.com/api-reference/market/get-series-list',
+    sourceNote:
+      'Every leg of this strategy is read from the exchange\'s own contract rules. Example, captured verbatim with the market object in data/history/KXFDARETATRUTIDE-RET-27JAN01.json: "If the FDA approves retatrutide (LY3437943) for marketing before Jan 1, 2027, then the market resolves to Yes." The Jul 1, 2027 bucket of the same event carries the same sentence with a later date. An approval before Jan 1 2027 therefore settles BOTH yes, which is what makes the later contract dominate.',
+    thesis:
+      'DESIGN INTENT: the dominance relation is not a forecast, it is arithmetic on the contract wording. If the earlier contract can be sold at 0.42 while the later one can be bought at 0.35, buying the later one costs 7c less for a claim that pays in every state where the earlier one pays — so the trade needs no view on the FDA at all. ' +
+      'COMPUTED SAMPLE (from the store on this build): ' + classSampleCaption(STORE_FACTS_DAILY, ['KXFDARETATRUTIDE', 'KXFDAAPPROVALDATECMPS', 'KXFDAANNOUNCE']) + '. ' +
+      'HONEST LIMITS, stated up front: (1) the two legs are quoted in different markets, so the entry is a single-legged buy of the cheap contract rather than a true two-legged arbitrage — the simulator cannot short the rich leg, and the ledger says so on every row; (2) an FDA approval is a binary event, so the strategy concentrates rather than diversifies, which is acceptable only because the mandate is highest return, not risk-adjusted return; (3) the dominance argument assumes both markets settle on the same underlying approval, which the rules text confirms for the ingested events.',
+    rules: {
+      entry:
+        'BUY YES on the LATER-dated contract of the same event only when its ask is at least 3c BELOW the earlier contract\'s YES bid (a dominance violation), once per market.',
+      sizing: '35% of available cash per leg, capped at 3x visible depth.',
+      exit: 'None — held to the exchange\'s real FDA settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, books, market, allMarkets, portfolio, ticker } = ctx;
+      if (!book || !market) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask <= 0 || ask > 0.98) return [];
+      const rules = String(market.rules_primary || market.rules || '');
+      // Only cumulative "before <date>" contracts have the dominance relation.
+      if (!/\bbefore\b/i.test(rules)) return [];
+      const mineClose = Date.parse(market.close_time || '');
+      if (!Number.isFinite(mineClose)) return [];
+      const siblings = (allMarkets || []).filter(
+        (m) => m && m.ticker !== ticker && m.event_ticker && m.event_ticker === market.event_ticker
+      );
+      if (!siblings.length) return [];
+      let trigger = null;
+      for (const sib of siblings) {
+        if (!/\bbefore\b/i.test(String(sib.rules_primary || sib.rules || ''))) continue;
+        const sibClose = Date.parse(sib.close_time || '');
+        // The sibling must settle EARLIER: its YES implies this market's YES.
+        if (!Number.isFinite(sibClose) || sibClose >= mineClose) continue;
+        const sibBook = books ? books[sib.ticker] : null;
+        if (!sibBook || typeof sibBook.getBestYesBid !== 'function') continue;
+        const sibBid = sibBook.getBestYesBid();
+        if (sibBid === null) continue;
+        const edge = round6Local(sibBid - ask);
+        if (edge >= MIN_DOMINANCE_EDGE) {
+          trigger = { ticker: sib.ticker, bid: sibBid, edge, closes: sib.close_time };
+          break;
+        }
+      }
+      if (!trigger) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason:
+            `dominance violation: this contract (settles ${String(market.close_time).slice(0, 10)}) offered at ${ask.toFixed(2)} ` +
+            `while the earlier contract ${trigger.ticker} bids ${trigger.bid.toFixed(2)} (edge ${trigger.edge.toFixed(2)}) — ` +
+            `the earlier contract settling yes forces this one yes, so the cheaper claim is bought and held to settlement`
+        }
+      ];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'ceo_exit_drift',
+    username: 'CEOExit_Drift',
+    handle: '@CEOExit_Drift',
+    avatar: '🏢',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    universe: ['KXAAPLCEOCHANGE', 'TESLACEOCHANGE', 'KXOPENAICEOCHANGE'],
+    title: 'CEO-Exit News Drift',
+    category: 'CEO / Event Drift',
+    tagline:
+      'Buys YES on a "leaves as CEO before <date>" market once its price has advanced at least 15c off its own 20-bar low, and holds it to the exchange\'s real result.',
+    sizingPct: 0.5,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource:
+      'Original design on the CEO-succession series captured by request 8 (KXAAPLCEOCHANGE 587,863 and KXTESLACEOCHANGE 512,304 lifetime contracts in the 2026-09-18 GET /series capture)',
+    designSourceUrl: 'https://docs.kalshi.com/api-reference/market/get-series-list',
+    sourceNote:
+      'The rules text travels with every market in the store. Captured verbatim: KXAAPLCEOCHANGE-26 — "If Tim Cook is no longer CEO of Apple before Jan 1, 2027, then the market resolves to Yes." (the exchange finalized this market YES); TESLACEOCHANGE-26 — "If Elon Musk is no longer CEO of Tesla by Dec 31, 2026, then the market resolves to Yes." These are event markets whose information arrives in discrete news bursts, which is the mechanism the drift rule tries to capture.',
+    thesis:
+      'DESIGN INTENT: corporate-succession news arrives in bursts, and a market that has already re-rated 15c off its own low is the observable trace of that arrival — the rule buys the re-rating rather than trying to predict the news. It is a momentum rule with a settlement-priced endpoint, so the outcome is measured, not argued. ' +
+      'COMPUTED SAMPLE (from the store on this build): ' + classSampleCaption(STORE_FACTS_DAILY, ['KXAAPLCEOCHANGE', 'TESLACEOCHANGE', 'KXOPENAICEOCHANGE']) + '. ' +
+      'HONEST LIMITS: this is the smallest sample in the roster — 3 markets, one of which the exchange has already finalized (KXAAPLCEOCHANGE yes) — so the result is an observation with a wide error bar, not a validated edge. KXTESLACEOCHANGE-26 was ingested with zero traded bars (the exchange reported no volume) and is therefore untradeable here; it stays in the store as evidence rather than being quietly dropped.',
+    rules: {
+      entry:
+        'BUY YES when the bar close is at least 0.15 above the 20-bar low AND the close is between 0.20 and 0.90, once per market.',
+      sizing: '50% of available cash, capped at 3x visible depth.',
+      exit: 'None — held to the exchange\'s real settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, book, history, portfolio, ticker } = ctx;
+      if (!candle || !candle.trade || !book) return [];
+      const close = candle.trade.close;
+      if (typeof close !== 'number') return [];
+      const bars = Array.isArray(history) ? history : [];
+      if (bars.length < 20) return [];
+      const lows = bars
+        .slice(-20)
+        .map((b) => (b && b.trade ? b.trade.low : null))
+        .filter((v) => typeof v === 'number');
+      if (!lows.length) return [];
+      const low = Math.min(...lows);
+      const advance = round6Local(close - low);
+      if (advance < 0.15) return [];
+      if (close < 0.2 || close > 0.9) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason:
+            `succession drift: close ${close.toFixed(2)} is ${advance.toFixed(2)} above the 20-bar low ${low.toFixed(2)} ` +
+            `— buying the burst and holding to the exchange's real result`
+        }
+      ];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'forecast_edge_multicity',
+    username: 'ForecastEdge_MultiCity',
+    handle: '@ForecastEdge_MultiCity',
+    avatar: '🛰️',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXHIGHNY', 'KXHIGHLAX', 'KXHIGHCHI', 'KXHIGHMIA', 'KXHIGHAUS', 'KXHIGHDEN', 'KXHIGHPHIL', 'KXHIGHTPHX', 'KXHIGHTSEA'],
+    title: 'Multi-City Point-in-Time Forecast Confirmation',
+    category: 'Weather / Model vs Market (multi-city)',
+    tagline:
+      'The single-city forecast-confirmation rule, run across every archived city at once so that each independent NWS point forecast is a separate, point-in-time test.',
+    sizingPct: 0.35,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource:
+      'Generalisation of the R06 winner pattern (weather-model confirmation) across the 9 cities this repository archives; the archive is grown by .github/workflows/weather-signals.yml',
+    designSourceUrl: 'https://api.weather.gov/',
+    sourceNote:
+      'The signal is the official NWS gridded point forecast, archived point-in-time by scripts/archive-forecasts.mjs at https://api.weather.gov/points/{lat},{lon}. Each location is a published reporting site (the city airport, where the official climate record is kept): KXHIGHLAX 33.9425,-118.4081; KXHIGHCHI 41.9786,-87.9048; KXHIGHMIA 25.7959,-80.2870; KXHIGHAUS 30.1975,-97.6664; KXHIGHDEN 39.8561,-104.6737; KXHIGHPHIL 39.8729,-75.2437; KXHIGHTPHX 33.4342,-112.0116; KXHIGHTSEA 47.4502,-122.3088, plus the original Central Park point. The coordinates are CLAIMS until the workflow resolves them and writes the NWS identity (grid office, grid x/y, forecast zone) into data/forecasts/<key>.json — an unresolvable point fails the capture and stores nothing.',
+    thesis:
+      'DESIGN INTENT: the single-city entry proves the mechanism once; this entry multiplies the number of independent settlement events per day by the number of archived cities, which is the only honest way to find out whether a weather edge survives a bigger sample. It reads ctx.signal exactly as the single-city entry does — a snapshot captured at or before the decision bar, or nothing. ' +
+      'COMPUTED ARCHIVE COVERAGE (this build): ' + forecastCaption() + '. ' +
+      'WHERE THE SAMPLE COMES FROM: each city\'s archive begins when the weather-signals workflow first captures it; only markets still trading after that instant can trade here, and every earlier bracket abstains. ' +
+      'HONEST LIMITS, stated up front: (1) the settlement source is The Weather Company\'s city observation while the signal is an NWS point forecast — different providers, so the strategy is measuring a real basis mismatch, not a synthetic one (IRREGULARITIES.md #34); (2) an entry is only possible while a bracket is trading, so a city whose brackets all settle intraday contributes few decisions; (3) the coordinates for the eight added cities were supplied by this build and are marked PENDING until the workflow resolves them — a wrong point would trade a real but different city, which is why the resolved identity is written into the store and shown on the site.',
+    rules: {
+      entry:
+        'ctx.signal carries the newest NWS forecast high F for THIS city, captured at or before this bar. Buy YES when the bracket contains F (band: F ∈ [floor-1, cap+1]; lower tail: F ≤ cap-2) and the ask ≤ 0.40, once per market.',
+      sizing: '35% of available cash per confirmed bracket, capped at 3x visible ask depth.',
+      exit: "None — hold to the exchange's real settlement.",
+      noSignalRule: 'signal === null (no snapshot for this city captured by this bar) → abstain. The current forecast is never substituted for a past decision.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker, market, signal } = ctx;
+      if (!signal || signal.kind !== 'nws-forecast-high') return [];
+      const f = Number(signal.highF);
+      if (!Number.isFinite(f)) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.4) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const floor = Number(market.floor_strike);
+      const cap = Number(market.cap_strike);
+      let confirmed = false;
+      let why = '';
+      if (Number.isFinite(floor) && Number.isFinite(cap)) {
+        confirmed = f >= floor - 1 && f <= cap + 1;
+        why = `NWS high ${f}F inside bracket ${floor}-${cap}`;
+      } else if (Number.isFinite(cap)) {
+        confirmed = f <= cap - 2;
+        why = `NWS high ${f}F at or below the ${cap} tail threshold`;
+      }
+      if (!confirmed) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason: `${why} (snapshot ${signal.capturedAt} for ${signal.eventDate}, captured before this bar) → ask ${ask} ≤ 0.40, held to the exchange's real result`
         }
       ];
     }

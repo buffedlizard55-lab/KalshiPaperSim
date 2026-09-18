@@ -1,7 +1,7 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-18 by `scripts/render-docs.js` from `src/verification-data.js`.
-**36 irregularities** flagged during this build: 11 high, 15 medium,
+**40 irregularities** flagged during this build: 12 high, 17 medium,
 9 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
@@ -207,6 +207,28 @@ assumption against an official document or a real API response.
 
 - Bar volume is the period’s traded contracts: <https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B6900/candlesticks?start_ts=1781841600&end_ts=1789689600&period_interval=1440> — `median daily volume_fp 389.00 across 264 bars`
 - The run that exposed it — `seed 20260917, 268 periods, 30 markets: PanicDip_ShockTiming +2005.93%, 1,027 trades, 19 days with >20% equity moves`
+
+---
+
+## #37 — Maker fees were charged on series that do not have them — the maker/taker split is a PER-SERIES property the engine ignored
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That any resting order pays the maker coefficient: fees = round up(M x 0.0175 x C x P x (1-P)). KALSHI_FEES.makerCoefficient was applied unconditionally in OrderBook.processRestingFills(). |
+| **Verified truth** | The official schedule charges a resting order only if the series is in its Maker Fees section: "Trading fees are only charged for orders that are immediately matched with orders sitting on the orderbook. Trading fees are not charged for orders placed that are not immediately matched and are instead left as resting orders on the orderbook unless they are included in our Maker Fees section." The live Series object marks exactly those series with fee_type = "quadratic_with_maker_fees". In the 2026-09-18 capture of 14,154 series, KXNFLGAME, KXMLBGAME, KXNBAGAME, KXWNBAGAME, KXNCAAFGAME, KXFEDDECISION, KXCPIYOY, KXINXY and KXNASDAQ100Y carry that flag, while every KXHIGH* weather series (and KXGOLD15M, KXBTC15M, KXETH15M, KXSOL15M, KXUFCFIGHT) is plain "quadratic" and pays NOTHING for a resting order. The same capture also shows multipliers that are not 1: the MLB series 0.5, KXBTCY 0. |
+| **What the code does** | Fees are resolved per series from a capture, and every fill states the regime that produced its fee. Maker strategies that traded plain-quadratic series were being over-charged before this fix; the ledger, the reports and the Pages data were regenerated. Any strategy text that asserted "the maker coefficient is a quarter of the taker fee" was corrected to the per-series rule. |
+| **What you should do** | Open the Trade Ledger tab: the Fee Regimes table counts the fills and dollars under each rule, and any row can be traced back to its series ticker in src/series-fee-registry.js. |
+
+**Evidence**
+
+- Official fee schedule (PDF) — the sentence quoted above: <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
+- The real per-series configuration — `data/discovered/series-fees.json (GET /series?include_volume=true, capturedAt 2026-09-18T06:42:31Z) -> src/series-fee-registry.js`
+- Endpoint documentation: <https://docs.kalshi.com/api-reference/market/get-series-list>
+- The fix — `src/simulation-engine.js -> OrderBook.makerFeesApply (set from the series fee_type); a plain-quadratic maker fill now records fee 0 and puts the rule that produced it in feeFormula`
+- The guard — `test 86 proves both branches: $0.00 on a plain-quadratic series, exactly $0.42 on 100 contracts at $0.40 for a maker-fee series`
+- Visible per fill — `src/trade-ledger.js -> feeRegime column (taker_0.07 | taker_zero | maker_0.0175 | maker_free | settlement) and the Fee Regimes table on the Trade Ledger tab`
 
 ---
 
@@ -479,6 +501,46 @@ assumption against an official document or a real API response.
 
 ---
 
+## #39 — The weather archive was pointed at the wrong airport for Chicago, and Austin has two plausible stations
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That "the city temperature" is the temperature at the city's main airport, so the archive was first configured with O'Hare (41.9786,-87.9048) for KXHIGHCHI. |
+| **Verified truth** | Kalshi names the settlement station in the market rules, and for Chicago it is CLIMDW - Midway - about 30 km south of O'Hare with a different NWS grid (LOT 72,69 vs LOT 66,77). Reading the captured rules text caught the error before any market was traded on it. Austin has no unique answer: the rules say only "Austin (CLIAUS)", which can be Camp Mabry (30.3167,-97.7667) or Austin-Bergstrom (30.1975,-97.6664); the archive uses Camp Mabry and records the alternative so the choice is auditable rather than invisible. Separately, every one of these markets settles on The Weather Company observations while the archive stores National Weather Service forecasts - the genuine basis mismatch recorded as #34. |
+| **What the code does** | The archive point for every city is now the point named by that market's own settlement rules. Chicago moved to Midway, Austin is recorded as an explicit, documented choice, and test 90 requires each entry to carry the NWS point response it was verified against - a note that cites no observation fails the build. |
+| **What you should do** | Open the two Chicago links and compare their relativeLocation fields: 41.7868,-87.7522 answers "Chicago, IL" on grid LOT 72,69 because Midway is the station Kalshi settles on. |
+
+**Evidence**
+
+- KXHIGHCHI point (Midway) - resolved: <https://api.weather.gov/points/41.7868,-87.7522>
+- O'Hare, the wrong point the first draft used: <https://api.weather.gov/points/41.9786,-87.9048>
+- Austin alternative (Bergstrom): <https://api.weather.gov/points/30.1975,-97.6664>
+- Station list in the captured rules — `data/history/.../rules_primary: KXHIGH* markets name CLINYC/CLILAX/CLIMDW/CLIMIA/CLIAUS/CLIDEN/CLIPHL/CLIPHX/CLISEA`
+
+---
+
+## #40 — The first nine-city capture stored a full set of nulls under the name "resolved identity"
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That reading gridId/gridX/gridY/forecastZone/timeZone off the response used to build a snapshot was enough to record what api.weather.gov said the point is. |
+| **Verified truth** | The capture fetched two different documents: GET /points/{lat},{lon} (which carries the identity) and GET {properties.forecast} (which carries only the forecast). captureLocation() returned the FORECAST document under the name properties, and the resolved block read identity fields out of it - so every store written by commit ae16030 recorded gridId/gridX/gridY/forecastZone/county/relativeLocation/timeZone as null while still stamping resolvedAt: it claimed a resolution it had not stored. The forecast rows themselves were correct; the identity metadata was not. |
+| **What the code does** | captureLocation() now returns the two documents separately (pointProperties vs forecastProperties) and identity is read from the point document only. Three guards make the failure mode impossible to repeat silently: the capture compares the live identity against the nwsGrid written in the configuration and refuses to write on a mismatch; the offline audit (--verify) fails on an incomplete or mismatched resolution and on a forecast URL that encodes a different grid; and test 90 asserts the shipped module agrees with the configuration field for field. The workflow now runs the audit under set -o pipefail and fails the run when any location did not capture. |
+| **What you should do** | Compare data/forecasts/miami-mia.json with the two links: the forecast URL always said MFL/106,51, which is exactly what the point response says and what the store now records instead of nulls. |
+
+**Evidence**
+
+- The capture that wrote the nulls: <https://github.com/buffedlizard55-lab/KalshiPaperSim/commit/ae16030>
+- Point response that carries the identity (Miami): <https://api.weather.gov/points/25.7959,-80.287>
+- Forecast response the code was reading instead: <https://api.weather.gov/gridpoints/MFL/106,51/forecast>
+- What the store showed — `data/forecasts/miami-mia.json (ae16030): location.resolved = { gridId: null, gridX: null, gridY: null, forecastZone: null, county: null, relativeLocation: null, timeZone: null, resolvedAt: "2026-09-18T13:24:29.350Z" } while snapshots[0].forecast_url = ".../gridpoints/MFL/106,51/forecast"`
+
+---
+
 ## #9 — Two different status vocabularies for the same concept
 
 **Severity:** `LOW`
@@ -621,21 +683,22 @@ assumption against an official document or a real API response.
 
 ---
 
-## #36 — KXHIGHNY / KXGOLD15M fee multipliers are not yet captured — fees default to the documented M=1
+## #38 — The settlement tracker was rate-limited (HTTP 429) partway through the 2026-09-18 pass
 
 **Severity:** `LOW`
 
 | | |
 | --- | --- |
-| **We assumed** | That the fee multiplier of the two new series is known from a captured Series object (as it is for KXBTCY=0, V11). |
-| **Verified truth** | The ingest captures MARKET objects, not SERIES objects, so seriesFeeConfig() falls back to the documented default multiplier M=1 (taker 0.07×P×(1−P)) with a "captured: false" note. If either series carries a non-standard multiplier in the official Non-Standard Fees table, fees for those flights would be over- or under-charged. |
-| **What the code does** | Every fee number for the two new series is computed with the documented default AND labelled as such. Closing this needs one GET /series/{ticker} capture per series (a listed roadmap item). |
-| **What you should do** | Open the fee schedule PDF and check whether KXHIGHNY / KXGOLD15M appear in the Non-Standard Fees table; if they do, capture the series objects and re-run the reports. |
+| **We assumed** | That every tracked market could be re-checked for its final result in the same run as hundreds of candlestick requests. |
+| **Verified truth** | data/history/_last-run.log (committed with the data) records http_429 for 13 markets — KXINXY-26DEC31H1600-T4000, six KXNASDAQ100Y strikes, KXNCAAFGAME-26SEP26ILLOSU-OSU, KXNFLGAME-26SEP10SFLAR-SF, two KXUFCFIGHT and KXWNBAGAME-26AUG10CHISEA-CHI — after the candlestick passes had already issued hundreds of requests. The markets are neither settled nor marked settled by the run; the fetch simply failed. No price or result is guessed to cover it. |
+| **What the code does** | The failures are logged and committed instead of hidden. Closing this needs a slower cadence (min_interval_ms) or a settlement pass in its own run — both are one-line changes to the request file. |
+| **What you should do** | Open data/history/_last-run.log and search for http_429: each line names a market whose settlement check did not complete. |
 
 **Evidence**
 
-- Fee schedule (check the Non-Standard table for these series): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
-- The honest fallback — `src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"`
+- The run log committed with the data — `data/history/_last-run.log — "✗ <ticker>: http_429"`
+- Rate-limit documentation: <https://docs.kalshi.com/getting_started/rate_limits>
+- Implementation — `scripts/track-settlements.mjs (retries via scripts/kalshi-http.mjs; failures are reported, never invented)`
 
 ---
 
@@ -653,4 +716,22 @@ assumption against an official document or a real API response.
 **Evidence**
 
 - Market list capture: <https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNASDAQ100Y&status=open&limit=12>
+
+---
+
+## #36 — RESOLVED 2026-09-18 — KXHIGHNY / KXGOLD15M fee multipliers were uncaptured; the fee configuration of ALL 14,154 series is now captured
+
+**Severity:** `CLOSED`
+
+| | |
+| --- | --- |
+| **We assumed** | That the fee multiplier of the two new series is known from a captured Series object (as it is for KXBTCY=0, V11). |
+| **Verified truth** | The ingest captures MARKET objects, not SERIES objects, so seriesFeeConfig() falls back to the documented default multiplier M=1 (taker 0.07×P×(1−P)) with a "captured: false" note. If either series carries a non-standard multiplier in the official Non-Standard Fees table, fees for those flights would be over- or under-charged. |
+| **What the code does** | CLOSED 2026-09-18. The on-demand ingest job now runs scripts/discover-universe.mjs, which calls GET /series?include_volume=true and stores the fee configuration of every series the exchange lists (14,154 series) in data/discovered/series-fees.json. scripts/generate-fee-registry.mjs narrows that to the 47 series this build can price a fill for and emits src/series-fee-registry.js; seriesFeeConfig() now resolves snapshot -> registry -> documented default and labels which one it used (captureSource). MEASURED ANSWERS: KXHIGHNY fee_multiplier 1 / quadratic and KXGOLD15M fee_multiplier 1 / quadratic — the documented default was right for both, but it is now a capture rather than an assumption. The same capture exposed a real, material bug: irregularity #37. |
+| **What you should do** | Open https://docs.kalshi.com/api-reference/market/get-series-list, call it with include_volume=true, and compare any ticker against src/series-fee-registry.js. |
+
+**Evidence**
+
+- Fee schedule (check the Non-Standard table for these series): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
+- The honest fallback — `src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"`
 

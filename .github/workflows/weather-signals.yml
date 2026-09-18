@@ -46,10 +46,14 @@ jobs:
           node scripts/archive-forecasts.mjs 2>&1 | tee forecast.log
 
       - name: Audit the forecast store (no network)
-        run: node scripts/archive-forecasts.mjs --verify | tee -a forecast.log
+        run: |
+          set -o pipefail
+          node scripts/archive-forecasts.mjs --verify | tee -a forecast.log
 
       - name: Regenerate the browser-safe forecast + history modules
-        run: node scripts/generate-history-module.mjs | tee -a forecast.log
+        run: |
+          set -o pipefail
+          node scripts/generate-history-module.mjs | tee -a forecast.log
 
       - name: Commit the new snapshots
         run: |
@@ -84,3 +88,19 @@ jobs:
             fi
           done
           [ "$pushed" = "1" ] || { echo "::error::push still rejected after 3 attempts"; exit 1; }
+
+      # An incomplete capture must be visible on the run, not buried in the log:
+      # the script writes the failure list into the request file it just commits.
+      - name: Fail the run when a location did not capture
+        if: always()
+        run: |
+          node -e "
+          const fs = require('fs');
+          const req = JSON.parse(fs.readFileSync('data/forecasts/_forecast-request.json', 'utf8'));
+          const f = (req.last_run && req.last_run.failures) || [];
+          if (f.length) {
+            for (const x of f) console.error('::error::' + x.key + ' — ' + x.reason);
+            process.exit(1);
+          }
+          console.log('all locations captured');
+          "

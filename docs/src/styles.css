@@ -171,6 +171,20 @@ textarea { width: 100%; font-family: var(--mono); font-size: .82rem; line-height
 .btn-sm { padding: .25rem .55rem; font-size: .76rem; }
 .btn[disabled] { opacity: .45; cursor: not-allowed; }
 
+/* ───────────── ledger + notes (2026-09-18) ───────────── */
+/* Small, plain utility classes used by the Verified Trade Ledger tab and by
+   any inline explanation. They carry no numbers — only layout/typography — so
+   nothing here can make a computed figure look like something it is not. */
+.note { color: var(--text-dim); font-size: .78rem; margin: .4rem 0; max-width: 92ch; line-height: 1.5; }
+.note code { font-family: var(--mono); font-size: .76rem; color: var(--text); }
+.card-label { font-size: .66rem; text-transform: uppercase; letter-spacing: .07em; color: var(--text-mute); }
+.card-value { font-family: var(--mono); font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; margin: .15rem 0; }
+.card-note { font-size: .72rem; color: var(--text-dim); }
+#ledgerStatus, #ledgerSummary, #ledgerTrades, #ledgerSources { margin-top: .9rem; }
+#ledgerSummary h3, #ledgerTrades h3, #ledgerSources h3 { font-size: .95rem; margin: 0 0 .3rem; display: flex; gap: .5rem; align-items: center; }
+#ledgerTrades .table-wrap { max-height: 34rem; overflow: auto; }
+table.grid td code { font-family: var(--mono); font-size: .76rem; }
+
 /* ───────────── podium ───────────── */
 .podium { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .8rem; margin-bottom: 1rem; }
 .podium-card {

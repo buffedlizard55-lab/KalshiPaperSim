@@ -1,0 +1,88 @@
+{
+  "ticker": "KXHIGHPHIL-26AUG17-B89.5",
+  "series_ticker": "KXHIGHPHIL",
+  "period_interval": 60,
+  "source": "live_api",
+  "candlesticks": [],
+  "books": [
+    {
+      "captured_at": "2026-09-18T06:39:07.573Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26AUG17-B89.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-18T07:01:09.530Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26AUG17-B89.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "cap_strike": 90,
+    "close_time": "2026-08-18T05:00:00Z",
+    "created_time": "2026-08-16T09:32:55.310749Z",
+    "early_close_condition": "The Last Trading Time will be 11:59 PM local time on August 17, 2026 regardless of any data releases or events occurring. Expiration will occur on the sooner of the first 7:00 or 8:00\nAM ET following the release of the data for August 17, 2026, or one week after August 17, 2026.",
+    "event_ticker": "KXHIGHPHIL-26AUG17",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-08-18T19:00:00Z",
+    "expiration_time": "2026-08-24T14:00:00Z",
+    "expiration_value": "89.00",
+    "floor_strike": 89,
+    "last_price_dollars": "0.9800",
+    "latest_expiration_time": "2026-08-24T14:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
+    "no_sub_title": "89° to 90°",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-08-18T14:00:00Z",
+    "open_interest_fp": "39055.56",
+    "open_time": "2026-08-16T14:00:00Z",
+    "previous_price_dollars": "0.9800",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "yes",
+    "rules_primary": "If the maximum temperature recorded at Philadelphia (CLIPHL) for Aug 17, 2026, is between 89-90° fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.",
+    "settlement_timer_seconds": 300,
+    "settlement_ts": "2026-08-18T17:40:52.348795Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
+    "strike_type": "between",
+    "ticker": "KXHIGHPHIL-26AUG17-B89.5",
+    "title": "Will the maximum temperature be 89-90° on Aug 17, 2026?",
+    "updated_time": "2026-08-18T17:40:52.377857Z",
+    "volume_24h_fp": "0.00",
+    "volume_fp": "56082.56",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
+    "yes_sub_title": "89° to 90°"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26AUG17-B89.5",
+  "market_captured_at": "2026-09-18T07:01:08.862Z",
+  "result": "yes",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-18T07:01:09.497Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG17-B89.5/candlesticks?start_ts=1787122869&end_ts=1789714868&period_interval=60"
+}
