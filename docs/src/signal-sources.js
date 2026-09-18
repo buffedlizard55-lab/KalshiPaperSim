@@ -25,6 +25,19 @@
  *   Decisions Drug Analysis, NCAA Scoreboard, NFL scoreboard, MLB Scoreboard,
  *   Sports Pred, Gold, PinePilot". Twelve of those thirteen map to real,
  *   verified repositories; "CEO" does not (see S00 — flagged for review).
+ *
+ * SECOND RE-REVIEW (2026-09-18, session 01a0b59b): the same directory was
+ *   re-read through its own data export (MasterSite data/sites.js, audit
+ *   stamp 2026-09-17T21:47:46Z, fetched via the GitHub API) and every
+ *   Markets & Trading Research and Sports Data & Scoreboards project the
+ *   first review had not catalogued was inspected README-first. Seven
+ *   additional entries (S13–S19): PriceKalshiHistorical (its three reference
+ *   strategies are recreated as roster entries, R14), MLB-Prediction-model-
+ *   backtest, MLB-PBP, PFFNFL, ScheduleFreeTime (all candidates — real
+ *   projects, each blocked only by the point-in-time archive this repo's
+ *   honesty contract requires), NFLPRED (stub), StockPaperSim (rebuilt the
+ *   same day; wrong venue for this repo, and the directory's record for it
+ *   is stale — IRREGULARITIES.md #42).
  */
 
 export const SIGNAL_SOURCE_STATUS = Object.freeze({
@@ -277,6 +290,167 @@ export const SIGNAL_SOURCES = Object.freeze([
     howTested:
       'The archetype is already represented: the roster\'s trend/momentum/mean-reversion entries (TrendRide_FullTilt, AlphaApex_Momentum, MeanRev_CheapBand, TightScalp_Fixed5, PanicFade family) ARE the Pine-style TA families, replayed with real fills, real fees and real volume bounds — which the Pine simulator does not charge. A dedicated EMA-cross sweep is the natural next family if the daily window keeps growing.',
     strategyUsername: ['TrendRide_FullTilt', 'AlphaApex_Momentum', 'MeanRev_CheapBand']
+  },
+
+  /* ════════════════════════════════════════════════════════════════════ *
+   * SECOND RE-REVIEW (2026-09-18, session 01a0b59b). The owner asked again
+   * to "see if you can build a strategy using any of these websites". The
+   * directory's own data export (MasterSite data/sites.js, audit stamp
+   * 2026-09-17T21:47:46Z, 38 sites) was re-read through the GitHub API and
+   * every Markets & Trading Research and Sports Data & Scoreboards project
+   * that the first review had not yet catalogued was inspected: its README
+   * loaded in full, its claims quoted, its testability decided against the
+   * store this repository actually holds. Seven new entries: S13–S19.
+   * ════════════════════════════════════════════════════════════════════ */
+
+  {
+    id: 'S13',
+    requested: 'PriceKalshiHistorical (found by re-review)',
+    name: 'PriceKalshiHistorical — Autonomous Kalshi collector + backtester',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/PriceKalshiHistorical/',
+      repo: 'https://github.com/buffedlizard55-lab/PriceKalshiHistorical'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'The owner\'s own Kalshi price-history collector and book-walking backtester (README read in full via the GitHub API on 2026-09-18): a Python collector that polls live markets/orderbooks/trades/candles into SQLite + Parquet (5s snapshots, 15s books) and a backtest engine that fills against captured books, applies the 0.07×p×(1−p) quadratic fee, and settles $1/$0 — the same fill realism this repository enforces.',
+    verifiableClaim:
+      'The README documents three reference strategies (`mee`, `fade`, `mom`) with exact triggers, and states two facts this repository independently corroborates: the official API "has no retroactive orderbook — you must capture it live" (this repo captures ladders with every ingest), and the fee model 0.07×p×(1−p) (this repo\'s captured fee schedule, VERIFICATION V-table).',
+    kalshiMarketClass: 'Any board of mutually-exclusive brackets (KXHIGHNY, KXBTCY) for `mee`; 15-minute crypto/gold markets for `fade`/`mom`',
+    testableHere: true,
+    howTested:
+      'The three reference STRATEGY DESIGNS are recreated as roster entries (RESEARCH_SOURCES R14): MEE_BoardSum (hourly, real bracket boards), FadeSpike_Micro (1-minute bars, the source\'s exact 5-minute/5¢/3¢ trigger), MomTick_Micro (1-minute bars, labelled an adaptation — the source\'s 20-second window is shorter than this store\'s finest bar).',
+    blockedBy:
+      'The project\'s own 5-second snapshot/orderbook DATABASE is not exported (its data/ is git-ignored per its README), so its captures cannot cross-verify this repository\'s books; only its strategy rules and its fee/liquidity doctrine were taken, and both are re-measured here on official candlesticks.',
+    strategyUsername: ['MEE_BoardSum', 'FadeSpike_Micro', 'MomTick_Micro']
+  },
+
+  {
+    id: 'S14',
+    requested: 'MLB Prediction Model (found by re-review)',
+    name: 'MLB-Prediction-model-backtest — Monte Carlo baseball prediction model',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/MLB-Prediction-model-backtest/',
+      repo: 'https://github.com/buffedlizard55-lab/MLB-Prediction-model-backtest'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'A Python ML research repo (README read in full via the GitHub API on 2026-09-18) that builds pre-game MLB win probabilities from correlation-filtered features plus a Negative-Binomial Monte Carlo game simulator, blended in a calibrated logistic model and validated by strict walk-forward backtesting. Its own zero-hallucination rule: "every number in this project traces back to an official MLB response. Missing data stays missing; nothing is invented, including odds… breakeven prices are reported instead."',
+    verifiableClaim:
+      'The model\'s outputs (sim_p_home, expected total, run-line probabilities) are exactly the kind of external point-in-time probability a KXMLBGAME strategy needs — an independent estimate to trade against the exchange\'s price, the same architecture as ForecastEdge_Weather (NWS forecast vs KXHIGHNY price).',
+    kalshiMarketClass: 'KXMLBGAME (game moneyline), KXMLBTOTAL / KXMLBTEAMTOTAL (totals), KXMLBSPREAD (run line) — MLB series this store already ingests at 60-minute resolution with settled results',
+    testableHere: false,
+    blockedBy:
+      'The model must RUN to produce a prediction, and its predictions are not archived anywhere with timestamps. An honest test needs the model\'s pre-game probability captured BEFORE each game\'s market close — the same point-in-time discipline data/forecasts/ enforces for NWS. The natural path: a scheduled workflow that runs the model on official MLB schedule data and appends {capturedAt, game, sim_p_home} to a store, then a strategy that trades only where a snapshot exists. Until then, nothing from this project enters a result.',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S15',
+    requested: 'MLB Play-by-Play (found by re-review)',
+    name: 'MLB-PBP — Official Play-by-Play Archive (2014 → present)',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/MLB-PBP/',
+      repo: 'https://github.com/buffedlizard55-lab/MLB-PBP'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'A searchable viewer and reproducible archive for MLB regular-season and postseason games from 2014 forward (README read in full via the GitHub API on 2026-09-18). One source only: official statsapi.mlb.com HTTPS responses; every saved record keeps "MLB Advanced Media\'s returned notice, exact source URL, UTC retrieval time, and a SHA-256 digest" — a provenance chain of the same strictness this repository applies to Kalshi data.',
+    verifiableClaim:
+      'In-game state (score, inning, base state) as games progress is the input every in-play sports strategy needs; the archive proves the owner can capture that state from an official source with full custody.',
+    kalshiMarketClass: 'KXMLBGAME / KXMLBF5 (in-play repricing while a game is live)',
+    testableHere: false,
+    blockedBy:
+      'Two gaps: (1) the archive is retrospective (it can prove what happened, not what was knowable at a market\'s decision time — an honest in-play test needs state captured AS the game runs, timestamped, like the NWS archive); (2) this repository\'s sports bars are 60-minute candlesticks, far too coarse to resolve an in-play repricing that takes seconds. The ROADMAP\'s "sports series at period_interval=1" item is the second half of what this would need.',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S16',
+    requested: 'PFFNFL (found by re-review)',
+    name: 'PFFNFL — Pro Football Focus reverse engineering',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/PFFNFL/',
+      repo: 'https://github.com/buffedlizard55-lab/PFFNFL'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'A research repository (README read in full via the GitHub API on 2026-09-18) whose "sole purpose" is "reverse engineer Pro Football Focus (PFF.com) as a reliable source of public NFL data": player identity, position, PFF grades, snap counts and bio extracted from PUBLIC roster pages only ("This project is 100% focused on PFF.com only").',
+    verifiableClaim:
+      'PFF player grades and snap counts are a candidate signal for NFL player-prop markets — e.g. first-touchdown / anytime-touchdown markets (this store\'s discovery captured KXNFLANYTD and KXNFLFIRSTTD series with their rules and fee configs, data/discovered/markets/).',
+    kalshiMarketClass: 'KXNFLANYTD / KXNFLFIRSTTD (player-prop series, verified to exist in data/discovered/) — NOT yet ingested as bars',
+    testableHere: false,
+    blockedBy:
+      'No PFF data is captured into any archive (the repo documents the extraction method only), and no player-prop series has bars in the store. An honest test would need: the prop series ingested with status=all, plus a point-in-time PFF extraction per game week. Both are machinery this repository already has (ingest blocks + the forecast-archive pattern).',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S17',
+    requested: 'ScheduleFreeTime (found by re-review)',
+    name: 'ScheduleFreeTime — Sports Conflict Calendar',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/ScheduleFreeTime/',
+      repo: 'https://github.com/buffedlizard55-lab/ScheduleFreeTime'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'A scoreboard-style calendar (README read in full via the GitHub API on 2026-09-18) covering Aug 1, 2026 – Feb 28, 2027 that marks a moment busy when any MLB game (all 30 clubs), NFL game (all 32 clubs, through Super Bowl LXI) and several Bay Area teams are on air — built from league schedules with its own radio-broadcast research (65/65 dated NFL broadcasts matched against the league table per the MasterSite audit).',
+    verifiableClaim:
+      'Game TIMES are real, verifiable schedule facts — the kind of timing signal that decides WHEN a sports market is in-play (the highest-variance window of KXNFLGAME/KXMLBGAME contracts, which this store already ingests hourly with settled results).',
+    kalshiMarketClass: 'KXNFLGAME / KXMLBGAME / KXNBAGAME — timing (in-play windows) rather than direction',
+    testableHere: false,
+    blockedBy:
+      'The calendar is a web app, not an archived feed: no point-in-time machine-readable schedule export with capture timestamps is published. If one were archived, the honest test is a timing rule (e.g. trade only the in-play window) replayed on the sports bars — the bars exist, the archived schedule does not.',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S18',
+    requested: 'NFLPRED (found by re-review)',
+    name: 'NFLPRED — placeholder repository',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/NFLPRED/',
+      repo: 'https://github.com/buffedlizard55-lab/NFLPRED'
+    },
+    status: SIGNAL_SOURCE_STATUS.NOT_A_SIGNAL,
+    whatItIs:
+      'A placeholder: the repository\'s entire file list is a single README.md (verified via the GitHub contents API on 2026-09-18), and the MasterSite audit records it as a single-commit stub ("Single-commit placeholder repository for NFL prediction models").',
+    verifiableClaim: null,
+    kalshiMarketClass: 'KXNFLGAME / KXNFLSPREAD — nothing to test yet',
+    testableHere: false,
+    flagged:
+      'Not an irregularity — a stub that is honestly labelled as one by its own directory entry. Recorded so the requested-names list is complete: an NFL prediction project exists but has published nothing testable.',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S19',
+    requested: 'StockPaperSim (found by re-review)',
+    name: 'StockPaperSim — stock paper-trading competition (rebuilt 2026-09-18)',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/StockPaperSim/',
+      repo: 'https://github.com/buffedlizard55-lab/StockPaperSim'
+    },
+    status: SIGNAL_SOURCE_STATUS.NOT_A_SIGNAL,
+    whatItIs:
+      'A one-year paper-trading STOCK competition between return-seeking strategy personas with a real venue model (README read in full via the GitHub API on 2026-09-18): Season 1 replayed the real S&P 500 + VIX path; Season 2 runs on collected daily bars that are Yahoo Finance data marked SECONDARY — "not eligible as an official-price competition" — with the official Nasdaq adapter and fail-closed audit implemented for the next run.',
+    verifiableClaim:
+      'Its discipline is the same one this repository enforces (official verified pricing or a clearly-labelled secondary source, never an invented price), and its README\'s own honesty about the Yahoo bars matches the standard this project applies to data provenance.',
+    kalshiMarketClass: null,
+    testableHere: false,
+    blockedBy:
+      'Wrong venue and wrong instruments: StockPaperSim trades equities on a stock venue model; this repository is deliberately Kalshi-only (ROADMAP "second venue" item). Nothing from it can enter a Kalshi result, and nothing from here should enter its stock results.',
+    flagged:
+      'IRREGULARITIES.md #42 — the MasterSite directory\'s audit record for this project (generated 2026-09-17T21:47:46Z: "single initial commit… 15-byte README") is STALE: the repository was rebuilt on 2026-09-18 (30 commits, PR #9 merged 17:45:57Z) into a full competition. The directory needs a re-run of its audit before its StockPaperSim entry can be trusted.',
+    strategyUsername: null
   }
 ]);
 

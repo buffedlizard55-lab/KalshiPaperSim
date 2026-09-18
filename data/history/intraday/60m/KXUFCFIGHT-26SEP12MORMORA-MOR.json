@@ -2537,6 +2537,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-18T18:03:38.678Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP12MORMORA-MOR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2594,9 +2604,9 @@
     "yes_sub_title": "Brandon Moreno"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP12MORMORA-MOR",
-  "market_captured_at": "2026-09-18T07:02:43.068Z",
+  "market_captured_at": "2026-09-18T18:03:37.933Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-18T07:02:43.704Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12MORMORA-MOR/candlesticks?start_ts=1789257601&end_ts=1789714963&period_interval=60"
+  "last_ingested_at": "2026-09-18T18:03:38.607Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12MORMORA-MOR/candlesticks?start_ts=1789257601&end_ts=1789754618&period_interval=60"
 }

@@ -21,6 +21,13 @@ on:
   schedule:
     # 06:15 UTC — after the daily Kalshi session boundary, before US hours.
     - cron: '15 6 * * *'
+    # 16:40 UTC — mid-US-trading-day pass that ALSO captures an order-book
+    # snapshot per tracked market (ROADMAP "Captured depth on every fill":
+    # repeated with_books captures make the quoted touch point-in-time, not
+    # just the single ladder captured by the last on-demand run). The flag is
+    # derived from the triggering cron below — schedule events cannot pass
+    # workflow_dispatch inputs.
+    - cron: '40 16 * * *'
   workflow_dispatch:
     inputs:
       with_books:
@@ -60,7 +67,18 @@ jobs:
       - name: Ingest the latest real candlesticks
         id: ingest
         run: |
-          ARGS="--with-books=${{ github.event.inputs.with_books || 'false' }} --days=${{ github.event.inputs.days || '90' }}"
+          # workflow_dispatch passes with_books explicitly; the 16:40 UTC
+          # scheduled pass captures order books (see the cron comment above);
+          # every other trigger does not.
+          WITH_BOOKS="${{ github.event.inputs.with_books }}"
+          if [ -z "${WITH_BOOKS}" ]; then
+            if [ "${{ github.event.schedule }}" = "40 16 * * *" ]; then
+              WITH_BOOKS=true
+            else
+              WITH_BOOKS=false
+            fi
+          fi
+          ARGS="--with-books=${WITH_BOOKS} --days=${{ github.event.inputs.days || '90' }}"
           if [ -n "${{ github.event.inputs.series }}" ]; then
             ARGS="$ARGS --series=${{ github.event.inputs.series }}"
           else
@@ -79,41 +97,17 @@ jobs:
 
       - name: Commit the new history
         run: |
-          if [ -z "$(git status --porcelain data/)" ]; then
-            echo "No new bars — nothing to commit."
-            exit 0
-          fi
           # Regenerate the browser-safe modules so the deployed site carries
           # today's bars without waiting for the next forecast-archive run
           # (that run regenerates them too — the script is deterministic).
           node scripts/generate-history-module.mjs | tee -a ingest.log
-          git config user.name  "kalshi-history-bot"
-          git config user.email "kalshi-history-bot@users.noreply.github.com"
-          git add data/ src/accumulated-history.js src/forecast-data.js
-          git commit -m "chore(history): append real Kalshi candlesticks $(date -u +%F)"
-          # PUSH-RACE GUARD: another bot workflow (weather signal archive) can
-          # commit to this branch between our checkout and our push — exactly
-          # that killed the first post-merge run on 2026-09-18. On rejection,
-          # rebase on the remote tip and retry. Generated modules are a pure
-          # function of data/, so a rebase conflict on one is resolved by
-          # REGENERATING it from the merged data tree, never by hand-editing.
-          BRANCH="${GITHUB_REF_NAME}"
-          pushed=0
-          for attempt in 1 2 3; do
-            if git push origin "HEAD:${BRANCH}"; then pushed=1; break; fi
-            echo "::warning::push rejected (attempt ${attempt}) — rebasing on origin/${BRANCH}"
-            git fetch --deepen=50 origin "${BRANCH}"
-            if ! git rebase "origin/${BRANCH}"; then
-              node scripts/generate-history-module.mjs >/dev/null 2>&1 || true
-              git add src/accumulated-history.js src/forecast-data.js 2>/dev/null || true
-              if ! GIT_EDITOR=true git rebase --continue; then
-                git rebase --abort
-                echo "::error::could not rebase onto origin/${BRANCH} — rerun this job"
-                exit 1
-              fi
-            fi
-          done
-          [ "$pushed" = "1" ] || { echo "::error::push still rejected after 3 attempts"; exit 1; }
+          # One shared, locally-tested implementation of "commit everything
+          # this run changed and survive the push race with the forecast bot"
+          # (test/workflow-race-guard.sh reproduces the races, including the
+          # one that killed the first post-merge run on 2026-09-18).
+          bash scripts/push-with-race-guard.sh \
+            "chore(history): append real Kalshi candlesticks $(date -u +%F)" \
+            "${GITHUB_REF_NAME}"
 
       - name: Upload the ingest log
         if: always()

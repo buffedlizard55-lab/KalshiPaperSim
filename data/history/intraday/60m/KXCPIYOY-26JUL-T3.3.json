@@ -4880,6 +4880,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-18T18:04:40.475Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPIYOY-26JUL-T3.3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4935,11 +4945,11 @@
     "yes_sub_title": "Above 3.3%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPIYOY-26JUL-T3.3",
-  "market_captured_at": "2026-09-18T07:03:36.848Z",
+  "market_captured_at": "2026-09-18T18:04:39.360Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-18T07:03:37.817Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.3/candlesticks?start_ts=1789131601&end_ts=1789715017&period_interval=60",
+  "last_ingested_at": "2026-09-18T18:04:40.404Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.3/candlesticks?start_ts=1789131601&end_ts=1789754679&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T06:41:48.243Z",

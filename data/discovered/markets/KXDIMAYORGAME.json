@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXDIMAYORGAME&limit=200",
-  "capturedAt": "2026-09-18T07:04:55.206Z",
+  "capturedAt": "2026-09-18T18:06:04.334Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },
@@ -45,7 +45,7 @@
    "status": "finalized",
    "result": "no",
    "volume_fp": "1201929.74",
-   "volume_24h_fp": "1196777.91",
+   "volume_24h_fp": "1194625.06",
    "open_interest_fp": "549098.99",
    "liquidity_dollars": "0.0000",
    "yes_bid_dollars": "0.0000",
@@ -70,7 +70,7 @@
    "status": "finalized",
    "result": "no",
    "volume_fp": "784831.41",
-   "volume_24h_fp": "784317.79",
+   "volume_24h_fp": "780368.18",
    "open_interest_fp": "322459.41",
    "liquidity_dollars": "0.0000",
    "yes_bid_dollars": "0.0000",

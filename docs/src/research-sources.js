@@ -25,7 +25,13 @@
 
 export const RESEARCH_CAPTURE_METHODS = Object.freeze({
   FETCHED: 'page fetch — loaded and read in full',
-  SEARCH_EXCERPT: 'search-engine full-text excerpt — the page itself returns HTTP 403 to this sandbox, so the thread was read through the excerpt of it'
+  SEARCH_EXCERPT: 'search-engine full-text excerpt — the page itself returns HTTP 403 to this sandbox, so the thread was read through the excerpt of it',
+  /* Added 2026-09-18 for R14: the sandbox cannot open TLS to github.io, but
+     the SAME repository content is served by the official GitHub REST API
+     (api.github.com/repos/{owner}/{repo}/readme), which the sandbox CAN
+     reach. Reading the raw file through the API is a full read of the
+     document, not an excerpt of it. */
+  API_FILE: 'GitHub REST API raw-file fetch — the document was loaded and read in full (the sandbox cannot open TLS to github.io, so the Pages render was not fetched)'
 });
 
 export const RESEARCH_SOURCES = Object.freeze([
@@ -314,6 +320,41 @@ export const RESEARCH_SOURCES = Object.freeze([
     testable: 'partially',
     testedBy: ['LongshotFader_FLB'],
     notTestableReason: 'The aggregation dimension needs parent-event grouping across many markets; this universe has three series and no cross-series event structure.'
+  },
+
+  /* ── 14. Tested: the owner's own Kalshi collector/backtester (MasterSite) ── */
+  {
+    id: 'R14',
+    title: 'PriceKalshiHistorical — Autonomous Kalshi collector + backtester (3 reference strategies)',
+    host: 'github.com/buffedlizard55-lab',
+    url: 'https://github.com/buffedlizard55-lab/PriceKalshiHistorical',
+    urls: [
+      'https://github.com/buffedlizard55-lab/PriceKalshiHistorical',
+      'https://buffedlizard55-lab.github.io/PriceKalshiHistorical/'
+    ],
+    capturedVia: RESEARCH_CAPTURE_METHODS.API_FILE,
+    verifiedOn: '2026-09-18',
+    claim:
+      'The project\'s README documents three reference strategies shipped with its book-walking backtester (backtest/strategy_example.py): ' +
+      '`mee` — "|Σ mids -1|>2.5¢ on mutually_exclusive events → Buy cheapest / sell richest leg; Pure cross-market mean reversion"; ' +
+      '`fade` — "|mid(t)-mid(t-5m)|≥5¢ + spread≤3 ticks → Fade the spike (buy dip)"; ' +
+      '`mom` — "mid(t)-mid(t-20) > 2¢ + tight spread → Follow momentum". ' +
+      'The same README states the fee model "0.07*p*(1-p)" and that "Official API has no retroactive orderbook — this collector creates the history you need by polling live", ' +
+      'which independently corroborates this repository\'s decision to capture order books with the ingest job rather than assume them.',
+    taken:
+      'All three reference strategies, recreated on THIS repository\'s verified bars with the granularity difference stated per entry: `mee` as MEE_BoardSum on the real ' +
+      'KXHIGHNY/KXBTCY bracket boards (hourly bars, YES asks per band), `fade` as FadeSpike_Micro on 1-minute bars with the source\'s exact 5-minute lookback and 5¢ trigger ' +
+      'and its spread≤3¢ filter, `mom` as MomTick_Micro on 1-minute bars (the source\'s 20-second window is shorter than one bar, so the closest testable analogue is the ' +
+      '1-minute mid change ≥ 2¢ — labelled as an adaptation, not the source\'s signal).',
+    testable: true,
+    testedBy: ['MEE_BoardSum', 'FadeSpike_Micro', 'MomTick_Micro'],
+    howTested:
+      'The roster replays each entry against the real captured candlesticks (yes_bid/yes_ask per bar), pays the official quadratic fee with each series\' REAL captured ' +
+      'fee multiplier, and bounds every fill by the bar\'s real traded volume and the captured ladder depth — the same fill realism the source project advocates.',
+    caveat:
+      'The source ran its strategies on ITS OWN 5-second/15-second snapshot database of live-polled books; this repository holds official candlesticks at 60m/1m granularity. ' +
+      'The `mom` entry in particular is an adaptation (20-second momentum cannot be formed from 1-minute bars), and no performance number from the source is reused — ' +
+      'the README reports none for these three strategies, only their rules.'
   }
 ]);
 
@@ -380,6 +421,7 @@ export function researchStats() {
     sources: RESEARCH_SOURCES.length,
     fetchedPages: RESEARCH_SOURCES.filter((s) => s.capturedVia === RESEARCH_CAPTURE_METHODS.FETCHED).length,
     searchExcerpts: RESEARCH_SOURCES.filter((s) => s.capturedVia === RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT).length,
+    apiFileFetches: RESEARCH_SOURCES.filter((s) => s.capturedVia === RESEARCH_CAPTURE_METHODS.API_FILE).length,
     sourcesWithAReplay: RESEARCH_SOURCES.filter((s) => (s.testedBy || []).length > 0).length,
     strategiesRecreated: testedStrategies.size,
     notTestableHere: RESEARCH_SOURCES.filter((s) => s.testable === false).length,

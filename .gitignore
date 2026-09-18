@@ -7,6 +7,11 @@ data/store/
 .scratch/
 *.local.js
 
+# CI run logs (copied into data/history/_last-run.log before commit; the raw
+# file at the repo root must never be committed by the race-guard's `git add -A`)
+/ingest.log
+/forecast.log
+
 # Dependencies & build artefacts that are regenerated (docs/ IS committed: GitHub Pages)
 node_modules/
 npm-debug.log*

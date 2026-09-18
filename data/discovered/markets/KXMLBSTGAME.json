@@ -2,7 +2,7 @@
  "_provenance": {
   "endpoint": "GET /markets?series_ticker=&status=&limit=",
   "url": "https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXMLBSTGAME&limit=200",
-  "capturedAt": "2026-09-18T07:04:59.956Z",
+  "capturedAt": "2026-09-18T18:06:09.635Z",
   "docs": "https://docs.kalshi.com/api-reference/market/get-markets",
   "note": "Markets are ranked by the exchange-reported lifetime volume_fp and capped at 6. Fields are copied verbatim (fixed-point strings preserved)."
  },

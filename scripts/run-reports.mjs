@@ -51,8 +51,23 @@ const write = (name, obj) => {
  * ------------------------------------------------------------------ */
 function calendarAudit() {
   const markets = [];
+  const emptyStores = [];
   for (const [ticker, block] of Object.entries(ACCUMULATED_HISTORY.markets || {})) {
     const bars = block.tuples.map((t) => t[0]).sort((a, b) => a - b);
+    // A market can be ingested and legitimately hold ZERO bars (e.g.
+    // KXTESLACEOCHANGE-26: the exchange lists it, it has never traded, and its
+    // candlestick response is empty — irregularity #43). It has no first/last
+    // bar and no gaps; it is REPORTED as an empty store instead of crashing
+    // the audit on `new Date(undefined)`, which is what this loop did before.
+    if (!bars.length) {
+      emptyStores.push({
+        ticker,
+        periodInterval: block.period_interval,
+        status: block.status ?? null,
+        note: 'store entry exists but the exchange returned no candlesticks for the ingested window — nothing to audit, nothing invented'
+      });
+      continue;
+    }
     const period = Number(block.period_interval || 1440) * 60;
     const gaps = [];
     for (let i = 1; i < bars.length; i++) {
@@ -104,6 +119,7 @@ function calendarAudit() {
       }
     },
     totals: { markets: markets.length, gaps: totalGaps, marketsWithWholeBarGaps: markets.filter((m) => m.gapDetail.some((g) => g.deltaSeconds % 86400 === 0)).length },
+    emptyStores,
     markets
   };
 }

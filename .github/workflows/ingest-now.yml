@@ -130,41 +130,19 @@ jobs:
 
       - name: Commit the new history
         run: |
-          if [ -z "$(git status --porcelain data/ src/accumulated-history.js docs/data)" ]; then
-            echo "No new bars — nothing to commit."
-            exit 0
-          fi
           du -sh data/history 2>/dev/null || true
           du -sh data/history/intraday 2>/dev/null || true
           du -sh data/discovered 2>/dev/null || true
-          git config user.name  "kalshi-history-bot"
-          git config user.email "kalshi-history-bot@users.noreply.github.com"
-          git add data/ src/accumulated-history.js docs/data
-          git commit -m "chore(history): append real Kalshi candlesticks $(date -u +%F)"
-          # PUSH-RACE GUARD: the forecast-archive bot can commit to this branch
-          # between our checkout and our push — the pre-rebase pull that used to
-          # sit here had `|| true` and still lost the race on 2026-09-18 (the
-          # first post-merge run died at this step). On rejection, rebase on
-          # the remote tip and retry. Generated modules are a pure function of
-          # data/, so a rebase conflict on one is resolved by REGENERATING it
-          # from the merged data tree, never by hand-editing.
-          BRANCH="${GITHUB_REF_NAME}"
-          pushed=0
-          for attempt in 1 2 3; do
-            if git push origin "HEAD:${BRANCH}"; then pushed=1; break; fi
-            echo "::warning::push rejected (attempt ${attempt}) — rebasing on origin/${BRANCH}"
-            git fetch --deepen=50 origin "${BRANCH}"
-            if ! git rebase "origin/${BRANCH}"; then
-              node scripts/generate-history-module.mjs >/dev/null 2>&1 || true
-              git add src/accumulated-history.js src/forecast-data.js 2>/dev/null || true
-              if ! GIT_EDITOR=true git rebase --continue; then
-                git rebase --abort
-                echo "::error::could not rebase onto origin/${BRANCH} — rerun this job"
-                exit 1
-              fi
-            fi
-          done
-          [ "$pushed" = "1" ] || { echo "::error::push still rejected after 3 attempts"; exit 1; }
+          # One shared, locally-tested implementation of "commit everything
+          # this run changed and survive the push race with the forecast bot".
+          # The inline version here lost a full ingest on 2026-09-18 by
+          # forgetting src/forecast-data.js in `git add` (rebase then refused
+          # to start; `git rebase --abort` exited 128 under bash -e and killed
+          # the step) — see IRREGULARITIES.md #41 and
+          # test/workflow-race-guard.sh, which reproduces that exact race.
+          bash scripts/push-with-race-guard.sh \
+            "chore(history): append real Kalshi candlesticks $(date -u +%F)" \
+            "${GITHUB_REF_NAME}"
 
       - name: Upload the ingest log
         if: always()
