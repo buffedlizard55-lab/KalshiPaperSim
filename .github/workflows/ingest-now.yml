@@ -21,7 +21,6 @@ name: On-demand Kalshi history ingest
 #   GET /markets/{ticker}/orderbook       https://docs.kalshi.com/getting_started/orderbook_responses
 #   GET /historical/cutoff                https://docs.kalshi.com/getting_started/historical_data
 
-# probe: does the automation token have workflows scope? (temporary line — removed after the test)
 on:
   push:
     branches: ['**']
