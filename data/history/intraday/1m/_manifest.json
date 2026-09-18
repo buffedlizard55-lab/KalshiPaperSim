@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T05:51:11.572Z",
+  "generatedAt": "2026-09-18T06:32:28.787Z",
   "apiBase": "https://external-api.kalshi.com/trade-api/v2",
   "periodIntervalMinutes": 1,
   "storeDir": "data/history/intraday/1m",
@@ -24,13 +24,13 @@
       "kept": 16,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 2,
+      "books": 3,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP171300-00/candlesticks?start_ts=1789664461&end_ts=1789710658&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP171300-00/candlesticks?start_ts=1789664461&end_ts=1789713137&period_interval=1"
     },
     {
       "ticker": "KXGOLD15M-26SEP162200-00",
@@ -41,13 +41,13 @@
       "kept": 16,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 2,
+      "books": 3,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 2,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP162200-00/candlesticks?start_ts=1789696861&end_ts=1789710660&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP162200-00/candlesticks?start_ts=1789696861&end_ts=1789713138&period_interval=1"
     },
     {
       "ticker": "KXGOLD15M-26SEP171645-45",
@@ -58,13 +58,13 @@
       "kept": 16,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 2,
+      "books": 3,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP171645-45/candlesticks?start_ts=1789677961&end_ts=1789710662&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP171645-45/candlesticks?start_ts=1789677961&end_ts=1789713140&period_interval=1"
     },
     {
       "ticker": "KXGOLD15M-26SEP171315-15",
@@ -75,47 +75,47 @@
       "kept": 16,
       "trimmed": 0,
       "conflicts": 0,
+      "books": 3,
+      "market": "captured",
+      "status": "finalized",
+      "result": "no",
+      "windows": 1,
+      "error": null,
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP171315-15/candlesticks?start_ts=1789665361&end_ts=1789713141&period_interval=1"
+    },
+    {
+      "ticker": "KXGOLD15M-26SEP172315-15",
+      "series": "KXGOLD15M",
+      "period": 1,
+      "added": 0,
+      "total": 16,
+      "kept": 16,
+      "trimmed": 0,
+      "conflicts": 0,
       "books": 2,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP171315-15/candlesticks?start_ts=1789665361&end_ts=1789710663&period_interval=1"
-    },
-    {
-      "ticker": "KXGOLD15M-26SEP172315-15",
-      "series": "KXGOLD15M",
-      "period": 1,
-      "added": 16,
-      "total": 16,
-      "kept": 16,
-      "trimmed": 0,
-      "conflicts": 0,
-      "books": 1,
-      "market": "captured",
-      "status": "finalized",
-      "result": "no",
-      "windows": 2,
-      "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP172315-15/candlesticks?start_ts=1789624265&end_ts=1789710664&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP172315-15/candlesticks?start_ts=1789701361&end_ts=1789713143&period_interval=1"
     },
     {
       "ticker": "KXGOLD15M-26SEP180145-45",
       "series": "KXGOLD15M",
       "period": 1,
-      "added": 16,
+      "added": 0,
       "total": 16,
       "kept": 16,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 1,
+      "books": 2,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 2,
+      "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP180145-45/candlesticks?start_ts=1789624266&end_ts=1789710665&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP180145-45/candlesticks?start_ts=1789710361&end_ts=1789713144&period_interval=1"
     },
     {
       "ticker": "KXGOLD15M-26SEP171915-15",
@@ -126,13 +126,13 @@
       "kept": 16,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 2,
+      "books": 3,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP171915-15/candlesticks?start_ts=1789686961&end_ts=1789710668&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP171915-15/candlesticks?start_ts=1789686961&end_ts=1789713146&period_interval=1"
     },
     {
       "ticker": "KXGOLD15M-26SEP162030-30",
@@ -143,18 +143,18 @@
       "kept": 16,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 2,
+      "books": 3,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 2,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP162030-30/candlesticks?start_ts=1789691461&end_ts=1789710670&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP162030-30/candlesticks?start_ts=1789691461&end_ts=1789713147&period_interval=1"
     }
   ],
   "totals": {
     "markets": 8,
-    "barsAdded": 32,
+    "barsAdded": 0,
     "barsStored": 128,
     "barsKept": 128,
     "barsTrimmed": 0,
