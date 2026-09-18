@@ -992,6 +992,26 @@
         "low_dollars": "0.9900",
         "open_dollars": "0.9900"
       }
+    },
+    {
+      "end_period_ts": 1789718400,
+      "open_interest_fp": "13063.28",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -1243,6 +1263,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-18T18:00:39.307Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26SEP17-T82/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1254,7 +1284,7 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-09-18T19:00:00Z",
     "expiration_time": "2026-09-24T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "84.00",
     "floor_strike": 82,
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-24T14:00:00Z",
@@ -1267,9 +1297,9 @@
     "occurrence_datetime": "2026-09-18T14:00:00Z",
     "open_interest_fp": "13063.28",
     "open_time": "2026-09-16T14:00:00Z",
-    "previous_price_dollars": "0.5600",
-    "previous_yes_ask_dollars": "0.5800",
-    "previous_yes_bid_dollars": "0.5400",
+    "previous_price_dollars": "0.5900",
+    "previous_yes_ask_dollars": "0.6000",
+    "previous_yes_bid_dollars": "0.5800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1278,16 +1308,18 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If the maximum temperature recorded at Denver (CLIDEN) for Sep 17, 2026, is greater than 82° fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
     "settlement_timer_seconds": 300,
-    "status": "closed",
+    "settlement_ts": "2026-09-18T13:09:14.507064Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "greater",
     "ticker": "KXHIGHDEN-26SEP17-T82",
     "title": "Will the maximum temperature be >82° on Sep 17, 2026?",
-    "updated_time": "2026-09-18T07:00:00.686101Z",
-    "volume_24h_fp": "15553.87",
+    "updated_time": "2026-09-18T13:09:14.637113Z",
+    "volume_24h_fp": "12360.37",
     "volume_fp": "18377.17",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1296,8 +1328,9 @@
     "yes_sub_title": "83° or above"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26SEP17-T82",
-  "market_captured_at": "2026-09-18T07:01:03.648Z",
-  "status": "closed",
-  "last_ingested_at": "2026-09-18T07:01:04.285Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP17-T82/candlesticks?start_ts=1789711201&end_ts=1789714863&period_interval=60"
+  "market_captured_at": "2026-09-18T18:00:38.558Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-18T18:00:39.234Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP17-T82/candlesticks?start_ts=1789714801&end_ts=1789754438&period_interval=60",
+  "result": "yes"
 }
