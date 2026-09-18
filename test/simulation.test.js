@@ -98,7 +98,8 @@ import { STRATEGIES, validateStrategies, VERIFIED_SERIES, REJECTED_FABRICATED_TI
 import { redactMarketForReplay } from '../src/backtest-replay.js';
 import { weatherEventDate, buildForecastSignalProvider } from '../src/strategy-runner.js';
 import { forecastHighAt, hasForecastArchive } from '../src/forecast-store.js';
-import { extractDailyHighs } from '../scripts/archive-forecasts.mjs';
+import { FORECAST_DATA } from '../src/forecast-data.js';
+import { extractDailyHighs, FORECAST_LOCATIONS } from '../scripts/archive-forecasts.mjs';
 import { intradayArgsFromRequest, intradayBlockArgs, intradayBlocksFromRequest } from '../scripts/ingest-history.mjs';
 import { SIGNAL_SOURCES, signalSourceStats, signalSourceStrategyUsernames, SIGNAL_SOURCE_STATUS } from '../src/signal-sources.js';
 import { computeAttribution, generatePostMortem, buildLeaderboard, LEADERBOARD_QUALIFICATION } from '../src/analysis.js';
@@ -2914,7 +2915,16 @@ test('85. the shipped ledger (if present) is internally consistent and fully dat
     if (existsSync(summaryFile)) {
       const summary = JSON.parse(readFileSync(summaryFile, 'utf8'));
       assert.equal(summary.verification.ok, true, 'the stored summary says the ledger verified');
-      assert.equal(summary.totals.fills, stored.fills.length, 'the summary counts match the stored rows');
+      // The summary distinguishes the FULL run from the STORED file: totals
+      // counts every fill the engine produced, stored counts what survived the
+      // caps. A trim is legitimate, but it must be accounted for exactly — the
+      // dropped count has to reconcile, or the summary is describing a file
+      // that does not exist.
+      assert.ok(summary.stored, 'the summary must state what the file holds');
+      assert.equal(summary.stored.fills, stored.fills.length, 'the summary stored-count matches the stored rows');
+      const fillTrim = (summary.trims || []).find((t) => t.section === 'fills');
+      assert.equal(summary.totals.fills - (fillTrim ? fillTrim.dropped : 0), stored.fills.length, 'totals minus the recorded trim must equal the stored rows');
+      if (fillTrim) assert.equal(fillTrim.kept, stored.fills.length, 'the recorded trim states the kept count');
     }
   }
 });
@@ -3151,4 +3161,83 @@ test('89. the FDA dominance rule fires only on a real ladder violation, and the 
   assert.equal(ceo.decide.call(ceo, ceoCtx(0.4, bookAt(0.39, 0.4))).length, 0, 'a 10c advance is not enough');
   // above 0.90 the contract is nearly certain: the remaining upside cannot pay for the fee.
   assert.equal(ceo.decide.call(ceo, ceoCtx(0.95, bookAt(0.94, 0.95))).length, 0, 'no buying at ≥ 0.90');
+});
+
+/* ================================================================== *
+ * 9d. THE FORECAST ARCHIVE'S CITY COVERAGE (roadmap item #3)
+ * ================================================================== */
+
+test('90. every archived forecast city names a real series, a real point, and a resolved identity', () => {
+  const cities = FORECAST_LOCATIONS;
+  assert.ok(cities.length >= 9, `the archive must cover the ingested weather cities, got ${cities.length}`);
+
+  const seriesCovered = new Set(cities.map((c) => c.series));
+  const hourly = intradayFacts(undefined, 60);
+  const weatherSeries = Object.keys(hourly.bySeries).filter((s) => /^KXHIGH/.test(s));
+  assert.ok(weatherSeries.length >= 8, 'the hourly store holds the weather cities this test compares against');
+
+  // A city the store can trade but the archive does not cover is an untested
+  // strategy, not a neutral omission — so it must be named, not left out.
+  const notArchived = weatherSeries.filter((s) => !seriesCovered.has(s));
+  assert.deepEqual(
+    notArchived,
+    [],
+    `these KXHIGH* series hold real bars but no forecast archive: ${notArchived.join(', ')}`
+  );
+
+  for (const c of cities) {
+    assert.ok(c.key && c.series && c.city, `${c.key}: key, series and city are required`);
+    // The point URL must be the official NWS endpoint for exactly these
+    // coordinates — a mismatch would archive one city under another's name.
+    assert.equal(
+      c.pointsUrl,
+      `https://api.weather.gov/points/${c.latitude},${c.longitude}`,
+      `${c.key}: pointsUrl must address the configured coordinates on api.weather.gov`
+    );
+    assert.ok(c.verifiedNote && c.verifiedNote.length > 10, `${c.key}: state what has been verified about this point`);
+    // The note must record a REAL observation of the official API — a URL and a
+    // grid — or say out loud that the identity is still unconfirmed.
+    assert.ok(
+      /api\.weather\.gov\/points\//.test(c.verifiedNote) || /PENDING/.test(c.verifiedNote),
+      `${c.key}: the note must cite the NWS point response or declare itself unconfirmed`
+    );
+    if (!/PENDING/.test(c.verifiedNote)) {
+      assert.match(c.verifiedNote, /gridId \w{3}/, `${c.key}: a confirmed point must name the NWS grid office`);
+      assert.ok(c.settlementStation, `${c.key}: record the settlement station the market rules name`);
+    }
+    // Every covered series must be one the store can trade (no orphan archive).
+    assert.ok(hourly.bySeries[c.series] || dailyFacts().bySeries[c.series], `${c.key}: series ${c.series} has no bars in any store`);
+  }
+
+  // The SHIPPED archive must carry the identity the NWS resolved, once captured.
+  const shipped = Object.values(FORECAST_DATA.locations || {});
+  assert.ok(shipped.length >= 1, 'the shipped forecast module holds at least the original location');
+  for (const store of shipped) {
+    const loc = store.location || {};
+    const configured = cities.find((c) => c.key === loc.key);
+    assert.ok(configured, `${loc.key}: the archive holds a location that is not configured`);
+    assert.equal(loc.points_url, configured.pointsUrl, `${loc.key}: archive points_url must match the configuration`);
+    if (loc.resolved) {
+      // Captured by the runner: the resolution must be self-consistent.
+      assert.equal(loc.resolved.pointsUrl, configured.pointsUrl, `${loc.key}: resolved identity must name the same point`);
+      assert.ok(loc.resolved.gridId, `${loc.key}: a resolution must name the NWS grid office`);
+      assert.ok(Number.isFinite(Number(loc.resolved.gridX)) && Number.isFinite(Number(loc.resolved.gridY)), `${loc.key}: a resolution must name grid x/y`);
+      assert.ok(loc.resolved.resolvedAt, `${loc.key}: a resolution must carry when it was resolved`);
+    }
+  }
+
+  // And the strategy that reads the archive must abstain without a signal.
+  const multi = STRATEGIES.find((s) => s.username === 'ForecastEdge_MultiCity');
+  assert.ok(multi, 'the multi-city forecast entry exists');
+  assert.equal(multi.universe.length, cities.length, 'its universe is exactly the archived cities');
+  for (const series of multi.universe) assert.ok(seriesCovered.has(series), `${series} must have an archive entry`);
+  const noSignal = multi.decide({
+    ticker: 'KXHIGHLAX-26SEP18-B80.5',
+    market: { floor_strike: 80, cap_strike: 81 },
+    book: { getBestYesAsk: () => 0.2, getYesAskTiers: () => [{ price: 0.2, count: 1000 }], tick: 0.01, notional: 1 },
+    portfolio: { positions: new Map(), cash: 100000 },
+    signal: null,
+    candle: { trade: { close: 0.2 } }
+  });
+  assert.equal(noSignal.length, 0, 'no snapshot by this bar means no trade — the archive rule is absolute');
 });

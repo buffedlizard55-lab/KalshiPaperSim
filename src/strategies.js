@@ -2314,6 +2314,74 @@ export const STRATEGIES = [
         }
       ];
     }
+  },
+
+  {
+    ...BASE,
+    id: 'forecast_edge_multicity',
+    username: 'ForecastEdge_MultiCity',
+    handle: '@ForecastEdge_MultiCity',
+    avatar: '🛰️',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXHIGHNY', 'KXHIGHLAX', 'KXHIGHCHI', 'KXHIGHMIA', 'KXHIGHAUS', 'KXHIGHDEN', 'KXHIGHPHIL', 'KXHIGHTPHX', 'KXHIGHTSEA'],
+    title: 'Multi-City Point-in-Time Forecast Confirmation',
+    category: 'Weather / Model vs Market (multi-city)',
+    tagline:
+      'The single-city forecast-confirmation rule, run across every archived city at once so that each independent NWS point forecast is a separate, point-in-time test.',
+    sizingPct: 0.35,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource:
+      'Generalisation of the R06 winner pattern (weather-model confirmation) across the 9 cities this repository archives; the archive is grown by .github/workflows/weather-signals.yml',
+    designSourceUrl: 'https://api.weather.gov/',
+    sourceNote:
+      'The signal is the official NWS gridded point forecast, archived point-in-time by scripts/archive-forecasts.mjs at https://api.weather.gov/points/{lat},{lon}. Each location is a published reporting site (the city airport, where the official climate record is kept): KXHIGHLAX 33.9425,-118.4081; KXHIGHCHI 41.9786,-87.9048; KXHIGHMIA 25.7959,-80.2870; KXHIGHAUS 30.1975,-97.6664; KXHIGHDEN 39.8561,-104.6737; KXHIGHPHIL 39.8729,-75.2437; KXHIGHTPHX 33.4342,-112.0116; KXHIGHTSEA 47.4502,-122.3088, plus the original Central Park point. The coordinates are CLAIMS until the workflow resolves them and writes the NWS identity (grid office, grid x/y, forecast zone) into data/forecasts/<key>.json — an unresolvable point fails the capture and stores nothing.',
+    thesis:
+      'DESIGN INTENT: the single-city entry proves the mechanism once; this entry multiplies the number of independent settlement events per day by the number of archived cities, which is the only honest way to find out whether a weather edge survives a bigger sample. It reads ctx.signal exactly as the single-city entry does — a snapshot captured at or before the decision bar, or nothing. ' +
+      'COMPUTED ARCHIVE COVERAGE (this build): ' + forecastCaption() + '. ' +
+      'WHERE THE SAMPLE COMES FROM: each city\'s archive begins when the weather-signals workflow first captures it; only markets still trading after that instant can trade here, and every earlier bracket abstains. ' +
+      'HONEST LIMITS, stated up front: (1) the settlement source is The Weather Company\'s city observation while the signal is an NWS point forecast — different providers, so the strategy is measuring a real basis mismatch, not a synthetic one (IRREGULARITIES.md #34); (2) an entry is only possible while a bracket is trading, so a city whose brackets all settle intraday contributes few decisions; (3) the coordinates for the eight added cities were supplied by this build and are marked PENDING until the workflow resolves them — a wrong point would trade a real but different city, which is why the resolved identity is written into the store and shown on the site.',
+    rules: {
+      entry:
+        'ctx.signal carries the newest NWS forecast high F for THIS city, captured at or before this bar. Buy YES when the bracket contains F (band: F ∈ [floor-1, cap+1]; lower tail: F ≤ cap-2) and the ask ≤ 0.40, once per market.',
+      sizing: '35% of available cash per confirmed bracket, capped at 3x visible ask depth.',
+      exit: "None — hold to the exchange's real settlement.",
+      noSignalRule: 'signal === null (no snapshot for this city captured by this bar) → abstain. The current forecast is never substituted for a past decision.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker, market, signal } = ctx;
+      if (!signal || signal.kind !== 'nws-forecast-high') return [];
+      const f = Number(signal.highF);
+      if (!Number.isFinite(f)) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.4) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const floor = Number(market.floor_strike);
+      const cap = Number(market.cap_strike);
+      let confirmed = false;
+      let why = '';
+      if (Number.isFinite(floor) && Number.isFinite(cap)) {
+        confirmed = f >= floor - 1 && f <= cap + 1;
+        why = `NWS high ${f}F inside bracket ${floor}-${cap}`;
+      } else if (Number.isFinite(cap)) {
+        confirmed = f <= cap - 2;
+        why = `NWS high ${f}F at or below the ${cap} tail threshold`;
+      }
+      if (!confirmed) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason: `${why} (snapshot ${signal.capturedAt} for ${signal.eventDate}, captured before this bar) → ask ${ask} ≤ 0.40, held to the exchange's real result`
+        }
+      ];
+    }
   }
 ];
 

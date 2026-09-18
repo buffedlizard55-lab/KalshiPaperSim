@@ -193,6 +193,11 @@ async function main() {
       ]
     },
     trims,
+    // WHAT THE FILE HOLDS vs WHAT THE RUN PRODUCED. totals counts every fill the
+    // engine generated; stored counts what survived --max-fills/--max-trips.
+    // Publishing both is what lets a reader reconcile the file with the totals
+    // without having to apply trims[] themselves.
+    stored: { fills: ledger.fills.length, roundTrips: ledger.roundTrips.length },
     columns: { fills: FILL_COLUMNS, roundTrips: ROUND_TRIP_COLUMNS },
     totals: ledger.totals,
     feeRegimes: feeRegimeBreakdown(ledger),

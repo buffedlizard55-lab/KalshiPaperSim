@@ -8,11 +8,11 @@ Nothing is inferred from a language model's memory of Kalshi.
 | Status | Meaning | Count |
 | --- | --- | --- |
 | `DOCUMENTED` | Quoted from official Kalshi docs / the fee schedule PDF | 34 |
-| `CAPTURED` | Copied from a real production API response | 32 |
+| `CAPTURED` | Copied from a real production API response | 34 |
 | `NEGATIVE` | A verified 404 / contradiction (proof something is NOT true) | 1 |
 | `DERIVED` | Computed by arithmetic on official formulas | 19 |
 | `OBSERVATION` | Seen in real data, not explained by any document | 5 |
-| **Total** | 82 of 91 carry a URL you can open yourself | **91** |
+| **Total** | 84 of 93 carry a URL you can open yourself | **93** |
 
 ---
 
@@ -189,6 +189,13 @@ Nothing is inferred from a language model's memory of Kalshi.
 | --- | --- | --- | --- | --- | --- |
 | `V97` | DERIVED | Ledger v2 records the fee regime that produced every fill fee | feeRegime is one of taker_0.07, taker_zero, maker_0.0175, maker_free, settlement; the 2026-09-18 export counted 14,062 maker_free fills ($0.00), 9,645 maker_0.0175 fills ($16,279.65), 9,458 taker_0.07 fills ($22,730.39), 4,111 taker_zero fills ($0.00) and 629 settlements ($0.00) | [kalshi.com/docs/kalshi-fee-schedule.pdf](https://kalshi.com/docs/kalshi-fee-schedule.pdf) | `src/trade-ledger.js -> feeRegimeBreakdown(); data/ledger/summary.json; Trade Ledger tab` |
 
+### Weather signals
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V98` | CAPTURED | All nine weather cities this repo trades have a VERIFIED NWS point identity | GET https://api.weather.gov/points/{lat},{lon} fetched live 2026-09-18 -> KXHIGHNY 40.7829,-73.9654 = OKX grid 34,45 / zone NYZ072; KXHIGHLAX 33.9425,-118.4081 = LOX 148,41 / CAZ366; KXHIGHCHI 41.7868,-87.7522 (Midway) = LOT 72,69 / ILZ104; KXHIGHMIA 25.7959,-80.287 = MFL 106,51 / FLZ074; KXHIGHAUS 30.3167,-97.7667 (Camp Mabry) = EWX 155,93 / TXZ192; KXHIGHDEN 39.8561,-104.6737 = BOU 74,66 / COZ040; KXHIGHPHIL 39.8729,-75.2437 = PHI 48,75 / PAZ070; KXHIGHTPHX 33.4342,-112.0116 = PSR 161,57 / AZZ543; KXHIGHTSEA 47.4502,-122.3088 = SEW 124,61 / WAZ316. | [api.weather.gov/points/40.7829,-73.9654](https://api.weather.gov/points/40.7829,-73.9654) | `scripts/archive-forecasts.mjs -> FORECAST_LOCATIONS[].verifiedNote; test 90 asserts every note cites the point response and names the grid` |
+| `V99` | CAPTURED | Kalshi names the settlement station for every weather market and it is not always the city airport | Captured rules text: KXHIGHCHI settles on "the maximum temperature recorded at Chicago (CLIMDW)" - Midway, not O'Hare; the full set is CLINYC, CLILAX, CLIMDW, CLIMIA, CLIAUS, CLIDEN, CLIPHL, CLIPHX, CLISEA, all "according to The Weather Company". The archive now follows the settlement station, and cites its exact rules string in verifiedNote. | [api.weather.gov/points/41.7868,-87.7522](https://api.weather.gov/points/41.7868,-87.7522) | `scripts/archive-forecasts.mjs -> FORECAST_LOCATIONS[].settlementStation; IRREGULARITIES.md #39` |
+
 ---
 
 ## 2. Official sources used
@@ -284,6 +291,6 @@ Structure and interaction patterns only. **No data, copy or branding was taken f
 | Every strategy carries `riskManagement: NONE (by mandate)` | test 21 |
 | Post-mortem prose interpolates computed values only | `generatePostMortem()`; test 26 |
 | Oversized orders are never filled at an invented price | `exhaustionPolicy: 'partial'`; tests 17–19 |
-| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 37 strategies) |
+| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 38 strategies) |
 | A strategy that never traded is not ranked | `LEADERBOARD_QUALIFICATION.minTrades = 1`; test 27 |
 | Fabricated tickers cannot re-enter the catalog | test 10 |

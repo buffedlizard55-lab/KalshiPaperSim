@@ -1,7 +1,7 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-18 by `scripts/render-docs.js` from `src/verification-data.js`.
-**38 irregularities** flagged during this build: 12 high, 15 medium,
+**39 irregularities** flagged during this build: 12 high, 16 medium,
 9 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
@@ -498,6 +498,26 @@ assumption against an official document or a real API response.
 - Settlement source (captured rules): <https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP07-B77.5>
 - Signal source (NWS point forecast): <https://api.weather.gov/gridpoints/OKX/34,45/forecast>
 - Stated on the strategy — `src/strategies.js → ForecastEdge_Weather thesis (BASIS MISMATCH paragraph); the UI Research tab repeats it`
+
+---
+
+## #39 — The weather archive was pointed at the wrong airport for Chicago, and Austin has two plausible stations
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That "the city temperature" is the temperature at the city's main airport, so the archive was first configured with O'Hare (41.9786,-87.9048) for KXHIGHCHI. |
+| **Verified truth** | Kalshi names the settlement station in the market rules, and for Chicago it is CLIMDW - Midway - about 30 km south of O'Hare with a different NWS grid (LOT 72,69 vs LOT 66,77). Reading the captured rules text caught the error before any market was traded on it. Austin has no unique answer: the rules say only "Austin (CLIAUS)", which can be Camp Mabry (30.3167,-97.7667) or Austin-Bergstrom (30.1975,-97.6664); the archive uses Camp Mabry and records the alternative so the choice is auditable rather than invisible. Separately, every one of these markets settles on The Weather Company observations while the archive stores National Weather Service forecasts - the genuine basis mismatch recorded as #34. |
+| **What the code does** | The archive point for every city is now the point named by that market's own settlement rules. Chicago moved to Midway, Austin is recorded as an explicit, documented choice, and test 90 requires each entry to carry the NWS point response it was verified against - a note that cites no observation fails the build. |
+| **What you should do** | Open the two Chicago links and compare their relativeLocation fields: 41.7868,-87.7522 answers "Chicago, IL" on grid LOT 72,69 because Midway is the station Kalshi settles on. |
+
+**Evidence**
+
+- KXHIGHCHI point (Midway) - resolved: <https://api.weather.gov/points/41.7868,-87.7522>
+- O'Hare, the wrong point the first draft used: <https://api.weather.gov/points/41.9786,-87.9048>
+- Austin alternative (Bergstrom): <https://api.weather.gov/points/30.1975,-97.6664>
+- Station list in the captured rules — `data/history/.../rules_primary: KXHIGH* markets name CLINYC/CLILAX/CLIMDW/CLIMIA/CLIAUS/CLIDEN/CLIPHL/CLIPHX/CLISEA`
 
 ---
 

@@ -777,6 +777,24 @@ export const VERIFIED_FACTS = Object.freeze([
     value: 'feeRegime is one of taker_0.07, taker_zero, maker_0.0175, maker_free, settlement; the 2026-09-18 export counted 14,062 maker_free fills ($0.00), 9,645 maker_0.0175 fills ($16,279.65), 9,458 taker_0.07 fills ($22,730.39), 4,111 taker_zero fills ($0.00) and 629 settlements ($0.00)',
     url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf',
     usedIn: 'src/trade-ledger.js -> feeRegimeBreakdown(); data/ledger/summary.json; Trade Ledger tab'
+  },
+  {
+    id: 'V98', group: 'Weather signals', status: 'CAPTURED',
+    fact: 'All nine weather cities this repo trades have a VERIFIED NWS point identity',
+    value: 'GET https://api.weather.gov/points/{lat},{lon} fetched live 2026-09-18 -> KXHIGHNY 40.7829,-73.9654 = OKX grid 34,45 / zone NYZ072; KXHIGHLAX 33.9425,-118.4081 = LOX 148,41 / CAZ366; KXHIGHCHI 41.7868,-87.7522 (Midway) = LOT 72,69 / ILZ104; KXHIGHMIA 25.7959,-80.287 = MFL 106,51 / FLZ074; KXHIGHAUS 30.3167,-97.7667 (Camp Mabry) = EWX 155,93 / TXZ192; KXHIGHDEN 39.8561,-104.6737 = BOU 74,66 / COZ040; KXHIGHPHIL 39.8729,-75.2437 = PHI 48,75 / PAZ070; KXHIGHTPHX 33.4342,-112.0116 = PSR 161,57 / AZZ543; KXHIGHTSEA 47.4502,-122.3088 = SEW 124,61 / WAZ316.',
+    url: 'https://api.weather.gov/points/40.7829,-73.9654',
+    capturedAt: '2026-09-18',
+    usedIn: 'scripts/archive-forecasts.mjs -> FORECAST_LOCATIONS[].verifiedNote; test 90 asserts every note cites the point response and names the grid',
+    irregularity: '#39'
+  },
+  {
+    id: 'V99', group: 'Weather signals', status: 'CAPTURED',
+    fact: 'Kalshi names the settlement station for every weather market and it is not always the city airport',
+    value: 'Captured rules text: KXHIGHCHI settles on "the maximum temperature recorded at Chicago (CLIMDW)" - Midway, not O\'Hare; the full set is CLINYC, CLILAX, CLIMDW, CLIMIA, CLIAUS, CLIDEN, CLIPHL, CLIPHX, CLISEA, all "according to The Weather Company". The archive now follows the settlement station, and cites its exact rules string in verifiedNote.',
+    url: 'https://api.weather.gov/points/41.7868,-87.7522',
+    capturedAt: '2026-09-18',
+    usedIn: 'scripts/archive-forecasts.mjs -> FORECAST_LOCATIONS[].settlementStation; IRREGULARITIES.md #39',
+    irregularity: '#39'
   }
 ]);
 
@@ -1228,6 +1246,20 @@ export const IRREGULARITIES = Object.freeze([
     action:
       'The failures are logged and committed instead of hidden. Closing this needs a slower cadence (min_interval_ms) or a settlement pass in its own run — both are one-line changes to the request file.',
     userAction: 'Open data/history/_last-run.log and search for http_429: each line names a market whose settlement check did not complete.'
+  },
+  {
+    id: 39, severity: 'med',
+    title: 'The weather archive was pointed at the wrong airport for Chicago, and Austin has two plausible stations',
+    assumed: 'That "the city temperature" is the temperature at the city\'s main airport, so the archive was first configured with O\'Hare (41.9786,-87.9048) for KXHIGHCHI.',
+    truth: 'Kalshi names the settlement station in the market rules, and for Chicago it is CLIMDW - Midway - about 30 km south of O\'Hare with a different NWS grid (LOT 72,69 vs LOT 66,77). Reading the captured rules text caught the error before any market was traded on it. Austin has no unique answer: the rules say only "Austin (CLIAUS)", which can be Camp Mabry (30.3167,-97.7667) or Austin-Bergstrom (30.1975,-97.6664); the archive uses Camp Mabry and records the alternative so the choice is auditable rather than invisible. Separately, every one of these markets settles on The Weather Company observations while the archive stores National Weather Service forecasts - the genuine basis mismatch recorded as #34.',
+    evidence: [
+      { label: 'KXHIGHCHI point (Midway) - resolved', url: 'https://api.weather.gov/points/41.7868,-87.7522' },
+      { label: 'O\'Hare, the wrong point the first draft used', url: 'https://api.weather.gov/points/41.9786,-87.9048' },
+      { label: 'Austin alternative (Bergstrom)', url: 'https://api.weather.gov/points/30.1975,-97.6664' },
+      { label: 'Station list in the captured rules', url: null, text: 'data/history/.../rules_primary: KXHIGH* markets name CLINYC/CLILAX/CLIMDW/CLIMIA/CLIAUS/CLIDEN/CLIPHL/CLIPHX/CLISEA' }
+    ],
+    action: 'The archive point for every city is now the point named by that market\'s own settlement rules. Chicago moved to Midway, Austin is recorded as an explicit, documented choice, and test 90 requires each entry to carry the NWS point response it was verified against - a note that cites no observation fails the build.',
+    userAction: 'Open the two Chicago links and compare their relativeLocation fields: 41.7868,-87.7522 answers "Chicago, IL" on grid LOT 72,69 because Midway is the station Kalshi settles on.'
   }
 ]);
 
@@ -1260,7 +1292,7 @@ export const COMPETITION_SITE_ANALYSIS = Object.freeze([
     whatWeTook: 'A contest calendar with entry periods and a scoring summary per entrant.',
     whatWeDidNotTake: 'No entries or branding.',
     implementedIn: 'Calendar strip + per-trader computed stats (return, drawdown, fees, unfilled)'
-  }
+  },
 ]);
 
 /** Group facts for rendering. */

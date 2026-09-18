@@ -1,6 +1,6 @@
 {
  "ledgerVersion": 2,
- "generatedAt": "2026-09-18T13:06:40.499Z",
+ "generatedAt": "2026-09-18T13:23:23.120Z",
  "seed": 20260917,
  "columns": {
   "roundTrips": [
@@ -39758,7 +39758,7 @@
  },
  "provenance": {
   "seed": 20260917,
-  "generatedAt": "2026-09-18T13:06:40.499Z",
+  "generatedAt": "2026-09-18T13:23:23.120Z",
   "engine": "ReplayEngine (deterministic, seeded)",
   "flights": {
    "daily": {
@@ -39768,7 +39768,7 @@
    },
    "hourly": {
     "period": 60,
-    "strategies": 14
+    "strategies": 15
    },
    "micro": {
     "period": 1,
