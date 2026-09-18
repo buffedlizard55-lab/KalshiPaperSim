@@ -1,6 +1,6 @@
 {
   "last_run": {
-    "at": "2026-09-18T13:24:29.350Z",
+    "at": "2026-09-18T13:28:58.995Z",
     "locations": [
       "nyc-central-park",
       "los-angeles-lax",
@@ -12,6 +12,8 @@
       "phoenix-phx",
       "seattle-sea"
     ],
+    "captured": 9,
+    "failures": [],
     "workflow": ".github/workflows/weather-signals.yml"
   }
 }
