@@ -1,0 +1,774 @@
+{
+  "ticker": "KXNFLTOTAL-26SEP20JACDEN-45",
+  "series_ticker": "KXNFLTOTAL",
+  "period_interval": 1440,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789358400,
+      "open_interest_fp": "0.00",
+      "price": {},
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.5100",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.5100",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4800",
+        "high_dollars": "0.4900",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
+    },
+    {
+      "end_period_ts": 1789444800,
+      "open_interest_fp": "3512.18",
+      "price": {
+        "close_dollars": "0.5100",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.4900",
+        "mean_dollars": "0.5033",
+        "open_dollars": "0.5100"
+      },
+      "volume_fp": "6063.11",
+      "yes_ask": {
+        "close_dollars": "0.5100",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.5000",
+        "open_dollars": "0.5100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4900",
+        "high_dollars": "0.5200",
+        "low_dollars": "0.4600",
+        "open_dollars": "0.4900"
+      }
+    },
+    {
+      "end_period_ts": 1789531200,
+      "open_interest_fp": "35739.29",
+      "price": {
+        "close_dollars": "0.5100",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.5000",
+        "mean_dollars": "0.5123",
+        "open_dollars": "0.5100",
+        "previous_dollars": "0.5100"
+      },
+      "volume_fp": "35008.18",
+      "yes_ask": {
+        "close_dollars": "0.5100",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.5000",
+        "open_dollars": "0.5100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5000",
+        "high_dollars": "0.5200",
+        "low_dollars": "0.4900",
+        "open_dollars": "0.4900"
+      }
+    },
+    {
+      "end_period_ts": 1789617600,
+      "open_interest_fp": "45787.12",
+      "price": {
+        "close_dollars": "0.5000",
+        "high_dollars": "0.5100",
+        "low_dollars": "0.5000",
+        "mean_dollars": "0.5096",
+        "open_dollars": "0.5100",
+        "previous_dollars": "0.5100"
+      },
+      "volume_fp": "10047.83",
+      "yes_ask": {
+        "close_dollars": "0.5100",
+        "high_dollars": "0.5100",
+        "low_dollars": "0.5100",
+        "open_dollars": "0.5100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5000",
+        "high_dollars": "0.5000",
+        "low_dollars": "0.5000",
+        "open_dollars": "0.5000"
+      }
+    },
+    {
+      "end_period_ts": 1789704000,
+      "open_interest_fp": "60544.40",
+      "price": {
+        "close_dollars": "0.5400",
+        "high_dollars": "0.5400",
+        "low_dollars": "0.5000",
+        "mean_dollars": "0.5104",
+        "open_dollars": "0.5100",
+        "previous_dollars": "0.5000"
+      },
+      "volume_fp": "23749.02",
+      "yes_ask": {
+        "close_dollars": "0.5400",
+        "high_dollars": "0.5400",
+        "low_dollars": "0.5100",
+        "open_dollars": "0.5100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5300",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.5000",
+        "open_dollars": "0.5000"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-18T22:39:12.722Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20JACDEN-45/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1697369.00"
+            ],
+            [
+              "0.0200",
+              "8650.00"
+            ],
+            [
+              "0.0300",
+              "7970.00"
+            ],
+            [
+              "0.0400",
+              "148873.00"
+            ],
+            [
+              "0.0700",
+              "200.00"
+            ],
+            [
+              "0.0900",
+              "116627.00"
+            ],
+            [
+              "0.1200",
+              "200.00"
+            ],
+            [
+              "0.1800",
+              "36406.00"
+            ],
+            [
+              "0.1900",
+              "2127.00"
+            ],
+            [
+              "0.2600",
+              "576.00"
+            ],
+            [
+              "0.3600",
+              "196.00"
+            ],
+            [
+              "0.3900",
+              "334.00"
+            ],
+            [
+              "0.4000",
+              "162.00"
+            ],
+            [
+              "0.4100",
+              "542.00"
+            ],
+            [
+              "0.4200",
+              "4025.48"
+            ],
+            [
+              "0.4300",
+              "63131.30"
+            ],
+            [
+              "0.4400",
+              "89306.00"
+            ],
+            [
+              "0.4500",
+              "225776.95"
+            ],
+            [
+              "0.4600",
+              "198529.31"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1648475.30"
+            ],
+            [
+              "0.0200",
+              "9070.00"
+            ],
+            [
+              "0.0300",
+              "5753.00"
+            ],
+            [
+              "0.0400",
+              "59404.00"
+            ],
+            [
+              "0.0700",
+              "200.00"
+            ],
+            [
+              "0.0900",
+              "110631.00"
+            ],
+            [
+              "0.1000",
+              "45461.01"
+            ],
+            [
+              "0.1200",
+              "200.00"
+            ],
+            [
+              "0.1700",
+              "38892.00"
+            ],
+            [
+              "0.1800",
+              "21207.00"
+            ],
+            [
+              "0.1900",
+              "19660.00"
+            ],
+            [
+              "0.2000",
+              "100.00"
+            ],
+            [
+              "0.2200",
+              "40.00"
+            ],
+            [
+              "0.2300",
+              "2173.00"
+            ],
+            [
+              "0.3000",
+              "19.32"
+            ],
+            [
+              "0.3300",
+              "448.00"
+            ],
+            [
+              "0.4000",
+              "250.00"
+            ],
+            [
+              "0.4200",
+              "110.00"
+            ],
+            [
+              "0.4300",
+              "140.00"
+            ],
+            [
+              "0.4400",
+              "220.00"
+            ],
+            [
+              "0.4500",
+              "79.00"
+            ],
+            [
+              "0.4600",
+              "232.00"
+            ],
+            [
+              "0.4800",
+              "4009.00"
+            ],
+            [
+              "0.4900",
+              "1487.00"
+            ],
+            [
+              "0.5000",
+              "45965.12"
+            ],
+            [
+              "0.5100",
+              "272429.24"
+            ],
+            [
+              "0.5200",
+              "368434.16"
+            ],
+            [
+              "0.5300",
+              "27334.20"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-18T23:04:41.376Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20JACDEN-45/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1697369.00"
+            ],
+            [
+              "0.0200",
+              "8650.00"
+            ],
+            [
+              "0.0300",
+              "7970.00"
+            ],
+            [
+              "0.0400",
+              "170119.00"
+            ],
+            [
+              "0.0700",
+              "200.00"
+            ],
+            [
+              "0.0900",
+              "116627.00"
+            ],
+            [
+              "0.1200",
+              "200.00"
+            ],
+            [
+              "0.1800",
+              "36406.00"
+            ],
+            [
+              "0.1900",
+              "2127.00"
+            ],
+            [
+              "0.2600",
+              "576.00"
+            ],
+            [
+              "0.3600",
+              "196.00"
+            ],
+            [
+              "0.3900",
+              "334.00"
+            ],
+            [
+              "0.4000",
+              "162.00"
+            ],
+            [
+              "0.4100",
+              "542.00"
+            ],
+            [
+              "0.4200",
+              "4025.48"
+            ],
+            [
+              "0.4300",
+              "63131.30"
+            ],
+            [
+              "0.4400",
+              "89306.00"
+            ],
+            [
+              "0.4500",
+              "226033.95"
+            ],
+            [
+              "0.4600",
+              "198272.31"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1648475.30"
+            ],
+            [
+              "0.0200",
+              "9070.00"
+            ],
+            [
+              "0.0300",
+              "5753.00"
+            ],
+            [
+              "0.0400",
+              "49611.00"
+            ],
+            [
+              "0.0700",
+              "200.00"
+            ],
+            [
+              "0.0900",
+              "110631.00"
+            ],
+            [
+              "0.1000",
+              "45461.01"
+            ],
+            [
+              "0.1200",
+              "200.00"
+            ],
+            [
+              "0.1700",
+              "38892.00"
+            ],
+            [
+              "0.1800",
+              "22998.00"
+            ],
+            [
+              "0.1900",
+              "19660.00"
+            ],
+            [
+              "0.2200",
+              "40.00"
+            ],
+            [
+              "0.2300",
+              "2173.00"
+            ],
+            [
+              "0.3000",
+              "19.32"
+            ],
+            [
+              "0.3300",
+              "448.00"
+            ],
+            [
+              "0.4000",
+              "250.00"
+            ],
+            [
+              "0.4200",
+              "110.00"
+            ],
+            [
+              "0.4300",
+              "140.00"
+            ],
+            [
+              "0.4400",
+              "220.00"
+            ],
+            [
+              "0.4500",
+              "79.00"
+            ],
+            [
+              "0.4600",
+              "232.00"
+            ],
+            [
+              "0.4800",
+              "4009.00"
+            ],
+            [
+              "0.4900",
+              "1487.00"
+            ],
+            [
+              "0.5000",
+              "45965.12"
+            ],
+            [
+              "0.5100",
+              "272429.24"
+            ],
+            [
+              "0.5200",
+              "368177.16"
+            ],
+            [
+              "0.5300",
+              "27591.20"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-18T23:07:37.860Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20JACDEN-45/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1697369.00"
+            ],
+            [
+              "0.0200",
+              "8650.00"
+            ],
+            [
+              "0.0300",
+              "7970.00"
+            ],
+            [
+              "0.0400",
+              "170119.00"
+            ],
+            [
+              "0.0700",
+              "200.00"
+            ],
+            [
+              "0.0900",
+              "116627.00"
+            ],
+            [
+              "0.1200",
+              "200.00"
+            ],
+            [
+              "0.1800",
+              "36406.00"
+            ],
+            [
+              "0.1900",
+              "2127.00"
+            ],
+            [
+              "0.2600",
+              "576.00"
+            ],
+            [
+              "0.3600",
+              "196.00"
+            ],
+            [
+              "0.3900",
+              "334.00"
+            ],
+            [
+              "0.4000",
+              "162.00"
+            ],
+            [
+              "0.4100",
+              "542.00"
+            ],
+            [
+              "0.4200",
+              "4025.48"
+            ],
+            [
+              "0.4300",
+              "63131.30"
+            ],
+            [
+              "0.4400",
+              "89308.27"
+            ],
+            [
+              "0.4500",
+              "226033.95"
+            ],
+            [
+              "0.4600",
+              "198272.31"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1648475.30"
+            ],
+            [
+              "0.0200",
+              "9070.00"
+            ],
+            [
+              "0.0300",
+              "5753.00"
+            ],
+            [
+              "0.0400",
+              "49611.00"
+            ],
+            [
+              "0.0700",
+              "200.00"
+            ],
+            [
+              "0.0900",
+              "110631.00"
+            ],
+            [
+              "0.1000",
+              "45461.01"
+            ],
+            [
+              "0.1200",
+              "200.00"
+            ],
+            [
+              "0.1700",
+              "38892.00"
+            ],
+            [
+              "0.1800",
+              "22998.00"
+            ],
+            [
+              "0.1900",
+              "19660.00"
+            ],
+            [
+              "0.2200",
+              "40.00"
+            ],
+            [
+              "0.2300",
+              "2173.00"
+            ],
+            [
+              "0.3000",
+              "19.32"
+            ],
+            [
+              "0.3300",
+              "448.00"
+            ],
+            [
+              "0.4000",
+              "250.00"
+            ],
+            [
+              "0.4200",
+              "110.00"
+            ],
+            [
+              "0.4300",
+              "140.00"
+            ],
+            [
+              "0.4400",
+              "220.00"
+            ],
+            [
+              "0.4500",
+              "79.00"
+            ],
+            [
+              "0.4600",
+              "232.00"
+            ],
+            [
+              "0.4800",
+              "4009.00"
+            ],
+            [
+              "0.4900",
+              "1487.00"
+            ],
+            [
+              "0.5000",
+              "45965.12"
+            ],
+            [
+              "0.5100",
+              "272431.20"
+            ],
+            [
+              "0.5200",
+              "368177.16"
+            ],
+            [
+              "0.5300",
+              "27591.20"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-09-22T20:05:00Z",
+    "created_time": "2026-09-14T01:00:58.887763Z",
+    "early_close_condition": "This market will close and expire early if the event occurs.",
+    "event_ticker": "KXNFLTOTAL-26SEP20JACDEN",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-09-20T23:05:00Z",
+    "expiration_time": "2026-09-22T20:05:00Z",
+    "expiration_value": "",
+    "floor_strike": 44.5,
+    "last_price_dollars": "0.5300",
+    "latest_expiration_time": "2026-09-22T20:05:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "0.4700",
+    "no_bid_dollars": "0.4600",
+    "no_sub_title": "Over 44.5 points scored",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-20T23:05:00Z",
+    "open_interest_fp": "60544.40",
+    "open_time": "2026-09-14T01:05:00Z",
+    "previous_price_dollars": "0.5200",
+    "previous_yes_ask_dollars": "0.5400",
+    "previous_yes_bid_dollars": "0.5300",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Jacksonville and Denver collectively score more than 44.5 points in the Jacksonville vs Denver Pro Football game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
+    "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_timer_seconds": 60,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNFLTOTAL-26SEP20JACDEN-45",
+    "title": "Full Game: over 44.5 points scored?",
+    "updated_time": "2026-09-14T01:05:00.61465Z",
+    "volume_24h_fp": "85.94",
+    "volume_fp": "74927.17",
+    "yes_ask_dollars": "0.5400",
+    "yes_ask_size_fp": "198272.31",
+    "yes_bid_dollars": "0.5300",
+    "yes_bid_size_fp": "27591.20",
+    "yes_sub_title": "Over 44.5 points scored"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20JACDEN-45",
+  "market_captured_at": "2026-09-18T23:07:37.199Z",
+  "status": "active",
+  "last_ingested_at": "2026-09-18T23:07:37.830Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20JACDEN-45/candlesticks?start_ts=1789704001&end_ts=1789772857&period_interval=1440"
+}

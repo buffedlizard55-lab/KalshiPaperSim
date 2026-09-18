@@ -1,0 +1,190 @@
+{
+  "ticker": "KXNHLSPREAD-26SEP21COLWPG-COL2",
+  "series_ticker": "KXNHLSPREAD",
+  "period_interval": 1,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789693560,
+      "open_interest_fp": "0.00",
+      "price": {},
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1789693620,
+      "open_interest_fp": "0.00",
+      "price": {},
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1789693680,
+      "open_interest_fp": "0.00",
+      "price": {},
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.6500",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.6500",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-18T22:52:43.419Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP21COLWPG-COL2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "653.00"
+            ],
+            [
+              "0.0500",
+              "4004.00"
+            ],
+            [
+              "0.1200",
+              "5000.00"
+            ],
+            [
+              "0.3500",
+              "50.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-18T22:59:01.618Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP21COLWPG-COL2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "653.00"
+            ],
+            [
+              "0.0500",
+              "4004.00"
+            ],
+            [
+              "0.1200",
+              "5000.00"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.3500",
+              "50.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-09-24T00:00:00Z",
+    "created_time": "2026-09-18T01:01:03.32768Z",
+    "custom_strike": {
+      "hockey_team": "70ecc991-a426-4567-b6ec-53f529f29078"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNHLSPREAD-26SEP21COLWPG",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-09-22T03:00:00Z",
+    "expiration_time": "2026-09-24T00:00:00Z",
+    "expiration_value": "",
+    "floor_strike": 1.5,
+    "last_price_dollars": "0.0000",
+    "latest_expiration_time": "2026-09-24T00:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "0.9900",
+    "no_bid_dollars": "0.3500",
+    "no_sub_title": "Colorado wins by over 1.5 goals",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-22T03:00:00Z",
+    "open_interest_fp": "0.00",
+    "open_time": "2026-09-18T01:05:00Z",
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Colorado wins by over 1.5 goals in the Colorado vs Winnipeg NHL game originally scheduled for Sep 21, 2026, then the market resolves to Yes.",
+    "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+    "settlement_timer_seconds": 45,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNHLSPREAD-26SEP21COLWPG-COL2",
+    "title": "Colorado wins by over 1.5 goals",
+    "updated_time": "2026-09-18T01:13:04.736302Z",
+    "volume_24h_fp": "0.00",
+    "volume_fp": "0.00",
+    "yes_ask_dollars": "0.6500",
+    "yes_ask_size_fp": "50.00",
+    "yes_bid_dollars": "0.0100",
+    "yes_bid_size_fp": "300.00",
+    "yes_sub_title": "Colorado wins by over 1.5 goals"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP21COLWPG-COL2",
+  "market_captured_at": "2026-09-18T22:59:00.956Z",
+  "status": "active",
+  "last_ingested_at": "2026-09-18T22:59:01.588Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLSPREAD/markets/KXNHLSPREAD-26SEP21COLWPG-COL2/candlesticks?start_ts=1789693681&end_ts=1789772341&period_interval=1"
+}

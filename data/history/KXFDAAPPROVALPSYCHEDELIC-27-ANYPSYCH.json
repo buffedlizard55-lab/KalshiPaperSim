@@ -11017,6 +11017,250 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-18T23:05:17.673Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "7007.15"
+            ],
+            [
+              "0.0200",
+              "7675.41"
+            ],
+            [
+              "0.0300",
+              "8440.35"
+            ],
+            [
+              "0.0400",
+              "565.38"
+            ],
+            [
+              "0.0500",
+              "17.95"
+            ],
+            [
+              "0.0600",
+              "0.70"
+            ],
+            [
+              "0.0800",
+              "170.62"
+            ],
+            [
+              "0.0900",
+              "115.58"
+            ],
+            [
+              "0.1100",
+              "22.92"
+            ],
+            [
+              "0.1200",
+              "36.05"
+            ],
+            [
+              "0.1400",
+              "18.78"
+            ],
+            [
+              "0.1500",
+              "12.61"
+            ],
+            [
+              "0.1600",
+              "156.93"
+            ],
+            [
+              "0.1700",
+              "2.00"
+            ],
+            [
+              "0.1800",
+              "143.75"
+            ],
+            [
+              "0.2000",
+              "41.19"
+            ],
+            [
+              "0.2300",
+              "26.98"
+            ],
+            [
+              "0.2400",
+              "37.88"
+            ],
+            [
+              "0.2500",
+              "1130.22"
+            ],
+            [
+              "0.2700",
+              "4.68"
+            ],
+            [
+              "0.2900",
+              "19.54"
+            ],
+            [
+              "0.3000",
+              "77.42"
+            ],
+            [
+              "0.3100",
+              "19.14"
+            ],
+            [
+              "0.3400",
+              "33.72"
+            ],
+            [
+              "0.3500",
+              "111.00"
+            ],
+            [
+              "0.3600",
+              "1268.00"
+            ],
+            [
+              "0.3700",
+              "150.00"
+            ],
+            [
+              "0.3800",
+              "87.14"
+            ],
+            [
+              "0.3900",
+              "36.00"
+            ],
+            [
+              "0.4300",
+              "60.00"
+            ],
+            [
+              "0.5000",
+              "248.60"
+            ],
+            [
+              "0.5100",
+              "1.88"
+            ],
+            [
+              "0.5200",
+              "19.23"
+            ],
+            [
+              "0.5500",
+              "419.28"
+            ],
+            [
+              "0.5600",
+              "200.00"
+            ],
+            [
+              "0.6500",
+              "2.00"
+            ],
+            [
+              "0.6700",
+              "500.00"
+            ],
+            [
+              "0.6800",
+              "7.65"
+            ],
+            [
+              "0.6900",
+              "50.00"
+            ],
+            [
+              "0.7000",
+              "53.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "4484.34"
+            ],
+            [
+              "0.0200",
+              "6543.32"
+            ],
+            [
+              "0.0300",
+              "3143.79"
+            ],
+            [
+              "0.0400",
+              "633.89"
+            ],
+            [
+              "0.0500",
+              "2024.63"
+            ],
+            [
+              "0.0600",
+              "948.43"
+            ],
+            [
+              "0.0700",
+              "2698.95"
+            ],
+            [
+              "0.0800",
+              "23.57"
+            ],
+            [
+              "0.0900",
+              "3613.50"
+            ],
+            [
+              "0.1000",
+              "329.76"
+            ],
+            [
+              "0.1100",
+              "361.63"
+            ],
+            [
+              "0.1200",
+              "25.01"
+            ],
+            [
+              "0.1300",
+              "566.59"
+            ],
+            [
+              "0.1400",
+              "104.95"
+            ],
+            [
+              "0.2200",
+              "1393.11"
+            ],
+            [
+              "0.2300",
+              "200.00"
+            ],
+            [
+              "0.2500",
+              "500.00"
+            ],
+            [
+              "0.2600",
+              "41.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -11029,19 +11273,19 @@
     "expected_expiration_time": "2027-01-01T15:00:00Z",
     "expiration_time": "2027-01-08T15:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.2900",
+    "last_price_dollars": "0.2600",
     "latest_expiration_time": "2027-01-08T15:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.7400",
-    "no_bid_dollars": "0.6900",
+    "no_bid_dollars": "0.7000",
     "no_sub_title": "Any psychedelic substance for medical use",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "90979.58",
+    "open_interest_fp": "91012.77",
     "open_time": "2025-07-17T14:00:00Z",
-    "previous_price_dollars": "0.2300",
-    "previous_yes_ask_dollars": "0.2500",
-    "previous_yes_bid_dollars": "0.2300",
+    "previous_price_dollars": "0.3100",
+    "previous_yes_ask_dollars": "0.3200",
+    "previous_yes_bid_dollars": "0.2500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -11059,17 +11303,17 @@
     "ticker": "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
     "title": "Will the FDA approve Any psychedelic substance for medical use this year?",
     "updated_time": "2026-05-20T22:50:27.450124Z",
-    "volume_24h_fp": "1770.64",
-    "volume_fp": "387321.39",
-    "yes_ask_dollars": "0.3100",
-    "yes_ask_size_fp": "55.41",
+    "volume_24h_fp": "1154.01",
+    "volume_fp": "387462.73",
+    "yes_ask_dollars": "0.3000",
+    "yes_ask_size_fp": "53.00",
     "yes_bid_dollars": "0.2600",
-    "yes_bid_size_fp": "572.26",
+    "yes_bid_size_fp": "41.00",
     "yes_sub_title": "Any psychedelic substance for medical use"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
-  "market_captured_at": "2026-09-18T18:45:52.267Z",
+  "market_captured_at": "2026-09-18T23:05:17.011Z",
   "status": "active",
-  "last_ingested_at": "2026-09-18T18:45:52.889Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALPSYCHEDELIC/markets/KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH/candlesticks?start_ts=1789704001&end_ts=1789757152&period_interval=1440"
+  "last_ingested_at": "2026-09-18T23:05:17.642Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALPSYCHEDELIC/markets/KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH/candlesticks?start_ts=1789704001&end_ts=1789772717&period_interval=1440"
 }

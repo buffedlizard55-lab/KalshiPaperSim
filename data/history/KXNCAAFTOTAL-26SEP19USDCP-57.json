@@ -1,0 +1,437 @@
+{
+  "ticker": "KXNCAAFTOTAL-26SEP19USDCP-57",
+  "series_ticker": "KXNCAAFTOTAL",
+  "period_interval": 1440,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789617600,
+      "open_interest_fp": "0.00",
+      "price": {},
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.5400",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.5300",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4600",
+        "high_dollars": "0.4600",
+        "low_dollars": "0.2100",
+        "open_dollars": "0.4600"
+      }
+    },
+    {
+      "end_period_ts": 1789704000,
+      "open_interest_fp": "0.00",
+      "price": {},
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.6000",
+        "high_dollars": "0.6500",
+        "low_dollars": "0.5400",
+        "open_dollars": "0.5400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4200",
+        "high_dollars": "0.4600",
+        "low_dollars": "0.3500",
+        "open_dollars": "0.4600"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-18T22:38:49.711Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19USDCP-57/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "812.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "678.00"
+            ],
+            [
+              "0.0500",
+              "103.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "103.00"
+            ],
+            [
+              "0.1600",
+              "100.00"
+            ],
+            [
+              "0.1700",
+              "1688.00"
+            ],
+            [
+              "0.2100",
+              "100.00"
+            ],
+            [
+              "0.3500",
+              "1001.00"
+            ],
+            [
+              "0.3900",
+              "1426.12"
+            ],
+            [
+              "0.4000",
+              "20.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "811.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "711.00"
+            ],
+            [
+              "0.0500",
+              "109.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "108.00"
+            ],
+            [
+              "0.1600",
+              "100.00"
+            ],
+            [
+              "0.2100",
+              "100.00"
+            ],
+            [
+              "0.2200",
+              "1734.00"
+            ],
+            [
+              "0.3500",
+              "1001.00"
+            ],
+            [
+              "0.3900",
+              "1001.00"
+            ],
+            [
+              "0.5200",
+              "941.00"
+            ],
+            [
+              "0.5300",
+              "28.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-18T23:04:14.163Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19USDCP-57/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "812.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "678.00"
+            ],
+            [
+              "0.0500",
+              "103.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "103.00"
+            ],
+            [
+              "0.1600",
+              "100.00"
+            ],
+            [
+              "0.1800",
+              "1586.00"
+            ],
+            [
+              "0.2100",
+              "100.00"
+            ],
+            [
+              "0.3500",
+              "1001.00"
+            ],
+            [
+              "0.3900",
+              "1426.12"
+            ],
+            [
+              "0.4000",
+              "20.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "811.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "30.00"
+            ],
+            [
+              "0.0500",
+              "109.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "108.00"
+            ],
+            [
+              "0.1600",
+              "100.00"
+            ],
+            [
+              "0.2100",
+              "100.00"
+            ],
+            [
+              "0.2300",
+              "2350.00"
+            ],
+            [
+              "0.3500",
+              "1001.00"
+            ],
+            [
+              "0.3900",
+              "1001.00"
+            ],
+            [
+              "0.5200",
+              "941.00"
+            ],
+            [
+              "0.5300",
+              "28.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-18T23:07:10.684Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19USDCP-57/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "812.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "678.00"
+            ],
+            [
+              "0.0500",
+              "103.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "103.00"
+            ],
+            [
+              "0.1600",
+              "100.00"
+            ],
+            [
+              "0.1800",
+              "1586.00"
+            ],
+            [
+              "0.2100",
+              "100.00"
+            ],
+            [
+              "0.3500",
+              "1001.00"
+            ],
+            [
+              "0.3900",
+              "1426.12"
+            ],
+            [
+              "0.4000",
+              "20.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "811.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "30.00"
+            ],
+            [
+              "0.0500",
+              "109.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "108.00"
+            ],
+            [
+              "0.1600",
+              "100.00"
+            ],
+            [
+              "0.2100",
+              "100.00"
+            ],
+            [
+              "0.2300",
+              "2350.00"
+            ],
+            [
+              "0.3500",
+              "1001.00"
+            ],
+            [
+              "0.3900",
+              "1001.00"
+            ],
+            [
+              "0.5200",
+              "941.00"
+            ],
+            [
+              "0.5300",
+              "28.00"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-09-22T00:00:00Z",
+    "created_time": "2026-09-16T04:03:48.544939Z",
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNCAAFTOTAL-26SEP19USDCP",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-09-20T03:00:00Z",
+    "expiration_time": "2026-09-22T00:00:00Z",
+    "expiration_value": "",
+    "floor_strike": 56.5,
+    "last_price_dollars": "0.6100",
+    "latest_expiration_time": "2026-09-22T00:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "0.4700",
+    "no_bid_dollars": "0.4000",
+    "no_sub_title": "Over 56.5 points scored",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-20T03:00:00Z",
+    "open_interest_fp": "878.88",
+    "open_time": "2026-09-16T04:06:00Z",
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask_dollars": "0.5800",
+    "previous_yes_bid_dollars": "0.4300",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If the teams collectively score more than 56.5 points in the San Diego vs Cal Poly college football game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
+    "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_timer_seconds": 180,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNCAAFTOTAL-26SEP19USDCP-57",
+    "title": "Over 56.5 points scored",
+    "updated_time": "2026-09-16T04:06:01.135582Z",
+    "volume_24h_fp": "878.88",
+    "volume_fp": "878.88",
+    "yes_ask_dollars": "0.6000",
+    "yes_ask_size_fp": "20.00",
+    "yes_bid_dollars": "0.5300",
+    "yes_bid_size_fp": "28.00",
+    "yes_sub_title": "Over 56.5 points scored"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19USDCP-57",
+  "market_captured_at": "2026-09-18T23:07:10.020Z",
+  "status": "active",
+  "last_ingested_at": "2026-09-18T23:07:10.652Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19USDCP-57/candlesticks?start_ts=1789704001&end_ts=1789772830&period_interval=1440"
+}

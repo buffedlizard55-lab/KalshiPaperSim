@@ -1,0 +1,601 @@
+{
+  "ticker": "KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5",
+  "series_ticker": "KXMLBKS",
+  "period_interval": 1440,
+  "source": "live_api",
+  "candlesticks": [],
+  "books": [
+    {
+      "captured_at": "2026-09-18T22:38:06.961Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "244.24"
+            ],
+            [
+              "0.0200",
+              "115.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.2100",
+              "1.00"
+            ],
+            [
+              "0.2500",
+              "126.48"
+            ],
+            [
+              "0.2600",
+              "10.00"
+            ],
+            [
+              "0.2800",
+              "2158.00"
+            ],
+            [
+              "0.3000",
+              "175.00"
+            ],
+            [
+              "0.3100",
+              "101.00"
+            ],
+            [
+              "0.3600",
+              "102.00"
+            ],
+            [
+              "0.4100",
+              "193.00"
+            ],
+            [
+              "0.4400",
+              "125.00"
+            ],
+            [
+              "0.4500",
+              "250.00"
+            ],
+            [
+              "0.4600",
+              "210.00"
+            ],
+            [
+              "0.4800",
+              "72.00"
+            ],
+            [
+              "0.4900",
+              "312.00"
+            ],
+            [
+              "0.5100",
+              "275.00"
+            ],
+            [
+              "0.5400",
+              "253.00"
+            ],
+            [
+              "0.5500",
+              "500.00"
+            ],
+            [
+              "0.5800",
+              "818.00"
+            ],
+            [
+              "0.5900",
+              "401.00"
+            ],
+            [
+              "0.6000",
+              "29.00"
+            ],
+            [
+              "0.6100",
+              "20.00"
+            ],
+            [
+              "0.6300",
+              "375.50"
+            ],
+            [
+              "0.6400",
+              "233.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "14.00"
+            ],
+            [
+              "0.0200",
+              "2.00"
+            ],
+            [
+              "0.0300",
+              "11.00"
+            ],
+            [
+              "0.0400",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "48.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0800",
+              "2517.00"
+            ],
+            [
+              "0.0900",
+              "98.00"
+            ],
+            [
+              "0.1000",
+              "207.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "1.00"
+            ],
+            [
+              "0.1800",
+              "250.00"
+            ],
+            [
+              "0.2700",
+              "70.00"
+            ],
+            [
+              "0.2900",
+              "239.00"
+            ],
+            [
+              "0.3000",
+              "129.00"
+            ],
+            [
+              "0.3100",
+              "142.18"
+            ],
+            [
+              "0.3200",
+              "211.23"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-18T23:03:23.640Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "107.24"
+            ],
+            [
+              "0.0200",
+              "55.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0400",
+              "50.00"
+            ],
+            [
+              "0.0500",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.1400",
+              "10.00"
+            ],
+            [
+              "0.2100",
+              "1.00"
+            ],
+            [
+              "0.2200",
+              "5.00"
+            ],
+            [
+              "0.2400",
+              "10.00"
+            ],
+            [
+              "0.2500",
+              "126.48"
+            ],
+            [
+              "0.2600",
+              "201.00"
+            ],
+            [
+              "0.2900",
+              "10.00"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.3400",
+              "10.00"
+            ],
+            [
+              "0.3900",
+              "88.00"
+            ],
+            [
+              "0.4600",
+              "28.00"
+            ],
+            [
+              "0.4800",
+              "326.00"
+            ],
+            [
+              "0.5000",
+              "7.00"
+            ],
+            [
+              "0.5300",
+              "250.00"
+            ],
+            [
+              "0.5800",
+              "41.00"
+            ],
+            [
+              "0.5900",
+              "41.00"
+            ],
+            [
+              "0.6000",
+              "83.00"
+            ],
+            [
+              "0.6800",
+              "99.00"
+            ],
+            [
+              "0.6900",
+              "552.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2.00"
+            ],
+            [
+              "0.0200",
+              "2.00"
+            ],
+            [
+              "0.0300",
+              "11.00"
+            ],
+            [
+              "0.0400",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "48.00"
+            ],
+            [
+              "0.0600",
+              "251.00"
+            ],
+            [
+              "0.0700",
+              "260.30"
+            ],
+            [
+              "0.0800",
+              "16.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "1.00"
+            ],
+            [
+              "0.1700",
+              "149.00"
+            ],
+            [
+              "0.1800",
+              "52.00"
+            ],
+            [
+              "0.2300",
+              "14.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-18T23:06:20.175Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "227.24"
+            ],
+            [
+              "0.0200",
+              "72.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "2.00"
+            ],
+            [
+              "0.0700",
+              "400.00"
+            ],
+            [
+              "0.0800",
+              "25.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.2100",
+              "101.00"
+            ],
+            [
+              "0.2200",
+              "5.00"
+            ],
+            [
+              "0.2500",
+              "126.48"
+            ],
+            [
+              "0.2600",
+              "202.00"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.3500",
+              "31.00"
+            ],
+            [
+              "0.3900",
+              "42.00"
+            ],
+            [
+              "0.4400",
+              "100.00"
+            ],
+            [
+              "0.4700",
+              "124.00"
+            ],
+            [
+              "0.4800",
+              "326.00"
+            ],
+            [
+              "0.5100",
+              "251.00"
+            ],
+            [
+              "0.5200",
+              "35.00"
+            ],
+            [
+              "0.5500",
+              "23.00"
+            ],
+            [
+              "0.5700",
+              "23.00"
+            ],
+            [
+              "0.5900",
+              "46.00"
+            ],
+            [
+              "0.6000",
+              "1.00"
+            ],
+            [
+              "0.6100",
+              "10.00"
+            ],
+            [
+              "0.6300",
+              "52.00"
+            ],
+            [
+              "0.6400",
+              "13.00"
+            ],
+            [
+              "0.6500",
+              "36.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3.00"
+            ],
+            [
+              "0.0200",
+              "2.00"
+            ],
+            [
+              "0.0300",
+              "11.00"
+            ],
+            [
+              "0.0400",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "48.00"
+            ],
+            [
+              "0.0600",
+              "2.00"
+            ],
+            [
+              "0.0800",
+              "1.00"
+            ],
+            [
+              "0.0900",
+              "98.00"
+            ],
+            [
+              "0.1100",
+              "278.00"
+            ],
+            [
+              "0.1500",
+              "29.00"
+            ],
+            [
+              "0.1600",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "111.00"
+            ],
+            [
+              "0.2300",
+              "38.00"
+            ],
+            [
+              "0.2400",
+              "62.00"
+            ],
+            [
+              "0.2500",
+              "19.00"
+            ],
+            [
+              "0.2600",
+              "70.30"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-09-21T22:40:00Z",
+    "created_time": "2026-09-18T05:17:20.582534Z",
+    "custom_strike": {
+      "baseball_player": "a19d9509-9f2a-4fd1-a999-e45e911e0bd5",
+      "baseball_team": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724"
+    },
+    "early_close_condition": "This market will close and expire after the event occurs.",
+    "event_ticker": "KXMLBKS-26SEP181840CHCCIN",
+    "exchange_index": 3,
+    "expected_expiration_time": "2026-09-19T01:40:00Z",
+    "expiration_time": "2026-09-21T22:40:00Z",
+    "expiration_value": "",
+    "floor_strike": 4.5,
+    "last_price_dollars": "0.3000",
+    "latest_expiration_time": "2026-09-21T22:40:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "0.7400",
+    "no_bid_dollars": "0.6900",
+    "no_sub_title": "Chase Burns: 5+",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-19T01:40:00Z",
+    "open_interest_fp": "29031.69",
+    "open_time": "2026-09-18T05:25:00Z",
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "primary_participant_key": "baseball_player",
+    "result": "",
+    "rules_primary": "If Chase Burns records 5+ strikeouts in the Chicago C vs Cincinnati professional baseball game originally scheduled for Sep 18, 2026 at 6:40 PM EDT, then the market resolves to Yes.",
+    "rules_secondary": "Player Participation & Settlement Criteria\nIf Chase Burns is scratched or is not a starting pitcher, the market will resolve to the fair market price.\nIf Chase Burns is not a starting pitcher but later enters the game, the market will resolve to the fair market price, relief appearances will not count towards this market.\nIf Chase Burns is a starting pitcher and records at least one batter faced the market will settle based on strikeouts recorded.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_timer_seconds": 300,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5",
+    "title": "Chase Burns: 5+ strikeouts?",
+    "updated_time": "2026-09-18T05:25:01.019974Z",
+    "volume_24h_fp": "34335.05",
+    "volume_fp": "35257.90",
+    "yes_ask_dollars": "0.3100",
+    "yes_ask_size_fp": "4.00",
+    "yes_bid_dollars": "0.2600",
+    "yes_bid_size_fp": "48.00",
+    "yes_sub_title": "Chase Burns: 5+"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5",
+  "market_captured_at": "2026-09-18T23:06:19.509Z",
+  "status": "active",
+  "last_ingested_at": "2026-09-18T23:06:20.144Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/candlesticks?start_ts=1789622700&end_ts=1789772779&period_interval=1440"
+}

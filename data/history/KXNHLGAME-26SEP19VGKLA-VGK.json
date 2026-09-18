@@ -1,0 +1,597 @@
+{
+  "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
+  "series_ticker": "KXNHLGAME",
+  "period_interval": 1440,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789617600,
+      "open_interest_fp": "0.00",
+      "price": {},
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.5900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.5900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3100",
+        "high_dollars": "0.4700",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1789704000,
+      "open_interest_fp": "39.48",
+      "price": {
+        "close_dollars": "0.5900",
+        "high_dollars": "0.5900",
+        "low_dollars": "0.4400",
+        "mean_dollars": "0.5021",
+        "open_dollars": "0.4400"
+      },
+      "volume_fp": "60.33",
+      "yes_ask": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.6500",
+        "low_dollars": "0.5200",
+        "open_dollars": "0.5900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5000",
+        "high_dollars": "0.5500",
+        "low_dollars": "0.3100",
+        "open_dollars": "0.3100"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-18T22:39:28.061Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "25503.82"
+            ],
+            [
+              "0.0200",
+              "4137.00"
+            ],
+            [
+              "0.0300",
+              "579.00"
+            ],
+            [
+              "0.0500",
+              "25.00"
+            ],
+            [
+              "0.0600",
+              "400.00"
+            ],
+            [
+              "0.0700",
+              "400.00"
+            ],
+            [
+              "0.0900",
+              "500.00"
+            ],
+            [
+              "0.1000",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "43.00"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.2000",
+              "1622.00"
+            ],
+            [
+              "0.2100",
+              "703.00"
+            ],
+            [
+              "0.2300",
+              "179.00"
+            ],
+            [
+              "0.2400",
+              "269.00"
+            ],
+            [
+              "0.2800",
+              "10.00"
+            ],
+            [
+              "0.3300",
+              "200.00"
+            ],
+            [
+              "0.3500",
+              "163.32"
+            ],
+            [
+              "0.3800",
+              "12.00"
+            ],
+            [
+              "0.4000",
+              "65.00"
+            ],
+            [
+              "0.4300",
+              "15.00"
+            ],
+            [
+              "0.4400",
+              "164.00"
+            ],
+            [
+              "0.4500",
+              "32.00"
+            ],
+            [
+              "0.4700",
+              "1.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "25455.00"
+            ],
+            [
+              "0.0200",
+              "3650.00"
+            ],
+            [
+              "0.0300",
+              "575.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.1000",
+              "300.00"
+            ],
+            [
+              "0.1500",
+              "40.00"
+            ],
+            [
+              "0.1600",
+              "449.00"
+            ],
+            [
+              "0.1700",
+              "671.00"
+            ],
+            [
+              "0.1800",
+              "509.00"
+            ],
+            [
+              "0.2300",
+              "17.00"
+            ],
+            [
+              "0.3100",
+              "210.00"
+            ],
+            [
+              "0.3900",
+              "29.00"
+            ],
+            [
+              "0.4000",
+              "11.00"
+            ],
+            [
+              "0.4100",
+              "4.00"
+            ],
+            [
+              "0.4700",
+              "15.00"
+            ],
+            [
+              "0.5000",
+              "1.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-18T23:04:59.516Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "25503.82"
+            ],
+            [
+              "0.0200",
+              "4137.00"
+            ],
+            [
+              "0.0300",
+              "579.00"
+            ],
+            [
+              "0.0500",
+              "25.00"
+            ],
+            [
+              "0.0600",
+              "400.00"
+            ],
+            [
+              "0.0700",
+              "400.00"
+            ],
+            [
+              "0.0900",
+              "500.00"
+            ],
+            [
+              "0.1000",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "43.00"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.1900",
+              "1259.00"
+            ],
+            [
+              "0.2000",
+              "300.00"
+            ],
+            [
+              "0.2100",
+              "703.00"
+            ],
+            [
+              "0.2300",
+              "179.00"
+            ],
+            [
+              "0.2400",
+              "269.00"
+            ],
+            [
+              "0.2800",
+              "10.00"
+            ],
+            [
+              "0.3300",
+              "200.00"
+            ],
+            [
+              "0.3500",
+              "163.32"
+            ],
+            [
+              "0.3800",
+              "12.00"
+            ],
+            [
+              "0.4300",
+              "15.00"
+            ],
+            [
+              "0.4400",
+              "44.00"
+            ],
+            [
+              "0.4600",
+              "7.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "25455.00"
+            ],
+            [
+              "0.0200",
+              "3650.00"
+            ],
+            [
+              "0.0300",
+              "575.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "645.00"
+            ],
+            [
+              "0.1000",
+              "474.00"
+            ],
+            [
+              "0.1100",
+              "342.00"
+            ],
+            [
+              "0.1500",
+              "40.00"
+            ],
+            [
+              "0.2300",
+              "17.00"
+            ],
+            [
+              "0.2400",
+              "352.00"
+            ],
+            [
+              "0.3100",
+              "210.00"
+            ],
+            [
+              "0.3900",
+              "29.00"
+            ],
+            [
+              "0.4000",
+              "11.00"
+            ],
+            [
+              "0.4100",
+              "4.00"
+            ],
+            [
+              "0.4700",
+              "15.00"
+            ],
+            [
+              "0.5000",
+              "1.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-18T23:07:56.061Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "25503.82"
+            ],
+            [
+              "0.0200",
+              "4137.00"
+            ],
+            [
+              "0.0300",
+              "579.00"
+            ],
+            [
+              "0.0500",
+              "25.00"
+            ],
+            [
+              "0.0600",
+              "400.00"
+            ],
+            [
+              "0.0700",
+              "400.00"
+            ],
+            [
+              "0.0900",
+              "500.00"
+            ],
+            [
+              "0.1000",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "43.00"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.1900",
+              "1259.00"
+            ],
+            [
+              "0.2000",
+              "300.00"
+            ],
+            [
+              "0.2100",
+              "703.00"
+            ],
+            [
+              "0.2300",
+              "179.00"
+            ],
+            [
+              "0.2400",
+              "269.00"
+            ],
+            [
+              "0.2800",
+              "10.00"
+            ],
+            [
+              "0.3300",
+              "200.00"
+            ],
+            [
+              "0.3500",
+              "163.32"
+            ],
+            [
+              "0.3800",
+              "12.00"
+            ],
+            [
+              "0.4300",
+              "15.00"
+            ],
+            [
+              "0.4400",
+              "44.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "25455.00"
+            ],
+            [
+              "0.0200",
+              "3650.00"
+            ],
+            [
+              "0.0300",
+              "575.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "645.00"
+            ],
+            [
+              "0.1000",
+              "474.00"
+            ],
+            [
+              "0.1100",
+              "342.00"
+            ],
+            [
+              "0.1500",
+              "40.00"
+            ],
+            [
+              "0.2300",
+              "17.00"
+            ],
+            [
+              "0.2400",
+              "352.00"
+            ],
+            [
+              "0.2500",
+              "4.00"
+            ],
+            [
+              "0.3100",
+              "210.00"
+            ],
+            [
+              "0.3900",
+              "29.00"
+            ],
+            [
+              "0.4000",
+              "11.00"
+            ],
+            [
+              "0.4700",
+              "15.00"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-09-22T01:00:00Z",
+    "created_time": "2026-09-17T00:02:16.048857Z",
+    "custom_strike": {
+      "hockey_team": "d599b5cc-5e06-4679-9303-4d5dad7c4cce"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNHLGAME-26SEP19VGKLA",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-09-20T04:00:00Z",
+    "expiration_time": "2026-09-22T01:00:00Z",
+    "expiration_value": "",
+    "last_price_dollars": "0.5400",
+    "latest_expiration_time": "2026-09-22T01:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "0.5300",
+    "no_bid_dollars": "0.4400",
+    "no_sub_title": "Vegas",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-20T04:00:00Z",
+    "open_interest_fp": "236.11",
+    "open_time": "2026-09-17T00:07:00Z",
+    "previous_price_dollars": "0.5900",
+    "previous_yes_ask_dollars": "0.5800",
+    "previous_yes_bid_dollars": "0.4400",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Vegas wins the Vegas vs Los Angeles NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
+    "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+    "settlement_timer_seconds": 45,
+    "status": "active",
+    "strike_type": "structured",
+    "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
+    "title": "Vegas wins",
+    "updated_time": "2026-09-17T00:07:00.14378Z",
+    "volume_24h_fp": "210.78",
+    "volume_fp": "271.11",
+    "yes_ask_dollars": "0.5600",
+    "yes_ask_size_fp": "44.00",
+    "yes_bid_dollars": "0.4700",
+    "yes_bid_size_fp": "15.00",
+    "yes_sub_title": "Vegas"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK",
+  "market_captured_at": "2026-09-18T23:07:55.398Z",
+  "status": "active",
+  "last_ingested_at": "2026-09-18T23:07:56.030Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19VGKLA-VGK/candlesticks?start_ts=1789704001&end_ts=1789772875&period_interval=1440"
+}

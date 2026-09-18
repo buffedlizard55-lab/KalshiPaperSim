@@ -2455,6 +2455,46 @@
         "low_dollars": "0.9700",
         "open_dollars": "0.9700"
       }
+    },
+    {
+      "end_period_ts": 1789758000,
+      "open_interest_fp": "7918.33",
+      "price": {
+        "previous_dollars": "0.9800"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1789765200,
+      "open_interest_fp": "7918.33",
+      "price": {
+        "previous_dollars": "0.9800"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
     }
   ],
   "books": [
@@ -3129,6 +3169,170 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-18T22:56:13.875Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "13725.00"
+            ],
+            [
+              "0.0200",
+              "2474.91"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "107576.00"
+            ],
+            [
+              "0.0200",
+              "2558.01"
+            ],
+            [
+              "0.0300",
+              "608.01"
+            ],
+            [
+              "0.0400",
+              "500.01"
+            ],
+            [
+              "0.0500",
+              "509.01"
+            ],
+            [
+              "0.0600",
+              "0.01"
+            ],
+            [
+              "0.0700",
+              "300.01"
+            ],
+            [
+              "0.0800",
+              "321.01"
+            ],
+            [
+              "0.0900",
+              "0.01"
+            ],
+            [
+              "0.1000",
+              "0.01"
+            ],
+            [
+              "0.1100",
+              "0.01"
+            ],
+            [
+              "0.1200",
+              "0.01"
+            ],
+            [
+              "0.1300",
+              "0.01"
+            ],
+            [
+              "0.1400",
+              "0.01"
+            ],
+            [
+              "0.1500",
+              "0.01"
+            ],
+            [
+              "0.1600",
+              "0.01"
+            ],
+            [
+              "0.1700",
+              "0.01"
+            ],
+            [
+              "0.1800",
+              "0.01"
+            ],
+            [
+              "0.1900",
+              "0.01"
+            ],
+            [
+              "0.2000",
+              "25.01"
+            ],
+            [
+              "0.2100",
+              "0.01"
+            ],
+            [
+              "0.2200",
+              "0.01"
+            ],
+            [
+              "0.2300",
+              "0.01"
+            ],
+            [
+              "0.2400",
+              "0.01"
+            ],
+            [
+              "0.2500",
+              "0.01"
+            ],
+            [
+              "0.2600",
+              "0.01"
+            ],
+            [
+              "0.2700",
+              "0.01"
+            ],
+            [
+              "0.2800",
+              "0.01"
+            ],
+            [
+              "0.2900",
+              "0.01"
+            ],
+            [
+              "0.3400",
+              "3721.00"
+            ],
+            [
+              "0.7200",
+              "5.00"
+            ],
+            [
+              "0.8900",
+              "250.00"
+            ],
+            [
+              "0.9100",
+              "2000.00"
+            ],
+            [
+              "0.9500",
+              "86.00"
+            ],
+            [
+              "0.9600",
+              "489.43"
+            ],
+            [
+              "0.9700",
+              "10133.98"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3178,14 +3382,14 @@
     "volume_24h_fp": "0.10",
     "volume_fp": "8365.76",
     "yes_ask_dollars": "0.9800",
-    "yes_ask_size_fp": "2482.91",
+    "yes_ask_size_fp": "2474.91",
     "yes_bid_dollars": "0.9700",
-    "yes_bid_size_fp": "10111.98",
+    "yes_bid_size_fp": "10133.98",
     "yes_sub_title": "Florida St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU",
-  "market_captured_at": "2026-09-18T18:44:28.135Z",
+  "market_captured_at": "2026-09-18T22:56:13.215Z",
   "status": "active",
-  "last_ingested_at": "2026-09-18T18:44:28.754Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/candlesticks?start_ts=1789754401&end_ts=1789757068&period_interval=60"
+  "last_ingested_at": "2026-09-18T22:56:13.846Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/candlesticks?start_ts=1789754401&end_ts=1789772173&period_interval=60"
 }
