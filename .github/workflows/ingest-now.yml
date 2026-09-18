@@ -61,6 +61,21 @@ jobs:
             if (Array.isArray(t.series) && t.series.length) args.push("--series=" + t.series.join(","));
             if (Array.isArray(t.tickers) && t.tickers.length) args.push("--tickers=" + t.tickers.join(","));
             fs.writeFileSync(process.env.GITHUB_OUTPUT, "args=" + args.join(" ") + "\n");
+            // Discovery (universe / series fees / keyword matches) is optional
+            // and configured by the same trigger file:
+            //   "discover": true | { "keywords": [...], "max_series": 60, ... }
+            const d = t.discover === true ? {} : (t.discover && typeof t.discover === "object" ? t.discover : null);
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, "discover=" + (d ? "true" : "false") + "\n");
+            if (d) {
+              const dargs = [];
+              if (Array.isArray(d.keywords) && d.keywords.length) dargs.push("--keywords=" + d.keywords.join(","));
+              if (Array.isArray(d.series) && d.series.length) dargs.push("--series=" + d.series.join(","));
+              if (d.max_series !== undefined) dargs.push("--max-series=" + d.max_series);
+              if (d.top_markets !== undefined) dargs.push("--top-markets=" + d.top_markets);
+              if (d.min_volume !== undefined) dargs.push("--min-volume=" + d.min_volume);
+              fs.appendFileSync(process.env.GITHUB_OUTPUT, "discover_args=" + dargs.join(" ") + "\n");
+              console.log("requested discovery args: " + dargs.join(" "));
+            }
             console.log("requested args: " + args.join(" "));
           '
 
@@ -70,6 +85,17 @@ jobs:
           # script exits non-zero, which is exactly how a crash hid for a run.
           set -o pipefail
           node scripts/ingest-history.mjs ${{ steps.req.outputs.args }} 2>&1 | tee ingest.log
+
+      # What exists on the exchange RIGHT NOW: every series with its real fee
+      # configuration, plus the real markets of every series whose ticker /
+      # title / tags match the requested keywords. Closes IRREGULARITY #36
+      # (KXHIGHNY / KXGOLD15M fee multipliers were never captured) and answers
+      # "which sports / FDA / weather series can honestly be traded and settled".
+      - name: Discover the tradeable universe (official GET /series + /markets)
+        if: steps.req.outputs.discover == 'true'
+        run: |
+          set -o pipefail
+          node scripts/discover-universe.mjs ${{ steps.req.outputs.discover_args }} 2>&1 | tee -a ingest.log
 
       - name: Audit the store (no network)
         run: node scripts/ingest-history.mjs --verify | tee -a ingest.log
@@ -104,15 +130,16 @@ jobs:
 
       - name: Commit the new history
         run: |
-          if [ -z "$(git status --porcelain data/ src/accumulated-history.js)" ]; then
+          if [ -z "$(git status --porcelain data/ src/accumulated-history.js docs/data)" ]; then
             echo "No new bars — nothing to commit."
             exit 0
           fi
           du -sh data/history 2>/dev/null || true
           du -sh data/history/intraday 2>/dev/null || true
+          du -sh data/discovered 2>/dev/null || true
           git config user.name  "kalshi-history-bot"
           git config user.email "kalshi-history-bot@users.noreply.github.com"
-          git add data/ src/accumulated-history.js
+          git add data/ src/accumulated-history.js docs/data
           git commit -m "chore(history): append real Kalshi candlesticks $(date -u +%F)"
           # PUSH-RACE GUARD: the forecast-archive bot can commit to this branch
           # between our checkout and our push — the pre-rebase pull that used to

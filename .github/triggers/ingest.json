@@ -1,6 +1,6 @@
 {
-  "_README": "Commit a change to this file to request an ingest run (.github/workflows/ingest-now.yml). It runs on a GitHub-hosted runner, which - unlike the build sandbox - can reach external-api.kalshi.com. Every field is passed straight to scripts/ingest-history.mjs. Bump `request` so the push is a real change: GitHub only starts the workflow when this file actually differs.",
-  "request": 5,
+  "_README": "Commit a change to this file to request an ingest run (.github/workflows/ingest-now.yml). It runs on a GitHub-hosted runner, which - unlike the build sandbox - can reach external-api.kalshi.com. Every field is passed straight to scripts/ingest-history.mjs. Bump `request` so the push is a real change: GitHub only starts the workflow when this file actually differs. NEW (2026-09-18): the optional `discover` block runs scripts/discover-universe.mjs first — it records every real series with its real fee configuration (closes IRREGULARITY #36) and every real market of every series whose ticker/title/tags match the keywords below, which is how the sports / FDA / weather-city universe gets verified instead of assumed.",
+  "request": 6,
   "enabled": true,
   "days": 30,
   "full_backfill": false,
@@ -14,6 +14,20 @@
     "KXINXY"
   ],
   "tickers": [],
-  "requested_at": "2026-09-18T05:55:00.000Z",
-  "requested_by": "arena session 01a0b254 \u2014 recover the bars fetched by the post-merge ingest run 35311735400 whose push lost the race to the forecast bot (dab6449); also first live exercise of the push-race guard in all three bot workflows."
+  "discover": {
+    "keywords": [
+      "HIGH", "WEATHER", "GOLD", "FDA", "CEO", "INSIDER",
+      "NFL", "NBA", "MLB", "NHL", "NCAA", "NCAAB", "NCAAF", "UFC", "SOCCER", "GAME", "SPREAD",
+      "CPI", "FED", "GDP", "JOBS", "UNEMPLOY", "INX", "NASDAQ", "BTC", "ETH", "SOL", "OIL", "TSLA"
+    ],
+    "series": [
+      "KXHIGHNY",
+      "KXGOLD15M"
+    ],
+    "max_series": 70,
+    "top_markets": 6,
+    "min_volume": 0
+  },
+  "requested_at": "2026-09-18T06:40:00.000Z",
+  "requested_by": "arena session 01a0b330 — (1) first run of scripts/discover-universe.mjs: capture the real series list + fee multipliers (IRREGULARITY #36) and the real market objects for every sports/FDA/weather/macro/crypto series the keywords match; (2) refresh the daily bars for the three index/BTC series."
 }
