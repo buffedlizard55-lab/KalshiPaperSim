@@ -112,10 +112,32 @@ jobs:
           du -sh data/history/intraday 2>/dev/null || true
           git config user.name  "kalshi-history-bot"
           git config user.email "kalshi-history-bot@users.noreply.github.com"
-          git pull --rebase --autostash origin "${GITHUB_REF#refs/heads/}" || true
           git add data/ src/accumulated-history.js
           git commit -m "chore(history): append real Kalshi candlesticks $(date -u +%F)"
-          git push origin "HEAD:${GITHUB_REF}"
+          # PUSH-RACE GUARD: the forecast-archive bot can commit to this branch
+          # between our checkout and our push — the pre-rebase pull that used to
+          # sit here had `|| true` and still lost the race on 2026-09-18 (the
+          # first post-merge run died at this step). On rejection, rebase on
+          # the remote tip and retry. Generated modules are a pure function of
+          # data/, so a rebase conflict on one is resolved by REGENERATING it
+          # from the merged data tree, never by hand-editing.
+          BRANCH="${GITHUB_REF_NAME}"
+          pushed=0
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:${BRANCH}"; then pushed=1; break; fi
+            echo "::warning::push rejected (attempt ${attempt}) — rebasing on origin/${BRANCH}"
+            git fetch --deepen=50 origin "${BRANCH}"
+            if ! git rebase "origin/${BRANCH}"; then
+              node scripts/generate-history-module.mjs >/dev/null 2>&1 || true
+              git add src/accumulated-history.js src/forecast-data.js 2>/dev/null || true
+              if ! GIT_EDITOR=true git rebase --continue; then
+                git rebase --abort
+                echo "::error::could not rebase onto origin/${BRANCH} — rerun this job"
+                exit 1
+              fi
+            fi
+          done
+          [ "$pushed" = "1" ] || { echo "::error::push still rejected after 3 attempts"; exit 1; }
 
       - name: Upload the ingest log
         if: always()
