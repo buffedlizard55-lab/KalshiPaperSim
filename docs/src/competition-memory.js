@@ -27,6 +27,30 @@ import { normalizeMarket, DATA_SOURCE } from './kalshi-api.js';
 import { round2 } from './simulation-engine.js';
 import { LEADERBOARD_QUALIFICATION } from './analysis.js';
 
+/**
+ * Desk usernames that a human paper trader must never take.
+ *
+ * Kept here (not imported from src/desk-strategies.js) so the one-year memory
+ * module does not pull the 1 MB desk-data capture into every page load.
+ * Test 104 asserts this list equals DESK_STRATEGIES.map(s => s.username)
+ * field-for-field, so a new desk entrant that is not reserved fails the build.
+ */
+export const DESK_RESERVED_USERNAMES = Object.freeze([
+  'LiveFavourite_Settle',
+  'LiveTailPremium_NO',
+  'LiveLongshot_Convexity',
+  'LiveCheapBracket_Ladder',
+  'LiveDepthSweep_Taker',
+  'LiveMakerTouch',
+  'LiveMomentum_Bars',
+  'LiveMeanRev_Spike',
+  'LiveExpiryHarvest',
+  'LiveFDA_DecisionPremium',
+  'LiveNCAA_GameFavourite',
+  'LiveNBA_GameFavourite',
+  'LiveCEO_ChangeFav'
+]);
+
 export const STORAGE_KEY = 'KALSHI_COMPETITION_MEMORY_V2';
 export const WEEKS_PER_YEAR = 52;
 
@@ -105,6 +129,8 @@ export class CompetitionMemoryEngine {
       participants: [],
       /** Computed competition results (leaderboard + per-strategy detail). */
       computedResults: null,
+      /** Compact Live Desk session (one cut-off). Fills also live in tradeLog with kind: 'desk'. */
+      deskMemory: null,
       tradeLog: [],
       weeklySnapshots: [],
       createdAt: new Date().toISOString(),
@@ -284,6 +310,79 @@ export class CompetitionMemoryEngine {
   }
 
   /* ---------------- competition lifecycle ---------------- */
+
+  /**
+   * Store a Live Desk session as competition memory (ROADMAP Next #9, partial).
+   *
+   * The desk is one deterministic session per cut-off, not a multi-day
+   * portfolio: this copies the measured fills, fees, settlements and
+   * explanations into the one-year store so they survive export/import and
+   * sit next to the replay results. Positions are NOT carried into the next
+   * cut-off — that remaining gap is stated on the README.
+   *
+   * Compact on purpose: the full desk report (universe + every ladder) is
+   * regenerated from src/desk-data.js; memory keeps the *results* and the
+   * fill log, which is what future analysis needs.
+   */
+  attachDeskSession(report) {
+    if (!report || typeof report !== 'object') return null;
+    const fills = (report.records || []).filter((r) => r.k === 'FILL' || r.k === 'SETTLE');
+    const asOf = report.asOf || null;
+    this.state.deskMemory = {
+      attachedAt: new Date().toISOString(),
+      asOf,
+      version: report.version || 1,
+      auditOk: Boolean(report.audit?.ok),
+      coverage: report.coverage || null,
+      fillCount: fills.filter((r) => r.k === 'FILL').length,
+      settlementCount: fills.filter((r) => r.k === 'SETTLE').length,
+      results: (report.results || []).map((r) => ({
+        strategy: r.strategy,
+        returnPct: r.returnPct,
+        equity: r.equity,
+        cash: r.cash,
+        fills: r.fills,
+        contracts: r.contracts,
+        unfilled: r.unfilled,
+        feesPaid: r.feesPaid,
+        slippageCost: r.slippageCost,
+        settlementPnl: r.settlementPnl,
+        startingCapital: r.startingCapital
+      })),
+      explanations: (report.explanations || []).map((e) => ({
+        strategy: e.strategy,
+        verdict: e.verdict,
+        headline: e.headline,
+        worked: e.worked,
+        hurt: e.hurt
+      }))
+    };
+    // Replace any previous desk rows for this cut-off so re-running the desk
+    // does not duplicate the year. Other kinds (human / algorithmic) stay.
+    this.state.tradeLog = (this.state.tradeLog || []).filter((t) => !(t.kind === 'desk' && t.asOf === asOf));
+    for (const f of fills) {
+      this.state.tradeLog.push({
+        competitionId: this.state.competitionId,
+        participant: f.strategy,
+        kind: 'desk',
+        asOf,
+        timestamp: f.at || f.settledAt || null,
+        ticker: f.ticker,
+        action: f.k === 'SETTLE' ? 'SETTLE' : (f.action || 'buy'),
+        side: f.side || null,
+        contracts: f.count ?? null,
+        price: f.price ?? f.payoffPerContract ?? null,
+        fee: f.fee ?? 0,
+        slippage: f.slippage ?? null,
+        maker: Boolean(f.maker),
+        bookSource: f.ladderUrl || f.marketUrl || null,
+        reason: f.explain || null
+      });
+    }
+    if (this.state.tradeLog.length > 5000) this.state.tradeLog.splice(0, this.state.tradeLog.length - 5000);
+    this.save();
+    return this.state.deskMemory;
+  }
 
   /** Store results computed by ReplayEngine (never invents numbers). */
   attachComputedResults(competitionResult) {
@@ -565,8 +664,19 @@ export class CompetitionMemoryEngine {
 /* ---------------- helpers ---------------- */
 
 export function validateUsername(username, state) {
-  const reserved = new Set((state?.strategies || []).map((s) => s.username.toLowerCase()));
-  const taken = new Set((state?.participants || []).map((p) => p.username.toLowerCase()));
+  // Always reserve the CURRENT roster and the CURRENT desk, not only whatever
+  // a stale store happens to remember. A human taking LiveFavourite_Settle
+  // because the stored year predated the desk is the hole this closes.
+  const reserved = new Set();
+  for (const s of STRATEGIES) reserved.add(String(s.username).toLowerCase());
+  for (const name of DESK_RESERVED_USERNAMES) reserved.add(String(name).toLowerCase());
+  for (const s of state?.strategies || []) {
+    if (s?.username) reserved.add(String(s.username).toLowerCase());
+  }
+  for (const s of state?.deskMemory?.results || []) {
+    if (s?.strategy) reserved.add(String(s.strategy).toLowerCase());
+  }
+  const taken = new Set((state?.participants || []).map((p) => String(p.username).toLowerCase()));
   if (!username) return { ok: false, reason: 'username_required' };
   if (username.length < 3 || username.length > 24) return { ok: false, reason: 'username_length_3_to_24' };
   if (!/^[A-Za-z0-9_.]+$/.test(username)) return { ok: false, reason: 'username_invalid_characters' };

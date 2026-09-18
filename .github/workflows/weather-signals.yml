@@ -50,10 +50,13 @@ jobs:
           set -o pipefail
           node scripts/archive-forecasts.mjs --verify | tee -a forecast.log
 
-      - name: Regenerate the browser-safe forecast + history modules
+      - name: Regenerate the browser-safe modules and the Pages bundle
         run: |
           set -o pipefail
           node scripts/generate-history-module.mjs | tee -a forecast.log
+          node scripts/generate-desk-module.mjs | tee -a forecast.log
+          node scripts/render-docs.js | tee -a forecast.log
+          node build.js | tee -a forecast.log
 
       - name: Commit the new snapshots
         run: |

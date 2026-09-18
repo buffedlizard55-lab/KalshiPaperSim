@@ -1,0 +1,229 @@
+{
+  "newestCapture": "2026-09-18T18:46:22.458Z",
+  "cutoffs": [
+    {
+      "label": "live (newest capture)",
+      "asOf": "2026-09-18T18:46:22.458Z",
+      "tradeable": 62,
+      "withRealResultAfter": 0,
+      "settlementTickers": [],
+      "sampleTickers": [
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B87500"
+      ],
+      "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
+    },
+    {
+      "label": "-6h",
+      "asOf": "2026-09-18T12:46:22.458Z",
+      "tradeable": 62,
+      "withRealResultAfter": 4,
+      "settlementTickers": [
+        "KXHIGHTSEA-26SEP17-B72.5",
+        "KXHIGHTPHX-26SEP17-T91",
+        "KXHIGHTPHX-26SEP17-B91.5",
+        "KXHIGHDEN-26SEP17-T82"
+      ],
+      "sampleTickers": [
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B87500"
+      ],
+      "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
+    },
+    {
+      "label": "-12h",
+      "asOf": "2026-09-18T06:46:22.458Z",
+      "tradeable": 48,
+      "withRealResultAfter": 5,
+      "settlementTickers": [
+        "KXHIGHNY-26SEP17-B82.5",
+        "KXHIGHTSEA-26SEP17-B72.5",
+        "KXHIGHTPHX-26SEP17-T91",
+        "KXHIGHTPHX-26SEP17-B91.5",
+        "KXHIGHDEN-26SEP17-T82"
+      ],
+      "sampleTickers": [
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B87500"
+      ],
+      "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
+    },
+    {
+      "label": "-15h",
+      "asOf": "2026-09-18T03:46:22.458Z",
+      "tradeable": 19,
+      "withRealResultAfter": 5,
+      "settlementTickers": [
+        "KXHIGHNY-26SEP17-B82.5",
+        "KXHIGHTSEA-26SEP17-B72.5",
+        "KXHIGHTPHX-26SEP17-T91",
+        "KXHIGHTPHX-26SEP17-B91.5",
+        "KXHIGHDEN-26SEP17-T82"
+      ],
+      "sampleTickers": [
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B8900"
+      ],
+      "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
+    },
+    {
+      "label": "-24h",
+      "asOf": "2026-09-17T18:46:22.458Z",
+      "tradeable": 0,
+      "withRealResultAfter": 5,
+      "settlementTickers": [
+        "KXHIGHNY-26SEP17-B82.5",
+        "KXHIGHTSEA-26SEP17-B72.5",
+        "KXHIGHTPHX-26SEP17-T91",
+        "KXHIGHTPHX-26SEP17-B91.5",
+        "KXHIGHDEN-26SEP17-T82"
+      ],
+      "sampleTickers": [],
+      "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here (it will not use a later ladder)"
+    },
+    {
+      "label": "-48h",
+      "asOf": "2026-09-16T18:46:22.458Z",
+      "tradeable": 0,
+      "withRealResultAfter": 5,
+      "settlementTickers": [
+        "KXHIGHNY-26SEP17-B82.5",
+        "KXHIGHTSEA-26SEP17-B72.5",
+        "KXHIGHTPHX-26SEP17-T91",
+        "KXHIGHTPHX-26SEP17-B91.5",
+        "KXHIGHDEN-26SEP17-T82"
+      ],
+      "sampleTickers": [],
+      "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here (it will not use a later ladder)"
+    },
+    {
+      "label": "-96h",
+      "asOf": "2026-09-14T18:46:22.458Z",
+      "tradeable": 0,
+      "withRealResultAfter": 5,
+      "settlementTickers": [
+        "KXHIGHNY-26SEP17-B82.5",
+        "KXHIGHTSEA-26SEP17-B72.5",
+        "KXHIGHTPHX-26SEP17-T91",
+        "KXHIGHTPHX-26SEP17-B91.5",
+        "KXHIGHDEN-26SEP17-T82"
+      ],
+      "sampleTickers": [],
+      "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here (it will not use a later ladder)"
+    },
+    {
+      "label": "-240h",
+      "asOf": "2026-09-08T18:46:22.458Z",
+      "tradeable": 0,
+      "withRealResultAfter": 5,
+      "settlementTickers": [
+        "KXHIGHNY-26SEP17-B82.5",
+        "KXHIGHTSEA-26SEP17-B72.5",
+        "KXHIGHTPHX-26SEP17-T91",
+        "KXHIGHTPHX-26SEP17-B91.5",
+        "KXHIGHDEN-26SEP17-T82"
+      ],
+      "sampleTickers": [],
+      "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here (it will not use a later ladder)"
+    }
+  ],
+  "audits": [
+    {
+      "id": "D1",
+      "rule": "Every fill names the captured ladder it was priced from (timestamp + URL).",
+      "source": "GET /markets/{ticker}/orderbook"
+    },
+    {
+      "id": "D2",
+      "rule": "A ladder captured after the order time is never used (point-in-time).",
+      "source": "derived rule — look-ahead prevention"
+    },
+    {
+      "id": "D3",
+      "rule": "Fill prices come from captured levels, which are already on the market grid.",
+      "source": "price_ranges on GET /markets/{ticker}"
+    },
+    {
+      "id": "D4",
+      "rule": "gross = price x count on every fill (arithmetic identity).",
+      "source": "internal accounting identity"
+    },
+    {
+      "id": "D5",
+      "rule": "Fees equal round up(M x 0.07 x C x P x (1-P)) per level, with M from the captured Series; maker fills use 0.0175 x M only where the series carries maker fees.",
+      "source": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    },
+    {
+      "id": "D6",
+      "rule": "Slippage is measured against the best real price, never assumed.",
+      "source": "captured ladder"
+    },
+    {
+      "id": "D7",
+      "rule": "A taker fill never exceeds the real levels it names (exhaustion is reported, not priced).",
+      "source": "derived rule — exhaustionPolicy: partial"
+    },
+    {
+      "id": "D8",
+      "rule": "A maker fill names a later real quote that crosses it.",
+      "source": "captured candlesticks / later ladders"
+    },
+    {
+      "id": "D9",
+      "rule": "Settlements use the exchange result, its own settlement value, and its settlement timestamp; a NO position is paid notional minus that value.",
+      "source": "GET /markets/{ticker} status/result/settlement_value_dollars"
+    },
+    {
+      "id": "D10",
+      "rule": "No settlement fee is charged.",
+      "source": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    },
+    {
+      "id": "D11",
+      "rule": "Every order is stamped with a strategy and a real timestamp.",
+      "source": "ledger schema"
+    },
+    {
+      "id": "D12",
+      "rule": "equity change = realized + unrealized - fees to the cent.",
+      "source": "internal accounting identity"
+    },
+    {
+      "id": "D13",
+      "rule": "A design that never traded cannot show a performance number.",
+      "source": "LEADERBOARD_QUALIFICATION principle"
+    }
+  ]
+}

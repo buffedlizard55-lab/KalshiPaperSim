@@ -1,7 +1,7 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-18 by `scripts/render-docs.js` from `src/verification-data.js`.
-**43 irregularities** flagged during this build: 13 high, 18 medium,
+**45 irregularities** flagged during this build: 13 high, 20 medium,
 10 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
@@ -491,7 +491,7 @@ assumption against an official document or a real API response.
 | --- | --- |
 | **We assumed** | That a project named "CEO" exists among the owner’s GitHub Pages sites and could supply a trading signal. |
 | **Verified truth** | The official GitHub API lists 39 public repositories for buffedlizard55-lab on 2026-09-18; none is named CEO or close to it. The MasterSite directory publishes 38 of the 39 and states that one repository is "permanently excluded by owner request" without naming it. The requested project is therefore either renamed, the excluded repository, or a misremembered name. |
-| **What the code does** | The review records S00 with status NOT_FOUND and a flag instead of silently skipping the request. No strategy was invented for a project that could not be examined. |
+| **What the code does** | The review records S00 with status NOT_FOUND and a flag instead of silently skipping the request. No strategy was invented from a project that could not be examined. Independent of that missing project, Kalshi lists CEO-change series which this repo already trades (CEOExit_Drift on daily bars; LiveCEO_ChangeFav on the Live Desk) — those entries cite the exchange, not a MasterSite CEO repo. |
 | **What you should do** | Owner review needed: rename the repo, confirm the excluded repository is the one meant, or correct the name. |
 
 **Evidence**
@@ -577,6 +577,42 @@ assumption against an official document or a real API response.
 - The market that trades (88,884 contracts, 399 bars): <https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26>
 - The market that never traded (volume 0, no bars): <https://external-api.kalshi.com/trade-api/v2/markets/KXTESLACEOCHANGE-26>
 - Its empty candlestick response: <https://external-api.kalshi.com/trade-api/v2/series/KXTESLACEOCHANGE/markets/KXTESLACEOCHANGE-26/candlesticks?period_interval=1440>
+
+---
+
+## #44 — The MasterSite directory card for THIS repository (KalshiPaperSim) is stale
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That the MasterSite directory would stay current with this repository as the project grew, so a reader of the owner's directory would see the same counts the repo publishes. |
+| **Verified truth** | Fetched 2026-09-18, the MasterSite card listed KalshiPaperSim as 53 facts / 19 irregularities / 10 strategies / 9 markets / 61 candles / 50 tests. The in-repo AUTO block at the same date is 97 facts / 43 irregularities / 41 strategies / 9 markets / 10,905 candles / 111 tests (plus the Live Desk). Same class of directory drift as StockPaperSim (#42), but for this project. |
+| **What the code does** | Flagged as V105. The directory is a sibling project this repo does not write to; the honest action is to name the drift so a reader is not shown the 10-strategy card as current. Updating MasterSite is the owner's directory pipeline, not a KalshiPaperSim code change. |
+| **What you should do** | Open the MasterSite directory and this repository's README AUTO:COUNTS block and compare the published numbers. |
+
+**Evidence**
+
+- MasterSite sites.js (the directory export): <https://github.com/buffedlizard55-lab/MasterSite/blob/main/data/sites.js>
+- This repository AUTO:COUNTS (regenerated, never typed): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/README.md>
+
+---
+
+## #45 — Desk usernames were not reserved, so a human could impersonate a Live Desk entry
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That validateUsername() reserved every algorithmic handle because it walked the stored year's strategies array. |
+| **Verified truth** | Desk entrants live in DESK_STRATEGIES, not STRATEGIES. A stored year that predated the desk had no Live* rows, so a human could register LiveFavourite_Settle. The Live Desk also did not attach its session to the one-year memory, so desk fills were not in the exportable year. |
+| **What the code does** | validateUsername() now always unions STRATEGIES + DESK_RESERVED_USERNAMES (kept set-equal to DESK_STRATEGIES by test 104) plus any stored deskMemory.results. attachDeskSession() copies compact results and FILL/SETTLE rows into the year with kind desk. Positions are still not carried across cut-offs — that remaining gap is stated on the README. |
+| **What you should do** | Try registering LiveFavourite_Settle as a human participant; the platform must refuse it as reserved. |
+
+**Evidence**
+
+- validateUsername + DESK_RESERVED_USERNAMES (reviewable in this repo): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/competition-memory.js>
+- Desk roster (13 Live* usernames): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/desk-strategies.js>
 
 ---
 

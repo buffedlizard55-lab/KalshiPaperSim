@@ -11,7 +11,9 @@
     "test:all": "node --test test/simulation.test.js && node test/ui-smoke.mjs",
     "ingest": "node scripts/ingest-history.mjs",
     "history:module": "node scripts/generate-history-module.mjs",
-    "build": "node scripts/generate-history-module.mjs && node scripts/render-docs.js && node build.js",
+    "desk:data": "node scripts/generate-desk-module.mjs",
+    "desk:run": "node scripts/run-live-desk.mjs",
+    "build": "node scripts/generate-history-module.mjs && node scripts/generate-desk-module.mjs && node scripts/render-docs.js && node build.js",
     "docs": "node scripts/render-docs.js"
   },
   "keywords": [

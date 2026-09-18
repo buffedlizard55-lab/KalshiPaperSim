@@ -62,8 +62,8 @@ export const SIGNAL_SOURCES = Object.freeze([
     verifiableClaim: null,
     kalshiMarketClass: null,
     testableHere: false,
-    flagged: 'IRREGULARITIES.md — "CEO" project requested but not found in the verified directory; owner review needed (rename? the excluded repo?).',
-    strategyUsername: null
+    flagged: 'IRREGULARITIES.md #32 — "CEO" project requested but not found in the verified directory; owner review needed (rename? the excluded repo?). Independent of that missing project, Kalshi lists CEO-change series (TESLACEOCHANGE / JPMCEOCHANGE / KXOPENAICEOCHANGE) which this repo already trades: CEOExit_Drift on daily bars, LiveCEO_ChangeFav on the Live Desk. Those entries do NOT claim a MasterSite CEO signal.',
+    strategyUsername: ['CEOExit_Drift', 'LiveCEO_ChangeFav']
   },
   {
     id: 'S01',
@@ -100,10 +100,10 @@ export const SIGNAL_SOURCES = Object.freeze([
     whatItIs: 'SEC EDGAR Form 4 insider-transaction dashboard and Python analysis toolkit that backtests insider signal rules against local verified filing data.',
     verifiableClaim: 'Form 4 filings are official (SEC EDGAR, sec.gov) and carry exact filing timestamps, so a point-in-time archive is possible in principle.',
     kalshiMarketClass:
-      'Company-event markets (e.g. a CEO-departure or company-KPI market on Kalshi). NOTE: this repository holds NO company-event market — its universe is index/BTC range strikes, weather brackets and gold.',
+      'Company-event markets (e.g. a CEO-departure or company-KPI market on Kalshi). THIS repository now holds FDA (KXFDA*) and CEO-change (TESLACEOCHANGE / JPMCEOCHANGE / KXOPENAICEOCHANGE) series with captured bars AND Live Desk ladders — those are company-event markets. The remaining gap is the Form 4 archive, not the Kalshi leg.',
     testableHere: false,
     blockedBy:
-      'Two gaps: (1) no Kalshi market of this class is ingested (which series would need to be chosen and captured); (2) no point-in-time Form 4 archive in this repo. Both are ingest problems, not strategy problems — the honest test would be: archive Form 4 filings daily, ingest the matching Kalshi markets, then replay "buy after a material insider buy/sell" with fills and fees exactly as the roster does.',
+      'The Kalshi company-event half is no longer empty (FDA + CEO-change series are ingested). The remaining gap is (1) no point-in-time Form 4 archive in this repo. The honest test would be: archive Form 4 filings daily with capture timestamps, then replay "buy after a material insider buy/sell" against the matching CEO/FDA contract with fills and fees exactly as the roster does. Until then nothing from Insider-trades enters a result.',
     strategyUsername: null
   },
   {
@@ -142,8 +142,8 @@ export const SIGNAL_SOURCES = Object.freeze([
     kalshiMarketClass: 'Kalshi NFL game-winner / season markets (KXNFLGAME-style series).',
     testableHere: false,
     blockedBy:
-      'No sports series is ingested in this repository, and the R04 replication already showed the shock-timing archetype fails on real data. An honest test would need: an NFL series ingested at fine granularity + the injury feed archived point-in-time + a design that trades "the market has not priced a key absence".',
-    strategyUsername: null
+      'KXNFLGAME is ingested (hourly bars + discovery quotes) but at the 2026-09-18 Live Desk cut-off it is quoted-only — no captured order-book ladder — so a desk fill cannot be priced (listed as not tradeable, not filled at an invented book). The remaining honest-test gap is the injury feed archived point-in-time, then a design that trades "the market has not priced a key absence" against a captured ladder. R04 already showed the shock-timing archetype fails on real index data; that is evidence against the family, not a reason to skip the NFL test.',
+    strategyUsername: ['SportsFavourite_Settle']
   },
   {
     id: 'S05',
@@ -158,10 +158,13 @@ export const SIGNAL_SOURCES = Object.freeze([
     whatItIs:
       'NBA-only injury monitoring for all 30 teams from ESPN\'s public structured injuries endpoint with source timestamps, a live-style wire polling every 60 seconds, severity colour-coding and alert bells — explicitly labelled "not official NBA confirmation" where that is the case.',
     verifiableClaim: 'ESPN\'s public injuries JSON with timestamps; the project itself flags that no live official NBA injury report was discoverable.',
-    kalshiMarketClass: 'Kalshi NBA game/championship markets.',
-    testableHere: false,
-    blockedBy: 'Same as S04: no NBA series in this repository\'s universe yet. The signal source is real and archived by that project; the Kalshi leg is the missing half.',
-    strategyUsername: null
+    kalshiMarketClass: 'KXNBAGAME — NBA game-winner markets. Six contracts were tradeable on the Live Desk at the 2026-09-18T18:46Z cut-off (captured ladders).',
+    testableHere: true,
+    howTested:
+      'The Kalshi-price half is tested on the Live Desk by LiveNBA_GameFavourite: it buys the captured-ladder favourite (ask 0.90–0.99) on KXNBAGAME and holds to the exchange settlement. SportsFavourite_Settle already covers the same series on the hourly replay. The injury designations themselves are NOT used — that project\'s feed is not archived here point-in-time, so the entry trades only the exchange\'s own prices.',
+    blockedBy:
+      'The NBA injury JSON is not archived in this repo with capture timestamps. Closing that would let a second entry trade "the market has not priced a key absence" against the same captured KXNBAGAME ladders.',
+    strategyUsername: ['LiveNBA_GameFavourite', 'SportsFavourite_Settle']
   },
   {
     id: 'S06',
@@ -177,11 +180,13 @@ export const SIGNAL_SOURCES = Object.freeze([
       'Biopharma decision engine on 980 FDA novel-drug approvals (2000-2026), 58 deep-verified CRLs, a 34-company pipeline tracker, 32 upcoming PDUFA dates with countdown, 8 upcoming Phase 3 endpoints and 2,000 ClinicalTrials.gov Phase 3 studies.',
     verifiableClaim:
       'PDUFA dates are official FDA commitments (fda.gov), so "an approval decision is DUE in window W" is verifiable in advance — the rare event-market signal that is genuinely knowable point-in-time BEFORE the event.',
-    kalshiMarketClass: 'Kalshi FDA-approval / biotech-event markets, when listed.',
-    testableHere: false,
+    kalshiMarketClass: 'KXFDA* family (KXFDAAPPROVAL, KXFDAPDUFA, related decision series) — ingested with captured bars AND Live Desk ladders.',
+    testableHere: true,
+    howTested:
+      'The Kalshi-price half is tested two ways: FDALadder_Dominance on the daily replay (cumulative-ladder no-arbitrage) and LiveFDA_DecisionPremium on the Live Desk (favourite-bucket buy on open KXFDA* contracts, priced from captured ladders, official fees). Neither uses the DrugAnalysis PDUFA calendar — that calendar is not archived here point-in-time.',
     blockedBy:
-      'No FDA/biotech Kalshi market is in this repository\'s universe, and such markets are event-specific (one market per drug-decision) rather than a standing series — the ingest would need a discovery path by category, plus the DrugAnalysis dates mirrored into a point-in-time archive. The design is ready the moment the data is: "buy the approval-side contract that is cheap relative to the base rate for its PDUFA window" is exactly the kind of hypothesis this platform measures.',
-    strategyUsername: null
+      'The DrugAnalysis PDUFA / CRL dates are not archived in this repo with capture timestamps. Closing that would let a second entry trade "cheap relative to the base rate for its PDUFA window" against the same captured KXFDA* ladders. Until then the desk/replay entries measure only the exchange\'s own prices.',
+    strategyUsername: ['LiveFDA_DecisionPremium', 'FDALadder_Dominance']
   },
   {
     id: 'S07',
@@ -195,10 +200,13 @@ export const SIGNAL_SOURCES = Object.freeze([
     status: SIGNAL_SOURCE_STATUS.CANDIDATE,
     whatItIs: 'Zero-dependency college-football scoreboard and alert booth tracking live games across ACC, SEC, Big Ten, Big 12 and AAC.',
     verifiableClaim: 'Live scores (the in-play state an R04/R07-style strategy would react to).',
-    kalshiMarketClass: 'Kalshi NCAA game markets.',
-    testableHere: false,
-    blockedBy: 'No NCAA series ingested; in-play shock strategies also need sub-hour bars AND the R04 independent replication is evidence against that family on real data. Documented, not silently skipped.',
-    strategyUsername: null
+    kalshiMarketClass: 'KXNCAAFGAME — NCAA football game-winner markets. Eight contracts were tradeable on the Live Desk at the 2026-09-18T18:46Z cut-off (captured ladders).',
+    testableHere: true,
+    howTested:
+      'The Kalshi-price half is tested on the Live Desk by LiveNCAA_GameFavourite: it buys the captured-ladder favourite on KXNCAAFGAME and holds to the exchange settlement. SportsFavourite_Settle covers the same series on the hourly replay. The live-score feed from Ncaa-football-alerts is NOT used — it is not archived here point-in-time.',
+    blockedBy:
+      'The NCAA live-score / alert feed is not archived in this repo with capture timestamps. Closing that would let an in-play entry trade "the market has not priced a score change" against the same captured KXNCAAFGAME ladders. R04 is evidence against shock-timing on index data; it is not a reason to skip the NCAA-price test that is possible today.',
+    strategyUsername: ['LiveNCAA_GameFavourite', 'SportsFavourite_Settle']
   },
   {
     id: 'S08',
@@ -214,8 +222,9 @@ export const SIGNAL_SOURCES = Object.freeze([
     verifiableClaim: 'Live game state incl. score changes and overturned plays.',
     kalshiMarketClass: 'Kalshi NFL game markets.',
     testableHere: false,
-    blockedBy: 'Same as S07 — the Kalshi leg (an ingested NFL series at game-time granularity) is the missing half.',
-    strategyUsername: null
+    blockedBy:
+      'KXNFLGAME is ingested (hourly bars + discovery quotes) but at the Live Desk cut-off it is quoted-only — no captured order-book ladder — so a desk fill cannot be priced. The remaining gap is (1) a captured ladder for those contracts and (2) the scoreboard / nullified-play feed archived point-in-time. SportsFavourite_Settle already covers the series on the hourly replay using the market\'s own bars.',
+    strategyUsername: ['SportsFavourite_Settle']
   },
   {
     id: 'S09',

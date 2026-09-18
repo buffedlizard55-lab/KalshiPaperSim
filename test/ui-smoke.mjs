@@ -51,7 +51,7 @@ function el(sel) {
   return elements.get(sel);
 }
 
-const TABS = ['leaderboard', 'strategies', 'markets', 'memory', 'lab', 'ledger', 'research', 'verification', 'irregularities'];
+const TABS = ['leaderboard', 'strategies', 'markets', 'memory', 'lab', 'desk', 'ledger', 'research', 'verification', 'irregularities'];
 
 globalThis.document = {
   querySelector: (sel) => el(sel),
@@ -272,6 +272,35 @@ interact.push(['ledger round trips state how the exit happened', /exchange resul
 interact.push(['ledger round trips name the ladder that priced each entry', /REAL captured ladder|modelled ladder/.test(ledgerTrades)]);
 interact.push(['ledger round trips link the official API source', /https:\/\/external-api\.kalshi\.com/.test(ledgerTrades)]);
 interact.push(['ledger sources cite the official endpoints and docs', /candlesticks/.test(ledgerSources) && /docs\.kalshi\.com/.test(ledgerSources)]);
+
+// 5b. Live Desk tab: paper orders on the real captured ladders. In static mode
+// the browser runs the same engine modules, so these assertions exercise the
+// real desk (universe, ticket, fills) rather than a server response.
+el('.tab:desk').click();
+await new Promise((r) => setTimeout(r, 2500));
+const deskStatus = written.get('#deskStatus') || '';
+const deskKpis = written.get('#deskKpis') || '';
+const deskResults = written.get('#deskResults tbody') || '';
+const deskUniverse = written.get('#deskUniverse tbody') || '';
+const deskInvars = written.get('#deskInvars') || '';
+interact.push(['desk tab runs the audit and states the result', /Audit passed|AUDIT FAILED/.test(deskStatus)]);
+interact.push(['desk tab reports the cut-off and how many contracts are tradeable', /tradeable here/.test(deskStatus)]);
+interact.push(['desk KPI cards report real settlements and fees', /Real settlements booked/.test(deskKpis) && /Official fees paid/.test(deskKpis)]);
+interact.push(['desk competition table lists a real desk entrant', /Live[A-Za-z]+_/.test(deskResults)]);
+interact.push(['desk competition table asserts the accounting identity', /equity = realized \+ unrealized/.test(deskResults)]);
+interact.push(['desk universe rows link the captured ladder (point-in-time source)', /external-api\.kalshi\.com\/trade-api\/v2\/markets\/[A-Za-z0-9.-]+\/orderbook/.test(deskUniverse)]);
+interact.push(['desk universe rows link the captured market object (dates)', /external-api\.kalshi\.com\/trade-api\/v2\/markets\/[A-Za-z0-9.-]+<\/a>|\.kalshi\.com\/trade-api\/v2\/markets\/[A-Za-z0-9.-]+/.test(deskUniverse)]);
+interact.push(['desk invariants are published with their official source', /D1/.test(deskInvars) && /docs\.kalshi\.com|fee-schedule/.test(deskInvars)]);
+interact.push(['desk states it is a paper simulator, not a live connection', /no order is transmitted to Kalshi/i.test(deskInvars)]);
+
+// Place a paper order through the ticket in static mode and check it reports a
+// real captured level rather than an invented price.
+el('#dtCount').value = '25';
+el('#dtPreview').click();
+await new Promise((r) => setTimeout(r, 900));
+const dtResult = written.get('#dtResult') || '';
+interact.push(['desk ticket previews a fill against a real captured ladder', /FILLED|PARTIAL|UNFILLED/.test(dtResult)]);
+interact.push(['desk ticket preview cites the ladder it priced from', /external-api\.kalshi\.com/.test(dtResult)]);
 
 // 6. Calendar advance + re-run competition with a different seed.
 el('#btnAdvance').click();

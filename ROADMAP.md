@@ -36,6 +36,10 @@ mid-day order-book capture).
 | 19 | **The owner's own PriceKalshiHistorical reference strategies recreated** (`mee`/`fade`/`mom` → `MEE_BoardSum` / `FadeSpike_Micro` / `MomTick_Micro`), every granularity adaptation labelled on the entry; first measured results: MEE +1.18% (hourly flight, rank 5), FadeSpike **+76.57%** (micro flight, rank 1, 43 real settlements), MomTick −7.60% | `src/strategies.js`, `src/research-sources.js` R14, `data/reports/flights.json`, test 91 |
 | 20 | **Second MasterSite re-review: seven more projects catalogued** (S13–S19: PriceKalshiHistorical, MLB-Prediction-model-backtest, MLB-PBP, PFFNFL, ScheduleFreeTime, NFLPRED, StockPaperSim), each with its verifiable claim, Kalshi market class and exact blocker; found the directory's StockPaperSim record stale (#42) and the exchange's duplicate dead Tesla-CEO series (#43) | `src/signal-sources.js`, `src/verification-data.js` V101–V103, tests 76/91, IRREGULARITIES.md #42/#43 |
 
+| 21 | **The Live Desk (new tab).** A separate section that PLACES paper orders on real **OPEN** Kalshi contracts at a point in time: an order ticket priced from the captured ladder (fill, VWAP, slippage in ticks and $, official fee, unfilled remainder, liquidity cap), the desk competition, per-entrant explanations, the open-contract universe with its ladders and reasons, and a verified fill log. A ladder captured **after** the order time is refused (`LOOK_AHEAD_LADDER`); an order larger than the real book reports the rest UNFILLED; every fill and settlement carries the ladder/market URL and capture timestamp it came from | `src/live-desk.js`, `src/desk-strategies.js`, `src/desk-data.js`, `scripts/run-live-desk.mjs`, `data/reports/live-desk*.{json,jsonl}`, tests 92–103 |
+| 22 | **Desk parity between server and static builds.** One report builder (`buildDeskReport`) is used by `server.js` (`/api/live-desk`, `/cutoffs`, `/universe`, `/ticket`, `/order`, `/orders`, `/ledger.jsonl`, `/fills.csv`) and by the browser build, so the two modes cannot disagree; the desk audit (D1–D13, each with its official source) is re-run in the browser and printed on the tab | `server.js`, `src/app.js` desk renderers, `test/ui-smoke.mjs` desk assertions |
+| 23 | **Desk session in the one-year memory (partial Next #9).** `attachDeskSession()` copies compact results + FILL/SETTLE rows into `deskMemory` / `tradeLog` (`kind: 'desk'`). Server `/api/live-desk` and the static Live Desk tab both attach; a year reset clears the desk cache so the next run re-attaches. Desk usernames are reserved even against a stale store (`DESK_RESERVED_USERNAMES`, set-equal to `DESK_STRATEGIES` by test 104). One session per asOf — not a running multi-day book | `src/competition-memory.js`, `server.js`, `src/app.js` `renderMemory`, tests 35 / 76 / 87 / 104 |
+
 ## Next, in priority order
 
 1. **Keep widening the forecast-archive ↔ weather-bar overlap, then measure.**
@@ -71,6 +75,19 @@ mid-day order-book capture).
    trades two venues; this project holds Kalshi only, deliberately.
    *Needs:* a second venue feed with the same verification standard.
 
+8. **More captured ladders, at more cut-offs.** The desk can only price a
+   contract when a ladder was captured at or before the cut-off, so the oldest
+   cut-offs price nothing: at the 2026-09-18T18:46Z capture, live/−6h/−12h/−15h
+   had 62/62/48/19 tradeable contracts and −24h and older had **0**. The
+   scheduled 16:40 UTC `with_books=true` run is the fix, one capture per day.
+   *Needs:* nothing but time and the existing workflow.
+9. **A running multi-day desk book.** Desk fills now attach to the one-year
+   memory (`attachDeskSession`, one session per asOf, FILL/SETTLE rows in
+   `tradeLog` with `kind: 'desk'`). What remains is carrying OPEN positions
+   across cut-offs so a desk trader has a continuous year rather than a
+   sequence of independent sessions. *Needs:* a persistence decision for
+   resting inventory between as-of instants.
+
 ## Known limitations (kept in sync with the README)
 
 - Depth behind the touch is modelled unless a captured ladder exists, and the
@@ -94,5 +111,14 @@ mid-day order-book capture).
 - The gold micro-flight sample is 12 settled KXGOLD15M contracts (192 one-minute
   bars) as of the 2026-09-18 evening ingest — the post-mortem computes the count
   from the store, so it updates as more settle every day the ingest runs.
+- The desk is a paper simulator: no order is transmitted to Kalshi, and a desk
+  fill is a claim about the captured ladder, not about a real account's fill.
+- The desk prices only contracts with a captured ladder (68 of 287 tracked
+  markets on the 2026-09-18 capture); 120 open contracts carry real quotes but
+  no ladder and are listed as **not priceable** with the ingest command that
+  would fix each one.
+- A captured ladder is a snapshot, not a stream: the desk never re-anchors it,
+  so an old book is priced at the prices it showed and the capture time travels
+  with every fill.
 - Human participants are paper-only: the store is a single-process JSON file
   (`data/store/`, git-ignored).

@@ -458,3 +458,18 @@ blockquote.quote {
   white-space: pre-wrap;
 }
 .source-link { font-size: .78rem; }
+
+/* ── Live Desk (paper orders on real captured Kalshi ladders) ─────────────── */
+.tag-good { background: rgba(46,204,113,.14); color: #56d68d; border-color: rgba(86,214,141,.35); }
+.tag-bad { background: rgba(255,86,86,.14); color: #ff8080; border-color: rgba(255,128,128,.35); }
+.postmortem-head { display: flex; align-items: center; gap: .5rem; margin-bottom: .35rem; }
+#panel-desk h3 { margin-top: 1.6rem; }
+#panel-desk .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; }
+#panel-desk .postmortem { border-left: 3px solid var(--line-soft); padding-left: .8rem; margin: .9rem 0; }
+#panel-desk .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .75rem; margin: .9rem 0; }
+#panel-desk .card { background: var(--panel-2, rgba(255,255,255,.03)); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); padding: .7rem .85rem; display: flex; flex-direction: column; gap: .2rem; }
+#panel-desk .card-label { font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted, #98a2b3); }
+#panel-desk .card-value { font-size: 1.25rem; font-family: var(--mono); }
+#panel-desk .card-note { font-size: .76rem; color: var(--muted, #98a2b3); }
+#dtResult .notice { margin-top: .75rem; }
+#panel-desk .rule-list li { margin-bottom: .3rem; line-height: 1.45; }
