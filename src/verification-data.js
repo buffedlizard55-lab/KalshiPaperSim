@@ -642,6 +642,82 @@ export const VERIFIED_FACTS = Object.freeze([
     derivation: 'Min/max over price.close in every tuple of src/accumulated-history.js (markets[*].tuples[*][3][3] / 10000), every tuple being a verbatim response from the official candlesticks endpoint above; reproducible offline and re-asserted by test 77.',
     usedIn: 'src/strategies.js -> LongshotFader_FLB thesis and AdjacentStrike_Ladder thesis; test 77 in test/simulation.test.js',
     note: 'This fact exists because a sentence in src/strategies.js said the universe "contains NO contract above 28c" — it was wrong. See Irregularity #31.'
+  },
+
+  /* ── Weather & gold expansion — captured 2026-09-18 ──────────────── */
+  {
+    id: 'V82', group: 'Markets & history', status: 'DOCUMENTED',
+    fact: 'KXHIGHNY is the NYC daily high-temperature series, documented by Kalshi\u2019s own API quick-start',
+    value: 'The quick-start fetches series KXHIGHNY, "Highest temperature in NYC today?" — this series tracks the highest temperature recorded in Central Park, New York on a given day.',
+    url: 'https://docs.kalshi.com/getting_started/quick_start_market_data',
+    usedIn: 'data/history/_ingest-request.json (intraday block hourly-weather-settled); src/strategies.js → VERIFIED_SERIES.KXHIGHNY'
+  },
+  {
+    id: 'V83', group: 'Captured market data', status: 'CAPTURED',
+    fact: 'KXHIGHNY brackets are 2\u00b0F bands plus a lower tail, and exactly one band settles YES per event',
+    value: 'Captured market objects: KXHIGHNY-26SEP07-B77.5 = strike_type "between", floor 77, cap 78, title "Will the maximum temperature be 77-78\u00b0 on Sep 7, 2026?"; KXHIGHNY-26SEP01-T83 = strike_type "less", cap 83, subtitle "82\u00b0 or below". Across the 22 captured events, exactly one band or tail holds result "yes" per event (e.g. 26AUG21: B79.5 yes, B77.5 no, T77 no).',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP07-B77.5',
+    capturedAt: '2026-09-18',
+    usedIn: 'src/strategies.js → WeatherLadder_CheapBands thesis; src/backtest-replay.js real settlements'
+  },
+  {
+    id: 'V84', group: 'Captured market data', status: 'CAPTURED',
+    fact: 'KXHIGHNY settles on The Weather Company data for New York City (CLINYC), not on NOAA',
+    value: 'rules_primary of the captured brackets: "If the maximum temperature recorded at New York City (CLINYC) for Sep 3, 2026, is less than 83\u00b0 fahrenheit according to The Weather Company, then the market resolves to Yes." (structure quoted from the captured market object of the same series).',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP07-B77.5',
+    capturedAt: '2026-09-18',
+    usedIn: 'The basis mismatch is flagged on ForecastEdge_Weather and in Irregularity #34 — the NWS archive is the SIGNAL, The Weather Company is the SETTLEMENT.'
+  },
+  {
+    id: 'V85', group: 'Captured market data', status: 'CAPTURED',
+    fact: 'KXHIGHNY brackets close at 05:00 UTC (1am ET) the day after the measured day',
+    value: 'Captured close_time of the Aug 18 event brackets: 2026-08-19T05:00:00Z; hourly bars run from ~15:00Z two days before the measured day to 06:00Z after it (37-40 bars per bracket).',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26AUG18-B87.5',
+    capturedAt: '2026-09-18',
+    usedIn: 'src/backtest-replay.js → real settlements fire at the market\u2019s close_time'
+  },
+  {
+    id: 'V86', group: 'Captured market data', status: 'CAPTURED',
+    fact: 'KXGOLD15M markets are 15-minute gold up/down contracts that settle against a target price',
+    value: 'Captured market object KXGOLD15M-26SEP162030-30: title "Gold price up in next 15 mins?", yes_sub_title "Target Price: $4,285.55", strike_type "greater_or_equal", floor_strike 4285.55, open_time 2026-09-17T00:15:00Z, close_time 2026-09-17T00:30:00Z, status finalized, result "no". 16 one-minute bars; their volume_fp sums to exactly the lifetime volume_fp 429,657.71.',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXGOLD15M-26SEP162030-30',
+    capturedAt: '2026-09-18',
+    usedIn: 'src/strategies.js → GoldBracket_EarlyLeader; the micro (1-minute) flight'
+  },
+  {
+    id: 'V87', group: 'Markets & history', status: 'CAPTURED',
+    fact: 'The NWS point API resolves Central Park to gridpoint OKX 34,45 with a daily forecast resource',
+    value: 'GET api.weather.gov/points/40.7829,-73.9654 → properties.forecast = https://api.weather.gov/gridpoints/OKX/34,45/forecast, forecastZone NYZ072 (Manhattan), relativeLocation New York NY, timeZone America/New_York.',
+    url: 'https://api.weather.gov/points/40.7829,-73.9654',
+    capturedAt: '2026-09-18',
+    usedIn: 'scripts/archive-forecasts.mjs → FORECAST_LOCATIONS (the point-in-time signal archive)'
+  },
+  {
+    id: 'V88', group: 'Markets & history', status: 'CAPTURED',
+    fact: 'NWS forecast periods carry the daily HIGH in \u00b0F on daytime periods with local timestamps',
+    value: 'GET api.weather.gov/gridpoints/OKX/34,45/forecast → properties.periods[] e.g. {name "Friday", startTime "2026-09-18T06:00:00-04:00", isDaytime true, temperature 80, temperatureUnit "F", probabilityOfPrecipitation {value 2}}; night periods carry the low (isDaytime false, temperature 70).',
+    url: 'https://api.weather.gov/gridpoints/OKX/34,45/forecast',
+    capturedAt: '2026-09-18',
+    usedIn: 'scripts/archive-forecasts.mjs → extractDailyHighs(); src/forecast-store.js'
+  },
+  {
+    id: 'V89', group: 'Settlement', status: 'CAPTURED',
+    fact: '39 of the 40 captured KXHIGHNY brackets are finalized with the exchange\u2019s own result — real settlements now exist in this repository',
+    value: 'The 2026-09-18 ingest captured 40 KXHIGHNY brackets (22 events, Aug 18 → Sep 17): 39 status "finalized" with result yes/no, 1 active. Every KXGOLD15M contract captured (8) is finalized. The replay books these results as real $1.00/$0.00 settlements with no settlement fee.',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXHIGHNY&limit=200',
+    doc: 'https://docs.kalshi.com/api-reference/market/get-markets',
+    capturedAt: '2026-09-18',
+    usedIn: 'src/backtest-replay.js → ReplayEngine.realSettlements; test 70 (settlement bookkeeping); test 79 (store reconciliation)'
+  },
+  {
+    id: 'V90', group: 'Project rules', status: 'DERIVED',
+    fact: 'A point-in-time forecast query can never see the future — enforced by code, tested',
+    value: 'forecastHighAt(snapshots, date, ts) walks snapshots newest-first and returns the first with captured_at <= ts that lists the date; anything captured after ts is invisible. Test 73 asserts: before any capture → null; between captures → the older value; after both → the newer; unknown date → null.',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/forecast-store.js',
+    evidenceLabel: 'src/forecast-store.js → forecastHighAt()',
+    derivation: 'Point-in-time rule of scripts/archive-forecasts.mjs; asserted by test 73 in test/simulation.test.js.',
+    usedIn: 'src/strategy-runner.js → buildForecastSignalProvider(); src/strategies.js → ForecastEdge_Weather'
   }
 ]);
 
@@ -993,6 +1069,70 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'The sentence and two related captions were rewritten to state the measured range, and to say in place that the earlier number was wrong (src/strategies.js). Test 77 recomputes the range from the store on every run so the claim cannot drift again, and the range is now a published fact (V81).',
     userAction: 'When a caption quotes a range, re-run the count before relying on it — and read the retraction next to the corrected sentence, not only the headline number.'
+  },
+
+  {
+    id: 32, severity: 'med',
+    title: 'The requested "CEO" project does not exist in the verified directory',
+    assumed: 'That a project named "CEO" exists among the owner\u2019s GitHub Pages sites and could supply a trading signal.',
+    truth: 'The official GitHub API lists 39 public repositories for buffedlizard55-lab on 2026-09-18; none is named CEO or close to it. The MasterSite directory publishes 38 of the 39 and states that one repository is "permanently excluded by owner request" without naming it. The requested project is therefore either renamed, the excluded repository, or a misremembered name.',
+    evidence: [
+      { label: 'Official repository list (39, no CEO)', url: 'https://api.github.com/users/buffedlizard55-lab/repos?per_page=100' },
+      { label: 'MasterSite directory (38 published, 1 excluded by owner request)', url: 'https://buffedlizard55-lab.github.io/MasterSite/' },
+      { label: 'Recorded in the ledger', url: null, text: 'src/signal-sources.js → S00 (status NOT_FOUND, flagged); test 76 asserts the missing project is named and flagged' }
+    ],
+    action: 'The review records S00 with status NOT_FOUND and a flag instead of silently skipping the request. No strategy was invented for a project that could not be examined.',
+    userAction: 'Owner review needed: rename the repo, confirm the excluded repository is the one meant, or correct the name.'
+  },
+  {
+    id: 33, severity: 'low',
+    title: 'The "Gold" project is a ring buyer\u2019s directory, not a gold-market signal (name collision)',
+    assumed: 'That the GOLD project could supply gold-price information for a Kalshi gold strategy.',
+    truth: 'GOLD is an evidence-based buyer\u2019s reference for solid gold RINGS — 482 jewelry listings ranked by price per pure-gold gram. Retail jewelry quotes are not a financial gold price, and wiring them into a market strategy would be a category error. Kalshi\u2019s actual gold markets (KXGOLD15M and siblings) are now tracked directly from the exchange.',
+    evidence: [
+      { label: 'GOLD project (rings)', url: 'https://buffedlizard55-lab.github.io/GOLD/' },
+      { label: 'The real gold market, captured from the exchange', url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXGOLD15M-26SEP162030-30' },
+      { label: 'Recorded in the ledger', url: null, text: 'src/signal-sources.js → S11 (status NOT_A_SIGNAL, flagged); GoldBracket_EarlyLeader sourceNote states the project contributes nothing to its inputs' }
+    ],
+    action: 'The mismatch is flagged on the signal-source ledger and on the strategy itself. The gold strategy uses only the exchange\u2019s own captured bars and results.',
+    userAction: 'If a gold-price signal is wanted later, the source must be an official price (e.g. LBMA/CME archive), not a jewelry directory.'
+  },
+  {
+    id: 34, severity: 'med',
+    title: 'Weather basis mismatch: the archived signal is NWS, the settlement is The Weather Company',
+    assumed: 'That a forecast from the National Weather Service and the market\u2019s settlement source measure the same number.',
+    truth: 'KXHIGHNY rules name "The Weather Company" data for New York City (CLINYC) as the settlement source (V84). The point-in-time archive holds the NWS gridded forecast for Central Park (V87/V88) — a different provider. On most days the two agree closely, but they are not the same measurement, and on disagreement days a forecast-confirming strategy loses even when its forecast was "right".',
+    evidence: [
+      { label: 'Settlement source (captured rules)', url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP07-B77.5' },
+      { label: 'Signal source (NWS point forecast)', url: 'https://api.weather.gov/gridpoints/OKX/34,45/forecast' },
+      { label: 'Stated on the strategy', url: null, text: 'src/strategies.js → ForecastEdge_Weather thesis (BASIS MISMATCH paragraph); the UI Research tab repeats it' }
+    ],
+    action: 'The mismatch is published on the strategy, in the forecast-status panel and here. It is a real source of noise the forward test will measure, not something to hide. If The Weather Company ever exposes a free point-in-time API, the archive can add it as a second provider.',
+    userAction: 'When reading ForecastEdge_Weather results, remember the signal and the settlement come from different providers.'
+  },
+  {
+    id: 35, severity: 'low',
+    title: 'An ACTIVE market\u2019s lifetime volume can exceed the sum of its stored bars — only finalized markets reconcile exactly',
+    assumed: 'That summing a market\u2019s stored volume_fp always reproduces its lifetime volume_fp (V80).',
+    truth: 'For FINALIZED markets the sum reconciles exactly (all 39 settled weather brackets and all 8 gold contracts do). For an ACTIVE market the market object is captured at a different instant than the last stored bar, and trading continues after it — observed: KXHIGHNY-26SEP17-B82.5 (status active) whose stored bars sum to less than its lifetime volume at capture.',
+    evidence: [
+      { label: 'The active bracket that exposed it', url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP17-B82.5' },
+      { label: 'The exact-reconciliation rule for finalized markets', url: null, text: 'test 79 in test/simulation.test.js reconciles only status=finalized stores' }
+    ],
+    action: 'The store audit and test 79 assert exact reconciliation for finalized markets only, and treat an active market\u2019s shortfall as expected ongoing trading rather than data corruption.',
+    userAction: 'None — this is a documented property of capturing a moving market, not an error.'
+  },
+  {
+    id: 36, severity: 'low',
+    title: 'KXHIGHNY / KXGOLD15M fee multipliers are not yet captured — fees default to the documented M=1',
+    assumed: 'That the fee multiplier of the two new series is known from a captured Series object (as it is for KXBTCY=0, V11).',
+    truth: 'The ingest captures MARKET objects, not SERIES objects, so seriesFeeConfig() falls back to the documented default multiplier M=1 (taker 0.07\u00d7P\u00d7(1\u2212P)) with a "captured: false" note. If either series carries a non-standard multiplier in the official Non-Standard Fees table, fees for those flights would be over- or under-charged.',
+    evidence: [
+      { label: 'Fee schedule (check the Non-Standard table for these series)', url: 'https://kalshi.com/docs/kalshi-fee-schedule.pdf' },
+      { label: 'The honest fallback', url: null, text: 'src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"' }
+    ],
+    action: 'Every fee number for the two new series is computed with the documented default AND labelled as such. Closing this needs one GET /series/{ticker} capture per series (a listed roadmap item).',
+    userAction: 'Open the fee schedule PDF and check whether KXHIGHNY / KXGOLD15M appear in the Non-Standard Fees table; if they do, capture the series objects and re-run the reports.'
   }
 ]);
 

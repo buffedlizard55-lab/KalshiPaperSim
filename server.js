@@ -28,7 +28,7 @@ import { fileURLToPath } from 'node:url';
 import { KALSHI_ENDPOINTS, KALSHI_PATHS, CANDLE_PERIODS_MINUTES, RATE_LIMITS } from './src/kalshi-config.js';
 import { KalshiApiClient, normalizeMarket, DATA_SOURCE, parseKalshiOrderbook } from './src/kalshi-api.js';
 import { getVerifiedMarkets, getVerifiedCandlesticks, CAPTURE_META, EXCHANGE_STATUS, HISTORICAL_CUTOFF, SERIES, getVerifiedOrderbook } from './src/verified-snapshot.js';
-import { runCompetition, getReplayableMarkets, getVerifiedCandleMap, getHistoryAudit } from './src/strategy-runner.js';
+import { runCompetition, runCompetitionFlights, getReplayableMarkets, getVerifiedCandleMap, getHistoryAudit , STRATEGIES } from './src/strategy-runner.js';
 import { CompetitionMemoryEngine, REGIMES, validateUsername } from './src/competition-memory.js';
 import { OrderBook, PaperPortfolio, round2 } from './src/simulation-engine.js';
 import { computeKalshiFee } from './src/kalshi-fees.js';
@@ -106,6 +106,7 @@ function persistStore() {
  * Computed competition results (cached)
  * ------------------------------------------------------------------ */
 
+const FLIGHTS = ['daily', 'hourly', 'micro']; // replay stores: daily | 60m | 1m
 let competitionCache = null;
 let competitionCacheKey = null;
 
@@ -123,10 +124,31 @@ function getCompetition(options = {}) {
     capital: options.initialCapital ?? 100000,
     maxNotionalPerMarketPct: options.maxNotionalPerMarketPct === undefined ? 'default' : options.maxNotionalPerMarketPct,
     maxFillFractionOfPeriodVolume:
-      options.maxFillFractionOfPeriodVolume === undefined ? 'default' : options.maxFillFractionOfPeriodVolume
+      options.maxFillFractionOfPeriodVolume === undefined ? 'default' : options.maxFillFractionOfPeriodVolume,
+    flight: FLIGHTS.includes(options.flight) ? options.flight : 'daily'
   });
   if (competitionCache && competitionCacheKey === key) return competitionCache;
-  const result = runCompetition(options);
+  // The flight selects the store the replay runs on: 'daily' is the original
+  // 30-market daily universe; 'hourly' (60m) and 'micro' (1m) run the intraday
+  // stores — which is where the settling weather brackets and 15-minute gold
+  // markets live. Flights are reported separately and never merged. Only the
+  // requested flight is computed (runCompetitionFlights would run all three).
+  const FLIGHT_INTERVAL = { hourly: 60, micro: 1 };
+  // Same roster filtering runCompetitionFlights applies: 'both' means
+  // daily+hourly (the two flights that existed when those designs were
+  // declared); the micro flight is the declared-'micro' roster only. A
+  // strategy outside its flight is absent from that leaderboard, not shown at 0%.
+  const flightRoster = (flight, roster) =>
+    flight === 'hourly'
+      ? roster.filter((st) => st.flight === 'hourly' || st.flight === 'both')
+      : roster.filter((st) => st.flight === 'micro');
+  const result = FLIGHT_INTERVAL[options.flight]
+    ? runCompetition({
+        ...options,
+        periodIntervalMinutes: FLIGHT_INTERVAL[options.flight],
+        strategies: flightRoster(options.flight, options.strategies || STRATEGIES)
+      })
+    : runCompetition(options);
   competitionCache = result;
   competitionCacheKey = key;
   memory.attachComputedResults(result);
@@ -517,7 +539,17 @@ const server = http.createServer(async (req, res) => {
         return sendJSON(res, 400, { error: 'depthMode must be "captured" or "modelled"' });
       }
 
+      // Flight (2026-09-18): which replay store the competition runs on.
+      // 'daily' (default) is the original daily-bar universe; 'hourly' and
+      // 'micro' run the 60-minute and 1-minute intraday stores — separate
+      // leaderboards, never merged into one ranking.
+      const flight = body.flight === undefined ? 'daily' : String(body.flight);
+      if (!['daily', 'hourly', 'micro'].includes(flight)) {
+        return sendJSON(res, 400, { error: 'flight must be "daily", "hourly" or "micro"' });
+      }
+
       const comp = getCompetition({
+        flight,
         depthMode,
         seed: Number(body.seed ?? 20260917),
         settleAtEnd: Boolean(body.settleAtEnd),

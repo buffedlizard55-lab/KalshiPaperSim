@@ -155,6 +155,14 @@ export function renderLeaderboardRows(rows) {
   return rows
     .map((r) => {
       const rank = r.qualified ? `#${r.rank}` : '—';
+      // An unranked entry has NO measurement: its capital never moved. Showing
+      // "+0.00%" would present an untested design as a competitive result, so
+      // the cell says unranked and the reason travels with the row (tooltip +
+      // sub-line) exactly as the README does.
+      const returnCell = r.qualified
+        ? `<td class="num ${signedClass(r.returnPct)}"><b>${esc(pct(r.returnPct))}</b></td>`
+        : `<td class="num muted" title="${esc(r.disqualificationReason || 'No executed fills — not ranked.')}" data-unranked="true"><b>unranked</b></td>`;
+      const unrankedNote = r.qualified ? '' : `<span class="cell-sub">unranked — ${esc(r.disqualificationReason || 'no executed fills')}</span>`;
       return `
       <tr data-username="${esc(r.username)}">
         <td class="num">${esc(rank)}</td>
@@ -167,12 +175,12 @@ export function renderLeaderboardRows(rows) {
             </span>
           </div>
         </td>
-        <td>${esc(r.title || '')}<span class="cell-sub">${esc(r.category || '')}</span></td>
-        <td class="num ${signedClass(r.returnPct)}"><b>${esc(pct(r.returnPct))}</b></td>
+        <td>${esc(r.title || '')}<span class="cell-sub">${esc(r.category || '')}</span>${unrankedNote}</td>
+        ${returnCell}
         <td class="num">${esc(money(r.finalEquity))}</td>
         <td class="num">${esc(r.totalTrades ?? 0)}</td>
-        <td class="num">${esc(Number(r.winRate ?? 0).toFixed(1))}%</td>
-        <td class="num">${esc(Number(r.maxDrawdownPct ?? 0).toFixed(2))}%</td>
+        <td class="num">${esc(r.totalTrades ? `${Number(r.winRate ?? 0).toFixed(1)}%` : '—')}</td>
+        <td class="num">${esc(r.totalTrades ? `${Number(r.maxDrawdownPct ?? 0).toFixed(2)}%` : '—')}</td>
         <td class="num">${esc(money(r.feesPaid ?? 0))}</td>
         <td class="num" title="Contracts that could not fill against available depth">${esc(compact(r.unfilledContracts || 0))}</td>
         <td>${verdictPill(r.verdict)}</td>

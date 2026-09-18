@@ -35,6 +35,7 @@ import { OrderBook, PaperPortfolio, round2, round6, clamp, mulberry32, seedFromS
 import { dollarsToNumber, snapToGrid, resolvePriceGrid } from './price-grid.js';
 import { computeKalshiFee } from './kalshi-fees.js';
 import { seriesFeeConfig } from './verified-snapshot.js';
+import { classifySettlement } from './settlement-tracker.js';
 
 /** Parse one raw Kalshi candlestick into plain numbers. */
 export function parseCandle(c) {
@@ -156,6 +157,22 @@ export function bookFromCandle(market, candle, opts = {}) {
 }
 
 /**
+ * Copy of a market object with every outcome-revealing field removed.
+ *
+ * WHY: ctx.market is handed to every strategy on every bar. A captured market
+ * of a SETTLED series carries `result` ('yes'/'no') — if that field reached
+ * decide(), a strategy could simply buy the known winner one bar early and the
+ * whole replay would be a lookahead artifact. The engine settles real results
+ * itself at the market's close time; the strategy only ever sees the redacted
+ * copy. (Kept as a copy so the engine's own settlement map is untouched.)
+ */
+export function redactMarketForReplay(market) {
+  if (!market || typeof market !== 'object') return market;
+  const { result, settlement_value_dollars, expiration_value, ...safe } = market;
+  return safe;
+}
+
+/**
  * Replay engine: runs one or more strategies over candlestick history.
  */
 export class ReplayEngine {
@@ -192,6 +209,42 @@ export class ReplayEngine {
     this.settleAtEnd = Boolean(options.settleAtEnd);
     this.finalResult = options.finalResult || null;
     this.notional = options.notional ?? 1.0;
+
+    /**
+     * REAL MID-REPLAY SETTLEMENTS (2026-09-18, roadmap item #6).
+     *
+     * A market whose CAPTURED object says status=finalized with result yes/no
+     * has already resolved on the real exchange. Any position still open when
+     * the timeline passes that market's close_time is settled at the REAL
+     * outcome: $1.00 per winning contract, $0.00 per losing contract, no
+     * settlement fee (verified fee schedule). This is not a scenario — the
+     * result is the exchange's own field, captured from GET /markets/{ticker}.
+     *
+     * Rules, deliberately conservative:
+     *   • Only status=finalized books a payout. `determined`/`disputed`/
+     *     `amended` results can still change (see src/settlement-tracker.js),
+     *     so they mark to the last real quote instead.
+     *   • Settlement happens at the market's real close_time when the capture
+     *     carries one, else at the market's last stored bar. A market that is
+     *     due but never reached in the timeline settles at the end of the run.
+     *   • A result is NEVER shown to the strategy before settlement time:
+     *     ctx.market is a copy with the outcome fields removed (see
+     *     redactMarketForReplay), so no decide() can trade on the answer.
+     */
+    this.realSettlements = new Map();
+    for (const m of this.markets) {
+      const cls = classifySettlement(m);
+      if (cls.state !== 'SETTLED') continue;
+      const closeTs = m.close_time ? Math.floor(new Date(m.close_time).getTime() / 1000) : null;
+      this.realSettlements.set(m.ticker, {
+        result: cls.result,
+        closeTs,
+        due: false, // set to true once the timeline has passed the due time
+        reason: cls.reason,
+        status: m.status,
+        source: m.source_url || m._provenance?.url || null
+      });
+    }
 
     /**
      * PER-MARKET CAPITAL ALLOCATION (recommended-work item #7).
@@ -256,6 +309,20 @@ export class ReplayEngine {
     this.depthMode = options.depthMode === 'captured' ? 'captured' : 'modelled';
     this.depthProfiles = options.depthProfiles || null;
     this.depthProfileScale = options.depthProfileScale ?? 1;
+
+    /**
+     * POINT-IN-TIME EXTERNAL SIGNALS (2026-09-18, roadmap item #3).
+     *
+     * An optional `signalProvider(ticker, market, tsSeconds)` returns whatever
+     * VERIFIED external information was knowable at `tsSeconds` for a market —
+     * for now the NWS forecast snapshot behind a weather bracket — or null when
+     * nothing was captured yet. The provider is the ONLY way a strategy sees
+     * external data: it must implement the point-in-time rule itself (see
+     * src/forecast-store.js, which refuses any snapshot captured after the
+     * decision time). ctx.signal carries the result; a strategy that gets null
+     * abstains.
+     */
+    this.signalProvider = typeof options.signalProvider === 'function' ? options.signalProvider : null;
     /** Which markets in this run actually traded on a captured ladder. */
     this.depthCoverage = this.markets.map((m) => ({
       ticker: m.ticker,
@@ -313,6 +380,16 @@ export class ReplayEngine {
     const periodLog = [];
     const actionsLog = [];
     let lastTs = null;
+
+    /**
+     * Per-run copy of the real-settlement map: this engine instance is REUSED
+     * across strategies (runCompetition runs every roster entry through the same
+     * engine), and the due flags are run state. Copying per run keeps every
+     * strategy's settlements identical and independent.
+     */
+    const realSettlements = new Map(
+      [...this.realSettlements.entries()].map(([ticker, r]) => [ticker, { ...r }])
+    );
 
     // One book per market for the whole replay, so resting maker orders persist
     // across periods exactly as they would on a live exchange.
@@ -374,9 +451,12 @@ export class ReplayEngine {
         username,
         portfolio,
         stats: portfolio.updateEquity(),
-        market,
+        market: redactMarketForReplay(market),
         ticker: t,
         candle,
+        // Point-in-time external signal for THIS market at THIS bar's end, or
+        // null when nothing verified was captured by then (see signalProvider).
+        signal: this.signalProvider ? this.signalProvider(t, market, candle.endTs) : null,
         history: history[t],
         historyAll: history,
         books,
@@ -434,11 +514,84 @@ export class ReplayEngine {
         }
       }
 
+      // REAL SETTLEMENT (see constructor): when the timeline has passed a
+      // finalized market's close — or reached its last stored bar — any open
+      // position pays out at the exchange's own result. Runs AFTER this bar's
+      // actions so a fill on the final bar can still settle, and never before,
+      // so no strategy can buy a result it should not know yet.
+      const real = realSettlements.get(t);
+      if (real && !real.due) {
+        const isLastBar = row.indexInSeries === row.seriesLength - 1;
+        const dueNow = (real.closeTs !== null && candle.endTs >= real.closeTs) || isLastBar;
+        if (dueNow) {
+          real.due = true;
+          const settledHere = portfolio.settleMarket(t, real.result, {
+            notional: this.notional,
+            settledAt: candle.endDate
+          });
+          if (settledHere.length) {
+            for (const s of settledHere) s.real = true;
+            actionsLog.push({
+              period: candle.endTs,
+              date: candle.endDate,
+              ticker: t,
+              type: 'real_settlement',
+              result: real.result,
+              contracts: settledHere.reduce((acc, s) => acc + s.contracts, 0),
+              payout: settledHere.reduce((acc, s) => round2(acc + s.payout), 0),
+              reason: `market finalized on the exchange (status=${real.status}, result=${real.result}) — positions settled at $1.00/$0.00, no settlement fee`,
+              source: real.source
+            });
+            // Keep the equity curve honest if this timestamp was already
+            // plotted: a settlement moves equity and the chart must show it.
+            const sNow = portfolio.updateEquity();
+            const lastPoint = equityCurve[equityCurve.length - 1];
+            if (lastPoint && lastPoint.ts === candle.endTs) {
+              lastPoint.equity = sNow.equity;
+              lastPoint.returnPct = sNow.returnPct;
+              lastPoint.trades = sNow.totalTrades;
+              lastPoint.drawdownPct = sNow.maxDrawdownPct;
+            }
+          }
+        }
+      }
+
       if (lastTs !== candle.endTs) {
         lastTs = candle.endTs;
         const s = portfolio.updateEquity();
         equityCurve.push({ ts: candle.endTs, date: candle.endDate, equity: s.equity, returnPct: s.returnPct, trades: s.totalTrades, drawdownPct: s.maxDrawdownPct });
         periodLog.push({ ts: candle.endTs, date: candle.endDate, stats: s });
+      }
+    }
+
+    /**
+     * Catch-up for real settlements the timeline never reached: a finalized
+     * market whose stored bars stop before its close_time (ingest lag) still
+     * owes its holders the real payout. Settle at the run's final timestamp so
+     * the book closes on the exchange's own result, never on a stale quote.
+     */
+    const lateSettlements = [];
+    for (const [ticker, real] of realSettlements.entries()) {
+      if (real.due) continue;
+      const settledHere = portfolio.settleMarket(ticker, real.result, {
+        notional: this.notional,
+        settledAt: 'END-OF-WINDOW'
+      });
+      if (settledHere.length) {
+        real.due = true;
+        lateSettlements.push(...settledHere);
+        for (const s of settledHere) s.real = true;
+        actionsLog.push({
+          period: null,
+          date: 'END-OF-WINDOW',
+          ticker,
+          type: 'real_settlement',
+          result: real.result,
+          contracts: settledHere.reduce((acc, s) => acc + s.contracts, 0),
+          payout: settledHere.reduce((acc, s) => round2(acc + s.payout), 0),
+          reason: `market finalized on the exchange (status=${real.status}, result=${real.result}) but the stored bars stop before its close_time — positions settled at the run boundary so the book closes on the real result`,
+          source: real.source
+        });
       }
     }
 
@@ -530,6 +683,26 @@ export class ReplayEngine {
       tradeLog: portfolio.tradeHistory.slice().reverse(),
       actionLog: actionsLog,
       settlements: settlementDetail || portfolio.settlements,
+      /**
+       * Real mid-replay settlements booked during this run: every market whose
+       * CAPTURED object is finalized with a result, whether it paid, and from
+       * which URL the result came. Zero entries means nothing in this universe
+       * had finalized at capture time — the leaderboard then keeps marking to
+       * the last real quote and says so.
+       */
+      realSettlements: {
+        eligibleMarkets: [...this.realSettlements.entries()].map(([ticker, r]) => ({
+          ticker,
+          result: r.result,
+          status: r.status,
+          closeTs: r.closeTs,
+          reason: r.reason,
+          source: r.source
+        })),
+        bookedCount: portfolio.settlements.filter((s) => s.real === true).length,
+        bookedPayout: round2(portfolio.settlements.filter((s) => s.real === true).reduce((acc, s) => acc + s.payout, 0)),
+        lateWindowSettlements: lateSettlements.length
+      },
       positionsOpen: [...portfolio.positions.values()],
       portfolio
     };

@@ -53,7 +53,7 @@ const state = {
   feed: null,
   feedStatus: null,
   tape: [],
-  options: { seed: 20260917, settleAtEnd: false, regime: 'baseline', depthMode: 'captured' },
+  options: { seed: 20260917, settleAtEnd: false, regime: 'baseline', depthMode: 'captured', flight: 'daily' },
   researchLoaded: false,
   reports: {}
 };
@@ -146,9 +146,22 @@ async function staticRuntime() {
       return { markets, source: apiMod.DATA_SOURCE.VERIFIED_SNAPSHOT, capturedAt: snap.CAPTURE_META.capturedAt, notice: 'REAL Kalshi market objects captured 2026-09-17 (static mode: computed in your browser).' };
     },
     async competition(opts) {
-      const c = runner.runCompetition({ ...opts, regime: memory.state.regime });
-      memory.attachComputedResults(c);
-      memory.save();
+      // Flight (2026-09-18): 'daily' is the original daily-bar universe;
+      // 'hourly'/'micro' replay the 60-minute / 1-minute stores — separate
+      // leaderboards, never merged (same filtering the server applies).
+      const FLIGHT_INTERVAL = { hourly: 60, micro: 1 };
+      const flight = FLIGHT_INTERVAL[opts.flight] ? opts.flight : 'daily';
+      const runOpts = { ...opts, regime: memory.state.regime };
+      if (FLIGHT_INTERVAL[flight]) {
+        runOpts.periodIntervalMinutes = FLIGHT_INTERVAL[flight];
+        // Same roster rule the server and runCompetitionFlights apply:
+        // 'both' = daily+hourly; micro runs its declared roster only.
+        runOpts.strategies = flight === 'hourly'
+          ? runner.STRATEGIES.filter((st) => st.flight === 'hourly' || st.flight === 'both')
+          : runner.STRATEGIES.filter((st) => st.flight === 'micro');
+      }
+      const c = runner.runCompetition(runOpts);
+      if (flight === 'daily') { memory.attachComputedResults(c); memory.save(); }
       return { competition: c.competition, results: c.results, leaderboard: c.leaderboard };
     },
     async leaderboard() {
@@ -423,7 +436,7 @@ function renderLeaderboard() {
   const prov = c.dataProvenance || {};
   setText('#competitionLede', '');
   setHTML('#competitionLede', `
-    <strong>${esc(c.id)}</strong> · ${esc(c.horizonPeriods)} real daily periods across
+    <strong>${esc(c.id)}</strong> · ${esc(c.horizonPeriods)} real ${c.periodIntervalMinutes === 60 ? 'hourly' : c.periodIntervalMinutes === 1 ? 'one-minute' : 'daily'} periods across
     ${esc((prov.markets || []).length)} market(s) · seed <code>${esc(c.seed)}</code> ·
     starting capital ${esc(money(c.initialCapital, 0))} · generated ${esc(new Date(c.generatedAt || Date.now()).toISOString().slice(0, 19).replace('T', ' '))}Z.
     ${(() => {
@@ -441,6 +454,15 @@ function renderLeaderboard() {
       : `<span class="pill pill-live" title="No order may fill more than this share of the contracts that really traded in that daily bar.">fills &le; ${esc(Math.round((c.maxFillFractionOfPeriodVolume ?? 0.1) * 100))}% of each bar\'s real volume</span>`}
     ${c.maxNotionalPerMarketPct ? `<span class="pill pill-muted">cap ${esc(Math.round(c.maxNotionalPerMarketPct * 100))}% of equity per market</span>` : ''}
     ${c.settleAtEnd ? '<span class="pill pill-sim">SETTLEMENT: HYPOTHETICAL</span>' : '<span class="pill pill-muted">positions marked at last real quote</span>'}
+    ${(() => {
+      // Real settlements booked in THIS run: markets captured as finalized with
+      // an exchange result paid out $1.00/$0.00 mid-replay. Zero in a flight
+      // whose markets are all still active — the pill then says so.
+      const eligible = state.results.reduce((n, r) => Math.max(n, r.realSettlements?.eligibleMarkets?.length || 0), 0);
+      const booked = state.results.reduce((n, r) => Math.max(n, r.realSettlements?.bookedCount || 0), 0);
+      if (!eligible) return '';
+      return `<span class="pill pill-live" title="Markets captured with status=finalized and an exchange result settled open positions at their real close_time: \$1.00 per winning contract, \$0.00 per losing one, no settlement fee.">REAL SETTLEMENTS: ${booked} booked across ${eligible} finalized market(s)</span>`;
+    })()}
   `);
 
   setHTML('#podium', renderPodium(state.leaderboard.map((r) => enrichRow(r))));
@@ -460,7 +482,7 @@ function renderLeaderboard() {
             <div class="s-card-cat">${esc(r.title || '')}</div>
           </div>
         </div>
-        <div class="muted" style="font-size:.82rem">${esc(r.analysis?.whyItFailed || 'Entry conditions were never satisfied by the captured data.')}</div>
+        <div class="muted" style="font-size:.82rem">${esc(r.disqualificationReason || r.analysis?.whyItFailed || 'Entry conditions were never satisfied by the captured data.')}</div>
       </div>`).join(''));
   } else ub.hidden = true;
 
@@ -620,6 +642,7 @@ function renderStrategyDetail(username) {
 
   setHTML('#strategyDetail', `
   <div class="detail">
+    ${r.skippedFlight ? `<div class="notice" style="margin-bottom:.8rem"><b>Not run in this flight.</b> ${esc(r.skippedFlight.reason)} The design is flight-specific (universe: <code>${esc((s.universe || []).join(', ') || 'all')}</code>, bar length ${esc(String(r.skippedFlight.periodIntervalMinutes))}m) — switch to the flight that holds its markets to see it measured.</div>` : ''}
     <div class="detail-head">
       <div>
         <h3><span class="avatar">${esc(s.avatar || '🤖')}</span> ${esc(s.username)} <span class="muted">${esc(s.handle || '')}</span></h3>
@@ -1396,6 +1419,7 @@ function renderIrregularities() {
 
 function wireGlobalEvents() {
   on('#btnRerun', 'click', async () => {
+    state.options.flight = ['hourly', 'micro'].includes($('#ctlFlight')?.value) ? $('#ctlFlight').value : 'daily';
     state.options.seed = Number($('#ctlSeed').value) || 20260917;
     state.options.settleAtEnd = $('#ctlSettle').checked;
     state.options.regime = $('#ctlRegime').value;
@@ -1408,6 +1432,21 @@ function wireGlobalEvents() {
       `Competition recomputed from the real captured candles — depth: ${state.options.depthMode === 'captured' ? 'captured ladders' : 'MODELLED (comparison only)'}.`,
       state.options.depthMode === 'captured' ? 'ok' : 'warn',
       6000
+    );
+  });
+
+  on('#ctlFlight', 'change', async () => {
+    const v = $('#ctlFlight').value;
+    state.options.flight = ['hourly', 'micro'].includes(v) ? v : 'daily';
+    await loadCompetition();
+    toast(
+      state.options.flight === 'daily'
+        ? 'Daily flight — the 30-market daily-bar universe.'
+        : state.options.flight === 'hourly'
+          ? 'Hourly flight — 60-minute bars, including the settling KXHIGHNY weather brackets.'
+          : 'Micro flight — 1-minute bars, the KXGOLD15M 15-minute gold markets.',
+      'ok',
+      5000
     );
   });
 

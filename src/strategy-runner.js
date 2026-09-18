@@ -8,6 +8,10 @@
  */
 
 import { STRATEGIES, getStrategy } from './strategies.js';
+
+// Re-exported for callers (server.js, the static-site runtime) that build a
+// flight-specific roster from the same declaration the runner itself uses.
+export { STRATEGIES };
 import { ReplayEngine, analyzeEquityCurve } from './backtest-replay.js';
 import { computeAttribution, generatePostMortem, buildLeaderboard } from './analysis.js';
 import { computePortfolioExposure, computeCompetitionMarketStats } from './market-analytics.js';

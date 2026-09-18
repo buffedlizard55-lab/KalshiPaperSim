@@ -1262,6 +1262,11 @@ test('46. every verified fact carries a reviewable link and a status', () => {
     'api.elections.kalshi.com',
     'assets.kalshi.com', 'github.com', 'www.cfbenchmarks.com', 'cfbenchmarks.com',
     'tc39.es', 'developer.mozilla.org',
+    // api.weather.gov is the OFFICIAL US National Weather Service API (NOAA) —
+    // the source of the point-in-time forecast SIGNAL behind the weather
+    // strategies (facts V87/V88). It is a signal source, never a source about
+    // the exchange itself, which is why the group check below still applies.
+    'api.weather.gov',
     'laikalabs.ai', 'pith.science', 'www.reddit.com', 'reddit.com', 'www.oddsshopper.com'
   ]);
   let withLink = 0;
@@ -1278,10 +1283,13 @@ test('46. every verified fact carries a reviewable link and a status', () => {
       assert.equal(u.protocol, 'https:');
       assert.ok(hosts.has(u.host), `${f.id}: unexpected source host ${u.host}`);
       // A fact about the EXCHANGE may never be sourced from a third party.
+      // api.weather.gov is admitted for SIGNAL-source facts only (the official
+      // NOAA API the forecast archive captures — a US government source, and
+      // the archive is what makes the weather strategies point-in-time).
       if (f.group !== 'Strategy sources') {
         assert.ok(
           u.host.endsWith('kalshi.com') || u.host.endsWith('kalshi.co') || u.host === 'github.com' ||
-            u.host === 'tc39.es' || u.host === 'developer.mozilla.org',
+            u.host === 'tc39.es' || u.host === 'developer.mozilla.org' || u.host === 'api.weather.gov',
           `${f.id}: "${f.group}" facts must cite Kalshi (or a language/project reference), not ${u.host}`
         );
       }

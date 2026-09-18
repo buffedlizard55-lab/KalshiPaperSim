@@ -44,7 +44,13 @@ export const VERIFIED_SERIES = Object.freeze({
   KXTOLA: 'Toll Brothers Annual KPI',
   KXCPIYOY: 'CPI inflation YoY (Bureau of Labor Statistics settlement)',
   KXFEDDECISION: 'Fed meeting rate decision (mutually exclusive buckets)',
-  KXBTCY: 'BTC price range EOY (CF Benchmarks BRTI settlement)'
+  KXBTCY: 'BTC price range EOY (CF Benchmarks BRTI settlement)',
+  /* Verified 2026-09-18 when the ingest job captured them from the live API:
+     KXHIGHNY is the series Kalshi's own quick-start documents; the captures
+     (data/history/intraday/60m/KXHIGHNY-*.json) hold the real market objects
+     with rules, strikes and — for 39 of 40 — the exchange's final result. */
+  KXHIGHNY: 'NYC daily high-temperature brackets (Central Park; the series documented by the official API quick-start: https://docs.kalshi.com/getting_started/quick_start_market_data)',
+  KXGOLD15M: 'Gold 15-minute up/down markets (target-price settlement; captured from the live API 2026-09-18, data/history/intraday/1m/)'
 });
 
 /** Series verified NOT to exist — do not re-introduce (see IRREGULARITIES.md #1). */
@@ -1388,6 +1394,194 @@ export const STRATEGIES = [
         if (count > 0) actions.push({ type: 'buy', side: 'YES', count, reason: `moderate_fav bucket: mean5 ${round6(mean5)} in [0.76,0.85], low ${low}` });
       }
       return actions;
+    }
+  },
+
+  /* ════════════════════════════════════════════════════════════════════ *
+   * 2026-09-18 — WEATHER + GOLD expansion (roadmap items #3 and #4, and
+   * the MasterSite signal-source review: SFWeather → KXHIGHNY, GOLD →
+   * KXGOLD15M). All three trade ONLY the newly ingested real bars, and two
+   * of them settle against the exchange's own results (see
+   * src/backtest-replay.js "REAL MID-REPLAY SETTLEMENTS").
+   * ════════════════════════════════════════════════════════════════════ */
+
+  {
+    ...BASE,
+    id: 'weather_ladder_cheapbrackets',
+    username: 'WeatherLadder_CheapBands',
+    handle: '@WeatherLadder_CheapBands',
+    avatar: '🌡️',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXHIGHNY'],
+    title: 'Cheap Weather-Bracket Ladder (settles for real)',
+    category: 'Weather / Ladder',
+    tagline:
+      'Buys every cheap NYC high-temperature bracket in the first hours of each daily event and holds to the exchange\'s real settlement — the R03 ladder idea on the market class it was actually written for.',
+    sizingPct: 0.3,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource:
+      'Recreated from the r/PredictionsMarkets temperature-laddering thread (RESEARCH_SOURCES R03, third-party source) + the SFWeather project\'s official-source weather pipeline (MasterSite signal-source ledger)',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1s4n4wp/what_are_the_best_strategies_youve_seen_or_used/',
+    sourceNote:
+      'R03: "Laddering – The most consistent approach I\'ve seen is buying multiple adjacent brackets cheap (like 2-15c) rather than picking one. If the final temp lands anywhere in your spread, one or two contracts pay out big and cover the rest." The SFWeather project (https://buffedlizard55-lab.github.io/SFWeather/) verified the official-source weather pipeline that motivated ingesting this series at all. KXHIGHNY is the series Kalshi\'s own API quick-start documents (https://docs.kalshi.com/getting_started/quick_start_market_data).',
+    thesis:
+      'DESIGN INTENT: exactly one 2°F band of a KXHIGHNY daily event can settle YES (verified from the captured market objects: strike_type "between" with floor/cap, e.g. KXHIGHNY-26SEP07-B77.5 = "77° to 78°"; the "less" tail markets cover "X° or below"). A ladder of cheap bands bought early therefore costs a few cents per rung and pays $1.00 on the rung that contains the observed high — the R03 claim, on the exact market class the claim was made about. ' +
+      'HONEST LIMITS, stated up front: (1) the replay universe holds the top-40 KXHIGHNY brackets by exchange-reported lifetime volume — 2-3 bands per event, not the full ~15-band ladder a live trader could buy, so this measures the idea on a sample, not the whole board; (2) entry timing is the market\'s own bar clock (first 6 hourly bars of the bracket\'s life, i.e. roughly the day before the measured day) — point-in-time by construction; (3) the strategy does NOT use any forecast: it is the "dumb ladder" control that the forecast strategy (ForecastEdge_Weather) must beat.',
+    rules: {
+      entry: 'Within the first 6 hourly bars of a bracket\'s life: buy YES when the YES ask ≤ 0.15 (the R03 "2-15c" band), once per market.',
+      sizing: '30% of available cash per rung (aggressive laddering across the 2-3 ingested bands of an event), capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement (status=finalized, result yes/no books $1.00/$0.00; no settlement fee).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, book, portfolio, ticker, periodIndex } = ctx;
+      if (periodIndex > 5) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.15) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason: `weather ladder: hour ${periodIndex} of the bracket's life, YES ask ${ask} ≤ 0.15 (R03 cheap band) → buy the rung, hold to real settlement`
+        }
+      ];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'forecast_edge_weather',
+    username: 'ForecastEdge_Weather',
+    handle: '@ForecastEdge_Weather',
+    avatar: '🌦️',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXHIGHNY'],
+    title: 'Point-in-Time Forecast-Divergence Buyer',
+    category: 'Weather / Model vs Market',
+    tagline:
+      'Reads the archived NWS point forecast for Central Park AS KNOWN AT DECISION TIME and buys the bracket the forecast confirms when the market has not priced it — the R06 winner pattern. Abstains whenever no forecast snapshot existed.',
+    sizingPct: 0.4,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource:
+      'Recreated from the 500-weather-bot backtest post (RESEARCH_SOURCES R06) + the botforkalshi weather-model-divergence taxonomy (R10) + the SFWeather project (MasterSite signal-source ledger)',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1tko1iw/i_backtested_500_weather_kalshi_bots_the_best_bot/',
+    sourceNote:
+      'R06: "the strategies that did best … used weather data to confirm a heat trade that the market had not fully priced yet. The strategies that did worst tried to fight the market because one weather variable looked bearish." R10 (https://www.botforkalshi.com/blog/kalshi-trading-strategies-guide): weather model divergence is a primary strategy family. The signal source is the official NWS API archived point-in-time by scripts/archive-forecasts.mjs (api.weather.gov, grid OKX 34,45 for Central Park).',
+    thesis:
+      'DESIGN INTENT: only the CONFIRMING side is traded — buy the band that contains the NWS forecast high, or the lower tail when the forecast sits clearly below its threshold, when the market still prices it cheap. Fighting the market on a bearish reading is explicitly not recreated (it was the losing family in R06). ' +
+      'POINT-IN-TIME RULE: the forecast is read through src/forecast-store.js, which only returns a snapshot captured at or before the decision bar — no snapshot, no trade. The archive began on 2026-09-18, so every settled bracket ingested before that date honestly produces NO trades for this strategy: this is a forward test by construction, and it will stay unranked (0 trades, reason published) until the archive and the live markets overlap. ' +
+      'BASIS MISMATCH (flagged, IRREGULARITIES.md): KXHIGHNY settles on The Weather Company data for New York City (CLINYC) per the market rules, while the signal is the NWS gridded forecast for the same point — different providers, a real source of noise the replay measures rather than hides.',
+    rules: {
+      entry:
+        'ctx.signal carries the newest NWS forecast high F captured at or before this bar. Band bracket (floor f, cap c): buy YES when F ∈ [f-1, c+1] and ask ≤ 0.45. Lower tail ("X° or below", cap X): buy YES when F ≤ X-2 and ask ≤ 0.45. Once per market.',
+      sizing: '40% of available cash per confirmed bracket, capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement ($1.00/$0.00 at the market\'s real result).',
+      noSignalRule: 'ctx.signal === null (no snapshot captured by this bar) → abstain. Never substitute the current forecast for a past decision.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker, market, signal, candle } = ctx;
+      if (!signal || signal.kind !== 'nws-forecast-high') return [];
+      const f = Number(signal.highF);
+      if (!Number.isFinite(f)) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.45) return [];
+
+      // Band bracket: floor_strike..cap_strike (verified: 2°F bands, e.g. 77-78).
+      const floor = Number(market.floor_strike);
+      const cap = Number(market.cap_strike);
+      const isBand = Number.isFinite(floor) && Number.isFinite(cap) && cap > floor;
+      // Lower tail: strike_type 'less' with a cap_strike only ("X° or below").
+      const isLowerTail = String(market.strike_type || '') === 'less' && Number.isFinite(cap);
+
+      let fire = false;
+      let why = '';
+      if (isBand && f >= floor - 1 && f <= cap + 1) {
+        fire = true;
+        why = `NWS forecast high ${f}°F lands in band ${floor}-${cap}°F (market ask ${ask} ≤ 0.45)`;
+      } else if (isLowerTail && f <= cap - 2) {
+        fire = true;
+        why = `NWS forecast high ${f}°F is ≥2°F below the tail threshold ${cap}°F ("${cap - 1}° or below", ask ${ask} ≤ 0.45)`;
+      }
+      if (!fire) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason: `forecast-confirm: ${why} — snapshot captured ${signal.capturedAt} (point-in-time), holding to real settlement`
+        }
+      ];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'gold_bracket_earlyleader',
+    username: 'GoldBracket_EarlyLeader',
+    handle: '@GoldBracket_EarlyLeader',
+    avatar: '🥇',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXGOLD15M'],
+    title: '15-Minute Gold Early-Leader Ride',
+    category: 'Gold / Short-Horizon Momentum',
+    tagline:
+      'On 1-minute bars of Kalshi\'s 15-minute gold markets, buys whichever side the market itself says is winning after the first five minutes and rides it to the exchange\'s real settlement.',
+    sizingPct: 0.5,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource:
+      'Original design in this repository, built on the roadmap item #4 one-minute store; market semantics verified from the captured market objects (MasterSite signal-source ledger: GOLD project)',
+    designSourceUrl: 'https://buffedlizard55-lab.github.io/GOLD/',
+    sourceNote:
+      'The KXGOLD15M series and its heavy trading were verified from third-party archives (cryptostruct.com topic page listing 3,000-7,000 trades per 15-minute contract); the contracts themselves, their "Gold price up in next 15 mins?" question and target-price settlement were then captured from the official Kalshi API by the ingest job (data/history/intraday/1m/). The MasterSite GOLD project is a solid-gold RING directory — it is NOT a gold-price signal (flagged in the signal-source ledger) and contributes nothing to this strategy\'s inputs; its link is kept only because it prompted the gold-market review.',
+    thesis:
+      'DESIGN INTENT: a 15-minute up/down market that has already moved to 0.55+ (or 0.45−) by minute five is telling you where spot gold went; the remaining ten minutes mostly confirm. Buying the early leader and holding to settlement converts that persistence into settlement cash — and because every KXGOLD15M contract captured so far is finalized with a real exchange result, the payout is the exchange\'s own $1.00/$0.00, not a mark. ' +
+      'WHAT THIS IS NOT: it uses NO external gold data (no COMEX, no LBMA fix, no TradingView) — the only input is the market\'s own price path, so it is a market-microstructure bet on early-leader persistence, measured on 8 settled contracts (16 one-minute bars each) so far. The sample is small and the post-mortem says so.',
+    rules: {
+      entry: 'Bars 0-4 of the contract (the first five minutes): close ≥ 0.55 → buy YES; close ≤ 0.45 → buy NO. Once per market.',
+      sizing: '50% of available cash, capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement ($1.00/$0.00).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, book, portfolio, ticker, periodIndex } = ctx;
+      if (periodIndex > 4) return [];
+      const close = candle.trade.close;
+      if (close === null) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+
+      let side = null;
+      if (close >= 0.55) side = 'YES';
+      else if (close <= 0.45) side = 'NO';
+      if (!side) return [];
+      const ask = side === 'YES' ? book.getBestYesAsk() : book.getBestNoAsk();
+      if (ask === null) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, side);
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side,
+          count,
+          reason: `early leader: minute ${periodIndex} close ${close} ${side === 'YES' ? '≥ 0.55' : '≤ 0.45'} → buy ${side} at ${ask}, ride to real settlement`
+        }
+      ];
     }
   }
 ];

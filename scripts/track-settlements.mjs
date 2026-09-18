@@ -55,7 +55,38 @@ function parseArgs(argv) {
 function trackedUniverse() {
   const tickers = new Set(Object.keys(CANDLESTICKS));
   for (const t of Object.keys(EXTENDED_SERIES)) tickers.add(t);
+  // 2026-09-18: the ingest store is part of the universe too — including the
+  // intraday weather brackets (KXHIGHNY) and 15-minute gold markets
+  // (KXGOLD15M), which settle daily and are the repository's first markets
+  // with real results. Without this, the settlement poll would miss them.
+  for (const dir of [path.join(ROOT, 'data', 'history'), path.join(ROOT, 'data', 'history', 'intraday', '60m'), path.join(ROOT, 'data', 'history', 'intraday', '1m')]) {
+    if (!fs.existsSync(dir)) continue;
+    for (const file of fs.readdirSync(dir)) {
+      if (!file.endsWith('.json') || file.startsWith('_')) continue;
+      try {
+        const store = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
+        if (store && typeof store.ticker === 'string' && store.ticker) tickers.add(store.ticker);
+      } catch {
+        console.error(`⚠ unreadable store ${file} — skipped, never guessed`);
+      }
+    }
+  }
   return [...tickers].sort();
+}
+
+/** A market object from the accumulated store, for tickers outside the snapshot. */
+function storedMarket(ticker) {
+  for (const dir of [path.join(ROOT, 'data', 'history'), path.join(ROOT, 'data', 'history', 'intraday', '60m'), path.join(ROOT, 'data', 'history', 'intraday', '1m')]) {
+    const p = path.join(dir, `${ticker.replace(/[^A-Za-z0-9._-]/g, '_')}.json`);
+    if (!fs.existsSync(p)) continue;
+    try {
+      const store = JSON.parse(fs.readFileSync(p, 'utf8'));
+      if (store && store.market) return store.market;
+    } catch {
+      return null;
+    }
+  }
+  return null;
 }
 
 async function main() {
@@ -75,10 +106,10 @@ async function main() {
   let report;
   if (args.offline) {
     const rows = tickers.map((t) => {
-      const m = getVerifiedMarkets().find((x) => x.ticker === t);
+      const m = getVerifiedMarkets().find((x) => x.ticker === t) || storedMarket(t);
       return m
-        ? { ticker: t, status: m.status, result: m.result, close_time: m.close_time, classification: classifySettlement(m), source: 'VERIFIED_SNAPSHOT' }
-        : { ticker: t, error: 'not in the verified snapshot', source: null };
+        ? { ticker: t, status: m.status, result: m.result, close_time: m.close_time, classification: classifySettlement(m), source: getVerifiedMarkets().some((x) => x.ticker === t) ? 'VERIFIED_SNAPSHOT' : 'ACCUMULATED_STORE' }
+        : { ticker: t, error: 'not in the verified snapshot or the store', source: null };
     });
     report = { source: 'VERIFIED_SNAPSHOT', checkedAt: new Date().toISOString(), markets: rows, errors: [] };
   } else {

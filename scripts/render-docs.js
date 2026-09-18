@@ -18,7 +18,7 @@ import { fileURLToPath } from 'node:url';
 
 import { VERIFIED_FACTS, IRREGULARITIES, COMPETITION_SITE_ANALYSIS, groupFacts, factStats } from '../src/verification-data.js';
 import { STRATEGIES, validateStrategies, VERIFIED_SERIES, REJECTED_FABRICATED_TICKERS } from '../src/strategies.js';
-import { runCompetition, getVerifiedCandleMap, getCandleCoverage, getHistoryAudit } from '../src/strategy-runner.js';
+import { runCompetition, runCompetitionFlights, getVerifiedCandleMap, getCandleCoverage, getHistoryAudit } from '../src/strategy-runner.js';
 import { LEADERBOARD_QUALIFICATION } from '../src/analysis.js';
 import { getVerifiedMarkets, SERIES_NOT_FOUND, CAPTURE_META, HISTORICAL_CUTOFF, EXCHANGE_STATUS } from '../src/verified-snapshot.js';
 import { EXTENDED_CAPTURE_META, EXTENDED_SERIES, summarizeExtendedSeries } from '../src/verified-candles.js';
@@ -39,6 +39,12 @@ const num = (v) => Number(v || 0).toLocaleString('en-US', { maximumFractionDigit
  * ------------------------------------------------------------------ */
 const competition = runCompetition({ seed: SEED });
 const { leaderboard, results, competition: meta } = competition;
+/* The two intraday flights (hourly 60m, micro 1m) are computed from the SAME
+   stored data and quoted in the README next to the daily table — reported
+   separately, never merged into one ranking. */
+const flightsAll = runCompetitionFlights({ seed: SEED, depthMode: 'captured' });
+const hourlyFlight = flightsAll.hourly;
+const microFlight = flightsAll.micro;
 const ranked = leaderboard.filter((r) => r.qualified);
 const unranked = leaderboard.filter((r) => !r.qualified);
 const byName = new Map(results.map((r) => [r.username, r]));
@@ -273,7 +279,7 @@ ${unranked
   )
   .join('\n')}
 
-${unranked.map((r) => `> **${r.username} is not ranked** — ${r.unrankedReason || 'no executed fills'}. Listing it at "0%" would present a design that never traded as if it were a competitive result, so \`LEADERBOARD_QUALIFICATION\` excludes it from ranking entirely.`).join('\n')}
+${unranked.map((r) => `> **${r.username} is not ranked** — ${r.disqualificationReason || 'no executed fills'}. Listing it at "0%" would present a design that never traded as if it were a competitive result, so \`LEADERBOARD_QUALIFICATION\` excludes it from ranking entirely.`).join('\n')}
 
 **How to read this table.** ${profitable.length} of the ${ranked.length} ranked entries finished ahead of their $100,000 starting capital —
 best ${pct(profitable.length ? profitable[0].returnPct : 0)} (${profitable.length ? profitable[0].username : 'n/a'}), worst ${pct(ranked[ranked.length - 1].returnPct)}.
@@ -285,6 +291,32 @@ while the losers pay taker fees on huge notional to hold deep out-of-the-money c
 The "Contracts NOT filled" column tells the other half of the story — aggressive sizing hits the wall of real liquidity, and the
 engine reports the missed volume instead of inventing an execution price for it.
 Every number here is recomputed on demand; nothing in this table is stored.
+
+### The intraday flights (hourly 60m · micro 1m) — reported separately, never merged
+
+\`flights.json\` · The hourly flight replays the 60-minute store (the curated index/BTC strikes **plus, since 2026-09-18, 40 real KXHIGHNY weather brackets — 39 of them already finalized with the exchange's own result, so positions settle at real $1.00/$0.00 mid-replay**). The micro flight replays the 1-minute store (8 settled KXGOLD15M gold contracts). A strategy that needs intraday bars cannot be judged on daily ones, so these are separate leaderboards.
+
+**HOURLY (period_interval 60)** — ${hourlyFlight ? `${hourlyFlight.competition.horizonPeriods} hourly periods across ${hourlyFlight.competition.dataProvenance.markets.length} markets` : 'not available'}
+
+| # | Username | Return | Trades | Real settlements booked | Real payout |
+| --- | --- | --- | --- | --- | --- |
+${hourlyFlight ? hourlyFlight.leaderboard.map((r) => {
+  const res = hourlyFlight.results.find((x) => x.username === r.username) || {};
+  const rs = res.realSettlements || {};
+  return `| ${r.rank ?? '—'} | **${r.username}**${r.qualified === false ? ' *(unranked)*' : ''} | ${r.totalTrades ? pct(r.returnPct) : '*no trades*'} | ${r.totalTrades ?? 0} | ${rs.bookedCount ?? 0} | ${money(rs.bookedPayout ?? 0)} |`;
+}).join('\n') : ''}
+
+**MICRO (period_interval 1)** — ${microFlight ? `${microFlight.competition.horizonPeriods} one-minute periods across ${microFlight.competition.dataProvenance.markets.length} markets` : 'not available'}
+
+| # | Username | Return | Trades | Real settlements booked | Real payout |
+| --- | --- | --- | --- | --- | --- |
+${microFlight ? microFlight.leaderboard.map((r) => {
+  const res = microFlight.results.find((x) => x.username === r.username) || {};
+  const rs = res.realSettlements || {};
+  return `| ${r.rank ?? '—'} | **${r.username}**${r.qualified === false ? ' *(unranked)*' : ''} | ${r.totalTrades ? pct(r.returnPct) : '*no trades*'} | ${r.totalTrades ?? 0} | ${rs.bookedCount ?? 0} | ${money(rs.bookedPayout ?? 0)} |`;
+}).join('\n') : ''}
+
+> **ForecastEdge_Weather is the forward test.** It trades only where the point-in-time NWS archive (first capture ${hourlyFlight && hourlyFlight.results ? '2026-09-18T03:19Z' : '—'}) has a snapshot at or before the decision bar. On the backfilled August–September brackets it correctly abstains (0 trades, unranked, reason published); its real window is the live market from 2026-09-18 onward.
 <!-- AUTO:RESULTS-END -->`;
 
 const rosterBlock = `<!-- AUTO:ROSTER-START (regenerated by scripts/render-docs.js — do not edit) -->
