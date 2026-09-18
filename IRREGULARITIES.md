@@ -1,8 +1,8 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-18 by `scripts/render-docs.js` from `src/verification-data.js`.
-**40 irregularities** flagged during this build: 12 high, 17 medium,
-9 low, 1 informational.
+**43 irregularities** flagged during this build: 13 high, 18 medium,
+10 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
 about it**, and **what you should do**. Nothing here is speculation: each item was found by comparing an
@@ -229,6 +229,26 @@ assumption against an official document or a real API response.
 - The fix — `src/simulation-engine.js -> OrderBook.makerFeesApply (set from the series fee_type); a plain-quadratic maker fill now records fee 0 and puts the rule that produced it in feeFormula`
 - The guard — `test 86 proves both branches: $0.00 on a plain-quadratic series, exactly $0.42 on 100 contracts at $0.40 for a maker-fee series`
 - Visible per fill — `src/trade-ledger.js -> feeRegime column (taker_0.07 | taker_zero | maker_0.0175 | maker_free | settlement) and the Fee Regimes table on the Trade Ledger tab`
+
+---
+
+## #41 — A push race silently discarded an entire ingest run's data (the bot committed nothing and exited 128)
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That the inline push-race guard in the three bot workflows could always recover from losing a push race by rebasing on the remote tip. |
+| **Verified truth** | The first post-merge ingest run on main (2026-09-18, run 35352002809) fetched a full universe of bars and then died at its "Commit the new history" step with exit code 128, so EVERY bar, book snapshot and settlement check that run collected was discarded — the runner's disk is thrown away. Root cause, three stacked bugs: (1) ingest-now.yml's commit step added data/, src/accumulated-history.js and docs/data but NOT src/forecast-data.js, which the module-regeneration step had just rewritten — the tree kept a tracked-but-unstaged file; (2) the forecast bot won the push race meanwhile, and `git rebase` refuses to start with unstaged changes (its own exit 128); (3) the failure branch then ran `git rebase --continue` and `git rebase --abort` — both fail with "no rebase in progress" (exit 128) — and because GitHub runs run: steps with bash -e, the abort's exit code terminated the step before the ::error message could be emitted. The daily-history.yml copy of the guard had already been fixed for exactly this race; ingest-now.yml had not. |
+| **What the code does** | All three workflows (ingest-now.yml, daily-history.yml, weather-signals.yml) now call the shared script. The lost bars were not lost permanently — the exchange is the source of truth and the request-9 re-run re-fetched the same windows — but the 14:45–18:00 UTC window on 2026-09-18 had no ingest commit until the re-run landed, and any analysis run in that window saw a store that lagged reality by hours. |
+| **What you should do** | Open the two run links and compare their Commit steps; then run `bash test/workflow-race-guard.sh` locally to watch the exact failure mode and its fix execute. |
+
+**Evidence**
+
+- The failed run (job log shows all steps green until "Commit the new history"): <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35352002809>
+- The recovered re-run (same universe, committed by the new guard): <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35377388737>
+- The fix — one shared, locally-tested script — `scripts/push-with-race-guard.sh: commits EVERYTHING the run changed (git add -A, run logs now git-ignored), rebases with --autostash, auto-resolves rebase conflicts ONLY for generated modules and ONLY by regeneration, aborts cleanly on any other conflict, and never lets a `git rebase --abort` failure terminate the script.`
+- The regression test — `test/workflow-race-guard.sh — 21 checks against a real bare-repo remote, including a replay of the exact 2026-09-18 race (tracked-but-unstaged module + concurrent bot push) and the data-conflict case, which must fail the job rather than commit conflict markers.`
 
 ---
 
@@ -541,6 +561,25 @@ assumption against an official document or a real API response.
 
 ---
 
+## #43 — The exchange lists TWO Tesla-CEO series with the same question — one has traded, one never has
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That a series ticker uniquely identifies a question, so ingesting the KXTESLACEOCHANGE series the discovery run returned would capture the Tesla CEO-exit market. |
+| **Verified truth** | Two distinct series exist for the SAME question "Musk out as Tesla CEO before 2026?": TESLACEOCHANGE-26 (series TESLACEOCHANGE) — active, 88,884.37 contracts of lifetime volume, 399 stored daily bars from a 2024-05-15 open; and KXTESLACEOCHANGE-26 (series KXTESLACEOCHANGE) — inactive, volume_fp 0.00, and an EMPTY candlestick response for its whole life window. Both were captured from the official API on 2026-09-18 (data/history/TESLACEOCHANGE-26.json, data/history/KXTESLACEOCHANGE-26.json). The KX-prefixed twin looks like a re-listed or re-namespaced copy that never attracted flow. |
+| **What the code does** | The CEO strategy (CEOExit_Drift) trades TESLACEOCHANGE — the series with real bars — and its universe names that ticker explicitly. The empty twin is kept in the store as captured (deleting it would hide the fact) and the calendar audit now REPORTS zero-bar stores instead of crashing on them (`emptyStores` in data/reports/calendar-audit.json; the crash was found when the request-9 ingest introduced the empty market). |
+| **What you should do** | Open both market links and compare volume_fp; a strategy that discovered "the Tesla CEO market" by keyword alone could easily trade the dead twin, so universe choices cite their bars. |
+
+**Evidence**
+
+- The market that trades (88,884 contracts, 399 bars): <https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26>
+- The market that never traded (volume 0, no bars): <https://external-api.kalshi.com/trade-api/v2/markets/KXTESLACEOCHANGE-26>
+- Its empty candlestick response: <https://external-api.kalshi.com/trade-api/v2/series/KXTESLACEOCHANGE/markets/KXTESLACEOCHANGE-26/candlesticks?period_interval=1440>
+
+---
+
 ## #9 — Two different status vocabularies for the same concept
 
 **Severity:** `LOW`
@@ -699,6 +738,25 @@ assumption against an official document or a real API response.
 - The run log committed with the data — `data/history/_last-run.log — "✗ <ticker>: http_429"`
 - Rate-limit documentation: <https://docs.kalshi.com/getting_started/rate_limits>
 - Implementation — `scripts/track-settlements.mjs (retries via scripts/kalshi-http.mjs; failures are reported, never invented)`
+
+---
+
+## #42 — The MasterSite directory's audit record for StockPaperSim is stale — the repository was rebuilt after the audit
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That the directory's per-site audit records (categories, descriptions, commit counts, flags) describe the current state of each repository. |
+| **Verified truth** | The directory data (MasterSite data/sites.js, audit stamp 2026-09-17T21:47:46Z) records StockPaperSim as a "README-only placeholder… a single initial commit containing only a 15-byte README.md". The repository was rebuilt the next day: as of 2026-09-18T17:45:57Z it has 30 commits (PR #9 merged) and a full README describing a one-year paper-trading stock competition with two seasons, a venue model and its own secondary-source honesty labels. The directory entry is factually wrong about the repository it points at — not because the audit lied, but because it has not been re-run. |
+| **What the code does** | Recorded in the signal-source ledger (S19) so no one cites the directory's placeholder description as current. This repository's own S19 entry describes the project as it is now. The directory itself needs its audit re-run (tools/build_data.py) to refresh the record — that is an action for the MasterSite repository, not this one. |
+| **What you should do** | Re-run the MasterSite audit (its tools/build_data.py) and check whether any other entry also drifted — a directory of 38 sites audited once will drift again. |
+
+**Evidence**
+
+- The stale audit record (fetched via the GitHub API 2026-09-18): <https://github.com/buffedlizard55-lab/MasterSite/blob/main/data/sites.js>
+- The repository the record describes (now 30 commits): <https://github.com/buffedlizard55-lab/StockPaperSim>
+- The rebuild merge: <https://github.com/buffedlizard55-lab/StockPaperSim/pull/9>
 
 ---
 

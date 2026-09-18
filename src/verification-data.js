@@ -804,6 +804,32 @@ export const VERIFIED_FACTS = Object.freeze([
     capturedAt: '2026-09-18',
     usedIn: 'scripts/archive-forecasts.mjs -> verifyStore() grid cross-check; test 90 asserts the shipped forecast_url encodes the configured grid',
     irregularity: '#40'
+  },
+
+  {
+    id: 'V101', group: 'Research sources', status: 'CAPTURED',
+    fact: 'The owner\'s own PriceKalshiHistorical project documents three reference strategies, and its README was read in full',
+    value: 'The README of github.com/buffedlizard55-lab/PriceKalshiHistorical (fetched through the GitHub REST API on 2026-09-18 because the sandbox cannot open TLS to github.io) documents its backtest/strategy_example.py reference set verbatim: `mee` "|Σ mids -1|>2.5¢ on mutually_exclusive events → Buy cheapest / sell richest leg"; `fade` "|mid(t)-mid(t-5m)|≥5¢ + spread≤3 ticks → Fade the spike (buy dip)"; `mom` "mid(t)-mid(t-20) > 2¢ + tight spread → Follow momentum". It also states the fee model "0.07*p*(1-p)" and that the "Official API has no retroactive orderbook" — both independently corroborated by this repository\'s own captured fee schedule and book captures. The three strategies are recreated as MEE_BoardSum, FadeSpike_Micro and MomTick_Micro (RESEARCH_SOURCES R14).',
+    url: 'https://github.com/buffedlizard55-lab/PriceKalshiHistorical',
+    capturedAt: '2026-09-18',
+    usedIn: 'src/research-sources.js R14; src/strategies.js MEE_BoardSum / FadeSpike_Micro / MomTick_Micro; signal-source ledger S13'
+  },
+  {
+    id: 'V102', group: 'Research sources', status: 'CAPTURED',
+    fact: 'The MasterSite directory was re-reviewed project by project a second time, and seven more market/sports projects were catalogued',
+    value: 'The directory\'s own data export (MasterSite repo, data/sites.js, audit stamp 2026-09-17T21:47:46Z, fetched via the GitHub API on 2026-09-18) lists 38 verified sites. Every Markets & Trading Research and Sports Data & Scoreboards project not yet in the signal-source ledger was then inspected README-first through the GitHub API: PriceKalshiHistorical, MLB-Prediction-model-backtest, MLB-PBP, PFFNFL, ScheduleFreeTime, NFLPRED, StockPaperSim. Each became a ledger entry (S13–S19) with its verifiable claim, its Kalshi market class, and the exact blocker that keeps it untestable here — no invented testability either way.',
+    url: 'https://github.com/buffedlizard55-lab/MasterSite/blob/main/data/sites.js',
+    capturedAt: '2026-09-18',
+    usedIn: 'src/signal-sources.js S13–S19; Research tab of the site'
+  },
+  {
+    id: 'V103', group: 'Pipeline', status: 'CAPTURED',
+    fact: 'The request-9 ingest re-ran the universe the failed main run lost, and committed it through the new race-guard',
+    value: 'GitHub Actions run 35377388737 (on-demand Kalshi history ingest, branch arena/01a0b59b-kalshipapersim, 2026-09-18) completed in 9m2s and committed "chore(history): append real Kalshi candlesticks 2026-09-18": daily bars for the 54 tracked markets, hourly bars through 2026-09-18T18:00:00Z (newest bar KXNBAGAME-26OCT20BOSDET-BOS), fresh order-book snapshots (KXHIGHNY alone now carries 280 captured ladders across its 40 brackets), and 284 tracked markets of which 221 are finalized with the exchange\'s own result. This is the data the failed run 35352002809 fetched and then discarded at its commit step (irregularity #41).',
+    url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35377388737',
+    capturedAt: '2026-09-18',
+    usedIn: 'data/history/ (the commit it pushed); IRREGULARITIES.md #41',
+    irregularity: '#41'
   }
 ]);
 
@@ -1283,6 +1309,49 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'captureLocation() now returns the two documents separately (pointProperties vs forecastProperties) and identity is read from the point document only. Three guards make the failure mode impossible to repeat silently: the capture compares the live identity against the nwsGrid written in the configuration and refuses to write on a mismatch; the offline audit (--verify) fails on an incomplete or mismatched resolution and on a forecast URL that encodes a different grid; and test 90 asserts the shipped module agrees with the configuration field for field. The workflow now runs the audit under set -o pipefail and fails the run when any location did not capture.',
     userAction: 'Compare data/forecasts/miami-mia.json with the two links: the forecast URL always said MFL/106,51, which is exactly what the point response says and what the store now records instead of nulls.'
+  },
+
+  {
+    id: 41, severity: 'high',
+    title: 'A push race silently discarded an entire ingest run\'s data (the bot committed nothing and exited 128)',
+    assumed: 'That the inline push-race guard in the three bot workflows could always recover from losing a push race by rebasing on the remote tip.',
+    truth: 'The first post-merge ingest run on main (2026-09-18, run 35352002809) fetched a full universe of bars and then died at its "Commit the new history" step with exit code 128, so EVERY bar, book snapshot and settlement check that run collected was discarded — the runner\'s disk is thrown away. Root cause, three stacked bugs: (1) ingest-now.yml\'s commit step added data/, src/accumulated-history.js and docs/data but NOT src/forecast-data.js, which the module-regeneration step had just rewritten — the tree kept a tracked-but-unstaged file; (2) the forecast bot won the push race meanwhile, and `git rebase` refuses to start with unstaged changes (its own exit 128); (3) the failure branch then ran `git rebase --continue` and `git rebase --abort` — both fail with "no rebase in progress" (exit 128) — and because GitHub runs run: steps with bash -e, the abort\'s exit code terminated the step before the ::error message could be emitted. The daily-history.yml copy of the guard had already been fixed for exactly this race; ingest-now.yml had not.',
+    evidence: [
+      { label: 'The failed run (job log shows all steps green until "Commit the new history")', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35352002809' },
+      { label: 'The recovered re-run (same universe, committed by the new guard)', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35377388737' },
+      { label: 'The fix — one shared, locally-tested script', url: null, text: 'scripts/push-with-race-guard.sh: commits EVERYTHING the run changed (git add -A, run logs now git-ignored), rebases with --autostash, auto-resolves rebase conflicts ONLY for generated modules and ONLY by regeneration, aborts cleanly on any other conflict, and never lets a `git rebase --abort` failure terminate the script.' },
+      { label: 'The regression test', url: null, text: 'test/workflow-race-guard.sh — 21 checks against a real bare-repo remote, including a replay of the exact 2026-09-18 race (tracked-but-unstaged module + concurrent bot push) and the data-conflict case, which must fail the job rather than commit conflict markers.' }
+    ],
+    action: 'All three workflows (ingest-now.yml, daily-history.yml, weather-signals.yml) now call the shared script. The lost bars were not lost permanently — the exchange is the source of truth and the request-9 re-run re-fetched the same windows — but the 14:45–18:00 UTC window on 2026-09-18 had no ingest commit until the re-run landed, and any analysis run in that window saw a store that lagged reality by hours.',
+    userAction: 'Open the two run links and compare their Commit steps; then run `bash test/workflow-race-guard.sh` locally to watch the exact failure mode and its fix execute.'
+  },
+
+  {
+    id: 42, severity: 'low',
+    title: 'The MasterSite directory\'s audit record for StockPaperSim is stale — the repository was rebuilt after the audit',
+    assumed: 'That the directory\'s per-site audit records (categories, descriptions, commit counts, flags) describe the current state of each repository.',
+    truth: 'The directory data (MasterSite data/sites.js, audit stamp 2026-09-17T21:47:46Z) records StockPaperSim as a "README-only placeholder… a single initial commit containing only a 15-byte README.md". The repository was rebuilt the next day: as of 2026-09-18T17:45:57Z it has 30 commits (PR #9 merged) and a full README describing a one-year paper-trading stock competition with two seasons, a venue model and its own secondary-source honesty labels. The directory entry is factually wrong about the repository it points at — not because the audit lied, but because it has not been re-run.',
+    evidence: [
+      { label: 'The stale audit record (fetched via the GitHub API 2026-09-18)', url: 'https://github.com/buffedlizard55-lab/MasterSite/blob/main/data/sites.js' },
+      { label: 'The repository the record describes (now 30 commits)', url: 'https://github.com/buffedlizard55-lab/StockPaperSim' },
+      { label: 'The rebuild merge', url: 'https://github.com/buffedlizard55-lab/StockPaperSim/pull/9' }
+    ],
+    action: 'Recorded in the signal-source ledger (S19) so no one cites the directory\'s placeholder description as current. This repository\'s own S19 entry describes the project as it is now. The directory itself needs its audit re-run (tools/build_data.py) to refresh the record — that is an action for the MasterSite repository, not this one.',
+    userAction: 'Re-run the MasterSite audit (its tools/build_data.py) and check whether any other entry also drifted — a directory of 38 sites audited once will drift again.'
+  },
+
+  {
+    id: 43, severity: 'med',
+    title: 'The exchange lists TWO Tesla-CEO series with the same question — one has traded, one never has',
+    assumed: 'That a series ticker uniquely identifies a question, so ingesting the KXTESLACEOCHANGE series the discovery run returned would capture the Tesla CEO-exit market.',
+    truth: 'Two distinct series exist for the SAME question "Musk out as Tesla CEO before 2026?": TESLACEOCHANGE-26 (series TESLACEOCHANGE) — active, 88,884.37 contracts of lifetime volume, 399 stored daily bars from a 2024-05-15 open; and KXTESLACEOCHANGE-26 (series KXTESLACEOCHANGE) — inactive, volume_fp 0.00, and an EMPTY candlestick response for its whole life window. Both were captured from the official API on 2026-09-18 (data/history/TESLACEOCHANGE-26.json, data/history/KXTESLACEOCHANGE-26.json). The KX-prefixed twin looks like a re-listed or re-namespaced copy that never attracted flow.',
+    evidence: [
+      { label: 'The market that trades (88,884 contracts, 399 bars)', url: 'https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26' },
+      { label: 'The market that never traded (volume 0, no bars)', url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXTESLACEOCHANGE-26' },
+      { label: 'Its empty candlestick response', url: 'https://external-api.kalshi.com/trade-api/v2/series/KXTESLACEOCHANGE/markets/KXTESLACEOCHANGE-26/candlesticks?period_interval=1440' }
+    ],
+    action: 'The CEO strategy (CEOExit_Drift) trades TESLACEOCHANGE — the series with real bars — and its universe names that ticker explicitly. The empty twin is kept in the store as captured (deleting it would hide the fact) and the calendar audit now REPORTS zero-bar stores instead of crashing on them (`emptyStores` in data/reports/calendar-audit.json; the crash was found when the request-9 ingest introduced the empty market).',
+    userAction: 'Open both market links and compare volume_fp; a strategy that discovered "the Tesla CEO market" by keyword alone could easily trade the dead twin, so universe choices cite their bars.'
   }
 ]);
 

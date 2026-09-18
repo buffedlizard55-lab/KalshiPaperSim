@@ -2382,6 +2382,240 @@ export const STRATEGIES = [
         }
       ];
     }
+  },
+
+  /* ════════════════════════════════════════════════════════════════════ *
+   * 2026-09-18 (session 01a0b59b) — RECREATED FROM THE OWNER'S OWN
+   * PriceKalshiHistorical REFERENCE STRATEGIES (RESEARCH_SOURCES R14)
+   *
+   * The sibling project github.com/buffedlizard55-lab/PriceKalshiHistorical
+   * ships a book-walking backtester with three reference strategies
+   * (backtest/strategy_example.py): `mee`, `fade`, `mom`. All three are
+   * recreated below on THIS repository's verified bars. Each entry states
+   * exactly where the granularity of this store forced an adaptation —
+   * the source ran on its own 5s/15s snapshot database, this store holds
+   * official candlesticks at 60m (hourly flight) and 1m (micro flight).
+   * ════════════════════════════════════════════════════════════════════ */
+
+  {
+    ...BASE,
+    id: 'mee_board_sum',
+    username: 'MEE_BoardSum',
+    handle: '@MEE_BoardSum',
+    avatar: '🎯',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXHIGHNY', 'KXBTCY'],
+    title: 'Mutually-Exclusive-Event Board Sum (R14 `mee`)',
+    category: 'Cross-market / Board mean reversion',
+    tagline:
+      'When the YES asks of one event\'s whole bracket board sum to ≤ 0.975, buys the cheapest leg; when the bids sum to ≥ 1.025, buys NO on the richest leg — the sibling collector project\'s `mee` reference strategy, recreated on real boards.',
+    sizingPct: 0.4,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from PriceKalshiHistorical backtest/strategy_example.py strategy `mee` (RESEARCH_SOURCES R14) — the owner\'s own Kalshi collector/backtester project',
+    designSourceUrl: 'https://github.com/buffedlizard55-lab/PriceKalshiHistorical',
+    sourceNote:
+      'R14 `mee`: "|Σ mids -1|>2.5¢ on mutually_exclusive events → Buy cheapest / sell richest leg. Pure cross-market mean reversion." Both universes are verified mutually-exclusive boards from the exchange\'s own market objects: KXHIGHNY brackets ("Will the maximum temperature be 87-88°…", "<85°" tails) and KXBTCY strike_type between/greater ranges ("45,000 to 49,999.99", "150,000 or above" — data/history/intraday/60m/*.json market.yes_sub_title, market.strike_type).',
+    thesis:
+      'DESIGN INTENT: exactly one band of a mutually-exclusive board settles $1.00, so the asks of the whole board should sum to ≈ 1.00; a sum visibly below (above) 1 means the board is collectively under-(over-)priced, and the cheapest (richest) leg carries the most extreme mispricing. This entry recreates the sibling project\'s `mee` rule on the real captured boards, using each band\'s REAL hourly YES ask/bid quotes. ' +
+      'HONEST LIMITS: (1) the trigger uses ASK (bid) sums, not the source\'s mid sum, because a replay can only buy at the ask — a strictly harder threshold than the original; ' +
+      '(2) the ingested board is the SAMPLE the store holds (top brackets by exchange lifetime volume), not the full board a live trader could see, so a cheap sum does NOT make the position risk-free — the band that actually settles may be one the store never ingested, and the position is a bet, not an arb; ' +
+      '(3) sibling quotes are read point-in-time (historyAll at the current bar, staleness-guarded to 3 hours) but different bands\' hourly bars can end within the same hour, so the "board" is the freshest snapshot each band had, not one atomic timestamp; ' +
+      '(4) the taker fee is paid on every leg at each series\' real captured fee multiplier (KXBTCY 0, KXHIGHNY 1 — data/discovered/series-fees.json).',
+    rules: {
+      entry:
+        'Per event (series + date prefix of the ticker): collect every sibling band\'s latest hourly YES ask/bid (≤ 3 h stale). If ≥ 3 bands are priced and Σ asks ≤ 0.975 → buy YES of the CHEAPEST band, once per market. If Σ bids ≥ 1.025 → buy NO of the RICHEST band, once per market.',
+      sizing: '40% of available cash on the selected leg, capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement ($1.00/$0.00).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { ticker, timestamp, portfolio } = ctx;
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+
+      // Event prefix: KXHIGHNY-26AUG18-B87.5 → KXHIGHNY-26AUG18 (series+date).
+      const parts = ticker.split('-');
+      if (parts.length < 3) return [];
+      const prefix = parts.slice(0, 2).join('-') + '-';
+
+      // Point-in-time board: every sibling band's LATEST bar at or before this
+      // bar's end, staleness-guarded. historyAll only contains bars the replay
+      // has already processed, so no band can quote its own future.
+      const STALENESS_S = 3 * 3600;
+      const board = [];
+      for (const [t, bars] of Object.entries(ctx.historyAll)) {
+        if (!t.startsWith(prefix)) continue;
+        const last = bars[bars.length - 1];
+        if (!last || last.endTs > timestamp) continue;
+        if (timestamp - last.endTs > STALENESS_S) continue;
+        const ask = last.yesAsk.close;
+        const bid = last.yesBid.close;
+        if (ask === null || ask <= 0 || bid === null) continue; // unpriced band: cannot include it
+        board.push({ ticker: t, ask, bid });
+      }
+      if (board.length < 3) return [];
+      const sumAsk = round6Local(board.reduce((s, b) => s + b.ask, 0));
+      const sumBid = round6Local(board.reduce((s, b) => s + b.bid, 0));
+
+      let side = null;
+      let why = '';
+      if (sumAsk <= 0.975) {
+        // Board collectively cheap → the source buys the CHEAPEST leg.
+        const cheapest = board.reduce((a, b) => (b.ask < a.ask ? b : a));
+        if (cheapest.ticker !== ticker) return [];
+        side = 'YES';
+        why = `board of ${board.length} bands sums to Σask ${sumAsk.toFixed(3)} ≤ 0.975 and this is the cheapest leg (ask ${cheapest.ask})`;
+      } else if (sumBid >= 1.025) {
+        // Board collectively rich → the source sells the RICHEST leg (buy NO).
+        const richest = board.reduce((a, b) => (b.bid > a.bid ? b : a));
+        if (richest.ticker !== ticker) return [];
+        side = 'NO';
+        why = `board of ${board.length} bands sums to Σbid ${sumBid.toFixed(3)} ≥ 1.025 and this is the richest leg (bid ${richest.bid})`;
+      } else {
+        return [];
+      }
+
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, side);
+      if (count <= 0) return [];
+      return [{ type: 'buy', side, count, reason: `R14 mee: ${why} → buy ${side}, hold to the exchange's real settlement` }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'fade_spike_micro',
+    username: 'FadeSpike_Micro',
+    handle: '@FadeSpike_Micro',
+    avatar: '↩️',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXBTC15M', 'KXETH15M', 'KXSOL15M', 'KXGOLD15M'],
+    title: '5-Minute Spike Fade on 1-Minute Bars (R14 `fade`)',
+    category: 'Short-Horizon / Mean reversion',
+    tagline:
+      'Fades any 5¢ mid move over 5 minutes when the quoted spread is ≤ 3¢ — the sibling collector project\'s `fade` reference strategy, recreated with its exact trigger and window on the real 1-minute store.',
+    sizingPct: 0.5,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from PriceKalshiHistorical backtest/strategy_example.py strategy `fade` (RESEARCH_SOURCES R14)',
+    designSourceUrl: 'https://github.com/buffedlizard55-lab/PriceKalshiHistorical',
+    sourceNote:
+      'R14 `fade`: "|mid(t)-mid(t-5m)|≥5¢ + spread≤3 ticks → Fade the spike (buy dip). Needs 5s snapshots." The window (5 minutes) and trigger (5¢) are the source\'s own; the spread filter (≤3 ticks = ≤3¢ at Kalshi\'s 1¢ tick) is the source\'s own. This store\'s 1-minute bars (KXBTC15M/KXETH15M/KXSOL15M/KXGOLD15M) carry real yes_bid/yes_ask per minute, so the mid and the spread are both real captured quotes.',
+    thesis:
+      'DESIGN INTENT: a fast ±5¢ move on a 15-minute contract is usually an overreaction to a spot wobble rather than information about the 15-minute outcome; fading it when the book is tight (≤3¢ spread) buys the dislocation and lets the contract settle back. The entry fires on the source\'s exact 5-minute/5¢ trigger, computed from the real 1-minute bid/ask closes of each captured contract. ' +
+      'HONEST LIMITS: (1) the source computed mids from 5-SECOND snapshots; this store\'s finest granularity is 1 minute, so the "5-minute move" here is close(t) − close(t−5 bars) of real 1-minute mids — the same window, coarser sampling, and short spikes that appear and revert inside one minute are invisible; ' +
+      '(2) entries are buys only (the replay has no short entry), so fading an UP-spike is expressed as buying NO; ' +
+      '(3) the exit is the exchange\'s own settlement — the source\'s strategy is flat-to-flat intraday, so this recreation holds the fade to the real $1.00/$0.00 result instead of an invented intraday exit.',
+    rules: {
+      entry:
+        'On 1-minute bars: if the current bar\'s mid is ≥ 5¢ BELOW the mid 5 bars earlier AND ask − bid ≤ 3¢ → buy YES (fade the dip). If the mid is ≥ 5¢ ABOVE the mid 5 bars earlier AND ask − bid ≤ 3¢ → buy NO (fade the spike up). Once per market.',
+      sizing: '50% of available cash, capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement (these 15-minute contracts finalize within minutes).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, book, portfolio, ticker, history, periodIndex } = ctx;
+      if (periodIndex < 5) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+
+      const bid = candle.yesBid.close;
+      const ask = candle.yesAsk.close;
+      if (bid === null || ask === null || ask <= bid) return [];
+      const spread = round6Local(ask - bid);
+      if (spread > 0.03) return [];
+
+      const midNow = round6Local((bid + ask) / 2);
+      const past = history[history.length - 6];
+      if (!past || past.yesBid.close === null || past.yesAsk.close === null) return [];
+      const midThen = round6Local((past.yesBid.close + past.yesAsk.close) / 2);
+      const move = round6Local(midNow - midThen);
+
+      let side = null;
+      if (move <= -0.05) side = 'YES';
+      else if (move >= 0.05) side = 'NO';
+      if (!side) return [];
+
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, side);
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side,
+          count,
+          reason: `R14 fade: mid moved ${move.toFixed(3)} over 5 minutes with ${spread.toFixed(2)} spread → fade by buying ${side}, hold to the exchange's real settlement`
+        }
+      ];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'mom_tick_micro',
+    username: 'MomTick_Micro',
+    handle: '@MomTick_Micro',
+    avatar: '➡️',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXBTC15M', 'KXETH15M', 'KXSOL15M', 'KXGOLD15M'],
+    title: '1-Minute Momentum Follow (R14 `mom`, adapted)',
+    category: 'Short-Horizon / Momentum',
+    tagline:
+      'Follows a ≥ 2¢ one-minute mid move when the spread is ≤ 3¢ — the sibling project\'s `mom` reference strategy, adapted to the finest granularity this store can verify.',
+    sizingPct: 0.5,
+    maxParticipation: 3,
+    designedAt: '2026-09-18',
+    designSource: 'Recreated from PriceKalshiHistorical backtest/strategy_example.py strategy `mom` (RESEARCH_SOURCES R14), ADAPTED: the source\'s 20-second window is shorter than this store\'s finest bar',
+    designSourceUrl: 'https://github.com/buffedlizard55-lab/PriceKalshiHistorical',
+    sourceNote:
+      'R14 `mom`: "mid(t)-mid(t-20) > 2¢ + tight spread → Follow momentum. Candles + snapshots." The trigger (2¢) and the tight-spread filter (≤3¢) are the source\'s own; the window is NOT — the source measured a 20-SECOND move and this store\'s finest real granularity is 1 minute, so the entry below follows a 1-MINUTE move. It is labelled an adaptation, not the source\'s signal.',
+    thesis:
+      'DESIGN INTENT: a decisive one-minute move on a 15-minute up/down contract is the spot market voting early; following it while the book is tight buys persistence into the settlement. ' +
+      'WHAT THIS IS NOT: the source\'s 20-second momentum cannot be formed from 1-minute bars — any sub-minute momentum that appears and reverts inside a bar is invisible here. The recreation therefore measures a coarser (1-minute) version of the same idea, and its result is evidence about the ADAPTED rule only, not about the source\'s 20-second rule. ' +
+      'The direction is expressed as YES after an up-move and NO after a down-move, and the position is held to the exchange\'s own $1.00/$0.00 settlement.',
+    rules: {
+      entry:
+        'On 1-minute bars: mid − mid(previous bar) ≥ 2¢ with ask − bid ≤ 3¢ → buy YES; ≤ −2¢ with ask − bid ≤ 3¢ → buy NO. Once per market.',
+      sizing: '50% of available cash, capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, portfolio, ticker, history, periodIndex } = ctx;
+      if (periodIndex < 1) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+
+      const bid = candle.yesBid.close;
+      const ask = candle.yesAsk.close;
+      if (bid === null || ask === null || ask <= bid) return [];
+      const spread = round6Local(ask - bid);
+      if (spread > 0.03) return [];
+
+      const midNow = round6Local((bid + ask) / 2);
+      const past = history[history.length - 2];
+      if (!past || past.yesBid.close === null || past.yesAsk.close === null) return [];
+      const midThen = round6Local((past.yesBid.close + past.yesAsk.close) / 2);
+      const move = round6Local(midNow - midThen);
+
+      let side = null;
+      if (move >= 0.02) side = 'YES';
+      else if (move <= -0.02) side = 'NO';
+      if (!side) return [];
+
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, side);
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side,
+          count,
+          reason: `R14 mom (adapted to 1-minute bars): 1-minute mid move ${move.toFixed(3)} with ${spread.toFixed(2)} spread → follow by buying ${side}, hold to the exchange's real settlement`
+        }
+      ];
+    }
   }
 ];
 

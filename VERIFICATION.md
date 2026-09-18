@@ -8,11 +8,11 @@ Nothing is inferred from a language model's memory of Kalshi.
 | Status | Meaning | Count |
 | --- | --- | --- |
 | `DOCUMENTED` | Quoted from official Kalshi docs / the fee schedule PDF | 34 |
-| `CAPTURED` | Copied from a real production API response | 35 |
+| `CAPTURED` | Copied from a real production API response | 38 |
 | `NEGATIVE` | A verified 404 / contradiction (proof something is NOT true) | 1 |
 | `DERIVED` | Computed by arithmetic on official formulas | 19 |
 | `OBSERVATION` | Seen in real data, not explained by any document | 5 |
-| **Total** | 85 of 94 carry a URL you can open yourself | **94** |
+| **Total** | 88 of 97 carry a URL you can open yourself | **97** |
 
 ---
 
@@ -197,6 +197,19 @@ Nothing is inferred from a language model's memory of Kalshi.
 | `V99` | CAPTURED | Kalshi names the settlement station for every weather market and it is not always the city airport | Captured rules text: KXHIGHCHI settles on "the maximum temperature recorded at Chicago (CLIMDW)" - Midway, not O'Hare; the full set is CLINYC, CLILAX, CLIMDW, CLIMIA, CLIAUS, CLIDEN, CLIPHL, CLIPHX, CLISEA, all "according to The Weather Company". The archive now follows the settlement station, and cites its exact rules string in verifiedNote. | [api.weather.gov/points/41.7868,-87.7522](https://api.weather.gov/points/41.7868,-87.7522) | `scripts/archive-forecasts.mjs -> FORECAST_LOCATIONS[].settlementStation; IRREGULARITIES.md #39` |
 | `V100` | CAPTURED | Every captured forecast URL independently confirms the grid identity of the archived city | The nine stores captured on 2026-09-18 all point at the grid configured in scripts/archive-forecasts.mjs -> nwsGrid: NYC OKX 34,45; LAX LOX 148,41; CHI LOT 72,69; MIA MFL 106,51; AUS EWX 155,93; DEN BOU 74,66; PHL PHI 48,75; PHX PSR 161,57; SEA SEW 124,61. That cross-check is what exposed the null-resolved-identity bug (#40): the forecast URL had always encoded the right grid, so the identity was available all along and the nulls could only come from reading the wrong response body. | [api.weather.gov/gridpoints/MFL/106,51/forecast](https://api.weather.gov/gridpoints/MFL/106,51/forecast) | `scripts/archive-forecasts.mjs -> verifyStore() grid cross-check; test 90 asserts the shipped forecast_url encodes the configured grid` |
 
+### Research sources
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V101` | CAPTURED | The owner's own PriceKalshiHistorical project documents three reference strategies, and its README was read in full | The README of github.com/buffedlizard55-lab/PriceKalshiHistorical (fetched through the GitHub REST API on 2026-09-18 because the sandbox cannot open TLS to github.io) documents its backtest/strategy_example.py reference set verbatim: `mee` "\|Σ mids -1\|>2.5¢ on mutually_exclusive events → Buy cheapest / sell richest leg"; `fade` "\|mid(t)-mid(t-5m)\|≥5¢ + spread≤3 ticks → Fade the spike (buy dip)"; `mom` "mid(t)-mid(t-20) > 2¢ + tight spread → Follow momentum". It also states the fee model "0.07*p*(1-p)" and that the "Official API has no retroactive orderbook" — both independently corroborated by this repository's own captured fee schedule and book captures. The three strategies are recreated as MEE_BoardSum, FadeSpike_Micro and MomTick_Micro (RESEARCH_SOURCES R14). | [github.com/buffedlizard55-lab/PriceKalshiHistorical](https://github.com/buffedlizard55-lab/PriceKalshiHistorical) | `src/research-sources.js R14; src/strategies.js MEE_BoardSum / FadeSpike_Micro / MomTick_Micro; signal-source ledger S13` |
+| `V102` | CAPTURED | The MasterSite directory was re-reviewed project by project a second time, and seven more market/sports projects were catalogued | The directory's own data export (MasterSite repo, data/sites.js, audit stamp 2026-09-17T21:47:46Z, fetched via the GitHub API on 2026-09-18) lists 38 verified sites. Every Markets & Trading Research and Sports Data & Scoreboards project not yet in the signal-source ledger was then inspected README-first through the GitHub API: PriceKalshiHistorical, MLB-Prediction-model-backtest, MLB-PBP, PFFNFL, ScheduleFreeTime, NFLPRED, StockPaperSim. Each became a ledger entry (S13–S19) with its verifiable claim, its Kalshi market class, and the exact blocker that keeps it untestable here — no invented testability either way. | [github.com/buffedlizard55-lab/MasterSite/blob/main/data/site](https://github.com/buffedlizard55-lab/MasterSite/blob/main/data/sites.js) | `src/signal-sources.js S13–S19; Research tab of the site` |
+
+### Pipeline
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V103` | CAPTURED | The request-9 ingest re-ran the universe the failed main run lost, and committed it through the new race-guard | GitHub Actions run 35377388737 (on-demand Kalshi history ingest, branch arena/01a0b59b-kalshipapersim, 2026-09-18) completed in 9m2s and committed "chore(history): append real Kalshi candlesticks 2026-09-18": daily bars for the 54 tracked markets, hourly bars through 2026-09-18T18:00:00Z (newest bar KXNBAGAME-26OCT20BOSDET-BOS), fresh order-book snapshots (KXHIGHNY alone now carries 280 captured ladders across its 40 brackets), and 284 tracked markets of which 221 are finalized with the exchange's own result. This is the data the failed run 35352002809 fetched and then discarded at its commit step (irregularity #41). | [github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35](https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35377388737) | `data/history/ (the commit it pushed); IRREGULARITIES.md #41` |
+
 ---
 
 ## 2. Official sources used
@@ -292,6 +305,6 @@ Structure and interaction patterns only. **No data, copy or branding was taken f
 | Every strategy carries `riskManagement: NONE (by mandate)` | test 21 |
 | Post-mortem prose interpolates computed values only | `generatePostMortem()`; test 26 |
 | Oversized orders are never filled at an invented price | `exhaustionPolicy: 'partial'`; tests 17–19 |
-| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 38 strategies) |
+| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 41 strategies) |
 | A strategy that never traded is not ranked | `LEADERBOARD_QUALIFICATION.minTrades = 1`; test 27 |
 | Fabricated tickers cannot re-enter the catalog | test 10 |

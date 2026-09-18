@@ -2107,8 +2107,12 @@ test('67. every researched source is complete, citable and honestly labelled', (
     assert.ok(src.verifiedOn, `${src.id}: the date it was read`);
     assert.ok(src.capturedVia, `${src.id}: how it was read`);
     assert.ok(
-      [RESEARCH_CAPTURE_METHODS.FETCHED, RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT].includes(src.capturedVia),
-      `${src.id}: capture method must be one of the two declared values`
+      [
+        RESEARCH_CAPTURE_METHODS.FETCHED,
+        RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
+        RESEARCH_CAPTURE_METHODS.API_FILE
+      ].includes(src.capturedVia),
+      `${src.id}: capture method must be one of the three declared values`
     );
     assert.ok(src.claim && src.claim.length > 40, `${src.id}: the claim that is being tested`);
     assert.ok(src.taken, `${src.id}: what was taken from it`);
@@ -2126,7 +2130,11 @@ test('67. every researched source is complete, citable and honestly labelled', (
   }
   const stats = researchStats();
   assert.equal(stats.sources, RESEARCH_SOURCES.length);
-  assert.equal(stats.fetchedPages + stats.searchExcerpts, RESEARCH_SOURCES.length, 'every source declares exactly one capture method');
+  assert.equal(
+    stats.fetchedPages + stats.searchExcerpts + (stats.apiFileFetches || 0),
+    RESEARCH_SOURCES.length,
+    'every source declares exactly one capture method'
+  );
 });
 
 test('68. every strategy credited to a source in the ledger actually exists', () => {
@@ -2580,8 +2588,20 @@ test('76. the signal-source ledger is complete, linked and consistent with the r
     if (s.testableHere) assert.ok(s.howTested, `${s.id}: testable entries must say HOW`);
     for (const u of Object.values(s.urls)) assert.ok(/^https:\/\//.test(u), `${s.id}: https links only`);
   }
-  // The 13 requested names are all accounted for, including the one that does not exist.
-  assert.equal(SIGNAL_SOURCES.length, 13);
+  // The 13 originally requested names are all accounted for, including the one
+  // that does not exist; the SECOND re-review (2026-09-18, session 01a0b59b)
+  // added seven more market/sports projects from the same verified directory
+  // (S13–S19: PriceKalshiHistorical, MLB-Prediction-model-backtest, MLB-PBP,
+  // PFFNFL, ScheduleFreeTime, NFLPRED, StockPaperSim).
+  assert.equal(SIGNAL_SOURCES.length, 20);
+  assert.equal(new Set(SIGNAL_SOURCES.map((s) => s.id)).size, 20, 'ledger ids are unique');
+  const requestedNames = new Set(SIGNAL_SOURCES.slice(0, 13).map((s) => s.requested));
+  for (const name of ['CEO', 'weather', 'insider trades', 'TheLeap', 'NFL Injury', 'NBA Injury', 'FDA Decisions Drug Analysis', 'NCAA Scoreboard', 'NFL scoreboard', 'MLB Scoreboard', 'Sports Pred', 'Gold', 'PinePilot']) {
+    assert.ok(requestedNames.has(name), `the originally requested project "${name}" must keep its ledger entry`);
+  }
+  const reReview = SIGNAL_SOURCES.filter((s) => /^S1[3-9]$/.test(s.id));
+  assert.equal(reReview.length, 7, 'the second re-review added exactly the seven catalogued projects');
+  for (const s of reReview) assert.ok(/\(found by re-review\)/.test(s.requested), `${s.id}: re-review entries are labelled as such`);
   const notFound = SIGNAL_SOURCES.filter((s) => s.status === SIGNAL_SOURCE_STATUS.NOT_FOUND);
   assert.equal(notFound.length, 1);
   assert.equal(notFound[0].requested, 'CEO', 'the missing project is named, flagged and reviewable — not silently dropped');
@@ -2593,9 +2613,9 @@ test('76. the signal-source ledger is complete, linked and consistent with the r
   }
   // Stats derived from the ledger add up.
   const st = signalSourceStats();
-  assert.equal(st.requested, 13);
-  assert.equal(st.liveSignal + st.candidate + st.notASignal + st.notFound, 13, 'every entry has exactly one status');
-  assert.ok(st.testableHere >= 3);
+  assert.equal(st.requested, 20);
+  assert.equal(st.liveSignal + st.candidate + st.notASignal + st.notFound, 20, 'every entry has exactly one status');
+  assert.ok(st.testableHere >= 4);
 });
 
 test('77. the three new strategies validate, abstain without their signal, and stay honest', () => {
@@ -3265,4 +3285,123 @@ test('90. every archived forecast city names a real series, a real point, and a 
     candle: { trade: { close: 0.2 } }
   });
   assert.equal(noSignal.length, 0, 'no snapshot by this bar means no trade — the archive rule is absolute');
+});
+
+test('91. the three R14 recreations (MEE board sum, 5-minute spike fade, 1-minute momentum) are faithful and abstain correctly', () => {
+  const mee = STRATEGIES.find((s) => s.username === 'MEE_BoardSum');
+  const fade = STRATEGIES.find((s) => s.username === 'FadeSpike_Micro');
+  const mom = STRATEGIES.find((s) => s.username === 'MomTick_Micro');
+  assert.ok(mee && fade && mom, 'all three PriceKalshiHistorical recreations are in the roster');
+
+  // Flights and universes: MEE judges boards on hourly bars, the two micro
+  // entries on 1-minute bars — and every series named must hold real bars.
+  assert.equal(mee.flight, 'hourly');
+  assert.equal(mee.preferredPeriodMinutes, 60);
+  assert.deepEqual(mee.universe, ['KXHIGHNY', 'KXBTCY']);
+  for (const s of [fade, mom]) {
+    assert.equal(s.flight, 'micro');
+    assert.equal(s.preferredPeriodMinutes, 1);
+    assert.deepEqual(s.universe, ['KXBTC15M', 'KXETH15M', 'KXSOL15M', 'KXGOLD15M']);
+  }
+  // The momentum entry must ADMIT it is an adaptation (20s window < 1 bar).
+  assert.ok(/adapt/i.test(mom.designSource), 'the mom recreation labels itself an adaptation');
+  assert.ok(/20-second/i.test(mom.sourceNote), 'the mom entry states what the original window was');
+
+  // A fake portfolio/book shared by the probes below.
+  const fresh = () => ({
+    portfolio: { positions: new Map(), cash: 100000 },
+    book: {
+      getBestYesAsk: () => 0.08, getBestNoAsk: () => 0.93,
+      getYesAskTiers: () => [{ price: 0.08, count: 5000 }], getNoAskTiers: () => [{ price: 0.93, count: 5000 }],
+      tick: 0.01, notional: 1
+    }
+  });
+
+  // ── MEE: abstains with no sibling board, fires on a cheap board, and only
+  // on the CHEAPEST leg (the source's rule), never on a mid-board leg.
+  const bar = (endTs, ask, bid) => ({ endTs, yesAsk: { close: ask }, yesBid: { close: bid }, trade: { close: (ask + bid) / 2 } });
+  const boardCtx = (ticker, ask, siblings) => ({
+    ...fresh(),
+    ticker,
+    timestamp: 1_000_000,
+    historyAll: {
+      [ticker]: [bar(999_900, ask, ask - 0.02)],
+      ...Object.fromEntries(siblings.map(([t, a]) => [t, [bar(999_900, a, a - 0.02)]]))
+    }
+  });
+  // No board (fewer than 3 priced siblings) → no trade.
+  assert.equal(mee.decide(boardCtx('KXHIGHNY-26SEP18-B82.5', 0.09, [['KXHIGHNY-26SEP18-B80.5', 0.1]])).length, 0);
+  // A board of 4 cheap bands (Σask 0.32 ≤ 0.975): fires ONLY on the cheapest.
+  const cheapBoard = [['KXHIGHNY-26SEP18-B80.5', 0.10], ['KXHIGHNY-26SEP18-B85.5', 0.06], ['KXHIGHNY-26SEP18-T78', 0.07]];
+  assert.equal(mee.decide(boardCtx('KXHIGHNY-26SEP18-B85.5', 0.06, cheapBoard)).length, 1, 'cheapest leg of a cheap board is bought');
+  assert.equal(mee.decide(boardCtx('KXHIGHNY-26SEP18-B82.5', 0.09, cheapBoard)).length, 0, 'a non-cheapest leg of the same board is NOT bought');
+  // A board priced at ~0.99 (no 2.5¢ gap either way) → no trade.
+  const fairBoard = [['KXHIGHNY-26SEP18-B80.5', 0.45], ['KXHIGHNY-26SEP18-B85.5', 0.40], ['KXHIGHNY-26SEP18-T78', 0.14]];
+  assert.equal(mee.decide(boardCtx('KXHIGHNY-26SEP18-T78', 0.14, fairBoard)).length, 0, 'a fairly-priced board triggers nothing');
+  // A stale sibling quote (> 3 h old) is excluded from the board.
+  const staleCtx = {
+    ...fresh(),
+    ticker: 'KXHIGHNY-26SEP18-B85.5',
+    timestamp: 1_000_000 + 4 * 3600,
+    historyAll: {
+      'KXHIGHNY-26SEP18-B85.5': [bar(999_900, 0.06, 0.04), bar(999_900 + 4 * 3600, 0.06, 0.04)],
+      'KXHIGHNY-26SEP18-B80.5': [bar(999_900, 0.10, 0.08)],   // stale by > 3 h
+      'KXHIGHNY-26SEP18-T78': [bar(999_900, 0.07, 0.05)]       // stale by > 3 h
+    }
+  };
+  assert.equal(mee.decide(staleCtx).length, 0, 'a board whose sibling quotes are stale does not fire');
+
+  // ── FadeSpike: the source's exact 5-minute/5¢/3¢ rule.
+  const microBar = (m, bid, ask) => ({ endTs: 1000 + m * 60, yesBid: { close: bid }, yesAsk: { close: ask }, trade: { close: (bid + ask) / 2 } });
+  const microCtx = (bars) => ({
+    ...fresh(),
+    ticker: 'KXGOLD15M-26SEP18T1830-U',
+    periodIndex: bars.length - 1,
+    candle: bars[bars.length - 1],
+    history: bars
+  });
+  // Not enough history (< 5 prior bars) → no trade even on a big move.
+  const shortHist = [microBar(0, 0.40, 0.42), microBar(1, 0.30, 0.32), microBar(2, 0.28, 0.30)];
+  assert.equal(fade.decide(microCtx(shortHist)).length, 0);
+  // A 5¢ drop over 5 minutes with a 2¢ spread → buy YES (fade the dip).
+  const dip = [];
+  for (let i = 0; i < 6; i++) dip.push(microBar(i, i === 0 ? 0.40 : 0.40, i === 0 ? 0.42 : 0.42));
+  dip[5] = microBar(5, 0.34, 0.36); // mid 0.35 vs 0.41 five bars earlier → −6¢
+  const dipActions = fade.decide(microCtx(dip));
+  assert.equal(dipActions.length, 1);
+  assert.equal(dipActions[0].side, 'YES', 'a down-spike is faded by buying YES');
+  // The same 6¢ move with a 5¢ spread → abstain (source filter: spread ≤ 3 ticks).
+  const wide = dip.map((b, i) => (i === 5 ? microBar(5, 0.32, 0.37) : b));
+  assert.equal(fade.decide(microCtx(wide)).length, 0, 'a wide spread kills the fade');
+  // A 3¢ move → abstain (trigger is 5¢).
+  const small = dip.map((b, i) => (i === 5 ? microBar(5, 0.37, 0.39) : b));
+  assert.equal(fade.decide(microCtx(small)).length, 0, 'a sub-trigger move is ignored');
+  // A 5¢ RISE → buy NO (fade the up-spike).
+  const spike = dip.map((b, i) => (i === 5 ? microBar(5, 0.46, 0.48) : b));
+  const spikeActions = fade.decide(microCtx(spike));
+  assert.equal(spikeActions.length, 1);
+  assert.equal(spikeActions[0].side, 'NO', 'an up-spike is faded by buying NO');
+
+  // ── MomTick: 2¢ over one bar, tight spread → follow; anything less → abstain.
+  const up = [microBar(0, 0.40, 0.42), microBar(1, 0.44, 0.46)];
+  const momUp = mom.decide({ ...microCtx(up), periodIndex: 1 });
+  assert.equal(momUp.length, 1);
+  assert.equal(momUp[0].side, 'YES', 'a +2¢ 1-minute move is followed with YES');
+  const flat = [microBar(0, 0.40, 0.42), microBar(1, 0.41, 0.43)];
+  assert.equal(mom.decide({ ...microCtx(flat), periodIndex: 1 }).length, 0, 'a +1¢ move is below the trigger');
+  const down = [microBar(0, 0.40, 0.42), microBar(1, 0.36, 0.38)];
+  const momDown = mom.decide({ ...microCtx(down), periodIndex: 1 });
+  assert.equal(momDown.length, 1);
+  assert.equal(momDown[0].side, 'NO', 'a −2¢ 1-minute move is followed with NO');
+  // Wide spread → abstain even on a big move.
+  const wideMom = [microBar(0, 0.40, 0.42), microBar(1, 0.42, 0.49)];
+  assert.equal(mom.decide({ ...microCtx(wideMom), periodIndex: 1 }).length, 0, 'a wide spread kills the follow');
+
+  // ── The research ledger documents the source and its granularity caveats.
+  const r14 = RESEARCH_SOURCES.find((r) => r.id === 'R14');
+  assert.ok(r14, 'R14 (PriceKalshiHistorical reference strategies) is in the research ledger');
+  for (const u of ['MEE_BoardSum', 'FadeSpike_Micro', 'MomTick_Micro']) {
+    assert.ok((r14.testedBy || []).includes(u), `R14 records which entry tests ${u}`);
+  }
+  assert.ok(/adaptation/.test(r14.caveat), 'R14 states the granularity adaptation openly');
 });

@@ -5,9 +5,11 @@ change, what it needs, and how a reader could check it. Nothing here is a
 promise; items leave this file only when the work is committed **and** measured.
 
 Last reviewed: 2026-09-18 (the Arena session on branch
-`arena/01a0b330-kalshipapersim` — Pass 3 added the nine-city forecast archive
-with verified NWS point identities, the `ForecastEdge_MultiCity` forward test,
-and the guards that caught a real capture bug, irregularity #40).
+`arena/01a0b59b-kalshipapersim` — this session repaired the data pipeline after
+a push race discarded a whole ingest run (#41), re-ran and recovered that data,
+recreated the owner's PriceKalshiHistorical reference strategies as R14 roster
+entries, catalogued seven more MasterSite projects (S13–S19), and scheduled a
+mid-day order-book capture).
 
 ## Shipped (with the evidence a reader can rerun)
 
@@ -29,30 +31,36 @@ and the guards that caught a real capture bug, irregularity #40).
 | 14 | Third flight: MICRO (period_interval 1) so 15-minute-market strategies are judged at their own granularity | `runCompetitionFlights` micro; `flights.json` |
 | 15 | **Nine-city forecast archive (was Next #2/#3).** All nine KXHIGH* cities archived ~5×/day, each store carrying the NWS identity (grid office, grid x/y, zone, time zone) that the live API answered for its coordinates, cross-checked against the configuration on every capture and against the captured forecast URL in the offline audit | `data/forecasts/*.json`, `nwsGrid` in `scripts/archive-forecasts.mjs`, facts V98–V100, irregularity #40, test 90 |
 | 16 | **Per-series fee registry, incl. every weather city and KXGOLD15M** (was Next #4). Fee multiplier is now the captured one, not a default | `src/series-fee-registry.js` (47 priceable series), `data/discovered/series-fees.json` (14,154 series) |
+| 17 | **The data pipeline survived its first real push race and was repaired** (2026-09-18, session 01a0b59b). The post-merge ingest run on main died at its commit step and silently discarded every bar it fetched (#41: a tracked-but-unstaged `src/forecast-data.js` made `git rebase` refuse to start, and `git rebase --abort`'s exit 128 killed the step under `bash -e`). All three bot workflows now share ONE locally-tested push script | `scripts/push-with-race-guard.sh`, `test/workflow-race-guard.sh` (21 checks incl. a replay of the exact race), recovered run [35377388737](https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35377388737) vs the failed [35352002809](https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35352002809) |
+| 18 | **Mid-day order-book capture scheduled** (was Next #5, partially). A second daily-history run at 16:40 UTC captures `with_books=true` so the quoted touch becomes point-in-time, not just the single ladder of the last on-demand run | cron `40 16 * * *` in `.github/workflows/daily-history.yml`; the request-9 run alone left 280 captured KXHIGHNY ladders |
+| 19 | **The owner's own PriceKalshiHistorical reference strategies recreated** (`mee`/`fade`/`mom` → `MEE_BoardSum` / `FadeSpike_Micro` / `MomTick_Micro`), every granularity adaptation labelled on the entry; first measured results: MEE +1.18% (hourly flight, rank 5), FadeSpike **+76.57%** (micro flight, rank 1, 43 real settlements), MomTick −7.60% | `src/strategies.js`, `src/research-sources.js` R14, `data/reports/flights.json`, test 91 |
+| 20 | **Second MasterSite re-review: seven more projects catalogued** (S13–S19: PriceKalshiHistorical, MLB-Prediction-model-backtest, MLB-PBP, PFFNFL, ScheduleFreeTime, NFLPRED, StockPaperSim), each with its verifiable claim, Kalshi market class and exact blocker; found the directory's StockPaperSim record stale (#42) and the exchange's duplicate dead Tesla-CEO series (#43) | `src/signal-sources.js`, `src/verification-data.js` V101–V103, tests 76/91, IRREGULARITIES.md #42/#43 |
 
 ## Next, in priority order
 
-1. **Let the forecast archive and the weather bars overlap, then measure.**
-   The archive's first capture is 2026-09-18T03:19Z. `ForecastEdge_Weather`
-   trades only where a snapshot exists at decision time, so its genuine forward
-   window begins with the brackets that were still trading after that instant
-   (e.g. KXHIGHNY-26SEP17-B82.5, active at capture). *Needs:* the scheduled
-   workflows only — then re-run the reports and read the post-split numbers.
+1. **Keep widening the forecast-archive ↔ weather-bar overlap, then measure.**
+   The overlap now EXISTS (NYC snapshots from 2026-09-18T03:19Z, the other
+   eight cities from 13:24Z, bars through the same day) and both forecast
+   strategies replay it — but no forecast-vs-market divergence has met their
+   entry conditions yet (0 fills, `UNTESTED_ON_THIS_DATASET`, reason
+   published). *Needs:* the scheduled workflows only, then re-run the reports.
    *Check:* `data/reports/flights.json` → `forecastArchive` + the hourly
-   leaderboard.
+   leaderboard's unranked entries.
 2. **True forward windows for the original roster.** `designedAt` is
    2026-09-17/18, so bars from 2026-09-19 onward are genuinely out-of-sample
    for every entry. *Check:* `data/reports/forward-test.json` →
    `strictForward.bars`.
-3. **A sports or FDA series (the biggest signal-ledger gaps).** The
-   signal-source review (Research tab) lists exactly what each project
-   (NFL/NBA injury, FDA PDUFA, scoreboards) would need: an ingested Kalshi
-   series plus that project's data archived point-in-time. The machinery now
-   exists (any period, settled markets, real settlements, signal providers).
-4. **Captured depth on every fill.** The ladders are re-anchored from single
-   captures; repeated `--with-books` snapshots during the trading day would
-   make the touch itself point-in-time. *Needs:* an extra scheduled ingest
-   with `with_books=true` mid-day.
+3. **A point-in-time signal archive for a sports or FDA project.** The Kalshi
+   side is DONE: FDA (six series), CEO (six series) and seven sports series are
+   ingested with settled results and real settlements. The remaining gap is
+   the owner's own projects — the MLB model's pre-game probabilities, the FDA
+   PDUFA calendar, injury reports — archived with capture timestamps the way
+   `data/forecasts/` archives NWS (S14–S16 state each one's exact blocker and
+   closing action).
+4. **Point-in-time depth on every fill.** A mid-day books capture is now
+   scheduled (16:40 UTC daily) and the request-9 run re-captured every ladder;
+   the depth *behind* the touch is still re-anchored between snapshots.
+   *Needs:* more scheduled capture density; the machinery is already running.
 5. **Authenticated WebSocket smoke test.** `KALSHI_API_KEY_ID` /
    `KALSHI_API_PRIVATE_KEY` are not configured here, so the private channels
    are documented but untested. *Needs:* an RSA key in the runner environment.
@@ -83,7 +91,8 @@ and the guards that caught a real capture bug, irregularity #40).
   priceable series (irregularity #36 is closed for those). A series absent from
   the registry still falls back to the documented M=1, and the fill records
   which regime it used.
-- The gold micro-flight sample is 8 settled contracts so far — the post-mortem
-  says so; more settle every day the ingest runs.
+- The gold micro-flight sample is 12 settled KXGOLD15M contracts (192 one-minute
+  bars) as of the 2026-09-18 evening ingest — the post-mortem computes the count
+  from the store, so it updates as more settle every day the ingest runs.
 - Human participants are paper-only: the store is a single-process JSON file
   (`data/store/`, git-ignored).

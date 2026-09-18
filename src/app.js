@@ -1412,6 +1412,7 @@ function renderResearchStats(sweep) {
     <div class="card card-wide">
       <div class="stat-row"><span>Public sources logged</span><b>${stats.sources}</b></div>
       <div class="stat-row"><span>Read in full (page fetch)</span><b>${stats.fetchedPages}</b></div>
+      <div class="stat-row"><span>Read in full (GitHub API file)</span><b>${stats.apiFileFetches ?? 0}</b></div>
       <div class="stat-row"><span>Read via search excerpt (page returns HTTP 403 to this sandbox)</span><b>${stats.searchExcerpts}</b></div>
       <div class="stat-row"><span>Sources this repository can test</span><b>${stats.sourcesWithAReplay}</b></div>
       <div class="stat-row"><span>Sources it cannot test here</span><b>${stats.notTestableHere}</b></div>
@@ -1565,7 +1566,7 @@ function renderResearchLedger() {
       <div class="card">
         <div style="display:flex;justify-content:space-between;gap:.6rem;align-items:flex-start">
           <strong>${esc(src.id)} · ${esc(src.title)}</strong>
-          <span class="pill pill-${src.capturedVia === RESEARCH_CAPTURE_METHODS.FETCHED ? 'live' : 'sim'}">${src.capturedVia === RESEARCH_CAPTURE_METHODS.FETCHED ? 'read in full' : 'search excerpt'}</span>
+          <span class="pill pill-${src.capturedVia === RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT ? 'sim' : 'live'}">${src.capturedVia === RESEARCH_CAPTURE_METHODS.FETCHED ? 'read in full' : src.capturedVia === RESEARCH_CAPTURE_METHODS.API_FILE ? 'read in full (API file)' : 'search excerpt'}</span>
         </div>
         <div class="muted">read ${esc(src.verifiedOn)}${src.published ? ` · published ${esc(src.published)}` : ''}</div>
         <blockquote class="quote">${esc(src.claim)}</blockquote>
