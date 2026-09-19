@@ -860,9 +860,9 @@ export const VERIFIED_FACTS = Object.freeze([
   },
   {
     id: 'V107', group: 'FDA signals', status: 'DOCUMENTED',
-    fact: 'The FDA signal source is the official openFDA Drugs@FDA API, keyless and machine-readable, and every tracked KXFDA market is either mapped from its own rule text or deliberately excluded with a reason',
-    value: 'Endpoint GET https://api.open.fda.gov/drug/drugsfda.json?search=<query> (openFDA, FDA\'s own Drugs@FDA database; no key required at archive volume). Response shape (meta.disclaimer / meta.last_updated / meta.results.total; results[].application_number, sponsor_name, products[].marketing_status, submissions[].submission_status_date) verified against openFDA\'s published API documentation and two independent integrations of it on 2026-09-19. Subject queries are taken verbatim from each tracked market\'s own rules_primary: COMP360 psilocybin (sponsor "compass pathways"), retatrutide, camizestrant, cytisinicline, gedatolisib, midomafetamine. Two tracked FDA series are deliberately NOT covered, with reasons recorded in the archive script: KXFDAANNOUNCE (an FDA announcement, not an application record) and KXFDAAPPROVALPSYCHEDELIC (a composite). Basis mismatch published: the database record can lag the announcement the market resolves on.',
-    url: 'https://open.fda.gov/apis/drug/drugsfda/',
+    fact: 'The FDA signal source is the official openFDA Drugs@FDA API at https://api.fda.gov — keyless and machine-readable, with a documented maximum page size of 99 — and every tracked KXFDA market is either mapped from its own rule text or deliberately excluded with a reason',
+    value: "Endpoint GET https://api.fda.gov/drug/drugsfda.json?search=<query>&limit=99 (openFDA, FDA's own Drugs@FDA database; no key required). The base URL and the \"maximum limit allowed is 99\" cap are stated by the endpoint's official how-to page. Host history recorded honestly: the first deployed version pointed at api.open.fda.gov (ENOTFOUND from runners, irregularity #50) — corrected after the how-to page was read. Response shape (meta.disclaimer / meta.last_updated / meta.results.total; results[].application_number, sponsor_name, products[].marketing_status, submissions[].submission_status_date) verified against openFDA's published API documentation and two independent integrations of it on 2026-09-19. Subject queries are taken verbatim from each tracked market's own rules_primary: COMP360 psilocybin (sponsor \"compass pathways\"), retatrutide, camizestrant, cytisinicline, gedatolisib, midomafetamine. Two tracked FDA series are deliberately NOT covered, with reasons recorded in the archive script: KXFDAANNOUNCE (an FDA announcement, not an application record) and KXFDAAPPROVALPSYCHEDELIC (a composite). Basis mismatch published: the database record can lag the announcement the market resolves on.",
+    url: 'https://open.fda.gov/apis/drug/drugsfda/how-to-use-the-endpoint/',
     capturedAt: '2026-09-19',
     usedIn: 'scripts/archive-fda-signals.mjs; .github/workflows/fda-signals.yml; src/fda-signal-store.js; strategy FDAEdge_DrugsFDA'
   }
@@ -1462,6 +1462,18 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'Both runners now pass their portfolio into placeDeskOrder(). A BUY is re-sized to what the cash can pay for including the official fee (a 2% budget reserve covers the quadratic taker fee) and the reduction is recorded as `cashCapped` on the ORDER and the FILL, with the original requested size preserved and the shortfall reported as unfilled. A SELL with no position is rejected (NO_POSITION_TO_SELL) instead of opening a negative one, and a SELL larger than the position is capped to the held size (`positionCapped`). A crossed resting BUY is capped the same way at the crossing instant, because a carried book may have spent the cash in between. auditSeason() adds S12: no round snapshot may show negative cash and no SELL fill may exceed what that entrant had already bought.',
     userAction: 'Read any FILL with `cashCapped` > 0 or any REJECT with NO_POSITION_TO_SELL in data/reports/desk-season-ledger.jsonl: the ledger must show a smaller order (or a refusal), never a negative balance.'
+  },
+  {
+    id: 50, severity: 'med',
+    title: 'The FDA archive was deployed against an API hostname that does not exist, with an over-limit page size',
+    assumed: 'That the openFDA Drugs@FDA endpoint lived at api.open.fda.gov (conflating the open.fda.gov website with the API host) and that limit=1000 was inside the published cap.',
+    truth: 'The official how-to page states the base endpoint is https://api.fda.gov/drug/drugsfda.json and that "the maximum limit allowed is 99". The first two scheduled runs therefore could never have fetched anything: GitHub-hosted runners resolved api.open.fda.gov with ENOTFOUND (recorded per-subject in data/fda-signals/_fda-last-run.json, whose probe table showed api.weather.gov reachable and download.open.fda.gov returning HTTP 200 from the same runner). No snapshot was fabricated and no false data was committed — the store was simply dark, which is the honest failure mode the point-in-time design requires.',
+    evidence: [
+      { label: "The endpoint's official how-to page (base URL and the limit<=99 cap)", url: 'https://open.fda.gov/apis/drug/drugsfda/how-to-use-the-endpoint/' },
+      { label: 'The corrected ENDPOINT, probe table and host history in scripts/archive-fda-signals.mjs', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/scripts/archive-fda-signals.mjs' }
+    ],
+    action: 'ENDPOINT corrected to https://api.fda.gov/drug/drugsfda.json, the page size corrected to the documented maximum of 99 (with truncation made visible: the snapshot stores both the full `total` and the archived `applications` count), the reachability probe kept in every run report, and the host history recorded in the script header. This register entry exists so the wrong-host period is part of the audit trail, not silently rewritten.',
+    userAction: 'Compare any committed _fda-last-run.json probe table against the snapshots that follow it: every capture after the correction must carry http_status 200 against https://api.fda.gov URLs.'
   }
 ]);
 

@@ -17,7 +17,7 @@
  *   can query point-in-time (src/fda-signal-store.js enforces the rule).
  *
  * THE SOURCE (official, free, no key)
- *   GET https://api.open.fda.gov/drug/drugsfda.json?search=<query>&limit=1000
+ *   GET https://api.fda.gov/drug/drugsfda.json?search=<query>&limit=99
  *   — openFDA's Drugs@FDA endpoint: FDA's own database of drug applications,
  *   with products[] (brand_name, marketing_status, active_ingredients) and
  *   submissions[] (submission_type, submission_status, submission_status_date).
@@ -63,9 +63,15 @@
  *   node scripts/archive-fda-signals.mjs --verify   # offline audit of the store
  *   node scripts/archive-fda-signals.mjs --dry-run  # no network, print the plan
  *
- * NOTE ON THE SANDBOX: api.open.fda.gov is not reachable from the build
- * container (only github.com egress works there). This script runs from the
+ * NOTE ON THE SANDBOX: api.fda.gov is not reachable from the build container
+ * (only github.com egress works there). This script runs from the
  * GitHub-hosted workflow (.github/workflows/fda-signals.yml).
+ *
+ * HOST HISTORY (recorded honestly): the first deployed version pointed at
+ * api.open.fda.gov — a hostname that does not exist (ENOTFOUND from GitHub's
+ * own runners, caught by the run report this script commits). The corrected
+ * host and the limit<=99 cap are from the endpoint's official how-to page:
+ * https://open.fda.gov/apis/drug/drugsfda/how-to-use-the-endpoint/
  */
 
 import fs from 'node:fs';
@@ -74,7 +80,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = path.join(ROOT, 'data', 'fda-signals');
-const ENDPOINT = 'https://api.open.fda.gov/drug/drugsfda.json';
+const ENDPOINT = 'https://api.fda.gov/drug/drugsfda.json';
 const USER_AGENT = 'KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim)';
 /** Keep the newest N snapshots per subject (4/day x 365 days ≈ 1460; headroom). */
 const MAX_SNAPSHOTS = 2000;
@@ -159,6 +165,38 @@ const EXCLUDED = [
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+/** Per-subject outcomes of the most recent run — committed even on failure so
+ *  a failed capture is diagnosable from the repository itself (the runner's
+ *  own log store is not readable from every environment). */
+const LAST_RUN = { startedAt: null, finishedAt: null, subjects: [], failures: 0 };
+
+/**
+ * One HEAD probe per host, recorded verbatim in the run report. api.weather.gov
+ * is the forecast archive's host (the weather bot works from the same runners),
+ * so a probe table that shows weather reachable while openFDA is not proves the
+ * block is specific to the FDA origin — and download.open.fda.gov (openFDA's
+ * own full-snapshot mirror) tells us whether an official fallback exists.
+ */
+async function probeHosts() {
+  const hosts = [
+    'https://api.fda.gov/drug/drugsfda.json?limit=1',
+    'https://api.weather.gov/alerts/active?limit=1',
+    'https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip'
+  ];
+  const probes = [];
+  for (const url of hosts) {
+    const t0 = Date.now();
+    try {
+      const res = await fetch(url, { method: 'HEAD', headers: { 'User-Agent': USER_AGENT }, signal: AbortSignal.timeout(15_000) });
+      probes.push({ url, ok: res.ok, http_status: res.status, ms: Date.now() - t0 });
+    } catch (err) {
+      const cause = err && err.cause ? ` (cause=${err.cause.code || err.cause.message || err.cause})` : '';
+      probes.push({ url, ok: false, error: `${err && err.message ? err.message : String(err)}${cause}`, ms: Date.now() - t0 });
+    }
+  }
+  return probes;
+}
+
 function readJsonSafe(p) {
   try {
     return JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -237,34 +275,96 @@ function parseResponse(json) {
   };
 }
 
-async function capture(subject) {
-  const url = `${ENDPOINT}?search=${encodeURIComponent(subject.query)}&limit=1000`;
-  const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' } });
-  const bodyText = await res.text();
-  let json = null;
-  try {
-    json = JSON.parse(bodyText);
-  } catch {
-    throw new Error(`subject ${subject.slug}: HTTP ${res.status} with a non-JSON body (first 200 chars: ${bodyText.slice(0, 200)})`);
-  }
-  if (!res.ok) {
-    // openFDA returns JSON errors (e.g. rate limit) — record and fail loudly.
-    const msg = json?.error?.message ? ` — ${String(json.error.message).slice(0, 200)}` : '';
-    throw new Error(`subject ${subject.slug}: HTTP ${res.status}${msg}`);
-  }
-  const parsed = parseResponse(json);
+/**
+ * HTTP 404 from openFDA IS the empty result: the API's documented behaviour
+ * for a search that matches nothing is status 404 with body
+ * {"error":{"code":"NOT_FOUND","message":"No matches found!"}} — not an empty
+ * results array (openFDA's own issue tracker confirms the semantics, and run 3
+ * of this archive reproduced it verbatim). For this archive that is not an
+ * error at all: "no application record exists yet" is exactly the NO_RECORD
+ * state the tracked markets trade on, so it is archived like any other
+ * snapshot, with the verbatim status recorded next to it.
+ */
+function snapshotFromNotFound(url) {
   return {
     captured_at: new Date().toISOString(),
     url,
-    http_status: res.status,
-    meta: { disclaimer: parsed.disclaimer, last_updated: parsed.lastUpdated, total: parsed.total },
-    state: parsed.state,
-    approved: parsed.approved,
-    marketingStatuses: parsed.marketingStatuses,
-    applications: parsed.applications.length,
-    applicationNumbers: parsed.applications.map((a) => a.application_number).filter(Boolean).slice(0, 20),
-    newestSubmissionStatusDate: parsed.newestSubmissionStatusDate
+    http_status: 404,
+    meta: { disclaimer: null, last_updated: null, total: 0 },
+    state: 'NO_RECORD',
+    approved: false,
+    marketingStatuses: [],
+    applications: 0,
+    applicationNumbers: [],
+    newestSubmissionStatusDate: null,
+    notFoundError: 'openFDA 404 NOT_FOUND "No matches found!" — the documented empty-result response, archived as NO_RECORD'
   };
+}
+
+async function capture(subject) {
+  // limit=99 is the DOCUMENTED MAXIMUM for a single openFDA call (the
+  // endpoint's own how-to page: "The maximum limit allowed is 99 for any
+  // single Application Programming Interface call"). The first deployed
+  // version asked for 1000 — which the API would have rejected with HTTP 400
+  // even after the host was corrected. A subject with more than 99 matching
+  // applications is recorded honestly: the snapshot's `total` shows the full
+  // count and `applications` the archived count, so a truncation is visible
+  // rather than silent.
+  const url = `${ENDPOINT}?search=${encodeURIComponent(subject.query)}&limit=99`;
+  // Shared CI runner IPs share the unauthenticated openFDA rate budget with
+  // everyone else on them, so a 429/5xx is retried with backoff before the
+  // subject is declared failed. Anything else (400 bad query, 403, ...) is
+  // not retried: those are configuration errors a human must see verbatim.
+  let lastError = null;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    let res;
+    try {
+      res = await fetch(url, { headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' } });
+    } catch (err) {
+      // "fetch failed" alone is undiagnosable: undici wraps the real fault
+      // (DNS, TCP, TLS) in err.cause. Record the cause code verbatim.
+      const cause = err && err.cause ? ` (cause=${err.cause.code || err.cause.message || err.cause})` : '';
+      lastError = `network: ${err && err.message ? err.message : String(err)}${cause}`;
+      if (attempt < 3) {
+        await sleep(20_000 * attempt);
+        continue;
+      }
+      throw new Error(`subject ${subject.slug}: ${lastError}`);
+    }
+    const bodyText = await res.text();
+    let json = null;
+    try {
+      json = JSON.parse(bodyText);
+    } catch {
+      throw new Error(`subject ${subject.slug}: HTTP ${res.status} with a non-JSON body (first 200 chars: ${bodyText.slice(0, 200)})`);
+    }
+    if (res.status === 404 && json?.error?.code === 'NOT_FOUND') {
+      return snapshotFromNotFound(url);
+    }
+    if (!res.ok) {
+      const msg = json?.error?.message ? ` — ${String(json.error.message).slice(0, 300)}` : ` — body head: ${bodyText.slice(0, 200)}`;
+      lastError = `HTTP ${res.status}${msg}`;
+      if ((res.status === 429 || res.status >= 500) && attempt < 3) {
+        await sleep(20_000 * attempt);
+        continue;
+      }
+      throw new Error(`subject ${subject.slug}: ${lastError}`);
+    }
+    const parsed = parseResponse(json);
+    return {
+      captured_at: new Date().toISOString(),
+      url,
+      http_status: res.status,
+      meta: { disclaimer: parsed.disclaimer, last_updated: parsed.lastUpdated, total: parsed.total },
+      state: parsed.state,
+      approved: parsed.approved,
+      marketingStatuses: parsed.marketingStatuses,
+      applications: parsed.applications.length,
+      applicationNumbers: parsed.applications.map((a) => a.application_number).filter(Boolean).slice(0, 20),
+      newestSubmissionStatusDate: parsed.newestSubmissionStatusDate
+    };
+  }
+  throw new Error(`subject ${subject.slug}: exhausted retries — ${lastError}`);
 }
 
 function storePath(slug) {
@@ -361,21 +461,39 @@ async function main() {
     return 0;
   }
 
+  LAST_RUN.startedAt = new Date().toISOString();
+  LAST_RUN.probes = await probeHosts();
+  console.log('reachability probes:');
+  for (const pr of LAST_RUN.probes) console.log(`  ${pr.ok ? '✓' : '✗'} ${pr.url} → ${pr.ok ? 'HTTP ' + pr.http_status : (pr.error || '?')} (${pr.ms}ms)`);
   let failures = 0;
   for (let i = 0; i < SUBJECTS.length; i++) {
     const subject = SUBJECTS[i];
     try {
       const snapshot = await capture(subject);
       const { changed, priorState, snapshots } = appendSnapshot(subject, snapshot);
+      LAST_RUN.subjects.push({ slug: subject.slug, ok: true, state: snapshot.state, total: snapshot.meta.total, snapshots });
       console.log(
         `${subject.slug}: ${snapshot.state} (total=${snapshot.meta.total}, approved=${snapshot.approved})` +
           `${changed ? ' CHANGED' : ''}${priorState && priorState !== snapshot.state ? ` [was ${priorState}]` : ''} — ${snapshots} snapshot(s) archived`
       );
     } catch (err) {
       failures += 1;
+      LAST_RUN.subjects.push({ slug: subject.slug, ok: false, error: String(err && err.message ? err.message : err).slice(0, 500) });
       console.error(`✗ ${err.message}`);
     }
     if (i < SUBJECTS.length - 1) await sleep(INTER_REQUEST_SLEEP_MS);
+  }
+  LAST_RUN.finishedAt = new Date().toISOString();
+  LAST_RUN.failures = failures;
+  // Write the run report even when subjects failed, and commit it (the
+  // workflow's commit step runs with if: always()) — a failed capture must be
+  // diagnosable from the repository, because runner log archives are not
+  // readable from every environment this project is developed in.
+  try {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+    fs.writeFileSync(path.join(DATA_DIR, '_fda-last-run.json'), `${JSON.stringify(LAST_RUN, null, 2)}\n`);
+  } catch (err) {
+    console.error(`could not write the run report: ${err.message}`);
   }
   if (failures > 0) {
     console.error(`${failures} subject capture(s) failed — the store keeps whatever succeeded; re-run the workflow for the rest.`);
@@ -393,4 +511,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     });
 }
 
-export { SUBJECTS, EXCLUDED, parseResponse, deriveApproved, ENDPOINT, APPROVED_MARKETING_STATUSES, MARKETING_STATUS_GLOSSARY };
+export { SUBJECTS, EXCLUDED, parseResponse, deriveApproved, ENDPOINT, APPROVED_MARKETING_STATUSES, MARKETING_STATUS_GLOSSARY, snapshotFromNotFound };

@@ -16,7 +16,7 @@
  *
  * SOURCE OF THE DATA
  *   data/fda-signals/<slug>.json, written by the fda-signals workflow from the
- *   official openFDA Drugs@FDA API (api.open.fda.gov/drug/drugsfda.json —
+ *   official openFDA Drugs@FDA API (api.fda.gov/drug/drugsfda.json —
  *   FDA's own Drugs@FDA database). The browser copy is generated into
  *   src/fda-signal-data.js by scripts/generate-history-module.mjs, so the
  *   static site computes with the same archive the Node reports read.

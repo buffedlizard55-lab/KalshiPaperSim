@@ -8,13 +8,13 @@ name: FDA signal archive
 # because the database is re-read, not re-run).
 #
 # WHAT IT WRITES: data/fda-signals/<slug>.json — append-only snapshots, each
-# with captured_at, the api.open.fda.gov URL, the verbatim meta block
+# with captured_at, the api.fda.gov URL, the verbatim meta block
 # (disclaimer / last_updated / total), the derived state and the verbatim
 # marketing_status strings the derivation came from. Bounded to the newest
 # 2000 snapshots per subject with a trims[] ledger, exactly like the
 # candlestick and forecast stores.
 #
-# WHY A WORKFLOW: api.open.fda.gov is not reachable from the build sandbox
+# WHY A WORKFLOW: api.fda.gov is not reachable from the build sandbox
 # (only github.com egress works there). GitHub-hosted runners have
 # unrestricted egress, so this is where the capture can actually run.
 #
@@ -31,6 +31,7 @@ on:
   push:
     paths:
       - '.github/triggers/fda.json'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -64,10 +65,17 @@ jobs:
           node build.js | tee -a fda-signals.log
 
       - name: Commit the new snapshots
+        if: always()
         run: |
-          # One shared, locally-tested implementation of "commit everything
-          # this run changed and survive the push race with the other bots"
-          # (test/workflow-race-guard.sh reproduces the races).
+          # Runs even after a failed capture so the run report
+          # (data/fda-signals/_fda-last-run.json, with the per-subject HTTP
+          # errors) is committed and diagnosable from the repository itself —
+          # runner log archives are not readable from every environment this
+          # project is developed in. The capture step exits non-zero on
+          # failures; the final step below fails the RUN so the failure stays
+          # visible on the run. One shared, locally-tested implementation of
+          # "commit everything this run changed and survive the push race with
+          # the other bots" (test/workflow-race-guard.sh).
           BOT_NAME="kalshi-fda-bot" \
           BOT_EMAIL="kalshi-fda-bot@users.noreply.github.com" \
           bash scripts/push-with-race-guard.sh \
@@ -81,3 +89,22 @@ jobs:
           name: fda-signals-log
           path: fda-signals.log
           if-no-files-found: warn
+
+      # An incomplete capture must be visible on the run, not buried in the
+      # log: the script writes per-subject errors into
+      # data/fda-signals/_fda-last-run.json (the same pattern the forecast
+      # workflow uses with its request file).
+      - name: Fail the run when a subject did not capture
+        if: always()
+        run: |
+          node -e "
+          const fs = require('fs');
+          if (!fs.existsSync('data/fda-signals/_fda-last-run.json')) { console.log('no run report — nothing to evaluate'); process.exit(0); }
+          const rep = JSON.parse(fs.readFileSync('data/fda-signals/_fda-last-run.json', 'utf8'));
+          const f = (rep.subjects || []).filter((s) => !s.ok);
+          if (f.length || rep.failures) {
+            for (const x of f) console.error('::error::' + x.slug + ' — ' + (x.error || 'unknown error'));
+            process.exit(1);
+          }
+          console.log('all ' + (rep.subjects || []).length + ' subjects captured');
+          "

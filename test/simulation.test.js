@@ -1382,7 +1382,7 @@ test('46. every verified fact carries a reviewable link and a status', () => {
     // marketing-status vocabulary (V106) and the openFDA Drugs@FDA API the
     // fda-signals workflow captures (V107). Signal sources, same status as
     // api.weather.gov; the group check below still applies.
-    'www.fda.gov', 'open.fda.gov', 'api.open.fda.gov',
+    'www.fda.gov', 'open.fda.gov', 'api.fda.gov',
     'laikalabs.ai', 'pith.science', 'www.reddit.com', 'reddit.com', 'www.oddsshopper.com'
   ]);
   let withLink = 0;
@@ -1408,7 +1408,7 @@ test('46. every verified fact carries a reviewable link and a status', () => {
         assert.ok(
           u.host.endsWith('kalshi.com') || u.host.endsWith('kalshi.co') || u.host === 'github.com' ||
             u.host === 'tc39.es' || u.host === 'developer.mozilla.org' || u.host === 'api.weather.gov' ||
-            u.host === 'www.fda.gov' || u.host === 'open.fda.gov' || u.host === 'api.open.fda.gov',
+            u.host === 'www.fda.gov' || u.host === 'open.fda.gov' || u.host === 'api.fda.gov',
           `${f.id}: "${f.group}" facts must cite Kalshi (or a language/project reference), not ${u.host}`
         );
       }
@@ -4124,14 +4124,25 @@ test('115. the Drugs@FDA parser derives the archive state from official response
   // An unexpected shape throws instead of guessing (shape-change detector).
   assert.throws(() => parseResponse({ meta: {} }), /total/);
   assert.throws(() => parseResponse(null));
+
+  // openFDA's documented empty result is HTTP 404 NOT_FOUND "No matches
+  // found!" — archived as a legitimate NO_RECORD snapshot (irregularity-#50
+  // follow-up; verified against the live API in run 4's committed report).
+  const { snapshotFromNotFound } = await import('../scripts/archive-fda-signals.mjs');
+  const nf = snapshotFromNotFound('https://api.fda.gov/drug/drugsfda.json?search=x&limit=99');
+  assert.equal(nf.state, 'NO_RECORD');
+  assert.equal(nf.approved, false);
+  assert.equal(nf.http_status, 404);
+  assert.equal(nf.meta.total, 0);
+  assert.match(nf.notFoundError, /No matches found/);
 });
 
 test('116. the FDA signal store is point-in-time: no snapshot after the decision is ever readable, and the flip is detected in time order', async () => {
   const store = await import('../src/fda-signal-store.js');
   const snaps = [
-    { captured_at: '2026-09-19T12:00:00.000Z', state: 'NO_RECORD', approved: false, url: 'https://api.open.fda.gov/drug/drugsfda.json?search=x', total: 0 },
-    { captured_at: '2026-09-20T12:00:00.000Z', state: 'RECORD_NO_APPROVED_PRODUCT', approved: false, url: 'https://api.open.fda.gov/drug/drugsfda.json?search=x', total: 1 },
-    { captured_at: '2026-09-21T12:00:00.000Z', state: 'APPROVED', approved: true, url: 'https://api.open.fda.gov/drug/drugsfda.json?search=x', total: 1 }
+    { captured_at: '2026-09-19T12:00:00.000Z', state: 'NO_RECORD', approved: false, url: 'https://api.fda.gov/drug/drugsfda.json?search=x', total: 0 },
+    { captured_at: '2026-09-20T12:00:00.000Z', state: 'RECORD_NO_APPROVED_PRODUCT', approved: false, url: 'https://api.fda.gov/drug/drugsfda.json?search=x', total: 1 },
+    { captured_at: '2026-09-21T12:00:00.000Z', state: 'APPROVED', approved: true, url: 'https://api.fda.gov/drug/drugsfda.json?search=x', total: 1 }
   ];
   const sec = (iso) => Math.floor(Date.parse(iso) / 1000);
   // Before the first snapshot: null — the strategy abstains.
