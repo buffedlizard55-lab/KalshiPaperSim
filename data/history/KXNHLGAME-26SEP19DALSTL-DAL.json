@@ -768,6 +768,234 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T18:53:56.110Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "25012.00"
+            ],
+            [
+              "0.0200",
+              "4137.00"
+            ],
+            [
+              "0.0300",
+              "50579.00"
+            ],
+            [
+              "0.0400",
+              "13057.00"
+            ],
+            [
+              "0.0500",
+              "25.00"
+            ],
+            [
+              "0.0600",
+              "400.00"
+            ],
+            [
+              "0.0700",
+              "400.00"
+            ],
+            [
+              "0.0800",
+              "20.00"
+            ],
+            [
+              "0.0900",
+              "500.00"
+            ],
+            [
+              "0.1000",
+              "20.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "74.73"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.1900",
+              "21.00"
+            ],
+            [
+              "0.2000",
+              "300.00"
+            ],
+            [
+              "0.2400",
+              "10.00"
+            ],
+            [
+              "0.2500",
+              "1590.00"
+            ],
+            [
+              "0.2600",
+              "668.00"
+            ],
+            [
+              "0.3000",
+              "696.00"
+            ],
+            [
+              "0.3300",
+              "200.00"
+            ],
+            [
+              "0.3500",
+              "200.00"
+            ],
+            [
+              "0.3600",
+              "12.13"
+            ],
+            [
+              "0.3900",
+              "11.00"
+            ],
+            [
+              "0.4500",
+              "80.00"
+            ],
+            [
+              "0.4600",
+              "727.00"
+            ],
+            [
+              "0.4700",
+              "345.00"
+            ],
+            [
+              "0.4800",
+              "129.00"
+            ],
+            [
+              "0.4900",
+              "214.00"
+            ],
+            [
+              "0.5000",
+              "92.15"
+            ],
+            [
+              "0.5100",
+              "34.60"
+            ],
+            [
+              "0.5200",
+              "6.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "24965.00"
+            ],
+            [
+              "0.0200",
+              "53650.00"
+            ],
+            [
+              "0.0300",
+              "14253.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "20.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "330.00"
+            ],
+            [
+              "0.1100",
+              "20.00"
+            ],
+            [
+              "0.1700",
+              "35.00"
+            ],
+            [
+              "0.1900",
+              "1198.00"
+            ],
+            [
+              "0.2000",
+              "633.00"
+            ],
+            [
+              "0.2100",
+              "565.00"
+            ],
+            [
+              "0.2300",
+              "11.00"
+            ],
+            [
+              "0.2700",
+              "10.00"
+            ],
+            [
+              "0.3100",
+              "340.00"
+            ],
+            [
+              "0.3300",
+              "57.00"
+            ],
+            [
+              "0.3500",
+              "1.00"
+            ],
+            [
+              "0.3600",
+              "75.00"
+            ],
+            [
+              "0.4200",
+              "125.00"
+            ],
+            [
+              "0.4300",
+              "99.80"
+            ],
+            [
+              "0.4400",
+              "11.00"
+            ],
+            [
+              "0.4500",
+              "18.00"
+            ],
+            [
+              "0.4600",
+              "8.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -787,16 +1015,16 @@
     "latest_expiration_time": "2026-09-21T23:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.5300",
-    "no_bid_dollars": "0.5100",
+    "no_ask_dollars": "0.5400",
+    "no_bid_dollars": "0.5200",
     "no_sub_title": "Dallas",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T02:00:00Z",
-    "open_interest_fp": "1646.83",
+    "open_interest_fp": "1782.41",
     "open_time": "2026-09-17T00:07:00Z",
-    "previous_price_dollars": "0.5200",
-    "previous_yes_ask_dollars": "0.5100",
-    "previous_yes_bid_dollars": "0.4600",
+    "previous_price_dollars": "0.4800",
+    "previous_yes_ask_dollars": "0.4800",
+    "previous_yes_bid_dollars": "0.4500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -814,17 +1042,17 @@
     "ticker": "KXNHLGAME-26SEP19DALSTL-DAL",
     "title": "Dallas wins",
     "updated_time": "2026-09-17T00:07:00.14378Z",
-    "volume_24h_fp": "1521.30",
-    "volume_fp": "1871.51",
-    "yes_ask_dollars": "0.4900",
-    "yes_ask_size_fp": "62.48",
-    "yes_bid_dollars": "0.4700",
-    "yes_bid_size_fp": "44.00",
+    "volume_24h_fp": "1783.73",
+    "volume_fp": "2138.22",
+    "yes_ask_dollars": "0.4800",
+    "yes_ask_size_fp": "6.00",
+    "yes_bid_dollars": "0.4600",
+    "yes_bid_size_fp": "8.00",
     "yes_sub_title": "Dallas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL",
-  "market_captured_at": "2026-09-19T15:33:54.328Z",
+  "market_captured_at": "2026-09-19T18:53:55.469Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T15:33:54.946Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-DAL/candlesticks?start_ts=1789790401&end_ts=1789832034&period_interval=1440"
+  "last_ingested_at": "2026-09-19T18:53:56.041Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-DAL/candlesticks?start_ts=1789790401&end_ts=1789844035&period_interval=1440"
 }

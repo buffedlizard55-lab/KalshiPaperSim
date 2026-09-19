@@ -217,6 +217,86 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T18:54:07.046Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VGKLA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1550.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "50300.00"
+            ],
+            [
+              "0.0200",
+              "157.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.4900",
+              "450.00"
+            ],
+            [
+              "0.5000",
+              "494.00"
+            ],
+            [
+              "0.5900",
+              "450.00"
+            ],
+            [
+              "0.7300",
+              "140.00"
+            ],
+            [
+              "0.7400",
+              "546.00"
+            ],
+            [
+              "0.8800",
+              "33.00"
+            ],
+            [
+              "0.8900",
+              "17.00"
+            ],
+            [
+              "0.9000",
+              "3.62"
+            ],
+            [
+              "0.9100",
+              "16.63"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -230,20 +310,20 @@
     "expiration_time": "2026-09-22T01:00:00Z",
     "expiration_value": "",
     "floor_strike": 1.5,
-    "last_price_dollars": "0.8800",
+    "last_price_dollars": "0.9000",
     "latest_expiration_time": "2026-09-22T01:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.1200",
-    "no_bid_dollars": "0.1100",
+    "no_ask_dollars": "0.0900",
+    "no_bid_dollars": "0.0100",
     "no_sub_title": "Over 1.5 goals scored",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T04:00:00Z",
-    "open_interest_fp": "27.91",
+    "open_interest_fp": "763.78",
     "open_time": "2026-09-17T00:07:00Z",
-    "previous_price_dollars": "0.0000",
-    "previous_yes_ask_dollars": "0.8900",
-    "previous_yes_bid_dollars": "0.0400",
+    "previous_price_dollars": "0.9000",
+    "previous_yes_ask_dollars": "0.9000",
+    "previous_yes_bid_dollars": "0.1600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -261,17 +341,17 @@
     "ticker": "KXNHLTOTAL-26SEP19VGKLA-2",
     "title": "Full Game: Over 1.5 goals scored",
     "updated_time": "2026-09-17T00:10:55.847035Z",
-    "volume_24h_fp": "33.91",
-    "volume_fp": "33.91",
-    "yes_ask_dollars": "0.8900",
-    "yes_ask_size_fp": "500.00",
-    "yes_bid_dollars": "0.8800",
-    "yes_bid_size_fp": "18.00",
+    "volume_24h_fp": "758.65",
+    "volume_fp": "769.78",
+    "yes_ask_dollars": "0.9900",
+    "yes_ask_size_fp": "1550.00",
+    "yes_bid_dollars": "0.9100",
+    "yes_bid_size_fp": "16.63",
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VGKLA-2",
-  "market_captured_at": "2026-09-19T15:34:05.601Z",
+  "market_captured_at": "2026-09-19T18:54:06.404Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T15:34:06.218Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VGKLA-2/candlesticks?start_ts=1789790401&end_ts=1789832045&period_interval=1440"
+  "last_ingested_at": "2026-09-19T18:54:06.976Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VGKLA-2/candlesticks?start_ts=1789790401&end_ts=1789844046&period_interval=1440"
 }

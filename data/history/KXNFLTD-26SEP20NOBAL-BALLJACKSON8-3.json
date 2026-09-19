@@ -271,6 +271,77 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T18:53:40.316Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2578.00"
+            ],
+            [
+              "0.0300",
+              "100.00"
+            ],
+            [
+              "0.0500",
+              "716.93"
+            ],
+            [
+              "0.1200",
+              "100.00"
+            ],
+            [
+              "0.3100",
+              "10.00"
+            ],
+            [
+              "0.3200",
+              "4971.00"
+            ],
+            [
+              "0.3900",
+              "5.00"
+            ],
+            [
+              "0.8400",
+              "100.00"
+            ],
+            [
+              "0.8500",
+              "30.00"
+            ],
+            [
+              "0.9000",
+              "100.00"
+            ],
+            [
+              "0.9400",
+              "21.00"
+            ],
+            [
+              "0.9500",
+              "400.00"
+            ],
+            [
+              "0.9600",
+              "950.00"
+            ],
+            [
+              "0.9800",
+              "18204.62"
+            ],
+            [
+              "0.9900",
+              "31499.73"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -288,7 +359,7 @@
     "expiration_time": "2026-09-22T17:00:00Z",
     "expiration_value": "",
     "floor_strike": 2.5,
-    "last_price_dollars": "0.0200",
+    "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-22T17:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -297,9 +368,9 @@
     "no_sub_title": "Lamar Jackson: 3+",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T20:00:00Z",
-    "open_interest_fp": "24318.15",
+    "open_interest_fp": "24458.42",
     "open_time": "2026-09-17T19:16:00Z",
-    "previous_price_dollars": "0.0100",
+    "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0200",
     "previous_yes_bid_dollars": "0.0100",
     "price_level_structure": "linear_cent",
@@ -320,17 +391,17 @@
     "ticker": "KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3",
     "title": "Lamar Jackson: 3+ touchdowns",
     "updated_time": "2026-09-18T20:08:48.176396Z",
-    "volume_24h_fp": "4824.07",
-    "volume_fp": "24318.15",
+    "volume_24h_fp": "4028.54",
+    "volume_fp": "24458.42",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "25500.00",
+    "yes_ask_size_fp": "31499.73",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Lamar Jackson: 3+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3",
-  "market_captured_at": "2026-09-19T15:33:38.043Z",
+  "market_captured_at": "2026-09-19T18:53:39.676Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T15:33:38.659Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTD/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/candlesticks?start_ts=1789790401&end_ts=1789832018&period_interval=1440"
+  "last_ingested_at": "2026-09-19T18:53:40.247Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTD/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/candlesticks?start_ts=1789790401&end_ts=1789844019&period_interval=1440"
 }

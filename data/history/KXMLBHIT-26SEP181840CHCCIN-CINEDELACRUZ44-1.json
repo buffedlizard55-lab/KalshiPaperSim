@@ -59,6 +59,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T18:51:48.496Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -87,7 +97,7 @@
     "occurrence_datetime": "2026-09-19T01:40:00Z",
     "open_interest_fp": "6584.20",
     "open_time": "2026-09-18T05:10:00Z",
-    "previous_price_dollars": "0.6700",
+    "previous_price_dollars": "0.6500",
     "previous_yes_ask_dollars": "0.6600",
     "previous_yes_bid_dollars": "0.6400",
     "price_level_structure": "linear_cent",
@@ -110,7 +120,7 @@
     "ticker": "KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1",
     "title": "Elly De La Cruz: 1+ hits?",
     "updated_time": "2026-09-19T01:41:14.903521Z",
-    "volume_24h_fp": "6805.08",
+    "volume_24h_fp": "4815.78",
     "volume_fp": "7918.92",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -119,9 +129,9 @@
     "yes_sub_title": "Elly De La Cruz: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1",
-  "market_captured_at": "2026-09-19T15:31:42.788Z",
+  "market_captured_at": "2026-09-19T18:51:47.854Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T15:31:43.406Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1/candlesticks?start_ts=1789790401&end_ts=1789831903&period_interval=1440"
+  "last_ingested_at": "2026-09-19T18:51:48.426Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1/candlesticks?start_ts=1789790401&end_ts=1789843908&period_interval=1440"
 }

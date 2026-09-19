@@ -652,6 +652,206 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T18:53:54.898Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "25706.94"
+            ],
+            [
+              "0.0200",
+              "4137.00"
+            ],
+            [
+              "0.0300",
+              "50579.00"
+            ],
+            [
+              "0.0400",
+              "7522.00"
+            ],
+            [
+              "0.0500",
+              "33.00"
+            ],
+            [
+              "0.0600",
+              "400.00"
+            ],
+            [
+              "0.0700",
+              "400.00"
+            ],
+            [
+              "0.0900",
+              "500.00"
+            ],
+            [
+              "0.1000",
+              "500.00"
+            ],
+            [
+              "0.1100",
+              "18.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1400",
+              "43.00"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.2000",
+              "1887.00"
+            ],
+            [
+              "0.2100",
+              "741.00"
+            ],
+            [
+              "0.2200",
+              "468.00"
+            ],
+            [
+              "0.2500",
+              "7.79"
+            ],
+            [
+              "0.2700",
+              "140.00"
+            ],
+            [
+              "0.2800",
+              "10.00"
+            ],
+            [
+              "0.3300",
+              "200.00"
+            ],
+            [
+              "0.3500",
+              "831.30"
+            ],
+            [
+              "0.3600",
+              "681.00"
+            ],
+            [
+              "0.3700",
+              "5.00"
+            ],
+            [
+              "0.3800",
+              "3.00"
+            ],
+            [
+              "0.3900",
+              "1.00"
+            ],
+            [
+              "0.4000",
+              "3.00"
+            ],
+            [
+              "0.4100",
+              "1.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "25655.00"
+            ],
+            [
+              "0.0200",
+              "12482.00"
+            ],
+            [
+              "0.0300",
+              "575.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "330.00"
+            ],
+            [
+              "0.1500",
+              "40.00"
+            ],
+            [
+              "0.2300",
+              "17.00"
+            ],
+            [
+              "0.2500",
+              "1211.00"
+            ],
+            [
+              "0.3100",
+              "210.00"
+            ],
+            [
+              "0.3500",
+              "691.00"
+            ],
+            [
+              "0.3800",
+              "140.00"
+            ],
+            [
+              "0.3900",
+              "524.00"
+            ],
+            [
+              "0.4200",
+              "1.00"
+            ],
+            [
+              "0.4300",
+              "64.00"
+            ],
+            [
+              "0.5300",
+              "5.00"
+            ],
+            [
+              "0.5400",
+              "132.00"
+            ],
+            [
+              "0.5500",
+              "75.00"
+            ],
+            [
+              "0.5600",
+              "9.89"
+            ],
+            [
+              "0.5700",
+              "5.72"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -667,20 +867,20 @@
     "expected_expiration_time": "2026-09-20T03:00:00Z",
     "expiration_time": "2026-09-22T00:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.6000",
+    "last_price_dollars": "0.5900",
     "latest_expiration_time": "2026-09-22T00:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.4400",
-    "no_bid_dollars": "0.4200",
+    "no_ask_dollars": "0.4300",
+    "no_bid_dollars": "0.4100",
     "no_sub_title": "Minnesota",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T03:00:00Z",
-    "open_interest_fp": "569.42",
+    "open_interest_fp": "1003.94",
     "open_time": "2026-09-17T00:07:00Z",
-    "previous_price_dollars": "0.5700",
-    "previous_yes_ask_dollars": "0.5700",
-    "previous_yes_bid_dollars": "0.5300",
+    "previous_price_dollars": "0.6200",
+    "previous_yes_ask_dollars": "0.6400",
+    "previous_yes_bid_dollars": "0.5400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -698,17 +898,17 @@
     "ticker": "KXNHLGAME-26SEP19CHIMIN-MIN",
     "title": "Minnesota wins",
     "updated_time": "2026-09-17T00:07:00.14378Z",
-    "volume_24h_fp": "347.79",
-    "volume_fp": "636.94",
-    "yes_ask_dollars": "0.5800",
-    "yes_ask_size_fp": "237.00",
-    "yes_bid_dollars": "0.5600",
-    "yes_bid_size_fp": "6.62",
+    "volume_24h_fp": "691.41",
+    "volume_fp": "1100.19",
+    "yes_ask_dollars": "0.5900",
+    "yes_ask_size_fp": "1.00",
+    "yes_bid_dollars": "0.5700",
+    "yes_bid_size_fp": "5.72",
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN",
-  "market_captured_at": "2026-09-19T15:33:53.075Z",
+  "market_captured_at": "2026-09-19T18:53:54.255Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T15:33:53.695Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-MIN/candlesticks?start_ts=1789790401&end_ts=1789832033&period_interval=1440"
+  "last_ingested_at": "2026-09-19T18:53:54.827Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-MIN/candlesticks?start_ts=1789790401&end_ts=1789844034&period_interval=1440"
 }

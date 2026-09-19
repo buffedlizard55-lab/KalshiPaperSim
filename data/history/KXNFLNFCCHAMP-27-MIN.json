@@ -1327,6 +1327,206 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T18:53:33.036Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2627868.55"
+            ],
+            [
+              "0.0200",
+              "7733.00"
+            ],
+            [
+              "0.0300",
+              "4464.00"
+            ],
+            [
+              "0.0400",
+              "10.00"
+            ],
+            [
+              "0.0500",
+              "200.00"
+            ],
+            [
+              "0.0800",
+              "540828.12"
+            ],
+            [
+              "0.1000",
+              "317.12"
+            ],
+            [
+              "0.1300",
+              "4696.85"
+            ],
+            [
+              "0.1500",
+              "214752.00"
+            ],
+            [
+              "0.1600",
+              "39299.01"
+            ],
+            [
+              "0.2000",
+              "200.00"
+            ],
+            [
+              "0.2300",
+              "175179.00"
+            ],
+            [
+              "0.3000",
+              "180303.00"
+            ],
+            [
+              "0.3100",
+              "585.64"
+            ],
+            [
+              "0.3300",
+              "1171.28"
+            ],
+            [
+              "0.3700",
+              "95230.00"
+            ],
+            [
+              "0.3900",
+              "365.90"
+            ],
+            [
+              "0.4500",
+              "47080.25"
+            ],
+            [
+              "0.4600",
+              "1826.52"
+            ],
+            [
+              "0.4700",
+              "6496.00"
+            ],
+            [
+              "0.4800",
+              "107.75"
+            ],
+            [
+              "0.5200",
+              "31650.95"
+            ],
+            [
+              "0.5500",
+              "23.42"
+            ],
+            [
+              "0.5600",
+              "234.25"
+            ],
+            [
+              "0.5900",
+              "24737.00"
+            ],
+            [
+              "0.6000",
+              "1029.00"
+            ],
+            [
+              "0.6200",
+              "2032.00"
+            ],
+            [
+              "0.6300",
+              "5853.00"
+            ],
+            [
+              "0.6700",
+              "17522.63"
+            ],
+            [
+              "0.7400",
+              "15976.12"
+            ],
+            [
+              "0.7500",
+              "5.36"
+            ],
+            [
+              "0.8000",
+              "1261.28"
+            ],
+            [
+              "0.8200",
+              "8587.12"
+            ],
+            [
+              "0.8300",
+              "4.56"
+            ],
+            [
+              "0.8400",
+              "7.96"
+            ],
+            [
+              "0.8500",
+              "18.75"
+            ],
+            [
+              "0.8800",
+              "309.21"
+            ],
+            [
+              "0.8900",
+              "26.27"
+            ],
+            [
+              "0.9100",
+              "43000.00"
+            ],
+            [
+              "0.9200",
+              "50132.13"
+            ],
+            [
+              "0.9300",
+              "26.54"
+            ],
+            [
+              "0.9400",
+              "71880.26"
+            ],
+            [
+              "0.9500",
+              "227568.13"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "20058.09"
+            ],
+            [
+              "0.0200",
+              "312.78"
+            ],
+            [
+              "0.0300",
+              "249152.98"
+            ],
+            [
+              "0.0400",
+              "56.34"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1346,11 +1546,11 @@
     "latest_expiration_time": "2027-02-22T15:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9700",
-    "no_bid_dollars": "0.9600",
+    "no_ask_dollars": "0.9600",
+    "no_bid_dollars": "0.9500",
     "no_sub_title": "Minnesota",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "534542.00",
+    "open_interest_fp": "534936.95",
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.0500",
     "previous_yes_ask_dollars": "0.0500",
@@ -1372,17 +1572,17 @@
     "ticker": "KXNFLNFCCHAMP-27-MIN",
     "title": "Will Minnesota win the Pro Football NFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "873.85",
-    "volume_fp": "617224.50",
-    "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "19.90",
-    "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "249401.04",
+    "volume_24h_fp": "612.47",
+    "volume_fp": "617619.45",
+    "yes_ask_dollars": "0.0500",
+    "yes_ask_size_fp": "227568.13",
+    "yes_bid_dollars": "0.0400",
+    "yes_bid_size_fp": "56.34",
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-MIN",
-  "market_captured_at": "2026-09-19T15:33:30.533Z",
+  "market_captured_at": "2026-09-19T18:53:32.393Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T15:33:31.151Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-MIN/candlesticks?start_ts=1789790401&end_ts=1789832010&period_interval=1440"
+  "last_ingested_at": "2026-09-19T18:53:32.966Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-MIN/candlesticks?start_ts=1789790401&end_ts=1789844012&period_interval=1440"
 }

@@ -64,6 +64,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T18:58:44.808Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26AUG15JOHDA-JOH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -121,9 +131,9 @@
     "yes_sub_title": "Charles Johnson"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26AUG15JOHDA-JOH",
-  "market_captured_at": "2026-09-19T15:17:57.041Z",
+  "market_captured_at": "2026-09-19T18:58:44.067Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T15:17:57.661Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG15JOHDA-JOH/candlesticks?start_ts=1787239077&end_ts=1789831076&period_interval=60"
+  "last_ingested_at": "2026-09-19T18:58:44.738Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG15JOHDA-JOH/candlesticks?start_ts=1787252324&end_ts=1789844323&period_interval=60"
 }

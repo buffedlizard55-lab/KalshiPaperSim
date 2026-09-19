@@ -231,6 +231,58 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T18:54:09.473Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "628.00"
+            ],
+            [
+              "0.0200",
+              "155.00"
+            ],
+            [
+              "0.1000",
+              "117.54"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.1500",
+              "16.46"
+            ],
+            [
+              "0.2400",
+              "123.00"
+            ],
+            [
+              "0.2500",
+              "13.51"
+            ],
+            [
+              "0.8200",
+              "0.51"
+            ],
+            [
+              "0.8300",
+              "5.63"
+            ],
+            [
+              "0.8400",
+              "40.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -244,20 +296,20 @@
     "expiration_time": "2026-09-23T00:00:00Z",
     "expiration_value": "",
     "floor_strike": 1.5,
-    "last_price_dollars": "0.8800",
+    "last_price_dollars": "0.9000",
     "latest_expiration_time": "2026-09-23T00:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.7600",
-    "no_bid_dollars": "0.1300",
+    "no_ask_dollars": "0.1600",
+    "no_bid_dollars": "0.1000",
     "no_sub_title": "Over 1.5 goals scored",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-21T03:00:00Z",
-    "open_interest_fp": "16.66",
+    "open_interest_fp": "56.50",
     "open_time": "2026-09-17T16:05:00Z",
-    "previous_price_dollars": "0.0000",
+    "previous_price_dollars": "0.9000",
     "previous_yes_ask_dollars": "0.9000",
-    "previous_yes_bid_dollars": "0.0300",
+    "previous_yes_bid_dollars": "0.1500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -275,17 +327,17 @@
     "ticker": "KXNHLTOTAL-26SEP20SEACGY-2",
     "title": "Full Game: Over 1.5 goals scored",
     "updated_time": "2026-09-17T16:10:58.751854Z",
-    "volume_24h_fp": "16.66",
-    "volume_fp": "16.66",
-    "yes_ask_dollars": "0.8700",
-    "yes_ask_size_fp": "20.00",
-    "yes_bid_dollars": "0.2400",
-    "yes_bid_size_fp": "25.63",
+    "volume_24h_fp": "45.47",
+    "volume_fp": "56.50",
+    "yes_ask_dollars": "0.9000",
+    "yes_ask_size_fp": "117.54",
+    "yes_bid_dollars": "0.8400",
+    "yes_bid_size_fp": "40.00",
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2",
-  "market_captured_at": "2026-09-19T15:34:08.102Z",
+  "market_captured_at": "2026-09-19T18:54:08.830Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T15:34:08.719Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP20SEACGY-2/candlesticks?start_ts=1789790401&end_ts=1789832048&period_interval=1440"
+  "last_ingested_at": "2026-09-19T18:54:09.403Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP20SEACGY-2/candlesticks?start_ts=1789790401&end_ts=1789844049&period_interval=1440"
 }
