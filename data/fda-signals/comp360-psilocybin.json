@@ -1,0 +1,37 @@
+{
+  "slug": "comp360-psilocybin",
+  "subject": {
+    "label": "COMP360 psilocybin (Compass Pathways) — treatment-resistant depression",
+    "query": "sponsor_name:\"compass pathways\"",
+    "markets": [
+      "KXFDAAPPROVALDATECMPS-360-27JAN01",
+      "KXFDAAPPROVALDATECMPS-360-27MAR01",
+      "KXFDAAPPROVALDATECMPS-360-27JUL01",
+      "KXFDAAPPROVALDATECMPS-360-27OCT01",
+      "KXFDAAPPROVALDATECMPS-360-28JAN01"
+    ],
+    "ruleQuote": "KXFDAAPPROVALDATECMPS-360-*: \"If the FDA approves COMP360 Psilocybin for Treatment-Resistant Depression for marketing before <date>, then the market resolves to Yes.\""
+  },
+  "what": "Point-in-time Drugs@FDA state for this subject: one snapshot per archive run. `approved` is derived from the verbatim marketing_status strings (a documented English-string test); every other field is verbatim from the official response.",
+  "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+  "snapshots": [
+    {
+      "captured_at": "2026-09-19T20:57:50.327Z",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=sponsor_name%3A%22compass%20pathways%22&limit=99",
+      "http_status": 404,
+      "meta": {
+        "disclaimer": null,
+        "last_updated": null,
+        "total": 0
+      },
+      "state": "NO_RECORD",
+      "approved": false,
+      "marketingStatuses": [],
+      "applications": 0,
+      "applicationNumbers": [],
+      "newestSubmissionStatusDate": null,
+      "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
+    }
+  ],
+  "trims": []
+}

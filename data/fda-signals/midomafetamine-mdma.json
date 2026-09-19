@@ -1,0 +1,33 @@
+{
+  "slug": "midomafetamine-mdma",
+  "subject": {
+    "label": "Midomafetamine / MDMA (PTSD)",
+    "query": "products.active_ingredients.name:\"midomafetamine\"",
+    "markets": [
+      "KXFDAAPPROVE-MDMA-30JAN01"
+    ],
+    "ruleQuote": "KXFDAAPPROVE-MDMA-30JAN01: \"If the FDA approves midomafetamine / MDMA for PTSD for marketing before Jan 1, 2030, then the market resolves to Yes.\""
+  },
+  "what": "Point-in-time Drugs@FDA state for this subject: one snapshot per archive run. `approved` is derived from the verbatim marketing_status strings (a documented English-string test); every other field is verbatim from the official response.",
+  "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+  "snapshots": [
+    {
+      "captured_at": "2026-09-19T20:58:57.506Z",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name%3A%22midomafetamine%22&limit=99",
+      "http_status": 404,
+      "meta": {
+        "disclaimer": null,
+        "last_updated": null,
+        "total": 0
+      },
+      "state": "NO_RECORD",
+      "approved": false,
+      "marketingStatuses": [],
+      "applications": 0,
+      "applicationNumbers": [],
+      "newestSubmissionStatusDate": null,
+      "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
+    }
+  ],
+  "trims": []
+}
