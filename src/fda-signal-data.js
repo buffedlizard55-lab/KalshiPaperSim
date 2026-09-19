@@ -12,11 +12,11 @@
  * refuses any snapshot captured AFTER the decision time (the anti-lookahead
  * rule).
  *
- * NO ARCHIVE YET — no snapshots have been captured; every FDA-signal-dependent strategy abstains until the archive exists. · generated 2026-09-19T19:44:19.758Z
+ * NO ARCHIVE YET — no snapshots have been captured; every FDA-signal-dependent strategy abstains until the archive exists. · generated 2026-09-19T20:23:24.789Z
  */
 
 export const FDA_SIGNAL_DATA = {
- "generatedAt": "2026-09-19T19:44:19.758Z",
+ "generatedAt": "2026-09-19T20:23:24.789Z",
  "present": false,
  "subjects": {}
 };

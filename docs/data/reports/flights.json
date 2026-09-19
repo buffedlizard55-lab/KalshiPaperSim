@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T19:44:19.045Z",
+  "generatedAt": "2026-09-19T20:23:18.945Z",
   "note": "Three flights, three windows. DAILY = period_interval 1440 over the full stored history. HOURLY = period_interval 60 over the curated intraday store (which since 2026-09-18 includes the settled KXHIGHNY weather brackets with real exchange results). MICRO = period_interval 1 over the 1-minute store (the KXGOLD15M 15-minute gold markets). They are reported separately and are never merged into one ranking, because a strategy that needs intraday bars cannot be judged on daily ones.",
   "intradayCoverage": {
     "1": {
@@ -7,8 +7,8 @@
       "periodIntervalMinutes": 1,
       "storeDir": "data/history/intraday/1m",
       "browserBarCap": 400,
-      "marketCount": 239,
-      "barCount": 16362,
+      "marketCount": 240,
+      "barCount": 16378,
       "markets": [
         {
           "ticker": "JPMCEOCHANGE-27",
@@ -101,9 +101,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T05:01:00.000Z",
           "lastDate": "2026-09-18T05:16:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:21:54.777Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP180115-15/candlesticks?start_ts=1789794961&end_ts=1789831314&period_interval=1",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:53.555Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP180115-15/candlesticks?start_ts=1789794961&end_ts=1789844332&period_interval=1",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 1
         },
         {
@@ -113,9 +113,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T05:16:00.000Z",
           "lastDate": "2026-09-18T05:31:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:21:57.600Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP180130-30/candlesticks?start_ts=1789795861&end_ts=1789831316&period_interval=1",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:56.751Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP180130-30/candlesticks?start_ts=1789795861&end_ts=1789844336&period_interval=1",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 1
         },
         {
@@ -125,9 +125,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T15:46:00.000Z",
           "lastDate": "2026-09-18T16:01:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:21:51.956Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181200-00/candlesticks?start_ts=1789747261&end_ts=1789831311&period_interval=1",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:58:50.347Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181200-00/candlesticks?start_ts=1789833661&end_ts=1789844329&period_interval=1",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 1
         },
         {
@@ -137,9 +137,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T16:31:00.000Z",
           "lastDate": "2026-09-18T16:46:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:21:50.701Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181245-45/candlesticks?start_ts=1789749961&end_ts=1789831310&period_interval=1",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:58:46.766Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181245-45/candlesticks?start_ts=1789836361&end_ts=1789844326&period_interval=1",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 1
         },
         {
@@ -161,9 +161,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T18:31:00.000Z",
           "lastDate": "2026-09-18T18:46:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:18:00.257Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181445-45/candlesticks?start_ts=1789757161&end_ts=1789831079&period_interval=1",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:58:48.559Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181445-45/candlesticks?start_ts=1789843561&end_ts=1789844327&period_interval=1",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 1
         },
         {
@@ -173,9 +173,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T18:46:00.000Z",
           "lastDate": "2026-09-18T19:01:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:21:53.207Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181500-00/candlesticks?start_ts=1789758061&end_ts=1789831312&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:58:51.763Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181500-00/candlesticks?start_ts=1789758061&end_ts=1789844331&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -185,9 +185,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T19:31:00.000Z",
           "lastDate": "2026-09-18T19:46:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:21:58.856Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181545-45/candlesticks?start_ts=1789760761&end_ts=1789831318&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:58:58.174Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181545-45/candlesticks?start_ts=1789760761&end_ts=1789844337&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -197,9 +197,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T19:46:00.000Z",
           "lastDate": "2026-09-18T20:01:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:21:56.029Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181600-00/candlesticks?start_ts=1789761661&end_ts=1789831315&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:58:54.968Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP181600-00/candlesticks?start_ts=1789761661&end_ts=1789844334&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -413,9 +413,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T05:01:00.000Z",
           "lastDate": "2026-09-18T05:16:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:05.433Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP180115-15/candlesticks?start_ts=1789794961&end_ts=1789831324&period_interval=1",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:07.786Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP180115-15/candlesticks?start_ts=1789794961&end_ts=1789844347&period_interval=1",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 1
         },
         {
@@ -437,9 +437,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T16:16:00.000Z",
           "lastDate": "2026-09-18T16:31:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:01.357Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP181230-30/candlesticks?start_ts=1789749061&end_ts=1789831321&period_interval=1",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:59:01.381Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP181230-30/candlesticks?start_ts=1789835461&end_ts=1789844340&period_interval=1",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 1
         },
         {
@@ -473,9 +473,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T18:46:00.000Z",
           "lastDate": "2026-09-18T19:01:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:02.607Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP181500-00/candlesticks?start_ts=1789758061&end_ts=1789831322&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:59:02.793Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP181500-00/candlesticks?start_ts=1789758061&end_ts=1789844342&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -485,9 +485,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T19:31:00.000Z",
           "lastDate": "2026-09-18T19:46:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:07.937Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP181545-45/candlesticks?start_ts=1789760761&end_ts=1789831327&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:59:10.616Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP181545-45/candlesticks?start_ts=1789760761&end_ts=1789844350&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -497,9 +497,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T19:46:00.000Z",
           "lastDate": "2026-09-18T20:01:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:03.859Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP181600-00/candlesticks?start_ts=1789761661&end_ts=1789831323&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:59:04.207Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP181600-00/candlesticks?start_ts=1789761661&end_ts=1789844343&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -509,9 +509,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T21:31:00.000Z",
           "lastDate": "2026-09-18T21:46:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:00.104Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP181745-45/candlesticks?start_ts=1789767961&end_ts=1789831319&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:58:59.588Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP181745-45/candlesticks?start_ts=1789767961&end_ts=1789844339&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -521,9 +521,21 @@
           "truncated": false,
           "firstDate": "2026-09-18T23:46:00.000Z",
           "lastDate": "2026-09-19T00:01:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:06.684Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP182000-00/candlesticks?start_ts=1789776061&end_ts=1789831326&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:59:09.198Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP182000-00/candlesticks?start_ts=1789776061&end_ts=1789844348&period_interval=1",
+          "bookSnapshots": 3,
+          "periodIntervalMinutes": 1
+        },
+        {
+          "ticker": "KXETH15M-26SEP191330-30",
+          "bars": 16,
+          "barsInStore": 16,
+          "truncated": false,
+          "firstDate": "2026-09-19T17:16:00.000Z",
+          "lastDate": "2026-09-19T17:31:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:59:06.000Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26SEP191330-30/candlesticks?start_ts=1789757945&end_ts=1789844344&period_interval=1",
+          "bookSnapshots": 1,
           "periodIntervalMinutes": 1
         },
         {
@@ -881,9 +893,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T03:01:00.000Z",
           "lastDate": "2026-09-18T03:16:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:13:24.120Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP172315-15/candlesticks?start_ts=1789787761&end_ts=1789830803&period_interval=1",
-          "bookSnapshots": 9,
+          "lastIngestedAt": "2026-09-19T18:57:31.593Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP172315-15/candlesticks?start_ts=1789787761&end_ts=1789844250&period_interval=1",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 1
         },
         {
@@ -893,9 +905,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T05:31:00.000Z",
           "lastDate": "2026-09-18T05:46:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:13:25.695Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP180145-45/candlesticks?start_ts=1789796761&end_ts=1789830805&period_interval=1",
-          "bookSnapshots": 8,
+          "lastIngestedAt": "2026-09-19T18:57:33.377Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP180145-45/candlesticks?start_ts=1789796761&end_ts=1789844252&period_interval=1",
+          "bookSnapshots": 9,
           "periodIntervalMinutes": 1
         },
         {
@@ -905,9 +917,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T17:16:00.000Z",
           "lastDate": "2026-09-18T17:31:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:13:18.792Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181330-30/candlesticks?start_ts=1789752661&end_ts=1789830798&period_interval=1",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:57:25.187Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181330-30/candlesticks?start_ts=1789839061&end_ts=1789844244&period_interval=1",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 1
         },
         {
@@ -917,9 +929,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T17:46:00.000Z",
           "lastDate": "2026-09-18T18:01:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:13:17.541Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181400-00/candlesticks?start_ts=1789754461&end_ts=1789830797&period_interval=1",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:57:23.397Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181400-00/candlesticks?start_ts=1789840861&end_ts=1789844242&period_interval=1",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 1
         },
         {
@@ -929,9 +941,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T18:01:00.000Z",
           "lastDate": "2026-09-18T18:16:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:13:21.298Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181415-15/candlesticks?start_ts=1789755361&end_ts=1789830800&period_interval=1",
-          "bookSnapshots": 3,
+          "lastIngestedAt": "2026-09-19T18:57:28.388Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181415-15/candlesticks?start_ts=1789841761&end_ts=1789844247&period_interval=1",
+          "bookSnapshots": 4,
           "periodIntervalMinutes": 1
         },
         {
@@ -941,9 +953,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T18:46:00.000Z",
           "lastDate": "2026-09-18T19:01:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:13:22.551Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181500-00/candlesticks?start_ts=1789758061&end_ts=1789830802&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:57:29.811Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181500-00/candlesticks?start_ts=1789758061&end_ts=1789844249&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -953,9 +965,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T19:01:00.000Z",
           "lastDate": "2026-09-18T19:16:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:13:20.046Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181515-15/candlesticks?start_ts=1789758961&end_ts=1789830799&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:57:26.603Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181515-15/candlesticks?start_ts=1789758961&end_ts=1789844246&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -965,9 +977,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T20:16:00.000Z",
           "lastDate": "2026-09-18T20:31:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:13:26.948Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181630-30/candlesticks?start_ts=1789763461&end_ts=1789830806&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:57:34.792Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP181630-30/candlesticks?start_ts=1789763461&end_ts=1789844254&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -2753,9 +2765,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T02:16:00.000Z",
           "lastDate": "2026-09-18T02:31:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:15.150Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP172230-30/candlesticks?start_ts=1789785061&end_ts=1789831334&period_interval=1",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:17.757Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP172230-30/candlesticks?start_ts=1789785061&end_ts=1789844357&period_interval=1",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 1
         },
         {
@@ -2765,9 +2777,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T03:31:00.000Z",
           "lastDate": "2026-09-18T03:46:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:11.082Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP172345-45/candlesticks?start_ts=1789789561&end_ts=1789831330&period_interval=1",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:12.402Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP172345-45/candlesticks?start_ts=1789789561&end_ts=1789844351&period_interval=1",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 1
         },
         {
@@ -2777,9 +2789,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T04:01:00.000Z",
           "lastDate": "2026-09-18T04:16:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:18.288Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP180015-15/candlesticks?start_ts=1789791361&end_ts=1789831337&period_interval=1",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:21.329Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP180015-15/candlesticks?start_ts=1789791361&end_ts=1789844360&period_interval=1",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 1
         },
         {
@@ -2801,9 +2813,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T05:16:00.000Z",
           "lastDate": "2026-09-18T05:31:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:16.719Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP180130-30/candlesticks?start_ts=1789795861&end_ts=1789831336&period_interval=1",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:19.544Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP180130-30/candlesticks?start_ts=1789795861&end_ts=1789844358&period_interval=1",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 1
         },
         {
@@ -2825,9 +2837,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T15:31:00.000Z",
           "lastDate": "2026-09-18T15:46:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:13.584Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP181145-45/candlesticks?start_ts=1789746361&end_ts=1789831333&period_interval=1",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:59:15.970Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP181145-45/candlesticks?start_ts=1789832761&end_ts=1789844355&period_interval=1",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 1
         },
         {
@@ -2837,9 +2849,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T17:46:00.000Z",
           "lastDate": "2026-09-18T18:01:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:12.332Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP181400-00/candlesticks?start_ts=1789754461&end_ts=1789831332&period_interval=1",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:59:14.187Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP181400-00/candlesticks?start_ts=1789840861&end_ts=1789844353&period_interval=1",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 1
         },
         {
@@ -2849,9 +2861,9 @@
           "truncated": false,
           "firstDate": "2026-09-18T19:46:00.000Z",
           "lastDate": "2026-09-18T20:01:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:19.543Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP181600-00/candlesticks?start_ts=1789761661&end_ts=1789831339&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:59:22.742Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP181600-00/candlesticks?start_ts=1789761661&end_ts=1789844362&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -2861,9 +2873,9 @@
           "truncated": false,
           "firstDate": "2026-09-19T01:46:00.000Z",
           "lastDate": "2026-09-19T02:01:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:20.794Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP182200-00/candlesticks?start_ts=1789783261&end_ts=1789831340&period_interval=1",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:59:24.159Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP182200-00/candlesticks?start_ts=1789783261&end_ts=1789844363&period_interval=1",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 1
         },
         {
@@ -2885,8 +2897,8 @@
       "periodIntervalMinutes": 60,
       "storeDir": "data/history/intraday/60m",
       "browserBarCap": 400,
-      "marketCount": 358,
-      "barCount": 35797,
+      "marketCount": 359,
+      "barCount": 36003,
       "markets": [
         {
           "ticker": "JPMCEOCHANGE-27",
@@ -2914,122 +2926,122 @@
         },
         {
           "ticker": "KXBTCY-27JAN0100-B47500",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 203,
+          "barsInStore": 203,
           "truncated": false,
           "firstDate": "2026-09-10T05:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:24.593Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B47500/candlesticks?start_ts=1789830001&end_ts=1789831344&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:15.781Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B47500/candlesticks?start_ts=1789830001&end_ts=1789844055&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXBTCY-27JAN0100-B52500",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 202,
+          "barsInStore": 202,
           "truncated": false,
           "firstDate": "2026-09-10T07:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:25.844Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B52500/candlesticks?start_ts=1789830001&end_ts=1789831345&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:17.202Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B52500/candlesticks?start_ts=1789830001&end_ts=1789844056&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXBTCY-27JAN0100-B57500",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 203,
+          "barsInStore": 203,
           "truncated": false,
           "firstDate": "2026-09-08T20:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:27.098Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B57500/candlesticks?start_ts=1789830001&end_ts=1789831346&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:24.294Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B57500/candlesticks?start_ts=1789830001&end_ts=1789844063&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXBTCY-27JAN0100-B62500",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 203,
+          "barsInStore": 203,
           "truncated": false,
           "firstDate": "2026-09-09T06:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:28.355Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B62500/candlesticks?start_ts=1789830001&end_ts=1789831348&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:21.453Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B62500/candlesticks?start_ts=1789830001&end_ts=1789844061&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXBTCY-27JAN0100-B67500",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 203,
+          "barsInStore": 203,
           "truncated": false,
           "firstDate": "2026-09-09T08:00:00.000Z",
-          "lastDate": "2026-09-19T14:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:29.612Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B67500/candlesticks?start_ts=1789826401&end_ts=1789831349&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:20.036Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B67500/candlesticks?start_ts=1789826401&end_ts=1789844059&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXBTCY-27JAN0100-B72500",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 203,
+          "barsInStore": 203,
           "truncated": false,
           "firstDate": "2026-09-11T06:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:30.865Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B72500/candlesticks?start_ts=1789830001&end_ts=1789831350&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:18.619Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B72500/candlesticks?start_ts=1789830001&end_ts=1789844058&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXBTCY-27JAN0100-B77500",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 203,
+          "barsInStore": 203,
           "truncated": false,
           "firstDate": "2026-09-11T06:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:32.118Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B77500/candlesticks?start_ts=1789830001&end_ts=1789831351&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:14.363Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B77500/candlesticks?start_ts=1789830001&end_ts=1789844053&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXBTCY-27JAN0100-B82500",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 203,
+          "barsInStore": 203,
           "truncated": false,
           "firstDate": "2026-09-10T22:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:33.372Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B82500/candlesticks?start_ts=1789830001&end_ts=1789831353&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:22.875Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B82500/candlesticks?start_ts=1789830001&end_ts=1789844062&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXBTCY-27JAN0100-B87500",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 203,
+          "barsInStore": 203,
           "truncated": false,
           "firstDate": "2026-09-10T17:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:34.628Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B87500/candlesticks?start_ts=1789830001&end_ts=1789831354&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:27.131Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B87500/candlesticks?start_ts=1789830001&end_ts=1789844066&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXBTCY-27JAN0100-T149999.99",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 203,
+          "barsInStore": 203,
           "truncated": false,
           "firstDate": "2026-09-06T16:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:22:35.890Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1789830001&end_ts=1789831355&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:25.713Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1789830001&end_ts=1789844065&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
@@ -3051,9 +3063,9 @@
           "truncated": false,
           "firstDate": "2026-09-03T01:00:00.000Z",
           "lastDate": "2026-09-11T13:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:32.149Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26AUG-T3.3/candlesticks?start_ts=1789131601&end_ts=1789831591&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:52.184Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26AUG-T3.3/candlesticks?start_ts=1789131601&end_ts=1789844391&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3063,9 +3075,9 @@
           "truncated": false,
           "firstDate": "2026-09-02T17:00:00.000Z",
           "lastDate": "2026-09-11T13:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:30.896Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26AUG-T3.4/candlesticks?start_ts=1789131601&end_ts=1789831590&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:50.770Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26AUG-T3.4/candlesticks?start_ts=1789131601&end_ts=1789844390&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3075,9 +3087,9 @@
           "truncated": false,
           "firstDate": "2026-08-04T03:00:00.000Z",
           "lastDate": "2026-08-12T13:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:27.743Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.3/candlesticks?start_ts=1789131601&end_ts=1789831587&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:47.195Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.3/candlesticks?start_ts=1789131601&end_ts=1789844386&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3087,9 +3099,9 @@
           "truncated": false,
           "firstDate": "2026-08-03T16:00:00.000Z",
           "lastDate": "2026-08-12T13:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:24.285Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.4/candlesticks?start_ts=1789131601&end_ts=1789831583&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:43.245Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.4/candlesticks?start_ts=1789131601&end_ts=1789844382&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3099,9 +3111,9 @@
           "truncated": false,
           "firstDate": "2026-07-06T04:00:00.000Z",
           "lastDate": "2026-07-14T13:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:22.711Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUN-T3.7/candlesticks?start_ts=1789218001&end_ts=1789831581&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:41.452Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUN-T3.7/candlesticks?start_ts=1789218001&end_ts=1789844380&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3111,9 +3123,9 @@
           "truncated": false,
           "firstDate": "2026-07-06T02:00:00.000Z",
           "lastDate": "2026-07-14T13:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:26.175Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUN-T3.8/candlesticks?start_ts=1789218001&end_ts=1789831585&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:45.409Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUN-T3.8/candlesticks?start_ts=1789218001&end_ts=1789844384&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3123,9 +3135,9 @@
           "truncated": false,
           "firstDate": "2026-07-05T21:00:00.000Z",
           "lastDate": "2026-07-14T13:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:29.641Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUN-T3.9/candlesticks?start_ts=1789218001&end_ts=1789831588&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:49.354Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUN-T3.9/candlesticks?start_ts=1789218001&end_ts=1789844388&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3135,9 +3147,9 @@
           "truncated": false,
           "firstDate": "2026-07-01T17:00:00.000Z",
           "lastDate": "2026-07-14T13:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:20.814Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUN-T4.0/candlesticks?start_ts=1789218001&end_ts=1789831579&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:39.291Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUN-T4.0/candlesticks?start_ts=1789218001&end_ts=1789844378&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3399,9 +3411,9 @@
           "truncated": false,
           "firstDate": "2026-07-20T19:00:00.000Z",
           "lastDate": "2026-07-29T18:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:18.926Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-C25/candlesticks?start_ts=1787940001&end_ts=1789831578&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:37.133Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-C25/candlesticks?start_ts=1787940001&end_ts=1789844376&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3411,9 +3423,9 @@
           "truncated": false,
           "firstDate": "2026-07-21T10:00:00.000Z",
           "lastDate": "2026-07-29T18:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:10.450Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H0/candlesticks?start_ts=1787940001&end_ts=1789831569&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:27.517Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H0/candlesticks?start_ts=1787940001&end_ts=1789844366&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3423,9 +3435,9 @@
           "truncated": false,
           "firstDate": "2026-07-21T10:00:00.000Z",
           "lastDate": "2026-07-29T18:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:13.275Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H25/candlesticks?start_ts=1787940001&end_ts=1789831572&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:30.718Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H25/candlesticks?start_ts=1787940001&end_ts=1789844369&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3435,9 +3447,9 @@
           "truncated": false,
           "firstDate": "2026-07-18T15:00:00.000Z",
           "lastDate": "2026-07-29T18:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:16.099Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H26/candlesticks?start_ts=1787940001&end_ts=1789831575&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:33.918Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H26/candlesticks?start_ts=1787940001&end_ts=1789844373&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3447,9 +3459,9 @@
           "truncated": false,
           "firstDate": "2026-09-07T22:00:00.000Z",
           "lastDate": "2026-09-16T18:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:17.352Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-C25/candlesticks?start_ts=1789581601&end_ts=1789831577&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:35.342Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-C25/candlesticks?start_ts=1789581601&end_ts=1789844374&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3459,9 +3471,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T10:00:00.000Z",
           "lastDate": "2026-09-16T18:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:08.879Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H0/candlesticks?start_ts=1789581601&end_ts=1789831568&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:25.731Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H0/candlesticks?start_ts=1789581601&end_ts=1789844365&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3471,9 +3483,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T10:00:00.000Z",
           "lastDate": "2026-09-16T18:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:14.527Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H25/candlesticks?start_ts=1789581601&end_ts=1789831574&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:32.132Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H25/candlesticks?start_ts=1789581601&end_ts=1789844371&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3483,9 +3495,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T04:00:00.000Z",
           "lastDate": "2026-09-16T18:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:26:11.705Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H26/candlesticks?start_ts=1789581601&end_ts=1789831571&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:59:28.931Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H26/candlesticks?start_ts=1789581601&end_ts=1789844368&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3495,9 +3507,9 @@
           "truncated": false,
           "firstDate": "2026-08-21T15:00:00.000Z",
           "lastDate": "2026-08-23T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:08.401Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26AUG22-B104.5/candlesticks?start_ts=1787468401&end_ts=1789830188&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:26.241Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26AUG22-B104.5/candlesticks?start_ts=1787468401&end_ts=1789844125&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3507,9 +3519,9 @@
           "truncated": false,
           "firstDate": "2026-08-22T15:00:00.000Z",
           "lastDate": "2026-08-24T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:00.871Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26AUG23-B104.5/candlesticks?start_ts=1787554801&end_ts=1789830180&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:17.746Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26AUG23-B104.5/candlesticks?start_ts=1787554801&end_ts=1789844117&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3519,9 +3531,9 @@
           "truncated": false,
           "firstDate": "2026-08-22T15:00:00.000Z",
           "lastDate": "2026-08-24T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:02.124Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26AUG23-B106.5/candlesticks?start_ts=1787554801&end_ts=1789830181&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:19.163Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26AUG23-B106.5/candlesticks?start_ts=1787554801&end_ts=1789844118&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3531,9 +3543,9 @@
           "truncated": false,
           "firstDate": "2026-08-24T15:00:00.000Z",
           "lastDate": "2026-08-26T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:07.143Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26AUG25-B101.5/candlesticks?start_ts=1787727601&end_ts=1789830186&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:24.825Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26AUG25-B101.5/candlesticks?start_ts=1787727601&end_ts=1789844124&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3543,9 +3555,9 @@
           "truncated": false,
           "firstDate": "2026-09-03T15:00:00.000Z",
           "lastDate": "2026-09-05T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:04.629Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP04-T93/candlesticks?start_ts=1788591601&end_ts=1789830184&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:21.991Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP04-T93/candlesticks?start_ts=1788591601&end_ts=1789844121&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3555,9 +3567,9 @@
           "truncated": false,
           "firstDate": "2026-09-07T15:00:00.000Z",
           "lastDate": "2026-09-09T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:58.366Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP08-B100.5/candlesticks?start_ts=1788937201&end_ts=1789830178&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:14.913Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP08-B100.5/candlesticks?start_ts=1788937201&end_ts=1789844114&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3567,9 +3579,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T15:00:00.000Z",
           "lastDate": "2026-09-10T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:05.890Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP09-B98.5/candlesticks?start_ts=1789023601&end_ts=1789830185&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:23.407Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP09-B98.5/candlesticks?start_ts=1789023601&end_ts=1789844123&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3579,9 +3591,9 @@
           "truncated": false,
           "firstDate": "2026-09-10T15:00:00.000Z",
           "lastDate": "2026-09-12T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:03.376Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP11-B100.5/candlesticks?start_ts=1789196401&end_ts=1789830183&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:20.579Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP11-B100.5/candlesticks?start_ts=1789196401&end_ts=1789844120&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3603,9 +3615,9 @@
           "truncated": false,
           "firstDate": "2026-09-11T15:00:00.000Z",
           "lastDate": "2026-09-13T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:59.620Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP12-B99.5/candlesticks?start_ts=1789282801&end_ts=1789830179&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:16.330Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP12-B99.5/candlesticks?start_ts=1789282801&end_ts=1789844115&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3615,9 +3627,9 @@
           "truncated": false,
           "firstDate": "2026-09-17T15:00:00.000Z",
           "lastDate": "2026-09-19T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:09.654Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP18-B96.5/candlesticks?start_ts=1789801201&end_ts=1789830189&period_interval=60",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:55:27.664Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP18-B96.5/candlesticks?start_ts=1789801201&end_ts=1789844127&period_interval=60",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 60
         },
         {
@@ -3639,9 +3651,9 @@
           "truncated": false,
           "firstDate": "2026-08-26T15:00:00.000Z",
           "lastDate": "2026-08-28T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:38.324Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26AUG27-B78.5/candlesticks?start_ts=1787900401&end_ts=1789830158&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:52.256Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26AUG27-B78.5/candlesticks?start_ts=1787900401&end_ts=1789844091&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3651,9 +3663,9 @@
           "truncated": false,
           "firstDate": "2026-08-28T15:00:00.000Z",
           "lastDate": "2026-08-30T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:37.071Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26AUG29-B80.5/candlesticks?start_ts=1788073201&end_ts=1789830156&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:50.842Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26AUG29-B80.5/candlesticks?start_ts=1788073201&end_ts=1789844090&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3663,9 +3675,9 @@
           "truncated": false,
           "firstDate": "2026-08-30T15:00:00.000Z",
           "lastDate": "2026-09-01T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:43.339Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26AUG31-B91.5/candlesticks?start_ts=1788246001&end_ts=1789830163&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:57.928Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26AUG31-B91.5/candlesticks?start_ts=1788246001&end_ts=1789844097&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3675,9 +3687,9 @@
           "truncated": false,
           "firstDate": "2026-09-02T15:00:00.000Z",
           "lastDate": "2026-09-04T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:39.579Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP03-B90.5/candlesticks?start_ts=1788505201&end_ts=1789830159&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:53.671Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP03-B90.5/candlesticks?start_ts=1788505201&end_ts=1789844093&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3687,9 +3699,9 @@
           "truncated": false,
           "firstDate": "2026-09-03T15:00:00.000Z",
           "lastDate": "2026-09-05T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:40.831Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP04-B93.5/candlesticks?start_ts=1788591601&end_ts=1789830160&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:55.098Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP04-B93.5/candlesticks?start_ts=1788591601&end_ts=1789844094&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3699,9 +3711,9 @@
           "truncated": false,
           "firstDate": "2026-09-03T15:00:00.000Z",
           "lastDate": "2026-09-05T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:42.085Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP04-T89/candlesticks?start_ts=1788591601&end_ts=1789830161&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:56.512Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP04-T89/candlesticks?start_ts=1788591601&end_ts=1789844096&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3711,9 +3723,9 @@
           "truncated": false,
           "firstDate": "2026-09-04T15:00:00.000Z",
           "lastDate": "2026-09-06T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:34.561Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP05-T83/candlesticks?start_ts=1788678001&end_ts=1789830154&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:48.014Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP05-T83/candlesticks?start_ts=1788678001&end_ts=1789844087&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3723,9 +3735,9 @@
           "truncated": false,
           "firstDate": "2026-09-12T15:00:00.000Z",
           "lastDate": "2026-09-14T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:44.593Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP13-B72.5/candlesticks?start_ts=1789369201&end_ts=1789830164&period_interval=60",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:54:59.344Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP13-B72.5/candlesticks?start_ts=1789369201&end_ts=1789844098&period_interval=60",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 60
         },
         {
@@ -3735,9 +3747,9 @@
           "truncated": false,
           "firstDate": "2026-09-13T15:00:00.000Z",
           "lastDate": "2026-09-15T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:33.305Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP14-T72/candlesticks?start_ts=1789455601&end_ts=1789830152&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:46.599Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP14-T72/candlesticks?start_ts=1789455601&end_ts=1789844086&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3747,9 +3759,9 @@
           "truncated": false,
           "firstDate": "2026-09-14T15:00:00.000Z",
           "lastDate": "2026-09-16T07:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:35.812Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP15-B82.5/candlesticks?start_ts=1789542001&end_ts=1789830155&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:49.428Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP15-B82.5/candlesticks?start_ts=1789542001&end_ts=1789844089&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3783,9 +3795,9 @@
           "truncated": false,
           "firstDate": "2026-08-30T15:00:00.000Z",
           "lastDate": "2026-09-01T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:12.159Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26AUG31-B84.5/candlesticks?start_ts=1788249601&end_ts=1789830191&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:30.495Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26AUG31-B84.5/candlesticks?start_ts=1788249601&end_ts=1789844130&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3795,9 +3807,9 @@
           "truncated": false,
           "firstDate": "2026-09-05T15:00:00.000Z",
           "lastDate": "2026-09-07T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:17.183Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP06-B89.5/candlesticks?start_ts=1788768001&end_ts=1789830196&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:36.157Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP06-B89.5/candlesticks?start_ts=1788768001&end_ts=1789844135&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3807,9 +3819,9 @@
           "truncated": false,
           "firstDate": "2026-09-11T15:00:00.000Z",
           "lastDate": "2026-09-13T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:18.435Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP12-B80.5/candlesticks?start_ts=1789286401&end_ts=1789830198&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:37.581Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP12-B80.5/candlesticks?start_ts=1789286401&end_ts=1789844137&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3819,9 +3831,9 @@
           "truncated": false,
           "firstDate": "2026-09-11T15:00:00.000Z",
           "lastDate": "2026-09-13T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:15.929Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP12-T80/candlesticks?start_ts=1789286401&end_ts=1789830195&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:34.743Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP12-T80/candlesticks?start_ts=1789286401&end_ts=1789844134&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3831,9 +3843,9 @@
           "truncated": false,
           "firstDate": "2026-09-13T15:00:00.000Z",
           "lastDate": "2026-09-15T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:20.940Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP14-B87.5/candlesticks?start_ts=1789459201&end_ts=1789830200&period_interval=60",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:55:41.849Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP14-B87.5/candlesticks?start_ts=1789459201&end_ts=1789844141&period_interval=60",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 60
         },
         {
@@ -3843,9 +3855,9 @@
           "truncated": false,
           "firstDate": "2026-09-14T15:00:00.000Z",
           "lastDate": "2026-09-16T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:10.905Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP15-B70.5/candlesticks?start_ts=1789545601&end_ts=1789830190&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:29.079Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP15-B70.5/candlesticks?start_ts=1789545601&end_ts=1789844128&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3855,9 +3867,9 @@
           "truncated": false,
           "firstDate": "2026-09-14T15:00:00.000Z",
           "lastDate": "2026-09-16T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:14.660Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP15-B72.5/candlesticks?start_ts=1789545601&end_ts=1789830194&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:33.325Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP15-B72.5/candlesticks?start_ts=1789545601&end_ts=1789844132&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3867,9 +3879,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T15:00:00.000Z",
           "lastDate": "2026-09-17T10:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:19.687Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP16-B81.5/candlesticks?start_ts=1789639201&end_ts=1789830199&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:38.996Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP16-B81.5/candlesticks?start_ts=1789639201&end_ts=1789844138&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3879,9 +3891,9 @@
           "truncated": false,
           "firstDate": "2026-09-16T15:00:00.000Z",
           "lastDate": "2026-09-18T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:23:04.707Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP17-T82/candlesticks?start_ts=1789718401&end_ts=1789831384&period_interval=60",
-          "bookSnapshots": 9,
+          "lastIngestedAt": "2026-09-19T18:55:40.419Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP17-T82/candlesticks?start_ts=1789718401&end_ts=1789844140&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -3891,9 +3903,9 @@
           "truncated": false,
           "firstDate": "2026-09-17T15:00:00.000Z",
           "lastDate": "2026-09-19T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:13.409Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP18-T85/candlesticks?start_ts=1789804801&end_ts=1789830193&period_interval=60",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:55:31.908Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP18-T85/candlesticks?start_ts=1789804801&end_ts=1789844131&period_interval=60",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 60
         },
         {
@@ -3903,9 +3915,9 @@
           "truncated": false,
           "firstDate": "2026-08-19T07:00:00.000Z",
           "lastDate": "2026-08-19T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:23.271Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26AUG18-T82/candlesticks?start_ts=1789722001&end_ts=1789830142&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:35.264Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26AUG18-T82/candlesticks?start_ts=1789722001&end_ts=1789844074&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3915,9 +3927,9 @@
           "truncated": false,
           "firstDate": "2026-08-25T15:00:00.000Z",
           "lastDate": "2026-08-27T10:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:29.532Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26AUG26-T89/candlesticks?start_ts=1787824801&end_ts=1789830149&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:42.353Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26AUG26-T89/candlesticks?start_ts=1787824801&end_ts=1789844081&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3927,9 +3939,9 @@
           "truncated": false,
           "firstDate": "2026-08-26T15:00:00.000Z",
           "lastDate": "2026-08-28T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:20.444Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26AUG27-T89/candlesticks?start_ts=1787907601&end_ts=1789830140&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:32.061Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26AUG27-T89/candlesticks?start_ts=1787907601&end_ts=1789844071&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3939,9 +3951,9 @@
           "truncated": false,
           "firstDate": "2026-08-27T15:00:00.000Z",
           "lastDate": "2026-08-29T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:32.053Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26AUG28-T89/candlesticks?start_ts=1787994001&end_ts=1789830151&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:45.188Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26AUG28-T89/candlesticks?start_ts=1787994001&end_ts=1789844084&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3951,9 +3963,9 @@
           "truncated": false,
           "firstDate": "2026-09-02T15:00:00.000Z",
           "lastDate": "2026-09-04T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:21.700Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP03-B76.5/candlesticks?start_ts=1788512401&end_ts=1789830141&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:33.475Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP03-B76.5/candlesticks?start_ts=1788512401&end_ts=1789844073&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3963,9 +3975,9 @@
           "truncated": false,
           "firstDate": "2026-09-07T15:00:00.000Z",
           "lastDate": "2026-09-09T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:25.775Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP08-T89/candlesticks?start_ts=1788944401&end_ts=1789830145&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:38.099Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP08-T89/candlesticks?start_ts=1788944401&end_ts=1789844077&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3975,9 +3987,9 @@
           "truncated": false,
           "firstDate": "2026-09-13T15:00:00.000Z",
           "lastDate": "2026-09-15T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:30.799Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP14-T82/candlesticks?start_ts=1789462801&end_ts=1789830150&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:43.769Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP14-T82/candlesticks?start_ts=1789462801&end_ts=1789844083&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3987,9 +3999,9 @@
           "truncated": false,
           "firstDate": "2026-09-14T15:00:00.000Z",
           "lastDate": "2026-09-16T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:24.523Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP15-B81.5/candlesticks?start_ts=1789549201&end_ts=1789830144&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:36.678Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP15-B81.5/candlesticks?start_ts=1789549201&end_ts=1789844076&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -3999,9 +4011,9 @@
           "truncated": false,
           "firstDate": "2026-09-14T15:00:00.000Z",
           "lastDate": "2026-09-16T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:28.279Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP15-T82/candlesticks?start_ts=1789549201&end_ts=1789830147&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:40.935Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP15-T82/candlesticks?start_ts=1789549201&end_ts=1789844080&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4011,9 +4023,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T15:00:00.000Z",
           "lastDate": "2026-09-17T10:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:27.030Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP16-T80/candlesticks?start_ts=1789639201&end_ts=1789830146&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:54:39.516Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26SEP16-T80/candlesticks?start_ts=1789639201&end_ts=1789844079&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4035,9 +4047,9 @@
           "truncated": false,
           "firstDate": "2026-08-20T15:00:00.000Z",
           "lastDate": "2026-08-22T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:52.106Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26AUG21-B92.5/candlesticks?start_ts=1787378401&end_ts=1789830171&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:07.842Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26AUG21-B92.5/candlesticks?start_ts=1787378401&end_ts=1789844107&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4047,9 +4059,9 @@
           "truncated": false,
           "firstDate": "2026-08-20T15:00:00.000Z",
           "lastDate": "2026-08-22T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:48.349Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26AUG21-B94.5/candlesticks?start_ts=1787378401&end_ts=1789830168&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:03.589Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26AUG21-B94.5/candlesticks?start_ts=1787378401&end_ts=1789844103&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4059,9 +4071,9 @@
           "truncated": false,
           "firstDate": "2026-08-23T15:00:00.000Z",
           "lastDate": "2026-08-25T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:57.114Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26AUG24-B90.5/candlesticks?start_ts=1787637601&end_ts=1789830176&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:13.497Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26AUG24-B90.5/candlesticks?start_ts=1787637601&end_ts=1789844113&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4071,9 +4083,9 @@
           "truncated": false,
           "firstDate": "2026-08-24T15:00:00.000Z",
           "lastDate": "2026-08-26T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:54.612Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26AUG25-B90.5/candlesticks?start_ts=1787724001&end_ts=1789830174&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:10.672Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26AUG25-B90.5/candlesticks?start_ts=1787724001&end_ts=1789844110&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4083,9 +4095,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T15:00:00.000Z",
           "lastDate": "2026-09-10T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:45.847Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP09-B87.5/candlesticks?start_ts=1789020001&end_ts=1789830165&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:00.760Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP09-B87.5/candlesticks?start_ts=1789020001&end_ts=1789844100&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4095,9 +4107,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T15:00:00.000Z",
           "lastDate": "2026-09-10T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:53.360Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP09-B89.5/candlesticks?start_ts=1789020001&end_ts=1789830173&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:09.257Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP09-B89.5/candlesticks?start_ts=1789020001&end_ts=1789844108&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4107,9 +4119,9 @@
           "truncated": false,
           "firstDate": "2026-09-12T15:00:00.000Z",
           "lastDate": "2026-09-14T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:50.855Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP13-B89.5/candlesticks?start_ts=1789365601&end_ts=1789830170&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:06.426Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP13-B89.5/candlesticks?start_ts=1789365601&end_ts=1789844106&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4119,9 +4131,9 @@
           "truncated": false,
           "firstDate": "2026-09-13T15:00:00.000Z",
           "lastDate": "2026-09-15T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:47.097Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP14-B88.5/candlesticks?start_ts=1789452001&end_ts=1789830166&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:02.172Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP14-B88.5/candlesticks?start_ts=1789452001&end_ts=1789844101&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4131,9 +4143,9 @@
           "truncated": false,
           "firstDate": "2026-09-16T15:00:00.000Z",
           "lastDate": "2026-09-18T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:49.603Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP17-T84/candlesticks?start_ts=1789711201&end_ts=1789830169&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:05.007Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP17-T84/candlesticks?start_ts=1789711201&end_ts=1789844104&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4143,9 +4155,9 @@
           "truncated": false,
           "firstDate": "2026-09-17T15:00:00.000Z",
           "lastDate": "2026-09-19T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:02:55.862Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP18-B87.5/candlesticks?start_ts=1789797601&end_ts=1789830175&period_interval=60",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:55:12.084Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP18-B87.5/candlesticks?start_ts=1789797601&end_ts=1789844111&period_interval=60",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 60
         },
         {
@@ -4167,9 +4179,9 @@
           "truncated": false,
           "firstDate": "2026-08-17T15:00:00.000Z",
           "lastDate": "2026-08-19T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:17.034Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG18-T85/candlesticks?start_ts=1789711201&end_ts=1789830496&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:04.543Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG18-T85/candlesticks?start_ts=1789711201&end_ts=1789844223&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4179,9 +4191,9 @@
           "truncated": false,
           "firstDate": "2026-08-20T15:00:00.000Z",
           "lastDate": "2026-08-22T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:50.408Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG21-B77.5/candlesticks?start_ts=1787378401&end_ts=1789830470&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:34.333Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG21-B77.5/candlesticks?start_ts=1787378401&end_ts=1789844193&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4191,9 +4203,9 @@
           "truncated": false,
           "firstDate": "2026-08-20T15:00:00.000Z",
           "lastDate": "2026-08-22T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:27.052Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG21-B79.5/candlesticks?start_ts=1787378401&end_ts=1789830506&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:17.283Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG21-B79.5/candlesticks?start_ts=1787378401&end_ts=1789844236&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4203,9 +4215,9 @@
           "truncated": false,
           "firstDate": "2026-08-20T15:00:00.000Z",
           "lastDate": "2026-08-22T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:22.043Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG21-T77/candlesticks?start_ts=1787378401&end_ts=1789830501&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:10.202Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG21-T77/candlesticks?start_ts=1787378401&end_ts=1789844229&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4215,9 +4227,9 @@
           "truncated": false,
           "firstDate": "2026-08-21T15:00:00.000Z",
           "lastDate": "2026-08-23T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:19.539Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG22-B77.5/candlesticks?start_ts=1787464801&end_ts=1789830499&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:07.371Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG22-B77.5/candlesticks?start_ts=1787464801&end_ts=1789844226&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4227,9 +4239,9 @@
           "truncated": false,
           "firstDate": "2026-08-22T15:00:00.000Z",
           "lastDate": "2026-08-24T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:45.391Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG23-T80/candlesticks?start_ts=1787551201&end_ts=1789830465&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:28.673Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG23-T80/candlesticks?start_ts=1787551201&end_ts=1789844188&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4239,9 +4251,9 @@
           "truncated": false,
           "firstDate": "2026-08-23T15:00:00.000Z",
           "lastDate": "2026-08-25T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:00.438Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG24-B78.5/candlesticks?start_ts=1787637601&end_ts=1789830480&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:45.645Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG24-B78.5/candlesticks?start_ts=1787637601&end_ts=1789844205&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4251,9 +4263,9 @@
           "truncated": false,
           "firstDate": "2026-08-23T15:00:00.000Z",
           "lastDate": "2026-08-25T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:07.950Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG24-B80.5/candlesticks?start_ts=1787637601&end_ts=1789830487&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:54.144Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG24-B80.5/candlesticks?start_ts=1787637601&end_ts=1789844213&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4263,9 +4275,9 @@
           "truncated": false,
           "firstDate": "2026-08-26T15:00:00.000Z",
           "lastDate": "2026-08-28T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:47.898Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG27-B80.5/candlesticks?start_ts=1787896801&end_ts=1789830467&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:31.504Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG27-B80.5/candlesticks?start_ts=1787896801&end_ts=1789844191&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4275,9 +4287,9 @@
           "truncated": false,
           "firstDate": "2026-08-26T15:00:00.000Z",
           "lastDate": "2026-08-28T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:44.137Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG27-T80/candlesticks?start_ts=1787896801&end_ts=1789830463&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:27.258Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG27-T80/candlesticks?start_ts=1787896801&end_ts=1789844186&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4287,9 +4299,9 @@
           "truncated": false,
           "firstDate": "2026-08-27T15:00:00.000Z",
           "lastDate": "2026-08-29T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:11.707Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG28-B82.5/candlesticks?start_ts=1787983201&end_ts=1789830491&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:58.394Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG28-B82.5/candlesticks?start_ts=1787983201&end_ts=1789844218&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4299,9 +4311,9 @@
           "truncated": false,
           "firstDate": "2026-08-31T15:00:00.000Z",
           "lastDate": "2026-09-02T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:09.201Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP01-T83/candlesticks?start_ts=1788328801&end_ts=1789830488&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:55.563Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP01-T83/candlesticks?start_ts=1788328801&end_ts=1789844215&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4311,9 +4323,9 @@
           "truncated": false,
           "firstDate": "2026-09-02T15:00:00.000Z",
           "lastDate": "2026-09-04T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:23.297Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP03-B83.5/candlesticks?start_ts=1788501601&end_ts=1789830502&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:11.619Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP03-B83.5/candlesticks?start_ts=1788501601&end_ts=1789844231&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4323,9 +4335,9 @@
           "truncated": false,
           "firstDate": "2026-09-02T15:00:00.000Z",
           "lastDate": "2026-09-04T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:59.185Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP03-B85.5/candlesticks?start_ts=1788501601&end_ts=1789830478&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:44.231Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP03-B85.5/candlesticks?start_ts=1788501601&end_ts=1789844203&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4335,9 +4347,9 @@
           "truncated": false,
           "firstDate": "2026-09-03T15:00:00.000Z",
           "lastDate": "2026-09-05T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:30.813Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP04-B82.5/candlesticks?start_ts=1788588001&end_ts=1789830510&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:21.529Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP04-B82.5/candlesticks?start_ts=1788588001&end_ts=1789844241&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4347,9 +4359,9 @@
           "truncated": false,
           "firstDate": "2026-09-03T15:00:00.000Z",
           "lastDate": "2026-09-05T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:28.312Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP04-B84.5/candlesticks?start_ts=1788588001&end_ts=1789830507&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:18.699Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP04-B84.5/candlesticks?start_ts=1788588001&end_ts=1789844238&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4359,9 +4371,9 @@
           "truncated": false,
           "firstDate": "2026-09-04T15:00:00.000Z",
           "lastDate": "2026-09-06T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:51.663Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP05-T79/candlesticks?start_ts=1788674401&end_ts=1789830471&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:35.749Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP05-T79/candlesticks?start_ts=1788674401&end_ts=1789844195&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4371,9 +4383,9 @@
           "truncated": false,
           "firstDate": "2026-09-05T15:00:00.000Z",
           "lastDate": "2026-09-07T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:10.452Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP06-B73.5/candlesticks?start_ts=1788760801&end_ts=1789830490&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:56.979Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP06-B73.5/candlesticks?start_ts=1788760801&end_ts=1789844216&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4383,9 +4395,9 @@
           "truncated": false,
           "firstDate": "2026-09-06T15:00:00.000Z",
           "lastDate": "2026-09-08T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:49.152Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP07-B77.5/candlesticks?start_ts=1788847201&end_ts=1789830468&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:32.919Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP07-B77.5/candlesticks?start_ts=1788847201&end_ts=1789844192&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4395,9 +4407,9 @@
           "truncated": false,
           "firstDate": "2026-09-06T15:00:00.000Z",
           "lastDate": "2026-09-08T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:56.680Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP07-B79.5/candlesticks?start_ts=1788847201&end_ts=1789830476&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:41.404Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP07-B79.5/candlesticks?start_ts=1788847201&end_ts=1789844201&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4407,9 +4419,9 @@
           "truncated": false,
           "firstDate": "2026-09-07T15:00:00.000Z",
           "lastDate": "2026-09-09T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:55.427Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP08-B82.5/candlesticks?start_ts=1788933601&end_ts=1789830475&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:39.988Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP08-B82.5/candlesticks?start_ts=1788933601&end_ts=1789844199&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4419,9 +4431,9 @@
           "truncated": false,
           "firstDate": "2026-09-07T15:00:00.000Z",
           "lastDate": "2026-09-09T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:42.883Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP08-T80/candlesticks?start_ts=1788933601&end_ts=1789830462&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:25.840Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP08-T80/candlesticks?start_ts=1788933601&end_ts=1789844185&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4431,9 +4443,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T15:00:00.000Z",
           "lastDate": "2026-09-10T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:20.789Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP09-B84.5/candlesticks?start_ts=1789020001&end_ts=1789830500&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:08.786Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP09-B84.5/candlesticks?start_ts=1789020001&end_ts=1789844228&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4443,9 +4455,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T15:00:00.000Z",
           "lastDate": "2026-09-10T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:01.692Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP09-B86.5/candlesticks?start_ts=1789020001&end_ts=1789830481&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:47.059Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP09-B86.5/candlesticks?start_ts=1789020001&end_ts=1789844206&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4455,9 +4467,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T15:00:00.000Z",
           "lastDate": "2026-09-10T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:06.698Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP09-T84/candlesticks?start_ts=1789020001&end_ts=1789830486&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:52.729Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP09-T84/candlesticks?start_ts=1789020001&end_ts=1789844212&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4467,9 +4479,9 @@
           "truncated": false,
           "firstDate": "2026-09-09T15:00:00.000Z",
           "lastDate": "2026-09-11T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:05.447Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP10-B85.5/candlesticks?start_ts=1789106401&end_ts=1789830485&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:51.309Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP10-B85.5/candlesticks?start_ts=1789106401&end_ts=1789844210&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4479,9 +4491,9 @@
           "truncated": false,
           "firstDate": "2026-09-09T15:00:00.000Z",
           "lastDate": "2026-09-11T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:14.211Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP10-B87.5/candlesticks?start_ts=1789106401&end_ts=1789830493&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:01.231Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP10-B87.5/candlesticks?start_ts=1789106401&end_ts=1789844220&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4491,9 +4503,9 @@
           "truncated": false,
           "firstDate": "2026-09-09T15:00:00.000Z",
           "lastDate": "2026-09-11T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:52.919Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP10-T85/candlesticks?start_ts=1789106401&end_ts=1789830472&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:37.162Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP10-T85/candlesticks?start_ts=1789106401&end_ts=1789844196&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4503,9 +4515,9 @@
           "truncated": false,
           "firstDate": "2026-09-10T15:00:00.000Z",
           "lastDate": "2026-09-12T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:57.935Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP11-B81.5/candlesticks?start_ts=1789192801&end_ts=1789830477&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:42.816Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP11-B81.5/candlesticks?start_ts=1789192801&end_ts=1789844202&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4515,9 +4527,9 @@
           "truncated": false,
           "firstDate": "2026-09-10T15:00:00.000Z",
           "lastDate": "2026-09-12T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:46.647Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP11-T79/candlesticks?start_ts=1789192801&end_ts=1789830466&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:30.089Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP11-T79/candlesticks?start_ts=1789192801&end_ts=1789844189&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4527,9 +4539,9 @@
           "truncated": false,
           "firstDate": "2026-09-12T15:00:00.000Z",
           "lastDate": "2026-09-14T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:18.286Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP13-B78.5/candlesticks?start_ts=1789365601&end_ts=1789830497&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:05.955Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP13-B78.5/candlesticks?start_ts=1789365601&end_ts=1789844225&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4539,9 +4551,9 @@
           "truncated": false,
           "firstDate": "2026-09-12T15:00:00.000Z",
           "lastDate": "2026-09-14T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:07:54.175Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP13-B80.5/candlesticks?start_ts=1789365601&end_ts=1789830473&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:38.575Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP13-B80.5/candlesticks?start_ts=1789365601&end_ts=1789844198&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4551,9 +4563,9 @@
           "truncated": false,
           "firstDate": "2026-09-12T15:00:00.000Z",
           "lastDate": "2026-09-14T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:12.959Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP13-T78/candlesticks?start_ts=1789365601&end_ts=1789830492&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:59.816Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP13-T78/candlesticks?start_ts=1789365601&end_ts=1789844219&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4563,9 +4575,9 @@
           "truncated": false,
           "firstDate": "2026-09-13T15:00:00.000Z",
           "lastDate": "2026-09-15T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:15.464Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP14-B74.5/candlesticks?start_ts=1789452001&end_ts=1789830495&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:02.756Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP14-B74.5/candlesticks?start_ts=1789452001&end_ts=1789844222&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4575,9 +4587,9 @@
           "truncated": false,
           "firstDate": "2026-09-13T15:00:00.000Z",
           "lastDate": "2026-09-15T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:04.193Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP14-B76.5/candlesticks?start_ts=1789452001&end_ts=1789830483&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:56:49.892Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP14-B76.5/candlesticks?start_ts=1789452001&end_ts=1789844209&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4587,9 +4599,9 @@
           "truncated": false,
           "firstDate": "2026-09-14T15:00:00.000Z",
           "lastDate": "2026-09-16T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:29.562Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP15-B70.5/candlesticks?start_ts=1789538401&end_ts=1789830509&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:20.115Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP15-B70.5/candlesticks?start_ts=1789538401&end_ts=1789844239&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4599,9 +4611,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T15:00:00.000Z",
           "lastDate": "2026-09-17T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:24.549Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP16-B75.5/candlesticks?start_ts=1789624801&end_ts=1789830504&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:14.449Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP16-B75.5/candlesticks?start_ts=1789624801&end_ts=1789844234&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4611,9 +4623,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T15:00:00.000Z",
           "lastDate": "2026-09-17T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:25.800Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP16-B79.5/candlesticks?start_ts=1789624801&end_ts=1789830505&period_interval=60",
-          "bookSnapshots": 10,
+          "lastIngestedAt": "2026-09-19T18:57:15.865Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP16-B79.5/candlesticks?start_ts=1789624801&end_ts=1789844235&period_interval=60",
+          "bookSnapshots": 11,
           "periodIntervalMinutes": 60
         },
         {
@@ -4623,9 +4635,9 @@
           "truncated": false,
           "firstDate": "2026-09-16T15:00:00.000Z",
           "lastDate": "2026-09-18T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:23:05.959Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP17-B82.5/candlesticks?start_ts=1789711201&end_ts=1789831385&period_interval=60",
-          "bookSnapshots": 13,
+          "lastIngestedAt": "2026-09-19T18:57:13.033Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP17-B82.5/candlesticks?start_ts=1789711201&end_ts=1789844232&period_interval=60",
+          "bookSnapshots": 14,
           "periodIntervalMinutes": 60
         },
         {
@@ -4635,9 +4647,9 @@
           "truncated": false,
           "firstDate": "2026-09-17T15:00:00.000Z",
           "lastDate": "2026-09-19T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:08:02.941Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP18-B82.5/candlesticks?start_ts=1789797601&end_ts=1789830482&period_interval=60",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:56:48.476Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP18-B82.5/candlesticks?start_ts=1789797601&end_ts=1789844208&period_interval=60",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 60
         },
         {
@@ -4683,9 +4695,9 @@
           "truncated": false,
           "firstDate": "2026-08-19T19:00:00.000Z",
           "lastDate": "2026-08-21T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:33.475Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG20-B84.5/candlesticks?start_ts=1787292001&end_ts=1789830213&period_interval=60",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:55:56.011Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG20-B84.5/candlesticks?start_ts=1787292001&end_ts=1789844155&period_interval=60",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 60
         },
         {
@@ -4695,9 +4707,9 @@
           "truncated": false,
           "firstDate": "2026-08-19T19:00:00.000Z",
           "lastDate": "2026-08-21T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:32.220Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG20-B86.5/candlesticks?start_ts=1787292001&end_ts=1789830211&period_interval=60",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:55:54.600Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG20-B86.5/candlesticks?start_ts=1787292001&end_ts=1789844154&period_interval=60",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 60
         },
         {
@@ -4707,9 +4719,9 @@
           "truncated": false,
           "firstDate": "2026-08-19T15:00:00.000Z",
           "lastDate": "2026-08-21T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:25.960Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG20-T80/candlesticks?start_ts=1787292001&end_ts=1789830205&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:47.508Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG20-T80/candlesticks?start_ts=1787292001&end_ts=1789844147&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4719,9 +4731,9 @@
           "truncated": false,
           "firstDate": "2026-08-19T15:00:00.000Z",
           "lastDate": "2026-08-21T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:27.213Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG20-T87/candlesticks?start_ts=1787292001&end_ts=1789830206&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:48.925Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG20-T87/candlesticks?start_ts=1787292001&end_ts=1789844148&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4731,9 +4743,9 @@
           "truncated": false,
           "firstDate": "2026-08-20T15:00:00.000Z",
           "lastDate": "2026-08-22T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:22.196Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG21-B82.5/candlesticks?start_ts=1787378401&end_ts=1789830201&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:43.265Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG21-B82.5/candlesticks?start_ts=1787378401&end_ts=1789844142&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4743,9 +4755,9 @@
           "truncated": false,
           "firstDate": "2026-08-20T15:00:00.000Z",
           "lastDate": "2026-08-22T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:30.971Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG21-B84.5/candlesticks?start_ts=1787378401&end_ts=1789830210&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:53.182Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG21-B84.5/candlesticks?start_ts=1787378401&end_ts=1789844152&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4755,9 +4767,9 @@
           "truncated": false,
           "firstDate": "2026-08-24T15:00:00.000Z",
           "lastDate": "2026-08-26T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:29.718Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG25-B80.5/candlesticks?start_ts=1787724001&end_ts=1789830209&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:51.768Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG25-B80.5/candlesticks?start_ts=1787724001&end_ts=1789844151&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4767,9 +4779,9 @@
           "truncated": false,
           "firstDate": "2026-09-14T15:00:00.000Z",
           "lastDate": "2026-09-16T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:24.704Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26SEP15-B77.5/candlesticks?start_ts=1789538401&end_ts=1789830204&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:46.093Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26SEP15-B77.5/candlesticks?start_ts=1789538401&end_ts=1789844145&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4779,9 +4791,9 @@
           "truncated": false,
           "firstDate": "2026-09-14T15:00:00.000Z",
           "lastDate": "2026-09-16T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:28.465Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26SEP15-B79.5/candlesticks?start_ts=1789538401&end_ts=1789830208&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:50.356Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26SEP15-B79.5/candlesticks?start_ts=1789538401&end_ts=1789844149&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4791,9 +4803,9 @@
           "truncated": false,
           "firstDate": "2026-09-17T15:00:00.000Z",
           "lastDate": "2026-09-19T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:23.448Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26SEP18-B85.5/candlesticks?start_ts=1789797601&end_ts=1789830203&period_interval=60",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:55:44.679Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26SEP18-B85.5/candlesticks?start_ts=1789797601&end_ts=1789844144&period_interval=60",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 60
         },
         {
@@ -4803,9 +4815,9 @@
           "truncated": false,
           "firstDate": "2026-08-19T15:00:00.000Z",
           "lastDate": "2026-08-21T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:40.987Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26AUG20-B107.5/candlesticks?start_ts=1787299201&end_ts=1789830220&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:04.523Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26AUG20-B107.5/candlesticks?start_ts=1787299201&end_ts=1789844164&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4815,9 +4827,9 @@
           "truncated": false,
           "firstDate": "2026-08-19T15:00:00.000Z",
           "lastDate": "2026-08-21T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:38.483Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26AUG20-T107/candlesticks?start_ts=1787299201&end_ts=1789830218&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:01.681Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26AUG20-T107/candlesticks?start_ts=1787299201&end_ts=1789844161&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4827,9 +4839,9 @@
           "truncated": false,
           "firstDate": "2026-08-20T15:00:00.000Z",
           "lastDate": "2026-08-22T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:42.256Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26AUG21-B110.5/candlesticks?start_ts=1787385601&end_ts=1789830221&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:05.945Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26AUG21-B110.5/candlesticks?start_ts=1787385601&end_ts=1789844165&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4839,9 +4851,9 @@
           "truncated": false,
           "firstDate": "2026-09-09T15:00:00.000Z",
           "lastDate": "2026-09-11T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:39.733Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP10-B107.5/candlesticks?start_ts=1789113601&end_ts=1789830219&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:03.103Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP10-B107.5/candlesticks?start_ts=1789113601&end_ts=1789844162&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4851,9 +4863,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T15:00:00.000Z",
           "lastDate": "2026-09-17T10:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:34.727Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP16-B91.5/candlesticks?start_ts=1789639201&end_ts=1789830214&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:57.436Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP16-B91.5/candlesticks?start_ts=1789639201&end_ts=1789844157&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4863,9 +4875,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T15:00:00.000Z",
           "lastDate": "2026-09-17T10:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:37.229Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP16-B93.5/candlesticks?start_ts=1789639201&end_ts=1789830216&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:00.268Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP16-B93.5/candlesticks?start_ts=1789639201&end_ts=1789844159&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4875,9 +4887,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T15:00:00.000Z",
           "lastDate": "2026-09-17T10:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:43.506Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP16-B95.5/candlesticks?start_ts=1789639201&end_ts=1789830223&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:07.357Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP16-B95.5/candlesticks?start_ts=1789639201&end_ts=1789844166&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4887,9 +4899,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T15:00:00.000Z",
           "lastDate": "2026-09-17T10:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:35.978Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP16-T91/candlesticks?start_ts=1789639201&end_ts=1789830215&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:55:58.851Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP16-T91/candlesticks?start_ts=1789639201&end_ts=1789844158&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4899,9 +4911,9 @@
           "truncated": false,
           "firstDate": "2026-09-16T15:00:00.000Z",
           "lastDate": "2026-09-18T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:23:07.272Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP17-B91.5/candlesticks?start_ts=1789718401&end_ts=1789831386&period_interval=60",
-          "bookSnapshots": 9,
+          "lastIngestedAt": "2026-09-19T18:56:10.189Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP17-B91.5/candlesticks?start_ts=1789718401&end_ts=1789844169&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -4911,9 +4923,9 @@
           "truncated": false,
           "firstDate": "2026-09-16T15:00:00.000Z",
           "lastDate": "2026-09-18T08:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:23:08.523Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP17-T91/candlesticks?start_ts=1789718401&end_ts=1789831388&period_interval=60",
-          "bookSnapshots": 9,
+          "lastIngestedAt": "2026-09-19T18:56:08.773Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP17-T91/candlesticks?start_ts=1789718401&end_ts=1789844168&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -4959,9 +4971,9 @@
           "truncated": false,
           "firstDate": "2026-08-20T15:00:00.000Z",
           "lastDate": "2026-08-22T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:46.033Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26AUG21-B79.5/candlesticks?start_ts=1787389201&end_ts=1789830225&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:13.027Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26AUG21-B79.5/candlesticks?start_ts=1787389201&end_ts=1789844172&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4971,9 +4983,9 @@
           "truncated": false,
           "firstDate": "2026-08-20T15:00:00.000Z",
           "lastDate": "2026-08-22T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:49.789Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26AUG21-B81.5/candlesticks?start_ts=1787389201&end_ts=1789830229&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:18.682Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26AUG21-B81.5/candlesticks?start_ts=1787389201&end_ts=1789844178&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4983,9 +4995,9 @@
           "truncated": false,
           "firstDate": "2026-08-27T15:00:00.000Z",
           "lastDate": "2026-08-29T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:52.293Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26AUG28-B71.5/candlesticks?start_ts=1787994001&end_ts=1789830231&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:21.512Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26AUG28-B71.5/candlesticks?start_ts=1787994001&end_ts=1789844181&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -4995,9 +5007,9 @@
           "truncated": false,
           "firstDate": "2026-09-02T15:00:00.000Z",
           "lastDate": "2026-09-04T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:47.283Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP03-B67.5/candlesticks?start_ts=1788512401&end_ts=1789830226&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:14.444Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP03-B67.5/candlesticks?start_ts=1788512401&end_ts=1789844174&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5007,9 +5019,9 @@
           "truncated": false,
           "firstDate": "2026-09-09T15:00:00.000Z",
           "lastDate": "2026-09-11T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:53.546Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP10-B69.5/candlesticks?start_ts=1789117201&end_ts=1789830233&period_interval=60",
-          "bookSnapshots": 4,
+          "lastIngestedAt": "2026-09-19T18:56:22.925Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP10-B69.5/candlesticks?start_ts=1789117201&end_ts=1789844182&period_interval=60",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 60
         },
         {
@@ -5019,9 +5031,9 @@
           "truncated": false,
           "firstDate": "2026-09-14T15:00:00.000Z",
           "lastDate": "2026-09-16T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:51.040Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP15-B65.5/candlesticks?start_ts=1789549201&end_ts=1789830230&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:20.097Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP15-B65.5/candlesticks?start_ts=1789549201&end_ts=1789844179&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5031,9 +5043,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T15:00:00.000Z",
           "lastDate": "2026-09-17T10:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:44.781Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP16-B70.5/candlesticks?start_ts=1789639201&end_ts=1789830224&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:11.613Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP16-B70.5/candlesticks?start_ts=1789639201&end_ts=1789844171&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5043,9 +5055,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T15:00:00.000Z",
           "lastDate": "2026-09-17T10:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:48.537Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP16-B72.5/candlesticks?start_ts=1789639201&end_ts=1789830228&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:56:17.269Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP16-B72.5/candlesticks?start_ts=1789639201&end_ts=1789844176&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5055,9 +5067,9 @@
           "truncated": false,
           "firstDate": "2026-09-16T15:00:00.000Z",
           "lastDate": "2026-09-18T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:23:09.773Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP17-B72.5/candlesticks?start_ts=1789722001&end_ts=1789831389&period_interval=60",
-          "bookSnapshots": 9,
+          "lastIngestedAt": "2026-09-19T18:56:15.857Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP17-B72.5/candlesticks?start_ts=1789722001&end_ts=1789844175&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -5067,9 +5079,9 @@
           "truncated": false,
           "firstDate": "2026-09-17T15:00:00.000Z",
           "lastDate": "2026-09-19T09:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:03:54.796Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP18-T69/candlesticks?start_ts=1789808401&end_ts=1789830234&period_interval=60",
-          "bookSnapshots": 2,
+          "lastIngestedAt": "2026-09-19T18:56:24.340Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP18-T69/candlesticks?start_ts=1789808401&end_ts=1789844183&period_interval=60",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 60
         },
         {
@@ -5218,14 +5230,14 @@
         },
         {
           "ticker": "KXINXY-26DEC31H1600-B8100",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 203,
+          "barsInStore": 203,
           "truncated": false,
           "firstDate": "2026-09-10T02:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:23:26.052Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B8100/candlesticks?start_ts=1789830001&end_ts=1789831405&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:29.959Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B8100/candlesticks?start_ts=1789830001&end_ts=1789844069&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
@@ -5343,9 +5355,9 @@
           "truncated": false,
           "firstDate": "2026-09-11T00:00:00.000Z",
           "lastDate": "2026-09-14T03:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:34.996Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP131920SDSF-SF/candlesticks?start_ts=1789354801&end_ts=1789831054&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:57.992Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP131920SDSF-SF/candlesticks?start_ts=1789354801&end_ts=1789844277&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5355,9 +5367,9 @@
           "truncated": false,
           "firstDate": "2026-09-12T02:00:00.000Z",
           "lastDate": "2026-09-15T05:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:33.741Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP142140MIAAZ-AZ/candlesticks?start_ts=1789448401&end_ts=1789831053&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:56.578Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP142140MIAAZ-AZ/candlesticks?start_ts=1789448401&end_ts=1789844276&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5367,9 +5379,9 @@
           "truncated": false,
           "firstDate": "2026-09-13T02:00:00.000Z",
           "lastDate": "2026-09-16T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:32.486Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP152140MIAAZ-AZ/candlesticks?start_ts=1789538401&end_ts=1789831052&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:55.165Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP152140MIAAZ-AZ/candlesticks?start_ts=1789538401&end_ts=1789844274&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5379,9 +5391,9 @@
           "truncated": false,
           "firstDate": "2026-09-13T02:00:00.000Z",
           "lastDate": "2026-09-16T06:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:27.460Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP152140MIAAZ-MIA/candlesticks?start_ts=1789538401&end_ts=1789831047&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:49.510Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP152140MIAAZ-MIA/candlesticks?start_ts=1789538401&end_ts=1789844269&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5391,9 +5403,9 @@
           "truncated": false,
           "firstDate": "2026-09-13T18:00:00.000Z",
           "lastDate": "2026-09-16T22:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:26.202Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP161340NYYMIN-NYY/candlesticks?start_ts=1789596001&end_ts=1789831045&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:48.094Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP161340NYYMIN-NYY/candlesticks?start_ts=1789596001&end_ts=1789844267&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5403,9 +5415,9 @@
           "truncated": false,
           "firstDate": "2026-09-13T23:00:00.000Z",
           "lastDate": "2026-09-17T02:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:31.227Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP161840LADCIN-LAD/candlesticks?start_ts=1789610401&end_ts=1789831050&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:53.752Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP161840LADCIN-LAD/candlesticks?start_ts=1789610401&end_ts=1789844273&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5415,9 +5427,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T02:00:00.000Z",
           "lastDate": "2026-09-18T05:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:29.971Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP172138MINLAA-LAA/candlesticks?start_ts=1789707601&end_ts=1789831049&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:52.337Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP172138MINLAA-LAA/candlesticks?start_ts=1789707601&end_ts=1789844271&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5427,9 +5439,9 @@
           "truncated": false,
           "firstDate": "2026-09-15T02:00:00.000Z",
           "lastDate": "2026-09-18T05:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:28.715Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP172138MINLAA-MIN/candlesticks?start_ts=1789707601&end_ts=1789831048&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:50.924Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP172138MINLAA-MIN/candlesticks?start_ts=1789707601&end_ts=1789844270&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -5758,14 +5770,14 @@
         },
         {
           "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
-          "bars": 200,
-          "barsInStore": 200,
+          "bars": 201,
+          "barsInStore": 201,
           "truncated": false,
           "firstDate": "2026-09-03T11:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:12.381Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1789830001&end_ts=1789831452&period_interval=60",
-          "bookSnapshots": 16,
+          "lastDate": "2026-09-19T16:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:54:28.547Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1789830001&end_ts=1789844068&period_interval=60",
+          "bookSnapshots": 17,
           "periodIntervalMinutes": 60
         },
         {
@@ -5929,11 +5941,11 @@
           "bars": 200,
           "barsInStore": 200,
           "truncated": false,
-          "firstDate": "2026-09-11T01:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:29.923Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1789830001&end_ts=1789831469&period_interval=60",
-          "bookSnapshots": 9,
+          "firstDate": "2026-09-11T04:00:00.000Z",
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:00.830Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1789830001&end_ts=1789844280&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -5941,11 +5953,11 @@
           "bars": 200,
           "barsInStore": 200,
           "truncated": false,
-          "firstDate": "2026-09-11T02:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:31.175Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1789830001&end_ts=1789831470&period_interval=60",
-          "bookSnapshots": 9,
+          "firstDate": "2026-09-11T05:00:00.000Z",
+          "lastDate": "2026-09-19T17:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:02.247Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1789830001&end_ts=1789844281&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -5953,11 +5965,11 @@
           "bars": 200,
           "barsInStore": 200,
           "truncated": false,
-          "firstDate": "2026-09-10T05:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:32.427Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1789830001&end_ts=1789831472&period_interval=60",
-          "bookSnapshots": 9,
+          "firstDate": "2026-09-10T10:00:00.000Z",
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:06.494Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1789830001&end_ts=1789844286&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -5965,11 +5977,11 @@
           "bars": 200,
           "barsInStore": 200,
           "truncated": false,
-          "firstDate": "2026-09-11T03:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:33.679Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-SAS/candlesticks?start_ts=1789830001&end_ts=1789831473&period_interval=60",
-          "bookSnapshots": 9,
+          "firstDate": "2026-09-11T06:00:00.000Z",
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:05.076Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-SAS/candlesticks?start_ts=1789830001&end_ts=1789844284&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -5977,11 +5989,11 @@
           "bars": 200,
           "barsInStore": 200,
           "truncated": false,
-          "firstDate": "2026-09-11T02:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:34.943Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-NYK/candlesticks?start_ts=1789830001&end_ts=1789831474&period_interval=60",
-          "bookSnapshots": 9,
+          "firstDate": "2026-09-11T05:00:00.000Z",
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:03.661Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-NYK/candlesticks?start_ts=1789830001&end_ts=1789844283&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -5989,11 +6001,11 @@
           "bars": 200,
           "barsInStore": 200,
           "truncated": false,
-          "firstDate": "2026-09-11T07:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:36.197Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-PHI/candlesticks?start_ts=1789830001&end_ts=1789831475&period_interval=60",
-          "bookSnapshots": 9,
+          "firstDate": "2026-09-11T10:00:00.000Z",
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:57:59.408Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-PHI/candlesticks?start_ts=1789830001&end_ts=1789844279&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -6147,33 +6159,33 @@
           "truncated": false,
           "firstDate": "2026-09-12T20:00:00.000Z",
           "lastDate": "2026-09-19T01:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:52.480Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/candlesticks?start_ts=1789779601&end_ts=1789831492&period_interval=60",
-          "bookSnapshots": 9,
+          "lastIngestedAt": "2026-09-19T18:58:16.405Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/candlesticks?start_ts=1789779601&end_ts=1789844296&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXNCAAFGAME-26SEP26CMUMIA-CMU",
-          "bars": 96,
-          "barsInStore": 96,
+          "bars": 98,
+          "barsInStore": 98,
           "truncated": false,
           "firstDate": "2026-09-13T02:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:53.732Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/candlesticks?start_ts=1789830001&end_ts=1789831493&period_interval=60",
-          "bookSnapshots": 9,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:12.158Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/candlesticks?start_ts=1789830001&end_ts=1789844291&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
-          "bars": 53,
-          "barsInStore": 53,
+          "bars": 55,
+          "barsInStore": 55,
           "truncated": false,
           "firstDate": "2026-09-13T02:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:54.987Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/candlesticks?start_ts=1789830001&end_ts=1789831494&period_interval=60",
-          "bookSnapshots": 9,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:13.573Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/candlesticks?start_ts=1789830001&end_ts=1789844293&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -6201,39 +6213,51 @@
           "periodIntervalMinutes": 60
         },
         {
-          "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
-          "bars": 162,
-          "barsInStore": 162,
+          "ticker": "KXNCAAFGAME-26SEP26OKLAUGA-UGA",
+          "bars": 148,
+          "barsInStore": 148,
           "truncated": false,
           "firstDate": "2026-09-12T20:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:58.744Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26OREUSC-ORE/candlesticks?start_ts=1789830001&end_ts=1789831498&period_interval=60",
-          "bookSnapshots": 9,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:17.829Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26OKLAUGA-UGA/candlesticks?start_ts=1789153620&end_ts=1789844297&period_interval=60",
+          "bookSnapshots": 1,
+          "periodIntervalMinutes": 60
+        },
+        {
+          "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
+          "bars": 165,
+          "barsInStore": 165,
+          "truncated": false,
+          "firstDate": "2026-09-12T20:00:00.000Z",
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:19.244Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26OREUSC-ORE/candlesticks?start_ts=1789830001&end_ts=1789844298&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
-          "bars": 135,
-          "barsInStore": 135,
+          "bars": 138,
+          "barsInStore": 138,
           "truncated": false,
           "firstDate": "2026-09-12T20:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:36.252Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-SHSU/candlesticks?start_ts=1789815601&end_ts=1789831055&period_interval=60",
-          "bookSnapshots": 2,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:20.656Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-SHSU/candlesticks?start_ts=1789830001&end_ts=1789844300&period_interval=60",
+          "bookSnapshots": 3,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
-          "bars": 111,
-          "barsInStore": 111,
+          "bars": 114,
+          "barsInStore": 114,
           "truncated": false,
           "firstDate": "2026-09-12T20:00:00.000Z",
-          "lastDate": "2026-09-19T14:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:24:59.996Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1789826401&end_ts=1789831499&period_interval=60",
-          "bookSnapshots": 9,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:14.986Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1789826401&end_ts=1789844294&period_interval=60",
+          "bookSnapshots": 10,
           "periodIntervalMinutes": 60
         },
         {
@@ -6250,14 +6274,14 @@
         },
         {
           "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
-          "bars": 161,
-          "barsInStore": 161,
+          "bars": 164,
+          "barsInStore": 164,
           "truncated": false,
           "firstDate": "2026-09-12T20:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:37.512Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26TXAMLSU-TXAM/candlesticks?start_ts=1789153620&end_ts=1789831057&period_interval=60",
-          "bookSnapshots": 1,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:22.073Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26TXAMLSU-TXAM/candlesticks?start_ts=1789830001&end_ts=1789844301&period_interval=60",
+          "bookSnapshots": 2,
           "periodIntervalMinutes": 60
         },
         {
@@ -6483,9 +6507,9 @@
           "truncated": false,
           "firstDate": "2026-09-01T20:00:00.000Z",
           "lastDate": "2026-09-10T04:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:19.908Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP09NESEA-NE/candlesticks?start_ts=1789012801&end_ts=1789831039&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:41.015Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP09NESEA-NE/candlesticks?start_ts=1789012801&end_ts=1789844260&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -6495,9 +6519,9 @@
           "truncated": false,
           "firstDate": "2026-09-01T20:00:00.000Z",
           "lastDate": "2026-09-10T04:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:17.393Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP09NESEA-SEA/candlesticks?start_ts=1789012801&end_ts=1789831037&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:38.185Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP09NESEA-SEA/candlesticks?start_ts=1789012801&end_ts=1789844257&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -6507,9 +6531,9 @@
           "truncated": false,
           "firstDate": "2026-09-02T19:00:00.000Z",
           "lastDate": "2026-09-11T04:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:22.423Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP10SFLAR-LAR/candlesticks?start_ts=1789099201&end_ts=1789831042&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:43.847Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP10SFLAR-LAR/candlesticks?start_ts=1789099201&end_ts=1789844263&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -6519,9 +6543,9 @@
           "truncated": false,
           "firstDate": "2026-09-02T19:00:00.000Z",
           "lastDate": "2026-09-11T04:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:24.942Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP10SFLAR-SF/candlesticks?start_ts=1789099201&end_ts=1789831044&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:46.678Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP10SFLAR-SF/candlesticks?start_ts=1789099201&end_ts=1789844266&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -6531,9 +6555,9 @@
           "truncated": false,
           "firstDate": "2026-09-05T20:00:00.000Z",
           "lastDate": "2026-09-14T04:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:16.135Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP13DALNYG-DAL/candlesticks?start_ts=1789358401&end_ts=1789831035&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:36.768Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP13DALNYG-DAL/candlesticks?start_ts=1789358401&end_ts=1789844256&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -6543,9 +6567,9 @@
           "truncated": false,
           "firstDate": "2026-09-06T20:00:00.000Z",
           "lastDate": "2026-09-15T04:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:21.166Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP14DENKC-DEN/candlesticks?start_ts=1789444801&end_ts=1789831040&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:42.432Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP14DENKC-DEN/candlesticks?start_ts=1789444801&end_ts=1789844262&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -6555,9 +6579,9 @@
           "truncated": false,
           "firstDate": "2026-09-06T20:00:00.000Z",
           "lastDate": "2026-09-15T04:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:23.683Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP14DENKC-KC/candlesticks?start_ts=1789444801&end_ts=1789831043&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:45.265Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP14DENKC-KC/candlesticks?start_ts=1789444801&end_ts=1789844264&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -6567,9 +6591,9 @@
           "truncated": false,
           "firstDate": "2026-09-09T19:00:00.000Z",
           "lastDate": "2026-09-18T04:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:18.652Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP17DETBUF-DET/candlesticks?start_ts=1789704001&end_ts=1789831038&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:57:39.601Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP17DETBUF-DET/candlesticks?start_ts=1789704001&end_ts=1789844259&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -6814,38 +6838,38 @@
         },
         {
           "ticker": "KXNHLGAME-26SEP19CHIMIN-MIN",
-          "bars": 58,
-          "barsInStore": 58,
+          "bars": 61,
+          "barsInStore": 61,
           "truncated": false,
           "firstDate": "2026-09-17T01:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:25:50.112Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-MIN/candlesticks?start_ts=1789830001&end_ts=1789831549&period_interval=60",
-          "bookSnapshots": 4,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:10.744Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-MIN/candlesticks?start_ts=1789830001&end_ts=1789844290&period_interval=60",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXNHLGAME-26SEP19DALSTL-DAL",
-          "bars": 62,
-          "barsInStore": 62,
+          "bars": 65,
+          "barsInStore": 65,
           "truncated": false,
           "firstDate": "2026-09-17T01:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:25:51.365Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-DAL/candlesticks?start_ts=1789830001&end_ts=1789831551&period_interval=60",
-          "bookSnapshots": 4,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:07.911Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-DAL/candlesticks?start_ts=1789830001&end_ts=1789844287&period_interval=60",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 60
         },
         {
           "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
-          "bars": 60,
-          "barsInStore": 60,
+          "bars": 63,
+          "barsInStore": 63,
           "truncated": false,
           "firstDate": "2026-09-17T01:00:00.000Z",
-          "lastDate": "2026-09-19T15:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:25:52.617Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-STL/candlesticks?start_ts=1789830001&end_ts=1789831552&period_interval=60",
-          "bookSnapshots": 4,
+          "lastDate": "2026-09-19T18:00:00.000Z",
+          "lastIngestedAt": "2026-09-19T18:58:09.325Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-STL/candlesticks?start_ts=1789830001&end_ts=1789844288&period_interval=60",
+          "bookSnapshots": 5,
           "periodIntervalMinutes": 60
         },
         {
@@ -6987,9 +7011,9 @@
           "truncated": false,
           "firstDate": null,
           "lastDate": null,
-          "lastIngestedAt": "2026-09-19T15:17:57.661Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG15JOHDA-JOH/candlesticks?start_ts=1787239077&end_ts=1789831076&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:44.738Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG15JOHDA-JOH/candlesticks?start_ts=1787252324&end_ts=1789844323&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -6999,9 +7023,9 @@
           "truncated": false,
           "firstDate": "2026-08-19T07:00:00.000Z",
           "lastDate": "2026-08-23T04:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:51.364Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG22HERROD-HER/candlesticks?start_ts=1787457601&end_ts=1789831071&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:37.658Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG22HERROD-HER/candlesticks?start_ts=1787457601&end_ts=1789844317&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7011,9 +7035,9 @@
           "truncated": false,
           "firstDate": "2026-08-19T07:00:00.000Z",
           "lastDate": "2026-08-23T04:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:48.849Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG22HERROD-ROD/candlesticks?start_ts=1787457601&end_ts=1789831068&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:34.808Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG22HERROD-ROD/candlesticks?start_ts=1787457601&end_ts=1789844314&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7023,9 +7047,9 @@
           "truncated": false,
           "firstDate": "2026-08-30T05:00:00.000Z",
           "lastDate": "2026-09-05T22:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:50.107Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP05HOOPAR-HOO/candlesticks?start_ts=1788645601&end_ts=1789831069&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:36.243Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP05HOOPAR-HOO/candlesticks?start_ts=1788645601&end_ts=1789844315&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7035,9 +7059,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T18:00:00.000Z",
           "lastDate": "2026-09-12T23:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:55.142Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12FIOGRA-GRA/candlesticks?start_ts=1789254001&end_ts=1789831074&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:41.909Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12FIOGRA-GRA/candlesticks?start_ts=1789254001&end_ts=1789844321&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7047,9 +7071,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T18:00:00.000Z",
           "lastDate": "2026-09-13T00:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:52.622Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12MCMRAH-MCM/candlesticks?start_ts=1789257601&end_ts=1789831072&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:39.077Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12MCMRAH-MCM/candlesticks?start_ts=1789257601&end_ts=1789844318&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7059,9 +7083,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T18:00:00.000Z",
           "lastDate": "2026-09-13T00:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:56.403Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12MORMORA-MOR/candlesticks?start_ts=1789257601&end_ts=1789831076&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:43.323Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12MORMORA-MOR/candlesticks?start_ts=1789257601&end_ts=1789844322&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7071,9 +7095,9 @@
           "truncated": false,
           "firstDate": "2026-09-08T18:00:00.000Z",
           "lastDate": "2026-09-13T01:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:53.880Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12SILDEL-DEL/candlesticks?start_ts=1789261201&end_ts=1789831073&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:40.490Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12SILDEL-DEL/candlesticks?start_ts=1789261201&end_ts=1789844320&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7083,9 +7107,9 @@
           "truncated": false,
           "firstDate": null,
           "lastDate": null,
-          "lastIngestedAt": "2026-09-19T15:17:42.557Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG06LAMIN-LA/candlesticks?start_ts=1787239062&end_ts=1789831061&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:27.736Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG06LAMIN-LA/candlesticks?start_ts=1787252307&end_ts=1789844306&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7095,9 +7119,9 @@
           "truncated": false,
           "firstDate": null,
           "lastDate": null,
-          "lastIngestedAt": "2026-09-19T15:17:41.299Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG06LVIND-IND/candlesticks?start_ts=1787239060&end_ts=1789831059&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:26.320Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG06LVIND-IND/candlesticks?start_ts=1787252305&end_ts=1789844304&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7107,9 +7131,9 @@
           "truncated": false,
           "firstDate": null,
           "lastDate": null,
-          "lastIngestedAt": "2026-09-19T15:17:40.039Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG06LVIND-LV/candlesticks?start_ts=1787239059&end_ts=1789831058&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:24.903Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG06LVIND-LV/candlesticks?start_ts=1787252304&end_ts=1789844303&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7119,9 +7143,9 @@
           "truncated": false,
           "firstDate": null,
           "lastDate": null,
-          "lastIngestedAt": "2026-09-19T15:17:45.073Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG10CHISEA-CHI/candlesticks?start_ts=1787239064&end_ts=1789831063&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:30.565Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG10CHISEA-CHI/candlesticks?start_ts=1787252310&end_ts=1789844309&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7131,9 +7155,9 @@
           "truncated": false,
           "firstDate": null,
           "lastDate": null,
-          "lastIngestedAt": "2026-09-19T15:17:47.593Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG14DALIND-IND/candlesticks?start_ts=1787239067&end_ts=1789831066&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:33.392Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG14DALIND-IND/candlesticks?start_ts=1787252313&end_ts=1789844312&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7143,9 +7167,9 @@
           "truncated": false,
           "firstDate": null,
           "lastDate": null,
-          "lastIngestedAt": "2026-09-19T15:17:38.777Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG16INDATL-IND/candlesticks?start_ts=1787239058&end_ts=1789831057&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:23.488Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG16INDATL-IND/candlesticks?start_ts=1787252303&end_ts=1789844302&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7155,9 +7179,9 @@
           "truncated": false,
           "firstDate": "2026-08-19T07:00:00.000Z",
           "lastDate": "2026-08-21T03:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:43.814Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG20INDDAL-IND/candlesticks?start_ts=1787281201&end_ts=1789831063&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:29.149Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG20INDDAL-IND/candlesticks?start_ts=1787281201&end_ts=1789844308&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -7167,9 +7191,9 @@
           "truncated": false,
           "firstDate": "2026-08-22T01:00:00.000Z",
           "lastDate": "2026-08-25T03:00:00.000Z",
-          "lastIngestedAt": "2026-09-19T15:17:46.337Z",
-          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG24GSMIN-MIN/candlesticks?start_ts=1787626801&end_ts=1789831066&period_interval=60",
-          "bookSnapshots": 6,
+          "lastIngestedAt": "2026-09-19T18:58:31.976Z",
+          "url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG24GSMIN-MIN/candlesticks?start_ts=1787626801&end_ts=1789844311&period_interval=60",
+          "bookSnapshots": 7,
           "periodIntervalMinutes": 60
         },
         {
@@ -8102,8 +8126,8 @@
   },
   "hourly": {
     "periodIntervalMinutes": 60,
-    "horizonPeriods": 1489,
-    "markets": 341,
+    "horizonPeriods": 1492,
+    "markets": 342,
     "leaderboard": [
       {
         "rank": 1,
@@ -8112,21 +8136,21 @@
         "strategyId": "panic_fade_hourly_vol",
         "title": "Hourly Panic-Fade Volatility Reversion",
         "returnPct": 62.29,
-        "finalEquity": 162289.78,
+        "finalEquity": 162285.03,
         "initialCapital": 100000,
         "realizedPnl": 68227.6,
-        "totalTrades": 1292,
+        "totalTrades": 1294,
         "winRate": 85.3,
         "profitFactor": 1.99,
         "maxDrawdownPct": 57.04,
-        "feesPaid": 5878.57,
-        "periods": 1489,
+        "feesPaid": 5879.21,
+        "periods": 1492,
         "unfilledOrders": 38,
-        "unfilledContracts": 1046351.28,
+        "unfilledContracts": 1046350.8,
         "depthMix": {
           "contractsOnCapturedDepth": 402.42,
-          "contractsOnModelledDepth": 1028427.43,
-          "totalFilledContracts": 1028829.85,
+          "contractsOnModelledDepth": 1028467.87,
+          "totalFilledContracts": 1028870.29,
           "capturedPct": 0.04,
           "depthModels": [
             "synthetic",
@@ -8146,7 +8170,7 @@
         "strategyId": "sports_underdog_sweep",
         "title": "Cheap-Underdog Convexity Sweep",
         "returnPct": 42.68,
-        "finalEquity": 142678.38,
+        "finalEquity": 142677.58,
         "initialCapital": 100000,
         "realizedPnl": 43704.45,
         "totalTrades": 11,
@@ -8154,7 +8178,7 @@
         "profitFactor": 3.53,
         "maxDrawdownPct": 7.16,
         "feesPaid": 1020.45,
-        "periods": 629,
+        "periods": 632,
         "unfilledOrders": 8,
         "unfilledContracts": 157440.06,
         "depthMix": {
@@ -8179,21 +8203,21 @@
         "strategyId": "sports_line_momentum",
         "title": "In-Play Line-Move Follower",
         "returnPct": 28.98,
-        "finalEquity": 128980.17,
+        "finalEquity": 128980.04,
         "initialCapital": 100000,
         "realizedPnl": 31377.71,
-        "totalTrades": 25,
+        "totalTrades": 26,
         "winRate": 40,
         "profitFactor": 2.66,
         "maxDrawdownPct": 9.52,
-        "feesPaid": 2396.99,
-        "periods": 629,
+        "feesPaid": 2397.14,
+        "periods": 632,
         "unfilledOrders": 5,
         "unfilledContracts": 73154.29,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 163052.59,
-          "totalFilledContracts": 163052.59,
+          "contractsOnModelledDepth": 163063.33,
+          "totalFilledContracts": 163063.33,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -8212,7 +8236,7 @@
         "strategyId": "sports_steam_fade",
         "title": "Steam Fader (buys the side the market just dumped)",
         "returnPct": 3.09,
-        "finalEquity": 103088.02,
+        "finalEquity": 103086.32,
         "initialCapital": 100000,
         "realizedPnl": 5257.76,
         "totalTrades": 21,
@@ -8220,7 +8244,7 @@
         "profitFactor": 1.15,
         "maxDrawdownPct": 20.46,
         "feesPaid": 2167.92,
-        "periods": 629,
+        "periods": 632,
         "unfilledOrders": 14,
         "unfilledContracts": 273910.15,
         "depthMix": {
@@ -8245,7 +8269,7 @@
         "strategyId": "mee_board_sum",
         "title": "Mutually-Exclusive-Event Board Sum (R14 `mee`)",
         "returnPct": 1.18,
-        "finalEquity": 101184.72,
+        "finalEquity": 101184.56,
         "initialCapital": 100000,
         "realizedPnl": 1207.93,
         "totalTrades": 13,
@@ -8253,7 +8277,7 @@
         "profitFactor": 8.65,
         "maxDrawdownPct": 0.13,
         "feesPaid": 22.92,
-        "periods": 660,
+        "periods": 663,
         "unfilledOrders": 0,
         "unfilledContracts": 0,
         "depthMix": {
@@ -8378,21 +8402,21 @@
         "strategyId": "sports_favourite_hold",
         "title": "Game-Line Favourite, Held to Settlement",
         "returnPct": -0.12,
-        "finalEquity": 99882.09,
+        "finalEquity": 99881.63,
         "initialCapital": 100000,
         "realizedPnl": -109.78,
-        "totalTrades": 23,
+        "totalTrades": 25,
         "winRate": 30.8,
         "profitFactor": 0.36,
         "maxDrawdownPct": 0.14,
-        "feesPaid": 7.53,
-        "periods": 629,
+        "feesPaid": 7.66,
+        "periods": 632,
         "unfilledOrders": 0,
         "unfilledContracts": 0,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 465.07,
-          "totalFilledContracts": 465.07,
+          "contractsOnModelledDepth": 473.45,
+          "totalFilledContracts": 473.45,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -8509,23 +8533,23 @@
         "handle": "@VolatilityArb_MM",
         "strategyId": "volatility_arb_mm",
         "title": "Two-Sided Spread Harvester (Market Maker)",
-        "returnPct": -91.95,
-        "finalEquity": 8053.09,
+        "returnPct": -91.96,
+        "finalEquity": 8038.93,
         "initialCapital": 100000,
-        "realizedPnl": -86685.25,
-        "totalTrades": 8773,
-        "winRate": 73.1,
+        "realizedPnl": -86680.3,
+        "totalTrades": 8836,
+        "winRate": 73.3,
         "profitFactor": 0.55,
         "maxDrawdownPct": 93.41,
-        "feesPaid": 5469.72,
-        "periods": 1489,
+        "feesPaid": 5472.98,
+        "periods": 1492,
         "unfilledOrders": 0,
         "unfilledContracts": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 29957.55,
-          "contractsOnModelledDepth": 2585233.69,
-          "totalFilledContracts": 2615191.24,
-          "capturedPct": 1.15,
+          "contractsOnCapturedDepth": 30395.95,
+          "contractsOnModelledDepth": 2586293.06,
+          "totalFilledContracts": 2616689.01,
+          "capturedPct": 1.16,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -8543,22 +8567,22 @@
         "handle": "@MakerFlip_SpreadHarvest",
         "strategyId": "maker_flip_spread_harvest",
         "title": "Maker Flip — rest the bid, flip the fill to the offer",
-        "returnPct": -94.07,
-        "finalEquity": 5932.66,
+        "returnPct": -94.06,
+        "finalEquity": 5936.16,
         "initialCapital": 100000,
-        "realizedPnl": -89583.67,
-        "totalTrades": 4442,
-        "winRate": 94.3,
+        "realizedPnl": -89576.17,
+        "totalTrades": 4481,
+        "winRate": 94.4,
         "profitFactor": 0.6,
-        "maxDrawdownPct": 97.86,
-        "feesPaid": 4524.23,
-        "periods": 1489,
+        "maxDrawdownPct": 97.85,
+        "feesPaid": 4523.86,
+        "periods": 1492,
         "unfilledOrders": 0,
         "unfilledContracts": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 11548.97,
-          "contractsOnModelledDepth": 2044728.46,
-          "totalFilledContracts": 2056277.43,
+          "contractsOnCapturedDepth": 11616.6,
+          "contractsOnModelledDepth": 2044444.86,
+          "totalFilledContracts": 2056061.46,
           "capturedPct": 0.56,
           "depthModels": [
             "synthetic",
@@ -8578,21 +8602,21 @@
         "strategyId": "panic_dip_shock_timing",
         "title": "Shock-Timing Panic-Dip Buyer (maker ladder)",
         "returnPct": -99.85,
-        "finalEquity": 149.31,
+        "finalEquity": 147.48,
         "initialCapital": 100000,
         "realizedPnl": -95258.2,
-        "totalTrades": 1276,
+        "totalTrades": 1279,
         "winRate": 85.4,
         "profitFactor": 0.45,
         "maxDrawdownPct": 99.94,
-        "feesPaid": 4586.46,
-        "periods": 1489,
+        "feesPaid": 4586.47,
+        "periods": 1492,
         "unfilledOrders": 0,
         "unfilledContracts": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 1659.4,
-          "contractsOnModelledDepth": 2354592.81,
-          "totalFilledContracts": 2356252.21,
+          "contractsOnCapturedDepth": 1660.19,
+          "contractsOnModelledDepth": 2354615.16,
+          "totalFilledContracts": 2356275.35,
           "capturedPct": 0.07,
           "depthModels": [
             "synthetic",
@@ -8707,8 +8731,8 @@
   "hourlyError": null,
   "micro": {
     "periodIntervalMinutes": 1,
-    "horizonPeriods": 2430,
-    "markets": 238,
+    "horizonPeriods": 2446,
+    "markets": 239,
     "leaderboard": [
       {
         "rank": 1,
@@ -8716,22 +8740,22 @@
         "handle": "@FadeSpike_Micro",
         "strategyId": "fade_spike_micro",
         "title": "5-Minute Spike Fade on 1-Minute Bars (R14 `fade`)",
-        "returnPct": 87.29,
-        "finalEquity": 187287.04,
+        "returnPct": 87.57,
+        "finalEquity": 187571.5,
         "initialCapital": 100000,
-        "realizedPnl": 91187.12,
-        "totalTrades": 59,
-        "winRate": 59.3,
-        "profitFactor": 4.43,
+        "realizedPnl": 91479.78,
+        "totalTrades": 60,
+        "winRate": 60,
+        "profitFactor": 4.45,
         "maxDrawdownPct": 16.7,
-        "feesPaid": 3900.08,
-        "periods": 699,
+        "feesPaid": 3908.28,
+        "periods": 715,
         "unfilledOrders": 6,
         "unfilledContracts": 32421.71,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 268881.94,
-          "totalFilledContracts": 268881.94,
+          "contractsOnModelledDepth": 269369.7,
+          "totalFilledContracts": 269369.7,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -8749,22 +8773,22 @@
         "handle": "@Crypto15M_CheapTail",
         "strategyId": "crypto15m_cheap_tail",
         "title": "15-Minute Crypto Cheap-Tail Buyer",
-        "returnPct": 33.92,
-        "finalEquity": 133918.4,
+        "returnPct": 33.87,
+        "finalEquity": 133873.83,
         "initialCapital": 100000,
-        "realizedPnl": 35139.96,
-        "totalTrades": 43,
-        "winRate": 20.9,
-        "profitFactor": 3.38,
+        "realizedPnl": 35098.24,
+        "totalTrades": 44,
+        "winRate": 20.5,
+        "profitFactor": 3.37,
         "maxDrawdownPct": 6.8,
-        "feesPaid": 1221.52,
-        "periods": 515,
+        "feesPaid": 1224.37,
+        "periods": 531,
         "unfilledOrders": 12,
         "unfilledContracts": 228962.35,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 342940.93,
-          "totalFilledContracts": 342940.93,
+          "contractsOnModelledDepth": 344679.23,
+          "totalFilledContracts": 344679.23,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -8815,22 +8839,22 @@
         "handle": "@MomTick_Micro",
         "strategyId": "mom_tick_micro",
         "title": "1-Minute Momentum Follow (R14 `mom`, adapted)",
-        "returnPct": -11.66,
-        "finalEquity": 88340.78,
+        "returnPct": -11.56,
+        "finalEquity": 88438.64,
         "initialCapital": 100000,
-        "realizedPnl": -7780.38,
-        "totalTrades": 59,
-        "winRate": 54.2,
+        "realizedPnl": -7677.7,
+        "totalTrades": 60,
+        "winRate": 55,
         "profitFactor": 0.88,
         "maxDrawdownPct": 24.38,
-        "feesPaid": 3878.84,
-        "periods": 699,
+        "feesPaid": 3883.66,
+        "periods": 715,
         "unfilledOrders": 12,
         "unfilledContracts": 89031.13,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 244398.38,
-          "totalFilledContracts": 244398.38,
+          "contractsOnModelledDepth": 244709.52,
+          "totalFilledContracts": 244709.52,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -8848,22 +8872,22 @@
         "handle": "@Crypto15M_EarlyLeader",
         "strategyId": "crypto15m_early_leader",
         "title": "15-Minute Crypto Early-Leader Ride (BTC · ETH · SOL)",
-        "returnPct": -58.58,
-        "finalEquity": 41415.81,
+        "returnPct": -58.47,
+        "finalEquity": 41526.76,
         "initialCapital": 100000,
-        "realizedPnl": -55512.48,
-        "totalTrades": 43,
-        "winRate": 46.5,
+        "realizedPnl": -55396.75,
+        "totalTrades": 44,
+        "winRate": 47.7,
         "profitFactor": 0.31,
         "maxDrawdownPct": 60.89,
-        "feesPaid": 3071.75,
-        "periods": 515,
+        "feesPaid": 3076.53,
+        "periods": 531,
         "unfilledOrders": 13,
         "unfilledContracts": 116705.98,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 211628.78,
-          "totalFilledContracts": 211628.78,
+          "contractsOnModelledDepth": 211911.05,
+          "totalFilledContracts": 211911.05,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -8881,22 +8905,22 @@
         "handle": "@HighProb_Scalp8095",
         "strategyId": "highprob_scalp8095",
         "title": "75–80¢ High-Probability Scalp with a 95¢ Take-Profit (R15)",
-        "returnPct": -65.03,
-        "finalEquity": 34974.45,
+        "returnPct": -66.18,
+        "finalEquity": 33823.4,
         "initialCapital": 100000,
-        "realizedPnl": -62175.31,
-        "totalTrades": 83,
-        "winRate": 56.6,
-        "profitFactor": 0.28,
+        "realizedPnl": -63306.57,
+        "totalTrades": 84,
+        "winRate": 55.6,
+        "profitFactor": 0.27,
         "maxDrawdownPct": 66.83,
-        "feesPaid": 2850.19,
-        "periods": 699,
+        "feesPaid": 2869.99,
+        "periods": 715,
         "unfilledOrders": 10,
         "unfilledContracts": 47751.32,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 356259.21,
-          "totalFilledContracts": 356259.21,
+          "contractsOnModelledDepth": 357767.55,
+          "totalFilledContracts": 357767.55,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -8943,7 +8967,7 @@
         "username": "VolatilityArb_MM",
         "eligibleMarkets": 190,
         "booked": 176,
-        "payout": 213855.56
+        "payout": 213853.52
       },
       {
         "username": "PanicDip_ShockTiming",
@@ -8961,7 +8985,7 @@
         "username": "MakerFlip_SpreadHarvest",
         "eligibleMarkets": 190,
         "booked": 151,
-        "payout": 168573.35
+        "payout": 168559.6
       },
       {
         "username": "WeatherLadder_CheapBands",
@@ -9045,33 +9069,33 @@
       },
       {
         "username": "Crypto15M_EarlyLeader",
-        "eligibleMarkets": 43,
-        "booked": 43,
-        "payout": 91645.77
+        "eligibleMarkets": 44,
+        "booked": 44,
+        "payout": 91928.04
       },
       {
         "username": "Crypto15M_CheapTail",
-        "eligibleMarkets": 43,
-        "booked": 43,
+        "eligibleMarkets": 44,
+        "booked": 44,
         "payout": 54752.85
       },
       {
         "username": "HighProb_Scalp8095",
-        "eligibleMarkets": 59,
-        "booked": 23,
+        "eligibleMarkets": 60,
+        "booked": 24,
         "payout": 0
       },
       {
         "username": "FadeSpike_Micro",
-        "eligibleMarkets": 59,
-        "booked": 59,
-        "payout": 179748.96
+        "eligibleMarkets": 60,
+        "booked": 60,
+        "payout": 180236.72
       },
       {
         "username": "MomTick_Micro",
-        "eligibleMarkets": 59,
-        "booked": 59,
-        "payout": 139994.94
+        "eligibleMarkets": 60,
+        "booked": 60,
+        "payout": 140306.08
       }
     ]
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T19:44:19.086Z",
+  "generatedAt": "2026-09-19T20:23:18.989Z",
   "method": "For each stored market, every pair of consecutive end_period_ts values is compared with the documented period length. A difference that is not an exact period is recorded here with both timestamps. Nothing is filled, interpolated or shifted.",
   "evidence": {
     "holiday": {
