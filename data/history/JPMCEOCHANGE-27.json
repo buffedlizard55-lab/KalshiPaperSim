@@ -6569,6 +6569,26 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1789790400,
+      "open_interest_fp": "5831.32",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -6927,6 +6947,86 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T11:08:18.437Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2316.74"
+            ],
+            [
+              "0.0200",
+              "3333.00"
+            ],
+            [
+              "0.0300",
+              "66.00"
+            ],
+            [
+              "0.4200",
+              "43.27"
+            ],
+            [
+              "0.4600",
+              "93.92"
+            ],
+            [
+              "0.5000",
+              "500.00"
+            ],
+            [
+              "0.6000",
+              "369.00"
+            ],
+            [
+              "0.6100",
+              "1376.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.7300",
+              "10.44"
+            ],
+            [
+              "0.8200",
+              "2.00"
+            ],
+            [
+              "0.8700",
+              "468.51"
+            ],
+            [
+              "0.9100",
+              "500.00"
+            ],
+            [
+              "0.9300",
+              "1000.00"
+            ],
+            [
+              "0.9400",
+              "50.00"
+            ],
+            [
+              "0.9500",
+              "100.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1912.15"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6944,15 +7044,15 @@
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.9900",
-    "no_bid_dollars": "0.9400",
+    "no_bid_dollars": "0.9500",
     "no_sub_title": "Before 2027",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-07-02T12:00:00Z",
     "open_interest_fp": "5831.32",
     "open_time": "2025-11-18T01:00:00Z",
     "previous_price_dollars": "0.0400",
-    "previous_yes_ask_dollars": "0.0800",
-    "previous_yes_bid_dollars": "0.0200",
+    "previous_yes_ask_dollars": "0.0600",
+    "previous_yes_bid_dollars": "0.0100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -6972,15 +7072,15 @@
     "updated_time": "2026-07-02T15:59:50.043493Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "17163.86",
-    "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "150.00",
+    "yes_ask_dollars": "0.0500",
+    "yes_ask_size_fp": "100.00",
     "yes_bid_dollars": "0.0100",
     "yes_bid_size_fp": "1912.15",
     "yes_sub_title": "Before 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27",
-  "market_captured_at": "2026-09-18T18:46:21.819Z",
+  "market_captured_at": "2026-09-19T11:08:17.713Z",
   "status": "active",
-  "last_ingested_at": "2026-09-18T18:46:22.440Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1789704001&end_ts=1789757182&period_interval=1440"
+  "last_ingested_at": "2026-09-19T11:08:18.376Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1789790401&end_ts=1789816098&period_interval=1440"
 }
