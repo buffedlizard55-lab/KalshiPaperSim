@@ -2075,6 +2075,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:32:39.428Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:41:40.916Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2105,7 +2125,7 @@
     "open_time": "2026-09-18T05:10:00Z",
     "previous_price_dollars": "0.6700",
     "previous_yes_ask_dollars": "0.6700",
-    "previous_yes_bid_dollars": "0.6400",
+    "previous_yes_bid_dollars": "0.6600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2126,7 +2146,7 @@
     "ticker": "KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1",
     "title": "Elly De La Cruz: 1+ hits?",
     "updated_time": "2026-09-19T01:41:14.903521Z",
-    "volume_24h_fp": "6805.08",
+    "volume_24h_fp": "4123.39",
     "volume_fp": "7918.92",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2135,11 +2155,11 @@
     "yes_sub_title": "Elly De La Cruz: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1",
-  "market_captured_at": "2026-09-19T15:19:20.588Z",
+  "market_captured_at": "2026-09-19T21:41:40.244Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T15:19:21.207Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1/candlesticks?start_ts=1789781821&end_ts=1789831160&period_interval=1",
+  "last_ingested_at": "2026-09-19T21:41:40.881Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1/candlesticks?start_ts=1789781821&end_ts=1789854100&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:10:10.364Z",

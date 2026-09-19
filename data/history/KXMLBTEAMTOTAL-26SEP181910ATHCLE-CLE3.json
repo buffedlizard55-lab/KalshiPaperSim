@@ -87,6 +87,36 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:18:34.706Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:51:02.196Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:55:05.373Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -114,9 +144,9 @@
     "occurrence_datetime": "2026-09-19T02:10:00Z",
     "open_interest_fp": "11239.95",
     "open_time": "2026-09-17T23:00:00Z",
-    "previous_price_dollars": "0.8000",
-    "previous_yes_ask_dollars": "0.8000",
-    "previous_yes_bid_dollars": "0.7900",
+    "previous_price_dollars": "0.7800",
+    "previous_yes_ask_dollars": "0.7900",
+    "previous_yes_bid_dollars": "0.7800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -136,7 +166,7 @@
     "ticker": "KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3",
     "title": "Will Cleveland score over 2.5 runs?",
     "updated_time": "2026-09-19T01:55:54.90365Z",
-    "volume_24h_fp": "6441.63",
+    "volume_24h_fp": "3712.98",
     "volume_fp": "14286.93",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -145,9 +175,9 @@
     "yes_sub_title": "Cleveland over 2.5 runs scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3",
-  "market_captured_at": "2026-09-19T18:52:07.287Z",
+  "market_captured_at": "2026-09-19T21:55:04.692Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T18:52:07.859Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3/candlesticks?start_ts=1789790401&end_ts=1789843927&period_interval=1440"
+  "last_ingested_at": "2026-09-19T21:55:05.338Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3/candlesticks?start_ts=1789790401&end_ts=1789854904&period_interval=1440"
 }

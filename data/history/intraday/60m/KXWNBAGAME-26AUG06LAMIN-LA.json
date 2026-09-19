@@ -74,6 +74,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:39:57.448Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG06LAMIN-LA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -131,9 +141,9 @@
     "yes_sub_title": "Los Angeles"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG06LAMIN-LA",
-  "market_captured_at": "2026-09-19T18:58:27.064Z",
+  "market_captured_at": "2026-09-19T21:39:56.777Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T18:58:27.736Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG06LAMIN-LA/candlesticks?start_ts=1787252307&end_ts=1789844306&period_interval=60"
+  "last_ingested_at": "2026-09-19T21:39:57.412Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG06LAMIN-LA/candlesticks?start_ts=1787261997&end_ts=1789853996&period_interval=60"
 }

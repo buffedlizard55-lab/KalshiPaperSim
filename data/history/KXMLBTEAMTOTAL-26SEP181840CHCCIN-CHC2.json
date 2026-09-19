@@ -87,6 +87,36 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:18:30.248Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:50:56.903Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:55:00.131Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -114,8 +144,8 @@
     "occurrence_datetime": "2026-09-19T01:40:00Z",
     "open_interest_fp": "3782.53",
     "open_time": "2026-09-18T03:20:00Z",
-    "previous_price_dollars": "0.8800",
-    "previous_yes_ask_dollars": "0.8800",
+    "previous_price_dollars": "0.8600",
+    "previous_yes_ask_dollars": "0.8700",
     "previous_yes_bid_dollars": "0.8600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -136,7 +166,7 @@
     "ticker": "KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2",
     "title": "Will Chicago C score over 1.5 runs?",
     "updated_time": "2026-09-19T01:36:34.904024Z",
-    "volume_24h_fp": "1720.78",
+    "volume_24h_fp": "912.93",
     "volume_fp": "4804.90",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -145,9 +175,9 @@
     "yes_sub_title": "Chicago C over 1.5 runs scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2",
-  "market_captured_at": "2026-09-19T18:52:02.432Z",
+  "market_captured_at": "2026-09-19T21:54:59.458Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T18:52:03.004Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/candlesticks?start_ts=1789790401&end_ts=1789843922&period_interval=1440"
+  "last_ingested_at": "2026-09-19T21:55:00.096Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/candlesticks?start_ts=1789790401&end_ts=1789854899&period_interval=1440"
 }

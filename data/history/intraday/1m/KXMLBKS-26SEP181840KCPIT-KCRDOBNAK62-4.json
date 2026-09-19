@@ -1985,6 +1985,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:32:52.497Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840KCPIT-KCRDOBNAK62-4/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:41:54.017Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840KCPIT-KCRDOBNAK62-4/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2013,9 +2033,9 @@
     "occurrence_datetime": "2026-09-19T01:40:00Z",
     "open_interest_fp": "16389.41",
     "open_time": "2026-09-18T04:55:00Z",
-    "previous_price_dollars": "0.4600",
-    "previous_yes_ask_dollars": "0.4700",
-    "previous_yes_bid_dollars": "0.4600",
+    "previous_price_dollars": "0.4800",
+    "previous_yes_ask_dollars": "0.4800",
+    "previous_yes_bid_dollars": "0.4700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2036,7 +2056,7 @@
     "ticker": "KXMLBKS-26SEP181840KCPIT-KCRDOBNAK62-4",
     "title": "Randy Dobnak: 4+ strikeouts?",
     "updated_time": "2026-09-19T01:36:24.903464Z",
-    "volume_24h_fp": "7414.10",
+    "volume_24h_fp": "827.22",
     "volume_fp": "16562.63",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2045,11 +2065,11 @@
     "yes_sub_title": "Randy Dobnak: 4+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840KCPIT-KCRDOBNAK62-4",
-  "market_captured_at": "2026-09-19T15:19:33.159Z",
+  "market_captured_at": "2026-09-19T21:41:53.346Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T15:19:33.778Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840KCPIT-KCRDOBNAK62-4/candlesticks?start_ts=1789781521&end_ts=1789831173&period_interval=1",
+  "last_ingested_at": "2026-09-19T21:41:53.983Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840KCPIT-KCRDOBNAK62-4/candlesticks?start_ts=1789781521&end_ts=1789854113&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:10:26.133Z",

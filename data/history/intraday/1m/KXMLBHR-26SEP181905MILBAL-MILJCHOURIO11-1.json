@@ -2120,6 +2120,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:32:48.578Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181905MILBAL-MILJCHOURIO11-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:41:50.091Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181905MILBAL-MILJCHOURIO11-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2148,9 +2168,9 @@
     "occurrence_datetime": "2026-09-19T02:05:00Z",
     "open_interest_fp": "47213.94",
     "open_time": "2026-09-18T07:40:00Z",
-    "previous_price_dollars": "0.1500",
-    "previous_yes_ask_dollars": "0.1500",
-    "previous_yes_bid_dollars": "0.1300",
+    "previous_price_dollars": "0.1700",
+    "previous_yes_ask_dollars": "0.1700",
+    "previous_yes_bid_dollars": "0.1500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2171,7 +2191,7 @@
     "ticker": "KXMLBHR-26SEP181905MILBAL-MILJCHOURIO11-1",
     "title": "Jackson Chourio: 1+ home runs?",
     "updated_time": "2026-09-19T03:01:04.903708Z",
-    "volume_24h_fp": "56423.64",
+    "volume_24h_fp": "29904.55",
     "volume_fp": "58422.44",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2180,11 +2200,11 @@
     "yes_sub_title": "Jackson Chourio: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181905MILBAL-MILJCHOURIO11-1",
-  "market_captured_at": "2026-09-19T15:19:29.386Z",
+  "market_captured_at": "2026-09-19T21:41:49.422Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T15:19:30.006Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHR/markets/KXMLBHR-26SEP181905MILBAL-MILJCHOURIO11-1/candlesticks?start_ts=1789786561&end_ts=1789831169&period_interval=1",
+  "last_ingested_at": "2026-09-19T21:41:50.058Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHR/markets/KXMLBHR-26SEP181905MILBAL-MILJCHOURIO11-1/candlesticks?start_ts=1789786561&end_ts=1789854109&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:10:21.403Z",
