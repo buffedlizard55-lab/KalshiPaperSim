@@ -1,7 +1,11 @@
-✗ subject comp360-psilocybin: network: fetch failed
-✗ subject retatrutide: network: fetch failed
-✗ subject camizestrant: network: fetch failed
-✗ subject cytisinicline: network: fetch failed
-✗ subject gedatolisib: network: fetch failed
-✗ subject midomafetamine-mdma: network: fetch failed
+reachability probes:
+  ✗ https://api.open.fda.gov/drug/drugsfda.json?limit=1 → fetch failed (cause=ENOTFOUND) (102ms)
+  ✗ https://api.weather.gov/alerts/active?limit=1 → ? (174ms)
+  ✓ https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip → HTTP 200 (231ms)
+✗ subject comp360-psilocybin: network: fetch failed (cause=ENOTFOUND)
+✗ subject retatrutide: network: fetch failed (cause=ENOTFOUND)
+✗ subject camizestrant: network: fetch failed (cause=ENOTFOUND)
+✗ subject cytisinicline: network: fetch failed (cause=ENOTFOUND)
+✗ subject gedatolisib: network: fetch failed (cause=ENOTFOUND)
+✗ subject midomafetamine-mdma: network: fetch failed (cause=ENOTFOUND)
 6 subject capture(s) failed — the store keeps whatever succeeded; re-run the workflow for the rest.

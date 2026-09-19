@@ -1,37 +1,57 @@
 {
-  "startedAt": "2026-09-19T20:33:54.849Z",
-  "finishedAt": "2026-09-19T20:41:00.693Z",
+  "startedAt": "2026-09-19T20:43:28.069Z",
+  "finishedAt": "2026-09-19T20:50:34.561Z",
   "subjects": [
     {
       "slug": "comp360-psilocybin",
       "ok": false,
-      "error": "subject comp360-psilocybin: network: fetch failed"
+      "error": "subject comp360-psilocybin: network: fetch failed (cause=ENOTFOUND)"
     },
     {
       "slug": "retatrutide",
       "ok": false,
-      "error": "subject retatrutide: network: fetch failed"
+      "error": "subject retatrutide: network: fetch failed (cause=ENOTFOUND)"
     },
     {
       "slug": "camizestrant",
       "ok": false,
-      "error": "subject camizestrant: network: fetch failed"
+      "error": "subject camizestrant: network: fetch failed (cause=ENOTFOUND)"
     },
     {
       "slug": "cytisinicline",
       "ok": false,
-      "error": "subject cytisinicline: network: fetch failed"
+      "error": "subject cytisinicline: network: fetch failed (cause=ENOTFOUND)"
     },
     {
       "slug": "gedatolisib",
       "ok": false,
-      "error": "subject gedatolisib: network: fetch failed"
+      "error": "subject gedatolisib: network: fetch failed (cause=ENOTFOUND)"
     },
     {
       "slug": "midomafetamine-mdma",
       "ok": false,
-      "error": "subject midomafetamine-mdma: network: fetch failed"
+      "error": "subject midomafetamine-mdma: network: fetch failed (cause=ENOTFOUND)"
     }
   ],
-  "failures": 6
+  "failures": 6,
+  "probes": [
+    {
+      "url": "https://api.open.fda.gov/drug/drugsfda.json?limit=1",
+      "ok": false,
+      "error": "fetch failed (cause=ENOTFOUND)",
+      "ms": 102
+    },
+    {
+      "url": "https://api.weather.gov/alerts/active?limit=1",
+      "ok": false,
+      "http_status": 400,
+      "ms": 174
+    },
+    {
+      "url": "https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip",
+      "ok": true,
+      "http_status": 200,
+      "ms": 231
+    }
+  ]
 }
