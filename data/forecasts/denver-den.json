@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/COC031",
       "relativeLocation": "Denver, CO",
       "timeZone": "America/Denver",
-      "resolvedAt": "2026-09-19T05:58:33.247Z",
+      "resolvedAt": "2026-09-19T11:57:03.777Z",
       "pointsUrl": "https://api.weather.gov/points/39.8561,-104.6737"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -480,6 +480,72 @@
           "startTime": "2026-09-25T06:00:00-06:00",
           "endTime": "2026-09-25T18:00:00-06:00",
           "probabilityOfPrecipitationPct": 12
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-19T11:57:03.777Z",
+      "points_url": "https://api.weather.gov/points/39.8561,-104.6737",
+      "forecast_url": "https://api.weather.gov/gridpoints/BOU/74,66/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-19T06:46:31+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-19",
+          "highF": 76,
+          "periodName": "Saturday",
+          "startTime": "2026-09-19T06:00:00-06:00",
+          "endTime": "2026-09-19T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 74
+        },
+        {
+          "date": "2026-09-20",
+          "highF": 71,
+          "periodName": "Sunday",
+          "startTime": "2026-09-20T06:00:00-06:00",
+          "endTime": "2026-09-20T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 31
+        },
+        {
+          "date": "2026-09-21",
+          "highF": 72,
+          "periodName": "Monday",
+          "startTime": "2026-09-21T06:00:00-06:00",
+          "endTime": "2026-09-21T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 2
+        },
+        {
+          "date": "2026-09-22",
+          "highF": 77,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-22T06:00:00-06:00",
+          "endTime": "2026-09-22T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 7
+        },
+        {
+          "date": "2026-09-23",
+          "highF": 77,
+          "periodName": "Wednesday",
+          "startTime": "2026-09-23T06:00:00-06:00",
+          "endTime": "2026-09-23T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 6
+        },
+        {
+          "date": "2026-09-24",
+          "highF": 79,
+          "periodName": "Thursday",
+          "startTime": "2026-09-24T06:00:00-06:00",
+          "endTime": "2026-09-24T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 5
+        },
+        {
+          "date": "2026-09-25",
+          "highF": 79,
+          "periodName": "Friday",
+          "startTime": "2026-09-25T06:00:00-06:00",
+          "endTime": "2026-09-25T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 11
         }
       ]
     }
