@@ -1,0 +1,476 @@
+{
+  "ticker": "KXHIGHTSEA-26SEP20-B74.5",
+  "series_ticker": "KXHIGHTSEA",
+  "period_interval": 60,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789830000,
+      "open_interest_fp": "9.00",
+      "price": {
+        "close_dollars": "0.1700",
+        "high_dollars": "0.2200",
+        "low_dollars": "0.0400",
+        "mean_dollars": "0.0950",
+        "open_dollars": "0.2200"
+      },
+      "volume_fp": "12.00",
+      "yes_ask": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.1600",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1500",
+        "high_dollars": "0.1500",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1789833600,
+      "open_interest_fp": "323.17",
+      "price": {
+        "close_dollars": "0.1400",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0920",
+        "open_dollars": "0.1600",
+        "previous_dollars": "0.1700"
+      },
+      "volume_fp": "2415.23",
+      "yes_ask": {
+        "close_dollars": "0.1400",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.1600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1300",
+        "high_dollars": "0.1500",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.1500"
+      }
+    },
+    {
+      "end_period_ts": 1789837200,
+      "open_interest_fp": "628.78",
+      "price": {
+        "close_dollars": "0.1400",
+        "high_dollars": "0.1900",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0972",
+        "open_dollars": "0.1400",
+        "previous_dollars": "0.1400"
+      },
+      "volume_fp": "10144.91",
+      "yes_ask": {
+        "close_dollars": "0.1400",
+        "high_dollars": "0.1900",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.1400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1300",
+        "high_dollars": "0.1800",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.1300"
+      }
+    },
+    {
+      "end_period_ts": 1789840800,
+      "open_interest_fp": "319.90",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.1012",
+        "open_dollars": "0.1400",
+        "previous_dollars": "0.1400"
+      },
+      "volume_fp": "7095.96",
+      "yes_ask": {
+        "close_dollars": "0.1100",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.1400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.1300"
+      }
+    },
+    {
+      "end_period_ts": 1789844400,
+      "open_interest_fp": "320.90",
+      "price": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "mean_dollars": "0.0700",
+        "open_dollars": "0.0700",
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "1.00",
+      "yes_ask": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.1100",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.1100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0700"
+      }
+    },
+    {
+      "end_period_ts": 1789848000,
+      "open_interest_fp": "321.90",
+      "price": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "mean_dollars": "0.0700",
+        "open_dollars": "0.0700",
+        "previous_dollars": "0.0700"
+      },
+      "volume_fp": "1.00",
+      "yes_ask": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0500"
+      }
+    },
+    {
+      "end_period_ts": 1789851600,
+      "open_interest_fp": "347.02",
+      "price": {
+        "close_dollars": "0.1400",
+        "high_dollars": "0.1500",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0850",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0700"
+      },
+      "volume_fp": "862.30",
+      "yes_ask": {
+        "close_dollars": "0.1400",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1300",
+        "high_dollars": "0.1500",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-19T21:26:40.657Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26SEP20-B74.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "430.00"
+            ],
+            [
+              "0.0200",
+              "112.00"
+            ],
+            [
+              "0.0300",
+              "42.00"
+            ],
+            [
+              "0.0500",
+              "76.00"
+            ],
+            [
+              "0.0700",
+              "50.00"
+            ],
+            [
+              "0.1000",
+              "10.00"
+            ],
+            [
+              "0.1100",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "40.00"
+            ],
+            [
+              "0.1700",
+              "32.00"
+            ],
+            [
+              "0.1800",
+              "3.00"
+            ],
+            [
+              "0.2000",
+              "10.00"
+            ],
+            [
+              "0.2500",
+              "1.00"
+            ],
+            [
+              "0.3000",
+              "10.00"
+            ],
+            [
+              "0.3100",
+              "17.00"
+            ],
+            [
+              "0.3200",
+              "625.00"
+            ],
+            [
+              "0.3800",
+              "350.00"
+            ],
+            [
+              "0.4000",
+              "10.00"
+            ],
+            [
+              "0.4100",
+              "4.00"
+            ],
+            [
+              "0.4200",
+              "179.00"
+            ],
+            [
+              "0.4300",
+              "59.00"
+            ],
+            [
+              "0.4400",
+              "102.00"
+            ],
+            [
+              "0.5000",
+              "10.00"
+            ],
+            [
+              "0.5500",
+              "82.00"
+            ],
+            [
+              "0.6000",
+              "94.00"
+            ],
+            [
+              "0.6300",
+              "12.00"
+            ],
+            [
+              "0.6400",
+              "1.00"
+            ],
+            [
+              "0.6500",
+              "174.00"
+            ],
+            [
+              "0.6600",
+              "200.00"
+            ],
+            [
+              "0.6800",
+              "1.00"
+            ],
+            [
+              "0.6900",
+              "7.00"
+            ],
+            [
+              "0.7000",
+              "90.00"
+            ],
+            [
+              "0.7100",
+              "6.00"
+            ],
+            [
+              "0.7200",
+              "8.16"
+            ],
+            [
+              "0.7300",
+              "37.00"
+            ],
+            [
+              "0.7400",
+              "5.16"
+            ],
+            [
+              "0.7500",
+              "34.00"
+            ],
+            [
+              "0.7600",
+              "9.00"
+            ],
+            [
+              "0.7700",
+              "47.00"
+            ],
+            [
+              "0.7800",
+              "90.00"
+            ],
+            [
+              "0.7900",
+              "59.00"
+            ],
+            [
+              "0.8000",
+              "59.97"
+            ],
+            [
+              "0.8100",
+              "48.75"
+            ],
+            [
+              "0.8200",
+              "42.90"
+            ],
+            [
+              "0.8300",
+              "31.00"
+            ],
+            [
+              "0.8400",
+              "92.95"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1364.00"
+            ],
+            [
+              "0.0200",
+              "490.00"
+            ],
+            [
+              "0.0300",
+              "138.16"
+            ],
+            [
+              "0.0400",
+              "19.00"
+            ],
+            [
+              "0.0500",
+              "8.02"
+            ],
+            [
+              "0.0600",
+              "2.00"
+            ],
+            [
+              "0.0700",
+              "2.00"
+            ],
+            [
+              "0.0800",
+              "58.00"
+            ],
+            [
+              "0.1000",
+              "114.00"
+            ],
+            [
+              "0.1100",
+              "7.00"
+            ],
+            [
+              "0.1500",
+              "1.00"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "cap_strike": 75,
+    "close_time": "2026-09-21T08:00:00Z",
+    "created_time": "2026-09-19T09:35:14.407238Z",
+    "early_close_condition": "The Last Trading Time will be 11:59 PM local time on September 20, 2026 regardless of any data releases or events occurring. Expiration will occur on the sooner of the first 7:00 or 8:00\nAM ET following the release of the data for September 20, 2026, or one week after September 20, 2026.",
+    "event_ticker": "KXHIGHTSEA-26SEP20",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-09-21T19:00:00Z",
+    "expiration_time": "2026-09-27T14:00:00Z",
+    "expiration_value": "",
+    "floor_strike": 74,
+    "last_price_dollars": "0.1600",
+    "latest_expiration_time": "2026-09-27T14:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "0.8500",
+    "no_bid_dollars": "0.8400",
+    "no_sub_title": "74° to 75°",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-21T14:00:00Z",
+    "open_interest_fp": "645.72",
+    "open_time": "2026-09-19T14:00:00Z",
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If the maximum temperature recorded at Seattle (CLISEA) for Sep 20, 2026, is between 74-75° fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+    "settlement_timer_seconds": 300,
+    "status": "active",
+    "strike_type": "between",
+    "ticker": "KXHIGHTSEA-26SEP20-B74.5",
+    "title": "Will the maximum temperature be 74-75° on Sep 20, 2026?",
+    "updated_time": "2026-09-19T14:00:02.265079Z",
+    "volume_24h_fp": "24688.55",
+    "volume_fp": "26561.97",
+    "yes_ask_dollars": "0.1600",
+    "yes_ask_size_fp": "92.95",
+    "yes_bid_dollars": "0.1500",
+    "yes_bid_size_fp": "1.00",
+    "yes_sub_title": "74° to 75°"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26SEP20-B74.5",
+  "market_captured_at": "2026-09-19T21:26:39.937Z",
+  "status": "active",
+  "last_ingested_at": "2026-09-19T21:26:40.598Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP20-B74.5/candlesticks?start_ts=1789740000&end_ts=1789853200&period_interval=60"
+}

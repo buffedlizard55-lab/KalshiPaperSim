@@ -691,6 +691,96 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1789833600,
+      "open_interest_fp": "3116.32",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
+    },
+    {
+      "end_period_ts": 1789837200,
+      "open_interest_fp": "3139.74",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "mean_dollars": "0.0400",
+        "open_dollars": "0.0400",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "23.42",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
+    },
+    {
+      "end_period_ts": 1789844400,
+      "open_interest_fp": "3139.74",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
+    },
+    {
+      "end_period_ts": 1789848000,
+      "open_interest_fp": "3563.86",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "mean_dollars": "0.0400",
+        "open_dollars": "0.0400",
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "424.12",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -1085,6 +1175,410 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:24:05.360Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2541.00"
+            ],
+            [
+              "0.0200",
+              "250.00"
+            ],
+            [
+              "0.0300",
+              "167.00"
+            ],
+            [
+              "0.0400",
+              "110.00"
+            ],
+            [
+              "0.0500",
+              "100.00"
+            ],
+            [
+              "0.1100",
+              "10.00"
+            ],
+            [
+              "0.1400",
+              "10.00"
+            ],
+            [
+              "0.2000",
+              "10.00"
+            ],
+            [
+              "0.2800",
+              "10.00"
+            ],
+            [
+              "0.3800",
+              "10.00"
+            ],
+            [
+              "0.5100",
+              "10.00"
+            ],
+            [
+              "0.6100",
+              "10.00"
+            ],
+            [
+              "0.6200",
+              "2060.00"
+            ],
+            [
+              "0.6500",
+              "50.00"
+            ],
+            [
+              "0.8200",
+              "100.00"
+            ],
+            [
+              "0.9100",
+              "2250.00"
+            ],
+            [
+              "0.9200",
+              "21.00"
+            ],
+            [
+              "0.9400",
+              "1148.00"
+            ],
+            [
+              "0.9500",
+              "9402.00"
+            ],
+            [
+              "0.9600",
+              "91158.03"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3713.01"
+            ],
+            [
+              "0.0200",
+              "2500.01"
+            ],
+            [
+              "0.0300",
+              "8199.99"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:30:01.917Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2541.00"
+            ],
+            [
+              "0.0200",
+              "250.00"
+            ],
+            [
+              "0.0300",
+              "167.00"
+            ],
+            [
+              "0.0400",
+              "110.00"
+            ],
+            [
+              "0.0500",
+              "100.00"
+            ],
+            [
+              "0.1100",
+              "10.00"
+            ],
+            [
+              "0.1400",
+              "10.00"
+            ],
+            [
+              "0.2000",
+              "10.00"
+            ],
+            [
+              "0.2800",
+              "10.00"
+            ],
+            [
+              "0.3800",
+              "10.00"
+            ],
+            [
+              "0.5100",
+              "10.00"
+            ],
+            [
+              "0.6100",
+              "10.00"
+            ],
+            [
+              "0.6200",
+              "2060.00"
+            ],
+            [
+              "0.6500",
+              "50.00"
+            ],
+            [
+              "0.8200",
+              "100.00"
+            ],
+            [
+              "0.9200",
+              "21.00"
+            ],
+            [
+              "0.9400",
+              "1148.00"
+            ],
+            [
+              "0.9500",
+              "9402.00"
+            ],
+            [
+              "0.9600",
+              "91158.03"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3713.01"
+            ],
+            [
+              "0.0200",
+              "2500.01"
+            ],
+            [
+              "0.0300",
+              "8199.99"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:39:36.853Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2541.00"
+            ],
+            [
+              "0.0200",
+              "250.00"
+            ],
+            [
+              "0.0300",
+              "167.00"
+            ],
+            [
+              "0.0400",
+              "110.00"
+            ],
+            [
+              "0.0500",
+              "100.00"
+            ],
+            [
+              "0.1100",
+              "10.00"
+            ],
+            [
+              "0.1400",
+              "10.00"
+            ],
+            [
+              "0.2000",
+              "10.00"
+            ],
+            [
+              "0.2800",
+              "10.00"
+            ],
+            [
+              "0.3800",
+              "10.00"
+            ],
+            [
+              "0.5100",
+              "10.00"
+            ],
+            [
+              "0.6100",
+              "10.00"
+            ],
+            [
+              "0.6300",
+              "2016.00"
+            ],
+            [
+              "0.6500",
+              "50.00"
+            ],
+            [
+              "0.8200",
+              "100.00"
+            ],
+            [
+              "0.9200",
+              "21.00"
+            ],
+            [
+              "0.9400",
+              "1148.00"
+            ],
+            [
+              "0.9500",
+              "9402.00"
+            ],
+            [
+              "0.9600",
+              "91158.03"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3713.01"
+            ],
+            [
+              "0.0200",
+              "2500.01"
+            ],
+            [
+              "0.0300",
+              "8199.99"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:49:39.670Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2541.00"
+            ],
+            [
+              "0.0200",
+              "250.00"
+            ],
+            [
+              "0.0300",
+              "167.00"
+            ],
+            [
+              "0.0400",
+              "110.00"
+            ],
+            [
+              "0.0500",
+              "100.00"
+            ],
+            [
+              "0.1100",
+              "10.00"
+            ],
+            [
+              "0.1400",
+              "10.00"
+            ],
+            [
+              "0.2000",
+              "10.00"
+            ],
+            [
+              "0.2800",
+              "10.00"
+            ],
+            [
+              "0.3800",
+              "10.00"
+            ],
+            [
+              "0.5100",
+              "10.00"
+            ],
+            [
+              "0.6100",
+              "10.00"
+            ],
+            [
+              "0.6300",
+              "2016.00"
+            ],
+            [
+              "0.6500",
+              "50.00"
+            ],
+            [
+              "0.8200",
+              "100.00"
+            ],
+            [
+              "0.9200",
+              "21.00"
+            ],
+            [
+              "0.9400",
+              "1148.00"
+            ],
+            [
+              "0.9500",
+              "9402.00"
+            ],
+            [
+              "0.9600",
+              "91158.03"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3713.01"
+            ],
+            [
+              "0.0200",
+              "2500.01"
+            ],
+            [
+              "0.0300",
+              "8199.99"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1101,7 +1595,7 @@
     "expected_expiration_time": "2026-09-20T23:00:00Z",
     "expiration_time": "2026-09-22T17:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0300",
+    "last_price_dollars": "0.0400",
     "latest_expiration_time": "2026-09-22T17:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -1110,7 +1604,7 @@
     "no_sub_title": "Kyle Pitts Sr.",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T20:00:00Z",
-    "open_interest_fp": "3116.32",
+    "open_interest_fp": "3563.86",
     "open_time": "2026-09-16T19:16:00Z",
     "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0400",
@@ -1133,17 +1627,17 @@
     "ticker": "KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8",
     "title": "Kyle Pitts Sr.: 1st Touchdown",
     "updated_time": "2026-09-16T19:16:00.159871Z",
-    "volume_24h_fp": "353.69",
-    "volume_fp": "3116.32",
+    "volume_24h_fp": "592.11",
+    "volume_fp": "3563.86",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "91605.58",
+    "yes_ask_size_fp": "91158.03",
     "yes_bid_dollars": "0.0300",
     "yes_bid_size_fp": "8199.99",
     "yes_sub_title": "Kyle Pitts Sr."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8",
-  "market_captured_at": "2026-09-19T15:25:19.416Z",
+  "market_captured_at": "2026-09-19T21:49:38.949Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T15:25:20.033Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/candlesticks?start_ts=1789830001&end_ts=1789831519&period_interval=60"
+  "last_ingested_at": "2026-09-19T21:49:39.611Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/candlesticks?start_ts=1789848001&end_ts=1789854579&period_interval=60"
 }

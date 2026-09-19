@@ -1945,6 +1945,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:33:40.691Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:43:13.077Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1974,7 +1994,7 @@
     "open_time": "2026-09-18T03:20:00Z",
     "previous_price_dollars": "0.8600",
     "previous_yes_ask_dollars": "0.8700",
-    "previous_yes_bid_dollars": "0.8400",
+    "previous_yes_bid_dollars": "0.8600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1994,7 +2014,7 @@
     "ticker": "KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2",
     "title": "Will Chicago C score over 1.5 runs?",
     "updated_time": "2026-09-19T01:36:34.904024Z",
-    "volume_24h_fp": "4802.90",
+    "volume_24h_fp": "912.93",
     "volume_fp": "4804.90",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2003,11 +2023,11 @@
     "yes_sub_title": "Chicago C over 1.5 runs scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2",
-  "market_captured_at": "2026-09-19T15:19:35.676Z",
+  "market_captured_at": "2026-09-19T21:43:12.359Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T15:19:36.296Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/candlesticks?start_ts=1789781521&end_ts=1789831175&period_interval=1",
+  "last_ingested_at": "2026-09-19T21:43:13.019Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/candlesticks?start_ts=1789781521&end_ts=1789854192&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:10:29.295Z",

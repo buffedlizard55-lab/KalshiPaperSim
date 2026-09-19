@@ -2385,6 +2385,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:41:16.658Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26AUG22HERROD-HER/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2442,9 +2452,9 @@
     "yes_sub_title": "Anthony Hernandez"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26AUG22HERROD-HER",
-  "market_captured_at": "2026-09-19T18:58:36.986Z",
+  "market_captured_at": "2026-09-19T21:41:15.938Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T18:58:37.658Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG22HERROD-HER/candlesticks?start_ts=1787457601&end_ts=1789844317&period_interval=60"
+  "last_ingested_at": "2026-09-19T21:41:16.599Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG22HERROD-HER/candlesticks?start_ts=1787457601&end_ts=1789854076&period_interval=60"
 }

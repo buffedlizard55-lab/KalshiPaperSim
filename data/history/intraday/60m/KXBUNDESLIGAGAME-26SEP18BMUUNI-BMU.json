@@ -4770,6 +4770,46 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:21:05.397Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:27:01.490Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:36:36.833Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:46:39.774Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4796,9 +4836,9 @@
     "occurrence_datetime": "2026-09-18T21:30:00Z",
     "open_interest_fp": "1103138.93",
     "open_time": "2026-09-04T00:35:00Z",
-    "previous_price_dollars": "0.9400",
-    "previous_yes_ask_dollars": "0.9400",
-    "previous_yes_bid_dollars": "0.9300",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4818,7 +4858,7 @@
     "ticker": "KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU",
     "title": "Bayern Munich wins",
     "updated_time": "2026-09-18T20:29:24.968107Z",
-    "volume_24h_fp": "760798.86",
+    "volume_24h_fp": "0.00",
     "volume_fp": "1523498.97",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -4827,11 +4867,11 @@
     "yes_sub_title": "Bayern Munich"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU",
-  "market_captured_at": "2026-09-19T15:22:36.526Z",
+  "market_captured_at": "2026-09-19T21:46:39.055Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T15:22:37.143Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBUNDESLIGAGAME/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/candlesticks?start_ts=1789765201&end_ts=1789831356&period_interval=60",
+  "last_ingested_at": "2026-09-19T21:46:39.717Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBUNDESLIGAGAME/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/candlesticks?start_ts=1789765201&end_ts=1789854399&period_interval=60",
   "trims": [
     {
       "at": "2026-09-19T14:58:47.947Z",

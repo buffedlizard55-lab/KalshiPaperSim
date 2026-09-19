@@ -69,6 +69,36 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:18:14.226Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:52:31.369Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T21:56:47.922Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -97,8 +127,8 @@
     "occurrence_datetime": "2026-09-19T02:15:00Z",
     "open_interest_fp": "4890.18",
     "open_time": "2026-09-18T08:40:00Z",
-    "previous_price_dollars": "0.6700",
-    "previous_yes_ask_dollars": "0.6700",
+    "previous_price_dollars": "0.6600",
+    "previous_yes_ask_dollars": "0.6600",
     "previous_yes_bid_dollars": "0.6500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -120,7 +150,7 @@
     "ticker": "KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1",
     "title": "Bryce Harper: 1+ hits?",
     "updated_time": "2026-09-19T02:26:24.904065Z",
-    "volume_24h_fp": "3213.71",
+    "volume_24h_fp": "2809.51",
     "volume_fp": "4890.18",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -129,9 +159,9 @@
     "yes_sub_title": "Bryce Harper: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1",
-  "market_captured_at": "2026-09-19T18:51:51.502Z",
+  "market_captured_at": "2026-09-19T21:56:47.202Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T18:51:52.075Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/candlesticks?start_ts=1789790401&end_ts=1789843911&period_interval=1440"
+  "last_ingested_at": "2026-09-19T21:56:47.863Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/candlesticks?start_ts=1789790401&end_ts=1789855007&period_interval=1440"
 }

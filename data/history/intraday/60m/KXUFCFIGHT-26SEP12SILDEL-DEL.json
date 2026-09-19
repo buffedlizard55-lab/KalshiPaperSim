@@ -2632,6 +2632,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T21:41:19.427Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP12SILDEL-DEL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2689,9 +2699,9 @@
     "yes_sub_title": "Jose Delgado"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP12SILDEL-DEL",
-  "market_captured_at": "2026-09-19T18:58:39.818Z",
+  "market_captured_at": "2026-09-19T21:41:18.707Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T18:58:40.490Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12SILDEL-DEL/candlesticks?start_ts=1789261201&end_ts=1789844320&period_interval=60"
+  "last_ingested_at": "2026-09-19T21:41:19.368Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12SILDEL-DEL/candlesticks?start_ts=1789261201&end_ts=1789854079&period_interval=60"
 }
