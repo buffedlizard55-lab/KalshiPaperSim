@@ -159,6 +159,11 @@ const EXCLUDED = [
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+/** Per-subject outcomes of the most recent run — committed even on failure so
+ *  a failed capture is diagnosable from the repository itself (the runner's
+ *  own log store is not readable from every environment). */
+const LAST_RUN = { startedAt: null, finishedAt: null, subjects: [], failures: 0 };
+
 function readJsonSafe(p) {
   try {
     return JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -239,32 +244,54 @@ function parseResponse(json) {
 
 async function capture(subject) {
   const url = `${ENDPOINT}?search=${encodeURIComponent(subject.query)}&limit=1000`;
-  const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' } });
-  const bodyText = await res.text();
-  let json = null;
-  try {
-    json = JSON.parse(bodyText);
-  } catch {
-    throw new Error(`subject ${subject.slug}: HTTP ${res.status} with a non-JSON body (first 200 chars: ${bodyText.slice(0, 200)})`);
+  // Shared CI runner IPs share the unauthenticated openFDA rate budget with
+  // everyone else on them, so a 429/5xx is retried with backoff before the
+  // subject is declared failed. Anything else (400 bad query, 403, ...) is
+  // not retried: those are configuration errors a human must see verbatim.
+  let lastError = null;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    let res;
+    try {
+      res = await fetch(url, { headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' } });
+    } catch (err) {
+      lastError = `network: ${err && err.message ? err.message : String(err)}`;
+      if (attempt < 3) {
+        await sleep(20_000 * attempt);
+        continue;
+      }
+      throw new Error(`subject ${subject.slug}: ${lastError}`);
+    }
+    const bodyText = await res.text();
+    let json = null;
+    try {
+      json = JSON.parse(bodyText);
+    } catch {
+      throw new Error(`subject ${subject.slug}: HTTP ${res.status} with a non-JSON body (first 200 chars: ${bodyText.slice(0, 200)})`);
+    }
+    if (!res.ok) {
+      const msg = json?.error?.message ? ` — ${String(json.error.message).slice(0, 300)}` : ` — body head: ${bodyText.slice(0, 200)}`;
+      lastError = `HTTP ${res.status}${msg}`;
+      if ((res.status === 429 || res.status >= 500) && attempt < 3) {
+        await sleep(20_000 * attempt);
+        continue;
+      }
+      throw new Error(`subject ${subject.slug}: ${lastError}`);
+    }
+    const parsed = parseResponse(json);
+    return {
+      captured_at: new Date().toISOString(),
+      url,
+      http_status: res.status,
+      meta: { disclaimer: parsed.disclaimer, last_updated: parsed.lastUpdated, total: parsed.total },
+      state: parsed.state,
+      approved: parsed.approved,
+      marketingStatuses: parsed.marketingStatuses,
+      applications: parsed.applications.length,
+      applicationNumbers: parsed.applications.map((a) => a.application_number).filter(Boolean).slice(0, 20),
+      newestSubmissionStatusDate: parsed.newestSubmissionStatusDate
+    };
   }
-  if (!res.ok) {
-    // openFDA returns JSON errors (e.g. rate limit) — record and fail loudly.
-    const msg = json?.error?.message ? ` — ${String(json.error.message).slice(0, 200)}` : '';
-    throw new Error(`subject ${subject.slug}: HTTP ${res.status}${msg}`);
-  }
-  const parsed = parseResponse(json);
-  return {
-    captured_at: new Date().toISOString(),
-    url,
-    http_status: res.status,
-    meta: { disclaimer: parsed.disclaimer, last_updated: parsed.lastUpdated, total: parsed.total },
-    state: parsed.state,
-    approved: parsed.approved,
-    marketingStatuses: parsed.marketingStatuses,
-    applications: parsed.applications.length,
-    applicationNumbers: parsed.applications.map((a) => a.application_number).filter(Boolean).slice(0, 20),
-    newestSubmissionStatusDate: parsed.newestSubmissionStatusDate
-  };
+  throw new Error(`subject ${subject.slug}: exhausted retries — ${lastError}`);
 }
 
 function storePath(slug) {
@@ -361,21 +388,36 @@ async function main() {
     return 0;
   }
 
+  LAST_RUN.startedAt = new Date().toISOString();
   let failures = 0;
   for (let i = 0; i < SUBJECTS.length; i++) {
     const subject = SUBJECTS[i];
     try {
       const snapshot = await capture(subject);
       const { changed, priorState, snapshots } = appendSnapshot(subject, snapshot);
+      LAST_RUN.subjects.push({ slug: subject.slug, ok: true, state: snapshot.state, total: snapshot.meta.total, snapshots });
       console.log(
         `${subject.slug}: ${snapshot.state} (total=${snapshot.meta.total}, approved=${snapshot.approved})` +
           `${changed ? ' CHANGED' : ''}${priorState && priorState !== snapshot.state ? ` [was ${priorState}]` : ''} — ${snapshots} snapshot(s) archived`
       );
     } catch (err) {
       failures += 1;
+      LAST_RUN.subjects.push({ slug: subject.slug, ok: false, error: String(err && err.message ? err.message : err).slice(0, 500) });
       console.error(`✗ ${err.message}`);
     }
     if (i < SUBJECTS.length - 1) await sleep(INTER_REQUEST_SLEEP_MS);
+  }
+  LAST_RUN.finishedAt = new Date().toISOString();
+  LAST_RUN.failures = failures;
+  // Write the run report even when subjects failed, and commit it (the
+  // workflow's commit step runs with if: always()) — a failed capture must be
+  // diagnosable from the repository, because runner log archives are not
+  // readable from every environment this project is developed in.
+  try {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+    fs.writeFileSync(path.join(DATA_DIR, '_fda-last-run.json'), `${JSON.stringify(LAST_RUN, null, 2)}\n`);
+  } catch (err) {
+    console.error(`could not write the run report: ${err.message}`);
   }
   if (failures > 0) {
     console.error(`${failures} subject capture(s) failed — the store keeps whatever succeeded; re-run the workflow for the rest.`);
