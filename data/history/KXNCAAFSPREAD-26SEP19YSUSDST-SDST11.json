@@ -1,0 +1,826 @@
+{
+  "ticker": "KXNCAAFSPREAD-26SEP19YSUSDST-SDST11",
+  "series_ticker": "KXNCAAFSPREAD",
+  "period_interval": 1440,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789617600,
+      "open_interest_fp": "682.58",
+      "price": {
+        "close_dollars": "0.5100",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.4700",
+        "mean_dollars": "0.4838",
+        "open_dollars": "0.4800"
+      },
+      "volume_fp": "732.58",
+      "yes_ask": {
+        "close_dollars": "0.5200",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.4800",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4700",
+        "high_dollars": "0.4800",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1789704000,
+      "open_interest_fp": "888.02",
+      "price": {
+        "close_dollars": "0.5300",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.4900",
+        "mean_dollars": "0.5110",
+        "open_dollars": "0.5200",
+        "previous_dollars": "0.5100"
+      },
+      "volume_fp": "295.44",
+      "yes_ask": {
+        "close_dollars": "0.5300",
+        "high_dollars": "0.6200",
+        "low_dollars": "0.5100",
+        "open_dollars": "0.5200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4900",
+        "high_dollars": "0.5100",
+        "low_dollars": "0.3600",
+        "open_dollars": "0.4700"
+      }
+    },
+    {
+      "end_period_ts": 1789790400,
+      "open_interest_fp": "1125.35",
+      "price": {
+        "close_dollars": "0.4500",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.4000",
+        "mean_dollars": "0.4751",
+        "open_dollars": "0.5300",
+        "previous_dollars": "0.5300"
+      },
+      "volume_fp": "278.43",
+      "yes_ask": {
+        "close_dollars": "0.4800",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.4600",
+        "open_dollars": "0.5300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4500",
+        "high_dollars": "0.5000",
+        "low_dollars": "0.3900",
+        "open_dollars": "0.4900"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-19T14:57:24.382Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "49373.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "138.00"
+            ],
+            [
+              "0.0500",
+              "46.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "38.00"
+            ],
+            [
+              "0.1200",
+              "38.00"
+            ],
+            [
+              "0.1400",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "10.00"
+            ],
+            [
+              "0.1700",
+              "26.00"
+            ],
+            [
+              "0.1800",
+              "1.00"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "2000.00"
+            ],
+            [
+              "0.2100",
+              "2404.00"
+            ],
+            [
+              "0.2400",
+              "1.00"
+            ],
+            [
+              "0.2800",
+              "2008.00"
+            ],
+            [
+              "0.3000",
+              "100.00"
+            ],
+            [
+              "0.3100",
+              "33.00"
+            ],
+            [
+              "0.3200",
+              "100.00"
+            ],
+            [
+              "0.3400",
+              "50.00"
+            ],
+            [
+              "0.3600",
+              "2030.00"
+            ],
+            [
+              "0.3800",
+              "20.00"
+            ],
+            [
+              "0.4000",
+              "2000.00"
+            ],
+            [
+              "0.4400",
+              "2000.00"
+            ],
+            [
+              "0.4500",
+              "10000.00"
+            ],
+            [
+              "0.4600",
+              "742.00"
+            ],
+            [
+              "0.4800",
+              "100.00"
+            ],
+            [
+              "0.4900",
+              "271.00"
+            ],
+            [
+              "0.5000",
+              "129.00"
+            ],
+            [
+              "0.5100",
+              "694.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "49363.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "138.00"
+            ],
+            [
+              "0.0500",
+              "78.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "38.00"
+            ],
+            [
+              "0.1700",
+              "2368.00"
+            ],
+            [
+              "0.2500",
+              "26.00"
+            ],
+            [
+              "0.2600",
+              "4.00"
+            ],
+            [
+              "0.3000",
+              "130.00"
+            ],
+            [
+              "0.3200",
+              "4000.00"
+            ],
+            [
+              "0.3400",
+              "797.00"
+            ],
+            [
+              "0.3600",
+              "2000.00"
+            ],
+            [
+              "0.3700",
+              "10074.00"
+            ],
+            [
+              "0.3800",
+              "20.00"
+            ],
+            [
+              "0.4200",
+              "6.00"
+            ],
+            [
+              "0.4300",
+              "123.00"
+            ],
+            [
+              "0.4400",
+              "144.00"
+            ],
+            [
+              "0.4500",
+              "231.00"
+            ],
+            [
+              "0.4600",
+              "10.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:29:17.794Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "49373.00"
+            ],
+            [
+              "0.0200",
+              "1005.00"
+            ],
+            [
+              "0.0300",
+              "138.00"
+            ],
+            [
+              "0.0500",
+              "46.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "39.00"
+            ],
+            [
+              "0.1200",
+              "2038.00"
+            ],
+            [
+              "0.1400",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "10.00"
+            ],
+            [
+              "0.1700",
+              "26.00"
+            ],
+            [
+              "0.1800",
+              "1.00"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "2000.00"
+            ],
+            [
+              "0.2100",
+              "2404.00"
+            ],
+            [
+              "0.2400",
+              "1.00"
+            ],
+            [
+              "0.2800",
+              "2008.00"
+            ],
+            [
+              "0.3000",
+              "100.00"
+            ],
+            [
+              "0.3100",
+              "33.00"
+            ],
+            [
+              "0.3200",
+              "100.00"
+            ],
+            [
+              "0.3400",
+              "50.00"
+            ],
+            [
+              "0.3600",
+              "30.00"
+            ],
+            [
+              "0.3800",
+              "20.00"
+            ],
+            [
+              "0.4400",
+              "2000.00"
+            ],
+            [
+              "0.4800",
+              "2000.00"
+            ],
+            [
+              "0.4900",
+              "10371.00"
+            ],
+            [
+              "0.5000",
+              "129.00"
+            ],
+            [
+              "0.5100",
+              "194.00"
+            ],
+            [
+              "0.5200",
+              "798.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "49363.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "138.00"
+            ],
+            [
+              "0.0500",
+              "86.97"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "38.00"
+            ],
+            [
+              "0.1700",
+              "2368.00"
+            ],
+            [
+              "0.2400",
+              "2000.00"
+            ],
+            [
+              "0.2500",
+              "26.00"
+            ],
+            [
+              "0.2600",
+              "4.00"
+            ],
+            [
+              "0.3000",
+              "130.00"
+            ],
+            [
+              "0.3200",
+              "2000.00"
+            ],
+            [
+              "0.3400",
+              "50.00"
+            ],
+            [
+              "0.3600",
+              "2000.00"
+            ],
+            [
+              "0.3700",
+              "74.00"
+            ],
+            [
+              "0.3800",
+              "20.00"
+            ],
+            [
+              "0.4000",
+              "2000.00"
+            ],
+            [
+              "0.4100",
+              "10000.00"
+            ],
+            [
+              "0.4200",
+              "836.00"
+            ],
+            [
+              "0.4300",
+              "123.00"
+            ],
+            [
+              "0.4400",
+              "144.00"
+            ],
+            [
+              "0.4500",
+              "222.19"
+            ],
+            [
+              "0.4600",
+              "278.03"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:33:09.873Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "49373.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "138.00"
+            ],
+            [
+              "0.0500",
+              "46.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "39.00"
+            ],
+            [
+              "0.1200",
+              "2038.00"
+            ],
+            [
+              "0.1400",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "10.00"
+            ],
+            [
+              "0.1700",
+              "26.00"
+            ],
+            [
+              "0.1800",
+              "1.00"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "2000.00"
+            ],
+            [
+              "0.2100",
+              "2404.00"
+            ],
+            [
+              "0.2400",
+              "1.00"
+            ],
+            [
+              "0.2800",
+              "2008.00"
+            ],
+            [
+              "0.3000",
+              "100.00"
+            ],
+            [
+              "0.3100",
+              "33.00"
+            ],
+            [
+              "0.3200",
+              "100.00"
+            ],
+            [
+              "0.3400",
+              "50.00"
+            ],
+            [
+              "0.3600",
+              "30.00"
+            ],
+            [
+              "0.3800",
+              "20.00"
+            ],
+            [
+              "0.4000",
+              "2000.00"
+            ],
+            [
+              "0.4100",
+              "34.00"
+            ],
+            [
+              "0.4400",
+              "2000.00"
+            ],
+            [
+              "0.4500",
+              "10500.00"
+            ],
+            [
+              "0.4600",
+              "874.00"
+            ],
+            [
+              "0.4800",
+              "100.00"
+            ],
+            [
+              "0.4900",
+              "271.00"
+            ],
+            [
+              "0.5000",
+              "129.00"
+            ],
+            [
+              "0.5100",
+              "694.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "49363.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "138.00"
+            ],
+            [
+              "0.0500",
+              "86.97"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "38.00"
+            ],
+            [
+              "0.1700",
+              "2368.00"
+            ],
+            [
+              "0.2400",
+              "2000.00"
+            ],
+            [
+              "0.2500",
+              "26.00"
+            ],
+            [
+              "0.2600",
+              "4.00"
+            ],
+            [
+              "0.3000",
+              "130.00"
+            ],
+            [
+              "0.3200",
+              "2000.00"
+            ],
+            [
+              "0.3300",
+              "30.00"
+            ],
+            [
+              "0.3400",
+              "50.00"
+            ],
+            [
+              "0.3600",
+              "2000.00"
+            ],
+            [
+              "0.3700",
+              "74.00"
+            ],
+            [
+              "0.3800",
+              "20.00"
+            ],
+            [
+              "0.4000",
+              "2000.00"
+            ],
+            [
+              "0.4100",
+              "10000.00"
+            ],
+            [
+              "0.4200",
+              "836.00"
+            ],
+            [
+              "0.4300",
+              "123.00"
+            ],
+            [
+              "0.4400",
+              "244.00"
+            ],
+            [
+              "0.4500",
+              "222.19"
+            ],
+            [
+              "0.4600",
+              "278.03"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-09-21T23:00:00Z",
+    "created_time": "2026-09-16T07:03:24.318845Z",
+    "custom_strike": {
+      "football_team": "0d1df751-249f-4240-8bb9-c4011b4ed780"
+    },
+    "early_close_condition": "This market will close and expire after the event occurs.",
+    "event_ticker": "KXNCAAFSPREAD-26SEP19YSUSDST",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-09-20T02:00:00Z",
+    "expiration_time": "2026-09-21T23:00:00Z",
+    "expiration_value": "",
+    "floor_strike": 10.5,
+    "last_price_dollars": "0.4600",
+    "latest_expiration_time": "2026-09-21T23:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "0.5400",
+    "no_bid_dollars": "0.5100",
+    "no_sub_title": "South Dakota St. wins by over 10.5 points",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-20T02:00:00Z",
+    "open_interest_fp": "1272.03",
+    "open_time": "2026-09-16T07:06:00Z",
+    "previous_price_dollars": "0.4700",
+    "previous_yes_ask_dollars": "0.5000",
+    "previous_yes_bid_dollars": "0.4800",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If South Dakota St. wins by more than 10.5 points in the Youngstown St. vs South Dakota St. college football game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
+    "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_timer_seconds": 180,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNCAAFSPREAD-26SEP19YSUSDST-SDST11",
+    "title": "South Dakota St. wins by over 10.5 points",
+    "updated_time": "2026-09-16T07:06:00.137063Z",
+    "volume_24h_fp": "420.58",
+    "volume_fp": "1477.24",
+    "yes_ask_dollars": "0.4900",
+    "yes_ask_size_fp": "694.00",
+    "yes_bid_dollars": "0.4600",
+    "yes_bid_size_fp": "278.03",
+    "yes_sub_title": "South Dakota St. wins by over 10.5 points"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11",
+  "market_captured_at": "2026-09-19T15:33:09.240Z",
+  "status": "active",
+  "last_ingested_at": "2026-09-19T15:33:09.857Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/candlesticks?start_ts=1789790401&end_ts=1789831989&period_interval=1440"
+}

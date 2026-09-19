@@ -1,0 +1,797 @@
+{
+  "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+  "series_ticker": "KXNCAAFGAME",
+  "period_interval": 1440,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789272000,
+      "open_interest_fp": "286.79",
+      "price": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.8500",
+        "mean_dollars": "0.9024",
+        "open_dollars": "0.9300"
+      },
+      "volume_fp": "286.79",
+      "yes_ask": {
+        "close_dollars": "0.9200",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.8500",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5700",
+        "high_dollars": "0.5700",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1789358400,
+      "open_interest_fp": "1889.80",
+      "price": {
+        "close_dollars": "0.9500",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.8800",
+        "mean_dollars": "0.9429",
+        "open_dollars": "0.9200",
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "1604.17",
+      "yes_ask": {
+        "close_dollars": "0.9600",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.8800",
+        "open_dollars": "0.9200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.0900",
+        "open_dollars": "0.5700"
+      }
+    },
+    {
+      "end_period_ts": 1789444800,
+      "open_interest_fp": "1932.16",
+      "price": {
+        "close_dollars": "0.9500",
+        "high_dollars": "0.9500",
+        "low_dollars": "0.9200",
+        "mean_dollars": "0.9425",
+        "open_dollars": "0.9400",
+        "previous_dollars": "0.9500"
+      },
+      "volume_fp": "46.36",
+      "yes_ask": {
+        "close_dollars": "0.9500",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.9300",
+        "open_dollars": "0.9600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9500",
+        "low_dollars": "0.8900",
+        "open_dollars": "0.9000"
+      }
+    },
+    {
+      "end_period_ts": 1789531200,
+      "open_interest_fp": "3089.13",
+      "price": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.4500",
+        "mean_dollars": "0.9410",
+        "open_dollars": "0.9500",
+        "previous_dollars": "0.9500"
+      },
+      "volume_fp": "1668.73",
+      "yes_ask": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.8800",
+        "open_dollars": "0.9500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8400",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.3500",
+        "open_dollars": "0.9400"
+      }
+    },
+    {
+      "end_period_ts": 1789617600,
+      "open_interest_fp": "3587.47",
+      "price": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.8100",
+        "mean_dollars": "0.9124",
+        "open_dollars": "0.9000",
+        "previous_dollars": "0.9000"
+      },
+      "volume_fp": "539.71",
+      "yes_ask": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.8200",
+        "open_dollars": "0.9000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.4200",
+        "open_dollars": "0.8400"
+      }
+    },
+    {
+      "end_period_ts": 1789704000,
+      "open_interest_fp": "3609.28",
+      "price": {
+        "close_dollars": "0.9500",
+        "high_dollars": "0.9500",
+        "low_dollars": "0.9300",
+        "mean_dollars": "0.9351",
+        "open_dollars": "0.9300",
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "106.88",
+      "yes_ask": {
+        "close_dollars": "0.9500",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.9400",
+        "open_dollars": "0.9400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.9300",
+        "open_dollars": "0.9300"
+      }
+    },
+    {
+      "end_period_ts": 1789790400,
+      "open_interest_fp": "3666.04",
+      "price": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9600",
+        "mean_dollars": "0.9637",
+        "open_dollars": "0.9600",
+        "previous_dollars": "0.9500"
+      },
+      "volume_fp": "124.84",
+      "yes_ask": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9500",
+        "open_dollars": "0.9500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9600",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.9400",
+        "open_dollars": "0.9400"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-19T14:57:15.952Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "794616.51"
+            ],
+            [
+              "0.0200",
+              "24476.00"
+            ],
+            [
+              "0.0300",
+              "517.68"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2097444.00"
+            ],
+            [
+              "0.0200",
+              "2558.00"
+            ],
+            [
+              "0.0300",
+              "170596.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "163463.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "219009.00"
+            ],
+            [
+              "0.1500",
+              "100410.00"
+            ],
+            [
+              "0.1700",
+              "19168.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2100",
+              "50946.00"
+            ],
+            [
+              "0.2200",
+              "18404.00"
+            ],
+            [
+              "0.2600",
+              "33401.00"
+            ],
+            [
+              "0.2900",
+              "24027.00"
+            ],
+            [
+              "0.3200",
+              "38748.00"
+            ],
+            [
+              "0.3400",
+              "19723.00"
+            ],
+            [
+              "0.3500",
+              "0.01"
+            ],
+            [
+              "0.3800",
+              "18309.00"
+            ],
+            [
+              "0.4100",
+              "16.00"
+            ],
+            [
+              "0.4200",
+              "14288.00"
+            ],
+            [
+              "0.4600",
+              "10340.00"
+            ],
+            [
+              "0.5000",
+              "7776.00"
+            ],
+            [
+              "0.5400",
+              "23473.00"
+            ],
+            [
+              "0.5800",
+              "5049.00"
+            ],
+            [
+              "0.6200",
+              "5041.00"
+            ],
+            [
+              "0.6300",
+              "2036.00"
+            ],
+            [
+              "0.6600",
+              "20032.00"
+            ],
+            [
+              "0.7000",
+              "3515.00"
+            ],
+            [
+              "0.7400",
+              "14170.00"
+            ],
+            [
+              "0.7700",
+              "2173.00"
+            ],
+            [
+              "0.8100",
+              "12486.00"
+            ],
+            [
+              "0.8200",
+              "1127.00"
+            ],
+            [
+              "0.8400",
+              "150.00"
+            ],
+            [
+              "0.8700",
+              "20026.00"
+            ],
+            [
+              "0.8800",
+              "493.00"
+            ],
+            [
+              "0.8900",
+              "312.00"
+            ],
+            [
+              "0.9000",
+              "29.00"
+            ],
+            [
+              "0.9200",
+              "125.00"
+            ],
+            [
+              "0.9300",
+              "9.48"
+            ],
+            [
+              "0.9500",
+              "1481.10"
+            ],
+            [
+              "0.9600",
+              "9.77"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:29:07.772Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "796484.51"
+            ],
+            [
+              "0.0200",
+              "26402.00"
+            ],
+            [
+              "0.0300",
+              "3902.77"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2097444.00"
+            ],
+            [
+              "0.0200",
+              "2558.00"
+            ],
+            [
+              "0.0300",
+              "170596.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "163463.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "219009.00"
+            ],
+            [
+              "0.1500",
+              "100410.00"
+            ],
+            [
+              "0.1700",
+              "19168.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2100",
+              "50946.00"
+            ],
+            [
+              "0.2200",
+              "18404.00"
+            ],
+            [
+              "0.2600",
+              "33401.00"
+            ],
+            [
+              "0.2900",
+              "24027.00"
+            ],
+            [
+              "0.3200",
+              "38748.00"
+            ],
+            [
+              "0.3400",
+              "19723.00"
+            ],
+            [
+              "0.3500",
+              "0.01"
+            ],
+            [
+              "0.3800",
+              "18309.00"
+            ],
+            [
+              "0.4100",
+              "16.00"
+            ],
+            [
+              "0.4200",
+              "14288.00"
+            ],
+            [
+              "0.4600",
+              "10340.00"
+            ],
+            [
+              "0.5000",
+              "7776.00"
+            ],
+            [
+              "0.5400",
+              "23473.00"
+            ],
+            [
+              "0.5800",
+              "5049.00"
+            ],
+            [
+              "0.6200",
+              "5041.00"
+            ],
+            [
+              "0.6300",
+              "2018.00"
+            ],
+            [
+              "0.6600",
+              "20032.00"
+            ],
+            [
+              "0.7000",
+              "3515.00"
+            ],
+            [
+              "0.7400",
+              "14170.00"
+            ],
+            [
+              "0.7700",
+              "2173.00"
+            ],
+            [
+              "0.8100",
+              "12486.00"
+            ],
+            [
+              "0.8200",
+              "1127.00"
+            ],
+            [
+              "0.8400",
+              "150.00"
+            ],
+            [
+              "0.8700",
+              "20026.00"
+            ],
+            [
+              "0.8800",
+              "493.00"
+            ],
+            [
+              "0.8900",
+              "312.00"
+            ],
+            [
+              "0.9000",
+              "29.00"
+            ],
+            [
+              "0.9200",
+              "2200.00"
+            ],
+            [
+              "0.9300",
+              "10.32"
+            ],
+            [
+              "0.9500",
+              "1306.66"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:32:59.863Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "796484.51"
+            ],
+            [
+              "0.0200",
+              "26402.00"
+            ],
+            [
+              "0.0300",
+              "389.77"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2097444.00"
+            ],
+            [
+              "0.0200",
+              "2558.00"
+            ],
+            [
+              "0.0300",
+              "170596.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "163463.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "219009.00"
+            ],
+            [
+              "0.1500",
+              "100410.00"
+            ],
+            [
+              "0.1700",
+              "19168.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2100",
+              "50946.00"
+            ],
+            [
+              "0.2200",
+              "18404.00"
+            ],
+            [
+              "0.2600",
+              "33401.00"
+            ],
+            [
+              "0.2900",
+              "24027.00"
+            ],
+            [
+              "0.3200",
+              "38748.00"
+            ],
+            [
+              "0.3400",
+              "19723.00"
+            ],
+            [
+              "0.3500",
+              "0.01"
+            ],
+            [
+              "0.3800",
+              "18309.00"
+            ],
+            [
+              "0.4100",
+              "16.00"
+            ],
+            [
+              "0.4200",
+              "14288.00"
+            ],
+            [
+              "0.4600",
+              "10340.00"
+            ],
+            [
+              "0.5000",
+              "7776.00"
+            ],
+            [
+              "0.5400",
+              "23473.00"
+            ],
+            [
+              "0.5800",
+              "5049.00"
+            ],
+            [
+              "0.6200",
+              "5041.00"
+            ],
+            [
+              "0.6300",
+              "2018.00"
+            ],
+            [
+              "0.6600",
+              "20032.00"
+            ],
+            [
+              "0.7000",
+              "3515.00"
+            ],
+            [
+              "0.7400",
+              "14170.00"
+            ],
+            [
+              "0.7700",
+              "2173.00"
+            ],
+            [
+              "0.8100",
+              "12486.00"
+            ],
+            [
+              "0.8200",
+              "1127.00"
+            ],
+            [
+              "0.8400",
+              "150.00"
+            ],
+            [
+              "0.8700",
+              "20026.00"
+            ],
+            [
+              "0.8800",
+              "493.00"
+            ],
+            [
+              "0.8900",
+              "312.00"
+            ],
+            [
+              "0.9000",
+              "29.00"
+            ],
+            [
+              "0.9200",
+              "2200.00"
+            ],
+            [
+              "0.9300",
+              "10.32"
+            ],
+            [
+              "0.9500",
+              "1306.66"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-09-28T17:00:00Z",
+    "created_time": "2026-09-12T19:04:04.91112Z",
+    "custom_strike": {
+      "football_team": "a5ebc6ee-e58f-4e9e-81ad-df210ea801af"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNCAAFGAME-26SEP26ILLOSU",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-09-26T20:00:00Z",
+    "expiration_time": "2026-09-28T17:00:00Z",
+    "expiration_value": "",
+    "last_price_dollars": "0.9500",
+    "latest_expiration_time": "2026-09-28T17:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "0.0500",
+    "no_bid_dollars": "0.0300",
+    "no_sub_title": "Ohio St.",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-26T20:00:00Z",
+    "open_interest_fp": "3706.35",
+    "open_time": "2026-09-12T19:07:00Z",
+    "previous_price_dollars": "0.9500",
+    "previous_yes_ask_dollars": "0.9600",
+    "previous_yes_bid_dollars": "0.9500",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Ohio St. wins the Illinois vs Ohio St. college football game originally scheduled for Sep 26, 2026, then the market resolves to Yes.",
+    "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_timer_seconds": 90,
+    "status": "active",
+    "strike_type": "structured",
+    "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+    "title": "Ohio St. wins",
+    "updated_time": "2026-09-12T19:07:00.381467Z",
+    "volume_24h_fp": "341.69",
+    "volume_fp": "4594.33",
+    "yes_ask_dollars": "0.9700",
+    "yes_ask_size_fp": "389.77",
+    "yes_bid_dollars": "0.9500",
+    "yes_bid_size_fp": "1306.66",
+    "yes_sub_title": "Ohio St."
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU",
+  "market_captured_at": "2026-09-19T15:32:59.232Z",
+  "status": "active",
+  "last_ingested_at": "2026-09-19T15:32:59.848Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/candlesticks?start_ts=1789790401&end_ts=1789831979&period_interval=1440"
+}

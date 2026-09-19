@@ -1,0 +1,127 @@
+{
+  "ticker": "KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2",
+  "series_ticker": "KXMLBHIT",
+  "period_interval": 1440,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789790400,
+      "open_interest_fp": "7631.51",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.3200",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.2555",
+        "open_dollars": "0.2900"
+      },
+      "volume_fp": "8260.21",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.3000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-19T14:56:10.541Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:27:50.086Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:31:42.169Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-09-19T01:35:07Z",
+    "created_time": "2026-09-18T05:02:36.58491Z",
+    "custom_strike": {
+      "baseball_player": "126fb252-6708-4f66-af4e-6e1f22ac9ba9",
+      "baseball_team": "2101af91-b334-4db1-b859-0cc50c1e2d4a"
+    },
+    "early_close_condition": "This market will close and expire after the event occurs.",
+    "event_ticker": "KXMLBHIT-26SEP181840CHCCIN",
+    "exchange_index": 3,
+    "expected_expiration_time": "2026-09-19T01:40:00Z",
+    "expiration_time": "2026-09-21T22:40:00Z",
+    "expiration_value": "Pete Crow-Armstrong: 0 hits",
+    "floor_strike": 1.5,
+    "last_price_dollars": "0.0300",
+    "latest_expiration_time": "2026-09-21T22:40:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
+    "no_sub_title": "Pete Crow-Armstrong: 2+",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-19T01:40:00Z",
+    "open_interest_fp": "7631.51",
+    "open_time": "2026-09-18T05:10:00Z",
+    "previous_price_dollars": "0.2900",
+    "previous_yes_ask_dollars": "0.3000",
+    "previous_yes_bid_dollars": "0.2800",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "primary_participant_key": "baseball_player",
+    "result": "no",
+    "rules_primary": "If Pete Crow-Armstrong records 2+ hits in the Chicago C vs Cincinnati professional baseball game originally scheduled for Sep 18, 2026 at 6:40 PM EDT, then the market resolves to Yes.",
+    "rules_secondary": "Player Participation & Settlement Criteria\nIf Pete Crow-Armstrong is scratched or not included in the starting lineup, the market will resolve to the fair market price.\nIf Pete Crow-Armstrong starts the game but does not record a plate appearance, the market will resolve to the fair market price.\nIf Pete Crow-Armstrong is not in the starting lineup but later enters the game, the market will resolve to the fair market price, pinch hit at bats will not count towards the market.\nIf Pete Crow-Armstrong is in the starting lineup and records at least one plate appearance the market will settle based on hits recorded.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_timer_seconds": 300,
+    "settlement_ts": "2026-09-19T01:41:14.656843Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
+    "strike_type": "greater",
+    "ticker": "KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2",
+    "title": "Pete Crow-Armstrong: 2+ hits?",
+    "updated_time": "2026-09-19T01:41:14.903521Z",
+    "volume_24h_fp": "6378.14",
+    "volume_fp": "8260.21",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
+    "yes_sub_title": "Pete Crow-Armstrong: 2+"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2",
+  "market_captured_at": "2026-09-19T15:31:41.530Z",
+  "result": "no",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-19T15:31:42.153Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2/candlesticks?start_ts=1789790401&end_ts=1789831901&period_interval=1440"
+}

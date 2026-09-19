@@ -1,0 +1,291 @@
+{
+  "ticker": "KXNHLTOTAL-26SEP20SEACGY-2",
+  "series_ticker": "KXNHLTOTAL",
+  "period_interval": 1440,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789704000,
+      "open_interest_fp": "0.00",
+      "price": {},
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9000",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1789790400,
+      "open_interest_fp": "16.66",
+      "price": {
+        "close_dollars": "0.8800",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.8800",
+        "mean_dollars": "0.8932",
+        "open_dollars": "0.9000"
+      },
+      "volume_fp": "16.66",
+      "yes_ask": {
+        "close_dollars": "0.8900",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.8600",
+        "open_dollars": "0.9000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-19T14:58:14.001Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "628.00"
+            ],
+            [
+              "0.0200",
+              "5074.00"
+            ],
+            [
+              "0.0400",
+              "200.00"
+            ],
+            [
+              "0.1000",
+              "38.97"
+            ],
+            [
+              "0.1100",
+              "20.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "780.00"
+            ],
+            [
+              "0.0300",
+              "3363.00"
+            ],
+            [
+              "0.0600",
+              "5000.00"
+            ],
+            [
+              "0.0900",
+              "200.00"
+            ],
+            [
+              "0.1500",
+              "11.03"
+            ],
+            [
+              "0.1900",
+              "5.63"
+            ],
+            [
+              "0.2000",
+              "29.55"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:30:16.708Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "628.00"
+            ],
+            [
+              "0.0200",
+              "2574.00"
+            ],
+            [
+              "0.1000",
+              "38.97"
+            ],
+            [
+              "0.1200",
+              "30.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "780.00"
+            ],
+            [
+              "0.0300",
+              "3363.00"
+            ],
+            [
+              "0.0700",
+              "2500.00"
+            ],
+            [
+              "0.1500",
+              "11.03"
+            ],
+            [
+              "0.1900",
+              "5.63"
+            ],
+            [
+              "0.2000",
+              "9.55"
+            ],
+            [
+              "0.2100",
+              "10.00"
+            ],
+            [
+              "0.2200",
+              "20.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:34:08.734Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "628.00"
+            ],
+            [
+              "0.0200",
+              "2574.00"
+            ],
+            [
+              "0.0300",
+              "2500.00"
+            ],
+            [
+              "0.1000",
+              "38.97"
+            ],
+            [
+              "0.1200",
+              "10.00"
+            ],
+            [
+              "0.1300",
+              "20.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "780.00"
+            ],
+            [
+              "0.0300",
+              "3363.00"
+            ],
+            [
+              "0.0700",
+              "5000.00"
+            ],
+            [
+              "0.1500",
+              "11.03"
+            ],
+            [
+              "0.2100",
+              "10.00"
+            ],
+            [
+              "0.2300",
+              "9.60"
+            ],
+            [
+              "0.2400",
+              "25.63"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-09-23T00:00:00Z",
+    "created_time": "2026-09-17T16:00:38.902336Z",
+    "early_close_condition": "This market will close and expire early if the event occurs.",
+    "event_ticker": "KXNHLTOTAL-26SEP20SEACGY",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-09-21T03:00:00Z",
+    "expiration_time": "2026-09-23T00:00:00Z",
+    "expiration_value": "",
+    "floor_strike": 1.5,
+    "last_price_dollars": "0.8800",
+    "latest_expiration_time": "2026-09-23T00:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "0.7600",
+    "no_bid_dollars": "0.1300",
+    "no_sub_title": "Over 1.5 goals scored",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-21T03:00:00Z",
+    "open_interest_fp": "16.66",
+    "open_time": "2026-09-17T16:05:00Z",
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask_dollars": "0.9000",
+    "previous_yes_bid_dollars": "0.0300",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If the teams collectively score more than 1.5 goals in the Seattle vs Calgary NHL game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
+    "rules_secondary": "Goals scored during regulation and overtime count as normal. If the game is decided by a shootout, the shootout result will be recorded as one goal awarded to the winning team.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+    "settlement_timer_seconds": 45,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNHLTOTAL-26SEP20SEACGY-2",
+    "title": "Full Game: Over 1.5 goals scored",
+    "updated_time": "2026-09-17T16:10:58.751854Z",
+    "volume_24h_fp": "16.66",
+    "volume_fp": "16.66",
+    "yes_ask_dollars": "0.8700",
+    "yes_ask_size_fp": "20.00",
+    "yes_bid_dollars": "0.2400",
+    "yes_bid_size_fp": "25.63",
+    "yes_sub_title": "Over 1.5 goals scored"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2",
+  "market_captured_at": "2026-09-19T15:34:08.102Z",
+  "status": "active",
+  "last_ingested_at": "2026-09-19T15:34:08.719Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP20SEACGY-2/candlesticks?start_ts=1789790401&end_ts=1789832048&period_interval=1440"
+}

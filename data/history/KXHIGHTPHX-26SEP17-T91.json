@@ -1,0 +1,172 @@
+{
+  "ticker": "KXHIGHTPHX-26SEP17-T91",
+  "series_ticker": "KXHIGHTPHX",
+  "period_interval": 1440,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789617600,
+      "open_interest_fp": "1990.09",
+      "price": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0697",
+        "open_dollars": "0.0900"
+      },
+      "volume_fp": "2660.79",
+      "yes_ask": {
+        "close_dollars": "0.1100",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0200",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1789704000,
+      "open_interest_fp": "10927.41",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.4995",
+        "open_dollars": "0.0900",
+        "previous_dollars": "0.0800"
+      },
+      "volume_fp": "25297.57",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.1100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0700"
+      }
+    },
+    {
+      "end_period_ts": 1789790400,
+      "open_interest_fp": "12143.14",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "mean_dollars": "0.9900",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "1660.94",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.9900"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-19T14:55:45.253Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP17-T91/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:27:19.970Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP17-T91/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:31:12.084Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP17-T91/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "cap_strike": 91,
+    "close_time": "2026-09-18T07:00:00Z",
+    "created_time": "2026-09-16T09:35:33.965306Z",
+    "early_close_condition": "The Last Trading Time will be 11:59 PM local time on September 17, 2026 regardless of any data releases or events occurring. Expiration will occur on the sooner of the first 7:00 or 8:00\nAM ET following the release of the data for September 17, 2026, or one week after September 17, 2026.",
+    "event_ticker": "KXHIGHTPHX-26SEP17",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-09-18T19:00:00Z",
+    "expiration_time": "2026-09-24T14:00:00Z",
+    "expiration_value": "90.00",
+    "last_price_dollars": "0.9900",
+    "latest_expiration_time": "2026-09-24T14:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
+    "no_sub_title": "90° or below",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-18T14:00:00Z",
+    "open_interest_fp": "12143.14",
+    "open_time": "2026-09-16T14:00:00Z",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "yes",
+    "rules_primary": "If the maximum temperature recorded at Phoenix (CLIPHX) for Sep 17, 2026, is less than 91° fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+    "settlement_timer_seconds": 300,
+    "settlement_ts": "2026-09-18T14:11:34.512386Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
+    "strike_type": "less",
+    "ticker": "KXHIGHTPHX-26SEP17-T91",
+    "title": "Will the maximum temperature be <91° on Sep 17, 2026?",
+    "updated_time": "2026-09-18T14:11:34.637894Z",
+    "volume_24h_fp": "0.00",
+    "volume_fp": "29619.30",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
+    "yes_sub_title": "90° or below"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP17-T91",
+  "market_captured_at": "2026-09-19T15:31:11.450Z",
+  "result": "yes",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-19T15:31:12.068Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP17-T91/candlesticks?start_ts=1789790401&end_ts=1789831871&period_interval=1440"
+}

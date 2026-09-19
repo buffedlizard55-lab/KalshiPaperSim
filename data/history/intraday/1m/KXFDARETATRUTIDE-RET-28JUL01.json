@@ -1,0 +1,130 @@
+{
+  "ticker": "KXFDARETATRUTIDE-RET-28JUL01",
+  "series_ticker": "KXFDARETATRUTIDE",
+  "period_interval": 1,
+  "source": "live_api",
+  "candlesticks": [],
+  "books": [
+    {
+      "captured_at": "2026-09-19T15:09:13.128Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JUL01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0600",
+              "5.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0500",
+              "200.00"
+            ],
+            [
+              "0.2300",
+              "12.00"
+            ],
+            [
+              "0.8800",
+              "5.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:18:32.392Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JUL01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0600",
+              "5.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0500",
+              "200.00"
+            ],
+            [
+              "0.2300",
+              "12.00"
+            ],
+            [
+              "0.8800",
+              "5.00"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2028-07-01T03:59:00Z",
+    "created_time": "2026-05-14T00:15:41.856157Z",
+    "custom_strike": {
+      "Before": "Jul 1, 2028"
+    },
+    "early_close_condition": "This market will close and expire early if the event occurs.",
+    "event_ticker": "KXFDARETATRUTIDE-RET",
+    "exchange_index": 0,
+    "expected_expiration_time": "2027-01-01T15:00:00Z",
+    "expiration_time": "2028-07-08T14:00:00Z",
+    "expiration_value": "",
+    "last_price_dollars": "0.8700",
+    "latest_expiration_time": "2028-07-08T14:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "0.1200",
+    "no_bid_dollars": "0.0600",
+    "no_sub_title": "Before Jul 1, 2028",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2028-07-01T14:00:00Z",
+    "open_interest_fp": "14.15",
+    "open_time": "2026-05-14T02:00:00Z",
+    "previous_price_dollars": "0.8700",
+    "previous_yes_ask_dollars": "0.9400",
+    "previous_yes_bid_dollars": "0.8800",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If the FDA approves retatrutide (LY3437943) for marketing before Jul 1, 2028, then the market resolves to Yes.",
+    "rules_secondary": "An approval is defined as:\n\nFor new drugs: FDA issuance of an approval letter for a New Drug Application (NDA) or Biologics License Application (BLA)\nFor already-marketed drugs seeking new indications: FDA approval of a supplemental NDA (sNDA) or supplemental BLA (sBLA) for the specific indication referenced\nFor generic drugs: FDA approval of an Abbreviated New Drug Application (ANDA)\nFor biosimilars: FDA approval of a 351(k) application\n\nThe following constitute approvals that trigger the Payout Criterion:\n\nStandard approval (traditional approval based on clinical benefit)\nAccelerated approval (based on surrogate endpoints)\nApproval with Risk Evaluation and Mitigation Strategy (REMS)\nApproval with restricted distribution or indication limitations, except compassionate use/expanded access programs\n\nThe following do NOT constitute approvals:\n\nComplete Response Letters (CRLs) indicating the application cannot be approved in its current form\nApprovable letters that require additional actions before approval\nTentative approvals pending patent or exclusivity expiration\nFDA requests for additional information or studies\nExtension of Prescription Drug User Fee Amendments dates\nApproval for compassionate use or expanded access programs only\nEmergency Use Authorization (EUA) without full approval\nApproval only for export or for use outside the United States\n\nIf the FDA issues a Complete Response Letter before Jul 1, 2028, the market will resolve to No unless the FDA subsequently approves retatrutide (LY3437943) after addressing the CRL concerns and before Jul 1, 2028.\n\nIf the FDA convenes an Advisory Committee that votes against approval but the FDA approves retatrutide (LY3437943) anyway before Jul 1, 2028, the market will resolve to Yes.\n\nIf retatrutide (LY3437943) receives accelerated approval that is later withdrawn before Jul 1, 2028, the market will resolve based on whether the initial accelerated approval occurred after Issuance (Yes), regardless of the subsequent withdrawal.\n\nIf the drug sponsor withdraws the application before FDA action and before Jul 1, 2028, the market will resolve to No immediately.",
+    "settlement_timer_seconds": 1800,
+    "status": "active",
+    "strike_type": "custom",
+    "ticker": "KXFDARETATRUTIDE-RET-28JUL01",
+    "title": "When will the FDA approve retatrutide (LY3437943)?",
+    "updated_time": "2026-07-23T01:11:17.316405Z",
+    "volume_24h_fp": "0.00",
+    "volume_fp": "44.41",
+    "yes_ask_dollars": "0.9400",
+    "yes_ask_size_fp": "5.00",
+    "yes_bid_dollars": "0.8800",
+    "yes_bid_size_fp": "5.00",
+    "yes_sub_title": "Before Jul 1, 2028"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JUL01",
+  "market_captured_at": "2026-09-19T15:18:31.434Z",
+  "status": "active",
+  "last_ingested_at": "2026-09-19T15:18:32.375Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-28JUL01/candlesticks?start_ts=1789744711&end_ts=1789831110&period_interval=1"
+}

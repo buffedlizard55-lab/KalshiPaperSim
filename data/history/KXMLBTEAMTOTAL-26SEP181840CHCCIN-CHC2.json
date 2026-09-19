@@ -1,0 +1,143 @@
+{
+  "ticker": "KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2",
+  "series_ticker": "KXMLBTEAMTOTAL",
+  "period_interval": 1440,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789704000,
+      "open_interest_fp": "0.00",
+      "price": {},
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.8800",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.8800",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8400",
+        "high_dollars": "0.8400",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
+    },
+    {
+      "end_period_ts": 1789790400,
+      "open_interest_fp": "3782.53",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.8200",
+        "mean_dollars": "0.8811",
+        "open_dollars": "0.8600"
+      },
+      "volume_fp": "4804.90",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.8100",
+        "open_dollars": "0.8800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.8400"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-19T14:56:24.235Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:28:06.366Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-19T15:31:58.456Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-09-19T01:30:31Z",
+    "created_time": "2026-09-18T03:10:48.684073Z",
+    "custom_strike": {
+      "baseball_team": "2101af91-b334-4db1-b859-0cc50c1e2d4a"
+    },
+    "early_close_condition": "This market will close and expire after the event occurs.",
+    "event_ticker": "KXMLBTEAMTOTAL-26SEP181840CHCCIN",
+    "exchange_index": 3,
+    "expected_expiration_time": "2026-09-19T01:40:00Z",
+    "expiration_time": "2026-09-21T22:40:00Z",
+    "expiration_value": "Home: 6, Away: 4",
+    "floor_strike": 1.5,
+    "last_price_dollars": "0.9900",
+    "latest_expiration_time": "2026-09-21T22:40:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
+    "no_sub_title": "Chicago C over 1.5 runs scored",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-09-19T01:40:00Z",
+    "open_interest_fp": "3782.53",
+    "open_time": "2026-09-18T03:20:00Z",
+    "previous_price_dollars": "0.8600",
+    "previous_yes_ask_dollars": "0.8700",
+    "previous_yes_bid_dollars": "0.8500",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "yes",
+    "rules_primary": "If Chicago C scores 2+ runs in the Chicago C vs Cincinnati professional baseball game originally scheduled for Sep 18, 2026 at 6:40 PM EDT, then the market resolves to Yes.",
+    "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_timer_seconds": 300,
+    "settlement_ts": "2026-09-19T01:36:34.531989Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
+    "strike_type": "greater",
+    "ticker": "KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2",
+    "title": "Will Chicago C score over 1.5 runs?",
+    "updated_time": "2026-09-19T01:36:34.904024Z",
+    "volume_24h_fp": "4802.90",
+    "volume_fp": "4804.90",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
+    "yes_sub_title": "Chicago C over 1.5 runs scored"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2",
+  "market_captured_at": "2026-09-19T15:31:57.822Z",
+  "result": "yes",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-19T15:31:58.440Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2/candlesticks?start_ts=1789790401&end_ts=1789831918&period_interval=1440"
+}
