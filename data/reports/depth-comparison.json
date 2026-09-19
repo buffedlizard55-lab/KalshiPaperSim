@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T19:27:33.007Z",
+  "generatedAt": "2026-09-19T19:43:49.832Z",
   "why": "Depth behind a candlestick is not published, so a replay must either model it or use a real captured ladder. This report runs the SAME roster over the SAME real bars twice and reports both, because the difference is a measure of how much the depth assumption matters.",
   "capturedDepthSource": {
     "marketsWithCapturedLadder": 30,
@@ -602,7 +602,29 @@
       },
       {
         "rank": null,
+        "username": "FDAEdge_DrugsFDA",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
         "username": "GoldBracket_EarlyLeader",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
+        "username": "HighProb_Scalp8095",
         "returnPct": 0,
         "finalEquity": 100000,
         "totalTrades": 0,
@@ -916,7 +938,29 @@
       },
       {
         "rank": null,
+        "username": "FDAEdge_DrugsFDA",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
         "username": "GoldBracket_EarlyLeader",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
+        "username": "HighProb_Scalp8095",
         "returnPct": 0,
         "finalEquity": 100000,
         "totalTrades": 0,
@@ -1148,7 +1192,23 @@
       "capturedTrades": 0
     },
     {
+      "username": "FDAEdge_DrugsFDA",
+      "modelledPct": 0,
+      "capturedPct": 0,
+      "deltaPct": 0,
+      "modelledTrades": 0,
+      "capturedTrades": 0
+    },
+    {
       "username": "GoldBracket_EarlyLeader",
+      "modelledPct": 0,
+      "capturedPct": 0,
+      "deltaPct": 0,
+      "modelledTrades": 0,
+      "capturedTrades": 0
+    },
+    {
+      "username": "HighProb_Scalp8095",
       "modelledPct": 0,
       "capturedPct": 0,
       "deltaPct": 0,

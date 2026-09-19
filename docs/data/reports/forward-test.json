@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-19T19:27:00.709Z",
+  "generatedAt": "2026-09-19T19:43:18.754Z",
   "method": {
-    "splitTs": 1789689600,
-    "forwardStart": "2026-09-18T00:00:00.000Z",
-    "strictForwardBars": 2,
-    "strictForwardStart": "2026-09-18T04:00:00.000Z",
+    "splitTs": 1789776000,
+    "forwardStart": "2026-09-19T00:00:00.000Z",
+    "strictForwardBars": 1,
+    "strictForwardStart": "2026-09-19T04:00:00.000Z",
     "strictForwardEnd": "2026-09-19T04:00:00.000Z",
     "heldOutTs": 1782532800,
     "heldOutStart": "2026-06-27T04:00:00.000Z",
@@ -12,7 +12,7 @@
     "windowEnd": "2026-09-19T04:00:00.000Z",
     "rule": "STRICT FORWARD = bars strictly after max(designedAt), replayed on a fresh account forbidden to trade before that timestamp. HELD-OUT = a later real window, labelled as a robustness check because the designs were authored with knowledge of it.",
     "minMeaningfulForwardBars": 20,
-    "strictForwardNote": "The strict forward window holds 2 real bar(s) — below the 20-bar floor this project uses for per-market statistics, so treat those numbers as directional only. It grows by one real bar per daily ingest run.",
+    "strictForwardNote": "The strict forward window holds 1 real bar(s) — below the 20-bar floor this project uses for per-market statistics, so treat those numbers as directional only. It grows by one real bar per daily ingest run.",
     "emptyForwardExplanation": null,
     "depthMode": "captured",
     "feeSchedule": "Kalshi quadratic schedule, effective 2026-07-07 (https://kalshi.com/docs/kalshi-fee-schedule.pdf)",
@@ -21,12 +21,12 @@
     "limitation": "Neither measurement is live trading. Both replay real stored bars; the strict forward window simply contains bars that did not exist when the design was written."
   },
   "totals": {
-    "strategies": 29,
-    "strictForwardMeasured": 20,
+    "strategies": 30,
+    "strictForwardMeasured": 11,
     "heldOutMeasured": 27,
     "bestStrictForward": {
-      "username": "VolatilityArb_MM",
-      "returnPct": 0.69
+      "username": "ShockTiming_StopOut",
+      "returnPct": -0.02
     },
     "bestHeldOut": {
       "username": "MakerFlip_SpreadHarvest",
@@ -181,33 +181,33 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 84267.2,
-        "returnPct": -15.73
+        "endTs": 1789704000,
+        "equityAtSplit": 86065.93,
+        "returnPct": -13.93
       },
       "strictForward": {
-        "finalEquity": 98175.93,
-        "returnPct": -1.82,
-        "totalTrades": 55,
+        "finalEquity": 99687.14,
+        "returnPct": -0.31,
+        "totalTrades": 24,
         "winRate": 0,
-        "maxDrawdownPct": 1.82,
-        "feesPaid": 509.88,
-        "unfilledContracts": 3016.16,
-        "suppressedActions": 3367,
+        "maxDrawdownPct": 0.31,
+        "feesPaid": 166.45,
+        "unfilledContracts": 4342.38,
+        "suppressedActions": 3398,
         "depthMix": {
-          "contractsOnCapturedDepth": 7019.38,
-          "contractsOnModelledDepth": 75520.32,
-          "totalFilledContracts": 82539.7,
-          "capturedPct": 8.5,
+          "contractsOnCapturedDepth": 3368.94,
+          "contractsOnModelledDepth": 26983.33,
+          "totalFilledContracts": 30352.27,
+          "capturedPct": 11.1,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 83240.58,
@@ -380,33 +380,33 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 65515.77,
-        "returnPct": -34.48
+        "endTs": 1789704000,
+        "equityAtSplit": 65050.2,
+        "returnPct": -34.95
       },
       "strictForward": {
-        "finalEquity": 99722.99,
-        "returnPct": -0.28,
-        "totalTrades": 10,
+        "finalEquity": 99900.29,
+        "returnPct": -0.1,
+        "totalTrades": 5,
         "winRate": 0,
-        "maxDrawdownPct": 0.28,
-        "feesPaid": 114.28,
+        "maxDrawdownPct": 0.1,
+        "feesPaid": 54.49,
         "unfilledContracts": 0,
-        "suppressedActions": 841,
+        "suppressedActions": 846,
         "depthMix": {
-          "contractsOnCapturedDepth": 3166.41,
-          "contractsOnModelledDepth": 10200.99,
-          "totalFilledContracts": 13367.4,
-          "capturedPct": 23.69,
+          "contractsOnCapturedDepth": 1602.77,
+          "contractsOnModelledDepth": 6526.38,
+          "totalFilledContracts": 8129.15,
+          "capturedPct": 19.72,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 85213.33,
@@ -579,33 +579,33 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 93915.68,
-        "returnPct": -6.08
+        "endTs": 1789704000,
+        "equityAtSplit": 95357.43,
+        "returnPct": -4.64
       },
       "strictForward": {
-        "finalEquity": 99407.35,
-        "returnPct": -0.59,
-        "totalTrades": 68,
+        "finalEquity": 99774.67,
+        "returnPct": -0.23,
+        "totalTrades": 34,
         "winRate": 0,
-        "maxDrawdownPct": 0.63,
-        "feesPaid": 209.48,
+        "maxDrawdownPct": 0.23,
+        "feesPaid": 82.91,
         "unfilledContracts": 0,
-        "suppressedActions": 5625,
+        "suppressedActions": 5668,
         "depthMix": {
-          "contractsOnCapturedDepth": 6719.59,
-          "contractsOnModelledDepth": 49770.78,
-          "totalFilledContracts": 56490.37,
-          "capturedPct": 11.9,
+          "contractsOnCapturedDepth": 5523.36,
+          "contractsOnModelledDepth": 21872.95,
+          "totalFilledContracts": 27396.31,
+          "capturedPct": 20.16,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 81814.1,
@@ -777,32 +777,30 @@
         "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 100332.89,
-        "returnPct": 0.33
+        "endTs": 1789704000,
+        "equityAtSplit": 100189.7,
+        "returnPct": 0.19
       },
       "strictForward": {
-        "finalEquity": 100243.15,
-        "returnPct": 0.24,
-        "totalTrades": 1,
-        "winRate": 100,
-        "maxDrawdownPct": 0.1,
-        "feesPaid": 17.28,
-        "unfilledContracts": 5676.25,
-        "suppressedActions": 285,
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 292,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 5676.25,
-          "totalFilledContracts": 5676.25,
-          "capturedPct": 0,
-          "depthModels": [
-            "synthetic"
-          ]
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
         },
-        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 102767.46,
@@ -879,11 +877,11 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 268,
+        "points": 269,
         "startTs": 1766552400,
-        "endTs": 1789617600,
-        "equityAtSplit": 99540.62,
-        "returnPct": -0.46
+        "endTs": 1789704000,
+        "equityAtSplit": 99527.74,
+        "returnPct": -0.47
       },
       "strictForward": {
         "finalEquity": 100000,
@@ -902,7 +900,7 @@
           "depthModels": []
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 99798.72,
@@ -1074,33 +1072,30 @@
         "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 107217.66,
-        "returnPct": 7.22
+        "endTs": 1789704000,
+        "equityAtSplit": 107660.75,
+        "returnPct": 7.66
       },
       "strictForward": {
-        "finalEquity": 100693.16,
-        "returnPct": 0.69,
-        "totalTrades": 27,
-        "winRate": 100,
-        "maxDrawdownPct": 0.15,
-        "feesPaid": 1.02,
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 11778,
+        "suppressedActions": 11876,
         "depthMix": {
-          "contractsOnCapturedDepth": 7643.4,
-          "contractsOnModelledDepth": 87005.45,
-          "totalFilledContracts": 94648.85,
-          "capturedPct": 8.08,
-          "depthModels": [
-            "captured_orderbook_reanchored",
-            "synthetic"
-          ]
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
         },
-        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 100884.95,
@@ -1273,33 +1268,33 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 88539.99,
-        "returnPct": -11.46
+        "endTs": 1789704000,
+        "equityAtSplit": 88080.75,
+        "returnPct": -11.92
       },
       "strictForward": {
-        "finalEquity": 99546.19,
-        "returnPct": -0.45,
-        "totalTrades": 22,
+        "finalEquity": 99796.68,
+        "returnPct": -0.2,
+        "totalTrades": 10,
         "winRate": 100,
-        "maxDrawdownPct": 0.49,
-        "feesPaid": 322.86,
-        "unfilledContracts": 16352.5,
-        "suppressedActions": 695,
+        "maxDrawdownPct": 0.22,
+        "feesPaid": 116.27,
+        "unfilledContracts": 9342.38,
+        "suppressedActions": 707,
         "depthMix": {
-          "contractsOnCapturedDepth": 3773.86,
-          "contractsOnModelledDepth": 53525.88,
-          "totalFilledContracts": 57299.74,
-          "capturedPct": 6.59,
+          "contractsOnCapturedDepth": 1703.32,
+          "contractsOnModelledDepth": 20912.43,
+          "totalFilledContracts": 22615.75,
+          "capturedPct": 7.53,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 90696.99,
@@ -1472,33 +1467,33 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 83612.12,
-        "returnPct": -16.39
+        "endTs": 1789704000,
+        "equityAtSplit": 82975.79,
+        "returnPct": -17.02
       },
       "strictForward": {
-        "finalEquity": 99632.01,
-        "returnPct": -0.37,
-        "totalTrades": 21,
+        "finalEquity": 99751.59,
+        "returnPct": -0.25,
+        "totalTrades": 13,
         "winRate": 100,
-        "maxDrawdownPct": 0.39,
-        "feesPaid": 226.75,
-        "unfilledContracts": 7500,
-        "suppressedActions": 1129,
+        "maxDrawdownPct": 0.26,
+        "feesPaid": 123.36,
+        "unfilledContracts": 11842.38,
+        "suppressedActions": 1137,
         "depthMix": {
-          "contractsOnCapturedDepth": 5802.88,
-          "contractsOnModelledDepth": 39509.41,
-          "totalFilledContracts": 45312.29,
-          "capturedPct": 12.81,
+          "contractsOnCapturedDepth": 2832.53,
+          "contractsOnModelledDepth": 23545.77,
+          "totalFilledContracts": 26378.3,
+          "capturedPct": 10.74,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 85901.59,
@@ -1671,33 +1666,33 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 97855.08,
-        "returnPct": -2.14
+        "endTs": 1789704000,
+        "equityAtSplit": 97580.33,
+        "returnPct": -2.42
       },
       "strictForward": {
-        "finalEquity": 99489.98,
-        "returnPct": -0.51,
-        "totalTrades": 61,
+        "finalEquity": 99709.28,
+        "returnPct": -0.29,
+        "totalTrades": 40,
         "winRate": 0,
-        "maxDrawdownPct": 0.52,
-        "feesPaid": 189.54,
-        "unfilledContracts": 2592.9,
-        "suppressedActions": 5741,
+        "maxDrawdownPct": 0.29,
+        "feesPaid": 144.77,
+        "unfilledContracts": 400.27,
+        "suppressedActions": 5783,
         "depthMix": {
-          "contractsOnCapturedDepth": 9595.13,
-          "contractsOnModelledDepth": 39056.87,
-          "totalFilledContracts": 48652,
-          "capturedPct": 19.72,
+          "contractsOnCapturedDepth": 6969.12,
+          "contractsOnModelledDepth": 26341.36,
+          "totalFilledContracts": 33310.48,
+          "capturedPct": 20.92,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 98591.04,
@@ -1870,33 +1865,33 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 100431.17,
-        "returnPct": 0.43
+        "endTs": 1789704000,
+        "equityAtSplit": 100816.99,
+        "returnPct": 0.82
       },
       "strictForward": {
-        "finalEquity": 99024.32,
-        "returnPct": -0.98,
-        "totalTrades": 117,
+        "finalEquity": 99121.28,
+        "returnPct": -0.88,
+        "totalTrades": 74,
         "winRate": 100,
-        "maxDrawdownPct": 1.08,
-        "feesPaid": 586.52,
-        "unfilledContracts": 40456.78,
-        "suppressedActions": 11509,
+        "maxDrawdownPct": 0.88,
+        "feesPaid": 348.8,
+        "unfilledContracts": 12257.79,
+        "suppressedActions": 11607,
         "depthMix": {
-          "contractsOnCapturedDepth": 17999.14,
-          "contractsOnModelledDepth": 100520.01,
-          "totalFilledContracts": 118519.15,
-          "capturedPct": 15.19,
+          "contractsOnCapturedDepth": 10532.93,
+          "contractsOnModelledDepth": 63739.06,
+          "totalFilledContracts": 74271.99,
+          "capturedPct": 14.18,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 100061.49,
@@ -2069,33 +2064,33 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 98785.63,
-        "returnPct": -1.21
+        "endTs": 1789704000,
+        "equityAtSplit": 98861.25,
+        "returnPct": -1.14
       },
       "strictForward": {
-        "finalEquity": 99625.91,
-        "returnPct": -0.37,
-        "totalTrades": 53,
+        "finalEquity": 99404.08,
+        "returnPct": -0.6,
+        "totalTrades": 42,
         "winRate": 100,
-        "maxDrawdownPct": 0.51,
-        "feesPaid": 207.64,
-        "unfilledContracts": 22920.87,
-        "suppressedActions": 6155,
+        "maxDrawdownPct": 0.61,
+        "feesPaid": 191.86,
+        "unfilledContracts": 11199.49,
+        "suppressedActions": 6210,
         "depthMix": {
-          "contractsOnCapturedDepth": 6128.02,
-          "contractsOnModelledDepth": 44682.05,
-          "totalFilledContracts": 50810.07,
-          "capturedPct": 12.06,
+          "contractsOnCapturedDepth": 4807.69,
+          "contractsOnModelledDepth": 37308.45,
+          "totalFilledContracts": 42116.14,
+          "capturedPct": 11.42,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 98370.89,
@@ -2268,32 +2263,30 @@
         "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 102178.52,
-        "returnPct": 2.18
+        "endTs": 1789704000,
+        "equityAtSplit": 102031.72,
+        "returnPct": 2.03
       },
       "strictForward": {
-        "finalEquity": 99999.91,
+        "finalEquity": 100000,
         "returnPct": 0,
-        "totalTrades": 1,
+        "totalTrades": 0,
         "winRate": 0,
         "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 2345,
+        "suppressedActions": 2360,
         "depthMix": {
-          "contractsOnCapturedDepth": 84.91,
+          "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
-          "totalFilledContracts": 84.91,
-          "capturedPct": 100,
-          "depthModels": [
-            "captured_orderbook_reanchored"
-          ]
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
         },
-        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 100471.81,
@@ -2466,32 +2459,30 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 98199.04,
-        "returnPct": -1.8
+        "endTs": 1789704000,
+        "equityAtSplit": 98246.96,
+        "returnPct": -1.75
       },
       "strictForward": {
-        "finalEquity": 99997.04,
+        "finalEquity": 100000,
         "returnPct": 0,
-        "totalTrades": 2,
+        "totalTrades": 0,
         "winRate": 0,
         "maxDrawdownPct": 0,
-        "feesPaid": 0.56,
+        "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 297,
+        "suppressedActions": 299,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 34.16,
-          "totalFilledContracts": 34.16,
-          "capturedPct": 0,
-          "depthModels": [
-            "synthetic"
-          ]
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
         },
-        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 99510,
@@ -2664,33 +2655,30 @@
         "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 104213.55,
-        "returnPct": 4.21
+        "endTs": 1789704000,
+        "equityAtSplit": 102202.6,
+        "returnPct": 2.2
       },
       "strictForward": {
-        "finalEquity": 99903.53,
-        "returnPct": -0.1,
-        "totalTrades": 12,
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
         "winRate": 0,
-        "maxDrawdownPct": 0.1,
-        "feesPaid": 0.03,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 22243,
+        "suppressedActions": 22426,
         "depthMix": {
-          "contractsOnCapturedDepth": 2578.97,
-          "contractsOnModelledDepth": 10823.16,
-          "totalFilledContracts": 13402.13,
-          "capturedPct": 19.24,
-          "depthModels": [
-            "captured_orderbook_reanchored",
-            "synthetic"
-          ]
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
         },
-        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 100176.67,
@@ -2863,33 +2851,33 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 91747.74,
-        "returnPct": -8.25
+        "endTs": 1789704000,
+        "equityAtSplit": 88364.39,
+        "returnPct": -11.64
       },
       "strictForward": {
-        "finalEquity": 98923.76,
-        "returnPct": -1.08,
-        "totalTrades": 56,
+        "finalEquity": 99771.25,
+        "returnPct": -0.23,
+        "totalTrades": 28,
         "winRate": 0,
-        "maxDrawdownPct": 1.11,
-        "feesPaid": 275.48,
-        "unfilledContracts": 3016.16,
-        "suppressedActions": 3500,
+        "maxDrawdownPct": 0.23,
+        "feesPaid": 98.06,
+        "unfilledContracts": 4342.38,
+        "suppressedActions": 3537,
         "depthMix": {
-          "contractsOnCapturedDepth": 3797.79,
-          "contractsOnModelledDepth": 70810.37,
-          "totalFilledContracts": 74608.16,
-          "capturedPct": 5.09,
+          "contractsOnCapturedDepth": 3529.62,
+          "contractsOnModelledDepth": 28313.9,
+          "totalFilledContracts": 31843.52,
+          "capturedPct": 11.08,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 84640.98,
@@ -3062,33 +3050,33 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 87736.57,
-        "returnPct": -12.26
+        "endTs": 1789704000,
+        "equityAtSplit": 86410.26,
+        "returnPct": -13.59
       },
       "strictForward": {
-        "finalEquity": 98913.06,
-        "returnPct": -1.09,
-        "totalTrades": 13,
+        "finalEquity": 99981.54,
+        "returnPct": -0.02,
+        "totalTrades": 8,
         "winRate": 0,
-        "maxDrawdownPct": 1.09,
-        "feesPaid": 124.59,
-        "unfilledContracts": 3016.16,
-        "suppressedActions": 912,
+        "maxDrawdownPct": 0.02,
+        "feesPaid": 3.84,
+        "unfilledContracts": 0,
+        "suppressedActions": 917,
         "depthMix": {
           "contractsOnCapturedDepth": 3739.06,
-          "contractsOnModelledDepth": 24782.04,
-          "totalFilledContracts": 28521.1,
-          "capturedPct": 13.11,
+          "contractsOnModelledDepth": 1895.06,
+          "totalFilledContracts": 5634.12,
+          "capturedPct": 66.36,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 88885.09,
@@ -3261,32 +3249,30 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 95700.13,
-        "returnPct": -4.3
+        "endTs": 1789704000,
+        "equityAtSplit": 95280.37,
+        "returnPct": -4.72
       },
       "strictForward": {
-        "finalEquity": 99997.04,
+        "finalEquity": 100000,
         "returnPct": 0,
-        "totalTrades": 2,
+        "totalTrades": 0,
         "winRate": 0,
         "maxDrawdownPct": 0,
-        "feesPaid": 0.56,
+        "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 476,
+        "suppressedActions": 478,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 34.16,
-          "totalFilledContracts": 34.16,
-          "capturedPct": 0,
-          "depthModels": [
-            "synthetic"
-          ]
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
         },
-        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 98560.52,
@@ -3459,32 +3445,30 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 98131.72,
-        "returnPct": -1.87
+        "endTs": 1789704000,
+        "equityAtSplit": 98162.61,
+        "returnPct": -1.84
       },
       "strictForward": {
-        "finalEquity": 99997.04,
+        "finalEquity": 100000,
         "returnPct": 0,
-        "totalTrades": 2,
+        "totalTrades": 0,
         "winRate": 0,
         "maxDrawdownPct": 0,
-        "feesPaid": 0.56,
+        "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 296,
+        "suppressedActions": 298,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 34.16,
-          "totalFilledContracts": 34.16,
-          "capturedPct": 0,
-          "depthModels": [
-            "synthetic"
-          ]
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
         },
-        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 99354.87,
@@ -3657,33 +3641,33 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 102148.34,
-        "returnPct": 2.15
+        "endTs": 1789704000,
+        "equityAtSplit": 104102.12,
+        "returnPct": 4.1
       },
       "strictForward": {
-        "finalEquity": 98803.25,
-        "returnPct": -1.2,
-        "totalTrades": 71,
+        "finalEquity": 99638.38,
+        "returnPct": -0.36,
+        "totalTrades": 47,
         "winRate": 0,
-        "maxDrawdownPct": 1.24,
-        "feesPaid": 308.72,
-        "unfilledContracts": 3016.16,
-        "suppressedActions": 7380,
+        "maxDrawdownPct": 0.36,
+        "feesPaid": 151.69,
+        "unfilledContracts": 4342.38,
+        "suppressedActions": 7437,
         "depthMix": {
-          "contractsOnCapturedDepth": 7562.74,
-          "contractsOnModelledDepth": 69300.07,
-          "totalFilledContracts": 76862.81,
-          "capturedPct": 9.84,
+          "contractsOnCapturedDepth": 7225.74,
+          "contractsOnModelledDepth": 37417.43,
+          "totalFilledContracts": 44643.17,
+          "capturedPct": 16.19,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 78514.27,
@@ -3856,33 +3840,30 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 97589.23,
-        "returnPct": -2.41
+        "endTs": 1789704000,
+        "equityAtSplit": 95953.64,
+        "returnPct": -4.05
       },
       "strictForward": {
-        "finalEquity": 99935.27,
-        "returnPct": -0.06,
-        "totalTrades": 24,
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
         "winRate": 0,
-        "maxDrawdownPct": 0.17,
-        "feesPaid": 0.18,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 12360,
+        "suppressedActions": 12466,
         "depthMix": {
-          "contractsOnCapturedDepth": 1103.21,
-          "contractsOnModelledDepth": 20991.66,
-          "totalFilledContracts": 22094.87,
-          "capturedPct": 4.99,
-          "depthModels": [
-            "captured_orderbook_reanchored",
-            "synthetic"
-          ]
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
         },
-        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 92385.95,
@@ -4055,33 +4036,30 @@
         "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
-        "equityAtSplit": 104477.29,
-        "returnPct": 4.48
+        "endTs": 1789704000,
+        "equityAtSplit": 103847.32,
+        "returnPct": 3.85
       },
       "strictForward": {
-        "finalEquity": 100073.26,
-        "returnPct": 0.07,
-        "totalTrades": 22,
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
         "winRate": 0,
-        "maxDrawdownPct": 0.13,
-        "feesPaid": 0.54,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 11305,
+        "suppressedActions": 11402,
         "depthMix": {
-          "contractsOnCapturedDepth": 2913.81,
-          "contractsOnModelledDepth": 23541.59,
-          "totalFilledContracts": 26455.4,
-          "capturedPct": 11.01,
-          "depthModels": [
-            "captured_orderbook_reanchored",
-            "synthetic"
-          ]
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
         },
-        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
-        "bars": 2
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 103074.16,
@@ -4253,9 +4231,9 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
+        "endTs": 1789704000,
         "equityAtSplit": 100000.03,
         "returnPct": 0
       },
@@ -4276,7 +4254,7 @@
           "depthModels": []
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 100000,
@@ -4337,10 +4315,10 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 28,
+        "points": 29,
         "startTs": 1787284800,
-        "endTs": 1789617600,
-        "equityAtSplit": 99994.91,
+        "endTs": 1789704000,
+        "equityAtSplit": 99993.94,
         "returnPct": -0.01
       },
       "strictForward": {
@@ -4360,7 +4338,7 @@
           "depthModels": []
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 99993.36,
@@ -4421,9 +4399,9 @@
         "verdict": "UNTESTED_ON_THIS_DATASET"
       },
       "inSample": {
-        "points": 28,
+        "points": 29,
         "startTs": 1787284800,
-        "endTs": 1789617600,
+        "endTs": 1789704000,
         "equityAtSplit": 100000,
         "returnPct": 0
       },
@@ -4444,7 +4422,7 @@
           "depthModels": []
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 100000,
@@ -4505,11 +4483,11 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 28,
+        "points": 29,
         "startTs": 1787284800,
-        "endTs": 1789617600,
-        "equityAtSplit": 99994.49,
-        "returnPct": -0.01
+        "endTs": 1789704000,
+        "equityAtSplit": 99995.14,
+        "returnPct": 0
       },
       "strictForward": {
         "finalEquity": 100000,
@@ -4528,7 +4506,7 @@
           "depthModels": []
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 99993.87,
@@ -4591,10 +4569,10 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 28,
+        "points": 29,
         "startTs": 1787284800,
-        "endTs": 1789617600,
-        "equityAtSplit": 99999.36,
+        "endTs": 1789704000,
+        "equityAtSplit": 99999.14,
         "returnPct": 0
       },
       "strictForward": {
@@ -4614,7 +4592,7 @@
           "depthModels": []
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 99999.47,
@@ -4684,11 +4662,11 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 177,
+        "points": 178,
         "startTs": 1774411200,
-        "endTs": 1789617600,
-        "equityAtSplit": 99984.69,
-        "returnPct": -0.02
+        "endTs": 1789704000,
+        "equityAtSplit": 99986.02,
+        "returnPct": -0.01
       },
       "strictForward": {
         "finalEquity": 100000,
@@ -4707,7 +4685,7 @@
           "depthModels": []
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 99985.96,
@@ -4767,9 +4745,9 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 398,
+        "points": 399,
         "startTs": 1755316800,
-        "endTs": 1789617600,
+        "endTs": 1789704000,
         "equityAtSplit": 99843.37,
         "returnPct": -0.16
       },
@@ -4790,7 +4768,7 @@
           "depthModels": []
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 99888.23,
@@ -4811,6 +4789,97 @@
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "FDAEdge_DrugsFDA",
+      "strategyId": "fda_edge_drugsfda",
+      "title": "Drugs@FDA Approval-Record Follower (point-in-time)",
+      "category": "FDA / Official-record vs Market",
+      "designedAt": "2026-09-19",
+      "designSource": "Original design in this repository: the point-in-time external-signal architecture of ForecastEdge_Weather (NWS archive) applied to the official openFDA Drugs@FDA database (data/fda-signals/, grown by .github/workflows/fda-signals.yml)",
+      "designSourceUrl": "https://open.fda.gov/apis/drug/drugsfda/",
+      "universeMarkets": [
+        "KXFDAAPPROVALDATECMPS-360-27JAN01",
+        "KXFDAAPPROVALDATECMPS-360-27JUL01",
+        "KXFDAAPPROVALDATECMPS-360-27MAR01",
+        "KXFDAAPPROVALDATECMPS-360-27OCT01",
+        "KXFDAAPPROVALDATECMPS-360-28JAN01",
+        "KXFDAAPPROVE-CAM-26OCT01",
+        "KXFDAAPPROVE-CAM-27JAN01",
+        "KXFDAAPPROVE-CYT-26OCT01",
+        "KXFDAAPPROVE-GED-26AUG01",
+        "KXFDAAPPROVE-MDMA-30JAN01",
+        "KXFDARETATRUTIDE-RET-27JAN01",
+        "KXFDARETATRUTIDE-RET-27JUL01",
+        "KXFDARETATRUTIDE-RET-28JAN01",
+        "KXFDARETATRUTIDE-RET-28JUL01",
+        "KXFDARETATRUTIDE-RET-29JAN01"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET"
+      },
+      "inSample": {
+        "points": 175,
+        "startTs": 1774497600,
+        "endTs": 1789704000,
+        "equityAtSplit": 100000,
+        "returnPct": 0
+      },
+      "strictForward": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
+      },
+      "heldOut": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 84,
         "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
       }
@@ -4857,11 +4926,11 @@
         "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 203,
+        "points": 204,
         "startTs": 1772168400,
-        "endTs": 1789617600,
-        "equityAtSplit": 100408.79,
-        "returnPct": 0.41
+        "endTs": 1789704000,
+        "equityAtSplit": 100429.11,
+        "returnPct": 0.43
       },
       "strictForward": {
         "finalEquity": 100000,
@@ -4871,7 +4940,7 @@
         "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 357,
+        "suppressedActions": 358,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
@@ -4880,7 +4949,7 @@
           "depthModels": []
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
-        "bars": 2
+        "bars": 1
       },
       "heldOut": {
         "finalEquity": 100025.01,
@@ -4908,104 +4977,59 @@
   ],
   "rankedStrictForward": [
     {
-      "username": "VolatilityArb_MM",
-      "returnPct": 0.69,
-      "trades": 27
-    },
-    {
-      "username": "YieldVulture_Arb",
-      "returnPct": 0.24,
-      "trades": 1
-    },
-    {
-      "username": "MakerFlip_SpreadHarvest",
-      "returnPct": 0.07,
-      "trades": 22
-    },
-    {
-      "username": "PanicDip_ShockTiming",
-      "returnPct": 0,
-      "trades": 1
-    },
-    {
-      "username": "PanicFade_HourlyVol",
-      "returnPct": 0,
-      "trades": 2
-    },
-    {
-      "username": "PanicFade_T4_S100",
-      "returnPct": 0,
-      "trades": 2
-    },
-    {
-      "username": "PanicFadeDeep_T6_TP6",
-      "returnPct": 0,
-      "trades": 2
-    },
-    {
-      "username": "TightScalp_Fixed5",
-      "returnPct": -0.06,
-      "trades": 24
-    },
-    {
-      "username": "BookWall_BidLadder",
-      "returnPct": -0.1,
-      "trades": 12
+      "username": "ShockTiming_StopOut",
+      "returnPct": -0.02,
+      "trades": 8
     },
     {
       "username": "GammaWhale_Squeeze",
-      "returnPct": -0.28,
-      "trades": 10
-    },
-    {
-      "username": "EventCatalyst_Max",
-      "returnPct": -0.37,
-      "trades": 21
-    },
-    {
-      "username": "LongshotFader_FLB",
-      "returnPct": -0.37,
-      "trades": 53
+      "returnPct": -0.1,
+      "trades": 5
     },
     {
       "username": "TrendRide_FullTilt",
-      "returnPct": -0.45,
-      "trades": 22
-    },
-    {
-      "username": "ThetaHarvest_ShortOTM",
-      "returnPct": -0.51,
-      "trades": 61
+      "returnPct": -0.2,
+      "trades": 10
     },
     {
       "username": "ContrarianKing_100x",
-      "returnPct": -0.59,
-      "trades": 68
-    },
-    {
-      "username": "FeeArb_PremiumBuyer",
-      "returnPct": -0.98,
-      "trades": 117
+      "returnPct": -0.23,
+      "trades": 34
     },
     {
       "username": "AdjacentStrike_Ladder",
-      "returnPct": -1.08,
-      "trades": 56
+      "returnPct": -0.23,
+      "trades": 28
     },
     {
-      "username": "ShockTiming_StopOut",
-      "returnPct": -1.09,
+      "username": "EventCatalyst_Max",
+      "returnPct": -0.25,
       "trades": 13
     },
     {
-      "username": "MeanRev_CheapBand",
-      "returnPct": -1.2,
-      "trades": 71
+      "username": "ThetaHarvest_ShortOTM",
+      "returnPct": -0.29,
+      "trades": 40
     },
     {
       "username": "AlphaApex_Momentum",
-      "returnPct": -1.82,
-      "trades": 55
+      "returnPct": -0.31,
+      "trades": 24
+    },
+    {
+      "username": "MeanRev_CheapBand",
+      "returnPct": -0.36,
+      "trades": 47
+    },
+    {
+      "username": "LongshotFader_FLB",
+      "returnPct": -0.6,
+      "trades": 42
+    },
+    {
+      "username": "FeeArb_PremiumBuyer",
+      "returnPct": -0.88,
+      "trades": 74
     }
   ],
   "rankedHeldOut": [
@@ -5145,5 +5169,5 @@
       "trades": 2481
     }
   ],
-  "splitDefaultSource": "max(designedAt) across the roster = 2026-09-18T00:00:00.000Z"
+  "splitDefaultSource": "max(designedAt) across the roster = 2026-09-19T00:00:00.000Z"
 }

@@ -4,12 +4,13 @@ This file is the honest queue for KalshiPaperSim. Every item says what it would
 change, what it needs, and how a reader could check it. Nothing here is a
 promise; items leave this file only when the work is committed **and** measured.
 
-Last reviewed: 2026-09-18 (the Arena session on branch
-`arena/01a0b59b-kalshipapersim` — this session repaired the data pipeline after
-a push race discarded a whole ingest run (#41), re-ran and recovered that data,
-recreated the owner's PriceKalshiHistorical reference strategies as R14 roster
-entries, catalogued seven more MasterSite projects (S13–S19), and scheduled a
-mid-day order-book capture).
+Last reviewed: 2026-09-19 (the Arena session on branch
+`arena/01a0bad9-kalshipapersim` — this session closed three live desk defects
+found on the fresh store (fee-exact cash cap, a binary-search infinite loop,
+the zero-settlements module), sealed the season schedule against dead rounds,
+shipped the FDA half of the point-in-time signal archive on the official
+openFDA Drugs@FDA API, and added the R15 Reddit scalp strategy with its
+measured −65.03%).
 
 ## Shipped (with the evidence a reader can rerun)
 
@@ -40,6 +41,9 @@ mid-day order-book capture).
 | 22 | **Desk parity between server and static builds.** One report builder (`buildDeskReport`) is used by `server.js` (`/api/live-desk`, `/cutoffs`, `/universe`, `/ticket`, `/order`, `/orders`, `/ledger.jsonl`, `/fills.csv`) and by the browser build, so the two modes cannot disagree; the desk audit (D1–D13, each with its official source) is re-run in the browser and printed on the tab | `server.js`, `src/app.js` desk renderers, `test/ui-smoke.mjs` desk assertions |
 | 23 | **Desk session in the one-year memory (partial Next #9).** `attachDeskSession()` copies compact results + FILL/SETTLE rows into `deskMemory` / `tradeLog` (`kind: 'desk'`). Server `/api/live-desk` and the static Live Desk tab both attach; a year reset clears the desk cache so the next run re-attaches. Desk usernames are reserved even against a stale store (`DESK_RESERVED_USERNAMES`, set-equal to `DESK_STRATEGIES` by test 104). One session per asOf — not a running multi-day book | `src/competition-memory.js`, `server.js`, `src/app.js` `renderMemory`, tests 35 / 76 / 87 / 104 |
 | 24 | **Desk Season — the running multi-round book (was Next #9).** One carried portfolio per season entrant across every REAL capture batch: cash, positions, resting orders and the cumulative 10% liquidity cap carry; the real events between rounds (later captured ladders, later candlestick quotes, the exchange's own settlements) are walked before the next decision; each round publishes its own instrumentation (quotes walked, settlements applied, carried maker fills) so a dead window is visible. A season fill/settlement/mark ledger, a per-round equity curve, a coverage row per entrant with the reason it did not trade, its own 27-check audit (the 13 desk invariants D1–D13 re-run over the whole season plus S1–S12), a CLI (`scripts/run-desk-season.mjs`), five server routes, its own tab, and the season attached to the one-year memory (`attachDeskSeason`, `kind: 'desk-season'`). Three real bugs were found and closed by its own tests: the forward walk read a bar list that stops at the cut-off (irregularity #46 — no maker fill was possible) and a reserved season username was longer than the platform limit, so the reservation never applied (irregularity #47), and the desk let a paper account borrow cash and sell contracts it did not hold (irregularity #49 — now capped and re-derived by S12) | `src/desk-season.js`, `src/desk-season-strategies.js`, `scripts/run-desk-season.mjs`, `data/reports/desk-season*.json`, `server.js` (`/api/desk-season*`), `index.html` + `src/app.js` (Desk Season tab), tests 105–112 |
+| 25 | **Three desk defects found and closed on the 2026-09-19 store** (session 01a0bad9). (a) The cash cap kept a flat 2% fee reserve, but the quadratic fee is up to 6.93% of gross at 9¢ — a $500 account could book $520.87 of cost (the #49 class again); the cap now walks the ladder with the EXACT per-tier official fee from `computeKalshiFee`, in both the taker and the maker-crossing paths. (b) The cap's own binary search could spin forever once its float midpoint stopped shrinking; it now runs in integer 0.01-contract units. (c) The desk module had ZERO settled contracts (open contracts filled the whole 80-market cap), degrading settlement to fixtures; the generator now reserves up to 6 finalized-with-result contracts ON TOP of the open budget, and season rounds are seeded only by the open board so the finals' historical instants cannot silently un-trade season entrants | `src/live-desk.js` (cash caps), `scripts/generate-desk-module.mjs` (finalized reserve), `src/desk-season.js` (`seasonSchedule` open-board seeds), tests 100/108/113/114 on the 2026-09-19 store; 122/122 + UI smoke + 13 desk checks + 27 season checks |
+| 26 | **The FDA half of the point-in-time signal archive (was Next #3).** The official openFDA Drugs@FDA API (FDA's own database, keyless) is captured four times a day by a new workflow: one subject per tracked FDA-approval market, with each subject's search query taken verbatim from the market's own `rules_primary`; snapshots are append-only with the verbatim response meta and marketing statuses, the derived `approved` flag uses the OFFICIAL four-value marketing-status vocabulary (glossary-verified, fails closed), and `src/fda-signal-store.js` enforces the same no-lookahead rule as the forecast store. Two series are deliberately excluded with published reasons (KXFDAANNOUNCE = an announcement, not an application record; KXFDAAPPROVALPSYCHEDELIC = a composite). The first strategy on it, `FDAEdge_DrugsFDA`, is a genuine forward test: it abstains (`UNTESTED_ON_THIS_DATASET`) until an approval flip overlaps a live market. First capture pending the workflow's first run (trigger file `.github/triggers/fda.json`) | `scripts/archive-fda-signals.mjs`, `.github/workflows/fda-signals.yml`, `src/fda-signal-store.js`, `src/fda-signal-data.js` (generated), strategy + `buildFdaSignalProvider`/`composeSignalProviders`, facts V106–V107, tests 115–117 |
+| 27 | **A new externally-sourced roster entry from fresh social-media research (R15).** The r/KalshiBTCUporDown15 pinned write-up ("buy the side priced 75–80¢, take profit at 95¢") is recreated mechanically as `HighProb_Scalp8095` on the real 1-minute KXBTC15M/KXETH15M/KXSOL15M/KXGOLD15M stores. Its discretionary value filter and its BITCOIN-price stop are NOT recreated (no judgement and no spot feed in this store) and the entry says so. Measured on the 2026-09-19 store: 83 trades, −65.03%, 23 real settlements — the losing tail the source's stop was meant to cut is visible in the ledger instead of hidden | `src/research-sources.js` R15 (SEARCH_EXCERPT, quoted claim), `src/strategies.js` HighProb_Scalp8095, `data/reports/flights.json` micro flight |
 
 ## Next, in priority order
 
@@ -52,16 +56,18 @@ mid-day order-book capture).
    *Check:* `data/reports/flights.json` → `forecastArchive` + the hourly
    leaderboard's unranked entries.
 2. **True forward windows for the original roster.** `designedAt` is
-   2026-09-17/18, so bars from 2026-09-19 onward are genuinely out-of-sample
-   for every entry. *Check:* `data/reports/forward-test.json` →
-   `strictForward.bars`.
-3. **A point-in-time signal archive for a sports or FDA project.** The Kalshi
-   side is DONE: FDA (six series), CEO (six series) and seven sports series are
-   ingested with settled results and real settlements. The remaining gap is
-   the owner's own projects — the MLB model's pre-game probabilities, the FDA
-   PDUFA calendar, injury reports — archived with capture timestamps the way
-   `data/forecasts/` archives NWS (S14–S16 state each one's exact blocker and
-   closing action).
+   2026-09-17/18, so bars from 2026-09-18/19 onward are genuinely
+   out-of-sample for every entry: the strict forward window held 2 real bars
+   on the 2026-09-19 store (20 of 29 measured designs) and grows one bar per
+   daily ingest — still below the 20-bar floor, so the numbers stay labelled
+   directional. *Check:* `data/reports/forward-test.json` →
+   `method.strictForwardBars`.
+3. **The sports/owner-project half of the signal archive.** The FDA half is
+   now CLOSED with an official source (shipped #26); the remaining gap is the
+   owner's own projects — the MLB model's pre-game probabilities, injury
+   reports — archived with capture timestamps the way `data/forecasts/` and
+   `data/fda-signals/` archive NWS and Drugs@FDA (S14–S16 state each one's
+   exact blocker and closing action).
 4. **Point-in-time depth on every fill.** A mid-day books capture is now
    scheduled (16:40 UTC daily) and the request-9 run re-captured every ladder;
    the depth *behind* the touch is still re-anchored between snapshots.
@@ -77,20 +83,21 @@ mid-day order-book capture).
    *Needs:* a second venue feed with the same verification standard.
 
 8. **More captured ladders, at more cut-offs.** The desk can only price a
-   contract when a ladder was captured at or before the cut-off, so the oldest
-   cut-offs price nothing: at the 2026-09-18T18:46Z capture, live/−6h/−12h/−15h
-   had 62/62/48/19 tradeable contracts and −24h and older had **0**. The
-   scheduled 16:40 UTC `with_books=true` run is the fix, one capture per day.
-   *Needs:* nothing but time and the existing workflow.
+   contract when a ladder was captured at or before the cut-off. The
+   scheduled 16:40 UTC `with_books=true` run adds one capture batch per day;
+   the on-demand trigger (`.github/triggers/ingest.json`, bump `request`)
+   re-captures the whole tracked universe when asked. *Needs:* nothing but
+   time and the existing workflow.
 9. **A longer season.** The carried book now exists (`src/desk-season.js`):
    one portfolio, many rounds, real settlements inside the season, 27-check
-   audit. What it is still short of is TIME — the 2026-09-18 store yields 6
-   real rounds across 19.6 hours, because a round is a moment this repository
-   actually queried the order book. *Needs:* nothing but the scheduled captures
-   continuing (and the on-demand trigger for a wider universe); `seasonSchedule`
-   picks up every new capture batch automatically, so the season lengthens on
-   its own. *Check:* `node scripts/run-desk-season.mjs` → the round count and
-   the window in `data/reports/desk-season-schedule.json`.
+   audit. What it is still short of is TIME — the 2026-09-19 store yields 4
+   real open-board rounds across ~33 hours, because a round is a moment this
+   repository actually queried the order book while the tracked contracts
+   were open. *Needs:* nothing but the scheduled captures continuing;
+   `seasonSchedule` picks up every new capture batch automatically, so the
+   season lengthens on its own. *Check:* `node scripts/run-desk-season.mjs`
+   → the round count and the window in
+   `data/reports/desk-season-schedule.json`.
 
 ## Known limitations (kept in sync with the README)
 

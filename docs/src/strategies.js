@@ -2071,6 +2071,80 @@ export const STRATEGIES = [
 
   {
     ...BASE,
+    id: 'highprob_scalp8095',
+    username: 'HighProb_Scalp8095',
+    handle: '@HighProb_Scalp8095',
+    avatar: '🎯',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXBTC15M', 'KXETH15M', 'KXSOL15M', 'KXGOLD15M'],
+    title: '75–80¢ High-Probability Scalp with a 95¢ Take-Profit (R15)',
+    category: 'Short-Horizon / High-probability scalp',
+    tagline:
+      'Buys the side the market prices at 75–80¢ and takes profit at 95¢ — the r/KalshiBTCUporDown15 pinned write-up, recreated mechanically on the real 1-minute stores.',
+    sizingPct: 0.25,
+    maxParticipation: 3,
+    designedAt: '2026-09-19',
+    designSource: 'Recreated from the r/KalshiBTCUporDown15 pinned strategy write-up (RESEARCH_SOURCES R15)',
+    designSourceUrl: 'https://www.reddit.com/r/KalshiBTCUporDown15/',
+    sourceNote:
+      'The source\'s two mechanical rules, quoted in R15: "I wait until one side has reached 80% market probability. If I feel there is good value at 75-80 cents, I invest ' +
+      'then … I immediately set a take profit limit order for 95 cents" and "exit with 15-20 cents profit as soon and as often as possible". Both are contract-price rules, ' +
+      'so they map one-to-one onto the real captured bid/ask of the 1-minute bars. The discretionary value filter and the BITCOIN-price stop-loss are NOT recreated (no ' +
+      'human judgement and no BTC spot feed exist in this store) and the entry says so.',
+    thesis:
+      'DESIGN INTENT: buying an 75–80¢ favourite and selling at 95¢ converts 15–20¢ of high-probability drift into cash repeatedly; on a 15-minute contract the remaining ' +
+      '5–25¢ is the residual probability of an upset the market says is small. The recreation takes EVERY mechanical 75–80¢ occurrence across four real 15-minute series ' +
+      'and exits at the source\'s 95¢ target or at the exchange\'s own settlement. ' +
+      'HONEST LIMITS: (1) the source\'s discretionary filter ("IF I FEEL there is good value") cannot be recreated — this entry trades the rule, not the judgement, and the ' +
+      'measured result is therefore the rule\'s unfiltered expectancy; (2) the source\'s stop-loss is a BTC spot level and this store holds no spot feed, so a position that ' +
+      'never reaches 0.95 rides to the real $1.00/$0.00 result (the losing tail the stop was meant to cut is reported in the ledger instead); (3) the source names no ' +
+      'position size — the 25%-of-cash fraction is this repository\'s choice, labelled here.',
+    rules: {
+      entry: 'On 1-minute bars: buy YES when the YES ask is 0.75–0.80; otherwise buy NO when the NO ask is 0.75–0.80. Enter whenever flat in the contract — the source re-enters "as often as possible".',
+      sizing: '25% of available cash, capped at 3x visible depth (repo-assigned; the source names no size).',
+      exit: 'Sell when the position\'s mark reaches 0.95 (the source\'s take-profit limit); otherwise hold to the exchange\'s real settlement.',
+      riskManagement: 'NONE (by mandate). The source\'s stop-loss is a BTC price level this store cannot see; it is deliberately NOT simulated with an invented feed.'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker } = ctx;
+      const actions = [];
+      // EXIT — the source's 95¢ take-profit. The mark is the real quoted price;
+      // the sell itself is filled with the replay's usual fill realism.
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ticker || !(pos.count > 0)) continue;
+        const mark = Number(pos.currentPrice);
+        if (Number.isFinite(mark) && mark >= 0.95) {
+          actions.push({ type: 'sell', side: pos.side, count: pos.count, reason: `take-profit 0.95 (R15): position marked ${round6(mark)}` });
+        }
+      }
+      // ENTRY — the high-probability side at 75–80¢, only while flat here.
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (!held) {
+        const yesAsk = book.getBestYesAsk();
+        const noAsk = book.getBestNoAsk();
+        let side = null;
+        let ask = null;
+        if (yesAsk !== null && yesAsk >= 0.75 && yesAsk <= 0.8) {
+          side = 'YES';
+          ask = yesAsk;
+        } else if (noAsk !== null && noAsk >= 0.75 && noAsk <= 0.8) {
+          side = 'NO';
+          ask = noAsk;
+        }
+        if (side) {
+          const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, side);
+          if (count > 0) {
+            actions.push({ type: 'buy', side, count, reason: `${side} offered at ${ask} — inside the source's 75–80¢ band; 95¢ take-profit set (R15)` });
+          }
+        }
+      }
+      return actions;
+    }
+  },
+
+  {
+    ...BASE,
     id: 'fed_bucket_ladder',
     username: 'FedBucket_Ladder',
     handle: '@FedBucket_Ladder',
@@ -2379,6 +2453,61 @@ export const STRATEGIES = [
           side: 'YES',
           count,
           reason: `${why} (snapshot ${signal.capturedAt} for ${signal.eventDate}, captured before this bar) → ask ${ask} ≤ 0.40, held to the exchange's real result`
+        }
+      ];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'fda_edge_drugsfda',
+    username: 'FDAEdge_DrugsFDA',
+    handle: '@FDAEdge_DrugsFDA',
+    avatar: '💊',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    universe: ['KXFDAAPPROVALDATECMPS', 'KXFDARETATRUTIDE', 'KXFDAAPPROVE'],
+    title: 'Drugs@FDA Approval-Record Follower (point-in-time)',
+    category: 'FDA / Official-record vs Market',
+    tagline:
+      'Buys a tracked FDA-approval market\'s YES when the official Drugs@FDA record — captured point-in-time by the fda-signals workflow — shows an approved product and the market still prices it at ≤ 0.97. Abstains whenever no snapshot existed at the decision bar.',
+    sizingPct: 0.4,
+    maxParticipation: 3,
+    designedAt: '2026-09-19',
+    designSource:
+      'Original design in this repository: the point-in-time external-signal architecture of ForecastEdge_Weather (NWS archive) applied to the official openFDA Drugs@FDA database (data/fda-signals/, grown by .github/workflows/fda-signals.yml)',
+    designSourceUrl: 'https://open.fda.gov/apis/drug/drugsfda/',
+    sourceNote:
+      'The signal source is FDA\'s own database: GET api.open.fda.gov/drug/drugsfda.json (Drugs@FDA). Each tracked market\'s subject and search query are taken from the market\'s OWN rules_primary text (quoted in scripts/archive-fda-signals.mjs). KXFDAANNOUNCE (BPC-157 Bulk Drug Substances reclassification — an announcement, not an application record) and KXFDAAPPROVALPSYCHEDELIC (a composite) are deliberately NOT covered; the exclusions and their reasons are recorded in the archive script.',
+    thesis:
+      'DESIGN INTENT: when FDA\'s own database shows an approved marketed product for a drug whose Kalshi approval markets are still open below 99¢, the market is lagging the official record — buy YES and let the exchange\'s own settlement pay $1.00. ' +
+      'POINT-IN-TIME RULE: the record is read through src/fda-signal-store.js, which only returns a snapshot captured at or before the decision bar — no snapshot, no trade. ' +
+      'FORWARD TEST BY CONSTRUCTION: the archive begins with the first scheduled capture after 2026-09-19, so every bar before that honestly produces NO trades for this strategy; it stays unranked (0 fills, reason published) until an approval flip overlaps a live market. The still-open targets are the 2027+ COMP360 and retatrutide brackets and KXFDAAPPROVE-CYT-26OCT01. ' +
+      'BASIS MISMATCH (flagged): the market rules resolve on the FDA\'s approval/announcement, while this archive holds the Drugs@FDA database record, which FDA staff update after the fact — a real lag the archive timestamps and the strategy prices (entry ≤ 0.97) rather than hides.',
+    rules: {
+      entry:
+        'ctx.signal carries the newest Drugs@FDA state for this market\'s drug captured at or before this bar. Buy YES when signal.approved is true (any product\'s verbatim marketing_status contains "approved") and the YES ask ≤ 0.97. Once per market.',
+      sizing: '40% of available cash per confirmed market, capped at 3x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement ($1.00/$0.00 at the market\'s real result).',
+      noSignalRule: 'ctx.signal === null (no snapshot captured by this bar, or the market is one of the deliberately excluded series) → abstain. Never substitute today\'s database state for a past decision.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker, signal } = ctx;
+      if (!signal || signal.kind !== 'fda-drugsfda-state') return [];
+      if (!signal.approved) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.97) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason: `Drugs@FDA snapshot ${signal.capturedAt} shows an approved marketed product for ${signal.label ?? signal.slug} (state ${signal.state}) while the market still prices ${ask} ≤ 0.97 — buy YES, held to the exchange's real result`
         }
       ];
     }

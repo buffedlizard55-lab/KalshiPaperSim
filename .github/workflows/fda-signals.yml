@@ -1,0 +1,83 @@
+name: FDA signal archive
+
+# ROADMAP item "a point-in-time signal archive for a sports or FDA project"
+# (the FDA half): archive the official Drugs@FDA state of every drug the
+# tracked KXFDA* markets resolve on, several times a day, so an FDA strategy
+# can only ever read the state that existed AT DECISION TIME (no archive = no
+# honest test; re-reading today's database for a past decision is a lookahead,
+# because the database is re-read, not re-run).
+#
+# WHAT IT WRITES: data/fda-signals/<slug>.json — append-only snapshots, each
+# with captured_at, the api.open.fda.gov URL, the verbatim meta block
+# (disclaimer / last_updated / total), the derived state and the verbatim
+# marketing_status strings the derivation came from. Bounded to the newest
+# 2000 snapshots per subject with a trims[] ledger, exactly like the
+# candlestick and forecast stores.
+#
+# WHY A WORKFLOW: api.open.fda.gov is not reachable from the build sandbox
+# (only github.com egress works there). GitHub-hosted runners have
+# unrestricted egress, so this is where the capture can actually run.
+#
+# TRIGGER: four captures/day on schedule (spread across the US FDA day), plus
+# any push that changes .github/triggers/fda.json (the same commit-to-request
+# pattern as the forecast and ingest workflows).
+
+on:
+  schedule:
+    # 12:10 / 16:10 / 20:10 / 00:10 UTC — early morning, midday, afternoon and
+    # evening in US Eastern time, so an approval announced any time during the
+    # FDA's working day is captured the same day.
+    - cron: '10 0,12,16,20 * * *'
+  push:
+    paths:
+      - '.github/triggers/fda.json'
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Capture the point-in-time Drugs@FDA state
+        run: |
+          set -o pipefail
+          node scripts/archive-fda-signals.mjs 2>&1 | tee fda-signals.log
+
+      - name: Audit the FDA signal store (no network)
+        run: |
+          set -o pipefail
+          node scripts/archive-fda-signals.mjs --verify | tee -a fda-signals.log
+
+      - name: Regenerate the browser-safe modules and the Pages bundle
+        run: |
+          set -o pipefail
+          node scripts/generate-history-module.mjs | tee -a fda-signals.log
+          node scripts/generate-desk-module.mjs | tee -a fda-signals.log
+          node scripts/render-docs.js | tee -a fda-signals.log
+          node build.js | tee -a fda-signals.log
+
+      - name: Commit the new snapshots
+        run: |
+          # One shared, locally-tested implementation of "commit everything
+          # this run changed and survive the push race with the other bots"
+          # (test/workflow-race-guard.sh reproduces the races).
+          BOT_NAME="kalshi-fda-bot" \
+          BOT_EMAIL="kalshi-fda-bot@users.noreply.github.com" \
+          bash scripts/push-with-race-guard.sh \
+            "chore(fda-signals): archive point-in-time Drugs@FDA state $(date -u +%F' '%H:%M)" \
+            "${GITHUB_REF_NAME}"
+
+      - name: Upload the capture log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fda-signals-log
+          path: fda-signals.log
+          if-no-files-found: warn

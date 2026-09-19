@@ -36,6 +36,67 @@ const FORECAST_DIR = path.join(ROOT, 'data', 'forecasts');
 const FORECAST_OUT_FILE = path.join(ROOT, 'src', 'forecast-data.js');
 /** Browser cap for forecast snapshots per location (newest kept). */
 const MAX_BROWSER_FORECAST_SNAPSHOTS = 240;
+const FDA_SIGNAL_DIR = path.join(ROOT, 'data', 'fda-signals');
+const FDA_SIGNAL_OUT_FILE = path.join(ROOT, 'src', 'fda-signal-data.js');
+/** Browser cap for FDA signal snapshots per subject (newest kept). */
+const MAX_BROWSER_FDA_SNAPSHOTS = 240;
+
+/**
+ * Compile data/fda-signals/*.json (the point-in-time Drugs@FDA archive grown
+ * by scripts/archive-fda-signals.mjs) into src/fda-signal-data.js, so the
+ * static browser build queries the SAME point-in-time archive the Node tools
+ * read. Same discipline as the forecast module: snapshots verbatim,
+ * newest-only up to the browser cap, drops stated in the header, and an
+ * absent archive still writes a `present: false` module so imports never
+ * fail — an FDA strategy with no archive abstains rather than guessing.
+ */
+function writeFdaSignalModule() {
+  const subjects = {};
+  if (fs.existsSync(FDA_SIGNAL_DIR)) {
+    for (const file of fs.readdirSync(FDA_SIGNAL_DIR).sort()) {
+      if (!file.endsWith('.json') || file.startsWith('_')) continue;
+      const store = readJsonSafe(path.join(FDA_SIGNAL_DIR, file));
+      if (!store || typeof store !== 'object') continue;
+      const slug = store.slug || file.replace(/\.json$/, '');
+      const snaps = Array.isArray(store.snapshots) ? store.snapshots : [];
+      const dropped = Math.max(0, snaps.length - MAX_BROWSER_FDA_SNAPSHOTS);
+      const shipped = dropped > 0 ? snaps.slice(-MAX_BROWSER_FDA_SNAPSHOTS) : snaps;
+      subjects[slug] = {
+        subject: store.subject || null,
+        what: store.what || null,
+        endpoint: store.endpoint || null,
+        snapshotCount: snaps.length,
+        shippedSnapshots: shipped.length,
+        droppedOldestSnapshots: dropped,
+        snapshots: shipped
+      };
+    }
+  }
+  const present = Object.keys(subjects).length > 0;
+  const body = `/**
+ * KalshiPaperSim — Point-in-Time FDA Signal Archive (GENERATED — do not edit)
+ * =====================================================================
+ * Compiled by scripts/generate-history-module.mjs from data/fda-signals/*.json,
+ * which scripts/archive-fda-signals.mjs grows from the official openFDA
+ * Drugs@FDA API (api.open.fda.gov/drug/drugsfda.json — FDA's own database) on
+ * the fda-signals workflow schedule.
+ *
+ * Each snapshot is VERBATIM what the archive derived from the official
+ * response at captured_at — the point-in-time record an FDA strategy is
+ * allowed to read. Read it only through src/fda-signal-store.js, which
+ * refuses any snapshot captured AFTER the decision time (the anti-lookahead
+ * rule).
+ *
+ * ${present ? `${Object.keys(subjects).length} subject(s) · ${Object.values(subjects).reduce((a, s) => a + s.shippedSnapshots, 0)} shipped snapshot(s)` : 'NO ARCHIVE YET — no snapshots have been captured; every FDA-signal-dependent strategy abstains until the archive exists.'} · generated ${new Date().toISOString()}
+ */
+
+export const FDA_SIGNAL_DATA = ${JSON.stringify({ generatedAt: new Date().toISOString(), present, subjects }, null, 1)};
+`;
+  fs.mkdirSync(path.dirname(FDA_SIGNAL_OUT_FILE), { recursive: true });
+  fs.writeFileSync(FDA_SIGNAL_OUT_FILE, body);
+  const kb = (fs.statSync(FDA_SIGNAL_OUT_FILE).size / 1024).toFixed(1);
+  console.log(`✓ src/fda-signal-data.js — ${Object.keys(subjects).length} subject(s), ${Object.values(subjects).reduce((a, s) => a + s.shippedSnapshots, 0)} snapshot(s), ${kb} KB${present ? '' : ' (no archive yet — FDA strategies abstain)'}`);
+}
 
 /**
  * Compile data/forecasts/*.json (the point-in-time NWS archive grown by
@@ -393,6 +454,7 @@ export function getIntradayMarket(ticker, period = 60) {
   const kb = (fs.statSync(OUT_FILE).size / 1024).toFixed(1);
   console.log(`✓ src/accumulated-history.js — ${tickers.length} market(s), ${totalBars} bar(s), ${kb} KB`);
   writeForecastModule();
+  writeFdaSignalModule();
   for (const t of tickers) {
     const m = markets[t];
     console.log(

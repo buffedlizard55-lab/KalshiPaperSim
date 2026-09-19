@@ -7,12 +7,12 @@ Nothing is inferred from a language model's memory of Kalshi.
 
 | Status | Meaning | Count |
 | --- | --- | --- |
-| `DOCUMENTED` | Quoted from official Kalshi docs / the fee schedule PDF | 34 |
+| `DOCUMENTED` | Quoted from official Kalshi docs / the fee schedule PDF | 36 |
 | `CAPTURED` | Copied from a real production API response | 39 |
 | `NEGATIVE` | A verified 404 / contradiction (proof something is NOT true) | 1 |
 | `DERIVED` | Computed by arithmetic on official formulas | 20 |
 | `OBSERVATION` | Seen in real data, not explained by any document | 5 |
-| **Total** | 89 of 99 carry a URL you can open yourself | **99** |
+| **Total** | 91 of 101 carry a URL you can open yourself | **101** |
 
 ---
 
@@ -212,6 +212,13 @@ Nothing is inferred from a language model's memory of Kalshi.
 | --- | --- | --- | --- | --- | --- |
 | `V103` | CAPTURED | The request-9 ingest re-ran the universe the failed main run lost, and committed it through the new race-guard | GitHub Actions run 35377388737 (on-demand Kalshi history ingest, branch arena/01a0b59b-kalshipapersim, 2026-09-18) completed in 9m2s and committed "chore(history): append real Kalshi candlesticks 2026-09-18": daily bars for the 54 tracked markets, hourly bars through 2026-09-18T18:00:00Z (newest bar KXNBAGAME-26OCT20BOSDET-BOS), fresh order-book snapshots (KXHIGHNY alone now carries 280 captured ladders across its 40 brackets), and 284 tracked markets of which 221 are finalized with the exchange's own result. This is the data the failed run 35352002809 fetched and then discarded at its commit step (irregularity #41). | [github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35](https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35377388737) | `data/history/ (the commit it pushed); IRREGULARITIES.md #41` |
 
+### FDA signals
+
+| ID | Status | Fact | Value as verified | Source | Used in |
+| --- | --- | --- | --- | --- | --- |
+| `V106` | DOCUMENTED | The official Drugs@FDA marketing-status vocabulary is a fixed four-value list, and the archive derives `approved` from it exactly | The Drugs@FDA Glossary of Terms (fda.gov) defines Marketing Status as: "Drug products in Drugs@FDA are identified as: Prescription, Over-the-counter, Discontinued, None (tentatively approved)". The Orange Book preface confirms the Prescription and OTC lists are the approved, marketed "Active Section" and that a tentative approval "is not an approved drug product". The archive therefore derives approved = any product marketing_status is exactly Prescription or Over-the-counter (case-insensitive); Discontinued (approved but not marketed, which per the same glossary also covers withdrawn approvals) and None (tentative) do NOT count, and unknown strings fail closed. Tests 115-117 assert the derivation, the point-in-time read rule and the forward-test abstention. | [www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-glos](https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-glossary-terms) | `scripts/archive-fda-signals.mjs APPROVED_MARKETING_STATUSES; src/fda-signal-store.js; src/strategies.js FDAEdge_DrugsFDA` |
+| `V107` | DOCUMENTED | The FDA signal source is the official openFDA Drugs@FDA API, keyless and machine-readable, and every tracked KXFDA market is either mapped from its own rule text or deliberately excluded with a reason | Endpoint GET https://api.open.fda.gov/drug/drugsfda.json?search=<query> (openFDA, FDA's own Drugs@FDA database; no key required at archive volume). Response shape (meta.disclaimer / meta.last_updated / meta.results.total; results[].application_number, sponsor_name, products[].marketing_status, submissions[].submission_status_date) verified against openFDA's published API documentation and two independent integrations of it on 2026-09-19. Subject queries are taken verbatim from each tracked market's own rules_primary: COMP360 psilocybin (sponsor "compass pathways"), retatrutide, camizestrant, cytisinicline, gedatolisib, midomafetamine. Two tracked FDA series are deliberately NOT covered, with reasons recorded in the archive script: KXFDAANNOUNCE (an FDA announcement, not an application record) and KXFDAAPPROVALPSYCHEDELIC (a composite). Basis mismatch published: the database record can lag the announcement the market resolves on. | [open.fda.gov/apis/drug/drugsfda/](https://open.fda.gov/apis/drug/drugsfda/) | `scripts/archive-fda-signals.mjs; .github/workflows/fda-signals.yml; src/fda-signal-store.js; strategy FDAEdge_DrugsFDA` |
+
 ---
 
 ## 2. Official sources used
@@ -307,6 +314,6 @@ Structure and interaction patterns only. **No data, copy or branding was taken f
 | Every strategy carries `riskManagement: NONE (by mandate)` | test 21 |
 | Post-mortem prose interpolates computed values only | `generatePostMortem()`; test 26 |
 | Oversized orders are never filled at an invented price | `exhaustionPolicy: 'partial'`; tests 17–19 |
-| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 41 strategies) |
+| Attribution factors sum exactly to the equity change | test 25 (residual < $0.01 for all 43 strategies) |
 | A strategy that never traded is not ranked | `LEADERBOARD_QUALIFICATION.minTrades = 1`; test 27 |
 | Fabricated tickers cannot re-enter the catalog | test 10 |

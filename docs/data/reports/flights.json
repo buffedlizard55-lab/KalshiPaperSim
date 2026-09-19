@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T19:28:01.203Z",
+  "generatedAt": "2026-09-19T19:44:19.045Z",
   "note": "Three flights, three windows. DAILY = period_interval 1440 over the full stored history. HOURLY = period_interval 60 over the curated intraday store (which since 2026-09-18 includes the settled KXHIGHNY weather brackets with real exchange results). MICRO = period_interval 1 over the 1-minute store (the KXGOLD15M 15-minute gold markets). They are reported separately and are never merged into one ranking, because a strategy that needs intraday bars cannot be judged on daily ones.",
   "intradayCoverage": {
     "1": {
@@ -7968,6 +7968,37 @@
         "qualified": true,
         "disqualificationReason": null,
         "computed": true
+      },
+      {
+        "rank": null,
+        "username": "FDAEdge_DrugsFDA",
+        "handle": "@FDAEdge_DrugsFDA",
+        "strategyId": "fda_edge_drugsfda",
+        "title": "Drugs@FDA Approval-Record Follower (point-in-time)",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "initialCapital": 100000,
+        "realizedPnl": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "profitFactor": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "periods": 176,
+        "unfilledOrders": 0,
+        "unfilledContracts": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "depthMode": null,
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "qualified": false,
+        "disqualificationReason": "No executed fills — At least one executed fill is required to be ranked. Listed unranked: the universe is tradeable, but this design's entry condition never fired on it (for a signal-driven design, the point-in-time signal may not cover the window).",
+        "computed": true
       }
     ],
     "postMortems": [
@@ -8062,6 +8093,10 @@
       {
         "username": "CEOExit_Drift",
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "FDAEdge_DrugsFDA",
+        "verdict": "UNTESTED_ON_THIS_DATASET"
       }
     ]
   },
@@ -8839,6 +8874,39 @@
         "qualified": true,
         "disqualificationReason": null,
         "computed": true
+      },
+      {
+        "rank": 6,
+        "username": "HighProb_Scalp8095",
+        "handle": "@HighProb_Scalp8095",
+        "strategyId": "highprob_scalp8095",
+        "title": "75–80¢ High-Probability Scalp with a 95¢ Take-Profit (R15)",
+        "returnPct": -65.03,
+        "finalEquity": 34974.45,
+        "initialCapital": 100000,
+        "realizedPnl": -62175.31,
+        "totalTrades": 83,
+        "winRate": 56.6,
+        "profitFactor": 0.28,
+        "maxDrawdownPct": 66.83,
+        "feesPaid": 2850.19,
+        "periods": 699,
+        "unfilledOrders": 10,
+        "unfilledContracts": 47751.32,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 356259.21,
+          "totalFilledContracts": 356259.21,
+          "capturedPct": 0,
+          "depthModels": [
+            "synthetic"
+          ]
+        },
+        "depthMode": null,
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "qualified": true,
+        "disqualificationReason": null,
+        "computed": true
       }
     ],
     "postMortems": [
@@ -8853,6 +8921,10 @@
       {
         "username": "Crypto15M_CheapTail",
         "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      {
+        "username": "HighProb_Scalp8095",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       {
         "username": "FadeSpike_Micro",
@@ -8982,6 +9054,12 @@
         "eligibleMarkets": 43,
         "booked": 43,
         "payout": 54752.85
+      },
+      {
+        "username": "HighProb_Scalp8095",
+        "eligibleMarkets": 59,
+        "booked": 23,
+        "payout": 0
       },
       {
         "username": "FadeSpike_Micro",
