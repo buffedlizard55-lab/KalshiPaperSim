@@ -642,6 +642,88 @@ export const DESK_STRATEGIES = Object.freeze([
       }
       return out;
     }
+  },
+  {
+    id: 'live_mlb_favourite_hold',
+    username: 'LiveMLB_GameFavourite',
+    name: 'Desk: MLB favourite buy-and-settle (MasterSite S09, MLB-Live-PBP)',
+    category: 'Sports / Favourite',
+    watch: /^KXMLB/i,
+    source: 'S09 · MLB-Live-PBP (MasterSite) — the Kalshi MLB markets are official and captured here; the project side still needs a point-in-time play-by-play archive',
+    mandate: 'MAXIMUM RETURN. No stop-losses, no position caps, no volatility targeting. Sizing is a fixed fraction of cash, bounded by the real captured ladder.',
+    thesis:
+      'Baseball is the sport where the pre-game favourite is most often priced near its true probability, which is exactly the shape this desk can price honestly: buy the side the real ladder already calls the favourite (0.75–0.97) and hold it to the exchange\'s own settlement. S09 (MLB-Live-PBP) supplies the scoreboard side of the idea; the tradeable half is the official Kalshi market, and this entry refuses to act until that market has a CAPTURED LADDER — the MLB series were quoted-only on the 2026-09-18 store, and the on-demand ingest was pointed at them for exactly this reason.',
+    rules: [
+      'Universe: every OPEN KXMLB* contract with a real captured ladder at the cut-off (game, series and season-long markets).',
+      'Trigger: the captured ask on the favourite side is 0.75–0.97.',
+      'Entry: taker buy of the favourite, sized to the real ladder within 2 ticks, capped at 30% of cash, up to 3 legs.',
+      'Exit: none — hold to the exchange settlement.'
+    ],
+    sizing: '30% of cash per leg, max 3 legs, each bounded by the real captured depth',
+    decide(view) {
+      const out = [];
+      const candidates = tradeableMarkets(view)
+        .filter((m) => /^KXMLB/i.test(String(m.seriesTicker || '')) || /^KXMLB/i.test(String(m.ticker || '')))
+        .sort((a, b) => (b.volume || 0) - (a.volume || 0));
+      for (const market of candidates.slice(0, 6)) {
+        const fav = favouriteOf(market);
+        if (!fav || fav.price === null || fav.price === undefined) continue;
+        if (fav.price < 0.75 || fav.price > 0.97) continue;
+        const count = sizeToDepth(view, market, { side: fav.side, price: fav.price, cashFraction: 0.3, ticks: 2 });
+        if (count < DESK_LIMITS.minContracts) continue;
+        out.push({
+          ticker: market.ticker,
+          side: fav.side,
+          action: 'buy',
+          type: 'market',
+          count,
+          reason: `MLB favourite at ${fav.price} (real captured touch, ladder ${market.ladderAt}); closes ${market.closeTime}; holding to the exchange settlement`
+        });
+        if (out.length >= 3) break;
+      }
+      return out;
+    }
+  },
+  {
+    id: 'live_nfl_favourite_hold',
+    username: 'LiveNFL_GameFavourite',
+    name: 'Desk: NFL favourite buy-and-settle (MasterSite S08, NFL-scoreboard)',
+    category: 'Sports / Favourite',
+    watch: /^KXNFL/i,
+    source: 'S08 · NFL-scoreboard (MasterSite) — the Kalshi NFL markets are official and captured here; the project side still needs a point-in-time scoreboard archive',
+    mandate: 'MAXIMUM RETURN. No stop-losses, no position caps, no volatility targeting. Sizing is a fixed fraction of cash, bounded by the real captured ladder.',
+    thesis:
+      'The NFL is the deepest sports franchise on Kalshi, and the favourite–longshot bias is at its most visible in game and division markets. This entry buys the side the captured ladder already prices at 0.75–0.97 and holds it to settlement. Like the MLB entrant it is a MasterSite-derived idea whose Kalshi half is official: NFL series were quoted-only on the 2026-09-18 store, so it abstains (with the reason published) until a real ladder exists for them.',
+    rules: [
+      'Universe: every OPEN KXNFL* contract with a real captured ladder at the cut-off (game, spread, total, division and conference markets).',
+      'Trigger: the captured ask on the favourite side is 0.75–0.97.',
+      'Entry: taker buy of the favourite, sized to the real ladder within 2 ticks, capped at 30% of cash, up to 3 legs.',
+      'Exit: none — hold to the exchange settlement.'
+    ],
+    sizing: '30% of cash per leg, max 3 legs, each bounded by the real captured depth',
+    decide(view) {
+      const out = [];
+      const candidates = tradeableMarkets(view)
+        .filter((m) => /^KXNFL/i.test(String(m.seriesTicker || '')) || /^KXNFL/i.test(String(m.ticker || '')))
+        .sort((a, b) => (b.volume || 0) - (a.volume || 0));
+      for (const market of candidates.slice(0, 6)) {
+        const fav = favouriteOf(market);
+        if (!fav || fav.price === null || fav.price === undefined) continue;
+        if (fav.price < 0.75 || fav.price > 0.97) continue;
+        const count = sizeToDepth(view, market, { side: fav.side, price: fav.price, cashFraction: 0.3, ticks: 2 });
+        if (count < DESK_LIMITS.minContracts) continue;
+        out.push({
+          ticker: market.ticker,
+          side: fav.side,
+          action: 'buy',
+          type: 'market',
+          count,
+          reason: `NFL favourite at ${fav.price} (real captured touch, ladder ${market.ladderAt}); closes ${market.closeTime}; holding to the exchange settlement`
+        });
+        if (out.length >= 3) break;
+      }
+      return out;
+    }
   }
 ]);
 

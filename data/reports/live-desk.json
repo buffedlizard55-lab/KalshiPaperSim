@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T04:43:44.119Z",
+  "generatedAt": "2026-09-19T04:48:52.135Z",
   "deskVersion": 1,
   "asOf": "2026-09-18T18:46:22.458Z",
   "startingCapital": 100000,
@@ -2187,6 +2187,46 @@
       "openPositions": []
     },
     {
+      "strategy": "LiveMLB_GameFavourite",
+      "startingCapital": 100000,
+      "cash": 100000,
+      "equity": 100000,
+      "returnPct": 0,
+      "realizedPnl": 0,
+      "unrealizedPnl": 0,
+      "marketValue": 0,
+      "settlementPnl": 0,
+      "feesPaid": 0,
+      "attribution": 0,
+      "attributionOk": true,
+      "fills": 0,
+      "contracts": 0,
+      "requested": 0,
+      "unfilled": 0,
+      "slippageCost": 0,
+      "openPositions": []
+    },
+    {
+      "strategy": "LiveNFL_GameFavourite",
+      "startingCapital": 100000,
+      "cash": 100000,
+      "equity": 100000,
+      "returnPct": 0,
+      "realizedPnl": 0,
+      "unrealizedPnl": 0,
+      "marketValue": 0,
+      "settlementPnl": 0,
+      "feesPaid": 0,
+      "attribution": 0,
+      "attributionOk": true,
+      "fills": 0,
+      "contracts": 0,
+      "requested": 0,
+      "unfilled": 0,
+      "slippageCost": 0,
+      "openPositions": []
+    },
+    {
       "strategy": "LiveFavourite_Settle",
       "startingCapital": 100000,
       "cash": 98726.16962,
@@ -2577,6 +2617,22 @@
     },
     {
       "strategy": "LiveNBA_GameFavourite",
+      "verdict": "NO TRADES",
+      "headline": "This strategy placed no fillable order on the desk universe at this cut-off.",
+      "worked": [],
+      "hurt": [],
+      "evidence": []
+    },
+    {
+      "strategy": "LiveMLB_GameFavourite",
+      "verdict": "NO TRADES",
+      "headline": "This strategy placed no fillable order on the desk universe at this cut-off.",
+      "worked": [],
+      "hurt": [],
+      "evidence": []
+    },
+    {
+      "strategy": "LiveNFL_GameFavourite",
       "verdict": "NO TRADES",
       "headline": "This strategy placed no fillable order on the desk universe at this cut-off.",
       "worked": [],
@@ -3016,6 +3072,9 @@
       "fills": 2,
       "settlements": "no",
       "returnPct": -0.002558,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3026,6 +3085,9 @@
       "fills": 3,
       "settlements": "no",
       "returnPct": -0.288337,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3036,6 +3098,9 @@
       "fills": 3,
       "settlements": "no",
       "returnPct": -0.278569,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3046,6 +3111,9 @@
       "fills": 3,
       "settlements": "no",
       "returnPct": -0.051478,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3056,6 +3124,9 @@
       "fills": 0,
       "settlements": "no",
       "returnPct": 0,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Runs on the desk but placed no order that the real ladder could fill (reported as unfilled, never priced)."
     },
     {
@@ -3066,6 +3137,9 @@
       "fills": 0,
       "settlements": "no",
       "returnPct": 0,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Runs on the desk but placed no order that the real ladder could fill (reported as unfilled, never priced)."
     },
     {
@@ -3076,6 +3150,9 @@
       "fills": 2,
       "settlements": "no",
       "returnPct": -0.295184,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3086,6 +3163,9 @@
       "fills": 1,
       "settlements": "no",
       "returnPct": -0.002834,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3096,6 +3176,9 @@
       "fills": 2,
       "settlements": "no",
       "returnPct": -0.009739,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3106,6 +3189,9 @@
       "fills": 3,
       "settlements": "no",
       "returnPct": -0.050103,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3116,6 +3202,9 @@
       "fills": 2,
       "settlements": "no",
       "returnPct": -0.010399,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3126,6 +3215,9 @@
       "fills": 0,
       "settlements": "no",
       "returnPct": 0,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Runs on the desk but placed no order that the real ladder could fill (reported as unfilled, never priced)."
     },
     {
@@ -3136,12 +3228,41 @@
       "fills": 2,
       "settlements": "no",
       "returnPct": -0.21266,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
+    },
+    {
+      "strategy": "LiveMLB_GameFavourite",
+      "name": "Desk: MLB favourite buy-and-settle (MasterSite S09, MLB-Live-PBP)",
+      "source": "S09 · MLB-Live-PBP (MasterSite) — the Kalshi MLB markets are official and captured here; the project side still needs a point-in-time play-by-play archive",
+      "deskTracked": true,
+      "fills": 0,
+      "settlements": "no",
+      "returnPct": 0,
+      "watched": "/^KXMLB/i",
+      "watchedContracts": 0,
+      "watchedTradeable": 0,
+      "note": "0 of the 68 desk contracts match the series it watches and 0 of those had a captured ladder at this cut-off; 25 further open contract(s) in the tracked list match it but are QUOTED ONLY (no captured ladder) — with no ladder there is nothing to price, so it placed no order."
+    },
+    {
+      "strategy": "LiveNFL_GameFavourite",
+      "name": "Desk: NFL favourite buy-and-settle (MasterSite S08, NFL-scoreboard)",
+      "source": "S08 · NFL-scoreboard (MasterSite) — the Kalshi NFL markets are official and captured here; the project side still needs a point-in-time scoreboard archive",
+      "deskTracked": true,
+      "fills": 0,
+      "settlements": "no",
+      "returnPct": 0,
+      "watched": "/^KXNFL/i",
+      "watchedContracts": 0,
+      "watchedTradeable": 0,
+      "note": "0 of the 68 desk contracts match the series it watches and 0 of those had a captured ladder at this cut-off; 23 further open contract(s) in the tracked list match it but are QUOTED ONLY (no captured ladder) — with no ladder there is nothing to price, so it placed no order."
     }
   ],
   "audit": {
     "ok": true,
-    "checkedAt": "2026-09-19T04:43:44.112Z",
+    "checkedAt": "2026-09-19T04:48:52.130Z",
     "totals": {
       "orders": 26,
       "fills": 23,
@@ -3210,7 +3331,7 @@
       {
         "name": "equity change = realized + unrealized - fees (residual < $0.01)",
         "ok": true,
-        "detail": "LiveDepthSweep_Taker: residual 0; LiveMakerTouch: residual 0; LiveNBA_GameFavourite: residual 0; LiveFavourite_Settle: residual 0; LiveMeanRev_Spike: residual 0; LiveExpiryHarvest: residual 0; LiveNCAA_GameFavourite: residual 0; LiveFDA_DecisionPremium: residual 0; LiveCheapBracket_Ladder: residual 0; LiveCEO_ChangeFav: residual 0; LiveLongshot_Convexity: residual 0; LiveTailPremium_NO: residual 0; LiveMomentum_Bars: residual 0"
+        "detail": "LiveDepthSweep_Taker: residual 0; LiveMakerTouch: residual 0; LiveNBA_GameFavourite: residual 0; LiveMLB_GameFavourite: residual 0; LiveNFL_GameFavourite: residual 0; LiveFavourite_Settle: residual 0; LiveMeanRev_Spike: residual 0; LiveExpiryHarvest: residual 0; LiveNCAA_GameFavourite: residual 0; LiveFDA_DecisionPremium: residual 0; LiveCheapBracket_Ladder: residual 0; LiveCEO_ChangeFav: residual 0; LiveLongshot_Convexity: residual 0; LiveTailPremium_NO: residual 0; LiveMomentum_Bars: residual 0"
       },
       {
         "name": "no result claims a return without at least one real fill or settlement",

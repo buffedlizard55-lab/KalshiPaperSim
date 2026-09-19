@@ -1512,7 +1512,7 @@ export function runDeskSession({
     records,
     results,
     explanations: results.map((r) => explainDeskStrategy(r, records)),
-    coverage: strategyCoverage(strategies, results)
+    coverage: strategyCoverage(strategies, results, universe)
   };
   desk.audit = auditDesk(desk, universe);
   return desk;
@@ -1878,7 +1878,7 @@ export function explainDeskStrategy(result, records = []) {
  * where its trades are tracked — the desk ledger, the replay ledger, or
  * nowhere yet, with the reason.
  */
-export function strategyCoverage(strategies, results) {
+export function strategyCoverage(strategies, results, universe = null) {
   const resultByStrategy = new Map(results.map((r) => [r.strategy, r]));
   return strategies.map((s) => {
     const name = s.username || s.id;
@@ -1891,10 +1891,18 @@ export function strategyCoverage(strategies, results) {
       fills: result?.fills ?? 0,
       settlements: result?.settlementPnl ? 'yes' : 'no',
       returnPct: result?.returnPct ?? null,
+      // A zero-fill entrant that DECLARES the series it watches gets the
+      // measured reason, not a shrug: how many contracts in the universe
+      // matched, and how many of those had a real captured ladder.
+      watched: s.watch ? String(s.watch) : null,
+      watchedContracts: s.watch && universe ? (universe.markets || []).filter((m) => s.watch.test(m.ticker)).length : null,
+      watchedTradeable: s.watch && universe ? (universe.markets || []).filter((m) => s.watch.test(m.ticker) && m.tradeable).length : null,
       note: result
         ? result.fills > 0
           ? 'Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL.'
-          : 'Runs on the desk but placed no order that the real ladder could fill (reported as unfilled, never priced).'
+          : s.watch && universe
+            ? `${(universe.markets || []).filter((m) => s.watch.test(m.ticker)).length} of the ${(universe.markets || []).length} desk contracts match the series it watches and ${(universe.markets || []).filter((m) => s.watch.test(m.ticker) && m.tradeable).length} of those had a captured ladder at this cut-off; ${(universe.quotedOnly || []).filter((m) => s.watch.test(m.ticker)).length} further open contract(s) in the tracked list match it but are QUOTED ONLY (no captured ladder) — with no ladder there is nothing to price, so it placed no order.`
+            : 'Runs on the desk but placed no order that the real ladder could fill (reported as unfilled, never priced).'
         : 'Not a desk entry: its trades are tracked in the replay Trade Ledger (and it is listed as unranked when it never traded).'
     };
   });

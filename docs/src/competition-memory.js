@@ -53,6 +53,12 @@ export const DESK_RESERVED_USERNAMES = Object.freeze([
   'LiveNCAA_GameFavourite',
   'LiveNBA_GameFavourite',
   'LiveCEO_ChangeFav',
+  // Added with the season review: the two MasterSite sports topics (S08 NFL
+  // scoreboard, S09 MLB live play-by-play) now have a desk entrant of their
+  // own, so their Kalshi markets are traded the moment a real ladder exists
+  // for them instead of being covered only by the generic sports entries.
+  'LiveMLB_GameFavourite',
+  'LiveNFL_GameFavourite',
   // Season entrants (src/desk-season-strategies.js) — the carried-book roster.
   'SeasonWeather_Carry',
   'SeasonIndex_CarryHold',
