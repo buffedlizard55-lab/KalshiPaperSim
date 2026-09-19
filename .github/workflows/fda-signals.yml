@@ -33,6 +33,13 @@ on:
       - '.github/triggers/fda.json'
   workflow_dispatch:
 
+# Shared per-ref queue with the other data bots (ingest, weather signals):
+# one merge push can fire two bots whose regenerate steps rewrite the same
+# browser modules. Queue, don't race (see ingest-now.yml).
+concurrency:
+  group: data-pipeline-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 

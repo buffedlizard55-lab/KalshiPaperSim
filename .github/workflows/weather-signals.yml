@@ -27,6 +27,13 @@ on:
     paths:
       - '.github/triggers/forecast.json'
 
+# Shared per-ref queue with the other data bots (ingest, FDA signals): one
+# merge push can fire two bots whose regenerate steps rewrite the same browser
+# modules. Queue, don't race (see ingest-now.yml).
+concurrency:
+  group: data-pipeline-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
