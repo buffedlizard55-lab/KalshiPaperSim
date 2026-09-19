@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/AZC013",
       "relativeLocation": "Phoenix, AZ",
       "timeZone": "America/Phoenix",
-      "resolvedAt": "2026-09-19T11:57:03.777Z",
+      "resolvedAt": "2026-09-19T16:32:20.844Z",
       "pointsUrl": "https://api.weather.gov/points/33.4342,-112.0116"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -495,6 +495,72 @@
           "date": "2026-09-19",
           "highF": 104,
           "periodName": "Saturday",
+          "startTime": "2026-09-19T06:00:00-07:00",
+          "endTime": "2026-09-19T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-09-20",
+          "highF": 102,
+          "periodName": "Sunday",
+          "startTime": "2026-09-20T06:00:00-07:00",
+          "endTime": "2026-09-20T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-09-21",
+          "highF": 103,
+          "periodName": "Monday",
+          "startTime": "2026-09-21T06:00:00-07:00",
+          "endTime": "2026-09-21T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 1
+        },
+        {
+          "date": "2026-09-22",
+          "highF": 102,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-22T06:00:00-07:00",
+          "endTime": "2026-09-22T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 6
+        },
+        {
+          "date": "2026-09-23",
+          "highF": 103,
+          "periodName": "Wednesday",
+          "startTime": "2026-09-23T06:00:00-07:00",
+          "endTime": "2026-09-23T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 12
+        },
+        {
+          "date": "2026-09-24",
+          "highF": 102,
+          "periodName": "Thursday",
+          "startTime": "2026-09-24T06:00:00-07:00",
+          "endTime": "2026-09-24T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 23
+        },
+        {
+          "date": "2026-09-25",
+          "highF": 102,
+          "periodName": "Friday",
+          "startTime": "2026-09-25T06:00:00-07:00",
+          "endTime": "2026-09-25T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 15
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-19T16:32:20.844Z",
+      "points_url": "https://api.weather.gov/points/33.4342,-112.0116",
+      "forecast_url": "https://api.weather.gov/gridpoints/PSR/161,57/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-19T06:32:46+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-19",
+          "highF": 104,
+          "periodName": "Today",
           "startTime": "2026-09-19T06:00:00-07:00",
           "endTime": "2026-09-19T18:00:00-07:00",
           "probabilityOfPrecipitationPct": 0
