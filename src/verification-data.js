@@ -849,6 +849,22 @@ export const VERIFIED_FACTS = Object.freeze([
     capturedAt: '2026-09-18',
     usedIn: 'IRREGULARITIES.md #44; README AUTO:COUNTS; src/verification-data.js',
     irregularity: '#44'
+  },
+  {
+    id: 'V106', group: 'FDA signals', status: 'DOCUMENTED',
+    fact: 'The official Drugs@FDA marketing-status vocabulary is a fixed four-value list, and the archive derives `approved` from it exactly',
+    value: 'The Drugs@FDA Glossary of Terms (fda.gov) defines Marketing Status as: "Drug products in Drugs@FDA are identified as: Prescription, Over-the-counter, Discontinued, None (tentatively approved)". The Orange Book preface confirms the Prescription and OTC lists are the approved, marketed "Active Section" and that a tentative approval "is not an approved drug product". The archive therefore derives approved = any product marketing_status is exactly Prescription or Over-the-counter (case-insensitive); Discontinued (approved but not marketed, which per the same glossary also covers withdrawn approvals) and None (tentative) do NOT count, and unknown strings fail closed. Tests 115-117 assert the derivation, the point-in-time read rule and the forward-test abstention.',
+    url: 'https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-glossary-terms',
+    capturedAt: '2026-09-19',
+    usedIn: 'scripts/archive-fda-signals.mjs APPROVED_MARKETING_STATUSES; src/fda-signal-store.js; src/strategies.js FDAEdge_DrugsFDA'
+  },
+  {
+    id: 'V107', group: 'FDA signals', status: 'DOCUMENTED',
+    fact: 'The FDA signal source is the official openFDA Drugs@FDA API, keyless and machine-readable, and every tracked KXFDA market is either mapped from its own rule text or deliberately excluded with a reason',
+    value: 'Endpoint GET https://api.open.fda.gov/drug/drugsfda.json?search=<query> (openFDA, FDA\'s own Drugs@FDA database; no key required at archive volume). Response shape (meta.disclaimer / meta.last_updated / meta.results.total; results[].application_number, sponsor_name, products[].marketing_status, submissions[].submission_status_date) verified against openFDA\'s published API documentation and two independent integrations of it on 2026-09-19. Subject queries are taken verbatim from each tracked market\'s own rules_primary: COMP360 psilocybin (sponsor "compass pathways"), retatrutide, camizestrant, cytisinicline, gedatolisib, midomafetamine. Two tracked FDA series are deliberately NOT covered, with reasons recorded in the archive script: KXFDAANNOUNCE (an FDA announcement, not an application record) and KXFDAAPPROVALPSYCHEDELIC (a composite). Basis mismatch published: the database record can lag the announcement the market resolves on.',
+    url: 'https://open.fda.gov/apis/drug/drugsfda/',
+    capturedAt: '2026-09-19',
+    usedIn: 'scripts/archive-fda-signals.mjs; .github/workflows/fda-signals.yml; src/fda-signal-store.js; strategy FDAEdge_DrugsFDA'
   }
 ]);
 

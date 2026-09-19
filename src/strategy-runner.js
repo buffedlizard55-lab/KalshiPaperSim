@@ -24,6 +24,7 @@ import { ACCUMULATED_HISTORY, getAccumulatedBars, ACCUMULATED_INTRADAY, getIntra
 import { buildReplayUniverse, summarizeUniverse, MIN_REPLAY_BARS, CANDLE_ORIGIN } from './history-merge.js';
 import { CAPTURED_DEPTH, getCapturedDepthProfile, getCapturedDepthTickers } from './captured-depth.js';
 import { forecastLocations, forecastHighAt } from './forecast-store.js';
+import { fdaSubjects, stateAtOrBefore } from './fda-signal-store.js';
 
 /** Data-source label for bars that came from the daily ingest job, not a capture. */
 export const DATA_SOURCE_ACCUMULATED = 'accumulated_history_store';
@@ -45,6 +46,60 @@ export function weatherEventDate(eventTicker) {
   const month = MONTHS[m[2]];
   if (!month) return null;
   return `20${m[1]}-${month}-${m[3]}`;
+}
+
+/**
+ * Build the engine's FDA signal provider from the point-in-time Drugs@FDA
+ * archive. Same contract as the forecast provider: given a ticker, its market
+ * and a decision timestamp it returns the newest archived Drugs@FDA state
+ * captured at or before that time — or null (and a strategy that receives
+ * null ABSTAINS). The ticker→subject map comes from the archive's own
+ * subject.markets lists (the exact tracked tickers the archive was
+ * configured from), so the provider and the archive can never disagree about
+ * which market belongs to which drug.
+ */
+export function buildFdaSignalProvider() {
+  const byTicker = new Map();
+  for (const s of fdaSubjects()) {
+    for (const t of s.markets || []) byTicker.set(String(t), s);
+  }
+  if (byTicker.size === 0) return null;
+  return (ticker, market, tsSeconds) => {
+    const store = byTicker.get(String(ticker));
+    if (!store) return null;
+    const hit = stateAtOrBefore(store.snapshots || [], tsSeconds);
+    if (!hit) return null;
+    return {
+      kind: 'fda-drugsfda-state',
+      slug: store.slug,
+      label: (store.subject && store.subject.label) || null,
+      state: hit.state,
+      approved: hit.approved,
+      capturedAt: hit.capturedAt,
+      total: hit.total,
+      source: hit.source,
+      endpoint: store.endpoint || null
+    };
+  };
+}
+
+/**
+ * The competition's default signal provider: every point-in-time archive this
+ * repository grows (NWS forecasts, Drugs@FDA states), composed. A market that
+ * no archive answers gets null — which makes a signal-dependent strategy
+ * abstain there, by design rather than by accident.
+ */
+export function composeSignalProviders(...providers) {
+  const built = providers.length ? providers : [buildForecastSignalProvider(), buildFdaSignalProvider()];
+  const live = built.filter((p) => typeof p === 'function');
+  if (!live.length) return null;
+  return (ticker, market, tsSeconds) => {
+    for (const p of live) {
+      const hit = p(ticker, market, tsSeconds);
+      if (hit) return hit;
+    }
+    return null;
+  };
 }
 
 /**
@@ -376,7 +431,7 @@ export function runCompetition(options = {}) {
   const depthMode = options.depthMode === 'captured' ? 'captured' : 'modelled';
   const depthProfiles = options.depthProfiles || (depthMode === 'captured' ? getCapturedDepthProfiles() : null);
 
-  const signalProvider = options.signalProvider !== undefined ? options.signalProvider : buildForecastSignalProvider();
+  const signalProvider = options.signalProvider !== undefined ? options.signalProvider : composeSignalProviders();
   const engine = new ReplayEngine({
     markets,
     candlesByTicker,

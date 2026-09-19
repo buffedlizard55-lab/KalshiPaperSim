@@ -1377,6 +1377,12 @@ test('46. every verified fact carries a reviewable link and a status', () => {
     // strategies (facts V87/V88). It is a signal source, never a source about
     // the exchange itself, which is why the group check below still applies.
     'api.weather.gov',
+    // www.fda.gov / open.fda.gov are the OFFICIAL US Food and Drug
+    // Administration hosts — the glossary that defines the Drugs@FDA
+    // marketing-status vocabulary (V106) and the openFDA Drugs@FDA API the
+    // fda-signals workflow captures (V107). Signal sources, same status as
+    // api.weather.gov; the group check below still applies.
+    'www.fda.gov', 'open.fda.gov', 'api.open.fda.gov',
     'laikalabs.ai', 'pith.science', 'www.reddit.com', 'reddit.com', 'www.oddsshopper.com'
   ]);
   let withLink = 0;
@@ -1401,7 +1407,8 @@ test('46. every verified fact carries a reviewable link and a status', () => {
       if (f.group !== 'Strategy sources') {
         assert.ok(
           u.host.endsWith('kalshi.com') || u.host.endsWith('kalshi.co') || u.host === 'github.com' ||
-            u.host === 'tc39.es' || u.host === 'developer.mozilla.org' || u.host === 'api.weather.gov',
+            u.host === 'tc39.es' || u.host === 'developer.mozilla.org' || u.host === 'api.weather.gov' ||
+            u.host === 'www.fda.gov' || u.host === 'open.fda.gov' || u.host === 'api.open.fda.gov',
           `${f.id}: "${f.group}" facts must cite Kalshi (or a language/project reference), not ${u.host}`
         );
       }
@@ -4049,5 +4056,137 @@ test('114. a paper account can neither borrow cash nor sell contracts it does no
   const season = seasonFixture();
   for (const r of season.results) {
     for (const point of r.equityCurve) assert.ok(point.cash >= -0.011, `${r.strategy}: cash ${point.cash} went negative at ${point.roundLabel}`);
+  }
+});
+
+/* ─────────────────────────────────────────────────────────────────────── *
+ * FDA signal archive (2026-09-19, session 01a0bad9)
+ * ══════════════════════════════════════════════════════════════════════ */
+
+test('115. the Drugs@FDA parser derives the archive state from official response shapes and refuses unexpected ones', async () => {
+  const { parseResponse, deriveApproved } = await import('../scripts/archive-fda-signals.mjs');
+
+  // NO_RECORD: the exchange's own empty result (a drug with no application yet).
+  const empty = parseResponse({ meta: { disclaimer: 'openFDA', results: { total: 0 } }, results: [] });
+  assert.equal(empty.state, 'NO_RECORD');
+  assert.equal(empty.approved, false);
+  assert.equal(empty.total, 0);
+
+  // RECORD_NO_APPROVED_PRODUCT: an application exists, no approved-marketed status.
+  const pending = parseResponse({
+    meta: { disclaimer: 'd', results: { total: 1, skip: 0, limit: 1 } },
+    results: [
+      {
+        application_number: 'NDA123456',
+        sponsor_name: 'EXAMPLE PHARMA',
+        products: [{ brand_name: 'X', marketing_status: 'None', active_ingredients: [{ name: 'X', strength: '1MG' }] }],
+        submissions: [{ submission_type: 'ORIG', submission_status: 'CR', submission_status_date: '2026-01-15' }]
+      }
+    ]
+  });
+  assert.equal(pending.state, 'RECORD_NO_APPROVED_PRODUCT');
+  assert.equal(pending.approved, false);
+  assert.deepEqual(pending.marketingStatuses, ['None']);
+  assert.equal(pending.newestSubmissionStatusDate, '2026-01-15');
+
+  // APPROVED: a product whose verbatim marketing_status is one of the two
+  // approved-marketed states in the official Drugs@FDA vocabulary.
+  const approved = parseResponse({
+    meta: { disclaimer: 'd', results: { total: 1 } },
+    results: [
+      {
+        application_number: 'NDA123456',
+        sponsor_name: 'EXAMPLE PHARMA',
+        products: [{ brand_name: 'X', marketing_status: 'Prescription', active_ingredients: [] }],
+        submissions: []
+      }
+    ]
+  });
+  assert.equal(approved.state, 'APPROVED');
+  assert.equal(approved.approved, true);
+  assert.deepEqual(approved.marketingStatuses, ['Prescription']);
+
+  // The derivation is the documented EXACT vocabulary match (Drugs@FDA
+  // glossary): Prescription / Over-the-counter are the approved-marketed
+  // states; 'Discontinued' (approved but not marketed, incl. withdrawn
+  // approvals) and 'None' (tentative) do not count. Unknown strings fail
+  // CLOSED — they never read as an approval.
+  const { APPROVED_MARKETING_STATUSES, MARKETING_STATUS_GLOSSARY } = await import('../scripts/archive-fda-signals.mjs');
+  assert.deepEqual(APPROVED_MARKETING_STATUSES, ['prescription', 'over-the-counter']);
+  assert.ok(/fda\.gov/.test(MARKETING_STATUS_GLOSSARY));
+  assert.equal(deriveApproved([{ marketing_status: 'Over-the-counter' }]).approved, true);
+  assert.equal(deriveApproved([{ marketing_status: 'Tentative Approval' }]).approved, false, 'tentative is not approved');
+  assert.equal(deriveApproved([{ marketing_status: 'Discontinued' }]).approved, false, 'discontinued is not approved-for-marketing');
+  assert.equal(deriveApproved([{ marketing_status: 'None' }]).approved, false);
+  assert.equal(deriveApproved([{ marketing_status: 'Some brand-new string' }]).approved, false, 'unknown vocabulary fails closed');
+  assert.equal(deriveApproved([{ marketing_status: null }, {}]).approved, false);
+
+  // An unexpected shape throws instead of guessing (shape-change detector).
+  assert.throws(() => parseResponse({ meta: {} }), /total/);
+  assert.throws(() => parseResponse(null));
+});
+
+test('116. the FDA signal store is point-in-time: no snapshot after the decision is ever readable, and the flip is detected in time order', async () => {
+  const store = await import('../src/fda-signal-store.js');
+  const snaps = [
+    { captured_at: '2026-09-19T12:00:00.000Z', state: 'NO_RECORD', approved: false, url: 'https://api.open.fda.gov/drug/drugsfda.json?search=x', total: 0 },
+    { captured_at: '2026-09-20T12:00:00.000Z', state: 'RECORD_NO_APPROVED_PRODUCT', approved: false, url: 'https://api.open.fda.gov/drug/drugsfda.json?search=x', total: 1 },
+    { captured_at: '2026-09-21T12:00:00.000Z', state: 'APPROVED', approved: true, url: 'https://api.open.fda.gov/drug/drugsfda.json?search=x', total: 1 }
+  ];
+  const sec = (iso) => Math.floor(Date.parse(iso) / 1000);
+  // Before the first snapshot: null — the strategy abstains.
+  assert.equal(store.stateAtOrBefore(snaps, sec('2026-09-19T11:59:59Z')), null);
+  // The newest snapshot AT the decision is used (equal timestamps are knowable).
+  assert.equal(store.stateAtOrBefore(snaps, sec('2026-09-19T12:00:00Z')).state, 'NO_RECORD');
+  // A decision between captures sees the state as of THEN, never a later one:
+  // at 09-21T00:00Z the 09-21T12:00Z snapshot does not exist yet.
+  assert.equal(store.stateAtOrBefore(snaps, sec('2026-09-20T23:00:00Z')).state, 'RECORD_NO_APPROVED_PRODUCT');
+  assert.equal(store.stateAtOrBefore(snaps, sec('2026-09-21T00:00:00Z')).state, 'RECORD_NO_APPROVED_PRODUCT');
+  assert.equal(store.stateAtOrBefore(snaps, sec('2026-09-21T12:00:00Z')).state, 'APPROVED');
+  assert.equal(store.stateAtOrBefore(snaps, sec('2026-09-22T00:00:00Z')).state, 'APPROVED');
+  // Snapshots out of order in the file change nothing.
+  assert.equal(store.stateAtOrBefore([...snaps].reverse(), sec('2026-09-20T23:00:00Z')).state, 'RECORD_NO_APPROVED_PRODUCT');
+  // The flip: 09-21's snapshot is where approved became true.
+  const flip = store.approvalFlip(snaps);
+  assert.equal(flip.flippedAt, '2026-09-21T12:00:00.000Z');
+  assert.equal(flip.priorCapturedAt, '2026-09-20T12:00:00.000Z');
+  // No flip while the state never changes.
+  assert.equal(store.approvalFlip(snaps.slice(0, 2)), null);
+  assert.equal(store.approvalFlip([]), null);
+});
+
+test('117. the FDA strategy is a genuine forward test: it abstains on the shipped archive, and the deliberately excluded series are published', async () => {
+  const { STRATEGIES } = await import('../src/strategies.js');
+  const runner = await import('../src/strategy-runner.js');
+  const store = await import('../src/fda-signal-store.js');
+  const strat = STRATEGIES.find((s) => s.username === 'FDAEdge_DrugsFDA');
+  assert.ok(strat, 'the FDA strategy is on the roster');
+
+  // (a) With the archive as shipped (0 or more snapshots), a competition run
+  // for this strategy on the real daily store computes a result — 0 trades
+  // while the archive does not overlap a live market — and the leaderboard
+  // refuses to rank a strategy with no fills.
+  const res = runner.runCompetition({ strategies: [strat], depthMode: 'captured', periodIntervalMinutes: 1440 });
+  const me = res.results[0];
+  assert.equal(me.totalTrades, 0, 'no archive overlap yet → no trades (never a fabricated backtest)');
+  assert.equal(me.analysis.verdict, 'UNTESTED_ON_THIS_DATASET');
+  assert.equal(res.leaderboard[0].rank, null, 'unranked, with the reason published');
+  assert.ok(String(res.leaderboard[0].disqualificationReason || '').length > 10, 'the not-ranked reason is stated');
+
+  // (b) The exclusions are part of the shipped configuration, with reasons.
+  const { EXCLUDED } = await import('../scripts/archive-fda-signals.mjs');
+  assert.ok(EXCLUDED.some((e) => e.series === 'KXFDAANNOUNCE'), 'the announcement series is deliberately excluded');
+  assert.ok(EXCLUDED.some((e) => e.series === 'KXFDAAPPROVALPSYCHEDELIC'), 'the composite series is deliberately excluded');
+  for (const e of EXCLUDED) assert.ok(e.reason.length > 40, `${e.series} carries a real reason`);
+
+  // (c) The provider answers only the exact tracked tickers the archive was
+  // configured from — and, with no archive shipped, is null so the composed
+  // provider still answers the weather markets.
+  const fdaProvider = runner.buildFdaSignalProvider();
+  if (!store.hasFdaSignalArchive()) {
+    assert.equal(fdaProvider, null, 'no archive → no provider (never a guessing one)');
+  } else {
+    const ticks = new Set(store.fdaSubjects().flatMap((s) => s.markets || []));
+    assert.ok(ticks.size > 0);
   }
 });

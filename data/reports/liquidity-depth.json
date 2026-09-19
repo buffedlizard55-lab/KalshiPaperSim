@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T18:16:00.084Z",
+  "generatedAt": "2026-09-19T20:23:18.993Z",
   "source": "GET /markets/{ticker}/orderbook — real captured ladders (orderbook_fp with dollar strings). One ladder is stored per market; the capture timestamp and URL are on every row so a human can re-check it.",
   "docs": "https://docs.kalshi.com/getting_started/orderbook_responses",
   "endpoint": "GET /markets/{ticker}/orderbook",

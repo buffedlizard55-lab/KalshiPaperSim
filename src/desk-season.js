@@ -131,10 +131,37 @@ export function seasonSchedule({
   const batchMs = Math.max(0, Number(batchMinutes) || 0) * 60 * 1000;
   const spacingMs = Math.max(0, Number(minSpacingMinutes) || 0) * 60 * 1000;
 
-  const perMarket = data.markets.map((m) => {
-    const times = (m.captures || []).map((c) => ms(c.at)).filter((t) => Number.isFinite(t));
-    return { ticker: m.ticker, first: times.length ? Math.min(...times) : null, times: times.slice().sort((a, b) => a - b) };
-  });
+  /**
+   * A ROUND IS A MOMENT THE OPEN BOARD WAS ACTUALLY CAPTURED.
+   *
+   * Finalized contracts keep their ladders in the module — they are what the
+   * desk's real $1.00/$0.00 settlement is priced from — but their historical
+   * capture instants do not SEED rounds. Letting them seed produced rounds
+   * where the only priceable contracts were ones already settled (found
+   * 2026-09-19 when the finalized reserve added six settled contracts and two
+   * such dead rounds moved the whole schedule, silently un-trading two season
+   * entrants whose entry conditions only exist at the round they lost).
+   */
+  const horizonMs = data.markets.reduce((acc, m) => {
+    for (const c of m.captures || []) {
+      const t = ms(c.at);
+      if (t !== null && (acc === null || t > acc)) acc = t;
+    }
+    return acc;
+  }, null);
+  const seedsOpenBoard = (m) => {
+    if (String(m.status || '') === 'finalized') return false;
+    const close = ms(m.market?.close_time || m.market?.expiration_time);
+    if (horizonMs !== null && close !== null && close <= horizonMs) return false;
+    return true;
+  };
+
+  const perMarket = data.markets
+    .filter(seedsOpenBoard)
+    .map((m) => {
+      const times = (m.captures || []).map((c) => ms(c.at)).filter((t) => Number.isFinite(t));
+      return { ticker: m.ticker, first: times.length ? Math.min(...times) : null, times: times.slice().sort((a, b) => a - b) };
+    });
 
   const instants = [...new Set(perMarket.flatMap((m) => m.times))].sort((a, b) => a - b);
   const considered = instants.length;

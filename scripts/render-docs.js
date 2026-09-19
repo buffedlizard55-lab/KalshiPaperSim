@@ -43,7 +43,15 @@ const num = (v) => Number(v || 0).toLocaleString('en-US', { maximumFractionDigit
 /* ------------------------------------------------------------------ *
  * Compute the competition once; every document quotes the same run.
  * ------------------------------------------------------------------ */
-const competition = runCompetition({ seed: SEED });
+// The headline table is the CAPTURED-depth run — the real book — because the
+// server's /api/run-competition default (and the repo rule that "captured is
+// the default everywhere results are published") is captured. This used to be
+// the default (modelled) run, which made the README's own "reproduce with
+// curl" instruction return different numbers than the table it sat under
+// (found 2026-09-19: MeanRev_CheapBand +4.24% in the table vs −5.77% from the
+// curl it advertised). The modelled comparison still lives in
+// data/reports/depth-comparison.json, computed by run-reports.mjs.
+const competition = runCompetition({ seed: SEED, depthMode: 'captured' });
 const { leaderboard, results, competition: meta } = competition;
 /* The two intraday flights (hourly 60m, micro 1m) are computed from the SAME
    stored data and quoted in the README next to the daily table — reported

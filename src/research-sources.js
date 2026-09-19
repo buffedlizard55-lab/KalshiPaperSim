@@ -355,6 +355,37 @@ export const RESEARCH_SOURCES = Object.freeze([
       'The source ran its strategies on ITS OWN 5-second/15-second snapshot database of live-polled books; this repository holds official candlesticks at 60m/1m granularity. ' +
       'The `mom` entry in particular is an adaptation (20-second momentum cannot be formed from 1-minute bars), and no performance number from the source is reused — ' +
       'the README reports none for these three strategies, only their rules.'
+  },
+
+  /* ── 15. Tested: the 75–80¢ high-probability scalp (r/KalshiBTCUporDown15) ── */
+  {
+    id: 'R15',
+    title: 'My complete strategy for BTC Up or Down 15 (subreddit pinned write-up)',
+    host: 'reddit.com/r/KalshiBTCUporDown15',
+    url: 'https://www.reddit.com/r/KalshiBTCUporDown15/',
+    capturedVia: RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
+    verifiedOn: '2026-09-19',
+    claim:
+      '"my philosophy on predictive markets is to find high probability positions that are undervalued. For BTC Up or Down 15, I wait until one side has reached 80% market ' +
+      'probability. If I feel there is good value at 75-80 cents, I invest then. If I am not yet convinced that the 80% probability is accurate, I wait. Once I have an ' +
+      'accepted bid, I immediately set a take profit limit order for 95 cents." — "Take a side with a high probability of winning and exit with 15-20 cents profit as soon ' +
+      'and as often as possible." The same write-up describes reading the chart with Bollinger bands and a discretionary stop expressed as a BITCOIN price level ("I am ' +
+      'getting out if it ever reaches +25"), not as a contract price.',
+    taken:
+      'The two mechanical rules: (1) enter the high-probability side while it is quoted 75–80¢; (2) take profit at 95¢. Both are contract-price rules, so they translate ' +
+      'directly onto this repository\'s real 1-minute candlesticks (yes_bid/yes_ask per bar).',
+    testable: true,
+    testedBy: ['HighProb_Scalp8095'],
+    howTested:
+      'HighProb_Scalp8095 replays the real 1-minute stores of KXBTC15M/KXETH15M/KXSOL15M/KXGOLD15M: buy YES when the YES ask is 0.75–0.80, buy NO when the NO ask is ' +
+      '0.75–0.80, sell the position when its price reaches the source\'s 0.95 take-profit, otherwise hold to the exchange\'s real settlement. Official quadratic fees, ' +
+      'real per-bar volume bounds and captured-ladder depth apply like every roster entry.',
+    caveat:
+      'reddit.com returns HTTP 403 to this sandbox, so the write-up was read through the search engine\'s full-text excerpt of the subreddit\'s pinned post (the same ' +
+      'capture method as R01), not a page fetch. Three parts of the source design are NOT recreated and the entry says so: (1) the discretionary filter ("IF I FEEL there ' +
+      'is good value") is a human judgement this replay cannot have — the recreation takes every mechanical 75–80¢ occurrence; (2) the stop-loss is a BITCOIN price level ' +
+      'and this store holds no BTC spot feed, so positions that never reach 95¢ ride to the exchange\'s real settlement instead; (3) the source names no position size — ' +
+      'the 25%-of-cash sizing is this repository\'s own choice and is labelled as such on the strategy.'
   }
 ]);
 

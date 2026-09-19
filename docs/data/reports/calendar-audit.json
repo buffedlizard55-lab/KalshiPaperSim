@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T18:16:00.069Z",
+  "generatedAt": "2026-09-19T20:23:18.989Z",
   "method": "For each stored market, every pair of consecutive end_period_ts values is compared with the documented period length. A difference that is not an exact period is recorded here with both timestamps. Nothing is filled, interpolated or shifted.",
   "evidence": {
     "holiday": {
@@ -13,9 +13,9 @@
     }
   },
   "totals": {
-    "markets": 53,
-    "gaps": 442,
-    "marketsWithWholeBarGaps": 39
+    "markets": 186,
+    "gaps": 450,
+    "marketsWithWholeBarGaps": 43
   },
   "emptyStores": [
     {
@@ -28,9 +28,9 @@
   "markets": [
     {
       "ticker": "JPMCEOCHANGE-27",
-      "bars": 283,
+      "bars": 284,
       "first": "2025-11-18T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 17,
       "gapDetail": [
         {
@@ -187,7 +187,7 @@
           "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 100
+      "noTradeBars": 101
     },
     {
       "ticker": "KXAAPLCEOCHANGE-26",
@@ -227,10 +227,19 @@
       "noTradeBars": 9
     },
     {
+      "ticker": "KXBTC15M-26SEP181445-45",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
       "ticker": "KXBTCY-27JAN0100-B47500",
-      "bars": 205,
+      "bars": 206,
       "first": "2026-02-26T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -247,9 +256,9 @@
     },
     {
       "ticker": "KXBTCY-27JAN0100-B52500",
-      "bars": 205,
+      "bars": 206,
       "first": "2026-02-26T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -266,9 +275,9 @@
     },
     {
       "ticker": "KXBTCY-27JAN0100-B57500",
-      "bars": 205,
+      "bars": 206,
       "first": "2026-02-26T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -285,9 +294,9 @@
     },
     {
       "ticker": "KXBTCY-27JAN0100-B62500",
-      "bars": 205,
+      "bars": 206,
       "first": "2026-02-26T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -304,9 +313,9 @@
     },
     {
       "ticker": "KXBTCY-27JAN0100-B67500",
-      "bars": 205,
+      "bars": 206,
       "first": "2026-02-26T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -323,9 +332,9 @@
     },
     {
       "ticker": "KXBTCY-27JAN0100-B72500",
-      "bars": 205,
+      "bars": 206,
       "first": "2026-02-26T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -342,9 +351,9 @@
     },
     {
       "ticker": "KXBTCY-27JAN0100-B77500",
-      "bars": 205,
+      "bars": 206,
       "first": "2026-02-26T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -361,9 +370,9 @@
     },
     {
       "ticker": "KXBTCY-27JAN0100-B82500",
-      "bars": 205,
+      "bars": 206,
       "first": "2026-02-26T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -380,9 +389,9 @@
     },
     {
       "ticker": "KXBTCY-27JAN0100-B87500",
-      "bars": 205,
+      "bars": 206,
       "first": "2026-02-26T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -399,9 +408,9 @@
     },
     {
       "ticker": "KXBTCY-27JAN0100-T149999.99",
-      "bars": 205,
+      "bars": 206,
       "first": "2026-02-26T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -417,10 +426,19 @@
       "noTradeBars": 6
     },
     {
+      "ticker": "KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU",
+      "bars": 16,
+      "first": "2026-09-04T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
       "ticker": "KXFDAANNOUNCE-BPC-26NOV01",
-      "bars": 168,
+      "bars": 169,
       "first": "2026-03-25T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 7,
       "gapDetail": [
         {
@@ -487,7 +505,7 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 75
+      "noTradeBars": 76
     },
     {
       "ticker": "KXFDAANNOUNCE-BPC-26SEP01",
@@ -500,9 +518,9 @@
     },
     {
       "ticker": "KXFDAANNOUNCE-BPC-27JAN01",
-      "bars": 167,
+      "bars": 168,
       "first": "2026-03-25T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 9,
       "gapDetail": [
         {
@@ -587,13 +605,13 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 78
+      "noTradeBars": 79
     },
     {
       "ticker": "KXFDAAPPROVALDATECMPS-360-27JAN01",
-      "bars": 102,
+      "bars": 103,
       "first": "2026-05-16T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 13,
       "gapDetail": [
         {
@@ -714,13 +732,13 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 55
+      "noTradeBars": 56
     },
     {
       "ticker": "KXFDAAPPROVALDATECMPS-360-27JUL01",
-      "bars": 150,
+      "bars": 151,
       "first": "2026-03-25T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 17,
       "gapDetail": [
         {
@@ -877,13 +895,13 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 86
+      "noTradeBars": 87
     },
     {
       "ticker": "KXFDAAPPROVALDATECMPS-360-27MAR01",
-      "bars": 105,
+      "bars": 106,
       "first": "2026-05-16T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 11,
       "gapDetail": [
         {
@@ -986,13 +1004,13 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 64
+      "noTradeBars": 65
     },
     {
       "ticker": "KXFDAAPPROVALDATECMPS-360-27OCT01",
-      "bars": 141,
+      "bars": 142,
       "first": "2026-03-25T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 18,
       "gapDetail": [
         {
@@ -1158,13 +1176,13 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 99
+      "noTradeBars": 100
     },
     {
       "ticker": "KXFDAAPPROVALDATECMPS-360-28JAN01",
-      "bars": 119,
+      "bars": 120,
       "first": "2026-03-25T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 25,
       "gapDetail": [
         {
@@ -1393,13 +1411,13 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 100
+      "noTradeBars": 101
     },
     {
       "ticker": "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
       "bars": 400,
-      "first": "2025-08-15T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "first": "2025-08-16T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 2,
       "gapDetail": [
         {
@@ -1421,7 +1439,7 @@
           "classification": "OFF-GRID DELTA: not a whole multiple of 86400s — the bar boundary moved (US Eastern DST shifts each daily bar by one hour; verified 2026-03-10, delta 82800s)"
         }
       ],
-      "noTradeBars": 24
+      "noTradeBars": 23
     },
     {
       "ticker": "KXFDAAPPROVE-CAM-26OCT01",
@@ -1688,10 +1706,10 @@
     },
     {
       "ticker": "KXFDAAPPROVE-CYT-26OCT01",
-      "bars": 79,
+      "bars": 80,
       "first": "2026-05-14T04:00:00.000Z",
-      "last": "2026-09-14T04:00:00.000Z",
-      "gaps": 16,
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 17,
       "gapDetail": [
         {
           "from": 1779163200,
@@ -1836,6 +1854,15 @@
           "deltaSeconds": 259200,
           "missingBars": 2,
           "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1789358400,
+          "to": 1789790400,
+          "fromIso": "2026-09-14T04:00:00.000Z",
+          "toIso": "2026-09-19T04:00:00.000Z",
+          "deltaSeconds": 432000,
+          "missingBars": 4,
+          "classification": "WHOLE-BAR GAP: 4 bar(s) absent from the API response for this window"
         }
       ],
       "noTradeBars": 41
@@ -1897,9 +1924,9 @@
     },
     {
       "ticker": "KXFDAAPPROVE-MDMA-30JAN01",
-      "bars": 94,
+      "bars": 95,
       "first": "2026-05-14T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 15,
       "gapDetail": [
         {
@@ -2038,13 +2065,13 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 75
+      "noTradeBars": 76
     },
     {
       "ticker": "KXFDARETATRUTIDE-RET-27JAN01",
-      "bars": 121,
+      "bars": 122,
       "first": "2026-05-14T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 5,
       "gapDetail": [
         {
@@ -2093,13 +2120,13 @@
           "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 25
+      "noTradeBars": 26
     },
     {
       "ticker": "KXFDARETATRUTIDE-RET-27JUL01",
-      "bars": 127,
+      "bars": 128,
       "first": "2026-05-14T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -2112,7 +2139,7 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 22
+      "noTradeBars": 23
     },
     {
       "ticker": "KXFDARETATRUTIDE-RET-28JAN01",
@@ -2433,9 +2460,9 @@
     },
     {
       "ticker": "KXFDARETATRUTIDE-RET-29JAN01",
-      "bars": 97,
+      "bars": 98,
       "first": "2026-05-14T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 18,
       "gapDetail": [
         {
@@ -2601,13 +2628,176 @@
           "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 94
+      "noTradeBars": 95
+    },
+    {
+      "ticker": "KXFED-27APR-T3.00",
+      "bars": 29,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-18T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 16
+    },
+    {
+      "ticker": "KXFED-27APR-T3.25",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 18
+    },
+    {
+      "ticker": "KXFED-27APR-T3.50",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 15
+    },
+    {
+      "ticker": "KXFED-27APR-T3.75",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 16
+    },
+    {
+      "ticker": "KXFED-27APR-T4.00",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 22
+    },
+    {
+      "ticker": "KXFED-27APR-T4.25",
+      "bars": 29,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1789444800,
+          "to": 1789617600,
+          "fromIso": "2026-09-15T04:00:00.000Z",
+          "toIso": "2026-09-17T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 17
+    },
+    {
+      "ticker": "KXHIGHDEN-26SEP17-T82",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP17-B82.5",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXHIGHTPHX-26SEP17-B91.5",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXHIGHTPHX-26SEP17-T91",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXHIGHTSEA-26SEP17-B72.5",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXINXU-26SEP18H1600-T7699.9999",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXINXU-26SEP18H1600-T7704.9999",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXINXU-26SEP18H1600-T7709.9999",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXINXU-26SEP18H1600-T7724.9999",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXINXU-26SEP18H1600-T7729.9999",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXINXU-26SEP18H1600-T7734.9999",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
     },
     {
       "ticker": "KXINXY-26DEC31H1600-B6900",
-      "bars": 265,
+      "bars": 266,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 5,
       "gapDetail": [
         {
@@ -2656,13 +2846,13 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 38
+      "noTradeBars": 39
     },
     {
       "ticker": "KXINXY-26DEC31H1600-B7100",
-      "bars": 266,
+      "bars": 267,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 4,
       "gapDetail": [
         {
@@ -2706,9 +2896,9 @@
     },
     {
       "ticker": "KXINXY-26DEC31H1600-B7300",
-      "bars": 269,
+      "bars": 270,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -2725,9 +2915,9 @@
     },
     {
       "ticker": "KXINXY-26DEC31H1600-B7500",
-      "bars": 268,
+      "bars": 269,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 2,
       "gapDetail": [
         {
@@ -2753,9 +2943,9 @@
     },
     {
       "ticker": "KXINXY-26DEC31H1600-B7700",
-      "bars": 268,
+      "bars": 269,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 2,
       "gapDetail": [
         {
@@ -2781,9 +2971,9 @@
     },
     {
       "ticker": "KXINXY-26DEC31H1600-B7900",
-      "bars": 268,
+      "bars": 269,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 2,
       "gapDetail": [
         {
@@ -2809,9 +2999,9 @@
     },
     {
       "ticker": "KXINXY-26DEC31H1600-B8100",
-      "bars": 268,
+      "bars": 269,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 2,
       "gapDetail": [
         {
@@ -2837,9 +3027,9 @@
     },
     {
       "ticker": "KXINXY-26DEC31H1600-B8300",
-      "bars": 263,
+      "bars": 264,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 5,
       "gapDetail": [
         {
@@ -3064,10 +3254,10 @@
     },
     {
       "ticker": "KXINXY-26DEC31H1600-T4000",
-      "bars": 255,
+      "bars": 256,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-16T04:00:00.000Z",
-      "gaps": 10,
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 11,
       "gapDetail": [
         {
           "from": 1766811600,
@@ -3158,15 +3348,249 @@
           "deltaSeconds": 172800,
           "missingBars": 1,
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1789531200,
+          "to": 1789790400,
+          "fromIso": "2026-09-16T04:00:00.000Z",
+          "toIso": "2026-09-19T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 79
+      "noTradeBars": 80
+    },
+    {
+      "ticker": "KXMLB-26-BOS",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLB-26-LAD",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLB-26-MIL",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLB-26-NYY",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLB-26-SD",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLB-26-SEA",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBHR-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-1",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBHR-26SEP181905MILBAL-MILJCHOURIO11-1",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBKS-26SEP181840CHCCIN-CHCCHOLMES35-5",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBKS-26SEP181840KCPIT-KCRDOBNAK62-4",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC2",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC5",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC7",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE2",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE5",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
     },
     {
       "ticker": "KXNASDAQ100Y-26DEC31H1600-B25750",
-      "bars": 255,
+      "bars": 256,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 13,
       "gapDetail": [
         {
@@ -3287,13 +3711,13 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 96
+      "noTradeBars": 97
     },
     {
       "ticker": "KXNASDAQ100Y-26DEC31H1600-B29750",
-      "bars": 249,
+      "bars": 250,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 20,
       "gapDetail": [
         {
@@ -3481,9 +3905,9 @@
     },
     {
       "ticker": "KXNASDAQ100Y-26DEC31H1600-B30250",
-      "bars": 253,
+      "bars": 254,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 13,
       "gapDetail": [
         {
@@ -3608,9 +4032,9 @@
     },
     {
       "ticker": "KXNASDAQ100Y-26DEC31H1600-B30750",
-      "bars": 251,
+      "bars": 252,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 16,
       "gapDetail": [
         {
@@ -3762,9 +4186,9 @@
     },
     {
       "ticker": "KXNASDAQ100Y-26DEC31H1600-B31250",
-      "bars": 247,
+      "bars": 248,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 20,
       "gapDetail": [
         {
@@ -3948,13 +4372,13 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 134
+      "noTradeBars": 135
     },
     {
       "ticker": "KXNASDAQ100Y-26DEC31H1600-B31750",
-      "bars": 250,
+      "bars": 251,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 12,
       "gapDetail": [
         {
@@ -4066,13 +4490,13 @@
           "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
         }
       ],
-      "noTradeBars": 121
+      "noTradeBars": 122
     },
     {
       "ticker": "KXNASDAQ100Y-26DEC31H1600-B32250",
-      "bars": 248,
+      "bars": 249,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 15,
       "gapDetail": [
         {
@@ -4215,9 +4639,9 @@
     },
     {
       "ticker": "KXNASDAQ100Y-26DEC31H1600-B32750",
-      "bars": 248,
+      "bars": 249,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 18,
       "gapDetail": [
         {
@@ -4387,9 +4811,9 @@
     },
     {
       "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
-      "bars": 265,
+      "bars": 266,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 4,
       "gapDetail": [
         {
@@ -4433,9 +4857,9 @@
     },
     {
       "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
-      "bars": 264,
+      "bars": 265,
       "first": "2025-12-24T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 4,
       "gapDetail": [
         {
@@ -4478,10 +4902,859 @@
       "noTradeBars": 31
     },
     {
+      "ticker": "KXNBA-27-GSW",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBA-27-LAL",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBA-27-MIA",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBA-27-MIN",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBA-27-ORL",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 17
+    },
+    {
+      "ticker": "KXNBA-27-PHI",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBAEAST-27-CLE",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 11
+    },
+    {
+      "ticker": "KXNBAEAST-27-IND",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 9
+    },
+    {
+      "ticker": "KXNBAEAST-27-MIA",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBAEAST-27-NYK",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBAEAST-27-PHI",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBAEAST-27-TOR",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 19
+    },
+    {
+      "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBAGAME-26OCT20PHINYK-NYK",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBAWEST-27-DAL",
+      "bars": 24,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 2,
+      "gapDetail": [
+        {
+          "from": 1787544000,
+          "to": 1787716800,
+          "fromIso": "2026-08-24T04:00:00.000Z",
+          "toIso": "2026-08-26T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1789185600,
+          "to": 1789704000,
+          "fromIso": "2026-09-12T04:00:00.000Z",
+          "toIso": "2026-09-18T04:00:00.000Z",
+          "deltaSeconds": 518400,
+          "missingBars": 5,
+          "classification": "WHOLE-BAR GAP: 5 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 17
+    },
+    {
+      "ticker": "KXNBAWEST-27-GSW",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 17
+    },
+    {
+      "ticker": "KXNBAWEST-27-LAL",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 8
+    },
+    {
+      "ticker": "KXNBAWEST-27-MIN",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNBAWEST-27-SAS",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNBAWEST-27-UTA",
+      "bars": 27,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 2,
+      "gapDetail": [
+        {
+          "from": 1788667200,
+          "to": 1788926400,
+          "fromIso": "2026-09-06T04:00:00.000Z",
+          "toIso": "2026-09-09T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        },
+        {
+          "from": 1789531200,
+          "to": 1789704000,
+          "fromIso": "2026-09-16T04:00:00.000Z",
+          "toIso": "2026-09-18T04:00:00.000Z",
+          "deltaSeconds": 172800,
+          "missingBars": 1,
+          "classification": "WHOLE-BAR GAP: 1 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 21
+    },
+    {
+      "ticker": "KXNCAAF-27-LSU",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAF-27-MIA",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAF-27-MISS",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAF-27-OKLA",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAF-27-ORE",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAF-27-TEX",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+      "bars": 7,
+      "first": "2026-09-13T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+      "bars": 7,
+      "first": "2026-09-13T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
+      "bars": 5,
+      "first": "2026-09-13T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 1,
+      "gapDetail": [
+        {
+          "from": 1789531200,
+          "to": 1789790400,
+          "fromIso": "2026-09-16T04:00:00.000Z",
+          "toIso": "2026-09-19T04:00:00.000Z",
+          "deltaSeconds": 259200,
+          "missingBars": 2,
+          "classification": "WHOLE-BAR GAP: 2 bar(s) absent from the API response for this window"
+        }
+      ],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+      "bars": 7,
+      "first": "2026-09-13T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+      "bars": 7,
+      "first": "2026-09-13T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
+      "bars": 7,
+      "first": "2026-09-13T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+      "bars": 7,
+      "first": "2026-09-13T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
+      "bars": 7,
+      "first": "2026-09-13T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAFSPREAD-26SEP19NAUUTU-NAU25",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNCAAFSPREAD-26SEP19YSUSDST-SDST11",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAFTOTAL-26SEP19HCUIW-59",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNCAAFTOTAL-26SEP19MRMKTARL-59",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNCAAFTOTAL-26SEP19USDCP-57",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNCAAFTOTAL-26SEP19WAGCAL-61",
+      "bars": 1,
+      "first": "2026-09-19T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLAFCCHAMP-27-BUF",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLAFCCHAMP-27-CIN",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLAFCCHAMP-27-DEN",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLAFCCHAMP-27-HOU",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLAFCCHAMP-27-KC",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLAFCCHAMP-27-PIT",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNFLNFCCHAMP-27-DAL",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLNFCCHAMP-27-LAR",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLNFCCHAMP-27-MIN",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLNFCCHAMP-27-NYG",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLNFCCHAMP-27-SEA",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLNFCCHAMP-27-SF",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLSPREAD-26SEP20MIASF-SF14",
+      "bars": 6,
+      "first": "2026-09-14T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLSPREAD-26SEP20SEAARI-SEA4",
+      "bars": 6,
+      "first": "2026-09-14T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNFLTOTAL-26SEP20JACDEN-45",
+      "bars": 6,
+      "first": "2026-09-14T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNFLTOTAL-26SEP20MIASF-45",
+      "bars": 6,
+      "first": "2026-09-14T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNFLTOTAL-26SEP20SEAARI-41",
+      "bars": 6,
+      "first": "2026-09-14T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNFLTOTAL-26SEP20SEAARI-42",
+      "bars": 6,
+      "first": "2026-09-14T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNHL-27-BUF",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 12
+    },
+    {
+      "ticker": "KXNHL-27-COL",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNHL-27-FLA",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNHL-27-MIN",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNHL-27-MTL",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 5
+    },
+    {
+      "ticker": "KXNHL-27-SJ",
+      "bars": 30,
+      "first": "2026-08-21T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 3
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP19CHIMIN-CHI",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP19CHIMIN-MIN",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP19DALSTL-DAL",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP20WSHBOS-WSH",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 0
+    },
+    {
+      "ticker": "KXNHLSPREAD-26SEP19DALSTL-DAL2",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNHLSPREAD-26SEP19DALSTL-DAL3",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNHLTOTAL-26SEP19CHIMIN-2",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNHLTOTAL-26SEP19DALSTL-2",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNHLTOTAL-26SEP19VANSEA-2",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNHLTOTAL-26SEP19VGKLA-2",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNHLTOTAL-26SEP19WPGEDM-2",
+      "bars": 3,
+      "first": "2026-09-17T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 2
+    },
+    {
+      "ticker": "KXNHLTOTAL-26SEP20SEACGY-2",
+      "bars": 2,
+      "first": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
+      "gaps": 0,
+      "gapDetail": [],
+      "noTradeBars": 1
+    },
+    {
       "ticker": "KXOPENAICEOCHANGE-26",
-      "bars": 260,
+      "bars": 261,
       "first": "2026-01-02T05:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 1,
       "gapDetail": [
         {
@@ -4498,9 +5771,9 @@
     },
     {
       "ticker": "TESLACEOCHANGE-26",
-      "bars": 399,
+      "bars": 400,
       "first": "2025-08-15T04:00:00.000Z",
-      "last": "2026-09-18T04:00:00.000Z",
+      "last": "2026-09-19T04:00:00.000Z",
       "gaps": 3,
       "gapDetail": [
         {

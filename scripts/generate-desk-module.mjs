@@ -359,8 +359,32 @@ withLadder.sort((a, b) => {
   if (va !== vb) return vb - va;
   return a.ticker.localeCompare(b.ticker);
 });
-const kept = withLadder.slice(0, MAX_MARKETS);
-const dropped = withLadder.slice(MAX_MARKETS);
+/**
+ * THE FINALIZED RESERVE. Open contracts sort first, so once the store holds
+ * more laddered markets than --max-markets, every settled contract is pushed
+ * out of the module and the desk loses the exchange's own settled results —
+ * the real $1.00/$0.00 settlement path (and its tests) degrade to fixtures
+ * only (found 2026-09-19: 157 laddered markets, 80 open ones filled the cap,
+ * 0 finalized kept). The selection therefore RESERVES up to
+ * --finalized-reserve slots for settled contracts that carry the exchange's
+ * own result, taken by real lifetime volume, ON TOP of the open-contract
+ * budget (the cap is a budget for OPEN contracts; bumping settled ones in
+ * would otherwise evict exactly the open contracts the desk entrants trade —
+ * the first cut of this fix did that and the season lost six of its seven
+ * active books). Settlement examples are part of what the desk is for.
+ */
+const FINALIZED_RESERVE = Number(arg('finalized-reserve', 6));
+const isFinalWithResult = (m) =>
+  String(m.status || '') === 'finalized' && (m.result === 'yes' || m.result === 'no');
+const finalizedRanked = withLadder
+  .filter(isFinalWithResult)
+  .sort((a, b) => (num(b.market?.volume_fp) || 0) - (num(a.market?.volume_fp) || 0) || a.ticker.localeCompare(b.ticker));
+const finalizedKept = finalizedRanked.slice(0, FINALIZED_RESERVE);
+const finalizedTickers = new Set(finalizedKept.map((m) => m.ticker));
+const openFirst = withLadder.filter((m) => !finalizedTickers.has(m.ticker));
+const kept = [...finalizedKept, ...openFirst.slice(0, MAX_MARKETS)];
+const keptTickers = new Set(kept.map((m) => m.ticker));
+const dropped = withLadder.filter((m) => !keptTickers.has(m.ticker));
 
 const quoted = readQuotedUniverse();
 const quotedKept = quoted
@@ -387,7 +411,9 @@ const output = {
   },
   rule: {
     inclusion: 'every tracked market with >=1 real captured order-book ladder (captures[].at + captures[].url recorded per ladder)',
-    ordering: 'open contracts first (close_time after the newest capture), then real lifetime volume_fp descending, then ticker',
+    ordering: `up to ${FINALIZED_RESERVE} FINALIZED contracts carrying the exchange's own result first (real lifetime volume_fp descending), then open contracts (close_time after the newest capture) by real lifetime volume_fp descending, then ticker; the cap of ${MAX_MARKETS} is a budget for the OPEN contracts, the finalized reserve is additional`,
+    finalizedReserve: FINALIZED_RESERVE,
+    finalizedAvailable: finalizedRanked.length,
     cap: MAX_MARKETS,
     droppedForCap: dropped.length,
     maxLevelsPerSide: MAX_LEVELS,

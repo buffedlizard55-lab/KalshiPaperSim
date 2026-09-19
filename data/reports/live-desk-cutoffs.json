@@ -1,30 +1,30 @@
 {
-  "newestCapture": "2026-09-19T11:08:18.437Z",
+  "newestCapture": "2026-09-19T19:00:27.865Z",
   "cutoffs": [
     {
       "label": "live (newest capture)",
-      "asOf": "2026-09-19T11:08:18.437Z",
-      "tradeable": 63,
+      "asOf": "2026-09-19T19:00:27.865Z",
+      "tradeable": 80,
       "withRealResultAfter": 0,
       "settlementTickers": [],
       "sampleTickers": [
-        "KXBTCY-27JAN0100-B77500",
-        "KXBTCY-27JAN0100-B47500",
-        "KXBTCY-27JAN0100-B72500",
-        "KXBTCY-27JAN0100-B52500",
-        "KXBTCY-27JAN0100-B67500",
-        "KXBTCY-27JAN0100-B62500",
-        "KXBTCY-27JAN0100-B82500",
-        "KXBTCY-27JAN0100-B57500",
-        "KXBTCY-27JAN0100-T149999.99",
-        "KXBTCY-27JAN0100-B87500"
+        "KXNBA-27-PHI",
+        "KXMLB-26-LAD",
+        "KXMLB-26-MIL",
+        "KXMLB-26-BOS",
+        "KXMLB-26-NYY",
+        "KXMLB-26-SEA",
+        "KXMLB-26-SD",
+        "KXNCAAF-27-LSU",
+        "KXNCAAF-27-TEX",
+        "KXNCAAF-27-MISS"
       ],
       "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
     },
     {
       "label": "-6h",
-      "asOf": "2026-09-19T05:08:18.437Z",
-      "tradeable": 62,
+      "asOf": "2026-09-19T13:00:27.865Z",
+      "tradeable": 33,
       "withRealResultAfter": 0,
       "settlementTickers": [],
       "sampleTickers": [
@@ -43,8 +43,8 @@
     },
     {
       "label": "-12h",
-      "asOf": "2026-09-18T23:08:18.437Z",
-      "tradeable": 62,
+      "asOf": "2026-09-19T07:00:27.865Z",
+      "tradeable": 33,
       "withRealResultAfter": 0,
       "settlementTickers": [],
       "sampleTickers": [
@@ -63,8 +63,8 @@
     },
     {
       "label": "-15h",
-      "asOf": "2026-09-18T20:08:18.437Z",
-      "tradeable": 62,
+      "asOf": "2026-09-19T04:00:27.865Z",
+      "tradeable": 33,
       "withRealResultAfter": 0,
       "settlementTickers": [],
       "sampleTickers": [
@@ -83,17 +83,10 @@
     },
     {
       "label": "-24h",
-      "asOf": "2026-09-18T11:08:18.437Z",
-      "tradeable": 62,
-      "withRealResultAfter": 6,
-      "settlementTickers": [
-        "KXBTC15M-26SEP181445-45",
-        "KXHIGHNY-26SEP17-B82.5",
-        "KXHIGHTSEA-26SEP17-B72.5",
-        "KXHIGHTPHX-26SEP17-T91",
-        "KXHIGHTPHX-26SEP17-B91.5",
-        "KXHIGHDEN-26SEP17-T82"
-      ],
+      "asOf": "2026-09-18T19:00:27.865Z",
+      "tradeable": 33,
+      "withRealResultAfter": 0,
+      "settlementTickers": [],
       "sampleTickers": [
         "KXBTCY-27JAN0100-B77500",
         "KXBTCY-27JAN0100-B47500",
@@ -110,49 +103,28 @@
     },
     {
       "label": "-48h",
-      "asOf": "2026-09-17T11:08:18.437Z",
+      "asOf": "2026-09-17T19:00:27.865Z",
       "tradeable": 0,
-      "withRealResultAfter": 6,
-      "settlementTickers": [
-        "KXBTC15M-26SEP181445-45",
-        "KXHIGHNY-26SEP17-B82.5",
-        "KXHIGHTSEA-26SEP17-B72.5",
-        "KXHIGHTPHX-26SEP17-T91",
-        "KXHIGHTPHX-26SEP17-B91.5",
-        "KXHIGHDEN-26SEP17-T82"
-      ],
+      "withRealResultAfter": 0,
+      "settlementTickers": [],
       "sampleTickers": [],
       "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here (it will not use a later ladder)"
     },
     {
       "label": "-96h",
-      "asOf": "2026-09-15T11:08:18.437Z",
+      "asOf": "2026-09-15T19:00:27.865Z",
       "tradeable": 0,
-      "withRealResultAfter": 6,
-      "settlementTickers": [
-        "KXBTC15M-26SEP181445-45",
-        "KXHIGHNY-26SEP17-B82.5",
-        "KXHIGHTSEA-26SEP17-B72.5",
-        "KXHIGHTPHX-26SEP17-T91",
-        "KXHIGHTPHX-26SEP17-B91.5",
-        "KXHIGHDEN-26SEP17-T82"
-      ],
+      "withRealResultAfter": 0,
+      "settlementTickers": [],
       "sampleTickers": [],
       "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here (it will not use a later ladder)"
     },
     {
       "label": "-240h",
-      "asOf": "2026-09-09T11:08:18.437Z",
+      "asOf": "2026-09-09T19:00:27.865Z",
       "tradeable": 0,
-      "withRealResultAfter": 6,
-      "settlementTickers": [
-        "KXBTC15M-26SEP181445-45",
-        "KXHIGHNY-26SEP17-B82.5",
-        "KXHIGHTSEA-26SEP17-B72.5",
-        "KXHIGHTPHX-26SEP17-T91",
-        "KXHIGHTPHX-26SEP17-B91.5",
-        "KXHIGHDEN-26SEP17-T82"
-      ],
+      "withRealResultAfter": 0,
+      "settlementTickers": [],
       "sampleTickers": [],
       "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here (it will not use a later ladder)"
     }
