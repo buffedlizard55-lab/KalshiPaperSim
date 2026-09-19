@@ -1,23 +1,23 @@
 reachability probes:
-  ✓ https://api.fda.gov/drug/drugsfda.json?limit=1 → HTTP 200 (553ms)
-  ✗ https://api.weather.gov/alerts/active?limit=1 → ? (180ms)
-  ✓ https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip → HTTP 200 (229ms)
-comp360-psilocybin: NO_RECORD (total=0, approved=false) CHANGED — 1 snapshot(s) archived
-retatrutide: NO_RECORD (total=0, approved=false) CHANGED — 1 snapshot(s) archived
-camizestrant: APPROVED (total=1, approved=true) — 2 snapshot(s) archived
-cytisinicline: NO_RECORD (total=0, approved=false) CHANGED — 1 snapshot(s) archived
-gedatolisib: APPROVED (total=1, approved=true) — 2 snapshot(s) archived
-midomafetamine-mdma: NO_RECORD (total=0, approved=false) CHANGED — 1 snapshot(s) archived
-verify: camizestrant.json — 2 snapshot(s), state APPROVED
-verify: comp360-psilocybin.json — 1 snapshot(s), state NO_RECORD
-verify: cytisinicline.json — 1 snapshot(s), state NO_RECORD
-verify: gedatolisib.json — 2 snapshot(s), state APPROVED
-verify: midomafetamine-mdma.json — 1 snapshot(s), state NO_RECORD
-verify: retatrutide.json — 1 snapshot(s), state NO_RECORD
-verify: 6 subject(s), 8 snapshot(s), 0 problem(s)
+  ✓ https://api.fda.gov/drug/drugsfda.json?limit=1 → HTTP 200 (541ms)
+  ✗ https://api.weather.gov/alerts/active?limit=1 → ? (205ms)
+  ✓ https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip → HTTP 200 (142ms)
+comp360-psilocybin: NO_RECORD (total=0, approved=false) — 2 snapshot(s) archived
+retatrutide: NO_RECORD (total=0, approved=false) — 2 snapshot(s) archived
+camizestrant: APPROVED (total=1, approved=true) — 3 snapshot(s) archived
+cytisinicline: NO_RECORD (total=0, approved=false) — 2 snapshot(s) archived
+gedatolisib: APPROVED (total=1, approved=true) — 3 snapshot(s) archived
+midomafetamine-mdma: NO_RECORD (total=0, approved=false) — 2 snapshot(s) archived
+verify: camizestrant.json — 3 snapshot(s), state APPROVED
+verify: comp360-psilocybin.json — 2 snapshot(s), state NO_RECORD
+verify: cytisinicline.json — 2 snapshot(s), state NO_RECORD
+verify: gedatolisib.json — 3 snapshot(s), state APPROVED
+verify: midomafetamine-mdma.json — 2 snapshot(s), state NO_RECORD
+verify: retatrutide.json — 2 snapshot(s), state NO_RECORD
+verify: 6 subject(s), 14 snapshot(s), 0 problem(s)
 ✓ src/accumulated-history.js — 187 market(s), 12968 bar(s), 8671.5 KB
 ✓ src/forecast-data.js — 9 location(s), 83 snapshot(s), 173.1 KB
-✓ src/fda-signal-data.js — 6 subject(s), 8 snapshot(s), 11.8 KB
+✓ src/fda-signal-data.js — 6 subject(s), 14 snapshot(s), 15.8 KB
     JPMCEOCHANGE-27: 284 bar(s) + market object
     KXAAPLCEOCHANGE-26: 289 bar(s) + market object
     KXBTC15M-26SEP181445-45: 1 bar(s) + market object
