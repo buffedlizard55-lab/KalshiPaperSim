@@ -1395,6 +1395,44 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'validateUsername() now always unions STRATEGIES + DESK_RESERVED_USERNAMES (kept set-equal to DESK_STRATEGIES by test 104) plus any stored deskMemory.results. attachDeskSession() copies compact results and FILL/SETTLE rows into the year with kind desk. Positions are still not carried across cut-offs — that remaining gap is stated on the README.',
     userAction: 'Try registering LiveFavourite_Settle as a human participant; the platform must refuse it as reserved.'
+  },
+  {
+    id: 46, severity: 'high',
+    title: 'The forward walk read a bar list that stops at the cut-off, so a resting order could never be crossed by a real trade',
+    assumed: 'That buildTimeline() could see later candlestick quotes because it filtered events by `endTs > asOfMs` and the desk publishes the bar walk as live instrumentation.',
+    truth: 'It read `universe.markets[].bars`, and buildDeskUniverse deliberately truncates every bar list AT the cut-off — that truncation is what keeps a DECISION point-in-time. The `endTs > asOfMs` filter could therefore never admit a bar, at any cut-off. Measured on the 2026-09-18 store: bars after the cut-off inside the decision view = 0 at live/−6h/−12h/−24h, while the store itself held 185/272/513 later ladder captures at those cut-offs. Result: a resting (maker) order could only be crossed by a sparse later ladder snapshot, never by a real traded candlestick, and no paper position could be resolved by a later real trade. The Live Desk reported 0 maker fills at every cut-off it was asked about.',
+    evidence: [
+      { label: 'buildTimeline() — now reads the RAW store bars and filters by endTs itself (commented in place)', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js' },
+      { label: 'buildDeskUniverse() truncation — the reason the decision view must NOT see later bars', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js' },
+      { label: 'Regression test 107 pins both halves (non-zero forward quotes; no decision bar after asOf)', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js' }
+    ],
+    action: 'buildTimeline() now walks the raw store bars (data.markets[].bars) and filters by `endTs > asOfMs` itself, while the universe handed to strategies keeps truncating at the cut-off. After the fix the −6h cut-off walks 338 candlestick quotes + 4 real settlements (342 events), −12h walks 568 and −24h walks 1172; the newest capture honestly walks 0 because the store ends there. A carried maker order now fills at the −15h cut-off (1 maker fill) and the season book is crossed by later real quotes.',
+    userAction: 'Open the Live Desk tab at the −6h cut-off: "events walked" must be non-zero, and every maker fill must name the later real quote that crossed it (irregularity #46 is what made that number zero).'
+  },
+  {
+    id: 47, severity: 'med',
+    title: 'A reserved season username was longer than the platform limit, so the reservation never applied to it',
+    assumed: 'That adding a handle to DESK_RESERVED_USERNAMES was enough to stop a human claiming it.',
+    truth: 'validateUsername() checks username_length_3_to_24 BEFORE the reserved set, and the season handle `SeasonWeather_SettleCarry` is 25 characters. For that exact name the reserved-name branch was unreachable: the validator returned username_length_3_to_24. Test 112 — written with the season — asserts every roster username satisfies the same 3–24 and allowed-character rules the platform enforces, and it failed on its first run. A user could not have impersonated the entrant (the name was rejected), but the reservation the roster claimed to hold did not exist.',
+    evidence: [
+      { label: 'validateUsername() — length check precedes the reserved set', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/competition-memory.js' },
+      { label: 'Season roster — now SeasonWeather_Carry (20 chars)', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/desk-season-strategies.js' },
+      { label: 'Test 112 — enforces the platform rules over the season roster', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js' }
+    ],
+    action: 'Renamed to SeasonWeather_Carry (20 characters) in src/desk-season-strategies.js and src/competition-memory.js. Test 112 now asserts the length + character rules over every season entrant, and test 104 asserts DESK_RESERVED_USERNAMES is exactly the union of the desk AND season rosters, with no duplicate handle between them.',
+    userAction: 'Try to register SeasonWeather_SettleCarry: the platform refuses it for LENGTH, not because it is reserved — that was the hole the rename closed.'
+  },
+  {
+    id: 48, severity: 'med',
+    title: 'A superseded ingest request could not be cancelled, so two ingests ran against the same branch',
+    assumed: 'That an automation which can START a workflow run (by committing .github/triggers/ingest.json) can also stop one.',
+    truth: 'gh run cancel 35421506770 → HTTP 403 "Resource not accessible by integration": the GitHub App token this repository is automated with has no actions:write. A second trigger commit therefore started a second run while the first was still fetching, and nothing the automation holds can stop either. Run 35420823590 (188 tickers) and the duplicate 35421506770 (181 tickers, a strict subset) then raced to commit to the same branch.',
+    evidence: [
+      { label: 'ingest-now.yml — the trigger mechanism and its push-race guard step', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/.github/workflows/ingest-now.yml' },
+      { label: 'IRR #41 — the same race, previously lost by an inline git add', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/IRREGULARITIES.md' }
+    ],
+    action: 'Both runs were allowed to finish: the ingest is additive and scripts/push-with-race-guard.sh is the tested rebase-and-retry path for exactly this race (the duplicate cost only exchange API budget and runner minutes). ingest-now.yml now declares a per-ref concurrency group with cancel-in-progress: false, so a later request QUEUES behind the run in flight instead of racing it — the only brake available when cancelling is not permitted.',
+    userAction: 'Push two ingest requests back to back and watch the Actions tab: the second run must show as queued, not running in parallel.'
   }
 ]);
 

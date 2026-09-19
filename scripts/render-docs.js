@@ -27,6 +27,8 @@ import { KALSHI_FEES, OFFICIAL_FEE_TABLE_PER_100, NON_STANDARD_FEE_MULTIPLIERS, 
 import { DESK_DATA } from '../src/desk-data.js';
 import { DESK_STRATEGIES } from '../src/desk-strategies.js';
 import { buildDeskReport, auditorFacts } from '../src/live-desk.js';
+import { buildSeasonReport, seasonAuditorFacts } from '../src/desk-season.js';
+import { SEASON_STRATEGIES } from '../src/desk-season-strategies.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SEED = 20260917;
@@ -83,6 +85,16 @@ const deskMoney = (v) => `$${Number(v || 0).toFixed(4)}`;
 const desks = (r) => r.results;
 const deskRanked = deskReport.results.filter((r) => r.fills > 0 || r.settlementPnl !== 0).sort((a, b) => b.returnPct - a.returnPct);
 const deskIdle = deskReport.results.filter((r) => !(r.fills > 0 || r.settlementPnl !== 0));
+/* The Desk Season: the SAME book carried across real capture rounds. One
+   function builds it for the README, the server route and the Pages build. */
+const seasonReport = buildSeasonReport({ data: DESK_DATA, strategies: SEASON_STRATEGIES, startingCapital: 100000, maxRounds: 12 });
+const seasonFacts = seasonAuditorFacts();
+const seasonRanked = seasonReport.results.filter((r) => r.fills > 0 || r.settlementPnl !== 0).sort((a, b) => b.returnPct - a.returnPct);
+const seasonIdle = seasonReport.results.filter((r) => !(r.fills > 0 || r.settlementPnl !== 0));
+const seasonWindow = seasonReport.schedule.rounds.length
+  ? { first: seasonReport.schedule.rounds[0].asOf, last: seasonReport.schedule.rounds[seasonReport.schedule.rounds.length - 1].asOf }
+  : { first: null, last: null };
+const seasonHours = seasonWindow.first ? ((Date.parse(seasonWindow.last) - Date.parse(seasonWindow.first)) / 3600000).toFixed(1) : '0';
 
 /* ================================================================== *
  * VERIFICATION.md
@@ -350,6 +362,23 @@ ${deskIdle.map((r) => `| — | **${r.strategy}** | *no fillable order* | ${money
 The **−15h cut-off** (\`${deskOlder.asOf}\`) is the one window that both trades and settles inside the captured data: ${deskOlder.summary.totals.fills} fills, ${deskOlder.summary.totals.settlements} real settlement(s), ${deskMoney(deskOlder.summary.totals.fees)} in official fees — the $1.00/$0.00 payouts come from the exchange's own finalization, not from a mark.
 
 Reproduce either run locally with \`node scripts/run-live-desk.mjs\` (add \`--as-of=ISO\` for an older cut-off); the desk is deterministic, and \`scripts/run-live-desk.mjs\` exits non-zero if any desk invariant fails.
+
+### The Desk Season — one carried book across ${seasonReport.schedule.rounds.length} real capture rounds
+
+Window **${seasonWindow.first} → ${seasonWindow.last}** (${seasonHours} h). Every round is a real capture instant chosen by ${seasonReport.schedule.batches ?? 'n/a'} ingest batch(es) over ${seasonReport.schedule.consideredInstants ?? 'n/a'} captured instants; cash, open positions and the cumulative liquidity cap are the SAME book from round 1 to the last round, and the season walks the real events BETWEEN rounds (later captured ladders, later candlesticks, and the exchange's own settlements) before the next decision. Season audit: **${seasonReport.audit.checks.length} checks** (the ${deskFacts.length} desk invariants D1–D${deskFacts.length} re-run over the whole season plus the season's own S1–S${seasonFacts.length}) ${seasonReport.audit.ok ? 'PASS' : 'FAIL'}.
+
+| # | Round | Real capture instant | Contracts with a ladder | New ladders in this batch | Real events walked | Real settlements | Carried maker fills |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+${seasonReport.schedule.rounds.map((r) => `| ${r.index} | **${r.label}** | ${r.asOf} | ${r.tradeable} | ${r.newLadderCaptures} | ${(r.eventsApplied?.quotes ?? 0) + (r.eventsApplied?.settlements ?? 0)} (${r.eventsApplied?.barQuotes ?? 0} candle + ${r.eventsApplied?.ladderQuotes ?? 0} ladder quote(s)) | ${r.eventsApplied?.settlements ?? 0} | ${r.eventsApplied?.makerFills ?? 0} |`).join('\n')}
+
+| # | Season username | Return | Equity | Fills | Rounds traded | Contracts | Fees | Settlement PnL | Unrealized | Max DD |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+${seasonRanked.map((r, i) => `| ${i + 1} | **${r.strategy}** | ${pct(r.returnPct)} | ${money(r.equity)} | ${r.fills} | ${r.roundsTraded}/${seasonReport.schedule.rounds.length} | ${num(r.contracts)} | ${deskMoney(r.feesPaid)} | ${money(r.settlementPnl)} | ${money(r.unrealizedPnl)} | ${Number(r.maxDrawdownPct || 0).toFixed(2)}% |`).join('\n')}
+${seasonIdle.map((r) => `| — | **${r.strategy}** | *no fillable order* | ${money(r.equity)} | 0 | 0/${seasonReport.schedule.rounds.length} | 0 | $0.0000 | $0.00 | $0.00 | 0.00% |`).join('\n')}
+
+> A season entrant that never found a real fill is listed as **no fillable order** with the reason in its coverage row, never as 0%. The control entry (${seasonReport.results.find((r) => /Control/i.test(r.strategy))?.strategy || 'no-trade control'}) is designed to place nothing: it is the season's own benchmark.
+
+Reproduce it with \`node scripts/run-desk-season.mjs\` (writes \`data/reports/desk-season.json\`, \`desk-season-ledger.jsonl\` and \`desk-season-schedule.json\`; exits non-zero if any season invariant fails).
 
 <!-- AUTO:RESULTS-END -->`;
 

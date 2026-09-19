@@ -28,6 +28,17 @@ on:
       - '.github/triggers/ingest.json'
   workflow_dispatch:
 
+# ONE INGEST AT A TIME PER BRANCH (irregularity #48).
+# A second commit to .github/triggers/ingest.json while a run is fetching used
+# to start a second run in parallel: the two then raced to commit to the same
+# branch, and the automation token cannot cancel a run it started
+# (`gh run cancel` → HTTP 403, no actions:write). With this group a later
+# request waits for the run in flight (cancel-in-progress: false — never kill a
+# fetch that already spent the exchange rate budget) instead of duplicating it.
+concurrency:
+  group: ingest-now-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 

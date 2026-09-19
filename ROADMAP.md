@@ -39,6 +39,7 @@ mid-day order-book capture).
 | 21 | **The Live Desk (new tab).** A separate section that PLACES paper orders on real **OPEN** Kalshi contracts at a point in time: an order ticket priced from the captured ladder (fill, VWAP, slippage in ticks and $, official fee, unfilled remainder, liquidity cap), the desk competition, per-entrant explanations, the open-contract universe with its ladders and reasons, and a verified fill log. A ladder captured **after** the order time is refused (`LOOK_AHEAD_LADDER`); an order larger than the real book reports the rest UNFILLED; every fill and settlement carries the ladder/market URL and capture timestamp it came from | `src/live-desk.js`, `src/desk-strategies.js`, `src/desk-data.js`, `scripts/run-live-desk.mjs`, `data/reports/live-desk*.{json,jsonl}`, tests 92–103 |
 | 22 | **Desk parity between server and static builds.** One report builder (`buildDeskReport`) is used by `server.js` (`/api/live-desk`, `/cutoffs`, `/universe`, `/ticket`, `/order`, `/orders`, `/ledger.jsonl`, `/fills.csv`) and by the browser build, so the two modes cannot disagree; the desk audit (D1–D13, each with its official source) is re-run in the browser and printed on the tab | `server.js`, `src/app.js` desk renderers, `test/ui-smoke.mjs` desk assertions |
 | 23 | **Desk session in the one-year memory (partial Next #9).** `attachDeskSession()` copies compact results + FILL/SETTLE rows into `deskMemory` / `tradeLog` (`kind: 'desk'`). Server `/api/live-desk` and the static Live Desk tab both attach; a year reset clears the desk cache so the next run re-attaches. Desk usernames are reserved even against a stale store (`DESK_RESERVED_USERNAMES`, set-equal to `DESK_STRATEGIES` by test 104). One session per asOf — not a running multi-day book | `src/competition-memory.js`, `server.js`, `src/app.js` `renderMemory`, tests 35 / 76 / 87 / 104 |
+| 24 | **Desk Season — the running multi-round book (was Next #9).** One carried portfolio per season entrant across every REAL capture batch: cash, positions, resting orders and the cumulative 10% liquidity cap carry; the real events between rounds (later captured ladders, later candlestick quotes, the exchange's own settlements) are walked before the next decision; each round publishes its own instrumentation (quotes walked, settlements applied, carried maker fills) so a dead window is visible. A season fill/settlement/mark ledger, a per-round equity curve, a coverage row per entrant with the reason it did not trade, its own 26-check audit (the 13 desk invariants D1–D13 re-run over the whole season plus S1–S10), a CLI (`scripts/run-desk-season.mjs`), five server routes, its own tab, and the season attached to the one-year memory (`attachDeskSeason`, `kind: 'desk-season'`). Two real bugs were found and closed by its own tests: the forward walk read a bar list that stops at the cut-off (irregularity #46 — no maker fill was possible) and a reserved season username was longer than the platform limit, so the reservation never applied (irregularity #47) | `src/desk-season.js`, `src/desk-season-strategies.js`, `scripts/run-desk-season.mjs`, `data/reports/desk-season*.json`, `server.js` (`/api/desk-season*`), `index.html` + `src/app.js` (Desk Season tab), tests 105–112 |
 
 ## Next, in priority order
 
@@ -81,12 +82,15 @@ mid-day order-book capture).
    had 62/62/48/19 tradeable contracts and −24h and older had **0**. The
    scheduled 16:40 UTC `with_books=true` run is the fix, one capture per day.
    *Needs:* nothing but time and the existing workflow.
-9. **A running multi-day desk book.** Desk fills now attach to the one-year
-   memory (`attachDeskSession`, one session per asOf, FILL/SETTLE rows in
-   `tradeLog` with `kind: 'desk'`). What remains is carrying OPEN positions
-   across cut-offs so a desk trader has a continuous year rather than a
-   sequence of independent sessions. *Needs:* a persistence decision for
-   resting inventory between as-of instants.
+9. **A longer season.** The carried book now exists (`src/desk-season.js`):
+   one portfolio, many rounds, real settlements inside the season, 26-check
+   audit. What it is still short of is TIME — the 2026-09-18 store yields 6
+   real rounds across 19.6 hours, because a round is a moment this repository
+   actually queried the order book. *Needs:* nothing but the scheduled captures
+   continuing (and the on-demand trigger for a wider universe); `seasonSchedule`
+   picks up every new capture batch automatically, so the season lengthens on
+   its own. *Check:* `node scripts/run-desk-season.mjs` → the round count and
+   the window in `data/reports/desk-season-schedule.json`.
 
 ## Known limitations (kept in sync with the README)
 
