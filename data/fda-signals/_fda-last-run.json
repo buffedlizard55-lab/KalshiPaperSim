@@ -1,57 +1,61 @@
 {
-  "startedAt": "2026-09-19T20:43:28.069Z",
-  "finishedAt": "2026-09-19T20:50:34.561Z",
+  "startedAt": "2026-09-19T20:54:27.987Z",
+  "finishedAt": "2026-09-19T20:55:35.537Z",
   "subjects": [
     {
       "slug": "comp360-psilocybin",
       "ok": false,
-      "error": "subject comp360-psilocybin: network: fetch failed (cause=ENOTFOUND)"
+      "error": "subject comp360-psilocybin: HTTP 404 — No matches found!"
     },
     {
       "slug": "retatrutide",
       "ok": false,
-      "error": "subject retatrutide: network: fetch failed (cause=ENOTFOUND)"
+      "error": "subject retatrutide: HTTP 404 — No matches found!"
     },
     {
       "slug": "camizestrant",
-      "ok": false,
-      "error": "subject camizestrant: network: fetch failed (cause=ENOTFOUND)"
+      "ok": true,
+      "state": "APPROVED",
+      "total": 1,
+      "snapshots": 1
     },
     {
       "slug": "cytisinicline",
       "ok": false,
-      "error": "subject cytisinicline: network: fetch failed (cause=ENOTFOUND)"
+      "error": "subject cytisinicline: HTTP 404 — No matches found!"
     },
     {
       "slug": "gedatolisib",
-      "ok": false,
-      "error": "subject gedatolisib: network: fetch failed (cause=ENOTFOUND)"
+      "ok": true,
+      "state": "APPROVED",
+      "total": 1,
+      "snapshots": 1
     },
     {
       "slug": "midomafetamine-mdma",
       "ok": false,
-      "error": "subject midomafetamine-mdma: network: fetch failed (cause=ENOTFOUND)"
+      "error": "subject midomafetamine-mdma: HTTP 404 — No matches found!"
     }
   ],
-  "failures": 6,
+  "failures": 4,
   "probes": [
     {
-      "url": "https://api.open.fda.gov/drug/drugsfda.json?limit=1",
-      "ok": false,
-      "error": "fetch failed (cause=ENOTFOUND)",
-      "ms": 102
+      "url": "https://api.fda.gov/drug/drugsfda.json?limit=1",
+      "ok": true,
+      "http_status": 200,
+      "ms": 483
     },
     {
       "url": "https://api.weather.gov/alerts/active?limit=1",
       "ok": false,
       "http_status": 400,
-      "ms": 174
+      "ms": 201
     },
     {
       "url": "https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip",
       "ok": true,
       "http_status": 200,
-      "ms": 231
+      "ms": 250
     }
   ]
 }

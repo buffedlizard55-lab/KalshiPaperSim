@@ -1,11 +1,11 @@
 reachability probes:
-  ✗ https://api.open.fda.gov/drug/drugsfda.json?limit=1 → fetch failed (cause=ENOTFOUND) (102ms)
-  ✗ https://api.weather.gov/alerts/active?limit=1 → ? (174ms)
-  ✓ https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip → HTTP 200 (231ms)
-✗ subject comp360-psilocybin: network: fetch failed (cause=ENOTFOUND)
-✗ subject retatrutide: network: fetch failed (cause=ENOTFOUND)
-✗ subject camizestrant: network: fetch failed (cause=ENOTFOUND)
-✗ subject cytisinicline: network: fetch failed (cause=ENOTFOUND)
-✗ subject gedatolisib: network: fetch failed (cause=ENOTFOUND)
-✗ subject midomafetamine-mdma: network: fetch failed (cause=ENOTFOUND)
-6 subject capture(s) failed — the store keeps whatever succeeded; re-run the workflow for the rest.
+  ✓ https://api.fda.gov/drug/drugsfda.json?limit=1 → HTTP 200 (483ms)
+  ✗ https://api.weather.gov/alerts/active?limit=1 → ? (201ms)
+  ✓ https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip → HTTP 200 (250ms)
+✗ subject comp360-psilocybin: HTTP 404 — No matches found!
+✗ subject retatrutide: HTTP 404 — No matches found!
+camizestrant: APPROVED (total=1, approved=true) CHANGED — 1 snapshot(s) archived
+✗ subject cytisinicline: HTTP 404 — No matches found!
+gedatolisib: APPROVED (total=1, approved=true) CHANGED — 1 snapshot(s) archived
+✗ subject midomafetamine-mdma: HTTP 404 — No matches found!
+4 subject capture(s) failed — the store keeps whatever succeeded; re-run the workflow for the rest.

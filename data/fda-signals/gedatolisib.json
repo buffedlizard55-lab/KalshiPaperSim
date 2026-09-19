@@ -1,0 +1,36 @@
+{
+  "slug": "gedatolisib",
+  "subject": {
+    "label": "Gedatolisib (HR+/HER2-, PIK3CA wild-type advanced breast cancer)",
+    "query": "products.active_ingredients.name:\"gedatolisib\"",
+    "markets": [
+      "KXFDAAPPROVE-GED-26AUG01"
+    ],
+    "ruleQuote": "KXFDAAPPROVE-GED-26AUG01: \"If the FDA approves gedatolisib for HR+/HER2-, PIK3CA wild-type advanced breast cancer for marketing before Aug 1, 2026, then the market resolves to Yes.\" (Finalized yes; archived for the record.)"
+  },
+  "what": "Point-in-time Drugs@FDA state for this subject: one snapshot per archive run. `approved` is derived from the verbatim marketing_status strings (a documented English-string test); every other field is verbatim from the official response.",
+  "endpoint": "https://api.fda.gov/drug/drugsfda.json",
+  "snapshots": [
+    {
+      "captured_at": "2026-09-19T20:55:22.135Z",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name%3A%22gedatolisib%22&limit=99",
+      "http_status": 200,
+      "meta": {
+        "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+        "last_updated": "2026-09-16",
+        "total": 1
+      },
+      "state": "APPROVED",
+      "approved": true,
+      "marketingStatuses": [
+        "Prescription"
+      ],
+      "applications": 1,
+      "applicationNumbers": [
+        "NDA219908"
+      ],
+      "newestSubmissionStatusDate": "20260714"
+    }
+  ],
+  "trims": []
+}
