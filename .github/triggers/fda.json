@@ -1,9 +1,9 @@
 {
-  "request": 3,
+  "request": 4,
   "enabled": true,
   "note": "Commit a change to this file to request an immediate FDA signal capture (.github/workflows/fda-signals.yml). It runs scripts/archive-fda-signals.mjs, which queries the official openFDA Drugs@FDA endpoint for every tracked KXFDA* market's subject and appends a point-in-time snapshot. Bump `request` so the push is a real change.",
-  "requested_at": "2026-09-19T21:05:00.000Z",
-  "requested_by": "arena session 01a0bad9 \u2014 run 3 with cause-code capture and a three-host reachability probe: every subject failed with undiagnosed \"network: fetch failed\" on the runner; the probe table (openFDA vs api.weather.gov vs download.open.fda.gov) will show whether the block is FDA-origin-specific and whether openFDA's own download mirror is an official fallback.",
+  "requested_at": "2026-09-19T21:20:00.000Z",
+  "requested_by": "arena session 01a0bad9 \u2014 first capture against the CORRECT endpoint. Runs 1-3 could never succeed: api.open.fda.gov does not exist (ENOTFOUND, irregularity #50) and limit=1000 exceeds the documented maximum of 99. Corrected from the official how-to page (open.fda.gov/apis/drug/drugsfda/how-to-use-the-endpoint).",
   "subjects_preview": [
     "comp360-psilocybin",
     "retatrutide",

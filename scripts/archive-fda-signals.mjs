@@ -17,7 +17,7 @@
  *   can query point-in-time (src/fda-signal-store.js enforces the rule).
  *
  * THE SOURCE (official, free, no key)
- *   GET https://api.open.fda.gov/drug/drugsfda.json?search=<query>&limit=1000
+ *   GET https://api.fda.gov/drug/drugsfda.json?search=<query>&limit=99
  *   — openFDA's Drugs@FDA endpoint: FDA's own database of drug applications,
  *   with products[] (brand_name, marketing_status, active_ingredients) and
  *   submissions[] (submission_type, submission_status, submission_status_date).
@@ -63,9 +63,15 @@
  *   node scripts/archive-fda-signals.mjs --verify   # offline audit of the store
  *   node scripts/archive-fda-signals.mjs --dry-run  # no network, print the plan
  *
- * NOTE ON THE SANDBOX: api.open.fda.gov is not reachable from the build
- * container (only github.com egress works there). This script runs from the
+ * NOTE ON THE SANDBOX: api.fda.gov is not reachable from the build container
+ * (only github.com egress works there). This script runs from the
  * GitHub-hosted workflow (.github/workflows/fda-signals.yml).
+ *
+ * HOST HISTORY (recorded honestly): the first deployed version pointed at
+ * api.open.fda.gov — a hostname that does not exist (ENOTFOUND from GitHub's
+ * own runners, caught by the run report this script commits). The corrected
+ * host and the limit<=99 cap are from the endpoint's official how-to page:
+ * https://open.fda.gov/apis/drug/drugsfda/how-to-use-the-endpoint/
  */
 
 import fs from 'node:fs';
@@ -74,7 +80,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = path.join(ROOT, 'data', 'fda-signals');
-const ENDPOINT = 'https://api.open.fda.gov/drug/drugsfda.json';
+const ENDPOINT = 'https://api.fda.gov/drug/drugsfda.json';
 const USER_AGENT = 'KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim)';
 /** Keep the newest N snapshots per subject (4/day x 365 days ≈ 1460; headroom). */
 const MAX_SNAPSHOTS = 2000;
@@ -173,7 +179,7 @@ const LAST_RUN = { startedAt: null, finishedAt: null, subjects: [], failures: 0 
  */
 async function probeHosts() {
   const hosts = [
-    'https://api.open.fda.gov/drug/drugsfda.json?limit=1',
+    'https://api.fda.gov/drug/drugsfda.json?limit=1',
     'https://api.weather.gov/alerts/active?limit=1',
     'https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip'
   ];
@@ -270,7 +276,15 @@ function parseResponse(json) {
 }
 
 async function capture(subject) {
-  const url = `${ENDPOINT}?search=${encodeURIComponent(subject.query)}&limit=1000`;
+  // limit=99 is the DOCUMENTED MAXIMUM for a single openFDA call (the
+  // endpoint's own how-to page: "The maximum limit allowed is 99 for any
+  // single Application Programming Interface call"). The first deployed
+  // version asked for 1000 — which the API would have rejected with HTTP 400
+  // even after the host was corrected. A subject with more than 99 matching
+  // applications is recorded honestly: the snapshot's `total` shows the full
+  // count and `applications` the archived count, so a truncation is visible
+  // rather than silent.
+  const url = `${ENDPOINT}?search=${encodeURIComponent(subject.query)}&limit=99`;
   // Shared CI runner IPs share the unauthenticated openFDA rate budget with
   // everyone else on them, so a 429/5xx is retried with backoff before the
   // subject is declared failed. Anything else (400 bad query, 403, ...) is

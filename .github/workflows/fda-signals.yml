@@ -8,13 +8,13 @@ name: FDA signal archive
 # because the database is re-read, not re-run).
 #
 # WHAT IT WRITES: data/fda-signals/<slug>.json — append-only snapshots, each
-# with captured_at, the api.open.fda.gov URL, the verbatim meta block
+# with captured_at, the api.fda.gov URL, the verbatim meta block
 # (disclaimer / last_updated / total), the derived state and the verbatim
 # marketing_status strings the derivation came from. Bounded to the newest
 # 2000 snapshots per subject with a trims[] ledger, exactly like the
 # candlestick and forecast stores.
 #
-# WHY A WORKFLOW: api.open.fda.gov is not reachable from the build sandbox
+# WHY A WORKFLOW: api.fda.gov is not reachable from the build sandbox
 # (only github.com egress works there). GitHub-hosted runners have
 # unrestricted egress, so this is where the capture can actually run.
 #

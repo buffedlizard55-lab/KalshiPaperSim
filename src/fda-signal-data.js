@@ -3,7 +3,7 @@
  * =====================================================================
  * Compiled by scripts/generate-history-module.mjs from data/fda-signals/*.json,
  * which scripts/archive-fda-signals.mjs grows from the official openFDA
- * Drugs@FDA API (api.open.fda.gov/drug/drugsfda.json — FDA's own database) on
+ * Drugs@FDA API (api.fda.gov/drug/drugsfda.json — FDA's own database) on
  * the fda-signals workflow schedule.
  *
  * Each snapshot is VERBATIM what the archive derived from the official
@@ -12,11 +12,11 @@
  * refuses any snapshot captured AFTER the decision time (the anti-lookahead
  * rule).
  *
- * NO ARCHIVE YET — no snapshots have been captured; every FDA-signal-dependent strategy abstains until the archive exists. · generated 2026-09-19T20:23:24.789Z
+ * NO ARCHIVE YET — no snapshots have been captured; every FDA-signal-dependent strategy abstains until the archive exists. · generated 2026-09-19T20:52:46.514Z
  */
 
 export const FDA_SIGNAL_DATA = {
- "generatedAt": "2026-09-19T20:23:24.789Z",
+ "generatedAt": "2026-09-19T20:52:46.514Z",
  "present": false,
  "subjects": {}
 };
