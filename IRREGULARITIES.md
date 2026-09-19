@@ -1,7 +1,7 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-19 by `scripts/render-docs.js` from `src/verification-data.js`.
-**50 irregularities** flagged during this build: 15 high, 22 medium,
+**50 irregularities** flagged during this build: 15 high, 23 medium,
 10 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
@@ -691,6 +691,24 @@ assumption against an official document or a real API response.
 
 ---
 
+## #50 — The FDA archive was deployed against an API hostname that does not exist, with an over-limit page size
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That the openFDA Drugs@FDA endpoint lived at api.open.fda.gov (conflating the open.fda.gov website with the API host) and that limit=1000 was inside the published cap. |
+| **Verified truth** | The official how-to page states the base endpoint is https://api.fda.gov/drug/drugsfda.json and that "the maximum limit allowed is 99". The first two scheduled runs therefore could never have fetched anything: GitHub-hosted runners resolved api.open.fda.gov with ENOTFOUND (recorded per-subject in data/fda-signals/_fda-last-run.json, whose probe table showed api.weather.gov reachable and download.open.fda.gov returning HTTP 200 from the same runner). No snapshot was fabricated and no false data was committed — the store was simply dark, which is the honest failure mode the point-in-time design requires. |
+| **What the code does** | ENDPOINT corrected to https://api.fda.gov/drug/drugsfda.json, the page size corrected to the documented maximum of 99 (with truncation made visible: the snapshot stores both the full `total` and the archived `applications` count), the reachability probe kept in every run report, and the host history recorded in the script header. This register entry exists so the wrong-host period is part of the audit trail, not silently rewritten. |
+| **What you should do** | Compare any committed _fda-last-run.json probe table against the snapshots that follow it: every capture after the correction must carry http_status 200 against https://api.fda.gov URLs. |
+
+**Evidence**
+
+- The endpoint's official how-to page (base URL and the limit<=99 cap): <https://open.fda.gov/apis/drug/drugsfda/how-to-use-the-endpoint/>
+- The corrected ENDPOINT, probe table and host history in scripts/archive-fda-signals.mjs: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/scripts/archive-fda-signals.mjs>
+
+---
+
 ## #9 — Two different status vocabularies for the same concept
 
 **Severity:** `LOW`
@@ -903,22 +921,4 @@ assumption against an official document or a real API response.
 
 - Fee schedule (check the Non-Standard table for these series): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
 - The honest fallback — `src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"`
-
----
-
-## #50 — The FDA archive was deployed against an API hostname that does not exist, with an over-limit page size
-
-**Severity:** `MEDIUM`
-
-| | |
-| --- | --- |
-| **We assumed** | That the openFDA Drugs@FDA endpoint lived at api.open.fda.gov (conflating the open.fda.gov website with the API host) and that limit=1000 was inside the published cap. |
-| **Verified truth** | The official how-to page states the base endpoint is https://api.fda.gov/drug/drugsfda.json and that "the maximum limit allowed is 99". The first two scheduled runs therefore could never have fetched anything: GitHub-hosted runners resolved api.open.fda.gov with ENOTFOUND (recorded per-subject in data/fda-signals/_fda-last-run.json, whose probe table showed api.weather.gov reachable and download.open.fda.gov returning HTTP 200 from the same runner). No snapshot was fabricated and no false data was committed — the store was simply dark, which is the honest failure mode the point-in-time design requires. |
-| **What the code does** | ENDPOINT corrected to https://api.fda.gov/drug/drugsfda.json, the page size corrected to the documented maximum of 99 (with truncation made visible: the snapshot stores both the full `total` and the archived `applications` count), the reachability probe kept in every run report, and the host history recorded in the script header. This register entry exists so the wrong-host period is part of the audit trail, not silently rewritten. |
-| **What you should do** | Compare any committed _fda-last-run.json probe table against the snapshots that follow it: every capture after the correction must carry http_status 200 against https://api.fda.gov URLs. |
-
-**Evidence**
-
-- The endpoint's official how-to page (base URL and the limit<=99 cap): <https://open.fda.gov/apis/drug/drugsfda/how-to-use-the-endpoint/>
-- The corrected ENDPOINT, probe table and host history in scripts/archive-fda-signals.mjs: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/scripts/archive-fda-signals.mjs>
 
