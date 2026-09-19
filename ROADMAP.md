@@ -121,6 +121,17 @@ mid-day order-book capture).
   markets on the 2026-09-18 capture); 120 open contracts carry real quotes but
   no ladder and are listed as **not priceable** with the ingest command that
   would fix each one.
+- The Desk Season is as long as the capture density allows: 6 rounds across 36.0 h on the
+  2026-09-19 store (R01 2026-09-17T23:07Z → R06 2026-09-19T11:08Z), because a round is a moment
+  this repository really queried the order book. The
+  machinery picks up every new capture batch automatically, but a calendar year of continuous paper
+  trading needs a year of scheduled captures — that is a clock problem, not a modelling one.
+- Season marks between rounds are the last captured quote/ladder/settlement; a position with no
+  captured mark in a given round is carried at cost (`NO_CAPTURED_MARK_CARRIED_AT_COST`) and the
+  snapshot says so. No price is interpolated.
+- The season's cash/position guards (irregularity #49) cap an order to what the account can pay for
+  at the OFFICIAL fee; the 2% budget reserve is a bound on the quadratic taker fee, not a fee model
+  of its own — the fee charged is still the one the schedule computes.
 - A captured ladder is a snapshot, not a stream: the desk never re-anchors it,
   so an old book is priced at the prices it showed and the capture time travels
   with every fill.
