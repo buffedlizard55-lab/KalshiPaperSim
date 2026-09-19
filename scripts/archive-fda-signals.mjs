@@ -275,6 +275,32 @@ function parseResponse(json) {
   };
 }
 
+/**
+ * HTTP 404 from openFDA IS the empty result: the API's documented behaviour
+ * for a search that matches nothing is status 404 with body
+ * {"error":{"code":"NOT_FOUND","message":"No matches found!"}} — not an empty
+ * results array (openFDA's own issue tracker confirms the semantics, and run 3
+ * of this archive reproduced it verbatim). For this archive that is not an
+ * error at all: "no application record exists yet" is exactly the NO_RECORD
+ * state the tracked markets trade on, so it is archived like any other
+ * snapshot, with the verbatim status recorded next to it.
+ */
+function snapshotFromNotFound(url) {
+  return {
+    captured_at: new Date().toISOString(),
+    url,
+    http_status: 404,
+    meta: { disclaimer: null, last_updated: null, total: 0 },
+    state: 'NO_RECORD',
+    approved: false,
+    marketingStatuses: [],
+    applications: 0,
+    applicationNumbers: [],
+    newestSubmissionStatusDate: null,
+    notFoundError: 'openFDA 404 NOT_FOUND "No matches found!" — the documented empty-result response, archived as NO_RECORD'
+  };
+}
+
 async function capture(subject) {
   // limit=99 is the DOCUMENTED MAXIMUM for a single openFDA call (the
   // endpoint's own how-to page: "The maximum limit allowed is 99 for any
@@ -311,6 +337,9 @@ async function capture(subject) {
       json = JSON.parse(bodyText);
     } catch {
       throw new Error(`subject ${subject.slug}: HTTP ${res.status} with a non-JSON body (first 200 chars: ${bodyText.slice(0, 200)})`);
+    }
+    if (res.status === 404 && json?.error?.code === 'NOT_FOUND') {
+      return snapshotFromNotFound(url);
     }
     if (!res.ok) {
       const msg = json?.error?.message ? ` — ${String(json.error.message).slice(0, 300)}` : ` — body head: ${bodyText.slice(0, 200)}`;
@@ -482,4 +511,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     });
 }
 
-export { SUBJECTS, EXCLUDED, parseResponse, deriveApproved, ENDPOINT, APPROVED_MARKETING_STATUSES, MARKETING_STATUS_GLOSSARY };
+export { SUBJECTS, EXCLUDED, parseResponse, deriveApproved, ENDPOINT, APPROVED_MARKETING_STATUSES, MARKETING_STATUS_GLOSSARY, snapshotFromNotFound };

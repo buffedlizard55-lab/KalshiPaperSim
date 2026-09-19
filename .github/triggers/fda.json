@@ -1,9 +1,9 @@
 {
-  "request": 4,
+  "request": 5,
   "enabled": true,
   "note": "Commit a change to this file to request an immediate FDA signal capture (.github/workflows/fda-signals.yml). It runs scripts/archive-fda-signals.mjs, which queries the official openFDA Drugs@FDA endpoint for every tracked KXFDA* market's subject and appends a point-in-time snapshot. Bump `request` so the push is a real change.",
-  "requested_at": "2026-09-19T21:20:00.000Z",
-  "requested_by": "arena session 01a0bad9 \u2014 first capture against the CORRECT endpoint. Runs 1-3 could never succeed: api.open.fda.gov does not exist (ENOTFOUND, irregularity #50) and limit=1000 exceeds the documented maximum of 99. Corrected from the official how-to page (open.fda.gov/apis/drug/drugsfda/how-to-use-the-endpoint).",
+  "requested_at": "2026-09-19T21:35:00.000Z",
+  "requested_by": "arena session 01a0bad9 \u2014 run 5 against the corrected endpoint. Run 4 proved the host (HTTP 200) and captured the two approved subjects; the four 404s were openFDA's DOCUMENTED empty-result response (NOT_FOUND \"No matches found!\") and are now archived as the NO_RECORD state they are, with the verbatim status kept on the snapshot.",
   "subjects_preview": [
     "comp360-psilocybin",
     "retatrutide",

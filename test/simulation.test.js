@@ -4124,6 +4124,17 @@ test('115. the Drugs@FDA parser derives the archive state from official response
   // An unexpected shape throws instead of guessing (shape-change detector).
   assert.throws(() => parseResponse({ meta: {} }), /total/);
   assert.throws(() => parseResponse(null));
+
+  // openFDA's documented empty result is HTTP 404 NOT_FOUND "No matches
+  // found!" — archived as a legitimate NO_RECORD snapshot (irregularity-#50
+  // follow-up; verified against the live API in run 4's committed report).
+  const { snapshotFromNotFound } = await import('../scripts/archive-fda-signals.mjs');
+  const nf = snapshotFromNotFound('https://api.fda.gov/drug/drugsfda.json?search=x&limit=99');
+  assert.equal(nf.state, 'NO_RECORD');
+  assert.equal(nf.approved, false);
+  assert.equal(nf.http_status, 404);
+  assert.equal(nf.meta.total, 0);
+  assert.match(nf.notFoundError, /No matches found/);
 });
 
 test('116. the FDA signal store is point-in-time: no snapshot after the decision is ever readable, and the flip is detected in time order', async () => {
