@@ -3452,6 +3452,8 @@ import {
   auditDesk,
   deskLedgerJsonl,
   deskFillsCsv,
+  createPortfolio,
+  applyFill,
   DESK_LIMITS,
   DESK_VERSION
 } from '../src/live-desk.js';
@@ -3951,5 +3953,101 @@ test('112. season entrants are complete, unique, source-mapped and maximum-retur
   // The names are reserved, so a human cannot impersonate a season entrant.
   for (const name of SEASON_USERNAMES) {
     assert.equal(validateUsername(name, { strategies: [], participants: [] }).reason, 'username_reserved_by_algorithmic_strategy');
+  }
+});
+
+test('113. the season attaches to the one-year memory as one carried book, and re-attaching replaces it', () => {
+  const season = seasonFixture();
+  const engine = new CompetitionMemoryEngine({ tier: 'test', storage: null });
+  const payload = {
+    ...season,
+    seasonSnapshot: {
+      version: season.version,
+      rounds: season.rounds,
+      audit: season.audit,
+      results: season.results,
+      explanations: season.explanations
+    }
+  };
+  engine.attachDeskSeason(payload);
+  const mem = engine.state.deskSeasonMemory;
+  assert.ok(mem, 'deskSeasonMemory is written into the year');
+  assert.equal(mem.rounds.length, season.rounds.length, 'every real round is remembered');
+  assert.equal(mem.results.length, season.results.length, 'every entrant is remembered');
+  assert.equal(mem.auditOk, true);
+  assert.ok(Math.abs(mem.totals.fees - season.audit.totals.fees) < 1e-6, 'the remembered fee total is the ledger fee total');
+  const rows = engine.state.tradeLog.filter((t) => t.kind === 'desk-season');
+  assert.equal(rows.length, season.records.filter((r) => r.k === 'FILL' || r.k === 'SETTLE').length);
+  assert.ok(rows.every((r) => r.participant && r.ticker && r.timestamp), 'every carried row names the entrant, the contract and a real timestamp');
+  assert.ok(new Set(rows.map((r) => r.participant)).size >= 2, 'the carried rows belong to more than one entrant');
+  assert.ok(rows.every((r) => r.bookSource), 'every carried row keeps the source URL it was priced from');
+  // Re-attaching the same season replaces its rows instead of duplicating the year.
+  engine.attachDeskSeason(payload);
+  assert.equal(engine.state.tradeLog.filter((t) => t.kind === 'desk-season').length, rows.length, 'no duplicated season rows');
+  // A season entrant cannot be impersonated by a human in the same year.
+  for (const name of SEASON_USERNAMES) {
+    assert.equal(validateUsername(name, engine.state).reason, 'username_reserved_by_algorithmic_strategy');
+  }
+});
+
+test('114. a paper account can neither borrow cash nor sell contracts it does not hold', () => {
+  const universe = buildDeskUniverse({ data: DESK_DATA });
+  const market = universe.markets.find((m) => m.tradeable && m.ladder);
+  assert.ok(market, 'the store holds at least one priceable contract');
+
+  // (a) CASH. An order far larger than the account can pay for is capped to
+  // what the cash covers, and the cap is recorded on the fill.
+  const portfolio = createPortfolio('CashTest', 500);
+  const big = placeDeskOrder(
+    createDeskBook(market),
+    { strategy: 'CashTest', action: 'buy', side: 'yes', type: 'market', count: 100000, reason: 'far more than $500 can pay for' },
+    { at: universe.asOf, portfolio }
+  );
+  assert.ok(big.fills.length === 1, 'the order still fills — at the size the cash allows');
+  const fill = big.fills[0];
+  assert.ok(fill.gross + fill.fee <= 500 + 0.01, `cost ${fill.gross + fill.fee} must fit inside the $500 account`);
+  assert.ok(fill.cashCapped > 0, 'the cash cap is recorded on the fill');
+  assert.ok(big.order.unfilled > 0, 'the unaffordable remainder is reported unfilled');
+  // Without a portfolio the desk cannot know the cash, and says so by not capping.
+  const unguarded = placeDeskOrder(
+    createDeskBook(market),
+    { strategy: 'NoPortfolio', action: 'buy', side: 'yes', type: 'market', count: 1000, reason: 'no portfolio supplied' },
+    { at: universe.asOf }
+  );
+  assert.equal(unguarded.fills.length ? unguarded.fills[0].cashCapped : 0, 0);
+
+  // (b) SHORTING. A sell with no position is refused, not booked as a short.
+  const short = placeDeskOrder(
+    createDeskBook(market),
+    { strategy: 'ShortTest', action: 'sell', side: 'yes', type: 'market', count: 10, reason: 'naked short' },
+    { at: universe.asOf, portfolio: createPortfolio('ShortTest', 1000) }
+  );
+  assert.equal(short.fills.length, 0);
+  assert.equal(short.order.rejectCode, 'NO_POSITION_TO_SELL');
+  assert.match(short.rejected, /does not allow naked shorting/);
+
+  // (c) A sell larger than the position is capped to what is actually held.
+  const holder = createPortfolio('Holder', 1000);
+  const bought = placeDeskOrder(
+    createDeskBook(market),
+    { strategy: 'Holder', action: 'buy', side: 'yes', type: 'market', count: 20, reason: 'open a 20-contract position' },
+    { at: universe.asOf, portfolio: holder }
+  );
+  if (bought.fills.length && bought.fills[0].count >= 20) {
+    applyFill(holder, bought.fills[0]);
+    const sold = placeDeskOrder(
+      createDeskBook(market),
+      { strategy: 'Holder', action: 'sell', side: 'yes', type: 'market', count: 5000, reason: 'sell far more than held' },
+      { at: universe.asOf, portfolio: holder }
+    );
+    if (sold.fills.length) {
+      assert.ok(sold.fills[0].count <= 20 + 1e-9, `a sell is capped to the held size (${sold.fills[0].count} sold of 20 held)`);
+    }
+  }
+
+  // (d) The invariant holds for the whole season, not only for one order.
+  const season = seasonFixture();
+  for (const r of season.results) {
+    for (const point of r.equityCurve) assert.ok(point.cash >= -0.011, `${r.strategy}: cash ${point.cash} went negative at ${point.roundLabel}`);
   }
 });

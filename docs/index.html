@@ -42,6 +42,7 @@
   <button class="tab" data-tab="memory">🧠 Competition Memory</button>
   <button class="tab" data-tab="lab">🧪 Strategy Lab</button>
   <button class="tab" data-tab="desk">💵 Live Desk</button>
+  <button class="tab" data-tab="season">🏁 Desk Season</button>
   <button class="tab" data-tab="ledger">🧾 Trade Ledger</button>
   <button class="tab" data-tab="research">🔬 Research</button>
   <button class="tab" data-tab="verification">✅ Verification</button>
@@ -400,6 +401,83 @@
 
 
   <!-- ══════════════ TAB: RESEARCH ══════════════ -->
+  <!-- ══════════════ TAB: DESK SEASON (the carried multi-round book) ══════════════ -->
+  <section class="panel" id="panel-season">
+    <div class="panel-head">
+      <div>
+        <h2>Desk Season — one book carried across every real capture round</h2>
+        <p class="lede">
+          The Live Desk runs one session at one cut-off. This section runs the <strong>carried book</strong>: each round is a
+          real capture batch from the store, and cash, positions and resting orders carry from round to round. Between rounds
+          the book is walked through the real events in that window — later captured ladders, later captured candlesticks and
+          the exchange’s own settlements.
+        </p>
+      </div>
+      <div class="controls">
+        <label class="field"><span>Rounds (max)</span><input type="number" id="seasonRounds" value="12" min="2" max="64" step="1"></label>
+        <label class="field"><span>Capital</span><input type="number" id="seasonCapital" value="100000" min="1000" step="1000"></label>
+        <button class="btn btn-accent" id="seasonRun">Rebuild the season</button>
+        <button class="btn btn-ghost" id="seasonLedger">Download ledger (.jsonl)</button>
+        <button class="btn btn-ghost" id="seasonScheduleBtn">Schedule &amp; invariants</button>
+      </div>
+    </div>
+
+    <div id="seasonStatus"></div>
+    <div id="seasonKpis" class="card-grid"></div>
+
+    <div class="notice">
+      <strong>What makes this a forward test, not a backtest:</strong> every round is a moment this repository actually queried
+      the exchange’s order books, and the engine refuses to price an order with a ladder captured after the order’s own
+      timestamp. A strategy sees only the point-in-time view — quotes, ladders, bars and positions available at its round.
+      Settlements are the exchange’s own <code>result</code> and <code>settlement_value_dollars</code>.
+    </div>
+
+    <h3>The rounds (real capture instants — one per ingest batch)</h3>
+    <div class="table-wrap">
+      <table class="grid" id="seasonRoundsTable">
+        <thead>
+          <tr>
+            <th>Round</th><th>Cut-off (UTC)</th><th class="num">New ladders</th><th class="num">Tradeable</th>
+            <th class="num">Events walked</th><th class="num">Later-ladder quotes</th><th class="num">Candle quotes</th>
+            <th class="num">Settlements in window</th><th class="num">Carried maker fills</th><th class="num">Gap (h)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h3>Season leaderboard — carried book, real fills, official fees, real settlements</h3>
+    <div class="table-wrap">
+      <table class="grid" id="seasonResultsTable">
+        <thead>
+          <tr>
+            <th>Rank</th><th>Trader</th><th class="num">Return</th><th class="num">Equity</th><th class="num">Rounds traded</th>
+            <th class="num">Fills</th><th class="num">Contracts</th><th class="num">Unfilled</th><th class="num">Slippage cost</th>
+            <th class="num">Fees</th><th class="num">Settlement PnL</th><th class="num">Open PnL</th><th class="num">Max DD</th><th>Equity curve</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="fineprint" id="seasonRankNote"></p>
+
+    <div id="seasonExplanations"></div>
+
+    <h3>Entrant coverage — which rounds each design could act in, and why not</h3>
+    <div class="table-wrap">
+      <table class="grid" id="seasonCoverageTable">
+        <thead>
+          <tr><th>Trader</th><th>Strategy</th><th>Source</th><th class="num">Rounds traded</th><th class="num">Fills</th><th>What happened</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h3>Season invariants</h3>
+    <div id="seasonInvars"></div>
+    <div id="seasonScheduleDetails"></div>
+  </section>
+
   <section class="panel" id="panel-ledger">
     <div class="panel-head">
       <div>

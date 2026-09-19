@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T04:29:54.914Z",
+  "generatedAt": "2026-09-19T04:43:43.957Z",
   "seasonVersion": 1,
   "dataGeneratedAt": "2026-09-19T01:14:31.680Z",
   "dataCoverage": {
@@ -1393,7 +1393,7 @@
   ],
   "audit": {
     "ok": true,
-    "checkedAt": "2026-09-19T04:29:54.914Z",
+    "checkedAt": "2026-09-19T04:43:43.957Z",
     "totals": {
       "rounds": 6,
       "orders": 21,
@@ -1539,6 +1539,11 @@
         "name": "S11 the cumulative liquidity cap is respected per contract across all rounds",
         "ok": true,
         "detail": "10% of each contract's real volume base, summed over every round (re-derived from the ledger, not from engine state)"
+      },
+      {
+        "name": "S12 the carried book never borrows or shorts (Kalshi settles in cash)",
+        "ok": true,
+        "detail": "6 entrant(s): no negative cash at any round boundary, and every SELL is covered by contracts already held"
       }
     ],
     "mismatches": []

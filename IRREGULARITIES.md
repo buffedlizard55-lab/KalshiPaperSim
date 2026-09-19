@@ -1,7 +1,7 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-19 by `scripts/render-docs.js` from `src/verification-data.js`.
-**48 irregularities** flagged during this build: 14 high, 22 medium,
+**49 irregularities** flagged during this build: 15 high, 22 medium,
 10 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
@@ -268,6 +268,25 @@ assumption against an official document or a real API response.
 - buildTimeline() — now reads the RAW store bars and filters by endTs itself (commented in place): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
 - buildDeskUniverse() truncation — the reason the decision view must NOT see later bars: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
 - Regression test 107 pins both halves (non-zero forward quotes; no decision bar after asOf): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js>
+
+---
+
+## #49 — The desk let a paper account borrow cash and sell contracts it did not hold
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That a strategy sizing from `view.cash` could never spend more than it had, so the desk needed no cash rule of its own. |
+| **Verified truth** | placeDeskOrder() sized against the captured LADDER and the 10% liquidity cap, and never against the portfolio. An entrant that emitted three 35%-of-cash legs (or a carried season entrant re-spending its cash every round) could spend more than 100% of it, and a `sell` intent with no position was booked as a naked short — both on a venue that settles in cash and does not offer margin or shorting. The desk audit could not catch it either: the equity identity (equity − starting = realized + unrealized − fees) closes just as neatly on a −$80,000 cash balance as on a real one. |
+| **What the code does** | Both runners now pass their portfolio into placeDeskOrder(). A BUY is re-sized to what the cash can pay for including the official fee (a 2% budget reserve covers the quadratic taker fee) and the reduction is recorded as `cashCapped` on the ORDER and the FILL, with the original requested size preserved and the shortfall reported as unfilled. A SELL with no position is rejected (NO_POSITION_TO_SELL) instead of opening a negative one, and a SELL larger than the position is capped to the held size (`positionCapped`). A crossed resting BUY is capped the same way at the crossing instant, because a carried book may have spent the cash in between. auditSeason() adds S12: no round snapshot may show negative cash and no SELL fill may exceed what that entrant had already bought. |
+| **What you should do** | Read any FILL with `cashCapped` > 0 or any REJECT with NO_POSITION_TO_SELL in data/reports/desk-season-ledger.jsonl: the ledger must show a smaller order (or a refusal), never a negative balance. |
+
+**Evidence**
+
+- placeDeskOrder — now carries the cash/position guards and records them on the order and the fill: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
+- Season audit S12 re-derives both rules from the ledger alone: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/desk-season.js>
+- Test 114 — borrow, naked short and over-sized sell all refused or capped: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js>
 
 ---
 

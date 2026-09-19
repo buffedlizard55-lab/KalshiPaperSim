@@ -1433,6 +1433,19 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'Both runs were allowed to finish: the ingest is additive and scripts/push-with-race-guard.sh is the tested rebase-and-retry path for exactly this race (the duplicate cost only exchange API budget and runner minutes). ingest-now.yml now declares a per-ref concurrency group with cancel-in-progress: false, so a later request QUEUES behind the run in flight instead of racing it — the only brake available when cancelling is not permitted.',
     userAction: 'Push two ingest requests back to back and watch the Actions tab: the second run must show as queued, not running in parallel.'
+  },
+  {
+    id: 49, severity: 'high',
+    title: 'The desk let a paper account borrow cash and sell contracts it did not hold',
+    assumed: 'That a strategy sizing from `view.cash` could never spend more than it had, so the desk needed no cash rule of its own.',
+    truth: 'placeDeskOrder() sized against the captured LADDER and the 10% liquidity cap, and never against the portfolio. An entrant that emitted three 35%-of-cash legs (or a carried season entrant re-spending its cash every round) could spend more than 100% of it, and a `sell` intent with no position was booked as a naked short — both on a venue that settles in cash and does not offer margin or shorting. The desk audit could not catch it either: the equity identity (equity − starting = realized + unrealized − fees) closes just as neatly on a −$80,000 cash balance as on a real one.',
+    evidence: [
+      { label: 'placeDeskOrder — now carries the cash/position guards and records them on the order and the fill', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js' },
+      { label: 'Season audit S12 re-derives both rules from the ledger alone', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/desk-season.js' },
+      { label: 'Test 114 — borrow, naked short and over-sized sell all refused or capped', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js' }
+    ],
+    action: 'Both runners now pass their portfolio into placeDeskOrder(). A BUY is re-sized to what the cash can pay for including the official fee (a 2% budget reserve covers the quadratic taker fee) and the reduction is recorded as `cashCapped` on the ORDER and the FILL, with the original requested size preserved and the shortfall reported as unfilled. A SELL with no position is rejected (NO_POSITION_TO_SELL) instead of opening a negative one, and a SELL larger than the position is capped to the held size (`positionCapped`). A crossed resting BUY is capped the same way at the crossing instant, because a carried book may have spent the cash in between. auditSeason() adds S12: no round snapshot may show negative cash and no SELL fill may exceed what that entrant had already bought.',
+    userAction: 'Read any FILL with `cashCapped` > 0 or any REJECT with NO_POSITION_TO_SELL in data/reports/desk-season-ledger.jsonl: the ledger must show a smaller order (or a refusal), never a negative balance.'
   }
 ]);
 

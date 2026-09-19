@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T04:29:54.916Z",
+  "generatedAt": "2026-09-19T04:43:43.959Z",
   "newestCapture": "2026-09-18T18:46:22.458Z",
   "rounds": [
     {
@@ -255,6 +255,16 @@
       "id": "S10",
       "rule": "The equity curve is the same arithmetic as the final equity (its last point equals the reported equity).",
       "source": "internal accounting identity"
+    },
+    {
+      "id": "S11",
+      "rule": "The cumulative liquidity cap holds per contract across all rounds: the total paper size ever filled in one contract never exceeds 10% of that contract real volume base, compared against each fill own recorded capBase.",
+      "source": "internal accounting identity + the desk 10% liquidity limit"
+    },
+    {
+      "id": "S12",
+      "rule": "The carried book can neither borrow nor short: no round snapshot shows negative cash, and no SELL fill ever exceeds what that entrant had already bought in the same contract and side.",
+      "source": "Kalshi has no margin and no naked shorting - enforced in placeDeskOrder (irregularity #49)"
     }
   ]
 }
