@@ -76,34 +76,34 @@ Reproduce with `curl -X POST localhost:3000/api/run-competition -d '{"seed":2026
 
 | # | Username | Strategy | Return | Final equity | Trades | Win rate | Max DD | Fees paid | Contracts NOT filled |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | **MeanRev_CheapBand** | Cheap-Band Mean Reversion (enter ≤ 0.10, exit ≥ 0.50) | +4.24% | $104,239.27 | 2060 | 100.0% | 33.35% | $476.13 | 28,244.03 |
-| 2 | **MakerFlip_SpreadHarvest** | Maker Flip — rest the bid, flip the fill to the offer | +3.74% | $103,742.76 | 3365 | 99.9% | 3.96% | $95.92 | 0 |
-| 3 | **YieldVulture_Arb** | Late-Stage High-Probability Sweep | +2.86% | $102,855.56 | 125 | 100.0% | 0.61% | $197.23 | 7,383.68 |
-| 4 | **VolatilityArb_MM** | Two-Sided Spread Harvester (Market Maker) | +2.12% | $102,115.81 | 7954 | 63.9% | 27.85% | $496.22 | 0 |
-| 5 | **PanicDip_ShockTiming** | Shock-Timing Panic-Dip Buyer (maker ladder) | +2.01% | $102,008.09 | 1568 | 99.9% | 0.86% | $84.46 | 0 |
-| 6 | **FeeArb_PremiumBuyer** | Fee-Optimal Favourite Buyer | +1.30% | $101,296.03 | 1054 | 50.0% | 5.28% | $833.31 | 0 |
-| 7 | **BookWall_BidLadder** | Order-Book Wall Maker Ladder | +0.48% | $100,483.48 | 2037 | 99.9% | 6.20% | $49.53 | 0 |
-| 8 | **MEE_BoardSum** | Mutually-Exclusive-Event Board Sum (R14 `mee`) | +0.33% | $100,327.69 | 8 | 0.0% | 0.41% | $0.00 | 0 |
-| 9 | **ShockTiming_ModerateFav** | Shock Timing — the source's favourite-bucket filter, as a measured control | +0.00% | $100,000.03 | 6 | 100.0% | 0.00% | $0.01 | 0 |
-| 10 | **SportsSteam_Fade** | Steam Fader (buys the side the market just dumped) | +0.00% | $99,999.47 | 2 | 0.0% | 0.00% | $0.38 | 0 |
-| 11 | **SportsLine_Momentum** | In-Play Line-Move Follower | -0.01% | $99,993.87 | 6 | 0.0% | 0.02% | $4.13 | 0 |
-| 12 | **SportsFavourite_Settle** | Game-Line Favourite, Held to Settlement | -0.01% | $99,993.36 | 3 | 0.0% | 0.02% | $1.78 | 0 |
-| 13 | **FDALadder_Dominance** | FDA Cumulative-Ladder Dominance | -0.01% | $99,986.02 | 2 | 0.0% | 0.03% | $0.74 | 0 |
-| 14 | **CEOExit_Drift** | CEO-Exit News Drift | -0.14% | $99,859.01 | 2 | 100.0% | 0.20% | $10.24 | 0 |
-| 15 | **FedPivotSniper** | Macro Print Mean-Reversion Sniper | -0.37% | $99,628.82 | 846 | 31.4% | 0.57% | $244.87 | 0 |
-| 16 | **PanicFade_HourlyVol** | Hourly Panic-Fade Volatility Reversion | -1.03% | $98,973.09 | 629 | 99.7% | 1.48% | $448.97 | 10,915.3 |
-| 17 | **LongshotFader_FLB** | Favorite–Longshot Bias Fader | -1.34% | $98,664.16 | 90 | 85.7% | 1.49% | $276.63 | 13,215.76 |
-| 18 | **PanicFadeDeep_T6_TP6** | Deep Panic Fade with a 6-cent Take-Profit | -1.51% | $98,487.15 | 556 | 96.8% | 2.05% | $357.03 | 10,915.3 |
-| 19 | **AdjacentStrike_Ladder** | Adjacent-Strike Cheap Bracket Ladder | -1.69% | $98,308.28 | 2629 | 50.0% | 20.28% | $3,745.09 | 167,134.36 |
-| 20 | **ContrarianKing_100x** | Deep-OTM Longshot Convexity Hunter | -1.90% | $98,100.40 | 3290 | 50.0% | 30.72% | $1,442.99 | 31,982.3 |
-| 21 | **ThetaHarvest_ShortOTM** | Deep-OTM Decay Harvester (buys NO) | -1.90% | $98,097.05 | 475 | 50.0% | 3.49% | $160.17 | 509.93 |
-| 22 | **TightScalp_Fixed5** | Tight Scalp — the family's best setting, promoted as a control | -2.11% | $97,888.44 | 4075 | 99.9% | 9.78% | $127.05 | 0 |
-| 23 | **PanicFade_T4_S100** | Panic Fade — the source's own best configuration | -3.68% | $96,321.87 | 477 | 80.0% | 5.16% | $697.87 | 10,915.3 |
-| 24 | **TrendRide_FullTilt** | Trend-Following Pyramider | -12.13% | $87,867.94 | 717 | 80.0% | 12.82% | $2,628.58 | 32,680.59 |
-| 25 | **AlphaApex_Momentum** | Maximum Convexity Momentum Chaser | -12.68% | $87,317.43 | 2464 | 75.0% | 32.27% | $2,038.95 | 30,212.43 |
-| 26 | **ShockTiming_StopOut** | Shock-Timing with the Source's Stop-Out | -14.48% | $85,524.21 | 1137 | 32.0% | 15.56% | $2,275.40 | 97,692.25 |
-| 27 | **EventCatalyst_Max** | Range-Breakout Catalyst Frontrunner | -17.84% | $82,160.56 | 1124 | 83.3% | 18.17% | $3,914.35 | 73,953.97 |
-| 28 | **GammaWhale_Squeeze** | High-Gamma Volume-Spike Breakout | -26.37% | $73,630.10 | 891 | 80.5% | 29.83% | $4,420.17 | 123,936.88 |
+| 1 | **MakerFlip_SpreadHarvest** | Maker Flip — rest the bid, flip the fill to the offer | +3.74% | $103,742.76 | 3365 | 99.9% | 3.96% | $95.92 | 0 |
+| 2 | **YieldVulture_Arb** | Late-Stage High-Probability Sweep | +2.86% | $102,855.56 | 125 | 100.0% | 0.61% | $197.23 | 7,383.68 |
+| 3 | **VolatilityArb_MM** | Two-Sided Spread Harvester (Market Maker) | +2.12% | $102,115.81 | 7954 | 63.9% | 27.85% | $496.22 | 0 |
+| 4 | **PanicDip_ShockTiming** | Shock-Timing Panic-Dip Buyer (maker ladder) | +2.01% | $102,008.09 | 1568 | 99.9% | 0.86% | $84.46 | 0 |
+| 5 | **BookWall_BidLadder** | Order-Book Wall Maker Ladder | +0.48% | $100,483.48 | 2037 | 99.9% | 6.20% | $49.53 | 0 |
+| 6 | **MEE_BoardSum** | Mutually-Exclusive-Event Board Sum (R14 `mee`) | +0.27% | $100,271.47 | 8 | 0.0% | 0.41% | $0.00 | 0 |
+| 7 | **ShockTiming_ModerateFav** | Shock Timing — the source's favourite-bucket filter, as a measured control | +0.00% | $100,000.03 | 6 | 100.0% | 0.00% | $0.01 | 0 |
+| 8 | **SportsSteam_Fade** | Steam Fader (buys the side the market just dumped) | +0.00% | $99,999.47 | 2 | 0.0% | 0.00% | $0.38 | 0 |
+| 9 | **SportsLine_Momentum** | In-Play Line-Move Follower | -0.01% | $99,993.87 | 6 | 0.0% | 0.02% | $4.13 | 0 |
+| 10 | **SportsFavourite_Settle** | Game-Line Favourite, Held to Settlement | -0.01% | $99,993.36 | 3 | 0.0% | 0.02% | $1.78 | 0 |
+| 11 | **FDALadder_Dominance** | FDA Cumulative-Ladder Dominance | -0.01% | $99,986.02 | 2 | 0.0% | 0.03% | $0.74 | 0 |
+| 12 | **FeeArb_PremiumBuyer** | Fee-Optimal Favourite Buyer | -0.08% | $99,919.43 | 1149 | 50.0% | 5.76% | $759.56 | 10,776.48 |
+| 13 | **CEOExit_Drift** | CEO-Exit News Drift | -0.14% | $99,859.01 | 2 | 100.0% | 0.20% | $10.24 | 0 |
+| 14 | **FedPivotSniper** | Macro Print Mean-Reversion Sniper | -0.47% | $99,527.78 | 873 | 31.8% | 0.65% | $242.45 | 2,422.38 |
+| 15 | **LongshotFader_FLB** | Favorite–Longshot Bias Fader | -1.34% | $98,659.87 | 90 | 85.7% | 1.49% | $276.32 | 13,215.76 |
+| 16 | **PanicFade_HourlyVol** | Hourly Panic-Fade Volatility Reversion | -1.62% | $98,384.81 | 627 | 99.7% | 2.07% | $456.58 | 10,915.3 |
+| 17 | **PanicFadeDeep_T6_TP6** | Deep Panic Fade with a 6-cent Take-Profit | -1.76% | $98,244.67 | 554 | 96.7% | 2.17% | $363.39 | 10,915.3 |
+| 18 | **TightScalp_Fixed5** | Tight Scalp — the family's best setting, promoted as a control | -2.11% | $97,888.44 | 4075 | 99.9% | 9.78% | $127.05 | 0 |
+| 19 | **ThetaHarvest_ShortOTM** | Deep-OTM Decay Harvester (buys NO) | -2.17% | $97,828.36 | 475 | 50.0% | 3.80% | $150.30 | 1,473.41 |
+| 20 | **PanicFade_T4_S100** | Panic Fade — the source's own best configuration | -4.10% | $95,901.85 | 477 | 80.0% | 5.20% | $712.66 | 10,915.3 |
+| 21 | **MeanRev_CheapBand** | Cheap-Band Mean Reversion (enter ≤ 0.10, exit ≥ 0.50) | -5.77% | $94,230.31 | 2015 | 100.0% | 33.73% | $440.35 | 0 |
+| 22 | **AdjacentStrike_Ladder** | Adjacent-Strike Cheap Bracket Ladder | -5.95% | $94,052.42 | 2629 | 50.0% | 21.59% | $3,727.48 | 145,056.17 |
+| 23 | **ContrarianKing_100x** | Deep-OTM Longshot Convexity Hunter | -13.32% | $86,681.53 | 2678 | 50.0% | 32.97% | $740.19 | 0 |
+| 24 | **ShockTiming_StopOut** | Shock-Timing with the Source's Stop-Out | -14.30% | $85,703.57 | 1076 | 38.2% | 15.18% | $2,375.41 | 102,100.95 |
+| 25 | **TrendRide_FullTilt** | Trend-Following Pyramider | -15.90% | $84,096.37 | 717 | 80.0% | 17.08% | $2,681.70 | 17,433.08 |
+| 26 | **EventCatalyst_Max** | Range-Breakout Catalyst Frontrunner | -19.17% | $80,828.15 | 1112 | 83.3% | 19.54% | $3,819.48 | 62,215.56 |
+| 27 | **AlphaApex_Momentum** | Maximum Convexity Momentum Chaser | -20.30% | $79,704.01 | 2205 | 75.0% | 36.01% | $1,769.68 | 3,883.96 |
+| 28 | **GammaWhale_Squeeze** | High-Gamma Volume-Spike Breakout | -33.31% | $66,693.61 | 853 | 80.5% | 37.03% | $3,847.13 | 4,476.69 |
 | — | **CPI_PrintFade** | CPI-Print Panic Fade | *unranked* | $100,000.00 | 0 | — | — | $0.00 | 0 |
 | — | **Crypto15M_CheapTail** | 15-Minute Crypto Cheap-Tail Buyer | *unranked* | $100,000.00 | 0 | — | — | $0.00 | 0 |
 | — | **Crypto15M_EarlyLeader** | 15-Minute Crypto Early-Leader Ride (BTC · ETH · SOL) | *unranked* | $100,000.00 | 0 | — | — | $0.00 | 0 |
@@ -136,8 +136,8 @@ Reproduce with `curl -X POST localhost:3000/api/run-competition -d '{"seed":2026
 > **WeatherLadder_CheapBands is not ranked** — Flight mismatch — no KXHIGHNY market in this flight's universe — this design cannot trade here (this design runs in another flight.). Listing it at "0%" would present a design that never traded as if it were a competitive result, so `LEADERBOARD_QUALIFICATION` excludes it from ranking entirely.
 > **WeatherLadder_MultiCity is not ranked** — Flight mismatch — no KXHIGHNY / KXHIGHLAX / KXHIGHCHI / KXHIGHMIA / KXHIGHAUS / KXHIGHDEN / KXHIGHPHIL / KXHIGHTPHX / KXHIGHTSEA market in this flight's universe — this design cannot trade here (this design runs in another flight.). Listing it at "0%" would present a design that never traded as if it were a competitive result, so `LEADERBOARD_QUALIFICATION` excludes it from ranking entirely.
 
-**How to read this table.** 8 of the 28 ranked entries finished ahead of their $100,000 starting capital —
-best +4.24% (MeanRev_CheapBand), worst -26.37%.
+**How to read this table.** 6 of the 28 ranked entries finished ahead of their $100,000 starting capital —
+best +3.74% (MakerFlip_SpreadHarvest), worst -33.31%.
 There is no +800% curve here, and that is the honest outcome of replaying 400 daily periods across
 114 real markets whose YES contracts traded between $0.06 and $0.28,
 under Kalshi's real quadratic fee schedule. Two things separate the top of this table from the bottom:
