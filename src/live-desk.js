@@ -826,29 +826,61 @@ export function placeDeskOrder(book, intent, ctx = {}) {
    * CASH CAP. The fill must not cost more than the portfolio has, fee included.
    * The order is re-sized to what the cash can pay for and the cap is recorded
    * on the fill (`cashCapped`), so the ledger shows a smaller order rather than
-   * a balance no exchange would ever show. The budget keeps ~2% back because
-   * the taker fee is quadratic (max ≈ C·0.07·P·(1−P) ≈ 1.75% of notional).
+   * a balance no exchange would ever show.
+   *
+   * The cap is computed against the EXACT desk cost — gross plus the official
+   * per-tier fee from computeKalshiFee, the same function the fill is charged
+   * with — never against a flat percentage reserve. A flat reserve is wrong at
+   * the price extremes: the fee schedule's fee = round up(M x 0.07 x C x P x
+   * (1-P)) is 3.5% of gross at P=0.50 but 6.93% of gross at P=0.09, so a 2%
+   * reserve let a $500 account buy $520.87 of cost (irregularity #49
+   * follow-up, found by test 114 on the 2026-09-19 ladder).
    */
   if (request.action === 'buy' && portfolio && Number.isFinite(portfolio.cash) && preview.filled > 0) {
-    const budget = portfolio.cash * 0.98;
-    let spent = 0;
-    let affordable = 0;
-    for (const level of preview.levels || []) {
-      const levelCost = level.price * level.count;
-      if (spent + levelCost <= budget + 1e-9) {
-        affordable = round2(affordable + level.count);
-        spent += levelCost;
-        continue;
+    const cash = portfolio.cash;
+    // The exact cost of a level list: gross + per-tier official fee, summed
+    // exactly the way computeFeeForFills (and therefore the fill record) does.
+    const costOf = (levels) => {
+      let total = 0;
+      for (const l of levels) {
+        total += l.count * l.price;
+        total += computeKalshiFee({ count: l.count, price: l.price, multiplier: book.market.feeMultiplier, isMaker: request.maker }).fee;
       }
-      const room = budget - spent;
-      const partial = level.price > 0 ? Math.floor(room / level.price) : 0;
-      affordable = round2(affordable + Math.max(0, Math.min(partial, level.count)));
-      break;
+      return total;
+    };
+    let affordable = preview.filled;
+    if (costOf(preview.levels) > cash + 1e-9) {
+      const acc = [];
+      for (const level of preview.levels) {
+        if (costOf([...acc, level]) <= cash + 1e-9) {
+          acc.push({ ...level });
+          continue;
+        }
+        // The fee is monotone in the count, so binary-search the largest count
+        // at this level's price that still fits. The search runs in integer
+        // min-contract units (0.01): a float search whose midpoint is rounded
+        // to 2dp can stop shrinking when the interval is one unit wide and the
+        // rounded midpoint equals `hi` — an infinite loop (test 114, found on
+        // the 2026-09-19 ladder).
+        const units = Math.floor(level.count / DESK_LIMITS.minContracts + 1e-9);
+        let lo = 0;
+        let hi = units;
+        const fits = (n) =>
+          costOf([...acc, { price: level.price, count: round2(n * DESK_LIMITS.minContracts) }]) <= cash + 1e-9;
+        while (lo < hi) {
+          const mid = lo + Math.ceil((hi - lo + 1) / 2);
+          if (fits(mid)) lo = mid;
+          else hi = mid - 1;
+        }
+        if (lo > 0) acc.push({ price: level.price, count: round2(lo * DESK_LIMITS.minContracts) });
+        break;
+      }
+      affordable = round2(acc.reduce((s, l) => s + l.count, 0));
     }
     if (affordable < preview.filled) {
       const capped = sizeDeskOrder(book, { ...request, count: affordable, strategy: request.strategy });
       capped.cashCapped = round2(preview.filled - capped.filled);
-      capped.cashBudget = round6(budget);
+      capped.cashBudget = round6(cash);
       preview = capped;
     }
   }
@@ -1042,12 +1074,31 @@ export function crossRestingOrders(book, event, ctx = {}) {
     if (order.action === 'buy' && typeof ctx.cashFor === 'function') {
       const cash = ctx.cashFor(order.strategy);
       if (Number.isFinite(cash)) {
-        const budget = cash * 0.98;
-        const affordable = order.price > 0 ? Math.floor(budget / order.price) : 0;
-        const allowed = Math.max(0, Math.min(qty, affordable));
-        if (allowed < qty) {
-          cashCapped = round2(qty - allowed);
-          qty = round2(allowed);
+        // Exact affordability at the resting price: gross plus the maker fee
+        // (charged only where the series carries maker fees). The old flat 2%
+        // reserve under-reserved whenever the series multiplier pushed the
+        // round-up fee past 2% of gross; the fee is monotone in the count, so
+        // binary-search the largest count whose exact cost fits the cash.
+        const feeChargedHere = book.market.feeType === 'quadratic_with_maker_fees';
+        const costOf = (n) => {
+          const grossN = n * order.price;
+          const feeN = feeChargedHere
+            ? computeKalshiFee({ count: n, price: order.price, multiplier: book.market.feeMultiplier, isMaker: true }).fee
+            : 0;
+          return grossN + feeN;
+        };
+        let lo = 0;
+        let hi = order.price > 0 ? Math.floor(cash / order.price) : 0;
+        while (hi - lo > 1) {
+          const mid = Math.floor((lo + hi) / 2);
+          if (costOf(mid) <= cash + 1e-9) lo = mid;
+          else hi = mid;
+        }
+        let affordable = costOf(hi) <= cash + 1e-9 ? hi : lo;
+        affordable = Math.max(0, Math.min(affordable, qty));
+        if (affordable < qty) {
+          cashCapped = round2(qty - affordable);
+          qty = round2(affordable);
         }
         if (!(qty > DESK_LIMITS.minContracts / 2)) {
           // Nothing affordable: the resting order stays resting.

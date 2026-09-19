@@ -179,7 +179,7 @@ Every number here is recomputed on demand; nothing in this table is stored.
 > **ForecastEdge_Weather is the forward test.** It trades only where the point-in-time NWS archive (Austin (Camp Mabry): 9 snapshot(s), first 2026-09-18T13:24:29.350Z; Chicago (Midway): 9 snapshot(s), first 2026-09-18T13:24:29.350Z; Denver (DEN): 9 snapshot(s), first 2026-09-18T13:24:29.350Z; Los Angeles (LAX): 9 snapshot(s), first 2026-09-18T13:24:29.350Z; Miami (MIA): 9 snapshot(s), first 2026-09-18T13:24:29.350Z; New York (Central Park): 11 snapshot(s), first 2026-09-18T03:19:26.166Z; Philadelphia (PHL): 9 snapshot(s), first 2026-09-18T13:24:29.350Z; Phoenix (PHX): 9 snapshot(s), first 2026-09-18T13:24:29.350Z; Seattle (Sea-Tac): 9 snapshot(s), first 2026-09-18T13:24:29.350Z) has a snapshot at or before the decision bar. On the backfilled August–September brackets it correctly abstains (0 trades, unranked, reason published); its real window is the live market from 2026-09-18 onward.
 ### The Live Desk — paper orders placed on real OPEN contracts, point-in-time
 
-Cut-off **2026-09-19T15:34:11.240Z** (newest captured ladder). 80 of 80 tracked contracts had a real captured ladder at or before that instant; 22 orders were placed, 21 filled against real depth, 1 rested without crossing and was cancelled, and 0 position(s) were settled by the exchange's own result. Official fees: **$2591.5849**. The desk audit (13 invariants, D1–D13) PASSES on this run: every fill is re-derived from the captured ladder it names, every fee from the official schedule with the series multiplier, every settlement from `settlement_value_dollars`.
+Cut-off **2026-09-19T15:34:11.240Z** (newest captured ladder). 80 of 86 tracked contracts had a real captured ladder at or before that instant; 22 orders were placed, 21 filled against real depth, 1 rested without crossing and was cancelled, and 0 position(s) were settled by the exchange's own result. Official fees: **$2591.5849**. The desk audit (13 invariants, D1–D13) PASSES on this run: every fill is re-derived from the captured ladder it names, every fee from the official schedule with the series multiplier, every settlement from `settlement_value_dollars`.
 
 | # | Desk username | Return | Equity | Fills | Contracts | Unfilled | Slippage cost | Fees | Settlement PnL |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -211,10 +211,10 @@ Window **2026-09-18T06:58:40.244Z → 2026-09-19T15:34:11.240Z** (32.6 h). Every
 
 | # | Round | Real capture instant | Contracts with a ladder | New ladders in this batch | Real events walked | Real settlements | Carried maker fills |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | **R01** | 2026-09-18T06:58:40.244Z | 18 | 18 | 0 (0 candle + 0 ladder quote(s)) | 0 | 0 |
-| 2 | **R02** | 2026-09-18T07:04:15.551Z | 21 | 3 | 4 (1 candle + 3 ladder quote(s)) | 0 | 0 |
-| 3 | **R03** | 2026-09-18T11:18:12.556Z | 33 | 12 | 53 (41 candle + 12 ladder quote(s)) | 0 | 0 |
-| 4 | **R04** | 2026-09-19T15:34:11.240Z | 80 | 47 | 6047 (5246 candle + 801 ladder quote(s)) | 0 | 0 |
+| 1 | **R01** | 2026-09-18T06:58:40.244Z | 22 | 18 | 0 (0 candle + 0 ladder quote(s)) | 0 | 0 |
+| 2 | **R02** | 2026-09-18T07:04:15.551Z | 22 | 3 | 8 (4 candle + 4 ladder quote(s)) | 0 | 0 |
+| 3 | **R03** | 2026-09-18T11:18:12.556Z | 33 | 12 | 56 (44 candle + 12 ladder quote(s)) | 0 | 0 |
+| 4 | **R04** | 2026-09-19T15:34:11.240Z | 80 | 47 | 6064 (5262 candle + 802 ladder quote(s)) | 0 | 0 |
 
 | # | Season username | Return | Equity | Fills | Rounds traded | Contracts | Fees | Settlement PnL | Unrealized | Max DD |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
