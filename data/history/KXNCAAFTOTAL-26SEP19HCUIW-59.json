@@ -447,6 +447,134 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T18:53:13.607Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19HCUIW-59/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1062.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "309.00"
+            ],
+            [
+              "0.0500",
+              "103.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "103.00"
+            ],
+            [
+              "0.1600",
+              "103.00"
+            ],
+            [
+              "0.2000",
+              "19.00"
+            ],
+            [
+              "0.2100",
+              "100.00"
+            ],
+            [
+              "0.2700",
+              "3.00"
+            ],
+            [
+              "0.2900",
+              "1410.00"
+            ],
+            [
+              "0.4600",
+              "30.00"
+            ],
+            [
+              "0.4800",
+              "1.00"
+            ],
+            [
+              "0.5700",
+              "60.00"
+            ],
+            [
+              "0.6100",
+              "1000.00"
+            ],
+            [
+              "0.6800",
+              "1100.00"
+            ],
+            [
+              "0.6900",
+              "10.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "301.00"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "90.00"
+            ],
+            [
+              "0.0400",
+              "1993.00"
+            ],
+            [
+              "0.0500",
+              "149.00"
+            ],
+            [
+              "0.0600",
+              "130.00"
+            ],
+            [
+              "0.0800",
+              "112.00"
+            ],
+            [
+              "0.1300",
+              "1060.00"
+            ],
+            [
+              "0.1600",
+              "1101.00"
+            ],
+            [
+              "0.2100",
+              "100.00"
+            ],
+            [
+              "0.2300",
+              "700.00"
+            ],
+            [
+              "0.2400",
+              "24.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -465,7 +593,7 @@
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.7600",
-    "no_bid_dollars": "0.6200",
+    "no_bid_dollars": "0.6900",
     "no_sub_title": "Over 58.5 points scored",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T02:00:00Z",
@@ -493,15 +621,15 @@
     "updated_time": "2026-09-16T04:06:00.868847Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "52.56",
-    "yes_ask_dollars": "0.3800",
-    "yes_ask_size_fp": "14.00",
+    "yes_ask_dollars": "0.3100",
+    "yes_ask_size_fp": "10.00",
     "yes_bid_dollars": "0.2400",
-    "yes_bid_size_fp": "10.00",
+    "yes_bid_size_fp": "24.00",
     "yes_sub_title": "Over 58.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19HCUIW-59",
-  "market_captured_at": "2026-09-19T15:33:10.490Z",
+  "market_captured_at": "2026-09-19T18:53:12.965Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T15:33:11.107Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19HCUIW-59/candlesticks?start_ts=1789790401&end_ts=1789831990&period_interval=1440"
+  "last_ingested_at": "2026-09-19T18:53:13.537Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19HCUIW-59/candlesticks?start_ts=1789790401&end_ts=1789843993&period_interval=1440"
 }

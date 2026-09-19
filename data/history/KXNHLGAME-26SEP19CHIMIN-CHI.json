@@ -768,6 +768,258 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T18:53:53.682Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "24677.00"
+            ],
+            [
+              "0.0200",
+              "4137.00"
+            ],
+            [
+              "0.0300",
+              "50579.00"
+            ],
+            [
+              "0.0400",
+              "8989.00"
+            ],
+            [
+              "0.0500",
+              "25.00"
+            ],
+            [
+              "0.0600",
+              "400.00"
+            ],
+            [
+              "0.0700",
+              "406.81"
+            ],
+            [
+              "0.0800",
+              "20.00"
+            ],
+            [
+              "0.0900",
+              "500.00"
+            ],
+            [
+              "0.1000",
+              "20.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "38.00"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.2000",
+              "310.93"
+            ],
+            [
+              "0.2200",
+              "112.00"
+            ],
+            [
+              "0.2400",
+              "17.00"
+            ],
+            [
+              "0.2500",
+              "2009.41"
+            ],
+            [
+              "0.2600",
+              "712.00"
+            ],
+            [
+              "0.2700",
+              "383.00"
+            ],
+            [
+              "0.2800",
+              "7.00"
+            ],
+            [
+              "0.3200",
+              "112.00"
+            ],
+            [
+              "0.3300",
+              "210.00"
+            ],
+            [
+              "0.3500",
+              "200.00"
+            ],
+            [
+              "0.3900",
+              "140.00"
+            ],
+            [
+              "0.4000",
+              "8.00"
+            ],
+            [
+              "0.4200",
+              "112.00"
+            ],
+            [
+              "0.4400",
+              "7.00"
+            ],
+            [
+              "0.4700",
+              "7.00"
+            ],
+            [
+              "0.4900",
+              "52.00"
+            ],
+            [
+              "0.5100",
+              "724.00"
+            ],
+            [
+              "0.5200",
+              "888.00"
+            ],
+            [
+              "0.5300",
+              "2.00"
+            ],
+            [
+              "0.5400",
+              "125.00"
+            ],
+            [
+              "0.5500",
+              "241.59"
+            ],
+            [
+              "0.5600",
+              "581.21"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "24630.00"
+            ],
+            [
+              "0.0200",
+              "16154.00"
+            ],
+            [
+              "0.0300",
+              "575.00"
+            ],
+            [
+              "0.0400",
+              "66.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "132.00"
+            ],
+            [
+              "0.1000",
+              "330.00"
+            ],
+            [
+              "0.1100",
+              "20.00"
+            ],
+            [
+              "0.1300",
+              "46.00"
+            ],
+            [
+              "0.1700",
+              "112.00"
+            ],
+            [
+              "0.1900",
+              "1456.00"
+            ],
+            [
+              "0.2000",
+              "736.00"
+            ],
+            [
+              "0.2100",
+              "490.00"
+            ],
+            [
+              "0.2400",
+              "140.00"
+            ],
+            [
+              "0.2600",
+              "22.00"
+            ],
+            [
+              "0.2700",
+              "116.00"
+            ],
+            [
+              "0.3000",
+              "11.00"
+            ],
+            [
+              "0.3100",
+              "200.00"
+            ],
+            [
+              "0.3300",
+              "10.00"
+            ],
+            [
+              "0.3400",
+              "3.00"
+            ],
+            [
+              "0.3500",
+              "5.00"
+            ],
+            [
+              "0.3800",
+              "5.00"
+            ],
+            [
+              "0.3900",
+              "2.00"
+            ],
+            [
+              "0.4100",
+              "51.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -783,20 +1035,20 @@
     "expected_expiration_time": "2026-09-20T03:00:00Z",
     "expiration_time": "2026-09-22T00:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.4500",
+    "last_price_dollars": "0.4400",
     "latest_expiration_time": "2026-09-22T00:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.5800",
-    "no_bid_dollars": "0.5500",
+    "no_ask_dollars": "0.5900",
+    "no_bid_dollars": "0.5600",
     "no_sub_title": "Chicago",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T03:00:00Z",
-    "open_interest_fp": "268.28",
+    "open_interest_fp": "301.07",
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.4200",
-    "previous_yes_ask_dollars": "0.4300",
-    "previous_yes_bid_dollars": "0.4000",
+    "previous_yes_ask_dollars": "0.4400",
+    "previous_yes_bid_dollars": "0.3900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -814,17 +1066,17 @@
     "ticker": "KXNHLGAME-26SEP19CHIMIN-CHI",
     "title": "Chicago wins",
     "updated_time": "2026-09-17T00:07:00.14378Z",
-    "volume_24h_fp": "144.95",
-    "volume_fp": "310.69",
-    "yes_ask_dollars": "0.4500",
-    "yes_ask_size_fp": "246.59",
-    "yes_bid_dollars": "0.4200",
-    "yes_bid_size_fp": "46.00",
+    "volume_24h_fp": "126.74",
+    "volume_fp": "343.48",
+    "yes_ask_dollars": "0.4400",
+    "yes_ask_size_fp": "581.21",
+    "yes_bid_dollars": "0.4100",
+    "yes_bid_size_fp": "51.00",
     "yes_sub_title": "Chicago"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI",
-  "market_captured_at": "2026-09-19T15:33:51.826Z",
+  "market_captured_at": "2026-09-19T18:53:53.033Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T15:33:52.442Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-CHI/candlesticks?start_ts=1789790401&end_ts=1789832032&period_interval=1440"
+  "last_ingested_at": "2026-09-19T18:53:53.613Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-CHI/candlesticks?start_ts=1789790401&end_ts=1789844033&period_interval=1440"
 }
