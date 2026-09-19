@@ -164,6 +164,33 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
  *  own log store is not readable from every environment). */
 const LAST_RUN = { startedAt: null, finishedAt: null, subjects: [], failures: 0 };
 
+/**
+ * One HEAD probe per host, recorded verbatim in the run report. api.weather.gov
+ * is the forecast archive's host (the weather bot works from the same runners),
+ * so a probe table that shows weather reachable while openFDA is not proves the
+ * block is specific to the FDA origin — and download.open.fda.gov (openFDA's
+ * own full-snapshot mirror) tells us whether an official fallback exists.
+ */
+async function probeHosts() {
+  const hosts = [
+    'https://api.open.fda.gov/drug/drugsfda.json?limit=1',
+    'https://api.weather.gov/alerts/active?limit=1',
+    'https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip'
+  ];
+  const probes = [];
+  for (const url of hosts) {
+    const t0 = Date.now();
+    try {
+      const res = await fetch(url, { method: 'HEAD', headers: { 'User-Agent': USER_AGENT }, signal: AbortSignal.timeout(15_000) });
+      probes.push({ url, ok: res.ok, http_status: res.status, ms: Date.now() - t0 });
+    } catch (err) {
+      const cause = err && err.cause ? ` (cause=${err.cause.code || err.cause.message || err.cause})` : '';
+      probes.push({ url, ok: false, error: `${err && err.message ? err.message : String(err)}${cause}`, ms: Date.now() - t0 });
+    }
+  }
+  return probes;
+}
+
 function readJsonSafe(p) {
   try {
     return JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -254,7 +281,10 @@ async function capture(subject) {
     try {
       res = await fetch(url, { headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' } });
     } catch (err) {
-      lastError = `network: ${err && err.message ? err.message : String(err)}`;
+      // "fetch failed" alone is undiagnosable: undici wraps the real fault
+      // (DNS, TCP, TLS) in err.cause. Record the cause code verbatim.
+      const cause = err && err.cause ? ` (cause=${err.cause.code || err.cause.message || err.cause})` : '';
+      lastError = `network: ${err && err.message ? err.message : String(err)}${cause}`;
       if (attempt < 3) {
         await sleep(20_000 * attempt);
         continue;
@@ -389,6 +419,9 @@ async function main() {
   }
 
   LAST_RUN.startedAt = new Date().toISOString();
+  LAST_RUN.probes = await probeHosts();
+  console.log('reachability probes:');
+  for (const pr of LAST_RUN.probes) console.log(`  ${pr.ok ? '✓' : '✗'} ${pr.url} → ${pr.ok ? 'HTTP ' + pr.http_status : (pr.error || '?')} (${pr.ms}ms)`);
   let failures = 0;
   for (let i = 0; i < SUBJECTS.length; i++) {
     const subject = SUBJECTS[i];
