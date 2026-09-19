@@ -51,7 +51,7 @@ function el(sel) {
   return elements.get(sel);
 }
 
-const TABS = ['leaderboard', 'strategies', 'markets', 'memory', 'lab', 'desk', 'ledger', 'research', 'verification', 'irregularities'];
+const TABS = ['leaderboard', 'strategies', 'markets', 'memory', 'lab', 'desk', 'season', 'ledger', 'research', 'verification', 'irregularities'];
 
 globalThis.document = {
   querySelector: (sel) => el(sel),
@@ -301,6 +301,28 @@ await new Promise((r) => setTimeout(r, 900));
 const dtResult = written.get('#dtResult') || '';
 interact.push(['desk ticket previews a fill against a real captured ladder', /FILLED|PARTIAL|UNFILLED/.test(dtResult)]);
 interact.push(['desk ticket preview cites the ladder it priced from', /external-api\.kalshi\.com/.test(dtResult)]);
+
+// 5c. Desk SEASON tab: the carried book. The browser runs the same
+// src/desk-season.js engine the server and the CLI run, so these assertions
+// exercise the real rounds, the carried book and the season audit.
+el('.tab:season').click();
+await new Promise((r) => setTimeout(r, 6000));
+const seasonStatus = written.get('#seasonStatus') || '';
+const seasonKpis = written.get('#seasonKpis') || '';
+const seasonRoundsTable = written.get('#seasonRoundsTable tbody') || '';
+const seasonResults = written.get('#seasonResultsTable tbody') || '';
+const seasonCoverage = written.get('#seasonCoverageTable tbody') || '';
+const seasonInvars = written.get('#seasonInvars') || '';
+const seasonExplanations = written.get('#seasonExplanations') || '';
+interact.push(['season tab runs the carried book and states the audit result', /Season audit passed|SEASON AUDIT FAILED/.test(seasonStatus)]);
+interact.push(['season tab names the real capture rounds and how many', /capture round|round\(s\)/.test(seasonStatus)]);
+interact.push(['season KPI cards report rounds, walked events and carried maker fills', /Rounds \(real capture batches\)/.test(seasonKpis) && /Real events walked/.test(seasonKpis) && /Carried maker fills/.test(seasonKpis)]);
+interact.push(['season rounds table shows real captured cut-offs', /\d{4}-\d{2}-\d{2}T/.test(seasonRoundsTable)]);
+interact.push(['season leaderboard lists a real season entrant', /Season[A-Za-z]+_/.test(seasonResults)]);
+interact.push(['season coverage states why an entrant did not trade', /entry conditions were never met|no order was fillable|Traded in \d+ of \d+ round/.test(seasonCoverage)]);
+interact.push(['season invariants are published with their sources', /S1/.test(seasonInvars) && /D1/.test(seasonInvars)]);
+interact.push(['season explanations are computed per design', /Worked:|Cost:|never traded/.test(seasonExplanations)]);
+interact.push(['season states the carried-book rule (points-in-time rounds)', /point-in-time/i.test(seasonInvars) || /carried/i.test(seasonInvars)]);
 
 // 6. Calendar advance + re-run competition with a different seed.
 el('#btnAdvance').click();

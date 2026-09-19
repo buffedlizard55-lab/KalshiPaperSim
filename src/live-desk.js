@@ -1080,7 +1080,7 @@ export function settleDeskMarket(market) {
  * Portfolio + session runner
  * ------------------------------------------------------------------ */
 
-function createPortfolio(strategy, startingCapital) {
+export function createPortfolio(strategy, startingCapital) {
   return {
     strategy,
     startingCapital,
@@ -1098,7 +1098,7 @@ function createPortfolio(strategy, startingCapital) {
   };
 }
 
-function applyFill(portfolio, fill) {
+export function applyFill(portfolio, fill) {
   const key = `${fill.ticker}|${fill.side}`;
   const pos = portfolio.positions.get(key) || { ticker: fill.ticker, side: fill.side, contracts: 0, cost: 0, fees: 0 };
   const gross = fill.gross;
@@ -1131,7 +1131,7 @@ function applyFill(portfolio, fill) {
   if (fill.requested !== undefined) portfolio.unfilledContracts = round2(portfolio.unfilledContracts + (fill.unfilled || 0));
 }
 
-function applySettlement(portfolio, position, settlement, market) {
+export function applySettlement(portfolio, position, settlement, market) {
   /**
    * `settlement_value_dollars` is the value of a YES contract — 1.0000 when the
    * market settles YES, 0.0000 when it settles NO (verified against the
@@ -1175,7 +1175,7 @@ function applySettlement(portfolio, position, settlement, market) {
   };
 }
 
-function markPortfolio(portfolio, universe, asOfMs) {
+export function markPortfolio(portfolio, universe, asOfMs) {
   let unrealized = 0;
   let marketValue = 0;
   const marks = [];
@@ -1420,10 +1420,27 @@ export function runDeskSession({
  * a paper position — later captured ladders, later real quotes (bars) and the
  * exchange's own settlements.
  */
-function buildTimeline(universe, asOfMs, data = null) {
+export function buildTimeline(universe, asOfMs, data = null) {
   const events = [];
+  /**
+   * THE BARS COME FROM THE STORE, NOT FROM THE CUT-OFF VIEW.
+   *
+   * `universe.markets[].bars` is deliberately truncated at the cut-off (a
+   * strategy must never see a later candle). That is correct for DECISIONS —
+   * and it made this function dead: every bar it could have pushed as a
+   * forward quote was already filtered out upstream, so no resting order could
+   * ever be crossed by a later real candlestick and the desk reported 0 maker
+   * fills on every cut-off (IRREGULARITIES.md #46). The forward walk needs the
+   * full captured bar set and filters by `endTs > asOfMs` itself, below. Market
+   * MEMBERSHIP still comes from the universe, so nothing new enters the desk.
+   */
+  const rawByTicker = new Map(
+    (data && Array.isArray(data.markets) ? data.markets : []).map((raw) => [raw.ticker, raw])
+  );
   for (const market of universe.markets) {
-    for (const bar of market.bars) {
+    const raw = rawByTicker.get(market.ticker) || null;
+    const bars = raw ? raw.bars || [] : market.bars;
+    for (const bar of bars) {
       const t = bar.endTs * 1000;
       if (t <= asOfMs) continue;
       const yesBid = millsToDollars(bar.yesBid);
@@ -1493,7 +1510,7 @@ function buildTimeline(universe, asOfMs, data = null) {
   return events;
 }
 
-function deskView(universe, portfolio, { asOfMs, books }) {
+export function deskView(universe, portfolio, { asOfMs, books }) {
   return {
     asOf: iso(asOfMs),
     asOfMs,

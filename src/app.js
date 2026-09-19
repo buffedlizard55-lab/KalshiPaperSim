@@ -57,6 +57,8 @@ const state = {
   options: { seed: 20260917, settleAtEnd: false, regime: 'baseline', depthMode: 'captured', flight: 'daily' },
   researchLoaded: false,
   deskLoaded: false,
+  seasonLoaded: false,
+  season: null,
   desk: null,
   deskModules: null,
   reports: {}
@@ -110,6 +112,14 @@ function serverRuntime() {
       return jfetch(`/api/live-desk?${qs}`);
     },
     async liveDeskOrder(payload) { return jfetch('/api/live-desk/order', { method: 'POST', body: JSON.stringify(payload) }); },
+    async deskSeason({ maxRounds = 12, capital = 100000 } = {}) {
+      const qs = new URLSearchParams({ maxRounds: String(maxRounds), capital: String(capital) });
+      return jfetch(`/api/desk-season?${qs}`);
+    },
+    async deskSeasonAudit({ maxRounds = 12, capital = 100000 } = {}) {
+      const qs = new URLSearchParams({ maxRounds: String(maxRounds), capital: String(capital) });
+      return jfetch(`/api/desk-season/audit?${qs}`);
+    },
     async liveDeskTicket(params) { return jfetch(`/api/live-desk/ticket?${new URLSearchParams(params)}`); },
     deskLedgerJsonlUrl: ({ asOf = null, capital = 100000 } = {}) => {
       const qs = new URLSearchParams({ capital: String(capital) });
@@ -121,6 +131,8 @@ function serverRuntime() {
       if (asOf) qs.set('asOf', asOf);
       return `/api/live-desk/fills.csv?${qs}`;
     },
+    seasonLedgerJsonlUrl: ({ maxRounds = 12, capital = 100000 } = {}) =>
+      `/api/desk-season/ledger.jsonl?${new URLSearchParams({ maxRounds: String(maxRounds), capital: String(capital) })}`,
     async backtest(payload) { return jfetch('/api/backtest', { method: 'POST', body: JSON.stringify(payload) }); },
     exportJsonUrl: '/api/export/json',
     exportCsvUrl: '/api/export/csv',
@@ -309,6 +321,50 @@ async function staticRuntime() {
       memory.save();
       return report;
     },
+    /**
+     * DESK SEASON (static mode). Same modules, same engine, same audit: the
+     * browser calls buildSeasonReport() — the identical function the server
+     * calls — so the hosted page and a local server cannot disagree.
+     */
+    async seasonModules() {
+      if (!state.seasonModules) {
+        const [season, seasonStrategies, data] = await Promise.all([
+          import('./desk-season.js'),
+          import('./desk-season-strategies.js'),
+          import('./desk-data.js')
+        ]);
+        state.seasonModules = { season, seasonStrategies, data };
+      }
+      return state.seasonModules;
+    },
+    async deskSeason({ maxRounds = 12, capital = 100000 } = {}) {
+      const { season, seasonStrategies, data } = await this.seasonModules();
+      const report = season.buildSeasonReport({
+        data: data.DESK_DATA,
+        strategies: seasonStrategies.SEASON_STRATEGIES,
+        startingCapital: capital,
+        maxRounds
+      });
+      // The year keeps the compact season memory (rounds, curves, fill log).
+      memory.attachDeskSeason(report);
+      memory.save();
+      const { records, ...rest } = report;
+      return { ...rest, recordCount: (records || []).length, ok: report.audit?.ok };
+    },
+    async deskSeasonAudit({ maxRounds = 12, capital = 100000 } = {}) {
+      const { season, data } = await this.seasonModules();
+      const report = season.buildSeasonReport({ data: data.DESK_DATA, startingCapital: capital, maxRounds });
+      return {
+        ok: report.audit.ok,
+        checkedAt: report.audit.checkedAt,
+        totals: report.audit.totals,
+        checks: report.audit.checks,
+        mismatches: report.audit.mismatches,
+        facts: report.audit.facts,
+        summary: season.describeSeasonAudit(report.audit)
+      };
+    },
+    seasonLedgerJsonlUrl: () => null,
     async liveDeskTicket(params) {
       const { desk, data } = await this.deskModules();
       const u = desk.buildDeskUniverse({ data: data.DESK_DATA, asOf: params.asOf || null });
@@ -371,6 +427,7 @@ async function staticRuntime() {
 
 async function boot() {
   wireTabs();
+  wireSeason();
   let runtime;
   try {
     const h = await jfetch('/api/health');
@@ -473,6 +530,7 @@ function wireTabs() {
       if (id === 'research' && !state.researchLoaded) { state.researchLoaded = true; renderResearch(); }
       if (id === 'ledger' && !state.ledgerLoaded) { state.ledgerLoaded = true; renderLedger(); }
       if (id === 'desk' && !state.deskLoaded) { state.deskLoaded = true; loadLiveDesk(); }
+      if (id === 'season' && !state.seasonLoaded) { state.seasonLoaded = true; loadDeskSeason(); }
     });
   });
 }
@@ -1232,6 +1290,267 @@ function banner(title, body, kind = 'info') {
  * COLUMNS in src/trade-ledger.js), and each row links to the official API URL
  * of the bar that priced it, so a reader can open the source and compare.
  * ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------ *
+ * DESK SEASON — the carried book (one book, every real capture round)
+ *
+ * Same doctrine as the Live Desk, one level up: the numbers on this panel are
+ * produced by src/desk-season.js from the captured ladders, the captured
+ * candlesticks and the exchange's own settlements. The panel exists so a reader
+ * can see WHICH rounds a design traded in, what the book held between them, and
+ * why each entrant made or lost money — with the audit that proves the ledger
+ * was re-derived from the captures.
+ * ------------------------------------------------------------------ */
+
+async function loadDeskSeason() {
+  setHTML('#seasonStatus', '<div class="notice">Building the carried book from the captured rounds…</div>');
+  try {
+    const maxRounds = Number($('#seasonRounds')?.value) || 12;
+    const capital = Number($('#seasonCapital')?.value) || 100000;
+    const data = await state.runtime.deskSeason({ maxRounds, capital });
+    state.season = data;
+    renderDeskSeason(data);
+    renderMemory().catch(() => {});
+  } catch (err) {
+    setHTML('#seasonStatus', `<div class="notice notice-bad">The season could not run: ${esc(err.message)}</div>`);
+  }
+}
+
+function seasonEvents(r) {
+  const e = r.eventsApplied || {};
+  return (e.quotes || 0) + (e.settlements || 0);
+}
+
+function renderDeskSeason(data) {
+  const a = data.audit || {};
+  const t = a.totals || {};
+  const sched = data.schedule || {};
+  const rounds = sched.rounds || [];
+  const results = data.results || [];
+
+  setHTML('#seasonStatus', `
+    <div class="notice ${a.ok ? 'notice-good' : 'notice-bad'}">
+      <strong>${a.ok ? 'Season audit passed' : 'SEASON AUDIT FAILED'}</strong> — ${esc(String(t.rounds ?? rounds.length))} round(s),
+      ${esc(String(t.fills ?? 0))} fill(s) (${esc(String(t.makerFills ?? 0))} carried maker), ${esc(String(t.settlements ?? 0))} real settlement(s),
+      ${esc(String(t.eventsWalked ?? 0))} real event(s) walked, ${esc(money(t.fees || 0, 4))} of official fees.
+      ${a.mismatches && a.mismatches.length ? `<ul>${a.mismatches.map((m) => `<li>${esc(m.name)}: ${esc(m.detail)}</li>`).join('')}</ul>` : ''}
+    </div>
+    <div class="notice">
+      <strong>Newest capture ${esc(data.newestCapture || '—')}</strong> · data module generated ${esc(data.dataGeneratedAt || '—')} ·
+      ${esc(String((data.dataCoverage || {}).ladderCaptures ?? 0))} captured ladders ·
+      schedule derived from <strong>${esc(String(sched.consideredInstants ?? '—'))}</strong> distinct capture instants
+      grouped into <strong>${esc(String(sched.batches ?? '—'))}</strong> capture batch(es) → <strong>${esc(String(rounds.length))}</strong> round(s)
+      ${sched.thinned ? '(thinned evenly to the round cap)' : ''}.
+    </div>
+  `);
+
+  const ranked = results.filter((r) => r.fills > 0 || r.settlementPnl !== 0);
+  const best = ranked[0];
+  const totalFills = rounds.reduce((sum, r) => sum + ((r.eventsApplied || {}).quotes || 0), 0);
+  const carriedMaker = rounds.reduce((sum, r) => sum + (r.makerFillsCarriedIn || 0), 0);
+  setHTML('#seasonKpis', `
+    <div class="card"><span class="card-label">Rounds (real capture batches)</span><span class="card-value">${esc(String(rounds.length))}</span><span class="card-note">from ${esc(String(sched.consideredInstants ?? '—'))} captured instants; every round is a moment the exchange was actually queried</span></div>
+    <div class="card"><span class="card-label">Book window</span><span class="card-value">${esc(rounds.length ? `${rounds[0].label}→${rounds[rounds.length - 1].label}` : '—')}</span><span class="card-note">${esc(rounds.length ? `${rounds[0].asOf} → ${rounds[rounds.length - 1].asOf}` : 'no round')}</span></div>
+    <div class="card"><span class="card-label">Real events walked</span><span class="card-value">${esc(compact(totalFills))}</span><span class="card-note">later captured ladders, later candlesticks and exchange settlements between rounds</span></div>
+    <div class="card"><span class="card-label">Carried maker fills</span><span class="card-value">${esc(String(carriedMaker))}</span><span class="card-note">resting orders placed in one round and crossed by a later real quote</span></div>
+    <div class="card"><span class="card-label">Best carried return</span><span class="card-value ${signedClass(best?.returnPct)}">${best ? pct(best.returnPct, 4) : '—'}</span><span class="card-note">${best ? esc(best.strategy) : 'no entrant filled an order in any round'}</span></div>
+  `);
+
+  setHTML('#seasonRoundsTable tbody', rounds.map((r) => {
+    const e = r.eventsApplied || {};
+    return `
+      <tr>
+        <td><strong>${esc(r.label)}</strong></td>
+        <td>${esc(r.asOf)}</td>
+        <td class="num">${esc(String(r.newLadderCaptures ?? '—'))}</td>
+        <td class="num">${esc(String(r.tradeable ?? '—'))}</td>
+        <td class="num">${esc(String(seasonEvents(r)))}</td>
+        <td class="num">${esc(String(e.ladderQuotes ?? 0))}</td>
+        <td class="num">${esc(String(e.barQuotes ?? 0))}</td>
+        <td class="num">${esc(String(e.settlements ?? 0))}</td>
+        <td class="num">${esc(String(r.makerFillsCarriedIn ?? 0))}</td>
+        <td class="num">${r.gapHoursFromPrev === null || r.gapHoursFromPrev === undefined ? '—' : esc(Number(r.gapHoursFromPrev).toFixed(2))}</td>
+      </tr>`;
+  }).join(''));
+
+  const rankedRows = results.filter((r) => r.fills > 0 || r.settlementPnl !== 0);
+  const idleRows = results.filter((r) => !(r.fills > 0 || r.settlementPnl !== 0));
+  setHTML('#seasonResultsTable tbody', [
+    ...rankedRows.map((r, i) => {
+      const curve = (r.equityCurve || []).map((c) => c.equity);
+      return `
+        <tr>
+          <td>${i + 1}</td>
+          <td><strong>${esc(r.strategy)}</strong></td>
+          <td class="num ${signedClass(r.returnPct)}">${pct(r.returnPct, 4)}</td>
+          <td class="num">${money(r.equity, 2)}</td>
+          <td class="num">${esc(String(r.roundsTraded))} / ${esc(String(rounds.length))}</td>
+          <td class="num">${esc(String(r.fills))}</td>
+          <td class="num">${esc(compact(r.contracts))}</td>
+          <td class="num">${esc(compact(r.unfilled))}</td>
+          <td class="num">${money(r.slippageCost, 4)}</td>
+          <td class="num">${money(r.feesPaid, 4)}</td>
+          <td class="num ${signedClass(r.settlementPnl)}">${money(r.settlementPnl, 2)}</td>
+          <td class="num ${signedClass(r.unrealizedPnl)}">${money(r.unrealizedPnl, 2)}</td>
+          <td class="num">${Number(r.maxDrawdownPct || 0).toFixed(3)}%</td>
+          <td>${sparkline(curve, 90, 18) || '<span class="cell-sub">—</span>'} <span class="cell-sub">${esc(String(curve.length))} mark(s)</span></td>
+        </tr>`;
+    }),
+    ...idleRows.map((r) => `
+      <tr class="row-muted">
+        <td>—</td>
+        <td><strong>${esc(r.strategy)}</strong></td>
+        <td class="num"><em>no fillable order</em></td>
+        <td class="num">${money(r.equity, 2)}</td>
+        <td class="num">0 / ${esc(String(rounds.length))}</td>
+        <td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">$0.0000</td><td class="num">$0.0000</td>
+        <td class="num">$0.00</td><td class="num">$0.00</td><td class="num">0.000%</td>
+        <td><span class="cell-sub">idle by design or by the book</span></td>
+      </tr>`)
+  ].join(''));
+
+  setHTML('#seasonRankNote', `${esc(String(rankedRows.length))} of ${esc(String(results.length))} entrant(s) are ranked: a design that never filled an order is listed as <em>no fillable order</em>, never as 0%, because a carried book that never traded has no performance to report. ${esc(String((data.coverage || []).filter((c) => c.orders === 0).length))} entrant(s) returned no order at all across these rounds — their entry conditions were not met by the captured ladders.`);
+
+  setHTML('#seasonExplanations', `
+    <h3>Why each design made or lost money (computed, not asserted)</h3>
+    <div class="cards">
+      ${(data.explanations || []).map((e) => `
+        <div class="detail">
+          <h4>${esc(e.strategy)} ${verdictPill(e.verdict)}</h4>
+          <p>${esc(e.headline)}</p>
+          ${e.worked && e.worked.length ? `<p class="cell-sub"><strong>Worked:</strong></p><ul class="rule-list">${e.worked.map((w) => `<li>${esc(w)}</li>`).join('')}</ul>` : ''}
+          ${e.hurt && e.hurt.length ? `<p class="cell-sub"><strong>Cost:</strong></p><ul class="rule-list">${e.hurt.map((w) => `<li>${esc(w)}</li>`).join('')}</ul>` : ''}
+          ${e.measured ? `<p class="cell-sub">Measured: ${esc(Object.entries(e.measured).map(([k, v]) => `${k}=${typeof v === 'number' ? Number(v).toFixed(4).replace(/\.?0+$/, '') : v}`).join(', '))}</p>` : ''}
+        </div>`).join('')}
+    </div>
+  `);
+
+  setHTML('#seasonCoverageTable tbody', (data.coverage || []).map((c) => `
+    <tr>
+      <td><strong>${esc(c.strategy)}</strong></td>
+      <td>${esc(c.name || '—')}</td>
+      <td class="cell-sub">${esc(c.source || '—')}</td>
+      <td class="num">${esc(String(c.roundsTraded))} / ${esc(String(c.rounds))}</td>
+      <td class="num">${esc(String(c.fills))}</td>
+      <td>${esc(c.note)}</td>
+    </tr>`).join(''));
+
+  setHTML('#seasonInvars', `
+    <div class="detail-grid">
+      <div class="detail">
+        <h4>Season invariants the audit enforces (${(data.invars || []).length})</h4>
+        <ul class="rule-list">
+          ${(data.invars || []).map((v) => `<li><code>${esc(v.id)}</code> ${esc(v.rule)} <span class="cell-sub">— ${esc(v.source)}</span></li>`).join('')}
+        </ul>
+      </div>
+      <div class="detail">
+        <h4>Inherited from the Live Desk (${(data.deskInvars || []).length})</h4>
+        <ul class="rule-list">
+          ${(data.deskInvars || []).map((v) => `<li><code>${esc(v.id)}</code> ${esc(v.rule)} <span class="cell-sub">— ${esc(v.source)}</span></li>`).join('')}
+        </ul>
+      </div>
+    </div>
+    <div class="detail-grid">
+      <div class="detail">
+        <h4>How a season runs</h4>
+        <ul class="rule-list">
+          ${Object.entries(data.rule || {}).map(([k, v]) => `<li><strong>${esc(k)}</strong> — ${esc(v)}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="detail">
+        <h4>Official endpoints behind every round</h4>
+        <ul class="rule-list">
+          ${Object.entries(data.endpoints || {}).map(([k, v]) => `<li>${esc(k)}: <code>${esc(v)}</code></li>`).join('')}
+        </ul>
+      </div>
+    </div>
+    <div class="notice">
+      <strong>Limits, stated plainly.</strong> Every round is a real capture batch, but a batch is a single look: a contract that
+      closed inside the batch window is refused at that round’s stamp (its own <code>close_time</code> is the test), which is
+      conservative rather than optimistic. Depth behind the touch is the captured ladder only; a resting order needs a later real
+      quote through its price, so a design that posts and waits can legitimately finish the season with zero fills.
+    </div>
+  `);
+
+  setHTML('#seasonScheduleDetails', `
+    <details class="detail">
+      <summary>Schedule detail — every round’s cut-off, batch and gap</summary>
+      <div class="table-wrap">
+        <table class="grid">
+          <thead><tr><th>Round</th><th>Cut-off</th><th>Batch start</th><th class="num">Instants in batch</th><th class="num">New ladders</th><th class="num">Cumulative ladders</th><th class="num">Gap (h)</th></tr></thead>
+          <tbody>
+            ${rounds.map((r) => `
+              <tr>
+                <td>${esc(r.label)}</td><td>${esc(r.asOf)}</td><td>${esc(r.batchStart || '—')}</td>
+                <td class="num">${esc(String(r.instantsInBatch ?? '—'))}</td>
+                <td class="num">${esc(String(r.newLadderCaptures ?? '—'))}</td>
+                <td class="num">${esc(String(r.marketsWithLadder ?? '—'))}</td>
+                <td class="num">${r.gapHoursFromPrev === null || r.gapHoursFromPrev === undefined ? '—' : esc(Number(r.gapHoursFromPrev).toFixed(2))}</td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  `);
+}
+
+function wireSeason() {
+  const run = $('#seasonRun');
+  if (run) run.addEventListener('click', () => { state.seasonLoaded = true; loadDeskSeason(); });
+  const ledger = $('#seasonLedger');
+  if (ledger) {
+    ledger.addEventListener('click', () => {
+      const url = state.runtime.seasonLedgerJsonlUrl
+        ? state.runtime.seasonLedgerJsonlUrl({ maxRounds: Number($('#seasonRounds')?.value) || 12, capital: Number($('#seasonCapital')?.value) || 100000 })
+        : null;
+      if (url) {
+        window.location.href = url;
+        return;
+      }
+      // Static build: there is no server route, so the ledger is assembled in
+      // the browser from the SAME engine records and downloaded as a blob.
+      (async () => {
+        try {
+          const { season, seasonStrategies, data } = await state.runtime.seasonModules();
+          const report = season.buildSeasonReport({
+            data: data.DESK_DATA,
+            strategies: seasonStrategies.SEASON_STRATEGIES,
+            startingCapital: Number($('#seasonCapital')?.value) || 100000,
+            maxRounds: Number($('#seasonRounds')?.value) || 12
+          });
+          const blob = new Blob([season.seasonLedgerJsonl(report.records)], { type: 'application/x-ndjson' });
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = 'kalshi-desk-season-ledger.jsonl';
+          a.click();
+          URL.revokeObjectURL(a.href);
+        } catch (err) {
+          toast(`Ledger download failed: ${err.message}`);
+        }
+      })();
+    });
+  }
+  const sched = $('#seasonScheduleBtn');
+  if (sched) {
+    sched.addEventListener('click', async () => {
+      setHTML('#seasonScheduleDetails', '<div class="notice">Loading the schedule and the audit…</div>');
+      try {
+        const audit = await state.runtime.deskSeasonAudit({
+          maxRounds: Number($('#seasonRounds')?.value) || 12,
+          capital: Number($('#seasonCapital')?.value) || 100000
+        });
+        setHTML('#seasonScheduleDetails', `
+          <div class="notice ${audit.ok ? 'notice-good' : 'notice-bad'}">${esc(audit.summary || '')}</div>
+          <ul class="rule-list">
+            ${(audit.checks || []).map((c) => `<li>${c.ok ? '✅' : '❌'} ${esc(c.name)} <span class="cell-sub">— ${esc(c.detail)}</span></li>`).join('')}
+          </ul>
+        `);
+      } catch (err) {
+        setHTML('#seasonScheduleDetails', `<div class="notice notice-bad">Audit failed to load: ${esc(err.message)}</div>`);
+      }
+    });
+  }
+}
 
 /* ------------------------------------------------------------------ *
  * LIVE DESK — paper orders on REAL Kalshi open contracts

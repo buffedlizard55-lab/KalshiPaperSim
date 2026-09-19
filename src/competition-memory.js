@@ -28,12 +28,16 @@ import { round2 } from './simulation-engine.js';
 import { LEADERBOARD_QUALIFICATION } from './analysis.js';
 
 /**
- * Desk usernames that a human paper trader must never take.
+ * Desk usernames that a human paper trader must never take: the Live Desk
+ * roster (one session per cut-off) AND the Season roster (the carried book that
+ * runs across every real capture batch).
  *
- * Kept here (not imported from src/desk-strategies.js) so the one-year memory
- * module does not pull the 1 MB desk-data capture into every page load.
- * Test 104 asserts this list equals DESK_STRATEGIES.map(s => s.username)
- * field-for-field, so a new desk entrant that is not reserved fails the build.
+ * Kept here (not imported from src/desk-strategies.js or
+ * src/desk-season-strategies.js) so the one-year memory module does not pull
+ * the 1 MB desk-data capture into every page load. Test 104 asserts this list
+ * equals the union of DESK_STRATEGIES.map(s => s.username) and
+ * SEASON_STRATEGIES.map(s => s.username) field-for-field, so a new entrant that
+ * is not reserved fails the build.
  */
 export const DESK_RESERVED_USERNAMES = Object.freeze([
   'LiveFavourite_Settle',
@@ -48,7 +52,14 @@ export const DESK_RESERVED_USERNAMES = Object.freeze([
   'LiveFDA_DecisionPremium',
   'LiveNCAA_GameFavourite',
   'LiveNBA_GameFavourite',
-  'LiveCEO_ChangeFav'
+  'LiveCEO_ChangeFav',
+  // Season entrants (src/desk-season-strategies.js) — the carried-book roster.
+  'SeasonWeather_Carry',
+  'SeasonIndex_CarryHold',
+  'SeasonMaker_RestCarry',
+  'SeasonBoardSum_Ladder',
+  'SeasonExpiry_LastRound',
+  'SeasonControl_NoTrade'
 ]);
 
 export const STORAGE_KEY = 'KALSHI_COMPETITION_MEMORY_V2';
@@ -382,6 +393,104 @@ export class CompetitionMemoryEngine {
     if (this.state.tradeLog.length > 5000) this.state.tradeLog.splice(0, this.state.tradeLog.length - 5000);
     this.save();
     return this.state.deskMemory;
+  }
+
+  /**
+   * Store a Desk SEASON (the carried multi-round book) as competition memory.
+   *
+   * A season is already a multi-round portfolio, so what memory needs from it is
+   * the ROUND-BY-ROUND record: the equity curve each entrant actually produced,
+   * the real events each round walked through (later quotes, settlements), and
+   * one trade-log row per fill/settlement with its ladder URL and capture time.
+   * Positions are carried inside the season run itself; this method stores the
+   * measurements so future analysis (and the export) does not have to re-run the
+   * engine — and re-running it would rebuild the same numbers anyway, because
+   * the season is deterministic.
+   *
+   * Compact on purpose: the full season report is regenerated from
+   * src/desk-data.js; memory keeps the rounds, the curves and the fill log.
+   */
+  attachDeskSeason(report) {
+    if (!report || typeof report !== 'object') return null;
+    const records = report.records || [];
+    const fills = records.filter((r) => r.k === 'FILL' || r.k === 'SETTLE');
+    const snapshot = report.seasonSnapshot || report;
+    this.state.deskSeasonMemory = {
+      attachedAt: new Date().toISOString(),
+      version: snapshot.version || snapshot.seasonVersion || 1,
+      rounds: (snapshot.rounds || []).map((r) => ({
+        index: r.index,
+        label: r.label,
+        asOf: r.asOf,
+        tradeable: r.universe?.tradeable ?? null,
+        newLadderCaptures: r.newLadderCaptures ?? null,
+        quotes: r.eventsApplied?.quotes ?? 0,
+        settlements: r.eventsApplied?.settlements ?? 0,
+        makerFillsCarriedIn: r.makerFillsCarriedIn ?? 0
+      })),
+      auditOk: Boolean(snapshot.audit?.ok),
+      totals: snapshot.audit?.totals || null,
+      results: (snapshot.results || []).map((r) => ({
+        strategy: r.strategy,
+        returnPct: r.returnPct,
+        equity: r.equity,
+        cash: r.cash,
+        fills: r.fills,
+        contracts: r.contracts,
+        unfilled: r.unfilled,
+        feesPaid: r.feesPaid,
+        slippageCost: r.slippageCost,
+        settlementPnl: r.settlementPnl,
+        unrealizedPnl: r.unrealizedPnl,
+        maxDrawdownPct: r.maxDrawdownPct,
+        roundsTraded: r.roundsTraded,
+        roundsFilled: r.roundsFilled,
+        startingCapital: r.startingCapital,
+        openContracts: (r.openPositions || []).reduce((sum, p) => sum + (p.contracts || 0), 0),
+        equityCurve: (r.equityCurve || []).map((c) => ({
+          round: c.round,
+          roundLabel: c.roundLabel,
+          asOf: c.asOf,
+          phase: c.phase,
+          equity: c.equity,
+          returnPct: c.returnPct,
+          cash: c.cash,
+          marketValue: c.marketValue,
+          openContracts: c.openContracts
+        }))
+      })),
+      explanations: (snapshot.explanations || []).map((e) => ({
+        strategy: e.strategy,
+        verdict: e.verdict,
+        headline: e.headline,
+        worked: e.worked,
+        hurt: e.hurt
+      }))
+    };
+    // Replace any previous season rows so re-running does not duplicate the year.
+    this.state.tradeLog = (this.state.tradeLog || []).filter((t) => t.kind !== 'desk-season');
+    for (const f of fills) {
+      this.state.tradeLog.push({
+        competitionId: this.state.competitionId,
+        participant: f.strategy,
+        kind: 'desk-season',
+        round: f.round ?? null,
+        timestamp: f.at || f.settledAt || null,
+        ticker: f.ticker,
+        action: f.k === 'SETTLE' ? 'SETTLE' : (f.action || 'buy'),
+        side: f.side || null,
+        contracts: f.count ?? null,
+        price: f.price ?? f.payoffPerContract ?? null,
+        fee: f.fee ?? 0,
+        slippage: f.slippage ?? null,
+        maker: Boolean(f.maker),
+        bookSource: f.ladderUrl || f.marketUrl || null,
+        reason: f.explain || null
+      });
+    }
+    if (this.state.tradeLog.length > 5000) this.state.tradeLog.splice(0, this.state.tradeLog.length - 5000);
+    this.save();
+    return this.state.deskSeasonMemory;
   }
 
   /** Store results computed by ReplayEngine (never invents numbers). */

@@ -3438,6 +3438,7 @@ test('91. the three R14 recreations (MEE board sum, 5-minute spike fade, 1-minut
 
 import {
   buildDeskUniverse,
+  buildTimeline,
   createDeskBook,
   sizeDeskOrder,
   placeDeskOrder,
@@ -3455,6 +3456,19 @@ import {
   DESK_VERSION
 } from '../src/live-desk.js';
 import { DESK_STRATEGIES, deskStrategyById, rosterCoverageEntries } from '../src/desk-strategies.js';
+import { SEASON_STRATEGIES, seasonStrategyById, SEASON_USERNAMES } from '../src/desk-season-strategies.js';
+import {
+  runDeskSeason,
+  seasonSchedule,
+  buildSeasonReport,
+  auditSeason,
+  seasonAuditorFacts,
+  describeSeasonAudit,
+  seasonLedgerJsonl,
+  explainSeasonStrategy,
+  SEASON_RULE,
+  SEASON_VERSION
+} from '../src/desk-season.js';
 import { DESK_DATA } from '../src/desk-data.js';
 
 const NEWEST = DESK_DATA.coverage.newestCapture;
@@ -3687,9 +3701,13 @@ test('103. desk entrants carry unique usernames, a stated edge and a maximum-ret
 
 test('104. DESK_RESERVED_USERNAMES is set-equal to the live desk roster, and a desk session attaches to the year', () => {
   const reserved = [...DESK_RESERVED_USERNAMES].sort();
-  const live = DESK_STRATEGIES.map((s) => s.username).sort();
-  assert.deepEqual(reserved, live, 'a desk entrant that is not reserved (or a reserved name with no desk entry) is a hole');
-  assert.equal(reserved.length, DESK_STRATEGIES.length);
+  // The reserved set is the UNION of the two rosters: the Live Desk (one session
+  // per cut-off) and the Desk Season (the carried multi-round book).
+  const live = [...DESK_STRATEGIES.map((s) => s.username), ...SEASON_STRATEGIES.map((s) => s.username)].sort();
+  assert.deepEqual(reserved, live, 'an entrant that is not reserved (or a reserved name with no entry) is a hole');
+  assert.equal(reserved.length, DESK_STRATEGIES.length + SEASON_STRATEGIES.length);
+  assert.equal(new Set(reserved).size, reserved.length, 'no username may be shared by two entrants');
+  assert.deepEqual([...SEASON_USERNAMES].sort(), SEASON_STRATEGIES.map((s) => s.username).sort());
 
   const engine = new CompetitionMemoryEngine({ tier: 'test', storage: null });
   const empty = { strategies: [], participants: [] };
@@ -3741,4 +3759,197 @@ test('104. DESK_RESERVED_USERNAMES is set-equal to the live desk roster, and a d
     explanations: []
   });
   assert.equal(engine.state.tradeLog.filter((t) => t.kind === 'desk').length, 1);
+});
+
+/* ==================================================================== *
+ * DESK SEASON — the carried book (tests 105–112)
+ * --------------------------------------------------------------------
+ * The Live Desk runs one session at one cut-off (tests 92–104). These tests
+ * cover the thing a session cannot do: hold one book across a SEQUENCE of real
+ * capture instants, walk it through the real events between them, and prove
+ * from the ledger that nothing was reset, invented or double-counted.
+ * ==================================================================== */
+
+function seasonFixture(options = {}) {
+  return runDeskSeason({ data: DESK_DATA, strategies: SEASON_STRATEGIES, ...options });
+}
+
+test('105. every season round is a real capture instant from the store, in order', () => {
+  const schedule = seasonSchedule({ data: DESK_DATA });
+  const instants = new Set(
+    DESK_DATA.markets.flatMap((m) => (m.captures || []).map((c) => Date.parse(c.at))).filter((t) => Number.isFinite(t))
+  );
+  assert.ok(schedule.rounds.length >= 2, `a season needs at least two real rounds (got ${schedule.rounds.length})`);
+  assert.ok(schedule.rounds.length <= schedule.maxRounds);
+  for (const r of schedule.rounds) {
+    assert.ok(instants.has(Date.parse(r.asOf)), `${r.label} is stamped at a real capture instant (${r.asOf})`);
+    assert.ok(Number.isFinite(r.asOfMs));
+  }
+  const times = schedule.rounds.map((r) => r.asOfMs);
+  assert.deepEqual(times, [...times].sort((a, b) => a - b), 'rounds strictly increase in time');
+  assert.equal(new Set(times).size, times.length, 'no round is repeated');
+  // A round must have at least one market whose ladder was captured at or before it.
+  assert.ok(schedule.rounds.every((r) => r.marketsWithLadder >= 1));
+  // The batches are real groupings of the store's instants, not invented ones.
+  assert.ok(schedule.batches >= schedule.rounds.length, `batches (${schedule.batches}) >= rounds (${schedule.rounds.length})`);
+  assert.ok(schedule.considered >= schedule.batches, `instants (${schedule.considered}) >= batches (${schedule.batches})`);
+  assert.match(SEASON_RULE.rounds, /REAL capture instant/);
+});
+
+test('106. the season is ONE book: cash, positions and caps carry, and the curve is continuous', () => {
+  const season = seasonFixture();
+  for (const r of season.results) {
+    const curve = r.equityCurve || [];
+    assert.ok(curve.length === season.rounds.length + 1, `${r.strategy} has one point per round plus the close (${curve.length})`);
+    for (const point of curve) {
+      assert.ok(Math.abs((point.cash + point.marketValue) - point.equity) < 0.011, `${r.strategy}: cash + marketValue = equity at ${point.roundLabel}/${point.phase}`);
+    }
+    const last = curve[curve.length - 1];
+    assert.ok(Math.abs(last.equity - r.equity) < 0.011, `${r.strategy}: the curve ends at the reported equity`);
+    assert.ok(Math.abs(r.attribution - (r.equity - r.startingCapital)) < 0.011, `${r.strategy}: equity - start = realized + unrealized - fees`);
+    // Rounds are addressed by label, and every open position names a real contract.
+    for (const p of r.openPositions) assert.ok(p.contracts > 0 && typeof p.ticker === 'string');
+  }
+});
+
+test('107. the forward walk uses the STORE bars, while decisions still see only the cut-off', () => {
+  // Regression guard for the bug the season work found: buildTimeline used to
+  // read `universe.markets[].bars`, which is truncated at the cut-off, so every
+  // candlestick quote was filtered out and no resting order could ever be
+  // crossed by a real later trade (IRREGULARITIES.md #46).
+  const newestMs = Date.parse(DESK_DATA.coverage.newestCapture);
+  const older = new Date(newestMs - 12 * 3600 * 1000).toISOString();
+  const universe = buildDeskUniverse({ data: DESK_DATA, asOf: older });
+  const timeline = buildTimeline(universe, universe.asOfMs, DESK_DATA);
+  const candleQuotes = timeline.filter((e) => e.kind === 'quote' && String(e.source || '').includes('candlestick'));
+  assert.ok(candleQuotes.length > 0, 'a later captured candlestick is a real forward quote event');
+  assert.ok(candleQuotes.every((e) => e.t > universe.asOfMs), 'forward quotes are strictly after the cut-off');
+  // ...and the DECISION view is still point-in-time: no universe bar may end after the cut-off.
+  for (const m of universe.markets) {
+    for (const bar of m.bars) assert.ok(bar.endTs * 1000 <= universe.asOfMs, `${m.ticker} decision bars are cut off at asOf`);
+  }
+});
+
+test('108. a carried maker fill is crossed by a later real quote, never by its own round', () => {
+  const season = seasonFixture();
+  const fills = season.records.filter((r) => r.k === 'FILL');
+  const maker = fills.filter((f) => f.maker);
+  for (const f of maker) {
+    assert.ok(f.crossedBy && f.crossedBy.source, 'a maker fill names the real quote that crossed it');
+    const fillAt = Date.parse(f.at);
+    const crossedAt = Date.parse(String(f.crossedBy.source).match(/(\d{4}-\d{2}-\d{2}T[\d:.]+Z)/)?.[1] || f.at);
+    assert.ok(crossedAt >= fillAt - 1000, 'the crossing quote is not earlier than the fill');
+    assert.ok(f.ladderAt && Date.parse(f.ladderAt) <= fillAt + 1000, 'the ladder named by the resting order predates the fill');
+    assert.equal(f.depthModel, 'resting_order_crossed_by_later_real_quote');
+  }
+  // And the taker path is unchanged: every taker fill consumed real levels.
+  for (const f of fills.filter((x) => !x.maker)) {
+    const consumed = (f.levels || []).reduce((s, [, c]) => s + Number(c), 0);
+    assert.ok(Math.abs(consumed - Number(f.count)) < 0.011, `${f.id}: levels consumed equal the fill`);
+  }
+  // Every fill in a carried book is stamped with the round it belongs to.
+  assert.ok(fills.every((f) => Number.isFinite(Number(f.round))), 'every season fill carries a round index');
+  const roundByIndex = new Map(season.rounds.map((r) => [r.index, r]));
+  for (const f of fills) {
+    const round = roundByIndex.get(Number(f.round));
+    assert.ok(round, `round ${f.round} exists`);
+    assert.ok(Date.parse(f.at) <= Date.parse(round.asOf) + 1000, 'a fill is not stamped after its round');
+  }
+});
+
+test('109. the season audit passes, publishes S1–S11 with sources, and describes itself', () => {
+  const season = seasonFixture();
+  const audit = auditSeason(season, buildDeskUniverse({ data: DESK_DATA }));
+  assert.equal(audit.ok, true, `season audit: ${audit.mismatches.map((m) => m.name).join('; ')}`);
+  assert.equal(season.audit.ok, true);
+  const facts = seasonAuditorFacts();
+  assert.ok(facts.length >= 10, `the season publishes its own invariants (${facts.length})`);
+  const idOrder = facts.map((f) => Number(String(f.id).replace(/\D/g, '')));
+  assert.deepEqual(idOrder, idOrder.slice().sort((a, b) => a - b), 'invariant ids S1..S11 are in order');
+  for (const f of facts) assert.ok(f.rule && f.source, `${f.id} carries a rule and a source`);
+  assert.match(describeSeasonAudit(season.audit), /season checks passed/);
+  // The audit re-derives the ledger: totals come from the records, not from a summary.
+  const fills = season.records.filter((r) => r.k === 'FILL');
+  assert.equal(season.audit.totals.fills, fills.length);
+  assert.ok(Math.abs(season.audit.totals.fees - fills.reduce((s, f) => s + (f.fee || 0), 0)) < 0.000001);
+  assert.ok(season.audit.checks.length > 13, 'the season runs the 13 desk checks PLUS its own');
+  assert.ok(seasonLedgerJsonl(season.records).trim().split('\n').every((line) => JSON.parse(line)));
+});
+
+test('110. the season is deterministic and a replay rebuilds the same ledger', () => {
+  const a = seasonFixture();
+  const b = seasonFixture();
+  assert.deepEqual(
+    a.results.map((r) => [r.strategy, r.returnPct, r.equity, r.fills, r.contracts, r.feesPaid]),
+    b.results.map((r) => [r.strategy, r.returnPct, r.equity, r.fills, r.contracts, r.feesPaid])
+  );
+  assert.deepEqual(
+    a.records.filter((r) => r.k === 'FILL').map((f) => [f.round, f.ticker, f.side, f.count, f.price, f.fee]),
+    b.records.filter((r) => r.k === 'FILL').map((f) => [f.round, f.ticker, f.side, f.count, f.price, f.fee])
+  );
+  // A replay of the same report builder agrees with the runner too.
+  const report = buildSeasonReport({ data: DESK_DATA, strategies: SEASON_STRATEGIES });
+  assert.deepEqual(
+    report.results.map((r) => [r.strategy, r.returnPct]),
+    a.results.map((r) => [r.strategy, r.returnPct])
+  );
+  assert.equal(SEASON_VERSION, 1);
+});
+
+test('111. an entrant that never traded is unranked with a reason, never presented as 0%', () => {
+  const season = seasonFixture();
+  const idle = season.results.filter((r) => r.fills === 0 && r.settlementPnl === 0);
+  const coverage = season.coverage || [];
+  for (const r of idle) {
+    assert.equal(r.returnPct, 0);
+    assert.equal(r.equity, r.startingCapital);
+    const row = coverage.find((c) => c.strategy === r.strategy);
+    assert.ok(row, `${r.strategy} appears in coverage`);
+    assert.ok(/entry conditions were never met|no order was fillable/.test(row.note), `${r.strategy}: ${row.note}`);
+    // Either it returned no order at all, or it ordered something the real
+    // ladders could not fill — both are reported, neither is priced.
+    if (row.orders === 0) assert.match(row.note, /entry conditions were never met/);
+    else assert.match(row.note, /no order was fillable/);
+  }
+  // The control entrant is idle BY DESIGN, and says so.
+  const control = seasonStrategyById('SeasonControl_NoTrade');
+  assert.ok(control);
+  assert.match(control.mandate, /CONTROL/);
+  assert.deepEqual(control.decide({ markets: [], positions: new Map() }), []);
+  // Every explanation carries a measured block and a verdict, traded or not.
+  for (const e of season.explanations) {
+    assert.ok(['PROFITABLE', 'LOSS', 'FLAT', 'NO_TRADES'].includes(e.verdict), `${e.strategy}: ${e.verdict}`);
+    assert.ok(e.measured && typeof e.measured.fees === 'number');
+    assert.ok(e.headline.includes(e.strategy));
+  }
+  // An explanation can be re-derived from the ledger alone.
+  const worst = season.results.slice().sort((a, b) => a.returnPct - b.returnPct)[0];
+  const explained = explainSeasonStrategy(worst, season.records, []);
+  assert.equal(explained.strategy, worst.strategy);
+  assert.equal(explained.measured.fills, season.records.filter((r) => r.k === 'FILL' && r.strategy === worst.strategy).length);
+});
+
+test('112. season entrants are complete, unique, source-mapped and maximum-return mandated', () => {
+  assert.ok(SEASON_STRATEGIES.length >= 5, `the season roster does not shrink below its designed set (${SEASON_STRATEGIES.length})`);
+  const seen = new Set();
+  for (const s of SEASON_STRATEGIES) {
+    assert.ok(s.username.length >= 3 && s.username.length <= 24, `${s.username} satisfies the platform's 3–24 character username rule`);
+    assert.ok(/^[A-Za-z0-9_.]+$/.test(s.username), `${s.username} uses only the allowed username characters`);
+    assert.ok(!seen.has(s.username), `${s.username} is unique`);
+    seen.add(s.username);
+    assert.ok(s.thesis && s.thesis.length > 80, `${s.username} states a thesis`);
+    assert.ok(Array.isArray(s.rules) && s.rules.length >= 1, `${s.username} states its rules`);
+    assert.ok(s.source && s.source.length > 10, `${s.username} names its source (a MasterSite S-id or the exchange doctrine)`);
+    assert.ok(typeof s.decide === 'function', `${s.username} exposes executable decide()`);
+    assert.match(s.mandate, /MAXIMUM RETURN|CONTROL/, `${s.username} states the mandate`);
+    assert.equal(seasonStrategyById(s.id)?.username, s.username, `lookup by id works for ${s.id}`);
+    // A design that can be pointed at a MasterSite project names it as S<id>.
+    if (/^S\d\d/.test(s.source)) assert.match(s.source, /^S\d\d/);
+    // No strategy may carry a literal result (the honesty contract).
+    assert.ok(!/returnPct\s*[:=]\s*-?\d/.test(s.decide.toString()), `${s.username} does not hard-code a result`);
+  }
+  // The names are reserved, so a human cannot impersonate a season entrant.
+  for (const name of SEASON_USERNAMES) {
+    assert.equal(validateUsername(name, { strategies: [], participants: [] }).reason, 'username_reserved_by_algorithmic_strategy');
+  }
 });
