@@ -51,6 +51,17 @@ on:
         required: false
         default: '10'
 
+# SHARED per-ref queue with the other data bots (on-demand ingest, FDA
+# signals, weather signals) — the same group they use (see ingest-now.yml).
+# This cron ALSO pushes (it commits the new bars), so running it outside the
+# queue defeats the whole point of the queue: a concurrent push is exactly
+# what killed the 2026-09-19 weather capture mid-commit (irregularity #51).
+# cancel-in-progress: false — never kill a fetch that already spent its rate
+# budget.
+concurrency:
+  group: data-pipeline-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -63,6 +74,22 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Sync with the branch tip (best-effort)
+        continue-on-error: true
+        run: |
+          # A run that sat in the data-pipeline queue checked out the commit
+          # the queue STARTED at; meanwhile the queue occupant (or a merge)
+          # may have advanced the branch. Fast-forward onto the tip BEFORE
+          # capturing: the capture reads the newest store, the generated
+          # modules are regenerated from the newest data, and the push at the
+          # end usually needs no rebase at all. Best-effort by design: if the
+          # histories cannot fast-forward we proceed anyway and the race
+          # guard handles the push (the queued-run race behind
+          # irregularity #51).
+          git fetch --deepen=100 origin "${GITHUB_REF_NAME}"
+          git merge --ff-only "origin/${GITHUB_REF_NAME}"
+
 
       - name: Ingest the latest real candlesticks
         id: ingest

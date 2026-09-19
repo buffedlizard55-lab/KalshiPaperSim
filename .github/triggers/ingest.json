@@ -1,5 +1,5 @@
 {
-  "request": 13,
+  "request": 14,
   "enabled": true,
   "days": 30,
   "full_backfill": false,
@@ -192,10 +192,10 @@
     "TESLACEOCHANGE-26"
   ],
   "discover": false,
-  "requested_at": "2026-09-19T21:55:00.000Z",
-  "requested_by": "arena session 01a0bad9 \u2014 re-run of request 12, which aborted at its commit step when the same merge push fired the first FDA capture concurrently and both bots raced on the shared generated modules. The data bots now share one per-ref concurrency queue, so this re-run goes alone.",
-  "why": "live-desk-universe.json lists the exact per-contract command that turns a quoted-only contract into a priceable one, and the desk refuses to price anything without a captured ladder. This run is that command for all of them at once, with --with-books=true, plus the tracked markets so their bars stay current.",
-  "tickers_note": "Union of (1) the tracked markets currently in src/desk-data.js and (2) every quoted-only OPEN contract whose discovery row shows a real top-of-book (yesBid or yesAsk > 0). Contracts with a 0/0 quote are left out: GET /markets/{ticker}/orderbook returns an empty book before a contract opens, so capturing them would add no ladder.",
+  "requested_at": "2026-09-19T23:55:00.000Z",
+  "requested_by": "arena session 01a0bc0a \u2014 capture a NEW cut-off batch on top of request 13: every desk round needs a moment the repository really queried the books, and Next #8/#9 are pure capture-density problems. This run also exercises the fixed push guard (irregularity #51) end-to-end on a live branch.",
+  "why": "ROADMAP Next #1/#4/#8/#9: (a) desk-season rounds are bounded by capture batches \u2014 a second same-day batch doubles them; (b) the quoted touch becomes point-in-time at more cut-offs; (c) the NWS overlap (Next #1) only grows if captures survive the commit step \u2014 this run happens on the pipeline whose commit race was just closed.",
+  "tickers_note": "Union of (1) the tracked markets currently in src/desk-data.js and (2) every quoted-only OPEN contract whose discovery row shows a real top-of-book (yesBid or yesAsk > 0). Contracts with a 0/0 quote are left out: GET /markets/{ticker}/orderbook returns an empty book before a contract opens, so capturing them would add no ladder. \u2014 request 14: same universe as request 13, re-queried at a new instant.",
   "discover_note": "Discovery is deliberately off: the last run (2026-09-18) already recorded 14,154 series with their fee configuration, and re-running it spends the rate budget the order-book captures need.",
   "_README": "Commit a change to this file to request an ingest run (.github/workflows/ingest-now.yml). It runs on a GitHub-hosted runner, which - unlike the build sandbox - can reach external-api.kalshi.com. Every field is passed straight to scripts/ingest-history.mjs. Bump `request` so the push is a real change: GitHub only starts the workflow when this file actually differs. NEW (2026-09-18): the optional `discover` block runs scripts/discover-universe.mjs first \u2014 it records every real series with its real fee configuration (closes IRREGULARITY #36) and every real market of every series whose ticker/title/tags match the keywords below, which is how the sports / FDA / weather-city universe gets verified instead of assumed."
 }
