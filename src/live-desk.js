@@ -738,6 +738,10 @@ export function placeDeskOrder(book, intent, ctx = {}) {
   const atMs = ms(at);
   const id = ctx.orderId || `O-${String(ctx.seq ?? 0).padStart(6, '0')}`;
   const request = normalizeIntent(intent, market);
+  // What the trader actually asked for. The cash/position guards below may
+  // reduce `request.count`; the ledger must still show the ORIGINAL size and
+  // report the difference as not filled, not silently rewrite the order.
+  const requestedCount = request.count;
 
   const base = {
     v: DESK_VERSION,
@@ -786,7 +790,68 @@ export function placeDeskOrder(book, intent, ctx = {}) {
     );
   }
 
-  const preview = sizeDeskOrder(book, { ...request, strategy: request.strategy });
+  /**
+   * RULE 2 — a paper account can neither borrow nor short (irregularities #49).
+   *
+   * Kalshi settles in cash and does not offer margin: an order can only spend
+   * cash the portfolio has, and a sell can only close contracts the portfolio
+   * already holds. The single-session desk had no such guard, and the carried
+   * season multiplies the exposure — five rounds of "60% of cash" sizing is
+   * 300% of it. Without this the equity identity still closes, on a negative
+   * cash balance (or a negative position) that no real account can hold.
+   *
+   * The caller passes its portfolio in `ctx.portfolio`; when it does not, the
+   * guard is skipped rather than guessed at.
+   */
+  const portfolio = ctx.portfolio || null;
+  const held = portfolio && portfolio.positions && typeof portfolio.positions.get === 'function'
+    ? Number(portfolio.positions.get(`${market.ticker}|${request.side}`)?.contracts || 0)
+    : null;
+  if (request.action === 'sell') {
+    if (held !== null && held <= DESK_LIMITS.minContracts / 2) {
+      return reject(
+        'NO_POSITION_TO_SELL',
+        `The portfolio holds no ${request.side.toUpperCase()} contracts in ${market.ticker} at ${at}, and Kalshi does not allow naked shorting — the sell is refused instead of opening a negative position.`
+      );
+    }
+    if (held !== null && request.count > held) {
+      request.count = round2(held);
+      request.positionCapped = round2(intent.count - request.count);
+    }
+  }
+
+  let preview = sizeDeskOrder(book, { ...request, strategy: request.strategy });
+
+  /**
+   * CASH CAP. The fill must not cost more than the portfolio has, fee included.
+   * The order is re-sized to what the cash can pay for and the cap is recorded
+   * on the fill (`cashCapped`), so the ledger shows a smaller order rather than
+   * a balance no exchange would ever show. The budget keeps ~2% back because
+   * the taker fee is quadratic (max ≈ C·0.07·P·(1−P) ≈ 1.75% of notional).
+   */
+  if (request.action === 'buy' && portfolio && Number.isFinite(portfolio.cash) && preview.filled > 0) {
+    const budget = portfolio.cash * 0.98;
+    let spent = 0;
+    let affordable = 0;
+    for (const level of preview.levels || []) {
+      const levelCost = level.price * level.count;
+      if (spent + levelCost <= budget + 1e-9) {
+        affordable = round2(affordable + level.count);
+        spent += levelCost;
+        continue;
+      }
+      const room = budget - spent;
+      const partial = level.price > 0 ? Math.floor(room / level.price) : 0;
+      affordable = round2(affordable + Math.max(0, Math.min(partial, level.count)));
+      break;
+    }
+    if (affordable < preview.filled) {
+      const capped = sizeDeskOrder(book, { ...request, count: affordable, strategy: request.strategy });
+      capped.cashCapped = round2(preview.filled - capped.filled);
+      capped.cashBudget = round6(budget);
+      preview = capped;
+    }
+  }
 
   // A limit order that does not cross rests instead of filling.
   if (request.type === 'limit' && preview.filled <= 0) {
@@ -843,9 +908,11 @@ export function placeDeskOrder(book, intent, ctx = {}) {
       feeType: market.feeType,
       maker: false,
       levels: preview.levels.map((l) => [l.price, l.count, `${l.from.side}@${l.from.price}`]),
-      requested: request.count,
-      unfilled: preview.unfilled,
-      partial: preview.unfilled > 0,
+      requested: requestedCount,
+      unfilled: round2(requestedCount - preview.filled),
+      cashCapped: preview.cashCapped || 0,
+      cashBudget: preview.cashBudget ?? null,
+      partial: requestedCount - preview.filled > 0,
       capApplied: preview.capApplied,
       capRemoved: preview.capRemoved,
       capField: preview.cap.baseField,
@@ -865,9 +932,14 @@ export function placeDeskOrder(book, intent, ctx = {}) {
   return {
     order: {
       ...base,
-      status: preview.filled <= 0 ? 'unfilled' : preview.unfilled > 0 ? 'partial' : 'filled',
+      status: preview.filled <= 0 ? 'unfilled' : requestedCount - preview.filled > 0 ? 'partial' : 'filled',
       filled: preview.filled,
-      unfilled: preview.unfilled
+      unfilled: round2(requestedCount - preview.filled),
+      // The two independent reasons a requested size may not have filled.
+      ladderUnfilled: preview.unfilled,
+      cashCapped: preview.cashCapped || 0,
+      cashBudget: preview.cashBudget ?? null,
+      positionCapped: request.positionCapped || 0
     },
     fills,
     resting: null,
@@ -902,7 +974,7 @@ function makerFeeNote(market) {
  * @param {object} event  { at, yesBid, yesAsk, volume, source, url, period } — real captured numbers
  * @returns {Array} fills
  */
-export function crossRestingOrders(book, event) {
+export function crossRestingOrders(book, event, ctx = {}) {
   const out = [];
   const eventMs = ms(event.at);
   if (eventMs === null) return out;
@@ -957,8 +1029,32 @@ export function crossRestingOrders(book, event) {
     const volumeAllowed = round2(Math.min(remaining, available));
     const cap = liquidityCap(book.market, book.volumeCapUsed);
     const capAllowed = cap.applies ? Math.min(volumeAllowed, cap.remaining) : volumeAllowed;
-    const qty = round2(Math.min(remaining, capAllowed));
+    let qty = round2(Math.min(remaining, capAllowed));
     if (!(qty > 0)) continue;
+
+    /**
+     * CASH CAP AT THE CROSSING INSTANT. A resting BUY that later gets crossed
+     * still has to be paid for out of the cash the portfolio holds AT THAT
+     * MOMENT (a carried season can have spent it in between). The fill is
+     * capped to what the cash can pay, and the cap is recorded on the fill.
+     */
+    let cashCapped = 0;
+    if (order.action === 'buy' && typeof ctx.cashFor === 'function') {
+      const cash = ctx.cashFor(order.strategy);
+      if (Number.isFinite(cash)) {
+        const budget = cash * 0.98;
+        const affordable = order.price > 0 ? Math.floor(budget / order.price) : 0;
+        const allowed = Math.max(0, Math.min(qty, affordable));
+        if (allowed < qty) {
+          cashCapped = round2(qty - allowed);
+          qty = round2(allowed);
+        }
+        if (!(qty > DESK_LIMITS.minContracts / 2)) {
+          // Nothing affordable: the resting order stays resting.
+          continue;
+        }
+      }
+    }
 
     const fee = computeKalshiFee({
       count: qty,
@@ -1001,6 +1097,7 @@ export function crossRestingOrders(book, event) {
       capField: cap.baseField,
       capBase: cap.baseValue,
       volumeLimited: qty < remaining - 1e-9,
+      cashCapped,
       crossedBy: {
         source: event.source || 'captured_quote',
         url: event.url || null,
@@ -1080,7 +1177,7 @@ export function settleDeskMarket(market) {
  * Portfolio + session runner
  * ------------------------------------------------------------------ */
 
-function createPortfolio(strategy, startingCapital) {
+export function createPortfolio(strategy, startingCapital) {
   return {
     strategy,
     startingCapital,
@@ -1098,7 +1195,7 @@ function createPortfolio(strategy, startingCapital) {
   };
 }
 
-function applyFill(portfolio, fill) {
+export function applyFill(portfolio, fill) {
   const key = `${fill.ticker}|${fill.side}`;
   const pos = portfolio.positions.get(key) || { ticker: fill.ticker, side: fill.side, contracts: 0, cost: 0, fees: 0 };
   const gross = fill.gross;
@@ -1131,7 +1228,7 @@ function applyFill(portfolio, fill) {
   if (fill.requested !== undefined) portfolio.unfilledContracts = round2(portfolio.unfilledContracts + (fill.unfilled || 0));
 }
 
-function applySettlement(portfolio, position, settlement, market) {
+export function applySettlement(portfolio, position, settlement, market) {
   /**
    * `settlement_value_dollars` is the value of a YES contract — 1.0000 when the
    * market settles YES, 0.0000 when it settles NO (verified against the
@@ -1175,7 +1272,7 @@ function applySettlement(portfolio, position, settlement, market) {
   };
 }
 
-function markPortfolio(portfolio, universe, asOfMs) {
+export function markPortfolio(portfolio, universe, asOfMs) {
   let unrealized = 0;
   let marketValue = 0;
   const marks = [];
@@ -1316,7 +1413,9 @@ export function runDeskSession({
       const result = placeDeskOrder(book, { ...intent, strategy: portfolio.strategy }, {
         seq: seq++,
         at: universe.asOf,
-        orderId: `O-${portfolio.strategy}-${i + 1}-${ticker}`
+        orderId: `O-${portfolio.strategy}-${i + 1}-${ticker}`,
+        // The paper account's own constraint: no borrowing, no shorting.
+        portfolio
       });
       records.push(result.order);
       if (result.rejected) {
@@ -1342,12 +1441,16 @@ export function runDeskSession({
     const market = universe.byTicker.get(event.ticker);
     if (!book || !market) continue;
     if (event.kind === 'quote') {
-      const fills = crossRestingOrders(book, event);
+      const fills = crossRestingOrders(book, event, { cashFor: (name) => portfolios.get(name)?.cash });
       for (const fill of fills) {
         records.push(fill);
         applyFill(portfolios.get(fill.strategy), fill);
       }
     } else if (event.kind === 'settlement') {
+      // A finalized contract cannot trade any more: anything still resting on
+      // it is cancelled here instead of being left for a later captured quote
+      // to "cross" (a settled market has no quotes to cross it).
+      for (const rec of cancelResting(book, event.at, 'MARKET_FINALIZED')) records.push(rec);
       const settlement = { at: event.at, result: event.result, value: event.value, source: event.source };
       for (const portfolio of portfolios.values()) {
         // YES and NO are separate positions on the same contract; settle each
@@ -1409,7 +1512,7 @@ export function runDeskSession({
     records,
     results,
     explanations: results.map((r) => explainDeskStrategy(r, records)),
-    coverage: strategyCoverage(strategies, results)
+    coverage: strategyCoverage(strategies, results, universe)
   };
   desk.audit = auditDesk(desk, universe);
   return desk;
@@ -1420,10 +1523,27 @@ export function runDeskSession({
  * a paper position — later captured ladders, later real quotes (bars) and the
  * exchange's own settlements.
  */
-function buildTimeline(universe, asOfMs, data = null) {
+export function buildTimeline(universe, asOfMs, data = null) {
   const events = [];
+  /**
+   * THE BARS COME FROM THE STORE, NOT FROM THE CUT-OFF VIEW.
+   *
+   * `universe.markets[].bars` is deliberately truncated at the cut-off (a
+   * strategy must never see a later candle). That is correct for DECISIONS —
+   * and it made this function dead: every bar it could have pushed as a
+   * forward quote was already filtered out upstream, so no resting order could
+   * ever be crossed by a later real candlestick and the desk reported 0 maker
+   * fills on every cut-off (IRREGULARITIES.md #46). The forward walk needs the
+   * full captured bar set and filters by `endTs > asOfMs` itself, below. Market
+   * MEMBERSHIP still comes from the universe, so nothing new enters the desk.
+   */
+  const rawByTicker = new Map(
+    (data && Array.isArray(data.markets) ? data.markets : []).map((raw) => [raw.ticker, raw])
+  );
   for (const market of universe.markets) {
-    for (const bar of market.bars) {
+    const raw = rawByTicker.get(market.ticker) || null;
+    const bars = raw ? raw.bars || [] : market.bars;
+    for (const bar of bars) {
       const t = bar.endTs * 1000;
       if (t <= asOfMs) continue;
       const yesBid = millsToDollars(bar.yesBid);
@@ -1493,7 +1613,7 @@ function buildTimeline(universe, asOfMs, data = null) {
   return events;
 }
 
-function deskView(universe, portfolio, { asOfMs, books }) {
+export function deskView(universe, portfolio, { asOfMs, books }) {
   return {
     asOf: iso(asOfMs),
     asOfMs,
@@ -1758,7 +1878,7 @@ export function explainDeskStrategy(result, records = []) {
  * where its trades are tracked — the desk ledger, the replay ledger, or
  * nowhere yet, with the reason.
  */
-export function strategyCoverage(strategies, results) {
+export function strategyCoverage(strategies, results, universe = null) {
   const resultByStrategy = new Map(results.map((r) => [r.strategy, r]));
   return strategies.map((s) => {
     const name = s.username || s.id;
@@ -1771,10 +1891,18 @@ export function strategyCoverage(strategies, results) {
       fills: result?.fills ?? 0,
       settlements: result?.settlementPnl ? 'yes' : 'no',
       returnPct: result?.returnPct ?? null,
+      // A zero-fill entrant that DECLARES the series it watches gets the
+      // measured reason, not a shrug: how many contracts in the universe
+      // matched, and how many of those had a real captured ladder.
+      watched: s.watch ? String(s.watch) : null,
+      watchedContracts: s.watch && universe ? (universe.markets || []).filter((m) => s.watch.test(m.ticker)).length : null,
+      watchedTradeable: s.watch && universe ? (universe.markets || []).filter((m) => s.watch.test(m.ticker) && m.tradeable).length : null,
       note: result
         ? result.fills > 0
           ? 'Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL.'
-          : 'Runs on the desk but placed no order that the real ladder could fill (reported as unfilled, never priced).'
+          : s.watch && universe
+            ? `${(universe.markets || []).filter((m) => s.watch.test(m.ticker)).length} of the ${(universe.markets || []).length} desk contracts match the series it watches and ${(universe.markets || []).filter((m) => s.watch.test(m.ticker) && m.tradeable).length} of those had a captured ladder at this cut-off; ${(universe.quotedOnly || []).filter((m) => s.watch.test(m.ticker)).length} further open contract(s) in the tracked list match it but are QUOTED ONLY (no captured ladder) — with no ladder there is nothing to price, so it placed no order.`
+            : 'Runs on the desk but placed no order that the real ladder could fill (reported as unfilled, never priced).'
         : 'Not a desk entry: its trades are tracked in the replay Trade Ledger (and it is listed as unranked when it never traded).'
     };
   });

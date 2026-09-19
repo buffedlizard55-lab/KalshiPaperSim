@@ -47,6 +47,11 @@ import {
   auditorFacts, describeAudit, DESK_LIMITS, DESK_VERSION, buildDeskReport, deskCutoffs
 } from './src/live-desk.js';
 import { DESK_STRATEGIES, deskStrategyById } from './src/desk-strategies.js';
+import { SEASON_STRATEGIES, seasonStrategyById } from './src/desk-season-strategies.js';
+import {
+  buildSeasonReport, seasonSchedule, seasonLedgerJsonl, seasonAuditorFacts,
+  describeSeasonAudit, SEASON_RULE, SEASON_VERSION
+} from './src/desk-season.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -381,6 +386,30 @@ function deskSession(asOf, capital) {
     persistStore();
   } catch (err) {
     console.error('[desk] attach to competition memory failed:', err && err.message ? err.message : err);
+  }
+  return payload;
+}
+
+/**
+ * The SEASON is the carried book: every round is a real capture batch, cash and
+ * positions carry between rounds. It is deterministic too, so it is cached per
+ * (maxRounds, capital) and attached to the one-year memory on every read —
+ * including cache hits, exactly like the desk session.
+ */
+const seasonCache = new Map();
+function seasonPayload(maxRounds, capital) {
+  const key = `${maxRounds}|${capital}`;
+  let payload = seasonCache.get(key);
+  if (!payload) {
+    payload = buildSeasonReport({ data: DESK_DATA, strategies: SEASON_STRATEGIES, startingCapital: capital, maxRounds });
+    if (seasonCache.size >= DESK_MAX_CACHED) seasonCache.delete(seasonCache.keys().next().value);
+    seasonCache.set(key, payload);
+  }
+  try {
+    memory.attachDeskSeason(payload);
+    persistStore();
+  } catch (err) {
+    console.error('[desk-season] attach to competition memory failed:', err && err.message ? err.message : err);
   }
   return payload;
 }
@@ -844,6 +873,7 @@ const server = http.createServer(async (req, res) => {
       competitionCache = null;
       deskSessionCache.clear();
       deskRecordCache.clear();
+      seasonCache.clear();
       persistStore();
       return sendJSON(res, 200, { ok: true, state: memory.state });
     }
@@ -906,6 +936,57 @@ const server = http.createServer(async (req, res) => {
 
     if (p === '/api/live-desk/cutoffs') {
       return sendJSON(res, 200, { ok: true, ...deskCutoffList() });
+    }
+
+    /* ---------------- Desk SEASON (the carried multi-round book) ---------------- */
+
+    if (p === '/api/desk-season' && req.method === 'GET') {
+      const maxRounds = Number(url.searchParams.get('maxRounds') || 12);
+      const capital = Number(url.searchParams.get('capital') || 100000);
+      const payload = seasonPayload(maxRounds, capital);
+      const { records, ...rest } = payload;
+      return sendJSON(res, 200, { ...rest, recordCount: (records || []).length, ok: payload.audit?.ok });
+    }
+
+    if (p === '/api/desk-season/schedule') {
+      const maxRounds = Number(url.searchParams.get('maxRounds') || 12);
+      const schedule = seasonSchedule({ data: DESK_DATA, maxRounds });
+      return sendJSON(res, 200, { ok: true, ...schedule, rule: SEASON_RULE, deskFacts: auditorFacts(), seasonFacts: seasonAuditorFacts() });
+    }
+
+    if (p === '/api/desk-season/strategies') {
+      return sendJSON(res, 200, {
+        ok: true,
+        version: SEASON_VERSION,
+        count: SEASON_STRATEGIES.length,
+        strategies: SEASON_STRATEGIES.map((s) => ({
+          id: s.id, username: s.username, name: s.name, category: s.category, source: s.source,
+          thesis: s.thesis, rules: s.rules, sizing: s.sizing, mandate: s.mandate, doesNotUse: s.doesNotUse || null
+        }))
+      });
+    }
+
+    if (p === '/api/desk-season/ledger.jsonl') {
+      const maxRounds = Number(url.searchParams.get('maxRounds') || 12);
+      const capital = Number(url.searchParams.get('capital') || 100000);
+      const payload = seasonPayload(maxRounds, capital);
+      res.writeHead(200, { 'Content-Type': 'application/x-ndjson; charset=UTF-8', 'Content-Disposition': 'attachment; filename="kalshi-desk-season-ledger.jsonl"', ...CORS });
+      return res.end(seasonLedgerJsonl(payload.records));
+    }
+
+    if (p === '/api/desk-season/audit') {
+      const maxRounds = Number(url.searchParams.get('maxRounds') || 12);
+      const payload = seasonPayload(maxRounds, Number(url.searchParams.get('capital') || 100000));
+      return sendJSON(res, 200, {
+        ok: payload.audit.ok,
+        checkedAt: payload.audit.checkedAt,
+        totals: payload.audit.totals,
+        checks: payload.audit.checks,
+        mismatches: payload.audit.mismatches,
+        facts: seasonAuditorFacts(),
+        deskFacts: auditorFacts(),
+        summary: describeSeasonAudit(payload.audit)
+      });
     }
 
     if (p === '/api/live-desk/universe' && req.method === 'GET') {

@@ -1,0 +1,270 @@
+{
+  "generatedAt": "2026-09-19T14:51:46.241Z",
+  "newestCapture": "2026-09-19T11:08:18.437Z",
+  "rounds": [
+    {
+      "index": 1,
+      "label": "R01",
+      "asOf": "2026-09-17T23:07:59.857Z",
+      "tradeable": 18,
+      "notTradeable": 51,
+      "marketsWithLadder": 18,
+      "newLadderCaptures": 18,
+      "gapHoursFromPrev": null,
+      "isNewestCapture": false,
+      "eventsApplied": {
+        "quotes": 0,
+        "makerFills": 0,
+        "settlements": 0,
+        "settlementPnl": 0,
+        "barQuotes": 0,
+        "ladderQuotes": 0
+      },
+      "settlementsInWindow": 0,
+      "makerFillsCarriedIn": 0
+    },
+    {
+      "index": 2,
+      "label": "R02",
+      "asOf": "2026-09-18T02:47:26.807Z",
+      "tradeable": 19,
+      "notTradeable": 50,
+      "marketsWithLadder": 19,
+      "newLadderCaptures": 1,
+      "gapHoursFromPrev": 3.657486,
+      "isNewestCapture": false,
+      "eventsApplied": {
+        "quotes": 174,
+        "makerFills": 0,
+        "settlements": 0,
+        "settlementPnl": 0,
+        "barQuotes": 83,
+        "ladderQuotes": 91
+      },
+      "settlementsInWindow": 0,
+      "makerFillsCarriedIn": 0
+    },
+    {
+      "index": 3,
+      "label": "R03",
+      "asOf": "2026-09-18T06:40:20.059Z",
+      "tradeable": 48,
+      "notTradeable": 21,
+      "marketsWithLadder": 49,
+      "newLadderCaptures": 30,
+      "gapHoursFromPrev": 3.881459,
+      "isNewestCapture": false,
+      "eventsApplied": {
+        "quotes": 267,
+        "makerFills": 0,
+        "settlements": 0,
+        "settlementPnl": 0,
+        "barQuotes": 147,
+        "ladderQuotes": 120
+      },
+      "settlementsInWindow": 0,
+      "makerFillsCarriedIn": 0
+    },
+    {
+      "index": 4,
+      "label": "R04",
+      "asOf": "2026-09-18T07:04:17.199Z",
+      "tradeable": 63,
+      "notTradeable": 6,
+      "marketsWithLadder": 67,
+      "newLadderCaptures": 18,
+      "gapHoursFromPrev": 0.399206,
+      "isNewestCapture": false,
+      "eventsApplied": {
+        "quotes": 99,
+        "makerFills": 0,
+        "settlements": 0,
+        "settlementPnl": 0,
+        "barQuotes": 24,
+        "ladderQuotes": 75
+      },
+      "settlementsInWindow": 0,
+      "makerFillsCarriedIn": 0
+    },
+    {
+      "index": 5,
+      "label": "R05",
+      "asOf": "2026-09-18T18:46:22.458Z",
+      "tradeable": 62,
+      "notTradeable": 7,
+      "marketsWithLadder": 68,
+      "newLadderCaptures": 1,
+      "gapHoursFromPrev": 11.701461,
+      "isNewestCapture": false,
+      "eventsApplied": {
+        "quotes": 475,
+        "makerFills": 0,
+        "settlements": 0,
+        "settlementPnl": 0,
+        "barQuotes": 278,
+        "ladderQuotes": 197
+      },
+      "settlementsInWindow": 0,
+      "makerFillsCarriedIn": 0
+    },
+    {
+      "index": 6,
+      "label": "R06",
+      "asOf": "2026-09-19T11:08:18.437Z",
+      "tradeable": 63,
+      "notTradeable": 6,
+      "marketsWithLadder": 69,
+      "newLadderCaptures": 1,
+      "gapHoursFromPrev": 16.36555,
+      "isNewestCapture": true,
+      "eventsApplied": {
+        "quotes": 452,
+        "makerFills": 0,
+        "settlements": 0,
+        "settlementPnl": 0,
+        "barQuotes": 408,
+        "ladderQuotes": 44
+      },
+      "settlementsInWindow": 0,
+      "makerFillsCarriedIn": 0
+    }
+  ],
+  "rule": {
+    "rounds": "Every round is a REAL capture instant taken from the store (a moment this repository actually queried GET /markets/{ticker}/orderbook). No round time is invented and no ladder is re-anchored.",
+    "carry": "Cash, open positions and resting orders carry from round to round. Between two rounds the book is walked through the real events in that window: later captured ladders, later captured candlesticks (real traded quotes) and the exchange’s own settlements.",
+    "resting": "A resting order placed in round N is alive in round N+1: a later real quote that trades through its price crosses it, bounded by the size that later ladder showed or the volume that period really traded.",
+    "marks": "Every entrant is marked at every round boundary from a captured quote, a captured ladder mid or the exchange settlement value — never from an invented price. A position with no captured mark is carried at cost and the MARK record says so.",
+    "settlements": "A finalized contract pays $1.00/$0.00 by its own `result`/`settlement_value_dollars` at its own `settlement_ts`. A NO position is paid notional minus that value. No settlement fee is charged (official schedule).",
+    "caps": "The liquidity cap is cumulative across the season per contract, so a season can never fill more real contracts than the contract’s own volume base supports.",
+    "mandate": "Maximum return only: no stop-loss, no position cap, no volatility target. The season publishes what that costs (drawdown from the round-by-round equity curve)."
+  },
+  "deskFacts": [
+    {
+      "id": "D1",
+      "rule": "Every fill names the captured ladder it was priced from (timestamp + URL).",
+      "source": "GET /markets/{ticker}/orderbook"
+    },
+    {
+      "id": "D2",
+      "rule": "A ladder captured after the order time is never used (point-in-time).",
+      "source": "derived rule — look-ahead prevention"
+    },
+    {
+      "id": "D3",
+      "rule": "Fill prices come from captured levels, which are already on the market grid.",
+      "source": "price_ranges on GET /markets/{ticker}"
+    },
+    {
+      "id": "D4",
+      "rule": "gross = price x count on every fill (arithmetic identity).",
+      "source": "internal accounting identity"
+    },
+    {
+      "id": "D5",
+      "rule": "Fees equal round up(M x 0.07 x C x P x (1-P)) per level, with M from the captured Series; maker fills use 0.0175 x M only where the series carries maker fees.",
+      "source": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    },
+    {
+      "id": "D6",
+      "rule": "Slippage is measured against the best real price, never assumed.",
+      "source": "captured ladder"
+    },
+    {
+      "id": "D7",
+      "rule": "A taker fill never exceeds the real levels it names (exhaustion is reported, not priced).",
+      "source": "derived rule — exhaustionPolicy: partial"
+    },
+    {
+      "id": "D8",
+      "rule": "A maker fill names a later real quote that crosses it.",
+      "source": "captured candlesticks / later ladders"
+    },
+    {
+      "id": "D9",
+      "rule": "Settlements use the exchange result, its own settlement value, and its settlement timestamp; a NO position is paid notional minus that value.",
+      "source": "GET /markets/{ticker} status/result/settlement_value_dollars"
+    },
+    {
+      "id": "D10",
+      "rule": "No settlement fee is charged.",
+      "source": "https://kalshi.com/docs/kalshi-fee-schedule.pdf"
+    },
+    {
+      "id": "D11",
+      "rule": "Every order is stamped with a strategy and a real timestamp.",
+      "source": "ledger schema"
+    },
+    {
+      "id": "D12",
+      "rule": "equity change = realized + unrealized - fees to the cent.",
+      "source": "internal accounting identity"
+    },
+    {
+      "id": "D13",
+      "rule": "A design that never traded cannot show a performance number.",
+      "source": "LEADERBOARD_QUALIFICATION principle"
+    }
+  ],
+  "seasonFacts": [
+    {
+      "id": "S1",
+      "rule": "Every round is a real capture instant taken from the store’s own ladder timestamps (no invented round time).",
+      "source": "data/history/** books[].captured_at → src/desk-data.js"
+    },
+    {
+      "id": "S2",
+      "rule": "Rounds are strictly increasing in time and the book only ever moves forward.",
+      "source": "derived rule — carried book ordering"
+    },
+    {
+      "id": "S3",
+      "rule": "A carried position’s ticker was tradeable (open, with a captured ladder at or before that round) when it was opened.",
+      "source": "GET /markets/{ticker} close_time + orderbook capture"
+    },
+    {
+      "id": "S4",
+      "rule": "Cash, positions and the cumulative liquidity cap are the SAME book across rounds — nothing is reset between rounds.",
+      "source": "derived rule — single-portfolio accounting"
+    },
+    {
+      "id": "S5",
+      "rule": "Equity is continuous: each round’s opening equity equals the previous round’s closing equity unless real events (fills, settlements, marks) moved it, and the identity cash + marketValue = equity holds at every snapshot.",
+      "source": "internal accounting identity"
+    },
+    {
+      "id": "S6",
+      "rule": "A settlement inside the season pays the exchange’s own value and removes the position once — never twice.",
+      "source": "GET /markets/{ticker} result / settlement_value_dollars / settlement_ts"
+    },
+    {
+      "id": "S7",
+      "rule": "A maker fill carries the later real quote that crossed it (round, timestamp, source).",
+      "source": "captured candlesticks and later captured ladders"
+    },
+    {
+      "id": "S8",
+      "rule": "Every round reports which real events it walked through, so a dead window is visible instead of implied.",
+      "source": "derived rule — reported instrumentation"
+    },
+    {
+      "id": "S9",
+      "rule": "An entrant with no fill in any round is reported unranked with the reason, never as 0%.",
+      "source": "LEADERBOARD_QUALIFICATION principle"
+    },
+    {
+      "id": "S10",
+      "rule": "The equity curve is the same arithmetic as the final equity (its last point equals the reported equity).",
+      "source": "internal accounting identity"
+    },
+    {
+      "id": "S11",
+      "rule": "The cumulative liquidity cap holds per contract across all rounds: the total paper size ever filled in one contract never exceeds 10% of that contract real volume base, compared against each fill own recorded capBase.",
+      "source": "internal accounting identity + the desk 10% liquidity limit"
+    },
+    {
+      "id": "S12",
+      "rule": "The carried book can neither borrow nor short: no round snapshot shows negative cash, and no SELL fill ever exceeds what that entrant had already bought in the same contract and side.",
+      "source": "Kalshi has no margin and no naked shorting - enforced in placeDeskOrder (irregularity #49)"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-18T22:02:46.111Z",
+  "generatedAt": "2026-09-19T14:51:44.176Z",
   "deskVersion": 1,
-  "asOf": "2026-09-18T18:46:22.458Z",
+  "asOf": "2026-09-19T11:08:18.437Z",
   "startingCapital": 100000,
   "limits": {
     "maxShareOfRealVolume": 0.1,
@@ -14,18 +14,18 @@
     "minContracts": 0.01,
     "exhaustionPolicy": "partial"
   },
-  "dataGeneratedAt": "2026-09-18T20:29:02.763Z",
+  "dataGeneratedAt": "2026-09-19T14:51:41.151Z",
   "dataCoverage": {
-    "storesRead": 299,
-    "marketsTracked": 287,
-    "marketsWithLadder": 68,
-    "marketsInModule": 68,
-    "openAtCapture": 62,
-    "finalizedAtCapture": 5,
-    "withRealResult": 5,
-    "ladderCaptures": 513,
-    "bars": 4660,
-    "newestCapture": "2026-09-18T18:46:22.458Z"
+    "storesRead": 320,
+    "marketsTracked": 308,
+    "marketsWithLadder": 69,
+    "marketsInModule": 69,
+    "openAtCapture": 63,
+    "finalizedAtCapture": 6,
+    "withRealResult": 6,
+    "ladderCaptures": 545,
+    "bars": 4736,
+    "newestCapture": "2026-09-19T11:08:18.437Z"
   },
   "rule": {
     "inclusion": "every tracked market with >=1 real captured order-book ladder (captures[].at + captures[].url recorded per ladder)",
@@ -62,13 +62,13 @@
     "marketsSearch": "GET /markets?series_ticker=&status=&limit="
   },
   "universe": {
-    "inUniverse": 68,
-    "tradeable": 62,
+    "inUniverse": 69,
+    "tradeable": 63,
     "notTradeable": 6,
-    "openAtAsOf": 62,
-    "ladderCaptures": 513,
-    "totalRealYesDepth": 12849764,
-    "totalRealNoDepth": 18611102,
+    "openAtAsOf": 63,
+    "ladderCaptures": 545,
+    "totalRealYesDepth": 12981998,
+    "totalRealNoDepth": 17934241,
     "quotedWithoutLadder": 120,
     "markets": [
       {
@@ -84,18 +84,18 @@
         "feeMultiplier": 0,
         "feeType": "quadratic",
         "tick": 0.001,
-        "ladderAt": "2026-09-18T18:40:58.870Z",
+        "ladderAt": "2026-09-19T11:02:15.387Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B77500/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:58.231Z",
+        "marketCapturedAt": "2026-09-19T11:02:14.662Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B77500",
         "lookAheadFields": [],
-        "yesBest": 0.147,
-        "noBest": 0.852,
-        "yesDepth": 22383.69,
-        "noDepth": 19315.17,
-        "volume24h": 6524.99,
-        "openInterest": 288264.42,
-        "lifetimeVolume": 2689100.77
+        "yesBest": 0.139,
+        "noBest": 0.86,
+        "yesDepth": 20643.69,
+        "noDepth": 15985.35,
+        "volume24h": 10481.68,
+        "openInterest": 288112.85,
+        "lifetimeVolume": 2696504.19
       },
       {
         "ticker": "KXBTCY-27JAN0100-B47500",
@@ -110,18 +110,18 @@
         "feeMultiplier": 0,
         "feeType": "quadratic",
         "tick": 0.001,
-        "ladderAt": "2026-09-18T18:41:00.132Z",
+        "ladderAt": "2026-09-19T11:02:16.776Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B47500/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:59.493Z",
+        "marketCapturedAt": "2026-09-19T11:02:16.052Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B47500",
         "lookAheadFields": [],
         "yesBest": 0.011,
         "noBest": 0.988,
-        "yesDepth": 359333.73,
-        "noDepth": 48338.61,
-        "volume24h": 10652.2,
-        "openInterest": 398936.49,
-        "lifetimeVolume": 2390568.86
+        "yesDepth": 345656.98,
+        "noDepth": 48210.79,
+        "volume24h": 10344.17,
+        "openInterest": 398666.26,
+        "lifetimeVolume": 2391108.97
       },
       {
         "ticker": "KXBTCY-27JAN0100-B72500",
@@ -136,18 +136,18 @@
         "feeMultiplier": 0,
         "feeType": "quadratic",
         "tick": 0.001,
-        "ladderAt": "2026-09-18T18:41:02.672Z",
+        "ladderAt": "2026-09-19T11:02:19.560Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B72500/orderbook",
-        "marketCapturedAt": "2026-09-18T18:41:02.026Z",
+        "marketCapturedAt": "2026-09-19T11:02:18.835Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B72500",
         "lookAheadFields": [],
-        "yesBest": 0.122,
-        "noBest": 0.877,
-        "yesDepth": 36858.54,
-        "noDepth": 23194.54,
-        "volume24h": 17525.73,
-        "openInterest": 277653.07,
-        "lifetimeVolume": 2380541.24
+        "yesBest": 0.113,
+        "noBest": 0.886,
+        "yesDepth": 29257.59,
+        "noDepth": 23092.03,
+        "volume24h": 8652.81,
+        "openInterest": 277825.4,
+        "lifetimeVolume": 2386657.03
       },
       {
         "ticker": "KXBTCY-27JAN0100-B52500",
@@ -162,18 +162,18 @@
         "feeMultiplier": 0,
         "feeType": "quadratic",
         "tick": 0.001,
-        "ladderAt": "2026-09-18T18:41:01.401Z",
+        "ladderAt": "2026-09-19T11:02:18.168Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B52500/orderbook",
-        "marketCapturedAt": "2026-09-18T18:41:00.754Z",
+        "marketCapturedAt": "2026-09-19T11:02:17.443Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B52500",
         "lookAheadFields": [],
         "yesBest": 0.015,
-        "noBest": 0.984,
-        "yesDepth": 216918.31,
-        "noDepth": 41016.68,
-        "volume24h": 4269.41,
-        "openInterest": 364683.3,
-        "lifetimeVolume": 2374117.48
+        "noBest": 0.981,
+        "yesDepth": 214248.99,
+        "noDepth": 41914.23,
+        "volume24h": 4877.01,
+        "openInterest": 364190.3,
+        "lifetimeVolume": 2374900.38
       },
       {
         "ticker": "KXBTCY-27JAN0100-B67500",
@@ -188,18 +188,18 @@
         "feeMultiplier": 0,
         "feeType": "quadratic",
         "tick": 0.001,
-        "ladderAt": "2026-09-18T18:41:03.933Z",
+        "ladderAt": "2026-09-19T11:02:20.951Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B67500/orderbook",
-        "marketCapturedAt": "2026-09-18T18:41:03.294Z",
+        "marketCapturedAt": "2026-09-19T11:02:20.227Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B67500",
         "lookAheadFields": [],
-        "yesBest": 0.083,
-        "noBest": 0.916,
-        "yesDepth": 20472.66,
-        "noDepth": 8846.63,
-        "volume24h": 9216.38,
-        "openInterest": 286873.81,
-        "lifetimeVolume": 2347217.47
+        "yesBest": 0.075,
+        "noBest": 0.923,
+        "yesDepth": 16933.16,
+        "noDepth": 7731.23,
+        "volume24h": 11014.44,
+        "openInterest": 288169.63,
+        "lifetimeVolume": 2350548.88
       },
       {
         "ticker": "KXBTCY-27JAN0100-B62500",
@@ -214,18 +214,18 @@
         "feeMultiplier": 0,
         "feeType": "quadratic",
         "tick": 0.001,
-        "ladderAt": "2026-09-18T18:41:05.197Z",
+        "ladderAt": "2026-09-19T11:02:22.342Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B62500/orderbook",
-        "marketCapturedAt": "2026-09-18T18:41:04.558Z",
+        "marketCapturedAt": "2026-09-19T11:02:21.617Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B62500",
         "lookAheadFields": [],
-        "yesBest": 0.047,
-        "noBest": 0.952,
-        "yesDepth": 337060.41,
-        "noDepth": 12144.07,
-        "volume24h": 13366.03,
-        "openInterest": 330120.54,
-        "lifetimeVolume": 2317942.77
+        "yesBest": 0.043,
+        "noBest": 0.955,
+        "yesDepth": 328081.79,
+        "noDepth": 11821.7,
+        "volume24h": 15163.59,
+        "openInterest": 333980.64,
+        "lifetimeVolume": 2322290.14
       },
       {
         "ticker": "KXBTCY-27JAN0100-B82500",
@@ -240,18 +240,18 @@
         "feeMultiplier": 0,
         "feeType": "quadratic",
         "tick": 0.001,
-        "ladderAt": "2026-09-18T18:41:06.460Z",
+        "ladderAt": "2026-09-19T11:02:23.734Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B82500/orderbook",
-        "marketCapturedAt": "2026-09-18T18:41:05.821Z",
+        "marketCapturedAt": "2026-09-19T11:02:23.009Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B82500",
         "lookAheadFields": [],
-        "yesBest": 0.132,
-        "noBest": 0.867,
-        "yesDepth": 23652.26,
-        "noDepth": 24731.78,
-        "volume24h": 4981.1,
-        "openInterest": 280253.01,
-        "lifetimeVolume": 2291898.03
+        "yesBest": 0.135,
+        "noBest": 0.864,
+        "yesDepth": 18970.85,
+        "noDepth": 24203.05,
+        "volume24h": 5300.96,
+        "openInterest": 280140.3,
+        "lifetimeVolume": 2293298.14
       },
       {
         "ticker": "KXBTCY-27JAN0100-B57500",
@@ -266,18 +266,18 @@
         "feeMultiplier": 0,
         "feeType": "quadratic",
         "tick": 0.001,
-        "ladderAt": "2026-09-18T18:41:07.723Z",
+        "ladderAt": "2026-09-19T11:02:25.125Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B57500/orderbook",
-        "marketCapturedAt": "2026-09-18T18:41:07.083Z",
+        "marketCapturedAt": "2026-09-19T11:02:24.400Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B57500",
         "lookAheadFields": [],
-        "yesBest": 0.026,
-        "noBest": 0.973,
-        "yesDepth": 369060.54,
-        "noDepth": 15939.42,
-        "volume24h": 9412.47,
-        "openInterest": 332675.61,
-        "lifetimeVolume": 2210871.94
+        "yesBest": 0.025,
+        "noBest": 0.974,
+        "yesDepth": 362890.64,
+        "noDepth": 16226.22,
+        "volume24h": 5368.54,
+        "openInterest": 332681.83,
+        "lifetimeVolume": 2210890.16
       },
       {
         "ticker": "KXBTCY-27JAN0100-T149999.99",
@@ -292,18 +292,18 @@
         "feeMultiplier": 0,
         "feeType": "quadratic",
         "tick": 0.001,
-        "ladderAt": "2026-09-18T18:41:08.988Z",
+        "ladderAt": "2026-09-19T11:02:26.516Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-T149999.99/orderbook",
-        "marketCapturedAt": "2026-09-18T18:41:08.349Z",
+        "marketCapturedAt": "2026-09-19T11:02:25.791Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-T149999.99",
         "lookAheadFields": [],
-        "yesBest": 0.021,
-        "noBest": 0.977,
-        "yesDepth": 969475.13,
-        "noDepth": 99521.29,
-        "volume24h": 7355.59,
-        "openInterest": 439727.16,
-        "lifetimeVolume": 2039716.81
+        "yesBest": 0.023,
+        "noBest": 0.976,
+        "yesDepth": 969511.66,
+        "noDepth": 90944.85,
+        "volume24h": 14079.03,
+        "openInterest": 446224.36,
+        "lifetimeVolume": 2046440.25
       },
       {
         "ticker": "KXBTCY-27JAN0100-B87500",
@@ -318,18 +318,18 @@
         "feeMultiplier": 0,
         "feeType": "quadratic",
         "tick": 0.001,
-        "ladderAt": "2026-09-18T18:41:10.251Z",
+        "ladderAt": "2026-09-19T11:02:27.910Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B87500/orderbook",
-        "marketCapturedAt": "2026-09-18T18:41:09.611Z",
+        "marketCapturedAt": "2026-09-19T11:02:27.184Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B87500",
         "lookAheadFields": [],
-        "yesBest": 0.104,
-        "noBest": 0.895,
-        "yesDepth": 26238.96,
-        "noDepth": 38694.73,
-        "volume24h": 3916.45,
-        "openInterest": 280434.68,
-        "lifetimeVolume": 2014000.81
+        "yesBest": 0.109,
+        "noBest": 0.89,
+        "yesDepth": 18849.49,
+        "noDepth": 52551.82,
+        "volume24h": 4524.27,
+        "openInterest": 280588.86,
+        "lifetimeVolume": 2016076.52
       },
       {
         "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
@@ -344,18 +344,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:41:11.510Z",
+        "ladderAt": "2026-09-19T11:02:29.300Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T19000/orderbook",
-        "marketCapturedAt": "2026-09-18T18:41:10.873Z",
+        "marketCapturedAt": "2026-09-19T11:02:28.576Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T19000",
         "lookAheadFields": [],
-        "yesBest": 0.05,
-        "noBest": 0.94,
-        "yesDepth": 103394.27,
-        "noDepth": 438862.34,
-        "volume24h": 2756.96,
-        "openInterest": 1115203.89,
-        "lifetimeVolume": 1272368.97
+        "yesBest": 0.04,
+        "noBest": 0.95,
+        "yesDepth": 3799.82,
+        "noDepth": 339287.12,
+        "volume24h": 680.52,
+        "openInterest": 1115242.39,
+        "lifetimeVolume": 1272527.47
       },
       {
         "ticker": "KXINXY-26DEC31H1600-B8100",
@@ -370,18 +370,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:41:12.769Z",
+        "ladderAt": "2026-09-19T11:02:30.692Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8100/orderbook",
-        "marketCapturedAt": "2026-09-18T18:41:12.132Z",
+        "marketCapturedAt": "2026-09-19T11:02:29.966Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8100",
         "lookAheadFields": [],
         "yesBest": 0.16,
         "noBest": 0.83,
-        "yesDepth": 121804.13,
-        "noDepth": 283859.96,
-        "volume24h": 4972.36,
-        "openInterest": 255956.51,
-        "lifetimeVolume": 512612.3
+        "yesDepth": 21843.97,
+        "noDepth": 38326.8,
+        "volume24h": 1240.63,
+        "openInterest": 255967.62,
+        "lifetimeVolume": 512698.07
       },
       {
         "ticker": "KXINXY-26DEC31H1600-B7700",
@@ -398,16 +398,16 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:38.569Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7700/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:38.030Z",
+        "marketCapturedAt": "2026-09-19T11:01:57.968Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7700",
         "lookAheadFields": [],
         "yesBest": 0.14,
         "noBest": 0.85,
         "yesDepth": 121269.61,
         "noDepth": 292428.54,
-        "volume24h": 1131.83,
-        "openInterest": 193743.85,
-        "lifetimeVolume": 480422.69
+        "volume24h": 581.59,
+        "openInterest": 193731.88,
+        "lifetimeVolume": 480498.36
       },
       {
         "ticker": "KXINXY-26DEC31H1600-B7900",
@@ -424,16 +424,16 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:39.638Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7900/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:39.093Z",
+        "marketCapturedAt": "2026-09-19T11:01:58.846Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7900",
         "lookAheadFields": [],
         "yesBest": 0.17,
         "noBest": 0.82,
         "yesDepth": 111236.24,
         "noDepth": 145407.15,
-        "volume24h": 7620.45,
-        "openInterest": 230436.68,
-        "lifetimeVolume": 475112.01
+        "volume24h": 2892.4,
+        "openInterest": 231000.05,
+        "lifetimeVolume": 475887.43
       },
       {
         "ticker": "KXINXY-26DEC31H1600-B7500",
@@ -450,16 +450,16 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:37.505Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7500/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:36.960Z",
+        "marketCapturedAt": "2026-09-19T11:01:57.089Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7500",
         "lookAheadFields": [],
         "yesBest": 0.12,
         "noBest": 0.87,
         "yesDepth": 114040.86,
         "noDepth": 277003.8,
-        "volume24h": 6482.46,
-        "openInterest": 234067.5,
-        "lifetimeVolume": 464414.03
+        "volume24h": 127.42,
+        "openInterest": 234100.82,
+        "lifetimeVolume": 464447.35
       },
       {
         "ticker": "KXINXY-26DEC31H1600-T4000",
@@ -476,7 +476,7 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:43.897Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-T4000/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:43.346Z",
+        "marketCapturedAt": "2026-09-19T11:02:02.364Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-T4000",
         "lookAheadFields": [],
         "yesBest": null,
@@ -502,16 +502,16 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:54.527Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:53.982Z",
+        "marketCapturedAt": "2026-09-19T11:02:11.148Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000",
         "lookAheadFields": [],
         "yesBest": 0.13,
         "noBest": 0.86,
         "yesDepth": 101316.96,
         "noDepth": 103317.85,
-        "volume24h": 1239.83,
-        "openInterest": 162565.46,
-        "lifetimeVolume": 396758.25
+        "volume24h": 968.39,
+        "openInterest": 162590.89,
+        "lifetimeVolume": 397078.25
       },
       {
         "ticker": "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
@@ -526,18 +526,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:45:52.908Z",
+        "ladderAt": "2026-09-19T11:07:45.620Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH/orderbook",
-        "marketCapturedAt": "2026-09-18T18:45:52.267Z",
+        "marketCapturedAt": "2026-09-19T11:07:44.895Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
         "lookAheadFields": [],
-        "yesBest": 0.26,
-        "noBest": 0.69,
-        "yesDepth": 27785.08,
-        "noDepth": 27256.33,
-        "volume24h": 1770.64,
-        "openInterest": 90979.58,
-        "lifetimeVolume": 387321.39
+        "yesBest": 0.27,
+        "noBest": 0.7,
+        "yesDepth": 30579.5,
+        "noDepth": 28947.52,
+        "volume24h": 444.06,
+        "openInterest": 91072.61,
+        "lifetimeVolume": 387611.06
       },
       {
         "ticker": "KXINXY-26DEC31H1600-B7300",
@@ -554,16 +554,16 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:36.436Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7300/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:35.895Z",
+        "marketCapturedAt": "2026-09-19T11:01:56.211Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7300",
         "lookAheadFields": [],
         "yesBest": 0.06,
         "noBest": 0.93,
         "yesDepth": 113375.63,
         "noDepth": 287694.94,
-        "volume24h": 0.2,
-        "openInterest": 183836.6,
-        "lifetimeVolume": 330637.09
+        "volume24h": 56.64,
+        "openInterest": 183873.04,
+        "lifetimeVolume": 330693.53
       },
       {
         "ticker": "KXINXY-26DEC31H1600-B8300",
@@ -580,16 +580,16 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:41.760Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8300/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:41.223Z",
+        "marketCapturedAt": "2026-09-19T11:02:00.606Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8300",
         "lookAheadFields": [],
         "yesBest": 0.08,
         "noBest": 0.91,
         "yesDepth": 114016.5,
         "noDepth": 308740.06,
-        "volume24h": 808.85,
-        "openInterest": 191980.51,
-        "lifetimeVolume": 309476.88
+        "volume24h": 2854.9,
+        "openInterest": 194464.76,
+        "lifetimeVolume": 312115.26
       },
       {
         "ticker": "KXINXY-26DEC31H1600-B6900",
@@ -606,7 +606,7 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:34.309Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:33.772Z",
+        "marketCapturedAt": "2026-09-19T11:01:54.456Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900",
         "lookAheadFields": [],
         "yesBest": 0.03,
@@ -632,16 +632,16 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:35.371Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7100/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:34.832Z",
+        "marketCapturedAt": "2026-09-19T11:01:55.334Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7100",
         "lookAheadFields": [],
         "yesBest": 0.04,
         "noBest": 0.95,
         "yesDepth": 106097.25,
         "noDepth": 284300.81,
-        "volume24h": 1000.93,
-        "openInterest": 194943.02,
-        "lifetimeVolume": 286630.57
+        "volume24h": 3328.57,
+        "openInterest": 193651.57,
+        "lifetimeVolume": 288971.14
       },
       {
         "ticker": "KXINXY-26DEC31H1600-B8900",
@@ -658,7 +658,7 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:42.822Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8900/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:42.283Z",
+        "marketCapturedAt": "2026-09-19T11:02:01.483Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8900",
         "lookAheadFields": [],
         "yesBest": 0.01,
@@ -684,16 +684,16 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:52.395Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32750/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:51.855Z",
+        "marketCapturedAt": "2026-09-19T11:02:09.392Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32750",
         "lookAheadFields": [],
         "yesBest": 0.02,
         "noBest": 0.97,
         "yesDepth": 101588.95,
         "noDepth": 278826.48,
-        "volume24h": 4199.69,
-        "openInterest": 88066.8,
-        "lifetimeVolume": 158870.67
+        "volume24h": 4118.46,
+        "openInterest": 88086.8,
+        "lifetimeVolume": 158906.56
       },
       {
         "ticker": "KXNASDAQ100Y-26DEC31H1600-B32250",
@@ -710,14 +710,14 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:51.332Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32250/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:50.794Z",
+        "marketCapturedAt": "2026-09-19T11:02:08.512Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32250",
         "lookAheadFields": [],
         "yesBest": 0.04,
         "noBest": 0.95,
         "yesDepth": 106360.64,
         "noDepth": 285777.03,
-        "volume24h": 58.92,
+        "volume24h": 51.92,
         "openInterest": 82966.96,
         "lifetimeVolume": 130455.35
       },
@@ -736,7 +736,7 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:44.957Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B25750/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:44.418Z",
+        "marketCapturedAt": "2026-09-19T11:02:03.242Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B25750",
         "lookAheadFields": [],
         "yesBest": 0.01,
@@ -762,14 +762,14 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:46.022Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B29750/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:45.479Z",
+        "marketCapturedAt": "2026-09-19T11:02:04.118Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B29750",
         "lookAheadFields": [],
         "yesBest": 0.06,
         "noBest": 0.93,
         "yesDepth": 118998.63,
         "noDepth": 280227.14,
-        "volume24h": 260,
+        "volume24h": 10,
         "openInterest": 83467.96,
         "lifetimeVolume": 117621.56
       },
@@ -788,7 +788,7 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:50.272Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31750/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:49.731Z",
+        "marketCapturedAt": "2026-09-19T11:02:07.634Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31750",
         "lookAheadFields": [],
         "yesBest": 0.04,
@@ -814,14 +814,14 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:49.208Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31250/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:48.666Z",
+        "marketCapturedAt": "2026-09-19T11:02:06.757Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31250",
         "lookAheadFields": [],
         "yesBest": 0.04,
         "noBest": 0.95,
         "yesDepth": 106478.97,
         "noDepth": 284620.69,
-        "volume24h": 107.6,
+        "volume24h": 0,
         "openInterest": 84207.56,
         "lifetimeVolume": 116467.95
       },
@@ -840,16 +840,16 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:48.143Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30750/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:47.604Z",
+        "marketCapturedAt": "2026-09-19T11:02:05.882Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30750",
         "lookAheadFields": [],
         "yesBest": 0.07,
         "noBest": 0.92,
         "yesDepth": 118174.67,
         "noDepth": 289875.54,
-        "volume24h": 645.89,
-        "openInterest": 90222.51,
-        "lifetimeVolume": 115725.69
+        "volume24h": 58.71,
+        "openInterest": 90163.8,
+        "lifetimeVolume": 115784.4
       },
       {
         "ticker": "KXOPENAICEOCHANGE-26",
@@ -864,16 +864,16 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:21.192Z",
+        "ladderAt": "2026-09-19T11:08:17.048Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXOPENAICEOCHANGE-26/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:20.554Z",
+        "marketCapturedAt": "2026-09-19T11:08:16.325Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXOPENAICEOCHANGE-26",
         "lookAheadFields": [],
         "yesBest": 0.05,
         "noBest": 0.92,
         "yesDepth": 8563.05,
-        "noDepth": 11941.88,
-        "volume24h": 49.43,
+        "noDepth": 12066.88,
+        "volume24h": 0,
         "openInterest": 44733.73,
         "lifetimeVolume": 113781.04
       },
@@ -892,14 +892,14 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T18:40:47.083Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30250/orderbook",
-        "marketCapturedAt": "2026-09-18T18:40:46.545Z",
+        "marketCapturedAt": "2026-09-19T11:02:04.998Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30250",
         "lookAheadFields": [],
         "yesBest": 0.07,
         "noBest": 0.92,
         "yesDepth": 105056.58,
         "noDepth": 279688.76,
-        "volume24h": 81.14,
+        "volume24h": 37,
         "openInterest": 93589.66,
         "lifetimeVolume": 111508.98
       },
@@ -916,18 +916,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:18.352Z",
+        "ladderAt": "2026-09-19T11:08:13.908Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:17.714Z",
+        "marketCapturedAt": "2026-09-19T11:08:13.183Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26",
         "lookAheadFields": [],
         "yesBest": 0.03,
         "noBest": 0.94,
-        "yesDepth": 15707.43,
-        "noDepth": 56525.66,
-        "volume24h": 781.88,
+        "yesDepth": 15706.41,
+        "noDepth": 56933.41,
+        "volume24h": 1.27,
         "openInterest": 35424.69,
-        "lifetimeVolume": 88884.37
+        "lifetimeVolume": 88885.64
       },
       {
         "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
@@ -942,18 +942,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:18.664Z",
+        "ladderAt": "2026-09-19T11:05:55.855Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:18.025Z",
+        "marketCapturedAt": "2026-09-19T11:05:55.130Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI",
         "lookAheadFields": [],
-        "yesBest": 0.38,
+        "yesBest": 0.37,
         "noBest": 0.61,
-        "yesDepth": 233836.62,
-        "noDepth": 18207.51,
-        "volume24h": 1663.54,
-        "openInterest": 23460.82,
-        "lifetimeVolume": 29999
+        "yesDepth": 239389.28,
+        "noDepth": 19253.73,
+        "volume24h": 403.61,
+        "openInterest": 23728.22,
+        "lifetimeVolume": 30266.4
       },
       {
         "ticker": "KXFDARETATRUTIDE-RET-27JAN01",
@@ -968,15 +968,15 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:04.283Z",
+        "ladderAt": "2026-09-19T11:07:58.118Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-27JAN01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:03.642Z",
+        "marketCapturedAt": "2026-09-19T11:07:57.393Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-27JAN01",
         "lookAheadFields": [],
         "yesBest": 0.07,
         "noBest": 0.89,
         "yesDepth": 892.3,
-        "noDepth": 4734.87,
+        "noDepth": 4894.87,
         "volume24h": 0,
         "openInterest": 10186.73,
         "lifetimeVolume": 25678.43
@@ -994,18 +994,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:26.254Z",
+        "ladderAt": "2026-09-19T11:06:04.215Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:25.598Z",
+        "marketCapturedAt": "2026-09-19T11:06:03.490Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU",
         "lookAheadFields": [],
         "yesBest": null,
         "noBest": 0.99,
         "yesDepth": 0,
-        "noDepth": 5725870.9,
-        "volume24h": 688.36,
-        "openInterest": 19674.58,
-        "lifetimeVolume": 20142.71
+        "noDepth": 5353785.96,
+        "volume24h": 1597.42,
+        "openInterest": 20583.64,
+        "lifetimeVolume": 21051.77
       },
       {
         "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
@@ -1020,14 +1020,14 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:27.513Z",
+        "ladderAt": "2026-09-19T11:06:05.603Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:26.875Z",
+        "marketCapturedAt": "2026-09-19T11:06:04.879Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA",
         "lookAheadFields": [],
         "yesBest": 0.99,
         "noBest": null,
-        "yesDepth": 938341.14,
+        "yesDepth": 948361.14,
         "noDepth": 0,
         "volume24h": 0,
         "openInterest": 18542.03,
@@ -1046,18 +1046,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:19.924Z",
+        "ladderAt": "2026-09-19T11:05:57.248Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:19.286Z",
+        "marketCapturedAt": "2026-09-19T11:05:56.522Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS",
         "lookAheadFields": [],
         "yesBest": 0.49,
         "noBest": 0.5,
-        "yesDepth": 13961.88,
-        "noDepth": 11482.43,
-        "volume24h": 305.88,
-        "openInterest": 8314.17,
-        "lifetimeVolume": 17283.24
+        "yesDepth": 15789.63,
+        "noDepth": 14684.58,
+        "volume24h": 466.26,
+        "openInterest": 8507.05,
+        "lifetimeVolume": 17615.46
       },
       {
         "ticker": "JPMCEOCHANGE-27",
@@ -1072,15 +1072,15 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:22.458Z",
+        "ladderAt": "2026-09-19T11:08:18.437Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:21.819Z",
+        "marketCapturedAt": "2026-09-19T11:08:17.713Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27",
         "lookAheadFields": [],
         "yesBest": 0.01,
-        "noBest": 0.94,
+        "noBest": 0.95,
         "yesDepth": 1912.15,
-        "noDepth": 10159.88,
+        "noDepth": 10229.88,
         "volume24h": 0,
         "openInterest": 5831.32,
         "lifetimeVolume": 17163.86
@@ -1098,15 +1098,15 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:01.758Z",
+        "ladderAt": "2026-09-19T11:07:55.339Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:01.118Z",
+        "marketCapturedAt": "2026-09-19T11:07:54.615Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01",
         "lookAheadFields": [],
         "yesBest": 0.04,
         "noBest": 0.91,
         "yesDepth": 2067.46,
-        "noDepth": 4074.12,
+        "noDepth": 4277.12,
         "volume24h": 0,
         "openInterest": 6576.02,
         "lifetimeVolume": 14326.86
@@ -1124,18 +1124,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:03.021Z",
+        "ladderAt": "2026-09-19T11:07:56.729Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-27JAN01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:02.381Z",
+        "marketCapturedAt": "2026-09-19T11:07:56.003Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-27JAN01",
         "lookAheadFields": [],
         "yesBest": 0.31,
-        "noBest": 0.62,
-        "yesDepth": 3280.38,
-        "noDepth": 1619.89,
-        "volume24h": 288,
-        "openInterest": 4358.23,
-        "lifetimeVolume": 13707.22
+        "noBest": 0.63,
+        "yesDepth": 3311.38,
+        "noDepth": 1429.89,
+        "volume24h": 7.09,
+        "openInterest": 4365.32,
+        "lifetimeVolume": 13714.31
       },
       {
         "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
@@ -1150,18 +1150,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:21.184Z",
+        "ladderAt": "2026-09-19T11:05:58.640Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:20.546Z",
+        "marketCapturedAt": "2026-09-19T11:05:57.913Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET",
         "lookAheadFields": [],
         "yesBest": 0.49,
-        "noBest": 0.48,
-        "yesDepth": 261248.4,
-        "noDepth": 17529.03,
-        "volume24h": 59.7,
-        "openInterest": 6592.92,
-        "lifetimeVolume": 12401.58
+        "noBest": 0.49,
+        "yesDepth": 264311.4,
+        "noDepth": 18666.1,
+        "volume24h": 53.24,
+        "openInterest": 6576.55,
+        "lifetimeVolume": 12435.87
       },
       {
         "ticker": "KXFDARETATRUTIDE-RET-27JUL01",
@@ -1176,15 +1176,15 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:05.544Z",
+        "ladderAt": "2026-09-19T11:07:59.507Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-27JUL01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:04.905Z",
+        "marketCapturedAt": "2026-09-19T11:07:58.783Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-27JUL01",
         "lookAheadFields": [],
         "yesBest": 0.42,
         "noBest": 0.52,
-        "yesDepth": 3622.71,
-        "noDepth": 2344.87,
+        "yesDepth": 4441.71,
+        "noDepth": 2020.87,
         "volume24h": 0,
         "openInterest": 5241.78,
         "lifetimeVolume": 11635.3
@@ -1202,18 +1202,44 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:22.451Z",
+        "ladderAt": "2026-09-19T11:06:00.041Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:21.805Z",
+        "marketCapturedAt": "2026-09-19T11:05:59.306Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK",
         "lookAheadFields": [],
-        "yesBest": 0.6,
-        "noBest": 0.38,
-        "yesDepth": 273371.72,
-        "noDepth": 272036.03,
-        "volume24h": 822.37,
-        "openInterest": 5920.43,
-        "lifetimeVolume": 10676.83
+        "yesBest": 0.62,
+        "noBest": 0.37,
+        "yesDepth": 262395.97,
+        "noDepth": 285896.61,
+        "volume24h": 728.43,
+        "openInterest": 5996.57,
+        "lifetimeVolume": 10993.51
+      },
+      {
+        "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "series": "KXNCAAFGAME",
+        "title": "Texas Tech wins",
+        "status": "active",
+        "isOpen": true,
+        "closeTime": "2026-09-28T17:00:00Z",
+        "expirationTime": "2026-09-28T17:00:00Z",
+        "tradeable": true,
+        "notTradeableReason": null,
+        "feeMultiplier": 1,
+        "feeType": "quadratic_with_maker_fees",
+        "tick": 0.01,
+        "ladderAt": "2026-09-19T11:06:07.000Z",
+        "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/orderbook",
+        "marketCapturedAt": "2026-09-19T11:06:06.266Z",
+        "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "lookAheadFields": [],
+        "yesBest": 0.98,
+        "noBest": 0.01,
+        "yesDepth": 142840.57,
+        "noDepth": 15736,
+        "volume24h": 2233.16,
+        "openInterest": 9587.98,
+        "lifetimeVolume": 9857.21
       },
       {
         "ticker": "KXFDAAPPROVALDATECMPS-360-27JUL01",
@@ -1228,15 +1254,15 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:10.613Z",
+        "ladderAt": "2026-09-19T11:08:05.057Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:09.964Z",
+        "marketCapturedAt": "2026-09-19T11:08:04.333Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JUL01",
         "lookAheadFields": [],
         "yesBest": 0.79,
         "noBest": 0.18,
-        "yesDepth": 7095.72,
-        "noDepth": 6539.36,
+        "yesDepth": 17085.72,
+        "noDepth": 6657.36,
         "volume24h": 0,
         "openInterest": 3300.16,
         "lifetimeVolume": 8642.97
@@ -1254,122 +1280,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:28.773Z",
+        "ladderAt": "2026-09-19T11:06:08.389Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:28.135Z",
+        "marketCapturedAt": "2026-09-19T11:06:07.663Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU",
         "lookAheadFields": [],
         "yesBest": 0.97,
         "noBest": 0.02,
-        "yesDepth": 129747.69,
-        "noDepth": 16207.91,
+        "yesDepth": 128724.69,
+        "noDepth": 16199.91,
         "volume24h": 0.1,
         "openInterest": 7918.33,
         "lifetimeVolume": 8365.76
-      },
-      {
-        "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
-        "series": "KXNCAAFGAME",
-        "title": "Texas Tech wins",
-        "status": "active",
-        "isOpen": true,
-        "closeTime": "2026-09-28T17:00:00Z",
-        "expirationTime": "2026-09-28T17:00:00Z",
-        "tradeable": true,
-        "notTradeableReason": null,
-        "feeMultiplier": 1,
-        "feeType": "quadratic_with_maker_fees",
-        "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:30.034Z",
-        "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:29.395Z",
-        "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU",
-        "lookAheadFields": [],
-        "yesBest": 0.97,
-        "noBest": 0.02,
-        "yesDepth": 127388.23,
-        "noDepth": 115966.98,
-        "volume24h": 1.01,
-        "openInterest": 7365,
-        "lifetimeVolume": 7624.05
-      },
-      {
-        "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
-        "series": "KXNCAAFGAME",
-        "title": "SMU wins",
-        "status": "active",
-        "isOpen": true,
-        "closeTime": "2026-09-28T17:00:00Z",
-        "expirationTime": "2026-09-28T17:00:00Z",
-        "tradeable": true,
-        "notTradeableReason": null,
-        "feeMultiplier": 1,
-        "feeType": "quadratic_with_maker_fees",
-        "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:31.294Z",
-        "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:30.654Z",
-        "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU",
-        "lookAheadFields": [],
-        "yesBest": 0.96,
-        "noBest": 0.02,
-        "yesDepth": 364954.54,
-        "noDepth": 111348.8,
-        "volume24h": 35.47,
-        "openInterest": 5312.55,
-        "lifetimeVolume": 5685.02
-      },
-      {
-        "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
-        "series": "KXNBAGAME",
-        "title": "San Antonio wins",
-        "status": "active",
-        "isOpen": true,
-        "closeTime": "2026-10-23T01:30:00Z",
-        "expirationTime": "2026-10-23T01:30:00Z",
-        "tradeable": true,
-        "notTradeableReason": null,
-        "feeMultiplier": 1,
-        "feeType": "quadratic_with_maker_fees",
-        "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:23.714Z",
-        "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:23.076Z",
-        "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS",
-        "lookAheadFields": [],
-        "yesBest": 0.53,
-        "noBest": 0.43,
-        "yesDepth": 8656.23,
-        "noDepth": 33427.64,
-        "volume24h": 537.9,
-        "openInterest": 3834.91,
-        "lifetimeVolume": 5680.04
-      },
-      {
-        "ticker": "KXFDAAPPROVE-CYT-26OCT01",
-        "series": "KXFDAAPPROVE",
-        "title": "Will the FDA approve cytisinicline for smoking cessation before Oct 1, 2026?",
-        "status": "active",
-        "isOpen": true,
-        "closeTime": "2026-10-01T03:59:00Z",
-        "expirationTime": "2026-10-08T14:00:00Z",
-        "tradeable": true,
-        "notTradeableReason": null,
-        "feeMultiplier": 1,
-        "feeType": "quadratic",
-        "tick": 0.01,
-        "ladderAt": "2026-09-18T18:45:55.432Z",
-        "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:45:54.792Z",
-        "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01",
-        "lookAheadFields": [],
-        "yesBest": 0.01,
-        "noBest": 0.94,
-        "yesDepth": 46.99,
-        "noDepth": 3739,
-        "volume24h": 3.01,
-        "openInterest": 3630.6,
-        "lifetimeVolume": 5388.08
       },
       {
         "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
@@ -1384,18 +1306,122 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:32.555Z",
+        "ladderAt": "2026-09-19T11:06:09.783Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:31.916Z",
+        "marketCapturedAt": "2026-09-19T11:06:09.060Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE",
         "lookAheadFields": [],
-        "yesBest": 0.49,
-        "noBest": 0.49,
-        "yesDepth": 517404.92,
-        "noDepth": 2925708.49,
-        "volume24h": 363.3,
-        "openInterest": 4019.64,
-        "lifetimeVolume": 5227.45
+        "yesBest": 0.5,
+        "noBest": 0.48,
+        "yesDepth": 622644.98,
+        "noDepth": 2999989.39,
+        "volume24h": 1040.71,
+        "openInterest": 4758.92,
+        "lifetimeVolume": 5997.9
+      },
+      {
+        "ticker": "KXFDAAPPROVE-CYT-26OCT01",
+        "series": "KXFDAAPPROVE",
+        "title": "Will the FDA approve cytisinicline for smoking cessation before Oct 1, 2026?",
+        "status": "active",
+        "isOpen": true,
+        "closeTime": "2026-10-01T03:59:00Z",
+        "expirationTime": "2026-10-08T14:00:00Z",
+        "tradeable": true,
+        "notTradeableReason": null,
+        "feeMultiplier": 1,
+        "feeType": "quadratic",
+        "tick": 0.01,
+        "ladderAt": "2026-09-19T11:07:48.395Z",
+        "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01/orderbook",
+        "marketCapturedAt": "2026-09-19T11:07:47.672Z",
+        "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01",
+        "lookAheadFields": [],
+        "yesBest": 0.01,
+        "noBest": 0.92,
+        "yesDepth": 46.99,
+        "noDepth": 1487,
+        "volume24h": 532.81,
+        "openInterest": 4100.8,
+        "lifetimeVolume": 5917.88
+      },
+      {
+        "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
+        "series": "KXNBAGAME",
+        "title": "San Antonio wins",
+        "status": "active",
+        "isOpen": true,
+        "closeTime": "2026-10-23T01:30:00Z",
+        "expirationTime": "2026-10-23T01:30:00Z",
+        "tradeable": true,
+        "notTradeableReason": null,
+        "feeMultiplier": 1,
+        "feeType": "quadratic_with_maker_fees",
+        "tick": 0.01,
+        "ladderAt": "2026-09-19T11:06:01.431Z",
+        "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS/orderbook",
+        "marketCapturedAt": "2026-09-19T11:06:00.705Z",
+        "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS",
+        "lookAheadFields": [],
+        "yesBest": 0.53,
+        "noBest": 0.45,
+        "yesDepth": 7654.68,
+        "noDepth": 30571.16,
+        "volume24h": 71.58,
+        "openInterest": 3884.54,
+        "lifetimeVolume": 5750.87
+      },
+      {
+        "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "series": "KXNCAAFGAME",
+        "title": "SMU wins",
+        "status": "active",
+        "isOpen": true,
+        "closeTime": "2026-09-28T17:00:00Z",
+        "expirationTime": "2026-09-28T17:00:00Z",
+        "tradeable": true,
+        "notTradeableReason": null,
+        "feeMultiplier": 1,
+        "feeType": "quadratic_with_maker_fees",
+        "tick": 0.01,
+        "ladderAt": "2026-09-19T11:06:11.174Z",
+        "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU/orderbook",
+        "marketCapturedAt": "2026-09-19T11:06:10.449Z",
+        "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "lookAheadFields": [],
+        "yesBest": 0.96,
+        "noBest": 0.02,
+        "yesDepth": 470380.25,
+        "noDepth": 111871.54,
+        "volume24h": 35.47,
+        "openInterest": 5312.55,
+        "lifetimeVolume": 5685.02
+      },
+      {
+        "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
+        "series": "KXNCAAFGAME",
+        "title": "Sam Houston wins",
+        "status": "active",
+        "isOpen": true,
+        "closeTime": "2026-09-28T17:00:00Z",
+        "expirationTime": "2026-09-28T17:00:00Z",
+        "tradeable": true,
+        "notTradeableReason": null,
+        "feeMultiplier": 1,
+        "feeType": "quadratic_with_maker_fees",
+        "tick": 0.01,
+        "ladderAt": "2026-09-19T11:06:12.563Z",
+        "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-SHSU/orderbook",
+        "marketCapturedAt": "2026-09-19T11:06:11.838Z",
+        "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
+        "lookAheadFields": [],
+        "yesBest": 0.01,
+        "noBest": 0.98,
+        "yesDepth": 14100,
+        "noDepth": 28597.92,
+        "volume24h": 3266.49,
+        "openInterest": 5466.02,
+        "lifetimeVolume": 5466.02
       },
       {
         "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
@@ -1410,18 +1436,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:33.816Z",
+        "ladderAt": "2026-09-19T11:06:13.953Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:33.176Z",
+        "marketCapturedAt": "2026-09-19T11:06:13.228Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "lookAheadFields": [],
         "yesBest": 0.65,
         "noBest": 0.33,
-        "yesDepth": 2208859.61,
-        "noDepth": 2181297.68,
-        "volume24h": 204.4,
-        "openInterest": 4352.52,
-        "lifetimeVolume": 4653.96
+        "yesDepth": 2304382.95,
+        "noDepth": 2204359.48,
+        "volume24h": 335.21,
+        "openInterest": 4607.29,
+        "lifetimeVolume": 4917.29
       },
       {
         "ticker": "KXFDAAPPROVALDATECMPS-360-27JAN01",
@@ -1436,16 +1462,16 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:11.873Z",
+        "ladderAt": "2026-09-19T11:08:06.443Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JAN01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:11.235Z",
+        "marketCapturedAt": "2026-09-19T11:08:05.721Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JAN01",
         "lookAheadFields": [],
         "yesBest": 0.32,
         "noBest": 0.63,
-        "yesDepth": 2954.34,
-        "noDepth": 4790.18,
-        "volume24h": 1.02,
+        "yesDepth": 2955.34,
+        "noDepth": 4533.18,
+        "volume24h": 0,
         "openInterest": 2169.92,
         "lifetimeVolume": 4586.43
       },
@@ -1488,18 +1514,18 @@
         "feeMultiplier": 1,
         "feeType": "quadratic_with_maker_fees",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:44:24.976Z",
+        "ladderAt": "2026-09-19T11:06:02.825Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:24.335Z",
+        "marketCapturedAt": "2026-09-19T11:06:02.095Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
         "lookAheadFields": [],
         "yesBest": 0.46,
-        "noBest": 0.5,
-        "yesDepth": 6945.67,
-        "noDepth": 14284.6,
-        "volume24h": 195.61,
-        "openInterest": 1848.08,
-        "lifetimeVolume": 3047.87
+        "noBest": 0.51,
+        "yesDepth": 7302.74,
+        "noDepth": 11185.2,
+        "volume24h": 67.94,
+        "openInterest": 1848.1,
+        "lifetimeVolume": 3051.21
       },
       {
         "ticker": "KXFDAAPPROVALDATECMPS-360-27MAR01",
@@ -1514,16 +1540,16 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:13.137Z",
+        "ladderAt": "2026-09-19T11:08:07.829Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27MAR01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:12.495Z",
+        "marketCapturedAt": "2026-09-19T11:08:07.106Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27MAR01",
         "lookAheadFields": [],
-        "yesBest": 0.7,
+        "yesBest": 0.71,
         "noBest": 0.25,
-        "yesDepth": 3213.18,
-        "noDepth": 4435.38,
-        "volume24h": 6.61,
+        "yesDepth": 16056.18,
+        "noDepth": 4044.38,
+        "volume24h": 0,
         "openInterest": 2316.31,
         "lifetimeVolume": 2884.92
       },
@@ -1540,15 +1566,15 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:45:59.231Z",
+        "ladderAt": "2026-09-19T11:07:52.560Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-MDMA-30JAN01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:45:58.592Z",
+        "marketCapturedAt": "2026-09-19T11:07:51.837Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-MDMA-30JAN01",
         "lookAheadFields": [],
-        "yesBest": 0.49,
+        "yesBest": 0.5,
         "noBest": 0.44,
-        "yesDepth": 2373.43,
-        "noDepth": 1993,
+        "yesDepth": 2264.43,
+        "noDepth": 1837,
         "volume24h": 0,
         "openInterest": 1228.88,
         "lifetimeVolume": 2438.77
@@ -1566,15 +1592,15 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:14.397Z",
+        "ladderAt": "2026-09-19T11:08:09.219Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27OCT01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:13.759Z",
+        "marketCapturedAt": "2026-09-19T11:08:08.495Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27OCT01",
         "lookAheadFields": [],
         "yesBest": 0.83,
         "noBest": 0.1,
-        "yesDepth": 8415.17,
-        "noDepth": 4091,
+        "yesDepth": 20480.17,
+        "noDepth": 4718,
         "volume24h": 0,
         "openInterest": 1040.1,
         "lifetimeVolume": 2345.64
@@ -1592,15 +1618,15 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:06.811Z",
+        "ladderAt": "2026-09-19T11:08:00.896Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JAN01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:06.170Z",
+        "marketCapturedAt": "2026-09-19T11:08:00.172Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JAN01",
         "lookAheadFields": [],
         "yesBest": 0.86,
         "noBest": 0.09,
-        "yesDepth": 13481.44,
-        "noDepth": 527.1,
+        "yesDepth": 20648.44,
+        "noDepth": 574.1,
         "volume24h": 0,
         "openInterest": 911.84,
         "lifetimeVolume": 1558.72
@@ -1618,14 +1644,14 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:15.658Z",
+        "ladderAt": "2026-09-19T11:08:10.608Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-28JAN01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:15.019Z",
+        "marketCapturedAt": "2026-09-19T11:08:09.883Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-28JAN01",
         "lookAheadFields": [],
         "yesBest": 0.85,
         "noBest": 0.08,
-        "yesDepth": 9513,
+        "yesDepth": 10726,
         "noDepth": 2975,
         "volume24h": 0,
         "openInterest": 554.66,
@@ -1644,14 +1670,14 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:08.076Z",
+        "ladderAt": "2026-09-19T11:08:02.283Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-29JAN01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:07.436Z",
+        "marketCapturedAt": "2026-09-19T11:08:01.559Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-29JAN01",
         "lookAheadFields": [],
         "yesBest": 0.92,
         "noBest": 0.01,
-        "yesDepth": 5452,
+        "yesDepth": 3829,
         "noDepth": 500,
         "volume24h": 0,
         "openInterest": 70.68,
@@ -1670,14 +1696,14 @@
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.01,
-        "ladderAt": "2026-09-18T18:46:09.342Z",
+        "ladderAt": "2026-09-19T11:08:03.670Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JUL01/orderbook",
-        "marketCapturedAt": "2026-09-18T18:46:08.700Z",
+        "marketCapturedAt": "2026-09-19T11:08:02.947Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JUL01",
         "lookAheadFields": [],
         "yesBest": 0.88,
         "noBest": 0.06,
-        "yesDepth": 4838,
+        "yesDepth": 4284,
         "noDepth": 505,
         "volume24h": 0,
         "openInterest": 14.15,
@@ -1687,27 +1713,27 @@
         "ticker": "KXBTC15M-26SEP181445-45",
         "series": "KXBTC15M",
         "title": "BTC price up in next 15 mins?",
-        "status": "active",
+        "status": "finalized",
         "isOpen": false,
         "closeTime": "2026-09-18T18:45:00Z",
         "expirationTime": "2026-09-25T18:45:00Z",
         "tradeable": false,
-        "notTradeableReason": "NOT_TRADEABLE_AT_CUTOFF — the contract's own real close_time (2026-09-18T18:45:00Z) is at or before the desk cut-off, so no order could have been placed then.",
+        "notTradeableReason": "NOT_TRADEABLE_AT_CUTOFF — the contract's own real close_time (2026-09-18T18:45:00Z) is at or before the desk cut-off, so no order could have been placed then. The exchange has since finalized it as no (settlement 0.0000).",
         "feeMultiplier": 1,
         "feeType": "quadratic",
         "tick": 0.001,
         "ladderAt": "2026-09-18T18:44:58.204Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTC15M-26SEP181445-45/orderbook",
-        "marketCapturedAt": "2026-09-18T18:44:57.246Z",
+        "marketCapturedAt": "2026-09-19T11:06:38.440Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTC15M-26SEP181445-45",
         "lookAheadFields": [],
         "yesBest": null,
         "noBest": 0.999,
         "yesDepth": 0,
         "noDepth": 269477.57,
-        "volume24h": 2237188.54,
-        "openInterest": 766885.95,
-        "lifetimeVolume": 4761738.72
+        "volume24h": 4788282.26,
+        "openInterest": 789090.37,
+        "lifetimeVolume": 4788282.26
       },
       {
         "ticker": "KXHIGHNY-26SEP17-B82.5",
@@ -1724,14 +1750,14 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T02:47:26.807Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP17-B82.5/orderbook",
-        "marketCapturedAt": "2026-09-18T18:43:35.792Z",
+        "marketCapturedAt": "2026-09-19T11:05:09.715Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP17-B82.5",
         "lookAheadFields": [],
         "yesBest": 0.99,
         "noBest": null,
         "yesDepth": 53491.46,
         "noDepth": 0,
-        "volume24h": 11682.19,
+        "volume24h": 0,
         "openInterest": 19920.59,
         "lifetimeVolume": 46949.3
       },
@@ -1750,14 +1776,14 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T07:01:38.198Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26SEP17-B72.5/orderbook",
-        "marketCapturedAt": "2026-09-18T18:42:46.140Z",
+        "marketCapturedAt": "2026-09-19T11:04:13.757Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26SEP17-B72.5",
         "lookAheadFields": [],
         "yesBest": null,
         "noBest": 0.99,
         "yesDepth": 0,
         "noDepth": 159378.6,
-        "volume24h": 9207.62,
+        "volume24h": 0,
         "openInterest": 10629.56,
         "lifetimeVolume": 33739.62
       },
@@ -1776,14 +1802,14 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T06:39:27.805Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP17-T91/orderbook",
-        "marketCapturedAt": "2026-09-18T18:42:39.839Z",
+        "marketCapturedAt": "2026-09-19T11:04:06.824Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP17-T91",
         "lookAheadFields": [],
         "yesBest": 0.99,
         "noBest": null,
         "yesDepth": 11432.7,
         "noDepth": 0,
-        "volume24h": 23963.64,
+        "volume24h": 0,
         "openInterest": 12143.14,
         "lifetimeVolume": 29619.3
       },
@@ -1802,14 +1828,14 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T06:39:29.067Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP17-B91.5/orderbook",
-        "marketCapturedAt": "2026-09-18T18:42:41.104Z",
+        "marketCapturedAt": "2026-09-19T11:04:08.212Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP17-B91.5",
         "lookAheadFields": [],
         "yesBest": null,
         "noBest": 0.99,
         "yesDepth": 0,
         "noDepth": 9583.54,
-        "volume24h": 23311.27,
+        "volume24h": 0,
         "openInterest": 17990.69,
         "lifetimeVolume": 29293.47
       },
@@ -1828,14 +1854,14 @@
         "tick": 0.01,
         "ladderAt": "2026-09-18T06:39:02.516Z",
         "ladderUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26SEP17-T82/orderbook",
-        "marketCapturedAt": "2026-09-18T18:42:14.545Z",
+        "marketCapturedAt": "2026-09-19T11:03:38.986Z",
         "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26SEP17-T82",
         "lookAheadFields": [],
         "yesBest": 0.99,
         "noBest": null,
         "yesDepth": 91745,
         "noDepth": 0,
-        "volume24h": 11496.81,
+        "volume24h": 0,
         "openInterest": 13063.28,
         "lifetimeVolume": 18377.17
       }
@@ -1844,8 +1870,8 @@
   "cutoffAnalytics": [
     {
       "label": "live (newest capture)",
-      "asOf": "2026-09-18T18:46:22.458Z",
-      "tradeable": 62,
+      "asOf": "2026-09-19T11:08:18.437Z",
+      "tradeable": 63,
       "withRealResultAfter": 0,
       "settlementTickers": [],
       "sampleTickers": [
@@ -1864,15 +1890,10 @@
     },
     {
       "label": "-6h",
-      "asOf": "2026-09-18T12:46:22.458Z",
+      "asOf": "2026-09-19T05:08:18.437Z",
       "tradeable": 62,
-      "withRealResultAfter": 4,
-      "settlementTickers": [
-        "KXHIGHTSEA-26SEP17-B72.5",
-        "KXHIGHTPHX-26SEP17-T91",
-        "KXHIGHTPHX-26SEP17-B91.5",
-        "KXHIGHDEN-26SEP17-T82"
-      ],
+      "withRealResultAfter": 0,
+      "settlementTickers": [],
       "sampleTickers": [
         "KXBTCY-27JAN0100-B77500",
         "KXBTCY-27JAN0100-B47500",
@@ -1889,10 +1910,51 @@
     },
     {
       "label": "-12h",
-      "asOf": "2026-09-18T06:46:22.458Z",
-      "tradeable": 48,
-      "withRealResultAfter": 5,
+      "asOf": "2026-09-18T23:08:18.437Z",
+      "tradeable": 62,
+      "withRealResultAfter": 0,
+      "settlementTickers": [],
+      "sampleTickers": [
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B87500"
+      ],
+      "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
+    },
+    {
+      "label": "-15h",
+      "asOf": "2026-09-18T20:08:18.437Z",
+      "tradeable": 62,
+      "withRealResultAfter": 0,
+      "settlementTickers": [],
+      "sampleTickers": [
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B87500"
+      ],
+      "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
+    },
+    {
+      "label": "-24h",
+      "asOf": "2026-09-18T11:08:18.437Z",
+      "tradeable": 62,
+      "withRealResultAfter": 6,
       "settlementTickers": [
+        "KXBTC15M-26SEP181445-45",
         "KXHIGHNY-26SEP17-B82.5",
         "KXHIGHTSEA-26SEP17-B72.5",
         "KXHIGHTPHX-26SEP17-T91",
@@ -1914,52 +1976,12 @@
       "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
     },
     {
-      "label": "-15h",
-      "asOf": "2026-09-18T03:46:22.458Z",
-      "tradeable": 19,
-      "withRealResultAfter": 5,
-      "settlementTickers": [
-        "KXHIGHNY-26SEP17-B82.5",
-        "KXHIGHTSEA-26SEP17-B72.5",
-        "KXHIGHTPHX-26SEP17-T91",
-        "KXHIGHTPHX-26SEP17-B91.5",
-        "KXHIGHDEN-26SEP17-T82"
-      ],
-      "sampleTickers": [
-        "KXINXY-26DEC31H1600-B7700",
-        "KXINXY-26DEC31H1600-B7900",
-        "KXINXY-26DEC31H1600-B7500",
-        "KXINXY-26DEC31H1600-T4000",
-        "KXNASDAQ100Y-26DEC31H1600-T33000",
-        "KXINXY-26DEC31H1600-B7300",
-        "KXINXY-26DEC31H1600-B8300",
-        "KXINXY-26DEC31H1600-B6900",
-        "KXINXY-26DEC31H1600-B7100",
-        "KXINXY-26DEC31H1600-B8900"
-      ],
-      "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
-    },
-    {
-      "label": "-24h",
-      "asOf": "2026-09-17T18:46:22.458Z",
-      "tradeable": 0,
-      "withRealResultAfter": 5,
-      "settlementTickers": [
-        "KXHIGHNY-26SEP17-B82.5",
-        "KXHIGHTSEA-26SEP17-B72.5",
-        "KXHIGHTPHX-26SEP17-T91",
-        "KXHIGHTPHX-26SEP17-B91.5",
-        "KXHIGHDEN-26SEP17-T82"
-      ],
-      "sampleTickers": [],
-      "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here (it will not use a later ladder)"
-    },
-    {
       "label": "-48h",
-      "asOf": "2026-09-16T18:46:22.458Z",
+      "asOf": "2026-09-17T11:08:18.437Z",
       "tradeable": 0,
-      "withRealResultAfter": 5,
+      "withRealResultAfter": 6,
       "settlementTickers": [
+        "KXBTC15M-26SEP181445-45",
         "KXHIGHNY-26SEP17-B82.5",
         "KXHIGHTSEA-26SEP17-B72.5",
         "KXHIGHTPHX-26SEP17-T91",
@@ -1971,10 +1993,11 @@
     },
     {
       "label": "-96h",
-      "asOf": "2026-09-14T18:46:22.458Z",
+      "asOf": "2026-09-15T11:08:18.437Z",
       "tradeable": 0,
-      "withRealResultAfter": 5,
+      "withRealResultAfter": 6,
       "settlementTickers": [
+        "KXBTC15M-26SEP181445-45",
         "KXHIGHNY-26SEP17-B82.5",
         "KXHIGHTSEA-26SEP17-B72.5",
         "KXHIGHTPHX-26SEP17-T91",
@@ -1986,10 +2009,11 @@
     },
     {
       "label": "-240h",
-      "asOf": "2026-09-08T18:46:22.458Z",
+      "asOf": "2026-09-09T11:08:18.437Z",
       "tradeable": 0,
-      "withRealResultAfter": 5,
+      "withRealResultAfter": 6,
       "settlementTickers": [
+        "KXBTC15M-26SEP181445-45",
         "KXHIGHNY-26SEP17-B82.5",
         "KXHIGHTSEA-26SEP17-B72.5",
         "KXHIGHTPHX-26SEP17-T91",
@@ -2008,11 +2032,11 @@
       "cancels": 1,
       "settlements": 0,
       "marks": 23,
-      "fees": 282.5769,
-      "contracts": 117647.66,
-      "slippageCost": 344.317986,
+      "fees": 389.5129,
+      "contracts": 129602.84,
+      "slippageCost": 418.801449,
       "settlementPnl": 0,
-      "unfilled": 1319395.34
+      "unfilled": 1390791.16
     },
     "byStrategy": [
       {
@@ -2141,7 +2165,7 @@
       "attributionOk": true,
       "fills": 0,
       "contracts": 0,
-      "requested": 2000000,
+      "requested": 1757869,
       "unfilled": 0,
       "slippageCost": 0,
       "openPositions": []
@@ -2187,36 +2211,76 @@
       "openPositions": []
     },
     {
-      "strategy": "LiveFavourite_Settle",
+      "strategy": "LiveMLB_GameFavourite",
       "startingCapital": 100000,
-      "cash": 98726.16962,
-      "equity": 99997.44212,
-      "returnPct": -0.002558,
+      "cash": 100000,
+      "equity": 100000,
+      "returnPct": 0,
       "realizedPnl": 0,
-      "unrealizedPnl": -2.55788,
-      "marketValue": 1271.2725,
+      "unrealizedPnl": 0,
+      "marketValue": 0,
       "settlementPnl": 0,
       "feesPaid": 0,
-      "attribution": -2.55788,
+      "attribution": 0,
+      "attributionOk": true,
+      "fills": 0,
+      "contracts": 0,
+      "requested": 0,
+      "unfilled": 0,
+      "slippageCost": 0,
+      "openPositions": []
+    },
+    {
+      "strategy": "LiveNFL_GameFavourite",
+      "startingCapital": 100000,
+      "cash": 100000,
+      "equity": 100000,
+      "returnPct": 0,
+      "realizedPnl": 0,
+      "unrealizedPnl": 0,
+      "marketValue": 0,
+      "settlementPnl": 0,
+      "feesPaid": 0,
+      "attribution": 0,
+      "attributionOk": true,
+      "fills": 0,
+      "contracts": 0,
+      "requested": 0,
+      "unfilled": 0,
+      "slippageCost": 0,
+      "openPositions": []
+    },
+    {
+      "strategy": "LiveFavourite_Settle",
+      "startingCapital": 100000,
+      "cash": 99671.69026,
+      "equity": 99999.41926,
+      "returnPct": -0.000581,
+      "realizedPnl": 0,
+      "unrealizedPnl": -0.58074,
+      "marketValue": 327.729,
+      "settlementPnl": 0,
+      "feesPaid": 0,
+      "attribution": -0.58074,
       "attributionOk": true,
       "fills": 2,
-      "contracts": 1469,
-      "requested": 1469,
+      "contracts": 374,
+      "requested": 374,
       "unfilled": 0,
-      "slippageCost": 1.823244,
+      "slippageCost": 0.39382,
       "openPositions": [
         {
           "ticker": "KXBTCY-27JAN0100-B77500",
           "side": "no",
-          "contracts": 711,
-          "cost": 607.6834,
+          "contracts": 147,
+          "cost": 126.71929,
           "fees": 0
         },
         {
           "ticker": "KXBTCY-27JAN0100-B72500",
           "side": "no",
-          "contracts": 758,
-          "cost": 666.14698,
+          "contracts": 227,
+          "cost": 201.59045,
           "fees": 0
         }
       ]
@@ -2224,98 +2288,140 @@
     {
       "strategy": "LiveMeanRev_Spike",
       "startingCapital": 100000,
-      "cash": 99391.03875,
-      "equity": 99997.16625,
-      "returnPct": -0.002834,
+      "cash": 99955.45477,
+      "equity": 99999.25777,
+      "returnPct": -0.000742,
       "realizedPnl": 0,
-      "unrealizedPnl": -2.83375,
-      "marketValue": 606.1275,
+      "unrealizedPnl": -0.74223,
+      "marketValue": 43.803,
       "settlementPnl": 0,
       "feesPaid": 0,
-      "attribution": -2.83375,
+      "attribution": -0.74223,
       "attributionOk": true,
       "fills": 1,
-      "contracts": 711,
-      "requested": 711,
+      "contracts": 314,
+      "requested": 314,
       "unfilled": 0,
-      "slippageCost": 2.478546,
+      "slippageCost": 0.585296,
       "openPositions": [
         {
           "ticker": "KXBTCY-27JAN0100-B77500",
-          "side": "no",
-          "contracts": 711,
-          "cost": 608.96125,
+          "side": "yes",
+          "contracts": 314,
+          "cost": 44.54523,
           "fees": 0
-        }
-      ]
-    },
-    {
-      "strategy": "LiveExpiryHarvest",
-      "startingCapital": 100000,
-      "cash": 98500.1397,
-      "equity": 99990.26145,
-      "returnPct": -0.009739,
-      "realizedPnl": 0,
-      "unrealizedPnl": -7.64165,
-      "marketValue": 1490.12175,
-      "settlementPnl": 0,
-      "feesPaid": 2.0969,
-      "attribution": -9.73855,
-      "attributionOk": true,
-      "fills": 2,
-      "contracts": 1528.33,
-      "requested": 46819,
-      "unfilled": 45290.67,
-      "slippageCost": 0,
-      "openPositions": [
-        {
-          "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
-          "side": "yes",
-          "contracts": 791.83,
-          "cost": 775.9934,
-          "fees": 1.0864
-        },
-        {
-          "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
-          "side": "yes",
-          "contracts": 736.5,
-          "cost": 721.77,
-          "fees": 1.0105
         }
       ]
     },
     {
       "strategy": "LiveNCAA_GameFavourite",
       "startingCapital": 100000,
-      "cash": 99126.7783,
-      "equity": 99989.6013,
-      "returnPct": -0.010399,
+      "cash": 99106.6292,
+      "equity": 99992.531,
+      "returnPct": -0.007469,
       "realizedPnl": 0,
-      "unrealizedPnl": -8.9324,
-      "marketValue": 862.823,
+      "unrealizedPnl": -6.3528,
+      "marketValue": 885.9018,
       "settlementPnl": 0,
-      "feesPaid": 1.4663,
-      "attribution": -10.3987,
+      "feesPaid": 1.1162,
+      "attribution": -7.469,
       "attributionOk": true,
       "fills": 2,
-      "contracts": 893.24,
-      "requested": 61434,
-      "unfilled": 40132.76,
+      "contracts": 908.58,
+      "requested": 50454,
+      "unfilled": 33809.42,
       "slippageCost": 0,
       "openPositions": [
+        {
+          "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
+          "side": "no",
+          "contracts": 546.6,
+          "cost": 541.134,
+          "fees": 0.3788
+        },
         {
           "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
           "side": "yes",
           "contracts": 361.98,
           "cost": 351.1206,
           "fees": 0.7374
+        }
+      ]
+    },
+    {
+      "strategy": "LiveExpiryHarvest",
+      "startingCapital": 100000,
+      "cash": 98273.0437,
+      "equity": 99989.49595,
+      "returnPct": -0.010504,
+      "realizedPnl": 0,
+      "unrealizedPnl": -8.75315,
+      "marketValue": 1716.45225,
+      "settlementPnl": 0,
+      "feesPaid": 1.7509,
+      "attribution": -10.50405,
+      "attributionOk": true,
+      "fills": 2,
+      "contracts": 1750.63,
+      "requested": 31935,
+      "unfilled": 30184.37,
+      "slippageCost": 0,
+      "openPositions": [
+        {
+          "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+          "side": "yes",
+          "contracts": 958.8,
+          "cost": 949.212,
+          "fees": 0.6645
         },
         {
-          "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+          "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
           "side": "yes",
-          "contracts": 531.26,
-          "cost": 520.6348,
-          "fees": 0.7289
+          "contracts": 791.83,
+          "cost": 775.9934,
+          "fees": 1.0864
+        }
+      ]
+    },
+    {
+      "strategy": "LiveCheapBracket_Ladder",
+      "startingCapital": 100000,
+      "cash": 99482.07754,
+      "equity": 99955.94754,
+      "returnPct": -0.044052,
+      "realizedPnl": 0,
+      "unrealizedPnl": -44.05246,
+      "marketValue": 473.87,
+      "settlementPnl": 0,
+      "feesPaid": 0,
+      "attribution": -44.05246,
+      "attributionOk": true,
+      "fills": 3,
+      "contracts": 21153,
+      "requested": 21153,
+      "unfilled": 0,
+      "slippageCost": 32.175938,
+      "openPositions": [
+        {
+          "ticker": "KXBTCY-27JAN0100-B47500",
+          "side": "yes",
+          "contracts": 1468,
+          "cost": 19.83274,
+          "fees": 0
+        },
+        {
+          "ticker": "KXBTCY-27JAN0100-B52500",
+          "side": "yes",
+          "contracts": 863,
+          "cost": 17.55852,
+          "fees": 0
+        },
+        {
+          "ticker": "KXBTCY-27JAN0100-T149999.99",
+          "side": "yes",
+          "contracts": 18822,
+          "cost": 480.5312,
+          "fees": 0
         }
       ]
     },
@@ -2362,99 +2468,57 @@
       ]
     },
     {
-      "strategy": "LiveCheapBracket_Ladder",
-      "startingCapital": 100000,
-      "cash": 99570.08864,
-      "equity": 99948.52164,
-      "returnPct": -0.051478,
-      "realizedPnl": 0,
-      "unrealizedPnl": -51.47836,
-      "marketValue": 378.433,
-      "settlementPnl": 0,
-      "feesPaid": 0,
-      "attribution": -51.47836,
-      "attributionOk": true,
-      "fills": 3,
-      "contracts": 18466,
-      "requested": 18466,
-      "unfilled": 0,
-      "slippageCost": 34.672536,
-      "openPositions": [
-        {
-          "ticker": "KXBTCY-27JAN0100-B47500",
-          "side": "yes",
-          "contracts": 1563,
-          "cost": 20.917,
-          "fees": 0
-        },
-        {
-          "ticker": "KXBTCY-27JAN0100-B52500",
-          "side": "yes",
-          "contracts": 1755,
-          "cost": 30.46068,
-          "fees": 0
-        },
-        {
-          "ticker": "KXBTCY-27JAN0100-T149999.99",
-          "side": "yes",
-          "contracts": 15148,
-          "cost": 378.53368,
-          "fees": 0
-        }
-      ]
-    },
-    {
       "strategy": "LiveCEO_ChangeFav",
       "startingCapital": 100000,
-      "cash": 93634.8116,
-      "equity": 99787.34045,
-      "returnPct": -0.21266,
+      "cash": 93630.1276,
+      "equity": 99782.65645,
+      "returnPct": -0.217344,
       "realizedPnl": 0,
-      "unrealizedPnl": -202.46425,
+      "unrealizedPnl": -207.47445,
       "marketValue": 6152.52885,
       "settlementPnl": 0,
-      "feesPaid": 10.1953,
-      "attribution": -212.65955,
+      "feesPaid": 9.8691,
+      "attribution": -217.34355,
       "attributionOk": true,
       "fills": 2,
       "contracts": 6504.47,
-      "requested": 18669,
-      "unfilled": 12164.53,
-      "slippageCost": 104.89548,
+      "requested": 18668,
+      "unfilled": 12163.53,
+      "slippageCost": 109.905963,
       "openPositions": [
         {
           "ticker": "KXOPENAICEOCHANGE-26",
           "side": "no",
           "contracts": 2962,
-          "cost": 2883.7325,
-          "fees": 5.311
+          "cost": 2888.7325,
+          "fees": 4.9855
         },
         {
           "ticker": "TESLACEOCHANGE-26",
           "side": "no",
           "contracts": 3542.47,
-          "cost": 3471.2606,
-          "fees": 4.8843
+          "cost": 3471.2708,
+          "fees": 4.8836
         }
       ]
     },
     {
       "strategy": "LiveLongshot_Convexity",
       "startingCapital": 100000,
-      "cash": 99497.0128,
-      "equity": 99721.4314,
-      "returnPct": -0.278569,
+      "cash": 99496.0408,
+      "equity": 99720.9139,
+      "returnPct": -0.279086,
       "realizedPnl": 0,
-      "unrealizedPnl": -245.9987,
-      "marketValue": 224.4186,
+      "unrealizedPnl": -246.4532,
+      "marketValue": 224.8731,
       "settlementPnl": 0,
-      "feesPaid": 32.5699,
-      "attribution": -278.5686,
+      "feesPaid": 32.6329,
+      "attribution": -279.0861,
       "attributionOk": true,
       "fills": 3,
-      "contracts": 44883.72,
-      "requested": 1239448,
-      "unfilled": 1194564.28,
+      "contracts": 44974.62,
+      "requested": 1249448,
+      "unfilled": 1204473.38,
       "slippageCost": 21.598644,
       "openPositions": [
         {
@@ -2467,9 +2531,9 @@
         {
           "ticker": "KXNCAAFGAME-26SEP26CMUMIA-CMU",
           "side": "yes",
-          "contracts": 1967.46,
-          "cost": 19.6746,
-          "fees": 1.3635
+          "contracts": 2058.36,
+          "cost": 20.5836,
+          "fees": 1.4265
         },
         {
           "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
@@ -2483,77 +2547,77 @@
     {
       "strategy": "LiveTailPremium_NO",
       "startingCapital": 100000,
-      "cash": 71075.11146,
-      "equity": 99711.66296,
-      "returnPct": -0.288337,
+      "cash": 73330.63676,
+      "equity": 99521.18066,
+      "returnPct": -0.478819,
       "realizedPnl": 0,
-      "unrealizedPnl": -148.31424,
-      "marketValue": 28636.5515,
+      "unrealizedPnl": -337.54334,
+      "marketValue": 26190.5439,
       "settlementPnl": 0,
-      "feesPaid": 140.0228,
-      "attribution": -288.33704,
+      "feesPaid": 141.276,
+      "attribution": -478.81934,
       "attributionOk": true,
       "fills": 3,
-      "contracts": 31193.3,
-      "requested": 57027,
-      "unfilled": 25833.7,
-      "slippageCost": 5.725998,
+      "contracts": 28734.86,
+      "requested": 54326,
+      "unfilled": 25591.14,
+      "slippageCost": 0.49232,
       "openPositions": [
-        {
-          "ticker": "KXBTCY-27JAN0100-B67500",
-          "side": "no",
-          "contracts": 2973,
-          "cost": 2731.96724,
-          "fees": 0
-        },
         {
           "ticker": "KXINXY-26DEC31H1600-B8300",
           "side": "no",
-          "contracts": 19198.05,
-          "cost": 17662.206,
-          "fees": 98.9084
+          "contracts": 19446.48,
+          "cost": 17890.7616,
+          "fees": 100.1883
+        },
+        {
+          "ticker": "KXBTCY-27JAN0100-B67500",
+          "side": "no",
+          "contracts": 272,
+          "cost": 252.09224,
+          "fees": 0
         },
         {
           "ticker": "KXNASDAQ100Y-26DEC31H1600-B30750",
           "side": "no",
-          "contracts": 9022.25,
-          "cost": 8390.6925,
-          "fees": 41.1144
+          "contracts": 9016.38,
+          "cost": 8385.2334,
+          "fees": 41.0877
         }
       ]
     },
     {
       "strategy": "LiveMomentum_Bars",
       "startingCapital": 100000,
-      "cash": 98138.87361,
-      "equity": 99704.81611,
-      "returnPct": -0.295184,
+      "cash": 96486.5925,
+      "equity": 99446.5225,
+      "returnPct": -0.553477,
       "realizedPnl": 0,
-      "unrealizedPnl": -202.33579,
-      "marketValue": 1565.9425,
+      "unrealizedPnl": -353.9873,
+      "marketValue": 2959.93,
       "settlementPnl": 0,
-      "feesPaid": 92.8481,
-      "attribution": -295.18389,
+      "feesPaid": 199.4902,
+      "attribution": -553.4775,
       "attributionOk": true,
       "fills": 2,
-      "contracts": 10779,
-      "requested": 10779,
-      "unfilled": 0,
-      "slippageCost": 153.822643,
+      "contracts": 23669.08,
+      "requested": 106829,
+      "unfilled": 83159.92,
+      "slippageCost": 234.348573,
       "openPositions": [
         {
-          "ticker": "KXBTCY-27JAN0100-B77500",
+          "ticker": "KXINXY-26DEC31H1600-B7500",
           "side": "yes",
-          "contracts": 1195,
-          "cost": 177.55949,
-          "fees": 0
+          "contracts": 23410.08,
+          "cost": 3274.9046,
+          "fees": 197.1721
         },
         {
-          "ticker": "KXINXY-26DEC31H1600-B7700",
+          "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
           "side": "yes",
-          "contracts": 9584,
-          "cost": 1590.7188,
-          "fees": 92.8481
+          "contracts": 259,
+          "cost": 39.0127,
+          "fees": 2.3181
         }
       ]
     }
@@ -2584,14 +2648,30 @@
       "evidence": []
     },
     {
+      "strategy": "LiveMLB_GameFavourite",
+      "verdict": "NO TRADES",
+      "headline": "This strategy placed no fillable order on the desk universe at this cut-off.",
+      "worked": [],
+      "hurt": [],
+      "evidence": []
+    },
+    {
+      "strategy": "LiveNFL_GameFavourite",
+      "verdict": "NO TRADES",
+      "headline": "This strategy placed no fillable order on the desk universe at this cut-off.",
+      "worked": [],
+      "hurt": [],
+      "evidence": []
+    },
+    {
       "strategy": "LiveFavourite_Settle",
       "verdict": "NEGATIVE",
-      "headline": "LiveFavourite_Settle returned -0.0026% ($-2.56) over the desk window ending 2026-09-18.",
+      "headline": "LiveFavourite_Settle returned -0.0006% ($-0.58) over the desk window ending 2026-09-19.",
       "worked": [
-        "2 taker fill(s) at an average 1.50 tick(s) of slippage"
+        "2 taker fill(s) at an average 1.00 tick(s) of slippage"
       ],
       "hurt": [
-        "$2.56 of unrealized losses marked from captured quotes"
+        "$0.58 of unrealized losses marked from captured quotes"
       ],
       "evidence": [
         {
@@ -2612,7 +2692,7 @@
         },
         {
           "label": "contracts filled",
-          "value": 1469
+          "value": 374
         },
         {
           "label": "unfilled contracts",
@@ -2627,12 +2707,12 @@
     {
       "strategy": "LiveMeanRev_Spike",
       "verdict": "NEGATIVE",
-      "headline": "LiveMeanRev_Spike returned -0.0028% ($-2.83) over the desk window ending 2026-09-18.",
+      "headline": "LiveMeanRev_Spike returned -0.0007% ($-0.74) over the desk window ending 2026-09-19.",
       "worked": [
-        "1 taker fill(s) at an average 3.00 tick(s) of slippage"
+        "1 taker fill(s) at an average 2.00 tick(s) of slippage"
       ],
       "hurt": [
-        "$2.83 of unrealized losses marked from captured quotes"
+        "$0.74 of unrealized losses marked from captured quotes"
       ],
       "evidence": [
         {
@@ -2653,54 +2733,11 @@
         },
         {
           "label": "contracts filled",
-          "value": 711
+          "value": 314
         },
         {
           "label": "unfilled contracts",
           "value": 0
-        },
-        {
-          "label": "attribution check",
-          "value": "equity change = realized + unrealized − fees (residual < $0.01)"
-        }
-      ]
-    },
-    {
-      "strategy": "LiveExpiryHarvest",
-      "verdict": "NEGATIVE",
-      "headline": "LiveExpiryHarvest returned -0.0097% ($-9.74) over the desk window ending 2026-09-18.",
-      "worked": [
-        "2 taker fill(s) at an average 0.00 tick(s) of slippage"
-      ],
-      "hurt": [
-        "$7.64 of unrealized losses marked from captured quotes",
-        "$2.10 of official fees (0.002% of starting capital)",
-        "45290.67 contract(s) never filled — real depth ran out, and the desk never invents a price"
-      ],
-      "evidence": [
-        {
-          "label": "fills",
-          "value": 2
-        },
-        {
-          "label": "taker / maker",
-          "value": "2 / 0"
-        },
-        {
-          "label": "real settlements",
-          "value": 0
-        },
-        {
-          "label": "fees paid",
-          "value": "$2.10"
-        },
-        {
-          "label": "contracts filled",
-          "value": 1528.33
-        },
-        {
-          "label": "unfilled contracts",
-          "value": 45290.67
         },
         {
           "label": "attribution check",
@@ -2711,14 +2748,14 @@
     {
       "strategy": "LiveNCAA_GameFavourite",
       "verdict": "NEGATIVE",
-      "headline": "LiveNCAA_GameFavourite returned -0.0104% ($-10.40) over the desk window ending 2026-09-18.",
+      "headline": "LiveNCAA_GameFavourite returned -0.0075% ($-7.47) over the desk window ending 2026-09-19.",
       "worked": [
         "2 taker fill(s) at an average 0.00 tick(s) of slippage"
       ],
       "hurt": [
-        "$8.93 of unrealized losses marked from captured quotes",
-        "$1.47 of official fees (0.001% of starting capital)",
-        "40132.76 contract(s) never filled — real depth ran out, and the desk never invents a price"
+        "$6.35 of unrealized losses marked from captured quotes",
+        "$1.12 of official fees (0.001% of starting capital)",
+        "33809.42 contract(s) never filled — real depth ran out, and the desk never invents a price"
       ],
       "evidence": [
         {
@@ -2735,15 +2772,99 @@
         },
         {
           "label": "fees paid",
-          "value": "$1.47"
+          "value": "$1.12"
         },
         {
           "label": "contracts filled",
-          "value": 893.24
+          "value": 908.58
         },
         {
           "label": "unfilled contracts",
-          "value": 40132.76
+          "value": 33809.42
+        },
+        {
+          "label": "attribution check",
+          "value": "equity change = realized + unrealized − fees (residual < $0.01)"
+        }
+      ]
+    },
+    {
+      "strategy": "LiveExpiryHarvest",
+      "verdict": "NEGATIVE",
+      "headline": "LiveExpiryHarvest returned -0.0105% ($-10.50) over the desk window ending 2026-09-19.",
+      "worked": [
+        "2 taker fill(s) at an average 0.00 tick(s) of slippage"
+      ],
+      "hurt": [
+        "$8.75 of unrealized losses marked from captured quotes",
+        "$1.75 of official fees (0.002% of starting capital)",
+        "30184.37 contract(s) never filled — real depth ran out, and the desk never invents a price"
+      ],
+      "evidence": [
+        {
+          "label": "fills",
+          "value": 2
+        },
+        {
+          "label": "taker / maker",
+          "value": "2 / 0"
+        },
+        {
+          "label": "real settlements",
+          "value": 0
+        },
+        {
+          "label": "fees paid",
+          "value": "$1.75"
+        },
+        {
+          "label": "contracts filled",
+          "value": 1750.63
+        },
+        {
+          "label": "unfilled contracts",
+          "value": 30184.37
+        },
+        {
+          "label": "attribution check",
+          "value": "equity change = realized + unrealized − fees (residual < $0.01)"
+        }
+      ]
+    },
+    {
+      "strategy": "LiveCheapBracket_Ladder",
+      "verdict": "NEGATIVE",
+      "headline": "LiveCheapBracket_Ladder returned -0.0441% ($-44.05) over the desk window ending 2026-09-19.",
+      "worked": [
+        "3 taker fill(s) at an average 1.67 tick(s) of slippage"
+      ],
+      "hurt": [
+        "$44.05 of unrealized losses marked from captured quotes"
+      ],
+      "evidence": [
+        {
+          "label": "fills",
+          "value": 3
+        },
+        {
+          "label": "taker / maker",
+          "value": "3 / 0"
+        },
+        {
+          "label": "real settlements",
+          "value": 0
+        },
+        {
+          "label": "fees paid",
+          "value": "$0.00"
+        },
+        {
+          "label": "contracts filled",
+          "value": 21153
+        },
+        {
+          "label": "unfilled contracts",
+          "value": 0
         },
         {
           "label": "attribution check",
@@ -2754,7 +2875,7 @@
     {
       "strategy": "LiveFDA_DecisionPremium",
       "verdict": "NEGATIVE",
-      "headline": "LiveFDA_DecisionPremium returned -0.0501% ($-50.10) over the desk window ending 2026-09-18.",
+      "headline": "LiveFDA_DecisionPremium returned -0.0501% ($-50.10) over the desk window ending 2026-09-19.",
       "worked": [
         "3 taker fill(s) at an average 1.00 tick(s) of slippage"
       ],
@@ -2795,57 +2916,16 @@
       ]
     },
     {
-      "strategy": "LiveCheapBracket_Ladder",
-      "verdict": "NEGATIVE",
-      "headline": "LiveCheapBracket_Ladder returned -0.0515% ($-51.48) over the desk window ending 2026-09-18.",
-      "worked": [
-        "3 taker fill(s) at an average 1.33 tick(s) of slippage"
-      ],
-      "hurt": [
-        "$51.48 of unrealized losses marked from captured quotes"
-      ],
-      "evidence": [
-        {
-          "label": "fills",
-          "value": 3
-        },
-        {
-          "label": "taker / maker",
-          "value": "3 / 0"
-        },
-        {
-          "label": "real settlements",
-          "value": 0
-        },
-        {
-          "label": "fees paid",
-          "value": "$0.00"
-        },
-        {
-          "label": "contracts filled",
-          "value": 18466
-        },
-        {
-          "label": "unfilled contracts",
-          "value": 0
-        },
-        {
-          "label": "attribution check",
-          "value": "equity change = realized + unrealized − fees (residual < $0.01)"
-        }
-      ]
-    },
-    {
       "strategy": "LiveCEO_ChangeFav",
       "verdict": "NEGATIVE",
-      "headline": "LiveCEO_ChangeFav returned -0.2127% ($-212.66) over the desk window ending 2026-09-18.",
+      "headline": "LiveCEO_ChangeFav returned -0.2173% ($-217.34) over the desk window ending 2026-09-19.",
       "worked": [
-        "2 taker fill(s) at an average 1.50 tick(s) of slippage"
+        "2 taker fill(s) at an average 2.00 tick(s) of slippage"
       ],
       "hurt": [
-        "$202.46 of unrealized losses marked from captured quotes",
-        "$10.20 of official fees (0.010% of starting capital)",
-        "12164.53 contract(s) never filled — real depth ran out, and the desk never invents a price"
+        "$207.47 of unrealized losses marked from captured quotes",
+        "$9.87 of official fees (0.010% of starting capital)",
+        "12163.53 contract(s) never filled — real depth ran out, and the desk never invents a price"
       ],
       "evidence": [
         {
@@ -2862,7 +2942,7 @@
         },
         {
           "label": "fees paid",
-          "value": "$10.20"
+          "value": "$9.87"
         },
         {
           "label": "contracts filled",
@@ -2870,7 +2950,7 @@
         },
         {
           "label": "unfilled contracts",
-          "value": 12164.53
+          "value": 12163.53
         },
         {
           "label": "attribution check",
@@ -2881,14 +2961,14 @@
     {
       "strategy": "LiveLongshot_Convexity",
       "verdict": "NEGATIVE",
-      "headline": "LiveLongshot_Convexity returned -0.2786% ($-278.57) over the desk window ending 2026-09-18.",
+      "headline": "LiveLongshot_Convexity returned -0.2791% ($-279.09) over the desk window ending 2026-09-19.",
       "worked": [
         "3 taker fill(s) at an average 0.00 tick(s) of slippage"
       ],
       "hurt": [
-        "$246.00 of unrealized losses marked from captured quotes",
-        "$32.57 of official fees (0.033% of starting capital)",
-        "1194564.28 contract(s) never filled — real depth ran out, and the desk never invents a price"
+        "$246.45 of unrealized losses marked from captured quotes",
+        "$32.63 of official fees (0.033% of starting capital)",
+        "1204473.38 contract(s) never filled — real depth ran out, and the desk never invents a price"
       ],
       "evidence": [
         {
@@ -2905,15 +2985,15 @@
         },
         {
           "label": "fees paid",
-          "value": "$32.57"
+          "value": "$32.63"
         },
         {
           "label": "contracts filled",
-          "value": 44883.72
+          "value": 44974.62
         },
         {
           "label": "unfilled contracts",
-          "value": 1194564.28
+          "value": 1204473.38
         },
         {
           "label": "attribution check",
@@ -2924,14 +3004,14 @@
     {
       "strategy": "LiveTailPremium_NO",
       "verdict": "NEGATIVE",
-      "headline": "LiveTailPremium_NO returned -0.2883% ($-288.34) over the desk window ending 2026-09-18.",
+      "headline": "LiveTailPremium_NO returned -0.4788% ($-478.82) over the desk window ending 2026-09-19.",
       "worked": [
         "3 taker fill(s) at an average 0.67 tick(s) of slippage"
       ],
       "hurt": [
-        "$148.31 of unrealized losses marked from captured quotes",
-        "$140.02 of official fees (0.140% of starting capital)",
-        "25833.7 contract(s) never filled — real depth ran out, and the desk never invents a price"
+        "$337.54 of unrealized losses marked from captured quotes",
+        "$141.28 of official fees (0.141% of starting capital)",
+        "25591.14 contract(s) never filled — real depth ran out, and the desk never invents a price"
       ],
       "evidence": [
         {
@@ -2948,15 +3028,15 @@
         },
         {
           "label": "fees paid",
-          "value": "$140.02"
+          "value": "$141.28"
         },
         {
           "label": "contracts filled",
-          "value": 31193.3
+          "value": 28734.86
         },
         {
           "label": "unfilled contracts",
-          "value": 25833.7
+          "value": 25591.14
         },
         {
           "label": "attribution check",
@@ -2967,13 +3047,14 @@
     {
       "strategy": "LiveMomentum_Bars",
       "verdict": "NEGATIVE",
-      "headline": "LiveMomentum_Bars returned -0.2952% ($-295.18) over the desk window ending 2026-09-18.",
+      "headline": "LiveMomentum_Bars returned -0.5535% ($-553.48) over the desk window ending 2026-09-19.",
       "worked": [
-        "2 taker fill(s) at an average 1.50 tick(s) of slippage"
+        "2 taker fill(s) at an average 1.00 tick(s) of slippage"
       ],
       "hurt": [
-        "$202.34 of unrealized losses marked from captured quotes",
-        "$92.85 of official fees (0.093% of starting capital)"
+        "$353.99 of unrealized losses marked from captured quotes",
+        "$199.49 of official fees (0.199% of starting capital)",
+        "83159.92 contract(s) never filled — real depth ran out, and the desk never invents a price"
       ],
       "evidence": [
         {
@@ -2990,15 +3071,15 @@
         },
         {
           "label": "fees paid",
-          "value": "$92.85"
+          "value": "$199.49"
         },
         {
           "label": "contracts filled",
-          "value": 10779
+          "value": 23669.08
         },
         {
           "label": "unfilled contracts",
-          "value": 0
+          "value": 83159.92
         },
         {
           "label": "attribution check",
@@ -3015,7 +3096,10 @@
       "deskTracked": true,
       "fills": 2,
       "settlements": "no",
-      "returnPct": -0.002558,
+      "returnPct": -0.000581,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3025,7 +3109,10 @@
       "deskTracked": true,
       "fills": 3,
       "settlements": "no",
-      "returnPct": -0.288337,
+      "returnPct": -0.478819,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3035,7 +3122,10 @@
       "deskTracked": true,
       "fills": 3,
       "settlements": "no",
-      "returnPct": -0.278569,
+      "returnPct": -0.279086,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3045,7 +3135,10 @@
       "deskTracked": true,
       "fills": 3,
       "settlements": "no",
-      "returnPct": -0.051478,
+      "returnPct": -0.044052,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3056,6 +3149,9 @@
       "fills": 0,
       "settlements": "no",
       "returnPct": 0,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Runs on the desk but placed no order that the real ladder could fill (reported as unfilled, never priced)."
     },
     {
@@ -3066,6 +3162,9 @@
       "fills": 0,
       "settlements": "no",
       "returnPct": 0,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Runs on the desk but placed no order that the real ladder could fill (reported as unfilled, never priced)."
     },
     {
@@ -3075,7 +3174,10 @@
       "deskTracked": true,
       "fills": 2,
       "settlements": "no",
-      "returnPct": -0.295184,
+      "returnPct": -0.553477,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3085,7 +3187,10 @@
       "deskTracked": true,
       "fills": 1,
       "settlements": "no",
-      "returnPct": -0.002834,
+      "returnPct": -0.000742,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3095,7 +3200,10 @@
       "deskTracked": true,
       "fills": 2,
       "settlements": "no",
-      "returnPct": -0.009739,
+      "returnPct": -0.010504,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3106,6 +3214,9 @@
       "fills": 3,
       "settlements": "no",
       "returnPct": -0.050103,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3115,7 +3226,10 @@
       "deskTracked": true,
       "fills": 2,
       "settlements": "no",
-      "returnPct": -0.010399,
+      "returnPct": -0.007469,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
     },
     {
@@ -3126,6 +3240,9 @@
       "fills": 0,
       "settlements": "no",
       "returnPct": 0,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Runs on the desk but placed no order that the real ladder could fill (reported as unfilled, never priced)."
     },
     {
@@ -3135,21 +3252,50 @@
       "deskTracked": true,
       "fills": 2,
       "settlements": "no",
-      "returnPct": -0.21266,
+      "returnPct": -0.217344,
+      "watched": null,
+      "watchedContracts": null,
+      "watchedTradeable": null,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
+    },
+    {
+      "strategy": "LiveMLB_GameFavourite",
+      "name": "Desk: MLB favourite buy-and-settle (MasterSite S09, MLB-Live-PBP)",
+      "source": "S09 · MLB-Live-PBP (MasterSite) — the Kalshi MLB markets are official and captured here; the project side still needs a point-in-time play-by-play archive",
+      "deskTracked": true,
+      "fills": 0,
+      "settlements": "no",
+      "returnPct": 0,
+      "watched": "/^KXMLB/i",
+      "watchedContracts": 0,
+      "watchedTradeable": 0,
+      "note": "0 of the 69 desk contracts match the series it watches and 0 of those had a captured ladder at this cut-off; 25 further open contract(s) in the tracked list match it but are QUOTED ONLY (no captured ladder) — with no ladder there is nothing to price, so it placed no order."
+    },
+    {
+      "strategy": "LiveNFL_GameFavourite",
+      "name": "Desk: NFL favourite buy-and-settle (MasterSite S08, NFL-scoreboard)",
+      "source": "S08 · NFL-scoreboard (MasterSite) — the Kalshi NFL markets are official and captured here; the project side still needs a point-in-time scoreboard archive",
+      "deskTracked": true,
+      "fills": 0,
+      "settlements": "no",
+      "returnPct": 0,
+      "watched": "/^KXNFL/i",
+      "watchedContracts": 0,
+      "watchedTradeable": 0,
+      "note": "0 of the 69 desk contracts match the series it watches and 0 of those had a captured ladder at this cut-off; 23 further open contract(s) in the tracked list match it but are QUOTED ONLY (no captured ladder) — with no ladder there is nothing to price, so it placed no order."
     }
   ],
   "audit": {
     "ok": true,
-    "checkedAt": "2026-09-18T22:02:46.106Z",
+    "checkedAt": "2026-09-19T14:51:44.172Z",
     "totals": {
       "orders": 26,
       "fills": 23,
       "takerFills": 23,
       "makerFills": 0,
       "settlements": 0,
-      "contracts": 117647.66,
-      "fees": 282.5769
+      "contracts": 129602.84,
+      "fees": 389.5129
     },
     "checks": [
       {
@@ -3210,7 +3356,7 @@
       {
         "name": "equity change = realized + unrealized - fees (residual < $0.01)",
         "ok": true,
-        "detail": "LiveDepthSweep_Taker: residual 0; LiveMakerTouch: residual 0; LiveNBA_GameFavourite: residual 0; LiveFavourite_Settle: residual 0; LiveMeanRev_Spike: residual 0; LiveExpiryHarvest: residual 0; LiveNCAA_GameFavourite: residual 0; LiveFDA_DecisionPremium: residual 0; LiveCheapBracket_Ladder: residual 0; LiveCEO_ChangeFav: residual 0; LiveLongshot_Convexity: residual 0; LiveTailPremium_NO: residual 0; LiveMomentum_Bars: residual 0"
+        "detail": "LiveDepthSweep_Taker: residual 0; LiveMakerTouch: residual 0; LiveNBA_GameFavourite: residual 0; LiveMLB_GameFavourite: residual 0; LiveNFL_GameFavourite: residual 0; LiveFavourite_Settle: residual 0; LiveMeanRev_Spike: residual 0; LiveNCAA_GameFavourite: residual 0; LiveExpiryHarvest: residual 0; LiveCheapBracket_Ladder: residual 0; LiveFDA_DecisionPremium: residual 0; LiveCEO_ChangeFav: residual 0; LiveLongshot_Convexity: residual 0; LiveTailPremium_NO: residual 0; LiveMomentum_Bars: residual 0"
       },
       {
         "name": "no result claims a return without at least one real fill or settlement",
