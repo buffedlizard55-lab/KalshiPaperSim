@@ -1,9 +1,19 @@
 {
-  "request": 1,
+  "request": 2,
   "enabled": true,
   "note": "Commit a change to this file to request an immediate FDA signal capture (.github/workflows/fda-signals.yml). It runs scripts/archive-fda-signals.mjs, which queries the official openFDA Drugs@FDA endpoint for every tracked KXFDA* market's subject and appends a point-in-time snapshot. Bump `request` so the push is a real change.",
-  "requested_at": "2026-09-19T19:45:00.000Z",
-  "requested_by": "arena session 01a0bad9 — ROADMAP Next #3 (the FDA half): a point-in-time signal archive for the FDA markets, closed with an official keyless source (api.open.fda.gov/drug/drugsfda.json) instead of a screen-scrape.",
-  "subjects_preview": ["comp360-psilocybin", "retatrutide", "camizestrant", "cytisinicline", "gedatolisib", "midomafetamine-mdma"],
-  "excluded_preview": ["KXFDAANNOUNCE (announcement, not an application record)", "KXFDAAPPROVALPSYCHEDELIC (composite)"]
+  "requested_at": "2026-09-19T20:50:00.000Z",
+  "requested_by": "arena session 01a0bad9 \u2014 re-run after the self-diagnosing capture fix: the first scheduled capture failed and its runner log is not readable from the dev sandbox, so the fixed script now commits its per-subject run report.",
+  "subjects_preview": [
+    "comp360-psilocybin",
+    "retatrutide",
+    "camizestrant",
+    "cytisinicline",
+    "gedatolisib",
+    "midomafetamine-mdma"
+  ],
+  "excluded_preview": [
+    "KXFDAANNOUNCE (announcement, not an application record)",
+    "KXFDAAPPROVALPSYCHEDELIC (composite)"
+  ]
 }
