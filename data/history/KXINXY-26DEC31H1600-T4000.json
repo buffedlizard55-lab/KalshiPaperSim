@@ -5966,6 +5966,26 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1789790400,
+      "open_interest_fp": "410620.57",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -6872,8 +6892,8 @@
     "yes_sub_title": "3,999.99 or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-T4000",
-  "market_captured_at": "2026-09-18T18:40:43.346Z",
+  "market_captured_at": "2026-09-19T11:02:02.364Z",
   "status": "active",
-  "last_ingested_at": "2026-09-18T18:40:43.870Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1789531201&end_ts=1789756843&period_interval=1440"
+  "last_ingested_at": "2026-09-19T11:02:02.926Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1789531201&end_ts=1789815722&period_interval=1440"
 }

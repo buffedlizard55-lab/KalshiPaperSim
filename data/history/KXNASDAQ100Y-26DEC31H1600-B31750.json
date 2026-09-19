@@ -5635,6 +5635,26 @@
         "low_dollars": "0.0400",
         "open_dollars": "0.0400"
       }
+    },
+    {
+      "end_period_ts": 1789790400,
+      "open_interest_fp": "86461.23",
+      "price": {
+        "previous_dollars": "0.0500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      }
     }
   ],
   "books": [
@@ -6790,12 +6810,12 @@
     "yes_ask_dollars": "0.0500",
     "yes_ask_size_fp": "3913.95",
     "yes_bid_dollars": "0.0400",
-    "yes_bid_size_fp": "104844.91",
+    "yes_bid_size_fp": "4844.91",
     "yes_sub_title": "31,500 to 31,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31750",
-  "market_captured_at": "2026-09-18T18:40:49.731Z",
+  "market_captured_at": "2026-09-19T11:02:07.634Z",
   "status": "active",
-  "last_ingested_at": "2026-09-18T18:40:50.253Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B31750/candlesticks?start_ts=1789704001&end_ts=1789756849&period_interval=1440"
+  "last_ingested_at": "2026-09-19T11:02:08.196Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B31750/candlesticks?start_ts=1789704001&end_ts=1789815727&period_interval=1440"
 }

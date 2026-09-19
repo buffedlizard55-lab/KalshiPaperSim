@@ -1568,6 +1568,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T11:05:53.079Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP142140MIAAZ-AZ/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1625,9 +1635,9 @@
     "yes_sub_title": "Arizona"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP142140MIAAZ-AZ",
-  "market_captured_at": "2026-09-18T18:44:15.507Z",
+  "market_captured_at": "2026-09-19T11:05:52.354Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-18T18:44:16.126Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP142140MIAAZ-AZ/candlesticks?start_ts=1789448401&end_ts=1789757055&period_interval=60"
+  "last_ingested_at": "2026-09-19T11:05:53.018Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP142140MIAAZ-AZ/candlesticks?start_ts=1789448401&end_ts=1789815952&period_interval=60"
 }

@@ -5115,6 +5115,31 @@
         "low_dollars": "0.1440",
         "open_dollars": "0.1450"
       }
+    },
+    {
+      "end_period_ts": 1789790400,
+      "open_interest_fp": "288065.23",
+      "price": {
+        "close_dollars": "0.1410",
+        "high_dollars": "0.1510",
+        "low_dollars": "0.1380",
+        "mean_dollars": "0.1432",
+        "open_dollars": "0.1480",
+        "previous_dollars": "0.1490"
+      },
+      "volume_fp": "10660.15",
+      "yes_ask": {
+        "close_dollars": "0.1410",
+        "high_dollars": "0.1510",
+        "low_dollars": "0.1390",
+        "open_dollars": "0.1480"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1400",
+        "high_dollars": "0.1490",
+        "low_dollars": "0.1360",
+        "open_dollars": "0.1470"
+      }
     }
   ],
   "books": [
@@ -12486,19 +12511,19 @@
     "expiration_time": "2027-01-08T05:00:00Z",
     "expiration_value": "",
     "floor_strike": 75000,
-    "last_price_dollars": "0.1510",
+    "last_price_dollars": "0.1380",
     "latest_expiration_time": "2027-01-08T05:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.8530",
-    "no_bid_dollars": "0.8520",
+    "no_ask_dollars": "0.8610",
+    "no_bid_dollars": "0.8600",
     "no_sub_title": "75,000 to 79,999.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "288264.42",
+    "open_interest_fp": "288112.85",
     "open_time": "2026-02-25T23:25:29Z",
     "previous_price_dollars": "0.1460",
-    "previous_yes_ask_dollars": "0.1460",
-    "previous_yes_bid_dollars": "0.1450",
+    "previous_yes_ask_dollars": "0.1470",
+    "previous_yes_bid_dollars": "0.1460",
     "price_level_structure": "deci_cent",
     "price_ranges": [
       {
@@ -12516,17 +12541,17 @@
     "ticker": "KXBTCY-27JAN0100-B77500",
     "title": "BTC price  on Jan 1, 2027?",
     "updated_time": "2026-04-09T10:28:28.834166Z",
-    "volume_24h_fp": "6524.99",
-    "volume_fp": "2689100.77",
-    "yes_ask_dollars": "0.1480",
-    "yes_ask_size_fp": "712.00",
-    "yes_bid_dollars": "0.1470",
-    "yes_bid_size_fp": "23.15",
+    "volume_24h_fp": "10481.68",
+    "volume_fp": "2696504.19",
+    "yes_ask_dollars": "0.1400",
+    "yes_ask_size_fp": "9.45",
+    "yes_bid_dollars": "0.1390",
+    "yes_bid_size_fp": "48.00",
     "yes_sub_title": "75,000 to 79,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B77500",
-  "market_captured_at": "2026-09-18T18:40:09.208Z",
+  "market_captured_at": "2026-09-19T11:01:34.260Z",
   "status": "active",
-  "last_ingested_at": "2026-09-18T18:40:09.729Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B77500/candlesticks?start_ts=1789704001&end_ts=1789756809&period_interval=1440"
+  "last_ingested_at": "2026-09-19T11:01:34.822Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B77500/candlesticks?start_ts=1789704001&end_ts=1789815694&period_interval=1440"
 }
