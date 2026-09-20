@@ -53,6 +53,22 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Sync with the branch tip (best-effort)
+        continue-on-error: true
+        run: |
+          # A run that sat in the data-pipeline queue checked out the commit
+          # the queue STARTED at; meanwhile the queue occupant (or a merge)
+          # may have advanced the branch. Fast-forward onto the tip BEFORE
+          # capturing: the capture reads the newest store, the generated
+          # modules are regenerated from the newest data, and the push at the
+          # end usually needs no rebase at all. Best-effort by design: if the
+          # histories cannot fast-forward we proceed anyway and the race
+          # guard handles the push (the queued-run race behind
+          # irregularity #51).
+          git fetch --deepen=100 origin "${GITHUB_REF_NAME}"
+          git merge --ff-only "origin/${GITHUB_REF_NAME}"
+
+
       - name: Capture the point-in-time Drugs@FDA state
         run: |
           set -o pipefail
@@ -95,6 +111,16 @@ jobs:
         with:
           name: fda-signals-log
           path: fda-signals.log
+          if-no-files-found: warn
+
+      # Same insurance as the weather archive: a dead commit step must not
+      # take fresh captures with it (irregularity #51).
+      - name: Keep the captured snapshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fda-signal-store-${{ github.run_id }}
+          path: data/fda-signals/
           if-no-files-found: warn
 
       # An incomplete capture must be visible on the run, not buried in the

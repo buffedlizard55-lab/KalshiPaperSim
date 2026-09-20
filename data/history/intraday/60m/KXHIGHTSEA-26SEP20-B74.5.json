@@ -177,6 +177,76 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1789855200,
+      "open_interest_fp": "842.62",
+      "price": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0944",
+        "open_dollars": "0.1300",
+        "previous_dollars": "0.1400"
+      },
+      "volume_fp": "14000.30",
+      "yes_ask": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.1400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1500",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.1300"
+      }
+    },
+    {
+      "end_period_ts": 1789858800,
+      "open_interest_fp": "392.29",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.0400",
+        "mean_dollars": "0.0972",
+        "open_dollars": "0.1500",
+        "previous_dollars": "0.1600"
+      },
+      "volume_fp": "4686.75",
+      "yes_ask": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.1600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.1500"
+      }
+    },
+    {
+      "end_period_ts": 1789862400,
+      "open_interest_fp": "392.29",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0600"
+      }
     }
   ],
   "books": [
@@ -415,6 +485,246 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:06:43.226Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26SEP20-B74.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "430.00"
+            ],
+            [
+              "0.0200",
+              "112.00"
+            ],
+            [
+              "0.0300",
+              "42.00"
+            ],
+            [
+              "0.0500",
+              "76.00"
+            ],
+            [
+              "0.0700",
+              "50.00"
+            ],
+            [
+              "0.1000",
+              "10.00"
+            ],
+            [
+              "0.1100",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "40.00"
+            ],
+            [
+              "0.1700",
+              "32.00"
+            ],
+            [
+              "0.1800",
+              "3.00"
+            ],
+            [
+              "0.2000",
+              "10.00"
+            ],
+            [
+              "0.2400",
+              "25.00"
+            ],
+            [
+              "0.2500",
+              "1.00"
+            ],
+            [
+              "0.3000",
+              "10.00"
+            ],
+            [
+              "0.3100",
+              "17.00"
+            ],
+            [
+              "0.3200",
+              "625.00"
+            ],
+            [
+              "0.3800",
+              "350.00"
+            ],
+            [
+              "0.3900",
+              "59.00"
+            ],
+            [
+              "0.4000",
+              "10.00"
+            ],
+            [
+              "0.4600",
+              "4.00"
+            ],
+            [
+              "0.4800",
+              "10.00"
+            ],
+            [
+              "0.5000",
+              "10.00"
+            ],
+            [
+              "0.5500",
+              "82.00"
+            ],
+            [
+              "0.5700",
+              "4.00"
+            ],
+            [
+              "0.6000",
+              "76.00"
+            ],
+            [
+              "0.6200",
+              "4.00"
+            ],
+            [
+              "0.6500",
+              "66.00"
+            ],
+            [
+              "0.6700",
+              "1.18"
+            ],
+            [
+              "0.6800",
+              "1.00"
+            ],
+            [
+              "0.6900",
+              "105.00"
+            ],
+            [
+              "0.7000",
+              "82.00"
+            ],
+            [
+              "0.7100",
+              "6.00"
+            ],
+            [
+              "0.7200",
+              "11.00"
+            ],
+            [
+              "0.7300",
+              "6.00"
+            ],
+            [
+              "0.7400",
+              "7.00"
+            ],
+            [
+              "0.7500",
+              "7.44"
+            ],
+            [
+              "0.7600",
+              "3.00"
+            ],
+            [
+              "0.7700",
+              "35.77"
+            ],
+            [
+              "0.7800",
+              "80.43"
+            ],
+            [
+              "0.7900",
+              "38.18"
+            ],
+            [
+              "0.8000",
+              "41.69"
+            ],
+            [
+              "0.8100",
+              "21.00"
+            ],
+            [
+              "0.8200",
+              "5.18"
+            ],
+            [
+              "0.8300",
+              "8.40"
+            ],
+            [
+              "0.8400",
+              "0.28"
+            ],
+            [
+              "0.8500",
+              "11.95"
+            ],
+            [
+              "0.8700",
+              "9.90"
+            ],
+            [
+              "0.8800",
+              "50.00"
+            ],
+            [
+              "0.8900",
+              "5.00"
+            ],
+            [
+              "0.9000",
+              "51.00"
+            ],
+            [
+              "0.9100",
+              "11.00"
+            ],
+            [
+              "0.9300",
+              "59.00"
+            ],
+            [
+              "0.9400",
+              "8.00"
+            ],
+            [
+              "0.9500",
+              "65.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1101.00"
+            ],
+            [
+              "0.0200",
+              "129.86"
+            ],
+            [
+              "0.0300",
+              "36.59"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -429,16 +739,16 @@
     "expiration_time": "2026-09-27T14:00:00Z",
     "expiration_value": "",
     "floor_strike": 74,
-    "last_price_dollars": "0.1600",
+    "last_price_dollars": "0.0400",
     "latest_expiration_time": "2026-09-27T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.8500",
-    "no_bid_dollars": "0.8400",
+    "no_ask_dollars": "0.9700",
+    "no_bid_dollars": "0.9500",
     "no_sub_title": "74° to 75°",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-21T14:00:00Z",
-    "open_interest_fp": "645.72",
+    "open_interest_fp": "392.29",
     "open_time": "2026-09-19T14:00:00Z",
     "previous_price_dollars": "0.0000",
     "previous_yes_ask_dollars": "0.0000",
@@ -460,17 +770,17 @@
     "ticker": "KXHIGHTSEA-26SEP20-B74.5",
     "title": "Will the maximum temperature be 74-75° on Sep 20, 2026?",
     "updated_time": "2026-09-19T14:00:02.265079Z",
-    "volume_24h_fp": "24688.55",
-    "volume_fp": "26561.97",
-    "yes_ask_dollars": "0.1600",
-    "yes_ask_size_fp": "92.95",
-    "yes_bid_dollars": "0.1500",
-    "yes_bid_size_fp": "1.00",
+    "volume_24h_fp": "39219.45",
+    "volume_fp": "39219.45",
+    "yes_ask_dollars": "0.0500",
+    "yes_ask_size_fp": "65.00",
+    "yes_bid_dollars": "0.0300",
+    "yes_bid_size_fp": "36.59",
     "yes_sub_title": "74° to 75°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26SEP20-B74.5",
-  "market_captured_at": "2026-09-19T21:26:17.859Z",
+  "market_captured_at": "2026-09-20T00:06:42.481Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T21:26:18.494Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP20-B74.5/candlesticks?start_ts=1789740000&end_ts=1789853178&period_interval=60"
+  "last_ingested_at": "2026-09-20T00:06:43.155Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP20-B74.5/candlesticks?start_ts=1789851601&end_ts=1789862802&period_interval=60"
 }

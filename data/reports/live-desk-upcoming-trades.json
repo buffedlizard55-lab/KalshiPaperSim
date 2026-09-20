@@ -14,21 +14,21 @@
     "proposedCount": 100,
     "proposedNotional": 10,
     "availableLiquidity": {
-      "touch": 36995.58,
-      "ticks1": 4070357.1,
-      "ticks2": 8119483.29,
-      "ticks5": 12151772.56,
-      "ticks10": 12162664.88,
-      "total": 12668437.5
+      "touch": 34592.65,
+      "ticks1": 4067954.17,
+      "ticks2": 8117080.36,
+      "ticks5": 12149369.63,
+      "ticks10": 12160511.95,
+      "total": 12666308.57
     },
-    "volumeCap": 1409.95,
+    "volumeCap": 1526.65,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Favourite Buy-and-Settle",
     "rationale": "Desk: Favourite Buy-and-Settle: planned order setup on open contract KXNBA-27-PHI",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI",
-    "ladderCaptureAt": "2026-09-19T21:55:27.644Z"
+    "ladderCaptureAt": "2026-09-20T00:38:10.965Z"
   },
   {
     "id": "UPC-LiveFavourite_Settle-KXMLB-26-LAD",
@@ -45,21 +45,21 @@
     "proposedCount": 100,
     "proposedNotional": 31.3,
     "availableLiquidity": {
-      "touch": 7733.33,
-      "ticks1": 9833.33,
-      "ticks2": 9934.75,
-      "ticks5": 12051.04,
-      "ticks10": 31481.11,
-      "total": 203513.17
+      "touch": 3911.26,
+      "ticks1": 5911.26,
+      "ticks2": 5911.26,
+      "ticks5": 7924.1,
+      "ticks10": 27291.92,
+      "total": 198789.9
     },
-    "volumeCap": 3282.05,
+    "volumeCap": 4007.97,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Favourite Buy-and-Settle",
     "rationale": "Desk: Favourite Buy-and-Settle: planned order setup on open contract KXMLB-26-LAD",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD",
-    "ladderCaptureAt": "2026-09-19T21:54:36.427Z"
+    "ladderCaptureAt": "2026-09-20T00:37:15.274Z"
   },
   {
     "id": "UPC-LiveFavourite_Settle-KXMLB-26-MIL",
@@ -76,21 +76,21 @@
     "proposedCount": 100,
     "proposedNotional": 16.4,
     "availableLiquidity": {
-      "touch": 1,
-      "ticks1": 4.37,
-      "ticks2": 67.59,
-      "ticks5": 7233.64,
-      "ticks10": 10867.54,
-      "total": 78263.88
+      "touch": 8.14,
+      "ticks1": 64.8,
+      "ticks2": 77.19,
+      "ticks5": 7497.93,
+      "ticks10": 8974.86,
+      "total": 77539.33
     },
-    "volumeCap": 4331.95,
+    "volumeCap": 4188.47,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Favourite Buy-and-Settle",
     "rationale": "Desk: Favourite Buy-and-Settle: planned order setup on open contract KXMLB-26-MIL",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL",
-    "ladderCaptureAt": "2026-09-19T21:54:37.742Z"
+    "ladderCaptureAt": "2026-09-20T00:37:16.699Z"
   },
   {
     "id": "UPC-LiveLongshot_Convexity-KXNBA-27-PHI",
@@ -107,21 +107,21 @@
     "proposedCount": 100,
     "proposedNotional": 10,
     "availableLiquidity": {
-      "touch": 36995.58,
-      "ticks1": 4070357.1,
-      "ticks2": 8119483.29,
-      "ticks5": 12151772.56,
-      "ticks10": 12162664.88,
-      "total": 12668437.5
+      "touch": 34592.65,
+      "ticks1": 4067954.17,
+      "ticks2": 8117080.36,
+      "ticks5": 12149369.63,
+      "ticks10": 12160511.95,
+      "total": 12666308.57
     },
-    "volumeCap": 1409.95,
+    "volumeCap": 1526.65,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Cheap-Tail Convexity (lottery tickets)",
     "rationale": "Desk: Cheap-Tail Convexity (lottery tickets): planned order setup on open contract KXNBA-27-PHI",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI",
-    "ladderCaptureAt": "2026-09-19T21:55:27.644Z"
+    "ladderCaptureAt": "2026-09-20T00:38:10.965Z"
   },
   {
     "id": "UPC-LiveLongshot_Convexity-KXMLB-26-BOS",
@@ -134,25 +134,25 @@
     "proposedAction": "buy",
     "proposedSide": "yes",
     "orderType": "limit",
-    "targetPrice": 0.056,
+    "targetPrice": 0.054,
     "proposedCount": 100,
-    "proposedNotional": 5.6,
+    "proposedNotional": 5.4,
     "availableLiquidity": {
-      "touch": 31.23,
-      "ticks1": 40.62,
-      "ticks2": 232.09,
-      "ticks5": 5644.49,
-      "ticks10": 5794.8,
-      "total": 118902.39
+      "touch": 10.19,
+      "ticks1": 58.71,
+      "ticks2": 81.83,
+      "ticks5": 6894.52,
+      "ticks10": 9181.57,
+      "total": 94536.58
     },
-    "volumeCap": 2827.19,
+    "volumeCap": 3063.65,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Cheap-Tail Convexity (lottery tickets)",
     "rationale": "Desk: Cheap-Tail Convexity (lottery tickets): planned order setup on open contract KXMLB-26-BOS",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-BOS/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-BOS",
-    "ladderCaptureAt": "2026-09-19T21:54:35.118Z"
+    "ladderCaptureAt": "2026-09-20T00:37:13.847Z"
   },
   {
     "id": "UPC-LiveLongshot_Convexity-KXMLB-26-NYY",
@@ -165,25 +165,25 @@
     "proposedAction": "buy",
     "proposedSide": "yes",
     "orderType": "limit",
-    "targetPrice": 0.112,
+    "targetPrice": 0.11,
     "proposedCount": 100,
-    "proposedNotional": 11.2,
+    "proposedNotional": 11,
     "availableLiquidity": {
-      "touch": 5,
-      "ticks1": 102.31,
-      "ticks2": 18540.68,
-      "ticks5": 18655.01,
-      "ticks10": 26545.54,
-      "total": 130509.55
+      "touch": 1,
+      "ticks1": 86,
+      "ticks2": 3569.07,
+      "ticks5": 21985.98,
+      "ticks10": 27970.95,
+      "total": 117559.06
     },
-    "volumeCap": 5387.32,
+    "volumeCap": 5010.28,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Cheap-Tail Convexity (lottery tickets)",
     "rationale": "Desk: Cheap-Tail Convexity (lottery tickets): planned order setup on open contract KXMLB-26-NYY",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-NYY/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-NYY",
-    "ladderCaptureAt": "2026-09-19T21:54:39.052Z"
+    "ladderCaptureAt": "2026-09-20T00:37:18.124Z"
   },
   {
     "id": "UPC-LiveCheapBracket_Ladder-KXNBA-27-PHI",
@@ -200,21 +200,21 @@
     "proposedCount": 100,
     "proposedNotional": 10,
     "availableLiquidity": {
-      "touch": 36995.58,
-      "ticks1": 4070357.1,
-      "ticks2": 8119483.29,
-      "ticks5": 12151772.56,
-      "ticks10": 12162664.88,
-      "total": 12668437.5
+      "touch": 34592.65,
+      "ticks1": 4067954.17,
+      "ticks2": 8117080.36,
+      "ticks5": 12149369.63,
+      "ticks10": 12160511.95,
+      "total": 12666308.57
     },
-    "volumeCap": 1409.95,
+    "volumeCap": 1526.65,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Cheap-Bracket Event Ladder",
     "rationale": "Desk: Cheap-Bracket Event Ladder: planned order setup on open contract KXNBA-27-PHI",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI",
-    "ladderCaptureAt": "2026-09-19T21:55:27.644Z"
+    "ladderCaptureAt": "2026-09-20T00:38:10.965Z"
   },
   {
     "id": "UPC-LiveCheapBracket_Ladder-KXMLB-26-BOS",
@@ -227,25 +227,25 @@
     "proposedAction": "buy",
     "proposedSide": "yes",
     "orderType": "limit",
-    "targetPrice": 0.056,
+    "targetPrice": 0.054,
     "proposedCount": 100,
-    "proposedNotional": 5.6,
+    "proposedNotional": 5.4,
     "availableLiquidity": {
-      "touch": 31.23,
-      "ticks1": 40.62,
-      "ticks2": 232.09,
-      "ticks5": 5644.49,
-      "ticks10": 5794.8,
-      "total": 118902.39
+      "touch": 10.19,
+      "ticks1": 58.71,
+      "ticks2": 81.83,
+      "ticks5": 6894.52,
+      "ticks10": 9181.57,
+      "total": 94536.58
     },
-    "volumeCap": 2827.19,
+    "volumeCap": 3063.65,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Cheap-Bracket Event Ladder",
     "rationale": "Desk: Cheap-Bracket Event Ladder: planned order setup on open contract KXMLB-26-BOS",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-BOS/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-BOS",
-    "ladderCaptureAt": "2026-09-19T21:54:35.118Z"
+    "ladderCaptureAt": "2026-09-20T00:37:13.847Z"
   },
   {
     "id": "UPC-LiveCheapBracket_Ladder-KXMLB-26-NYY",
@@ -258,25 +258,25 @@
     "proposedAction": "buy",
     "proposedSide": "yes",
     "orderType": "limit",
-    "targetPrice": 0.112,
+    "targetPrice": 0.11,
     "proposedCount": 100,
-    "proposedNotional": 11.2,
+    "proposedNotional": 11,
     "availableLiquidity": {
-      "touch": 5,
-      "ticks1": 102.31,
-      "ticks2": 18540.68,
-      "ticks5": 18655.01,
-      "ticks10": 26545.54,
-      "total": 130509.55
+      "touch": 1,
+      "ticks1": 86,
+      "ticks2": 3569.07,
+      "ticks5": 21985.98,
+      "ticks10": 27970.95,
+      "total": 117559.06
     },
-    "volumeCap": 5387.32,
+    "volumeCap": 5010.28,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Cheap-Bracket Event Ladder",
     "rationale": "Desk: Cheap-Bracket Event Ladder: planned order setup on open contract KXMLB-26-NYY",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-NYY/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-NYY",
-    "ladderCaptureAt": "2026-09-19T21:54:39.052Z"
+    "ladderCaptureAt": "2026-09-20T00:37:18.124Z"
   },
   {
     "id": "UPC-LiveMakerTouch-KXNBA-27-PHI",
@@ -293,21 +293,21 @@
     "proposedCount": 100,
     "proposedNotional": 10,
     "availableLiquidity": {
-      "touch": 36995.58,
-      "ticks1": 4070357.1,
-      "ticks2": 8119483.29,
-      "ticks5": 12151772.56,
-      "ticks10": 12162664.88,
-      "total": 12668437.5
+      "touch": 34592.65,
+      "ticks1": 4067954.17,
+      "ticks2": 8117080.36,
+      "ticks5": 12149369.63,
+      "ticks10": 12160511.95,
+      "total": 12666308.57
     },
-    "volumeCap": 1409.95,
+    "volumeCap": 1526.65,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Touch Maker (post-only)",
     "rationale": "Desk: Touch Maker (post-only): planned order setup on open contract KXNBA-27-PHI",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI",
-    "ladderCaptureAt": "2026-09-19T21:55:27.644Z"
+    "ladderCaptureAt": "2026-09-20T00:38:10.965Z"
   },
   {
     "id": "UPC-LiveMakerTouch-KXMLB-26-LAD",
@@ -324,21 +324,21 @@
     "proposedCount": 100,
     "proposedNotional": 31.3,
     "availableLiquidity": {
-      "touch": 7733.33,
-      "ticks1": 9833.33,
-      "ticks2": 9934.75,
-      "ticks5": 12051.04,
-      "ticks10": 31481.11,
-      "total": 203513.17
+      "touch": 3911.26,
+      "ticks1": 5911.26,
+      "ticks2": 5911.26,
+      "ticks5": 7924.1,
+      "ticks10": 27291.92,
+      "total": 198789.9
     },
-    "volumeCap": 3282.05,
+    "volumeCap": 4007.97,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Touch Maker (post-only)",
     "rationale": "Desk: Touch Maker (post-only): planned order setup on open contract KXMLB-26-LAD",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD",
-    "ladderCaptureAt": "2026-09-19T21:54:36.427Z"
+    "ladderCaptureAt": "2026-09-20T00:37:15.274Z"
   },
   {
     "id": "UPC-LiveMakerTouch-KXMLB-26-MIL",
@@ -355,21 +355,21 @@
     "proposedCount": 100,
     "proposedNotional": 16.4,
     "availableLiquidity": {
-      "touch": 1,
-      "ticks1": 4.37,
-      "ticks2": 67.59,
-      "ticks5": 7233.64,
-      "ticks10": 10867.54,
-      "total": 78263.88
+      "touch": 8.14,
+      "ticks1": 64.8,
+      "ticks2": 77.19,
+      "ticks5": 7497.93,
+      "ticks10": 8974.86,
+      "total": 77539.33
     },
-    "volumeCap": 4331.95,
+    "volumeCap": 4188.47,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter order when contract conditions align with Desk: Touch Maker (post-only)",
     "rationale": "Desk: Touch Maker (post-only): planned order setup on open contract KXMLB-26-MIL",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL",
-    "ladderCaptureAt": "2026-09-19T21:54:37.742Z"
+    "ladderCaptureAt": "2026-09-20T00:37:16.699Z"
   },
   {
     "id": "UPC-LiveNCAA_GameFavourite-KXNBA-27-PHI",
@@ -386,21 +386,21 @@
     "proposedCount": 100,
     "proposedNotional": 10,
     "availableLiquidity": {
-      "touch": 36995.58,
-      "ticks1": 4070357.1,
-      "ticks2": 8119483.29,
-      "ticks5": 12151772.56,
-      "ticks10": 12162664.88,
-      "total": 12668437.5
+      "touch": 34592.65,
+      "ticks1": 4067954.17,
+      "ticks2": 8117080.36,
+      "ticks5": 12149369.63,
+      "ticks10": 12160511.95,
+      "total": 12666308.57
     },
-    "volumeCap": 1409.95,
+    "volumeCap": 1526.65,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: NCAA game favourite (MasterSite NCAA scoreboard → KXNCAAFGAME)",
     "rationale": "Desk: NCAA game favourite (MasterSite NCAA scoreboard → KXNCAAFGAME): planned order setup on open contract KXNBA-27-PHI",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI",
-    "ladderCaptureAt": "2026-09-19T21:55:27.644Z"
+    "ladderCaptureAt": "2026-09-20T00:38:10.965Z"
   },
   {
     "id": "UPC-LiveNCAA_GameFavourite-KXMLB-26-LAD",
@@ -417,21 +417,21 @@
     "proposedCount": 100,
     "proposedNotional": 31.3,
     "availableLiquidity": {
-      "touch": 7733.33,
-      "ticks1": 9833.33,
-      "ticks2": 9934.75,
-      "ticks5": 12051.04,
-      "ticks10": 31481.11,
-      "total": 203513.17
+      "touch": 3911.26,
+      "ticks1": 5911.26,
+      "ticks2": 5911.26,
+      "ticks5": 7924.1,
+      "ticks10": 27291.92,
+      "total": 198789.9
     },
-    "volumeCap": 3282.05,
+    "volumeCap": 4007.97,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: NCAA game favourite (MasterSite NCAA scoreboard → KXNCAAFGAME)",
     "rationale": "Desk: NCAA game favourite (MasterSite NCAA scoreboard → KXNCAAFGAME): planned order setup on open contract KXMLB-26-LAD",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD",
-    "ladderCaptureAt": "2026-09-19T21:54:36.427Z"
+    "ladderCaptureAt": "2026-09-20T00:37:15.274Z"
   },
   {
     "id": "UPC-LiveNCAA_GameFavourite-KXMLB-26-MIL",
@@ -448,21 +448,21 @@
     "proposedCount": 100,
     "proposedNotional": 16.4,
     "availableLiquidity": {
-      "touch": 1,
-      "ticks1": 4.37,
-      "ticks2": 67.59,
-      "ticks5": 7233.64,
-      "ticks10": 10867.54,
-      "total": 78263.88
+      "touch": 8.14,
+      "ticks1": 64.8,
+      "ticks2": 77.19,
+      "ticks5": 7497.93,
+      "ticks10": 8974.86,
+      "total": 77539.33
     },
-    "volumeCap": 4331.95,
+    "volumeCap": 4188.47,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: NCAA game favourite (MasterSite NCAA scoreboard → KXNCAAFGAME)",
     "rationale": "Desk: NCAA game favourite (MasterSite NCAA scoreboard → KXNCAAFGAME): planned order setup on open contract KXMLB-26-MIL",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL",
-    "ladderCaptureAt": "2026-09-19T21:54:37.742Z"
+    "ladderCaptureAt": "2026-09-20T00:37:16.699Z"
   },
   {
     "id": "UPC-LiveNBA_GameFavourite-KXNBA-27-PHI",
@@ -479,21 +479,21 @@
     "proposedCount": 100,
     "proposedNotional": 10,
     "availableLiquidity": {
-      "touch": 36995.58,
-      "ticks1": 4070357.1,
-      "ticks2": 8119483.29,
-      "ticks5": 12151772.56,
-      "ticks10": 12162664.88,
-      "total": 12668437.5
+      "touch": 34592.65,
+      "ticks1": 4067954.17,
+      "ticks2": 8117080.36,
+      "ticks5": 12149369.63,
+      "ticks10": 12160511.95,
+      "total": 12666308.57
     },
-    "volumeCap": 1409.95,
+    "volumeCap": 1526.65,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: NBA game favourite (MasterSite NBA Injury → KXNBAGAME)",
     "rationale": "Desk: NBA game favourite (MasterSite NBA Injury → KXNBAGAME): planned order setup on open contract KXNBA-27-PHI",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI",
-    "ladderCaptureAt": "2026-09-19T21:55:27.644Z"
+    "ladderCaptureAt": "2026-09-20T00:38:10.965Z"
   },
   {
     "id": "UPC-LiveNBA_GameFavourite-KXMLB-26-LAD",
@@ -510,21 +510,21 @@
     "proposedCount": 100,
     "proposedNotional": 31.3,
     "availableLiquidity": {
-      "touch": 7733.33,
-      "ticks1": 9833.33,
-      "ticks2": 9934.75,
-      "ticks5": 12051.04,
-      "ticks10": 31481.11,
-      "total": 203513.17
+      "touch": 3911.26,
+      "ticks1": 5911.26,
+      "ticks2": 5911.26,
+      "ticks5": 7924.1,
+      "ticks10": 27291.92,
+      "total": 198789.9
     },
-    "volumeCap": 3282.05,
+    "volumeCap": 4007.97,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: NBA game favourite (MasterSite NBA Injury → KXNBAGAME)",
     "rationale": "Desk: NBA game favourite (MasterSite NBA Injury → KXNBAGAME): planned order setup on open contract KXMLB-26-LAD",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD",
-    "ladderCaptureAt": "2026-09-19T21:54:36.427Z"
+    "ladderCaptureAt": "2026-09-20T00:37:15.274Z"
   },
   {
     "id": "UPC-LiveNBA_GameFavourite-KXMLB-26-MIL",
@@ -541,21 +541,21 @@
     "proposedCount": 100,
     "proposedNotional": 16.4,
     "availableLiquidity": {
-      "touch": 1,
-      "ticks1": 4.37,
-      "ticks2": 67.59,
-      "ticks5": 7233.64,
-      "ticks10": 10867.54,
-      "total": 78263.88
+      "touch": 8.14,
+      "ticks1": 64.8,
+      "ticks2": 77.19,
+      "ticks5": 7497.93,
+      "ticks10": 8974.86,
+      "total": 77539.33
     },
-    "volumeCap": 4331.95,
+    "volumeCap": 4188.47,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: NBA game favourite (MasterSite NBA Injury → KXNBAGAME)",
     "rationale": "Desk: NBA game favourite (MasterSite NBA Injury → KXNBAGAME): planned order setup on open contract KXMLB-26-MIL",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL",
-    "ladderCaptureAt": "2026-09-19T21:54:37.742Z"
+    "ladderCaptureAt": "2026-09-20T00:37:16.699Z"
   },
   {
     "id": "UPC-LiveMLB_GameFavourite-KXNBA-27-PHI",
@@ -572,21 +572,21 @@
     "proposedCount": 100,
     "proposedNotional": 10,
     "availableLiquidity": {
-      "touch": 36995.58,
-      "ticks1": 4070357.1,
-      "ticks2": 8119483.29,
-      "ticks5": 12151772.56,
-      "ticks10": 12162664.88,
-      "total": 12668437.5
+      "touch": 34592.65,
+      "ticks1": 4067954.17,
+      "ticks2": 8117080.36,
+      "ticks5": 12149369.63,
+      "ticks10": 12160511.95,
+      "total": 12666308.57
     },
-    "volumeCap": 1409.95,
+    "volumeCap": 1526.65,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: MLB favourite buy-and-settle (MasterSite S09, MLB-Live-PBP)",
     "rationale": "Desk: MLB favourite buy-and-settle (MasterSite S09, MLB-Live-PBP): planned order setup on open contract KXNBA-27-PHI",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI",
-    "ladderCaptureAt": "2026-09-19T21:55:27.644Z"
+    "ladderCaptureAt": "2026-09-20T00:38:10.965Z"
   },
   {
     "id": "UPC-LiveMLB_GameFavourite-KXMLB-26-LAD",
@@ -603,21 +603,21 @@
     "proposedCount": 100,
     "proposedNotional": 31.3,
     "availableLiquidity": {
-      "touch": 7733.33,
-      "ticks1": 9833.33,
-      "ticks2": 9934.75,
-      "ticks5": 12051.04,
-      "ticks10": 31481.11,
-      "total": 203513.17
+      "touch": 3911.26,
+      "ticks1": 5911.26,
+      "ticks2": 5911.26,
+      "ticks5": 7924.1,
+      "ticks10": 27291.92,
+      "total": 198789.9
     },
-    "volumeCap": 3282.05,
+    "volumeCap": 4007.97,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: MLB favourite buy-and-settle (MasterSite S09, MLB-Live-PBP)",
     "rationale": "Desk: MLB favourite buy-and-settle (MasterSite S09, MLB-Live-PBP): planned order setup on open contract KXMLB-26-LAD",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD",
-    "ladderCaptureAt": "2026-09-19T21:54:36.427Z"
+    "ladderCaptureAt": "2026-09-20T00:37:15.274Z"
   },
   {
     "id": "UPC-LiveMLB_GameFavourite-KXMLB-26-MIL",
@@ -634,21 +634,21 @@
     "proposedCount": 100,
     "proposedNotional": 16.4,
     "availableLiquidity": {
-      "touch": 1,
-      "ticks1": 4.37,
-      "ticks2": 67.59,
-      "ticks5": 7233.64,
-      "ticks10": 10867.54,
-      "total": 78263.88
+      "touch": 8.14,
+      "ticks1": 64.8,
+      "ticks2": 77.19,
+      "ticks5": 7497.93,
+      "ticks10": 8974.86,
+      "total": 77539.33
     },
-    "volumeCap": 4331.95,
+    "volumeCap": 4188.47,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter order when contract conditions align with Desk: MLB favourite buy-and-settle (MasterSite S09, MLB-Live-PBP)",
     "rationale": "Desk: MLB favourite buy-and-settle (MasterSite S09, MLB-Live-PBP): planned order setup on open contract KXMLB-26-MIL",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL",
-    "ladderCaptureAt": "2026-09-19T21:54:37.742Z"
+    "ladderCaptureAt": "2026-09-20T00:37:16.699Z"
   },
   {
     "id": "UPC-LiveNFL-KXNFLNFCCHAMP-27-DAL",
@@ -665,21 +665,21 @@
     "proposedCount": 50,
     "proposedNotional": 47,
     "availableLiquidity": {
-      "touch": 11356.15,
-      "ticks1": 27801.96,
-      "ticks2": 29662.9,
-      "ticks5": 433900.09,
-      "ticks10": 433900.09,
-      "total": 433900.09
+      "touch": 11283.09,
+      "ticks1": 27728.9,
+      "ticks2": 29590.32,
+      "ticks5": 433827.91,
+      "ticks10": 433827.91,
+      "total": 433827.91
     },
-    "volumeCap": 234.8,
+    "volumeCap": 240.02,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter BUY favourite ahead of kickoff when favourite ask reaches >= 0.75",
     "rationale": "NFL favourite: planned game winner hold on KXNFLNFCCHAMP-27-DAL",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-DAL/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-DAL",
-    "ladderCaptureAt": "2026-09-19T21:56:34.479Z"
+    "ladderCaptureAt": "2026-09-20T00:39:23.711Z"
   },
   {
     "id": "UPC-LiveNFL-KXNFLAFCCHAMP-27-HOU",
@@ -696,21 +696,21 @@
     "proposedCount": 50,
     "proposedNotional": 46.5,
     "availableLiquidity": {
-      "touch": 554.57,
-      "ticks1": 3364.79,
-      "ticks2": 3690.99,
-      "ticks5": 44734.47,
-      "ticks10": 752345.47,
-      "total": 752345.47
+      "touch": 504.69,
+      "ticks1": 3314.91,
+      "ticks2": 3641.11,
+      "ticks5": 44819.51,
+      "ticks10": 752430.51,
+      "total": 752430.51
     },
-    "volumeCap": 99.58,
+    "volumeCap": 68.24,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter BUY favourite ahead of kickoff when favourite ask reaches >= 0.75",
     "rationale": "NFL favourite: planned game winner hold on KXNFLAFCCHAMP-27-HOU",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-HOU/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-HOU",
-    "ladderCaptureAt": "2026-09-19T21:56:25.329Z"
+    "ladderCaptureAt": "2026-09-20T00:39:13.747Z"
   },
   {
     "id": "UPC-LiveNFL-KXNFLNFCCHAMP-27-LAR",
@@ -727,21 +727,21 @@
     "proposedCount": 50,
     "proposedNotional": 42.5,
     "availableLiquidity": {
-      "touch": 33045.25,
-      "ticks1": 34582.91,
-      "ticks2": 34604.12,
-      "ticks5": 34897.64,
-      "ticks10": 156773.64,
-      "total": 2218599.72
+      "touch": 32872.08,
+      "ticks1": 34409.74,
+      "ticks2": 34430.95,
+      "ticks5": 34724.47,
+      "ticks10": 156501.47,
+      "total": 2218313.55
     },
-    "volumeCap": 1230.53,
+    "volumeCap": 1280.19,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter BUY favourite ahead of kickoff when favourite ask reaches >= 0.75",
     "rationale": "NFL favourite: planned game winner hold on KXNFLNFCCHAMP-27-LAR",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-LAR/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-LAR",
-    "ladderCaptureAt": "2026-09-19T21:56:35.814Z"
+    "ladderCaptureAt": "2026-09-20T00:39:25.135Z"
   },
   {
     "id": "UPC-LiveTheLeap-KXBTCY-27JAN0100-B77500",
@@ -754,25 +754,25 @@
     "proposedAction": "buy",
     "proposedSide": "yes",
     "orderType": "limit",
-    "targetPrice": 0.14,
+    "targetPrice": 0.141,
     "proposedCount": 100,
-    "proposedNotional": 14,
+    "proposedNotional": 14.1,
     "availableLiquidity": {
-      "touch": 271.13,
-      "ticks1": 327.97,
-      "ticks2": 1831.52,
-      "ticks5": 1912.76,
-      "ticks10": 1961.93,
-      "total": 22092.02
+      "touch": 360,
+      "ticks1": 682.36,
+      "ticks2": 2185.91,
+      "ticks5": 2219.28,
+      "ticks10": 2348.36,
+      "total": 19478.79
     },
-    "volumeCap": 1794.78,
+    "volumeCap": 1811.15,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter BUY YES when contract YES ask is ≤ 0.20 on index breakout",
     "rationale": "The Leap momentum: planned convex OTM sweep on KXBTCY-27JAN0100-B77500 (target entry ≤ 0.20 for 5x+ return)",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B77500/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B77500",
-    "ladderCaptureAt": "2026-09-19T21:53:33.393Z"
+    "ladderCaptureAt": "2026-09-20T00:36:06.829Z"
   },
   {
     "id": "UPC-LiveTheLeap-KXBTCY-27JAN0100-B47500",
@@ -785,25 +785,25 @@
     "proposedAction": "buy",
     "proposedSide": "yes",
     "orderType": "limit",
-    "targetPrice": 0.013,
+    "targetPrice": 0.014,
     "proposedCount": 100,
-    "proposedNotional": 1.3,
+    "proposedNotional": 1.4,
     "availableLiquidity": {
-      "touch": 487,
-      "ticks1": 944,
-      "ticks2": 1401,
-      "ticks5": 1961.46,
-      "ticks10": 3923.63,
-      "total": 50847.77
+      "touch": 678,
+      "ticks1": 823.26,
+      "ticks2": 942.26,
+      "ticks5": 2458.26,
+      "ticks10": 2537.26,
+      "total": 47498.13
     },
-    "volumeCap": 1.39,
+    "volumeCap": 86.01,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter BUY YES when contract YES ask is ≤ 0.20 on index breakout",
     "rationale": "The Leap momentum: planned convex OTM sweep on KXBTCY-27JAN0100-B47500 (target entry ≤ 0.20 for 5x+ return)",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B47500/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B47500",
-    "ladderCaptureAt": "2026-09-19T21:53:25.532Z"
+    "ladderCaptureAt": "2026-09-20T00:35:58.257Z"
   },
   {
     "id": "UPC-LiveTheLeap-KXBTCY-27JAN0100-B72500",
@@ -816,25 +816,25 @@
     "proposedAction": "buy",
     "proposedSide": "yes",
     "orderType": "limit",
-    "targetPrice": 0.117,
+    "targetPrice": 0.118,
     "proposedCount": 100,
-    "proposedNotional": 11.7,
+    "proposedNotional": 11.8,
     "availableLiquidity": {
-      "touch": 240.44,
-      "ticks1": 303.44,
-      "ticks2": 345.44,
-      "ticks5": 2767.68,
-      "ticks10": 3039.75,
-      "total": 25135.14
+      "touch": 239,
+      "ticks1": 298,
+      "ticks2": 973.16,
+      "ticks5": 2502.89,
+      "ticks10": 2841.14,
+      "total": 25585.75
     },
-    "volumeCap": 441.07,
+    "volumeCap": 379.94,
     "triggerType": "PRICE_LIMIT",
     "triggerCondition": "Enter BUY YES when contract YES ask is ≤ 0.20 on index breakout",
     "rationale": "The Leap momentum: planned convex OTM sweep on KXBTCY-27JAN0100-B72500 (target entry ≤ 0.20 for 5x+ return)",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B72500/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B72500",
-    "ladderCaptureAt": "2026-09-19T21:53:32.079Z"
+    "ladderCaptureAt": "2026-09-20T00:36:05.400Z"
   },
   {
     "id": "UPC-LiveInsider-KXOPENAICEOCHANGE-26",
@@ -865,7 +865,7 @@
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXOPENAICEOCHANGE-26/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXOPENAICEOCHANGE-26",
-    "ladderCaptureAt": "2026-09-19T21:57:17.685Z"
+    "ladderCaptureAt": "2026-09-20T00:40:10.670Z"
   },
   {
     "id": "UPC-LiveInsider-TESLACEOCHANGE-26",
@@ -889,13 +889,13 @@
       "ticks10": 15706.41,
       "total": 15706.41
     },
-    "volumeCap": 0.2,
+    "volumeCap": 0.07,
     "triggerType": "CATALYST_EVENT",
     "triggerCondition": "Enter BUY NO when transition rumour spikes YES ask to 0.15–0.30",
     "rationale": "Insider fader: planned NO buy on TESLACEOCHANGE-26 to collect governance retention premium",
     "status": "READY",
     "ladderSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26/orderbook",
     "marketSourceUrl": "https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26",
-    "ladderCaptureAt": "2026-09-19T21:57:18.998Z"
+    "ladderCaptureAt": "2026-09-20T00:40:12.097Z"
   }
 ]

@@ -99,6 +99,36 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T23:58:04.942Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:33:02.356Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:37:26.688Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -127,9 +157,9 @@
     "occurrence_datetime": "2026-09-19T02:15:00Z",
     "open_interest_fp": "2458.10",
     "open_time": "2026-09-18T08:40:00Z",
-    "previous_price_dollars": "0.6900",
-    "previous_yes_ask_dollars": "0.6900",
-    "previous_yes_bid_dollars": "0.6800",
+    "previous_price_dollars": "0.7700",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.9900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -150,7 +180,7 @@
     "ticker": "KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1",
     "title": "Bo Bichette: 1+ hits?",
     "updated_time": "2026-09-19T02:26:14.903826Z",
-    "volume_24h_fp": "59.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "2458.10",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -159,9 +189,9 @@
     "yes_sub_title": "Bo Bichette: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1",
-  "market_captured_at": "2026-09-19T21:54:46.247Z",
+  "market_captured_at": "2026-09-20T00:37:25.943Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T21:54:46.883Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/candlesticks?start_ts=1789790401&end_ts=1789854886&period_interval=1440"
+  "last_ingested_at": "2026-09-20T00:37:26.616Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/candlesticks?start_ts=1789790401&end_ts=1789864646&period_interval=1440"
 }

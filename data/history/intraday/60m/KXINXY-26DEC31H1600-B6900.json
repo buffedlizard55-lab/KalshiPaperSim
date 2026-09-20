@@ -5,31 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1788786000,
-      "open_interest_fp": "166427.73",
-      "price": {
-        "close_dollars": "0.0300",
-        "high_dollars": "0.0300",
-        "low_dollars": "0.0300",
-        "mean_dollars": "0.0300",
-        "open_dollars": "0.0300",
-        "previous_dollars": "0.0200"
-      },
-      "volume_fp": "156.06",
-      "yes_ask": {
-        "close_dollars": "0.0300",
-        "high_dollars": "0.0300",
-        "low_dollars": "0.0300",
-        "open_dollars": "0.0300"
-      },
-      "yes_bid": {
-        "close_dollars": "0.0200",
-        "high_dollars": "0.0200",
-        "low_dollars": "0.0200",
-        "open_dollars": "0.0200"
-      }
-    },
-    {
       "end_period_ts": 1788793200,
       "open_interest_fp": "166427.73",
       "price": {
@@ -4073,6 +4048,31 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1789862400,
+      "open_interest_fp": "187401.44",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0300",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "1000.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -4843,6 +4843,390 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:01:49.754Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142857.00"
+            ],
+            [
+              "0.0300",
+              "340.00"
+            ],
+            [
+              "0.0500",
+              "109.24"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.1100",
+              "39.00"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.3300",
+              "150.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5100",
+              "468.51"
+            ],
+            [
+              "0.7000",
+              "7040.00"
+            ],
+            [
+              "0.8000",
+              "1785.00"
+            ],
+            [
+              "0.8200",
+              "3181.83"
+            ],
+            [
+              "0.8500",
+              "5300.00"
+            ],
+            [
+              "0.8800",
+              "1200.00"
+            ],
+            [
+              "0.9300",
+              "6200.00"
+            ],
+            [
+              "0.9400",
+              "4996.00"
+            ],
+            [
+              "0.9500",
+              "8237.70"
+            ],
+            [
+              "0.9600",
+              "5959.63"
+            ],
+            [
+              "0.9700",
+              "191.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "104.00"
+            ],
+            [
+              "0.0200",
+              "3095.49"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:07:55.910Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142857.00"
+            ],
+            [
+              "0.0300",
+              "340.00"
+            ],
+            [
+              "0.0500",
+              "109.24"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.1100",
+              "39.00"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.3300",
+              "150.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5100",
+              "468.51"
+            ],
+            [
+              "0.7000",
+              "7040.00"
+            ],
+            [
+              "0.8000",
+              "1785.00"
+            ],
+            [
+              "0.8200",
+              "3181.83"
+            ],
+            [
+              "0.8500",
+              "5300.00"
+            ],
+            [
+              "0.8800",
+              "1200.00"
+            ],
+            [
+              "0.9300",
+              "6200.00"
+            ],
+            [
+              "0.9400",
+              "4996.00"
+            ],
+            [
+              "0.9500",
+              "8237.70"
+            ],
+            [
+              "0.9600",
+              "5959.63"
+            ],
+            [
+              "0.9700",
+              "191.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "104.00"
+            ],
+            [
+              "0.0200",
+              "3095.49"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:17:42.461Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142857.00"
+            ],
+            [
+              "0.0300",
+              "340.00"
+            ],
+            [
+              "0.0500",
+              "109.24"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.1100",
+              "39.00"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.3300",
+              "150.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5100",
+              "468.51"
+            ],
+            [
+              "0.7000",
+              "7040.00"
+            ],
+            [
+              "0.8000",
+              "1785.00"
+            ],
+            [
+              "0.8200",
+              "3181.83"
+            ],
+            [
+              "0.8500",
+              "5300.00"
+            ],
+            [
+              "0.8800",
+              "1200.00"
+            ],
+            [
+              "0.9300",
+              "6200.00"
+            ],
+            [
+              "0.9400",
+              "4996.00"
+            ],
+            [
+              "0.9500",
+              "8237.70"
+            ],
+            [
+              "0.9600",
+              "5959.63"
+            ],
+            [
+              "0.9700",
+              "191.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "104.00"
+            ],
+            [
+              "0.0200",
+              "3095.49"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:27:49.643Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142857.00"
+            ],
+            [
+              "0.0300",
+              "340.00"
+            ],
+            [
+              "0.0500",
+              "109.24"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.1100",
+              "39.00"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.3300",
+              "150.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5100",
+              "468.51"
+            ],
+            [
+              "0.7000",
+              "7040.00"
+            ],
+            [
+              "0.8000",
+              "1785.00"
+            ],
+            [
+              "0.8200",
+              "3181.83"
+            ],
+            [
+              "0.8500",
+              "5300.00"
+            ],
+            [
+              "0.8800",
+              "1200.00"
+            ],
+            [
+              "0.9300",
+              "6200.00"
+            ],
+            [
+              "0.9400",
+              "4996.00"
+            ],
+            [
+              "0.9500",
+              "8237.70"
+            ],
+            [
+              "0.9600",
+              "5959.63"
+            ],
+            [
+              "0.9700",
+              "191.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "104.00"
+            ],
+            [
+              "0.0200",
+              "3095.49"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4864,7 +5248,7 @@
     "no_bid_dollars": "0.9700",
     "no_sub_title": "6,800 to 6,999.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "186520.44",
+    "open_interest_fp": "187401.44",
     "open_time": "2025-12-23T15:00:00Z",
     "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0400",
@@ -4887,19 +5271,19 @@
     "ticker": "KXINXY-26DEC31H1600-B6900",
     "title": "Will the S&P 500 be between 6800 and 6999.99 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:01.866905Z",
-    "volume_24h_fp": "1.00",
-    "volume_fp": "294790.96",
+    "volume_24h_fp": "1001.00",
+    "volume_fp": "295790.96",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "1191.00",
+    "yes_ask_size_fp": "191.00",
     "yes_bid_dollars": "0.0200",
     "yes_bid_size_fp": "3095.49",
     "yes_sub_title": "6,800 to 6,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900",
-  "market_captured_at": "2026-09-19T21:45:54.838Z",
+  "market_captured_at": "2026-09-20T00:27:48.898Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T21:45:55.476Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B6900/candlesticks?start_ts=1789844401&end_ts=1789854355&period_interval=60",
+  "last_ingested_at": "2026-09-20T00:27:49.572Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B6900/candlesticks?start_ts=1789862401&end_ts=1789864069&period_interval=60",
   "trims": [
     {
       "at": "2026-09-19T14:59:29.442Z",
@@ -4922,6 +5306,14 @@
       "dropped": 2,
       "dropped_from_ts": 1788717600,
       "dropped_to_ts": 1788728400,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T00:01:50.055Z",
+      "dropped": 1,
+      "dropped_from_ts": 1788786000,
+      "dropped_to_ts": 1788786000,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }

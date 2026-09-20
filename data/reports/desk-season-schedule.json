@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-20T02:35:28.355Z",
-  "newestCapture": "2026-09-19T21:57:18.998Z",
+  "generatedAt": "2026-09-20T03:02:59.669Z",
+  "newestCapture": "2026-09-20T00:40:12.097Z",
   "rounds": [
     {
       "index": 1,
       "label": "R01",
-      "asOf": "2026-09-18T18:46:21.192Z",
-      "tradeable": 33,
-      "notTradeable": 53,
-      "marketsWithLadder": 33,
-      "newLadderCaptures": 33,
+      "asOf": "2026-09-18T00:03:34.003Z",
+      "tradeable": 30,
+      "notTradeable": 56,
+      "marketsWithLadder": 30,
+      "newLadderCaptures": 30,
       "gapHoursFromPrev": null,
       "isNewestCapture": false,
       "eventsApplied": {
@@ -26,6 +26,27 @@
     {
       "index": 2,
       "label": "R02",
+      "asOf": "2026-09-18T18:46:21.192Z",
+      "tradeable": 33,
+      "notTradeable": 53,
+      "marketsWithLadder": 33,
+      "newLadderCaptures": 3,
+      "gapHoursFromPrev": 18.713108,
+      "isNewestCapture": false,
+      "eventsApplied": {
+        "quotes": 667,
+        "makerFills": 0,
+        "settlements": 0,
+        "settlementPnl": 0,
+        "barQuotes": 627,
+        "ladderQuotes": 40
+      },
+      "settlementsInWindow": 0,
+      "makerFillsCarriedIn": 0
+    },
+    {
+      "index": 3,
+      "label": "R03",
       "asOf": "2026-09-19T15:34:11.240Z",
       "tradeable": 80,
       "notTradeable": 6,
@@ -34,12 +55,12 @@
       "gapHoursFromPrev": 20.797236,
       "isNewestCapture": false,
       "eventsApplied": {
-        "quotes": 2142,
+        "quotes": 1667,
         "makerFills": 0,
         "settlements": 0,
         "settlementPnl": 0,
-        "barQuotes": 1997,
-        "ladderQuotes": 145
+        "barQuotes": 1572,
+        "ladderQuotes": 95
       },
       "settlementsInWindow": 0,
       "makerFillsCarriedIn": 0

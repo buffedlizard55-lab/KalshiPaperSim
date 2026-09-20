@@ -5,66 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1788760800,
-      "open_interest_fp": "1726.00",
-      "price": {
-        "previous_dollars": "0.6700"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.7400",
-        "high_dollars": "0.7400",
-        "low_dollars": "0.6600",
-        "open_dollars": "0.7400"
-      },
-      "yes_bid": {
-        "close_dollars": "0.6600",
-        "high_dollars": "0.6600",
-        "low_dollars": "0.5300",
-        "open_dollars": "0.6600"
-      }
-    },
-    {
-      "end_period_ts": 1788764400,
-      "open_interest_fp": "1726.00",
-      "price": {
-        "previous_dollars": "0.6700"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.7400",
-        "high_dollars": "0.7400",
-        "low_dollars": "0.6800",
-        "open_dollars": "0.7400"
-      },
-      "yes_bid": {
-        "close_dollars": "0.6600",
-        "high_dollars": "0.6600",
-        "low_dollars": "0.5500",
-        "open_dollars": "0.6600"
-      }
-    },
-    {
-      "end_period_ts": 1788768000,
-      "open_interest_fp": "1726.00",
-      "price": {
-        "previous_dollars": "0.6700"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.7300",
-        "high_dollars": "0.7400",
-        "low_dollars": "0.6900",
-        "open_dollars": "0.7400"
-      },
-      "yes_bid": {
-        "close_dollars": "0.6300",
-        "high_dollars": "0.6600",
-        "low_dollars": "0.5600",
-        "open_dollars": "0.6600"
-      }
-    },
-    {
       "end_period_ts": 1788771600,
       "open_interest_fp": "1726.00",
       "price": {
@@ -4028,6 +3968,66 @@
         "low_dollars": "0.8100",
         "open_dollars": "0.8100"
       }
+    },
+    {
+      "end_period_ts": 1789855200,
+      "open_interest_fp": "2003.19",
+      "price": {
+        "previous_dollars": "0.8000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8100",
+        "high_dollars": "0.8100",
+        "low_dollars": "0.8100",
+        "open_dollars": "0.8100"
+      }
+    },
+    {
+      "end_period_ts": 1789858800,
+      "open_interest_fp": "2003.19",
+      "price": {
+        "previous_dollars": "0.8000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8100",
+        "high_dollars": "0.8100",
+        "low_dollars": "0.8100",
+        "open_dollars": "0.8100"
+      }
+    },
+    {
+      "end_period_ts": 1789862400,
+      "open_interest_fp": "2003.19",
+      "price": {
+        "previous_dollars": "0.8000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8100",
+        "high_dollars": "0.8100",
+        "low_dollars": "0.8100",
+        "open_dollars": "0.8100"
+      }
     }
   ],
   "books": [
@@ -4838,6 +4838,414 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:01:26.885Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T3.25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "71.37"
+            ],
+            [
+              "0.0200",
+              "1000.00"
+            ],
+            [
+              "0.0300",
+              "471.98"
+            ],
+            [
+              "0.0700",
+              "38.04"
+            ],
+            [
+              "0.0800",
+              "0.38"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "739701.00"
+            ],
+            [
+              "0.0200",
+              "6740.00"
+            ],
+            [
+              "0.0300",
+              "7960.00"
+            ],
+            [
+              "0.0900",
+              "58634.00"
+            ],
+            [
+              "0.1800",
+              "17193.00"
+            ],
+            [
+              "0.2600",
+              "4537.00"
+            ],
+            [
+              "0.3500",
+              "1549.00"
+            ],
+            [
+              "0.4000",
+              "4642.00"
+            ],
+            [
+              "0.4100",
+              "385.89"
+            ],
+            [
+              "0.4200",
+              "150.01"
+            ],
+            [
+              "0.4500",
+              "201.00"
+            ],
+            [
+              "0.4600",
+              "475.51"
+            ],
+            [
+              "0.4700",
+              "49.00"
+            ],
+            [
+              "0.4800",
+              "126.86"
+            ],
+            [
+              "0.5600",
+              "2.00"
+            ],
+            [
+              "0.5700",
+              "42.33"
+            ],
+            [
+              "0.8000",
+              "100.00"
+            ],
+            [
+              "0.8100",
+              "8.35"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:07:33.159Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T3.25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "71.37"
+            ],
+            [
+              "0.0200",
+              "1000.00"
+            ],
+            [
+              "0.0300",
+              "471.98"
+            ],
+            [
+              "0.0700",
+              "38.04"
+            ],
+            [
+              "0.0800",
+              "0.38"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "739701.00"
+            ],
+            [
+              "0.0200",
+              "6740.00"
+            ],
+            [
+              "0.0300",
+              "7960.00"
+            ],
+            [
+              "0.0900",
+              "58634.00"
+            ],
+            [
+              "0.1800",
+              "17193.00"
+            ],
+            [
+              "0.2600",
+              "4537.00"
+            ],
+            [
+              "0.3500",
+              "1549.00"
+            ],
+            [
+              "0.4000",
+              "4642.00"
+            ],
+            [
+              "0.4100",
+              "385.89"
+            ],
+            [
+              "0.4200",
+              "150.01"
+            ],
+            [
+              "0.4500",
+              "201.00"
+            ],
+            [
+              "0.4600",
+              "475.51"
+            ],
+            [
+              "0.4700",
+              "49.00"
+            ],
+            [
+              "0.4800",
+              "126.86"
+            ],
+            [
+              "0.5600",
+              "2.00"
+            ],
+            [
+              "0.5700",
+              "42.33"
+            ],
+            [
+              "0.8000",
+              "100.00"
+            ],
+            [
+              "0.8100",
+              "8.35"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:17:19.777Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T3.25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "71.37"
+            ],
+            [
+              "0.0200",
+              "1000.00"
+            ],
+            [
+              "0.0300",
+              "471.98"
+            ],
+            [
+              "0.0600",
+              "0.38"
+            ],
+            [
+              "0.0700",
+              "38.04"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "739701.00"
+            ],
+            [
+              "0.0200",
+              "6740.00"
+            ],
+            [
+              "0.0300",
+              "7960.00"
+            ],
+            [
+              "0.0900",
+              "58634.00"
+            ],
+            [
+              "0.1800",
+              "17193.00"
+            ],
+            [
+              "0.2600",
+              "4537.00"
+            ],
+            [
+              "0.3500",
+              "1549.00"
+            ],
+            [
+              "0.4000",
+              "4642.00"
+            ],
+            [
+              "0.4100",
+              "385.89"
+            ],
+            [
+              "0.4200",
+              "150.01"
+            ],
+            [
+              "0.4500",
+              "201.00"
+            ],
+            [
+              "0.4600",
+              "475.51"
+            ],
+            [
+              "0.4900",
+              "53.00"
+            ],
+            [
+              "0.5000",
+              "102.85"
+            ],
+            [
+              "0.5600",
+              "2.00"
+            ],
+            [
+              "0.5700",
+              "42.33"
+            ],
+            [
+              "0.8000",
+              "100.00"
+            ],
+            [
+              "0.8100",
+              "8.35"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:27:26.938Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T3.25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "71.37"
+            ],
+            [
+              "0.0200",
+              "1000.00"
+            ],
+            [
+              "0.0300",
+              "471.98"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "739701.00"
+            ],
+            [
+              "0.0200",
+              "6740.00"
+            ],
+            [
+              "0.0300",
+              "7960.00"
+            ],
+            [
+              "0.0900",
+              "58634.00"
+            ],
+            [
+              "0.1800",
+              "17193.00"
+            ],
+            [
+              "0.2600",
+              "4537.00"
+            ],
+            [
+              "0.3500",
+              "1549.00"
+            ],
+            [
+              "0.4000",
+              "4642.00"
+            ],
+            [
+              "0.4100",
+              "385.89"
+            ],
+            [
+              "0.4200",
+              "236.86"
+            ],
+            [
+              "0.4500",
+              "201.00"
+            ],
+            [
+              "0.4600",
+              "475.51"
+            ],
+            [
+              "0.5600",
+              "2.00"
+            ],
+            [
+              "0.5700",
+              "42.33"
+            ],
+            [
+              "0.5800",
+              "49.00"
+            ],
+            [
+              "0.5900",
+              "40.01"
+            ],
+            [
+              "0.8000",
+              "100.00"
+            ],
+            [
+              "0.8100",
+              "8.35"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4855,7 +5263,7 @@
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.1900",
-    "no_bid_dollars": "0.0900",
+    "no_bid_dollars": "0.0300",
     "no_sub_title": "Above 3.25%",
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "2003.19",
@@ -4883,17 +5291,17 @@
     "updated_time": "2026-04-09T14:07:28.192008Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "16384.12",
-    "yes_ask_dollars": "0.9100",
-    "yes_ask_size_fp": "30.84",
+    "yes_ask_dollars": "0.9700",
+    "yes_ask_size_fp": "471.98",
     "yes_bid_dollars": "0.8100",
     "yes_bid_size_fp": "8.35",
     "yes_sub_title": "Above 3.25%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T3.25",
-  "market_captured_at": "2026-09-19T21:45:33.885Z",
+  "market_captured_at": "2026-09-20T00:27:26.194Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T21:45:34.521Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T3.25/candlesticks?start_ts=1789851601&end_ts=1789854334&period_interval=60",
+  "last_ingested_at": "2026-09-20T00:27:26.868Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T3.25/candlesticks?start_ts=1789862401&end_ts=1789864046&period_interval=60",
   "trims": [
     {
       "at": "2026-09-19T14:59:09.360Z",
@@ -4916,6 +5324,14 @@
       "dropped": 6,
       "dropped_from_ts": 1788739200,
       "dropped_to_ts": 1788757200,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T00:01:27.185Z",
+      "dropped": 3,
+      "dropped_from_ts": 1788760800,
+      "dropped_to_ts": 1788768000,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }

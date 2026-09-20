@@ -1245,6 +1245,81 @@
         "low_dollars": "0.6800",
         "open_dollars": "0.7100"
       }
+    },
+    {
+      "end_period_ts": 1789855200,
+      "open_interest_fp": "1006.64",
+      "price": {
+        "close_dollars": "0.7300",
+        "high_dollars": "0.7400",
+        "low_dollars": "0.7200",
+        "mean_dollars": "0.7372",
+        "open_dollars": "0.7200",
+        "previous_dollars": "0.7400"
+      },
+      "volume_fp": "45.27",
+      "yes_ask": {
+        "close_dollars": "0.7300",
+        "high_dollars": "0.7400",
+        "low_dollars": "0.7200",
+        "open_dollars": "0.7300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7100",
+        "high_dollars": "0.7100",
+        "low_dollars": "0.6800",
+        "open_dollars": "0.6800"
+      }
+    },
+    {
+      "end_period_ts": 1789858800,
+      "open_interest_fp": "1016.52",
+      "price": {
+        "close_dollars": "0.7200",
+        "high_dollars": "0.7300",
+        "low_dollars": "0.7200",
+        "mean_dollars": "0.7258",
+        "open_dollars": "0.7300",
+        "previous_dollars": "0.7300"
+      },
+      "volume_fp": "39.60",
+      "yes_ask": {
+        "close_dollars": "0.7400",
+        "high_dollars": "0.7400",
+        "low_dollars": "0.7300",
+        "open_dollars": "0.7300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7200",
+        "high_dollars": "0.7300",
+        "low_dollars": "0.7100",
+        "open_dollars": "0.7100"
+      }
+    },
+    {
+      "end_period_ts": 1789862400,
+      "open_interest_fp": "1025.83",
+      "price": {
+        "close_dollars": "0.7400",
+        "high_dollars": "0.7400",
+        "low_dollars": "0.7400",
+        "mean_dollars": "0.7400",
+        "open_dollars": "0.7400",
+        "previous_dollars": "0.7200"
+      },
+      "volume_fp": "48.13",
+      "yes_ask": {
+        "close_dollars": "0.7400",
+        "high_dollars": "0.7400",
+        "low_dollars": "0.7400",
+        "open_dollars": "0.7400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7200",
+        "high_dollars": "0.7200",
+        "low_dollars": "0.7200",
+        "open_dollars": "0.7200"
+      }
     }
   ],
   "books": [
@@ -1467,6 +1542,162 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:21:21.025Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19WPGEDM-EDM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4352.00"
+            ],
+            [
+              "0.0200",
+              "1562.00"
+            ],
+            [
+              "0.0300",
+              "50550.00"
+            ],
+            [
+              "0.0400",
+              "369.00"
+            ],
+            [
+              "0.0500",
+              "25.00"
+            ],
+            [
+              "0.0600",
+              "900.00"
+            ],
+            [
+              "0.0700",
+              "410.85"
+            ],
+            [
+              "0.0800",
+              "599.00"
+            ],
+            [
+              "0.0900",
+              "500.00"
+            ],
+            [
+              "0.1000",
+              "724.00"
+            ],
+            [
+              "0.1300",
+              "140.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "295.54"
+            ],
+            [
+              "0.2100",
+              "14.50"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "9355.00"
+            ],
+            [
+              "0.0200",
+              "1200.10"
+            ],
+            [
+              "0.0300",
+              "50700.00"
+            ],
+            [
+              "0.0400",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "1.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "620.00"
+            ],
+            [
+              "0.3100",
+              "200.00"
+            ],
+            [
+              "0.3400",
+              "525.00"
+            ],
+            [
+              "0.3500",
+              "1746.00"
+            ],
+            [
+              "0.3600",
+              "175.00"
+            ],
+            [
+              "0.4100",
+              "140.00"
+            ],
+            [
+              "0.5000",
+              "20.00"
+            ],
+            [
+              "0.5100",
+              "138.00"
+            ],
+            [
+              "0.5500",
+              "103.00"
+            ],
+            [
+              "0.5900",
+              "78.00"
+            ],
+            [
+              "0.6200",
+              "94.46"
+            ],
+            [
+              "0.6300",
+              "57.00"
+            ],
+            [
+              "0.7200",
+              "1.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1482,20 +1713,20 @@
     "expected_expiration_time": "2026-09-20T03:00:00Z",
     "expiration_time": "2026-09-22T00:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.7300",
+    "last_price_dollars": "0.8000",
     "latest_expiration_time": "2026-09-22T00:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.2900",
-    "no_bid_dollars": "0.2700",
+    "no_ask_dollars": "0.3100",
+    "no_bid_dollars": "0.2100",
     "no_sub_title": "Edmonton",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T03:00:00Z",
-    "open_interest_fp": "1006.64",
+    "open_interest_fp": "1053.29",
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.6200",
-    "previous_yes_ask_dollars": "0.6100",
-    "previous_yes_bid_dollars": "0.5100",
+    "previous_yes_ask_dollars": "0.6000",
+    "previous_yes_bid_dollars": "0.5300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1513,17 +1744,17 @@
     "ticker": "KXNHLGAME-26SEP19WPGEDM-EDM",
     "title": "Edmonton wins",
     "updated_time": "2026-09-17T00:07:00.14378Z",
-    "volume_24h_fp": "1059.64",
-    "volume_fp": "1060.64",
-    "yes_ask_dollars": "0.7300",
-    "yes_ask_size_fp": "477.00",
-    "yes_bid_dollars": "0.7100",
-    "yes_bid_size_fp": "23.00",
+    "volume_24h_fp": "1174.83",
+    "volume_fp": "1175.83",
+    "yes_ask_dollars": "0.7900",
+    "yes_ask_size_fp": "14.50",
+    "yes_bid_dollars": "0.6900",
+    "yes_bid_size_fp": "24.00",
     "yes_sub_title": "Edmonton"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19WPGEDM-EDM",
-  "market_captured_at": "2026-09-19T21:39:44.996Z",
+  "market_captured_at": "2026-09-20T00:21:20.282Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T21:39:45.632Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19WPGEDM-EDM/candlesticks?start_ts=1789517220&end_ts=1789853985&period_interval=60"
+  "last_ingested_at": "2026-09-20T00:21:20.954Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19WPGEDM-EDM/candlesticks?start_ts=1789851601&end_ts=1789863680&period_interval=60"
 }

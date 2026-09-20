@@ -99,6 +99,36 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-19T23:58:13.476Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:33:12.316Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:37:36.669Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -127,9 +157,9 @@
     "occurrence_datetime": "2026-09-19T01:40:00Z",
     "open_interest_fp": "37926.78",
     "open_time": "2026-09-18T05:25:00Z",
-    "previous_price_dollars": "0.3400",
-    "previous_yes_ask_dollars": "0.3400",
-    "previous_yes_bid_dollars": "0.3300",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "0.0100",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -150,7 +180,7 @@
     "ticker": "KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5",
     "title": "Chase Burns: 5+ strikeouts?",
     "updated_time": "2026-09-19T01:36:34.904024Z",
-    "volume_24h_fp": "18244.15",
+    "volume_24h_fp": "14.75",
     "volume_fp": "47888.37",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -159,9 +189,9 @@
     "yes_sub_title": "Chase Burns: 5+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5",
-  "market_captured_at": "2026-09-19T21:54:55.521Z",
+  "market_captured_at": "2026-09-20T00:37:35.921Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T21:54:56.158Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/candlesticks?start_ts=1789790401&end_ts=1789854895&period_interval=1440"
+  "last_ingested_at": "2026-09-20T00:37:36.596Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/candlesticks?start_ts=1789790401&end_ts=1789864656&period_interval=1440"
 }
