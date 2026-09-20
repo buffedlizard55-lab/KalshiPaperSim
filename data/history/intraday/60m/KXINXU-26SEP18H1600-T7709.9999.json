@@ -357,6 +357,46 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:01:43.928Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXU-26SEP18H1600-T7709.9999/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:07:50.209Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXU-26SEP18H1600-T7709.9999/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:17:36.794Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXU-26SEP18H1600-T7709.9999/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:27:43.958Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXU-26SEP18H1600-T7709.9999/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -415,9 +455,9 @@
     "yes_sub_title": "7,710 or above"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXU-26SEP18H1600-T7709.9999",
-  "market_captured_at": "2026-09-19T21:45:49.604Z",
+  "market_captured_at": "2026-09-20T00:27:43.213Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T21:45:50.240Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXU/markets/KXINXU-26SEP18H1600-T7709.9999/candlesticks?start_ts=1789765201&end_ts=1789854349&period_interval=60"
+  "last_ingested_at": "2026-09-20T00:27:43.888Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXU/markets/KXINXU-26SEP18H1600-T7709.9999/candlesticks?start_ts=1789765201&end_ts=1789864063&period_interval=60"
 }

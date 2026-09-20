@@ -612,6 +612,46 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:02:35.189Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:08:41.364Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:18:27.877Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:28:35.080Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -639,9 +679,9 @@
     "occurrence_datetime": "2026-09-19T02:10:00Z",
     "open_interest_fp": "4266.05",
     "open_time": "2026-09-17T23:00:00Z",
-    "previous_price_dollars": "0.8900",
-    "previous_yes_ask_dollars": "0.9000",
-    "previous_yes_bid_dollars": "0.8800",
+    "previous_price_dollars": "0.7600",
+    "previous_yes_ask_dollars": "0.8200",
+    "previous_yes_bid_dollars": "0.7200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -661,7 +701,7 @@
     "ticker": "KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE2",
     "title": "Will Cleveland score over 1.5 runs?",
     "updated_time": "2026-09-19T01:55:54.90365Z",
-    "volume_24h_fp": "432.70",
+    "volume_24h_fp": "2.04",
     "volume_fp": "4349.43",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -670,9 +710,9 @@
     "yes_sub_title": "Cleveland over 1.5 runs scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE2",
-  "market_captured_at": "2026-09-19T21:46:36.724Z",
+  "market_captured_at": "2026-09-20T00:28:34.328Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T21:46:37.362Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE2/candlesticks?start_ts=1789783201&end_ts=1789854397&period_interval=60"
+  "last_ingested_at": "2026-09-20T00:28:35.001Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE2/candlesticks?start_ts=1789783201&end_ts=1789864114&period_interval=60"
 }
