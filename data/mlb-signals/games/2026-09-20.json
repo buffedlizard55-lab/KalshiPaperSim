@@ -11,7 +11,8 @@
  },
  "captures": [
   "2026-09-20T05:25:27.223Z",
-  "2026-09-20T16:38:14.587Z"
+  "2026-09-20T16:38:14.587Z",
+  "2026-09-20T19:02:18.772Z"
  ],
  "games": {
   "822844": {
@@ -69,6 +70,21 @@
      "inningState": "Top",
      "runs": {
       "away": 0,
+      "home": 0
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 2,
+     "inningState": "Middle",
+     "runs": {
+      "away": 1,
       "home": 0
      },
      "winner": null,
@@ -135,6 +151,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 5,
+     "inningState": "Bottom",
+     "runs": {
+      "away": 0,
+      "home": 5
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
@@ -197,6 +228,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 3,
+     "inningState": "Bottom",
+     "runs": {
+      "away": 1,
+      "home": 2
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
@@ -241,6 +287,21 @@
      "runs": {
       "away": null,
       "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
      },
      "winner": null,
      "url_ref": 0
@@ -306,6 +367,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 5,
+     "inningState": "End",
+     "runs": {
+      "away": 1,
+      "home": 1
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
@@ -368,6 +444,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 6,
+     "inningState": "Bottom",
+     "runs": {
+      "away": 4,
+      "home": 0
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
@@ -394,7 +485,10 @@
      "id": 683363,
      "fullName": "Matt Wilkinson"
     },
-    "home": null
+    "home": {
+     "id": 676263,
+     "fullName": "Jack Dreyer"
+    }
    },
    "firstCapturedAt": "2026-09-20T05:25:27.223Z",
    "states": [
@@ -409,6 +503,21 @@
      "runs": {
       "away": null,
       "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
      },
      "winner": null,
      "url_ref": 0
@@ -456,6 +565,21 @@
      "runs": {
       "away": null,
       "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
      },
      "winner": null,
      "url_ref": 0
@@ -521,6 +645,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 3,
+     "inningState": "Middle",
+     "runs": {
+      "away": 0,
+      "home": 0
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
@@ -574,6 +713,21 @@
      "last_seen_at": "2026-09-20T16:38:14.587Z",
      "abstractGameState": "Preview",
      "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Live",
+     "detailedState": "Warmup",
      "codedGameState": "P",
      "inning": 1,
      "inningState": "Top",
@@ -645,6 +799,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Delayed Start",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
@@ -704,6 +873,21 @@
      "runs": {
       "away": 0,
       "home": 0
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 5,
+     "inningState": "Top",
+     "runs": {
+      "away": 5,
+      "home": 1
      },
      "winner": null,
      "url_ref": 0
@@ -769,6 +953,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Delayed Start",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
@@ -804,7 +1003,7 @@
    "states": [
     {
      "captured_at": "2026-09-20T05:25:27.223Z",
-     "last_seen_at": "2026-09-20T16:38:14.587Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -860,6 +1059,21 @@
      "runs": {
       "away": null,
       "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-20T19:02:18.772Z",
+     "last_seen_at": "2026-09-20T19:02:18.772Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
      },
      "winner": null,
      "url_ref": 0
