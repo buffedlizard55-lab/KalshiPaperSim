@@ -129,6 +129,36 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T02:46:18.510Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:17:40.962Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:21:35.730Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -159,7 +189,7 @@
     "open_time": "2026-09-18T08:40:00Z",
     "previous_price_dollars": "0.7700",
     "previous_yes_ask_dollars": "1.0000",
-    "previous_yes_bid_dollars": "0.9900",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -189,9 +219,9 @@
     "yes_sub_title": "Bo Bichette: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1",
-  "market_captured_at": "2026-09-20T00:37:25.943Z",
+  "market_captured_at": "2026-09-20T03:21:35.090Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T00:37:26.616Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/candlesticks?start_ts=1789790401&end_ts=1789864646&period_interval=1440"
+  "last_ingested_at": "2026-09-20T03:21:35.711Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/candlesticks?start_ts=1789790401&end_ts=1789874495&period_interval=1440"
 }

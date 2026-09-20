@@ -1588,6 +1588,272 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T02:47:27.754Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "324.00"
+            ],
+            [
+              "0.0200",
+              "2.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0400",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "2.00"
+            ],
+            [
+              "0.0800",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1300",
+              "30.00"
+            ],
+            [
+              "0.1400",
+              "2.00"
+            ],
+            [
+              "0.1600",
+              "7.00"
+            ],
+            [
+              "0.1800",
+              "2.00"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2200",
+              "1.00"
+            ],
+            [
+              "0.2400",
+              "2021.00"
+            ],
+            [
+              "0.2500",
+              "19.00"
+            ],
+            [
+              "0.2800",
+              "6.00"
+            ],
+            [
+              "0.3800",
+              "6.00"
+            ],
+            [
+              "0.4800",
+              "13.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "312.00"
+            ],
+            [
+              "0.0200",
+              "1.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:19:03.403Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "324.00"
+            ],
+            [
+              "0.0200",
+              "202.00"
+            ],
+            [
+              "0.0300",
+              "26.00"
+            ],
+            [
+              "0.0400",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "2.00"
+            ],
+            [
+              "0.0800",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1400",
+              "2.00"
+            ],
+            [
+              "0.1600",
+              "12.00"
+            ],
+            [
+              "0.1800",
+              "2.00"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2100",
+              "20.00"
+            ],
+            [
+              "0.2200",
+              "1.00"
+            ],
+            [
+              "0.2400",
+              "1.00"
+            ],
+            [
+              "0.2500",
+              "19.00"
+            ],
+            [
+              "0.2600",
+              "15.00"
+            ],
+            [
+              "0.2800",
+              "6.00"
+            ],
+            [
+              "0.3800",
+              "6.00"
+            ],
+            [
+              "0.4800",
+              "4.00"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:22:57.956Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "324.00"
+            ],
+            [
+              "0.0200",
+              "202.00"
+            ],
+            [
+              "0.0300",
+              "26.00"
+            ],
+            [
+              "0.0400",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "2.00"
+            ],
+            [
+              "0.0800",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1400",
+              "2.00"
+            ],
+            [
+              "0.1600",
+              "12.00"
+            ],
+            [
+              "0.1800",
+              "2.00"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2100",
+              "20.00"
+            ],
+            [
+              "0.2200",
+              "1.00"
+            ],
+            [
+              "0.2400",
+              "1.00"
+            ],
+            [
+              "0.2500",
+              "19.00"
+            ],
+            [
+              "0.2600",
+              "15.00"
+            ],
+            [
+              "0.2800",
+              "6.00"
+            ],
+            [
+              "0.3800",
+              "6.00"
+            ],
+            [
+              "0.4800",
+              "4.00"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1604,20 +1870,20 @@
     "expiration_time": "2026-09-22T00:00:00Z",
     "expiration_value": "",
     "floor_strike": 24.5,
-    "last_price_dollars": "0.3500",
+    "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-22T00:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.8500",
-    "no_bid_dollars": "0.4600",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.4800",
     "no_sub_title": "Northern Arizona wins by over 24.5 points",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T03:00:00Z",
-    "open_interest_fp": "935.85",
+    "open_interest_fp": "1246.85",
     "open_time": "2026-09-16T04:06:00Z",
     "previous_price_dollars": "0.4600",
     "previous_yes_ask_dollars": "0.4600",
-    "previous_yes_bid_dollars": "0.3700",
+    "previous_yes_bid_dollars": "0.3600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1635,17 +1901,17 @@
     "ticker": "KXNCAAFSPREAD-26SEP19NAUUTU-NAU25",
     "title": "Northern Arizona wins by over 24.5 points",
     "updated_time": "2026-09-16T04:06:00.486513Z",
-    "volume_24h_fp": "15.01",
-    "volume_fp": "963.85",
-    "yes_ask_dollars": "0.5400",
-    "yes_ask_size_fp": "2.55",
-    "yes_bid_dollars": "0.1500",
-    "yes_bid_size_fp": "10.00",
+    "volume_24h_fp": "346.01",
+    "volume_fp": "1294.85",
+    "yes_ask_dollars": "0.5200",
+    "yes_ask_size_fp": "4.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Northern Arizona wins by over 24.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25",
-  "market_captured_at": "2026-09-20T00:38:58.758Z",
+  "market_captured_at": "2026-09-20T03:22:57.317Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T00:38:59.432Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25/candlesticks?start_ts=1789790401&end_ts=1789864739&period_interval=1440"
+  "last_ingested_at": "2026-09-20T03:22:57.937Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25/candlesticks?start_ts=1789790401&end_ts=1789874577&period_interval=1440"
 }

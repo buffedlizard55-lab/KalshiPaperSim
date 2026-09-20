@@ -1300,6 +1300,76 @@
         "low_dollars": "0.0800",
         "open_dollars": "0.4200"
       }
+    },
+    {
+      "end_period_ts": 1789866000,
+      "open_interest_fp": "1523.75",
+      "price": {
+        "previous_dollars": "0.5500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.6200",
+        "high_dollars": "0.6200",
+        "low_dollars": "0.5100",
+        "open_dollars": "0.6200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.0800"
+      }
+    },
+    {
+      "end_period_ts": 1789869600,
+      "open_interest_fp": "1523.75",
+      "price": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0800",
+        "mean_dollars": "0.0800",
+        "open_dollars": "0.0800",
+        "previous_dollars": "0.5500"
+      },
+      "volume_fp": "1.00",
+      "yes_ask": {
+        "close_dollars": "0.5200",
+        "high_dollars": "0.6200",
+        "low_dollars": "0.4500",
+        "open_dollars": "0.6200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0800"
+      }
+    },
+    {
+      "end_period_ts": 1789873200,
+      "open_interest_fp": "2176.75",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.5200",
+        "mean_dollars": "0.9614",
+        "open_dollars": "0.5200",
+        "previous_dollars": "0.0800"
+      },
+      "volume_fp": "654.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.5200",
+        "open_dollars": "0.5200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6000",
+        "high_dollars": "0.6000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -2962,6 +3032,338 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T02:51:20.936Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "313.00"
+            ],
+            [
+              "0.0200",
+              "1.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "81.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1100",
+              "3.00"
+            ],
+            [
+              "0.1600",
+              "3.00"
+            ],
+            [
+              "0.1700",
+              "3.60"
+            ],
+            [
+              "0.2100",
+              "2.00"
+            ],
+            [
+              "0.2600",
+              "4.00"
+            ],
+            [
+              "0.2800",
+              "3.60"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.3700",
+              "3.60"
+            ],
+            [
+              "0.4600",
+              "3.60"
+            ],
+            [
+              "0.5000",
+              "14.00"
+            ],
+            [
+              "0.5400",
+              "3.60"
+            ],
+            [
+              "0.6000",
+              "9.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T02:56:48.014Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "313.00"
+            ],
+            [
+              "0.0200",
+              "1.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "81.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1100",
+              "3.00"
+            ],
+            [
+              "0.1600",
+              "3.00"
+            ],
+            [
+              "0.1700",
+              "3.60"
+            ],
+            [
+              "0.2100",
+              "2.00"
+            ],
+            [
+              "0.2600",
+              "4.00"
+            ],
+            [
+              "0.2800",
+              "3.60"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.3700",
+              "3.60"
+            ],
+            [
+              "0.4600",
+              "3.60"
+            ],
+            [
+              "0.5000",
+              "14.00"
+            ],
+            [
+              "0.5400",
+              "3.60"
+            ],
+            [
+              "0.6000",
+              "9.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:05:36.295Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "313.00"
+            ],
+            [
+              "0.0200",
+              "1.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "81.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1100",
+              "3.00"
+            ],
+            [
+              "0.1600",
+              "3.00"
+            ],
+            [
+              "0.1700",
+              "3.60"
+            ],
+            [
+              "0.2100",
+              "2.00"
+            ],
+            [
+              "0.2600",
+              "4.00"
+            ],
+            [
+              "0.2800",
+              "3.60"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.3700",
+              "3.60"
+            ],
+            [
+              "0.4600",
+              "3.60"
+            ],
+            [
+              "0.5000",
+              "14.00"
+            ],
+            [
+              "0.5400",
+              "3.60"
+            ],
+            [
+              "0.6000",
+              "9.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:14:47.801Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "313.00"
+            ],
+            [
+              "0.0200",
+              "1.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "81.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1100",
+              "3.00"
+            ],
+            [
+              "0.1600",
+              "3.00"
+            ],
+            [
+              "0.1700",
+              "3.60"
+            ],
+            [
+              "0.2100",
+              "2.00"
+            ],
+            [
+              "0.2600",
+              "4.00"
+            ],
+            [
+              "0.2800",
+              "3.60"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.3700",
+              "3.60"
+            ],
+            [
+              "0.4600",
+              "3.60"
+            ],
+            [
+              "0.5000",
+              "14.00"
+            ],
+            [
+              "0.5400",
+              "3.60"
+            ],
+            [
+              "0.9900",
+              "10.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2978,20 +3380,20 @@
     "expiration_time": "2026-09-21T23:00:00Z",
     "expiration_value": "",
     "floor_strike": 14.5,
-    "last_price_dollars": "0.5500",
+    "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-21T23:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9200",
-    "no_bid_dollars": "0.3800",
+    "no_ask_dollars": "0.0100",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "North Alabama wins by over 14.5 points",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T02:00:00Z",
-    "open_interest_fp": "1523.75",
+    "open_interest_fp": "2176.75",
     "open_time": "2026-09-16T04:06:00Z",
     "previous_price_dollars": "0.4800",
     "previous_yes_ask_dollars": "0.4800",
-    "previous_yes_bid_dollars": "0.4000",
+    "previous_yes_bid_dollars": "0.4400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3009,17 +3411,17 @@
     "ticker": "KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15",
     "title": "North Alabama wins by over 14.5 points",
     "updated_time": "2026-09-16T04:06:00.236847Z",
-    "volume_24h_fp": "989.28",
-    "volume_fp": "1768.37",
-    "yes_ask_dollars": "0.6200",
-    "yes_ask_size_fp": "6.00",
-    "yes_bid_dollars": "0.0800",
-    "yes_bid_size_fp": "38.00",
+    "volume_24h_fp": "1644.28",
+    "volume_fp": "2423.37",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.9900",
+    "yes_bid_size_fp": "10.00",
     "yes_sub_title": "North Alabama wins by over 14.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15",
-  "market_captured_at": "2026-09-20T00:29:46.688Z",
+  "market_captured_at": "2026-09-20T03:14:47.161Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T00:29:47.364Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/candlesticks?start_ts=1789862401&end_ts=1789864186&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:14:47.783Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/candlesticks?start_ts=1789873201&end_ts=1789874087&period_interval=60"
 }

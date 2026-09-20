@@ -1226,6 +1226,81 @@
         "low_dollars": "0.2400",
         "open_dollars": "0.2700"
       }
+    },
+    {
+      "end_period_ts": 1789866000,
+      "open_interest_fp": "4177.12",
+      "price": {
+        "close_dollars": "0.3300",
+        "high_dollars": "0.3400",
+        "low_dollars": "0.1200",
+        "mean_dollars": "0.2513",
+        "open_dollars": "0.2700",
+        "previous_dollars": "0.2600"
+      },
+      "volume_fp": "2412.66",
+      "yes_ask": {
+        "close_dollars": "0.2100",
+        "high_dollars": "0.3500",
+        "low_dollars": "0.2000",
+        "open_dollars": "0.2600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1200",
+        "high_dollars": "0.2800",
+        "low_dollars": "0.1100",
+        "open_dollars": "0.2500"
+      }
+    },
+    {
+      "end_period_ts": 1789869600,
+      "open_interest_fp": "6783.87",
+      "price": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.2600",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0368",
+        "open_dollars": "0.2400",
+        "previous_dollars": "0.3300"
+      },
+      "volume_fp": "4407.33",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.2100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.1200"
+      }
+    },
+    {
+      "end_period_ts": 1789873200,
+      "open_interest_fp": "15435.22",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "8658.35",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -1592,6 +1667,129 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:07:03.633Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19WPGEDM-WPG/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3296.20"
+            ],
+            [
+              "0.0200",
+              "562.00"
+            ],
+            [
+              "0.0300",
+              "542.00"
+            ],
+            [
+              "0.0500",
+              "25.00"
+            ],
+            [
+              "0.0600",
+              "400.00"
+            ],
+            [
+              "0.0700",
+              "900.00"
+            ],
+            [
+              "0.0900",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1300",
+              "43.00"
+            ],
+            [
+              "0.1500",
+              "60.00"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.2000",
+              "300.00"
+            ],
+            [
+              "0.2500",
+              "317.76"
+            ],
+            [
+              "0.2600",
+              "718.00"
+            ],
+            [
+              "0.2800",
+              "478.50"
+            ],
+            [
+              "0.3300",
+              "200.00"
+            ],
+            [
+              "0.3500",
+              "200.00"
+            ],
+            [
+              "0.3800",
+              "32.00"
+            ],
+            [
+              "0.5600",
+              "500.00"
+            ],
+            [
+              "0.5700",
+              "500.00"
+            ],
+            [
+              "0.5800",
+              "5.00"
+            ],
+            [
+              "0.6100",
+              "27.00"
+            ],
+            [
+              "0.6300",
+              "160.00"
+            ],
+            [
+              "0.6700",
+              "140.00"
+            ],
+            [
+              "0.6900",
+              "2.00"
+            ],
+            [
+              "0.8700",
+              "13.00"
+            ],
+            [
+              "0.9800",
+              "2.00"
+            ],
+            [
+              "0.9900",
+              "2092.00"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1607,20 +1805,20 @@
     "expected_expiration_time": "2026-09-20T03:00:00Z",
     "expiration_time": "2026-09-22T00:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.2500",
+    "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-22T00:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.8200",
-    "no_bid_dollars": "0.7600",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.9900",
     "no_sub_title": "Winnipeg",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T03:00:00Z",
-    "open_interest_fp": "2512.54",
+    "open_interest_fp": "15435.22",
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.3800",
-    "previous_yes_ask_dollars": "0.4500",
-    "previous_yes_bid_dollars": "0.4000",
+    "previous_yes_ask_dollars": "0.4800",
+    "previous_yes_bid_dollars": "0.4100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1637,18 +1835,18 @@
     "strike_type": "structured",
     "ticker": "KXNHLGAME-26SEP19WPGEDM-WPG",
     "title": "Winnipeg wins",
-    "updated_time": "2026-09-17T00:07:00.14378Z",
-    "volume_24h_fp": "2637.73",
-    "volume_fp": "2640.73",
-    "yes_ask_dollars": "0.2400",
-    "yes_ask_size_fp": "47.00",
-    "yes_bid_dollars": "0.1800",
-    "yes_bid_size_fp": "1.00",
+    "updated_time": "2026-09-20T03:03:56.03197Z",
+    "volume_24h_fp": "17427.02",
+    "volume_fp": "17430.02",
+    "yes_ask_dollars": "0.0100",
+    "yes_ask_size_fp": "2092.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Winnipeg"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19WPGEDM-WPG",
-  "market_captured_at": "2026-09-20T00:21:17.450Z",
+  "market_captured_at": "2026-09-20T03:07:02.989Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T00:21:18.122Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19WPGEDM-WPG/candlesticks?start_ts=1789851601&end_ts=1789863677&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:07:03.613Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19WPGEDM-WPG/candlesticks?start_ts=1789862401&end_ts=1789873623&period_interval=60"
 }

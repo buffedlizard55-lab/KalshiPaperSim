@@ -1,0 +1,208 @@
+{
+  "ticker": "KXNCAAFGAME-26OCT03TXSOFAU-TXSO",
+  "series_ticker": "KXNCAAFGAME",
+  "period_interval": 60,
+  "source": "live_api",
+  "candlesticks": [
+    {
+      "end_period_ts": 1789858800,
+      "open_interest_fp": "300.00",
+      "price": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "mean_dollars": "0.0700",
+        "open_dollars": "0.0700"
+      },
+      "volume_fp": "300.00",
+      "yes_ask": {
+        "close_dollars": "0.9300",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.9300",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1789862400,
+      "open_interest_fp": "300.00",
+      "price": {
+        "previous_dollars": "0.0700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.9300",
+        "open_dollars": "0.9300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      }
+    },
+    {
+      "end_period_ts": 1789869600,
+      "open_interest_fp": "1000.00",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "mean_dollars": "0.0400",
+        "open_dollars": "0.0400",
+        "previous_dollars": "0.0700"
+      },
+      "volume_fp": "700.00",
+      "yes_ask": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.9300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0400"
+      }
+    }
+  ],
+  "books": [
+    {
+      "captured_at": "2026-09-20T03:07:11.238Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "116847.00"
+            ],
+            [
+              "0.0200",
+              "7082.00"
+            ],
+            [
+              "0.0300",
+              "3388.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "5.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "217.00"
+            ],
+            [
+              "0.1400",
+              "517.00"
+            ],
+            [
+              "0.1500",
+              "1358.00"
+            ],
+            [
+              "0.1600",
+              "563.00"
+            ],
+            [
+              "0.4300",
+              "63.00"
+            ],
+            [
+              "0.9300",
+              "300.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "113753.00"
+            ],
+            [
+              "0.0200",
+              "1700.00"
+            ],
+            [
+              "0.0300",
+              "500.00"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-10-05T22:00:00Z",
+    "created_time": "2026-09-19T22:04:58.650174Z",
+    "custom_strike": {
+      "football_team": "9de6a1db-a275-4d1c-b1f5-678c250b3d24"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNCAAFGAME-26OCT03TXSOFAU",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-10-04T01:00:00Z",
+    "expiration_time": "2026-10-05T22:00:00Z",
+    "expiration_value": "",
+    "last_price_dollars": "0.0400",
+    "latest_expiration_time": "2026-10-05T22:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "0.9700",
+    "no_bid_dollars": "0.9300",
+    "no_sub_title": "Texas Southern",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-10-04T01:00:00Z",
+    "open_interest_fp": "1000.00",
+    "open_time": "2026-09-19T22:08:00Z",
+    "previous_price_dollars": "0.0000",
+    "previous_yes_ask_dollars": "0.0000",
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Texas Southern wins the Texas Southern vs Florida Atlantic college football game originally scheduled for Oct 3, 2026, then the market resolves to Yes.",
+    "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_timer_seconds": 90,
+    "status": "active",
+    "strike_type": "structured",
+    "ticker": "KXNCAAFGAME-26OCT03TXSOFAU-TXSO",
+    "title": "Texas Southern wins",
+    "updated_time": "2026-09-19T22:08:01.218781Z",
+    "volume_24h_fp": "1000.00",
+    "volume_fp": "1000.00",
+    "yes_ask_dollars": "0.0700",
+    "yes_ask_size_fp": "300.00",
+    "yes_bid_dollars": "0.0300",
+    "yes_bid_size_fp": "500.00",
+    "yes_sub_title": "Texas Southern"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO",
+  "market_captured_at": "2026-09-20T03:07:10.592Z",
+  "status": "active",
+  "last_ingested_at": "2026-09-20T03:07:11.212Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO/candlesticks?start_ts=1789769280&end_ts=1789873630&period_interval=60"
+}

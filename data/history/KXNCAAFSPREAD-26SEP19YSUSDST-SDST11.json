@@ -2071,11 +2071,158 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T02:47:29.876Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "325.00"
+            ],
+            [
+              "0.0200",
+              "202.10"
+            ],
+            [
+              "0.0300",
+              "101.00"
+            ],
+            [
+              "0.0400",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "2.00"
+            ],
+            [
+              "0.0600",
+              "100.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "1.00"
+            ],
+            [
+              "0.0900",
+              "68.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1300",
+              "2.65"
+            ],
+            [
+              "0.1400",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "6.00"
+            ],
+            [
+              "0.1700",
+              "26.00"
+            ],
+            [
+              "0.1800",
+              "4.59"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2100",
+              "20.00"
+            ],
+            [
+              "0.2200",
+              "1.00"
+            ],
+            [
+              "0.2400",
+              "1.00"
+            ],
+            [
+              "0.2500",
+              "20.69"
+            ],
+            [
+              "0.2600",
+              "15.00"
+            ],
+            [
+              "0.2700",
+              "14.00"
+            ],
+            [
+              "0.3100",
+              "15.00"
+            ],
+            [
+              "0.3600",
+              "3.00"
+            ],
+            [
+              "0.4100",
+              "4.00"
+            ],
+            [
+              "0.4600",
+              "2.00"
+            ],
+            [
+              "0.4800",
+              "13.00"
+            ],
+            [
+              "0.5100",
+              "1.00"
+            ],
+            [
+              "0.9900",
+              "10.00"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:19:05.932Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:23:00.483Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
     "can_close_early": true,
-    "close_time": "2026-09-21T23:00:00Z",
+    "close_time": "2026-09-20T03:04:52Z",
     "created_time": "2026-09-16T07:03:24.318845Z",
     "custom_strike": {
       "football_team": "0d1df751-249f-4240-8bb9-c4011b4ed780"
@@ -2085,22 +2232,22 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-09-20T02:00:00Z",
     "expiration_time": "2026-09-21T23:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "7",
     "floor_strike": 10.5,
-    "last_price_dollars": "0.7400",
+    "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-21T23:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.6400",
-    "no_bid_dollars": "0.2600",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "South Dakota St. wins by over 10.5 points",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T02:00:00Z",
-    "open_interest_fp": "48237.63",
+    "open_interest_fp": "49165.46",
     "open_time": "2026-09-16T07:06:00Z",
-    "previous_price_dollars": "0.5000",
-    "previous_yes_ask_dollars": "0.5000",
-    "previous_yes_bid_dollars": "0.4500",
+    "previous_price_dollars": "0.4500",
+    "previous_yes_ask_dollars": "0.4900",
+    "previous_yes_bid_dollars": "0.4600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2109,26 +2256,29 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "no",
     "rules_primary": "If South Dakota St. wins by more than 10.5 points in the Youngstown St. vs South Dakota St. college football game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
     "settlement_timer_seconds": 180,
-    "status": "active",
+    "settlement_ts": "2026-09-20T03:08:54.512236Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
     "strike_type": "greater",
     "ticker": "KXNCAAFSPREAD-26SEP19YSUSDST-SDST11",
     "title": "South Dakota St. wins by over 10.5 points",
-    "updated_time": "2026-09-16T07:06:00.137063Z",
-    "volume_24h_fp": "49760.02",
-    "volume_fp": "50942.87",
-    "yes_ask_dollars": "0.7400",
-    "yes_ask_size_fp": "3.69",
-    "yes_bid_dollars": "0.3600",
-    "yes_bid_size_fp": "110.00",
+    "updated_time": "2026-09-20T03:08:54.967583Z",
+    "volume_24h_fp": "50640.29",
+    "volume_fp": "51946.74",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "South Dakota St. wins by over 10.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11",
-  "market_captured_at": "2026-09-20T00:39:01.605Z",
-  "status": "active",
-  "last_ingested_at": "2026-09-20T00:39:02.281Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/candlesticks?start_ts=1789790401&end_ts=1789864741&period_interval=1440"
+  "market_captured_at": "2026-09-20T03:22:59.839Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-20T03:23:00.464Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/candlesticks?start_ts=1789790401&end_ts=1789874580&period_interval=1440",
+  "result": "no"
 }

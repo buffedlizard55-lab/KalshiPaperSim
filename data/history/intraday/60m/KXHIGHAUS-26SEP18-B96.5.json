@@ -1029,6 +1029,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T02:53:17.726Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26SEP18-B96.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1076,7 +1086,7 @@
     "ticker": "KXHIGHAUS-26SEP18-B96.5",
     "title": "Will the maximum temperature be 96-97° on Sep 18, 2026?",
     "updated_time": "2026-09-19T12:09:54.731738Z",
-    "volume_24h_fp": "645.24",
+    "volume_24h_fp": "187.02",
     "volume_fp": "29202.31",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1085,9 +1095,9 @@
     "yes_sub_title": "96° to 97°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26SEP18-B96.5",
-  "market_captured_at": "2026-09-20T00:05:58.271Z",
+  "market_captured_at": "2026-09-20T02:53:17.085Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T00:05:58.946Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP18-B96.5/candlesticks?start_ts=1789801201&end_ts=1789862758&period_interval=60",
+  "last_ingested_at": "2026-09-20T02:53:17.706Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26SEP18-B96.5/candlesticks?start_ts=1789801201&end_ts=1789872797&period_interval=60",
   "result": "no"
 }

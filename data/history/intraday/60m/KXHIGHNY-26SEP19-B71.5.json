@@ -847,6 +847,56 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1789866000,
+      "open_interest_fp": "19116.48",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "189.01",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1789869600,
+      "open_interest_fp": "19864.07",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "747.59",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -1000,6 +1050,189 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T02:58:38.418Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP19-B71.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3111.76"
+            ],
+            [
+              "0.0200",
+              "150.00"
+            ],
+            [
+              "0.0300",
+              "866.37"
+            ],
+            [
+              "0.0400",
+              "27.00"
+            ],
+            [
+              "0.0500",
+              "1.00"
+            ],
+            [
+              "0.0600",
+              "33.40"
+            ],
+            [
+              "0.1100",
+              "2.31"
+            ],
+            [
+              "0.1400",
+              "93.51"
+            ],
+            [
+              "0.1500",
+              "72.00"
+            ],
+            [
+              "0.1600",
+              "2.00"
+            ],
+            [
+              "0.2000",
+              "3.00"
+            ],
+            [
+              "0.2100",
+              "3.00"
+            ],
+            [
+              "0.2500",
+              "62.50"
+            ],
+            [
+              "0.2600",
+              "39.41"
+            ],
+            [
+              "0.2800",
+              "12.37"
+            ],
+            [
+              "0.3000",
+              "22.17"
+            ],
+            [
+              "0.3100",
+              "2.00"
+            ],
+            [
+              "0.3400",
+              "62.78"
+            ],
+            [
+              "0.3500",
+              "4.00"
+            ],
+            [
+              "0.3600",
+              "1.00"
+            ],
+            [
+              "0.4000",
+              "49.80"
+            ],
+            [
+              "0.4100",
+              "12.00"
+            ],
+            [
+              "0.4300",
+              "19.70"
+            ],
+            [
+              "0.4500",
+              "8.00"
+            ],
+            [
+              "0.4600",
+              "1.00"
+            ],
+            [
+              "0.5000",
+              "50.00"
+            ],
+            [
+              "0.5300",
+              "10.00"
+            ],
+            [
+              "0.5800",
+              "13.40"
+            ],
+            [
+              "0.6000",
+              "5.00"
+            ],
+            [
+              "0.6100",
+              "16.42"
+            ],
+            [
+              "0.6200",
+              "187.03"
+            ],
+            [
+              "0.6800",
+              "31.21"
+            ],
+            [
+              "0.7000",
+              "168.37"
+            ],
+            [
+              "0.7400",
+              "25.00"
+            ],
+            [
+              "0.7500",
+              "17.00"
+            ],
+            [
+              "0.8500",
+              "34.00"
+            ],
+            [
+              "0.8700",
+              "282.83"
+            ],
+            [
+              "0.9300",
+              "24.00"
+            ],
+            [
+              "0.9500",
+              "143.51"
+            ],
+            [
+              "0.9600",
+              "150.00"
+            ],
+            [
+              "0.9700",
+              "50.00"
+            ],
+            [
+              "0.9800",
+              "300.00"
+            ],
+            [
+              "0.9900",
+              "19483.04"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1023,11 +1256,11 @@
     "no_sub_title": "71° to 72°",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T14:00:00Z",
-    "open_interest_fp": "18929.48",
+    "open_interest_fp": "20959.10",
     "open_time": "2026-09-18T14:00:00Z",
-    "previous_price_dollars": "0.4300",
-    "previous_yes_ask_dollars": "0.4400",
-    "previous_yes_bid_dollars": "0.4300",
+    "previous_price_dollars": "0.5300",
+    "previous_yes_ask_dollars": "0.5300",
+    "previous_yes_bid_dollars": "0.5200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1045,17 +1278,17 @@
     "ticker": "KXHIGHNY-26SEP19-B71.5",
     "title": "Will the maximum temperature be 71-72° on Sep 19, 2026?",
     "updated_time": "2026-09-18T14:00:01.811546Z",
-    "volume_24h_fp": "43740.23",
-    "volume_fp": "46409.34",
+    "volume_24h_fp": "44641.50",
+    "volume_fp": "48440.97",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "13646.67",
+    "yes_ask_size_fp": "19483.04",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "71° to 72°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP19-B71.5",
-  "market_captured_at": "2026-09-20T00:11:58.292Z",
+  "market_captured_at": "2026-09-20T02:58:37.772Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T00:11:58.969Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP19-B71.5/candlesticks?start_ts=1789653600&end_ts=1789863118&period_interval=60"
+  "last_ingested_at": "2026-09-20T02:58:38.399Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP19-B71.5/candlesticks?start_ts=1789862401&end_ts=1789873118&period_interval=60"
 }

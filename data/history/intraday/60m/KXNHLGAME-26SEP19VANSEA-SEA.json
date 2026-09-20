@@ -1307,6 +1307,81 @@
         "low_dollars": "0.5100",
         "open_dollars": "0.5100"
       }
+    },
+    {
+      "end_period_ts": 1789866000,
+      "open_interest_fp": "3235.42",
+      "price": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.6700",
+        "low_dollars": "0.5200",
+        "mean_dollars": "0.5888",
+        "open_dollars": "0.5200",
+        "previous_dollars": "0.5300"
+      },
+      "volume_fp": "1794.25",
+      "yes_ask": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.6700",
+        "low_dollars": "0.5200",
+        "open_dollars": "0.5300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5300",
+        "high_dollars": "0.5400",
+        "low_dollars": "0.5100",
+        "open_dollars": "0.5100"
+      }
+    },
+    {
+      "end_period_ts": 1789869600,
+      "open_interest_fp": "3908.23",
+      "price": {
+        "close_dollars": "0.7500",
+        "high_dollars": "0.7500",
+        "low_dollars": "0.5500",
+        "mean_dollars": "0.6277",
+        "open_dollars": "0.5500",
+        "previous_dollars": "0.5600"
+      },
+      "volume_fp": "674.81",
+      "yes_ask": {
+        "close_dollars": "0.7400",
+        "high_dollars": "0.7500",
+        "low_dollars": "0.5500",
+        "open_dollars": "0.5600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6800",
+        "high_dollars": "0.6800",
+        "low_dollars": "0.5100",
+        "open_dollars": "0.5300"
+      }
+    },
+    {
+      "end_period_ts": 1789873200,
+      "open_interest_fp": "4568.04",
+      "price": {
+        "close_dollars": "0.6800",
+        "high_dollars": "0.8700",
+        "low_dollars": "0.6800",
+        "mean_dollars": "0.7993",
+        "open_dollars": "0.7600",
+        "previous_dollars": "0.7500"
+      },
+      "volume_fp": "713.39",
+      "yes_ask": {
+        "close_dollars": "0.8700",
+        "high_dollars": "0.8700",
+        "low_dollars": "0.7400",
+        "open_dollars": "0.7400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6800",
+        "high_dollars": "0.6900",
+        "low_dollars": "0.6800",
+        "open_dollars": "0.6800"
+      }
     }
   ],
   "books": [
@@ -1525,6 +1600,170 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:07:06.166Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VANSEA-SEA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4384.40"
+            ],
+            [
+              "0.0200",
+              "1563.47"
+            ],
+            [
+              "0.0300",
+              "1518.21"
+            ],
+            [
+              "0.0400",
+              "525.80"
+            ],
+            [
+              "0.0500",
+              "749.00"
+            ],
+            [
+              "0.0600",
+              "400.00"
+            ],
+            [
+              "0.0700",
+              "402.40"
+            ],
+            [
+              "0.0800",
+              "107.00"
+            ],
+            [
+              "0.0900",
+              "517.92"
+            ],
+            [
+              "0.1000",
+              "500.00"
+            ],
+            [
+              "0.1100",
+              "5.00"
+            ],
+            [
+              "0.1300",
+              "945.06"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "9355.00"
+            ],
+            [
+              "0.0200",
+              "1200.10"
+            ],
+            [
+              "0.0300",
+              "700.00"
+            ],
+            [
+              "0.0400",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "1.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "330.00"
+            ],
+            [
+              "0.1200",
+              "548.00"
+            ],
+            [
+              "0.1300",
+              "217.00"
+            ],
+            [
+              "0.1400",
+              "418.00"
+            ],
+            [
+              "0.3100",
+              "200.00"
+            ],
+            [
+              "0.3200",
+              "5.00"
+            ],
+            [
+              "0.3500",
+              "1.00"
+            ],
+            [
+              "0.4000",
+              "140.00"
+            ],
+            [
+              "0.4500",
+              "200.00"
+            ],
+            [
+              "0.4900",
+              "150.00"
+            ],
+            [
+              "0.5100",
+              "363.56"
+            ],
+            [
+              "0.5300",
+              "76.00"
+            ],
+            [
+              "0.5900",
+              "9.38"
+            ],
+            [
+              "0.6000",
+              "100.00"
+            ],
+            [
+              "0.6100",
+              "12.00"
+            ],
+            [
+              "0.6200",
+              "150.00"
+            ],
+            [
+              "0.6300",
+              "50.00"
+            ],
+            [
+              "0.6400",
+              "7.00"
+            ],
+            [
+              "0.6800",
+              "69.37"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1540,20 +1779,20 @@
     "expected_expiration_time": "2026-09-20T04:00:00Z",
     "expiration_time": "2026-09-22T01:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.5300",
+    "last_price_dollars": "0.8700",
     "latest_expiration_time": "2026-09-22T01:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.4900",
-    "no_bid_dollars": "0.4700",
+    "no_ask_dollars": "0.3200",
+    "no_bid_dollars": "0.1300",
     "no_sub_title": "Seattle",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T04:00:00Z",
-    "open_interest_fp": "1514.86",
+    "open_interest_fp": "4635.56",
     "open_time": "2026-09-17T00:07:00Z",
-    "previous_price_dollars": "0.6100",
-    "previous_yes_ask_dollars": "0.6200",
-    "previous_yes_bid_dollars": "0.5700",
+    "previous_price_dollars": "0.6500",
+    "previous_yes_ask_dollars": "0.6400",
+    "previous_yes_bid_dollars": "0.5800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1571,17 +1810,17 @@
     "ticker": "KXNHLGAME-26SEP19VANSEA-SEA",
     "title": "Seattle wins",
     "updated_time": "2026-09-17T00:07:00.14378Z",
-    "volume_24h_fp": "1879.63",
-    "volume_fp": "1911.66",
-    "yes_ask_dollars": "0.5300",
-    "yes_ask_size_fp": "31.00",
-    "yes_bid_dollars": "0.5100",
-    "yes_bid_size_fp": "373.56",
+    "volume_24h_fp": "5033.24",
+    "volume_fp": "5141.37",
+    "yes_ask_dollars": "0.8700",
+    "yes_ask_size_fp": "945.06",
+    "yes_bid_dollars": "0.6800",
+    "yes_bid_size_fp": "69.37",
     "yes_sub_title": "Seattle"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VANSEA-SEA",
-  "market_captured_at": "2026-09-20T00:21:18.866Z",
+  "market_captured_at": "2026-09-20T03:07:05.521Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T00:21:19.541Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19VANSEA-SEA/candlesticks?start_ts=1789517220&end_ts=1789863679&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:07:06.145Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19VANSEA-SEA/candlesticks?start_ts=1789862401&end_ts=1789873625&period_interval=60"
 }
