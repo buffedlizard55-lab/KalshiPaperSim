@@ -317,6 +317,8 @@
           <input type="number" id="deskCapital" value="100000" step="1000" min="1000">
         </label>
         <button class="btn btn-primary" id="deskRun">Run the desk</button>
+        <button class="btn btn-ghost" id="deskPlacedTradesJson">Download placed trades (.json)</button>
+        <button class="btn btn-ghost" id="deskUpcomingTradesJson">Download upcoming trades (.json)</button>
         <button class="btn btn-ghost" id="deskLedgerJsonl">Download ledger (.jsonl)</button>
         <button class="btn btn-ghost" id="deskFillsCsv">Download fills (.csv)</button>
       </div>
@@ -391,6 +393,21 @@
     </p>
 
     <div id="deskQuoted"></div>
+
+    <h3>Upcoming Trades (Simulating Strategy Planned Setups)</h3>
+    <p class="fineprint">
+      Strategies scan all real OPEN event contracts and formulate <strong>upcoming planned trades</strong> with specific trigger
+      conditions (price limits, catalyst event dates, weather forecast updates, in-play game windows). You can review every upcoming
+      trade the strategies want to place, check real available order-book liquidity, and test execution with one-click simulation.
+    </p>
+    <div id="deskUpcomingTrades"></div>
+
+    <h3>Placed Trades &amp; Executed Fills Tracker (Verified Pricing, Dates, Fees, Slippage &amp; PnL)</h3>
+    <p class="fineprint">
+      Every placed order is tracked with verified entry/exit pricing, real timestamps, official quadratic fees with series multipliers,
+      slippage in ticks and dollars, and direct links to the official Kalshi API endpoints.
+    </p>
+    <div id="deskPlacedTrades"></div>
 
     <h3>Verified fill log (every field traceable)</h3>
     <div id="deskFills"></div>

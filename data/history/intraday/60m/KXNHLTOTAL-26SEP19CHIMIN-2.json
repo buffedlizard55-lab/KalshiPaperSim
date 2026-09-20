@@ -849,6 +849,71 @@
         "low_dollars": "0.8300",
         "open_dollars": "0.8300"
       }
+    },
+    {
+      "end_period_ts": 1789855200,
+      "open_interest_fp": "94.60",
+      "price": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.9000",
+        "mean_dollars": "0.9000",
+        "open_dollars": "0.9000",
+        "previous_dollars": "0.9000"
+      },
+      "volume_fp": "0.87",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9000",
+        "open_dollars": "0.9000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8800",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.8500",
+        "open_dollars": "0.8500"
+      }
+    },
+    {
+      "end_period_ts": 1789858800,
+      "open_interest_fp": "94.60",
+      "price": {
+        "previous_dollars": "0.9000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.8800",
+        "open_dollars": "0.8800"
+      }
+    },
+    {
+      "end_period_ts": 1789862400,
+      "open_interest_fp": "94.60",
+      "price": {
+        "previous_dollars": "0.9000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.8800",
+        "open_dollars": "0.9000"
+      }
     }
   ],
   "books": [
@@ -1347,6 +1412,185 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:04:51.664Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19CHIMIN-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "627.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0600",
+              "2016.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "581.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "8.00"
+            ],
+            [
+              "0.8900",
+              "10.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:10:57.621Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19CHIMIN-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "627.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0600",
+              "2016.00"
+            ],
+            [
+              "0.0700",
+              "590.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "8.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:20:44.106Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19CHIMIN-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "627.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0600",
+              "2016.00"
+            ],
+            [
+              "0.0700",
+              "594.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "8.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "10.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:30:51.269Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19CHIMIN-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1000.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "10.00"
+            ],
+            [
+              "0.6800",
+              "8.00"
+            ],
+            [
+              "0.9900",
+              "5112.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1360,20 +1604,20 @@
     "expiration_time": "2026-09-22T00:00:00Z",
     "expiration_value": "",
     "floor_strike": 1.5,
-    "last_price_dollars": "0.9000",
+    "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-22T00:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.1200",
-    "no_bid_dollars": "0.0100",
+    "no_ask_dollars": "0.0100",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Over 1.5 goals scored",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T03:00:00Z",
-    "open_interest_fp": "94.60",
+    "open_interest_fp": "721.60",
     "open_time": "2026-09-17T00:07:00Z",
-    "previous_price_dollars": "0.9000",
-    "previous_yes_ask_dollars": "0.8900",
-    "previous_yes_bid_dollars": "0.1600",
+    "previous_price_dollars": "0.7600",
+    "previous_yes_ask_dollars": "0.9000",
+    "previous_yes_bid_dollars": "0.7800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1391,17 +1635,17 @@
     "ticker": "KXNHLTOTAL-26SEP19CHIMIN-2",
     "title": "Full Game: Over 1.5 goals scored",
     "updated_time": "2026-09-17T00:10:54.234304Z",
-    "volume_24h_fp": "82.60",
-    "volume_fp": "94.60",
-    "yes_ask_dollars": "0.9900",
-    "yes_ask_size_fp": "627.00",
-    "yes_bid_dollars": "0.8800",
-    "yes_bid_size_fp": "12.00",
+    "volume_24h_fp": "51.87",
+    "volume_fp": "721.60",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.9900",
+    "yes_bid_size_fp": "5112.00",
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19CHIMIN-2",
-  "market_captured_at": "2026-09-19T21:48:42.587Z",
+  "market_captured_at": "2026-09-20T00:30:50.527Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T21:48:43.223Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19CHIMIN-2/candlesticks?start_ts=1789851601&end_ts=1789854522&period_interval=60"
+  "last_ingested_at": "2026-09-20T00:30:51.199Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19CHIMIN-2/candlesticks?start_ts=1789862401&end_ts=1789864250&period_interval=60"
 }

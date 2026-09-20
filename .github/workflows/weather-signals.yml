@@ -47,6 +47,22 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Sync with the branch tip (best-effort)
+        continue-on-error: true
+        run: |
+          # A run that sat in the data-pipeline queue checked out the commit
+          # the queue STARTED at; meanwhile the queue occupant (or a merge)
+          # may have advanced the branch. Fast-forward onto the tip BEFORE
+          # capturing: the capture reads the newest store, the generated
+          # modules are regenerated from the newest data, and the push at the
+          # end usually needs no rebase at all. Best-effort by design: if the
+          # histories cannot fast-forward we proceed anyway and the race
+          # guard handles the push (the queued-run race behind
+          # irregularity #51).
+          git fetch --deepen=100 origin "${GITHUB_REF_NAME}"
+          git merge --ff-only "origin/${GITHUB_REF_NAME}"
+
+
       - name: Capture the point-in-time NWS forecast
         run: |
           set -o pipefail
@@ -92,3 +108,16 @@ jobs:
           }
           console.log('all locations captured');
           "
+
+      # Insurance for the failure mode that lost the 2026-09-19 21:2x capture
+      # (irregularity #51): if the COMMIT step still dies after all guards, the
+      # freshly captured snapshots must not die with the runner. A failure-time
+      # artifact costs a few hundred KB and makes the lost-data class of bug
+      # recoverable by hand instead of unrecoverable.
+      - name: Keep the captured snapshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: forecast-store-${{ github.run_id }}
+          path: data/forecasts/
+          if-no-files-found: warn

@@ -161,6 +161,8 @@ const report = {
   summary,
   results: desk.results,
   explanations: desk.explanations,
+  placedTrades: desk.placedTrades || [],
+  upcomingTrades: desk.upcomingTrades || [],
   coverage: desk.coverage,
   audit: {
     ok: audit.ok,
@@ -172,12 +174,23 @@ const report = {
 };
 
 fs.writeFileSync(path.join(REPORTS, 'live-desk.json'), JSON.stringify(report, null, 2));
+fs.writeFileSync(path.join(REPORTS, 'live-desk-placed-trades.json'), JSON.stringify(desk.placedTrades || [], null, 2));
+fs.writeFileSync(path.join(REPORTS, 'live-desk-upcoming-trades.json'), JSON.stringify(desk.upcomingTrades || [], null, 2));
 fs.writeFileSync(path.join(REPORTS, 'live-desk-ledger.jsonl'), deskLedgerJsonl(desk.records));
 fs.writeFileSync(
   path.join(REPORTS, 'live-desk-universe.json'),
   JSON.stringify({ asOf: universe.asOf, coverage: universe.coverage, markets: report.universe.markets, quotedOnly: universe.quotedOnly }, null, 2)
 );
 fs.writeFileSync(path.join(REPORTS, 'live-desk-cutoffs.json'), JSON.stringify({ newestCapture: newest, cutoffs: cutoffReport, audits: auditorFacts() }, null, 2));
+
+const DOCS_REPORTS = path.join(ROOT, 'docs', 'data', 'reports');
+if (fs.existsSync(DOCS_REPORTS)) {
+  fs.copyFileSync(path.join(REPORTS, 'live-desk.json'), path.join(DOCS_REPORTS, 'live-desk.json'));
+  fs.copyFileSync(path.join(REPORTS, 'live-desk-placed-trades.json'), path.join(DOCS_REPORTS, 'live-desk-placed-trades.json'));
+  fs.copyFileSync(path.join(REPORTS, 'live-desk-upcoming-trades.json'), path.join(DOCS_REPORTS, 'live-desk-upcoming-trades.json'));
+  fs.copyFileSync(path.join(REPORTS, 'live-desk-universe.json'), path.join(DOCS_REPORTS, 'live-desk-universe.json'));
+  fs.copyFileSync(path.join(REPORTS, 'live-desk-cutoffs.json'), path.join(DOCS_REPORTS, 'live-desk-cutoffs.json'));
+}
 
 /* ------------------------------------------------------------------ *
  * 4. Report

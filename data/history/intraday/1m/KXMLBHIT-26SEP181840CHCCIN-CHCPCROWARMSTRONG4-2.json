@@ -2000,6 +2000,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:13:37.344Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:23:17.591Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2028,9 +2048,9 @@
     "occurrence_datetime": "2026-09-19T01:40:00Z",
     "open_interest_fp": "7631.51",
     "open_time": "2026-09-18T05:10:00Z",
-    "previous_price_dollars": "0.2900",
-    "previous_yes_ask_dollars": "0.3000",
-    "previous_yes_bid_dollars": "0.2900",
+    "previous_price_dollars": "0.0800",
+    "previous_yes_ask_dollars": "0.0900",
+    "previous_yes_bid_dollars": "0.0700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2051,7 +2071,7 @@
     "ticker": "KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2",
     "title": "Pete Crow-Armstrong: 2+ hits?",
     "updated_time": "2026-09-19T01:41:14.903521Z",
-    "volume_24h_fp": "3053.87",
+    "volume_24h_fp": "122.00",
     "volume_fp": "8260.21",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2060,11 +2080,11 @@
     "yes_sub_title": "Pete Crow-Armstrong: 2+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2",
-  "market_captured_at": "2026-09-19T21:41:38.932Z",
+  "market_captured_at": "2026-09-20T00:23:16.745Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T21:41:39.573Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2/candlesticks?start_ts=1789781821&end_ts=1789854099&period_interval=1",
+  "last_ingested_at": "2026-09-20T00:23:17.521Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2/candlesticks?start_ts=1789781821&end_ts=1789863797&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:10:08.786Z",

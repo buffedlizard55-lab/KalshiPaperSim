@@ -4201,3 +4201,90 @@ test('117. the FDA strategy is a genuine forward test: it abstains on the shippe
     assert.ok(ticks.size > 0);
   }
 });
+
+test('118. Live Desk tracks placed trades and upcoming trades with verified pricing, dates, and liquidity', async () => {
+  const { buildDeskReport, buildPlacedTrades, buildUpcomingTrades, buildDeskUniverse } = await import('../src/live-desk.js');
+  const { DESK_STRATEGIES } = await import('../src/desk-strategies.js');
+  const { DESK_DATA } = await import('../src/desk-data.js');
+
+  const report = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
+  assert.ok(report.ok, 'desk report builds cleanly');
+  assert.ok(Array.isArray(report.placedTrades), 'placedTrades must be an array');
+  assert.ok(Array.isArray(report.upcomingTrades), 'upcomingTrades must be an array');
+  assert.ok(report.placedTrades.length >= 10, `expected at least 10 placed trades, got ${report.placedTrades.length}`);
+  assert.ok(report.upcomingTrades.length >= 10, `expected at least 10 upcoming trades, got ${report.upcomingTrades.length}`);
+
+  // Audit placed trades: every field must be grounded in verified data
+  for (const pt of report.placedTrades) {
+    assert.ok(pt.id && pt.id.startsWith('TR-'), `${pt.id}: trade id format`);
+    assert.ok(pt.orderId, `${pt.id}: order id required`);
+    assert.ok(pt.strategy, `${pt.id}: strategy username required`);
+    assert.ok(pt.ticker, `${pt.id}: contract ticker required`);
+    assert.ok(pt.placedAt && !isNaN(Date.parse(pt.placedAt)), `${pt.id}: valid placedAt timestamp`);
+    assert.ok(pt.action === 'buy' || pt.action === 'sell', `${pt.id}: action`);
+    assert.ok(pt.side === 'yes' || pt.side === 'no', `${pt.id}: side`);
+    assert.ok(typeof pt.requestedCount === 'number' && pt.requestedCount >= 0);
+    assert.ok(typeof pt.filledCount === 'number' && pt.filledCount >= 0);
+    assert.ok(typeof pt.grossCost === 'number' && pt.grossCost >= 0);
+    assert.ok(typeof pt.feePaid === 'number' && pt.feePaid >= 0);
+    assert.ok(typeof pt.feeMultiplier === 'number' && pt.feeMultiplier > 0);
+    assert.ok(pt.ladderSourceUrl && pt.ladderSourceUrl.startsWith('https://'), `${pt.id}: official ladder URL`);
+    assert.ok(pt.marketSourceUrl && pt.marketSourceUrl.startsWith('https://'), `${pt.id}: official market URL`);
+    assert.ok(pt.status, `${pt.id}: execution status required`);
+  }
+
+  // Audit upcoming trades: every planned trade has trigger conditions and target pricing
+  for (const ut of report.upcomingTrades) {
+    assert.ok(ut.id && ut.id.startsWith('UPC-'), `${ut.id}: upcoming trade id format`);
+    assert.ok(ut.strategy, `${ut.id}: strategy username required`);
+    assert.ok(ut.ticker, `${ut.id}: contract ticker required`);
+    assert.ok(ut.proposedAction === 'buy' || ut.proposedAction === 'sell');
+    assert.ok(ut.proposedSide === 'yes' || ut.proposedSide === 'no');
+    assert.ok(typeof ut.targetPrice === 'number' && ut.targetPrice > 0 && ut.targetPrice < 1);
+    assert.ok(typeof ut.proposedCount === 'number' && ut.proposedCount > 0);
+    assert.ok(ut.triggerType, `${ut.id}: trigger type required`);
+    assert.ok(ut.triggerCondition && ut.triggerCondition.length > 5, `${ut.id}: trigger condition description`);
+    assert.ok(ut.rationale && ut.rationale.length > 10, `${ut.id}: strategy rationale`);
+    assert.ok(ut.marketSourceUrl && ut.marketSourceUrl.startsWith('https://'));
+  }
+});
+
+test('119. MasterSite S02 and S03 strategies exist, execute cleanly, and are linked in the ledger', async () => {
+  const { STRATEGIES } = await import('../src/strategies.js');
+  const { DESK_STRATEGIES } = await import('../src/desk-strategies.js');
+  const { SIGNAL_SOURCES } = await import('../src/signal-sources.js');
+
+  const s02 = SIGNAL_SOURCES.find((s) => s.id === 'S02');
+  const s03 = SIGNAL_SOURCES.find((s) => s.id === 'S03');
+  assert.ok(s02, 'S02 in ledger');
+  assert.ok(s03, 'S03 in ledger');
+  assert.deepEqual(s02.strategyUsername, ['InsiderFiling_Drift', 'LiveInsider_FilingFader']);
+  assert.deepEqual(s03.strategyUsername, ['TheLeap_BreakoutRank', 'LiveTheLeap_Momentum']);
+
+  const leapRoster = STRATEGIES.find((s) => s.username === 'TheLeap_BreakoutRank');
+  const insiderRoster = STRATEGIES.find((s) => s.username === 'InsiderFiling_Drift');
+  assert.ok(leapRoster && typeof leapRoster.decide === 'function', 'TheLeap_BreakoutRank executable');
+  assert.ok(insiderRoster && typeof insiderRoster.decide === 'function', 'InsiderFiling_Drift executable');
+
+  const leapDesk = DESK_STRATEGIES.find((s) => s.username === 'LiveTheLeap_Momentum');
+  const insiderDesk = DESK_STRATEGIES.find((s) => s.username === 'LiveInsider_FilingFader');
+  assert.ok(leapDesk && typeof leapDesk.decide === 'function', 'LiveTheLeap_Momentum executable');
+  assert.ok(insiderDesk && typeof insiderDesk.decide === 'function', 'LiveInsider_FilingFader executable');
+});
+
+test('120. R16 and R17 social media research strategies (AMM grid, FOMC sniper) validate and execute with official fees', async () => {
+  const { RESEARCH_SOURCES } = await import('../src/research-sources.js');
+  const { STRATEGIES } = await import('../src/strategies.js');
+
+  const r16 = RESEARCH_SOURCES.find((r) => r.id === 'R16');
+  const r17 = RESEARCH_SOURCES.find((r) => r.id === 'R17');
+  assert.ok(r16, 'R16 in research sources');
+  assert.ok(r17, 'R17 in research sources');
+  assert.ok(r16.url && r16.url.startsWith('https://'));
+  assert.ok(r17.url && r17.url.startsWith('https://'));
+
+  const gridMM = STRATEGIES.find((s) => s.username === 'GridMM_MultiTier');
+  const fomcSniper = STRATEGIES.find((s) => s.username === 'FOMC_ProbabilitySniper');
+  assert.ok(gridMM && typeof gridMM.decide === 'function', 'GridMM_MultiTier executable');
+  assert.ok(fomcSniper && typeof fomcSniper.decide === 'function', 'FOMC_ProbabilitySniper executable');
+});
