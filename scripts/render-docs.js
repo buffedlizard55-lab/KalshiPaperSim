@@ -83,19 +83,22 @@ const testCount = (fs.readFileSync(path.join(ROOT, 'test', 'simulation.test.js')
 const profitable = ranked.filter((r) => Number(r.returnPct) > 0);
 const price2 = (v) => `$${Number(v || 0).toFixed(2)}`;
 
-/* The Live Desk: paper orders on real OPEN contracts, priced point-in-time
-   from captured ladders. Computed once here, quoted by the README so the
-   documentation shows exactly what the desk shows. */
-const deskReport = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
-const deskOlder = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: deskReport.cutoffs.cutoffs.find((c) => c.label === '-15h')?.asOf || null, startingCapital: 100000 });
+let deskReport, deskOlder, seasonReport;
+
+async function computeDesk() {
+  /* The Live Desk: paper orders on real OPEN contracts, priced point-in-time
+     from captured ladders. Await because it builds point-in-time signal providers. */
+  deskReport = await buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
+  const olderCutoff = deskReport.cutoffs.cutoffs.find((c) => c.label === '-15h')?.asOf || null;
+  deskOlder = await buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: olderCutoff, startingCapital: 100000 });
+  seasonReport = buildSeasonReport({ data: DESK_DATA, strategies: SEASON_STRATEGIES, startingCapital: 100000, maxRounds: 12 });
+}
+
+await computeDesk();
 const deskFacts = auditorFacts();
 const deskMoney = (v) => `$${Number(v || 0).toFixed(4)}`;
-const desks = (r) => r.results;
 const deskRanked = deskReport.results.filter((r) => r.fills > 0 || r.settlementPnl !== 0).sort((a, b) => b.returnPct - a.returnPct);
 const deskIdle = deskReport.results.filter((r) => !(r.fills > 0 || r.settlementPnl !== 0));
-/* The Desk Season: the SAME book carried across real capture rounds. One
-   function builds it for the README, the server route and the Pages build. */
-const seasonReport = buildSeasonReport({ data: DESK_DATA, strategies: SEASON_STRATEGIES, startingCapital: 100000, maxRounds: 12 });
 const seasonFacts = seasonAuditorFacts();
 const seasonRanked = seasonReport.results.filter((r) => r.fills > 0 || r.settlementPnl !== 0).sort((a, b) => b.returnPct - a.returnPct);
 const seasonIdle = seasonReport.results.filter((r) => !(r.fills > 0 || r.settlementPnl !== 0));

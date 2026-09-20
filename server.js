@@ -44,7 +44,8 @@ import {
 import {
   buildDeskUniverse, runDeskSession, createDeskBook, placeDeskOrder, sizeDeskOrder,
   deskLedgerJsonl, deskFillsCsv, summarizeDesk, explainDeskStrategy, auditDesk,
-  auditorFacts, describeAudit, DESK_LIMITS, DESK_VERSION, buildDeskReport, deskCutoffs
+  auditorFacts, describeAudit, DESK_LIMITS, DESK_VERSION, buildDeskReport, deskCutoffs,
+  buildDeskSignalsAsync
 } from './src/live-desk.js';
 import { DESK_STRATEGIES, deskStrategyById } from './src/desk-strategies.js';
 import { SEASON_STRATEGIES, seasonStrategyById } from './src/desk-season-strategies.js';
@@ -370,17 +371,16 @@ const deskSessionCache = new Map();
 const DESK_MAX_CACHED = 8;
 const DESK_ORDER_LOG = path.join(STORE_DIR, 'live-desk-orders.jsonl');
 
-function deskSession(asOf, capital) {
+async function deskSession(asOf, capital) {
   const key = `${asOf || 'live'}|${capital}`;
   let payload = deskSessionCache.get(key);
   if (!payload) {
-    payload = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: asOf || null, startingCapital: capital });
+    const asOfMs = asOf ? Date.parse(asOf) : (DESK_DATA.coverage?.newestCapture ? Date.parse(DESK_DATA.coverage.newestCapture) : Date.now());
+    const signals = Number.isFinite(asOfMs) ? await buildDeskSignalsAsync(asOfMs) : {};
+    payload = await buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: asOf || null, startingCapital: capital, signals });
     if (deskSessionCache.size >= DESK_MAX_CACHED) deskSessionCache.delete(deskSessionCache.keys().next().value);
     deskSessionCache.set(key, payload);
   }
-  // Attach every time, including cache hits: a year reset must not leave the
-  // UI showing a desk session the store no longer holds. attachDeskSession is
-  // idempotent per asOf (it replaces that cut-off's desk rows).
   try {
     memory.attachDeskSession(payload);
     persistStore();
@@ -415,14 +415,17 @@ function seasonPayload(maxRounds, capital) {
 }
 
 const deskRecordCache = new Map();
-function deskCacheRecords(key) {
+async function deskCacheRecords(key) {
   if (!deskRecordCache.has(key)) {
     const [asOfPart, capitalPart] = key.split('|');
-    const desk = runDeskSession({
+    const asOfMs = asOfPart === 'live' ? (DESK_DATA.coverage?.newestCapture ? Date.parse(DESK_DATA.coverage.newestCapture) : Date.now()) : Date.parse(asOfPart);
+    const signals = Number.isFinite(asOfMs) ? await buildDeskSignalsAsync(asOfMs) : {};
+    const desk = await runDeskSession({
       data: DESK_DATA,
       strategies: DESK_STRATEGIES,
       asOf: asOfPart === 'live' ? null : asOfPart,
-      startingCapital: Number(capitalPart)
+      startingCapital: Number(capitalPart),
+      signals
     });
     deskRecordCache.set(key, desk.records);
     if (deskRecordCache.size > DESK_MAX_CACHED) deskRecordCache.delete(deskRecordCache.keys().next().value);
@@ -931,7 +934,7 @@ const server = http.createServer(async (req, res) => {
     if (p === '/api/live-desk' && req.method === 'GET') {
       const asOf = url.searchParams.get('asOf') || null;
       const capital = Number(url.searchParams.get('capital') || 100000);
-      return sendJSON(res, 200, deskSession(asOf, capital));
+      return sendJSON(res, 200, await deskSession(asOf, capital));
     }
 
     if (p === '/api/live-desk/cutoffs') {
@@ -1079,24 +1082,24 @@ const server = http.createServer(async (req, res) => {
       const capital = Number(url.searchParams.get('capital') || 100000);
       const asOf = url.searchParams.get('asOf') || null;
       const key = `${asOf || 'live'}|${capital}`;
-      if (!deskSessionCache.has(key)) deskSession(asOf, capital);
+      if (!deskSessionCache.has(key)) await deskSession(asOf, capital);
       res.writeHead(200, { 'Content-Type': 'application/x-ndjson; charset=UTF-8', 'Content-Disposition': 'attachment; filename="kalshi-live-desk-ledger.jsonl"', ...CORS });
-      return res.end(deskLedgerJsonl(deskCacheRecords(key)));
+      return res.end(deskLedgerJsonl(await deskCacheRecords(key)));
     }
 
     if (p === '/api/live-desk/fills.csv') {
       const capital = Number(url.searchParams.get('capital') || 100000);
       const asOf = url.searchParams.get('asOf') || null;
       const key = `${asOf || 'live'}|${capital}`;
-      if (!deskSessionCache.has(key)) deskSession(asOf, capital);
+      if (!deskSessionCache.has(key)) await deskSession(asOf, capital);
       res.writeHead(200, { 'Content-Type': 'text/csv; charset=UTF-8', 'Content-Disposition': 'attachment; filename="kalshi-live-desk-fills.csv"', ...CORS });
-      return res.end(deskFillsCsv(deskCacheRecords(key)));
+      return res.end(deskFillsCsv(await deskCacheRecords(key)));
     }
 
     if (p === '/api/live-desk/placed-trades' && req.method === 'GET') {
       const asOf = url.searchParams.get('asOf') || null;
       const capital = Number(url.searchParams.get('capital') || 100000);
-      const session = deskSession(asOf, capital);
+      const session = await deskSession(asOf, capital);
       let list = session.placedTrades || [];
       const strat = url.searchParams.get('strategy');
       const ticker = url.searchParams.get('ticker');
@@ -1110,7 +1113,7 @@ const server = http.createServer(async (req, res) => {
     if (p === '/api/live-desk/upcoming-trades' && req.method === 'GET') {
       const asOf = url.searchParams.get('asOf') || null;
       const capital = Number(url.searchParams.get('capital') || 100000);
-      const session = deskSession(asOf, capital);
+      const session = await deskSession(asOf, capital);
       let list = session.upcomingTrades || [];
       const strat = url.searchParams.get('strategy');
       const ticker = url.searchParams.get('ticker');
@@ -1124,7 +1127,7 @@ const server = http.createServer(async (req, res) => {
     if (p === '/api/live-desk/trades.json' && req.method === 'GET') {
       const asOf = url.searchParams.get('asOf') || null;
       const capital = Number(url.searchParams.get('capital') || 100000);
-      const session = deskSession(asOf, capital);
+      const session = await deskSession(asOf, capital);
       return sendJSON(res, 200, {
         ok: true,
         asOf: session.asOf,

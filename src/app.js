@@ -315,7 +315,7 @@ async function staticRuntime() {
     },
     async liveDesk({ asOf = null, capital = 100000 } = {}) {
       const { desk, strategies, data } = await this.deskModules();
-      const report = desk.buildDeskReport({ data: data.DESK_DATA, strategies: strategies.DESK_STRATEGIES, asOf, startingCapital: capital });
+      const report = await desk.buildDeskReport({ data: data.DESK_DATA, strategies: strategies.DESK_STRATEGIES, asOf, startingCapital: capital });
       // Same attach the server performs: the year keeps the compact desk
       // results + FILL/SETTLE rows (kind: 'desk'). One session per asOf — not
       // a running multi-day book.

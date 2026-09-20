@@ -3566,9 +3566,9 @@ test('95. buying YES consumes NO bids at 1 − price (the reciprocal ask), never
   }
 });
 
-test('96. fees come from the official schedule with the series multiplier the exchange reported', () => {
+test('96. fees come from the official schedule with the series multiplier the exchange reported', async () => {
   const u = deskAt();
-  const session = runDeskSession({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
+  const session = await runDeskSession({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
   for (const f of session.records.filter((r) => r.k === 'FILL')) {
     const m = u.byTicker.get(f.ticker);
     assert.equal(f.feeMultiplier, m.feeMultiplier, `${f.ticker} carries the captured multiplier`);
@@ -3595,8 +3595,8 @@ test('96. fees come from the official schedule with the series multiplier the ex
   }
 });
 
-test('97. equity is realized + unrealized − fees for every desk entrant, and nothing is silently dropped', () => {
-  const report = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
+test('97. equity is realized + unrealized − fees for every desk entrant, and nothing is silently dropped', async () => {
+  const report = await buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
   assert.equal(report.audit.ok, true, `desk audit fails nothing: ${JSON.stringify(report.audit.mismatches || [])}`);
   for (const r of report.results) {
     assert.ok(typeof r.returnPct === 'number');
@@ -3612,8 +3612,8 @@ test('97. equity is realized + unrealized − fees for every desk entrant, and n
   }
 });
 
-test('98. each desk entrant explains itself with real numbers, including why it did NOT trade', () => {
-  const report = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
+test('98. each desk entrant explains itself with real numbers, including why it did NOT trade', async () => {
+  const report = await buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
   assert.ok(report.explanations.length >= 9, 'every entrant has an explanation');
   for (const e of report.explanations) {
     assert.ok(e.strategy && e.headline, `${e.strategy} has a headline`);
@@ -3669,15 +3669,15 @@ test('100. settlement pays the exchange\'s own result, marks the losing side at 
   assert.ok(Math.abs(1 - s.value - (1 - yesPay)) < 1e-9, 'NO pays the complement (1 − value)');
   // A position in a settled contract must be marked on its OWN side, which is
   // what the desk's marks do — the bug this guard exists for.
-  const desk = runDeskSession({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
+  const desk = await runDeskSession({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
   for (const rec of desk.records.filter((r) => r.k === 'MARK')) {
     assert.ok(rec.markSide === 'yes' || rec.markSide === 'no', `${rec.ticker} records which side was marked`);
     assert.ok(rec.mark > 0 && rec.mark < 1, `${rec.ticker} mark ${rec.mark} is inside (0,1)`);
   }
 });
 
-test('101. the desk ledger round-trips to JSONL and CSV without losing a field, and the audit names its sources', () => {
-  const report = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
+test('101. the desk ledger round-trips to JSONL and CSV without losing a field, and the audit names its sources', async () => {
+  const report = await buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null });
   const jsonl = deskLedgerJsonl(report.records);
   const lines = jsonl.trim().split('\n');
   assert.equal(lines.length, report.records.length, 'one JSON line per record');
@@ -3693,9 +3693,9 @@ test('101. the desk ledger round-trips to JSONL and CSV without losing a field, 
   assert.ok(facts.some((f) => /docs\.kalshi\.com|kalshi\.com/.test(f.source)), 'at least one invariant cites official Kalshi documentation');
 });
 
-test('102. the desk is deterministic: the same cut-off and capital rebuild the same ledger', () => {
-  const a = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
-  const b = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
+test('102. the desk is deterministic: the same cut-off and capital rebuild the same ledger', async () => {
+  const a = await buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
+  const b = await buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
   assert.deepEqual(a.results.map((r) => [r.strategy, r.equity]), b.results.map((r) => [r.strategy, r.equity]));
   assert.equal(a.records.length, b.records.length);
   assert.equal(deskLedgerJsonl(a.records), deskLedgerJsonl(b.records));
