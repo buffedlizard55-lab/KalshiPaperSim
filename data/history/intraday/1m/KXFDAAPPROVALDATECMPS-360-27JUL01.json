@@ -2221,6 +2221,158 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:12:28.354Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3346.93"
+            ],
+            [
+              "0.0200",
+              "1184.00"
+            ],
+            [
+              "0.0300",
+              "1111.00"
+            ],
+            [
+              "0.0600",
+              "200.00"
+            ],
+            [
+              "0.0700",
+              "141.16"
+            ],
+            [
+              "0.1700",
+              "7.57"
+            ],
+            [
+              "0.1800",
+              "43.70"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "4494.00"
+            ],
+            [
+              "0.0400",
+              "888.00"
+            ],
+            [
+              "0.0500",
+              "312.00"
+            ],
+            [
+              "0.0600",
+              "676.00"
+            ],
+            [
+              "0.0700",
+              "473.00"
+            ],
+            [
+              "0.1200",
+              "56.00"
+            ],
+            [
+              "0.2500",
+              "108.72"
+            ],
+            [
+              "0.2600",
+              "65.00"
+            ],
+            [
+              "0.3600",
+              "5.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:22:08.841Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3346.93"
+            ],
+            [
+              "0.0200",
+              "1184.00"
+            ],
+            [
+              "0.0300",
+              "1111.00"
+            ],
+            [
+              "0.0600",
+              "200.00"
+            ],
+            [
+              "0.0700",
+              "141.16"
+            ],
+            [
+              "0.1700",
+              "7.57"
+            ],
+            [
+              "0.1800",
+              "43.70"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "4494.00"
+            ],
+            [
+              "0.0400",
+              "888.00"
+            ],
+            [
+              "0.0500",
+              "312.00"
+            ],
+            [
+              "0.0600",
+              "676.00"
+            ],
+            [
+              "0.0700",
+              "473.00"
+            ],
+            [
+              "0.1200",
+              "56.00"
+            ],
+            [
+              "0.2500",
+              "108.72"
+            ],
+            [
+              "0.2600",
+              "65.00"
+            ],
+            [
+              "0.3600",
+              "5.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2275,10 +2427,10 @@
     "yes_sub_title": "Before July 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JUL01",
-  "market_captured_at": "2026-09-19T21:40:35.571Z",
+  "market_captured_at": "2026-09-20T00:22:08.099Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T21:40:36.206Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/candlesticks?start_ts=1789824841&end_ts=1789854035&period_interval=1",
+  "last_ingested_at": "2026-09-20T00:22:08.770Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/candlesticks?start_ts=1789824841&end_ts=1789863728&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:08:57.681Z",

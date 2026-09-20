@@ -569,6 +569,46 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:02:19.585Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:08:25.752Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:18:12.272Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:28:19.476Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -597,9 +637,9 @@
     "occurrence_datetime": "2026-09-19T03:05:00Z",
     "open_interest_fp": "2808.84",
     "open_time": "2026-09-18T03:40:00Z",
-    "previous_price_dollars": "0.5900",
-    "previous_yes_ask_dollars": "0.5900",
-    "previous_yes_bid_dollars": "0.5800",
+    "previous_price_dollars": "0.5700",
+    "previous_yes_ask_dollars": "0.5800",
+    "previous_yes_bid_dollars": "0.5600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -620,7 +660,7 @@
     "ticker": "KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1",
     "title": "Kazuma Okamoto: 1+ hits?",
     "updated_time": "2026-09-19T03:16:24.90315Z",
-    "volume_24h_fp": "29.00",
+    "volume_24h_fp": "28.00",
     "volume_fp": "3598.05",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -629,9 +669,9 @@
     "yes_sub_title": "Kazuma Okamoto: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1",
-  "market_captured_at": "2026-09-19T21:46:22.336Z",
+  "market_captured_at": "2026-09-20T00:28:18.731Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-19T21:46:22.972Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/candlesticks?start_ts=1789790401&end_ts=1789854382&period_interval=60"
+  "last_ingested_at": "2026-09-20T00:28:19.405Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/candlesticks?start_ts=1789790401&end_ts=1789864099&period_interval=60"
 }

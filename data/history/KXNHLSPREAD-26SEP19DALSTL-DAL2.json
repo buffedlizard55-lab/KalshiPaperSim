@@ -613,6 +613,154 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:00:15.470Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "651.00"
+            ],
+            [
+              "0.0200",
+              "0.10"
+            ],
+            [
+              "0.1400",
+              "15.00"
+            ],
+            [
+              "0.1500",
+              "2500.00"
+            ],
+            [
+              "0.3500",
+              "18.32"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0200",
+              "1.10"
+            ],
+            [
+              "0.0300",
+              "33.00"
+            ],
+            [
+              "0.0400",
+              "2.00"
+            ],
+            [
+              "0.0500",
+              "29.68"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:35:34.859Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "651.00"
+            ],
+            [
+              "0.0200",
+              "1.10"
+            ],
+            [
+              "0.1400",
+              "15.00"
+            ],
+            [
+              "0.3500",
+              "18.32"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0200",
+              "1.10"
+            ],
+            [
+              "0.0300",
+              "33.00"
+            ],
+            [
+              "0.0400",
+              "2.00"
+            ],
+            [
+              "0.0500",
+              "29.68"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:39:59.291Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "651.00"
+            ],
+            [
+              "0.0200",
+              "1.10"
+            ],
+            [
+              "0.1400",
+              "15.00"
+            ],
+            [
+              "0.3500",
+              "18.32"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0200",
+              "1.10"
+            ],
+            [
+              "0.0300",
+              "33.00"
+            ],
+            [
+              "0.0400",
+              "2.00"
+            ],
+            [
+              "0.0500",
+              "29.68"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -629,19 +777,19 @@
     "expiration_time": "2026-09-21T23:00:00Z",
     "expiration_value": "",
     "floor_strike": 1.5,
-    "last_price_dollars": "0.3300",
+    "last_price_dollars": "0.6500",
     "latest_expiration_time": "2026-09-21T23:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.9500",
-    "no_bid_dollars": "0.3600",
+    "no_bid_dollars": "0.3500",
     "no_sub_title": "Dallas wins by over 1.5 goals",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T02:00:00Z",
-    "open_interest_fp": "503.00",
+    "open_interest_fp": "723.42",
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.0500",
-    "previous_yes_ask_dollars": "0.6300",
+    "previous_yes_ask_dollars": "0.5600",
     "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -660,17 +808,17 @@
     "ticker": "KXNHLSPREAD-26SEP19DALSTL-DAL2",
     "title": "Dallas wins by over 1.5 goals",
     "updated_time": "2026-09-17T00:10:53.683184Z",
-    "volume_24h_fp": "503.00",
-    "volume_fp": "507.00",
-    "yes_ask_dollars": "0.6400",
-    "yes_ask_size_fp": "24.00",
+    "volume_24h_fp": "724.46",
+    "volume_fp": "728.46",
+    "yes_ask_dollars": "0.6500",
+    "yes_ask_size_fp": "18.32",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "1.00",
+    "yes_bid_size_fp": "29.68",
     "yes_sub_title": "Dallas wins by over 1.5 goals"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2",
-  "market_captured_at": "2026-09-19T21:57:06.531Z",
+  "market_captured_at": "2026-09-20T00:39:58.545Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T21:57:07.170Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLSPREAD/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/candlesticks?start_ts=1789790401&end_ts=1789855026&period_interval=1440"
+  "last_ingested_at": "2026-09-20T00:39:59.218Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLSPREAD/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/candlesticks?start_ts=1789790401&end_ts=1789864798&period_interval=1440"
 }

@@ -471,6 +471,214 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T00:00:23.997Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "628.00"
+            ],
+            [
+              "0.0200",
+              "42.00"
+            ],
+            [
+              "0.1000",
+              "33.54"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "16.46"
+            ],
+            [
+              "0.4400",
+              "61.00"
+            ],
+            [
+              "0.4600",
+              "475.00"
+            ],
+            [
+              "0.4700",
+              "5.00"
+            ],
+            [
+              "0.5400",
+              "62.00"
+            ],
+            [
+              "0.5600",
+              "50.00"
+            ],
+            [
+              "0.5700",
+              "13.51"
+            ],
+            [
+              "0.8500",
+              "20.00"
+            ],
+            [
+              "0.8600",
+              "5.63"
+            ],
+            [
+              "0.8700",
+              "0.51"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:35:44.829Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "628.00"
+            ],
+            [
+              "0.0200",
+              "47.00"
+            ],
+            [
+              "0.1000",
+              "33.54"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0200",
+              "239.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "16.46"
+            ],
+            [
+              "0.4400",
+              "61.00"
+            ],
+            [
+              "0.4600",
+              "475.00"
+            ],
+            [
+              "0.5400",
+              "62.00"
+            ],
+            [
+              "0.5600",
+              "50.00"
+            ],
+            [
+              "0.5700",
+              "13.51"
+            ],
+            [
+              "0.8500",
+              "45.63"
+            ],
+            [
+              "0.8600",
+              "0.51"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T00:40:09.247Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "628.00"
+            ],
+            [
+              "0.0200",
+              "47.00"
+            ],
+            [
+              "0.1000",
+              "33.54"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0200",
+              "239.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "16.46"
+            ],
+            [
+              "0.4400",
+              "61.00"
+            ],
+            [
+              "0.4600",
+              "475.00"
+            ],
+            [
+              "0.5400",
+              "62.00"
+            ],
+            [
+              "0.5600",
+              "50.00"
+            ],
+            [
+              "0.5700",
+              "13.51"
+            ],
+            [
+              "0.8500",
+              "45.63"
+            ],
+            [
+              "0.8600",
+              "0.51"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -495,9 +703,9 @@
     "occurrence_datetime": "2026-09-21T03:00:00Z",
     "open_interest_fp": "56.50",
     "open_time": "2026-09-17T16:05:00Z",
-    "previous_price_dollars": "0.9000",
+    "previous_price_dollars": "0.8800",
     "previous_yes_ask_dollars": "0.8900",
-    "previous_yes_bid_dollars": "0.1500",
+    "previous_yes_bid_dollars": "0.1600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -515,17 +723,17 @@
     "ticker": "KXNHLTOTAL-26SEP20SEACGY-2",
     "title": "Full Game: Over 1.5 goals scored",
     "updated_time": "2026-09-17T16:10:58.751854Z",
-    "volume_24h_fp": "45.47",
+    "volume_24h_fp": "39.84",
     "volume_fp": "56.50",
     "yes_ask_dollars": "0.9000",
     "yes_ask_size_fp": "33.54",
     "yes_bid_dollars": "0.8600",
-    "yes_bid_size_fp": "6.14",
+    "yes_bid_size_fp": "0.51",
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2",
-  "market_captured_at": "2026-09-19T21:57:15.702Z",
+  "market_captured_at": "2026-09-20T00:40:08.497Z",
   "status": "active",
-  "last_ingested_at": "2026-09-19T21:57:16.336Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP20SEACGY-2/candlesticks?start_ts=1789790401&end_ts=1789855036&period_interval=1440"
+  "last_ingested_at": "2026-09-20T00:40:09.173Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP20SEACGY-2/candlesticks?start_ts=1789790401&end_ts=1789864808&period_interval=1440"
 }
