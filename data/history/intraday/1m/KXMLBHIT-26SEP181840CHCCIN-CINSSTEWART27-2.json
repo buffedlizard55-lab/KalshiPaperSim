@@ -1995,6 +1995,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:26:30.667Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:36:24.512Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2023,9 +2043,9 @@
     "occurrence_datetime": "2026-09-19T01:40:00Z",
     "open_interest_fp": "1850.15",
     "open_time": "2026-09-18T05:10:00Z",
-    "previous_price_dollars": "0.0600",
-    "previous_yes_ask_dollars": "0.0700",
-    "previous_yes_bid_dollars": "0.0600",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2046,7 +2066,7 @@
     "ticker": "KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2",
     "title": "Sal Stewart: 2+ hits?",
     "updated_time": "2026-09-19T01:41:14.903521Z",
-    "volume_24h_fp": "2.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "1850.40",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2055,11 +2075,11 @@
     "yes_sub_title": "Sal Stewart: 2+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2",
-  "market_captured_at": "2026-09-20T00:23:19.683Z",
+  "market_captured_at": "2026-09-20T03:36:23.396Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T00:23:20.353Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2/candlesticks?start_ts=1789781821&end_ts=1789863799&period_interval=1",
+  "last_ingested_at": "2026-09-20T03:36:24.442Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2/candlesticks?start_ts=1789868221&end_ts=1789875383&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:10:11.942Z",

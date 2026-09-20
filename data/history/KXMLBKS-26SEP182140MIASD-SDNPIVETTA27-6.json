@@ -154,6 +154,36 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:11:04.906Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:46:25.197Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:50:48.355Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -182,9 +212,9 @@
     "occurrence_datetime": "2026-09-19T04:40:00Z",
     "open_interest_fp": "12974.92",
     "open_time": "2026-09-17T22:26:00Z",
-    "previous_price_dollars": "0.4100",
-    "previous_yes_ask_dollars": "0.4100",
-    "previous_yes_bid_dollars": "0.4000",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "0.0100",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -205,7 +235,7 @@
     "ticker": "KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6",
     "title": "Nick Pivetta: 6+ strikeouts?",
     "updated_time": "2026-09-19T04:36:24.90292Z",
-    "volume_24h_fp": "2513.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "17404.86",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -214,9 +244,9 @@
     "yes_sub_title": "Nick Pivetta: 6+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6",
-  "market_captured_at": "2026-09-20T00:37:38.767Z",
+  "market_captured_at": "2026-09-20T03:50:47.611Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T00:37:39.444Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6/candlesticks?start_ts=1789790401&end_ts=1789864659&period_interval=1440"
+  "last_ingested_at": "2026-09-20T03:50:48.286Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6/candlesticks?start_ts=1789790401&end_ts=1789876247&period_interval=1440"
 }

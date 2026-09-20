@@ -2095,6 +2095,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:26:43.223Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CHCCHOLMES35-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:36:37.058Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CHCCHOLMES35-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2123,9 +2143,9 @@
     "occurrence_datetime": "2026-09-19T01:40:00Z",
     "open_interest_fp": "28592.01",
     "open_time": "2026-09-18T05:25:00Z",
-    "previous_price_dollars": "0.5400",
-    "previous_yes_ask_dollars": "0.7300",
-    "previous_yes_bid_dollars": "0.1700",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2146,7 +2166,7 @@
     "ticker": "KXMLBKS-26SEP181840CHCCIN-CHCCHOLMES35-5",
     "title": "Clay Holmes: 5+ strikeouts?",
     "updated_time": "2026-09-19T01:36:34.904024Z",
-    "volume_24h_fp": "370.48",
+    "volume_24h_fp": "0.00",
     "volume_fp": "32092.57",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2155,11 +2175,11 @@
     "yes_sub_title": "Clay Holmes: 5+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CHCCHOLMES35-5",
-  "market_captured_at": "2026-09-20T00:23:29.609Z",
+  "market_captured_at": "2026-09-20T03:36:35.941Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T00:23:30.282Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840CHCCIN-CHCCHOLMES35-5/candlesticks?start_ts=1789781521&end_ts=1789863809&period_interval=1",
+  "last_ingested_at": "2026-09-20T03:36:36.987Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840CHCCIN-CHCCHOLMES35-5/candlesticks?start_ts=1789867921&end_ts=1789875396&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:10:22.985Z",

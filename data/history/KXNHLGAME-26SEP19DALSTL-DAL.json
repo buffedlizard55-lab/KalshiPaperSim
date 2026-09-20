@@ -2228,11 +2228,41 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:12:59.472Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:48:38.656Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:53:01.814Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
     "can_close_early": true,
-    "close_time": "2026-09-21T23:00:00Z",
+    "close_time": "2026-09-20T03:09:12Z",
     "created_time": "2026-09-17T00:02:11.015968Z",
     "custom_strike": {
       "hockey_team": "5cfee6b9-43ff-4dfa-8347-2b9de7ed51b6"
@@ -2242,21 +2272,21 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-09-20T02:00:00Z",
     "expiration_time": "2026-09-21T23:00:00Z",
-    "expiration_value": "",
-    "last_price_dollars": "0.7100",
+    "expiration_value": "Dallas",
+    "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-21T23:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.3700",
-    "no_bid_dollars": "0.3000",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Dallas",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T02:00:00Z",
-    "open_interest_fp": "7194.97",
+    "open_interest_fp": "21926.57",
     "open_time": "2026-09-17T00:07:00Z",
-    "previous_price_dollars": "0.4800",
-    "previous_yes_ask_dollars": "0.5200",
-    "previous_yes_bid_dollars": "0.4800",
+    "previous_price_dollars": "0.6400",
+    "previous_yes_ask_dollars": "0.6000",
+    "previous_yes_bid_dollars": "0.5700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2265,26 +2295,29 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If Dallas wins the Dallas vs St. Louis NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
     "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
     "settlement_timer_seconds": 45,
-    "status": "active",
+    "settlement_ts": "2026-09-20T03:10:04.503012Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "structured",
     "ticker": "KXNHLGAME-26SEP19DALSTL-DAL",
     "title": "Dallas wins",
-    "updated_time": "2026-09-17T00:07:00.14378Z",
-    "volume_24h_fp": "10059.05",
-    "volume_fp": "10802.42",
-    "yes_ask_dollars": "0.7000",
-    "yes_ask_size_fp": "23.00",
-    "yes_bid_dollars": "0.6300",
-    "yes_bid_size_fp": "29.00",
+    "updated_time": "2026-09-20T03:10:04.967407Z",
+    "volume_24h_fp": "29521.10",
+    "volume_fp": "29888.60",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Dallas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL",
-  "market_captured_at": "2026-09-20T00:39:52.852Z",
-  "status": "active",
-  "last_ingested_at": "2026-09-20T00:39:53.526Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-DAL/candlesticks?start_ts=1789790401&end_ts=1789864793&period_interval=1440"
+  "market_captured_at": "2026-09-20T03:53:01.069Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-20T03:53:01.743Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-DAL/candlesticks?start_ts=1789790401&end_ts=1789876381&period_interval=1440",
+  "result": "yes"
 }

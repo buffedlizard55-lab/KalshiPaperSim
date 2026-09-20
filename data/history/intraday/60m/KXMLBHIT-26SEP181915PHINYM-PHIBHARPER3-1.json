@@ -558,6 +558,46 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:15:07.102Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:21:13.517Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:31:08.853Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:41:28.248Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -586,9 +626,9 @@
     "occurrence_datetime": "2026-09-19T02:15:00Z",
     "open_interest_fp": "4890.18",
     "open_time": "2026-09-18T08:40:00Z",
-    "previous_price_dollars": "0.4400",
-    "previous_yes_ask_dollars": "0.4400",
-    "previous_yes_bid_dollars": "0.4200",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -609,7 +649,7 @@
     "ticker": "KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1",
     "title": "Bryce Harper: 1+ hits?",
     "updated_time": "2026-09-19T02:26:24.904065Z",
-    "volume_24h_fp": "401.77",
+    "volume_24h_fp": "0.00",
     "volume_fp": "4890.18",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -618,9 +658,9 @@
     "yes_sub_title": "Bryce Harper: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1",
-  "market_captured_at": "2026-09-20T00:28:17.312Z",
+  "market_captured_at": "2026-09-20T03:41:27.502Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T00:28:17.987Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/candlesticks?start_ts=1789786801&end_ts=1789864097&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:41:28.178Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/candlesticks?start_ts=1789786801&end_ts=1789875687&period_interval=60"
 }

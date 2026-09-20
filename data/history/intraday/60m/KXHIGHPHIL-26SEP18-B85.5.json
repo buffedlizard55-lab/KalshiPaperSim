@@ -1024,6 +1024,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:19:03.255Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26SEP18-B85.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1071,7 +1081,7 @@
     "ticker": "KXHIGHPHIL-26SEP18-B85.5",
     "title": "Will the maximum temperature be 85-86° on Sep 18, 2026?",
     "updated_time": "2026-09-19T11:10:54.732529Z",
-    "volume_24h_fp": "110.35",
+    "volume_24h_fp": "0.00",
     "volume_fp": "42469.69",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1080,9 +1090,9 @@
     "yes_sub_title": "85° to 86°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26SEP18-B85.5",
-  "market_captured_at": "2026-09-20T00:06:13.988Z",
+  "market_captured_at": "2026-09-20T03:19:02.513Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T00:06:14.678Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26SEP18-B85.5/candlesticks?start_ts=1789797601&end_ts=1789862774&period_interval=60",
+  "last_ingested_at": "2026-09-20T03:19:03.186Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26SEP18-B85.5/candlesticks?start_ts=1789797601&end_ts=1789874342&period_interval=60",
   "result": "no"
 }

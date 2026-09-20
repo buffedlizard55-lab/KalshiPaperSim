@@ -420,6 +420,66 @@
         "low_dollars": "0.8600",
         "open_dollars": "0.8700"
       }
+    },
+    {
+      "end_period_ts": 1789866000,
+      "open_interest_fp": "56.50",
+      "price": {
+        "previous_dollars": "0.9000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.9000",
+        "open_dollars": "0.9000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8600",
+        "high_dollars": "0.8700",
+        "low_dollars": "0.8500",
+        "open_dollars": "0.8700"
+      }
+    },
+    {
+      "end_period_ts": 1789869600,
+      "open_interest_fp": "56.50",
+      "price": {
+        "previous_dollars": "0.9000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.9000",
+        "open_dollars": "0.9000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8600",
+        "high_dollars": "0.8600",
+        "low_dollars": "0.8500",
+        "open_dollars": "0.8600"
+      }
+    },
+    {
+      "end_period_ts": 1789873200,
+      "open_interest_fp": "56.50",
+      "price": {
+        "previous_dollars": "0.9000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.9000",
+        "open_dollars": "0.9000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8600",
+        "high_dollars": "0.8600",
+        "low_dollars": "0.8500",
+        "open_dollars": "0.8600"
+      }
     }
   ],
   "books": [
@@ -1158,6 +1218,278 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:17:47.746Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "633.00"
+            ],
+            [
+              "0.0200",
+              "42.00"
+            ],
+            [
+              "0.1000",
+              "33.54"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "16.46"
+            ],
+            [
+              "0.4400",
+              "61.00"
+            ],
+            [
+              "0.4600",
+              "642.00"
+            ],
+            [
+              "0.5400",
+              "62.00"
+            ],
+            [
+              "0.5600",
+              "50.00"
+            ],
+            [
+              "0.6000",
+              "300.00"
+            ],
+            [
+              "0.6100",
+              "13.51"
+            ],
+            [
+              "0.8500",
+              "45.63"
+            ],
+            [
+              "0.8600",
+              "0.51"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:23:53.972Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "633.00"
+            ],
+            [
+              "0.0200",
+              "42.00"
+            ],
+            [
+              "0.1000",
+              "33.54"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "16.46"
+            ],
+            [
+              "0.4400",
+              "61.00"
+            ],
+            [
+              "0.4600",
+              "642.00"
+            ],
+            [
+              "0.5400",
+              "62.00"
+            ],
+            [
+              "0.5600",
+              "50.00"
+            ],
+            [
+              "0.6000",
+              "300.00"
+            ],
+            [
+              "0.6100",
+              "13.51"
+            ],
+            [
+              "0.8500",
+              "45.63"
+            ],
+            [
+              "0.8600",
+              "0.51"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:33:49.336Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "633.00"
+            ],
+            [
+              "0.0200",
+              "42.00"
+            ],
+            [
+              "0.1000",
+              "33.54"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "16.46"
+            ],
+            [
+              "0.4400",
+              "61.00"
+            ],
+            [
+              "0.4600",
+              "642.00"
+            ],
+            [
+              "0.5400",
+              "62.00"
+            ],
+            [
+              "0.5600",
+              "50.00"
+            ],
+            [
+              "0.6000",
+              "300.00"
+            ],
+            [
+              "0.6100",
+              "13.51"
+            ],
+            [
+              "0.8500",
+              "45.63"
+            ],
+            [
+              "0.8600",
+              "0.51"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:44:08.625Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "633.00"
+            ],
+            [
+              "0.0200",
+              "42.00"
+            ],
+            [
+              "0.1000",
+              "33.54"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "16.46"
+            ],
+            [
+              "0.4400",
+              "61.00"
+            ],
+            [
+              "0.4600",
+              "642.00"
+            ],
+            [
+              "0.5400",
+              "62.00"
+            ],
+            [
+              "0.5600",
+              "50.00"
+            ],
+            [
+              "0.6000",
+              "300.00"
+            ],
+            [
+              "0.6100",
+              "13.51"
+            ],
+            [
+              "0.8500",
+              "45.63"
+            ],
+            [
+              "0.8600",
+              "0.51"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1211,8 +1543,8 @@
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2",
-  "market_captured_at": "2026-09-20T00:30:57.628Z",
+  "market_captured_at": "2026-09-20T03:44:07.883Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T00:30:58.299Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP20SEACGY-2/candlesticks?start_ts=1789862401&end_ts=1789864257&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:44:08.556Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP20SEACGY-2/candlesticks?start_ts=1789873201&end_ts=1789875848&period_interval=60"
 }

@@ -1585,6 +1585,81 @@
         "low_dollars": "0.4100",
         "open_dollars": "0.4500"
       }
+    },
+    {
+      "end_period_ts": 1789866000,
+      "open_interest_fp": "7357.66",
+      "price": {
+        "close_dollars": "0.7300",
+        "high_dollars": "0.7400",
+        "low_dollars": "0.4400",
+        "mean_dollars": "0.6262",
+        "open_dollars": "0.6100",
+        "previous_dollars": "0.6600"
+      },
+      "volume_fp": "1346.87",
+      "yes_ask": {
+        "close_dollars": "0.6800",
+        "high_dollars": "0.7400",
+        "low_dollars": "0.4900",
+        "open_dollars": "0.6400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6000",
+        "high_dollars": "0.7200",
+        "low_dollars": "0.3900",
+        "open_dollars": "0.5900"
+      }
+    },
+    {
+      "end_period_ts": 1789869600,
+      "open_interest_fp": "21719.19",
+      "price": {
+        "close_dollars": "0.9500",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.6400",
+        "mean_dollars": "0.9285",
+        "open_dollars": "0.6400",
+        "previous_dollars": "0.7300"
+      },
+      "volume_fp": "17123.52",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.6400",
+        "open_dollars": "0.6800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9500",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.5800",
+        "open_dollars": "0.6000"
+      }
+    },
+    {
+      "end_period_ts": 1789873200,
+      "open_interest_fp": "21926.57",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "mean_dollars": "0.9900",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9500"
+      },
+      "volume_fp": "1087.06",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9500",
+        "open_dollars": "0.9500"
+      }
     }
   ],
   "books": [
@@ -4459,11 +4534,51 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:17:32.140Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:23:38.373Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:33:33.814Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:43:53.029Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
     "can_close_early": true,
-    "close_time": "2026-09-21T23:00:00Z",
+    "close_time": "2026-09-20T03:09:12Z",
     "created_time": "2026-09-17T00:02:11.015968Z",
     "custom_strike": {
       "hockey_team": "5cfee6b9-43ff-4dfa-8347-2b9de7ed51b6"
@@ -4473,21 +4588,21 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-09-20T02:00:00Z",
     "expiration_time": "2026-09-21T23:00:00Z",
-    "expiration_value": "",
-    "last_price_dollars": "0.5200",
+    "expiration_value": "Dallas",
+    "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-21T23:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.5100",
-    "no_bid_dollars": "0.4900",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Dallas",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T02:00:00Z",
-    "open_interest_fp": "6863.34",
+    "open_interest_fp": "21926.57",
     "open_time": "2026-09-17T00:07:00Z",
-    "previous_price_dollars": "0.4800",
-    "previous_yes_ask_dollars": "0.5100",
-    "previous_yes_bid_dollars": "0.4900",
+    "previous_price_dollars": "0.6400",
+    "previous_yes_ask_dollars": "0.6000",
+    "previous_yes_bid_dollars": "0.5700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4496,26 +4611,29 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If Dallas wins the Dallas vs St. Louis NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
     "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
     "settlement_timer_seconds": 45,
-    "status": "active",
+    "settlement_ts": "2026-09-20T03:10:04.503012Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "structured",
     "ticker": "KXNHLGAME-26SEP19DALSTL-DAL",
     "title": "Dallas wins",
-    "updated_time": "2026-09-17T00:07:00.14378Z",
-    "volume_24h_fp": "9815.54",
-    "volume_fp": "10408.29",
-    "yes_ask_dollars": "0.5100",
-    "yes_ask_size_fp": "98.00",
-    "yes_bid_dollars": "0.4900",
-    "yes_bid_size_fp": "3.00",
+    "updated_time": "2026-09-20T03:10:04.967407Z",
+    "volume_24h_fp": "29521.10",
+    "volume_fp": "29888.60",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Dallas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL",
-  "market_captured_at": "2026-09-20T00:30:42.017Z",
-  "status": "active",
-  "last_ingested_at": "2026-09-20T00:30:42.690Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-DAL/candlesticks?start_ts=1789862401&end_ts=1789864242&period_interval=60"
+  "market_captured_at": "2026-09-20T03:43:52.286Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-20T03:43:52.960Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-DAL/candlesticks?start_ts=1789873201&end_ts=1789875832&period_interval=60",
+  "result": "yes"
 }
