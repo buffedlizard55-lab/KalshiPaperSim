@@ -753,6 +753,31 @@
         "low_dollars": "0.0800",
         "open_dollars": "0.0800"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "473542.38",
+      "price": {
+        "close_dollars": "0.0900",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0800",
+        "mean_dollars": "0.0892",
+        "open_dollars": "0.0900",
+        "previous_dollars": "0.0800"
+      },
+      "volume_fp": "1080.99",
+      "yes_ask": {
+        "close_dollars": "0.0900",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0900",
+        "open_dollars": "0.0900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.0800"
+      }
     }
   ],
   "books": [
@@ -4822,9 +4847,9 @@
     "no_bid_dollars": "0.9100",
     "no_sub_title": "Cincinnati",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "473542.38",
+    "open_interest_fp": "473751.29",
     "open_time": "2026-02-07T15:00:00Z",
-    "previous_price_dollars": "0.0800",
+    "previous_price_dollars": "0.0900",
     "previous_yes_ask_dollars": "0.0900",
     "previous_yes_bid_dollars": "0.0800",
     "price_level_structure": "linear_cent",
@@ -4844,17 +4869,17 @@
     "ticker": "KXNFLAFCCHAMP-27-CIN",
     "title": "Will Cincinnati win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "1080.99",
-    "volume_fp": "631459.74",
+    "volume_24h_fp": "1171.88",
+    "volume_fp": "631668.65",
     "yes_ask_dollars": "0.0900",
-    "yes_ask_size_fp": "2576.62",
+    "yes_ask_size_fp": "2367.71",
     "yes_bid_dollars": "0.0800",
-    "yes_bid_size_fp": "4268.20",
+    "yes_bid_size_fp": "4210.34",
     "yes_sub_title": "Cincinnati"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-CIN",
-  "market_captured_at": "2026-09-20T03:52:18.523Z",
+  "market_captured_at": "2026-09-20T11:28:34.091Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:19.195Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-CIN/candlesticks?start_ts=1789790401&end_ts=1789876338&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:34.613Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-CIN/candlesticks?start_ts=1789790401&end_ts=1789903714&period_interval=1440"
 }

@@ -753,6 +753,31 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "2132702.08",
+      "price": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0603",
+        "open_dollars": "0.0400",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "138632.35",
+      "yes_ask": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -4302,15 +4327,15 @@
     "expected_expiration_time": "2027-01-26T04:00:00Z",
     "expiration_time": "2027-02-23T04:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0700",
+    "last_price_dollars": "0.0600",
     "latest_expiration_time": "2027-02-23T04:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9400",
-    "no_bid_dollars": "0.9300",
+    "no_ask_dollars": "0.9500",
+    "no_bid_dollars": "0.9400",
     "no_sub_title": "Ole Miss",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "2132702.08",
+    "open_interest_fp": "2132952.62",
     "open_time": "2026-01-21T22:00:00Z",
     "previous_price_dollars": "0.0300",
     "previous_yes_ask_dollars": "0.0400",
@@ -4332,17 +4357,17 @@
     "ticker": "KXNCAAF-27-MISS",
     "title": "Will Ole Miss win the College Football Playoff National Championship?",
     "updated_time": "2026-09-15T15:39:56.116155Z",
-    "volume_24h_fp": "137601.35",
-    "volume_fp": "2913911.60",
-    "yes_ask_dollars": "0.0700",
-    "yes_ask_size_fp": "5285.49",
-    "yes_bid_dollars": "0.0600",
-    "yes_bid_size_fp": "3568.88",
+    "volume_24h_fp": "144870.58",
+    "volume_fp": "2922253.62",
+    "yes_ask_dollars": "0.0600",
+    "yes_ask_size_fp": "18.21",
+    "yes_bid_dollars": "0.0500",
+    "yes_bid_size_fp": "7108.75",
     "yes_sub_title": "Ole Miss"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-MISS",
-  "market_captured_at": "2026-09-20T03:51:48.735Z",
+  "market_captured_at": "2026-09-20T11:28:17.321Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:49.409Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-MISS/candlesticks?start_ts=1789790401&end_ts=1789876309&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:17.844Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-MISS/candlesticks?start_ts=1789790401&end_ts=1789903697&period_interval=1440"
 }

@@ -753,6 +753,31 @@
         "low_dollars": "0.2200",
         "open_dollars": "0.2300"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "414687.67",
+      "price": {
+        "close_dollars": "0.2200",
+        "high_dollars": "0.2400",
+        "low_dollars": "0.2200",
+        "mean_dollars": "0.2281",
+        "open_dollars": "0.2300",
+        "previous_dollars": "0.2200"
+      },
+      "volume_fp": "509.28",
+      "yes_ask": {
+        "close_dollars": "0.2400",
+        "high_dollars": "0.2400",
+        "low_dollars": "0.2300",
+        "open_dollars": "0.2300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2300",
+        "high_dollars": "0.2300",
+        "low_dollars": "0.2200",
+        "open_dollars": "0.2200"
+      }
     }
   ],
   "books": [
@@ -5782,14 +5807,14 @@
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.7800",
+    "no_ask_dollars": "0.7700",
     "no_bid_dollars": "0.7600",
     "no_sub_title": "Philadelphia",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
     "open_interest_fp": "414687.67",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.2200",
+    "previous_price_dollars": "0.2300",
     "previous_yes_ask_dollars": "0.2300",
     "previous_yes_bid_dollars": "0.2200",
     "price_level_structure": "linear_cent",
@@ -5809,17 +5834,17 @@
     "ticker": "KXNBAEAST-27-PHI",
     "title": "Will Philadelphia win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "509.28",
+    "volume_24h_fp": "377.28",
     "volume_fp": "701013.77",
     "yes_ask_dollars": "0.2400",
-    "yes_ask_size_fp": "84.96",
-    "yes_bid_dollars": "0.2200",
-    "yes_bid_size_fp": "25026.63",
+    "yes_ask_size_fp": "844.47",
+    "yes_bid_dollars": "0.2300",
+    "yes_bid_size_fp": "663.02",
     "yes_sub_title": "Philadelphia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-PHI",
-  "market_captured_at": "2026-09-20T03:51:25.937Z",
+  "market_captured_at": "2026-09-20T11:28:04.544Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:26.613Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-PHI/candlesticks?start_ts=1789790401&end_ts=1789876286&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:05.074Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-PHI/candlesticks?start_ts=1789790401&end_ts=1789903684&period_interval=1440"
 }

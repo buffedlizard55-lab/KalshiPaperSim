@@ -1795,6 +1795,31 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "4144.23",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0391",
+        "open_dollars": "0.2600",
+        "previous_dollars": "0.0800"
+      },
+      "volume_fp": "49.43",
+      "yes_ask": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.0800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.1300",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -2657,6 +2682,46 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T11:34:20.603Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "75.00"
+            ],
+            [
+              "0.0600",
+              "46.00"
+            ],
+            [
+              "0.0800",
+              "5042.00"
+            ],
+            [
+              "0.0900",
+              "550.00"
+            ],
+            [
+              "0.1000",
+              "70.00"
+            ],
+            [
+              "0.9200",
+              "2000.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "0.56"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2677,7 +2742,7 @@
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.9900",
-    "no_bid_dollars": "0.0600",
+    "no_bid_dollars": "0.9200",
     "no_sub_title": "Before Oct 1, 2026",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-01T14:00:00Z",
@@ -2705,15 +2770,15 @@
     "updated_time": "2026-06-10T02:58:24.789382Z",
     "volume_24h_fp": "49.43",
     "volume_fp": "5967.31",
-    "yes_ask_dollars": "0.9400",
-    "yes_ask_size_fp": "3567.00",
+    "yes_ask_dollars": "0.0800",
+    "yes_ask_size_fp": "2000.00",
     "yes_bid_dollars": "0.0100",
     "yes_bid_size_fp": "0.56",
     "yes_sub_title": "Before Oct 1, 2026"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01",
-  "market_captured_at": "2026-09-20T03:49:33.882Z",
+  "market_captured_at": "2026-09-20T11:34:19.958Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:49:34.555Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CYT-26OCT01/candlesticks?start_ts=1789790401&end_ts=1789876174&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:34:20.582Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CYT-26OCT01/candlesticks?start_ts=1789876801&end_ts=1789904060&period_interval=1440"
 }

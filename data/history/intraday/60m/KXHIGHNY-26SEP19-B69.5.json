@@ -927,6 +927,76 @@
         "low_dollars": "0.9900",
         "open_dollars": "0.9900"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "22935.65",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "mean_dollars": "0.9900",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "193.40",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    },
+    {
+      "end_period_ts": 1789880400,
+      "open_interest_fp": "23029.16",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "mean_dollars": "0.9900",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "96.32",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    },
+    {
+      "end_period_ts": 1789884000,
+      "open_interest_fp": "23029.16",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -1526,6 +1596,16 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T11:31:45.373Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP19-B69.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1538,22 +1618,22 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-09-20T19:00:00Z",
     "expiration_time": "2026-09-26T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "69.00",
     "floor_strike": 69,
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-26T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.0100",
+    "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
     "no_sub_title": "69\u00b0 to 70\u00b0",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T14:00:00Z",
-    "open_interest_fp": "22842.14",
+    "open_interest_fp": "23029.16",
     "open_time": "2026-09-18T14:00:00Z",
-    "previous_price_dollars": "0.3700",
-    "previous_yes_ask_dollars": "0.3800",
-    "previous_yes_bid_dollars": "0.3700",
+    "previous_price_dollars": "0.3300",
+    "previous_yes_ask_dollars": "0.3300",
+    "previous_yes_bid_dollars": "0.3200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1562,26 +1642,29 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If the maximum temperature recorded at New York City (CLINYC) for Sep 19, 2026, is between 69-70\u00b0 fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
     "settlement_timer_seconds": 300,
-    "status": "active",
+    "settlement_ts": "2026-09-20T11:09:54.508699Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "between",
     "ticker": "KXHIGHNY-26SEP19-B69.5",
     "title": "Will the maximum temperature be 69-70\u00b0 on Sep 19, 2026?",
-    "updated_time": "2026-09-18T14:00:01.811546Z",
-    "volume_24h_fp": "49045.20",
-    "volume_fp": "52515.35",
+    "updated_time": "2026-09-20T11:09:54.53642Z",
+    "volume_24h_fp": "44677.78",
+    "volume_fp": "52711.56",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
-    "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "17381.48",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "69\u00b0 to 70\u00b0"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP19-B69.5",
-  "market_captured_at": "2026-09-20T03:24:39.046Z",
-  "status": "active",
-  "last_ingested_at": "2026-09-20T03:24:39.719Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP19-B69.5/candlesticks?start_ts=1789862401&end_ts=1789874679&period_interval=60"
+  "market_captured_at": "2026-09-20T11:31:44.729Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-20T11:31:45.352Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP19-B69.5/candlesticks?start_ts=1789873201&end_ts=1789903905&period_interval=60",
+  "result": "yes"
 }

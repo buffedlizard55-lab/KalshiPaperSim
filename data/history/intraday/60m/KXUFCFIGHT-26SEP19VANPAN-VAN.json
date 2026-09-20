@@ -5,56 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1789153200,
-      "open_interest_fp": "38264.72",
-      "price": {
-        "close_dollars": "0.5400",
-        "high_dollars": "0.5400",
-        "low_dollars": "0.5400",
-        "mean_dollars": "0.5400",
-        "open_dollars": "0.5400",
-        "previous_dollars": "0.5300"
-      },
-      "volume_fp": "401.79",
-      "yes_ask": {
-        "close_dollars": "0.5400",
-        "high_dollars": "0.5400",
-        "low_dollars": "0.5400",
-        "open_dollars": "0.5400"
-      },
-      "yes_bid": {
-        "close_dollars": "0.5300",
-        "high_dollars": "0.5300",
-        "low_dollars": "0.5300",
-        "open_dollars": "0.5300"
-      }
-    },
-    {
-      "end_period_ts": 1789156800,
-      "open_interest_fp": "38264.72",
-      "price": {
-        "close_dollars": "0.5400",
-        "high_dollars": "0.5400",
-        "low_dollars": "0.5400",
-        "mean_dollars": "0.5400",
-        "open_dollars": "0.5400",
-        "previous_dollars": "0.5400"
-      },
-      "volume_fp": "116.30",
-      "yes_ask": {
-        "close_dollars": "0.5400",
-        "high_dollars": "0.5400",
-        "low_dollars": "0.5400",
-        "open_dollars": "0.5400"
-      },
-      "yes_bid": {
-        "close_dollars": "0.5300",
-        "high_dollars": "0.5300",
-        "low_dollars": "0.5300",
-        "open_dollars": "0.5300"
-      }
-    },
-    {
       "end_period_ts": 1789160400,
       "open_interest_fp": "38264.72",
       "price": {
@@ -4988,6 +4938,56 @@
         "low_dollars": "0.5800",
         "open_dollars": "0.5800"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "6058327.20",
+      "price": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.4000",
+        "mean_dollars": "0.6675",
+        "open_dollars": "0.5900",
+        "previous_dollars": "0.5900"
+      },
+      "volume_fp": "5733802.27",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.4100",
+        "open_dollars": "0.5900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.4000",
+        "open_dollars": "0.5800"
+      }
+    },
+    {
+      "end_period_ts": 1789880400,
+      "open_interest_fp": "6089846.99",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9500",
+        "mean_dollars": "0.9805",
+        "open_dollars": "0.9700",
+        "previous_dollars": "0.9700"
+      },
+      "volume_fp": "622868.82",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.9600",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.9700"
+      }
     }
   ],
   "books": [
@@ -5334,11 +5334,21 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T11:33:08.545Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19VANPAN-VAN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
     "can_close_early": true,
-    "close_time": "2026-10-04T02:20:00Z",
+    "close_time": "2026-09-20T04:09:43Z",
     "created_time": "2026-09-06T04:35:38.676894Z",
     "custom_strike": {
       "ufc_competitor": "eb6210c9-fe21-4706-8a69-7caff704cc98"
@@ -5348,19 +5358,19 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-09-20T08:30:00Z",
     "expiration_time": "2026-10-04T02:20:00Z",
-    "expiration_value": "",
-    "last_price_dollars": "0.5400",
+    "expiration_value": "Joshua Van",
+    "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-04T02:20:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.4700",
-    "no_bid_dollars": "0.4600",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Joshua Van",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T07:20:00Z",
-    "open_interest_fp": "5187857.27",
+    "open_interest_fp": "6089846.99",
     "open_time": "2026-09-06T04:45:00Z",
-    "previous_price_dollars": "0.5800",
+    "previous_price_dollars": "0.5700",
     "previous_yes_ask_dollars": "0.5800",
     "previous_yes_bid_dollars": "0.5700",
     "price_level_structure": "linear_cent",
@@ -5371,28 +5381,30 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If Joshua van wins the van vs Pantoja professional MMA fight originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the van vs Pantoja professional MMA fight originally scheduled for Sep 19, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the “UFC,” or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
     "settlement_timer_seconds": 298,
-    "status": "active",
+    "settlement_ts": "2026-09-20T04:15:44.944309Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "structured",
     "ticker": "KXUFCFIGHT-26SEP19VANPAN-VAN",
     "title": "Joshua Van wins",
-    "updated_time": "2026-09-20T03:30:53.688021Z",
-    "volume_24h_fp": "4581451.63",
-    "volume_fp": "5655467.13",
-    "yes_ask_dollars": "0.5400",
-    "yes_ask_size_fp": "2769.30",
-    "yes_bid_dollars": "0.5300",
-    "yes_bid_size_fp": "680.45",
+    "updated_time": "2026-09-20T04:15:45.561499Z",
+    "volume_24h_fp": "8057152.66",
+    "volume_fp": "8710092.99",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Joshua Van"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19VANPAN-VAN",
-  "market_captured_at": "2026-09-20T03:34:41.196Z",
-  "status": "active",
-  "last_ingested_at": "2026-09-20T03:34:41.871Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19VANPAN-VAN/candlesticks?start_ts=1788583500&end_ts=1789875281&period_interval=60",
+  "market_captured_at": "2026-09-20T11:33:07.899Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-20T11:33:08.523Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19VANPAN-VAN/candlesticks?start_ts=1789873201&end_ts=1789903988&period_interval=60",
   "trims": [
     {
       "at": "2026-09-20T03:34:42.241Z",
@@ -5401,6 +5413,15 @@
       "dropped_to_ts": 1789149600,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T11:33:08.845Z",
+      "dropped": 2,
+      "dropped_from_ts": 1789153200,
+      "dropped_to_ts": 1789156800,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }
-  ]
+  ],
+  "result": "yes"
 }

@@ -27,6 +27,31 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "7236.57",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.4022",
+        "open_dollars": "0.6200",
+        "previous_dollars": "0.6100"
+      },
+      "volume_fp": "10950.42",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.6300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.6200"
+      }
     }
   ],
   "books": [
@@ -1307,8 +1332,8 @@
     "occurrence_datetime": "2026-09-19T22:30:00Z",
     "open_interest_fp": "7236.57",
     "open_time": "2026-09-18T07:06:00Z",
-    "previous_price_dollars": "0.6100",
-    "previous_yes_ask_dollars": "0.6300",
+    "previous_price_dollars": "0.6200",
+    "previous_yes_ask_dollars": "0.6500",
     "previous_yes_bid_dollars": "0.6200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -1329,7 +1354,7 @@
     "ticker": "KXNCAAFTOTAL-26SEP19WAGCAL-61",
     "title": "Over 60.5 points scored",
     "updated_time": "2026-09-19T23:04:34.873449Z",
-    "volume_24h_fp": "10950.42",
+    "volume_24h_fp": "10925.42",
     "volume_fp": "11050.42",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1338,9 +1363,9 @@
     "yes_sub_title": "Over 60.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19WAGCAL-61",
-  "market_captured_at": "2026-09-20T03:52:15.684Z",
+  "market_captured_at": "2026-09-20T11:28:32.495Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:52:16.357Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19WAGCAL-61/candlesticks?start_ts=1789790401&end_ts=1789876335&period_interval=1440",
+  "last_ingested_at": "2026-09-20T11:28:33.017Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19WAGCAL-61/candlesticks?start_ts=1789790401&end_ts=1789903712&period_interval=1440",
   "result": "no"
 }

@@ -753,6 +753,31 @@
         "low_dollars": "0.1300",
         "open_dollars": "0.1300"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "2108575.21",
+      "price": {
+        "close_dollars": "0.1500",
+        "high_dollars": "0.1500",
+        "low_dollars": "0.1300",
+        "mean_dollars": "0.1476",
+        "open_dollars": "0.1400",
+        "previous_dollars": "0.1400"
+      },
+      "volume_fp": "59415.42",
+      "yes_ask": {
+        "close_dollars": "0.1500",
+        "high_dollars": "0.1500",
+        "low_dollars": "0.1400",
+        "open_dollars": "0.1400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1400",
+        "high_dollars": "0.1400",
+        "low_dollars": "0.1300",
+        "open_dollars": "0.1300"
+      }
     }
   ],
   "books": [
@@ -6438,11 +6463,11 @@
     "no_bid_dollars": "0.8500",
     "no_sub_title": "Texas",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "2108575.21",
+    "open_interest_fp": "2112232.25",
     "open_time": "2026-01-21T22:00:00Z",
     "previous_price_dollars": "0.1500",
-    "previous_yes_ask_dollars": "0.1400",
-    "previous_yes_bid_dollars": "0.1300",
+    "previous_yes_ask_dollars": "0.1500",
+    "previous_yes_bid_dollars": "0.1400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -6460,17 +6485,17 @@
     "ticker": "KXNCAAF-27-TEX",
     "title": "Will Texas win the College Football Playoff National Championship?",
     "updated_time": "2026-09-15T15:39:56.061597Z",
-    "volume_24h_fp": "59571.26",
-    "volume_fp": "2943951.03",
+    "volume_24h_fp": "61874.58",
+    "volume_fp": "2949566.47",
     "yes_ask_dollars": "0.1500",
-    "yes_ask_size_fp": "234396.29",
+    "yes_ask_size_fp": "261607.20",
     "yes_bid_dollars": "0.1400",
-    "yes_bid_size_fp": "21119.86",
+    "yes_bid_size_fp": "19372.19",
     "yes_sub_title": "Texas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-TEX",
-  "market_captured_at": "2026-09-20T03:51:52.987Z",
+  "market_captured_at": "2026-09-20T11:28:19.714Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:53.661Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-TEX/candlesticks?start_ts=1789790401&end_ts=1789876313&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:20.236Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-TEX/candlesticks?start_ts=1789790401&end_ts=1789903699&period_interval=1440"
 }

@@ -2649,6 +2649,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T11:33:14.902Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP12MCMRAH-MCM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2688,7 +2698,7 @@
     ],
     "result": "yes",
     "rules_primary": "If Tommy McMillen wins the McMillen vs Rahiki professional MMA fight originally scheduled for Sep 12, 2026, then the market resolves to Yes.",
-    "rules_secondary": "The following market refers to the McMillen vs Rahiki professional MMA fight originally scheduled for Sep 12, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the “UFC,” or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
+    "rules_secondary": "The following market refers to the McMillen vs Rahiki professional MMA fight originally scheduled for Sep 12, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the \u201cUFC,\u201d or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
     "settlement_timer_seconds": 298,
     "settlement_ts": "2026-09-12T23:25:48.546633Z",
     "settlement_value_dollars": "1.0000",
@@ -2706,9 +2716,9 @@
     "yes_sub_title": "Tommy McMillen"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP12MCMRAH-MCM",
-  "market_captured_at": "2026-09-20T03:07:29.943Z",
+  "market_captured_at": "2026-09-20T11:33:14.256Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:07:30.565Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12MCMRAH-MCM/candlesticks?start_ts=1789257601&end_ts=1789873650&period_interval=60"
+  "last_ingested_at": "2026-09-20T11:33:14.881Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12MCMRAH-MCM/candlesticks?start_ts=1789257601&end_ts=1789903994&period_interval=60"
 }

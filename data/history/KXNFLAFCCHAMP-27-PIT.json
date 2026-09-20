@@ -753,6 +753,31 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "412093.04",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0300",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "472.19",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -3650,7 +3675,7 @@
     "expected_expiration_time": "2027-02-08T15:00:00Z",
     "expiration_time": "2027-02-22T15:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0300",
+    "last_price_dollars": "0.0200",
     "latest_expiration_time": "2027-02-22T15:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -3681,16 +3706,16 @@
     "title": "Will Pittsburgh win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
     "volume_24h_fp": "472.19",
-    "volume_fp": "472872.29",
+    "volume_fp": "473184.42",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "191680.65",
+    "yes_ask_size_fp": "269608.37",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "210946.17",
+    "yes_bid_size_fp": "238912.34",
     "yes_sub_title": "Pittsburgh"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-PIT",
-  "market_captured_at": "2026-09-20T03:52:24.189Z",
+  "market_captured_at": "2026-09-20T11:28:37.279Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:24.862Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-PIT/candlesticks?start_ts=1789790401&end_ts=1789876344&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:37.801Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-PIT/candlesticks?start_ts=1789790401&end_ts=1789903717&period_interval=1440"
 }

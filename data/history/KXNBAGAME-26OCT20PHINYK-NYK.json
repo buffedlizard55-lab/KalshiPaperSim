@@ -752,6 +752,31 @@
         "low_dollars": "0.5900",
         "open_dollars": "0.5900"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "5945.64",
+      "price": {
+        "close_dollars": "0.6400",
+        "high_dollars": "0.6400",
+        "low_dollars": "0.6000",
+        "mean_dollars": "0.6210",
+        "open_dollars": "0.6300",
+        "previous_dollars": "0.6100"
+      },
+      "volume_fp": "350.47",
+      "yes_ask": {
+        "close_dollars": "0.6300",
+        "high_dollars": "0.6600",
+        "low_dollars": "0.6200",
+        "open_dollars": "0.6200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6200",
+        "high_dollars": "0.6200",
+        "low_dollars": "0.5900",
+        "open_dollars": "0.6100"
+      }
     }
   ],
   "books": [
@@ -4465,20 +4490,20 @@
     "expected_expiration_time": "2026-10-21T02:00:00Z",
     "expiration_time": "2026-10-22T23:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.6400",
+    "last_price_dollars": "0.6500",
     "latest_expiration_time": "2026-10-22T23:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.3800",
+    "no_ask_dollars": "0.3700",
     "no_bid_dollars": "0.3600",
     "no_sub_title": "New York",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-21T02:00:00Z",
-    "open_interest_fp": "5945.64",
+    "open_interest_fp": "8936.39",
     "open_time": "2026-08-20T15:28:00Z",
-    "previous_price_dollars": "0.6100",
-    "previous_yes_ask_dollars": "0.6200",
-    "previous_yes_bid_dollars": "0.6100",
+    "previous_price_dollars": "0.6300",
+    "previous_yes_ask_dollars": "0.6300",
+    "previous_yes_bid_dollars": "0.6200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4496,17 +4521,17 @@
     "ticker": "KXNBAGAME-26OCT20PHINYK-NYK",
     "title": "New York wins",
     "updated_time": "2026-08-20T15:28:00.432079Z",
-    "volume_24h_fp": "350.47",
-    "volume_fp": "11340.89",
+    "volume_24h_fp": "3377.91",
+    "volume_fp": "14371.42",
     "yes_ask_dollars": "0.6400",
-    "yes_ask_size_fp": "1553.73",
-    "yes_bid_dollars": "0.6200",
-    "yes_bid_size_fp": "12.45",
+    "yes_ask_size_fp": "1865.00",
+    "yes_bid_dollars": "0.6300",
+    "yes_bid_size_fp": "108.10",
     "yes_sub_title": "New York"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK",
-  "market_captured_at": "2026-09-20T03:51:34.442Z",
+  "market_captured_at": "2026-09-20T11:28:09.337Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:35.230Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-NYK/candlesticks?start_ts=1789790401&end_ts=1789876294&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:09.860Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-NYK/candlesticks?start_ts=1789790401&end_ts=1789903689&period_interval=1440"
 }

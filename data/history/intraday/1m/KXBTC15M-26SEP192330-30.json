@@ -409,6 +409,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T11:33:26.770Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTC15M-26SEP192330-30/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -476,9 +486,9 @@
     "yes_sub_title": "Target Price: $80,257.69"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTC15M-26SEP192330-30",
-  "market_captured_at": "2026-09-20T03:39:25.795Z",
+  "market_captured_at": "2026-09-20T11:33:26.124Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:39:26.843Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP192330-30/candlesticks?start_ts=1789789166&end_ts=1789875565&period_interval=1"
+  "last_ingested_at": "2026-09-20T11:33:26.749Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTC15M/markets/KXBTC15M-26SEP192330-30/candlesticks?start_ts=1789875061&end_ts=1789904006&period_interval=1"
 }

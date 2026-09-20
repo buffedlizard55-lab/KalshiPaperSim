@@ -70,6 +70,31 @@
         "low_dollars": "0.0700",
         "open_dollars": "0.0900"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "14820.78",
+      "price": {
+        "close_dollars": "0.1500",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.1500",
+        "mean_dollars": "0.1649",
+        "open_dollars": "0.1600",
+        "previous_dollars": "0.1600"
+      },
+      "volume_fp": "9000.40",
+      "yes_ask": {
+        "close_dollars": "0.1500",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.1500",
+        "open_dollars": "0.1600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1400",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.1400",
+        "open_dollars": "0.1400"
+      }
     }
   ],
   "books": [
@@ -2701,11 +2726,11 @@
     "no_sub_title": "Saquon Barkley",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T20:00:00Z",
-    "open_interest_fp": "14683.78",
+    "open_interest_fp": "22974.47",
     "open_time": "2026-09-17T03:16:00Z",
-    "previous_price_dollars": "0.1600",
-    "previous_yes_ask_dollars": "0.1600",
-    "previous_yes_bid_dollars": "0.1400",
+    "previous_price_dollars": "0.1700",
+    "previous_yes_ask_dollars": "0.1700",
+    "previous_yes_bid_dollars": "0.1500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2724,17 +2749,17 @@
     "ticker": "KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26",
     "title": "Saquon Barkley: 1st Touchdown",
     "updated_time": "2026-09-17T03:16:00.145311Z",
-    "volume_24h_fp": "8778.38",
-    "volume_fp": "14783.04",
+    "volume_24h_fp": "16015.22",
+    "volume_fp": "23117.38",
     "yes_ask_dollars": "0.1600",
-    "yes_ask_size_fp": "12640.89",
+    "yes_ask_size_fp": "32024.97",
     "yes_bid_dollars": "0.1400",
-    "yes_bid_size_fp": "122.01",
+    "yes_bid_size_fp": "151.36",
     "yes_sub_title": "Saquon Barkley"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26",
-  "market_captured_at": "2026-09-20T03:52:29.864Z",
+  "market_captured_at": "2026-09-20T11:28:40.465Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:30.540Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26/candlesticks?start_ts=1789790401&end_ts=1789876350&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:40.994Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26/candlesticks?start_ts=1789790401&end_ts=1789903720&period_interval=1440"
 }

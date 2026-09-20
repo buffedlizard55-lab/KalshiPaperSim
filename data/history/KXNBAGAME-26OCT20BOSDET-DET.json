@@ -752,6 +752,31 @@
         "low_dollars": "0.2800",
         "open_dollars": "0.5000"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "6593.61",
+      "price": {
+        "close_dollars": "0.5200",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.4900",
+        "mean_dollars": "0.5082",
+        "open_dollars": "0.5100",
+        "previous_dollars": "0.4900"
+      },
+      "volume_fp": "75.06",
+      "yes_ask": {
+        "close_dollars": "0.5300",
+        "high_dollars": "0.5400",
+        "low_dollars": "0.5100",
+        "open_dollars": "0.5100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5100",
+        "high_dollars": "0.5100",
+        "low_dollars": "0.2800",
+        "open_dollars": "0.4800"
+      }
     }
   ],
   "books": [
@@ -4861,20 +4886,20 @@
     "expected_expiration_time": "2026-10-20T22:00:00Z",
     "expiration_time": "2026-10-22T19:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.5200",
+    "last_price_dollars": "0.5500",
     "latest_expiration_time": "2026-10-22T19:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.5000",
-    "no_bid_dollars": "0.4700",
+    "no_ask_dollars": "0.4700",
+    "no_bid_dollars": "0.4600",
     "no_sub_title": "Detroit",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-20T22:00:00Z",
-    "open_interest_fp": "6593.61",
+    "open_interest_fp": "9373.69",
     "open_time": "2026-08-20T15:28:00Z",
     "previous_price_dollars": "0.4900",
     "previous_yes_ask_dollars": "0.5100",
-    "previous_yes_bid_dollars": "0.4800",
+    "previous_yes_bid_dollars": "0.4900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4892,17 +4917,17 @@
     "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
     "title": "Detroit wins",
     "updated_time": "2026-08-20T15:28:00.432079Z",
-    "volume_24h_fp": "75.06",
-    "volume_fp": "12510.93",
-    "yes_ask_dollars": "0.5300",
-    "yes_ask_size_fp": "259.18",
-    "yes_bid_dollars": "0.5000",
-    "yes_bid_size_fp": "100.00",
+    "volume_24h_fp": "3005.08",
+    "volume_fp": "15440.95",
+    "yes_ask_dollars": "0.5400",
+    "yes_ask_size_fp": "866.53",
+    "yes_bid_dollars": "0.5300",
+    "yes_bid_size_fp": "139.74",
     "yes_sub_title": "Detroit"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET",
-  "market_captured_at": "2026-09-20T03:51:30.192Z",
+  "market_captured_at": "2026-09-20T11:28:06.942Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:30.864Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1789790401&end_ts=1789876290&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:07.466Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1789790401&end_ts=1789903687&period_interval=1440"
 }

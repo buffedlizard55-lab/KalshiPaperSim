@@ -77,6 +77,31 @@
         "low_dollars": "0.3900",
         "open_dollars": "0.4900"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "49165.46",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.7500",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.4677",
+        "open_dollars": "0.4800",
+        "previous_dollars": "0.4500"
+      },
+      "volume_fp": "50640.29",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.4800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.4900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.4500"
+      }
     }
   ],
   "books": [
@@ -2275,8 +2300,8 @@
     "occurrence_datetime": "2026-09-20T02:00:00Z",
     "open_interest_fp": "49165.46",
     "open_time": "2026-09-16T07:06:00Z",
-    "previous_price_dollars": "0.4500",
-    "previous_yes_ask_dollars": "0.4800",
+    "previous_price_dollars": "0.4900",
+    "previous_yes_ask_dollars": "0.4900",
     "previous_yes_bid_dollars": "0.4500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -2297,7 +2322,7 @@
     "ticker": "KXNCAAFSPREAD-26SEP19YSUSDST-SDST11",
     "title": "South Dakota St. wins by over 10.5 points",
     "updated_time": "2026-09-20T03:08:54.967583Z",
-    "volume_24h_fp": "50640.29",
+    "volume_24h_fp": "50558.02",
     "volume_fp": "51946.74",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2306,9 +2331,9 @@
     "yes_sub_title": "South Dakota St. wins by over 10.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11",
-  "market_captured_at": "2026-09-20T03:52:10.011Z",
+  "market_captured_at": "2026-09-20T11:28:29.305Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:52:10.683Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/candlesticks?start_ts=1789790401&end_ts=1789876330&period_interval=1440",
+  "last_ingested_at": "2026-09-20T11:28:29.829Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/candlesticks?start_ts=1789790401&end_ts=1789903709&period_interval=1440",
   "result": "no"
 }

@@ -743,6 +743,31 @@
         "low_dollars": "0.3500",
         "open_dollars": "0.3500"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "24974.71",
+      "price": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3500",
+        "mean_dollars": "0.3598",
+        "open_dollars": "0.3600",
+        "previous_dollars": "0.3500"
+      },
+      "volume_fp": "13.56",
+      "yes_ask": {
+        "close_dollars": "0.3600",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3600",
+        "open_dollars": "0.3600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3500",
+        "low_dollars": "0.3500",
+        "open_dollars": "0.3500"
+      }
     }
   ],
   "books": [
@@ -4584,7 +4609,7 @@
     "expected_expiration_time": "2027-06-30T14:00:00Z",
     "expiration_time": "2029-06-29T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.3500",
+    "last_price_dollars": "0.3600",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -4593,7 +4618,7 @@
     "no_sub_title": "San Antonio",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "24974.71",
+    "open_interest_fp": "24976.71",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.3500",
     "previous_yes_ask_dollars": "0.3600",
@@ -4615,17 +4640,17 @@
     "ticker": "KXNBAWEST-27-SAS",
     "title": "Will San Antonio win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "13.56",
-    "volume_fp": "37972.63",
+    "volume_24h_fp": "15.56",
+    "volume_fp": "37974.63",
     "yes_ask_dollars": "0.3600",
-    "yes_ask_size_fp": "21999.59",
+    "yes_ask_size_fp": "21997.59",
     "yes_bid_dollars": "0.3500",
     "yes_bid_size_fp": "71.36",
     "yes_sub_title": "San Antonio"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-SAS",
-  "market_captured_at": "2026-09-20T03:51:43.069Z",
+  "market_captured_at": "2026-09-20T11:28:14.128Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:43.741Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1789790401&end_ts=1789876303&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:14.652Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1789790401&end_ts=1789903694&period_interval=1440"
 }

@@ -140,6 +140,31 @@
         "low_dollars": "0.5300",
         "open_dollars": "0.5300"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "35574.60",
+      "price": {
+        "close_dollars": "0.5400",
+        "high_dollars": "0.5400",
+        "low_dollars": "0.5300",
+        "mean_dollars": "0.5400",
+        "open_dollars": "0.5400",
+        "previous_dollars": "0.5400"
+      },
+      "volume_fp": "5225.76",
+      "yes_ask": {
+        "close_dollars": "0.5400",
+        "high_dollars": "0.5400",
+        "low_dollars": "0.5400",
+        "open_dollars": "0.5400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5300",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.5300",
+        "open_dollars": "0.5300"
+      }
     }
   ],
   "books": [
@@ -4055,7 +4080,7 @@
     "expiration_time": "2026-09-22T20:25:00Z",
     "expiration_value": "",
     "floor_strike": 40.5,
-    "last_price_dollars": "0.5400",
+    "last_price_dollars": "0.5300",
     "latest_expiration_time": "2026-09-22T20:25:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -4064,7 +4089,7 @@
     "no_sub_title": "Over 40.5 points scored",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T23:25:00Z",
-    "open_interest_fp": "35574.60",
+    "open_interest_fp": "35785.09",
     "open_time": "2026-09-14T01:05:00Z",
     "previous_price_dollars": "0.5400",
     "previous_yes_ask_dollars": "0.5400",
@@ -4086,17 +4111,17 @@
     "ticker": "KXNFLTOTAL-26SEP20SEAARI-41",
     "title": "Full Game: over 40.5 points scored?",
     "updated_time": "2026-09-14T01:05:00.677227Z",
-    "volume_24h_fp": "5225.76",
-    "volume_fp": "35827.07",
+    "volume_24h_fp": "326.13",
+    "volume_fp": "36040.56",
     "yes_ask_dollars": "0.5400",
-    "yes_ask_size_fp": "540816.61",
+    "yes_ask_size_fp": "624306.93",
     "yes_bid_dollars": "0.5300",
-    "yes_bid_size_fp": "12530.20",
+    "yes_bid_size_fp": "13524.50",
     "yes_sub_title": "Over 40.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20SEAARI-41",
-  "market_captured_at": "2026-09-20T03:52:46.892Z",
+  "market_captured_at": "2026-09-20T11:28:50.041Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:47.566Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20SEAARI-41/candlesticks?start_ts=1789790401&end_ts=1789876367&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:50.565Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20SEAARI-41/candlesticks?start_ts=1789790401&end_ts=1789903730&period_interval=1440"
 }

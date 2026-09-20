@@ -52,6 +52,31 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "5751.46",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0300",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "397.06",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -2346,7 +2371,7 @@
     "expected_expiration_time": "2026-09-21T02:05:00Z",
     "expiration_time": "2026-09-22T20:05:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0300",
+    "last_price_dollars": "0.0200",
     "latest_expiration_time": "2026-09-22T20:05:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -2355,7 +2380,7 @@
     "no_sub_title": "Jack Bech",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T23:05:00Z",
-    "open_interest_fp": "5510.46",
+    "open_interest_fp": "8091.97",
     "open_time": "2026-09-17T15:19:00Z",
     "previous_price_dollars": "0.0300",
     "previous_yes_ask_dollars": "0.0300",
@@ -2378,17 +2403,17 @@
     "ticker": "KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18",
     "title": "Jack Bech: 1st Touchdown",
     "updated_time": "2026-09-17T15:19:00.170787Z",
-    "volume_24h_fp": "156.06",
-    "volume_fp": "5510.46",
+    "volume_24h_fp": "2737.57",
+    "volume_fp": "8091.97",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "2903.96",
+    "yes_ask_size_fp": "1978.94",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "3500.00",
+    "yes_bid_size_fp": "3700.00",
     "yes_sub_title": "Jack Bech"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18",
-  "market_captured_at": "2026-09-20T03:52:28.449Z",
+  "market_captured_at": "2026-09-20T11:28:39.670Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:29.121Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18/candlesticks?start_ts=1789790401&end_ts=1789876348&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:40.191Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18/candlesticks?start_ts=1789790401&end_ts=1789903719&period_interval=1440"
 }

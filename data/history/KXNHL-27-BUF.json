@@ -693,6 +693,31 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "79261.83",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "mean_dollars": "0.0400",
+        "open_dollars": "0.0400",
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "497.13",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -3574,8 +3599,8 @@
     "yes_sub_title": "Buffalo Sabres"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-BUF",
-  "market_captured_at": "2026-09-20T03:52:49.729Z",
+  "market_captured_at": "2026-09-20T11:28:51.635Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:50.402Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-BUF/candlesticks?start_ts=1789790401&end_ts=1789876370&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:52.157Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-BUF/candlesticks?start_ts=1789790401&end_ts=1789903731&period_interval=1440"
 }

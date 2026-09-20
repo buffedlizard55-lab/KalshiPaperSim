@@ -6579,6 +6579,31 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0400"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "1115242.39",
+      "price": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "mean_dollars": "0.0500",
+        "open_dollars": "0.0500",
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "158.50",
+      "yes_ask": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0500"
+      }
     }
   ],
   "market": {
@@ -6601,9 +6626,9 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "1115242.39",
     "open_time": "2025-12-23T15:00:00Z",
-    "previous_price_dollars": "0.0400",
-    "previous_yes_ask_dollars": "0.0600",
-    "previous_yes_bid_dollars": "0.0500",
+    "previous_price_dollars": "0.0500",
+    "previous_yes_ask_dollars": "0.0500",
+    "previous_yes_bid_dollars": "0.0400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -6622,19 +6647,19 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
     "title": "Will the Nasdaq-100 be below 19000 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:43.666782Z",
-    "volume_24h_fp": "158.50",
+    "volume_24h_fp": "0.00",
     "volume_fp": "1272527.47",
     "yes_ask_dollars": "0.0500",
-    "yes_ask_size_fp": "43.05",
+    "yes_ask_size_fp": "10.00",
     "yes_bid_dollars": "0.0400",
     "yes_bid_size_fp": "220.87",
     "yes_sub_title": "18,999.99 or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T19000",
-  "market_captured_at": "2026-09-20T03:51:08.925Z",
+  "market_captured_at": "2026-09-20T11:27:54.958Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:09.598Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1789790401&end_ts=1789876269&period_interval=1440",
+  "last_ingested_at": "2026-09-20T11:27:55.482Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1789790401&end_ts=1789903675&period_interval=1440",
   "books": [
     {
       "captured_at": "2026-09-17T23:07:32.276Z",

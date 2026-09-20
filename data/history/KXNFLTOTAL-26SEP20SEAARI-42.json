@@ -145,6 +145,31 @@
         "low_dollars": "0.4900",
         "open_dollars": "0.4900"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "51820.94",
+      "price": {
+        "close_dollars": "0.5000",
+        "high_dollars": "0.5000",
+        "low_dollars": "0.4900",
+        "mean_dollars": "0.4936",
+        "open_dollars": "0.5000",
+        "previous_dollars": "0.4900"
+      },
+      "volume_fp": "3651.54",
+      "yes_ask": {
+        "close_dollars": "0.5000",
+        "high_dollars": "0.5000",
+        "low_dollars": "0.5000",
+        "open_dollars": "0.5000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4900",
+        "high_dollars": "0.4900",
+        "low_dollars": "0.4900",
+        "open_dollars": "0.4900"
+      }
     }
   ],
   "books": [
@@ -4233,7 +4258,7 @@
     "no_sub_title": "Over 41.5 points scored",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T23:25:00Z",
-    "open_interest_fp": "51650.50",
+    "open_interest_fp": "67402.83",
     "open_time": "2026-09-14T01:05:00Z",
     "previous_price_dollars": "0.4900",
     "previous_yes_ask_dollars": "0.5000",
@@ -4255,17 +4280,17 @@
     "ticker": "KXNFLTOTAL-26SEP20SEAARI-42",
     "title": "Full Game: over 41.5 points scored?",
     "updated_time": "2026-09-14T01:05:00.677227Z",
-    "volume_24h_fp": "3481.10",
-    "volume_fp": "52490.34",
+    "volume_24h_fp": "19459.34",
+    "volume_fp": "68535.53",
     "yes_ask_dollars": "0.5000",
-    "yes_ask_size_fp": "692237.53",
+    "yes_ask_size_fp": "712624.01",
     "yes_bid_dollars": "0.4900",
-    "yes_bid_size_fp": "2851.39",
+    "yes_bid_size_fp": "433687.77",
     "yes_sub_title": "Over 41.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20SEAARI-42",
-  "market_captured_at": "2026-09-20T03:52:48.312Z",
+  "market_captured_at": "2026-09-20T11:28:50.839Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:48.986Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20SEAARI-42/candlesticks?start_ts=1789790401&end_ts=1789876368&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:51.362Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20SEAARI-42/candlesticks?start_ts=1789790401&end_ts=1789903731&period_interval=1440"
 }
