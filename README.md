@@ -2,14 +2,30 @@
 
 A **paper-trading competition platform for Kalshi prediction markets**, built on real captured
 Kalshi data: real markets, real quotes, real order-book depth, real candlesticks, the real
-quadratic fee formula, and the real reciprocal YES/NO pricing rule. Forty-one aggressive
+quadratic fee formula, and the real reciprocal YES/NO pricing rule. Fifty aggressive
 algorithmic strategies with unique usernames compete across three flights (daily, hourly, micro);
 every result is **computed by a deterministic replay engine** and every input is traceable to an
 official source. Roster entries were recreated from public trading write-ups — see
 [Strategy sources](#strategy-sources), and the [signal-source ledger](#signal-sources-the-mastersite-review)
 for the site-by-site review of the owner's own projects (weather → `KXHIGHNY`, gold → `KXGOLD15M`).
 
-**What is new in this revision (2026-09-19):** three real desk defects found and closed on the fresh
+**What is new in this revision (2026-09-20):** the **sports half of the point-in-time signal archive**
+shipped — the official **MLB Stats API** (`statsapi.mlb.com`, MLB Advanced Media; the source the owner's
+MLB-PBP projects verify against) is captured every 20 minutes through the playing day into
+`data/mlb-signals/` (one state row per change of status / inning / runs, the instant it was first seen,
+every capture instant listed), each `KXMLBGAME` contract is joined to its official game by first-pitch
+instant + away code + home code (verified on all nine finalized contracts in the store, fact V113), and
+two forward-test entries trade it against Tangotiger's published win-expectancy table (R18):
+`MLBLead_InPlay` and `MLBTrail_Comeback`, both abstaining until the archive overlaps the new 1-minute
+`KXMLBGAME` ingest block. A **parallel session's PR #17** landed on `main` mid-session; it was merged
+and audited line by line: five strategy cards and three desk entrants described signals their code did
+not read, two research "sources" were search pages, and the desk's "upcoming trades" list was
+synthesised — all corrected without deleting a username, recorded as Irregularity #53, and guarded by a
+new test that fails when a card names a signal its `decide()` does not import. Also closed:
+the commit-step race that lost a weather capture (#51, previous branch merged), stale
+"cannot test yet" cards (#52), and a desk-season schedule rule that ignored re-captures of an unchanged
+universe (#54 — on the merged 2026-09-20 store the corrected rule yields 7 rounds over ~53 h; `data/reports/desk-season-schedule.json` is the source of that number and grows with every capture). Previous revision
+(2026-09-19): three real desk defects found and closed on the fresh
 store — the cash cap now pays the **exact** official fee (the old flat 2% reserve let a $500 account
 book $520.87 of cost at 9¢), its own binary search can no longer spin forever, and the desk module
 **keeps six settled contracts with the exchange's own results** (open contracts had filled the whole
@@ -708,13 +724,14 @@ and renders in the site's **Research** tab. Headline findings:
 
 | Project | Verdict | What came of it |
 | --- | --- | --- |
-| **SFWeather** (NOAA/NWS pipeline) | live verified signal | The NWS point-forecast archive (`data/forecasts/`, ~5 captures/day) + the `KXHIGHNY` ingest + `ForecastEdge_Weather` / `WeatherLadder_CheapBands` |
+| **SFWeather** (NOAA/NWS pipeline) | live verified signal | The NWS point-forecast archive (`data/forecasts/`, ~5 captures/day) + the `KXHIGHNY` ingest + `ForecastEdge_Weather` / `WeatherLadder_CheapBands`; on the desk, `LiveWeather_ForecastEdge` reads the same archive at the cut-off |
+| **MLB-Live-PBP / MLB-PBP** (official MLB Gameday / Stats API) | **live verified signal (2026-09-20)** | The official MLB game-state archive (`data/mlb-signals/`, every 20 min through the playing day, `scripts/archive-mlb-signals.mjs`) joined to `KXMLBGAME` by first pitch + team codes (V113) + the 1-minute `KXMLBGAME` ingest block → `MLBLead_InPlay` / `MLBTrail_Comeback` (R18), forward tests by construction |
 | **PriceKalshiHistorical** (the owner's own Kalshi collector/backtester) | candidate → strategies recreated | Its three reference strategies (`mee`/`fade`/`mom`) are roster entries (R14): `MEE_BoardSum` (+1.18% hourly flight), `FadeSpike_Micro` (+76.57% micro flight), `MomTick_Micro` (−7.60%); its own 5s snapshot database is not exported, so only the rules were taken |
 | **GOLD** | not a market signal (flagged) | The project is a *ring buyer's directory*; Kalshi's real gold markets (`KXGOLD15M`) are tracked directly instead, feeding `GoldBracket_EarlyLeader` |
 | **PinePilot** (Pine Script lab) | testable archetype | Its TA families are already the roster's trend/momentum/mean-reversion entries, replayed with real fees (which the Pine simulator does not charge) |
 | **DrugAnalysis (FDA) / NCAA football alerts / NBA Injury** | **mapped to the Live Desk** (Kalshi-price half) | Favourite-bucket idea now trades as desk entrants `LiveFDA_DecisionPremium` (→ `KXFDA*`), `LiveNCAA_GameFavourite` (→ `KXNCAAFGAME`) and `LiveNBA_GameFavourite` (→ `KXNBAGAME`) on real **open** contracts, priced from captured ladders. The injury/PDUFA/live-score *feeds* are still unarchived — S05/S06/S07 say so |
-| **Insider-trades / NFL Injury / NFL & MLB scoreboards / SportsPred / TheLeap** | candidates | Real projects, real official sources — each blocked only by the matching point-in-time archive; the ledger states exactly what each would need. S02's remaining gap is Form 4, not Kalshi prices |
-| **MLB-Prediction-model-backtest / MLB-PBP / PFFNFL / ScheduleFreeTime** (added by the 2026-09-18 second re-review) | candidates | Real projects on official sources (MLB statsapi, PFF public pages, league schedules) — each needs a point-in-time archive of its output before any honest test; S14–S17 state the exact blocker and the closing action |
+| **Insider-trades / NFL Injury / NFL scoreboard / SportsPred / TheLeap** | candidates (entries carry the names, price-only) | Real projects, real official sources — each still blocked by the matching point-in-time archive; the ledger states exactly what each would need. `InsiderFiling_Drift` / `LiveInsider_FilingFader` and `TheLeap_BreakoutRank` / `LiveTheLeap_Momentum` (merged from PR #17) are **price-only rules that read nothing from those projects** and say so on their cards (Irregularity #53) |
+| **MLB-Prediction-model-backtest / PFFNFL / ScheduleFreeTime** (added by the 2026-09-18 second re-review) | candidates | Real projects on official sources — each needs a point-in-time archive of its output before any honest test; S14 / S16 / S17 state the exact blocker. For MLB the schedule half now exists (the archive stores every game's official first pitch), so only the model's own pre-game probability is missing |
 | **NFLPRED / StockPaperSim** | not a signal (flagged) | NFLPRED is an empty stub (one README, verified); StockPaperSim is a *stock* competition on a different venue — and the directory's record for it is stale (Irregularity #42) |
 | **CEO** | not found as a MasterSite repo (flagged) · **Kalshi CEO series mapped to the Live Desk** | No CEO repository exists among the account's public repos (Irregularity #32). The exchange *does* list CEO-exit series (`TESLACEOCHANGE`, `KXAAPLCEO`, …); those trade as desk entrant `LiveCEO_ChangeFav` on real open contracts. The KX-prefixed Tesla twin never traded (#43) |
 
@@ -732,14 +749,14 @@ render with its URL.
 | --- | --- | --- |
 | **CEO** | built | No CEO project exists (S00 — verified negative, irregularity #32). The exchange's own CEO-change series are traded by `CEOExit_Drift` (replay) and `LiveCEO_ChangeFav` (desk). |
 | **Weather** | built | S01 SFWeather 94122 → `WeatherLadder_CheapBands`, `ForecastEdge_Weather` (point-in-time NWS archive), plus the desk's season weather entrant. |
-| **Insider trades** | blocked | S02 Insider-trades (SEC Form 4) is a real project but publishes no point-in-time archive; a trade needs the filing timestamp AND the Kalshi price at that instant. *Closing action:* archive the dashboard's feed the way `data/forecasts/` archives NWS. |
-| **TheLeap** | blocked | S03 TradingViewTheLeap is research/intelligence, not a price feed with capture timestamps. The Pine-style *method* is recreated in `TrendRide_FullTilt`, `AlphaApex_Momentum`, `MeanRev_CheapBand` (S12), and live-only signals are stated as such. |
+| **Insider trades** | blocked (named entries are price-only) | S02 Insider-trades (SEC Form 4) is a real project but publishes no point-in-time archive; a trade needs the filing timestamp AND the Kalshi price at that instant. `InsiderFiling_Drift` (replay) and `LiveInsider_FilingFader` (desk) carry the name but read **no** insider data — their cards say so. *Closing action:* archive EDGAR Form 4 filings with capture timestamps the way `data/forecasts/` archives NWS, then require a filing before either may trade. |
+| **TheLeap** | blocked (named entries are price-only) | S03 TradingViewTheLeap is research/intelligence, not a price feed with capture timestamps. `TheLeap_BreakoutRank` / `LiveTheLeap_Momentum` are original longshot designs wearing the name; the Pine-style *method* is recreated in `TrendRide_FullTilt`, `AlphaApex_Momentum`, `MeanRev_CheapBand` (S12). |
 | **NFL Injury** | built (abstaining) | S04 NFLInjuryReport → `SportsFavourite_Settle`. The Kalshi NFL series were quoted-only at the last capture, so it reports `UNTESTED_ON_THIS_DATASET` rather than a fabricated backtest; `LiveNFL_GameFavourite` trades the official NFL markets as soon as a captured ladder exists. |
 | **NBA Injury** | built | S05 NBAInjuryReport → `LiveNBA_GameFavourite` (desk) and `SportsFavourite_Settle`. |
 | **FDA / Drug Analysis** | built | S06 DrugAnalysis → `LiveFDA_DecisionPremium` (desk, six FDA series) and `FDALadder_Dominance`. |
-| **NCAA Scoreboard** | built | S07 Ncaa-football-alerts → `LiveNCAA_GameFavourite` (desk, 27 NCAAF markets ingested with real settlements). |
+| **NCAA Scoreboard** | built (price-only) | S07 Ncaa-football-alerts → `LiveNCAA_GameFavourite` (desk) and `NCAAF_GameFavourite` (hourly replay; its sample size is computed from the store on every build). The live-score feed itself is not archived here. |
 | **NFL Scoreboard** | blocked → now tradeable | S08 NFL-scoreboard's Kalshi half is official; the NFL series had no captured ladder, which is exactly what the on-demand ingest now targets. `LiveNFL_GameFavourite` executes the moment one lands. |
-| **MLB Scoreboard** | blocked → now tradeable | S09 MLB-Live-PBP → `LiveMLB_GameFavourite`; the MLB series were quoted-only (25 open contracts) and are part of the same ingest request. |
+| **MLB Scoreboard** | **built — live point-in-time signal (2026-09-20)** | S09 MLB-Live-PBP's own source, the official MLB Stats API, is archived every 20 minutes (`data/mlb-signals/`); `MLBLead_InPlay` / `MLBTrail_Comeback` trade the 1-minute `KXMLBGAME` bars against it (forward tests), `LiveMLB_GameFavourite` trades the desk ladders price-only. |
 | **Sports Pred** | blocked | S10 SportsPred's 22-sport board has no point-in-time archive; the recreation uses the exchange's own sports series (`SportsLine_Momentum`, `SportsSteam_Fade`) instead of pretending the project supplied the line. |
 | **Gold** | built as a negative | S11 GOLD is a retail ring-buyer directory, not a gold-price signal (recorded as NOT_A_SIGNAL). The exchange's own KXGOLD15M markets are traded by `GoldBracket_EarlyLeader` on real 1-minute bars. |
 | **PinePilot / Pine Script editor** | built | S12 Tradingview-pinescript-editor → `TrendRide_FullTilt`, `AlphaApex_Momentum`, `MeanRev_CheapBand`, all replayable on captured bars. |
@@ -805,10 +822,16 @@ render with its URL.
    and read the post-split numbers.
 2. **True forward windows for the original roster.** `designedAt` is 2026-09-17/18, so bars from
    2026-09-19 onward are genuinely out-of-sample for every entry.
-3. **A point-in-time signal archive for a sports or FDA project.** The Kalshi side is DONE (FDA,
-   CEO and seven sports series ingested with settled results); the remaining gap is the owner's
-   own projects (MLB model predictions, FDA PDUFA calendar, injury reports) archived with capture
-   timestamps, the way `data/forecasts/` archives NWS.
+3. **Extend the point-in-time signal archives to the remaining projects.** Weather (NWS), FDA
+   (Drugs@FDA) and MLB (official MLB Stats API, 2026-09-20) are DONE; the honest next feeds are
+   NFL / NBA / NCAA live state and injury reports (the owner's projects read ESPN's public JSON —
+   a *trusted but not official* source that would have to be labelled as such), SEC EDGAR Form 4
+   filings for the insider entries (official, keyless), and the owner's MLB model's pre-game
+   probability captured before first pitch (S14). Each needs a 1-minute ingest block for its game
+   series, exactly as `minute-mlb-game-lines` was added for `KXMLBGAME`.
+   **Watch the first MLB captures:** the archive starts with the first `mlb-signals` run on `main`
+   (every 20 minutes, 16:00–06:59 UTC); the two MLB entries stay unranked until a captured Live
+   state overlaps a 1-minute `KXMLBGAME` bar (expected after the 2026-09-21 06:15Z ingest).
 4. **Point-in-time depth.** A second scheduled books capture now runs at 16:40 UTC each day
    (since 2026-09-18); the ladder behind the touch is still re-anchored between snapshots.
 5. **Authenticate the relay and smoke-test it live.** Needs `KALSHI_API_KEY_ID` /
@@ -825,6 +848,13 @@ render with its URL.
    session per asOf). What remains is carrying OPEN positions across cut-offs
    so a desk trader has a continuous year rather than a sequence of independent
    sessions.
+9. **Give the desk the same signal hook the replay has.** `LiveWeather_ForecastEdge` reads the NWS
+   archive directly; an MLB desk entrant that reads the game-state archive at the cut-off needs the
+   desk universe to keep `KXMLBGAME` ladders (they are currently dropped by the 80-market cap of
+   `generate-desk-module.mjs`) and a `view.signals` provider shared with `src/strategy-runner.js`.
+10. **One repository, one writer at a time.** PR #17 was merged by a concurrent session while this
+    one was open; the audit it forced (Irregularity #53) cost most of a session. Sessions must merge
+    `main` before writing and must not merge to `main` while another branch is active.
 
 ### What the per-market capital-allocation experiment found
 

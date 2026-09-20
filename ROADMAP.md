@@ -49,7 +49,7 @@ defects closed, the FDA half of the archive, the R15 Reddit scalp).
 | 29 | **The sports half of the point-in-time signal archive (was Next #3) — MLB, from the official MLB Stats API.** `scripts/archive-mlb-signals.mjs` captures `statsapi.mlb.com` (schedule + linescore + team codes + probable pitchers) every 20 minutes through the playing day into `data/mlb-signals/games/<ET date>.json` — one state row per change with the instant first seen, every capture instant listed, the MLBAM copyright verbatim; `src/mlb-signal-store.js` answers "what was knowable at T" and joins a `KXMLBGAME` ticker to its official game by first-pitch instant + away + home codes (all 9 finalized contracts in the store verified, V113); `minute-mlb-game-lines` ingests `KXMLBGAME` at period_interval=1; `MLBLead_InPlay` / `MLBTrail_Comeback` (R18, Tangotiger win-expectancy table) are forward tests by construction; S09 → live signal, S15 testable; the Research tab shows the FDA + MLB archive status and the per-ticker join report | `.github/workflows/mlb-signals.yml`; `data/mlb-signals/_teams.json`; tests 121–125; `node scripts/archive-mlb-signals.mjs --verify` |
 | 30 | **Parallel-session PR #17 merged and audited line by line** (Irregularity #53). Kept: the placed-trades ledger, the desk UI tables, 5 roster + 3 desk usernames. Corrected: every card now says exactly what its code reads (insider / Leap / FedWatch / forecast claims removed or implemented — `LiveWeather_ForecastEdge` now really reads the NWS archive at the cut-off; `GridMM_MultiTier` now really rests maker orders); R16/R17 re-labelled UNATTRIBUTED (search-page URLs); V109/V110 re-worded; S02/S03 restored; the synthesised "upcoming trades" replaced by a list compiled only from ORDER/FILL/REST records; new test 126 fails when a card names a signal its `decide()` does not import | `src/strategies.js`; `src/desk-strategies.js`; `src/live-desk.js#buildUpcomingTrades`; `src/research-sources.js` |
 | 31 | **Stale prose about the store made computed or dated** (Irregularity #52): `RESEARCH_GAPS` carry status / closedBy (4 of 5 cards had been false for two days), S09/S10/S14/S15/S17 re-worded, the Research tab shows the status badges | `src/research-sources.js`; `src/app.js#renderResearchGaps` |
-| 32 | **Desk-season rounds no longer require a first-ever ladder** (Irregularity #54): a round is any capture batch with a (re)captured ladder, batch window 20 min → on the merged 2026-09-20 store 5 rounds over ~49 h where the old rule gave 4 (on the pre-merge store 6 vs 3); 27 season checks pass | `src/desk-season.js#seasonSchedule`; `data/reports/desk-season-schedule.json` |
+| 32 | **Desk-season rounds no longer require a first-ever ladder** (Irregularity #54): a round is any capture batch with a (re)captured ladder, batch window 20 min → on the pre-merge store 6 rounds instead of 3, on the merged 2026-09-20 (16:00Z) store 7 rounds over ~53 h; 27 season checks pass | `src/desk-season.js#seasonSchedule`; `data/reports/desk-season-schedule.json` |
 
 ## Next, in priority order
 
@@ -105,8 +105,8 @@ defects closed, the FDA half of the archive, the R15 Reddit scalp).
    time and the existing workflow.
 9. **A longer season.** The carried book now exists (`src/desk-season.js`):
    one portfolio, many rounds, real settlements inside the season, 27-check
-   audit. The merged 2026-09-20 store yields 5 real open-board rounds across
-   ~49 hours (after #32 fixed the schedule rule that had ignored re-captures).
+   audit. The merged 2026-09-20 (16:00Z) store yields 7 real open-board rounds
+   across ~53 hours (after #32 fixed the schedule rule that had ignored re-captures).
    *Needs:* nothing but the scheduled captures continuing; `seasonSchedule`
    picks up every new capture batch automatically. *Check:*
    `node scripts/run-desk-season.mjs` → the round count and the window in
@@ -151,8 +151,8 @@ defects closed, the FDA half of the archive, the R15 Reddit scalp).
   markets on the 2026-09-18 capture); 120 open contracts carry real quotes but
   no ladder and are listed as **not priceable** with the ingest command that
   would fix each one.
-- The Desk Season is as long as the capture density allows: 5 rounds across ~49 h on the merged
-  2026-09-20 store (R01 2026-09-18T02:46Z → R05 2026-09-20T03:53Z), because a round is a moment
+- The Desk Season is as long as the capture density allows: 7 rounds across ~53 h on the merged
+  2026-09-20 (16:00Z) store (R01 2026-09-18T07:04Z → R07 2026-09-20T11:34Z), because a round is a moment
   this repository really queried the order book. The
   machinery picks up every new capture batch automatically, but a calendar year of continuous paper
   trading needs a year of scheduled captures — that is a clock problem, not a modelling one.
