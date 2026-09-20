@@ -146,6 +146,78 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:34:24.628Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "116847.00"
+            ],
+            [
+              "0.0200",
+              "7082.00"
+            ],
+            [
+              "0.0300",
+              "3388.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "5.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "217.00"
+            ],
+            [
+              "0.1400",
+              "517.00"
+            ],
+            [
+              "0.1500",
+              "1358.00"
+            ],
+            [
+              "0.1600",
+              "563.00"
+            ],
+            [
+              "0.4300",
+              "63.00"
+            ],
+            [
+              "0.9300",
+              "300.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "113753.00"
+            ],
+            [
+              "0.0200",
+              "1700.00"
+            ],
+            [
+              "0.0300",
+              "500.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -201,8 +273,8 @@
     "yes_sub_title": "Texas Southern"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO",
-  "market_captured_at": "2026-09-20T03:07:10.592Z",
+  "market_captured_at": "2026-09-20T03:34:23.887Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:07:11.212Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO/candlesticks?start_ts=1789769280&end_ts=1789873630&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:34:24.560Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO/candlesticks?start_ts=1789769280&end_ts=1789875264&period_interval=60"
 }

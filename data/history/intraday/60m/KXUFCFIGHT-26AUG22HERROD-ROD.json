@@ -2420,6 +2420,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:34:40.525Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26AUG22HERROD-ROD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2459,7 +2469,7 @@
     ],
     "result": "yes",
     "rules_primary": "If Gregory Rodrigues wins the Hernandez vs Rodrigues professional MMA fight originally scheduled for Aug 22, 2026, then the market resolves to Yes.",
-    "rules_secondary": "The following market refers to the Hernandez vs Rodrigues professional MMA fight originally scheduled for Aug 22, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the “UFC,” or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
+    "rules_secondary": "The following market refers to the Hernandez vs Rodrigues professional MMA fight originally scheduled for Aug 22, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the \u201cUFC,\u201d or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
     "settlement_timer_seconds": 298,
     "settlement_ts": "2026-08-23T03:06:07.232412Z",
     "settlement_value_dollars": "1.0000",
@@ -2477,9 +2487,9 @@
     "yes_sub_title": "Gregory Rodrigues"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26AUG22HERROD-ROD",
-  "market_captured_at": "2026-09-20T03:07:23.581Z",
+  "market_captured_at": "2026-09-20T03:34:39.779Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:07:24.214Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG22HERROD-ROD/candlesticks?start_ts=1787457601&end_ts=1789873643&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:34:40.457Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26AUG22HERROD-ROD/candlesticks?start_ts=1787457601&end_ts=1789875280&period_interval=60"
 }

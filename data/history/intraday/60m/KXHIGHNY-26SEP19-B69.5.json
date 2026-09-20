@@ -902,6 +902,31 @@
         "low_dollars": "0.9900",
         "open_dollars": "0.9900"
       }
+    },
+    {
+      "end_period_ts": 1789873200,
+      "open_interest_fp": "22748.63",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "mean_dollars": "0.9900",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "5103.21",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -1322,6 +1347,185 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:24:39.791Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP19-B69.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "814.38"
+            ],
+            [
+              "0.0200",
+              "22.00"
+            ],
+            [
+              "0.0300",
+              "50.00"
+            ],
+            [
+              "0.0400",
+              "719.00"
+            ],
+            [
+              "0.0500",
+              "16.00"
+            ],
+            [
+              "0.0600",
+              "269.00"
+            ],
+            [
+              "0.0700",
+              "145.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.0900",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "2.00"
+            ],
+            [
+              "0.1200",
+              "2.00"
+            ],
+            [
+              "0.1300",
+              "1.00"
+            ],
+            [
+              "0.1400",
+              "1.00"
+            ],
+            [
+              "0.1500",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "1.00"
+            ],
+            [
+              "0.1700",
+              "1.00"
+            ],
+            [
+              "0.1800",
+              "1.00"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "3.00"
+            ],
+            [
+              "0.2100",
+              "3.00"
+            ],
+            [
+              "0.2500",
+              "10.00"
+            ],
+            [
+              "0.2600",
+              "12.00"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.3300",
+              "7.00"
+            ],
+            [
+              "0.3600",
+              "10.00"
+            ],
+            [
+              "0.3700",
+              "6.00"
+            ],
+            [
+              "0.4000",
+              "10.00"
+            ],
+            [
+              "0.4100",
+              "1.00"
+            ],
+            [
+              "0.4300",
+              "5.00"
+            ],
+            [
+              "0.4600",
+              "5.00"
+            ],
+            [
+              "0.5000",
+              "5.00"
+            ],
+            [
+              "0.5200",
+              "2.00"
+            ],
+            [
+              "0.5500",
+              "4.00"
+            ],
+            [
+              "0.5700",
+              "29.00"
+            ],
+            [
+              "0.6600",
+              "4.00"
+            ],
+            [
+              "0.8600",
+              "128.06"
+            ],
+            [
+              "0.8700",
+              "12.00"
+            ],
+            [
+              "0.9400",
+              "5.00"
+            ],
+            [
+              "0.9600",
+              "187.02"
+            ],
+            [
+              "0.9800",
+              "17.00"
+            ],
+            [
+              "0.9900",
+              "17381.48"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1342,14 +1546,14 @@
     "market_type": "binary",
     "no_ask_dollars": "0.0100",
     "no_bid_dollars": "0.0000",
-    "no_sub_title": "69° to 70°",
+    "no_sub_title": "69\u00b0 to 70\u00b0",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T14:00:00Z",
-    "open_interest_fp": "22748.63",
+    "open_interest_fp": "22842.14",
     "open_time": "2026-09-18T14:00:00Z",
-    "previous_price_dollars": "0.3900",
-    "previous_yes_ask_dollars": "0.4000",
-    "previous_yes_bid_dollars": "0.3900",
+    "previous_price_dollars": "0.3700",
+    "previous_yes_ask_dollars": "0.3800",
+    "previous_yes_bid_dollars": "0.3700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1359,25 +1563,25 @@
       }
     ],
     "result": "",
-    "rules_primary": "If the maximum temperature recorded at New York City (CLINYC) for Sep 19, 2026, is between 69-70° fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_primary": "If the maximum temperature recorded at New York City (CLINYC) for Sep 19, 2026, is between 69-70\u00b0 fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
     "settlement_timer_seconds": 300,
     "status": "active",
     "strike_type": "between",
     "ticker": "KXHIGHNY-26SEP19-B69.5",
-    "title": "Will the maximum temperature be 69-70° on Sep 19, 2026?",
+    "title": "Will the maximum temperature be 69-70\u00b0 on Sep 19, 2026?",
     "updated_time": "2026-09-18T14:00:01.811546Z",
-    "volume_24h_fp": "49001.56",
-    "volume_fp": "52421.84",
+    "volume_24h_fp": "49045.20",
+    "volume_fp": "52515.35",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "17449.99",
-    "yes_sub_title": "69° to 70°"
+    "yes_bid_size_fp": "17381.48",
+    "yes_sub_title": "69\u00b0 to 70\u00b0"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP19-B69.5",
-  "market_captured_at": "2026-09-20T02:58:31.448Z",
+  "market_captured_at": "2026-09-20T03:24:39.046Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T02:58:32.075Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP19-B69.5/candlesticks?start_ts=1789862401&end_ts=1789873111&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:24:39.719Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP19-B69.5/candlesticks?start_ts=1789862401&end_ts=1789874679&period_interval=60"
 }

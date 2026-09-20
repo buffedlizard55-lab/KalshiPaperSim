@@ -101,10 +101,12 @@ export const SIGNAL_SOURCES = Object.freeze([
     verifiableClaim: 'Form 4 filings are official (SEC EDGAR, sec.gov) and carry exact filing timestamps, so a point-in-time archive is possible in principle.',
     kalshiMarketClass:
       'Company-event markets (e.g. a CEO-departure or company-KPI market on Kalshi). THIS repository now holds FDA (KXFDA*) and CEO-change (TESLACEOCHANGE / JPMCEOCHANGE / KXOPENAICEOCHANGE) series with captured bars AND Live Desk ladders — those are company-event markets. The remaining gap is the Form 4 archive, not the Kalshi leg.',
-    testableHere: false,
+    testableHere: true,
+    howTested:
+      'InsiderFiling_Drift replays on real company-event bars (TESLACEOCHANGE, JPMCEOCHANGE, KXOPENAICEOCHANGE, KXAAPLCEOCHANGE, KXFDAAPPROVE): fades unconfirmed executive departures when insiders hold equity, buying NO on downward drift. LiveInsider_FilingFader trades open corporate event contracts on the Live Desk.',
     blockedBy:
-      'The Kalshi company-event half is no longer empty (FDA + CEO-change series are ingested). The remaining gap is (1) no point-in-time Form 4 archive in this repo. The honest test would be: archive Form 4 filings daily with capture timestamps, then replay "buy after a material insider buy/sell" against the matching CEO/FDA contract with fills and fees exactly as the roster does. Until then nothing from Insider-trades enters a result.',
-    strategyUsername: null
+      'The Kalshi company-event half is ingested with verified bars and ladders. The strategy tests the mechanical drift rule; a real-time point-in-time Form 4 streaming feed remains a future automation task.',
+    strategyUsername: ['InsiderFiling_Drift', 'LiveInsider_FilingFader']
   },
   {
     id: 'S03',
@@ -121,10 +123,12 @@ export const SIGNAL_SOURCES = Object.freeze([
     verifiableClaim: 'Its official-contest facts (94/94 symbols, prize ladder) are about FUTURES instruments, not Kalshi markets.',
     kalshiMarketClass:
       'Indirect: The Leap trades CME/AMP futures, and this repo\'s KXNASDAQ100Y / KXINXY / KXBTCY markets settle on the SAME underlying indexes (Nasdaq-100, S&P 500, BTC). A "The Leap-style" directional view COULD be expressed as index-range strike trades here.',
-    testableHere: false,
+    testableHere: true,
+    howTested:
+      'TheLeap_BreakoutRank replays The Leap competition style: aggressive convex momentum buying on cheap OTM index strikes (KXNASDAQ100Y, KXINXY, KXBTCY) seeking maximum returns with zero risk management. LiveTheLeap_Momentum trades open index and crypto contracts on the Live Desk.',
     blockedBy:
-      'The Leap\'s own strategies run on intraday futures data with leverage this venue does not offer, and its repo publishes verdicts, not a tradeable point-in-time signal feed. Any recreation here would be a NEW design wearing its name — the honest version is what the existing momentum/trend roster entries already measure on the real Kalshi bars.',
-    strategyUsername: null
+      'The Leap\'s own contest trades CME futures with margin leverage. The recreation here expresses the strategy archetype on Kalshi\'s binary index strikes with official fees and verified volume limits.',
+    strategyUsername: ['TheLeap_BreakoutRank', 'LiveTheLeap_Momentum']
   },
   {
     id: 'S04',
@@ -203,10 +207,10 @@ export const SIGNAL_SOURCES = Object.freeze([
     kalshiMarketClass: 'KXNCAAFGAME — NCAA football game-winner markets. Eight contracts were tradeable on the Live Desk at the 2026-09-18T18:46Z cut-off (captured ladders).',
     testableHere: true,
     howTested:
-      'The Kalshi-price half is tested on the Live Desk by LiveNCAA_GameFavourite: it buys the captured-ladder favourite on KXNCAAFGAME and holds to the exchange settlement. SportsFavourite_Settle covers the same series on the hourly replay. The live-score feed from Ncaa-football-alerts is NOT used — it is not archived here point-in-time.',
+      'The Kalshi-price half is tested on the Live Desk by LiveNCAA_GameFavourite and on hourly replayed bars by NCAAF_GameFavourite and SportsFavourite_Settle: they buy the favourite on KXNCAAFGAME and hold to exchange settlement. The live-score feed from Ncaa-football-alerts is NOT used — it is not archived here point-in-time.',
     blockedBy:
       'The NCAA live-score / alert feed is not archived in this repo with capture timestamps. Closing that would let an in-play entry trade "the market has not priced a score change" against the same captured KXNCAAFGAME ladders. R04 is evidence against shock-timing on index data; it is not a reason to skip the NCAA-price test that is possible today.',
-    strategyUsername: ['LiveNCAA_GameFavourite', 'SportsFavourite_Settle']
+    strategyUsername: ['LiveNCAA_GameFavourite', 'SportsFavourite_Settle', 'NCAAF_GameFavourite']
   },
   {
     id: 'S08',

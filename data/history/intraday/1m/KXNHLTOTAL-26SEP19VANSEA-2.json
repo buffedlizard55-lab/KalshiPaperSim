@@ -2536,6 +2536,124 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:29:16.535Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1000.00"
+            ],
+            [
+              "0.0200",
+              "574.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.5400",
+              "7.00"
+            ],
+            [
+              "0.6300",
+              "150.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "9.00"
+            ],
+            [
+              "0.9900",
+              "3108.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:39:09.415Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1000.00"
+            ],
+            [
+              "0.0200",
+              "574.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.5400",
+              "7.00"
+            ],
+            [
+              "0.6300",
+              "150.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "9.00"
+            ],
+            [
+              "0.9900",
+              "3108.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2562,7 +2680,7 @@
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.7800",
     "previous_yes_ask_dollars": "0.8900",
-    "previous_yes_bid_dollars": "0.7100",
+    "previous_yes_bid_dollars": "0.2400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2589,10 +2707,10 @@
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2",
-  "market_captured_at": "2026-09-20T03:11:24.233Z",
+  "market_captured_at": "2026-09-20T03:39:08.672Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:11:24.857Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VANSEA-2/candlesticks?start_ts=1789869061&end_ts=1789873884&period_interval=1",
+  "last_ingested_at": "2026-09-20T03:39:09.344Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VANSEA-2/candlesticks?start_ts=1789869061&end_ts=1789875548&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:13:08.741Z",
@@ -2636,6 +2754,14 @@
     },
     {
       "at": "2026-09-20T03:02:37.136Z",
+      "dropped": 6,
+      "dropped_from_ts": 1789803000,
+      "dropped_to_ts": 1789803480,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:29:16.836Z",
       "dropped": 6,
       "dropped_from_ts": 1789803000,
       "dropped_to_ts": 1789803480,

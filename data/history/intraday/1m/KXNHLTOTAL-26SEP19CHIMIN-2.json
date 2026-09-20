@@ -1948,6 +1948,26 @@
         "low_dollars": "0.6700",
         "open_dollars": "0.6700"
       }
+    },
+    {
+      "end_period_ts": 1789873920,
+      "open_interest_fp": "721.60",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -2388,24 +2408,44 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:29:13.696Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19CHIMIN-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:39:06.578Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19CHIMIN-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
     "can_close_early": true,
-    "close_time": "2026-09-22T00:00:00Z",
+    "close_time": "2026-09-20T03:11:46Z",
     "created_time": "2026-09-17T00:02:14.428351Z",
     "early_close_condition": "This market will close and expire early if the event occurs.",
     "event_ticker": "KXNHLTOTAL-26SEP19CHIMIN",
     "exchange_index": 0,
     "expected_expiration_time": "2026-09-20T03:00:00Z",
     "expiration_time": "2026-09-22T00:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "Yes",
     "floor_strike": 1.5,
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-22T00:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.0100",
+    "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
     "no_sub_title": "Over 1.5 goals scored",
     "notional_value_dollars": "1.0000",
@@ -2423,28 +2463,30 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If the teams collectively score more than 1.5 goals in the Chicago vs Minnesota NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
     "rules_secondary": "Goals scored during regulation and overtime count as normal. If the game is decided by a shootout, the shootout result will be recorded as one goal awarded to the winning team.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
     "settlement_timer_seconds": 45,
-    "status": "active",
+    "settlement_ts": "2026-09-20T03:12:34.505004Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "greater",
     "ticker": "KXNHLTOTAL-26SEP19CHIMIN-2",
     "title": "Full Game: Over 1.5 goals scored",
-    "updated_time": "2026-09-20T03:01:50.07815Z",
+    "updated_time": "2026-09-20T03:12:34.967141Z",
     "volume_24h_fp": "678.87",
     "volume_fp": "721.60",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
-    "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "5112.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19CHIMIN-2",
-  "market_captured_at": "2026-09-20T03:11:21.706Z",
-  "status": "active",
-  "last_ingested_at": "2026-09-20T03:11:22.329Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19CHIMIN-2/candlesticks?start_ts=1789864081&end_ts=1789873882&period_interval=1",
+  "market_captured_at": "2026-09-20T03:39:05.834Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-20T03:39:06.508Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19CHIMIN-2/candlesticks?start_ts=1789873921&end_ts=1789875546&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:13:05.589Z",
@@ -2493,6 +2535,15 @@
       "dropped_to_ts": 1789766100,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:29:13.996Z",
+      "dropped": 2,
+      "dropped_from_ts": 1789766100,
+      "dropped_to_ts": 1789766160,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }
-  ]
+  ],
+  "result": "yes"
 }

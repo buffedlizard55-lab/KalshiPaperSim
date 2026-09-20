@@ -1,23 +1,23 @@
 reachability probes:
-  ✓ https://api.fda.gov/drug/drugsfda.json?limit=1 → HTTP 200 (541ms)
-  ✗ https://api.weather.gov/alerts/active?limit=1 → ? (205ms)
-  ✓ https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip → HTTP 200 (142ms)
-comp360-psilocybin: NO_RECORD (total=0, approved=false) — 2 snapshot(s) archived
-retatrutide: NO_RECORD (total=0, approved=false) — 2 snapshot(s) archived
-camizestrant: APPROVED (total=1, approved=true) — 3 snapshot(s) archived
-cytisinicline: NO_RECORD (total=0, approved=false) — 2 snapshot(s) archived
-gedatolisib: APPROVED (total=1, approved=true) — 3 snapshot(s) archived
-midomafetamine-mdma: NO_RECORD (total=0, approved=false) — 2 snapshot(s) archived
-verify: camizestrant.json — 3 snapshot(s), state APPROVED
-verify: comp360-psilocybin.json — 2 snapshot(s), state NO_RECORD
-verify: cytisinicline.json — 2 snapshot(s), state NO_RECORD
-verify: gedatolisib.json — 3 snapshot(s), state APPROVED
-verify: midomafetamine-mdma.json — 2 snapshot(s), state NO_RECORD
-verify: retatrutide.json — 2 snapshot(s), state NO_RECORD
-verify: 6 subject(s), 14 snapshot(s), 0 problem(s)
-✓ src/accumulated-history.js — 187 market(s), 12968 bar(s), 8671.5 KB
-✓ src/forecast-data.js — 9 location(s), 83 snapshot(s), 173.1 KB
-✓ src/fda-signal-data.js — 6 subject(s), 14 snapshot(s), 15.8 KB
+  ✓ https://api.fda.gov/drug/drugsfda.json?limit=1 → HTTP 200 (1574ms)
+  ✗ https://api.weather.gov/alerts/active?limit=1 → ? (180ms)
+  ✓ https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip → HTTP 200 (231ms)
+comp360-psilocybin: NO_RECORD (total=0, approved=false) — 3 snapshot(s) archived
+retatrutide: NO_RECORD (total=0, approved=false) — 3 snapshot(s) archived
+camizestrant: APPROVED (total=1, approved=true) — 4 snapshot(s) archived
+cytisinicline: NO_RECORD (total=0, approved=false) — 3 snapshot(s) archived
+gedatolisib: APPROVED (total=1, approved=true) — 4 snapshot(s) archived
+midomafetamine-mdma: NO_RECORD (total=0, approved=false) — 3 snapshot(s) archived
+verify: camizestrant.json — 4 snapshot(s), state APPROVED
+verify: comp360-psilocybin.json — 3 snapshot(s), state NO_RECORD
+verify: cytisinicline.json — 3 snapshot(s), state NO_RECORD
+verify: gedatolisib.json — 4 snapshot(s), state APPROVED
+verify: midomafetamine-mdma.json — 3 snapshot(s), state NO_RECORD
+verify: retatrutide.json — 3 snapshot(s), state NO_RECORD
+verify: 6 subject(s), 20 snapshot(s), 0 problem(s)
+✓ src/accumulated-history.js — 187 market(s), 12968 bar(s), 9222.6 KB
+✓ src/forecast-data.js — 9 location(s), 110 snapshot(s), 226.2 KB
+✓ src/fda-signal-data.js — 6 subject(s), 20 snapshot(s), 19.7 KB
     JPMCEOCHANGE-27: 284 bar(s) + market object
     KXAAPLCEOCHANGE-26: 289 bar(s) + market object
     KXBTC15M-26SEP181445-45: 1 bar(s) + market object
@@ -205,11 +205,11 @@ verify: 6 subject(s), 14 snapshot(s), 0 problem(s)
     KXOPENAICEOCHANGE-26: 261 bar(s) + market object
     KXTESLACEOCHANGE-26: 0 bar(s) + market object
     TESLACEOCHANGE-26: 400 bar(s) + market object
-    intraday 1m: 240 market(s), 16378 shipped bar(s) (cap 400/market) from data/history/intraday/1m
-    intraday 60m: 359 market(s), 36003 shipped bar(s) (cap 400/market) from data/history/intraday/60m
-desk-data: 86 markets (80 open) · 900 ladder captures · 5878 bars · 112 quoted-only · 1504 KB → src/desk-data.js
-desk-data: 72 laddered market(s) dropped by --max-markets=80 (the rule is recorded in the module's coverage block)
-  wrote VERIFICATION.md (60.5 KB)
+    intraday 1m: 277 market(s), 17452 shipped bar(s) (cap 400/market) from data/history/intraday/1m
+    intraday 60m: 383 market(s), 38429 shipped bar(s) (cap 400/market) from data/history/intraday/60m
+desk-data: 86 markets (80 open) · 1161 ladder captures · 5784 bars · 113 quoted-only · 1675 KB → src/desk-data.js
+desk-data: 91 laddered market(s) dropped by --max-markets=80 (the rule is recorded in the module's coverage block)
+  wrote VERIFICATION.md (63.0 KB)
   wrote IRREGULARITIES.md (71.9 KB)
   README.md AUTO blocks already up to date
 Docs generated.

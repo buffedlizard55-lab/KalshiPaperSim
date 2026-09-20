@@ -2023,6 +2023,46 @@
         "low_dollars": "0.9900",
         "open_dollars": "0.9900"
       }
+    },
+    {
+      "end_period_ts": 1789875060,
+      "open_interest_fp": "7396.21",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    },
+    {
+      "end_period_ts": 1789875120,
+      "open_interest_fp": "7396.21",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -3163,6 +3203,256 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:28:16.012Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19MRMKTARL-59/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1016.00"
+            ],
+            [
+              "0.0200",
+              "251.00"
+            ],
+            [
+              "0.0300",
+              "2.00"
+            ],
+            [
+              "0.0500",
+              "161.00"
+            ],
+            [
+              "0.0600",
+              "101.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "747.00"
+            ],
+            [
+              "0.1100",
+              "2.00"
+            ],
+            [
+              "0.1600",
+              "102.00"
+            ],
+            [
+              "0.1700",
+              "41.00"
+            ],
+            [
+              "0.2100",
+              "102.00"
+            ],
+            [
+              "0.2200",
+              "8.00"
+            ],
+            [
+              "0.2600",
+              "1.00"
+            ],
+            [
+              "0.3000",
+              "50.00"
+            ],
+            [
+              "0.3100",
+              "2.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.3600",
+              "1.00"
+            ],
+            [
+              "0.3800",
+              "730.05"
+            ],
+            [
+              "0.4000",
+              "50.00"
+            ],
+            [
+              "0.4500",
+              "1.00"
+            ],
+            [
+              "0.5500",
+              "25.00"
+            ],
+            [
+              "0.6200",
+              "16.00"
+            ],
+            [
+              "0.6500",
+              "20.00"
+            ],
+            [
+              "0.7000",
+              "23.00"
+            ],
+            [
+              "0.7500",
+              "31.00"
+            ],
+            [
+              "0.9700",
+              "1286.16"
+            ],
+            [
+              "0.9900",
+              "4736.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:38:09.832Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19MRMKTARL-59/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1016.00"
+            ],
+            [
+              "0.0200",
+              "251.00"
+            ],
+            [
+              "0.0300",
+              "2.00"
+            ],
+            [
+              "0.0500",
+              "161.00"
+            ],
+            [
+              "0.0600",
+              "101.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "747.00"
+            ],
+            [
+              "0.1100",
+              "5.40"
+            ],
+            [
+              "0.1600",
+              "102.00"
+            ],
+            [
+              "0.1700",
+              "41.00"
+            ],
+            [
+              "0.2100",
+              "102.00"
+            ],
+            [
+              "0.2500",
+              "3.40"
+            ],
+            [
+              "0.2600",
+              "1.00"
+            ],
+            [
+              "0.3000",
+              "50.00"
+            ],
+            [
+              "0.3100",
+              "2.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.3500",
+              "3.40"
+            ],
+            [
+              "0.3600",
+              "1.00"
+            ],
+            [
+              "0.3800",
+              "730.05"
+            ],
+            [
+              "0.4000",
+              "50.00"
+            ],
+            [
+              "0.4500",
+              "1.00"
+            ],
+            [
+              "0.5000",
+              "3.40"
+            ],
+            [
+              "0.5500",
+              "25.00"
+            ],
+            [
+              "0.6000",
+              "3.40"
+            ],
+            [
+              "0.6200",
+              "16.00"
+            ],
+            [
+              "0.6500",
+              "20.00"
+            ],
+            [
+              "0.7000",
+              "23.00"
+            ],
+            [
+              "0.7500",
+              "31.00"
+            ],
+            [
+              "0.9700",
+              "1286.16"
+            ],
+            [
+              "0.9900",
+              "4736.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3216,10 +3506,10 @@
     "yes_sub_title": "Over 58.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19MRMKTARL-59",
-  "market_captured_at": "2026-09-20T03:10:31.146Z",
+  "market_captured_at": "2026-09-20T03:38:09.088Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:10:31.769Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19MRMKTARL-59/candlesticks?start_ts=1789872481&end_ts=1789873831&period_interval=1",
+  "last_ingested_at": "2026-09-20T03:38:09.761Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19MRMKTARL-59/candlesticks?start_ts=1789872481&end_ts=1789875489&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:12:02.375Z",
@@ -3258,6 +3548,22 @@
       "dropped": 8,
       "dropped_from_ts": 1789832160,
       "dropped_to_ts": 1789833060,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:28:16.313Z",
+      "dropped": 8,
+      "dropped_from_ts": 1789832160,
+      "dropped_to_ts": 1789833060,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:38:10.132Z",
+      "dropped": 2,
+      "dropped_from_ts": 1789833120,
+      "dropped_to_ts": 1789833300,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }

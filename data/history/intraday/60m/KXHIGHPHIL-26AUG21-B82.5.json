@@ -1009,6 +1009,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:19:01.842Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26AUG21-B82.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1029,7 +1039,7 @@
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
-    "no_sub_title": "82° to 83°",
+    "no_sub_title": "82\u00b0 to 83\u00b0",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-08-22T14:00:00Z",
     "open_interest_fp": "59898.77",
@@ -1046,7 +1056,7 @@
       }
     ],
     "result": "no",
-    "rules_primary": "If the maximum temperature recorded at Philadelphia (CLIPHL) for Aug 21, 2026, is between 82-83° fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_primary": "If the maximum temperature recorded at Philadelphia (CLIPHL) for Aug 21, 2026, is between 82-83\u00b0 fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-08-22T11:10:57.134017Z",
@@ -1054,7 +1064,7 @@
     "status": "finalized",
     "strike_type": "between",
     "ticker": "KXHIGHPHIL-26AUG21-B82.5",
-    "title": "Will the maximum temperature be 82-83° on Aug 21, 2026?",
+    "title": "Will the maximum temperature be 82-83\u00b0 on Aug 21, 2026?",
     "updated_time": "2026-08-22T11:10:57.514797Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "91764.66",
@@ -1062,12 +1072,12 @@
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
-    "yes_sub_title": "82° to 83°"
+    "yes_sub_title": "82\u00b0 to 83\u00b0"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26AUG21-B82.5",
-  "market_captured_at": "2026-09-20T02:53:29.738Z",
+  "market_captured_at": "2026-09-20T03:19:01.103Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T02:53:30.363Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG21-B82.5/candlesticks?start_ts=1787378401&end_ts=1789872810&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:19:01.773Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26AUG21-B82.5/candlesticks?start_ts=1787378401&end_ts=1789874341&period_interval=60"
 }

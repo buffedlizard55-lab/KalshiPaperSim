@@ -141,6 +141,16 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:10:57.590Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:17:44.763Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1/orderbook",
       "orderbook": {
@@ -152,6 +162,26 @@
     },
     {
       "captured_at": "2026-09-20T03:21:39.521Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:46:16.694Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:50:39.853Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -219,9 +249,9 @@
     "yes_sub_title": "Alex Bregman: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1",
-  "market_captured_at": "2026-09-20T03:21:38.876Z",
+  "market_captured_at": "2026-09-20T03:50:39.110Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:21:39.502Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHR/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1/candlesticks?start_ts=1789790401&end_ts=1789874499&period_interval=1440"
+  "last_ingested_at": "2026-09-20T03:50:39.782Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHR/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1/candlesticks?start_ts=1789790401&end_ts=1789876239&period_interval=1440"
 }

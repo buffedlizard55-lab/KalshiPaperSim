@@ -1938,6 +1938,106 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1789874280,
+      "open_interest_fp": "412093.04",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1789874400,
+      "open_interest_fp": "412093.04",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1789874880,
+      "open_interest_fp": "412093.04",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1789875000,
+      "open_interest_fp": "412093.04",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1789875120,
+      "open_interest_fp": "412093.04",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -3380,6 +3480,366 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:28:27.394Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-PIT/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2623765.17"
+            ],
+            [
+              "0.0200",
+              "4461.00"
+            ],
+            [
+              "0.0300",
+              "3324.00"
+            ],
+            [
+              "0.0400",
+              "10.00"
+            ],
+            [
+              "0.0500",
+              "200.00"
+            ],
+            [
+              "0.0600",
+              "31.21"
+            ],
+            [
+              "0.0800",
+              "552258.00"
+            ],
+            [
+              "0.0900",
+              "93.58"
+            ],
+            [
+              "0.1000",
+              "200.00"
+            ],
+            [
+              "0.1600",
+              "210371.49"
+            ],
+            [
+              "0.1700",
+              "33161.00"
+            ],
+            [
+              "0.1800",
+              "312.13"
+            ],
+            [
+              "0.1900",
+              "218.49"
+            ],
+            [
+              "0.2000",
+              "200.00"
+            ],
+            [
+              "0.2300",
+              "181369.00"
+            ],
+            [
+              "0.2400",
+              "569.64"
+            ],
+            [
+              "0.3100",
+              "162770.00"
+            ],
+            [
+              "0.3500",
+              "842.76"
+            ],
+            [
+              "0.3800",
+              "105877.00"
+            ],
+            [
+              "0.4600",
+              "58916.00"
+            ],
+            [
+              "0.4700",
+              "9777.00"
+            ],
+            [
+              "0.5300",
+              "30097.00"
+            ],
+            [
+              "0.5400",
+              "8054.00"
+            ],
+            [
+              "0.6100",
+              "22751.00"
+            ],
+            [
+              "0.6200",
+              "2046.00"
+            ],
+            [
+              "0.6600",
+              "312.13"
+            ],
+            [
+              "0.6800",
+              "18294.06"
+            ],
+            [
+              "0.7600",
+              "14501.00"
+            ],
+            [
+              "0.7700",
+              "3.48"
+            ],
+            [
+              "0.8300",
+              "500.00"
+            ],
+            [
+              "0.8400",
+              "8089.00"
+            ],
+            [
+              "0.8600",
+              "2271.00"
+            ],
+            [
+              "0.8700",
+              "3.48"
+            ],
+            [
+              "0.8800",
+              "312.13"
+            ],
+            [
+              "0.9100",
+              "3441.32"
+            ],
+            [
+              "0.9300",
+              "31.21"
+            ],
+            [
+              "0.9400",
+              "760.64"
+            ],
+            [
+              "0.9500",
+              "100936.00"
+            ],
+            [
+              "0.9600",
+              "186115.42"
+            ],
+            [
+              "0.9700",
+              "191680.65"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5339.63"
+            ],
+            [
+              "0.0200",
+              "210721.54"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:38:21.195Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-PIT/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2623765.17"
+            ],
+            [
+              "0.0200",
+              "4461.00"
+            ],
+            [
+              "0.0300",
+              "3324.00"
+            ],
+            [
+              "0.0400",
+              "10.00"
+            ],
+            [
+              "0.0500",
+              "200.00"
+            ],
+            [
+              "0.0600",
+              "31.21"
+            ],
+            [
+              "0.0800",
+              "552258.00"
+            ],
+            [
+              "0.0900",
+              "93.58"
+            ],
+            [
+              "0.1000",
+              "200.00"
+            ],
+            [
+              "0.1600",
+              "210371.49"
+            ],
+            [
+              "0.1700",
+              "33161.00"
+            ],
+            [
+              "0.1800",
+              "312.13"
+            ],
+            [
+              "0.1900",
+              "218.49"
+            ],
+            [
+              "0.2000",
+              "200.00"
+            ],
+            [
+              "0.2300",
+              "181369.00"
+            ],
+            [
+              "0.2400",
+              "569.64"
+            ],
+            [
+              "0.3100",
+              "162770.00"
+            ],
+            [
+              "0.3500",
+              "842.76"
+            ],
+            [
+              "0.3800",
+              "105877.00"
+            ],
+            [
+              "0.4600",
+              "58916.00"
+            ],
+            [
+              "0.4700",
+              "9777.00"
+            ],
+            [
+              "0.5300",
+              "30097.00"
+            ],
+            [
+              "0.5400",
+              "8054.00"
+            ],
+            [
+              "0.6100",
+              "22751.00"
+            ],
+            [
+              "0.6200",
+              "2046.00"
+            ],
+            [
+              "0.6600",
+              "312.13"
+            ],
+            [
+              "0.6800",
+              "18294.06"
+            ],
+            [
+              "0.7600",
+              "14501.00"
+            ],
+            [
+              "0.7700",
+              "3.48"
+            ],
+            [
+              "0.8300",
+              "500.00"
+            ],
+            [
+              "0.8400",
+              "8089.00"
+            ],
+            [
+              "0.8600",
+              "2271.00"
+            ],
+            [
+              "0.8700",
+              "3.48"
+            ],
+            [
+              "0.8800",
+              "312.13"
+            ],
+            [
+              "0.9100",
+              "3441.32"
+            ],
+            [
+              "0.9300",
+              "31.21"
+            ],
+            [
+              "0.9400",
+              "760.64"
+            ],
+            [
+              "0.9500",
+              "100936.00"
+            ],
+            [
+              "0.9600",
+              "186115.42"
+            ],
+            [
+              "0.9700",
+              "191680.65"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5339.63"
+            ],
+            [
+              "0.0200",
+              "210946.17"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3428,16 +3888,16 @@
     "volume_24h_fp": "472.19",
     "volume_fp": "472872.29",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "219277.88",
+    "yes_ask_size_fp": "191680.65",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "240651.58",
+    "yes_bid_size_fp": "210946.17",
     "yes_sub_title": "Pittsburgh"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-PIT",
-  "market_captured_at": "2026-09-20T03:10:41.276Z",
+  "market_captured_at": "2026-09-20T03:38:20.452Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:10:41.898Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-PIT/candlesticks?start_ts=1789872961&end_ts=1789873841&period_interval=1",
+  "last_ingested_at": "2026-09-20T03:38:21.125Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-PIT/candlesticks?start_ts=1789874881&end_ts=1789875500&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:12:15.019Z",
@@ -3476,6 +3936,22 @@
       "dropped": 2,
       "dropped_from_ts": 1789778760,
       "dropped_to_ts": 1789779000,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:28:27.695Z",
+      "dropped": 10,
+      "dropped_from_ts": 1789771920,
+      "dropped_to_ts": 1789781640,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:38:21.495Z",
+      "dropped": 2,
+      "dropped_from_ts": 1789782240,
+      "dropped_to_ts": 1789783500,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }

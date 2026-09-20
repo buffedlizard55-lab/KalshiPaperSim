@@ -1093,6 +1093,48 @@ const server = http.createServer(async (req, res) => {
       return res.end(deskFillsCsv(deskCacheRecords(key)));
     }
 
+    if (p === '/api/live-desk/placed-trades' && req.method === 'GET') {
+      const asOf = url.searchParams.get('asOf') || null;
+      const capital = Number(url.searchParams.get('capital') || 100000);
+      const session = deskSession(asOf, capital);
+      let list = session.placedTrades || [];
+      const strat = url.searchParams.get('strategy');
+      const ticker = url.searchParams.get('ticker');
+      const status = url.searchParams.get('status');
+      if (strat) list = list.filter((t) => t.strategy.toLowerCase() === strat.toLowerCase());
+      if (ticker) list = list.filter((t) => t.ticker.toLowerCase() === ticker.toLowerCase());
+      if (status) list = list.filter((t) => t.status.toLowerCase() === status.toLowerCase());
+      return sendJSON(res, 200, { ok: true, asOf: session.asOf, count: list.length, totalPlaced: (session.placedTrades || []).length, placedTrades: list });
+    }
+
+    if (p === '/api/live-desk/upcoming-trades' && req.method === 'GET') {
+      const asOf = url.searchParams.get('asOf') || null;
+      const capital = Number(url.searchParams.get('capital') || 100000);
+      const session = deskSession(asOf, capital);
+      let list = session.upcomingTrades || [];
+      const strat = url.searchParams.get('strategy');
+      const ticker = url.searchParams.get('ticker');
+      const trigger = url.searchParams.get('triggerType');
+      if (strat) list = list.filter((t) => t.strategy.toLowerCase() === strat.toLowerCase());
+      if (ticker) list = list.filter((t) => t.ticker.toLowerCase() === ticker.toLowerCase());
+      if (trigger) list = list.filter((t) => t.triggerType.toLowerCase() === trigger.toLowerCase());
+      return sendJSON(res, 200, { ok: true, asOf: session.asOf, count: list.length, totalUpcoming: (session.upcomingTrades || []).length, upcomingTrades: list });
+    }
+
+    if (p === '/api/live-desk/trades.json' && req.method === 'GET') {
+      const asOf = url.searchParams.get('asOf') || null;
+      const capital = Number(url.searchParams.get('capital') || 100000);
+      const session = deskSession(asOf, capital);
+      return sendJSON(res, 200, {
+        ok: true,
+        asOf: session.asOf,
+        placedCount: (session.placedTrades || []).length,
+        upcomingCount: (session.upcomingTrades || []).length,
+        placedTrades: session.placedTrades || [],
+        upcomingTrades: session.upcomingTrades || []
+      });
+    }
+
     /* ---------------- Kalshi REST proxy ---------------- */
 
     if (p.startsWith('/api/kalshi/')) {

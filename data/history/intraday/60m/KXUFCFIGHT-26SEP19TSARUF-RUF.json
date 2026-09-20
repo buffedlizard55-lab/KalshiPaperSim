@@ -5329,11 +5329,21 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:34:39.108Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-RUF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
     "can_close_early": true,
-    "close_time": "2026-10-04T02:00:00Z",
+    "close_time": "2026-09-20T03:09:47Z",
     "created_time": "2026-09-06T04:35:38.06163Z",
     "custom_strike": {
       "ufc_competitor": "60aebbaf-329e-4ea4-b07d-e76930b8e2c6"
@@ -5343,17 +5353,17 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-09-20T07:00:00Z",
     "expiration_time": "2026-10-04T02:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "Arman Tsarukyan",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-10-04T02:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
-    "no_bid_dollars": "0.9900",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Mauricio Ruffy",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T07:00:00Z",
-    "open_interest_fp": "6255283.45",
+    "open_interest_fp": "6312249.37",
     "open_time": "2026-09-06T04:45:00Z",
     "previous_price_dollars": "0.2800",
     "previous_yes_ask_dollars": "0.2800",
@@ -5366,31 +5376,42 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "no",
     "rules_primary": "If Mauricio Ruffy wins the Tsarukyan vs Ruffy professional MMA fight originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
-    "rules_secondary": "The following market refers to the Tsarukyan vs Ruffy professional MMA fight originally scheduled for Sep 19, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the “UFC,” or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
+    "rules_secondary": "The following market refers to the Tsarukyan vs Ruffy professional MMA fight originally scheduled for Sep 19, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the \u201cUFC,\u201d or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
     "settlement_timer_seconds": 298,
-    "status": "active",
+    "settlement_ts": "2026-09-20T03:15:44.785565Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
     "strike_type": "structured",
     "ticker": "KXUFCFIGHT-26SEP19TSARUF-RUF",
     "title": "Mauricio Ruffy wins",
-    "updated_time": "2026-09-20T03:01:12.104778Z",
-    "volume_24h_fp": "4898971.29",
-    "volume_fp": "6645122.96",
-    "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "597426.93",
+    "updated_time": "2026-09-20T03:15:45.321556Z",
+    "volume_24h_fp": "6132630.59",
+    "volume_fp": "6702112.16",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Mauricio Ruffy"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-RUF",
-  "market_captured_at": "2026-09-20T03:07:22.308Z",
-  "status": "active",
-  "last_ingested_at": "2026-09-20T03:07:22.936Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-RUF/candlesticks?start_ts=1788583500&end_ts=1789873642&period_interval=60",
+  "market_captured_at": "2026-09-20T03:34:38.366Z",
+  "result": "no",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-20T03:34:39.040Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-RUF/candlesticks?start_ts=1788583500&end_ts=1789875278&period_interval=60",
   "trims": [
     {
       "at": "2026-09-20T03:07:23.256Z",
+      "dropped": 133,
+      "dropped_from_ts": 1788670800,
+      "dropped_to_ts": 1789149600,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:34:39.409Z",
       "dropped": 133,
       "dropped_from_ts": 1788670800,
       "dropped_to_ts": 1789149600,

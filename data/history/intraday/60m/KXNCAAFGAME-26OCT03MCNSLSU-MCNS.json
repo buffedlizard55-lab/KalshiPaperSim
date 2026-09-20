@@ -97,6 +97,49 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:34:21.807Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "113304.00"
+            ],
+            [
+              "0.0200",
+              "8762.00"
+            ],
+            [
+              "0.0300",
+              "6988.00"
+            ],
+            [
+              "0.0400",
+              "1096.00"
+            ],
+            [
+              "0.0500",
+              "5.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "5000.00"
+            ],
+            [
+              "0.9900",
+              "1215499.52"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -152,8 +195,8 @@
     "yes_sub_title": "McNeese"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS",
-  "market_captured_at": "2026-09-20T03:07:08.061Z",
+  "market_captured_at": "2026-09-20T03:34:21.068Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:07:08.684Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS/candlesticks?start_ts=1789780140&end_ts=1789873628&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:34:21.738Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS/candlesticks?start_ts=1789780140&end_ts=1789875261&period_interval=60"
 }

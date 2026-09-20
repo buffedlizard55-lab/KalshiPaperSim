@@ -2121,6 +2121,242 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:17:43.490Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1000.00"
+            ],
+            [
+              "0.0200",
+              "574.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.5400",
+              "7.00"
+            ],
+            [
+              "0.6300",
+              "150.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "9.00"
+            ],
+            [
+              "0.9900",
+              "3108.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:23:49.725Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1000.00"
+            ],
+            [
+              "0.0200",
+              "574.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.5400",
+              "7.00"
+            ],
+            [
+              "0.6300",
+              "150.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "9.00"
+            ],
+            [
+              "0.9900",
+              "3108.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:33:45.108Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1000.00"
+            ],
+            [
+              "0.0200",
+              "574.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.5400",
+              "7.00"
+            ],
+            [
+              "0.6300",
+              "150.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "9.00"
+            ],
+            [
+              "0.9900",
+              "3108.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:44:04.376Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1000.00"
+            ],
+            [
+              "0.0200",
+              "574.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.5400",
+              "7.00"
+            ],
+            [
+              "0.6300",
+              "150.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "9.00"
+            ],
+            [
+              "0.9900",
+              "3108.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2147,7 +2383,7 @@
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.7800",
     "previous_yes_ask_dollars": "0.8900",
-    "previous_yes_bid_dollars": "0.7100",
+    "previous_yes_bid_dollars": "0.2400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2174,8 +2410,8 @@
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2",
-  "market_captured_at": "2026-09-20T03:15:46.627Z",
+  "market_captured_at": "2026-09-20T03:44:03.634Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:15:47.248Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VANSEA-2/candlesticks?start_ts=1789869601&end_ts=1789874146&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:44:04.306Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VANSEA-2/candlesticks?start_ts=1789869601&end_ts=1789875843&period_interval=60"
 }

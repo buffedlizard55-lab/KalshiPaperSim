@@ -2458,6 +2458,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:29:12.277Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:39:05.161Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2486,8 +2506,8 @@
     "open_interest_fp": "352.16",
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.0500",
-    "previous_yes_ask_dollars": "0.6100",
-    "previous_yes_bid_dollars": "0.0700",
+    "previous_yes_ask_dollars": "0.6300",
+    "previous_yes_bid_dollars": "0.0400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2516,10 +2536,10 @@
     "yes_sub_title": "Dallas wins by over 2.5 goals"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL3",
-  "market_captured_at": "2026-09-20T03:11:20.445Z",
+  "market_captured_at": "2026-09-20T03:39:04.419Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:11:21.067Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLSPREAD/markets/KXNHLSPREAD-26SEP19DALSTL-DAL3/candlesticks?start_ts=1789872121&end_ts=1789873880&period_interval=1",
+  "last_ingested_at": "2026-09-20T03:39:05.090Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLSPREAD/markets/KXNHLSPREAD-26SEP19DALSTL-DAL3/candlesticks?start_ts=1789873801&end_ts=1789875544&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:13:04.017Z",
@@ -2581,6 +2601,14 @@
       "at": "2026-09-20T03:11:21.385Z",
       "dropped": 1,
       "dropped_from_ts": 1789854480,
+      "dropped_to_ts": 1789854480,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:29:12.578Z",
+      "dropped": 13,
+      "dropped_from_ts": 1789853580,
       "dropped_to_ts": 1789854480,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."

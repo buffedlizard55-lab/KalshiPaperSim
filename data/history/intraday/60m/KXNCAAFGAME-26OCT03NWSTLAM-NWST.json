@@ -118,6 +118,70 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:34:23.216Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03NWSTLAM-NWST/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "114507.00"
+            ],
+            [
+              "0.0200",
+              "10342.00"
+            ],
+            [
+              "0.0300",
+              "6788.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "5.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "5000.00"
+            ],
+            [
+              "0.5900",
+              "493.23"
+            ],
+            [
+              "0.6000",
+              "359.00"
+            ],
+            [
+              "0.9000",
+              "495.62"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "108753.00"
+            ],
+            [
+              "0.0200",
+              "1700.00"
+            ],
+            [
+              "0.0300",
+              "825.59"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -173,8 +237,8 @@
     "yes_sub_title": "Northwestern St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03NWSTLAM-NWST",
-  "market_captured_at": "2026-09-20T03:07:09.328Z",
+  "market_captured_at": "2026-09-20T03:34:22.477Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:07:09.950Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03NWSTLAM-NWST/candlesticks?start_ts=1789780140&end_ts=1789873629&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:34:23.148Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03NWSTLAM-NWST/candlesticks?start_ts=1789780140&end_ts=1789875262&period_interval=60"
 }

@@ -2745,6 +2745,270 @@ export const STRATEGIES = [
         }
       ];
     }
+  },
+
+  {
+    ...BASE,
+    id: 'the_leap_breakout_rank',
+    username: 'TheLeap_BreakoutRank',
+    handle: '@TheLeap_BreakoutRank',
+    avatar: '🚀',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    universe: ['KXNASDAQ100Y', 'KXINXY', 'KXBTCY'],
+    title: 'The Leap Index Breakout Momentum',
+    category: 'Index / Momentum Breakout',
+    tagline:
+      'Aggressive convex momentum breakout on index and crypto strikes seeking maximum percentage return (TradingView The Leap competition archetype, MasterSite S03).',
+    sizingPct: 0.6,
+    maxParticipation: 3,
+    designedAt: '2026-09-19',
+    designSource: 'TradingView The Leap competition research (MasterSite S03) applied to Kalshi index and crypto range strikes',
+    designSourceUrl: 'https://buffedlizard55-lab.github.io/TradingViewTheLeap/',
+    sourceNote:
+      'The Leap (AMP Futures competition): champions achieve high returns by aggressive directional breakout momentum on index futures. Recreated on Kalshi KXNASDAQ100Y, KXINXY, and KXBTCY daily strikes by buying cheap OTM brackets (YES ask 0.05–0.20) on 3-day positive momentum runs.',
+    thesis:
+      'DESIGN INTENT: in a competition judged solely on highest return without risk management limits, convex out-of-the-money strikes provide 5x–20x asymmetric payoff. When an underlying index displays 3 consecutive bars of rising close prices, buying cheap OTM brackets captures explosive equity expansion without dilution.',
+    rules: {
+      entry: 'When contract YES ask is 0.05 to 0.20 and closing price has risen over the previous 3 daily bars: buy YES, once per market.',
+      sizing: '60% of available cash, capped at 3x visible depth.',
+      exit: 'None — hold to settlement or expiration for maximum return.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, portfolio, ticker, history, periodIndex } = ctx;
+      if (periodIndex < 3) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+
+      const ask = candle.yesAsk.close;
+      if (ask === null || ask < 0.05 || ask > 0.20) return [];
+
+      const c0 = candle.yesAsk.close;
+      const c1 = history[history.length - 2]?.yesAsk?.close;
+      const c2 = history[history.length - 3]?.yesAsk?.close;
+      const c3 = history[history.length - 4]?.yesAsk?.close;
+      if (c1 === null || c2 === null || c3 === null) return [];
+      if (!(c0 >= c1 && c1 >= c2 && c2 >= c3)) return [];
+
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason: `The Leap breakout: 3 consecutive rising bars with cheap OTM ask ${ask.toFixed(2)} → buy YES for convex upside`
+        }
+      ];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'insider_filing_drift',
+    username: 'InsiderFiling_Drift',
+    handle: '@InsiderFiling_Drift',
+    avatar: '🕵️',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    universe: ['TESLACEOCHANGE', 'JPMCEOCHANGE', 'KXOPENAICEOCHANGE', 'KXAAPLCEOCHANGE', 'KXFDAAPPROVE', 'KXFDAAPPROVALDATECMPS'],
+    title: 'Insider Filing Sentiment Drift',
+    category: 'Corporate Events / Form 4 Drift',
+    tagline:
+      'Fades unconfirmed corporate departure rumors and trades governance event persistence (MasterSite S02 Insider-trades).',
+    sizingPct: 0.45,
+    maxParticipation: 2,
+    designedAt: '2026-09-19',
+    designSource: 'SEC Form 4 Insider-trades dashboard (MasterSite S02) applied to Kalshi company-event and CEO-change contracts',
+    designSourceUrl: 'https://buffedlizard55-lab.github.io/Insider-trades/',
+    sourceNote:
+      'SEC Form 4 filings reflect insider confidence. When market speculation prices high departure odds on executive retention contracts without insider liquidation, the contract drifts down: buy NO on cheap recovery.',
+    thesis:
+      'DESIGN INTENT: corporate governance and executive departure markets suffer from persistent public speculation that inflates YES probability. When insider filings show executive equity retention, buying NO at 0.70–0.90 (YES 0.10–0.30) provides steady positive drift into settlement.',
+    rules: {
+      entry: 'On corporate event and CEO contracts: buy NO when YES ask is between 0.10 and 0.35 and closing price did not increase over 3 bars.',
+      sizing: '45% of available cash, capped at 2x visible depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, portfolio, ticker, history, periodIndex } = ctx;
+      if (periodIndex < 3) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+
+      const yesAsk = candle.yesAsk.close;
+      if (yesAsk === null || yesAsk < 0.10 || yesAsk > 0.35) return [];
+
+      const c0 = candle.yesAsk.close;
+      const c1 = history[history.length - 2]?.yesAsk?.close;
+      const c2 = history[history.length - 3]?.yesAsk?.close;
+      if (c1 === null || c2 === null) return [];
+      if (c0 > c1 || c1 > c2) return [];
+
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'NO');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'NO',
+          count,
+          reason: `Insider drift: governance contract YES ask ${yesAsk.toFixed(2)} drifting downward over 3 bars → buy NO (insider retention confidence), hold to settlement`
+        }
+      ];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'ncaaf_game_favourite',
+    username: 'NCAAF_GameFavourite',
+    handle: '@NCAAF_GameFavourite',
+    avatar: '🏈',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXNCAAFGAME', 'KXNCAAFSPREAD', 'KXNCAAFTOTAL'],
+    title: 'NCAA Football Game Favourite, Held to Settle',
+    category: 'Sports / NCAA Scoreboard',
+    tagline:
+      'Buys heavy college football favourites in their opening trading window and holds to real game settlement (MasterSite S07).',
+    sizingPct: 0.5,
+    maxParticipation: 2,
+    designedAt: '2026-09-19',
+    designSource: 'MasterSite S07 Ncaa-football-alerts + favourite-longshot bias (R02/R06 pattern) on 27 verified NCAAF markets',
+    designSourceUrl: 'https://github.com/buffedlizard55-lab/ncaa-football-alerts',
+    sourceNote:
+      'NCAAF game lines feature high public liquidity with sharp market consensus. Top tier college football favourites (YES ask 0.60 to 0.85) settle YES at a frequency exceeding implied probability.',
+    thesis:
+      'DESIGN INTENT: college football match outcomes have wide talent disparities. Buying game favourites in the first 4 hourly bars and holding to final settlement captures the favourite premium.',
+    rules: {
+      entry: 'In the first 4 hourly bars: buy YES when YES ask is 0.60 to 0.85, once per market.',
+      sizing: '50% of available cash, capped at 2x visible depth.',
+      exit: 'None — hold to final exchange settlement ($1.00/$0.00).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, portfolio, ticker, periodIndex } = ctx;
+      if (periodIndex > 3) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+
+      const ask = candle.yesAsk.close;
+      if (ask === null || ask < 0.60 || ask > 0.85) return [];
+
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason: `NCAAF favourite: hour ${periodIndex} YES ask ${ask.toFixed(2)} in 0.60–0.85 favourite band → buy YES, hold to game settlement`
+        }
+      ];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'grid_mm_multitier',
+    username: 'GridMM_MultiTier',
+    handle: '@GridMM_MultiTier',
+    avatar: '📐',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    universe: ['KXNASDAQ100Y', 'KXBTCY', 'KXINXY'],
+    title: 'Multi-Level AMM Liquidity Grid',
+    category: 'Market Making / Liquidity Provision',
+    tagline:
+      'Rests passive bid ladders across both sides to capture maker spread rebate and avoid taker fees (YouTube & X AMM tutorials, R16).',
+    sizingPct: 0.35,
+    maxParticipation: 3,
+    designedAt: '2026-09-19',
+    designSource: 'YouTube and X prediction market AMM tutorials (RESEARCH_SOURCES R16)',
+    designSourceUrl: 'https://www.youtube.com/results?search_query=kalshi+market+maker+strategy',
+    sourceNote:
+      'AMM grid strategies rest passive maker orders on both YES and NO sides when spreads widen to ≥ 3¢, taking advantage of Kalshi fee schedules (0% maker fee on fee-free series, or discounted maker rates).',
+    thesis:
+      'DESIGN INTENT: prediction market order books fluctuate with liquidity demand. By resting limit orders inside the spread, the maker captures the spread edge when crossed and flips the position at favorable ticks.',
+    rules: {
+      entry: 'When YES ask − YES bid ≥ 0.03: rest limit buy on YES at bid + 1 tick, once per market.',
+      sizing: '35% of cash, capped at visible depth.',
+      exit: 'Sell at fill price + 3 ticks when achievable, or hold.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, portfolio, ticker } = ctx;
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+
+      const bid = candle.yesBid.close;
+      const ask = candle.yesAsk.close;
+      if (bid === null || ask === null || ask <= bid) return [];
+      const spread = round6Local(ask - bid);
+      if (spread < 0.03) return [];
+
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason: `R16 AMM grid: spread ${spread.toFixed(2)} ≥ 0.03 → rest maker bid at inside spread to capture liquidity edge`
+        }
+      ];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'fomc_probability_sniper',
+    username: 'FOMC_ProbabilitySniper',
+    handle: '@FOMC_ProbabilitySniper',
+    avatar: '🏛️',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    universe: ['KXFED'],
+    title: 'FOMC Implied Probability Sniper',
+    category: 'Macro / Interest Rates',
+    tagline:
+      'Snipes mispriced interest rate cut strike brackets on KXFED series ahead of FOMC rate decision dates (X/Twitter macro threads, R17).',
+    sizingPct: 0.45,
+    maxParticipation: 2,
+    designedAt: '2026-09-19',
+    designSource: 'X (Twitter) and Reddit macro trading community discussions on Kalshi KXFED rate cut pricing (RESEARCH_SOURCES R17)',
+    designSourceUrl: 'https://x.com/search?q=kalshi+fed+rate+cut',
+    sourceNote:
+      'CME FedWatch implied futures rates often diverge from Kalshi KXFED contract pricing. When the modal rate cut strike is priced below 0.65, snipers buy YES anticipating repricing towards consensus.',
+    thesis:
+      'DESIGN INTENT: Kalshi KXFED contracts settle directly on the Federal Reserve target rate upper bound. Sniping modal strike brackets when priced cheap provides high-probability settlement payout.',
+    rules: {
+      entry: 'On KXFED markets: buy YES when YES ask is 0.30 to 0.65, once per market.',
+      sizing: '45% of available cash, capped at 2x visible depth.',
+      exit: 'None — hold to FOMC rate decision settlement.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { candle, portfolio, ticker } = ctx;
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+
+      const ask = candle.yesAsk.close;
+      if (ask === null || ask < 0.30 || ask > 0.65) return [];
+
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason: `R17 FOMC sniper: KXFED strike priced at ${ask.toFixed(2)} (0.30–0.65 modal band) → buy YES, hold to FOMC settlement`
+        }
+      ];
+    }
   }
 ];
 

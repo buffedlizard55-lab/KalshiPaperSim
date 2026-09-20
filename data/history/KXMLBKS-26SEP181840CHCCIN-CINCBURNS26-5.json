@@ -141,6 +141,16 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:11:02.468Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:17:49.820Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
       "orderbook": {
@@ -152,6 +162,26 @@
     },
     {
       "captured_at": "2026-09-20T03:21:44.578Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:46:22.365Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:50:45.520Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -219,9 +249,9 @@
     "yes_sub_title": "Chase Burns: 5+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5",
-  "market_captured_at": "2026-09-20T03:21:43.938Z",
+  "market_captured_at": "2026-09-20T03:50:44.775Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:21:44.559Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/candlesticks?start_ts=1789790401&end_ts=1789874504&period_interval=1440"
+  "last_ingested_at": "2026-09-20T03:50:45.450Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/candlesticks?start_ts=1789790401&end_ts=1789876245&period_interval=1440"
 }

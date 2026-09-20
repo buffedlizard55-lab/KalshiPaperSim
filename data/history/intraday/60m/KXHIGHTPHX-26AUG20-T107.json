@@ -1084,6 +1084,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:19:20.224Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26AUG20-T107/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1103,7 +1113,7 @@
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
-    "no_sub_title": "106° or below",
+    "no_sub_title": "106\u00b0 or below",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-08-21T14:00:00Z",
     "open_interest_fp": "19413.90",
@@ -1120,7 +1130,7 @@
       }
     ],
     "result": "yes",
-    "rules_primary": "If the maximum temperature recorded at Phoenix (CLIPHX) for Aug 20, 2026, is less than 107° fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_primary": "If the maximum temperature recorded at Phoenix (CLIPHX) for Aug 20, 2026, is less than 107\u00b0 fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-08-21T14:13:07.036493Z",
@@ -1128,7 +1138,7 @@
     "status": "finalized",
     "strike_type": "less",
     "ticker": "KXHIGHTPHX-26AUG20-T107",
-    "title": "Will the maximum temperature be <107° on Aug 20, 2026?",
+    "title": "Will the maximum temperature be <107\u00b0 on Aug 20, 2026?",
     "updated_time": "2026-08-21T14:13:07.06952Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "43950.51",
@@ -1136,12 +1146,12 @@
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
-    "yes_sub_title": "106° or below"
+    "yes_sub_title": "106\u00b0 or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26AUG20-T107",
-  "market_captured_at": "2026-09-20T02:53:46.190Z",
+  "market_captured_at": "2026-09-20T03:19:19.483Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T02:53:46.817Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26AUG20-T107/candlesticks?start_ts=1787299201&end_ts=1789872826&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:19:20.155Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26AUG20-T107/candlesticks?start_ts=1787299201&end_ts=1789874359&period_interval=60"
 }

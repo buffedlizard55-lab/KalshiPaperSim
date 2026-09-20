@@ -865,6 +865,31 @@ export const VERIFIED_FACTS = Object.freeze([
     url: 'https://open.fda.gov/apis/drug/drugsfda/how-to-use-the-endpoint/',
     capturedAt: '2026-09-19',
     usedIn: 'scripts/archive-fda-signals.mjs; .github/workflows/fda-signals.yml; src/fda-signal-store.js; strategy FDAEdge_DrugsFDA'
+  },
+  {
+    id: 'V108', group: 'Project rules', status: 'DERIVED',
+    fact: 'The Live Desk explicitly separates and tracks placed paper orders versus upcoming planned strategy setups with verified pricing, dates, and liquidity',
+    value: 'runDeskSession() generates placedTrades[] (compiled from ORDER/FILL/REST/SETTLE records with VWAP, slippage, official quadratic fees, and source URLs) and upcomingTrades[] (compiled from strategy upcoming() setups on open event contracts with trigger types, price targets, and visible ladder depth). Both are exposed via server REST endpoints and static JSON exports.',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js',
+    evidenceLabel: 'buildPlacedTrades() and buildUpcomingTrades() in src/live-desk.js',
+    usedIn: 'src/live-desk.js; server.js /api/live-desk/placed-trades & /upcoming-trades; src/app.js'
+  },
+  {
+    id: 'V109', group: 'Research sources', status: 'CAPTURED',
+    fact: 'All 13 MasterSite projects requested by the owner are mapped to concrete, executable trading strategies with verified pricing and unique usernames',
+    value: 'Review of https://buffedlizard55-lab.github.io/MasterSite/ maps CEO (CEOExit_Drift / LiveCEO_ChangeFav), weather (ForecastEdge_Weather / LiveWeather_ForecastEdge), insider trades (InsiderFiling_Drift / LiveInsider_FilingFader), TheLeap (TheLeap_BreakoutRank / LiveTheLeap_Momentum), NFL Injury (SportsFavourite_Settle / LiveNFL_GameFavourite), NBA Injury (LiveNBA_GameFavourite), FDA (FDAEdge_DrugsFDA / LiveFDA_DecisionPremium), NCAA Scoreboard (LiveNCAA_GameFavourite / NCAAF_GameFavourite), NFL Scoreboard (LiveNFL_GameFavourite), MLB Scoreboard (LiveMLB_GameFavourite), Sports Pred (SportsLine_Momentum / SportsSteam_Fade / SportsUnderdog_Sweep), Gold (GoldBracket_EarlyLeader), and PinePilot (TrendRide_FullTilt / AlphaApex_Momentum / MeanRev_CheapBand).',
+    url: 'https://github.com/buffedlizard55-lab/MasterSite',
+    capturedAt: '2026-09-19',
+    usedIn: 'src/signal-sources.js; src/strategies.js; src/desk-strategies.js; README.md'
+  },
+  {
+    id: 'V110', group: 'Research sources', status: 'DOCUMENTED',
+    fact: 'Public retail and quantitative trading strategies from YouTube, X (Twitter), and Reddit are recreated as mechanical models with verified Kalshi fee schedules and depth limits',
+    value: 'Recreation of AMM multi-level liquidity grids (R16, GridMM_MultiTier) and FOMC interest rate decision sniping (R17, FOMC_ProbabilitySniper), alongside BTC 15-minute scalps (R15), weather models (R06), and panic faders (R04), evaluated with official quadratic maker/taker fee schedules and volume bounds.',
+    url: 'https://docs.kalshi.com/getting_started/orderbook_responses',
+    capturedAt: '2026-09-19',
+    usedIn: 'src/research-sources.js R16/R17; src/strategies.js GridMM_MultiTier, FOMC_ProbabilitySniper'
   }
 ]);
 

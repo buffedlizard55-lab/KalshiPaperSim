@@ -2101,6 +2101,214 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:28:30.238Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "10318.00"
+            ],
+            [
+              "0.0200",
+              "250.00"
+            ],
+            [
+              "0.0300",
+              "167.00"
+            ],
+            [
+              "0.0400",
+              "234.00"
+            ],
+            [
+              "0.0500",
+              "100.00"
+            ],
+            [
+              "0.1100",
+              "10.00"
+            ],
+            [
+              "0.1400",
+              "10.00"
+            ],
+            [
+              "0.2000",
+              "10.00"
+            ],
+            [
+              "0.2800",
+              "10.00"
+            ],
+            [
+              "0.3800",
+              "10.00"
+            ],
+            [
+              "0.5100",
+              "10.00"
+            ],
+            [
+              "0.6100",
+              "10.00"
+            ],
+            [
+              "0.6200",
+              "2046.00"
+            ],
+            [
+              "0.6500",
+              "50.00"
+            ],
+            [
+              "0.8000",
+              "100.00"
+            ],
+            [
+              "0.9200",
+              "21.00"
+            ],
+            [
+              "0.9300",
+              "1240.00"
+            ],
+            [
+              "0.9400",
+              "6411.00"
+            ],
+            [
+              "0.9500",
+              "4402.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5699.00"
+            ],
+            [
+              "0.0200",
+              "1000.00"
+            ],
+            [
+              "0.0300",
+              "5000.00"
+            ],
+            [
+              "0.0400",
+              "6340.01"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:38:24.032Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "10318.00"
+            ],
+            [
+              "0.0200",
+              "250.00"
+            ],
+            [
+              "0.0300",
+              "167.00"
+            ],
+            [
+              "0.0400",
+              "234.00"
+            ],
+            [
+              "0.0500",
+              "100.00"
+            ],
+            [
+              "0.1100",
+              "10.00"
+            ],
+            [
+              "0.1400",
+              "10.00"
+            ],
+            [
+              "0.2000",
+              "10.00"
+            ],
+            [
+              "0.2800",
+              "10.00"
+            ],
+            [
+              "0.3800",
+              "10.00"
+            ],
+            [
+              "0.5100",
+              "10.00"
+            ],
+            [
+              "0.6100",
+              "10.00"
+            ],
+            [
+              "0.6200",
+              "2046.00"
+            ],
+            [
+              "0.6500",
+              "50.00"
+            ],
+            [
+              "0.8000",
+              "100.00"
+            ],
+            [
+              "0.9200",
+              "21.00"
+            ],
+            [
+              "0.9300",
+              "1240.00"
+            ],
+            [
+              "0.9400",
+              "6411.00"
+            ],
+            [
+              "0.9500",
+              "4402.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5699.00"
+            ],
+            [
+              "0.0200",
+              "1000.00"
+            ],
+            [
+              "0.0300",
+              "5000.00"
+            ],
+            [
+              "0.0400",
+              "6340.01"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2158,8 +2366,8 @@
     "yes_sub_title": "Alec Pierce"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14",
-  "market_captured_at": "2026-09-20T03:10:43.805Z",
+  "market_captured_at": "2026-09-20T03:38:23.289Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:10:44.427Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/candlesticks?start_ts=1789869421&end_ts=1789873844&period_interval=1"
+  "last_ingested_at": "2026-09-20T03:38:23.962Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/candlesticks?start_ts=1789869421&end_ts=1789875503&period_interval=1"
 }

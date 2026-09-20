@@ -1129,6 +1129,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:24:51.137Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26AUG21-B79.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1149,7 +1159,7 @@
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
-    "no_sub_title": "79° to 80°",
+    "no_sub_title": "79\u00b0 to 80\u00b0",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-08-22T14:00:00Z",
     "open_interest_fp": "19799.44",
@@ -1166,7 +1176,7 @@
       }
     ],
     "result": "yes",
-    "rules_primary": "If the maximum temperature recorded at New York City (CLINYC) for Aug 21, 2026, is between 79-80° fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_primary": "If the maximum temperature recorded at New York City (CLINYC) for Aug 21, 2026, is between 79-80\u00b0 fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-08-22T11:10:07.036731Z",
@@ -1174,7 +1184,7 @@
     "status": "finalized",
     "strike_type": "between",
     "ticker": "KXHIGHNY-26AUG21-B79.5",
-    "title": "Will the maximum temperature be 79-80° on Aug 21, 2026?",
+    "title": "Will the maximum temperature be 79-80\u00b0 on Aug 21, 2026?",
     "updated_time": "2026-08-22T11:10:07.054248Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "45931.08",
@@ -1182,12 +1192,12 @@
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
-    "yes_sub_title": "79° to 80°"
+    "yes_sub_title": "79\u00b0 to 80\u00b0"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26AUG21-B79.5",
-  "market_captured_at": "2026-09-20T02:58:41.572Z",
+  "market_captured_at": "2026-09-20T03:24:50.393Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T02:58:42.197Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG21-B79.5/candlesticks?start_ts=1787378401&end_ts=1789873121&period_interval=60"
+  "last_ingested_at": "2026-09-20T03:24:51.067Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26AUG21-B79.5/candlesticks?start_ts=1787378401&end_ts=1789874690&period_interval=60"
 }

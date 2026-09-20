@@ -3643,6 +3643,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:29:05.165Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:38:58.062Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3671,7 +3691,7 @@
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.6400",
     "previous_yes_ask_dollars": "0.6100",
-    "previous_yes_bid_dollars": "0.5700",
+    "previous_yes_bid_dollars": "0.5800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3691,7 +3711,7 @@
     "ticker": "KXNHLGAME-26SEP19DALSTL-DAL",
     "title": "Dallas wins",
     "updated_time": "2026-09-20T03:10:04.967407Z",
-    "volume_24h_fp": "28829.86",
+    "volume_24h_fp": "29521.10",
     "volume_fp": "29888.60",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3700,10 +3720,10 @@
     "yes_sub_title": "Dallas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL",
-  "market_captured_at": "2026-09-20T03:11:14.131Z",
+  "market_captured_at": "2026-09-20T03:38:57.315Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:11:14.753Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-DAL/candlesticks?start_ts=1789872301&end_ts=1789873874&period_interval=1",
+  "last_ingested_at": "2026-09-20T03:38:57.992Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-DAL/candlesticks?start_ts=1789873801&end_ts=1789875537&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:12:56.074Z",
@@ -3765,6 +3785,14 @@
       "at": "2026-09-20T03:11:15.073Z",
       "dropped": 3,
       "dropped_from_ts": 1789863840,
+      "dropped_to_ts": 1789863960,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:29:05.465Z",
+      "dropped": 97,
+      "dropped_from_ts": 1789857360,
       "dropped_to_ts": 1789863960,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."

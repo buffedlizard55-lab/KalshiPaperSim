@@ -2361,6 +2361,16 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:13:00.699Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:19:52.723Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL/orderbook",
       "orderbook": {
@@ -2372,6 +2382,26 @@
     },
     {
       "captured_at": "2026-09-20T03:23:47.241Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:48:40.071Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:53:03.229Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -2406,7 +2436,7 @@
     "open_interest_fp": "15440.32",
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.5400",
-    "previous_yes_ask_dollars": "0.4300",
+    "previous_yes_ask_dollars": "0.4400",
     "previous_yes_bid_dollars": "0.4200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -2436,9 +2466,9 @@
     "yes_sub_title": "St. Louis"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL",
-  "market_captured_at": "2026-09-20T03:23:46.602Z",
+  "market_captured_at": "2026-09-20T03:53:02.487Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:23:47.223Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-STL/candlesticks?start_ts=1789790401&end_ts=1789874626&period_interval=1440",
+  "last_ingested_at": "2026-09-20T03:53:03.159Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-STL/candlesticks?start_ts=1789790401&end_ts=1789876382&period_interval=1440",
   "result": "no"
 }

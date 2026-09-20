@@ -3357,6 +3357,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T03:28:13.172Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:38:06.994Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3386,7 +3406,7 @@
     "open_time": "2026-09-16T07:06:00Z",
     "previous_price_dollars": "0.4500",
     "previous_yes_ask_dollars": "0.4900",
-    "previous_yes_bid_dollars": "0.4500",
+    "previous_yes_bid_dollars": "0.4600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3406,7 +3426,7 @@
     "ticker": "KXNCAAFSPREAD-26SEP19YSUSDST-SDST11",
     "title": "South Dakota St. wins by over 10.5 points",
     "updated_time": "2026-09-20T03:08:54.967583Z",
-    "volume_24h_fp": "50684.35",
+    "volume_24h_fp": "50640.29",
     "volume_fp": "51946.74",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3415,10 +3435,10 @@
     "yes_sub_title": "South Dakota St. wins by over 10.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11",
-  "market_captured_at": "2026-09-20T03:10:28.618Z",
+  "market_captured_at": "2026-09-20T03:38:06.251Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:10:29.240Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/candlesticks?start_ts=1789873261&end_ts=1789873828&period_interval=1",
+  "last_ingested_at": "2026-09-20T03:38:06.923Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/candlesticks?start_ts=1789873561&end_ts=1789875486&period_interval=1",
   "trims": [
     {
       "at": "2026-09-19T15:11:59.217Z",
@@ -3480,6 +3500,14 @@
       "at": "2026-09-20T03:10:29.560Z",
       "dropped": 1,
       "dropped_from_ts": 1789858560,
+      "dropped_to_ts": 1789858560,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:28:13.472Z",
+      "dropped": 46,
+      "dropped_from_ts": 1789851840,
       "dropped_to_ts": 1789858560,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."

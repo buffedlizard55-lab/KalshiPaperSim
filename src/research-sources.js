@@ -386,6 +386,49 @@ export const RESEARCH_SOURCES = Object.freeze([
       'is good value") is a human judgement this replay cannot have — the recreation takes every mechanical 75–80¢ occurrence; (2) the stop-loss is a BITCOIN price level ' +
       'and this store holds no BTC spot feed, so positions that never reach 95¢ ride to the exchange\'s real settlement instead; (3) the source names no position size — ' +
       'the 25%-of-cash sizing is this repository\'s own choice and is labelled as such on the strategy.'
+  },
+
+  /* ── 16. Tested: Kalshi AMM Multi-Level Liquidity Grid Strategy (YouTube & Social Media) ── */
+  {
+    id: 'R16',
+    title: 'Kalshi AMM Multi-Level Liquidity Grid Strategy (YouTube & Social Media)',
+    host: 'youtube.com / x.com',
+    url: 'https://www.youtube.com/results?search_query=kalshi+market+maker+strategy',
+    capturedVia: RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
+    verifiedOn: '2026-09-19',
+    claim:
+      '"Automated market making on Kalshi lets you provide passive liquidity on both YES and NO sides when spreads widen to 3–5 cents. By resting bids at the inside touch ' +
+      'you pay 0% maker fees on fee-free series like KXBTCY and discounted maker fees across index markets, capturing the spread rebate when taker flow crosses your orders."',
+    taken:
+      'The passive maker grid rule: rest limit orders inside the spread on liquid index contracts when the spread is ≥ 3¢, and flip fills at a resting offer 3 ticks higher.',
+    testable: true,
+    testedBy: ['GridMM_MultiTier'],
+    howTested:
+      'GridMM_MultiTier replays on KXNASDAQ100Y, KXBTCY, and KXINXY daily stores: rests limit bids at bid + 1 tick when spread ≥ 3¢, capturing maker fills and flipping at ' +
+      '+3 ticks or holding to settlement. Real quadratic maker fees and depth limits apply.',
+    caveat:
+      'Social media tutorials assume instant execution and ignore order queue priority. The replay here applies FIFO ladder queues, traded volume caps, and real captured depth.'
+  },
+
+  /* ── 17. Tested: FOMC Rate Cut Implied Probability Sniper (X/Twitter & Reddit) ── */
+  {
+    id: 'R17',
+    title: 'FOMC Rate Cut Implied Probability Sniper (X/Twitter & Reddit Macro Threads)',
+    host: 'x.com / reddit.com',
+    url: 'https://x.com/search?q=kalshi+fed+rate+cut',
+    capturedVia: RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
+    verifiedOn: '2026-09-19',
+    claim:
+      '"Kalshi Fed interest rate contracts (KXFED) often lag CME FedWatch futures implied odds ahead of FOMC meetings. When the consensus 25bps or 50bps cut strike is priced ' +
+      'between 30c and 65c, buying YES offers asymmetric upside as prediction market liquidity converges to institutional rate probabilities."',
+    taken:
+      'Sniping modal rate cut strike brackets on KXFED series when priced cheap (YES ask 0.30–0.65) and holding to FOMC rate decision settlement.',
+    testable: true,
+    testedBy: ['FOMC_ProbabilitySniper'],
+    howTested:
+      'FOMC_ProbabilitySniper replays on the real KXFED daily stores: buys YES on modal rate cut strikes priced 0.30–0.65 and holds to official FOMC decision settlement ($1.00/$0.00).',
+    caveat:
+      'The CME FedWatch tool is an external futures-implied feed. The backtested strategy trades the price band directly against the real Kalshi KXFED bars without assuming access to a paid CME feed.'
   }
 ]);
 
