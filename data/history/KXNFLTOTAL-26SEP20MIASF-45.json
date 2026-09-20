@@ -145,6 +145,31 @@
         "low_dollars": "0.4900",
         "open_dollars": "0.5000"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "65226.23",
+      "price": {
+        "close_dollars": "0.5200",
+        "high_dollars": "0.5200",
+        "low_dollars": "0.5100",
+        "mean_dollars": "0.5138",
+        "open_dollars": "0.5100",
+        "previous_dollars": "0.5100"
+      },
+      "volume_fp": "2341.09",
+      "yes_ask": {
+        "close_dollars": "0.5200",
+        "high_dollars": "0.5200",
+        "low_dollars": "0.5100",
+        "open_dollars": "0.5100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5100",
+        "high_dollars": "0.5100",
+        "low_dollars": "0.5000",
+        "open_dollars": "0.5000"
+      }
     }
   ],
   "books": [
@@ -3365,11 +3390,11 @@
     "no_sub_title": "Over 44.5 points scored",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T23:25:00Z",
-    "open_interest_fp": "65215.07",
+    "open_interest_fp": "66849.72",
     "open_time": "2026-09-14T01:05:00Z",
     "previous_price_dollars": "0.5100",
-    "previous_yes_ask_dollars": "0.5100",
-    "previous_yes_bid_dollars": "0.5000",
+    "previous_yes_ask_dollars": "0.5200",
+    "previous_yes_bid_dollars": "0.5100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3387,17 +3412,17 @@
     "ticker": "KXNFLTOTAL-26SEP20MIASF-45",
     "title": "Full Game: over 44.5 points scored?",
     "updated_time": "2026-09-14T01:05:00.61465Z",
-    "volume_24h_fp": "2311.93",
-    "volume_fp": "68651.10",
+    "volume_24h_fp": "3446.18",
+    "volume_fp": "70308.49",
     "yes_ask_dollars": "0.5200",
-    "yes_ask_size_fp": "303562.77",
+    "yes_ask_size_fp": "351432.24",
     "yes_bid_dollars": "0.5100",
-    "yes_bid_size_fp": "9626.81",
+    "yes_bid_size_fp": "9273.63",
     "yes_sub_title": "Over 44.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20MIASF-45",
-  "market_captured_at": "2026-09-20T03:52:45.474Z",
+  "market_captured_at": "2026-09-20T11:28:49.243Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:46.148Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20MIASF-45/candlesticks?start_ts=1789790401&end_ts=1789876365&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:49.766Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20MIASF-45/candlesticks?start_ts=1789790401&end_ts=1789903729&period_interval=1440"
 }

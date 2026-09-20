@@ -5,31 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1789153200,
-      "open_interest_fp": "40430.84",
-      "price": {
-        "close_dollars": "0.2900",
-        "high_dollars": "0.2900",
-        "low_dollars": "0.2900",
-        "mean_dollars": "0.2900",
-        "open_dollars": "0.2900",
-        "previous_dollars": "0.2900"
-      },
-      "volume_fp": "1190.67",
-      "yes_ask": {
-        "close_dollars": "0.2900",
-        "high_dollars": "0.2900",
-        "low_dollars": "0.2900",
-        "open_dollars": "0.2900"
-      },
-      "yes_bid": {
-        "close_dollars": "0.2800",
-        "high_dollars": "0.2800",
-        "low_dollars": "0.2800",
-        "open_dollars": "0.2800"
-      }
-    },
-    {
       "end_period_ts": 1789156800,
       "open_interest_fp": "40482.64",
       "price": {
@@ -4988,11 +4963,46 @@
         "low_dollars": "0.2700",
         "open_dollars": "0.2700"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "6312249.37",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.4000",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0789",
+        "open_dollars": "0.3700",
+        "previous_dollars": "0.3700"
+      },
+      "volume_fp": "1359888.16",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.3700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.3800",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.3500"
+      }
     }
   ],
   "books": [
     {
       "captured_at": "2026-09-20T03:34:39.108Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-RUF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T11:33:09.814Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-RUF/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -5048,7 +5058,7 @@
     "ticker": "KXUFCFIGHT-26SEP19TSARUF-RUF",
     "title": "Mauricio Ruffy wins",
     "updated_time": "2026-09-20T03:15:45.321556Z",
-    "volume_24h_fp": "6132630.59",
+    "volume_24h_fp": "5953363.39",
     "volume_fp": "6702112.16",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -5057,17 +5067,25 @@
     "yes_sub_title": "Mauricio Ruffy"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-RUF",
-  "market_captured_at": "2026-09-20T03:34:38.366Z",
+  "market_captured_at": "2026-09-20T11:33:09.171Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:34:39.040Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-RUF/candlesticks?start_ts=1788583500&end_ts=1789875278&period_interval=60",
+  "last_ingested_at": "2026-09-20T11:33:09.793Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-RUF/candlesticks?start_ts=1789873201&end_ts=1789903989&period_interval=60",
   "trims": [
     {
       "at": "2026-09-20T03:34:39.409Z",
       "dropped": 133,
       "dropped_from_ts": 1788670800,
       "dropped_to_ts": 1789149600,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T11:33:10.114Z",
+      "dropped": 1,
+      "dropped_from_ts": 1789153200,
+      "dropped_to_ts": 1789153200,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }

@@ -753,6 +753,31 @@
         "low_dollars": "0.0600",
         "open_dollars": "0.0600"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "648423.71",
+      "price": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0600",
+        "mean_dollars": "0.0623",
+        "open_dollars": "0.0700",
+        "previous_dollars": "0.0700"
+      },
+      "volume_fp": "3149.67",
+      "yes_ask": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0600"
+      }
     }
   ],
   "books": [
@@ -4458,7 +4483,7 @@
     "no_bid_dollars": "0.9300",
     "no_sub_title": "Dallas",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "648423.71",
+    "open_interest_fp": "648571.64",
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.0700",
     "previous_yes_ask_dollars": "0.0700",
@@ -4480,17 +4505,17 @@
     "ticker": "KXNFLNFCCHAMP-27-DAL",
     "title": "Will Dallas win the Pro Football NFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "3149.67",
-    "volume_fp": "1118930.78",
+    "volume_24h_fp": "3267.93",
+    "volume_fp": "1119183.16",
     "yes_ask_dollars": "0.0700",
-    "yes_ask_size_fp": "91272.67",
+    "yes_ask_size_fp": "101118.49",
     "yes_bid_dollars": "0.0600",
-    "yes_bid_size_fp": "10240.01",
+    "yes_bid_size_fp": "10134.06",
     "yes_sub_title": "Dallas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-DAL",
-  "market_captured_at": "2026-09-20T03:52:31.284Z",
+  "market_captured_at": "2026-09-20T11:28:41.269Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:31.959Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-DAL/candlesticks?start_ts=1789790401&end_ts=1789876351&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:41.793Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-DAL/candlesticks?start_ts=1789790401&end_ts=1789903721&period_interval=1440"
 }

@@ -753,6 +753,31 @@
         "low_dollars": "0.2000",
         "open_dollars": "0.2000"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "138261.95",
+      "price": {
+        "close_dollars": "0.2000",
+        "high_dollars": "0.2100",
+        "low_dollars": "0.2000",
+        "mean_dollars": "0.2072",
+        "open_dollars": "0.2100",
+        "previous_dollars": "0.2000"
+      },
+      "volume_fp": "670.27",
+      "yes_ask": {
+        "close_dollars": "0.2100",
+        "high_dollars": "0.2100",
+        "low_dollars": "0.2100",
+        "open_dollars": "0.2100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2000",
+        "high_dollars": "0.2000",
+        "low_dollars": "0.2000",
+        "open_dollars": "0.2000"
+      }
     }
   ],
   "books": [
@@ -4309,17 +4334,17 @@
     "ticker": "KXNBAEAST-27-NYK",
     "title": "Will New York win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "670.27",
-    "volume_fp": "196655.76",
+    "volume_24h_fp": "708.27",
+    "volume_fp": "196693.76",
     "yes_ask_dollars": "0.2100",
-    "yes_ask_size_fp": "20686.52",
+    "yes_ask_size_fp": "20698.47",
     "yes_bid_dollars": "0.2000",
-    "yes_bid_size_fp": "7515.07",
+    "yes_bid_size_fp": "7479.55",
     "yes_sub_title": "New York"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-NYK",
-  "market_captured_at": "2026-09-20T03:51:24.521Z",
+  "market_captured_at": "2026-09-20T11:28:03.747Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:25.195Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-NYK/candlesticks?start_ts=1789790401&end_ts=1789876284&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:04.270Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-NYK/candlesticks?start_ts=1789790401&end_ts=1789903683&period_interval=1440"
 }

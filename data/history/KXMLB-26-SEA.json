@@ -753,6 +753,31 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "2216761.59",
+      "price": {
+        "close_dollars": "0.0010",
+        "high_dollars": "0.0010",
+        "low_dollars": "0.0010",
+        "mean_dollars": "0.0010",
+        "open_dollars": "0.0010",
+        "previous_dollars": "0.0010"
+      },
+      "volume_fp": "6733.24",
+      "yes_ask": {
+        "close_dollars": "0.0010",
+        "high_dollars": "0.0010",
+        "low_dollars": "0.0010",
+        "open_dollars": "0.0010"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -7079,17 +7104,17 @@
     "ticker": "KXMLB-26-SEA",
     "title": "Will Seattle win the 2026 Pro Baseball Championship?",
     "updated_time": "2026-07-13T21:31:32.511076Z",
-    "volume_24h_fp": "6733.24",
+    "volume_24h_fp": "6504.23",
     "volume_fp": "3396086.82",
     "yes_ask_dollars": "0.0010",
-    "yes_ask_size_fp": "92931.57",
+    "yes_ask_size_fp": "93910.08",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Seattle"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-SEA",
-  "market_captured_at": "2026-09-20T03:50:29.182Z",
+  "market_captured_at": "2026-09-20T11:27:32.611Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:50:29.855Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SEA/candlesticks?start_ts=1789790401&end_ts=1789876229&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:27:33.135Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SEA/candlesticks?start_ts=1789790401&end_ts=1789903652&period_interval=1440"
 }

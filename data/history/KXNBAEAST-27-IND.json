@@ -708,6 +708,26 @@
         "low_dollars": "0.0500",
         "open_dollars": "0.0500"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "111895.86",
+      "price": {
+        "previous_dollars": "0.0600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      }
     }
   ],
   "books": [
@@ -2814,7 +2834,7 @@
     "no_sub_title": "Indiana",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "111895.86",
+    "open_interest_fp": "112052.23",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.0600",
     "previous_yes_ask_dollars": "0.0600",
@@ -2836,17 +2856,17 @@
     "ticker": "KXNBAEAST-27-IND",
     "title": "Will Indiana win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "0.00",
-    "volume_fp": "121991.62",
+    "volume_24h_fp": "156.37",
+    "volume_fp": "122147.99",
     "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "33986.32",
+    "yes_ask_size_fp": "35144.95",
     "yes_bid_dollars": "0.0500",
     "yes_bid_size_fp": "415.69",
     "yes_sub_title": "Indiana"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-IND",
-  "market_captured_at": "2026-09-20T03:51:21.687Z",
+  "market_captured_at": "2026-09-20T11:28:02.146Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:22.360Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-IND/candlesticks?start_ts=1789790401&end_ts=1789876281&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:02.675Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-IND/candlesticks?start_ts=1789790401&end_ts=1789903682&period_interval=1440"
 }

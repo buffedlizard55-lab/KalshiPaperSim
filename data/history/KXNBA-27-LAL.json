@@ -753,6 +753,31 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "1731540.71",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0300",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "10144.50",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -3994,7 +4019,7 @@
     "expected_expiration_time": "2027-07-31T14:00:00Z",
     "expiration_time": "2029-07-30T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0300",
+    "last_price_dollars": "0.0200",
     "latest_expiration_time": "2029-07-30T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -4003,7 +4028,7 @@
     "no_sub_title": "Los Angeles L",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-31T14:00:00Z",
-    "open_interest_fp": "1731540.71",
+    "open_interest_fp": "1731721.12",
     "open_time": "2026-06-14T08:00:00Z",
     "previous_price_dollars": "0.0300",
     "previous_yes_ask_dollars": "0.0300",
@@ -4025,17 +4050,17 @@
     "ticker": "KXNBA-27-LAL",
     "title": "Will Los Angeles L win the 2027 Pro Basketball Finals?",
     "updated_time": "2026-07-24T16:41:17.536752Z",
-    "volume_24h_fp": "10144.50",
-    "volume_fp": "1875795.90",
+    "volume_24h_fp": "10262.61",
+    "volume_fp": "1876070.07",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "135724.73",
+    "yes_ask_size_fp": "135544.32",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "92313.71",
+    "yes_bid_size_fp": "92229.53",
     "yes_sub_title": "Los Angeles L"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-LAL",
-  "market_captured_at": "2026-09-20T03:51:13.181Z",
+  "market_captured_at": "2026-09-20T11:27:57.357Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:13.853Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-LAL/candlesticks?start_ts=1789790401&end_ts=1789876273&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:27:57.879Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-LAL/candlesticks?start_ts=1789790401&end_ts=1789903677&period_interval=1440"
 }

@@ -45,6 +45,31 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "56.50",
+      "price": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.8600",
+        "mean_dollars": "0.8683",
+        "open_dollars": "0.8700",
+        "previous_dollars": "0.8800"
+      },
+      "volume_fp": "39.84",
+      "yes_ask": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.8600",
+        "open_dollars": "0.8900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8600",
+        "high_dollars": "0.8700",
+        "low_dollars": "0.1600",
+        "open_dollars": "0.1600"
+      }
     }
   ],
   "books": [
@@ -896,12 +921,12 @@
     "latest_expiration_time": "2026-09-23T00:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.1400",
+    "no_ask_dollars": "0.1500",
     "no_bid_dollars": "0.1000",
     "no_sub_title": "Over 1.5 goals scored",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-21T03:00:00Z",
-    "open_interest_fp": "56.50",
+    "open_interest_fp": "67.53",
     "open_time": "2026-09-17T16:05:00Z",
     "previous_price_dollars": "0.8800",
     "previous_yes_ask_dollars": "0.8900",
@@ -923,17 +948,17 @@
     "ticker": "KXNHLTOTAL-26SEP20SEACGY-2",
     "title": "Full Game: Over 1.5 goals scored",
     "updated_time": "2026-09-17T16:10:58.751854Z",
-    "volume_24h_fp": "39.84",
-    "volume_fp": "56.50",
+    "volume_24h_fp": "50.87",
+    "volume_fp": "67.53",
     "yes_ask_dollars": "0.9000",
-    "yes_ask_size_fp": "33.54",
-    "yes_bid_dollars": "0.8600",
-    "yes_bid_size_fp": "0.51",
+    "yes_ask_size_fp": "22.51",
+    "yes_bid_dollars": "0.8500",
+    "yes_bid_size_fp": "45.63",
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP20SEACGY-2",
-  "market_captured_at": "2026-09-20T03:53:16.678Z",
+  "market_captured_at": "2026-09-20T11:29:06.790Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:53:17.350Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP20SEACGY-2/candlesticks?start_ts=1789790401&end_ts=1789876396&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:29:07.312Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP20SEACGY-2/candlesticks?start_ts=1789790401&end_ts=1789903747&period_interval=1440"
 }

@@ -753,6 +753,31 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "1977138.74",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0399",
+        "open_dollars": "0.0400",
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "194270.62",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -4586,7 +4611,7 @@
     "expected_expiration_time": "2027-01-26T04:00:00Z",
     "expiration_time": "2027-02-23T04:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0300",
+    "last_price_dollars": "0.0400",
     "latest_expiration_time": "2027-02-23T04:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -4594,7 +4619,7 @@
     "no_bid_dollars": "0.9600",
     "no_sub_title": "Oregon",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "1977138.74",
+    "open_interest_fp": "1992558.40",
     "open_time": "2026-01-21T22:00:00Z",
     "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0400",
@@ -4616,17 +4641,17 @@
     "ticker": "KXNCAAF-27-ORE",
     "title": "Will Oregon win the College Football Playoff National Championship?",
     "updated_time": "2026-09-15T15:39:56.076464Z",
-    "volume_24h_fp": "195441.90",
-    "volume_fp": "2854722.35",
+    "volume_24h_fp": "200295.07",
+    "volume_fp": "2870246.52",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "236350.78",
+    "yes_ask_size_fp": "225686.64",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "2046.65",
+    "yes_bid_size_fp": "2053.32",
     "yes_sub_title": "Oregon"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-ORE",
-  "market_captured_at": "2026-09-20T03:51:51.569Z",
+  "market_captured_at": "2026-09-20T11:28:18.916Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:52.242Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-ORE/candlesticks?start_ts=1789790401&end_ts=1789876311&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:19.440Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-ORE/candlesticks?start_ts=1789790401&end_ts=1789903699&period_interval=1440"
 }

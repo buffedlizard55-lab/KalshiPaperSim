@@ -65,6 +65,31 @@
         "low_dollars": "0.1600",
         "open_dollars": "0.1700"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "8492.92",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.6100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.3114",
+        "open_dollars": "0.3300",
+        "previous_dollars": "0.4600"
+      },
+      "volume_fp": "9511.36",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.7300",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.3800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.3200",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.2400"
+      }
     }
   ],
   "books": [
@@ -1620,21 +1645,21 @@
   ],
   "market": {
     "can_close_early": true,
-    "close_time": "2026-09-21T23:00:00Z",
+    "close_time": "2026-09-20T04:00:04Z",
     "created_time": "2026-09-16T04:03:43.489981Z",
     "early_close_condition": "This market will close and expire after a winner is declared.",
     "event_ticker": "KXNCAAFTOTAL-26SEP19HCUIW",
     "exchange_index": 0,
     "expected_expiration_time": "2026-09-20T02:00:00Z",
     "expiration_time": "2026-09-21T23:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "53",
     "floor_strike": 58.5,
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-21T23:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
-    "no_bid_dollars": "0.9900",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Over 58.5 points scored",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T02:00:00Z",
@@ -1651,26 +1676,29 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "no",
     "rules_primary": "If the teams collectively score more than 58.5 points in the Houston Christian vs Incarnate Word college football game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
     "settlement_timer_seconds": 180,
-    "status": "active",
+    "settlement_ts": "2026-09-20T04:04:04.506425Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
     "strike_type": "greater",
     "ticker": "KXNCAAFTOTAL-26SEP19HCUIW-59",
     "title": "Over 58.5 points scored",
-    "updated_time": "2026-09-16T04:06:00.868847Z",
+    "updated_time": "2026-09-20T04:04:04.636723Z",
     "volume_24h_fp": "9511.36",
     "volume_fp": "9563.92",
-    "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "6.00",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Over 58.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19HCUIW-59",
-  "market_captured_at": "2026-09-20T03:52:11.426Z",
-  "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:12.099Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19HCUIW-59/candlesticks?start_ts=1789790401&end_ts=1789876331&period_interval=1440"
+  "market_captured_at": "2026-09-20T11:28:30.102Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-20T11:28:30.626Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19HCUIW-59/candlesticks?start_ts=1789790401&end_ts=1789903710&period_interval=1440",
+  "result": "no"
 }

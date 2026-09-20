@@ -145,6 +145,31 @@
         "low_dollars": "0.5300",
         "open_dollars": "0.5300"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "60590.67",
+      "price": {
+        "close_dollars": "0.5400",
+        "high_dollars": "0.5400",
+        "low_dollars": "0.5300",
+        "mean_dollars": "0.5317",
+        "open_dollars": "0.5300",
+        "previous_dollars": "0.5300"
+      },
+      "volume_fp": "269.42",
+      "yes_ask": {
+        "close_dollars": "0.5400",
+        "high_dollars": "0.5400",
+        "low_dollars": "0.5400",
+        "open_dollars": "0.5400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5300",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.5300",
+        "open_dollars": "0.5300"
+      }
     }
   ],
   "books": [
@@ -2721,7 +2746,7 @@
     "no_sub_title": "Over 44.5 points scored",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T23:05:00Z",
-    "open_interest_fp": "60590.67",
+    "open_interest_fp": "60635.52",
     "open_time": "2026-09-14T01:05:00Z",
     "previous_price_dollars": "0.5300",
     "previous_yes_ask_dollars": "0.5400",
@@ -2743,17 +2768,17 @@
     "ticker": "KXNFLTOTAL-26SEP20JACDEN-45",
     "title": "Full Game: over 44.5 points scored?",
     "updated_time": "2026-09-14T01:05:00.61465Z",
-    "volume_24h_fp": "269.42",
-    "volume_fp": "75196.59",
+    "volume_24h_fp": "314.27",
+    "volume_fp": "75241.44",
     "yes_ask_dollars": "0.5400",
-    "yes_ask_size_fp": "223746.73",
+    "yes_ask_size_fp": "284568.71",
     "yes_bid_dollars": "0.5300",
-    "yes_bid_size_fp": "166630.05",
+    "yes_bid_size_fp": "328410.35",
     "yes_sub_title": "Over 44.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20JACDEN-45",
-  "market_captured_at": "2026-09-20T03:52:44.054Z",
+  "market_captured_at": "2026-09-20T11:28:48.445Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:44.730Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20JACDEN-45/candlesticks?start_ts=1789790401&end_ts=1789876364&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:48.969Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20JACDEN-45/candlesticks?start_ts=1789790401&end_ts=1789903728&period_interval=1440"
 }

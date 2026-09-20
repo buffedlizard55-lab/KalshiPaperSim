@@ -748,6 +748,31 @@
         "low_dollars": "0.1100",
         "open_dollars": "0.1100"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "130478.73",
+      "price": {
+        "close_dollars": "0.1300",
+        "high_dollars": "0.1300",
+        "low_dollars": "0.1100",
+        "mean_dollars": "0.1251",
+        "open_dollars": "0.1100",
+        "previous_dollars": "0.1300"
+      },
+      "volume_fp": "167.53",
+      "yes_ask": {
+        "close_dollars": "0.1300",
+        "high_dollars": "0.1300",
+        "low_dollars": "0.1200",
+        "open_dollars": "0.1300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1200",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.1100",
+        "open_dollars": "0.1200"
+      }
     }
   ],
   "books": [
@@ -4174,7 +4199,7 @@
     "open_time": "2026-06-15T03:40:00Z",
     "previous_price_dollars": "0.1300",
     "previous_yes_ask_dollars": "0.1300",
-    "previous_yes_bid_dollars": "0.1200",
+    "previous_yes_bid_dollars": "0.1100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4195,14 +4220,14 @@
     "volume_24h_fp": "167.53",
     "volume_fp": "164015.22",
     "yes_ask_dollars": "0.1300",
-    "yes_ask_size_fp": "11473.46",
+    "yes_ask_size_fp": "10473.42",
     "yes_bid_dollars": "0.1200",
-    "yes_bid_size_fp": "27.40",
+    "yes_bid_size_fp": "14.25",
     "yes_sub_title": "Florida Panthers"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-FLA",
-  "market_captured_at": "2026-09-20T03:52:52.571Z",
+  "market_captured_at": "2026-09-20T11:28:53.229Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:53.243Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-FLA/candlesticks?start_ts=1789790401&end_ts=1789876372&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:53.752Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-FLA/candlesticks?start_ts=1789790401&end_ts=1789903733&period_interval=1440"
 }

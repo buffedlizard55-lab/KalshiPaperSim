@@ -1559,6 +1559,31 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.6300"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "11722.39",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "44.23",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -4221,6 +4246,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-20T11:32:50.448Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4248,7 +4283,7 @@
     "open_interest_fp": "11722.39",
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.4300",
-    "previous_yes_ask_dollars": "0.4300",
+    "previous_yes_ask_dollars": "0.4400",
     "previous_yes_bid_dollars": "0.4000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -4269,7 +4304,7 @@
     "ticker": "KXNHLGAME-26SEP19CHIMIN-CHI",
     "title": "Chicago wins",
     "updated_time": "2026-09-20T03:12:04.967583Z",
-    "volume_24h_fp": "16285.45",
+    "volume_24h_fp": "16267.46",
     "volume_fp": "16546.96",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -4278,9 +4313,9 @@
     "yes_sub_title": "Chicago"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI",
-  "market_captured_at": "2026-09-20T03:43:49.452Z",
+  "market_captured_at": "2026-09-20T11:32:49.802Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:43:50.126Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-CHI/candlesticks?start_ts=1789873201&end_ts=1789875829&period_interval=60",
+  "last_ingested_at": "2026-09-20T11:32:50.426Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-CHI/candlesticks?start_ts=1789873201&end_ts=1789903970&period_interval=60",
   "result": "no"
 }

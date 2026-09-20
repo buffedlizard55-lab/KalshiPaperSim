@@ -5,26 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1789153200,
-      "open_interest_fp": "9219.65",
-      "price": {
-        "previous_dollars": "0.7400"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.7400",
-        "high_dollars": "0.7400",
-        "low_dollars": "0.7400",
-        "open_dollars": "0.7400"
-      },
-      "yes_bid": {
-        "close_dollars": "0.7300",
-        "high_dollars": "0.7300",
-        "low_dollars": "0.7300",
-        "open_dollars": "0.7300"
-      }
-    },
-    {
       "end_period_ts": 1789156800,
       "open_interest_fp": "9263.65",
       "price": {
@@ -4978,11 +4958,46 @@
         "low_dollars": "0.6200",
         "open_dollars": "0.7200"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "2461237.73",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.6100",
+        "mean_dollars": "0.8236",
+        "open_dollars": "0.6500",
+        "previous_dollars": "0.6500"
+      },
+      "volume_fp": "734421.63",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.6200",
+        "open_dollars": "0.6500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.6400"
+      }
     }
   ],
   "books": [
     {
       "captured_at": "2026-09-20T03:34:47.586Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-TSA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T11:33:13.630Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-TSA/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -5038,7 +5053,7 @@
     "ticker": "KXUFCFIGHT-26SEP19TSARUF-TSA",
     "title": "Arman Tsarukyan wins",
     "updated_time": "2026-09-20T03:15:45.321556Z",
-    "volume_24h_fp": "2727567.43",
+    "volume_24h_fp": "2689394.30",
     "volume_fp": "2966265.30",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -5047,17 +5062,25 @@
     "yes_sub_title": "Arman Tsarukyan"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-TSA",
-  "market_captured_at": "2026-09-20T03:34:46.843Z",
+  "market_captured_at": "2026-09-20T11:33:12.986Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T03:34:47.518Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-TSA/candlesticks?start_ts=1788583500&end_ts=1789875287&period_interval=60",
+  "last_ingested_at": "2026-09-20T11:33:13.609Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-TSA/candlesticks?start_ts=1789873201&end_ts=1789903993&period_interval=60",
   "trims": [
     {
       "at": "2026-09-20T03:34:47.887Z",
       "dropped": 131,
       "dropped_from_ts": 1788670800,
       "dropped_to_ts": 1789149600,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T11:33:13.931Z",
+      "dropped": 1,
+      "dropped_from_ts": 1789153200,
+      "dropped_to_ts": 1789153200,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }

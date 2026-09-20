@@ -152,6 +152,31 @@
         "low_dollars": "0.4800",
         "open_dollars": "0.4800"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "186583.19",
+      "price": {
+        "close_dollars": "0.4900",
+        "high_dollars": "0.4900",
+        "low_dollars": "0.4800",
+        "mean_dollars": "0.4878",
+        "open_dollars": "0.4900",
+        "previous_dollars": "0.4900"
+      },
+      "volume_fp": "61790.85",
+      "yes_ask": {
+        "close_dollars": "0.4900",
+        "high_dollars": "0.4900",
+        "low_dollars": "0.4900",
+        "open_dollars": "0.4900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4800",
+        "high_dollars": "0.4800",
+        "low_dollars": "0.4800",
+        "open_dollars": "0.4800"
+      }
     }
   ],
   "books": [
@@ -3715,7 +3740,7 @@
     "no_sub_title": "San Francisco wins by over 13.5 points",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T23:25:00Z",
-    "open_interest_fp": "186356.60",
+    "open_interest_fp": "232001.14",
     "open_time": "2026-09-14T01:05:00Z",
     "previous_price_dollars": "0.4900",
     "previous_yes_ask_dollars": "0.4900",
@@ -3737,17 +3762,17 @@
     "ticker": "KXNFLSPREAD-26SEP20MIASF-SF14",
     "title": "San Francisco wins by over 13.5 points?",
     "updated_time": "2026-09-14T01:05:00.43613Z",
-    "volume_24h_fp": "61489.25",
-    "volume_fp": "222357.41",
+    "volume_24h_fp": "100015.62",
+    "volume_fp": "274369.10",
     "yes_ask_dollars": "0.4900",
-    "yes_ask_size_fp": "743555.06",
+    "yes_ask_size_fp": "692113.78",
     "yes_bid_dollars": "0.4800",
-    "yes_bid_size_fp": "673604.88",
+    "yes_bid_size_fp": "720430.75",
     "yes_sub_title": "San Francisco wins by over 13.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLSPREAD-26SEP20MIASF-SF14",
-  "market_captured_at": "2026-09-20T03:52:39.802Z",
+  "market_captured_at": "2026-09-20T11:28:46.050Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:40.475Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLSPREAD/markets/KXNFLSPREAD-26SEP20MIASF-SF14/candlesticks?start_ts=1789790401&end_ts=1789876360&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:46.574Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLSPREAD/markets/KXNFLSPREAD-26SEP20MIASF-SF14/candlesticks?start_ts=1789790401&end_ts=1789903726&period_interval=1440"
 }

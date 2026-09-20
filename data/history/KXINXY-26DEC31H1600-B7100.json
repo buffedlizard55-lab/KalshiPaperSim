@@ -6548,6 +6548,31 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0400"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "193662.57",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0300",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0500"
+      },
+      "volume_fp": "2431.57",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -9365,8 +9390,8 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "193662.57",
     "open_time": "2025-12-23T15:00:00Z",
-    "previous_price_dollars": "0.0500",
-    "previous_yes_ask_dollars": "0.0500",
+    "previous_price_dollars": "0.0300",
+    "previous_yes_ask_dollars": "0.0400",
     "previous_yes_bid_dollars": "0.0300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -9386,17 +9411,17 @@
     "ticker": "KXINXY-26DEC31H1600-B7100",
     "title": "Will the S&P 500 be between 7000 and 7199.99 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:01.966909Z",
-    "volume_24h_fp": "2431.57",
+    "volume_24h_fp": "91.00",
     "volume_fp": "289062.14",
     "yes_ask_dollars": "0.0400",
     "yes_ask_size_fp": "1270.00",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "959.99",
+    "yes_bid_size_fp": "1061.99",
     "yes_sub_title": "7,000 to 7,199.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7100",
-  "market_captured_at": "2026-09-20T03:50:09.319Z",
+  "market_captured_at": "2026-09-20T11:27:21.411Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:50:09.992Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7100/candlesticks?start_ts=1789790401&end_ts=1789876209&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:27:21.934Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7100/candlesticks?start_ts=1789790401&end_ts=1789903641&period_interval=1440"
 }

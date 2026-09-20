@@ -753,6 +753,31 @@
         "low_dollars": "0.1500",
         "open_dollars": "0.1500"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "457417.81",
+      "price": {
+        "close_dollars": "0.1500",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.1500",
+        "mean_dollars": "0.1598",
+        "open_dollars": "0.1600",
+        "previous_dollars": "0.1600"
+      },
+      "volume_fp": "13338.39",
+      "yes_ask": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.1600",
+        "open_dollars": "0.1600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1500",
+        "high_dollars": "0.1500",
+        "low_dollars": "0.1500",
+        "open_dollars": "0.1500"
+      }
     }
   ],
   "books": [
@@ -4182,7 +4207,7 @@
     "no_bid_dollars": "0.8400",
     "no_sub_title": "Los Angeles R",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "457417.81",
+    "open_interest_fp": "457062.84",
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.1600",
     "previous_yes_ask_dollars": "0.1600",
@@ -4204,17 +4229,17 @@
     "ticker": "KXNFLNFCCHAMP-27-LAR",
     "title": "Will Los Angeles R win the Pro Football NFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "13338.39",
-    "volume_fp": "784100.95",
+    "volume_24h_fp": "13048.15",
+    "volume_fp": "788183.64",
     "yes_ask_dollars": "0.1600",
-    "yes_ask_size_fp": "111288.35",
+    "yes_ask_size_fp": "10791.48",
     "yes_bid_dollars": "0.1500",
-    "yes_bid_size_fp": "32742.23",
+    "yes_bid_size_fp": "30862.44",
     "yes_sub_title": "Los Angeles R"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-LAR",
-  "market_captured_at": "2026-09-20T03:52:32.705Z",
+  "market_captured_at": "2026-09-20T11:28:42.067Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:52:33.379Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-LAR/candlesticks?start_ts=1789790401&end_ts=1789876353&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:42.590Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-LAR/candlesticks?start_ts=1789790401&end_ts=1789903722&period_interval=1440"
 }

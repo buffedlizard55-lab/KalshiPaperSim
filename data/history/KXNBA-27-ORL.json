@@ -668,6 +668,31 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1789876800,
+      "open_interest_fp": "864932.74",
+      "price": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "mean_dollars": "0.0200",
+        "open_dollars": "0.0200",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "233.95",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -2801,12 +2826,12 @@
     "yes_ask_dollars": "0.0200",
     "yes_ask_size_fp": "496317.45",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "10913.54",
+    "yes_bid_size_fp": "11113.54",
     "yes_sub_title": "Orlando"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-ORL",
-  "market_captured_at": "2026-09-20T03:51:17.433Z",
+  "market_captured_at": "2026-09-20T11:27:59.751Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T03:51:18.109Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-ORL/candlesticks?start_ts=1789790401&end_ts=1789876277&period_interval=1440"
+  "last_ingested_at": "2026-09-20T11:28:00.274Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-ORL/candlesticks?start_ts=1789790401&end_ts=1789903680&period_interval=1440"
 }
