@@ -1,8 +1,8 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-20 by `scripts/render-docs.js` from `src/verification-data.js`.
-**54 irregularities** flagged during this build: 17 high, 25 medium,
-10 low, 1 informational.
+**55 irregularities** flagged during this build: 17 high, 25 medium,
+11 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
 about it**, and **what you should do**. Nothing here is speculation: each item was found by comparing an
@@ -995,4 +995,22 @@ assumption against an official document or a real API response.
 
 - Fee schedule (check the Non-Standard table for these series): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
 - The honest fallback — `src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"`
+
+---
+
+## #55 — The FDA and MLB archive workflows committed their raw capture logs to the repository root on every run
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That every bot's scratch log was covered by .gitignore, as ingest.log and forecast.log are, so the race guard's `git add -A` could never sweep one into a data commit. |
+| **Verified truth** | Only /ingest.log and /forecast.log were ignored. fda-signals.log has been committed by every FDA run since 2026-09-19 (it is in main's tree), and the first MLB run on 2026-09-20 (run 35491621248) committed mlb-signals.log the same way. No data was affected — the logs duplicate what the runner already uploads as an artifact — but a tracked log file changes on every run, which makes every bot commit larger than its data and would let two bots conflict on a file nobody needs. |
+| **What the code does** | /fda-signals.log and /mlb-signals.log added to .gitignore and both files removed from the tree (git rm --cached). The logs remain available as workflow artifacts (fda-signals-log / mlb-signals-log) and the per-run JSON reports (_fda-last-run.json / _mlb-last-run.json) stay committed, which is the diagnosable record the design wants. |
+| **What you should do** | After this PR merges, no *.log file should appear at the repository ROOT in any bot commit: `git ls-files "*.log" | grep -v ^data/` on main must be empty (data/history/_last-run.log is the ingest's deliberately committed copy and stays). |
+
+**Evidence**
+
+- .gitignore (the two new entries): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/.gitignore>
+- The first MLB capture run, whose commit carried mlb-signals.log: <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35491621248>
 

@@ -11,6 +11,8 @@ data/store/
 # file at the repo root must never be committed by the race-guard's `git add -A`)
 /ingest.log
 /forecast.log
+/fda-signals.log
+/mlb-signals.log
 
 # Dependencies & build artefacts that are regenerated (docs/ IS committed: GitHub Pages)
 node_modules/

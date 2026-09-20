@@ -1575,6 +1575,18 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'A round is now any capture batch in which at least one tracked contract\'s ladder was (re)captured (minFreshLadders = 1); first-ever novelty is no longer required (minNewLadders = 0); the batch window is 20 minutes. On the pre-merge store rounds went from 3 to 6 (2026-09-18T00:03Z → 2026-09-20T00:40Z); on the merged 2026-09-20 store (both branches\' captures) the old rule gives 4 and the corrected rule 5 (2026-09-18T02:46Z → 2026-09-20T03:53Z, the 21:53Z re-capture being the round the old rule dropped). The 27 season checks still pass, and each round row now publishes freshLadderCaptures next to newLadderCaptures so the difference is visible in the schedule file and on the Desk Season tab.',
     userAction: 'In data/reports/desk-season-schedule.json, R04 (2026-09-19T21:53Z) has newLadderCaptures 0 and freshLadderCaptures 76: a full re-capture of the open board that the old rule would have skipped.'
+  },
+  {
+    id: 55, severity: 'low',
+    title: 'The FDA and MLB archive workflows committed their raw capture logs to the repository root on every run',
+    assumed: 'That every bot\'s scratch log was covered by .gitignore, as ingest.log and forecast.log are, so the race guard\'s `git add -A` could never sweep one into a data commit.',
+    truth: 'Only /ingest.log and /forecast.log were ignored. fda-signals.log has been committed by every FDA run since 2026-09-19 (it is in main\'s tree), and the first MLB run on 2026-09-20 (run 35491621248) committed mlb-signals.log the same way. No data was affected — the logs duplicate what the runner already uploads as an artifact — but a tracked log file changes on every run, which makes every bot commit larger than its data and would let two bots conflict on a file nobody needs.',
+    evidence: [
+      { label: '.gitignore (the two new entries)', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/.gitignore' },
+      { label: 'The first MLB capture run, whose commit carried mlb-signals.log', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35491621248' }
+    ],
+    action: '/fda-signals.log and /mlb-signals.log added to .gitignore and both files removed from the tree (git rm --cached). The logs remain available as workflow artifacts (fda-signals-log / mlb-signals-log) and the per-run JSON reports (_fda-last-run.json / _mlb-last-run.json) stay committed, which is the diagnosable record the design wants.',
+    userAction: 'After this PR merges, no *.log file should appear at the repository ROOT in any bot commit: `git ls-files "*.log" | grep -v ^data/` on main must be empty (data/history/_last-run.log is the ingest\'s deliberately committed copy and stays).'
   }
 ]);
 
