@@ -394,11 +394,12 @@
 
     <div id="deskQuoted"></div>
 
-    <h3>Upcoming Trades (Simulating Strategy Planned Setups)</h3>
+    <h3>Upcoming Trades — paper trades whose outcome is still ahead</h3>
     <p class="fineprint">
-      Strategies scan all real OPEN event contracts and formulate <strong>upcoming planned trades</strong> with specific trigger
-      conditions (price limits, catalyst event dates, weather forecast updates, in-play game windows). You can review every upcoming
-      trade the strategies want to place, check real available order-book liquidity, and test execution with one-click simulation.
+      Compiled ONLY from the desk's own order records, never synthesised: every row is a real paper position on a contract that has
+      not closed yet (it awaits the exchange's own result), a resting maker order that only a later real quote can cross, or the
+      unfilled remainder of an order the captured ladder could not fill. Target price = the real fill VWAP or limit price; size = the
+      real filled or requested count; depth = the real captured ladder. "Simulate trade" pre-fills the ticket with the same order.
     </p>
     <div id="deskUpcomingTrades"></div>
 
@@ -552,6 +553,7 @@
     <div id="researchStats"></div>
     <div id="signalSources"></div>
     <div id="forecastStatus"></div>
+    <div id="signalArchiveStatus"></div>
     <div id="researchSweep"></div>
     <div id="researchLiquidity"></div>
     <div id="researchLedger"></div>

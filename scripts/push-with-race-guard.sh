@@ -7,7 +7,7 @@
 # WHY THIS SCRIPT EXISTS
 # ----------------------
 # Four data bots commit to the same branch (the daily/on-demand history ingest,
-# the NWS forecast archive, the FDA archive, and the MLB schedule archive), so
+# the NWS forecast archive, the FDA archive and the MLB game-state archive), so
 # a run can be rejected at `git push` because another bot (or a human merge)
 # landed a commit while this run was working. Two real failures are on record:
 #
@@ -32,7 +32,7 @@
 #   - commit EVERYTHING the run changed (`git add -A`, with run scratch like
 #     ingest.log git-ignored), so the tree is clean and rebase can start;
 #   - rebase conflicts are only auto-resolved for GENERATED files
-#     (the four browser modules, the three generated docs, index.html, docs/)
+#     (the five browser modules, the three generated docs, index.html, docs/)
 #     by RE-RUNNING the repo's regeneration chain over the merged data tree —
 #     never by hand-editing and never by staging conflict markers;
 #   - after regeneration, if any conflicted file STILL contains conflict
@@ -61,8 +61,10 @@
 #   BOT_NAME/BOT_EMAIL  committer identity (default: kalshi-history-bot)
 #
 # The GENERATED_PATHS default below MUST stay in sync with every workflow's
-# "Regenerate the browser-safe modules and the Pages bundle" step; test 122
-# asserts that from the YAML, and test/workflow-race-guard.sh scenarios 7/8
+# "Regenerate the browser-safe modules and the Pages bundle" step; the unit
+# test "every data workflow regenerates the same files the push guard may
+# auto-resolve" (test/simulation.test.js) asserts that from the YAML and from
+# the generator scripts, and test/workflow-race-guard.sh scenarios 7/8
 # exercise the resolution logic itself.
 
 set -uo pipefail
@@ -72,7 +74,7 @@ BRANCH="${2:-${GITHUB_REF_NAME:-}}"
 BRANCH="${BRANCH:?no branch: pass it as \$2 or set GITHUB_REF_NAME}"
 REMOTE="${GIT_REMOTE:-origin}"
 REGENERATE_CMD="${REGENERATE_CMD:-node scripts/generate-history-module.mjs && node scripts/generate-desk-module.mjs && node scripts/render-docs.js && node build.js}"
-GENERATED_PATHS="${GENERATED_PATHS:-src/accumulated-history.js src/forecast-data.js src/fda-signal-data.js src/desk-data.js README.md VERIFICATION.md IRREGULARITIES.md index.html docs/}"
+GENERATED_PATHS="${GENERATED_PATHS:-src/accumulated-history.js src/forecast-data.js src/fda-signal-data.js src/mlb-signal-data.js src/desk-data.js README.md VERIFICATION.md IRREGULARITIES.md index.html docs/}"
 DEEPEN="${FETCH_DEEPEN:-100}"
 
 echo "push-with-race-guard: branch=${BRANCH} remote=${REMOTE}"

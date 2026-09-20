@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T03:02:18.063Z",
+  "generatedAt": "2026-09-20T05:19:32.235Z",
   "why": "Depth behind a candlestick is not published, so a replay must either model it or use a real captured ladder. This report runs the SAME roster over the SAME real bars twice and reports both, because the difference is a measure of how much the depth assumption matters.",
   "capturedDepthSource": {
     "marketsWithCapturedLadder": 30,
@@ -393,6 +393,17 @@
       },
       {
         "rank": 8,
+        "username": "GridMM_MultiTier",
+        "returnPct": 0.11,
+        "finalEquity": 100111.02,
+        "totalTrades": 411,
+        "maxDrawdownPct": 0.2,
+        "feesPaid": 29.49,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 0
+      },
+      {
+        "rank": 9,
         "username": "FOMC_ProbabilitySniper",
         "returnPct": 0,
         "finalEquity": 100004.32,
@@ -403,7 +414,7 @@
         "capturedDepthPct": 0
       },
       {
-        "rank": 9,
+        "rank": 10,
         "username": "ShockTiming_ModerateFav",
         "returnPct": 0,
         "finalEquity": 100000.03,
@@ -414,24 +425,13 @@
         "capturedDepthPct": 0
       },
       {
-        "rank": 10,
+        "rank": 11,
         "username": "FDALadder_Dominance",
         "returnPct": -0.01,
         "finalEquity": 99986.02,
         "totalTrades": 2,
         "maxDrawdownPct": 0.03,
         "feesPaid": 0.74,
-        "unfilledContracts": 0,
-        "capturedDepthPct": 0
-      },
-      {
-        "rank": 11,
-        "username": "GridMM_MultiTier",
-        "returnPct": -0.04,
-        "finalEquity": 99963.11,
-        "totalTrades": 30,
-        "maxDrawdownPct": 0.08,
-        "feesPaid": 8.8,
         "unfilledContracts": 0,
         "capturedDepthPct": 0
       },
@@ -679,6 +679,28 @@
       },
       {
         "rank": null,
+        "username": "MLBLead_InPlay",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
+        "username": "MLBTrail_Comeback",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
         "username": "MomTick_Micro",
         "returnPct": 0,
         "finalEquity": 100000,
@@ -751,6 +773,17 @@
       },
       {
         "rank": 6,
+        "username": "GridMM_MultiTier",
+        "returnPct": 0.11,
+        "finalEquity": 100111.02,
+        "totalTrades": 411,
+        "maxDrawdownPct": 0.2,
+        "feesPaid": 29.49,
+        "unfilledContracts": 0,
+        "capturedDepthPct": 100
+      },
+      {
+        "rank": 7,
         "username": "FOMC_ProbabilitySniper",
         "returnPct": 0,
         "finalEquity": 100004.32,
@@ -761,7 +794,7 @@
         "capturedDepthPct": 0
       },
       {
-        "rank": 7,
+        "rank": 8,
         "username": "ShockTiming_ModerateFav",
         "returnPct": 0,
         "finalEquity": 100000.03,
@@ -772,7 +805,7 @@
         "capturedDepthPct": 0
       },
       {
-        "rank": 8,
+        "rank": 9,
         "username": "FDALadder_Dominance",
         "returnPct": -0.01,
         "finalEquity": 99986.02,
@@ -781,17 +814,6 @@
         "feesPaid": 0.74,
         "unfilledContracts": 0,
         "capturedDepthPct": 0
-      },
-      {
-        "rank": 9,
-        "username": "GridMM_MultiTier",
-        "returnPct": -0.04,
-        "finalEquity": 99961.14,
-        "totalTrades": 30,
-        "maxDrawdownPct": 0.08,
-        "feesPaid": 8.89,
-        "unfilledContracts": 0,
-        "capturedDepthPct": 100
       },
       {
         "rank": 10,
@@ -1059,6 +1081,28 @@
       },
       {
         "rank": null,
+        "username": "MLBLead_InPlay",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
+        "username": "MLBTrail_Comeback",
+        "returnPct": 0,
+        "finalEquity": 100000,
+        "totalTrades": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "capturedDepthPct": null
+      },
+      {
+        "rank": null,
         "username": "MomTick_Micro",
         "returnPct": 0,
         "finalEquity": 100000,
@@ -1224,6 +1268,14 @@
       "capturedTrades": 2037
     },
     {
+      "username": "GridMM_MultiTier",
+      "modelledPct": 0.11,
+      "capturedPct": 0.11,
+      "deltaPct": 0,
+      "modelledTrades": 411,
+      "capturedTrades": 411
+    },
+    {
       "username": "FOMC_ProbabilitySniper",
       "modelledPct": 0,
       "capturedPct": 0,
@@ -1246,14 +1298,6 @@
       "deltaPct": 0,
       "modelledTrades": 2,
       "capturedTrades": 2
-    },
-    {
-      "username": "GridMM_MultiTier",
-      "modelledPct": -0.04,
-      "capturedPct": -0.04,
-      "deltaPct": 0,
-      "modelledTrades": 30,
-      "capturedTrades": 30
     },
     {
       "username": "CEOExit_Drift",
@@ -1329,6 +1373,22 @@
     },
     {
       "username": "HighProb_Scalp8095",
+      "modelledPct": 0,
+      "capturedPct": 0,
+      "deltaPct": 0,
+      "modelledTrades": 0,
+      "capturedTrades": 0
+    },
+    {
+      "username": "MLBLead_InPlay",
+      "modelledPct": 0,
+      "capturedPct": 0,
+      "deltaPct": 0,
+      "modelledTrades": 0,
+      "capturedTrades": 0
+    },
+    {
+      "username": "MLBTrail_Comeback",
       "modelledPct": 0,
       "capturedPct": 0,
       "deltaPct": 0,

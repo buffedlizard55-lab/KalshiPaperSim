@@ -40,6 +40,73 @@ const FDA_SIGNAL_DIR = path.join(ROOT, 'data', 'fda-signals');
 const FDA_SIGNAL_OUT_FILE = path.join(ROOT, 'src', 'fda-signal-data.js');
 /** Browser cap for FDA signal snapshots per subject (newest kept). */
 const MAX_BROWSER_FDA_SNAPSHOTS = 240;
+const MLB_SIGNAL_DIR = path.join(ROOT, 'data', 'mlb-signals');
+const MLB_SIGNAL_OUT_FILE = path.join(ROOT, 'src', 'mlb-signal-data.js');
+/** Browser cap for MLB date files (newest US-Eastern dates kept). */
+const MAX_BROWSER_MLB_DATES = 45;
+
+/**
+ * Compile data/mlb-signals/ (the point-in-time official MLB game-state archive
+ * grown by scripts/archive-mlb-signals.mjs) into src/mlb-signal-data.js, so
+ * the static browser build queries the SAME point-in-time archive the Node
+ * tools read. Same discipline as the FDA and forecast modules: rows verbatim,
+ * newest date files only up to the browser cap, drops stated in the header,
+ * and an absent archive still writes a `present: false` module so imports
+ * never fail — an MLB strategy with no archive abstains rather than guessing.
+ */
+function writeMlbSignalModule() {
+  const gamesDir = path.join(MLB_SIGNAL_DIR, 'games');
+  const dates = {};
+  let droppedDates = 0;
+  if (fs.existsSync(gamesDir)) {
+    const files = fs.readdirSync(gamesDir).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
+    droppedDates = Math.max(0, files.length - MAX_BROWSER_MLB_DATES);
+    for (const file of files.slice(-MAX_BROWSER_MLB_DATES)) {
+      const store = readJsonSafe(path.join(gamesDir, file));
+      if (!store || typeof store !== 'object' || !store.games) continue;
+      dates[file.replace(/\.json$/, '')] = {
+        date: store.date || file.replace(/\.json$/, ''),
+        what: store.what || null,
+        source: store.source || null,
+        captures: Array.isArray(store.captures) ? store.captures : [],
+        games: store.games
+      };
+    }
+  }
+  const teams = readJsonSafe(path.join(MLB_SIGNAL_DIR, '_teams.json'));
+  const present = Object.keys(dates).length > 0;
+  const gameCount = Object.values(dates).reduce((a, d) => a + Object.keys(d.games || {}).length, 0);
+  const rowCount = Object.values(dates).reduce((a, d) => a + Object.values(d.games || {}).reduce((b, g) => b + ((g.states || []).length), 0), 0);
+  const body = `/**
+ * KalshiPaperSim — Point-in-Time MLB Game-State Archive (GENERATED — do not edit)
+ * =====================================================================
+ * Compiled by scripts/generate-history-module.mjs from data/mlb-signals/, which
+ * scripts/archive-mlb-signals.mjs grows from the official MLB Stats API
+ * (statsapi.mlb.com/api/v1/schedule — MLB Advanced Media) on the mlb-signals
+ * workflow schedule.
+ *
+ * Each state row is VERBATIM what the archive derived from the official
+ * response at captured_at — the point-in-time record an MLB strategy is
+ * allowed to read. Read it only through src/mlb-signal-store.js, which
+ * refuses any row captured AFTER the decision time (the anti-lookahead rule).
+ *
+ * ${present ? `${Object.keys(dates).length} date file(s) · ${gameCount} game(s) · ${rowCount} state row(s)${droppedDates ? ` · ${droppedDates} oldest date file(s) not shipped to the browser` : ''}` : 'NO ARCHIVE YET — no captures exist; every MLB-signal-dependent strategy abstains until the archive exists.'} · generated ${new Date().toISOString()}
+ */
+
+export const MLB_SIGNAL_DATA = ${JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    present,
+    endpoint: 'https://statsapi.mlb.com/api/v1/schedule',
+    droppedOldestDates: droppedDates,
+    teams: teams && Array.isArray(teams.teams) ? { url: teams.url || null, captured_at: teams.captured_at || null, last_confirmed_at: teams.last_confirmed_at || null, teams: teams.teams } : null,
+    dates
+  }, null, 1)};
+`;
+  fs.mkdirSync(path.dirname(MLB_SIGNAL_OUT_FILE), { recursive: true });
+  fs.writeFileSync(MLB_SIGNAL_OUT_FILE, body);
+  const kb = (fs.statSync(MLB_SIGNAL_OUT_FILE).size / 1024).toFixed(1);
+  console.log(`✓ src/mlb-signal-data.js — ${Object.keys(dates).length} date file(s), ${gameCount} game(s), ${rowCount} state row(s), ${kb} KB${present ? '' : ' (no archive yet — MLB strategies abstain)'}`);
+}
 
 /**
  * Compile data/fda-signals/*.json (the point-in-time Drugs@FDA archive grown
@@ -455,6 +522,7 @@ export function getIntradayMarket(ticker, period = 60) {
   console.log(`✓ src/accumulated-history.js — ${tickers.length} market(s), ${totalBars} bar(s), ${kb} KB`);
   writeForecastModule();
   writeFdaSignalModule();
+  writeMlbSignalModule();
   for (const t of tickers) {
     const m = markets[t];
     console.log(

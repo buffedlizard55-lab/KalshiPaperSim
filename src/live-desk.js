@@ -239,6 +239,11 @@ function deskMarket(raw, asOfMs, data) {
     expirationTime: market.expiration_time || null,
     expectedExpirationTime: market.expected_expiration_time || null,
     notional: dollarsToNumber(market.notional_value_dollars) ?? 1,
+    // Bracket strikes from the captured market object (weather brackets carry
+    // floor_strike / cap_strike; tails carry only one). Null when absent —
+    // an entrant that needs them abstains rather than guessing.
+    floorStrike: Number.isFinite(Number(market.floor_strike)) && market.floor_strike !== null && market.floor_strike !== undefined ? Number(market.floor_strike) : null,
+    capStrike: Number.isFinite(Number(market.cap_strike)) && market.cap_strike !== null && market.cap_strike !== undefined ? Number(market.cap_strike) : null,
     priceRanges: market.price_ranges || null,
     priceLevelStructure: market.price_level_structure || null,
     grid: gridInfo.grid,
@@ -1566,7 +1571,7 @@ export function runDeskSession({
     coverage: strategyCoverage(strategies, results, universe)
   };
   desk.placedTrades = buildPlacedTrades(desk, universe);
-  desk.upcomingTrades = buildUpcomingTrades(strategies, universe, portfolios);
+  desk.upcomingTrades = buildUpcomingTrades(desk, universe);
   desk.audit = auditDesk(desk, universe);
   return desk;
 }
@@ -1663,108 +1668,120 @@ export function buildPlacedTrades(desk, universe) {
 }
 
 /**
- * Compile all upcoming trades strategies want to place on open event contracts.
- * Captures triggers, target pricing, proposed bid sizing, available ladder liquidity, and strategy rationales.
+ * UPCOMING TRADES — compiled ONLY from the desk's own records, never synthesised.
+ *
+ * Definition (stated because the first version of this function invented rows):
+ * an upcoming trade is a paper trade whose OUTCOME is still ahead of the desk's
+ * as-of instant — a filled position on a contract that has not closed yet
+ * (it awaits the exchange's real result), a resting maker order that only a
+ * LATER real quote can cross, or an order the entrant asked for that the
+ * captured ladder could not fill (the remainder is reported, not invented).
+ * Every field comes from an ORDER / FILL / REST / CANCEL / SETTLE record or
+ * from the captured market object — target price = the real fill VWAP or the
+ * real limit price, size = the real filled or requested count, liquidity =
+ * the real ladder depth at the capture.
+ *
+ * HISTORY (irregularity #53): the version merged in PR #17 fabricated
+ * "planned setups" for entrants that declared none — regex matches on the
+ * strategy id chose contracts, a default target price of 0.50 was assumed
+ * when no quote existed, and trigger text such as "Enter order when contract
+ * conditions align with <name>" was generated. None of that was a strategy
+ * decision. It was replaced by this record-derived list on 2026-09-20.
  */
-export function buildUpcomingTrades(strategies = [], universe, portfolios = new Map()) {
+export function buildUpcomingTrades(desk, universe) {
+  const records = desk?.records || [];
+  const asOfMs = Number(universe?.asOfMs) || Date.parse(universe?.asOf || '') || 0;
+  const byTicker = universe?.byTicker || new Map();
+  const orders = records.filter((r) => r.k === 'ORDER');
+  const fills = records.filter((r) => r.k === 'FILL');
+  const rests = records.filter((r) => r.k === 'REST');
+  const cancels = new Set(records.filter((r) => r.k === 'CANCEL').map((r) => r.orderId));
+  const settled = new Set(records.filter((r) => r.k === 'SETTLE').map((r) => `${r.strategy}|${r.ticker}|${r.side}`));
+  const fillsByOrder = new Map();
+  for (const f of fills) {
+    const list = fillsByOrder.get(f.orderId) || [];
+    list.push(f);
+    fillsByOrder.set(f.orderId, list);
+  }
+  const restByOrder = new Map(rests.map((r) => [r.orderId, r]));
+
   const upcoming = [];
-  const viewBase = {
-    asOf: universe.asOf,
-    asOfMs: universe.asOfMs,
-    markets: universe.markets || [],
-    byTicker: universe.byTicker || new Map(),
-    coverage: universe.coverage || {},
-    docs: universe.docs || null,
-    helpers: {
-      impliedProb: (price) => (Number.isFinite(price) ? Number(price) : null),
-      ticksBetween: (a, b, tick) => (tick > 0 ? Math.round(Math.abs(a - b) / tick) : null),
-      liquidity: (ticker) => {
-        const m = universe.byTicker?.get(ticker);
-        return m ? deskLiquidity(m) : null;
-      }
-    }
-  };
-
-  const openMarkets = (universe.markets || []).filter((m) => m.isOpen);
-
-  for (const strategy of strategies) {
-    const username = strategy.username || strategy.id;
-    const portfolio = portfolios.get(username) || { cash: 100000, positions: new Map() };
-    const view = { ...viewBase, cash: portfolio.cash, equity: portfolio.cash, startingCapital: 100000, positions: portfolio.positions };
-
-    let trades = [];
-    if (typeof strategy.upcoming === 'function') {
-      try {
-        trades = strategy.upcoming(view) || [];
-      } catch (err) {
-        console.warn(`[desk] strategy ${username}.upcoming() error:`, err?.message || err);
-      }
-    }
-
-    // Default synthesis if strategy does not implement upcoming() or returned empty
-    if (!trades.length) {
-      const watch = strategy.watch || null;
-      const matched = openMarkets.filter((m) => {
-        if (watch && (watch.test(m.seriesTicker) || watch.test(m.ticker))) return true;
-        if (/favourite/i.test(strategy.id) && (m.volume || 0) > 0) return true;
-        if (/longshot|cheap/i.test(strategy.id) && (m.touch?.yesAsk || 0.5) <= 0.15) return true;
-        if (/maker/i.test(strategy.id) && (m.tick || 0.01) > 0) return true;
-        return false;
+  for (const ord of orders) {
+    const market = byTicker.get(ord.ticker) || {};
+    const closeMs = Date.parse(market.closeTime || '');
+    const stillOpen = Number.isFinite(closeMs) ? closeMs > asOfMs : Boolean(market.isOpen);
+    if (!stillOpen) continue; // its outcome is not upcoming — it is in placedTrades / settlements
+    if (settled.has(`${ord.strategy}|${ord.ticker}|${ord.side}`)) continue;
+    const orderFills = fillsByOrder.get(ord.id) || [];
+    const filledCount = round2(orderFills.reduce((a, f) => a + (f.count || 0), 0));
+    const grossCost = round6(orderFills.reduce((a, f) => a + (f.gross || 0), 0));
+    const vwap = filledCount > 0 ? round4(grossCost / filledCount) : null;
+    const rest = restByOrder.get(ord.id) || null;
+    const side = ord.side || 'yes';
+    const action = ord.action || 'buy';
+    const liq = market.tradeable ? deskLiquidity(market, { action, side }) : null;
+    const depth = liq?.depth ?? (market.ladder ? (side === 'no' ? market.ladder.no?.totalCount : market.ladder.yes?.totalCount) : 0) ?? 0;
+    const volCap = market.tradeable ? round2((market.volume24h || market.volume || 0) * DESK_LIMITS.maxShareOfRealVolume) : 0;
+    const common = {
+      strategy: ord.strategy,
+      ticker: ord.ticker,
+      title: market.title || ord.ticker,
+      series: market.seriesTicker || String(ord.ticker).split('-')[0],
+      closeTime: market.closeTime || null,
+      expirationTime: market.expirationTime || null,
+      proposedAction: action,
+      proposedSide: side,
+      orderType: ord.type || 'market',
+      availableLiquidity: depth,
+      volumeCap: volCap,
+      ladderSourceUrl: ord.ladderUrl || market.ladderUrl || null,
+      marketSourceUrl: ord.marketUrl || market.marketUrl || null,
+      ladderCaptureAt: ord.ladderAt || market.ladderAt || null,
+      placedAt: ord.at,
+      orderId: ord.id,
+      rationale: ord.reason || null
+    };
+    if (filledCount > 0) {
+      upcoming.push({
+        id: `UPC-${ord.id}-POSITION`,
+        ...common,
+        targetPrice: vwap,
+        proposedCount: filledCount,
+        proposedNotional: round2(filledCount * vwap),
+        triggerType: 'AWAITING_SETTLEMENT',
+        triggerCondition: `Held to the exchange's real result: the contract closes ${market.closeTime || '(close time unknown)'} and pays $1.00 per contract if ${side.toUpperCase()} wins, $0.00 otherwise (no settlement fee).`,
+        status: 'OPEN_POSITION'
       });
-
-      for (const m of matched.slice(0, 3)) {
-        const touch = m.touch || m.quote || {};
-        const ask = touch.yesAsk ?? 0.50;
-        trades.push({
-          id: `UPC-${username}-${m.ticker}`,
-          ticker: m.ticker,
-          action: 'buy',
-          side: /tail|no/i.test(strategy.id) ? 'no' : 'yes',
-          type: 'limit',
-          targetPrice: ask,
-          count: Math.min(100, Math.max(10, Math.floor((portfolio.cash * 0.1) / Math.max(0.01, ask)))),
-          triggerType: /event|catalyst|game|favourite/i.test(strategy.id) ? 'CATALYST_EVENT' : 'PRICE_LIMIT',
-          triggerCondition: `Enter order when contract conditions align with ${strategy.name || username}`,
-          rationale: `${strategy.name || username}: planned order setup on open contract ${m.ticker}`
+    }
+    if (rest && !cancels.has(ord.id) && filledCount < (ord.count || 0)) {
+      upcoming.push({
+        id: `UPC-${ord.id}-RESTING`,
+        ...common,
+        orderType: 'limit',
+        targetPrice: rest.price,
+        proposedCount: round2((ord.count || 0) - filledCount),
+        proposedNotional: round2(((ord.count || 0) - filledCount) * rest.price),
+        triggerType: 'RESTING_MAKER',
+        triggerCondition: `Fills only when a LATER real quote crosses ${rest.price} (${rest.queueAhead ?? 0} contract(s) queued ahead at the capture); maker fee regime: ${rest.feeNote || rest.feeType || 'per the official schedule'}.`,
+        status: 'WORKING'
+      });
+    }
+    const unfilled = round2(Math.max(0, (ord.count || 0) - filledCount));
+    if (!rest && unfilled > 0 && (ord.type || 'market') === 'market') {
+      const touch = ord.quote || {};
+      const ref = side === 'no' ? (touch.yesBid !== null && touch.yesBid !== undefined ? round4(1 - touch.yesBid) : null) : touch.yesAsk ?? null;
+      if (ref !== null && ref > 0 && ref < 1) {
+        upcoming.push({
+          id: `UPC-${ord.id}-UNFILLED`,
+          ...common,
+          targetPrice: ref,
+          proposedCount: unfilled,
+          proposedNotional: round2(unfilled * ref),
+          triggerType: 'UNFILLED_AT_CAPTURE',
+          triggerCondition: `The entrant asked for ${ord.count} at the cut-off and the captured ladder filled ${filledCount}; the remaining ${unfilled} is NOT placed against invented liquidity — it can only be re-quoted at the next real capture.`,
+          status: 'UNFILLED'
         });
       }
-    }
-
-    for (const ut of trades) {
-      const market = universe.byTicker?.get(ut.ticker) || {};
-      const side = ut.side || 'yes';
-      const action = ut.action || 'buy';
-      const liq = market.tradeable ? deskLiquidity(market, { action, side }) : null;
-      const volCap = market.tradeable ? round2((market.volume24h || market.volume || 1000) * DESK_LIMITS.maxShareOfRealVolume) : 0;
-      const touch = market.touch || {};
-      const targetPrice = ut.targetPrice ?? (side === 'no' ? touch.noAsk : touch.yesAsk) ?? 0.50;
-      const proposedCount = ut.count || Math.min(volCap || 500, 100);
-      const proposedNotional = round2(proposedCount * targetPrice);
-
-      upcoming.push({
-        id: ut.id || `UPC-${username}-${ut.ticker}`,
-        strategy: username,
-        ticker: ut.ticker,
-        title: market.title || ut.ticker,
-        series: market.seriesTicker || String(ut.ticker).split('-')[0],
-        closeTime: market.closeTime || null,
-        expirationTime: market.expirationTime || null,
-        proposedAction: action,
-        proposedSide: side,
-        orderType: ut.type || 'limit',
-        targetPrice,
-        proposedCount,
-        proposedNotional,
-        availableLiquidity: liq?.depth ?? (market.ladder ? (side === 'no' ? market.ladder.no?.totalCount : market.ladder.yes?.totalCount) : 0) ?? 0,
-        volumeCap: volCap,
-        triggerType: ut.triggerType || 'PRICE_LIMIT',
-        triggerCondition: ut.triggerCondition || `Trigger order when ${side.toUpperCase()} price reaches ${targetPrice}`,
-        rationale: ut.rationale || ut.reason || `${strategy.title || username}: seeks high-return execution on open contract ${ut.ticker}`,
-        status: ut.status || 'READY',
-        ladderSourceUrl: market.ladderUrl || `https://external-api.kalshi.com/trade-api/v2/markets/${ut.ticker}/orderbook`,
-        marketSourceUrl: market.marketUrl || `https://external-api.kalshi.com/trade-api/v2/markets/${ut.ticker}`,
-        ladderCaptureAt: market.ladderAt || null
-      });
     }
   }
   return upcoming;

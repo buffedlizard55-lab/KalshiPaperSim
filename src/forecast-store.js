@@ -23,6 +23,22 @@
 
 import { FORECAST_DATA } from './forecast-data.js';
 
+/**
+ * The calendar date a KXHIGH* event measures, parsed from the event ticker
+ * (KXHIGHNY-26SEP07 → '2026-09-07'). Verified against every captured weather
+ * market: the title says "…on Sep 7, 2026?" and close_time is 05:00Z the next
+ * day, so the ticker's date is the measurement day. Lives here (not in the
+ * runner) so the browser desk can use it without loading the history module.
+ */
+const MONTHS = { JAN: '01', FEB: '02', MAR: '03', APR: '04', MAY: '05', JUN: '06', JUL: '07', AUG: '08', SEP: '09', OCT: '10', NOV: '11', DEC: '12' };
+export function weatherEventDate(eventTicker) {
+  const m = /^KXHIGH\w*-(\d{2})([A-Z]{3})(\d{2})(?:-|$)/.exec(String(eventTicker || ''));
+  if (!m) return null;
+  const month = MONTHS[m[2]];
+  if (!month) return null;
+  return `20${m[1]}-${month}-${m[3]}`;
+}
+
 /** Every archived location, keyed as in data/forecasts/. */
 export function forecastLocations() {
   const locations = (FORECAST_DATA && FORECAST_DATA.locations) || {};

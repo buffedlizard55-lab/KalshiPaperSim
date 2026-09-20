@@ -140,6 +140,23 @@
         "_why_this": "The three highest-volume 15-minute crypto series (KXBTC15M 18.15B, KXETH15M 972M, KXSOL15M 347M lifetime contracts) at one-minute resolution \u2014 the same treatment KXGOLD15M already gets. These are the fastest-settling markets on the exchange (15 minutes), so they produce the most independent settlement events per day for the micro flight."
       },
       {
+        "name": "minute-mlb-game-lines",
+        "period": 1,
+        "status": "all",
+        "series": [
+          "KXMLBGAME"
+        ],
+        "days": 2,
+        "max_backfill_days": 3,
+        "max_bars": 480,
+        "min_volume": 1000,
+        "max_markets": 24,
+        "with_books": true,
+        "with_market": true,
+        "min_interval_ms": 300,
+        "_why_this": "ROADMAP Next #3 (the sports half of the point-in-time signal archive, 2026-09-20): the KXMLBGAME contracts that the official MLB game-state archive (data/mlb-signals/, statsapi.mlb.com every 20 minutes) can be joined to by ticker (fact V113). In-play repricing happens in minutes, so the hourly block (hourly-sports-game-lines) is too coarse to replay it: this block ingests the same series at period_interval=1. status=all ingests FINALIZED games with the exchange's real result; days=2 covers the games the archive observed since the previous run; max_bars=480 keeps the newest eight hours per contract (pre-game + the game itself); the top-24-by-volume cap bounds the pass (~72 requests). Contracts that finished before the 2-day window come back with 0 bars and are recorded as not replayable, never guessed."
+      },
+      {
         "name": "hourly-macro-settled",
         "period": 60,
         "status": "all",

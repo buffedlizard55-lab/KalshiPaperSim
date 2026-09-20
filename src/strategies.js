@@ -223,6 +223,77 @@ function round6Local(v) {
  */
 const MIN_DOMINANCE_EDGE = 0.03;
 
+/**
+ * TANGOTIGER "CHANCE OF WINNING A BASEBALL GAME" (RESEARCH_SOURCES R18).
+ * https://tangotiger.net/innwin.html — the home team's chance of winning at
+ * the START of each half-inning by home run differential, "based on
+ * probability theory" under the page's stated assumptions: "Both teams are
+ * equals at every point in the game. No Home Field Advantage exists. Based on
+ * a 4.3 Runs-per-game environment." Transcribed 2026-09-20 for innings 6–9
+ * (the only rows the two MLB entries read); differentials −4..+4, columns in
+ * that order. This is a THEORETICAL REFERENCE the strategies compare a market
+ * price against — it is not data about any real game, and it never enters a
+ * result except through a fill against real captured bars.
+ */
+export const TANGO_HOME_WIN_EXPECTANCY = Object.freeze({
+  source: 'https://tangotiger.net/innwin.html',
+  assumptions: 'Both teams are equals at every point in the game. No Home Field Advantage exists. Based on a 4.3 Runs-per-game environment.',
+  differentials: [-4, -3, -2, -1, 0, 1, 2, 3, 4],
+  rows: {
+    '6:Top': [0.073, 0.127, 0.21, 0.333, 0.5, 0.667, 0.79, 0.873, 0.927],
+    '6:Bottom': [0.087, 0.15, 0.246, 0.386, 0.574, 0.747, 0.853, 0.919, 0.957],
+    '7:Top': [0.052, 0.097, 0.174, 0.299, 0.5, 0.701, 0.826, 0.903, 0.948],
+    '7:Bottom': [0.063, 0.116, 0.207, 0.353, 0.587, 0.795, 0.894, 0.947, 0.974],
+    '8:Top': [0.031, 0.064, 0.128, 0.247, 0.5, 0.753, 0.872, 0.936, 0.969],
+    '8:Bottom': [0.038, 0.078, 0.155, 0.297, 0.605, 0.872, 0.943, 0.975, 0.99],
+    '9:Top': [0.013, 0.03, 0.07, 0.158, 0.5, 0.842, 0.93, 0.97, 0.987],
+    // The page's bottom-9th row is blank for a home lead (the game is over)
+    // and reads 0.016/0.038/0.086/0.194/0.634 for −4..0. Leads are filled
+    // with 1.0 ONLY so the lookup is total; a Final game never reaches the
+    // rule (the entries require abstractGameState === 'Live').
+    '9:Bottom': [0.016, 0.038, 0.086, 0.194, 0.634, 1, 1, 1, 1]
+  }
+});
+
+/**
+ * The theoretical win probability of the YES team from an archived state row.
+ * `inningState` Top/Bottom map to the table's half-inning rows; 'Middle' (the
+ * break after the top half) reads the Bottom row, 'End' (after the bottom
+ * half) reads the next inning's Top row — both are the START of the half that
+ * comes next, which is what the table tabulates. Innings after the 9th reuse
+ * the 9th rows; differentials beyond ±4 clamp to the ±4 column. Returns null
+ * for anything outside innings 6+, so the entries abstain early in a game.
+ */
+export function tangoYesWinProbability({ yesIsHome, inning, inningState, homeDifferential }) {
+  if (!Number.isFinite(Number(inning)) || !Number.isFinite(Number(homeDifferential))) return null;
+  let inn = Number(inning);
+  let half = String(inningState || '');
+  if (half === 'Middle') half = 'Bottom';
+  else if (half === 'End') {
+    half = 'Top';
+    inn += 1;
+  }
+  if (half !== 'Top' && half !== 'Bottom') return null;
+  if (inn < 6) return null;
+  const rowKey = `${Math.min(inn, 9)}:${half}`;
+  const row = TANGO_HOME_WIN_EXPECTANCY.rows[rowKey];
+  if (!row) return null;
+  const d = Math.max(-4, Math.min(4, Math.round(Number(homeDifferential))));
+  const pHome = row[TANGO_HOME_WIN_EXPECTANCY.differentials.indexOf(d)];
+  if (!Number.isFinite(pHome)) return null;
+  return yesIsHome ? pHome : round6Local(1 - pHome);
+}
+
+/** The archived MLB state is usable only when it is LIVE and freshly observed. */
+const MLB_MAX_STALE_SECONDS = 30 * 60;
+function usableMlbSignal(signal) {
+  if (!signal || signal.kind !== 'mlb-game-state') return false;
+  if (signal.abstractGameState !== 'Live') return false;
+  if (!Number.isFinite(Number(signal.lead)) || signal.lead === null) return false;
+  if (!Number.isFinite(Number(signal.staleSeconds)) || signal.staleSeconds > MLB_MAX_STALE_SECONDS) return false;
+  return true;
+}
+
 export const STRATEGIES = [
   {
     ...BASE,
@@ -2759,16 +2830,16 @@ export const STRATEGIES = [
     title: 'The Leap Index Breakout Momentum',
     category: 'Index / Momentum Breakout',
     tagline:
-      'Aggressive convex momentum breakout on index and crypto strikes seeking maximum percentage return (TradingView The Leap competition archetype, MasterSite S03).',
+      'Buys a cheap out-of-the-money index or crypto strike (YES ask 0.05–0.20) after three rising daily yes_ask closes and holds it for the convex payoff. Named after the S03 TradingView The Leap archetype; nothing from that project is read.',
     sizingPct: 0.6,
     maxParticipation: 3,
     designedAt: '2026-09-19',
-    designSource: 'TradingView The Leap competition research (MasterSite S03) applied to Kalshi index and crypto range strikes',
+    designSource: 'Original momentum-longshot design of this repository, NAMED for the MasterSite S03 TradingView The Leap project; The Leap publishes contest facts and verdicts, not strategy rules or a feed, so nothing from it enters the rule',
     designSourceUrl: 'https://buffedlizard55-lab.github.io/TradingViewTheLeap/',
     sourceNote:
-      'The Leap (AMP Futures competition): champions achieve high returns by aggressive directional breakout momentum on index futures. Recreated on Kalshi KXNASDAQ100Y, KXINXY, and KXBTCY daily strikes by buying cheap OTM brackets (YES ask 0.05–0.20) on 3-day positive momentum runs.',
+      'What the rule reads: the contract\'s own daily yes_ask closes (four bars) on KXNASDAQ100Y / KXINXY / KXBTCY strikes. No futures price, no contest data. The first merged wording asserted how The Leap champions trade; that claim was unverified and was removed (irregularity #53). The S03 ledger entry records that its own research layer reports no tested strategy with a positive daily compounding rate.',
     thesis:
-      'DESIGN INTENT: in a competition judged solely on highest return without risk management limits, convex out-of-the-money strikes provide 5x–20x asymmetric payoff. When an underlying index displays 3 consecutive bars of rising close prices, buying cheap OTM brackets captures explosive equity expansion without dilution.',
+      'DESIGN INTENT: in a competition judged solely on highest return, a 5–20¢ strike that resolves in the money pays 5×–20×. The hypothesis is that three consecutive rising yes_ask closes mark a strike the market is re-rating upward; buy it and hold. The favourite–longshot bias (R02/R05) predicts the opposite — that cheap strikes are overpriced — so the measured result is informative either way. Nothing here is a claim about how any Leap participant trades.',
     rules: {
       entry: 'When contract YES ask is 0.05 to 0.20 and closing price has risen over the previous 3 daily bars: buy YES, once per market.',
       sizing: '60% of available cash, capped at 3x visible depth.',
@@ -2798,7 +2869,7 @@ export const STRATEGIES = [
           type: 'buy',
           side: 'YES',
           count,
-          reason: `The Leap breakout: 3 consecutive rising bars with cheap OTM ask ${ask.toFixed(2)} → buy YES for convex upside`
+          reason: `cheap OTM strike re-rating: 3 consecutive rising daily yes_ask closes, ask ${ask.toFixed(2)} in 0.05–0.20 → buy YES, hold for the convex payoff (price-only rule)`
         }
       ];
     }
@@ -2813,21 +2884,21 @@ export const STRATEGIES = [
     flight: 'daily',
     preferredPeriodMinutes: 1440,
     universe: ['TESLACEOCHANGE', 'JPMCEOCHANGE', 'KXOPENAICEOCHANGE', 'KXAAPLCEOCHANGE', 'KXFDAAPPROVE', 'KXFDAAPPROVALDATECMPS'],
-    title: 'Insider Filing Sentiment Drift',
-    category: 'Corporate Events / Form 4 Drift',
+    title: 'Company-Event YES Drift Fade — price-only (Form 4 archive still absent)',
+    category: 'Corporate Events / Longshot fade (price-only)',
     tagline:
-      'Fades unconfirmed corporate departure rumors and trades governance event persistence (MasterSite S02 Insider-trades).',
+      'Buys NO on a company-event contract whose cheap YES ask has stopped rising over three daily bars. PRICE-ONLY: no SEC Form 4 data is read — the S02 Insider-trades signal is still a candidate (no point-in-time filing archive exists here). The username records the signal this rule is meant to receive.',
     sizingPct: 0.45,
     maxParticipation: 2,
     designedAt: '2026-09-19',
-    designSource: 'SEC Form 4 Insider-trades dashboard (MasterSite S02) applied to Kalshi company-event and CEO-change contracts',
+    designSource: 'Original price-only design of this repository, NAMED for the MasterSite S02 Insider-trades project it is meant to be upgraded with; nothing from that project (or from SEC EDGAR) is read',
     designSourceUrl: 'https://buffedlizard55-lab.github.io/Insider-trades/',
     sourceNote:
-      'SEC Form 4 filings reflect insider confidence. When market speculation prices high departure odds on executive retention contracts without insider liquidation, the contract drifts down: buy NO on cheap recovery.',
+      'What the rule actually reads: the contract\'s own daily yes_ask closes (three bars). What it does NOT read: any SEC Form 4 filing, insider transaction or holding — the honesty contract forbids describing a signal the code does not have (the first merged wording did; irregularity #53). The S02 ledger entry states what a real Form 4 archive would need.',
     thesis:
-      'DESIGN INTENT: corporate governance and executive departure markets suffer from persistent public speculation that inflates YES probability. When insider filings show executive equity retention, buying NO at 0.70–0.90 (YES 0.10–0.30) provides steady positive drift into settlement.',
+      'DESIGN INTENT: long-dated company-event YES contracts (CEO departures, dated FDA approvals) are longshots, and the favourite–longshot bias (R02/R05) says a cheap YES tends to be overpriced; when its ask has stopped rising for three daily bars, buying NO at 0.65–0.90 and holding to settlement collects the premium if the event does not happen. This is a HYPOTHESIS measured on real bars, not an observed drift. It has no insider input of any kind.',
     rules: {
-      entry: 'On corporate event and CEO contracts: buy NO when YES ask is between 0.10 and 0.35 and closing price did not increase over 3 bars.',
+      entry: 'On company-event and CEO-change contracts: buy NO when the YES ask close is between 0.10 and 0.35 and has not increased over the last 3 daily bars (c0 ≤ c1 ≤ c2). Once per market. No external data.',
       sizing: '45% of available cash, capped at 2x visible depth.',
       exit: 'None — hold to the exchange\'s real settlement.',
       riskManagement: 'NONE (by mandate)'
@@ -2854,7 +2925,7 @@ export const STRATEGIES = [
           type: 'buy',
           side: 'NO',
           count,
-          reason: `Insider drift: governance contract YES ask ${yesAsk.toFixed(2)} drifting downward over 3 bars → buy NO (insider retention confidence), hold to settlement`
+          reason: `price-only fade: YES ask ${yesAsk.toFixed(2)} in 0.10–0.35 and not rising over 3 daily bars → buy NO, hold to settlement (no insider data is read)`
         }
       ];
     }
@@ -2876,10 +2947,10 @@ export const STRATEGIES = [
     sizingPct: 0.5,
     maxParticipation: 2,
     designedAt: '2026-09-19',
-    designSource: 'MasterSite S07 Ncaa-football-alerts + favourite-longshot bias (R02/R06 pattern) on 27 verified NCAAF markets',
+    designSource: 'Favourite–longshot bias (R02/R05 pattern) on the NCAA football series the store holds; NAMED for the MasterSite S07 Ncaa-football-alerts project, whose live-score feed is NOT read (not archived here point-in-time)',
     designSourceUrl: 'https://github.com/buffedlizard55-lab/ncaa-football-alerts',
     sourceNote:
-      'NCAAF game lines feature high public liquidity with sharp market consensus. Top tier college football favourites (YES ask 0.60 to 0.85) settle YES at a frequency exceeding implied probability.',
+      'COMPUTED SAMPLE (from the store on this build): ' + classSampleCaption(STORE_FACTS_60M, ['KXNCAAFGAME', 'KXNCAAFSPREAD', 'KXNCAAFTOTAL']) + '. The rule reads only the contract\'s own hourly yes_ask. Whether 0.60–0.85 favourites settle YES more often than their price implies is the HYPOTHESIS this entry measures on those bars — the first merged wording stated it as a fact, without a source; that sentence was removed (irregularity #53).',
     thesis:
       'DESIGN INTENT: college football match outcomes have wide talent disparities. Buying game favourites in the first 4 hourly bars and holding to final settlement captures the favourite premium.',
     rules: {
@@ -2922,43 +2993,48 @@ export const STRATEGIES = [
     title: 'Multi-Level AMM Liquidity Grid',
     category: 'Market Making / Liquidity Provision',
     tagline:
-      'Rests passive bid ladders across both sides to capture maker spread rebate and avoid taker fees (YouTube & X AMM tutorials, R16).',
+      'When the captured spread is ≥ 3¢, rests ONE maker bid one tick above the best bid and offers every fill back three ticks above cost — maker orders only, so the official maker fee regime applies. R16 records the genre this design is named after; the source could not be attributed to a specific video or post (irregularity #53).',
     sizingPct: 0.35,
     maxParticipation: 3,
     designedAt: '2026-09-19',
     designSource: 'YouTube and X prediction market AMM tutorials (RESEARCH_SOURCES R16)',
-    designSourceUrl: 'https://www.youtube.com/results?search_query=kalshi+market+maker+strategy',
+    designSourceUrl: 'https://www.youtube.com/results?search_query=kalshi+market+maker+strategy', // a SEARCH page, not a source — see R16 and irregularity #53
     sourceNote:
-      'AMM grid strategies rest passive maker orders on both YES and NO sides when spreads widen to ≥ 3¢, taking advantage of Kalshi fee schedules (0% maker fee on fee-free series, or discounted maker rates).',
+      'The design is this repository\'s own reading of a well-known genre (passive maker grids on wide spreads); R16 could not attribute it to a specific tutorial, so no claim from any tutorial is repeated here. What is real: the maker fee regime per series comes from the captured fee schedule (KXBTCY fee-free; index series per data/discovered/series-fees.json), and every resting order is filled only when a LATER real bar trades through it (src/backtest-replay.js), capped by that bar\'s real volume.',
     thesis:
-      'DESIGN INTENT: prediction market order books fluctuate with liquidity demand. By resting limit orders inside the spread, the maker captures the spread edge when crossed and flips the position at favorable ticks.',
+      'DESIGN INTENT: on a wide spread a resting bid one tick inside the touch is filled only by a seller who crosses to it; the fill is then offered back three ticks higher. The edge, if any, is the spread minus the maker fee. NOTE ON THE FIRST MERGED VERSION: its rules said "rest a limit buy" while its code sent a taker market buy at the ask with no exit — the code was rewritten on 2026-09-20 to do what the rules say (irregularity #53).',
     rules: {
-      entry: 'When YES ask − YES bid ≥ 0.03: rest limit buy on YES at bid + 1 tick, once per market.',
-      sizing: '35% of cash, capped at visible depth.',
-      exit: 'Sell at fill price + 3 ticks when achievable, or hold.',
+      entry: 'When the captured YES ask − YES bid ≥ 0.03 and nothing is held or resting on the market: rest ONE maker bid on YES at best bid + 1 tick (must remain below the ask).',
+      sizing: '35% of cash at the resting price; a resting order fills only up to the real traded volume of the bar that crosses it.',
+      exit: 'Every filled lot is offered as a maker ask at cost + 3 ticks; unfilled offers ride to the exchange settlement.',
       riskManagement: 'NONE (by mandate)'
     },
     decide(ctx) {
-      const { candle, portfolio, ticker } = ctx;
-      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
-      if (held) return [];
-
+      const { candle, book, portfolio, ticker } = ctx;
+      const actions = [];
+      const tick = book.tick || 0.01;
+      // 1. Every held lot is offered back to the book as a MAKER offer three
+      //    ticks above its cost (never a taker sale) — the "flip" leg.
+      for (const pos of [...portfolio.positions.values()].filter((p) => p.ticker === ticker && p.side === 'YES' && p.count > 0)) {
+        const offer = snapToGrid(Math.min(0.99, (pos.avgPrice || pos.avgCost || 0) + 3 * tick), tick);
+        if (book.restingOrders.some((o) => o.direction === 'ask' && o.outcome === 'YES' && o.status === 'resting' && Math.abs(o.price - offer) < 1e-9)) continue;
+        actions.push({ type: 'limit', direction: 'ask', side: 'YES', count: pos.count, price: offer, reason: `maker offer at cost + 3 ticks (${offer})` });
+      }
+      // 2. When the captured spread is ≥ 3¢, rest ONE maker bid one tick above
+      //    the best bid (still inside the spread, never crossing the ask).
       const bid = candle.yesBid.close;
       const ask = candle.yesAsk.close;
-      if (bid === null || ask === null || ask <= bid) return [];
+      if (bid === null || ask === null || ask <= bid) return actions;
       const spread = round6Local(ask - bid);
-      if (spread < 0.03) return [];
-
-      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
-      if (count <= 0) return [];
-      return [
-        {
-          type: 'buy',
-          side: 'YES',
-          count,
-          reason: `R16 AMM grid: spread ${spread.toFixed(2)} ≥ 0.03 → rest maker bid at inside spread to capture liquidity edge`
-        }
-      ];
+      if (spread < 0.03) return actions;
+      const restingBids = book.restingOrders.filter((o) => o.direction === 'bid' && o.outcome === 'YES' && o.status === 'resting').length;
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (restingBids > 0 || held) return actions;
+      const price = snapToGrid(bid + tick, tick);
+      if (!(price < ask)) return actions;
+      const count = Math.floor(((portfolio.cash * this.sizingPct) / price) * 100) / 100;
+      if (count > 0) actions.push({ type: 'limit', direction: 'bid', side: 'YES', count, price, reason: `spread ${spread.toFixed(2)} ≥ 0.03 → rest maker bid one tick above the best bid (${price}); fills only if a later real bar trades through it` });
+      return actions;
     }
   },
 
@@ -2974,16 +3050,16 @@ export const STRATEGIES = [
     title: 'FOMC Implied Probability Sniper',
     category: 'Macro / Interest Rates',
     tagline:
-      'Snipes mispriced interest rate cut strike brackets on KXFED series ahead of FOMC rate decision dates (X/Twitter macro threads, R17).',
+      'Buys ANY KXFED bracket whose daily YES ask closes between 0.30 and 0.65 and holds it to the FOMC settlement. It does not identify a modal strike and reads no futures-implied probability; R17 records the genre this design is named after (the source could not be attributed — irregularity #53).',
     sizingPct: 0.45,
     maxParticipation: 2,
     designedAt: '2026-09-19',
     designSource: 'X (Twitter) and Reddit macro trading community discussions on Kalshi KXFED rate cut pricing (RESEARCH_SOURCES R17)',
-    designSourceUrl: 'https://x.com/search?q=kalshi+fed+rate+cut',
+    designSourceUrl: 'https://x.com/search?q=kalshi+fed+rate+cut', // a SEARCH page, not a source — see R17 and irregularity #53
     sourceNote:
-      'CME FedWatch implied futures rates often diverge from Kalshi KXFED contract pricing. When the modal rate cut strike is priced below 0.65, snipers buy YES anticipating repricing towards consensus.',
+      'What the rule reads: the KXFED contract\'s own daily yes_ask close. What it does NOT read: CME FedWatch, any futures price, or any external probability — the first merged wording asserted a FedWatch divergence and a "modal strike" the code never computes; both were removed (irregularity #53). The KXFED market rules and the exchange\'s settlement are the only inputs.',
     thesis:
-      'DESIGN INTENT: Kalshi KXFED contracts settle directly on the Federal Reserve target rate upper bound. Sniping modal strike brackets when priced cheap provides high-probability settlement payout.',
+      'DESIGN INTENT: a Fed-decision bracket asked at 0.30–0.65 is the market\'s middle ground; the hypothesis is that these mid-priced brackets resolve YES more often than their price implies (the mirror image of the favourite–longshot bias at the centre of the distribution). Because every bracket in that band is bought, the entry can hold mutually exclusive brackets of the same meeting — that is a property of the rule, measured, not a claim of edge.',
     rules: {
       entry: 'On KXFED markets: buy YES when YES ask is 0.30 to 0.65, once per market.',
       sizing: '45% of available cash, capped at 2x visible depth.',
@@ -3005,7 +3081,133 @@ export const STRATEGIES = [
           type: 'buy',
           side: 'YES',
           count,
-          reason: `R17 FOMC sniper: KXFED strike priced at ${ask.toFixed(2)} (0.30–0.65 modal band) → buy YES, hold to FOMC settlement`
+          reason: `KXFED bracket asked ${ask.toFixed(2)} inside 0.30–0.65 → buy YES, hold to the exchange's FOMC settlement (price-only rule; no futures-implied input)`
+        }
+      ];
+    }
+  },
+
+  /* ════════════════════════════════════════════════════════════════════ *
+   * 2026-09-20 (session 01a0bca9) — THE SPORTS HALF OF THE POINT-IN-TIME
+   * SIGNAL ARCHIVE (ROADMAP Next #3). Both entries read ctx.signal from the
+   * official MLB Stats API archive (data/mlb-signals/, statsapi.mlb.com,
+   * captured every 20 minutes by .github/workflows/mlb-signals.yml) joined to
+   * the KXMLBGAME contract by first-pitch instant + away code + home code
+   * (fact V113), and compare the market's price with Tangotiger's
+   * equal-teams win-expectancy table (R18). They are FORWARD TESTS BY
+   * CONSTRUCTION: no state row exists before the first workflow run, so every
+   * earlier bar abstains and the entries stay unranked until the archive
+   * overlaps a captured 1-minute KXMLBGAME bar.
+   * ════════════════════════════════════════════════════════════════════ */
+
+  {
+    ...BASE,
+    id: 'mlb_lead_inplay',
+    username: 'MLBLead_InPlay',
+    handle: '@MLBLead_InPlay',
+    avatar: '⚾',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXMLBGAME'],
+    title: 'Official-Linescore Late Lead vs Market (point-in-time)',
+    category: 'Sports / Model vs Market (in-play)',
+    tagline:
+      'From the 6th inning on, buys the side the OFFICIAL archived linescore shows leading by 2+ runs whenever the market still asks less than the equal-teams theoretical win probability for that half-inning and lead. Abstains without a fresh point-in-time state row.',
+    sizingPct: 0.4,
+    maxParticipation: 3,
+    designedAt: '2026-09-20',
+    designSource:
+      'Original design in this repository: the point-in-time external-signal architecture of ForecastEdge_Weather applied to the official MLB Stats API game state (data/mlb-signals/, grown by .github/workflows/mlb-signals.yml), with Tangotiger\'s published win-expectancy table (RESEARCH_SOURCES R18) as the theoretical reference price',
+    designSourceUrl: 'https://tangotiger.net/innwin.html',
+    sourceNote:
+      'SIGNAL: GET statsapi.mlb.com/api/v1/schedule?sportId=1&hydrate=linescore,probablePitcher,team — MLB Advanced Media\'s official Stats API; status (Preview/Live/Final), current inning, inning state and runs per side are archived as one row per change with the instant they were first seen (V111/V112). JOIN: the KXMLBGAME ticker\'s US-Eastern first pitch, away code and home code must all equal the official game\'s (verified on all 9 finalized contracts in the store, V113). REFERENCE: tangotiger.net/innwin.html, "the chance of the home team winning, at the start of each inning … based on probability theory", assumptions "Both teams are equals … No Home Field Advantage exists … 4.3 Runs-per-game" — e.g. home +2 at the top of the 6th = 0.790, top of the 7th = 0.826, top of the 8th = 0.872. KXMLBGAME carries the REAL fee multiplier 0.5 (data/discovered/series-fees.json).',
+    thesis:
+      'DESIGN INTENT: a two-run lead in the late innings is worth roughly 0.79–0.94 to the leading side under the equal-teams theory. If the market still asks LESS than that number while the official linescore already shows the lead, buy the leader and hold to the exchange\'s own settlement — the strategy trades the gap between the archived official state and the contract price, never a prediction of its own. ' +
+      'POINT-IN-TIME RULE: ctx.signal is the newest archived state captured at or before the bar (src/mlb-signal-store.js); the archive\'s freshest capture instant must be within 30 minutes of the bar, otherwise the observation is stale and the entry abstains. The current box score is never substituted for a past decision. ' +
+      'FORWARD TEST BY CONSTRUCTION: the archive begins with the first mlb-signals run on 2026-09-20, and the 1-minute KXMLBGAME bars (ingest block minute-mlb-game-lines) begin with the next ingest, so every earlier bar honestly produces no trades; the entry stays unranked (0 fills, reason published) until archive and bars overlap. ' +
+      'HONEST LIMITS, stated up front: (1) the table assumes equal teams with no home-field advantage — a real favourite\'s lead is worth more, a real underdog\'s less; (2) the archive samples the game every ~20 minutes, so the state it shows can be up to 20 minutes (plus queue delay) behind the field and the market usually knows first — that lag is exactly what the entry measures; (3) the table is for the START of a half-inning with bases empty; a mid-inning capture with runners on is approximated by that start value.',
+    rules: {
+      entry:
+        'ctx.signal (kind mlb-game-state) shows abstractGameState Live, inning ≥ 6, the YES team leading by ≥ 2 runs, and staleSeconds ≤ 1800. Let p = Tangotiger equal-teams win probability of the YES team for that half-inning and home differential. Buy YES when the YES ask ≤ p − 0.02. Once per market.',
+      sizing: '40% of available cash per confirmed contract, capped at 3x visible ask depth.',
+      exit: 'None — hold to the exchange\'s real settlement ($1.00/$0.00 at the market\'s real result).',
+      noSignalRule: 'signal === null (no archived state captured by this bar, ticker not joinable to an official game, or the archive is dark) → abstain. Never substitute a later capture for an earlier decision.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker, signal } = ctx;
+      if (!usableMlbSignal(signal)) return [];
+      if (Number(signal.inning) < 6 || Number(signal.lead) < 2) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const p = tangoYesWinProbability(signal);
+      if (p === null) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > p - 0.02) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason: `official linescore (captured ${signal.capturedAt}, observed ${signal.observedAt}) shows ${signal.yesTeam} ${signal.runsYes}-${signal.runsOpp} ${signal.inningState} ${signal.inning} (${signal.lead >= 0 ? '+' : ''}${signal.lead}) → equal-teams win probability ${p.toFixed(3)} vs ask ${ask} — buy YES, held to the exchange's real result`
+        }
+      ];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'mlb_trail_comeback',
+    username: 'MLBTrail_Comeback',
+    handle: '@MLBTrail_Comeback',
+    avatar: '🧢',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXMLBGAME'],
+    title: 'Official-Linescore One-Run Deficit, Bought Below Theory (point-in-time)',
+    category: 'Sports / Favourite–Longshot control (in-play)',
+    tagline:
+      'The longshot side of the same archive: from the 7th inning on, buys the team the official linescore shows trailing by exactly one run when the market asks less than the equal-teams theoretical comeback probability. The favourite–longshot literature (R02/R05) predicts this loses; the ledger will say.',
+    sizingPct: 0.25,
+    maxParticipation: 3,
+    designedAt: '2026-09-20',
+    designSource:
+      'Original design in this repository — the deliberate counterpart of MLBLead_InPlay, reading the same official MLB Stats API archive and the same Tangotiger table (RESEARCH_SOURCES R18) from the trailing side',
+    designSourceUrl: 'https://tangotiger.net/innwin.html',
+    sourceNote:
+      'Same signal, join and reference as MLBLead_InPlay. The relevant table cells: home team down one at the top of the 7th = 0.299, top of the 8th = 0.247, top of the 9th = 0.158, bottom of the 9th = 0.194 (tangotiger.net/innwin.html, equal teams, no home-field advantage). An away team down one reads 1 − the home cell for the mirrored differential.',
+    thesis:
+      'DESIGN INTENT: if the market systematically overprices longshots (the favourite–longshot bias), the trailing side of a late one-run game should usually ask MORE than its theoretical comeback probability, and this entry should rarely trigger — and lose when it does. The entry exists to measure that, with the same point-in-time discipline as its counterpart: it only ever buys when the ask is at or below theory minus a 2¢ margin. ' +
+      'POINT-IN-TIME RULE and FORWARD-TEST STATUS: identical to MLBLead_InPlay — no archived state at or before the bar (or a stale one, > 30 minutes) means no trade, and the entry is unranked until the archive overlaps 1-minute KXMLBGAME bars. ' +
+      'HONEST LIMIT: the table is the equal-teams theory; a real underdog trailing by one is worth less than the table says, so a trigger here is more likely to be a mispriced signal than a mispriced market. That asymmetry is stated, and the maximum-return mandate is why the entry still takes the trade rather than sitting out.',
+    rules: {
+      entry:
+        'ctx.signal shows Live, inning ≥ 7, the YES team trailing by exactly 1 run, staleSeconds ≤ 1800. Let p = Tangotiger equal-teams win probability of the YES team for that half-inning. Buy YES when the YES ask ≤ p − 0.02. Once per market.',
+      sizing: '25% of available cash per contract, capped at 3x visible ask depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      noSignalRule: 'signal === null → abstain (same rule as MLBLead_InPlay).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker, signal } = ctx;
+      if (!usableMlbSignal(signal)) return [];
+      if (Number(signal.inning) < 7 || Number(signal.lead) !== -1) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const p = tangoYesWinProbability(signal);
+      if (p === null) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > p - 0.02) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [
+        {
+          type: 'buy',
+          side: 'YES',
+          count,
+          reason: `official linescore (captured ${signal.capturedAt}) shows ${signal.yesTeam} trailing ${signal.runsYes}-${signal.runsOpp} ${signal.inningState} ${signal.inning} → equal-teams comeback probability ${p.toFixed(3)} vs ask ${ask} — buy YES below theory, held to the exchange's real result`
         }
       ];
     }

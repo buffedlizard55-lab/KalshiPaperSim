@@ -1,0 +1,144 @@
+name: MLB signal archive
+
+# ROADMAP "Next #3" — the SPORTS half of the point-in-time signal archive
+# (the FDA half is fda-signals.yml, the weather half weather-signals.yml):
+# archive the OFFICIAL live MLB game state (status, inning, runs) every 20
+# minutes through the playing day so an in-play MLB strategy can only ever read
+# the state that was observable AT DECISION TIME (no archive = no honest test;
+# re-reading a finished game's box score for a past bar is a lookahead).
+#
+# SOURCE: statsapi.mlb.com (MLB Advanced Media's Stats API — official, keyless,
+# machine-readable; the same source the owner's MLB-PBP / MLB-Live-PBP projects
+# verify against). Each response's copyright notice is archived verbatim.
+#
+# WHAT IT WRITES: data/mlb-signals/games/<officialDate>.json — one state row per
+# CHANGE of (status, inning, inning state, runs, winner) per game, each with the
+# instant it was first seen; captures[] lists every run instant so the
+# staleness of any past observation is measurable. data/mlb-signals/_teams.json
+# holds the 30 official team abbreviations the KXMLBGAME ticker join requires.
+#
+# WHY A WORKFLOW: statsapi.mlb.com is not reachable from the build sandbox
+# (only github.com egress works there). GitHub-hosted runners have unrestricted
+# egress, so this is where the capture can actually run.
+#
+# TRIGGER: every 20 minutes from 16:00 to 06:59 UTC (first pitches run from
+# ~12:00 ET to ~22:15 ET; a West-Coast game ends ~02:00 ET) on schedule, plus
+# any push that changes .github/triggers/mlb.json (the same commit-to-request
+# pattern as the other bots — the automation token cannot create
+# workflow_dispatch events, but it can commit a file). NOTE: GitHub runs
+# scheduled workflows on the DEFAULT branch only, so the cadence starts when
+# this file is on main; a feature branch gets captures via the trigger file.
+
+on:
+  schedule:
+    - cron: '*/20 16-23 * * *'
+    - cron: '*/20 0-6 * * *'
+  push:
+    paths:
+      - '.github/triggers/mlb.json'
+  workflow_dispatch:
+
+# OWN queue, deliberately NOT the shared data-pipeline group. GitHub keeps at
+# most ONE pending run per concurrency group and cancels older pending runs
+# when a newer one queues: a 20-minute bot inside the shared group would
+# evict a queued weather or FDA capture every time it fired during a 45-minute
+# ingest. The push race with the other bots is what scripts/push-with-race-
+# guard.sh exists for (generated files re-generated over the merged tree,
+# never hand-merged; test/workflow-race-guard.sh scenarios 7/8), and this
+# bot's own data directory is written by nobody else.
+concurrency:
+  group: mlb-signals-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync with the branch tip (best-effort)
+        continue-on-error: true
+        run: |
+          # Fast-forward onto the tip BEFORE capturing so the capture appends
+          # to the newest store and the generated modules are regenerated
+          # from the newest data (the queued-run race behind irregularity
+          # #51). Best-effort by design: if the histories cannot
+          # fast-forward we proceed anyway and the race guard handles the push.
+          git fetch --deepen=100 origin "${GITHUB_REF_NAME}"
+          git merge --ff-only "origin/${GITHUB_REF_NAME}"
+
+      - name: Capture the point-in-time official MLB game state
+        run: |
+          set -o pipefail
+          node scripts/archive-mlb-signals.mjs 2>&1 | tee mlb-signals.log
+
+      - name: Audit the MLB signal store (no network)
+        run: |
+          set -o pipefail
+          node scripts/archive-mlb-signals.mjs --verify | tee -a mlb-signals.log
+
+      - name: Regenerate the browser-safe modules and the Pages bundle
+        run: |
+          set -o pipefail
+          node scripts/generate-history-module.mjs | tee -a mlb-signals.log
+          node scripts/generate-desk-module.mjs | tee -a mlb-signals.log
+          node scripts/render-docs.js | tee -a mlb-signals.log
+          node build.js | tee -a mlb-signals.log
+
+      - name: Commit the new state rows
+        if: always()
+        run: |
+          # Runs even after a failed capture so the run report
+          # (data/mlb-signals/_mlb-last-run.json, with the per-request HTTP
+          # errors) is committed and diagnosable from the repository itself.
+          # One shared, locally-tested implementation of "commit everything
+          # this run changed and survive the push race with the other bots"
+          # (test/workflow-race-guard.sh).
+          BOT_NAME="kalshi-mlb-bot" \
+          BOT_EMAIL="kalshi-mlb-bot@users.noreply.github.com" \
+          bash scripts/push-with-race-guard.sh \
+            "chore(mlb-signals): archive point-in-time official MLB game state $(date -u +%F' '%H:%M)" \
+            "${GITHUB_REF_NAME}"
+
+      - name: Upload the capture log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlb-signals-log
+          path: mlb-signals.log
+          if-no-files-found: warn
+
+      # Same insurance as the other archives: a dead commit step must not take
+      # fresh captures with it (irregularity #51).
+      - name: Keep the captured state rows on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlb-signal-store-${{ github.run_id }}
+          path: data/mlb-signals/
+          if-no-files-found: warn
+
+      # An incomplete capture must be visible on the run, not buried in the
+      # log: the script writes per-request errors into
+      # data/mlb-signals/_mlb-last-run.json.
+      - name: Fail the run when a request did not capture
+        if: always()
+        run: |
+          node -e "
+          const fs = require('fs');
+          if (!fs.existsSync('data/mlb-signals/_mlb-last-run.json')) { console.log('no run report — nothing to evaluate'); process.exit(0); }
+          const rep = JSON.parse(fs.readFileSync('data/mlb-signals/_mlb-last-run.json', 'utf8'));
+          const f = (rep.requests || []).filter((r) => r.error);
+          if (f.length || rep.failures) {
+            for (const x of f) console.error('::error::' + x.url + ' — ' + (x.error || 'unknown error'));
+            process.exit(1);
+          }
+          console.log('all ' + (rep.requests || []).length + ' requests captured; dates: ' + JSON.stringify(rep.dates || []));
+          "

@@ -57,7 +57,11 @@ const log = (...a) => { if (!QUIET) console.log(...a); };
 const capital = Number(arg('capital', 100000));
 const maxRounds = Number(arg('max-rounds', 12));
 const minSpacingMinutes = Number(arg('spacing-minutes', 0));
-const batchMinutes = Number(arg('batch-minutes', 5));
+// 20 minutes: one ingest pass captures its books in bursts that can pause for
+// more than five minutes between blocks (2026-09-19T11:02Z and 11:08Z were the
+// same pass); a separate pass is hours away, so 20 minutes merges the former
+// and never the latter.
+const batchMinutes = Number(arg('batch-minutes', 20));
 
 fs.mkdirSync(REPORTS, { recursive: true });
 
@@ -108,6 +112,7 @@ const report = {
       notTradeable: r.universe?.notTradeable ?? null,
       marketsWithLadder: r.marketsWithLadder,
       newLadderCaptures: r.newLadderCaptures,
+      freshLadderCaptures: r.freshLadderCaptures ?? null,
       gapHoursFromPrev: r.gapHoursFromPrev,
       isNewestCapture: Boolean(r.isNewestCapture),
       eventsApplied: r.eventsApplied,
@@ -159,7 +164,7 @@ log(`desk-season · ${season.rounds.length} real capture round(s) · ${season.ne
 for (const r of season.rounds) {
   log(
     `  ${r.label} ${r.asOf}  tradeable=${String(r.universe?.tradeable ?? '—').padStart(3)}  ` +
-    `newLadders=${String(r.newLadderCaptures ?? '—').padStart(3)}  events=${String(r.eventsApplied?.quotes ?? 0).padStart(4)} quote(s) ` +
+    `newLadders=${String(r.newLadderCaptures ?? '—').padStart(3)} fresh=${String(r.freshLadderCaptures ?? '—').padStart(3)}  events=${String(r.eventsApplied?.quotes ?? 0).padStart(4)} quote(s) ` +
     `+ ${r.eventsApplied?.settlements ?? 0} settlement(s)  carriedMakerFills=${r.makerFillsCarriedIn ?? 0}`
   );
 }

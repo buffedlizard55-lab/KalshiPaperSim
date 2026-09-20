@@ -109,16 +109,25 @@ export const SEASON_RULE = Object.freeze({
  * @param {number}  [args.minSpacingMinutes]   minimum gap between two rounds
  * @param {number}  [args.maxRounds]           cap on rounds (thinned evenly)
  * @param {number}  [args.minLadderContracts]  a round needs this many markets with a ladder at/before it
+ * @param {number}  [args.minFreshLadders]     a round's batch must contain this many markets whose ladder was
+ *                                             (re)captured INSIDE the batch (default 1 — every batch has one)
+ * @param {number}  [args.minNewLadders]       markets whose FIRST-EVER ladder falls in the batch (default 0).
+ *                                             HISTORY: this used to default to 1, which silently dropped every
+ *                                             re-capture of an unchanged universe — e.g. ingest request 14
+ *                                             (2026-09-20T00:40Z), requested precisely to add a round, produced
+ *                                             none because no contract was NEW to the desk. A round is a moment
+ *                                             the repository really queried the books; novelty is not required.
  * @param {string|number} [args.from]          ignore instants before this time
  * @param {string|number} [args.to]            ignore instants after this time
  * @returns {{rounds:Array, considered:number, candidates:number, thinned:boolean, rule:string, newestCapture:string|null}}
  */
 export function seasonSchedule({
   data = DESK_DATA,
-  batchMinutes = 5,
+  batchMinutes = 20,
   minSpacingMinutes = 0,
   maxRounds = 12,
-  minNewLadders = 1,
+  minNewLadders = 0,
+  minFreshLadders = 1,
   minLadderContracts = 1,
   from = null,
   to = null
@@ -196,9 +205,10 @@ export function seasonSchedule({
   for (const batch of batches) {
     const withLadder = ladderCountAt(batch.last);
     const newLadders = perMarket.filter((m) => m.first !== null && m.first >= batch.first && m.first <= batch.last).length;
-    if (withLadder < minLadderContracts || newLadders < minNewLadders) continue;
+    const freshLadders = perMarket.filter((m) => m.times.some((t) => t >= batch.first && t <= batch.last)).length;
+    if (withLadder < minLadderContracts || newLadders < minNewLadders || freshLadders < minFreshLadders) continue;
     if (lastKept !== null && batch.last - lastKept < spacingMs) continue;
-    candidates.push({ at: batch.last, first: batch.first, instants: batch.instants.length, newLadders, marketsWithLadder: withLadder });
+    candidates.push({ at: batch.last, first: batch.first, instants: batch.instants.length, newLadders, freshLadders, marketsWithLadder: withLadder });
     lastKept = batch.last;
   }
 
@@ -230,6 +240,7 @@ export function seasonSchedule({
       instantsInBatch: c.instants,
       marketsWithLadder: c.marketsWithLadder,
       newLadderCaptures: c.newLadders,
+      freshLadderCaptures: c.freshLadders,
       gapHoursFromPrev: prev === null ? null : round6((c.at - prev) / 3600000),
       isNewestCapture: c.at === instants[instants.length - 1]
     };
@@ -430,6 +441,7 @@ export function runDeskSeason({
       asOf: round.asOf,
       marketsWithLadder: round.marketsWithLadder ?? universe.markets.filter((m) => m.ladder).length,
       newLadderCaptures: round.newLadderCaptures ?? null,
+      freshLadderCaptures: round.freshLadderCaptures ?? null,
       gapHoursFromPrev: round.gapHoursFromPrev ?? null,
       isNewestCapture: Boolean(round.isNewestCapture)
     };
@@ -1082,6 +1094,7 @@ export function buildSeasonReport({
         tradeable: r.universe?.tradeable ?? null,
         marketsWithLadder: r.marketsWithLadder,
         newLadderCaptures: r.newLadderCaptures,
+        freshLadderCaptures: r.freshLadderCaptures ?? null,
         gapHoursFromPrev: r.gapHoursFromPrev,
         isNewestCapture: r.isNewestCapture,
         eventsApplied: r.eventsApplied,
