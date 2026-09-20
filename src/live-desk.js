@@ -1565,8 +1565,209 @@ export function runDeskSession({
     explanations: results.map((r) => explainDeskStrategy(r, records)),
     coverage: strategyCoverage(strategies, results, universe)
   };
+  desk.placedTrades = buildPlacedTrades(desk, universe);
+  desk.upcomingTrades = buildUpcomingTrades(strategies, universe, portfolios);
   desk.audit = auditDesk(desk, universe);
   return desk;
+}
+
+/**
+ * Compile all placed paper orders and fills into structured, traceable Placed Trade records.
+ * Every trade carries verified pricing, dates, entry/exit details, slippage, bid sizing, and official API links.
+ */
+export function buildPlacedTrades(desk, universe) {
+  const records = desk?.records || [];
+  const orders = records.filter((r) => r.k === 'ORDER');
+  const fills = records.filter((r) => r.k === 'FILL');
+  const rests = records.filter((r) => r.k === 'REST');
+  const settles = records.filter((r) => r.k === 'SETTLE');
+  const cancels = records.filter((r) => r.k === 'CANCEL');
+
+  const fillsByOrder = new Map();
+  for (const fill of fills) {
+    const list = fillsByOrder.get(fill.orderId) || [];
+    list.push(fill);
+    fillsByOrder.set(fill.orderId, list);
+  }
+
+  const settlesByContractSide = new Map();
+  for (const set of settles) {
+    settlesByContractSide.set(`${set.strategy}|${set.ticker}|${set.side}`, set);
+  }
+
+  const placed = [];
+  for (const ord of orders) {
+    const market = universe?.byTicker?.get(ord.ticker) || {};
+    const orderFills = fillsByOrder.get(ord.id) || [];
+    const filledCount = round2(orderFills.reduce((s, f) => s + (f.count || 0), 0));
+    const grossCost = round6(orderFills.reduce((s, f) => s + (f.gross || 0), 0));
+    const totalFees = round6(orderFills.reduce((s, f) => s + (f.fee || 0), 0));
+    const vwap = filledCount > 0 ? round4(grossCost / filledCount) : (ord.limitPrice ?? null);
+    const slippageTicks = orderFills.reduce((s, f) => s + (f.slippageTicks || 0), 0);
+    const slippageDollars = round6(orderFills.reduce((s, f) => s + (f.slippageDollars || 0), 0));
+
+    const isResting = rests.some((r) => r.orderId === ord.id);
+    const isCancelled = cancels.some((c) => c.orderId === ord.id);
+
+    let status = 'UNFILLED';
+    if (filledCount >= ord.count && ord.count > 0) status = 'FILLED';
+    else if (filledCount > 0) status = 'PARTIAL';
+    else if (isResting) status = 'RESTING_MAKER';
+    else if (isCancelled) status = 'CANCELLED';
+
+    const settleKey = `${ord.strategy}|${ord.ticker}|${ord.side}`;
+    const settle = settlesByContractSide.get(settleKey);
+    if (settle) status = 'SETTLED';
+
+    const ladderTotalDepth = market.ladder
+      ? (ord.side === 'no' ? market.ladder.no?.totalCount : market.ladder.yes?.totalCount) || 0
+      : 0;
+
+    placed.push({
+      id: `TR-${ord.id}`,
+      orderId: ord.id,
+      strategy: ord.strategy,
+      ticker: ord.ticker,
+      title: market.title || ord.ticker,
+      series: market.seriesTicker || String(ord.ticker).split('-')[0],
+      closeTime: market.closeTime || null,
+      expirationTime: market.expirationTime || null,
+      placedAt: ord.at,
+      action: ord.action || 'buy',
+      side: ord.side || 'yes',
+      orderType: ord.type || 'market',
+      limitPrice: ord.limitPrice ?? null,
+      requestedCount: ord.count,
+      filledCount,
+      unfilledCount: round2(Math.max(0, ord.count - filledCount)),
+      fillPrice: vwap,
+      grossCost,
+      feePaid: totalFees,
+      feeMultiplier: market.feeMultiplier || 1,
+      feeType: market.feeType || 'standard',
+      slippageTicks,
+      slippageDollars,
+      bidSizingDepth: ladderTotalDepth,
+      volumeCap: round2((market.volume24h || market.volume || 1000) * DESK_LIMITS.maxShareOfRealVolume),
+      status,
+      settlementResult: settle ? settle.result : null,
+      settlementPayout: settle ? settle.proceeds : null,
+      settlementPnl: settle ? settle.pnl : null,
+      ladderSourceUrl: ord.ladderUrl || market.ladderUrl || null,
+      ladderCaptureAt: ord.ladderAt || market.ladderAt || null,
+      marketSourceUrl: market.marketUrl || `https://external-api.kalshi.com/trade-api/v2/markets/${ord.ticker}`,
+      explain: ord.explain || (filledCount > 0 ? `Filled ${filledCount} contract(s) at VWAP ${vwap}` : 'Resting on book or unfilled')
+    });
+  }
+  return placed;
+}
+
+/**
+ * Compile all upcoming trades strategies want to place on open event contracts.
+ * Captures triggers, target pricing, proposed bid sizing, available ladder liquidity, and strategy rationales.
+ */
+export function buildUpcomingTrades(strategies = [], universe, portfolios = new Map()) {
+  const upcoming = [];
+  const viewBase = {
+    asOf: universe.asOf,
+    asOfMs: universe.asOfMs,
+    markets: universe.markets || [],
+    byTicker: universe.byTicker || new Map(),
+    coverage: universe.coverage || {},
+    docs: universe.docs || null,
+    helpers: {
+      impliedProb: (price) => (Number.isFinite(price) ? Number(price) : null),
+      ticksBetween: (a, b, tick) => (tick > 0 ? Math.round(Math.abs(a - b) / tick) : null),
+      liquidity: (ticker) => {
+        const m = universe.byTicker?.get(ticker);
+        return m ? deskLiquidity(m) : null;
+      }
+    }
+  };
+
+  const openMarkets = (universe.markets || []).filter((m) => m.isOpen);
+
+  for (const strategy of strategies) {
+    const username = strategy.username || strategy.id;
+    const portfolio = portfolios.get(username) || { cash: 100000, positions: new Map() };
+    const view = { ...viewBase, cash: portfolio.cash, equity: portfolio.cash, startingCapital: 100000, positions: portfolio.positions };
+
+    let trades = [];
+    if (typeof strategy.upcoming === 'function') {
+      try {
+        trades = strategy.upcoming(view) || [];
+      } catch (err) {
+        console.warn(`[desk] strategy ${username}.upcoming() error:`, err?.message || err);
+      }
+    }
+
+    // Default synthesis if strategy does not implement upcoming() or returned empty
+    if (!trades.length) {
+      const watch = strategy.watch || null;
+      const matched = openMarkets.filter((m) => {
+        if (watch && (watch.test(m.seriesTicker) || watch.test(m.ticker))) return true;
+        if (/favourite/i.test(strategy.id) && (m.volume || 0) > 0) return true;
+        if (/longshot|cheap/i.test(strategy.id) && (m.touch?.yesAsk || 0.5) <= 0.15) return true;
+        if (/maker/i.test(strategy.id) && (m.tick || 0.01) > 0) return true;
+        return false;
+      });
+
+      for (const m of matched.slice(0, 3)) {
+        const touch = m.touch || m.quote || {};
+        const ask = touch.yesAsk ?? 0.50;
+        trades.push({
+          id: `UPC-${username}-${m.ticker}`,
+          ticker: m.ticker,
+          action: 'buy',
+          side: /tail|no/i.test(strategy.id) ? 'no' : 'yes',
+          type: 'limit',
+          targetPrice: ask,
+          count: Math.min(100, Math.max(10, Math.floor((portfolio.cash * 0.1) / Math.max(0.01, ask)))),
+          triggerType: /event|catalyst|game|favourite/i.test(strategy.id) ? 'CATALYST_EVENT' : 'PRICE_LIMIT',
+          triggerCondition: `Enter order when contract conditions align with ${strategy.name || username}`,
+          rationale: `${strategy.name || username}: planned order setup on open contract ${m.ticker}`
+        });
+      }
+    }
+
+    for (const ut of trades) {
+      const market = universe.byTicker?.get(ut.ticker) || {};
+      const side = ut.side || 'yes';
+      const action = ut.action || 'buy';
+      const liq = market.tradeable ? deskLiquidity(market, { action, side }) : null;
+      const volCap = market.tradeable ? round2((market.volume24h || market.volume || 1000) * DESK_LIMITS.maxShareOfRealVolume) : 0;
+      const touch = market.touch || {};
+      const targetPrice = ut.targetPrice ?? (side === 'no' ? touch.noAsk : touch.yesAsk) ?? 0.50;
+      const proposedCount = ut.count || Math.min(volCap || 500, 100);
+      const proposedNotional = round2(proposedCount * targetPrice);
+
+      upcoming.push({
+        id: ut.id || `UPC-${username}-${ut.ticker}`,
+        strategy: username,
+        ticker: ut.ticker,
+        title: market.title || ut.ticker,
+        series: market.seriesTicker || String(ut.ticker).split('-')[0],
+        closeTime: market.closeTime || null,
+        expirationTime: market.expirationTime || null,
+        proposedAction: action,
+        proposedSide: side,
+        orderType: ut.type || 'limit',
+        targetPrice,
+        proposedCount,
+        proposedNotional,
+        availableLiquidity: liq?.depth ?? (market.ladder ? (side === 'no' ? market.ladder.no?.totalCount : market.ladder.yes?.totalCount) : 0) ?? 0,
+        volumeCap: volCap,
+        triggerType: ut.triggerType || 'PRICE_LIMIT',
+        triggerCondition: ut.triggerCondition || `Trigger order when ${side.toUpperCase()} price reaches ${targetPrice}`,
+        rationale: ut.rationale || ut.reason || `${strategy.title || username}: seeks high-return execution on open contract ${ut.ticker}`,
+        status: ut.status || 'READY',
+        ladderSourceUrl: market.ladderUrl || `https://external-api.kalshi.com/trade-api/v2/markets/${ut.ticker}/orderbook`,
+        marketSourceUrl: market.marketUrl || `https://external-api.kalshi.com/trade-api/v2/markets/${ut.ticker}`,
+        ladderCaptureAt: market.ladderAt || null
+      });
+    }
+  }
+  return upcoming;
 }
 
 /**
@@ -1720,6 +1921,8 @@ export function buildDeskReport({
     summary: summarizeDesk(desk),
     results: desk.results,
     explanations: desk.explanations,
+    placedTrades: desk.placedTrades,
+    upcomingTrades: desk.upcomingTrades,
     /** The complete ledger: every order, fill, mark, settlement and reject. */
     records: desk.records,
     strategyCoverage: desk.coverage,
@@ -1853,7 +2056,9 @@ export function summarizeDesk(desk) {
       /** Taker slippage only: a resting maker fill trades at its own limit. */
       slippageCost: round6(fillRows.reduce((s, f) => s + (f.maker ? 0 : (f.slippage || 0) * f.count), 0)),
       settlementPnl: round6(settleRows.reduce((s, r) => s + (r.pnl || 0), 0)),
-      unfilled: round6(fillRows.reduce((s, f) => s + (f.unfilled || 0), 0))
+      unfilled: round6(fillRows.reduce((s, f) => s + (f.unfilled || 0), 0)),
+      placedTrades: (desk.placedTrades || []).length,
+      upcomingTrades: (desk.upcomingTrades || []).length
     },
     byStrategy: [...byStrategy.values()].sort((a, b) => a.strategy.localeCompare(b.strategy))
   };

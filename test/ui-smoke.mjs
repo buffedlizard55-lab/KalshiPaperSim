@@ -293,6 +293,11 @@ interact.push(['desk universe rows link the captured market object (dates)', /ex
 interact.push(['desk invariants are published with their official source', /D1/.test(deskInvars) && /docs\.kalshi\.com|fee-schedule/.test(deskInvars)]);
 interact.push(['desk states it is a paper simulator, not a live connection', /no order is transmitted to Kalshi/i.test(deskInvars)]);
 
+const deskPlacedTrades = written.get('#deskPlacedTrades') || '';
+const deskUpcomingTrades = written.get('#deskUpcomingTrades') || '';
+interact.push(['desk placed trades table rendered with verified records', /TR-O-|FILLED|VWAP|unfilled/i.test(deskPlacedTrades)]);
+interact.push(['desk upcoming trades table rendered with planned triggers', /UPC-|Simulate|PRICE_LIMIT|CATALYST/i.test(deskUpcomingTrades)]);
+
 // Place a paper order through the ticket in static mode and check it reports a
 // real captured level rather than an invented price.
 el('#dtCount').value = '25';

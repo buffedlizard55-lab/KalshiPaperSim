@@ -59,6 +59,9 @@ export const DESK_RESERVED_USERNAMES = Object.freeze([
   // for them instead of being covered only by the generic sports entries.
   'LiveMLB_GameFavourite',
   'LiveNFL_GameFavourite',
+  'LiveTheLeap_Momentum',
+  'LiveInsider_FilingFader',
+  'LiveWeather_ForecastEdge',
   // Season entrants (src/desk-season-strategies.js) — the carried-book roster.
   'SeasonWeather_Carry',
   'SeasonIndex_CarryHold',

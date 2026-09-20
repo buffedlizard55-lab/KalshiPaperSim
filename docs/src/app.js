@@ -1609,7 +1609,8 @@ function renderLiveDesk(data) {
   const best = ranked[0];
   setHTML('#deskKpis', `
     <div class="card"><span class="card-label">Contracts on the desk</span><span class="card-value">${esc(String(cov.inUniverse))}</span><span class="card-note">${esc(String(cov.tradeable))} with a captured ladder at the cut-off</span></div>
-    <div class="card"><span class="card-label">Orders · fills</span><span class="card-value">${esc(String(t.orders ?? 0))} · ${esc(String(t.fills ?? 0))}</span><span class="card-note">${esc(String(t.cancels ?? 0))} resting order(s) never crossed and were cancelled</span></div>
+    <div class="card"><span class="card-label">Placed trades · fills</span><span class="card-value">${esc(String((data.placedTrades || []).length))} · ${esc(String(t.fills ?? 0))}</span><span class="card-note">${esc(String(t.cancels ?? 0))} resting order(s) never crossed and were cancelled</span></div>
+    <div class="card"><span class="card-label">Upcoming trades queued</span><span class="card-value">${esc(String((data.upcomingTrades || []).length))}</span><span class="card-note">trigger setups monitored on real open event contracts</span></div>
     <div class="card"><span class="card-label">Real settlements booked</span><span class="card-value">${esc(String(t.settlements ?? 0))}</span><span class="card-note">paid $1.00 / $0.00 by the exchange's own result</span></div>
     <div class="card"><span class="card-label">Official fees paid</span><span class="card-value">${esc(money(t.fees ?? 0, 4))}</span><span class="card-note">quadratic schedule, captured per-series multiplier</span></div>
     <div class="card"><span class="card-label">Best desk return</span><span class="card-value ${signedClass(best?.returnPct)}">${best ? pct(best.returnPct, 4) : '—'}</span><span class="card-note">${best ? esc(best.strategy) : 'no strategy filled an order here'}</span></div>
@@ -1685,9 +1686,150 @@ function renderLiveDesk(data) {
       </table>
     </div>` : '');
 
+  renderDeskUpcomingTrades(data);
+  renderDeskPlacedTrades(data);
   renderDeskFills(data);
   renderDeskInvars(data);
   renderDeskTickerOptions(data);
+}
+
+function renderDeskPlacedTrades(data) {
+  const trades = data.placedTrades || [];
+  if (!trades.length) {
+    setHTML('#deskPlacedTrades', '<div class="notice">No placed trades recorded at this cut-off.</div>');
+    return;
+  }
+  setHTML('#deskPlacedTrades', `
+    <div class="table-wrap">
+      <table class="grid" id="deskPlacedTradesTable">
+        <thead>
+          <tr>
+            <th>Time (UTC) / ID</th>
+            <th>Strategy</th>
+            <th>Contract</th>
+            <th>Action / Side</th>
+            <th class="num">Req / Fill</th>
+            <th class="num">VWAP</th>
+            <th class="num">Gross Cost</th>
+            <th class="num">Slip</th>
+            <th class="num">Official Fee</th>
+            <th>Status</th>
+            <th>Source</th>
+            <th>Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${trades.map((t) => `
+            <tr>
+              <td>
+                <div>${esc(timeShort(t.placedAt))}</div>
+                <div class="cell-sub">${esc(t.id)}</div>
+              </td>
+              <td class="cell-trader">${esc(t.strategy)}</td>
+              <td>
+                <strong>${esc(t.ticker)}</strong>
+                <div class="cell-sub">${esc(t.title || '')}</div>
+              </td>
+              <td><strong>${esc(String(t.action).toUpperCase())} ${esc(String(t.side).toUpperCase())}</strong> <span class="cell-sub">${esc(t.orderType)}</span></td>
+              <td class="num">${compact(t.requestedCount)} / <strong>${compact(t.filledCount)}</strong>${t.unfilledCount > 0 ? `<div class="cell-sub neg">unfilled ${compact(t.unfilledCount)}</div>` : ''}</td>
+              <td class="num">${t.fillPrice !== null ? esc(price(t.fillPrice)) : '—'}</td>
+              <td class="num">${money(t.grossCost, 2)}</td>
+              <td class="num ${t.slippageTicks > 0 ? 'neg' : ''}">${t.slippageTicks ? `${t.slippageTicks}t (${money(t.slippageDollars, 2)})` : '0t'}</td>
+              <td class="num">${money(t.feePaid, 4)}<div class="cell-sub">${esc(t.feeType)} M=${esc(String(t.feeMultiplier))}</div></td>
+              <td><span class="tag ${t.status === 'FILLED' ? 'tag-good' : t.status === 'RESTING_MAKER' ? 'tag-warn' : t.status === 'PARTIAL' ? 'tag-warn' : ''}">${esc(t.status)}</span></td>
+              <td class="cell-sub">
+                ${t.ladderSourceUrl ? link(t.ladderSourceUrl, 'ladder') : ''}
+                ${t.marketSourceUrl ? ` · ${link(t.marketSourceUrl, 'market')}` : ''}
+                <div class="cell-sub">${esc(t.ladderCaptureAt ? timeShort(t.ladderCaptureAt) : '')}</div>
+              </td>
+              <td class="cell-sub">${esc(t.explain || '')}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `);
+}
+
+function renderDeskUpcomingTrades(data) {
+  const upcoming = data.upcomingTrades || [];
+  if (!upcoming.length) {
+    setHTML('#deskUpcomingTrades', '<div class="notice">No upcoming trades queued for this cut-off.</div>');
+    return;
+  }
+  setHTML('#deskUpcomingTrades', `
+    <div class="table-wrap">
+      <table class="grid" id="deskUpcomingTradesTable">
+        <thead>
+          <tr>
+            <th>Strategy</th>
+            <th>Contract / Event</th>
+            <th>Close Time (UTC)</th>
+            <th>Proposed Action</th>
+            <th class="num">Target Price</th>
+            <th class="num">Planned Size</th>
+            <th class="num">Avail Depth</th>
+            <th class="num">10% Cap</th>
+            <th>Trigger Type &amp; Condition</th>
+            <th>Rationale</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${upcoming.map((u, i) => `
+            <tr>
+              <td class="cell-trader">${esc(u.strategy)}</td>
+              <td>
+                <strong>${esc(u.ticker)}</strong>
+                <div class="cell-sub">${esc(u.title || '')}</div>
+                ${u.marketSourceUrl ? `<div class="cell-sub">${link(u.marketSourceUrl, 'market object')}</div>` : ''}
+              </td>
+              <td>${esc(dateShort(u.closeTime) || '—')}</td>
+              <td><strong>${esc(String(u.proposedAction).toUpperCase())} ${esc(String(u.proposedSide).toUpperCase())}</strong> <span class="cell-sub">${esc(u.orderType)}</span></td>
+              <td class="num"><strong>${esc(price(u.targetPrice))}</strong></td>
+              <td class="num">${compact(u.proposedCount)} <div class="cell-sub">${money(u.proposedNotional, 2)}</div></td>
+              <td class="num">${compact(typeof u.availableLiquidity === 'object' ? u.availableLiquidity.total || u.availableLiquidity.touch : u.availableLiquidity)}</td>
+              <td class="num">${compact(u.volumeCap)}</td>
+              <td>
+                <span class="tag">${esc(u.triggerType)}</span>
+                <div class="cell-sub">${esc(u.triggerCondition)}</div>
+              </td>
+              <td class="cell-sub">${esc(u.rationale)}</td>
+              <td>
+                <button class="btn btn-sm btn-simulate-upcoming" data-idx="${i}">Simulate trade</button>
+              </td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `);
+
+  document.querySelectorAll('.btn-simulate-upcoming').forEach((btn) => {
+    btn.onclick = () => {
+      const idx = Number(btn.getAttribute('data-idx'));
+      const item = upcoming[idx];
+      if (!item) return;
+      const tickerSel = $('#dtTicker');
+      if (tickerSel) tickerSel.value = item.ticker;
+      const actionSel = $('#dtAction');
+      if (actionSel) actionSel.value = item.proposedAction;
+      const sideSel = $('#dtSide');
+      if (sideSel) sideSel.value = item.proposedSide;
+      const countInput = $('#dtCount');
+      if (countInput) countInput.value = item.proposedCount;
+      const limitInput = $('#dtLimit');
+      if (limitInput) limitInput.value = item.targetPrice;
+      const stratInput = $('#dtStrategy');
+      if (stratInput) stratInput.value = item.strategy;
+      const typeSel = $('#dtType');
+      if (typeSel) typeSel.value = item.orderType || 'limit';
+
+      const ticketEl = document.getElementById('deskTicket');
+      if (ticketEl) ticketEl.scrollIntoView({ behavior: 'smooth' });
+      previewDeskTicket();
+    };
+  });
 }
 
 function deskStrategyOf(data, username) {
@@ -2561,6 +2703,26 @@ function wireGlobalEvents() {
     const url = state.runtime.deskFillsCsvUrl?.({ asOf, capital });
     if (!url) { toast('Static mode: no CSV endpoint — the fill table on screen carries the same fields.', 'info'); return; }
     window.location.href = url;
+  });
+  on('#deskPlacedTradesJson', () => {
+    const data = state.desk?.placedTrades || [];
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `kalshi-placed-trades-${(state.desk?.asOf || 'live').slice(0, 10)}.json`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+  on('#deskUpcomingTradesJson', () => {
+    const data = state.desk?.upcomingTrades || [];
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `kalshi-upcoming-trades-${(state.desk?.asOf || 'live').slice(0, 10)}.json`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
   on('#ledgerStrategy', 'change', () => { if (state.ledger) renderLedgerTrades(state.ledger); });
   on('#ledgerFlight', 'change', () => { if (state.ledger) renderLedgerTrades(state.ledger); });
