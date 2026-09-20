@@ -1426,16 +1426,22 @@ export function markPortfolio(portfolio, universe, asOfMs) {
  * @param {number} [args.maxOrdersPerStrategy]
  * @returns {object} session result (orders, fills, records, results, audit)
  */
-export function runDeskSession({
+export async function runDeskSession({
   data = DESK_DATA,
   strategies = [],
   asOf = null,
   startingCapital = 100000,
-  maxOrdersPerStrategy = 8
+  maxOrdersPerStrategy = 8,
+  signals = null
 } = {}) {
   const universe = buildDeskUniverse({ data, asOf });
   const books = new Map();
   for (const market of universe.markets) books.set(market.ticker, createDeskBook(market));
+
+  // Point-in-time external signals (MLB, NWS forecast, FDA, …). Built once at
+  // the decision instant so every strategy reads the SAME snapshot — same rule
+  // as the replay engine.
+  const sig = signals && typeof signals === 'object' ? signals : await buildDeskSignalsAsync(universe.asOfMs);
 
   const portfolios = new Map();
   const records = [];
@@ -1445,7 +1451,7 @@ export function runDeskSession({
   for (const strategy of strategies) {
     const portfolio = createPortfolio(strategy.username || strategy.id, startingCapital);
     portfolios.set(portfolio.strategy, portfolio);
-    const view = deskView(universe, portfolio, { asOfMs: universe.asOfMs, books });
+    const view = deskView(universe, portfolio, { asOfMs: universe.asOfMs, books, signals: sig });
     let intents = [];
     try {
       intents = strategy.decide(view) || [];
@@ -1882,7 +1888,62 @@ export function buildTimeline(universe, asOfMs, data = null) {
   return events;
 }
 
-export function deskView(universe, portfolio, { asOfMs, books }) {
+/**
+ * Signal providers for the desk — point-in-time external signals, exactly the
+ * same contract as the replay engine (`src/strategy-runner.js`). A signal is
+ * knowable at the desk cut-off only if the newest snapshot/row was captured
+ * AT OR BEFORE it; each module enforces that rule itself.
+ *
+ * Uses dynamic ESM import so the same function works in both Node (server)
+ * and the browser (GitHub Pages build). When a signal archive is absent the
+ * provider is `available: false` and strategies that need it abstain.
+ */
+export async function buildDeskSignalsAsync(asOfMs) {
+  const cutoffSeconds = Math.floor(asOfMs / 1000);
+  const signals = {};
+  try {
+    const mlb = await import('./mlb-signal-store.js');
+    signals.mlb = {
+      available: mlb.hasMlbSignalArchive(),
+      endpoint: 'https://statsapi.mlb.com/api/v1/schedule',
+      source: 'official MLB Advanced Media Stats API (trusted, point-in-time archive)',
+      cutoffSeconds,
+      matchGame: (ticker) => mlb.matchMlbGame(ticker),
+      stateAt: (game) => mlb.gameStateAtOrBefore(game, cutoffSeconds),
+      teams: mlb.mlbTeams(),
+      coverage: mlb.mlbCoverage()
+    };
+  } catch (_) { /* archive dark */ }
+  try {
+    const fc = await import('./forecast-store.js');
+    const locs = typeof fc.forecastLocations === 'function' ? fc.forecastLocations() : [];
+    signals.forecast = {
+      available: Array.isArray(locs) && locs.length > 0,
+      endpoint: 'https://api.weather.gov/points/{lat},{lon}/forecast',
+      source: 'official NWS point-forecast API (trusted, point-in-time archive)',
+      cutoffSeconds,
+      locations: locs,
+      highAt: (loc, eventDate) => fc.forecastHighAt(loc.snapshots, eventDate, cutoffSeconds),
+      eventDate: fc.weatherEventDate
+    };
+  } catch (_) { /* forecast archive dark */ }
+  try {
+    const fda = await import('./fda-signal-store.js');
+    signals.fda = {
+      available: fda.hasFdaSignalArchive(),
+      endpoint: 'https://api.fda.gov/drug/drugsfda.json',
+      source: 'official openFDA Drugs@FDA API (trusted, point-in-time archive)',
+      cutoffSeconds,
+      subjects: fda.fdaSubjects(),
+      stateAt: (subjectSnapshots) => fda.stateAtOrBefore(subjectSnapshots, cutoffSeconds),
+      approvalFlip: (subjectSnapshots) => fda.approvalFlip(subjectSnapshots),
+      coverage: fda.fdaSignalCoverage()
+    };
+  } catch (_) { /* FDA archive dark */ }
+  return signals;
+}
+
+export function deskView(universe, portfolio, { asOfMs, books, signals = null }) {
   return {
     asOf: iso(asOfMs),
     asOfMs,
@@ -1894,6 +1955,14 @@ export function deskView(universe, portfolio, { asOfMs, books }) {
     byTicker: new Map(universe.markets.map((m) => [m.ticker, m])),
     coverage: universe.coverage,
     docs: universe.docs,
+    /**
+     * POINT-IN-TIME SIGNALS. Same contract as the replay engine:
+     * each provider enforces no-lookahead internally. A strategy that reads
+     * `view.signals.mlb.stateAt(...)` for a given ticker receives either the
+     * freshest state row captured AT OR BEFORE the cut-off, or null (in which
+     * case it must abstain).
+     */
+    signals: signals || (typeof require !== 'undefined' ? buildDeskSignals(asOfMs) : {}),
     helpers: {
       /** Probability implied by a YES price (Kalshi prices ARE probabilities). */
       impliedProb: (price) => (Number.isFinite(price) ? Number(price) : null),
@@ -1913,14 +1982,15 @@ export function deskView(universe, portfolio, { asOfMs, books }) {
  * exact function, so the desktop app and the hosted page cannot disagree about
  * a number. It is the only place the desk payload is assembled.
  */
-export function buildDeskReport({
+export async function buildDeskReport({
   data = DESK_DATA,
   strategies = [],
   asOf = null,
   startingCapital = 100000,
-  cutoffs = null
+  cutoffs = null,
+  signals = null
 } = {}) {
-  const desk = runDeskSession({ data, strategies, asOf, startingCapital });
+  const desk = await runDeskSession({ data, strategies, asOf, startingCapital, signals });
   const universe = buildDeskUniverse({ data, asOf });
   return {
     ok: true,

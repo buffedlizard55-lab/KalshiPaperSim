@@ -374,16 +374,87 @@ withLadder.sort((a, b) => {
  * active books). Settlement examples are part of what the desk is for.
  */
 const FINALIZED_RESERVE = Number(arg('finalized-reserve', 6));
+
+/**
+ * THE SERIES RESERVE (2026-09-20, Irregularity #55 follow-up).
+ *
+ * The desk universe was being sorted purely by lifetime volume_fp, which
+ * pushed out every game contract (KXMLBGAME/KXNFLGAME/KXNBAGAME/KXNCAAFGAME/
+ * KXNCAAFSPREAD/...) and weather brackets from non-NYC cities once the index
+ * and crypto series filled the cap. The desk entrants LiveMLB_GameFavourite
+ * and LiveNFL_GameFavourite then reported "no ladder" despite those ladders
+ * existing in the store, and the desk signal hook for MLB/NFL/NBA/NCAA could
+ * never fire. The fix reserves a small number of slots per priority series
+ * ON TOP of the open-contract cap and the finalized reserve, ranked by
+ * volume within each reserved series so the most-liquid contracts are kept
+ * first. The cap for unreserved open contracts is reduced accordingly.
+ *
+ * Reserved slots per series are small — not every contract is kept — so an
+ * entrant that trades many legs may still abstain on less-liquid contracts.
+ * That is honest (a real desk would see the same thin book). The coverage
+ * block records how many were reserved vs how many existed.
+ */
+const SERIES_RESERVES = [
+  // In-play game markets — the highest-signal sports contracts. Reserve per series.
+  { prefix: 'KXMLBGAME', slots: 6, reason: 'MLB in-play games — desk MLB signal hook targets these (Tangotiger WE, R18)' },
+  { prefix: 'KXNFLGAME', slots: 4, reason: 'NFL Sunday/Monday game contracts — LiveNFL_GameFavourite' },
+  { prefix: 'KXNBAGAME', slots: 6, reason: 'NBA game contracts — LiveNBA_GameFavourite' },
+  { prefix: 'KXNCAAFGAME', slots: 4, reason: 'NCAA football game contracts — LiveNCAA_GameFavourite' },
+  { prefix: 'KXNCAAFSPREAD', slots: 2, reason: 'NCAA spread contracts — test coverage for point-in-time joins' },
+  { prefix: 'KXNHLGAME', slots: 4, reason: 'NHL game contracts — sports-favourite coverage' },
+  // Signal archive: weather and FDA.
+  { prefix: 'KXHIGHNY', slots: 12, reason: 'NYC high-temp brackets — ForecastEdge_Weather signal target' },
+  { prefix: 'KXHIGHLAX', slots: 3, reason: 'LA weather brackets — ForecastEdge_MultiCity' },
+  { prefix: 'KXHIGHCHI', slots: 3, reason: 'Chicago weather brackets' },
+  { prefix: 'KXHIGHMIA', slots: 3, reason: 'Miami weather brackets' },
+  { prefix: 'KXHIGHAUS', slots: 3, reason: 'Austin weather brackets' },
+  { prefix: 'KXHIGHDEN', slots: 3, reason: 'Denver weather brackets' },
+  { prefix: 'KXHIGHPHIL', slots: 3, reason: 'Philly weather brackets' },
+  { prefix: 'KXHIGHTPHX', slots: 3, reason: 'Phoenix weather brackets' },
+  { prefix: 'KXHIGHTSEA', slots: 3, reason: 'Seattle weather brackets' },
+  { prefix: 'KXFDAAPPROVE', slots: 3, reason: 'FDA approval brackets — LiveFDA_DecisionPremium' },
+  { prefix: 'KXFDARETATRUTIDE', slots: 3, reason: 'FDA retatrutide brackets' },
+  { prefix: 'KXFDAAPPROVALDATECMPS', slots: 3, reason: 'FDA date-bracket composites' },
+  // Event-driven CEO series.
+  { prefix: 'TESLACEOCHANGE', slots: 2, reason: 'Tesla CEO-change contracts — LiveCEO_ChangeFav' },
+  { prefix: 'KXOPENAICEOCHANGE', slots: 2, reason: 'OpenAI CEO-change contracts' },
+  { prefix: 'JPMCEOCHANGE', slots: 2, reason: 'JPMorgan CEO-change contracts' }
+];
+
+function seriesOf(m) {
+  return String(m.seriesTicker || m.ticker || '').split('-')[0];
+}
+
 const isFinalWithResult = (m) =>
   String(m.status || '') === 'finalized' && (m.result === 'yes' || m.result === 'no');
 const finalizedRanked = withLadder
   .filter(isFinalWithResult)
   .sort((a, b) => (num(b.market?.volume_fp) || 0) - (num(a.market?.volume_fp) || 0) || a.ticker.localeCompare(b.ticker));
 const finalizedKept = finalizedRanked.slice(0, FINALIZED_RESERVE);
-const finalizedTickers = new Set(finalizedKept.map((m) => m.ticker));
-const openFirst = withLadder.filter((m) => !finalizedTickers.has(m.ticker));
-const kept = [...finalizedKept, ...openFirst.slice(0, MAX_MARKETS)];
-const keptTickers = new Set(kept.map((m) => m.ticker));
+const keptTickers = new Set(finalizedKept.map((m) => m.ticker));
+const reservedBySeries = [];
+let reservedCount = 0;
+for (const rule of SERIES_RESERVES) {
+  const candidates = withLadder
+    .filter((m) => !keptTickers.has(m.ticker) && seriesOf(m) === rule.prefix && !isFinalWithResult(m))
+    .sort((a, b) => (num(b.market?.volume_fp) || 0) - (num(a.market?.volume_fp) || 0) || a.ticker.localeCompare(b.ticker));
+  const picked = candidates.slice(0, rule.slots);
+  for (const m of picked) keptTickers.add(m.ticker);
+  reservedBySeries.push({
+    prefix: rule.prefix,
+    slots: rule.slots,
+    kept: picked.length,
+    available: candidates.length,
+    reason: rule.reason,
+    tickers: picked.map((m) => m.ticker)
+  });
+  reservedCount += picked.length;
+}
+const openRemainingBudget = Math.max(0, MAX_MARKETS - reservedCount);
+const openFirst = withLadder.filter((m) => !keptTickers.has(m.ticker) && !isFinalWithResult(m));
+const unreservedOpen = openFirst.slice(0, openRemainingBudget);
+for (const m of unreservedOpen) keptTickers.add(m.ticker);
+const kept = [...finalizedKept, ...withLadder.filter((m) => keptTickers.has(m.ticker) && !finalizedKept.includes(m))];
 const dropped = withLadder.filter((m) => !keptTickers.has(m.ticker));
 
 const quoted = readQuotedUniverse();
@@ -411,9 +482,12 @@ const output = {
   },
   rule: {
     inclusion: 'every tracked market with >=1 real captured order-book ladder (captures[].at + captures[].url recorded per ladder)',
-    ordering: `up to ${FINALIZED_RESERVE} FINALIZED contracts carrying the exchange's own result first (real lifetime volume_fp descending), then open contracts (close_time after the newest capture) by real lifetime volume_fp descending, then ticker; the cap of ${MAX_MARKETS} is a budget for the OPEN contracts, the finalized reserve is additional`,
+    ordering: `up to ${FINALIZED_RESERVE} FINALIZED contracts carrying the exchange's own result first (real lifetime volume_fp descending); then SERIES RESERVES per priority prefix (game, weather, FDA, CEO contracts kept so signal-driven desk entrants have ladders to read); then remaining open contracts by real lifetime volume_fp descending; the cap of ${MAX_MARKETS} is the TARGET size for open contracts (reserved series slots count against it)`,
     finalizedReserve: FINALIZED_RESERVE,
     finalizedAvailable: finalizedRanked.length,
+    seriesReserves: reservedBySeries,
+    reservedCount,
+    openRemainingBudget,
     cap: MAX_MARKETS,
     droppedForCap: dropped.length,
     maxLevelsPerSide: MAX_LEVELS,
@@ -433,6 +507,7 @@ const output = {
     openAtCapture: kept.filter(isOpen).length,
     finalizedAtCapture: kept.filter((m) => String(m.status) === 'finalized').length,
     withRealResult: kept.filter((m) => m.result === 'yes' || m.result === 'no').length,
+    reservedBySeries,
     ladderCaptures: kept.reduce((s, m) => s + m.captures.length, 0),
     bars: kept.reduce((s, m) => s + m.bars.length, 0),
     newestCapture: newestCaptureTs

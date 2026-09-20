@@ -4,7 +4,7 @@
     {
       "label": "live (newest capture)",
       "asOf": "2026-09-20T11:34:47.759Z",
-      "tradeable": 80,
+      "tradeable": 79,
       "withRealResultAfter": 0,
       "settlementTickers": [],
       "sampleTickers": [
@@ -47,7 +47,7 @@
     {
       "label": "-12h",
       "asOf": "2026-09-19T23:34:47.759Z",
-      "tradeable": 79,
+      "tradeable": 78,
       "withRealResultAfter": 5,
       "settlementTickers": [
         "KXUFCFIGHT-26SEP19VANPAN-PAN",
@@ -73,7 +73,7 @@
     {
       "label": "-15h",
       "asOf": "2026-09-19T20:34:47.759Z",
-      "tradeable": 33,
+      "tradeable": 41,
       "withRealResultAfter": 5,
       "settlementTickers": [
         "KXUFCFIGHT-26SEP19VANPAN-PAN",
@@ -99,7 +99,7 @@
     {
       "label": "-24h",
       "asOf": "2026-09-19T11:34:47.759Z",
-      "tradeable": 33,
+      "tradeable": 41,
       "withRealResultAfter": 5,
       "settlementTickers": [
         "KXUFCFIGHT-26SEP19VANPAN-PAN",
@@ -125,7 +125,7 @@
     {
       "label": "-48h",
       "asOf": "2026-09-18T11:34:47.759Z",
-      "tradeable": 33,
+      "tradeable": 41,
       "withRealResultAfter": 6,
       "settlementTickers": [
         "KXUFCFIGHT-26SEP19VANPAN-PAN",
@@ -163,7 +163,7 @@
         "KXHIGHNY-26SEP19-B71.5"
       ],
       "sampleTickers": [],
-      "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here (it will not use a later ladder)"
+      "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here"
     },
     {
       "label": "-240h",
@@ -179,7 +179,7 @@
         "KXHIGHNY-26SEP19-B71.5"
       ],
       "sampleTickers": [],
-      "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here (it will not use a later ladder)"
+      "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here"
     }
   ],
   "audits": [
