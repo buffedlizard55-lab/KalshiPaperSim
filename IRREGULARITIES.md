@@ -1,8 +1,8 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-20 by `scripts/render-docs.js` from `src/verification-data.js`.
-**50 irregularities** flagged during this build: 15 high, 23 medium,
-10 low, 1 informational.
+**55 irregularities** flagged during this build: 17 high, 25 medium,
+11 low, 1 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
 about it**, and **what you should do**. Nothing here is speculation: each item was found by comparing an
@@ -287,6 +287,44 @@ assumption against an official document or a real API response.
 - placeDeskOrder — now carries the cash/position guards and records them on the order and the fill: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
 - Season audit S12 re-derives both rules from the ledger alone: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/desk-season.js>
 - Test 114 — borrow, naked short and over-sized sell all refused or capped: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js>
+
+---
+
+## #51 — A successful scheduled weather capture was lost at the commit step: the push guard could only auto-resolve two of the files the bots regenerate
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That the push guard's auto-resolve list (src/accumulated-history.js, src/forecast-data.js) covered every file a data bot's regenerate step rewrites, so a queued run that rebased onto another bot's commit would always be able to finish. |
+| **Verified truth** | Scheduled "Weather signal archive" run 35470529935 on main (2026-09-19, job 105974446303): the capture, audit and regenerate steps SUCCEEDED, then "Commit the new snapshots" failed with the annotations "conflict in src/fda-signal-data.js / src/desk-data.js / docs/src/forecast-data.js / docs/src/fda-signal-data.js is not a generated module — cannot resolve locally" and "could not sync with origin/main — re-run this job". While the run sat in the data-pipeline queue the ingest bot had pushed its own regenerated desk / FDA modules and docs/ copies; the old GENERATED_PATHS list did not name them, so the guard treated real generated files as hand-written and aborted. The freshly captured NWS snapshots existed only on the runner and were discarded with it — no false data was written, but a real capture was lost. |
+| **What the code does** | scripts/push-with-race-guard.sh now lists every file the workflows' regenerate step rewrites (the five browser modules, README/VERIFICATION/IRREGULARITIES, index.html, docs/) and resolves a conflict on them ONLY by re-running the same regeneration chain over the merged tree, then refuses to commit if any conflict marker survives; every data bot fast-forwards onto the branch tip BEFORE capturing; the weather, FDA and MLB workflows upload their store directory as an artifact when a run fails so a capture can no longer die with the runner; daily-history.yml joined the shared per-ref queue. A unit test checks the guard's list against the generator scripts and every workflow's regenerate step. The lost capture itself is not recoverable — the archive simply has no 2026-09-19 ~21:4x snapshot, which the coverage table shows. |
+| **What you should do** | Open the run link: the capture step is green and the commit step red with the quoted annotations. Then compare data/forecasts/*.json captured_at values around 2026-09-19T21:40Z — there is none, and there should be none. |
+
+**Evidence**
+
+- The failed run (annotations on the commit step): <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35470529935>
+- The fix (commit 885e3fa): every regenerated file auto-resolvable, only by regeneration: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/scripts/push-with-race-guard.sh>
+- test/workflow-race-guard.sh — scenarios 7 and 8 reproduce the race and the refusal: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/workflow-race-guard.sh>
+
+---
+
+## #53 — A parallel session merged PR #17 with strategy cards that described signals the code does not read, two "sources" that are search pages, and a fabricated "upcoming trades" list
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That everything merged to main under the honesty contract had been checked line by line against the code: that a card saying "when insiders hold equity" reads insider data, that a quoted source can be opened, that an "upcoming trade" is a strategy decision. |
+| **Verified truth** | PR #17 (commit cf4e116, merged 2026-09-20T03:08Z by a concurrent session while this one was working on the same repository) added: (1) InsiderFiling_Drift / LiveInsider_FilingFader, whose text claimed Form 4 / insider-retention signals while the code reads only the contract's own prices (and the desk version assumed a YES ask of 0.20 when no quote existed); (2) TheLeap_BreakoutRank / LiveTheLeap_Momentum, attributing "champion" behaviour to The Leap without a source; (3) LiveWeather_ForecastEdge, whose card and order reasons said "reads the point-in-time NWS forecast" while the code bought any KXHIGH bracket asked ≤ 0.45 without opening the archive; (4) GridMM_MultiTier, whose rules said "rest a limit buy … sell at +3 ticks" while decide() sent a taker market buy with no exit; (5) FOMC_ProbabilitySniper, whose text cited CME FedWatch divergence and a "modal strike" the code never computes; (6) NCAAF_GameFavourite, stating as fact that 0.60–0.85 favourites "settle YES at a frequency exceeding implied probability" with no source; (7) research entries R16/R17 whose URLs are a YouTube search page and an X search page, with "quotations" that cannot be attributed; (8) fact V109 claiming all 13 MasterSite projects were "mapped to concrete, executable trading strategies with verified pricing"; (9) a Live Desk "upcoming trades" builder that, for entrants without a declared plan, INVENTED rows from regex matches on the strategy id, a default price of 0.50 and generated trigger text ("Enter order when contract conditions align with …") — shown on the site as READY setups. Its placed-trades ledger, the UI tables and the new tests were sound. |
+| **What the code does** | Nothing was deleted and no username changed (they are the competition's identities): every card was rewritten to say exactly what its code reads; LiveWeather_ForecastEdge was rewritten to actually read the NWS archive at the cut-off (the desk market view now exposes the bracket strikes it needs); GridMM_MultiTier was rewritten to rest maker orders as its rules state; the desk entrant that assumed a 0.20 quote now abstains without one; R16/R17 carry a new capture method UNATTRIBUTED and their strategies are labelled original designs; V109/V110 were re-worded; S02/S03 were restored to not-testable-as-a-signal with the entries listed as price-only; buildUpcomingTrades now compiles ONLY from the desk's own ORDER/FILL/REST records (open positions awaiting settlement, working maker orders, unfilled remainders) and the fabricated per-entrant upcoming() hooks were removed. A new test asserts that no strategy text names a signal source its code does not import. Process finding: two sessions on one repository must merge each other's branch before writing — this session did (its first commit is that merge), the other did not. |
+| **What you should do** | Open PR #17's diff for src/desk-strategies.js and compare LiveWeather_ForecastEdge.decide() there (no forecast read) with the current file (forecastHighAt at the cut-off). Then open the Live Desk tab: every upcoming-trade row now names the ORDER record it came from (id UPC-<orderId>-…). |
+
+**Evidence**
+
+- PR #17 as merged: <https://github.com/buffedlizard55-lab/KalshiPaperSim/pull/17>
+- The corrected entries (src/strategies.js, src/desk-strategies.js) and the record-derived buildUpcomingTrades (src/live-desk.js): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
+- R16 / R17 re-labelled UNATTRIBUTED in src/research-sources.js: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/research-sources.js>
 
 ---
 
@@ -709,6 +747,42 @@ assumption against an official document or a real API response.
 
 ---
 
+## #52 — The site's "what this project cannot test yet" cards and three MasterSite ledger entries kept saying no sports series / no 1-minute bars / no settlements existed — two days after the store had all three
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That the research-gap cards (src/research-sources.js RESEARCH_GAPS) and the S09 / S10 / S17 ledger texts were still true, because nobody re-read them after the store grew. |
+| **Verified truth** | Written on 2026-09-17 against a store of three daily index/BTC series, four of the five gap cards had become false by 2026-09-18 and were still published on 2026-09-20: "no weather series is ingested" (nine KXHIGH* series plus the NWS archive shipped 09-18), "no sports series is ingested" (seven hourly game-line series shipped 09-18), "the intraday store is configured for period 60" (1-minute blocks shipped 09-18), "nothing in the tracked universe has finalised yet" (status=all blocks store exchange results and the replay books them). S09 said "No MLB series in the universe" while nine finalized KXMLBGAME contracts sat in data/history/intraday/60m/. None of these sentences affected a number — they were prose about the store — but a "cannot test" card that is false hides a test that is possible, which is the opposite of the honesty contract. |
+| **What the code does** | RESEARCH_GAPS entries now carry status (open / partially closed / closed) and closedBy with the date and the artefacts that closed them; closed gaps stay on the list so the history is visible, and the Research tab shows the status badge. S09, S10, S14, S15 and S17 were re-worded to the store as it is on 2026-09-20 (S09 is now a live signal via the official MLB Stats API archive). The general rule is the same one the store-facts captions follow: a sentence about the store must either be computed from the store or carry the date it was true. |
+| **What you should do** | Open the Research tab: every gap card shows a status badge, and a closed card names what closed it. Grep the repository for "No sports series" — it must appear only inside the WAS: history of a closed gap or in this register. |
+
+**Evidence**
+
+- RESEARCH_GAPS with status/closedBy fields (each closed gap keeps its original wording as WAS:): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/research-sources.js>
+- The store that contradicted the cards: data/history/intraday/60m/ (sports, weather, settled results) and intraday/1m/: <https://github.com/buffedlizard55-lab/KalshiPaperSim/tree/main/data/history/intraday>
+
+---
+
+## #54 — The desk-season schedule only counted a capture batch as a round if some contract got its FIRST-EVER ladder in it — so re-capturing an unchanged universe (ingest request 14) added no round at all
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That every new ingest pass adds a season round ("a new scheduled ingest adds a round", the schedule's own comment), and that ingest request 14 — requested on 2026-09-19 precisely to add one — had done so. |
+| **Verified truth** | seasonSchedule() defaulted minNewLadders to 1: a batch qualified only when a market's first-ever ladder fell inside it. Request 14 re-queried exactly the request-13 universe at 2026-09-20T00:40Z (732 captures across 80 open contracts) and produced zero rounds; the 2026-09-19T21:57Z re-capture was dropped for the same reason. The season therefore stopped at R03 (2026-09-19T15:34Z) while the store held two later full boards. A second, smaller flaw: the 5-minute batch window split one ingest pass into two rounds (2026-09-19T11:02Z with 12 ladders and 11:08Z with 3), because a pass pauses for more than five minutes between blocks. |
+| **What the code does** | A round is now any capture batch in which at least one tracked contract's ladder was (re)captured (minFreshLadders = 1); first-ever novelty is no longer required (minNewLadders = 0); the batch window is 20 minutes. On the pre-merge store rounds went from 3 to 6 (2026-09-18T00:03Z → 2026-09-20T00:40Z); on the merged 2026-09-20 store (both branches' captures) the old rule gives 4 and the corrected rule 5 (2026-09-18T02:46Z → 2026-09-20T03:53Z, the 21:53Z re-capture being the round the old rule dropped). The 27 season checks still pass, and each round row now publishes freshLadderCaptures next to newLadderCaptures so the difference is visible in the schedule file and on the Desk Season tab. |
+| **What you should do** | In data/reports/desk-season-schedule.json, R04 (2026-09-19T21:53Z) has newLadderCaptures 0 and freshLadderCaptures 76: a full re-capture of the open board that the old rule would have skipped. |
+
+**Evidence**
+
+- seasonSchedule() — minNewLadders / minFreshLadders / batchMinutes and the HISTORY note: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/desk-season.js>
+- The regenerated schedule (data/reports/desk-season-schedule.json): six rounds, R05 21:57Z and R06 00:40Z now present: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/data/reports/desk-season-schedule.json>
+
+---
+
 ## #9 — Two different status vocabularies for the same concept
 
 **Severity:** `LOW`
@@ -921,4 +995,22 @@ assumption against an official document or a real API response.
 
 - Fee schedule (check the Non-Standard table for these series): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
 - The honest fallback — `src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"`
+
+---
+
+## #55 — The FDA and MLB archive workflows committed their raw capture logs to the repository root on every run
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That every bot's scratch log was covered by .gitignore, as ingest.log and forecast.log are, so the race guard's `git add -A` could never sweep one into a data commit. |
+| **Verified truth** | Only /ingest.log and /forecast.log were ignored. fda-signals.log has been committed by every FDA run since 2026-09-19 (it is in main's tree), and the first MLB run on 2026-09-20 (run 35491621248) committed mlb-signals.log the same way. No data was affected — the logs duplicate what the runner already uploads as an artifact — but a tracked log file changes on every run, which makes every bot commit larger than its data and would let two bots conflict on a file nobody needs. |
+| **What the code does** | /fda-signals.log and /mlb-signals.log added to .gitignore and both files removed from the tree (git rm --cached). The logs remain available as workflow artifacts (fda-signals-log / mlb-signals-log) and the per-run JSON reports (_fda-last-run.json / _mlb-last-run.json) stay committed, which is the diagnosable record the design wants. |
+| **What you should do** | After this PR merges, no *.log file should appear at the repository ROOT in any bot commit: `git ls-files "*.log" | grep -v ^data/` on main must be empty (data/history/_last-run.log is the ingest's deliberately committed copy and stays). |
+
+**Evidence**
+
+- .gitignore (the two new entries): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/.gitignore>
+- The first MLB capture run, whose commit carried mlb-signals.log: <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35491621248>
 

@@ -800,6 +800,54 @@
       }
     },
     {
+      "captured_at": "2026-09-20T02:48:17.937Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VGKLA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "432.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "50300.00"
+            ],
+            [
+              "0.0200",
+              "4.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "707.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6800",
+              "10.00"
+            ],
+            [
+              "0.6900",
+              "3.34"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:13:10.462Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VGKLA-2/orderbook",
       "orderbook": {
@@ -829,6 +877,92 @@
             [
               "0.6700",
               "4.43"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:20:02.826Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VGKLA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "168.00"
+            ],
+            [
+              "0.6000",
+              "5.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6800",
+              "10.00"
+            ],
+            [
+              "0.6900",
+              "4.01"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:23:57.344Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VGKLA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "168.00"
+            ],
+            [
+              "0.6000",
+              "5.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6800",
+              "10.00"
+            ],
+            [
+              "0.6900",
+              "4.01"
             ]
           ]
         }

@@ -926,6 +926,16 @@
       }
     },
     {
+      "captured_at": "2026-09-20T02:53:34.177Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26AUG20-T80/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:19:06.080Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26AUG20-T80/orderbook",
       "orderbook": {
@@ -963,7 +973,7 @@
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
-    "no_sub_title": "79° or below",
+    "no_sub_title": "79\u00b0 or below",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-08-21T14:00:00Z",
     "open_interest_fp": "24971.19",
@@ -980,7 +990,7 @@
       }
     ],
     "result": "no",
-    "rules_primary": "If the maximum temperature recorded at Philadelphia (CLIPHL) for Aug 20, 2026, is less than 80° fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_primary": "If the maximum temperature recorded at Philadelphia (CLIPHL) for Aug 20, 2026, is less than 80\u00b0 fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-08-21T11:10:57.033838Z",
@@ -988,7 +998,7 @@
     "status": "finalized",
     "strike_type": "less",
     "ticker": "KXHIGHPHIL-26AUG20-T80",
-    "title": "Will the maximum temperature be <80° on Aug 20, 2026?",
+    "title": "Will the maximum temperature be <80\u00b0 on Aug 20, 2026?",
     "updated_time": "2026-08-21T11:10:57.075691Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "27157.64",
@@ -996,7 +1006,7 @@
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
-    "yes_sub_title": "79° or below"
+    "yes_sub_title": "79\u00b0 or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26AUG20-T80",
   "market_captured_at": "2026-09-20T11:30:32.844Z",

@@ -383,7 +383,9 @@ export function buildLeaderboard(results) {
         (r.totalTrades || 0) >= LEADERBOARD_QUALIFICATION.minTrades
           ? null
           : r.skippedFlight
-            ? `Flight mismatch — ${r.skippedFlight.reason} (this design runs in another flight.)`
+            ? r.skippedFlight.pendingIngest
+              ? `Pending ingest — ${r.skippedFlight.reason}.`
+              : `Flight mismatch — ${r.skippedFlight.reason} (this design runs in another flight.)`
             : `No executed fills — ${LEADERBOARD_QUALIFICATION.rule} Listed unranked: ${
                 r.realSettlements?.eligibleMarkets?.length
                   ? 'the universe is tradeable, but this design\'s entry condition never fired on it (for a signal-driven design, the point-in-time signal may not cover the window).'

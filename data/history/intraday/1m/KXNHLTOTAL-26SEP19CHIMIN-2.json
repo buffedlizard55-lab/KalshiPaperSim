@@ -5,6 +5,26 @@
   "source": "live_api",
   "candlesticks": [
     {
+      "end_period_ts": 1789766160,
+      "open_interest_fp": "11.13",
+      "price": {
+        "previous_dollars": "0.9000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.8900",
+        "high_dollars": "0.8900",
+        "low_dollars": "0.8900",
+        "open_dollars": "0.8900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1500",
+        "high_dollars": "0.1500",
+        "low_dollars": "0.1500",
+        "open_dollars": "0.1500"
+      }
+    },
+    {
       "end_period_ts": 1789766220,
       "open_interest_fp": "11.13",
       "price": {
@@ -2288,6 +2308,108 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:02:34.307Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19CHIMIN-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1000.00"
+            ],
+            [
+              "0.0200",
+              "575.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "8.00"
+            ],
+            [
+              "0.9900",
+              "5112.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:11:22.348Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19CHIMIN-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1000.00"
+            ],
+            [
+              "0.0200",
+              "575.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.1600",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "8.00"
+            ],
+            [
+              "0.9900",
+              "5112.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:29:13.696Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19CHIMIN-2/orderbook",
       "orderbook": {
@@ -2403,6 +2525,14 @@
       "dropped": 8,
       "dropped_from_ts": 1789755300,
       "dropped_to_ts": 1789765740,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:02:34.607Z",
+      "dropped": 1,
+      "dropped_from_ts": 1789766100,
+      "dropped_to_ts": 1789766100,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     },

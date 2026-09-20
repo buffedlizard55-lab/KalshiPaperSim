@@ -2377,6 +2377,55 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:02:31.778Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "651.00"
+            ],
+            [
+              "0.0200",
+              "0.10"
+            ],
+            [
+              "0.0400",
+              "50.00"
+            ],
+            [
+              "0.3500",
+              "15.32"
+            ],
+            [
+              "0.4000",
+              "33.00"
+            ],
+            [
+              "0.9800",
+              "50.00"
+            ],
+            [
+              "0.9900",
+              "172.90"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:11:19.822Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:29:10.857Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/orderbook",
       "orderbook": {
@@ -2487,6 +2536,22 @@
       "dropped": 2,
       "dropped_from_ts": 1789833360,
       "dropped_to_ts": 1789833420,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:02:32.078Z",
+      "dropped": 16,
+      "dropped_from_ts": 1789833480,
+      "dropped_to_ts": 1789838820,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:11:20.122Z",
+      "dropped": 1,
+      "dropped_from_ts": 1789841280,
+      "dropped_to_ts": 1789841280,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     },

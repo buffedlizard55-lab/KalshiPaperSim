@@ -1,0 +1,310 @@
+{
+ "what": "The 30 official MLB team abbreviations (statsapi.mlb.com/api/v1/teams?sportId=1). KXMLBGAME tickers use these exact codes (fact V113); the join in src/mlb-signal-store.js is refused for any code not in this table.",
+ "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
+ "season": 2026,
+ "captured_at": "2026-09-20T05:25:27.222Z",
+ "last_confirmed_at": "2026-09-20T05:25:27.222Z",
+ "copyright": "Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt",
+ "teams": [
+  {
+   "id": 108,
+   "abbreviation": "LAA",
+   "name": "Los Angeles Angels",
+   "teamName": "Angels",
+   "locationName": "Anaheim",
+   "shortName": "LA Angels",
+   "franchiseName": "Los Angeles",
+   "clubName": "Angels"
+  },
+  {
+   "id": 109,
+   "abbreviation": "AZ",
+   "name": "Arizona Diamondbacks",
+   "teamName": "D-backs",
+   "locationName": "Phoenix",
+   "shortName": "Arizona",
+   "franchiseName": "Arizona",
+   "clubName": "Diamondbacks"
+  },
+  {
+   "id": 110,
+   "abbreviation": "BAL",
+   "name": "Baltimore Orioles",
+   "teamName": "Orioles",
+   "locationName": "Baltimore",
+   "shortName": "Baltimore",
+   "franchiseName": "Baltimore",
+   "clubName": "Orioles"
+  },
+  {
+   "id": 111,
+   "abbreviation": "BOS",
+   "name": "Boston Red Sox",
+   "teamName": "Red Sox",
+   "locationName": "Boston",
+   "shortName": "Boston",
+   "franchiseName": "Boston",
+   "clubName": "Red Sox"
+  },
+  {
+   "id": 112,
+   "abbreviation": "CHC",
+   "name": "Chicago Cubs",
+   "teamName": "Cubs",
+   "locationName": "Chicago",
+   "shortName": "Chi Cubs",
+   "franchiseName": "Chicago",
+   "clubName": "Cubs"
+  },
+  {
+   "id": 113,
+   "abbreviation": "CIN",
+   "name": "Cincinnati Reds",
+   "teamName": "Reds",
+   "locationName": "Cincinnati",
+   "shortName": "Cincinnati",
+   "franchiseName": "Cincinnati",
+   "clubName": "Reds"
+  },
+  {
+   "id": 114,
+   "abbreviation": "CLE",
+   "name": "Cleveland Guardians",
+   "teamName": "Guardians",
+   "locationName": "Cleveland",
+   "shortName": "Cleveland",
+   "franchiseName": "Cleveland",
+   "clubName": "Guardians"
+  },
+  {
+   "id": 115,
+   "abbreviation": "COL",
+   "name": "Colorado Rockies",
+   "teamName": "Rockies",
+   "locationName": "Denver",
+   "shortName": "Colorado",
+   "franchiseName": "Colorado",
+   "clubName": "Rockies"
+  },
+  {
+   "id": 116,
+   "abbreviation": "DET",
+   "name": "Detroit Tigers",
+   "teamName": "Tigers",
+   "locationName": "Detroit",
+   "shortName": "Detroit",
+   "franchiseName": "Detroit",
+   "clubName": "Tigers"
+  },
+  {
+   "id": 117,
+   "abbreviation": "HOU",
+   "name": "Houston Astros",
+   "teamName": "Astros",
+   "locationName": "Houston",
+   "shortName": "Houston",
+   "franchiseName": "Houston",
+   "clubName": "Astros"
+  },
+  {
+   "id": 118,
+   "abbreviation": "KC",
+   "name": "Kansas City Royals",
+   "teamName": "Royals",
+   "locationName": "Kansas City",
+   "shortName": "Kansas City",
+   "franchiseName": "Kansas City",
+   "clubName": "Royals"
+  },
+  {
+   "id": 119,
+   "abbreviation": "LAD",
+   "name": "Los Angeles Dodgers",
+   "teamName": "Dodgers",
+   "locationName": "Los Angeles",
+   "shortName": "LA Dodgers",
+   "franchiseName": "Los Angeles",
+   "clubName": "Dodgers"
+  },
+  {
+   "id": 120,
+   "abbreviation": "WSH",
+   "name": "Washington Nationals",
+   "teamName": "Nationals",
+   "locationName": "Washington",
+   "shortName": "Washington",
+   "franchiseName": "Washington",
+   "clubName": "Nationals"
+  },
+  {
+   "id": 121,
+   "abbreviation": "NYM",
+   "name": "New York Mets",
+   "teamName": "Mets",
+   "locationName": "Flushing",
+   "shortName": "NY Mets",
+   "franchiseName": "New York",
+   "clubName": "Mets"
+  },
+  {
+   "id": 133,
+   "abbreviation": "ATH",
+   "name": "Athletics",
+   "teamName": "Athletics",
+   "locationName": "Sacramento",
+   "shortName": "Athletics",
+   "franchiseName": "Athletics",
+   "clubName": "Athletics"
+  },
+  {
+   "id": 134,
+   "abbreviation": "PIT",
+   "name": "Pittsburgh Pirates",
+   "teamName": "Pirates",
+   "locationName": "Pittsburgh",
+   "shortName": "Pittsburgh",
+   "franchiseName": "Pittsburgh",
+   "clubName": "Pirates"
+  },
+  {
+   "id": 135,
+   "abbreviation": "SD",
+   "name": "San Diego Padres",
+   "teamName": "Padres",
+   "locationName": "San Diego",
+   "shortName": "San Diego",
+   "franchiseName": "San Diego",
+   "clubName": "Padres"
+  },
+  {
+   "id": 136,
+   "abbreviation": "SEA",
+   "name": "Seattle Mariners",
+   "teamName": "Mariners",
+   "locationName": "Seattle",
+   "shortName": "Seattle",
+   "franchiseName": "Seattle",
+   "clubName": "Mariners"
+  },
+  {
+   "id": 137,
+   "abbreviation": "SF",
+   "name": "San Francisco Giants",
+   "teamName": "Giants",
+   "locationName": "San Francisco",
+   "shortName": "San Francisco",
+   "franchiseName": "San Francisco",
+   "clubName": "Giants"
+  },
+  {
+   "id": 138,
+   "abbreviation": "STL",
+   "name": "St. Louis Cardinals",
+   "teamName": "Cardinals",
+   "locationName": "St. Louis",
+   "shortName": "St. Louis",
+   "franchiseName": "St. Louis",
+   "clubName": "Cardinals"
+  },
+  {
+   "id": 139,
+   "abbreviation": "TB",
+   "name": "Tampa Bay Rays",
+   "teamName": "Rays",
+   "locationName": "St. Petersburg",
+   "shortName": "Tampa Bay",
+   "franchiseName": "Tampa Bay",
+   "clubName": "Rays"
+  },
+  {
+   "id": 140,
+   "abbreviation": "TEX",
+   "name": "Texas Rangers",
+   "teamName": "Rangers",
+   "locationName": "Arlington",
+   "shortName": "Texas",
+   "franchiseName": "Texas",
+   "clubName": "Rangers"
+  },
+  {
+   "id": 141,
+   "abbreviation": "TOR",
+   "name": "Toronto Blue Jays",
+   "teamName": "Blue Jays",
+   "locationName": "Toronto",
+   "shortName": "Toronto",
+   "franchiseName": "Toronto",
+   "clubName": "Blue Jays"
+  },
+  {
+   "id": 142,
+   "abbreviation": "MIN",
+   "name": "Minnesota Twins",
+   "teamName": "Twins",
+   "locationName": "Minneapolis",
+   "shortName": "Minnesota",
+   "franchiseName": "Minnesota",
+   "clubName": "Twins"
+  },
+  {
+   "id": 143,
+   "abbreviation": "PHI",
+   "name": "Philadelphia Phillies",
+   "teamName": "Phillies",
+   "locationName": "Philadelphia",
+   "shortName": "Philadelphia",
+   "franchiseName": "Philadelphia",
+   "clubName": "Phillies"
+  },
+  {
+   "id": 144,
+   "abbreviation": "ATL",
+   "name": "Atlanta Braves",
+   "teamName": "Braves",
+   "locationName": "Atlanta",
+   "shortName": "Atlanta",
+   "franchiseName": "Atlanta",
+   "clubName": "Braves"
+  },
+  {
+   "id": 145,
+   "abbreviation": "CWS",
+   "name": "Chicago White Sox",
+   "teamName": "White Sox",
+   "locationName": "Chicago",
+   "shortName": "Chi White Sox",
+   "franchiseName": "Chicago",
+   "clubName": "White Sox"
+  },
+  {
+   "id": 146,
+   "abbreviation": "MIA",
+   "name": "Miami Marlins",
+   "teamName": "Marlins",
+   "locationName": "Miami",
+   "shortName": "Miami",
+   "franchiseName": "Miami",
+   "clubName": "Marlins"
+  },
+  {
+   "id": 147,
+   "abbreviation": "NYY",
+   "name": "New York Yankees",
+   "teamName": "Yankees",
+   "locationName": "Bronx",
+   "shortName": "NY Yankees",
+   "franchiseName": "New York",
+   "clubName": "Yankees"
+  },
+  {
+   "id": 158,
+   "abbreviation": "MIL",
+   "name": "Milwaukee Brewers",
+   "teamName": "Brewers",
+   "locationName": "Milwaukee",
+   "shortName": "Milwaukee",
+   "franchiseName": "Milwaukee",
+   "clubName": "Brewers"
+  }
+ ]
+}

@@ -4697,6 +4697,198 @@
       }
     },
     {
+      "captured_at": "2026-09-20T02:48:55.344Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2222.00"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.2600",
+              "6.00"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1015.45"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.0400",
+              "2.01"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T02:54:22.344Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2222.00"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.2600",
+              "6.00"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1015.45"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.0400",
+              "2.01"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:03:10.663Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2222.00"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.2600",
+              "6.00"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1015.45"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.0400",
+              "2.01"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:12:22.244Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2222.00"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.2600",
+              "6.00"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1015.45"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.0400",
+              "2.01"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:13:53.096Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
       "orderbook": {
@@ -4952,6 +5144,14 @@
       "dropped": 87,
       "dropped_from_ts": 1787248800,
       "dropped_to_ts": 1787864400,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T02:48:55.645Z",
+      "dropped": 1,
+      "dropped_from_ts": 1787868000,
+      "dropped_to_ts": 1787868000,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     },

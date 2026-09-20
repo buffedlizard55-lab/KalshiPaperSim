@@ -31,6 +31,8 @@ import {
   SIGNAL_SOURCES, signalSourceStats, SIGNAL_SOURCE_STATUS
 } from './signal-sources.js';
 import { forecastCoverage, hasForecastArchive } from './forecast-store.js';
+import { fdaSignalCoverage, hasFdaSignalArchive } from './fda-signal-store.js';
+import { mlbCoverage, mlbGames } from './mlb-signal-store.js';
 
 /* ------------------------------------------------------------------ *
  * State
@@ -1477,12 +1479,13 @@ function renderDeskSeason(data) {
       <summary>Schedule detail — every round’s cut-off, batch and gap</summary>
       <div class="table-wrap">
         <table class="grid">
-          <thead><tr><th>Round</th><th>Cut-off</th><th>Batch start</th><th class="num">Instants in batch</th><th class="num">New ladders</th><th class="num">Cumulative ladders</th><th class="num">Gap (h)</th></tr></thead>
+          <thead><tr><th>Round</th><th>Cut-off</th><th>Batch start</th><th class="num">Instants in batch</th><th class="num">Ladders (re)captured in batch</th><th class="num">First-ever ladders</th><th class="num">Cumulative ladders</th><th class="num">Gap (h)</th></tr></thead>
           <tbody>
             ${rounds.map((r) => `
               <tr>
                 <td>${esc(r.label)}</td><td>${esc(r.asOf)}</td><td>${esc(r.batchStart || '—')}</td>
                 <td class="num">${esc(String(r.instantsInBatch ?? '—'))}</td>
+                <td class="num">${esc(String(r.freshLadderCaptures ?? '—'))}</td>
                 <td class="num">${esc(String(r.newLadderCaptures ?? '—'))}</td>
                 <td class="num">${esc(String(r.marketsWithLadder ?? '—'))}</td>
                 <td class="num">${r.gapHoursFromPrev === null || r.gapHoursFromPrev === undefined ? '—' : esc(Number(r.gapHoursFromPrev).toFixed(2))}</td>
@@ -1610,7 +1613,7 @@ function renderLiveDesk(data) {
   setHTML('#deskKpis', `
     <div class="card"><span class="card-label">Contracts on the desk</span><span class="card-value">${esc(String(cov.inUniverse))}</span><span class="card-note">${esc(String(cov.tradeable))} with a captured ladder at the cut-off</span></div>
     <div class="card"><span class="card-label">Placed trades · fills</span><span class="card-value">${esc(String((data.placedTrades || []).length))} · ${esc(String(t.fills ?? 0))}</span><span class="card-note">${esc(String(t.cancels ?? 0))} resting order(s) never crossed and were cancelled</span></div>
-    <div class="card"><span class="card-label">Upcoming trades queued</span><span class="card-value">${esc(String((data.upcomingTrades || []).length))}</span><span class="card-note">trigger setups monitored on real open event contracts</span></div>
+    <div class="card"><span class="card-label">Upcoming trades (outcome still ahead)</span><span class="card-value">${esc(String((data.upcomingTrades || []).length))}</span><span class="card-note">open positions awaiting the exchange result, working maker orders and unfilled remainders — compiled from the desk's own order records</span></div>
     <div class="card"><span class="card-label">Real settlements booked</span><span class="card-value">${esc(String(t.settlements ?? 0))}</span><span class="card-note">paid $1.00 / $0.00 by the exchange's own result</span></div>
     <div class="card"><span class="card-label">Official fees paid</span><span class="card-value">${esc(money(t.fees ?? 0, 4))}</span><span class="card-note">quadratic schedule, captured per-series multiplier</span></div>
     <div class="card"><span class="card-label">Best desk return</span><span class="card-value ${signedClass(best?.returnPct)}">${best ? pct(best.returnPct, 4) : '—'}</span><span class="card-note">${best ? esc(best.strategy) : 'no strategy filled an order here'}</span></div>
@@ -1794,7 +1797,7 @@ function renderDeskUpcomingTrades(data) {
                 <span class="tag">${esc(u.triggerType)}</span>
                 <div class="cell-sub">${esc(u.triggerCondition)}</div>
               </td>
-              <td class="cell-sub">${esc(u.rationale)}</td>
+              <td class="cell-sub">${esc(u.rationale || '')}${u.orderId ? `<div class="cell-sub">from order <code>${esc(u.orderId)}</code>${u.placedAt ? ` · placed ${esc(timeShort(u.placedAt))}` : ''}</div>` : ''}</td>
               <td>
                 <button class="btn btn-sm btn-simulate-upcoming" data-idx="${i}">Simulate trade</button>
               </td>
@@ -2277,6 +2280,7 @@ async function renderResearch() {
   renderResearchStats(sweep);
   renderSignalSources();
   renderForecastStatus();
+  await renderSignalArchiveStatus();
   renderResearchSweep(sweep);
   renderResearchLiquidity(liquidity);
   renderResearchLedger();
@@ -2293,6 +2297,7 @@ function renderResearchStats(sweep) {
       <div class="stat-row"><span>Public sources logged</span><b>${stats.sources}</b></div>
       <div class="stat-row"><span>Read in full (page fetch)</span><b>${stats.fetchedPages}</b></div>
       <div class="stat-row"><span>Read in full (GitHub API file)</span><b>${stats.apiFileFetches ?? 0}</b></div>
+      <div class="stat-row"><span>Unattributed (search page only — genre references, flagged)</span><b>${stats.unattributed ?? 0}</b></div>
       <div class="stat-row"><span>Read via search excerpt (page returns HTTP 403 to this sandbox)</span><b>${stats.searchExcerpts}</b></div>
       <div class="stat-row"><span>Sources this repository can test</span><b>${stats.sourcesWithAReplay}</b></div>
       <div class="stat-row"><span>Sources it cannot test here</span><b>${stats.notTestableHere}</b></div>
@@ -2367,6 +2372,72 @@ function renderForecastStatus() {
     capture time — <code>ForecastEdge_Weather</code> may only read a snapshot captured at or before each decision bar, so the signal can never look ahead.
     Basis note: KXHIGHNY settles on The Weather Company (CLINYC) per the market rules; the signal is the NWS forecast for the same point (mismatch flagged in IRREGULARITIES.md).</p>
     <div class="card-grid">${cards}</div>`);
+}
+
+/**
+ * The other two point-in-time archives (Drugs@FDA, official MLB game state):
+ * how much signal exists, over what window, and — for MLB — which stored
+ * KXMLBGAME contracts join to an archived game and which do not (with the
+ * reason). Everything here is computed from the shipped archives.
+ */
+async function renderSignalArchiveStatus() {
+  // The runner (and the 9 MB history module behind it) is loaded lazily, as
+  // the rest of this tab does, so the archive panel never slows the boot.
+  const { mlbJoinReport } = await import('./strategy-runner.js');
+  const fda = fdaSignalCoverage();
+  const fdaCards = hasFdaSignalArchive()
+    ? fda.map((c) => `
+      <div class="card">
+        <strong>${esc(c.label || c.slug)}</strong>
+        <div class="muted"><code>${esc(c.query || '')}</code> → ${c.markets.map((m) => `<code>${esc(m)}</code>`).join(' ')}</div>
+        <div class="stat-row"><span>Point-in-time snapshots</span><b>${c.snapshots}</b></div>
+        <div class="stat-row"><span>First / last capture</span><b>${esc(c.firstCapturedAt || '—')} → ${esc(c.lastCapturedAt || '—')}</b></div>
+        <div class="stat-row"><span>Current archived state</span><b>${esc(c.currentState || '—')}</b></div>
+        <div class="stat-row"><span>Approval flip seen</span><b>${c.approvalFlip ? esc(c.approvalFlip.flippedAt) : 'not yet'}</b></div>
+      </div>`).join('')
+    : `<div class="card"><strong>Drugs@FDA archive: EMPTY</strong><div class="muted">No snapshot has been captured yet (fda-signals workflow). <code>FDAEdge_DrugsFDA</code> abstains on every bar until it has.</div></div>`;
+
+  const cov = mlbCoverage();
+  const joins = mlbJoinReport();
+  const matched = joins.filter((j) => j.ok).length;
+  const games = mlbGames();
+  const recent = games
+    .slice()
+    .sort((a, b) => (a.gameDate < b.gameDate ? 1 : -1))
+    .slice(0, 12)
+    .map((g) => {
+      const last = (g.states || [])[g.states.length - 1] || {};
+      const score = last.runs && last.runs.away !== null && last.runs.away !== undefined ? `${last.runs.away}–${last.runs.home}` : '—';
+      return `<tr><td><code>${esc(String(g.gamePk))}</code></td><td>${esc(g.away?.abbreviation || '?')} @ ${esc(g.home?.abbreviation || '?')}</td><td>${esc(g.gameDate)}</td><td>${esc(last.abstractGameState || '—')}${last.detailedState && last.detailedState !== last.abstractGameState ? ` <span class="muted">(${esc(last.detailedState)})</span>` : ''}</td><td>${last.inning ? `${esc(last.inningState || '')} ${last.inning}` : '—'}</td><td class="num">${score}</td><td class="num">${(g.states || []).length}</td></tr>`;
+    })
+    .join('');
+  const joinRows = joins.map((j) => `<tr><td><code>${esc(j.ticker)}</code></td><td>${j.ok ? '<span class="pill pill-live">MATCHED</span>' : `<span class="pill pill-off">${esc(j.reason)}</span>`}</td><td>${j.gamePk ? `<code>${esc(String(j.gamePk))}</code>` : '—'}</td><td>${esc(j.scheduledUtc || '—')}</td><td class="num">${j.stateRows}</td></tr>`).join('');
+  const mlbBody = cov.present
+    ? `<div class="card-grid">
+        <div class="card"><strong>Coverage</strong>
+          <div class="stat-row"><span>Date files (US-Eastern days)</span><b>${cov.dates} (${esc(cov.firstDate || '—')} → ${esc(cov.lastDate || '—')})</b></div>
+          <div class="stat-row"><span>Games archived</span><b>${cov.games} (${cov.gamesWithLiveRows} with LIVE rows, ${cov.gamesWithFinalRows} with a FINAL row)</b></div>
+          <div class="stat-row"><span>State rows (one per change)</span><b>${cov.stateRows}</b></div>
+          <div class="stat-row"><span>Capture instants</span><b>${cov.captures} (${esc(cov.firstCapturedAt || '—')} → ${esc(cov.lastCapturedAt || '—')})</b></div>
+          <div class="stat-row"><span>Official team table</span><b>${cov.teams} clubs</b></div>
+          <div class="stat-row"><span>Stored KXMLBGAME contracts joined</span><b>${matched} of ${joins.length}</b></div>
+        </div>
+      </div>
+      <h4>Most recent archived games</h4>
+      <div class="table-wrap"><table class="grid"><thead><tr><th>gamePk</th><th>Away @ Home</th><th>First pitch (UTC)</th><th>Newest state</th><th>Inning</th><th class="num">Runs A–H</th><th class="num">Rows</th></tr></thead><tbody>${recent || '<tr><td colspan="7" class="muted">none</td></tr>'}</tbody></table></div>
+      <h4>KXMLBGAME contracts in the store → official game join</h4>
+      <div class="table-wrap"><table class="grid"><thead><tr><th>Ticker</th><th>Join</th><th>gamePk</th><th>Ticker's first pitch (UTC)</th><th class="num">State rows</th></tr></thead><tbody>${joinRows || '<tr><td colspan="5" class="muted">no KXMLBGAME contract in the store</td></tr>'}</tbody></table></div>`
+    : `<div class="card"><strong>MLB game-state archive: EMPTY</strong><div class="muted">No capture exists yet — the mlb-signals workflow runs every 20 minutes through the playing day on the default branch (first run requested 2026-09-20). Until a state row exists at or before a bar, <code>MLBLead_InPlay</code> and <code>MLBTrail_Comeback</code> abstain by design and stay unranked with that reason. The official team table ${cov.teams ? `(${cov.teams} clubs) is already shipped, and ${joins.length} stored KXMLBGAME contract(s) parse and split against it (${matched} joined to a game so far)` : 'has not been captured yet'}.</div></div>`;
+
+  setHTML('#signalArchiveStatus', `
+    <h3>Point-in-time signal archives — Drugs@FDA (api.fda.gov) and official MLB game state (statsapi.mlb.com)</h3>
+    <p class="lede">Same rule as the forecast archive: a strategy may only read a snapshot captured <em>at or before</em> its decision bar. The FDA archive is grown four times a day
+    (<code>scripts/archive-fda-signals.mjs</code>); the MLB archive every 20 minutes through the playing day (<code>scripts/archive-mlb-signals.mjs</code>), one row per change of
+    status / inning / runs, joined to a KXMLBGAME contract only when the ticker's first-pitch instant, away code and home code all equal the official game's.</p>
+    <h4>Drugs@FDA</h4>
+    <div class="card-grid">${fdaCards}</div>
+    <h4>Official MLB game state</h4>
+    ${mlbBody}`);
 }
 
 function renderResearchSweep(sweep) {
@@ -2467,14 +2538,23 @@ function renderResearchLedger() {
 }
 
 function renderResearchGaps() {
+  const badge = (status) => {
+    const st = String(status || 'open');
+    const cls = st === 'closed' ? 'pill-live' : st === 'partially closed' ? 'pill-snap' : 'pill-off';
+    return `<span class="pill ${cls}">${esc(st.toUpperCase())}</span>`;
+  };
   const cards = RESEARCH_GAPS.map((g) => `
     <div class="card">
-      <strong>${esc(g.gap)}</strong>
+      <strong>${esc(g.gap)}</strong> ${badge(g.status)}
       <div class="muted">${esc(g.why)}</div>
       <div><strong>Blocked by:</strong> ${esc(g.blockedBy)}</div>
       <div><strong>To close it:</strong> ${esc(g.toClose)}</div>
+      ${g.closedBy ? `<div><strong>What closed it:</strong> ${esc(g.closedBy)}</div>` : ''}
     </div>`).join('');
-  setHTML('#researchGaps', `<h3>What this project cannot test yet — and what it would take</h3><div class="card-grid">${cards}</div>`);
+  const open = RESEARCH_GAPS.filter((g) => (g.status || 'open') !== 'closed').length;
+  setHTML('#researchGaps', `<h3>Research gaps — ${open} still open, ${RESEARCH_GAPS.length - open} closed</h3>
+    <p class="lede">A gap stays on this list after it closes, marked with what closed it, so a card can never claim a test is impossible after the store has made it possible.</p>
+    <div class="card-grid">${cards}</div>`);
 }
 
 function renderResearchReports() {

@@ -3552,6 +3552,99 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:02:26.718Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7855.00"
+            ],
+            [
+              "0.0200",
+              "114.10"
+            ],
+            [
+              "0.0300",
+              "686.00"
+            ],
+            [
+              "0.0500",
+              "198.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "330.00"
+            ],
+            [
+              "0.1100",
+              "660.00"
+            ],
+            [
+              "0.1200",
+              "338.00"
+            ],
+            [
+              "0.1300",
+              "53.00"
+            ],
+            [
+              "0.3100",
+              "200.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.4900",
+              "2.51"
+            ],
+            [
+              "0.8700",
+              "500.00"
+            ],
+            [
+              "0.9300",
+              "1000.00"
+            ],
+            [
+              "0.9400",
+              "1.00"
+            ],
+            [
+              "0.9900",
+              "1413.94"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:11:14.772Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:29:05.165Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
       "orderbook": {
@@ -3677,6 +3770,22 @@
       "dropped": 9,
       "dropped_from_ts": 1789856040,
       "dropped_to_ts": 1789857300,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:02:27.017Z",
+      "dropped": 94,
+      "dropped_from_ts": 1789857360,
+      "dropped_to_ts": 1789863780,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:11:15.073Z",
+      "dropped": 3,
+      "dropped_from_ts": 1789863840,
+      "dropped_to_ts": 1789863960,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     },

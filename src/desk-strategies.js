@@ -36,6 +36,7 @@
  */
 
 import { DESK_LIMITS } from './live-desk.js';
+import { forecastLocations, forecastHighAt, weatherEventDate } from './forecast-store.js';
 
 const MIN_TICK_MOVE = (market, ticks) => market.tick * ticks;
 
@@ -723,45 +724,22 @@ export const DESK_STRATEGIES = Object.freeze([
         if (out.length >= 3) break;
       }
       return out;
-    },
-    upcoming(view) {
-      const out = [];
-      const candidates = (view.markets || [])
-        .filter((m) => /^KXNFL/i.test(String(m.seriesTicker || m.ticker || '')) && m.isOpen);
-      for (const m of candidates.slice(0, 3)) {
-        const fav = favouriteOf(m);
-        const side = fav?.side || 'yes';
-        const price = fav?.price || 0.80;
-        out.push({
-          id: `UPC-LiveNFL-${m.ticker}`,
-          ticker: m.ticker,
-          action: 'buy',
-          side,
-          type: 'limit',
-          targetPrice: price,
-          count: 50,
-          triggerType: 'CATALYST_EVENT',
-          triggerCondition: 'Enter BUY favourite ahead of kickoff when favourite ask reaches >= 0.75',
-          rationale: `NFL favourite: planned game winner hold on ${m.ticker}`
-        });
-      }
-      return out;
     }
   },
   {
     id: 'live_the_leap_momentum',
     username: 'LiveTheLeap_Momentum',
-    name: 'Desk: The Leap Convex Momentum (MasterSite S03)',
-    category: 'Index & Crypto / Momentum',
+    name: 'Desk: cheap out-of-the-money index/crypto strike sweep (named after the S03 archetype)',
+    category: 'Index & Crypto / Convex longshot',
     watch: /^KX(NASDAQ100|INX|BTC)/i,
-    source: 'S03 · TradingView The Leap competition archetype applied to open Kalshi index and crypto contracts',
+    source: 'S03 · TradingView The Leap — NAME ONLY. The project publishes contest facts and verdicts, not a signal feed; nothing from it is read here. This is an original longshot design of this repository that trades the exchange\'s own captured ladders.',
     mandate: 'MAXIMUM RETURN. No stop-losses, no position caps, no volatility targeting.',
     thesis:
-      'TradingView The Leap competition champions achieve top ranking through aggressive convex momentum execution. On the Live Desk, this entry searches open index and crypto contracts for cheap out-of-the-money strikes (ask ≤ 0.25) offering 4x–20x payoff, taking depth-bound positions seeking maximum capital expansion.',
+      'A cheap out-of-the-money index or crypto strike pays 4×–20× if the range resolves its way, which is the convexity a maximum-return mandate asks for. The favourite–longshot literature (R02/R05) predicts these strikes are OVERPRICED on average, so this entry is as much a control as a bet: it buys open KXNASDAQ100Y / KXINXY / KXBTC* contracts whose captured YES ask is 0.05–0.25 and holds them to settlement. It does not read The Leap\'s competition data, any futures price, or any breakout signal — the earlier wording that attributed "champion" behaviour to it was removed (irregularity #53).',
     rules: [
-      'Universe: open KXNASDAQ100Y, KXINXY, and KXBTC* contracts with captured ladders.',
-      'Trigger: YES ask between 0.05 and 0.25 on high-volume index/crypto contracts.',
-      'Entry: taker buy of cheap YES strike, sized to 35% of cash, bounded by real depth within 2 ticks.',
+      'Universe: open KXNASDAQ100Y, KXINXY and KXBTC* contracts with captured ladders.',
+      'Trigger: captured YES ask between 0.05 and 0.25 (no quote → no trade; a price is never assumed).',
+      'Entry: taker buy of YES, sized to 35% of cash, bounded by real depth within 2 ticks; at most 2 legs per cut-off.',
       'Exit: none — hold to settlement.'
     ],
     sizing: '35% of cash per leg, max 2 legs, bounded by real depth',
@@ -782,32 +760,9 @@ export const DESK_STRATEGIES = Object.freeze([
           action: 'buy',
           type: 'market',
           count,
-          reason: `The Leap convex momentum: index strike YES ask ${ask} ≤ 0.25 (real ladder ${market.ladderAt}) → buy YES for high asymmetric return`
+          reason: `cheap OTM strike: captured YES ask ${ask} in 0.05–0.25 (ladder ${market.ladderAt}) → buy YES, hold to settlement (convex longshot; no external signal)`
         });
         if (out.length >= 2) break;
-      }
-      return out;
-    },
-    upcoming(view) {
-      const out = [];
-      const candidates = (view.markets || [])
-        .filter((m) => /^KX(NASDAQ100|INX|BTC)/i.test(String(m.seriesTicker || m.ticker || '')) && m.isOpen)
-        .sort((a, b) => (b.volume || 0) - (a.volume || 0));
-      for (const m of candidates.slice(0, 3)) {
-        const touch = touchOf(m);
-        const ask = touch.yesAsk ?? 0.15;
-        out.push({
-          id: `UPC-LiveTheLeap-${m.ticker}`,
-          ticker: m.ticker,
-          action: 'buy',
-          side: 'yes',
-          type: 'limit',
-          targetPrice: ask <= 0.25 ? ask : 0.20,
-          count: 100,
-          triggerType: 'PRICE_LIMIT',
-          triggerCondition: 'Enter BUY YES when contract YES ask is ≤ 0.20 on index breakout',
-          rationale: `The Leap momentum: planned convex OTM sweep on ${m.ticker} (target entry ≤ 0.20 for 5x+ return)`
-        });
       }
       return out;
     }
@@ -815,17 +770,17 @@ export const DESK_STRATEGIES = Object.freeze([
   {
     id: 'live_insider_filing_fader',
     username: 'LiveInsider_FilingFader',
-    name: 'Desk: Insider Corporate Fader (MasterSite S02)',
-    category: 'Corporate Events / Insider Drift',
+    name: 'Desk: CEO-change NO buyer — price-only (S02 Form 4 archive still absent)',
+    category: 'Corporate Events / Longshot fade',
     watch: /CEOCHANGE|KXFDA/i,
-    source: 'S02 · Insider-trades (MasterSite) applied to open CEO-change and corporate governance contracts',
+    source: 'S02 · Insider-trades (MasterSite) — NOT USED. No point-in-time SEC Form 4 archive exists in this repository, so this entry reads NO insider data; it trades the exchange\'s own captured ladders on CEO-change contracts. The username records the signal it is meant to receive once that archive exists.',
     mandate: 'MAXIMUM RETURN. No stop-losses, no position caps, no volatility targeting.',
     thesis:
-      'Corporate departure contracts (TESLACEOCHANGE, JPMCEOCHANGE, etc.) frequently price low-probability transition rumours above their baseline frequency. When insiders maintain their equity holdings, market speculation drifts downward: this entry buys NO on contracts priced ≤ 0.35 (paying ≥ 0.65 for NO) and collects settlement.',
+      'CEO-departure contracts (TESLACEOCHANGE, JPMCEOCHANGE, KXOPENAICEOCHANGE) are long-dated longshots: the favourite–longshot bias (R02/R05) says the YES side of a rumour tends to be overpriced, so buying NO when YES asks ≤ 0.35 and holding to settlement is the mechanical bet. That is the entire rule. It is NOT an insider-filing strategy: nothing here knows whether an insider bought or sold — the earlier wording ("when insiders maintain their equity holdings") described data the desk does not have and was removed (irregularity #53). When a point-in-time Form 4 archive exists (S02 blockedBy), the honest upgrade is to require a filing before the trade.',
     rules: [
-      'Universe: open CEO-change and corporate governance contracts with captured ladders.',
-      'Trigger: YES ask between 0.05 and 0.35 (NO ask 0.65–0.95).',
-      'Entry: taker buy of NO, sized to 30% of cash, bounded by real ladder depth.',
+      'Universe: open CEO-change contracts with captured ladders.',
+      'Trigger: captured YES ask ≤ 0.35 AND a captured NO ask between 0.65 and 0.95 (no quote → no trade; a price is never assumed).',
+      'Entry: taker buy of NO, sized to 30% of cash, bounded by real ladder depth within 2 ticks; at most 2 legs.',
       'Exit: hold to real settlement.'
     ],
     sizing: '30% of cash per leg, max 2 legs, bounded by real depth',
@@ -836,8 +791,9 @@ export const DESK_STRATEGIES = Object.freeze([
         .sort((a, b) => (b.volume || 0) - (a.volume || 0));
       for (const market of candidates.slice(0, 3)) {
         const touch = touchOf(market);
-        const yesAsk = touch.yesAsk ?? 0.20;
-        const noAsk = touch.noAsk ?? (1 - yesAsk);
+        const yesAsk = touch.yesAsk ?? null;
+        const noAsk = touch.noAsk ?? market.ladder?.noAsks?.[0]?.price ?? null;
+        if (yesAsk === null || noAsk === null) continue; // no captured quote → abstain, never assume one
         if (yesAsk > 0.35 || noAsk > 0.95 || noAsk < 0.65) continue;
         const count = sizeToDepth(view, market, { side: 'no', price: noAsk, cashFraction: 0.3, ticks: 2 });
         if (count < DESK_LIMITS.minContracts) continue;
@@ -847,29 +803,9 @@ export const DESK_STRATEGIES = Object.freeze([
           action: 'buy',
           type: 'market',
           count,
-          reason: `Insider corporate fader: YES ask ${yesAsk} ≤ 0.35 (NO ask ${noAsk}), fading departure rumor on real ladder ${market.ladderAt}`
+          reason: `CEO-change longshot fade (price-only, no insider data): captured YES ask ${yesAsk} ≤ 0.35, NO ask ${noAsk} (ladder ${market.ladderAt}) → buy NO, hold to settlement`
         });
         if (out.length >= 2) break;
-      }
-      return out;
-    },
-    upcoming(view) {
-      const out = [];
-      const candidates = (view.markets || [])
-        .filter((m) => /CEOCHANGE/i.test(String(m.seriesTicker || m.ticker || '')) && m.isOpen);
-      for (const m of candidates.slice(0, 3)) {
-        out.push({
-          id: `UPC-LiveInsider-${m.ticker}`,
-          ticker: m.ticker,
-          action: 'buy',
-          side: 'no',
-          type: 'limit',
-          targetPrice: 0.85,
-          count: 50,
-          triggerType: 'CATALYST_EVENT',
-          triggerCondition: 'Enter BUY NO when transition rumour spikes YES ask to 0.15–0.30',
-          rationale: `Insider fader: planned NO buy on ${m.ticker} to collect governance retention premium`
-        });
       }
       return out;
     }
@@ -877,29 +813,53 @@ export const DESK_STRATEGIES = Object.freeze([
   {
     id: 'live_weather_forecast_edge',
     username: 'LiveWeather_ForecastEdge',
-    name: 'Desk: NWS Weather Forecast Edge (MasterSite S01)',
+    name: 'Desk: NWS point-in-time forecast confirmation on open weather brackets (MasterSite S01)',
     category: 'Weather / NWS Forecast vs Board',
     watch: /^KXHIGH/i,
-    source: 'S01 · SFWeather (MasterSite) + NWS point forecast archive (data/forecasts/)',
+    source: 'S01 · SFWeather (MasterSite) + this repository\'s NWS point-forecast archive (data/forecasts/, api.weather.gov, archived five times a day). The desk reads ONLY snapshots captured at or before the cut-off.',
     mandate: 'MAXIMUM RETURN. No stop-losses, no position caps, no volatility targeting.',
     thesis:
-      'Reads the point-in-time NWS forecast for tracked weather cities and buys the confirmed temperature bracket on open KXHIGH* contracts when priced below 0.45. Abstains whenever no forecast exists at the cut-off.',
+      'The desk version of ForecastEdge_MultiCity: for every open KXHIGH* bracket with a captured ladder, look up the newest NWS forecast high for that city and measurement date that was captured AT OR BEFORE the cut-off; if the forecast falls inside the bracket (F within [floor − 1, cap + 1]; lower tail F ≤ cap − 2) and the captured YES ask is ≤ 0.45, buy YES and hold to the exchange settlement. No snapshot at or before the cut-off → no trade for that bracket (the reason is published). The first merged version of this entry claimed to read the forecast but bought any cheap bracket; it was rewritten to actually read the archive (irregularity #53). Basis mismatch stated: KXHIGH* settle on The Weather Company city observations while the signal is the NWS point forecast (IRREGULARITIES.md #34).',
     rules: [
-      'Universe: open KXHIGH* contracts with captured ladders.',
-      'Trigger: NWS forecast high matches the contract strike band and YES ask ≤ 0.45.',
-      'Entry: buy YES, sized to 35% of cash, bounded by real depth.',
+      'Universe: open KXHIGH* brackets with captured ladders AND an archived NWS forecast for the bracket\'s city captured at or before the cut-off.',
+      'Trigger: the point-in-time NWS forecast high confirms the bracket (band: F ∈ [floor − 1, cap + 1]; lower tail: F ≤ cap − 2) and the captured YES ask ≤ 0.45.',
+      'Entry: taker buy of YES, sized to 35% of cash, bounded by real depth within 2 ticks; at most 2 legs per cut-off.',
       'Exit: hold to real settlement.'
     ],
     sizing: '35% of cash per bracket, bounded by real ladder depth',
     decide(view) {
       const out = [];
+      const bySeries = new Map();
+      for (const loc of forecastLocations()) if (loc.series && (loc.snapshots || []).length) bySeries.set(loc.series, loc);
+      if (!bySeries.size) return out; // archive dark → abstain
+      const cutoffSeconds = Math.floor((view.asOfMs || Date.parse(view.asOf || '')) / 1000);
+      if (!Number.isFinite(cutoffSeconds)) return out;
       const candidates = tradeableMarkets(view)
         .filter((m) => /^KXHIGH/i.test(String(m.seriesTicker || m.ticker || '')))
         .sort((a, b) => (b.volume || 0) - (a.volume || 0));
-      for (const market of candidates.slice(0, 4)) {
+      for (const market of candidates) {
+        const loc = bySeries.get(market.seriesTicker);
+        if (!loc) continue;
+        const eventDate = weatherEventDate(market.eventTicker || market.ticker);
+        if (!eventDate) continue;
+        const hit = forecastHighAt(loc.snapshots, eventDate, cutoffSeconds);
+        if (!hit) continue; // nothing knowable at the cut-off for this date
+        const f = Number(hit.highF);
+        const floor = Number(market.floorStrike);
+        const cap = Number(market.capStrike);
+        let confirmed = false;
+        let why = '';
+        if (Number.isFinite(floor) && Number.isFinite(cap)) {
+          confirmed = f >= floor - 1 && f <= cap + 1;
+          why = `NWS high ${f}F inside bracket ${floor}-${cap}`;
+        } else if (Number.isFinite(cap)) {
+          confirmed = f <= cap - 2;
+          why = `NWS high ${f}F at or below the ${cap} tail threshold`;
+        }
+        if (!confirmed) continue;
         const touch = touchOf(market);
         const ask = touch.yesAsk ?? market.ladder?.yesAsks?.[0]?.price ?? null;
-        if (ask === null || ask > 0.45 || ask < 0.05) continue;
+        if (ask === null || ask > 0.45 || ask < 0.02) continue;
         const count = sizeToDepth(view, market, { side: 'yes', price: ask, cashFraction: 0.35, ticks: 2 });
         if (count < DESK_LIMITS.minContracts) continue;
         out.push({
@@ -908,30 +868,9 @@ export const DESK_STRATEGIES = Object.freeze([
           action: 'buy',
           type: 'market',
           count,
-          reason: `NWS weather forecast edge: bracket ask ${ask} ≤ 0.45 on real ladder ${market.ladderAt} → buy YES, hold to settlement`
+          reason: `${why} (NWS snapshot ${hit.capturedAt} for ${eventDate}, captured before the cut-off) → captured YES ask ${ask} ≤ 0.45 (ladder ${market.ladderAt}), buy YES, hold to settlement`
         });
         if (out.length >= 2) break;
-      }
-      return out;
-    },
-    upcoming(view) {
-      const out = [];
-      const candidates = (view.markets || [])
-        .filter((m) => /^KXHIGH/i.test(String(m.seriesTicker || m.ticker || '')) && m.isOpen)
-        .sort((a, b) => (b.volume || 0) - (a.volume || 0));
-      for (const m of candidates.slice(0, 3)) {
-        out.push({
-          id: `UPC-LiveWeather-${m.ticker}`,
-          ticker: m.ticker,
-          action: 'buy',
-          side: 'yes',
-          type: 'limit',
-          targetPrice: 0.25,
-          count: 100,
-          triggerType: 'FORECAST_UPDATE',
-          triggerCondition: 'Trigger BUY YES when next NWS point forecast high falls within bracket range',
-          rationale: `Weather forecast edge: planned order on ${m.ticker} on forecast confirmation`
-        });
       }
       return out;
     }

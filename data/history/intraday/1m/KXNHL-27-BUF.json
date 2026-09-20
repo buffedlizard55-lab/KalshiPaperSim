@@ -3006,6 +3006,358 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:02:16.566Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-BUF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4482584.00"
+            ],
+            [
+              "0.0200",
+              "11712.00"
+            ],
+            [
+              "0.0300",
+              "5787.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "953128.00"
+            ],
+            [
+              "0.0800",
+              "140.42"
+            ],
+            [
+              "0.1100",
+              "519888.00"
+            ],
+            [
+              "0.1400",
+              "117.12"
+            ],
+            [
+              "0.1600",
+              "26863.00"
+            ],
+            [
+              "0.1800",
+              "411265.00"
+            ],
+            [
+              "0.2500",
+              "294578.00"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3200",
+              "240655.42"
+            ],
+            [
+              "0.3400",
+              "46.85"
+            ],
+            [
+              "0.3900",
+              "131642.00"
+            ],
+            [
+              "0.4600",
+              "325031.00"
+            ],
+            [
+              "0.4700",
+              "15620.85"
+            ],
+            [
+              "0.5300",
+              "57192.00"
+            ],
+            [
+              "0.5500",
+              "23.42"
+            ],
+            [
+              "0.5700",
+              "138451.00"
+            ],
+            [
+              "0.5800",
+              "4934.00"
+            ],
+            [
+              "0.6300",
+              "2030.00"
+            ],
+            [
+              "0.6700",
+              "33477.00"
+            ],
+            [
+              "0.6900",
+              "59663.00"
+            ],
+            [
+              "0.7600",
+              "25177.00"
+            ],
+            [
+              "0.8100",
+              "15797.00"
+            ],
+            [
+              "0.8200",
+              "1000.00"
+            ],
+            [
+              "0.8300",
+              "117.12"
+            ],
+            [
+              "0.8400",
+              "1925.00"
+            ],
+            [
+              "0.8700",
+              "117.12"
+            ],
+            [
+              "0.8800",
+              "351.25"
+            ],
+            [
+              "0.8900",
+              "1000.00"
+            ],
+            [
+              "0.9000",
+              "1100.00"
+            ],
+            [
+              "0.9100",
+              "99.00"
+            ],
+            [
+              "0.9200",
+              "30.00"
+            ],
+            [
+              "0.9400",
+              "10000.00"
+            ],
+            [
+              "0.9500",
+              "23544.88"
+            ],
+            [
+              "0.9600",
+              "38563.36"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "51860.00"
+            ],
+            [
+              "0.0200",
+              "11730.97"
+            ],
+            [
+              "0.0300",
+              "1701.11"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:11:04.672Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-BUF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4482584.00"
+            ],
+            [
+              "0.0200",
+              "11712.00"
+            ],
+            [
+              "0.0300",
+              "5787.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "953128.00"
+            ],
+            [
+              "0.0800",
+              "140.42"
+            ],
+            [
+              "0.1100",
+              "519888.00"
+            ],
+            [
+              "0.1400",
+              "117.12"
+            ],
+            [
+              "0.1600",
+              "26863.00"
+            ],
+            [
+              "0.1800",
+              "411265.00"
+            ],
+            [
+              "0.2500",
+              "294578.00"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3200",
+              "240655.42"
+            ],
+            [
+              "0.3400",
+              "46.85"
+            ],
+            [
+              "0.3900",
+              "131642.00"
+            ],
+            [
+              "0.4600",
+              "325031.00"
+            ],
+            [
+              "0.4700",
+              "15620.85"
+            ],
+            [
+              "0.5300",
+              "57192.00"
+            ],
+            [
+              "0.5500",
+              "23.42"
+            ],
+            [
+              "0.5700",
+              "138451.00"
+            ],
+            [
+              "0.5800",
+              "4934.00"
+            ],
+            [
+              "0.6300",
+              "2030.00"
+            ],
+            [
+              "0.6700",
+              "33477.00"
+            ],
+            [
+              "0.6900",
+              "59663.00"
+            ],
+            [
+              "0.7600",
+              "25177.00"
+            ],
+            [
+              "0.8100",
+              "15797.00"
+            ],
+            [
+              "0.8200",
+              "1000.00"
+            ],
+            [
+              "0.8300",
+              "117.12"
+            ],
+            [
+              "0.8400",
+              "1925.00"
+            ],
+            [
+              "0.8700",
+              "117.12"
+            ],
+            [
+              "0.8800",
+              "351.25"
+            ],
+            [
+              "0.8900",
+              "1000.00"
+            ],
+            [
+              "0.9000",
+              "1100.00"
+            ],
+            [
+              "0.9100",
+              "99.00"
+            ],
+            [
+              "0.9200",
+              "30.00"
+            ],
+            [
+              "0.9400",
+              "10000.00"
+            ],
+            [
+              "0.9500",
+              "23544.88"
+            ],
+            [
+              "0.9600",
+              "38548.36"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "51860.00"
+            ],
+            [
+              "0.0200",
+              "11730.97"
+            ],
+            [
+              "0.0300",
+              "1701.11"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:28:53.795Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-BUF/orderbook",
       "orderbook": {
@@ -3394,13 +3746,13 @@
       }
     ],
     "result": "",
-    "rules_primary": "If Buffalo Sabres wins the 2026-27 Stanley Cup® Finals, then the market resolves to Yes.",
+    "rules_primary": "If Buffalo Sabres wins the 2026-27 Stanley Cup\u00ae Finals, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
     "settlement_timer_seconds": 300,
     "status": "active",
     "strike_type": "structured",
     "ticker": "KXNHL-27-BUF",
-    "title": "Will Buffalo Sabres win the 2026-27 Stanley Cup® Finals?",
+    "title": "Will Buffalo Sabres win the 2026-27 Stanley Cup\u00ae Finals?",
     "updated_time": "2026-07-13T22:30:41.063613Z",
     "volume_24h_fp": "497.13",
     "volume_fp": "79591.23",
@@ -3437,6 +3789,22 @@
       "dropped": 5,
       "dropped_from_ts": 1789771620,
       "dropped_to_ts": 1789774260,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:02:16.866Z",
+      "dropped": 6,
+      "dropped_from_ts": 1789775700,
+      "dropped_to_ts": 1789779000,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:11:04.972Z",
+      "dropped": 1,
+      "dropped_from_ts": 1789781460,
+      "dropped_to_ts": 1789781460,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     },

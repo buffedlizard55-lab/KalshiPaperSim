@@ -1071,6 +1071,16 @@
       }
     },
     {
+      "captured_at": "2026-09-20T02:53:37.968Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26AUG25-B80.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:19:10.326Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26AUG25-B80.5/orderbook",
       "orderbook": {
@@ -1109,7 +1119,7 @@
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
-    "no_sub_title": "80° to 81°",
+    "no_sub_title": "80\u00b0 to 81\u00b0",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-08-26T14:00:00Z",
     "open_interest_fp": "13787.10",
@@ -1126,7 +1136,7 @@
       }
     ],
     "result": "yes",
-    "rules_primary": "If the maximum temperature recorded at Philadelphia (CLIPHL) for Aug 25, 2026, is between 80-81° fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_primary": "If the maximum temperature recorded at Philadelphia (CLIPHL) for Aug 25, 2026, is between 80-81\u00b0 fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-08-26T11:11:27.048356Z",
@@ -1134,7 +1144,7 @@
     "status": "finalized",
     "strike_type": "between",
     "ticker": "KXHIGHPHIL-26AUG25-B80.5",
-    "title": "Will the maximum temperature be 80-81° on Aug 25, 2026?",
+    "title": "Will the maximum temperature be 80-81\u00b0 on Aug 25, 2026?",
     "updated_time": "2026-08-26T11:11:27.06738Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "20333.96",
@@ -1142,7 +1152,7 @@
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
-    "yes_sub_title": "80° to 81°"
+    "yes_sub_title": "80\u00b0 to 81\u00b0"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26AUG25-B80.5",
   "market_captured_at": "2026-09-20T11:30:37.300Z",

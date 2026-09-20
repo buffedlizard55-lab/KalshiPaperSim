@@ -5,6 +5,51 @@
   "source": "live_api",
   "candlesticks": [
     {
+      "end_period_ts": 1789833120,
+      "open_interest_fp": "3642.11",
+      "price": {
+        "previous_dollars": "0.4500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4700",
+        "high_dollars": "0.4700",
+        "low_dollars": "0.4700",
+        "open_dollars": "0.4700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4600",
+        "high_dollars": "0.4600",
+        "low_dollars": "0.4600",
+        "open_dollars": "0.4600"
+      }
+    },
+    {
+      "end_period_ts": 1789833300,
+      "open_interest_fp": "4321.11",
+      "price": {
+        "close_dollars": "0.4600",
+        "high_dollars": "0.4600",
+        "low_dollars": "0.4600",
+        "mean_dollars": "0.4600",
+        "open_dollars": "0.4600",
+        "previous_dollars": "0.4500"
+      },
+      "volume_fp": "679.00",
+      "yes_ask": {
+        "close_dollars": "0.4600",
+        "high_dollars": "0.4700",
+        "low_dollars": "0.4600",
+        "open_dollars": "0.4700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4500",
+        "high_dollars": "0.4600",
+        "low_dollars": "0.4500",
+        "open_dollars": "0.4600"
+      }
+    },
+    {
       "end_period_ts": 1789833360,
       "open_interest_fp": "4358.11",
       "price": {
@@ -2882,6 +2927,284 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:01:43.668Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19MRMKTARL-59/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1016.00"
+            ],
+            [
+              "0.0200",
+              "251.00"
+            ],
+            [
+              "0.0300",
+              "2.00"
+            ],
+            [
+              "0.0500",
+              "161.00"
+            ],
+            [
+              "0.0600",
+              "101.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "747.00"
+            ],
+            [
+              "0.1100",
+              "2.00"
+            ],
+            [
+              "0.1500",
+              "3.40"
+            ],
+            [
+              "0.1600",
+              "102.00"
+            ],
+            [
+              "0.1700",
+              "41.00"
+            ],
+            [
+              "0.2100",
+              "102.00"
+            ],
+            [
+              "0.2200",
+              "8.00"
+            ],
+            [
+              "0.2600",
+              "1.00"
+            ],
+            [
+              "0.2900",
+              "3.40"
+            ],
+            [
+              "0.3000",
+              "50.00"
+            ],
+            [
+              "0.3100",
+              "2.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.3400",
+              "3.40"
+            ],
+            [
+              "0.3600",
+              "1.00"
+            ],
+            [
+              "0.3800",
+              "730.05"
+            ],
+            [
+              "0.4000",
+              "50.00"
+            ],
+            [
+              "0.4500",
+              "1.00"
+            ],
+            [
+              "0.4900",
+              "3.40"
+            ],
+            [
+              "0.5500",
+              "25.00"
+            ],
+            [
+              "0.5600",
+              "3.40"
+            ],
+            [
+              "0.6200",
+              "16.00"
+            ],
+            [
+              "0.6500",
+              "20.00"
+            ],
+            [
+              "0.7000",
+              "23.00"
+            ],
+            [
+              "0.7500",
+              "31.00"
+            ],
+            [
+              "0.9700",
+              "1286.16"
+            ],
+            [
+              "0.9900",
+              "4736.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:10:31.788Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19MRMKTARL-59/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1016.00"
+            ],
+            [
+              "0.0200",
+              "251.00"
+            ],
+            [
+              "0.0300",
+              "2.00"
+            ],
+            [
+              "0.0500",
+              "161.00"
+            ],
+            [
+              "0.0600",
+              "101.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.0800",
+              "747.00"
+            ],
+            [
+              "0.1100",
+              "2.00"
+            ],
+            [
+              "0.1500",
+              "3.40"
+            ],
+            [
+              "0.1600",
+              "102.00"
+            ],
+            [
+              "0.1700",
+              "41.00"
+            ],
+            [
+              "0.2100",
+              "102.00"
+            ],
+            [
+              "0.2200",
+              "8.00"
+            ],
+            [
+              "0.2600",
+              "1.00"
+            ],
+            [
+              "0.2900",
+              "3.40"
+            ],
+            [
+              "0.3000",
+              "50.00"
+            ],
+            [
+              "0.3100",
+              "2.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.3400",
+              "3.40"
+            ],
+            [
+              "0.3600",
+              "1.00"
+            ],
+            [
+              "0.3800",
+              "730.05"
+            ],
+            [
+              "0.4000",
+              "50.00"
+            ],
+            [
+              "0.4500",
+              "1.00"
+            ],
+            [
+              "0.4900",
+              "3.40"
+            ],
+            [
+              "0.5500",
+              "25.00"
+            ],
+            [
+              "0.5600",
+              "3.40"
+            ],
+            [
+              "0.6200",
+              "16.00"
+            ],
+            [
+              "0.6500",
+              "20.00"
+            ],
+            [
+              "0.7000",
+              "23.00"
+            ],
+            [
+              "0.7500",
+              "31.00"
+            ],
+            [
+              "0.9700",
+              "1286.16"
+            ],
+            [
+              "0.9900",
+              "4736.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:28:16.012Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19MRMKTARL-59/orderbook",
       "orderbook": {
@@ -3217,6 +3540,14 @@
       "dropped": 19,
       "dropped_from_ts": 1789786680,
       "dropped_to_ts": 1789829700,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:01:43.969Z",
+      "dropped": 8,
+      "dropped_from_ts": 1789832160,
+      "dropped_to_ts": 1789833060,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     },

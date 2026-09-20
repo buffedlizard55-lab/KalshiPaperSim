@@ -23,8 +23,9 @@ import {
 import { ACCUMULATED_HISTORY, getAccumulatedBars, ACCUMULATED_INTRADAY, getIntradayBars, getIntradayPeriods, getIntradayMarket } from './accumulated-history.js';
 import { buildReplayUniverse, summarizeUniverse, MIN_REPLAY_BARS, CANDLE_ORIGIN } from './history-merge.js';
 import { CAPTURED_DEPTH, getCapturedDepthProfile, getCapturedDepthTickers } from './captured-depth.js';
-import { forecastLocations, forecastHighAt } from './forecast-store.js';
+import { forecastLocations, forecastHighAt, weatherEventDate } from './forecast-store.js';
 import { fdaSubjects, stateAtOrBefore } from './fda-signal-store.js';
+import { hasMlbSignalArchive, mlbGames, mlbTeams, matchMlbGame, gameStateAtOrBefore, parseMlbGameTicker } from './mlb-signal-store.js';
 
 /** Data-source label for bars that came from the daily ingest job, not a capture. */
 export const DATA_SOURCE_ACCUMULATED = 'accumulated_history_store';
@@ -39,14 +40,9 @@ export const DATA_SOURCE_ACCUMULATED = 'accumulated_history_store';
  * market: the title says "…on Sep 7, 2026?" and close_time is 05:00Z the next
  * day, so the ticker's date is the measurement day.
  */
-const MONTHS = { JAN: '01', FEB: '02', MAR: '03', APR: '04', MAY: '05', JUN: '06', JUL: '07', AUG: '08', SEP: '09', OCT: '10', NOV: '11', DEC: '12' };
-export function weatherEventDate(eventTicker) {
-  const m = /^KXHIGH\w*-(\d{2})([A-Z]{3})(\d{2})(?:-|$)/.exec(String(eventTicker || ''));
-  if (!m) return null;
-  const month = MONTHS[m[2]];
-  if (!month) return null;
-  return `20${m[1]}-${month}-${m[3]}`;
-}
+// Moved to src/forecast-store.js (browser-safe) so the desk entrants can use
+// it without loading the history module; re-exported here for existing callers.
+export { weatherEventDate };
 
 /**
  * Build the engine's FDA signal provider from the point-in-time Drugs@FDA
@@ -84,13 +80,106 @@ export function buildFdaSignalProvider() {
 }
 
 /**
+ * Build the engine's MLB signal provider from the point-in-time official MLB
+ * game-state archive (data/mlb-signals/, statsapi.mlb.com). Same contract as
+ * the other providers: given a ticker, its market and a decision timestamp it
+ * returns the newest archived game state captured at or before that time —
+ * or null (and a strategy that receives null ABSTAINS).
+ *
+ * The ticker→game join is src/mlb-signal-store.js#matchMlbGame: the ticker's
+ * US-Eastern first-pitch instant, AWAY code and HOME code must ALL equal the
+ * official game's (fact V113). A ticker that does not join is answered with
+ * null; `mlbJoinReport()` publishes why, per ticker, so an unmatched contract
+ * is visible on the site rather than silently skipped.
+ */
+export function buildMlbSignalProvider() {
+  if (!hasMlbSignalArchive()) return null;
+  const games = mlbGames();
+  const teams = mlbTeams();
+  const joins = new Map();
+  const joinFor = (ticker) => {
+    if (!joins.has(ticker)) joins.set(ticker, matchMlbGame(ticker, { games, teams }));
+    return joins.get(ticker);
+  };
+  const provider = (ticker, market, tsSeconds) => {
+    if (!parseMlbGameTicker(ticker)) return null;
+    const m = joinFor(String(ticker));
+    if (!m.ok) return null;
+    const st = gameStateAtOrBefore(m.game, tsSeconds);
+    if (!st) return null;
+    const runsHome = st.runs ? st.runs.home : null;
+    const runsAway = st.runs ? st.runs.away : null;
+    const runsYes = m.yesIsHome ? runsHome : runsAway;
+    const runsOpp = m.yesIsHome ? runsAway : runsHome;
+    const lead = Number.isFinite(Number(runsYes)) && Number.isFinite(Number(runsOpp)) && runsYes !== null && runsOpp !== null ? Number(runsYes) - Number(runsOpp) : null;
+    let yesResult = null;
+    if (st.winner) yesResult = st.winner === (m.yesIsHome ? 'home' : 'away') ? 'YES' : 'NO';
+    return {
+      kind: 'mlb-game-state',
+      gamePk: m.game.gamePk,
+      gameDate: m.game.gameDate,
+      yesTeam: m.yesIsHome ? m.home : m.away,
+      oppTeam: m.yesIsHome ? m.away : m.home,
+      yesIsHome: m.yesIsHome,
+      abstractGameState: st.abstractGameState,
+      detailedState: st.detailedState,
+      inning: st.inning,
+      inningState: st.inningState,
+      runsYes,
+      runsOpp,
+      lead,
+      homeDifferential: Number.isFinite(Number(runsHome)) && Number.isFinite(Number(runsAway)) && runsHome !== null && runsAway !== null ? Number(runsHome) - Number(runsAway) : null,
+      yesResult,
+      capturedAt: st.capturedAt,
+      observedAt: st.observedAt,
+      staleSeconds: st.staleSeconds,
+      source: st.source,
+      matchedBy: m.matchedBy
+    };
+  };
+  provider.joinFor = joinFor;
+  return provider;
+}
+
+/**
+ * Per-ticker join status of every KXMLBGAME contract in the replay universe
+ * against the archive — the published answer to "why did the MLB entries not
+ * trade this contract?". Computed, never typed.
+ */
+export function mlbJoinReport(tickers = null) {
+  const games = mlbGames();
+  const teams = mlbTeams();
+  const stored = new Set();
+  if (!tickers) {
+    for (const m of getReplayableMarkets()) stored.add(m.ticker);
+    for (const p of Object.values(ACCUMULATED_INTRADAY.periods || {})) for (const t of Object.keys(p.markets || {})) stored.add(t);
+  }
+  const list = tickers || [...stored].sort();
+  return list.filter((t) => parseMlbGameTicker(t)).map((ticker) => {
+    const m = matchMlbGame(ticker, { games, teams });
+    return {
+      ticker,
+      ok: m.ok,
+      reason: m.ok ? 'MATCHED' : m.reason,
+      gamePk: m.ok ? m.game.gamePk : null,
+      gameDate: m.ok ? m.game.gameDate : null,
+      away: m.away || null,
+      home: m.home || null,
+      yesIsHome: m.ok ? m.yesIsHome : null,
+      stateRows: m.ok ? (m.game.states || []).length : 0,
+      scheduledUtc: m.scheduledUtc ? new Date(m.scheduledUtc * 1000).toISOString() : null
+    };
+  });
+}
+
+/**
  * The competition's default signal provider: every point-in-time archive this
- * repository grows (NWS forecasts, Drugs@FDA states), composed. A market that
- * no archive answers gets null — which makes a signal-dependent strategy
- * abstain there, by design rather than by accident.
+ * repository grows (NWS forecasts, Drugs@FDA states, official MLB game
+ * states), composed. A market that no archive answers gets null — which makes
+ * a signal-dependent strategy abstain there, by design rather than by accident.
  */
 export function composeSignalProviders(...providers) {
-  const built = providers.length ? providers : [buildForecastSignalProvider(), buildFdaSignalProvider()];
+  const built = providers.length ? providers : [buildForecastSignalProvider(), buildFdaSignalProvider(), buildMlbSignalProvider()];
   const live = built.filter((p) => typeof p === 'function');
   if (!live.length) return null;
   return (ticker, market, tsSeconds) => {
@@ -478,6 +567,16 @@ export function runCompetition(options = {}) {
      * carrying the reason; buildLeaderboard keeps it unranked.
      */
     if (universeMarkets.length === 0) {
+      // Two different facts share this branch and must not share a sentence:
+      // a design run in a flight it was never written for (a weather bracket
+      // entry in the daily flight), versus a design in ITS OWN flight whose
+      // series the store simply holds no bars for at this resolution yet
+      // (an ingest block that has not run). The second is a pending ingest,
+      // not a mismatch — saying "runs in another flight" would be false.
+      const flightOf = (p) => (p === 1 ? 'micro' : p === 60 ? 'hourly' : 'daily');
+      const runningFlight = flightOf(periodIntervalMinutes);
+      const designFlight = strategy.flight || 'daily';
+      const inOwnFlight = designFlight === 'both' || designFlight === runningFlight;
       const skippedResult = {
         strategyId: strategy.id || strategy.username,
         username: strategy.username,
@@ -485,7 +584,10 @@ export function runCompetition(options = {}) {
         initialCapital,
         skippedFlight: {
           universe: strategy.universe,
-          reason: `no ${strategy.universe ? strategy.universe.join(' / ') : ''} market in this flight's universe — this design cannot trade here`,
+          reason: inOwnFlight
+            ? `no ${strategy.universe ? strategy.universe.join(' / ') : ''} market with ${periodIntervalMinutes}-minute bars in the store yet — this is the design's own flight, so the entry waits for the ingest block that captures that series at this resolution`
+            : `no ${strategy.universe ? strategy.universe.join(' / ') : ''} market in this flight's universe — this design cannot trade here`,
+          pendingIngest: inOwnFlight,
           periodIntervalMinutes
         },
         dataProvenance: { markets: [], candles: {} },

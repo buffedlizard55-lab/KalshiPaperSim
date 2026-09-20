@@ -5,6 +5,31 @@
   "source": "live_api",
   "candlesticks": [
     {
+      "end_period_ts": 1789866840,
+      "open_interest_fp": "4119.36",
+      "price": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.5600",
+        "low_dollars": "0.4900",
+        "mean_dollars": "0.5374",
+        "open_dollars": "0.4900",
+        "previous_dollars": "0.5400"
+      },
+      "volume_fp": "45.79",
+      "yes_ask": {
+        "close_dollars": "0.5700",
+        "high_dollars": "0.5700",
+        "low_dollars": "0.4700",
+        "open_dollars": "0.4900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4400",
+        "high_dollars": "0.4400",
+        "low_dollars": "0.3200",
+        "open_dollars": "0.3300"
+      }
+    },
+    {
       "end_period_ts": 1789866900,
       "open_interest_fp": "4191.62",
       "price": {
@@ -3576,6 +3601,226 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:02:24.171Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2413.36"
+            ],
+            [
+              "0.0200",
+              "62.00"
+            ],
+            [
+              "0.0300",
+              "42.00"
+            ],
+            [
+              "0.0500",
+              "525.00"
+            ],
+            [
+              "0.0600",
+              "637.00"
+            ],
+            [
+              "0.0700",
+              "239.81"
+            ],
+            [
+              "0.0800",
+              "235.18"
+            ],
+            [
+              "0.1100",
+              "12.42"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1700",
+              "7.86"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.1900",
+              "31.00"
+            ],
+            [
+              "0.2000",
+              "23.62"
+            ],
+            [
+              "0.3900",
+              "4.00"
+            ],
+            [
+              "0.4200",
+              "10.00"
+            ],
+            [
+              "0.5100",
+              "500.00"
+            ],
+            [
+              "0.5600",
+              "15.00"
+            ],
+            [
+              "0.6100",
+              "27.00"
+            ],
+            [
+              "0.6300",
+              "150.00"
+            ],
+            [
+              "0.7100",
+              "140.00"
+            ],
+            [
+              "0.7800",
+              "30.00"
+            ],
+            [
+              "0.9600",
+              "145.00"
+            ],
+            [
+              "0.9700",
+              "2160.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1673.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:11:12.247Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2370.36"
+            ],
+            [
+              "0.0200",
+              "62.00"
+            ],
+            [
+              "0.0300",
+              "42.00"
+            ],
+            [
+              "0.0500",
+              "525.00"
+            ],
+            [
+              "0.0600",
+              "637.00"
+            ],
+            [
+              "0.0700",
+              "239.81"
+            ],
+            [
+              "0.0800",
+              "235.18"
+            ],
+            [
+              "0.0900",
+              "43.00"
+            ],
+            [
+              "0.1100",
+              "12.42"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1700",
+              "7.86"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.1900",
+              "10.00"
+            ],
+            [
+              "0.2000",
+              "23.62"
+            ],
+            [
+              "0.3900",
+              "4.00"
+            ],
+            [
+              "0.4200",
+              "10.00"
+            ],
+            [
+              "0.5100",
+              "500.00"
+            ],
+            [
+              "0.5600",
+              "12.00"
+            ],
+            [
+              "0.6100",
+              "27.00"
+            ],
+            [
+              "0.6300",
+              "150.00"
+            ],
+            [
+              "0.7100",
+              "140.00"
+            ],
+            [
+              "0.7800",
+              "30.00"
+            ],
+            [
+              "0.9600",
+              "145.00"
+            ],
+            [
+              "0.9700",
+              "2160.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1628.77"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:29:02.322Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI/orderbook",
       "orderbook": {
@@ -3701,6 +3946,22 @@
       "dropped": 9,
       "dropped_from_ts": 1789850880,
       "dropped_to_ts": 1789852080,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:02:24.471Z",
+      "dropped": 134,
+      "dropped_from_ts": 1789852140,
+      "dropped_to_ts": 1789866540,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:11:12.547Z",
+      "dropped": 4,
+      "dropped_from_ts": 1789866600,
+      "dropped_to_ts": 1789866780,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     },

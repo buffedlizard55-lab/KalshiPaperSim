@@ -5,6 +5,26 @@
   "source": "live_api",
   "candlesticks": [
     {
+      "end_period_ts": 1789766580,
+      "open_interest_fp": "11.13",
+      "price": {
+        "previous_dollars": "0.9000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.8900",
+        "high_dollars": "0.8900",
+        "low_dollars": "0.8900",
+        "open_dollars": "0.8900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.1600",
+        "open_dollars": "0.1600"
+      }
+    },
+    {
       "end_period_ts": 1789766640,
       "open_interest_fp": "11.13",
       "price": {
@@ -2329,6 +2349,100 @@
             [
               "0.8900",
               "50.00"
+            ],
+            [
+              "0.9900",
+              "10113.99"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:02:39.366Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19WPGEDM-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0200",
+              "558.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.5000",
+              "20.00"
+            ],
+            [
+              "0.6300",
+              "150.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "8.00"
+            ],
+            [
+              "0.9900",
+              "10113.99"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:11:27.404Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19WPGEDM-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300.00"
+            ],
+            [
+              "0.0200",
+              "558.00"
+            ],
+            [
+              "0.0600",
+              "16.00"
+            ],
+            [
+              "0.1500",
+              "50.00"
+            ],
+            [
+              "0.5000",
+              "20.00"
+            ],
+            [
+              "0.6300",
+              "150.00"
+            ],
+            [
+              "0.6600",
+              "25.00"
+            ],
+            [
+              "0.6700",
+              "8.00"
             ],
             [
               "0.9900",

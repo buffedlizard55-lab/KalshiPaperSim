@@ -1383,7 +1383,15 @@ test('46. every verified fact carries a reviewable link and a status', () => {
     // fda-signals workflow captures (V107). Signal sources, same status as
     // api.weather.gov; the group check below still applies.
     'www.fda.gov', 'open.fda.gov', 'api.fda.gov',
-    'laikalabs.ai', 'pith.science', 'www.reddit.com', 'reddit.com', 'www.oddsshopper.com'
+    // statsapi.mlb.com is MLB Advanced Media's OFFICIAL Stats API — the
+    // source of the point-in-time MLB game-state SIGNAL (facts V111/V113).
+    // Same status as api.weather.gov and api.fda.gov: a signal source, never
+    // a source about the exchange; the group check below still applies.
+    'statsapi.mlb.com',
+    'laikalabs.ai', 'pith.science', 'www.reddit.com', 'reddit.com', 'www.oddsshopper.com',
+    // tangotiger.net publishes the win-expectancy table the MLB entries use
+    // as a theoretical reference (R18) — a 'Strategy sources' host only.
+    'tangotiger.net'
   ]);
   let withLink = 0;
 
@@ -1408,7 +1416,7 @@ test('46. every verified fact carries a reviewable link and a status', () => {
         assert.ok(
           u.host.endsWith('kalshi.com') || u.host.endsWith('kalshi.co') || u.host === 'github.com' ||
             u.host === 'tc39.es' || u.host === 'developer.mozilla.org' || u.host === 'api.weather.gov' ||
-            u.host === 'www.fda.gov' || u.host === 'open.fda.gov' || u.host === 'api.fda.gov',
+            u.host === 'www.fda.gov' || u.host === 'open.fda.gov' || u.host === 'api.fda.gov' || u.host === 'statsapi.mlb.com',
           `${f.id}: "${f.group}" facts must cite Kalshi (or a language/project reference), not ${u.host}`
         );
       }
@@ -2117,6 +2125,13 @@ test('67. every researched source is complete, citable and honestly labelled', (
   for (const src of RESEARCH_SOURCES) {
     assert.ok(src.id && /^R\d+$/.test(src.id), `${src.id}: stable id`);
     assert.ok(src.title && src.host, `${src.id}: title and host`);
+    if (src.capturedVia === RESEARCH_CAPTURE_METHODS.UNATTRIBUTED) {
+      // A search page is not a document: the entry must say so where a reader
+      // looks first, and must take nothing verbatim from it (irregularity #53).
+      assert.match(src.claim, /could not be traced|search page|UNATTRIBUTED|irregularity #53/i, `${src.id}: an unattributed source must say so in its claim`);
+      assert.match(src.taken, /Nothing verbatim/i, `${src.id}: nothing may be taken verbatim from an unattributed source`);
+      assert.match(src.title, /genre reference|no specific/i, `${src.id}: the title must not present it as a document`);
+    }
     assert.ok(src.url || (src.urls && src.urls.length), `${src.id}: at least one URL a human can open`);
     assert.ok(src.verifiedOn, `${src.id}: the date it was read`);
     assert.ok(src.capturedVia, `${src.id}: how it was read`);
@@ -2124,9 +2139,10 @@ test('67. every researched source is complete, citable and honestly labelled', (
       [
         RESEARCH_CAPTURE_METHODS.FETCHED,
         RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
-        RESEARCH_CAPTURE_METHODS.API_FILE
+        RESEARCH_CAPTURE_METHODS.API_FILE,
+        RESEARCH_CAPTURE_METHODS.UNATTRIBUTED
       ].includes(src.capturedVia),
-      `${src.id}: capture method must be one of the three declared values`
+      `${src.id}: capture method must be one of the four declared values`
     );
     assert.ok(src.claim && src.claim.length > 40, `${src.id}: the claim that is being tested`);
     assert.ok(src.taken, `${src.id}: what was taken from it`);
@@ -2145,7 +2161,7 @@ test('67. every researched source is complete, citable and honestly labelled', (
   const stats = researchStats();
   assert.equal(stats.sources, RESEARCH_SOURCES.length);
   assert.equal(
-    stats.fetchedPages + stats.searchExcerpts + (stats.apiFileFetches || 0),
+    stats.fetchedPages + stats.searchExcerpts + (stats.apiFileFetches || 0) + (stats.unattributed || 0),
     RESEARCH_SOURCES.length,
     'every source declares exactly one capture method'
   );
@@ -4287,4 +4303,400 @@ test('120. R16 and R17 social media research strategies (AMM grid, FOMC sniper) 
   const fomcSniper = STRATEGIES.find((s) => s.username === 'FOMC_ProbabilitySniper');
   assert.ok(gridMM && typeof gridMM.decide === 'function', 'GridMM_MultiTier executable');
   assert.ok(fomcSniper && typeof fomcSniper.decide === 'function', 'FOMC_ProbabilitySniper executable');
+});
+
+/* ────────────────────────────────────────────────────────────────────────── *
+ * 2026-09-20 — the sports half of the point-in-time signal archive (MLB)
+ * ────────────────────────────────────────────────────────────────────────── */
+
+/**
+ * Two schedule games transcribed VERBATIM from the official response fetched
+ * on 2026-09-20 (fact V111): a Final game from 2026-09-19 and a Preview game
+ * from 2026-09-20. The shapes are the ones the archive must parse.
+ */
+const MLB_FIXTURE_URL = 'https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-19&endDate=2026-09-20&hydrate=linescore%2CprobablePitcher%2Cteam';
+function mlbScheduleFixture() {
+  return {
+    copyright: 'Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt',
+    dates: [
+      {
+        date: '2026-09-19',
+        games: [
+          {
+            gamePk: 824545, gameType: 'R', gameDate: '2026-09-19T18:10:00Z', officialDate: '2026-09-19',
+            status: { abstractGameState: 'Final', codedGameState: 'F', detailedState: 'Final', statusCode: 'F' },
+            teams: {
+              away: { team: { id: 116, name: 'Detroit Tigers', venue: { id: 2394, name: 'Comerica Park' }, abbreviation: 'DET' }, score: 1, isWinner: false, probablePitcher: { id: 695549, fullName: 'Jackson Jobe' } },
+              home: { team: { id: 145, name: 'Chicago White Sox', venue: { id: 4, name: 'Rate Field' }, abbreviation: 'CWS' }, score: 3, isWinner: true, probablePitcher: { id: 680732, fullName: 'Sean Burke' } }
+            },
+            linescore: { currentInning: 9, currentInningOrdinal: '9th', inningState: 'Top', inningHalf: 'Top', isTopInning: true, scheduledInnings: 9, teams: { home: { runs: 3, hits: 4, errors: 0 }, away: { runs: 1, hits: 8, errors: 1 } } },
+            venue: { id: 4, name: 'Rate Field' }, gameNumber: 1, doubleHeader: 'N', scheduledInnings: 9
+          }
+        ]
+      },
+      {
+        date: '2026-09-20',
+        games: [
+          {
+            gamePk: 823570, gameType: 'R', gameDate: '2026-09-20T17:10:00Z', officialDate: '2026-09-20',
+            status: { abstractGameState: 'Preview', codedGameState: 'S', detailedState: 'Scheduled', statusCode: 'S' },
+            teams: {
+              away: { team: { id: 143, name: 'Philadelphia Phillies', abbreviation: 'PHI' }, probablePitcher: { id: 650911, fullName: 'Cristopher Sánchez' } },
+              home: { team: { id: 121, name: 'New York Mets', abbreviation: 'NYM' }, probablePitcher: { id: 804636, fullName: 'Jonah Tong' } }
+            },
+            linescore: { scheduledInnings: 9, innings: [], teams: { home: {}, away: {} } },
+            venue: { id: 3289, name: 'Citi Field' }, gameNumber: 1, doubleHeader: 'N'
+          }
+        ]
+      }
+    ]
+  };
+}
+
+test('121. the MLB archive parses the official schedule shape strictly, collapses unchanged states, and keeps one URL per date file', async () => {
+  const { parseSchedule, parseGame, mergeCapture, stateFingerprint, captureWindow, easternDate, scheduleUrl, verify, SCHEDULE_ENDPOINT } = await import('../scripts/archive-mlb-signals.mjs');
+  const fs = await import('node:fs');
+  const os = await import('node:os');
+
+  // (a) Verbatim shapes parse into the compact archive rows.
+  const t0 = '2026-09-20T03:00:00.000Z';
+  const { copyright, byDate } = parseSchedule(mlbScheduleFixture(), MLB_FIXTURE_URL, t0);
+  assert.match(copyright, /MLB Advanced Media/);
+  const finalGame = byDate.get('2026-09-19')[0];
+  assert.equal(finalGame.meta.gamePk, 824545);
+  assert.deepEqual([finalGame.meta.away.abbreviation, finalGame.meta.home.abbreviation], ['DET', 'CWS']);
+  assert.equal(finalGame.state.abstractGameState, 'Final');
+  assert.deepEqual(finalGame.state.runs, { away: 1, home: 3 });
+  assert.equal(finalGame.state.winner, 'home', 'the winner comes from the official isWinner flags, only on Final');
+  assert.equal(finalGame.meta.probablePitchers.home.fullName, 'Sean Burke');
+  const preview = byDate.get('2026-09-20')[0];
+  assert.equal(preview.state.abstractGameState, 'Preview');
+  assert.deepEqual(preview.state.runs, { away: null, home: null }, 'an empty linescore stays null — never 0');
+  assert.equal(preview.state.inning, null);
+  assert.equal(preview.state.winner, null);
+
+  // (b) Missing identity keys are refused, never guessed.
+  assert.throws(() => parseGame({ gamePk: 1, status: { abstractGameState: 'Live' }, teams: { away: { team: { id: 1 } }, home: { team: { id: 2, abbreviation: 'B' } } }, gameDate: 'x', officialDate: 'y' }, 'u', t0), /abbreviation/);
+  assert.throws(() => parseGame({ gamePk: 1, status: { abstractGameState: 'Rained' }, teams: {}, gameDate: 'x' }, 'u', t0), /abstractGameState/);
+  assert.throws(() => parseSchedule(null, 'u', t0));
+
+  // (c) Change-collapsing: an unchanged capture advances last_seen_at only;
+  //     a changed one appends a row; captures[] lists every run instant.
+  let r = mergeCapture(null, { date: '2026-09-20', games: byDate.get('2026-09-20'), url: MLB_FIXTURE_URL, capturedAt: t0, copyright });
+  assert.equal(r.appended, 1);
+  const t1 = '2026-09-20T03:20:00.000Z';
+  r = mergeCapture(r.store, { date: '2026-09-20', games: parseSchedule(mlbScheduleFixture(), MLB_FIXTURE_URL, t1).byDate.get('2026-09-20'), url: MLB_FIXTURE_URL, capturedAt: t1, copyright });
+  assert.equal(r.appended, 0);
+  assert.deepEqual(r.store.captures, [t0, t1]);
+  const g = r.store.games['823570'];
+  assert.equal(g.states.length, 1);
+  assert.equal(g.states[0].captured_at, t0, 'captured_at stays the FIRST-seen instant');
+  assert.equal(g.states[0].last_seen_at, t1);
+  const live = mlbScheduleFixture();
+  live.dates[1].games[0].status = { abstractGameState: 'Live', codedGameState: 'I', detailedState: 'In Progress', statusCode: 'I' };
+  live.dates[1].games[0].linescore = { currentInning: 6, inningState: 'Bottom', teams: { home: { runs: 2 }, away: { runs: 5 } } };
+  const t2 = '2026-09-20T19:20:00.000Z';
+  const url2 = scheduleUrl({ startDate: '2026-09-20', endDate: '2026-09-21' });
+  r = mergeCapture(r.store, { date: '2026-09-20', games: parseSchedule(live, url2, t2).byDate.get('2026-09-20'), url: url2, capturedAt: t2, copyright });
+  assert.equal(r.appended, 1);
+  assert.equal(g.states.length, 2);
+  assert.equal(stateFingerprint(g.states[1]), 'Live|In Progress|6|Bottom|5|2|');
+  assert.deepEqual(r.store.source.urls, [MLB_FIXTURE_URL, url2], 'each distinct request URL is stored once per date file');
+  assert.equal(g.states[0].url_ref, 0);
+  assert.equal(g.states[1].url_ref, 1);
+  assert.equal(g.states[1].url, undefined, 'rows point at the URL by index, they do not repeat it');
+
+  // (d) The offline audit accepts the store it just built and rejects a
+  //     forged one (a winner before Final).
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'mlb-verify-'));
+  fs.writeFileSync(path.join(dir, '2026-09-20.json'), JSON.stringify(r.store));
+  const quiet = { log: () => {}, error: () => {} };
+  assert.equal(verify({ ...quiet, dir }), 0);
+  const forged = JSON.parse(JSON.stringify(r.store));
+  forged.games['823570'].states[1].winner = 'away';
+  fs.writeFileSync(path.join(dir, '2026-09-20.json'), JSON.stringify(forged));
+  assert.equal(verify({ ...quiet, dir }), 1);
+  assert.ok(scheduleUrl({ startDate: '2026-09-19', endDate: '2026-09-20' }).startsWith(SCHEDULE_ENDPOINT));
+
+  // (e) The capture window is US-Eastern: 02:50Z on the 20th is still the
+  //     evening of the 19th in New York, and the window covers the previous
+  //     ET day for late West-Coast games.
+  assert.equal(easternDate(new Date('2026-09-20T02:50:00Z')), '2026-09-19');
+  assert.deepEqual(captureWindow(new Date('2026-09-20T02:50:00Z')), { startDate: '2026-09-18', endDate: '2026-09-19' });
+  assert.deepEqual(captureWindow(new Date('2026-09-20T05:00:00Z')), { startDate: '2026-09-19', endDate: '2026-09-20' });
+});
+
+/**
+ * The six official games behind the nine finalized KXMLBGAME contracts in the
+ * store — gamePk, first pitch and result transcribed from the official
+ * schedule response fetched on 2026-09-20 (fact V113).
+ */
+function mlbOfficialGamesFixture() {
+  const mk = (gamePk, gameDate, away, home, winner, runs) => ({
+    gamePk, gameDate, officialDate: gameDate.slice(0, 10), away: { abbreviation: away }, home: { abbreviation: home },
+    captures: ['2026-09-20T03:00:00.000Z'],
+    source: { urls: ['https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-13&endDate=2026-09-17&hydrate=team'] },
+    states: [{ captured_at: '2026-09-20T03:00:00.000Z', last_seen_at: '2026-09-20T03:00:00.000Z', url_ref: 0, abstractGameState: 'Final', detailedState: 'Final', inning: 9, inningState: 'Top', runs, winner }]
+  });
+  return [
+    mk(823171, '2026-09-13T23:20:00Z', 'SD', 'SF', 'away', { away: 6, home: 4 }),
+    mk(825034, '2026-09-15T01:40:00Z', 'MIA', 'AZ', 'home', { away: 7, home: 8 }),
+    mk(825030, '2026-09-16T01:40:00Z', 'MIA', 'AZ', 'away', { away: 4, home: 2 }),
+    mk(823655, '2026-09-16T17:40:00Z', 'NYY', 'MIN', 'home', { away: 4, home: 5 }),
+    mk(824467, '2026-09-16T22:40:00Z', 'LAD', 'CIN', 'home', { away: 2, home: 6 }),
+    mk(823978, '2026-09-18T01:38:00Z', 'MIN', 'LAA', 'home', { away: 4, home: 5 })
+  ];
+}
+
+test('122. every finalized KXMLBGAME contract in the store joins the official game by instant + away + home, and the exchange result equals the official winner', async () => {
+  const store = await import('../src/mlb-signal-store.js');
+  const { getIntradayMarket } = await import('../src/accumulated-history.js');
+  const teams = store.mlbTeams();
+  assert.equal(teams.length, 30, 'the official team table (data/mlb-signals/_teams.json) ships 30 clubs');
+  assert.equal(new Set(teams.map((t) => t.abbreviation)).size, 30);
+  for (const code of ['AZ', 'ATH', 'CWS', 'KC', 'TB', 'WSH', 'SD', 'SF']) assert.ok(teams.some((t) => t.abbreviation === code), `${code} is an official code`);
+
+  const games = mlbOfficialGamesFixture();
+  const expected = {
+    'KXMLBGAME-26SEP131920SDSF-SF': [823171, true, 'no'],
+    'KXMLBGAME-26SEP142140MIAAZ-AZ': [825034, true, 'yes'],
+    'KXMLBGAME-26SEP152140MIAAZ-AZ': [825030, true, 'no'],
+    'KXMLBGAME-26SEP152140MIAAZ-MIA': [825030, false, 'yes'],
+    'KXMLBGAME-26SEP161340NYYMIN-MIN': [823655, true, 'yes'],
+    'KXMLBGAME-26SEP161340NYYMIN-NYY': [823655, false, 'no'],
+    'KXMLBGAME-26SEP161840LADCIN-LAD': [824467, false, 'no'],
+    'KXMLBGAME-26SEP172138MINLAA-LAA': [823978, true, 'yes'],
+    'KXMLBGAME-26SEP172138MINLAA-MIN': [823978, false, 'no']
+  };
+  let checkedAgainstStore = 0;
+  for (const [ticker, [gamePk, yesIsHome, officialYesResult]] of Object.entries(expected)) {
+    const m = store.matchMlbGame(ticker, { games, teams });
+    assert.ok(m.ok, `${ticker}: ${m.reason || 'joined'}`);
+    assert.equal(m.game.gamePk, gamePk, `${ticker} → gamePk`);
+    assert.equal(m.yesIsHome, yesIsHome, `${ticker} → YES side`);
+    assert.equal(m.matchedBy, 'utc-minute+away+home');
+    // The official winner, read through the point-in-time query, must equal
+    // the exchange's own stored result for the contract.
+    const st = store.gameStateAtOrBefore(m.game, Math.floor(Date.parse('2026-09-20T04:00:00Z') / 1000));
+    const yesWon = st.winner === (yesIsHome ? 'home' : 'away');
+    assert.equal(yesWon ? 'yes' : 'no', officialYesResult, `${ticker}: official winner vs expected`);
+    const stored = getIntradayMarket(ticker, 60);
+    if (stored && stored.market && stored.market.status === 'finalized') {
+      assert.equal(stored.market.result, officialYesResult, `${ticker}: exchange result (store) equals the official winner`);
+      checkedAgainstStore += 1;
+    }
+  }
+  assert.ok(checkedAgainstStore >= 6, `cross-checked ${checkedAgainstStore} stored exchange results against the official winners`);
+
+  // Fail-closed joins: unknown code, ambiguous split, wrong instant, wrong side.
+  assert.equal(store.matchMlbGame('KXMLBGAME-26SEP131920SDXX-SD', { games, teams }).reason, 'TEAM_CODE_NOT_IN_OFFICIAL_TABLE');
+  assert.equal(store.matchMlbGame('KXMLBGAME-26SEP131921SDSF-SF', { games, teams }).reason, 'TEAMS_MATCH_BUT_TIME_DIFFERS', 'one minute off is not the same game');
+  assert.equal(store.matchMlbGame('KXMLBGAME-26SEP131920SFSD-SF', { games, teams }).reason, 'NO_ARCHIVED_GAME', 'away/home swapped is not the same game');
+  assert.equal(store.matchMlbGame('KXMLBGAME-26SEP131920SDSF-SF', { games, teams: [] }).reason, 'NO_TEAM_TABLE');
+  assert.equal(store.matchMlbGame('KXHIGHNY-26SEP20-B80', { games, teams }).reason, 'NOT_A_KXMLBGAME_TICKER');
+  // The ET → UTC conversion honours daylight-saving rules (EDT in September, EST in November).
+  assert.equal(new Date(store.easternToUtcSeconds('2026-09-17', 21, 38) * 1000).toISOString(), '2026-09-18T01:38:00.000Z');
+  assert.equal(new Date(store.easternToUtcSeconds('2026-11-05', 20, 8) * 1000).toISOString(), '2026-11-06T01:08:00.000Z');
+});
+
+test('123. the MLB signal store is point-in-time: rows after the decision are never readable, staleness uses the capture list (not last_seen_at), and unchanged rows still answer', async () => {
+  const store = await import('../src/mlb-signal-store.js');
+  const sec = (iso) => Math.floor(Date.parse(iso) / 1000);
+  const game = {
+    gamePk: 1, gameDate: '2026-09-20T17:10:00Z', away: { abbreviation: 'PHI' }, home: { abbreviation: 'NYM' },
+    captures: ['2026-09-20T16:40:00.000Z', '2026-09-20T17:00:00.000Z', '2026-09-20T17:20:00.000Z', '2026-09-20T17:40:00.000Z', '2026-09-20T18:00:00.000Z'],
+    source: { urls: ['https://statsapi.mlb.com/api/v1/schedule?sportId=1'] },
+    states: [
+      { captured_at: '2026-09-20T16:40:00.000Z', last_seen_at: '2026-09-20T17:00:00.000Z', url_ref: 0, abstractGameState: 'Preview', detailedState: 'Scheduled', inning: null, inningState: null, runs: { away: null, home: null }, winner: null },
+      { captured_at: '2026-09-20T17:20:00.000Z', last_seen_at: '2026-09-20T17:20:00.000Z', url_ref: 0, abstractGameState: 'Live', detailedState: 'In Progress', inning: 1, inningState: 'Top', runs: { away: 0, home: 0 }, winner: null },
+      { captured_at: '2026-09-20T17:40:00.000Z', last_seen_at: '2026-09-20T18:00:00.000Z', url_ref: 0, abstractGameState: 'Live', detailedState: 'In Progress', inning: 2, inningState: 'Bottom', runs: { away: 1, home: 0 }, winner: null }
+    ]
+  };
+  assert.equal(store.gameStateAtOrBefore(game, sec('2026-09-20T16:39:59Z')), null, 'before the first capture: nothing is knowable');
+  const atPreview = store.gameStateAtOrBefore(game, sec('2026-09-20T16:40:00Z'));
+  assert.equal(atPreview.abstractGameState, 'Preview');
+  // Between the 17:00 (unchanged) and 17:20 captures: the Preview row is still
+  // the answer, and the freshest observation is 17:00 — NOT the row's
+  // captured_at (16:40) and NOT its last_seen_at (which a later run wrote).
+  const between = store.gameStateAtOrBefore(game, sec('2026-09-20T17:10:00Z'));
+  assert.equal(between.abstractGameState, 'Preview');
+  assert.equal(between.observedAt, '2026-09-20T17:00:00.000Z');
+  assert.equal(between.staleSeconds, 600);
+  const live = store.gameStateAtOrBefore(game, sec('2026-09-20T17:25:00Z'));
+  assert.equal(live.inning, 1);
+  assert.equal(live.staleSeconds, 300);
+  // A decision at 17:50 sees the 17:40 row (2nd inning), not anything later.
+  const second = store.gameStateAtOrBefore(game, sec('2026-09-20T17:50:00Z'));
+  assert.deepEqual([second.inning, second.inningState, second.runs.away], [2, 'Bottom', 1]);
+  assert.equal(second.observedAt, '2026-09-20T17:40:00.000Z');
+  assert.equal(second.source, 'https://statsapi.mlb.com/api/v1/schedule?sportId=1');
+  // Rows out of order in the file change nothing.
+  const shuffled = { ...game, states: [...game.states].reverse() };
+  assert.equal(store.gameStateAtOrBefore(shuffled, sec('2026-09-20T17:50:00Z')).inning, 2);
+  // The coverage summary is computed from the shipped module (empty or not)
+  // and never throws.
+  const cov = store.mlbCoverage();
+  assert.equal(typeof cov.present, 'boolean');
+  assert.equal(cov.teams, 30);
+});
+
+test('124. the two MLB entries trade only on a fresh LIVE point-in-time state priced below the R16 table, and are forward tests on the shipped store', async () => {
+  const { STRATEGIES, tangoYesWinProbability, TANGO_HOME_WIN_EXPECTANCY } = await import('../src/strategies.js');
+  const runner = await import('../src/strategy-runner.js');
+  const lead = STRATEGIES.find((s) => s.username === 'MLBLead_InPlay');
+  const trail = STRATEGIES.find((s) => s.username === 'MLBTrail_Comeback');
+  assert.ok(lead && trail);
+  assert.equal(lead.flight, 'micro');
+  assert.deepEqual(lead.universe, ['KXMLBGAME']);
+
+  // (a) The transcribed table cells (tangotiger.net/innwin.html, 2026-09-20).
+  assert.equal(TANGO_HOME_WIN_EXPECTANCY.source, 'https://tangotiger.net/innwin.html');
+  assert.equal(tangoYesWinProbability({ yesIsHome: true, inning: 6, inningState: 'Top', homeDifferential: 2 }), 0.79);
+  assert.equal(tangoYesWinProbability({ yesIsHome: false, inning: 6, inningState: 'Top', homeDifferential: -2 }), 0.79, 'the away side reads 1 − the mirrored home cell');
+  assert.equal(tangoYesWinProbability({ yesIsHome: true, inning: 7, inningState: 'Top', homeDifferential: -1 }), 0.299);
+  assert.equal(tangoYesWinProbability({ yesIsHome: true, inning: 8, inningState: 'Top', homeDifferential: 2 }), 0.872);
+  assert.equal(tangoYesWinProbability({ yesIsHome: true, inning: 9, inningState: 'Bottom', homeDifferential: -1 }), 0.194);
+  assert.equal(tangoYesWinProbability({ yesIsHome: true, inning: 7, inningState: 'Middle', homeDifferential: 1 }), 0.795, 'Middle = start of the bottom half');
+  assert.equal(tangoYesWinProbability({ yesIsHome: true, inning: 6, inningState: 'End', homeDifferential: 2 }), 0.826, 'End = start of the next top half');
+  assert.equal(tangoYesWinProbability({ yesIsHome: true, inning: 5, inningState: 'Top', homeDifferential: 2 }), null, 'before the 6th: no reference, no trade');
+  assert.equal(tangoYesWinProbability({ yesIsHome: true, inning: 11, inningState: 'Top', homeDifferential: 9 }), 0.987, 'extras reuse the 9th, differentials clamp to ±4');
+
+  // (b) decide(): a synthetic point-in-time view with a real-shaped book.
+  const mkCtx = (signal, ask) => {
+    const positions = new Map();
+    return {
+      ticker: 'KXMLBGAME-26SEP201310PHINYM-NYM',
+      market: { series_ticker: 'KXMLBGAME' },
+      signal,
+      portfolio: { cash: 100000, positions },
+      book: {
+        tick: 0.01,
+        getBestYesAsk: () => ask,
+        getBestNoAsk: () => (ask === null ? null : Math.round((1 - ask) * 100) / 100),
+        getYesAskTiers: () => [{ price: ask, count: 500 }],
+        getNoAskTiers: () => [{ price: 1 - ask, count: 500 }]
+      }
+    };
+  };
+  const liveLead = { kind: 'mlb-game-state', abstractGameState: 'Live', inning: 7, inningState: 'Top', yesIsHome: true, homeDifferential: 2, lead: 2, runsYes: 5, runsOpp: 3, staleSeconds: 600, capturedAt: 'c', observedAt: 'o', yesTeam: 'NYM' };
+  // p = 0.826 → buys at 0.80 (≤ 0.806), not at 0.81.
+  assert.equal(lead.decide(mkCtx(liveLead, 0.8)).length, 1);
+  assert.equal(lead.decide(mkCtx(liveLead, 0.8))[0].side, 'YES');
+  assert.match(lead.decide(mkCtx(liveLead, 0.8))[0].reason, /0\.826/);
+  assert.equal(lead.decide(mkCtx(liveLead, 0.81)).length, 0, 'above theory minus the 2¢ margin: no trade');
+  assert.equal(lead.decide(mkCtx({ ...liveLead, staleSeconds: 1801 }, 0.8)).length, 0, 'a stale observation is not a signal');
+  assert.equal(lead.decide(mkCtx({ ...liveLead, abstractGameState: 'Final' }, 0.8)).length, 0, 'a Final game is never traded');
+  assert.equal(lead.decide(mkCtx({ ...liveLead, abstractGameState: 'Preview', inning: null, lead: null }, 0.8)).length, 0);
+  assert.equal(lead.decide(mkCtx({ ...liveLead, inning: 5 }, 0.5)).length, 0, 'before the 6th inning: no trade');
+  assert.equal(lead.decide(mkCtx({ ...liveLead, lead: 1, homeDifferential: 1 }, 0.5)).length, 0, 'a one-run lead is not enough');
+  assert.equal(lead.decide(mkCtx(null, 0.5)).length, 0, 'no signal → abstain');
+  assert.equal(lead.decide(mkCtx({ kind: 'nws-forecast-high', highF: 80 }, 0.5)).length, 0, 'another archive\'s signal is not an MLB state');
+  const trailing = { ...liveLead, yesIsHome: false, homeDifferential: 1, lead: -1, runsYes: 3, runsOpp: 4, inning: 8, inningState: 'Top', yesTeam: 'PHI' };
+  // away down one at the top of the 8th: p = 1 − 0.753 = 0.247 → buys ≤ 0.227.
+  assert.equal(trail.decide(mkCtx(trailing, 0.22)).length, 1);
+  assert.equal(trail.decide(mkCtx(trailing, 0.23)).length, 0);
+  assert.equal(trail.decide(mkCtx({ ...trailing, inning: 6 }, 0.1)).length, 0, 'the comeback rule starts in the 7th');
+  assert.equal(trail.decide(mkCtx({ ...trailing, lead: -2, homeDifferential: 2 }, 0.05)).length, 0, 'exactly one run down, not two');
+  assert.equal(lead.decide(mkCtx(trailing, 0.22)).length, 0, 'the leader entry never buys a trailing side');
+
+  // (c) Forward test by construction on the shipped store: no 1-minute
+  //     KXMLBGAME bars and/or no archive overlap → 0 trades, unranked with the
+  //     reason published — and the reason distinguishes a pending ingest from
+  //     a flight mismatch.
+  const res = runner.runCompetition({ strategies: [lead, trail], depthMode: 'captured', periodIntervalMinutes: 1 });
+  for (const r of res.results) {
+    assert.equal(r.totalTrades, 0, `${r.username}: no fabricated backtest`);
+    assert.equal(r.analysis.verdict, 'UNTESTED_ON_THIS_DATASET');
+  }
+  for (const row of res.leaderboard) {
+    assert.equal(row.rank, null);
+    assert.match(String(row.disqualificationReason || ''), /Pending ingest|No executed fills/);
+    assert.doesNotMatch(String(row.disqualificationReason || ''), /runs in another flight/, 'a design in its own flight is never called a flight mismatch');
+  }
+  // (d) The provider is dark without an archive and answers nothing for a
+  //     non-MLB ticker with one; the join report explains every stored contract.
+  const provider = runner.buildMlbSignalProvider();
+  const storeMod = await import('../src/mlb-signal-store.js');
+  if (!storeMod.hasMlbSignalArchive()) assert.equal(provider, null, 'no archive → no provider (never a guessing one)');
+  else assert.equal(provider('KXHIGHNY-26SEP20-B80', {}, 1), null);
+  const report = runner.mlbJoinReport();
+  assert.ok(report.length >= 9, 'every stored KXMLBGAME contract is listed');
+  for (const row of report) assert.ok(row.reason && row.reason.length > 2, `${row.ticker}: a join reason is published`);
+});
+
+test('125. every data workflow regenerates the same files the push guard may auto-resolve, and the guard\'s list names every generated module', () => {
+  const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const guard = readFileSync(path.join(root, 'scripts', 'push-with-race-guard.sh'), 'utf8');
+  const m = /GENERATED_PATHS="\$\{GENERATED_PATHS:-([^}]+)\}"/.exec(guard);
+  assert.ok(m, 'the guard declares a GENERATED_PATHS default');
+  const listed = new Set(m[1].trim().split(/\s+/));
+  // Every module the generators write.
+  const gen = readFileSync(path.join(root, 'scripts', 'generate-history-module.mjs'), 'utf8');
+  const generated = [...gen.matchAll(/path\.join\(ROOT, 'src', '([a-z-]+\.js)'\)/g)].map((x) => `src/${x[1]}`);
+  assert.ok(generated.includes('src/accumulated-history.js') && generated.includes('src/mlb-signal-data.js'), `generator writes: ${generated.join(', ')}`);
+  for (const p of generated) assert.ok(listed.has(p), `${p} is written by the generator but not auto-resolvable by the guard`);
+  for (const p of ['src/desk-data.js', 'README.md', 'VERIFICATION.md', 'IRREGULARITIES.md', 'index.html', 'docs/']) assert.ok(listed.has(p), `${p} must be in GENERATED_PATHS`);
+  const regen = /REGENERATE_CMD="\$\{REGENERATE_CMD:-([^}]+)\}"/.exec(guard);
+  assert.ok(regen);
+  const chain = ['node scripts/generate-history-module.mjs', 'node scripts/generate-desk-module.mjs', 'node scripts/render-docs.js', 'node build.js'];
+  for (const c of chain) assert.ok(regen[1].includes(c), `guard REGENERATE_CMD runs ${c}`);
+  // Every workflow that pushes through the guard runs that same chain first.
+  const wfDir = path.join(root, '.github', 'workflows');
+  const pushing = readdirSync(wfDir).filter((f) => f.endsWith('.yml') && readFileSync(path.join(wfDir, f), 'utf8').includes('push-with-race-guard.sh'));
+  assert.ok(pushing.length >= 4, `data workflows using the guard: ${pushing.join(', ')}`);
+  assert.ok(pushing.includes('mlb-signals.yml'));
+  for (const f of pushing) {
+    const y = readFileSync(path.join(wfDir, f), 'utf8');
+    for (const c of chain) assert.ok(y.includes(c), `${f} must run "${c}" before committing`);
+    assert.ok(/\nconcurrency:\n(?:\s*#[^\n]*\n)*\s+group:/.test(y), `${f} declares a concurrency group`);
+    assert.ok(y.includes('cancel-in-progress: false'), `${f} never cancels a capture in flight`);
+  }
+  // The 20-minute MLB bot has its OWN group (a fast bot in the shared queue
+  // would evict queued captures — see the comment in the workflow).
+  const mlb = readFileSync(path.join(wfDir, 'mlb-signals.yml'), 'utf8');
+  assert.match(mlb, /group: mlb-signals-\$\{\{ github\.ref \}\}/);
+  assert.match(mlb, /\*\/20 16-23 \* \* \*/);
+  assert.ok(existsSync(path.join(root, '.github', 'triggers', 'mlb.json')));
+});
+
+test('126. a strategy card that names an external signal either reads it in decide() or says in plain words that it does not (irregularity #53 guard)', async () => {
+  const { STRATEGIES } = await import('../src/strategies.js');
+  const { DESK_STRATEGIES } = await import('../src/desk-strategies.js');
+  // Each signal family: how a card would name it, what its code must contain to
+  // be entitled to the claim, and the disclaimer wording that is acceptable
+  // instead. A card that names the signal, has no such code and no such
+  // disclaimer is exactly the failure PR #17 merged.
+  const families = [
+    { name: 'NWS forecast', text: /\b(NWS|forecast high|point forecast|forecast confirmation)\b/i, code: /\b(signal|forecastHighAt)\b/, disclaimer: /(no-forecast|no forecast|does not read|not read|NOT read|never reads|price-only|control)/i },
+    { name: 'Drugs@FDA', text: /(Drugs@FDA|openFDA|api\.fda\.gov)/i, code: /\bsignal\b/, disclaimer: /(does not use|NOT use|not archived|price-only|not read|NOT read|does not read|Neither uses)/i },
+    { name: 'MLB game state', text: /(statsapi\.mlb\.com|MLB Stats API|linescore)/i, code: /\bsignal\b/, disclaimer: /(not read|NOT read|does not read|price-only|not used)/i },
+    { name: 'insider filings', text: /(Form 4|insider filing|insider data|insider retention|EDGAR)/i, code: /\b(form4|insider)Signal\b/i, disclaimer: /(no insider data|NOT read|not read|does not read|price-only|is NOT an insider-filing|NOT USED|no Form 4)/i },
+    { name: 'futures-implied probability', text: /(FedWatch|futures-implied|futures implied)/i, code: /\bfedwatch\b/i, disclaimer: /(does NOT read|does not read|not read|no futures|price-only|UNVERIFIED)/i },
+    { name: 'injury report', text: /(injury designation|injury report|injuries JSON)/i, code: /\binjury\b/i, disclaimer: /(NOT used|not used|not archived|does NOT trade on injury|no injury|never reads)/i },
+    { name: 'live score feed', text: /(live-score|scoreboard feed|live score)/i, code: /\bscore\b/i, disclaimer: /(NOT used|not used|not archived|is NOT read|not read|never reads)/i }
+  ];
+  const cardText = (s) => [s.title, s.name, s.tagline, s.thesis, s.sourceNote, s.source, s.designSource, JSON.stringify(s.rules || '')].filter(Boolean).join(' \n ');
+  const problems = [];
+  for (const s of [...STRATEGIES, ...DESK_STRATEGIES]) {
+    const text = cardText(s);
+    const code = String(s.decide);
+    for (const f of families) {
+      if (!f.text.test(text)) continue;
+      if (f.code.test(code)) continue;
+      if (f.disclaimer.test(text)) continue;
+      problems.push(`${s.username}: names "${f.name}" but decide() does not read it and the card does not say so`);
+    }
+  }
+  assert.deepEqual(problems, [], problems.join('\n'));
+  // The two entries that DO read an archive must reference ctx.signal.
+  for (const u of ['ForecastEdge_Weather', 'ForecastEdge_MultiCity', 'FDAEdge_DrugsFDA', 'MLBLead_InPlay', 'MLBTrail_Comeback']) {
+    const s = STRATEGIES.find((x) => x.username === u);
+    assert.ok(s && /\bsignal\b/.test(String(s.decide)), `${u} reads ctx.signal`);
+  }
+  const lw = DESK_STRATEGIES.find((x) => x.username === 'LiveWeather_ForecastEdge');
+  assert.ok(lw && /forecastHighAt/.test(String(lw.decide)), 'the desk weather entrant actually opens the NWS archive');
+  // No desk entrant may assume a price when the capture has none.
+  for (const s of DESK_STRATEGIES) {
+    assert.doesNotMatch(String(s.decide), /yesAsk \?\? 0\.\d+|noAsk \?\? 0\.\d+|price \|\| 0\.\d+/, `${s.username}: never substitutes a made-up quote`);
+  }
 });

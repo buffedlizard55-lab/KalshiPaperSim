@@ -38,6 +38,17 @@
  *   honesty contract requires), NFLPRED (stub), StockPaperSim (rebuilt the
  *   same day; wrong venue for this repo, and the directory's record for it
  *   is stale — IRREGULARITIES.md #42).
+ *
+ * THIRD PASS (2026-09-20, session 01a0bca9): the MLB half of the sports gap
+ *   closed. The OFFICIAL source the owner's MLB-Live-PBP / MLB-PBP projects
+ *   verify against (statsapi.mlb.com, MLB Advanced Media) is now archived
+ *   here point-in-time every 20 minutes (scripts/archive-mlb-signals.mjs,
+ *   data/mlb-signals/) and joined to KXMLBGAME contracts by first-pitch
+ *   instant + team codes (fact V113); two roster entries trade it
+ *   (MLBLead_InPlay, MLBTrail_Comeback, R16). S09 → LIVE_SIGNAL, S15 →
+ *   testable; S10 / S14 / S17 re-worded to the store as it is today (their
+ *   2026-09-18 "no sports series ingested" wording had gone stale the same
+ *   day the hourly sports blocks landed — IRREGULARITIES.md #52).
  */
 
 export const SIGNAL_SOURCE_STATUS = Object.freeze({
@@ -101,11 +112,11 @@ export const SIGNAL_SOURCES = Object.freeze([
     verifiableClaim: 'Form 4 filings are official (SEC EDGAR, sec.gov) and carry exact filing timestamps, so a point-in-time archive is possible in principle.',
     kalshiMarketClass:
       'Company-event markets (e.g. a CEO-departure or company-KPI market on Kalshi). THIS repository now holds FDA (KXFDA*) and CEO-change (TESLACEOCHANGE / JPMCEOCHANGE / KXOPENAICEOCHANGE) series with captured bars AND Live Desk ladders — those are company-event markets. The remaining gap is the Form 4 archive, not the Kalshi leg.',
-    testableHere: true,
+    testableHere: false,
     howTested:
-      'InsiderFiling_Drift replays on real company-event bars (TESLACEOCHANGE, JPMCEOCHANGE, KXOPENAICEOCHANGE, KXAAPLCEOCHANGE, KXFDAAPPROVE): fades unconfirmed executive departures when insiders hold equity, buying NO on downward drift. LiveInsider_FilingFader trades open corporate event contracts on the Live Desk.',
+      'NOT tested as an insider signal. Two entries carry its name — InsiderFiling_Drift (daily replay) and LiveInsider_FilingFader (Live Desk) — but both are PRICE-ONLY rules on the exchange\'s own CEO-change / company-event bars and ladders: no Form 4 filing, transaction or holding is read anywhere in this repository. They measure the favourite–longshot fade on those contracts; the merged 2026-09-19 wording ("fades unconfirmed executive departures when insiders hold equity") described data the code does not have and was corrected (irregularity #53).',
     blockedBy:
-      'The Kalshi company-event half is ingested with verified bars and ladders. The strategy tests the mechanical drift rule; a real-time point-in-time Form 4 streaming feed remains a future automation task.',
+      'Unchanged since 2026-09-18: no point-in-time SEC Form 4 archive exists here. The honest test is to archive filings daily with capture timestamps (EDGAR full-text search / submissions API, both official), then require a filing at or before the decision bar before either entry may trade — the same pattern as the NWS, Drugs@FDA and MLB archives. Until then nothing from Insider-trades enters a result.',
     strategyUsername: ['InsiderFiling_Drift', 'LiveInsider_FilingFader']
   },
   {
@@ -123,11 +134,11 @@ export const SIGNAL_SOURCES = Object.freeze([
     verifiableClaim: 'Its official-contest facts (94/94 symbols, prize ladder) are about FUTURES instruments, not Kalshi markets.',
     kalshiMarketClass:
       'Indirect: The Leap trades CME/AMP futures, and this repo\'s KXNASDAQ100Y / KXINXY / KXBTCY markets settle on the SAME underlying indexes (Nasdaq-100, S&P 500, BTC). A "The Leap-style" directional view COULD be expressed as index-range strike trades here.',
-    testableHere: true,
+    testableHere: false,
     howTested:
-      'TheLeap_BreakoutRank replays The Leap competition style: aggressive convex momentum buying on cheap OTM index strikes (KXNASDAQ100Y, KXINXY, KXBTCY) seeking maximum returns with zero risk management. LiveTheLeap_Momentum trades open index and crypto contracts on the Live Desk.',
+      'NOT tested as a Leap signal — there is none to test. Two entries carry its name: TheLeap_BreakoutRank (daily replay: cheap OTM index/crypto strike after three rising yes_ask closes) and LiveTheLeap_Momentum (Live Desk: cheap OTM strike sweep). Both are original price-only designs of this repository that read nothing from The Leap project; the merged 2026-09-19 wording that attributed "champion" behaviour to them was unverified and was corrected (irregularity #53).',
     blockedBy:
-      'The Leap\'s own contest trades CME futures with margin leverage. The recreation here expresses the strategy archetype on Kalshi\'s binary index strikes with official fees and verified volume limits.',
+      'Unchanged since 2026-09-18: The Leap\'s own strategies run on intraday futures data with leverage this venue does not offer, and its repo publishes verdicts, not a tradeable point-in-time signal feed. Any recreation here is a NEW design wearing its name — which is exactly what the two named entries are, and what their cards now say.',
     strategyUsername: ['TheLeap_BreakoutRank', 'LiveTheLeap_Momentum']
   },
   {
@@ -239,13 +250,16 @@ export const SIGNAL_SOURCES = Object.freeze([
       live: 'https://buffedlizard55-lab.github.io/MLB-Live-PBP/',
       repo: 'https://github.com/buffedlizard55-lab/MLB-Live-PBP'
     },
-    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    status: SIGNAL_SOURCE_STATUS.LIVE_SIGNAL,
     whatItIs: 'Live baseball scoreboard and real-time play-by-play visualizer powered by OFFICIAL MLB Gameday feed data with game-state tracking.',
     verifiableClaim: 'Official MLB Gameday feed — arguably the most official live sports source among these projects.',
-    kalshiMarketClass: 'Kalshi MLB game markets.',
-    testableHere: false,
-    blockedBy: 'No MLB series in the universe. If one is ever added, the in-play machinery now exists at 1-minute resolution (the micro flight) — the blocker is purely the market-data ingest.',
-    strategyUsername: null
+    kalshiMarketClass: 'KXMLBGAME — game-winner contracts ("<Team> wins"), ingested hourly with settled results since 2026-09-18 and at 1-minute resolution from 2026-09-20 (ingest block minute-mlb-game-lines).',
+    testableHere: true,
+    howTested:
+      'The same OFFICIAL source this project reads (statsapi.mlb.com — MLB Advanced Media\'s Stats API) is archived here point-in-time every 20 minutes through the playing day by scripts/archive-mlb-signals.mjs (data/mlb-signals/: status, inning, inning state, runs — one row per change, with the instant first seen). Each KXMLBGAME contract is joined to its official game by first-pitch instant + away code + home code (fact V113). MLBLead_InPlay buys the leader from the 6th inning when the market asks less than Tangotiger\'s equal-teams win probability (R16); MLBTrail_Comeback is its trailing-side control. Both are forward tests by construction: no state row exists before the first workflow run on 2026-09-20.',
+    flagged:
+      'The project\'s own scoreboard is NOT read — its data is the official feed, and the archive reads that feed directly so the provenance chain is one hop. Basis: the market settles on the official result; the archive holds the official live linescore sampled every ~20 minutes, so the state a decision reads can lag the field by up to that much (stated on both strategy cards).',
+    strategyUsername: ['MLBLead_InPlay', 'MLBTrail_Comeback']
   },
   {
     id: 'S10',
@@ -259,9 +273,9 @@ export const SIGNAL_SOURCES = Object.freeze([
     status: SIGNAL_SOURCE_STATUS.CANDIDATE,
     whatItIs: 'Multi-sport prediction engine and scoreboard covering 22 international sports with 95 verified league registries.',
     verifiableClaim: 'League registries and scoreboard data; the project\'s own predictions are a MODEL, which here would be a hypothesis to test, not a fact.',
-    kalshiMarketClass: 'Kalshi sports markets generally.',
+    kalshiMarketClass: 'Kalshi sports markets generally — seven game-line series (KXNFLGAME, KXMLBGAME, KXNBAGAME, KXNHLGAME, KXNCAAFGAME, KXWNBAGAME, KXUFCFIGHT) are ingested hourly with settled results since 2026-09-18.',
     testableHere: false,
-    blockedBy: 'No sports series ingested; and a prediction hub\'s edge claim would need its predictions archived point-in-time before any honest measurement (the same rule the NWS archive follows).',
+    blockedBy: 'The market-data half exists (the seven hourly sports series, and KXMLBGAME at 1-minute resolution). What is still missing is the hub\'s own PREDICTIONS archived point-in-time with capture timestamps before each game — the same rule the NWS and MLB archives follow. Without that archive a "SportsPred edge" cannot be measured honestly; RESEARCH_GAPS lists the concrete workflow that would close it.',
     strategyUsername: null
   },
   {
@@ -356,7 +370,7 @@ export const SIGNAL_SOURCES = Object.freeze([
     kalshiMarketClass: 'KXMLBGAME (game moneyline), KXMLBTOTAL / KXMLBTEAMTOTAL (totals), KXMLBSPREAD (run line) — MLB series this store already ingests at 60-minute resolution with settled results',
     testableHere: false,
     blockedBy:
-      'The model must RUN to produce a prediction, and its predictions are not archived anywhere with timestamps. An honest test needs the model\'s pre-game probability captured BEFORE each game\'s market close — the same point-in-time discipline data/forecasts/ enforces for NWS. The natural path: a scheduled workflow that runs the model on official MLB schedule data and appends {capturedAt, game, sim_p_home} to a store, then a strategy that trades only where a snapshot exists. Until then, nothing from this project enters a result.',
+      'The model must RUN to produce a prediction, and its predictions are not archived anywhere with timestamps. An honest test needs the model\'s pre-game probability captured BEFORE each game\'s market close — the same point-in-time discipline data/forecasts/ enforces for NWS. Since 2026-09-20 two of the three pieces exist here: the official schedule (gamePk, first pitch, probable pitchers) is archived every 20 minutes in data/mlb-signals/, and the KXMLBGAME ticker → official game join is verified (V113) and wired into the replay\'s signal provider. The remaining piece is a scheduled workflow that runs the model and appends {capturedAt, gamePk, sim_p_home} to a store before first pitch; a strategy would then trade only where such a snapshot exists. Until then, nothing from this project enters a result.',
     strategyUsername: null
   },
 
@@ -375,10 +389,12 @@ export const SIGNAL_SOURCES = Object.freeze([
     verifiableClaim:
       'In-game state (score, inning, base state) as games progress is the input every in-play sports strategy needs; the archive proves the owner can capture that state from an official source with full custody.',
     kalshiMarketClass: 'KXMLBGAME / KXMLBF5 (in-play repricing while a game is live)',
-    testableHere: false,
+    testableHere: true,
+    howTested:
+      'Both gaps named on 2026-09-18 are closed as of 2026-09-20: (1) the official statsapi.mlb.com state is now captured AS games run, every 20 minutes, with the instant each state was first seen (data/mlb-signals/ — the same provenance discipline as this project, one hop from the same source); (2) KXMLBGAME is ingested at period_interval=1 (block minute-mlb-game-lines). MLBLead_InPlay / MLBTrail_Comeback replay the 1-minute bars against the archived state (R16).',
     blockedBy:
-      'Two gaps: (1) the archive is retrospective (it can prove what happened, not what was knowable at a market\'s decision time — an honest in-play test needs state captured AS the game runs, timestamped, like the NWS archive); (2) this repository\'s sports bars are 60-minute candlesticks, far too coarse to resolve an in-play repricing that takes seconds. The ROADMAP\'s "sports series at period_interval=1" item is the second half of what this would need.',
-    strategyUsername: null
+      'The PROJECT\'s retrospective archive (2014 →) is still not used, and cannot be: it proves what happened, not what was knowable at a bar. It remains valuable as an independent cross-check of the live archive\'s Final rows (same gamePk, same source) — a reconciliation job that has not been written yet.',
+    strategyUsername: ['MLBLead_InPlay', 'MLBTrail_Comeback']
   },
 
   {
@@ -419,7 +435,7 @@ export const SIGNAL_SOURCES = Object.freeze([
     kalshiMarketClass: 'KXNFLGAME / KXMLBGAME / KXNBAGAME — timing (in-play windows) rather than direction',
     testableHere: false,
     blockedBy:
-      'The calendar is a web app, not an archived feed: no point-in-time machine-readable schedule export with capture timestamps is published. If one were archived, the honest test is a timing rule (e.g. trade only the in-play window) replayed on the sports bars — the bars exist, the archived schedule does not.',
+      'The calendar is a web app, not an archived feed: no point-in-time machine-readable schedule export with capture timestamps is published. For MLB the gap closed from the other side on 2026-09-20 — the official schedule (gameDate per gamePk) is archived with every mlb-signals capture, and the KXMLBGAME ticker itself encodes first pitch (V113) — so an in-play-window timing rule is testable on MLB bars today; for NFL / NBA the archived schedule still does not exist here.',
     strategyUsername: null
   },
 

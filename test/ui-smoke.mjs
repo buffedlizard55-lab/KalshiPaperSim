@@ -253,6 +253,11 @@ interact.push(['research tab renders measured liquidity with impact', liqHtml.in
 interact.push(['research ledger shows capture method per source', /read in full|search excerpt/.test(ledgerHtml)]);
 interact.push(['research ledger cites numbered sources with URLs', /R0\d/.test(ledgerHtml) && /https:\/\//.test(ledgerHtml)]);
 interact.push(['research gaps name the blocker and the way to close it', /Blocked by:/.test(written.get('#researchGaps') || '') && /To close it:/.test(written.get('#researchGaps') || '')]);
+interact.push(['research gaps carry a status badge and closed ones say what closed them', /CLOSED/.test(written.get('#researchGaps') || '') && /What closed it:/.test(written.get('#researchGaps') || '') && /still open/.test(written.get('#researchGaps') || '')]);
+const archiveHtml = written.get('#signalArchiveStatus') || '';
+interact.push(['research tab shows the Drugs@FDA archive status', /Drugs@FDA/.test(archiveHtml) && /Point-in-time snapshots|EMPTY/.test(archiveHtml)]);
+interact.push(['research tab shows the MLB archive status and the per-ticker join', /Official MLB game state/.test(archiveHtml) && /KXMLBGAME/.test(archiveHtml) && /(MATCHED|NO_ARCHIVED_GAME|EMPTY)/.test(archiveHtml)]);
+interact.push(['research stats disclose unattributed sources', /Unattributed/.test(written.get('#researchStats') || '')]);
 interact.push(['research reports link the raw JSON', (written.get('#researchReports') || '').includes('.json')]);
 interact.push(['research stats state no source number is reused', /no source(?:&#39;|')s performance number is reused/i.test(written.get('#researchStats') || '')]);
 // ── Verified Trade Ledger tab ───────────────────────────────────────
@@ -296,7 +301,7 @@ interact.push(['desk states it is a paper simulator, not a live connection', /no
 const deskPlacedTrades = written.get('#deskPlacedTrades') || '';
 const deskUpcomingTrades = written.get('#deskUpcomingTrades') || '';
 interact.push(['desk placed trades table rendered with verified records', /TR-O-|FILLED|VWAP|unfilled/i.test(deskPlacedTrades)]);
-interact.push(['desk upcoming trades table rendered with planned triggers', /UPC-|Simulate|PRICE_LIMIT|CATALYST/i.test(deskUpcomingTrades)]);
+interact.push(['desk upcoming trades table is compiled from real order records (never synthesised)', /from order <code>O-/.test(deskUpcomingTrades) && /(AWAITING_SETTLEMENT|RESTING_MAKER|UNFILLED_AT_CAPTURE)/.test(deskUpcomingTrades) && !/conditions align with/.test(deskUpcomingTrades)]);
 
 // Place a paper order through the ticket in static mode and check it reports a
 // real captured level rather than an invented price.

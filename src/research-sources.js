@@ -31,7 +31,13 @@ export const RESEARCH_CAPTURE_METHODS = Object.freeze({
      (api.github.com/repos/{owner}/{repo}/readme), which the sandbox CAN
      reach. Reading the raw file through the API is a full read of the
      document, not an excerpt of it. */
-  API_FILE: 'GitHub REST API raw-file fetch — the document was loaded and read in full (the sandbox cannot open TLS to github.io, so the Pages render was not fetched)'
+  API_FILE: 'GitHub REST API raw-file fetch — the document was loaded and read in full (the sandbox cannot open TLS to github.io, so the Pages render was not fetched)',
+  /* Added 2026-09-20 (irregularity #53): two entries merged by a parallel
+     session carried a SEARCH-RESULTS page as their URL and a "quote" that no
+     specific video or post could be found for. They are kept — the strategy
+     designs named after them exist and are measured — but labelled with this
+     method so nobody mistakes the quoted text for a transcription. */
+  UNATTRIBUTED: 'unattributed — the recorded URL is a search-results page, not a document; the quoted text could not be traced to a specific video or post and must be read as a paraphrase of a genre, not a quotation'
 });
 
 export const RESEARCH_SOURCES = Object.freeze([
@@ -388,47 +394,81 @@ export const RESEARCH_SOURCES = Object.freeze([
       'the 25%-of-cash sizing is this repository\'s own choice and is labelled as such on the strategy.'
   },
 
-  /* ── 16. Tested: Kalshi AMM Multi-Level Liquidity Grid Strategy (YouTube & Social Media) ── */
+  /* ── 16. UNATTRIBUTED genre reference: passive maker grids (merged by a parallel session, PR #17) ── */
   {
     id: 'R16',
-    title: 'Kalshi AMM Multi-Level Liquidity Grid Strategy (YouTube & Social Media)',
-    host: 'youtube.com / x.com',
+    title: 'Kalshi "AMM" / passive maker-grid tutorials (genre reference — no specific video or post could be attributed)',
+    host: 'youtube.com / x.com (search pages)',
     url: 'https://www.youtube.com/results?search_query=kalshi+market+maker+strategy',
-    capturedVia: RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
-    verifiedOn: '2026-09-19',
+    capturedVia: RESEARCH_CAPTURE_METHODS.UNATTRIBUTED,
+    verifiedOn: '2026-09-20',
     claim:
-      '"Automated market making on Kalshi lets you provide passive liquidity on both YES and NO sides when spreads widen to 3–5 cents. By resting bids at the inside touch ' +
-      'you pay 0% maker fees on fee-free series like KXBTCY and discounted maker fees across index markets, capturing the spread rebate when taker flow crosses your orders."',
+      'RECORDED BY A PARALLEL SESSION (PR #17, 2026-09-19) as a quotation: "Automated market making on Kalshi lets you provide passive liquidity on both YES and NO sides when spreads ' +
+      'widen to 3–5 cents. By resting bids at the inside touch you pay 0% maker fees on fee-free series like KXBTCY and discounted maker fees across index markets, capturing the ' +
+      'spread rebate when taker flow crosses your orders." On 2026-09-20 this text could not be traced to any specific video or post — the recorded URL is a YouTube search page — ' +
+      'so it is kept here ONLY as a description of a genre of tutorial, not as a quotation from one (irregularity #53). One part of it IS independently true in this repository: ' +
+      'KXBTCY is fee-free per the captured fee schedule (data/discovered/series-fees.json), and maker orders are charged per the official schedule (V-table).',
     taken:
-      'The passive maker grid rule: rest limit orders inside the spread on liquid index contracts when the spread is ≥ 3¢, and flip fills at a resting offer 3 ticks higher.',
+      'Nothing verbatim. The design named after it (GridMM_MultiTier) is this repository\'s own: rest ONE maker bid one tick above the best bid when the captured spread is ≥ 3¢ and offer every fill back at cost + 3 ticks.',
     testable: true,
     testedBy: ['GridMM_MultiTier'],
     howTested:
-      'GridMM_MultiTier replays on KXNASDAQ100Y, KXBTCY, and KXINXY daily stores: rests limit bids at bid + 1 tick when spread ≥ 3¢, capturing maker fills and flipping at ' +
-      '+3 ticks or holding to settlement. Real quadratic maker fees and depth limits apply.',
+      'GridMM_MultiTier replays the KXNASDAQ100Y / KXBTCY / KXINXY daily stores with MAKER orders only (type limit, direction bid/ask): a resting order fills only when a LATER real bar trades through its price, capped by that bar\'s real volume, and the official maker fee regime of each series applies. (The version merged in PR #17 described maker orders but sent taker market buys — corrected 2026-09-20.)',
     caveat:
-      'Social media tutorials assume instant execution and ignore order queue priority. The replay here applies FIFO ladder queues, traded volume caps, and real captured depth.'
+      'Unattributed source: no performance claim, no parameter and no quotation from it may be relied on. If a specific tutorial is later identified, this entry should be re-captured with its URL and re-labelled.'
   },
 
-  /* ── 17. Tested: FOMC Rate Cut Implied Probability Sniper (X/Twitter & Reddit) ── */
+  /* ── 17. UNATTRIBUTED genre reference: KXFED "rate-cut sniping" threads (merged by a parallel session, PR #17) ── */
   {
     id: 'R17',
-    title: 'FOMC Rate Cut Implied Probability Sniper (X/Twitter & Reddit Macro Threads)',
-    host: 'x.com / reddit.com',
+    title: 'Kalshi Fed-decision (KXFED) "implied probability sniping" threads (genre reference — no specific post could be attributed)',
+    host: 'x.com / reddit.com (search pages)',
     url: 'https://x.com/search?q=kalshi+fed+rate+cut',
-    capturedVia: RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
-    verifiedOn: '2026-09-19',
+    capturedVia: RESEARCH_CAPTURE_METHODS.UNATTRIBUTED,
+    verifiedOn: '2026-09-20',
     claim:
-      '"Kalshi Fed interest rate contracts (KXFED) often lag CME FedWatch futures implied odds ahead of FOMC meetings. When the consensus 25bps or 50bps cut strike is priced ' +
-      'between 30c and 65c, buying YES offers asymmetric upside as prediction market liquidity converges to institutional rate probabilities."',
+      'RECORDED BY A PARALLEL SESSION (PR #17, 2026-09-19) as a quotation: "Kalshi Fed interest rate contracts (KXFED) often lag CME FedWatch futures implied odds ahead of FOMC ' +
+      'meetings. When the consensus 25bps or 50bps cut strike is priced between 30c and 65c, buying YES offers asymmetric upside as prediction market liquidity converges to ' +
+      'institutional rate probabilities." On 2026-09-20 this text could not be traced to any specific post — the recorded URL is an X search page — so it is kept ONLY as a ' +
+      'description of a genre, not as a quotation (irregularity #53). The "lag CME FedWatch" claim is UNVERIFIED here: this repository holds no futures-implied feed and does not test it.',
     taken:
-      'Sniping modal rate cut strike brackets on KXFED series when priced cheap (YES ask 0.30–0.65) and holding to FOMC rate decision settlement.',
+      'Nothing verbatim. The design named after it (FOMC_ProbabilitySniper) is this repository\'s own price-only rule: buy any KXFED bracket whose daily YES ask closes between 0.30 and 0.65 and hold to the FOMC settlement.',
     testable: true,
     testedBy: ['FOMC_ProbabilitySniper'],
     howTested:
-      'FOMC_ProbabilitySniper replays on the real KXFED daily stores: buys YES on modal rate cut strikes priced 0.30–0.65 and holds to official FOMC decision settlement ($1.00/$0.00).',
+      'FOMC_ProbabilitySniper replays the real KXFED daily store: buys YES on every bracket priced 0.30–0.65 (it does NOT identify a modal strike and reads no external probability) and holds to the official decision settlement ($1.00/$0.00). Official fees, volume bounds and captured depth apply.',
     caveat:
-      'The CME FedWatch tool is an external futures-implied feed. The backtested strategy trades the price band directly against the real Kalshi KXFED bars without assuming access to a paid CME feed.'
+      'Unattributed source, and the strategy is not the strategy the genre describes (no FedWatch comparison, no modal-strike selection). Its result measures the price band alone.'
+  },
+
+  /* ── 18. Reference table for the MLB in-play entries (2026-09-20) ─────── */
+  {
+    id: 'R18',
+    title: 'Chance of Winning a Baseball Game — home-team win expectancy by inning and run differential (probability theory)',
+    host: 'tangotiger.net',
+    url: 'https://tangotiger.net/innwin.html',
+    capturedVia: RESEARCH_CAPTURE_METHODS.FETCHED,
+    verifiedOn: '2026-09-20',
+    claim:
+      '"The chance of the home team winning, at the start of each inning (or bases empty with no outs), based on probability theory. Assumptions: Both teams are equals at every ' +
+      'point in the game. No Home Field Advantage exists. Based on a 4.3 Runs-per-game environment." Read cells (home score differential in columns −4..+4): top of the 6th ' +
+      '+2 = 0.790, +3 = 0.873; bottom of the 6th +2 = 0.853; top of the 7th +2 = 0.826, −1 = 0.299; top of the 8th +2 = 0.872, −1 = 0.247; top of the 9th +2 = 0.930, ' +
+      '−1 = 0.158; bottom of the 9th −1 = 0.194. The page links an empirical companion table (innwin2.html) and a with-home-field-advantage variant (innwin3.html).',
+    taken:
+      'The innings-6-to-9 rows, transcribed verbatim into src/strategies.js (TANGO_HOME_WIN_EXPECTANCY) as the THEORETICAL REFERENCE PRICE the two MLB entries compare a ' +
+      'contract\'s ask against. Nothing else: the table is not a prediction of any real game and never enters a result except through a fill against real captured bars.',
+    testable: true,
+    testedBy: ['MLBLead_InPlay', 'MLBTrail_Comeback'],
+    howTested:
+      'Both entries read the point-in-time OFFICIAL MLB game state (data/mlb-signals/, statsapi.mlb.com, archived every 20 minutes) joined to the KXMLBGAME contract by ' +
+      'first-pitch instant + away code + home code (fact V113), then buy YES only when the real 1-minute ask is at least 2¢ below the table\'s equal-teams probability ' +
+      'for that half-inning and lead (leader ≥ 2 runs from the 6th; trailer by exactly 1 from the 7th). Fills, official fees (KXMLBGAME multiplier 0.5), per-bar volume ' +
+      'bounds and the exchange\'s real settlement apply as for every roster entry. Forward test by construction: no state row exists before the first workflow run.',
+    caveat:
+      'The table is a THEORY under stated assumptions (equal teams, no home-field advantage, 4.3 runs per game), not an observation, and the with-HFA variant on the same ' +
+      'site gives different numbers (e.g. top of the 6th +2 = 0.810). The entries state this on the strategy card: a real favourite\'s lead is worth more than the table ' +
+      'says and a real underdog\'s less, so the 2¢ margin is a fee buffer, not an edge estimate. The archive samples the game every ~20 minutes, so the state a decision ' +
+      'reads can lag the field by up to that much — the lag is what the forward test measures.'
   }
 ]);
 
@@ -439,37 +479,63 @@ export const RESEARCH_SOURCES = Object.freeze([
  * test is never mistaken for a passed one. ROADMAP.md tracks these in order.
  */
 export const RESEARCH_GAPS = Object.freeze([
+  /* STATUS DISCIPLINE (2026-09-20): a gap is kept on this list after it closes,
+     marked status 'closed' with what closed it, so the site never shows a
+     stale "cannot test yet" card (IRREGULARITIES.md #52 — four of the five
+     cards below were shown as open for two days after the store had closed
+     them). `blockedBy` is written in the tense the status implies. */
   {
     gap: 'Weather markets (daily high temperature, precipitation)',
+    status: 'closed',
     why:
       'The single most-reported retail edge in the sources above, and the only one with a genuinely falsifiable external model: compare forecast probability with the market price, then trade the gap (R06: "70 out of 500 finished positive" on a 500-bot sweep).',
-    blockedBy: 'No weather series is ingested — this universe is KXINXY, KXNASDAQ100Y and KXBTCY — and there is no point-in-time forecast archive in the repo.',
-    toClose: 'Add a liquid daily-high series to the ingest (series path or explicit tickers), capture its daily bars, then pair it with an archived forecast so the model input is what was known at the time, not what is known now.'
+    blockedBy: 'WAS: no weather series ingested and no point-in-time forecast archive in the repo (as of 2026-09-17).',
+    toClose: 'Add a liquid daily-high series to the ingest, capture its bars, then pair it with an archived forecast so the model input is what was known at the time.',
+    closedBy:
+      'CLOSED 2026-09-18: nine KXHIGH* series ingested at 60-minute resolution with settled results (data/history/intraday/60m/), and the NWS point forecast archived five times a day per city (data/forecasts/, weather-signals.yml). Tested by ForecastEdge_Weather / ForecastEdge_MultiCity (point-in-time) and the WeatherLadder_* controls. Still open inside it: the archive↔bar overlap is only days old (ROADMAP Next #1).'
   },
   {
     gap: 'Sports and event markets (in-play repricing)',
+    status: 'partially closed',
     why:
       'Every shock-timing and in-play scalp source trades these, and they reprice in seconds — which is what the panic-fade archetype actually needs (R04, R07).',
-    blockedBy: 'No sports series is ingested, and 60-minute bars cannot represent an in-play shock.',
-    toClose: 'Ingest one liquid sports series at period_interval=1 for a bounded window, then replay the intraday families on it. The intraday machinery (store, trim ledger, hourly flight) already exists.'
+    blockedBy:
+      'WAS: no sports series ingested and 60-minute bars cannot represent an in-play shock. NOW: seven game-line series are ingested hourly with settled results, but only MLB has (a) a 1-minute ingest block and (b) a point-in-time official game-state archive; NFL / NBA / NCAA / NHL have no archived live state and no 1-minute bars.',
+    toClose: 'For each remaining league: an official or clearly-labelled live-state feed archived with capture timestamps, plus a 1-minute ingest block for its game series — the MLB pattern (scripts/archive-mlb-signals.mjs + minute-mlb-game-lines) is the template.',
+    closedBy:
+      'PARTIALLY CLOSED 2026-09-20: KXMLBGAME at period_interval=1 (ingest block minute-mlb-game-lines) joined to the official MLB Stats API linescore archived every 20 minutes (data/mlb-signals/, mlb-signals.yml). Tested by MLBLead_InPlay and MLBTrail_Comeback (R16) — forward tests that abstain until archive and bars overlap.'
   },
   {
     gap: 'Cross-venue arbitrage (Kalshi vs Polymarket)',
+    status: 'open',
     why: 'Reported by every arbitrage source reviewed, including the paper QuantPedia summarises (R11) and the NYT reporting (R12).',
     blockedBy: 'This project deliberately holds Kalshi data only, and a paper competition on one venue cannot settle a two-venue pair.',
-    toClose: 'Add a second venue feed with the same verification standard, plus a settlement-equivalence check so both legs provably reference the same outcome.'
+    toClose: 'Add a second venue feed with the same verification standard, plus a settlement-equivalence check so both legs provably reference the same outcome (ROADMAP Next #7).'
   },
   {
     gap: 'One-minute candles',
+    status: 'closed',
     why: 'The pale-fade source measured 15-minute markets; hourly bars cannot reproduce that resolution, and the hourly sweep showed the family never even triggers (0 of 96 variants traded).',
-    blockedBy: 'The intraday store is configured for period_interval=60.',
-    toClose: 'Add a second intraday block at period=1 for two or three markets with a bounded --max-bars trim, exactly as the 60-minute store was added.'
+    blockedBy: 'WAS: the intraday store was configured for period_interval=60 only (as of 2026-09-17).',
+    toClose: 'Add a second intraday block at period=1 for a few markets with a bounded --max-bars trim, exactly as the 60-minute store was added.',
+    closedBy:
+      'CLOSED 2026-09-18: 1-minute blocks for KXGOLD15M, KXBTC15M / KXETH15M / KXSOL15M (and, from 2026-09-20, KXMLBGAME) feed the micro flight (data/history/intraday/1m/); FadeSpike_Micro is the R14 `fade` recreation on those bars.'
   },
   {
     gap: 'Live trading and real settlements',
-    why: 'Nothing in the tracked universe has finalised yet, so every open position is marked to the last real quote rather than to $1 or $0.',
-    blockedBy: 'Every tracked market resolves on or after 2026-12-31 (verified status=active, result="" from the live markets endpoint).',
-    toClose: 'The settlement job polls daily. The first real cash settlement will book itself when a tracked market finalises; until then the leaderboard must keep saying "marked to last real quote".'
+    status: 'closed',
+    why: 'Without finalised markets every open position is marked to the last real quote rather than to $1 or $0.',
+    blockedBy: 'WAS: every tracked market resolved on or after 2026-12-31 (verified status=active, result="" from the live markets endpoint, 2026-09-17).',
+    toClose: 'Ingest series whose markets expire in days with status=all so the exchange\'s real result is stored with the bars.',
+    closedBy:
+      'CLOSED 2026-09-18: status=all ingest blocks store FINALIZED markets with the exchange\'s own result (weather brackets, game lines, 15-minute crypto/gold, FDA, macro), and the replay books real $1.00/$0.00 settlements (src/backtest-replay.js); the Live Desk settles at the exchange result too. The daily settlement job still polls the long-dated index/BTC markets, which remain marked to the last real quote.'
+  },
+  {
+    gap: 'Pre-game model probabilities archived point-in-time (S14 MLB-Prediction-model, S10 SportsPred)',
+    status: 'open',
+    why: 'The owner\'s MLB prediction model and SportsPred hub produce pre-game win probabilities — the "independent estimate vs market price" architecture that ForecastEdge_Weather uses, but for sports.',
+    blockedBy: 'Neither model\'s outputs are archived anywhere with capture timestamps; the model must RUN to produce a number, and running it inside this repository would be a new build, not a capture.',
+    toClose: 'A scheduled workflow that runs the model against official schedule data and appends {capturedAt, gamePk, p_home} to a store BEFORE first pitch; the MLB game join (fact V113) and the signal-provider hook already exist.'
   }
 ]);
 
@@ -496,6 +562,7 @@ export function researchStats() {
     fetchedPages: RESEARCH_SOURCES.filter((s) => s.capturedVia === RESEARCH_CAPTURE_METHODS.FETCHED).length,
     searchExcerpts: RESEARCH_SOURCES.filter((s) => s.capturedVia === RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT).length,
     apiFileFetches: RESEARCH_SOURCES.filter((s) => s.capturedVia === RESEARCH_CAPTURE_METHODS.API_FILE).length,
+    unattributed: RESEARCH_SOURCES.filter((s) => s.capturedVia === RESEARCH_CAPTURE_METHODS.UNATTRIBUTED).length,
     sourcesWithAReplay: RESEARCH_SOURCES.filter((s) => (s.testedBy || []).length > 0).length,
     strategiesRecreated: testedStrategies.size,
     notTestableHere: RESEARCH_SOURCES.filter((s) => s.testable === false).length,

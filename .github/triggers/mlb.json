@@ -1,0 +1,8 @@
+{
+  "_README": "Commit a change to this file to request an immediate MLB game-state capture (.github/workflows/mlb-signals.yml). The workflow also runs every 20 minutes through the MLB playing day on the default branch; this trigger exists for on-demand captures on any branch (and because the automation token cannot create workflow_dispatch events). Bump `request` so the push is a real change.",
+  "request": 1,
+  "enabled": true,
+  "requested_at": "2026-09-20T03:30:00.000Z",
+  "requested_by": "arena session 01a0bca9 — first run of the official MLB Stats API archive (ROADMAP Next #3, the sports half). Expected: data/mlb-signals/_teams.json with 30 clubs, data/mlb-signals/games/2026-09-19.json (all Final) and 2026-09-20.json (all Preview before 17:10Z; Live rows once the slate starts).",
+  "why": "The archive must exist BEFORE the first game it is measured on: MLBLead_InPlay / MLBTrail_Comeback abstain on every bar with no state row captured at or before it, so a capture that starts after first pitch is a capture that starts late for that game."
+}

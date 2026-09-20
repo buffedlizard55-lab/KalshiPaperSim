@@ -4932,6 +4932,16 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:16:18.360Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPIYOY-26AUG-T3.3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:44:39.398Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPIYOY-26AUG-T3.3/orderbook",
       "orderbook": {
@@ -4986,7 +4996,7 @@
     ],
     "result": "yes",
     "rules_primary": "If the Consumer Price Index (CPI) increases by more than 3.3% in the twelve months ending August 2026 (as represented by the one-decimal place value reported by the Bureau of Labor Statistics), then the market resolves to Yes.",
-    "rules_secondary": "In the case of a delay in data caused by a federal government shutdown impacting the reliability of the Source Agency, the market’s latest Expiration Date will be extended to the sooner of the release of the Underlying or six months after the end of the government shutdown",
+    "rules_secondary": "In the case of a delay in data caused by a federal government shutdown impacting the reliability of the Source Agency, the market\u2019s latest Expiration Date will be extended to the sooner of the release of the Underlying or six months after the end of the government shutdown",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-09-11T13:40:53.71102Z",
     "settlement_value_dollars": "1.0000",

@@ -196,6 +196,70 @@
   ],
   "books": [
     {
+      "captured_at": "2026-09-20T03:07:09.970Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03NWSTLAM-NWST/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "114507.00"
+            ],
+            [
+              "0.0200",
+              "10342.00"
+            ],
+            [
+              "0.0300",
+              "6788.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "5.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "5000.00"
+            ],
+            [
+              "0.5900",
+              "493.23"
+            ],
+            [
+              "0.6000",
+              "359.00"
+            ],
+            [
+              "0.9000",
+              "495.62"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "108753.00"
+            ],
+            [
+              "0.0200",
+              "1700.00"
+            ],
+            [
+              "0.0300",
+              "825.59"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:34:23.216Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03NWSTLAM-NWST/orderbook",
       "orderbook": {

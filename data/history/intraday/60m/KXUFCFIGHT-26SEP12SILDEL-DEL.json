@@ -2654,6 +2654,16 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:07:31.855Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP12SILDEL-DEL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T11:33:16.172Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP12SILDEL-DEL/orderbook",
       "orderbook": {
@@ -2701,7 +2711,7 @@
     ],
     "result": "no",
     "rules_primary": "If Jose Delgado wins the Silva vs Delgado professional MMA fight originally scheduled for Sep 12, 2026, then the market resolves to Yes.",
-    "rules_secondary": "The following market refers to the Silva vs Delgado professional MMA fight originally scheduled for Sep 12, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the “UFC,” or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
+    "rules_secondary": "The following market refers to the Silva vs Delgado professional MMA fight originally scheduled for Sep 12, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the \u201cUFC,\u201d or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
     "settlement_timer_seconds": 298,
     "settlement_ts": "2026-09-13T00:40:38.56256Z",
     "settlement_value_dollars": "0.0000",

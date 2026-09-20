@@ -4,13 +4,14 @@ This file is the honest queue for KalshiPaperSim. Every item says what it would
 change, what it needs, and how a reader could check it. Nothing here is a
 promise; items leave this file only when the work is committed **and** measured.
 
-Last reviewed: 2026-09-19 (the Arena session on branch
-`arena/01a0bad9-kalshipapersim` — this session closed three live desk defects
-found on the fresh store (fee-exact cash cap, a binary-search infinite loop,
-the zero-settlements module), sealed the season schedule against dead rounds,
-shipped the FDA half of the point-in-time signal archive on the official
-openFDA Drugs@FDA API, and added the R15 Reddit scalp strategy with its
-measured −65.03%).
+Last reviewed: 2026-09-20 (the Arena session on branch
+`arena/01a0bca9-kalshipapersim` — this session merged the previous session's
+unmerged pipeline fix (#51), shipped the MLB half of the point-in-time signal
+archive on the official MLB Stats API with two forward-test entries, audited
+and corrected a parallel session's PR #17 line by line (#53), gave the
+research-gap cards a status (#52) and fixed the desk-season schedule rule
+that ignored re-captures (#54). Previous review 2026-09-19: three live desk
+defects closed, the FDA half of the archive, the R15 Reddit scalp).
 
 ## Shipped (with the evidence a reader can rerun)
 
@@ -44,6 +45,11 @@ measured −65.03%).
 | 25 | **Three desk defects found and closed on the 2026-09-19 store** (session 01a0bad9). (a) The cash cap kept a flat 2% fee reserve, but the quadratic fee is up to 6.93% of gross at 9¢ — a $500 account could book $520.87 of cost (the #49 class again); the cap now walks the ladder with the EXACT per-tier official fee from `computeKalshiFee`, in both the taker and the maker-crossing paths. (b) The cap's own binary search could spin forever once its float midpoint stopped shrinking; it now runs in integer 0.01-contract units. (c) The desk module had ZERO settled contracts (open contracts filled the whole 80-market cap), degrading settlement to fixtures; the generator now reserves up to 6 finalized-with-result contracts ON TOP of the open budget, and season rounds are seeded only by the open board so the finals' historical instants cannot silently un-trade season entrants | `src/live-desk.js` (cash caps), `scripts/generate-desk-module.mjs` (finalized reserve), `src/desk-season.js` (`seasonSchedule` open-board seeds), tests 100/108/113/114 on the 2026-09-19 store; 122/122 + UI smoke + 13 desk checks + 27 season checks |
 | 26 | **The FDA half of the point-in-time signal archive (was Next #3).** The official openFDA Drugs@FDA API (FDA's own database, keyless) is captured four times a day by a new workflow: one subject per tracked FDA-approval market, with each subject's search query taken verbatim from the market's own `rules_primary`; snapshots are append-only with the verbatim response meta and marketing statuses, the derived `approved` flag uses the OFFICIAL four-value marketing-status vocabulary (glossary-verified, fails closed), and `src/fda-signal-store.js` enforces the same no-lookahead rule as the forecast store. Two series are deliberately excluded with published reasons (KXFDAANNOUNCE = an announcement, not an application record; KXFDAAPPROVALPSYCHEDELIC = a composite). The first strategy on it, `FDAEdge_DrugsFDA`, is a genuine forward test: it abstains (`UNTESTED_ON_THIS_DATASET`) until an approval flip overlaps a live market. First capture pending the workflow's first run (trigger file `.github/triggers/fda.json`) | `scripts/archive-fda-signals.mjs`, `.github/workflows/fda-signals.yml`, `src/fda-signal-store.js`, `src/fda-signal-data.js` (generated), strategy + `buildFdaSignalProvider`/`composeSignalProviders`, facts V106–V107, tests 115–117 |
 | 27 | **A new externally-sourced roster entry from fresh social-media research (R15).** The r/KalshiBTCUporDown15 pinned write-up ("buy the side priced 75–80¢, take profit at 95¢") is recreated mechanically as `HighProb_Scalp8095` on the real 1-minute KXBTC15M/KXETH15M/KXSOL15M/KXGOLD15M stores. Its discretionary value filter and its BITCOIN-price stop are NOT recreated (no judgement and no spot feed in this store) and the entry says so. Measured on the 2026-09-19 store: 83 trades, −65.03%, 23 real settlements — the losing tail the source's stop was meant to cut is visible in the ledger instead of hidden | `src/research-sources.js` R15 (SEARCH_EXCERPT, quoted claim), `src/strategies.js` HighProb_Scalp8095, `data/reports/flights.json` micro flight |
+| 28 | **The commit-step push race that lost a scheduled weather capture, closed** (session 01a0bc0a, merged here). `scripts/push-with-race-guard.sh` auto-resolves EVERY regenerated file by regeneration only, every data bot fast-forwards onto the branch tip before capturing, weather/FDA/MLB archives upload their store as an artifact on failure, `daily-history.yml` joined the shared queue; Irregularity #51 registered; the race-guard test grew to 8 scenarios / 34 checks | `scripts/push-with-race-guard.sh`; `test/workflow-race-guard.sh`; unit test "every data workflow regenerates the same files the push guard may auto-resolve" |
+| 29 | **The sports half of the point-in-time signal archive (was Next #3) — MLB, from the official MLB Stats API.** `scripts/archive-mlb-signals.mjs` captures `statsapi.mlb.com` (schedule + linescore + team codes + probable pitchers) every 20 minutes through the playing day into `data/mlb-signals/games/<ET date>.json` — one state row per change with the instant first seen, every capture instant listed, the MLBAM copyright verbatim; `src/mlb-signal-store.js` answers "what was knowable at T" and joins a `KXMLBGAME` ticker to its official game by first-pitch instant + away + home codes (all 9 finalized contracts in the store verified, V113); `minute-mlb-game-lines` ingests `KXMLBGAME` at period_interval=1; `MLBLead_InPlay` / `MLBTrail_Comeback` (R18, Tangotiger win-expectancy table) are forward tests by construction; S09 → live signal, S15 testable; the Research tab shows the FDA + MLB archive status and the per-ticker join report | `.github/workflows/mlb-signals.yml`; `data/mlb-signals/_teams.json`; tests 121–125; `node scripts/archive-mlb-signals.mjs --verify` |
+| 30 | **Parallel-session PR #17 merged and audited line by line** (Irregularity #53). Kept: the placed-trades ledger, the desk UI tables, 5 roster + 3 desk usernames. Corrected: every card now says exactly what its code reads (insider / Leap / FedWatch / forecast claims removed or implemented — `LiveWeather_ForecastEdge` now really reads the NWS archive at the cut-off; `GridMM_MultiTier` now really rests maker orders); R16/R17 re-labelled UNATTRIBUTED (search-page URLs); V109/V110 re-worded; S02/S03 restored; the synthesised "upcoming trades" replaced by a list compiled only from ORDER/FILL/REST records; new test 126 fails when a card names a signal its `decide()` does not import | `src/strategies.js`; `src/desk-strategies.js`; `src/live-desk.js#buildUpcomingTrades`; `src/research-sources.js` |
+| 31 | **Stale prose about the store made computed or dated** (Irregularity #52): `RESEARCH_GAPS` carry status / closedBy (4 of 5 cards had been false for two days), S09/S10/S14/S15/S17 re-worded, the Research tab shows the status badges | `src/research-sources.js`; `src/app.js#renderResearchGaps` |
+| 32 | **Desk-season rounds no longer require a first-ever ladder** (Irregularity #54): a round is any capture batch with a (re)captured ladder, batch window 20 min → on the pre-merge store 6 rounds instead of 3, on the merged 2026-09-20 (16:00Z) store 7 rounds over ~53 h; 27 season checks pass | `src/desk-season.js#seasonSchedule`; `data/reports/desk-season-schedule.json` |
 
 ## Next, in priority order
 
@@ -62,12 +68,21 @@ measured −65.03%).
    daily ingest — still below the 20-bar floor, so the numbers stay labelled
    directional. *Check:* `data/reports/forward-test.json` →
    `method.strictForwardBars`.
-3. **The sports/owner-project half of the signal archive.** The FDA half is
-   now CLOSED with an official source (shipped #26); the remaining gap is the
-   owner's own projects — the MLB model's pre-game probabilities, injury
-   reports — archived with capture timestamps the way `data/forecasts/` and
-   `data/fda-signals/` archive NWS and Drugs@FDA (S14–S16 state each one's
-   exact blocker and closing action).
+3. **The remaining signal archives.** Weather, FDA and now MLB (shipped #29)
+   are closed with official sources. Still open, in order of value: (a) NFL /
+   NBA / NCAA live game state + injury reports — the owner's projects read
+   ESPN's public JSON, a trusted but NOT official source that would have to
+   be labelled as such (or the NBA's official injury-report PDF, which needs a
+   parser); (b) SEC EDGAR Form 4 (official, keyless) for the insider entries,
+   which are price-only until then; (c) the owner's MLB model's pre-game
+   probability captured before first pitch (S14 — the schedule half already
+   exists in `data/mlb-signals/`). Each also needs a 1-minute ingest block for
+   its game series, as `minute-mlb-game-lines` did for `KXMLBGAME`.
+   *First check after merge:* `gh run list --workflow=mlb-signals.yml` — the
+   schedule only runs on `main`; then `data/mlb-signals/games/2026-09-20.json`
+   should show Live rows from ~17:30Z, and after the 2026-09-21 06:15Z ingest
+   the micro flight should list `KXMLBGAME` contracts with 1-minute bars
+   (`data/reports/flights.json` → the two MLB entries' fills or their reason).
 4. **Point-in-time depth on every fill.** A mid-day books capture is now
    scheduled (16:40 UTC daily) and the request-9 run re-captured every ladder;
    the depth *behind* the touch is still re-anchored between snapshots.
@@ -90,14 +105,22 @@ measured −65.03%).
    time and the existing workflow.
 9. **A longer season.** The carried book now exists (`src/desk-season.js`):
    one portfolio, many rounds, real settlements inside the season, 27-check
-   audit. What it is still short of is TIME — the 2026-09-19 store yields 4
-   real open-board rounds across ~33 hours, because a round is a moment this
-   repository actually queried the order book while the tracked contracts
-   were open. *Needs:* nothing but the scheduled captures continuing;
-   `seasonSchedule` picks up every new capture batch automatically, so the
-   season lengthens on its own. *Check:* `node scripts/run-desk-season.mjs`
-   → the round count and the window in
+   audit. The merged 2026-09-20 (16:00Z) store yields 7 real open-board rounds
+   across ~53 hours (after #32 fixed the schedule rule that had ignored re-captures).
+   *Needs:* nothing but the scheduled captures continuing; `seasonSchedule`
+   picks up every new capture batch automatically. *Check:*
+   `node scripts/run-desk-season.mjs` → the round count and the window in
    `data/reports/desk-season-schedule.json`.
+10. **A desk signal hook + MLB ladders on the desk.** The desk universe is
+    capped at 80 laddered markets by `generate-desk-module.mjs` and currently
+    drops every `KXMLBGAME` / `KXNFLGAME` / `KXNBAGAME` contract; raise or
+    re-rank the cap (e.g. reserve slots per series) and give `deskView` a
+    `signals` provider shared with the replay so an MLB desk entrant can read
+    the archived game state at the cut-off.
+11. **Process: one writer per repository at a time.** A concurrent session
+    merged PR #17 to `main` while this branch was open (Irregularity #53).
+    Every session must merge `main` before writing, and must not merge to
+    `main` while another Arena branch is active.
 
 ## Known limitations (kept in sync with the README)
 
@@ -128,8 +151,8 @@ measured −65.03%).
   markets on the 2026-09-18 capture); 120 open contracts carry real quotes but
   no ladder and are listed as **not priceable** with the ingest command that
   would fix each one.
-- The Desk Season is as long as the capture density allows: 6 rounds across 36.0 h on the
-  2026-09-19 store (R01 2026-09-17T23:07Z → R06 2026-09-19T11:08Z), because a round is a moment
+- The Desk Season is as long as the capture density allows: 7 rounds across ~53 h on the merged
+  2026-09-20 (16:00Z) store (R01 2026-09-18T07:04Z → R07 2026-09-20T11:34Z), because a round is a moment
   this repository really queried the order book. The
   machinery picks up every new capture batch automatically, but a calendar year of continuous paper
   trading needs a year of scheduled captures — that is a clock problem, not a modelling one.
@@ -144,3 +167,12 @@ measured −65.03%).
   with every fill.
 - Human participants are paper-only: the store is a single-process JSON file
   (`data/store/`, git-ignored).
+- The MLB game-state archive samples the official linescore every ~20 minutes (GitHub's schedule
+  granularity plus queue delay), so the state a decision reads can lag the field by up to that much;
+  the two MLB entries price that lag (entry only below the equal-teams table) rather than hide it,
+  and both abstain until the archive overlaps a 1-minute `KXMLBGAME` bar (none existed on 2026-09-20).
+- Tangotiger's win-expectancy table (R18) is a THEORY under stated assumptions (equal teams, no
+  home-field advantage, 4.3 runs per game), used only as a reference price — never as data about a game.
+- Five roster entries and three desk entrants merged from PR #17 are price-only rules that carry the
+  name of a MasterSite project or a social-media genre; their cards say so, and test 126 fails if any
+  card ever names a signal its `decide()` does not import.

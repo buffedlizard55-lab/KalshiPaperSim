@@ -5,6 +5,106 @@
   "source": "live_api",
   "candlesticks": [
     {
+      "end_period_ts": 1789838460,
+      "open_interest_fp": "935.85",
+      "price": {
+        "previous_dollars": "0.3500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4100",
+        "high_dollars": "0.4100",
+        "low_dollars": "0.4100",
+        "open_dollars": "0.4100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3300",
+        "high_dollars": "0.3500",
+        "low_dollars": "0.3300",
+        "open_dollars": "0.3500"
+      }
+    },
+    {
+      "end_period_ts": 1789838880,
+      "open_interest_fp": "935.85",
+      "price": {
+        "previous_dollars": "0.3500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4100",
+        "high_dollars": "0.4100",
+        "low_dollars": "0.4100",
+        "open_dollars": "0.4100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3300",
+        "high_dollars": "0.3300",
+        "low_dollars": "0.3300",
+        "open_dollars": "0.3300"
+      }
+    },
+    {
+      "end_period_ts": 1789838940,
+      "open_interest_fp": "935.85",
+      "price": {
+        "previous_dollars": "0.3500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4100",
+        "high_dollars": "0.4100",
+        "low_dollars": "0.4100",
+        "open_dollars": "0.4100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3300",
+        "high_dollars": "0.3300",
+        "low_dollars": "0.3300",
+        "open_dollars": "0.3300"
+      }
+    },
+    {
+      "end_period_ts": 1789839000,
+      "open_interest_fp": "935.85",
+      "price": {
+        "previous_dollars": "0.3500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.3900",
+        "high_dollars": "0.4100",
+        "low_dollars": "0.3900",
+        "open_dollars": "0.4100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3300",
+        "high_dollars": "0.3300",
+        "low_dollars": "0.3300",
+        "open_dollars": "0.3300"
+      }
+    },
+    {
+      "end_period_ts": 1789839060,
+      "open_interest_fp": "935.85",
+      "price": {
+        "previous_dollars": "0.3500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.3800",
+        "high_dollars": "0.3900",
+        "low_dollars": "0.3800",
+        "open_dollars": "0.3900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3300",
+        "high_dollars": "0.3300",
+        "low_dollars": "0.3300",
+        "open_dollars": "0.3300"
+      }
+    },
+    {
       "end_period_ts": 1789839240,
       "open_interest_fp": "935.85",
       "price": {
@@ -2828,6 +2928,205 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:01:38.606Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "324.00"
+            ],
+            [
+              "0.0200",
+              "810.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0400",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "2.00"
+            ],
+            [
+              "0.0800",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1300",
+              "30.00"
+            ],
+            [
+              "0.1400",
+              "2.00"
+            ],
+            [
+              "0.1600",
+              "12.00"
+            ],
+            [
+              "0.1800",
+              "2.00"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2100",
+              "20.00"
+            ],
+            [
+              "0.2200",
+              "1.00"
+            ],
+            [
+              "0.2400",
+              "1.00"
+            ],
+            [
+              "0.2500",
+              "19.00"
+            ],
+            [
+              "0.2600",
+              "15.00"
+            ],
+            [
+              "0.2800",
+              "6.00"
+            ],
+            [
+              "0.3800",
+              "6.00"
+            ],
+            [
+              "0.4800",
+              "4.00"
+            ],
+            [
+              "0.6200",
+              "1760.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "312.00"
+            ],
+            [
+              "0.0200",
+              "1.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:10:26.725Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "324.00"
+            ],
+            [
+              "0.0200",
+              "202.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0400",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "2.00"
+            ],
+            [
+              "0.0800",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1400",
+              "2.00"
+            ],
+            [
+              "0.1600",
+              "12.00"
+            ],
+            [
+              "0.1800",
+              "2.00"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2100",
+              "20.00"
+            ],
+            [
+              "0.2200",
+              "1.00"
+            ],
+            [
+              "0.2400",
+              "1.00"
+            ],
+            [
+              "0.2500",
+              "19.00"
+            ],
+            [
+              "0.2600",
+              "15.00"
+            ],
+            [
+              "0.2800",
+              "6.00"
+            ],
+            [
+              "0.3800",
+              "6.00"
+            ],
+            [
+              "0.4600",
+              "2120.00"
+            ],
+            [
+              "0.4700",
+              "25.00"
+            ],
+            [
+              "0.4800",
+              "4.00"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:28:10.329Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25/orderbook",
       "orderbook": {
@@ -3166,6 +3465,22 @@
       "dropped": 1,
       "dropped_from_ts": 1789834080,
       "dropped_to_ts": 1789834080,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:01:38.907Z",
+      "dropped": 21,
+      "dropped_from_ts": 1789834260,
+      "dropped_to_ts": 1789837680,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:10:27.026Z",
+      "dropped": 2,
+      "dropped_from_ts": 1789838160,
+      "dropped_to_ts": 1789838400,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     },

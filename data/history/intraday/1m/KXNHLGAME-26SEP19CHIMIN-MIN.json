@@ -5,6 +5,31 @@
   "source": "live_api",
   "candlesticks": [
     {
+      "end_period_ts": 1789866660,
+      "open_interest_fp": "4550.07",
+      "price": {
+        "close_dollars": "0.6000",
+        "high_dollars": "0.6000",
+        "low_dollars": "0.5200",
+        "mean_dollars": "0.5631",
+        "open_dollars": "0.5200",
+        "previous_dollars": "0.5500"
+      },
+      "volume_fp": "85.60",
+      "yes_ask": {
+        "close_dollars": "0.5700",
+        "high_dollars": "0.6300",
+        "low_dollars": "0.5200",
+        "open_dollars": "0.5500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4000",
+        "high_dollars": "0.4200",
+        "low_dollars": "0.3900",
+        "open_dollars": "0.4000"
+      }
+    },
+    {
       "end_period_ts": 1789866720,
       "open_interest_fp": "4565.32",
       "price": {
@@ -3433,6 +3458,180 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:02:25.440Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7856.00"
+            ],
+            [
+              "0.0200",
+              "500.10"
+            ],
+            [
+              "0.0300",
+              "254.00"
+            ],
+            [
+              "0.0500",
+              "198.00"
+            ],
+            [
+              "0.0600",
+              "116.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "257.73"
+            ],
+            [
+              "0.1100",
+              "722.00"
+            ],
+            [
+              "0.1500",
+              "308.00"
+            ],
+            [
+              "0.1700",
+              "210.00"
+            ],
+            [
+              "0.1800",
+              "38.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.3900",
+              "10.00"
+            ],
+            [
+              "0.4000",
+              "6.00"
+            ],
+            [
+              "0.6000",
+              "5.00"
+            ],
+            [
+              "0.8400",
+              "140.00"
+            ],
+            [
+              "0.9500",
+              "4.00"
+            ],
+            [
+              "0.9700",
+              "1816.68"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:11:13.509Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7856.00"
+            ],
+            [
+              "0.0200",
+              "500.10"
+            ],
+            [
+              "0.0300",
+              "254.00"
+            ],
+            [
+              "0.0500",
+              "198.00"
+            ],
+            [
+              "0.0600",
+              "116.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "257.73"
+            ],
+            [
+              "0.1100",
+              "722.00"
+            ],
+            [
+              "0.1500",
+              "308.00"
+            ],
+            [
+              "0.1700",
+              "12.00"
+            ],
+            [
+              "0.1900",
+              "177.00"
+            ],
+            [
+              "0.2000",
+              "35.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.3900",
+              "10.00"
+            ],
+            [
+              "0.4000",
+              "6.00"
+            ],
+            [
+              "0.6000",
+              "5.00"
+            ],
+            [
+              "0.8400",
+              "140.00"
+            ],
+            [
+              "0.9500",
+              "4.00"
+            ],
+            [
+              "0.9700",
+              "1811.96"
+            ],
+            [
+              "0.9900",
+              "1.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:29:03.745Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN/orderbook",
       "orderbook": {
@@ -3558,6 +3757,22 @@
       "dropped": 9,
       "dropped_from_ts": 1789855020,
       "dropped_to_ts": 1789855920,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:02:25.741Z",
+      "dropped": 134,
+      "dropped_from_ts": 1789855980,
+      "dropped_to_ts": 1789866480,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:11:13.809Z",
+      "dropped": 2,
+      "dropped_from_ts": 1789866540,
+      "dropped_to_ts": 1789866600,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     },

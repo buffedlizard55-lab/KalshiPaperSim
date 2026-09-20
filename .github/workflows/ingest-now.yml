@@ -36,14 +36,17 @@ on:
 # request waits for the run in flight (cancel-in-progress: false — never kill a
 # fetch that already spent the exchange rate budget) instead of duplicating it.
 concurrency:
-  # SHARED across the three data bots (ingest, FDA signals, weather signals):
-  # one merge push can trigger two of them at once, and both regenerate the
-  # same browser modules — the race guard resolves generated-file conflicts,
-  # but anything else aborts by design, so the honest fix is to QUEUE the bots
-  # per ref instead of racing them (cancel-in-progress: false — never kill a
-  # fetch that already spent its rate budget). Found when the PR-14 merge
-  # fired ingest request 12 and the first FDA capture simultaneously and the
-  # ingest aborted (2026-09-19).
+  # SHARED across the three low-cadence data bots (ingest, FDA signals,
+  # weather signals): one merge push can trigger two of them at once, and
+  # both regenerate the same browser modules — the race guard resolves
+  # generated-file conflicts, but anything else aborts by design, so the
+  # honest fix is to QUEUE the bots per ref instead of racing them
+  # (cancel-in-progress: false — never kill a fetch that already spent its
+  # rate budget). Found when the PR-14 merge fired ingest request 12 and the
+  # first FDA capture simultaneously and the ingest aborted (2026-09-19).
+  # The 20-minute MLB game-state bot (mlb-signals.yml) deliberately runs in
+  # its OWN group: GitHub keeps one pending run per group and evicts older
+  # pending runs, so a fast bot in this queue would cancel queued captures.
   group: data-pipeline-${{ github.ref }}
   cancel-in-progress: false
 

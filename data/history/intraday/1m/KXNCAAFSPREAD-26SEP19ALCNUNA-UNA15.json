@@ -5,6 +5,26 @@
   "source": "live_api",
   "candlesticks": [
     {
+      "end_period_ts": 1789845120,
+      "open_interest_fp": "997.74",
+      "price": {
+        "previous_dollars": "0.4200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4300",
+        "high_dollars": "0.4300",
+        "low_dollars": "0.4300",
+        "open_dollars": "0.4300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4200",
+        "high_dollars": "0.4200",
+        "low_dollars": "0.4200",
+        "open_dollars": "0.4200"
+      }
+    },
+    {
       "end_period_ts": 1789845180,
       "open_interest_fp": "997.74",
       "price": {
@@ -2796,6 +2816,172 @@
       }
     },
     {
+      "captured_at": "2026-09-20T03:01:37.342Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "313.00"
+            ],
+            [
+              "0.0200",
+              "1.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "81.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1100",
+              "3.00"
+            ],
+            [
+              "0.1600",
+              "3.00"
+            ],
+            [
+              "0.1700",
+              "3.60"
+            ],
+            [
+              "0.2100",
+              "2.00"
+            ],
+            [
+              "0.2600",
+              "4.00"
+            ],
+            [
+              "0.2800",
+              "3.60"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.3700",
+              "3.60"
+            ],
+            [
+              "0.4600",
+              "3.60"
+            ],
+            [
+              "0.5000",
+              "14.00"
+            ],
+            [
+              "0.5400",
+              "3.60"
+            ],
+            [
+              "0.6000",
+              "9.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-20T03:10:25.460Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "313.00"
+            ],
+            [
+              "0.0200",
+              "1.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "81.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1100",
+              "3.00"
+            ],
+            [
+              "0.1600",
+              "3.00"
+            ],
+            [
+              "0.1700",
+              "3.60"
+            ],
+            [
+              "0.2100",
+              "2.00"
+            ],
+            [
+              "0.2600",
+              "4.00"
+            ],
+            [
+              "0.2800",
+              "3.60"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.3700",
+              "3.60"
+            ],
+            [
+              "0.4600",
+              "3.60"
+            ],
+            [
+              "0.5000",
+              "14.00"
+            ],
+            [
+              "0.5400",
+              "3.60"
+            ],
+            [
+              "0.6000",
+              "9.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "captured_at": "2026-09-20T03:28:08.911Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/orderbook",
       "orderbook": {
@@ -3058,6 +3244,14 @@
       "dropped": 34,
       "dropped_from_ts": 1789813200,
       "dropped_to_ts": 1789835100,
+      "kept": 96,
+      "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-20T03:01:37.641Z",
+      "dropped": 33,
+      "dropped_from_ts": 1789835160,
+      "dropped_to_ts": 1789845060,
       "kept": 96,
       "reason": "--max-bars=96: the store keeps the newest 96 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     },
