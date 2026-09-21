@@ -3987,6 +3987,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T20:33:21.724Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26SEP01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-21T20:42:28.459Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26SEP01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4044,9 +4064,9 @@
     "yes_sub_title": "Before September"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26SEP01",
-  "market_captured_at": "2026-09-21T13:00:22.186Z",
+  "market_captured_at": "2026-09-21T20:42:27.813Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-21T13:00:22.840Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26SEP01/candlesticks?start_ts=1788235201&end_ts=1789995622&period_interval=1440"
+  "last_ingested_at": "2026-09-21T20:42:28.437Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26SEP01/candlesticks?start_ts=1788235201&end_ts=1790023348&period_interval=1440"
 }

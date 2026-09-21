@@ -575,6 +575,106 @@
         "low_dollars": "0.8200",
         "open_dollars": "0.8200"
       }
+    },
+    {
+      "end_period_ts": 1790002800,
+      "open_interest_fp": "1319.00",
+      "price": {
+        "previous_dollars": "0.9500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9600",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.9600",
+        "open_dollars": "0.9600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8500",
+        "high_dollars": "0.8500",
+        "low_dollars": "0.8500",
+        "open_dollars": "0.8500"
+      }
+    },
+    {
+      "end_period_ts": 1790006400,
+      "open_interest_fp": "1319.00",
+      "price": {
+        "previous_dollars": "0.9500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9600",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.9600",
+        "open_dollars": "0.9600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9100",
+        "low_dollars": "0.8500",
+        "open_dollars": "0.8500"
+      }
+    },
+    {
+      "end_period_ts": 1790010000,
+      "open_interest_fp": "1319.00",
+      "price": {
+        "previous_dollars": "0.9500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9600",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.9600",
+        "open_dollars": "0.9600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.2300",
+        "open_dollars": "0.9000"
+      }
+    },
+    {
+      "end_period_ts": 1790013600,
+      "open_interest_fp": "1319.00",
+      "price": {
+        "previous_dollars": "0.9500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9600",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.9600",
+        "open_dollars": "0.9600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.9400",
+        "open_dollars": "0.9400"
+      }
+    },
+    {
+      "end_period_ts": 1790020800,
+      "open_interest_fp": "1319.00",
+      "price": {
+        "previous_dollars": "0.9500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9600",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.9600",
+        "open_dollars": "0.9600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.9400",
+        "open_dollars": "0.9400"
+      }
     }
   ],
   "books": [
@@ -637,6 +737,70 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T20:40:20.638Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03SAMUAB-UAB/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "5480.00"
+            ],
+            [
+              "0.0200",
+              "1768.00"
+            ],
+            [
+              "0.0300",
+              "508.00"
+            ],
+            [
+              "0.0400",
+              "565.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "109000.00"
+            ],
+            [
+              "0.0200",
+              "1706.00"
+            ],
+            [
+              "0.0300",
+              "505.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.2000",
+              "24.00"
+            ],
+            [
+              "0.2200",
+              "4921.00"
+            ],
+            [
+              "0.9200",
+              "800.00"
+            ],
+            [
+              "0.9400",
+              "100159.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -656,16 +820,16 @@
     "latest_expiration_time": "2026-10-05T19:30:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.1500",
+    "no_ask_dollars": "0.0600",
     "no_bid_dollars": "0.0400",
     "no_sub_title": "UAB",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-03T22:30:00Z",
     "open_interest_fp": "1319.00",
     "open_time": "2026-09-19T22:08:00Z",
-    "previous_price_dollars": "0.9200",
-    "previous_yes_ask_dollars": "0.9300",
-    "previous_yes_bid_dollars": "0.0700",
+    "previous_price_dollars": "0.9500",
+    "previous_yes_ask_dollars": "0.9600",
+    "previous_yes_bid_dollars": "0.7700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -683,17 +847,17 @@
     "ticker": "KXNCAAFGAME-26OCT03SAMUAB-UAB",
     "title": "UAB wins",
     "updated_time": "2026-09-19T22:08:01.218781Z",
-    "volume_24h_fp": "1315.93",
+    "volume_24h_fp": "0.00",
     "volume_fp": "1319.00",
     "yes_ask_dollars": "0.9600",
-    "yes_ask_size_fp": "4072.00",
-    "yes_bid_dollars": "0.8500",
-    "yes_bid_size_fp": "27.00",
+    "yes_ask_size_fp": "565.00",
+    "yes_bid_dollars": "0.9400",
+    "yes_bid_size_fp": "100159.00",
     "yes_sub_title": "UAB"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03SAMUAB-UAB",
-  "market_captured_at": "2026-09-21T12:57:59.432Z",
+  "market_captured_at": "2026-09-21T20:40:19.989Z",
   "status": "active",
-  "last_ingested_at": "2026-09-21T12:58:00.087Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03SAMUAB-UAB/candlesticks?start_ts=1789769280&end_ts=1789995479&period_interval=60"
+  "last_ingested_at": "2026-09-21T20:40:20.614Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03SAMUAB-UAB/candlesticks?start_ts=1789988401&end_ts=1790023220&period_interval=60"
 }

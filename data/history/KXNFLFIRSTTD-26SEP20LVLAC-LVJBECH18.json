@@ -2380,6 +2380,16 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T20:35:46.884Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2407,9 +2417,9 @@
     "occurrence_datetime": "2026-09-20T23:05:00Z",
     "open_interest_fp": "13535.30",
     "open_time": "2026-09-17T15:19:00Z",
-    "previous_price_dollars": "0.0300",
-    "previous_yes_ask_dollars": "0.0300",
-    "previous_yes_bid_dollars": "0.0100",
+    "previous_price_dollars": "0.0400",
+    "previous_yes_ask_dollars": "0.2600",
+    "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2430,7 +2440,7 @@
     "ticker": "KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18",
     "title": "Jack Bech: 1st Touchdown",
     "updated_time": "2026-09-20T21:30:54.650935Z",
-    "volume_24h_fp": "5175.20",
+    "volume_24h_fp": "107.65",
     "volume_fp": "13579.30",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2439,9 +2449,9 @@
     "yes_sub_title": "Jack Bech"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18",
-  "market_captured_at": "2026-09-21T12:53:22.313Z",
+  "market_captured_at": "2026-09-21T20:35:46.337Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-21T12:53:22.867Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18/candlesticks?start_ts=1789876801&end_ts=1789995202&period_interval=1440",
+  "last_ingested_at": "2026-09-21T20:35:46.861Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18/candlesticks?start_ts=1789963201&end_ts=1790022946&period_interval=1440",
   "result": "no"
 }

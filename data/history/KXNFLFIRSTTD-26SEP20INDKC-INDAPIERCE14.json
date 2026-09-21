@@ -1770,6 +1770,16 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T20:35:45.811Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1798,7 +1808,7 @@
     "open_interest_fp": "245553.96",
     "open_time": "2026-09-16T21:17:00Z",
     "previous_price_dollars": "0.0500",
-    "previous_yes_ask_dollars": "0.0400",
+    "previous_yes_ask_dollars": "0.0500",
     "previous_yes_bid_dollars": "0.0300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -1820,7 +1830,7 @@
     "ticker": "KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14",
     "title": "Alec Pierce: 1st Touchdown",
     "updated_time": "2026-09-21T00:56:24.921306Z",
-    "volume_24h_fp": "240652.39",
+    "volume_24h_fp": "239110.41",
     "volume_fp": "252541.72",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1829,9 +1839,9 @@
     "yes_sub_title": "Alec Pierce"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14",
-  "market_captured_at": "2026-09-21T12:53:21.454Z",
+  "market_captured_at": "2026-09-21T20:35:45.265Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-21T12:53:22.008Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/candlesticks?start_ts=1789876801&end_ts=1789995201&period_interval=1440",
+  "last_ingested_at": "2026-09-21T20:35:45.789Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/candlesticks?start_ts=1789963201&end_ts=1790022945&period_interval=1440",
   "result": "no"
 }

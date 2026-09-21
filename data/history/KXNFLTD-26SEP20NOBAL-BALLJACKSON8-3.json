@@ -1272,6 +1272,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T20:35:57.601Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1300,8 +1310,8 @@
     "occurrence_datetime": "2026-09-20T20:00:00Z",
     "open_interest_fp": "32812.26",
     "open_time": "2026-09-17T19:16:00Z",
-    "previous_price_dollars": "0.0100",
-    "previous_yes_ask_dollars": "0.0100",
+    "previous_price_dollars": "0.1000",
+    "previous_yes_ask_dollars": "1.0000",
     "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -1323,7 +1333,7 @@
     "ticker": "KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3",
     "title": "Lamar Jackson: 3+ touchdowns",
     "updated_time": "2026-09-20T20:02:54.735035Z",
-    "volume_24h_fp": "4443.91",
+    "volume_24h_fp": "0.00",
     "volume_fp": "32836.09",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1332,9 +1342,9 @@
     "yes_sub_title": "Lamar Jackson: 3+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3",
-  "market_captured_at": "2026-09-21T12:53:30.925Z",
+  "market_captured_at": "2026-09-21T20:35:57.053Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-21T12:53:31.478Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTD/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/candlesticks?start_ts=1789876801&end_ts=1789995211&period_interval=1440",
+  "last_ingested_at": "2026-09-21T20:35:57.579Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTD/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/candlesticks?start_ts=1789963201&end_ts=1790022957&period_interval=1440",
   "result": "no"
 }

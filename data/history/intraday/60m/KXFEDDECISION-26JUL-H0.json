@@ -5130,6 +5130,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T20:41:58.688Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26JUL-H0/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5187,11 +5197,11 @@
     "yes_sub_title": "Fed maintains rate"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26JUL-H0",
-  "market_captured_at": "2026-09-21T12:59:49.845Z",
+  "market_captured_at": "2026-09-21T20:41:57.714Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-21T12:59:50.853Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H0/candlesticks?start_ts=1787940001&end_ts=1789995590&period_interval=60",
+  "last_ingested_at": "2026-09-21T20:41:58.665Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H0/candlesticks?start_ts=1787940001&end_ts=1790023318&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T06:41:23.353Z",

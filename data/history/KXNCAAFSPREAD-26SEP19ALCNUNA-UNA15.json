@@ -2002,6 +2002,16 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T20:35:29.727Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2060,9 +2070,9 @@
     "yes_sub_title": "North Alabama wins by over 14.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15",
-  "market_captured_at": "2026-09-21T12:53:08.551Z",
+  "market_captured_at": "2026-09-21T20:35:29.179Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-21T12:53:09.105Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/candlesticks?start_ts=1789876801&end_ts=1789995188&period_interval=1440",
+  "last_ingested_at": "2026-09-21T20:35:29.704Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/candlesticks?start_ts=1789963201&end_ts=1790022929&period_interval=1440",
   "result": "yes"
 }

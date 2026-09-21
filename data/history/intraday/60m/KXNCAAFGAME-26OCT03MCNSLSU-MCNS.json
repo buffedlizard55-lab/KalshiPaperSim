@@ -622,6 +622,151 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1789995600,
+      "open_interest_fp": "128861.60",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "467.59",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1789999200,
+      "open_interest_fp": "129540.54",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "678.94",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1790010000,
+      "open_interest_fp": "130008.13",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "467.59",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1790013600,
+      "open_interest_fp": "130569.24",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "561.11",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1790017200,
+      "open_interest_fp": "132439.62",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "1870.38",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1790020800,
+      "open_interest_fp": "132439.62",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -928,6 +1073,173 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T20:40:11.722Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4135899.53"
+            ],
+            [
+              "0.0200",
+              "8518.00"
+            ],
+            [
+              "0.0300",
+              "349482.00"
+            ],
+            [
+              "0.0400",
+              "9427.00"
+            ],
+            [
+              "0.0500",
+              "374959.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "486846.00"
+            ],
+            [
+              "0.1500",
+              "215642.00"
+            ],
+            [
+              "0.1600",
+              "81483.00"
+            ],
+            [
+              "0.2100",
+              "114157.00"
+            ],
+            [
+              "0.2200",
+              "37901.00"
+            ],
+            [
+              "0.2600",
+              "68489.00"
+            ],
+            [
+              "0.2700",
+              "37452.00"
+            ],
+            [
+              "0.3100",
+              "61425.00"
+            ],
+            [
+              "0.3500",
+              "130064.00"
+            ],
+            [
+              "0.3800",
+              "35921.00"
+            ],
+            [
+              "0.4200",
+              "36749.00"
+            ],
+            [
+              "0.4600",
+              "36638.00"
+            ],
+            [
+              "0.4800",
+              "1366.00"
+            ],
+            [
+              "0.5000",
+              "27936.00"
+            ],
+            [
+              "0.5400",
+              "19711.00"
+            ],
+            [
+              "0.5900",
+              "75727.00"
+            ],
+            [
+              "0.6000",
+              "13888.00"
+            ],
+            [
+              "0.6200",
+              "14347.00"
+            ],
+            [
+              "0.6700",
+              "13050.00"
+            ],
+            [
+              "0.6800",
+              "45.80"
+            ],
+            [
+              "0.7200",
+              "60978.00"
+            ],
+            [
+              "0.7600",
+              "10226.00"
+            ],
+            [
+              "0.7900",
+              "2004.00"
+            ],
+            [
+              "0.8000",
+              "45.80"
+            ],
+            [
+              "0.8100",
+              "44839.00"
+            ],
+            [
+              "0.8400",
+              "5103.00"
+            ],
+            [
+              "0.8900",
+              "41469.00"
+            ],
+            [
+              "0.9000",
+              "1226.60"
+            ],
+            [
+              "0.9500",
+              "67618.00"
+            ],
+            [
+              "0.9600",
+              "94.51"
+            ],
+            [
+              "0.9700",
+              "263.12"
+            ],
+            [
+              "0.9800",
+              "1200.00"
+            ],
+            [
+              "0.9900",
+              "4196021.38"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -952,7 +1264,7 @@
     "no_sub_title": "McNeese",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-04T02:45:00Z",
-    "open_interest_fp": "128861.60",
+    "open_interest_fp": "132453.62",
     "open_time": "2026-09-20T01:09:00Z",
     "previous_price_dollars": "0.0100",
     "previous_yes_ask_dollars": "0.0100",
@@ -974,17 +1286,17 @@
     "ticker": "KXNCAAFGAME-26OCT03MCNSLSU-MCNS",
     "title": "McNeese wins",
     "updated_time": "2026-09-20T01:09:01.387478Z",
-    "volume_24h_fp": "10535.64",
-    "volume_fp": "128861.60",
+    "volume_24h_fp": "8352.03",
+    "volume_fp": "132453.62",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "4199113.40",
+    "yes_ask_size_fp": "4196021.38",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "McNeese"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS",
-  "market_captured_at": "2026-09-21T12:57:55.345Z",
+  "market_captured_at": "2026-09-21T20:40:11.072Z",
   "status": "active",
-  "last_ingested_at": "2026-09-21T12:57:56.000Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS/candlesticks?start_ts=1789902001&end_ts=1789995475&period_interval=60"
+  "last_ingested_at": "2026-09-21T20:40:11.700Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS/candlesticks?start_ts=1789974001&end_ts=1790023211&period_interval=60"
 }

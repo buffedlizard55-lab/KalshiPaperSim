@@ -3101,6 +3101,201 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T20:35:22.219Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3624508.05"
+            ],
+            [
+              "0.0200",
+              "1583.00"
+            ],
+            [
+              "0.0300",
+              "229493.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "250591.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "325471.93"
+            ],
+            [
+              "0.1300",
+              "280.54"
+            ],
+            [
+              "0.1400",
+              "467.59"
+            ],
+            [
+              "0.1500",
+              "144118.00"
+            ],
+            [
+              "0.1600",
+              "33346.00"
+            ],
+            [
+              "0.2000",
+              "175.00"
+            ],
+            [
+              "0.2100",
+              "76294.00"
+            ],
+            [
+              "0.2200",
+              "25330.00"
+            ],
+            [
+              "0.2600",
+              "45773.00"
+            ],
+            [
+              "0.2700",
+              "25031.00"
+            ],
+            [
+              "0.3100",
+              "41052.00"
+            ],
+            [
+              "0.3500",
+              "76042.00"
+            ],
+            [
+              "0.3600",
+              "25632.00"
+            ],
+            [
+              "0.4000",
+              "23993.00"
+            ],
+            [
+              "0.4400",
+              "24522.00"
+            ],
+            [
+              "0.4500",
+              "93.51"
+            ],
+            [
+              "0.4800",
+              "22202.00"
+            ],
+            [
+              "0.5200",
+              "13843.00"
+            ],
+            [
+              "0.5600",
+              "13157.00"
+            ],
+            [
+              "0.6100",
+              "49543.00"
+            ],
+            [
+              "0.6300",
+              "10458.00"
+            ],
+            [
+              "0.6800",
+              "8715.00"
+            ],
+            [
+              "0.7100",
+              "93.51"
+            ],
+            [
+              "0.7300",
+              "36749.00"
+            ],
+            [
+              "0.7400",
+              "6911.00"
+            ],
+            [
+              "0.7500",
+              "53.00"
+            ],
+            [
+              "0.7800",
+              "7669.00"
+            ],
+            [
+              "0.7900",
+              "2125.51"
+            ],
+            [
+              "0.8100",
+              "93.51"
+            ],
+            [
+              "0.8200",
+              "8.85"
+            ],
+            [
+              "0.8300",
+              "30940.00"
+            ],
+            [
+              "0.8600",
+              "2478.00"
+            ],
+            [
+              "0.9100",
+              "28548.00"
+            ],
+            [
+              "0.9200",
+              "1343.85"
+            ],
+            [
+              "0.9300",
+              "500.00"
+            ],
+            [
+              "0.9400",
+              "16.74"
+            ],
+            [
+              "0.9600",
+              "301.31"
+            ],
+            [
+              "0.9700",
+              "46854.00"
+            ],
+            [
+              "0.9800",
+              "479360.31"
+            ],
+            [
+              "0.9900",
+              "2742432.78"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3125,7 +3320,7 @@
     "no_sub_title": "Central Michigan",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-27T01:30:00Z",
-    "open_interest_fp": "43264.22",
+    "open_interest_fp": "44167.26",
     "open_time": "2026-09-13T01:07:00Z",
     "previous_price_dollars": "0.0100",
     "previous_yes_ask_dollars": "0.0100",
@@ -3147,17 +3342,17 @@
     "ticker": "KXNCAAFGAME-26SEP26CMUMIA-CMU",
     "title": "Central Michigan wins",
     "updated_time": "2026-09-13T01:07:00.401976Z",
-    "volume_24h_fp": "17424.20",
-    "volume_fp": "43732.35",
+    "volume_24h_fp": "15568.47",
+    "volume_fp": "44635.39",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "2709292.86",
+    "yes_ask_size_fp": "2742432.78",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Central Michigan"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU",
-  "market_captured_at": "2026-09-21T12:53:02.529Z",
+  "market_captured_at": "2026-09-21T20:35:21.671Z",
   "status": "active",
-  "last_ingested_at": "2026-09-21T12:53:03.081Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/candlesticks?start_ts=1789876801&end_ts=1789995182&period_interval=1440"
+  "last_ingested_at": "2026-09-21T20:35:22.196Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/candlesticks?start_ts=1789963201&end_ts=1790022921&period_interval=1440"
 }

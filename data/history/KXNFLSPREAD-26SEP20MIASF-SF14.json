@@ -4552,6 +4552,16 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T20:35:55.457Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLSPREAD-26SEP20MIASF-SF14/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4579,9 +4589,9 @@
     "occurrence_datetime": "2026-09-20T23:25:00Z",
     "open_interest_fp": "752494.88",
     "open_time": "2026-09-14T01:05:00Z",
-    "previous_price_dollars": "0.4900",
-    "previous_yes_ask_dollars": "0.4900",
-    "previous_yes_bid_dollars": "0.4800",
+    "previous_price_dollars": "0.4600",
+    "previous_yes_ask_dollars": "0.4600",
+    "previous_yes_bid_dollars": "0.4500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4601,7 +4611,7 @@
     "ticker": "KXNFLSPREAD-26SEP20MIASF-SF14",
     "title": "San Francisco wins by over 13.5 points?",
     "updated_time": "2026-09-20T23:17:25.030181Z",
-    "volume_24h_fp": "774014.99",
+    "volume_24h_fp": "228574.49",
     "volume_fp": "1051451.73",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -4610,9 +4620,9 @@
     "yes_sub_title": "San Francisco wins by over 13.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLSPREAD-26SEP20MIASF-SF14",
-  "market_captured_at": "2026-09-21T12:53:29.208Z",
+  "market_captured_at": "2026-09-21T20:35:54.912Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-21T12:53:29.762Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLSPREAD/markets/KXNFLSPREAD-26SEP20MIASF-SF14/candlesticks?start_ts=1789876801&end_ts=1789995209&period_interval=1440",
+  "last_ingested_at": "2026-09-21T20:35:55.435Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLSPREAD/markets/KXNFLSPREAD-26SEP20MIASF-SF14/candlesticks?start_ts=1789963201&end_ts=1790022955&period_interval=1440",
   "result": "yes"
 }

@@ -8438,6 +8438,98 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T20:34:45.739Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32750/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142910.30"
+            ],
+            [
+              "0.1000",
+              "14378.76"
+            ],
+            [
+              "0.2000",
+              "40.00"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.4700",
+              "131.27"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5700",
+              "62.55"
+            ],
+            [
+              "0.7000",
+              "2040.00"
+            ],
+            [
+              "0.8000",
+              "1785.00"
+            ],
+            [
+              "0.8200",
+              "2000.00"
+            ],
+            [
+              "0.8300",
+              "80.73"
+            ],
+            [
+              "0.9000",
+              "101587.00"
+            ],
+            [
+              "0.9100",
+              "368.77"
+            ],
+            [
+              "0.9200",
+              "44.50"
+            ],
+            [
+              "0.9300",
+              "917.00"
+            ],
+            [
+              "0.9400",
+              "6.14"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "349.54"
+            ],
+            [
+              "0.0200",
+              "277.23"
+            ],
+            [
+              "0.0300",
+              "18.01"
+            ],
+            [
+              "0.0500",
+              "100003.27"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -8451,15 +8543,15 @@
     "expiration_time": "2027-01-08T00:00:00Z",
     "expiration_value": "",
     "floor_strike": 32500,
-    "last_price_dollars": "0.0400",
+    "last_price_dollars": "0.0600",
     "latest_expiration_time": "2027-01-08T00:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9700",
-    "no_bid_dollars": "0.9600",
+    "no_ask_dollars": "0.9500",
+    "no_bid_dollars": "0.9400",
     "no_sub_title": "32,500 to 33,000",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "89046.64",
+    "open_interest_fp": "92354.28",
     "open_time": "2025-12-23T15:00:00Z",
     "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0400",
@@ -8482,17 +8574,17 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-B32750",
     "title": "Will the Nasdaq-100 be between 32500 and 33000 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:46.516856Z",
-    "volume_24h_fp": "484.00",
-    "volume_fp": "160006.46",
-    "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "4469.47",
-    "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "100007.33",
+    "volume_24h_fp": "6748.04",
+    "volume_fp": "166270.50",
+    "yes_ask_dollars": "0.0600",
+    "yes_ask_size_fp": "6.14",
+    "yes_bid_dollars": "0.0500",
+    "yes_bid_size_fp": "100003.27",
     "yes_sub_title": "32,500 to 33,000"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32750",
-  "market_captured_at": "2026-09-21T12:52:33.210Z",
+  "market_captured_at": "2026-09-21T20:34:45.192Z",
   "status": "active",
-  "last_ingested_at": "2026-09-21T12:52:33.764Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B32750/candlesticks?start_ts=1789876801&end_ts=1789995153&period_interval=1440"
+  "last_ingested_at": "2026-09-21T20:34:45.716Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B32750/candlesticks?start_ts=1789963201&end_ts=1790022885&period_interval=1440"
 }
