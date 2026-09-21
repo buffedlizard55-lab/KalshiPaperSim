@@ -1,6 +1,6 @@
 # Flagged Irregularities
 
-**Generated:** 2026-09-20 by `scripts/render-docs.js` from `src/verification-data.js`.
+**Generated:** 2026-09-21 by `scripts/render-docs.js` from `src/verification-data.js`.
 **55 irregularities** flagged during this build: 17 high, 25 medium,
 11 low, 1 informational.
 
