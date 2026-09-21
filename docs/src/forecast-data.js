@@ -10,11 +10,11 @@
  * only through src/forecast-store.js, which refuses any snapshot captured
  * AFTER the decision time (the anti-lookahead rule).
  *
- * 9 location(s) · 182 shipped snapshot(s) · generated 2026-09-21T20:43:11.074Z
+ * 9 location(s) · 191 shipped snapshot(s) · generated 2026-09-21T22:36:58.341Z
  */
 
 export const FORECAST_DATA = {
- "generatedAt": "2026-09-21T20:43:11.074Z",
+ "generatedAt": "2026-09-21T22:36:58.341Z",
  "present": true,
  "locations": {
   "austin-camp-mabry": {
@@ -33,14 +33,14 @@ export const FORECAST_DATA = {
      "county": "https://api.weather.gov/zones/county/TXC453",
      "relativeLocation": "Austin, TX",
      "timeZone": "America/Chicago",
-     "resolvedAt": "2026-09-21T14:16:08.717Z",
+     "resolvedAt": "2026-09-21T22:36:56.809Z",
      "pointsUrl": "https://api.weather.gov/points/30.3167,-97.7667"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
    },
    "what": "Point-in-time NWS gridded forecast captures (see scripts/archive-forecasts.mjs). Each snapshot is what api.weather.gov returned at captured_at — the archive is what makes a point-in-time weather strategy testable.",
-   "snapshotCount": 20,
-   "shippedSnapshots": 20,
+   "snapshotCount": 21,
+   "shippedSnapshots": 21,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -1362,6 +1362,72 @@ export const FORECAST_DATA = {
        "probabilityOfPrecipitationPct": 4
       }
      ]
+    },
+    {
+     "captured_at": "2026-09-21T22:36:56.809Z",
+     "points_url": "https://api.weather.gov/points/30.3167,-97.7667",
+     "forecast_url": "https://api.weather.gov/gridpoints/EWX/155,93/forecast",
+     "forecastGenerator": "BaselineForecastGenerator",
+     "updateTime": "2026-09-21T22:32:39+00:00",
+     "units": "us",
+     "days": [
+      {
+       "date": "2026-09-21",
+       "highF": 99,
+       "periodName": "This Afternoon",
+       "startTime": "2026-09-21T17:00:00-05:00",
+       "endTime": "2026-09-21T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 34
+      },
+      {
+       "date": "2026-09-22",
+       "highF": 100,
+       "periodName": "Tuesday",
+       "startTime": "2026-09-22T06:00:00-05:00",
+       "endTime": "2026-09-22T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 23
+      },
+      {
+       "date": "2026-09-23",
+       "highF": 100,
+       "periodName": "Wednesday",
+       "startTime": "2026-09-23T06:00:00-05:00",
+       "endTime": "2026-09-23T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 8
+      },
+      {
+       "date": "2026-09-24",
+       "highF": 99,
+       "periodName": "Thursday",
+       "startTime": "2026-09-24T06:00:00-05:00",
+       "endTime": "2026-09-24T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 1
+      },
+      {
+       "date": "2026-09-25",
+       "highF": 98,
+       "periodName": "Friday",
+       "startTime": "2026-09-25T06:00:00-05:00",
+       "endTime": "2026-09-25T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 0
+      },
+      {
+       "date": "2026-09-26",
+       "highF": 98,
+       "periodName": "Saturday",
+       "startTime": "2026-09-26T06:00:00-05:00",
+       "endTime": "2026-09-26T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 2
+      },
+      {
+       "date": "2026-09-27",
+       "highF": 98,
+       "periodName": "Sunday",
+       "startTime": "2026-09-27T06:00:00-05:00",
+       "endTime": "2026-09-27T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 6
+      }
+     ]
     }
    ]
   },
@@ -1381,14 +1447,14 @@ export const FORECAST_DATA = {
      "county": "https://api.weather.gov/zones/county/ILC031",
      "relativeLocation": "Chicago, IL",
      "timeZone": "America/Chicago",
-     "resolvedAt": "2026-09-21T14:16:08.717Z",
+     "resolvedAt": "2026-09-21T22:36:56.809Z",
      "pointsUrl": "https://api.weather.gov/points/41.7868,-87.7522"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
    },
    "what": "Point-in-time NWS gridded forecast captures (see scripts/archive-forecasts.mjs). Each snapshot is what api.weather.gov returned at captured_at — the archive is what makes a point-in-time weather strategy testable.",
-   "snapshotCount": 20,
-   "shippedSnapshots": 20,
+   "snapshotCount": 21,
+   "shippedSnapshots": 21,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -2710,6 +2776,72 @@ export const FORECAST_DATA = {
        "probabilityOfPrecipitationPct": 8
       }
      ]
+    },
+    {
+     "captured_at": "2026-09-21T22:36:56.809Z",
+     "points_url": "https://api.weather.gov/points/41.7868,-87.7522",
+     "forecast_url": "https://api.weather.gov/gridpoints/LOT/72,69/forecast",
+     "forecastGenerator": "BaselineForecastGenerator",
+     "updateTime": "2026-09-21T18:55:59+00:00",
+     "units": "us",
+     "days": [
+      {
+       "date": "2026-09-21",
+       "highF": 63,
+       "periodName": "This Afternoon",
+       "startTime": "2026-09-21T15:00:00-05:00",
+       "endTime": "2026-09-21T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 16
+      },
+      {
+       "date": "2026-09-22",
+       "highF": 62,
+       "periodName": "Tuesday",
+       "startTime": "2026-09-22T06:00:00-05:00",
+       "endTime": "2026-09-22T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 11
+      },
+      {
+       "date": "2026-09-23",
+       "highF": 65,
+       "periodName": "Wednesday",
+       "startTime": "2026-09-23T06:00:00-05:00",
+       "endTime": "2026-09-23T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 12
+      },
+      {
+       "date": "2026-09-24",
+       "highF": 66,
+       "periodName": "Thursday",
+       "startTime": "2026-09-24T06:00:00-05:00",
+       "endTime": "2026-09-24T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 1
+      },
+      {
+       "date": "2026-09-25",
+       "highF": 66,
+       "periodName": "Friday",
+       "startTime": "2026-09-25T06:00:00-05:00",
+       "endTime": "2026-09-25T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 0
+      },
+      {
+       "date": "2026-09-26",
+       "highF": 66,
+       "periodName": "Saturday",
+       "startTime": "2026-09-26T06:00:00-05:00",
+       "endTime": "2026-09-26T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 7
+      },
+      {
+       "date": "2026-09-27",
+       "highF": 70,
+       "periodName": "Sunday",
+       "startTime": "2026-09-27T06:00:00-05:00",
+       "endTime": "2026-09-27T18:00:00-05:00",
+       "probabilityOfPrecipitationPct": 17
+      }
+     ]
     }
    ]
   },
@@ -2729,14 +2861,14 @@ export const FORECAST_DATA = {
      "county": "https://api.weather.gov/zones/county/COC031",
      "relativeLocation": "Denver, CO",
      "timeZone": "America/Denver",
-     "resolvedAt": "2026-09-21T14:16:08.717Z",
+     "resolvedAt": "2026-09-21T22:36:56.809Z",
      "pointsUrl": "https://api.weather.gov/points/39.8561,-104.6737"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
    },
    "what": "Point-in-time NWS gridded forecast captures (see scripts/archive-forecasts.mjs). Each snapshot is what api.weather.gov returned at captured_at — the archive is what makes a point-in-time weather strategy testable.",
-   "snapshotCount": 20,
-   "shippedSnapshots": 20,
+   "snapshotCount": 21,
+   "shippedSnapshots": 21,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -4058,6 +4190,72 @@ export const FORECAST_DATA = {
        "probabilityOfPrecipitationPct": 15
       }
      ]
+    },
+    {
+     "captured_at": "2026-09-21T22:36:56.809Z",
+     "points_url": "https://api.weather.gov/points/39.8561,-104.6737",
+     "forecast_url": "https://api.weather.gov/gridpoints/BOU/74,66/forecast",
+     "forecastGenerator": "BaselineForecastGenerator",
+     "updateTime": "2026-09-21T18:46:48+00:00",
+     "units": "us",
+     "days": [
+      {
+       "date": "2026-09-21",
+       "highF": 75,
+       "periodName": "This Afternoon",
+       "startTime": "2026-09-21T15:00:00-06:00",
+       "endTime": "2026-09-21T18:00:00-06:00",
+       "probabilityOfPrecipitationPct": 2
+      },
+      {
+       "date": "2026-09-22",
+       "highF": 81,
+       "periodName": "Tuesday",
+       "startTime": "2026-09-22T06:00:00-06:00",
+       "endTime": "2026-09-22T18:00:00-06:00",
+       "probabilityOfPrecipitationPct": 14
+      },
+      {
+       "date": "2026-09-23",
+       "highF": 79,
+       "periodName": "Wednesday",
+       "startTime": "2026-09-23T06:00:00-06:00",
+       "endTime": "2026-09-23T18:00:00-06:00",
+       "probabilityOfPrecipitationPct": 4
+      },
+      {
+       "date": "2026-09-24",
+       "highF": 73,
+       "periodName": "Thursday",
+       "startTime": "2026-09-24T06:00:00-06:00",
+       "endTime": "2026-09-24T18:00:00-06:00",
+       "probabilityOfPrecipitationPct": 41
+      },
+      {
+       "date": "2026-09-25",
+       "highF": 80,
+       "periodName": "Friday",
+       "startTime": "2026-09-25T06:00:00-06:00",
+       "endTime": "2026-09-25T18:00:00-06:00",
+       "probabilityOfPrecipitationPct": 18
+      },
+      {
+       "date": "2026-09-26",
+       "highF": 84,
+       "periodName": "Saturday",
+       "startTime": "2026-09-26T06:00:00-06:00",
+       "endTime": "2026-09-26T18:00:00-06:00",
+       "probabilityOfPrecipitationPct": 3
+      },
+      {
+       "date": "2026-09-27",
+       "highF": 83,
+       "periodName": "Sunday",
+       "startTime": "2026-09-27T06:00:00-06:00",
+       "endTime": "2026-09-27T18:00:00-06:00",
+       "probabilityOfPrecipitationPct": 17
+      }
+     ]
     }
    ]
   },
@@ -4077,14 +4275,14 @@ export const FORECAST_DATA = {
      "county": "https://api.weather.gov/zones/county/CAC037",
      "relativeLocation": "Los Angeles, CA",
      "timeZone": "America/Los_Angeles",
-     "resolvedAt": "2026-09-21T14:16:08.717Z",
+     "resolvedAt": "2026-09-21T22:36:56.809Z",
      "pointsUrl": "https://api.weather.gov/points/33.9425,-118.4081"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
    },
    "what": "Point-in-time NWS gridded forecast captures (see scripts/archive-forecasts.mjs). Each snapshot is what api.weather.gov returned at captured_at — the archive is what makes a point-in-time weather strategy testable.",
-   "snapshotCount": 20,
-   "shippedSnapshots": 20,
+   "snapshotCount": 21,
+   "shippedSnapshots": 21,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -5406,6 +5604,72 @@ export const FORECAST_DATA = {
        "probabilityOfPrecipitationPct": 4
       }
      ]
+    },
+    {
+     "captured_at": "2026-09-21T22:36:56.809Z",
+     "points_url": "https://api.weather.gov/points/33.9425,-118.4081",
+     "forecast_url": "https://api.weather.gov/gridpoints/LOX/148,41/forecast",
+     "forecastGenerator": "BaselineForecastGenerator",
+     "updateTime": "2026-09-21T20:47:02+00:00",
+     "units": "us",
+     "days": [
+      {
+       "date": "2026-09-21",
+       "highF": 74,
+       "periodName": "This Afternoon",
+       "startTime": "2026-09-21T14:00:00-07:00",
+       "endTime": "2026-09-21T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 1
+      },
+      {
+       "date": "2026-09-22",
+       "highF": 75,
+       "periodName": "Tuesday",
+       "startTime": "2026-09-22T06:00:00-07:00",
+       "endTime": "2026-09-22T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 0
+      },
+      {
+       "date": "2026-09-23",
+       "highF": 79,
+       "periodName": "Wednesday",
+       "startTime": "2026-09-23T06:00:00-07:00",
+       "endTime": "2026-09-23T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 0
+      },
+      {
+       "date": "2026-09-24",
+       "highF": 79,
+       "periodName": "Thursday",
+       "startTime": "2026-09-24T06:00:00-07:00",
+       "endTime": "2026-09-24T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 1
+      },
+      {
+       "date": "2026-09-25",
+       "highF": 80,
+       "periodName": "Friday",
+       "startTime": "2026-09-25T06:00:00-07:00",
+       "endTime": "2026-09-25T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 0
+      },
+      {
+       "date": "2026-09-26",
+       "highF": 80,
+       "periodName": "Saturday",
+       "startTime": "2026-09-26T06:00:00-07:00",
+       "endTime": "2026-09-26T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 1
+      },
+      {
+       "date": "2026-09-27",
+       "highF": 77,
+       "periodName": "Sunday",
+       "startTime": "2026-09-27T06:00:00-07:00",
+       "endTime": "2026-09-27T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 1
+      }
+     ]
     }
    ]
   },
@@ -5425,14 +5689,14 @@ export const FORECAST_DATA = {
      "county": "https://api.weather.gov/zones/county/FLC086",
      "relativeLocation": "Miami Springs, FL",
      "timeZone": "America/New_York",
-     "resolvedAt": "2026-09-21T14:16:08.717Z",
+     "resolvedAt": "2026-09-21T22:36:56.809Z",
      "pointsUrl": "https://api.weather.gov/points/25.7959,-80.287"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
    },
    "what": "Point-in-time NWS gridded forecast captures (see scripts/archive-forecasts.mjs). Each snapshot is what api.weather.gov returned at captured_at — the archive is what makes a point-in-time weather strategy testable.",
-   "snapshotCount": 20,
-   "shippedSnapshots": 20,
+   "snapshotCount": 21,
+   "shippedSnapshots": 21,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -6754,6 +7018,72 @@ export const FORECAST_DATA = {
        "probabilityOfPrecipitationPct": 59
       }
      ]
+    },
+    {
+     "captured_at": "2026-09-21T22:36:56.809Z",
+     "points_url": "https://api.weather.gov/points/25.7959,-80.287",
+     "forecast_url": "https://api.weather.gov/gridpoints/MFL/106,51/forecast",
+     "forecastGenerator": "BaselineForecastGenerator",
+     "updateTime": "2026-09-21T20:02:57+00:00",
+     "units": "us",
+     "days": [
+      {
+       "date": "2026-09-21",
+       "highF": 86,
+       "periodName": "This Afternoon",
+       "startTime": "2026-09-21T16:00:00-04:00",
+       "endTime": "2026-09-21T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 62
+      },
+      {
+       "date": "2026-09-22",
+       "highF": 88,
+       "periodName": "Tuesday",
+       "startTime": "2026-09-22T06:00:00-04:00",
+       "endTime": "2026-09-22T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 74
+      },
+      {
+       "date": "2026-09-23",
+       "highF": 87,
+       "periodName": "Wednesday",
+       "startTime": "2026-09-23T06:00:00-04:00",
+       "endTime": "2026-09-23T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 91
+      },
+      {
+       "date": "2026-09-24",
+       "highF": 89,
+       "periodName": "Thursday",
+       "startTime": "2026-09-24T06:00:00-04:00",
+       "endTime": "2026-09-24T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 76
+      },
+      {
+       "date": "2026-09-25",
+       "highF": 89,
+       "periodName": "Friday",
+       "startTime": "2026-09-25T06:00:00-04:00",
+       "endTime": "2026-09-25T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 75
+      },
+      {
+       "date": "2026-09-26",
+       "highF": 88,
+       "periodName": "Saturday",
+       "startTime": "2026-09-26T06:00:00-04:00",
+       "endTime": "2026-09-26T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 69
+      },
+      {
+       "date": "2026-09-27",
+       "highF": 87,
+       "periodName": "Sunday",
+       "startTime": "2026-09-27T06:00:00-04:00",
+       "endTime": "2026-09-27T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 57
+      }
+     ]
     }
    ]
   },
@@ -6773,14 +7103,14 @@ export const FORECAST_DATA = {
      "county": "https://api.weather.gov/zones/county/NYC061",
      "relativeLocation": "New York, NY",
      "timeZone": "America/New_York",
-     "resolvedAt": "2026-09-21T14:16:08.717Z",
+     "resolvedAt": "2026-09-21T22:36:56.809Z",
      "pointsUrl": "https://api.weather.gov/points/40.7829,-73.9654"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
    },
    "what": "Point-in-time NWS gridded forecast captures (see scripts/archive-forecasts.mjs). Each snapshot is what api.weather.gov returned at captured_at — the archive is what makes a point-in-time weather strategy testable.",
-   "snapshotCount": 22,
-   "shippedSnapshots": 22,
+   "snapshotCount": 23,
+   "shippedSnapshots": 23,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -8234,6 +8564,72 @@ export const FORECAST_DATA = {
        "probabilityOfPrecipitationPct": 17
       }
      ]
+    },
+    {
+     "captured_at": "2026-09-21T22:36:56.809Z",
+     "points_url": "https://api.weather.gov/points/40.7829,-73.9654",
+     "forecast_url": "https://api.weather.gov/gridpoints/OKX/34,45/forecast",
+     "forecastGenerator": "BaselineForecastGenerator",
+     "updateTime": "2026-09-21T18:19:32+00:00",
+     "units": "us",
+     "days": [
+      {
+       "date": "2026-09-22",
+       "highF": 65,
+       "periodName": "Tuesday",
+       "startTime": "2026-09-22T06:00:00-04:00",
+       "endTime": "2026-09-22T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 10
+      },
+      {
+       "date": "2026-09-23",
+       "highF": 65,
+       "periodName": "Wednesday",
+       "startTime": "2026-09-23T06:00:00-04:00",
+       "endTime": "2026-09-23T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 5
+      },
+      {
+       "date": "2026-09-24",
+       "highF": 65,
+       "periodName": "Thursday",
+       "startTime": "2026-09-24T06:00:00-04:00",
+       "endTime": "2026-09-24T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 6
+      },
+      {
+       "date": "2026-09-25",
+       "highF": 67,
+       "periodName": "Friday",
+       "startTime": "2026-09-25T06:00:00-04:00",
+       "endTime": "2026-09-25T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 43
+      },
+      {
+       "date": "2026-09-26",
+       "highF": 67,
+       "periodName": "Saturday",
+       "startTime": "2026-09-26T06:00:00-04:00",
+       "endTime": "2026-09-26T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 39
+      },
+      {
+       "date": "2026-09-27",
+       "highF": 70,
+       "periodName": "Sunday",
+       "startTime": "2026-09-27T06:00:00-04:00",
+       "endTime": "2026-09-27T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 21
+      },
+      {
+       "date": "2026-09-28",
+       "highF": 71,
+       "periodName": "Monday",
+       "startTime": "2026-09-28T06:00:00-04:00",
+       "endTime": "2026-09-28T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 13
+      }
+     ]
     }
    ]
   },
@@ -8253,14 +8649,14 @@ export const FORECAST_DATA = {
      "county": "https://api.weather.gov/zones/county/PAC045",
      "relativeLocation": "Philadelphia, PA",
      "timeZone": "America/New_York",
-     "resolvedAt": "2026-09-21T14:16:08.717Z",
+     "resolvedAt": "2026-09-21T22:36:56.809Z",
      "pointsUrl": "https://api.weather.gov/points/39.8729,-75.2437"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
    },
    "what": "Point-in-time NWS gridded forecast captures (see scripts/archive-forecasts.mjs). Each snapshot is what api.weather.gov returned at captured_at — the archive is what makes a point-in-time weather strategy testable.",
-   "snapshotCount": 20,
-   "shippedSnapshots": 20,
+   "snapshotCount": 21,
+   "shippedSnapshots": 21,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -9582,6 +9978,72 @@ export const FORECAST_DATA = {
        "probabilityOfPrecipitationPct": 12
       }
      ]
+    },
+    {
+     "captured_at": "2026-09-21T22:36:56.809Z",
+     "points_url": "https://api.weather.gov/points/39.8729,-75.2437",
+     "forecast_url": "https://api.weather.gov/gridpoints/PHI/48,75/forecast",
+     "forecastGenerator": "BaselineForecastGenerator",
+     "updateTime": "2026-09-21T20:10:12+00:00",
+     "units": "us",
+     "days": [
+      {
+       "date": "2026-09-22",
+       "highF": 66,
+       "periodName": "Tuesday",
+       "startTime": "2026-09-22T06:00:00-04:00",
+       "endTime": "2026-09-22T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 72
+      },
+      {
+       "date": "2026-09-23",
+       "highF": 66,
+       "periodName": "Wednesday",
+       "startTime": "2026-09-23T06:00:00-04:00",
+       "endTime": "2026-09-23T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 37
+      },
+      {
+       "date": "2026-09-24",
+       "highF": 65,
+       "periodName": "Thursday",
+       "startTime": "2026-09-24T06:00:00-04:00",
+       "endTime": "2026-09-24T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 8
+      },
+      {
+       "date": "2026-09-25",
+       "highF": 67,
+       "periodName": "Friday",
+       "startTime": "2026-09-25T06:00:00-04:00",
+       "endTime": "2026-09-25T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 24
+      },
+      {
+       "date": "2026-09-26",
+       "highF": 68,
+       "periodName": "Saturday",
+       "startTime": "2026-09-26T06:00:00-04:00",
+       "endTime": "2026-09-26T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 25
+      },
+      {
+       "date": "2026-09-27",
+       "highF": 71,
+       "periodName": "Sunday",
+       "startTime": "2026-09-27T06:00:00-04:00",
+       "endTime": "2026-09-27T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 10
+      },
+      {
+       "date": "2026-09-28",
+       "highF": 72,
+       "periodName": "Monday",
+       "startTime": "2026-09-28T06:00:00-04:00",
+       "endTime": "2026-09-28T18:00:00-04:00",
+       "probabilityOfPrecipitationPct": 6
+      }
+     ]
     }
    ]
   },
@@ -9601,14 +10063,14 @@ export const FORECAST_DATA = {
      "county": "https://api.weather.gov/zones/county/AZC013",
      "relativeLocation": "Phoenix, AZ",
      "timeZone": "America/Phoenix",
-     "resolvedAt": "2026-09-21T14:16:08.717Z",
+     "resolvedAt": "2026-09-21T22:36:56.809Z",
      "pointsUrl": "https://api.weather.gov/points/33.4342,-112.0116"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
    },
    "what": "Point-in-time NWS gridded forecast captures (see scripts/archive-forecasts.mjs). Each snapshot is what api.weather.gov returned at captured_at — the archive is what makes a point-in-time weather strategy testable.",
-   "snapshotCount": 20,
-   "shippedSnapshots": 20,
+   "snapshotCount": 21,
+   "shippedSnapshots": 21,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -10930,6 +11392,72 @@ export const FORECAST_DATA = {
        "probabilityOfPrecipitationPct": 15
       }
      ]
+    },
+    {
+     "captured_at": "2026-09-21T22:36:56.809Z",
+     "points_url": "https://api.weather.gov/points/33.4342,-112.0116",
+     "forecast_url": "https://api.weather.gov/gridpoints/PSR/161,57/forecast",
+     "forecastGenerator": "BaselineForecastGenerator",
+     "updateTime": "2026-09-21T20:23:15+00:00",
+     "units": "us",
+     "days": [
+      {
+       "date": "2026-09-21",
+       "highF": 101,
+       "periodName": "This Afternoon",
+       "startTime": "2026-09-21T14:00:00-07:00",
+       "endTime": "2026-09-21T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 2
+      },
+      {
+       "date": "2026-09-22",
+       "highF": 101,
+       "periodName": "Tuesday",
+       "startTime": "2026-09-22T06:00:00-07:00",
+       "endTime": "2026-09-22T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 5
+      },
+      {
+       "date": "2026-09-23",
+       "highF": 99,
+       "periodName": "Wednesday",
+       "startTime": "2026-09-23T06:00:00-07:00",
+       "endTime": "2026-09-23T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 9
+      },
+      {
+       "date": "2026-09-24",
+       "highF": 98,
+       "periodName": "Thursday",
+       "startTime": "2026-09-24T06:00:00-07:00",
+       "endTime": "2026-09-24T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 32
+      },
+      {
+       "date": "2026-09-25",
+       "highF": 99,
+       "periodName": "Friday",
+       "startTime": "2026-09-25T06:00:00-07:00",
+       "endTime": "2026-09-25T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 7
+      },
+      {
+       "date": "2026-09-26",
+       "highF": 101,
+       "periodName": "Saturday",
+       "startTime": "2026-09-26T06:00:00-07:00",
+       "endTime": "2026-09-26T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 2
+      },
+      {
+       "date": "2026-09-27",
+       "highF": 99,
+       "periodName": "Sunday",
+       "startTime": "2026-09-27T06:00:00-07:00",
+       "endTime": "2026-09-27T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 8
+      }
+     ]
     }
    ]
   },
@@ -10949,14 +11477,14 @@ export const FORECAST_DATA = {
      "county": "https://api.weather.gov/zones/county/WAC033",
      "relativeLocation": "SeaTac, WA",
      "timeZone": "America/Los_Angeles",
-     "resolvedAt": "2026-09-21T14:16:08.717Z",
+     "resolvedAt": "2026-09-21T22:36:56.809Z",
      "pointsUrl": "https://api.weather.gov/points/47.4502,-122.3088"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
    },
    "what": "Point-in-time NWS gridded forecast captures (see scripts/archive-forecasts.mjs). Each snapshot is what api.weather.gov returned at captured_at — the archive is what makes a point-in-time weather strategy testable.",
-   "snapshotCount": 20,
-   "shippedSnapshots": 20,
+   "snapshotCount": 21,
+   "shippedSnapshots": 21,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -12276,6 +12804,72 @@ export const FORECAST_DATA = {
        "startTime": "2026-09-27T06:00:00-07:00",
        "endTime": "2026-09-27T18:00:00-07:00",
        "probabilityOfPrecipitationPct": 20
+      }
+     ]
+    },
+    {
+     "captured_at": "2026-09-21T22:36:56.809Z",
+     "points_url": "https://api.weather.gov/points/47.4502,-122.3088",
+     "forecast_url": "https://api.weather.gov/gridpoints/SEW/124,61/forecast",
+     "forecastGenerator": "BaselineForecastGenerator",
+     "updateTime": "2026-09-21T18:27:05+00:00",
+     "units": "us",
+     "days": [
+      {
+       "date": "2026-09-21",
+       "highF": 70,
+       "periodName": "This Afternoon",
+       "startTime": "2026-09-21T15:00:00-07:00",
+       "endTime": "2026-09-21T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 0
+      },
+      {
+       "date": "2026-09-22",
+       "highF": 68,
+       "periodName": "Tuesday",
+       "startTime": "2026-09-22T06:00:00-07:00",
+       "endTime": "2026-09-22T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 17
+      },
+      {
+       "date": "2026-09-23",
+       "highF": 66,
+       "periodName": "Wednesday",
+       "startTime": "2026-09-23T06:00:00-07:00",
+       "endTime": "2026-09-23T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 8
+      },
+      {
+       "date": "2026-09-24",
+       "highF": 61,
+       "periodName": "Thursday",
+       "startTime": "2026-09-24T06:00:00-07:00",
+       "endTime": "2026-09-24T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 63
+      },
+      {
+       "date": "2026-09-25",
+       "highF": 62,
+       "periodName": "Friday",
+       "startTime": "2026-09-25T06:00:00-07:00",
+       "endTime": "2026-09-25T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 55
+      },
+      {
+       "date": "2026-09-26",
+       "highF": 62,
+       "periodName": "Saturday",
+       "startTime": "2026-09-26T06:00:00-07:00",
+       "endTime": "2026-09-26T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 3
+      },
+      {
+       "date": "2026-09-27",
+       "highF": 63,
+       "periodName": "Sunday",
+       "startTime": "2026-09-27T06:00:00-07:00",
+       "endTime": "2026-09-27T18:00:00-07:00",
+       "probabilityOfPrecipitationPct": 17
       }
      ]
     }
