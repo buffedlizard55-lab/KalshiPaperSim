@@ -1940,6 +1940,25 @@ export async function buildDeskSignalsAsync(asOfMs) {
       coverage: fda.fdaSignalCoverage()
     };
   } catch (_) { /* FDA archive dark */ }
+  try {
+    const f4 = await import('./form4-signal-store.js');
+    signals.form4 = {
+      available: f4.hasForm4Archive(),
+      endpoint: 'https://www.sec.gov/cgi-bin/browse-edgar',
+      source: 'SEC EDGAR Form 4 (Section 16) — official, keyless, point-in-time archive',
+      // A filing is knowable from EDGAR's OWN acceptance instant, so unlike the
+      // other archives this one answers a past cut-off with real filings. The
+      // assumption is published with the answer, never silently applied.
+      knowableFrom: 'EDGAR acceptance instant (acceptedAt); first_seen_at published alongside',
+      cutoffSeconds,
+      issuers: f4.form4Issuers(),
+      series: f4.form4Series(),
+      issuerFor: (ticker) => f4.issuerForTicker(ticker),
+      insiderStateAt: (issuer) => f4.insiderStateAtOrBefore(issuer, cutoffSeconds),
+      assumption: f4.form4Assumption(),
+      coverage: f4.form4Coverage()
+    };
+  } catch (_) { /* Form 4 archive dark */ }
   return signals;
 }
 

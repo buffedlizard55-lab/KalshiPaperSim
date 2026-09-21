@@ -770,13 +770,13 @@ export const DESK_STRATEGIES = Object.freeze([
   {
     id: 'live_insider_filing_fader',
     username: 'LiveInsider_FilingFader',
-    name: 'Desk: CEO-change NO buyer — price-only (S02 Form 4 archive still absent)',
+    name: 'Desk: CEO-change NO buyer — price-only (a Form 4 archive now exists; this entry still does not read it)',
     category: 'Corporate Events / Longshot fade',
     watch: /CEOCHANGE|KXFDA/i,
-    source: 'S02 · Insider-trades (MasterSite) — NOT USED. No point-in-time SEC Form 4 archive exists in this repository, so this entry reads NO insider data; it trades the exchange\'s own captured ladders on CEO-change contracts. The username records the signal it is meant to receive once that archive exists.',
+    source: 'S02 · Insider-trades (MasterSite) — NOT USED by this entry. A point-in-time SEC Form 4 archive now EXISTS in this repository (data/form4-signals/, sec.gov, grown by .github/workflows/form4-signals.yml) and the desk entrant LiveInsider_Form4Flow reads it; THIS entry still reads NO insider data and trades only the exchange\'s own captured ladders on CEO-change contracts. The username records the signal it was named for.',
     mandate: 'MAXIMUM RETURN. No stop-losses, no position caps, no volatility targeting.',
     thesis:
-      'CEO-departure contracts (TESLACEOCHANGE, JPMCEOCHANGE, KXOPENAICEOCHANGE) are long-dated longshots: the favourite–longshot bias (R02/R05) says the YES side of a rumour tends to be overpriced, so buying NO when YES asks ≤ 0.35 and holding to settlement is the mechanical bet. That is the entire rule. It is NOT an insider-filing strategy: nothing here knows whether an insider bought or sold — the earlier wording ("when insiders maintain their equity holdings") described data the desk does not have and was removed (irregularity #53). When a point-in-time Form 4 archive exists (S02 blockedBy), the honest upgrade is to require a filing before the trade.',
+      'CEO-departure contracts (TESLACEOCHANGE, JPMCEOCHANGE, KXOPENAICEOCHANGE) are long-dated longshots: the favourite–longshot bias (R02/R05) says the YES side of a rumour tends to be overpriced, so buying NO when YES asks ≤ 0.35 and holding to settlement is the mechanical bet. That is the entire rule. It is NOT an insider-filing strategy: nothing here knows whether an insider bought or sold — the earlier wording ("when insiders maintain their equity holdings") described data the desk does not have and was removed (irregularity #53). The upgrade S02 asked for now exists as a SEPARATE entry — LiveInsider_Form4Flow reads the real Form 4 archive through the desk signal hook — so this one stays as the price-only control the two can be compared against.',
     rules: [
       'Universe: open CEO-change contracts with captured ladders.',
       'Trigger: captured YES ask ≤ 0.35 AND a captured NO ask between 0.65 and 0.95 (no quote → no trade; a price is never assumed).',
@@ -804,6 +804,62 @@ export const DESK_STRATEGIES = Object.freeze([
           type: 'market',
           count,
           reason: `CEO-change longshot fade (price-only, no insider data): captured YES ask ${yesAsk} ≤ 0.35, NO ask ${noAsk} (ladder ${market.ladderAt}) → buy NO, hold to settlement`
+        });
+        if (out.length >= 2) break;
+      }
+      return out;
+    }
+  },
+  {
+    id: 'live_insider_form4_flow',
+    username: 'LiveInsider_Form4Flow',
+    name: 'Desk: CEO-change NO buyer GATED by the point-in-time SEC Form 4 archive (S02, live signal)',
+    category: 'Corporate Events / Longshot fade gated by an official filing archive',
+    watch: /CEOCHANGE/i,
+    source:
+      'S02 · Insider-trades (MasterSite) — LIVE SIGNAL. Reads the repository\'s point-in-time SEC Form 4 archive (data/form4-signals/, captured from EDGAR itself by .github/workflows/form4-signals.yml) through the desk signal hook view.signals.form4, exactly as the replay reads it through ctx.signal. Nothing is quoted that the archive does not hold.',
+    mandate: 'MAXIMUM RETURN. No stop-losses, no position caps, no volatility targeting.',
+    thesis:
+      'The desk half of InsiderFlow_Form4, and the first desk entrant that reads an external point-in-time signal archive instead of only the captured ladders. For every open CEO-change contract with a captured ladder, it asks the archive what EDGAR held at the cut-off: how many Form 4s were accepted for that issuer in the 90 days before it, and whether ANY of them was filed by an officer whose title says CEO. Only when the answer is "filings exist and none is a CEO\'s" does it buy NO — the favourite–longshot fade, gated by real Section 16 evidence rather than by price alone. ' +
+      'HONEST LIMITS, stated on the card: (1) the causal link between Section 16 filings and a CEO change is weak and unproven — a departure is announced by 8-K, not by a Form 4 — so this measures whether the gate changes the fade, it does not predict departures; (2) a filing is knowable from EDGAR\'s OWN acceptance instant (the assumption is published with every answer); (3) KXOPENAICEOCHANGE can NEVER receive this signal because OpenAI is a private company with no Section 16 filers, so that contract is skipped with the reason published; (4) if the archive is dark (the workflow has not run yet) the entry places nothing at all, and says so.',
+    rules: [
+      'Universe: open CEO-change contracts with captured ladders whose series the Form 4 archive tracks (TESLACEOCHANGE, KXTESLACEOCHANGE, JPMCEOCHANGE, KXAAPLCEOCHANGE).',
+      'Signal: view.signals.form4 available AND the issuer has at least one filing EDGAR accepted at or before the cut-off AND zero filings by a CEO-titled officer in the 90 days before it.',
+      'Trigger: captured YES ask between 0.02 and 0.35 and a captured NO ask between 0.65 and 0.95 (no quote → no trade; a price is never assumed).',
+      'Entry: taker buy of NO, sized to 35% of cash, bounded by real ladder depth within 2 ticks; at most 2 legs per cut-off.',
+      'Exit: hold to real settlement.'
+    ],
+    sizing: '35% of cash per leg, max 2 legs, bounded by real depth',
+    decide(view) {
+      const out = [];
+      const form4Signal = (view.signals && view.signals.form4) || null;
+      if (!form4Signal || !form4Signal.available) return out; // archive dark → abstain entirely, and the coverage row says why
+      const cutoffSeconds = Math.floor((view.asOfMs || Date.parse(view.asOf || '')) / 1000);
+      if (!Number.isFinite(cutoffSeconds)) return out;
+      const candidates = tradeableMarkets(view)
+        .filter((m) => /CEOCHANGE/i.test(String(m.seriesTicker || m.ticker || '')))
+        .sort((a, b) => (b.volume || 0) - (a.volume || 0));
+      for (const market of candidates) {
+        const join = form4Signal.issuerFor(market.ticker);
+        if (!join.ok) continue; // series the archive does not track (OpenAI: private company) — reason published
+        const state = form4Signal.insiderStateAt(join.issuer);
+        if (!state) continue; // no filing accepted by the cut-off → no evidence, no trade
+        if (Number(state.ceoFilings) > 0) continue; // a CEO's own filing inside the window: stand aside
+        const touch = touchOf(market);
+        const yesAsk = touch.yesAsk ?? null;
+        const noAsk = touch.noAsk ?? market.ladder?.noAsks?.[0]?.price ?? null;
+        if (yesAsk === null || noAsk === null) continue; // no captured quote → abstain, never assume one
+        if (yesAsk < 0.02 || yesAsk > 0.35 || noAsk > 0.95 || noAsk < 0.65) continue;
+        const count = sizeToDepth(view, market, { side: 'no', price: noAsk, cashFraction: 0.35, ticks: 2 });
+        if (count < DESK_LIMITS.minContracts) continue;
+        const flow = state.openMarket || { shares: 0, buys: 0, sells: 0 };
+        out.push({
+          ticker: market.ticker,
+          side: 'no',
+          action: 'buy',
+          type: 'market',
+          count,
+          reason: `SEC Form 4 archive (EDGAR, knowable from its own acceptance instant): ${state.filingsInWindow} filing(s) for ${state.symbol} in the ${state.windowDays} days to the cut-off, newest ${state.newestAcceptedAt}, NONE by a CEO-titled officer, net open-market flow ${flow.shares >= 0 ? '+' : ''}${flow.shares} shares → captured YES ask ${yesAsk} / NO ask ${noAsk} (ladder ${market.ladderAt}) — buy NO, hold to settlement`
         });
         if (out.length >= 2) break;
       }

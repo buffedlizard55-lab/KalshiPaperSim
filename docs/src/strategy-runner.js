@@ -26,6 +26,9 @@ import { CAPTURED_DEPTH, getCapturedDepthProfile, getCapturedDepthTickers } from
 import { forecastLocations, forecastHighAt, weatherEventDate } from './forecast-store.js';
 import { fdaSubjects, stateAtOrBefore } from './fda-signal-store.js';
 import { hasMlbSignalArchive, mlbGames, mlbTeams, matchMlbGame, gameStateAtOrBefore, parseMlbGameTicker } from './mlb-signal-store.js';
+import {
+  hasForm4Archive, form4Issuers, issuerForTicker, insiderStateAtOrBefore, form4Coverage, form4Series
+} from './form4-signal-store.js';
 
 /** Data-source label for bars that came from the daily ingest job, not a capture. */
 export const DATA_SOURCE_ACCUMULATED = 'accumulated_history_store';
@@ -172,14 +175,82 @@ export function mlbJoinReport(tickers = null) {
   });
 }
 
+/** The rolling window the insider entry measures "recent activity" over. */
+export const FORM4_WINDOW_DAYS = 90;
+
+/**
+ * Build the engine's SEC Form 4 signal provider from the point-in-time
+ * insider-filing archive (data/form4-signals/, sec.gov). Same contract as the
+ * other providers: given a ticker, its market and a decision timestamp it
+ * returns the insider picture knowable at that instant — or null, and a
+ * strategy that receives null ABSTAINS.
+ *
+ * A filing is knowable from EDGAR's OWN acceptance instant, not from when this
+ * repository captured it, so unlike the forecast/MLB archives this one can
+ * answer a PAST bar with real filings (the assumption is published in
+ * form4Assumption() and in every store file). The ticker→issuer join is the
+ * archive's own `kalshiSeries` list, taken from each market's `rules_primary`;
+ * a series the archive does not track (KXOPENAICEOCHANGE — a private company
+ * has no Section 16 filers) is answered with null and the reason is published
+ * by form4JoinReport().
+ */
+export function buildForm4SignalProvider() {
+  if (!hasForm4Archive()) return null;
+  const issuers = form4Issuers();
+  const joins = new Map();
+  const joinFor = (ticker) => {
+    if (!joins.has(ticker)) joins.set(ticker, issuerForTicker(ticker, { issuers }));
+    return joins.get(ticker);
+  };
+  const provider = (ticker, market, tsSeconds) => {
+    const j = joinFor(String(ticker));
+    if (!j.ok) return null;
+    return insiderStateAtOrBefore(j.issuer, tsSeconds, { windowDays: FORM4_WINDOW_DAYS });
+  };
+  provider.joinFor = joinFor;
+  provider.series = form4Series();
+  return provider;
+}
+
+/**
+ * Per-ticker join status of every tracked company-event contract against the
+ * archive — the published answer to "why did the insider entry not trade this
+ * contract?". Computed, never typed.
+ */
+export function form4JoinReport(tickers = null) {
+  const issuers = form4Issuers();
+  const list = tickers || Object.keys(getReplayableMarkets()).filter((t) => /CEOCHANGE/.test(t)).sort();
+  return list.map((ticker) => {
+    const j = issuerForTicker(ticker, { issuers });
+    const series = String(ticker).split('-')[0];
+    const st = j.ok ? insiderStateAtOrBefore(j.issuer, Math.floor(Date.now() / 1000), { windowDays: FORM4_WINDOW_DAYS }) : null;
+    return {
+      ticker,
+      series,
+      ok: j.ok,
+      reason: j.ok ? (st ? 'MATCHED_WITH_FILINGS' : 'MATCHED_NO_FILING_YET') : j.reason,
+      symbol: j.ok ? j.issuer.symbol : null,
+      cik: j.ok ? j.issuer.cik : null,
+      filings: st ? st.filingsEver : 0,
+      filingsInWindow: st ? st.filingsInWindow : 0,
+      ceoFilings: st ? st.ceoFilings : 0,
+      newestAcceptedAt: st ? st.newestAcceptedAt : null
+    };
+  });
+}
+
+export { form4Coverage };
+
 /**
  * The competition's default signal provider: every point-in-time archive this
  * repository grows (NWS forecasts, Drugs@FDA states, official MLB game
- * states), composed. A market that no archive answers gets null — which makes
+ * states, SEC Form 4 insider filings), composed. A market that no archive answers gets null — which makes
  * a signal-dependent strategy abstain there, by design rather than by accident.
  */
 export function composeSignalProviders(...providers) {
-  const built = providers.length ? providers : [buildForecastSignalProvider(), buildFdaSignalProvider(), buildMlbSignalProvider()];
+  const built = providers.length
+    ? providers
+    : [buildForecastSignalProvider(), buildFdaSignalProvider(), buildMlbSignalProvider(), buildForm4SignalProvider()];
   const live = built.filter((p) => typeof p === 'function');
   if (!live.length) return null;
   return (ticker, market, tsSeconds) => {

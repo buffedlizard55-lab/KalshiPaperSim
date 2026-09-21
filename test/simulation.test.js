@@ -1388,6 +1388,12 @@ test('46. every verified fact carries a reviewable link and a status', () => {
     // Same status as api.weather.gov and api.fda.gov: a signal source, never
     // a source about the exchange; the group check below still applies.
     'statsapi.mlb.com',
+    // www.sec.gov / sec.gov are the SEC's own EDGAR hosts — the source of the
+    // point-in-time Form 4 insider-filing SIGNAL (facts V114–V116): the filing
+    // list, each filing's own index.json and the ownership XML. Same status as
+    // api.weather.gov, api.fda.gov and statsapi.mlb.com: an official signal
+    // source, never a source about the exchange; the group check below applies.
+    'www.sec.gov', 'sec.gov',
     'laikalabs.ai', 'pith.science', 'www.reddit.com', 'reddit.com', 'www.oddsshopper.com',
     // tangotiger.net publishes the win-expectancy table the MLB entries use
     // as a theoretical reference (R18) — a 'Strategy sources' host only.
@@ -1416,7 +1422,8 @@ test('46. every verified fact carries a reviewable link and a status', () => {
         assert.ok(
           u.host.endsWith('kalshi.com') || u.host.endsWith('kalshi.co') || u.host === 'github.com' ||
             u.host === 'tc39.es' || u.host === 'developer.mozilla.org' || u.host === 'api.weather.gov' ||
-            u.host === 'www.fda.gov' || u.host === 'open.fda.gov' || u.host === 'api.fda.gov' || u.host === 'statsapi.mlb.com',
+            u.host === 'www.fda.gov' || u.host === 'open.fda.gov' || u.host === 'api.fda.gov' || u.host === 'statsapi.mlb.com' ||
+            u.host === 'www.sec.gov' || u.host === 'sec.gov',
           `${f.id}: "${f.group}" facts must cite Kalshi (or a language/project reference), not ${u.host}`
         );
       }
@@ -3655,7 +3662,7 @@ test('99. a resting maker order fills only when a LATER real quote crosses it, c
   assert.match(cancelled[0].feeNote, /no fee/i, 'the cancel states that it costs nothing');
 });
 
-test('100. settlement pays the exchange\'s own result, marks the losing side at 1 − value and charges no fee', () => {
+test('100. settlement pays the exchange\'s own result, marks the losing side at 1 − value and charges no fee', async () => {
   const u = deskAt();
   const finals = u.markets.filter((m) => m.isFinal && m.result);
   assert.ok(finals.length > 0, 'the desk tracks at least one real finalized contract');
@@ -4223,7 +4230,10 @@ test('118. Live Desk tracks placed trades and upcoming trades with verified pric
   const { DESK_STRATEGIES } = await import('../src/desk-strategies.js');
   const { DESK_DATA } = await import('../src/desk-data.js');
 
-  const report = buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
+  // `buildDeskReport` is async (it resolves the point-in-time signal providers);
+  // calling it without `await` asserts on a Promise and silently fails, which is
+  // how this test shipped red (irregularity #55).
+  const report = await buildDeskReport({ data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null, startingCapital: 100000 });
   assert.ok(report.ok, 'desk report builds cleanly');
   assert.ok(Array.isArray(report.placedTrades), 'placedTrades must be an array');
   assert.ok(Array.isArray(report.upcomingTrades), 'upcomingTrades must be an array');
@@ -4274,7 +4284,8 @@ test('119. MasterSite S02 and S03 strategies exist, execute cleanly, and are lin
   const s03 = SIGNAL_SOURCES.find((s) => s.id === 'S03');
   assert.ok(s02, 'S02 in ledger');
   assert.ok(s03, 'S03 in ledger');
-  assert.deepEqual(s02.strategyUsername, ['InsiderFiling_Drift', 'LiveInsider_FilingFader']);
+  assert.deepEqual(s02.strategyUsername, ['InsiderFlow_Form4', 'LiveInsider_Form4Flow', 'InsiderFiling_Drift', 'LiveInsider_FilingFader']);
+  assert.equal(s02.status, 'live verified signal — archived and tradeable', 'S02 is closed: the Form 4 archive exists');
   assert.deepEqual(s03.strategyUsername, ['TheLeap_BreakoutRank', 'LiveTheLeap_Momentum']);
 
   const leapRoster = STRATEGIES.find((s) => s.username === 'TheLeap_BreakoutRank');
@@ -4689,14 +4700,282 @@ test('126. a strategy card that names an external signal either reads it in deci
   }
   assert.deepEqual(problems, [], problems.join('\n'));
   // The two entries that DO read an archive must reference ctx.signal.
-  for (const u of ['ForecastEdge_Weather', 'ForecastEdge_MultiCity', 'FDAEdge_DrugsFDA', 'MLBLead_InPlay', 'MLBTrail_Comeback']) {
+  for (const u of ['ForecastEdge_Weather', 'ForecastEdge_MultiCity', 'FDAEdge_DrugsFDA', 'MLBLead_InPlay', 'MLBTrail_Comeback', 'InsiderFlow_Form4']) {
     const s = STRATEGIES.find((x) => x.username === u);
     assert.ok(s && /\bsignal\b/.test(String(s.decide)), `${u} reads ctx.signal`);
   }
   const lw = DESK_STRATEGIES.find((x) => x.username === 'LiveWeather_ForecastEdge');
   assert.ok(lw && /forecastHighAt/.test(String(lw.decide)), 'the desk weather entrant actually opens the NWS archive');
+  const lf = DESK_STRATEGIES.find((x) => x.username === 'LiveInsider_Form4Flow');
+  assert.ok(lf && /form4Signal/.test(String(lf.decide)) && /view\.signals\.form4/.test(String(lf.decide)), 'the desk insider entrant actually opens the Form 4 archive through the shared hook');
   // No desk entrant may assume a price when the capture has none.
   for (const s of DESK_STRATEGIES) {
     assert.doesNotMatch(String(s.decide), /yesAsk \?\? 0\.\d+|noAsk \?\? 0\.\d+|price \|\| 0\.\d+/, `${s.username}: never substitutes a made-up quote`);
   }
+});
+
+/* ────────────────────────────────────────────────────────────────────────── *
+ * 2026-09-21 (session 01a0c21e) — the INSIDER half of the point-in-time
+ * signal archive: SEC EDGAR Form 4 (ROADMAP Next #3(b), S02 closed)
+ * ────────────────────────────────────────────────────────────────────────── */
+
+const FORM4_FIXTURE_PATH = path.join(
+  path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'form4-signals', 'fixtures', '0001104659-26-106432.xml'
+);
+const FORM4_FIXTURE_META = {
+  accessionNumber: '0001104659-26-106432',
+  // EDGAR's own ACCEPTANCE-DATETIME header of that submission: 20260909190010
+  acceptedAt: '2026-09-09T19:00:10-04:00',
+  firstSeenAt: '2026-09-21T04:03:00.000Z',
+  filingDate: '2026-09-09',
+  indexUrl: 'https://www.sec.gov/Archives/edgar/data/1318605/000110465926106432/0001104659-26-106432-index.htm',
+  primaryDoc: 'tm2625055d1_4seq1.xml',
+  url: 'https://www.sec.gov/Archives/edgar/data/1318605/000110465926106432/tm2625055d1_4seq1.xml',
+  expectedSymbol: 'TSLA'
+};
+
+test('127. the Form 4 archive parses a REAL EDGAR ownership document strictly and refuses a wrong issuer or form', async () => {
+  const arch = await import('../scripts/archive-form4-signals.mjs');
+  const xml = readFileSync(FORM4_FIXTURE_PATH, 'utf8');
+
+  // (a) The live filing parses into exactly the values EDGAR published.
+  const f = arch.parseOwnershipDocument(xml, FORM4_FIXTURE_META);
+  assert.equal(f.documentType, '4');
+  assert.equal(f.schemaVersion, 'X0609');
+  assert.equal(f.periodOfReport, '2026-09-05');
+  assert.deepEqual(f.issuer, { cik: '1318605', name: 'Tesla, Inc.', tradingSymbol: 'TSLA' });
+  assert.equal(f.reportingOwner.name, 'Taneja Vaibhav');
+  assert.equal(f.reportingOwner.officerTitle, 'Chief Financial Officer');
+  assert.equal(f.reportingOwner.isOfficer, true);
+  assert.equal(f.reportingOwner.isDirector, false);
+  assert.equal(f.reportingOwner.isTenPercentOwner, false);
+  assert.equal(f.aff10b5One, false);
+  const nd = f.transactions.filter((t) => t.table === 'nonDerivative');
+  assert.equal(nd.length, 2, 'both Table I transaction rows are kept');
+  assert.deepEqual([nd[0].code, nd[0].adCode, nd[0].shares, nd[0].sharesOwnedAfter], ['M', 'A', 6539, 28578]);
+  assert.deepEqual([nd[1].code, nd[1].shares, nd[1].price, nd[1].sharesOwnedAfter], ['S', 2605.75, 360.134, 25972.25]);
+  assert.equal(nd[1].transactionDate, '2026-09-08');
+  const deriv = f.transactions.filter((t) => t.table === 'derivative');
+  assert.equal(deriv[0].securityTitle, 'Restricted Stock Unit');
+  assert.deepEqual(f.holdings[0], { table: 'nonDerivative', securityTitle: 'Common Stock', sharesOwned: 111000, directOrIndirect: 'I', natureOfOwnership: 'See Footnote' });
+
+  // (b) Only SEC codes P and S are insider flow: this filing's net is the one
+  //     open-market sale, not the RSU vesting (code M) beside it.
+  const flow = arch.filingOpenMarketFlow(f);
+  assert.deepEqual(flow, { shares: -2605.75, dollars: -(2605.75 * 360.134), buys: 0, sells: 1 });
+  assert.equal(arch.isCeoFiling(f), false, 'a CFO filing is not a CEO filing');
+  assert.ok(Object.keys(arch.OPEN_MARKET_CODES).join('') === 'PS', 'only P and S are interpreted');
+
+  // (c) Refusals: another issuer's document, another form, and a document with
+  //     no <ownershipDocument> at all must throw rather than be archived.
+  assert.throws(() => arch.parseOwnershipDocument(xml, { ...FORM4_FIXTURE_META, expectedSymbol: 'AAPL' }), /trading symbol/);
+  assert.throws(() => arch.parseOwnershipDocument(xml.replace('<documentType>4</documentType>', '<documentType>5</documentType>'), FORM4_FIXTURE_META), /not 4/);
+  assert.throws(() => arch.parseOwnershipDocument('<html/>', FORM4_FIXTURE_META), /no <ownershipDocument>/);
+  assert.throws(() => arch.parseOwnershipDocument(xml.replace('<transactionCode>S</transactionCode>', ''), FORM4_FIXTURE_META), /transactionCode/);
+
+  // (d) The EDGAR Atom feed is parsed for EVERY entry's form type, because the
+  //     feed's type=4 filter is not trusted (verified 2026-09-21: the same
+  //     query returned 424B2 entries for another CIK).
+  const feed = arch.parseAtomFeed(
+    `<feed><entry><id>urn:tag:sec.gov,2008:accession-number=0001104659-26-106432</id><title>4 - Statement of changes in beneficial ownership of securities</title><updated>2026-09-09T19:00:10-04:00</updated><filing-date>2026-09-09</filing-date><link href="https://www.sec.gov/Archives/edgar/data/1318605/000110465926106432/0001104659-26-106432-index.htm"/></entry><entry><id>urn:tag:sec.gov,2008:accession-number=0001213900-26-101486</id><title>424B2 - Prospectus [Rule 424(b)(2)]</title><updated>2026-09-18T17:07:41-04:00</updated></entry></feed>`,
+    'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=TSLA&type=4&output=atom'
+  );
+  assert.equal(feed.entries.length, 2, 'both entries are parsed, not silently filtered');
+  assert.deepEqual(feed.formsSeen, { '4': 1, '424B2': 1 }, 'the forms the feed returned are published');
+  assert.equal(feed.entries[0].accessionNumber, '0001104659-26-106432');
+  assert.equal(feed.entries[0].updated, '2026-09-09T19:00:10-04:00');
+  assert.throws(() => arch.parseAtomFeed('<feed><entry><title>4 - x</title></entry></feed>', 'u'), /accession number/);
+
+  // (e) index.json → the primary document is READ, never guessed.
+  const idx = arch.primaryXmlFromIndex({ directory: { item: [{ name: 'x-index.html' }, { name: 'tm2625055d1_4seq1.xml' }] } });
+  assert.equal(idx.name, 'tm2625055d1_4seq1.xml');
+  assert.throws(() => arch.primaryXmlFromIndex({ directory: { item: [{ name: 'x.txt' }] } }), /no \.xml document/);
+
+  // (f) The merge is append-only and keyed by accession number.
+  let r = arch.mergeFilings(null, { symbol: 'TSLA', kalshiSeries: ['TESLACEOCHANGE'], filings: [f], urls: ['u1'], capturedAt: '2026-09-21T04:03:00.000Z' });
+  assert.equal(r.added, 1);
+  r = arch.mergeFilings(r.store, { symbol: 'TSLA', kalshiSeries: ['TESLACEOCHANGE'], filings: [f], urls: ['u1', 'u2'], capturedAt: '2026-09-22T04:03:00.000Z' });
+  assert.equal(r.added, 0, 'the same accession is never duplicated');
+  assert.equal(r.refreshed, 1);
+  assert.deepEqual(r.store.captures, ['2026-09-21T04:03:00.000Z', '2026-09-22T04:03:00.000Z']);
+  assert.deepEqual(r.store.source.urls, ['u1', 'u2'], 'each distinct request URL is stored once');
+  assert.match(r.store.assumption, /acceptance instant/i);
+  assert.equal(arch.EXCLUDED_ISSUERS[0].kalshiSeries[0], 'KXOPENAICEOCHANGE');
+  assert.match(arch.EXCLUDED_ISSUERS[0].reason, /private company/i);
+});
+
+test('128. the Form 4 store answers a past instant from EDGAR\'s OWN acceptance instant and never from a later capture', async () => {
+  const arch = await import('../scripts/archive-form4-signals.mjs');
+  const store = await import('../src/form4-signal-store.js');
+  const xml = readFileSync(FORM4_FIXTURE_PATH, 'utf8');
+  const real = arch.parseOwnershipDocument(xml, FORM4_FIXTURE_META);
+  // A second, SYNTHETIC filing (labelled: not from EDGAR) shaped exactly like
+  // the real one, but by an officer titled CEO, to exercise the CEO gate.
+  const ceo = JSON.parse(JSON.stringify(real));
+  ceo.accessionNumber = '0000000000-26-000001';
+  ceo.acceptedAt = '2026-08-01T20:00:00-04:00';
+  ceo.reportingOwner.officerTitle = 'Chief Executive Officer';
+  ceo.reportingOwner.name = 'SYNTHETIC TEST FILER (not an EDGAR record)';
+  ceo.transactions = [{ table: 'nonDerivative', securityTitle: 'Common Stock', transactionDate: '2026-07-30', code: 'P', adCode: 'A', shares: 1000, price: 300, table_: undefined, sharesOwnedAfter: 100000, directOrIndirect: 'D' }];
+
+  const issuer = {
+    symbol: 'TSLA',
+    cik: '1318605',
+    issuerName: 'Tesla, Inc.',
+    kalshiSeries: ['TESLACEOCHANGE', 'KXTESLACEOCHANGE'],
+    assumption: real.assumption || store.form4Assumption(),
+    source: { endpoint: 'https://www.sec.gov/cgi-bin/browse-edgar', urls: [FORM4_FIXTURE_META.url] },
+    captures: ['2026-09-21T04:03:00.000Z'],
+    filings: [real, ceo].sort((a, b) => String(a.acceptedAt).localeCompare(String(b.acceptedAt)))
+  };
+
+  // (a) The join is by the archive's own series list, taken from rules_primary.
+  assert.equal(store.issuerForTicker('TESLACEOCHANGE-26', { issuers: [issuer] }).ok, true);
+  assert.equal(store.issuerForTicker('KXTESLACEOCHANGE-26', { issuers: [issuer] }).ok, true);
+  const openai = store.issuerForTicker('KXOPENAICEOCHANGE-26', { issuers: [issuer] });
+  assert.equal(openai.ok, false);
+  assert.equal(openai.reason, 'SERIES_NOT_TRACKED_BY_FORM4_ARCHIVE');
+
+  // (b) Point-in-time: at an instant BEFORE the real filing's acceptance there
+  //     is only the synthetic CEO filing; at an instant after, both.
+  const tBefore = Math.floor(Date.parse('2026-08-15T00:00:00Z') / 1000);
+  const tAfter = Math.floor(Date.parse('2026-09-15T00:00:00Z') / 1000);
+  const before = store.insiderStateAtOrBefore(issuer, tBefore, { windowDays: 90 });
+  assert.equal(before.filingsEver, 1, 'a filing accepted after T is invisible');
+  assert.equal(before.newestAcceptedAt, ceo.acceptedAt);
+  const after = store.insiderStateAtOrBefore(issuer, tAfter, { windowDays: 90 });
+  assert.equal(after.filingsEver, 2);
+  assert.equal(after.newestAcceptedAt, real.acceptedAt);
+
+  // (c) The CEO gate reads the reporting owner's OWN title.
+  assert.equal(before.ceoFilings, 1);
+  assert.equal(after.ceoFilings, 1, 'the CFO filing does not count as a CEO filing');
+
+  // (d) The window excludes older activity but the filings stay archived.
+  const tLate = Math.floor(Date.parse('2026-12-01T00:00:00Z') / 1000);
+  const late = store.insiderStateAtOrBefore(issuer, tLate, { windowDays: 30 });
+  assert.equal(late.filingsEver, 2, 'everything accepted by T is still countable');
+  assert.equal(late.filingsInWindow, 0, 'a 30-day window in December sees neither summer filing');
+
+  // (e) The open-market number is real: only P/S rows move it.
+  assert.deepEqual(after.openMarket, { shares: -2605.75 + 1000, dollars: -(2605.75 * 360.134) + 1000 * 300, buys: 1, sells: 1 });
+  assert.deepEqual(after.codesInWindow, ['M', 'P', 'S']);
+  assert.equal(after.kind, 'sec-form4-flow');
+  // The only capture in this issuer is 2026-09-21, AFTER both decision
+  // instants, so at those instants the archive had not looked yet: staleness is
+  // null (unknown), never 0 and never an invented number.
+  assert.equal(after.archiveStaleSeconds, null, 'the archive\'s own staleness is published, not invented');
+  assert.equal(after.observedAt, null);
+  assert.equal(after.source, FORM4_FIXTURE_META.url);
+
+  // (f) An issuer with nothing accepted by T answers null → the strategy abstains.
+  const tEarly = Math.floor(Date.parse('2026-01-01T00:00:00Z') / 1000);
+  assert.equal(store.insiderStateAtOrBefore(issuer, tEarly), null);
+
+  // (g) The shipped module is present, honest about being empty, and the
+  //     coverage row is computed rather than typed.
+  const cov = store.form4Coverage();
+  assert.equal(typeof cov.present, 'boolean');
+  assert.equal(cov.present, false, 'no capture has run yet, so the archive is honestly dark');
+  assert.equal(store.hasForm4Archive(), false);
+  assert.equal(store.form4Series().length, 0);
+  const mod = readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'src', 'form4-signal-data.js'), 'utf8');
+  assert.match(mod, /NO ARCHIVE YET/, 'the generated module says so in its own header');
+});
+
+test('129. InsiderFlow_Form4 abstains without EDGAR evidence, stands aside on a CEO filing, and buys NO inside the band', async () => {
+  const { STRATEGIES } = await import('../src/strategies.js');
+  const arch = await import('../scripts/archive-form4-signals.mjs');
+  const store = await import('../src/form4-signal-store.js');
+  const s = STRATEGIES.find((x) => x.username === 'InsiderFlow_Form4');
+  assert.ok(s, 'the entry exists');
+  assert.equal(s.flight, 'daily');
+  assert.ok(/form4Signal/.test(String(s.decide)), 'decide() names the signal it reads (test 126 rule)');
+  assert.ok(/sec\.gov|EDGAR/i.test(s.sourceNote), 'the card names the official source');
+  assert.match(s.thesis, /WEAK and unproven|weak and unproven/, 'the card states the causal-link limitation');
+  assert.match(s.thesis, /KXOPENAICEOCHANGE/, 'the card states which contract can never receive the signal');
+  assert.equal(s.rules.riskManagement, 'NONE (by mandate)');
+
+  const book = (yesAsk) => ({
+    tick: 0.01,
+    getBestYesAsk: () => yesAsk,
+    getBestNoAsk: () => Math.round((1 - yesAsk) * 100) / 100,
+    getYesAskTiers: () => [{ price: yesAsk, count: 200000 }],
+    getNoAskTiers: () => [{ price: 1 - yesAsk, count: 200000 }]
+  });
+  const ctx = (yesAsk, signal, ticker = 'TESLACEOCHANGE-26') => ({
+    book: book(yesAsk),
+    portfolio: { cash: 100000, positions: new Map() },
+    ticker,
+    signal
+  });
+
+  // A signal built the same way the provider builds it, from the REAL filing.
+  const real = arch.parseOwnershipDocument(readFileSync(FORM4_FIXTURE_PATH, 'utf8'), FORM4_FIXTURE_META);
+  const issuer = {
+    symbol: 'TSLA', cik: '1318605', issuerName: 'Tesla, Inc.',
+    kalshiSeries: ['TESLACEOCHANGE'], assumption: store.form4Assumption(),
+    source: { endpoint: 'https://www.sec.gov/cgi-bin/browse-edgar', urls: [real.url] },
+    captures: ['2026-09-21T04:03:00.000Z'],
+    filings: [real]
+  };
+  const ts = Math.floor(Date.parse('2026-09-15T00:00:00Z') / 1000);
+  const signal = store.insiderStateAtOrBefore(issuer, ts, { windowDays: 90 });
+  assert.ok(signal && signal.kind === 'sec-form4-flow');
+  assert.equal(signal.ceoFilings, 0);
+
+  assert.deepEqual(s.decide(ctx(0.1, null)), [], 'no archive → no trade');
+  assert.deepEqual(s.decide(ctx(0.1, { ...signal, kind: 'something-else' })), [], 'a different signal kind is not this signal');
+  const trade = s.decide(ctx(0.1, signal));
+  assert.equal(trade.length, 1, 'with EDGAR evidence and no CEO filing, it trades');
+  assert.equal(trade[0].side, 'NO');
+  assert.equal(trade[0].type, 'buy');
+  assert.ok(trade[0].count > 0);
+  assert.match(trade[0].reason, /-2605\.75/, 'the reason quotes the real net open-market flow');
+  assert.match(trade[0].reason, /2026-09-09T19:00:10-04:00/, 'the reason quotes EDGAR\'s acceptance instant');
+  assert.deepEqual(s.decide(ctx(0.1, { ...signal, ceoFilings: 1 })), [], 'a CEO-titled filing inside the window → stand aside');
+  assert.deepEqual(s.decide(ctx(0.5, signal)), [], 'a YES ask above the longshot band → no trade');
+  assert.deepEqual(s.decide(ctx(0.01, signal)), [], 'a YES ask below the band → no trade');
+  const held = { cash: 100000, positions: new Map([['TESLACEOCHANGE-26', { ticker: 'TESLACEOCHANGE-26', count: 10 }]]) };
+  assert.deepEqual(s.decide({ ...ctx(0.1, signal), portfolio: held }), [], 'once per market');
+});
+
+test('130. the desk reads the SAME Form 4 archive through the shared signal hook, and abstains honestly when it is dark', async () => {
+  const { DESK_STRATEGIES } = await import('../src/desk-strategies.js');
+  const { buildDeskSignalsAsync, DESK_LIMITS } = await import('../src/live-desk.js');
+  const { DESK_DATA } = await import('../src/desk-data.js');
+  const { DESK_RESERVED_USERNAMES } = await import('../src/competition-memory.js');
+
+  const s = DESK_STRATEGIES.find((x) => x.username === 'LiveInsider_Form4Flow');
+  assert.ok(s, 'the desk entrant exists');
+  assert.ok(DESK_RESERVED_USERNAMES.includes('LiveInsider_Form4Flow'), 'its username is reserved against the roster');
+  assert.ok(/view\.signals && view\.signals\.form4/.test(String(s.decide)), 'it reads the shared desk signal hook');
+  assert.match(s.thesis, /private company/i, 'the card states the OpenAI exclusion');
+  assert.match(s.rules.join(' '), /never assumed|no quote → no trade/i);
+
+  // The desk signal hook exposes the Form 4 provider alongside the others.
+  const sig = await buildDeskSignalsAsync(Date.parse(DESK_DATA.generatedAt));
+  assert.ok(sig.form4, 'the desk builds a form4 provider');
+  assert.equal(sig.form4.available, false, 'dark until the workflow has captured');
+  assert.match(sig.form4.source, /SEC EDGAR/i);
+  assert.equal(sig.form4.coverage.present, false);
+  assert.deepEqual(sig.form4.series, []);
+  const dark = s.decide({ asOfMs: Date.parse(DESK_DATA.generatedAt), cash: 100000, markets: [], signals: sig });
+  assert.deepEqual(dark, [], 'a dark archive places nothing at all');
+  assert.deepEqual(s.decide({ asOfMs: Date.parse(DESK_DATA.generatedAt), cash: 100000, markets: [], signals: {} }), [], 'no provider at all → nothing');
+
+  // The desk universe still reserves slots for the CEO series this entry trades.
+  const reserves = (DESK_DATA.rule.seriesReserves || []).map((r) => r.prefix);
+  for (const p of ['TESLACEOCHANGE', 'KXOPENAICEOCHANGE', 'JPMCEOCHANGE']) {
+    assert.ok(reserves.includes(p), `${p} has reserved desk slots`);
+  }
+  assert.ok(DESK_LIMITS.minContracts > 0);
+
+  // The price-only control keeps saying what it is, and now points at the entry
+  // that really reads the archive (stale prose is irregularity #52's class).
+  const control = DESK_STRATEGIES.find((x) => x.username === 'LiveInsider_FilingFader');
+  assert.match(control.source, /NOT USED by this entry/);
+  assert.match(control.source, /now EXISTS/);
+  assert.match(control.source, /LiveInsider_Form4Flow/);
+  assert.doesNotMatch(control.thesis, /archive still absent|still absent/i, 'no stale blocker wording left');
 });

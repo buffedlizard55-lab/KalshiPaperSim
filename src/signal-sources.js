@@ -107,17 +107,17 @@ export const SIGNAL_SOURCES = Object.freeze([
       live: 'https://buffedlizard55-lab.github.io/Insider-trades/',
       repo: 'https://github.com/buffedlizard55-lab/Insider-trades'
     },
-    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    status: SIGNAL_SOURCE_STATUS.LIVE_SIGNAL,
     whatItIs: 'SEC EDGAR Form 4 insider-transaction dashboard and Python analysis toolkit that backtests insider signal rules against local verified filing data.',
-    verifiableClaim: 'Form 4 filings are official (SEC EDGAR, sec.gov) and carry exact filing timestamps, so a point-in-time archive is possible in principle.',
+    verifiableClaim: 'Form 4 filings are official (SEC EDGAR, sec.gov) and carry EDGAR\'s exact acceptance instant, so a point-in-time archive is not only possible but can answer a PAST bar — a filing does not decay.',
     kalshiMarketClass:
       'Company-event markets (e.g. a CEO-departure or company-KPI market on Kalshi). THIS repository now holds FDA (KXFDA*) and CEO-change (TESLACEOCHANGE / JPMCEOCHANGE / KXOPENAICEOCHANGE) series with captured bars AND Live Desk ladders — those are company-event markets. The remaining gap is the Form 4 archive, not the Kalshi leg.',
     testableHere: false,
     howTested:
-      'NOT tested as an insider signal. Two entries carry its name — InsiderFiling_Drift (daily replay) and LiveInsider_FilingFader (Live Desk) — but both are PRICE-ONLY rules on the exchange\'s own CEO-change / company-event bars and ladders: no Form 4 filing, transaction or holding is read anywhere in this repository. They measure the favourite–longshot fade on those contracts; the merged 2026-09-19 wording ("fades unconfirmed executive departures when insiders hold equity") described data the code does not have and was corrected (irregularity #53).',
+      'CLOSED 2026-09-21 (ROADMAP Next #3(b)). This repository now archives SEC Form 4 filings point-in-time from EDGAR itself: scripts/archive-form4-signals.mjs reads the browse-edgar Atom list for each tracked issuer, opens each new filing\'s own index.json, and parses the ownership XML with the SEC\'s documented element names into data/form4-signals/companies/<SYMBOL>.json (one record per accession number, with EDGAR\'s acceptedAt AND this archive\'s first_seen_at kept apart). src/form4-signal-store.js answers "what did EDGAR hold at T", and two entries read it: InsiderFlow_Form4 (daily replay, ctx.signal) and LiveInsider_Form4Flow (Live Desk, view.signals.form4) — the first desk entrant that reads an external archive at all. The workflow .github/workflows/form4-signals.yml captures twice a day; the parser is tested against a REAL filing archived verbatim (Tesla accession 0001104659-26-106432, tests 127–130). The two older entries keep their price-only cards and now serve as the CONTROL the gated fade is compared against.',
     blockedBy:
-      'Unchanged since 2026-09-18: no point-in-time SEC Form 4 archive exists here. The honest test is to archive filings daily with capture timestamps (EDGAR full-text search / submissions API, both official), then require a filing at or before the decision bar before either entry may trade — the same pattern as the NWS, Drugs@FDA and MLB archives. Until then nothing from Insider-trades enters a result.',
-    strategyUsername: ['InsiderFiling_Drift', 'LiveInsider_FilingFader']
+      'The archive is dark until the form4-signals workflow runs (sec.gov is not reachable from the build sandbox — irregularity #4), so both entries currently abstain everywhere and report why. Two stated limits travel with every number: (1) EDGAR\'s feed page size (40 entries per issuer per run) bounds how far back one capture reaches — months for Tesla, weeks for a filer with many insiders; (2) KXOPENAICEOCHANGE can NEVER receive this signal, because OpenAI is a private company with no Section 16 filers (irregularity #57). The causal link between a Section 16 filing and a CEO change is also weak and unproven, and both cards say so: the entries measure whether GATING the longshot fade on real filing evidence changes its outcome.',
+    strategyUsername: ['InsiderFlow_Form4', 'LiveInsider_Form4Flow', 'InsiderFiling_Drift', 'LiveInsider_FilingFader']
   },
   {
     id: 'S03',

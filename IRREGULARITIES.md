@@ -1,8 +1,8 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-21 by `scripts/render-docs.js` from `src/verification-data.js`.
-**55 irregularities** flagged during this build: 17 high, 25 medium,
-11 low, 1 informational.
+**58 irregularities** flagged during this build: 18 high, 26 medium,
+11 low, 2 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
 about it**, and **what you should do**. Nothing here is speculation: each item was found by comparing an
@@ -325,6 +325,25 @@ assumption against an official document or a real API response.
 - PR #17 as merged: <https://github.com/buffedlizard55-lab/KalshiPaperSim/pull/17>
 - The corrected entries (src/strategies.js, src/desk-strategies.js) and the record-derived buildUpcomingTrades (src/live-desk.js): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
 - R16 / R17 re-labelled UNATTRIBUTED in src/research-sources.js: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/research-sources.js>
+
+---
+
+## #56 — The test suite was RED ON MAIN and had been for at least one merge: a syntax error stopped every test from running, and a second test asserted on a Promise
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That `npm test` passing 122/122 (as the previous session's ROADMAP claimed) still described main, and that a merged PR's new tests had been executed at least once before the merge. |
+| **Verified truth** | At commit e86cb9b, `node --test test/simulation.test.js` failed at import time with "SyntaxError: Unexpected reserved word" at line 3672: test 100 ("settlement pays the exchange's own result…") awaited `runDeskSession(...)` inside a non-async `() => {}` callback. A syntax error kills the whole file, so the runner reported ONE failed test and executed NONE of the 134. Making the callback async exposed a second defect: test 118 called the async `buildDeskReport(...)` without `await`, so `assert.ok(report.ok)` tested a Promise (undefined) and failed with "desk report builds cleanly" — the same call awaited returns 84 records and passes. Both came in with PR #17 (irregularity #53 already covers its prose). No shipped number depended on either test — but a suite that cannot parse is a suite that verifies nothing, and every claim of "122/122 green" made after that merge was unverifiable. |
+| **What the code does** | Test 100's callback is now `async () => {}`; test 118 awaits buildDeskReport() and carries a comment explaining that the un-awaited call asserted on a Promise. The suite ran 134/134 green after the two fixes, before this session's four Form 4 tests were added. |
+| **What you should do** | Treat any claim of a green suite as unverified unless `npm test` was run in that session. If a future merge adds a test, the merge itself must show the runner output — a suite that cannot parse reports one failure and verifies nothing. |
+
+**Evidence**
+
+- The failing run at the branch point — `node --test test/simulation.test.js at e86cb9b → "SyntaxError: Unexpected reserved word" at test/simulation.test.js:3672; # tests 1, # fail 1, nothing executed`
+- test/simulation.test.js (tests 100 and 118): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js>
+- The awaited call, verified in isolation — `await buildDeskReport({data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null}) → ok, 84 records`
 
 ---
 
@@ -783,6 +802,26 @@ assumption against an official document or a real API response.
 
 ---
 
+## #58 — Two source behaviours could not be verified from this sandbox: EDGAR's Atom filters are unreliable, and the ESPN scoreboard shape was never retrieved
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That a documented query parameter does what it says (EDGAR's `type=4`, `count=5`), and that every endpoint named in the ROADMAP could be fetched and read from the working environment. |
+| **Verified truth** | (1) EDGAR: the same browse-edgar Atom query returned form 4 rows for CIK 0001318605 but 424B2 rows for CIK 0000019617, and returned 10 entries for both despite count=5 — so the feed's filters cannot be trusted. The archive parses every entry's form type, keeps only form 4, and publishes `formsSeen` per issuer in the run report so an ignored filter is visible. (2) ESPN: the injuries endpoint WAS verified live (GET https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/injuries → {timestamp, status, season, injuries:[{id, displayName, injuries:[{id, longComment, shortComment, status, date, athlete:{firstName, lastName, displayName, shortName, position:{abbreviation}, team:{id, uid, slug, name, abbreviation, displayName}}}]}]}), and the scoreboard envelope was verified for NCAA men's basketball ({leagues[], groups, events[], provider, eventsDate{date, seasonType}}), but the per-EVENT scoreboard structure (competitions[].competitors[].score, status.type.state/clock) could not be retrieved — the fetch tool repeatedly rewrote that request to an unreachable proxy URL. No scoreboard parser was written from memory: shipping one would have been exactly the guess the honesty contract forbids. |
+| **What the code does** | The Form 4 archive parses every feed entry's form type, keeps only form 4, and publishes formsSeen per issuer in data/form4-signals/_form4-last-run.json; a form the archive did not expect is visible, never silently dropped. NO ESPN scoreboard parser was written: the injuries half (verified) and the scoreboard half (not verified) are recorded in ROADMAP "Next #1" with the exact verified JSON paths, so the next session builds on evidence instead of re-deriving the shape from memory. |
+| **What you should do** | Before shipping an ESPN archive, capture one real scoreboard response from a runner with egress and keep it as a labelled fixture the parser is tested against — the same discipline that produced data/form4-signals/fixtures/ and data/mlb-signals. Do not write the parser first. |
+
+**Evidence**
+
+- EDGAR Atom feed, Tesla (type=4 → 10 form-4 rows): <https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=4&dateb=&owner=include&count=5&output=atom>
+- The SAME query for JPMorgan (type=4 → 10 rows of form 424B2): <https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=00019617&type=4&dateb=&owner=include&count=5&output=atom> — `the filter is ignored; count=5 returned 10 entries in both cases`
+- ESPN public injuries JSON, verified live 2026-09-21: <https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/injuries>
+- ESPN scoreboard envelope, verified live 2026-09-21 (NCAA men's basketball, empty events[]): <https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260920>
+
+---
+
 ## #9 — Two different status vocabularies for the same concept
 
 **Severity:** `LOW`
@@ -1013,4 +1052,22 @@ assumption against an official document or a real API response.
 
 - .gitignore (the two new entries): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/.gitignore>
 - The first MLB capture run, whose commit carried mlb-signals.log: <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35491621248>
+
+---
+
+## #57 — One tracked CEO-change contract can NEVER receive an insider signal: OpenAI is a private company, so EDGAR holds no Form 4 for it
+
+**Severity:** `INFO`
+
+| | |
+| --- | --- |
+| **We assumed** | That every tracked company-event contract maps to an SEC filer, because the other four (Tesla ×2, JPMorgan, Apple) do. |
+| **Verified truth** | KXOPENAICEOCHANGE-26 asks "If OpenAI's CEO (including an interim CEO) changes by Dec 31, 2026…". Section 16 applies to issuers with a class of equity securities registered under the Exchange Act; OpenAI is private, has no ticker and no CIK, so there is no Form 4 population to archive and no honest insider signal for that contract. It is recorded in EXCLUDED_ISSUERS with this reason rather than left as a silent gap, and both the roster entry and the desk entrant say so on their cards: for that ticker the signal is null, the trade is skipped, and the skip reason is published by form4JoinReport() / the desk coverage row. |
+| **What the code does** | KXOPENAICEOCHANGE is listed in EXCLUDED_ISSUERS with this reason, published in the trigger file, on both strategy cards, and by form4JoinReport() as SERIES_NOT_TRACKED_BY_FORM4_ARCHIVE. Neither entry trades it and neither pretends to have a signal for it. |
+| **What you should do** | Nothing to fix — this is a property of the market. If Kalshi lists a company-event contract on another private company, the same rule applies: no EDGAR filer, no Form 4 signal, abstain with the reason published. |
+
+**Evidence**
+
+- The contract's own rules_primary in the store — `data/history/KXOPENAICEOCHANGE-26.json → "If OpenAI's CEO (including an interim CEO) changes by Dec 31, 2026, then the market resolves to Yes." (status active, 14 captured ladders, no EDGAR filer)`
+- EXCLUDED_ISSUERS, where the exclusion and its reason live: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/scripts/archive-form4-signals.mjs>
 
