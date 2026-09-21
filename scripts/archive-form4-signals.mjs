@@ -127,11 +127,23 @@ const ARCHIVES_BASE = 'https://www.sec.gov/Archives/edgar/data';
 const TERMS_URL = 'https://www.sec.gov/os/accessing-edgar-data';
 const SPEC_URL = 'https://www.sec.gov/info/edgar/ownershipxmltechspec-v3.pdf';
 /**
- * SEC fair-access: a declared User-Agent with contact information, and no more
+ * SEC fair-access: a DECLARED User-Agent with contact information, and no more
  * than 10 requests/second (https://www.sec.gov/os/accessing-edgar-data). This
  * job makes a handful of requests a day and sleeps between every one.
+ *
+ * SHAPE MATTERS. The first live run of this workflow (2026-09-21T04:52Z) was
+ * answered with **HTTP 403** on all three issuers (irregularity #59) while
+ * sending `KalshiPaperSim/1.0 (https://github.com/…; research contact: …)` —
+ * the same page this agent had retrieved successfully through a different
+ * client. EDGAR's own guidance states the format "Sample Company Name
+ * AdminContact@<sample company domain>", i.e. a name and a contact address,
+ * not a URL in parentheses, so the default below follows that shape exactly and
+ * can be overridden per-run with EDGAR_USER_AGENT. The agent string actually
+ * sent is recorded in the run report, and a non-2xx response now records its
+ * status, statusText and any rate-limit headers, so the next failure is
+ * diagnosable from the repository instead of guessed at.
  */
-const USER_AGENT = 'KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research contact: buffedlizard55-lab@users.noreply.github.com)';
+const USER_AGENT = process.env.EDGAR_USER_AGENT || 'KalshiPaperSim research buffedlizard55-lab@users.noreply.github.com';
 const REQUEST_PAUSE_MS = 250;
 /** Feed page size. 40 covers months of Section 16 activity for one issuer. */
 const FEED_COUNT = 40;
@@ -507,12 +519,26 @@ export function mergeFilings(store, { symbol, kalshiSeries, rulesQuote, cik, iss
  * NETWORK
  * ------------------------------------------------------------------ */
 
+/** The response facts worth keeping when a request is refused (diagnostics). */
+function refusalDetail(res, text) {
+  const keep = ['retry-after', 'x-ratelimit-limit', 'x-ratelimit-remaining', 'cf-ray', 'server', 'content-type'];
+  const headers = {};
+  for (const k of keep) {
+    const v = typeof res.headers?.get === 'function' ? res.headers.get(k) : null;
+    if (v) headers[k] = v;
+  }
+  return `HTTP ${res.status} ${res.statusText || ''} — headers ${JSON.stringify(headers)} — body head: ${String(text || '').replace(/\s+/g, ' ').slice(0, 200)}`;
+}
+
 async function fetchText(url, what, accept) {
   let lastError = null;
   for (let attempt = 1; attempt <= 3; attempt++) {
     let res;
     try {
-      res = await fetch(url, { headers: { 'User-Agent': USER_AGENT, Accept: accept || '*/*' }, signal: AbortSignal.timeout(30_000) });
+      res = await fetch(url, {
+        headers: { 'User-Agent': USER_AGENT, Accept: accept || '*/*', 'Accept-Encoding': 'identity' },
+        signal: AbortSignal.timeout(30_000)
+      });
     } catch (err) {
       const cause = err && err.cause ? ` (cause=${err.cause.code || err.cause.message || err.cause})` : '';
       lastError = `network: ${err && err.message ? err.message : String(err)}${cause}`;
@@ -524,7 +550,7 @@ async function fetchText(url, what, accept) {
     }
     const text = await res.text();
     if (!res.ok) {
-      lastError = `HTTP ${res.status} — body head: ${text.slice(0, 160)}`;
+      lastError = refusalDetail(res, text);
       if ((res.status === 403 || res.status === 429 || res.status >= 500) && attempt < 3) {
         await sleep(5_000 * attempt);
         continue;
@@ -543,7 +569,7 @@ async function fetchText(url, what, accept) {
 export async function captureNow({ issuers = TRACKED_ISSUERS, now = new Date(), log = console.log } = {}) {
   const capturedAt = now.toISOString();
   const requests = [];
-  const out = { capturedAt, issuers: [], failures: 0, requests };
+  const out = { capturedAt, userAgent: USER_AGENT, issuers: [], failures: 0, requests };
 
   for (const issuer of issuers) {
     const row = { symbol: issuer.symbol, kalshiSeries: issuer.kalshiSeries, filingsAdded: 0, filingsSeen: 0, formsSeen: {}, errors: [] };

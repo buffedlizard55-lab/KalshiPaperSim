@@ -1,5 +1,5 @@
 {
-  "request": 1,
+  "request": 2,
   "enabled": true,
   "note": "Commit a change to this file to request an immediate SEC Form 4 capture (.github/workflows/form4-signals.yml). It runs scripts/archive-form4-signals.mjs, which reads EDGAR's own Atom feed for each tracked issuer, opens each new filing's index.json, parses the ownership XML with the SEC's documented element names, and appends one record per accession number with EDGAR's acceptance instant. Bump `request` so the push is a real change.",
   "requested_at": "2026-09-21T04:40:00.000Z",

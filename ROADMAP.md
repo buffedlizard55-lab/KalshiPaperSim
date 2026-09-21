@@ -109,6 +109,14 @@ audit (#53), research-gap statuses (#52), the desk-season schedule fix (#54).
    **(c) The owner's MLB model's pre-game probability (S14)** captured before
    first pitch — the schedule half already exists in `data/mlb-signals/`.
 
+   *Known issue from the first live run (irregularity #59):* EDGAR answered the
+   2026-09-21T04:52Z capture with **HTTP 403** on all three issuers, so the store
+   is still dark and both entries abstain. The run failed loudly and committed
+   its reason; the default User-Agent now follows the exact shape EDGAR's own
+   guidance states, refused requests record their status/statusText/headers, and
+   the run report records the agent sent — so the next run either succeeds or
+   names the real cause (rate limit vs UA block vs IP block).
+
    *First check after merge:* `gh run list --workflow=form4-signals.yml` and
    `--workflow=mlb-signals.yml` (schedules only run on `main`); then
    `data/form4-signals/companies/TSLA.json` should hold filings back to
