@@ -563,13 +563,63 @@ async function fetchText(url, what, accept) {
 }
 
 /* ------------------------------------------------------------------ *
+ * EDGE PROBE — a diagnostic, never a data source
+ * ------------------------------------------------------------------ *
+ * The 2026-09-21T07:49Z run on main was refused by SEC's own CDN edge:
+ * `HTTP 403 Forbidden`, `server: AkamaiGHost`, `content-type: text/html`, and
+ * NO retry-after or rate-limit header. That was with the User-Agent shape
+ * EDGAR's guidance states, so the refusal is not about the agent string — an
+ * edge returning an XHTML error page is blocking the request before EDGAR's
+ * application sees it, and the likeliest cause is the runner's IP range.
+ *
+ * The open question is therefore narrower: is ALL of sec.gov unreachable from
+ * this runner, or only the browse-edgar CGI? The two hosts are probed on the
+ * SAME documented path, so a difference between them is about the host, not the
+ * path. NOTHING is parsed from either answer — only the status line and the
+ * edge's `server` header are recorded — and a refused probe changes no data and
+ * gates no strategy: the archive still fails loudly and both entries abstain.
+ */
+export const EDGE_PROBE_URLS = Object.freeze([
+  'https://www.sec.gov/files/company_tickers.json',
+  'https://data.sec.gov/files/company_tickers.json'
+]);
+
+export async function probeEdge(log = () => {}) {
+  const results = [];
+  for (const url of EDGE_PROBE_URLS) {
+    let entry;
+    try {
+      const res = await fetch(url, {
+        headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' },
+        signal: AbortSignal.timeout(20_000)
+      });
+      const text = await res.text();
+      entry = {
+        url,
+        host: new URL(url).host,
+        http_status: res.status,
+        statusText: res.statusText || '',
+        server: typeof res.headers?.get === 'function' ? (res.headers.get('server') || null) : null,
+        bytes: text.length
+      };
+    } catch (err) {
+      entry = { url, host: new URL(url).host, http_status: null, error: err && err.message ? err.message : String(err) };
+    }
+    log(`edge probe ${entry.host}: ${entry.http_status ?? entry.error}`);
+    results.push(entry);
+  }
+  return results;
+}
+
+/* ------------------------------------------------------------------ *
  * CLI
  * ------------------------------------------------------------------ */
 
-export async function captureNow({ issuers = TRACKED_ISSUERS, now = new Date(), log = console.log } = {}) {
+export async function captureNow({ issuers = TRACKED_ISSUERS, now = new Date(), log = console.log, probe = true } = {}) {
   const capturedAt = now.toISOString();
   const requests = [];
   const out = { capturedAt, userAgent: USER_AGENT, issuers: [], failures: 0, requests };
+  if (probe) out.edgeProbe = await probeEdge(log);
 
   for (const issuer of issuers) {
     const row = { symbol: issuer.symbol, kalshiSeries: issuer.kalshiSeries, filingsAdded: 0, filingsSeen: 0, formsSeen: {}, errors: [] };
