@@ -1,5 +1,5 @@
 {
- "capturedAt": "2026-09-21T07:49:27.398Z",
+ "capturedAt": "2026-09-21T07:58:11.220Z",
  "userAgent": "KalshiPaperSim research buffedlizard55-lab@users.noreply.github.com",
  "issuers": [
   {
@@ -53,6 +53,24 @@
   {
    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=AAPL&type=4&dateb=&owner=include&count=40&output=atom",
    "what": "atom-feed"
+  }
+ ],
+ "edgeProbe": [
+  {
+   "url": "https://www.sec.gov/files/company_tickers.json",
+   "host": "www.sec.gov",
+   "http_status": 403,
+   "statusText": "Forbidden",
+   "server": "AkamaiGHost",
+   "bytes": 1925
+  },
+  {
+   "url": "https://data.sec.gov/files/company_tickers.json",
+   "host": "data.sec.gov",
+   "http_status": 403,
+   "statusText": "Forbidden",
+   "server": "AkamaiGHost",
+   "bytes": 4815
   }
  ]
 }
