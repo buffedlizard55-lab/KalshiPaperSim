@@ -4802,6 +4802,22 @@ test('127. the Form 4 archive parses a REAL EDGAR ownership document strictly an
   assert.match(r.store.assumption, /acceptance instant/i);
   assert.equal(arch.EXCLUDED_ISSUERS[0].kalshiSeries[0], 'KXOPENAICEOCHANGE');
   assert.match(arch.EXCLUDED_ISSUERS[0].reason, /private company/i);
+
+  // (g) The refusal diagnostics that irregularity #59 depends on. The first live
+  // capture was answered HTTP 403 by SEC's CDN edge; the archive now records
+  // enough to say WHY, and probes both SEC hosts on the same documented path so
+  // "all of sec.gov blocks this runner" is distinguishable from "only
+  // browse-edgar does". Neither is a data source: both hosts are probed for a
+  // status line only, and nothing is parsed from the answer.
+  assert.equal(typeof arch.probeEdge, 'function');
+  assert.deepEqual([...arch.EDGE_PROBE_URLS].map((u) => new URL(u).host), ['www.sec.gov', 'data.sec.gov']);
+  assert.ok(arch.EDGE_PROBE_URLS.every((u) => u.endsWith('/files/company_tickers.json')), 'the same path on both hosts');
+  assert.match(arch.EDGE_PROBE_URLS[0], /^https:\/\//);
+  // The agent string is recorded in the run report so a future refusal can be
+  // compared against what was actually sent (it is overridable per run).
+  assert.match(String(process.env.EDGAR_USER_AGENT || ''), /^$/);
+  const { captureNow } = arch;
+  assert.equal(typeof captureNow, 'function');
 });
 
 test('128. the Form 4 store answers a past instant from EDGAR\'s OWN acceptance instant and never from a later capture', async () => {
