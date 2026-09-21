@@ -1,7 +1,7 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-21 by `scripts/render-docs.js` from `src/verification-data.js`.
-**58 irregularities** flagged during this build: 18 high, 26 medium,
+**59 irregularities** flagged during this build: 18 high, 27 medium,
 11 low, 2 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
@@ -819,6 +819,25 @@ assumption against an official document or a real API response.
 - The SAME query for JPMorgan (type=4 → 10 rows of form 424B2): <https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=00019617&type=4&dateb=&owner=include&count=5&output=atom> — `the filter is ignored; count=5 returned 10 entries in both cases`
 - ESPN public injuries JSON, verified live 2026-09-21: <https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/injuries>
 - ESPN scoreboard envelope, verified live 2026-09-21 (NCAA men's basketball, empty events[]): <https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260920>
+
+---
+
+## #59 — The first live Form 4 capture was refused by EDGAR with HTTP 403 — the same failure class as #50
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That a declared User-Agent with contact information was enough for EDGAR to answer an automated client, because the same browse-edgar Atom page had been retrieved successfully from the build sandbox earlier the same day. |
+| **Verified truth** | The workflow's first run (2026-09-21T04:52:48Z) was answered **HTTP 403** for all three issuers, with an XHTML error page in the body. The request that was refused carried User-Agent "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research contact: …)" — a URL in parentheses, whereas EDGAR's own guidance states the format "Sample Company Name AdminContact@<sample company domain>". The root cause is NOT yet proven: 403 from EDGAR can also mean rate limiting or an IP-range block on the runner, and the run report at the time kept only 160 characters of the body and no headers, so the reason could not be told from the repository. This is the exact pattern of irregularity #50, where an archive was designed and shipped against a source that had never been reached. |
+| **What the code does** | Nothing was invented: the run failed loudly, `failures: 3` is committed, no companies/*.json was written, and both strategies abstained everywhere with the reason published — the archive's honest-failure mode worked exactly as designed. Three changes: (1) the default User-Agent now follows EDGAR's stated shape exactly ("KalshiPaperSim research buffedlizard55-lab@users.noreply.github.com") and can be overridden with EDGAR_USER_AGENT; (2) a refused request now records its status, statusText and any retry-after / rate-limit headers, and the run report records the agent actually sent, so the NEXT failure is diagnosable from the repository; (3) the trigger file requests another run immediately after merge. The parser and the point-in-time store are unaffected — they are tested against a real archived filing (tests 127–129). |
+| **What you should do** | After merge, read data/form4-signals/_form4-last-run.json: if filingsSeen is still 0, the new diagnostics in `errors` name the reason (rate limit vs UA block vs IP block). If EDGAR keeps refusing the runner, the fallback is the documented submissions endpoint https://data.sec.gov/submissions/CIK##########.json — its JSON shape was NOT verified in this session (it returns NoSuchKey for /cgi-bin paths), so it must be verified and archived as a fixture before it is wired in, the way data/form4-signals/fixtures/ fixed the XML. |
+
+**Evidence**
+
+- The first live capture, committed by the workflow itself: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/data/form4-signals/_form4-last-run.json> — `"errors": ["EDGAR atom feed for TSLA: HTTP 403 — body head: <!DOCTYPE html …"] — filingsSeen 0, formsSeen {}, failures 3`
+- EDGAR's own fair-access guidance (the User-Agent format it states): <https://www.sec.gov/os/accessing-edgar-data> — `"Sample Company Name AdminContact@<sample company domain>"; no more than 10 requests per second`
+- The same endpoint, retrieved successfully from a different client 2026-09-21 (fact V114): <https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=4&dateb=&owner=include&count=5&output=atom>
 
 ---
 
