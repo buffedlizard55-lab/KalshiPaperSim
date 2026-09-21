@@ -909,9 +909,9 @@
     "occurrence_datetime": "2026-09-20T02:00:00Z",
     "open_interest_fp": "731.92",
     "open_time": "2026-09-17T00:07:00Z",
-    "previous_price_dollars": "0.8800",
-    "previous_yes_ask_dollars": "0.8900",
-    "previous_yes_bid_dollars": "0.7400",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -931,7 +931,7 @@
     "ticker": "KXNHLTOTAL-26SEP19DALSTL-2",
     "title": "Full Game: Over 1.5 goals scored",
     "updated_time": "2026-09-20T03:10:34.967286Z",
-    "volume_24h_fp": "694.97",
+    "volume_24h_fp": "0.00",
     "volume_fp": "731.92",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -940,9 +940,9 @@
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19DALSTL-2",
-  "market_captured_at": "2026-09-20T11:29:03.601Z",
+  "market_captured_at": "2026-09-21T12:53:48.107Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T11:29:04.124Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19DALSTL-2/candlesticks?start_ts=1789790401&end_ts=1789903743&period_interval=1440",
+  "last_ingested_at": "2026-09-21T12:53:48.662Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19DALSTL-2/candlesticks?start_ts=1789876801&end_ts=1789995228&period_interval=1440",
   "result": "yes"
 }

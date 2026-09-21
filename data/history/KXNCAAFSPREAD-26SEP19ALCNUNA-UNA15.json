@@ -102,6 +102,26 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.4400"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "2176.75",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -2009,9 +2029,9 @@
     "occurrence_datetime": "2026-09-20T02:00:00Z",
     "open_interest_fp": "2176.75",
     "open_time": "2026-09-16T04:06:00Z",
-    "previous_price_dollars": "0.4800",
-    "previous_yes_ask_dollars": "0.5000",
-    "previous_yes_bid_dollars": "0.4600",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2031,7 +2051,7 @@
     "ticker": "KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15",
     "title": "North Alabama wins by over 14.5 points",
     "updated_time": "2026-09-20T04:28:44.609753Z",
-    "volume_24h_fp": "1597.22",
+    "volume_24h_fp": "0.00",
     "volume_fp": "2423.37",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2040,9 +2060,9 @@
     "yes_sub_title": "North Alabama wins by over 14.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15",
-  "market_captured_at": "2026-09-20T11:28:26.913Z",
+  "market_captured_at": "2026-09-21T12:53:08.551Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T11:28:27.435Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/candlesticks?start_ts=1789790401&end_ts=1789903707&period_interval=1440",
+  "last_ingested_at": "2026-09-21T12:53:09.105Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/candlesticks?start_ts=1789876801&end_ts=1789995188&period_interval=1440",
   "result": "yes"
 }

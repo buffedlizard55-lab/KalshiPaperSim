@@ -1154,6 +1154,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T12:56:02.442Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26AUG28-B71.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1174,7 +1184,7 @@
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
-    "no_sub_title": "71\u00b0 to 72\u00b0",
+    "no_sub_title": "71° to 72°",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-08-29T14:00:00Z",
     "open_interest_fp": "14896.44",
@@ -1191,7 +1201,7 @@
       }
     ],
     "result": "no",
-    "rules_primary": "If the maximum temperature recorded at Seattle (CLISEA) for Aug 28, 2026, is between 71-72\u00b0 fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_primary": "If the maximum temperature recorded at Seattle (CLISEA) for Aug 28, 2026, is between 71-72° fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-08-29T14:13:31.097477Z",
@@ -1199,7 +1209,7 @@
     "status": "finalized",
     "strike_type": "between",
     "ticker": "KXHIGHTSEA-26AUG28-B71.5",
-    "title": "Will the maximum temperature be 71-72\u00b0 on Aug 28, 2026?",
+    "title": "Will the maximum temperature be 71-72° on Aug 28, 2026?",
     "updated_time": "2026-08-29T14:13:31.13488Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "24069.32",
@@ -1207,12 +1217,12 @@
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
-    "yes_sub_title": "71\u00b0 to 72\u00b0"
+    "yes_sub_title": "71° to 72°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26AUG28-B71.5",
-  "market_captured_at": "2026-09-20T11:31:06.577Z",
+  "market_captured_at": "2026-09-21T12:56:01.737Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T11:31:07.201Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26AUG28-B71.5/candlesticks?start_ts=1787994001&end_ts=1789903866&period_interval=60"
+  "last_ingested_at": "2026-09-21T12:56:02.390Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26AUG28-B71.5/candlesticks?start_ts=1787994001&end_ts=1789995362&period_interval=60"
 }

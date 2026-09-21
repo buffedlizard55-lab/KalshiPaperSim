@@ -778,6 +778,31 @@
         "low_dollars": "0.1000",
         "open_dollars": "0.1000"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "87882.00",
+      "price": {
+        "close_dollars": "0.1100",
+        "high_dollars": "0.1100",
+        "low_dollars": "0.1000",
+        "mean_dollars": "0.1089",
+        "open_dollars": "0.1000",
+        "previous_dollars": "0.1100"
+      },
+      "volume_fp": "446.82",
+      "yes_ask": {
+        "close_dollars": "0.1100",
+        "high_dollars": "0.1100",
+        "low_dollars": "0.1100",
+        "open_dollars": "0.1100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1000",
+        "high_dollars": "0.1000",
+        "low_dollars": "0.1000",
+        "open_dollars": "0.1000"
+      }
     }
   ],
   "books": [
@@ -4508,7 +4533,7 @@
     "no_sub_title": "Colorado Avalanche",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
-    "open_interest_fp": "87487.64",
+    "open_interest_fp": "87882.00",
     "open_time": "2026-06-15T03:40:00Z",
     "previous_price_dollars": "0.1100",
     "previous_yes_ask_dollars": "0.1100",
@@ -4522,25 +4547,25 @@
       }
     ],
     "result": "",
-    "rules_primary": "If Colorado Avalanche wins the 2026-27 Stanley Cup\u00ae Finals, then the market resolves to Yes.",
+    "rules_primary": "If Colorado Avalanche wins the 2026-27 Stanley Cup® Finals, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
     "settlement_timer_seconds": 300,
     "status": "active",
     "strike_type": "structured",
     "ticker": "KXNHL-27-COL",
-    "title": "Will Colorado Avalanche win the 2026-27 Stanley Cup\u00ae Finals?",
+    "title": "Will Colorado Avalanche win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.08098Z",
-    "volume_24h_fp": "589.11",
-    "volume_fp": "125320.19",
+    "volume_24h_fp": "446.82",
+    "volume_fp": "125767.01",
     "yes_ask_dollars": "0.1100",
-    "yes_ask_size_fp": "4673.41",
+    "yes_ask_size_fp": "3953.29",
     "yes_bid_dollars": "0.1000",
-    "yes_bid_size_fp": "344.90",
+    "yes_bid_size_fp": "298.98",
     "yes_sub_title": "Colorado Avalanche"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-COL",
-  "market_captured_at": "2026-09-20T11:28:52.431Z",
+  "market_captured_at": "2026-09-21T12:53:36.077Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:52.954Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-COL/candlesticks?start_ts=1789790401&end_ts=1789903732&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:36.631Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-COL/candlesticks?start_ts=1789876801&end_ts=1789995216&period_interval=1440"
 }

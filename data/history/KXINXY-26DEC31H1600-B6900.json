@@ -6480,6 +6480,31 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "189602.44",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0300",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "2201.00",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -9215,11 +9240,11 @@
     "no_bid_dollars": "0.9700",
     "no_sub_title": "6,800 to 6,999.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "187401.44",
+    "open_interest_fp": "189602.44",
     "open_time": "2025-12-23T15:00:00Z",
-    "previous_price_dollars": "0.0400",
-    "previous_yes_ask_dollars": "0.0400",
-    "previous_yes_bid_dollars": "0.0300",
+    "previous_price_dollars": "0.0300",
+    "previous_yes_ask_dollars": "0.0300",
+    "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -9238,17 +9263,17 @@
     "ticker": "KXINXY-26DEC31H1600-B6900",
     "title": "Will the S&P 500 be between 6800 and 6999.99 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:01.866905Z",
-    "volume_24h_fp": "1001.00",
-    "volume_fp": "295790.96",
+    "volume_24h_fp": "2201.00",
+    "volume_fp": "297991.96",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "191.00",
+    "yes_ask_size_fp": "15.24",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "3095.49",
+    "yes_bid_size_fp": "3126.69",
     "yes_sub_title": "6,800 to 6,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900",
-  "market_captured_at": "2026-09-20T11:27:20.610Z",
+  "market_captured_at": "2026-09-21T12:51:57.050Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:27:21.133Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B6900/candlesticks?start_ts=1789790401&end_ts=1789903640&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:51:57.606Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B6900/candlesticks?start_ts=1789876801&end_ts=1789995117&period_interval=1440"
 }

@@ -142,6 +142,31 @@
         "low_dollars": "0.9900",
         "open_dollars": "0.9900"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "18542.03",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "mean_dollars": "0.9900",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "1500.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -3370,17 +3395,17 @@
     "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
     "title": "Miami (FL) wins",
     "updated_time": "2026-09-13T01:07:00.401976Z",
-    "volume_24h_fp": "0.00",
-    "volume_fp": "18542.04",
+    "volume_24h_fp": "1500.00",
+    "volume_fp": "20042.04",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "459444.00",
+    "yes_bid_size_fp": "457944.00",
     "yes_sub_title": "Miami (FL)"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA",
-  "market_captured_at": "2026-09-20T11:28:22.106Z",
+  "market_captured_at": "2026-09-21T12:53:03.386Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:22.629Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/candlesticks?start_ts=1789790401&end_ts=1789903702&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:03.940Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/candlesticks?start_ts=1789876801&end_ts=1789995183&period_interval=1440"
 }

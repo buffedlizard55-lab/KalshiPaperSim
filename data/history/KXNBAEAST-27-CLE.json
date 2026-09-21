@@ -723,6 +723,31 @@
         "low_dollars": "0.0600",
         "open_dollars": "0.0600"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "76850.90",
+      "price": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "mean_dollars": "0.0700",
+        "open_dollars": "0.0700",
+        "previous_dollars": "0.0600"
+      },
+      "volume_fp": "70.00",
+      "yes_ask": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0600"
+      }
     }
   ],
   "books": [
@@ -3821,9 +3846,9 @@
     "no_sub_title": "Cleveland",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "76780.90",
+    "open_interest_fp": "76716.78",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.0700",
+    "previous_price_dollars": "0.0600",
     "previous_yes_ask_dollars": "0.0700",
     "previous_yes_bid_dollars": "0.0600",
     "price_level_structure": "linear_cent",
@@ -3843,17 +3868,17 @@
     "ticker": "KXNBAEAST-27-CLE",
     "title": "Will Cleveland win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "1.34",
-    "volume_fp": "110639.03",
+    "volume_24h_fp": "204.12",
+    "volume_fp": "110843.15",
     "yes_ask_dollars": "0.0700",
-    "yes_ask_size_fp": "1143.30",
+    "yes_ask_size_fp": "1073.30",
     "yes_bid_dollars": "0.0600",
-    "yes_bid_size_fp": "15146.11",
+    "yes_bid_size_fp": "16324.18",
     "yes_sub_title": "Cleveland"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-CLE",
-  "market_captured_at": "2026-09-20T11:28:01.347Z",
+  "market_captured_at": "2026-09-21T12:52:40.949Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:01.872Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-CLE/candlesticks?start_ts=1789790401&end_ts=1789903681&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:41.506Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-CLE/candlesticks?start_ts=1789876801&end_ts=1789995161&period_interval=1440"
 }

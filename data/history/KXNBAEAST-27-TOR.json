@@ -678,6 +678,31 @@
         "low_dollars": "0.0700",
         "open_dollars": "0.0700"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "94604.23",
+      "price": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0800",
+        "mean_dollars": "0.0800",
+        "open_dollars": "0.0800",
+        "previous_dollars": "0.0800"
+      },
+      "volume_fp": "63.00",
+      "yes_ask": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.0800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0700"
+      }
     }
   ],
   "books": [
@@ -3392,7 +3417,7 @@
     "no_sub_title": "Toronto",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "94541.23",
+    "open_interest_fp": "94604.23",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.0800",
     "previous_yes_ask_dollars": "0.0800",
@@ -3414,17 +3439,17 @@
     "ticker": "KXNBAEAST-27-TOR",
     "title": "Will Toronto win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "0.00",
-    "volume_fp": "117844.02",
+    "volume_24h_fp": "63.00",
+    "volume_fp": "117907.02",
     "yes_ask_dollars": "0.0800",
-    "yes_ask_size_fp": "22072.68",
+    "yes_ask_size_fp": "29144.68",
     "yes_bid_dollars": "0.0700",
     "yes_bid_size_fp": "3356.55",
     "yes_sub_title": "Toronto"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-TOR",
-  "market_captured_at": "2026-09-20T11:28:05.348Z",
+  "market_captured_at": "2026-09-21T12:52:45.251Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:05.871Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-TOR/candlesticks?start_ts=1789790401&end_ts=1789903685&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:45.806Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-TOR/candlesticks?start_ts=1789876801&end_ts=1789995165&period_interval=1440"
 }

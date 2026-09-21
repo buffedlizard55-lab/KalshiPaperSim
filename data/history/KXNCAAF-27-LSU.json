@@ -778,6 +778,31 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0800"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "2862787.34",
+      "price": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0417",
+        "open_dollars": "0.0500",
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "54749.65",
+      "yes_ask": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0400"
+      }
     }
   ],
   "books": [
@@ -6435,7 +6460,7 @@
     "expected_expiration_time": "2027-01-26T04:00:00Z",
     "expiration_time": "2027-02-23T04:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0500",
+    "last_price_dollars": "0.0400",
     "latest_expiration_time": "2027-02-23T04:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -6443,11 +6468,11 @@
     "no_bid_dollars": "0.9600",
     "no_sub_title": "LSU",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "2863431.21",
+    "open_interest_fp": "2858776.26",
     "open_time": "2026-01-21T22:00:00Z",
-    "previous_price_dollars": "0.0900",
-    "previous_yes_ask_dollars": "0.0900",
-    "previous_yes_bid_dollars": "0.0800",
+    "previous_price_dollars": "0.0500",
+    "previous_yes_ask_dollars": "0.0400",
+    "previous_yes_bid_dollars": "0.0300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -6465,17 +6490,17 @@
     "ticker": "KXNCAAF-27-LSU",
     "title": "Will LSU win the College Football Playoff National Championship?",
     "updated_time": "2026-09-15T15:39:56.084645Z",
-    "volume_24h_fp": "162404.43",
-    "volume_fp": "3441496.27",
+    "volume_24h_fp": "117430.50",
+    "volume_fp": "3558926.77",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "200.00",
+    "yes_ask_size_fp": "29043.79",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "33847.44",
+    "yes_bid_size_fp": "35897.50",
     "yes_sub_title": "LSU"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-LSU",
-  "market_captured_at": "2026-09-20T11:28:15.724Z",
+  "market_captured_at": "2026-09-21T12:52:56.431Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:16.246Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-LSU/candlesticks?start_ts=1789790401&end_ts=1789903695&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:56.984Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-LSU/candlesticks?start_ts=1789876801&end_ts=1789995176&period_interval=1440"
 }

@@ -693,6 +693,31 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "30487.59",
+      "price": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0200",
+        "mean_dollars": "0.0297",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "103.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -3375,9 +3400,9 @@
     "no_sub_title": "Golden State",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "30390.83",
+    "open_interest_fp": "30487.59",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.0300",
+    "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0300",
     "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
@@ -3397,17 +3422,17 @@
     "ticker": "KXNBAWEST-27-GSW",
     "title": "Will Golden State win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "35.13",
-    "volume_fp": "54936.19",
+    "volume_24h_fp": "103.00",
+    "volume_fp": "55039.19",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "6047.35",
+    "yes_ask_size_fp": "5971.47",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "9661.58",
+    "yes_bid_size_fp": "9758.46",
     "yes_sub_title": "Golden State"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-GSW",
-  "market_captured_at": "2026-09-20T11:28:11.738Z",
+  "market_captured_at": "2026-09-21T12:52:52.132Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:12.260Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-GSW/candlesticks?start_ts=1789790401&end_ts=1789903691&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:52.684Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-GSW/candlesticks?start_ts=1789876801&end_ts=1789995172&period_interval=1440"
 }

@@ -88,6 +88,26 @@
         "low_dollars": "0.2000",
         "open_dollars": "0.5300"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "1819.31",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -1996,9 +2016,9 @@
     "occurrence_datetime": "2026-09-20T03:00:00Z",
     "open_interest_fp": "1819.31",
     "open_time": "2026-09-16T04:06:00Z",
-    "previous_price_dollars": "0.5200",
-    "previous_yes_ask_dollars": "0.5500",
-    "previous_yes_bid_dollars": "0.5200",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2018,7 +2038,7 @@
     "ticker": "KXNCAAFTOTAL-26SEP19USDCP-57",
     "title": "Over 56.5 points scored",
     "updated_time": "2026-09-20T04:24:04.609301Z",
-    "volume_24h_fp": "715.43",
+    "volume_24h_fp": "0.00",
     "volume_fp": "1823.31",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2027,9 +2047,9 @@
     "yes_sub_title": "Over 56.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19USDCP-57",
-  "market_captured_at": "2026-09-20T11:28:31.698Z",
+  "market_captured_at": "2026-09-21T12:53:13.711Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T11:28:32.221Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19USDCP-57/candlesticks?start_ts=1789790401&end_ts=1789903711&period_interval=1440",
+  "last_ingested_at": "2026-09-21T12:53:14.266Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19USDCP-57/candlesticks?start_ts=1789876801&end_ts=1789995193&period_interval=1440",
   "result": "yes"
 }

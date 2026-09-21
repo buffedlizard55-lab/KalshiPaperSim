@@ -202,6 +202,31 @@
         "low_dollars": "0.9700",
         "open_dollars": "0.9700"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "27244.13",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "mean_dollars": "0.9900",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "1536.28",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -2348,11 +2373,11 @@
     "no_sub_title": "Texas Tech",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-26T20:00:00Z",
-    "open_interest_fp": "27259.41",
+    "open_interest_fp": "27244.13",
     "open_time": "2026-09-12T19:07:00Z",
-    "previous_price_dollars": "0.9800",
-    "previous_yes_ask_dollars": "0.9900",
-    "previous_yes_bid_dollars": "0.9800",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.9900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2370,17 +2395,17 @@
     "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
     "title": "Texas Tech wins",
     "updated_time": "2026-09-20T10:03:06.550041Z",
-    "volume_24h_fp": "17683.44",
-    "volume_fp": "27540.65",
+    "volume_24h_fp": "1515.28",
+    "volume_fp": "29065.93",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "12030.00",
+    "yes_bid_size_fp": "15463.72",
     "yes_sub_title": "Texas Tech"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU",
-  "market_captured_at": "2026-09-20T11:28:25.315Z",
+  "market_captured_at": "2026-09-21T12:53:06.831Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:25.838Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1789790401&end_ts=1789903705&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:07.385Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1789876801&end_ts=1789995187&period_interval=1440"
 }

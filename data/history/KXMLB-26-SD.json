@@ -778,6 +778,31 @@
         "low_dollars": "0.0390",
         "open_dollars": "0.0630"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "2532514.97",
+      "price": {
+        "close_dollars": "0.0560",
+        "high_dollars": "0.0990",
+        "low_dollars": "0.0420",
+        "mean_dollars": "0.0582",
+        "open_dollars": "0.0540",
+        "previous_dollars": "0.0560"
+      },
+      "volume_fp": "85581.85",
+      "yes_ask": {
+        "close_dollars": "0.0540",
+        "high_dollars": "0.0990",
+        "low_dollars": "0.0460",
+        "open_dollars": "0.0580"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0510",
+        "high_dollars": "0.0740",
+        "low_dollars": "0.0420",
+        "open_dollars": "0.0490"
+      }
     }
   ],
   "books": [
@@ -8575,19 +8600,19 @@
     "expected_expiration_time": "2026-11-01T04:00:00Z",
     "expiration_time": "2028-10-31T04:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0630",
+    "last_price_dollars": "0.0540",
     "latest_expiration_time": "2028-10-31T04:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9350",
-    "no_bid_dollars": "0.9290",
+    "no_ask_dollars": "0.9470",
+    "no_bid_dollars": "0.9460",
     "no_sub_title": "San Diego",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "2500248.03",
+    "open_interest_fp": "2549860.39",
     "open_time": "2025-12-17T15:00:00Z",
-    "previous_price_dollars": "0.0550",
-    "previous_yes_ask_dollars": "0.0640",
-    "previous_yes_bid_dollars": "0.0590",
+    "previous_price_dollars": "0.0630",
+    "previous_yes_ask_dollars": "0.0660",
+    "previous_yes_bid_dollars": "0.0630",
     "price_level_structure": "deci_cent",
     "price_ranges": [
       {
@@ -8605,17 +8630,17 @@
     "ticker": "KXMLB-26-SD",
     "title": "Will San Diego win the 2026 Pro Baseball Championship?",
     "updated_time": "2026-07-13T21:35:15.63415Z",
-    "volume_24h_fp": "78295.67",
-    "volume_fp": "3419089.66",
-    "yes_ask_dollars": "0.0710",
-    "yes_ask_size_fp": "49.15",
-    "yes_bid_dollars": "0.0650",
-    "yes_bid_size_fp": "266.00",
+    "volume_24h_fp": "76063.02",
+    "volume_fp": "3495152.68",
+    "yes_ask_dollars": "0.0540",
+    "yes_ask_size_fp": "11514.94",
+    "yes_bid_dollars": "0.0530",
+    "yes_bid_size_fp": "541.58",
     "yes_sub_title": "San Diego"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-SD",
-  "market_captured_at": "2026-09-20T11:27:31.811Z",
+  "market_captured_at": "2026-09-21T12:52:09.115Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:27:32.336Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SD/candlesticks?start_ts=1789790401&end_ts=1789903652&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:09.669Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SD/candlesticks?start_ts=1789876801&end_ts=1789995129&period_interval=1440"
 }

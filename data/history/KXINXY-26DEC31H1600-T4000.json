@@ -6011,6 +6011,26 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "410629.92",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -8096,17 +8116,17 @@
     "ticker": "KXINXY-26DEC31H1600-T4000",
     "title": "Will the S&P 500 be below 4000 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:00.416868Z",
-    "volume_24h_fp": "9.35",
+    "volume_24h_fp": "0.00",
     "volume_fp": "454973.68",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "38894.70",
+    "yes_ask_size_fp": "40894.70",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "3,999.99 or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-T4000",
-  "market_captured_at": "2026-09-20T11:27:27.819Z",
+  "market_captured_at": "2026-09-21T12:52:04.807Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:27:28.342Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1789790401&end_ts=1789903648&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:05.360Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1789876801&end_ts=1789995125&period_interval=1440"
 }

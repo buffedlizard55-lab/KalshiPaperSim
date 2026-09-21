@@ -778,6 +778,31 @@
         "low_dollars": "0.2100",
         "open_dollars": "0.2100"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "433134.49",
+      "price": {
+        "close_dollars": "0.2400",
+        "high_dollars": "0.2400",
+        "low_dollars": "0.2000",
+        "mean_dollars": "0.2313",
+        "open_dollars": "0.2300",
+        "previous_dollars": "0.2300"
+      },
+      "volume_fp": "8167.11",
+      "yes_ask": {
+        "close_dollars": "0.2400",
+        "high_dollars": "0.2400",
+        "low_dollars": "0.2100",
+        "open_dollars": "0.2300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2100",
+        "high_dollars": "0.2200",
+        "low_dollars": "0.2000",
+        "open_dollars": "0.2200"
+      }
     }
   ],
   "books": [
@@ -5831,19 +5856,19 @@
     "expected_expiration_time": "2027-02-08T15:00:00Z",
     "expiration_time": "2027-02-22T15:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.2000",
+    "last_price_dollars": "0.2400",
     "latest_expiration_time": "2027-02-22T15:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.8000",
-    "no_bid_dollars": "0.7900",
+    "no_ask_dollars": "0.7800",
+    "no_bid_dollars": "0.7600",
     "no_sub_title": "Buffalo",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "427958.53",
+    "open_interest_fp": "434531.64",
     "open_time": "2026-02-07T15:00:00Z",
-    "previous_price_dollars": "0.2300",
-    "previous_yes_ask_dollars": "0.2200",
-    "previous_yes_bid_dollars": "0.2100",
+    "previous_price_dollars": "0.2100",
+    "previous_yes_ask_dollars": "0.2100",
+    "previous_yes_bid_dollars": "0.2000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5861,17 +5886,17 @@
     "ticker": "KXNFLAFCCHAMP-27-BUF",
     "title": "Will Buffalo win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "13895.35",
-    "volume_fp": "628204.65",
-    "yes_ask_dollars": "0.2100",
-    "yes_ask_size_fp": "1905.64",
-    "yes_bid_dollars": "0.2000",
-    "yes_bid_size_fp": "1317.28",
+    "volume_24h_fp": "8404.19",
+    "volume_fp": "636617.86",
+    "yes_ask_dollars": "0.2400",
+    "yes_ask_size_fp": "23311.30",
+    "yes_bid_dollars": "0.2200",
+    "yes_bid_size_fp": "573.04",
     "yes_sub_title": "Buffalo"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-BUF",
-  "market_captured_at": "2026-09-20T11:28:33.292Z",
+  "market_captured_at": "2026-09-21T12:53:15.429Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:33.816Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-BUF/candlesticks?start_ts=1789790401&end_ts=1789903713&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:15.985Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-BUF/candlesticks?start_ts=1789876801&end_ts=1789995195&period_interval=1440"
 }

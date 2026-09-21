@@ -77,6 +77,31 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "13535.30",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.3400",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0318",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "7827.84",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -2359,7 +2384,7 @@
   ],
   "market": {
     "can_close_early": true,
-    "close_time": "2026-09-22T20:05:00Z",
+    "close_time": "2026-09-20T21:27:47Z",
     "created_time": "2026-09-17T15:14:00.39165Z",
     "custom_strike": {
       "football_player": "2008fe4c-47b0-4cc2-9b74-10eb94a507fb",
@@ -2370,17 +2395,17 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-09-21T02:05:00Z",
     "expiration_time": "2026-09-22T20:05:00Z",
-    "expiration_value": "",
-    "last_price_dollars": "0.0200",
+    "expiration_value": "first_touchdown",
+    "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-22T20:05:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9900",
-    "no_bid_dollars": "0.9700",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Jack Bech",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-20T23:05:00Z",
-    "open_interest_fp": "8091.97",
+    "open_interest_fp": "13535.30",
     "open_time": "2026-09-17T15:19:00Z",
     "previous_price_dollars": "0.0300",
     "previous_yes_ask_dollars": "0.0300",
@@ -2394,26 +2419,29 @@
       }
     ],
     "primary_participant_key": "football_player",
-    "result": "",
+    "result": "no",
     "rules_primary": "If Jack Bech scores the first touchdown in Las Vegas vs Los Angeles C Pro Football game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to Jack Bech in the Las Vegas vs Los Angeles C professional football game originally scheduled for Sep 20, 2026. If Jack Bech is active but never takes a snap, the market settles to the fair market price before game start. Once Jack Bech takes at least one snap, even if nullified by penalty, the market settles based on touchdowns scored. If no touchdowns are scored in the game, the No Touchdown market resolves to Yes and all other player markets resolve to No.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
     "settlement_timer_seconds": 120,
-    "status": "active",
+    "settlement_ts": "2026-09-20T21:30:54.510702Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
     "strike_type": "structured",
     "ticker": "KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18",
     "title": "Jack Bech: 1st Touchdown",
-    "updated_time": "2026-09-17T15:19:00.170787Z",
-    "volume_24h_fp": "2737.57",
-    "volume_fp": "8091.97",
-    "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "1978.94",
-    "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "3700.00",
+    "updated_time": "2026-09-20T21:30:54.650935Z",
+    "volume_24h_fp": "5175.20",
+    "volume_fp": "13579.30",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Jack Bech"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18",
-  "market_captured_at": "2026-09-20T11:28:39.670Z",
-  "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:40.191Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18/candlesticks?start_ts=1789790401&end_ts=1789903719&period_interval=1440"
+  "market_captured_at": "2026-09-21T12:53:22.313Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-21T12:53:22.867Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18/candlesticks?start_ts=1789876801&end_ts=1789995202&period_interval=1440",
+  "result": "no"
 }

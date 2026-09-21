@@ -778,6 +778,31 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "2008805.17",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0397",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "32528.59",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -5495,7 +5520,7 @@
     "no_bid_dollars": "0.9600",
     "no_sub_title": "Oregon",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "1992558.40",
+    "open_interest_fp": "2011709.94",
     "open_time": "2026-01-21T22:00:00Z",
     "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0400",
@@ -5517,17 +5542,17 @@
     "ticker": "KXNCAAF-27-ORE",
     "title": "Will Oregon win the College Football Playoff National Championship?",
     "updated_time": "2026-09-15T15:39:56.076464Z",
-    "volume_24h_fp": "200295.07",
-    "volume_fp": "2870246.52",
+    "volume_24h_fp": "20307.07",
+    "volume_fp": "2890583.59",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "225686.64",
+    "yes_ask_size_fp": "211328.99",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "2053.32",
+    "yes_bid_size_fp": "5772.57",
     "yes_sub_title": "Oregon"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-ORE",
-  "market_captured_at": "2026-09-20T11:28:18.916Z",
+  "market_captured_at": "2026-09-21T12:52:59.869Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:19.440Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-ORE/candlesticks?start_ts=1789790401&end_ts=1789903699&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:00.509Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-ORE/candlesticks?start_ts=1789876801&end_ts=1789995180&period_interval=1440"
 }

@@ -1104,6 +1104,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T12:55:05.123Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26AUG22-B104.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1124,7 +1134,7 @@
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
-    "no_sub_title": "104\u00b0 to 105\u00b0",
+    "no_sub_title": "104° to 105°",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-08-23T14:00:00Z",
     "open_interest_fp": "22438.71",
@@ -1141,7 +1151,7 @@
       }
     ],
     "result": "no",
-    "rules_primary": "If the maximum temperature recorded at Austin (CLIAUS) for Aug 22, 2026, is between 104-105\u00b0 fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_primary": "If the maximum temperature recorded at Austin (CLIAUS) for Aug 22, 2026, is between 104-105° fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-08-23T12:09:37.033749Z",
@@ -1149,7 +1159,7 @@
     "status": "finalized",
     "strike_type": "between",
     "ticker": "KXHIGHAUS-26AUG22-B104.5",
-    "title": "Will the maximum temperature be 104-105\u00b0 on Aug 22, 2026?",
+    "title": "Will the maximum temperature be 104-105° on Aug 22, 2026?",
     "updated_time": "2026-08-23T12:09:37.075457Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "30092.37",
@@ -1157,12 +1167,12 @@
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
-    "yes_sub_title": "104\u00b0 to 105\u00b0"
+    "yes_sub_title": "104° to 105°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26AUG22-B104.5",
-  "market_captured_at": "2026-09-20T11:30:13.812Z",
+  "market_captured_at": "2026-09-21T12:55:04.419Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T11:30:14.437Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26AUG22-B104.5/candlesticks?start_ts=1787468401&end_ts=1789903814&period_interval=60"
+  "last_ingested_at": "2026-09-21T12:55:05.071Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26AUG22-B104.5/candlesticks?start_ts=1787468401&end_ts=1789995304&period_interval=60"
 }

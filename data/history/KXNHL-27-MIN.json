@@ -768,6 +768,31 @@
         "low_dollars": "0.0400",
         "open_dollars": "0.0400"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "78523.30",
+      "price": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0600",
+        "mean_dollars": "0.0689",
+        "open_dollars": "0.0600",
+        "previous_dollars": "0.0700"
+      },
+      "volume_fp": "539.44",
+      "yes_ask": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      }
     }
   ],
   "books": [
@@ -3745,7 +3770,7 @@
     "expected_expiration_time": "2027-07-01T14:00:00Z",
     "expiration_time": "2029-06-30T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0700",
+    "last_price_dollars": "0.0600",
     "latest_expiration_time": "2029-06-30T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -3754,9 +3779,9 @@
     "no_sub_title": "Minnesota Wild",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
-    "open_interest_fp": "78052.02",
+    "open_interest_fp": "78523.30",
     "open_time": "2026-06-15T03:40:00Z",
-    "previous_price_dollars": "0.0500",
+    "previous_price_dollars": "0.0700",
     "previous_yes_ask_dollars": "0.0600",
     "previous_yes_bid_dollars": "0.0500",
     "price_level_structure": "linear_cent",
@@ -3768,25 +3793,25 @@
       }
     ],
     "result": "",
-    "rules_primary": "If Minnesota Wild wins the 2026-27 Stanley Cup\u00ae Finals, then the market resolves to Yes.",
+    "rules_primary": "If Minnesota Wild wins the 2026-27 Stanley Cup® Finals, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
     "settlement_timer_seconds": 300,
     "status": "active",
     "strike_type": "structured",
     "ticker": "KXNHL-27-MIN",
-    "title": "Will Minnesota Wild win the 2026-27 Stanley Cup\u00ae Finals?",
+    "title": "Will Minnesota Wild win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.1147Z",
-    "volume_24h_fp": "1571.82",
-    "volume_fp": "94333.72",
+    "volume_24h_fp": "471.28",
+    "volume_fp": "94805.00",
     "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "2.29",
+    "yes_ask_size_fp": "171.99",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "4727.97",
+    "yes_bid_size_fp": "726.69",
     "yes_sub_title": "Minnesota Wild"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-MIN",
-  "market_captured_at": "2026-09-20T11:28:54.026Z",
+  "market_captured_at": "2026-09-21T12:53:37.796Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:54.550Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MIN/candlesticks?start_ts=1789790401&end_ts=1789903734&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:38.348Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MIN/candlesticks?start_ts=1789876801&end_ts=1789995218&period_interval=1440"
 }

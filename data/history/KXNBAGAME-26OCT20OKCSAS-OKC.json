@@ -777,6 +777,31 @@
         "low_dollars": "0.4300",
         "open_dollars": "0.4600"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "1909.45",
+      "price": {
+        "close_dollars": "0.5000",
+        "high_dollars": "0.5000",
+        "low_dollars": "0.4600",
+        "mean_dollars": "0.4844",
+        "open_dollars": "0.4700",
+        "previous_dollars": "0.4700"
+      },
+      "volume_fp": "228.74",
+      "yes_ask": {
+        "close_dollars": "0.5000",
+        "high_dollars": "0.5000",
+        "low_dollars": "0.4700",
+        "open_dollars": "0.4700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4700",
+        "high_dollars": "0.4700",
+        "low_dollars": "0.4500",
+        "open_dollars": "0.4500"
+      }
     }
   ],
   "books": [
@@ -5258,7 +5283,7 @@
     "expected_expiration_time": "2026-10-21T04:30:00Z",
     "expiration_time": "2026-10-23T01:30:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.4900",
+    "last_price_dollars": "0.4600",
     "latest_expiration_time": "2026-10-23T01:30:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -5267,9 +5292,9 @@
     "no_sub_title": "Oklahoma City",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-21T04:30:00Z",
-    "open_interest_fp": "1857.37",
+    "open_interest_fp": "1899.45",
     "open_time": "2026-08-20T15:28:00Z",
-    "previous_price_dollars": "0.4800",
+    "previous_price_dollars": "0.4900",
     "previous_yes_ask_dollars": "0.4900",
     "previous_yes_bid_dollars": "0.4600",
     "price_level_structure": "linear_cent",
@@ -5289,17 +5314,17 @@
     "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
     "title": "Oklahoma City wins",
     "updated_time": "2026-08-20T15:28:00.432079Z",
-    "volume_24h_fp": "283.34",
-    "volume_fp": "3334.55",
+    "volume_24h_fp": "182.73",
+    "volume_fp": "3517.28",
     "yes_ask_dollars": "0.4900",
-    "yes_ask_size_fp": "339.07",
+    "yes_ask_size_fp": "13.16",
     "yes_bid_dollars": "0.4600",
-    "yes_bid_size_fp": "94.78",
+    "yes_bid_size_fp": "100.00",
     "yes_sub_title": "Oklahoma City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
-  "market_captured_at": "2026-09-20T11:28:07.742Z",
+  "market_captured_at": "2026-09-21T12:52:47.832Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:08.264Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1789790401&end_ts=1789903687&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:48.387Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1789876801&end_ts=1789995168&period_interval=1440"
 }

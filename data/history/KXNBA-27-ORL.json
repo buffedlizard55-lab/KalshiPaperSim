@@ -693,6 +693,26 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "864932.74",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -3281,7 +3301,7 @@
     "occurrence_datetime": "2027-07-31T14:00:00Z",
     "open_interest_fp": "864932.74",
     "open_time": "2026-06-14T08:00:00Z",
-    "previous_price_dollars": "0.0100",
+    "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0200",
     "previous_yes_bid_dollars": "0.0100",
     "price_level_structure": "linear_cent",
@@ -3301,17 +3321,17 @@
     "ticker": "KXNBA-27-ORL",
     "title": "Will Orlando win the 2027 Pro Basketball Finals?",
     "updated_time": "2026-07-24T16:41:17.536752Z",
-    "volume_24h_fp": "233.95",
+    "volume_24h_fp": "0.00",
     "volume_fp": "1262180.75",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "496317.45",
+    "yes_ask_size_fp": "496327.45",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "11113.54",
+    "yes_bid_size_fp": "11114.54",
     "yes_sub_title": "Orlando"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-ORL",
-  "market_captured_at": "2026-09-20T11:27:59.751Z",
+  "market_captured_at": "2026-09-21T12:52:39.233Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:00.274Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-ORL/candlesticks?start_ts=1789790401&end_ts=1789903680&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:39.785Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-ORL/candlesticks?start_ts=1789876801&end_ts=1789995159&period_interval=1440"
 }

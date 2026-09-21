@@ -778,6 +778,31 @@
         "low_dollars": "0.1300",
         "open_dollars": "0.1300"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "409474.58",
+      "price": {
+        "close_dollars": "0.1400",
+        "high_dollars": "0.1400",
+        "low_dollars": "0.1100",
+        "mean_dollars": "0.1390",
+        "open_dollars": "0.1400",
+        "previous_dollars": "0.1400"
+      },
+      "volume_fp": "15623.68",
+      "yes_ask": {
+        "close_dollars": "0.1400",
+        "high_dollars": "0.1400",
+        "low_dollars": "0.1200",
+        "open_dollars": "0.1400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1300",
+        "high_dollars": "0.1300",
+        "low_dollars": "0.1100",
+        "open_dollars": "0.1300"
+      }
     }
   ],
   "books": [
@@ -4591,7 +4616,7 @@
     "no_bid_dollars": "0.8600",
     "no_sub_title": "Kansas City",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "395591.16",
+    "open_interest_fp": "416590.43",
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.1400",
     "previous_yes_ask_dollars": "0.1400",
@@ -4613,17 +4638,17 @@
     "ticker": "KXNFLAFCCHAMP-27-KC",
     "title": "Will Kansas City win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "2397.86",
-    "volume_fp": "460554.89",
+    "volume_24h_fp": "22517.35",
+    "volume_fp": "483079.24",
     "yes_ask_dollars": "0.1400",
-    "yes_ask_size_fp": "163007.16",
+    "yes_ask_size_fp": "5160.71",
     "yes_bid_dollars": "0.1300",
-    "yes_bid_size_fp": "12765.72",
+    "yes_bid_size_fp": "329.94",
     "yes_sub_title": "Kansas City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-KC",
-  "market_captured_at": "2026-09-20T11:28:36.481Z",
+  "market_captured_at": "2026-09-21T12:53:18.874Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:37.004Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-KC/candlesticks?start_ts=1789790401&end_ts=1789903716&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:19.429Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-KC/candlesticks?start_ts=1789876801&end_ts=1789995199&period_interval=1440"
 }

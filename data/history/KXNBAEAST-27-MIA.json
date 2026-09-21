@@ -778,6 +778,31 @@
         "low_dollars": "0.0700",
         "open_dollars": "0.0700"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "200214.35",
+      "price": {
+        "close_dollars": "0.0900",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0900",
+        "mean_dollars": "0.0900",
+        "open_dollars": "0.0900",
+        "previous_dollars": "0.0800"
+      },
+      "volume_fp": "88.10",
+      "yes_ask": {
+        "close_dollars": "0.0900",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0900",
+        "open_dollars": "0.0900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0800"
+      }
     }
   ],
   "books": [
@@ -4836,7 +4861,7 @@
     "no_sub_title": "Miami",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "200127.13",
+    "open_interest_fp": "200214.35",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.0900",
     "previous_yes_ask_dollars": "0.0900",
@@ -4858,17 +4883,17 @@
     "ticker": "KXNBAEAST-27-MIA",
     "title": "Will Miami win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "1046.39",
-    "volume_fp": "269804.13",
+    "volume_24h_fp": "55.89",
+    "volume_fp": "269891.35",
     "yes_ask_dollars": "0.0900",
-    "yes_ask_size_fp": "2422.34",
+    "yes_ask_size_fp": "2332.06",
     "yes_bid_dollars": "0.0800",
-    "yes_bid_size_fp": "58.34",
+    "yes_bid_size_fp": "14.62",
     "yes_sub_title": "Miami"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-MIA",
-  "market_captured_at": "2026-09-20T11:28:02.949Z",
+  "market_captured_at": "2026-09-21T12:52:42.670Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:03.472Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-MIA/candlesticks?start_ts=1789790401&end_ts=1789903683&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:43.225Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-MIA/candlesticks?start_ts=1789876801&end_ts=1789995162&period_interval=1440"
 }

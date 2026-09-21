@@ -778,6 +778,31 @@
         "low_dollars": "0.0400",
         "open_dollars": "0.0400"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "1388087.40",
+      "price": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0400",
+        "mean_dollars": "0.0482",
+        "open_dollars": "0.0500",
+        "previous_dollars": "0.0500"
+      },
+      "volume_fp": "8628.82",
+      "yes_ask": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      }
     }
   ],
   "books": [
@@ -5659,7 +5684,7 @@
     "expected_expiration_time": "2027-07-31T14:00:00Z",
     "expiration_time": "2029-07-30T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0400",
+    "last_price_dollars": "0.0500",
     "latest_expiration_time": "2029-07-30T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -5668,9 +5693,9 @@
     "no_sub_title": "Minnesota",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-31T14:00:00Z",
-    "open_interest_fp": "1384419.73",
+    "open_interest_fp": "1388852.82",
     "open_time": "2026-06-14T08:00:00Z",
-    "previous_price_dollars": "0.0500",
+    "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0500",
     "previous_yes_bid_dollars": "0.0400",
     "price_level_structure": "linear_cent",
@@ -5690,17 +5715,17 @@
     "ticker": "KXNBA-27-MIN",
     "title": "Will Minnesota win the 2027 Pro Basketball Finals?",
     "updated_time": "2026-07-24T16:41:17.536752Z",
-    "volume_24h_fp": "13300.49",
-    "volume_fp": "1912884.34",
+    "volume_24h_fp": "6940.49",
+    "volume_fp": "1919824.83",
     "yes_ask_dollars": "0.0500",
-    "yes_ask_size_fp": "1621.71",
+    "yes_ask_size_fp": "1033.90",
     "yes_bid_dollars": "0.0400",
-    "yes_bid_size_fp": "10326.40",
+    "yes_bid_size_fp": "13094.22",
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-MIN",
-  "market_captured_at": "2026-09-20T11:27:58.953Z",
+  "market_captured_at": "2026-09-21T12:52:38.373Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:27:59.477Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-MIN/candlesticks?start_ts=1789790401&end_ts=1789903679&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:38.926Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-MIN/candlesticks?start_ts=1789876801&end_ts=1789995158&period_interval=1440"
 }

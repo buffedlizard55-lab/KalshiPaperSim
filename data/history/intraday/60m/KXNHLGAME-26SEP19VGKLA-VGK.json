@@ -5105,6 +5105,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-21T12:57:53.328Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5131,9 +5141,9 @@
     "occurrence_datetime": "2026-09-20T04:00:00Z",
     "open_interest_fp": "19776.69",
     "open_time": "2026-09-17T00:07:00Z",
-    "previous_price_dollars": "0.5100",
-    "previous_yes_ask_dollars": "0.5100",
-    "previous_yes_bid_dollars": "0.4800",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5153,7 +5163,7 @@
     "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
     "title": "Vegas wins",
     "updated_time": "2026-09-20T04:32:34.609969Z",
-    "volume_24h_fp": "30410.72",
+    "volume_24h_fp": "0.00",
     "volume_fp": "30711.00",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -5162,9 +5172,9 @@
     "yes_sub_title": "Vegas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK",
-  "market_captured_at": "2026-09-20T11:32:40.913Z",
+  "market_captured_at": "2026-09-21T12:57:52.622Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T11:32:41.538Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19VGKLA-VGK/candlesticks?start_ts=1789873201&end_ts=1789903961&period_interval=60",
+  "last_ingested_at": "2026-09-21T12:57:53.276Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19VGKLA-VGK/candlesticks?start_ts=1789880401&end_ts=1789995472&period_interval=60",
   "result": "yes"
 }

@@ -778,6 +778,31 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "2245389.93",
+      "price": {
+        "close_dollars": "0.0010",
+        "high_dollars": "0.0010",
+        "low_dollars": "0.0010",
+        "mean_dollars": "0.0010",
+        "open_dollars": "0.0010",
+        "previous_dollars": "0.0010"
+      },
+      "volume_fp": "41596.66",
+      "yes_ask": {
+        "close_dollars": "0.0010",
+        "high_dollars": "0.0010",
+        "low_dollars": "0.0010",
+        "open_dollars": "0.0010"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -8531,7 +8556,7 @@
     "no_bid_dollars": "0.9990",
     "no_sub_title": "Seattle",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "2216761.59",
+    "open_interest_fp": "2254732.73",
     "open_time": "2025-12-17T15:00:00Z",
     "previous_price_dollars": "0.0010",
     "previous_yes_ask_dollars": "0.0010",
@@ -8553,17 +8578,17 @@
     "ticker": "KXMLB-26-SEA",
     "title": "Will Seattle win the 2026 Pro Baseball Championship?",
     "updated_time": "2026-07-13T21:31:32.511076Z",
-    "volume_24h_fp": "6504.23",
-    "volume_fp": "3396086.82",
+    "volume_24h_fp": "50895.46",
+    "volume_fp": "3447026.28",
     "yes_ask_dollars": "0.0010",
-    "yes_ask_size_fp": "93910.08",
+    "yes_ask_size_fp": "56327.58",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Seattle"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-SEA",
-  "market_captured_at": "2026-09-20T11:27:32.611Z",
+  "market_captured_at": "2026-09-21T12:52:09.974Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:27:33.135Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SEA/candlesticks?start_ts=1789790401&end_ts=1789903652&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:10.529Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SEA/candlesticks?start_ts=1789876801&end_ts=1789995130&period_interval=1440"
 }

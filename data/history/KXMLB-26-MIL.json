@@ -778,6 +778,31 @@
         "low_dollars": "0.1510",
         "open_dollars": "0.1540"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "2823990.23",
+      "price": {
+        "close_dollars": "0.1750",
+        "high_dollars": "0.1790",
+        "low_dollars": "0.1510",
+        "mean_dollars": "0.1637",
+        "open_dollars": "0.1740",
+        "previous_dollars": "0.1690"
+      },
+      "volume_fp": "72040.27",
+      "yes_ask": {
+        "close_dollars": "0.1770",
+        "high_dollars": "0.1790",
+        "low_dollars": "0.1540",
+        "open_dollars": "0.1740"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1680",
+        "high_dollars": "0.1760",
+        "low_dollars": "0.1510",
+        "open_dollars": "0.1690"
+      }
     }
   ],
   "books": [
@@ -10691,19 +10716,19 @@
     "expected_expiration_time": "2026-11-01T04:00:00Z",
     "expiration_time": "2028-10-31T04:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.1700",
+    "last_price_dollars": "0.1650",
     "latest_expiration_time": "2028-10-31T04:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.8370",
-    "no_bid_dollars": "0.8300",
+    "no_ask_dollars": "0.8400",
+    "no_bid_dollars": "0.8350",
     "no_sub_title": "Milwaukee",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "2828220.95",
+    "open_interest_fp": "2830937.84",
     "open_time": "2025-12-17T15:00:00Z",
-    "previous_price_dollars": "0.1560",
-    "previous_yes_ask_dollars": "0.1650",
-    "previous_yes_bid_dollars": "0.1570",
+    "previous_price_dollars": "0.1550",
+    "previous_yes_ask_dollars": "0.1640",
+    "previous_yes_bid_dollars": "0.1540",
     "price_level_structure": "deci_cent",
     "price_ranges": [
       {
@@ -10721,17 +10746,17 @@
     "ticker": "KXMLB-26-MIL",
     "title": "Will Milwaukee win the 2026 Pro Baseball Championship?",
     "updated_time": "2026-07-13T21:31:32.511076Z",
-    "volume_24h_fp": "44957.98",
-    "volume_fp": "4386840.61",
-    "yes_ask_dollars": "0.1700",
-    "yes_ask_size_fp": "2385.84",
-    "yes_bid_dollars": "0.1630",
-    "yes_bid_size_fp": "39.76",
+    "volume_24h_fp": "67906.95",
+    "volume_fp": "4455362.60",
+    "yes_ask_dollars": "0.1650",
+    "yes_ask_size_fp": "5000.68",
+    "yes_bid_dollars": "0.1600",
+    "yes_bid_size_fp": "134.28",
     "yes_sub_title": "Milwaukee"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL",
-  "market_captured_at": "2026-09-20T11:27:30.215Z",
+  "market_captured_at": "2026-09-21T12:52:07.394Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:27:30.738Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-MIL/candlesticks?start_ts=1789790401&end_ts=1789903650&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:07.948Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-MIL/candlesticks?start_ts=1789876801&end_ts=1789995127&period_interval=1440"
 }

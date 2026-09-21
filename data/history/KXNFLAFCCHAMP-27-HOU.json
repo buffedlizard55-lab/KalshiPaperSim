@@ -778,6 +778,31 @@
         "low_dollars": "0.0700",
         "open_dollars": "0.0800"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "559981.73",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0200",
+        "mean_dollars": "0.0632",
+        "open_dollars": "0.0900",
+        "previous_dollars": "0.0900"
+      },
+      "volume_fp": "5471.29",
+      "yes_ask": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0700"
+      }
     }
   ],
   "books": [
@@ -4999,15 +5024,15 @@
     "expected_expiration_time": "2027-02-08T15:00:00Z",
     "expiration_time": "2027-02-22T15:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0900",
+    "last_price_dollars": "0.0500",
     "latest_expiration_time": "2027-02-22T15:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9300",
-    "no_bid_dollars": "0.9100",
+    "no_ask_dollars": "0.9600",
+    "no_bid_dollars": "0.9500",
     "no_sub_title": "Houston",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "558211.45",
+    "open_interest_fp": "560049.29",
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.0900",
     "previous_yes_ask_dollars": "0.0900",
@@ -5029,17 +5054,17 @@
     "ticker": "KXNFLAFCCHAMP-27-HOU",
     "title": "Will Houston win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:31:32.511076Z",
-    "volume_24h_fp": "682.39",
-    "volume_fp": "819610.30",
-    "yes_ask_dollars": "0.0900",
-    "yes_ask_size_fp": "78161.59",
-    "yes_bid_dollars": "0.0700",
-    "yes_bid_size_fp": "483.35",
+    "volume_24h_fp": "4520.48",
+    "volume_fp": "825175.35",
+    "yes_ask_dollars": "0.0500",
+    "yes_ask_size_fp": "1882.60",
+    "yes_bid_dollars": "0.0400",
+    "yes_bid_size_fp": "10466.77",
     "yes_sub_title": "Houston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-HOU",
-  "market_captured_at": "2026-09-20T11:28:35.686Z",
+  "market_captured_at": "2026-09-21T12:53:18.012Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:36.207Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-HOU/candlesticks?start_ts=1789790401&end_ts=1789903715&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:18.566Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-HOU/candlesticks?start_ts=1789876801&end_ts=1789995198&period_interval=1440"
 }

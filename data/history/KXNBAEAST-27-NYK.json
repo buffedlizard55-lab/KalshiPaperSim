@@ -778,6 +778,31 @@
         "low_dollars": "0.2000",
         "open_dollars": "0.2000"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "138352.19",
+      "price": {
+        "close_dollars": "0.2100",
+        "high_dollars": "0.2100",
+        "low_dollars": "0.2000",
+        "mean_dollars": "0.2069",
+        "open_dollars": "0.2000",
+        "previous_dollars": "0.2000"
+      },
+      "volume_fp": "130.86",
+      "yes_ask": {
+        "close_dollars": "0.2100",
+        "high_dollars": "0.2100",
+        "low_dollars": "0.2100",
+        "open_dollars": "0.2100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2000",
+        "high_dollars": "0.2000",
+        "low_dollars": "0.2000",
+        "open_dollars": "0.2000"
+      }
     }
   ],
   "books": [
@@ -5107,7 +5132,7 @@
     "expected_expiration_time": "2027-06-30T14:00:00Z",
     "expiration_time": "2029-06-29T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.2000",
+    "last_price_dollars": "0.2100",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -5116,7 +5141,7 @@
     "no_sub_title": "New York",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "138261.95",
+    "open_interest_fp": "138352.19",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.2000",
     "previous_yes_ask_dollars": "0.2100",
@@ -5138,17 +5163,17 @@
     "ticker": "KXNBAEAST-27-NYK",
     "title": "Will New York win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "708.27",
-    "volume_fp": "196693.76",
+    "volume_24h_fp": "92.86",
+    "volume_fp": "196786.62",
     "yes_ask_dollars": "0.2100",
-    "yes_ask_size_fp": "20698.47",
+    "yes_ask_size_fp": "20838.42",
     "yes_bid_dollars": "0.2000",
-    "yes_bid_size_fp": "7479.55",
+    "yes_bid_size_fp": "7471.55",
     "yes_sub_title": "New York"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-NYK",
-  "market_captured_at": "2026-09-20T11:28:03.747Z",
+  "market_captured_at": "2026-09-21T12:52:43.530Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:04.270Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-NYK/candlesticks?start_ts=1789790401&end_ts=1789903683&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:44.085Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-NYK/candlesticks?start_ts=1789876801&end_ts=1789995163&period_interval=1440"
 }

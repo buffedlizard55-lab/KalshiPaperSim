@@ -259,7 +259,7 @@
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
-    "no_sub_title": "72\u00b0 to 73\u00b0",
+    "no_sub_title": "72° to 73°",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-18T14:00:00Z",
     "open_interest_fp": "10629.56",
@@ -276,7 +276,7 @@
       }
     ],
     "result": "no",
-    "rules_primary": "If the maximum temperature recorded at Seattle (CLISEA) for Sep 17, 2026, is between 72-73\u00b0 fahrenheit according to The Weather Company, then the market resolves to Yes.",
+    "rules_primary": "If the maximum temperature recorded at Seattle (CLISEA) for Sep 17, 2026, is between 72-73° fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-09-18T14:11:24.510268Z",
@@ -284,7 +284,7 @@
     "status": "finalized",
     "strike_type": "between",
     "ticker": "KXHIGHTSEA-26SEP17-B72.5",
-    "title": "Will the maximum temperature be 72-73\u00b0 on Sep 17, 2026?",
+    "title": "Will the maximum temperature be 72-73° on Sep 17, 2026?",
     "updated_time": "2026-09-18T14:11:24.637294Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "33739.62",
@@ -292,12 +292,12 @@
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
-    "yes_sub_title": "72\u00b0 to 73\u00b0"
+    "yes_sub_title": "72° to 73°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26SEP17-B72.5",
-  "market_captured_at": "2026-09-20T11:27:15.023Z",
+  "market_captured_at": "2026-09-21T12:51:51.035Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-20T11:27:15.545Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP17-B72.5/candlesticks?start_ts=1789790401&end_ts=1789903635&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:51:51.590Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP17-B72.5/candlesticks?start_ts=1789790401&end_ts=1789995111&period_interval=1440"
 }

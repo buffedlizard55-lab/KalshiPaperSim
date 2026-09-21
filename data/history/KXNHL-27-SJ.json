@@ -763,6 +763,31 @@
         "low_dollars": "0.0400",
         "open_dollars": "0.0400"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "151681.71",
+      "price": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "mean_dollars": "0.0500",
+        "open_dollars": "0.0500",
+        "previous_dollars": "0.0500"
+      },
+      "volume_fp": "561.44",
+      "yes_ask": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      }
     }
   ],
   "books": [
@@ -3937,7 +3962,7 @@
     "no_sub_title": "San Jose Sharks",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
-    "open_interest_fp": "151195.28",
+    "open_interest_fp": "151686.21",
     "open_time": "2026-06-15T03:40:00Z",
     "previous_price_dollars": "0.0500",
     "previous_yes_ask_dollars": "0.0500",
@@ -3951,25 +3976,25 @@
       }
     ],
     "result": "",
-    "rules_primary": "If San Jose Sharks wins the 2026-27 Stanley Cup\u00ae Finals, then the market resolves to Yes.",
+    "rules_primary": "If San Jose Sharks wins the 2026-27 Stanley Cup® Finals, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
     "settlement_timer_seconds": 300,
     "status": "active",
     "strike_type": "structured",
     "ticker": "KXNHL-27-SJ",
-    "title": "Will San Jose Sharks win the 2026-27 Stanley Cup\u00ae Finals?",
+    "title": "Will San Jose Sharks win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.15927Z",
-    "volume_24h_fp": "833.01",
-    "volume_fp": "158806.91",
+    "volume_24h_fp": "490.93",
+    "volume_fp": "159297.84",
     "yes_ask_dollars": "0.0500",
-    "yes_ask_size_fp": "5018.06",
+    "yes_ask_size_fp": "3623.41",
     "yes_bid_dollars": "0.0400",
-    "yes_bid_size_fp": "1856.12",
+    "yes_bid_size_fp": "2432.02",
     "yes_sub_title": "San Jose Sharks"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-SJ",
-  "market_captured_at": "2026-09-20T11:28:55.620Z",
+  "market_captured_at": "2026-09-21T12:53:39.510Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:56.150Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-SJ/candlesticks?start_ts=1789790401&end_ts=1789903735&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:40.064Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-SJ/candlesticks?start_ts=1789876801&end_ts=1789995219&period_interval=1440"
 }

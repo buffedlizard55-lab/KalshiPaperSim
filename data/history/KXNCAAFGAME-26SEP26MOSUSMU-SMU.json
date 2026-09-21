@@ -197,6 +197,31 @@
         "low_dollars": "0.9600",
         "open_dollars": "0.9600"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "14483.26",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9800",
+        "mean_dollars": "0.9850",
+        "open_dollars": "0.9800",
+        "previous_dollars": "0.9800"
+      },
+      "volume_fp": "9482.89",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9600",
+        "open_dollars": "0.9600"
+      }
     }
   ],
   "books": [
@@ -3702,7 +3727,7 @@
     "expected_expiration_time": "2026-09-26T20:00:00Z",
     "expiration_time": "2026-09-28T17:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.9800",
+    "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-28T17:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -3711,11 +3736,11 @@
     "no_sub_title": "SMU",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-26T20:00:00Z",
-    "open_interest_fp": "13431.81",
+    "open_interest_fp": "14483.26",
     "open_time": "2026-09-12T19:07:00Z",
-    "previous_price_dollars": "0.9700",
-    "previous_yes_ask_dollars": "0.9800",
-    "previous_yes_bid_dollars": "0.9600",
+    "previous_price_dollars": "0.9800",
+    "previous_yes_ask_dollars": "0.9900",
+    "previous_yes_bid_dollars": "0.9800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3733,17 +3758,17 @@
     "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
     "title": "SMU wins",
     "updated_time": "2026-09-20T10:03:28.1703Z",
-    "volume_24h_fp": "8402.26",
-    "volume_fp": "14087.28",
+    "volume_24h_fp": "1082.66",
+    "volume_fp": "15169.94",
     "yes_ask_dollars": "0.9900",
-    "yes_ask_size_fp": "11536.00",
+    "yes_ask_size_fp": "27450.55",
     "yes_bid_dollars": "0.9800",
-    "yes_bid_size_fp": "3770.73",
+    "yes_bid_size_fp": "6297.55",
     "yes_sub_title": "SMU"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU",
-  "market_captured_at": "2026-09-20T11:28:23.720Z",
+  "market_captured_at": "2026-09-21T12:53:05.103Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:24.242Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU/candlesticks?start_ts=1789790401&end_ts=1789903703&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:05.664Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU/candlesticks?start_ts=1789876801&end_ts=1789995185&period_interval=1440"
 }

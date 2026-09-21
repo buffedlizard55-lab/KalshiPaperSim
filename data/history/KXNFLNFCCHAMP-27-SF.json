@@ -778,6 +778,31 @@
         "low_dollars": "0.1200",
         "open_dollars": "0.1200"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "535903.12",
+      "price": {
+        "close_dollars": "0.1800",
+        "high_dollars": "0.2400",
+        "low_dollars": "0.1200",
+        "mean_dollars": "0.1780",
+        "open_dollars": "0.1300",
+        "previous_dollars": "0.1300"
+      },
+      "volume_fp": "31587.40",
+      "yes_ask": {
+        "close_dollars": "0.1800",
+        "high_dollars": "0.2500",
+        "low_dollars": "0.1300",
+        "open_dollars": "0.1300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1900",
+        "low_dollars": "0.1200",
+        "open_dollars": "0.1200"
+      }
     }
   ],
   "books": [
@@ -5539,15 +5564,15 @@
     "expected_expiration_time": "2027-02-08T15:00:00Z",
     "expiration_time": "2027-02-22T15:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.1300",
+    "last_price_dollars": "0.1600",
     "latest_expiration_time": "2027-02-22T15:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.8800",
-    "no_bid_dollars": "0.8700",
+    "no_ask_dollars": "0.8400",
+    "no_bid_dollars": "0.8300",
     "no_sub_title": "San Francisco",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "511769.19",
+    "open_interest_fp": "538858.16",
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.1300",
     "previous_yes_ask_dollars": "0.1300",
@@ -5569,17 +5594,17 @@
     "ticker": "KXNFLNFCCHAMP-27-SF",
     "title": "Will San Francisco win the Pro Football NFC Championship?",
     "updated_time": "2026-07-13T21:31:32.511076Z",
-    "volume_24h_fp": "10479.60",
-    "volume_fp": "645958.81",
-    "yes_ask_dollars": "0.1300",
-    "yes_ask_size_fp": "13142.86",
-    "yes_bid_dollars": "0.1200",
-    "yes_bid_size_fp": "15038.42",
+    "volume_24h_fp": "32321.37",
+    "volume_fp": "678352.68",
+    "yes_ask_dollars": "0.1700",
+    "yes_ask_size_fp": "24.59",
+    "yes_bid_dollars": "0.1600",
+    "yes_bid_size_fp": "125.08",
     "yes_sub_title": "San Francisco"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-SF",
-  "market_captured_at": "2026-09-20T11:28:45.255Z",
+  "market_captured_at": "2026-09-21T12:53:28.344Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:45.776Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-SF/candlesticks?start_ts=1789790401&end_ts=1789903725&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:28.897Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-SF/candlesticks?start_ts=1789876801&end_ts=1789995208&period_interval=1440"
 }

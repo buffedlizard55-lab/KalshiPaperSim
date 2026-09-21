@@ -202,6 +202,31 @@
         "low_dollars": "0.9300",
         "open_dollars": "0.9600"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "9816.17",
+      "price": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9600",
+        "mean_dollars": "0.9778",
+        "open_dollars": "0.9600",
+        "previous_dollars": "0.9600"
+      },
+      "volume_fp": "6514.09",
+      "yes_ask": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9600",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9600",
+        "open_dollars": "0.9600"
+      }
     }
   ],
   "books": [
@@ -3179,20 +3204,20 @@
     "expected_expiration_time": "2026-09-26T20:00:00Z",
     "expiration_time": "2026-09-28T17:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.9800",
+    "last_price_dollars": "0.9700",
     "latest_expiration_time": "2026-09-28T17:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.0300",
-    "no_bid_dollars": "0.0200",
+    "no_ask_dollars": "0.0400",
+    "no_bid_dollars": "0.0300",
     "no_sub_title": "Ohio St.",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-26T20:00:00Z",
-    "open_interest_fp": "4122.47",
+    "open_interest_fp": "9978.67",
     "open_time": "2026-09-12T19:07:00Z",
-    "previous_price_dollars": "0.9700",
-    "previous_yes_ask_dollars": "0.9700",
-    "previous_yes_bid_dollars": "0.9600",
+    "previous_price_dollars": "0.9800",
+    "previous_yes_ask_dollars": "0.9800",
+    "previous_yes_bid_dollars": "0.9700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3210,17 +3235,17 @@
     "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
     "title": "Ohio St. wins",
     "updated_time": "2026-09-19T16:03:47.567893Z",
-    "volume_24h_fp": "1166.47",
-    "volume_fp": "5545.98",
-    "yes_ask_dollars": "0.9800",
-    "yes_ask_size_fp": "54847.65",
-    "yes_bid_dollars": "0.9700",
-    "yes_bid_size_fp": "7.47",
+    "volume_24h_fp": "6419.70",
+    "volume_fp": "11996.23",
+    "yes_ask_dollars": "0.9700",
+    "yes_ask_size_fp": "359557.57",
+    "yes_bid_dollars": "0.9600",
+    "yes_bid_size_fp": "5688.16",
     "yes_sub_title": "Ohio St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU",
-  "market_captured_at": "2026-09-20T11:28:22.924Z",
+  "market_captured_at": "2026-09-21T12:53:04.244Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:23.446Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/candlesticks?start_ts=1789790401&end_ts=1789903703&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:04.797Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/candlesticks?start_ts=1789876801&end_ts=1789995184&period_interval=1440"
 }

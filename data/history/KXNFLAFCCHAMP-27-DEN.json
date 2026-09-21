@@ -778,6 +778,31 @@
         "low_dollars": "0.0700",
         "open_dollars": "0.0700"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "600669.03",
+      "price": {
+        "close_dollars": "0.0900",
+        "high_dollars": "0.1000",
+        "low_dollars": "0.0500",
+        "mean_dollars": "0.0787",
+        "open_dollars": "0.0700",
+        "previous_dollars": "0.0700"
+      },
+      "volume_fp": "4519.94",
+      "yes_ask": {
+        "close_dollars": "0.0900",
+        "high_dollars": "0.1000",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0700"
+      }
     }
   ],
   "books": [
@@ -5795,7 +5820,7 @@
     "no_bid_dollars": "0.9200",
     "no_sub_title": "Denver",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "597563.73",
+    "open_interest_fp": "601144.71",
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.0800",
     "previous_yes_ask_dollars": "0.0800",
@@ -5817,17 +5842,17 @@
     "ticker": "KXNFLAFCCHAMP-27-DEN",
     "title": "Will Denver win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "5340.49",
-    "volume_fp": "755473.76",
+    "volume_24h_fp": "4874.80",
+    "volume_fp": "760348.56",
     "yes_ask_dollars": "0.0800",
-    "yes_ask_size_fp": "43361.58",
+    "yes_ask_size_fp": "48.33",
     "yes_bid_dollars": "0.0700",
-    "yes_bid_size_fp": "16076.84",
+    "yes_bid_size_fp": "20392.79",
     "yes_sub_title": "Denver"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-DEN",
-  "market_captured_at": "2026-09-20T11:28:34.888Z",
+  "market_captured_at": "2026-09-21T12:53:17.152Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:28:35.411Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-DEN/candlesticks?start_ts=1789790401&end_ts=1789903715&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:53:17.706Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-DEN/candlesticks?start_ts=1789876801&end_ts=1789995197&period_interval=1440"
 }

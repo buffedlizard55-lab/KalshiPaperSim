@@ -5565,6 +5565,26 @@
         "low_dollars": "0.0500",
         "open_dollars": "0.0500"
       }
+    },
+    {
+      "end_period_ts": 1789963200,
+      "open_interest_fp": "83467.96",
+      "price": {
+        "previous_dollars": "0.0600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      }
     }
   ],
   "books": [
@@ -7915,7 +7935,7 @@
     "open_interest_fp": "83467.96",
     "open_time": "2025-12-23T15:00:00Z",
     "previous_price_dollars": "0.0600",
-    "previous_yes_ask_dollars": "0.0700",
+    "previous_yes_ask_dollars": "0.0600",
     "previous_yes_bid_dollars": "0.0500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -7938,14 +7958,14 @@
     "volume_24h_fp": "0.00",
     "volume_fp": "117621.56",
     "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "10.00",
+    "yes_ask_size_fp": "2326.32",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "27.87",
+    "yes_bid_size_fp": "100026.97",
     "yes_sub_title": "29,500 to 29,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B29750",
-  "market_captured_at": "2026-09-20T11:27:49.361Z",
+  "market_captured_at": "2026-09-21T12:52:28.043Z",
   "status": "active",
-  "last_ingested_at": "2026-09-20T11:27:49.884Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B29750/candlesticks?start_ts=1789790401&end_ts=1789903669&period_interval=1440"
+  "last_ingested_at": "2026-09-21T12:52:28.597Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B29750/candlesticks?start_ts=1789876801&end_ts=1789995148&period_interval=1440"
 }
