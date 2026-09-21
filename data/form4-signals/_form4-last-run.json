@@ -1,0 +1,57 @@
+{
+ "capturedAt": "2026-09-21T04:52:48.055Z",
+ "issuers": [
+  {
+   "symbol": "TSLA",
+   "kalshiSeries": [
+    "TESLACEOCHANGE",
+    "KXTESLACEOCHANGE"
+   ],
+   "filingsAdded": 0,
+   "filingsSeen": 0,
+   "formsSeen": {},
+   "errors": [
+    "EDGAR atom feed for TSLA: HTTP 403 — body head: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xh"
+   ]
+  },
+  {
+   "symbol": "JPM",
+   "kalshiSeries": [
+    "JPMCEOCHANGE"
+   ],
+   "filingsAdded": 0,
+   "filingsSeen": 0,
+   "formsSeen": {},
+   "errors": [
+    "EDGAR atom feed for JPM: HTTP 403 — body head: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xh"
+   ]
+  },
+  {
+   "symbol": "AAPL",
+   "kalshiSeries": [
+    "KXAAPLCEOCHANGE"
+   ],
+   "filingsAdded": 0,
+   "filingsSeen": 0,
+   "formsSeen": {},
+   "errors": [
+    "EDGAR atom feed for AAPL: HTTP 403 — body head: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xh"
+   ]
+  }
+ ],
+ "failures": 3,
+ "requests": [
+  {
+   "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=TSLA&type=4&dateb=&owner=include&count=40&output=atom",
+   "what": "atom-feed"
+  },
+  {
+   "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=JPM&type=4&dateb=&owner=include&count=40&output=atom",
+   "what": "atom-feed"
+  },
+  {
+   "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=AAPL&type=4&dateb=&owner=include&count=40&output=atom",
+   "what": "atom-feed"
+  }
+ ]
+}

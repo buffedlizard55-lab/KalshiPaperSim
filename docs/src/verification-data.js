@@ -916,6 +916,44 @@ export const VERIFIED_FACTS = Object.freeze([
     url: 'https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026',
     capturedAt: '2026-09-20',
     usedIn: 'src/mlb-signal-store.js parseMlbGameTicker() / splitTeamPair() / easternToUtcSeconds() / matchMlbGame(); data/mlb-signals/_teams.json; unit test "every finalized KXMLBGAME contract in the store joins the official game…"'
+  },
+  {
+    id: 'V114', group: 'Form 4 signals', status: 'CAPTURED',
+    fact: 'The insider signal source is SEC EDGAR itself — official, keyless, machine-readable — and all three of its steps were verified live on 2026-09-21: the Atom filing list, the filing\'s own index.json, and the Form 4 ownership XML',
+    value: 'GET https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=4&dateb=&owner=include&count=5&output=atom → HTTP 200, company "Tesla, Inc. (0001318605)", 10 <entry> rows all titled "4 - Statement of changes in beneficial ownership of securities", filed 2026-09-09 / 06-17 / 06-09 / 05-15 / 05-04 / 04-23 / 04-02 / 04-01 / 03-09 / 02-27, each <id> "urn:tag:sec.gov,2008:accession-number=…" and <updated> an acceptance instant (e.g. 2026-09-09T19:00:10-04:00). The SAME query for CIK 00019617 returned "JPMORGAN CHASE & CO (0000019617)" with 10 entries whose form is 424B2, not 4 — so the feed IGNORED both the type=4 filter and count=5, and the archive therefore parses every entry\'s form type and keeps only form 4 (publishing the forms it saw). GET https://www.sec.gov/Archives/edgar/data/1318605/000110465926106432/index.json → 4 items, exactly one .xml: tm2625055d1_4seq1.xml (8817 bytes) — the primary document is READ, never guessed. The submission text (…/0001104659-26-106432.txt) carries ACCEPTANCE-DATETIME 20260909190010, CONFORMED SUBMISSION TYPE 4, CONFORMED PERIOD OF REPORT 20260905, FILED AS OF DATE 20260909. Its ownership XML: schemaVersion X0609, documentType 4, issuerCik 0001318605 / issuerName "Tesla, Inc." / issuerTradingSymbol TSLA, rptOwnerCik 0001771340 "Taneja Vaibhav", isDirector 0 / isOfficer 1 / isTenPercentOwner 0 / isOther 0, officerTitle "Chief Financial Officer", aff10b5One 0, Table I rows [code M 6539 shares A, post 28578] and [code S 2605.75 @ 360.134 D, post 25972.25], a nonDerivativeHolding of 111000 shares indirect ("See Footnote"), and a Table II Restricted Stock Unit row (code M, 6539, D). That filing is archived verbatim as the parser fixture (data/form4-signals/fixtures/, with its truncation documented in _PROVENANCE.md). Element names are the SEC\'s own (sec.gov/info/edgar/ownershipxmltechspec-v3.pdf).',
+    url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=4&dateb=&owner=include&count=5&output=atom',
+    capturedAt: '2026-09-21',
+    usedIn: 'scripts/archive-form4-signals.mjs (parseAtomFeed / primaryXmlFromIndex / parseOwnershipDocument); .github/workflows/form4-signals.yml; data/form4-signals/fixtures/0001104659-26-106432.xml; tests 127–129'
+  },
+  {
+    id: 'V115', group: 'Form 4 signals', status: 'DERIVED',
+    fact: 'The Form 4 archive is point-in-time on EDGAR\'s OWN acceptance instant, which is what lets it answer a PAST bar — unlike the forecast, FDA and MLB archives, which can only run forward from their first capture',
+    value: 'A filing does not decay: a Form 4 accepted 2026-04-23T20:08:52Z was on EDGAR from that instant on. Each record therefore stores acceptedAt (EDGAR\'s instant, from the feed entry\'s <updated>, equal to the submission\'s ACCEPTANCE-DATETIME header) AND first_seen_at (the instant this repository captured it); src/form4-signal-store.js#filingsAtOrBefore keeps only acceptedAt <= T and insiderStateAtOrBefore derives the window facts from those, publishing observedAt (the newest capture at or before T) and archiveStaleSeconds — null, not 0, when the archive had not yet looked at that instant. The stated assumption (EDGAR published at acceptance; latency not measured by this repository) is printed in every store file and returned by form4Assumption(). Derived facts a strategy may read: filingsEver / filingsInWindow / ceoFilings (reporting owner isOfficer AND officerTitle says CEO) / openMarket net shares and dollars (SEC codes P and S ONLY — awards, vestings, gifts and tax withholdings are archived verbatim but never move the number) / codesInWindow. Refusals, all unit-tested: a filing accepted after T is invisible; a document whose <documentType> is not 4 throws; a document whose issuer trading symbol is not the tracked symbol throws; a row with no <transactionCode> throws; an issuer with nothing accepted by T answers null.',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/form4-signal-store.js',
+    evidenceLabel: 'src/form4-signal-store.js — filingsAtOrBefore() / insiderStateAtOrBefore()',
+    capturedAt: '2026-09-21',
+    usedIn: 'src/form4-signal-store.js; src/strategy-runner.js buildForm4SignalProvider() / form4JoinReport(); src/live-desk.js buildDeskSignalsAsync().form4; tests 127–130'
+  },
+  {
+    id: 'V116', group: 'Form 4 signals', status: 'DERIVED',
+    fact: 'The issuer↔contract mapping is taken from each tracked market\'s OWN rules_primary text, and the store already holds real daily bars for all of them — including one contract the exchange finalized with its own result',
+    value: 'data/history/: TESLACEOCHANGE-26 "If Elon Musk is no longer CEO of Tesla by Dec 31, 2026…" (400 daily bars, period_interval 1440, 24 captured ladders, active, close 2027-01-01T04:59Z); KXTESLACEOCHANGE-26 same rules, status inactive; JPMCEOCHANGE-27 "If Jamie Dimon is no longer CEO of JPMorgan Chase by Jan 1, 2027…" (285 daily bars, 24 ladders, active); KXAAPLCEOCHANGE-26 "If Tim Cook is no longer CEO of Apple before Jan 1, 2027…" — status finalized, the exchange\'s own result "yes", 289 daily bars, 14 ladders, close_time 2026-09-03T17:48:18Z. The archive script tracks TSLA / JPM / AAPL by SYMBOL (never a hard-coded CIK) and requires each filing\'s own <issuerTradingSymbol> to equal the tracked symbol, so a wrong EDGAR resolution fails loudly. KXOPENAICEOCHANGE-26 is deliberately excluded with the reason published: OpenAI is a private company, so it has no Section 16 reporting persons and EDGAR holds no Form 4 for it (irregularity #57). Because EDGAR publishes history, InsiderFlow_Form4 is a BACKTEST on these real bars, not a forward test — bounded by EDGAR\'s feed page size (40 entries per run per issuer), which is months for Tesla and weeks for a filer with many insiders.',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/scripts/archive-form4-signals.mjs',
+    evidenceLabel: 'scripts/archive-form4-signals.mjs TRACKED_ISSUERS / EXCLUDED_ISSUERS (rules_primary quoted verbatim)',
+    capturedAt: '2026-09-21',
+    usedIn: 'scripts/archive-form4-signals.mjs; src/form4-signal-data.js (generated); strategies InsiderFlow_Form4 / LiveInsider_Form4Flow'
+  },
+  {
+    id: 'V117', group: 'Process', status: 'DERIVED',
+    fact: 'On the branch point of this session the whole test suite failed to parse, and one more test was silently asserting on a Promise — so no test had actually been running on main',
+    value: 'Reproducible in this repository with `npm test`. node --test test/simulation.test.js at commit e86cb9b: "SyntaxError: Unexpected reserved word" at test/simulation.test.js:3672 — test 100 awaited runDeskSession() inside a non-async callback, which kills the file at import time, so all 134 tests reported as one failure and none executed. After making the callback async, one test still failed: test 118 called the ASYNC buildDeskReport() without await and asserted report.ok on the resulting Promise (expected true, got undefined); the same call awaited builds cleanly (84 records). Both defects came in with PR #17\'s test code (irregularity #56). Fixed on this branch; the suite then ran 134/134 green before the four new Form 4 tests were added.',
+    url: null,
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js',
+    evidenceLabel: 'test/simulation.test.js — tests 100 and 118',
+    capturedAt: '2026-09-21',
+    usedIn: 'test/simulation.test.js; IRREGULARITIES.md #56'
   }
 ]);
 
@@ -1587,6 +1625,59 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: '/fda-signals.log and /mlb-signals.log added to .gitignore and both files removed from the tree (git rm --cached). The logs remain available as workflow artifacts (fda-signals-log / mlb-signals-log) and the per-run JSON reports (_fda-last-run.json / _mlb-last-run.json) stay committed, which is the diagnosable record the design wants.',
     userAction: 'After this PR merges, no *.log file should appear at the repository ROOT in any bot commit: `git ls-files "*.log" | grep -v ^data/` on main must be empty (data/history/_last-run.log is the ingest\'s deliberately committed copy and stays).'
+  }
+,
+  {
+    id: 56, severity: 'high',
+    title: 'The test suite was RED ON MAIN and had been for at least one merge: a syntax error stopped every test from running, and a second test asserted on a Promise',
+    assumed: 'That `npm test` passing 122/122 (as the previous session\'s ROADMAP claimed) still described main, and that a merged PR\'s new tests had been executed at least once before the merge.',
+    truth: 'At commit e86cb9b, `node --test test/simulation.test.js` failed at import time with "SyntaxError: Unexpected reserved word" at line 3672: test 100 ("settlement pays the exchange\'s own result…") awaited `runDeskSession(...)` inside a non-async `() => {}` callback. A syntax error kills the whole file, so the runner reported ONE failed test and executed NONE of the 134. Making the callback async exposed a second defect: test 118 called the async `buildDeskReport(...)` without `await`, so `assert.ok(report.ok)` tested a Promise (undefined) and failed with "desk report builds cleanly" — the same call awaited returns 84 records and passes. Both came in with PR #17 (irregularity #53 already covers its prose). No shipped number depended on either test — but a suite that cannot parse is a suite that verifies nothing, and every claim of "122/122 green" made after that merge was unverifiable.',
+    evidence: [
+      { label: 'The failing run at the branch point', url: null, text: 'node --test test/simulation.test.js at e86cb9b → "SyntaxError: Unexpected reserved word" at test/simulation.test.js:3672; # tests 1, # fail 1, nothing executed' },
+      { label: 'test/simulation.test.js (tests 100 and 118)', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js' },
+      { label: 'The awaited call, verified in isolation', url: null, text: 'await buildDeskReport({data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null}) → ok, 84 records' }
+    ],
+    action: 'Test 100\'s callback is now `async () => {}`; test 118 awaits buildDeskReport() and carries a comment explaining that the un-awaited call asserted on a Promise. The suite ran 134/134 green after the two fixes, before this session\'s four Form 4 tests were added.',
+    userAction: 'Treat any claim of a green suite as unverified unless `npm test` was run in that session. If a future merge adds a test, the merge itself must show the runner output — a suite that cannot parse reports one failure and verifies nothing.'
+  },
+  {
+    id: 57, severity: 'info',
+    title: 'One tracked CEO-change contract can NEVER receive an insider signal: OpenAI is a private company, so EDGAR holds no Form 4 for it',
+    assumed: 'That every tracked company-event contract maps to an SEC filer, because the other four (Tesla ×2, JPMorgan, Apple) do.',
+    truth: 'KXOPENAICEOCHANGE-26 asks "If OpenAI\'s CEO (including an interim CEO) changes by Dec 31, 2026…". Section 16 applies to issuers with a class of equity securities registered under the Exchange Act; OpenAI is private, has no ticker and no CIK, so there is no Form 4 population to archive and no honest insider signal for that contract. It is recorded in EXCLUDED_ISSUERS with this reason rather than left as a silent gap, and both the roster entry and the desk entrant say so on their cards: for that ticker the signal is null, the trade is skipped, and the skip reason is published by form4JoinReport() / the desk coverage row.',
+    evidence: [
+      { label: 'The contract\'s own rules_primary in the store', url: null, text: 'data/history/KXOPENAICEOCHANGE-26.json → "If OpenAI\'s CEO (including an interim CEO) changes by Dec 31, 2026, then the market resolves to Yes." (status active, 14 captured ladders, no EDGAR filer)' },
+      { label: 'EXCLUDED_ISSUERS, where the exclusion and its reason live', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/scripts/archive-form4-signals.mjs' }
+    ],
+    action: 'KXOPENAICEOCHANGE is listed in EXCLUDED_ISSUERS with this reason, published in the trigger file, on both strategy cards, and by form4JoinReport() as SERIES_NOT_TRACKED_BY_FORM4_ARCHIVE. Neither entry trades it and neither pretends to have a signal for it.',
+    userAction: 'Nothing to fix — this is a property of the market. If Kalshi lists a company-event contract on another private company, the same rule applies: no EDGAR filer, no Form 4 signal, abstain with the reason published.'
+  },
+  {
+    id: 58, severity: 'med',
+    title: 'Two source behaviours could not be verified from this sandbox: EDGAR\'s Atom filters are unreliable, and the ESPN scoreboard shape was never retrieved',
+    assumed: 'That a documented query parameter does what it says (EDGAR\'s `type=4`, `count=5`), and that every endpoint named in the ROADMAP could be fetched and read from the working environment.',
+    truth: '(1) EDGAR: the same browse-edgar Atom query returned form 4 rows for CIK 0001318605 but 424B2 rows for CIK 0000019617, and returned 10 entries for both despite count=5 — so the feed\'s filters cannot be trusted. The archive parses every entry\'s form type, keeps only form 4, and publishes `formsSeen` per issuer in the run report so an ignored filter is visible. (2) ESPN: the injuries endpoint WAS verified live (GET https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/injuries → {timestamp, status, season, injuries:[{id, displayName, injuries:[{id, longComment, shortComment, status, date, athlete:{firstName, lastName, displayName, shortName, position:{abbreviation}, team:{id, uid, slug, name, abbreviation, displayName}}}]}]}), and the scoreboard envelope was verified for NCAA men\'s basketball ({leagues[], groups, events[], provider, eventsDate{date, seasonType}}), but the per-EVENT scoreboard structure (competitions[].competitors[].score, status.type.state/clock) could not be retrieved — the fetch tool repeatedly rewrote that request to an unreachable proxy URL. No scoreboard parser was written from memory: shipping one would have been exactly the guess the honesty contract forbids.',
+    evidence: [
+      { label: 'EDGAR Atom feed, Tesla (type=4 → 10 form-4 rows)', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=4&dateb=&owner=include&count=5&output=atom' },
+      { label: 'The SAME query for JPMorgan (type=4 → 10 rows of form 424B2)', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=00019617&type=4&dateb=&owner=include&count=5&output=atom', text: 'the filter is ignored; count=5 returned 10 entries in both cases' },
+      { label: 'ESPN public injuries JSON, verified live 2026-09-21', url: 'https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/injuries' },
+      { label: 'ESPN scoreboard envelope, verified live 2026-09-21 (NCAA men\'s basketball, empty events[])', url: 'https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260920' }
+    ],
+    action: 'The Form 4 archive parses every feed entry\'s form type, keeps only form 4, and publishes formsSeen per issuer in data/form4-signals/_form4-last-run.json; a form the archive did not expect is visible, never silently dropped. NO ESPN scoreboard parser was written: the injuries half (verified) and the scoreboard half (not verified) are recorded in ROADMAP "Next #1" with the exact verified JSON paths, so the next session builds on evidence instead of re-deriving the shape from memory.',
+    userAction: 'Before shipping an ESPN archive, capture one real scoreboard response from a runner with egress and keep it as a labelled fixture the parser is tested against — the same discipline that produced data/form4-signals/fixtures/ and data/mlb-signals. Do not write the parser first.'
+  },
+  {
+    id: 59, severity: 'med',
+    title: 'The first live Form 4 capture was refused by EDGAR with HTTP 403 — the same failure class as #50',
+    assumed: 'That a declared User-Agent with contact information was enough for EDGAR to answer an automated client, because the same browse-edgar Atom page had been retrieved successfully from the build sandbox earlier the same day.',
+    truth: 'The workflow\'s first run (2026-09-21T04:52:48Z) was answered **HTTP 403** for all three issuers, with an XHTML error page in the body. The request that was refused carried User-Agent "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research contact: …)" — a URL in parentheses, whereas EDGAR\'s own guidance states the format "Sample Company Name AdminContact@<sample company domain>". The root cause is NOT yet proven: 403 from EDGAR can also mean rate limiting or an IP-range block on the runner, and the run report at the time kept only 160 characters of the body and no headers, so the reason could not be told from the repository. This is the exact pattern of irregularity #50, where an archive was designed and shipped against a source that had never been reached.',
+    evidence: [
+      { label: 'The first live capture, committed by the workflow itself', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/data/form4-signals/_form4-last-run.json', text: '"errors": ["EDGAR atom feed for TSLA: HTTP 403 — body head: <!DOCTYPE html …"] — filingsSeen 0, formsSeen {}, failures 3' },
+      { label: 'EDGAR\'s own fair-access guidance (the User-Agent format it states)', url: 'https://www.sec.gov/os/accessing-edgar-data', text: '"Sample Company Name AdminContact@<sample company domain>"; no more than 10 requests per second' },
+      { label: 'The same endpoint, retrieved successfully from a different client 2026-09-21 (fact V114)', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=4&dateb=&owner=include&count=5&output=atom' }
+    ],
+    action: 'Nothing was invented: the run failed loudly, `failures: 3` is committed, no companies/*.json was written, and both strategies abstained everywhere with the reason published — the archive\'s honest-failure mode worked exactly as designed. Three changes: (1) the default User-Agent now follows EDGAR\'s stated shape exactly ("KalshiPaperSim research buffedlizard55-lab@users.noreply.github.com") and can be overridden with EDGAR_USER_AGENT; (2) a refused request now records its status, statusText and any retry-after / rate-limit headers, and the run report records the agent actually sent, so the NEXT failure is diagnosable from the repository; (3) the trigger file requests another run immediately after merge. The parser and the point-in-time store are unaffected — they are tested against a real archived filing (tests 127–129).',
+    userAction: 'After merge, read data/form4-signals/_form4-last-run.json: if filingsSeen is still 0, the new diagnostics in `errors` name the reason (rate limit vs UA block vs IP block). If EDGAR keeps refusing the runner, the fallback is the documented submissions endpoint https://data.sec.gov/submissions/CIK##########.json — its JSON shape was NOT verified in this session (it returns NoSuchKey for /cgi-bin paths), so it must be verified and archived as a fixture before it is wired in, the way data/form4-signals/fixtures/ fixed the XML.'
   }
 ]);
 

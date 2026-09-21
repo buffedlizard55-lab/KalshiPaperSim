@@ -3211,6 +3211,80 @@ export const STRATEGIES = [
         }
       ];
     }
+  },
+
+  /* ════════════════════════════════════════════════════════════════════ *
+   * 2026-09-21 (session 01a0c21e) — THE INSIDER HALF OF THE POINT-IN-TIME
+   * SIGNAL ARCHIVE (ROADMAP Next #3(b)). This is the first entry that reads
+   * SEC Form 4 filings — the archive that closed S02's blocker ("no
+   * point-in-time SEC Form 4 archive exists here"). The two older entries that
+   * carry the Insider-trades name stay exactly what their cards say they are
+   * (price-only); this one really opens EDGAR.
+   *
+   * Unlike the forecast, FDA and MLB archives this one CAN answer a past bar:
+   * a filing's knowable-from instant is EDGAR's own acceptance timestamp, and
+   * a filing does not decay. So this is a genuine backtest on the store's real
+   * daily CEO-change bars (including one contract the exchange already
+   * finalized with its own result), not a forward test — and the assumption
+   * that makes it so is published on the card and in every store file.
+   * ════════════════════════════════════════════════════════════════════ */
+
+  {
+    ...BASE,
+    id: 'insider_flow_form4',
+    username: 'InsiderFlow_Form4',
+    handle: '@InsiderFlow_Form4',
+    avatar: '📑',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    universe: ['TESLACEOCHANGE', 'KXTESLACEOCHANGE', 'JPMCEOCHANGE', 'KXAAPLCEOCHANGE', 'KXOPENAICEOCHANGE'],
+    title: 'CEO-Change Longshot Fade Gated by Real SEC Form 4 Filings (point-in-time)',
+    category: 'Corporate Events / Longshot fade, gated by an official filing archive',
+    tagline:
+      'Buys NO on a cheap CEO-change contract ONLY when the point-in-time SEC Form 4 archive shows no filing by an officer titled CEO in the 90 days before the bar. With a CEO filing on EDGAR it stands aside — the fade is gated by real Section 16 evidence, not by price alone.',
+    sizingPct: 0.45,
+    maxParticipation: 3,
+    designedAt: '2026-09-21',
+    designSource:
+      'Original design in this repository: the point-in-time external-signal architecture of ForecastEdge_Weather / FDAEdge_DrugsFDA applied to SEC EDGAR Form 4 filings (data/form4-signals/, grown by .github/workflows/form4-signals.yml), as the upgrade path the S02 ledger entry named for the price-only insider entries',
+    designSourceUrl: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=TSLA&type=4&dateb=&owner=include&count=40&output=atom',
+    sourceNote:
+      'SIGNAL: SEC EDGAR itself (official, keyless) — GET www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=<symbol>&type=4&output=atom lists a filer\'s Form 4s with EDGAR\'s acceptance instant, and each filing\'s ownership XML (sec.gov/Archives/edgar/data/…) is parsed with the element names from the SEC\'s own EDGAR Ownership XML Technical Specification (sec.gov/info/edgar/ownershipxmltechspec-v3.pdf). Every filing is archived once, keyed by accession number, with acceptedAt (EDGAR\'s instant) and first_seen_at (this archive\'s instant) kept separately. JOIN: the tracked issuers come from the tracked contracts\' OWN rules_primary text — TESLACEOCHANGE-26/KXTESLACEOCHANGE-26 ("Elon Musk is no longer CEO of Tesla…"), JPMCEOCHANGE-27 ("Jamie Dimon is no longer CEO of JPMorgan Chase…"), KXAAPLCEOCHANGE-26 ("Tim Cook is no longer CEO of Apple…", finalized by the exchange with result "yes"). Only SEC transaction codes P (open-market purchase) and S (open-market sale) count as flow; awards, vestings, gifts and tax withholdings are archived verbatim but never move the number. FEED LIMIT, stated: EDGAR\'s feed page size (40 entries) bounds how far back one run reaches per issuer — for a filer with many insiders that is weeks, not years; the archive is append-only and grows forward on every run.',
+    thesis:
+      'DESIGN INTENT: CEO-change contracts are long-dated longshots, and the favourite–longshot literature (R02/R05) says their YES side is overpriced, so buying NO and holding to settlement is the mechanical bet. This entry adds the only official evidence available about the executives in question: if EDGAR shows NO Form 4 by an officer titled CEO in the 90 days before the bar, the fade proceeds; if one exists, the entry stands aside, because a CEO\'s own Section 16 filing is the one public document that proves that person was still transacting as an insider of that company at that date. ' +
+      'HONEST LIMIT, stated up front and never netted out: the causal link between Section 16 filings and a CEO change is WEAK and unproven. A CEO departure is announced by 8-K and by the exchange\'s own settlement, not by a Form 4; a CEO can also leave without filing one, and file one for reasons that have nothing to do with leaving. This entry therefore measures whether gating the fade on real filing evidence changes the fade\'s outcome — it does not claim to predict a departure. ' +
+      'POINT-IN-TIME RULE: ctx.signal is the insider picture built only from filings EDGAR accepted at or before the bar (src/form4-signal-store.js); a filing accepted later is invisible. The knowable-from instant used is EDGAR\'s OWN acceptance timestamp, not this archive\'s capture instant (first_seen_at is published alongside, never substituted). ' +
+      'WHY THIS ONE CAN BACKTEST: a filing does not decay, so an April filing is exactly as knowable at an April bar as it is today. The other archives can only run forward from their first capture; this one answers past bars with real filings, on real daily bars the store already holds (TESLACEOCHANGE-26 400 bars, JPMCEOCHANGE-27 285, KXAAPLCEOCHANGE-26 289 — the last finalized with the exchange\'s own result "yes"). ' +
+      'ABSTENTION, published: no archive yet (the form4-signals workflow has not run), or a series the archive does not track — KXOPENAICEOCHANGE never can, because OpenAI is a private company with no Section 16 filers — means signal === null and no trade, with the reason on the site rather than a silent zero.',
+    rules: {
+      entry:
+        'ctx.signal (kind sec-form4-flow) exists for the contract\'s issuer, signal.ceoFilings === 0 over the 90-day window ending at the bar, and the YES ask is inside 0.02–0.35. Buy NO. Once per market.',
+      sizing: '45% of available cash per confirmed contract, capped at 3x visible NO ask depth.',
+      exit: 'None — hold to the exchange\'s real settlement ($1.00/$0.00 at the market\'s real result).',
+      noSignalRule:
+        'signal === null (no Form 4 archive yet, or the contract\'s series is not tracked — KXOPENAICEOCHANGE never will be, OpenAI being private) → abstain. A filing by a CEO-titled officer inside the window → abstain. Never substitute a later filing for an earlier decision.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker, signal: form4Signal } = ctx;
+      if (!form4Signal || form4Signal.kind !== 'sec-form4-flow') return [];
+      if (Number(form4Signal.ceoFilings) > 0) return []; // a CEO's own filing inside the window: stand aside
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask < 0.02 || ask > 0.35) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'NO');
+      if (count <= 0) return [];
+      const flow = form4Signal.openMarket || { shares: 0, buys: 0, sells: 0 };
+      return [
+        {
+          type: 'buy',
+          side: 'NO',
+          count,
+          reason: `SEC Form 4 archive: ${form4Signal.filingsInWindow} filing(s) accepted by EDGAR in the ${form4Signal.windowDays} days to ${ticker}'s bar (newest ${form4Signal.newestAcceptedAt}), NONE by an officer titled CEO, net open-market flow ${flow.shares >= 0 ? '+' : ''}${flow.shares} shares over ${flow.buys} buy / ${flow.sells} sell row(s) → YES ask ${ask} is a longshot — buy NO, held to the exchange's real result`
+        }
+      ];
+    }
   }
 ];
 

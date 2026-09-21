@@ -50,6 +50,7 @@ export const DESK_RESERVED_USERNAMES = Object.freeze([
   'LiveMeanRev_Spike',
   'LiveExpiryHarvest',
   'LiveFDA_DecisionPremium',
+  'LiveInsider_Form4Flow',
   'LiveNCAA_GameFavourite',
   'LiveNBA_GameFavourite',
   'LiveCEO_ChangeFav',

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T19:21:03.379Z",
+  "generatedAt": "2026-09-21T07:47:18.912Z",
   "deskVersion": 1,
   "asOf": "2026-09-20T11:34:47.759Z",
   "startingCapital": 100000,
@@ -14,7 +14,7 @@
     "minContracts": 0.01,
     "exhaustionPolicy": "partial"
   },
-  "dataGeneratedAt": "2026-09-20T19:20:57.371Z",
+  "dataGeneratedAt": "2026-09-21T07:43:02.473Z",
   "dataCoverage": {
     "storesRead": 858,
     "marketsTracked": 496,
@@ -3191,6 +3191,26 @@
       "openPositions": []
     },
     {
+      "strategy": "LiveInsider_Form4Flow",
+      "startingCapital": 100000,
+      "cash": 100000,
+      "equity": 100000,
+      "returnPct": 0,
+      "realizedPnl": 0,
+      "unrealizedPnl": 0,
+      "marketValue": 0,
+      "settlementPnl": 0,
+      "feesPaid": 0,
+      "attribution": 0,
+      "attributionOk": true,
+      "fills": 0,
+      "contracts": 0,
+      "requested": 0,
+      "unfilled": 0,
+      "slippageCost": 0,
+      "openPositions": []
+    },
+    {
       "strategy": "LiveWeather_ForecastEdge",
       "startingCapital": 100000,
       "cash": 100000,
@@ -3688,6 +3708,14 @@
     },
     {
       "strategy": "LiveNBA_GameFavourite",
+      "verdict": "NO TRADES",
+      "headline": "This strategy placed no fillable order on the desk universe at this cut-off.",
+      "worked": [],
+      "hurt": [],
+      "evidence": []
+    },
+    {
+      "strategy": "LiveInsider_Form4Flow",
       "verdict": "NO TRADES",
       "headline": "This strategy placed no fillable order on the desk universe at this cut-off.",
       "worked": [],
@@ -6383,8 +6411,8 @@
     },
     {
       "strategy": "LiveInsider_FilingFader",
-      "name": "Desk: CEO-change NO buyer — price-only (S02 Form 4 archive still absent)",
-      "source": "S02 · Insider-trades (MasterSite) — NOT USED. No point-in-time SEC Form 4 archive exists in this repository, so this entry reads NO insider data; it trades the exchange's own captured ladders on CEO-change contracts. The username records the signal it is meant to receive once that archive exists.",
+      "name": "Desk: CEO-change NO buyer — price-only (a Form 4 archive now exists; this entry still does not read it)",
+      "source": "S02 · Insider-trades (MasterSite) — NOT USED by this entry. A point-in-time SEC Form 4 archive now EXISTS in this repository (data/form4-signals/, sec.gov, grown by .github/workflows/form4-signals.yml) and the desk entrant LiveInsider_Form4Flow reads it; THIS entry still reads NO insider data and trades only the exchange's own captured ladders on CEO-change contracts. The username records the signal it was named for.",
       "deskTracked": true,
       "fills": 1,
       "settlements": "no",
@@ -6393,6 +6421,19 @@
       "watchedContracts": 12,
       "watchedTradeable": 12,
       "note": "Tracked on the desk ledger: every order, fill, fee, mark and settlement carries its capture time and URL."
+    },
+    {
+      "strategy": "LiveInsider_Form4Flow",
+      "name": "Desk: CEO-change NO buyer GATED by the point-in-time SEC Form 4 archive (S02, live signal)",
+      "source": "S02 · Insider-trades (MasterSite) — LIVE SIGNAL. Reads the repository's point-in-time SEC Form 4 archive (data/form4-signals/, captured from EDGAR itself by .github/workflows/form4-signals.yml) through the desk signal hook view.signals.form4, exactly as the replay reads it through ctx.signal. Nothing is quoted that the archive does not hold.",
+      "deskTracked": true,
+      "fills": 0,
+      "settlements": "no",
+      "returnPct": 0,
+      "watched": "/CEOCHANGE/i",
+      "watchedContracts": 3,
+      "watchedTradeable": 3,
+      "note": "3 of the 86 desk contracts match the series it watches and 3 of those had a captured ladder at this cut-off; 0 further open contract(s) in the tracked list match it but are QUOTED ONLY (no captured ladder) — with no ladder there is nothing to price, so it placed no order."
     },
     {
       "strategy": "LiveWeather_ForecastEdge",
@@ -6410,7 +6451,7 @@
   ],
   "audit": {
     "ok": true,
-    "checkedAt": "2026-09-20T19:21:03.372Z",
+    "checkedAt": "2026-09-21T07:47:18.906Z",
     "totals": {
       "orders": 28,
       "fills": 27,
@@ -6479,7 +6520,7 @@
       {
         "name": "equity change = realized + unrealized - fees (residual < $0.01)",
         "ok": true,
-        "detail": "LiveFDA_DecisionPremium: residual 0; LiveMakerTouch: residual 0; LiveMomentum_Bars: residual 0; LiveExpiryHarvest: residual 0; LiveNCAA_GameFavourite: residual 0; LiveNBA_GameFavourite: residual 0; LiveWeather_ForecastEdge: residual 0; LiveTheLeap_Momentum: residual 0; LiveCheapBracket_Ladder: residual 0; LiveMLB_GameFavourite: residual 0; LiveInsider_FilingFader: residual 0; LiveCEO_ChangeFav: residual 0; LiveMeanRev_Spike: residual 0; LiveFavourite_Settle: residual 0; LiveTailPremium_NO: residual 0; LiveNFL_GameFavourite: residual 0; LiveLongshot_Convexity: residual 0; LiveDepthSweep_Taker: residual 0"
+        "detail": "LiveFDA_DecisionPremium: residual 0; LiveMakerTouch: residual 0; LiveMomentum_Bars: residual 0; LiveExpiryHarvest: residual 0; LiveNCAA_GameFavourite: residual 0; LiveNBA_GameFavourite: residual 0; LiveInsider_Form4Flow: residual 0; LiveWeather_ForecastEdge: residual 0; LiveTheLeap_Momentum: residual 0; LiveCheapBracket_Ladder: residual 0; LiveMLB_GameFavourite: residual 0; LiveInsider_FilingFader: residual 0; LiveCEO_ChangeFav: residual 0; LiveMeanRev_Spike: residual 0; LiveFavourite_Settle: residual 0; LiveTailPremium_NO: residual 0; LiveNFL_GameFavourite: residual 0; LiveLongshot_Convexity: residual 0; LiveDepthSweep_Taker: residual 0"
       },
       {
         "name": "no result claims a return without at least one real fill or settlement",

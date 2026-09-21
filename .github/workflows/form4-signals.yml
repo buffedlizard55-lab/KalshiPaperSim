@@ -1,0 +1,150 @@
+name: Form 4 signal archive
+
+# ROADMAP "Next #3(b)" — the INSIDER half of the point-in-time signal archive
+# (weather, FDA and MLB are already shipped): archive the SEC's own Form 4
+# (Section 16 insider transaction) filings for the issuers behind the tracked
+# CEO-change contracts, so an insider strategy can only ever read a filing that
+# EDGAR had ACCEPTED at decision time.
+#
+# WHY THIS ONE IS DIFFERENT: a filing does not decay. Its knowable-from instant
+# is EDGAR's own acceptance timestamp, which is in the feed entry and in the
+# submission header, so this archive can answer a PAST bar with real filings —
+# the insider entry is a genuine backtest on the store's real daily bars, not a
+# forward test. The archive still records first_seen_at (when THIS repository
+# captured each filing) so "EDGAR published it" and "we saw it" are never
+# conflated, and the assumption is printed in every store file.
+#
+# SOURCE: sec.gov itself — official, keyless, machine-readable.
+#   1. cgi-bin/browse-edgar?CIK=<symbol>&type=4&output=atom  (the filing list,
+#      with EDGAR's acceptance instant per entry)
+#   2. Archives/edgar/data/<cik>/<accNo>/index.json          (the filing's own
+#      directory listing — the primary document is read, never guessed)
+#   3. Archives/edgar/data/<cik>/<accNo>/<doc>.xml           (the ownership
+#      document, parsed with the SEC's own element names)
+# NOTE: the feed's `type=4` filter is NOT trusted (verified 2026-09-21 — the
+# same query returned 424B2 entries for another CIK), so the script parses every
+# entry's form type and keeps only form 4, publishing the forms it saw.
+# Fair access: a declared User-Agent with contact information, <= 10 req/s.
+#
+# WHAT IT WRITES: data/form4-signals/companies/<SYMBOL>.json — one record per
+# accession number (append-only), each with acceptedAt, first_seen_at, the
+# reporting owner's role, and every Table I / Table II transaction verbatim
+# (code, A/D, shares, price, post-holding). data/form4-signals/_form4-last-run.json
+# is the run report: per-request HTTP errors, the forms the feed returned, and
+# how many filings were added.
+#
+# WHY A WORKFLOW: sec.gov is not reachable from the build sandbox (only
+# github.com egress works there). GitHub-hosted runners have unrestricted
+# egress, so this is where the capture can actually run.
+#
+# TRIGGER: twice a day on schedule (after the US market close, when most
+# Section 16 filings are accepted, and once overnight), plus any push that
+# changes .github/triggers/form4.json. NOTE: GitHub runs scheduled workflows on
+# the DEFAULT branch only, so the cadence starts when this file is on main; a
+# feature branch gets captures via the trigger file.
+
+on:
+  schedule:
+    # 22:15 UTC (17:15/18:15 ET — after the close, when insiders file) and
+    # 06:15 UTC (overnight sweep, before the US day starts).
+    - cron: '15 22 * * *'
+    - cron: '15 6 * * *'
+  push:
+    paths:
+      - '.github/triggers/form4.json'
+  workflow_dispatch:
+
+# OWN queue, deliberately NOT the shared data-pipeline group: a bot inside the
+# shared group can be evicted by a newer queued run, and this bot's data
+# directory is written by nobody else.
+concurrency:
+  group: form4-signals-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync with the branch tip (best-effort)
+        continue-on-error: true
+        run: |
+          # Fast-forward onto the tip BEFORE capturing so the capture appends
+          # to the newest store and the generated modules are regenerated from
+          # the newest data (the queued-run race behind irregularity #51).
+          git fetch --deepen=100 origin "${GITHUB_REF_NAME}"
+          git merge --ff-only "origin/${GITHUB_REF_NAME}"
+
+      - name: Capture the point-in-time SEC Form 4 filings
+        run: |
+          set -o pipefail
+          node scripts/archive-form4-signals.mjs 2>&1 | tee form4-signals.log
+
+      - name: Audit the Form 4 signal store (no network)
+        run: |
+          set -o pipefail
+          node scripts/archive-form4-signals.mjs --verify | tee -a form4-signals.log
+
+      - name: Regenerate the browser-safe modules and the Pages bundle
+        run: |
+          set -o pipefail
+          node scripts/generate-history-module.mjs | tee -a form4-signals.log
+          node scripts/generate-desk-module.mjs | tee -a form4-signals.log
+          node scripts/render-docs.js | tee -a form4-signals.log
+          node build.js | tee -a form4-signals.log
+
+      - name: Commit the new filings
+        if: always()
+        run: |
+          # Runs even after a failed capture so the run report is committed and
+          # diagnosable from the repository itself. One shared, locally-tested
+          # implementation of "commit everything this run changed and survive
+          # the push race with the other bots" (test/workflow-race-guard.sh).
+          BOT_NAME="kalshi-form4-bot" \
+          BOT_EMAIL="kalshi-form4-bot@users.noreply.github.com" \
+          bash scripts/push-with-race-guard.sh \
+            "chore(form4-signals): archive point-in-time SEC Form 4 filings $(date -u +%F' '%H:%M)" \
+            "${GITHUB_REF_NAME}"
+
+      - name: Upload the capture log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: form4-signals-log
+          path: form4-signals.log
+          if-no-files-found: warn
+
+      # Same insurance as the other archives: a dead commit step must not take
+      # fresh captures with it (irregularity #51).
+      - name: Keep the captured filings on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: form4-signal-store-${{ github.run_id }}
+          path: data/form4-signals/
+          if-no-files-found: warn
+
+      # An incomplete capture must be visible on the run, not buried in the log.
+      - name: Fail the run when a request did not capture
+        if: always()
+        run: |
+          node -e "
+          const fs = require('fs');
+          if (!fs.existsSync('data/form4-signals/_form4-last-run.json')) { console.log('no run report — nothing to evaluate'); process.exit(0); }
+          const rep = JSON.parse(fs.readFileSync('data/form4-signals/_form4-last-run.json', 'utf8'));
+          const errs = (rep.issuers || []).flatMap((i) => (i.errors || []).map((e) => i.symbol + ': ' + e));
+          if (errs.length || rep.failures) {
+            for (const e of errs) console.error('::error::' + e);
+            process.exit(1);
+          }
+          const added = (rep.issuers || []).reduce((a, i) => a + (i.filingsAdded || 0), 0);
+          console.log('all requests captured; filings added: ' + added + '; issuers: ' + (rep.issuers || []).map((i) => i.symbol).join(', '));
+          "

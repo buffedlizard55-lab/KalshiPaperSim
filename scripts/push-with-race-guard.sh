@@ -74,7 +74,7 @@ BRANCH="${2:-${GITHUB_REF_NAME:-}}"
 BRANCH="${BRANCH:?no branch: pass it as \$2 or set GITHUB_REF_NAME}"
 REMOTE="${GIT_REMOTE:-origin}"
 REGENERATE_CMD="${REGENERATE_CMD:-node scripts/generate-history-module.mjs && node scripts/generate-desk-module.mjs && node scripts/render-docs.js && node build.js}"
-GENERATED_PATHS="${GENERATED_PATHS:-src/accumulated-history.js src/forecast-data.js src/fda-signal-data.js src/mlb-signal-data.js src/desk-data.js README.md VERIFICATION.md IRREGULARITIES.md index.html docs/}"
+GENERATED_PATHS="${GENERATED_PATHS:-src/accumulated-history.js src/forecast-data.js src/fda-signal-data.js src/mlb-signal-data.js src/form4-signal-data.js src/desk-data.js README.md VERIFICATION.md IRREGULARITIES.md index.html docs/}"
 DEEPEN="${FETCH_DEEPEN:-100}"
 
 echo "push-with-race-guard: branch=${BRANCH} remote=${REMOTE}"

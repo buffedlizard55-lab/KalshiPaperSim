@@ -40,6 +40,10 @@ const FDA_SIGNAL_DIR = path.join(ROOT, 'data', 'fda-signals');
 const FDA_SIGNAL_OUT_FILE = path.join(ROOT, 'src', 'fda-signal-data.js');
 /** Browser cap for FDA signal snapshots per subject (newest kept). */
 const MAX_BROWSER_FDA_SNAPSHOTS = 240;
+const FORM4_SIGNAL_DIR = path.join(ROOT, 'data', 'form4-signals');
+const FORM4_SIGNAL_OUT_FILE = path.join(ROOT, 'src', 'form4-signal-data.js');
+/** Browser cap for Form 4 filings per issuer (newest by acceptance instant). */
+const MAX_BROWSER_FORM4_FILINGS = 400;
 const MLB_SIGNAL_DIR = path.join(ROOT, 'data', 'mlb-signals');
 const MLB_SIGNAL_OUT_FILE = path.join(ROOT, 'src', 'mlb-signal-data.js');
 /** Browser cap for MLB date files (newest US-Eastern dates kept). */
@@ -163,6 +167,84 @@ export const FDA_SIGNAL_DATA = ${JSON.stringify({ generatedAt: new Date().toISOS
   fs.writeFileSync(FDA_SIGNAL_OUT_FILE, body);
   const kb = (fs.statSync(FDA_SIGNAL_OUT_FILE).size / 1024).toFixed(1);
   console.log(`✓ src/fda-signal-data.js — ${Object.keys(subjects).length} subject(s), ${Object.values(subjects).reduce((a, s) => a + s.shippedSnapshots, 0)} snapshot(s), ${kb} KB${present ? '' : ' (no archive yet — FDA strategies abstain)'}`);
+}
+
+/**
+ * Compile data/form4-signals/companies/*.json (the point-in-time SEC Form 4
+ * archive grown by scripts/archive-form4-signals.mjs) into
+ * src/form4-signal-data.js, so the static browser build queries the SAME
+ * archive the Node tools read. Same discipline as the other archives: filings
+ * verbatim, newest-only up to the browser cap, drops stated in the header, and
+ * an absent archive still writes a `present: false` module so imports never
+ * fail — an insider-signal strategy with no archive abstains rather than
+ * guessing.
+ */
+function writeForm4SignalModule() {
+  const companiesDir = path.join(FORM4_SIGNAL_DIR, 'companies');
+  const companies = {};
+  let assumption = null;
+  if (fs.existsSync(companiesDir)) {
+    for (const file of fs.readdirSync(companiesDir).sort()) {
+      if (!file.endsWith('.json')) continue;
+      const store = readJsonSafe(path.join(companiesDir, file));
+      if (!store || typeof store !== 'object') continue;
+      const symbol = store.symbol || file.replace(/\.json$/, '');
+      assumption = assumption || store.assumption || null;
+      const filings = Object.values(store.filings || {}).sort((a, b) => String(b.acceptedAt).localeCompare(String(a.acceptedAt)));
+      const dropped = Math.max(0, filings.length - MAX_BROWSER_FORM4_FILINGS);
+      const shipped = {};
+      for (const f of filings.slice(0, MAX_BROWSER_FORM4_FILINGS)) shipped[f.accessionNumber] = f;
+      companies[symbol] = {
+        symbol,
+        cik: store.cik || null,
+        issuerName: store.issuerName || null,
+        what: store.what || null,
+        kalshiSeries: store.kalshiSeries || [],
+        rulesQuote: store.rulesQuote || null,
+        assumption: store.assumption || null,
+        source: store.source || null,
+        captures: Array.isArray(store.captures) ? store.captures : [],
+        filingCount: filings.length,
+        shippedFilings: Object.keys(shipped).length,
+        droppedOldestFilings: dropped,
+        filings: shipped
+      };
+    }
+  }
+  const present = Object.keys(companies).length > 0;
+  const filingCount = Object.values(companies).reduce((a, c) => a + c.shippedFilings, 0);
+  const body = `/**
+ * KalshiPaperSim — Point-in-Time SEC Form 4 Archive (GENERATED — do not edit)
+ * =====================================================================
+ * Compiled by scripts/generate-history-module.mjs from
+ * data/form4-signals/companies/, which scripts/archive-form4-signals.mjs grows
+ * from EDGAR itself (sec.gov — official, keyless) on the form4-signals workflow
+ * schedule.
+ *
+ * Each filing is what the archive parsed out of the SEC's own ownership XML,
+ * keyed by accession number, carrying EDGAR's OWN acceptance instant
+ * (acceptedAt) — the instant from which it was knowable. Read it only through
+ * src/form4-signal-store.js, which refuses any filing accepted AFTER the
+ * decision time (the anti-lookahead rule).
+ *
+ * ${present ? `${Object.keys(companies).length} issuer(s) · ${filingCount} filing(s)` : 'NO ARCHIVE YET — no filings have been captured; every Form-4-signal-dependent strategy abstains until the archive exists.'} · generated ${new Date().toISOString()}
+ */
+
+export const FORM4_SIGNAL_DATA = ${JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    present,
+    endpoint: 'https://www.sec.gov/cgi-bin/browse-edgar',
+    archives: 'https://www.sec.gov/Archives/edgar/data',
+    terms: 'https://www.sec.gov/os/accessing-edgar-data',
+    spec: 'https://www.sec.gov/info/edgar/ownershipxmltechspec-v3.pdf',
+    assumption: assumption || null,
+    companies
+  }, null, 1)};
+`;
+  fs.mkdirSync(path.dirname(FORM4_SIGNAL_OUT_FILE), { recursive: true });
+  fs.writeFileSync(FORM4_SIGNAL_OUT_FILE, body);
+  const kb = (fs.statSync(FORM4_SIGNAL_OUT_FILE).size / 1024).toFixed(1);
+  console.log(`✓ src/form4-signal-data.js — ${Object.keys(companies).length} issuer(s), ${filingCount} filing(s), ${kb} KB${present ? '' : ' (no archive yet — insider strategies abstain)'}`);
 }
 
 /**
@@ -523,6 +605,7 @@ export function getIntradayMarket(ticker, period = 60) {
   writeForecastModule();
   writeFdaSignalModule();
   writeMlbSignalModule();
+  writeForm4SignalModule();
   for (const t of tickers) {
     const m = markets[t];
     console.log(

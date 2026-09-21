@@ -4,14 +4,16 @@ This file is the honest queue for KalshiPaperSim. Every item says what it would
 change, what it needs, and how a reader could check it. Nothing here is a
 promise; items leave this file only when the work is committed **and** measured.
 
-Last reviewed: 2026-09-20 (the Arena session on branch
-`arena/01a0bca9-kalshipapersim` — this session merged the previous session's
-unmerged pipeline fix (#51), shipped the MLB half of the point-in-time signal
-archive on the official MLB Stats API with two forward-test entries, audited
-and corrected a parallel session's PR #17 line by line (#53), gave the
-research-gap cards a status (#52) and fixed the desk-season schedule rule
-that ignored re-captures (#54). Previous review 2026-09-19: three live desk
-defects closed, the FDA half of the archive, the R15 Reddit scalp).
+Last reviewed: 2026-09-21 (the Arena session on branch
+`arena/01a0c21e-kalshipapersim` — this session **found the test suite red on
+main and fixed it** (#56: a syntax error at test/simulation.test.js:3672 stopped
+all 134 tests from executing, and test 118 asserted on a Promise), shipped the
+**insider half of the point-in-time signal archive** on SEC EDGAR itself
+(Next #3(b) — Form 4 filings, with the first desk entrant that reads an external
+archive through the shared signal hook, Next #10's second half), and stopped
+short of the ESPN half with the reason and the verified endpoint paths recorded
+below (#58). Previous review 2026-09-20: the MLB half of the archive, the PR #17
+audit (#53), research-gap statuses (#52), the desk-season schedule fix (#54).
 
 ## Shipped (with the evidence a reader can rerun)
 
@@ -50,6 +52,9 @@ defects closed, the FDA half of the archive, the R15 Reddit scalp).
 | 30 | **Parallel-session PR #17 merged and audited line by line** (Irregularity #53). Kept: the placed-trades ledger, the desk UI tables, 5 roster + 3 desk usernames. Corrected: every card now says exactly what its code reads (insider / Leap / FedWatch / forecast claims removed or implemented — `LiveWeather_ForecastEdge` now really reads the NWS archive at the cut-off; `GridMM_MultiTier` now really rests maker orders); R16/R17 re-labelled UNATTRIBUTED (search-page URLs); V109/V110 re-worded; S02/S03 restored; the synthesised "upcoming trades" replaced by a list compiled only from ORDER/FILL/REST records; new test 126 fails when a card names a signal its `decide()` does not import | `src/strategies.js`; `src/desk-strategies.js`; `src/live-desk.js#buildUpcomingTrades`; `src/research-sources.js` |
 | 31 | **Stale prose about the store made computed or dated** (Irregularity #52): `RESEARCH_GAPS` carry status / closedBy (4 of 5 cards had been false for two days), S09/S10/S14/S15/S17 re-worded, the Research tab shows the status badges | `src/research-sources.js`; `src/app.js#renderResearchGaps` |
 | 32 | **Desk-season rounds no longer require a first-ever ladder** (Irregularity #54): a round is any capture batch with a (re)captured ladder, batch window 20 min → on the pre-merge store 6 rounds instead of 3, on the merged 2026-09-20 (16:00Z) store 7 rounds over ~53 h; 27 season checks pass | `src/desk-season.js#seasonSchedule`; `data/reports/desk-season-schedule.json` |
+| 33 | **The insider half of the point-in-time signal archive (was Next #3(b)) — SEC EDGAR Form 4, official and keyless.** Three verified EDGAR steps (Atom filing list → the filing's own `index.json` → the ownership XML, element names from the SEC's own spec) archived one record per accession number with EDGAR's `acceptedAt` kept separate from this archive's `first_seen_at`; a real filing is archived verbatim as the parser fixture. Because a filing does not decay, this archive answers a **past** bar — so `InsiderFlow_Form4` is a genuine backtest on the store's real daily CEO-change bars (incl. `KXAAPLCEOCHANGE-26`, finalized by the exchange with result **yes**), not a forward test. S02 → LIVE_SIGNAL; the two price-only entries become the control. EDGAR's Atom `type=4`/`count` filters proved unreliable (#58) and are handled in code with `formsSeen` published per run | `scripts/archive-form4-signals.mjs`; `src/form4-signal-store.js`; `src/form4-signal-data.js` (generated); `.github/workflows/form4-signals.yml`; `data/form4-signals/fixtures/`; facts V114–V116; tests 127–129 |
+| 34 | **The desk signal hook now has a reader (was Next #10).** `buildDeskSignalsAsync()` grew a `form4` provider beside `mlb`/`forecast`/`fda`, and `LiveInsider_Form4Flow` is the first desk entrant that opens an external point-in-time archive instead of only the captured ladders; test 126 was extended so a desk card naming insider filings must show `view.signals.form4` in its `decide()`. The 80-market cap turned out NOT to be dropping the game ladders (per-series reserves shipped earlier: KXNBAGAME 6/6, KXNCAAFGAME 4/20 kept) — what is missing is the **ladders themselves**: `data/history/` holds zero `KXMLBGAME`/`KXNFLGAME` stores, so those reserves keep 0 slots (`available: 0`) | `src/live-desk.js#buildDeskSignalsAsync`; `src/desk-strategies.js`; `src/competition-memory.js` reserved usernames; test 130 |
+| 35 | **A red test suite on main, found and fixed** (Irregularity #56). At the branch point `npm test` reported ONE failure and executed NONE of the 134 tests: a syntax error (`await` in a non-async callback, test 100) killed the file at import; behind it, test 118 called the async `buildDeskReport()` without `await` and asserted on the Promise. Both came in with PR #17. The suite ran 134/134 green after the fix, before this session's four new tests | `test/simulation.test.js` tests 100/118; `npm test` |
 
 ## Next, in priority order
 
@@ -68,21 +73,56 @@ defects closed, the FDA half of the archive, the R15 Reddit scalp).
    daily ingest — still below the 20-bar floor, so the numbers stay labelled
    directional. *Check:* `data/reports/forward-test.json` →
    `method.strictForwardBars`.
-3. **The remaining signal archives.** Weather, FDA and now MLB (shipped #29)
-   are closed with official sources. Still open, in order of value: (a) NFL /
-   NBA / NCAA live game state + injury reports — the owner's projects read
-   ESPN's public JSON, a trusted but NOT official source that would have to
-   be labelled as such (or the NBA's official injury-report PDF, which needs a
-   parser); (b) SEC EDGAR Form 4 (official, keyless) for the insider entries,
-   which are price-only until then; (c) the owner's MLB model's pre-game
-   probability captured before first pitch (S14 — the schedule half already
-   exists in `data/mlb-signals/`). Each also needs a 1-minute ingest block for
-   its game series, as `minute-mlb-game-lines` did for `KXMLBGAME`.
-   *First check after merge:* `gh run list --workflow=mlb-signals.yml` — the
-   schedule only runs on `main`; then `data/mlb-signals/games/2026-09-20.json`
-   should show Live rows from ~17:30Z, and after the 2026-09-21 06:15Z ingest
-   the micro flight should list `KXMLBGAME` contracts with 1-minute bars
-   (`data/reports/flights.json` → the two MLB entries' fills or their reason).
+3. **The remaining signal archives.** Weather, FDA, MLB (#29) and now the
+   insider half (SEC EDGAR Form 4, #33) are closed with official sources.
+   Still open, in order of value:
+
+   **(a) NFL / NBA / NCAA live state + injury reports — ESPN's public JSON, a
+   TRUSTED BUT NOT OFFICIAL source that must be labelled as such.** What this
+   session verified live on 2026-09-21 (so the next one does not re-derive it):
+   * `GET https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/injuries`
+     → `{timestamp, status, season{year,type,name,displayName}, injuries:[{id
+     (team id), displayName (team), injuries:[{id, longComment, shortComment,
+     status ("Active" seen), date ("2026-09-21T03:12Z"), athlete:{firstName,
+     lastName, displayName, shortName, position:{id,name,displayName,
+     abbreviation}, team:{id, uid, slug, name, abbreviation ("ARI"),
+     displayName}}}]}]}`. Keyless, no auth, one request per league.
+   * `GET …/basketball/mens-college-basketball/scoreboard?dates=YYYYMMDD` →
+     `{leagues:[{id,uid,name,abbreviation,season,logos,calendar…}], groups,
+     events:[], provider, eventsDate:{date,seasonType}}` — the envelope is
+     confirmed; **the per-event shape (competitions[].competitors[].score,
+     status.type.state/clock) was NOT retrievable from this sandbox** (#58),
+     so no scoreboard parser was written from memory.
+   * The ticker join must be evidence-based, like MLB's: Kalshi game tickers
+     are `KX<NFL|NBA|NCAAF|NCAAMB>GAME-<yyMONdd><AWAY><HOME>-<YES>` (date +
+     team pair, NO time, unlike KXMLBGAME) and each market's `rules_primary`
+     carries the exchange's own codes and names ("the DET Lions vs BUF Bills
+     Pro Football game"). ESPN's team table must be archived per league and
+     matched on code **and** name; NBA differs (Kalshi `NYK`/`SAS` vs ESPN
+     `NY`/`SA`) so an unverified mapping would silently trade the wrong game.
+   * *Needs:* one real scoreboard capture from a runner with egress, kept as a
+     labelled fixture; a 1-minute ingest block for the game series; and the
+     "not official" label on every card that reads it.
+
+   **(b) ~~SEC EDGAR Form 4~~ — CLOSED 2026-09-21 (#33).**
+
+   **(c) The owner's MLB model's pre-game probability (S14)** captured before
+   first pitch — the schedule half already exists in `data/mlb-signals/`.
+
+   *Known issue from the first live run (irregularity #59):* EDGAR answered the
+   2026-09-21T04:52Z capture with **HTTP 403** on all three issuers, so the store
+   is still dark and both entries abstain. The run failed loudly and committed
+   its reason; the default User-Agent now follows the exact shape EDGAR's own
+   guidance states, refused requests record their status/statusText/headers, and
+   the run report records the agent sent — so the next run either succeeds or
+   names the real cause (rate limit vs UA block vs IP block).
+
+   *First check after merge:* `gh run list --workflow=form4-signals.yml` and
+   `--workflow=mlb-signals.yml` (schedules only run on `main`); then
+   `data/form4-signals/companies/TSLA.json` should hold filings back to
+   ~2026-02 and `node scripts/archive-form4-signals.mjs --verify` should pass;
+   after that the daily flight should rank `InsiderFlow_Form4` instead of
+   listing it unranked, and the desk should show `LiveInsider_Form4Flow` fills.
 4. **Point-in-time depth on every fill.** A mid-day books capture is now
    scheduled (16:40 UTC daily) and the request-9 run re-captured every ladder;
    the depth *behind* the touch is still re-anchored between snapshots.
@@ -111,12 +151,21 @@ defects closed, the FDA half of the archive, the R15 Reddit scalp).
    picks up every new capture batch automatically. *Check:*
    `node scripts/run-desk-season.mjs` → the round count and the window in
    `data/reports/desk-season-schedule.json`.
-10. **A desk signal hook + MLB ladders on the desk.** The desk universe is
-    capped at 80 laddered markets by `generate-desk-module.mjs` and currently
-    drops every `KXMLBGAME` / `KXNFLGAME` / `KXNBAGAME` contract; raise or
-    re-rank the cap (e.g. reserve slots per series) and give `deskView` a
-    `signals` provider shared with the replay so an MLB desk entrant can read
-    the archived game state at the cut-off.
+10. **MLB / NFL ladders on the desk (the hook itself is done).** The cap is no
+    longer the problem: `generate-desk-module.mjs` reserves slots per series
+    (KXMLBGAME 6, KXNFLGAME 4, KXNBAGAME 6, KXNCAAFGAME 4, KXNHLGAME 4, the
+    nine weather series, three FDA series, three CEO series) and `deskView`
+    already carries the shared `signals` provider — #34 added its first reader
+    (`LiveInsider_Form4Flow`). What is missing is the DATA: `data/history/`
+    holds **zero** `KXMLBGAME` and `KXNFLGAME` stores, so those reserves keep
+    0 slots (`available: 0` in `data/reports/…` and `src/desk-data.js`), and no
+    desk entrant can read the MLB archive at a cut-off that has no ladder.
+    *Needs:* an ingest block that captures `with_books=true` ladders for
+    `KXMLBGAME` (and `KXNFLGAME`) during a live game window — the same
+    `minute-mlb-game-lines` block already exists for 1-minute bars; a desk MLB
+    entrant reading `view.signals.mlb` is ~40 lines once the ladders land.
+    *Check:* `src/desk-data.js` → `rule.seriesReserves[].available` for
+    KXMLBGAME must become > 0.
 11. **Process: one writer per repository at a time.** A concurrent session
     merged PR #17 to `main` while this branch was open (Irregularity #53).
     Every session must merge `main` before writing, and must not merge to
@@ -176,3 +225,28 @@ defects closed, the FDA half of the archive, the R15 Reddit scalp).
 - Five roster entries and three desk entrants merged from PR #17 are price-only rules that carry the
   name of a MasterSite project or a social-media genre; their cards say so, and test 126 fails if any
   card ever names a signal its `decide()` does not import.
+- The Form 4 archive treats a filing as knowable from **EDGAR's own acceptance
+  instant** (`acceptedAt`), not from when this repository captured it
+  (`first_seen_at`, published alongside). That is the publisher's timestamp, not
+  a measurement of publication latency made here — it is printed as `assumption`
+  in every store file and returned by `form4Assumption()`.
+- EDGAR's browse-edgar Atom feed ignores its own `type=4` and `count` filters
+  (verified 2026-09-21: the same query returned 424B2 rows for another CIK and 10
+  entries for `count=5`), so the archive filters client-side on the parsed form
+  type and publishes `formsSeen` per issuer (irregularity #58).
+- EDGAR's feed page size (40 entries) bounds how far back ONE capture reaches per
+  issuer: months for Tesla, weeks for a filer with many insiders. The archive is
+  append-only, so it grows forward on every run; walking EDGAR's older-filings
+  JSON would backfill it.
+- `KXOPENAICEOCHANGE` can never receive an insider signal — OpenAI is a private
+  company with no Section 16 filers (irregularity #57). That contract is skipped
+  with the reason published, not silently.
+- The causal link between a Section 16 filing and a CEO change is **weak and
+  unproven**: a departure is announced by 8-K, not by a Form 4. The two gated
+  entries measure whether gating the longshot fade on real filing evidence
+  changes its outcome; their cards say so and neither claims to predict a
+  departure.
+- No ESPN scoreboard parser exists yet: the per-event scoreboard shape could not
+  be retrieved from this sandbox, and writing one from memory is exactly the
+  guess the honesty contract forbids (irregularity #58). The injuries endpoint
+  IS verified and its paths are recorded in Next #3(a).

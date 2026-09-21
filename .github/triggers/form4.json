@@ -1,0 +1,15 @@
+{
+  "request": 2,
+  "enabled": true,
+  "note": "Commit a change to this file to request an immediate SEC Form 4 capture (.github/workflows/form4-signals.yml). It runs scripts/archive-form4-signals.mjs, which reads EDGAR's own Atom feed for each tracked issuer, opens each new filing's index.json, parses the ownership XML with the SEC's documented element names, and appends one record per accession number with EDGAR's acceptance instant. Bump `request` so the push is a real change.",
+  "requested_at": "2026-09-21T04:40:00.000Z",
+  "requested_by": "arena session 01a0c21e — first capture of the insider half of the point-in-time signal archive (ROADMAP Next #3(b)).",
+  "issuers_preview": [
+    "TSLA — TESLACEOCHANGE / KXTESLACEOCHANGE (\"Elon Musk is no longer CEO of Tesla by Dec 31, 2026\")",
+    "JPM — JPMCEOCHANGE (\"Jamie Dimon is no longer CEO of JPMorgan Chase by Jan 1, 2027\")",
+    "AAPL — KXAAPLCEOCHANGE (\"Tim Cook is no longer CEO of Apple before Jan 1, 2027\", finalized by the exchange with result yes)"
+  ],
+  "excluded_preview": [
+    "KXOPENAICEOCHANGE — OpenAI is a private company: it has no Section 16 reporting persons, so EDGAR holds no Form 4 for it and that contract can never receive this signal (IRREGULARITIES.md #57)"
+  ]
+}
