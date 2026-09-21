@@ -114,8 +114,14 @@ audit (#53), research-gap statuses (#52), the desk-season schedule fix (#54).
    is still dark and both entries abstain. The run failed loudly and committed
    its reason; the default User-Agent now follows the exact shape EDGAR's own
    guidance states, refused requests record their status/statusText/headers, and
-   the run report records the agent sent — so the next run either succeeds or
-   names the real cause (rate limit vs UA block vs IP block).
+   the run report records the agent sent. **It named the cause:** the 07:49Z run
+   was still refused with `server: AkamaiGHost`, i.e. by SEC's CDN edge, and the
+   edge probe added in response (run 07:58:11Z) shows **both** SEC hosts refusing
+   the same documented path (www.sec.gov 403, data.sec.gov 403). The whole of
+   sec.gov is unreachable from a GitHub-hosted runner, so the documented
+   submissions API would be refused too — this needs a different network (a
+   self-hosted runner or the owner's own machine), not a code change. The
+   archive, parser and point-in-time store are unaffected and fully tested.
 
    *First check after merge:* `gh run list --workflow=form4-signals.yml` and
    `--workflow=mlb-signals.yml` (schedules only run on `main`); then
