@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 3 date file(s) · 33 game(s) · 94 state row(s) · generated 2026-09-22T08:03:52.614Z
+ * 4 date file(s) · 49 game(s) · 111 state row(s) · generated 2026-09-22T08:05:33.176Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-09-22T08:03:52.614Z",
+ "generatedAt": "2026-09-22T08:05:33.176Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-09-22T02:35:44.324Z",
+  "last_confirmed_at": "2026-09-22T08:05:32.258Z",
   "teams": [
    {
     "id": 108,
@@ -2562,7 +2562,8 @@ export const MLB_SIGNAL_DATA = {
     "copyright": "Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt",
     "terms": "http://gdx.mlb.com/components/copyright.txt",
     "urls": [
-     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-20&endDate=2026-09-21&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
+     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-20&endDate=2026-09-21&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright",
+     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-21&endDate=2026-09-22&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
     ]
    },
    "captures": [
@@ -2570,7 +2571,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-09-21T20:09:30.164Z",
     "2026-09-21T23:18:13.804Z",
     "2026-09-22T01:38:02.708Z",
-    "2026-09-22T02:35:44.326Z"
+    "2026-09-22T02:35:44.326Z",
+    "2026-09-22T08:05:32.258Z"
    ],
    "games": {
     "823169": {
@@ -2662,6 +2664,21 @@ export const MLB_SIGNAL_DATA = {
        },
        "winner": null,
        "url_ref": 0
+      },
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Final",
+       "detailedState": "Final",
+       "codedGameState": "F",
+       "inning": 9,
+       "inningState": "Top",
+       "runs": {
+        "away": 2,
+        "home": 5
+       },
+       "winner": "home",
+       "url_ref": 1
       }
      ]
     },
@@ -2742,7 +2759,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-22T01:38:02.708Z",
-       "last_seen_at": "2026-09-22T02:35:44.326Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -2849,7 +2866,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-22T02:35:44.326Z",
-       "last_seen_at": "2026-09-22T02:35:44.326Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -2860,6 +2877,769 @@ export const MLB_SIGNAL_DATA = {
         "home": 4
        },
        "winner": "home",
+       "url_ref": 0
+      }
+     ]
+    }
+   }
+  },
+  "2026-09-22": {
+   "date": "2026-09-22",
+   "what": "Point-in-time official MLB game state for this US-Eastern calendar date: one state row per CHANGE of (status, inning, inning state, runs, winner), each with the capture instant it was first seen; captures[] lists every run that read this date so staleness at any past time is measurable. Team codes are the official MLB abbreviations. Read only through src/mlb-signal-store.js (no row after the decision time is ever returned).",
+   "source": {
+    "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
+    "copyright": "Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt",
+    "terms": "http://gdx.mlb.com/components/copyright.txt",
+    "urls": [
+     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-21&endDate=2026-09-22&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
+    ]
+   },
+   "captures": [
+    "2026-09-22T08:05:32.258Z"
+   ],
+   "games": {
+    "822840": {
+     "gamePk": 822840,
+     "gameDate": "2026-09-23T00:05:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 121,
+      "abbreviation": "NYM",
+      "name": "New York Mets"
+     },
+     "home": {
+      "id": 140,
+      "abbreviation": "TEX",
+      "name": "Texas Rangers"
+     },
+     "venue": "Globe Life Field",
+     "probablePitchers": {
+      "away": {
+       "id": 640455,
+       "fullName": "Sean Manaea"
+      },
+      "home": {
+       "id": 669022,
+       "fullName": "MacKenzie Gore"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "823089": {
+     "gamePk": 823089,
+     "gameDate": "2026-09-23T01:40:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 117,
+      "abbreviation": "HOU",
+      "name": "Houston Astros"
+     },
+     "home": {
+      "id": 136,
+      "abbreviation": "SEA",
+      "name": "Seattle Mariners"
+     },
+     "venue": "T-Mobile Park",
+     "probablePitchers": {
+      "away": {
+       "id": 664299,
+       "fullName": "Cristian Javier"
+      },
+      "home": {
+       "id": 669302,
+       "fullName": "Logan Gilbert"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "823166": {
+     "gamePk": 823166,
+     "gameDate": "2026-09-23T01:45:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 142,
+      "abbreviation": "MIN",
+      "name": "Minnesota Twins"
+     },
+     "home": {
+      "id": 137,
+      "abbreviation": "SF",
+      "name": "San Francisco Giants"
+     },
+     "venue": "Oracle Park",
+     "probablePitchers": {
+      "away": {
+       "id": 671737,
+       "fullName": "Taj Bradley"
+      },
+      "home": {
+       "id": 683627,
+       "fullName": "Anthony Molina"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "823328": {
+     "gamePk": 823328,
+     "gameDate": "2026-09-22T22:40:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 138,
+      "abbreviation": "STL",
+      "name": "St. Louis Cardinals"
+     },
+     "home": {
+      "id": 134,
+      "abbreviation": "PIT",
+      "name": "Pittsburgh Pirates"
+     },
+     "venue": "PNC Park",
+     "probablePitchers": {
+      "away": {
+       "id": 669467,
+       "fullName": "Andre Pallante"
+      },
+      "home": {
+       "id": 683003,
+       "fullName": "Jared Jones"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "823412": {
+     "gamePk": 823412,
+     "gameDate": "2026-09-22T22:40:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 158,
+      "abbreviation": "MIL",
+      "name": "Milwaukee Brewers"
+     },
+     "home": {
+      "id": 143,
+      "abbreviation": "PHI",
+      "name": "Philadelphia Phillies"
+     },
+     "venue": "Citizens Bank Park",
+     "probablePitchers": {
+      "away": {
+       "id": 669160,
+       "fullName": "Dustin May"
+      },
+      "home": {
+       "id": 554430,
+       "fullName": "Zack Wheeler"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "823494": {
+     "gamePk": 823494,
+     "gameDate": "2026-09-22T23:05:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "S",
+     "gameNumber": 2,
+     "away": {
+      "id": 139,
+      "abbreviation": "TB",
+      "name": "Tampa Bay Rays"
+     },
+     "home": {
+      "id": 147,
+      "abbreviation": "NYY",
+      "name": "New York Yankees"
+     },
+     "venue": "Yankee Stadium",
+     "probablePitchers": {
+      "away": {
+       "id": 656876,
+       "fullName": "Drew Rasmussen"
+      },
+      "home": {
+       "id": 608331,
+       "fullName": "Max Fried"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "823543": {
+     "gamePk": 823543,
+     "gameDate": "2026-09-22T17:05:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "S",
+     "gameNumber": 1,
+     "away": {
+      "id": 139,
+      "abbreviation": "TB",
+      "name": "Tampa Bay Rays"
+     },
+     "home": {
+      "id": 147,
+      "abbreviation": "NYY",
+      "name": "New York Yankees"
+     },
+     "venue": "Yankee Stadium",
+     "probablePitchers": {
+      "away": {
+       "id": 607259,
+       "fullName": "Nick Martinez"
+      },
+      "home": {
+       "id": 607074,
+       "fullName": "Carlos Rodón"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "823897": {
+     "gamePk": 823897,
+     "gameDate": "2026-09-23T02:10:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 135,
+      "abbreviation": "SD",
+      "name": "San Diego Padres"
+     },
+     "home": {
+      "id": 119,
+      "abbreviation": "LAD",
+      "name": "Los Angeles Dodgers"
+     },
+     "venue": "UNIQLO Field at Dodger Stadium",
+     "probablePitchers": {
+      "away": {
+       "id": 650633,
+       "fullName": "Michael King"
+      },
+      "home": null
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "824061": {
+     "gamePk": 824061,
+     "gameDate": "2026-09-22T23:40:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 145,
+      "abbreviation": "CWS",
+      "name": "Chicago White Sox"
+     },
+     "home": {
+      "id": 118,
+      "abbreviation": "KC",
+      "name": "Kansas City Royals"
+     },
+     "venue": "Kauffman Stadium",
+     "probablePitchers": {
+      "away": {
+       "id": 641743,
+       "fullName": "Anthony Kay"
+      },
+      "home": {
+       "id": 663738,
+       "fullName": "Daniel Lynch IV"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "824222": {
+     "gamePk": 824222,
+     "gameDate": "2026-09-22T22:40:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 120,
+      "abbreviation": "WSH",
+      "name": "Washington Nationals"
+     },
+     "home": {
+      "id": 116,
+      "abbreviation": "DET",
+      "name": "Detroit Tigers"
+     },
+     "venue": "Comerica Park",
+     "probablePitchers": {
+      "away": {
+       "id": 800600,
+       "fullName": "Jackson Kent"
+      },
+      "home": {
+       "id": 623454,
+       "fullName": "Drew Anderson"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "824302": {
+     "gamePk": 824302,
+     "gameDate": "2026-09-23T00:40:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 109,
+      "abbreviation": "AZ",
+      "name": "Arizona Diamondbacks"
+     },
+     "home": {
+      "id": 115,
+      "abbreviation": "COL",
+      "name": "Colorado Rockies"
+     },
+     "venue": "Coors Field",
+     "probablePitchers": {
+      "away": {
+       "id": 647336,
+       "fullName": "Michael Soroka"
+      },
+      "home": {
+       "id": 607536,
+       "fullName": "Kyle Freeland"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "824624": {
+     "gamePk": 824624,
+     "gameDate": "2026-09-22T23:40:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 146,
+      "abbreviation": "MIA",
+      "name": "Miami Marlins"
+     },
+     "home": {
+      "id": 112,
+      "abbreviation": "CHC",
+      "name": "Chicago Cubs"
+     },
+     "venue": "Wrigley Field",
+     "probablePitchers": {
+      "away": {
+       "id": 676083,
+       "fullName": "Janson Junk"
+      },
+      "home": null
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "824709": {
+     "gamePk": 824709,
+     "gameDate": "2026-09-22T22:45:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 114,
+      "abbreviation": "CLE",
+      "name": "Cleveland Guardians"
+     },
+     "home": {
+      "id": 111,
+      "abbreviation": "BOS",
+      "name": "Boston Red Sox"
+     },
+     "venue": "Fenway Park",
+     "probablePitchers": {
+      "away": {
+       "id": 800048,
+       "fullName": "Parker Messick"
+      },
+      "home": {
+       "id": 801139,
+       "fullName": "Payton Tolle"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "824785": {
+     "gamePk": 824785,
+     "gameDate": "2026-09-22T22:35:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 141,
+      "abbreviation": "TOR",
+      "name": "Toronto Blue Jays"
+     },
+     "home": {
+      "id": 110,
+      "abbreviation": "BAL",
+      "name": "Baltimore Orioles"
+     },
+     "venue": "Oriole Park at Camden Yards",
+     "probablePitchers": {
+      "away": {
+       "id": 453286,
+       "fullName": "Max Scherzer"
+      },
+      "home": {
+       "id": 605135,
+       "fullName": "Chris Bassitt"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "824867": {
+     "gamePk": 824867,
+     "gameDate": "2026-09-22T23:15:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 113,
+      "abbreviation": "CIN",
+      "name": "Cincinnati Reds"
+     },
+     "home": {
+      "id": 144,
+      "abbreviation": "ATL",
+      "name": "Atlanta Braves"
+     },
+     "venue": "Truist Park",
+     "probablePitchers": {
+      "away": {
+       "id": 682227,
+       "fullName": "Brandon Williamson"
+      },
+      "home": {
+       "id": 702275,
+       "fullName": "JR Ritchie"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "824953": {
+     "gamePk": 824953,
+     "gameDate": "2026-09-23T01:40:00Z",
+     "officialDate": "2026-09-22",
+     "gameType": "R",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 108,
+      "abbreviation": "LAA",
+      "name": "Los Angeles Angels"
+     },
+     "home": {
+      "id": 133,
+      "abbreviation": "ATH",
+      "name": "Athletics"
+     },
+     "venue": "Sutter Health Park",
+     "probablePitchers": {
+      "away": {
+       "id": 579328,
+       "fullName": "Yusei Kikuchi"
+      },
+      "home": {
+       "id": 669620,
+       "fullName": "Brady Basso"
+      }
+     },
+     "firstCapturedAt": "2026-09-22T08:05:32.258Z",
+     "states": [
+      {
+       "captured_at": "2026-09-22T08:05:32.258Z",
+       "last_seen_at": "2026-09-22T08:05:32.258Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
        "url_ref": 0
       }
      ]

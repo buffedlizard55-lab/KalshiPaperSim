@@ -6,7 +6,8 @@
   "copyright": "Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt",
   "terms": "http://gdx.mlb.com/components/copyright.txt",
   "urls": [
-   "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-20&endDate=2026-09-21&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
+   "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-20&endDate=2026-09-21&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright",
+   "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-21&endDate=2026-09-22&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
   ]
  },
  "captures": [
@@ -14,7 +15,8 @@
   "2026-09-21T20:09:30.164Z",
   "2026-09-21T23:18:13.804Z",
   "2026-09-22T01:38:02.708Z",
-  "2026-09-22T02:35:44.326Z"
+  "2026-09-22T02:35:44.326Z",
+  "2026-09-22T08:05:32.258Z"
  ],
  "games": {
   "823169": {
@@ -106,6 +108,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-22T08:05:32.258Z",
+     "last_seen_at": "2026-09-22T08:05:32.258Z",
+     "abstractGameState": "Final",
+     "detailedState": "Final",
+     "codedGameState": "F",
+     "inning": 9,
+     "inningState": "Top",
+     "runs": {
+      "away": 2,
+      "home": 5
+     },
+     "winner": "home",
+     "url_ref": 1
     }
    ]
   },
@@ -186,7 +203,7 @@
     },
     {
      "captured_at": "2026-09-22T01:38:02.708Z",
-     "last_seen_at": "2026-09-22T02:35:44.326Z",
+     "last_seen_at": "2026-09-22T08:05:32.258Z",
      "abstractGameState": "Final",
      "detailedState": "Final",
      "codedGameState": "F",
@@ -293,7 +310,7 @@
     },
     {
      "captured_at": "2026-09-22T02:35:44.326Z",
-     "last_seen_at": "2026-09-22T02:35:44.326Z",
+     "last_seen_at": "2026-09-22T08:05:32.258Z",
      "abstractGameState": "Final",
      "detailedState": "Final",
      "codedGameState": "F",
