@@ -1,6 +1,6 @@
 # Line-by-Line Verification Audit
 
-**Generated:** 2026-09-21 by `scripts/render-docs.js` from `src/verification-data.js`
+**Generated:** 2026-09-22 by `scripts/render-docs.js` from `src/verification-data.js`
 **Standard:** every claim below is either (a) quoted from official Kalshi documentation, (b) copied from a real
 production API response captured on 2026-09-17, or (c) derived by arithmetic on (a)/(b).
 Nothing is inferred from a language model's memory of Kalshi.
