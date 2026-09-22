@@ -58,6 +58,9 @@
 #                   conflicted file under it is regenerable.
 #   GIT_REMOTE      remote to push to (default: origin)
 #   FETCH_DEEPEN    deepen count for shallow checkouts (default: 100)
+#   PUSH_ATTEMPTS   push attempts before giving up (default: 6)
+#   PUSH_BACKOFF_SCALE  multiplies the jittered backoff between attempts;
+#                   0 makes the waits instantaneous (used by the tests)
 #   BOT_NAME/BOT_EMAIL  committer identity (default: kalshi-history-bot)
 #
 # The GENERATED_PATHS default below MUST stay in sync with every workflow's
@@ -76,6 +79,12 @@ REMOTE="${GIT_REMOTE:-origin}"
 REGENERATE_CMD="${REGENERATE_CMD:-node scripts/generate-history-module.mjs && node scripts/generate-desk-module.mjs && node scripts/render-docs.js && node build.js}"
 GENERATED_PATHS="${GENERATED_PATHS:-src/accumulated-history.js src/forecast-data.js src/fda-signal-data.js src/mlb-signal-data.js src/espn-signal-data.js src/mlb-pregame-data.js src/form4-signal-data.js src/desk-data.js README.md VERIFICATION.md IRREGULARITIES.md index.html docs/}"
 DEEPEN="${FETCH_DEEPEN:-100}"
+# A competing bot run takes ~90s end to end, so three retries seconds apart all
+# land inside it — which is how three 2026-09-22 runs lost their captures at the
+# commit step (#63). Six attempts with a growing, JITTERED wait outlast a
+# competitor, and the jitter keeps two bots from retrying in lockstep.
+ATTEMPTS="${PUSH_ATTEMPTS:-6}"
+BACKOFF_SCALE="${PUSH_BACKOFF_SCALE:-1}"
 
 echo "push-with-race-guard: branch=${BRANCH} remote=${REMOTE}"
 
@@ -123,12 +132,21 @@ git commit -m "${MESSAGE}"
 # 1. Push, and on rejection sync with the remote tip and retry.
 # ---------------------------------------------------------------------------
 pushed=0
-for attempt in 1 2 3; do
+while [ "${attempt:-0}" -lt "${ATTEMPTS}" ]; do
+  attempt=$(( ${attempt:-0} + 1 ))
   if git push "${REMOTE}" "HEAD:${BRANCH}"; then
     pushed=1
     break
   fi
-  echo "::warning::push rejected (attempt ${attempt}) — syncing with ${REMOTE}/${BRANCH} and retrying"
+  echo "::warning::push rejected (attempt ${attempt}/${ATTEMPTS}) — syncing with ${REMOTE}/${BRANCH} and retrying"
+
+  # Wait for the competitor to finish instead of hammering: the wait grows with
+  # the attempt number and carries jitter (RANDOM % 4 extra 5s slots).
+  nap=$(( (attempt * 15 + (RANDOM % 4) * 5) * BACKOFF_SCALE ))
+  if [ "${nap}" -gt 0 ]; then
+    echo "push-with-race-guard: backing off ${nap}s before attempt $(( attempt + 1 ))/${ATTEMPTS}"
+    sleep "${nap}"
+  fi
 
   # Shallow checkouts (actions/checkout defaults to depth 1) need their
   # boundary deepened before a rebase onto the remote tip can work.
@@ -161,7 +179,10 @@ for attempt in 1 2 3; do
       # Stage the formerly conflicted files and every tracked file the
       # regeneration rewrote (docs/ copies, README AUTO blocks, ...).
       for f in ${UNMERGED}; do git add -- "${f}"; done
-      git add -u
+      # -A, not -u: regeneration can CREATE a path this run never had (a new
+      # report, a new generated module), and a tracked-only stage would leave it
+      # behind — the same class of loss as #41 and #63.
+      git add -A
       # The one hard rule: regeneration must have produced MARKER-FREE files.
       # If any conflicted file still carries conflict markers (a hand-written
       # section collided, not an AUTO block), the auto-resolve path refuses to
@@ -193,5 +214,5 @@ if [ "${pushed}" = "1" ]; then
   exit 0
 fi
 
-echo "::error::push still rejected after 3 attempts"
+echo "::error::push still rejected after ${ATTEMPTS} attempts"
 exit 1

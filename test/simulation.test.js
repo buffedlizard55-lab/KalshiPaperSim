@@ -1410,7 +1410,15 @@ test('46. every verified fact carries a reviewable link and a status', () => {
     // are the evidence for what their formats and disclosures ARE. Nothing
     // numeric is taken from them — see each row's taken/howTested.
     'www.tradingview.com', 'tradingview.com', 'www.trade-ideas.com', 'trade-ideas.com',
-    'specials.candlecharts.com', 'www.kalshi.com', 'kalshi.com', 'external-api.kalshi.com'
+    'specials.candlecharts.com', 'www.kalshi.com', 'kalshi.com', 'external-api.kalshi.com',
+    // docs.github.com is GitHub's OWN platform documentation - admitted for
+    // 'Pipeline' facts ONLY, because the semantics of a workflow concurrency
+    // group (`queue: single` cancels a pending run, `queue: max` queues up to
+    // 100, and `queue: max` + `cancel-in-progress: true` is a validation error)
+    // are defined by the platform and by nobody else. It is never a source about
+    // the exchange, about a price, or about a signal; the group check below
+    // enforces that.
+    'docs.github.com'
   ]);
   let withLink = 0;
 
@@ -1442,7 +1450,10 @@ test('46. every verified fact carries a reviewable link and a status', () => {
             // OFFICIAL and labelled as such everywhere it travels; same slot
             // as statsapi.mlb.com / sec.gov: a signal source, never a source
             // about the exchange.
-            u.host === 'site.web.api.espn.com',
+            u.host === 'site.web.api.espn.com' ||
+            // docs.github.com: the platform's own documentation, for 'Pipeline'
+            // facts only - see the host-policy comment above.
+            (u.host === 'docs.github.com' && f.group === 'Pipeline'),
           `${f.id}: "${f.group}" facts must cite Kalshi (or a language/project reference), not ${u.host}`
         );
       }
@@ -4702,11 +4713,28 @@ test('125. every data workflow regenerates the same files the push guard may aut
     assert.ok(/\nconcurrency:\n(?:\s*#[^\n]*\n)*\s+group:/.test(y), `${f} declares a concurrency group`);
     assert.ok(y.includes('cancel-in-progress: false'), `${f} never cancels a capture in flight`);
   }
-  // The 20-minute MLB bot has its OWN group (a fast bot in the shared queue
-  // would evict queued captures — see the comment in the workflow).
+  // Every pushing workflow shares ONE queue, with `queue: max` (irregularity
+  // #63). GitHub's documented default keeps ONE pending run per group and
+  // CANCELS the previous one, which is why the four 20-minute archives used to
+  // sit in their own groups — and why they then lost their captures at the push
+  // step instead: three runs on 2026-09-22 captured data and died at their
+  // commit step. `queue: max` (up to 100 pending, FIFO) removes the trade-off,
+  // so nobody is evicted and nobody races.
+  assert.ok(pushing.length >= 8, `every data workflow pushes through the guard: ${pushing.join(', ')}`);
+  for (const f of pushing) {
+    const y = readFileSync(path.join(wfDir, f), 'utf8');
+    const block = /\nconcurrency:\n((?:[ \t#][^\n]*\n)+)/.exec(y);
+    assert.ok(block, `${f} declares a concurrency block`);
+    assert.match(block[1], /^ {2}group: data-pipeline-\$\{\{ github\.ref \}\}$/m, `${f} shares the one data-pipeline queue`);
+    assert.match(block[1], /^ {2}queue: max$/m, `${f} queues a pending run instead of evicting it`);
+    // Anchored to a real YAML key line: the shared comment QUOTES the forbidden
+    // combination in order to explain why it is forbidden, so a bare substring
+    // test would fail on the documentation itself.
+    assert.ok(!/^ {2}cancel-in-progress: true\s*$/m.test(block[1]), `${f}: queue: max with cancel-in-progress: true is a workflow validation error per the docs`);
+    assert.match(block[1], /control-workflow-concurrency/, `${f} cites the documentation that defines queue: max`);
+  }
   const mlb = readFileSync(path.join(wfDir, 'mlb-signals.yml'), 'utf8');
-  assert.match(mlb, /group: mlb-signals-\$\{\{ github\.ref \}\}/);
-  assert.match(mlb, /\*\/20 16-23 \* \* \*/);
+  assert.match(mlb, /\*\/20 16-23 \* \* \*/, 'the 20-minute MLB cadence is unchanged');
   assert.ok(existsSync(path.join(root, '.github', 'triggers', 'mlb.json')));
 });
 
@@ -5484,4 +5512,211 @@ test('137. the ESPN workflow and push guard agree on every generated module this
   const prov = readFileSync(path.join(root, 'data', 'espn-signals', 'fixtures', '_PROVENANCE.md'), 'utf8');
   assert.match(prov, /NOT OFFICIAL/);
   assert.match(prov, /2026-09-21/);
+});
+
+test('138. the game-window audit classifies a ladder by the exchange\'s OWN times and refuses to claim an in-play ladder it cannot verify', async () => {
+  const audit = await import('../scripts/verify-game-window.mjs');
+  const book = (at, yes, no) => ({
+    captured_at: at,
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets/T/orderbook',
+    orderbook: { orderbook_fp: { yes_dollars: Array.from({ length: yes }, (_, i) => [String(i), '1']), no_dollars: Array.from({ length: no }, (_, i) => [String(i), '1']) } }
+  });
+  const market = {
+    open_time: '2026-09-17T00:00:00Z',
+    occurrence_datetime: '2026-09-19T23:00:00Z',
+    expected_expiration_time: '2026-09-19T23:00:00Z', // == occurrence on 144 of the 151 real stores
+    close_time: '2026-09-20T02:30:00Z',               // the ACTUAL trading end
+    status: 'finalized',
+    result: 'yes'
+  };
+
+  // The tradeable window ends at close_time, NOT at min(close, expected):
+  // taking the min would call the whole in-play tail "post-close".
+  const win = audit.tradeableWindow(market);
+  assert.equal(new Date(win.closeTs).toISOString(), new Date('2026-09-20T02:30:00Z').toISOString());
+  assert.match(win.source, /close_time/, 'the window names the exchange field it came from');
+  assert.equal(win.occurrenceEqualsExpiration, true, 'this is the shape that makes occurrence_datetime unusable as an event bound');
+  assert.equal(win.occurrenceEqualsCloseTime, false);
+  // No market object -> no window is invented.
+  const noWin = audit.tradeableWindow(null);
+  assert.equal(noWin.openTs, null);
+  assert.match(noWin.reason, /NO_MARKET_OBJECT/);
+  assert.equal(audit.classifyCapture(book('2026-09-20T00:00:00Z', 5, 5), noWin, { source: 'UNVERIFIED' }).phase, 'UNKNOWN');
+
+  // OFFICIAL MLB knowledge: scheduled first pitch + the archive's own Final.
+  const official = { source: 'OFFICIAL_MLB_SCHEDULE', verified: true, officialStartTs: Date.parse('2026-09-19T23:00:00Z'), officialStartIso: '2026-09-19T23:00:00Z', observedFinalAt: null, joinKey: 'gamePk 822843' };
+  assert.equal(audit.classifyCapture(book('2026-09-16T00:00:00Z', 5, 5), win, official).phase, 'PRE_OPEN');
+  assert.equal(audit.classifyCapture(book('2026-09-18T00:00:00Z', 5, 5), win, official).phase, 'TRADEABLE_PRE_EVENT');
+  assert.equal(audit.classifyCapture(book('2026-09-20T00:00:00Z', 5, 5), win, official).phase, 'IN_PLAY');
+  assert.equal(audit.classifyCapture(book('2026-09-20T02:10:00Z', 5, 5), win, { ...official, observedFinalAt: '2026-09-20T01:50:00Z' }).phase, 'TRADEABLE_POST_EVENT');
+  assert.equal(audit.classifyCapture(book('2026-09-21T00:00:00Z', 0, 0), win, official).phase, 'POST_CLOSE');
+  // No joined event window -> the audit refuses to split pre-game from in-play.
+  assert.equal(audit.classifyCapture(book('2026-09-20T00:00:00Z', 5, 5), win, { source: 'UNVERIFIED', reason: 'NO_ARCHIVED_GAME' }).phase, 'TRADEABLE_EVENT_UNVERIFIED');
+  // ESPN knowledge: NO published start time, so only its own observations classify.
+  const espnIn = { source: 'ESPN_OBSERVED', verified: false, trust: 'ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)', observedState: 'in', observedStateAt: '2026-09-19T23:40:00Z', observedFinalAt: null };
+  assert.equal(audit.classifyCapture(book('2026-09-20T00:00:00Z', 5, 5), win, espnIn).phase, 'IN_PLAY');
+  assert.equal(audit.classifyCapture(book('2026-09-20T00:00:00Z', 5, 5), win, { ...espnIn, observedState: 'pre' }).phase, 'TRADEABLE_PRE_EVENT');
+  assert.equal(audit.classifyCapture(book('2026-09-20T00:00:00Z', 5, 5), win, { ...espnIn, observedState: 'post', observedFinalAt: '2026-09-19T23:50:00Z' }).phase, 'TRADEABLE_POST_EVENT');
+  assert.equal(audit.classifyCapture(book('2026-09-20T00:00:00Z', 5, 5), win, { ...espnIn, observedState: null }).phase, 'TRADEABLE_EVENT_UNVERIFIED');
+  // An empty ladder is counted, never presented as a price.
+  assert.deepEqual(audit.ladderLevels(book('x', 0, 0)), { yes: 0, no: 0, levels: 0 });
+
+  // Store-level verdicts.
+  const mk = (books, m = market, ticker = 'KXMLBGAME-26SEP192300AAAA-AAA', series = 'KXMLBGAME', status = 'finalized') =>
+    ({ ticker, series_ticker: series, market: m, books, candlesticks: [], status, result: 'yes' });
+  const rowEmpty = audit.auditStore(mk([book('2026-09-21T00:00:00Z', 0, 0), book('2026-09-21T01:00:00Z', 0, 0)]), 'data/history/intraday/60m/x.json');
+  assert.equal(rowEmpty.verdict, 'POST_CLOSE_ONLY');
+  assert.match(rowEmpty.verdictWhy, /close_time/);
+  assert.equal(rowEmpty.examples.length, 2, 'empty ladders are still published as evidence');
+  assert.equal(rowEmpty.examples[0].yesLevels, 0);
+  // The in-play path, through the test seam — no archive is invented for it.
+  const rowInPlay = audit.auditStore(
+    mk([book('2026-09-20T00:00:00Z', 5, 5)], market, 'KXNHLGAME-26SEP19VGKLA-VGK', 'KXNHLGAME', 'active'),
+    'data/history/intraday/60m/y.json',
+    { knowledge: () => ({ ...espnIn }) }
+  );
+  assert.equal(rowInPlay.verdict, 'IN_PLAY_LADDER');
+  assert.equal(rowInPlay.phases.IN_PLAY, 1);
+  assert.equal(rowInPlay.nonEmptyByPhase.IN_PLAY, 1);
+  // The same store WITHOUT the seam: the real archive has no such event, so the
+  // ladder stays unverified instead of becoming an in-play claim.
+  const rowUnverified = audit.auditStore(mk([book('2026-09-20T00:00:00Z', 5, 5)], market, 'KXNHLGAME-26SEP19VGKLA-VGK', 'KXNHLGAME', 'active'), 'data/history/intraday/60m/y.json');
+  assert.equal(rowUnverified.verdict, 'TRADEABLE_LADDER_EVENT_UNVERIFIED');
+  assert.equal(rowUnverified.eventWindow.reason, 'NO_ARCHIVED_EVENT');
+  assert.equal(audit.auditStore({ ticker: 'KXBTCY-27JAN0100-B77500', series_ticker: 'KXBTCY', books: [] }, 'x.json'), null, 'a non-game series is not this audit\'s business');
+
+  // The committed report must agree with the store it was read from, and must
+  // not claim an in-play ladder the joins cannot support.
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  const reportPath = path.join(here, '..', 'data', 'reports', 'game-window-captures.json');
+  if (existsSync(reportPath)) {
+    const rep = JSON.parse(readFileSync(reportPath, 'utf8'));
+    assert.equal(rep.offline, true, 'the audit is offline by construction');
+    assert.ok(rep.totals.stores > 0, 'the committed report audited real stores');
+    assert.equal(rep.totals.ladders, rep.stores.reduce((a, r) => a + r.ladders, 0), 'totals are the sum of the rows');
+    assert.equal(rep.totals.laddersNonEmpty, rep.stores.reduce((a, r) => a + r.laddersNonEmpty, 0));
+    const phaseSum = rep.stores.reduce((a, r) => a + Object.values(r.phases || {}).reduce((x, y) => x + y, 0), 0);
+    assert.equal(phaseSum, rep.totals.ladders, 'every ladder is classified exactly once');
+    for (const s of rep.stores) {
+      const sum = Object.values(s.phases).reduce((x, y) => x + y, 0);
+      assert.equal(sum, s.ladders, `${s.ticker}: its phases sum to its ladder count`);
+      if (s.eventWindow && s.eventWindow.source === 'OFFICIAL_MLB_SCHEDULE') {
+        assert.equal(s.eventWindow.verified, true);
+        assert.match(s.eventWindow.startKind, /official scheduled first pitch/);
+        assert.match(s.eventWindow.joinKey, /^gamePk \d+$/, 'an official join names the gamePk it matched');
+      }
+      if (s.eventWindow && s.eventWindow.source === 'ESPN_OBSERVED') {
+        assert.equal(s.eventWindow.verified, false);
+        assert.match(s.eventWindow.trust, /NOT OFFICIAL/, 'the ESPN window keeps its trust label');
+        assert.match(s.eventWindow.startKind, /NO PUBLISHED START TIME/);
+      }
+      if (s.eventWindow && s.eventWindow.source === 'UNVERIFIED') assert.ok(s.eventWindow.reason, 'an unverified window always says why');
+    }
+    if (rep.totals.nonEmptyByPhase.IN_PLAY === 0) {
+      assert.match(rep.honestNote, /No game-series contract/, 'zero in-play ladders is stated, not hidden');
+      assert.ok(rep.totals.nonEmptyByPhase.TRADEABLE_EVENT_UNVERIFIED > 0, 'and the unverified tradeable ladders are counted beside it');
+    }
+    assert.ok(rep.stillMissing.length > 0, 'every series without an in-play ladder states its unblocker');
+    for (const r of rep.deskReserves) assert.ok(r.explainsDeskReserve.length > 40, `${r.series}: the reserve is explained, not just numbered`);
+    // The GitHub Pages site links this audit from its "Raw reports" panel, so a
+    // compact copy sits beside the other reports and must agree with the
+    // canonical file (same numbers, different whitespace).
+    const docsCopy = path.join(here, '..', 'docs', 'data', 'reports', 'game-window-captures.json');
+    if (existsSync(docsCopy)) {
+      const slim = JSON.parse(readFileSync(docsCopy, 'utf8'));
+      assert.deepEqual(slim.totals, rep.totals, 'the Pages copy reports the same totals as the canonical file');
+      assert.equal(slim.stores.length, rep.stores.length, 'the Pages copy carries every store row');
+      assert.deepEqual(slim.deskReserves, rep.deskReserves);
+    }
+    const app = readFileSync(path.join(here, '..', 'src', 'app.js'), 'utf8');
+    assert.match(app, /game-window-captures\.json/, 'the site links the audit report so a reader can check any game-window figure');
+    assert.match(app, /node scripts\/verify-game-window\.mjs/, 'and says how to regenerate it');
+  }
+});
+
+test('139. the desk module publishes its own capture bound, so a season round that stops being reproducible is visible', async () => {
+  const { DESK_DATA } = await import('../src/desk-data.js');
+  const ev = DESK_DATA.coverage && DESK_DATA.coverage.captureEviction;
+  assert.ok(ev, 'coverage.captureEviction exists');
+  assert.equal(ev.storeLadderCaptures, ev.storeNonEmptyLadders + ev.storeEmptyLadders, 'every stored ladder is either non-empty or empty');
+  assert.ok(ev.storeLadderCaptures >= ev.moduleLadderCaptures, 'the module never carries more ladders than the store holds');
+  // compactLadder() drops exactly the empty books, so the non-empty count IS the
+  // number of ladders that entered the per-market selection.
+  assert.equal(ev.storeNonEmptyLadders, ev.laddersBeforeCaptureSelection, 'the selection starts from the store\'s non-empty ladders');
+  assert.equal(ev.laddersBeforeCaptureSelection - ev.evictedByCaptureCap, ev.laddersAfterCaptureSelection, 'the capture cap accounts for every ladder it dropped');
+  assert.equal(ev.laddersAfterCaptureSelection - ev.evictedByMarketCap, ev.moduleLadderCaptures, 'and the market cap accounts for the rest — the two bounds fully decompose the loss');
+  assert.equal(ev.marketsDroppedByCap, DESK_DATA.rule.droppedForCap, 'the dropped-market count agrees with the module\'s own rule block');
+  assert.ok(ev.storeCaptureBatches >= ev.moduleCaptureBatches);
+  assert.equal(ev.storeBatchesRepresentedInModule + ev.storeBatchesNotRepresented, ev.storeCaptureBatches, 'every store batch is classified');
+  assert.equal(ev.storeBatchesNotRepresentedList.length, ev.storeBatchesNotRepresented);
+  assert.equal(ev.seasonRoundStampsEvictedList.length, ev.seasonRoundStampsEvicted);
+  assert.ok(ev.seasonRoundStamps === ev.storeCaptureBatches, 'a round stamp is a batch stamp (desk-season stamps a round at its batch\'s last instant)');
+  assert.ok(ev.captureInstantsEvictedFromModule >= ev.nonEmptyCaptureInstantsEvictedFromModule);
+  assert.match(ev.rule, /EVICTED FROM THIS MODULE, never from data\/history/, 'the report says what was NOT deleted');
+  assert.match(ev.effect, /FEWER rounds than it already measured/i);
+  assert.match(ev.reproduce, /--max-captures/);
+  assert.equal(ev.nothingDeletedFrom, 'data/history/** (the store is append-only; only this generated module is a window on it)');
+  // The module side is recomputable from the module itself.
+  const instants = new Set();
+  let ladders = 0;
+  for (const m of DESK_DATA.markets) for (const c of m.captures || []) { instants.add(Date.parse(c.at)); ladders += 1; }
+  assert.equal(ladders, ev.moduleLadderCaptures, 'moduleLadderCaptures is recomputable from the module');
+  assert.equal(instants.size, ev.moduleCaptureInstants);
+  assert.equal(new Date(Math.min(...instants)).toISOString(), ev.moduleEarliestCapture);
+  assert.equal(new Date(Math.max(...instants)).toISOString(), ev.moduleNewestCapture);
+  // The store side is recomputable from data/history/** with the same walk the
+  // generator does, so the eviction numbers cannot drift silently from the tree.
+  const histDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'history');
+  let storeLadders = 0;
+  let storeNonEmpty = 0;
+  const walk = (dir) => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) { walk(p); continue; }
+      if (!e.name.endsWith('.json') || e.name.startsWith('_')) continue;
+      let j; try { j = JSON.parse(readFileSync(p, 'utf8')); } catch { continue; }
+      for (const b of j.books || []) {
+        storeLadders += 1;
+        const fp = b && b.orderbook && b.orderbook.orderbook_fp;
+        const lv = (fp && Array.isArray(fp.yes_dollars) ? fp.yes_dollars.length : 0) + (fp && Array.isArray(fp.no_dollars) ? fp.no_dollars.length : 0);
+        if (lv > 0) storeNonEmpty += 1;
+      }
+    }
+  };
+  walk(histDir);
+  assert.equal(storeLadders, ev.storeLadderCaptures, 'storeLadderCaptures is recomputable from data/history/**');
+  assert.equal(storeNonEmpty, ev.storeNonEmptyLadders);
+});
+
+test('140. the push guard outlasts a competing bot, and every ingest run publishes the game-window verdict', () => {
+  const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const guard = readFileSync(path.join(root, 'scripts', 'push-with-race-guard.sh'), 'utf8');
+  // Six attempts with a jittered backoff: a competitor's run lasts ~90s, so the
+  // old three-attempt budget (seconds apart) lost, and the capture died with the
+  // runner — three times on 2026-09-22 (irregularity #63).
+  const attempts = /ATTEMPTS="\$\{PUSH_ATTEMPTS:-(\d+)\}"/.exec(guard);
+  assert.ok(attempts, 'the guard declares a retry budget');
+  assert.ok(Number(attempts[1]) >= 6, `retry budget is >= 6 attempts (got ${attempts[1]})`);
+  assert.match(guard, /BACKOFF_SCALE="\$\{PUSH_BACKOFF_SCALE:-1\}"/, 'the backoff has a test escape hatch');
+  assert.match(guard, /RANDOM % 4/, 'the backoff is jittered so two bots do not retry in lockstep');
+  assert.match(guard, /while \[ "\$\{attempt:-0\}" -lt "\$\{ATTEMPTS\}" \]; do/, 'the loop honours the declared budget');
+  assert.match(guard, /push still rejected after \$\{ATTEMPTS\} attempts/, 'and the failure message names it');
+  assert.match(guard, /\n      git add -A\n/, 'after a regeneration EVERY path is staged, including a file the other bot created');
+  assert.ok(!/git add -u/.test(guard), 'the guard no longer stages tracked-only modifications after a regeneration');
+
+  // ROADMAP "Next #1" is a committed step, not a manual instruction.
+  for (const f of ['daily-history.yml', 'ingest-now.yml']) {
+    const y = readFileSync(path.join(root, '.github', 'workflows', f), 'utf8');
+    assert.match(y, /verify-game-window\.mjs/, `${f} runs the game-window audit`);
+    assert.match(y, /Audit the game-window captures \(no network\)/);
+    const step = /- name: Audit the game-window captures \(no network\)\n((?:[ \t#][^\n]*\n)+?)[ \t]*continue-on-error: true\n[ \t]*run: node scripts\/verify-game-window\.mjs/.exec(y);
+    assert.ok(step, `${f}: the audit step is non-fatal by design, so a finding can never mask an ingest failure`);
+  }
+  const script = readFileSync(path.join(root, 'scripts', 'verify-game-window.mjs'), 'utf8');
+  assert.match(script, /matchMlbGame/, 'the audit joins through the repository\'s own MLB join');
+  assert.match(script, /matchEspnGame/, 'and its own ESPN join');
+  assert.match(script, /m && m\.ok \? m\.game : null/, 'the MLB join contract ({ok,game} | {ok:false,reason}) is honoured — truthiness alone would report a join that never happened');
+  assert.match(script, /m && m\.ok \? m\.event : null/, 'the ESPN join contract is honoured the same way');
+  assert.match(script, /no game time is ever parsed out of a ticker string/, 'and no event time is ever parsed out of a ticker');
+  assert.match(script, /captured after `tsMs` is invisible|captured after this ladder: not knowable then/, 'the event window is evaluated point-in-time');
 });
