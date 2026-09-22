@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-22T20:05:06.029Z",
+ "generatedAt": "2026-09-22T22:57:11.546Z",
  "audit": "game-window-captures",
  "version": 2,
  "offline": true,
@@ -44,7 +44,64 @@
   "occurrenceEqualsCloseTime": 0,
   "storesWithMarketObject": 197,
   "distinctTickers": 135,
+  "storesWhoseFilesDisagreeOnStatus": 2,
+  "storeFilesDisagreeingWithResolution": 2,
+  "openStoresByNewestRecord": 60,
+  "openStoresByTheirOwnFileStatus": 62,
   "tradeableNonEmpty": 1101
+ },
+ "statusReconciliation": {
+  "rule": {
+   "id": "market-status-v1",
+   "r1": "every store file is a point-in-time photograph and is kept; disagreements are published as conflicts",
+   "r2": "settlement is monotone: an observation finalized with result yes/no wins over any active/initialized observation, even a newer one, because a settled contract cannot reopen",
+   "r3": "otherwise the newest observation by market_captured_at wins; ties are broken by source path so the outcome is deterministic",
+   "source": "https://docs.kalshi.com/api-reference/market/get-market (status, result, settlement_value are the exchange's own fields)",
+   "capturedIn": "data/history/**/*.json → status, result, market_captured_at (written by scripts/ingest-history.mjs)"
+  },
+  "tickers": 135,
+  "storeFiles": 197,
+  "filesDisagreeingWithResolution": 2,
+  "tickersWithDisagreeingFiles": 2,
+  "staleOpenPhotographs": [
+   {
+    "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
+    "resolved": {
+     "status": "finalized",
+     "result": "yes",
+     "marketCapturedAt": "2026-09-22T19:56:00.271Z",
+     "source": "data/history/KXNHLGAME-26SEP19VGKLA-VGK.json"
+    },
+    "staleFiles": [
+     {
+      "source": "data/history/intraday/1m/KXNHLGAME-26SEP19VGKLA-VGK.json",
+      "status": "active",
+      "result": null,
+      "marketCapturedAt": "2026-09-20T03:39:00.150Z"
+     }
+    ],
+    "why": "2 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
+   },
+   {
+    "ticker": "KXNHLGAME-26SEP20WSHBOS-WSH",
+    "resolved": {
+     "status": "finalized",
+     "result": "no",
+     "marketCapturedAt": "2026-09-22T19:56:01.514Z",
+     "source": "data/history/KXNHLGAME-26SEP20WSHBOS-WSH.json"
+    },
+    "staleFiles": [
+     {
+      "source": "data/history/intraday/1m/KXNHLGAME-26SEP20WSHBOS-WSH.json",
+      "status": "active",
+      "result": null,
+      "marketCapturedAt": "2026-09-20T03:39:01.568Z"
+     }
+    ],
+    "why": "2 of 3 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
+   }
+  ],
+  "conflicts": []
  },
  "seriesWithInPlayLadder": [],
  "seriesWithoutInPlayLadder": [
@@ -61,6 +118,7 @@
    "series": "KXBUNDESLIGAGAME",
    "stores": 3,
    "openStores": 0,
+   "rawOpenStores": 0,
    "settledStores": 3,
    "distinctTickers": 1,
    "ladders": 49,
@@ -92,6 +150,7 @@
    "series": "KXMLBGAME",
    "stores": 54,
    "openStores": 0,
+   "rawOpenStores": 0,
    "settledStores": 54,
    "distinctTickers": 42,
    "ladders": 256,
@@ -126,6 +185,7 @@
    "series": "KXNBAGAME",
    "stores": 18,
    "openStores": 18,
+   "rawOpenStores": 18,
    "settledStores": 0,
    "distinctTickers": 6,
    "ladders": 366,
@@ -157,6 +217,7 @@
    "series": "KXNCAAFGAME",
    "stores": 42,
    "openStores": 42,
+   "rawOpenStores": 42,
    "settledStores": 0,
    "distinctTickers": 26,
    "ladders": 497,
@@ -165,8 +226,7 @@
     "UNVERIFIED": 42
    },
    "joinReasons": {
-    "CODE_UNMAPPED_TO_ESPN": 41,
-    "TEAM_CODE_NOT_IN_MAP": 1
+    "CODE_UNMAPPED_TO_ESPN": 42
    },
    "verdicts": {
     "TRADEABLE_LADDER_EVENT_UNVERIFIED": 42
@@ -189,6 +249,7 @@
    "series": "KXNFLGAME",
    "stores": 36,
    "openStores": 0,
+   "rawOpenStores": 0,
    "settledStores": 36,
    "distinctTickers": 28,
    "ladders": 208,
@@ -221,8 +282,9 @@
   {
    "series": "KXNHLGAME",
    "stores": 34,
-   "openStores": 2,
-   "settledStores": 32,
+   "openStores": 0,
+   "rawOpenStores": 2,
+   "settledStores": 34,
    "distinctTickers": 22,
    "ladders": 356,
    "laddersNonEmpty": 238,
@@ -255,6 +317,7 @@
    "series": "KXWNBAGAME",
    "stores": 10,
    "openStores": 0,
+   "rawOpenStores": 0,
    "settledStores": 10,
    "distinctTickers": 10,
    "ladders": 136,
@@ -289,6 +352,7 @@
   {
    "series": "KXMLBGAME",
    "deskSlots": 6,
+   "deskMaxSlots": 10,
    "deskKept": 0,
    "deskAvailable": 0,
    "deskReason": "MLB in-play games — desk MLB signal hook targets these (Tangotiger WE, R18)",
@@ -297,6 +361,8 @@
    "openContractsWithUsableLadder": 0,
    "ofThoseInDeskModule": 0,
    "openLadderContractsNotInModule": [],
+   "settledContractsWithAStaleOpenFile": 0,
+   "staleOpenFilesExcludedFromTradeable": [],
    "contracts": [],
    "auditStores": 54,
    "auditOpenStores": 0,
@@ -309,6 +375,7 @@
   {
    "series": "KXNFLGAME",
    "deskSlots": 4,
+   "deskMaxSlots": 10,
    "deskKept": 0,
    "deskAvailable": 0,
    "deskReason": "NFL Sunday/Monday game contracts — LiveNFL_GameFavourite",
@@ -317,6 +384,8 @@
    "openContractsWithUsableLadder": 0,
    "ofThoseInDeskModule": 0,
    "openLadderContractsNotInModule": [],
+   "settledContractsWithAStaleOpenFile": 0,
+   "staleOpenFilesExcludedFromTradeable": [],
    "contracts": [],
    "auditStores": 36,
    "auditOpenStores": 0,
@@ -329,6 +398,7 @@
   {
    "series": "KXNBAGAME",
    "deskSlots": 6,
+   "deskMaxSlots": 10,
    "deskKept": 6,
    "deskAvailable": 6,
    "deskReason": "NBA game contracts — LiveNBA_GameFavourite",
@@ -344,6 +414,8 @@
    "openContractsWithUsableLadder": 6,
    "ofThoseInDeskModule": 6,
    "openLadderContractsNotInModule": [],
+   "settledContractsWithAStaleOpenFile": 0,
+   "staleOpenFilesExcludedFromTradeable": [],
    "contracts": [
     {
      "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
@@ -394,47 +466,50 @@
    "auditLadders": 366,
    "auditInPlayNonEmpty": 0,
    "auditTradeableNonEmpty": 366,
-   "explainsDeskReserve": "the desk kept 6 of 6 slot(s) and the audit found 366 non-empty ladder(s) inside the tradeable window for this series (0 of them in-play) — consistent"
+   "explainsDeskReserve": "the desk kept 6 of its 6 floor / 10 ceiling slot(s) and the audit found 366 non-empty ladder(s) inside the tradeable window for this series (0 of them in-play) — consistent"
   },
   {
    "series": "KXNCAAFGAME",
    "deskSlots": 4,
-   "deskKept": 4,
-   "deskAvailable": 25,
+   "deskMaxSlots": 20,
+   "deskKept": 20,
+   "deskAvailable": 26,
    "deskReason": "NCAA football game contracts — LiveNCAA_GameFavourite",
    "deskTickersKept": [
     "KXNCAAFGAME-26OCT03MCNSLSU-MCNS",
     "KXNCAAFGAME-26OCT03MCNSLSU-LSU",
+    "KXNCAAFGAME-26SEP26OREUSC-ORE",
+    "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+    "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+    "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
     "KXNCAAFGAME-26SEP26CARKFSU-FSU",
-    "KXNCAAFGAME-26SEP26OREUSC-ORE"
+    "KXNCAAFGAME-26SEP26CMUMIA-MIA",
+    "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
+    "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+    "KXNCAAFGAME-26SEP26OKLAUGA-UGA",
+    "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
+    "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
+    "KXNCAAFGAME-26OCT03CHSTARL-TARL",
+    "KXNCAAFGAME-26SEP26HCUUNT-UNT",
+    "KXNCAAFGAME-26OCT03TXSOFAU-FAU",
+    "KXNCAAFGAME-26OCT03CHSTARL-CHS",
+    "KXNCAAFGAME-26SEP26MHUWKU-WKU",
+    "KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
+    "KXNCAAFGAME-26SEP26HCUUNT-HCU"
    ],
    "openLadderContracts": 26,
    "openContractsWithUsableLadder": 26,
-   "ofThoseInDeskModule": 4,
+   "ofThoseInDeskModule": 20,
    "openLadderContractsNotInModule": [
-    "KXNCAAFGAME-26SEP26CMUMIA-CMU",
-    "KXNCAAFGAME-26SEP26CMUMIA-MIA",
-    "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
-    "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
-    "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
-    "KXNCAAFGAME-26SEP26ILLOSU-OSU",
     "KXNCAAFGAME-26OCT03TXSOFAU-TXSO",
-    "KXNCAAFGAME-26OCT03TXSOFAU-FAU",
-    "KXNCAAFGAME-26OCT03CHSTARL-CHS",
-    "KXNCAAFGAME-26OCT03CHSTARL-TARL",
-    "KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
     "KXNCAAFGAME-26OCT03NWSTLAM-NWST",
     "KXNCAAFGAME-26OCT03SAMUAB-UAB",
-    "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
-    "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
     "KXNCAAFGAME-26OCT03BYUTCU-BYU",
     "KXNCAAFGAME-26SEP26EIUSDST-SDST",
-    "KXNCAAFGAME-26SEP26HCUUNT-HCU",
-    "KXNCAAFGAME-26SEP26HCUUNT-UNT",
-    "KXNCAAFGAME-26SEP26MHUWKU-MHU",
-    "KXNCAAFGAME-26SEP26MHUWKU-WKU",
-    "KXNCAAFGAME-26SEP26OKLAUGA-UGA"
+    "KXNCAAFGAME-26SEP26MHUWKU-MHU"
    ],
+   "settledContractsWithAStaleOpenFile": 0,
+   "staleOpenFilesExcludedFromTradeable": [],
    "contracts": [
     {
      "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
@@ -448,14 +523,14 @@
      "usableLadders": 55,
      "inPlayLadders": 0,
      "stores": 3,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
      "usableLadders": 55,
      "inPlayLadders": 0,
      "stores": 3,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
@@ -469,28 +544,28 @@
      "usableLadders": 55,
      "inPlayLadders": 0,
      "stores": 3,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
      "usableLadders": 54,
      "inPlayLadders": 0,
      "stores": 3,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
      "usableLadders": 54,
      "inPlayLadders": 0,
      "stores": 3,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
      "usableLadders": 53,
      "inPlayLadders": 0,
      "stores": 3,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26OCT03MCNSLSU-LSU",
@@ -518,28 +593,28 @@
      "usableLadders": 5,
      "inPlayLadders": 0,
      "stores": 1,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26OCT03CHSTARL-CHS",
      "usableLadders": 4,
      "inPlayLadders": 0,
      "stores": 1,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26OCT03CHSTARL-TARL",
      "usableLadders": 4,
      "inPlayLadders": 0,
      "stores": 1,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
      "usableLadders": 4,
      "inPlayLadders": 0,
      "stores": 1,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26OCT03NWSTLAM-NWST",
@@ -560,14 +635,14 @@
      "usableLadders": 3,
      "inPlayLadders": 0,
      "stores": 1,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
      "usableLadders": 2,
      "inPlayLadders": 0,
      "stores": 1,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26OCT03BYUTCU-BYU",
@@ -588,14 +663,14 @@
      "usableLadders": 1,
      "inPlayLadders": 0,
      "stores": 1,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26SEP26HCUUNT-UNT",
      "usableLadders": 1,
      "inPlayLadders": 0,
      "stores": 1,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26SEP26MHUWKU-MHU",
@@ -609,14 +684,14 @@
      "usableLadders": 1,
      "inPlayLadders": 0,
      "stores": 1,
-     "inDeskModule": false
+     "inDeskModule": true
     },
     {
      "ticker": "KXNCAAFGAME-26SEP26OKLAUGA-UGA",
      "usableLadders": 1,
      "inPlayLadders": 0,
      "stores": 1,
-     "inDeskModule": false
+     "inDeskModule": true
     }
    ],
    "auditStores": 42,
@@ -625,45 +700,45 @@
    "auditLadders": 497,
    "auditInPlayNonEmpty": 0,
    "auditTradeableNonEmpty": 497,
-   "explainsDeskReserve": "the desk kept 4 of 4 slot(s) and the audit found 497 non-empty ladder(s) inside the tradeable window for this series (0 of them in-play) — consistent"
+   "explainsDeskReserve": "the desk kept 20 of its 4 floor / 20 ceiling slot(s) and the audit found 497 non-empty ladder(s) inside the tradeable window for this series (0 of them in-play) — consistent"
   },
   {
    "series": "KXNHLGAME",
    "deskSlots": 4,
+   "deskMaxSlots": 8,
    "deskKept": 0,
    "deskAvailable": 0,
    "deskReason": "NHL game contracts — sports-favourite coverage",
    "deskTickersKept": [],
-   "openLadderContracts": 2,
-   "openContractsWithUsableLadder": 2,
+   "openLadderContracts": 0,
+   "openContractsWithUsableLadder": 0,
    "ofThoseInDeskModule": 0,
-   "openLadderContractsNotInModule": [
-    "KXNHLGAME-26SEP19VGKLA-VGK",
-    "KXNHLGAME-26SEP20WSHBOS-WSH"
-   ],
-   "contracts": [
+   "openLadderContractsNotInModule": [],
+   "settledContractsWithAStaleOpenFile": 2,
+   "staleOpenFilesExcludedFromTradeable": [
     {
      "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
-     "usableLadders": 10,
-     "inPlayLadders": 0,
-     "stores": 1,
-     "inDeskModule": false
+     "file": "data/history/intraday/1m/KXNHLGAME-26SEP19VGKLA-VGK.json",
+     "fileStatus": "active",
+     "resolved": "finalized",
+     "resolvedResult": "yes"
     },
     {
      "ticker": "KXNHLGAME-26SEP20WSHBOS-WSH",
-     "usableLadders": 10,
-     "inPlayLadders": 0,
-     "stores": 1,
-     "inDeskModule": false
+     "file": "data/history/intraday/1m/KXNHLGAME-26SEP20WSHBOS-WSH.json",
+     "fileStatus": "active",
+     "resolved": "finalized",
+     "resolvedResult": "no"
     }
    ],
+   "contracts": [],
    "auditStores": 34,
-   "auditOpenStores": 2,
-   "auditSettledStores": 32,
+   "auditOpenStores": 0,
+   "auditSettledStores": 34,
    "auditLadders": 356,
    "auditInPlayNonEmpty": 0,
    "auditTradeableNonEmpty": 238,
-   "explainsDeskReserve": "the desk kept 0 of 4 slot(s) even though 2 OPEN KXNHLGAME contract(s) carry non-empty tradeable ladders in the store, of which 0 are in the desk module (2 are absent from src/desk-data.js — the module's own rule caps open contracts at 80 by real lifetime volume, and its series reserve for KXNHLGAME then found nothing to keep). Contract(s): KXNHLGAME-26SEP19VGKLA-VGK [NOT in module, 10 usable ladder(s)]; KXNHLGAME-26SEP20WSHBOS-WSH [NOT in module, 10 usable ladder(s)]"
+   "explainsDeskReserve": "the desk kept 0 of 4 slot(s) because EVERY KXNHLGAME contract in this store is already finalized by the exchange; the audit's ladders for them (0 in-play, 238 tradeable-window non-empty) belong to settled contracts and are historical measurement data, not tradeable slots"
   }
  ],
  "stores": [
@@ -772,7 +847,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
@@ -879,7 +960,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:07.793Z in data/history/intraday/60m/KXNBAGAME-26OCT20BOSDET-BOS.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
@@ -986,7 +1073,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:09.238Z in data/history/intraday/60m/KXNBAGAME-26OCT20BOSDET-DET.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
@@ -1093,7 +1186,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:13.581Z in data/history/intraday/60m/KXNBAGAME-26OCT20OKCSAS-OKC.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
@@ -1200,7 +1299,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:12.133Z in data/history/intraday/60m/KXNBAGAME-26OCT20OKCSAS-SAS.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20PHINYK-NYK",
@@ -1307,7 +1412,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:10.686Z in data/history/intraday/60m/KXNBAGAME-26OCT20PHINYK-NYK.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
@@ -1414,7 +1525,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:06.341Z in data/history/intraday/60m/KXNBAGAME-26OCT20PHINYK-PHI.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
@@ -1521,7 +1638,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:54:59.279Z in data/history/KXNCAAFGAME-26SEP26CARKFSU-FSU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26CMUMIA-CMU",
@@ -1628,7 +1751,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:00.531Z in data/history/KXNCAAFGAME-26SEP26CMUMIA-CMU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
@@ -1735,7 +1864,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:01.777Z in data/history/KXNCAAFGAME-26SEP26CMUMIA-MIA.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
@@ -1842,7 +1977,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:03.020Z in data/history/KXNCAAFGAME-26SEP26ILLOSU-OSU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
@@ -1949,7 +2090,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:04.263Z in data/history/KXNCAAFGAME-26SEP26MOSUSMU-SMU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
@@ -2056,7 +2203,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:05.506Z in data/history/KXNCAAFGAME-26SEP26OREUSC-ORE.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
@@ -2163,7 +2316,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:06.748Z in data/history/KXNCAAFGAME-26SEP26SHSUTTU-TTU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
@@ -2270,7 +2429,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:07.993Z in data/history/KXNCAAFGAME-26SEP26TXAMLSU-LSU.json) says \"active\""
   },
   {
    "ticker": "KXNHLGAME-26SEP19CHIMIN-CHI",
@@ -2377,7 +2542,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19CHIMIN-MIN",
@@ -2484,7 +2655,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19DALSTL-DAL",
@@ -2591,7 +2768,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
@@ -2698,7 +2881,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
@@ -2805,7 +2994,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP20WSHBOS-WSH",
@@ -2912,7 +3107,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-WSH/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-WSH"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-WSH",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 3 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU",
@@ -3019,7 +3220,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP161507DETTOR-DET",
@@ -3090,7 +3297,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161507DETTOR-DET/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161507DETTOR-DET"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161507DETTOR-DET",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP161840LADCIN-LAD",
@@ -3161,7 +3374,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840LADCIN-LAD/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840LADCIN-LAD"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840LADCIN-LAD",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP161840MILPIT-MIL",
@@ -3232,7 +3451,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840MILPIT-MIL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840MILPIT-MIL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840MILPIT-MIL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP161840MILPIT-PIT",
@@ -3303,7 +3528,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840MILPIT-PIT/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840MILPIT-PIT"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840MILPIT-PIT",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP162005BOSTEX-BOS",
@@ -3386,7 +3617,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162005BOSTEX-BOS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162005BOSTEX-BOS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162005BOSTEX-BOS",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP162005BOSTEX-TEX",
@@ -3457,7 +3694,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162005BOSTEX-TEX/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162005BOSTEX-TEX"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162005BOSTEX-TEX",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP162138SEALAA-LAA",
@@ -3540,7 +3783,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162138SEALAA-LAA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162138SEALAA-LAA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162138SEALAA-LAA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP162138SEALAA-SEA",
@@ -3623,7 +3872,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162138SEALAA-SEA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162138SEALAA-SEA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162138SEALAA-SEA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP162140MIAAZ-AZ",
@@ -3706,7 +3961,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162140MIAAZ-AZ/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162140MIAAZ-AZ"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162140MIAAZ-AZ",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP162140MIAAZ-MIA",
@@ -3789,7 +4050,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162140MIAAZ-MIA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162140MIAAZ-MIA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162140MIAAZ-MIA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP171235MILPIT-MIL",
@@ -3896,7 +4163,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171235MILPIT-MIL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171235MILPIT-MIL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171235MILPIT-MIL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP171235MILPIT-PIT",
@@ -4003,7 +4276,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171235MILPIT-PIT/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171235MILPIT-PIT"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171235MILPIT-PIT",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP171510SDCOL-SD",
@@ -4098,7 +4377,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171510SDCOL-SD/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171510SDCOL-SD"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171510SDCOL-SD",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP171915PHINYM-PHI",
@@ -4205,7 +4490,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171915PHINYM-PHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171915PHINYM-PHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171915PHINYM-PHI",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP172005BOSTEX-BOS",
@@ -4312,7 +4603,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172005BOSTEX-BOS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172005BOSTEX-BOS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172005BOSTEX-BOS",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP172005BOSTEX-TEX",
@@ -4419,7 +4716,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172005BOSTEX-TEX/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172005BOSTEX-TEX"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172005BOSTEX-TEX",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP172138MINLAA-LAA",
@@ -4526,7 +4829,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-LAA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-LAA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-LAA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP172138MINLAA-MIN",
@@ -4633,7 +4942,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-MIN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-MIN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-MIN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP181840CHCCIN-CHC",
@@ -4740,7 +5055,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181840CHCCIN-CHC/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181840CHCCIN-CHC"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181840CHCCIN-CHC",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP181905MILBAL-BAL",
@@ -4823,7 +5144,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181905MILBAL-BAL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181905MILBAL-BAL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181905MILBAL-BAL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP181905MILBAL-MIL",
@@ -4930,7 +5257,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181905MILBAL-MIL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181905MILBAL-MIL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181905MILBAL-MIL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP181910BOSTB-TB",
@@ -5037,7 +5370,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181910BOSTB-TB/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181910BOSTB-TB"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP181910BOSTB-TB",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP182215SFLAD-LAD",
@@ -5144,7 +5483,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP182215SFLAD-LAD/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP182215SFLAD-LAD"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP182215SFLAD-LAD",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP182215SFLAD-SF",
@@ -5251,7 +5596,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP182215SFLAD-SF/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP182215SFLAD-SF"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP182215SFLAD-SF",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP192010NYYAZ-NYY",
@@ -5358,7 +5709,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192010NYYAZ-NYY/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192010NYYAZ-NYY"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192010NYYAZ-NYY",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP192040MIASD-MIA",
@@ -5465,7 +5822,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192040MIASD-MIA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192040MIASD-MIA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192040MIASD-MIA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP192040MIASD-SD",
@@ -5572,7 +5935,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192040MIASD-SD/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192040MIASD-SD"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192040MIASD-SD",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP192138MINLAA-LAA",
@@ -5679,7 +6048,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192138MINLAA-LAA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192138MINLAA-LAA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192138MINLAA-LAA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP192138MINLAA-MIN",
@@ -5786,7 +6161,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192138MINLAA-MIN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192138MINLAA-MIN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192138MINLAA-MIN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP201920MILBAL-BAL",
@@ -5869,7 +6250,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP201920MILBAL-BAL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP201920MILBAL-BAL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP201920MILBAL-BAL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP201920MILBAL-MIL",
@@ -5976,7 +6363,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP201920MILBAL-MIL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP201920MILBAL-MIL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP201920MILBAL-MIL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP211835TORBAL-BAL",
@@ -6071,7 +6464,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP211835TORBAL-BAL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP211835TORBAL-BAL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP211835TORBAL-BAL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP211835TORBAL-TOR",
@@ -6166,7 +6565,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP211835TORBAL-TOR/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP211835TORBAL-TOR"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP211835TORBAL-TOR",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP212145MINSF-MIN",
@@ -6261,7 +6666,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP212145MINSF-MIN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP212145MINSF-MIN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP212145MINSF-MIN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP221305TBNYYG1-NYY",
@@ -6332,7 +6743,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221305TBNYYG1-NYY/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221305TBNYYG1-NYY"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221305TBNYYG1-NYY",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP221305TBNYYG1-TB",
@@ -6403,7 +6820,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221305TBNYYG1-TB/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221305TBNYYG1-TB"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221305TBNYYG1-TB",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
@@ -6510,7 +6933,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:07.793Z in data/history/intraday/60m/KXNBAGAME-26OCT20BOSDET-BOS.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
@@ -6617,7 +7046,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:09.238Z in data/history/intraday/60m/KXNBAGAME-26OCT20BOSDET-DET.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
@@ -6724,7 +7159,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:13.581Z in data/history/intraday/60m/KXNBAGAME-26OCT20OKCSAS-OKC.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
@@ -6831,7 +7272,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:12.133Z in data/history/intraday/60m/KXNBAGAME-26OCT20OKCSAS-SAS.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20PHINYK-NYK",
@@ -6938,7 +7385,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:10.686Z in data/history/intraday/60m/KXNBAGAME-26OCT20PHINYK-NYK.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
@@ -7045,7 +7498,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:06.341Z in data/history/intraday/60m/KXNBAGAME-26OCT20PHINYK-PHI.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
@@ -7152,7 +7611,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:54:59.279Z in data/history/KXNCAAFGAME-26SEP26CARKFSU-FSU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26CMUMIA-CMU",
@@ -7259,7 +7724,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:00.531Z in data/history/KXNCAAFGAME-26SEP26CMUMIA-CMU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
@@ -7366,7 +7837,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:01.777Z in data/history/KXNCAAFGAME-26SEP26CMUMIA-MIA.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
@@ -7473,7 +7950,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:03.020Z in data/history/KXNCAAFGAME-26SEP26ILLOSU-OSU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
@@ -7580,7 +8063,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:04.263Z in data/history/KXNCAAFGAME-26SEP26MOSUSMU-SMU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
@@ -7687,7 +8176,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:05.506Z in data/history/KXNCAAFGAME-26SEP26OREUSC-ORE.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
@@ -7794,7 +8289,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:06.748Z in data/history/KXNCAAFGAME-26SEP26SHSUTTU-TTU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
@@ -7901,7 +8402,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:07.993Z in data/history/KXNCAAFGAME-26SEP26TXAMLSU-LSU.json) says \"active\""
   },
   {
    "ticker": "KXNFLGAME-26AUG20SFLAC-LAC",
@@ -7996,7 +8503,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG20SFLAC-LAC/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG20SFLAC-LAC"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG20SFLAC-LAC",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26AUG22PHINE-NE",
@@ -8091,7 +8604,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-NE/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-NE"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-NE",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26AUG22PHINE-PHI",
@@ -8186,7 +8705,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-PHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-PHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-PHI",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26AUG23SEATEN-SEA",
@@ -8281,7 +8806,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG23SEATEN-SEA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG23SEATEN-SEA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG23SEATEN-SEA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26AUG23SEATEN-TEN",
@@ -8376,7 +8907,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG23SEATEN-TEN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG23SEATEN-TEN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG23SEATEN-TEN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26AUG27LARLAC-LAC",
@@ -8471,7 +9008,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG27LARLAC-LAC/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG27LARLAC-LAC"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG27LARLAC-LAC",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26AUG27LARLAC-LAR",
@@ -8566,7 +9109,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG27LARLAC-LAR/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG27LARLAC-LAR"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG27LARLAC-LAR",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26AUG27SFLV-SF",
@@ -8661,7 +9210,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG27SFLV-SF/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG27SFLV-SF"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG27SFLV-SF",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP13DALNYG-DAL",
@@ -8756,7 +9311,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-DAL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-DAL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-DAL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP13DALNYG-NYG",
@@ -8851,7 +9412,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-NYG/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-NYG"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-NYG",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP13WASPHI-PHI",
@@ -8946,7 +9513,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13WASPHI-PHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13WASPHI-PHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13WASPHI-PHI",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP13WASPHI-WAS",
@@ -9041,7 +9614,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13WASPHI-WAS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13WASPHI-WAS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13WASPHI-WAS",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP14DENKC-DEN",
@@ -9136,7 +9715,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-DEN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-DEN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-DEN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP14DENKC-KC",
@@ -9231,7 +9816,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-KC/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-KC"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-KC",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP17DETBUF-BUF",
@@ -9326,7 +9917,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP17DETBUF-BUF/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP17DETBUF-BUF"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP17DETBUF-BUF",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP17DETBUF-DET",
@@ -9421,7 +10018,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP17DETBUF-DET/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP17DETBUF-DET"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP17DETBUF-DET",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP20GBNYJ-GB",
@@ -9516,7 +10119,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20GBNYJ-GB/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20GBNYJ-GB"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20GBNYJ-GB",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP20INDKC-IND",
@@ -9611,7 +10220,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP20INDKC-KC",
@@ -9706,7 +10321,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-KC/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-KC"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-KC",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP20LVLAC-LV",
@@ -9801,7 +10422,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20LVLAC-LV/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20LVLAC-LV"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20LVLAC-LV",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP20PHITEN-PHI",
@@ -9896,7 +10523,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20PHITEN-PHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20PHITEN-PHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20PHITEN-PHI",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP20WASDAL-WAS",
@@ -9991,7 +10624,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20WASDAL-WAS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20WASDAL-WAS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20WASDAL-WAS",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
@@ -10086,7 +10725,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP21NYGLAR-LAR/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP21NYGLAR-LAR"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP21NYGLAR-LAR",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
@@ -10181,7 +10826,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP21NYGLAR-NYG/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP21NYGLAR-NYG"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP21NYGLAR-NYG",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19CHIMIN-CHI",
@@ -10288,7 +10939,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19CHIMIN-MIN",
@@ -10395,7 +11052,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19DALSTL-DAL",
@@ -10502,7 +11165,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
@@ -10609,7 +11278,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
@@ -10716,7 +11391,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK",
+   "rawStatus": "active",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP20WSHBOS-WSH",
@@ -10823,7 +11504,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-WSH/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-WSH"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-WSH",
+   "rawStatus": "active",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 3 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU",
@@ -10930,7 +11617,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP131920SDSF-SF",
@@ -11037,7 +11730,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP131920SDSF-SF/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP131920SDSF-SF"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP131920SDSF-SF",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP142140MIAAZ-AZ",
@@ -11144,7 +11843,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP142140MIAAZ-AZ/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP142140MIAAZ-AZ"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP142140MIAAZ-AZ",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP152140MIAAZ-AZ",
@@ -11251,7 +11956,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP152140MIAAZ-AZ/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP152140MIAAZ-AZ"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP152140MIAAZ-AZ",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP152140MIAAZ-MIA",
@@ -11358,7 +12069,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP152140MIAAZ-MIA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP152140MIAAZ-MIA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP152140MIAAZ-MIA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP161340NYYMIN-MIN",
@@ -11465,7 +12182,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161340NYYMIN-MIN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161340NYYMIN-MIN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161340NYYMIN-MIN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP161340NYYMIN-NYY",
@@ -11572,7 +12295,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161340NYYMIN-NYY/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161340NYYMIN-NYY"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161340NYYMIN-NYY",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP161840LADCIN-LAD",
@@ -11679,7 +12408,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840LADCIN-LAD/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840LADCIN-LAD"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP161840LADCIN-LAD",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP162138SEALAA-SEA",
@@ -11786,7 +12521,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162138SEALAA-SEA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162138SEALAA-SEA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162138SEALAA-SEA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP162140MIAAZ-AZ",
@@ -11869,7 +12610,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162140MIAAZ-AZ/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162140MIAAZ-AZ"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP162140MIAAZ-AZ",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP171235MILPIT-MIL",
@@ -11976,7 +12723,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171235MILPIT-MIL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171235MILPIT-MIL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP171235MILPIT-MIL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP172005BOSTEX-BOS",
@@ -12083,7 +12836,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172005BOSTEX-BOS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172005BOSTEX-BOS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172005BOSTEX-BOS",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP172138MINLAA-LAA",
@@ -12190,7 +12949,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-LAA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-LAA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-LAA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP172138MINLAA-MIN",
@@ -12297,7 +13062,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-MIN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-MIN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172138MINLAA-MIN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP182215SFLAD-SF",
@@ -12404,7 +13175,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP182215SFLAD-SF/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP182215SFLAD-SF"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP182215SFLAD-SF",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP192040MIASD-SD",
@@ -12487,7 +13264,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192040MIASD-SD/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192040MIASD-SD"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192040MIASD-SD",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP192138MINLAA-LAA",
@@ -12594,7 +13377,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192138MINLAA-LAA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192138MINLAA-LAA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP192138MINLAA-LAA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP212145MINSF-MIN",
@@ -12689,7 +13478,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP212145MINSF-MIN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP212145MINSF-MIN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP212145MINSF-MIN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXMLBGAME-26SEP221305TBNYYG1-TB",
@@ -12760,7 +13555,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221305TBNYYG1-TB/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221305TBNYYG1-TB"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221305TBNYYG1-TB",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
@@ -12867,7 +13668,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:07.793Z in data/history/intraday/60m/KXNBAGAME-26OCT20BOSDET-BOS.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
@@ -12974,7 +13781,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:09.238Z in data/history/intraday/60m/KXNBAGAME-26OCT20BOSDET-DET.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
@@ -13081,7 +13894,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:13.581Z in data/history/intraday/60m/KXNBAGAME-26OCT20OKCSAS-OKC.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
@@ -13188,7 +14007,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:12.133Z in data/history/intraday/60m/KXNBAGAME-26OCT20OKCSAS-SAS.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20PHINYK-NYK",
@@ -13295,7 +14120,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:10.686Z in data/history/intraday/60m/KXNBAGAME-26OCT20PHINYK-NYK.json) says \"active\""
   },
   {
    "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
@@ -13402,7 +14233,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:06.341Z in data/history/intraday/60m/KXNBAGAME-26OCT20PHINYK-PHI.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26OCT03BYUTCU-BYU",
@@ -13428,7 +14265,7 @@
     "matchedBy": null,
     "officialStartIso": null,
     "startKind": null,
-    "reason": "TEAM_CODE_NOT_IN_MAP",
+    "reason": "CODE_UNMAPPED_TO_ESPN",
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 69,
@@ -13457,23 +14294,29 @@
    "firstCapture": "2026-09-22T20:00:37.458Z",
    "lastCapture": "2026-09-22T20:00:37.458Z",
    "verdict": "TRADEABLE_LADDER_EVENT_UNVERIFIED",
-   "verdictWhy": "1 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (TEAM_CODE_NOT_IN_MAP), so they are NOT claimed as in-play",
+   "verdictWhy": "1 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
    "examples": [
     {
      "captured_at": "2026-09-22T20:00:37.458Z",
      "phase": "TRADEABLE_EVENT_UNVERIFIED",
      "yesLevels": 39,
      "noLevels": 22,
-     "why": "event window not joined: TEAM_CODE_NOT_IN_MAP",
+     "why": "event window not joined: CODE_UNMAPPED_TO_ESPN",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03BYUTCU-BYU/orderbook",
      "eventSource": "UNVERIFIED",
      "eventJoinKey": null,
-     "eventReason": "TEAM_CODE_NOT_IN_MAP",
+     "eventReason": "CODE_UNMAPPED_TO_ESPN",
      "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03BYUTCU-BYU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03BYUTCU-BYU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03BYUTCU-BYU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:36.692Z in data/history/intraday/60m/KXNCAAFGAME-26OCT03BYUTCU-BYU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26OCT03CHSTARL-CHS",
@@ -13580,7 +14423,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-CHS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-CHS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-CHS",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:32.353Z in data/history/intraday/60m/KXNCAAFGAME-26OCT03CHSTARL-CHS.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26OCT03CHSTARL-TARL",
@@ -13687,7 +14536,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-TARL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-TARL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-TARL",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:29.468Z in data/history/intraday/60m/KXNCAAFGAME-26OCT03CHSTARL-TARL.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26OCT03MCNSLSU-LSU",
@@ -13794,7 +14649,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-LSU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-LSU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-LSU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:28.024Z in data/history/intraday/60m/KXNCAAFGAME-26OCT03MCNSLSU-LSU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26OCT03MCNSLSU-MCNS",
@@ -13901,7 +14762,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:26.577Z in data/history/intraday/60m/KXNCAAFGAME-26OCT03MCNSLSU-MCNS.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
@@ -14008,7 +14875,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03NHCPEAY-PEAY/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03NHCPEAY-PEAY"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:33.799Z in data/history/intraday/60m/KXNCAAFGAME-26OCT03NHCPEAY-PEAY.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26OCT03NWSTLAM-NWST",
@@ -14115,7 +14988,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03NWSTLAM-NWST/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03NWSTLAM-NWST"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03NWSTLAM-NWST",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-21T12:58:00.794Z in data/history/intraday/60m/KXNCAAFGAME-26OCT03NWSTLAM-NWST.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26OCT03SAMUAB-UAB",
@@ -14222,7 +15101,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03SAMUAB-UAB/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03SAMUAB-UAB"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03SAMUAB-UAB",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T11:48:18.460Z in data/history/intraday/60m/KXNCAAFGAME-26OCT03SAMUAB-UAB.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26OCT03TXSOFAU-FAU",
@@ -14329,7 +15214,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-FAU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-FAU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-FAU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:30.909Z in data/history/intraday/60m/KXNCAAFGAME-26OCT03TXSOFAU-FAU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26OCT03TXSOFAU-TXSO",
@@ -14436,7 +15327,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T20:00:35.244Z in data/history/intraday/60m/KXNCAAFGAME-26OCT03TXSOFAU-TXSO.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
@@ -14543,7 +15440,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:54:59.279Z in data/history/KXNCAAFGAME-26SEP26CARKFSU-FSU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26CMUMIA-CMU",
@@ -14650,7 +15553,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:00.531Z in data/history/KXNCAAFGAME-26SEP26CMUMIA-CMU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
@@ -14757,7 +15666,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:01.777Z in data/history/KXNCAAFGAME-26SEP26CMUMIA-MIA.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26EIUSDST-SDST",
@@ -14828,7 +15743,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26EIUSDST-SDST/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26EIUSDST-SDST"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26EIUSDST-SDST",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-19T21:39:50.230Z in data/history/intraday/60m/KXNCAAFGAME-26SEP26EIUSDST-SDST.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26HCUUNT-HCU",
@@ -14899,7 +15820,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26HCUUNT-HCU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26HCUUNT-HCU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26HCUUNT-HCU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-19T21:39:48.920Z in data/history/intraday/60m/KXNCAAFGAME-26SEP26HCUUNT-HCU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26HCUUNT-UNT",
@@ -14970,7 +15897,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26HCUUNT-UNT/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26HCUUNT-UNT"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26HCUUNT-UNT",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-19T21:39:46.305Z in data/history/intraday/60m/KXNCAAFGAME-26SEP26HCUUNT-UNT.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
@@ -15077,7 +16010,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:03.020Z in data/history/KXNCAAFGAME-26SEP26ILLOSU-OSU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26MHUWKU-MHU",
@@ -15148,7 +16087,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MHUWKU-MHU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MHUWKU-MHU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MHUWKU-MHU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-19T21:39:51.538Z in data/history/intraday/60m/KXNCAAFGAME-26SEP26MHUWKU-MHU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26MHUWKU-WKU",
@@ -15219,7 +16164,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MHUWKU-WKU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MHUWKU-WKU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MHUWKU-WKU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-19T21:39:47.614Z in data/history/intraday/60m/KXNCAAFGAME-26SEP26MHUWKU-WKU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
@@ -15326,7 +16277,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:04.263Z in data/history/KXNCAAFGAME-26SEP26MOSUSMU-SMU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26OKLAUGA-UGA",
@@ -15397,7 +16354,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OKLAUGA-UGA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OKLAUGA-UGA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OKLAUGA-UGA",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-19T18:58:17.146Z in data/history/intraday/60m/KXNCAAFGAME-26SEP26OKLAUGA-UGA.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
@@ -15504,7 +16467,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:05.506Z in data/history/KXNCAAFGAME-26SEP26OREUSC-ORE.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
@@ -15599,7 +16568,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-SHSU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-SHSU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-19T18:58:19.987Z in data/history/intraday/60m/KXNCAAFGAME-26SEP26SHSUTTU-SHSU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
@@ -15706,7 +16681,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:06.748Z in data/history/KXNCAAFGAME-26SEP26SHSUTTU-TTU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
@@ -15813,7 +16794,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-22T19:55:07.993Z in data/history/KXNCAAFGAME-26SEP26TXAMLSU-LSU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
@@ -15896,7 +16883,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-TXAM/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-TXAM"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
+   "rawStatus": "active",
+   "resolvedStatus": "active",
+   "resolvedResult": null,
+   "settled": false,
+   "openForTrading": true,
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-09-19T18:58:21.400Z in data/history/intraday/60m/KXNCAAFGAME-26SEP26TXAMLSU-TXAM.json) says \"active\""
   },
   {
    "ticker": "KXNFLGAME-26SEP09NESEA-NE",
@@ -16003,7 +16996,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP09NESEA-NE/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP09NESEA-NE"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP09NESEA-NE",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP09NESEA-SEA",
@@ -16110,7 +17109,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP09NESEA-SEA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP09NESEA-SEA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP09NESEA-SEA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP10SFLAR-LAR",
@@ -16217,7 +17222,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP10SFLAR-LAR/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP10SFLAR-LAR"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP10SFLAR-LAR",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP10SFLAR-SF",
@@ -16324,7 +17335,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP10SFLAR-SF/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP10SFLAR-SF"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP10SFLAR-SF",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP13DALNYG-DAL",
@@ -16431,7 +17448,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-DAL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-DAL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-DAL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP13DALNYG-NYG",
@@ -16526,7 +17549,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-NYG/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-NYG"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-NYG",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP14DENKC-DEN",
@@ -16633,7 +17662,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-DEN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-DEN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-DEN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP14DENKC-KC",
@@ -16740,7 +17775,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-KC/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-KC"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-KC",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP17DETBUF-DET",
@@ -16847,7 +17888,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP17DETBUF-DET/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP17DETBUF-DET"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP17DETBUF-DET",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP20INDKC-IND",
@@ -16954,7 +18001,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP20INDKC-KC",
@@ -17061,7 +18114,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-KC/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-KC"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-KC",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
@@ -17156,7 +18215,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP21NYGLAR-NYG/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP21NYGLAR-NYG"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP21NYGLAR-NYG",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 2 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19CHIMIN-CHI",
@@ -17263,7 +18328,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19CHIMIN-MIN",
@@ -17370,7 +18441,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-MIN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19DALSTL-DAL",
@@ -17477,7 +18554,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-DAL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
@@ -17584,7 +18667,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "3 of 3 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19VANSEA-SEA",
@@ -17679,7 +18768,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VANSEA-SEA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VANSEA-SEA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VANSEA-SEA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19VGKLA-LA",
@@ -17762,7 +18857,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-LA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-LA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-LA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
@@ -17869,7 +18970,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 3 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19WPGEDM-EDM",
@@ -17976,7 +19083,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19WPGEDM-EDM/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19WPGEDM-EDM"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19WPGEDM-EDM",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP19WPGEDM-WPG",
@@ -18083,7 +19196,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19WPGEDM-WPG/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19WPGEDM-WPG"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19WPGEDM-WPG",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP20CARFLA-CAR",
@@ -18190,7 +19309,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20CARFLA-CAR/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20CARFLA-CAR"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20CARFLA-CAR",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP20SEACGY-CGY",
@@ -18273,7 +19398,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SEACGY-CGY/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SEACGY-CGY"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SEACGY-CGY",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP20SEACGY-SEA",
@@ -18356,7 +19487,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SEACGY-SEA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SEACGY-SEA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SEACGY-SEA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
@@ -18439,7 +19576,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SJANA-ANA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SJANA-ANA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SJANA-ANA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP20SJANA-SJ",
@@ -18522,7 +19665,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SJANA-SJ/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SJANA-SJ"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20SJANA-SJ",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP20WSHBOS-BOS",
@@ -18629,7 +19778,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-BOS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-BOS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-BOS",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP20WSHBOS-WSH",
@@ -18736,7 +19891,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-WSH/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-WSH"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-WSH",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "2 of 3 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP21MINCHI-CHI",
@@ -18831,7 +19992,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21MINCHI-CHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21MINCHI-CHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21MINCHI-CHI",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP21MINCHI-MIN",
@@ -18926,7 +20093,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21MINCHI-MIN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21MINCHI-MIN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21MINCHI-MIN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP21NYRNJ-NJ",
@@ -19021,7 +20194,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21NYRNJ-NJ/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21NYRNJ-NJ"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21NYRNJ-NJ",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP21NYRNJ-NYR",
@@ -19116,7 +20295,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21NYRNJ-NYR/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21NYRNJ-NYR"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21NYRNJ-NYR",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP21OTTMTL-MTL",
@@ -19211,7 +20396,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21OTTMTL-MTL/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21OTTMTL-MTL"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21OTTMTL-MTL",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXNHLGAME-26SEP21PHIWSH-PHI",
@@ -19306,7 +20497,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21PHIWSH-PHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21PHIWSH-PHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21PHIWSH-PHI",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXWNBAGAME-26AUG06LAMIN-LA",
@@ -19413,7 +20610,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG06LAMIN-LA/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG06LAMIN-LA"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG06LAMIN-LA",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXWNBAGAME-26AUG06LVIND-IND",
@@ -19520,7 +20723,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG06LVIND-IND/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG06LVIND-IND"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG06LVIND-IND",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXWNBAGAME-26AUG06LVIND-LV",
@@ -19627,7 +20836,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG06LVIND-LV/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG06LVIND-LV"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG06LVIND-LV",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXWNBAGAME-26AUG10CHISEA-CHI",
@@ -19734,7 +20949,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG10CHISEA-CHI/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG10CHISEA-CHI"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG10CHISEA-CHI",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXWNBAGAME-26AUG14DALIND-IND",
@@ -19841,7 +21062,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG14DALIND-IND/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG14DALIND-IND"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG14DALIND-IND",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXWNBAGAME-26AUG16INDATL-IND",
@@ -19948,7 +21175,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG16INDATL-IND/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG16INDATL-IND"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG16INDATL-IND",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXWNBAGAME-26AUG17DALGS-GS",
@@ -20043,7 +21276,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG17DALGS-GS/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG17DALGS-GS"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG17DALGS-GS",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXWNBAGAME-26AUG20INDDAL-IND",
@@ -20150,7 +21389,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG20INDDAL-IND/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG20INDDAL-IND"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG20INDDAL-IND",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXWNBAGAME-26AUG24GSMIN-MIN",
@@ -20257,7 +21502,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG24GSMIN-MIN/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG24GSMIN-MIN"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG24GSMIN-MIN",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "no",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result no); settlement is monotone, so this contract is settled"
   },
   {
    "ticker": "KXWNBAGAME-26AUG27WSHPHX-WSH",
@@ -20352,7 +21603,13 @@
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG27WSHPHX-WSH/orderbook",
-   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG27WSHPHX-WSH"
+   "marketUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG27WSHPHX-WSH",
+   "rawStatus": "finalized",
+   "resolvedStatus": "finalized",
+   "resolvedResult": "yes",
+   "settled": true,
+   "openForTrading": false,
+   "statusWhy": "1 of 1 store file(s) carry the exchange's settlement (result yes); settlement is monotone, so this contract is settled"
   }
  ],
  "stillMissing": [
@@ -20403,10 +21660,9 @@
     "UNVERIFIED": 42
    },
    "joinReasons": {
-    "CODE_UNMAPPED_TO_ESPN": 41,
-    "TEAM_CODE_NOT_IN_MAP": 1
+    "CODE_UNMAPPED_TO_ESPN": 42
    },
-   "unblocker": "42 KXNCAAFGAME store(s) are still OPEN but no ladder was captured inside a verified/observed event window (CODE_UNMAPPED_TO_ESPN:41, TEAM_CODE_NOT_IN_MAP:1) — the unblocker is a with_books capture during the game plus an event window the archives can join"
+   "unblocker": "42 KXNCAAFGAME store(s) are still OPEN but no ladder was captured inside a verified/observed event window (CODE_UNMAPPED_TO_ESPN:42) — the unblocker is a with_books capture during the game plus an event window the archives can join"
   },
   {
    "series": "KXNFLGAME",
@@ -20425,7 +21681,7 @@
   {
    "series": "KXNHLGAME",
    "what": "356 captured ladder(s): 0 usable in-play, 238 non-empty inside the tradeable window, 118 taken after the exchange's own close_time (0 of those non-empty)",
-   "settledOnly": false,
+   "settledOnly": true,
    "eventSources": {
     "UNVERIFIED": 28,
     "ESPN_OBSERVED": 6
@@ -20433,7 +21689,7 @@
    "joinReasons": {
     "NO_ARCHIVED_EVENT": 28
    },
-   "unblocker": "34 KXNHLGAME store(s) are still OPEN but no ladder was captured inside a verified/observed event window (NO_ARCHIVED_EVENT:28) — the unblocker is a with_books capture during the game plus an event window the archives can join"
+   "unblocker": "every KXNHLGAME contract in this store is already finalized by the exchange, so no future capture can add an in-play ladder for THEM — the unblocker is a with_books capture of the NEXT KXNHLGAME slate while it is in play (the 00:30/02:30 UTC game-window passes in .github/workflows/daily-history.yml)"
   },
   {
    "series": "KXWNBAGAME",

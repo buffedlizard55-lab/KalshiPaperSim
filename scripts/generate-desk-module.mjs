@@ -49,6 +49,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { resolveMarketStatus, MARKET_STATUS_RULE } from '../src/market-status.js';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const HISTORY_DIR = path.join(ROOT, 'data', 'history');
@@ -58,7 +60,7 @@ function arg(name, fallback) {
   const hit = process.argv.find((a) => a.startsWith(`--${name}=`));
   return hit ? hit.split('=').slice(1).join('=') : fallback;
 }
-const MAX_MARKETS = Number(arg('max-markets', 80));
+const MAX_MARKETS = Number(arg('max-markets', 100));
 const MAX_LEVELS = Number(arg('max-levels', 40));
 const MAX_CAPTURES = Number(arg("max-captures", 12));
 const MAX_BARS = Number(arg('max-bars', 72));
@@ -168,7 +170,12 @@ function ensureMarket(ticker, seriesTicker) {
       quotes: null,
       captures: [],
       bars: [],
-      periods: []
+      periods: [],
+      // Point-in-time status photographs across every store file for this
+      // ticker, resolved once by src/market-status.js after the walk
+      // (irregularity #66). Never serialized as-is: replaced by statusEvidence.
+      observations: [],
+      marketCapturedMs: null
     });
   }
   return markets.get(ticker);
@@ -192,12 +199,35 @@ function ingestStore(file, period) {
   const store = readJson(file);
   if (!store || !store.ticker) return false;
   const rec = ensureMarket(store.ticker, store.series_ticker);
-  rec.source = rec.source || path.relative(ROOT, file);
-  if (store.market) rec.market = store.market;
-  rec.marketCapturedAt = store.market_captured_at || rec.marketCapturedAt || null;
+  const rel = path.relative(ROOT, file);
+  rec.source = rec.source || rel;
+  /**
+   * ONE TICKER, SEVERAL POINT-IN-TIME FILES (irregularity #66).
+   *
+   * walkHistory() reads data/history/*.json FIRST and the intraday buckets
+   * LAST, which is not chronological order: the daily file is the freshest
+   * market object (it is re-queried on every ingest) while a 60-minute file can
+   * be days older. Letting the last file win therefore wrote a STALE `status`
+   * over a settled one while `result` was kept from the settled file, producing
+   * 3 contradictory records in src/desk-data.js (`status: "active"` with
+   * `result: "yes"|"no"`) — 2 of which held KXNCAAFSPREAD reserve slots.
+   * Every file is now kept as an observation and src/market-status.js resolves
+   * the ticker once, after the walk: settlement is monotone, otherwise the
+   * NEWEST market_captured_at wins. The market OBJECT (volume, quotes, times)
+   * is chosen the same way, so ranking and close_time cannot come from the
+   * older photograph either.
+   */
+  const capturedAt = store.market_captured_at || null;
+  const capturedMs = capturedAt ? Date.parse(capturedAt) : NaN;
+  rec.observations.push({ status: store.status ?? null, result: store.result ?? null, marketCapturedAt: capturedAt, source: rel });
+  if (store.market && Number.isFinite(capturedMs) && (rec.marketCapturedMs === null || capturedMs >= rec.marketCapturedMs)) {
+    rec.market = store.market;
+    rec.marketCapturedMs = capturedMs;
+  } else if (store.market && rec.marketCapturedMs === null && !rec.market) {
+    rec.market = store.market;
+  }
+  rec.marketCapturedAt = capturedAt || rec.marketCapturedAt || null;
   rec.marketUrl = store.market_url || rec.marketUrl || null;
-  rec.status = store.status || rec.status || null;
-  rec.result = store.result ?? rec.result ?? null;
   rec.lastIngestedAt = store.last_ingested_at || rec.lastIngestedAt || null;
 
   for (const book of store.books || []) {
@@ -303,6 +333,95 @@ function readQuotedUniverse() {
 const storeCount = walkHistory();
 
 /**
+ * RESOLVE EACH TICKER'S STATUS ONCE (irregularity #66).
+ *
+ * Every store file for a ticker was pushed onto `rec.observations` above; the
+ * rule in src/market-status.js now decides what the exchange says the contract
+ * is: settlement is monotone (a finalized-with-result photograph beats any
+ * later `active` one, because a settled contract never reopens), otherwise the
+ * newest `market_captured_at` wins. Before this, the last file read in
+ * walkHistory() order won, and because the daily store is read BEFORE the
+ * intraday buckets, an older `active` photograph overwrote a settled one while
+ * the settled `result` was kept — 3 contradictory records survived into
+ * src/desk-data.js and 2 of them held reserve slots.
+ *
+ * The raw observations are replaced by a compact, serializable summary
+ * (`statusEvidence`) so the module carries the evidence without the bulk.
+ */
+const statusResolution = {
+  rule: MARKET_STATUS_RULE,
+  tickers: markets.size,
+  settledTickers: 0,
+  openTickers: 0,
+  unknownTickers: 0,
+  multiFileTickers: 0,
+  filesDisagreeingWithResolution: 0,
+  conflicts: [],
+  settledFromStaleFile: []
+};
+for (const rec of markets.values()) {
+  const resolved = resolveMarketStatus(rec.observations, { ticker: rec.ticker });
+  const observations = rec.observations;
+  rec.status = resolved.status;
+  rec.result = resolved.result;
+  rec.settled = resolved.settled;
+  rec.statusEvidence = {
+    observations: observations.length,
+    settledObservations: resolved.settledObservations,
+    sources: observations.map((o) => `${o.source}@${o.marketCapturedAt || 'undated'}=${o.status}${o.result ? '/' + o.result : ''}`),
+    chosenSource: resolved.source,
+    chosenCapturedAt: resolved.marketCapturedAt,
+    rule: resolved.rule,
+    why: resolved.why
+  };
+  delete rec.observations;
+  delete rec.marketCapturedMs;
+  if (observations.length > 1) statusResolution.multiFileTickers += 1;
+  if (resolved.settled) statusResolution.settledTickers += 1;
+  else if (resolved.openForTrading) statusResolution.openTickers += 1;
+  else statusResolution.unknownTickers += 1;
+  const wrong = observations.filter((o) => o.status !== resolved.status);
+  statusResolution.filesDisagreeingWithResolution += wrong.length;
+  if (resolved.settled && wrong.length) {
+    statusResolution.settledFromStaleFile.push({
+      ticker: rec.ticker,
+      resolved: { status: resolved.status, result: resolved.result, source: resolved.source, marketCapturedAt: resolved.marketCapturedAt },
+      staleFiles: wrong.map((o) => ({ source: o.source, marketCapturedAt: o.marketCapturedAt, status: o.status }))
+    });
+  }
+  if (resolved.conflict) statusResolution.conflicts.push({ ticker: rec.ticker, ...resolved.conflictDetail });
+  if (String(resolved.status || '') === 'finalized' && !resolved.settled) {
+    statusResolution.finalizedWithoutResult = (statusResolution.finalizedWithoutResult || 0) + 1;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Capture batches (one look at the book) — the unit a season round uses
+ * ------------------------------------------------------------------ *
+ * The 20-minute batch rule below is the SAME rule src/desk-season.js uses to
+ * stamp a round (a round is stamped at the LAST instant of its batch). It is
+ * computed here, before any selection, because the selection has to protect it:
+ * see ROUND ANCHORS.
+ */
+const iso = (t) => (Number.isFinite(t) ? new Date(t).toISOString() : null);
+function captureBatches(instants, minutes = 20) {
+  const sorted = [...instants].sort((a, b) => a - b);
+  const gapMs = minutes * 60 * 1000;
+  const out = [];
+  for (const t of sorted) {
+    const cur = out[out.length - 1];
+    if (cur && t - cur.last <= gapMs) { cur.last = t; cur.instants += 1; }
+    else out.push({ first: t, last: t, instants: 1 });
+  }
+  return out;
+}
+const STORE_BATCHES = captureBatches(storeLadderStats.instants);
+
+/* ------------------------------------------------------------------ *
+ * Ladder selection
+ * ------------------------------------------------------------------ */
+
+/**
  * WHICH LADDERS TO KEEP.
  *
  * Keeping only the newest N would make every older desk cut-off untradeable —
@@ -322,10 +441,15 @@ const newestOverall = markets.size
   : null;
 const newestMs = newestOverall ? Date.parse(newestOverall) : null;
 
-function selectCaptures(captures) {
+function selectCaptures(captures, anchors) {
   const dated = captures.filter((c) => c.at).sort((a, b) => String(b.at).localeCompare(String(a.at)));
   const chosen = new Map();
   for (const c of dated.slice(0, MAX_CAPTURES)) chosen.set(c.at + '|' + JSON.stringify(c).length, c);
+  // ROUND ANCHORS: a capture a season round is stamped at is never evicted by
+  // the capture window, because the season's rounds must stay re-walkable.
+  if (anchors && anchors.size) {
+    for (const c of dated) if (anchors.has(c.at)) chosen.set(c.at + '|' + JSON.stringify(c).length, c);
+  }
   if (Number.isFinite(newestMs)) {
     for (const hours of HORIZON_HOURS) {
       const mark = newestMs - hours * 3600 * 1000;
@@ -333,14 +457,87 @@ function selectCaptures(captures) {
       if (hit) chosen.set(hit.at + '|' + JSON.stringify(hit).length, hit);
     }
   }
-  return [...chosen.values()].sort((a, b) => String(b.at).localeCompare(String(a.at))).slice(0, MAX_CAPTURES + HORIZON_HOURS.length);
+  const sorted = [...chosen.values()].sort((a, b) => String(b.at).localeCompare(String(a.at)));
+  // ROUND ANCHORS are protected from the final trim as well. Without this the
+  // slice below could drop an anchor capture whose instant is older than the
+  // newest MAX_CAPTURES + HORIZON_HOURS.length captures of the market — the
+  // anchor would then be missing exactly where it is supposed to be pinned, and
+  // src/desk-season.js could not seed that round. Anchors are added on TOP of the
+  // window (the same rule as the finalized reserve in the market cap), so the
+  // window itself is unchanged for every market with no anchor.
+  if (!anchors || !anchors.size) return sorted.slice(0, MAX_CAPTURES + HORIZON_HOURS.length);
+  const pinned = sorted.filter((c) => anchors.has(c.at));
+  const rest = sorted.filter((c) => !anchors.has(c.at)).slice(0, MAX_CAPTURES + HORIZON_HOURS.length);
+  return [...pinned, ...rest].sort((a, b) => String(b.at).localeCompare(String(a.at)));
 }
+
+/**
+ * ROUND ANCHORS — a capture bound the module refuses to break (roadmap Next #10).
+ *
+ * The measured problem: `coverage.captureEviction.seasonRoundStampsEvicted` was
+ * 14 of 21. Two different causes hid behind one number. Seven stamps are simply
+ * not representable — the store's LAST capture of that batch was an empty book
+ * (a post-close capture; irregularity #60), so no ladder exists at that instant
+ * anywhere. The other seven WERE representable — the store holds non-empty
+ * ladders inside those batches, from markets the module even keeps — but the
+ * per-market capture window (newest 12/40 ladders + horizon marks) dropped the
+ * instants a round is stamped at, so src/desk-season.js could not seed those
+ * rounds and the season re-reported 5 rounds out of 21 batches.
+ *
+ * The fix is a reservation, not a bigger number: for EVERY store batch, the
+ * module keeps the newest capture that batch holds for an OPEN-board market, and
+ * that market is kept even if the market cap would drop it (the anchor reserve
+ * sits on top of the cap, like the finalized reserve). The season's own seed
+ * rule is mirrored here (`seedsOpenBoard`, identical to src/desk-season.js) so an
+ * anchor is always a market that can actually seed a round.
+ */
+const horizonMs = [...markets.values()].reduce((acc, m) => {
+  for (const c of m.captures || []) {
+    const t = Date.parse(c.at);
+    if (Number.isFinite(t) && (acc === null || t > acc)) acc = t;
+  }
+  return acc;
+}, null);
+const seedsOpenBoard = (m) => {
+  if (String(m.status || '') === 'finalized') return false;
+  const close = m.market?.close_time || m.market?.expiration_time;
+  const closeMs = close ? Date.parse(close) : null;
+  if (horizonMs !== null && Number.isFinite(closeMs) && closeMs <= horizonMs) return false;
+  return true;
+};
+const roundAnchors = [];
+for (const batch of STORE_BATCHES) {
+  const holders = [];
+  for (const m of markets.values()) {
+    if (!seedsOpenBoard(m)) continue;
+    const inBatch = (m.captures || [])
+      .map((c) => ({ at: c.at, ms: Date.parse(c.at) }))
+      .filter((c) => Number.isFinite(c.ms) && c.ms >= batch.first && c.ms <= batch.last)
+      .sort((a, b) => b.ms - a.ms);
+    if (inBatch.length) holders.push({ ticker: m.ticker, at: inBatch[0].at, ms: inBatch[0].ms, volume: num(m.market?.volume_fp) || 0 });
+  }
+  holders.sort((a, b) => b.ms - a.ms || b.volume - a.volume || a.ticker.localeCompare(b.ticker));
+  roundAnchors.push({
+    stamp: iso(batch.last),
+    batchFirst: iso(batch.first),
+    instantsInBatch: batch.instants,
+    candidates: holders.length,
+    anchor: holders[0] || null
+  });
+}
+const anchorByTicker = new Map();
+for (const a of roundAnchors) {
+  if (!a.anchor) continue;
+  if (!anchorByTicker.has(a.anchor.ticker)) anchorByTicker.set(a.anchor.ticker, new Set());
+  anchorByTicker.get(a.anchor.ticker).add(a.anchor.at);
+}
+
 
 let laddersBeforeCaptureSelection = 0;
 let laddersAfterCaptureSelection = 0;
 for (const rec of markets.values()) {
   laddersBeforeCaptureSelection += rec.captures.length;
-  rec.captures = selectCaptures(rec.captures);
+  rec.captures = selectCaptures(rec.captures, anchorByTicker.get(rec.ticker));
   laddersAfterCaptureSelection += rec.captures.length;
   // Bars: the desk prefers the finest period available per market, newest N.
   const byPeriod = new Map();
@@ -374,11 +571,14 @@ const newestCaptureTs = withLadder
 const asOfMs = newestCaptureTs ? Date.parse(newestCaptureTs) : Date.now();
 
 function isOpen(m) {
+  // A settled contract is never open, whatever a stale photograph said
+  // (irregularity #66): `m.settled` comes from src/market-status.js.
+  if (m.settled === true || String(m.status || '') === 'finalized') return false;
   const close = m.market?.close_time || m.market?.expiration_time;
   if (!close) return false;
   const t = Date.parse(close);
   if (!Number.isFinite(t)) return false;
-  return t > asOfMs && String(m.status || '') !== 'finalized';
+  return t > asOfMs;
 }
 
 withLadder.sort((a, b) => {
@@ -426,13 +626,19 @@ const FINALIZED_RESERVE = Number(arg('finalized-reserve', 6));
  * block records how many were reserved vs how many existed.
  */
 const SERIES_RESERVES = [
-  // In-play game markets — the highest-signal sports contracts. Reserve per series.
-  { prefix: 'KXMLBGAME', slots: 6, reason: 'MLB in-play games — desk MLB signal hook targets these (Tangotiger WE, R18)' },
-  { prefix: 'KXNFLGAME', slots: 4, reason: 'NFL Sunday/Monday game contracts — LiveNFL_GameFavourite' },
-  { prefix: 'KXNBAGAME', slots: 6, reason: 'NBA game contracts — LiveNBA_GameFavourite' },
-  { prefix: 'KXNCAAFGAME', slots: 4, reason: 'NCAA football game contracts — LiveNCAA_GameFavourite' },
-  { prefix: 'KXNCAAFSPREAD', slots: 2, reason: 'NCAA spread contracts — test coverage for point-in-time joins' },
-  { prefix: 'KXNHLGAME', slots: 4, reason: 'NHL game contracts — sports-favourite coverage' },
+  // In-play game markets — the highest-signal sports contracts. `slots` is the
+  // floor (kept even when the series is quiet); `maxSlots` (2026-09-22, follows
+  // the audit finding) lets a series that really has that many OPEN laddered
+  // contracts keep them, so the 80-market volume cap can never again crowd an
+  // open game contract out of the desk (KXNCAAFGAME had 26 such contracts and
+  // kept 4). The audit cross-check `deskReserves` in
+  // data/reports/game-window-captures.json re-measures this from the store.
+  { prefix: 'KXMLBGAME', slots: 6, maxSlots: 10, reason: 'MLB in-play games — desk MLB signal hook targets these (Tangotiger WE, R18)' },
+  { prefix: 'KXNFLGAME', slots: 4, maxSlots: 10, reason: 'NFL Sunday/Monday game contracts — LiveNFL_GameFavourite' },
+  { prefix: 'KXNBAGAME', slots: 6, maxSlots: 10, reason: 'NBA game contracts — LiveNBA_GameFavourite' },
+  { prefix: 'KXNCAAFGAME', slots: 4, maxSlots: 20, reason: 'NCAA football game contracts — LiveNCAA_GameFavourite' },
+  { prefix: 'KXNCAAFSPREAD', slots: 2, maxSlots: 4, reason: 'NCAA spread contracts — test coverage for point-in-time joins' },
+  { prefix: 'KXNHLGAME', slots: 4, maxSlots: 8, reason: 'NHL game contracts — sports-favourite coverage' },
   // Signal archive: weather and FDA.
   { prefix: 'KXHIGHNY', slots: 12, reason: 'NYC high-temp brackets — ForecastEdge_Weather signal target' },
   { prefix: 'KXHIGHLAX', slots: 3, reason: 'LA weather brackets — ForecastEdge_MultiCity' },
@@ -456,8 +662,14 @@ function seriesOf(m) {
   return String(m.seriesTicker || m.ticker || '').split('-')[0];
 }
 
-const isFinalWithResult = (m) =>
-  String(m.status || '') === 'finalized' && (m.result === 'yes' || m.result === 'no');
+/**
+ * "The exchange has settled this contract." `m.settled` is set by the resolver
+ * in src/market-status.js (finalized + result yes/no). A contract that is merely
+ * `finalized` with NO result is neither tradeable nor settleable, so it enters
+ * neither pool below — it is dropped, and `statusResolution.finalizedWithoutResult`
+ * publishes how many there were.
+ */
+const isFinalWithResult = (m) => m.settled === true;
 const finalizedRanked = withLadder
   .filter(isFinalWithResult)
   .sort((a, b) => (num(b.market?.volume_fp) || 0) - (num(a.market?.volume_fp) || 0) || a.ticker.localeCompare(b.ticker));
@@ -466,16 +678,19 @@ const keptTickers = new Set(finalizedKept.map((m) => m.ticker));
 const reservedBySeries = [];
 let reservedCount = 0;
 for (const rule of SERIES_RESERVES) {
+  const ceiling = Math.max(rule.slots, rule.maxSlots ?? rule.slots);
   const candidates = withLadder
     .filter((m) => !keptTickers.has(m.ticker) && seriesOf(m) === rule.prefix && !isFinalWithResult(m))
     .sort((a, b) => (num(b.market?.volume_fp) || 0) - (num(a.market?.volume_fp) || 0) || a.ticker.localeCompare(b.ticker));
-  const picked = candidates.slice(0, rule.slots);
+  const picked = candidates.slice(0, ceiling);
   for (const m of picked) keptTickers.add(m.ticker);
   reservedBySeries.push({
     prefix: rule.prefix,
     slots: rule.slots,
+    maxSlots: ceiling,
     kept: picked.length,
     available: candidates.length,
+    droppedBySeriesCeiling: Math.max(0, candidates.length - picked.length),
     reason: rule.reason,
     tickers: picked.map((m) => m.ticker)
   });
@@ -485,38 +700,64 @@ const openRemainingBudget = Math.max(0, MAX_MARKETS - reservedCount);
 const openFirst = withLadder.filter((m) => !keptTickers.has(m.ticker) && !isFinalWithResult(m));
 const unreservedOpen = openFirst.slice(0, openRemainingBudget);
 for (const m of unreservedOpen) keptTickers.add(m.ticker);
+/**
+ * THE ANCHOR RESERVE — on top of the cap, like the finalized reserve.
+ *
+ * Every store batch that has an open-board market with a real ladder gets that
+ * market kept, even when the market cap would drop it, so the season can seed a
+ * round at that batch's stamp. The set is bounded by the number of batches.
+ */
+const anchorTickers = new Set(roundAnchors.filter((a) => a.anchor).map((a) => a.anchor.ticker));
+const anchorMarketsKept = withLadder.filter((m) => anchorTickers.has(m.ticker) && !keptTickers.has(m.ticker));
+for (const m of anchorMarketsKept) keptTickers.add(m.ticker);
 const kept = [...finalizedKept, ...withLadder.filter((m) => keptTickers.has(m.ticker) && !finalizedKept.includes(m))];
 const dropped = withLadder.filter((m) => !keptTickers.has(m.ticker));
 
 /* The capture bound, measured — same 20-minute batch rule src/desk-season.js
  * uses to stamp a round (a round is stamped at the LAST instant of its batch). */
-const iso = (t) => (Number.isFinite(t) ? new Date(t).toISOString() : null);
-function captureBatches(instants, minutes = 20) {
-  const sorted = [...instants].sort((a, b) => a - b);
-  const gapMs = minutes * 60 * 1000;
-  const out = [];
-  for (const t of sorted) {
-    const cur = out[out.length - 1];
-    if (cur && t - cur.last <= gapMs) { cur.last = t; cur.instants += 1; }
-    else out.push({ first: t, last: t, instants: 1 });
-  }
-  return out;
-}
 const moduleInstants = new Set();
 for (const m of kept) for (const c of m.captures || []) {
   const t = Date.parse(c.at);
   if (Number.isFinite(t)) moduleInstants.add(t);
 }
-const storeBatches = captureBatches(storeLadderStats.instants);
+const storeBatches = STORE_BATCHES;
 const moduleBatches = captureBatches(moduleInstants);
+/**
+ * TWO MEASUREMENTS, BOTH PUBLISHED (roadmap Next #10, 2026-09-22).
+ *
+ *   • WINDOW rule (what a round needs): the module holds a capture INSIDE the
+ *     batch window [first, last]. This is the rule src/desk-season.js uses when
+ *     it decides whether a batch can host a round (freshLadders >= 1), so it is
+ *     the honest measure of "can the season re-walk this round".
+ *   • EXACT-INSTANT rule (the older, stricter measure): the module holds a
+ *     capture at the batch's stamp instant exactly. It is reported separately
+ *     because a stamp whose last capture was an EMPTY book can never satisfy it
+ *     (irregularity #60) — reporting only this number made a fixable module
+ *     bound look like an unfixable data bound.
+ */
 const representedBatches = storeBatches.filter((b) => [...moduleInstants].some((t) => t >= b.first && t <= b.last));
 const unrepresentedBatches = storeBatches.filter((b) => !representedBatches.includes(b));
 const seasonRoundStamps = storeBatches.map((b) => b.last);
 const evictedRoundStamps = seasonRoundStamps.filter((t) => !moduleInstants.has(t));
+const seasonRoundStampsExactInstantInModule = seasonRoundStamps.filter((t) => moduleInstants.has(t));
+const evictedRoundStampDetails = unrepresentedBatches.map((b) => {
+  const anchorRow = roundAnchors.find((a) => a.batchFirst === iso(b.first) && a.stamp === iso(b.last));
+  const inWindow = [...storeLadderStats.nonEmptyInstants].some((t) => t >= b.first && t <= b.last);
+  return {
+    stamp: iso(b.last),
+    batchFirst: iso(b.first),
+    instantsInBatch: b.instants,
+    reason: inWindow
+      ? 'the module carries no capture inside this batch window even though the store holds a non-empty ladder in it — a module-side loss (ROUND ANCHORS should prevent this; if it appears, the anchor for this batch had no open-board market)'
+      : 'the store holds NO non-empty ladder inside this batch window, so no module can host a round here (the batch closed on empty post-close books — irregularity #60)',
+    storeHasNonEmptyLadderInWindow: inWindow,
+    anchorTicker: anchorRow && anchorRow.anchor ? anchorRow.anchor.ticker : null
+  };
+});
 const moduleInstantList = [...moduleInstants].sort((a, b) => a - b);
 const captureEviction = {
   rule: `data/history/** holds every captured ladder; THIS MODULE carries a window on it. selectCaptures() keeps the newest ${MAX_CAPTURES} ladders per market plus one per horizon mark (${HORIZON_HOURS.map((h) => h + 'h').join(', ')}), and the market cap (${MAX_MARKETS}) then drops whole contracts. Ladders outside that window are EVICTED FROM THIS MODULE, never from data/history.`,
-  effect: 'a desk-season round whose batch this module no longer carries cannot be walked again, so the season re-reports FEWER rounds than it already measured; the desk loses the older cut-offs it could once price. The ladders are still in data/history/** — nothing was deleted.',
+  effect: 'a desk-season round whose batch this module no longer carries cannot be walked again, so the season re-reports FEWER rounds than it already measured; the desk loses the older cut-offs it could once price. The ladders are still in data/history/** — nothing was deleted. ROUND ANCHORS make this a measured, hopefully empty list: seasonRoundStampsEvicted names every stamp the module cannot host and why (module bound vs no non-empty ladder in the store window at all).',
   reproduce: `node scripts/generate-desk-module.mjs --max-captures 40 --out src/desk-data.js   # then node scripts/run-desk-season.mjs`,
   batchMinutes: 20,
   batchRule: 'the same rule src/desk-season.js uses: capture instants are grouped while the gap to the batch\'s last instant is <= 20 minutes, and a round is stamped at the LAST instant of its batch',
@@ -540,8 +781,21 @@ const captureEviction = {
   storeBatchesNotRepresented: unrepresentedBatches.length,
   storeBatchesNotRepresentedList: unrepresentedBatches.map((b) => ({ first: iso(b.first), last: iso(b.last), instants: b.instants })),
   seasonRoundStamps: seasonRoundStamps.length,
-  seasonRoundStampsEvicted: evictedRoundStamps.length,
-  seasonRoundStampsEvictedList: evictedRoundStamps.map(iso).sort(),
+  seasonRoundStampsHostableByModule: representedBatches.length,
+  seasonRoundStampsEvicted: unrepresentedBatches.length,
+  seasonRoundStampsEvictedList: evictedRoundStampDetails.map((d) => d.stamp).sort(),
+  seasonRoundStampsEvictedDetails: evictedRoundStampDetails,
+  seasonRoundStampsExactInstantInModule: seasonRoundStampsExactInstantInModule.length,
+  seasonRoundStampsMissingExactInstant: evictedRoundStamps.length,
+  seasonRoundStampsMissingExactInstantList: evictedRoundStamps.map(iso).sort(),
+  roundAnchors: {
+    rule: 'one open-board market per store batch is kept — with the newest capture that batch holds for it — on top of the market cap, so src/desk-season.js can seed a round at that batch stamp',
+    batches: roundAnchors.length,
+    batchesWithAnchor: roundAnchors.filter((a) => a.anchor).length,
+    batchesWithoutAnchor: roundAnchors.filter((a) => !a.anchor).map((a) => ({ stamp: a.stamp, reason: a.candidates === 0 ? 'no open-board market has a capture inside this batch' : 'unknown' })),
+    anchorMarketsKeptOnTopOfCap: anchorMarketsKept.length,
+    rows: roundAnchors.map((a) => ({ stamp: a.stamp, candidates: a.candidates, ticker: a.anchor ? a.anchor.ticker : null, captureAt: a.anchor ? a.anchor.at : null }))
+  },
   captureInstantsEvictedFromModule: [...storeLadderStats.instants].filter((t) => !moduleInstants.has(t)).length,
   nonEmptyCaptureInstantsEvictedFromModule: [...storeLadderStats.nonEmptyInstants].filter((t) => !moduleInstants.has(t)).length,
   nothingDeletedFrom: 'data/history/** (the store is append-only; only this generated module is a window on it)'
@@ -572,7 +826,7 @@ const output = {
   },
   rule: {
     inclusion: 'every tracked market with >=1 real captured order-book ladder (captures[].at + captures[].url recorded per ladder)',
-    ordering: `up to ${FINALIZED_RESERVE} FINALIZED contracts carrying the exchange's own result first (real lifetime volume_fp descending); then SERIES RESERVES per priority prefix (game, weather, FDA, CEO contracts kept so signal-driven desk entrants have ladders to read); then remaining open contracts by real lifetime volume_fp descending; the cap of ${MAX_MARKETS} is the TARGET size for open contracts (reserved series slots count against it)`,
+    ordering: `up to ${FINALIZED_RESERVE} FINALIZED contracts carrying the exchange's own result first (real lifetime volume_fp descending); then SERIES RESERVES per priority prefix (game, weather, FDA, CEO contracts kept so signal-driven desk entrants have ladders to read) up to each rule's maxSlots; then remaining open contracts by real lifetime volume_fp descending; the cap of ${MAX_MARKETS} is the TARGET size for open contracts (reserved series slots count against it)`,
     finalizedReserve: FINALIZED_RESERVE,
     finalizedAvailable: finalizedRanked.length,
     seriesReserves: reservedBySeries,
@@ -594,9 +848,16 @@ const output = {
     marketsTracked: all.length,
     marketsWithLadder: withLadder.length,
     marketsInModule: kept.length,
+    // `openAtCapture` is a READER-FACING label kept for compatibility; with
+    // src/market-status.js it means "the exchange's newest record for this
+    // ticker is a tradeable status AND the contract's close_time is in the
+    // future of the module's newest ladder". Settled contracts can never appear
+    // here (irregularity #66).
     openAtCapture: kept.filter(isOpen).length,
+    tradeableInModule: kept.filter(isOpen).length,
     finalizedAtCapture: kept.filter((m) => String(m.status) === 'finalized').length,
     withRealResult: kept.filter((m) => m.result === 'yes' || m.result === 'no').length,
+    statusResolution,
     reservedBySeries,
     ladderCaptures: kept.reduce((s, m) => s + m.captures.length, 0),
     bars: kept.reduce((s, m) => s + m.bars.length, 0),

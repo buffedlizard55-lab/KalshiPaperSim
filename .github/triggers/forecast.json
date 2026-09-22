@@ -1,8 +1,8 @@
 {
   "_README": "Commit a change to this file to request an immediate forecast-archive run (.github/workflows/weather-signals.yml). The workflow also runs five times a day on a schedule; this trigger exists for on-demand captures (and because the automation token cannot create workflow_dispatch events). Bump `request` so the push is a real change.",
-  "request": 4,
+  "request": 5,
   "enabled": true,
-  "requested_at": "2026-09-19T23:55:00.000Z",
-  "requested_by": "arena session 01a0bc0a \u2014 the 2026-09-19 ~21:4x scheduled capture SUCCEEDED at api.weather.gov but died at the commit step and lost its snapshots with the runner (irregularity #51). The push guard now auto-resolves the regenerated docs/modules, and every data bot syncs onto the branch tip before capturing. This request re-captures on the fixed pipeline.",
+  "requested_at": "2026-09-22T23:05:00.000Z",
+  "requested_by": "arena session 01a0cb4e (2026-09-22) \u2014 captured data was lost to the commit race on 2026-09-22 (irregularity #63): data/forecasts/*.json still end at 2026-09-21T22:36:56.809Z and data/mlb-pregame/predictions/ holds 0 files. The shared queue and the 6-attempt race guard are now in place, so this request re-captures on the fixed pipeline (ROADMAP Next #9).",
   "why": "ROADMAP Next #1: the forecast-archive \u2194 weather-bar overlap grows one capture per successful run; a failed commit step silently starves it. Verify after this run: data/forecasts/* last captured_at vs data/history/_last-run.json."
 }

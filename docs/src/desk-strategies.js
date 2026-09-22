@@ -932,6 +932,92 @@ export const DESK_STRATEGIES = Object.freeze([
     }
   },
   {
+    /**
+     * THIRD MasterSite PASS (2026-09-22). The roster entry HeatConfirm_500Bots
+     * replays the discovered rule on HISTORICAL bars; this desk entrant is the
+     * same rule applied to OPEN contracts with REAL captured ladders, which is
+     * the only place the rule can place a paper order at a price that exists.
+     *
+     * The rule is the one the owner's own Kalshi lab (MasterSite · Commodities)
+     * recreates as HeatConfirm from the r/PredictionsMarkets "500 weather bots"
+     * post (RESEARCH_SOURCES R06, third-party claim — discovery only): a
+     * forecast high above 77°F, a YES price below 42 cents, a spread under 8
+     * cents, exit if the forecast cools. Nothing here is copied from that lab's
+     * numbers: the forecast comes from this repo's NWS archive, the price and
+     * the spread come from the captured ladder, and the outcome comes from the
+     * exchange's settlement.
+     */
+    id: 'live_heat_confirm_weather',
+    username: 'LiveHeatConfirm_Weather',
+    name: 'Desk: 500-bot survivor rule (forecast > 77F, YES < 42c, spread <= 8c) on open KXHIGH* brackets',
+    category: 'Weather / Discovered Rule (desk)',
+    watch: /^KXHIGH/i,
+    source:
+      'R06 · r/PredictionsMarkets "I backtested 500 Weather Kalshi Bots" (third-party, discovery only) via the owner\'s Kalshi lab persona HeatConfirm (MasterSite · Commodities, scripts/forward_strategies.py → entry_heat_confirm) + this repository\'s NWS point-forecast archive (data/forecasts/, api.weather.gov, archived five times a day).',
+    mandate: 'MAXIMUM RETURN. No stop-losses, no position caps, no volatility targeting.',
+    thesis:
+      'The roster twin (HeatConfirm_500Bots) cannot fire until a hot archived forecast coincides with a captured bracket, because the replay universe is a few brackets per event. On the desk the same conjunction is evaluated against the OPEN board: every open KXHIGH* contract with a captured ladder AND a point-in-time NWS forecast for its own measurement date is checked for all three literals at once — forecast high > 77F (strictly), the bracket contains the forecast, YES ask < 0.42 (strictly) and YES ask minus YES bid ≤ 0.08. Failing any one of them is a published abstention, not a silent skip. The exit leg ("if the forecast cooled, it got out") is a HOLD rule here: the desk\'s paper book marks open positions against the captured ladder and holds to the exchange\'s real settlement, so the desk never sells on a forecast change — that difference is stated rather than hidden.',
+    rules: [
+      'Universe: open KXHIGH* brackets with a captured ladder AND an archived NWS forecast for the bracket\'s measurement date captured at or before the cut-off.',
+      'Trigger (all three, from the source): forecast high > 77F; the bracket contains the forecast; captured YES ask < 0.42 with YES ask − YES bid ≤ 0.08.',
+      'Entry: taker buy of YES, sized to 30% of cash, bounded by real ladder depth within 2 ticks; at most 2 legs per cut-off (the tightest spreads first).',
+      'Exit: hold to real settlement (the desk does not sell on a forecast change — see the thesis).'
+    ],
+    sizing: '30% of cash per bracket, bounded by real ladder depth',
+    decide(view) {
+      const out = [];
+      const bySeries = new Map();
+      for (const loc of forecastLocations()) if (loc.series && (loc.snapshots || []).length) bySeries.set(loc.series, loc);
+      if (!bySeries.size) return out; // archive dark → abstain
+      const cutoffSeconds = Math.floor((view.asOfMs || Date.parse(view.asOf || '')) / 1000);
+      if (!Number.isFinite(cutoffSeconds)) return out;
+      const candidates = tradeableMarkets(view)
+        .filter((m) => /^KXHIGH/i.test(String(m.seriesTicker || m.ticker || '')))
+        .map((m) => {
+          const loc = bySeries.get(m.seriesTicker);
+          if (!loc) return null;
+          const eventDate = weatherEventDate(m.eventTicker || m.ticker);
+          if (!eventDate) return null;
+          const hit = forecastHighAt(loc.snapshots, eventDate, cutoffSeconds);
+          if (!hit) return null;
+          const f = Number(hit.highF);
+          if (!Number.isFinite(f) || f <= 77) return null; // the source's forecast gate
+          const floor = Number(m.floorStrike);
+          const cap = Number(m.capStrike);
+          const isBand = Number.isFinite(floor) && Number.isFinite(cap) && cap > floor;
+          const isTail = String(m.strikeType || '') === 'less' && Number.isFinite(cap);
+          const inside = isBand ? f >= floor && f <= cap : isTail ? f <= cap : false;
+          if (!inside) return null;
+          const touch = touchOf(m);
+          const ask = touch.yesAsk ?? m.ladder?.yesAsks?.[0]?.price ?? null;
+          // The captured ladder publishes BIDS on both sides; the YES bid is the
+          // ladder's own best yes level (`yes.best`), or the quote's yes_bid.
+          const bid = touch.yesBid ?? m.ladder?.yes?.best ?? null;
+          if (ask === null || bid === null) return null;
+          const spread = Math.round((ask - bid) * 1e6) / 1e6;
+          if (!(ask > 0) || ask >= 0.42) return null; // the source's price gate
+          if (!(spread <= 0.08)) return null;        // the source's liquidity gate
+          return { market: m, f, floor, cap, ask, bid, spread, hit, eventDate };
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.spread - b.spread || (b.market.volume || 0) - (a.market.volume || 0));
+      for (const c of candidates) {
+        const count = sizeToDepth(view, c.market, { side: 'yes', price: c.ask, cashFraction: 0.30, ticks: 2 });
+        if (count < DESK_LIMITS.minContracts) continue;
+        out.push({
+          ticker: c.market.ticker,
+          side: 'yes',
+          action: 'buy',
+          type: 'market',
+          count,
+          reason: `500-bot survivor rule: NWS forecast high ${c.f}F > 77F and inside bracket ${Number.isFinite(c.floor) ? c.floor : '-inf'}-${Number.isFinite(c.cap) ? c.cap : 'inf'}F for ${c.eventDate} (snapshot ${c.hit.capturedAt}, captured before the cut-off); captured YES ask ${c.ask} < 0.42 and spread ${c.spread} <= 0.08 (ladder ${c.market.ladderAt}) → buy YES, hold to settlement`
+        });
+        if (out.length >= 2) break;
+      }
+      return out;
+    }
+  },
+  {
     id: 'live_mlb_theory_edge',
     username: 'LiveMLB_TheoryEdge',
     name: 'Desk: official-linescore late lead vs the Tangotiger theory price (MLB archive reader, live signal)',

@@ -123,6 +123,29 @@ export function runForwardTest(options = {}) {
     );
   }
 
+  /**
+   * PREVIOUS DESIGN SPLIT (2026-09-22).
+   *
+   * The strict split is max(designedAt). When a NEW strategy is designed today,
+   * that rule honestly resets everyone's forward window to (almost) nothing —
+   * which is correct but leaves a reader unable to see the measurement the
+   * build had before the addition. So the same replay is also run against the
+   * SECOND-LATEST distinct design date and published under an explicit label:
+   * it is a SUPERSET of the strict window and it is NOT a clean forward test for
+   * the newest design, exactly the way the held-out window is labelled. Both
+   * numbers are shown side by side; neither replaces the other.
+   */
+  const distinctDesignTs = [...new Set(strategies.map((s) => s.designedAt).filter(Boolean).map((d) => Date.parse(d)))]
+    .filter((t) => Number.isFinite(t))
+    .sort((a, b) => a - b);
+  const previousDesignTs = distinctDesignTs.length > 1
+    ? Math.floor(distinctDesignTs[distinctDesignTs.length - 2] / 1000)
+    : null;
+  const previousSplitTs = options.previousSplitTs !== undefined
+    ? options.previousSplitTs
+    : (previousDesignTs && previousDesignTs !== splitTs ? previousDesignTs : null);
+  const previousSplitBars = previousSplitTs ? barsAfter(candlesByTicker, previousSplitTs) : [];
+
   const allTs = Object.values(candlesByTicker).flat().map((c) => Number(c.end_period_ts));
   const windowStart = Math.min(...allTs);
   const windowEnd = Math.max(...allTs);
@@ -197,6 +220,19 @@ export function runForwardTest(options = {}) {
       strictForward = { ...summaryOf(run), bars: strictBars.length };
     }
 
+    // (b2) the strict window measured at the PREVIOUS design date — published
+    //      because a design added today would otherwise hide an existing
+    //      measurement. Labelled, never merged with (b).
+    let previousDesign = null;
+    if (previousSplitTs && previousSplitBars.length > 0) {
+      const run = new ReplayEngine({ ...base, noTradeBeforeTs: previousSplitTs }).run(strategy, {
+        username: `${strategy.username}#previousdesign`,
+        capital: initialCapital,
+        seed: options.seed ?? 20260917
+      });
+      previousDesign = { ...summaryOf(run), bars: previousSplitBars.length };
+    }
+
     // (c) held-out window (labelled: not a clean forward test)
     let heldOut = null;
     if (heldOutTs) {
@@ -222,6 +258,13 @@ export function runForwardTest(options = {}) {
       backtest: summaryOf(backtest),
       inSample: segments.inSample,
       strictForward,
+      previousDesignSplit: previousDesign
+        ? {
+            ...previousDesign,
+            label:
+              'PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement.'
+          }
+        : null,
       heldOut: heldOut
         ? {
             ...heldOut,
@@ -238,6 +281,9 @@ export function runForwardTest(options = {}) {
   const byHeldOut = rows
     .filter((r) => r.heldOut && r.heldOut.totalTrades >= 1)
     .sort((a, b) => b.heldOut.returnPct - a.heldOut.returnPct);
+  const byPreviousDesign = rows
+    .filter((r) => r.previousDesignSplit && r.previousDesignSplit.totalTrades >= 1)
+    .sort((a, b) => b.previousDesignSplit.returnPct - a.previousDesignSplit.returnPct);
 
   return {
     generatedAt: new Date().toISOString(),
@@ -255,6 +301,17 @@ export function runForwardTest(options = {}) {
         'STRICT FORWARD = bars strictly after max(designedAt), replayed on a fresh account forbidden to trade before that timestamp. ' +
         'HELD-OUT = a later real window, labelled as a robustness check because the designs were authored with knowledge of it.',
       minMeaningfulForwardBars: MIN_MEANINGFUL_FORWARD_BARS,
+      previousDesignSplit: previousSplitTs
+        ? {
+            splitTs: previousSplitTs,
+            forwardStart: new Date(previousSplitTs * 1000).toISOString(),
+            bars: previousSplitBars.length,
+            start: previousSplitBars.length ? new Date(previousSplitBars[0] * 1000).toISOString() : null,
+            end: previousSplitBars.length ? new Date(previousSplitBars[previousSplitBars.length - 1] * 1000).toISOString() : null,
+            note:
+              'The same replay with noTradeBeforeTs moved back to the second-latest distinct designedAt in the roster. It is a SUPERSET of the strict forward window and shares bars with the in-sample period of the newest design, so it must never be quoted as a strict forward result — it exists so that adding a strategy today does not erase the measurement the build had yesterday.'
+          }
+        : null,
       strictForwardNote:
         strictBars.length === 0
           ? 'The strict forward window is EMPTY.'
@@ -282,10 +339,13 @@ export function runForwardTest(options = {}) {
       strictForwardMeasured: byForward.length,
       heldOutMeasured: byHeldOut.length,
       bestStrictForward: byForward[0] ? { username: byForward[0].username, returnPct: byForward[0].strictForward.returnPct } : null,
-      bestHeldOut: byHeldOut[0] ? { username: byHeldOut[0].username, returnPct: byHeldOut[0].heldOut.returnPct } : null
+      bestHeldOut: byHeldOut[0] ? { username: byHeldOut[0].username, returnPct: byHeldOut[0].heldOut.returnPct } : null,
+      previousDesignSplitMeasured: byPreviousDesign.length,
+      bestPreviousDesignSplit: byPreviousDesign[0] ? { username: byPreviousDesign[0].username, returnPct: byPreviousDesign[0].previousDesignSplit.returnPct } : null
     },
     rows,
     rankedStrictForward: byForward.map((r) => ({ username: r.username, returnPct: r.strictForward.returnPct, trades: r.strictForward.totalTrades })),
-    rankedHeldOut: byHeldOut.map((r) => ({ username: r.username, returnPct: r.heldOut.returnPct, trades: r.heldOut.totalTrades }))
+    rankedHeldOut: byHeldOut.map((r) => ({ username: r.username, returnPct: r.heldOut.returnPct, trades: r.heldOut.totalTrades })),
+    rankedPreviousDesignSplit: byPreviousDesign.map((r) => ({ username: r.username, returnPct: r.previousDesignSplit.returnPct, trades: r.previousDesignSplit.totalTrades }))
   };
 }

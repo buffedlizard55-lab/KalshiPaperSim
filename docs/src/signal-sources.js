@@ -480,6 +480,360 @@ export const SIGNAL_SOURCES = Object.freeze([
     flagged:
       'IRREGULARITIES.md #42 — the MasterSite directory\'s audit record for this project (generated 2026-09-17T21:47:46Z: "single initial commit… 15-byte README") is STALE: the repository was rebuilt on 2026-09-18 (30 commits, PR #9 merged 17:45:57Z) into a full competition. The directory needs a re-run of its audit before its StockPaperSim entry can be trusted.',
     strategyUsername: null
+  },
+
+  /* ══════════════════════════════════════════════════════════════════════════
+   * FOURTH PASS — 2026-09-22 (session 01a0cb4e). The directory now publishes
+   * 52 of the account's 53 public repositories (1 permanently excluded by owner
+   * request, the directory's own account section) and the account has grown a
+   * family of SIBLING paper-trading competition projects since the first
+   * review. Every one of the 52 sites is now catalogued here: the ones that can
+   * carry a market signal, the ones that are competition-format research, and —
+   * for completeness, in one grouped entry — the ones that are not market
+   * signals at all.
+   *
+   * Evidence for every claim below: the repository README read through the
+   * official GitHub contents API on 2026-09-22 (Accept: application/vnd.github.raw)
+   * plus GET /repos/buffedlizard55-lab/<repo>, both fetched in this session. The
+   * directory's own data export (MasterSite data/sites.js, generated
+   * 2026-09-21T23:07:59Z) supplied the site list and the audit counts.
+   * ══════════════════════════════════════════════════════════════════════════ */
+
+  {
+    id: 'S20',
+    requested: 'Commodities — Kalshi Research Exchange (found by fourth pass)',
+    name: 'Commodities — the owner\'s own Kalshi paper-trading lab',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/Commodities/',
+      repo: 'https://github.com/buffedlizard55-lab/Commodities',
+      strategySource: 'https://github.com/buffedlizard55-lab/Commodities/blob/main/scripts/forward_strategies.py'
+    },
+    status: SIGNAL_SOURCE_STATUS.LIVE_SIGNAL,
+    whatItIs:
+      'A second, owner-run Kalshi paper-trading lab: 24 return-seeking forward-test personas (+4 gated) trading open contracts twice an hour from a scheduled read-only collector, an archive backtest over the collector\'s own official candle archive with a walk-forward split, an execution-realism check that re-reads every simulated fill against Kalshi\'s published trade tape (GET /markets/trades), a tape-validated maker quote model, a per-strategy page, and a browser simulator ("place simulated trades on open event contracts"). README read in full 2026-09-22.',
+    verifiableClaim:
+      'Its HeatConfirm persona re-creates a rule from a THIRD-PARTY social post with the literals HEAT_CONFIRM_FORECAST_F = 77.0, HEAT_CONFIRM_MAX_ASK = 0.42, HEAT_CONFIRM_MAX_SPREAD = 0.08 and the exit "if the forecast cooled, it got out", and labels it forward-recreation rather than evidence. This repository adopted exactly those literals: HeatConfirm_500Bots (roster, hourly KXHIGHNY replay) and LiveHeatConfirm_Weather (Live Desk, open KXHIGH* brackets with captured ladders).',
+    kalshiMarketClass: 'KXHIGHNY / KXHIGH* weather brackets — and the whole open board in that lab',
+    testableHere: true,
+    howTested:
+      'The rule is tested here, not copied: the forecast is this repository\'s NWS archive (data/forecasts/), the prices and spreads are the captured ladders (60-minute store and the desk module), and the outcome is the exchange\'s own settlement. Two independent implementations of the same rule in two repositories is the strongest check either can get.',
+    flagged:
+      'Cross-lab caveat, stated rather than hidden: that lab trades a WIDER universe (its collector discovers its own markets) and files its own fees/queue assumptions; where the two labs disagree on a market, the disagreement is data coverage (which markets each captured), not a difference in the rule.',
+    strategyUsername: ['HeatConfirm_500Bots', 'LiveHeatConfirm_Weather']
+  },
+
+  {
+    id: 'S21',
+    requested: 'KalshiPaperSim (this repository, as the directory records it)',
+    name: 'KalshiPaperSim — this competition platform, audited from the outside',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/KalshiPaperSim/',
+      repo: 'https://github.com/buffedlizard55-lab/KalshiPaperSim'
+    },
+    status: SIGNAL_SOURCE_STATUS.LIVE_SIGNAL,
+    whatItIs:
+      'The directory lists this repository in Markets & Trading Research with its Pages site built. Recorded here as an outside-in check: the directory\'s own export (generated 2026-09-21T23:07:59Z) describes the repository independently of anything written in it, and the two descriptions have to agree.',
+    verifiableClaim:
+      'GET https://api.github.com/repos/buffedlizard55-lab/KalshiPaperSim on 2026-09-22: default branch main, Pages built, size 57,900 KB, last push 2026-09-22T22:55:48Z — i.e. the repository the directory points at is the one this session is working in, still moving.',
+    kalshiMarketClass: 'Kalshi event contracts (this platform)',
+    testableHere: true,
+    howTested:
+      'Self-referential by construction, so nothing here is treated as evidence about this repository: the claims in this ledger are the external ones (the directory, the GitHub API).',
+    flagged:
+      'A directory entry about this repository cannot verify this repository. Recorded to close the coverage list, and to keep the direction of checking one-way: external sources judge this repo, never the reverse.',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S22',
+    requested: 'MLBComp (found by fourth pass)',
+    name: 'MLBComp — autonomous MLB research and paper competition',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/MLBComp/',
+      repo: 'https://github.com/buffedlizard55-lab/MLBComp'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'The MLB sibling of this platform: a versioned 68-entry research catalog (baselines, starters, bullpens, lineups/injuries, Statcast, pitch mix, park/weather, umpires, rest/travel, market movement, totals, first-five, run line, props, live, futures, exchange and prediction-market hypotheses), separate regular-season and postseason environments (REG, POST, WC, DS, LCS, WS, ALL) with per-environment model versions, and point-in-time feature/series-state contracts. README read 2026-09-22.',
+    verifiableClaim:
+      'Its separation of environments is the discipline this repository applies to its own forward test: a postseason result is never blended into a regular-season number, and "ALL" is a view, not a score — the same reason this repo publishes backtest, strict forward and held-out windows side by side instead of one headline.',
+    kalshiMarketClass: 'KXMLBGAME / KXMLB* series (baseball)',
+    testableHere: false,
+    blockedBy:
+      'Its catalog is a research index, not a captured price store: nothing in it can price a Kalshi contract on its own. This repository already captures what it needs for baseball (data/mlb-signals/ + KXMLBGAME ladders); the catalog is useful as a LIST OF HYPOTHESES to check against that store, and is recorded as such.',
+    flagged:
+      'Candidate, not signal. Where a hypothesis in its catalog matches a Kalshi series this repo captures, the honest next step is a new roster entry that states the hypothesis and lets the replay measure it — not an import of any number.',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S23',
+    requested: 'NBAComp (found by fourth pass)',
+    name: 'NBAComp — autonomous NBA strategy research & paper-trading competition',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/NBAComp/',
+      repo: 'https://github.com/buffedlizard55-lab/NBAComp'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'An autonomous NBA laboratory on a 6-hourly scheduled loop (collect → verify → model → backtest → forward test → paper trade → measure → analyse → repeat) that collects ESPN schedule/scores/odds and injury board, Kalshi markets/order books/candlesticks/results, and NBA.com advanced stats, logging every fetch with its HTTP status and recording failures rather than papering over them. README read 2026-09-22.',
+    verifiableClaim:
+      'Its fetch-log discipline ("every fetch is logged with HTTP status; failures are recorded, never papered over") is the same rule this repository enforces in IRREGULARITIES.md: a failed capture becomes a published fact, never a silent gap — which is why this repo\'s own API failures are numbered irregularities instead of being hidden.',
+    kalshiMarketClass: 'KXNBAGAME / KXNBA series (basketball)',
+    testableHere: false,
+    blockedBy:
+      'Same as S22: an autonomous competitor is not a price archive. This repository\'s KXNBAGAME ladders (6 open contracts in the desk module at this build) and its ESPN archive are what can be traded here.',
+    flagged: null,
+    strategyUsername: null
+  },
+
+  {
+    id: 'S24',
+    requested: 'NFLComp (found by fourth pass)',
+    name: 'NFLComp — NFL strategy research, walk-forward testing and paper competition',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/NFLComp/',
+      repo: 'https://github.com/buffedlizard55-lab/NFLComp'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'A paper-trading NFL research prototype whose README reports, as of 2026-09-21: 33/33 audit checks passed, 70 strategy personas, 7,548 tracked NFL games, and a ledger of 31,502 published / 97,218 all-time entries, with multi-version strategy lineages (v1 → v2 → v3), strict zero-lookahead walk-forward execution and paper trading of the 2026 season slate. README read 2026-09-22.',
+    verifiableClaim:
+      'It states the same constraint this repository\'s replay engine implements and tests: strict zero-lookahead. Here that is enforced by construction (a bar may only read captures taken at or before its own instant — tests 62/63 and the point-in-time rules in IRREGULARITIES #60/#74-style failures), and it is the reason a later capture can never price an earlier order.',
+    kalshiMarketClass: 'KXNFLGAME / KXNFL* series (football)',
+    testableHere: false,
+    blockedBy:
+      'Its numbers are ITS OWN ledger, computed under ITS fee, liquidity and queue assumptions. Nothing from that ledger enters a result here; only the discipline transfers, and the transferable part — zero-lookahead execution — is already implemented and tested in this repo.',
+    flagged:
+      'Persona counts are not evidence of edge, in either repository. Recorded so a reader does not read 70 personas as 70 profitable strategies.',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S25',
+    requested: 'NHLComp (found by fourth pass)',
+    name: 'NHLComp — autonomous NHL research, backtest, forward test and paper trading',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/NHLComp/',
+      repo: 'https://github.com/buffedlizard55-lab/NHLComp'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'An autonomous NHL platform whose README states two rules this repository shares and one operational fact worth recording: "BACKTEST and FORWARD TEST are never merged" (test_mode is one or the other, shown side by side, never added), backtest prices are real timestamped Kalshi hourly candles drawn from the live tier or the /historical tier, and Kalshi\'s /historical/cutoff is currently 2026-07-22 (i.e. contracts settled before that date are served from the historical tier). README read 2026-09-22.',
+    verifiableClaim:
+      'The "never merged" rule and the historical-tier cutoff are both checkable operational claims: this repository captures candlesticks from the same API and stores the tier it came from, and src/accumulated-history.js + the ingest logs record which markets are served from which tier.',
+    kalshiMarketClass: 'KXNHLGAME / KXNHL* series (hockey)',
+    testableHere: false,
+    blockedBy:
+      'A sibling competitor\'s ledger again. The useful transferable item is its candle-tier disclosure, which this repository already follows by storing captured_at + source per bar rather than a merged series.',
+    flagged:
+      'The /historical/cutoff date moves as Kalshi ages contracts; a repo that hard-codes it goes stale silently. This repository records the capture instant per bar instead, which is why its own backtest can state the window it covers (see VERIFICATION.md V-series facts).',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S26',
+    requested: 'OLBG-Competition (found by fourth pass)',
+    name: 'Northstar Competition Lab (OLBG-Competition) — walk-forward betting research with multiplicity control',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/OLBG-Competition/',
+      repo: 'https://github.com/buffedlizard55-lab/OLBG-Competition'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'A source-first paper-trading research desk that collects tipster selections, verifies results through permissioned/reference adapters and backtests sport-specific strategies walk-forward with strict time cutoffs. README (2026-09-22): a 27-match Bundesliga 2024/25 pilot with 27/27 dual-source result agreement; thirteen strategies across 1X2, O/U 2.5 and Asian handicap, twelve negative, and the one positive desk (+9.8u, ROI +44.7%) NOT significant after Holm correction (p = 0.0715, family m = 13) — with the note that the adjusted p ROSE when two more desks joined the family, "which is the correction working".',
+    verifiableClaim:
+      'This is the clearest statement in the owner\'s account of the multiple-testing problem this repository also has: a roster of dozens of strategies will show positive results by chance. Recording it here is what makes this repo\'s own sweep results (scripts/sensitivity-sweep.mjs, data/reports/strategy-sweep-*.json) readable as a family of tests rather than as independent discoveries.',
+    kalshiMarketClass: 'None directly — football/hockey/darts betting markets, not Kalshi contracts',
+    testableHere: false,
+    blockedBy:
+      'Different instruments and a licensing-gated odds path (its own README says hockey/darts PnL is UNAVAILABLE, never zero). Nothing in it prices a Kalshi contract.',
+    flagged:
+      'The transferable lesson, recorded because it cuts against this repository\'s own optimism: the more strategies a competition runs, the more its best-looking number is a maximum over noise. This repo\'s mitigation is to publish the whole sweep and label unranked/untested entries instead of promoting the best of them.',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S27',
+    requested: 'MLBRainDelay (found by fourth pass)',
+    name: 'MLBRainDelay — live MLB delay, postponement and ballpark-weather tracker',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/MLBRainDelay/',
+      repo: 'https://github.com/buffedlizard55-lab/MLBRainDelay'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'A zero-dependency site that reads the public MLB StatsAPI plus government weather sources and publishes, per game: the forecast-risk picture for the game window, active weather alerts, and the OFFICIAL delay facts (reason, official minutes, the play-by-play status timeline, makeup date). README (2026-09-22) states its own rule explicitly: delay/postponement rows are produced ONLY from official MLB status and advisory data, a game MLB has not officially delayed never appears as a delay row, and expected start/restart times are never inferred.',
+    verifiableClaim:
+      'The same source this repository already trusts for game state (statsapi.mlb.com, archived in data/mlb-signals/) carries the delay status; the project demonstrates the official fields exist and are usable point-in-time.',
+    kalshiMarketClass: 'KXMLBGAME — game timing (when a market\'s tradeable window actually ends)',
+    testableHere: false,
+    blockedBy:
+      'No delay/postponement feed is archived in THIS repository yet (data/mlb-signals/games carries state, not the delay narrative), and Kalshi publishes no dedicated rain-delay series here — so there is nothing to price against. It is recorded as the named unblocker for the game-window join gap (ROADMAP Next #11): an official event-time source, which is exactly what the audit\'s TRADEABLE_EVENT_UNVERIFIED rows are missing.',
+    flagged:
+      'Not a price signal. It is a TIMING signal: if it were archived point-in-time, a delayed game\'s real start instant would let the audit classify IN_PLAY ladders that today must stay UNVERIFIED (irregularities #60, #65).',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S28',
+    requested: 'Elections (found by fourth pass)',
+    name: 'Elections — civic data registry with a LIVE 2026 paper contest on open Kalshi election markets',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/Elections/',
+      repo: 'https://github.com/buffedlizard55-lab/Elections'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'A collect/analyse/project/estimate research project on civic data (267 sources, 80 irregularities, 156 tests per its README, 2026-09-22) whose README announces a running contest: "12 entrants, unique usernames, unique theses, $100,000 each, scored every day on OPEN Kalshi election markets".',
+    verifiableClaim:
+      'It is a working, live example — in the owner\'s own account — of exactly the format this repository implements: one paper account per distinctly-named strategy, scored on OPEN Kalshi contracts. Its existence is the strongest available confirmation that the format is buildable end-to-end on Kalshi\'s public API, and it is cited here as a FORMAT reference (with kalshi.com, The Leap, Trade-Ideas and Candlecharts contest pages, RESEARCH_SOURCES R24–R27).',
+    kalshiMarketClass: 'Kalshi election series (2026 contests) — NOT yet captured by this repository',
+    testableHere: false,
+    blockedBy:
+      'Coverage, not capability: this repository\'s ingest universe is configured with three series per scheduled run (KXNASDAQ100Y, KXBTCY, KXINXY) plus the sport/weather/FDA/CEO pipelines, and it holds no election tickers, so the desk has nothing to price. An election series ticker must be DISCOVERED from the live API (scripts/discover-universe.mjs) — never guessed — before an election entrant could be added honestly.',
+    flagged:
+      'Recorded as a named coverage gap: the platform supports the format, the store simply has no election contracts. ROADMAP "Next" carries the discovery step.',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S29',
+    requested: 'GEMSDOE (found by fourth pass)',
+    name: 'GEMSDOE — Geologic Enhanced Mapping System prize challenge',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/GEMSDOE/',
+      repo: 'https://github.com/buffedlizard55-lab/GEMSDOE'
+    },
+    status: SIGNAL_SOURCE_STATUS.NOT_A_SIGNAL,
+    whatItIs:
+      'A competition-submission project (a geologic mapping prize challenge) whose own README is unusually explicit about what is finished and what is human-only: the submission file, its sha256 re-hashed at build time, regeneration routes, and a readiness gate in which "the human-only steps are labelled HUMAN rather than counted as done".',
+    verifiableClaim:
+      'Its "HUMAN rather than counted as done" gate is the same accounting rule this repository applies to its own unfinished work: an unverifiable step is published as unfinished (ROADMAP "Next", irregularity entries) instead of being marked complete.',
+    kalshiMarketClass: null,
+    testableHere: false,
+    blockedBy: 'No market: a geoscience prize submission has no tradeable contract.',
+    flagged: null,
+    strategyUsername: null
+  },
+
+  {
+    id: 'S30',
+    requested: 'MasterSelfLearn (found by fourth pass)',
+    name: 'MasterSelfLearn — autonomous, evidence-first research engine',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/MasterSelfLearn/',
+      repo: 'https://github.com/buffedlizard55-lab/MasterSelfLearn'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'A timed autonomous research engine (*/30 * * * *) that reads official public data, expands a topic library, has competing personas predict what happens next, scores them against what actually happened, and prints a link a human can open for every number it prints.',
+    verifiableClaim:
+      'Its output contract — every printed number carries an openable source link — is the same rule this repository\'s VERIFICATION.md follows, and it is the mechanism that makes the "no hallucinations" requirement checkable rather than aspirational.',
+    kalshiMarketClass: null,
+    testableHere: false,
+    blockedBy:
+      'It produces scored predictions about general topics, not prices for Kalshi contracts; no point-in-time market series is emitted here.',
+    flagged: null,
+    strategyUsername: null
+  },
+
+  {
+    id: 'S31',
+    requested: 'SelfLearn (found by fourth pass)',
+    name: 'SelfLearn — autonomous claim-verification research engine',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/SelfLearn/',
+      repo: 'https://github.com/buffedlizard55-lab/SelfLearn'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'An autonomous engine that "will not publish a sentence it cannot quote from a document it actually retrieved": it plans reading, fetches registered sources, cuts candidate claims, verifies each against its own document, has six researchers build answers, attacks them with eleven deterministic critic rules, scores them on nine published criteria and publishes claims, sources, criticisms, contradictions, refusals and open irregularities as JSON + a static site.',
+    verifiableClaim:
+      'Its refusal mechanism (publish the refusal, not a guess) is structurally the same as this repository\'s abstain-with-a-reason behaviour: a strategy with no signal publishes why instead of fabricating a trade (ForecastEdge_Weather\'s UNTESTED_ON_THIS_DATASET, LiveHeatConfirm_Weather\'s "0 of 106 contracts match").',
+    kalshiMarketClass: null,
+    testableHere: false,
+    blockedBy: 'Same as S30: no market series, no price.',
+    flagged: null,
+    strategyUsername: null
+  },
+
+  {
+    id: 'S32',
+    requested: 'SocialMediaComp (found by fourth pass)',
+    name: 'SocialMediaComp — cited leaderboard of high-reach social accounts and communities',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/SocialMediaComp/',
+      repo: 'https://github.com/buffedlizard55-lab/SocialMediaComp'
+    },
+    status: SIGNAL_SOURCE_STATUS.NOT_A_SIGNAL,
+    whatItIs:
+      'An 80-entry, dated-snapshot leaderboard of TikTok/Instagram/Facebook/Reddit/YouTube/X/Twitch accounts and communities, with a profile_url and a source_url on every row and a verification log recording which table cell each figure was read from. Its own README states it is "Not live follower counts" and "not a guide to buying engagement".',
+    verifiableClaim:
+      'Its dated-snapshot discipline is the rule this repository applies to social discovery (RESEARCH_SOURCES R01–R23): a social claim is recorded with its URL and its date and is treated as a HYPOTHESIS, never as a price or a result.',
+    kalshiMarketClass: null,
+    testableHere: false,
+    blockedBy:
+      'Reach figures are not market data. The strategy-mining side of social discovery is already carried by RESEARCH_SOURCES; this project is the account-side catalogue.',
+    flagged: null,
+    strategyUsername: null
+  },
+
+  {
+    id: 'S33',
+    requested: 'VacationSchedule (found by fourth pass)',
+    name: 'VacationSchedule — sports-free time planner with a committed MLB fixture snapshot',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      live: 'https://buffedlizard55-lab.github.io/VacationSchedule/',
+      repo: 'https://github.com/buffedlizard55-lab/VacationSchedule'
+    },
+    status: SIGNAL_SOURCE_STATUS.CANDIDATE,
+    whatItIs:
+      'A 2026–2029 planner that compares three definitions of sports-free vacation time and, in its 2026-09-21 pass, added MLB 2026 & 2027 fixture tabs: "every fixture the league has scheduled, all 30 clubs: Spring Training, regular season, All-Star Game and postseason, from the committed Stats API snapshot", each row carrying the league\'s own game_pk.',
+    verifiableClaim:
+      'A committed Stats-API fixture snapshot with game_pk per row is exactly the object this repository\'s game-window audit is missing for its TRADEABLE_EVENT_UNVERIFIED rows: an OFFICIAL schedule with the league\'s game identifier, joinable to KXMLBGAME tickers by the same game_pk rule used in data/mlb-signals/.',
+    kalshiMarketClass: 'KXMLBGAME — event start times (the join gap in ROADMAP Next #11)',
+    testableHere: false,
+    blockedBy:
+      'A committed SNAPSHOT is not a point-in-time archive: the audit may only use what was knowable at the ladder\'s capture instant, so a single late snapshot of the schedule cannot retro-classify old ladders. It names a real, cheap unblocker (archive the schedule on the same cadence as data/mlb-signals/) rather than a shortcut.',
+    flagged:
+      'The distinction matters and is recorded deliberately: a CURRENT schedule is not an event window AS KNOWN AT THE TIME. Using it to classify historical ladders would import knowledge the trader did not have.',
+    strategyUsername: null
+  },
+
+  {
+    id: 'S34',
+    requested: 'The remaining sites in the directory (fourth-pass completeness entry)',
+    name: 'Travel & Korea Trip (11), SF Local Guides (6), Health & Personal Guides (1), Gaming & Guides (1) and the remaining directory/meta sites — audited, not market signals',
+    urls: {
+      masterSite: 'https://buffedlizard55-lab.github.io/MasterSite/',
+      directory: 'https://api.github.com/users/buffedlizard55-lab/repos?per_page=100'
+    },
+    status: SIGNAL_SOURCE_STATUS.NOT_A_SIGNAL,
+    whatItIs:
+      'One grouped entry so the coverage claim is exact rather than implied: the directory publishes 52 of the account\'s 53 public repositories (1 permanently excluded by owner request — its account section names the exclusion and never the repository), and every site is now catalogued in this ledger. The sites in this group are: AirPremia, BathTubOverflowSF, BusanL7HaeundaeLotteHotelStay, CruiseDeals, HongdaeStay, HotelSeoulRoughdraft1, Itinerary-Korea, Korea, Korea-emergency, KoreaHotels, Leg3SeoulTrip, PlumbingSF, SFLateNight, ShoulderPain, StanfordStay, TinoLunchSpecial, VapePods, WoWForever, plus the Directory & Meta trio (MasterSite itself and the two engines above).',
+    verifiableClaim:
+      'The classification is checkable from the directory\'s own category labels and the repositories themselves: none of these projects publishes a price series, a market datum, or an event outcome that a Kalshi contract settles on. Two of them touch markets only through scheduling (a trip planner avoiding game days), which is covered by S33.',
+    kalshiMarketClass: null,
+    testableHere: false,
+    blockedBy:
+      'No market claim exists to test: there is no instrument to price and no settlement to verify.',
+    flagged: null,
+    strategyUsername: null
   }
 ]);
 

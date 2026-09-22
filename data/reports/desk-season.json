@@ -1,37 +1,515 @@
 {
-  "generatedAt": "2026-09-22T07:00:31.472Z",
+  "generatedAt": "2026-09-22T22:55:53.070Z",
   "seasonVersion": 1,
-  "dataGeneratedAt": "2026-09-22T06:45:51.977Z",
+  "dataGeneratedAt": "2026-09-22T22:55:52.332Z",
   "dataCoverage": {
-    "storesRead": 968,
-    "marketsTracked": 597,
-    "marketsWithLadder": 188,
-    "marketsInModule": 86,
-    "openAtCapture": 80,
+    "storesRead": 1045,
+    "marketsTracked": 663,
+    "marketsWithLadder": 189,
+    "marketsInModule": 106,
+    "openAtCapture": 100,
+    "tradeableInModule": 100,
     "finalizedAtCapture": 6,
-    "withRealResult": 8,
+    "withRealResult": 6,
+    "statusResolution": {
+      "rule": {
+        "id": "market-status-v1",
+        "r1": "every store file is a point-in-time photograph and is kept; disagreements are published as conflicts",
+        "r2": "settlement is monotone: an observation finalized with result yes/no wins over any active/initialized observation, even a newer one, because a settled contract cannot reopen",
+        "r3": "otherwise the newest observation by market_captured_at wins; ties are broken by source path so the outcome is deterministic",
+        "source": "https://docs.kalshi.com/api-reference/market/get-market (status, result, settlement_value are the exchange's own fields)",
+        "capturedIn": "data/history/**/*.json → status, result, market_captured_at (written by scripts/ingest-history.mjs)"
+      },
+      "tickers": 663,
+      "settledTickers": 527,
+      "openTickers": 135,
+      "unknownTickers": 1,
+      "multiFileTickers": 201,
+      "filesDisagreeingWithResolution": 42,
+      "conflicts": [],
+      "settledFromStaleFile": [
+        {
+          "ticker": "KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15",
+          "resolved": {
+            "status": "finalized",
+            "result": "yes",
+            "source": "data/history/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15.json",
+            "marketCapturedAt": "2026-09-22T19:55:09.238Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15.json",
+              "marketCapturedAt": "2026-09-20T03:38:01.998Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15.json",
+              "marketCapturedAt": "2026-09-20T03:42:56.929Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNCAAFSPREAD-26SEP19NAUUTU-NAU25",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25.json",
+            "marketCapturedAt": "2026-09-22T19:55:10.484Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25.json",
+              "marketCapturedAt": "2026-09-20T03:38:03.417Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25.json",
+              "marketCapturedAt": "2026-09-20T03:42:58.347Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5.json",
+            "marketCapturedAt": "2026-09-22T19:55:11.729Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5.json",
+              "marketCapturedAt": "2026-09-20T03:38:04.835Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5.json",
+              "marketCapturedAt": "2026-09-20T03:42:59.761Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNCAAFTOTAL-26SEP19HCUIW-59",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNCAAFTOTAL-26SEP19HCUIW-59.json",
+            "marketCapturedAt": "2026-09-22T19:55:14.216Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNCAAFTOTAL-26SEP19HCUIW-59.json",
+              "marketCapturedAt": "2026-09-20T03:38:07.667Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNCAAFTOTAL-26SEP19HCUIW-59.json",
+              "marketCapturedAt": "2026-09-20T03:43:02.595Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNCAAFTOTAL-26SEP19MRMKTARL-59",
+          "resolved": {
+            "status": "finalized",
+            "result": "yes",
+            "source": "data/history/KXNCAAFTOTAL-26SEP19MRMKTARL-59.json",
+            "marketCapturedAt": "2026-09-22T19:55:15.461Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNCAAFTOTAL-26SEP19MRMKTARL-59.json",
+              "marketCapturedAt": "2026-09-20T03:38:09.088Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNCAAFTOTAL-26SEP19MRMKTARL-59.json",
+              "marketCapturedAt": "2026-09-20T03:43:04.014Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNCAAFTOTAL-26SEP19USDCP-57",
+          "resolved": {
+            "status": "finalized",
+            "result": "yes",
+            "source": "data/history/KXNCAAFTOTAL-26SEP19USDCP-57.json",
+            "marketCapturedAt": "2026-09-22T19:55:16.707Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNCAAFTOTAL-26SEP19USDCP-57.json",
+              "marketCapturedAt": "2026-09-20T03:38:10.506Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNCAAFTOTAL-26SEP19USDCP-57.json",
+              "marketCapturedAt": "2026-09-20T03:43:05.433Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8.json",
+            "marketCapturedAt": "2026-09-22T19:55:26.668Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8.json",
+              "marketCapturedAt": "2026-09-20T03:38:21.871Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8.json",
+              "marketCapturedAt": "2026-09-20T03:43:16.813Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14.json",
+            "marketCapturedAt": "2026-09-22T19:55:27.912Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14.json",
+              "marketCapturedAt": "2026-09-20T03:38:23.289Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14.json",
+              "marketCapturedAt": "2026-09-20T03:43:18.229Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18.json",
+            "marketCapturedAt": "2026-09-22T19:55:29.155Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18.json",
+              "marketCapturedAt": "2026-09-20T03:38:24.706Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18.json",
+              "marketCapturedAt": "2026-09-20T03:43:19.644Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26.json",
+            "marketCapturedAt": "2026-09-22T19:55:30.399Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26.json",
+              "marketCapturedAt": "2026-09-20T03:38:26.121Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26.json",
+              "marketCapturedAt": "2026-09-20T03:43:21.061Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNFLSPREAD-26SEP20MIASF-SF14",
+          "resolved": {
+            "status": "finalized",
+            "result": "yes",
+            "source": "data/history/KXNFLSPREAD-26SEP20MIASF-SF14.json",
+            "marketCapturedAt": "2026-09-22T19:55:39.112Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNFLSPREAD-26SEP20MIASF-SF14.json",
+              "marketCapturedAt": "2026-09-20T03:38:36.043Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNFLSPREAD-26SEP20MIASF-SF14.json",
+              "marketCapturedAt": "2026-09-20T03:43:31.002Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNFLSPREAD-26SEP20SEAARI-SEA4",
+          "resolved": {
+            "status": "finalized",
+            "result": "yes",
+            "source": "data/history/KXNFLSPREAD-26SEP20SEAARI-SEA4.json",
+            "marketCapturedAt": "2026-09-22T19:55:40.357Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNFLSPREAD-26SEP20SEAARI-SEA4.json",
+              "marketCapturedAt": "2026-09-20T03:38:37.463Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNFLSPREAD-26SEP20SEAARI-SEA4.json",
+              "marketCapturedAt": "2026-09-20T03:43:32.420Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3.json",
+            "marketCapturedAt": "2026-09-22T19:55:41.599Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3.json",
+              "marketCapturedAt": "2026-09-20T03:38:38.880Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3.json",
+              "marketCapturedAt": "2026-09-20T03:43:33.836Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNFLTOTAL-26SEP20JACDEN-45",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNFLTOTAL-26SEP20JACDEN-45.json",
+            "marketCapturedAt": "2026-09-22T19:55:42.842Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNFLTOTAL-26SEP20JACDEN-45.json",
+              "marketCapturedAt": "2026-09-20T03:38:40.296Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNFLTOTAL-26SEP20JACDEN-45.json",
+              "marketCapturedAt": "2026-09-20T03:43:35.253Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNFLTOTAL-26SEP20MIASF-45",
+          "resolved": {
+            "status": "finalized",
+            "result": "yes",
+            "source": "data/history/KXNFLTOTAL-26SEP20MIASF-45.json",
+            "marketCapturedAt": "2026-09-22T19:55:44.085Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNFLTOTAL-26SEP20MIASF-45.json",
+              "marketCapturedAt": "2026-09-20T03:38:41.713Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNFLTOTAL-26SEP20MIASF-45.json",
+              "marketCapturedAt": "2026-09-20T03:43:36.672Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNFLTOTAL-26SEP20SEAARI-41",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNFLTOTAL-26SEP20SEAARI-41.json",
+            "marketCapturedAt": "2026-09-22T19:55:45.327Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNFLTOTAL-26SEP20SEAARI-41.json",
+              "marketCapturedAt": "2026-09-20T03:38:43.130Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNFLTOTAL-26SEP20SEAARI-41.json",
+              "marketCapturedAt": "2026-09-20T03:43:38.093Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNFLTOTAL-26SEP20SEAARI-42",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNFLTOTAL-26SEP20SEAARI-42.json",
+            "marketCapturedAt": "2026-09-22T19:55:46.574Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNFLTOTAL-26SEP20SEAARI-42.json",
+              "marketCapturedAt": "2026-09-20T03:38:44.548Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNFLTOTAL-26SEP20SEAARI-42.json",
+              "marketCapturedAt": "2026-09-20T03:43:39.513Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
+          "resolved": {
+            "status": "finalized",
+            "result": "yes",
+            "source": "data/history/KXNHLGAME-26SEP19VGKLA-VGK.json",
+            "marketCapturedAt": "2026-09-22T19:56:00.271Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNHLGAME-26SEP19VGKLA-VGK.json",
+              "marketCapturedAt": "2026-09-20T03:39:00.150Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNHLGAME-26SEP20WSHBOS-WSH",
+          "resolved": {
+            "status": "finalized",
+            "result": "no",
+            "source": "data/history/KXNHLGAME-26SEP20WSHBOS-WSH.json",
+            "marketCapturedAt": "2026-09-22T19:56:01.514Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNHLGAME-26SEP20WSHBOS-WSH.json",
+              "marketCapturedAt": "2026-09-20T03:39:01.568Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNHLTOTAL-26SEP19VANSEA-2",
+          "resolved": {
+            "status": "finalized",
+            "result": "yes",
+            "source": "data/history/KXNHLTOTAL-26SEP19VANSEA-2.json",
+            "marketCapturedAt": "2026-09-22T19:56:07.734Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNHLTOTAL-26SEP19VANSEA-2.json",
+              "marketCapturedAt": "2026-09-20T03:39:08.672Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNHLTOTAL-26SEP19VANSEA-2.json",
+              "marketCapturedAt": "2026-09-20T03:44:03.634Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNHLTOTAL-26SEP19VGKLA-2",
+          "resolved": {
+            "status": "finalized",
+            "result": "yes",
+            "source": "data/history/KXNHLTOTAL-26SEP19VGKLA-2.json",
+            "marketCapturedAt": "2026-09-22T19:56:08.979Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNHLTOTAL-26SEP19VGKLA-2.json",
+              "marketCapturedAt": "2026-09-20T03:39:10.088Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNHLTOTAL-26SEP19VGKLA-2.json",
+              "marketCapturedAt": "2026-09-20T03:44:05.049Z",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "ticker": "KXNHLTOTAL-26SEP20SEACGY-2",
+          "resolved": {
+            "status": "finalized",
+            "result": "yes",
+            "source": "data/history/KXNHLTOTAL-26SEP20SEACGY-2.json",
+            "marketCapturedAt": "2026-09-22T19:56:11.469Z"
+          },
+          "staleFiles": [
+            {
+              "source": "data/history/intraday/1m/KXNHLTOTAL-26SEP20SEACGY-2.json",
+              "marketCapturedAt": "2026-09-20T03:39:12.929Z",
+              "status": "active"
+            },
+            {
+              "source": "data/history/intraday/60m/KXNHLTOTAL-26SEP20SEACGY-2.json",
+              "marketCapturedAt": "2026-09-20T03:44:07.883Z",
+              "status": "active"
+            }
+          ]
+        }
+      ]
+    },
     "reservedBySeries": [
       {
         "prefix": "KXMLBGAME",
         "slots": 6,
+        "maxSlots": 10,
         "kept": 0,
         "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "MLB in-play games — desk MLB signal hook targets these (Tangotiger WE, R18)",
         "tickers": []
       },
       {
         "prefix": "KXNFLGAME",
         "slots": 4,
+        "maxSlots": 10,
         "kept": 0,
         "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "NFL Sunday/Monday game contracts — LiveNFL_GameFavourite",
         "tickers": []
       },
       {
         "prefix": "KXNBAGAME",
         "slots": 6,
+        "maxSlots": 10,
         "kept": 6,
         "available": 6,
+        "droppedBySeriesCeiling": 0,
         "reason": "NBA game contracts — LiveNBA_GameFavourite",
         "tickers": [
           "KXNBAGAME-26OCT20PHINYK-PHI",
@@ -45,118 +523,151 @@
       {
         "prefix": "KXNCAAFGAME",
         "slots": 4,
-        "kept": 4,
-        "available": 25,
+        "maxSlots": 20,
+        "kept": 20,
+        "available": 26,
+        "droppedBySeriesCeiling": 6,
         "reason": "NCAA football game contracts — LiveNCAA_GameFavourite",
         "tickers": [
           "KXNCAAFGAME-26OCT03MCNSLSU-MCNS",
           "KXNCAAFGAME-26OCT03MCNSLSU-LSU",
+          "KXNCAAFGAME-26SEP26OREUSC-ORE",
+          "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+          "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+          "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
           "KXNCAAFGAME-26SEP26CARKFSU-FSU",
-          "KXNCAAFGAME-26SEP26OREUSC-ORE"
+          "KXNCAAFGAME-26SEP26CMUMIA-MIA",
+          "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
+          "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+          "KXNCAAFGAME-26SEP26OKLAUGA-UGA",
+          "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
+          "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
+          "KXNCAAFGAME-26OCT03CHSTARL-TARL",
+          "KXNCAAFGAME-26SEP26HCUUNT-UNT",
+          "KXNCAAFGAME-26OCT03TXSOFAU-FAU",
+          "KXNCAAFGAME-26OCT03CHSTARL-CHS",
+          "KXNCAAFGAME-26SEP26MHUWKU-WKU",
+          "KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
+          "KXNCAAFGAME-26SEP26HCUUNT-HCU"
         ]
       },
       {
         "prefix": "KXNCAAFSPREAD",
         "slots": 2,
-        "kept": 2,
-        "available": 3,
+        "maxSlots": 4,
+        "kept": 0,
+        "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "NCAA spread contracts — test coverage for point-in-time joins",
-        "tickers": [
-          "KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5",
-          "KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15"
-        ]
+        "tickers": []
       },
       {
         "prefix": "KXNHLGAME",
         "slots": 4,
+        "maxSlots": 8,
         "kept": 0,
         "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "NHL game contracts — sports-favourite coverage",
         "tickers": []
       },
       {
         "prefix": "KXHIGHNY",
         "slots": 12,
-        "kept": 2,
-        "available": 2,
+        "maxSlots": 12,
+        "kept": 0,
+        "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "NYC high-temp brackets — ForecastEdge_Weather signal target",
-        "tickers": [
-          "KXHIGHNY-26SEP21-B72.5",
-          "KXHIGHNY-26SEP21-B70.5"
-        ]
+        "tickers": []
       },
       {
         "prefix": "KXHIGHLAX",
         "slots": 3,
+        "maxSlots": 3,
         "kept": 0,
         "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "LA weather brackets — ForecastEdge_MultiCity",
         "tickers": []
       },
       {
         "prefix": "KXHIGHCHI",
         "slots": 3,
+        "maxSlots": 3,
         "kept": 0,
         "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "Chicago weather brackets",
         "tickers": []
       },
       {
         "prefix": "KXHIGHMIA",
         "slots": 3,
-        "kept": 2,
-        "available": 2,
+        "maxSlots": 3,
+        "kept": 0,
+        "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "Miami weather brackets",
-        "tickers": [
-          "KXHIGHMIA-26SEP21-B90.5",
-          "KXHIGHMIA-26SEP21-B88.5"
-        ]
+        "tickers": []
       },
       {
         "prefix": "KXHIGHAUS",
         "slots": 3,
+        "maxSlots": 3,
         "kept": 0,
         "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "Austin weather brackets",
         "tickers": []
       },
       {
         "prefix": "KXHIGHDEN",
         "slots": 3,
+        "maxSlots": 3,
         "kept": 0,
         "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "Denver weather brackets",
         "tickers": []
       },
       {
         "prefix": "KXHIGHPHIL",
         "slots": 3,
+        "maxSlots": 3,
         "kept": 0,
         "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "Philly weather brackets",
         "tickers": []
       },
       {
         "prefix": "KXHIGHTPHX",
         "slots": 3,
+        "maxSlots": 3,
         "kept": 0,
         "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "Phoenix weather brackets",
         "tickers": []
       },
       {
         "prefix": "KXHIGHTSEA",
         "slots": 3,
+        "maxSlots": 3,
         "kept": 0,
         "available": 0,
+        "droppedBySeriesCeiling": 0,
         "reason": "Seattle weather brackets",
         "tickers": []
       },
       {
         "prefix": "KXFDAAPPROVE",
         "slots": 3,
+        "maxSlots": 3,
         "kept": 3,
         "available": 3,
+        "droppedBySeriesCeiling": 0,
         "reason": "FDA approval brackets — LiveFDA_DecisionPremium",
         "tickers": [
           "KXFDAAPPROVE-CYT-26OCT01",
@@ -167,8 +678,10 @@
       {
         "prefix": "KXFDARETATRUTIDE",
         "slots": 3,
+        "maxSlots": 3,
         "kept": 3,
         "available": 5,
+        "droppedBySeriesCeiling": 2,
         "reason": "FDA retatrutide brackets",
         "tickers": [
           "KXFDARETATRUTIDE-RET-27JAN01",
@@ -179,8 +692,10 @@
       {
         "prefix": "KXFDAAPPROVALDATECMPS",
         "slots": 3,
+        "maxSlots": 3,
         "kept": 3,
         "available": 5,
+        "droppedBySeriesCeiling": 2,
         "reason": "FDA date-bracket composites",
         "tickers": [
           "KXFDAAPPROVALDATECMPS-360-27JUL01",
@@ -191,8 +706,10 @@
       {
         "prefix": "TESLACEOCHANGE",
         "slots": 2,
+        "maxSlots": 2,
         "kept": 1,
         "available": 1,
+        "droppedBySeriesCeiling": 0,
         "reason": "Tesla CEO-change contracts — LiveCEO_ChangeFav",
         "tickers": [
           "TESLACEOCHANGE-26"
@@ -201,8 +718,10 @@
       {
         "prefix": "KXOPENAICEOCHANGE",
         "slots": 2,
+        "maxSlots": 2,
         "kept": 1,
         "available": 1,
+        "droppedBySeriesCeiling": 0,
         "reason": "OpenAI CEO-change contracts",
         "tickers": [
           "KXOPENAICEOCHANGE-26"
@@ -211,117 +730,201 @@
       {
         "prefix": "JPMCEOCHANGE",
         "slots": 2,
+        "maxSlots": 2,
         "kept": 1,
         "available": 1,
+        "droppedBySeriesCeiling": 0,
         "reason": "JPMorgan CEO-change contracts",
         "tickers": [
           "JPMCEOCHANGE-27"
         ]
       }
     ],
-    "ladderCaptures": 978,
-    "bars": 5539,
-    "newestCapture": "2026-09-21T20:42:50.633Z",
+    "ladderCaptures": 1187,
+    "bars": 6984,
+    "newestCapture": "2026-09-22T20:04:18.342Z",
     "captureEviction": {
-      "rule": "data/history/** holds every captured ladder; THIS MODULE carries a window on it. selectCaptures() keeps the newest 12 ladders per market plus one per horizon mark (6h, 12h, 24h, 48h, 96h, 240h), and the market cap (80) then drops whole contracts. Ladders outside that window are EVICTED FROM THIS MODULE, never from data/history.",
-      "effect": "a desk-season round whose batch this module no longer carries cannot be walked again, so the season re-reports FEWER rounds than it already measured; the desk loses the older cut-offs it could once price. The ladders are still in data/history/** — nothing was deleted.",
+      "rule": "data/history/** holds every captured ladder; THIS MODULE carries a window on it. selectCaptures() keeps the newest 12 ladders per market plus one per horizon mark (6h, 12h, 24h, 48h, 96h, 240h), and the market cap (100) then drops whole contracts. Ladders outside that window are EVICTED FROM THIS MODULE, never from data/history.",
+      "effect": "a desk-season round whose batch this module no longer carries cannot be walked again, so the season re-reports FEWER rounds than it already measured; the desk loses the older cut-offs it could once price. The ladders are still in data/history/** — nothing was deleted. ROUND ANCHORS make this a measured, hopefully empty list: seasonRoundStampsEvicted names every stamp the module cannot host and why (module bound vs no non-empty ladder in the store window at all).",
       "reproduce": "node scripts/generate-desk-module.mjs --max-captures 40 --out src/desk-data.js   # then node scripts/run-desk-season.mjs",
       "batchMinutes": 20,
       "batchRule": "the same rule src/desk-season.js uses: capture instants are grouped while the gap to the batch's last instant is <= 20 minutes, and a round is stamped at the LAST instant of its batch",
-      "storeLadderCaptures": 12571,
-      "storeNonEmptyLadders": 7776,
-      "storeEmptyLadders": 4795,
-      "storeCaptureInstants": 12570,
-      "storeNonEmptyCaptureInstants": 7776,
-      "storeCaptureBatches": 18,
-      "laddersBeforeCaptureSelection": 7776,
-      "laddersAfterCaptureSelection": 2014,
-      "evictedByCaptureCap": 5762,
-      "evictedByMarketCap": 1036,
-      "marketsDroppedByCap": 102,
-      "moduleLadderCaptures": 978,
-      "moduleCaptureInstants": 978,
-      "moduleCaptureBatches": 8,
-      "moduleEarliestCapture": "2026-09-18T18:44:58.204Z",
-      "moduleNewestCapture": "2026-09-21T20:42:50.633Z",
-      "storeBatchesRepresentedInModule": 8,
-      "storeBatchesNotRepresented": 10,
-      "storeBatchesNotRepresentedList": [
-        {
-          "first": "2026-09-17T23:07:31.276Z",
-          "last": "2026-09-17T23:26:44.528Z",
-          "instants": 60
-        },
-        {
-          "first": "2026-09-17T23:51:32.371Z",
-          "last": "2026-09-18T00:03:34.003Z",
-          "instants": 72
-        },
-        {
-          "first": "2026-09-18T00:57:16.348Z",
-          "last": "2026-09-18T00:58:01.628Z",
-          "instants": 42
-        },
-        {
-          "first": "2026-09-18T02:45:44.040Z",
-          "last": "2026-09-18T02:47:48.736Z",
-          "instants": 90
-        },
-        {
-          "first": "2026-09-18T05:49:07.840Z",
-          "last": "2026-09-18T05:51:10.970Z",
-          "instants": 90
-        },
-        {
-          "first": "2026-09-18T06:30:28.869Z",
-          "last": "2026-09-18T07:04:17.199Z",
-          "instants": 626
-        },
-        {
-          "first": "2026-09-18T11:17:58.073Z",
-          "last": "2026-09-18T11:19:17.037Z",
-          "instants": 60
-        },
-        {
-          "first": "2026-09-18T17:58:02.918Z",
-          "last": "2026-09-18T18:05:21.084Z",
-          "instants": 304
-        },
-        {
-          "first": "2026-09-19T11:02:15.387Z",
-          "last": "2026-09-19T11:08:18.437Z",
-          "instants": 250
-        },
-        {
-          "first": "2026-09-19T14:55:06.045Z",
-          "last": "2026-09-19T15:34:14.068Z",
-          "instants": 1843
-        }
-      ],
-      "seasonRoundStamps": 18,
-      "seasonRoundStampsEvicted": 14,
-      "seasonRoundStampsEvictedList": [
-        "2026-09-17T23:26:44.528Z",
-        "2026-09-18T00:03:34.003Z",
-        "2026-09-18T00:58:01.628Z",
+      "storeLadderCaptures": 13865,
+      "storeNonEmptyLadders": 8145,
+      "storeEmptyLadders": 5720,
+      "storeCaptureInstants": 13864,
+      "storeNonEmptyCaptureInstants": 8145,
+      "storeCaptureBatches": 21,
+      "laddersBeforeCaptureSelection": 8145,
+      "laddersAfterCaptureSelection": 1970,
+      "evictedByCaptureCap": 6175,
+      "evictedByMarketCap": 783,
+      "marketsDroppedByCap": 83,
+      "moduleLadderCaptures": 1187,
+      "moduleCaptureInstants": 1187,
+      "moduleCaptureBatches": 21,
+      "moduleEarliestCapture": "2026-09-17T23:26:44.528Z",
+      "moduleNewestCapture": "2026-09-22T20:04:18.342Z",
+      "storeBatchesRepresentedInModule": 21,
+      "storeBatchesNotRepresented": 0,
+      "storeBatchesNotRepresentedList": [],
+      "seasonRoundStamps": 21,
+      "seasonRoundStampsHostableByModule": 21,
+      "seasonRoundStampsEvicted": 0,
+      "seasonRoundStampsEvictedList": [],
+      "seasonRoundStampsEvictedDetails": [],
+      "seasonRoundStampsExactInstantInModule": 14,
+      "seasonRoundStampsMissingExactInstant": 7,
+      "seasonRoundStampsMissingExactInstantList": [
         "2026-09-18T02:47:48.736Z",
         "2026-09-18T05:51:10.970Z",
-        "2026-09-18T07:04:17.199Z",
         "2026-09-18T11:19:17.037Z",
-        "2026-09-18T18:05:21.084Z",
-        "2026-09-18T18:46:22.458Z",
-        "2026-09-19T11:08:18.437Z",
         "2026-09-19T15:34:14.068Z",
         "2026-09-19T21:57:21.966Z",
         "2026-09-20T00:40:15.330Z",
         "2026-09-20T03:53:23.470Z"
       ],
-      "captureInstantsEvictedFromModule": 11592,
-      "nonEmptyCaptureInstantsEvictedFromModule": 6798,
+      "roundAnchors": {
+        "rule": "one open-board market per store batch is kept — with the newest capture that batch holds for it — on top of the market cap, so src/desk-season.js can seed a round at that batch stamp",
+        "batches": 21,
+        "batchesWithAnchor": 21,
+        "batchesWithoutAnchor": [],
+        "anchorMarketsKeptOnTopOfCap": 0,
+        "rows": [
+          {
+            "stamp": "2026-09-17T23:26:44.528Z",
+            "candidates": 30,
+            "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
+            "captureAt": "2026-09-17T23:26:44.528Z"
+          },
+          {
+            "stamp": "2026-09-18T00:03:34.003Z",
+            "candidates": 30,
+            "ticker": "KXINXY-26DEC31H1600-B8100",
+            "captureAt": "2026-09-18T00:03:34.003Z"
+          },
+          {
+            "stamp": "2026-09-18T00:58:01.628Z",
+            "candidates": 30,
+            "ticker": "KXINXY-26DEC31H1600-B8100",
+            "captureAt": "2026-09-18T00:58:01.628Z"
+          },
+          {
+            "stamp": "2026-09-18T02:47:48.736Z",
+            "candidates": 30,
+            "ticker": "KXINXY-26DEC31H1600-B8100",
+            "captureAt": "2026-09-18T02:46:36.526Z"
+          },
+          {
+            "stamp": "2026-09-18T05:51:10.970Z",
+            "candidates": 30,
+            "ticker": "KXINXY-26DEC31H1600-B8100",
+            "captureAt": "2026-09-18T05:50:00.627Z"
+          },
+          {
+            "stamp": "2026-09-18T07:04:17.199Z",
+            "candidates": 62,
+            "ticker": "JPMCEOCHANGE-27",
+            "captureAt": "2026-09-18T07:04:17.199Z"
+          },
+          {
+            "stamp": "2026-09-18T11:19:17.037Z",
+            "candidates": 12,
+            "ticker": "KXINXY-26DEC31H1600-B8100",
+            "captureAt": "2026-09-18T11:18:12.556Z"
+          },
+          {
+            "stamp": "2026-09-18T18:05:21.084Z",
+            "candidates": 62,
+            "ticker": "JPMCEOCHANGE-27",
+            "captureAt": "2026-09-18T18:05:21.084Z"
+          },
+          {
+            "stamp": "2026-09-18T18:46:22.458Z",
+            "candidates": 62,
+            "ticker": "JPMCEOCHANGE-27",
+            "captureAt": "2026-09-18T18:46:22.458Z"
+          },
+          {
+            "stamp": "2026-09-19T11:08:18.437Z",
+            "candidates": 44,
+            "ticker": "JPMCEOCHANGE-27",
+            "captureAt": "2026-09-19T11:08:18.437Z"
+          },
+          {
+            "stamp": "2026-09-19T15:34:14.068Z",
+            "candidates": 118,
+            "ticker": "TESLACEOCHANGE-26",
+            "captureAt": "2026-09-19T15:34:11.240Z"
+          },
+          {
+            "stamp": "2026-09-19T19:00:27.865Z",
+            "candidates": 119,
+            "ticker": "JPMCEOCHANGE-27",
+            "captureAt": "2026-09-19T19:00:27.865Z"
+          },
+          {
+            "stamp": "2026-09-19T21:57:21.966Z",
+            "candidates": 121,
+            "ticker": "TESLACEOCHANGE-26",
+            "captureAt": "2026-09-19T21:57:18.998Z"
+          },
+          {
+            "stamp": "2026-09-20T00:40:15.330Z",
+            "candidates": 116,
+            "ticker": "TESLACEOCHANGE-26",
+            "captureAt": "2026-09-20T00:40:12.097Z"
+          },
+          {
+            "stamp": "2026-09-20T03:53:23.470Z",
+            "candidates": 120,
+            "ticker": "TESLACEOCHANGE-26",
+            "captureAt": "2026-09-20T03:53:20.255Z"
+          },
+          {
+            "stamp": "2026-09-20T11:34:47.759Z",
+            "candidates": 40,
+            "ticker": "JPMCEOCHANGE-27",
+            "captureAt": "2026-09-20T11:34:47.759Z"
+          },
+          {
+            "stamp": "2026-09-21T13:00:46.855Z",
+            "candidates": 43,
+            "ticker": "JPMCEOCHANGE-27",
+            "captureAt": "2026-09-21T13:00:46.855Z"
+          },
+          {
+            "stamp": "2026-09-21T20:42:50.633Z",
+            "candidates": 125,
+            "ticker": "JPMCEOCHANGE-27",
+            "captureAt": "2026-09-21T20:42:50.633Z"
+          },
+          {
+            "stamp": "2026-09-22T08:03:09.044Z",
+            "candidates": 125,
+            "ticker": "JPMCEOCHANGE-27",
+            "captureAt": "2026-09-22T08:03:09.044Z"
+          },
+          {
+            "stamp": "2026-09-22T11:51:53.260Z",
+            "candidates": 45,
+            "ticker": "JPMCEOCHANGE-27",
+            "captureAt": "2026-09-22T11:51:53.260Z"
+          },
+          {
+            "stamp": "2026-09-22T20:04:18.342Z",
+            "candidates": 125,
+            "ticker": "JPMCEOCHANGE-27",
+            "captureAt": "2026-09-22T20:04:18.342Z"
+          }
+        ]
+      },
+      "captureInstantsEvictedFromModule": 12677,
+      "nonEmptyCaptureInstantsEvictedFromModule": 6958,
       "nothingDeletedFrom": "data/history/** (the store is append-only; only this generated module is a window on it)"
     }
   },
-  "newestCapture": "2026-09-21T20:42:50.633Z",
+  "newestCapture": "2026-09-22T20:04:18.342Z",
   "startingCapital": 100000,
   "rule": {
     "rounds": "Every round is a REAL capture instant taken from the store (a moment this repository actually queried GET /markets/{ticker}/orderbook). No round time is invented and no ladder is re-anchored.",
@@ -351,12 +954,12 @@
       {
         "index": 1,
         "label": "R01",
-        "asOf": "2026-09-19T19:00:27.865Z",
-        "tradeable": 73,
-        "notTradeable": 13,
-        "marketsWithLadder": 73,
-        "newLadderCaptures": 73,
-        "freshLadderCaptures": 73,
+        "asOf": "2026-09-17T23:26:44.528Z",
+        "tradeable": 1,
+        "notTradeable": 105,
+        "marketsWithLadder": 1,
+        "newLadderCaptures": 1,
+        "freshLadderCaptures": 1,
         "gapHoursFromPrev": null,
         "isNewestCapture": false,
         "eventsApplied": {
@@ -373,21 +976,21 @@
       {
         "index": 2,
         "label": "R02",
-        "asOf": "2026-09-20T03:53:20.255Z",
-        "tradeable": 79,
-        "notTradeable": 7,
-        "marketsWithLadder": 75,
-        "newLadderCaptures": 2,
-        "freshLadderCaptures": 75,
-        "gapHoursFromPrev": 8.881219,
+        "asOf": "2026-09-18T00:58:01.628Z",
+        "tradeable": 2,
+        "notTradeable": 104,
+        "marketsWithLadder": 2,
+        "newLadderCaptures": 0,
+        "freshLadderCaptures": 1,
+        "gapHoursFromPrev": 1.521417,
         "isNewestCapture": false,
         "eventsApplied": {
-          "quotes": 3990,
+          "quotes": 20,
           "makerFills": 0,
           "settlements": 0,
           "settlementPnl": 0,
-          "barQuotes": 3260,
-          "ladderQuotes": 730
+          "barQuotes": 18,
+          "ladderQuotes": 2
         },
         "settlementsInWindow": 0,
         "makerFillsCarriedIn": 0
@@ -395,21 +998,21 @@
       {
         "index": 3,
         "label": "R03",
-        "asOf": "2026-09-20T11:34:47.759Z",
-        "tradeable": 75,
-        "notTradeable": 11,
-        "marketsWithLadder": 75,
+        "asOf": "2026-09-18T05:50:00.627Z",
+        "tradeable": 2,
+        "notTradeable": 104,
+        "marketsWithLadder": 2,
         "newLadderCaptures": 0,
-        "freshLadderCaptures": 32,
-        "gapHoursFromPrev": 7.690973,
+        "freshLadderCaptures": 1,
+        "gapHoursFromPrev": 4.866389,
         "isNewestCapture": false,
         "eventsApplied": {
-          "quotes": 54,
+          "quotes": 146,
           "makerFills": 0,
           "settlements": 0,
           "settlementPnl": 0,
-          "barQuotes": 22,
-          "ladderQuotes": 32
+          "barQuotes": 144,
+          "ladderQuotes": 2
         },
         "settlementsInWindow": 0,
         "makerFillsCarriedIn": 0
@@ -417,21 +1020,21 @@
       {
         "index": 4,
         "label": "R04",
-        "asOf": "2026-09-21T13:00:46.855Z",
-        "tradeable": 76,
-        "notTradeable": 10,
-        "marketsWithLadder": 76,
+        "asOf": "2026-09-18T07:04:17.199Z",
+        "tradeable": 3,
+        "notTradeable": 103,
+        "marketsWithLadder": 3,
         "newLadderCaptures": 1,
-        "freshLadderCaptures": 33,
-        "gapHoursFromPrev": 25.433082,
+        "freshLadderCaptures": 1,
+        "gapHoursFromPrev": 1.237937,
         "isNewestCapture": false,
         "eventsApplied": {
-          "quotes": 143,
+          "quotes": 19,
           "makerFills": 0,
           "settlements": 0,
           "settlementPnl": 0,
-          "barQuotes": 110,
-          "ladderQuotes": 33
+          "barQuotes": 18,
+          "ladderQuotes": 1
         },
         "settlementsInWindow": 0,
         "makerFillsCarriedIn": 0
@@ -439,21 +1042,175 @@
       {
         "index": 5,
         "label": "R05",
-        "asOf": "2026-09-21T20:42:50.633Z",
-        "tradeable": 80,
-        "notTradeable": 6,
-        "marketsWithLadder": 80,
-        "newLadderCaptures": 4,
-        "freshLadderCaptures": 78,
-        "gapHoursFromPrev": 7.701049,
-        "isNewestCapture": true,
+        "asOf": "2026-09-18T18:05:21.084Z",
+        "tradeable": 3,
+        "notTradeable": 103,
+        "marketsWithLadder": 3,
+        "newLadderCaptures": 0,
+        "freshLadderCaptures": 1,
+        "gapHoursFromPrev": 11.017746,
+        "isNewestCapture": false,
         "eventsApplied": {
-          "quotes": 142,
+          "quotes": 365,
           "makerFills": 0,
           "settlements": 0,
           "settlementPnl": 0,
-          "barQuotes": 33,
-          "ladderQuotes": 109
+          "barQuotes": 363,
+          "ladderQuotes": 2
+        },
+        "settlementsInWindow": 0,
+        "makerFillsCarriedIn": 0
+      },
+      {
+        "index": 6,
+        "label": "R06",
+        "asOf": "2026-09-19T11:08:18.437Z",
+        "tradeable": 52,
+        "notTradeable": 54,
+        "marketsWithLadder": 52,
+        "newLadderCaptures": 1,
+        "freshLadderCaptures": 2,
+        "gapHoursFromPrev": 17.049265,
+        "isNewestCapture": false,
+        "eventsApplied": {
+          "quotes": 1005,
+          "makerFills": 2,
+          "settlements": 0,
+          "settlementPnl": 0,
+          "barQuotes": 951,
+          "ladderQuotes": 54
+        },
+        "settlementsInWindow": 0,
+        "makerFillsCarriedIn": 2
+      },
+      {
+        "index": 7,
+        "label": "R07",
+        "asOf": "2026-09-19T19:00:27.865Z",
+        "tradeable": 54,
+        "notTradeable": 52,
+        "marketsWithLadder": 54,
+        "newLadderCaptures": 1,
+        "freshLadderCaptures": 4,
+        "gapHoursFromPrev": 7.869286,
+        "isNewestCapture": false,
+        "eventsApplied": {
+          "quotes": 1023,
+          "makerFills": 0,
+          "settlements": 0,
+          "settlementPnl": 0,
+          "barQuotes": 1016,
+          "ladderQuotes": 7
+        },
+        "settlementsInWindow": 0,
+        "makerFillsCarriedIn": 0
+      },
+      {
+        "index": 8,
+        "label": "R08",
+        "asOf": "2026-09-20T00:40:12.097Z",
+        "tradeable": 57,
+        "notTradeable": 49,
+        "marketsWithLadder": 57,
+        "newLadderCaptures": 0,
+        "freshLadderCaptures": 1,
+        "gapHoursFromPrev": 5.662287,
+        "isNewestCapture": false,
+        "eventsApplied": {
+          "quotes": 1678,
+          "makerFills": 6,
+          "settlements": 0,
+          "settlementPnl": 0,
+          "barQuotes": 1673,
+          "ladderQuotes": 5
+        },
+        "settlementsInWindow": 0,
+        "makerFillsCarriedIn": 6
+      },
+      {
+        "index": 9,
+        "label": "R09",
+        "asOf": "2026-09-20T11:34:47.759Z",
+        "tradeable": 97,
+        "notTradeable": 9,
+        "marketsWithLadder": 95,
+        "newLadderCaptures": 0,
+        "freshLadderCaptures": 32,
+        "gapHoursFromPrev": 10.909906,
+        "isNewestCapture": false,
+        "eventsApplied": {
+          "quotes": 2860,
+          "makerFills": 14,
+          "settlements": 0,
+          "settlementPnl": 0,
+          "barQuotes": 2193,
+          "ladderQuotes": 667
+        },
+        "settlementsInWindow": 0,
+        "makerFillsCarriedIn": 14
+      },
+      {
+        "index": 10,
+        "label": "R10",
+        "asOf": "2026-09-21T13:00:46.855Z",
+        "tradeable": 97,
+        "notTradeable": 9,
+        "marketsWithLadder": 97,
+        "newLadderCaptures": 2,
+        "freshLadderCaptures": 34,
+        "gapHoursFromPrev": 25.433082,
+        "isNewestCapture": false,
+        "eventsApplied": {
+          "quotes": 143,
+          "makerFills": 0,
+          "settlements": 0,
+          "settlementPnl": 0,
+          "barQuotes": 109,
+          "ladderQuotes": 34
+        },
+        "settlementsInWindow": 0,
+        "makerFillsCarriedIn": 0
+      },
+      {
+        "index": 11,
+        "label": "R11",
+        "asOf": "2026-09-22T08:03:09.044Z",
+        "tradeable": 100,
+        "notTradeable": 6,
+        "marketsWithLadder": 100,
+        "newLadderCaptures": 0,
+        "freshLadderCaptures": 94,
+        "gapHoursFromPrev": 19.039497,
+        "isNewestCapture": false,
+        "eventsApplied": {
+          "quotes": 316,
+          "makerFills": 0,
+          "settlements": 0,
+          "settlementPnl": 0,
+          "barQuotes": 66,
+          "ladderQuotes": 250
+        },
+        "settlementsInWindow": 0,
+        "makerFillsCarriedIn": 0
+      },
+      {
+        "index": 12,
+        "label": "R12",
+        "asOf": "2026-09-22T20:04:18.342Z",
+        "tradeable": 100,
+        "notTradeable": 6,
+        "marketsWithLadder": 100,
+        "newLadderCaptures": 0,
+        "freshLadderCaptures": 94,
+        "gapHoursFromPrev": 12.019249,
+        "isNewestCapture": true,
+        "eventsApplied": {
+          "quotes": 196,
+          "makerFills": 0,
+          "settlements": 0,
+          "settlementPnl": 0,
+          "barQuotes": 34,
+          "ladderQuotes": 162
         },
         "settlementsInWindow": 0,
         "makerFillsCarriedIn": 0
@@ -466,105 +1223,6 @@
     "thinned": false
   },
   "results": [
-    {
-      "strategy": "SeasonIndex_CarryHold",
-      "startingCapital": 100000,
-      "cash": 99821.71251,
-      "equity": 100007.39151,
-      "returnPct": 0.007392,
-      "realizedPnl": 0,
-      "unrealizedPnl": 7.39151,
-      "marketValue": 185.679,
-      "settlementPnl": 0,
-      "feesPaid": 0,
-      "slippageCost": 0.060444,
-      "attribution": 7.39151,
-      "attributionOk": true,
-      "fills": 1,
-      "contracts": 207,
-      "requested": 207,
-      "unfilled": 0,
-      "roundsTraded": 1,
-      "roundsFilled": 1,
-      "maxDrawdownPct": 0,
-      "openPositions": [
-        {
-          "ticker": "KXBTCY-27JAN0100-B77500",
-          "side": "no",
-          "contracts": 207,
-          "cost": 178.28749,
-          "fees": 0
-        }
-      ],
-      "equityCurve": [
-        {
-          "round": 1,
-          "roundLabel": "R01",
-          "asOf": "2026-09-19T19:00:27.865Z",
-          "phase": "open",
-          "equity": 100000,
-          "returnPct": 0,
-          "cash": 100000,
-          "marketValue": 0,
-          "openContracts": 0
-        },
-        {
-          "round": 2,
-          "roundLabel": "R02",
-          "asOf": "2026-09-20T03:53:20.255Z",
-          "phase": "open",
-          "equity": 100007.39151,
-          "returnPct": 0.007392,
-          "cash": 99821.71251,
-          "marketValue": 185.679,
-          "openContracts": 207
-        },
-        {
-          "round": 3,
-          "roundLabel": "R03",
-          "asOf": "2026-09-20T11:34:47.759Z",
-          "phase": "open",
-          "equity": 100007.39151,
-          "returnPct": 0.007392,
-          "cash": 99821.71251,
-          "marketValue": 185.679,
-          "openContracts": 207
-        },
-        {
-          "round": 4,
-          "roundLabel": "R04",
-          "asOf": "2026-09-21T13:00:46.855Z",
-          "phase": "open",
-          "equity": 100007.39151,
-          "returnPct": 0.007392,
-          "cash": 99821.71251,
-          "marketValue": 185.679,
-          "openContracts": 207
-        },
-        {
-          "round": 5,
-          "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
-          "phase": "open",
-          "equity": 100007.39151,
-          "returnPct": 0.007392,
-          "cash": 99821.71251,
-          "marketValue": 185.679,
-          "openContracts": 207
-        },
-        {
-          "round": 5,
-          "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
-          "phase": "close",
-          "equity": 100007.39151,
-          "returnPct": 0.007392,
-          "cash": 99821.71251,
-          "marketValue": 185.679,
-          "openContracts": 207
-        }
-      ]
-    },
     {
       "strategy": "SeasonWeather_Carry",
       "startingCapital": 100000,
@@ -591,7 +1249,7 @@
         {
           "round": 1,
           "roundLabel": "R01",
-          "asOf": "2026-09-19T19:00:27.865Z",
+          "asOf": "2026-09-17T23:26:44.528Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -602,7 +1260,7 @@
         {
           "round": 2,
           "roundLabel": "R02",
-          "asOf": "2026-09-20T03:53:20.255Z",
+          "asOf": "2026-09-18T00:58:01.628Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -613,7 +1271,7 @@
         {
           "round": 3,
           "roundLabel": "R03",
-          "asOf": "2026-09-20T11:34:47.759Z",
+          "asOf": "2026-09-18T05:50:00.627Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -624,7 +1282,7 @@
         {
           "round": 4,
           "roundLabel": "R04",
-          "asOf": "2026-09-21T13:00:46.855Z",
+          "asOf": "2026-09-18T07:04:17.199Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -635,7 +1293,7 @@
         {
           "round": 5,
           "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
+          "asOf": "2026-09-18T18:05:21.084Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -644,44 +1302,19 @@
           "openContracts": 0
         },
         {
-          "round": 5,
-          "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
-          "phase": "close",
+          "round": 6,
+          "roundLabel": "R06",
+          "asOf": "2026-09-19T11:08:18.437Z",
+          "phase": "open",
           "equity": 100000,
           "returnPct": 0,
           "cash": 100000,
           "marketValue": 0,
           "openContracts": 0
-        }
-      ]
-    },
-    {
-      "strategy": "SeasonMaker_RestCarry",
-      "startingCapital": 100000,
-      "cash": 100000,
-      "equity": 100000,
-      "returnPct": 0,
-      "realizedPnl": 0,
-      "unrealizedPnl": 0,
-      "marketValue": 0,
-      "settlementPnl": 0,
-      "feesPaid": 0,
-      "slippageCost": 0,
-      "attribution": 0,
-      "attributionOk": true,
-      "fills": 0,
-      "contracts": 0,
-      "requested": 0,
-      "unfilled": 0,
-      "roundsTraded": 0,
-      "roundsFilled": 0,
-      "maxDrawdownPct": 0,
-      "openPositions": [],
-      "equityCurve": [
+        },
         {
-          "round": 1,
-          "roundLabel": "R01",
+          "round": 7,
+          "roundLabel": "R07",
           "asOf": "2026-09-19T19:00:27.865Z",
           "phase": "open",
           "equity": 100000,
@@ -691,9 +1324,9 @@
           "openContracts": 0
         },
         {
-          "round": 2,
-          "roundLabel": "R02",
-          "asOf": "2026-09-20T03:53:20.255Z",
+          "round": 8,
+          "roundLabel": "R08",
+          "asOf": "2026-09-20T00:40:12.097Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -702,8 +1335,8 @@
           "openContracts": 0
         },
         {
-          "round": 3,
-          "roundLabel": "R03",
+          "round": 9,
+          "roundLabel": "R09",
           "asOf": "2026-09-20T11:34:47.759Z",
           "phase": "open",
           "equity": 100000,
@@ -713,8 +1346,8 @@
           "openContracts": 0
         },
         {
-          "round": 4,
-          "roundLabel": "R04",
+          "round": 10,
+          "roundLabel": "R10",
           "asOf": "2026-09-21T13:00:46.855Z",
           "phase": "open",
           "equity": 100000,
@@ -724,9 +1357,9 @@
           "openContracts": 0
         },
         {
-          "round": 5,
-          "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
+          "round": 11,
+          "roundLabel": "R11",
+          "asOf": "2026-09-22T08:03:09.044Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -735,9 +1368,20 @@
           "openContracts": 0
         },
         {
-          "round": 5,
-          "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
           "phase": "close",
           "equity": 100000,
           "returnPct": 0,
@@ -773,7 +1417,7 @@
         {
           "round": 1,
           "roundLabel": "R01",
-          "asOf": "2026-09-19T19:00:27.865Z",
+          "asOf": "2026-09-17T23:26:44.528Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -784,7 +1428,7 @@
         {
           "round": 2,
           "roundLabel": "R02",
-          "asOf": "2026-09-20T03:53:20.255Z",
+          "asOf": "2026-09-18T00:58:01.628Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -795,7 +1439,7 @@
         {
           "round": 3,
           "roundLabel": "R03",
-          "asOf": "2026-09-20T11:34:47.759Z",
+          "asOf": "2026-09-18T05:50:00.627Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -806,6 +1450,72 @@
         {
           "round": 4,
           "roundLabel": "R04",
+          "asOf": "2026-09-18T07:04:17.199Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 5,
+          "roundLabel": "R05",
+          "asOf": "2026-09-18T18:05:21.084Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 6,
+          "roundLabel": "R06",
+          "asOf": "2026-09-19T11:08:18.437Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 7,
+          "roundLabel": "R07",
+          "asOf": "2026-09-19T19:00:27.865Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 8,
+          "roundLabel": "R08",
+          "asOf": "2026-09-20T00:40:12.097Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 9,
+          "roundLabel": "R09",
+          "asOf": "2026-09-20T11:34:47.759Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 10,
+          "roundLabel": "R10",
           "asOf": "2026-09-21T13:00:46.855Z",
           "phase": "open",
           "equity": 100000,
@@ -815,9 +1525,9 @@
           "openContracts": 0
         },
         {
-          "round": 5,
-          "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
+          "round": 11,
+          "roundLabel": "R11",
+          "asOf": "2026-09-22T08:03:09.044Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -826,9 +1536,20 @@
           "openContracts": 0
         },
         {
-          "round": 5,
-          "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
           "phase": "close",
           "equity": 100000,
           "returnPct": 0,
@@ -841,38 +1562,38 @@
     {
       "strategy": "SeasonExpiry_LastRound",
       "startingCapital": 100000,
-      "cash": 99956.1948,
-      "equity": 99986.2848,
-      "returnPct": -0.013715,
+      "cash": 98616.8691,
+      "equity": 99989.9869,
+      "returnPct": -0.010013,
       "realizedPnl": 0,
-      "unrealizedPnl": -13.26,
-      "marketValue": 30.09,
+      "unrealizedPnl": -7.1146,
+      "marketValue": 1373.1178,
       "settlementPnl": 0,
-      "feesPaid": 0.4552,
+      "feesPaid": 2.8985,
       "slippageCost": 0,
-      "attribution": -13.7152,
+      "attribution": -10.0131,
       "attributionOk": true,
       "fills": 1,
-      "contracts": 51,
-      "requested": 51,
-      "unfilled": 0,
+      "contracts": 1422.92,
+      "requested": 30927,
+      "unfilled": 29504.08,
       "roundsTraded": 1,
       "roundsFilled": 1,
-      "maxDrawdownPct": 0.013715,
+      "maxDrawdownPct": 0.010013,
       "openPositions": [
         {
-          "ticker": "KXFDAAPPROVALDATECMPS-360-27JUL01",
+          "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
           "side": "yes",
-          "contracts": 51,
-          "cost": 43.35,
-          "fees": 0.4552
+          "contracts": 1422.92,
+          "cost": 1380.2324,
+          "fees": 2.8985
         }
       ],
       "equityCurve": [
         {
           "round": 1,
           "roundLabel": "R01",
-          "asOf": "2026-09-19T19:00:27.865Z",
+          "asOf": "2026-09-17T23:26:44.528Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -883,7 +1604,7 @@
         {
           "round": 2,
           "roundLabel": "R02",
-          "asOf": "2026-09-20T03:53:20.255Z",
+          "asOf": "2026-09-18T00:58:01.628Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -894,7 +1615,7 @@
         {
           "round": 3,
           "roundLabel": "R03",
-          "asOf": "2026-09-20T11:34:47.759Z",
+          "asOf": "2026-09-18T05:50:00.627Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -905,6 +1626,72 @@
         {
           "round": 4,
           "roundLabel": "R04",
+          "asOf": "2026-09-18T07:04:17.199Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 5,
+          "roundLabel": "R05",
+          "asOf": "2026-09-18T18:05:21.084Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 6,
+          "roundLabel": "R06",
+          "asOf": "2026-09-19T11:08:18.437Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 7,
+          "roundLabel": "R07",
+          "asOf": "2026-09-19T19:00:27.865Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 8,
+          "roundLabel": "R08",
+          "asOf": "2026-09-20T00:40:12.097Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 9,
+          "roundLabel": "R09",
+          "asOf": "2026-09-20T11:34:47.759Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 10,
+          "roundLabel": "R10",
           "asOf": "2026-09-21T13:00:46.855Z",
           "phase": "open",
           "equity": 100000,
@@ -914,9 +1701,122 @@
           "openContracts": 0
         },
         {
-          "round": 5,
-          "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
+          "round": 11,
+          "roundLabel": "R11",
+          "asOf": "2026-09-22T08:03:09.044Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
+          "phase": "close",
+          "equity": 99989.9869,
+          "returnPct": -0.010013,
+          "cash": 98616.8691,
+          "marketValue": 1373.1178,
+          "openContracts": 1422.92
+        }
+      ]
+    },
+    {
+      "strategy": "SeasonMaker_RestCarry",
+      "startingCapital": 100000,
+      "cash": 98930.4343,
+      "equity": 99987.472,
+      "returnPct": -0.012528,
+      "realizedPnl": 0,
+      "unrealizedPnl": 0.7509,
+      "marketValue": 1057.0377,
+      "settlementPnl": 0,
+      "feesPaid": 13.2789,
+      "slippageCost": 0,
+      "attribution": -12.528,
+      "attributionOk": true,
+      "fills": 22,
+      "contracts": 5246.67,
+      "requested": 0,
+      "unfilled": 67211.52,
+      "roundsTraded": 4,
+      "roundsFilled": 0,
+      "maxDrawdownPct": 0.013148,
+      "openPositions": [
+        {
+          "ticker": "KXINXY-26DEC31H1600-B8100",
+          "side": "yes",
+          "contracts": 5103,
+          "cost": 918.54,
+          "fees": 13.1811
+        },
+        {
+          "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
+          "side": "yes",
+          "contracts": 0.21,
+          "cost": 0.0252,
+          "fees": 0.0004
+        },
+        {
+          "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+          "side": "yes",
+          "contracts": 143.46,
+          "cost": 137.7216,
+          "fees": 0.0974
+        }
+      ],
+      "equityCurve": [
+        {
+          "round": 1,
+          "roundLabel": "R01",
+          "asOf": "2026-09-17T23:26:44.528Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 2,
+          "roundLabel": "R02",
+          "asOf": "2026-09-18T00:58:01.628Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 3,
+          "roundLabel": "R03",
+          "asOf": "2026-09-18T05:50:00.627Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 4,
+          "roundLabel": "R04",
+          "asOf": "2026-09-18T07:04:17.199Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -927,106 +1827,370 @@
         {
           "round": 5,
           "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
+          "asOf": "2026-09-18T18:05:21.084Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 6,
+          "roundLabel": "R06",
+          "asOf": "2026-09-19T11:08:18.437Z",
+          "phase": "open",
+          "equity": 99986.8521,
+          "returnPct": -0.013148,
+          "cash": 99068.2533,
+          "marketValue": 918.5988,
+          "openContracts": 5103.21
+        },
+        {
+          "round": 7,
+          "roundLabel": "R07",
+          "asOf": "2026-09-19T19:00:27.865Z",
+          "phase": "open",
+          "equity": 99986.8521,
+          "returnPct": -0.013148,
+          "cash": 99068.2533,
+          "marketValue": 918.5988,
+          "openContracts": 5103.21
+        },
+        {
+          "round": 8,
+          "roundLabel": "R08",
+          "asOf": "2026-09-20T00:40:12.097Z",
+          "phase": "open",
+          "equity": 99986.8928,
+          "returnPct": -0.013107,
+          "cash": 99059.1651,
+          "marketValue": 927.7277,
+          "openContracts": 5112.67
+        },
+        {
+          "round": 9,
+          "roundLabel": "R09",
+          "asOf": "2026-09-20T11:34:47.759Z",
+          "phase": "open",
+          "equity": 99987.472,
+          "returnPct": -0.012528,
+          "cash": 98930.4343,
+          "marketValue": 1057.0377,
+          "openContracts": 5246.67
+        },
+        {
+          "round": 10,
+          "roundLabel": "R10",
+          "asOf": "2026-09-21T13:00:46.855Z",
+          "phase": "open",
+          "equity": 99987.472,
+          "returnPct": -0.012528,
+          "cash": 98930.4343,
+          "marketValue": 1057.0377,
+          "openContracts": 5246.67
+        },
+        {
+          "round": 11,
+          "roundLabel": "R11",
+          "asOf": "2026-09-22T08:03:09.044Z",
+          "phase": "open",
+          "equity": 99987.472,
+          "returnPct": -0.012528,
+          "cash": 98930.4343,
+          "marketValue": 1057.0377,
+          "openContracts": 5246.67
+        },
+        {
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
+          "phase": "open",
+          "equity": 99987.472,
+          "returnPct": -0.012528,
+          "cash": 98930.4343,
+          "marketValue": 1057.0377,
+          "openContracts": 5246.67
+        },
+        {
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
           "phase": "close",
-          "equity": 99986.2848,
-          "returnPct": -0.013715,
-          "cash": 99956.1948,
-          "marketValue": 30.09,
-          "openContracts": 51
+          "equity": 99987.472,
+          "returnPct": -0.012528,
+          "cash": 98930.4343,
+          "marketValue": 1057.0377,
+          "openContracts": 5246.67
+        }
+      ]
+    },
+    {
+      "strategy": "SeasonIndex_CarryHold",
+      "startingCapital": 100000,
+      "cash": 99833.8934,
+      "equity": 99965.6534,
+      "returnPct": -0.034347,
+      "realizedPnl": 0,
+      "unrealizedPnl": -33.21,
+      "marketValue": 131.76,
+      "settlementPnl": 0,
+      "feesPaid": 1.1366,
+      "slippageCost": 2.099925,
+      "attribution": -34.3466,
+      "attributionOk": true,
+      "fills": 1,
+      "contracts": 183,
+      "requested": 183,
+      "unfilled": 0,
+      "roundsTraded": 1,
+      "roundsFilled": 1,
+      "maxDrawdownPct": 0.034347,
+      "openPositions": [
+        {
+          "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
+          "side": "no",
+          "contracts": 183,
+          "cost": 164.97,
+          "fees": 1.1366
+        }
+      ],
+      "equityCurve": [
+        {
+          "round": 1,
+          "roundLabel": "R01",
+          "asOf": "2026-09-17T23:26:44.528Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 2,
+          "roundLabel": "R02",
+          "asOf": "2026-09-18T00:58:01.628Z",
+          "phase": "open",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
+        },
+        {
+          "round": 3,
+          "roundLabel": "R03",
+          "asOf": "2026-09-18T05:50:00.627Z",
+          "phase": "open",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
+        },
+        {
+          "round": 4,
+          "roundLabel": "R04",
+          "asOf": "2026-09-18T07:04:17.199Z",
+          "phase": "open",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
+        },
+        {
+          "round": 5,
+          "roundLabel": "R05",
+          "asOf": "2026-09-18T18:05:21.084Z",
+          "phase": "open",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
+        },
+        {
+          "round": 6,
+          "roundLabel": "R06",
+          "asOf": "2026-09-19T11:08:18.437Z",
+          "phase": "open",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
+        },
+        {
+          "round": 7,
+          "roundLabel": "R07",
+          "asOf": "2026-09-19T19:00:27.865Z",
+          "phase": "open",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
+        },
+        {
+          "round": 8,
+          "roundLabel": "R08",
+          "asOf": "2026-09-20T00:40:12.097Z",
+          "phase": "open",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
+        },
+        {
+          "round": 9,
+          "roundLabel": "R09",
+          "asOf": "2026-09-20T11:34:47.759Z",
+          "phase": "open",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
+        },
+        {
+          "round": 10,
+          "roundLabel": "R10",
+          "asOf": "2026-09-21T13:00:46.855Z",
+          "phase": "open",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
+        },
+        {
+          "round": 11,
+          "roundLabel": "R11",
+          "asOf": "2026-09-22T08:03:09.044Z",
+          "phase": "open",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
+        },
+        {
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
+          "phase": "open",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
+        },
+        {
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
+          "phase": "close",
+          "equity": 99965.6534,
+          "returnPct": -0.034347,
+          "cash": 99833.8934,
+          "marketValue": 131.76,
+          "openContracts": 183
         }
       ]
     },
     {
       "strategy": "SeasonBoardSum_Ladder",
       "startingCapital": 100000,
-      "cash": 99368.97287,
-      "equity": 99814.23887,
-      "returnPct": -0.185761,
+      "cash": 99055.14719,
+      "equity": 99802.47919,
+      "returnPct": -0.197521,
       "realizedPnl": 0,
-      "unrealizedPnl": -185.76113,
-      "marketValue": 445.266,
+      "unrealizedPnl": -197.52081,
+      "marketValue": 747.332,
       "settlementPnl": 0,
       "feesPaid": 0,
-      "slippageCost": 11.091089,
-      "attribution": -185.76113,
+      "slippageCost": 41.712753,
+      "attribution": -197.52081,
       "attributionOk": true,
       "fills": 10,
-      "contracts": 7001,
-      "requested": 7001,
+      "contracts": 24399,
+      "requested": 24399,
       "unfilled": 0,
       "roundsTraded": 3,
       "roundsFilled": 3,
-      "maxDrawdownPct": 0.190444,
+      "maxDrawdownPct": 0.197521,
       "openPositions": [
         {
           "ticker": "KXBTCY-27JAN0100-B77500",
           "side": "yes",
-          "contracts": 2014,
-          "cost": 285.4642,
+          "contracts": 1195,
+          "cost": 177.55949,
           "fees": 0
         },
         {
           "ticker": "KXBTCY-27JAN0100-B47500",
           "side": "yes",
-          "contracts": 952,
-          "cost": 12.824,
+          "contracts": 1563,
+          "cost": 20.917,
           "fees": 0
         },
         {
           "ticker": "KXBTCY-27JAN0100-B72500",
           "side": "yes",
-          "contracts": 1603,
-          "cost": 192.97484,
+          "contracts": 342,
+          "cost": 42.5229,
           "fees": 0
         },
         {
           "ticker": "KXBTCY-27JAN0100-B52500",
           "side": "yes",
-          "contracts": 573,
-          "cost": 11.41566,
+          "contracts": 1755,
+          "cost": 30.46068,
           "fees": 0
         },
         {
           "ticker": "KXBTCY-27JAN0100-B67500",
           "side": "yes",
-          "contracts": 70,
-          "cost": 5.22359,
+          "contracts": 987,
+          "cost": 84.003,
           "fees": 0
         },
         {
           "ticker": "KXBTCY-27JAN0100-B62500",
           "side": "yes",
-          "contracts": 767,
-          "cost": 35.69419,
+          "contracts": 2151,
+          "cost": 106.51156,
           "fees": 0
         },
         {
           "ticker": "KXBTCY-27JAN0100-B82500",
           "side": "yes",
-          "contracts": 323,
-          "cost": 45.1985,
+          "contracts": 392,
+          "cost": 52.60308,
           "fees": 0
         },
         {
           "ticker": "KXBTCY-27JAN0100-B57500",
           "side": "yes",
-          "contracts": 319,
-          "cost": 8.88481,
+          "contracts": 516,
+          "cost": 14.64195,
           "fees": 0
         },
         {
           "ticker": "KXBTCY-27JAN0100-T149999.99",
           "side": "yes",
-          "contracts": 107,
-          "cost": 2.21246,
+          "contracts": 15148,
+          "cost": 378.53368,
           "fees": 0
         },
         {
           "ticker": "KXBTCY-27JAN0100-B87500",
           "side": "yes",
-          "contracts": 273,
-          "cost": 31.13488,
+          "contracts": 350,
+          "cost": 37.09947,
           "fees": 0
         }
       ],
@@ -1034,7 +2198,7 @@
         {
           "round": 1,
           "roundLabel": "R01",
-          "asOf": "2026-09-19T19:00:27.865Z",
+          "asOf": "2026-09-17T23:26:44.528Z",
           "phase": "open",
           "equity": 100000,
           "returnPct": 0,
@@ -1045,161 +2209,170 @@
         {
           "round": 2,
           "roundLabel": "R02",
-          "asOf": "2026-09-20T03:53:20.255Z",
+          "asOf": "2026-09-18T00:58:01.628Z",
           "phase": "open",
-          "equity": 99832.3693,
-          "returnPct": -0.167631,
-          "cash": 99497.3213,
-          "marketValue": 335.048,
-          "openContracts": 5142
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
         },
         {
           "round": 3,
           "roundLabel": "R03",
-          "asOf": "2026-09-20T11:34:47.759Z",
+          "asOf": "2026-09-18T05:50:00.627Z",
           "phase": "open",
-          "equity": 99809.55571,
-          "returnPct": -0.190444,
-          "cash": 99402.32021,
-          "marketValue": 407.2355,
-          "openContracts": 6621
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
         },
         {
           "round": 4,
           "roundLabel": "R04",
+          "asOf": "2026-09-18T07:04:17.199Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 5,
+          "roundLabel": "R05",
+          "asOf": "2026-09-18T18:05:21.084Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 6,
+          "roundLabel": "R06",
+          "asOf": "2026-09-19T11:08:18.437Z",
+          "phase": "open",
+          "equity": 100000,
+          "returnPct": 0,
+          "cash": 100000,
+          "marketValue": 0,
+          "openContracts": 0
+        },
+        {
+          "round": 7,
+          "roundLabel": "R07",
+          "asOf": "2026-09-19T19:00:27.865Z",
+          "phase": "open",
+          "equity": 99905.53293,
+          "returnPct": -0.094467,
+          "cash": 99728.53993,
+          "marketValue": 176.993,
+          "openContracts": 4855
+        },
+        {
+          "round": 8,
+          "roundLabel": "R08",
+          "asOf": "2026-09-20T00:40:12.097Z",
+          "phase": "open",
+          "equity": 99807.26134,
+          "returnPct": -0.192739,
+          "cash": 99470.78034,
+          "marketValue": 336.481,
+          "openContracts": 8901
+        },
+        {
+          "round": 9,
+          "roundLabel": "R09",
+          "asOf": "2026-09-20T11:34:47.759Z",
+          "phase": "open",
+          "equity": 99802.47919,
+          "returnPct": -0.197521,
+          "cash": 99055.14719,
+          "marketValue": 747.332,
+          "openContracts": 24399
+        },
+        {
+          "round": 10,
+          "roundLabel": "R10",
           "asOf": "2026-09-21T13:00:46.855Z",
           "phase": "open",
-          "equity": 99814.23887,
-          "returnPct": -0.185761,
-          "cash": 99368.97287,
-          "marketValue": 445.266,
-          "openContracts": 7001
+          "equity": 99802.47919,
+          "returnPct": -0.197521,
+          "cash": 99055.14719,
+          "marketValue": 747.332,
+          "openContracts": 24399
         },
         {
-          "round": 5,
-          "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
+          "round": 11,
+          "roundLabel": "R11",
+          "asOf": "2026-09-22T08:03:09.044Z",
           "phase": "open",
-          "equity": 99814.23887,
-          "returnPct": -0.185761,
-          "cash": 99368.97287,
-          "marketValue": 445.266,
-          "openContracts": 7001
+          "equity": 99802.47919,
+          "returnPct": -0.197521,
+          "cash": 99055.14719,
+          "marketValue": 747.332,
+          "openContracts": 24399
         },
         {
-          "round": 5,
-          "roundLabel": "R05",
-          "asOf": "2026-09-21T20:42:50.633Z",
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
+          "phase": "open",
+          "equity": 99802.47919,
+          "returnPct": -0.197521,
+          "cash": 99055.14719,
+          "marketValue": 747.332,
+          "openContracts": 24399
+        },
+        {
+          "round": 12,
+          "roundLabel": "R12",
+          "asOf": "2026-09-22T20:04:18.342Z",
           "phase": "close",
-          "equity": 99814.23887,
-          "returnPct": -0.185761,
-          "cash": 99368.97287,
-          "marketValue": 445.266,
-          "openContracts": 7001
+          "equity": 99802.47919,
+          "returnPct": -0.197521,
+          "cash": 99055.14719,
+          "marketValue": 747.332,
+          "openContracts": 24399
         }
       ]
     }
   ],
   "summary": {
     "totals": {
-      "rounds": 5,
-      "orders": 12,
-      "fills": 12,
+      "rounds": 12,
+      "orders": 16,
+      "fills": 34,
       "takerFills": 12,
-      "makerFills": 0,
+      "makerFills": 22,
       "settlements": 0,
-      "marks": 48,
-      "cancels": 0,
-      "contracts": 7259,
-      "fees": 0.4552,
+      "marks": 97,
+      "cancels": 3,
+      "contracts": 31251.59,
+      "fees": 17.314,
       "settlementPnl": 0,
-      "eventsWalked": 4329,
-      "makerFillsCarried": 0
+      "eventsWalked": 7771,
+      "makerFillsCarried": 22
     },
-    "ranked": 3,
-    "unranked": 3
+    "ranked": 4,
+    "unranked": 2
   },
   "explanations": [
     {
-      "strategy": "SeasonIndex_CarryHold",
-      "headline": "SeasonIndex_CarryHold returned +0.0074% ($100007.39) from 1 fill(s) across 5 round(s), 0 real settlement(s), $0.0000 of official fees.",
-      "verdict": "PROFITABLE",
-      "worked": [
-        "The still-open book is marked $7.39 above its cost from a captured quote/ladder (mark source travels on every MARK record).",
-        "The book carried across 5 round boundary(ies); equity moved from $100000.00 to $100007.39 while positions were held."
-      ],
-      "hurt": [
-        "207 contract(s) are still open at the season's last mark (2026-09-21T20:42:50.633Z): their PnL is unrealized and can still change."
-      ],
-      "measured": {
-        "rounds": 5,
-        "roundsTraded": 1,
-        "fills": 1,
-        "takerFills": 1,
-        "makerFills": 0,
-        "settlements": 0,
-        "marks": 5,
-        "contracts": 207,
-        "fees": 0,
-        "slippageCost": 0.060444,
-        "settlementPnl": 0,
-        "unrealizedPnl": 7.39151,
-        "maxDrawdownPct": 0,
-        "openContracts": 207
-      },
-      "deskExplanation": {
-        "strategy": "SeasonIndex_CarryHold",
-        "verdict": "POSITIVE",
-        "headline": "SeasonIndex_CarryHold returned 0.0074% (+$7.39) over the desk window ending 2026-09-20.",
-        "worked": [
-          "$7.39 of unrealized gains marked from captured quotes",
-          "1 taker fill(s) at an average 0.00 tick(s) of slippage"
-        ],
-        "hurt": [],
-        "evidence": [
-          {
-            "label": "fills",
-            "value": 1
-          },
-          {
-            "label": "taker / maker",
-            "value": "1 / 0"
-          },
-          {
-            "label": "real settlements",
-            "value": 0
-          },
-          {
-            "label": "fees paid",
-            "value": "$0.00"
-          },
-          {
-            "label": "contracts filled",
-            "value": 207
-          },
-          {
-            "label": "unfilled contracts",
-            "value": 0
-          },
-          {
-            "label": "attribution check",
-            "value": "equity change = realized + unrealized − fees (residual < $0.01)"
-          }
-        ]
-      }
-    },
-    {
       "strategy": "SeasonWeather_Carry",
-      "headline": "SeasonWeather_Carry never traded: 0 fills across 5 round(s).",
+      "headline": "SeasonWeather_Carry never traded: 0 fills across 12 round(s).",
       "verdict": "NO_TRADES",
       "worked": [
-        "The book carried across 5 round boundary(ies); equity moved from $100000.00 to $100000.00 while positions were held."
+        "The book carried across 12 round boundary(ies); equity moved from $100000.00 to $100000.00 while positions were held."
       ],
       "hurt": [
         "Nothing traded: no round offered an order the captured ladders could fill, so there is no performance number to report."
       ],
       "measured": {
-        "rounds": 5,
+        "rounds": 12,
         "roundsTraded": 0,
         "fills": 0,
         "takerFills": 0,
@@ -1224,52 +2397,17 @@
       }
     },
     {
-      "strategy": "SeasonMaker_RestCarry",
-      "headline": "SeasonMaker_RestCarry never traded: 0 fills across 5 round(s).",
-      "verdict": "NO_TRADES",
-      "worked": [
-        "The book carried across 5 round boundary(ies); equity moved from $100000.00 to $100000.00 while positions were held."
-      ],
-      "hurt": [
-        "Nothing traded: no round offered an order the captured ladders could fill, so there is no performance number to report."
-      ],
-      "measured": {
-        "rounds": 5,
-        "roundsTraded": 0,
-        "fills": 0,
-        "takerFills": 0,
-        "makerFills": 0,
-        "settlements": 0,
-        "marks": 0,
-        "contracts": 0,
-        "fees": 0,
-        "slippageCost": 0,
-        "settlementPnl": 0,
-        "unrealizedPnl": 0,
-        "maxDrawdownPct": 0,
-        "openContracts": 0
-      },
-      "deskExplanation": {
-        "strategy": "SeasonMaker_RestCarry",
-        "verdict": "NO TRADES",
-        "headline": "This strategy placed no fillable order on the desk universe at this cut-off.",
-        "worked": [],
-        "hurt": [],
-        "evidence": []
-      }
-    },
-    {
       "strategy": "SeasonControl_NoTrade",
-      "headline": "SeasonControl_NoTrade never traded: 0 fills across 5 round(s).",
+      "headline": "SeasonControl_NoTrade never traded: 0 fills across 12 round(s).",
       "verdict": "NO_TRADES",
       "worked": [
-        "The book carried across 5 round boundary(ies); equity moved from $100000.00 to $100000.00 while positions were held."
+        "The book carried across 12 round boundary(ies); equity moved from $100000.00 to $100000.00 while positions were held."
       ],
       "hurt": [
         "Nothing traded: no round offered an order the captured ladders could fill, so there is no performance number to report."
       ],
       "measured": {
-        "rounds": 5,
+        "rounds": 12,
         "roundsTraded": 0,
         "fills": 0,
         "takerFills": 0,
@@ -1295,16 +2433,16 @@
     },
     {
       "strategy": "SeasonExpiry_LastRound",
-      "headline": "SeasonExpiry_LastRound returned -0.0137% ($99986.28) from 1 fill(s) across 1 round(s), 0 real settlement(s), $0.4552 of official fees.",
+      "headline": "SeasonExpiry_LastRound returned -0.0100% ($99989.99) from 1 fill(s) across 1 round(s), 0 real settlement(s), $2.8985 of official fees.",
       "verdict": "LOSS",
       "worked": [
-        "Official fees were $0.4552 on 51 contract(s) ($0.0089 each, the exchange's quadratic schedule).",
-        "The book carried across 5 round boundary(ies); equity moved from $100000.00 to $99986.28 while positions were held."
+        "Official fees were $2.8985 on 1422.92 contract(s) ($0.0020 each, the exchange's quadratic schedule).",
+        "The book carried across 12 round boundary(ies); equity moved from $100000.00 to $99989.99 while positions were held."
       ],
       "hurt": [
-        "The still-open book is marked $13.26 below its cost — carried risk that a session-scoped desk would never have held.",
-        "Realized trading (sales + settlements − fees) lost $0.46 before the open book is marked.",
-        "51 contract(s) are still open at the season's last mark (2026-09-21T20:42:50.633Z): their PnL is unrealized and can still change."
+        "The still-open book is marked $7.11 below its cost — carried risk that a session-scoped desk would never have held.",
+        "Realized trading (sales + settlements − fees) lost $2.90 before the open book is marked.",
+        "1422.92 contract(s) are still open at the season's last mark (2026-09-22T20:04:18.342Z): their PnL is unrealized and can still change."
       ],
       "measured": {
         "rounds": 1,
@@ -1314,24 +2452,25 @@
         "makerFills": 0,
         "settlements": 0,
         "marks": 1,
-        "contracts": 51,
-        "fees": 0.4552,
+        "contracts": 1422.92,
+        "fees": 2.8985,
         "slippageCost": 0,
         "settlementPnl": 0,
-        "unrealizedPnl": -13.26,
-        "maxDrawdownPct": 0.013715,
-        "openContracts": 51
+        "unrealizedPnl": -7.1146,
+        "maxDrawdownPct": 0.010013,
+        "openContracts": 1422.92
       },
       "deskExplanation": {
         "strategy": "SeasonExpiry_LastRound",
         "verdict": "NEGATIVE",
-        "headline": "SeasonExpiry_LastRound returned -0.0137% ($-13.72) over the desk window ending 2026-09-21.",
+        "headline": "SeasonExpiry_LastRound returned -0.0100% ($-10.01) over the desk window ending 2026-09-22.",
         "worked": [
           "1 taker fill(s) at an average 0.00 tick(s) of slippage"
         ],
         "hurt": [
-          "$13.26 of unrealized losses marked from captured quotes",
-          "$0.46 of official fees (0.000% of starting capital)"
+          "$7.11 of unrealized losses marked from captured quotes",
+          "$2.90 of official fees (0.003% of starting capital)",
+          "29504.08 contract(s) never filled — real depth ran out, and the desk never invents a price"
         ],
         "evidence": [
           {
@@ -1348,11 +2487,158 @@
           },
           {
             "label": "fees paid",
-            "value": "$0.46"
+            "value": "$2.90"
           },
           {
             "label": "contracts filled",
-            "value": 51
+            "value": 1422.92
+          },
+          {
+            "label": "unfilled contracts",
+            "value": 29504.08
+          },
+          {
+            "label": "attribution check",
+            "value": "equity change = realized + unrealized − fees (residual < $0.01)"
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "SeasonMaker_RestCarry",
+      "headline": "SeasonMaker_RestCarry returned -0.0125% ($99987.47) from 22 fill(s) across 10 round(s), 0 real settlement(s), $13.2789 of official fees.",
+      "verdict": "LOSS",
+      "worked": [
+        "The still-open book is marked $0.75 above its cost from a captured quote/ladder (mark source travels on every MARK record).",
+        "22 resting order(s) were crossed by a LATER real quote, so the carried book earned the spread instead of paying it.",
+        "Official fees were $13.2789 on 5246.67 contract(s) ($0.0025 each, the exchange's quadratic schedule).",
+        "The book carried across 12 round boundary(ies); equity moved from $100000.00 to $99987.47 while positions were held."
+      ],
+      "hurt": [
+        "Realized trading (sales + settlements − fees) lost $13.28 before the open book is marked.",
+        "3 resting order(s) never crossed and were cancelled unfilled — no fee, but no fill either.",
+        "5246.67 contract(s) are still open at the season's last mark (2026-09-22T20:04:18.342Z): their PnL is unrealized and can still change."
+      ],
+      "measured": {
+        "rounds": 10,
+        "roundsTraded": 4,
+        "fills": 22,
+        "takerFills": 0,
+        "makerFills": 22,
+        "settlements": 0,
+        "marks": 22,
+        "contracts": 5246.67,
+        "fees": 13.2789,
+        "slippageCost": 0,
+        "settlementPnl": 0,
+        "unrealizedPnl": 0.7509,
+        "maxDrawdownPct": 0.013148,
+        "openContracts": 5246.67
+      },
+      "deskExplanation": {
+        "strategy": "SeasonMaker_RestCarry",
+        "verdict": "NEGATIVE",
+        "headline": "SeasonMaker_RestCarry returned -0.0125% ($-12.53) over the desk window ending 2026-09-19.",
+        "worked": [
+          "$0.75 of unrealized gains marked from captured quotes",
+          "22 maker fill(s) crossed by a later real quote"
+        ],
+        "hurt": [
+          "$13.28 of official fees (0.013% of starting capital)",
+          "67211.52 contract(s) never filled — real depth ran out, and the desk never invents a price"
+        ],
+        "evidence": [
+          {
+            "label": "fills",
+            "value": 22
+          },
+          {
+            "label": "taker / maker",
+            "value": "0 / 22"
+          },
+          {
+            "label": "real settlements",
+            "value": 0
+          },
+          {
+            "label": "fees paid",
+            "value": "$13.28"
+          },
+          {
+            "label": "contracts filled",
+            "value": 5246.67
+          },
+          {
+            "label": "unfilled contracts",
+            "value": 67211.52
+          },
+          {
+            "label": "attribution check",
+            "value": "equity change = realized + unrealized − fees (residual < $0.01)"
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "SeasonIndex_CarryHold",
+      "headline": "SeasonIndex_CarryHold returned -0.0343% ($99965.65) from 1 fill(s) across 12 round(s), 0 real settlement(s), $1.1366 of official fees.",
+      "verdict": "LOSS",
+      "worked": [
+        "Official fees were $1.1366 on 183 contract(s) ($0.0062 each, the exchange's quadratic schedule).",
+        "The book carried across 12 round boundary(ies); equity moved from $100000.00 to $99965.65 while positions were held."
+      ],
+      "hurt": [
+        "The still-open book is marked $33.21 below its cost — carried risk that a session-scoped desk would never have held.",
+        "Realized trading (sales + settlements − fees) lost $1.14 before the open book is marked.",
+        "183 contract(s) are still open at the season's last mark (2026-09-22T20:04:18.342Z): their PnL is unrealized and can still change."
+      ],
+      "measured": {
+        "rounds": 12,
+        "roundsTraded": 1,
+        "fills": 1,
+        "takerFills": 1,
+        "makerFills": 0,
+        "settlements": 0,
+        "marks": 12,
+        "contracts": 183,
+        "fees": 1.1366,
+        "slippageCost": 2.099925,
+        "settlementPnl": 0,
+        "unrealizedPnl": -33.21,
+        "maxDrawdownPct": 0.034347,
+        "openContracts": 183
+      },
+      "deskExplanation": {
+        "strategy": "SeasonIndex_CarryHold",
+        "verdict": "NEGATIVE",
+        "headline": "SeasonIndex_CarryHold returned -0.0343% ($-34.35) over the desk window ending 2026-09-18.",
+        "worked": [
+          "1 taker fill(s) at an average 1.00 tick(s) of slippage"
+        ],
+        "hurt": [
+          "$33.21 of unrealized losses marked from captured quotes",
+          "$1.14 of official fees (0.001% of starting capital)"
+        ],
+        "evidence": [
+          {
+            "label": "fills",
+            "value": 1
+          },
+          {
+            "label": "taker / maker",
+            "value": "1 / 0"
+          },
+          {
+            "label": "real settlements",
+            "value": 0
+          },
+          {
+            "label": "fees paid",
+            "value": "$1.14"
+          },
+          {
+            "label": "contracts filled",
+            "value": 183
           },
           {
             "label": "unfilled contracts",
@@ -1367,41 +2653,41 @@
     },
     {
       "strategy": "SeasonBoardSum_Ladder",
-      "headline": "SeasonBoardSum_Ladder returned -0.1858% ($99814.24) from 10 fill(s) across 5 round(s), 0 real settlement(s), $0.0000 of official fees.",
+      "headline": "SeasonBoardSum_Ladder returned -0.1975% ($99802.48) from 10 fill(s) across 7 round(s), 0 real settlement(s), $0.0000 of official fees.",
       "verdict": "LOSS",
       "worked": [
-        "The book carried across 5 round boundary(ies); equity moved from $100000.00 to $99814.24 while positions were held."
+        "The book carried across 12 round boundary(ies); equity moved from $100000.00 to $99802.48 while positions were held."
       ],
       "hurt": [
-        "The still-open book is marked $185.76 below its cost — carried risk that a session-scoped desk would never have held.",
-        "10 taker fills paid $11.09 of measured slippage against the touch.",
-        "7001 contract(s) are still open at the season's last mark (2026-09-21T20:42:50.633Z): their PnL is unrealized and can still change."
+        "The still-open book is marked $197.52 below its cost — carried risk that a session-scoped desk would never have held.",
+        "10 taker fills paid $41.71 of measured slippage against the touch.",
+        "24399 contract(s) are still open at the season's last mark (2026-09-22T20:04:18.342Z): their PnL is unrealized and can still change."
       ],
       "measured": {
-        "rounds": 5,
+        "rounds": 7,
         "roundsTraded": 3,
         "fills": 10,
         "takerFills": 10,
         "makerFills": 0,
         "settlements": 0,
-        "marks": 42,
-        "contracts": 7001,
+        "marks": 62,
+        "contracts": 24399,
         "fees": 0,
-        "slippageCost": 11.091089,
+        "slippageCost": 41.712753,
         "settlementPnl": 0,
-        "unrealizedPnl": -185.76113,
-        "maxDrawdownPct": 0.190444,
-        "openContracts": 7001
+        "unrealizedPnl": -197.52081,
+        "maxDrawdownPct": 0.197521,
+        "openContracts": 24399
       },
       "deskExplanation": {
         "strategy": "SeasonBoardSum_Ladder",
         "verdict": "NEGATIVE",
-        "headline": "SeasonBoardSum_Ladder returned -0.1858% ($-185.76) over the desk window ending 2026-09-20.",
+        "headline": "SeasonBoardSum_Ladder returned -0.1975% ($-197.52) over the desk window ending 2026-09-19.",
         "worked": [
-          "10 taker fill(s) at an average 1.60 tick(s) of slippage"
+          "10 taker fill(s) at an average 1.20 tick(s) of slippage"
         ],
         "hurt": [
-          "$185.76 of unrealized losses marked from captured quotes"
+          "$197.52 of unrealized losses marked from captured quotes"
         ],
         "evidence": [
           {
@@ -1422,7 +2708,7 @@
           },
           {
             "label": "contracts filled",
-            "value": 7001
+            "value": 24399
           },
           {
             "label": "unfilled contracts",
@@ -1442,7 +2728,7 @@
       "name": "Season: Weather bracket, held through its own settlement",
       "sector": null,
       "source": "S01 (SFWeather — point-in-time NWS discipline) → KXHIGH* daily high-temperature brackets",
-      "rounds": 5,
+      "rounds": 12,
       "roundsTraded": 0,
       "roundsFilled": 0,
       "idleRounds": [
@@ -1450,89 +2736,120 @@
         "R02",
         "R03",
         "R04",
-        "R05"
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12"
       ],
       "fills": 0,
       "orders": 0,
-      "note": "Returned no order in any of the 5 round(s): its entry conditions were never met by the captured ladders at these cut-offs."
+      "note": "Returned no order in any of the 12 round(s): its entry conditions were never met by the captured ladders at these cut-offs."
     },
     {
       "strategy": "SeasonIndex_CarryHold",
       "name": "Season: index strike carried across capture instants",
       "sector": null,
       "source": "S03 (TradingViewTheLeap) → KXINXY / KXNASDAQ100Y strikes on the same underlying indexes",
-      "rounds": 5,
+      "rounds": 12,
       "roundsTraded": 1,
       "roundsFilled": 1,
       "idleRounds": [
         "R02",
         "R03",
         "R04",
-        "R05"
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12"
       ],
       "fills": 1,
       "orders": 1,
-      "note": "Traded in 1 of 5 round(s); the carried book is tracked across all of them with a real ladder, real fee and a real mark per round."
+      "note": "Traded in 1 of 12 round(s); the carried book is tracked across all of them with a real ladder, real fee and a real mark per round."
     },
     {
       "strategy": "SeasonMaker_RestCarry",
       "name": "Season: resting bid that a later round has to cross",
       "sector": null,
       "source": "exchange microstructure (docs.kalshi.com orderbook + fee schedule) — maker fee is a quarter of taker, and zero on plain-quadratic series",
-      "rounds": 5,
-      "roundsTraded": 0,
+      "rounds": 12,
+      "roundsTraded": 4,
       "roundsFilled": 0,
       "idleRounds": [
-        "R01",
         "R02",
-        "R03",
-        "R04",
-        "R05"
+        "R05",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12"
       ],
-      "fills": 0,
-      "orders": 0,
-      "note": "Returned no order in any of the 5 round(s): its entry conditions were never met by the captured ladders at these cut-offs."
+      "fills": 22,
+      "orders": 4,
+      "note": "Traded in 4 of 12 round(s); the carried book is tracked across all of them with a real ladder, real fee and a real mark per round."
     },
     {
       "strategy": "SeasonBoardSum_Ladder",
       "name": "Season: mutually-exclusive board sum, bought cheap and settled",
       "sector": null,
       "source": "S13 (PriceKalshiHistorical R14 `mee`) → KXBTCY / KXINXY / KXHIGH* mutually exclusive boards",
-      "rounds": 5,
+      "rounds": 12,
       "roundsTraded": 3,
       "roundsFilled": 3,
       "idleRounds": [
+        "R01",
+        "R02",
+        "R03",
         "R04",
-        "R05"
+        "R05",
+        "R09",
+        "R10",
+        "R11",
+        "R12"
       ],
       "fills": 10,
       "orders": 10,
-      "note": "Traded in 3 of 5 round(s); the carried book is tracked across all of them with a real ladder, real fee and a real mark per round."
+      "note": "Traded in 3 of 12 round(s); the carried book is tracked across all of them with a real ladder, real fee and a real mark per round."
     },
     {
       "strategy": "SeasonExpiry_LastRound",
       "name": "Season: nearest-expiry favourite, entered in the final round",
       "sector": null,
       "source": "desk doctrine — expiry harvest, restricted to the last capture instant the store holds",
-      "rounds": 5,
+      "rounds": 12,
       "roundsTraded": 1,
       "roundsFilled": 1,
       "idleRounds": [
         "R01",
         "R02",
         "R03",
-        "R04"
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11"
       ],
       "fills": 1,
       "orders": 1,
-      "note": "Traded in 1 of 5 round(s); the carried book is tracked across all of them with a real ladder, real fee and a real mark per round."
+      "note": "Traded in 1 of 12 round(s); the carried book is tracked across all of them with a real ladder, real fee and a real mark per round."
     },
     {
       "strategy": "SeasonControl_NoTrade",
       "name": "Season control: deliberately places no order",
       "sector": null,
       "source": "derived control — exists so the season’s other numbers are not free",
-      "rounds": 5,
+      "rounds": 12,
       "roundsTraded": 0,
       "roundsFilled": 0,
       "idleRounds": [
@@ -1540,36 +2857,43 @@
         "R02",
         "R03",
         "R04",
-        "R05"
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12"
       ],
       "fills": 0,
       "orders": 0,
-      "note": "Returned no order in any of the 5 round(s): its entry conditions were never met by the captured ladders at these cut-offs."
+      "note": "Returned no order in any of the 12 round(s): its entry conditions were never met by the captured ladders at these cut-offs."
     }
   ],
   "audit": {
     "ok": true,
-    "checkedAt": "2026-09-22T07:00:31.472Z",
+    "checkedAt": "2026-09-22T22:55:53.070Z",
     "totals": {
-      "rounds": 5,
-      "orders": 12,
-      "fills": 12,
+      "rounds": 12,
+      "orders": 16,
+      "fills": 34,
       "takerFills": 12,
-      "makerFills": 0,
+      "makerFills": 22,
       "settlements": 0,
-      "marks": 48,
-      "cancels": 0,
-      "contracts": 7259,
-      "fees": 0.4552,
+      "marks": 97,
+      "cancels": 3,
+      "contracts": 31251.59,
+      "fees": 17.314,
       "settlementPnl": 0,
-      "eventsWalked": 4329,
-      "makerFillsCarried": 0
+      "eventsWalked": 7771,
+      "makerFillsCarried": 22
     },
     "checks": [
       {
         "name": "desk every fill names a captured ladder",
         "ok": true,
-        "detail": "12 fill(s) checked"
+        "detail": "34 fill(s) checked"
       },
       {
         "name": "desk every fill is at or after its ladder capture (point-in-time)",
@@ -1619,12 +2943,12 @@
       {
         "name": "desk every order is stamped with a strategy and a real timestamp",
         "ok": true,
-        "detail": "12 order(s)"
+        "detail": "16 order(s)"
       },
       {
         "name": "desk equity change = realized + unrealized - fees (residual < $0.01)",
         "ok": true,
-        "detail": "SeasonIndex_CarryHold: residual 0; SeasonWeather_Carry: residual 0; SeasonMaker_RestCarry: residual 0; SeasonControl_NoTrade: residual 0; SeasonExpiry_LastRound: residual 0; SeasonBoardSum_Ladder: residual 0"
+        "detail": "SeasonWeather_Carry: residual 0; SeasonControl_NoTrade: residual 0; SeasonExpiry_LastRound: residual 0; SeasonMaker_RestCarry: residual 0; SeasonIndex_CarryHold: residual 0; SeasonBoardSum_Ladder: residual 0"
       },
       {
         "name": "desk no result claims a return without at least one real fill or settlement",
@@ -1634,22 +2958,22 @@
       {
         "name": "S1 every round is a real capture instant from the store",
         "ok": true,
-        "detail": "5 round(s): R01, R02, R03, R04, R05"
+        "detail": "12 round(s): R01, R02, R03, R04, R05, R06, R07, R08, R09, R10, R11, R12"
       },
       {
         "name": "S2 rounds strictly increase in time",
         "ok": true,
-        "detail": "2026-09-19T19:00:27.865Z → 2026-09-20T03:53:20.255Z → 2026-09-20T11:34:47.759Z → 2026-09-21T13:00:46.855Z → 2026-09-21T20:42:50.633Z"
+        "detail": "2026-09-17T23:26:44.528Z → 2026-09-18T00:58:01.628Z → 2026-09-18T05:50:00.627Z → 2026-09-18T07:04:17.199Z → 2026-09-18T18:05:21.084Z → 2026-09-19T11:08:18.437Z → 2026-09-19T19:00:27.865Z → 2026-09-20T00:40:12.097Z → 2026-09-20T11:34:47.759Z → 2026-09-21T13:00:46.855Z → 2026-09-22T08:03:09.044Z → 2026-09-22T20:04:18.342Z"
       },
       {
         "name": "S3 every fill is inside a round and named after it",
         "ok": true,
-        "detail": "12 fill(s) carry a round index"
+        "detail": "34 fill(s) carry a round index"
       },
       {
         "name": "S3b every fill sits inside the season window and never prices off a later ladder",
         "ok": true,
-        "detail": "fills between 2026-09-19T19:00:27.865Z and 2026-09-21T20:42:50.633Z, each priced from a ladder captured at or before it"
+        "detail": "fills between 2026-09-17T23:26:44.528Z and 2026-09-22T20:04:18.342Z, each priced from a ladder captured at or before it"
       },
       {
         "name": "S4 one book per entrant for the whole season (no per-round reset)",
@@ -1674,22 +2998,22 @@
       {
         "name": "S7 every maker fill names the later real quote that crossed it",
         "ok": true,
-        "detail": "0 maker fill(s)"
+        "detail": "22 maker fill(s)"
       },
       {
         "name": "S8 every round reports the real events it walked through",
         "ok": true,
-        "detail": "R01: 0 quote(s), 0 settlement(s); R02: 3990 quote(s), 0 settlement(s); R03: 54 quote(s), 0 settlement(s); R04: 143 quote(s), 0 settlement(s); R05: 142 quote(s), 0 settlement(s)"
+        "detail": "R01: 0 quote(s), 0 settlement(s); R02: 20 quote(s), 0 settlement(s); R03: 146 quote(s), 0 settlement(s); R04: 19 quote(s), 0 settlement(s); R05: 365 quote(s), 0 settlement(s); R06: 1005 quote(s), 0 settlement(s); R07: 1023 quote(s), 0 settlement(s); R08: 1678 quote(s), 0 settlement(s); R09: 2860 quote(s), 0 settlement(s); R10: 143 quote(s), 0 settlement(s); R11: 316 quote(s), 0 settlement(s); R12: 196 quote(s), 0 settlement(s)"
       },
       {
         "name": "S9 an entrant that never traded shows no performance number",
         "ok": true,
-        "detail": "SeasonWeather_Carry=0; SeasonMaker_RestCarry=0; SeasonControl_NoTrade=0"
+        "detail": "SeasonWeather_Carry=0; SeasonControl_NoTrade=0"
       },
       {
         "name": "S10 the season holds its positions across rounds (a carried book, not a session)",
         "ok": true,
-        "detail": "3 entrant(s) carried an open position past a round boundary"
+        "detail": "4 entrant(s) carried an open position past a round boundary"
       },
       {
         "name": "S11 the cumulative liquidity cap is respected per contract across all rounds",
