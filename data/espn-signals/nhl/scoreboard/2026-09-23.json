@@ -1,0 +1,173 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-23",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260923"
+  ]
+ },
+ "captures": [
+  "2026-09-22T07:21:27.801Z"
+ ],
+ "events": {
+  "401879369": {
+   "eventId": "401879369",
+   "date": "2026-09-24T02:00Z",
+   "easternDate": "2026-09-23",
+   "name": "Los Angeles Kings at Anaheim Ducks",
+   "shortName": "LA @ ANA",
+   "week": null,
+   "venue": "Honda Center",
+   "homeAbbr": "ANA",
+   "homeTeamId": "25",
+   "homeName": "Anaheim Ducks",
+   "awayAbbr": "LA",
+   "awayTeamId": "8",
+   "awayName": "Los Angeles Kings",
+   "firstCapturedAt": "2026-09-22T07:21:27.801Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-22T07:21:27.801Z",
+     "last_seen_at": "2026-09-22T07:21:27.801Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-0-0",
+      "away": "0-1-0"
+     }
+    }
+   ]
+  },
+  "401879650": {
+   "eventId": "401879650",
+   "date": "2026-09-23T23:00Z",
+   "easternDate": "2026-09-23",
+   "name": "Toronto Maple Leafs at Ottawa Senators",
+   "shortName": "TOR @ OTT",
+   "week": null,
+   "venue": "Canadian Tire Centre",
+   "homeAbbr": "OTT",
+   "homeTeamId": "14",
+   "homeName": "Ottawa Senators",
+   "awayAbbr": "TOR",
+   "awayTeamId": "21",
+   "awayName": "Toronto Maple Leafs",
+   "firstCapturedAt": "2026-09-22T07:21:27.801Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-22T07:21:27.801Z",
+     "last_seen_at": "2026-09-22T07:21:27.801Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-1",
+      "away": "0-1-1"
+     }
+    }
+   ]
+  },
+  "401886429": {
+   "eventId": "401886429",
+   "date": "2026-09-24T00:00Z",
+   "easternDate": "2026-09-23",
+   "name": "Minnesota Wild at Dallas Stars",
+   "shortName": "MIN @ DAL",
+   "week": null,
+   "venue": "American Airlines Center",
+   "homeAbbr": "DAL",
+   "homeTeamId": "9",
+   "homeName": "Dallas Stars",
+   "awayAbbr": "MIN",
+   "awayTeamId": "30",
+   "awayName": "Minnesota Wild",
+   "firstCapturedAt": "2026-09-22T07:21:27.801Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-22T07:21:27.801Z",
+     "last_seen_at": "2026-09-22T07:21:27.801Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-0-0",
+      "away": "1-0-1"
+     }
+    }
+   ]
+  },
+  "401886441": {
+   "eventId": "401886441",
+   "date": "2026-09-23T23:00Z",
+   "easternDate": "2026-09-23",
+   "name": "Ottawa Senators at Toronto Maple Leafs",
+   "shortName": "OTT @ TOR",
+   "week": null,
+   "venue": "Scotiabank Arena",
+   "homeAbbr": "TOR",
+   "homeTeamId": "21",
+   "homeName": "Toronto Maple Leafs",
+   "awayAbbr": "OTT",
+   "awayTeamId": "14",
+   "awayName": "Ottawa Senators",
+   "firstCapturedAt": "2026-09-22T07:21:27.801Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-22T07:21:27.801Z",
+     "last_seen_at": "2026-09-22T07:21:27.801Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-1-1",
+      "away": "0-0-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-22T07:21:27.801Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260923"
+}

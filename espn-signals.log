@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-09-22T01:57:52.905Z",
+ "startedAt": "2026-09-22T07:21:27.003Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -19,15 +19,15 @@
      "playerRecords": 800
     },
     "scoreboard": {
-     "2026-09-21": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260921",
-      "ok": true,
-      "status": 200,
-      "events": 1,
-      "stateRows": 2
-     },
      "2026-09-22": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260922",
+      "ok": true,
+      "status": 200,
+      "events": 0,
+      "stateRows": 0
+     },
+     "2026-09-23": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260923",
       "ok": true,
       "status": 200,
       "events": 0,
@@ -52,15 +52,15 @@
      "playerRecords": 76
     },
     "scoreboard": {
-     "2026-09-21": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20260921",
+     "2026-09-22": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20260922",
       "ok": true,
       "status": 200,
       "events": 0,
       "stateRows": 0
      },
-     "2026-09-22": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20260922",
+     "2026-09-23": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20260923",
       "ok": true,
       "status": 200,
       "events": 0,
@@ -85,15 +85,15 @@
      "playerRecords": 3
     },
     "scoreboard": {
-     "2026-09-21": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260921",
+     "2026-09-22": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260922",
       "ok": true,
       "status": 200,
       "events": 0,
       "stateRows": 0
      },
-     "2026-09-22": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260922",
+     "2026-09-23": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260923",
       "ok": true,
       "status": 200,
       "events": 0,
@@ -118,15 +118,15 @@
      "playerRecords": 0
     },
     "scoreboard": {
-     "2026-09-21": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260921",
+     "2026-09-22": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260922",
       "ok": true,
       "status": 200,
       "events": 0,
       "stateRows": 0
      },
-     "2026-09-22": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260922",
+     "2026-09-23": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260923",
       "ok": true,
       "status": 200,
       "events": 0,
@@ -148,22 +148,22 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 65
+     "playerRecords": 67
     },
     "scoreboard": {
-     "2026-09-21": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260921",
-      "ok": true,
-      "status": 200,
-      "events": 8,
-      "stateRows": 10
-     },
      "2026-09-22": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260922",
       "ok": true,
       "status": 200,
       "events": 10,
       "stateRows": 10
+     },
+     "2026-09-23": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260923",
+      "ok": true,
+      "status": 200,
+      "events": 4,
+      "stateRows": 4
      }
     }
    }
@@ -181,22 +181,22 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 43
+     "playerRecords": 44
     },
     "scoreboard": {
-     "2026-09-21": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260921",
-      "ok": true,
-      "status": 200,
-      "events": 2,
-      "stateRows": 3
-     },
      "2026-09-22": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260922",
       "ok": true,
       "status": 200,
       "events": 5,
       "stateRows": 5
+     },
+     "2026-09-23": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260923",
+      "ok": true,
+      "status": 200,
+      "events": 2,
+      "stateRows": 2
      }
     }
    }
@@ -208,23 +208,23 @@
   "matched": 38,
   "unmapped": 34
  },
- "finishedAt": "2026-09-22T01:57:54.213Z"
+ "finishedAt": "2026-09-22T07:21:28.286Z"
 }
 {
  "ok": true,
  "problems": [],
  "summary": {
-  "scoreboards": 12,
-  "injuries": 6,
+  "scoreboards": 18,
+  "injuries": 12,
   "teams": 209,
   "codeRows": 72
  }
 }
 ✓ src/accumulated-history.js — 188 market(s), 13339 bar(s), 10358.1 KB
 ✓ src/forecast-data.js — 9 location(s), 191 snapshot(s), 385.4 KB
-✓ src/fda-signal-data.js — 6 subject(s), 56 snapshot(s), 43.5 KB
-✓ src/mlb-signal-data.js — 3 date file(s), 33 game(s), 92 state row(s), 70.3 KB
-✓ src/espn-signal-data.js — 7 league(s), 26 event(s), 1140.7 KB
+✓ src/fda-signal-data.js — 6 subject(s), 62 snapshot(s), 47.4 KB
+✓ src/mlb-signal-data.js — 3 date file(s), 33 game(s), 94 state row(s), 71.1 KB
+✓ src/espn-signal-data.js — 7 league(s), 32 event(s), 2172.5 KB
 ✓ src/mlb-pregame-data.js — 0 date file(s), 0 row(s), 2.1 KB (no predictions yet — MLBPreGame_ModelEdge abstains)
 ✓ src/form4-signal-data.js — 0 issuer(s), 0 filing(s), 1.3 KB (no archive yet — insider strategies abstain)
     JPMCEOCHANGE-27: 286 bar(s) + market object
@@ -417,10 +417,11 @@
     TESLACEOCHANGE-26: 400 bar(s) + market object
     intraday 1m: 367 market(s), 21474 shipped bar(s) (cap 400/market) from data/history/intraday/1m
     intraday 60m: 413 market(s), 41539 shipped bar(s) (cap 400/market) from data/history/intraday/60m
-desk-data: 86 markets (80 open) · 978 ladder captures · 5539 bars · 118 quoted-only · 1534 KB → src/desk-data.js
+desk-data: 86 markets (80 open) · 978 ladder captures · 5539 bars · 118 quoted-only · 1537 KB → src/desk-data.js
 desk-data: 102 laddered market(s) dropped by --max-markets=80 (the rule is recorded in the module's coverage block)
-  wrote VERIFICATION.md (84.0 KB)
-  wrote IRREGULARITIES.md (101.8 KB)
+desk-data: capture bound — the store holds 12571 ladders (7776 non-empty) in 18 batches; this module keeps 978 ladders in 8 batches (8 store batch(es) represented, 10 not) — 14 season round stamp(s) and 11592 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
+  wrote VERIFICATION.md (92.0 KB)
+  wrote IRREGULARITIES.md (115.4 KB)
   README.md AUTO blocks already up to date
 Docs generated.
 Building docs/ distribution for GitHub Pages...

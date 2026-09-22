@@ -1,0 +1,105 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-23",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260923"
+  ]
+ },
+ "captures": [
+  "2026-09-22T07:21:27.878Z"
+ ],
+ "events": {
+  "401857213": {
+   "eventId": "401857213",
+   "date": "2026-09-24T00:00Z",
+   "easternDate": "2026-09-23",
+   "name": "Atlanta Dream at New York Liberty",
+   "shortName": "ATL @ NY",
+   "week": null,
+   "venue": "Barclays Center",
+   "homeAbbr": "NY",
+   "homeTeamId": "9",
+   "homeName": "New York Liberty",
+   "awayAbbr": "ATL",
+   "awayTeamId": "20",
+   "awayName": "Atlanta Dream",
+   "firstCapturedAt": "2026-09-22T07:21:27.878Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "ATL -1.5",
+    "spread": 1.5,
+    "overUnder": 176.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-22T07:21:27.878Z",
+     "last_seen_at": "2026-09-22T07:21:27.878Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "26-17",
+      "away": "29-14"
+     }
+    }
+   ]
+  },
+  "401857214": {
+   "eventId": "401857214",
+   "date": "2026-09-24T02:00Z",
+   "easternDate": "2026-09-23",
+   "name": "Dallas Wings at Seattle Storm",
+   "shortName": "DAL @ SEA",
+   "week": null,
+   "venue": "Climate Pledge Arena",
+   "homeAbbr": "SEA",
+   "homeTeamId": "14",
+   "homeName": "Seattle Storm",
+   "awayAbbr": "DAL",
+   "awayTeamId": "3",
+   "awayName": "Dallas Wings",
+   "firstCapturedAt": "2026-09-22T07:21:27.878Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "DAL -9.5",
+    "spread": 9.5,
+    "overUnder": 170.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-22T07:21:27.878Z",
+     "last_seen_at": "2026-09-22T07:21:27.878Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "8-35",
+      "away": "26-17"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-22T07:21:27.878Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260923"
+}
