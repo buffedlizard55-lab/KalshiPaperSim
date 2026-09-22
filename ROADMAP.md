@@ -4,7 +4,10 @@ This file is the honest queue for KalshiPaperSim. Every item says what it would
 change, what it needs, and how a reader could check it. Nothing here is a
 promise; items leave this file only when the work is committed **and** measured.
 
-Last reviewed: 2026-09-21 (the Arena session on branch
+Latest review: 2026-09-22 — HTTP boundary hardening and Node/Pages ledger parity
+(shipped item 38). Captured market inputs and computed strategy results were not changed.
+
+Previous review: 2026-09-21 (the Arena session on branch
 `arena/01a0c21e-kalshipapersim` — this session **found the test suite red on
 main and fixed it** (#56: a syntax error at test/simulation.test.js:3672 stopped
 all 134 tests from executing, and test 118 asserted on a Promise), shipped the
@@ -60,6 +63,8 @@ audit (#53), research-gap statuses (#52), the desk-season schedule fix (#54).
 | 35 | **The S14 pre-game model hook (was Next #3(c))** — `data/mlb-pregame/` stores {capturedAt, gamePk, firstPitchAt, pHome} with the TIMELY rule (capturedAt < firstPitchAt) so walk-forward rows can never answer a pre-game bar; `MLBPreGame_ModelEdge` compares the model's pHome to the captured ask with its own stated 6¢ edge. The owner model's CLI has **no `predict` command** (verified by reading it), so the workflow feeds from `backtest` walk-forward output until it grows one — named in the plan, not hidden | `scripts/archive-mlb-pregame.mjs`; `src/mlb-pregame-store.js`; `src/mlb-pregame-data.js` (generated); `.github/workflows/mlb-pregame-signals.yml` + `.github/triggers/mlb-pregame.json`; fact V119; tests 134–135 |
 | 36 | **The desk reads the same archives + the game-window capture fix (was Next #10).** `buildDeskSignalsAsync` gained `espn` + `mlbPregame` providers; three entrants join the roster (22 total): `LiveMLB_TheoryEdge` (Tangotiger equal-teams table vs captured ask, R18), `LiveNFL_InjuryGate`, `LiveNBA_InjuryGate` (both buy the healthier side, YES **or** NO). Every game ladder stored before this date was captured AFTER settlement and is empty — irregularity #60; fixed by 00:30/02:30 UTC live-game-window `with_books` crons in `daily-history.yml` + the `minute-nfl-game-lines` ingest block (11 blocks) | `src/live-desk.js`; `src/desk-strategies.js`; `.github/workflows/daily-history.yml`; `data/history/_ingest-request.json`; fact V120; irregularity #60 |
 | 37 | **Research pass + unified trade tracking + docs (was the rest of the request).** R19–R27 land with verbatim claims (including one source that refutes its own headline — irregularity #61 — and a dated Fed-hike observation on the kalshi.com board — #62); the four competition sites are reverse-engineered with their own words (The Leap's two-number champions disclosure, Trade-Ideas' nine-column leaderboard schema — adopted, Candlecharts' journal discipline — the per-fill reason strings). Three recreations cite exact source numbers: `SwingRange_Scalp`, `OrderbookWall_3Rung`, `LongshotScalp_9x` (60 strategies now). `scripts/trades-review.mjs` produces `data/ledger/unified-trades.csv` + `data/reports/trades-review-2026-09-21.md` (every placed trade verbatim, every upcoming trade, Open Profit marked "not marked in this store" rather than guessed). Facts V121–V122 | `src/research-sources.js` R19–R27 + RESEARCH_GAPS; `scripts/trades-review.mjs`; `data/ledger/unified-trades.csv`; `data/reports/trades-review-2026-09-21.md`; tests 35/87/126 re-run green |
+
+| 38 | **HTTP boundary hardening + Node/Pages ledger parity.** Static serving now allowlists public assets/evidence, refuses symlinks and hides repository internals/runtime files; malformed/non-object request bodies return 400, oversized bodies return 413, and invalid resets cannot mutate state. The Node ledger URL falls back to the existing Pages export. New PR checks cover the engine, isolated HTTP regressions, actual-server state preservation, both UI stubs, the build and workflow push races. This is not API authentication (see README deployment scope). | `lib/http.js`; `test/http.test.js`; `test/server-smoke.mjs`; `.github/workflows/ci.yml` |
 
 ## Next, in priority order
 

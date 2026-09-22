@@ -6,15 +6,17 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "test": "node --test test/simulation.test.js",
+    "test": "node --test test/*.test.js",
     "test:ui": "node test/ui-smoke.mjs",
-    "test:all": "node --test test/simulation.test.js && node test/ui-smoke.mjs",
+    "test:all": "npm test && npm run test:ui",
     "ingest": "node scripts/ingest-history.mjs",
     "history:module": "node scripts/generate-history-module.mjs",
     "desk:data": "node scripts/generate-desk-module.mjs",
     "desk:run": "node scripts/run-live-desk.mjs",
     "build": "node scripts/generate-history-module.mjs && node scripts/generate-desk-module.mjs && node scripts/render-docs.js && node build.js",
-    "docs": "node scripts/render-docs.js"
+    "docs": "node scripts/render-docs.js",
+    "test:http": "node --test test/http.test.js",
+    "test:server": "node test/server-smoke.mjs"
   },
   "keywords": [
     "kalshi",

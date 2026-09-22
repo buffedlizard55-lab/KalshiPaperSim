@@ -669,9 +669,14 @@ Source: <https://kalshi.com/docs/kalshi-fee-schedule.pdf> (effective 2026-07-07)
 ## Tests
 
 ```bash
-npm test          # 58 assertion groups against official documents and real captures
-npm run test:ui   # renders the entire UI against a DOM stub and checks the output
-npm run test:all  # both
+npm test          # engine verification + HTTP boundary regression tests
+npm run test:http # fast, isolated HTTP tests (no market replay or external network)
+npm run test:ui   # renders the UI against a DOM stub (static mode)
+FORCE_MODE=server npm run test:ui # same smoke checks with the server adapter stub
+npm run test:all  # npm test + static UI smoke
+npm run test:server # integration checks against a running npm start server
+# HTTP_BASE_URL overrides http://127.0.0.1:3000 for test:server
+bash test/workflow-race-guard.sh
 ```
 
 The suite treats official documents as oracles: the fee table (21 rows), the RFC 6455 handshake
@@ -680,10 +685,38 @@ asserts the properties that keep the simulation honest — no invented fills, re
 deterministic replays, unranked non-traders, no payout before a market is `finalized`, and no
 correlation claimed below the 20-period overlap floor.
 
-Eight of the tests are new in this session and cover the work below: deep-comparison correctness
+The engine regression coverage also includes deep-comparison correctness
 (#20), the T19000 capture's contiguity/no-trade handling and its deep agreement with the earlier
 independent capture, multi-market exposure reconciliation, correlation bounds, settlement booking
 rules, and the ingest merge's conflict detection.
+
+### HTTP boundary and deployment scope (2026-09-22)
+
+The Node server serves an explicit allowlist of browser assets, published Markdown,
+and captured-data/report directories. It no longer exposes arbitrary repository files:
+`.git/`, environment/credential files, server code, local scratch modules and
+`data/store/` are not static assets. Symlink files and symlink parents are refused.
+Static resources support GET/HEAD only and send `X-Content-Type-Options: nosniff`.
+The generated ledger, discovered summary and sensitivity summary fall back to their
+existing `docs/data/` copies when no canonical `data/` file exists, preserving Node/Pages parity.
+
+API bodies must be JSON objects (an empty body still uses the existing defaults).
+Malformed JSON and non-object JSON return **400**; oversized bodies return a readable
+**413**, rather than resetting the socket. Invalid reset bodies are rejected **before**
+any competition state changes. The default body limit remains 2 MiB, with 8 MiB for
+state imports.
+
+`test/http.test.js` exercises these boundaries using temporary synthetic HTTP fixtures,
+not invented market observations. `test/server-smoke.mjs` checks the actual running
+server and verifies rejected resets preserve state; it never submits a valid mutation.
+The `Project checks` GitHub workflow runs engine/HTTP tests, the live-server check,
+the push-race tests, both DOM-stub modes and the static asset build on PRs and main.
+These are not full browser automation tests. No check captures fresh market data.
+
+**This is still a trusted-use paper simulator, not an authenticated multi-tenant service.**
+Existing state/export and mutation APIs remain unauthenticated, and CORS remains permissive.
+Static-file restrictions do not make those APIs private. Use an access-controlled
+reverse proxy or a trusted network for deployments containing private competition data.
 
 ---
 
