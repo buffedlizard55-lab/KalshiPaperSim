@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/WAC033",
       "relativeLocation": "SeaTac, WA",
       "timeZone": "America/Los_Angeles",
-      "resolvedAt": "2026-09-21T22:36:56.809Z",
+      "resolvedAt": "2026-09-22T07:33:03.160Z",
       "pointsUrl": "https://api.weather.gov/points/47.4502,-122.3088"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -1404,6 +1404,72 @@
           "startTime": "2026-09-27T06:00:00-07:00",
           "endTime": "2026-09-27T18:00:00-07:00",
           "probabilityOfPrecipitationPct": 17
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-22T07:33:03.160Z",
+      "points_url": "https://api.weather.gov/points/47.4502,-122.3088",
+      "forecast_url": "https://api.weather.gov/gridpoints/SEW/124,61/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-22T06:26:59+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-22",
+          "highF": 68,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-22T06:00:00-07:00",
+          "endTime": "2026-09-22T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 29
+        },
+        {
+          "date": "2026-09-23",
+          "highF": 67,
+          "periodName": "Wednesday",
+          "startTime": "2026-09-23T06:00:00-07:00",
+          "endTime": "2026-09-23T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 2
+        },
+        {
+          "date": "2026-09-24",
+          "highF": 62,
+          "periodName": "Thursday",
+          "startTime": "2026-09-24T06:00:00-07:00",
+          "endTime": "2026-09-24T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 70
+        },
+        {
+          "date": "2026-09-25",
+          "highF": 61,
+          "periodName": "Friday",
+          "startTime": "2026-09-25T06:00:00-07:00",
+          "endTime": "2026-09-25T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 77
+        },
+        {
+          "date": "2026-09-26",
+          "highF": 63,
+          "periodName": "Saturday",
+          "startTime": "2026-09-26T06:00:00-07:00",
+          "endTime": "2026-09-26T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 4
+        },
+        {
+          "date": "2026-09-27",
+          "highF": 62,
+          "periodName": "Sunday",
+          "startTime": "2026-09-27T06:00:00-07:00",
+          "endTime": "2026-09-27T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 22
+        },
+        {
+          "date": "2026-09-28",
+          "highF": 63,
+          "periodName": "Monday",
+          "startTime": "2026-09-28T06:00:00-07:00",
+          "endTime": "2026-09-28T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 29
         }
       ]
     }
