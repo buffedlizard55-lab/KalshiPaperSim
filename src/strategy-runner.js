@@ -27,6 +27,13 @@ import { forecastLocations, forecastHighAt, weatherEventDate } from './forecast-
 import { fdaSubjects, stateAtOrBefore } from './fda-signal-store.js';
 import { hasMlbSignalArchive, mlbGames, mlbTeams, matchMlbGame, gameStateAtOrBefore, parseMlbGameTicker } from './mlb-signal-store.js';
 import {
+  hasEspnArchive, espnEvents, espnTeams, matchEspnGame, gameStateAtOrBefore as espnGameStateAtOrBefore,
+  injuryCountsForTeams, parseEspnGameTicker, espnJoinReport, espnCoverage, espnAssumption, SERIES_LEAGUE
+} from './espn-signal-store.js';
+import {
+  hasPreGameArchive, preGamePredictionAtOrBefore, preGameCoverage, preGameAssumption
+} from './mlb-pregame-store.js';
+import {
   hasForm4Archive, form4Issuers, issuerForTicker, insiderStateAtOrBefore, form4Coverage, form4Series
 } from './form4-signal-store.js';
 
@@ -242,24 +249,145 @@ export function form4JoinReport(tickers = null) {
 export { form4Coverage };
 
 /**
+ * Build the engine's ESPN signal provider (game state + injury designations,
+ * TRUSTED BUT NOT OFFICIAL) from the point-in-time ESPN archive
+ * (data/espn-signals/, site.web.api.espn.com). Same contract as the other
+ * providers: given a ticker, its market and a decision timestamp it returns
+ * the newest archived picture captured at or before that time — or null.
+ *
+ * The ticker→event join is src/espn-signal-store.js#matchEspnGame: the
+ * ticker's US-Eastern date and its code-mapped away/home pair must all equal
+ * the archived event's. The code map is evidence-built (_code-map.json); an
+ * unmapped code is answered with null and the reason is published by
+ * espnJoinReport(). The returned signal always carries the NOT-OFFICIAL
+ * trust label — consumers must surface it.
+ */
+export function buildEspnSignalProvider() {
+  if (!hasEspnArchive()) return null;
+  const joins = new Map();
+  const joinFor = (ticker) => {
+    if (!joins.has(ticker)) joins.set(ticker, matchEspnGame(String(ticker)));
+    return joins.get(ticker);
+  };
+  const provider = (ticker, market, tsSeconds) => {
+    if (!parseEspnGameTicker(ticker)) return null;
+    const m = joinFor(String(ticker));
+    if (!m.ok) return null;
+    const st = espnGameStateAtOrBefore(m.event, tsSeconds);
+    if (!st) return null;
+    const scoresYes = m.yesIsHome ? st.scores.home : st.scores.away;
+    const scoresOpp = m.yesIsHome ? st.scores.away : st.scores.home;
+    const lead = Number.isFinite(scoresYes) && Number.isFinite(scoresOpp) ? scoresYes - scoresOpp : null;
+    const injuries = injuryCountsForTeams(m.parsed.league, [m.event.homeTeamId, m.event.awayTeamId], tsSeconds);
+    const yesInjuries = m.yesIsHome ? injuries[m.event.homeTeamId] : injuries[m.event.awayTeamId];
+    const oppInjuries = m.yesIsHome ? injuries[m.event.awayTeamId] : injuries[m.event.homeTeamId];
+    return {
+      kind: 'espn-game-state',
+      trust: espnAssumption().trust,
+      league: m.parsed.league,
+      eventId: m.event.eventId,
+      eventDate: m.event.easternDate,
+      yesTeam: m.yesTeam,
+      oppTeam: m.oppTeam,
+      yesIsHome: m.yesIsHome,
+      state: st.state,
+      statusName: st.statusName,
+      completed: st.completed,
+      period: st.period,
+      clock: st.clock,
+      displayClock: st.displayClock,
+      scores: { yes: scoresYes, opp: scoresOpp },
+      lead,
+      injuries: {
+        yes: yesInjuries ? { out: yesInjuries.out, byStatus: yesInjuries.byStatus, total: yesInjuries.total, observedAt: yesInjuries.observedAt } : null,
+        opp: oppInjuries ? { out: oppInjuries.out, byStatus: oppInjuries.byStatus, total: oppInjuries.total, observedAt: oppInjuries.observedAt } : null
+      },
+      capturedAt: st.capturedAt,
+      observedAt: st.observedAt,
+      staleSeconds: st.staleSeconds,
+      source: st.source,
+      matchedBy: m.matchedBy
+    };
+  };
+  provider.joinFor = joinFor;
+  return provider;
+}
+
+/**
+ * Build the engine's MLB pre-game model provider (MasterSite S14). For a
+ * KXMLBGAME ticker it joins to the official game exactly as the MLB state
+ * provider does, then answers with the owner's model snapshot knowable at the
+ * bar — only rows captured BEFORE first pitch ever answer (walk-forward
+ * measurement rows are refused by the store). kind: 'mlb-pregame-model'.
+ */
+export function buildMlbPregameProvider() {
+  if (!hasPreGameArchive() || !hasMlbSignalArchive()) return null;
+  const games = mlbGames();
+  const teams = mlbTeams();
+  const joins = new Map();
+  const joinFor = (ticker) => {
+    if (!joins.has(ticker)) joins.set(ticker, matchMlbGame(ticker, { games, teams }));
+    return joins.get(ticker);
+  };
+  const provider = (ticker, market, tsSeconds) => {
+    if (!parseMlbGameTicker(ticker)) return null;
+    const m = joinFor(String(ticker));
+    if (!m.ok) return null;
+    const row = preGamePredictionAtOrBefore(m.game.gamePk, tsSeconds);
+    if (!row) return null;
+    return { ...row, yesIsHome: m.yesIsHome, yesTeam: m.yesIsHome ? m.home : m.away, assumption: preGameAssumption() };
+  };
+  provider.joinFor = joinFor;
+  return provider;
+}
+
+/**
+ * Per-ticker join status of every supported game contract against the ESPN
+ * archive — the published answer to "why did the ESPN entries not trade this
+ * contract?". Computed, never typed.
+ */
+export function espnJoinReportAll(tickers = null) {
+  const stored = new Set();
+  if (!tickers) {
+    for (const m of getReplayableMarkets()) stored.add(m.ticker);
+    for (const p of Object.values(ACCUMULATED_INTRADAY.periods || {})) for (const t of Object.keys(p.markets || {})) stored.add(t);
+  }
+  return espnJoinReport(tickers || [...stored].sort());
+}
+
+export { espnCoverage, espnAssumption, SERIES_LEAGUE, preGameCoverage, preGameAssumption };
+
+/**
  * The competition's default signal provider: every point-in-time archive this
  * repository grows (NWS forecasts, Drugs@FDA states, official MLB game
- * states, SEC Form 4 insider filings), composed. A market that no archive answers gets null — which makes
+ * states, SEC Form 4 insider filings, ESPN game states + injuries — labelled
+ * TRUSTED BUT NOT OFFICIAL — and the owner's MLB model pre-game snapshots),
+ * composed. A market that no archive answers gets null — which makes
  * a signal-dependent strategy abstain there, by design rather than by accident.
+ *
+ * Several archives can answer ONE ticker (a KXMLBGAME bar has both an
+ * official game state and, when snapshots exist, a model pre-game row). The
+ * composed provider returns the first hit as the signal (back-compat:
+ * `ctx.signal`) with `all` carrying EVERY hit, so each strategy picks the
+ * kind it reads without starving the others.
  */
 export function composeSignalProviders(...providers) {
   const built = providers.length
     ? providers
-    : [buildForecastSignalProvider(), buildFdaSignalProvider(), buildMlbSignalProvider(), buildForm4SignalProvider()];
+    : [buildForecastSignalProvider(), buildFdaSignalProvider(), buildMlbSignalProvider(), buildEspnSignalProvider(), buildMlbPregameProvider(), buildForm4SignalProvider()];
   const live = built.filter((p) => typeof p === 'function');
   if (!live.length) return null;
-  return (ticker, market, tsSeconds) => {
+  const composed = (ticker, market, tsSeconds) => {
+    const hits = [];
     for (const p of live) {
       const hit = p(ticker, market, tsSeconds);
-      if (hit) return hit;
+      if (hit) hits.push(hit);
     }
-    return null;
+    if (!hits.length) return null;
+    return { ...hits[0], all: hits };
   };
+  composed.providers = live;
+  return composed;
 }
 
 /**

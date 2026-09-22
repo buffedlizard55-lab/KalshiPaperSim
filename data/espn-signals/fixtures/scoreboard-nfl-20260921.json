@@ -1,0 +1,150 @@
+{
+  "_provenance": {
+    "what": "ESPN NFL scoreboard for 2026-09-21 — ONE real event (NYG @ LAR, the Monday-night game), transcribed VERBATIM at the keys the parser reads (the same convention as the MLB fixture in test/simulation.test.js: every parse-relevant key/value is byte-equal to the live response; presentation noise the parser never reads — team logos, links arrays, leader stats, tickets, geoBroadcasts, the DraftKings odds block's affiliate URLs — is omitted).",
+    "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260921",
+    "response_timestamp": null,
+    "captured_via": "Arena page-fetch tool (direct TLS egress is blocked in this sandbox — Irregularity #4 pattern). The response body was returned complete in 3 chunks and the parse-relevant projection is transcribed here. The first espn-signals workflow run re-captures the full raw response and keeps it under data/espn-signals/fixtures/raw/ (see scripts/archive-espn-signals.mjs).",
+    "captured_at_utc": "2026-09-21T23:00Z",
+    "trust_label": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL. ESPN is not a league's official data feed; settlement always follows the exchange's own result.",
+    "observed_states": ["pre (this fixture: STATUS_SCHEDULED / state \"pre\")"],
+    "note": "The per-event shape (competitions[].competitors[].score as a numeric STRING, status.type.state / status.clock / status.period) was NOT retrievable from this sandbox on 2026-09-21's earlier session (Irregularity #58); it IS now captured and is what this fixture pins down."
+  },
+  "leagues": [
+    {
+      "id": "28",
+      "name": "National Football League",
+      "abbreviation": "NFL",
+      "slug": "nfl",
+      "season": {
+        "year": 2026,
+        "startDate": "2026-08-06T07:00Z",
+        "endDate": "2027-02-16T07:59Z",
+        "displayName": "2026",
+        "type": { "id": "2", "type": 2, "name": "Regular Season", "abbreviation": "reg" }
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "401872947",
+      "uid": "s:20~l:28~e:401872947",
+      "date": "2026-09-22T00:15Z",
+      "name": "New York Giants at Los Angeles Rams",
+      "shortName": "NYG @ LAR",
+      "season": { "year": 2026, "type": 2, "slug": "regular-season" },
+      "week": { "number": 2 },
+      "startDate": "2026-09-22T00:15Z",
+      "competitions": [
+        {
+          "id": "401872947",
+          "uid": "s:20~l:28~e:401872947~c:401872947",
+          "date": "2026-09-22T00:15Z",
+          "attendance": 0,
+          "type": { "id": "1", "abbreviation": "STD" },
+          "timeValid": true,
+          "neutralSite": false,
+          "conferenceCompetition": false,
+          "playByPlayAvailable": false,
+          "recent": true,
+          "venue": {
+            "id": "7065",
+            "fullName": "SoFi Stadium",
+            "address": { "city": "Inglewood", "state": "CA", "country": "USA" },
+            "indoor": false
+          },
+          "competitors": [
+            {
+              "id": "14",
+              "uid": "s:20~l:28~t:14",
+              "type": "team",
+              "order": 0,
+              "homeAway": "home",
+              "team": {
+                "id": "14",
+                "location": "Los Angeles",
+                "name": "Rams",
+                "abbreviation": "LAR",
+                "displayName": "Los Angeles Rams",
+                "shortDisplayName": "Rams",
+                "color": "003594",
+                "alternateColor": "ffd100",
+                "isActive": true
+              },
+              "score": "0",
+              "curatedRank": { "current": 99 },
+              "records": [
+                { "name": "overall", "abbreviation": "Any", "type": "total", "summary": "0-1" },
+                { "name": "Home", "type": "home", "summary": "0-1" },
+                { "name": "Road", "type": "road", "summary": "0-0" }
+              ]
+            },
+            {
+              "id": "19",
+              "uid": "s:20~l:28~t:19",
+              "type": "team",
+              "order": 1,
+              "homeAway": "away",
+              "team": {
+                "id": "19",
+                "location": "New York",
+                "name": "Giants",
+                "abbreviation": "NYG",
+                "displayName": "New York Giants",
+                "shortDisplayName": "Giants",
+                "color": "003c7f",
+                "alternateColor": "c9243f",
+                "isActive": true
+              },
+              "score": "0",
+              "curatedRank": { "current": 99 },
+              "records": [
+                { "name": "overall", "abbreviation": "Any", "type": "total", "summary": "1-0" },
+                { "name": "Home", "type": "home", "summary": "1-0" },
+                { "name": "Road", "type": "road", "summary": "0-0" }
+              ]
+            }
+          ],
+          "status": {
+            "clock": 0.0,
+            "displayClock": "0:00",
+            "period": 0,
+            "type": {
+              "id": "1",
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Mon, September 21st at 8:15 PM EDT",
+              "shortDetail": "9/21 - 8:15 PM EDT"
+            },
+            "isTBDFlex": false
+          },
+          "odds_context_only": {
+            "_label": "Third-party sportsbook odds (DraftKings), archived as CONTEXT ONLY. Never a price input to any strategy: this project prices only from Kalshi's own captured quotes.",
+            "details": "LAR -6.5",
+            "overUnder": 47.5,
+            "spread": -6.5,
+            "provider_name": "DraftKings"
+          },
+          "highlights": []
+        }
+      ],
+      "status": {
+        "clock": 0.0,
+        "displayClock": "0:00",
+        "period": 0,
+        "type": {
+          "id": "1",
+          "name": "STATUS_SCHEDULED",
+          "state": "pre",
+          "completed": false,
+          "description": "Scheduled",
+          "detail": "Mon, September 21st at 8:15 PM EDT",
+          "shortDetail": "9/21 - 8:15 PM EDT"
+        }
+      }
+    }
+  ],
+  "provider": { "id": "100", "name": "DraftKings", "priority": 1, "displayName": "DraftKings" },
+  "week": { "number": 2 }
+}

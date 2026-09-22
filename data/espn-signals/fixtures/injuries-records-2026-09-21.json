@@ -1,0 +1,71 @@
+{
+  "_provenance": {
+    "what": "ESPN injury-report records — one team block per league, transcribed VERBATIM at the keys the parser reads (same convention as the MLB fixture in test/simulation.test.js: every parse-relevant key/value is byte-equal to the live response; the athlete `links`/`headshot` and team `logos`/`links` noise the parser never reads is omitted).",
+    "urls": {
+      "nfl": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/injuries",
+      "nba": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries"
+    },
+    "captured_via": "Arena page-fetch tool (direct TLS egress is blocked in this sandbox). The live responses are one JSON document per league, `injuries[]` = one entry per team, each with `injuries[]` = one record per player. The first espn-signals workflow run keeps the full raw responses under data/espn-signals/fixtures/raw/.",
+    "captured_at_utc": "2026-09-21T23:05Z",
+    "response_timestamps": { "nfl": "2026-09-21T22:53:42Z", "nba": "2026-09-21T23:04:41Z" },
+    "trust_label": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL. ESPN aggregates team injury designations; it is not a league transaction wire. Every strategy card that reads this archive says so."
+  },
+  "leagues": {
+    "nfl": {
+      "timestamp": "2026-09-21T22:53:42Z",
+      "status": "success",
+      "season": { "year": 2026, "type": 2, "name": "Regular Season", "displayName": "2026" },
+      "injuries": [
+        {
+          "id": "22",
+          "displayName": "Arizona Cardinals",
+          "injuries": [
+            {
+              "id": "-2010586",
+              "longComment": "out",
+              "shortComment": "out",
+              "status": "Out",
+              "date": "2026-09-21T18:59Z",
+              "athlete": {
+                "firstName": "Garrett",
+                "lastName": "Williams",
+                "displayName": "Garrett Williams",
+                "shortName": "G. Williams",
+                "position": { "id": "29", "name": "Cornerback", "displayName": "Cornerback", "abbreviation": "CB", "leaf": true },
+                "team": { "id": "22", "slug": "arizona-cardinals", "name": "Cardinals", "abbreviation": "ARI", "displayName": "Arizona Cardinals" }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "nba": {
+      "timestamp": "2026-09-21T23:04:41Z",
+      "status": "success",
+      "season": { "year": 2027, "type": 1, "name": "Preseason", "displayName": "2026-27" },
+      "injuries": [
+        {
+          "id": "1",
+          "displayName": "Atlanta Hawks",
+          "injuries": [
+            {
+              "id": "-57577",
+              "longComment": "Veesaar suffered the injury during a workout on Sept. 15, and an MRI confirmed the diagnosis. The No. 52 overall pick in the 2026 NBA Draft, Veesaar was expected to spend a lot of time with Atlanta's G League affiliate this season.",
+              "shortComment": "Veesaar was diagnosed with a torn right ACL and is expected to miss the 2026-27 season, the Hawks announced Monday.",
+              "status": "Out",
+              "date": "2026-09-21T19:50Z",
+              "athlete": {
+                "firstName": "Henri",
+                "lastName": "Veesaar",
+                "displayName": "Henri Veesaar",
+                "shortName": "H. Veesaar",
+                "position": { "id": "9", "name": "Center", "displayName": "Center", "abbreviation": "C", "leaf": false },
+                "team": { "id": "1", "slug": "atlanta-hawks", "name": "Hawks", "abbreviation": "ATL", "displayName": "Atlanta Hawks" }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

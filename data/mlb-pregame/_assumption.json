@@ -1,0 +1,11 @@
+{
+ "what": "Point-in-time snapshot of the owner's MLB Monte Carlo model (MasterSite S14, MLB-Prediction-model-backtest): its own pre-game P(home win) per official gamePk.",
+ "knowableFrom": "the capture instant the snapshot was recorded (capturedAt) — the model run's own timestamp, never this archive's write time",
+ "timelyRule": "a row is a PRE-GAME signal only when capturedAt < firstPitchAt. Walk-forward rows (mode \"walk-forward measurement\") are computed after their games and carry timely:false — real data, never a tradable pre-game signal.",
+ "modelRepo": "https://github.com/buffedlizard55-lab/MLB-Prediction-model-backtest",
+ "modelCliStatus": "No `predict` subcommand exists in the model CLI as of 2026-09-21 (verified by reading mlb_predict/cli.py through the GitHub API). The plan below is the exact chain that becomes runnable the moment the model can emit today's slate.",
+ "jargon": {
+  "pHome": "the model's calibrated probability that the home team wins (logistic blend of Monte Carlo sim_p_home + correlation-filtered features)",
+  "gamePk": "the official MLB Stats API game id — the same id data/mlb-signals/ archives"
+ }
+}

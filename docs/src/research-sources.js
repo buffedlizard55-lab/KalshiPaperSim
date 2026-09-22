@@ -469,7 +469,139 @@ export const RESEARCH_SOURCES = Object.freeze([
       'site gives different numbers (e.g. top of the 6th +2 = 0.810). The entries state this on the strategy card: a real favourite\'s lead is worth more than the table ' +
       'says and a real underdog\'s less, so the 2¢ margin is a fee buffer, not an edge estimate. The archive samples the game every ~20 minutes, so the state a decision ' +
       'reads can lag the field by up to that much — the lag is what the forward test measures.'
-  }
+  },
+  {
+    id: 'R19',
+    title: 'I built a +39% Kalshi trading bot to exploit World Cup market panics ("Shock-Timing" — full strategy + code, WITH the author\'s negative post-mortem)',
+    host: 'reddit.com/r/PredictionsMarkets',
+    url: 'https://www.reddit.com/r/PredictionsMarkets/comments/1u3rn8s/i_built_a_39_kalshi_trading_bot_to_exploit_world/',
+    capturedVia: RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
+    verifiedOn: '2026-09-21',
+    claim: '"Detect the shock: max drawdown inside a 2-minute sliding window; fire when the drop is ≥ 15% of the peak AND ≥ 8¢ absolute. Ladder in: four laddered limit buy orders at increasing depths ... $P_50$ Order: 10% of allocated capital. $P_75$ Order: 20% ... Orders stay active for 60 seconds. To exit, the bot places a resting limit sell order slightly above the panic price to capture a quick 4¢ to 6¢ profit per contract as the spread normalizes. Keeping both entry and exit on resting limit orders completely sidesteps Kalshi\'s fee drag." In-play windowing: "Kalshi closes each market at the final whistle, so I used that to anchor a [close − 150min, close] window and throw away everything outside it." The SAME post\'s TL;DR then says, of a ~1.5M-trade backtest plus the full 2022 World Cup out of sample: "It doesn\'t work."',
+    taken: 'The four-rung maker ladder (P50 10% / P75 20% / P90 30% / P95 40%), the dual threshold (≥15% of peak AND ≥8¢ inside 2 minutes), the 4-6¢ maker exit and the [close−150min, close] entry window are already represented in this repository by PanicDip_ShockTiming (three-rung variant, period-low ≤ 0.70 × 5-period mean). This row pins the EXACT v1 parameters and the author\'s own out-of-sample verdict, so any future four-rung refinement must cite BOTH the parameters and "It doesn\'t work" rather than the +39% headline. No new entry was created for the four-rung variant: it differs from PanicDip_ShockTiming only in rung count and detector constants, and one honest recreation plus one honest post-mortem is worth more than two overlapping usernames.',
+    testable: true,
+    testedBy: ['PanicDip_ShockTiming'],
+    howTested: 'PanicDip_ShockTiming runs the same shock-then-maker-ladder shape on the real 1-minute store (KXBTC15M/KXETH15M/KXSOL15M/KXGOLD15M) with official fees and real settlements; its verdict string is computed from those fills. The [close−150min, close] windowing is not reproducible on the 15-minute crypto contracts (their whole life is shorter than the window) and is only meaningful on match markets once the game-series 1-minute capture (data/history/_ingest-request.json minute-mlb-game-lines / minute-nfl-game-lines) produces bars.',
+    caveat: 'The headline "+39%" is a pre-post-mortem figure; the same author, testing ~1.5M real trades + the entire 2022 World Cup out of sample, concludes "It doesn\'t work." Treat the parameters as measured and the profitability as REFUTED by its own source until a forward test on captured game-window ladders (the 00:30/02:30 UTC daily-history passes added 2026-09-21) says otherwise.'
+  },
+  {
+    id: 'R20',
+    title: 'People who actually WIN MONEY on Kalshi: what\'s your secret? (retail practitioner thread — resting-order discipline, longshot scalps, spread flipping)',
+    host: 'reddit.com/r/Kalshi',
+    url: 'https://www.reddit.com/r/Kalshi/comments/1qd4ubf/people_who_actually_win_money_on_kalshi_whats/',
+    capturedVia: RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
+    verifiedOn: '2026-09-21',
+    claim: 'Snoo-77724: "simple, never use market order, always use limit orders below the price usually 5-15 cents lower than current price and set a bunch of them out there and let them come to you, when whales have capital flying around you\'ll hit the natural dips ... hint: don\'t trade the event, trade the orderbook wall". Big_Buy_7252: "if you throw around a little for these underdog/longshots it can pay out big ... throw a buck on a hundred contracts of a longshot and potentially win $100 ... I\'ve pushed 100 contracts from one to ten a bunch, that\'s an easy 9x on a dollar sometimes". Ecstatic_Soft5023: "Buy low at 20-30 percent and sell at halftime when the numbers closer to 50 percent." LupineChemist: "in some low liquidity markets, you can make a couple percent just on spreads. Just have a ton of resting buy orders and then immediately flip them to resting sell orders where the market is." Joethecoew adds the failure mode the entry must respect: "check order book if doing quick sell ... make sure you don\'t sell enough to get slammed down to the next two price tiers".',
+    taken: 'Two recreations, each with one named rule: OrderbookWall_3Rung (the Snoo-77724 5-15¢ resting-bid wall + the LupineChemist fill-and-flip spread capture, on spreads ≥ 3 ticks) and LongshotScalp_9x (the Big_Buy_7252 hundred-contracts-from-1¢-to-10¢ longshot scalp). The Ecstatic_Soft5023 halftime swing is NOT recreated: it needs sell-at-halftime clock data this store does not archive.',
+    testable: true,
+    testedBy: ['OrderbookWall_3Rung', 'LongshotScalp_9x'],
+    howTested: 'Both run on the real captured bars with official fee schedules and real settlements. OrderbookWall_3Rung rests three maker bids 5¢/10¢/15¢ under the touch only when the captured spread is ≥ 3 ticks (the thread\'s own "low liquidity" qualifier) and flips each fill to a maker offer at cost + 2¢ ("a couple percent"). LongshotScalp_9x buys 100 contracts only at a captured ask ≤ 2¢ and rests its exit at 10¢ — the thread\'s own 1-to-10 band — or holds to the exchange\'s real result.',
+    caveat: 'An anonymous thread is anecdotes, not evidence: no fills, no dates, no sample. Reaper_1492\'s reply in the same thread is the standing counter ("the ability to trade OUT at relative value is non-existent, even in markets with high liquidity"), and Joethecoew reports being "wiped out before by being arrogant on a safe bet". The recreations therefore compute their verdicts from real fills only; the quotes above are transcribed as DESIGN INTENT, never as a claimed edge.'
+  },
+  {
+    id: 'R21',
+    title: 'Kalshi Weather Contracts: The Complete 2026 Trading Guide (forecast-skill decay, model divergence, NHC track convergence)',
+    host: 'reddit.com/r/PredictionsMarkets',
+    url: 'https://www.reddit.com/r/PredictionsMarkets/comments/1rxxte0/kalshi_weather_contracts_the_complete_2026/',
+    capturedVia: RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
+    verifiedOn: '2026-09-21',
+    claim: '"A temperature forecast for tomorrow is accurate to within roughly 1 to 2 degrees Fahrenheit ... For near-term contracts, the edge window collapses as the resolution date approaches ... that window is typically 24 to 72 hours for temperature contracts, longer for seasonal aggregates." "When Kalshi prices a two-week-out temperature contract as confidently as a two-day contract, that is a mispricing. The market is not correctly accounting for forecast skill decay." Edge 1: "When the European model and the GFS disagree significantly ... and Kalshi is pricing as if consensus exists, that divergence is an opportunity." Hurricane deep dive: "The market consistently lags model convergence by 4 to 12 hours ... That lag is the edge window."',
+    taken: 'Documented as measured guidance for the weather flight (S04-S09 family): the 24-72h edge window and the skill-decay claim are recorded here. NOT recreated as a strategy this session: the tradeable forms need inputs this store does not archive — (a) two-model divergence requires Euro AND GFS forecast rows side by side (the forecast archive stores one series per city), and (b) skill decay by lead time requires the lead-time band of each quoted contract, which the current measurement rows do not pin. Recreating it on price alone ("far date + confident price") would fabricate the direction the source gets from model divergence — refused under the honesty rule.',
+    testable: false,
+    notTestableReason: 'Blocked pending (1) a second forecast model column in data/forecasts/ (Euro or GFS alongside the archived series) and (2) lead-days on each archived prediction row (the archive-forecasts run computes horizon already — surfacing it in each row would unblock both this and the skill-decay rule). Tracked in RESEARCH_GAPS.',
+    testedBy: [],
+    howTested: 'Not testable here until the two archive fields above exist; the blockers are the RESEARCH_GAPS rows this source added.',
+    caveat: 'A guide post (merchant-adjacent — it shares its site\'s funnel with the Candlecharts contest stack, R27), not a peer-reviewed measurement. Its numbers (1-2°F one-day skill, 4-12h market lag) are its own; nothing here is a price or a settlement input.'
+  },
+  {
+    id: 'R22',
+    title: 'Best Kalshi Strategies? (retail thread — swing-range scalping, favourites discipline, in-play longshots)',
+    host: 'reddit.com/r/Kalshi',
+    url: 'https://www.reddit.com/r/Kalshi/comments/1obxdcl/best_kalshi_strategies/',
+    capturedVia: RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
+    verifiedOn: '2026-09-21',
+    claim: 'kashola17: "purchase markets that tend to swing up and down. Buy low and hedge at a 15% gain and get out. For example; close tennis matches go from 30-70% the entire match depending how close it is." Educatedadam: "the only option ... is to make small slow bets on favorites ... go with heavy favorites and play the long game." EntertainmentWild291: "the loser by a few points has a 4% buy small shares" (in-play cheap side). InfamousRain9827: "Find markets where asymmetric information can be found ... and be EARLY."',
+    taken: 'Recreated as SwingRange_Scalp (the kashola17 rule verbatim: detect an oscillating range, buy its low end, exit at +15% of cost and get out). The Educatedadam favourites rule is the documented premise of Favourite_BaseRate (S13) and is re-cited there; the EntertainmentWild291 cheap-side rule is LiveCheapBracket_Ladder\'s premise on the desk.',
+    testable: true,
+    testedBy: ['SwingRange_Scalp'],
+    howTested: 'SwingRange_Scalp runs on the real 1-minute store (KXBTC15M/KXETH15M/KXSOL15M/KXGOLD15M): a market qualifies when the 20-bar mid range spans ≥ 30¢ (the source\'s 30-70 oscillation), the entry fires at the range\'s low end (≤ 25% up from the range low) when a side still asks ≤ 35¢, and the exit is a resting maker offer at cost × 1.15 — the source\'s "hedge at a 15% gain and get out". Official maker fees and real settlements apply. The tennis example itself cannot be tested here (no tennis series on Kalshi / none captured); the crypto 15-minute contracts are the captured oscillating instruments.',
+    caveat: 'Same thread as R20: anecdotes only. "Tennis matches go from 30-70%" describes tennis MATCH odds on a betting venue, not a Kalshi contract class — the recreation ports the RANGE rule to captured Kalshi oscillators and says so on the card. kashola17\'s "hedge at a 15% gain" is implemented as a flat exit, not a hedge leg (single-contract replay).'
+  },
+  {
+    id: 'R23',
+    title: 'Trading Strategies for Prediction Markets — a synthesis of academic papers on the favourite-longshot bias and buy-NO mechanics on Kalshi',
+    host: 'medium.com/@FrenzyCapital',
+    url: 'https://medium.com/@FrenzyCapital/trading-strategies-for-prediction-markets-4025a050e2e2',
+    capturedVia: RESEARCH_CAPTURE_METHODS.SEARCH_EXCERPT,
+    verifiedOn: '2026-09-21',
+    claim: '"Longshot fading via \'Buy No\': ... When a Yes contract is overpriced at $0.15 (implying 15% probability for something that is truly a 10% event), you do not need to short the Yes. Instead, buy the corresponding No contract ... Buying No on overpriced longshots is the single highest-edge strategy in the literature." The synthesis also lists "passive liquidity underwriting on Kalshi" among its reviewed edges.',
+    taken: 'Cited as the academic frame for LongshotFader_FLB (S19)\'s 30-45¢ band buy-NO rule (S19 was built from the sweep-family detectors; this paper is the literature statement of the same mechanism). "Passive liquidity underwriting" is the documented premise of the desk\'s LiveMakerTouch. No third recreation: the paper\'s own worked example (YES 15¢ vs true 10%) needs a true-probability model per market — with only prices, that example reduces to S19\'s band rule already implemented.',
+    testable: true,
+    testedBy: ['LongshotFader_FLB'],
+    howTested: 'S19 buys NO in the 30-45¢ longshot band on real captured bars and holds to real settlements (its box-hit rates are computed from those fills: 0 of 10, 1 of 8 and 2 of 10 settle in the money — a measured NEGATIVE longshot win-rate, exactly the favourite-longshot bias this source describes). LiveMakerTouch underwrites captured depth on the live desk.',
+    caveat: 'A Medium post summarising papers this sandbox cannot open (paywalled/SSRN); the synthesis\'s characterisations are second-hand. The favourite-longshot bias itself is well established in the racing literature, but the claim "single highest-edge strategy" is the author\'s ranking, not a measurement — our own S19 fills currently show the bias as LOSING for longshot YES boxes and are being tested on the NO side precisely to quantify it with real simulated money.'
+  },
+  {
+    id: 'R24',
+    title: 'Kalshi homepage — live market board (odds formats, series taxonomy, the NYG@LAR Monday-night market, macro headlines) (first chunk(s) of the board; the rest is pagination)',
+    host: 'kalshi.com',
+    url: 'https://kalshi.com/',
+    capturedVia: RESEARCH_CAPTURE_METHODS.FETCHED,
+    verifiedOn: '2026-09-21',
+    claim: 'The board renders each contract as "Pays out | Odds" pairs — e.g. NY Giants 3.29x / 29%, LA Rams 1.36x / 71% on KXNFLGAME-26SEP21NYGLAR ("$38,600,150 vol", "Kickoff is at 8:15 PM ET, airing on ESPN and ABC" at SoFi Stadium). Category URLs follow /category/{economics|sports|culture|politics|elections|mentions|commodities}/... and market URLs /markets/{series}/{slug}/{ticker} with tickers WITHOUT the yes-code suffix shown in the API (kxnflgame-26sep21nyglar vs the API\'s KXNFLGAME-26SEP21NYGLAR-LAR). Series observed live: KXSUPERBOWLHEADLINE, KXRATEHIKE ("Number of rate hikes in 2026? Exactly 2 = 1.62x/58%"), KXTRUMPMENTION, KXEARNINGSMENTION{COST,NKE}, KXVMA, KXBIGBROTHER, KXPAYROLLS, KXBRPRES, KXCPI, KXCRYPTOSTRUCTURE, KXTRDBAN, KXDEBTGROWTH. The board\'s news block states: "The Federal Reserve raised its benchmark interest rate by a quarter point to a range of 3.75% to 4.00%, its first increase since 2023, according to CNBC ... under Chair Kevin Warsh."',
+    taken: '(1) The frontend\'s odds display (payout multiple + implied %) is mirrored in the site docs so a reader can reconcile our cents-against-$1 quotes with what kalshi.com shows; (2) the ticker canonical form WITHOUT the yes-code suffix is now the documented URL↔API join rule for official links on every review row; (3) the NYG@LAR lines (29% / 71% at fetch time) are the public board\'s read of the SAME market our ESPN fixture (401872947) and game-window capture plan target — kept as CONTEXT ONLY (it is a rendered marketing board, not the API); (4) the Fed-hike headline is flagged in IRREGULARITIES for macro-series readers because it moves KXRATEHIKE/KXINXY-class series and this repo trades those.',
+    testable: false,
+    notTestableReason: 'Not a price source (honesty contract: prices come from the Kalshi API stores only). The URL/ticker join rule IS exercised by every official link the review rows emit; the fixture coincidence (NYG@LAR) is asserted in test 131 against the API-shaped capture, not against this board.',
+    testedBy: [],
+    howTested: 'Not a price source (honesty contract: prices come from the Kalshi API stores only). The URL/ticker join rule IS exercised by every official link the review rows emit; the fixture coincidence (NYG@LAR) is asserted in test 131 against the API-shaped capture, not against this board.',
+    caveat: 'A marketing page, fetched once, not archived as data. Marketing boards can lag the book and round ("29% / 71%" is 2-significant-figure rounding of API cents). The Fed line is a news blurb citing CNBC — a third-hand statement kept as a dated observation, never as a price or a rule input.'
+  },
+  {
+    id: 'R25',
+    title: 'The Leap — TradingView\'s paper-trading competition platform (formats, cadence, champions disclosure) (chunk 1 of 3; the remainder is the past-champions list)',
+    host: 'tradingview.com/the-leap',
+    url: 'https://www.tradingview.com/the-leap/',
+    capturedVia: RESEARCH_CAPTURE_METHODS.FETCHED,
+    verifiedOn: '2026-09-21',
+    claim: '"Risk-free trading competitions with real-money prizes and real practice up for grabs." Cadence: roughly monthly themed contests across futures/forex/stocks/crypto/multi-asset with 36k-108k traders each (e.g. "The Leap by AMP Futures — Sep 1-30, 2026 — 102,034 traders — $50K prize pool and 250 plans"). Champions are published with exactly two performance numbers: "Net profit +155.95%" and "Profitable trades 65%" (July 2026 futures, 107,677 traders), "+271.78% / 77%" (crypto), "+17.58% / 95%" (stocks), "+308.07% / 52%" (multi-asset) — each linking a contest-results post "to see who took home the prizes and learn about their winning strategies".',
+    taken: 'Design review of our yearly competition (request #6): (1) The Leap\'s champions disclosure is exactly two numbers (net profit % + profitable-trade %) plus a strategy write-up — our standings table leads with totalReturns + winRate + a card link, matching this format; (2) their per-asset monthly cadence is mirrored by our flight/season structure; (3) their "contest results" posts are our competition-memory store (every strategy\'s trades kept as memory for future analysis). Field applied: the standings/review tables pair every username\'s return with its win rate and its verdict/caveat link, the same two-number + story disclosure The Leap uses.',
+    testable: false,
+    notTestableReason: 'Competitive-design review only (request #7: reverse-engineer the four competition sites). No price or rule is taken from a competitor\'s page; the fields we borrow are presentation and disclosure structure.',
+    testedBy: [],
+    howTested: 'Competitive-design review only (request #7: reverse-engineer the four competition sites). No price or rule is taken from a competitor\'s page; the fields we borrow are presentation and disclosure structure.',
+    caveat: 'Marketing copy and winners\' showcase — survivorship by construction (losers are not profiled). The spectacular +271%/+308% monthly numbers are top-of-100k-leaderboard outliers over ~1 month; they are not comparable to a year-long all-strategy roster and must never be cited as an expected return.'
+  },
+  {
+    id: 'R26',
+    title: 'Trade-Ideas PM Challenge — daily paper-trading competition (leaderboard schema, trade ticket, Money Machine tournaments)',
+    host: 'trade-ideas.com/stock-trading-competition',
+    url: 'https://trade-ideas.com/stock-trading-competition/',
+    capturedVia: RESEARCH_CAPTURE_METHODS.FETCHED,
+    verifiedOn: '2026-09-21',
+    claim: 'The "PM Challenge Leaderboard" schema is exactly: "Rank | User | Total Profit | Open Profit | Close Profit | Total Trades | Open Trades | Closed Trades | Account Value | Average Profit/Trade". Tournaments ("Money Machine Trades / PMC", "Battle of the Bears", "$4000 PRIZE") run alongside; the trade ticket exposes "SWING EXIT / SMART STOP / PROFIT TGT" one-click exits and a "1.3 MIN RACE / Stock Race Replay Today" gamification strip. The page states "Notice: Data delayed by 15 minutes."',
+    taken: 'The leaderboard schema is the trade-tracking schema the request asks for (#4: "readable review of all placed trades AND all upcoming trades"): the unified trade review (data/reports/trades-review-*.md + data/ledger/unified-trades.csv, generated by scripts/export-ledger.mjs --review) reports, per username, exactly these columns — total/open/closed profit, total/open/closed trade counts, account value and average profit per trade — plus the Kalshi-specific fields our honesty contract demands (fees, slippage vs captured ask, depth consumed). Their SWING EXIT / PROFIT TGT buttons are the mechanism SwingRange_Scalp automates.',
+    testable: false,
+    notTestableReason: 'Design review (request #7). The adopted schema is asserted by the export script\'s own output headers and the review tables it renders; every number in them is computed from our ledgers, never from this page.',
+    testedBy: [],
+    howTested: 'Design review (request #7). The adopted schema is asserted by the export script\'s own output headers and the review tables it renders; every number in them is computed from our ledgers, never from this page.',
+    caveat: 'The live leaderboard is behind a login ("Login to see contest results"), so the sample rows visible publicly are zeroed/placeholder — the schema was readable, the actual standings were not. "Data delayed by 15 minutes" on their quotes is the standard equities convention and is NOT acceptable here: our review rows carry the capture instant of every quote instead.'
+  },
+  {
+    id: 'R27',
+    title: 'The Candlecharts Paper Trading Showdown 2026 — one-week contest run on TradingView Community Competitions ($50k paper account, top-3 prizes, journal + wrap-up)',
+    host: 'specials.candlecharts.com/contest',
+    url: 'https://specials.candlecharts.com/contest/',
+    capturedVia: RESEARCH_CAPTURE_METHODS.FETCHED,
+    verifiedOn: '2026-09-21',
+    claim: '"Trade a $50,000 paper account in any market, climb the live leaderboard, and compete for prizes—without risking real money. Starts September 20 at 5 PM Eastern — Ends September 25 at 5 PM Eastern." "We\'ll use the final leaderboard posted on the TradingView Community Showdown page. The top three finishers will receive the prizes." The mandated stack: a TradingView paper account, Market Central analysis, the Nison Candle Scanner ("scan, highlight, and receive alerts for candlestick signals") and the Candlecharts Journal ("Document your plan, execution, and lessons so every contest trade becomes part of a more repeatable process"). Every participant is invited to a "Post-Showdown Wrap-Up Session".',
+    taken: 'Design review (request #7): (1) their WEEKLY cadence + "trade any market" maps to our flights and the unified trade review\'s per-day tables; (2) "document plan, execution and lessons for every trade" is exactly the per-strategy why-it-worked/didn\'t memory the request demands (#6) — our competition-memory store + the verdict/limitation strings on every card are that journal, and the trades review now carries each fill\'s reason string verbatim as the plan/execution note; (3) the Post-Showdown wrap-up maps to the year-end review this competition publishes at each season close. Field applied: the trade review renders each row\'s verbatim decision reason (the journal entry) next to the fill.',
+    testable: false,
+    notTestableReason: 'Design review (request #7). Nothing numeric is taken from the page.',
+    testedBy: [],
+    howTested: 'Design review (request #7). Nothing numeric is taken from the page.',
+    caveat: 'A marketing funnel for the Candlecharts tool stack (journal/scanner trials) built on TradingView\'s community-competition plumbing; the contest itself ran Sep 20-25, 2026 and its leaderboard lives on tradingview.com/community-competitions/... (not fetched). Prize structure (1st lifetime journal, 2nd/3rd store credit) is their commercial arrangement and is not a performance claim.'
+  },
+
 ]);
 
 
@@ -532,10 +664,24 @@ export const RESEARCH_GAPS = Object.freeze([
   },
   {
     gap: 'Pre-game model probabilities archived point-in-time (S14 MLB-Prediction-model, S10 SportsPred)',
-    status: 'open',
+    status: 'closed (2026-09-21: data/mlb-pregame/ + archive-mlb-pregame.mjs + the strategy and desk hooks ship this session (V118); the SportsPred hub half and the model CLI `predict` command remain open — tracked in the mlb-pregame-signals workflow plan)',
     why: 'The owner\'s MLB prediction model and SportsPred hub produce pre-game win probabilities — the "independent estimate vs market price" architecture that ForecastEdge_Weather uses, but for sports.',
     blockedBy: 'Neither model\'s outputs are archived anywhere with capture timestamps; the model must RUN to produce a number, and running it inside this repository would be a new build, not a capture.',
     toClose: 'A scheduled workflow that runs the model against official schedule data and appends {capturedAt, gamePk, p_home} to a store BEFORE first pitch; the MLB game join (fact V113) and the signal-provider hook already exist.'
+  },
+  {
+    gap: 'Tick/1-minute game-series bars with real ladders (the R19 shock window and any in-play scalp on KX*NFL/MLB/NBA*GAME)',
+    status: 'open (capture PLANNED 2026-09-21: minute-mlb-game-lines + minute-nfl-game-lines ingest blocks are in data/history/_ingest-request.json and the 00:30/02:30 UTC daily-history crons capture game-window books; bars appear after the first runs)',
+    why: 'Every game-series ladder stored before 2026-09-21 was captured AFTER settlement and the exchange returns an empty book then, so the desk kept 0 tradeable slots in those series. The 2-minute shock detector of R19 additionally needs 1-minute (or finer) closes inside a live game.',
+    blockedBy: 'Time: the first game-window capture runs 2026-09-22 00:30 UTC.',
+    toClose: 'Confirm a NON-empty orderbook in data/history/KXNFLGAME-*/KXMLBGAME-* after the 00:30 UTC run (irregularity #60 test), then let the minute bars accumulate for the R19 window and any in-play scalp.'
+  },
+  {
+    gap: 'Second forecast model column (Euro vs GFS divergence) + lead-days per archived prediction row (R21 skill-decay + divergence edges)',
+    status: 'open',
+    why: 'R21\'s two tradeable edges both need inputs the forecast archive does not pin: side-by-side model disagreement, and the lead-time band of each quoted contract. Recreating either on price alone would fabricate direction — refused under the honesty rule (see R21 taken/howTested).',
+    blockedBy: 'Archive schema work: a second model series in data/forecasts/ + surfacing the existing horizon computation on each row.',
+    toClose: 'Add the Euro (or GFS) column to the forecast capture and a leadDays field on each prediction row, then recreate the R21 divergence and skill-decay rules against both.'
   }
 ]);
 

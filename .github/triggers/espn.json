@@ -1,0 +1,8 @@
+{
+  "_README": "Commit a change to this file to request an immediate ESPN game-state + injury capture (.github/workflows/espn-signals.yml). The workflow also runs every 20 minutes through the NFL/NBA/NCAA playing windows on the default branch; this trigger exists for on-demand captures on any branch (and because the automation token cannot create workflow_dispatch events). Bump `request` so the push is a real change. TRUST: ESPN public JSON — TRUSTED BUT NOT OFFICIAL.",
+  "request": 1,
+  "enabled": true,
+  "requested_at": "2026-09-21T23:20:00.000Z",
+  "requested_by": "arena session 01a0c625 — first run of the ESPN game-state + injury archive (ROADMAP Next #3(a)). Expected: data/espn-signals/<league>/_teams.json for nfl/nba/college-football, injuries date files, scoreboard date files, and _code-map.json (the evidence-built Kalshi↔ESPN join) with UNMAPPED rows published per unmatchable code.",
+  "why": "The archive must exist BEFORE the first game an injury/state entry is measured on: the ESPN entries abstain on every bar with no state row captured at or before it, and an unjoinable ticker is never traded."
+}

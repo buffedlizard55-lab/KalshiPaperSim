@@ -1,0 +1,127 @@
+name: ESPN signal archive
+
+# ROADMAP "Next #3(a)" — the NFL / NBA / NCAA half of the point-in-time signal
+# archive (the MLB half is mlb-signals.yml on the OFFICIAL Stats API; this one
+# is ESPN public JSON): archive game states and injury designations every 20
+# minutes through the playing windows so a sports strategy can only ever read
+# the picture that was observable AT DECISION TIME.
+#
+# TRUST: ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL. ESPN is a public,
+# keyless aggregator — NOT a league's official data feed. Every store file and
+# every strategy that reads it carries the label. Settlement always follows
+# the exchange's own result.
+#
+# SOURCE: site.web.api.espn.com (scoreboard?dates=YYYYMMDD, injuries, teams per
+# league: nfl, nba, college-football, mens-college-basketball, nhl, wnba).
+# Response shapes were verified live on 2026-09-21 and are pinned by
+# data/espn-signals/fixtures/ (scoreboard-nfl-20260921.json includes the
+# per-event shape earlier sessions could not retrieve — irregularity #58).
+#
+# WHAT IT WRITES: data/espn-signals/<league>/scoreboard/<date>.json (one state
+# row per change per event), <league>/injuries/<date>.json (one row per
+# change per player record), <league>/_teams.json, and _code-map.json (the
+# evidence-built Kalshi-code ↔ ESPN-team join).
+#
+# WHY A WORKFLOW: ESPN is not reachable from the build sandbox (the same
+# environment that cannot reach *.kalshi.com — IRREGULARITIES #4). GitHub-hosted
+# runners have unrestricted egress.
+#
+# TRIGGER: every 20 minutes from 15:00 to 06:59 UTC (the NFL/NBA/NCAA playing
+# windows), plus any push that changes .github/triggers/espn.json. NOTE:
+# GitHub runs scheduled workflows on the DEFAULT branch only.
+
+on:
+  schedule:
+    - cron: '*/20 15-23 * * *'
+    - cron: '*/20 0-6 * * *'
+  push:
+    paths:
+      - '.github/triggers/espn.json'
+  workflow_dispatch:
+
+# OWN queue, deliberately NOT the shared data-pipeline group (see
+# mlb-signals.yml for the reasoning: a 20-minute bot inside the shared group
+# would evict queued weather/FDA/ingest runs).
+concurrency:
+  group: espn-signals-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync with the branch tip (best-effort)
+        continue-on-error: true
+        run: |
+          git fetch --deepen=100 origin "${GITHUB_REF_NAME}"
+          git merge --ff-only "origin/${GITHUB_REF_NAME}"
+
+      - name: Capture the point-in-time ESPN game states + injuries
+        run: |
+          set -o pipefail
+          node scripts/archive-espn-signals.mjs 2>&1 | tee espn-signals.log
+
+      - name: Audit the ESPN signal store (no network)
+        run: |
+          set -o pipefail
+          node scripts/archive-espn-signals.mjs --verify | tee -a espn-signals.log
+
+      - name: Regenerate the browser-safe modules and the Pages bundle
+        run: |
+          set -o pipefail
+          node scripts/generate-history-module.mjs | tee -a espn-signals.log
+          node scripts/generate-desk-module.mjs | tee -a espn-signals.log
+          node scripts/render-docs.js | tee -a espn-signals.log
+          node build.js | tee -a espn-signals.log
+
+      - name: Commit the new state rows
+        if: always()
+        run: |
+          # Runs even after a failed capture so the run report
+          # (data/espn-signals/_espn-last-run.json, with per-request HTTP
+          # errors) is committed and diagnosable from the repository itself.
+          BOT_NAME="kalshi-espn-bot" \
+          BOT_EMAIL="kalshi-espn-bot@users.noreply.github.com" \
+          bash scripts/push-with-race-guard.sh \
+            "chore(espn-signals): archive point-in-time ESPN game state + injuries $(date -u +%F' '%H:%M)" \
+            "${GITHUB_REF_NAME}"
+
+      - name: Upload the capture log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: espn-signals-log
+          path: espn-signals.log
+          if-no-files-found: warn
+
+      - name: Keep the captured state rows on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: espn-signal-store-${{ github.run_id }}
+          path: data/espn-signals/
+          if-no-files-found: warn
+
+      - name: Fail the run when a request did not capture
+        if: always()
+        run: |
+          node -e "
+          const fs = require('fs');
+          if (!fs.existsSync('data/espn-signals/_espn-last-run.json')) { console.log('no run report — nothing to evaluate'); process.exit(0); }
+          const rep = JSON.parse(fs.readFileSync('data/espn-signals/_espn-last-run.json', 'utf8'));
+          const f = rep.errors || [];
+          if (f.length) {
+            for (const x of f) console.error('::error::' + JSON.stringify(x));
+            process.exit(1);
+          }
+          console.log('all requests captured; code map: ' + JSON.stringify(rep.codeMap || {}));
+          "

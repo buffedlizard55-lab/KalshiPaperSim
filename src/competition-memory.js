@@ -63,6 +63,12 @@ export const DESK_RESERVED_USERNAMES = Object.freeze([
   'LiveTheLeap_Momentum',
   'LiveInsider_FilingFader',
   'LiveWeather_ForecastEdge',
+  // ESPN public JSON + S14 pre-game (2026-09-21): the three entrants that read
+  // the point-in-time ESPN game-state/injury archive and the owner model's
+  // pre-game snapshots through the shared signal hook.
+  'LiveMLB_TheoryEdge',
+  'LiveNFL_InjuryGate',
+  'LiveNBA_InjuryGate',
   // Season entrants (src/desk-season-strategies.js) — the carried-book roster.
   'SeasonWeather_Carry',
   'SeasonIndex_CarryHold',
