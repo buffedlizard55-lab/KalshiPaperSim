@@ -5,251 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1789300800,
-      "open_interest_fp": "16385.69",
-      "price": {
-        "previous_dollars": "0.3800"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.3900",
-        "high_dollars": "0.4000",
-        "low_dollars": "0.3700",
-        "open_dollars": "0.3900"
-      },
-      "yes_bid": {
-        "close_dollars": "0.3300",
-        "high_dollars": "0.3600",
-        "low_dollars": "0.1500",
-        "open_dollars": "0.3600"
-      }
-    },
-    {
-      "end_period_ts": 1789304400,
-      "open_interest_fp": "16385.69",
-      "price": {
-        "previous_dollars": "0.3800"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.3900",
-        "high_dollars": "0.4000",
-        "low_dollars": "0.3600",
-        "open_dollars": "0.3900"
-      },
-      "yes_bid": {
-        "close_dollars": "0.3300",
-        "high_dollars": "0.3600",
-        "low_dollars": "0.3200",
-        "open_dollars": "0.3300"
-      }
-    },
-    {
-      "end_period_ts": 1789308000,
-      "open_interest_fp": "16385.69",
-      "price": {
-        "previous_dollars": "0.3800"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.3700",
-        "high_dollars": "0.4000",
-        "low_dollars": "0.3600",
-        "open_dollars": "0.3900"
-      },
-      "yes_bid": {
-        "close_dollars": "0.3300",
-        "high_dollars": "0.3500",
-        "low_dollars": "0.3200",
-        "open_dollars": "0.3300"
-      }
-    },
-    {
-      "end_period_ts": 1789311600,
-      "open_interest_fp": "16385.69",
-      "price": {
-        "previous_dollars": "0.3800"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.3800",
-        "high_dollars": "0.4100",
-        "low_dollars": "0.3600",
-        "open_dollars": "0.3700"
-      },
-      "yes_bid": {
-        "close_dollars": "0.3500",
-        "high_dollars": "0.3500",
-        "low_dollars": "0.3200",
-        "open_dollars": "0.3300"
-      }
-    },
-    {
-      "end_period_ts": 1789315200,
-      "open_interest_fp": "16385.69",
-      "price": {
-        "previous_dollars": "0.3800"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.4000",
-        "high_dollars": "0.4100",
-        "low_dollars": "0.3600",
-        "open_dollars": "0.3800"
-      },
-      "yes_bid": {
-        "close_dollars": "0.3300",
-        "high_dollars": "0.3500",
-        "low_dollars": "0.2400",
-        "open_dollars": "0.3500"
-      }
-    },
-    {
-      "end_period_ts": 1789318800,
-      "open_interest_fp": "16390.73",
-      "price": {
-        "close_dollars": "0.3800",
-        "high_dollars": "0.3800",
-        "low_dollars": "0.3800",
-        "mean_dollars": "0.3800",
-        "open_dollars": "0.3800",
-        "previous_dollars": "0.3800"
-      },
-      "volume_fp": "5.04",
-      "yes_ask": {
-        "close_dollars": "0.3700",
-        "high_dollars": "0.4100",
-        "low_dollars": "0.3700",
-        "open_dollars": "0.4000"
-      },
-      "yes_bid": {
-        "close_dollars": "0.3300",
-        "high_dollars": "0.3700",
-        "low_dollars": "0.3200",
-        "open_dollars": "0.3300"
-      }
-    },
-    {
-      "end_period_ts": 1789322400,
-      "open_interest_fp": "16390.73",
-      "price": {
-        "previous_dollars": "0.3800"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.3800",
-        "high_dollars": "0.4000",
-        "low_dollars": "0.3700",
-        "open_dollars": "0.3700"
-      },
-      "yes_bid": {
-        "close_dollars": "0.3400",
-        "high_dollars": "0.3600",
-        "low_dollars": "0.1700",
-        "open_dollars": "0.3300"
-      }
-    },
-    {
-      "end_period_ts": 1789326000,
-      "open_interest_fp": "16415.72",
-      "price": {
-        "close_dollars": "0.4000",
-        "high_dollars": "0.4000",
-        "low_dollars": "0.3800",
-        "mean_dollars": "0.3832",
-        "open_dollars": "0.3800",
-        "previous_dollars": "0.3800"
-      },
-      "volume_fp": "24.99",
-      "yes_ask": {
-        "close_dollars": "0.3800",
-        "high_dollars": "0.4100",
-        "low_dollars": "0.3800",
-        "open_dollars": "0.3800"
-      },
-      "yes_bid": {
-        "close_dollars": "0.3300",
-        "high_dollars": "0.3800",
-        "low_dollars": "0.3300",
-        "open_dollars": "0.3400"
-      }
-    },
-    {
-      "end_period_ts": 1789329600,
-      "open_interest_fp": "16410.81",
-      "price": {
-        "close_dollars": "0.3600",
-        "high_dollars": "0.3600",
-        "low_dollars": "0.3600",
-        "mean_dollars": "0.3600",
-        "open_dollars": "0.3600",
-        "previous_dollars": "0.4000"
-      },
-      "volume_fp": "4.91",
-      "yes_ask": {
-        "close_dollars": "0.4000",
-        "high_dollars": "0.4000",
-        "low_dollars": "0.3800",
-        "open_dollars": "0.3800"
-      },
-      "yes_bid": {
-        "close_dollars": "0.3600",
-        "high_dollars": "0.3600",
-        "low_dollars": "0.3300",
-        "open_dollars": "0.3300"
-      }
-    },
-    {
-      "end_period_ts": 1789333200,
-      "open_interest_fp": "16412.73",
-      "price": {
-        "close_dollars": "0.3400",
-        "high_dollars": "0.3700",
-        "low_dollars": "0.3400",
-        "mean_dollars": "0.3531",
-        "open_dollars": "0.3600",
-        "previous_dollars": "0.3600"
-      },
-      "volume_fp": "27.24",
-      "yes_ask": {
-        "close_dollars": "0.3600",
-        "high_dollars": "0.4000",
-        "low_dollars": "0.3600",
-        "open_dollars": "0.4000"
-      },
-      "yes_bid": {
-        "close_dollars": "0.3400",
-        "high_dollars": "0.3600",
-        "low_dollars": "0.3300",
-        "open_dollars": "0.3600"
-      }
-    },
-    {
-      "end_period_ts": 1789336800,
-      "open_interest_fp": "17206.14",
-      "price": {
-        "close_dollars": "0.3900",
-        "high_dollars": "0.3900",
-        "low_dollars": "0.3600",
-        "mean_dollars": "0.3743",
-        "open_dollars": "0.3600",
-        "previous_dollars": "0.3400"
-      },
-      "volume_fp": "793.41",
-      "yes_ask": {
-        "close_dollars": "0.3800",
-        "high_dollars": "0.4000",
-        "low_dollars": "0.3600",
-        "open_dollars": "0.3600"
-      },
-      "yes_bid": {
-        "close_dollars": "0.3400",
-        "high_dollars": "0.3600",
-        "low_dollars": "0.3300",
-        "open_dollars": "0.3400"
-      }
-    },
-    {
       "end_period_ts": 1789340400,
       "open_interest_fp": "17299.58",
       "price": {
@@ -4620,6 +4375,271 @@
       "yes_bid": {
         "close_dollars": "0.3600",
         "high_dollars": "0.3600",
+        "low_dollars": "0.3500",
+        "open_dollars": "0.3500"
+      }
+    },
+    {
+      "end_period_ts": 1790024400,
+      "open_interest_fp": "26319.00",
+      "price": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3700",
+        "mean_dollars": "0.3700",
+        "open_dollars": "0.3700",
+        "previous_dollars": "0.3700"
+      },
+      "volume_fp": "129.42",
+      "yes_ask": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3700",
+        "open_dollars": "0.3700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3500",
+        "open_dollars": "0.3600"
+      }
+    },
+    {
+      "end_period_ts": 1790028000,
+      "open_interest_fp": "26370.77",
+      "price": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3500",
+        "mean_dollars": "0.3676",
+        "open_dollars": "0.3500",
+        "previous_dollars": "0.3700"
+      },
+      "volume_fp": "61.95",
+      "yes_ask": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3600",
+        "open_dollars": "0.3700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3500",
+        "low_dollars": "0.3500",
+        "open_dollars": "0.3500"
+      }
+    },
+    {
+      "end_period_ts": 1790031600,
+      "open_interest_fp": "26445.34",
+      "price": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3700",
+        "mean_dollars": "0.3700",
+        "open_dollars": "0.3700",
+        "previous_dollars": "0.3700"
+      },
+      "volume_fp": "74.57",
+      "yes_ask": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3700",
+        "open_dollars": "0.3700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3600",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3500",
+        "open_dollars": "0.3500"
+      }
+    },
+    {
+      "end_period_ts": 1790035200,
+      "open_interest_fp": "26471.22",
+      "price": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3700",
+        "mean_dollars": "0.3700",
+        "open_dollars": "0.3700",
+        "previous_dollars": "0.3700"
+      },
+      "volume_fp": "25.88",
+      "yes_ask": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3700",
+        "open_dollars": "0.3700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3600",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3600",
+        "open_dollars": "0.3600"
+      }
+    },
+    {
+      "end_period_ts": 1790038800,
+      "open_interest_fp": "26447.26",
+      "price": {
+        "close_dollars": "0.3600",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3600",
+        "mean_dollars": "0.3606",
+        "open_dollars": "0.3700",
+        "previous_dollars": "0.3700"
+      },
+      "volume_fp": "27.08",
+      "yes_ask": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3700",
+        "open_dollars": "0.3700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3600",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3600",
+        "open_dollars": "0.3600"
+      }
+    },
+    {
+      "end_period_ts": 1790042400,
+      "open_interest_fp": "26422.67",
+      "price": {
+        "close_dollars": "0.3600",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3600",
+        "mean_dollars": "0.3600",
+        "open_dollars": "0.3600",
+        "previous_dollars": "0.3600"
+      },
+      "volume_fp": "24.59",
+      "yes_ask": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3700",
+        "open_dollars": "0.3700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3600",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3600",
+        "open_dollars": "0.3600"
+      }
+    },
+    {
+      "end_period_ts": 1790046000,
+      "open_interest_fp": "26498.82",
+      "price": {
+        "close_dollars": "0.3800",
+        "high_dollars": "0.3800",
+        "low_dollars": "0.3700",
+        "mean_dollars": "0.3774",
+        "open_dollars": "0.3700",
+        "previous_dollars": "0.3600"
+      },
+      "volume_fp": "76.15",
+      "yes_ask": {
+        "close_dollars": "0.3800",
+        "high_dollars": "0.3800",
+        "low_dollars": "0.3700",
+        "open_dollars": "0.3700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3600",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3600",
+        "open_dollars": "0.3600"
+      }
+    },
+    {
+      "end_period_ts": 1790049600,
+      "open_interest_fp": "26516.47",
+      "price": {
+        "close_dollars": "0.3800",
+        "high_dollars": "0.3800",
+        "low_dollars": "0.3800",
+        "mean_dollars": "0.3800",
+        "open_dollars": "0.3800",
+        "previous_dollars": "0.3800"
+      },
+      "volume_fp": "17.65",
+      "yes_ask": {
+        "close_dollars": "0.3800",
+        "high_dollars": "0.3800",
+        "low_dollars": "0.3800",
+        "open_dollars": "0.3800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3600",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3600",
+        "open_dollars": "0.3600"
+      }
+    },
+    {
+      "end_period_ts": 1790053200,
+      "open_interest_fp": "26433.05",
+      "price": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3800",
+        "low_dollars": "0.3500",
+        "mean_dollars": "0.3602",
+        "open_dollars": "0.3600",
+        "previous_dollars": "0.3800"
+      },
+      "volume_fp": "218.76",
+      "yes_ask": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3800",
+        "low_dollars": "0.3700",
+        "open_dollars": "0.3800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3500",
+        "open_dollars": "0.3600"
+      }
+    },
+    {
+      "end_period_ts": 1790056800,
+      "open_interest_fp": "26433.05",
+      "price": {
+        "previous_dollars": "0.3500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3700",
+        "open_dollars": "0.3700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3500",
+        "open_dollars": "0.3500"
+      }
+    },
+    {
+      "end_period_ts": 1790060400,
+      "open_interest_fp": "26433.05",
+      "price": {
+        "previous_dollars": "0.3500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.3700",
+        "open_dollars": "0.3700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3500",
         "low_dollars": "0.3500",
         "open_dollars": "0.3500"
       }
@@ -13265,6 +13285,246 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T07:59:02.968Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "212974.49"
+            ],
+            [
+              "0.0200",
+              "6142.58"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0500",
+              "4500.00"
+            ],
+            [
+              "0.0600",
+              "666.00"
+            ],
+            [
+              "0.0700",
+              "24.21"
+            ],
+            [
+              "0.1000",
+              "100.65"
+            ],
+            [
+              "0.1200",
+              "686.75"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "9.92"
+            ],
+            [
+              "0.1500",
+              "27.19"
+            ],
+            [
+              "0.1600",
+              "4.91"
+            ],
+            [
+              "0.1700",
+              "24.30"
+            ],
+            [
+              "0.1800",
+              "51.25"
+            ],
+            [
+              "0.1900",
+              "2.52"
+            ],
+            [
+              "0.2000",
+              "5.04"
+            ],
+            [
+              "0.2100",
+              "27.72"
+            ],
+            [
+              "0.2200",
+              "24.93"
+            ],
+            [
+              "0.2400",
+              "15.94"
+            ],
+            [
+              "0.2500",
+              "668.28"
+            ],
+            [
+              "0.2900",
+              "37.92"
+            ],
+            [
+              "0.3000",
+              "2122.95"
+            ],
+            [
+              "0.3100",
+              "6.14"
+            ],
+            [
+              "0.3500",
+              "1.25"
+            ],
+            [
+              "0.3900",
+              "49.18"
+            ],
+            [
+              "0.4000",
+              "6.14"
+            ],
+            [
+              "0.4200",
+              "5.28"
+            ],
+            [
+              "0.4300",
+              "12.91"
+            ],
+            [
+              "0.4400",
+              "2.34"
+            ],
+            [
+              "0.4800",
+              "25.22"
+            ],
+            [
+              "0.5500",
+              "750.00"
+            ],
+            [
+              "0.5600",
+              "12.28"
+            ],
+            [
+              "0.5800",
+              "3758.00"
+            ],
+            [
+              "0.5900",
+              "200.00"
+            ],
+            [
+              "0.6000",
+              "4791.00"
+            ],
+            [
+              "0.6100",
+              "6880.47"
+            ],
+            [
+              "0.6200",
+              "101.00"
+            ],
+            [
+              "0.6300",
+              "1528.71"
+            ],
+            [
+              "0.6400",
+              "30.82"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "210000.00"
+            ],
+            [
+              "0.0200",
+              "15394.00"
+            ],
+            [
+              "0.0300",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0800",
+              "2000.00"
+            ],
+            [
+              "0.0900",
+              "2240.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "300.38"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "0.76"
+            ],
+            [
+              "0.2800",
+              "2339.00"
+            ],
+            [
+              "0.2900",
+              "1367.00"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3100",
+              "375.00"
+            ],
+            [
+              "0.3200",
+              "97.16"
+            ],
+            [
+              "0.3300",
+              "73.00"
+            ],
+            [
+              "0.3400",
+              "330.28"
+            ],
+            [
+              "0.3500",
+              "201.18"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -13280,20 +13540,20 @@
     "expected_expiration_time": "2026-10-21T02:00:00Z",
     "expiration_time": "2026-10-22T23:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.3700",
+    "last_price_dollars": "0.3500",
     "latest_expiration_time": "2026-10-22T23:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.6500",
-    "no_bid_dollars": "0.6300",
+    "no_bid_dollars": "0.6400",
     "no_sub_title": "Philadelphia",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-21T02:00:00Z",
-    "open_interest_fp": "26241.35",
+    "open_interest_fp": "26433.05",
     "open_time": "2026-08-20T15:28:00Z",
     "previous_price_dollars": "0.3700",
-    "previous_yes_ask_dollars": "0.3900",
-    "previous_yes_bid_dollars": "0.3700",
+    "previous_yes_ask_dollars": "0.3700",
+    "previous_yes_bid_dollars": "0.3600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -13311,19 +13571,19 @@
     "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
     "title": "Philadelphia wins",
     "updated_time": "2026-08-20T15:28:00.432079Z",
-    "volume_24h_fp": "1619.03",
-    "volume_fp": "34112.42",
-    "yes_ask_dollars": "0.3700",
-    "yes_ask_size_fp": "499.32",
+    "volume_24h_fp": "1049.29",
+    "volume_fp": "34716.70",
+    "yes_ask_dollars": "0.3600",
+    "yes_ask_size_fp": "30.82",
     "yes_bid_dollars": "0.3500",
-    "yes_bid_size_fp": "217.24",
+    "yes_bid_size_fp": "201.18",
     "yes_sub_title": "Philadelphia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI",
-  "market_captured_at": "2026-09-21T20:39:53.244Z",
+  "market_captured_at": "2026-09-22T07:59:02.242Z",
   "status": "active",
-  "last_ingested_at": "2026-09-21T20:39:53.869Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-PHI/candlesticks?start_ts=1789992001&end_ts=1790023193&period_interval=60",
+  "last_ingested_at": "2026-09-22T07:59:02.908Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-PHI/candlesticks?start_ts=1790020801&end_ts=1790063942&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T06:40:03.829Z",
@@ -13434,6 +13694,14 @@
       "dropped": 8,
       "dropped_from_ts": 1789272000,
       "dropped_to_ts": 1789297200,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-22T07:59:03.268Z",
+      "dropped": 11,
+      "dropped_from_ts": 1789300800,
+      "dropped_to_ts": 1789336800,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }

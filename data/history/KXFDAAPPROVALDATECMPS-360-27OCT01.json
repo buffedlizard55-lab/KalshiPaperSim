@@ -3090,6 +3090,26 @@
         "low_dollars": "0.0400",
         "open_dollars": "0.8300"
       }
+    },
+    {
+      "end_period_ts": 1790049600,
+      "open_interest_fp": "1040.10",
+      "price": {
+        "previous_dollars": "0.9000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.9000",
+        "open_dollars": "0.9000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8300",
+        "high_dollars": "0.8300",
+        "low_dollars": "0.8300",
+        "open_dollars": "0.8300"
+      }
     }
   ],
   "books": [
@@ -4232,6 +4252,110 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T07:51:58.417Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3383.00"
+            ],
+            [
+              "0.0200",
+              "835.00"
+            ],
+            [
+              "0.1000",
+              "500.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "9905.00"
+            ],
+            [
+              "0.0200",
+              "3740.00"
+            ],
+            [
+              "0.0300",
+              "5062.00"
+            ],
+            [
+              "0.3100",
+              "948.00"
+            ],
+            [
+              "0.3200",
+              "208.00"
+            ],
+            [
+              "0.8200",
+              "500.00"
+            ],
+            [
+              "0.8300",
+              "5.17"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-22T08:02:59.829Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3383.00"
+            ],
+            [
+              "0.0200",
+              "835.00"
+            ],
+            [
+              "0.1000",
+              "500.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "9905.00"
+            ],
+            [
+              "0.0200",
+              "3740.00"
+            ],
+            [
+              "0.0300",
+              "5062.00"
+            ],
+            [
+              "0.3100",
+              "948.00"
+            ],
+            [
+              "0.3200",
+              "208.00"
+            ],
+            [
+              "0.8200",
+              "500.00"
+            ],
+            [
+              "0.8300",
+              "5.17"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4258,8 +4382,8 @@
     "open_interest_fp": "1040.10",
     "open_time": "2026-03-24T14:00:00Z",
     "previous_price_dollars": "0.9000",
-    "previous_yes_ask_dollars": "0.9700",
-    "previous_yes_bid_dollars": "0.0700",
+    "previous_yes_ask_dollars": "0.9000",
+    "previous_yes_bid_dollars": "0.8300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4286,8 +4410,8 @@
     "yes_sub_title": "Before October 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27OCT01",
-  "market_captured_at": "2026-09-21T20:42:41.821Z",
+  "market_captured_at": "2026-09-22T08:02:59.106Z",
   "status": "active",
-  "last_ingested_at": "2026-09-21T20:42:42.446Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27OCT01/candlesticks?start_ts=1789963201&end_ts=1790023362&period_interval=1440"
+  "last_ingested_at": "2026-09-22T08:02:59.768Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27OCT01/candlesticks?start_ts=1790049601&end_ts=1790064179&period_interval=1440"
 }

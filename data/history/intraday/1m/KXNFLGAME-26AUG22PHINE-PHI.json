@@ -1,0 +1,79 @@
+{
+  "ticker": "KXNFLGAME-26AUG22PHINE-PHI",
+  "series_ticker": "KXNFLGAME",
+  "period_interval": 1,
+  "source": "live_api",
+  "candlesticks": [],
+  "books": [
+    {
+      "captured_at": "2026-09-22T08:02:04.522Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-PHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    }
+  ],
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-08-23T02:13:26Z",
+    "created_time": "2026-08-16T16:16:07.43706Z",
+    "custom_strike": {
+      "football_team": "bc65405b-5bda-425c-b7c5-681c382e6a5a"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNFLGAME-26AUG22PHINE",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-08-23T02:00:00Z",
+    "expiration_time": "2026-08-24T23:00:00Z",
+    "expiration_value": "NE Patriots",
+    "last_price_dollars": "0.0100",
+    "latest_expiration_time": "2026-08-24T23:00:00Z",
+    "liquidity_dollars": "0.0000",
+    "market_type": "binary",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
+    "no_sub_title": "PHI Eagles",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-08-23T02:00:00Z",
+    "open_interest_fp": "2714462.25",
+    "open_time": "2026-08-16T16:20:00Z",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "no",
+    "rules_primary": "If PHI Eagles wins the Philadelphia vs New England Pro Football game originally scheduled for Aug 22, 2026, then the market resolves to Yes.",
+    "rules_secondary": "The following market refers to the team who wins the Philadelphia vs New England Pro Football game originally scheduled for Aug 22, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_timer_seconds": 60,
+    "settlement_ts": "2026-08-23T02:15:27.383676Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
+    "strike_type": "structured",
+    "ticker": "KXNFLGAME-26AUG22PHINE-PHI",
+    "title": "Philadelphia vs New England Pro Football game: PHI Eagles wins?",
+    "updated_time": "2026-08-23T02:15:29.204561Z",
+    "volume_24h_fp": "0.00",
+    "volume_fp": "8318961.40",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
+    "yes_sub_title": "PHI Eagles"
+  },
+  "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-PHI",
+  "market_captured_at": "2026-09-22T08:02:03.076Z",
+  "result": "no",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-22T08:02:04.462Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG22PHINE-PHI/candlesticks?start_ts=1789977723&end_ts=1790064122&period_interval=1"
+}

@@ -3359,6 +3359,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T07:54:45.820Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20JACDEN-45/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3383,9 +3393,9 @@
     "occurrence_datetime": "2026-09-20T23:05:00Z",
     "open_interest_fp": "100638.04",
     "open_time": "2026-09-14T01:05:00Z",
-    "previous_price_dollars": "0.3000",
-    "previous_yes_ask_dollars": "0.2800",
-    "previous_yes_bid_dollars": "0.2600",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3405,7 +3415,7 @@
     "ticker": "KXNFLTOTAL-26SEP20JACDEN-45",
     "title": "Full Game: over 44.5 points scored?",
     "updated_time": "2026-09-20T23:17:25.030181Z",
-    "volume_24h_fp": "13919.40",
+    "volume_24h_fp": "0.00",
     "volume_fp": "125626.87",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3414,9 +3424,9 @@
     "yes_sub_title": "Over 44.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20JACDEN-45",
-  "market_captured_at": "2026-09-21T20:35:58.125Z",
+  "market_captured_at": "2026-09-22T07:54:45.198Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-21T20:35:58.648Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20JACDEN-45/candlesticks?start_ts=1789963201&end_ts=1790022958&period_interval=1440",
+  "last_ingested_at": "2026-09-22T07:54:45.760Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20JACDEN-45/candlesticks?start_ts=1789963201&end_ts=1790063685&period_interval=1440",
   "result": "no"
 }

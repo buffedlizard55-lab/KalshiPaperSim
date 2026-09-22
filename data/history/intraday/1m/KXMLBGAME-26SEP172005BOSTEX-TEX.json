@@ -14,6 +14,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T08:01:06.943Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172005BOSTEX-TEX/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -71,9 +81,9 @@
     "yes_sub_title": "Texas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP172005BOSTEX-TEX",
-  "market_captured_at": "2026-09-21T20:41:51.590Z",
+  "market_captured_at": "2026-09-22T08:01:05.857Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-21T20:41:52.540Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP172005BOSTEX-TEX/candlesticks?start_ts=1789936911&end_ts=1790023310&period_interval=1"
+  "last_ingested_at": "2026-09-22T08:01:06.882Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP172005BOSTEX-TEX/candlesticks?start_ts=1789977666&end_ts=1790064065&period_interval=1"
 }

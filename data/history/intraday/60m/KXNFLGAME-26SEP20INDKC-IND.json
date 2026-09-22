@@ -4960,6 +4960,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T07:58:40.769Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4986,9 +4996,9 @@
     "occurrence_datetime": "2026-09-21T03:20:00Z",
     "open_interest_fp": "17852126.59",
     "open_time": "2026-08-25T15:33:00Z",
-    "previous_price_dollars": "0.2900",
-    "previous_yes_ask_dollars": "0.2900",
-    "previous_yes_bid_dollars": "0.2800",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5008,7 +5018,7 @@
     "ticker": "KXNFLGAME-26SEP20INDKC-IND",
     "title": "Indianapolis wins",
     "updated_time": "2026-09-21T04:00:25.930402Z",
-    "volume_24h_fp": "41280014.56",
+    "volume_24h_fp": "0.00",
     "volume_fp": "41397950.68",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -5017,11 +5027,11 @@
     "yes_sub_title": "Indianapolis"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND",
-  "market_captured_at": "2026-09-21T20:39:32.850Z",
+  "market_captured_at": "2026-09-22T07:58:40.046Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-21T20:39:33.473Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-IND/candlesticks?start_ts=1789963201&end_ts=1790023173&period_interval=60",
+  "last_ingested_at": "2026-09-22T07:58:40.708Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-IND/candlesticks?start_ts=1789963201&end_ts=1790063920&period_interval=60",
   "trims": [
     {
       "at": "2026-09-21T12:57:15.425Z",

@@ -6505,6 +6505,26 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1790049600,
+      "open_interest_fp": "189602.44",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -9319,6 +9339,110 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T07:52:35.383Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142857.00"
+            ],
+            [
+              "0.0300",
+              "340.00"
+            ],
+            [
+              "0.0500",
+              "109.24"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.3300",
+              "150.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5100",
+              "471.63"
+            ],
+            [
+              "0.5800",
+              "120.93"
+            ],
+            [
+              "0.7000",
+              "7040.00"
+            ],
+            [
+              "0.8000",
+              "1785.00"
+            ],
+            [
+              "0.8100",
+              "3.12"
+            ],
+            [
+              "0.8200",
+              "3181.83"
+            ],
+            [
+              "0.8500",
+              "5300.00"
+            ],
+            [
+              "0.8800",
+              "1200.00"
+            ],
+            [
+              "0.8900",
+              "6.24"
+            ],
+            [
+              "0.9300",
+              "6200.00"
+            ],
+            [
+              "0.9400",
+              "4996.00"
+            ],
+            [
+              "0.9500",
+              "8237.70"
+            ],
+            [
+              "0.9600",
+              "5709.63"
+            ],
+            [
+              "0.9700",
+              "5536.06"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "104.00"
+            ],
+            [
+              "0.0200",
+              "251.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -9363,17 +9487,17 @@
     "ticker": "KXINXY-26DEC31H1600-B6900",
     "title": "Will the S&P 500 be between 6800 and 6999.99 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:01.866905Z",
-    "volume_24h_fp": "2010.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "297991.96",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "5278.15",
+    "yes_ask_size_fp": "5536.06",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "276.63",
+    "yes_bid_size_fp": "251.00",
     "yes_sub_title": "6,800 to 6,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B6900",
-  "market_captured_at": "2026-09-21T20:34:00.089Z",
+  "market_captured_at": "2026-09-22T07:52:34.760Z",
   "status": "active",
-  "last_ingested_at": "2026-09-21T20:34:00.614Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B6900/candlesticks?start_ts=1789963201&end_ts=1790022840&period_interval=1440"
+  "last_ingested_at": "2026-09-22T07:52:35.323Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B6900/candlesticks?start_ts=1789963201&end_ts=1790063555&period_interval=1440"
 }

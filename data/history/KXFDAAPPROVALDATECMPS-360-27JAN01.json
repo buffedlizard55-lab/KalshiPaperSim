@@ -2333,6 +2333,31 @@
         "low_dollars": "0.3000",
         "open_dollars": "0.3000"
       }
+    },
+    {
+      "end_period_ts": 1790049600,
+      "open_interest_fp": "2170.56",
+      "price": {
+        "close_dollars": "0.4000",
+        "high_dollars": "0.4000",
+        "low_dollars": "0.3800",
+        "mean_dollars": "0.3813",
+        "open_dollars": "0.3800",
+        "previous_dollars": "0.3000"
+      },
+      "volume_fp": "17.57",
+      "yes_ask": {
+        "close_dollars": "0.4000",
+        "high_dollars": "0.4000",
+        "low_dollars": "0.3800",
+        "open_dollars": "0.3800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3300",
+        "high_dollars": "0.3300",
+        "low_dollars": "0.3300",
+        "open_dollars": "0.3300"
+      }
     }
   ],
   "books": [
@@ -4187,6 +4212,150 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T07:51:54.856Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "50.34"
+            ],
+            [
+              "0.0300",
+              "2222.00"
+            ],
+            [
+              "0.0400",
+              "595.00"
+            ],
+            [
+              "0.0500",
+              "53.65"
+            ],
+            [
+              "0.1500",
+              "247.26"
+            ],
+            [
+              "0.3000",
+              "631.00"
+            ],
+            [
+              "0.3100",
+              "56.00"
+            ],
+            [
+              "0.6000",
+              "499.36"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0500",
+              "1663.00"
+            ],
+            [
+              "0.0600",
+              "199.85"
+            ],
+            [
+              "0.0700",
+              "28.00"
+            ],
+            [
+              "0.3000",
+              "153.49"
+            ],
+            [
+              "0.3200",
+              "500.00"
+            ],
+            [
+              "0.3300",
+              "5.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-22T08:02:57.055Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "50.34"
+            ],
+            [
+              "0.0300",
+              "2222.00"
+            ],
+            [
+              "0.0400",
+              "595.00"
+            ],
+            [
+              "0.0500",
+              "53.65"
+            ],
+            [
+              "0.1500",
+              "247.26"
+            ],
+            [
+              "0.3000",
+              "631.00"
+            ],
+            [
+              "0.3100",
+              "56.00"
+            ],
+            [
+              "0.6000",
+              "499.36"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0500",
+              "1663.00"
+            ],
+            [
+              "0.0600",
+              "199.85"
+            ],
+            [
+              "0.0700",
+              "28.00"
+            ],
+            [
+              "0.3000",
+              "153.49"
+            ],
+            [
+              "0.3200",
+              "500.00"
+            ],
+            [
+              "0.3300",
+              "5.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4202,20 +4371,20 @@
     "expected_expiration_time": "2028-01-01T15:00:00Z",
     "expiration_time": "2027-01-08T15:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.3800",
+    "last_price_dollars": "0.4000",
     "latest_expiration_time": "2027-01-08T15:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.6700",
-    "no_bid_dollars": "0.6200",
+    "no_bid_dollars": "0.6000",
     "no_sub_title": "Before Jan 1, 2027",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-01-01T15:00:00Z",
-    "open_interest_fp": "2169.92",
+    "open_interest_fp": "2170.56",
     "open_time": "2026-05-16T02:30:00Z",
-    "previous_price_dollars": "0.3000",
-    "previous_yes_ask_dollars": "0.3700",
-    "previous_yes_bid_dollars": "0.3000",
+    "previous_price_dollars": "0.3800",
+    "previous_yes_ask_dollars": "0.3800",
+    "previous_yes_bid_dollars": "0.3300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4233,17 +4402,17 @@
     "ticker": "KXFDAAPPROVALDATECMPS-360-27JAN01",
     "title": "Will the FDA approve COMP360 Psilocybin for Treatment-Resistant Depression before Jan 1, 2027?",
     "updated_time": "2026-05-16T02:30:00.882146Z",
-    "volume_24h_fp": "12.61",
-    "volume_fp": "4599.04",
-    "yes_ask_dollars": "0.3800",
-    "yes_ask_size_fp": "3.32",
+    "volume_24h_fp": "4.96",
+    "volume_fp": "4604.00",
+    "yes_ask_dollars": "0.4000",
+    "yes_ask_size_fp": "499.36",
     "yes_bid_dollars": "0.3300",
     "yes_bid_size_fp": "5.00",
     "yes_sub_title": "Before Jan 1, 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JAN01",
-  "market_captured_at": "2026-09-21T20:42:39.270Z",
+  "market_captured_at": "2026-09-22T08:02:56.332Z",
   "status": "active",
-  "last_ingested_at": "2026-09-21T20:42:39.895Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27JAN01/candlesticks?start_ts=1789963201&end_ts=1790023359&period_interval=1440"
+  "last_ingested_at": "2026-09-22T08:02:56.995Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27JAN01/candlesticks?start_ts=1790049601&end_ts=1790064176&period_interval=1440"
 }
