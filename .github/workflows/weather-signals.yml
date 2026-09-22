@@ -31,7 +31,32 @@ on:
 # merge push can fire two bots whose regenerate steps rewrite the same browser
 # modules. Queue, don't race (see ingest-now.yml).
 concurrency:
+  # ONE shared queue for every workflow that pushes to this repository:
+  # daily-history, ingest-now and the six 20-minute signal archives (espn,
+  # fda, form4, mlb-pregame, mlb, weather).
+  #
+  # Why `queue: max` instead of the default — GitHub's own documentation
+  # (retrieved 2026-09-22,
+  #  https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency):
+  #   "single (default): At most one job or workflow run can be pending in the
+  #    concurrency group. When a new job or workflow run is queued, any existing
+  #    pending job or workflow run in the same group is canceled and replaced."
+  #   "max: Up to 100 jobs or workflow runs can be pending in the concurrency
+  #    group." (processed FIFO, by the time each started waiting)
+  # The 20-minute archives used to sit in their OWN groups precisely to avoid
+  # that eviction — which left them racing the shared group at the push step
+  # instead. On 2026-09-22 three runs did exactly that and LOST their captures:
+  # weather 35676454906 (queued 01:37:44Z) and mlb-pregame 35676725049 +
+  # 35676946549 all finished capture/audit/regenerate and then FAILED at their
+  # commit step ("remote moved under us"), so the data died with the runner
+  # (irregularity #63). `queue: max` removes the trade-off: everybody queues,
+  # nobody is evicted, nobody races.
+  #
+  # cancel-in-progress stays false — "The combination of queue: max and
+  # cancel-in-progress: true is not allowed" (same page), and cancelling a run
+  # would discard a capture that already spent its rate budget.
   group: data-pipeline-${{ github.ref }}
+  queue: max
   cancel-in-progress: false
 
 permissions:

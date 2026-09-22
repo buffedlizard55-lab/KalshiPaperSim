@@ -2558,12 +2558,12 @@ function renderResearchGaps() {
 }
 
 function renderResearchReports() {
-  const names = ['forward-test.json', 'flights.json', 'depth-comparison.json', 'liquidity-depth.json', 'sweep-summary.json', 'calendar-audit.json', 'candle-coverage.json', 'store-verification.json'];
+  const names = ['forward-test.json', 'flights.json', 'depth-comparison.json', 'liquidity-depth.json', 'sweep-summary.json', 'calendar-audit.json', 'candle-coverage.json', 'store-verification.json', 'game-window-captures.json'];
   setHTML('#researchReports', `
     <h3>Raw reports</h3>
     <p class="lede">Every number on this site comes from one of these files, generated offline from the stored bars. Open one to check any figure.</p>
     <div style="display:flex;flex-wrap:wrap;gap:.4rem">${names.map((n) => `<a class="btn btn-ghost" href="data/reports/${esc(n)}" target="_blank" rel="noopener">${esc(n)}</a>`).join('')}</div>
-    <div class="notice">Regenerate with <code>node scripts/run-reports.mjs</code> and <code>node scripts/strategy-sweep.mjs --period=1440 --depth-mode=captured</code>.</div>
+    <div class="notice">Regenerate with <code>node scripts/run-reports.mjs</code>, <code>node scripts/strategy-sweep.mjs --period=1440 --depth-mode=captured</code> and <code>node scripts/verify-game-window.mjs</code> — the game-window audit reads only the stored ladders plus the official MLB / ESPN event archives, so it needs no network.</div>
   `);
 }
 

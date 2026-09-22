@@ -174,6 +174,20 @@ function ensureMarket(ticker, seriesTicker) {
   return markets.get(ticker);
 }
 
+/* ------------------------------------------------------------------ *
+ * Capture-bound accounting — published as coverage.captureEviction
+ * ------------------------------------------------------------------ *
+ * This module is a WINDOW on data/history/**, not a copy of it:
+ *   • selectCaptures() keeps the newest MAX_CAPTURES ladders per market (plus
+ *     one per horizon mark), and
+ *   • the market cap then drops whole contracts (`dropped`).
+ * Both bounds are MODULE-side. Nothing is deleted from data/history/** — but a
+ * desk-season round whose batch this module no longer carries cannot be walked
+ * again, so the season re-reports FEWER rounds than it already measured
+ * (irregularity #64). These counters make that visible in the artifact itself.
+ */
+const storeLadderStats = { ladders: 0, nonEmpty: 0, empty: 0, instants: new Set(), nonEmptyInstants: new Set() };
+
 function ingestStore(file, period) {
   const store = readJson(file);
   if (!store || !store.ticker) return false;
@@ -187,6 +201,19 @@ function ingestStore(file, period) {
   rec.lastIngestedAt = store.last_ingested_at || rec.lastIngestedAt || null;
 
   for (const book of store.books || []) {
+    // Count what the STORE holds before any module-side selection: an empty
+    // book is still a capture (and evidence for irregularity #60), it just
+    // cannot price an order, so compactLadder() drops it.
+    const atMs = Date.parse(book?.captured_at || '');
+    const wire = book?.orderbook?.orderbook_fp || book?.orderbook_fp || book?.orderbook;
+    const levels = (Array.isArray(wire?.yes_dollars) ? wire.yes_dollars.length : 0) +
+      (Array.isArray(wire?.no_dollars) ? wire.no_dollars.length : 0);
+    storeLadderStats.ladders += 1;
+    if (Number.isFinite(atMs)) storeLadderStats.instants.add(atMs);
+    if (levels > 0) {
+      storeLadderStats.nonEmpty += 1;
+      if (Number.isFinite(atMs)) storeLadderStats.nonEmptyInstants.add(atMs);
+    } else storeLadderStats.empty += 1;
     const c = compactLadder(book);
     if (c && c.at) rec.captures.push(c);
   }
@@ -309,8 +336,12 @@ function selectCaptures(captures) {
   return [...chosen.values()].sort((a, b) => String(b.at).localeCompare(String(a.at))).slice(0, MAX_CAPTURES + HORIZON_HOURS.length);
 }
 
+let laddersBeforeCaptureSelection = 0;
+let laddersAfterCaptureSelection = 0;
 for (const rec of markets.values()) {
+  laddersBeforeCaptureSelection += rec.captures.length;
   rec.captures = selectCaptures(rec.captures);
+  laddersAfterCaptureSelection += rec.captures.length;
   // Bars: the desk prefers the finest period available per market, newest N.
   const byPeriod = new Map();
   for (const b of rec.bars) {
@@ -457,6 +488,65 @@ for (const m of unreservedOpen) keptTickers.add(m.ticker);
 const kept = [...finalizedKept, ...withLadder.filter((m) => keptTickers.has(m.ticker) && !finalizedKept.includes(m))];
 const dropped = withLadder.filter((m) => !keptTickers.has(m.ticker));
 
+/* The capture bound, measured — same 20-minute batch rule src/desk-season.js
+ * uses to stamp a round (a round is stamped at the LAST instant of its batch). */
+const iso = (t) => (Number.isFinite(t) ? new Date(t).toISOString() : null);
+function captureBatches(instants, minutes = 20) {
+  const sorted = [...instants].sort((a, b) => a - b);
+  const gapMs = minutes * 60 * 1000;
+  const out = [];
+  for (const t of sorted) {
+    const cur = out[out.length - 1];
+    if (cur && t - cur.last <= gapMs) { cur.last = t; cur.instants += 1; }
+    else out.push({ first: t, last: t, instants: 1 });
+  }
+  return out;
+}
+const moduleInstants = new Set();
+for (const m of kept) for (const c of m.captures || []) {
+  const t = Date.parse(c.at);
+  if (Number.isFinite(t)) moduleInstants.add(t);
+}
+const storeBatches = captureBatches(storeLadderStats.instants);
+const moduleBatches = captureBatches(moduleInstants);
+const representedBatches = storeBatches.filter((b) => [...moduleInstants].some((t) => t >= b.first && t <= b.last));
+const unrepresentedBatches = storeBatches.filter((b) => !representedBatches.includes(b));
+const seasonRoundStamps = storeBatches.map((b) => b.last);
+const evictedRoundStamps = seasonRoundStamps.filter((t) => !moduleInstants.has(t));
+const moduleInstantList = [...moduleInstants].sort((a, b) => a - b);
+const captureEviction = {
+  rule: `data/history/** holds every captured ladder; THIS MODULE carries a window on it. selectCaptures() keeps the newest ${MAX_CAPTURES} ladders per market plus one per horizon mark (${HORIZON_HOURS.map((h) => h + 'h').join(', ')}), and the market cap (${MAX_MARKETS}) then drops whole contracts. Ladders outside that window are EVICTED FROM THIS MODULE, never from data/history.`,
+  effect: 'a desk-season round whose batch this module no longer carries cannot be walked again, so the season re-reports FEWER rounds than it already measured; the desk loses the older cut-offs it could once price. The ladders are still in data/history/** — nothing was deleted.',
+  reproduce: `node scripts/generate-desk-module.mjs --max-captures 40 --out src/desk-data.js   # then node scripts/run-desk-season.mjs`,
+  batchMinutes: 20,
+  batchRule: 'the same rule src/desk-season.js uses: capture instants are grouped while the gap to the batch\'s last instant is <= 20 minutes, and a round is stamped at the LAST instant of its batch',
+  storeLadderCaptures: storeLadderStats.ladders,
+  storeNonEmptyLadders: storeLadderStats.nonEmpty,
+  storeEmptyLadders: storeLadderStats.empty,
+  storeCaptureInstants: storeLadderStats.instants.size,
+  storeNonEmptyCaptureInstants: storeLadderStats.nonEmptyInstants.size,
+  storeCaptureBatches: storeBatches.length,
+  laddersBeforeCaptureSelection,
+  laddersAfterCaptureSelection,
+  evictedByCaptureCap: laddersBeforeCaptureSelection - laddersAfterCaptureSelection,
+  evictedByMarketCap: dropped.reduce((n, m) => n + (m.captures || []).length, 0),
+  marketsDroppedByCap: dropped.length,
+  moduleLadderCaptures: kept.reduce((n, m) => n + (m.captures || []).length, 0),
+  moduleCaptureInstants: moduleInstants.size,
+  moduleCaptureBatches: moduleBatches.length,
+  moduleEarliestCapture: iso(moduleInstantList[0]),
+  moduleNewestCapture: iso(moduleInstantList[moduleInstantList.length - 1]),
+  storeBatchesRepresentedInModule: representedBatches.length,
+  storeBatchesNotRepresented: unrepresentedBatches.length,
+  storeBatchesNotRepresentedList: unrepresentedBatches.map((b) => ({ first: iso(b.first), last: iso(b.last), instants: b.instants })),
+  seasonRoundStamps: seasonRoundStamps.length,
+  seasonRoundStampsEvicted: evictedRoundStamps.length,
+  seasonRoundStampsEvictedList: evictedRoundStamps.map(iso).sort(),
+  captureInstantsEvictedFromModule: [...storeLadderStats.instants].filter((t) => !moduleInstants.has(t)).length,
+  nonEmptyCaptureInstantsEvictedFromModule: [...storeLadderStats.nonEmptyInstants].filter((t) => !moduleInstants.has(t)).length,
+  nothingDeletedFrom: 'data/history/** (the store is append-only; only this generated module is a window on it)'
+};
+
 const quoted = readQuotedUniverse();
 const quotedKept = quoted
   .filter((q) => !kept.some((m) => m.ticker === q.ticker))
@@ -510,7 +600,8 @@ const output = {
     reservedBySeries,
     ladderCaptures: kept.reduce((s, m) => s + m.captures.length, 0),
     bars: kept.reduce((s, m) => s + m.bars.length, 0),
-    newestCapture: newestCaptureTs
+    newestCapture: newestCaptureTs,
+    captureEviction
   },
   markets: kept,
   quoted: quotedKept
@@ -543,3 +634,4 @@ fs.writeFileSync(OUT, `${header}export const DESK_DATA = ${json};\n`);
 const bytes = fs.statSync(OUT).size;
 console.log(`desk-data: ${kept.length} markets (${output.coverage.openAtCapture} open) · ${output.coverage.ladderCaptures} ladder captures · ${output.coverage.bars} bars · ${quotedKept.length} quoted-only · ${(bytes / 1024).toFixed(0)} KB → ${path.relative(ROOT, OUT)}`);
 if (dropped.length) console.log(`desk-data: ${dropped.length} laddered market(s) dropped by --max-markets=${MAX_MARKETS} (the rule is recorded in the module's coverage block)`);
+console.log(`desk-data: capture bound — the store holds ${captureEviction.storeLadderCaptures} ladders (${captureEviction.storeNonEmptyLadders} non-empty) in ${captureEviction.storeCaptureBatches} batches; this module keeps ${captureEviction.moduleLadderCaptures} ladders in ${captureEviction.moduleCaptureBatches} batches (${captureEviction.storeBatchesRepresentedInModule} store batch(es) represented, ${captureEviction.storeBatchesNotRepresented} not) — ${captureEviction.seasonRoundStampsEvicted} season round stamp(s) and ${captureEviction.captureInstantsEvictedFromModule} capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction`);
