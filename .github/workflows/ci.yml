@@ -1,0 +1,52 @@
+name: Project checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: project-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: Engine and HTTP regression tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # Zero runtime dependencies; no network capture or data regeneration.
+      - run: npm test
+      - run: bash test/workflow-race-guard.sh
+      - name: Live HTTP integration (no valid mutations)
+        run: |
+          node server.js > "$RUNNER_TEMP/kalshi-server.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          npm run test:server -- --wait || { cat "$RUNNER_TEMP/kalshi-server.log"; exit 1; }
+
+  ui:
+    name: UI smoke (${{ matrix.mode }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: [static, server]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm run test:ui
+        env:
+          FORCE_MODE: ${{ matrix.mode }}
+      - run: node build.js

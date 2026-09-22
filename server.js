@@ -24,6 +24,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { HttpError, readBody, serveStatic } from './lib/http.js';
 
 import { KALSHI_ENDPOINTS, KALSHI_PATHS, CANDLE_PERIODS_MINUTES, RATE_LIMITS } from './src/kalshi-config.js';
 import { KalshiApiClient, normalizeMarket, DATA_SOURCE, parseKalshiOrderbook } from './src/kalshi-api.js';
@@ -62,19 +63,6 @@ const HOST = process.env.HOST || '0.0.0.0'; // must be 0.0.0.0 for the live prev
 const ALLOW_USER_CODE = String(process.env.ALLOW_USER_CODE || 'false') === 'true';
 const STORE_DIR = path.join(__dirname, 'data', 'store');
 const STORE_FILE = path.join(STORE_DIR, 'competition-state.json');
-
-const MIME = {
-  '.html': 'text/html; charset=UTF-8',
-  '.css': 'text/css; charset=UTF-8',
-  '.js': 'application/javascript; charset=UTF-8',
-  '.mjs': 'application/javascript; charset=UTF-8',
-  '.json': 'application/json; charset=UTF-8',
-  '.md': 'text/markdown; charset=UTF-8',
-  '.svg': 'image/svg+xml',
-  '.png': 'image/png',
-  '.ico': 'image/x-icon',
-  '.csv': 'text/csv; charset=UTF-8'
-};
 
 /* ------------------------------------------------------------------ *
  * Multiplayer store (file-backed, no database dependency)
@@ -326,28 +314,6 @@ function sendJSON(res, status, payload, extraHeaders = {}) {
   res.end(body);
 }
 
-function readBody(req, limitBytes = 2 * 1024 * 1024) {
-  return new Promise((resolve, reject) => {
-    const chunks = [];
-    let size = 0;
-    req.on('data', (c) => {
-      size += c.length;
-      if (size > limitBytes) {
-        reject(new Error('payload_too_large'));
-        req.destroy();
-        return;
-      }
-      chunks.push(c);
-    });
-    req.on('end', () => {
-      const raw = Buffer.concat(chunks).toString('utf8');
-      if (!raw) return resolve({});
-      try { resolve(JSON.parse(raw)); } catch (err) { reject(new Error(`invalid_json: ${err.message}`)); }
-    });
-    req.on('error', reject);
-  });
-}
-
 const CORS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
@@ -464,10 +430,10 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-  const p = url.pathname;
-
   try {
+    // Routing does not depend on a client-controlled Host header.
+    const url = new URL(req.url, 'http://localhost');
+    const p = url.pathname;
     /* ---------------- API ---------------- */
 
     if (p === '/api/health') {
@@ -869,7 +835,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (p === '/api/reset' && req.method === 'POST') {
-      const body = await readBody(req).catch(() => ({}));
+      const body = await readBody(req);
       memory.reset({ year: body.year, regime: body.regime });
       userPortfolios.clear();
       liveBooks.clear();
@@ -1196,29 +1162,11 @@ const server = http.createServer(async (req, res) => {
 
     /* ---------------- static ---------------- */
 
-    let pathname = p === '/' ? '/index.html' : p;
-    const safe = path.normalize(pathname).replace(/^(\.\.[/\\])+/, '');
-    const filePath = path.join(__dirname, safe);
-    if (!filePath.startsWith(__dirname)) {
-      res.writeHead(403);
-      return res.end('403 Forbidden');
-    }
-
-    fs.stat(filePath, (err, stats) => {
-      if (err || !stats.isFile()) {
-        res.writeHead(404, { 'Content-Type': 'text/plain; charset=UTF-8' });
-        return res.end('404 Not Found');
-      }
-      const ext = path.extname(filePath).toLowerCase();
-      res.writeHead(200, {
-        'Content-Type': MIME[ext] || 'application/octet-stream',
-        'Content-Length': stats.size,
-        'Cache-Control': 'no-cache'
-      });
-      fs.createReadStream(filePath).pipe(res);
-    });
+    return await serveStatic(req, res, { root: __dirname, pathname: p });
   } catch (err) {
-    sendJSON(res, 500, { ok: false, error: String(err && err.message ? err.message : err) });
+    if (res.destroyed) return;
+    if (res.headersSent) return res.destroy();
+    sendJSON(res, err instanceof HttpError ? err.statusCode : 500, { ok: false, error: String(err && err.message ? err.message : err) });
   }
 });
 
