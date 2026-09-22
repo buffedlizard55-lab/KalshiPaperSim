@@ -1,0 +1,330 @@
+{
+ "what": "ESPN NFL team table (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/teams",
+ "captured_at": "2026-09-22T01:47:07.914Z",
+ "last_confirmed_at": "2026-09-22T01:47:07.914Z",
+ "prior_captured_at": null,
+ "teams": [
+  {
+   "id": "22",
+   "abbr": "ARI",
+   "displayName": "Arizona Cardinals",
+   "location": "Arizona",
+   "name": "Cardinals",
+   "slug": "arizona-cardinals",
+   "nickname": "Cardinals",
+   "isActive": true
+  },
+  {
+   "id": "1",
+   "abbr": "ATL",
+   "displayName": "Atlanta Falcons",
+   "location": "Atlanta",
+   "name": "Falcons",
+   "slug": "atlanta-falcons",
+   "nickname": "Falcons",
+   "isActive": true
+  },
+  {
+   "id": "33",
+   "abbr": "BAL",
+   "displayName": "Baltimore Ravens",
+   "location": "Baltimore",
+   "name": "Ravens",
+   "slug": "baltimore-ravens",
+   "nickname": "Ravens",
+   "isActive": true
+  },
+  {
+   "id": "2",
+   "abbr": "BUF",
+   "displayName": "Buffalo Bills",
+   "location": "Buffalo",
+   "name": "Bills",
+   "slug": "buffalo-bills",
+   "nickname": "Bills",
+   "isActive": true
+  },
+  {
+   "id": "29",
+   "abbr": "CAR",
+   "displayName": "Carolina Panthers",
+   "location": "Carolina",
+   "name": "Panthers",
+   "slug": "carolina-panthers",
+   "nickname": "Panthers",
+   "isActive": true
+  },
+  {
+   "id": "3",
+   "abbr": "CHI",
+   "displayName": "Chicago Bears",
+   "location": "Chicago",
+   "name": "Bears",
+   "slug": "chicago-bears",
+   "nickname": "Bears",
+   "isActive": true
+  },
+  {
+   "id": "4",
+   "abbr": "CIN",
+   "displayName": "Cincinnati Bengals",
+   "location": "Cincinnati",
+   "name": "Bengals",
+   "slug": "cincinnati-bengals",
+   "nickname": "Bengals",
+   "isActive": true
+  },
+  {
+   "id": "5",
+   "abbr": "CLE",
+   "displayName": "Cleveland Browns",
+   "location": "Cleveland",
+   "name": "Browns",
+   "slug": "cleveland-browns",
+   "nickname": "Browns",
+   "isActive": true
+  },
+  {
+   "id": "6",
+   "abbr": "DAL",
+   "displayName": "Dallas Cowboys",
+   "location": "Dallas",
+   "name": "Cowboys",
+   "slug": "dallas-cowboys",
+   "nickname": "Cowboys",
+   "isActive": true
+  },
+  {
+   "id": "7",
+   "abbr": "DEN",
+   "displayName": "Denver Broncos",
+   "location": "Denver",
+   "name": "Broncos",
+   "slug": "denver-broncos",
+   "nickname": "Broncos",
+   "isActive": true
+  },
+  {
+   "id": "8",
+   "abbr": "DET",
+   "displayName": "Detroit Lions",
+   "location": "Detroit",
+   "name": "Lions",
+   "slug": "detroit-lions",
+   "nickname": "Lions",
+   "isActive": true
+  },
+  {
+   "id": "9",
+   "abbr": "GB",
+   "displayName": "Green Bay Packers",
+   "location": "Green Bay",
+   "name": "Packers",
+   "slug": "green-bay-packers",
+   "nickname": "Packers",
+   "isActive": true
+  },
+  {
+   "id": "34",
+   "abbr": "HOU",
+   "displayName": "Houston Texans",
+   "location": "Houston",
+   "name": "Texans",
+   "slug": "houston-texans",
+   "nickname": "Texans",
+   "isActive": true
+  },
+  {
+   "id": "11",
+   "abbr": "IND",
+   "displayName": "Indianapolis Colts",
+   "location": "Indianapolis",
+   "name": "Colts",
+   "slug": "indianapolis-colts",
+   "nickname": "Colts",
+   "isActive": true
+  },
+  {
+   "id": "30",
+   "abbr": "JAX",
+   "displayName": "Jacksonville Jaguars",
+   "location": "Jacksonville",
+   "name": "Jaguars",
+   "slug": "jacksonville-jaguars",
+   "nickname": "Jaguars",
+   "isActive": true
+  },
+  {
+   "id": "12",
+   "abbr": "KC",
+   "displayName": "Kansas City Chiefs",
+   "location": "Kansas City",
+   "name": "Chiefs",
+   "slug": "kansas-city-chiefs",
+   "nickname": "Chiefs",
+   "isActive": true
+  },
+  {
+   "id": "13",
+   "abbr": "LV",
+   "displayName": "Las Vegas Raiders",
+   "location": "Las Vegas",
+   "name": "Raiders",
+   "slug": "las-vegas-raiders",
+   "nickname": "Raiders",
+   "isActive": true
+  },
+  {
+   "id": "24",
+   "abbr": "LAC",
+   "displayName": "Los Angeles Chargers",
+   "location": "Los Angeles",
+   "name": "Chargers",
+   "slug": "los-angeles-chargers",
+   "nickname": "Chargers",
+   "isActive": true
+  },
+  {
+   "id": "14",
+   "abbr": "LAR",
+   "displayName": "Los Angeles Rams",
+   "location": "Los Angeles",
+   "name": "Rams",
+   "slug": "los-angeles-rams",
+   "nickname": "Rams",
+   "isActive": true
+  },
+  {
+   "id": "15",
+   "abbr": "MIA",
+   "displayName": "Miami Dolphins",
+   "location": "Miami",
+   "name": "Dolphins",
+   "slug": "miami-dolphins",
+   "nickname": "Dolphins",
+   "isActive": true
+  },
+  {
+   "id": "16",
+   "abbr": "MIN",
+   "displayName": "Minnesota Vikings",
+   "location": "Minnesota",
+   "name": "Vikings",
+   "slug": "minnesota-vikings",
+   "nickname": "Vikings",
+   "isActive": true
+  },
+  {
+   "id": "17",
+   "abbr": "NE",
+   "displayName": "New England Patriots",
+   "location": "New England",
+   "name": "Patriots",
+   "slug": "new-england-patriots",
+   "nickname": "Patriots",
+   "isActive": true
+  },
+  {
+   "id": "18",
+   "abbr": "NO",
+   "displayName": "New Orleans Saints",
+   "location": "New Orleans",
+   "name": "Saints",
+   "slug": "new-orleans-saints",
+   "nickname": "Saints",
+   "isActive": true
+  },
+  {
+   "id": "19",
+   "abbr": "NYG",
+   "displayName": "New York Giants",
+   "location": "New York",
+   "name": "Giants",
+   "slug": "new-york-giants",
+   "nickname": "Giants",
+   "isActive": true
+  },
+  {
+   "id": "20",
+   "abbr": "NYJ",
+   "displayName": "New York Jets",
+   "location": "New York",
+   "name": "Jets",
+   "slug": "new-york-jets",
+   "nickname": "Jets",
+   "isActive": true
+  },
+  {
+   "id": "21",
+   "abbr": "PHI",
+   "displayName": "Philadelphia Eagles",
+   "location": "Philadelphia",
+   "name": "Eagles",
+   "slug": "philadelphia-eagles",
+   "nickname": "Eagles",
+   "isActive": true
+  },
+  {
+   "id": "23",
+   "abbr": "PIT",
+   "displayName": "Pittsburgh Steelers",
+   "location": "Pittsburgh",
+   "name": "Steelers",
+   "slug": "pittsburgh-steelers",
+   "nickname": "Steelers",
+   "isActive": true
+  },
+  {
+   "id": "25",
+   "abbr": "SF",
+   "displayName": "San Francisco 49ers",
+   "location": "San Francisco",
+   "name": "49ers",
+   "slug": "san-francisco-49ers",
+   "nickname": "49ers",
+   "isActive": true
+  },
+  {
+   "id": "26",
+   "abbr": "SEA",
+   "displayName": "Seattle Seahawks",
+   "location": "Seattle",
+   "name": "Seahawks",
+   "slug": "seattle-seahawks",
+   "nickname": "Seahawks",
+   "isActive": true
+  },
+  {
+   "id": "27",
+   "abbr": "TB",
+   "displayName": "Tampa Bay Buccaneers",
+   "location": "Tampa Bay",
+   "name": "Buccaneers",
+   "slug": "tampa-bay-buccaneers",
+   "nickname": "Buccaneers",
+   "isActive": true
+  },
+  {
+   "id": "10",
+   "abbr": "TEN",
+   "displayName": "Tennessee Titans",
+   "location": "Tennessee",
+   "name": "Titans",
+   "slug": "tennessee-titans",
+   "nickname": "Titans",
+   "isActive": true
+  },
+  {
+   "id": "28",
+   "abbr": "WSH",
+   "displayName": "Washington Commanders",
+   "location": "Washington",
+   "name": "Commanders",
+   "slug": "washington-commanders",
+   "nickname": "Commanders",
+   "isActive": true
+  }
+ ]
+}

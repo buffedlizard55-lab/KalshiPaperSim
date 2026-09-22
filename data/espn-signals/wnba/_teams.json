@@ -1,0 +1,160 @@
+{
+ "what": "ESPN WNBA team table (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/teams",
+ "captured_at": "2026-09-22T01:47:09.040Z",
+ "last_confirmed_at": "2026-09-22T01:47:09.040Z",
+ "prior_captured_at": null,
+ "teams": [
+  {
+   "id": "20",
+   "abbr": "ATL",
+   "displayName": "Atlanta Dream",
+   "location": "Atlanta",
+   "name": "Dream",
+   "slug": "atlanta-dream",
+   "nickname": "Atlanta",
+   "isActive": true
+  },
+  {
+   "id": "19",
+   "abbr": "CHI",
+   "displayName": "Chicago Sky",
+   "location": "Chicago",
+   "name": "Sky",
+   "slug": "chicago-sky",
+   "nickname": "Chicago",
+   "isActive": true
+  },
+  {
+   "id": "18",
+   "abbr": "CON",
+   "displayName": "Connecticut Sun",
+   "location": "Connecticut",
+   "name": "Sun",
+   "slug": "connecticut-sun",
+   "nickname": "Connecticut",
+   "isActive": true
+  },
+  {
+   "id": "3",
+   "abbr": "DAL",
+   "displayName": "Dallas Wings",
+   "location": "Dallas",
+   "name": "Wings",
+   "slug": "dallas-wings",
+   "nickname": "Dallas",
+   "isActive": true
+  },
+  {
+   "id": "129689",
+   "abbr": "GS",
+   "displayName": "Golden State Valkyries",
+   "location": "Golden State",
+   "name": "Valkyries",
+   "slug": "golden-state-valkyries",
+   "nickname": "Golden State",
+   "isActive": true
+  },
+  {
+   "id": "5",
+   "abbr": "IND",
+   "displayName": "Indiana Fever",
+   "location": "Indiana",
+   "name": "Fever",
+   "slug": "indiana-fever",
+   "nickname": "Indiana",
+   "isActive": true
+  },
+  {
+   "id": "17",
+   "abbr": "LV",
+   "displayName": "Las Vegas Aces",
+   "location": "Las Vegas",
+   "name": "Aces",
+   "slug": "las-vegas-aces",
+   "nickname": "Las Vegas",
+   "isActive": true
+  },
+  {
+   "id": "6",
+   "abbr": "LA",
+   "displayName": "Los Angeles Sparks",
+   "location": "Los Angeles",
+   "name": "Sparks",
+   "slug": "los-angeles-sparks",
+   "nickname": "Los Angeles",
+   "isActive": true
+  },
+  {
+   "id": "8",
+   "abbr": "MIN",
+   "displayName": "Minnesota Lynx",
+   "location": "Minnesota",
+   "name": "Lynx",
+   "slug": "minnesota-lynx",
+   "nickname": "Minnesota",
+   "isActive": true
+  },
+  {
+   "id": "9",
+   "abbr": "NY",
+   "displayName": "New York Liberty",
+   "location": "New York",
+   "name": "Liberty",
+   "slug": "new-york-liberty",
+   "nickname": "New York",
+   "isActive": true
+  },
+  {
+   "id": "11",
+   "abbr": "PHX",
+   "displayName": "Phoenix Mercury",
+   "location": "Phoenix",
+   "name": "Mercury",
+   "slug": "phoenix-mercury",
+   "nickname": "Phoenix",
+   "isActive": true
+  },
+  {
+   "id": "132052",
+   "abbr": "POR",
+   "displayName": "Portland Fire",
+   "location": "Portland",
+   "name": "Fire",
+   "slug": "portland-fire",
+   "nickname": "Portland",
+   "isActive": true
+  },
+  {
+   "id": "14",
+   "abbr": "SEA",
+   "displayName": "Seattle Storm",
+   "location": "Seattle",
+   "name": "Storm",
+   "slug": "seattle-storm",
+   "nickname": "Seattle",
+   "isActive": true
+  },
+  {
+   "id": "131935",
+   "abbr": "TOR",
+   "displayName": "Toronto Tempo",
+   "location": "Toronto",
+   "name": "Tempo",
+   "slug": "toronto-tempo",
+   "nickname": "Toronto",
+   "isActive": true
+  },
+  {
+   "id": "16",
+   "abbr": "WSH",
+   "displayName": "Washington Mystics",
+   "location": "Washington",
+   "name": "Mystics",
+   "slug": "washington-mystics",
+   "nickname": "Washington",
+   "isActive": true
+  }
+ ]
+}

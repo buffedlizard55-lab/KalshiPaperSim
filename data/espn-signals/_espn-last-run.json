@@ -1,0 +1,212 @@
+{
+ "startedAt": "2026-09-22T01:47:07.608Z",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
+ "leagues": {
+  "nfl": {
+   "label": "NFL",
+   "steps": {
+    "teams": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/teams",
+     "ok": true,
+     "status": 200,
+     "rows": 32
+    },
+    "injuries": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/injuries",
+     "ok": true,
+     "status": 200,
+     "playerRecords": 800
+    },
+    "scoreboard": {
+     "2026-09-21": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260921",
+      "ok": true,
+      "status": 200,
+      "events": 1,
+      "stateRows": 1
+     },
+     "2026-09-22": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260922",
+      "ok": true,
+      "status": 200,
+      "events": 0,
+      "stateRows": 0
+     }
+    }
+   }
+  },
+  "nba": {
+   "label": "NBA",
+   "steps": {
+    "teams": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/teams",
+     "ok": true,
+     "status": 200,
+     "rows": 30
+    },
+    "injuries": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
+     "ok": true,
+     "status": 200,
+     "playerRecords": 76
+    },
+    "scoreboard": {
+     "2026-09-21": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20260921",
+      "ok": true,
+      "status": 200,
+      "events": 0,
+      "stateRows": 0
+     },
+     "2026-09-22": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20260922",
+      "ok": true,
+      "status": 200,
+      "events": 0,
+      "stateRows": 0
+     }
+    }
+   }
+  },
+  "ncaaf": {
+   "label": "NCAA football",
+   "steps": {
+    "teams": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/teams",
+     "ok": true,
+     "status": 200,
+     "rows": 50
+    },
+    "injuries": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/injuries",
+     "ok": true,
+     "status": 200,
+     "playerRecords": 3
+    },
+    "scoreboard": {
+     "2026-09-21": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260921",
+      "ok": true,
+      "status": 200,
+      "events": 0,
+      "stateRows": 0
+     },
+     "2026-09-22": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260922",
+      "ok": true,
+      "status": 200,
+      "events": 0,
+      "stateRows": 0
+     }
+    }
+   }
+  },
+  "ncaamb": {
+   "label": "NCAA men's basketball",
+   "steps": {
+    "teams": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams",
+     "ok": true,
+     "status": 200,
+     "rows": 50
+    },
+    "injuries": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/injuries",
+     "ok": true,
+     "status": 200,
+     "playerRecords": 0
+    },
+    "scoreboard": {
+     "2026-09-21": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260921",
+      "ok": true,
+      "status": 200,
+      "events": 0,
+      "stateRows": 0
+     },
+     "2026-09-22": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260922",
+      "ok": true,
+      "status": 200,
+      "events": 0,
+      "stateRows": 0
+     }
+    }
+   }
+  },
+  "nhl": {
+   "label": "NHL",
+   "steps": {
+    "teams": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/teams",
+     "ok": true,
+     "status": 200,
+     "rows": 32
+    },
+    "injuries": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
+     "ok": true,
+     "status": 200,
+     "playerRecords": 65
+    },
+    "scoreboard": {
+     "2026-09-21": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260921",
+      "ok": true,
+      "status": 200,
+      "events": 8,
+      "stateRows": 8
+     },
+     "2026-09-22": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260922",
+      "ok": true,
+      "status": 200,
+      "events": 10,
+      "stateRows": 10
+     }
+    }
+   }
+  },
+  "wnba": {
+   "label": "WNBA",
+   "steps": {
+    "teams": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/teams",
+     "ok": true,
+     "status": 200,
+     "rows": 15
+    },
+    "injuries": {
+     "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries",
+     "ok": true,
+     "status": 200,
+     "playerRecords": 43
+    },
+    "scoreboard": {
+     "2026-09-21": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260921",
+      "ok": true,
+      "status": 200,
+      "events": 2,
+      "stateRows": 2
+     },
+     "2026-09-22": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260922",
+      "ok": true,
+      "status": 200,
+      "events": 5,
+      "stateRows": 5
+     }
+    }
+   }
+  }
+ },
+ "errors": [],
+ "codeMap": {
+  "rows": 72,
+  "matched": 38,
+  "unmapped": 34
+ },
+ "finishedAt": "2026-09-22T01:47:09.566Z"
+}

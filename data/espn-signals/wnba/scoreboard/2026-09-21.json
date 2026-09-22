@@ -1,0 +1,100 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-21",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260921"
+  ]
+ },
+ "captures": [
+  "2026-09-22T01:47:09.129Z"
+ ],
+ "events": {
+  "401857206": {
+   "eventId": "401857206",
+   "date": "2026-09-22T00:00Z",
+   "easternDate": "2026-09-21",
+   "name": "Atlanta Dream at New York Liberty",
+   "shortName": "ATL @ NY",
+   "week": null,
+   "venue": "Barclays Center",
+   "homeAbbr": "NY",
+   "homeTeamId": "9",
+   "homeName": "New York Liberty",
+   "awayAbbr": "ATL",
+   "awayTeamId": "20",
+   "awayName": "Atlanta Dream",
+   "firstCapturedAt": "2026-09-22T01:47:09.129Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-22T01:47:09.129Z",
+     "last_seen_at": "2026-09-22T01:47:09.129Z",
+     "fp": "in|4|8|65,77|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 4,
+     "clock": 520,
+     "displayClock": "8:40",
+     "scores": {
+      "home": 65,
+      "away": 77
+     },
+     "recordsOverall": {
+      "home": "26-16",
+      "away": "28-14"
+     }
+    }
+   ]
+  },
+  "401857207": {
+   "eventId": "401857207",
+   "date": "2026-09-22T02:00Z",
+   "easternDate": "2026-09-21",
+   "name": "Dallas Wings at Phoenix Mercury",
+   "shortName": "DAL @ PHX",
+   "week": null,
+   "venue": "Mortgage Matchup Center",
+   "homeAbbr": "PHX",
+   "homeTeamId": "11",
+   "homeName": "Phoenix Mercury",
+   "awayAbbr": "DAL",
+   "awayTeamId": "3",
+   "awayName": "Dallas Wings",
+   "firstCapturedAt": "2026-09-22T01:47:09.129Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "DAL -5.5",
+    "spread": 5.5,
+    "overUnder": 174.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-22T01:47:09.129Z",
+     "last_seen_at": "2026-09-22T01:47:09.129Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "15-27",
+      "away": "26-16"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-22T01:47:09.129Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260921"
+}

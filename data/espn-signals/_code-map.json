@@ -1,0 +1,1523 @@
+{
+ "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "generatedAt": "2026-09-22T01:47:09.566Z",
+ "rows": [
+  {
+   "league": "nba",
+   "kalshiCode": "BOS",
+   "kalshiName": "Boston",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "2",
+    "abbr": "BOS",
+    "displayName": "Boston Celtics",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
+     "rulesName": "Boston",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
+     "rulesName": "Boston",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "DET",
+   "kalshiName": "Detroit",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "8",
+    "abbr": "DET",
+    "displayName": "Detroit Pistons",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
+     "rulesName": "Detroit",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
+     "rulesName": "Detroit",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "NYK",
+   "kalshiName": "New York",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "18",
+    "abbr": "NY",
+    "displayName": "New York Knicks",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
+     "rulesName": "New York",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT20PHINYK-NYK",
+     "rulesName": "New York",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "OKC",
+   "kalshiName": "Oklahoma City",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "25",
+    "abbr": "OKC",
+    "displayName": "Oklahoma City Thunder",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
+     "rulesName": "Oklahoma City",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
+     "rulesName": "Oklahoma City",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "PHI",
+   "kalshiName": "Philadelphia",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "20",
+    "abbr": "PHI",
+    "displayName": "Philadelphia 76ers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
+     "rulesName": "Philadelphia",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT20PHINYK-NYK",
+     "rulesName": "Philadelphia",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "SAS",
+   "kalshiName": "San Antonio",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "24",
+    "abbr": "SA",
+    "displayName": "San Antonio Spurs",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
+     "rulesName": "San Antonio",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
+     "rulesName": "San Antonio",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "CARK",
+   "kalshiName": "Central Arkansas",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+     "rulesName": "Central Arkansas",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "CHS",
+   "kalshiName": "Chicago St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03CHSTARL-CHS",
+     "rulesName": "Chicago St.",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT03CHSTARL-TARL",
+     "rulesName": "Chicago St.",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "CMU",
+   "kalshiName": "Central Michigan",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+     "rulesName": "Central Michigan",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
+     "rulesName": "Central Michigan",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "EIU",
+   "kalshiName": "Eastern Illinois",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26EIUSDST-SDST",
+     "rulesName": "Eastern Illinois",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "FAU",
+   "kalshiName": "Florida Atlantic",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03TXSOFAU-FAU",
+     "rulesName": "Florida Atlantic",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT03TXSOFAU-TXSO",
+     "rulesName": "Florida Atlantic",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "FSU",
+   "kalshiName": "Florida St.",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "52",
+    "abbr": "FSU",
+    "displayName": "Florida State Seminoles",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+     "rulesName": "Florida St.",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "HCU",
+   "kalshiName": "Houston Christian",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26HCUUNT-HCU",
+     "rulesName": "Houston Christian",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26SEP26HCUUNT-UNT",
+     "rulesName": "Houston Christian",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "ILL",
+   "kalshiName": "Illinois",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+     "rulesName": "Illinois",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "LAM",
+   "kalshiName": "Lamar",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03NWSTLAM-NWST",
+     "rulesName": "Lamar",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "LSU",
+   "kalshiName": "LSU",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
+     "rulesName": "LSU",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT03MCNSLSU-LSU",
+     "rulesName": "LSU",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT03MCNSLSU-MCNS",
+     "rulesName": "LSU",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
+     "rulesName": "LSU",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "MCNS",
+   "kalshiName": "McNeese",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03MCNSLSU-LSU",
+     "rulesName": "McNeese",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT03MCNSLSU-MCNS",
+     "rulesName": "McNeese",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "MHU",
+   "kalshiName": "Mercyhurst",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26MHUWKU-MHU",
+     "rulesName": "Mercyhurst",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26SEP26MHUWKU-WKU",
+     "rulesName": "Mercyhurst",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "MIA",
+   "kalshiName": "Miami (FL)",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+     "rulesName": "Miami (FL)",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
+     "rulesName": "Miami (FL)",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "MOSU",
+   "kalshiName": "Missouri St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+     "rulesName": "Missouri St.",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "NHC",
+   "kalshiName": "New Haven",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
+     "rulesName": "New Haven",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "NWST",
+   "kalshiName": "Northwestern St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03NWSTLAM-NWST",
+     "rulesName": "Northwestern St.",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "OKLA",
+   "kalshiName": "Oklahoma",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26OKLAUGA-UGA",
+     "rulesName": "Oklahoma",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "ORE",
+   "kalshiName": "Oregon",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
+     "rulesName": "Oregon",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "OSU",
+   "kalshiName": "Ohio St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+     "rulesName": "Ohio St.",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "PEAY",
+   "kalshiName": "Austin Peay",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
+     "rulesName": "Austin Peay",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "SAM",
+   "kalshiName": "Samford",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03SAMUAB-UAB",
+     "rulesName": "Samford",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "SDST",
+   "kalshiName": "South Dakota St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26EIUSDST-SDST",
+     "rulesName": "South Dakota St.",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "SHSU",
+   "kalshiName": "Sam Houston",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+     "rulesName": "Sam Houston",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
+     "rulesName": "Sam Houston",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "SMU",
+   "kalshiName": "SMU",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+     "rulesName": "SMU",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "TARL",
+   "kalshiName": "Tarleton St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03CHSTARL-CHS",
+     "rulesName": "Tarleton St.",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT03CHSTARL-TARL",
+     "rulesName": "Tarleton St.",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "TTU",
+   "kalshiName": "Texas Tech",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+     "rulesName": "Texas Tech",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
+     "rulesName": "Texas Tech",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "TXAM",
+   "kalshiName": "Texas A&M",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
+     "rulesName": "Texas A&M",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
+     "rulesName": "Texas A&M",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "TXSO",
+   "kalshiName": "Texas Southern",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03TXSOFAU-FAU",
+     "rulesName": "Texas Southern",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT03TXSOFAU-TXSO",
+     "rulesName": "Texas Southern",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "UAB",
+   "kalshiName": "UAB",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "5",
+    "abbr": "UAB",
+    "displayName": "UAB Blazers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03SAMUAB-UAB",
+     "rulesName": "UAB",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "UGA",
+   "kalshiName": "Georgia",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "AMBIGUOUS_PREFIX_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26OKLAUGA-UGA",
+     "rulesName": "Georgia",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "UNT",
+   "kalshiName": "North Texas",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26HCUUNT-HCU",
+     "rulesName": "North Texas",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26SEP26HCUUNT-UNT",
+     "rulesName": "North Texas",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "USC",
+   "kalshiName": "USC",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "30",
+    "abbr": "USC",
+    "displayName": "USC Trojans",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
+     "rulesName": "USC",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "WKU",
+   "kalshiName": "Western Kentucky",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26SEP26MHUWKU-MHU",
+     "rulesName": "Western Kentucky",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26SEP26MHUWKU-WKU",
+     "rulesName": "Western Kentucky",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "DAL",
+   "kalshiName": "Dallas",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "6",
+    "abbr": "DAL",
+    "displayName": "Dallas Cowboys",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP13DALNYG-DAL",
+     "rulesName": "Dallas",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "DEN",
+   "kalshiName": "Denver",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "7",
+    "abbr": "DEN",
+    "displayName": "Denver Broncos",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP14DENKC-DEN",
+     "rulesName": "Denver",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP14DENKC-KC",
+     "rulesName": "Denver",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "KC",
+   "kalshiName": "Kansas City",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "12",
+    "abbr": "KC",
+    "displayName": "Kansas City Chiefs",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP14DENKC-DEN",
+     "rulesName": "Kansas City",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP14DENKC-KC",
+     "rulesName": "Kansas City",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "LAR",
+   "kalshiName": "Los Angeles R",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "14",
+    "abbr": "LAR",
+    "displayName": "Los Angeles Rams",
+    "matchedBy": "displayName-qualifier-letter"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP10SFLAR-LAR",
+     "rulesName": "Los Angeles R",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP10SFLAR-SF",
+     "rulesName": "Los Angeles R",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "NE",
+   "kalshiName": "New England",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "17",
+    "abbr": "NE",
+    "displayName": "New England Patriots",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP09NESEA-SEA",
+     "rulesName": "New England",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP09NESEA-NE",
+     "rulesName": "New England",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "NYG",
+   "kalshiName": "New York G",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "19",
+    "abbr": "NYG",
+    "displayName": "New York Giants",
+    "matchedBy": "displayName-qualifier-letter"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP13DALNYG-DAL",
+     "rulesName": "New York G",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "SEA",
+   "kalshiName": "Seattle",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "26",
+    "abbr": "SEA",
+    "displayName": "Seattle Seahawks",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP09NESEA-SEA",
+     "rulesName": "Seattle",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP09NESEA-NE",
+     "rulesName": "Seattle",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "SF",
+   "kalshiName": "San Francisco",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "25",
+    "abbr": "SF",
+    "displayName": "San Francisco 49ers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP10SFLAR-LAR",
+     "rulesName": "San Francisco",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP10SFLAR-SF",
+     "rulesName": "San Francisco",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "ANA",
+   "kalshiName": "Anaheim",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "25",
+    "abbr": "ANA",
+    "displayName": "Anaheim Ducks",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
+     "rulesName": "Anaheim",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP20SJANA-SJ",
+     "rulesName": "Anaheim",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "BOS",
+   "kalshiName": "Boston",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "1",
+    "abbr": "BOS",
+    "displayName": "Boston Bruins",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP20WSHBOS-WSH",
+     "rulesName": "Boston",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP20WSHBOS-BOS",
+     "rulesName": "Boston",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "CAR",
+   "kalshiName": "Carolina",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "7",
+    "abbr": "CAR",
+    "displayName": "Carolina Hurricanes",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP20CARFLA-CAR",
+     "rulesName": "Carolina",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "CGY",
+   "kalshiName": "Calgary",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "3",
+    "abbr": "CGY",
+    "displayName": "Calgary Flames",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP20SEACGY-CGY",
+     "rulesName": "Calgary",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP20SEACGY-SEA",
+     "rulesName": "Calgary",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "CHI",
+   "kalshiName": "Chicago",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "4",
+    "abbr": "CHI",
+    "displayName": "Chicago Blackhawks",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP19CHIMIN-MIN",
+     "rulesName": "Chicago",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP19CHIMIN-CHI",
+     "rulesName": "Chicago",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "DAL",
+   "kalshiName": "Dallas",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "9",
+    "abbr": "DAL",
+    "displayName": "Dallas Stars",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP19DALSTL-DAL",
+     "rulesName": "Dallas",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
+     "rulesName": "Dallas",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "EDM",
+   "kalshiName": "Edmonton",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "6",
+    "abbr": "EDM",
+    "displayName": "Edmonton Oilers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP19WPGEDM-EDM",
+     "rulesName": "Edmonton",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP19WPGEDM-WPG",
+     "rulesName": "Edmonton",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "FLA",
+   "kalshiName": "Florida",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "26",
+    "abbr": "FLA",
+    "displayName": "Florida Panthers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP20CARFLA-CAR",
+     "rulesName": "Florida",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "LA",
+   "kalshiName": "Los Angeles",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "8",
+    "abbr": "LA",
+    "displayName": "Los Angeles Kings",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
+     "rulesName": "Los Angeles",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP19VGKLA-LA",
+     "rulesName": "Los Angeles",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "MIN",
+   "kalshiName": "Minnesota",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "30",
+    "abbr": "MIN",
+    "displayName": "Minnesota Wild",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP19CHIMIN-MIN",
+     "rulesName": "Minnesota",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP19CHIMIN-CHI",
+     "rulesName": "Minnesota",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "SEA",
+   "kalshiName": "Seattle",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "124292",
+    "abbr": "SEA",
+    "displayName": "Seattle Kraken",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP19VANSEA-SEA",
+     "rulesName": "Seattle",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP20SEACGY-CGY",
+     "rulesName": "Seattle",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP20SEACGY-SEA",
+     "rulesName": "Seattle",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "SJ",
+   "kalshiName": "San Jose",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "18",
+    "abbr": "SJ",
+    "displayName": "San Jose Sharks",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
+     "rulesName": "San Jose",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP20SJANA-SJ",
+     "rulesName": "San Jose",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "STL",
+   "kalshiName": "St. Louis",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "19",
+    "abbr": "STL",
+    "displayName": "St. Louis Blues",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP19DALSTL-DAL",
+     "rulesName": "St. Louis",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
+     "rulesName": "St. Louis",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "VAN",
+   "kalshiName": "Vancouver",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "22",
+    "abbr": "VAN",
+    "displayName": "Vancouver Canucks",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP19VANSEA-SEA",
+     "rulesName": "Vancouver",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "VGK",
+   "kalshiName": "Vegas",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "37",
+    "abbr": "VGK",
+    "displayName": "Vegas Golden Knights",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
+     "rulesName": "Vegas",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP19VGKLA-LA",
+     "rulesName": "Vegas",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "WPG",
+   "kalshiName": "Winnipeg",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "28",
+    "abbr": "WPG",
+    "displayName": "Winnipeg Jets",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP19WPGEDM-EDM",
+     "rulesName": "Winnipeg",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP19WPGEDM-WPG",
+     "rulesName": "Winnipeg",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "WSH",
+   "kalshiName": "Washington",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "23",
+    "abbr": "WSH",
+    "displayName": "Washington Capitals",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP20WSHBOS-WSH",
+     "rulesName": "Washington",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP20WSHBOS-BOS",
+     "rulesName": "Washington",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
+   "kalshiCode": "ATL",
+   "kalshiName": "Atlanta women's",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26AUG16INDATL-IND",
+     "rulesName": "Atlanta women's",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
+   "kalshiCode": "CHI",
+   "kalshiName": "Chicago",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "19",
+    "abbr": "CHI",
+    "displayName": "Chicago Sky",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26AUG10CHISEA-CHI",
+     "rulesName": "Chicago",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
+   "kalshiCode": "DAL",
+   "kalshiName": "Dallas women's",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26AUG20INDDAL-IND",
+     "rulesName": "Dallas women's",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
+   "kalshiCode": "IND",
+   "kalshiName": "Indiana",
+   "conflictWith": "Indiana women's",
+   "espn": {
+    "teamId": "5",
+    "abbr": "IND",
+    "displayName": "Indiana Fever",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26AUG20INDDAL-IND",
+     "rulesName": "Indiana",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
+   "kalshiCode": "LA",
+   "kalshiName": "Los Angeles",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "6",
+    "abbr": "LA",
+    "displayName": "Los Angeles Sparks",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26AUG06LAMIN-LA",
+     "rulesName": "Los Angeles",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
+   "kalshiCode": "LV",
+   "kalshiName": "Las Vegas",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "17",
+    "abbr": "LV",
+    "displayName": "Las Vegas Aces",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26AUG06LVIND-LV",
+     "rulesName": "Las Vegas",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
+   "kalshiCode": "MIN",
+   "kalshiName": "Minnesota women's",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26AUG06LAMIN-LA",
+     "rulesName": "Minnesota women's",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
+   "kalshiCode": "SEA",
+   "kalshiName": "Seattle women's",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26AUG10CHISEA-CHI",
+     "rulesName": "Seattle women's",
+     "role": "home"
+    }
+   ]
+  }
+ ],
+ "unmatchedContracts": [
+  {
+   "ticker": "KXNFLGAME-26SEP17DETBUF-DET",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXWNBAGAME-26AUG06LVIND-IND",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26SEP20INDKC-IND",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26SEP20INDKC-KC",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXWNBAGAME-26AUG14DALIND-IND",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXWNBAGAME-26AUG24GSMIN-MIN",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  }
+ ]
+}
