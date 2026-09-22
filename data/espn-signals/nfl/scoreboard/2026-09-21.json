@@ -1,0 +1,56 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-21",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260921"
+  ]
+ },
+ "captures": [
+  "2026-09-22T01:47:08.248Z"
+ ],
+ "events": {
+  "401872947": {
+   "eventId": "401872947",
+   "date": "2026-09-22T00:15Z",
+   "easternDate": "2026-09-21",
+   "name": "New York Giants at Los Angeles Rams",
+   "shortName": "NYG @ LAR",
+   "week": 2,
+   "venue": "SoFi Stadium",
+   "homeAbbr": "LAR",
+   "homeTeamId": "14",
+   "homeName": "Los Angeles Rams",
+   "awayAbbr": "NYG",
+   "awayTeamId": "19",
+   "awayName": "New York Giants",
+   "firstCapturedAt": "2026-09-22T01:47:08.248Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-22T01:47:08.248Z",
+     "last_seen_at": "2026-09-22T01:47:08.248Z",
+     "fp": "in|2|0|14,3|false|STATUS_HALFTIME",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_HALFTIME",
+     "completed": false,
+     "period": 2,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 14,
+      "away": 3
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "1-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-22T01:47:08.248Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260921"
+}

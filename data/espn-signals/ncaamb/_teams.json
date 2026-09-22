@@ -1,0 +1,510 @@
+{
+ "what": "ESPN NCAA men's basketball team table (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams",
+ "captured_at": "2026-09-22T01:47:08.686Z",
+ "last_confirmed_at": "2026-09-22T01:47:08.686Z",
+ "prior_captured_at": null,
+ "teams": [
+  {
+   "id": "44",
+   "abbr": "AMER",
+   "displayName": "American University Eagles",
+   "location": "American University",
+   "name": "Eagles",
+   "slug": "american-university-eagles",
+   "nickname": "American",
+   "isActive": true
+  },
+  {
+   "id": "9",
+   "abbr": "ASU",
+   "displayName": "Arizona State Sun Devils",
+   "location": "Arizona State",
+   "name": "Sun Devils",
+   "slug": "arizona-state-sun-devils",
+   "nickname": "Arizona St",
+   "isActive": true
+  },
+  {
+   "id": "12",
+   "abbr": "ARIZ",
+   "displayName": "Arizona Wildcats",
+   "location": "Arizona",
+   "name": "Wildcats",
+   "slug": "arizona-wildcats",
+   "nickname": "Arizona",
+   "isActive": true
+  },
+  {
+   "id": "8",
+   "abbr": "ARK",
+   "displayName": "Arkansas Razorbacks",
+   "location": "Arkansas",
+   "name": "Razorbacks",
+   "slug": "arkansas-razorbacks",
+   "nickname": "Arkansas",
+   "isActive": true
+  },
+  {
+   "id": "2",
+   "abbr": "AUB",
+   "displayName": "Auburn Tigers",
+   "location": "Auburn",
+   "name": "Tigers",
+   "slug": "auburn-tigers",
+   "nickname": "Auburn",
+   "isActive": true
+  },
+  {
+   "id": "91",
+   "abbr": "BELL",
+   "displayName": "Bellarmine Knights",
+   "location": "Bellarmine",
+   "name": "Knights",
+   "slug": "bellarmine-knights",
+   "nickname": "Bellarmine",
+   "isActive": true
+  },
+  {
+   "id": "68",
+   "abbr": "BOIS",
+   "displayName": "Boise State Broncos",
+   "location": "Boise State",
+   "name": "Broncos",
+   "slug": "boise-state-broncos",
+   "nickname": "Boise St",
+   "isActive": true
+  },
+  {
+   "id": "71",
+   "abbr": "BRAD",
+   "displayName": "Bradley Braves",
+   "location": "Bradley",
+   "name": "Braves",
+   "slug": "bradley-braves",
+   "nickname": "Bradley",
+   "isActive": true
+  },
+  {
+   "id": "13",
+   "abbr": "CP",
+   "displayName": "Cal Poly Mustangs",
+   "location": "Cal Poly",
+   "name": "Mustangs",
+   "slug": "cal-poly-mustangs",
+   "nickname": "Cal Poly",
+   "isActive": true
+  },
+  {
+   "id": "25",
+   "abbr": "CAL",
+   "displayName": "California Golden Bears",
+   "location": "California",
+   "name": "Golden Bears",
+   "slug": "california-golden-bears",
+   "nickname": "California",
+   "isActive": true
+  },
+  {
+   "id": "38",
+   "abbr": "COLO",
+   "displayName": "Colorado Buffaloes",
+   "location": "Colorado",
+   "name": "Buffaloes",
+   "slug": "colorado-buffaloes",
+   "nickname": "Colorado",
+   "isActive": true
+  },
+  {
+   "id": "36",
+   "abbr": "CSU",
+   "displayName": "Colorado State Rams",
+   "location": "Colorado State",
+   "name": "Rams",
+   "slug": "colorado-state-rams",
+   "nickname": "Colorado St",
+   "isActive": true
+  },
+  {
+   "id": "48",
+   "abbr": "DEL",
+   "displayName": "Delaware Blue Hens",
+   "location": "Delaware",
+   "name": "Blue Hens",
+   "slug": "delaware-blue-hens",
+   "nickname": "Delaware",
+   "isActive": true
+  },
+  {
+   "id": "50",
+   "abbr": "FAMU",
+   "displayName": "Florida A&M Rattlers",
+   "location": "Florida A&M",
+   "name": "Rattlers",
+   "slug": "florida-am-rattlers",
+   "nickname": "Florida A&M",
+   "isActive": true
+  },
+  {
+   "id": "57",
+   "abbr": "FLA",
+   "displayName": "Florida Gators",
+   "location": "Florida",
+   "name": "Gators",
+   "slug": "florida-gators",
+   "nickname": "Florida",
+   "isActive": true
+  },
+  {
+   "id": "52",
+   "abbr": "FSU",
+   "displayName": "Florida State Seminoles",
+   "location": "Florida State",
+   "name": "Seminoles",
+   "slug": "florida-state-seminoles",
+   "nickname": "Florida St",
+   "isActive": true
+  },
+  {
+   "id": "45",
+   "abbr": "GW",
+   "displayName": "George Washington Revolutionaries",
+   "location": "George Washington",
+   "name": "Revolutionaries",
+   "slug": "george-washington-revolutionaries",
+   "nickname": "G Washington",
+   "isActive": true
+  },
+  {
+   "id": "46",
+   "abbr": "GTWN",
+   "displayName": "Georgetown Hoyas",
+   "location": "Georgetown",
+   "name": "Hoyas",
+   "slug": "georgetown-hoyas",
+   "nickname": "Georgetown",
+   "isActive": true
+  },
+  {
+   "id": "61",
+   "abbr": "UGA",
+   "displayName": "Georgia Bulldogs",
+   "location": "Georgia",
+   "name": "Bulldogs",
+   "slug": "georgia-bulldogs",
+   "nickname": "Georgia",
+   "isActive": true
+  },
+  {
+   "id": "59",
+   "abbr": "GT",
+   "displayName": "Georgia Tech Yellow Jackets",
+   "location": "Georgia Tech",
+   "name": "Yellow Jackets",
+   "slug": "georgia-tech-yellow-jackets",
+   "nickname": "Georgia Tech",
+   "isActive": true
+  },
+  {
+   "id": "62",
+   "abbr": "HAW",
+   "displayName": "Hawai'i Rainbow Warriors",
+   "location": "Hawai'i",
+   "name": "Rainbow Warriors",
+   "slug": "hawaii-rainbow-warriors",
+   "nickname": "Hawai'i",
+   "isActive": true
+  },
+  {
+   "id": "47",
+   "abbr": "HOW",
+   "displayName": "Howard Bison",
+   "location": "Howard",
+   "name": "Bison",
+   "slug": "howard-bison",
+   "nickname": "Howard",
+   "isActive": true
+  },
+  {
+   "id": "85",
+   "abbr": "IUIN",
+   "displayName": "IU Indianapolis Jaguars",
+   "location": "IU Indianapolis",
+   "name": "Jaguars",
+   "slug": "iu-indianapolis-jaguars",
+   "nickname": "IU Indy",
+   "isActive": true
+  },
+  {
+   "id": "70",
+   "abbr": "IDHO",
+   "displayName": "Idaho Vandals",
+   "location": "Idaho",
+   "name": "Vandals",
+   "slug": "idaho-vandals",
+   "nickname": "Idaho",
+   "isActive": true
+  },
+  {
+   "id": "84",
+   "abbr": "IU",
+   "displayName": "Indiana Hoosiers",
+   "location": "Indiana",
+   "name": "Hoosiers",
+   "slug": "indiana-hoosiers",
+   "nickname": "Indiana",
+   "isActive": true
+  },
+  {
+   "id": "66",
+   "abbr": "ISU",
+   "displayName": "Iowa State Cyclones",
+   "location": "Iowa State",
+   "name": "Cyclones",
+   "slug": "iowa-state-cyclones",
+   "nickname": "Iowa State",
+   "isActive": true
+  },
+  {
+   "id": "55",
+   "abbr": "JXST",
+   "displayName": "Jacksonville State Gamecocks",
+   "location": "Jacksonville State",
+   "name": "Gamecocks",
+   "slug": "jacksonville-state-gamecocks",
+   "nickname": "Jax State",
+   "isActive": true
+  },
+  {
+   "id": "96",
+   "abbr": "UK",
+   "displayName": "Kentucky Wildcats",
+   "location": "Kentucky",
+   "name": "Wildcats",
+   "slug": "kentucky-wildcats",
+   "nickname": "Kentucky",
+   "isActive": true
+  },
+  {
+   "id": "97",
+   "abbr": "LOU",
+   "displayName": "Louisville Cardinals",
+   "location": "Louisville",
+   "name": "Cardinals",
+   "slug": "louisville-cardinals",
+   "nickname": "Louisville",
+   "isActive": true
+  },
+  {
+   "id": "93",
+   "abbr": "MUR",
+   "displayName": "Murray State Racers",
+   "location": "Murray State",
+   "name": "Racers",
+   "slug": "murray-state-racers",
+   "nickname": "Murray St",
+   "isActive": true
+  },
+  {
+   "id": "94",
+   "abbr": "NKU",
+   "displayName": "Northern Kentucky Norse",
+   "location": "Northern Kentucky",
+   "name": "Norse",
+   "slug": "northern-kentucky-norse",
+   "nickname": "N Kentucky",
+   "isActive": true
+  },
+  {
+   "id": "77",
+   "abbr": "NU",
+   "displayName": "Northwestern Wildcats",
+   "location": "Northwestern",
+   "name": "Wildcats",
+   "slug": "northwestern-wildcats",
+   "nickname": "Northwestern",
+   "isActive": true
+  },
+  {
+   "id": "87",
+   "abbr": "ND",
+   "displayName": "Notre Dame Fighting Irish",
+   "location": "Notre Dame",
+   "name": "Fighting Irish",
+   "slug": "notre-dame-fighting-irish",
+   "nickname": "Notre Dame",
+   "isActive": true
+  },
+  {
+   "id": "16",
+   "abbr": "SAC",
+   "displayName": "Sacramento State Hornets",
+   "location": "Sacramento State",
+   "name": "Hornets",
+   "slug": "sacramento-state-hornets",
+   "nickname": "Sacramento St",
+   "isActive": true
+  },
+  {
+   "id": "21",
+   "abbr": "SDSU",
+   "displayName": "San Diego State Aztecs",
+   "location": "San Diego State",
+   "name": "Aztecs",
+   "slug": "san-diego-state-aztecs",
+   "nickname": "San Diego St",
+   "isActive": true
+  },
+  {
+   "id": "23",
+   "abbr": "SJSU",
+   "displayName": "San José State Spartans",
+   "location": "San José State",
+   "name": "Spartans",
+   "slug": "san-jose-state-spartans",
+   "nickname": "San José St",
+   "isActive": true
+  },
+  {
+   "id": "6",
+   "abbr": "USA",
+   "displayName": "South Alabama Jaguars",
+   "location": "South Alabama",
+   "name": "Jaguars",
+   "slug": "south-alabama-jaguars",
+   "nickname": "South Alabama",
+   "isActive": true
+  },
+  {
+   "id": "58",
+   "abbr": "USF",
+   "displayName": "South Florida Bulls",
+   "location": "South Florida",
+   "name": "Bulls",
+   "slug": "south-florida-bulls",
+   "nickname": "South Florida",
+   "isActive": true
+  },
+  {
+   "id": "79",
+   "abbr": "SIU",
+   "displayName": "Southern Illinois Salukis",
+   "location": "Southern Illinois",
+   "name": "Salukis",
+   "slug": "southern-illinois-salukis",
+   "nickname": "S Illinois",
+   "isActive": true
+  },
+  {
+   "id": "24",
+   "abbr": "STAN",
+   "displayName": "Stanford Cardinal",
+   "location": "Stanford",
+   "name": "Cardinal",
+   "slug": "stanford-cardinal",
+   "nickname": "Stanford",
+   "isActive": true
+  },
+  {
+   "id": "56",
+   "abbr": "STET",
+   "displayName": "Stetson Hatters",
+   "location": "Stetson",
+   "name": "Hatters",
+   "slug": "stetson-hatters",
+   "nickname": "Stetson",
+   "isActive": true
+  },
+  {
+   "id": "5",
+   "abbr": "UAB",
+   "displayName": "UAB Blazers",
+   "location": "UAB",
+   "name": "Blazers",
+   "slug": "uab-blazers",
+   "nickname": "UAB",
+   "isActive": true
+  },
+  {
+   "id": "27",
+   "abbr": "UCR",
+   "displayName": "UC Riverside Highlanders",
+   "location": "UC Riverside",
+   "name": "Highlanders",
+   "slug": "uc-riverside-highlanders",
+   "nickname": "UC Riverside",
+   "isActive": true
+  },
+  {
+   "id": "28",
+   "abbr": "UCSD",
+   "displayName": "UC San Diego Tritons",
+   "location": "UC San Diego",
+   "name": "Tritons",
+   "slug": "uc-san-diego-tritons",
+   "nickname": "UC San Diego",
+   "isActive": true
+  },
+  {
+   "id": "26",
+   "abbr": "UCLA",
+   "displayName": "UCLA Bruins",
+   "location": "UCLA",
+   "name": "Bruins",
+   "slug": "ucla-bruins",
+   "nickname": "UCLA",
+   "isActive": true
+  },
+  {
+   "id": "41",
+   "abbr": "CONN",
+   "displayName": "UConn Huskies",
+   "location": "UConn",
+   "name": "Huskies",
+   "slug": "uconn-huskies",
+   "nickname": "UConn",
+   "isActive": true
+  },
+  {
+   "id": "82",
+   "abbr": "UIC",
+   "displayName": "UIC Flames",
+   "location": "UIC",
+   "name": "Flames",
+   "slug": "uic-flames",
+   "nickname": "UIC",
+   "isActive": true
+  },
+  {
+   "id": "30",
+   "abbr": "USC",
+   "displayName": "USC Trojans",
+   "location": "USC",
+   "name": "Trojans",
+   "slug": "usc-trojans",
+   "nickname": "USC",
+   "isActive": true
+  },
+  {
+   "id": "98",
+   "abbr": "WKU",
+   "displayName": "Western Kentucky Hilltoppers",
+   "location": "Western Kentucky",
+   "name": "Hilltoppers",
+   "slug": "western-kentucky-hilltoppers",
+   "nickname": "Western KY",
+   "isActive": true
+  },
+  {
+   "id": "43",
+   "abbr": "YALE",
+   "displayName": "Yale Bulldogs",
+   "location": "Yale",
+   "name": "Bulldogs",
+   "slug": "yale-bulldogs",
+   "nickname": "Yale",
+   "isActive": true
+  }
+ ]
+}
