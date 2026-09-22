@@ -1,8 +1,8 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-22 by `scripts/render-docs.js` from `src/verification-data.js`.
-**62 irregularities** flagged during this build: 18 high, 29 medium,
-12 low, 2 informational.
+**65 irregularities** flagged during this build: 18 high, 31 medium,
+13 low, 2 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
 about it**, and **what you should do**. Nothing here is speculation: each item was found by comparing an
@@ -207,143 +207,6 @@ assumption against an official document or a real API response.
 
 - Bar volume is the period’s traded contracts: <https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B6900/candlesticks?start_ts=1781841600&end_ts=1789689600&period_interval=1440> — `median daily volume_fp 389.00 across 264 bars`
 - The run that exposed it — `seed 20260917, 268 periods, 30 markets: PanicDip_ShockTiming +2005.93%, 1,027 trades, 19 days with >20% equity moves`
-
----
-
-## #37 — Maker fees were charged on series that do not have them — the maker/taker split is a PER-SERIES property the engine ignored
-
-**Severity:** `HIGH`
-
-| | |
-| --- | --- |
-| **We assumed** | That any resting order pays the maker coefficient: fees = round up(M x 0.0175 x C x P x (1-P)). KALSHI_FEES.makerCoefficient was applied unconditionally in OrderBook.processRestingFills(). |
-| **Verified truth** | The official schedule charges a resting order only if the series is in its Maker Fees section: "Trading fees are only charged for orders that are immediately matched with orders sitting on the orderbook. Trading fees are not charged for orders placed that are not immediately matched and are instead left as resting orders on the orderbook unless they are included in our Maker Fees section." The live Series object marks exactly those series with fee_type = "quadratic_with_maker_fees". In the 2026-09-18 capture of 14,154 series, KXNFLGAME, KXMLBGAME, KXNBAGAME, KXWNBAGAME, KXNCAAFGAME, KXFEDDECISION, KXCPIYOY, KXINXY and KXNASDAQ100Y carry that flag, while every KXHIGH* weather series (and KXGOLD15M, KXBTC15M, KXETH15M, KXSOL15M, KXUFCFIGHT) is plain "quadratic" and pays NOTHING for a resting order. The same capture also shows multipliers that are not 1: the MLB series 0.5, KXBTCY 0. |
-| **What the code does** | Fees are resolved per series from a capture, and every fill states the regime that produced its fee. Maker strategies that traded plain-quadratic series were being over-charged before this fix; the ledger, the reports and the Pages data were regenerated. Any strategy text that asserted "the maker coefficient is a quarter of the taker fee" was corrected to the per-series rule. |
-| **What you should do** | Open the Trade Ledger tab: the Fee Regimes table counts the fills and dollars under each rule, and any row can be traced back to its series ticker in src/series-fee-registry.js. |
-
-**Evidence**
-
-- Official fee schedule (PDF) — the sentence quoted above: <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
-- The real per-series configuration — `data/discovered/series-fees.json (GET /series?include_volume=true, capturedAt 2026-09-18T06:42:31Z) -> src/series-fee-registry.js`
-- Endpoint documentation: <https://docs.kalshi.com/api-reference/market/get-series-list>
-- The fix — `src/simulation-engine.js -> OrderBook.makerFeesApply (set from the series fee_type); a plain-quadratic maker fill now records fee 0 and puts the rule that produced it in feeFormula`
-- The guard — `test 86 proves both branches: $0.00 on a plain-quadratic series, exactly $0.42 on 100 contracts at $0.40 for a maker-fee series`
-- Visible per fill — `src/trade-ledger.js -> feeRegime column (taker_0.07 | taker_zero | maker_0.0175 | maker_free | settlement) and the Fee Regimes table on the Trade Ledger tab`
-
----
-
-## #41 — A push race silently discarded an entire ingest run's data (the bot committed nothing and exited 128)
-
-**Severity:** `HIGH`
-
-| | |
-| --- | --- |
-| **We assumed** | That the inline push-race guard in the three bot workflows could always recover from losing a push race by rebasing on the remote tip. |
-| **Verified truth** | The first post-merge ingest run on main (2026-09-18, run 35352002809) fetched a full universe of bars and then died at its "Commit the new history" step with exit code 128, so EVERY bar, book snapshot and settlement check that run collected was discarded — the runner's disk is thrown away. Root cause, three stacked bugs: (1) ingest-now.yml's commit step added data/, src/accumulated-history.js and docs/data but NOT src/forecast-data.js, which the module-regeneration step had just rewritten — the tree kept a tracked-but-unstaged file; (2) the forecast bot won the push race meanwhile, and `git rebase` refuses to start with unstaged changes (its own exit 128); (3) the failure branch then ran `git rebase --continue` and `git rebase --abort` — both fail with "no rebase in progress" (exit 128) — and because GitHub runs run: steps with bash -e, the abort's exit code terminated the step before the ::error message could be emitted. The daily-history.yml copy of the guard had already been fixed for exactly this race; ingest-now.yml had not. |
-| **What the code does** | All three workflows (ingest-now.yml, daily-history.yml, weather-signals.yml) now call the shared script. The lost bars were not lost permanently — the exchange is the source of truth and the request-9 re-run re-fetched the same windows — but the 14:45–18:00 UTC window on 2026-09-18 had no ingest commit until the re-run landed, and any analysis run in that window saw a store that lagged reality by hours. |
-| **What you should do** | Open the two run links and compare their Commit steps; then run `bash test/workflow-race-guard.sh` locally to watch the exact failure mode and its fix execute. |
-
-**Evidence**
-
-- The failed run (job log shows all steps green until "Commit the new history"): <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35352002809>
-- The recovered re-run (same universe, committed by the new guard): <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35377388737>
-- The fix — one shared, locally-tested script — `scripts/push-with-race-guard.sh: commits EVERYTHING the run changed (git add -A, run logs now git-ignored), rebases with --autostash, auto-resolves rebase conflicts ONLY for generated modules and ONLY by regeneration, aborts cleanly on any other conflict, and never lets a `git rebase --abort` failure terminate the script.`
-- The regression test — `test/workflow-race-guard.sh — 21 checks against a real bare-repo remote, including a replay of the exact 2026-09-18 race (tracked-but-unstaged module + concurrent bot push) and the data-conflict case, which must fail the job rather than commit conflict markers.`
-
----
-
-## #46 — The forward walk read a bar list that stops at the cut-off, so a resting order could never be crossed by a real trade
-
-**Severity:** `HIGH`
-
-| | |
-| --- | --- |
-| **We assumed** | That buildTimeline() could see later candlestick quotes because it filtered events by `endTs > asOfMs` and the desk publishes the bar walk as live instrumentation. |
-| **Verified truth** | It read `universe.markets[].bars`, and buildDeskUniverse deliberately truncates every bar list AT the cut-off — that truncation is what keeps a DECISION point-in-time. The `endTs > asOfMs` filter could therefore never admit a bar, at any cut-off. Measured on the 2026-09-18 store: bars after the cut-off inside the decision view = 0 at live/−6h/−12h/−24h, while the store itself held 185/272/513 later ladder captures at those cut-offs. Result: a resting (maker) order could only be crossed by a sparse later ladder snapshot, never by a real traded candlestick, and no paper position could be resolved by a later real trade. The Live Desk reported 0 maker fills at every cut-off it was asked about. |
-| **What the code does** | buildTimeline() now walks the raw store bars (data.markets[].bars) and filters by `endTs > asOfMs` itself, while the universe handed to strategies keeps truncating at the cut-off. After the fix the −6h cut-off walks 338 candlestick quotes + 4 real settlements (342 events), −12h walks 568 and −24h walks 1172; the newest capture honestly walks 0 because the store ends there. A carried maker order now fills at the −15h cut-off (1 maker fill) and the season book is crossed by later real quotes. |
-| **What you should do** | Open the Live Desk tab at the −6h cut-off: "events walked" must be non-zero, and every maker fill must name the later real quote that crossed it (irregularity #46 is what made that number zero). |
-
-**Evidence**
-
-- buildTimeline() — now reads the RAW store bars and filters by endTs itself (commented in place): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
-- buildDeskUniverse() truncation — the reason the decision view must NOT see later bars: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
-- Regression test 107 pins both halves (non-zero forward quotes; no decision bar after asOf): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js>
-
----
-
-## #49 — The desk let a paper account borrow cash and sell contracts it did not hold
-
-**Severity:** `HIGH`
-
-| | |
-| --- | --- |
-| **We assumed** | That a strategy sizing from `view.cash` could never spend more than it had, so the desk needed no cash rule of its own. |
-| **Verified truth** | placeDeskOrder() sized against the captured LADDER and the 10% liquidity cap, and never against the portfolio. An entrant that emitted three 35%-of-cash legs (or a carried season entrant re-spending its cash every round) could spend more than 100% of it, and a `sell` intent with no position was booked as a naked short — both on a venue that settles in cash and does not offer margin or shorting. The desk audit could not catch it either: the equity identity (equity − starting = realized + unrealized − fees) closes just as neatly on a −$80,000 cash balance as on a real one. |
-| **What the code does** | Both runners now pass their portfolio into placeDeskOrder(). A BUY is re-sized to what the cash can pay for including the official fee (a 2% budget reserve covers the quadratic taker fee) and the reduction is recorded as `cashCapped` on the ORDER and the FILL, with the original requested size preserved and the shortfall reported as unfilled. A SELL with no position is rejected (NO_POSITION_TO_SELL) instead of opening a negative one, and a SELL larger than the position is capped to the held size (`positionCapped`). A crossed resting BUY is capped the same way at the crossing instant, because a carried book may have spent the cash in between. auditSeason() adds S12: no round snapshot may show negative cash and no SELL fill may exceed what that entrant had already bought. |
-| **What you should do** | Read any FILL with `cashCapped` > 0 or any REJECT with NO_POSITION_TO_SELL in data/reports/desk-season-ledger.jsonl: the ledger must show a smaller order (or a refusal), never a negative balance. |
-
-**Evidence**
-
-- placeDeskOrder — now carries the cash/position guards and records them on the order and the fill: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
-- Season audit S12 re-derives both rules from the ledger alone: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/desk-season.js>
-- Test 114 — borrow, naked short and over-sized sell all refused or capped: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js>
-
----
-
-## #51 — A successful scheduled weather capture was lost at the commit step: the push guard could only auto-resolve two of the files the bots regenerate
-
-**Severity:** `HIGH`
-
-| | |
-| --- | --- |
-| **We assumed** | That the push guard's auto-resolve list (src/accumulated-history.js, src/forecast-data.js) covered every file a data bot's regenerate step rewrites, so a queued run that rebased onto another bot's commit would always be able to finish. |
-| **Verified truth** | Scheduled "Weather signal archive" run 35470529935 on main (2026-09-19, job 105974446303): the capture, audit and regenerate steps SUCCEEDED, then "Commit the new snapshots" failed with the annotations "conflict in src/fda-signal-data.js / src/desk-data.js / docs/src/forecast-data.js / docs/src/fda-signal-data.js is not a generated module — cannot resolve locally" and "could not sync with origin/main — re-run this job". While the run sat in the data-pipeline queue the ingest bot had pushed its own regenerated desk / FDA modules and docs/ copies; the old GENERATED_PATHS list did not name them, so the guard treated real generated files as hand-written and aborted. The freshly captured NWS snapshots existed only on the runner and were discarded with it — no false data was written, but a real capture was lost. |
-| **What the code does** | scripts/push-with-race-guard.sh now lists every file the workflows' regenerate step rewrites (the five browser modules, README/VERIFICATION/IRREGULARITIES, index.html, docs/) and resolves a conflict on them ONLY by re-running the same regeneration chain over the merged tree, then refuses to commit if any conflict marker survives; every data bot fast-forwards onto the branch tip BEFORE capturing; the weather, FDA and MLB workflows upload their store directory as an artifact when a run fails so a capture can no longer die with the runner; daily-history.yml joined the shared per-ref queue. A unit test checks the guard's list against the generator scripts and every workflow's regenerate step. The lost capture itself is not recoverable — the archive simply has no 2026-09-19 ~21:4x snapshot, which the coverage table shows. |
-| **What you should do** | Open the run link: the capture step is green and the commit step red with the quoted annotations. Then compare data/forecasts/*.json captured_at values around 2026-09-19T21:40Z — there is none, and there should be none. |
-
-**Evidence**
-
-- The failed run (annotations on the commit step): <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35470529935>
-- The fix (commit 885e3fa): every regenerated file auto-resolvable, only by regeneration: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/scripts/push-with-race-guard.sh>
-- test/workflow-race-guard.sh — scenarios 7 and 8 reproduce the race and the refusal: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/workflow-race-guard.sh>
-
----
-
-## #53 — A parallel session merged PR #17 with strategy cards that described signals the code does not read, two "sources" that are search pages, and a fabricated "upcoming trades" list
-
-**Severity:** `HIGH`
-
-| | |
-| --- | --- |
-| **We assumed** | That everything merged to main under the honesty contract had been checked line by line against the code: that a card saying "when insiders hold equity" reads insider data, that a quoted source can be opened, that an "upcoming trade" is a strategy decision. |
-| **Verified truth** | PR #17 (commit cf4e116, merged 2026-09-20T03:08Z by a concurrent session while this one was working on the same repository) added: (1) InsiderFiling_Drift / LiveInsider_FilingFader, whose text claimed Form 4 / insider-retention signals while the code reads only the contract's own prices (and the desk version assumed a YES ask of 0.20 when no quote existed); (2) TheLeap_BreakoutRank / LiveTheLeap_Momentum, attributing "champion" behaviour to The Leap without a source; (3) LiveWeather_ForecastEdge, whose card and order reasons said "reads the point-in-time NWS forecast" while the code bought any KXHIGH bracket asked ≤ 0.45 without opening the archive; (4) GridMM_MultiTier, whose rules said "rest a limit buy … sell at +3 ticks" while decide() sent a taker market buy with no exit; (5) FOMC_ProbabilitySniper, whose text cited CME FedWatch divergence and a "modal strike" the code never computes; (6) NCAAF_GameFavourite, stating as fact that 0.60–0.85 favourites "settle YES at a frequency exceeding implied probability" with no source; (7) research entries R16/R17 whose URLs are a YouTube search page and an X search page, with "quotations" that cannot be attributed; (8) fact V109 claiming all 13 MasterSite projects were "mapped to concrete, executable trading strategies with verified pricing"; (9) a Live Desk "upcoming trades" builder that, for entrants without a declared plan, INVENTED rows from regex matches on the strategy id, a default price of 0.50 and generated trigger text ("Enter order when contract conditions align with …") — shown on the site as READY setups. Its placed-trades ledger, the UI tables and the new tests were sound. |
-| **What the code does** | Nothing was deleted and no username changed (they are the competition's identities): every card was rewritten to say exactly what its code reads; LiveWeather_ForecastEdge was rewritten to actually read the NWS archive at the cut-off (the desk market view now exposes the bracket strikes it needs); GridMM_MultiTier was rewritten to rest maker orders as its rules state; the desk entrant that assumed a 0.20 quote now abstains without one; R16/R17 carry a new capture method UNATTRIBUTED and their strategies are labelled original designs; V109/V110 were re-worded; S02/S03 were restored to not-testable-as-a-signal with the entries listed as price-only; buildUpcomingTrades now compiles ONLY from the desk's own ORDER/FILL/REST records (open positions awaiting settlement, working maker orders, unfilled remainders) and the fabricated per-entrant upcoming() hooks were removed. A new test asserts that no strategy text names a signal source its code does not import. Process finding: two sessions on one repository must merge each other's branch before writing — this session did (its first commit is that merge), the other did not. |
-| **What you should do** | Open PR #17's diff for src/desk-strategies.js and compare LiveWeather_ForecastEdge.decide() there (no forecast read) with the current file (forecastHighAt at the cut-off). Then open the Live Desk tab: every upcoming-trade row now names the ORDER record it came from (id UPC-<orderId>-…). |
-
-**Evidence**
-
-- PR #17 as merged: <https://github.com/buffedlizard55-lab/KalshiPaperSim/pull/17>
-- The corrected entries (src/strategies.js, src/desk-strategies.js) and the record-derived buildUpcomingTrades (src/live-desk.js): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
-- R16 / R17 re-labelled UNATTRIBUTED in src/research-sources.js: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/research-sources.js>
-
----
-
-## #56 — The test suite was RED ON MAIN and had been for at least one merge: a syntax error stopped every test from running, and a second test asserted on a Promise
-
-**Severity:** `HIGH`
-
-| | |
-| --- | --- |
-| **We assumed** | That `npm test` passing 122/122 (as the previous session's ROADMAP claimed) still described main, and that a merged PR's new tests had been executed at least once before the merge. |
-| **Verified truth** | At commit e86cb9b, `node --test test/simulation.test.js` failed at import time with "SyntaxError: Unexpected reserved word" at line 3672: test 100 ("settlement pays the exchange's own result…") awaited `runDeskSession(...)` inside a non-async `() => {}` callback. A syntax error kills the whole file, so the runner reported ONE failed test and executed NONE of the 134. Making the callback async exposed a second defect: test 118 called the async `buildDeskReport(...)` without `await`, so `assert.ok(report.ok)` tested a Promise (undefined) and failed with "desk report builds cleanly" — the same call awaited returns 84 records and passes. Both came in with PR #17 (irregularity #53 already covers its prose). No shipped number depended on either test — but a suite that cannot parse is a suite that verifies nothing, and every claim of "122/122 green" made after that merge was unverifiable. |
-| **What the code does** | Test 100's callback is now `async () => {}`; test 118 awaits buildDeskReport() and carries a comment explaining that the un-awaited call asserted on a Promise. The suite ran 134/134 green after the two fixes, before this session's four Form 4 tests were added. |
-| **What you should do** | Treat any claim of a green suite as unverified unless `npm test` was run in that session. If a future merge adds a test, the merge itself must show the runner output — a suite that cannot parse reports one failure and verifies nothing. |
-
-**Evidence**
-
-- The failing run at the branch point — `node --test test/simulation.test.js at e86cb9b → "SyntaxError: Unexpected reserved word" at test/simulation.test.js:3672; # tests 1, # fail 1, nothing executed`
-- test/simulation.test.js (tests 100 and 118): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js>
-- The awaited call, verified in isolation — `await buildDeskReport({data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null}) → ok, 84 records`
 
 ---
 
@@ -616,6 +479,303 @@ assumption against an official document or a real API response.
 
 ---
 
+## #9 — Two different status vocabularies for the same concept
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That a market’s status value could be used as a query filter. |
+| **Verified truth** | Responses use initialized/inactive/active/closed/determined/disputed/amended/finalized, while the GET /markets filter accepts unopened/open/paused/closed/settled. Passing "active" as a filter is invalid. |
+| **What the code does** | mapStatusToFilter() translates between the two, and both enums are exported from src/kalshi-config.js. |
+| **What you should do** | Filter the Markets tab — the UI only ever sends valid filter values. |
+
+**Evidence**
+
+- get-markets reference: <https://docs.kalshi.com/api-reference/market/get-markets>
+
+---
+
+## #15 — liquidity_dollars reads "0.0000" on markets that clearly have liquidity
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That liquidity_dollars could be used to rank markets by depth. |
+| **Verified truth** | Captured active markets return liquidity_dollars "0.0000" while reporting volume_fp of 395,554.67 and open_interest_fp of 162,977.28. No document explains this field’s semantics. |
+| **What the code does** | The field is displayed raw with a "not used in calculations" note. Liquidity in this app is measured from the captured order book and from volume/open interest only. |
+| **What you should do** | Ask Kalshi support what liquidity_dollars measures; until then treat it as unexplained. |
+
+**Evidence**
+
+- Market list capture: <https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNASDAQ100Y&status=open&limit=12>
+
+---
+
+## #16 — 429 responses carry no Retry-After header
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That a throttled response would tell the client when to retry. |
+| **Verified truth** | The rate-limit documentation describes a token bucket (10 tokens per request, 200 reads/s and 100 writes/s on the basic tier, 2 s burst) and a 429 body of {"error":"too many requests"} with no Retry-After. |
+| **What the code does** | The client applies its own exponential backoff on 429 and records every transport attempt in an audit log surfaced by /api/transport. |
+| **What you should do** | None required; just do not expect a server-provided retry hint. |
+
+**Evidence**
+
+- Rate limits: <https://docs.kalshi.com/getting_started/rate_limits>
+
+---
+
+## #19 — Kalshi’s own fee table does not match Kalshi’s own fee formula
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That the "General Trading Fees Table" in the fee schedule PDF is the literal amount charged. |
+| **Verified truth** | The table is the formula rounded UP to whole cents. The formula rounds "such that the fee + positionCost is rounded to a centicent" ($0.0001). For 100 contracts at $0.01 the formula gives $0.0693 while the table prints $0.07; at $0.25 it gives $1.3125 vs $1.32. All 21 published rows follow the cent-rounding rule exactly. |
+| **What the code does** | The engine charges the FORMULA value (centicent rounding), because that is the rule stated for the calculation itself, and asserts the cent-rounding relationship against all 21 published rows so neither number is invented. Both values are shown side by side in the Verification tab. |
+| **What you should do** | Expect fees a fraction of a cent BELOW the published table on small orders. If Kalshi states the table is authoritative, flip FEE_TABLE_ROUNDING.publishedTableIncrement handling in src/kalshi-fees.js. |
+
+**Evidence**
+
+- Fee schedule PDF (formula + table, same document): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
+- Transcribed oracle used by the test suite: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/kalshi-config.js> — `OFFICIAL_FEE_TABLE_PER_100 / FEE_TABLE_ROUNDING`
+
+---
+
+## #25 — KXBTCY has only 14 captured bars, so it joins the replay part-way through
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That every market in the universe covers the same window. |
+| **Verified truth** | KXBTCY-27JAN0100-T149999.99 has 14 daily bars (2026-09-03 → 2026-09-17) while both Nasdaq-100 strikes have 61. In the merged timeline the BTC market simply appears in the final 14 periods; it is not back-filled. |
+| **What the code does** | Per-market bar counts are shown in the competition universe panel and in every result's dataProvenance, so a shorter window is visible rather than hidden. |
+| **What you should do** | Compare the "Bars" column in the Competition universe panel before reading any cross-market comparison. |
+
+**Evidence**
+
+- Coverage — `GET /api/history and GET /api/market-stats both report per-market bar counts`
+- Window: <https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1788393600&end_ts=1789603200&period_interval=1440>
+
+---
+
+## #28 — The competition universe grew from 3 markets to 30, so per-market statistics now rest on very unequal samples
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That every market in the universe offers a comparable amount of data. |
+| **Verified truth** | After the backfill the 30 replayable markets hold between 204 and 268 bars (7,189 total), and 352 of those bars (4.9%) are no-trade periods with no OHLC at all. Two KXINXY strikes are no-trade in roughly half their bars. Correlations and win rates computed across markets therefore rest on unequal samples. |
+| **What the code does** | Every market reports its own bar count, no-trade count and origin in the competition universe panel and in each result’s dataProvenance; markets with fewer than 10 bars (or no captured market object) are tracked but never replayed, and the reason is shown. |
+| **What you should do** | Read the Bars / no-trade columns before comparing two markets, and check the "tracked, not replayable" list — it is not an error, it is the floor doing its job. |
+
+**Evidence**
+
+- Per-market coverage — `GET /api/history → markets[].bars, .noTradeBars, .origin, .excludedReason`
+- No-trade bar shape: <https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1781841600&end_ts=1781928000&period_interval=1440>
+
+---
+
+## #33 — The "Gold" project is a ring buyer’s directory, not a gold-market signal (name collision)
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That the GOLD project could supply gold-price information for a Kalshi gold strategy. |
+| **Verified truth** | GOLD is an evidence-based buyer’s reference for solid gold RINGS — 482 jewelry listings ranked by price per pure-gold gram. Retail jewelry quotes are not a financial gold price, and wiring them into a market strategy would be a category error. Kalshi’s actual gold markets (KXGOLD15M and siblings) are now tracked directly from the exchange. |
+| **What the code does** | The mismatch is flagged on the signal-source ledger and on the strategy itself. The gold strategy uses only the exchange’s own captured bars and results. |
+| **What you should do** | If a gold-price signal is wanted later, the source must be an official price (e.g. LBMA/CME archive), not a jewelry directory. |
+
+**Evidence**
+
+- GOLD project (rings): <https://buffedlizard55-lab.github.io/GOLD/>
+- The real gold market, captured from the exchange: <https://external-api.kalshi.com/trade-api/v2/markets/KXGOLD15M-26SEP162030-30>
+- Recorded in the ledger — `src/signal-sources.js → S11 (status NOT_A_SIGNAL, flagged); GoldBracket_EarlyLeader sourceNote states the project contributes nothing to its inputs`
+
+---
+
+## #35 — An ACTIVE market’s lifetime volume can exceed the sum of its stored bars — only finalized markets reconcile exactly
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That summing a market’s stored volume_fp always reproduces its lifetime volume_fp (V80). |
+| **Verified truth** | For FINALIZED markets the sum reconciles exactly (all 39 settled weather brackets and all 8 gold contracts do). For an ACTIVE market the market object is captured at a different instant than the last stored bar, and trading continues after it — observed: KXHIGHNY-26SEP17-B82.5 (status active) whose stored bars sum to less than its lifetime volume at capture. |
+| **What the code does** | The store audit and test 79 assert exact reconciliation for finalized markets only, and treat an active market’s shortfall as expected ongoing trading rather than data corruption. |
+| **What you should do** | None — this is a documented property of capturing a moving market, not an error. |
+
+**Evidence**
+
+- The active bracket that exposed it: <https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP17-B82.5>
+- The exact-reconciliation rule for finalized markets — `test 79 in test/simulation.test.js reconciles only status=finalized stores`
+
+---
+
+## #36 — RESOLVED 2026-09-18 — KXHIGHNY / KXGOLD15M fee multipliers were uncaptured; the fee configuration of ALL 14,154 series is now captured
+
+**Severity:** `CLOSED`
+
+| | |
+| --- | --- |
+| **We assumed** | That the fee multiplier of the two new series is known from a captured Series object (as it is for KXBTCY=0, V11). |
+| **Verified truth** | The ingest captures MARKET objects, not SERIES objects, so seriesFeeConfig() falls back to the documented default multiplier M=1 (taker 0.07×P×(1−P)) with a "captured: false" note. If either series carries a non-standard multiplier in the official Non-Standard Fees table, fees for those flights would be over- or under-charged. |
+| **What the code does** | CLOSED 2026-09-18. The on-demand ingest job now runs scripts/discover-universe.mjs, which calls GET /series?include_volume=true and stores the fee configuration of every series the exchange lists (14,154 series) in data/discovered/series-fees.json. scripts/generate-fee-registry.mjs narrows that to the 47 series this build can price a fill for and emits src/series-fee-registry.js; seriesFeeConfig() now resolves snapshot -> registry -> documented default and labels which one it used (captureSource). MEASURED ANSWERS: KXHIGHNY fee_multiplier 1 / quadratic and KXGOLD15M fee_multiplier 1 / quadratic — the documented default was right for both, but it is now a capture rather than an assumption. The same capture exposed a real, material bug: irregularity #37. |
+| **What you should do** | Open https://docs.kalshi.com/api-reference/market/get-series-list, call it with include_volume=true, and compare any ticker against src/series-fee-registry.js. |
+
+**Evidence**
+
+- Fee schedule (check the Non-Standard table for these series): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
+- The honest fallback — `src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"`
+
+---
+
+## #37 — Maker fees were charged on series that do not have them — the maker/taker split is a PER-SERIES property the engine ignored
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That any resting order pays the maker coefficient: fees = round up(M x 0.0175 x C x P x (1-P)). KALSHI_FEES.makerCoefficient was applied unconditionally in OrderBook.processRestingFills(). |
+| **Verified truth** | The official schedule charges a resting order only if the series is in its Maker Fees section: "Trading fees are only charged for orders that are immediately matched with orders sitting on the orderbook. Trading fees are not charged for orders placed that are not immediately matched and are instead left as resting orders on the orderbook unless they are included in our Maker Fees section." The live Series object marks exactly those series with fee_type = "quadratic_with_maker_fees". In the 2026-09-18 capture of 14,154 series, KXNFLGAME, KXMLBGAME, KXNBAGAME, KXWNBAGAME, KXNCAAFGAME, KXFEDDECISION, KXCPIYOY, KXINXY and KXNASDAQ100Y carry that flag, while every KXHIGH* weather series (and KXGOLD15M, KXBTC15M, KXETH15M, KXSOL15M, KXUFCFIGHT) is plain "quadratic" and pays NOTHING for a resting order. The same capture also shows multipliers that are not 1: the MLB series 0.5, KXBTCY 0. |
+| **What the code does** | Fees are resolved per series from a capture, and every fill states the regime that produced its fee. Maker strategies that traded plain-quadratic series were being over-charged before this fix; the ledger, the reports and the Pages data were regenerated. Any strategy text that asserted "the maker coefficient is a quarter of the taker fee" was corrected to the per-series rule. |
+| **What you should do** | Open the Trade Ledger tab: the Fee Regimes table counts the fills and dollars under each rule, and any row can be traced back to its series ticker in src/series-fee-registry.js. |
+
+**Evidence**
+
+- Official fee schedule (PDF) — the sentence quoted above: <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
+- The real per-series configuration — `data/discovered/series-fees.json (GET /series?include_volume=true, capturedAt 2026-09-18T06:42:31Z) -> src/series-fee-registry.js`
+- Endpoint documentation: <https://docs.kalshi.com/api-reference/market/get-series-list>
+- The fix — `src/simulation-engine.js -> OrderBook.makerFeesApply (set from the series fee_type); a plain-quadratic maker fill now records fee 0 and puts the rule that produced it in feeFormula`
+- The guard — `test 86 proves both branches: $0.00 on a plain-quadratic series, exactly $0.42 on 100 contracts at $0.40 for a maker-fee series`
+- Visible per fill — `src/trade-ledger.js -> feeRegime column (taker_0.07 | taker_zero | maker_0.0175 | maker_free | settlement) and the Fee Regimes table on the Trade Ledger tab`
+
+---
+
+## #41 — A push race silently discarded an entire ingest run's data (the bot committed nothing and exited 128)
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That the inline push-race guard in the three bot workflows could always recover from losing a push race by rebasing on the remote tip. |
+| **Verified truth** | The first post-merge ingest run on main (2026-09-18, run 35352002809) fetched a full universe of bars and then died at its "Commit the new history" step with exit code 128, so EVERY bar, book snapshot and settlement check that run collected was discarded — the runner's disk is thrown away. Root cause, three stacked bugs: (1) ingest-now.yml's commit step added data/, src/accumulated-history.js and docs/data but NOT src/forecast-data.js, which the module-regeneration step had just rewritten — the tree kept a tracked-but-unstaged file; (2) the forecast bot won the push race meanwhile, and `git rebase` refuses to start with unstaged changes (its own exit 128); (3) the failure branch then ran `git rebase --continue` and `git rebase --abort` — both fail with "no rebase in progress" (exit 128) — and because GitHub runs run: steps with bash -e, the abort's exit code terminated the step before the ::error message could be emitted. The daily-history.yml copy of the guard had already been fixed for exactly this race; ingest-now.yml had not. |
+| **What the code does** | All three workflows (ingest-now.yml, daily-history.yml, weather-signals.yml) now call the shared script. The lost bars were not lost permanently — the exchange is the source of truth and the request-9 re-run re-fetched the same windows — but the 14:45–18:00 UTC window on 2026-09-18 had no ingest commit until the re-run landed, and any analysis run in that window saw a store that lagged reality by hours. |
+| **What you should do** | Open the two run links and compare their Commit steps; then run `bash test/workflow-race-guard.sh` locally to watch the exact failure mode and its fix execute. |
+
+**Evidence**
+
+- The failed run (job log shows all steps green until "Commit the new history"): <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35352002809>
+- The recovered re-run (same universe, committed by the new guard): <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35377388737>
+- The fix — one shared, locally-tested script — `scripts/push-with-race-guard.sh: commits EVERYTHING the run changed (git add -A, run logs now git-ignored), rebases with --autostash, auto-resolves rebase conflicts ONLY for generated modules and ONLY by regeneration, aborts cleanly on any other conflict, and never lets a `git rebase --abort` failure terminate the script.`
+- The regression test — `test/workflow-race-guard.sh — 21 checks against a real bare-repo remote, including a replay of the exact 2026-09-18 race (tracked-but-unstaged module + concurrent bot push) and the data-conflict case, which must fail the job rather than commit conflict markers.`
+
+---
+
+## #46 — The forward walk read a bar list that stops at the cut-off, so a resting order could never be crossed by a real trade
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That buildTimeline() could see later candlestick quotes because it filtered events by `endTs > asOfMs` and the desk publishes the bar walk as live instrumentation. |
+| **Verified truth** | It read `universe.markets[].bars`, and buildDeskUniverse deliberately truncates every bar list AT the cut-off — that truncation is what keeps a DECISION point-in-time. The `endTs > asOfMs` filter could therefore never admit a bar, at any cut-off. Measured on the 2026-09-18 store: bars after the cut-off inside the decision view = 0 at live/−6h/−12h/−24h, while the store itself held 185/272/513 later ladder captures at those cut-offs. Result: a resting (maker) order could only be crossed by a sparse later ladder snapshot, never by a real traded candlestick, and no paper position could be resolved by a later real trade. The Live Desk reported 0 maker fills at every cut-off it was asked about. |
+| **What the code does** | buildTimeline() now walks the raw store bars (data.markets[].bars) and filters by `endTs > asOfMs` itself, while the universe handed to strategies keeps truncating at the cut-off. After the fix the −6h cut-off walks 338 candlestick quotes + 4 real settlements (342 events), −12h walks 568 and −24h walks 1172; the newest capture honestly walks 0 because the store ends there. A carried maker order now fills at the −15h cut-off (1 maker fill) and the season book is crossed by later real quotes. |
+| **What you should do** | Open the Live Desk tab at the −6h cut-off: "events walked" must be non-zero, and every maker fill must name the later real quote that crossed it (irregularity #46 is what made that number zero). |
+
+**Evidence**
+
+- buildTimeline() — now reads the RAW store bars and filters by endTs itself (commented in place): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
+- buildDeskUniverse() truncation — the reason the decision view must NOT see later bars: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
+- Regression test 107 pins both halves (non-zero forward quotes; no decision bar after asOf): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js>
+
+---
+
+## #49 — The desk let a paper account borrow cash and sell contracts it did not hold
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That a strategy sizing from `view.cash` could never spend more than it had, so the desk needed no cash rule of its own. |
+| **Verified truth** | placeDeskOrder() sized against the captured LADDER and the 10% liquidity cap, and never against the portfolio. An entrant that emitted three 35%-of-cash legs (or a carried season entrant re-spending its cash every round) could spend more than 100% of it, and a `sell` intent with no position was booked as a naked short — both on a venue that settles in cash and does not offer margin or shorting. The desk audit could not catch it either: the equity identity (equity − starting = realized + unrealized − fees) closes just as neatly on a −$80,000 cash balance as on a real one. |
+| **What the code does** | Both runners now pass their portfolio into placeDeskOrder(). A BUY is re-sized to what the cash can pay for including the official fee (a 2% budget reserve covers the quadratic taker fee) and the reduction is recorded as `cashCapped` on the ORDER and the FILL, with the original requested size preserved and the shortfall reported as unfilled. A SELL with no position is rejected (NO_POSITION_TO_SELL) instead of opening a negative one, and a SELL larger than the position is capped to the held size (`positionCapped`). A crossed resting BUY is capped the same way at the crossing instant, because a carried book may have spent the cash in between. auditSeason() adds S12: no round snapshot may show negative cash and no SELL fill may exceed what that entrant had already bought. |
+| **What you should do** | Read any FILL with `cashCapped` > 0 or any REJECT with NO_POSITION_TO_SELL in data/reports/desk-season-ledger.jsonl: the ledger must show a smaller order (or a refusal), never a negative balance. |
+
+**Evidence**
+
+- placeDeskOrder — now carries the cash/position guards and records them on the order and the fill: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
+- Season audit S12 re-derives both rules from the ledger alone: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/desk-season.js>
+- Test 114 — borrow, naked short and over-sized sell all refused or capped: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js>
+
+---
+
+## #51 — A successful scheduled weather capture was lost at the commit step: the push guard could only auto-resolve two of the files the bots regenerate
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That the push guard's auto-resolve list (src/accumulated-history.js, src/forecast-data.js) covered every file a data bot's regenerate step rewrites, so a queued run that rebased onto another bot's commit would always be able to finish. |
+| **Verified truth** | Scheduled "Weather signal archive" run 35470529935 on main (2026-09-19, job 105974446303): the capture, audit and regenerate steps SUCCEEDED, then "Commit the new snapshots" failed with the annotations "conflict in src/fda-signal-data.js / src/desk-data.js / docs/src/forecast-data.js / docs/src/fda-signal-data.js is not a generated module — cannot resolve locally" and "could not sync with origin/main — re-run this job". While the run sat in the data-pipeline queue the ingest bot had pushed its own regenerated desk / FDA modules and docs/ copies; the old GENERATED_PATHS list did not name them, so the guard treated real generated files as hand-written and aborted. The freshly captured NWS snapshots existed only on the runner and were discarded with it — no false data was written, but a real capture was lost. |
+| **What the code does** | scripts/push-with-race-guard.sh now lists every file the workflows' regenerate step rewrites (the five browser modules, README/VERIFICATION/IRREGULARITIES, index.html, docs/) and resolves a conflict on them ONLY by re-running the same regeneration chain over the merged tree, then refuses to commit if any conflict marker survives; every data bot fast-forwards onto the branch tip BEFORE capturing; the weather, FDA and MLB workflows upload their store directory as an artifact when a run fails so a capture can no longer die with the runner; daily-history.yml joined the shared per-ref queue. A unit test checks the guard's list against the generator scripts and every workflow's regenerate step. The lost capture itself is not recoverable — the archive simply has no 2026-09-19 ~21:4x snapshot, which the coverage table shows. |
+| **What you should do** | Open the run link: the capture step is green and the commit step red with the quoted annotations. Then compare data/forecasts/*.json captured_at values around 2026-09-19T21:40Z — there is none, and there should be none. |
+
+**Evidence**
+
+- The failed run (annotations on the commit step): <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35470529935>
+- The fix (commit 885e3fa): every regenerated file auto-resolvable, only by regeneration: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/scripts/push-with-race-guard.sh>
+- test/workflow-race-guard.sh — scenarios 7 and 8 reproduce the race and the refusal: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/workflow-race-guard.sh>
+
+---
+
+## #53 — A parallel session merged PR #17 with strategy cards that described signals the code does not read, two "sources" that are search pages, and a fabricated "upcoming trades" list
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That everything merged to main under the honesty contract had been checked line by line against the code: that a card saying "when insiders hold equity" reads insider data, that a quoted source can be opened, that an "upcoming trade" is a strategy decision. |
+| **Verified truth** | PR #17 (commit cf4e116, merged 2026-09-20T03:08Z by a concurrent session while this one was working on the same repository) added: (1) InsiderFiling_Drift / LiveInsider_FilingFader, whose text claimed Form 4 / insider-retention signals while the code reads only the contract's own prices (and the desk version assumed a YES ask of 0.20 when no quote existed); (2) TheLeap_BreakoutRank / LiveTheLeap_Momentum, attributing "champion" behaviour to The Leap without a source; (3) LiveWeather_ForecastEdge, whose card and order reasons said "reads the point-in-time NWS forecast" while the code bought any KXHIGH bracket asked ≤ 0.45 without opening the archive; (4) GridMM_MultiTier, whose rules said "rest a limit buy … sell at +3 ticks" while decide() sent a taker market buy with no exit; (5) FOMC_ProbabilitySniper, whose text cited CME FedWatch divergence and a "modal strike" the code never computes; (6) NCAAF_GameFavourite, stating as fact that 0.60–0.85 favourites "settle YES at a frequency exceeding implied probability" with no source; (7) research entries R16/R17 whose URLs are a YouTube search page and an X search page, with "quotations" that cannot be attributed; (8) fact V109 claiming all 13 MasterSite projects were "mapped to concrete, executable trading strategies with verified pricing"; (9) a Live Desk "upcoming trades" builder that, for entrants without a declared plan, INVENTED rows from regex matches on the strategy id, a default price of 0.50 and generated trigger text ("Enter order when contract conditions align with …") — shown on the site as READY setups. Its placed-trades ledger, the UI tables and the new tests were sound. |
+| **What the code does** | Nothing was deleted and no username changed (they are the competition's identities): every card was rewritten to say exactly what its code reads; LiveWeather_ForecastEdge was rewritten to actually read the NWS archive at the cut-off (the desk market view now exposes the bracket strikes it needs); GridMM_MultiTier was rewritten to rest maker orders as its rules state; the desk entrant that assumed a 0.20 quote now abstains without one; R16/R17 carry a new capture method UNATTRIBUTED and their strategies are labelled original designs; V109/V110 were re-worded; S02/S03 were restored to not-testable-as-a-signal with the entries listed as price-only; buildUpcomingTrades now compiles ONLY from the desk's own ORDER/FILL/REST records (open positions awaiting settlement, working maker orders, unfilled remainders) and the fabricated per-entrant upcoming() hooks were removed. A new test asserts that no strategy text names a signal source its code does not import. Process finding: two sessions on one repository must merge each other's branch before writing — this session did (its first commit is that merge), the other did not. |
+| **What you should do** | Open PR #17's diff for src/desk-strategies.js and compare LiveWeather_ForecastEdge.decide() there (no forecast read) with the current file (forecastHighAt at the cut-off). Then open the Live Desk tab: every upcoming-trade row now names the ORDER record it came from (id UPC-<orderId>-…). |
+
+**Evidence**
+
+- PR #17 as merged: <https://github.com/buffedlizard55-lab/KalshiPaperSim/pull/17>
+- The corrected entries (src/strategies.js, src/desk-strategies.js) and the record-derived buildUpcomingTrades (src/live-desk.js): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/live-desk.js>
+- R16 / R17 re-labelled UNATTRIBUTED in src/research-sources.js: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/research-sources.js>
+
+---
+
+## #56 — The test suite was RED ON MAIN and had been for at least one merge: a syntax error stopped every test from running, and a second test asserted on a Promise
+
+**Severity:** `HIGH`
+
+| | |
+| --- | --- |
+| **We assumed** | That `npm test` passing 122/122 (as the previous session's ROADMAP claimed) still described main, and that a merged PR's new tests had been executed at least once before the merge. |
+| **Verified truth** | At commit e86cb9b, `node --test test/simulation.test.js` failed at import time with "SyntaxError: Unexpected reserved word" at line 3672: test 100 ("settlement pays the exchange's own result…") awaited `runDeskSession(...)` inside a non-async `() => {}` callback. A syntax error kills the whole file, so the runner reported ONE failed test and executed NONE of the 134. Making the callback async exposed a second defect: test 118 called the async `buildDeskReport(...)` without `await`, so `assert.ok(report.ok)` tested a Promise (undefined) and failed with "desk report builds cleanly" — the same call awaited returns 84 records and passes. Both came in with PR #17 (irregularity #53 already covers its prose). No shipped number depended on either test — but a suite that cannot parse is a suite that verifies nothing, and every claim of "122/122 green" made after that merge was unverifiable. |
+| **What the code does** | Test 100's callback is now `async () => {}`; test 118 awaits buildDeskReport() and carries a comment explaining that the un-awaited call asserted on a Promise. The suite ran 134/134 green after the two fixes, before this session's four Form 4 tests were added. |
+| **What you should do** | Treat any claim of a green suite as unverified unless `npm test` was run in that session. If a future merge adds a test, the merge itself must show the runner output — a suite that cannot parse reports one failure and verifies nothing. |
+
+**Evidence**
+
+- The failing run at the branch point — `node --test test/simulation.test.js at e86cb9b → "SyntaxError: Unexpected reserved word" at test/simulation.test.js:3672; # tests 1, # fail 1, nothing executed`
+- test/simulation.test.js (tests 100 and 118): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/test/simulation.test.js>
+- The awaited call, verified in isolation — `await buildDeskReport({data: DESK_DATA, strategies: DESK_STRATEGIES, asOf: null}) → ok, 84 records`
+
+---
+
 ## #39 — The weather archive was pointed at the wrong airport for Chicago, and Austin has two plausible stations
 
 **Severity:** `MED`
@@ -877,145 +1037,42 @@ assumption against an official document or a real API response.
 
 ---
 
-## #9 — Two different status vocabularies for the same concept
+## #63 — Four data bots sat outside the shared push queue; on 2026-09-22 three runs captured data that never landed because their commit step lost the race
 
-**Severity:** `LOW`
+**Severity:** `MED`
 
 | | |
 | --- | --- |
-| **We assumed** | That a market’s status value could be used as a query filter. |
-| **Verified truth** | Responses use initialized/inactive/active/closed/determined/disputed/amended/finalized, while the GET /markets filter accepts unopened/open/paused/closed/settled. Passing "active" as a filter is invalid. |
-| **What the code does** | mapStatusToFilter() translates between the two, and both enums are exported from src/kalshi-config.js. |
-| **What you should do** | Filter the Markets tab — the UI only ever sends valid filter values. |
+| **We assumed** | That a per-workflow concurrency group plus a retrying push guard was enough to keep five bots from destroying each other's commits. |
+| **Verified truth** | Verified from the GitHub API on 2026-09-22. Weather run 35676454906 (created 01:37:38Z, group data-pipeline-main) ran "Capture the point-in-time NWS forecast", "Audit the forecast store (no network)" and "Regenerate the browser-safe modules and the Pages bundle" to SUCCESS and then FAILED at "Commit the new snapshots" — while the MLB-signals run created in the same second (35676455303, its own group) succeeded and pushed 07d329875 at 01:38:31Z. Two mlb-pregame runs failed identically at "Commit the measurement rows + status": 35677025646 (01:46:38Z) and 35677673624 (01:57:22Z) — the latter created one second before PR #22 merged (6213ae348, 01:57:18Z), so that run was racing a human merge; the ESPN runs created at both of those instants succeeded. Net effect on the tree: all nine forecast stores still end at captured_at 2026-09-21T22:36:56.809Z (the last forecast commit is 9a3d93b73 at 2026-09-21T22:37:51Z), so the 01:37Z NWS snapshots were captured, audited and then thrown away with the runner, and data/mlb-pregame/predictions/ holds 0 files. The four out-of-group bots (espn/fda/form4/mlb-pregame) were kept out of the shared group deliberately, because GitHub's documented default keeps ONE pending run per group and cancels the previous one — a 20-minute archive would have been evicted by the 5-minute bots. |
+| **What the code does** | All eight pushing workflows (daily-history, ingest-now and the six 20-minute signal archives) now share group data-pipeline-${{ github.ref }} with queue: max and cancel-in-progress: false, each carrying a comment quoting the documentation — so a 20-minute archive queues behind the 5-minute bots instead of being evicted, and no run cancels another. scripts/push-with-race-guard.sh retries 6 times (PUSH_ATTEMPTS) with a growing, jittered backoff (PUSH_BACKOFF_SCALE for tests) because a competitor's run lasts ~90s, and after a regeneration it stages with `git add -A` instead of `git add -u` so a path the other bot created cannot be left behind. Test 125 asserts the arrangement by reading all eight YAML files; test 140 reads the guard; test/workflow-race-guard.sh replays the races against a real bare remote (34 checks). |
+| **What you should do** | Run `gh run list --limit 12` after the next scheduled runs and confirm no bot fails at its commit step; then bump .github/triggers/forecast.json once to re-run the weather capture so the lost 01:37Z snapshots are replaced, and check `data/mlb-pregame/predictions/` for its first file. |
 
 **Evidence**
 
-- get-markets reference: <https://docs.kalshi.com/api-reference/market/get-markets>
+- weather run 35676454906 (created 2026-09-22T01:37:38Z) — capture, audit and regenerate all SUCCESS, "Commit the new snapshots" FAILURE: <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35676454906> — `Job "archive", conclusion failure. Steps: "Set up job" success, "Run actions/checkout@v4" success, "Run actions/setup-node@v4" success, "Sync with the branch tip (best-effort)" success, "Capture the point-in-time NWS forecast" success, "Audit the forecast store (no network)" success, "Regenerate the browser-safe modules and the Pages bundle" success, "Commit the new snapshots" FAILURE. The MLB signal archive run 35676455303 created at the same 01:37:38Z succeeded and pushed commit 07d329875 (committer date 2026-09-22T01:38:31Z).`
+- mlb-pregame runs 35677025646 (01:46:38Z) and 35677673624 (01:57:22Z), both failing at the commit step after a successful capture chain: <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35677673624> — `Job "model-chain" of run 35677673624: every step through "Ingest the walk-forward predictions as measurement rows", "Audit the pre-game store (no network)" and "Regenerate the browser-safe modules and the Pages bundle" SUCCESS, then "Commit the measurement rows + status" FAILURE. Run 35677025646 failed the same way 11 minutes earlier. The ESPN runs created at 01:46:38Z (35677025673) and 01:57:22Z (35677673680) both succeeded; PR #22 merged as 6213ae348 at 01:57:18Z.`
+- GitHub documentation: a concurrency group's default queue is `single` — one pending run, and a newer run cancels the previous one; `queue: max` allows up to 100 pending runs: <https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency> — `"single (default): At most one job or workflow run can be pending in the concurrency group. When a new job or workflow run is queued, any existing pending job or workflow run in the same group is canceled and replaced." / "max: Up to 100 jobs or workflow runs can be pending in the concurrency group." / "The combination of queue: max and cancel-in-progress: true is not allowed."`
+- the capture that was thrown away — all nine forecast stores still end at the previous run's snapshot: <https://github.com/buffedlizard55-lab/KalshiPaperSim/tree/main/data/forecasts> — `data/forecasts/{nyc-central-park,austin-camp-mabry,chicago-midway,denver-den,los-angeles-lax,miami-mia,philadelphia-phl,phoenix-phx,seattle-sea}.json: newest snapshot captured_at = 2026-09-21T22:36:56.809Z in all nine (23 snapshots for NYC, 21 for the others), i.e. the 2026-09-22T01:37Z capture is absent from main even though that run audited it successfully. data/mlb-pregame/predictions/ contains 0 files.`
 
 ---
 
-## #15 — liquidity_dollars reads "0.0000" on markets that clearly have liquidity
+## #64 — The desk module's per-market capture cap silently shrank the measured desk-season from 9 rounds to 5 — nothing in the season said why
 
-**Severity:** `LOW`
-
-| | |
-| --- | --- |
-| **We assumed** | That liquidity_dollars could be used to rank markets by depth. |
-| **Verified truth** | Captured active markets return liquidity_dollars "0.0000" while reporting volume_fp of 395,554.67 and open_interest_fp of 162,977.28. No document explains this field’s semantics. |
-| **What the code does** | The field is displayed raw with a "not used in calculations" note. Liquidity in this app is measured from the captured order book and from volume/open interest only. |
-| **What you should do** | Ask Kalshi support what liquidity_dollars measures; until then treat it as unexplained. |
-
-**Evidence**
-
-- Market list capture: <https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNASDAQ100Y&status=open&limit=12>
-
----
-
-## #16 — 429 responses carry no Retry-After header
-
-**Severity:** `LOW`
+**Severity:** `MED`
 
 | | |
 | --- | --- |
-| **We assumed** | That a throttled response would tell the client when to retry. |
-| **Verified truth** | The rate-limit documentation describes a token bucket (10 tokens per request, 200 reads/s and 100 writes/s on the basic tier, 2 s burst) and a 429 body of {"error":"too many requests"} with no Retry-After. |
-| **What the code does** | The client applies its own exponential backoff on 429 and records every transport attempt in an audit log surfaced by /api/transport. |
-| **What you should do** | None required; just do not expect a server-provided retry hint. |
+| **We assumed** | That regenerating src/desk-data.js on newer data could only ADD desk-season rounds. |
+| **Verified truth** | selectCaptures() in scripts/generate-desk-module.mjs keeps the newest 12 ladders per market plus one per horizon mark, and the 80-market cap then drops whole contracts, so the module is a sliding WINDOW on data/history/**. The committed season at 4e85c80 (data/reports/desk-season.json, generatedAt 2026-09-21T07:48:47.754Z) measured 9 rounds, 17 fills and 6448 walked events; after the 2026-09-22 regeneration the same season re-reports 5 rounds, 12 fills and 4329 events. Seven of those nine round stamps are gone from the module (2026-09-18T07:04:17.199Z, 11:18:12.556Z, 18:40:54.527Z; 2026-09-19T11:08:18.437Z, 21:26:18.531Z, 21:57:18.998Z; 2026-09-20T00:06:43.226Z) because the module's earliest capture is now 2026-09-18T18:44:58.204Z — a round whose batch the module no longer carries cannot be walked again. The full decomposition the module now publishes: the store holds 12571 ladders (7776 non-empty, 4795 empty) in 18 twenty-minute batches; the capture cap keeps 2014 of the 7776 (5762 evicted); the market cap drops 102 contracts carrying 1036 more; the module ends with 978 ladders in 8 batches, leaving 10 store batches unrepresented, 14 of 18 round stamps unreproducible and 11592 capture instants (6798 of them non-empty) absent. Nothing was deleted from data/history/**. |
+| **What the code does** | coverage.captureEviction now names the rule, the effect and the reproduction (`node scripts/generate-desk-module.mjs --max-captures 40 --out src/desk-data.js`), and publishes both bounds separately (evictedByCaptureCap, evictedByMarketCap) with the batch windows that are no longer represented and the exact round stamps that were evicted. Test 139 recomputes both sides independently — module ladders and instants from src/desk-data.js, store ladders and non-empty counts by walking data/history/** — and asserts the decomposition closes (7776 − 5762 = 2014; 2014 − 1036 = 978), so the published numbers cannot drift from the tree. |
+| **What you should do** | If the season must keep its history, either regenerate with a larger cap (`node scripts/generate-desk-module.mjs --max-captures 40 --out src/desk-data.js`, then `node scripts/run-desk-season.mjs`) or give the season an append-only round memory. Read coverage.captureEviction before comparing two season runs — the ladders are all still in data/history/**. |
 
 **Evidence**
 
-- Rate limits: <https://docs.kalshi.com/getting_started/rate_limits>
-
----
-
-## #19 — Kalshi’s own fee table does not match Kalshi’s own fee formula
-
-**Severity:** `LOW`
-
-| | |
-| --- | --- |
-| **We assumed** | That the "General Trading Fees Table" in the fee schedule PDF is the literal amount charged. |
-| **Verified truth** | The table is the formula rounded UP to whole cents. The formula rounds "such that the fee + positionCost is rounded to a centicent" ($0.0001). For 100 contracts at $0.01 the formula gives $0.0693 while the table prints $0.07; at $0.25 it gives $1.3125 vs $1.32. All 21 published rows follow the cent-rounding rule exactly. |
-| **What the code does** | The engine charges the FORMULA value (centicent rounding), because that is the rule stated for the calculation itself, and asserts the cent-rounding relationship against all 21 published rows so neither number is invented. Both values are shown side by side in the Verification tab. |
-| **What you should do** | Expect fees a fraction of a cent BELOW the published table on small orders. If Kalshi states the table is authoritative, flip FEE_TABLE_ROUNDING.publishedTableIncrement handling in src/kalshi-fees.js. |
-
-**Evidence**
-
-- Fee schedule PDF (formula + table, same document): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
-- Transcribed oracle used by the test suite: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/kalshi-config.js> — `OFFICIAL_FEE_TABLE_PER_100 / FEE_TABLE_ROUNDING`
-
----
-
-## #25 — KXBTCY has only 14 captured bars, so it joins the replay part-way through
-
-**Severity:** `LOW`
-
-| | |
-| --- | --- |
-| **We assumed** | That every market in the universe covers the same window. |
-| **Verified truth** | KXBTCY-27JAN0100-T149999.99 has 14 daily bars (2026-09-03 → 2026-09-17) while both Nasdaq-100 strikes have 61. In the merged timeline the BTC market simply appears in the final 14 periods; it is not back-filled. |
-| **What the code does** | Per-market bar counts are shown in the competition universe panel and in every result's dataProvenance, so a shorter window is visible rather than hidden. |
-| **What you should do** | Compare the "Bars" column in the Competition universe panel before reading any cross-market comparison. |
-
-**Evidence**
-
-- Coverage — `GET /api/history and GET /api/market-stats both report per-market bar counts`
-- Window: <https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1788393600&end_ts=1789603200&period_interval=1440>
-
----
-
-## #28 — The competition universe grew from 3 markets to 30, so per-market statistics now rest on very unequal samples
-
-**Severity:** `LOW`
-
-| | |
-| --- | --- |
-| **We assumed** | That every market in the universe offers a comparable amount of data. |
-| **Verified truth** | After the backfill the 30 replayable markets hold between 204 and 268 bars (7,189 total), and 352 of those bars (4.9%) are no-trade periods with no OHLC at all. Two KXINXY strikes are no-trade in roughly half their bars. Correlations and win rates computed across markets therefore rest on unequal samples. |
-| **What the code does** | Every market reports its own bar count, no-trade count and origin in the competition universe panel and in each result’s dataProvenance; markets with fewer than 10 bars (or no captured market object) are tracked but never replayed, and the reason is shown. |
-| **What you should do** | Read the Bars / no-trade columns before comparing two markets, and check the "tracked, not replayable" list — it is not an error, it is the floor doing its job. |
-
-**Evidence**
-
-- Per-market coverage — `GET /api/history → markets[].bars, .noTradeBars, .origin, .excludedReason`
-- No-trade bar shape: <https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1781841600&end_ts=1781928000&period_interval=1440>
-
----
-
-## #33 — The "Gold" project is a ring buyer’s directory, not a gold-market signal (name collision)
-
-**Severity:** `LOW`
-
-| | |
-| --- | --- |
-| **We assumed** | That the GOLD project could supply gold-price information for a Kalshi gold strategy. |
-| **Verified truth** | GOLD is an evidence-based buyer’s reference for solid gold RINGS — 482 jewelry listings ranked by price per pure-gold gram. Retail jewelry quotes are not a financial gold price, and wiring them into a market strategy would be a category error. Kalshi’s actual gold markets (KXGOLD15M and siblings) are now tracked directly from the exchange. |
-| **What the code does** | The mismatch is flagged on the signal-source ledger and on the strategy itself. The gold strategy uses only the exchange’s own captured bars and results. |
-| **What you should do** | If a gold-price signal is wanted later, the source must be an official price (e.g. LBMA/CME archive), not a jewelry directory. |
-
-**Evidence**
-
-- GOLD project (rings): <https://buffedlizard55-lab.github.io/GOLD/>
-- The real gold market, captured from the exchange: <https://external-api.kalshi.com/trade-api/v2/markets/KXGOLD15M-26SEP162030-30>
-- Recorded in the ledger — `src/signal-sources.js → S11 (status NOT_A_SIGNAL, flagged); GoldBracket_EarlyLeader sourceNote states the project contributes nothing to its inputs`
-
----
-
-## #35 — An ACTIVE market’s lifetime volume can exceed the sum of its stored bars — only finalized markets reconcile exactly
-
-**Severity:** `LOW`
-
-| | |
-| --- | --- |
-| **We assumed** | That summing a market’s stored volume_fp always reproduces its lifetime volume_fp (V80). |
-| **Verified truth** | For FINALIZED markets the sum reconciles exactly (all 39 settled weather brackets and all 8 gold contracts do). For an ACTIVE market the market object is captured at a different instant than the last stored bar, and trading continues after it — observed: KXHIGHNY-26SEP17-B82.5 (status active) whose stored bars sum to less than its lifetime volume at capture. |
-| **What the code does** | The store audit and test 79 assert exact reconciliation for finalized markets only, and treat an active market’s shortfall as expected ongoing trading rather than data corruption. |
-| **What you should do** | None — this is a documented property of capturing a moving market, not an error. |
-
-**Evidence**
-
-- The active bracket that exposed it: <https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP17-B82.5>
-- The exact-reconciliation rule for finalized markets — `test 79 in test/simulation.test.js reconciles only status=finalized stores`
+- the eviction audit the generator now publishes — src/desk-data.js coverage.captureEviction: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/desk-data.js> — `storeLadderCaptures 12571, storeNonEmptyLadders 7776, storeEmptyLadders 4795, storeCaptureBatches 18, laddersBeforeCaptureSelection 7776, evictedByCaptureCap 5762, laddersAfterCaptureSelection 2014, evictedByMarketCap 1036, marketsDroppedByCap 102, moduleLadderCaptures 978, moduleCaptureBatches 8, moduleEarliestCapture 2026-09-18T18:44:58.204Z, moduleNewestCapture 2026-09-21T20:42:50.633Z, storeBatchesRepresentedInModule 8, storeBatchesNotRepresented 10, seasonRoundStamps 18, seasonRoundStampsEvicted 14, captureInstantsEvictedFromModule 11592, nonEmptyCaptureInstantsEvictedFromModule 6798.`
+- the season it shrank — data/reports/desk-season.json before (9 rounds) and after (5 rounds) the regeneration: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/data/reports/desk-season.json> — `At commit 4e85c80 the committed report reads generatedAt 2026-09-21T07:48:47.754Z, summary.totals.rounds 9, fills 17, eventsWalked 6448, with round stamps 2026-09-18T07:04:17.199Z … 2026-09-20T11:34:47.759Z. Re-run against the 2026-09-22 module it reports rounds 5, fills 12, eventsWalked 4329 — and 7 of the 9 earlier stamps are no longer present among the module's capture instants.`
+- the cap itself — scripts/generate-desk-module.mjs selectCaptures(): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/scripts/generate-desk-module.mjs> — `MAX_CAPTURES = Number(arg("max-captures", 12)); selectCaptures() returns the newest MAX_CAPTURES ladders plus the newest ladder at or before each horizon mark. Before this change the only trace of the drop was a console line in a workflow run log.`
 
 ---
 
@@ -1057,41 +1114,6 @@ assumption against an official document or a real API response.
 
 ---
 
-## #18 — updated_time is not a quote timestamp
-
-**Severity:** `INFO`
-
-| | |
-| --- | --- |
-| **We assumed** | That a market’s updated_time indicated when its price last changed. |
-| **Verified truth** | Captured active markets show updated_time 2026-04-09T09:41:46Z while their last_price_dollars, yes_bid and yes_ask change intraday. |
-| **What the code does** | All freshness indicators in this app use our own capture timestamp and the candlestick end_period_ts, never updated_time. |
-| **What you should do** | None — informational. |
-
-**Evidence**
-
-- Market list capture: <https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNASDAQ100Y&status=open&limit=12>
-
----
-
-## #36 — RESOLVED 2026-09-18 — KXHIGHNY / KXGOLD15M fee multipliers were uncaptured; the fee configuration of ALL 14,154 series is now captured
-
-**Severity:** `CLOSED`
-
-| | |
-| --- | --- |
-| **We assumed** | That the fee multiplier of the two new series is known from a captured Series object (as it is for KXBTCY=0, V11). |
-| **Verified truth** | The ingest captures MARKET objects, not SERIES objects, so seriesFeeConfig() falls back to the documented default multiplier M=1 (taker 0.07×P×(1−P)) with a "captured: false" note. If either series carries a non-standard multiplier in the official Non-Standard Fees table, fees for those flights would be over- or under-charged. |
-| **What the code does** | CLOSED 2026-09-18. The on-demand ingest job now runs scripts/discover-universe.mjs, which calls GET /series?include_volume=true and stores the fee configuration of every series the exchange lists (14,154 series) in data/discovered/series-fees.json. scripts/generate-fee-registry.mjs narrows that to the 47 series this build can price a fill for and emits src/series-fee-registry.js; seriesFeeConfig() now resolves snapshot -> registry -> documented default and labels which one it used (captureSource). MEASURED ANSWERS: KXHIGHNY fee_multiplier 1 / quadratic and KXGOLD15M fee_multiplier 1 / quadratic — the documented default was right for both, but it is now a capture rather than an assumption. The same capture exposed a real, material bug: irregularity #37. |
-| **What you should do** | Open https://docs.kalshi.com/api-reference/market/get-series-list, call it with include_volume=true, and compare any ticker against src/series-fee-registry.js. |
-
-**Evidence**
-
-- Fee schedule (check the Non-Standard table for these series): <https://kalshi.com/docs/kalshi-fee-schedule.pdf>
-- The honest fallback — `src/verified-snapshot.js → seriesFeeConfig() "Series object not captured — using the documented taker default M=1"`
-
----
-
 ## #55 — The FDA and MLB archive workflows committed their raw capture logs to the repository root on every run
 
 **Severity:** `LOW`
@@ -1124,6 +1146,42 @@ assumption against an official document or a real API response.
 **Evidence**
 
 - research-sources R19 — the post quoted verbatim, parameters and post-mortem: <https://www.reddit.com/r/PredictionsMarkets/comments/1u3rn8s/i_built_a_39_kalshi_trading_bot_to_exploit_world/>
+
+---
+
+## #65 — ROADMAP #34 said "data/history holds zero KXMLBGAME/KXNFLGAME stores" — it does not; and 2 OPEN NHL contracts with 20 usable ladders never reach the desk
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | As recorded in ROADMAP row 34: that the desk's game-series reserves were 0 because the store held no game stores. |
+| **Verified truth** | The store holds 43 KXMLBGAME and 10 KXNFLGAME stores (53 stores, 272 captured ladders: 160 + 112) across data/history/ and data/history/intraday/{60m,1m}/. Every one of those ladders was captured after its contract's own close_time — the exchange's actual trading end — where the official API returns an empty orderbook (irregularity #60), so the desk module correctly keeps nothing and both reserves read 0. The audit also pins why occurrence_datetime cannot stand in for an event time: it equals expected_expiration_time on 144 of the 151 game stores (and differs on 7, where expected_expiration_time is hours later than the scheduled start), and it equals close_time on none. Separately, two OPEN KXNHLGAME contracts (KXNHLGAME-26SEP19VGKLA-VGK and KXNHLGAME-26SEP20WSHBOS-WSH) hold 10 non-empty tradeable ladders each and are absent from src/desk-data.js entirely — dropped by the module's own 80-market cap — so the KXNHLGAME reserve read 0 for a reason nobody had published. |
+| **What the code does** | ROADMAP row 34 is corrected in place and the audit itself is the correction: scripts/verify-game-window.mjs (a committed continue-on-error step in daily-history.yml and ingest-now.yml) reports per-store phases with examples, per-series roll-ups with a join-reason code per store, and per-series reserve explanations naming which open contracts are absent from the module. |
+| **What you should do** | Read data/reports/game-window-captures.json — totals, series and deskReserves — and note that the 1031 TRADEABLE_EVENT_UNVERIFIED ladders are tradeable-window ladders whose event window could not be joined, not in-play ladders. ROADMAP Next #12 tracks giving the module a per-series quota so an open game series cannot be crowded out. |
+
+**Evidence**
+
+- the committed audit — data/reports/game-window-captures.json series roll-up: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/data/reports/game-window-captures.json> — `KXMLBGAME: 43 stores (0 open / 43 settled), 160 ladders, 0 non-empty, all POST_CLOSE. KXNFLGAME: 10 stores (0 open / 10 settled), 112 ladders, 0 non-empty, all POST_CLOSE. Totals across all seven game series: 151 stores, 100 distinct contracts, 1544 ladders, 1031 non-empty, phases IN_PLAY 0 / TRADEABLE_EVENT_UNVERIFIED 1031 / POST_CLOSE 513 (0 of those non-empty); store verdicts POST_CLOSE_ONLY 70, TRADEABLE_LADDER_EVENT_UNVERIFIED 81.`
+- the reserve explanation the audit publishes for KXNHLGAME: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/data/reports/game-window-captures.json> — `deskReserves[KXNHLGAME]: deskSlots 4, deskKept 0, openContractsWithUsableLadder 2, ofThoseInDeskModule 0, openLadderContractsNotInModule ["KXNHLGAME-26SEP19VGKLA-VGK","KXNHLGAME-26SEP20WSHBOS-WSH"], each with usableLadders 10 — "the module's own rule caps open contracts at 80 by real lifetime volume, and its series reserve for KXNHLGAME then found nothing to keep".`
+- occurrence_datetime is not an event bound — measured over all 151 stores: <https://docs.kalshi.com/api-reference/market/get-market> — `totals.occurrenceEqualsExpectedExpiration 144, occurrenceDiffersFromExpectedExpiration 7, occurrenceEqualsCloseTime 0, storesWithMarketObject 151. Example of the 7: KXNFLGAME-26SEP09NESEA-NE carries occurrence_datetime 2026-09-10T03:20:00Z, expected_expiration_time 2026-09-10T06:20:00Z and close_time 2026-09-10T03:28:38Z — the exchange closed it early, before its own expected expiration.`
+
+---
+
+## #18 — updated_time is not a quote timestamp
+
+**Severity:** `INFO`
+
+| | |
+| --- | --- |
+| **We assumed** | That a market’s updated_time indicated when its price last changed. |
+| **Verified truth** | Captured active markets show updated_time 2026-04-09T09:41:46Z while their last_price_dollars, yes_bid and yes_ask change intraday. |
+| **What the code does** | All freshness indicators in this app use our own capture timestamp and the candlestick end_period_ts, never updated_time. |
+| **What you should do** | None — informational. |
+
+**Evidence**
+
+- Market list capture: <https://external-api.kalshi.com/trade-api/v2/markets?series_ticker=KXNASDAQ100Y&status=open&limit=12>
 
 ---
 
