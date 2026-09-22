@@ -1,8 +1,8 @@
 {
   "_README": "Commit a change to this file to request an immediate forecast-archive run (.github/workflows/weather-signals.yml). The workflow also runs five times a day on a schedule; this trigger exists for on-demand captures (and because the automation token cannot create workflow_dispatch events). Bump `request` so the push is a real change.",
-  "request": 4,
+  "request": 5,
   "enabled": true,
-  "requested_at": "2026-09-19T23:55:00.000Z",
-  "requested_by": "arena session 01a0bc0a \u2014 the 2026-09-19 ~21:4x scheduled capture SUCCEEDED at api.weather.gov but died at the commit step and lost its snapshots with the runner (irregularity #51). The push guard now auto-resolves the regenerated docs/modules, and every data bot syncs onto the branch tip before capturing. This request re-captures on the fixed pipeline.",
-  "why": "ROADMAP Next #1: the forecast-archive \u2194 weather-bar overlap grows one capture per successful run; a failed commit step silently starves it. Verify after this run: data/forecasts/* last captured_at vs data/history/_last-run.json."
+  "requested_at": "2026-09-22T07:30:00.000Z",
+  "requested_by": "arena session 01a0c733 — ROADMAP Next #9. The 01:37:38Z run 35676454906 captured, audited and regenerated new snapshots and then FAILED at \"Commit the new snapshots\", so they died with the runner (irregularity #63): all nine data/forecasts/*.json stores still end at captured_at 2026-09-21T22:36:56.809Z, ~9 hours older than the archive itself. This request re-captures on the pipeline fixed by PR #24 — one shared concurrency group with queue: max and a 6-attempt push guard that stages git add -A.",
+  "why": "Verify after this run: the newest captured_at in data/forecasts/nyc-central-park.json is later than 2026-09-21T22:36:56.809Z, and the run concludes success at its commit step."
 }

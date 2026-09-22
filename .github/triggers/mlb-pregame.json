@@ -1,8 +1,8 @@
 {
   "_README": "Commit a change to this file to request an immediate MLB pre-game model run (.github/workflows/mlb-pregame-signals.yml). The workflow runs the owner's model (MasterSite S14) walk-forward chain and ingests its predictions as MEASUREMENT rows; pre-game SNAPSHOT rows activate when the model CLI grows a `predict` command. Bump `request` so the push is a real change.",
-  "request": 1,
+  "request": 2,
   "enabled": true,
-  "requested_at": "2026-09-21T23:20:00.000Z",
-  "requested_by": "arena session 01a0c625 — first run of the S14 pre-game probability capture (ROADMAP Next #3(c)). Expected: data/mlb-pregame/predictions/<date>.json with walk-forward measurement rows (timely:false) from the model's predictions.csv, and a status report naming the still-missing `predict` command in mlb_predict/cli.py.",
-  "why": "A pre-game probability is only a signal if it EXISTED before first pitch. Walk-forward rows measure the model against the store's recorded Kalshi prices; only snapshots (capturedAt < firstPitchAt) can ever trigger MLBPreGame_ModelEdge."
+  "requested_at": "2026-09-22T07:30:00.000Z",
+  "requested_by": "arena session 01a0c733 — ROADMAP Next #9. Two runs today captured the S14 pre-game measurements and then FAILED at \"Commit the measurement rows + status\" (35677025646 at 01:46:38Z and 35677673624 at 01:57:22Z, the latter created 4 s after PR #22 merged), so data/mlb-pregame/predictions/ still holds 0 files (irregularity #63). Re-run on the pipeline fixed by PR #24, concurrently with the forecast re-capture in the same commit, so the shared queue is exercised under real contention rather than assumed to work.",
+  "why": "Verify after this run: data/mlb-pregame/predictions/<date>.json exists with walk-forward measurement rows (timely:false) and a status report naming the still-missing `predict` command in mlb_predict/cli.py."
 }
