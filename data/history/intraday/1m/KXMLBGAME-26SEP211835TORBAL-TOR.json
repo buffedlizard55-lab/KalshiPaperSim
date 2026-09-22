@@ -12000,6 +12000,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T20:02:24.117Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP211835TORBAL-TOR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12026,9 +12036,9 @@
     "occurrence_datetime": "2026-09-22T01:35:00Z",
     "open_interest_fp": "1211206.45",
     "open_time": "2026-09-18T22:55:00Z",
-    "previous_price_dollars": "0.4900",
-    "previous_yes_ask_dollars": "0.5000",
-    "previous_yes_bid_dollars": "0.4900",
+    "previous_price_dollars": "0.5100",
+    "previous_yes_ask_dollars": "0.5100",
+    "previous_yes_bid_dollars": "0.5000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12048,7 +12058,7 @@
     "ticker": "KXMLBGAME-26SEP211835TORBAL-TOR",
     "title": "Toronto wins",
     "updated_time": "2026-09-22T02:02:48.383238Z",
-    "volume_24h_fp": "1945646.81",
+    "volume_24h_fp": "1828827.09",
     "volume_fp": "1994123.84",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12057,11 +12067,11 @@
     "yes_sub_title": "Toronto"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP211835TORBAL-TOR",
-  "market_captured_at": "2026-09-22T11:49:56.383Z",
+  "market_captured_at": "2026-09-22T20:02:23.357Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-22T11:49:57.058Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP211835TORBAL-TOR/candlesticks?start_ts=1790042461&end_ts=1790077796&period_interval=1",
+  "last_ingested_at": "2026-09-22T20:02:24.038Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP211835TORBAL-TOR/candlesticks?start_ts=1790042461&end_ts=1790107343&period_interval=1",
   "trims": [
     {
       "at": "2026-09-22T08:01:12.530Z",

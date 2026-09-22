@@ -3708,6 +3708,177 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T19:55:02.438Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3621572.00"
+            ],
+            [
+              "0.0200",
+              "2558.00"
+            ],
+            [
+              "0.0300",
+              "230139.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "250591.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "325370.00"
+            ],
+            [
+              "0.1500",
+              "144118.00"
+            ],
+            [
+              "0.1600",
+              "33346.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2100",
+              "76294.00"
+            ],
+            [
+              "0.2200",
+              "25330.00"
+            ],
+            [
+              "0.2600",
+              "45773.00"
+            ],
+            [
+              "0.2700",
+              "25031.00"
+            ],
+            [
+              "0.3100",
+              "41052.00"
+            ],
+            [
+              "0.3500",
+              "76042.00"
+            ],
+            [
+              "0.3600",
+              "25632.00"
+            ],
+            [
+              "0.4000",
+              "23993.00"
+            ],
+            [
+              "0.4400",
+              "24522.00"
+            ],
+            [
+              "0.4800",
+              "22202.00"
+            ],
+            [
+              "0.5200",
+              "13843.00"
+            ],
+            [
+              "0.5600",
+              "13157.00"
+            ],
+            [
+              "0.6100",
+              "49527.00"
+            ],
+            [
+              "0.6300",
+              "10458.00"
+            ],
+            [
+              "0.6800",
+              "8715.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.7300",
+              "36749.00"
+            ],
+            [
+              "0.7400",
+              "6911.00"
+            ],
+            [
+              "0.7800",
+              "7669.00"
+            ],
+            [
+              "0.7900",
+              "2022.00"
+            ],
+            [
+              "0.8300",
+              "30940.00"
+            ],
+            [
+              "0.8600",
+              "2478.00"
+            ],
+            [
+              "0.8900",
+              "250.00"
+            ],
+            [
+              "0.9100",
+              "28548.00"
+            ],
+            [
+              "0.9200",
+              "1335.00"
+            ],
+            [
+              "0.9300",
+              "500.00"
+            ],
+            [
+              "0.9600",
+              "21.00"
+            ],
+            [
+              "0.9700",
+              "46854.00"
+            ],
+            [
+              "0.9800",
+              "12018.98"
+            ],
+            [
+              "0.9900",
+              "438062.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3754,17 +3925,17 @@
     "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
     "title": "Miami (FL) wins",
     "updated_time": "2026-09-13T01:07:00.401976Z",
-    "volume_24h_fp": "100.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "20142.04",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "458062.00",
+    "yes_bid_size_fp": "438062.00",
     "yes_sub_title": "Miami (FL)"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA",
-  "market_captured_at": "2026-09-22T11:43:08.888Z",
+  "market_captured_at": "2026-09-22T19:55:01.777Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T11:43:09.463Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/candlesticks?start_ts=1790049601&end_ts=1790077389&period_interval=1440"
+  "last_ingested_at": "2026-09-22T19:55:02.358Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/candlesticks?start_ts=1790049601&end_ts=1790106902&period_interval=1440"
 }

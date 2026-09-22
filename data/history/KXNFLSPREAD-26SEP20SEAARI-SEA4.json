@@ -4548,6 +4548,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T19:55:41.017Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLSPREAD-26SEP20SEAARI-SEA4/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4606,9 +4616,9 @@
     "yes_sub_title": "Seattle wins by over 3.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLSPREAD-26SEP20SEAARI-SEA4",
-  "market_captured_at": "2026-09-22T11:43:36.876Z",
+  "market_captured_at": "2026-09-22T19:55:40.357Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-22T11:43:37.451Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLSPREAD/markets/KXNFLSPREAD-26SEP20SEAARI-SEA4/candlesticks?start_ts=1789963201&end_ts=1790077417&period_interval=1440",
+  "last_ingested_at": "2026-09-22T19:55:40.937Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLSPREAD/markets/KXNFLSPREAD-26SEP20SEAARI-SEA4/candlesticks?start_ts=1789963201&end_ts=1790106940&period_interval=1440",
   "result": "yes"
 }

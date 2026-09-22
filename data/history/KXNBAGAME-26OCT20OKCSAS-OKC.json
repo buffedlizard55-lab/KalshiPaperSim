@@ -5653,6 +5653,206 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T19:54:40.024Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "233063.31"
+            ],
+            [
+              "0.0200",
+              "19748.70"
+            ],
+            [
+              "0.0300",
+              "9716.66"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "4323.00"
+            ],
+            [
+              "0.0800",
+              "1336.00"
+            ],
+            [
+              "0.0900",
+              "444.00"
+            ],
+            [
+              "0.1000",
+              "19.32"
+            ],
+            [
+              "0.1200",
+              "650.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "1513.00"
+            ],
+            [
+              "0.1600",
+              "343.00"
+            ],
+            [
+              "0.1700",
+              "22.00"
+            ],
+            [
+              "0.2200",
+              "0.78"
+            ],
+            [
+              "0.2300",
+              "2193.00"
+            ],
+            [
+              "0.2500",
+              "204.02"
+            ],
+            [
+              "0.2600",
+              "1690.00"
+            ],
+            [
+              "0.2700",
+              "25.86"
+            ],
+            [
+              "0.4000",
+              "1720.00"
+            ],
+            [
+              "0.4500",
+              "750.00"
+            ],
+            [
+              "0.4600",
+              "375.00"
+            ],
+            [
+              "0.4700",
+              "1860.00"
+            ],
+            [
+              "0.4800",
+              "2298.00"
+            ],
+            [
+              "0.4900",
+              "2866.00"
+            ],
+            [
+              "0.5000",
+              "1723.43"
+            ],
+            [
+              "0.5100",
+              "221.78"
+            ],
+            [
+              "0.5200",
+              "107.36"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "234043.52"
+            ],
+            [
+              "0.0200",
+              "18369.00"
+            ],
+            [
+              "0.0300",
+              "11420.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "3731.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "322.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "872.00"
+            ],
+            [
+              "0.1600",
+              "177.00"
+            ],
+            [
+              "0.1800",
+              "215.00"
+            ],
+            [
+              "0.2000",
+              "2008.00"
+            ],
+            [
+              "0.3700",
+              "1720.00"
+            ],
+            [
+              "0.3800",
+              "200.00"
+            ],
+            [
+              "0.4200",
+              "999.07"
+            ],
+            [
+              "0.4300",
+              "1877.00"
+            ],
+            [
+              "0.4400",
+              "2584.00"
+            ],
+            [
+              "0.4500",
+              "183.00"
+            ],
+            [
+              "0.4600",
+              "317.86"
+            ],
+            [
+              "0.4700",
+              "17.36"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -5672,16 +5872,16 @@
     "latest_expiration_time": "2026-10-23T01:30:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.5400",
-    "no_bid_dollars": "0.5000",
+    "no_ask_dollars": "0.5300",
+    "no_bid_dollars": "0.5200",
     "no_sub_title": "Oklahoma City",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-21T04:30:00Z",
-    "open_interest_fp": "1918.01",
+    "open_interest_fp": "1971.46",
     "open_time": "2026-08-20T15:28:00Z",
-    "previous_price_dollars": "0.4600",
-    "previous_yes_ask_dollars": "0.4900",
-    "previous_yes_bid_dollars": "0.4600",
+    "previous_price_dollars": "0.4800",
+    "previous_yes_ask_dollars": "0.4700",
+    "previous_yes_bid_dollars": "0.4500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5699,17 +5899,17 @@
     "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
     "title": "Oklahoma City wins",
     "updated_time": "2026-08-20T15:28:00.432079Z",
-    "volume_24h_fp": "70.75",
-    "volume_fp": "3588.03",
-    "yes_ask_dollars": "0.5000",
-    "yes_ask_size_fp": "1270.65",
-    "yes_bid_dollars": "0.4600",
-    "yes_bid_size_fp": "641.00",
+    "volume_24h_fp": "90.70",
+    "volume_fp": "3641.48",
+    "yes_ask_dollars": "0.4800",
+    "yes_ask_size_fp": "107.36",
+    "yes_bid_dollars": "0.4700",
+    "yes_bid_size_fp": "17.36",
     "yes_sub_title": "Oklahoma City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
-  "market_captured_at": "2026-09-22T11:42:52.660Z",
+  "market_captured_at": "2026-09-22T19:54:39.363Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T11:42:53.233Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790049601&end_ts=1790077372&period_interval=1440"
+  "last_ingested_at": "2026-09-22T19:54:39.944Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790049601&end_ts=1790106879&period_interval=1440"
 }

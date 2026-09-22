@@ -1019,6 +1019,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T19:57:10.089Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHMIA-26SEP21-B86.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1044,9 +1054,9 @@
     "occurrence_datetime": "2026-09-22T14:00:00Z",
     "open_interest_fp": "64397.98",
     "open_time": "2026-09-20T14:00:00Z",
-    "previous_price_dollars": "0.4700",
-    "previous_yes_ask_dollars": "0.4800",
-    "previous_yes_bid_dollars": "0.4600",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "0.0100",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1066,7 +1076,7 @@
     "ticker": "KXHIGHMIA-26SEP21-B86.5",
     "title": "Will the maximum temperature be 86-87° on Sep 21, 2026?",
     "updated_time": "2026-09-22T11:11:18.52422Z",
-    "volume_24h_fp": "77152.39",
+    "volume_24h_fp": "24429.62",
     "volume_fp": "80384.07",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1075,9 +1085,9 @@
     "yes_sub_title": "86° to 87°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHMIA-26SEP21-B86.5",
-  "market_captured_at": "2026-09-22T11:44:55.255Z",
+  "market_captured_at": "2026-09-22T19:57:09.328Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-22T11:44:55.930Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP21-B86.5/candlesticks?start_ts=1790056801&end_ts=1790077495&period_interval=60",
+  "last_ingested_at": "2026-09-22T19:57:10.009Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP21-B86.5/candlesticks?start_ts=1790056801&end_ts=1790107029&period_interval=60",
   "result": "no"
 }

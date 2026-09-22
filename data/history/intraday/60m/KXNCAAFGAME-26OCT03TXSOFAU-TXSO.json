@@ -797,6 +797,66 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1790085600,
+      "open_interest_fp": "1656.80",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1790089200,
+      "open_interest_fp": "1656.80",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1790103600,
+      "open_interest_fp": "1656.80",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -1323,6 +1383,78 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T20:00:36.010Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "119484.00"
+            ],
+            [
+              "0.0200",
+              "13018.00"
+            ],
+            [
+              "0.0300",
+              "6602.00"
+            ],
+            [
+              "0.0400",
+              "3154.00"
+            ],
+            [
+              "0.0500",
+              "5.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1400",
+              "24.00"
+            ],
+            [
+              "0.1500",
+              "455.00"
+            ],
+            [
+              "0.1800",
+              "5000.00"
+            ],
+            [
+              "0.6400",
+              "152.00"
+            ],
+            [
+              "0.9100",
+              "25.00"
+            ],
+            [
+              "0.9600",
+              "5160.00"
+            ],
+            [
+              "0.9700",
+              "1000948.20"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "6747.00"
+            ],
+            [
+              "0.0200",
+              "1800.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1349,9 +1481,9 @@
     "occurrence_datetime": "2026-10-04T01:00:00Z",
     "open_interest_fp": "1656.80",
     "open_time": "2026-09-19T22:08:00Z",
-    "previous_price_dollars": "0.1000",
-    "previous_yes_ask_dollars": "0.0900",
-    "previous_yes_bid_dollars": "0.0300",
+    "previous_price_dollars": "0.0300",
+    "previous_yes_ask_dollars": "0.0300",
+    "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1369,17 +1501,17 @@
     "ticker": "KXNCAAFGAME-26OCT03TXSOFAU-TXSO",
     "title": "Texas Southern wins",
     "updated_time": "2026-09-19T22:08:01.218781Z",
-    "volume_24h_fp": "655.80",
+    "volume_24h_fp": "7.80",
     "volume_fp": "1658.80",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "1001117.20",
+    "yes_ask_size_fp": "1000948.20",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "1969.00",
+    "yes_bid_size_fp": "1800.00",
     "yes_sub_title": "Texas Southern"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO",
-  "market_captured_at": "2026-09-22T11:48:15.607Z",
+  "market_captured_at": "2026-09-22T20:00:35.244Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T11:48:16.284Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO/candlesticks?start_ts=1790056801&end_ts=1790077695&period_interval=60"
+  "last_ingested_at": "2026-09-22T20:00:35.927Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03TXSOFAU-TXSO/candlesticks?start_ts=1790071201&end_ts=1790107235&period_interval=60"
 }

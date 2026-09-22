@@ -2761,6 +2761,181 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T19:54:59.950Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3752959.00"
+            ],
+            [
+              "0.0200",
+              "2558.00"
+            ],
+            [
+              "0.0300",
+              "238212.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "260123.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "337750.00"
+            ],
+            [
+              "0.1500",
+              "149600.00"
+            ],
+            [
+              "0.1600",
+              "34618.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2100",
+              "79196.00"
+            ],
+            [
+              "0.2200",
+              "26296.00"
+            ],
+            [
+              "0.2600",
+              "47514.00"
+            ],
+            [
+              "0.2700",
+              "25986.00"
+            ],
+            [
+              "0.3100",
+              "42616.00"
+            ],
+            [
+              "0.3500",
+              "78937.00"
+            ],
+            [
+              "0.3600",
+              "26609.00"
+            ],
+            [
+              "0.4000",
+              "24907.00"
+            ],
+            [
+              "0.4400",
+              "25456.00"
+            ],
+            [
+              "0.4800",
+              "23047.00"
+            ],
+            [
+              "0.5200",
+              "14371.00"
+            ],
+            [
+              "0.5600",
+              "13658.00"
+            ],
+            [
+              "0.6100",
+              "51413.00"
+            ],
+            [
+              "0.6300",
+              "10856.00"
+            ],
+            [
+              "0.6800",
+              "9050.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.7300",
+              "38149.00"
+            ],
+            [
+              "0.7400",
+              "7177.00"
+            ],
+            [
+              "0.7800",
+              "7962.00"
+            ],
+            [
+              "0.7900",
+              "2008.00"
+            ],
+            [
+              "0.8300",
+              "32118.00"
+            ],
+            [
+              "0.8600",
+              "3380.00"
+            ],
+            [
+              "0.8700",
+              "29.00"
+            ],
+            [
+              "0.8900",
+              "250.00"
+            ],
+            [
+              "0.9100",
+              "31634.00"
+            ],
+            [
+              "0.9200",
+              "1692.00"
+            ],
+            [
+              "0.9500",
+              "81.26"
+            ],
+            [
+              "0.9600",
+              "312.43"
+            ],
+            [
+              "0.9700",
+              "48809.00"
+            ],
+            [
+              "0.9800",
+              "9175.00"
+            ],
+            [
+              "0.9900",
+              "899642.98"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2807,17 +2982,17 @@
     "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
     "title": "Florida St. wins",
     "updated_time": "2026-09-22T07:03:34.782103Z",
-    "volume_24h_fp": "100.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "25132.67",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "566309.98",
+    "yes_bid_size_fp": "899642.98",
     "yes_sub_title": "Florida St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU",
-  "market_captured_at": "2026-09-22T11:43:07.083Z",
+  "market_captured_at": "2026-09-22T19:54:59.279Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T11:43:07.658Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/candlesticks?start_ts=1790049601&end_ts=1790077387&period_interval=1440"
+  "last_ingested_at": "2026-09-22T19:54:59.870Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/candlesticks?start_ts=1790049601&end_ts=1790106899&period_interval=1440"
 }

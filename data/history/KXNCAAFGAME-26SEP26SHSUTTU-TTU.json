@@ -2712,6 +2712,185 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T19:55:07.410Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2837640.00"
+            ],
+            [
+              "0.0200",
+              "2558.00"
+            ],
+            [
+              "0.0300",
+              "178747.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "194328.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "252319.00"
+            ],
+            [
+              "0.1500",
+              "111761.00"
+            ],
+            [
+              "0.1600",
+              "25860.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2100",
+              "59164.00"
+            ],
+            [
+              "0.2200",
+              "19644.00"
+            ],
+            [
+              "0.2600",
+              "35496.00"
+            ],
+            [
+              "0.2700",
+              "19412.00"
+            ],
+            [
+              "0.3100",
+              "31835.00"
+            ],
+            [
+              "0.3500",
+              "69250.00"
+            ],
+            [
+              "0.3600",
+              "59.00"
+            ],
+            [
+              "0.3800",
+              "18618.00"
+            ],
+            [
+              "0.4200",
+              "19047.00"
+            ],
+            [
+              "0.4600",
+              "18989.00"
+            ],
+            [
+              "0.5000",
+              "14478.00"
+            ],
+            [
+              "0.5400",
+              "10216.00"
+            ],
+            [
+              "0.5900",
+              "40414.00"
+            ],
+            [
+              "0.6200",
+              "7436.00"
+            ],
+            [
+              "0.6700",
+              "6763.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.7200",
+              "32523.00"
+            ],
+            [
+              "0.7600",
+              "5301.00"
+            ],
+            [
+              "0.7900",
+              "2018.00"
+            ],
+            [
+              "0.8100",
+              "23977.00"
+            ],
+            [
+              "0.8400",
+              "2664.00"
+            ],
+            [
+              "0.8900",
+              "22498.00"
+            ],
+            [
+              "0.9000",
+              "773.00"
+            ],
+            [
+              "0.9100",
+              "2222.00"
+            ],
+            [
+              "0.9200",
+              "210.00"
+            ],
+            [
+              "0.9300",
+              "500.00"
+            ],
+            [
+              "0.9400",
+              "2082.12"
+            ],
+            [
+              "0.9500",
+              "36346.00"
+            ],
+            [
+              "0.9600",
+              "436.00"
+            ],
+            [
+              "0.9700",
+              "1722.77"
+            ],
+            [
+              "0.9800",
+              "336649.51"
+            ],
+            [
+              "0.9900",
+              "2832.72"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2736,7 +2915,7 @@
     "no_sub_title": "Texas Tech",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-26T20:00:00Z",
-    "open_interest_fp": "27244.13",
+    "open_interest_fp": "29421.41",
     "open_time": "2026-09-12T19:07:00Z",
     "previous_price_dollars": "0.9900",
     "previous_yes_ask_dollars": "1.0000",
@@ -2758,17 +2937,17 @@
     "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
     "title": "Texas Tech wins",
     "updated_time": "2026-09-20T10:03:06.550041Z",
-    "volume_24h_fp": "406.00",
-    "volume_fp": "29471.93",
+    "volume_24h_fp": "12541.00",
+    "volume_fp": "41706.93",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "15224.72",
+    "yes_bid_size_fp": "2832.72",
     "yes_sub_title": "Texas Tech"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU",
-  "market_captured_at": "2026-09-22T11:43:12.496Z",
+  "market_captured_at": "2026-09-22T19:55:06.748Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T11:43:13.073Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1790049601&end_ts=1790077392&period_interval=1440"
+  "last_ingested_at": "2026-09-22T19:55:07.330Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1790049601&end_ts=1790106906&period_interval=1440"
 }

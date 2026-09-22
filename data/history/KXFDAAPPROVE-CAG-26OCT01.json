@@ -2243,6 +2243,120 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T19:52:51.690Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "75.00"
+            ],
+            [
+              "0.0400",
+              "37.00"
+            ],
+            [
+              "0.5500",
+              "200.00"
+            ],
+            [
+              "0.5600",
+              "1181.00"
+            ],
+            [
+              "0.5700",
+              "47.00"
+            ],
+            [
+              "0.7100",
+              "25.00"
+            ],
+            [
+              "0.8400",
+              "29.00"
+            ],
+            [
+              "0.9100",
+              "305.00"
+            ],
+            [
+              "0.9200",
+              "25.00"
+            ],
+            [
+              "0.9500",
+              "200.00"
+            ],
+            [
+              "0.9600",
+              "370.38"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-22T20:03:49.881Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "75.00"
+            ],
+            [
+              "0.0200",
+              "41.00"
+            ],
+            [
+              "0.0400",
+              "37.00"
+            ],
+            [
+              "0.0500",
+              "15.00"
+            ],
+            [
+              "0.5500",
+              "200.00"
+            ],
+            [
+              "0.5800",
+              "1126.00"
+            ],
+            [
+              "0.7100",
+              "25.00"
+            ],
+            [
+              "0.8400",
+              "29.00"
+            ],
+            [
+              "0.9100",
+              "305.00"
+            ],
+            [
+              "0.9200",
+              "25.00"
+            ],
+            [
+              "0.9500",
+              "200.00"
+            ],
+            [
+              "0.9600",
+              "370.38"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2258,20 +2372,20 @@
     "expected_expiration_time": "2027-01-01T15:00:00Z",
     "expiration_time": "2026-10-08T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0500",
+    "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-10-08T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9700",
-    "no_bid_dollars": "0.9100",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.9600",
     "no_sub_title": "Before Oct 1, 2026",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-07-01T14:00:00Z",
-    "open_interest_fp": "2791.16",
+    "open_interest_fp": "3118.16",
     "open_time": "2026-05-14T02:00:00Z",
-    "previous_price_dollars": "0.1200",
-    "previous_yes_ask_dollars": "0.1500",
-    "previous_yes_bid_dollars": "0.1400",
+    "previous_price_dollars": "0.1500",
+    "previous_yes_ask_dollars": "0.1600",
+    "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2289,17 +2403,17 @@
     "ticker": "KXFDAAPPROVE-CAG-26OCT01",
     "title": "Will the FDA approve CagriSema before Oct 1, 2026?",
     "updated_time": "2026-07-06T14:50:48.299633Z",
-    "volume_24h_fp": "956.98",
-    "volume_fp": "2883.61",
-    "yes_ask_dollars": "0.0900",
-    "yes_ask_size_fp": "112.38",
-    "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "908.00",
+    "volume_24h_fp": "431.98",
+    "volume_fp": "3210.61",
+    "yes_ask_dollars": "0.0400",
+    "yes_ask_size_fp": "370.38",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Before Oct 1, 2026"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01",
-  "market_captured_at": "2026-09-22T11:51:24.502Z",
+  "market_captured_at": "2026-09-22T20:03:49.119Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T11:51:25.180Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CAG-26OCT01/candlesticks?start_ts=1790049601&end_ts=1790077884&period_interval=1440"
+  "last_ingested_at": "2026-09-22T20:03:49.801Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CAG-26OCT01/candlesticks?start_ts=1790049601&end_ts=1790107429&period_interval=1440"
 }

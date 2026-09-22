@@ -24,6 +24,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T20:03:06.752Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG20SFLAC-LAC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -81,9 +91,9 @@
     "yes_sub_title": "LA Chargers"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG20SFLAC-LAC",
-  "market_captured_at": "2026-09-22T11:50:41.261Z",
+  "market_captured_at": "2026-09-22T20:03:05.227Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-22T11:50:42.772Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG20SFLAC-LAC/candlesticks?start_ts=1789991441&end_ts=1790077840&period_interval=1"
+  "last_ingested_at": "2026-09-22T20:03:06.672Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG20SFLAC-LAC/candlesticks?start_ts=1790020985&end_ts=1790107384&period_interval=1"
 }
