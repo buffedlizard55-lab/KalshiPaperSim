@@ -8,7 +8,8 @@
   ]
  },
  "captures": [
-  "2026-09-22T01:47:08.248Z"
+  "2026-09-22T01:47:08.248Z",
+  "2026-09-22T01:57:53.378Z"
  ],
  "events": {
   "401872947": {
@@ -47,10 +48,30 @@
       "home": "0-1",
       "away": "1-0"
      }
+    },
+    {
+     "captured_at": "2026-09-22T01:57:53.378Z",
+     "last_seen_at": "2026-09-22T01:57:53.378Z",
+     "fp": "in|3|14|14,3|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 3,
+     "clock": 854,
+     "displayClock": "14:14",
+     "scores": {
+      "home": 14,
+      "away": 3
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "1-0"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-09-22T01:47:08.248Z",
+ "last_ingested_at": "2026-09-22T01:57:53.378Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260921"
 }
