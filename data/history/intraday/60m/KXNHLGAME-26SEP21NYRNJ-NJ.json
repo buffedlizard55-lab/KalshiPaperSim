@@ -1964,6 +1964,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T11:48:04.963Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21NYRNJ-NJ/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1992,7 +2002,7 @@
     "open_time": "2026-09-18T01:05:00Z",
     "previous_price_dollars": "0.5200",
     "previous_yes_ask_dollars": "0.5200",
-    "previous_yes_bid_dollars": "0.4800",
+    "previous_yes_bid_dollars": "0.4900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2012,7 +2022,7 @@
     "ticker": "KXNHLGAME-26SEP21NYRNJ-NJ",
     "title": "New Jersey wins",
     "updated_time": "2026-09-22T01:41:38.596337Z",
-    "volume_24h_fp": "49027.08",
+    "volume_24h_fp": "49006.26",
     "volume_fp": "49353.25",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2021,9 +2031,9 @@
     "yes_sub_title": "New Jersey"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21NYRNJ-NJ",
-  "market_captured_at": "2026-09-22T07:59:17.515Z",
+  "market_captured_at": "2026-09-22T11:48:04.214Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-22T07:59:18.178Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP21NYRNJ-NJ/candlesticks?start_ts=1789607100&end_ts=1790063957&period_interval=60"
+  "last_ingested_at": "2026-09-22T11:48:04.889Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP21NYRNJ-NJ/candlesticks?start_ts=1790042401&end_ts=1790077684&period_interval=60"
 }

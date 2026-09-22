@@ -5336,8 +5336,8 @@
     "open_interest_fp": "9448.72",
     "open_time": "2026-08-20T15:28:00Z",
     "previous_price_dollars": "0.5400",
-    "previous_yes_ask_dollars": "0.5500",
-    "previous_yes_bid_dollars": "0.5300",
+    "previous_yes_ask_dollars": "0.5600",
+    "previous_yes_bid_dollars": "0.5400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5358,14 +5358,14 @@
     "volume_24h_fp": "49.60",
     "volume_fp": "15673.72",
     "yes_ask_dollars": "0.5500",
-    "yes_ask_size_fp": "1655.00",
+    "yes_ask_size_fp": "1126.00",
     "yes_bid_dollars": "0.5300",
     "yes_bid_size_fp": "139.74",
     "yes_sub_title": "Detroit"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET",
-  "market_captured_at": "2026-09-22T07:53:43.552Z",
+  "market_captured_at": "2026-09-22T11:42:51.756Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T07:53:44.114Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1789963201&end_ts=1790063623&period_interval=1440"
+  "last_ingested_at": "2026-09-22T11:42:52.333Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1790049601&end_ts=1790077372&period_interval=1440"
 }

@@ -1148,6 +1148,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T11:44:53.153Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHMIA-26SEP21-B90.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1160,7 +1170,7 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-09-22T19:00:00Z",
     "expiration_time": "2026-09-28T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "88.00",
     "floor_strike": 90,
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-28T14:00:00Z",
@@ -1173,9 +1183,9 @@
     "occurrence_datetime": "2026-09-22T14:00:00Z",
     "open_interest_fp": "72991.50",
     "open_time": "2026-09-20T14:00:00Z",
-    "previous_price_dollars": "0.0600",
-    "previous_yes_ask_dollars": "0.0600",
-    "previous_yes_bid_dollars": "0.0500",
+    "previous_price_dollars": "0.0900",
+    "previous_yes_ask_dollars": "0.0900",
+    "previous_yes_bid_dollars": "0.0800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1184,16 +1194,18 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "no",
     "rules_primary": "If the maximum temperature recorded at Miami (CLIMIA) for Sep 21, 2026, is between 90-91° fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
     "settlement_timer_seconds": 300,
-    "status": "closed",
+    "settlement_ts": "2026-09-22T11:11:18.214118Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
     "strike_type": "between",
     "ticker": "KXHIGHMIA-26SEP21-B90.5",
     "title": "Will the maximum temperature be 90-91° on Sep 21, 2026?",
-    "updated_time": "2026-09-22T05:00:01.524542Z",
-    "volume_24h_fp": "100533.01",
+    "updated_time": "2026-09-22T11:11:18.52422Z",
+    "volume_24h_fp": "97743.80",
     "volume_fp": "103529.77",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1202,8 +1214,9 @@
     "yes_sub_title": "90° to 91°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHMIA-26SEP21-B90.5",
-  "market_captured_at": "2026-09-22T07:56:05.198Z",
-  "status": "closed",
-  "last_ingested_at": "2026-09-22T07:56:05.861Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP21-B90.5/candlesticks?start_ts=1790020801&end_ts=1790063765&period_interval=60"
+  "market_captured_at": "2026-09-22T11:44:52.404Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-09-22T11:44:53.079Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26SEP21-B90.5/candlesticks?start_ts=1790056801&end_ts=1790077492&period_interval=60",
+  "result": "no"
 }

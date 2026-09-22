@@ -4437,11 +4437,11 @@
     "no_bid_dollars": "0.9300",
     "no_sub_title": "Minnesota",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "546625.97",
+    "open_interest_fp": "546656.97",
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.0800",
     "previous_yes_ask_dollars": "0.0800",
-    "previous_yes_bid_dollars": "0.0700",
+    "previous_yes_bid_dollars": "0.0600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4459,17 +4459,17 @@
     "ticker": "KXNFLNFCCHAMP-27-MIN",
     "title": "Will Minnesota win the Pro Football NFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "7264.82",
-    "volume_fp": "630240.47",
+    "volume_24h_fp": "7264.57",
+    "volume_fp": "630271.47",
     "yes_ask_dollars": "0.0700",
-    "yes_ask_size_fp": "15380.79",
+    "yes_ask_size_fp": "15372.75",
     "yes_bid_dollars": "0.0600",
-    "yes_bid_size_fp": "41.67",
+    "yes_bid_size_fp": "43.91",
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-MIN",
-  "market_captured_at": "2026-09-22T07:54:36.899Z",
+  "market_captured_at": "2026-09-22T11:43:32.365Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T07:54:37.461Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-MIN/candlesticks?start_ts=1789963201&end_ts=1790063677&period_interval=1440"
+  "last_ingested_at": "2026-09-22T11:43:32.940Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-MIN/candlesticks?start_ts=1790049601&end_ts=1790077412&period_interval=1440"
 }

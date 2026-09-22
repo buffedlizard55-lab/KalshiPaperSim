@@ -5391,7 +5391,7 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "506962.13",
     "open_time": "2026-02-07T15:00:00Z",
-    "previous_price_dollars": "0.1200",
+    "previous_price_dollars": "0.1100",
     "previous_yes_ask_dollars": "0.1200",
     "previous_yes_bid_dollars": "0.1100",
     "price_level_structure": "linear_cent",
@@ -5411,17 +5411,17 @@
     "ticker": "KXNFLAFCCHAMP-27-CIN",
     "title": "Will Cincinnati win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "26255.44",
+    "volume_24h_fp": "25418.25",
     "volume_fp": "676265.33",
     "yes_ask_dollars": "0.1200",
     "yes_ask_size_fp": "115461.96",
     "yes_bid_dollars": "0.1100",
-    "yes_bid_size_fp": "23513.29",
+    "yes_bid_size_fp": "29392.05",
     "yes_sub_title": "Cincinnati"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-CIN",
-  "market_captured_at": "2026-09-22T07:54:23.868Z",
+  "market_captured_at": "2026-09-22T11:43:22.421Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T07:54:24.431Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-CIN/candlesticks?start_ts=1789963201&end_ts=1790063664&period_interval=1440"
+  "last_ingested_at": "2026-09-22T11:43:22.997Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-CIN/candlesticks?start_ts=1790049601&end_ts=1790077402&period_interval=1440"
 }

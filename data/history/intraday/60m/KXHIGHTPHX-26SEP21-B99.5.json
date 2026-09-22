@@ -968,11 +968,41 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1790064000,
+      "open_interest_fp": "33826.94",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
     {
       "captured_at": "2026-09-22T07:57:09.800Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP21-B99.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-22T11:45:54.873Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP21-B99.5/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -1005,7 +1035,7 @@
     "occurrence_datetime": "2026-09-22T14:00:00Z",
     "open_interest_fp": "33826.94",
     "open_time": "2026-09-20T14:00:00Z",
-    "previous_price_dollars": "0.1100",
+    "previous_price_dollars": "0.1300",
     "previous_yes_ask_dollars": "0.1200",
     "previous_yes_bid_dollars": "0.0900",
     "price_level_structure": "linear_cent",
@@ -1025,7 +1055,7 @@
     "ticker": "KXHIGHTPHX-26SEP21-B99.5",
     "title": "Will the maximum temperature be 99-100° on Sep 21, 2026?",
     "updated_time": "2026-09-22T07:00:01.024929Z",
-    "volume_24h_fp": "34696.34",
+    "volume_24h_fp": "34446.00",
     "volume_fp": "35628.72",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1034,8 +1064,8 @@
     "yes_sub_title": "99° to 100°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP21-B99.5",
-  "market_captured_at": "2026-09-22T07:57:09.076Z",
+  "market_captured_at": "2026-09-22T11:45:54.125Z",
   "status": "closed",
-  "last_ingested_at": "2026-09-22T07:57:09.740Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP21-B99.5/candlesticks?start_ts=1789826400&end_ts=1790063829&period_interval=60"
+  "last_ingested_at": "2026-09-22T11:45:54.800Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP21-B99.5/candlesticks?start_ts=1790060401&end_ts=1790077554&period_interval=60"
 }

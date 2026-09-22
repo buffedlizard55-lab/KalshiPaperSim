@@ -3313,7 +3313,7 @@
     "open_interest_fp": "2059.26",
     "open_time": "2025-10-13T14:00:00Z",
     "previous_price_dollars": "0.5300",
-    "previous_yes_ask_dollars": "0.5100",
+    "previous_yes_ask_dollars": "0.5300",
     "previous_yes_bid_dollars": "0.4000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -3342,8 +3342,8 @@
     "yes_sub_title": "Above 4.25%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T4.25",
-  "market_captured_at": "2026-09-22T07:52:20.521Z",
+  "market_captured_at": "2026-09-22T11:41:48.579Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T07:52:21.084Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.25/candlesticks?start_ts=1789963201&end_ts=1790063540&period_interval=1440"
+  "last_ingested_at": "2026-09-22T11:41:49.155Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.25/candlesticks?start_ts=1790049601&end_ts=1790077308&period_interval=1440"
 }

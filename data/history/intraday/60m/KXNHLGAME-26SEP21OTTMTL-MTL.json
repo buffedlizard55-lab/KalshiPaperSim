@@ -1962,6 +1962,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-22T11:48:00.689Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21OTTMTL-MTL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1988,9 +1998,9 @@
     "occurrence_datetime": "2026-09-22T02:00:00Z",
     "open_interest_fp": "41807.85",
     "open_time": "2026-09-18T01:05:00Z",
-    "previous_price_dollars": "0.6100",
-    "previous_yes_ask_dollars": "0.6200",
-    "previous_yes_bid_dollars": "0.5700",
+    "previous_price_dollars": "0.6200",
+    "previous_yes_ask_dollars": "0.5900",
+    "previous_yes_bid_dollars": "0.5500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2010,7 +2020,7 @@
     "ticker": "KXNHLGAME-26SEP21OTTMTL-MTL",
     "title": "Montreal wins",
     "updated_time": "2026-09-22T03:20:48.595383Z",
-    "volume_24h_fp": "54197.89",
+    "volume_24h_fp": "54135.18",
     "volume_fp": "54488.74",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2019,9 +2029,9 @@
     "yes_sub_title": "Montreal"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP21OTTMTL-MTL",
-  "market_captured_at": "2026-09-22T07:59:13.349Z",
+  "market_captured_at": "2026-09-22T11:47:59.941Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-22T07:59:14.018Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP21OTTMTL-MTL/candlesticks?start_ts=1789607100&end_ts=1790063953&period_interval=60"
+  "last_ingested_at": "2026-09-22T11:48:00.617Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP21OTTMTL-MTL/candlesticks?start_ts=1790049601&end_ts=1790077680&period_interval=60"
 }
