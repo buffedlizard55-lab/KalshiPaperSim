@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-22T18:28:18.295Z",
+ "generatedAt": "2026-09-22T21:39:09.462Z",
  "rows": [
   {
    "league": "nba",
@@ -150,6 +150,21 @@
      "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
      "rulesName": "San Antonio",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "BYU",
+   "kalshiName": "BYU",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03BYUTCU-BYU",
+     "rulesName": "BYU",
+     "role": "away"
     }
    ]
   },
@@ -589,6 +604,21 @@
     {
      "ticker": "KXNCAAFGAME-26OCT03CHSTARL-TARL",
      "rulesName": "Tarleton St.",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "TCU",
+   "kalshiName": "TCU",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03BYUTCU-BYU",
+     "rulesName": "TCU",
      "role": "home"
     }
    ]
