@@ -48,6 +48,148 @@ const MLB_SIGNAL_DIR = path.join(ROOT, 'data', 'mlb-signals');
 const MLB_SIGNAL_OUT_FILE = path.join(ROOT, 'src', 'mlb-signal-data.js');
 /** Browser cap for MLB date files (newest US-Eastern dates kept). */
 const MAX_BROWSER_MLB_DATES = 45;
+const ESPN_SIGNAL_DIR = path.join(ROOT, 'data', 'espn-signals');
+const ESPN_SIGNAL_OUT_FILE = path.join(ROOT, 'src', 'espn-signal-data.js');
+/** Browser cap for ESPN date files per league per kind (newest kept). */
+const MAX_BROWSER_ESPN_DATES = 30;
+const MLB_PREGAME_DIR = path.join(ROOT, 'data', 'mlb-pregame');
+const MLB_PREGAME_OUT_FILE = path.join(ROOT, 'src', 'mlb-pregame-data.js');
+/** Browser cap for MLB pre-game prediction date files (newest kept). */
+const MAX_BROWSER_PREGAME_DATES = 45;
+
+/**
+ * Compile data/espn-signals/ (the point-in-time ESPN game-state + injury
+ * archive grown by scripts/archive-espn-signals.mjs — TRUSTED BUT NOT
+ * OFFICIAL) into src/espn-signal-data.js. Same discipline as the MLB module:
+ * rows verbatim, newest date files only up to the browser cap, and an absent
+ * archive still writes `present: false` so every ESPN-signal-dependent
+ * strategy abstains rather than guessing.
+ */
+function writeEspnSignalModule() {
+  const leagues = {};
+  let droppedDates = 0;
+  if (fs.existsSync(ESPN_SIGNAL_DIR)) {
+    for (const key of fs.readdirSync(ESPN_SIGNAL_DIR)) {
+      const leagueDir = path.join(ESPN_SIGNAL_DIR, key);
+      if (!fs.statSync(leagueDir).isDirectory()) continue;
+      const teams = readJsonSafe(path.join(leagueDir, '_teams.json'));
+      const dates = {};
+      for (const kind of ['scoreboard', 'injuries']) {
+        const dir = path.join(leagueDir, kind);
+        if (!fs.existsSync(dir)) continue;
+        const files = fs.readdirSync(dir).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
+        droppedDates += Math.max(0, files.length - MAX_BROWSER_ESPN_DATES);
+        for (const file of files.slice(-MAX_BROWSER_ESPN_DATES)) {
+          const store = readJsonSafe(path.join(dir, file));
+          if (!store || typeof store !== 'object') continue;
+          const dateKey = file.replace(/\.json$/, '');
+          const slot = dates[dateKey] || { date: dateKey };
+          slot[kind === 'scoreboard' ? 'events' : 'teams'] = kind === 'scoreboard' ? store.events : store.teams;
+          slot.source = store.source || slot.source || null;
+          slot.captures = Array.isArray(store.captures) ? store.captures : (slot.captures || []);
+          slot.trust = store.trust || null;
+          dates[dateKey] = slot;
+        }
+      }
+      leagues[key] = {
+        label: (key === 'nfl' ? 'NFL' : key === 'nba' ? 'NBA' : key === 'ncaaf' ? 'NCAA football' : key === 'ncaamb' ? "NCAA men's basketball" : key === 'nhl' ? 'NHL' : key === 'wnba' ? 'WNBA' : key),
+        teams: teams && Array.isArray(teams.teams) ? teams.teams : [],
+        teamsCapturedAt: teams ? teams.captured_at || null : null,
+        dates
+      };
+    }
+  }
+  const codeMap = readJsonSafe(path.join(ESPN_SIGNAL_DIR, '_code-map.json'));
+  const present = Object.keys(leagues).length > 0;
+  const eventCount = Object.values(leagues).reduce((a, l) => a + Object.values(l.dates).reduce((b, d) => b + Object.keys(d.events || {}).length, 0), 0);
+  const body = `/**
+ * KalshiPaperSim — Point-in-Time ESPN Game-State + Injury Archive (GENERATED)
+ * =====================================================================
+ * Compiled by scripts/generate-history-module.mjs from data/espn-signals/,
+ * which scripts/archive-espn-signals.mjs grows from ESPN's public JSON
+ * (site.web.api.espn.com) on the espn-signals workflow schedule.
+ *
+ * TRUST: ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL. ESPN is a public
+ * aggregator, not a league's official data feed. Every consumer must surface
+ * the label (src/espn-signal-store.js#espnAssumption).
+ *
+ * Each row is VERBATIM what the archive derived from the response at
+ * captured_at. Read it only through src/espn-signal-store.js, which refuses
+ * any row captured AFTER the decision time (the anti-lookahead rule).
+ *
+ * ${present ? `${Object.keys(leagues).length} league(s) · ${eventCount} event(s)${droppedDates ? ` · ${droppedDates} oldest date file(s) not shipped to the browser` : ''}` : 'NO ARCHIVE YET — every ESPN-signal-dependent strategy abstains until the first espn-signals capture lands.'} · generated ${new Date().toISOString()}
+ */
+
+export const ESPN_SIGNAL_DATA = ${JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    present,
+    trust: 'ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)',
+    endpoints: {
+      scoreboard: 'https://site.web.api.espn.com/apis/site/v2/sports/{sport}/{slug}/scoreboard?dates=YYYYMMDD',
+      injuries: 'https://site.web.api.espn.com/apis/site/v2/sports/{sport}/{slug}/injuries',
+      teams: 'https://site.web.api.espn.com/apis/site/v2/sports/{sport}/{slug}/teams'
+    },
+    droppedOldestDates: droppedDates,
+    codeMap: codeMap && Array.isArray(codeMap.rows) ? codeMap : { rows: [] },
+    leagues
+  }, null, 1)};
+`;
+  fs.mkdirSync(path.dirname(ESPN_SIGNAL_OUT_FILE), { recursive: true });
+  fs.writeFileSync(ESPN_SIGNAL_OUT_FILE, body);
+  const kb = (fs.statSync(ESPN_SIGNAL_OUT_FILE).size / 1024).toFixed(1);
+  console.log(`✓ src/espn-signal-data.js — ${Object.keys(leagues).length} league(s), ${eventCount} event(s), ${kb} KB${present ? '' : ' (no archive yet — ESPN strategies abstain)'}`);
+}
+
+/**
+ * Compile data/mlb-pregame/ (the point-in-time owner-model pre-game
+ * probability store grown by scripts/archive-mlb-pregame.mjs) into
+ * src/mlb-pregame-data.js. Rows are the model's OWN outputs with the instant
+ * each was captured; a row whose capturedAt is after its game's first pitch is
+ * marked untimely by the store and can never be read as a pre-game signal.
+ */
+function writeMlbPregameModule() {
+  const predDir = path.join(MLB_PREGAME_DIR, 'predictions');
+  const dates = {};
+  let droppedDates = 0;
+  if (fs.existsSync(predDir)) {
+    const files = fs.readdirSync(predDir).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
+    droppedDates = Math.max(0, files.length - MAX_BROWSER_PREGAME_DATES);
+    for (const file of files.slice(-MAX_BROWSER_PREGAME_DATES)) {
+      const store = readJsonSafe(path.join(predDir, file));
+      if (!store || typeof store !== 'object') continue;
+      dates[file.replace(/\.json$/, '')] = store;
+    }
+  }
+  const assumption = readJsonSafe(path.join(MLB_PREGAME_DIR, '_assumption.json'));
+  const present = Object.keys(dates).length > 0;
+  const rowCount = Object.values(dates).reduce((a, d) => a + Object.values(d.predictions || {}).reduce((b, p) => b + ((p.rows || []).length), 0), 0);
+  const body = `/**
+ * KalshiPaperSim — Point-in-Time MLB Pre-Game Model Probability Archive
+ * (GENERATED — do not edit)
+ * =====================================================================
+ * Compiled by scripts/generate-history-module.mjs from data/mlb-pregame/,
+ * which scripts/archive-mlb-pregame.mjs grows from the OWNER'S Monte Carlo
+ * model outputs (MasterSite S14, MLB-Prediction-model-backtest). Each row is
+ * the model's own {pHome, …} with the instant it was captured; a row captured
+ * AFTER its game's first pitch is marked untimely and is never a pre-game
+ * signal. Read only through src/mlb-pregame-store.js.
+ *
+ * ${present ? `${Object.keys(dates).length} date file(s) · ${rowCount} prediction row(s)${droppedDates ? ` · ${droppedDates} oldest date file(s) not shipped to the browser` : ''}` : 'NO PREDICTIONS YET — the model-snapshot capture (scripts/archive-mlb-pregame.mjs) has not produced a pre-game snapshot; MLBPreGame_ModelEdge abstains.'} · generated ${new Date().toISOString()}
+ */
+
+export const MLB_PREGAME_DATA = ${JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    present,
+    assumption: assumption || null,
+    droppedOldestDates: droppedDates,
+    dates
+  }, null, 1)};
+`;
+  fs.mkdirSync(path.dirname(MLB_PREGAME_OUT_FILE), { recursive: true });
+  fs.writeFileSync(MLB_PREGAME_OUT_FILE, body);
+  const kb = (fs.statSync(MLB_PREGAME_OUT_FILE).size / 1024).toFixed(1);
+  console.log(`✓ src/mlb-pregame-data.js — ${Object.keys(dates).length} date file(s), ${rowCount} row(s), ${kb} KB${present ? '' : ' (no predictions yet — MLBPreGame_ModelEdge abstains)'}`);
+}
 
 /**
  * Compile data/mlb-signals/ (the point-in-time official MLB game-state archive
@@ -605,6 +747,8 @@ export function getIntradayMarket(ticker, period = 60) {
   writeForecastModule();
   writeFdaSignalModule();
   writeMlbSignalModule();
+  writeEspnSignalModule();
+  writeMlbPregameModule();
   writeForm4SignalModule();
   for (const t of tickers) {
     const m = markets[t];

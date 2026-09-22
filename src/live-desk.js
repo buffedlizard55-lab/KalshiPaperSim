@@ -1959,6 +1959,34 @@ export async function buildDeskSignalsAsync(asOfMs) {
       coverage: f4.form4Coverage()
     };
   } catch (_) { /* Form 4 archive dark */ }
+  try {
+    const espn = await import('./espn-signal-store.js');
+    signals.espn = {
+      available: espn.hasEspnArchive(),
+      endpoint: 'https://site.web.api.espn.com/apis/site/v2/sports/{sport}/{league}/scoreboard|injuries',
+      source: 'ESPN public JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)',
+      trust: espn.ESPN_TRUST_LABEL,
+      cutoffSeconds,
+      matchGame: (ticker) => espn.matchEspnGame(ticker),
+      stateAt: (event) => espn.gameStateAtOrBefore(event, cutoffSeconds),
+      injuriesFor: (league, teamIds) => espn.injuryCountsForTeams(league, teamIds, cutoffSeconds),
+      assumption: espn.espnAssumption(),
+      coverage: espn.espnCoverage()
+    };
+  } catch (_) { /* ESPN archive dark */ }
+  try {
+    const pg = await import('./mlb-pregame-store.js');
+    signals.mlbPregame = {
+      available: pg.hasPreGameArchive(),
+      endpoint: 'data/mlb-pregame/ (owner model S14 outputs, scripts/archive-mlb-pregame.mjs)',
+      source: "the owner's Monte Carlo model (MasterSite S14, MLB-Prediction-model-backtest) — point-in-time snapshots",
+      cutoffSeconds,
+      predictionFor: (gamePk) => pg.preGamePredictionAtOrBefore(gamePk, cutoffSeconds),
+      measurementFor: (gamePk) => pg.preGameMeasurementRows(gamePk),
+      assumption: pg.preGameAssumption(),
+      coverage: pg.preGameCoverage()
+    };
+  } catch (_) { /* pre-game archive dark */ }
   return signals;
 }
 

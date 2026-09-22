@@ -954,7 +954,67 @@ export const VERIFIED_FACTS = Object.freeze([
     evidenceLabel: 'test/simulation.test.js — tests 100 and 118',
     capturedAt: '2026-09-21',
     usedIn: 'test/simulation.test.js; IRREGULARITIES.md #56'
-  }
+  },
+  {
+    id: 'V118',
+    group: 'Signals',
+    status: 'CAPTURED',
+    fact: 'The ESPN public JSON per-event scoreboard and injuries shapes are pinned by live captures, parsed strictly (a missing key throws), stored one row per CHANGE with every capture instant kept, and joined to Kalshi tickers only through evidence - and ESPN is labelled TRUSTED BUT NOT OFFICIAL everywhere it travels',
+    value: 'Fixtures captured 2026-09-21 (data/espn-signals/fixtures/, each file with _provenance): scoreboard events[0] id 401872947 NYG @ LAR, date 2026-09-22T00:15Z, ET date 2026-09-21, competitor scores arrive as numeric STRINGS ("0"), status.type.state "pre" / STATUS_SCHEDULED / completed false / period 0 / clock 0; injuries envelope shared across leagues with each player status verbatim ("Out"). The join = ET date + away code + home code; the Kalshi-to-ESPN code map is built ONLY from each contract own rules_primary text (pair+date+yes-code ticker grammar, e.g. KXNCAAFGAME-26SEP26CARKFSU-FSU) plus captured ESPN team tables, with qualifier-letter disambiguation (New York G vs New York J) and published UNMATCHED/AMBIGUOUS reasons - an unmapped ticker is never traded. Reads are point-in-time: rows captured after the decision are invisible and staleness comes from the capture list, never last_seen_at.',
+    url: 'https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260921',
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/data/espn-signals/fixtures/_PROVENANCE.md',
+    evidenceLabel: 'data/espn-signals/fixtures/_PROVENANCE.md + the two fixture files (verbatim captures) + scripts/archive-espn-signals.mjs',
+    capturedAt: '2026-09-21',
+    usedIn: 'tests 131-133; strategies NFLInjury_AvailGap, NBAInjury_AvailGap, NFLState_4Q_Leader, NCAAFState_4Q_Leader, NBAState_FinalMinutes; src/espn-signal-store.js; .github/workflows/espn-signals.yml'
+  },
+  {
+    id: 'V119',
+    group: 'Signals',
+    status: 'DERIVED',
+    fact: 'The S14 pre-game model hook is point-in-time and honest about what the model can and cannot do today: a row is a pre-game signal only if it was captured BEFORE first pitch, and the model CLI still has no predict command',
+    value: 'data/mlb-pregame/predictions/<ET-date>.json rows are {capturedAt, gamePk, firstPitchAt, pHome}; TIMELY iff capturedAt < firstPitchAt - a later row for the same game is measurement data and can never answer a pre-game bar (preGamePredictionAtOrBefore returns timely rows only). The gamePk join is the official MLB game id via the same ticker join fact V113 verifies. The owner model repository (MLB-Prediction-model-backtest, mlb_predict/cli.py) exposes collect / ingest-page / ingest-scores / build-dataset / build-pitcher-features / backtest / demo - NO predict command (verified 2026-09-21 by reading the CLI), so scripts/archive-mlb-pregame.mjs --from-walkforward is the data path (firstPitchAt bound from data/mlb-signals/games, or REJECT NO_OFFICIAL_FIRST_PITCH_FOR_GAMEPK) until the model grows one. MLBPreGame_ModelEdge is UNTESTED_ON_THIS_DATASET until timely snapshots exist.',
+    url: 'https://github.com/buffedlizard55-lab/MLB-Prediction-model-backtest',
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/scripts/archive-mlb-pregame.mjs',
+    evidenceLabel: 'scripts/archive-mlb-pregame.mjs + src/mlb-pregame-store.js + .github/workflows/mlb-pregame-signals.yml (its plan names the missing predict explicitly)',
+    capturedAt: '2026-09-21',
+    usedIn: 'strategy MLBPreGame_ModelEdge; tests 134-135; desk provider signals.mlbPregame'
+  },
+  {
+    id: 'V120',
+    group: 'Capture',
+    status: 'CAPTURED',
+    fact: 'Every game-series order book stored before 2026-09-21 was captured AFTER settlement and is empty (0 levels) - the capture timing, not the capture code, was wrong, and the fix is scheduled',
+    value: 'All 28 KXMLBGAME history files (2026-09-19/20) hold empty orderbooks because the 06:15/16:40 UTC daily-history crons run after games end and the exchange returns an empty book then; generate-desk-module.mjs drops 0-level ladders, so the desk kept 0 tradeable game-series slots. Fix shipped 2026-09-21: daily-history.yml gains 00:30 + 02:30 UTC with_books crons inside live game windows (the WITH_BOOKS cron case list updated) and data/history/_ingest-request.json gains a minute-nfl-game-lines block (period 1, KXNFLGAME, 3 days, 480 max bars, 500 min volume, 24 markets, with_books, 300ms) alongside minute-mlb-game-lines - 11 ingest blocks now.',
+    url: 'https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP21NYGLAR-LAR/orderbook',
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/.github/workflows/daily-history.yml',
+    evidenceLabel: '.github/workflows/daily-history.yml (crons + WITH_BOOKS case) + data/history/_ingest-request.json + the 28 empty-book files',
+    capturedAt: '2026-09-21',
+    usedIn: 'desk game-series reserves; RESEARCH_GAPS (1-minute game bars); tests 124-125 conventions'
+  },
+  {
+    id: 'V121',
+    group: 'Strategy sources',
+    status: 'DOCUMENTED',
+    fact: 'The four competition sites are reverse-engineered with their own words and the social/longform pass landed R19-R27 with verbatim claims - including one source that refutes its own headline',
+    value: 'R25 TradingView The Leap: champions disclosed as exactly two numbers (Net profit +155.95% / Profitable trades 65%, July 2026 futures; +271.78%/77% crypto) plus a strategy write-up - the disclosure format our standings mirror. R26 Trade-Ideas PM Challenge leaderboard schema is exactly "Rank | User | Total Profit | Open Profit | Close Profit | Total Trades | Open Trades | Closed Trades | Account Value | Average Profit/Trade" - adopted as the trade review schema (V122). R27 Candlecharts Showdown: "$50,000 paper account ... Document your plan, execution, and lessons so every contest trade becomes part of a more repeatable process" - the journal discipline our per-fill reason strings implement. R24 kalshi.com: market URLs carry tickers WITHOUT the yes-code suffix (kxnflgame-26sep21nyglar vs API KXNFLGAME-26SEP21NYGLAR-LAR) - the official-link join rule; the board showed the NYG@LAR market at 29%/71% ($38.6M vol) as CONTEXT ONLY. R19-R23 (reddit/medium): shock-timing parameters with the author-own "It does not work" post-mortem; resting-order 5-15c walls; 1c-to-10c longshot packages; the 30-70 swing-range rule; the academic "buying No on overpriced longshots is the single highest-edge strategy in the literature" frame. Three recreations cite exact source numbers: SwingRange_Scalp (R22), OrderbookWall_3Rung (R20), LongshotScalp_9x (R20).',
+    url: 'https://www.tradingview.com/the-leap/',
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/src/research-sources.js',
+    evidenceLabel: 'src/research-sources.js R19-R27 (claim = verbatim quotes, taken = what was adopted, caveat = what was refused)',
+    capturedAt: '2026-09-21',
+    usedIn: 'strategies SwingRange_Scalp, OrderbookWall_3Rung, LongshotScalp_9x; scripts/trades-review.mjs (R26 schema); README standings disclosure'
+  },
+  {
+    id: 'V122',
+    group: 'Strategy sources',
+    status: 'DERIVED',
+    fact: 'Every placed trade and every upcoming trade now has one readable review and one unified CSV, in the R26 schema, with cells that have no backing field marked instead of guessed',
+    value: 'node scripts/trades-review.mjs reads only the verified stores (data/ledger/summary.json + ledger-20260917.json, data/reports/live-desk-placed-trades.json (28 orders), live-desk-upcoming-trades.json (31 plans)) and writes data/ledger/unified-trades.csv (20,059 rows: every replay round trip + every desk order + every desk plan, with fee, slippage, depth at capture and verbatim explain strings) and data/reports/trades-review-2026-09-21.md (per-username scoreboard in the Trade-Ideas schema, every desk trade verbatim, every upcoming trade with its trigger and rationale). Open Profit cells read "not marked in this store" because the stores settle only - no mark is invented. Every price row keeps its capture instant (depthCapturedAt / ladderCaptureAt) and the desk rows keep their Kalshi API ladderSourceUrl for manual review.',
+    url: 'https://trade-ideas.com/stock-trading-competition/',
+    evidenceUrl: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/data/reports/trades-review-2026-09-21.md',
+    evidenceLabel: 'scripts/trades-review.mjs + data/reports/trades-review-2026-09-21.md + data/ledger/unified-trades.csv',
+    capturedAt: '2026-09-21',
+    usedIn: 'request #4 (track every trade); README; the Pages site data docs'
+  },
 ]);
 
 /** Numbered irregularity register. Severity: high | med | low | info. */
@@ -1678,7 +1738,45 @@ export const IRREGULARITIES = Object.freeze([
     ],
     action: 'Nothing was invented: the run failed loudly, `failures: 3` is committed, no companies/*.json was written, and both strategies abstained everywhere with the reason published — the archive\'s honest-failure mode worked exactly as designed. Three changes: (1) the default User-Agent now follows EDGAR\'s stated shape exactly ("KalshiPaperSim research buffedlizard55-lab@users.noreply.github.com") and can be overridden with EDGAR_USER_AGENT; (2) a refused request now records its status, statusText and any retry-after / rate-limit headers, and the run report records the agent actually sent, so the NEXT failure is diagnosable from the repository; (3) the trigger file requests another run immediately after merge. The parser and the point-in-time store are unaffected — they are tested against a real archived filing (tests 127–129). A follow-up commit adds an **edge probe** (`probeEdge`, recorded as `edgeProbe` in the run report) that records only the HTTP status and `server` header of one documented request per SEC host — `www.sec.gov` and `data.sec.gov`, same path — and parses nothing: it distinguishes "all of sec.gov is blocked for this runner" from "only browse-edgar is", which is the question the fallback choice depends on.',
     userAction: '**The probe has answered: both hosts report 403/AkamaiGHost, so the archive needs a network other than a GitHub-hosted runner — a self-hosted runner or the owner\'s own machine. No code change will fix it, and the documented submissions API would be refused for the same reason.** If `data.sec.gov` answers 200 while `www.sec.gov` does not, switch the archive to the documented submissions endpoint https://data.sec.gov/submissions/CIK##########.json with the ticker→CIK map from https://data.sec.gov/files/company_tickers.json; its JSON shape was NOT verified in this session, so capture one real response and archive it as a fixture first, the way data/form4-signals/fixtures/ fixed the XML. Until either is true, both insider entries abstain and say so — no result in this repository depends on a filing that was never read.'
-  }
+  },
+  {
+    id: 60,
+    severity: 'med',
+    title: 'Every game-series order book captured before 2026-09-21 is empty - the crons captured AFTER settlement',
+    assumed: 'That a with_books ingest run at 06:15 or 16:40 UTC stores a usable ladder for game series whenever it runs.',
+    truth: 'MLB/NBA/NFL game contracts have no book after they settle. The 28 KXMLBGAME history files from 2026-09-19/20 all hold 0-level orderbooks, generate-desk-module.mjs drops empty ladders, and the Live Desk therefore kept 0 tradeable game-series slots (its series reserves read 0). The capture CODE is fine - the capture TIMING was post-settlement.',
+    evidence: [
+      { label: 'data/history/KXMLBGAME-*.json — 28 files, every book with 0 levels', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/tree/main/data/history' },
+      { label: '.github/workflows/daily-history.yml — the pre-fix crons 06:15/16:40 UTC + the 2026-09-21 game-window fix', url: 'https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/.github/workflows/daily-history.yml' },
+      { label: 'src/desk-data.js — game-series reserves at 0 on the 2026-09-21 build' }
+    ],
+    action: 'Fixed 2026-09-21: daily-history.yml adds 00:30 + 02:30 UTC with_books crons INSIDE live game windows (the WITH_BOOKS cron case list covers all three), and data/history/_ingest-request.json adds minute-nfl-game-lines beside minute-mlb-game-lines so 1-minute game bars start accumulating (fact V120).',
+    userAction: 'After the 2026-09-22 00:30 UTC run, check data/history/KXMLBGAME-* / KXNFLGAME-* for a NON-empty orderbook before trusting any game-series desk slot; the first honest in-game ladder is the milestone.'
+  },
+  {
+    id: 61,
+    severity: 'low',
+    title: 'A research source headline profitability is refuted by the same post-own post-mortem (R19)',
+    assumed: 'That the r/PredictionsMarkets "+39% Kalshi trading bot" post is a profitability claim one could cite.',
+    truth: 'The same post TL;DR says, of a ~1.5M-real-trade backtest plus the entire 2022 World Cup out of sample: "It does not work." The +39% figure is pre-post-mortem. The PARAMETERS (2-minute shock window, at least 15% of peak AND at least 8 cents, P50/P75/P90/P95 maker ladder, 4-6 cent maker exit, [close-150min, close] windowing) are measured and worth keeping; the return is not.',
+    evidence: [
+      { label: 'research-sources R19 — the post quoted verbatim, parameters and post-mortem', url: 'https://www.reddit.com/r/PredictionsMarkets/comments/1u3rn8s/i_built_a_39_kalshi_trading_bot_to_exploit_world/' }
+    ],
+    action: 'Both the parameters and the refutation are pinned in R19; any future four-rung PanicLadder refinement must cite both. PanicDip_ShockTiming (the three-rung sibling) measures its own verdict from its own fills.',
+    userAction: 'Never cite the +39% figure without "It does not work" beside it.'
+  },
+  {
+    id: 62,
+    severity: 'med',
+    title: 'kalshi.com own board (2026-09-21) reports a Fed RATE HIKE to 3.75-4.00% under Chair Warsh - macro series this repo trades will move on it',
+    assumed: 'Nothing in this repository reads news; but a reader comparing our macro-flight marks to the market may not know a same-day macro shock is on the wire.',
+    truth: 'The homepage news block states: "The Federal Reserve raised its benchmark interest rate by a quarter point to a range of 3.75% to 4.00%, its first increase since 2023, according to CNBC ... under Chair Kevin Warsh." KXRATEHIKE 2026 "Exactly 2" traded 1.62x/58% on the same board. This repo trades only from captured Kalshi API prices (never from this headline), but KXINXY/KXNASDAQ100Y/KXRATEHIKE-class series are in the macro flight and the daily bars will show the move.',
+    evidence: [
+      { label: 'research-sources R24 — the kalshi.com board fetched 2026-09-21, news block quoted verbatim (CONTEXT ONLY)', url: 'https://kalshi.com/' }
+    ],
+    action: 'Recorded in R24 (claim verbatim, marked CONTEXT ONLY) and here so macro-flight readers can reconcile bars from 2026-09-21 onward.',
+    userAction: 'When reviewing macro-flight PnL around 2026-09-21, read it against this dated observation; the news blurb is third-hand (CNBC via kalshi.com) and is not a price input.'
+  },
 ]);
 
 /** Reverse-engineered structure of the reference competition sites. */

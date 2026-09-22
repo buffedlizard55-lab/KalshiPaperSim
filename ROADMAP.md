@@ -56,9 +56,24 @@ audit (#53), research-gap statuses (#52), the desk-season schedule fix (#54).
 | 34 | **The desk signal hook now has a reader (was Next #10).** `buildDeskSignalsAsync()` grew a `form4` provider beside `mlb`/`forecast`/`fda`, and `LiveInsider_Form4Flow` is the first desk entrant that opens an external point-in-time archive instead of only the captured ladders; test 126 was extended so a desk card naming insider filings must show `view.signals.form4` in its `decide()`. The 80-market cap turned out NOT to be dropping the game ladders (per-series reserves shipped earlier: KXNBAGAME 6/6, KXNCAAFGAME 4/20 kept) — what is missing is the **ladders themselves**: `data/history/` holds zero `KXMLBGAME`/`KXNFLGAME` stores, so those reserves keep 0 slots (`available: 0`) | `src/live-desk.js#buildDeskSignalsAsync`; `src/desk-strategies.js`; `src/competition-memory.js` reserved usernames; test 130 |
 | 35 | **A red test suite on main, found and fixed** (Irregularity #56). At the branch point `npm test` reported ONE failure and executed NONE of the 134 tests: a syntax error (`await` in a non-async callback, test 100) killed the file at import; behind it, test 118 called the async `buildDeskReport()` without `await` and asserted on the Promise. Both came in with PR #17. The suite ran 134/134 green after the fix, before this session's four new tests | `test/simulation.test.js` tests 100/118; `npm test` |
 
+| 34 | **The sports half of the point-in-time signal archive (was Next #3(a)) — NFL / NBA / NCAAF / NCAAMB / NHL / WNBA via ESPN public JSON, a TRUSTED BUT NOT OFFICIAL source labelled as such on every row and card.** The per-event scoreboard shape earlier sessions could not retrieve (#58) is now pinned by a live capture (fixture: NYG @ LAR 401872947); the parser THROWS on a missing key; rows are stored one per CHANGE with every capture instant kept (point-in-time: rows after the decision are invisible, staleness from the capture list); the Kalshi↔ESPN code map is built only from each contract's own rules_primary text + captured team tables (New York G vs New York J qualifier letters; NYK↔NY, SAS↔SA derived rows; unmapped codes never trade). Five roster entries read it: `NFLInjury_AvailGap`, `NBAInjury_AvailGap`, `NFLState_4Q_Leader`, `NCAAFState_4Q_Leader`, `NBAState_FinalMinutes` | `scripts/archive-espn-signals.mjs`; `src/espn-signal-store.js`; `src/espn-signal-data.js` (generated); `.github/workflows/espn-signals.yml` + `.github/triggers/espn.json`; `data/espn-signals/fixtures/` + `_PROVENANCE.md`; facts V118; tests 131–134, 136–137 |
+| 35 | **The S14 pre-game model hook (was Next #3(c))** — `data/mlb-pregame/` stores {capturedAt, gamePk, firstPitchAt, pHome} with the TIMELY rule (capturedAt < firstPitchAt) so walk-forward rows can never answer a pre-game bar; `MLBPreGame_ModelEdge` compares the model's pHome to the captured ask with its own stated 6¢ edge. The owner model's CLI has **no `predict` command** (verified by reading it), so the workflow feeds from `backtest` walk-forward output until it grows one — named in the plan, not hidden | `scripts/archive-mlb-pregame.mjs`; `src/mlb-pregame-store.js`; `src/mlb-pregame-data.js` (generated); `.github/workflows/mlb-pregame-signals.yml` + `.github/triggers/mlb-pregame.json`; fact V119; tests 134–135 |
+| 36 | **The desk reads the same archives + the game-window capture fix (was Next #10).** `buildDeskSignalsAsync` gained `espn` + `mlbPregame` providers; three entrants join the roster (22 total): `LiveMLB_TheoryEdge` (Tangotiger equal-teams table vs captured ask, R18), `LiveNFL_InjuryGate`, `LiveNBA_InjuryGate` (both buy the healthier side, YES **or** NO). Every game ladder stored before this date was captured AFTER settlement and is empty — irregularity #60; fixed by 00:30/02:30 UTC live-game-window `with_books` crons in `daily-history.yml` + the `minute-nfl-game-lines` ingest block (11 blocks) | `src/live-desk.js`; `src/desk-strategies.js`; `.github/workflows/daily-history.yml`; `data/history/_ingest-request.json`; fact V120; irregularity #60 |
+| 37 | **Research pass + unified trade tracking + docs (was the rest of the request).** R19–R27 land with verbatim claims (including one source that refutes its own headline — irregularity #61 — and a dated Fed-hike observation on the kalshi.com board — #62); the four competition sites are reverse-engineered with their own words (The Leap's two-number champions disclosure, Trade-Ideas' nine-column leaderboard schema — adopted, Candlecharts' journal discipline — the per-fill reason strings). Three recreations cite exact source numbers: `SwingRange_Scalp`, `OrderbookWall_3Rung`, `LongshotScalp_9x` (60 strategies now). `scripts/trades-review.mjs` produces `data/ledger/unified-trades.csv` + `data/reports/trades-review-2026-09-21.md` (every placed trade verbatim, every upcoming trade, Open Profit marked "not marked in this store" rather than guessed). Facts V121–V122 | `src/research-sources.js` R19–R27 + RESEARCH_GAPS; `scripts/trades-review.mjs`; `data/ledger/unified-trades.csv`; `data/reports/trades-review-2026-09-21.md`; tests 35/87/126 re-run green |
+
 ## Next, in priority order
 
-1. **Keep widening the forecast-archive ↔ weather-bar overlap, then measure.**
+1. **Verify the first game-window captures, then let the game-series entrants
+   trade.** The 00:30/02:30 UTC `with_books` crons (shipped #36) capture books
+   INSIDE live games for the first time at 2026-09-22 00:30 UTC. *Check:*
+   `data/history/KXMLBGAME-*.json` / `KXNFLGAME-*.json` for a NON-empty
+   `orderbook` (irregularity #60's exact test); then `data/reports/live-desk-*.json`
+   should show game-series reserves > 0 and `LiveMLB_TheoryEdge` /
+   `LiveNFL_InjuryGate` / `LiveNBA_InjuryGate` moving from abstain to
+   candidate. 1-minute game bars (`minute-mlb-game-lines` /
+   `minute-nfl-game-lines`) accumulate from the same runs and unlock the R19
+   2-minute shock window on match markets.
+2. **Keep widening the forecast-archive ↔ weather-bar overlap, then measure.**
    The overlap now EXISTS (NYC snapshots from 2026-09-18T03:19Z, the other
    eight cities from 13:24Z, bars through the same day) and both forecast
    strategies replay it — but no forecast-vs-market divergence has met their
@@ -66,193 +81,36 @@ audit (#53), research-gap statuses (#52), the desk-season schedule fix (#54).
    published). *Needs:* the scheduled workflows only, then re-run the reports.
    *Check:* `data/reports/flights.json` → `forecastArchive` + the hourly
    leaderboard's unranked entries.
-2. **True forward windows for the original roster.** `designedAt` is
+3. **True forward windows for the original roster.** `designedAt` is
    2026-09-17/18, so bars from 2026-09-18/19 onward are genuinely
-   out-of-sample for every entry: the strict forward window held 2 real bars
-   on the 2026-09-19 store (20 of 29 measured designs) and grows one bar per
+   out-of-sample for every entry: the strict forward window grows one bar per
    daily ingest — still below the 20-bar floor, so the numbers stay labelled
    directional. *Check:* `data/reports/forward-test.json` →
    `method.strictForwardBars`.
-3. **The remaining signal archives.** Weather, FDA, MLB (#29) and now the
-   insider half (SEC EDGAR Form 4, #33) are closed with official sources.
-   Still open, in order of value:
-
-   **(a) NFL / NBA / NCAA live state + injury reports — ESPN's public JSON, a
-   TRUSTED BUT NOT OFFICIAL source that must be labelled as such.** What this
-   session verified live on 2026-09-21 (so the next one does not re-derive it):
-   * `GET https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/injuries`
-     → `{timestamp, status, season{year,type,name,displayName}, injuries:[{id
-     (team id), displayName (team), injuries:[{id, longComment, shortComment,
-     status ("Active" seen), date ("2026-09-21T03:12Z"), athlete:{firstName,
-     lastName, displayName, shortName, position:{id,name,displayName,
-     abbreviation}, team:{id, uid, slug, name, abbreviation ("ARI"),
-     displayName}}}]}]}`. Keyless, no auth, one request per league.
-   * `GET …/basketball/mens-college-basketball/scoreboard?dates=YYYYMMDD` →
-     `{leagues:[{id,uid,name,abbreviation,season,logos,calendar…}], groups,
-     events:[], provider, eventsDate:{date,seasonType}}` — the envelope is
-     confirmed; **the per-event shape (competitions[].competitors[].score,
-     status.type.state/clock) was NOT retrievable from this sandbox** (#58),
-     so no scoreboard parser was written from memory.
-   * The ticker join must be evidence-based, like MLB's: Kalshi game tickers
-     are `KX<NFL|NBA|NCAAF|NCAAMB>GAME-<yyMONdd><AWAY><HOME>-<YES>` (date +
-     team pair, NO time, unlike KXMLBGAME) and each market's `rules_primary`
-     carries the exchange's own codes and names ("the DET Lions vs BUF Bills
-     Pro Football game"). ESPN's team table must be archived per league and
-     matched on code **and** name; NBA differs (Kalshi `NYK`/`SAS` vs ESPN
-     `NY`/`SA`) so an unverified mapping would silently trade the wrong game.
-   * *Needs:* one real scoreboard capture from a runner with egress, kept as a
-     labelled fixture; a 1-minute ingest block for the game series; and the
-     "not official" label on every card that reads it.
-
-   **(b) ~~SEC EDGAR Form 4~~ — CLOSED 2026-09-21 (#33).**
-
-   **(c) The owner's MLB model's pre-game probability (S14)** captured before
-   first pitch — the schedule half already exists in `data/mlb-signals/`.
-
-   *Known issue from the first live run (irregularity #59):* EDGAR answered the
-   2026-09-21T04:52Z capture with **HTTP 403** on all three issuers, so the store
-   is still dark and both entries abstain. The run failed loudly and committed
-   its reason; the default User-Agent now follows the exact shape EDGAR's own
-   guidance states, refused requests record their status/statusText/headers, and
-   the run report records the agent sent. **It named the cause:** the 07:49Z run
-   was still refused with `server: AkamaiGHost`, i.e. by SEC's CDN edge, and the
-   edge probe added in response (run 07:58:11Z) shows **both** SEC hosts refusing
-   the same documented path (www.sec.gov 403, data.sec.gov 403). The whole of
-   sec.gov is unreachable from a GitHub-hosted runner, so the documented
-   submissions API would be refused too — this needs a different network (a
-   self-hosted runner or the owner's own machine), not a code change. The
-   archive, parser and point-in-time store are unaffected and fully tested.
-
-   *First check after merge:* `gh run list --workflow=form4-signals.yml` and
-   `--workflow=mlb-signals.yml` (schedules only run on `main`); then
-   `data/form4-signals/companies/TSLA.json` should hold filings back to
-   ~2026-02 and `node scripts/archive-form4-signals.mjs --verify` should pass;
-   after that the daily flight should rank `InsiderFlow_Form4` instead of
-   listing it unranked, and the desk should show `LiveInsider_Form4Flow` fills.
-4. **Point-in-time depth on every fill.** A mid-day books capture is now
-   scheduled (16:40 UTC daily) and the request-9 run re-captured every ladder;
-   the depth *behind* the touch is still re-anchored between snapshots.
-   *Needs:* more scheduled capture density; the machinery is already running.
-5. **Authenticated WebSocket smoke test.** `KALSHI_API_KEY_ID` /
-   `KALSHI_API_PRIVATE_KEY` are not configured here, so the private channels
-   are documented but untested. *Needs:* an RSA key in the runner environment.
-6. **A browser-level UI test.** No headless browser can be installed in this
-   environment, so `test/ui-smoke.mjs` exercises `src/app.js` against a DOM
-   stub. *Needs:* a runner with network access to a browser download.
-7. **Second venue for cross-venue arbitrage.** Every arbitrage source reviewed
-   trades two venues; this project holds Kalshi only, deliberately.
-   *Needs:* a second venue feed with the same verification standard.
-
-8. **More captured ladders, at more cut-offs.** The desk can only price a
-   contract when a ladder was captured at or before the cut-off. The
-   scheduled 16:40 UTC `with_books=true` run adds one capture batch per day;
-   the on-demand trigger (`.github/triggers/ingest.json`, bump `request`)
-   re-captures the whole tracked universe when asked. *Needs:* nothing but
-   time and the existing workflow.
-9. **A longer season.** The carried book now exists (`src/desk-season.js`):
-   one portfolio, many rounds, real settlements inside the season, 27-check
-   audit. The merged 2026-09-20 (16:00Z) store yields 7 real open-board rounds
-   across ~53 hours (after #32 fixed the schedule rule that had ignored re-captures).
-   *Needs:* nothing but the scheduled captures continuing; `seasonSchedule`
-   picks up every new capture batch automatically. *Check:*
-   `node scripts/run-desk-season.mjs` → the round count and the window in
-   `data/reports/desk-season-schedule.json`.
-10. **MLB / NFL ladders on the desk (the hook itself is done).** The cap is no
-    longer the problem: `generate-desk-module.mjs` reserves slots per series
-    (KXMLBGAME 6, KXNFLGAME 4, KXNBAGAME 6, KXNCAAFGAME 4, KXNHLGAME 4, the
-    nine weather series, three FDA series, three CEO series) and `deskView`
-    already carries the shared `signals` provider — #34 added its first reader
-    (`LiveInsider_Form4Flow`). What is missing is the DATA: `data/history/`
-    holds **zero** `KXMLBGAME` and `KXNFLGAME` stores, so those reserves keep
-    0 slots (`available: 0` in `data/reports/…` and `src/desk-data.js`), and no
-    desk entrant can read the MLB archive at a cut-off that has no ladder.
-    *Needs:* an ingest block that captures `with_books=true` ladders for
-    `KXMLBGAME` (and `KXNFLGAME`) during a live game window — the same
-    `minute-mlb-game-lines` block already exists for 1-minute bars; a desk MLB
-    entrant reading `view.signals.mlb` is ~40 lines once the ladders land.
-    *Check:* `src/desk-data.js` → `rule.seriesReserves[].available` for
-    KXMLBGAME must become > 0.
-11. **Process: one writer per repository at a time.** A concurrent session
-    merged PR #17 to `main` while this branch was open (Irregularity #53).
-    Every session must merge `main` before writing, and must not merge to
-    `main` while another Arena branch is active.
-
-## Known limitations (kept in sync with the README)
-
-- Depth behind the touch is modelled unless a captured ladder exists, and the
-  label travels with every number that uses it.
-- The weather universe is the top-40 KXHIGHNY brackets by exchange-reported
-  lifetime volume plus the 60-minute stores for the other eight cities (2–3
-  bands per event each), not the full ~15-band board a live trader could buy —
-  measured on a sample, stated on the strategy.
-- `ForecastEdge_MultiCity` is a genuine forward test: the archive begins
-  2026-09-18 and the ingested bars end the same day, so it reports
-  `UNTESTED_ON_THIS_DATASET` (0 fills) rather than a fabricated backtest number.
-- The archived point is the NWS forecast grid for the city; Kalshi settles on
-  The Weather Company observations (Irregularity #34). The basis is real and
-  published on the strategy, never netted out of the numbers.
-- The forecast signal (NWS) and the settlement source (The Weather Company)
-  are different providers (Irregularity #34) — real noise, published.
-- The fee multiplier now comes from the captured Series object for every
-  priceable series (irregularity #36 is closed for those). A series absent from
-  the registry still falls back to the documented M=1, and the fill records
-  which regime it used.
-- The gold micro-flight sample is 12 settled KXGOLD15M contracts (192 one-minute
-  bars) as of the 2026-09-18 evening ingest — the post-mortem computes the count
-  from the store, so it updates as more settle every day the ingest runs.
-- The desk is a paper simulator: no order is transmitted to Kalshi, and a desk
-  fill is a claim about the captured ladder, not about a real account's fill.
-- The desk prices only contracts with a captured ladder (68 of 287 tracked
-  markets on the 2026-09-18 capture); 120 open contracts carry real quotes but
-  no ladder and are listed as **not priceable** with the ingest command that
-  would fix each one.
-- The Desk Season is as long as the capture density allows: 7 rounds across ~53 h on the merged
-  2026-09-20 (16:00Z) store (R01 2026-09-18T07:04Z → R07 2026-09-20T11:34Z), because a round is a moment
-  this repository really queried the order book. The
-  machinery picks up every new capture batch automatically, but a calendar year of continuous paper
-  trading needs a year of scheduled captures — that is a clock problem, not a modelling one.
-- Season marks between rounds are the last captured quote/ladder/settlement; a position with no
-  captured mark in a given round is carried at cost (`NO_CAPTURED_MARK_CARRIED_AT_COST`) and the
-  snapshot says so. No price is interpolated.
-- The season's cash/position guards (irregularity #49) cap an order to what the account can pay for
-  at the OFFICIAL fee; the 2% budget reserve is a bound on the quadratic taker fee, not a fee model
-  of its own — the fee charged is still the one the schedule computes.
-- A captured ladder is a snapshot, not a stream: the desk never re-anchors it,
-  so an old book is priced at the prices it showed and the capture time travels
-  with every fill.
-- Human participants are paper-only: the store is a single-process JSON file
-  (`data/store/`, git-ignored).
-- The MLB game-state archive samples the official linescore every ~20 minutes (GitHub's schedule
-  granularity plus queue delay), so the state a decision reads can lag the field by up to that much;
-  the two MLB entries price that lag (entry only below the equal-teams table) rather than hide it,
-  and both abstain until the archive overlaps a 1-minute `KXMLBGAME` bar (none existed on 2026-09-20).
-- Tangotiger's win-expectancy table (R18) is a THEORY under stated assumptions (equal teams, no
-  home-field advantage, 4.3 runs per game), used only as a reference price — never as data about a game.
-- Five roster entries and three desk entrants merged from PR #17 are price-only rules that carry the
-  name of a MasterSite project or a social-media genre; their cards say so, and test 126 fails if any
-  card ever names a signal its `decide()` does not import.
-- The Form 4 archive treats a filing as knowable from **EDGAR's own acceptance
-  instant** (`acceptedAt`), not from when this repository captured it
-  (`first_seen_at`, published alongside). That is the publisher's timestamp, not
-  a measurement of publication latency made here — it is printed as `assumption`
-  in every store file and returned by `form4Assumption()`.
-- EDGAR's browse-edgar Atom feed ignores its own `type=4` and `count` filters
-  (verified 2026-09-21: the same query returned 424B2 rows for another CIK and 10
-  entries for `count=5`), so the archive filters client-side on the parsed form
-  type and publishes `formsSeen` per issuer (irregularity #58).
-- EDGAR's feed page size (40 entries) bounds how far back ONE capture reaches per
-  issuer: months for Tesla, weeks for a filer with many insiders. The archive is
-  append-only, so it grows forward on every run; walking EDGAR's older-filings
-  JSON would backfill it.
-- `KXOPENAICEOCHANGE` can never receive an insider signal — OpenAI is a private
-  company with no Section 16 filers (irregularity #57). That contract is skipped
-  with the reason published, not silently.
-- The causal link between a Section 16 filing and a CEO change is **weak and
-  unproven**: a departure is announced by 8-K, not by a Form 4. The two gated
-  entries measure whether gating the longshot fade on real filing evidence
-  changes its outcome; their cards say so and neither claims to predict a
-  departure.
-- No ESPN scoreboard parser exists yet: the per-event scoreboard shape could not
-  be retrieved from this sandbox, and writing one from memory is exactly the
-  guess the honesty contract forbids (irregularity #58). The injuries endpoint
-  IS verified and its paths are recorded in Next #3(a).
+4. **S14's missing `predict` command + the SportsPred half (S10).** The
+   archive, join and hooks ship (#35) but the owner model can only feed from
+   walk-forward output until `mlb_predict/cli.py` grows a `predict` command —
+   the workflow's `../model/snapshots.jsonl` ingest path is wired and waiting.
+   The SportsPred hub half of the pre-game gap is still open (RESEARCH_GAPS).
+5. **R21's two blocked weather edges.** A second forecast model column
+   (Euro vs GFS divergence) + lead-days per archived prediction row — both
+   named in RESEARCH_GAPS with their unblockers; recreating them on price
+   alone was refused (it would fabricate direction).
+6. **Re-run the full replay ledger on the 60-strategy roster.** The shipped
+   ledger (seed 20260917) covers 38 strategy-flights of the older roster; the
+   22 newer entries (Form 4, MLB state, ESPN state, S14, R20/R22 recreations)
+   need one `node scripts/export-ledger.mjs` run to appear in
+   `unified-trades.csv` alongside the desk. Then re-run
+   `node scripts/trades-review.mjs`.
+7. **Cross-venue arbitrage (Kalshi vs Polymarket)** remains the standing OPEN
+   research gap (every arbitrage source reviewed points at it) — blocked by
+   sandbox egress and by Polymarket data not being captured; needs a
+   second-venue archive before any strategy can honestly claim the leg.
+8. **EDGAR from a non-GitHub network (irregularity #59).** sec.gov refuses
+   GitHub-hosted runners at the Akamai edge (403 on www + data). The Form 4
+   archive/parser/store are complete and tested; the capture needs a
+   self-hosted runner or the owner's machine. *First check after merge:*
+   `gh run list --workflow=form4-signals.yml` — and now also
+   `--workflow=espn-signals.yml` and `--workflow=mlb-pregame-signals.yml`
+   (schedules only run on `main`), then `node scripts/trades-review.mjs` for
+   the next day's placed/upcoming review.

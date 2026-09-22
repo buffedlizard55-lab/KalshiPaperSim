@@ -930,6 +930,185 @@ export const DESK_STRATEGIES = Object.freeze([
       }
       return out;
     }
+  },
+  {
+    id: 'live_mlb_theory_edge',
+    username: 'LiveMLB_TheoryEdge',
+    name: 'Desk: official-linescore late lead vs the Tangotiger theory price (MLB archive reader, live signal)',
+    category: 'Sports / Model vs Market (in-play, desk)',
+    watch: /^KXMLBGAME/,
+    source:
+      'S09 · MLB-PBP (MasterSite) + ROADMAP Next #10 — the desk entrant that reads the OFFICIAL MLB game-state archive (data/mlb-signals/, statsapi.mlb.com) through the shared signal hook view.signals.mlb, exactly as the replay entries MLBLead_InPlay read it through ctx.signal. The reference price is Tangotiger\'s published equal-teams win-expectancy table (RESEARCH_SOURCES R18) — a THEORY under stated assumptions, never data about a game.',
+    mandate: 'MAXIMUM RETURN. No stop-losses, no position caps, no volatility targeting.',
+    thesis:
+      'From the 6th inning on, when the freshest archived official state AT OR BEFORE the cut-off shows the YES team leading by 2+ runs and the equal-teams theoretical win probability for that half-inning exceeds the captured YES ask by at least 2¢, buy YES and hold to the exchange\'s real settlement. This is the desk half of MLBLead_InPlay and the FIRST desk entrant to read the MLB archive (the hook existed since #34; this is its reader). HONEST LIMITS: the table assumes equal teams, no home-field advantage and 4.3 runs per game; the archive samples the linescore every ~20 minutes, so the state can lag the field by that much and the entry prices the lag (entry only below theory − 2¢) rather than hiding it; a stale observation (> 30 minutes) is not a signal. No capture at or before the cut-off → no trade, and the coverage row says why.',
+    rules: [
+      'Universe: open KXMLBGAME contracts with captured ladders AND a matched official game (first-pitch instant + away + home codes, V113).',
+      'Signal: view.signals.mlb.stateAt() at the cut-off shows abstractGameState Live, inning ≥ 6, YES team leading by ≥ 2, observed within 30 minutes of the cut-off.',
+      'Trigger: Tangotiger equal-teams win probability p for that half-inning ≥ captured YES ask + 0.02.',
+      'Entry: taker buy of YES, sized to 40% of cash, bounded by real ladder depth within 2 ticks; at most 2 legs per cut-off.',
+      'Exit: hold to real settlement.'
+    ],
+    sizing: '40% of cash per leg, max 2 legs, bounded by real depth',
+    decide(view) {
+      const out = [];
+      const signal = (view.signals && view.signals.mlb) || null;
+      if (!signal || !signal.available) return out; // archive dark → abstain entirely
+      const candidates = tradeableMarkets(view)
+        .filter((m) => /^KXMLBGAME/.test(String(m.seriesTicker || m.ticker || '')))
+        .sort((a, b) => (b.volume || 0) - (a.volume || 0));
+      for (const market of candidates) {
+        const join = signal.matchGame(market.ticker);
+        if (!join.ok) continue; // unjoinable ticker — reason published by the join report
+        const st = signal.stateAt(join.game);
+        if (!st) continue; // nothing knowable at the cut-off
+        if (st.abstractGameState !== 'Live') continue;
+        if (Number(st.staleSeconds) > 30 * 60) continue;
+        const runsYes = join.yesIsHome ? (st.runs && st.runs.home) : (st.runs && st.runs.away);
+        const runsOpp = join.yesIsHome ? (st.runs && st.runs.away) : (st.runs && st.runs.home);
+        if (!Number.isFinite(Number(runsYes)) || !Number.isFinite(Number(runsOpp))) continue;
+        const lead = Number(runsYes) - Number(runsOpp);
+        if (Number(st.inning) < 6 || lead < 2) continue;
+        const p = tangoYesWinProbability({
+          yesIsHome: join.yesIsHome,
+          inning: st.inning,
+          inningState: st.inningState,
+          homeDifferential: join.yesIsHome ? lead : -lead
+        });
+        if (p === null) continue;
+        const touch = touchOf(market);
+        const ask = touch.yesAsk ?? market.ladder?.yesAsks?.[0]?.price ?? null;
+        if (ask === null || ask > p - 0.02) continue;
+        const count = sizeToDepth(view, market, { side: 'yes', price: ask, cashFraction: 0.4, ticks: 2 });
+        if (count < DESK_LIMITS.minContracts) continue;
+        out.push({
+          ticker: market.ticker,
+          side: 'yes',
+          action: 'buy',
+          type: 'market',
+          count,
+          reason: `official linescore (MLB archive, captured ${st.capturedAt}, observed ${st.observedAt}) shows ${join.yesIsHome ? join.game.home.abbreviation : join.game.away.abbreviation} ${runsYes}-${runsOpp} ${st.inningState} ${st.inning} (+${lead}) → equal-teams theory p=${p.toFixed(3)} vs captured YES ask ${ask} (ladder ${market.ladderAt}) — buy YES below theory − 2¢, hold to settlement`
+        });
+        if (out.length >= 2) break;
+      }
+      return out;
+    }
+  },
+  {
+    id: 'live_nfl_injury_gate',
+    username: 'LiveNFL_InjuryGate',
+    name: 'Desk: pre-game availability-gap buyer on open NFL games (ESPN injury designations — NOT OFFICIAL)',
+    category: 'Sports / Injury gate (pre-game, desk)',
+    watch: /^KXNFLGAME/,
+    source:
+      'ROADMAP Next #3(a) — the desk half of NFLInjury_AvailGap. Reads the repository\'s point-in-time ESPN injuries archive (data/espn-signals/, site.web.api.espn.com, .github/workflows/espn-signals.yml) through the shared signal hook view.signals.espn. TRUSTED BUT NOT OFFICIAL: ESPN is a public aggregator, not a league feed — the label travels with every read.',
+    mandate: 'MAXIMUM RETURN. No stop-losses, no position caps, no volatility targeting.',
+    thesis:
+      'Before kickoff, for every open KXNFLGAME contract with a captured ladder whose ticker joins an archived ESPN event (US-Eastern date + code-mapped away/home pair), compare the two teams\' "Out" designations as of the cut-off. When one side faces ≥ 3 more outs than the other and the healthier side still asks ≤ 0.70, buy it and hold to settlement. HONEST LIMITS: (1) TRUSTED BUT NOT OFFICIAL — ESPN\'s designations aggregate team reports and can correct; (2) the 3-player gap and 0.70 cap are this design\'s stated parameters (no published football win-expectancy table exists to lean on); (3) no join (unmapped code, no captured event) means no trade and the reason is published.',
+    rules: [
+      'Universe: open KXNFLGAME contracts with captured ladders whose ticker joins an archived ESPN event.',
+      'Signal: state "pre" at the cut-off, both injury pictures present, |yesOut − oppOut| ≥ 3 with the YES side having fewer outs.',
+      'Trigger: captured ask for the healthier side ≤ 0.70 (no quote → no trade; a price is never assumed).',
+      'Entry: taker buy of the healthier side, sized to 35% of cash, bounded by real ladder depth within 2 ticks; at most 2 legs per cut-off.',
+      'Exit: hold to real settlement.'
+    ],
+    sizing: '35% of cash per leg, max 2 legs, bounded by real depth',
+    decide(view) {
+      const out = [];
+      const espn = (view.signals && view.signals.espn) || null;
+      if (!espn || !espn.available) return out; // archive dark → abstain entirely
+      const candidates = tradeableMarkets(view)
+        .filter((m) => /^KXNFLGAME/.test(String(m.seriesTicker || m.ticker || '')))
+        .sort((a, b) => (b.volume || 0) - (a.volume || 0));
+      for (const market of candidates) {
+        const join = espn.matchGame(market.ticker);
+        if (!join.ok) continue;
+        const st = espn.stateAt(join.event);
+        if (!st || st.state !== 'pre') continue;
+        if (!Number.isFinite(st.staleSeconds) || st.staleSeconds > 1800) continue;
+        const injury = espn.injuriesFor(join.parsed ? join.parsed.league : 'nfl', [join.event.homeTeamId, join.event.awayTeamId]);
+        const yesInjury = (join.yesIsHome ? injury[join.event.homeTeamId] : injury[join.event.awayTeamId]);
+        const oppInjury = (join.yesIsHome ? injury[join.event.awayTeamId] : injury[join.event.homeTeamId]);
+        if (!yesInjury || !oppInjury) continue;
+        const gap = Number(yesInjury.out) - Number(oppInjury.out);
+        if (Math.abs(gap) < 3) continue;
+        const t = gap <= -3 ? 'yes' : 'no';
+        const ask = t === 'yes'
+          ? (touchOf(market).yesAsk ?? market.ladder?.yesAsks?.[0]?.price ?? null)
+          : (market.ladder?.noAsks?.[0]?.price ?? touchOf(market).noAsk ?? null);
+        if (ask === null || ask > 0.7) continue;
+        const count = sizeToDepth(view, market, { side: t, price: ask, cashFraction: 0.35, ticks: 2 });
+        if (count < DESK_LIMITS.minContracts) continue;
+        out.push({
+          ticker: market.ticker,
+          side: t,
+          action: 'buy',
+          type: 'market',
+          count,
+          reason: `ESPN injury archive (NOT OFFICIAL, observed ${yesInjury.observedAt}): ${yesInjury.teamName} ${yesInjury.out} Out vs ${oppInjury.teamName} ${oppInjury.out} Out (gap ${Math.abs(gap)}) → captured ${t.toUpperCase()} ask ${ask} ≤ 0.70 (ladder ${market.ladderAt}) — buy the healthier side, hold to settlement`
+        });
+        if (out.length >= 2) break;
+      }
+      return out;
+    }
+  },
+  {
+    id: 'live_nba_injury_gate',
+    username: 'LiveNBA_InjuryGate',
+    name: 'Desk: pre-game availability-gap buyer on open NBA games (ESPN injury designations — NOT OFFICIAL)',
+    category: 'Sports / Injury gate (pre-game, desk)',
+    watch: /^KXNBAGAME/,
+    source:
+      'ROADMAP Next #3(a) — the desk half of NBAInjury_AvailGap. Reads view.signals.espn (the same point-in-time ESPN injuries archive, NOT OFFICIAL) through the shared signal hook.',
+    mandate: 'MAXIMUM RETURN. No stop-losses, no position caps, no volatility targeting.',
+    thesis:
+      'The NBA sibling of LiveNFL_InjuryGate: before tip-off, when one side faces ≥ 2 more "Out" designations than the other (a shorter rotation moves a game more per player) and the healthier side asks ≤ 0.75, buy it and hold to settlement. Same NOT-OFFICIAL label, same evidence-built ticker join (NYK↔NY and SAS↔SA are map rows with contract-rules evidence, never assumptions), same published abstentions.',
+    rules: [
+      'Universe: open KXNBAGAME contracts with captured ladders whose ticker joins an archived ESPN event.',
+      'Signal: state "pre" at the cut-off, both injury pictures present, |yesOut − oppOut| ≥ 2 with the YES side having fewer outs.',
+      'Trigger: captured ask for the healthier side ≤ 0.75 (no quote → no trade).',
+      'Entry: taker buy of the healthier side, sized to 35% of cash, bounded by real ladder depth within 2 ticks; at most 2 legs per cut-off.',
+      'Exit: hold to real settlement.'
+    ],
+    sizing: '35% of cash per leg, max 2 legs, bounded by real depth',
+    decide(view) {
+      const out = [];
+      const espn = (view.signals && view.signals.espn) || null;
+      if (!espn || !espn.available) return out;
+      const candidates = tradeableMarkets(view)
+        .filter((m) => /^KXNBAGAME/.test(String(m.seriesTicker || m.ticker || '')))
+        .sort((a, b) => (b.volume || 0) - (a.volume || 0));
+      for (const market of candidates) {
+        const join = espn.matchGame(market.ticker);
+        if (!join.ok) continue;
+        const st = espn.stateAt(join.event);
+        if (!st || st.state !== 'pre') continue;
+        if (!Number.isFinite(st.staleSeconds) || st.staleSeconds > 1800) continue;
+        const injury = espn.injuriesFor(join.parsed ? join.parsed.league : 'nba', [join.event.homeTeamId, join.event.awayTeamId]);
+        const yesInjury = (join.yesIsHome ? injury[join.event.homeTeamId] : injury[join.event.awayTeamId]);
+        const oppInjury = (join.yesIsHome ? injury[join.event.awayTeamId] : injury[join.event.homeTeamId]);
+        if (!yesInjury || !oppInjury) continue;
+        const gap = Number(yesInjury.out) - Number(oppInjury.out);
+        if (Math.abs(gap) < 2) continue;
+        const t = gap <= -2 ? 'yes' : 'no';
+        const ask = t === 'yes'
+          ? (touchOf(market).yesAsk ?? market.ladder?.yesAsks?.[0]?.price ?? null)
+          : (market.ladder?.noAsks?.[0]?.price ?? touchOf(market).noAsk ?? null);
+        if (ask === null || ask > 0.75) continue;
+        const count = sizeToDepth(view, market, { side: t, price: ask, cashFraction: 0.35, ticks: 2 });
+        if (count < DESK_LIMITS.minContracts) continue;
+        out.push({
+          ticker: market.ticker,
+          side: t,
+          action: 'buy',
+          type: 'market',
+          count,
+          reason: `ESPN injury archive (NOT OFFICIAL, observed ${yesInjury.observedAt}): ${yesInjury.teamName} ${yesInjury.out} Out vs ${oppInjury.teamName} ${oppInjury.out} Out (gap ${Math.abs(gap)}) → captured ${t.toUpperCase()} ask ${ask} ≤ 0.75 (ladder ${market.ladderAt}) — buy the healthier side, hold to settlement`
+        });
+        if (out.length >= 2) break;
+      }
+      return out;
+    }
   }
 ]);
 

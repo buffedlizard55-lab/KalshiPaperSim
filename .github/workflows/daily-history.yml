@@ -28,6 +28,17 @@ on:
     # derived from the triggering cron below — schedule events cannot pass
     # workflow_dispatch inputs.
     - cron: '40 16 * * *'
+    # 00:30 + 02:30 UTC — LIVE-GAME-WINDOW passes (ROADMAP Next #10,
+    # 2026-09-21): MLB evening games and NBA/NHL games are IN PLAY at these
+    # hours, so a with_books capture here stores a REAL, NON-EMPTY ladder for
+    # KXMLBGAME / KXNFLGAME / KXNBAGAME / KXNHLGAME / KXNCAAFGAME contracts.
+    # The 06:15 + 16:40 runs captured these books only after settlement and
+    # the exchange returns an empty orderbook then — every stored game ladder
+    # before this change had zero levels, which is why the desk's game-series
+    # reserves kept 0 tradeable slots. These runs fix the CAPTURE TIMING, not
+    # the capture code.
+    - cron: '30 0 * * *'
+    - cron: '30 2 * * *'
   workflow_dispatch:
     inputs:
       with_books:
@@ -95,15 +106,15 @@ jobs:
         id: ingest
         run: |
           # workflow_dispatch passes with_books explicitly; the 16:40 UTC
-          # scheduled pass captures order books (see the cron comment above);
-          # every other trigger does not.
+          # (mid-day) and 00:30 / 02:30 UTC (live-game-window) scheduled
+          # passes capture order books (see the cron comments above); every
+          # other trigger does not.
           WITH_BOOKS="${{ github.event.inputs.with_books }}"
           if [ -z "${WITH_BOOKS}" ]; then
-            if [ "${{ github.event.schedule }}" = "40 16 * * *" ]; then
-              WITH_BOOKS=true
-            else
-              WITH_BOOKS=false
-            fi
+            case "${{ github.event.schedule }}" in
+              "40 16 * * *"|"30 0 * * *"|"30 2 * * *") WITH_BOOKS=true ;;
+              *) WITH_BOOKS=false ;;
+            esac
           fi
           ARGS="--with-books=${WITH_BOOKS} --days=${{ github.event.inputs.days || '90' }}"
           if [ -n "${{ github.event.inputs.series }}" ]; then

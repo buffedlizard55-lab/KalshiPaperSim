@@ -1,8 +1,8 @@
 # Flagged Irregularities
 
 **Generated:** 2026-09-22 by `scripts/render-docs.js` from `src/verification-data.js`.
-**59 irregularities** flagged during this build: 18 high, 27 medium,
-11 low, 2 informational.
+**62 irregularities** flagged during this build: 18 high, 29 medium,
+12 low, 2 informational.
 
 Every entry records **what was assumed**, **what is actually true**, **the evidence**, **what the code does
 about it**, and **what you should do**. Nothing here is speculation: each item was found by comparing an
@@ -841,6 +841,42 @@ assumption against an official document or a real API response.
 
 ---
 
+## #60 — Every game-series order book captured before 2026-09-21 is empty - the crons captured AFTER settlement
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | That a with_books ingest run at 06:15 or 16:40 UTC stores a usable ladder for game series whenever it runs. |
+| **Verified truth** | MLB/NBA/NFL game contracts have no book after they settle. The 28 KXMLBGAME history files from 2026-09-19/20 all hold 0-level orderbooks, generate-desk-module.mjs drops empty ladders, and the Live Desk therefore kept 0 tradeable game-series slots (its series reserves read 0). The capture CODE is fine - the capture TIMING was post-settlement. |
+| **What the code does** | Fixed 2026-09-21: daily-history.yml adds 00:30 + 02:30 UTC with_books crons INSIDE live game windows (the WITH_BOOKS cron case list covers all three), and data/history/_ingest-request.json adds minute-nfl-game-lines beside minute-mlb-game-lines so 1-minute game bars start accumulating (fact V120). |
+| **What you should do** | After the 2026-09-22 00:30 UTC run, check data/history/KXMLBGAME-* / KXNFLGAME-* for a NON-empty orderbook before trusting any game-series desk slot; the first honest in-game ladder is the milestone. |
+
+**Evidence**
+
+- data/history/KXMLBGAME-*.json — 28 files, every book with 0 levels: <https://github.com/buffedlizard55-lab/KalshiPaperSim/tree/main/data/history>
+- .github/workflows/daily-history.yml — the pre-fix crons 06:15/16:40 UTC + the 2026-09-21 game-window fix: <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/.github/workflows/daily-history.yml>
+- src/desk-data.js — game-series reserves at 0 on the 2026-09-21 build
+
+---
+
+## #62 — kalshi.com own board (2026-09-21) reports a Fed RATE HIKE to 3.75-4.00% under Chair Warsh - macro series this repo trades will move on it
+
+**Severity:** `MED`
+
+| | |
+| --- | --- |
+| **We assumed** | Nothing in this repository reads news; but a reader comparing our macro-flight marks to the market may not know a same-day macro shock is on the wire. |
+| **Verified truth** | The homepage news block states: "The Federal Reserve raised its benchmark interest rate by a quarter point to a range of 3.75% to 4.00%, its first increase since 2023, according to CNBC ... under Chair Kevin Warsh." KXRATEHIKE 2026 "Exactly 2" traded 1.62x/58% on the same board. This repo trades only from captured Kalshi API prices (never from this headline), but KXINXY/KXNASDAQ100Y/KXRATEHIKE-class series are in the macro flight and the daily bars will show the move. |
+| **What the code does** | Recorded in R24 (claim verbatim, marked CONTEXT ONLY) and here so macro-flight readers can reconcile bars from 2026-09-21 onward. |
+| **What you should do** | When reviewing macro-flight PnL around 2026-09-21, read it against this dated observation; the news blurb is third-hand (CNBC via kalshi.com) and is not a price input. |
+
+**Evidence**
+
+- research-sources R24 — the kalshi.com board fetched 2026-09-21, news block quoted verbatim (CONTEXT ONLY): <https://kalshi.com/>
+
+---
+
 ## #9 — Two different status vocabularies for the same concept
 
 **Severity:** `LOW`
@@ -1071,6 +1107,23 @@ assumption against an official document or a real API response.
 
 - .gitignore (the two new entries): <https://github.com/buffedlizard55-lab/KalshiPaperSim/blob/main/.gitignore>
 - The first MLB capture run, whose commit carried mlb-signals.log: <https://github.com/buffedlizard55-lab/KalshiPaperSim/actions/runs/35491621248>
+
+---
+
+## #61 — A research source headline profitability is refuted by the same post-own post-mortem (R19)
+
+**Severity:** `LOW`
+
+| | |
+| --- | --- |
+| **We assumed** | That the r/PredictionsMarkets "+39% Kalshi trading bot" post is a profitability claim one could cite. |
+| **Verified truth** | The same post TL;DR says, of a ~1.5M-real-trade backtest plus the entire 2022 World Cup out of sample: "It does not work." The +39% figure is pre-post-mortem. The PARAMETERS (2-minute shock window, at least 15% of peak AND at least 8 cents, P50/P75/P90/P95 maker ladder, 4-6 cent maker exit, [close-150min, close] windowing) are measured and worth keeping; the return is not. |
+| **What the code does** | Both the parameters and the refutation are pinned in R19; any future four-rung PanicLadder refinement must cite both. PanicDip_ShockTiming (the three-rung sibling) measures its own verdict from its own fills. |
+| **What you should do** | Never cite the +39% figure without "It does not work" beside it. |
+
+**Evidence**
+
+- research-sources R19 — the post quoted verbatim, parameters and post-mortem: <https://www.reddit.com/r/PredictionsMarkets/comments/1u3rn8s/i_built_a_39_kalshi_trading_bot_to_exploit_world/>
 
 ---
 

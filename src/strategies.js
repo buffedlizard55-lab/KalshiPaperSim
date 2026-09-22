@@ -294,6 +294,21 @@ function usableMlbSignal(signal) {
   return true;
 }
 
+/**
+ * Pick ONE archive's signal out of ctx.signal. The composed provider can
+ * answer a ticker from several archives at once (e.g. a KXMLBGAME bar has both
+ * the official game state and, when snapshots exist, the owner's model
+ * pre-game row) and carries them all on `signal.all`; a single provider's
+ * result is just itself. A strategy always names the kind it reads.
+ */
+export function pickSignal(ctx, kind) {
+  const s = ctx && ctx.signal;
+  if (!s) return null;
+  if (s.kind === kind) return s;
+  if (Array.isArray(s.all)) return s.all.find((x) => x && x.kind === kind) || null;
+  return null;
+}
+
 export const STRATEGIES = [
   {
     ...BASE,
@@ -3285,7 +3300,610 @@ export const STRATEGIES = [
         }
       ];
     }
+  },
+
+  /* ════════════════════════════════════════════════════════════════════ *
+   * 2026-09-21 (session 01a0c625) — THE ESPN HALF OF THE POINT-IN-TIME
+   * SIGNAL ARCHIVE (ROADMAP Next #3(a)) + the S14 pre-game hook (Next #3(c)).
+   *
+   * TRUST, ON EVERY CARD BELOW: ESPN public JSON (site.web.api.espn.com) is a
+   * TRUSTED BUT NOT OFFICIAL source — a public aggregator, NOT a league's
+   * official data feed. Injury designations are ESPN's aggregation of team
+   * reports; game states are ESPN's scoreboard. The exchange settles on its
+   * own sources; this archive is a decision-time signal only. (MLB stays on
+   * the OFFICIAL MLB Stats API.) The join to a Kalshi game contract is
+   * evidence-built (_code-map.json from each contract's own rules text +
+   * captured ESPN team tables); an unmapped ticker is answered with null and
+   * the entry abstains.
+   *
+   * The price caps below are THESE DESIGNS’ OWN stated parameters — there is
+   * no published theory table for football/basketball win expectancy the way
+   * Tangotiger’s table (R18) exists for baseball, and inventing one is exactly
+   * what this repository’s honesty contract forbids. Each card says which
+   * number is a design choice and which number is observed data.
+   * ═════════════════════════════════════════════════════ */
+
+  {
+    ...BASE,
+    id: 'nfl_injury_avail_gap',
+    username: 'NFLInjury_AvailGap',
+    handle: '@NFLInjury_AvailGap',
+    avatar: '🏈',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXNFLGAME'],
+    title: 'Pre-Game Availability Gap Buyer (ESPN injury designations — NOT OFFICIAL)',
+    category: 'Sports / Injury gate (pre-game)',
+    tagline:
+      'Before kickoff, buys the side facing FEWER "Out" designations in ESPN\'s public injury JSON when the gap is at least 3 and that side still asks ≤ 0.70. ESPN is a trusted aggregator, not a league feed — the label travels with every number.',
+    sizingPct: 0.4,
+    maxParticipation: 3,
+    designedAt: '2026-09-21',
+    designSource:
+      'Original design in this repository: the point-in-time external-signal architecture applied to ESPN\'s public injuries JSON (data/espn-signals/, grown by .github/workflows/espn-signals.yml), the NFL-Injury half of the owner\'s MasterSite request list (S-requests "NFL Injury")',
+    designSourceUrl: 'https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/injuries',
+    sourceNote:
+      'SIGNAL: GET site.web.api.espn.com/apis/site/v2/sports/football/nfl/injuries — ESPN public JSON, TRUSTED BUT NOT OFFICIAL (a public aggregator, not the league\'s official feed; verified live 2026-09-21, envelope and record shape pinned by data/espn-signals/fixtures/injuries-records-2026-09-21.json). Each row keeps ESPN\'s own status vocabulary verbatim ("Out", "Questionable", "Doubtful", "Active", …) with the instant it was first seen. JOIN: KXNFLGAME-<yyMONdd><AWAY><HOME>-<YES> to the ESPN event by US-Eastern date + code-mapped away/home pair (evidence-built _code-map.json from the contract\'s own rules text + captured ESPN team tables; e.g. rules "Dallas vs New York G" ↔ ESPN "Dallas Cowboys" / "New York Giants"). KXNFLGAME carries the REAL fee multiplier from data/discovered/series-fees.json. NOTHING here is a settlement input — the exchange settles on its own sources.',
+    thesis:
+      'DESIGN INTENT: an "Out" designation is the strongest public pre-game availability fact there is. When one side is missing 3+ players the other side has, the healthier roster is the mechanical side to buy — IF the market has not fully priced it (ask ≤ 0.70). The entry measures whether a blunt availability-count edge survives the exchange\'s fee and this repo\'s fill realism. ' +
+      'HONEST LIMITS, stated up front: (1) ESPN is TRUSTED BUT NOT OFFICIAL — designations are ESPN\'s aggregation of team injury reports and can lag or correct; the point-in-time rows keep every change visible, but a designation is not a league transaction wire. (2) All "Out" players are counted equally: a missing starting quarterback and a missing rotational lineman both count 1 — the rule is deliberately blunt so the measurement is about the COUNT, not a projection this repository has no data to make. (3) The 3-player gap and the 0.70 cap are THIS DESIGN\'S stated parameters (there is no published win-expectancy table for football to lean on the way R18 exists for baseball) — the card says which numbers are design choices, and the ledger measures them. ' +
+      'POINT-IN-TIME RULE: ctx.signal is built only from rows captured at or before the bar (src/espn-signal-store.js); a designation first seen later is invisible.',
+    rules: {
+      entry:
+        'ctx.signal (kind espn-game-state, league nfl) shows state "pre" (kickoff not started), staleSeconds ≤ 1800, both injury pictures present, and |yesOut − oppOut| ≥ 3 with the YES side having FEWER outs. Buy that side when its ask ≤ 0.70. Once per market.',
+      sizing: '40% of available cash per confirmed contract, capped at 3x visible ask depth.',
+      exit: 'None — hold to the exchange\'s real settlement ($1.00/$0.00 at the market\'s real result).',
+      noSignalRule:
+        'signal === null (no ESPN archive yet, ticker not joinable — including any code the evidence map does not cover — or a game already in progress) → abstain. Never substitute a later capture for an earlier decision.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker } = ctx;
+      const signal = pickSignal(ctx, 'espn-game-state');
+      if (!signal || signal.league !== 'nfl' || signal.state !== 'pre') return [];
+      if (!Number.isFinite(signal.staleSeconds) || signal.staleSeconds > 1800) return [];
+      const injury = signal.injuries;
+      if (!injury || !injury.yes || !injury.opp) return [];
+      const gap = Number(injury.yes.out) - Number(injury.opp.out);
+      if (Math.abs(gap) < 3) return [];
+      const side = gap <= -3 ? 'YES' : 'NO';
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const ask = side === 'YES' ? book.getBestYesAsk() : book.getBestNoAsk();
+      if (ask === null || ask > 0.7) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, side);
+      if (count <= 0) return [];
+      const healthy = side === 'YES' ? signal.yesTeam : signal.oppTeam;
+      const banged = side === 'YES' ? signal.oppTeam : signal.yesTeam;
+      const healthyOut = side === 'YES' ? injury.yes.out : injury.opp.out;
+      const bangedOut = side === 'YES' ? injury.opp.out : injury.yes.out;
+      return [{
+        type: 'buy', side, count,
+        reason: `ESPN injury archive (NOT OFFICIAL) at ${signal.capturedAt}: ${healthy.displayName} reports ${healthyOut} Out vs ${banged.displayName} ${bangedOut} (gap ${Math.abs(gap)}) — buy the healthier side ${side} at ${ask} ≤ 0.70, held to the exchange's real result`
+      }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'nba_injury_avail_gap',
+    username: 'NBAInjury_AvailGap',
+    handle: '@NBAInjury_AvailGap',
+    avatar: '🏀',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXNBAGAME'],
+    title: 'NBA Pre-Game Availability Gap Buyer (ESPN injury designations — NOT OFFICIAL)',
+    category: 'Sports / Injury gate (pre-game)',
+    tagline:
+      'The NBA sibling of NFLInjury_AvailGap: before tip-off, buys the side facing fewer "Out" designations when the gap is ≥ 2 (smaller rosters move a game more per player) and the ask is ≤ 0.75. Same NOT-OFFICIAL label on every number.',
+    sizingPct: 0.4,
+    maxParticipation: 3,
+    designedAt: '2026-09-21',
+    designSource:
+      'Original design in this repository — the NBA half of the MasterSite "NBA Injury" request, same architecture and same evidence rules as NFLInjury_AvailGap (data/espn-signals/, .github/workflows/espn-signals.yml)',
+    designSourceUrl: 'https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries',
+    sourceNote:
+      'SIGNAL: GET site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries — ESPN public JSON, TRUSTED BUT NOT OFFICIAL (verified live 2026-09-21; envelope identical to the NFL injuries shape, pinned by the same fixture file). JOIN: KXNBAGAME-<yyMONdd><AWAY><HOME>-<YES> to the ESPN event by US-Eastern date + code-mapped pair — note the NBA code differences the map must cover with evidence (Kalshi NYK ↔ ESPN NY "New York Knicks", Kalshi SAS ↔ ESPN SA "San Antonio Spurs"; both associations derive from the tracked contracts\' own rules text, e.g. "If New York wins the Philadelphia vs New York Pro Basketball game originally scheduled for Oct 20, 2026").',
+    thesis:
+      'DESIGN INTENT: an eight- or nine-man NBA rotation reacts more to one "Out" than a 46-man NFL roster, so the gap threshold is 2 rather than 3; the measurement is otherwise identical: does a blunt availability-count edge clear the exchange fee and the real fill? ' +
+      'HONEST LIMITS: (1) TRUSTED BUT NOT OFFICIAL — same label and same caveat as the NFL sibling. (2) The 2-player gap and 0.75 cap are THIS DESIGN\'S stated parameters, not a published model. (3) Rest games and load management often surface as "Rest"/"Injury Recovery" statuses in the days before tip; the rule counts only the exact "Out" status and the byStatus map on the signal keeps every other designation visible on the card\'s fills rather than silently merged.',
+    rules: {
+      entry:
+        'ctx.signal (kind espn-game-state, league nba) shows state "pre", staleSeconds ≤ 1800, both injury pictures present, and |yesOut − oppOut| ≥ 2 with the YES side having fewer outs. Buy YES when the ask ≤ 0.75. Once per market.',
+      sizing: '40% of available cash per confirmed contract, capped at 3x visible ask depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      noSignalRule: 'signal === null (no archive / unjoinable ticker / game in progress) → abstain.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker } = ctx;
+      const signal = pickSignal(ctx, 'espn-game-state');
+      if (!signal || signal.league !== 'nba' || signal.state !== 'pre') return [];
+      if (!Number.isFinite(signal.staleSeconds) || signal.staleSeconds > 1800) return [];
+      const injury = signal.injuries;
+      if (!injury || !injury.yes || !injury.opp) return [];
+      const gap = Number(injury.yes.out) - Number(injury.opp.out);
+      if (Math.abs(gap) < 2) return [];
+      const side = gap <= -2 ? 'YES' : 'NO';
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const ask = side === 'YES' ? book.getBestYesAsk() : book.getBestNoAsk();
+      if (ask === null || ask > 0.75) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, side);
+      if (count <= 0) return [];
+      const healthy = side === 'YES' ? signal.yesTeam : signal.oppTeam;
+      const banged = side === 'YES' ? signal.oppTeam : signal.yesTeam;
+      const healthyOut = side === 'YES' ? injury.yes.out : injury.opp.out;
+      const bangedOut = side === 'YES' ? injury.opp.out : injury.yes.out;
+      return [{
+        type: 'buy', side, count,
+        reason: `ESPN injury archive (NOT OFFICIAL) at ${signal.capturedAt}: ${healthy.displayName} reports ${healthyOut} Out vs ${banged.displayName} ${bangedOut} (gap ${Math.abs(gap)}) — buy the healthier side ${side} at ${ask} ≤ 0.75, held to the exchange's real result`
+      }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'nfl_state_4q_leader',
+    username: 'NFLState_4Q_Leader',
+    handle: '@NFLState_4Q_Leader',
+    avatar: '📡',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXNFLGAME'],
+    title: 'Two-Score 4th-Quarter Leader, Bought Below This Design\'s Cap (ESPN game state — NOT OFFICIAL)',
+    category: 'Sports / In-play state (scoreboard)',
+    tagline:
+      'In play, buys the side ESPN\'s public scoreboard shows leading by ≥ 9 points in the 4th quarter whenever the market still asks ≤ 0.92. The 0.92 cap is this design\'s stated parameter — no published football win-expectancy table is being pretended.',
+    sizingPct: 0.5,
+    maxParticipation: 3,
+    designedAt: '2026-09-21',
+    designSource:
+      'Original design in this repository — the NFL-scoreboard half of the MasterSite request list, structurally the NFL sibling of MLBLead_InPlay but with a STATED price cap instead of a theory table (R18 exists for baseball only)',
+    designSourceUrl: 'https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard',
+    sourceNote:
+      'SIGNAL: GET site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=YYYYMMDD — ESPN public JSON, TRUSTED BUT NOT OFFICIAL. The per-event shape (competitions[].competitors[].score as a numeric string, status.type.state ∈ {pre, in, post}, status.clock/period) is pinned by data/espn-signals/fixtures/scoreboard-nfl-20260921.json (captured live 2026-09-21; this is the per-event shape earlier sessions could not retrieve — irregularity #58). JOIN: KXNFLGAME ticker → event by US-Eastern date + code-mapped pair, all three facts equal. Third-party sportsbook odds appear inside the same response (DraftKings block) and are archived as CONTEXT ONLY — no strategy here ever prices from them.',
+    thesis:
+      'DESIGN INTENT: a two-score lead inside the final quarter is the strongest in-play state on a public scoreboard. The entry buys it only when the ask is ≤ 0.92 — a cap THIS DESIGN states, so the entry still measures fee-and-fill reality instead of assuming perfection. ' +
+      'HONEST LIMITS: (1) TRUSTED BUT NOT OFFICIAL — ESPN\'s scoreboard can lag the field by seconds-to-minutes; the point-in-time staleness (≤ 30 min) is priced by the entry\'s cap, never hidden. (2) 9 points is "two scores" (TD+FG or two TDs) — a 10-point lead is NOT enough under this rule (two TDs + 2pt), deliberately blunt. (3) The 0.92 cap is a design choice; the ledger, not the card, says whether it was the right one.',
+    rules: {
+      entry:
+        'ctx.signal (kind espn-game-state, league nfl) shows state "in", period ≥ 4, scores.yes − scores.opp ≥ 9, staleSeconds ≤ 1800. Buy YES when the ask ≤ 0.92. Once per market.',
+      sizing: '50% of available cash per confirmed contract, capped at 3x visible ask depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      noSignalRule: 'signal === null (no archive / unjoinable ticker / no captured state at or before the bar) → abstain.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker } = ctx;
+      const signal = pickSignal(ctx, 'espn-game-state');
+      if (!signal || signal.league !== 'nfl' || signal.state !== 'in') return [];
+      if (!Number.isFinite(signal.staleSeconds) || signal.staleSeconds > 1800) return [];
+      if (!(Number(signal.period) >= 4)) return [];
+      if (!Number.isFinite(signal.lead) || signal.lead < 9) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.92) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [{
+        type: 'buy', side: 'YES', count,
+        reason: `ESPN scoreboard (NOT OFFICIAL, captured ${signal.capturedAt}): ${signal.yesTeam.displayName} lead ${signal.scores.yes}-${signal.scores.opp} Q${signal.period} ${signal.displayClock || ''} — buy YES at ${ask} ≤ this design's 0.92 cap, held to the exchange's real result`
+      }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'ncaaf_state_4q_leader',
+    username: 'NCAAFState_4Q_Leader',
+    handle: '@NCAAFState_4Q_Leader',
+    avatar: '🎓',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXNCAAFGAME'],
+    title: 'NCAA Football Two-Score 4th-Quarter Leader (ESPN game state — NOT OFFICIAL)',
+    category: 'Sports / In-play state (scoreboard)',
+    tagline:
+      'The NCAA-football sibling: buys the side ESPN\'s public college-football scoreboard shows leading by ≥ 10 in the 4th quarter at ask ≤ 0.90. The NCAAF-scoreboard half of the MasterSite "NCAA Scoreboard" request — labelled NOT OFFICIAL throughout.',
+    sizingPct: 0.5,
+    maxParticipation: 3,
+    designedAt: '2026-09-21',
+    designSource:
+      'Original design in this repository — the NCAA-scoreboard half of the MasterSite request list, same architecture as NFLState_4Q_Leader (data/espn-signals/, .github/workflows/espn-signals.yml)',
+    designSourceUrl: 'https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard',
+    sourceNote:
+      'SIGNAL: GET site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=YYYYMMDD — ESPN public JSON, TRUSTED BUT NOT OFFICIAL, same per-event shape as the NFL fixture. JOIN: KXNCAAFGAME ticker → event by US-Eastern date + code-mapped pair. NCAAF codes are Kalshi\'s OWN strings and need evidence per code (tracked-contract examples: KXNCAAFGAME-26SEP26CARKFSU-FSU = "Central Arkansas vs Florida St." → CARK↔"Central Arkansas Bears", FSU↔"Florida State Seminoles"; KXNCAAFGAME-26OCT03MCNSLSU-MCNS = "McNeese vs LSU" → MCNS↔McNeese, LSU↔LSU) — the map matches on NAME against the captured ESPN table and refuses every ambiguous match.',
+    thesis:
+      'DESIGN INTENT and LIMITS: same structure as NFLState_4Q_Leader. A 10-point threshold (two scores with variance) and a 0.90 cap are THIS DESIGN\'S stated parameters. College scores run higher-variance than the pros — a 10-point lead is less safe here than in the NFL — which is exactly why the cap is lower and the ledger is the judge. TRUSTED BUT NOT OFFICIAL on every read.',
+    rules: {
+      entry:
+        'ctx.signal (kind espn-game-state, league ncaaf) shows state "in", period ≥ 4, lead ≥ 10, staleSeconds ≤ 1800. Buy YES when the ask ≤ 0.90. Once per market.',
+      sizing: '50% of available cash per confirmed contract, capped at 3x visible ask depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      noSignalRule: 'signal === null (no archive / unjoinable ticker / no captured state at or before the bar) → abstain.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker } = ctx;
+      const signal = pickSignal(ctx, 'espn-game-state');
+      if (!signal || signal.league !== 'ncaaf' || signal.state !== 'in') return [];
+      if (!Number.isFinite(signal.staleSeconds) || signal.staleSeconds > 1800) return [];
+      if (!(Number(signal.period) >= 4)) return [];
+      if (!Number.isFinite(signal.lead) || signal.lead < 10) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.9) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [{
+        type: 'buy', side: 'YES', count,
+        reason: `ESPN scoreboard (NOT OFFICIAL, captured ${signal.capturedAt}): ${signal.yesTeam.displayName} lead ${signal.scores.yes}-${signal.scores.opp} Q${signal.period} ${signal.displayClock || ''} — buy YES at ${ask} ≤ this design's 0.90 cap, held to the exchange's real result`
+      }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'nba_state_final_minutes',
+    username: 'NBAState_FinalMinutes',
+    handle: '@NBAState_FinalMinutes',
+    avatar: '⏱️',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXNBAGAME'],
+    title: 'NBA Double-Digit Lead Inside the Final Minutes (ESPN game state — NOT OFFICIAL)',
+    category: 'Sports / In-play state (scoreboard)',
+    tagline:
+      'Buys the side ESPN\'s public NBA scoreboard shows leading by ≥ 10 in the 4th quarter with ≤ 3:00 on the clock, at ask ≤ 0.88. The NBA-scoreboard sibling of the two football entries — NOT OFFICIAL label throughout.',
+    sizingPct: 0.5,
+    maxParticipation: 3,
+    designedAt: '2026-09-21',
+    designSource:
+      'Original design in this repository — the NBA-scoreboard sibling of NFLState_4Q_Leader (data/espn-signals/, .github/workflows/espn-signals.yml); completes the MasterSite scoreboard trio (NFL, NCAA, NBA) whose MLB sibling (MLBLead_InPlay) already trades the OFFICIAL MLB archive',
+    designSourceUrl: 'https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard',
+    sourceNote:
+      'SIGNAL: GET site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=YYYYMMDD — ESPN public JSON, TRUSTED BUT NOT OFFICIAL, same per-event shape as the NFL fixture (scores as numeric strings, status.type.state/clock/period). JOIN: KXNBAGAME ticker → event by US-Eastern date + code-mapped pair (NYK↔NY, SAS↔SA mappings are evidence rows in _code-map.json, never assumptions).',
+    thesis:
+      'DESIGN INTENT: inside the final 3 minutes, a 10-point NBA lead is close to decided but not certain — the entry buys it only below a 0.88 cap so fees and the (real) gap between ESPN and the floor are measured, not assumed. ' +
+      'HONEST LIMITS: (1) TRUSTED BUT NOT OFFICIAL. (2) The foul-game tail (a 10-point lead with 2:30 left is not 88%+) is exactly why the cap is stated as a design parameter and the outcome is measured. (3) A late scratch visible only to the arena is not in any public JSON — none of these entries know what the market does not show.',
+    rules: {
+      entry:
+        'ctx.signal (kind espn-game-state, league nba) shows state "in", period ≥ 4, lead ≥ 10, clock ≤ 180 seconds (displayClock counts down), staleSeconds ≤ 1800. Buy YES when the ask ≤ 0.88. Once per market.',
+      sizing: '50% of available cash per confirmed contract, capped at 3x visible ask depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      noSignalRule: 'signal === null (no archive / unjoinable ticker / no captured state at or before the bar) → abstain.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker } = ctx;
+      const signal = pickSignal(ctx, 'espn-game-state');
+      if (!signal || signal.league !== 'nba' || signal.state !== 'in') return [];
+      if (!Number.isFinite(signal.staleSeconds) || signal.staleSeconds > 1800) return [];
+      if (!(Number(signal.period) >= 4)) return [];
+      if (!Number.isFinite(signal.lead) || signal.lead < 10) return [];
+      if (!Number.isFinite(signal.clock) || signal.clock > 180) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const ask = book.getBestYesAsk();
+      if (ask === null || ask > 0.88) return [];
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return [];
+      return [{
+        type: 'buy', side: 'YES', count,
+        reason: `ESPN scoreboard (NOT OFFICIAL, captured ${signal.capturedAt}): ${signal.yesTeam.displayName} lead ${signal.scores.yes}-${signal.scores.opp} Q${signal.period} ${signal.displayClock || ''} — buy YES at ${ask} ≤ this design's 0.88 cap, held to the exchange's real result`
+      }];
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'mlb_pregame_model_edge',
+    username: 'MLBPreGame_ModelEdge',
+    handle: '@MLBPreGame_ModelEdge',
+    avatar: '🎯',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXMLBGAME'],
+    title: 'Owner-Model Pre-Game Probability vs Market (S14, point-in-time)',
+    category: 'Sports / Model vs Market (pre-game)',
+    tagline:
+      'Trades the owner\'s own Monte Carlo model (MasterSite S14) against the exchange: buys the side where the model\'s pre-game probability beats the ask by ≥ 6¢ — but ONLY on a snapshot captured BEFORE first pitch. Walk-forward rows that the model computed after the game can never trigger it.',
+    sizingPct: 0.35,
+    maxParticipation: 3,
+    designedAt: '2026-09-21',
+    designSource:
+      'Original design in this repository: the ForecastEdge_Weather architecture (external pre-event estimate vs Kalshi price) applied to the owner\'s MLB-Prediction-model-backtest output (S14: correlation-filtered features + Negative-Binomial Monte Carlo + calibrated logistic blend, walk-forward validated)',
+    designSourceUrl: 'https://buffedlizard55-lab.github.io/MLB-Prediction-model-backtest/',
+    sourceNote:
+      'SIGNAL: data/mlb-pregame/ — one row per {capturedAt, gamePk, pHome} from the owner\'s model (repo buffedlizard55-lab/MLB-Prediction-model-backtest, MasterSite S14), ingested by scripts/archive-mlb-pregame.mjs under a strict input contract. JOIN: official gamePk via the same ticker join the MLB state archive verifies (V113). MODEL STATUS, stated: the model repository\'s CLI has NO `predict` command yet (verified 2026-09-21 by reading mlb_predict/cli.py through the GitHub API — it exposes collect/build-dataset/backtest, and its backtest writes walk-forward predictions AFTER the games). Until a pre-game snapshot exists (capturedAt < firstPitchAt), this entry abstains and says why; walk-forward rows are ingested as MEASUREMENT data (timely:false) and are refused by src/mlb-pregame-store.js as signals.',
+    thesis:
+      'DESIGN INTENT: an independent calibrated probability is the classic edge to trade against a market price — if the model says 0.60 and the market asks 0.52, the 8¢ gap is the trade. The 6¢ threshold is a stated design parameter sized to survive the quadratic fee at mid prices. ' +
+      'POINT-IN-TIME RULE, the core of the design: the model\'s number must EXIST before first pitch. A walk-forward prediction computed the next morning can prove the model was right — it can never prove the model SAID IT FIRST. The store keeps both kinds of row and only the timely ones are signals; the untimely ones stay in the archive for calibration measurement against the store\'s recorded prices. ' +
+      'HONEST LIMITS: (1) Until the model repo grows a `predict` entry point, this is a genuine forward test with zero fills (UNTESTED_ON_THIS_DATASET, reason published) — not a backtest with invented numbers. (2) The model was trained/validated on 2023-2025 seasons (its README: 7,289 verified official games, 2,430 out-of-sample 2025 predictions); this store\'s KXMLBGAME bars are 2026 — the model\'s calibration on THIS season is itself unmeasured until rows land.',
+    rules: {
+      entry:
+        'ctx.signal includes a kind "mlb-pregame-model" row for the contract\'s official game with timely=true (capturedAt < firstPitchAt), staleSeconds ≤ 43200 (12h — a pre-game number does not rot fast), and the market\'s ask differs from the model\'s pHome by ≥ 0.06 in either direction. Buy YES when pHome ≥ ask + 0.06; buy NO when (1 − pHome) ≥ noAsk + 0.06. Once per market per side.',
+      sizing: '35% of available cash per confirmed contract, capped at 3x visible ask depth.',
+      exit: 'None — hold to the exchange\'s real settlement.',
+      noSignalRule:
+        'signal === null or no timely pre-game row (no snapshot yet — the model\'s CLI has no predict command as of 2026-09-21 — or a walk-forward row captured after first pitch) → abstain. Never a later capture for an earlier decision.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker } = ctx;
+      const signal = pickSignal(ctx, 'mlb-pregame-model');
+      if (!signal || signal.kind !== 'mlb-pregame-model') return [];
+      if (!Number.isFinite(Number(signal.pHome))) return [];
+      if (!Number.isFinite(Number(signal.staleSeconds)) || signal.staleSeconds > 43200) return [];
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return [];
+      const yesAsk = book.getBestYesAsk();
+      const noAsk = book.getBestNoAsk();
+      const p = Number(signal.pHome);
+      const orders = [];
+      if (yesAsk !== null && p >= yesAsk + 0.06) {
+        const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+        if (count > 0) orders.push({
+          type: 'buy', side: 'YES', count,
+          reason: `model snapshot (S14, captured ${signal.capturedAt} before first pitch ${signal.firstPitchAt}) pHome ${p.toFixed(3)} ≥ YES ask ${yesAsk} + 0.06 — buy YES, held to the exchange's real result`
+        });
+      }
+      if (noAsk !== null && (1 - p) >= noAsk + 0.06) {
+        const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'NO');
+        if (count > 0) orders.push({
+          type: 'buy', side: 'NO', count,
+          reason: `model snapshot (S14, captured ${signal.capturedAt} before first pitch ${signal.firstPitchAt}) pHome ${p.toFixed(3)} ⇒ NO probability ${(1 - p).toFixed(3)} ≥ NO ask ${noAsk} + 0.06 — buy NO, held to the exchange's real result`
+        });
+      }
+      return orders;
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'swing_range_scalp',
+    username: 'SwingRange_Scalp',
+    handle: '@SwingRange_Scalp',
+    avatar: '🎢',
+    flight: 'micro',
+    preferredPeriodMinutes: 1,
+    universe: ['KXBTC15M', 'KXETH15M', 'KXSOL15M', 'KXGOLD15M'],
+    title: 'Swing-Range Scalp: Buy the Low End of a 30¢+ Oscillation, Exit at +15% (R22 `kashola17`)',
+    category: 'Short-Horizon / Mean reversion',
+    tagline:
+      'Buys the low end of any market whose 20-bar mid range spans ≥ 30¢ and gets out at cost + 15% — the r/Kalshi swing-range rule, transcribed with its own exit.',
+    sizingPct: 0.3,
+    maxParticipation: 3,
+    designedAt: '2026-09-21',
+    designSource: 'Recreated from r/Kalshi "Best Kalshi Strategies?" comment by kashola17 (RESEARCH_SOURCES R22)',
+    designSourceUrl: 'https://www.reddit.com/r/Kalshi/comments/1obxdcl/best_kalshi_strategies/',
+    sourceNote:
+      'R22 kashola17, verbatim: "purchase markets that tend to swing up and down. Buy low and hedge at a 15% gain and get out. For example; close tennis matches go from 30-70% the entire match depending how close it is. Again, you don\'t have to hold until the market settles." The trigger (a market that oscillates across a ≥30¢ band — the source\'s 30-70% example), the entry (the band\'s low end) and the exit (+15% on cost, then get out) are the source\'s own. The instruments are this store\'s captured 1-minute series (KXBTC15M/KXETH15M/KXSOL15M/KXGOLD15M — real yes_bid/yes_ask closes per minute): the source\'s tennis example is not a Kalshi series, so the rule ports to the captured oscillators.',
+    thesis:
+      'DESIGN INTENT: a contract that repeatedly traverses a 30¢ band is being repriced between two narratives rather than converging; buying at the band\'s floor buys the pessimistic extreme and the +15% resting exit sells the first swing back without predicting the final outcome — the source\'s point is precisely "you don\'t have to hold until the market settles". ' +
+      'HONEST LIMITS: (1) the source\'s example (close tennis matches) is betting-shop match odds; Kalshi\'s captured oscillators here are 15-minute crypto and gold contracts, whose swings have a different cause and cannot inherit the tennis claim\'s plausibility; (2) the +15% exit is a maker offer resting at cost × 1.15 — it fills only if the modelled book trades there before settlement (the same depth assumption as every resting-order entry here); (3) the range detector needs 20 completed 1-minute bars, so the entry cannot fire before the contract\'s 21st minute — the source gives no minimum history and this one is the recreation\'s, flagged here rather than hidden; (4) once per market per side.',
+    rules: {
+      entry:
+        'With ≥ 20 bars of history: compute the mid range of the last 20 bars (high − low of per-bar mid). If the range spans ≥ 0.30 AND the current mid sits in the range\'s bottom quarter (mid ≤ low + 0.25 × span): buy the cheaper side (YES if its ask ≤ 0.35, else NO if its ask ≤ 0.35) — "buy low".',
+      sizing: '30% of cash at the band floor, capped at 3x visible depth.',
+      exit: 'Rest a maker offer at cost × 1.15 (the source\'s "hedge at a 15% gain and get out") and re-quote every period; if untraded at expiry the exchange\'s own settlement closes it. No stop (by mandate).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const actions = [];
+      const { candle, history, book, portfolio, ticker } = ctx;
+
+      // Exit first: the source\'s "15% gain and get out", as a resting maker offer.
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ticker || pos.count <= 0) continue;
+        if (book.cancelExisting) book.cancelExisting();
+        const target = snapToGrid(Number(pos.avgCost) * 1.15, book.grid, 'up');
+        if (!(target > 0) || target >= book.notional) continue;
+        actions.push({
+          type: 'limit',
+          direction: 'ask',
+          side: pos.side,
+          count: pos.count,
+          price: target,
+          reason: `R22 swing exit: rest maker offer at ${target} (cost ${round6(pos.avgCost)} x 1.15) and get out`
+        });
+      }
+
+      const bars = history.slice(-20);
+      if (bars.length < 20) return actions;
+      const mids = [];
+      for (const b of bars) {
+        const bid = b.yesBid.close;
+        const ask = b.yesAsk.close;
+        if (bid === null || ask === null || ask <= bid) return actions;
+        mids.push(round6((bid + ask) / 2));
+      }
+      const low = Math.min(...mids);
+      const high = Math.max(...mids);
+      const span = round6(high - low);
+      if (span < 0.3) return actions;
+
+      const midNow = mids[mids.length - 1];
+      if (midNow > round6(low + 0.25 * span)) return actions;
+
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return actions;
+
+      const yesAsk = book.getBestYesAsk();
+      const noAsk = book.getBestNoAsk();
+      let side = null;
+      if (yesAsk !== null && yesAsk <= 0.35) side = 'YES';
+      else if (noAsk !== null && noAsk <= 0.35) side = 'NO';
+      if (!side) return actions;
+
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, side);
+      if (count <= 0) return [];
+      return actions.concat({
+        type: 'buy',
+        side,
+        count,
+        reason: `R22 swing range: 20-bar mid range spans ${span.toFixed(2)} (low ${low}, high ${high}) and mid ${midNow} is at the band floor -> buy the low side ${side}, exit at cost x 1.15`
+      });
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'orderbook_wall_3rung',
+    username: 'OrderbookWall_3Rung',
+    handle: '@OrderbookWall_3Rung',
+    avatar: '🧱',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    universe: ['KXNASDAQ100Y', 'KXINXY', 'KXBTCY'],
+    title: 'Orderbook-Wall Bid Ladder 5-15¢ Under the Touch, Fill-and-Flip +2¢ (R20 `Snoo-77724` + `LupineChemist`)',
+    category: 'Liquidity / Passive market making',
+    tagline:
+      'On wide-spread contracts, rests three maker bids 5¢/10¢/15¢ under the touch and flips every fill to a maker offer at cost + 2¢ — "trade the orderbook wall".',
+    sizingPct: 0.3,
+    maxParticipation: 3,
+    designedAt: '2026-09-21',
+    designSource: 'Recreated from r/Kalshi "what\'s your secret?" comments by Snoo-77724 and LupineChemist (RESEARCH_SOURCES R20)',
+    designSourceUrl: 'https://www.reddit.com/r/Kalshi/comments/1qd4ubf/people_who_actually_win_money_on_kalshi_whats/',
+    sourceNote:
+      'R20 Snoo-77724, verbatim: "never use market order, always use limit orders below the price usually 5-15 cents lower than current price and set a bunch of them out there and let them come to you, when whales have capital flying around you\'ll hit the natural dips ... don\'t trade the event, trade the orderbook wall." LupineChemist, verbatim: "in some low liquidity markets, you can make a couple percent just on spreads. Just have a ton of resting buy orders and then immediately flip them to resting sell orders where the market is." Joethecoew\'s caution is enforced in sizing: "make sure you don\'t sell enough to get slammed down to the next two price tiers".',
+    thesis:
+      'DESIGN INTENT: in a thin book, a liquidity sweep overpays through the wall and then mean-reverts to the touch; resting bids 5-15¢ below catch the sweep at its overshoot price (maker fee, 0.0175 x P x (1-P) rather than the 0.07 taker — the only structural edge that does not need a direction), and flipping the fill at +2¢ captures the source\'s "couple percent on spreads" as maker-to-maker. ' +
+      'HONEST LIMITS: (1) the source is one anonymous comment with no fills or dates — this entry computes its verdict only from its own real fills; (2) the trigger (captured spread ≥ 3 ticks = the thread\'s own "low liquidity" qualifier) is the recreation\'s operationalisation — the source gives no number; (3) resting fills depend on the modelled depth ladder exactly as in PanicDip_ShockTiming (a bid is marked filled only if the period low actually reached it); (4) Reaper_1492\'s counter in the same thread ("the ability to trade OUT at relative value is non-existent, even in markets with high liquidity") is the standing refutation this forward test exists to measure.',
+    rules: {
+      entry:
+        'If ask − bid ≥ 3 ticks: rest three maker bids one tick under the touch at offsets 5¢, 10¢ and 15¢ (equal thirds of the allocation) — "limit orders 5-15 cents lower ... let them come to you". Once the ladder is out, do not add until it fills or the period rolls.',
+      sizing: '30% of cash across the three rungs (10% each), each rung capped so a full flip cannot cross more than two ticks (Joethecoew), overall 3x visible depth.',
+      exit: 'Per fill: cancel nothing else and rest a maker offer at fill cost + 2¢ (LupineChemist\'s "flip them to resting sell orders ... a couple percent"). Untraded rungs cancel at period roll.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const actions = [];
+      const { candle, book, portfolio, ticker } = ctx;
+
+      // Flip side first: every filled rung gets its resting offer at cost + 2c.
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ticker || pos.count <= 0) continue;
+        const target = snapToGrid(Number(pos.avgCost) + 0.02, book.grid, 'up');
+        if (!(target > 0) || target >= book.notional) continue;
+        actions.push({
+          type: 'limit',
+          direction: 'ask',
+          side: pos.side,
+          count: pos.count,
+          price: target,
+          reason: `R20 fill-and-flip: rest maker offer ${target} (cost ${round6(pos.avgCost)} + 2c) — the couple percent on spreads`
+        });
+      }
+
+      const bid = candle.yesBid.close;
+      const ask = candle.yesAsk.close;
+      if (bid === null || ask === null || ask <= bid) return actions;
+      const spread = round6(ask - bid);
+      if (spread < 3 * book.tick) return actions;
+
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return actions;
+
+      // Three-rung wall under the touch: 5c / 10c / 15c (the source's own range).
+      const rungs = [
+        { off: 0.05, frac: 0.10 },
+        { off: 0.10, frac: 0.10 },
+        { off: 0.15, frac: 0.10 }
+      ];
+      for (const rung of rungs) {
+        const price = snapToGrid(round6(ask - rung.off), book.grid, 'down');
+        if (!(price > 0)) continue;
+        const cashSlice = portfolio.cash * rung.frac;
+        const count = Math.floor((cashSlice / price) * 100) / 100;
+        if (!(count > 0)) continue;
+        actions.push({
+          type: 'limit',
+          direction: 'bid',
+          side: 'YES',
+          count: round2(count),
+          price,
+          reason: `R20 orderbook wall: spread ${spread.toFixed(2)} >= 3 ticks -> rest maker bid ${count} @ ${price} (${Math.round(rung.off * 100)}c under the touch), let the whales come`
+        });
+      }
+      return actions;
+    }
+  },
+
+  {
+    ...BASE,
+    id: 'longshot_scalp_9x',
+    username: 'LongshotScalp_9x',
+    handle: '@LongshotScalp_9x',
+    avatar: '🎟️',
+    flight: 'daily',
+    preferredPeriodMinutes: 1440,
+    universe: ['KXHIGHNY', 'KXHIGHLAX', 'KXHIGHCHI', 'KXHIGHMIA', 'KXHIGHAUS', 'KXHIGHDEN', 'KXHIGHPHIL', 'KXHIGHTPHX', 'KXHIGHTSEA'],
+    title: '100 Longshots From 1¢ Toward 10¢ (R20 `Big_Buy_7252`)',
+    category: 'Convexity / Longshot scalps',
+    tagline:
+      'Buys exactly 100 contracts at a captured ask ≤ 2¢ and rests the exit at 10¢ — "I\'ve pushed 100 contracts from one to ten a bunch, that\'s an easy 9x on a dollar sometimes".',
+    sizingPct: 0.02,
+    maxParticipation: 3,
+    designedAt: '2026-09-21',
+    designSource: 'Recreated from r/Kalshi "what\'s your secret?" comment by Big_Buy_7252 (RESEARCH_SOURCES R20)',
+    designSourceUrl: 'https://www.reddit.com/r/Kalshi/comments/1qd4ubf/people_who_actually_win_money_on_kalshi_whats/',
+    sourceNote:
+      'R20 Big_Buy_7252, verbatim: "it\'s totally safe to throw a buck on a hundred contracts of a longshot and potentially win $100 or cash out at any time. I\'ve pushed 100 contracts from one to ten a bunch, that\'s an easy 9x on a dollar sometimes." The entry price band (1-2¢), the package size (100 contracts ≈ "a buck") and the exit band ("from one to ten" = 10¢, 9x profit on the dollar) are the source\'s own numbers, transcribed without smoothing.',
+    thesis:
+      'DESIGN INTENT: a 1-2¢ contract is convexity — a dollar buys 100 tickets whose best case multiplies the stake roughly 10x, and the source\'s own framing ("a buck ... potentially win $100") is a deliberate skew trade, not a win-rate trade. The exit rests at 10¢ (the source\'s "from one to ten") so the scalp realises the 9x without waiting for settlement, and a package that never reaches 10¢ rides to the exchange\'s real $1.00/$0.00 result. ' +
+      'HONEST LIMITS: (1) this is the SAME favourite-longshot bias that the academic synthesis (R23) says is the market\'s most reliable mispricing — but as a longshot-BUYER this strategy sits on the LOSING side of that bias unless the 1-2¢ tier is more mispriced than the literature says (S19\'s longshot boxes currently settle 0/10, 1/8, 2/10 in the money); the forward test exists precisely to price this ticket type honestly; (2) the source is one anonymous comment ("sometimes", "a bunch") with no sample, dates or fills; (3) "safe to throw a buck" is the source\'s risk framing and is explicitly NOT this project\'s — here it is a measured, fee-paid, simulated stake whose every fill is logged.',
+    rules: {
+      entry: 'When a captured ask ≤ 0.02 and no position is held in the market: buy exactly 100 contracts of that side (the source\'s package). Once per market.',
+      sizing: 'Fixed 100 contracts (≈ $1-2 at the source\'s band), bounded by available cash and 3x visible depth; never compound into a second package in the same market.',
+      exit: 'Rest a maker offer at 0.10 ("from one to ten") and re-quote each period; if untraded, hold to the exchange\'s own settlement. No stop (by mandate).',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const actions = [];
+      const { book, portfolio, ticker, candle } = ctx;
+
+      for (const pos of portfolio.positions.values()) {
+        if (pos.ticker !== ticker || pos.count <= 0) continue;
+        if (book.cancelExisting) book.cancelExisting();
+        const target = 0.1;
+        if (target >= book.notional) continue;
+        actions.push({
+          type: 'limit',
+          direction: 'ask',
+          side: pos.side,
+          count: pos.count,
+          price: target,
+          reason: `R20 longshot exit: rest maker offer 100 @ ${target} — pushed from one toward ten`
+        });
+      }
+
+      const held = [...portfolio.positions.values()].some((p) => p.ticker === ticker && p.count > 0);
+      if (held) return actions;
+      const yesAsk = book.getBestYesAsk();
+      const noAsk = book.getBestNoAsk();
+      let side = null;
+      let px = null;
+      if (yesAsk !== null && yesAsk <= 0.02) { side = 'YES'; px = yesAsk; }
+      else if (noAsk !== null && noAsk <= 0.02) { side = 'NO'; px = noAsk; }
+      if (!side) return actions;
+
+      const count = 100;
+      const cost = round2(count * px);
+      if (!(portfolio.cash >= cost)) return actions;
+      return actions.concat({
+        type: 'buy',
+        side,
+        count,
+        reason: `R20 longshot package: ${count} contracts of ${side} @ ${px} (cost ${cost}) — a buck on a hundred, exit 10c`
+      });
+    }
   }
+
 ];
 
 /** Legacy export name kept for compatibility with server.js and older tests. */

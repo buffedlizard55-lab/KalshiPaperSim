@@ -1,0 +1,237 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-22",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260922"
+  ]
+ },
+ "captures": [
+  "2026-09-22T01:47:09.172Z"
+ ],
+ "events": {
+  "401857208": {
+   "eventId": "401857208",
+   "date": "2026-09-22T23:30Z",
+   "easternDate": "2026-09-22",
+   "name": "Connecticut Sun at Washington Mystics",
+   "shortName": "CON @ WSH",
+   "week": null,
+   "venue": "CareFirst Arena",
+   "homeAbbr": "WSH",
+   "homeTeamId": "16",
+   "homeName": "Washington Mystics",
+   "awayAbbr": "CON",
+   "awayTeamId": "18",
+   "awayName": "Connecticut Sun",
+   "firstCapturedAt": "2026-09-22T01:47:09.172Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "WSH -14.5",
+    "spread": -14.5,
+    "overUnder": 158.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-22T01:47:09.172Z",
+     "last_seen_at": "2026-09-22T01:47:09.172Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "26-16",
+      "away": "10-32"
+     }
+    }
+   ]
+  },
+  "401857209": {
+   "eventId": "401857209",
+   "date": "2026-09-23T00:00Z",
+   "easternDate": "2026-09-22",
+   "name": "Minnesota Lynx at Indiana Fever",
+   "shortName": "MIN @ IND",
+   "week": null,
+   "venue": "Gainbridge Fieldhouse",
+   "homeAbbr": "IND",
+   "homeTeamId": "5",
+   "homeName": "Indiana Fever",
+   "awayAbbr": "MIN",
+   "awayTeamId": "8",
+   "awayName": "Minnesota Lynx",
+   "firstCapturedAt": "2026-09-22T01:47:09.172Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "IND -1.5",
+    "spread": -1.5,
+    "overUnder": 187.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-22T01:47:09.172Z",
+     "last_seen_at": "2026-09-22T01:47:09.172Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "27-15",
+      "away": "32-10"
+     }
+    }
+   ]
+  },
+  "401857210": {
+   "eventId": "401857210",
+   "date": "2026-09-23T00:00Z",
+   "easternDate": "2026-09-22",
+   "name": "Toronto Tempo at Chicago Sky",
+   "shortName": "TOR @ CHI",
+   "week": null,
+   "venue": "Wintrust Arena",
+   "homeAbbr": "CHI",
+   "homeTeamId": "19",
+   "homeName": "Chicago Sky",
+   "awayAbbr": "TOR",
+   "awayTeamId": "131935",
+   "awayName": "Toronto Tempo",
+   "firstCapturedAt": "2026-09-22T01:47:09.172Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "CHI -6.5",
+    "spread": -6.5,
+    "overUnder": 179.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-22T01:47:09.172Z",
+     "last_seen_at": "2026-09-22T01:47:09.172Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "15-27",
+      "away": "11-31"
+     }
+    }
+   ]
+  },
+  "401857211": {
+   "eventId": "401857211",
+   "date": "2026-09-23T02:00Z",
+   "easternDate": "2026-09-22",
+   "name": "Los Angeles Sparks at Las Vegas Aces",
+   "shortName": "LA @ LV",
+   "week": null,
+   "venue": "Michelob ULTRA Arena",
+   "homeAbbr": "LV",
+   "homeTeamId": "17",
+   "homeName": "Las Vegas Aces",
+   "awayAbbr": "LA",
+   "awayTeamId": "6",
+   "awayName": "Los Angeles Sparks",
+   "firstCapturedAt": "2026-09-22T01:47:09.172Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "LV -15.5",
+    "spread": -15.5,
+    "overUnder": 178.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-22T01:47:09.172Z",
+     "last_seen_at": "2026-09-22T01:47:09.172Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "29-13",
+      "away": "16-26"
+     }
+    }
+   ]
+  },
+  "401857212": {
+   "eventId": "401857212",
+   "date": "2026-09-23T02:00Z",
+   "easternDate": "2026-09-22",
+   "name": "Golden State Valkyries at Portland Fire",
+   "shortName": "GS @ POR",
+   "week": null,
+   "venue": "Moda Center",
+   "homeAbbr": "POR",
+   "homeTeamId": "132052",
+   "homeName": "Portland Fire",
+   "awayAbbr": "GS",
+   "awayTeamId": "129689",
+   "awayName": "Golden State Valkyries",
+   "firstCapturedAt": "2026-09-22T01:47:09.172Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "GS -14.5",
+    "spread": 14.5,
+    "overUnder": 157.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-22T01:47:09.172Z",
+     "last_seen_at": "2026-09-22T01:47:09.172Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "16-27",
+      "away": "31-11"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-22T01:47:09.172Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260922"
+}

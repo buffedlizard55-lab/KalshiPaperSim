@@ -1,0 +1,166 @@
+name: MLB pre-game model signals
+
+# ROADMAP "Next #3(c)" — the owner's MLB model's PRE-GAME probability
+# (MasterSite S14, buffedlizard55-lab/MLB-Prediction-model-backtest),
+# captured before first pitch into data/mlb-pregame/ so MLBPreGame_ModelEdge
+# can trade an independent estimate against the exchange's own price.
+#
+# WHAT THIS WORKFLOW DOES TODAY (2026-09-21), stated exactly:
+#   1. Runs the MODEL's own documented chain on the model repository:
+#      sync_sources -> collect -> collect-probables -> build-dataset ->
+#      build-pitcher-features -> backtest --season <year>. The backtest emits
+#      per-game WALK-FORWARD predictions (predictions.csv) — real model output
+#      computed AFTER each game. Those are ingested as MEASUREMENT rows
+#      (timely:false) — they can measure "the model was right/wrong" against
+#      the store's recorded Kalshi prices, but src/mlb-pregame-store.js refuses
+#      them as pre-game signals, by design.
+#   2. Looks for PRE-GAME snapshots (snapshots.jsonl, the contract in
+#      scripts/archive-mlb-pregame.mjs) and ingests them as tradable rows.
+#      The model's CLI has NO `predict` command yet (verified 2026-09-21 by
+#      reading mlb_predict/cli.py through the GitHub API: it exposes
+#      collect / ingest-page / ingest-scores / build-dataset /
+#      build-pitcher-features / backtest / demo only). The moment the model
+#      repo grows `predict --jsonl`, this workflow's snapshot step activates
+#      with no change here. Until then the store stays honest: no snapshot,
+#      no signal, MLBPreGame_ModelEdge abstains with the reason published.
+#
+# Runs weekly (Monday 12:00 UTC) plus trigger pushes: a full walk-forward
+# re-fit is a heavy job and a daily cadence buys nothing before `predict`
+# exists.
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'
+  push:
+    paths:
+      - '.github/triggers/mlb-pregame.json'
+  workflow_dispatch:
+
+concurrency:
+  group: mlb-pregame-signals-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  model-chain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Sync with the branch tip (best-effort)
+        continue-on-error: true
+        run: |
+          git fetch --deepen=100 origin "${GITHUB_REF_NAME}"
+          git merge --ff-only "origin/${GITHUB_REF_NAME}"
+
+      - name: Check out the owner's model repository
+        run: |
+          git clone --depth 50 https://github.com/buffedlizard55-lab/MLB-Prediction-model-backtest ../model
+
+      - name: Cache the model's raw collection between runs
+        uses: actions/cache@v4
+        with:
+          path: ../model/data/raw
+          key: mlb-pregame-raw-${{ github.run_id }}
+          restore-keys: |
+            mlb-pregame-raw-
+
+      - name: Install the model's requirements
+        working-directory: ../model
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          pip install -r requirements.txt pytest
+
+      - name: Vendor the model's two official-data upstreams
+        working-directory: ../model
+        run: |
+          . .venv/bin/activate
+          bash scripts/sync_sources.sh
+
+      - name: Model offline sanity (its own labelled-synthetic chain)
+        working-directory: ../model
+        run: |
+          . .venv/bin/activate
+          PYTHONPATH=. python -m mlb_predict demo
+          PYTHONPATH=. python -m pytest tests -q
+
+      - name: Collect the official schedule/results window (resumable cache)
+        working-directory: ../model
+        run: |
+          . .venv/bin/activate
+          START=$(date -u -d '2 years ago' +%F)
+          END=$(date -u -d 'yesterday' +%F)
+          PYTHONPATH=. python -m mlb_predict collect --start "$START" --end "$END"
+          PYTHONPATH=. python -m mlb_predict collect-probables --start "$START" --end "$END"
+          PYTHONPATH=. python -m mlb_predict build-dataset
+          PYTHONPATH=. python -m mlb_predict build-pitcher-features
+
+      - name: Walk-forward backtest (emits predictions.csv — measurement rows)
+        working-directory: ../model
+        run: |
+          . .venv/bin/activate
+          SEASON=$(date -u +%Y)
+          PYTHONPATH=. python -m mlb_predict backtest --season "$SEASON" --with-pitcher-features
+          find data/results -name 'predictions*.csv' -exec cp {} ../../KalshiPaperSim/mlb-pregame-predictions.csv \; 2>/dev/null || true
+          ls -la ../../KalshiPaperSim/mlb-pregame-predictions.csv || echo "no predictions.csv located — recorded in the status report"
+
+      - name: Ingest PRE-GAME snapshots when the model can emit them
+        run: |
+          set -o pipefail
+          if [ -f ../model/snapshots.jsonl ]; then
+            node scripts/archive-mlb-pregame.mjs --ingest ../model/snapshots.jsonl | tee mlb-pregame.log
+          else
+            echo "NO PRE-GAME SNAPSHOTS — the model CLI has no `predict` command yet (mlb_predict/cli.py inventory, 2026-09-21). MLBPreGame_ModelEdge abstains." | tee mlb-pregame.log
+          fi
+
+      - name: Ingest the walk-forward predictions as measurement rows
+        run: |
+          set -o pipefail
+          if [ -f mlb-pregame-predictions.csv ]; then
+            node scripts/archive-mlb-pregame.mjs --from-walkforward mlb-pregame-predictions.csv | tee -a mlb-pregame.log
+          else
+            echo "no walk-forward predictions.csv to ingest" | tee -a mlb-pregame.log
+          fi
+
+      - name: Audit the pre-game store (no network)
+        run: |
+          set -o pipefail
+          node scripts/archive-mlb-pregame.mjs --verify | tee -a mlb-pregame.log
+          node scripts/archive-mlb-pregame.mjs --plan | tee -a mlb-pregame.log
+
+      - name: Regenerate the browser-safe modules and the Pages bundle
+        run: |
+          set -o pipefail
+          node scripts/generate-history-module.mjs | tee -a mlb-pregame.log
+          node scripts/generate-desk-module.mjs | tee -a mlb-pregame.log
+          node scripts/render-docs.js | tee -a mlb-pregame.log
+          node build.js | tee -a mlb-pregame.log
+
+      - name: Commit the measurement rows + status
+        if: always()
+        run: |
+          BOT_NAME="kalshi-pregame-bot" \
+          BOT_EMAIL="kalshi-pregame-bot@users.noreply.github.com" \
+          bash scripts/push-with-race-guard.sh \
+            "chore(mlb-pregame): ingest owner-model prediction rows $(date -u +%F' '%H:%M)" \
+            "${GITHUB_REF_NAME}"
+
+      - name: Upload the run log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlb-pregame-log
+          path: mlb-pregame.log
+          if-no-files-found: warn
