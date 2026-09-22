@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-22T07:21:28.286Z",
+ "generatedAt": "2026-09-22T18:28:18.295Z",
  "rows": [
   {
    "league": "nba",
@@ -765,6 +765,11 @@
      "ticker": "KXNFLGAME-26SEP13DALNYG-DAL",
      "rulesName": "Dallas",
      "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP13DALNYG-NYG",
+     "rulesName": "Dallas",
+     "role": "away"
     }
    ]
   },
@@ -820,6 +825,31 @@
   },
   {
    "league": "nfl",
+   "kalshiCode": "LAC",
+   "kalshiName": "Los Angeles C",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "24",
+    "abbr": "LAC",
+    "displayName": "Los Angeles Chargers",
+    "matchedBy": "displayName-qualifier-letter"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26AUG27LARLAC-LAC",
+     "rulesName": "Los Angeles C",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26AUG27LARLAC-LAR",
+     "rulesName": "Los Angeles C",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
    "kalshiCode": "LAR",
    "kalshiName": "Los Angeles R",
    "conflictWith": null,
@@ -837,8 +867,38 @@
      "role": "home"
     },
     {
+     "ticker": "KXNFLGAME-26AUG27LARLAC-LAC",
+     "rulesName": "Los Angeles R",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26AUG27LARLAC-LAR",
+     "rulesName": "Los Angeles R",
+     "role": "away"
+    },
+    {
      "ticker": "KXNFLGAME-26SEP10SFLAR-SF",
      "rulesName": "Los Angeles R",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "LV",
+   "kalshiName": "Las Vegas",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "13",
+    "abbr": "LV",
+    "displayName": "Las Vegas Raiders",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26AUG27SFLV-SF",
+     "rulesName": "Las Vegas",
      "role": "home"
     }
    ]
@@ -884,6 +944,36 @@
     {
      "ticker": "KXNFLGAME-26SEP13DALNYG-DAL",
      "rulesName": "New York G",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP13DALNYG-NYG",
+     "rulesName": "New York G",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "PHI",
+   "kalshiName": "Philadelphia",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "21",
+    "abbr": "PHI",
+    "displayName": "Philadelphia Eagles",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP13WASPHI-PHI",
+     "rulesName": "Philadelphia",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP13WASPHI-WAS",
+     "rulesName": "Philadelphia",
      "role": "home"
     }
    ]
@@ -932,8 +1022,38 @@
      "role": "away"
     },
     {
+     "ticker": "KXNFLGAME-26AUG27SFLV-SF",
+     "rulesName": "San Francisco",
+     "role": "away"
+    },
+    {
      "ticker": "KXNFLGAME-26SEP10SFLAR-SF",
      "rulesName": "San Francisco",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "WAS",
+   "kalshiName": "Washington",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "28",
+    "abbr": "WSH",
+    "displayName": "Washington Commanders",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP13WASPHI-PHI",
+     "rulesName": "Washington",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP13WASPHI-WAS",
+     "rulesName": "Washington",
      "role": "away"
     }
    ]
@@ -1055,6 +1175,16 @@
      "ticker": "KXNHLGAME-26SEP19CHIMIN-CHI",
      "rulesName": "Chicago",
      "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP21MINCHI-CHI",
+     "rulesName": "Chicago",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP21MINCHI-MIN",
+     "rulesName": "Chicago",
+     "role": "home"
     }
    ]
   },
@@ -1175,6 +1305,126 @@
      "ticker": "KXNHLGAME-26SEP19CHIMIN-CHI",
      "rulesName": "Minnesota",
      "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP21MINCHI-CHI",
+     "rulesName": "Minnesota",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP21MINCHI-MIN",
+     "rulesName": "Minnesota",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "MTL",
+   "kalshiName": "Montreal",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "10",
+    "abbr": "MTL",
+    "displayName": "Montreal Canadiens",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP21OTTMTL-MTL",
+     "rulesName": "Montreal",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "NJ",
+   "kalshiName": "New Jersey",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "11",
+    "abbr": "NJ",
+    "displayName": "New Jersey Devils",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP21NYRNJ-NJ",
+     "rulesName": "New Jersey",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP21NYRNJ-NYR",
+     "rulesName": "New Jersey",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "NYR",
+   "kalshiName": "New York R",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "13",
+    "abbr": "NYR",
+    "displayName": "New York Rangers",
+    "matchedBy": "displayName-qualifier-letter"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP21NYRNJ-NJ",
+     "rulesName": "New York R",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP21NYRNJ-NYR",
+     "rulesName": "New York R",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "OTT",
+   "kalshiName": "Ottawa",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "14",
+    "abbr": "OTT",
+    "displayName": "Ottawa Senators",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP21OTTMTL-MTL",
+     "rulesName": "Ottawa",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "PHI",
+   "kalshiName": "Philadelphia",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "15",
+    "abbr": "PHI",
+    "displayName": "Philadelphia Flyers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP21PHIWSH-PHI",
+     "rulesName": "Philadelphia",
+     "role": "away"
     }
    ]
   },
@@ -1350,6 +1600,11 @@
      "ticker": "KXNHLGAME-26SEP20WSHBOS-BOS",
      "rulesName": "Washington",
      "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP21PHIWSH-PHI",
+     "rulesName": "Washington",
+     "role": "home"
     }
    ]
   },
@@ -1480,6 +1735,21 @@
   },
   {
    "league": "wnba",
+   "kalshiCode": "PHX",
+   "kalshiName": "Phoenix women's",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26AUG27WSHPHX-WSH",
+     "rulesName": "Phoenix women's",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
    "kalshiCode": "SEA",
    "kalshiName": "Seattle women's",
    "conflictWith": null,
@@ -1490,6 +1760,26 @@
      "ticker": "KXWNBAGAME-26AUG10CHISEA-CHI",
      "rulesName": "Seattle women's",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
+   "kalshiCode": "WSH",
+   "kalshiName": "Washington",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "16",
+    "abbr": "WSH",
+    "displayName": "Washington Mystics",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26AUG27WSHPHX-WSH",
+     "rulesName": "Washington",
+     "role": "away"
     }
    ]
   }
@@ -1504,6 +1794,34 @@
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
+   "ticker": "KXNFLGAME-26AUG20SFLAC-LAC",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26AUG22PHINE-NE",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26AUG22PHINE-PHI",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26AUG23SEATEN-SEA",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26AUG23SEATEN-TEN",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26SEP17DETBUF-BUF",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26SEP20GBNYJ-GB",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
    "ticker": "KXNFLGAME-26SEP20INDKC-IND",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
@@ -1512,7 +1830,31 @@
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
+   "ticker": "KXNFLGAME-26SEP20LVLAC-LV",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26SEP20PHITEN-PHI",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26SEP20WASDAL-WAS",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
    "ticker": "KXWNBAGAME-26AUG14DALIND-IND",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXWNBAGAME-26AUG17DALGS-GS",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
