@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-23T02:32:40.048Z",
+ "generatedAt": "2026-09-23T08:11:44.972Z",
  "rows": [
   {
    "league": "nba",
@@ -435,6 +435,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "NDSU",
+   "kalshiName": "North Dakota St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03WYONDSU-NDSU",
+     "rulesName": "North Dakota St.",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "NHC",
    "kalshiName": "New Haven",
    "conflictWith": null,
@@ -775,6 +790,21 @@
      "ticker": "KXNCAAFGAME-26SEP26MHUWKU-WKU",
      "rulesName": "Western Kentucky",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "WYO",
+   "kalshiName": "Wyoming",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03WYONDSU-NDSU",
+     "rulesName": "Wyoming",
+     "role": "away"
     }
    ]
   },
@@ -1155,6 +1185,16 @@
      "ticker": "KXNHLGAME-26SEP20CARFLA-CAR",
      "rulesName": "Carolina",
      "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP22FLACAR-CAR",
+     "rulesName": "Carolina",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP22FLACAR-FLA",
+     "rulesName": "Carolina",
+     "role": "home"
     }
    ]
   },
@@ -1245,6 +1285,26 @@
   },
   {
    "league": "nhl",
+   "kalshiCode": "DET",
+   "kalshiName": "Detroit",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "5",
+    "abbr": "DET",
+    "displayName": "Detroit Red Wings",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP22DETPIT-PIT",
+     "rulesName": "Detroit",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
    "kalshiCode": "EDM",
    "kalshiName": "Edmonton",
    "conflictWith": null,
@@ -1285,6 +1345,16 @@
      "ticker": "KXNHLGAME-26SEP20CARFLA-CAR",
      "rulesName": "Florida",
      "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP22FLACAR-CAR",
+     "rulesName": "Florida",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP22FLACAR-FLA",
+     "rulesName": "Florida",
+     "role": "away"
     }
    ]
   },
@@ -1308,6 +1378,16 @@
     },
     {
      "ticker": "KXNHLGAME-26SEP19VGKLA-LA",
+     "rulesName": "Los Angeles",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP22UTALA-LA",
+     "rulesName": "Los Angeles",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP22UTALA-UTA",
      "rulesName": "Los Angeles",
      "role": "home"
     }
@@ -1460,6 +1540,26 @@
   },
   {
    "league": "nhl",
+   "kalshiCode": "PIT",
+   "kalshiName": "Pittsburgh",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "16",
+    "abbr": "PIT",
+    "displayName": "Pittsburgh Penguins",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP22DETPIT-PIT",
+     "rulesName": "Pittsburgh",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
    "kalshiCode": "SEA",
    "kalshiName": "Seattle",
    "conflictWith": null,
@@ -1510,6 +1610,16 @@
      "ticker": "KXNHLGAME-26SEP20SJANA-SJ",
      "rulesName": "San Jose",
      "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP22VGKSJ-SJ",
+     "rulesName": "San Jose",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP22VGKSJ-VGK",
+     "rulesName": "San Jose",
+     "role": "home"
     }
    ]
   },
@@ -1535,6 +1645,31 @@
      "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
      "rulesName": "St. Louis",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "UTA",
+   "kalshiName": "Utah",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "129764",
+    "abbr": "UTAH",
+    "displayName": "Utah Mammoth",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP22UTALA-LA",
+     "rulesName": "Utah",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP22UTALA-UTA",
+     "rulesName": "Utah",
+     "role": "away"
     }
    ]
   },
@@ -1578,6 +1713,16 @@
     },
     {
      "ticker": "KXNHLGAME-26SEP19VGKLA-LA",
+     "rulesName": "Vegas",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP22VGKSJ-SJ",
+     "rulesName": "Vegas",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP22VGKSJ-VGK",
      "rulesName": "Vegas",
      "role": "away"
     }
@@ -1889,6 +2034,10 @@
   },
   {
    "ticker": "KXWNBAGAME-26AUG24GSMIN-MIN",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXWNBAGAME-26SEP22GSPDX-PDX",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   }
  ]

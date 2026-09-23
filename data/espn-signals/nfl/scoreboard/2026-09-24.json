@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-24",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260924"
+  ]
+ },
+ "captures": [
+  "2026-09-23T08:11:44.267Z"
+ ],
+ "events": {
+  "401872948": {
+   "eventId": "401872948",
+   "date": "2026-09-25T00:15Z",
+   "easternDate": "2026-09-24",
+   "name": "Atlanta Falcons at Green Bay Packers",
+   "shortName": "ATL @ GB",
+   "week": 3,
+   "venue": "Lambeau Field",
+   "homeAbbr": "GB",
+   "homeTeamId": "9",
+   "homeName": "Green Bay Packers",
+   "awayAbbr": "ATL",
+   "awayTeamId": "1",
+   "awayName": "Atlanta Falcons",
+   "firstCapturedAt": "2026-09-23T08:11:44.267Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "GB -5.5",
+    "spread": -5.5,
+    "overUnder": 43.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.267Z",
+     "last_seen_at": "2026-09-23T08:11:44.267Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "0-2"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-23T08:11:44.267Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260924"
+}

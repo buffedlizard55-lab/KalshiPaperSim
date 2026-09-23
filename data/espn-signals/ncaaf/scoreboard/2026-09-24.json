@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-24",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260924"
+  ]
+ },
+ "captures": [
+  "2026-09-23T08:11:44.348Z"
+ ],
+ "events": {
+  "401869941": {
+   "eventId": "401869941",
+   "date": "2026-09-24T23:30Z",
+   "easternDate": "2026-09-24",
+   "name": "Liberty Flames at Coastal Carolina Chanticleers",
+   "shortName": "LIB @ CCU",
+   "week": 4,
+   "venue": "Brooks Stadium (SC)",
+   "homeAbbr": "CCU",
+   "homeTeamId": "324",
+   "homeName": "Coastal Carolina Chanticleers",
+   "awayAbbr": "LIB",
+   "awayTeamId": "2335",
+   "awayName": "Liberty Flames",
+   "firstCapturedAt": "2026-09-23T08:11:44.348Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "LIB -2.5",
+    "spread": 2.5,
+    "overUnder": 50.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.348Z",
+     "last_seen_at": "2026-09-23T08:11:44.348Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-2",
+      "away": "2-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-23T08:11:44.348Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260924"
+}

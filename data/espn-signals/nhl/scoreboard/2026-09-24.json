@@ -1,0 +1,446 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-24",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260924"
+  ]
+ },
+ "captures": [
+  "2026-09-23T08:11:44.434Z"
+ ],
+ "events": {
+  "401878103": {
+   "eventId": "401878103",
+   "date": "2026-09-25T01:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Edmonton Oilers at Vancouver Canucks",
+   "shortName": "EDM @ VAN",
+   "week": null,
+   "venue": "Rogers Arena",
+   "homeAbbr": "VAN",
+   "homeTeamId": "22",
+   "homeName": "Vancouver Canucks",
+   "awayAbbr": "EDM",
+   "awayTeamId": "6",
+   "awayName": "Edmonton Oilers",
+   "firstCapturedAt": "2026-09-23T08:11:44.434Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.434Z",
+     "last_seen_at": "2026-09-23T08:11:44.434Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-2-0",
+      "away": "2-0-0"
+     }
+    }
+   ]
+  },
+  "401879332": {
+   "eventId": "401879332",
+   "date": "2026-09-25T01:40Z",
+   "easternDate": "2026-09-24",
+   "name": "Calgary Flames at Seattle Kraken",
+   "shortName": "CGY @ SEA",
+   "week": null,
+   "venue": "Climate Pledge Arena",
+   "homeAbbr": "SEA",
+   "homeTeamId": "124292",
+   "homeName": "Seattle Kraken",
+   "awayAbbr": "CGY",
+   "awayTeamId": "3",
+   "awayName": "Calgary Flames",
+   "firstCapturedAt": "2026-09-23T08:11:44.434Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.434Z",
+     "last_seen_at": "2026-09-23T08:11:44.434Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-0-0",
+      "away": "1-1-0"
+     }
+    }
+   ]
+  },
+  "401879363": {
+   "eventId": "401879363",
+   "date": "2026-09-24T23:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Boston Bruins at Philadelphia Flyers",
+   "shortName": "BOS @ PHI",
+   "week": null,
+   "venue": "Xfinity Mobile Arena",
+   "homeAbbr": "PHI",
+   "homeTeamId": "15",
+   "homeName": "Philadelphia Flyers",
+   "awayAbbr": "BOS",
+   "awayTeamId": "1",
+   "awayName": "Boston Bruins",
+   "firstCapturedAt": "2026-09-23T08:11:44.434Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.434Z",
+     "last_seen_at": "2026-09-23T08:11:44.434Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-2-0",
+      "away": "2-0-0"
+     }
+    }
+   ]
+  },
+  "401879367": {
+   "eventId": "401879367",
+   "date": "2026-09-25T02:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Utah Mammoth at Vegas Golden Knights",
+   "shortName": "UTA @ VGK",
+   "week": null,
+   "venue": "T-Mobile Arena",
+   "homeAbbr": "VGK",
+   "homeTeamId": "37",
+   "homeName": "Vegas Golden Knights",
+   "awayAbbr": "UTA",
+   "awayTeamId": "129764",
+   "awayName": "Utah Mammoth",
+   "firstCapturedAt": "2026-09-23T08:11:44.434Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.434Z",
+     "last_seen_at": "2026-09-23T08:11:44.434Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-0-0",
+      "away": "1-1-0"
+     }
+    }
+   ]
+  },
+  "401879370": {
+   "eventId": "401879370",
+   "date": "2026-09-25T02:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Anaheim Ducks at San Jose Sharks",
+   "shortName": "ANA @ SJ",
+   "week": null,
+   "venue": "SAP Center at San Jose",
+   "homeAbbr": "SJ",
+   "homeTeamId": "18",
+   "homeName": "San Jose Sharks",
+   "awayAbbr": "ANA",
+   "awayTeamId": "25",
+   "awayName": "Anaheim Ducks",
+   "firstCapturedAt": "2026-09-23T08:11:44.434Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.434Z",
+     "last_seen_at": "2026-09-23T08:11:44.434Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-1-1",
+      "away": "1-0-0"
+     }
+    }
+   ]
+  },
+  "401879452": {
+   "eventId": "401879452",
+   "date": "2026-09-24T23:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Buffalo Sabres at Detroit Red Wings",
+   "shortName": "BUF @ DET",
+   "week": null,
+   "venue": "Little Caesars Arena",
+   "homeAbbr": "DET",
+   "homeTeamId": "5",
+   "homeName": "Detroit Red Wings",
+   "awayAbbr": "BUF",
+   "awayTeamId": "2",
+   "awayName": "Buffalo Sabres",
+   "firstCapturedAt": "2026-09-23T08:11:44.434Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.434Z",
+     "last_seen_at": "2026-09-23T08:11:44.434Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-0-1",
+      "away": "1-1-0"
+     }
+    }
+   ]
+  },
+  "401879455": {
+   "eventId": "401879455",
+   "date": "2026-09-24T23:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Pittsburgh Penguins at Columbus Blue Jackets",
+   "shortName": "PIT @ CBJ",
+   "week": null,
+   "venue": "Nationwide Arena",
+   "homeAbbr": "CBJ",
+   "homeTeamId": "29",
+   "homeName": "Columbus Blue Jackets",
+   "awayAbbr": "PIT",
+   "awayTeamId": "16",
+   "awayName": "Pittsburgh Penguins",
+   "firstCapturedAt": "2026-09-23T08:11:44.434Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.434Z",
+     "last_seen_at": "2026-09-23T08:11:44.434Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1-0",
+      "away": "1-1-0"
+     }
+    }
+   ]
+  },
+  "401879646": {
+   "eventId": "401879646",
+   "date": "2026-09-24T23:00Z",
+   "easternDate": "2026-09-24",
+   "name": "New Jersey Devils at New York Rangers",
+   "shortName": "NJ @ NYR",
+   "week": null,
+   "venue": "Madison Square Garden",
+   "homeAbbr": "NYR",
+   "homeTeamId": "13",
+   "homeName": "New York Rangers",
+   "awayAbbr": "NJ",
+   "awayTeamId": "11",
+   "awayName": "New Jersey Devils",
+   "firstCapturedAt": "2026-09-23T08:11:44.434Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.434Z",
+     "last_seen_at": "2026-09-23T08:11:44.434Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-2-0",
+      "away": "2-0-0"
+     }
+    }
+   ]
+  },
+  "401879934": {
+   "eventId": "401879934",
+   "date": "2026-09-24T23:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Nashville Predators at Carolina Hurricanes",
+   "shortName": "NSH @ CAR",
+   "week": null,
+   "venue": "First Horizon Coliseum",
+   "homeAbbr": "CAR",
+   "homeTeamId": "7",
+   "homeName": "Carolina Hurricanes",
+   "awayAbbr": "NSH",
+   "awayTeamId": "27",
+   "awayName": "Nashville Predators",
+   "firstCapturedAt": "2026-09-23T08:11:44.434Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.434Z",
+     "last_seen_at": "2026-09-23T08:11:44.434Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1-0",
+      "away": "1-1-0"
+     }
+    }
+   ]
+  },
+  "401881133": {
+   "eventId": "401881133",
+   "date": "2026-09-24T23:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Florida Panthers at Tampa Bay Lightning",
+   "shortName": "FLA @ TB",
+   "week": null,
+   "venue": "Benchmark International Arena",
+   "homeAbbr": "TB",
+   "homeTeamId": "20",
+   "homeName": "Tampa Bay Lightning",
+   "awayAbbr": "FLA",
+   "awayTeamId": "26",
+   "awayName": "Florida Panthers",
+   "firstCapturedAt": "2026-09-23T08:11:44.434Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.434Z",
+     "last_seen_at": "2026-09-23T08:11:44.434Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-0-1",
+      "away": "1-0-1"
+     }
+    }
+   ]
+  },
+  "401886260": {
+   "eventId": "401886260",
+   "date": "2026-09-25T00:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Chicago Blackhawks at St. Louis Blues",
+   "shortName": "CHI @ STL",
+   "week": null,
+   "venue": "Enterprise Center",
+   "homeAbbr": "STL",
+   "homeTeamId": "19",
+   "homeName": "St. Louis Blues",
+   "awayAbbr": "CHI",
+   "awayTeamId": "4",
+   "awayName": "Chicago Blackhawks",
+   "firstCapturedAt": "2026-09-23T08:11:44.434Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.434Z",
+     "last_seen_at": "2026-09-23T08:11:44.434Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-2-0",
+      "away": "1-0-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-23T08:11:44.434Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260924"
+}

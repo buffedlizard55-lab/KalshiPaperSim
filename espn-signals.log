@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-09-23T02:32:37.838Z",
+ "startedAt": "2026-09-23T08:11:43.799Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -19,19 +19,19 @@
      "playerRecords": 800
     },
     "scoreboard": {
-     "2026-09-22": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260922",
-      "ok": true,
-      "status": 200,
-      "events": 0,
-      "stateRows": 0
-     },
      "2026-09-23": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260923",
       "ok": true,
       "status": 200,
       "events": 0,
       "stateRows": 0
+     },
+     "2026-09-24": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260924",
+      "ok": true,
+      "status": 200,
+      "events": 1,
+      "stateRows": 1
      }
     }
    }
@@ -52,15 +52,15 @@
      "playerRecords": 75
     },
     "scoreboard": {
-     "2026-09-22": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20260922",
+     "2026-09-23": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20260923",
       "ok": true,
       "status": 200,
       "events": 0,
       "stateRows": 0
      },
-     "2026-09-23": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20260923",
+     "2026-09-24": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20260924",
       "ok": true,
       "status": 200,
       "events": 0,
@@ -85,19 +85,19 @@
      "playerRecords": 3
     },
     "scoreboard": {
-     "2026-09-22": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260922",
-      "ok": true,
-      "status": 200,
-      "events": 0,
-      "stateRows": 0
-     },
      "2026-09-23": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260923",
       "ok": true,
       "status": 200,
       "events": 0,
       "stateRows": 0
+     },
+     "2026-09-24": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260924",
+      "ok": true,
+      "status": 200,
+      "events": 1,
+      "stateRows": 1
      }
     }
    }
@@ -118,15 +118,15 @@
      "playerRecords": 0
     },
     "scoreboard": {
-     "2026-09-22": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260922",
+     "2026-09-23": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260923",
       "ok": true,
       "status": 200,
       "events": 0,
       "stateRows": 0
      },
-     "2026-09-23": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260923",
+     "2026-09-24": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20260924",
       "ok": true,
       "status": 200,
       "events": 0,
@@ -148,22 +148,22 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 74
+     "playerRecords": 75
     },
     "scoreboard": {
-     "2026-09-22": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260922",
-      "ok": true,
-      "status": 200,
-      "events": 10,
-      "stateRows": 25
-     },
      "2026-09-23": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260923",
       "ok": true,
       "status": 200,
       "events": 4,
       "stateRows": 4
+     },
+     "2026-09-24": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260924",
+      "ok": true,
+      "status": 200,
+      "events": 11,
+      "stateRows": 11
      }
     }
    }
@@ -184,19 +184,19 @@
      "playerRecords": 44
     },
     "scoreboard": {
-     "2026-09-22": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260922",
-      "ok": true,
-      "status": 200,
-      "events": 5,
-      "stateRows": 11
-     },
      "2026-09-23": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260923",
       "ok": true,
       "status": 200,
       "events": 2,
       "stateRows": 2
+     },
+     "2026-09-24": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260924",
+      "ok": true,
+      "status": 200,
+      "events": 5,
+      "stateRows": 5
      }
     }
    }
@@ -204,69 +204,69 @@
  },
  "errors": [],
  "codeMap": {
-  "rows": 85,
-  "matched": 48,
-  "unmapped": 37
+  "rows": 90,
+  "matched": 51,
+  "unmapped": 39
  },
- "finishedAt": "2026-09-23T02:32:40.049Z"
+ "finishedAt": "2026-09-23T08:11:44.972Z"
 }
 {
  "ok": true,
  "problems": [],
  "summary": {
-  "scoreboards": 18,
-  "injuries": 12,
+  "scoreboards": 24,
+  "injuries": 18,
   "teams": 209,
-  "codeRows": 85
+  "codeRows": 90
  }
 }
-✓ src/accumulated-history.js — 188 market(s), 13451 bar(s), 11434.2 KB
+✓ src/accumulated-history.js — 188 market(s), 13565 bar(s), 12145.2 KB
 ✓ src/forecast-data.js — 9 location(s), 245 snapshot(s), 491.6 KB
-✓ src/fda-signal-data.js — 6 subject(s), 74 snapshot(s), 55.3 KB
-✓ src/mlb-signal-data.js — 4 date file(s), 49 game(s), 144 state row(s), 103.0 KB
-✓ src/espn-signal-data.js — 7 league(s), 32 event(s), 2419.9 KB
+✓ src/fda-signal-data.js — 6 subject(s), 80 snapshot(s), 59.3 KB
+✓ src/mlb-signal-data.js — 4 date file(s), 49 game(s), 158 state row(s), 108.2 KB
+✓ src/espn-signal-data.js — 7 league(s), 50 event(s), 3480.8 KB
 ✓ src/mlb-pregame-data.js — 0 date file(s), 0 row(s), 2.1 KB (no predictions yet — MLBPreGame_ModelEdge abstains)
 ✓ src/form4-signal-data.js — 0 issuer(s), 0 filing(s), 1.3 KB (no archive yet — insider strategies abstain)
-    JPMCEOCHANGE-27: 287 bar(s) + market object
+    JPMCEOCHANGE-27: 288 bar(s) + market object
     KXAAPLCEOCHANGE-26: 289 bar(s) + market object
     KXBTC15M-26SEP181445-45: 1 bar(s) + market object
-    KXBTCY-27JAN0100-B47500: 209 bar(s) + market object
-    KXBTCY-27JAN0100-B52500: 209 bar(s) + market object
-    KXBTCY-27JAN0100-B57500: 209 bar(s) + market object
-    KXBTCY-27JAN0100-B62500: 209 bar(s) + market object
-    KXBTCY-27JAN0100-B67500: 209 bar(s) + market object
-    KXBTCY-27JAN0100-B72500: 209 bar(s) + market object
-    KXBTCY-27JAN0100-B77500: 209 bar(s) + market object
-    KXBTCY-27JAN0100-B82500: 209 bar(s) + market object
-    KXBTCY-27JAN0100-B87500: 209 bar(s) + market object
-    KXBTCY-27JAN0100-T149999.99: 209 bar(s) + market object
+    KXBTCY-27JAN0100-B47500: 210 bar(s) + market object
+    KXBTCY-27JAN0100-B52500: 210 bar(s) + market object
+    KXBTCY-27JAN0100-B57500: 210 bar(s) + market object
+    KXBTCY-27JAN0100-B62500: 210 bar(s) + market object
+    KXBTCY-27JAN0100-B67500: 210 bar(s) + market object
+    KXBTCY-27JAN0100-B72500: 210 bar(s) + market object
+    KXBTCY-27JAN0100-B77500: 210 bar(s) + market object
+    KXBTCY-27JAN0100-B82500: 210 bar(s) + market object
+    KXBTCY-27JAN0100-B87500: 210 bar(s) + market object
+    KXBTCY-27JAN0100-T149999.99: 210 bar(s) + market object
     KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU: 16 bar(s) + market object
-    KXFDAANNOUNCE-BPC-26NOV01: 172 bar(s) + market object
+    KXFDAANNOUNCE-BPC-26NOV01: 173 bar(s) + market object
     KXFDAANNOUNCE-BPC-26SEP01: 161 bar(s) + market object
-    KXFDAANNOUNCE-BPC-27JAN01: 171 bar(s) + market object
-    KXFDAAPPROVALDATECMPS-360-27JAN01: 106 bar(s) + market object
-    KXFDAAPPROVALDATECMPS-360-27JUL01: 154 bar(s) + market object
-    KXFDAAPPROVALDATECMPS-360-27MAR01: 109 bar(s) + market object
-    KXFDAAPPROVALDATECMPS-360-27OCT01: 145 bar(s) + market object
-    KXFDAAPPROVALDATECMPS-360-28JAN01: 123 bar(s) + market object
+    KXFDAANNOUNCE-BPC-27JAN01: 172 bar(s) + market object
+    KXFDAAPPROVALDATECMPS-360-27JAN01: 107 bar(s) + market object
+    KXFDAAPPROVALDATECMPS-360-27JUL01: 155 bar(s) + market object
+    KXFDAAPPROVALDATECMPS-360-27MAR01: 110 bar(s) + market object
+    KXFDAAPPROVALDATECMPS-360-27OCT01: 146 bar(s) + market object
+    KXFDAAPPROVALDATECMPS-360-28JAN01: 124 bar(s) + market object
     KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH: 400 bar(s) + market object
-    KXFDAAPPROVE-CAG-26OCT01: 90 bar(s) + market object
+    KXFDAAPPROVE-CAG-26OCT01: 91 bar(s) + market object
     KXFDAAPPROVE-CAM-26OCT01: 91 bar(s) + market object
     KXFDAAPPROVE-CAM-27JAN01: 84 bar(s) + market object
-    KXFDAAPPROVE-CYT-26OCT01: 83 bar(s) + market object
+    KXFDAAPPROVE-CYT-26OCT01: 84 bar(s) + market object
     KXFDAAPPROVE-GED-26AUG01: 55 bar(s) + market object
-    KXFDAAPPROVE-MDMA-30JAN01: 98 bar(s) + market object
-    KXFDARETATRUTIDE-RET-27JAN01: 125 bar(s) + market object
-    KXFDARETATRUTIDE-RET-27JUL01: 131 bar(s) + market object
-    KXFDARETATRUTIDE-RET-28JAN01: 108 bar(s) + market object
-    KXFDARETATRUTIDE-RET-28JUL01: 92 bar(s) + market object
-    KXFDARETATRUTIDE-RET-29JAN01: 100 bar(s) + market object
-    KXFED-27APR-T3.00: 32 bar(s) + market object
-    KXFED-27APR-T3.25: 33 bar(s) + market object
-    KXFED-27APR-T3.50: 33 bar(s) + market object
-    KXFED-27APR-T3.75: 33 bar(s) + market object
-    KXFED-27APR-T4.00: 33 bar(s) + market object
-    KXFED-27APR-T4.25: 32 bar(s) + market object
+    KXFDAAPPROVE-MDMA-30JAN01: 99 bar(s) + market object
+    KXFDARETATRUTIDE-RET-27JAN01: 126 bar(s) + market object
+    KXFDARETATRUTIDE-RET-27JUL01: 132 bar(s) + market object
+    KXFDARETATRUTIDE-RET-28JAN01: 109 bar(s) + market object
+    KXFDARETATRUTIDE-RET-28JUL01: 93 bar(s) + market object
+    KXFDARETATRUTIDE-RET-29JAN01: 101 bar(s) + market object
+    KXFED-27APR-T3.00: 33 bar(s) + market object
+    KXFED-27APR-T3.25: 34 bar(s) + market object
+    KXFED-27APR-T3.50: 34 bar(s) + market object
+    KXFED-27APR-T3.75: 34 bar(s) + market object
+    KXFED-27APR-T4.00: 34 bar(s) + market object
+    KXFED-27APR-T4.25: 33 bar(s) + market object
     KXHIGHDEN-26SEP17-T82: 3 bar(s) + market object
     KXHIGHNY-26SEP17-B82.5: 3 bar(s) + market object
     KXHIGHTPHX-26SEP17-B91.5: 3 bar(s) + market object
@@ -278,22 +278,22 @@
     KXINXU-26SEP18H1600-T7724.9999: 1 bar(s) + market object
     KXINXU-26SEP18H1600-T7729.9999: 1 bar(s) + market object
     KXINXU-26SEP18H1600-T7734.9999: 1 bar(s) + market object
-    KXINXY-26DEC31H1600-B6900: 269 bar(s) + market object
-    KXINXY-26DEC31H1600-B7100: 270 bar(s) + market object
-    KXINXY-26DEC31H1600-B7300: 273 bar(s) + market object
-    KXINXY-26DEC31H1600-B7500: 272 bar(s) + market object
-    KXINXY-26DEC31H1600-B7700: 272 bar(s) + market object
-    KXINXY-26DEC31H1600-B7900: 272 bar(s) + market object
-    KXINXY-26DEC31H1600-B8100: 272 bar(s) + market object
-    KXINXY-26DEC31H1600-B8300: 267 bar(s) + market object
-    KXINXY-26DEC31H1600-B8900: 251 bar(s) + market object
-    KXINXY-26DEC31H1600-T4000: 259 bar(s) + market object
-    KXMLB-26-BOS: 33 bar(s) + market object
-    KXMLB-26-LAD: 33 bar(s) + market object
-    KXMLB-26-MIL: 33 bar(s) + market object
-    KXMLB-26-NYY: 33 bar(s) + market object
-    KXMLB-26-SD: 33 bar(s) + market object
-    KXMLB-26-SEA: 33 bar(s) + market object
+    KXINXY-26DEC31H1600-B6900: 270 bar(s) + market object
+    KXINXY-26DEC31H1600-B7100: 271 bar(s) + market object
+    KXINXY-26DEC31H1600-B7300: 274 bar(s) + market object
+    KXINXY-26DEC31H1600-B7500: 273 bar(s) + market object
+    KXINXY-26DEC31H1600-B7700: 273 bar(s) + market object
+    KXINXY-26DEC31H1600-B7900: 273 bar(s) + market object
+    KXINXY-26DEC31H1600-B8100: 273 bar(s) + market object
+    KXINXY-26DEC31H1600-B8300: 268 bar(s) + market object
+    KXINXY-26DEC31H1600-B8900: 252 bar(s) + market object
+    KXINXY-26DEC31H1600-T4000: 260 bar(s) + market object
+    KXMLB-26-BOS: 34 bar(s) + market object
+    KXMLB-26-LAD: 34 bar(s) + market object
+    KXMLB-26-MIL: 34 bar(s) + market object
+    KXMLB-26-NYY: 34 bar(s) + market object
+    KXMLB-26-SD: 34 bar(s) + market object
+    KXMLB-26-SEA: 34 bar(s) + market object
     KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2: 1 bar(s) + market object
     KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1: 1 bar(s) + market object
     KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2: 1 bar(s) + market object
@@ -313,54 +313,54 @@
     KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE2: 2 bar(s) + market object
     KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3: 2 bar(s) + market object
     KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE5: 2 bar(s) + market object
-    KXNASDAQ100Y-26DEC31H1600-B25750: 259 bar(s) + market object
-    KXNASDAQ100Y-26DEC31H1600-B29750: 253 bar(s) + market object
-    KXNASDAQ100Y-26DEC31H1600-B30250: 257 bar(s) + market object
-    KXNASDAQ100Y-26DEC31H1600-B30750: 255 bar(s) + market object
-    KXNASDAQ100Y-26DEC31H1600-B31250: 251 bar(s) + market object
-    KXNASDAQ100Y-26DEC31H1600-B31750: 254 bar(s) + market object
-    KXNASDAQ100Y-26DEC31H1600-B32250: 252 bar(s) + market object
-    KXNASDAQ100Y-26DEC31H1600-B32750: 252 bar(s) + market object
-    KXNASDAQ100Y-26DEC31H1600-T19000: 269 bar(s) + market object
-    KXNASDAQ100Y-26DEC31H1600-T33000: 268 bar(s) + market object
-    KXNBA-27-GSW: 33 bar(s) + market object
-    KXNBA-27-LAL: 33 bar(s) + market object
-    KXNBA-27-MIA: 33 bar(s) + market object
-    KXNBA-27-MIN: 33 bar(s) + market object
-    KXNBA-27-ORL: 33 bar(s) + market object
-    KXNBA-27-PHI: 33 bar(s) + market object
-    KXNBAEAST-27-CLE: 33 bar(s) + market object
-    KXNBAEAST-27-IND: 33 bar(s) + market object
-    KXNBAEAST-27-MIA: 33 bar(s) + market object
-    KXNBAEAST-27-NYK: 33 bar(s) + market object
-    KXNBAEAST-27-PHI: 33 bar(s) + market object
-    KXNBAEAST-27-TOR: 33 bar(s) + market object
-    KXNBAGAME-26OCT20BOSDET-BOS: 33 bar(s) + market object
-    KXNBAGAME-26OCT20BOSDET-DET: 33 bar(s) + market object
-    KXNBAGAME-26OCT20OKCSAS-OKC: 33 bar(s) + market object
-    KXNBAGAME-26OCT20OKCSAS-SAS: 33 bar(s) + market object
-    KXNBAGAME-26OCT20PHINYK-NYK: 33 bar(s) + market object
-    KXNBAGAME-26OCT20PHINYK-PHI: 33 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B25750: 260 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B29750: 254 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B30250: 258 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B30750: 256 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B31250: 252 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B31750: 255 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B32250: 253 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-B32750: 253 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-T19000: 270 bar(s) + market object
+    KXNASDAQ100Y-26DEC31H1600-T33000: 269 bar(s) + market object
+    KXNBA-27-GSW: 34 bar(s) + market object
+    KXNBA-27-LAL: 34 bar(s) + market object
+    KXNBA-27-MIA: 34 bar(s) + market object
+    KXNBA-27-MIN: 34 bar(s) + market object
+    KXNBA-27-ORL: 34 bar(s) + market object
+    KXNBA-27-PHI: 34 bar(s) + market object
+    KXNBAEAST-27-CLE: 34 bar(s) + market object
+    KXNBAEAST-27-IND: 34 bar(s) + market object
+    KXNBAEAST-27-MIA: 34 bar(s) + market object
+    KXNBAEAST-27-NYK: 34 bar(s) + market object
+    KXNBAEAST-27-PHI: 34 bar(s) + market object
+    KXNBAEAST-27-TOR: 34 bar(s) + market object
+    KXNBAGAME-26OCT20BOSDET-BOS: 34 bar(s) + market object
+    KXNBAGAME-26OCT20BOSDET-DET: 34 bar(s) + market object
+    KXNBAGAME-26OCT20OKCSAS-OKC: 34 bar(s) + market object
+    KXNBAGAME-26OCT20OKCSAS-SAS: 34 bar(s) + market object
+    KXNBAGAME-26OCT20PHINYK-NYK: 34 bar(s) + market object
+    KXNBAGAME-26OCT20PHINYK-PHI: 34 bar(s) + market object
     KXNBAWEST-27-DAL: 25 bar(s) + market object
-    KXNBAWEST-27-GSW: 33 bar(s) + market object
-    KXNBAWEST-27-LAL: 33 bar(s) + market object
-    KXNBAWEST-27-MIN: 33 bar(s) + market object
-    KXNBAWEST-27-SAS: 33 bar(s) + market object
-    KXNBAWEST-27-UTA: 30 bar(s) + market object
-    KXNCAAF-27-LSU: 33 bar(s) + market object
-    KXNCAAF-27-MIA: 33 bar(s) + market object
-    KXNCAAF-27-MISS: 33 bar(s) + market object
-    KXNCAAF-27-OKLA: 33 bar(s) + market object
-    KXNCAAF-27-ORE: 33 bar(s) + market object
-    KXNCAAF-27-TEX: 33 bar(s) + market object
-    KXNCAAFGAME-26SEP26CARKFSU-FSU: 10 bar(s) + market object
-    KXNCAAFGAME-26SEP26CMUMIA-CMU: 10 bar(s) + market object
-    KXNCAAFGAME-26SEP26CMUMIA-MIA: 8 bar(s) + market object
-    KXNCAAFGAME-26SEP26ILLOSU-OSU: 10 bar(s) + market object
-    KXNCAAFGAME-26SEP26MOSUSMU-SMU: 10 bar(s) + market object
-    KXNCAAFGAME-26SEP26OREUSC-ORE: 10 bar(s) + market object
-    KXNCAAFGAME-26SEP26SHSUTTU-TTU: 10 bar(s) + market object
-    KXNCAAFGAME-26SEP26TXAMLSU-LSU: 10 bar(s) + market object
+    KXNBAWEST-27-GSW: 34 bar(s) + market object
+    KXNBAWEST-27-LAL: 34 bar(s) + market object
+    KXNBAWEST-27-MIN: 34 bar(s) + market object
+    KXNBAWEST-27-SAS: 34 bar(s) + market object
+    KXNBAWEST-27-UTA: 31 bar(s) + market object
+    KXNCAAF-27-LSU: 34 bar(s) + market object
+    KXNCAAF-27-MIA: 34 bar(s) + market object
+    KXNCAAF-27-MISS: 34 bar(s) + market object
+    KXNCAAF-27-OKLA: 34 bar(s) + market object
+    KXNCAAF-27-ORE: 34 bar(s) + market object
+    KXNCAAF-27-TEX: 34 bar(s) + market object
+    KXNCAAFGAME-26SEP26CARKFSU-FSU: 11 bar(s) + market object
+    KXNCAAFGAME-26SEP26CMUMIA-CMU: 11 bar(s) + market object
+    KXNCAAFGAME-26SEP26CMUMIA-MIA: 9 bar(s) + market object
+    KXNCAAFGAME-26SEP26ILLOSU-OSU: 11 bar(s) + market object
+    KXNCAAFGAME-26SEP26MOSUSMU-SMU: 11 bar(s) + market object
+    KXNCAAFGAME-26SEP26OREUSC-ORE: 11 bar(s) + market object
+    KXNCAAFGAME-26SEP26SHSUTTU-TTU: 11 bar(s) + market object
+    KXNCAAFGAME-26SEP26TXAMLSU-LSU: 11 bar(s) + market object
     KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15: 5 bar(s) + market object
     KXNCAAFSPREAD-26SEP19NAUUTU-NAU25: 5 bar(s) + market object
     KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5: 5 bar(s) + market object
@@ -369,22 +369,22 @@
     KXNCAAFTOTAL-26SEP19MRMKTARL-59: 4 bar(s) + market object
     KXNCAAFTOTAL-26SEP19USDCP-57: 5 bar(s) + market object
     KXNCAAFTOTAL-26SEP19WAGCAL-61: 2 bar(s) + market object
-    KXNFLAFCCHAMP-27-BUF: 33 bar(s) + market object
-    KXNFLAFCCHAMP-27-CIN: 33 bar(s) + market object
-    KXNFLAFCCHAMP-27-DEN: 33 bar(s) + market object
-    KXNFLAFCCHAMP-27-HOU: 33 bar(s) + market object
-    KXNFLAFCCHAMP-27-KC: 33 bar(s) + market object
-    KXNFLAFCCHAMP-27-PIT: 33 bar(s) + market object
+    KXNFLAFCCHAMP-27-BUF: 34 bar(s) + market object
+    KXNFLAFCCHAMP-27-CIN: 34 bar(s) + market object
+    KXNFLAFCCHAMP-27-DEN: 34 bar(s) + market object
+    KXNFLAFCCHAMP-27-HOU: 34 bar(s) + market object
+    KXNFLAFCCHAMP-27-KC: 34 bar(s) + market object
+    KXNFLAFCCHAMP-27-PIT: 34 bar(s) + market object
     KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8: 5 bar(s) + market object
     KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14: 5 bar(s) + market object
     KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18: 4 bar(s) + market object
     KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26: 5 bar(s) + market object
-    KXNFLNFCCHAMP-27-DAL: 33 bar(s) + market object
-    KXNFLNFCCHAMP-27-LAR: 33 bar(s) + market object
-    KXNFLNFCCHAMP-27-MIN: 33 bar(s) + market object
-    KXNFLNFCCHAMP-27-NYG: 33 bar(s) + market object
-    KXNFLNFCCHAMP-27-SEA: 33 bar(s) + market object
-    KXNFLNFCCHAMP-27-SF: 33 bar(s) + market object
+    KXNFLNFCCHAMP-27-DAL: 34 bar(s) + market object
+    KXNFLNFCCHAMP-27-LAR: 34 bar(s) + market object
+    KXNFLNFCCHAMP-27-MIN: 34 bar(s) + market object
+    KXNFLNFCCHAMP-27-NYG: 34 bar(s) + market object
+    KXNFLNFCCHAMP-27-SEA: 34 bar(s) + market object
+    KXNFLNFCCHAMP-27-SF: 34 bar(s) + market object
     KXNFLSPREAD-26SEP20MIASF-SF14: 8 bar(s) + market object
     KXNFLSPREAD-26SEP20SEAARI-SEA4: 8 bar(s) + market object
     KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3: 4 bar(s) + market object
@@ -392,12 +392,12 @@
     KXNFLTOTAL-26SEP20MIASF-45: 8 bar(s) + market object
     KXNFLTOTAL-26SEP20SEAARI-41: 8 bar(s) + market object
     KXNFLTOTAL-26SEP20SEAARI-42: 8 bar(s) + market object
-    KXNHL-27-BUF: 33 bar(s) + market object
-    KXNHL-27-COL: 33 bar(s) + market object
-    KXNHL-27-FLA: 33 bar(s) + market object
-    KXNHL-27-MIN: 33 bar(s) + market object
-    KXNHL-27-MTL: 33 bar(s) + market object
-    KXNHL-27-SJ: 33 bar(s) + market object
+    KXNHL-27-BUF: 34 bar(s) + market object
+    KXNHL-27-COL: 34 bar(s) + market object
+    KXNHL-27-FLA: 34 bar(s) + market object
+    KXNHL-27-MIN: 34 bar(s) + market object
+    KXNHL-27-MTL: 34 bar(s) + market object
+    KXNHL-27-SJ: 34 bar(s) + market object
     KXNHLGAME-26SEP19CHIMIN-CHI: 4 bar(s) + market object
     KXNHLGAME-26SEP19CHIMIN-MIN: 4 bar(s) + market object
     KXNHLGAME-26SEP19DALSTL-DAL: 4 bar(s) + market object
@@ -412,14 +412,14 @@
     KXNHLTOTAL-26SEP19VGKLA-2: 5 bar(s) + market object
     KXNHLTOTAL-26SEP19WPGEDM-2: 4 bar(s) + market object
     KXNHLTOTAL-26SEP20SEACGY-2: 4 bar(s) + market object
-    KXOPENAICEOCHANGE-26: 264 bar(s) + market object
+    KXOPENAICEOCHANGE-26: 265 bar(s) + market object
     KXTESLACEOCHANGE-26: 0 bar(s) + market object
     TESLACEOCHANGE-26: 400 bar(s) + market object
-    intraday 1m: 421 market(s), 27426 shipped bar(s) (cap 400/market) from data/history/intraday/1m
-    intraday 60m: 436 market(s), 43594 shipped bar(s) (cap 400/market) from data/history/intraday/60m
-desk-data: 106 markets (100 open) · 1187 ladder captures · 6984 bars · 109 quoted-only · 1921 KB → src/desk-data.js
-desk-data: 83 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
-desk-data: capture bound — the store holds 13865 ladders (8145 non-empty) in 21 batches; this module keeps 1187 ladders in 21 batches (21 store batch(es) represented, 0 not) — 0 season round stamp(s) and 12677 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
+    intraday 1m: 450 market(s), 31730 shipped bar(s) (cap 400/market) from data/history/intraday/1m
+    intraday 60m: 451 market(s), 44839 shipped bar(s) (cap 400/market) from data/history/intraday/60m
+desk-data: 106 markets (100 open) · 1235 ladder captures · 6990 bars · 109 quoted-only · 1949 KB → src/desk-data.js
+desk-data: 84 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
+desk-data: capture bound — the store holds 14853 ladders (8469 non-empty) in 23 batches; this module keeps 1235 ladders in 23 batches (23 store batch(es) represented, 0 not) — 0 season round stamp(s) and 13617 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
   wrote VERIFICATION.md (99.5 KB)
   wrote IRREGULARITIES.md (123.1 KB)
   README.md AUTO blocks already up to date

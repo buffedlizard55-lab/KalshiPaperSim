@@ -1,0 +1,212 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-24",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260924"
+  ]
+ },
+ "captures": [
+  "2026-09-23T08:11:44.474Z"
+ ],
+ "events": {
+  "401857215": {
+   "eventId": "401857215",
+   "date": "2026-09-24T23:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Toronto Tempo at Connecticut Sun",
+   "shortName": "TOR @ CON",
+   "week": null,
+   "venue": "Mohegan Sun Arena",
+   "homeAbbr": "CON",
+   "homeTeamId": "18",
+   "homeName": "Connecticut Sun",
+   "awayAbbr": "TOR",
+   "awayTeamId": "131935",
+   "awayName": "Toronto Tempo",
+   "firstCapturedAt": "2026-09-23T08:11:44.474Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.474Z",
+     "last_seen_at": "2026-09-23T08:11:44.474Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "10-33",
+      "away": "11-32"
+     }
+    }
+   ]
+  },
+  "401857216": {
+   "eventId": "401857216",
+   "date": "2026-09-24T23:30Z",
+   "easternDate": "2026-09-24",
+   "name": "Chicago Sky at Washington Mystics",
+   "shortName": "CHI @ WSH",
+   "week": null,
+   "venue": "Capital One Arena",
+   "homeAbbr": "WSH",
+   "homeTeamId": "16",
+   "homeName": "Washington Mystics",
+   "awayAbbr": "CHI",
+   "awayTeamId": "19",
+   "awayName": "Chicago Sky",
+   "firstCapturedAt": "2026-09-23T08:11:44.474Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.474Z",
+     "last_seen_at": "2026-09-23T08:11:44.474Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "27-16",
+      "away": "16-27"
+     }
+    }
+   ]
+  },
+  "401857217": {
+   "eventId": "401857217",
+   "date": "2026-09-25T00:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Indiana Fever at Minnesota Lynx",
+   "shortName": "IND @ MIN",
+   "week": null,
+   "venue": "Target Center",
+   "homeAbbr": "MIN",
+   "homeTeamId": "8",
+   "homeName": "Minnesota Lynx",
+   "awayAbbr": "IND",
+   "awayTeamId": "5",
+   "awayName": "Indiana Fever",
+   "firstCapturedAt": "2026-09-23T08:11:44.474Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.474Z",
+     "last_seen_at": "2026-09-23T08:11:44.474Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "32-11",
+      "away": "28-15"
+     }
+    }
+   ]
+  },
+  "401857218": {
+   "eventId": "401857218",
+   "date": "2026-09-25T02:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Golden State Valkyries at Los Angeles Sparks",
+   "shortName": "GS @ LA",
+   "week": null,
+   "venue": "crypto.com Arena",
+   "homeAbbr": "LA",
+   "homeTeamId": "6",
+   "homeName": "Los Angeles Sparks",
+   "awayAbbr": "GS",
+   "awayTeamId": "129689",
+   "awayName": "Golden State Valkyries",
+   "firstCapturedAt": "2026-09-23T08:11:44.474Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.474Z",
+     "last_seen_at": "2026-09-23T08:11:44.474Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "16-27",
+      "away": "31-12"
+     }
+    }
+   ]
+  },
+  "401857219": {
+   "eventId": "401857219",
+   "date": "2026-09-25T02:00Z",
+   "easternDate": "2026-09-24",
+   "name": "Las Vegas Aces at Phoenix Mercury",
+   "shortName": "LV @ PHX",
+   "week": null,
+   "venue": "Mortgage Matchup Center",
+   "homeAbbr": "PHX",
+   "homeTeamId": "11",
+   "homeName": "Phoenix Mercury",
+   "awayAbbr": "LV",
+   "awayTeamId": "17",
+   "awayName": "Las Vegas Aces",
+   "firstCapturedAt": "2026-09-23T08:11:44.474Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-09-23T08:11:44.474Z",
+     "last_seen_at": "2026-09-23T08:11:44.474Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "16-27",
+      "away": "30-13"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-23T08:11:44.474Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260924"
+}

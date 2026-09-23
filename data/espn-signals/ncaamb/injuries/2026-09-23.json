@@ -1,0 +1,16 @@
+{
+ "what": "Point-in-time ESPN injury-report rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-23",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/injuries"
+  ]
+ },
+ "captures": [
+  "2026-09-23T08:11:44.366Z"
+ ],
+ "teams": {},
+ "last_ingested_at": "2026-09-23T08:11:44.366Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/injuries"
+}
