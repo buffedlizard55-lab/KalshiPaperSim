@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T23:36:16.085Z",
+  "generatedAt": "2026-09-23T00:04:44.864Z",
   "note": "Three flights, three windows. DAILY = period_interval 1440 over the full stored history. HOURLY = period_interval 60 over the curated intraday store (which since 2026-09-18 includes the settled KXHIGHNY weather brackets with real exchange results). MICRO = period_interval 1 over the 1-minute store (the KXGOLD15M 15-minute gold markets). They are reported separately and are never merged into one ranking, because a strategy that needs intraday bars cannot be judged on daily ones.",
   "intradayCoverage": {
     "1": {
@@ -12914,90 +12914,90 @@
       "key": "austin-camp-mabry",
       "city": "Austin (Camp Mabry)",
       "series": "KXHIGHAUS",
-      "snapshots": 24,
+      "snapshots": 25,
       "firstCapturedAt": "2026-09-18T13:24:29.350Z",
-      "lastCapturedAt": "2026-09-22T22:15:34.525Z",
-      "dayRows": 168,
-      "distinctDates": 11
+      "lastCapturedAt": "2026-09-22T23:35:38.512Z",
+      "dayRows": 175,
+      "distinctDates": 12
     },
     {
       "key": "chicago-midway",
       "city": "Chicago (Midway)",
       "series": "KXHIGHCHI",
-      "snapshots": 24,
+      "snapshots": 25,
       "firstCapturedAt": "2026-09-18T13:24:29.350Z",
-      "lastCapturedAt": "2026-09-22T22:15:34.525Z",
-      "dayRows": 168,
+      "lastCapturedAt": "2026-09-22T23:35:38.512Z",
+      "dayRows": 175,
       "distinctDates": 11
     },
     {
       "key": "denver-den",
       "city": "Denver (DEN)",
       "series": "KXHIGHDEN",
-      "snapshots": 24,
+      "snapshots": 25,
       "firstCapturedAt": "2026-09-18T13:24:29.350Z",
-      "lastCapturedAt": "2026-09-22T22:15:34.525Z",
-      "dayRows": 168,
+      "lastCapturedAt": "2026-09-22T23:35:38.512Z",
+      "dayRows": 175,
       "distinctDates": 11
     },
     {
       "key": "los-angeles-lax",
       "city": "Los Angeles (LAX)",
       "series": "KXHIGHLAX",
-      "snapshots": 24,
+      "snapshots": 25,
       "firstCapturedAt": "2026-09-18T13:24:29.350Z",
-      "lastCapturedAt": "2026-09-22T22:15:34.525Z",
-      "dayRows": 168,
+      "lastCapturedAt": "2026-09-22T23:35:38.512Z",
+      "dayRows": 175,
       "distinctDates": 11
     },
     {
       "key": "miami-mia",
       "city": "Miami (MIA)",
       "series": "KXHIGHMIA",
-      "snapshots": 24,
+      "snapshots": 25,
       "firstCapturedAt": "2026-09-18T13:24:29.350Z",
-      "lastCapturedAt": "2026-09-22T22:15:34.525Z",
-      "dayRows": 168,
+      "lastCapturedAt": "2026-09-22T23:35:38.512Z",
+      "dayRows": 175,
       "distinctDates": 12
     },
     {
       "key": "nyc-central-park",
       "city": "New York (Central Park)",
       "series": "KXHIGHNY",
-      "snapshots": 26,
+      "snapshots": 27,
       "firstCapturedAt": "2026-09-18T03:19:26.166Z",
-      "lastCapturedAt": "2026-09-22T22:15:34.525Z",
-      "dayRows": 182,
+      "lastCapturedAt": "2026-09-22T23:35:38.512Z",
+      "dayRows": 189,
       "distinctDates": 12
     },
     {
       "key": "philadelphia-phl",
       "city": "Philadelphia (PHL)",
       "series": "KXHIGHPHIL",
-      "snapshots": 24,
+      "snapshots": 25,
       "firstCapturedAt": "2026-09-18T13:24:29.350Z",
-      "lastCapturedAt": "2026-09-22T22:15:34.525Z",
-      "dayRows": 168,
+      "lastCapturedAt": "2026-09-22T23:35:38.512Z",
+      "dayRows": 175,
       "distinctDates": 12
     },
     {
       "key": "phoenix-phx",
       "city": "Phoenix (PHX)",
       "series": "KXHIGHTPHX",
-      "snapshots": 24,
+      "snapshots": 25,
       "firstCapturedAt": "2026-09-18T13:24:29.350Z",
-      "lastCapturedAt": "2026-09-22T22:15:34.525Z",
-      "dayRows": 168,
+      "lastCapturedAt": "2026-09-22T23:35:38.512Z",
+      "dayRows": 175,
       "distinctDates": 11
     },
     {
       "key": "seattle-sea",
       "city": "Seattle (Sea-Tac)",
       "series": "KXHIGHTSEA",
-      "snapshots": 24,
+      "snapshots": 25,
       "firstCapturedAt": "2026-09-18T13:24:29.350Z",
-      "lastCapturedAt": "2026-09-22T22:15:34.525Z",
-      "dayRows": 168,
+      "lastCapturedAt": "2026-09-22T23:35:38.512Z",
+      "dayRows": 175,
       "distinctDates": 11
     }
   ]
