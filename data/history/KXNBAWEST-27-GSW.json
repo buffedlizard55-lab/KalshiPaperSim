@@ -743,6 +743,26 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1790136000,
+      "open_interest_fp": "30705.92",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -3897,6 +3917,166 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T04:59:35.748Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-GSW/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3889266.50"
+            ],
+            [
+              "0.0200",
+              "2222.00"
+            ],
+            [
+              "0.0300",
+              "1444.00"
+            ],
+            [
+              "0.0600",
+              "907018.00"
+            ],
+            [
+              "0.1100",
+              "509795.00"
+            ],
+            [
+              "0.1800",
+              "404847.00"
+            ],
+            [
+              "0.2000",
+              "10.00"
+            ],
+            [
+              "0.2500",
+              "293122.89"
+            ],
+            [
+              "0.3200",
+              "219961.00"
+            ],
+            [
+              "0.3600",
+              "70.70"
+            ],
+            [
+              "0.3700",
+              "428.87"
+            ],
+            [
+              "0.3900",
+              "336129.00"
+            ],
+            [
+              "0.4300",
+              "124.85"
+            ],
+            [
+              "0.4500",
+              "51.06"
+            ],
+            [
+              "0.4700",
+              "180337.00"
+            ],
+            [
+              "0.5100",
+              "62.42"
+            ],
+            [
+              "0.5300",
+              "58582.00"
+            ],
+            [
+              "0.5500",
+              "35.13"
+            ],
+            [
+              "0.5800",
+              "84248.00"
+            ],
+            [
+              "0.5900",
+              "2173.00"
+            ],
+            [
+              "0.6600",
+              "32205.00"
+            ],
+            [
+              "0.6700",
+              "23297.98"
+            ],
+            [
+              "0.6900",
+              "3000.00"
+            ],
+            [
+              "0.7400",
+              "16218.00"
+            ],
+            [
+              "0.7500",
+              "300.00"
+            ],
+            [
+              "0.7600",
+              "390.94"
+            ],
+            [
+              "0.7700",
+              "4863.00"
+            ],
+            [
+              "0.8200",
+              "90.00"
+            ],
+            [
+              "0.8300",
+              "1438.61"
+            ],
+            [
+              "0.9000",
+              "100.00"
+            ],
+            [
+              "0.9100",
+              "123.00"
+            ],
+            [
+              "0.9200",
+              "26.64"
+            ],
+            [
+              "0.9500",
+              "33134.06"
+            ],
+            [
+              "0.9600",
+              "56806.08"
+            ],
+            [
+              "0.9700",
+              "12239.14"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "6094.28"
+            ],
+            [
+              "0.0200",
+              "9632.46"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3946,14 +4126,14 @@
     "volume_24h_fp": "0.00",
     "volume_fp": "55257.52",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "12395.14",
+    "yes_ask_size_fp": "12239.14",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "9808.46",
+    "yes_bid_size_fp": "9632.46",
     "yes_sub_title": "Golden State"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-GSW",
-  "market_captured_at": "2026-09-22T19:54:45.582Z",
+  "market_captured_at": "2026-09-23T04:59:35.215Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T19:54:46.164Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-GSW/candlesticks?start_ts=1790049601&end_ts=1790106885&period_interval=1440"
+  "last_ingested_at": "2026-09-23T04:59:35.732Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-GSW/candlesticks?start_ts=1790049601&end_ts=1790139575&period_interval=1440"
 }

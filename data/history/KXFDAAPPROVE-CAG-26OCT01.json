@@ -1885,6 +1885,31 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.1400"
       }
+    },
+    {
+      "end_period_ts": 1790136000,
+      "open_interest_fp": "3118.16",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0265",
+        "open_dollars": "0.0700",
+        "previous_dollars": "0.1500"
+      },
+      "volume_fp": "431.98",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.1200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0700"
+      }
     }
   ],
   "books": [
@@ -2357,6 +2382,164 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T04:57:58.655Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "75.00"
+            ],
+            [
+              "0.0200",
+              "46.00"
+            ],
+            [
+              "0.0300",
+              "2.47"
+            ],
+            [
+              "0.0400",
+              "37.00"
+            ],
+            [
+              "0.0500",
+              "0.72"
+            ],
+            [
+              "0.5500",
+              "200.00"
+            ],
+            [
+              "0.5600",
+              "3.06"
+            ],
+            [
+              "0.6100",
+              "1081.00"
+            ],
+            [
+              "0.6200",
+              "2.26"
+            ],
+            [
+              "0.7100",
+              "25.00"
+            ],
+            [
+              "0.7200",
+              "6.12"
+            ],
+            [
+              "0.8400",
+              "29.00"
+            ],
+            [
+              "0.9100",
+              "305.00"
+            ],
+            [
+              "0.9200",
+              "25.00"
+            ],
+            [
+              "0.9500",
+              "200.00"
+            ],
+            [
+              "0.9600",
+              "378.13"
+            ],
+            [
+              "0.9700",
+              "23.30"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-23T05:07:29.535Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "75.00"
+            ],
+            [
+              "0.0200",
+              "46.00"
+            ],
+            [
+              "0.0300",
+              "15.47"
+            ],
+            [
+              "0.0400",
+              "37.00"
+            ],
+            [
+              "0.0500",
+              "0.72"
+            ],
+            [
+              "0.5500",
+              "200.00"
+            ],
+            [
+              "0.5600",
+              "3.06"
+            ],
+            [
+              "0.6100",
+              "1081.00"
+            ],
+            [
+              "0.6200",
+              "2.26"
+            ],
+            [
+              "0.7100",
+              "25.00"
+            ],
+            [
+              "0.7200",
+              "7.98"
+            ],
+            [
+              "0.8400",
+              "29.00"
+            ],
+            [
+              "0.9100",
+              "305.00"
+            ],
+            [
+              "0.9200",
+              "25.00"
+            ],
+            [
+              "0.9500",
+              "200.00"
+            ],
+            [
+              "0.9600",
+              "380.10"
+            ],
+            [
+              "0.9700",
+              "26.57"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2377,15 +2560,15 @@
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
-    "no_bid_dollars": "0.9600",
+    "no_bid_dollars": "0.9700",
     "no_sub_title": "Before Oct 1, 2026",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-07-01T14:00:00Z",
     "open_interest_fp": "3118.16",
     "open_time": "2026-05-14T02:00:00Z",
-    "previous_price_dollars": "0.1500",
-    "previous_yes_ask_dollars": "0.1600",
-    "previous_yes_bid_dollars": "0.0200",
+    "previous_price_dollars": "0.0500",
+    "previous_yes_ask_dollars": "0.0900",
+    "previous_yes_bid_dollars": "0.0300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2403,17 +2586,17 @@
     "ticker": "KXFDAAPPROVE-CAG-26OCT01",
     "title": "Will the FDA approve CagriSema before Oct 1, 2026?",
     "updated_time": "2026-07-06T14:50:48.299633Z",
-    "volume_24h_fp": "431.98",
+    "volume_24h_fp": "327.00",
     "volume_fp": "3210.61",
-    "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "370.38",
+    "yes_ask_dollars": "0.0300",
+    "yes_ask_size_fp": "26.57",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Before Oct 1, 2026"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01",
-  "market_captured_at": "2026-09-22T20:03:49.119Z",
+  "market_captured_at": "2026-09-23T05:07:28.902Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T20:03:49.801Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CAG-26OCT01/candlesticks?start_ts=1790049601&end_ts=1790107429&period_interval=1440"
+  "last_ingested_at": "2026-09-23T05:07:29.519Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CAG-26OCT01/candlesticks?start_ts=1790136001&end_ts=1790140049&period_interval=1440"
 }

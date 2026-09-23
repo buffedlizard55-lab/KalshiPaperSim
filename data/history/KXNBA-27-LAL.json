@@ -828,6 +828,31 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1790136000,
+      "open_interest_fp": "1742255.36",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0200",
+        "mean_dollars": "0.0296",
+        "open_dollars": "0.0200",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "3727.46",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -5558,6 +5583,270 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T04:59:16.772Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-LAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3892181.68"
+            ],
+            [
+              "0.0200",
+              "5555.00"
+            ],
+            [
+              "0.0300",
+              "777.00"
+            ],
+            [
+              "0.0500",
+              "4.68"
+            ],
+            [
+              "0.0600",
+              "1040681.00"
+            ],
+            [
+              "0.0800",
+              "93.63"
+            ],
+            [
+              "0.1100",
+              "567644.00"
+            ],
+            [
+              "0.1300",
+              "62.42"
+            ],
+            [
+              "0.1400",
+              "351.37"
+            ],
+            [
+              "0.1800",
+              "436659.13"
+            ],
+            [
+              "0.1900",
+              "1092.46"
+            ],
+            [
+              "0.2100",
+              "29.28"
+            ],
+            [
+              "0.2400",
+              "70.27"
+            ],
+            [
+              "0.2500",
+              "342617.00"
+            ],
+            [
+              "0.2700",
+              "680.52"
+            ],
+            [
+              "0.2900",
+              "54.87"
+            ],
+            [
+              "0.3000",
+              "530.21"
+            ],
+            [
+              "0.3200",
+              "285416.33"
+            ],
+            [
+              "0.3400",
+              "780.34"
+            ],
+            [
+              "0.3500",
+              "561.88"
+            ],
+            [
+              "0.3600",
+              "218.48"
+            ],
+            [
+              "0.3800",
+              "312.13"
+            ],
+            [
+              "0.3900",
+              "153115.00"
+            ],
+            [
+              "0.4500",
+              "354370.19"
+            ],
+            [
+              "0.4600",
+              "3839.42"
+            ],
+            [
+              "0.5200",
+              "1387.42"
+            ],
+            [
+              "0.5300",
+              "65299.26"
+            ],
+            [
+              "0.5400",
+              "23.42"
+            ],
+            [
+              "0.5600",
+              "164911.00"
+            ],
+            [
+              "0.5700",
+              "115.00"
+            ],
+            [
+              "0.6200",
+              "234.25"
+            ],
+            [
+              "0.6300",
+              "2053.42"
+            ],
+            [
+              "0.6400",
+              "14.00"
+            ],
+            [
+              "0.6500",
+              "312.13"
+            ],
+            [
+              "0.6700",
+              "952.00"
+            ],
+            [
+              "0.6800",
+              "83795.00"
+            ],
+            [
+              "0.6900",
+              "20780.34"
+            ],
+            [
+              "0.7100",
+              "100.00"
+            ],
+            [
+              "0.7300",
+              "74.96"
+            ],
+            [
+              "0.7400",
+              "27065.00"
+            ],
+            [
+              "0.7500",
+              "29858.55"
+            ],
+            [
+              "0.7600",
+              "20000.00"
+            ],
+            [
+              "0.7700",
+              "79.00"
+            ],
+            [
+              "0.7800",
+              "251.58"
+            ],
+            [
+              "0.7900",
+              "23.42"
+            ],
+            [
+              "0.8000",
+              "578.13"
+            ],
+            [
+              "0.8100",
+              "17969.00"
+            ],
+            [
+              "0.8200",
+              "90.00"
+            ],
+            [
+              "0.8300",
+              "1247.00"
+            ],
+            [
+              "0.8400",
+              "63.00"
+            ],
+            [
+              "0.8600",
+              "880.34"
+            ],
+            [
+              "0.8800",
+              "568.51"
+            ],
+            [
+              "0.8900",
+              "3500.00"
+            ],
+            [
+              "0.9000",
+              "1000.00"
+            ],
+            [
+              "0.9100",
+              "3000.00"
+            ],
+            [
+              "0.9200",
+              "350.00"
+            ],
+            [
+              "0.9300",
+              "1118.74"
+            ],
+            [
+              "0.9400",
+              "27240.98"
+            ],
+            [
+              "0.9500",
+              "64104.90"
+            ],
+            [
+              "0.9600",
+              "52430.21"
+            ],
+            [
+              "0.9700",
+              "129837.82"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "99703.42"
+            ],
+            [
+              "0.0200",
+              "114143.43"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -5573,7 +5862,7 @@
     "expected_expiration_time": "2027-07-31T14:00:00Z",
     "expiration_time": "2029-07-30T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0200",
+    "last_price_dollars": "0.0300",
     "latest_expiration_time": "2029-07-30T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -5582,9 +5871,9 @@
     "no_sub_title": "Los Angeles L",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-31T14:00:00Z",
-    "open_interest_fp": "1738684.27",
+    "open_interest_fp": "1742255.36",
     "open_time": "2026-06-14T08:00:00Z",
-    "previous_price_dollars": "0.0200",
+    "previous_price_dollars": "0.0300",
     "previous_yes_ask_dollars": "0.0300",
     "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
@@ -5604,17 +5893,17 @@
     "ticker": "KXNBA-27-LAL",
     "title": "Will Los Angeles L win the 2027 Pro Basketball Finals?",
     "updated_time": "2026-07-24T16:41:17.536752Z",
-    "volume_24h_fp": "3509.26",
-    "volume_fp": "1885447.50",
+    "volume_24h_fp": "3727.46",
+    "volume_fp": "1889018.90",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "137391.78",
+    "yes_ask_size_fp": "129837.82",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "117043.18",
+    "yes_bid_size_fp": "114143.43",
     "yes_sub_title": "Los Angeles L"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-LAL",
-  "market_captured_at": "2026-09-22T19:54:23.184Z",
+  "market_captured_at": "2026-09-23T04:59:16.239Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T19:54:23.770Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-LAL/candlesticks?start_ts=1790049601&end_ts=1790106863&period_interval=1440"
+  "last_ingested_at": "2026-09-23T04:59:16.756Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-LAL/candlesticks?start_ts=1790049601&end_ts=1790139556&period_interval=1440"
 }

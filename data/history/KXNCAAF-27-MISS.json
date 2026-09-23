@@ -828,6 +828,31 @@
         "low_dollars": "0.0500",
         "open_dollars": "0.0600"
       }
+    },
+    {
+      "end_period_ts": 1790136000,
+      "open_interest_fp": "2234273.60",
+      "price": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0500",
+        "mean_dollars": "0.0703",
+        "open_dollars": "0.0800",
+        "previous_dollars": "0.0800"
+      },
+      "volume_fp": "62340.20",
+      "yes_ask": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0700"
+      }
     }
   ],
   "books": [
@@ -5230,6 +5255,310 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T04:59:43.132Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-MISS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4885580.47"
+            ],
+            [
+              "0.0200",
+              "14124.00"
+            ],
+            [
+              "0.0300",
+              "7257.00"
+            ],
+            [
+              "0.0400",
+              "117.43"
+            ],
+            [
+              "0.0600",
+              "947091.00"
+            ],
+            [
+              "0.0900",
+              "38.98"
+            ],
+            [
+              "0.1000",
+              "768.25"
+            ],
+            [
+              "0.1100",
+              "516596.00"
+            ],
+            [
+              "0.1400",
+              "1287.18"
+            ],
+            [
+              "0.1500",
+              "40454.00"
+            ],
+            [
+              "0.1600",
+              "2089.62"
+            ],
+            [
+              "0.1700",
+              "50.00"
+            ],
+            [
+              "0.1800",
+              "325.54"
+            ],
+            [
+              "0.1900",
+              "500.79"
+            ],
+            [
+              "0.2000",
+              "407974.06"
+            ],
+            [
+              "0.2200",
+              "208.63"
+            ],
+            [
+              "0.2300",
+              "26.82"
+            ],
+            [
+              "0.2500",
+              "831.56"
+            ],
+            [
+              "0.2600",
+              "67.06"
+            ],
+            [
+              "0.2800",
+              "13.41"
+            ],
+            [
+              "0.2900",
+              "388036.00"
+            ],
+            [
+              "0.3000",
+              "617.42"
+            ],
+            [
+              "0.3100",
+              "412.50"
+            ],
+            [
+              "0.3300",
+              "390.01"
+            ],
+            [
+              "0.3400",
+              "468.20"
+            ],
+            [
+              "0.3500",
+              "2092.30"
+            ],
+            [
+              "0.3600",
+              "23.42"
+            ],
+            [
+              "0.3800",
+              "198940.38"
+            ],
+            [
+              "0.3900",
+              "1072.69"
+            ],
+            [
+              "0.4000",
+              "573.13"
+            ],
+            [
+              "0.4100",
+              "5.30"
+            ],
+            [
+              "0.4300",
+              "1326.75"
+            ],
+            [
+              "0.4400",
+              "23694.55"
+            ],
+            [
+              "0.4500",
+              "2777.06"
+            ],
+            [
+              "0.4600",
+              "936.41"
+            ],
+            [
+              "0.4700",
+              "115232.00"
+            ],
+            [
+              "0.4800",
+              "5.85"
+            ],
+            [
+              "0.4900",
+              "31.00"
+            ],
+            [
+              "0.5000",
+              "1.00"
+            ],
+            [
+              "0.5300",
+              "78.18"
+            ],
+            [
+              "0.5400",
+              "2177.06"
+            ],
+            [
+              "0.5500",
+              "335.31"
+            ],
+            [
+              "0.5600",
+              "61213.00"
+            ],
+            [
+              "0.5700",
+              "12816.13"
+            ],
+            [
+              "0.5900",
+              "23.42"
+            ],
+            [
+              "0.6200",
+              "1.34"
+            ],
+            [
+              "0.6400",
+              "585.64"
+            ],
+            [
+              "0.6500",
+              "43686.00"
+            ],
+            [
+              "0.6700",
+              "3414.98"
+            ],
+            [
+              "0.7200",
+              "15.60"
+            ],
+            [
+              "0.7400",
+              "31233.94"
+            ],
+            [
+              "0.7500",
+              "60.34"
+            ],
+            [
+              "0.7700",
+              "326.14"
+            ],
+            [
+              "0.7900",
+              "274.94"
+            ],
+            [
+              "0.8000",
+              "35.00"
+            ],
+            [
+              "0.8200",
+              "350.25"
+            ],
+            [
+              "0.8300",
+              "16259.48"
+            ],
+            [
+              "0.8400",
+              "2632.43"
+            ],
+            [
+              "0.8500",
+              "106.13"
+            ],
+            [
+              "0.8600",
+              "174.86"
+            ],
+            [
+              "0.8700",
+              "71.13"
+            ],
+            [
+              "0.8800",
+              "374.80"
+            ],
+            [
+              "0.8900",
+              "2524.86"
+            ],
+            [
+              "0.9000",
+              "2949.89"
+            ],
+            [
+              "0.9100",
+              "3270.62"
+            ],
+            [
+              "0.9200",
+              "85704.04"
+            ],
+            [
+              "0.9300",
+              "126213.92"
+            ],
+            [
+              "0.9400",
+              "875.23"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "34002.43"
+            ],
+            [
+              "0.0200",
+              "64553.91"
+            ],
+            [
+              "0.0300",
+              "2567.47"
+            ],
+            [
+              "0.0400",
+              "88497.11"
+            ],
+            [
+              "0.0500",
+              "6788.12"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -5245,19 +5574,19 @@
     "expected_expiration_time": "2027-01-26T04:00:00Z",
     "expiration_time": "2027-02-23T04:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0700",
+    "last_price_dollars": "0.0600",
     "latest_expiration_time": "2027-02-23T04:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9400",
-    "no_bid_dollars": "0.9300",
+    "no_ask_dollars": "0.9500",
+    "no_bid_dollars": "0.9400",
     "no_sub_title": "Ole Miss",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "2220497.35",
+    "open_interest_fp": "2234423.51",
     "open_time": "2026-01-21T22:00:00Z",
-    "previous_price_dollars": "0.0700",
-    "previous_yes_ask_dollars": "0.0700",
-    "previous_yes_bid_dollars": "0.0600",
+    "previous_price_dollars": "0.0800",
+    "previous_yes_ask_dollars": "0.0800",
+    "previous_yes_bid_dollars": "0.0700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5275,17 +5604,17 @@
     "ticker": "KXNCAAF-27-MISS",
     "title": "Will Ole Miss win the College Football Playoff National Championship?",
     "updated_time": "2026-09-15T15:39:56.116155Z",
-    "volume_24h_fp": "82168.56",
-    "volume_fp": "3069009.50",
-    "yes_ask_dollars": "0.0700",
-    "yes_ask_size_fp": "117806.31",
-    "yes_bid_dollars": "0.0600",
-    "yes_bid_size_fp": "22.32",
+    "volume_24h_fp": "62194.77",
+    "volume_fp": "3091606.16",
+    "yes_ask_dollars": "0.0600",
+    "yes_ask_size_fp": "875.23",
+    "yes_bid_dollars": "0.0500",
+    "yes_bid_size_fp": "6788.12",
     "yes_sub_title": "Ole Miss"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-MISS",
-  "market_captured_at": "2026-09-22T19:54:54.303Z",
+  "market_captured_at": "2026-09-23T04:59:42.597Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T19:54:54.885Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-MISS/candlesticks?start_ts=1790049601&end_ts=1790106894&period_interval=1440"
+  "last_ingested_at": "2026-09-23T04:59:43.115Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-MISS/candlesticks?start_ts=1790049601&end_ts=1790139582&period_interval=1440"
 }

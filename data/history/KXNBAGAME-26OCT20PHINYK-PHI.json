@@ -827,6 +827,31 @@
         "low_dollars": "0.3400",
         "open_dollars": "0.3600"
       }
+    },
+    {
+      "end_period_ts": 1790136000,
+      "open_interest_fp": "26721.71",
+      "price": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3800",
+        "low_dollars": "0.3500",
+        "mean_dollars": "0.3642",
+        "open_dollars": "0.3600",
+        "previous_dollars": "0.3800"
+      },
+      "volume_fp": "714.29",
+      "yes_ask": {
+        "close_dollars": "0.3600",
+        "high_dollars": "0.3800",
+        "low_dollars": "0.3600",
+        "open_dollars": "0.3800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3500",
+        "open_dollars": "0.3600"
+      }
     }
   ],
   "books": [
@@ -6237,6 +6262,242 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T04:59:33.648Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "212968.66"
+            ],
+            [
+              "0.0200",
+              "6074.58"
+            ],
+            [
+              "0.0300",
+              "724.65"
+            ],
+            [
+              "0.0500",
+              "4500.00"
+            ],
+            [
+              "0.0600",
+              "666.00"
+            ],
+            [
+              "0.0700",
+              "24.21"
+            ],
+            [
+              "0.1000",
+              "100.65"
+            ],
+            [
+              "0.1200",
+              "686.75"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "9.92"
+            ],
+            [
+              "0.1500",
+              "27.19"
+            ],
+            [
+              "0.1600",
+              "4.91"
+            ],
+            [
+              "0.1700",
+              "24.30"
+            ],
+            [
+              "0.1800",
+              "51.25"
+            ],
+            [
+              "0.1900",
+              "2.52"
+            ],
+            [
+              "0.2000",
+              "5.04"
+            ],
+            [
+              "0.2100",
+              "27.72"
+            ],
+            [
+              "0.2200",
+              "24.93"
+            ],
+            [
+              "0.2400",
+              "15.94"
+            ],
+            [
+              "0.2500",
+              "655.99"
+            ],
+            [
+              "0.2900",
+              "37.92"
+            ],
+            [
+              "0.3000",
+              "2156.95"
+            ],
+            [
+              "0.3500",
+              "1.25"
+            ],
+            [
+              "0.3900",
+              "49.18"
+            ],
+            [
+              "0.4000",
+              "4.58"
+            ],
+            [
+              "0.4200",
+              "5.28"
+            ],
+            [
+              "0.4300",
+              "12.91"
+            ],
+            [
+              "0.4400",
+              "2.34"
+            ],
+            [
+              "0.4800",
+              "25.22"
+            ],
+            [
+              "0.5500",
+              "750.00"
+            ],
+            [
+              "0.5600",
+              "3067.58"
+            ],
+            [
+              "0.5700",
+              "203.00"
+            ],
+            [
+              "0.5800",
+              "100.00"
+            ],
+            [
+              "0.5900",
+              "933.16"
+            ],
+            [
+              "0.6000",
+              "4329.00"
+            ],
+            [
+              "0.6100",
+              "6903.36"
+            ],
+            [
+              "0.6200",
+              "110.00"
+            ],
+            [
+              "0.6300",
+              "1444.94"
+            ],
+            [
+              "0.6400",
+              "34.71"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "210000.00"
+            ],
+            [
+              "0.0200",
+              "15394.00"
+            ],
+            [
+              "0.0300",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0800",
+              "2000.00"
+            ],
+            [
+              "0.1000",
+              "2038.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "300.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "41.00"
+            ],
+            [
+              "0.2800",
+              "1819.00"
+            ],
+            [
+              "0.3000",
+              "1744.00"
+            ],
+            [
+              "0.3100",
+              "1033.00"
+            ],
+            [
+              "0.3200",
+              "299.16"
+            ],
+            [
+              "0.3300",
+              "272.00"
+            ],
+            [
+              "0.3400",
+              "209.48"
+            ],
+            [
+              "0.3500",
+              "143.82"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6252,20 +6513,20 @@
     "expected_expiration_time": "2026-10-21T02:00:00Z",
     "expiration_time": "2026-10-22T23:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.3700",
+    "last_price_dollars": "0.3500",
     "latest_expiration_time": "2026-10-22T23:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.6400",
-    "no_bid_dollars": "0.6300",
+    "no_ask_dollars": "0.6500",
+    "no_bid_dollars": "0.6400",
     "no_sub_title": "Philadelphia",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-21T02:00:00Z",
-    "open_interest_fp": "26538.34",
+    "open_interest_fp": "26721.71",
     "open_time": "2026-08-20T15:28:00Z",
-    "previous_price_dollars": "0.3700",
+    "previous_price_dollars": "0.3500",
     "previous_yes_ask_dollars": "0.3700",
-    "previous_yes_bid_dollars": "0.3600",
+    "previous_yes_bid_dollars": "0.3500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -6283,17 +6544,17 @@
     "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
     "title": "Philadelphia wins",
     "updated_time": "2026-08-20T15:28:00.432079Z",
-    "volume_24h_fp": "761.34",
-    "volume_fp": "34821.99",
-    "yes_ask_dollars": "0.3700",
-    "yes_ask_size_fp": "1455.99",
-    "yes_bid_dollars": "0.3600",
-    "yes_bid_size_fp": "83.87",
+    "volume_24h_fp": "495.53",
+    "volume_fp": "35212.23",
+    "yes_ask_dollars": "0.3600",
+    "yes_ask_size_fp": "34.71",
+    "yes_bid_dollars": "0.3500",
+    "yes_bid_size_fp": "143.82",
     "yes_sub_title": "Philadelphia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI",
-  "market_captured_at": "2026-09-22T19:54:43.094Z",
+  "market_captured_at": "2026-09-23T04:59:33.114Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T19:54:43.675Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-PHI/candlesticks?start_ts=1790049601&end_ts=1790106883&period_interval=1440"
+  "last_ingested_at": "2026-09-23T04:59:33.632Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-PHI/candlesticks?start_ts=1790049601&end_ts=1790139573&period_interval=1440"
 }

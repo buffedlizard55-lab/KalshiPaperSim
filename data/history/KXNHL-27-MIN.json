@@ -818,6 +818,31 @@
         "low_dollars": "0.0500",
         "open_dollars": "0.0500"
       }
+    },
+    {
+      "end_period_ts": 1790136000,
+      "open_interest_fp": "81251.75",
+      "price": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0600",
+        "mean_dollars": "0.0691",
+        "open_dollars": "0.0600",
+        "previous_dollars": "0.0600"
+      },
+      "volume_fp": "1766.49",
+      "yes_ask": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      }
     }
   ],
   "books": [
@@ -4388,6 +4413,214 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T05:00:31.576Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4445951.05"
+            ],
+            [
+              "0.0200",
+              "9432.00"
+            ],
+            [
+              "0.0300",
+              "6767.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "934367.00"
+            ],
+            [
+              "0.0800",
+              "82.19"
+            ],
+            [
+              "0.1100",
+              "509655.00"
+            ],
+            [
+              "0.1300",
+              "10.44"
+            ],
+            [
+              "0.1400",
+              "31.27"
+            ],
+            [
+              "0.1500",
+              "27138.00"
+            ],
+            [
+              "0.1800",
+              "408218.67"
+            ],
+            [
+              "0.2200",
+              "78.18"
+            ],
+            [
+              "0.2500",
+              "294003.76"
+            ],
+            [
+              "0.2800",
+              "352.31"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3200",
+              "251248.00"
+            ],
+            [
+              "0.3500",
+              "234.55"
+            ],
+            [
+              "0.3900",
+              "130927.00"
+            ],
+            [
+              "0.4100",
+              "332349.00"
+            ],
+            [
+              "0.4300",
+              "118.00"
+            ],
+            [
+              "0.4400",
+              "16430.00"
+            ],
+            [
+              "0.5000",
+              "163474.00"
+            ],
+            [
+              "0.5100",
+              "5323.00"
+            ],
+            [
+              "0.5200",
+              "2090.00"
+            ],
+            [
+              "0.6000",
+              "36981.00"
+            ],
+            [
+              "0.6100",
+              "74425.00"
+            ],
+            [
+              "0.6200",
+              "1010.99"
+            ],
+            [
+              "0.6900",
+              "26310.00"
+            ],
+            [
+              "0.7400",
+              "20078.00"
+            ],
+            [
+              "0.7600",
+              "469.74"
+            ],
+            [
+              "0.7700",
+              "1.80"
+            ],
+            [
+              "0.7900",
+              "90.00"
+            ],
+            [
+              "0.8100",
+              "14857.00"
+            ],
+            [
+              "0.8200",
+              "1000.00"
+            ],
+            [
+              "0.8300",
+              "1.80"
+            ],
+            [
+              "0.8500",
+              "878.18"
+            ],
+            [
+              "0.8600",
+              "150.00"
+            ],
+            [
+              "0.8700",
+              "29.00"
+            ],
+            [
+              "0.8800",
+              "4.82"
+            ],
+            [
+              "0.8900",
+              "70.10"
+            ],
+            [
+              "0.9000",
+              "1000.00"
+            ],
+            [
+              "0.9100",
+              "25389.77"
+            ],
+            [
+              "0.9200",
+              "37344.92"
+            ],
+            [
+              "0.9300",
+              "5176.61"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "302131.70"
+            ],
+            [
+              "0.0200",
+              "725.55"
+            ],
+            [
+              "0.0300",
+              "1851.76"
+            ],
+            [
+              "0.0400",
+              "5552.84"
+            ],
+            [
+              "0.0500",
+              "3291.36"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4412,10 +4645,10 @@
     "no_sub_title": "Minnesota Wild",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
-    "open_interest_fp": "79895.67",
+    "open_interest_fp": "81251.75",
     "open_time": "2026-06-15T03:40:00Z",
     "previous_price_dollars": "0.0600",
-    "previous_yes_ask_dollars": "0.0700",
+    "previous_yes_ask_dollars": "0.0600",
     "previous_yes_bid_dollars": "0.0500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -4434,17 +4667,17 @@
     "ticker": "KXNHL-27-MIN",
     "title": "Will Minnesota Wild win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.1147Z",
-    "volume_24h_fp": "1294.19",
-    "volume_fp": "96177.37",
+    "volume_24h_fp": "1766.49",
+    "volume_fp": "97533.45",
     "yes_ask_dollars": "0.0700",
-    "yes_ask_size_fp": "9318.71",
+    "yes_ask_size_fp": "5176.61",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "2443.27",
+    "yes_bid_size_fp": "3291.36",
     "yes_sub_title": "Minnesota Wild"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-MIN",
-  "market_captured_at": "2026-09-22T19:55:51.559Z",
+  "market_captured_at": "2026-09-23T05:00:31.043Z",
   "status": "active",
-  "last_ingested_at": "2026-09-22T19:55:52.139Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MIN/candlesticks?start_ts=1790049601&end_ts=1790106951&period_interval=1440"
+  "last_ingested_at": "2026-09-23T05:00:31.560Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MIN/candlesticks?start_ts=1790049601&end_ts=1790139631&period_interval=1440"
 }
