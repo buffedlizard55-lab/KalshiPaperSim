@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/FLC086",
       "relativeLocation": "Miami Springs, FL",
       "timeZone": "America/New_York",
-      "resolvedAt": "2026-09-23T01:32:17.165Z",
+      "resolvedAt": "2026-09-23T12:47:33.924Z",
       "pointsUrl": "https://api.weather.gov/points/25.7959,-80.287"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -1800,6 +1800,72 @@
           "startTime": "2026-09-29T06:00:00-04:00",
           "endTime": "2026-09-29T18:00:00-04:00",
           "probabilityOfPrecipitationPct": 61
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-23T12:47:33.924Z",
+      "points_url": "https://api.weather.gov/points/25.7959,-80.287",
+      "forecast_url": "https://api.weather.gov/gridpoints/MFL/106,51/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-23T08:01:52+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-23",
+          "highF": 86,
+          "periodName": "Today",
+          "startTime": "2026-09-23T08:00:00-04:00",
+          "endTime": "2026-09-23T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 90
+        },
+        {
+          "date": "2026-09-24",
+          "highF": 89,
+          "periodName": "Thursday",
+          "startTime": "2026-09-24T06:00:00-04:00",
+          "endTime": "2026-09-24T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 62
+        },
+        {
+          "date": "2026-09-25",
+          "highF": 89,
+          "periodName": "Friday",
+          "startTime": "2026-09-25T06:00:00-04:00",
+          "endTime": "2026-09-25T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 54
+        },
+        {
+          "date": "2026-09-26",
+          "highF": 88,
+          "periodName": "Saturday",
+          "startTime": "2026-09-26T06:00:00-04:00",
+          "endTime": "2026-09-26T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 23
+        },
+        {
+          "date": "2026-09-27",
+          "highF": 87,
+          "periodName": "Sunday",
+          "startTime": "2026-09-27T06:00:00-04:00",
+          "endTime": "2026-09-27T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 27
+        },
+        {
+          "date": "2026-09-28",
+          "highF": 87,
+          "periodName": "Monday",
+          "startTime": "2026-09-28T06:00:00-04:00",
+          "endTime": "2026-09-28T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 31
+        },
+        {
+          "date": "2026-09-29",
+          "highF": 87,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-29T06:00:00-04:00",
+          "endTime": "2026-09-29T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 60
         }
       ]
     }
