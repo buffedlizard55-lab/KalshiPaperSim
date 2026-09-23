@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-09-23T18:47:43.924Z",
+ "startedAt": "2026-09-23T21:59:17.230Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -49,7 +49,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 74
+     "playerRecords": 73
     },
     "scoreboard": {
      "2026-09-23": {
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 82
+     "playerRecords": 83
     },
     "scoreboard": {
      "2026-09-23": {
@@ -181,7 +181,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 45
+     "playerRecords": 43
     },
     "scoreboard": {
      "2026-09-23": {
@@ -208,5 +208,5 @@
   "matched": 51,
   "unmapped": 39
  },
- "finishedAt": "2026-09-23T18:47:44.959Z"
+ "finishedAt": "2026-09-23T21:59:18.571Z"
 }
