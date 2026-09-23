@@ -13,7 +13,8 @@
   "2026-09-22T07:21:27.781Z",
   "2026-09-22T18:28:17.734Z",
   "2026-09-22T21:39:08.880Z",
-  "2026-09-22T23:48:29.567Z"
+  "2026-09-22T23:48:29.567Z",
+  "2026-09-23T02:32:39.367Z"
  ],
  "events": {
   "401878101": {
@@ -52,6 +53,26 @@
       "home": "0-1-0",
       "away": "1-0-0"
      }
+    },
+    {
+     "captured_at": "2026-09-23T02:32:39.367Z",
+     "last_seen_at": "2026-09-23T02:32:39.367Z",
+     "fp": "in|3|0|1,1|false|STATUS_END_PERIOD",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_END_PERIOD",
+     "completed": false,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 1,
+      "away": 1
+     },
+     "recordsOverall": {
+      "home": "1-1-0",
+      "away": "1-0-0"
+     }
     }
    ]
   },
@@ -83,6 +104,26 @@
      "period": 0,
      "clock": 0,
      "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-1-0",
+      "away": "0-1-0"
+     }
+    },
+    {
+     "captured_at": "2026-09-23T02:32:39.367Z",
+     "last_seen_at": "2026-09-23T02:32:39.367Z",
+     "fp": "in|2|5|0,0|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 300,
+     "displayClock": "5:00",
      "scores": {
       "home": 0,
       "away": 0
@@ -150,6 +191,26 @@
       "home": "1-0-0",
       "away": "0-1-0"
      }
+    },
+    {
+     "captured_at": "2026-09-23T02:32:39.367Z",
+     "last_seen_at": "2026-09-23T02:32:39.367Z",
+     "fp": "post|3|0|5,1|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 5,
+      "away": 1
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
+     }
     }
    ]
   },
@@ -189,6 +250,26 @@
       "home": "0-1-0",
       "away": "0-1-0"
      }
+    },
+    {
+     "captured_at": "2026-09-23T02:32:39.367Z",
+     "last_seen_at": "2026-09-23T02:32:39.367Z",
+     "fp": "in|1|7|0,1|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 444,
+     "displayClock": "7:24",
+     "scores": {
+      "home": 0,
+      "away": 1
+     },
+     "recordsOverall": {
+      "home": "0-1-0",
+      "away": "0-1-0"
+     }
     }
    ]
   },
@@ -220,6 +301,26 @@
      "period": 0,
      "clock": 0,
      "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-1-0",
+      "away": "1-0-0"
+     }
+    },
+    {
+     "captured_at": "2026-09-23T02:32:39.367Z",
+     "last_seen_at": "2026-09-23T02:32:39.367Z",
+     "fp": "in|1|4|0,0|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 255,
+     "displayClock": "4:15",
      "scores": {
       "home": 0,
       "away": 0
@@ -287,6 +388,26 @@
       "home": "1-0-0",
       "away": "0-0-1"
      }
+    },
+    {
+     "captured_at": "2026-09-23T02:32:39.367Z",
+     "last_seen_at": "2026-09-23T02:32:39.367Z",
+     "fp": "post|3|0|4,7|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 4,
+      "away": 7
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
+     }
     }
    ]
   },
@@ -345,6 +466,26 @@
      "recordsOverall": {
       "home": "0-1-0",
       "away": "1-0-0"
+     }
+    },
+    {
+     "captured_at": "2026-09-23T02:32:39.367Z",
+     "last_seen_at": "2026-09-23T02:32:39.367Z",
+     "fp": "post|3|0|5,1|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 5,
+      "away": 1
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
      }
     }
    ]
@@ -405,6 +546,26 @@
       "home": "0-1-0",
       "away": "0-1-0"
      }
+    },
+    {
+     "captured_at": "2026-09-23T02:32:39.367Z",
+     "last_seen_at": "2026-09-23T02:32:39.367Z",
+     "fp": "post|3|0|3,4|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 3,
+      "away": 4
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
+     }
     }
    ]
   },
@@ -464,6 +625,26 @@
       "home": "0-1-0",
       "away": "1-0-0"
      }
+    },
+    {
+     "captured_at": "2026-09-23T02:32:39.367Z",
+     "last_seen_at": "2026-09-23T02:32:39.367Z",
+     "fp": "post|5|0|3,2|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 5,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 3,
+      "away": 2
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
+     }
     }
    ]
   },
@@ -503,10 +684,30 @@
       "home": "0-1-0",
       "away": "1-0-0"
      }
+    },
+    {
+     "captured_at": "2026-09-23T02:32:39.367Z",
+     "last_seen_at": "2026-09-23T02:32:39.367Z",
+     "fp": "in|4|2|2,2|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 4,
+     "clock": 149,
+     "displayClock": "2:29",
+     "scores": {
+      "home": 2,
+      "away": 2
+     },
+     "recordsOverall": {
+      "home": "0-1-0",
+      "away": "1-0-0"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-09-22T23:48:29.567Z",
+ "last_ingested_at": "2026-09-23T02:32:39.367Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260922"
 }
