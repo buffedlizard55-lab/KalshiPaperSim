@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/COC031",
       "relativeLocation": "Denver, CO",
       "timeZone": "America/Denver",
-      "resolvedAt": "2026-09-23T12:47:33.924Z",
+      "resolvedAt": "2026-09-23T17:52:41.588Z",
       "pointsUrl": "https://api.weather.gov/points/39.8561,-104.6737"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -1816,6 +1816,72 @@
           "highF": 79,
           "periodName": "Today",
           "startTime": "2026-09-23T06:00:00-06:00",
+          "endTime": "2026-09-23T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 35
+        },
+        {
+          "date": "2026-09-24",
+          "highF": 66,
+          "periodName": "Thursday",
+          "startTime": "2026-09-24T06:00:00-06:00",
+          "endTime": "2026-09-24T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 55
+        },
+        {
+          "date": "2026-09-25",
+          "highF": 76,
+          "periodName": "Friday",
+          "startTime": "2026-09-25T06:00:00-06:00",
+          "endTime": "2026-09-25T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 19
+        },
+        {
+          "date": "2026-09-26",
+          "highF": 83,
+          "periodName": "Saturday",
+          "startTime": "2026-09-26T06:00:00-06:00",
+          "endTime": "2026-09-26T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-09-27",
+          "highF": 85,
+          "periodName": "Sunday",
+          "startTime": "2026-09-27T06:00:00-06:00",
+          "endTime": "2026-09-27T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 1
+        },
+        {
+          "date": "2026-09-28",
+          "highF": 80,
+          "periodName": "Monday",
+          "startTime": "2026-09-28T06:00:00-06:00",
+          "endTime": "2026-09-28T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 21
+        },
+        {
+          "date": "2026-09-29",
+          "highF": 70,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-29T06:00:00-06:00",
+          "endTime": "2026-09-29T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 37
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-23T17:52:41.588Z",
+      "points_url": "https://api.weather.gov/points/39.8561,-104.6737",
+      "forecast_url": "https://api.weather.gov/gridpoints/BOU/74,66/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-23T06:46:32+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-23",
+          "highF": 79,
+          "periodName": "Today",
+          "startTime": "2026-09-23T11:00:00-06:00",
           "endTime": "2026-09-23T18:00:00-06:00",
           "probabilityOfPrecipitationPct": 35
         },
