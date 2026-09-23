@@ -63,6 +63,10 @@ export const DESK_RESERVED_USERNAMES = Object.freeze([
   'LiveTheLeap_Momentum',
   'LiveInsider_FilingFader',
   'LiveWeather_ForecastEdge',
+  // MasterSite fourth pass (2026-09-22): the socially-discovered weather rule
+  // (R06 via the owner's lab persona HeatConfirm) applied to open KXHIGH*
+  // brackets — added with the roster twin HeatConfirm_500Bots.
+  'LiveHeatConfirm_Weather',
   // ESPN public JSON + S14 pre-game (2026-09-21): the three entrants that read
   // the point-in-time ESPN game-state/injury archive and the owner model's
   // pre-game snapshots through the shared signal hook.

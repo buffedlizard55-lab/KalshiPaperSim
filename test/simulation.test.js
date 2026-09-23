@@ -2660,8 +2660,41 @@ test('76. the signal-source ledger is complete, linked and consistent with the r
   // added seven more market/sports projects from the same verified directory
   // (S13–S19: PriceKalshiHistorical, MLB-Prediction-model-backtest, MLB-PBP,
   // PFFNFL, ScheduleFreeTime, NFLPRED, StockPaperSim).
-  assert.equal(SIGNAL_SOURCES.length, 20);
-  assert.equal(new Set(SIGNAL_SOURCES.map((s) => s.id)).size, 20, 'ledger ids are unique');
+  assert.equal(SIGNAL_SOURCES.length, 35);
+  assert.equal(new Set(SIGNAL_SOURCES.map((s) => s.id)).size, 35, 'ledger ids are unique');
+  // The FOURTH pass (2026-09-22, session 01a0cb4e): additions to the owner's
+  // directory since the second re-review — the Kalshi lab (Commodities), four
+  // sibling sport competitions, OLBG-Competition, MLBRainDelay, Elections,
+  // GEMSDOE, the two self-learning engines, SocialMediaComp, VacationSchedule,
+  // and one completeness entry that closes the remaining non-market sites.
+  const fourthPass = SIGNAL_SOURCES.filter((s) => /^S(2\d|3[0-4])$/.test(s.id));
+  assert.equal(fourthPass.length, 15, 'the fourth pass catalogued exactly fifteen further entries (S20-S34)');
+  for (const s of fourthPass) {
+    assert.ok(/\(found by fourth pass\)|fourth-pass completeness entry|as the directory records it/.test(s.requested),
+      `${s.id}: fourth-pass entries say how they were found`);
+  }
+  // COVERAGE OF THE WHOLE DIRECTORY (the claim the fourth pass makes): every
+  // repository the directory publishes must be NAMED somewhere in this ledger,
+  // and the repository the directory permanently excludes must not be. The list
+  // is the directory's own export (data/sites.js, generated 2026-09-21T23:07:59Z),
+  // re-verified per repository through GET /repos/buffedlizard55-lab/<repo>.
+  const DIRECTORY_SITES = [
+    'AirPremia', 'BathTubOverflowSF', 'BusanL7HaeundaeLotteHotelStay', 'Commodities', 'CruiseDeals',
+    'Elections', 'GEMSDOE', 'HongdaeStay', 'HotelSeoulRoughdraft1', 'Itinerary-Korea', 'KalshiPaperSim',
+    'Korea', 'Korea-emergency', 'KoreaHotels', 'Leg3SeoulTrip', 'MasterSelfLearn', 'MasterSite', 'MLBComp',
+    'MLB-Live-PBP', 'MLB-PBP', 'MLB-Prediction-model-backtest', 'MLBRainDelay', 'NBAComp', 'NBAInjuryReport',
+    'Ncaa-football-alerts', 'NFL-scoreboard', 'NFLComp', 'NFLInjuryReport', 'NFLPRED', 'NHLComp',
+    'OLBG-Competition', 'PFFNFL', 'PlumbingSF', 'PriceKalshiHistorical', 'ScheduleFreeTime', 'SelfLearn',
+    'SFLateNight', 'SFWeather', 'ShoulderPain', 'SocialMediaComp', 'SportsPred', 'StanfordStay', 'StockPaperSim',
+    'TinoLunchSpecial', 'Tradingview-pinescript-editor', 'TradingViewTheLeap', 'VacationSchedule', 'VapePods',
+    'WoWForever', 'DrugAnalysis', 'GOLD', 'Insider-trades'
+  ];
+  assert.equal(DIRECTORY_SITES.length, 52, 'the directory publishes 52 of the 53 public repositories');
+  const ledgerText = JSON.stringify(SIGNAL_SOURCES);
+  for (const repo of DIRECTORY_SITES) {
+    assert.ok(ledgerText.includes(repo), `${repo} is published by the directory, so the ledger must name it`);
+  }
+  assert.ok(!ledgerText.includes('ProjX'), 'the one repository the directory permanently excludes by owner request is never named here either');
   const requestedNames = new Set(SIGNAL_SOURCES.slice(0, 13).map((s) => s.requested));
   for (const name of ['CEO', 'weather', 'insider trades', 'TheLeap', 'NFL Injury', 'NBA Injury', 'FDA Decisions Drug Analysis', 'NCAA Scoreboard', 'NFL scoreboard', 'MLB Scoreboard', 'Sports Pred', 'Gold', 'PinePilot']) {
     assert.ok(requestedNames.has(name), `the originally requested project "${name}" must keep its ledger entry`);
@@ -2684,8 +2717,8 @@ test('76. the signal-source ledger is complete, linked and consistent with the r
   }
   // Stats derived from the ledger add up.
   const st = signalSourceStats();
-  assert.equal(st.requested, 20);
-  assert.equal(st.liveSignal + st.candidate + st.notASignal + st.notFound, 20, 'every entry has exactly one status');
+  assert.equal(st.requested, 35);
+  assert.equal(st.liveSignal + st.candidate + st.notASignal + st.notFound, 35, 'every entry has exactly one status');
   assert.ok(st.testableHere >= 4);
 });
 
@@ -5653,6 +5686,72 @@ test('139. the desk module publishes its own capture bound, so a season round th
   assert.ok(ev.seasonRoundStamps === ev.storeCaptureBatches, 'a round stamp is a batch stamp (desk-season stamps a round at its batch\'s last instant)');
   assert.ok(ev.captureInstantsEvictedFromModule >= ev.nonEmptyCaptureInstantsEvictedFromModule);
   assert.match(ev.rule, /EVICTED FROM THIS MODULE, never from data\/history/, 'the report says what was NOT deleted');
+  // ROUND ANCHORS (2026-09-22): a season round is stamped at a capture batch's
+  // LAST instant, so the module must hold a capture INSIDE every batch window or
+  // the season silently re-reports fewer rounds (it reported 5 of 21 batches
+  // before this rule). The two measures are published separately because a
+  // batch whose last capture was an EMPTY book can never satisfy the stricter
+  // exact-instant rule.
+  assert.equal(ev.seasonRoundStampsHostableByModule + ev.seasonRoundStampsEvicted, ev.seasonRoundStamps,
+    'every round stamp is either hostable by the module or listed as evicted');
+  assert.equal(ev.seasonRoundStampsEvictedList.length, ev.seasonRoundStampsEvicted);
+  assert.equal(ev.seasonRoundStampsMissingExactInstantList.length, ev.seasonRoundStampsMissingExactInstant);
+  assert.equal(ev.seasonRoundStampsExactInstantInModule + ev.seasonRoundStampsMissingExactInstant, ev.seasonRoundStamps);
+  assert.ok(ev.seasonRoundStampsHostableByModule >= ev.seasonRoundStampsExactInstantInModule,
+    'the window rule can never be stricter than the exact-instant rule');
+  assert.equal(ev.roundAnchors.batches, ev.storeCaptureBatches, 'one anchor slot per store batch');
+  assert.equal(ev.roundAnchors.rows.length, ev.roundAnchors.batches);
+  for (const row of ev.roundAnchors.rows) {
+    if (row.candidates === 0) { assert.equal(row.ticker, null, 'a batch with no open-board candidate anchors nothing'); continue; }
+    assert.ok(row.ticker && row.captureAt, 'an anchored batch names the market and the capture it kept');
+  }
+  for (const d of ev.seasonRoundStampsEvictedDetails) {
+    assert.ok(d.reason && d.reason.length > 40, `${d.stamp}: an evicted stamp says whether it is a module bound or a store bound`);
+    assert.equal(d.storeHasNonEmptyLadderInWindow, !/NO non-empty ladder/.test(d.reason) ? true : false,
+      `${d.stamp}: the reason agrees with the measured store side`);
+  }
+  // INDEPENDENT RE-DERIVATION of the anchor property: walk the store, batch the
+  // capture instants with the season's own 20-minute rule, and require the module
+  // to hold a capture inside every window the store can host a round in.
+  const histDir139 = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'history');
+  const moduleInstantsForAnchorTest = new Set();
+  for (const m of DESK_DATA.markets) for (const c of m.captures || []) {
+    const t = Date.parse(c.at);
+    if (Number.isFinite(t)) moduleInstantsForAnchorTest.add(t);
+  }
+  const storeInstants = [];
+  const storeNonEmptyInstants = new Set();
+  const walkInstants = (dir) => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) { walkInstants(p); continue; }
+      if (!e.name.endsWith('.json') || e.name.startsWith('_')) continue;
+      let j; try { j = JSON.parse(readFileSync(p, 'utf8')); } catch { continue; }
+      for (const b of j.books || []) {
+        const t = Date.parse(b && b.captured_at);
+        if (!Number.isFinite(t)) continue;
+        storeInstants.push(t);
+        const fp = b && b.orderbook && b.orderbook.orderbook_fp;
+        const lv = (fp && Array.isArray(fp.yes_dollars) ? fp.yes_dollars.length : 0) + (fp && Array.isArray(fp.no_dollars) ? fp.no_dollars.length : 0);
+        if (lv > 0) storeNonEmptyInstants.add(t);
+      }
+    }
+  };
+  walkInstants(histDir139);
+  const uniq = [...new Set(storeInstants)].sort((a, b) => a - b);
+  const bs = [];
+  for (const t of uniq) {
+    const cur = bs[bs.length - 1];
+    if (cur && t - cur.last <= 20 * 60 * 1000) cur.last = t; else bs.push({ first: t, last: t });
+  }
+  assert.equal(bs.length, ev.storeCaptureBatches, 'the test\'s own batching matches the module\'s');
+  const hostable = bs.filter((b) => [...moduleInstantsForAnchorTest].some((t) => t >= b.first && t <= b.last));
+  assert.equal(hostable.length, ev.seasonRoundStampsHostableByModule, 'seasonRoundStampsHostableByModule is recomputable from the tree');
+  for (const b of bs) {
+    const storeCanHost = [...storeNonEmptyInstants].some((t) => t >= b.first && t <= b.last);
+    const moduleHosts = hostable.includes(b);
+    if (storeCanHost) assert.ok(moduleHosts, `the store can host a round in the batch ending ${new Date(b.last).toISOString()}, so the module must keep a capture in it (ROUND ANCHORS)`);
+  }
   assert.match(ev.effect, /FEWER rounds than it already measured/i);
   assert.match(ev.reproduce, /--max-captures/);
   assert.equal(ev.nothingDeletedFrom, 'data/history/** (the store is append-only; only this generated module is a window on it)');
@@ -5719,4 +5818,129 @@ test('140. the push guard outlasts a competing bot, and every ingest run publish
   assert.match(script, /m && m\.ok \? m\.event : null/, 'the ESPN join contract is honoured the same way');
   assert.match(script, /no game time is ever parsed out of a ticker string/, 'and no event time is ever parsed out of a ticker');
   assert.match(script, /captured after `tsMs` is invisible|captured after this ladder: not knowable then/, 'the event window is evaluated point-in-time');
+});
+
+test('141. one ticker, several point-in-time store files: the status is resolved once, and a settled contract can never be reported tradeable (irregularity #66)', async () => {
+  const { MARKET_STATUS_RULE, normalizeObservation, resolveMarketStatus, resolveStoreStatuses } = await import('../src/market-status.js');
+  assert.equal(MARKET_STATUS_RULE.id, 'market-status-v1');
+  assert.match(MARKET_STATUS_RULE.source, /docs\.kalshi\.com\/api-reference\/market\/get-market/, 'the rule names the exchange field it reads');
+
+  // R2 — settlement is monotone. The REAL shape found in the store: the daily
+  // file (newest) says finalized/yes, the 1-minute file (older) says active.
+  const real = resolveMarketStatus([
+    { status: 'active', result: null, marketCapturedAt: '2026-09-20T03:39:00.150Z', source: 'data/history/intraday/1m/KXNHLGAME-26SEP19VGKLA-VGK.json' },
+    { status: 'finalized', result: 'yes', marketCapturedAt: '2026-09-22T19:56:00.271Z', source: 'data/history/KXNHLGAME-26SEP19VGKLA-VGK.json' }
+  ], { ticker: 'KXNHLGAME-26SEP19VGKLA-VGK' });
+  assert.equal(real.status, 'finalized');
+  assert.equal(real.result, 'yes');
+  assert.equal(real.settled, true);
+  assert.equal(real.openForTrading, false, 'a settled contract is never tradeable');
+  assert.equal(real.conflict, false, 'the newest file already carries the settlement, so this is not a conflict');
+
+  // The order of the observations must not matter: the resolver is total, the
+  // generator's old merge was not (it let the LAST file read win).
+  const reversed = resolveMarketStatus([
+    { status: 'finalized', result: 'yes', marketCapturedAt: '2026-09-22T19:56:00.271Z', source: 'data/history/KXNHLGAME-26SEP19VGKLA-VGK.json' },
+    { status: 'active', result: null, marketCapturedAt: '2026-09-20T03:39:00.150Z', source: 'data/history/intraday/1m/KXNHLGAME-26SEP19VGKLA-VGK.json' }
+  ]);
+  assert.equal(reversed.status, real.status);
+  assert.equal(reversed.marketCapturedAt, real.marketCapturedAt);
+
+  // The pathological case R2 exists for: a NEWER active photograph of a ticker
+  // some other file settled. Settlement wins, and the disagreement is published.
+  const conflict = resolveMarketStatus([
+    { status: 'active', result: null, marketCapturedAt: '2026-09-22T20:00:00.000Z', source: 'b.json' },
+    { status: 'finalized', result: 'no', marketCapturedAt: '2026-09-22T19:00:00.000Z', source: 'a.json' }
+  ]);
+  assert.equal(conflict.status, 'finalized', 'settlement is monotone');
+  assert.equal(conflict.settled, true);
+  assert.equal(conflict.openForTrading, false, 'fail closed: the newer active file does not reopen a settled contract');
+  assert.equal(conflict.conflict, true, 'and the disagreement is published rather than hidden');
+  assert.equal(conflict.conflictDetail.resolution, 'settled (R2: settlement is monotone)');
+  assert.equal(conflict.conflictDetail.newest.source, 'b.json');
+
+  // R3 — otherwise the newest wins, ties broken by source, and the outcome is
+  // deterministic for a fixed observation set.
+  const newest = resolveMarketStatus([
+    { status: 'initialized', marketCapturedAt: '2026-09-22T10:00:00.000Z', source: 'b.json' },
+    { status: 'active', marketCapturedAt: '2026-09-22T11:00:00.000Z', source: 'a.json' },
+    { status: 'initialized', marketCapturedAt: '2026-09-22T11:00:00.000Z', source: 'c.json' }
+  ]);
+  assert.equal(newest.status, 'active', 'the newest observation wins when nothing is settled');
+  assert.equal(newest.openForTrading, true);
+  const tie = resolveMarketStatus([
+    { status: 'initialized', marketCapturedAt: '2026-09-22T11:00:00.000Z', source: 'b.json' },
+    { status: 'active', marketCapturedAt: '2026-09-22T11:00:00.000Z', source: 'a.json' }
+  ]);
+  assert.equal(tie.source, 'a.json', 'a tie is broken by source path, so two runs cannot disagree');
+  assert.equal(normalizeObservation({ status: null }).settled, false);
+  assert.equal(resolveMarketStatus([]).status, null, 'no file means no claim');
+  const mapped = resolveStoreStatuses([{ ticker: 'X', status: 'finalized', result: 'yes', market_captured_at: '2026-09-22T00:00:00Z', file: 'f' }]);
+  assert.equal(mapped.get('X').settled, true);
+
+  // ---- the committed artifacts must obey the rule ----
+  const { DESK_DATA } = await import('../src/desk-data.js');
+  const contradictory = DESK_DATA.markets.filter((m) => String(m.status) === 'active' && (m.result === 'yes' || m.result === 'no'));
+  assert.equal(contradictory.length, 0, `no market may be active AND carry a settlement result (found: ${contradictory.map((m) => m.ticker).join(', ')})`);
+  for (const m of DESK_DATA.markets) {
+    assert.ok(m.statusEvidence && m.statusEvidence.observations >= 1, `${m.ticker}: the module carries the status evidence it resolved from`);
+    assert.equal(m.statusEvidence.sources.length, m.statusEvidence.observations);
+    if (m.settled) {
+      assert.equal(m.status, 'finalized');
+      assert.ok(m.result === 'yes' || m.result === 'no', `${m.ticker}: settled means a real result, not just a status`);
+      assert.ok(m.statusEvidence.settledObservations >= 1);
+    }
+  }
+  // Every kept market's resolved status must equal what the store files say when
+  // they are read the same way the generator reads them.
+  const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const histRoot = path.join(root, 'data', 'history');
+  const obsByTicker = new Map();
+  const collect = (dir) => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) { collect(p); continue; }
+      if (!e.name.endsWith('.json') || e.name.startsWith('_')) continue;
+      let j; try { j = JSON.parse(readFileSync(p, 'utf8')); } catch { continue; }
+      if (!j.ticker) continue;
+      if (!obsByTicker.has(j.ticker)) obsByTicker.set(j.ticker, []);
+      obsByTicker.get(j.ticker).push({ status: j.status ?? null, result: j.result ?? null, marketCapturedAt: j.market_captured_at || null, source: path.relative(root, p) });
+    }
+  };
+  collect(histRoot);
+  let recomputed = 0;
+  for (const m of DESK_DATA.markets) {
+    const obs = obsByTicker.get(m.ticker);
+    assert.ok(obs && obs.length, `${m.ticker}: its store files exist`);
+    const r = resolveMarketStatus(obs, { ticker: m.ticker });
+    assert.equal(m.status, r.status, `${m.ticker}: the module's status is the resolved one`);
+    assert.equal(Boolean(m.settled), r.settled, `${m.ticker}: the module's settled flag is the resolved one`);
+    recomputed += 1;
+  }
+  assert.ok(recomputed > 0, 'the module actually contains markets to check');
+  assert.equal(DESK_DATA.coverage.statusResolution.rule.id, 'market-status-v1');
+  assert.equal(DESK_DATA.coverage.statusResolution.settledTickers + DESK_DATA.coverage.statusResolution.openTickers + DESK_DATA.coverage.statusResolution.unknownTickers,
+    DESK_DATA.coverage.statusResolution.tickers, 'every tracked ticker is classified');
+  assert.ok(DESK_DATA.coverage.statusResolution.settledFromStaleFile.length >= 1,
+    'the store really does hold files that disagree — the list of settled-from-stale-file tickers is published');
+
+  // ---- the game-window audit obeys it too ----
+  const rep = JSON.parse(readFileSync(path.join(root, 'data', 'reports', 'game-window-captures.json'), 'utf8'));
+  assert.equal(rep.statusReconciliation.rule.id, 'market-status-v1');
+  assert.equal(rep.totals.openStoresByNewestRecord + (rep.totals.stores - rep.totals.openStoresByNewestRecord), rep.totals.stores);
+  assert.ok(rep.totals.openStoresByTheirOwnFileStatus >= rep.totals.openStoresByNewestRecord,
+    'resolving can only ever remove stale open claims, never add one');
+  for (const row of rep.deskReserves) {
+    assert.equal(row.staleOpenFilesExcludedFromTradeable.length, row.settledContractsWithAStaleOpenFile,
+      `${row.series}: the stale-open list matches its count`);
+    for (const s of row.staleOpenFilesExcludedFromTradeable) {
+      assert.notEqual(String(s.fileStatus).toLowerCase(), 'finalized');
+      assert.equal(s.resolved, 'finalized', `${s.ticker}: a stale active photograph never makes a settled contract tradeable`);
+      assert.ok(s.resolvedResult === 'yes' || s.resolvedResult === 'no');
+    }
+  }
+  for (const s of rep.statusReconciliation.staleOpenPhotographs) {
+    assert.ok(s.staleFiles.length >= 1);
+    for (const f of s.staleFiles) assert.notEqual(f.status, s.resolved.status);
+  }
 });

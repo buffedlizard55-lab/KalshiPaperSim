@@ -1,10 +1,10 @@
 {
-  "newestCapture": "2026-09-21T20:42:50.633Z",
+  "newestCapture": "2026-09-22T20:04:18.342Z",
   "cutoffs": [
     {
       "label": "live (newest capture)",
-      "asOf": "2026-09-21T20:42:50.633Z",
-      "tradeable": 80,
+      "asOf": "2026-09-22T20:04:18.342Z",
+      "tradeable": 100,
       "withRealResultAfter": 0,
       "settlementTickers": [],
       "sampleTickers": [
@@ -13,18 +13,18 @@
         "KXMLB-26-MIL",
         "KXMLB-26-BOS",
         "KXMLB-26-NYY",
+        "KXMLB-26-SD",
         "KXNCAAF-27-LSU",
         "KXMLB-26-SEA",
-        "KXMLB-26-SD",
-        "KXNCAAF-27-TEX",
-        "KXNCAAF-27-MISS"
+        "KXNCAAF-27-MISS",
+        "KXNCAAF-27-TEX"
       ],
       "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
     },
     {
       "label": "-6h",
-      "asOf": "2026-09-21T14:42:50.633Z",
-      "tradeable": 76,
+      "asOf": "2026-09-22T14:04:18.342Z",
+      "tradeable": 100,
       "withRealResultAfter": 0,
       "settlementTickers": [],
       "sampleTickers": [
@@ -33,18 +33,18 @@
         "KXMLB-26-MIL",
         "KXMLB-26-BOS",
         "KXMLB-26-NYY",
+        "KXMLB-26-SD",
         "KXNCAAF-27-LSU",
         "KXMLB-26-SEA",
-        "KXMLB-26-SD",
-        "KXNCAAF-27-TEX",
-        "KXNCAAF-27-MISS"
+        "KXNCAAF-27-MISS",
+        "KXNCAAF-27-TEX"
       ],
       "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
     },
     {
       "label": "-12h",
-      "asOf": "2026-09-21T08:42:50.633Z",
-      "tradeable": 75,
+      "asOf": "2026-09-22T08:04:18.342Z",
+      "tradeable": 100,
       "withRealResultAfter": 0,
       "settlementTickers": [],
       "sampleTickers": [
@@ -53,18 +53,18 @@
         "KXMLB-26-MIL",
         "KXMLB-26-BOS",
         "KXMLB-26-NYY",
+        "KXMLB-26-SD",
         "KXNCAAF-27-LSU",
         "KXMLB-26-SEA",
-        "KXMLB-26-SD",
-        "KXNCAAF-27-TEX",
-        "KXNCAAF-27-MISS"
+        "KXNCAAF-27-MISS",
+        "KXNCAAF-27-TEX"
       ],
       "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
     },
     {
       "label": "-15h",
-      "asOf": "2026-09-21T05:42:50.633Z",
-      "tradeable": 75,
+      "asOf": "2026-09-22T05:04:18.342Z",
+      "tradeable": 100,
       "withRealResultAfter": 0,
       "settlementTickers": [],
       "sampleTickers": [
@@ -73,18 +73,18 @@
         "KXMLB-26-MIL",
         "KXMLB-26-BOS",
         "KXMLB-26-NYY",
+        "KXMLB-26-SD",
         "KXNCAAF-27-LSU",
         "KXMLB-26-SEA",
-        "KXMLB-26-SD",
-        "KXNCAAF-27-TEX",
-        "KXNCAAF-27-MISS"
+        "KXNCAAF-27-MISS",
+        "KXNCAAF-27-TEX"
       ],
       "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
     },
     {
       "label": "-24h",
-      "asOf": "2026-09-20T20:42:50.633Z",
-      "tradeable": 75,
+      "asOf": "2026-09-21T20:04:18.342Z",
+      "tradeable": 97,
       "withRealResultAfter": 0,
       "settlementTickers": [],
       "sampleTickers": [
@@ -93,59 +93,66 @@
         "KXMLB-26-MIL",
         "KXMLB-26-BOS",
         "KXMLB-26-NYY",
+        "KXMLB-26-SD",
         "KXNCAAF-27-LSU",
         "KXMLB-26-SEA",
-        "KXMLB-26-SD",
-        "KXNCAAF-27-TEX",
-        "KXNCAAF-27-MISS"
+        "KXNCAAF-27-MISS",
+        "KXNCAAF-27-TEX"
       ],
       "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
     },
     {
       "label": "-48h",
-      "asOf": "2026-09-19T20:42:50.633Z",
-      "tradeable": 73,
-      "withRealResultAfter": 5,
+      "asOf": "2026-09-20T20:04:18.342Z",
+      "tradeable": 97,
+      "withRealResultAfter": 2,
       "settlementTickers": [
-        "KXUFCFIGHT-26SEP19VANPAN-PAN",
-        "KXUFCFIGHT-26SEP19VANPAN-VAN",
-        "KXUFCFIGHT-26SEP19TSARUF-RUF",
-        "KXHIGHNY-26SEP19-B69.5",
-        "KXHIGHNY-26SEP19-B71.5"
+        "KXNFLSPREAD-26SEP20MIASF-SF14",
+        "KXNFLSPREAD-26SEP20SEAARI-SEA4"
       ],
       "sampleTickers": [
+        "KXNFLSPREAD-26SEP20MIASF-SF14",
+        "KXNFLSPREAD-26SEP20SEAARI-SEA4",
         "KXNBA-27-PHI",
         "KXMLB-26-LAD",
         "KXMLB-26-MIL",
         "KXMLB-26-BOS",
         "KXMLB-26-NYY",
-        "KXNCAAF-27-LSU",
-        "KXMLB-26-SEA",
         "KXMLB-26-SD",
-        "KXNCAAF-27-TEX",
-        "KXNCAAF-27-MISS"
+        "KXNCAAF-27-LSU",
+        "KXMLB-26-SEA"
       ],
       "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
     },
     {
       "label": "-96h",
-      "asOf": "2026-09-17T20:42:50.633Z",
-      "tradeable": 0,
-      "withRealResultAfter": 6,
+      "asOf": "2026-09-18T20:04:18.342Z",
+      "tradeable": 51,
+      "withRealResultAfter": 5,
       "settlementTickers": [
         "KXUFCFIGHT-26SEP19VANPAN-PAN",
         "KXUFCFIGHT-26SEP19VANPAN-VAN",
         "KXUFCFIGHT-26SEP19TSARUF-RUF",
-        "KXBTC15M-26SEP181445-45",
-        "KXHIGHNY-26SEP19-B69.5",
-        "KXHIGHNY-26SEP19-B71.5"
+        "KXNFLSPREAD-26SEP20MIASF-SF14",
+        "KXNFLSPREAD-26SEP20SEAARI-SEA4"
       ],
-      "sampleTickers": [],
-      "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here"
+      "sampleTickers": [
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B87500"
+      ],
+      "note": "a real captured ladder exists at or before this cut-off for every ticker listed"
     },
     {
       "label": "-240h",
-      "asOf": "2026-09-11T20:42:50.633Z",
+      "asOf": "2026-09-12T20:04:18.342Z",
       "tradeable": 0,
       "withRealResultAfter": 6,
       "settlementTickers": [
@@ -153,8 +160,8 @@
         "KXUFCFIGHT-26SEP19VANPAN-VAN",
         "KXUFCFIGHT-26SEP19TSARUF-RUF",
         "KXBTC15M-26SEP181445-45",
-        "KXHIGHNY-26SEP19-B69.5",
-        "KXHIGHNY-26SEP19-B71.5"
+        "KXNFLSPREAD-26SEP20MIASF-SF14",
+        "KXNFLSPREAD-26SEP20SEAARI-SEA4"
       ],
       "sampleTickers": [],
       "note": "no market has a captured ladder before this cut-off in the current store — the desk refuses to price anything here"

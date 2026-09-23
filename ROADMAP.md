@@ -4,9 +4,20 @@ This file is the honest queue for KalshiPaperSim. Every item says what it would
 change, what it needs, and how a reader could check it. Nothing here is a
 promise; items leave this file only when the work is committed **and** measured.
 
-Latest HTTP review: 2026-09-22 — HTTP boundary hardening and Node/Pages ledger
-parity (shipped item 44). This HTTP change does not alter captured market inputs
-or computed strategy results. The concurrent audit/report update below is preserved.
+Latest review: 2026-09-22 (second pass) — **the desk stopped holding settled
+contracts and stopped losing season rounds.** One ticker is stored in up to three
+point-in-time files that legitimately disagree; reading one file's `status` as
+the status published 2 settled KXNHLGAME contracts as OPEN tradeable slots and
+left 3 settled contracts inside the desk (2 of them filling the whole
+KXNCAAFSPREAD reserve) — now resolved once by `src/market-status.js`
+(shipped item 45, irregularity #66). The season also stopped shrinking: ROUND
+ANCHORS keep one open-board capture per real capture batch, so the season
+re-walks every round the store can host — 12 rounds / 34 fills / 7,771 events with
+27/27 checks, against 5 rounds / 12 fills / 4,329 events before the rule
+(shipped item 46, closing Next #10). The ledger now stores **every** fill with no
+trims (62,571 fills / 32,819 round trips, `trims: []`), closing Next #6. Earlier the
+same day: HTTP boundary hardening and Node/Pages ledger
+parity (shipped item 44).
 
 Last reviewed: 2026-09-22 (the Arena session on branch
 `arena/01a0c733-kalshipapersim` — this session **answered Next #1 offline** with
@@ -73,6 +84,10 @@ main (#56), the Form 4 archive on EDGAR itself, and the ESPN half deferred
 | 43 | **The offline game-window audit — ROADMAP Next #1 answered without a network** (irregularity #65). `scripts/verify-game-window.mjs` reads only committed files: 968 store files walked, 151 game-series stores / 100 distinct contracts / 1,544 ladders, each classified against the market object's OWN `open_time`/`close_time` (never `occurrence_datetime` — it equals `expected_expiration_time` on 144 of the 151, differs on 7, equals `close_time` on none) plus an event window taken ONLY from the official MLB archive or the ESPN archive (labelled NOT OFFICIAL; it publishes no start time), evaluated point-in-time at the ladder's own instant. Verdict: **0 IN_PLAY ladders**; 1,031 non-empty ladders inside the tradeable window whose event window could not be joined, reported as `TRADEABLE_EVENT_UNVERIFIED` and never as in-play; 513 post-close ladders, all empty; store verdicts `POST_CLOSE_ONLY` 70 / `TRADEABLE_LADDER_EVENT_UNVERIFIED` 81; 7 of 43 KXMLBGAME stores join the official archive on `gamePk`. Every desk game-series reserve is explained by name, including the 2 OPEN KXNHLGAME contracts with 10 usable ladders each that the module's 80-market cap dropped. Wired as a committed `continue-on-error` step in both ingest workflows and linked from the Pages site's Raw reports panel | `scripts/verify-game-window.mjs`; `data/reports/game-window-captures.json`; `.github/workflows/{daily-history,ingest-now}.yml`; `src/app.js` Raw reports; test 138; fact V123; irregularity #65 |
 
 | 44 | **HTTP boundary hardening + Node/Pages ledger parity.** Static serving now allowlists public assets/evidence, refuses symlinks and hides repository internals/runtime files; malformed/non-object request bodies return 400, oversized bodies return 413, and invalid resets cannot mutate state. The Node ledger URL falls back to the existing Pages export. New PR checks cover the engine, isolated HTTP regressions, actual-server state preservation, both UI stubs, the build and workflow push races. This is not API authentication (see README deployment scope). | `lib/http.js`; `test/http.test.js`; `test/server-smoke.mjs`; `.github/workflows/ci.yml` |
+| 45 | **A contract's status is now resolved ONCE, from every store file that carries it (irregularity #66).** `src/market-status.js` (rule `market-status-v1`) keeps every point-in-time photograph, publishes the disagreements, and settles the rule: settlement is monotone (a finalized-with-result photograph beats any newer `active` one), otherwise the newest `market_captured_at` wins with ties broken by source path. Wired into the desk-module generator (one resolution per ticker after the walk; the market OBJECT is chosen the same way, so volume and close_time can no longer come from the older photograph) and into the game-window audit (per-ticker open/settled, `statusReconciliation`, `staleOpenPhotographs`). Before: 3 settled contracts carried `status: "active"` inside `src/desk-data.js` (2 of them the entire KXNCAAFSPREAD reserve) and the audit published 2 settled KXNHLGAME contracts as OPEN with 10 usable ladders each. After: 0 contradictory records, 527 settled / 135 open / 1 unknown tickers, 42 disagreeing photographs named, 0 irreconcilable conflicts | `src/market-status.js`, `scripts/generate-desk-module.mjs` (`coverage.statusResolution`, per-market `statusEvidence`), `scripts/verify-game-window.mjs` (`totals.openStoresByNewestRecord` 60 beside `openStoresByTheirOwnFileStatus` 62), test 141, facts V127 |
+| 46 | **ROUND ANCHORS — the desk season stopped losing rounds (closes Next #10).** `coverage.captureEviction` now decomposes the eviction into a MODULE bound and a STORE bound and keeps one open-board capture per real capture batch on top of the market cap, because `src/desk-season.js` stamps a round at a batch's LAST instant. Measured on the same store: 14 round stamps evicted → **0** (`seasonRoundStampsHostableByModule` 21/21, `roundAnchors.batchesWithAnchor` 21/21), and `node scripts/run-desk-season.mjs` reports **12 rounds, 34 fills (22 carried maker fills), 7,771 real events walked, 27/27 checks** where the pre-fix run re-reported 5 rounds / 12 fills / 4,329 events. The stricter exact-instant measure (14 of 21) is still published, because 7 stamps were captured on an empty post-close book and can never satisfy it | `scripts/generate-desk-module.mjs` (ROUND ANCHORS + `selectCaptures(captures, anchors)` + `captureEviction.roundAnchors`), `src/desk-data.js`, `data/reports/desk-season.json`, tests 139/141, facts V125 (updated) and V128 |
+| 47 | **The ledger stores every fill.** `node scripts/export-ledger.mjs --max-fills=200000 --max-trips=100000` → 62,571 fills / 32,819 round trips with `trims: []` (the old 40k/20k defaults dropped 20,646 fills and 11,413 round trips), `unified-trades.csv` 32,890 rows, and the two game-series reserve ceilings added so an open series cannot be crowded out (KXNCAAFGAME keeps 20 of 26 laddered open contracts, was 4) | `data/ledger/summary.json` (`trims: []`), `data/ledger/unified-trades.csv`, `data/reports/trades-review-2026-09-22.md` |
+| 48 | **Third MasterSite pass: a rule mined from social discovery, implemented twice, and a forward test that cannot be erased by a new design.** (a) The directory now publishes 52 of the owner's 53 repositories; **all 52 are catalogued** in `src/signal-sources.js` (20 → **35 entries**, S20–S34) from the repositories read through the official GitHub API this session — including the owner's own Kalshi lab (Commodities), four sibling sport-competition projects (MLBComp / NBAComp / NFLComp / NHLComp), OLBG-Competition's multiplicity-control lesson, MLBRainDelay (a TIMING source for the game-window join gap), Elections (a live contest scoring daily on OPEN Kalshi election markets — and a named coverage gap here, since this store holds no election ticker), and one grouped entry closing the non-market sites. (b) The r/PredictionsMarkets 500-bot survivor rule (`R06`, third-party) — the same rule the owner's lab recreates as `HeatConfirm` with the literals 77.0°F / 0.42 / 0.08 — is now implemented here too: **`HeatConfirm_500Bots`** (roster, hourly KXHIGHNY, 61 strategies total) and **`LiveHeatConfirm_Weather`** (Live Desk, open KXHIGH* brackets with captured ladders, 23 entrants total). Measured: 1,782 hourly bars, 187 with a point-in-time NWS snapshot, 27 above the 77°F gate, **0 inside a captured bracket** → `UNTESTED_ON_THIS_DATASET`, with the reason published; the desk entrant abstains because 0 of the 106 desk contracts are KXHIGH* at this cut-off. (c) `data/reports/forward-test.json` now publishes `method.previousDesignSplit` + `rankedPreviousDesignSplit` beside the strict window, because the strict split is `max(designedAt)` and a design dated today would otherwise erase the earlier measurement (strict window now 1 bar; previous-design-split window 2 bars, 23 strategies measured) | `src/signal-sources.js`, `src/strategies.js`, `src/desk-strategies.js`, `src/forward-test.js`, `data/reports/flights.json`, `data/reports/forward-test.json`, facts V129–V131 |
 
 ## Next, in priority order
 
@@ -99,12 +114,17 @@ main (#56), the Form 4 archive on EDGAR itself, and the ESPN half deferred
    published). *Needs:* the scheduled workflows only, then re-run the reports.
    *Check:* `data/reports/flights.json` → `forecastArchive` + the hourly
    leaderboard's unranked entries.
-3. **True forward windows for the original roster.** `designedAt` is
-   2026-09-17/18, so bars from 2026-09-18/19 onward are genuinely
-   out-of-sample for every entry: the strict forward window grows one bar per
-   daily ingest — still below the 20-bar floor, so the numbers stay labelled
-   directional. *Check:* `data/reports/forward-test.json` →
-   `method.strictForwardBars`.
+3. **True forward windows for the original roster.** `designedAt` now runs
+   2026-09-17 → **2026-09-22** (the newest entry, `HeatConfirm_500Bots`, was
+   designed in this session) and the strict split is the maximum, so the strict
+   window is currently **1 bar** — below the 20-bar floor, so the numbers stay
+   labelled directional. Two windows are published side by side:
+   `method.strictForwardBars` (strict) and `method.previousDesignSplit` (the same
+   replay moved back to the second-latest design date, labelled a SUPERSET that
+   shares bars with the newest design's in-sample period and must never be quoted
+   as a strict result). *Check:* `data/reports/forward-test.json` →
+   `method.strictForwardBars`, `method.previousDesignSplit.bars`,
+   `rankedPreviousDesignSplit`.
 4. **S14's missing `predict` command + the SportsPred half (S10).** The
    archive, join and hooks ship (#35) but the owner model can only feed from
    walk-forward output until `mlb_predict/cli.py` grows a `predict` command —
@@ -114,15 +134,13 @@ main (#56), the Form 4 archive on EDGAR itself, and the ESPN half deferred
    (Euro vs GFS divergence) + lead-days per archived prediction row — both
    named in RESEARCH_GAPS with their unblockers; recreating them on price
    alone was refused (it would fabricate direction).
-6. **DONE 2026-09-22 (shipped #42) — the ledger covers the whole roster.**
-   `node scripts/export-ledger.mjs` + `node scripts/trades-review.mjs` re-run on
-   the merged tree: 52 strategy-flights (daily=31, hourly=19, micro=13), 60,646
-   fills, 31,413 round trips, `verification.ok: true` on 4 checks,
-   `unified-trades.csv` at 20,064 rows and
-   `data/reports/trades-review-2026-09-22.md` written. What is left is the store
-   bound, not the roster: 20,646 fills and 11,413 round trips are dropped by
-   `--max-fills` / `--max-trips` (recorded in `trims[]`), so a higher bound or a
-   per-strategy split is the next step if a reader wants every row on disk.
+6. **DONE 2026-09-22 — every fill is now on disk (shipped #47).**
+   `node scripts/export-ledger.mjs --max-fills=200000 --max-trips=100000` +
+   `node scripts/trades-review.mjs`: 62,571 fills, 32,819 round trips,
+   `verification.ok: true`, **`trims: []`** (nothing dropped), `unified-trades.csv`
+   at 32,890 rows and `data/reports/trades-review-2026-09-22.md` rewritten. The
+   CLI defaults are still 40k/20k on purpose — a run that exceeds them records the
+   trim in `trims[]` rather than failing.
 7. **Cross-venue arbitrage (Kalshi vs Polymarket)** remains the standing OPEN
    research gap (every arbitrage source reviewed points at it) — blocked by
    sandbox egress and by Polymarket data not being captured; needs a
@@ -135,27 +153,29 @@ main (#56), the Form 4 archive on EDGAR itself, and the ESPN half deferred
    `--workflow=espn-signals.yml` and `--workflow=mlb-pregame-signals.yml`
    (schedules only run on `main`), then `node scripts/trades-review.mjs` for
    the next day's placed/upcoming review.
-9. **Re-capture what the 2026-09-22 push race threw away, and confirm the queue
-   fix held.** All nine `data/forecasts/*.json` stores still end at
+9. **DONE except for the run itself — the re-capture requests are committed
+   (2026-09-22, this session): `.github/triggers/forecast.json` bumped to
+   `request: 5` and `.github/triggers/mlb-pregame.json` to `request: 2`, both
+   naming the lost data and the fixed queue. *Check after the push:*
+   `gh run list --workflow=weather-signals.yml --limit 3` and
+   `--workflow=mlb-pregame-signals.yml --limit 3` (a green run that then commits
+   a later `captured_at`). What was re-requested:** all nine
+   `data/forecasts/*.json` stores still ended at
    `captured_at` 2026-09-21T22:36:56.809Z even though the 01:37Z weather run
    captured and audited new snapshots before its commit step failed (#63), and
-   `data/mlb-pregame/predictions/` still holds 0 files after two failed runs.
-   *Do:* bump `.github/triggers/forecast.json` and
-   `.github/triggers/mlb-pregame.json` once each, then `gh run list --limit 12`
-   — after shipped #40 no bot run should fail at its commit step. *Check:* the
-   newest `captured_at` in `data/forecasts/nyc-central-park.json` is later than
-   2026-09-21T22:36:56.809Z.
-10. **Give the desk season a durable round memory (or raise the capture cap).**
-    Shipped #41 publishes the eviction but does not stop it: with
-    `--max-captures 12` the module is a sliding window, so a regeneration can
-    re-report FEWER rounds than the season already measured (9 → 5 on
-    2026-09-22; 14 of 18 round stamps evicted, including 7 of the 9 in the
-    committed report). *Do:* either regenerate with `--max-captures 40` (one
-    command — the ladders are all still in `data/history/**`) or persist an
-    append-only round ledger the next run reads instead of re-walking. *Check:*
-    `src/desk-data.js` → `coverage.captureEviction.seasonRoundStampsEvicted`
-    back to 0, and `data/reports/desk-season.json` → `summary.totals.rounds`
-    non-decreasing across runs.
+   `data/mlb-pregame/predictions/` held 0 files after two failed runs. The two
+   trigger bumps above are that re-capture request, now queued behind the shared
+   commit lock from shipped #40/#61. *Check:* the newest `captured_at` in
+   `data/forecasts/nyc-central-park.json` is later than 2026-09-21T22:36:56.809Z.
+10. **DONE 2026-09-22 (shipped #46) — ROUND ANCHORS, not a bigger number.**
+   The season now re-walks every round the store can host: `seasonRoundStampsEvicted`
+   0 of 21 (was 14), 12 rounds / 34 fills / 7,771 events, 27/27 checks. The
+   eviction is decomposed into a module bound (now 0) and a store bound (7 stamps
+   were captured on an empty post-close book and can never be hosted — published
+   as `seasonRoundStampsExactInstantInModule`). The append-only round ledger
+   remains an optional nicety, not a correctness fix: the ladders are all still in
+   `data/history/**`, and the module now pins the instants a round is stamped at.
+
 11. **Close the game-window join gaps so `TRADEABLE_EVENT_UNVERIFIED` can become
     `IN_PLAY` or `PRE_EVENT`.** The audit is only as good as its event windows:
     KXNCAAFGAME 41 stores are `CODE_UNMAPPED_TO_ESPN` (no NCAAF team codes in
@@ -165,15 +185,34 @@ main (#56), the Form 4 archive on EDGAR itself, and the ESPN half deferred
     at all, and the ESPN archive publishes NO start time — only observed state
     transitions. *Needs:* ESPN scoreboard captures for those leagues/slates (the
     archive workflow exists) and an official start-time source per league; until
-    then the audit correctly refuses to call those ladders in-play. *Check:*
-    `game-window-captures.json` → `series[*].joinReasons` shrinking and
-    `seriesWithInPlayLadder` growing.
-12. **Two OPEN KXNHLGAME contracts with 20 usable ladders never reach the desk.**
-    `KXNHLGAME-26SEP19VGKLA-VGK` and `KXNHLGAME-26SEP20WSHBOS-WSH` hold 10
-    non-empty tradeable ladders each and are absent from `src/desk-data.js`
-    entirely — dropped by the module's 80-market cap — so the KXNHLGAME reserve
-    reads 0 for a reason the audit now names but nobody has fixed (#65). *Do:*
-    either raise the module's market cap or give the generator a per-series
-    quota so an open game series can never be crowded out by settled weather
-    brackets. *Check:* `game-window-captures.json` →
-    `deskReserves[KXNHLGAME].ofThoseInDeskModule` > 0.
+    then the audit correctly refuses to call those ladders in-play. *Two named
+    unblockers were catalogued in this session's MasterSite pass:* **MLBRainDelay**
+    (S27) shows the official delay/postponement fields exist on the same
+    statsapi.mlb.com source this repo already archives — an event-time feed there
+    would let a delayed game's real start be joined point-in-time; and
+    **VacationSchedule** (S33) holds a committed Stats-API fixture snapshot with
+    the league's own `game_pk` per row, which is the join key — but a CURRENT
+    snapshot is not an event window AS KNOWN AT THE TIME, so the schedule would
+    have to be archived on the same cadence as `data/mlb-signals/` before it could
+    classify a single historical ladder. *Check:* `game-window-captures.json` →
+    `series[*].joinReasons` shrinking and `seriesWithInPlayLadder` growing.
+12. **DONE 2026-09-22 (shipped #45/#47) — and the premise was wrong.**
+   `KXNHLGAME-26SEP19VGKLA-VGK` and `KXNHLGAME-26SEP20WSHBOS-WSH` are SETTLED
+   contracts (finalized `yes` / `no` in the daily store; only their older 1-minute
+   photographs said `active`), so the KXNHLGAME reserve correctly kept 0 of 4 —
+   the audit was reading one file's status as the status (irregularity #66, fixed
+   by `src/market-status.js`). The genuine crowding-out it exposed in
+   `KXNCAAFGAME` (26 open laddered contracts, 4 kept) is fixed by per-series
+   ceilings: that reserve now keeps 20 of 26. *Check*:
+   `data/reports/game-window-captures.json` → `deskReserves[KXNCAAFGAME].deskKept`
+   and `deskReserves[KXNHLGAME].settledContractsWithAStaleOpenFile`.
+13. **Mirror the election contest format once an election series is discovered.**
+   The owner's Elections project (MasterSite, catalogued as S28) runs a live
+   2026 contest — 12 entrants, unique usernames, $100,000 each, scored daily on
+   **open Kalshi election markets** — which is this platform's format applied to a
+   series this store does not hold. *Do:* discover the live election series
+   tickers from the exchange (never guess them: `node scripts/discover-universe.mjs
+   --series=<ticker>` from a networked runner), add them to the daily ingest
+   universe, confirm the first non-empty ladder lands in `data/history/`, then add
+   a desk entrant. *Check:* the desk module's `coverage.openAtCapture` includes an
+   election series and `data/reports/live-desk.json` shows it watched.

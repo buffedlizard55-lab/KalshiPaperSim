@@ -1,8 +1,8 @@
 {
   "_README": "Commit a change to this file to request an immediate MLB pre-game model run (.github/workflows/mlb-pregame-signals.yml). The workflow runs the owner's model (MasterSite S14) walk-forward chain and ingests its predictions as MEASUREMENT rows; pre-game SNAPSHOT rows activate when the model CLI grows a `predict` command. Bump `request` so the push is a real change.",
-  "request": 1,
+  "request": 2,
   "enabled": true,
-  "requested_at": "2026-09-21T23:20:00.000Z",
-  "requested_by": "arena session 01a0c625 — first run of the S14 pre-game probability capture (ROADMAP Next #3(c)). Expected: data/mlb-pregame/predictions/<date>.json with walk-forward measurement rows (timely:false) from the model's predictions.csv, and a status report naming the still-missing `predict` command in mlb_predict/cli.py.",
+  "requested_at": "2026-09-22T23:05:00.000Z",
+  "requested_by": "arena session 01a0cb4e (2026-09-22) \u2014 captured data was lost to the commit race on 2026-09-22 (irregularity #63): data/forecasts/*.json still end at 2026-09-21T22:36:56.809Z and data/mlb-pregame/predictions/ holds 0 files. The shared queue and the 6-attempt race guard are now in place, so this request re-captures on the fixed pipeline (ROADMAP Next #9).",
   "why": "A pre-game probability is only a signal if it EXISTED before first pitch. Walk-forward rows measure the model against the store's recorded Kalshi prices; only snapshots (capturedAt < firstPitchAt) can ever trigger MLBPreGame_ModelEdge."
 }

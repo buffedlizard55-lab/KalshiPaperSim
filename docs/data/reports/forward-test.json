@@ -1,17 +1,25 @@
 {
-  "generatedAt": "2026-09-20T16:27:15.911Z",
+  "generatedAt": "2026-09-23T00:03:41.662Z",
   "method": {
-    "splitTs": 1789862400,
-    "forwardStart": "2026-09-20T00:00:00.000Z",
+    "splitTs": 1790035200,
+    "forwardStart": "2026-09-22T00:00:00.000Z",
     "strictForwardBars": 1,
-    "strictForwardStart": "2026-09-20T04:00:00.000Z",
-    "strictForwardEnd": "2026-09-20T04:00:00.000Z",
-    "heldOutTs": 1782619200,
-    "heldOutStart": "2026-06-28T04:00:00.000Z",
-    "windowStart": "2025-08-16T04:00:00.000Z",
-    "windowEnd": "2026-09-20T04:00:00.000Z",
+    "strictForwardStart": "2026-09-22T04:00:00.000Z",
+    "strictForwardEnd": "2026-09-22T04:00:00.000Z",
+    "heldOutTs": 1782792000,
+    "heldOutStart": "2026-06-30T04:00:00.000Z",
+    "windowStart": "2025-08-18T04:00:00.000Z",
+    "windowEnd": "2026-09-22T04:00:00.000Z",
     "rule": "STRICT FORWARD = bars strictly after max(designedAt), replayed on a fresh account forbidden to trade before that timestamp. HELD-OUT = a later real window, labelled as a robustness check because the designs were authored with knowledge of it.",
     "minMeaningfulForwardBars": 20,
+    "previousDesignSplit": {
+      "splitTs": 1789948800,
+      "forwardStart": "2026-09-21T00:00:00.000Z",
+      "bars": 2,
+      "start": "2026-09-21T04:00:00.000Z",
+      "end": "2026-09-22T04:00:00.000Z",
+      "note": "The same replay with noTradeBeforeTs moved back to the second-latest distinct designedAt in the roster. It is a SUPERSET of the strict forward window and shares bars with the in-sample period of the newest design, so it must never be quoted as a strict forward result — it exists so that adding a strategy today does not erase the measurement the build had yesterday."
+    },
     "strictForwardNote": "The strict forward window holds 1 real bar(s) — below the 20-bar floor this project uses for per-market statistics, so treat those numbers as directional only. It grows by one real bar per daily ingest run.",
     "emptyForwardExplanation": null,
     "depthMode": "captured",
@@ -21,16 +29,21 @@
     "limitation": "Neither measurement is live trading. Both replay real stored bars; the strict forward window simply contains bars that did not exist when the design was written."
   },
   "totals": {
-    "strategies": 34,
-    "strictForwardMeasured": 18,
-    "heldOutMeasured": 32,
+    "strategies": 40,
+    "strictForwardMeasured": 17,
+    "heldOutMeasured": 34,
     "bestStrictForward": {
-      "username": "FedPivotSniper",
+      "username": "YieldVulture_Arb",
       "returnPct": 0
     },
     "bestHeldOut": {
       "username": "MakerFlip_SpreadHarvest",
-      "returnPct": 3.47
+      "returnPct": 4.62
+    },
+    "previousDesignSplitMeasured": 23,
+    "bestPreviousDesignSplit": {
+      "username": "MakerFlip_SpreadHarvest",
+      "returnPct": 0.19
     }
   },
   "rows": [
@@ -67,6 +80,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -137,6 +151,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -160,18 +181,18 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 80947.19,
-        "returnPct": -19.05,
-        "totalTrades": 2205,
+        "finalEquity": 67261.9,
+        "returnPct": -32.74,
+        "totalTrades": 2206,
         "winRate": 75,
         "maxDrawdownPct": 36.01,
         "feesPaid": 1769.68,
         "unfilledContracts": 3883.96,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 1061103.71,
-          "contractsOnModelledDepth": 16651.94,
-          "totalFilledContracts": 1077755.65,
+          "contractsOnCapturedDepth": 1061103.19,
+          "contractsOnModelledDepth": 16652.24,
+          "totalFilledContracts": 1077755.43,
           "capturedPct": 98.45,
           "depthModels": [
             "synthetic",
@@ -182,25 +203,25 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 85513.04,
-        "returnPct": -14.49
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 80947.19,
+        "returnPct": -19.05
       },
       "strictForward": {
-        "finalEquity": 98184.6,
-        "returnPct": -1.82,
-        "totalTrades": 28,
+        "finalEquity": 99610.41,
+        "returnPct": -0.39,
+        "totalTrades": 32,
         "winRate": 0,
-        "maxDrawdownPct": 1.82,
-        "feesPaid": 348.83,
-        "unfilledContracts": 707.81,
-        "suppressedActions": 3425,
+        "maxDrawdownPct": 0.39,
+        "feesPaid": 249.69,
+        "unfilledContracts": 0,
+        "suppressedActions": 3493,
         "depthMix": {
-          "contractsOnCapturedDepth": 5236.96,
-          "contractsOnModelledDepth": 42765.72,
-          "totalFilledContracts": 48002.68,
-          "capturedPct": 10.91,
+          "contractsOnCapturedDepth": 12094.32,
+          "contractsOnModelledDepth": 27390.46,
+          "totalFilledContracts": 39484.78,
+          "capturedPct": 30.63,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -209,20 +230,43 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 82600.88,
-        "returnPct": -17.4,
-        "totalTrades": 1245,
-        "winRate": 81.8,
-        "maxDrawdownPct": 19.1,
-        "feesPaid": 4490.18,
-        "unfilledContracts": 18833.06,
-        "suppressedActions": 1865,
+      "previousDesignSplit": {
+        "finalEquity": 99227.58,
+        "returnPct": -0.77,
+        "totalTrades": 60,
+        "winRate": 0,
+        "maxDrawdownPct": 0.77,
+        "feesPaid": 511.91,
+        "unfilledContracts": 0,
+        "suppressedActions": 3461,
         "depthMix": {
-          "contractsOnCapturedDepth": 310474.38,
-          "contractsOnModelledDepth": 582933.48,
-          "totalFilledContracts": 893407.86,
-          "capturedPct": 34.75,
+          "contractsOnCapturedDepth": 14405.22,
+          "contractsOnModelledDepth": 58509.48,
+          "totalFilledContracts": 72914.7,
+          "capturedPct": 19.76,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 81864.39,
+        "returnPct": -18.14,
+        "totalTrades": 1238,
+        "winRate": 81.8,
+        "maxDrawdownPct": 19.04,
+        "feesPaid": 4503.31,
+        "unfilledContracts": 18833.06,
+        "suppressedActions": 1890,
+        "depthMix": {
+          "contractsOnCapturedDepth": 304938.27,
+          "contractsOnModelledDepth": 585986.03,
+          "totalFilledContracts": 890924.3,
+          "capturedPct": 34.23,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -266,6 +310,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -336,6 +381,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -359,18 +411,18 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 64770.48,
-        "returnPct": -35.23,
-        "totalTrades": 853,
+        "finalEquity": 61784.88,
+        "returnPct": -38.22,
+        "totalTrades": 855,
         "winRate": 80.5,
-        "maxDrawdownPct": 37.03,
-        "feesPaid": 3847.13,
+        "maxDrawdownPct": 39.65,
+        "feesPaid": 3847.29,
         "unfilledContracts": 4476.69,
         "suppressedActions": 0,
         "depthMix": {
           "contractsOnCapturedDepth": 566219.89,
-          "contractsOnModelledDepth": 274314.34,
-          "totalFilledContracts": 840534.23,
+          "contractsOnModelledDepth": 274388.13,
+          "totalFilledContracts": 840608.02,
           "capturedPct": 67.36,
           "depthModels": [
             "synthetic",
@@ -381,25 +433,25 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 67703.66,
-        "returnPct": -32.3
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 64786.72,
+        "returnPct": -35.21
       },
       "strictForward": {
-        "finalEquity": 99201.25,
-        "returnPct": -0.8,
-        "totalTrades": 4,
+        "finalEquity": 99886.21,
+        "returnPct": -0.11,
+        "totalTrades": 18,
         "winRate": 0,
-        "maxDrawdownPct": 0.8,
-        "feesPaid": 66.95,
-        "unfilledContracts": 6190.83,
-        "suppressedActions": 851,
+        "maxDrawdownPct": 0.12,
+        "feesPaid": 40.55,
+        "unfilledContracts": 0,
+        "suppressedActions": 865,
         "depthMix": {
-          "contractsOnCapturedDepth": 848.03,
-          "contractsOnModelledDepth": 9891.81,
-          "totalFilledContracts": 10739.84,
-          "capturedPct": 7.9,
+          "contractsOnCapturedDepth": 15957.65,
+          "contractsOnModelledDepth": 1736.4,
+          "totalFilledContracts": 17694.05,
+          "capturedPct": 90.19,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -408,20 +460,43 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 81993.44,
-        "returnPct": -18.01,
-        "totalTrades": 388,
-        "winRate": 94.1,
-        "maxDrawdownPct": 18.65,
-        "feesPaid": 3135.44,
-        "unfilledContracts": 82050.46,
-        "suppressedActions": 483,
+      "previousDesignSplit": {
+        "finalEquity": 99773.65,
+        "returnPct": -0.23,
+        "totalTrades": 24,
+        "winRate": 0,
+        "maxDrawdownPct": 0.23,
+        "feesPaid": 98.03,
+        "unfilledContracts": 0,
+        "suppressedActions": 859,
         "depthMix": {
-          "contractsOnCapturedDepth": 199100.24,
-          "contractsOnModelledDepth": 372984.38,
-          "totalFilledContracts": 572084.62,
-          "capturedPct": 34.8,
+          "contractsOnCapturedDepth": 15957.65,
+          "contractsOnModelledDepth": 7654.15,
+          "totalFilledContracts": 23611.8,
+          "capturedPct": 67.58,
+          "depthModels": [
+            "synthetic",
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 83551.24,
+        "returnPct": -16.45,
+        "totalTrades": 409,
+        "winRate": 94.1,
+        "maxDrawdownPct": 18.41,
+        "feesPaid": 3221.24,
+        "unfilledContracts": 82050.46,
+        "suppressedActions": 490,
+        "depthMix": {
+          "contractsOnCapturedDepth": 212626.44,
+          "contractsOnModelledDepth": 380114.24,
+          "totalFilledContracts": 592740.68,
+          "capturedPct": 35.87,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -465,6 +540,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -535,6 +611,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -558,11 +641,11 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 87357.82,
-        "returnPct": -12.64,
+        "finalEquity": 73132.15,
+        "returnPct": -26.87,
         "totalTrades": 2678,
         "winRate": 50,
-        "maxDrawdownPct": 32.97,
+        "maxDrawdownPct": 34.79,
         "feesPaid": 740.19,
         "unfilledContracts": 0,
         "suppressedActions": 0,
@@ -580,25 +663,25 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 93508.57,
-        "returnPct": -6.49
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 87357.82,
+        "returnPct": -12.64
       },
       "strictForward": {
-        "finalEquity": 97242.1,
-        "returnPct": -2.76,
-        "totalTrades": 37,
+        "finalEquity": 99685.7,
+        "returnPct": -0.31,
+        "totalTrades": 35,
         "winRate": 0,
-        "maxDrawdownPct": 2.76,
-        "feesPaid": 291.18,
-        "unfilledContracts": 9040.85,
-        "suppressedActions": 5714,
+        "maxDrawdownPct": 0.31,
+        "feesPaid": 119.05,
+        "unfilledContracts": 128.09,
+        "suppressedActions": 5825,
         "depthMix": {
-          "contractsOnCapturedDepth": 1541.37,
-          "contractsOnModelledDepth": 53293.03,
-          "totalFilledContracts": 54834.4,
-          "capturedPct": 2.81,
+          "contractsOnCapturedDepth": 13041.94,
+          "contractsOnModelledDepth": 33019.41,
+          "totalFilledContracts": 46061.35,
+          "capturedPct": 28.31,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -607,23 +690,46 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 78247.43,
-        "returnPct": -21.75,
-        "totalTrades": 1950,
+      "previousDesignSplit": {
+        "finalEquity": 99162.62,
+        "returnPct": -0.84,
+        "totalTrades": 71,
         "winRate": 0,
-        "maxDrawdownPct": 24.37,
-        "feesPaid": 4707.67,
-        "unfilledContracts": 55684.12,
-        "suppressedActions": 3237,
+        "maxDrawdownPct": 0.84,
+        "feesPaid": 279.97,
+        "unfilledContracts": 0,
+        "suppressedActions": 5777,
         "depthMix": {
-          "contractsOnCapturedDepth": 234017.9,
-          "contractsOnModelledDepth": 1028863.25,
-          "totalFilledContracts": 1262881.15,
-          "capturedPct": 18.53,
+          "contractsOnCapturedDepth": 15926.44,
+          "contractsOnModelledDepth": 76659.76,
+          "totalFilledContracts": 92586.2,
+          "capturedPct": 17.2,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 79553.41,
+        "returnPct": -20.45,
+        "totalTrades": 2003,
+        "winRate": 0,
+        "maxDrawdownPct": 24.26,
+        "feesPaid": 4974.95,
+        "unfilledContracts": 57268.98,
+        "suppressedActions": 3279,
+        "depthMix": {
+          "contractsOnCapturedDepth": 245194.49,
+          "contractsOnModelledDepth": 1106071.93,
+          "totalFilledContracts": 1351266.42,
+          "capturedPct": 18.15,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
@@ -664,6 +770,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -734,6 +841,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -757,18 +871,18 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 102829.12,
-        "returnPct": 2.83,
-        "totalTrades": 123,
+        "finalEquity": 102846.38,
+        "returnPct": 2.85,
+        "totalTrades": 128,
         "winRate": 100,
         "maxDrawdownPct": 0.61,
-        "feesPaid": 197.23,
+        "feesPaid": 199.65,
         "unfilledContracts": 7383.68,
         "suppressedActions": 0,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 57194.52,
-          "totalFilledContracts": 57194.52,
+          "contractsOnModelledDepth": 58222.57,
+          "totalFilledContracts": 58222.57,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -778,43 +892,67 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 102855.56,
-        "returnPct": 2.86
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 102827.85,
+        "returnPct": 2.83
       },
       "strictForward": {
-        "finalEquity": 100000,
+        "finalEquity": 99999.56,
         "returnPct": 0,
-        "totalTrades": 0,
+        "totalTrades": 1,
         "winRate": 0,
         "maxDrawdownPct": 0,
-        "feesPaid": 0,
+        "feesPaid": 0.44,
         "unfilledContracts": 0,
-        "suppressedActions": 294,
+        "suppressedActions": 304,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 0,
-          "totalFilledContracts": 0,
-          "capturedPct": null,
-          "depthModels": []
+          "contractsOnModelledDepth": 216.36,
+          "totalFilledContracts": 216.36,
+          "capturedPct": 0,
+          "depthModels": [
+            "synthetic"
+          ]
         },
-        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 102739.15,
-        "returnPct": 2.74,
-        "totalTrades": 75,
-        "winRate": 100,
-        "maxDrawdownPct": 0.61,
-        "feesPaid": 190.77,
-        "unfilledContracts": 7383.68,
-        "suppressedActions": 48,
+      "previousDesignSplit": {
+        "finalEquity": 99995.75,
+        "returnPct": 0,
+        "totalTrades": 3,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 2.2,
+        "unfilledContracts": 0,
+        "suppressedActions": 298,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 54953.44,
-          "totalFilledContracts": 54953.44,
+          "contractsOnModelledDepth": 919.02,
+          "totalFilledContracts": 919.02,
+          "capturedPct": 0,
+          "depthModels": [
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 102748.87,
+        "returnPct": 2.75,
+        "totalTrades": 78,
+        "winRate": 100,
+        "maxDrawdownPct": 0.61,
+        "feesPaid": 192.65,
+        "unfilledContracts": 7383.68,
+        "suppressedActions": 50,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 55779.46,
+          "totalFilledContracts": 55779.46,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -857,18 +995,18 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 99523.95,
+        "finalEquity": 99520.08,
         "returnPct": -0.48,
-        "totalTrades": 876,
-        "winRate": 31.9,
-        "maxDrawdownPct": 0.66,
-        "feesPaid": 243.26,
+        "totalTrades": 884,
+        "winRate": 32,
+        "maxDrawdownPct": 0.67,
+        "feesPaid": 244.6,
         "unfilledContracts": 2422.38,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 68574.55,
+          "contractsOnCapturedDepth": 69170.05,
           "contractsOnModelledDepth": 0,
-          "totalFilledContracts": 68574.55,
+          "totalFilledContracts": 69170.05,
           "capturedPct": 100,
           "depthModels": [
             "captured_orderbook_reanchored"
@@ -877,25 +1015,25 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 270,
+        "points": 272,
         "startTs": 1766552400,
-        "endTs": 1789790400,
-        "equityAtSplit": 99527.78,
-        "returnPct": -0.47
+        "endTs": 1789963200,
+        "equityAtSplit": 99523.95,
+        "returnPct": -0.48
       },
       "strictForward": {
-        "finalEquity": 99996.17,
+        "finalEquity": 99997.17,
         "returnPct": 0,
-        "totalTrades": 2,
+        "totalTrades": 1,
         "winRate": 0,
         "maxDrawdownPct": 0,
-        "feesPaid": 0.81,
+        "feesPaid": 0.6,
         "unfilledContracts": 0,
-        "suppressedActions": 360,
+        "suppressedActions": 364,
         "depthMix": {
-          "contractsOnCapturedDepth": 301.81,
+          "contractsOnCapturedDepth": 223.12,
           "contractsOnModelledDepth": 0,
-          "totalFilledContracts": 301.81,
+          "totalFilledContracts": 223.12,
           "capturedPct": 100,
           "depthModels": [
             "captured_orderbook_reanchored"
@@ -904,19 +1042,41 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 99795.32,
-        "returnPct": -0.2,
-        "totalTrades": 259,
-        "winRate": 27.4,
-        "maxDrawdownPct": 0.21,
-        "feesPaid": 81.72,
+      "previousDesignSplit": {
+        "finalEquity": 99993.83,
+        "returnPct": -0.01,
+        "totalTrades": 5,
+        "winRate": 50,
+        "maxDrawdownPct": 0.01,
+        "feesPaid": 1.21,
         "unfilledContracts": 0,
-        "suppressedActions": 243,
+        "suppressedActions": 362,
         "depthMix": {
-          "contractsOnCapturedDepth": 23221.45,
+          "contractsOnCapturedDepth": 515.91,
           "contractsOnModelledDepth": 0,
-          "totalFilledContracts": 23221.45,
+          "totalFilledContracts": 515.91,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 99793.49,
+        "returnPct": -0.21,
+        "totalTrades": 263,
+        "winRate": 27.5,
+        "maxDrawdownPct": 0.21,
+        "feesPaid": 81.06,
+        "unfilledContracts": 0,
+        "suppressedActions": 248,
+        "depthMix": {
+          "contractsOnCapturedDepth": 23466.33,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 23466.33,
           "capturedPct": 100,
           "depthModels": [
             "captured_orderbook_reanchored"
@@ -960,6 +1120,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -1030,6 +1191,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -1053,32 +1221,32 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 105059.39,
-        "returnPct": 5.06,
-        "totalTrades": 8018,
-        "winRate": 64,
+        "finalEquity": 85073.73,
+        "returnPct": -14.93,
+        "totalTrades": 8241,
+        "winRate": 64.2,
         "maxDrawdownPct": 27.85,
-        "feesPaid": 498.57,
+        "feesPaid": 515.72,
         "unfilledContracts": 0,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 2042454.25,
-          "contractsOnModelledDepth": 254253.74,
-          "totalFilledContracts": 2296707.99,
-          "capturedPct": 88.93,
+          "contractsOnCapturedDepth": 2041879.85,
+          "contractsOnModelledDepth": 257478.36,
+          "totalFilledContracts": 2299358.21,
+          "capturedPct": 88.8,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
           ]
         },
-        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 102067.51,
-        "returnPct": 2.07
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 105089.39,
+        "returnPct": 5.09
       },
       "strictForward": {
         "finalEquity": 100000,
@@ -1088,7 +1256,7 @@
         "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 11973,
+        "suppressedActions": 12307,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
@@ -1099,26 +1267,49 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 103142.04,
-        "returnPct": 3.14,
-        "totalTrades": 2995,
-        "winRate": 73.9,
-        "maxDrawdownPct": 10.03,
-        "feesPaid": 254.74,
+      "previousDesignSplit": {
+        "finalEquity": 100125.18,
+        "returnPct": 0.13,
+        "totalTrades": 48,
+        "winRate": 100,
+        "maxDrawdownPct": 0.28,
+        "feesPaid": 5.71,
         "unfilledContracts": 0,
-        "suppressedActions": 6364,
+        "suppressedActions": 12204,
         "depthMix": {
-          "contractsOnCapturedDepth": 561052.03,
-          "contractsOnModelledDepth": 942407.08,
-          "totalFilledContracts": 1503459.11,
-          "capturedPct": 37.32,
+          "contractsOnCapturedDepth": 23269.07,
+          "contractsOnModelledDepth": 44638.35,
+          "totalFilledContracts": 67907.42,
+          "capturedPct": 34.27,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 99275.52,
+        "returnPct": -0.72,
+        "totalTrades": 3136,
+        "winRate": 74.4,
+        "maxDrawdownPct": 10.03,
+        "feesPaid": 295.27,
+        "unfilledContracts": 0,
+        "suppressedActions": 6475,
+        "depthMix": {
+          "contractsOnCapturedDepth": 575104.73,
+          "contractsOnModelledDepth": 985258.42,
+          "totalFilledContracts": 1560363.15,
+          "capturedPct": 36.86,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 84,
         "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
       }
@@ -1156,6 +1347,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -1226,6 +1418,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -1249,19 +1448,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 84498.65,
-        "returnPct": -15.5,
-        "totalTrades": 723,
+        "finalEquity": 76899.86,
+        "returnPct": -23.1,
+        "totalTrades": 740,
         "winRate": 80,
-        "maxDrawdownPct": 17.08,
-        "feesPaid": 2688.73,
-        "unfilledContracts": 17433.08,
+        "maxDrawdownPct": 23.11,
+        "feesPaid": 2972.42,
+        "unfilledContracts": 17428.18,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 417828.62,
-          "contractsOnModelledDepth": 260862.13,
-          "totalFilledContracts": 678690.75,
-          "capturedPct": 61.56,
+          "contractsOnCapturedDepth": 421824.76,
+          "contractsOnModelledDepth": 285506.87,
+          "totalFilledContracts": 707331.63,
+          "capturedPct": 59.64,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -1271,25 +1470,25 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 86331.21,
-        "returnPct": -13.67
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 84468.22,
+        "returnPct": -15.53
       },
       "strictForward": {
-        "finalEquity": 99983.83,
-        "returnPct": -0.02,
-        "totalTrades": 6,
+        "finalEquity": 99878.1,
+        "returnPct": -0.12,
+        "totalTrades": 7,
         "winRate": 0,
-        "maxDrawdownPct": 0.02,
-        "feesPaid": 7.02,
+        "maxDrawdownPct": 0.13,
+        "feesPaid": 103.92,
         "unfilledContracts": 0,
-        "suppressedActions": 717,
+        "suppressedActions": 733,
         "depthMix": {
-          "contractsOnCapturedDepth": 1114.3,
-          "contractsOnModelledDepth": 1158.89,
-          "totalFilledContracts": 2273.19,
-          "capturedPct": 49.02,
+          "contractsOnCapturedDepth": 3996.14,
+          "contractsOnModelledDepth": 7827.61,
+          "totalFilledContracts": 11823.75,
+          "capturedPct": 33.8,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -1298,23 +1497,46 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 90206.34,
-        "returnPct": -9.79,
-        "totalTrades": 341,
-        "winRate": 80,
-        "maxDrawdownPct": 9.97,
-        "feesPaid": 2171.52,
-        "unfilledContracts": 23173.16,
-        "suppressedActions": 382,
+      "previousDesignSplit": {
+        "finalEquity": 99635.99,
+        "returnPct": -0.36,
+        "totalTrades": 13,
+        "winRate": 0,
+        "maxDrawdownPct": 0.36,
+        "feesPaid": 253.57,
+        "unfilledContracts": 0,
+        "suppressedActions": 727,
         "depthMix": {
-          "contractsOnCapturedDepth": 117234.72,
-          "contractsOnModelledDepth": 254855.12,
-          "totalFilledContracts": 372089.84,
-          "capturedPct": 31.51,
+          "contractsOnCapturedDepth": 3996.14,
+          "contractsOnModelledDepth": 21280.59,
+          "totalFilledContracts": 25276.73,
+          "capturedPct": 15.81,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 87985.44,
+        "returnPct": -12.01,
+        "totalTrades": 354,
+        "winRate": 100,
+        "maxDrawdownPct": 12.05,
+        "feesPaid": 2452.54,
+        "unfilledContracts": 23173.16,
+        "suppressedActions": 386,
+        "depthMix": {
+          "contractsOnCapturedDepth": 121178.96,
+          "contractsOnModelledDepth": 279158.31,
+          "totalFilledContracts": 400337.27,
+          "capturedPct": 30.27,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
@@ -1355,6 +1577,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -1425,6 +1648,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -1448,19 +1678,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 78636.76,
-        "returnPct": -21.36,
-        "totalTrades": 1117,
+        "finalEquity": 73798.87,
+        "returnPct": -26.2,
+        "totalTrades": 1121,
         "winRate": 83.3,
-        "maxDrawdownPct": 21.54,
-        "feesPaid": 3819.49,
+        "maxDrawdownPct": 26.26,
+        "feesPaid": 3820.21,
         "unfilledContracts": 62215.56,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 467642.86,
-          "contractsOnModelledDepth": 391825.17,
-          "totalFilledContracts": 859468.03,
-          "capturedPct": 54.41,
+          "contractsOnCapturedDepth": 467427.86,
+          "contractsOnModelledDepth": 391903.51,
+          "totalFilledContracts": 859331.37,
+          "capturedPct": 54.39,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -1470,25 +1700,25 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 81650.56,
-        "returnPct": -18.35
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 78637.37,
+        "returnPct": -21.36
       },
       "strictForward": {
-        "finalEquity": 97814.52,
-        "returnPct": -2.19,
-        "totalTrades": 9,
+        "finalEquity": 99896.89,
+        "returnPct": -0.1,
+        "totalTrades": 14,
         "winRate": 0,
-        "maxDrawdownPct": 2.19,
-        "feesPaid": 188.08,
-        "unfilledContracts": 6898.64,
-        "suppressedActions": 1150,
+        "maxDrawdownPct": 0.1,
+        "feesPaid": 68.9,
+        "unfilledContracts": 0,
+        "suppressedActions": 1186,
         "depthMix": {
-          "contractsOnCapturedDepth": 3837.44,
-          "contractsOnModelledDepth": 21867.92,
-          "totalFilledContracts": 25705.36,
-          "capturedPct": 14.93,
+          "contractsOnCapturedDepth": 11035.87,
+          "contractsOnModelledDepth": 4769.42,
+          "totalFilledContracts": 15805.29,
+          "capturedPct": 69.82,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -1497,20 +1727,43 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 83466.73,
-        "returnPct": -16.53,
-        "totalTrades": 534,
-        "winRate": 83.3,
-        "maxDrawdownPct": 17.11,
-        "feesPaid": 3693.07,
-        "unfilledContracts": 127682.53,
-        "suppressedActions": 625,
+      "previousDesignSplit": {
+        "finalEquity": 99211.3,
+        "returnPct": -0.79,
+        "totalTrades": 33,
+        "winRate": 0,
+        "maxDrawdownPct": 0.79,
+        "feesPaid": 284.66,
+        "unfilledContracts": 0,
+        "suppressedActions": 1167,
         "depthMix": {
-          "contractsOnCapturedDepth": 179142.19,
-          "contractsOnModelledDepth": 474409.36,
-          "totalFilledContracts": 653551.55,
-          "capturedPct": 27.41,
+          "contractsOnCapturedDepth": 12763.61,
+          "contractsOnModelledDepth": 34713.94,
+          "totalFilledContracts": 47477.55,
+          "capturedPct": 26.88,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 81985.61,
+        "returnPct": -18.01,
+        "totalTrades": 560,
+        "winRate": 83.3,
+        "maxDrawdownPct": 18.01,
+        "feesPaid": 3972.44,
+        "unfilledContracts": 127682.53,
+        "suppressedActions": 640,
+        "depthMix": {
+          "contractsOnCapturedDepth": 188642.51,
+          "contractsOnModelledDepth": 512323.73,
+          "totalFilledContracts": 700966.24,
+          "capturedPct": 26.91,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -1554,6 +1807,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -1624,6 +1878,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -1647,8 +1908,8 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 97933.12,
-        "returnPct": -2.07,
+        "finalEquity": 98689.36,
+        "returnPct": -1.31,
         "totalTrades": 475,
         "winRate": 50,
         "maxDrawdownPct": 3.8,
@@ -1669,25 +1930,25 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 97503.7,
-        "returnPct": -2.5
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 97933.12,
+        "returnPct": -2.07
       },
       "strictForward": {
-        "finalEquity": 99652.21,
-        "returnPct": -0.35,
-        "totalTrades": 44,
+        "finalEquity": 99568.65,
+        "returnPct": -0.43,
+        "totalTrades": 39,
         "winRate": 0,
-        "maxDrawdownPct": 0.35,
-        "feesPaid": 134.48,
-        "unfilledContracts": 9098.76,
-        "suppressedActions": 5833,
+        "maxDrawdownPct": 0.43,
+        "feesPaid": 135.4,
+        "unfilledContracts": 7593.23,
+        "suppressedActions": 5992,
         "depthMix": {
-          "contractsOnCapturedDepth": 2123.19,
-          "contractsOnModelledDepth": 35990.54,
-          "totalFilledContracts": 38113.73,
-          "capturedPct": 5.57,
+          "contractsOnCapturedDepth": 16977.74,
+          "contractsOnModelledDepth": 31851.33,
+          "totalFilledContracts": 48829.07,
+          "capturedPct": 34.77,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -1696,23 +1957,46 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
+      "previousDesignSplit": {
+        "finalEquity": 99396.6,
+        "returnPct": -0.6,
+        "totalTrades": 67,
+        "winRate": 0,
+        "maxDrawdownPct": 0.64,
+        "feesPaid": 202.49,
+        "unfilledContracts": 17911.95,
+        "suppressedActions": 5946,
+        "depthMix": {
+          "contractsOnCapturedDepth": 22098.57,
+          "contractsOnModelledDepth": 50054.71,
+          "totalFilledContracts": 72153.28,
+          "capturedPct": 30.63,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
       "heldOut": {
-        "finalEquity": 98632.65,
-        "returnPct": -1.37,
-        "totalTrades": 337,
+        "finalEquity": 98723.72,
+        "returnPct": -1.28,
+        "totalTrades": 328,
         "winRate": 100,
         "maxDrawdownPct": 2.14,
-        "feesPaid": 280.19,
+        "feesPaid": 278.07,
         "unfilledContracts": 8984.35,
-        "suppressedActions": 3343,
+        "suppressedActions": 3394,
         "depthMix": {
-          "contractsOnCapturedDepth": 56142.73,
-          "contractsOnModelledDepth": 50710.8,
-          "totalFilledContracts": 106853.53,
+          "contractsOnCapturedDepth": 56209.15,
+          "contractsOnModelledDepth": 50768.07,
+          "totalFilledContracts": 106977.22,
           "capturedPct": 52.54,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
@@ -1753,6 +2037,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -1823,6 +2108,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -1846,47 +2138,47 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 99493.33,
-        "returnPct": -0.51,
-        "totalTrades": 1149,
+        "finalEquity": 100352.22,
+        "returnPct": 0.35,
+        "totalTrades": 1147,
         "winRate": 50,
         "maxDrawdownPct": 5.76,
-        "feesPaid": 759.56,
+        "feesPaid": 759.46,
         "unfilledContracts": 10776.48,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 95865.91,
-          "contractsOnModelledDepth": 17325.3,
-          "totalFilledContracts": 113191.21,
-          "capturedPct": 84.69,
+          "contractsOnCapturedDepth": 95880.8,
+          "contractsOnModelledDepth": 17308.4,
+          "totalFilledContracts": 113189.2,
+          "capturedPct": 84.71,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
           ]
         },
-        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 99843.42,
-        "returnPct": -0.16
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 99490.4,
+        "returnPct": -0.51
       },
       "strictForward": {
-        "finalEquity": 98881.17,
-        "returnPct": -1.12,
-        "totalTrades": 80,
+        "finalEquity": 98701.18,
+        "returnPct": -1.3,
+        "totalTrades": 88,
         "winRate": 0,
-        "maxDrawdownPct": 1.12,
-        "feesPaid": 371.78,
-        "unfilledContracts": 23366.64,
-        "suppressedActions": 11706,
+        "maxDrawdownPct": 1.3,
+        "feesPaid": 382.07,
+        "unfilledContracts": 7593.23,
+        "suppressedActions": 12037,
         "depthMix": {
-          "contractsOnCapturedDepth": 6943.87,
-          "contractsOnModelledDepth": 73612.87,
-          "totalFilledContracts": 80556.74,
-          "capturedPct": 8.62,
+          "contractsOnCapturedDepth": 28980.47,
+          "contractsOnModelledDepth": 64072.4,
+          "totalFilledContracts": 93052.87,
+          "capturedPct": 31.14,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -1895,20 +2187,43 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 100376.32,
-        "returnPct": 0.38,
-        "totalTrades": 623,
-        "winRate": 75,
-        "maxDrawdownPct": 2.39,
-        "feesPaid": 222.91,
-        "unfilledContracts": 2616.08,
-        "suppressedActions": 6316,
+      "previousDesignSplit": {
+        "finalEquity": 98695.62,
+        "returnPct": -1.3,
+        "totalTrades": 114,
+        "winRate": 0,
+        "maxDrawdownPct": 1.44,
+        "feesPaid": 431.61,
+        "unfilledContracts": 13083.04,
+        "suppressedActions": 11928,
         "depthMix": {
-          "contractsOnCapturedDepth": 105579.91,
-          "contractsOnModelledDepth": 4275.06,
-          "totalFilledContracts": 109854.97,
-          "capturedPct": 96.11,
+          "contractsOnCapturedDepth": 32419.88,
+          "contractsOnModelledDepth": 76154.42,
+          "totalFilledContracts": 108574.3,
+          "capturedPct": 29.86,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 100641.34,
+        "returnPct": 0.64,
+        "totalTrades": 660,
+        "winRate": 80,
+        "maxDrawdownPct": 2.49,
+        "feesPaid": 234.42,
+        "unfilledContracts": 3890,
+        "suppressedActions": 6413,
+        "depthMix": {
+          "contractsOnCapturedDepth": 105756.43,
+          "contractsOnModelledDepth": 4481.52,
+          "totalFilledContracts": 110237.95,
+          "capturedPct": 95.93,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -1952,6 +2267,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -2022,6 +2338,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -2045,19 +2368,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 98609.53,
-        "returnPct": -1.39,
-        "totalTrades": 91,
+        "finalEquity": 98387.94,
+        "returnPct": -1.61,
+        "totalTrades": 97,
         "winRate": 85.7,
-        "maxDrawdownPct": 1.49,
-        "feesPaid": 292.92,
+        "maxDrawdownPct": 1.72,
+        "feesPaid": 294.19,
         "unfilledContracts": 21970.26,
         "suppressedActions": 0,
         "depthMix": {
           "contractsOnCapturedDepth": 1237.77,
-          "contractsOnModelledDepth": 73097.36,
-          "totalFilledContracts": 74335.13,
-          "capturedPct": 1.67,
+          "contractsOnModelledDepth": 73619.82,
+          "totalFilledContracts": 74857.59,
+          "capturedPct": 1.65,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -2067,25 +2390,25 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 98805.59,
-        "returnPct": -1.19
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 98620.48,
+        "returnPct": -1.38
       },
       "strictForward": {
-        "finalEquity": 99346.7,
-        "returnPct": -0.65,
-        "totalTrades": 40,
+        "finalEquity": 99169.31,
+        "returnPct": -0.83,
+        "totalTrades": 45,
         "winRate": 0,
-        "maxDrawdownPct": 0.65,
-        "feesPaid": 202.74,
-        "unfilledContracts": 8754.5,
-        "suppressedActions": 6264,
+        "maxDrawdownPct": 0.83,
+        "feesPaid": 187.82,
+        "unfilledContracts": 0,
+        "suppressedActions": 6455,
         "depthMix": {
-          "contractsOnCapturedDepth": 3142.58,
-          "contractsOnModelledDepth": 38788.13,
-          "totalFilledContracts": 41930.71,
-          "capturedPct": 7.49,
+          "contractsOnCapturedDepth": 15014.01,
+          "contractsOnModelledDepth": 37988.09,
+          "totalFilledContracts": 53002.1,
+          "capturedPct": 28.33,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -2094,20 +2417,43 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 98421.38,
-        "returnPct": -1.58,
-        "totalTrades": 87,
-        "winRate": 85.7,
-        "maxDrawdownPct": 1.72,
-        "feesPaid": 295.84,
-        "unfilledContracts": 23667.09,
-        "suppressedActions": 3355,
+      "previousDesignSplit": {
+        "finalEquity": 99318.42,
+        "returnPct": -0.68,
+        "totalTrades": 54,
+        "winRate": 0,
+        "maxDrawdownPct": 0.72,
+        "feesPaid": 190.61,
+        "unfilledContracts": 9261.82,
+        "suppressedActions": 6397,
         "depthMix": {
-          "contractsOnCapturedDepth": 8160.63,
-          "contractsOnModelledDepth": 70845.51,
-          "totalFilledContracts": 79006.14,
-          "capturedPct": 10.33,
+          "contractsOnCapturedDepth": 6843.14,
+          "contractsOnModelledDepth": 44588.04,
+          "totalFilledContracts": 51431.18,
+          "capturedPct": 13.31,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 98092.48,
+        "returnPct": -1.91,
+        "totalTrades": 93,
+        "winRate": 85.7,
+        "maxDrawdownPct": 2.06,
+        "feesPaid": 302.98,
+        "unfilledContracts": 23667.09,
+        "suppressedActions": 3397,
+        "depthMix": {
+          "contractsOnCapturedDepth": 6734.91,
+          "contractsOnModelledDepth": 71507.38,
+          "totalFilledContracts": 78242.29,
+          "capturedPct": 8.61,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -2151,6 +2497,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -2221,6 +2568,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -2244,19 +2598,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 101673.86,
-        "returnPct": 1.67,
-        "totalTrades": 1578,
+        "finalEquity": 101734.01,
+        "returnPct": 1.73,
+        "totalTrades": 1629,
         "winRate": 99.9,
         "maxDrawdownPct": 0.86,
-        "feesPaid": 84.46,
+        "feesPaid": 84.89,
         "unfilledContracts": 0,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 106769.83,
-          "contractsOnModelledDepth": 94771.41,
-          "totalFilledContracts": 201541.24,
-          "capturedPct": 52.98,
+          "contractsOnCapturedDepth": 109767.03,
+          "contractsOnModelledDepth": 97952.77,
+          "totalFilledContracts": 207719.8,
+          "capturedPct": 52.84,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -2266,10 +2620,10 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 102157.5,
-        "returnPct": 2.16
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 101672.85,
+        "returnPct": 1.67
       },
       "strictForward": {
         "finalEquity": 100000,
@@ -2279,7 +2633,7 @@
         "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 2380,
+        "suppressedActions": 2474,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
@@ -2290,20 +2644,43 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
+      "previousDesignSplit": {
+        "finalEquity": 100000.69,
+        "returnPct": 0,
+        "totalTrades": 4,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 2445,
+        "depthMix": {
+          "contractsOnCapturedDepth": 1395.29,
+          "contractsOnModelledDepth": 492.8,
+          "totalFilledContracts": 1888.09,
+          "capturedPct": 73.9,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
       "heldOut": {
-        "finalEquity": 100111.89,
-        "returnPct": 0.11,
-        "totalTrades": 533,
+        "finalEquity": 100062,
+        "returnPct": 0.06,
+        "totalTrades": 561,
         "winRate": 99.6,
         "maxDrawdownPct": 0.77,
-        "feesPaid": 21.8,
+        "feesPaid": 21.93,
         "unfilledContracts": 0,
-        "suppressedActions": 1233,
+        "suppressedActions": 1279,
         "depthMix": {
-          "contractsOnCapturedDepth": 37025.72,
-          "contractsOnModelledDepth": 86954.02,
-          "totalFilledContracts": 123979.74,
-          "capturedPct": 29.86,
+          "contractsOnCapturedDepth": 38238.18,
+          "contractsOnModelledDepth": 90143.22,
+          "totalFilledContracts": 128381.4,
+          "capturedPct": 29.78,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -2347,6 +2724,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -2417,6 +2795,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -2440,19 +2825,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 98292.3,
-        "returnPct": -1.71,
-        "totalTrades": 632,
+        "finalEquity": 98373.79,
+        "returnPct": -1.63,
+        "totalTrades": 645,
         "winRate": 99.7,
-        "maxDrawdownPct": 2.07,
-        "feesPaid": 456.87,
+        "maxDrawdownPct": 2.06,
+        "feesPaid": 460.79,
         "unfilledContracts": 10915.3,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 41576.9,
-          "contractsOnModelledDepth": 38341.17,
-          "totalFilledContracts": 79918.07,
-          "capturedPct": 52.02,
+          "contractsOnCapturedDepth": 41719.99,
+          "contractsOnModelledDepth": 39110.49,
+          "totalFilledContracts": 80830.48,
+          "capturedPct": 51.61,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -2462,47 +2847,68 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 98520.9,
-        "returnPct": -1.48
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 98318.46,
+        "returnPct": -1.68
       },
       "strictForward": {
-        "finalEquity": 99993.24,
+        "finalEquity": 99987.84,
         "returnPct": -0.01,
-        "totalTrades": 4,
+        "totalTrades": 3,
         "winRate": 0,
         "maxDrawdownPct": 0.01,
-        "feesPaid": 0.31,
+        "feesPaid": 2.63,
         "unfilledContracts": 0,
-        "suppressedActions": 299,
+        "suppressedActions": 308,
         "depthMix": {
-          "contractsOnCapturedDepth": 32.13,
-          "contractsOnModelledDepth": 10.44,
-          "totalFilledContracts": 42.57,
-          "capturedPct": 75.48,
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 211.12,
+          "totalFilledContracts": 211.12,
+          "capturedPct": 0,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 99331.01,
-        "returnPct": -0.67,
-        "totalTrades": 257,
-        "winRate": 99.3,
-        "maxDrawdownPct": 0.94,
-        "feesPaid": 187.39,
-        "unfilledContracts": 10915.3,
-        "suppressedActions": 189,
+      "previousDesignSplit": {
+        "finalEquity": 99980.44,
+        "returnPct": -0.02,
+        "totalTrades": 5,
+        "winRate": 0,
+        "maxDrawdownPct": 0.02,
+        "feesPaid": 4.52,
+        "unfilledContracts": 0,
+        "suppressedActions": 306,
         "depthMix": {
-          "contractsOnCapturedDepth": 13432.79,
-          "contractsOnModelledDepth": 24600.11,
-          "totalFilledContracts": 38032.9,
-          "capturedPct": 35.32,
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 762.29,
+          "totalFilledContracts": 762.29,
+          "capturedPct": 0,
+          "depthModels": [
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 99503.44,
+        "returnPct": -0.5,
+        "totalTrades": 267,
+        "winRate": 99.4,
+        "maxDrawdownPct": 0.95,
+        "feesPaid": 191.43,
+        "unfilledContracts": 10915.3,
+        "suppressedActions": 193,
+        "depthMix": {
+          "contractsOnCapturedDepth": 13598.65,
+          "contractsOnModelledDepth": 25462.62,
+          "totalFilledContracts": 39061.27,
+          "capturedPct": 34.81,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -2546,6 +2952,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -2616,6 +3023,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -2639,19 +3053,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 101426.55,
-        "returnPct": 1.43,
-        "totalTrades": 2053,
+        "finalEquity": 100032.66,
+        "returnPct": 0.03,
+        "totalTrades": 2114,
         "winRate": 99.9,
-        "maxDrawdownPct": 6.2,
-        "feesPaid": 49.73,
+        "maxDrawdownPct": 7.41,
+        "feesPaid": 52.73,
         "unfilledContracts": 0,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 418390.88,
-          "contractsOnModelledDepth": 272942.97,
-          "totalFilledContracts": 691333.85,
-          "capturedPct": 60.52,
+          "contractsOnCapturedDepth": 426289.82,
+          "contractsOnModelledDepth": 291338.26,
+          "totalFilledContracts": 717628.08,
+          "capturedPct": 59.4,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -2661,10 +3075,10 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 102607.77,
-        "returnPct": 2.61
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 101449.37,
+        "returnPct": 1.45
       },
       "strictForward": {
         "finalEquity": 100000,
@@ -2674,7 +3088,7 @@
         "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 22601,
+        "suppressedActions": 23358,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
@@ -2685,23 +3099,46 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 100464.68,
-        "returnPct": 0.46,
-        "totalTrades": 969,
-        "winRate": 99.7,
-        "maxDrawdownPct": 2.52,
-        "feesPaid": 40.38,
+      "previousDesignSplit": {
+        "finalEquity": 100081.79,
+        "returnPct": 0.08,
+        "totalTrades": 14,
+        "winRate": 0,
+        "maxDrawdownPct": 0.07,
+        "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 11843,
+        "suppressedActions": 23154,
         "depthMix": {
-          "contractsOnCapturedDepth": 82835.3,
-          "contractsOnModelledDepth": 263422.93,
-          "totalFilledContracts": 346258.23,
-          "capturedPct": 23.92,
+          "contractsOnCapturedDepth": 6424.56,
+          "contractsOnModelledDepth": 18794.39,
+          "totalFilledContracts": 25218.95,
+          "capturedPct": 25.48,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 100678.03,
+        "returnPct": 0.68,
+        "totalTrades": 1018,
+        "winRate": 99.7,
+        "maxDrawdownPct": 3.15,
+        "feesPaid": 43.67,
+        "unfilledContracts": 0,
+        "suppressedActions": 12080,
+        "depthMix": {
+          "contractsOnCapturedDepth": 101941.2,
+          "contractsOnModelledDepth": 281689.97,
+          "totalFilledContracts": 383631.17,
+          "capturedPct": 26.57,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
@@ -2742,6 +3179,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -2812,6 +3250,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -2835,19 +3280,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 96324.01,
-        "returnPct": -3.68,
-        "totalTrades": 2660,
+        "finalEquity": 97641.53,
+        "returnPct": -2.36,
+        "totalTrades": 2738,
         "winRate": 50,
-        "maxDrawdownPct": 21.59,
-        "feesPaid": 3835.59,
-        "unfilledContracts": 145056.17,
+        "maxDrawdownPct": 21.62,
+        "feesPaid": 3845.72,
+        "unfilledContracts": 144798.6,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 751133.94,
-          "contractsOnModelledDepth": 1006858.97,
-          "totalFilledContracts": 1757992.91,
-          "capturedPct": 42.73,
+          "contractsOnCapturedDepth": 752281.76,
+          "contractsOnModelledDepth": 1016154.62,
+          "totalFilledContracts": 1768436.38,
+          "capturedPct": 42.54,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -2857,25 +3302,25 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 92749.76,
-        "returnPct": -7.25
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 96197.74,
+        "returnPct": -3.8
       },
       "strictForward": {
-        "finalEquity": 97414.89,
-        "returnPct": -2.59,
-        "totalTrades": 31,
+        "finalEquity": 99746.6,
+        "returnPct": -0.25,
+        "totalTrades": 32,
         "winRate": 0,
-        "maxDrawdownPct": 2.59,
-        "feesPaid": 251.32,
-        "unfilledContracts": 9040.85,
-        "suppressedActions": 3575,
+        "maxDrawdownPct": 0.25,
+        "feesPaid": 112.91,
+        "unfilledContracts": 128.09,
+        "suppressedActions": 3709,
         "depthMix": {
-          "contractsOnCapturedDepth": 1110.1,
-          "contractsOnModelledDepth": 49352.11,
-          "totalFilledContracts": 50462.21,
-          "capturedPct": 2.2,
+          "contractsOnCapturedDepth": 8621.16,
+          "contractsOnModelledDepth": 34426.89,
+          "totalFilledContracts": 43048.05,
+          "capturedPct": 20.03,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -2884,23 +3329,46 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 83688.94,
-        "returnPct": -16.31,
-        "totalTrades": 1423,
-        "winRate": 50,
-        "maxDrawdownPct": 21.09,
-        "feesPaid": 3701.94,
-        "unfilledContracts": 159459.83,
-        "suppressedActions": 1763,
+      "previousDesignSplit": {
+        "finalEquity": 99204.74,
+        "returnPct": -0.8,
+        "totalTrades": 61,
+        "winRate": 0,
+        "maxDrawdownPct": 0.8,
+        "feesPaid": 243.84,
+        "unfilledContracts": 0,
+        "suppressedActions": 3670,
         "depthMix": {
-          "contractsOnCapturedDepth": 132821.13,
-          "contractsOnModelledDepth": 1011777.58,
-          "totalFilledContracts": 1144598.71,
-          "capturedPct": 11.6,
+          "contractsOnCapturedDepth": 9743.65,
+          "contractsOnModelledDepth": 76792.67,
+          "totalFilledContracts": 86536.32,
+          "capturedPct": 11.26,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 85950.79,
+        "returnPct": -14.05,
+        "totalTrades": 1491,
+        "winRate": 50,
+        "maxDrawdownPct": 21.12,
+        "feesPaid": 3962.88,
+        "unfilledContracts": 159459.83,
+        "suppressedActions": 1785,
+        "depthMix": {
+          "contractsOnCapturedDepth": 140683.55,
+          "contractsOnModelledDepth": 1090965.08,
+          "totalFilledContracts": 1231648.63,
+          "capturedPct": 11.42,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
@@ -2941,6 +3409,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -3011,6 +3480,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -3034,19 +3510,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 86105.33,
-        "returnPct": -13.89,
-        "totalTrades": 1084,
-        "winRate": 38.3,
-        "maxDrawdownPct": 15.81,
-        "feesPaid": 2418.01,
+        "finalEquity": 85424.62,
+        "returnPct": -14.58,
+        "totalTrades": 1122,
+        "winRate": 37.7,
+        "maxDrawdownPct": 15.8,
+        "feesPaid": 2534.88,
         "unfilledContracts": 108833.53,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 209392.65,
-          "contractsOnModelledDepth": 366988.24,
-          "totalFilledContracts": 576380.89,
-          "capturedPct": 36.33,
+          "contractsOnCapturedDepth": 224296.22,
+          "contractsOnModelledDepth": 394582.1,
+          "totalFilledContracts": 618878.32,
+          "capturedPct": 36.24,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -3056,25 +3532,25 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 85948.58,
-        "returnPct": -14.05
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 86110.6,
+        "returnPct": -13.89
       },
       "strictForward": {
-        "finalEquity": 99198.67,
-        "returnPct": -0.8,
-        "totalTrades": 11,
+        "finalEquity": 99711.07,
+        "returnPct": -0.29,
+        "totalTrades": 20,
         "winRate": 0,
-        "maxDrawdownPct": 0.8,
-        "feesPaid": 64.43,
-        "unfilledContracts": 6190.83,
-        "suppressedActions": 925,
+        "maxDrawdownPct": 0.29,
+        "feesPaid": 86.23,
+        "unfilledContracts": 128.09,
+        "suppressedActions": 958,
         "depthMix": {
-          "contractsOnCapturedDepth": 1079.48,
-          "contractsOnModelledDepth": 8693.63,
-          "totalFilledContracts": 9773.11,
-          "capturedPct": 11.05,
+          "contractsOnCapturedDepth": 18549.62,
+          "contractsOnModelledDepth": 23403.84,
+          "totalFilledContracts": 41953.46,
+          "capturedPct": 44.21,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -3083,20 +3559,43 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 89310.77,
-        "returnPct": -10.69,
-        "totalTrades": 489,
-        "winRate": 22.5,
-        "maxDrawdownPct": 12.49,
-        "feesPaid": 1625.51,
-        "unfilledContracts": 103061.66,
-        "suppressedActions": 460,
+      "previousDesignSplit": {
+        "finalEquity": 99667.6,
+        "returnPct": -0.33,
+        "totalTrades": 29,
+        "winRate": 0,
+        "maxDrawdownPct": 0.33,
+        "feesPaid": 91.58,
+        "unfilledContracts": 128.09,
+        "suppressedActions": 946,
         "depthMix": {
-          "contractsOnCapturedDepth": 79013.07,
-          "contractsOnModelledDepth": 354423.36,
-          "totalFilledContracts": 433436.43,
-          "capturedPct": 18.23,
+          "contractsOnCapturedDepth": 18598.6,
+          "contractsOnModelledDepth": 24417.39,
+          "totalFilledContracts": 43015.99,
+          "capturedPct": 43.24,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 89147.65,
+        "returnPct": -10.85,
+        "totalTrades": 512,
+        "winRate": 18.6,
+        "maxDrawdownPct": 12.48,
+        "feesPaid": 1735.05,
+        "unfilledContracts": 103061.66,
+        "suppressedActions": 473,
+        "depthMix": {
+          "contractsOnCapturedDepth": 88850.57,
+          "contractsOnModelledDepth": 381824.76,
+          "totalFilledContracts": 470675.33,
+          "capturedPct": 18.88,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -3140,6 +3639,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -3210,6 +3710,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -3233,19 +3740,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 95969.53,
-        "returnPct": -4.03,
-        "totalTrades": 485,
+        "finalEquity": 95888.63,
+        "returnPct": -4.11,
+        "totalTrades": 499,
         "winRate": 80,
         "maxDrawdownPct": 5.2,
-        "feesPaid": 713.87,
+        "feesPaid": 722.78,
         "unfilledContracts": 10915.3,
         "suppressedActions": 0,
         "depthMix": {
           "contractsOnCapturedDepth": 28983.21,
-          "contractsOnModelledDepth": 42765.56,
-          "totalFilledContracts": 71748.77,
-          "capturedPct": 40.4,
+          "contractsOnModelledDepth": 43888.82,
+          "totalFilledContracts": 72872.03,
+          "capturedPct": 39.77,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -3255,47 +3762,68 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 95955.76,
-        "returnPct": -4.04
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 95999.46,
+        "returnPct": -4
       },
       "strictForward": {
-        "finalEquity": 99991.29,
+        "finalEquity": 99987.78,
         "returnPct": -0.01,
-        "totalTrades": 8,
+        "totalTrades": 4,
         "winRate": 0,
         "maxDrawdownPct": 0.01,
-        "feesPaid": 1.21,
+        "feesPaid": 2.64,
         "unfilledContracts": 0,
-        "suppressedActions": 478,
+        "suppressedActions": 496,
         "depthMix": {
-          "contractsOnCapturedDepth": 32.13,
-          "contractsOnModelledDepth": 61.83,
-          "totalFilledContracts": 93.96,
-          "capturedPct": 34.2,
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 212.41,
+          "totalFilledContracts": 212.41,
+          "capturedPct": 0,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 98524.78,
-        "returnPct": -1.48,
-        "totalTrades": 210,
-        "winRate": 66.7,
-        "maxDrawdownPct": 1.88,
-        "feesPaid": 347.76,
-        "unfilledContracts": 10915.3,
-        "suppressedActions": 275,
+      "previousDesignSplit": {
+        "finalEquity": 99980.38,
+        "returnPct": -0.02,
+        "totalTrades": 6,
+        "winRate": 0,
+        "maxDrawdownPct": 0.02,
+        "feesPaid": 4.53,
+        "unfilledContracts": 0,
+        "suppressedActions": 494,
         "depthMix": {
-          "contractsOnCapturedDepth": 7639.81,
-          "contractsOnModelledDepth": 30417.41,
-          "totalFilledContracts": 38057.22,
-          "capturedPct": 20.07,
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 763.58,
+          "totalFilledContracts": 763.58,
+          "capturedPct": 0,
+          "depthModels": [
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 98873.18,
+        "returnPct": -1.13,
+        "totalTrades": 216,
+        "winRate": 66.7,
+        "maxDrawdownPct": 1.84,
+        "feesPaid": 353.64,
+        "unfilledContracts": 10915.3,
+        "suppressedActions": 283,
+        "depthMix": {
+          "contractsOnCapturedDepth": 7516.05,
+          "contractsOnModelledDepth": 31478.29,
+          "totalFilledContracts": 38994.34,
+          "capturedPct": 19.27,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -3339,6 +3867,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -3409,6 +3938,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -3432,19 +3968,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 98116.53,
-        "returnPct": -1.88,
-        "totalTrades": 562,
-        "winRate": 96.8,
-        "maxDrawdownPct": 2.17,
-        "feesPaid": 364.32,
+        "finalEquity": 98232.24,
+        "returnPct": -1.77,
+        "totalTrades": 587,
+        "winRate": 97,
+        "maxDrawdownPct": 2.12,
+        "feesPaid": 366.61,
         "unfilledContracts": 10915.3,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 15192.19,
-          "contractsOnModelledDepth": 31834.92,
-          "totalFilledContracts": 47027.11,
-          "capturedPct": 32.31,
+          "contractsOnCapturedDepth": 15280.41,
+          "contractsOnModelledDepth": 32333.82,
+          "totalFilledContracts": 47614.23,
+          "capturedPct": 32.09,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -3454,24 +3990,24 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 98301.44,
-        "returnPct": -1.7
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 98170.59,
+        "returnPct": -1.83
       },
       "strictForward": {
-        "finalEquity": 99992.5,
+        "finalEquity": 99990.03,
         "returnPct": -0.01,
-        "totalTrades": 6,
+        "totalTrades": 2,
         "winRate": 0,
         "maxDrawdownPct": 0.01,
-        "feesPaid": 0.95,
+        "feesPaid": 2.44,
         "unfilledContracts": 0,
-        "suppressedActions": 298,
+        "suppressedActions": 311,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 61.8,
-          "totalFilledContracts": 61.8,
+          "contractsOnModelledDepth": 186.15,
+          "totalFilledContracts": 186.15,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -3480,20 +4016,42 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 99171.01,
-        "returnPct": -0.83,
-        "totalTrades": 232,
-        "winRate": 99.1,
-        "maxDrawdownPct": 0.96,
-        "feesPaid": 128.31,
-        "unfilledContracts": 10915.3,
-        "suppressedActions": 170,
+      "previousDesignSplit": {
+        "finalEquity": 99989.91,
+        "returnPct": -0.01,
+        "totalTrades": 3,
+        "winRate": 0,
+        "maxDrawdownPct": 0.01,
+        "feesPaid": 2.51,
+        "unfilledContracts": 0,
+        "suppressedActions": 310,
         "depthMix": {
-          "contractsOnCapturedDepth": 4010.27,
-          "contractsOnModelledDepth": 16937.82,
-          "totalFilledContracts": 20948.09,
-          "capturedPct": 19.14,
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 190.19,
+          "totalFilledContracts": 190.19,
+          "capturedPct": 0,
+          "depthModels": [
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 99322.67,
+        "returnPct": -0.68,
+        "totalTrades": 245,
+        "winRate": 99.1,
+        "maxDrawdownPct": 1,
+        "feesPaid": 132.93,
+        "unfilledContracts": 10915.3,
+        "suppressedActions": 174,
+        "depthMix": {
+          "contractsOnCapturedDepth": 4098.49,
+          "contractsOnModelledDepth": 17337.07,
+          "totalFilledContracts": 21435.56,
+          "capturedPct": 19.12,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -3537,6 +4095,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -3607,6 +4166,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -3630,11 +4196,11 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 95752.06,
-        "returnPct": -4.25,
+        "finalEquity": 77346.47,
+        "returnPct": -22.65,
         "totalTrades": 2023,
         "winRate": 100,
-        "maxDrawdownPct": 33.73,
+        "maxDrawdownPct": 34.25,
         "feesPaid": 440.35,
         "unfilledContracts": 0,
         "suppressedActions": 0,
@@ -3652,25 +4218,25 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 101711.73,
-        "returnPct": 1.71
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 95752.06,
+        "returnPct": -4.25
       },
       "strictForward": {
-        "finalEquity": 95852.61,
-        "returnPct": -4.15,
+        "finalEquity": 99485.44,
+        "returnPct": -0.51,
         "totalTrades": 51,
         "winRate": 0,
-        "maxDrawdownPct": 4.15,
-        "feesPaid": 428.17,
-        "unfilledContracts": 9748.66,
-        "suppressedActions": 7496,
+        "maxDrawdownPct": 0.51,
+        "feesPaid": 199.31,
+        "unfilledContracts": 128.09,
+        "suppressedActions": 7636,
         "depthMix": {
-          "contractsOnCapturedDepth": 2420.43,
-          "contractsOnModelledDepth": 70315.06,
-          "totalFilledContracts": 72735.49,
-          "capturedPct": 3.33,
+          "contractsOnCapturedDepth": 21529.31,
+          "contractsOnModelledDepth": 45240.5,
+          "totalFilledContracts": 66769.81,
+          "capturedPct": 32.24,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -3679,23 +4245,46 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 74608.66,
-        "returnPct": -25.39,
-        "totalTrades": 2476,
-        "winRate": 95,
-        "maxDrawdownPct": 28.2,
-        "feesPaid": 5067.35,
-        "unfilledContracts": 94672.13,
-        "suppressedActions": 4227,
+      "previousDesignSplit": {
+        "finalEquity": 99200.52,
+        "returnPct": -0.8,
+        "totalTrades": 85,
+        "winRate": 0,
+        "maxDrawdownPct": 0.8,
+        "feesPaid": 257.25,
+        "unfilledContracts": 0,
+        "suppressedActions": 7575,
         "depthMix": {
-          "contractsOnCapturedDepth": 360433,
-          "contractsOnModelledDepth": 1067094.09,
-          "totalFilledContracts": 1427527.09,
-          "capturedPct": 25.25,
+          "contractsOnCapturedDepth": 22135.87,
+          "contractsOnModelledDepth": 63339.79,
+          "totalFilledContracts": 85475.66,
+          "capturedPct": 25.9,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 75513.2,
+        "returnPct": -24.49,
+        "totalTrades": 2447,
+        "winRate": 95,
+        "maxDrawdownPct": 28.31,
+        "feesPaid": 5088.85,
+        "unfilledContracts": 94672.13,
+        "suppressedActions": 4285,
+        "depthMix": {
+          "contractsOnCapturedDepth": 353746.98,
+          "contractsOnModelledDepth": 1073764.3,
+          "totalFilledContracts": 1427511.28,
+          "capturedPct": 24.78,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
@@ -3736,6 +4325,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -3806,6 +4396,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -3829,19 +4426,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 100678.63,
-        "returnPct": 0.68,
-        "totalTrades": 4118,
+        "finalEquity": 102301.2,
+        "returnPct": 2.3,
+        "totalTrades": 4223,
         "winRate": 99.9,
-        "maxDrawdownPct": 9.78,
-        "feesPaid": 127.81,
+        "maxDrawdownPct": 9.79,
+        "feesPaid": 134.21,
         "unfilledContracts": 0,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 538962.97,
-          "contractsOnModelledDepth": 547644.49,
-          "totalFilledContracts": 1086607.46,
-          "capturedPct": 49.6,
+          "contractsOnCapturedDepth": 551231.07,
+          "contractsOnModelledDepth": 595871.6,
+          "totalFilledContracts": 1147102.67,
+          "capturedPct": 48.05,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -3851,10 +4448,10 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 97020.24,
-        "returnPct": -2.98
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 100657.08,
+        "returnPct": 0.66
       },
       "strictForward": {
         "finalEquity": 100000,
@@ -3864,7 +4461,7 @@
         "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 12571,
+        "suppressedActions": 12935,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
@@ -3875,20 +4472,43 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 94586.81,
-        "returnPct": -5.41,
-        "totalTrades": 1857,
-        "winRate": 99.6,
-        "maxDrawdownPct": 8.9,
-        "feesPaid": 38.25,
+      "previousDesignSplit": {
+        "finalEquity": 99695.62,
+        "returnPct": -0.3,
+        "totalTrades": 32,
+        "winRate": 0,
+        "maxDrawdownPct": 0.3,
+        "feesPaid": 0.66,
         "unfilledContracts": 0,
-        "suppressedActions": 6709,
+        "suppressedActions": 12819,
         "depthMix": {
-          "contractsOnCapturedDepth": 128258.21,
-          "contractsOnModelledDepth": 546812.05,
-          "totalFilledContracts": 675070.26,
-          "capturedPct": 19,
+          "contractsOnCapturedDepth": 3395.49,
+          "contractsOnModelledDepth": 27039.94,
+          "totalFilledContracts": 30435.43,
+          "capturedPct": 11.16,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 95576.19,
+        "returnPct": -4.42,
+        "totalTrades": 1943,
+        "winRate": 99.7,
+        "maxDrawdownPct": 8.9,
+        "feesPaid": 42.13,
+        "unfilledContracts": 0,
+        "suppressedActions": 6822,
+        "depthMix": {
+          "contractsOnCapturedDepth": 135331.5,
+          "contractsOnModelledDepth": 595059.45,
+          "totalFilledContracts": 730390.95,
+          "capturedPct": 18.53,
           "depthModels": [
             "captured_orderbook_reanchored",
             "synthetic"
@@ -3932,6 +4552,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -4002,6 +4623,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -4025,19 +4653,19 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 104286.58,
-        "returnPct": 4.29,
-        "totalTrades": 3388,
+        "finalEquity": 103689.03,
+        "returnPct": 3.69,
+        "totalTrades": 3462,
         "winRate": 99.9,
         "maxDrawdownPct": 3.96,
-        "feesPaid": 95.92,
+        "feesPaid": 97.27,
         "unfilledContracts": 0,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 572500.87,
-          "contractsOnModelledDepth": 527434.38,
-          "totalFilledContracts": 1099935.25,
-          "capturedPct": 52.05,
+          "contractsOnCapturedDepth": 575985.05,
+          "contractsOnModelledDepth": 564061.88,
+          "totalFilledContracts": 1140046.93,
+          "capturedPct": 50.52,
           "depthModels": [
             "synthetic",
             "captured_orderbook_reanchored"
@@ -4047,10 +4675,10 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 104522.95,
-        "returnPct": 4.52
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 104308.87,
+        "returnPct": 4.31
       },
       "strictForward": {
         "finalEquity": 100000,
@@ -4060,7 +4688,7 @@
         "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 11496,
+        "suppressedActions": 11832,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
@@ -4071,23 +4699,46 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 103469.8,
-        "returnPct": 3.47,
-        "totalTrades": 1893,
-        "winRate": 99.9,
-        "maxDrawdownPct": 1,
-        "feesPaid": 61.46,
+      "previousDesignSplit": {
+        "finalEquity": 100192.52,
+        "returnPct": 0.19,
+        "totalTrades": 35,
+        "winRate": 0,
+        "maxDrawdownPct": 0.08,
+        "feesPaid": 2.54,
         "unfilledContracts": 0,
-        "suppressedActions": 5940,
+        "suppressedActions": 11727,
         "depthMix": {
-          "contractsOnCapturedDepth": 174409.88,
-          "contractsOnModelledDepth": 515296.14,
-          "totalFilledContracts": 689706.02,
-          "capturedPct": 25.29,
+          "contractsOnCapturedDepth": 7723.93,
+          "contractsOnModelledDepth": 34645.75,
+          "totalFilledContracts": 42369.68,
+          "capturedPct": 18.23,
           "depthModels": [
-            "synthetic",
-            "captured_orderbook_reanchored"
+            "captured_orderbook_reanchored",
+            "synthetic"
+          ]
+        },
+        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 104621.11,
+        "returnPct": 4.62,
+        "totalTrades": 1802,
+        "winRate": 99.9,
+        "maxDrawdownPct": 0.92,
+        "feesPaid": 64.31,
+        "unfilledContracts": 0,
+        "suppressedActions": 6051,
+        "depthMix": {
+          "contractsOnCapturedDepth": 134618.57,
+          "contractsOnModelledDepth": 551059.78,
+          "totalFilledContracts": 685678.35,
+          "capturedPct": 19.63,
+          "depthModels": [
+            "captured_orderbook_reanchored",
+            "synthetic"
           ]
         },
         "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
@@ -4128,6 +4779,7 @@
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
         "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -4198,6 +4850,13 @@
         "KXNCAAF-27-OKLA",
         "KXNCAAF-27-ORE",
         "KXNCAAF-27-TEX",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU",
         "KXNFLAFCCHAMP-27-BUF",
         "KXNFLAFCCHAMP-27-CIN",
         "KXNFLAFCCHAMP-27-DEN",
@@ -4242,31 +4901,49 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 100000.03,
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 100000.02,
         "returnPct": 0
       },
       "strictForward": {
-        "finalEquity": 99999.99,
+        "finalEquity": 100000,
         "returnPct": 0,
-        "totalTrades": 1,
+        "totalTrades": 0,
         "winRate": 0,
         "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 1,
+        "suppressedActions": 2,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 0.03,
-          "totalFilledContracts": 0.03,
-          "capturedPct": 0,
-          "depthModels": [
-            "synthetic"
-          ]
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
         },
-        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
+      },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 2,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
       },
       "heldOut": {
         "finalEquity": 99999.99,
@@ -4305,22 +4982,29 @@
         "KXNBAGAME-26OCT20OKCSAS-OKC",
         "KXNBAGAME-26OCT20OKCSAS-SAS",
         "KXNBAGAME-26OCT20PHINYK-NYK",
-        "KXNBAGAME-26OCT20PHINYK-PHI"
+        "KXNBAGAME-26OCT20PHINYK-PHI",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU"
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 99995.66,
+        "finalEquity": 99995.51,
         "returnPct": 0,
-        "totalTrades": 3,
+        "totalTrades": 5,
         "winRate": 0,
         "maxDrawdownPct": 0.02,
-        "feesPaid": 1.78,
+        "feesPaid": 1.85,
         "unfilledContracts": 0,
         "suppressedActions": 0,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 107.79,
-          "totalFilledContracts": 107.79,
+          "contractsOnModelledDepth": 112.75,
+          "totalFilledContracts": 112.75,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -4329,10 +5013,10 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 30,
+        "points": 32,
         "startTs": 1787284800,
-        "endTs": 1789790400,
-        "equityAtSplit": 99992.86,
+        "endTs": 1789963200,
+        "equityAtSplit": 99994.8,
         "returnPct": -0.01
       },
       "strictForward": {
@@ -4343,7 +5027,7 @@
         "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 9,
+        "suppressedActions": 15,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
@@ -4354,19 +5038,39 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 99995.66,
+      "previousDesignSplit": {
+        "finalEquity": 100000,
         "returnPct": 0,
-        "totalTrades": 3,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 15,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 99995.51,
+        "returnPct": 0,
+        "totalTrades": 5,
         "winRate": 0,
         "maxDrawdownPct": 0.02,
-        "feesPaid": 1.78,
+        "feesPaid": 1.85,
         "unfilledContracts": 0,
         "suppressedActions": 0,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 107.79,
-          "totalFilledContracts": 107.79,
+          "contractsOnModelledDepth": 112.75,
+          "totalFilledContracts": 112.75,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -4391,7 +5095,14 @@
         "KXNBAGAME-26OCT20OKCSAS-OKC",
         "KXNBAGAME-26OCT20OKCSAS-SAS",
         "KXNBAGAME-26OCT20PHINYK-NYK",
-        "KXNBAGAME-26OCT20PHINYK-PHI"
+        "KXNBAGAME-26OCT20PHINYK-PHI",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU"
       ],
       "depthMode": "captured",
       "backtest": {
@@ -4413,9 +5124,9 @@
         "verdict": "UNTESTED_ON_THIS_DATASET"
       },
       "inSample": {
-        "points": 30,
+        "points": 32,
         "startTs": 1787284800,
-        "endTs": 1789790400,
+        "endTs": 1789963200,
         "equityAtSplit": 100000,
         "returnPct": 0
       },
@@ -4437,6 +5148,26 @@
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
+      },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
       },
       "heldOut": {
         "finalEquity": 100000,
@@ -4473,22 +5204,29 @@
         "KXNBAGAME-26OCT20OKCSAS-OKC",
         "KXNBAGAME-26OCT20OKCSAS-SAS",
         "KXNBAGAME-26OCT20PHINYK-NYK",
-        "KXNBAGAME-26OCT20PHINYK-PHI"
+        "KXNBAGAME-26OCT20PHINYK-PHI",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU"
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 99991.88,
-        "returnPct": -0.01,
-        "totalTrades": 6,
+        "finalEquity": 99998.3,
+        "returnPct": 0,
+        "totalTrades": 8,
         "winRate": 0,
         "maxDrawdownPct": 0.02,
-        "feesPaid": 4.13,
+        "feesPaid": 6.09,
         "unfilledContracts": 0,
         "suppressedActions": 0,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 247.01,
-          "totalFilledContracts": 247.01,
+          "contractsOnModelledDepth": 370.27,
+          "totalFilledContracts": 370.27,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -4497,11 +5235,11 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 30,
+        "points": 32,
         "startTs": 1787284800,
-        "endTs": 1789790400,
-        "equityAtSplit": 99996.18,
-        "returnPct": 0
+        "endTs": 1789963200,
+        "equityAtSplit": 99991.63,
+        "returnPct": -0.01
       },
       "strictForward": {
         "finalEquity": 100000,
@@ -4511,7 +5249,7 @@
         "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 25,
+        "suppressedActions": 30,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
@@ -4522,19 +5260,41 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 99991.88,
+      "previousDesignSplit": {
+        "finalEquity": 99994.18,
         "returnPct": -0.01,
-        "totalTrades": 6,
+        "totalTrades": 1,
+        "winRate": 0,
+        "maxDrawdownPct": 0.01,
+        "feesPaid": 5.82,
+        "unfilledContracts": 0,
+        "suppressedActions": 29,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 456.18,
+          "totalFilledContracts": 456.18,
+          "capturedPct": 0,
+          "depthModels": [
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 99998.3,
+        "returnPct": 0,
+        "totalTrades": 8,
         "winRate": 0,
         "maxDrawdownPct": 0.02,
-        "feesPaid": 4.13,
+        "feesPaid": 6.09,
         "unfilledContracts": 0,
         "suppressedActions": 0,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 247.01,
-          "totalFilledContracts": 247.01,
+          "contractsOnModelledDepth": 370.27,
+          "totalFilledContracts": 370.27,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -4559,11 +5319,18 @@
         "KXNBAGAME-26OCT20OKCSAS-OKC",
         "KXNBAGAME-26OCT20OKCSAS-SAS",
         "KXNBAGAME-26OCT20PHINYK-NYK",
-        "KXNBAGAME-26OCT20PHINYK-PHI"
+        "KXNBAGAME-26OCT20PHINYK-PHI",
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU"
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 99999.25,
+        "finalEquity": 99999.03,
         "returnPct": 0,
         "totalTrades": 2,
         "winRate": 0,
@@ -4583,10 +5350,10 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 30,
+        "points": 32,
         "startTs": 1787284800,
-        "endTs": 1789790400,
-        "equityAtSplit": 99999.36,
+        "endTs": 1789963200,
+        "equityAtSplit": 99999.25,
         "returnPct": 0
       },
       "strictForward": {
@@ -4608,8 +5375,28 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 2,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
       "heldOut": {
-        "finalEquity": 99999.25,
+        "finalEquity": 99999.03,
         "returnPct": 0,
         "totalTrades": 2,
         "winRate": 0,
@@ -4656,8 +5443,8 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 99986.02,
-        "returnPct": -0.01,
+        "finalEquity": 99983.8,
+        "returnPct": -0.02,
         "totalTrades": 2,
         "winRate": 0,
         "maxDrawdownPct": 0.03,
@@ -4676,9 +5463,9 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 179,
+        "points": 181,
         "startTs": 1774411200,
-        "endTs": 1789790400,
+        "endTs": 1789963200,
         "equityAtSplit": 99986.02,
         "returnPct": -0.01
       },
@@ -4701,9 +5488,29 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 3,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
       "heldOut": {
-        "finalEquity": 99985.96,
-        "returnPct": -0.01,
+        "finalEquity": 99983.74,
+        "returnPct": -0.02,
         "totalTrades": 1,
         "winRate": 0,
         "maxDrawdownPct": 0.03,
@@ -4760,8 +5567,8 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
+        "startTs": 1755489600,
+        "endTs": 1789963200,
         "equityAtSplit": 99859.01,
         "returnPct": -0.14
       },
@@ -4783,6 +5590,26 @@
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
+      },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 49,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
       },
       "heldOut": {
         "finalEquity": 99888.23,
@@ -4821,6 +5648,7 @@
         "KXFDAAPPROVALDATECMPS-360-27MAR01",
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -4852,9 +5680,9 @@
         "verdict": "UNTESTED_ON_THIS_DATASET"
       },
       "inSample": {
-        "points": 176,
+        "points": 178,
         "startTs": 1774497600,
-        "endTs": 1789790400,
+        "endTs": 1789963200,
         "equityAtSplit": 100000,
         "returnPct": 0
       },
@@ -4876,6 +5704,26 @@
         },
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
+      },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
       },
       "heldOut": {
         "finalEquity": 100000,
@@ -4920,11 +5768,11 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 100302.38,
-        "returnPct": 0.3,
+        "finalEquity": 100000.56,
+        "returnPct": 0,
         "totalTrades": 8,
         "winRate": 0,
-        "maxDrawdownPct": 0.41,
+        "maxDrawdownPct": 0.45,
         "feesPaid": 0,
         "unfilledContracts": 0,
         "suppressedActions": 0,
@@ -4937,13 +5785,13 @@
             "captured_orderbook_reanchored"
           ]
         },
-        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 205,
+        "points": 207,
         "startTs": 1772168400,
-        "endTs": 1789790400,
-        "equityAtSplit": 100298.84,
+        "endTs": 1789963200,
+        "equityAtSplit": 100302.38,
         "returnPct": 0.3
       },
       "strictForward": {
@@ -4965,19 +5813,39 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 100004.73,
+      "previousDesignSplit": {
+        "finalEquity": 100000,
         "returnPct": 0,
-        "totalTrades": 7,
+        "totalTrades": 0,
         "winRate": 0,
-        "maxDrawdownPct": 0.15,
+        "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 180,
+        "suppressedActions": 358,
         "depthMix": {
-          "contractsOnCapturedDepth": 2853.55,
+          "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
-          "totalFilledContracts": 2853.55,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 99985.22,
+        "returnPct": -0.01,
+        "totalTrades": 7,
+        "winRate": 0,
+        "maxDrawdownPct": 0.13,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 187,
+        "depthMix": {
+          "contractsOnCapturedDepth": 2972.11,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 2972.11,
           "capturedPct": 100,
           "depthModels": [
             "captured_orderbook_reanchored"
@@ -5030,8 +5898,8 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 99821.69,
-        "returnPct": -0.18,
+        "finalEquity": 99523.85,
+        "returnPct": -0.48,
         "totalTrades": 30,
         "winRate": 0,
         "maxDrawdownPct": 0.76,
@@ -5050,25 +5918,25 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 270,
+        "points": 272,
         "startTs": 1766552400,
-        "endTs": 1789790400,
-        "equityAtSplit": 99895.03,
-        "returnPct": -0.1
+        "endTs": 1789963200,
+        "equityAtSplit": 99810.74,
+        "returnPct": -0.19
       },
       "strictForward": {
-        "finalEquity": 99985.37,
-        "returnPct": -0.01,
-        "totalTrades": 6,
+        "finalEquity": 99951.18,
+        "returnPct": -0.05,
+        "totalTrades": 3,
         "winRate": 0,
-        "maxDrawdownPct": 0.01,
-        "feesPaid": 3.74,
+        "maxDrawdownPct": 0.05,
+        "feesPaid": 15.04,
         "unfilledContracts": 0,
-        "suppressedActions": 1770,
+        "suppressedActions": 1779,
         "depthMix": {
-          "contractsOnCapturedDepth": 1377.29,
+          "contractsOnCapturedDepth": 3027.16,
           "contractsOnModelledDepth": 0,
-          "totalFilledContracts": 1377.29,
+          "totalFilledContracts": 3027.16,
           "capturedPct": 100,
           "depthModels": [
             "captured_orderbook_reanchored"
@@ -5077,19 +5945,41 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 1
       },
+      "previousDesignSplit": {
+        "finalEquity": 99977.25,
+        "returnPct": -0.02,
+        "totalTrades": 3,
+        "winRate": 0,
+        "maxDrawdownPct": 0.02,
+        "feesPaid": 7.73,
+        "unfilledContracts": 0,
+        "suppressedActions": 1777,
+        "depthMix": {
+          "contractsOnCapturedDepth": 1666.05,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 1666.05,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
       "heldOut": {
-        "finalEquity": 99813.82,
-        "returnPct": -0.19,
+        "finalEquity": 99773.14,
+        "returnPct": -0.23,
         "totalTrades": 26,
         "winRate": 0,
-        "maxDrawdownPct": 0.26,
-        "feesPaid": 20.69,
+        "maxDrawdownPct": 0.27,
+        "feesPaid": 18.67,
         "unfilledContracts": 0,
-        "suppressedActions": 1148,
+        "suppressedActions": 1161,
         "depthMix": {
-          "contractsOnCapturedDepth": 9507.49,
+          "contractsOnCapturedDepth": 8755.57,
           "contractsOnModelledDepth": 0,
-          "totalFilledContracts": 9507.49,
+          "totalFilledContracts": 8755.57,
           "capturedPct": 100,
           "depthModels": [
             "captured_orderbook_reanchored"
@@ -5116,6 +6006,7 @@
         "KXFDAAPPROVALDATECMPS-360-27MAR01",
         "KXFDAAPPROVALDATECMPS-360-27OCT01",
         "KXFDAAPPROVALDATECMPS-360-28JAN01",
+        "KXFDAAPPROVE-CAG-26OCT01",
         "KXFDAAPPROVE-CAM-26OCT01",
         "KXFDAAPPROVE-CAM-27JAN01",
         "KXFDAAPPROVE-CYT-26OCT01",
@@ -5126,18 +6017,18 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 99848.61,
+        "finalEquity": 99845.31,
         "returnPct": -0.15,
-        "totalTrades": 9,
+        "totalTrades": 10,
         "winRate": 0,
         "maxDrawdownPct": 0.18,
-        "feesPaid": 3.79,
+        "feesPaid": 3.61,
         "unfilledContracts": 0,
         "suppressedActions": 0,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 282.16,
-          "totalFilledContracts": 282.16,
+          "contractsOnModelledDepth": 266.96,
+          "totalFilledContracts": 266.96,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
@@ -5147,9 +6038,9 @@
       },
       "inSample": {
         "points": 400,
-        "startTs": 1755316800,
-        "endTs": 1789790400,
-        "equityAtSplit": 99848.91,
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 99846.5,
         "returnPct": -0.15
       },
       "strictForward": {
@@ -5160,7 +6051,7 @@
         "maxDrawdownPct": 0,
         "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 537,
+        "suppressedActions": 589,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
@@ -5171,25 +6062,152 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 100005.5,
-        "returnPct": 0.01,
-        "totalTrades": 6,
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
         "winRate": 0,
-        "maxDrawdownPct": 0.03,
-        "feesPaid": 1.57,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 444,
+        "suppressedActions": 589,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 211.82,
-          "totalFilledContracts": 211.82,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 99997.71,
+        "returnPct": 0,
+        "totalTrades": 6,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0.18,
+        "unfilledContracts": 0,
+        "suppressedActions": 454,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 32.38,
+          "totalFilledContracts": 32.38,
           "capturedPct": 0,
           "depthModels": [
             "synthetic"
           ]
         },
-        "verdict": "PROFITABLE_ON_REPLAYED_HISTORY",
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "NCAAF_GameFavourite",
+      "strategyId": "ncaaf_game_favourite",
+      "title": "NCAA Football Game Favourite, Held to Settle",
+      "category": "Sports / NCAA Scoreboard",
+      "designedAt": "2026-09-19",
+      "designSource": "Favourite–longshot bias (R02/R05 pattern) on the NCAA football series the store holds; NAMED for the MasterSite S07 Ncaa-football-alerts project, whose live-score feed is NOT read (not archived here point-in-time)",
+      "designSourceUrl": "https://github.com/buffedlizard55-lab/ncaa-football-alerts",
+      "universeMarkets": [
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 99999.44,
+        "returnPct": 0,
+        "totalTrades": 2,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0.07,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 4.96,
+          "totalFilledContracts": 4.96,
+          "capturedPct": 0,
+          "depthModels": [
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 9,
+        "startTs": 1789272000,
+        "endTs": 1789963200,
+        "equityAtSplit": 99999.14,
+        "returnPct": 0
+      },
+      "strictForward": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 5,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
+      },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 5,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 99999.44,
+        "returnPct": 0,
+        "totalTrades": 2,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0.07,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 4.96,
+          "totalFilledContracts": 4.96,
+          "capturedPct": 0,
+          "depthModels": [
+            "synthetic"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
         "bars": 84,
         "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
       }
@@ -5236,18 +6254,18 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 100083.49,
-        "returnPct": 0.08,
-        "totalTrades": 413,
+        "finalEquity": 100157.35,
+        "returnPct": 0.16,
+        "totalTrades": 419,
         "winRate": 100,
         "maxDrawdownPct": 0.2,
-        "feesPaid": 29.72,
+        "feesPaid": 30.92,
         "unfilledContracts": 0,
         "suppressedActions": 0,
         "depthMix": {
-          "contractsOnCapturedDepth": 30858.83,
+          "contractsOnCapturedDepth": 31583.29,
           "contractsOnModelledDepth": 0,
-          "totalFilledContracts": 30858.83,
+          "totalFilledContracts": 31583.29,
           "capturedPct": 100,
           "depthModels": [
             "captured_orderbook_reanchored"
@@ -5256,11 +6274,11 @@
         "verdict": "PROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 270,
+        "points": 272,
         "startTs": 1766552400,
-        "endTs": 1789790400,
-        "equityAtSplit": 100106.96,
-        "returnPct": 0.11
+        "endTs": 1789963200,
+        "equityAtSplit": 100083.49,
+        "returnPct": 0.08
       },
       "strictForward": {
         "finalEquity": 100000,
@@ -5281,19 +6299,39 @@
         "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
-      "heldOut": {
-        "finalEquity": 100026.82,
-        "returnPct": 0.03,
-        "totalTrades": 109,
-        "winRate": 100,
-        "maxDrawdownPct": 0.06,
-        "feesPaid": 9.74,
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 717,
+        "suppressedActions": 821,
         "depthMix": {
-          "contractsOnCapturedDepth": 7874.99,
+          "contractsOnCapturedDepth": 0,
           "contractsOnModelledDepth": 0,
-          "totalFilledContracts": 7874.99,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 100035.45,
+        "returnPct": 0.04,
+        "totalTrades": 94,
+        "winRate": 100,
+        "maxDrawdownPct": 0.05,
+        "feesPaid": 9.53,
+        "unfilledContracts": 0,
+        "suppressedActions": 724,
+        "depthMix": {
+          "contractsOnCapturedDepth": 6386.17,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 6386.17,
           "capturedPct": 100,
           "depthModels": [
             "captured_orderbook_reanchored"
@@ -5322,7 +6360,7 @@
       ],
       "depthMode": "captured",
       "backtest": {
-        "finalEquity": 100002.01,
+        "finalEquity": 99999.97,
         "returnPct": 0,
         "totalTrades": 4,
         "winRate": 0,
@@ -5342,35 +6380,53 @@
         "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
       },
       "inSample": {
-        "points": 29,
+        "points": 31,
         "startTs": 1787371200,
-        "endTs": 1789790400,
-        "equityAtSplit": 100004.32,
+        "endTs": 1789963200,
+        "equityAtSplit": 100002.01,
         "returnPct": 0
       },
       "strictForward": {
-        "finalEquity": 99999.98,
+        "finalEquity": 100000,
         "returnPct": 0,
-        "totalTrades": 1,
+        "totalTrades": 0,
         "winRate": 0,
         "maxDrawdownPct": 0,
-        "feesPaid": 0.02,
+        "feesPaid": 0,
         "unfilledContracts": 0,
-        "suppressedActions": 56,
+        "suppressedActions": 58,
         "depthMix": {
           "contractsOnCapturedDepth": 0,
-          "contractsOnModelledDepth": 1,
-          "totalFilledContracts": 1,
-          "capturedPct": 0,
-          "depthModels": [
-            "synthetic"
-          ]
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
         },
-        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "verdict": "UNTESTED_ON_THIS_DATASET",
         "bars": 1
       },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 57,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
       "heldOut": {
-        "finalEquity": 100002.01,
+        "finalEquity": 99999.97,
         "returnPct": 0,
         "totalTrades": 4,
         "winRate": 0,
@@ -5391,140 +6447,662 @@
         "bars": 84,
         "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
       }
+    },
+    {
+      "username": "InsiderFlow_Form4",
+      "strategyId": "insider_flow_form4",
+      "title": "CEO-Change Longshot Fade Gated by Real SEC Form 4 Filings (point-in-time)",
+      "category": "Corporate Events / Longshot fade, gated by an official filing archive",
+      "designedAt": "2026-09-21",
+      "designSource": "Original design in this repository: the point-in-time external-signal architecture of ForecastEdge_Weather / FDAEdge_DrugsFDA applied to SEC EDGAR Form 4 filings (data/form4-signals/, grown by .github/workflows/form4-signals.yml), as the upgrade path the S02 ledger entry named for the price-only insider entries",
+      "designSourceUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=TSLA&type=4&dateb=&owner=include&count=40&output=atom",
+      "universeMarkets": [
+        "JPMCEOCHANGE-27",
+        "KXAAPLCEOCHANGE-26",
+        "KXOPENAICEOCHANGE-26",
+        "TESLACEOCHANGE-26"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET"
+      },
+      "inSample": {
+        "points": 400,
+        "startTs": 1755489600,
+        "endTs": 1789963200,
+        "equityAtSplit": 100000,
+        "returnPct": 0
+      },
+      "strictForward": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
+      },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "NBAInjury_AvailGap",
+      "strategyId": "nba_injury_avail_gap",
+      "title": "NBA Pre-Game Availability Gap Buyer (ESPN injury designations — NOT OFFICIAL)",
+      "category": "Sports / Injury gate (pre-game)",
+      "designedAt": "2026-09-21",
+      "designSource": "Original design in this repository — the NBA half of the MasterSite \"NBA Injury\" request, same architecture and same evidence rules as NFLInjury_AvailGap (data/espn-signals/, .github/workflows/espn-signals.yml)",
+      "designSourceUrl": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
+      "universeMarkets": [
+        "KXNBAGAME-26OCT20BOSDET-BOS",
+        "KXNBAGAME-26OCT20BOSDET-DET",
+        "KXNBAGAME-26OCT20OKCSAS-OKC",
+        "KXNBAGAME-26OCT20OKCSAS-SAS",
+        "KXNBAGAME-26OCT20PHINYK-NYK",
+        "KXNBAGAME-26OCT20PHINYK-PHI"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET"
+      },
+      "inSample": {
+        "points": 32,
+        "startTs": 1787284800,
+        "endTs": 1789963200,
+        "equityAtSplit": 100000,
+        "returnPct": 0
+      },
+      "strictForward": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
+      },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "NCAAFState_4Q_Leader",
+      "strategyId": "ncaaf_state_4q_leader",
+      "title": "NCAA Football Two-Score 4th-Quarter Leader (ESPN game state — NOT OFFICIAL)",
+      "category": "Sports / In-play state (scoreboard)",
+      "designedAt": "2026-09-21",
+      "designSource": "Original design in this repository — the NCAA-scoreboard half of the MasterSite request list, same architecture as NFLState_4Q_Leader (data/espn-signals/, .github/workflows/espn-signals.yml)",
+      "designSourceUrl": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard",
+      "universeMarkets": [
+        "KXNCAAFGAME-26SEP26CARKFSU-FSU",
+        "KXNCAAFGAME-26SEP26CMUMIA-CMU",
+        "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+        "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
+        "KXNCAAFGAME-26SEP26OREUSC-ORE",
+        "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
+        "KXNCAAFGAME-26SEP26TXAMLSU-LSU"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET"
+      },
+      "inSample": {
+        "points": 9,
+        "startTs": 1789272000,
+        "endTs": 1789963200,
+        "equityAtSplit": 100000,
+        "returnPct": 0
+      },
+      "strictForward": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
+      },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "NBAState_FinalMinutes",
+      "strategyId": "nba_state_final_minutes",
+      "title": "NBA Double-Digit Lead Inside the Final Minutes (ESPN game state — NOT OFFICIAL)",
+      "category": "Sports / In-play state (scoreboard)",
+      "designedAt": "2026-09-21",
+      "designSource": "Original design in this repository — the NBA-scoreboard sibling of NFLState_4Q_Leader (data/espn-signals/, .github/workflows/espn-signals.yml); completes the MasterSite scoreboard trio (NFL, NCAA, NBA) whose MLB sibling (MLBLead_InPlay) already trades the OFFICIAL MLB archive",
+      "designSourceUrl": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
+      "universeMarkets": [
+        "KXNBAGAME-26OCT20BOSDET-BOS",
+        "KXNBAGAME-26OCT20BOSDET-DET",
+        "KXNBAGAME-26OCT20OKCSAS-OKC",
+        "KXNBAGAME-26OCT20OKCSAS-SAS",
+        "KXNBAGAME-26OCT20PHINYK-NYK",
+        "KXNBAGAME-26OCT20PHINYK-PHI"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET"
+      },
+      "inSample": {
+        "points": 32,
+        "startTs": 1787284800,
+        "endTs": 1789963200,
+        "equityAtSplit": 100000,
+        "returnPct": 0
+      },
+      "strictForward": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
+      },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
+    },
+    {
+      "username": "OrderbookWall_3Rung",
+      "strategyId": "orderbook_wall_3rung",
+      "title": "Orderbook-Wall Bid Ladder 5-15¢ Under the Touch, Fill-and-Flip +2¢ (R20 `Snoo-77724` + `LupineChemist`)",
+      "category": "Liquidity / Passive market making",
+      "designedAt": "2026-09-21",
+      "designSource": "Recreated from r/Kalshi \"what's your secret?\" comments by Snoo-77724 and LupineChemist (RESEARCH_SOURCES R20)",
+      "designSourceUrl": "https://www.reddit.com/r/Kalshi/comments/1qd4ubf/people_who_actually_win_money_on_kalshi_whats/",
+      "universeMarkets": [
+        "KXNASDAQ100Y-26DEC31H1600-T33000",
+        "KXNASDAQ100Y-26DEC31H1600-T19000",
+        "KXBTCY-27JAN0100-T149999.99",
+        "KXBTCY-27JAN0100-B47500",
+        "KXBTCY-27JAN0100-B52500",
+        "KXBTCY-27JAN0100-B57500",
+        "KXBTCY-27JAN0100-B62500",
+        "KXBTCY-27JAN0100-B67500",
+        "KXBTCY-27JAN0100-B72500",
+        "KXBTCY-27JAN0100-B77500",
+        "KXBTCY-27JAN0100-B82500",
+        "KXBTCY-27JAN0100-B87500",
+        "KXINXY-26DEC31H1600-B6900",
+        "KXINXY-26DEC31H1600-B7100",
+        "KXINXY-26DEC31H1600-B7300",
+        "KXINXY-26DEC31H1600-B7500",
+        "KXINXY-26DEC31H1600-B7700",
+        "KXINXY-26DEC31H1600-B7900",
+        "KXINXY-26DEC31H1600-B8100",
+        "KXINXY-26DEC31H1600-B8300",
+        "KXINXY-26DEC31H1600-B8900",
+        "KXINXY-26DEC31H1600-T4000",
+        "KXNASDAQ100Y-26DEC31H1600-B25750",
+        "KXNASDAQ100Y-26DEC31H1600-B29750",
+        "KXNASDAQ100Y-26DEC31H1600-B30250",
+        "KXNASDAQ100Y-26DEC31H1600-B30750",
+        "KXNASDAQ100Y-26DEC31H1600-B31250",
+        "KXNASDAQ100Y-26DEC31H1600-B31750",
+        "KXNASDAQ100Y-26DEC31H1600-B32250",
+        "KXNASDAQ100Y-26DEC31H1600-B32750"
+      ],
+      "depthMode": "captured",
+      "backtest": {
+        "finalEquity": 98537.84,
+        "returnPct": -1.46,
+        "totalTrades": 1428,
+        "winRate": 100,
+        "maxDrawdownPct": 2.56,
+        "feesPaid": 88.94,
+        "unfilledContracts": 0,
+        "suppressedActions": 0,
+        "depthMix": {
+          "contractsOnCapturedDepth": 237643.41,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 237643.41,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY"
+      },
+      "inSample": {
+        "points": 272,
+        "startTs": 1766552400,
+        "endTs": 1789963200,
+        "equityAtSplit": 99138.06,
+        "returnPct": -0.86
+      },
+      "strictForward": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 1809,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 1
+      },
+      "previousDesignSplit": {
+        "finalEquity": 100000,
+        "returnPct": 0,
+        "totalTrades": 0,
+        "winRate": 0,
+        "maxDrawdownPct": 0,
+        "feesPaid": 0,
+        "unfilledContracts": 0,
+        "suppressedActions": 1807,
+        "depthMix": {
+          "contractsOnCapturedDepth": 0,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 0,
+          "capturedPct": null,
+          "depthModels": []
+        },
+        "verdict": "UNTESTED_ON_THIS_DATASET",
+        "bars": 2,
+        "label": "PREVIOUS DESIGN SPLIT — NOT a clean forward test for a strategy designed after this date. It is the strict forward window measured at the second-latest design date in the roster, published so that adding a new design does not erase an existing measurement."
+      },
+      "heldOut": {
+        "finalEquity": 98612.36,
+        "returnPct": -1.39,
+        "totalTrades": 455,
+        "winRate": 100,
+        "maxDrawdownPct": 2.03,
+        "feesPaid": 14.37,
+        "unfilledContracts": 0,
+        "suppressedActions": 1251,
+        "depthMix": {
+          "contractsOnCapturedDepth": 106020.77,
+          "contractsOnModelledDepth": 0,
+          "totalFilledContracts": 106020.77,
+          "capturedPct": 100,
+          "depthModels": [
+            "captured_orderbook_reanchored"
+          ]
+        },
+        "verdict": "UNPROFITABLE_ON_REPLAYED_HISTORY",
+        "bars": 84,
+        "label": "HELD-OUT WINDOW — NOT a clean forward test. The bars in this window predate the design date, so a designer with the full history in front of them could have been influenced by them. It is a robustness check on real, untouched-recent data, nothing more."
+      }
     }
   ],
   "rankedStrictForward": [
     {
-      "username": "FedPivotSniper",
-      "returnPct": 0,
-      "trades": 2
-    },
-    {
-      "username": "ShockTiming_ModerateFav",
+      "username": "YieldVulture_Arb",
       "returnPct": 0,
       "trades": 1
     },
     {
-      "username": "FOMC_ProbabilitySniper",
+      "username": "FedPivotSniper",
       "returnPct": 0,
       "trades": 1
     },
     {
       "username": "PanicFade_HourlyVol",
       "returnPct": -0.01,
-      "trades": 4
+      "trades": 3
     },
     {
       "username": "PanicFade_T4_S100",
       "returnPct": -0.01,
-      "trades": 8
+      "trades": 4
     },
     {
       "username": "PanicFadeDeep_T6_TP6",
       "returnPct": -0.01,
-      "trades": 6
+      "trades": 2
     },
     {
       "username": "TheLeap_BreakoutRank",
-      "returnPct": -0.01,
-      "trades": 6
-    },
-    {
-      "username": "TrendRide_FullTilt",
-      "returnPct": -0.02,
-      "trades": 6
-    },
-    {
-      "username": "ThetaHarvest_ShortOTM",
-      "returnPct": -0.35,
-      "trades": 44
-    },
-    {
-      "username": "LongshotFader_FLB",
-      "returnPct": -0.65,
-      "trades": 40
-    },
-    {
-      "username": "GammaWhale_Squeeze",
-      "returnPct": -0.8,
-      "trades": 4
-    },
-    {
-      "username": "ShockTiming_StopOut",
-      "returnPct": -0.8,
-      "trades": 11
-    },
-    {
-      "username": "FeeArb_PremiumBuyer",
-      "returnPct": -1.12,
-      "trades": 80
-    },
-    {
-      "username": "AlphaApex_Momentum",
-      "returnPct": -1.82,
-      "trades": 28
+      "returnPct": -0.05,
+      "trades": 3
     },
     {
       "username": "EventCatalyst_Max",
-      "returnPct": -2.19,
-      "trades": 9
+      "returnPct": -0.1,
+      "trades": 14
+    },
+    {
+      "username": "GammaWhale_Squeeze",
+      "returnPct": -0.11,
+      "trades": 18
+    },
+    {
+      "username": "TrendRide_FullTilt",
+      "returnPct": -0.12,
+      "trades": 7
     },
     {
       "username": "AdjacentStrike_Ladder",
-      "returnPct": -2.59,
-      "trades": 31
+      "returnPct": -0.25,
+      "trades": 32
+    },
+    {
+      "username": "ShockTiming_StopOut",
+      "returnPct": -0.29,
+      "trades": 20
     },
     {
       "username": "ContrarianKing_100x",
-      "returnPct": -2.76,
-      "trades": 37
+      "returnPct": -0.31,
+      "trades": 35
+    },
+    {
+      "username": "AlphaApex_Momentum",
+      "returnPct": -0.39,
+      "trades": 32
+    },
+    {
+      "username": "ThetaHarvest_ShortOTM",
+      "returnPct": -0.43,
+      "trades": 39
     },
     {
       "username": "MeanRev_CheapBand",
-      "returnPct": -4.15,
+      "returnPct": -0.51,
       "trades": 51
+    },
+    {
+      "username": "LongshotFader_FLB",
+      "returnPct": -0.83,
+      "trades": 45
+    },
+    {
+      "username": "FeeArb_PremiumBuyer",
+      "returnPct": -1.3,
+      "trades": 88
     }
   ],
   "rankedHeldOut": [
     {
       "username": "MakerFlip_SpreadHarvest",
-      "returnPct": 3.47,
-      "trades": 1893
-    },
-    {
-      "username": "VolatilityArb_MM",
-      "returnPct": 3.14,
-      "trades": 2995
+      "returnPct": 4.62,
+      "trades": 1802
     },
     {
       "username": "YieldVulture_Arb",
-      "returnPct": 2.74,
-      "trades": 75
+      "returnPct": 2.75,
+      "trades": 78
     },
     {
       "username": "BookWall_BidLadder",
-      "returnPct": 0.46,
-      "trades": 969
+      "returnPct": 0.68,
+      "trades": 1018
     },
     {
       "username": "FeeArb_PremiumBuyer",
-      "returnPct": 0.38,
-      "trades": 623
+      "returnPct": 0.64,
+      "trades": 660
     },
     {
       "username": "PanicDip_ShockTiming",
-      "returnPct": 0.11,
-      "trades": 533
+      "returnPct": 0.06,
+      "trades": 561
     },
     {
       "username": "GridMM_MultiTier",
-      "returnPct": 0.03,
-      "trades": 109
-    },
-    {
-      "username": "InsiderFiling_Drift",
-      "returnPct": 0.01,
-      "trades": 6
+      "returnPct": 0.04,
+      "trades": 94
     },
     {
       "username": "ShockTiming_ModerateFav",
@@ -5534,7 +7112,12 @@
     {
       "username": "SportsFavourite_Settle",
       "returnPct": 0,
-      "trades": 3
+      "trades": 5
+    },
+    {
+      "username": "SportsLine_Momentum",
+      "returnPct": 0,
+      "trades": 8
     },
     {
       "username": "SportsSteam_Fade",
@@ -5542,9 +7125,14 @@
       "trades": 2
     },
     {
-      "username": "MEE_BoardSum",
+      "username": "InsiderFiling_Drift",
       "returnPct": 0,
-      "trades": 7
+      "trades": 6
+    },
+    {
+      "username": "NCAAF_GameFavourite",
+      "returnPct": 0,
+      "trades": 2
     },
     {
       "username": "FOMC_ProbabilitySniper",
@@ -5552,13 +7140,13 @@
       "trades": 4
     },
     {
-      "username": "SportsLine_Momentum",
+      "username": "MEE_BoardSum",
       "returnPct": -0.01,
-      "trades": 6
+      "trades": 7
     },
     {
       "username": "FDALadder_Dominance",
-      "returnPct": -0.01,
+      "returnPct": -0.02,
       "trades": 1
     },
     {
@@ -5567,85 +7155,212 @@
       "trades": 1
     },
     {
+      "username": "FedPivotSniper",
+      "returnPct": -0.21,
+      "trades": 263
+    },
+    {
       "username": "TheLeap_BreakoutRank",
-      "returnPct": -0.19,
+      "returnPct": -0.23,
       "trades": 26
     },
     {
-      "username": "FedPivotSniper",
-      "returnPct": -0.2,
-      "trades": 259
-    },
-    {
       "username": "PanicFade_HourlyVol",
-      "returnPct": -0.67,
-      "trades": 257
+      "returnPct": -0.5,
+      "trades": 267
     },
     {
       "username": "PanicFadeDeep_T6_TP6",
-      "returnPct": -0.83,
-      "trades": 232
+      "returnPct": -0.68,
+      "trades": 245
     },
     {
-      "username": "ThetaHarvest_ShortOTM",
-      "returnPct": -1.37,
-      "trades": 337
+      "username": "VolatilityArb_MM",
+      "returnPct": -0.72,
+      "trades": 3136
     },
     {
       "username": "PanicFade_T4_S100",
-      "returnPct": -1.48,
-      "trades": 210
+      "returnPct": -1.13,
+      "trades": 216
+    },
+    {
+      "username": "ThetaHarvest_ShortOTM",
+      "returnPct": -1.28,
+      "trades": 328
+    },
+    {
+      "username": "OrderbookWall_3Rung",
+      "returnPct": -1.39,
+      "trades": 455
     },
     {
       "username": "LongshotFader_FLB",
-      "returnPct": -1.58,
-      "trades": 87
+      "returnPct": -1.91,
+      "trades": 93
     },
     {
       "username": "TightScalp_Fixed5",
-      "returnPct": -5.41,
-      "trades": 1857
-    },
-    {
-      "username": "TrendRide_FullTilt",
-      "returnPct": -9.79,
-      "trades": 341
+      "returnPct": -4.42,
+      "trades": 1943
     },
     {
       "username": "ShockTiming_StopOut",
-      "returnPct": -10.69,
-      "trades": 489
+      "returnPct": -10.85,
+      "trades": 512
+    },
+    {
+      "username": "TrendRide_FullTilt",
+      "returnPct": -12.01,
+      "trades": 354
     },
     {
       "username": "AdjacentStrike_Ladder",
-      "returnPct": -16.31,
-      "trades": 1423
-    },
-    {
-      "username": "EventCatalyst_Max",
-      "returnPct": -16.53,
-      "trades": 534
-    },
-    {
-      "username": "AlphaApex_Momentum",
-      "returnPct": -17.4,
-      "trades": 1245
+      "returnPct": -14.05,
+      "trades": 1491
     },
     {
       "username": "GammaWhale_Squeeze",
+      "returnPct": -16.45,
+      "trades": 409
+    },
+    {
+      "username": "EventCatalyst_Max",
       "returnPct": -18.01,
-      "trades": 388
+      "trades": 560
+    },
+    {
+      "username": "AlphaApex_Momentum",
+      "returnPct": -18.14,
+      "trades": 1238
     },
     {
       "username": "ContrarianKing_100x",
-      "returnPct": -21.75,
-      "trades": 1950
+      "returnPct": -20.45,
+      "trades": 2003
     },
     {
       "username": "MeanRev_CheapBand",
-      "returnPct": -25.39,
-      "trades": 2476
+      "returnPct": -24.49,
+      "trades": 2447
     }
   ],
-  "splitDefaultSource": "max(designedAt) across the roster = 2026-09-20T00:00:00.000Z"
+  "rankedPreviousDesignSplit": [
+    {
+      "username": "MakerFlip_SpreadHarvest",
+      "returnPct": 0.19,
+      "trades": 35
+    },
+    {
+      "username": "VolatilityArb_MM",
+      "returnPct": 0.13,
+      "trades": 48
+    },
+    {
+      "username": "BookWall_BidLadder",
+      "returnPct": 0.08,
+      "trades": 14
+    },
+    {
+      "username": "YieldVulture_Arb",
+      "returnPct": 0,
+      "trades": 3
+    },
+    {
+      "username": "PanicDip_ShockTiming",
+      "returnPct": 0,
+      "trades": 4
+    },
+    {
+      "username": "FedPivotSniper",
+      "returnPct": -0.01,
+      "trades": 5
+    },
+    {
+      "username": "PanicFadeDeep_T6_TP6",
+      "returnPct": -0.01,
+      "trades": 3
+    },
+    {
+      "username": "SportsLine_Momentum",
+      "returnPct": -0.01,
+      "trades": 1
+    },
+    {
+      "username": "PanicFade_HourlyVol",
+      "returnPct": -0.02,
+      "trades": 5
+    },
+    {
+      "username": "PanicFade_T4_S100",
+      "returnPct": -0.02,
+      "trades": 6
+    },
+    {
+      "username": "TheLeap_BreakoutRank",
+      "returnPct": -0.02,
+      "trades": 3
+    },
+    {
+      "username": "GammaWhale_Squeeze",
+      "returnPct": -0.23,
+      "trades": 24
+    },
+    {
+      "username": "TightScalp_Fixed5",
+      "returnPct": -0.3,
+      "trades": 32
+    },
+    {
+      "username": "ShockTiming_StopOut",
+      "returnPct": -0.33,
+      "trades": 29
+    },
+    {
+      "username": "TrendRide_FullTilt",
+      "returnPct": -0.36,
+      "trades": 13
+    },
+    {
+      "username": "ThetaHarvest_ShortOTM",
+      "returnPct": -0.6,
+      "trades": 67
+    },
+    {
+      "username": "LongshotFader_FLB",
+      "returnPct": -0.68,
+      "trades": 54
+    },
+    {
+      "username": "AlphaApex_Momentum",
+      "returnPct": -0.77,
+      "trades": 60
+    },
+    {
+      "username": "EventCatalyst_Max",
+      "returnPct": -0.79,
+      "trades": 33
+    },
+    {
+      "username": "AdjacentStrike_Ladder",
+      "returnPct": -0.8,
+      "trades": 61
+    },
+    {
+      "username": "MeanRev_CheapBand",
+      "returnPct": -0.8,
+      "trades": 85
+    },
+    {
+      "username": "ContrarianKing_100x",
+      "returnPct": -0.84,
+      "trades": 71
+    },
+    {
+      "username": "FeeArb_PremiumBuyer",
+      "returnPct": -1.3,
+      "trades": 114
+    }
+  ],
+  "splitDefaultSource": "max(designedAt) across the roster = 2026-09-22T00:00:00.000Z"
 }

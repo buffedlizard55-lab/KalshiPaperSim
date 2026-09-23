@@ -3902,7 +3902,114 @@ export const STRATEGIES = [
         reason: `R20 longshot package: ${count} contracts of ${side} @ ${px} (cost ${cost}) — a buck on a hundred, exit 10c`
       });
     }
-  }
+  },
+
+  /* ══════════════════════════════════════════════════════════════════════════
+   * 2026-09-22 — THIRD MasterSite PASS: a rule MINED FROM A SOCIAL POST and
+   * re-implemented mechanically on official prices.
+   *
+   * The owner's own Kalshi lab (MasterSite · "Commodities — Kalshi Research
+   * Exchange", https://buffedlizard55-lab.github.io/Commodities/) already
+   * recreated this rule as its `HeatConfirm` persona and labelled it
+   * DISCOVERY-ONLY, because the evidence for it is third-party. This entry does
+   * the same thing in THIS repository, with the two parameters the source
+   * actually states, and it is the piece of that lab this repo can carry without
+   * copying a number: the NWS archive (the signal), the captured Kalshi bars and
+   * books (the prices), and the exchange's own settlements (the outcome) are all
+   * already here.
+   * ══════════════════════════════════════════════════════════════════════════ */
+  {
+    ...BASE,
+    id: 'heat_confirm_500bots',
+    username: 'HeatConfirm_500Bots',
+    handle: '@HeatConfirm_500Bots',
+    avatar: '🔥',
+    flight: 'hourly',
+    preferredPeriodMinutes: 60,
+    universe: ['KXHIGHNY'],
+    title: 'The 500-Bot Survivor Rule, Re-Implemented on Official Prices',
+    category: 'Weather / Discovered Rule',
+    tagline:
+      'The one rule the r/PredictionsMarkets 500-bot weather backtest reported as its best: buy the bracket when the NWS forecast high is above 77°F, the YES price is under 42¢ and the spread is under 8¢ — and get out when the forecast cools out of the bracket. Forward test only: it needs a point-in-time forecast snapshot.',
+    sizingPct: 0.5,
+    maxParticipation: 3,
+    designedAt: '2026-09-22',
+    designSource:
+      'r/PredictionsMarkets "I backtested 500 Weather Kalshi Bots" (RESEARCH_SOURCES R06 — third-party claim, discovery only) via the owner\'s Kalshi lab persona HeatConfirm (MasterSite · Commodities, scripts/forward_strategies.py → entry_heat_confirm, which labels it forward-recreation)',
+    designSourceUrl: 'https://www.reddit.com/r/PredictionsMarkets/comments/1tko1iw/i_backtested_500_weather_kalshi_bots_the_best_bot/',
+    sourceNote:
+      'R06, quoted by the ledger as the reason this rule exists: the post reports that the best of 500 weather bots "waited for a forecast high above 77 degrees, a YES price below 42 cents, and a reasonably tight spread" and that "if the forecast cooled, it got out", while the MEDIAN of all 500 bots was −41.61% — i.e. the source\'s own evidence says most weather bots lose. The owner\'s lab re-created it with the literals HEAT_CONFIRM_FORECAST_F = 77.0, HEAT_CONFIRM_MAX_ASK = 0.42, HEAT_CONFIRM_MAX_SPREAD = 0.08 and the exit rule "exit when the CURRENT NWS forecast no longer falls inside the bracket that was bought"; this entry uses exactly those three numbers and that exit. The post is a third-party claim and is NOT a price source: every price, spread and settlement below is the exchange\'s own captured data.',
+    thesis:
+      'DESIGN INTENT: the rule is only meaningful as a CONJUNCTION — a hot forecast (the reason to be long), a cheap YES (the reason the trade is not already priced), and a tight spread (the reason the entry is not consumed by the cost of crossing). Removing any one of the three turns it into a different strategy: without the spread gate it becomes ForecastEdge_Weather (which this roster already runs at ask ≤ 0.45 with no spread condition), and without the forecast gate it becomes WeatherLadder_CheapBands (cheap tail only). ' +
+      'DISCOVERY DISCIPLINE: the source is a social post about someone else\'s backtest, so its claim is not treated as evidence here — this entry is a FORWARD TEST, it trades only on bars where a point-in-time NWS snapshot exists, and it stays unranked until the overlap produces fills. That is the same posture the owner\'s lab gives its HeatConfirm persona, for the same reason. ' +
+      'WHY IT HAS NOT FIRED YET (measured, not asserted): the entry is a CONJUNCTION, and on the archive as shipped the two gates do not coincide — the only archived forecasts above the 77°F gate land OUTSIDE the brackets this replay universe captured (the universe holds a few brackets per event by exchange volume, not the whole ladder). A 0-trade verdict here is therefore the exchange\'s own data refusing the trade, not a missing signal, and the audit says so (UNTESTED_ON_THIS_DATASET with the reason published). ' +
+      'ARCHIVE AS SHIPPED IN THIS BUILD: ' + forecastCaption() + '. COMPUTED SAMPLE (from the store on this build): ' + classSampleCaption(STORE_FACTS_60M, ['KXHIGHNY']) + '. ' +
+      'BASIS MISMATCH (flagged, IRREGULARITIES.md #34): KXHIGHNY settles on The Weather Company observations for New York City (CLINYC) per the market rules, while the signal is the NWS gridded point forecast for the same coordinates — different providers, and the replay measures the noise rather than hiding it.',
+    rules: {
+      entry:
+        'ctx.signal carries the newest NWS forecast high F (snapshot captured at or before this bar, never after). Required together: F > 77.0; the bracket contains F (band: floor ≤ F ≤ cap; lower tail "X° or below": F ≤ X); YES ask < 0.42 strictly; spread = yesAsk − yesBid ≤ 0.08 with both sides present. Once per market.',
+      sizing: '50% of available cash per qualifying bracket, capped at 3x the visible depth.',
+      exit:
+        'Market sell the whole position at the first bar where a fresh snapshot exists AND the forecast no longer falls inside the entered bracket (the source\'s "if the forecast cooled, it got out"). A bar with NO snapshot is never an exit signal — an adapter gap must not close a position.',
+      noSignalRule: 'No snapshot at or before the bar → no entry and no exit action at all.',
+      riskManagement: 'NONE (by mandate)'
+    },
+    decide(ctx) {
+      const { book, portfolio, ticker, market, signal } = ctx;
+      const actions = [];
+      const held = [...portfolio.positions.values()].filter((p) => p.ticker === ticker && p.side === 'YES' && p.count > 0);
+
+      // The bracket as the position was entered (the market object is the same
+      // contract, so its strikes cannot move; the forecast can).
+      const floor = Number(market.floor_strike);
+      const cap = Number(market.cap_strike);
+      const inBracket = (f) => {
+        if (!Number.isFinite(f)) return false;
+        if (Number.isFinite(floor) && Number.isFinite(cap) && cap > floor) return f >= floor && f <= cap;
+        if (String(market.strike_type || '') === 'less' && Number.isFinite(cap)) return f <= cap;
+        if (String(market.strike_type || '') === 'greater' && Number.isFinite(floor)) return f > floor;
+        return false;
+      };
+
+      // EXIT LEG — "if the forecast cooled, it got out".
+      if (held.length && signal && signal.kind === 'nws-forecast-high') {
+        const f = Number(signal.highF);
+        if (Number.isFinite(f) && (!inBracket(f) || f <= 77.0)) {
+          for (const pos of held) {
+            actions.push({
+              type: 'sell',
+              side: 'YES',
+              count: pos.count,
+              reason: `heat-confirm exit: the newest NWS forecast high is ${f}°F (snapshot ${signal.capturedAt}) — it no longer falls in the entered bracket ${Number.isFinite(floor) ? floor : '-∞'}–${Number.isFinite(cap) ? cap : '∞'}°F${f <= 77.0 ? ' and it is no longer above the 77°F gate' : ''}, so the reason to be long is gone`
+            });
+          }
+        }
+        return actions;
+      }
+      if (held.length) return actions;
+
+      // ENTRY LEG — all three literals of the source, together.
+      if (!signal || signal.kind !== 'nws-forecast-high') return actions;
+      const f = Number(signal.highF);
+      if (!Number.isFinite(f) || f <= 77.0) return actions;
+      if (!inBracket(f)) return actions;
+      const ask = book.getBestYesAsk();
+      const bid = book.getBestYesBid();
+      if (ask === null || bid === null) return actions;
+      const spread = round6(ask - bid);
+      if (!(ask > 0) || ask >= 0.42) return actions;
+      if (!(spread <= 0.08)) return actions;
+
+      const count = aggressiveSize(ctx, this.sizingPct, this.maxParticipation, 'YES');
+      if (count <= 0) return actions;
+      return [{
+        type: 'buy',
+        side: 'YES',
+        count,
+        reason: `heat-confirm entry (500-bot top rule, forward recreation): NWS forecast high ${f}°F > 77°F and inside bracket ${Number.isFinite(floor) ? floor : '-∞'}–${Number.isFinite(cap) ? cap : '∞'}°F; YES ask ${ask} < 0.42 with spread ${spread} ≤ 0.08 (snapshot ${signal.capturedAt}, captured at or before this bar)`
+      }];
+    }
+  },
 
 ];
 

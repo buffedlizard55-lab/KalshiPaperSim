@@ -67,6 +67,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { resolveMarketStatus, MARKET_STATUS_RULE } from '../src/market-status.js';
 import { hasMlbSignalArchive, matchMlbGame } from '../src/mlb-signal-store.js';
 import { ESPN_TRUST_LABEL, SERIES_LEAGUE, hasEspnArchive, matchEspnGame } from '../src/espn-signal-store.js';
 
@@ -410,6 +411,64 @@ export function auditGameWindow({ deskCoverage = null, deskMarketTickers = null,
     if (row) stores.push(row);
   }
 
+  /**
+   * RECONCILE EACH TICKER'S STATUS ACROSS ITS OWN STORE FILES (irregularity #66).
+   *
+   * One ticker lives in up to three files (data/history/<t>.json, intraday/60m/,
+   * intraday/1m/) and each is a point-in-time photograph, so they can disagree.
+   * Reading ONE file's `status` as "the status" made this audit claim 2 settled
+   * KXNHLGAME contracts were OPEN tradeable slots (`openLadderContracts: 2`) and
+   * made ROADMAP "Next #12" repeat it. The rule is now the shared one from
+   * src/market-status.js: settlement is monotone, otherwise the newest
+   * market_captured_at wins; every disagreement is published below.
+   */
+  const observationsByTicker = new Map();
+  for (const s of stores) {
+    if (!observationsByTicker.has(s.ticker)) observationsByTicker.set(s.ticker, []);
+    observationsByTicker.get(s.ticker).push({
+      status: s.status,
+      result: s.result,
+      marketCapturedAt: s.marketCapturedAt,
+      source: s.store
+    });
+  }
+  const resolvedByTicker = new Map();
+  for (const [ticker, obs] of observationsByTicker) resolvedByTicker.set(ticker, resolveMarketStatus(obs, { ticker }));
+  const statusReconciliation = {
+    rule: MARKET_STATUS_RULE,
+    tickers: resolvedByTicker.size,
+    storeFiles: stores.length,
+    filesDisagreeingWithResolution: 0,
+    tickersWithDisagreeingFiles: 0,
+    staleOpenPhotographs: [],
+    conflicts: []
+  };
+  for (const s of stores) {
+    const resolved = resolvedByTicker.get(s.ticker);
+    s.rawStatus = s.status;
+    s.resolvedStatus = resolved ? resolved.status : null;
+    s.resolvedResult = resolved ? resolved.result : null;
+    s.settled = resolved ? resolved.settled : false;
+    s.openForTrading = resolved ? resolved.openForTrading : false;
+    s.statusWhy = resolved ? resolved.why : null;
+    const disagrees = resolved && resolved.status !== s.rawStatus;
+    if (disagrees) statusReconciliation.filesDisagreeingWithResolution += 1;
+  }
+  for (const [ticker, resolved] of resolvedByTicker) {
+    const obs = observationsByTicker.get(ticker);
+    const wrong = obs.filter((o) => o.status !== resolved.status);
+    if (wrong.length) {
+      statusReconciliation.tickersWithDisagreeingFiles += 1;
+      statusReconciliation.staleOpenPhotographs.push({
+        ticker,
+        resolved: { status: resolved.status, result: resolved.result, marketCapturedAt: resolved.marketCapturedAt, source: resolved.source },
+        staleFiles: wrong.map((o) => ({ source: o.source, status: o.status, result: o.result, marketCapturedAt: o.marketCapturedAt })),
+        why: resolved.why
+      });
+    }
+    if (resolved.conflict) statusReconciliation.conflicts.push({ ticker, ...resolved.conflictDetail });
+  }
+
   const totals = {
     stores: stores.length,
     ladders: stores.reduce((a, s) => a + s.ladders, 0),
@@ -421,7 +480,11 @@ export function auditGameWindow({ deskCoverage = null, deskMarketTickers = null,
     occurrenceNotComparable: 0,
     occurrenceEqualsCloseTime: 0,
     storesWithMarketObject: 0,
-    distinctTickers: new Set(stores.map((s) => s.ticker)).size
+    distinctTickers: new Set(stores.map((s) => s.ticker)).size,
+    storesWhoseFilesDisagreeOnStatus: statusReconciliation.tickersWithDisagreeingFiles,
+    storeFilesDisagreeingWithResolution: statusReconciliation.filesDisagreeingWithResolution,
+    openStoresByNewestRecord: 0,
+    openStoresByTheirOwnFileStatus: 0
   };
   for (const s of stores) {
     for (const p of PHASES) {
@@ -433,6 +496,8 @@ export function auditGameWindow({ deskCoverage = null, deskMarketTickers = null,
     else if (s.tradeableWindow.occurrenceEqualsExpiration === false) totals.occurrenceDiffersFromExpectedExpiration += 1;
     else totals.occurrenceNotComparable += 1;
     if (s.tradeableWindow.occurrenceEqualsCloseTime === true) totals.occurrenceEqualsCloseTime += 1;
+    if (s.resolvedStatus !== 'finalized') totals.openStoresByNewestRecord += 1;
+    if (String(s.rawStatus || '').toLowerCase() !== 'finalized') totals.openStoresByTheirOwnFileStatus += 1;
   }
   totals.tradeableNonEmpty = totals.nonEmptyByPhase.TRADEABLE_PRE_EVENT + totals.nonEmptyByPhase.IN_PLAY +
     totals.nonEmptyByPhase.TRADEABLE_POST_EVENT + totals.nonEmptyByPhase.TRADEABLE_EVENT_UNVERIFIED;
@@ -442,14 +507,18 @@ export function auditGameWindow({ deskCoverage = null, deskMarketTickers = null,
   for (const s of stores) {
     if (!bySeries.has(s.series)) {
       bySeries.set(s.series, {
-        series: s.series, stores: 0, openStores: 0, settledStores: 0, distinctTickers: new Set(),
+        series: s.series, stores: 0, openStores: 0, rawOpenStores: 0, settledStores: 0, distinctTickers: new Set(),
         ladders: 0, laddersNonEmpty: 0, phases: zeroedPhases(), nonEmptyByPhase: zeroedPhases(),
         joinSources: {}, joinReasons: {}, verdicts: {}, tickers: new Set()
       });
     }
     const r = bySeries.get(s.series);
     r.stores += 1;
-    if (String(s.status).toLowerCase() === 'finalized') r.settledStores += 1; else r.openStores += 1;
+    // RESOLVED status (src/market-status.js), not the single file's photograph:
+    // a stale `active` in a 1-minute store must not make a settled contract look
+    // tradeable. `rawOpenStores` keeps the old count visible beside it.
+    if (String(s.resolvedStatus).toLowerCase() === 'finalized') r.settledStores += 1; else r.openStores += 1;
+    if (String(s.rawStatus || '').toLowerCase() !== 'finalized') r.rawOpenStores += 1;
     r.distinctTickers.add(s.ticker);
     r.ladders += s.ladders;
     r.laddersNonEmpty += s.laddersNonEmpty;
@@ -468,6 +537,7 @@ export function auditGameWindow({ deskCoverage = null, deskMarketTickers = null,
       series: r.series,
       stores: r.stores,
       openStores: r.openStores,
+      rawOpenStores: r.rawOpenStores,
       settledStores: r.settledStores,
       distinctTickers: r.distinctTickers.size,
       ladders: r.ladders,
@@ -505,7 +575,7 @@ export function auditGameWindow({ deskCoverage = null, deskMarketTickers = null,
     const usable = s.nonEmptyByPhase.IN_PLAY + s.nonEmptyByPhase.TRADEABLE_PRE_EVENT +
       s.nonEmptyByPhase.TRADEABLE_POST_EVENT + s.nonEmptyByPhase.TRADEABLE_EVENT_UNVERIFIED;
     if (!usable) continue;
-    const open = String(s.status).toLowerCase() !== 'finalized';
+    const open = String(s.resolvedStatus).toLowerCase() !== 'finalized';
     if (!open) continue; // a settled contract is measurement data, not a tradeable slot
     const prev = usableLaddersByTicker.get(s.ticker) || { usable: 0, inPlay: 0, stores: 0 };
     prev.usable += usable;
@@ -518,7 +588,13 @@ export function auditGameWindow({ deskCoverage = null, deskMarketTickers = null,
     .filter((r) => isGameSeries(r.prefix))
     .map((r) => {
       const seriesRows = stores.filter((s) => s.series === r.prefix);
-      const openRows = seriesRows.filter((s) => String(s.status).toLowerCase() !== 'finalized');
+      const openRows = seriesRows.filter((s) => String(s.resolvedStatus).toLowerCase() !== 'finalized');
+      // Contracts a SINGLE file called open but the reconciliation settles: the
+      // stale `active` photographs that used to be published as tradeable slots
+      // (irregularity #66). Listed, never counted.
+      const staleOpenExcluded = seriesRows
+        .filter((s) => s.settled && String(s.rawStatus || '').toLowerCase() !== 'finalized')
+        .map((s) => ({ ticker: s.ticker, file: s.store, fileStatus: s.rawStatus, resolved: s.resolvedStatus, resolvedResult: s.resolvedResult }));
       const openLadderContracts = [...usableLaddersByTicker.entries()]
         .filter(([t]) => t.startsWith(`${r.prefix}-`))
         .map(([t, v]) => ({ ticker: t, usableLadders: v.usable, inPlayLadders: v.inPlay, stores: v.stores, inDeskModule: moduleTickers.size ? moduleTickers.has(t) : null }))
@@ -528,9 +604,14 @@ export function auditGameWindow({ deskCoverage = null, deskMarketTickers = null,
       const inPlayNonEmpty = seriesRows.reduce((a, s) => a + s.nonEmptyByPhase.IN_PLAY, 0);
       const tradeableNonEmpty = seriesRows.reduce((a, s) => a + s.tradeableNonEmpty, 0);
 
+      // A reserve states a FLOOR (slots) and, since 2026-09-22, a CEILING
+      // (maxSlots) so an open series with many laddered contracts is not capped
+      // below what the store actually holds. Both are quoted from the module.
+      const ceiling = Number.isFinite(r.maxSlots) ? r.maxSlots : r.slots;
+      const slotPhrase = ceiling > r.slots ? `${r.kept} of its ${r.slots} floor / ${ceiling} ceiling slot(s)` : `${r.kept} of ${r.slots} slot(s)`;
       let explains;
       if (r.kept > 0) {
-        explains = `the desk kept ${r.kept} of ${r.slots} slot(s) and the audit found ${tradeableNonEmpty} non-empty ladder(s) inside the tradeable window for this series (${inPlayNonEmpty} of them in-play) — consistent`;
+        explains = `the desk kept ${slotPhrase} and the audit found ${tradeableNonEmpty} non-empty ladder(s) inside the tradeable window for this series (${inPlayNonEmpty} of them in-play) — consistent`;
       } else if (!openRows.length) {
         explains = `the desk kept 0 of ${r.slots} slot(s) because EVERY ${r.prefix} contract in this store is already finalized by the exchange; the audit's ladders for them (${inPlayNonEmpty} in-play, ${tradeableNonEmpty} tradeable-window non-empty) belong to settled contracts and are historical measurement data, not tradeable slots`;
       } else if (notInModule.length) {
@@ -544,6 +625,7 @@ export function auditGameWindow({ deskCoverage = null, deskMarketTickers = null,
       return {
         series: r.prefix,
         deskSlots: r.slots,
+        deskMaxSlots: Number.isFinite(r.maxSlots) ? r.maxSlots : r.slots,
         deskKept: r.kept,
         deskAvailable: r.available,
         deskReason: r.reason,
@@ -552,6 +634,8 @@ export function auditGameWindow({ deskCoverage = null, deskMarketTickers = null,
         openContractsWithUsableLadder: openLadderContracts.length,
         ofThoseInDeskModule: inModule.length,
         openLadderContractsNotInModule: notInModule.map((c) => c.ticker),
+        settledContractsWithAStaleOpenFile: staleOpenExcluded.length,
+        staleOpenFilesExcludedFromTradeable: staleOpenExcluded,
         contracts: openLadderContracts,
         auditStores: seriesRows.length,
         auditOpenStores: openRows.length,
@@ -604,6 +688,7 @@ export function auditGameWindow({ deskCoverage = null, deskMarketTickers = null,
       espnEndpoint: 'site.web.api.espn.com public JSON (aggregator, not a league feed)'
     },
     totals,
+    statusReconciliation,
     seriesWithInPlayLadder,
     seriesWithoutInPlayLadder,
     series,

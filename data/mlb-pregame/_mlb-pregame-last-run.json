@@ -1,0 +1,28 @@
+{
+ "ranAt": "2026-09-22T23:34:03.310Z",
+ "result": {
+  "assumption": {
+   "what": "Point-in-time snapshot of the owner's MLB Monte Carlo model (MasterSite S14, MLB-Prediction-model-backtest): its own pre-game P(home win) per official gamePk.",
+   "knowableFrom": "the capture instant the snapshot was recorded (capturedAt) — the model run's own timestamp, never this archive's write time",
+   "timelyRule": "a row is a PRE-GAME signal only when capturedAt < firstPitchAt. Walk-forward rows (mode \"walk-forward measurement\") are computed after their games and carry timely:false — real data, never a tradable pre-game signal.",
+   "modelRepo": "https://github.com/buffedlizard55-lab/MLB-Prediction-model-backtest",
+   "modelCliStatus": "No `predict` subcommand exists in the model CLI as of 2026-09-21 (verified by reading mlb_predict/cli.py through the GitHub API). The plan below is the exact chain that becomes runnable the moment the model can emit today's slate.",
+   "jargon": {
+    "pHome": "the model's calibrated probability that the home team wins (logistic blend of Monte Carlo sim_p_home + correlation-filtered features)",
+    "gamePk": "the official MLB Stats API game id — the same id data/mlb-signals/ archives"
+   }
+  },
+  "steps": [
+   "git clone https://github.com/buffedlizard55-lab/MLB-Prediction-model-backtest",
+   "cd MLB-Prediction-model-backtest && python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt",
+   "scripts/sync_sources.sh   # vendors MLB-PBP + StatcastMLB (the model's two official-data upstreams)",
+   "PYTHONPATH=. python -m mlb_predict collect --start <season start> --end <yesterday>",
+   "PYTHONPATH=. python -m mlb_predict collect-probables --start <today> --end <today>",
+   "PYTHONPATH=. python -m mlb_predict build-dataset && PYTHONPATH=. python -m mlb_predict build-pitcher-features",
+   "PYTHONPATH=. python -m mlb_predict backtest --season <year> --with-pitcher-features   # walk-forward predictions.csv (measurement rows)",
+   "MISSING: a `predict` command that emits {capturedAt, gamePk, pHome} for TODAY's slate before first pitch. Add it to mlb_predict/cli.py (its WinModel.predict(df) already exists), then:",
+   "PYTHONPATH=. python -m mlb_predict predict --date <today> --jsonl > snapshots.jsonl && node scripts/archive-mlb-pregame.mjs --ingest snapshots.jsonl"
+  ],
+  "workflow": ".github/workflows/mlb-pregame-signals.yml (runs what exists today: the walk-forward measurement chain; the snapshot step activates when the model gains `predict`)"
+ }
+}
