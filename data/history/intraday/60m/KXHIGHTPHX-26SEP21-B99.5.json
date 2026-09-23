@@ -1030,6 +1030,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T07:58:58.315Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP21-B99.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1056,7 +1066,7 @@
     "open_interest_fp": "33826.94",
     "open_time": "2026-09-20T14:00:00Z",
     "previous_price_dollars": "0.0100",
-    "previous_yes_ask_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
     "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -1077,7 +1087,7 @@
     "ticker": "KXHIGHTPHX-26SEP21-B99.5",
     "title": "Will the maximum temperature be 99-100° on Sep 21, 2026?",
     "updated_time": "2026-09-22T14:10:18.524894Z",
-    "volume_24h_fp": "1179.93",
+    "volume_24h_fp": "0.00",
     "volume_fp": "35628.72",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1086,9 +1096,9 @@
     "yes_sub_title": "99° to 100°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26SEP21-B99.5",
-  "market_captured_at": "2026-09-23T05:02:29.446Z",
+  "market_captured_at": "2026-09-23T07:58:57.631Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T05:02:30.064Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP21-B99.5/candlesticks?start_ts=1790064001&end_ts=1790139749&period_interval=60",
+  "last_ingested_at": "2026-09-23T07:58:58.274Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26SEP21-B99.5/candlesticks?start_ts=1790064001&end_ts=1790150337&period_interval=60",
   "result": "no"
 }

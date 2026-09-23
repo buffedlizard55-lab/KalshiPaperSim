@@ -862,6 +862,46 @@
         "low_dollars": "0.9700",
         "open_dollars": "0.9700"
       }
+    },
+    {
+      "end_period_ts": 1790143200,
+      "open_interest_fp": "3490.00",
+      "price": {
+        "previous_dollars": "0.9600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1790150400,
+      "open_interest_fp": "3490.00",
+      "price": {
+        "previous_dollars": "0.9600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
     }
   ],
   "books": [
@@ -1280,6 +1320,74 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T08:01:09.276Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-FAU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "7261.00"
+            ],
+            [
+              "0.0200",
+              "3737.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "107150.00"
+            ],
+            [
+              "0.0200",
+              "1806.00"
+            ],
+            [
+              "0.0300",
+              "583.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "326.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2800",
+              "494.00"
+            ],
+            [
+              "0.3600",
+              "3504.00"
+            ],
+            [
+              "0.9100",
+              "125.00"
+            ],
+            [
+              "0.9600",
+              "180.00"
+            ],
+            [
+              "0.9700",
+              "222322.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1329,14 +1437,14 @@
     "volume_24h_fp": "0.00",
     "volume_fp": "3492.00",
     "yes_ask_dollars": "0.9800",
-    "yes_ask_size_fp": "1812.00",
+    "yes_ask_size_fp": "3737.00",
     "yes_bid_dollars": "0.9700",
-    "yes_bid_size_fp": "222222.00",
+    "yes_bid_size_fp": "222322.00",
     "yes_sub_title": "Florida Atlantic"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-FAU",
-  "market_captured_at": "2026-09-23T05:04:33.535Z",
+  "market_captured_at": "2026-09-23T08:01:08.591Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T05:04:34.153Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03TXSOFAU-FAU/candlesticks?start_ts=1790092801&end_ts=1790139873&period_interval=60"
+  "last_ingested_at": "2026-09-23T08:01:09.233Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03TXSOFAU-FAU/candlesticks?start_ts=1790139601&end_ts=1790150468&period_interval=60"
 }

@@ -1813,6 +1813,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T08:00:34.769Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221940MIACHC-CHC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1861,7 +1871,7 @@
     "ticker": "KXMLBGAME-26SEP221940MIACHC-CHC",
     "title": "Chicago C wins",
     "updated_time": "2026-09-23T03:58:48.610703Z",
-    "volume_24h_fp": "5389277.70",
+    "volume_24h_fp": "5385162.79",
     "volume_fp": "5428558.01",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1870,9 +1880,9 @@
     "yes_sub_title": "Chicago C"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221940MIACHC-CHC",
-  "market_captured_at": "2026-09-23T05:04:00.953Z",
+  "market_captured_at": "2026-09-23T08:00:34.087Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T05:04:01.575Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP221940MIACHC-CHC/candlesticks?start_ts=1789775700&end_ts=1790139841&period_interval=60"
+  "last_ingested_at": "2026-09-23T08:00:34.728Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP221940MIACHC-CHC/candlesticks?start_ts=1790136001&end_ts=1790150434&period_interval=60"
 }

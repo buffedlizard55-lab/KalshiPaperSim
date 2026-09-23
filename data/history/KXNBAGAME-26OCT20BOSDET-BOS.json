@@ -6226,6 +6226,190 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T07:55:43.612Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "225013.53"
+            ],
+            [
+              "0.0200",
+              "13201.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "2000.00"
+            ],
+            [
+              "0.0800",
+              "7.58"
+            ],
+            [
+              "0.0900",
+              "2.65"
+            ],
+            [
+              "0.1100",
+              "25.00"
+            ],
+            [
+              "0.1200",
+              "650.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "43.92"
+            ],
+            [
+              "0.1800",
+              "49.37"
+            ],
+            [
+              "0.1900",
+              "10.57"
+            ],
+            [
+              "0.2000",
+              "2518.00"
+            ],
+            [
+              "0.2100",
+              "24.00"
+            ],
+            [
+              "0.2200",
+              "1.95"
+            ],
+            [
+              "0.2500",
+              "195.15"
+            ],
+            [
+              "0.3300",
+              "2.05"
+            ],
+            [
+              "0.4400",
+              "750.00"
+            ],
+            [
+              "0.4500",
+              "2831.00"
+            ],
+            [
+              "0.4600",
+              "200.00"
+            ],
+            [
+              "0.4800",
+              "2500.00"
+            ],
+            [
+              "0.4900",
+              "1250.00"
+            ],
+            [
+              "0.5000",
+              "1367.00"
+            ],
+            [
+              "0.5100",
+              "1486.00"
+            ],
+            [
+              "0.5200",
+              "1593.74"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "224834.00"
+            ],
+            [
+              "0.0200",
+              "13200.00"
+            ],
+            [
+              "0.0300",
+              "524.00"
+            ],
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "300.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "2873.00"
+            ],
+            [
+              "0.3800",
+              "2529.00"
+            ],
+            [
+              "0.3900",
+              "1267.00"
+            ],
+            [
+              "0.4200",
+              "702.00"
+            ],
+            [
+              "0.4300",
+              "1387.00"
+            ],
+            [
+              "0.4400",
+              "917.49"
+            ],
+            [
+              "0.4500",
+              "284.59"
+            ],
+            [
+              "0.4600",
+              "100.00"
+            ],
+            [
+              "0.4700",
+              "36.14"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6252,7 +6436,7 @@
     "occurrence_datetime": "2026-10-20T22:00:00Z",
     "open_interest_fp": "9475.41",
     "open_time": "2026-08-20T15:28:00Z",
-    "previous_price_dollars": "0.4500",
+    "previous_price_dollars": "0.4600",
     "previous_yes_ask_dollars": "0.4600",
     "previous_yes_bid_dollars": "0.4500",
     "price_level_structure": "linear_cent",
@@ -6272,17 +6456,17 @@
     "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
     "title": "Boston wins",
     "updated_time": "2026-08-20T15:28:00.432079Z",
-    "volume_24h_fp": "497.99",
+    "volume_24h_fp": "477.05",
     "volume_fp": "19826.79",
     "yes_ask_dollars": "0.4800",
-    "yes_ask_size_fp": "1201.63",
+    "yes_ask_size_fp": "1593.74",
     "yes_bid_dollars": "0.4700",
     "yes_bid_size_fp": "36.14",
     "yes_sub_title": "Boston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS",
-  "market_captured_at": "2026-09-23T04:59:27.849Z",
+  "market_captured_at": "2026-09-23T07:55:43.028Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T04:59:28.366Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1790049601&end_ts=1790139568&period_interval=1440"
+  "last_ingested_at": "2026-09-23T07:55:43.571Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1790136001&end_ts=1790150143&period_interval=1440"
 }

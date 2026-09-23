@@ -44,6 +44,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T08:03:34.847Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-PHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -101,9 +111,9 @@
     "yes_sub_title": "PHI Eagles"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-PHI",
-  "market_captured_at": "2026-09-23T05:06:55.038Z",
+  "market_captured_at": "2026-09-23T08:03:33.476Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T05:06:56.294Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG22PHINE-PHI/candlesticks?start_ts=1790053615&end_ts=1790140014&period_interval=1"
+  "last_ingested_at": "2026-09-23T08:03:34.806Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG22PHINE-PHI/candlesticks?start_ts=1790064213&end_ts=1790150612&period_interval=1"
 }

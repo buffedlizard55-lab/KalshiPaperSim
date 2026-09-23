@@ -2396,6 +2396,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T07:56:15.304Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2454,9 +2464,9 @@
     "yes_sub_title": "Florida A&M wins by over 4.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5",
-  "market_captured_at": "2026-09-23T04:59:57.347Z",
+  "market_captured_at": "2026-09-23T07:56:14.721Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T04:59:57.866Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5/candlesticks?start_ts=1789963201&end_ts=1790139597&period_interval=1440",
+  "last_ingested_at": "2026-09-23T07:56:15.264Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5/candlesticks?start_ts=1789963201&end_ts=1790150174&period_interval=1440",
   "result": "no"
 }
