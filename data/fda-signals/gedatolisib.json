@@ -290,6 +290,26 @@
         "NDA219908"
       ],
       "newestSubmissionStatusDate": "20260714"
+    },
+    {
+      "captured_at": "2026-09-23T16:48:19.528Z",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name%3A%22gedatolisib%22&limit=99",
+      "http_status": 200,
+      "meta": {
+        "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+        "last_updated": "2026-09-22",
+        "total": 1
+      },
+      "state": "APPROVED",
+      "approved": true,
+      "marketingStatuses": [
+        "Prescription"
+      ],
+      "applications": 1,
+      "applicationNumbers": [
+        "NDA219908"
+      ],
+      "newestSubmissionStatusDate": "20260714"
     }
   ],
   "trims": []
