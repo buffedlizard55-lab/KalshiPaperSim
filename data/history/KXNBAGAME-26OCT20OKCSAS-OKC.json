@@ -6266,6 +6266,214 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T19:50:18.208Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "233063.31"
+            ],
+            [
+              "0.0200",
+              "19766.70"
+            ],
+            [
+              "0.0300",
+              "9716.66"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "4025.00"
+            ],
+            [
+              "0.0800",
+              "1336.00"
+            ],
+            [
+              "0.1000",
+              "19.32"
+            ],
+            [
+              "0.1200",
+              "650.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "1173.00"
+            ],
+            [
+              "0.1600",
+              "456.00"
+            ],
+            [
+              "0.1700",
+              "24.00"
+            ],
+            [
+              "0.1900",
+              "2273.00"
+            ],
+            [
+              "0.2000",
+              "200.00"
+            ],
+            [
+              "0.2100",
+              "2380.00"
+            ],
+            [
+              "0.2200",
+              "24.78"
+            ],
+            [
+              "0.2500",
+              "205.97"
+            ],
+            [
+              "0.2700",
+              "3.86"
+            ],
+            [
+              "0.3800",
+              "14.00"
+            ],
+            [
+              "0.4500",
+              "750.00"
+            ],
+            [
+              "0.4600",
+              "1727.00"
+            ],
+            [
+              "0.4700",
+              "1860.00"
+            ],
+            [
+              "0.4800",
+              "2301.00"
+            ],
+            [
+              "0.4900",
+              "1658.00"
+            ],
+            [
+              "0.5000",
+              "1900.43"
+            ],
+            [
+              "0.5100",
+              "943.06"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "234043.52"
+            ],
+            [
+              "0.0200",
+              "18387.00"
+            ],
+            [
+              "0.0300",
+              "11420.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "3699.01"
+            ],
+            [
+              "0.0700",
+              "24.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "324.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "872.00"
+            ],
+            [
+              "0.1600",
+              "177.00"
+            ],
+            [
+              "0.1800",
+              "213.00"
+            ],
+            [
+              "0.1900",
+              "2119.00"
+            ],
+            [
+              "0.3400",
+              "15.00"
+            ],
+            [
+              "0.3700",
+              "2026.00"
+            ],
+            [
+              "0.3800",
+              "1549.00"
+            ],
+            [
+              "0.3900",
+              "349.00"
+            ],
+            [
+              "0.4200",
+              "999.07"
+            ],
+            [
+              "0.4300",
+              "1000.00"
+            ],
+            [
+              "0.4400",
+              "350.00"
+            ],
+            [
+              "0.4500",
+              "200.00"
+            ],
+            [
+              "0.4600",
+              "186.00"
+            ],
+            [
+              "0.4700",
+              "88.44"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6290,11 +6498,11 @@
     "no_sub_title": "Oklahoma City",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-21T04:30:00Z",
-    "open_interest_fp": "1992.53",
+    "open_interest_fp": "2037.10",
     "open_time": "2026-08-20T15:28:00Z",
     "previous_price_dollars": "0.4900",
-    "previous_yes_ask_dollars": "0.5000",
-    "previous_yes_bid_dollars": "0.4600",
+    "previous_yes_ask_dollars": "0.4900",
+    "previous_yes_bid_dollars": "0.4700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -6312,17 +6520,17 @@
     "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
     "title": "Oklahoma City wins",
     "updated_time": "2026-08-20T15:28:00.432079Z",
-    "volume_24h_fp": "102.20",
-    "volume_fp": "3690.23",
+    "volume_24h_fp": "93.32",
+    "volume_fp": "3734.80",
     "yes_ask_dollars": "0.4900",
-    "yes_ask_size_fp": "709.95",
+    "yes_ask_size_fp": "943.06",
     "yes_bid_dollars": "0.4700",
-    "yes_bid_size_fp": "173.44",
+    "yes_bid_size_fp": "88.44",
     "yes_sub_title": "Oklahoma City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
-  "market_captured_at": "2026-09-23T11:41:37.633Z",
+  "market_captured_at": "2026-09-23T19:50:17.584Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T11:41:38.205Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790136001&end_ts=1790163697&period_interval=1440"
+  "last_ingested_at": "2026-09-23T19:50:18.148Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790136001&end_ts=1790193017&period_interval=1440"
 }

@@ -12035,6 +12035,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T19:57:37.641Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP222210SDLAD-LAD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12061,9 +12071,9 @@
     "occurrence_datetime": "2026-09-23T05:10:00Z",
     "open_interest_fp": "1469598.03",
     "open_time": "2026-09-20T02:25:00Z",
-    "previous_price_dollars": "0.5300",
-    "previous_yes_ask_dollars": "0.5300",
-    "previous_yes_bid_dollars": "0.5200",
+    "previous_price_dollars": "0.5500",
+    "previous_yes_ask_dollars": "0.5500",
+    "previous_yes_bid_dollars": "0.5400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12083,7 +12093,7 @@
     "ticker": "KXMLBGAME-26SEP222210SDLAD-LAD",
     "title": "Los Angeles D wins",
     "updated_time": "2026-09-23T04:54:48.610992Z",
-    "volume_24h_fp": "2196730.04",
+    "volume_24h_fp": "2085334.35",
     "volume_fp": "2319162.91",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12092,11 +12102,11 @@
     "yes_sub_title": "Los Angeles D"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP222210SDLAD-LAD",
-  "market_captured_at": "2026-09-23T11:48:33.169Z",
+  "market_captured_at": "2026-09-23T19:57:36.919Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T11:48:33.840Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP222210SDLAD-LAD/candlesticks?start_ts=1790139181&end_ts=1790164113&period_interval=1",
+  "last_ingested_at": "2026-09-23T19:57:37.581Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP222210SDLAD-LAD/candlesticks?start_ts=1790139181&end_ts=1790193457&period_interval=1",
   "trims": [
     {
       "at": "2026-09-23T05:06:03.941Z",

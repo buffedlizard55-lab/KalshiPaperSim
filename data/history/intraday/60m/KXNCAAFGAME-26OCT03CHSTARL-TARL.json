@@ -1272,6 +1272,66 @@
         "low_dollars": "0.9700",
         "open_dollars": "0.9700"
       }
+    },
+    {
+      "end_period_ts": 1790168400,
+      "open_interest_fp": "6652.03",
+      "price": {
+        "previous_dollars": "0.9800"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1790172000,
+      "open_interest_fp": "6652.03",
+      "price": {
+        "previous_dollars": "0.9800"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1790179200,
+      "open_interest_fp": "6652.03",
+      "price": {
+        "previous_dollars": "0.9800"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
     }
   ],
   "books": [
@@ -1778,6 +1838,78 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T19:55:54.006Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-TARL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "12626.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "112270.00"
+            ],
+            [
+              "0.0200",
+              "1806.00"
+            ],
+            [
+              "0.0300",
+              "574.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.2000",
+              "24.00"
+            ],
+            [
+              "0.4600",
+              "100.00"
+            ],
+            [
+              "0.4900",
+              "100.00"
+            ],
+            [
+              "0.5100",
+              "100.00"
+            ],
+            [
+              "0.5400",
+              "2353.00"
+            ],
+            [
+              "0.5600",
+              "1.00"
+            ],
+            [
+              "0.9500",
+              "10.00"
+            ],
+            [
+              "0.9600",
+              "160.00"
+            ],
+            [
+              "0.9700",
+              "42468.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1805,7 +1937,7 @@
     "open_interest_fp": "6652.03",
     "open_time": "2026-09-20T01:09:00Z",
     "previous_price_dollars": "0.9800",
-    "previous_yes_ask_dollars": "0.9800",
+    "previous_yes_ask_dollars": "0.9900",
     "previous_yes_bid_dollars": "0.9700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -1824,7 +1956,7 @@
     "ticker": "KXNCAAFGAME-26OCT03CHSTARL-TARL",
     "title": "Tarleton St. wins",
     "updated_time": "2026-09-20T01:09:01.387478Z",
-    "volume_24h_fp": "1814.95",
+    "volume_24h_fp": "0.00",
     "volume_fp": "6652.03",
     "yes_ask_dollars": "0.9900",
     "yes_ask_size_fp": "12626.00",
@@ -1833,8 +1965,8 @@
     "yes_sub_title": "Tarleton St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-TARL",
-  "market_captured_at": "2026-09-23T11:46:53.885Z",
+  "market_captured_at": "2026-09-23T19:55:53.282Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T11:46:54.557Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03CHSTARL-TARL/candlesticks?start_ts=1790146801&end_ts=1790164014&period_interval=60"
+  "last_ingested_at": "2026-09-23T19:55:53.944Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03CHSTARL-TARL/candlesticks?start_ts=1790161201&end_ts=1790193353&period_interval=60"
 }

@@ -11990,6 +11990,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T19:57:34.505Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221840MILPHI-MIL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12016,9 +12026,9 @@
     "occurrence_datetime": "2026-09-23T01:40:00Z",
     "open_interest_fp": "1390056.51",
     "open_time": "2026-09-19T22:55:00Z",
-    "previous_price_dollars": "0.4500",
-    "previous_yes_ask_dollars": "0.4500",
-    "previous_yes_bid_dollars": "0.4400",
+    "previous_price_dollars": "0.4400",
+    "previous_yes_ask_dollars": "0.4400",
+    "previous_yes_bid_dollars": "0.4300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12038,7 +12048,7 @@
     "ticker": "KXMLBGAME-26SEP221840MILPHI-MIL",
     "title": "Milwaukee wins",
     "updated_time": "2026-09-23T01:23:18.610812Z",
-    "volume_24h_fp": "2350615.75",
+    "volume_24h_fp": "2258888.97",
     "volume_fp": "2385690.29",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12047,11 +12057,11 @@
     "yes_sub_title": "Milwaukee"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP221840MILPHI-MIL",
-  "market_captured_at": "2026-09-23T11:48:30.337Z",
+  "market_captured_at": "2026-09-23T19:57:33.782Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T11:48:31.009Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP221840MILPHI-MIL/candlesticks?start_ts=1790126521&end_ts=1790164110&period_interval=1",
+  "last_ingested_at": "2026-09-23T19:57:34.445Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP221840MILPHI-MIL/candlesticks?start_ts=1790126521&end_ts=1790193454&period_interval=1",
   "trims": [
     {
       "at": "2026-09-23T05:06:01.086Z",

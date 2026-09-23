@@ -1667,6 +1667,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T19:56:08.234Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26SEP22GSPDX-PDX/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1693,9 +1703,9 @@
     "occurrence_datetime": "2026-09-23T05:00:00Z",
     "open_interest_fp": "1183312.32",
     "open_time": "2026-09-20T02:10:00Z",
-    "previous_price_dollars": "0.1100",
-    "previous_yes_ask_dollars": "0.1100",
-    "previous_yes_bid_dollars": "0.1000",
+    "previous_price_dollars": "0.1000",
+    "previous_yes_ask_dollars": "0.1000",
+    "previous_yes_bid_dollars": "0.0900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1715,7 +1725,7 @@
     "ticker": "KXWNBAGAME-26SEP22GSPDX-PDX",
     "title": "Portland wins",
     "updated_time": "2026-09-23T04:52:28.610314Z",
-    "volume_24h_fp": "3329028.84",
+    "volume_24h_fp": "3313482.09",
     "volume_fp": "3346773.16",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1724,9 +1734,9 @@
     "yes_sub_title": "Portland"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26SEP22GSPDX-PDX",
-  "market_captured_at": "2026-09-23T11:47:08.417Z",
+  "market_captured_at": "2026-09-23T19:56:07.511Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T11:47:09.089Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP22GSPDX-PDX/candlesticks?start_ts=1790139601&end_ts=1790164028&period_interval=60"
+  "last_ingested_at": "2026-09-23T19:56:08.173Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP22GSPDX-PDX/candlesticks?start_ts=1790139601&end_ts=1790193367&period_interval=60"
 }

@@ -942,6 +942,106 @@
         "low_dollars": "0.9700",
         "open_dollars": "0.9700"
       }
+    },
+    {
+      "end_period_ts": 1790168400,
+      "open_interest_fp": "3490.00",
+      "price": {
+        "previous_dollars": "0.9600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1790172000,
+      "open_interest_fp": "3490.00",
+      "price": {
+        "previous_dollars": "0.9600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1790175600,
+      "open_interest_fp": "3490.00",
+      "price": {
+        "previous_dollars": "0.9600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1790179200,
+      "open_interest_fp": "3490.00",
+      "price": {
+        "previous_dollars": "0.9600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1790186400,
+      "open_interest_fp": "3490.00",
+      "price": {
+        "previous_dollars": "0.9600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
     }
   ],
   "books": [
@@ -1496,6 +1596,70 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T19:55:56.776Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-FAU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "7311.00"
+            ],
+            [
+              "0.0200",
+              "3762.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "107252.00"
+            ],
+            [
+              "0.0200",
+              "1856.00"
+            ],
+            [
+              "0.0300",
+              "610.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.3000",
+              "4232.00"
+            ],
+            [
+              "0.9100",
+              "125.00"
+            ],
+            [
+              "0.9500",
+              "10.00"
+            ],
+            [
+              "0.9600",
+              "180.00"
+            ],
+            [
+              "0.9700",
+              "222322.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1545,14 +1709,14 @@
     "volume_24h_fp": "0.00",
     "volume_fp": "3492.00",
     "yes_ask_dollars": "0.9800",
-    "yes_ask_size_fp": "3637.00",
+    "yes_ask_size_fp": "3762.00",
     "yes_bid_dollars": "0.9700",
     "yes_bid_size_fp": "222322.00",
     "yes_sub_title": "Florida Atlantic"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03TXSOFAU-FAU",
-  "market_captured_at": "2026-09-23T11:46:56.717Z",
+  "market_captured_at": "2026-09-23T19:55:56.056Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T11:46:57.390Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03TXSOFAU-FAU/candlesticks?start_ts=1790150401&end_ts=1790164017&period_interval=60"
+  "last_ingested_at": "2026-09-23T19:55:56.716Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03TXSOFAU-FAU/candlesticks?start_ts=1790161201&end_ts=1790193356&period_interval=60"
 }

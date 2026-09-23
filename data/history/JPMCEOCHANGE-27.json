@@ -9295,6 +9295,150 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T19:48:07.496Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2316.74"
+            ],
+            [
+              "0.0200",
+              "3333.00"
+            ],
+            [
+              "0.4200",
+              "43.27"
+            ],
+            [
+              "0.4600",
+              "93.92"
+            ],
+            [
+              "0.5000",
+              "500.00"
+            ],
+            [
+              "0.5100",
+              "1506.00"
+            ],
+            [
+              "0.6000",
+              "369.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.7300",
+              "10.44"
+            ],
+            [
+              "0.8200",
+              "2.00"
+            ],
+            [
+              "0.8700",
+              "468.51"
+            ],
+            [
+              "0.9200",
+              "500.00"
+            ],
+            [
+              "0.9300",
+              "1000.00"
+            ],
+            [
+              "0.9400",
+              "150.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1412.15"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-23T19:59:36.465Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2316.74"
+            ],
+            [
+              "0.0200",
+              "3333.00"
+            ],
+            [
+              "0.4200",
+              "43.27"
+            ],
+            [
+              "0.4600",
+              "93.92"
+            ],
+            [
+              "0.5000",
+              "500.00"
+            ],
+            [
+              "0.5100",
+              "1506.00"
+            ],
+            [
+              "0.6000",
+              "369.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.7300",
+              "10.44"
+            ],
+            [
+              "0.8200",
+              "2.00"
+            ],
+            [
+              "0.8700",
+              "468.51"
+            ],
+            [
+              "0.9200",
+              "500.00"
+            ],
+            [
+              "0.9300",
+              "1000.00"
+            ],
+            [
+              "0.9400",
+              "150.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1412.15"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -9341,14 +9485,14 @@
     "volume_24h_fp": "0.00",
     "volume_fp": "17163.86",
     "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "100.00",
+    "yes_ask_size_fp": "150.00",
     "yes_bid_dollars": "0.0100",
     "yes_bid_size_fp": "1412.15",
     "yes_sub_title": "Before 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27",
-  "market_captured_at": "2026-09-23T11:50:38.352Z",
+  "market_captured_at": "2026-09-23T19:59:35.741Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T11:50:39.022Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1790136001&end_ts=1790164238&period_interval=1440"
+  "last_ingested_at": "2026-09-23T19:59:36.405Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1790136001&end_ts=1790193576&period_interval=1440"
 }

@@ -4169,6 +4169,178 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T19:50:09.890Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-IND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3896029.00"
+            ],
+            [
+              "0.0200",
+              "14092.00"
+            ],
+            [
+              "0.0300",
+              "8664.00"
+            ],
+            [
+              "0.0600",
+              "910844.00"
+            ],
+            [
+              "0.1100",
+              "508522.00"
+            ],
+            [
+              "0.1800",
+              "409285.00"
+            ],
+            [
+              "0.2400",
+              "1433.32"
+            ],
+            [
+              "0.2500",
+              "292268.24"
+            ],
+            [
+              "0.2700",
+              "26.82"
+            ],
+            [
+              "0.2900",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "226797.00"
+            ],
+            [
+              "0.3900",
+              "339165.00"
+            ],
+            [
+              "0.4600",
+              "74608.00"
+            ],
+            [
+              "0.4800",
+              "167559.00"
+            ],
+            [
+              "0.5300",
+              "456.02"
+            ],
+            [
+              "0.5400",
+              "2165.12"
+            ],
+            [
+              "0.5700",
+              "26.82"
+            ],
+            [
+              "0.5900",
+              "85002.00"
+            ],
+            [
+              "0.6700",
+              "56491.00"
+            ],
+            [
+              "0.7100",
+              "3000.00"
+            ],
+            [
+              "0.7400",
+              "17318.00"
+            ],
+            [
+              "0.7500",
+              "85.00"
+            ],
+            [
+              "0.7600",
+              "1.40"
+            ],
+            [
+              "0.7800",
+              "6046.00"
+            ],
+            [
+              "0.7900",
+              "130.23"
+            ],
+            [
+              "0.8300",
+              "2711.92"
+            ],
+            [
+              "0.8400",
+              "1.40"
+            ],
+            [
+              "0.8700",
+              "100.00"
+            ],
+            [
+              "0.8800",
+              "100.00"
+            ],
+            [
+              "0.8900",
+              "58.04"
+            ],
+            [
+              "0.9000",
+              "2.80"
+            ],
+            [
+              "0.9100",
+              "525.90"
+            ],
+            [
+              "0.9200",
+              "504.34"
+            ],
+            [
+              "0.9300",
+              "36109.07"
+            ],
+            [
+              "0.9400",
+              "94960.76"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "322460.00"
+            ],
+            [
+              "0.0200",
+              "8499.36"
+            ],
+            [
+              "0.0300",
+              "2813.33"
+            ],
+            [
+              "0.0400",
+              "1527.12"
+            ],
+            [
+              "0.0500",
+              "822.22"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4193,7 +4365,7 @@
     "no_sub_title": "Indiana",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "113537.80",
+    "open_interest_fp": "113694.17",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.0600",
     "previous_yes_ask_dollars": "0.0600",
@@ -4215,17 +4387,17 @@
     "ticker": "KXNBAEAST-27-IND",
     "title": "Will Indiana win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "1094.63",
-    "volume_fp": "123646.97",
+    "volume_24h_fp": "1251.00",
+    "volume_fp": "123803.34",
     "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "95121.22",
+    "yes_ask_size_fp": "94960.76",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "156.54",
+    "yes_bid_size_fp": "822.22",
     "yes_sub_title": "Indiana"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-IND",
-  "market_captured_at": "2026-09-23T11:41:31.374Z",
+  "market_captured_at": "2026-09-23T19:50:09.268Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T11:41:31.944Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-IND/candlesticks?start_ts=1790136001&end_ts=1790163691&period_interval=1440"
+  "last_ingested_at": "2026-09-23T19:50:09.830Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-IND/candlesticks?start_ts=1790136001&end_ts=1790193009&period_interval=1440"
 }

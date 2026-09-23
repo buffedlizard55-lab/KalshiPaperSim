@@ -4498,6 +4498,178 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T19:51:23.474Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-BUF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4477717.42"
+            ],
+            [
+              "0.0200",
+              "2722.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "953128.00"
+            ],
+            [
+              "0.0800",
+              "140.42"
+            ],
+            [
+              "0.1100",
+              "519888.00"
+            ],
+            [
+              "0.1400",
+              "117.12"
+            ],
+            [
+              "0.1500",
+              "2.34"
+            ],
+            [
+              "0.1800",
+              "411265.00"
+            ],
+            [
+              "0.2500",
+              "294812.25"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3200",
+              "240655.42"
+            ],
+            [
+              "0.3400",
+              "46.85"
+            ],
+            [
+              "0.3900",
+              "131642.00"
+            ],
+            [
+              "0.4600",
+              "325031.00"
+            ],
+            [
+              "0.4700",
+              "46.85"
+            ],
+            [
+              "0.5300",
+              "57192.00"
+            ],
+            [
+              "0.5500",
+              "23.42"
+            ],
+            [
+              "0.5700",
+              "138451.00"
+            ],
+            [
+              "0.5900",
+              "2143.00"
+            ],
+            [
+              "0.6700",
+              "33477.00"
+            ],
+            [
+              "0.6900",
+              "59663.00"
+            ],
+            [
+              "0.7600",
+              "25177.00"
+            ],
+            [
+              "0.8100",
+              "15797.00"
+            ],
+            [
+              "0.8200",
+              "1156.00"
+            ],
+            [
+              "0.8300",
+              "117.12"
+            ],
+            [
+              "0.8400",
+              "1926.50"
+            ],
+            [
+              "0.8700",
+              "117.12"
+            ],
+            [
+              "0.8800",
+              "351.25"
+            ],
+            [
+              "0.8900",
+              "1001.50"
+            ],
+            [
+              "0.9000",
+              "2050.00"
+            ],
+            [
+              "0.9100",
+              "99.00"
+            ],
+            [
+              "0.9200",
+              "33.00"
+            ],
+            [
+              "0.9400",
+              "10000.00"
+            ],
+            [
+              "0.9500",
+              "23545.28"
+            ],
+            [
+              "0.9600",
+              "38649.39"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "51205.50"
+            ],
+            [
+              "0.0200",
+              "10443.86"
+            ],
+            [
+              "0.0300",
+              "1917.48"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4522,7 +4694,7 @@
     "no_sub_title": "Buffalo Sabres",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
-    "open_interest_fp": "80775.61",
+    "open_interest_fp": "81220.69",
     "open_time": "2026-06-15T03:40:00Z",
     "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0400",
@@ -4544,17 +4716,17 @@
     "ticker": "KXNHL-27-BUF",
     "title": "Will Buffalo Sabres win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.063613Z",
-    "volume_24h_fp": "1488.02",
-    "volume_fp": "81105.01",
+    "volume_24h_fp": "1933.10",
+    "volume_fp": "81550.09",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "39091.42",
+    "yes_ask_size_fp": "38649.39",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "1147.36",
+    "yes_bid_size_fp": "1917.48",
     "yes_sub_title": "Buffalo Sabres"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-BUF",
-  "market_captured_at": "2026-09-23T11:42:26.816Z",
+  "market_captured_at": "2026-09-23T19:51:22.850Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T11:42:27.388Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-BUF/candlesticks?start_ts=1790136001&end_ts=1790163747&period_interval=1440"
+  "last_ingested_at": "2026-09-23T19:51:23.413Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-BUF/candlesticks?start_ts=1790136001&end_ts=1790193083&period_interval=1440"
 }
