@@ -28480,7 +28480,7 @@
     "expiration_time": "2027-01-08T05:00:00Z",
     "expiration_value": "",
     "floor_strike": 65000,
-    "last_price_dollars": "0.0400",
+    "last_price_dollars": "0.0390",
     "latest_expiration_time": "2027-01-08T05:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -28488,11 +28488,11 @@
     "no_bid_dollars": "0.9600",
     "no_sub_title": "65,000 to 69,999.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "296960.34",
+    "open_interest_fp": "296943.34",
     "open_time": "2026-02-25T23:25:29Z",
     "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0440",
-    "previous_yes_bid_dollars": "0.0430",
+    "previous_yes_bid_dollars": "0.0420",
     "price_level_structure": "deci_cent",
     "price_ranges": [
       {
@@ -28510,17 +28510,17 @@
     "ticker": "KXBTCY-27JAN0100-B67500",
     "title": "BTC price  on Jan 1, 2027?",
     "updated_time": "2026-04-09T10:27:46.733477Z",
-    "volume_24h_fp": "1850.29",
-    "volume_fp": "2376917.22",
+    "volume_24h_fp": "1706.21",
+    "volume_fp": "2376934.22",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "34.00",
+    "yes_ask_size_fp": "36.00",
     "yes_bid_dollars": "0.0390",
-    "yes_bid_size_fp": "497.00",
+    "yes_bid_size_fp": "488.00",
     "yes_sub_title": "65,000 to 69,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B67500",
-  "market_captured_at": "2026-09-23T07:53:48.908Z",
+  "market_captured_at": "2026-09-23T11:40:05.244Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T07:53:49.453Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B67500/candlesticks?start_ts=1790136001&end_ts=1790150029&period_interval=1440"
+  "last_ingested_at": "2026-09-23T11:40:05.817Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B67500/candlesticks?start_ts=1790136001&end_ts=1790163605&period_interval=1440"
 }

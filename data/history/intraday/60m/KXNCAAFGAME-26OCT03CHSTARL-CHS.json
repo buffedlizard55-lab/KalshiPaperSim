@@ -1282,6 +1282,46 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1790154000,
+      "open_interest_fp": "3319.00",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1790161200,
+      "open_interest_fp": "3319.00",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -1764,6 +1804,86 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T11:46:58.891Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-CHS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "116184.00"
+            ],
+            [
+              "0.0200",
+              "11228.00"
+            ],
+            [
+              "0.0300",
+              "6782.00"
+            ],
+            [
+              "0.0400",
+              "806.00"
+            ],
+            [
+              "0.0500",
+              "5.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1600",
+              "1536.00"
+            ],
+            [
+              "0.4400",
+              "478.00"
+            ],
+            [
+              "0.4600",
+              "347.00"
+            ],
+            [
+              "0.4800",
+              "1922.00"
+            ],
+            [
+              "0.4900",
+              "2601.00"
+            ],
+            [
+              "0.9200",
+              "100.00"
+            ],
+            [
+              "0.9400",
+              "125.00"
+            ],
+            [
+              "0.9600",
+              "119.25"
+            ],
+            [
+              "0.9700",
+              "99396.00"
+            ],
+            [
+              "0.9800",
+              "1621.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "12612.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1810,17 +1930,17 @@
     "ticker": "KXNCAAFGAME-26OCT03CHSTARL-CHS",
     "title": "Chicago St. wins",
     "updated_time": "2026-09-20T01:09:01.387478Z",
-    "volume_24h_fp": "1844.00",
+    "volume_24h_fp": "1806.00",
     "volume_fp": "3319.00",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "1643.00",
+    "yes_ask_size_fp": "1621.00",
     "yes_bid_dollars": "0.0100",
     "yes_bid_size_fp": "12612.00",
     "yes_sub_title": "Chicago St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-CHS",
-  "market_captured_at": "2026-09-23T08:01:09.918Z",
+  "market_captured_at": "2026-09-23T11:46:58.149Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T08:01:10.560Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03CHSTARL-CHS/candlesticks?start_ts=1790139601&end_ts=1790150470&period_interval=60"
+  "last_ingested_at": "2026-09-23T11:46:58.821Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03CHSTARL-CHS/candlesticks?start_ts=1790143201&end_ts=1790164018&period_interval=60"
 }

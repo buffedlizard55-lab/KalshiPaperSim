@@ -8354,7 +8354,7 @@
     "expected_expiration_time": "2027-01-26T04:00:00Z",
     "expiration_time": "2027-02-23T04:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.1400",
+    "last_price_dollars": "0.1200",
     "latest_expiration_time": "2027-02-23T04:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -8384,17 +8384,17 @@
     "ticker": "KXNCAAF-27-TEX",
     "title": "Will Texas win the College Football Playoff National Championship?",
     "updated_time": "2026-09-15T15:39:56.061597Z",
-    "volume_24h_fp": "18456.93",
-    "volume_fp": "3020017.33",
+    "volume_24h_fp": "20115.45",
+    "volume_fp": "3021997.17",
     "yes_ask_dollars": "0.1400",
-    "yes_ask_size_fp": "8400.11",
+    "yes_ask_size_fp": "8315.69",
     "yes_bid_dollars": "0.1200",
-    "yes_bid_size_fp": "27792.60",
+    "yes_bid_size_fp": "27044.40",
     "yes_sub_title": "Texas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-TEX",
-  "market_captured_at": "2026-09-23T07:56:02.309Z",
+  "market_captured_at": "2026-09-23T11:41:51.056Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T07:56:02.852Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-TEX/candlesticks?start_ts=1790136001&end_ts=1790150162&period_interval=1440"
+  "last_ingested_at": "2026-09-23T11:41:51.630Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-TEX/candlesticks?start_ts=1790136001&end_ts=1790163711&period_interval=1440"
 }

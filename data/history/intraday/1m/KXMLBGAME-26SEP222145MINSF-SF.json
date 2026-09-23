@@ -11605,6 +11605,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T11:48:42.462Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP222145MINSF-SF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -11631,9 +11641,9 @@
     "occurrence_datetime": "2026-09-23T04:45:00Z",
     "open_interest_fp": "958127.03",
     "open_time": "2026-09-20T01:55:00Z",
-    "previous_price_dollars": "0.4600",
-    "previous_yes_ask_dollars": "0.4600",
-    "previous_yes_bid_dollars": "0.4500",
+    "previous_price_dollars": "0.4500",
+    "previous_yes_ask_dollars": "0.4500",
+    "previous_yes_bid_dollars": "0.4400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -11653,7 +11663,7 @@
     "ticker": "KXMLBGAME-26SEP222145MINSF-SF",
     "title": "San Francisco wins",
     "updated_time": "2026-09-23T04:33:18.610496Z",
-    "volume_24h_fp": "1958889.53",
+    "volume_24h_fp": "1957965.15",
     "volume_fp": "1961485.65",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -11662,11 +11672,11 @@
     "yes_sub_title": "San Francisco"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP222145MINSF-SF",
-  "market_captured_at": "2026-09-23T08:02:46.790Z",
+  "market_captured_at": "2026-09-23T11:48:41.721Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T08:02:47.436Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP222145MINSF-SF/candlesticks?start_ts=1790137921&end_ts=1790150567&period_interval=1",
+  "last_ingested_at": "2026-09-23T11:48:42.393Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP222145MINSF-SF/candlesticks?start_ts=1790137921&end_ts=1790164122&period_interval=1",
   "trims": [
     {
       "at": "2026-09-23T05:06:12.177Z",

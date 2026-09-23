@@ -54,6 +54,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T11:49:03.351Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-NYG/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -112,9 +122,9 @@
     "yes_sub_title": "New York G"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP13DALNYG-NYG",
-  "market_captured_at": "2026-09-23T08:03:05.626Z",
+  "market_captured_at": "2026-09-23T11:49:01.871Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T08:03:06.956Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP13DALNYG-NYG/candlesticks?start_ts=1790064185&end_ts=1790150584&period_interval=1"
+  "last_ingested_at": "2026-09-23T11:49:03.283Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP13DALNYG-NYG/candlesticks?start_ts=1790077742&end_ts=1790164141&period_interval=1"
 }

@@ -11990,6 +11990,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T11:48:17.741Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP222210SDLAD-SD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12016,9 +12026,9 @@
     "occurrence_datetime": "2026-09-23T05:10:00Z",
     "open_interest_fp": "1769704.58",
     "open_time": "2026-09-20T02:25:00Z",
-    "previous_price_dollars": "0.4800",
-    "previous_yes_ask_dollars": "0.4800",
-    "previous_yes_bid_dollars": "0.4700",
+    "previous_price_dollars": "0.4900",
+    "previous_yes_ask_dollars": "0.4900",
+    "previous_yes_bid_dollars": "0.4800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12038,7 +12048,7 @@
     "ticker": "KXMLBGAME-26SEP222210SDLAD-SD",
     "title": "San Diego wins",
     "updated_time": "2026-09-23T04:54:48.610992Z",
-    "volume_24h_fp": "2863077.51",
+    "volume_24h_fp": "2860088.83",
     "volume_fp": "2906674.59",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12047,11 +12057,11 @@
     "yes_sub_title": "San Diego"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP222210SDLAD-SD",
-  "market_captured_at": "2026-09-23T08:02:23.684Z",
+  "market_captured_at": "2026-09-23T11:48:17.001Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T08:02:24.327Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP222210SDLAD-SD/candlesticks?start_ts=1790139181&end_ts=1790150543&period_interval=1",
+  "last_ingested_at": "2026-09-23T11:48:17.672Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP222210SDLAD-SD/candlesticks?start_ts=1790139181&end_ts=1790164097&period_interval=1",
   "trims": [
     {
       "at": "2026-09-23T05:05:49.413Z",

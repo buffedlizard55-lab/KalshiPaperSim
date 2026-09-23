@@ -1656,6 +1656,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-23T11:46:43.320Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP22DETPIT-PIT/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1684,7 +1694,7 @@
     "open_time": "2026-09-19T01:05:00Z",
     "previous_price_dollars": "0.6100",
     "previous_yes_ask_dollars": "0.6100",
-    "previous_yes_bid_dollars": "0.5600",
+    "previous_yes_bid_dollars": "0.5700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1704,7 +1714,7 @@
     "ticker": "KXNHLGAME-26SEP22DETPIT-PIT",
     "title": "Pittsburgh wins",
     "updated_time": "2026-09-23T01:59:18.653347Z",
-    "volume_24h_fp": "142101.52",
+    "volume_24h_fp": "142028.12",
     "volume_fp": "142314.05",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1713,9 +1723,9 @@
     "yes_sub_title": "Pittsburgh"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP22DETPIT-PIT",
-  "market_captured_at": "2026-09-23T08:00:55.335Z",
+  "market_captured_at": "2026-09-23T11:46:42.578Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T08:00:55.975Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP22DETPIT-PIT/candlesticks?start_ts=1790128801&end_ts=1790150455&period_interval=60"
+  "last_ingested_at": "2026-09-23T11:46:43.250Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP22DETPIT-PIT/candlesticks?start_ts=1790128801&end_ts=1790164002&period_interval=60"
 }

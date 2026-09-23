@@ -14580,7 +14580,7 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "257709.08",
     "open_time": "2025-12-23T15:00:00Z",
-    "previous_price_dollars": "0.1900",
+    "previous_price_dollars": "0.1800",
     "previous_yes_ask_dollars": "0.1800",
     "previous_yes_bid_dollars": "0.1700",
     "price_level_structure": "linear_cent",
@@ -14601,17 +14601,17 @@
     "ticker": "KXINXY-26DEC31H1600-B8100",
     "title": "Will the S&P 500 be between 8000 and 8199.99 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:02.466979Z",
-    "volume_24h_fp": "704.56",
+    "volume_24h_fp": "694.06",
     "volume_fp": "521528.61",
     "yes_ask_dollars": "0.1900",
     "yes_ask_size_fp": "2024.19",
     "yes_bid_dollars": "0.1700",
-    "yes_bid_size_fp": "944.34",
+    "yes_bid_size_fp": "946.86",
     "yes_sub_title": "8,000 to 8,199.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8100",
-  "market_captured_at": "2026-09-23T07:54:45.430Z",
+  "market_captured_at": "2026-09-23T11:40:50.071Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T07:54:45.973Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B8100/candlesticks?start_ts=1790136001&end_ts=1790150085&period_interval=1440"
+  "last_ingested_at": "2026-09-23T11:40:50.641Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B8100/candlesticks?start_ts=1790136001&end_ts=1790163650&period_interval=1440"
 }

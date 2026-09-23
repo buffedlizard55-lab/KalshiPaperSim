@@ -5880,7 +5880,7 @@
     "expected_expiration_time": "2027-06-30T14:00:00Z",
     "expiration_time": "2029-06-29T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.3500",
+    "last_price_dollars": "0.3300",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -5911,17 +5911,17 @@
     "ticker": "KXNBAWEST-27-SAS",
     "title": "Will San Antonio win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "2060.02",
-    "volume_fp": "40211.22",
+    "volume_24h_fp": "2160.04",
+    "volume_fp": "40311.24",
     "yes_ask_dollars": "0.3500",
-    "yes_ask_size_fp": "8049.00",
+    "yes_ask_size_fp": "8055.63",
     "yes_bid_dollars": "0.3300",
-    "yes_bid_size_fp": "276.16",
+    "yes_bid_size_fp": "292.00",
     "yes_sub_title": "San Antonio"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-SAS",
-  "market_captured_at": "2026-09-23T07:55:54.320Z",
+  "market_captured_at": "2026-09-23T11:41:44.791Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T07:55:54.864Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1790136001&end_ts=1790150154&period_interval=1440"
+  "last_ingested_at": "2026-09-23T11:41:45.364Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1790136001&end_ts=1790163705&period_interval=1440"
 }
