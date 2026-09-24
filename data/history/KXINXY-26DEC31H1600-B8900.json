@@ -8210,6 +8210,74 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T20:07:40.242Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8900/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142857.31"
+            ],
+            [
+              "0.0300",
+              "399.30"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.1200",
+              "467.90"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.7000",
+              "2040.00"
+            ],
+            [
+              "0.8000",
+              "1785.00"
+            ],
+            [
+              "0.9000",
+              "1587.00"
+            ],
+            [
+              "0.9500",
+              "112004.00"
+            ],
+            [
+              "0.9600",
+              "14518.72"
+            ],
+            [
+              "0.9700",
+              "10844.61"
+            ],
+            [
+              "0.9800",
+              "24.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "250.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -8254,17 +8322,17 @@
     "ticker": "KXINXY-26DEC31H1600-B8900",
     "title": "Will the S&P 500 be between 8800 and 9000 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:02.867255Z",
-    "volume_24h_fp": "7.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "291069.68",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "23.00",
+    "yes_ask_size_fp": "24.00",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "253.90",
+    "yes_bid_size_fp": "250.00",
     "yes_sub_title": "8,800 to 9,000"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8900",
-  "market_captured_at": "2026-09-24T11:49:19.315Z",
+  "market_captured_at": "2026-09-24T20:07:39.615Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T11:49:19.828Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B8900/candlesticks?start_ts=1790222401&end_ts=1790250559&period_interval=1440"
+  "last_ingested_at": "2026-09-24T20:07:40.179Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B8900/candlesticks?start_ts=1790222401&end_ts=1790280459&period_interval=1440"
 }

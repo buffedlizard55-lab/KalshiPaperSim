@@ -5271,6 +5271,194 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T20:08:48.325Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-LAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3897044.44"
+            ],
+            [
+              "0.0200",
+              "10512.00"
+            ],
+            [
+              "0.0300",
+              "7484.00"
+            ],
+            [
+              "0.0400",
+              "20.89"
+            ],
+            [
+              "0.0600",
+              "910844.00"
+            ],
+            [
+              "0.0700",
+              "187.52"
+            ],
+            [
+              "0.1100",
+              "408334.00"
+            ],
+            [
+              "0.1800",
+              "409285.00"
+            ],
+            [
+              "0.2000",
+              "10.00"
+            ],
+            [
+              "0.2500",
+              "292000.00"
+            ],
+            [
+              "0.2900",
+              "78.18"
+            ],
+            [
+              "0.3200",
+              "226797.00"
+            ],
+            [
+              "0.3900",
+              "339500.31"
+            ],
+            [
+              "0.4600",
+              "74608.00"
+            ],
+            [
+              "0.4700",
+              "67.06"
+            ],
+            [
+              "0.4800",
+              "168682.10"
+            ],
+            [
+              "0.5100",
+              "312.75"
+            ],
+            [
+              "0.5200",
+              "2102.00"
+            ],
+            [
+              "0.5400",
+              "11.74"
+            ],
+            [
+              "0.5900",
+              "84702.00"
+            ],
+            [
+              "0.6300",
+              "3000.00"
+            ],
+            [
+              "0.6700",
+              "56491.00"
+            ],
+            [
+              "0.6800",
+              "282.63"
+            ],
+            [
+              "0.7300",
+              "783.42"
+            ],
+            [
+              "0.7400",
+              "17118.00"
+            ],
+            [
+              "0.7600",
+              "58.71"
+            ],
+            [
+              "0.7800",
+              "6404.25"
+            ],
+            [
+              "0.7900",
+              "3000.00"
+            ],
+            [
+              "0.8100",
+              "300.00"
+            ],
+            [
+              "0.8500",
+              "100.00"
+            ],
+            [
+              "0.8600",
+              "100.00"
+            ],
+            [
+              "0.8700",
+              "2968.40"
+            ],
+            [
+              "0.8800",
+              "16.44"
+            ],
+            [
+              "0.8900",
+              "500.00"
+            ],
+            [
+              "0.9000",
+              "583.95"
+            ],
+            [
+              "0.9100",
+              "6519.32"
+            ],
+            [
+              "0.9200",
+              "243.56"
+            ],
+            [
+              "0.9300",
+              "52993.20"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "22206.00"
+            ],
+            [
+              "0.0200",
+              "1449.00"
+            ],
+            [
+              "0.0300",
+              "2809.74"
+            ],
+            [
+              "0.0400",
+              "3094.20"
+            ],
+            [
+              "0.0500",
+              "3249.05"
+            ],
+            [
+              "0.0600",
+              "26584.39"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -5295,7 +5483,7 @@
     "no_sub_title": "Los Angeles L",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "49652.99",
+    "open_interest_fp": "50994.24",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.0700",
     "previous_yes_ask_dollars": "0.0700",
@@ -5317,17 +5505,17 @@
     "ticker": "KXNBAWEST-27-LAL",
     "title": "Will Los Angeles L win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "1229.92",
-    "volume_fp": "61698.60",
+    "volume_24h_fp": "1341.25",
+    "volume_fp": "63039.85",
     "yes_ask_dollars": "0.0700",
-    "yes_ask_size_fp": "54334.45",
+    "yes_ask_size_fp": "52993.20",
     "yes_bid_dollars": "0.0600",
-    "yes_bid_size_fp": "27118.79",
+    "yes_bid_size_fp": "26584.39",
     "yes_sub_title": "Los Angeles L"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-LAL",
-  "market_captured_at": "2026-09-24T11:50:03.918Z",
+  "market_captured_at": "2026-09-24T20:08:47.698Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T11:50:04.431Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-LAL/candlesticks?start_ts=1790222401&end_ts=1790250604&period_interval=1440"
+  "last_ingested_at": "2026-09-24T20:08:48.263Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-LAL/candlesticks?start_ts=1790222401&end_ts=1790280527&period_interval=1440"
 }

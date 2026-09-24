@@ -5370,6 +5370,186 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T20:09:50.384Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4441031.05"
+            ],
+            [
+              "0.0200",
+              "2722.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "934367.00"
+            ],
+            [
+              "0.0800",
+              "82.19"
+            ],
+            [
+              "0.1100",
+              "509655.00"
+            ],
+            [
+              "0.1300",
+              "10.44"
+            ],
+            [
+              "0.1400",
+              "31.27"
+            ],
+            [
+              "0.1800",
+              "408218.67"
+            ],
+            [
+              "0.2200",
+              "78.18"
+            ],
+            [
+              "0.2500",
+              "294003.76"
+            ],
+            [
+              "0.2800",
+              "352.31"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3200",
+              "251248.00"
+            ],
+            [
+              "0.3500",
+              "234.55"
+            ],
+            [
+              "0.3900",
+              "130927.00"
+            ],
+            [
+              "0.4100",
+              "332349.00"
+            ],
+            [
+              "0.5000",
+              "163474.00"
+            ],
+            [
+              "0.5200",
+              "2086.00"
+            ],
+            [
+              "0.6000",
+              "36981.00"
+            ],
+            [
+              "0.6100",
+              "74425.00"
+            ],
+            [
+              "0.6900",
+              "26310.00"
+            ],
+            [
+              "0.7400",
+              "20078.00"
+            ],
+            [
+              "0.7500",
+              "2.38"
+            ],
+            [
+              "0.7600",
+              "469.74"
+            ],
+            [
+              "0.7900",
+              "90.00"
+            ],
+            [
+              "0.8100",
+              "14857.00"
+            ],
+            [
+              "0.8200",
+              "1002.38"
+            ],
+            [
+              "0.8500",
+              "78.18"
+            ],
+            [
+              "0.8600",
+              "950.00"
+            ],
+            [
+              "0.8700",
+              "4.76"
+            ],
+            [
+              "0.8800",
+              "123.42"
+            ],
+            [
+              "0.9000",
+              "1000.00"
+            ],
+            [
+              "0.9100",
+              "26339.93"
+            ],
+            [
+              "0.9200",
+              "37453.31"
+            ],
+            [
+              "0.9300",
+              "3554.25"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "300137.04"
+            ],
+            [
+              "0.0200",
+              "699.11"
+            ],
+            [
+              "0.0300",
+              "1858.02"
+            ],
+            [
+              "0.0400",
+              "5532.91"
+            ],
+            [
+              "0.0500",
+              "3051.80"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -5385,20 +5565,20 @@
     "expected_expiration_time": "2027-07-01T14:00:00Z",
     "expiration_time": "2029-06-30T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0600",
+    "last_price_dollars": "0.0700",
     "latest_expiration_time": "2029-06-30T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.9500",
-    "no_bid_dollars": "0.9400",
+    "no_bid_dollars": "0.9300",
     "no_sub_title": "Minnesota Wild",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
-    "open_interest_fp": "80660.04",
+    "open_interest_fp": "82508.17",
     "open_time": "2026-06-15T03:40:00Z",
-    "previous_price_dollars": "0.0700",
-    "previous_yes_ask_dollars": "0.0700",
-    "previous_yes_bid_dollars": "0.0500",
+    "previous_price_dollars": "0.0400",
+    "previous_yes_ask_dollars": "0.0600",
+    "previous_yes_bid_dollars": "0.0400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5416,17 +5596,17 @@
     "ticker": "KXNHL-27-MIN",
     "title": "Will Minnesota Wild win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.1147Z",
-    "volume_24h_fp": "1704.10",
-    "volume_fp": "99237.55",
-    "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "138.66",
+    "volume_24h_fp": "2229.24",
+    "volume_fp": "101170.68",
+    "yes_ask_dollars": "0.0700",
+    "yes_ask_size_fp": "3554.25",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "332.29",
+    "yes_bid_size_fp": "3051.80",
     "yes_sub_title": "Minnesota Wild"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-MIN",
-  "market_captured_at": "2026-09-24T11:50:44.455Z",
+  "market_captured_at": "2026-09-24T20:09:49.757Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T11:50:44.969Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MIN/candlesticks?start_ts=1790222401&end_ts=1790250644&period_interval=1440"
+  "last_ingested_at": "2026-09-24T20:09:50.321Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MIN/candlesticks?start_ts=1790222401&end_ts=1790280590&period_interval=1440"
 }

@@ -6951,6 +6951,202 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T20:08:38.775Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "225015.74"
+            ],
+            [
+              "0.0200",
+              "13371.00"
+            ],
+            [
+              "0.0300",
+              "721.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "2000.00"
+            ],
+            [
+              "0.0800",
+              "507.58"
+            ],
+            [
+              "0.0900",
+              "2.65"
+            ],
+            [
+              "0.1100",
+              "25.00"
+            ],
+            [
+              "0.1200",
+              "650.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "45.92"
+            ],
+            [
+              "0.1700",
+              "6.59"
+            ],
+            [
+              "0.1800",
+              "49.37"
+            ],
+            [
+              "0.1900",
+              "10.57"
+            ],
+            [
+              "0.2000",
+              "2514.00"
+            ],
+            [
+              "0.2100",
+              "26.00"
+            ],
+            [
+              "0.2200",
+              "1.95"
+            ],
+            [
+              "0.2500",
+              "197.19"
+            ],
+            [
+              "0.3300",
+              "2.05"
+            ],
+            [
+              "0.4000",
+              "15.00"
+            ],
+            [
+              "0.4400",
+              "750.00"
+            ],
+            [
+              "0.4600",
+              "2875.00"
+            ],
+            [
+              "0.4700",
+              "200.00"
+            ],
+            [
+              "0.4800",
+              "2500.00"
+            ],
+            [
+              "0.4900",
+              "2625.00"
+            ],
+            [
+              "0.5000",
+              "2295.00"
+            ],
+            [
+              "0.5100",
+              "409.09"
+            ],
+            [
+              "0.5200",
+              "257.48"
+            ],
+            [
+              "0.5300",
+              "652.37"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "224836.00"
+            ],
+            [
+              "0.0200",
+              "13371.00"
+            ],
+            [
+              "0.0300",
+              "526.00"
+            ],
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "300.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1900",
+              "1715.00"
+            ],
+            [
+              "0.3300",
+              "16.00"
+            ],
+            [
+              "0.3600",
+              "2347.00"
+            ],
+            [
+              "0.3900",
+              "397.00"
+            ],
+            [
+              "0.4100",
+              "496.00"
+            ],
+            [
+              "0.4200",
+              "1907.00"
+            ],
+            [
+              "0.4300",
+              "1616.49"
+            ],
+            [
+              "0.4400",
+              "425.83"
+            ],
+            [
+              "0.4500",
+              "216.01"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6966,16 +7162,16 @@
     "expected_expiration_time": "2026-10-20T22:00:00Z",
     "expiration_time": "2026-10-22T19:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.4400",
+    "last_price_dollars": "0.4700",
     "latest_expiration_time": "2026-10-22T19:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.5600",
-    "no_bid_dollars": "0.5200",
+    "no_ask_dollars": "0.5500",
+    "no_bid_dollars": "0.5300",
     "no_sub_title": "Boston",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-20T22:00:00Z",
-    "open_interest_fp": "9633.05",
+    "open_interest_fp": "9651.12",
     "open_time": "2026-08-20T15:28:00Z",
     "previous_price_dollars": "0.4700",
     "previous_yes_ask_dollars": "0.4700",
@@ -6997,17 +7193,17 @@
     "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
     "title": "Boston wins",
     "updated_time": "2026-08-20T15:28:00.432079Z",
-    "volume_24h_fp": "306.78",
-    "volume_fp": "20210.74",
-    "yes_ask_dollars": "0.4800",
-    "yes_ask_size_fp": "319.24",
-    "yes_bid_dollars": "0.4400",
-    "yes_bid_size_fp": "404.91",
+    "volume_24h_fp": "341.48",
+    "volume_fp": "20363.22",
+    "yes_ask_dollars": "0.4700",
+    "yes_ask_size_fp": "652.37",
+    "yes_bid_dollars": "0.4500",
+    "yes_bid_size_fp": "216.01",
     "yes_sub_title": "Boston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS",
-  "market_captured_at": "2026-09-24T11:49:57.666Z",
+  "market_captured_at": "2026-09-24T20:08:38.148Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T11:49:58.181Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1790222401&end_ts=1790250597&period_interval=1440"
+  "last_ingested_at": "2026-09-24T20:08:38.713Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1790222401&end_ts=1790280518&period_interval=1440"
 }

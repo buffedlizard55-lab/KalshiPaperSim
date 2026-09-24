@@ -5120,6 +5120,190 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T20:09:25.326Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-PIT/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2627109.11"
+            ],
+            [
+              "0.0200",
+              "11501.00"
+            ],
+            [
+              "0.0300",
+              "7284.00"
+            ],
+            [
+              "0.0400",
+              "10.00"
+            ],
+            [
+              "0.0500",
+              "200.00"
+            ],
+            [
+              "0.0600",
+              "31.21"
+            ],
+            [
+              "0.0900",
+              "93.58"
+            ],
+            [
+              "0.1000",
+              "200.00"
+            ],
+            [
+              "0.1100",
+              "578744.00"
+            ],
+            [
+              "0.1600",
+              "35256.49"
+            ],
+            [
+              "0.1900",
+              "218.49"
+            ],
+            [
+              "0.2000",
+              "200.00"
+            ],
+            [
+              "0.2100",
+              "263952.00"
+            ],
+            [
+              "0.2200",
+              "62.00"
+            ],
+            [
+              "0.2400",
+              "569.64"
+            ],
+            [
+              "0.3200",
+              "191454.00"
+            ],
+            [
+              "0.3500",
+              "842.76"
+            ],
+            [
+              "0.4100",
+              "100.00"
+            ],
+            [
+              "0.4200",
+              "96003.00"
+            ],
+            [
+              "0.4700",
+              "2670.01"
+            ],
+            [
+              "0.4800",
+              "779.00"
+            ],
+            [
+              "0.5200",
+              "53673.00"
+            ],
+            [
+              "0.5300",
+              "13698.00"
+            ],
+            [
+              "0.6100",
+              "100.00"
+            ],
+            [
+              "0.6200",
+              "2062.00"
+            ],
+            [
+              "0.6300",
+              "31266.00"
+            ],
+            [
+              "0.6600",
+              "312.13"
+            ],
+            [
+              "0.6800",
+              "156.06"
+            ],
+            [
+              "0.7300",
+              "21817.00"
+            ],
+            [
+              "0.8300",
+              "500.00"
+            ],
+            [
+              "0.8400",
+              "8091.74"
+            ],
+            [
+              "0.8600",
+              "2271.00"
+            ],
+            [
+              "0.8800",
+              "312.13"
+            ],
+            [
+              "0.8900",
+              "2.74"
+            ],
+            [
+              "0.9000",
+              "150.00"
+            ],
+            [
+              "0.9100",
+              "7.80"
+            ],
+            [
+              "0.9300",
+              "31.21"
+            ],
+            [
+              "0.9400",
+              "757.48"
+            ],
+            [
+              "0.9500",
+              "936.00"
+            ],
+            [
+              "0.9600",
+              "127790.23"
+            ],
+            [
+              "0.9700",
+              "158819.24"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1141908.52"
+            ],
+            [
+              "0.0200",
+              "11308.32"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -5135,15 +5319,15 @@
     "expected_expiration_time": "2027-02-08T15:00:00Z",
     "expiration_time": "2027-02-22T15:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0100",
+    "last_price_dollars": "0.0300",
     "latest_expiration_time": "2027-02-22T15:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9900",
-    "no_bid_dollars": "0.9800",
+    "no_ask_dollars": "0.9800",
+    "no_bid_dollars": "0.9700",
     "no_sub_title": "Pittsburgh",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "762165.66",
+    "open_interest_fp": "762452.10",
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.0300",
     "previous_yes_ask_dollars": "0.0300",
@@ -5165,17 +5349,17 @@
     "ticker": "KXNFLAFCCHAMP-27-PIT",
     "title": "Will Pittsburgh win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "15619.08",
-    "volume_fp": "878828.68",
-    "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "25.51",
-    "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "1146424.60",
+    "volume_24h_fp": "16057.03",
+    "volume_fp": "879266.63",
+    "yes_ask_dollars": "0.0300",
+    "yes_ask_size_fp": "158819.24",
+    "yes_bid_dollars": "0.0200",
+    "yes_bid_size_fp": "11308.32",
     "yes_sub_title": "Pittsburgh"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-PIT",
-  "market_captured_at": "2026-09-24T11:50:28.082Z",
+  "market_captured_at": "2026-09-24T20:09:24.698Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T11:50:28.597Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-PIT/candlesticks?start_ts=1790222401&end_ts=1790250628&period_interval=1440"
+  "last_ingested_at": "2026-09-24T20:09:25.263Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-PIT/candlesticks?start_ts=1790222401&end_ts=1790280564&period_interval=1440"
 }

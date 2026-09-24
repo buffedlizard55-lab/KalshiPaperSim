@@ -11890,6 +11890,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T20:15:43.494Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP231545MINSF-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -11938,7 +11948,7 @@
     "ticker": "KXMLBGAME-26SEP231545MINSF-MIN",
     "title": "Minnesota wins",
     "updated_time": "2026-09-23T22:34:18.610566Z",
-    "volume_24h_fp": "3368190.77",
+    "volume_24h_fp": "2849743.76",
     "volume_fp": "3375694.37",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -11947,11 +11957,11 @@
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP231545MINSF-MIN",
-  "market_captured_at": "2026-09-24T11:55:48.203Z",
+  "market_captured_at": "2026-09-24T20:15:42.769Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-24T11:55:48.817Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP231545MINSF-MIN/candlesticks?start_ts=1790202781&end_ts=1790250948&period_interval=1",
+  "last_ingested_at": "2026-09-24T20:15:43.432Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP231545MINSF-MIN/candlesticks?start_ts=1790202781&end_ts=1790280943&period_interval=1",
   "trims": [
     {
       "at": "2026-09-24T05:16:42.210Z",

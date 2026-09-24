@@ -1642,6 +1642,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T20:13:53.814Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP231545MINSF-SF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1690,7 +1700,7 @@
     "ticker": "KXMLBGAME-26SEP231545MINSF-SF",
     "title": "San Francisco wins",
     "updated_time": "2026-09-23T22:34:18.610566Z",
-    "volume_24h_fp": "3691766.35",
+    "volume_24h_fp": "3215305.55",
     "volume_fp": "3699077.51",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1699,9 +1709,9 @@
     "yes_sub_title": "San Francisco"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP231545MINSF-SF",
-  "market_captured_at": "2026-09-24T11:54:12.778Z",
+  "market_captured_at": "2026-09-24T20:13:53.089Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-24T11:54:13.392Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP231545MINSF-SF/candlesticks?start_ts=1790204401&end_ts=1790250853&period_interval=60"
+  "last_ingested_at": "2026-09-24T20:13:53.753Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP231545MINSF-SF/candlesticks?start_ts=1790204401&end_ts=1790280833&period_interval=60"
 }
