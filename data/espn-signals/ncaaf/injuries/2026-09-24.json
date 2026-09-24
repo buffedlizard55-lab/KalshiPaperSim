@@ -1,0 +1,95 @@
+{
+ "what": "Point-in-time ESPN injury-report rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-24",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/injuries"
+  ]
+ },
+ "captures": [
+  "2026-09-24T07:56:56.073Z"
+ ],
+ "teams": {
+  "57": {
+   "teamId": "57",
+   "displayName": "Florida Gators",
+   "firstCapturedAt": "2026-09-24T07:56:56.073Z",
+   "players": {
+    "139830": {
+     "recordId": "139830",
+     "athleteName": "Kahleil Jackson",
+     "positionAbbr": "WR",
+     "teamId": "57",
+     "teamAbbr": "FLA",
+     "teamName": "Florida Gators",
+     "history": [
+      {
+       "captured_at": "2026-09-24T07:56:56.073Z",
+       "last_seen_at": "2026-09-24T07:56:56.073Z",
+       "fp": "Out|2020-11-21T18:31Z|Jackson (undisclosed) is inactive for Saturday's game against Vanderbilt, G. Allan Taylor of The Athletic reports.",
+       "status": "Out",
+       "date": "2020-11-21T18:31Z",
+       "shortComment": "Jackson (undisclosed) is inactive for Saturday's game against Vanderbilt, G. Allan Taylor of The Athletic reports.",
+       "longComment": "Jackson still hasn't seen the field during his freshman season, but he won't be suited up for Saturday's game. The reason for his absence isn't yet known."
+      }
+     ]
+    }
+   }
+  },
+  "242": {
+   "teamId": "242",
+   "displayName": "Rice Owls",
+   "firstCapturedAt": "2026-09-24T07:56:56.073Z",
+   "players": {
+    "169675": {
+     "recordId": "169675",
+     "athleteName": "Braylen Walker",
+     "positionAbbr": "WR",
+     "teamId": "242",
+     "teamAbbr": "RICE",
+     "teamName": "Rice Owls",
+     "history": [
+      {
+       "captured_at": "2026-09-24T07:56:56.073Z",
+       "last_seen_at": "2026-09-24T07:56:56.073Z",
+       "fp": "Active|2022-11-26T22:30Z|Walker caught four passes for 77 yards and a touchdown versus UNT on Saturday.",
+       "status": "Active",
+       "date": "2022-11-26T22:30Z",
+       "shortComment": "Walker caught four passes for 77 yards and a touchdown versus UNT on Saturday.",
+       "longComment": "Walker, a true freshman, was seeing his first action. Rice decided to get a look at the future in this game. AJ Padgett, also a true freshman, got his first career start. Notably, though, both Padgett and Walker retained their redshirts."
+      }
+     ]
+    }
+   }
+  },
+  "258": {
+   "teamId": "258",
+   "displayName": "Virginia Cavaliers",
+   "firstCapturedAt": "2026-09-24T07:56:56.073Z",
+   "players": {
+    "167600": {
+     "recordId": "167600",
+     "athleteName": "Will Bettridge",
+     "positionAbbr": "PK",
+     "teamId": "258",
+     "teamAbbr": "UVA",
+     "teamName": "Virginia Cavaliers",
+     "history": [
+      {
+       "captured_at": "2026-09-24T07:56:56.073Z",
+       "last_seen_at": "2026-09-24T07:56:56.073Z",
+       "fp": "Active|2022-11-03T01:19Z|Bettridge made four field goals in Saturday's 14-12 victory over Miami.",
+       "status": "Active",
+       "date": "2022-11-03T01:19Z",
+       "shortComment": "Bettridge made four field goals in Saturday's 14-12 victory over Miami.",
+       "longComment": "Bettridge made all four field goals he attempted in the win Saturday. The kicker has made seven of nine field goal attempts so far this season after taking over the starting job five weeks ago."
+      }
+     ]
+    }
+   }
+  }
+ },
+ "last_ingested_at": "2026-09-24T07:56:56.073Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/injuries"
+}

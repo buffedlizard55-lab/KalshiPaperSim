@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-24T02:21:48.897Z",
+ "generatedAt": "2026-09-24T07:56:56.874Z",
  "rows": [
   {
    "league": "nba",
@@ -315,6 +315,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "IND",
+   "kalshiName": "Indiana",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03INDRUTG-IND",
+     "rulesName": "Indiana",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "LAM",
    "kalshiName": "Lamar",
    "conflictWith": null,
@@ -325,6 +340,21 @@
      "ticker": "KXNCAAFGAME-26OCT03NWSTLAM-NWST",
      "rulesName": "Lamar",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "LOU",
+   "kalshiName": "Louisville",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03LOUNCST-LOU",
+     "rulesName": "Louisville",
+     "role": "away"
     }
    ]
   },
@@ -435,6 +465,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "NCST",
+   "kalshiName": "NC St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03LOUNCST-LOU",
+     "rulesName": "NC St.",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "NDSU",
    "kalshiName": "North Dakota St.",
    "conflictWith": null,
@@ -534,6 +579,21 @@
     {
      "ticker": "KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
      "rulesName": "Austin Peay",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "RUTG",
+   "kalshiName": "Rutgers",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03INDRUTG-IND",
+     "rulesName": "Rutgers",
      "role": "home"
     }
    ]
@@ -1140,6 +1200,16 @@
      "ticker": "KXNHLGAME-26SEP20SJANA-SJ",
      "rulesName": "Anaheim",
      "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP23LAANA-ANA",
+     "rulesName": "Anaheim",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP23LAANA-LA",
+     "rulesName": "Anaheim",
+     "role": "home"
     }
    ]
   },
@@ -1390,6 +1460,11 @@
      "ticker": "KXNHLGAME-26SEP22UTALA-UTA",
      "rulesName": "Los Angeles",
      "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP23LAANA-ANA",
+     "rulesName": "Los Angeles",
+     "role": "away"
     }
    ]
   },

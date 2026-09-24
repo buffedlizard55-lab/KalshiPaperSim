@@ -1,0 +1,237 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-25",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260925"
+  ]
+ },
+ "captures": [
+  "2026-09-24T07:56:56.111Z"
+ ],
+ "events": {
+  "401858234": {
+   "eventId": "401858234",
+   "date": "2026-09-26T02:30Z",
+   "easternDate": "2026-09-25",
+   "name": "Clemson Tigers at California Golden Bears",
+   "shortName": "CLEM @ CAL",
+   "week": 4,
+   "venue": "California Memorial Stadium",
+   "homeAbbr": "CAL",
+   "homeTeamId": "25",
+   "homeName": "California Golden Bears",
+   "awayAbbr": "CLEM",
+   "awayTeamId": "228",
+   "awayName": "Clemson Tigers",
+   "firstCapturedAt": "2026-09-24T07:56:56.111Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "CLEM -1.5",
+    "spread": 1.5,
+    "overUnder": 50.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-24T07:56:56.111Z",
+     "last_seen_at": "2026-09-24T07:56:56.111Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-1",
+      "away": "2-1"
+     }
+    }
+   ]
+  },
+  "401858461": {
+   "eventId": "401858461",
+   "date": "2026-09-26T00:00Z",
+   "easternDate": "2026-09-25",
+   "name": "Northwestern Wildcats at Indiana Hoosiers",
+   "shortName": "NU @ IU",
+   "week": 4,
+   "venue": "Memorial Stadium (Bloomington, IN)",
+   "homeAbbr": "IU",
+   "homeTeamId": "84",
+   "homeName": "Indiana Hoosiers",
+   "awayAbbr": "NU",
+   "awayTeamId": "77",
+   "awayName": "Northwestern Wildcats",
+   "firstCapturedAt": "2026-09-24T07:56:56.111Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "IU -21",
+    "spread": -21,
+    "overUnder": 49.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-24T07:56:56.111Z",
+     "last_seen_at": "2026-09-24T07:56:56.111Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-0",
+      "away": "2-0"
+     }
+    }
+   ]
+  },
+  "401858468": {
+   "eventId": "401858468",
+   "date": "2026-09-25T23:00Z",
+   "easternDate": "2026-09-25",
+   "name": "Howard Bison at Rutgers Scarlet Knights",
+   "shortName": "HOW @ RUTG",
+   "week": 4,
+   "venue": "SHI Stadium",
+   "homeAbbr": "RUTG",
+   "homeTeamId": "164",
+   "homeName": "Rutgers Scarlet Knights",
+   "awayAbbr": "HOW",
+   "awayTeamId": "47",
+   "awayName": "Howard Bison",
+   "firstCapturedAt": "2026-09-24T07:56:56.111Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "RUTG -41.5",
+    "spread": -41.5,
+    "overUnder": 56.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-24T07:56:56.111Z",
+     "last_seen_at": "2026-09-24T07:56:56.111Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-3",
+      "away": "1-2"
+     }
+    }
+   ]
+  },
+  "401862778": {
+   "eventId": "401862778",
+   "date": "2026-09-25T23:00Z",
+   "easternDate": "2026-09-25",
+   "name": "Navy Midshipmen at UAB Blazers",
+   "shortName": "NAVY @ UAB",
+   "week": 4,
+   "venue": "Protective Stadium",
+   "homeAbbr": "UAB",
+   "homeTeamId": "5",
+   "homeName": "UAB Blazers",
+   "awayAbbr": "NAVY",
+   "awayTeamId": "2426",
+   "awayName": "Navy Midshipmen",
+   "firstCapturedAt": "2026-09-24T07:56:56.111Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "NAVY -7",
+    "spread": 7,
+    "overUnder": 51.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-24T07:56:56.111Z",
+     "last_seen_at": "2026-09-24T07:56:56.111Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-2",
+      "away": "1-1"
+     }
+    }
+   ]
+  },
+  "401862779": {
+   "eventId": "401862779",
+   "date": "2026-09-25T20:00Z",
+   "easternDate": "2026-09-25",
+   "name": "Army Black Knights at Temple Owls",
+   "shortName": "ARMY @ TEM",
+   "week": 4,
+   "venue": "Lincoln Financial Field",
+   "homeAbbr": "TEM",
+   "homeTeamId": "218",
+   "homeName": "Temple Owls",
+   "awayAbbr": "ARMY",
+   "awayTeamId": "349",
+   "awayName": "Army Black Knights",
+   "firstCapturedAt": "2026-09-24T07:56:56.111Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "ARMY -3",
+    "spread": 3,
+    "overUnder": 47.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-24T07:56:56.111Z",
+     "last_seen_at": "2026-09-24T07:56:56.111Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-2",
+      "away": "1-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-24T07:56:56.111Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260925"
+}
