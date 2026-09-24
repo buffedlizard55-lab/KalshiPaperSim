@@ -8446,9 +8446,9 @@
     "occurrence_datetime": "2027-06-30T14:00:00Z",
     "open_interest_fp": "407371.89",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.2500",
-    "previous_yes_ask_dollars": "0.2500",
-    "previous_yes_bid_dollars": "0.2400",
+    "previous_price_dollars": "0.2400",
+    "previous_yes_ask_dollars": "0.2400",
+    "previous_yes_bid_dollars": "0.2300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -8466,17 +8466,17 @@
     "ticker": "KXNBAEAST-27-PHI",
     "title": "Will Philadelphia win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "1634.61",
+    "volume_24h_fp": "1595.05",
     "volume_fp": "717233.83",
     "yes_ask_dollars": "0.2400",
-    "yes_ask_size_fp": "748.86",
+    "yes_ask_size_fp": "828.86",
     "yes_bid_dollars": "0.2300",
-    "yes_bid_size_fp": "10.91",
+    "yes_bid_size_fp": "38.91",
     "yes_sub_title": "Philadelphia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-PHI",
-  "market_captured_at": "2026-09-24T07:45:43.517Z",
+  "market_captured_at": "2026-09-24T11:49:56.106Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T07:45:44.060Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-PHI/candlesticks?start_ts=1790222401&end_ts=1790235943&period_interval=1440"
+  "last_ingested_at": "2026-09-24T11:49:56.620Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-PHI/candlesticks?start_ts=1790222401&end_ts=1790250596&period_interval=1440"
 }

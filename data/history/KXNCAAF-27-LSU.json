@@ -9229,7 +9229,7 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "2857992.58",
     "open_time": "2026-01-21T22:00:00Z",
-    "previous_price_dollars": "0.0400",
+    "previous_price_dollars": "0.0300",
     "previous_yes_ask_dollars": "0.0400",
     "previous_yes_bid_dollars": "0.0300",
     "price_level_structure": "linear_cent",
@@ -9249,17 +9249,17 @@
     "ticker": "KXNCAAF-27-LSU",
     "title": "Will LSU win the College Football Playoff National Championship?",
     "updated_time": "2026-09-15T15:39:56.084645Z",
-    "volume_24h_fp": "7322.97",
+    "volume_24h_fp": "7189.77",
     "volume_fp": "3605304.65",
     "yes_ask_dollars": "0.0500",
-    "yes_ask_size_fp": "7716.65",
+    "yes_ask_size_fp": "8583.59",
     "yes_bid_dollars": "0.0400",
     "yes_bid_size_fp": "3501.11",
     "yes_sub_title": "LSU"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-LSU",
-  "market_captured_at": "2026-09-24T07:45:59.329Z",
+  "market_captured_at": "2026-09-24T11:50:07.032Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T07:45:59.871Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-LSU/candlesticks?start_ts=1790222401&end_ts=1790235959&period_interval=1440"
+  "last_ingested_at": "2026-09-24T11:50:07.547Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-LSU/candlesticks?start_ts=1790222401&end_ts=1790250607&period_interval=1440"
 }

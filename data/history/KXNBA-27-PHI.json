@@ -10350,7 +10350,7 @@
     "occurrence_datetime": "2027-07-31T14:00:00Z",
     "open_interest_fp": "5253479.38",
     "open_time": "2026-06-14T08:00:00Z",
-    "previous_price_dollars": "0.1000",
+    "previous_price_dollars": "0.0900",
     "previous_yes_ask_dollars": "0.1000",
     "previous_yes_bid_dollars": "0.0900",
     "price_level_structure": "linear_cent",
@@ -10370,17 +10370,17 @@
     "ticker": "KXNBA-27-PHI",
     "title": "Will Philadelphia win the 2027 Pro Basketball Finals?",
     "updated_time": "2026-07-24T16:41:17.536752Z",
-    "volume_24h_fp": "6931.94",
-    "volume_fp": "8016244.40",
+    "volume_24h_fp": "7508.33",
+    "volume_fp": "8017070.17",
     "yes_ask_dollars": "0.1000",
-    "yes_ask_size_fp": "60296.06",
+    "yes_ask_size_fp": "59542.29",
     "yes_bid_dollars": "0.0900",
-    "yes_bid_size_fp": "25923.63",
+    "yes_bid_size_fp": "32879.63",
     "yes_sub_title": "Philadelphia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-PHI",
-  "market_captured_at": "2026-09-24T07:45:37.876Z",
+  "market_captured_at": "2026-09-24T11:49:52.206Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T07:45:38.419Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-PHI/candlesticks?start_ts=1790222401&end_ts=1790235938&period_interval=1440"
+  "last_ingested_at": "2026-09-24T11:49:52.720Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-PHI/candlesticks?start_ts=1790222401&end_ts=1790250592&period_interval=1440"
 }

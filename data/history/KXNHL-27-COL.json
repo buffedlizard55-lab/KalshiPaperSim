@@ -6599,8 +6599,8 @@
     "open_interest_fp": "96043.83",
     "open_time": "2026-06-15T03:40:00Z",
     "previous_price_dollars": "0.1200",
-    "previous_yes_ask_dollars": "0.1200",
-    "previous_yes_bid_dollars": "0.1100",
+    "previous_yes_ask_dollars": "0.1100",
+    "previous_yes_bid_dollars": "0.1000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -6618,17 +6618,17 @@
     "ticker": "KXNHL-27-COL",
     "title": "Will Colorado Avalanche win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.08098Z",
-    "volume_24h_fp": "3749.14",
-    "volume_fp": "137724.65",
+    "volume_24h_fp": "2194.15",
+    "volume_fp": "137740.31",
     "yes_ask_dollars": "0.1200",
-    "yes_ask_size_fp": "11429.57",
+    "yes_ask_size_fp": "11419.49",
     "yes_bid_dollars": "0.1100",
     "yes_bid_size_fp": "27.70",
     "yes_sub_title": "Colorado Avalanche"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-COL",
-  "market_captured_at": "2026-09-24T07:46:51.215Z",
+  "market_captured_at": "2026-09-24T11:50:42.897Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T07:46:51.758Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-COL/candlesticks?start_ts=1790222401&end_ts=1790236011&period_interval=1440"
+  "last_ingested_at": "2026-09-24T11:50:43.411Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-COL/candlesticks?start_ts=1790222401&end_ts=1790250643&period_interval=1440"
 }

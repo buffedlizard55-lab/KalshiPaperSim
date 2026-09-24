@@ -12190,6 +12190,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T11:55:40.113Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP232210HOUSEA-SEA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12216,7 +12226,7 @@
     "occurrence_datetime": "2026-09-24T05:10:00Z",
     "open_interest_fp": "2169150.54",
     "open_time": "2026-09-21T02:25:00Z",
-    "previous_price_dollars": "0.5500",
+    "previous_price_dollars": "0.5700",
     "previous_yes_ask_dollars": "0.5700",
     "previous_yes_bid_dollars": "0.5600",
     "price_level_structure": "linear_cent",
@@ -12238,7 +12248,7 @@
     "ticker": "KXMLBGAME-26SEP232210HOUSEA-SEA",
     "title": "Seattle wins",
     "updated_time": "2026-09-24T05:39:48.57115Z",
-    "volume_24h_fp": "4770299.72",
+    "volume_24h_fp": "4770025.16",
     "volume_fp": "4771814.71",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12247,10 +12257,10 @@
     "yes_sub_title": "Seattle"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP232210HOUSEA-SEA",
-  "market_captured_at": "2026-09-24T07:52:16.233Z",
+  "market_captured_at": "2026-09-24T11:55:39.487Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-24T07:52:16.878Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP232210HOUSEA-SEA/candlesticks?start_ts=1790226961&end_ts=1790236336&period_interval=1",
+  "last_ingested_at": "2026-09-24T11:55:40.101Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP232210HOUSEA-SEA/candlesticks?start_ts=1790228281&end_ts=1790250939&period_interval=1",
   "trims": [
     {
       "at": "2026-09-24T05:16:49.249Z",

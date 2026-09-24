@@ -6764,7 +6764,7 @@
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.8700",
-    "no_bid_dollars": "0.8500",
+    "no_bid_dollars": "0.8600",
     "no_sub_title": "Kansas City",
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "438240.43",
@@ -6789,17 +6789,17 @@
     "ticker": "KXNFLAFCCHAMP-27-KC",
     "title": "Will Kansas City win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "4070.93",
+    "volume_24h_fp": "4043.93",
     "volume_fp": "506984.29",
-    "yes_ask_dollars": "0.1500",
-    "yes_ask_size_fp": "196903.41",
+    "yes_ask_dollars": "0.1400",
+    "yes_ask_size_fp": "28.00",
     "yes_bid_dollars": "0.1300",
-    "yes_bid_size_fp": "5796.03",
+    "yes_bid_size_fp": "7138.03",
     "yes_sub_title": "Kansas City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-KC",
-  "market_captured_at": "2026-09-24T07:46:28.659Z",
+  "market_captured_at": "2026-09-24T11:50:27.304Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T07:46:29.202Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-KC/candlesticks?start_ts=1790222401&end_ts=1790235988&period_interval=1440"
+  "last_ingested_at": "2026-09-24T11:50:27.817Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-KC/candlesticks?start_ts=1790222401&end_ts=1790250627&period_interval=1440"
 }

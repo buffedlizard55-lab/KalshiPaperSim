@@ -12272,6 +12272,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T11:55:58.489Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP231310WSHDET-DET/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12320,7 +12330,7 @@
     "ticker": "KXMLBGAME-26SEP231310WSHDET-DET",
     "title": "Detroit wins",
     "updated_time": "2026-09-23T20:04:28.61103Z",
-    "volume_24h_fp": "2873662.39",
+    "volume_24h_fp": "2855714.57",
     "volume_fp": "2900599.63",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12329,10 +12339,10 @@
     "yes_sub_title": "Detroit"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP231310WSHDET-DET",
-  "market_captured_at": "2026-09-24T07:52:35.967Z",
+  "market_captured_at": "2026-09-24T11:55:57.860Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-24T07:52:36.610Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP231310WSHDET-DET/candlesticks?start_ts=1790193781&end_ts=1790236356&period_interval=1",
+  "last_ingested_at": "2026-09-24T11:55:58.477Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP231310WSHDET-DET/candlesticks?start_ts=1790193781&end_ts=1790250958&period_interval=1",
   "trims": [
     {
       "at": "2026-09-23T19:57:19.995Z",
