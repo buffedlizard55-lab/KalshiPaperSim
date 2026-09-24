@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 6 date file(s) · 77 game(s) · 248 state row(s) · generated 2026-09-24T18:48:06.680Z
+ * 6 date file(s) · 77 game(s) · 256 state row(s) · generated 2026-09-24T19:33:59.206Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-09-24T18:48:06.680Z",
+ "generatedAt": "2026-09-24T19:33:59.206Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-09-24T07:58:40.972Z",
+  "last_confirmed_at": "2026-09-24T19:33:58.083Z",
   "teams": [
    {
     "id": 108,
@@ -4509,7 +4509,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-09-23T22:19:02.713Z",
     "2026-09-24T00:33:05.133Z",
     "2026-09-24T02:25:22.535Z",
-    "2026-09-24T07:58:40.973Z"
+    "2026-09-24T07:58:40.973Z",
+    "2026-09-24T19:33:58.084Z"
    ],
    "games": {
     "822841": {
@@ -4604,7 +4605,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T07:58:40.973Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -4696,7 +4697,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T07:58:40.973Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -4788,7 +4789,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T00:33:05.133Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -4895,7 +4896,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T02:25:22.535Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -5002,7 +5003,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T02:25:22.535Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -5094,7 +5095,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T02:25:22.535Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -5186,7 +5187,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T07:58:40.973Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -5293,7 +5294,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T07:58:40.973Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -5370,7 +5371,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-23T22:19:02.713Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -5492,7 +5493,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T07:58:40.973Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -5599,7 +5600,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T07:58:40.973Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -5691,7 +5692,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T02:25:22.535Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -5783,7 +5784,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T02:25:22.535Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -5860,7 +5861,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-23T22:19:02.713Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -5967,7 +5968,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T02:25:22.535Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -6059,7 +6060,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-09-24T07:58:40.973Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -6088,7 +6089,8 @@ export const MLB_SIGNAL_DATA = {
     ]
    },
    "captures": [
-    "2026-09-24T07:58:40.973Z"
+    "2026-09-24T07:58:40.973Z",
+    "2026-09-24T19:33:58.084Z"
    ],
    "games": {
     "822842": {
@@ -6135,6 +6137,21 @@ export const MLB_SIGNAL_DATA = {
        },
        "winner": null,
        "url_ref": 0
+      },
+      {
+       "captured_at": "2026-09-24T19:33:58.084Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
+       "abstractGameState": "Live",
+       "detailedState": "In Progress",
+       "codedGameState": "I",
+       "inning": 4,
+       "inningState": "Top",
+       "runs": {
+        "away": 1,
+        "home": 2
+       },
+       "winner": null,
+       "url_ref": 0
       }
      ]
     },
@@ -6170,7 +6187,7 @@ export const MLB_SIGNAL_DATA = {
      "states": [
       {
        "captured_at": "2026-09-24T07:58:40.973Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Preview",
        "detailedState": "Scheduled",
        "codedGameState": "S",
@@ -6229,6 +6246,21 @@ export const MLB_SIGNAL_DATA = {
        },
        "winner": null,
        "url_ref": 0
+      },
+      {
+       "captured_at": "2026-09-24T19:33:58.084Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
+       "abstractGameState": "Final",
+       "detailedState": "Final",
+       "codedGameState": "F",
+       "inning": 9,
+       "inningState": "Top",
+       "runs": {
+        "away": 1,
+        "home": 2
+       },
+       "winner": "home",
+       "url_ref": 0
       }
      ]
     },
@@ -6252,8 +6284,8 @@ export const MLB_SIGNAL_DATA = {
      "venue": "Citizens Bank Park",
      "probablePitchers": {
       "away": {
-       "id": 669060,
-       "fullName": "Bryse Wilson"
+       "id": 675660,
+       "fullName": "Shane Drohan"
       },
       "home": {
        "id": 691725,
@@ -6273,6 +6305,21 @@ export const MLB_SIGNAL_DATA = {
        "runs": {
         "away": null,
         "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      },
+      {
+       "captured_at": "2026-09-24T19:33:58.084Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Pre-Game",
+       "codedGameState": "P",
+       "inning": 1,
+       "inningState": "Top",
+       "runs": {
+        "away": 0,
+        "home": 0
        },
        "winner": null,
        "url_ref": 0
@@ -6323,6 +6370,21 @@ export const MLB_SIGNAL_DATA = {
        },
        "winner": null,
        "url_ref": 0
+      },
+      {
+       "captured_at": "2026-09-24T19:33:58.084Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Pre-Game",
+       "codedGameState": "P",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
       }
      ]
     },
@@ -6358,7 +6420,7 @@ export const MLB_SIGNAL_DATA = {
      "states": [
       {
        "captured_at": "2026-09-24T07:58:40.973Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Preview",
        "detailedState": "Scheduled",
        "codedGameState": "S",
@@ -6417,6 +6479,21 @@ export const MLB_SIGNAL_DATA = {
        },
        "winner": null,
        "url_ref": 0
+      },
+      {
+       "captured_at": "2026-09-24T19:33:58.084Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
+       "abstractGameState": "Live",
+       "detailedState": "In Progress",
+       "codedGameState": "I",
+       "inning": 5,
+       "inningState": "Top",
+       "runs": {
+        "away": 8,
+        "home": 1
+       },
+       "winner": null,
+       "url_ref": 0
       }
      ]
     },
@@ -6461,6 +6538,21 @@ export const MLB_SIGNAL_DATA = {
        "runs": {
         "away": null,
         "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      },
+      {
+       "captured_at": "2026-09-24T19:33:58.084Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
+       "abstractGameState": "Live",
+       "detailedState": "In Progress",
+       "codedGameState": "I",
+       "inning": 1,
+       "inningState": "Bottom",
+       "runs": {
+        "away": 6,
+        "home": 0
        },
        "winner": null,
        "url_ref": 0
@@ -6511,6 +6603,21 @@ export const MLB_SIGNAL_DATA = {
        },
        "winner": null,
        "url_ref": 0
+      },
+      {
+       "captured_at": "2026-09-24T19:33:58.084Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
+       "abstractGameState": "Live",
+       "detailedState": "In Progress",
+       "codedGameState": "I",
+       "inning": 5,
+       "inningState": "Top",
+       "runs": {
+        "away": 1,
+        "home": 0
+       },
+       "winner": null,
+       "url_ref": 0
       }
      ]
     },
@@ -6558,6 +6665,21 @@ export const MLB_SIGNAL_DATA = {
        },
        "winner": null,
        "url_ref": 0
+      },
+      {
+       "captured_at": "2026-09-24T19:33:58.084Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Pre-Game",
+       "codedGameState": "P",
+       "inning": 1,
+       "inningState": "Top",
+       "runs": {
+        "away": 0,
+        "home": 0
+       },
+       "winner": null,
+       "url_ref": 0
       }
      ]
     },
@@ -6593,7 +6715,7 @@ export const MLB_SIGNAL_DATA = {
      "states": [
       {
        "captured_at": "2026-09-24T07:58:40.973Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Preview",
        "detailedState": "Scheduled",
        "codedGameState": "S",
@@ -6640,7 +6762,7 @@ export const MLB_SIGNAL_DATA = {
      "states": [
       {
        "captured_at": "2026-09-24T07:58:40.973Z",
-       "last_seen_at": "2026-09-24T07:58:40.973Z",
+       "last_seen_at": "2026-09-24T19:33:58.084Z",
        "abstractGameState": "Preview",
        "detailedState": "Scheduled",
        "codedGameState": "S",
