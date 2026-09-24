@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/NYC061",
       "relativeLocation": "New York, NY",
       "timeZone": "America/New_York",
-      "resolvedAt": "2026-09-24T12:45:47.364Z",
+      "resolvedAt": "2026-09-24T17:53:07.610Z",
       "pointsUrl": "https://api.weather.gov/points/40.7829,-73.9654"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -2212,6 +2212,72 @@
           "highF": 68,
           "periodName": "Today",
           "startTime": "2026-09-24T06:00:00-04:00",
+          "endTime": "2026-09-24T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-09-25",
+          "highF": 69,
+          "periodName": "Friday",
+          "startTime": "2026-09-25T06:00:00-04:00",
+          "endTime": "2026-09-25T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 27
+        },
+        {
+          "date": "2026-09-26",
+          "highF": 65,
+          "periodName": "Saturday",
+          "startTime": "2026-09-26T06:00:00-04:00",
+          "endTime": "2026-09-26T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 60
+        },
+        {
+          "date": "2026-09-27",
+          "highF": 64,
+          "periodName": "Sunday",
+          "startTime": "2026-09-27T06:00:00-04:00",
+          "endTime": "2026-09-27T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 73
+        },
+        {
+          "date": "2026-09-28",
+          "highF": 68,
+          "periodName": "Monday",
+          "startTime": "2026-09-28T06:00:00-04:00",
+          "endTime": "2026-09-28T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 36
+        },
+        {
+          "date": "2026-09-29",
+          "highF": 72,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-29T06:00:00-04:00",
+          "endTime": "2026-09-29T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 3
+        },
+        {
+          "date": "2026-09-30",
+          "highF": 76,
+          "periodName": "Wednesday",
+          "startTime": "2026-09-30T06:00:00-04:00",
+          "endTime": "2026-09-30T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 4
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-24T17:53:07.610Z",
+      "points_url": "https://api.weather.gov/points/40.7829,-73.9654",
+      "forecast_url": "https://api.weather.gov/gridpoints/OKX/34,45/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-24T07:06:29+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-24",
+          "highF": 68,
+          "periodName": "Today",
+          "startTime": "2026-09-24T09:00:00-04:00",
           "endTime": "2026-09-24T18:00:00-04:00",
           "probabilityOfPrecipitationPct": 0
         },
