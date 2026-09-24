@@ -269,6 +269,23 @@
       "applicationNumbers": [],
       "newestSubmissionStatusDate": null,
       "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
+    },
+    {
+      "captured_at": "2026-09-24T04:35:27.481Z",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=sponsor_name%3A%22compass%20pathways%22&limit=99",
+      "http_status": 404,
+      "meta": {
+        "disclaimer": null,
+        "last_updated": null,
+        "total": 0
+      },
+      "state": "NO_RECORD",
+      "approved": false,
+      "marketingStatuses": [],
+      "applications": 0,
+      "applicationNumbers": [],
+      "newestSubmissionStatusDate": null,
+      "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
     }
   ],
   "trims": []
