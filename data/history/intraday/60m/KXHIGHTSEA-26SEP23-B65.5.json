@@ -972,6 +972,56 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1790229600,
+      "open_interest_fp": "21512.02",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "1878.51",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1790233200,
+      "open_interest_fp": "21792.05",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "296.03",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -1141,6 +1191,153 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T07:49:14.804Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26SEP23-B65.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2486.28"
+            ],
+            [
+              "0.0200",
+              "112.00"
+            ],
+            [
+              "0.0300",
+              "45.00"
+            ],
+            [
+              "0.0400",
+              "3.00"
+            ],
+            [
+              "0.0500",
+              "77.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0700",
+              "50.00"
+            ],
+            [
+              "0.0800",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "20.42"
+            ],
+            [
+              "0.1100",
+              "123.00"
+            ],
+            [
+              "0.1400",
+              "5.13"
+            ],
+            [
+              "0.1800",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "123.55"
+            ],
+            [
+              "0.2600",
+              "1.00"
+            ],
+            [
+              "0.3000",
+              "40.00"
+            ],
+            [
+              "0.3600",
+              "3.00"
+            ],
+            [
+              "0.4000",
+              "50.00"
+            ],
+            [
+              "0.4500",
+              "935.19"
+            ],
+            [
+              "0.4600",
+              "1.00"
+            ],
+            [
+              "0.4700",
+              "4.00"
+            ],
+            [
+              "0.5000",
+              "2.00"
+            ],
+            [
+              "0.5500",
+              "960.19"
+            ],
+            [
+              "0.5600",
+              "1.00"
+            ],
+            [
+              "0.6100",
+              "1.00"
+            ],
+            [
+              "0.6200",
+              "16.00"
+            ],
+            [
+              "0.6400",
+              "57.98"
+            ],
+            [
+              "0.6500",
+              "20.00"
+            ],
+            [
+              "0.7000",
+              "2636.53"
+            ],
+            [
+              "0.7500",
+              "20.00"
+            ],
+            [
+              "0.9100",
+              "654.63"
+            ],
+            [
+              "0.9200",
+              "140.00"
+            ],
+            [
+              "0.9700",
+              "20.00"
+            ],
+            [
+              "0.9800",
+              "31.00"
+            ],
+            [
+              "0.9900",
+              "80416.11"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1164,11 +1361,11 @@
     "no_sub_title": "65° to 66°",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-24T14:00:00Z",
-    "open_interest_fp": "20910.02",
+    "open_interest_fp": "21792.05",
     "open_time": "2026-09-22T14:00:00Z",
-    "previous_price_dollars": "0.4700",
-    "previous_yes_ask_dollars": "0.4600",
-    "previous_yes_bid_dollars": "0.4500",
+    "previous_price_dollars": "0.3800",
+    "previous_yes_ask_dollars": "0.3800",
+    "previous_yes_bid_dollars": "0.3700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1186,17 +1383,17 @@
     "ticker": "KXHIGHTSEA-26SEP23-B65.5",
     "title": "Will the maximum temperature be 65-66° on Sep 23, 2026?",
     "updated_time": "2026-09-22T14:00:01.854765Z",
-    "volume_24h_fp": "26816.34",
-    "volume_fp": "27454.81",
+    "volume_24h_fp": "27549.73",
+    "volume_fp": "28352.84",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "81499.14",
+    "yes_ask_size_fp": "80416.11",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "65° to 66°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26SEP23-B65.5",
-  "market_captured_at": "2026-09-24T05:13:32.485Z",
+  "market_captured_at": "2026-09-24T07:49:14.120Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T05:13:33.109Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP23-B65.5/candlesticks?start_ts=1789999200&end_ts=1790226812&period_interval=60"
+  "last_ingested_at": "2026-09-24T07:49:14.763Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26SEP23-B65.5/candlesticks?start_ts=1790226001&end_ts=1790236154&period_interval=60"
 }

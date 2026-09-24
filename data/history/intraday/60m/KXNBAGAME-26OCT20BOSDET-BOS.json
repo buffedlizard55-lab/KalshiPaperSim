@@ -5,51 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1789480800,
-      "open_interest_fp": "8072.11",
-      "price": {
-        "close_dollars": "0.5000",
-        "high_dollars": "0.5000",
-        "low_dollars": "0.5000",
-        "mean_dollars": "0.5000",
-        "open_dollars": "0.5000",
-        "previous_dollars": "0.5000"
-      },
-      "volume_fp": "3.83",
-      "yes_ask": {
-        "close_dollars": "0.5000",
-        "high_dollars": "0.5000",
-        "low_dollars": "0.5000",
-        "open_dollars": "0.5000"
-      },
-      "yes_bid": {
-        "close_dollars": "0.4700",
-        "high_dollars": "0.4800",
-        "low_dollars": "0.4400",
-        "open_dollars": "0.4600"
-      }
-    },
-    {
-      "end_period_ts": 1789484400,
-      "open_interest_fp": "8072.11",
-      "price": {
-        "previous_dollars": "0.5000"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.5000",
-        "high_dollars": "0.5000",
-        "low_dollars": "0.5000",
-        "open_dollars": "0.5000"
-      },
-      "yes_bid": {
-        "close_dollars": "0.4700",
-        "high_dollars": "0.4800",
-        "low_dollars": "0.4500",
-        "open_dollars": "0.4700"
-      }
-    },
-    {
       "end_period_ts": 1789488000,
       "open_interest_fp": "8072.11",
       "price": {
@@ -4586,6 +4541,56 @@
         "high_dollars": "0.4800",
         "low_dollars": "0.4700",
         "open_dollars": "0.4700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4600",
+        "high_dollars": "0.4600",
+        "low_dollars": "0.4600",
+        "open_dollars": "0.4600"
+      }
+    },
+    {
+      "end_period_ts": 1790229600,
+      "open_interest_fp": "9625.42",
+      "price": {
+        "close_dollars": "0.4800",
+        "high_dollars": "0.4800",
+        "low_dollars": "0.4800",
+        "mean_dollars": "0.4800",
+        "open_dollars": "0.4800",
+        "previous_dollars": "0.4600"
+      },
+      "volume_fp": "4.02",
+      "yes_ask": {
+        "close_dollars": "0.4800",
+        "high_dollars": "0.4800",
+        "low_dollars": "0.4700",
+        "open_dollars": "0.4800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4600",
+        "high_dollars": "0.4600",
+        "low_dollars": "0.4600",
+        "open_dollars": "0.4600"
+      }
+    },
+    {
+      "end_period_ts": 1790233200,
+      "open_interest_fp": "9633.07",
+      "price": {
+        "close_dollars": "0.4800",
+        "high_dollars": "0.4800",
+        "low_dollars": "0.4800",
+        "mean_dollars": "0.4800",
+        "open_dollars": "0.4800",
+        "previous_dollars": "0.4800"
+      },
+      "volume_fp": "28.02",
+      "yes_ask": {
+        "close_dollars": "0.4800",
+        "high_dollars": "0.4900",
+        "low_dollars": "0.4700",
+        "open_dollars": "0.4800"
       },
       "yes_bid": {
         "close_dollars": "0.4600",
@@ -14891,6 +14896,154 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T07:50:47.920Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "225017.63"
+            ],
+            [
+              "0.0200",
+              "6000.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "2000.00"
+            ],
+            [
+              "0.0800",
+              "7.58"
+            ],
+            [
+              "0.0900",
+              "28.65"
+            ],
+            [
+              "0.1100",
+              "25.00"
+            ],
+            [
+              "0.1200",
+              "650.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "45.92"
+            ],
+            [
+              "0.1700",
+              "6.59"
+            ],
+            [
+              "0.1800",
+              "49.37"
+            ],
+            [
+              "0.1900",
+              "10.57"
+            ],
+            [
+              "0.2200",
+              "1.95"
+            ],
+            [
+              "0.2400",
+              "2093.00"
+            ],
+            [
+              "0.2500",
+              "197.19"
+            ],
+            [
+              "0.3300",
+              "2.05"
+            ],
+            [
+              "0.4400",
+              "750.00"
+            ],
+            [
+              "0.4800",
+              "2000.00"
+            ],
+            [
+              "0.5000",
+              "100.00"
+            ],
+            [
+              "0.5100",
+              "375.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "224836.00"
+            ],
+            [
+              "0.0200",
+              "6000.00"
+            ],
+            [
+              "0.0300",
+              "526.00"
+            ],
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "300.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.2000",
+              "213.00"
+            ],
+            [
+              "0.2500",
+              "1.81"
+            ],
+            [
+              "0.4400",
+              "11.00"
+            ],
+            [
+              "0.4600",
+              "8.02"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -14906,16 +15059,16 @@
     "expected_expiration_time": "2026-10-20T22:00:00Z",
     "expiration_time": "2026-10-22T19:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.4600",
+    "last_price_dollars": "0.4800",
     "latest_expiration_time": "2026-10-22T19:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.5400",
-    "no_bid_dollars": "0.5200",
+    "no_bid_dollars": "0.5100",
     "no_sub_title": "Boston",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-20T22:00:00Z",
-    "open_interest_fp": "9621.40",
+    "open_interest_fp": "9633.07",
     "open_time": "2026-08-20T15:28:00Z",
     "previous_price_dollars": "0.4700",
     "previous_yes_ask_dollars": "0.4800",
@@ -14937,19 +15090,19 @@
     "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
     "title": "Boston wins",
     "updated_time": "2026-08-20T15:28:00.432079Z",
-    "volume_24h_fp": "343.87",
-    "volume_fp": "20170.66",
-    "yes_ask_dollars": "0.4800",
-    "yes_ask_size_fp": "365.44",
+    "volume_24h_fp": "375.91",
+    "volume_fp": "20202.70",
+    "yes_ask_dollars": "0.4900",
+    "yes_ask_size_fp": "375.00",
     "yes_bid_dollars": "0.4600",
     "yes_bid_size_fp": "8.02",
     "yes_sub_title": "Boston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS",
-  "market_captured_at": "2026-09-24T05:15:02.703Z",
+  "market_captured_at": "2026-09-24T07:50:47.235Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T05:15:03.326Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1790190001&end_ts=1790226903&period_interval=60",
+  "last_ingested_at": "2026-09-24T07:50:47.879Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1790226001&end_ts=1790236247&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T06:40:05.100Z",
@@ -15124,6 +15277,14 @@
       "dropped": 9,
       "dropped_from_ts": 1789448400,
       "dropped_to_ts": 1789477200,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-24T07:50:48.221Z",
+      "dropped": 2,
+      "dropped_from_ts": 1789480800,
+      "dropped_to_ts": 1789484400,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }

@@ -1562,6 +1562,46 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1790229600,
+      "open_interest_fp": "3319.00",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1790233200,
+      "open_interest_fp": "3319.00",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -2288,6 +2328,74 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T07:51:14.491Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-CHS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "116186.00"
+            ],
+            [
+              "0.0200",
+              "11228.00"
+            ],
+            [
+              "0.0300",
+              "6784.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "5.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1500",
+              "1356.00"
+            ],
+            [
+              "0.1600",
+              "1261.00"
+            ],
+            [
+              "0.4400",
+              "224.00"
+            ],
+            [
+              "0.5100",
+              "1413.00"
+            ],
+            [
+              "0.5200",
+              "2433.00"
+            ],
+            [
+              "0.9600",
+              "20.00"
+            ],
+            [
+              "0.9700",
+              "99396.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7612.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2343,8 +2451,8 @@
     "yes_sub_title": "Chicago St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03CHSTARL-CHS",
-  "market_captured_at": "2026-09-24T05:15:28.028Z",
+  "market_captured_at": "2026-09-24T07:51:13.807Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T05:15:28.650Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03CHSTARL-CHS/candlesticks?start_ts=1790179201&end_ts=1790226928&period_interval=60"
+  "last_ingested_at": "2026-09-24T07:51:14.450Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03CHSTARL-CHS/candlesticks?start_ts=1790226001&end_ts=1790236274&period_interval=60"
 }

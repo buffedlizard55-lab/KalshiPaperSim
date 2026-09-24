@@ -12819,10 +12819,146 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T07:47:30.062Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T19000/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "125179.66"
+            ],
+            [
+              "0.1000",
+              "12500.00"
+            ],
+            [
+              "0.3000",
+              "4166.00"
+            ],
+            [
+              "0.3100",
+              "15.69"
+            ],
+            [
+              "0.3900",
+              "23.48"
+            ],
+            [
+              "0.5000",
+              "2500.00"
+            ],
+            [
+              "0.5400",
+              "13.41"
+            ],
+            [
+              "0.6700",
+              "85.75"
+            ],
+            [
+              "0.7000",
+              "16973.14"
+            ],
+            [
+              "0.7200",
+              "15000.00"
+            ],
+            [
+              "0.7300",
+              "15000.00"
+            ],
+            [
+              "0.7400",
+              "15000.00"
+            ],
+            [
+              "0.7500",
+              "15000.00"
+            ],
+            [
+              "0.7600",
+              "15005.82"
+            ],
+            [
+              "0.7700",
+              "10000.00"
+            ],
+            [
+              "0.7800",
+              "10000.00"
+            ],
+            [
+              "0.7900",
+              "10335.30"
+            ],
+            [
+              "0.8000",
+              "11562.00"
+            ],
+            [
+              "0.8100",
+              "10000.00"
+            ],
+            [
+              "0.8200",
+              "10031.27"
+            ],
+            [
+              "0.8300",
+              "10002.22"
+            ],
+            [
+              "0.8400",
+              "10000.00"
+            ],
+            [
+              "0.8500",
+              "10000.00"
+            ],
+            [
+              "0.8600",
+              "8939.26"
+            ],
+            [
+              "0.8900",
+              "4.44"
+            ],
+            [
+              "0.9300",
+              "1.08"
+            ],
+            [
+              "0.9500",
+              "250.00"
+            ],
+            [
+              "0.9600",
+              "1.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2708.00"
+            ],
+            [
+              "0.0200",
+              "401.13"
+            ],
+            [
+              "0.0300",
+              "111.13"
+            ]
+          ]
+        }
+      }
     }
   ],
-  "last_ingested_at": "2026-09-24T05:11:53.391Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1790182801&end_ts=1790226713&period_interval=60",
+  "last_ingested_at": "2026-09-24T07:47:30.021Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1790193601&end_ts=1790236049&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T00:07:38.178Z",
@@ -12947,8 +13083,8 @@
     "open_interest_fp": "1120340.09",
     "open_time": "2025-12-23T15:00:00Z",
     "previous_price_dollars": "0.0300",
-    "previous_yes_ask_dollars": "0.0500",
-    "previous_yes_bid_dollars": "0.0400",
+    "previous_yes_ask_dollars": "0.0400",
+    "previous_yes_bid_dollars": "0.0300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12976,6 +13112,6 @@
     "yes_sub_title": "18,999.99 or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T19000",
-  "market_captured_at": "2026-09-24T05:11:52.767Z",
+  "market_captured_at": "2026-09-24T07:47:29.379Z",
   "status": "active"
 }

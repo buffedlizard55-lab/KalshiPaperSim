@@ -4162,6 +4162,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T07:46:48.418Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20SEAARI-41/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4217,9 +4227,9 @@
     "yes_sub_title": "Over 40.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20SEAARI-41",
-  "market_captured_at": "2026-09-24T05:11:13.245Z",
+  "market_captured_at": "2026-09-24T07:46:47.835Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-24T05:11:13.768Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20SEAARI-41/candlesticks?start_ts=1789963201&end_ts=1790226673&period_interval=1440",
+  "last_ingested_at": "2026-09-24T07:46:48.378Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20SEAARI-41/candlesticks?start_ts=1789963201&end_ts=1790236008&period_interval=1440",
   "result": "no"
 }

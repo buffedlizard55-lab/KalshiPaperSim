@@ -12060,6 +12060,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T07:52:43.379Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP231310WSHDET-WSH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12086,9 +12096,9 @@
     "occurrence_datetime": "2026-09-23T20:10:00Z",
     "open_interest_fp": "1359079.29",
     "open_time": "2026-09-20T17:25:00Z",
-    "previous_price_dollars": "0.3800",
-    "previous_yes_ask_dollars": "0.3800",
-    "previous_yes_bid_dollars": "0.3700",
+    "previous_price_dollars": "0.3900",
+    "previous_yes_ask_dollars": "0.3900",
+    "previous_yes_bid_dollars": "0.3800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12108,7 +12118,7 @@
     "ticker": "KXMLBGAME-26SEP231310WSHDET-WSH",
     "title": "Washington wins",
     "updated_time": "2026-09-23T20:04:28.61103Z",
-    "volume_24h_fp": "2749085.41",
+    "volume_24h_fp": "2742209.20",
     "volume_fp": "2755390.00",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12117,10 +12127,10 @@
     "yes_sub_title": "Washington"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP231310WSHDET-WSH",
-  "market_captured_at": "2026-09-24T05:16:59.143Z",
+  "market_captured_at": "2026-09-24T07:52:42.696Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-24T05:16:59.764Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP231310WSHDET-WSH/candlesticks?start_ts=1790193421&end_ts=1790227019&period_interval=1",
+  "last_ingested_at": "2026-09-24T07:52:43.339Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP231310WSHDET-WSH/candlesticks?start_ts=1790193781&end_ts=1790236362&period_interval=1",
   "trims": [
     {
       "at": "2026-09-23T19:57:26.710Z",
