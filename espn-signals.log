@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-09-24T00:20:04.827Z",
+ "startedAt": "2026-09-24T02:21:47.862Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 84
+     "playerRecords": 85
     },
     "scoreboard": {
      "2026-09-23": {
@@ -156,7 +156,7 @@
       "ok": true,
       "status": 200,
       "events": 4,
-      "stateRows": 7
+      "stateRows": 11
      },
      "2026-09-24": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260924",
@@ -181,7 +181,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 44
+     "playerRecords": 46
     },
     "scoreboard": {
      "2026-09-23": {
@@ -189,7 +189,7 @@
       "ok": true,
       "status": 200,
       "events": 2,
-      "stateRows": 3
+      "stateRows": 5
      },
      "2026-09-24": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260924",
@@ -208,7 +208,7 @@
   "matched": 51,
   "unmapped": 39
  },
- "finishedAt": "2026-09-24T00:20:06.415Z"
+ "finishedAt": "2026-09-24T02:21:48.897Z"
 }
 {
  "ok": true,
@@ -221,10 +221,10 @@
  }
 }
 ✓ src/accumulated-history.js — 188 market(s), 13565 bar(s), 12275.7 KB
-✓ src/forecast-data.js — 9 location(s), 272 snapshot(s), 544.6 KB
+✓ src/forecast-data.js — 9 location(s), 281 snapshot(s), 562.3 KB
 ✓ src/fda-signal-data.js — 6 subject(s), 92 snapshot(s), 67.2 KB
-✓ src/mlb-signal-data.js — 5 date file(s), 65 game(s), 204 state row(s), 138.5 KB
-✓ src/espn-signal-data.js — 7 league(s), 50 event(s), 3723.4 KB
+✓ src/mlb-signal-data.js — 5 date file(s), 65 game(s), 216 state row(s), 143.0 KB
+✓ src/espn-signal-data.js — 7 league(s), 50 event(s), 3798.6 KB
 ✓ src/mlb-pregame-data.js — 0 date file(s), 0 row(s), 2.1 KB (no predictions yet — MLBPreGame_ModelEdge abstains)
 ✓ src/form4-signal-data.js — 0 issuer(s), 0 filing(s), 1.3 KB (no archive yet — insider strategies abstain)
     JPMCEOCHANGE-27: 288 bar(s) + market object
