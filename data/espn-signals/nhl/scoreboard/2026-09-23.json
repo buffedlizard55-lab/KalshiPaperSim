@@ -15,7 +15,8 @@
   "2026-09-23T02:32:39.415Z",
   "2026-09-23T08:11:44.423Z",
   "2026-09-23T18:47:44.404Z",
-  "2026-09-23T21:59:17.968Z"
+  "2026-09-23T21:59:17.968Z",
+  "2026-09-24T00:20:05.714Z"
  ],
  "events": {
   "401879369": {
@@ -37,7 +38,7 @@
    "states": [
     {
      "captured_at": "2026-09-22T07:21:27.801Z",
-     "last_seen_at": "2026-09-23T21:59:17.968Z",
+     "last_seen_at": "2026-09-24T00:20:05.714Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -93,6 +94,26 @@
       "home": "0-0-1",
       "away": "0-1-1"
      }
+    },
+    {
+     "captured_at": "2026-09-24T00:20:05.714Z",
+     "last_seen_at": "2026-09-24T00:20:05.714Z",
+     "fp": "in|2|9|1,1|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 577,
+     "displayClock": "9:37",
+     "scores": {
+      "home": 1,
+      "away": 1
+     },
+     "recordsOverall": {
+      "home": "0-0-1",
+      "away": "0-1-1"
+     }
     }
    ]
   },
@@ -124,6 +145,26 @@
      "period": 0,
      "clock": 0,
      "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-0-0",
+      "away": "1-0-1"
+     }
+    },
+    {
+     "captured_at": "2026-09-24T00:20:05.714Z",
+     "last_seen_at": "2026-09-24T00:20:05.714Z",
+     "fp": "in|1|10|0,0|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 602,
+     "displayClock": "10:02",
      "scores": {
       "home": 0,
       "away": 0
@@ -171,10 +212,30 @@
       "home": "0-1-1",
       "away": "0-0-1"
      }
+    },
+    {
+     "captured_at": "2026-09-24T00:20:05.714Z",
+     "last_seen_at": "2026-09-24T00:20:05.714Z",
+     "fp": "in|2|9|3,1|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 569,
+     "displayClock": "9:29",
+     "scores": {
+      "home": 3,
+      "away": 1
+     },
+     "recordsOverall": {
+      "home": "0-1-1",
+      "away": "0-0-1"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-09-23T21:59:17.968Z",
+ "last_ingested_at": "2026-09-24T00:20:05.714Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260923"
 }
