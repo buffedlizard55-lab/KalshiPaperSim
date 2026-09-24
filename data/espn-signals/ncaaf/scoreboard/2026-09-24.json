@@ -14,7 +14,8 @@
   "2026-09-24T00:20:05.529Z",
   "2026-09-24T02:21:48.316Z",
   "2026-09-24T07:56:56.092Z",
-  "2026-09-24T18:48:04.759Z"
+  "2026-09-24T18:48:04.759Z",
+  "2026-09-24T21:55:36.347Z"
  ],
  "events": {
   "401869941": {
@@ -41,7 +42,7 @@
    "states": [
     {
      "captured_at": "2026-09-23T08:11:44.348Z",
-     "last_seen_at": "2026-09-24T18:48:04.759Z",
+     "last_seen_at": "2026-09-24T21:55:36.347Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -62,6 +63,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-09-24T18:48:04.759Z",
+ "last_ingested_at": "2026-09-24T21:55:36.347Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260924"
 }

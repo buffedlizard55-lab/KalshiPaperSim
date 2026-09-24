@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-24T18:48:05.643Z",
+ "generatedAt": "2026-09-24T21:55:37.310Z",
  "rows": [
   {
    "league": "nba",
@@ -615,6 +615,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "SCAR",
+   "kalshiName": "South Carolina",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03UKSCAR-UK",
+     "rulesName": "South Carolina",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "SDST",
    "kalshiName": "South Dakota St.",
    "conflictWith": null,
@@ -790,6 +805,21 @@
      "ticker": "KXNCAAFGAME-26SEP26OKLAUGA-UGA",
      "rulesName": "Georgia",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "UK",
+   "kalshiName": "Kentucky",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03UKSCAR-UK",
+     "rulesName": "Kentucky",
+     "role": "away"
     }
    ]
   },
