@@ -1921,6 +1921,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T05:15:17.276Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP22FLACAR-CAR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1947,9 +1957,9 @@
     "occurrence_datetime": "2026-09-23T02:00:00Z",
     "open_interest_fp": "87840.79",
     "open_time": "2026-09-19T01:05:00Z",
-    "previous_price_dollars": "0.3000",
-    "previous_yes_ask_dollars": "0.3000",
-    "previous_yes_bid_dollars": "0.2800",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1969,7 +1979,7 @@
     "ticker": "KXNHLGAME-26SEP22FLACAR-CAR",
     "title": "Carolina wins",
     "updated_time": "2026-09-23T02:17:08.65343Z",
-    "volume_24h_fp": "107579.19",
+    "volume_24h_fp": "0.00",
     "volume_fp": "115273.68",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1978,9 +1988,9 @@
     "yes_sub_title": "Carolina"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP22FLACAR-CAR",
-  "market_captured_at": "2026-09-23T19:55:44.971Z",
+  "market_captured_at": "2026-09-24T05:15:16.633Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T19:55:45.633Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP22FLACAR-CAR/candlesticks?start_ts=1790132401&end_ts=1790193345&period_interval=60"
+  "last_ingested_at": "2026-09-24T05:15:17.255Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP22FLACAR-CAR/candlesticks?start_ts=1790132401&end_ts=1790226916&period_interval=60"
 }

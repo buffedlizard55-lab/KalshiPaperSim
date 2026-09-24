@@ -853,6 +853,31 @@
         "low_dollars": "0.1000",
         "open_dollars": "0.1000"
       }
+    },
+    {
+      "end_period_ts": 1790222400,
+      "open_interest_fp": "96043.83",
+      "price": {
+        "close_dollars": "0.1100",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.1000",
+        "mean_dollars": "0.1100",
+        "open_dollars": "0.1100",
+        "previous_dollars": "0.1200"
+      },
+      "volume_fp": "3702.83",
+      "yes_ask": {
+        "close_dollars": "0.1200",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.1100",
+        "open_dollars": "0.1200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1100",
+        "high_dollars": "0.1100",
+        "low_dollars": "0.1000",
+        "open_dollars": "0.1100"
+      }
     }
   ],
   "books": [
@@ -6067,6 +6092,250 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T05:11:16.986Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-COL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4465671.07"
+            ],
+            [
+              "0.0200",
+              "2722.00"
+            ],
+            [
+              "0.0300",
+              "855.20"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "922830.44"
+            ],
+            [
+              "0.0700",
+              "60.63"
+            ],
+            [
+              "0.0900",
+              "0.42"
+            ],
+            [
+              "0.1100",
+              "511275.57"
+            ],
+            [
+              "0.1300",
+              "266.16"
+            ],
+            [
+              "0.1600",
+              "100.00"
+            ],
+            [
+              "0.1700",
+              "61.59"
+            ],
+            [
+              "0.1800",
+              "411836.00"
+            ],
+            [
+              "0.2000",
+              "10.10"
+            ],
+            [
+              "0.2100",
+              "18.81"
+            ],
+            [
+              "0.2400",
+              "8.55"
+            ],
+            [
+              "0.2500",
+              "298162.00"
+            ],
+            [
+              "0.2700",
+              "2728.25"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3200",
+              "223761.35"
+            ],
+            [
+              "0.3400",
+              "759.41"
+            ],
+            [
+              "0.3600",
+              "17.11"
+            ],
+            [
+              "0.3700",
+              "31.39"
+            ],
+            [
+              "0.3900",
+              "364250.00"
+            ],
+            [
+              "0.4000",
+              "203.22"
+            ],
+            [
+              "0.4100",
+              "17.11"
+            ],
+            [
+              "0.4200",
+              "27.79"
+            ],
+            [
+              "0.4500",
+              "47.03"
+            ],
+            [
+              "0.4600",
+              "76636.74"
+            ],
+            [
+              "0.4700",
+              "169719.84"
+            ],
+            [
+              "0.5000",
+              "171.18"
+            ],
+            [
+              "0.5300",
+              "47.03"
+            ],
+            [
+              "0.5700",
+              "23.54"
+            ],
+            [
+              "0.5800",
+              "78924.00"
+            ],
+            [
+              "0.5900",
+              "39.00"
+            ],
+            [
+              "0.6300",
+              "6.13"
+            ],
+            [
+              "0.6400",
+              "878.49"
+            ],
+            [
+              "0.6600",
+              "26365.00"
+            ],
+            [
+              "0.6700",
+              "23610.39"
+            ],
+            [
+              "0.7400",
+              "16593.00"
+            ],
+            [
+              "0.7700",
+              "4945.00"
+            ],
+            [
+              "0.7800",
+              "1004.34"
+            ],
+            [
+              "0.8000",
+              "150.00"
+            ],
+            [
+              "0.8400",
+              "1000.00"
+            ],
+            [
+              "0.8500",
+              "7624.85"
+            ],
+            [
+              "0.8600",
+              "19420.68"
+            ],
+            [
+              "0.8700",
+              "23005.18"
+            ],
+            [
+              "0.8800",
+              "11436.64"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "814554.00"
+            ],
+            [
+              "0.0200",
+              "89879.08"
+            ],
+            [
+              "0.0300",
+              "46644.00"
+            ],
+            [
+              "0.0400",
+              "20799.16"
+            ],
+            [
+              "0.0500",
+              "2365.00"
+            ],
+            [
+              "0.0600",
+              "1698.29"
+            ],
+            [
+              "0.0700",
+              "1295.76"
+            ],
+            [
+              "0.0800",
+              "727.15"
+            ],
+            [
+              "0.0900",
+              "5325.98"
+            ],
+            [
+              "0.1000",
+              "4945.44"
+            ],
+            [
+              "0.1100",
+              "27.70"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6091,9 +6360,9 @@
     "no_sub_title": "Colorado Avalanche",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
-    "open_interest_fp": "95897.23",
+    "open_interest_fp": "96043.83",
     "open_time": "2026-06-15T03:40:00Z",
-    "previous_price_dollars": "0.1100",
+    "previous_price_dollars": "0.1200",
     "previous_yes_ask_dollars": "0.1200",
     "previous_yes_bid_dollars": "0.1100",
     "price_level_structure": "linear_cent",
@@ -6113,17 +6382,17 @@
     "ticker": "KXNHL-27-COL",
     "title": "Will Colorado Avalanche win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.08098Z",
-    "volume_24h_fp": "1802.48",
-    "volume_fp": "135770.15",
+    "volume_24h_fp": "3742.07",
+    "volume_fp": "137717.58",
     "yes_ask_dollars": "0.1200",
-    "yes_ask_size_fp": "17163.54",
+    "yes_ask_size_fp": "11436.64",
     "yes_bid_dollars": "0.1100",
-    "yes_bid_size_fp": "2.96",
+    "yes_bid_size_fp": "27.70",
     "yes_sub_title": "Colorado Avalanche"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-COL",
-  "market_captured_at": "2026-09-23T19:51:24.037Z",
+  "market_captured_at": "2026-09-24T05:11:16.442Z",
   "status": "active",
-  "last_ingested_at": "2026-09-23T19:51:24.599Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-COL/candlesticks?start_ts=1790136001&end_ts=1790193084&period_interval=1440"
+  "last_ingested_at": "2026-09-24T05:11:16.966Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-COL/candlesticks?start_ts=1790136001&end_ts=1790226676&period_interval=1440"
 }

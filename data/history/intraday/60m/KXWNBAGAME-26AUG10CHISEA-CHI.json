@@ -214,6 +214,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-24T05:15:34.057Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG10CHISEA-CHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -271,9 +281,9 @@
     "yes_sub_title": "Chicago"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG10CHISEA-CHI",
-  "market_captured_at": "2026-09-23T19:56:06.126Z",
+  "market_captured_at": "2026-09-24T05:15:33.415Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-23T19:56:06.789Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG10CHISEA-CHI/candlesticks?start_ts=1787601366&end_ts=1790193365&period_interval=60"
+  "last_ingested_at": "2026-09-24T05:15:34.036Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG10CHISEA-CHI/candlesticks?start_ts=1787634933&end_ts=1790226932&period_interval=60"
 }
