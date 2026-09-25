@@ -15,7 +15,8 @@
   "2026-09-24T02:21:48.419Z",
   "2026-09-24T07:56:56.335Z",
   "2026-09-24T18:48:05.158Z",
-  "2026-09-24T21:55:36.850Z"
+  "2026-09-24T21:55:36.850Z",
+  "2026-09-25T00:13:47.696Z"
  ],
  "events": {
   "401857215": {
@@ -49,6 +50,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "10-33",
+      "away": "11-32"
+     }
+    },
+    {
+     "captured_at": "2026-09-25T00:13:47.696Z",
+     "last_seen_at": "2026-09-25T00:13:47.696Z",
+     "fp": "in|3|10|38,36|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 3,
+     "clock": 600,
+     "displayClock": "10:00",
+     "scores": {
+      "home": 38,
+      "away": 36
      },
      "recordsOverall": {
       "home": "10-33",
@@ -93,6 +114,26 @@
       "home": "27-16",
       "away": "16-27"
      }
+    },
+    {
+     "captured_at": "2026-09-25T00:13:47.696Z",
+     "last_seen_at": "2026-09-25T00:13:47.696Z",
+     "fp": "in|2|1|50,34|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 68,
+     "displayClock": "1:08",
+     "scores": {
+      "home": 50,
+      "away": 34
+     },
+     "recordsOverall": {
+      "home": "27-16",
+      "away": "16-27"
+     }
     }
    ]
   },
@@ -132,6 +173,26 @@
       "home": "32-11",
       "away": "28-15"
      }
+    },
+    {
+     "captured_at": "2026-09-25T00:13:47.696Z",
+     "last_seen_at": "2026-09-25T00:13:47.696Z",
+     "fp": "in|1|5|12,4|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 356,
+     "displayClock": "5:56",
+     "scores": {
+      "home": 12,
+      "away": 4
+     },
+     "recordsOverall": {
+      "home": "32-11",
+      "away": "28-15"
+     }
     }
    ]
   },
@@ -154,7 +215,7 @@
    "states": [
     {
      "captured_at": "2026-09-23T08:11:44.474Z",
-     "last_seen_at": "2026-09-24T21:55:36.850Z",
+     "last_seen_at": "2026-09-25T00:13:47.696Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -193,7 +254,7 @@
    "states": [
     {
      "captured_at": "2026-09-23T08:11:44.474Z",
-     "last_seen_at": "2026-09-24T21:55:36.850Z",
+     "last_seen_at": "2026-09-25T00:13:47.696Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -214,6 +275,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-09-24T21:55:36.850Z",
+ "last_ingested_at": "2026-09-25T00:13:47.696Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260924"
 }
