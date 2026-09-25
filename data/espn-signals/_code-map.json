@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-25T02:37:59.124Z",
+ "generatedAt": "2026-09-25T08:16:00.370Z",
  "rows": [
   {
    "league": "nba",
@@ -900,6 +900,31 @@
   },
   {
    "league": "nfl",
+   "kalshiCode": "ATL",
+   "kalshiName": "Atlanta",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "1",
+    "abbr": "ATL",
+    "displayName": "Atlanta Falcons",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+     "rulesName": "Atlanta",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+     "rulesName": "Atlanta",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
    "kalshiCode": "DAL",
    "kalshiName": "Dallas",
    "conflictWith": null,
@@ -945,6 +970,31 @@
      "ticker": "KXNFLGAME-26SEP14DENKC-KC",
      "rulesName": "Denver",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "GB",
+   "kalshiName": "Green Bay",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "9",
+    "abbr": "GB",
+    "displayName": "Green Bay Packers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+     "rulesName": "Green Bay",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+     "rulesName": "Green Bay",
+     "role": "home"
     }
    ]
   },
@@ -1320,6 +1370,16 @@
      "ticker": "KXNHLGAME-26SEP20SEACGY-SEA",
      "rulesName": "Calgary",
      "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP24CGYSEA-CGY",
+     "rulesName": "Calgary",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP24CGYSEA-SEA",
+     "rulesName": "Calgary",
+     "role": "away"
     }
    ]
   },
@@ -1690,6 +1750,16 @@
      "ticker": "KXNHLGAME-26SEP20SEACGY-SEA",
      "rulesName": "Seattle",
      "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP24CGYSEA-CGY",
+     "rulesName": "Seattle",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP24CGYSEA-SEA",
+     "rulesName": "Seattle",
+     "role": "home"
     }
    ]
   },
@@ -1775,6 +1845,16 @@
      "ticker": "KXNHLGAME-26SEP22UTALA-UTA",
      "rulesName": "Utah",
      "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP24UTAVGK-UTA",
+     "rulesName": "Utah",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP24UTAVGK-VGK",
+     "rulesName": "Utah",
+     "role": "away"
     }
    ]
   },
@@ -1830,6 +1910,11 @@
      "ticker": "KXNHLGAME-26SEP22VGKSJ-VGK",
      "rulesName": "Vegas",
      "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP24UTAVGK-UTA",
+     "rulesName": "Vegas",
+     "role": "home"
     }
    ]
   },

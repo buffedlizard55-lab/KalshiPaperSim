@@ -211,24 +211,24 @@ Every number here is recomputed on demand; nothing in this table is stored.
 | --- | --- | --- | --- | --- | --- |
 | 1 | **SportsUnderdog_Sweep** | +51.99% | 40 | 34 | $126,608.12 |
 | 2 | **SportsLine_Momentum** | +28.31% | 73 | 63 | $311,453.64 |
-| 3 | **MEE_BoardSum** | +1.19% | 13 | 11 | $1,659.29 |
-| 4 | **WeatherLadder_MultiCity** | +0.10% | 54 | 53 | $209.81 |
-| 5 | **NCAAF_GameFavourite** | +0.03% | 7 | 1 | $0.00 |
-| 6 | **WeatherLadder_CheapBands** | +0.00% | 8 | 8 | $13.21 |
-| 7 | **CPI_PrintFade** | +0.00% | 1 | 1 | $0.00 |
-| 8 | **ForecastEdge_Weather** | -0.10% | 7 | 6 | $130.51 |
-| 9 | **SportsFavourite_Settle** | -0.15% | 59 | 53 | $233.27 |
-| 10 | **ForecastEdge_MultiCity** | -0.20% | 25 | 22 | $186.08 |
-| 11 | **WeatherFavourite_Decay** | -1.62% | 73 | 72 | $23,122.65 |
-| 12 | **FedBucket_Ladder** | -4.34% | 6 | 6 | $0.00 |
-| 13 | **SportsSteam_Fade** | -5.37% | 62 | 58 | $205,081.27 |
-| 14 | **PanicFade_HourlyVol** | -47.15% | 1766 | 184 | $195,208.41 |
-| 15 | **MakerFlip_SpreadHarvest** | -80.85% | 5898 | 242 | $338,791.43 |
-| 16 | **VolatilityArb_MM** | -91.07% | 12128 | 281 | $250,305.85 |
-| 17 | **PanicDip_ShockTiming** | -99.86% | 1818 | 138 | $75,404.54 |
+| 3 | **NFLInjury_AvailGap** | +12.40% | 2 | 2 | $20,355.58 |
+| 4 | **MEE_BoardSum** | +1.19% | 13 | 11 | $1,659.29 |
+| 5 | **WeatherLadder_MultiCity** | +0.10% | 54 | 53 | $209.81 |
+| 6 | **NCAAF_GameFavourite** | +0.03% | 7 | 1 | $0.00 |
+| 7 | **WeatherLadder_CheapBands** | +0.00% | 8 | 8 | $13.21 |
+| 8 | **CPI_PrintFade** | +0.00% | 1 | 1 | $0.00 |
+| 9 | **ForecastEdge_Weather** | -0.10% | 7 | 6 | $130.51 |
+| 10 | **SportsFavourite_Settle** | -0.15% | 59 | 53 | $233.27 |
+| 11 | **ForecastEdge_MultiCity** | -0.20% | 25 | 22 | $186.08 |
+| 12 | **WeatherFavourite_Decay** | -1.62% | 73 | 72 | $23,122.65 |
+| 13 | **FedBucket_Ladder** | -4.34% | 6 | 6 | $0.00 |
+| 14 | **SportsSteam_Fade** | -5.37% | 62 | 58 | $205,081.27 |
+| 15 | **PanicFade_HourlyVol** | -47.15% | 1766 | 184 | $195,208.41 |
+| 16 | **MakerFlip_SpreadHarvest** | -80.85% | 5898 | 242 | $338,791.43 |
+| 17 | **VolatilityArb_MM** | -91.07% | 12128 | 281 | $250,305.85 |
+| 18 | **PanicDip_ShockTiming** | -99.86% | 1818 | 138 | $75,404.54 |
 | — | **HeatConfirm_500Bots** *(unranked)* | *no trades* | 0 | 0 | $0.00 |
 | — | **NBAInjury_AvailGap** *(unranked)* | *no trades* | 0 | 0 | $0.00 |
-| — | **NFLInjury_AvailGap** *(unranked)* | *no trades* | 0 | 0 | $0.00 |
 
 **MICRO (period_interval 1)** — 7582 one-minute periods across 489 markets
 
