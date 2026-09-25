@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-09-25T00:13:46.769Z",
+ "startedAt": "2026-09-25T02:37:57.313Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -24,7 +24,7 @@
       "ok": true,
       "status": 200,
       "events": 1,
-      "stateRows": 1
+      "stateRows": 2
      },
      "2026-09-25": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260925",
@@ -90,7 +90,7 @@
       "ok": true,
       "status": 200,
       "events": 1,
-      "stateRows": 2
+      "stateRows": 3
      },
      "2026-09-25": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260925",
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 90
+     "playerRecords": 94
     },
     "scoreboard": {
      "2026-09-24": {
@@ -156,7 +156,7 @@
       "ok": true,
       "status": 200,
       "events": 11,
-      "stateRows": 18
+      "stateRows": 29
      },
      "2026-09-25": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260925",
@@ -181,7 +181,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 49
+     "playerRecords": 55
     },
     "scoreboard": {
      "2026-09-24": {
@@ -189,7 +189,7 @@
       "ok": true,
       "status": 200,
       "events": 5,
-      "stateRows": 8
+      "stateRows": 13
      },
      "2026-09-25": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260925",
@@ -208,7 +208,7 @@
   "matched": 51,
   "unmapped": 45
  },
- "finishedAt": "2026-09-25T00:13:48.247Z"
+ "finishedAt": "2026-09-25T02:37:59.124Z"
 }
 {
  "ok": true,
@@ -221,10 +221,10 @@
  }
 }
 ✓ src/accumulated-history.js — 188 market(s), 13679 bar(s), 13069.4 KB
-✓ src/forecast-data.js — 9 location(s), 308 snapshot(s), 615.3 KB
+✓ src/forecast-data.js — 9 location(s), 317 snapshot(s), 633.0 KB
 ✓ src/fda-signal-data.js — 6 subject(s), 110 snapshot(s), 79.1 KB
-✓ src/mlb-signal-data.js — 6 date file(s), 77 game(s), 267 state row(s), 172.4 KB
-✓ src/espn-signal-data.js — 7 league(s), 59 event(s), 5026.8 KB
+✓ src/mlb-signal-data.js — 6 date file(s), 77 game(s), 273 state row(s), 174.7 KB
+✓ src/espn-signal-data.js — 7 league(s), 59 event(s), 5076.1 KB
 ✓ src/mlb-pregame-data.js — 0 date file(s), 0 row(s), 2.1 KB (no predictions yet — MLBPreGame_ModelEdge abstains)
 ✓ src/form4-signal-data.js — 0 issuer(s), 0 filing(s), 1.3 KB (no archive yet — insider strategies abstain)
     JPMCEOCHANGE-27: 289 bar(s) + market object

@@ -16,7 +16,8 @@
   "2026-09-24T07:56:55.930Z",
   "2026-09-24T18:48:04.492Z",
   "2026-09-24T21:55:36.012Z",
-  "2026-09-25T00:13:47.229Z"
+  "2026-09-25T00:13:47.229Z",
+  "2026-09-25T02:37:57.867Z"
  ],
  "events": {
   "401872948": {
@@ -60,10 +61,30 @@
       "home": "1-1",
       "away": "0-2"
      }
+    },
+    {
+     "captured_at": "2026-09-25T02:37:57.867Z",
+     "last_seen_at": "2026-09-25T02:37:57.867Z",
+     "fp": "in|4|15|7,24|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 4,
+     "clock": 900,
+     "displayClock": "15:00",
+     "scores": {
+      "home": 7,
+      "away": 24
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "0-2"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-09-25T00:13:47.229Z",
+ "last_ingested_at": "2026-09-25T02:37:57.867Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260924"
 }
