@@ -1728,11 +1728,46 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.7900"
       }
+    },
+    {
+      "end_period_ts": 1790316000,
+      "open_interest_fp": "152100.00",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "9351.91",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
     {
       "captured_at": "2026-09-25T05:17:39.641Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP24UTAVGK-UTA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-25T08:10:22.503Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP24UTAVGK-UTA/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -1767,8 +1802,8 @@
     "open_interest_fp": "152100.00",
     "open_time": "2026-09-21T04:05:00Z",
     "previous_price_dollars": "0.4000",
-    "previous_yes_ask_dollars": "0.4000",
-    "previous_yes_bid_dollars": "0.3600",
+    "previous_yes_ask_dollars": "0.4400",
+    "previous_yes_bid_dollars": "0.3500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1797,9 +1832,9 @@
     "yes_sub_title": "Utah"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP24UTAVGK-UTA",
-  "market_captured_at": "2026-09-25T05:17:38.941Z",
+  "market_captured_at": "2026-09-25T08:10:21.862Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-25T05:17:39.594Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP24UTAVGK-UTA/candlesticks?start_ts=1789877100&end_ts=1790313459&period_interval=60"
+  "last_ingested_at": "2026-09-25T08:10:22.485Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP24UTAVGK-UTA/candlesticks?start_ts=1790312401&end_ts=1790323822&period_interval=60"
 }

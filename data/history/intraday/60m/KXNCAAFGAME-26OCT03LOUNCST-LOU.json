@@ -1870,6 +1870,71 @@
         "low_dollars": "0.7800",
         "open_dollars": "0.7800"
       }
+    },
+    {
+      "end_period_ts": 1790316000,
+      "open_interest_fp": "18734.21",
+      "price": {
+        "close_dollars": "0.8200",
+        "high_dollars": "0.8700",
+        "low_dollars": "0.8200",
+        "mean_dollars": "0.8559",
+        "open_dollars": "0.8300",
+        "previous_dollars": "0.7900"
+      },
+      "volume_fp": "116.81",
+      "yes_ask": {
+        "close_dollars": "0.8100",
+        "high_dollars": "0.8800",
+        "low_dollars": "0.8000",
+        "open_dollars": "0.8100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7800",
+        "high_dollars": "0.7800",
+        "low_dollars": "0.7800",
+        "open_dollars": "0.7800"
+      }
+    },
+    {
+      "end_period_ts": 1790319600,
+      "open_interest_fp": "18734.21",
+      "price": {
+        "previous_dollars": "0.8200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.8100",
+        "high_dollars": "0.8100",
+        "low_dollars": "0.8000",
+        "open_dollars": "0.8100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7800",
+        "high_dollars": "0.7800",
+        "low_dollars": "0.7800",
+        "open_dollars": "0.7800"
+      }
+    },
+    {
+      "end_period_ts": 1790323200,
+      "open_interest_fp": "18734.21",
+      "price": {
+        "previous_dollars": "0.8200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.8100",
+        "high_dollars": "0.8100",
+        "low_dollars": "0.8000",
+        "open_dollars": "0.8100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7800",
+        "high_dollars": "0.7800",
+        "low_dollars": "0.7800",
+        "open_dollars": "0.7800"
+      }
     }
   ],
   "books": [
@@ -2964,6 +3029,230 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T08:10:31.317Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03LOUNCST-LOU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1416053.00"
+            ],
+            [
+              "0.0200",
+              "56130.00"
+            ],
+            [
+              "0.0300",
+              "82769.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "49402.00"
+            ],
+            [
+              "0.0600",
+              "33854.00"
+            ],
+            [
+              "0.0700",
+              "28648.00"
+            ],
+            [
+              "0.0800",
+              "16427.00"
+            ],
+            [
+              "0.0900",
+              "13223.00"
+            ],
+            [
+              "0.1000",
+              "4823.00"
+            ],
+            [
+              "0.1100",
+              "1316.00"
+            ],
+            [
+              "0.1200",
+              "154.00"
+            ],
+            [
+              "0.1600",
+              "3522.00"
+            ],
+            [
+              "0.1700",
+              "12266.67"
+            ],
+            [
+              "0.1800",
+              "69.00"
+            ],
+            [
+              "0.1900",
+              "141.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1745577.00"
+            ],
+            [
+              "0.0200",
+              "1856.00"
+            ],
+            [
+              "0.0300",
+              "129243.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "72578.00"
+            ],
+            [
+              "0.0700",
+              "43289.00"
+            ],
+            [
+              "0.1100",
+              "130635.00"
+            ],
+            [
+              "0.1200",
+              "25519.00"
+            ],
+            [
+              "0.1500",
+              "50637.00"
+            ],
+            [
+              "0.1700",
+              "16166.00"
+            ],
+            [
+              "0.1900",
+              "16118.00"
+            ],
+            [
+              "0.2100",
+              "33351.00"
+            ],
+            [
+              "0.2200",
+              "14148.00"
+            ],
+            [
+              "0.2400",
+              "11864.00"
+            ],
+            [
+              "0.2600",
+              "23778.00"
+            ],
+            [
+              "0.2700",
+              "7698.00"
+            ],
+            [
+              "0.2900",
+              "7689.00"
+            ],
+            [
+              "0.3100",
+              "18778.00"
+            ],
+            [
+              "0.3200",
+              "4987.00"
+            ],
+            [
+              "0.3400",
+              "2455.00"
+            ],
+            [
+              "0.3500",
+              "2455.00"
+            ],
+            [
+              "0.3600",
+              "15454.00"
+            ],
+            [
+              "0.3700",
+              "3959.00"
+            ],
+            [
+              "0.3800",
+              "1331.00"
+            ],
+            [
+              "0.3900",
+              "966.00"
+            ],
+            [
+              "0.4000",
+              "546.00"
+            ],
+            [
+              "0.4100",
+              "336.00"
+            ],
+            [
+              "0.4200",
+              "112.00"
+            ],
+            [
+              "0.4400",
+              "1.00"
+            ],
+            [
+              "0.4700",
+              "1.00"
+            ],
+            [
+              "0.5000",
+              "150.00"
+            ],
+            [
+              "0.5500",
+              "100.00"
+            ],
+            [
+              "0.6800",
+              "1465.00"
+            ],
+            [
+              "0.6900",
+              "63.00"
+            ],
+            [
+              "0.7500",
+              "25.00"
+            ],
+            [
+              "0.7600",
+              "3.00"
+            ],
+            [
+              "0.7800",
+              "1.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2979,20 +3268,20 @@
     "expected_expiration_time": "2026-10-03T20:00:00Z",
     "expiration_time": "2026-10-05T17:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.7900",
+    "last_price_dollars": "0.8200",
     "latest_expiration_time": "2026-10-05T17:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.2200",
-    "no_bid_dollars": "0.1700",
+    "no_bid_dollars": "0.1900",
     "no_sub_title": "Louisville",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-03T20:00:00Z",
-    "open_interest_fp": "18639.19",
+    "open_interest_fp": "18734.21",
     "open_time": "2026-09-19T19:08:00Z",
     "previous_price_dollars": "0.7800",
-    "previous_yes_ask_dollars": "0.8500",
-    "previous_yes_bid_dollars": "0.7800",
+    "previous_yes_ask_dollars": "0.8600",
+    "previous_yes_bid_dollars": "0.7500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3010,17 +3299,17 @@
     "ticker": "KXNCAAFGAME-26OCT03LOUNCST-LOU",
     "title": "Louisville wins",
     "updated_time": "2026-09-23T04:13:07.377355Z",
-    "volume_24h_fp": "24.68",
-    "volume_fp": "18673.20",
-    "yes_ask_dollars": "0.8300",
-    "yes_ask_size_fp": "28.00",
+    "volume_24h_fp": "141.49",
+    "volume_fp": "18790.01",
+    "yes_ask_dollars": "0.8100",
+    "yes_ask_size_fp": "141.00",
     "yes_bid_dollars": "0.7800",
     "yes_bid_size_fp": "1.00",
     "yes_sub_title": "Louisville"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03LOUNCST-LOU",
-  "market_captured_at": "2026-09-25T05:17:48.373Z",
+  "market_captured_at": "2026-09-25T08:10:30.678Z",
   "status": "active",
-  "last_ingested_at": "2026-09-25T05:17:49.022Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03LOUNCST-LOU/candlesticks?start_ts=1790280001&end_ts=1790313468&period_interval=60"
+  "last_ingested_at": "2026-09-25T08:10:31.299Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03LOUNCST-LOU/candlesticks?start_ts=1790301601&end_ts=1790323830&period_interval=60"
 }

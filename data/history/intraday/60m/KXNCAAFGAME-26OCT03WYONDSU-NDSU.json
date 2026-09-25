@@ -1910,6 +1910,66 @@
         "low_dollars": "0.8500",
         "open_dollars": "0.8700"
       }
+    },
+    {
+      "end_period_ts": 1790316000,
+      "open_interest_fp": "6386.58",
+      "price": {
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8600",
+        "high_dollars": "0.8700",
+        "low_dollars": "0.8500",
+        "open_dollars": "0.8700"
+      }
+    },
+    {
+      "end_period_ts": 1790319600,
+      "open_interest_fp": "6386.58",
+      "price": {
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9100",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8600",
+        "high_dollars": "0.8700",
+        "low_dollars": "0.8500",
+        "open_dollars": "0.8600"
+      }
+    },
+    {
+      "end_period_ts": 1790323200,
+      "open_interest_fp": "6386.58",
+      "price": {
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9100",
+        "low_dollars": "0.9000",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8600",
+        "high_dollars": "0.8700",
+        "low_dollars": "0.8500",
+        "open_dollars": "0.8600"
+      }
     }
   ],
   "books": [
@@ -2952,6 +3012,122 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T08:10:35.107Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03WYONDSU-NDSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "114881.00"
+            ],
+            [
+              "0.0200",
+              "2311.00"
+            ],
+            [
+              "0.0300",
+              "544.00"
+            ],
+            [
+              "0.0400",
+              "526.74"
+            ],
+            [
+              "0.0500",
+              "4144.75"
+            ],
+            [
+              "0.0600",
+              "84.00"
+            ],
+            [
+              "0.0700",
+              "98.78"
+            ],
+            [
+              "0.0900",
+              "3102.87"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "114585.00"
+            ],
+            [
+              "0.0200",
+              "1856.00"
+            ],
+            [
+              "0.0300",
+              "597.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1800",
+              "730.00"
+            ],
+            [
+              "0.2000",
+              "24.00"
+            ],
+            [
+              "0.2200",
+              "343.00"
+            ],
+            [
+              "0.2400",
+              "512.00"
+            ],
+            [
+              "0.4400",
+              "734.00"
+            ],
+            [
+              "0.4500",
+              "39.00"
+            ],
+            [
+              "0.4600",
+              "104.00"
+            ],
+            [
+              "0.5900",
+              "15.00"
+            ],
+            [
+              "0.7600",
+              "15.00"
+            ],
+            [
+              "0.8300",
+              "51.45"
+            ],
+            [
+              "0.8400",
+              "125.00"
+            ],
+            [
+              "0.8500",
+              "270.53"
+            ],
+            [
+              "0.8600",
+              "204.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2972,14 +3148,14 @@
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.1400",
-    "no_bid_dollars": "0.0700",
+    "no_bid_dollars": "0.0900",
     "no_sub_title": "North Dakota St.",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-03T22:30:00Z",
     "open_interest_fp": "6386.58",
     "open_time": "2026-09-19T22:08:00Z",
     "previous_price_dollars": "0.9100",
-    "previous_yes_ask_dollars": "0.9100",
+    "previous_yes_ask_dollars": "0.9200",
     "previous_yes_bid_dollars": "0.8600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -2998,17 +3174,17 @@
     "ticker": "KXNCAAFGAME-26OCT03WYONDSU-NDSU",
     "title": "North Dakota St. wins",
     "updated_time": "2026-09-19T22:08:01.218781Z",
-    "volume_24h_fp": "56.59",
+    "volume_24h_fp": "54.41",
     "volume_fp": "6390.05",
-    "yes_ask_dollars": "0.9300",
-    "yes_ask_size_fp": "2591.78",
+    "yes_ask_dollars": "0.9100",
+    "yes_ask_size_fp": "3102.87",
     "yes_bid_dollars": "0.8600",
     "yes_bid_size_fp": "204.00",
     "yes_sub_title": "North Dakota St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03WYONDSU-NDSU",
-  "market_captured_at": "2026-09-25T05:17:52.417Z",
+  "market_captured_at": "2026-09-25T08:10:34.470Z",
   "status": "active",
-  "last_ingested_at": "2026-09-25T05:17:53.067Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03WYONDSU-NDSU/candlesticks?start_ts=1790280001&end_ts=1790313472&period_interval=60"
+  "last_ingested_at": "2026-09-25T08:10:35.089Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03WYONDSU-NDSU/candlesticks?start_ts=1790312401&end_ts=1790323834&period_interval=60"
 }
