@@ -10,7 +10,8 @@
   ]
  },
  "captures": [
-  "2026-09-25T08:23:16.989Z"
+  "2026-09-25T08:23:16.989Z",
+  "2026-09-25T19:38:12.777Z"
  ],
  "games": {
   "822681": {
@@ -42,7 +43,7 @@
    "states": [
     {
      "captured_at": "2026-09-25T08:23:16.989Z",
-     "last_seen_at": "2026-09-25T08:23:16.989Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -80,7 +81,10 @@
      "id": 666157,
      "fullName": "Nick Lodolo"
     },
-    "home": null
+    "home": {
+     "id": 667755,
+     "fullName": "José Soriano"
+    }
    },
    "firstCapturedAt": "2026-09-25T08:23:16.989Z",
    "states": [
@@ -90,6 +94,21 @@
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
+     "inning": null,
+     "inningState": null,
+     "runs": {
+      "away": null,
+      "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-25T19:38:12.777Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
      "inning": null,
      "inningState": null,
      "runs": {
@@ -133,7 +152,7 @@
    "states": [
     {
      "captured_at": "2026-09-25T08:23:16.989Z",
-     "last_seen_at": "2026-09-25T08:23:16.989Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -180,7 +199,7 @@
    "states": [
     {
      "captured_at": "2026-09-25T08:23:16.989Z",
-     "last_seen_at": "2026-09-25T08:23:16.989Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -224,7 +243,7 @@
    "states": [
     {
      "captured_at": "2026-09-25T08:23:16.989Z",
-     "last_seen_at": "2026-09-25T08:23:16.989Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -283,6 +302,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-25T19:38:12.777Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": null,
+     "inningState": null,
+     "runs": {
+      "away": null,
+      "home": null
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
@@ -293,6 +327,50 @@
    "gameType": "R",
    "doubleHeader": "Y",
    "gameNumber": 2,
+   "away": {
+    "id": 110,
+    "abbreviation": "BAL",
+    "name": "Baltimore Orioles"
+   },
+   "home": {
+    "id": 147,
+    "abbreviation": "NYY",
+    "name": "New York Yankees"
+   },
+   "venue": "Yankee Stadium",
+   "probablePitchers": {
+    "away": {
+     "id": 687064,
+     "fullName": "Brandon Young"
+    },
+    "home": null
+   },
+   "firstCapturedAt": "2026-09-25T08:23:16.989Z",
+   "states": [
+    {
+     "captured_at": "2026-09-25T08:23:16.989Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Scheduled",
+     "codedGameState": "S",
+     "inning": null,
+     "inningState": null,
+     "runs": {
+      "away": null,
+      "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    }
+   ]
+  },
+  "823491": {
+   "gamePk": 823491,
+   "gameDate": "2026-09-25T20:05:00Z",
+   "officialDate": "2026-09-25",
+   "gameType": "R",
+   "doubleHeader": "Y",
+   "gameNumber": 1,
    "away": {
     "id": 110,
     "abbreviation": "BAL",
@@ -330,47 +408,18 @@
      },
      "winner": null,
      "url_ref": 0
-    }
-   ]
-  },
-  "823491": {
-   "gamePk": 823491,
-   "gameDate": "2026-09-25T20:05:00Z",
-   "officialDate": "2026-09-25",
-   "gameType": "R",
-   "doubleHeader": "Y",
-   "gameNumber": 1,
-   "away": {
-    "id": 110,
-    "abbreviation": "BAL",
-    "name": "Baltimore Orioles"
-   },
-   "home": {
-    "id": 147,
-    "abbreviation": "NYY",
-    "name": "New York Yankees"
-   },
-   "venue": "Yankee Stadium",
-   "probablePitchers": {
-    "away": {
-     "id": 687064,
-     "fullName": "Brandon Young"
     },
-    "home": null
-   },
-   "firstCapturedAt": "2026-09-25T08:23:16.989Z",
-   "states": [
     {
-     "captured_at": "2026-09-25T08:23:16.989Z",
-     "last_seen_at": "2026-09-25T08:23:16.989Z",
+     "captured_at": "2026-09-25T19:38:12.777Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
      "abstractGameState": "Preview",
-     "detailedState": "Scheduled",
-     "codedGameState": "S",
-     "inning": null,
-     "inningState": null,
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
      "runs": {
-      "away": null,
-      "home": null
+      "away": 0,
+      "home": 0
      },
      "winner": null,
      "url_ref": 0
@@ -409,7 +458,7 @@
    "states": [
     {
      "captured_at": "2026-09-25T08:23:16.989Z",
-     "last_seen_at": "2026-09-25T08:23:16.989Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -456,7 +505,7 @@
    "states": [
     {
      "captured_at": "2026-09-25T08:23:16.989Z",
-     "last_seen_at": "2026-09-25T08:23:16.989Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -490,7 +539,10 @@
    },
    "venue": "loanDepot park",
    "probablePitchers": {
-    "away": null,
+    "away": {
+     "id": 678061,
+     "fullName": "Ray Kerr"
+    },
     "home": {
      "id": 691587,
      "fullName": "Eury Pérez"
@@ -504,6 +556,21 @@
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
+     "inning": null,
+     "inningState": null,
+     "runs": {
+      "away": null,
+      "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-25T19:38:12.777Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
      "inning": null,
      "inningState": null,
      "runs": {
@@ -559,6 +626,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-25T19:38:12.777Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": null,
+     "inningState": null,
+     "runs": {
+      "away": null,
+      "home": null
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
@@ -606,6 +688,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-25T19:38:12.777Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
@@ -641,7 +738,7 @@
    "states": [
     {
      "captured_at": "2026-09-25T08:23:16.989Z",
-     "last_seen_at": "2026-09-25T08:23:16.989Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -700,12 +797,27 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-09-25T19:38:12.777Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 9,
+     "inningState": "Top",
+     "runs": {
+      "away": 3,
+      "home": 4
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
   "824706": {
    "gamePk": 824706,
-   "gameDate": "2026-09-25T22:05:00Z",
+   "gameDate": "2026-09-25T21:35:00Z",
    "officialDate": "2026-09-25",
    "gameType": "R",
    "doubleHeader": "S",
@@ -735,7 +847,7 @@
    "states": [
     {
      "captured_at": "2026-09-25T08:23:16.989Z",
-     "last_seen_at": "2026-09-25T08:23:16.989Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -782,7 +894,7 @@
    "states": [
     {
      "captured_at": "2026-09-25T08:23:16.989Z",
-     "last_seen_at": "2026-09-25T08:23:16.989Z",
+     "last_seen_at": "2026-09-25T19:38:12.777Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
