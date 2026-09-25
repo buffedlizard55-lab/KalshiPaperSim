@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-09-25T08:15:58.543Z",
+ "startedAt": "2026-09-25T19:06:08.064Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -49,7 +49,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 70
+     "playerRecords": 68
     },
     "scoreboard": {
      "2026-09-25": {
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 93
+     "playerRecords": 96
     },
     "scoreboard": {
      "2026-09-25": {
@@ -208,7 +208,7 @@
   "matched": 53,
   "unmapped": 45
  },
- "finishedAt": "2026-09-25T08:16:00.371Z"
+ "finishedAt": "2026-09-25T19:06:09.139Z"
 }
 {
  "ok": true,
@@ -220,11 +220,11 @@
   "codeRows": 98
  }
 }
-✓ src/accumulated-history.js — 188 market(s), 13793 bar(s), 13621.2 KB
-✓ src/forecast-data.js — 9 location(s), 317 snapshot(s), 633.0 KB
-✓ src/fda-signal-data.js — 6 subject(s), 116 snapshot(s), 83.0 KB
-✓ src/mlb-signal-data.js — 6 date file(s), 77 game(s), 280 state row(s), 177.3 KB
-✓ src/espn-signal-data.js — 7 league(s), 138 event(s), 6232.6 KB
+✓ src/accumulated-history.js — 188 market(s), 13793 bar(s), 13633.6 KB
+✓ src/forecast-data.js — 9 location(s), 335 snapshot(s), 668.4 KB
+✓ src/fda-signal-data.js — 6 subject(s), 122 snapshot(s), 87.0 KB
+✓ src/mlb-signal-data.js — 7 date file(s), 94 game(s), 300 state row(s), 198.2 KB
+✓ src/espn-signal-data.js — 7 league(s), 138 event(s), 6301.7 KB
 ✓ src/mlb-pregame-data.js — 0 date file(s), 0 row(s), 2.1 KB (no predictions yet — MLBPreGame_ModelEdge abstains)
 ✓ src/form4-signal-data.js — 0 issuer(s), 0 filing(s), 1.3 KB (no archive yet — insider strategies abstain)
     JPMCEOCHANGE-27: 290 bar(s) + market object
@@ -416,13 +416,13 @@
     KXTESLACEOCHANGE-26: 0 bar(s) + market object
     TESLACEOCHANGE-26: 400 bar(s) + market object
     intraday 1m: 529 market(s), 39906 shipped bar(s) (cap 400/market) from data/history/intraday/1m
-    intraday 60m: 477 market(s), 47606 shipped bar(s) (cap 400/market) from data/history/intraday/60m
-desk-data: 106 markets (97 open) · 1200 ladder captures · 7046 bars · 113 quoted-only · 1937 KB → src/desk-data.js
+    intraday 60m: 478 market(s), 47695 shipped bar(s) (cap 400/market) from data/history/intraday/60m
+desk-data: 106 markets (97 open) · 1206 ladder captures · 7049 bars · 113 quoted-only · 1940 KB → src/desk-data.js
 desk-data: 102 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
-desk-data: capture bound — the store holds 18429 ladders (9552 non-empty) in 31 batches; this module keeps 1200 ladders in 32 batches (31 store batch(es) represented, 0 not) — 0 season round stamp(s) and 17228 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
+desk-data: capture bound — the store holds 18735 ladders (9597 non-empty) in 32 batches; this module keeps 1206 ladders in 33 batches (32 store batch(es) represented, 0 not) — 0 season round stamp(s) and 17528 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
   wrote VERIFICATION.md (99.5 KB)
   wrote IRREGULARITIES.md (123.1 KB)
-  refreshed README.md AUTO blocks
+  README.md AUTO blocks already up to date
 Docs generated.
 Building docs/ distribution for GitHub Pages...
 Build completed: docs/ ready for GitHub Pages hosting.
