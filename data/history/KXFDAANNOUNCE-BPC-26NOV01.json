@@ -6783,6 +6783,122 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T20:07:36.121Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2222.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.3300",
+              "550.00"
+            ],
+            [
+              "0.3400",
+              "1017.00"
+            ],
+            [
+              "0.6400",
+              "8.21"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ],
+            [
+              "0.9100",
+              "500.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1015.45"
+            ],
+            [
+              "0.0200",
+              "1050.00"
+            ],
+            [
+              "0.0400",
+              "1.78"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-25T20:17:38.642Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2222.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.3400",
+              "1017.00"
+            ],
+            [
+              "0.3500",
+              "550.00"
+            ],
+            [
+              "0.6400",
+              "8.21"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ],
+            [
+              "0.9000",
+              "5.00"
+            ],
+            [
+              "0.9100",
+              "500.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1015.45"
+            ],
+            [
+              "0.0200",
+              "1050.00"
+            ],
+            [
+              "0.0400",
+              "1.78"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6802,8 +6918,8 @@
     "latest_expiration_time": "2026-11-08T15:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9500",
-    "no_bid_dollars": "0.8000",
+    "no_ask_dollars": "0.9600",
+    "no_bid_dollars": "0.9100",
     "no_sub_title": "Before November",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-04-16T02:00:00Z",
@@ -6831,15 +6947,15 @@
     "updated_time": "2026-04-20T15:03:22.743027Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "14584.77",
-    "yes_ask_dollars": "0.2000",
-    "yes_ask_size_fp": "3.00",
-    "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "5.00",
+    "yes_ask_dollars": "0.0900",
+    "yes_ask_size_fp": "500.00",
+    "yes_bid_dollars": "0.0400",
+    "yes_bid_size_fp": "1.78",
     "yes_sub_title": "Before November"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01",
-  "market_captured_at": "2026-09-25T12:03:14.225Z",
+  "market_captured_at": "2026-09-25T20:17:37.992Z",
   "status": "active",
-  "last_ingested_at": "2026-09-25T12:03:14.893Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26NOV01/candlesticks?start_ts=1790308801&end_ts=1790337794&period_interval=1440"
+  "last_ingested_at": "2026-09-25T20:17:38.618Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26NOV01/candlesticks?start_ts=1790308801&end_ts=1790367458&period_interval=1440"
 }

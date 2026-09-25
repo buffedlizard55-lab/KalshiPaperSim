@@ -6198,6 +6198,194 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T20:10:24.360Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-SJ/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4481538.41"
+            ],
+            [
+              "0.0200",
+              "500.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "6.00"
+            ],
+            [
+              "0.0600",
+              "953128.00"
+            ],
+            [
+              "0.1000",
+              "225.03"
+            ],
+            [
+              "0.1100",
+              "519934.85"
+            ],
+            [
+              "0.1800",
+              "411265.00"
+            ],
+            [
+              "0.2400",
+              "356.30"
+            ],
+            [
+              "0.2500",
+              "294578.00"
+            ],
+            [
+              "0.2800",
+              "281.29"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3200",
+              "240632.00"
+            ],
+            [
+              "0.3900",
+              "131642.00"
+            ],
+            [
+              "0.4600",
+              "325237.27"
+            ],
+            [
+              "0.4800",
+              "18.75"
+            ],
+            [
+              "0.5000",
+              "575.49"
+            ],
+            [
+              "0.5300",
+              "57192.00"
+            ],
+            [
+              "0.5700",
+              "138462.74"
+            ],
+            [
+              "0.5800",
+              "375.05"
+            ],
+            [
+              "0.5900",
+              "2147.00"
+            ],
+            [
+              "0.6300",
+              "28.58"
+            ],
+            [
+              "0.6400",
+              "1560.69"
+            ],
+            [
+              "0.6700",
+              "33477.00"
+            ],
+            [
+              "0.6900",
+              "59663.00"
+            ],
+            [
+              "0.7600",
+              "25177.00"
+            ],
+            [
+              "0.8000",
+              "1264.30"
+            ],
+            [
+              "0.8100",
+              "15707.00"
+            ],
+            [
+              "0.8200",
+              "1007.26"
+            ],
+            [
+              "0.8400",
+              "1925.00"
+            ],
+            [
+              "0.8500",
+              "26.01"
+            ],
+            [
+              "0.8700",
+              "100.00"
+            ],
+            [
+              "0.8800",
+              "2271.28"
+            ],
+            [
+              "0.8900",
+              "1150.00"
+            ],
+            [
+              "0.9000",
+              "1014.52"
+            ],
+            [
+              "0.9200",
+              "9328.94"
+            ],
+            [
+              "0.9300",
+              "13123.87"
+            ],
+            [
+              "0.9400",
+              "9797.70"
+            ],
+            [
+              "0.9500",
+              "2140.78"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "9230.00"
+            ],
+            [
+              "0.0200",
+              "774.03"
+            ],
+            [
+              "0.0300",
+              "2485.45"
+            ],
+            [
+              "0.0400",
+              "2579.20"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6222,9 +6410,9 @@
     "no_sub_title": "San Jose Sharks",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
-    "open_interest_fp": "158616.57",
+    "open_interest_fp": "160714.59",
     "open_time": "2026-06-15T03:40:00Z",
-    "previous_price_dollars": "0.0500",
+    "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0500",
     "previous_yes_bid_dollars": "0.0400",
     "price_level_structure": "linear_cent",
@@ -6244,17 +6432,17 @@
     "ticker": "KXNHL-27-SJ",
     "title": "Will San Jose Sharks win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.15927Z",
-    "volume_24h_fp": "4253.26",
-    "volume_fp": "166369.60",
+    "volume_24h_fp": "6143.28",
+    "volume_fp": "168467.62",
     "yes_ask_dollars": "0.0500",
-    "yes_ask_size_fp": "3937.21",
+    "yes_ask_size_fp": "2140.78",
     "yes_bid_dollars": "0.0400",
-    "yes_bid_size_fp": "2274.46",
+    "yes_bid_size_fp": "2579.20",
     "yes_sub_title": "San Jose Sharks"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-SJ",
-  "market_captured_at": "2026-09-25T11:55:28.872Z",
+  "market_captured_at": "2026-09-25T20:10:23.809Z",
   "status": "active",
-  "last_ingested_at": "2026-09-25T11:55:29.438Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-SJ/candlesticks?start_ts=1790308801&end_ts=1790337329&period_interval=1440"
+  "last_ingested_at": "2026-09-25T20:10:24.335Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-SJ/candlesticks?start_ts=1790308801&end_ts=1790367024&period_interval=1440"
 }

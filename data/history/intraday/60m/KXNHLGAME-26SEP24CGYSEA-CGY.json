@@ -1940,6 +1940,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T20:14:20.120Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP24CGYSEA-CGY/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1966,9 +1976,9 @@
     "occurrence_datetime": "2026-09-25T04:40:00Z",
     "open_interest_fp": "151033.08",
     "open_time": "2026-09-21T04:05:00Z",
-    "previous_price_dollars": "0.2900",
-    "previous_yes_ask_dollars": "0.3300",
-    "previous_yes_bid_dollars": "0.3100",
+    "previous_price_dollars": "0.2800",
+    "previous_yes_ask_dollars": "0.2800",
+    "previous_yes_bid_dollars": "0.2600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1988,7 +1998,7 @@
     "ticker": "KXNHLGAME-26SEP24CGYSEA-CGY",
     "title": "Calgary wins",
     "updated_time": "2026-09-25T05:58:18.307612Z",
-    "volume_24h_fp": "230418.16",
+    "volume_24h_fp": "229280.19",
     "volume_fp": "231022.14",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1997,9 +2007,9 @@
     "yes_sub_title": "Calgary"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP24CGYSEA-CGY",
-  "market_captured_at": "2026-09-25T11:59:39.906Z",
+  "market_captured_at": "2026-09-25T20:14:19.469Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-25T11:59:40.571Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP24CGYSEA-CGY/candlesticks?start_ts=1790316001&end_ts=1790337580&period_interval=60",
+  "last_ingested_at": "2026-09-25T20:14:20.096Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP24CGYSEA-CGY/candlesticks?start_ts=1790316001&end_ts=1790367259&period_interval=60",
   "result": "no"
 }
