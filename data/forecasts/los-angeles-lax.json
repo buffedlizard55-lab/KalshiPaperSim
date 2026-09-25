@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/CAC037",
       "relativeLocation": "Los Angeles, CA",
       "timeZone": "America/Los_Angeles",
-      "resolvedAt": "2026-09-25T01:35:16.754Z",
+      "resolvedAt": "2026-09-25T12:49:02.216Z",
       "pointsUrl": "https://api.weather.gov/points/33.9425,-118.4081"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -2324,6 +2324,72 @@
         {
           "date": "2026-10-01",
           "highF": 82,
+          "periodName": "Thursday",
+          "startTime": "2026-10-01T06:00:00-07:00",
+          "endTime": "2026-10-01T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 0
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-25T12:49:02.216Z",
+      "points_url": "https://api.weather.gov/points/33.9425,-118.4081",
+      "forecast_url": "https://api.weather.gov/gridpoints/LOX/148,41/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-25T06:26:38+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-25",
+          "highF": 79,
+          "periodName": "Friday",
+          "startTime": "2026-09-25T06:00:00-07:00",
+          "endTime": "2026-09-25T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 1
+        },
+        {
+          "date": "2026-09-26",
+          "highF": 79,
+          "periodName": "Saturday",
+          "startTime": "2026-09-26T06:00:00-07:00",
+          "endTime": "2026-09-26T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 1
+        },
+        {
+          "date": "2026-09-27",
+          "highF": 79,
+          "periodName": "Sunday",
+          "startTime": "2026-09-27T06:00:00-07:00",
+          "endTime": "2026-09-27T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 2
+        },
+        {
+          "date": "2026-09-28",
+          "highF": 76,
+          "periodName": "Monday",
+          "startTime": "2026-09-28T06:00:00-07:00",
+          "endTime": "2026-09-28T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 3
+        },
+        {
+          "date": "2026-09-29",
+          "highF": 82,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-29T06:00:00-07:00",
+          "endTime": "2026-09-29T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 9
+        },
+        {
+          "date": "2026-09-30",
+          "highF": 83,
+          "periodName": "Wednesday",
+          "startTime": "2026-09-30T06:00:00-07:00",
+          "endTime": "2026-09-30T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 2
+        },
+        {
+          "date": "2026-10-01",
+          "highF": 81,
           "periodName": "Thursday",
           "startTime": "2026-10-01T06:00:00-07:00",
           "endTime": "2026-10-01T18:00:00-07:00",
