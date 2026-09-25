@@ -1059,6 +1059,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T11:58:07.432Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP23-B65.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1115,9 +1125,9 @@
     "yes_sub_title": "65° to 66°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26SEP23-B65.5",
-  "market_captured_at": "2026-09-25T08:09:00.086Z",
+  "market_captured_at": "2026-09-25T11:58:06.705Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-25T08:09:00.705Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP23-B65.5/candlesticks?start_ts=1790229601&end_ts=1790323740&period_interval=60",
+  "last_ingested_at": "2026-09-25T11:58:07.368Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26SEP23-B65.5/candlesticks?start_ts=1790229601&end_ts=1790337487&period_interval=60",
   "result": "no"
 }

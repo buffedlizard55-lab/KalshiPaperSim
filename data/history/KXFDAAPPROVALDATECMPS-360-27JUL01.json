@@ -7527,6 +7527,86 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T12:03:23.430Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3346.93"
+            ],
+            [
+              "0.0200",
+              "1173.00"
+            ],
+            [
+              "0.0300",
+              "1113.38"
+            ],
+            [
+              "0.0600",
+              "200.00"
+            ],
+            [
+              "0.0700",
+              "141.16"
+            ],
+            [
+              "0.1400",
+              "5.19"
+            ],
+            [
+              "0.1500",
+              "43.70"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "4494.00"
+            ],
+            [
+              "0.0400",
+              "888.00"
+            ],
+            [
+              "0.0500",
+              "121.00"
+            ],
+            [
+              "0.0700",
+              "804.00"
+            ],
+            [
+              "0.0800",
+              "617.00"
+            ],
+            [
+              "0.0900",
+              "10.00"
+            ],
+            [
+              "0.2500",
+              "108.72"
+            ],
+            [
+              "0.2600",
+              "60.00"
+            ],
+            [
+              "0.3600",
+              "5.00"
+            ],
+            [
+              "0.5200",
+              "2.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -7546,15 +7626,15 @@
     "latest_expiration_time": "2027-07-08T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.4600",
-    "no_bid_dollars": "0.1400",
+    "no_ask_dollars": "0.4800",
+    "no_bid_dollars": "0.1500",
     "no_sub_title": "Before July 2027",
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "3300.16",
     "open_time": "2026-03-24T14:00:00Z",
     "previous_price_dollars": "0.8300",
-    "previous_yes_ask_dollars": "0.9300",
-    "previous_yes_bid_dollars": "0.3700",
+    "previous_yes_ask_dollars": "0.8700",
+    "previous_yes_bid_dollars": "0.7900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -7574,15 +7654,15 @@
     "updated_time": "2026-04-09T10:44:35.684414Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "8645.35",
-    "yes_ask_dollars": "0.8600",
-    "yes_ask_size_fp": "5.19",
-    "yes_bid_dollars": "0.5400",
-    "yes_bid_size_fp": "3.00",
+    "yes_ask_dollars": "0.8500",
+    "yes_ask_size_fp": "43.70",
+    "yes_bid_dollars": "0.5200",
+    "yes_bid_size_fp": "2.00",
     "yes_sub_title": "Before July 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JUL01",
-  "market_captured_at": "2026-09-25T08:13:43.336Z",
+  "market_captured_at": "2026-09-25T12:03:22.699Z",
   "status": "active",
-  "last_ingested_at": "2026-09-25T08:13:43.955Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/candlesticks?start_ts=1790308801&end_ts=1790324023&period_interval=1440"
+  "last_ingested_at": "2026-09-25T12:03:23.366Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/candlesticks?start_ts=1790308801&end_ts=1790337803&period_interval=1440"
 }

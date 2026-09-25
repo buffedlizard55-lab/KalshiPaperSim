@@ -9107,7 +9107,7 @@
     "expiration_time": "2027-01-08T00:00:00Z",
     "expiration_value": "",
     "floor_strike": 32000,
-    "last_price_dollars": "0.0800",
+    "last_price_dollars": "0.0700",
     "latest_expiration_time": "2027-01-08T00:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -9115,11 +9115,11 @@
     "no_bid_dollars": "0.9200",
     "no_sub_title": "32,000 to 32,499.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "95966.59",
+    "open_interest_fp": "95938.47",
     "open_time": "2025-12-23T15:00:00Z",
     "previous_price_dollars": "0.0800",
     "previous_yes_ask_dollars": "0.0700",
-    "previous_yes_bid_dollars": "0.0500",
+    "previous_yes_bid_dollars": "0.0600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -9138,17 +9138,17 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-B32250",
     "title": "Will the Nasdaq-100 be between 32000 and 32499.99 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:46.424726Z",
-    "volume_24h_fp": "2164.92",
-    "volume_fp": "147700.26",
+    "volume_24h_fp": "2193.04",
+    "volume_fp": "147728.38",
     "yes_ask_dollars": "0.0800",
-    "yes_ask_size_fp": "1657.01",
+    "yes_ask_size_fp": "1685.01",
     "yes_bid_dollars": "0.0700",
-    "yes_bid_size_fp": "735.03",
+    "yes_bid_size_fp": "708.79",
     "yes_sub_title": "32,000 to 32,499.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32250",
-  "market_captured_at": "2026-09-25T08:05:09.100Z",
+  "market_captured_at": "2026-09-25T11:54:19.827Z",
   "status": "active",
-  "last_ingested_at": "2026-09-25T08:05:09.620Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B32250/candlesticks?start_ts=1790308801&end_ts=1790323509&period_interval=1440"
+  "last_ingested_at": "2026-09-25T11:54:20.393Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B32250/candlesticks?start_ts=1790308801&end_ts=1790337260&period_interval=1440"
 }

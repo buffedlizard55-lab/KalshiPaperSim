@@ -12025,6 +12025,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T12:01:58.555Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP24ATLGB-ATL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12073,7 +12083,7 @@
     "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
     "title": "Atlanta wins",
     "updated_time": "2026-09-25T03:23:29.811062Z",
-    "volume_24h_fp": "24515042.72",
+    "volume_24h_fp": "24159044.51",
     "volume_fp": "25143534.93",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12082,11 +12092,11 @@
     "yes_sub_title": "Atlanta"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP24ATLGB-ATL",
-  "market_captured_at": "2026-09-25T08:12:27.882Z",
+  "market_captured_at": "2026-09-25T12:01:57.826Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-25T08:12:28.501Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-ATL/candlesticks?start_ts=1790306341&end_ts=1790323948&period_interval=1",
+  "last_ingested_at": "2026-09-25T12:01:58.491Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-ATL/candlesticks?start_ts=1790306341&end_ts=1790337718&period_interval=1",
   "trims": [
     {
       "at": "2026-09-25T05:19:59.790Z",

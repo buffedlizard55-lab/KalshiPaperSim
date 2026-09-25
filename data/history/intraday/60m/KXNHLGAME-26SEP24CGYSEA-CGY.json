@@ -1930,6 +1930,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T11:59:40.635Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP24CGYSEA-CGY/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1957,7 +1967,7 @@
     "open_interest_fp": "151033.08",
     "open_time": "2026-09-21T04:05:00Z",
     "previous_price_dollars": "0.2900",
-    "previous_yes_ask_dollars": "0.3600",
+    "previous_yes_ask_dollars": "0.3300",
     "previous_yes_bid_dollars": "0.3100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -1987,9 +1997,9 @@
     "yes_sub_title": "Calgary"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP24CGYSEA-CGY",
-  "market_captured_at": "2026-09-25T08:10:23.123Z",
+  "market_captured_at": "2026-09-25T11:59:39.906Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-25T08:10:23.746Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP24CGYSEA-CGY/candlesticks?start_ts=1790312401&end_ts=1790323823&period_interval=60",
+  "last_ingested_at": "2026-09-25T11:59:40.571Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP24CGYSEA-CGY/candlesticks?start_ts=1790316001&end_ts=1790337580&period_interval=60",
   "result": "no"
 }

@@ -1857,6 +1857,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T11:59:42.029Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP24CGYSEA-SEA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1884,8 +1894,8 @@
     "open_interest_fp": "66257.55",
     "open_time": "2026-09-21T04:05:00Z",
     "previous_price_dollars": "0.7900",
-    "previous_yes_ask_dollars": "0.8000",
-    "previous_yes_bid_dollars": "0.6900",
+    "previous_yes_ask_dollars": "0.6900",
+    "previous_yes_bid_dollars": "0.6300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1914,9 +1924,9 @@
     "yes_sub_title": "Seattle"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP24CGYSEA-SEA",
-  "market_captured_at": "2026-09-25T08:10:24.385Z",
+  "market_captured_at": "2026-09-25T11:59:41.300Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-25T08:10:25.005Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP24CGYSEA-SEA/candlesticks?start_ts=1790312401&end_ts=1790323824&period_interval=60",
+  "last_ingested_at": "2026-09-25T11:59:41.966Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP24CGYSEA-SEA/candlesticks?start_ts=1790316001&end_ts=1790337581&period_interval=60",
   "result": "yes"
 }

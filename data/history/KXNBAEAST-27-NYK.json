@@ -8144,7 +8144,7 @@
     "expected_expiration_time": "2027-06-30T14:00:00Z",
     "expiration_time": "2029-06-29T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.2100",
+    "last_price_dollars": "0.2000",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -8175,17 +8175,17 @@
     "ticker": "KXNBAEAST-27-NYK",
     "title": "Will New York win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "133.24",
-    "volume_fp": "197373.46",
+    "volume_24h_fp": "176.34",
+    "volume_fp": "197416.56",
     "yes_ask_dollars": "0.2100",
-    "yes_ask_size_fp": "35834.40",
+    "yes_ask_size_fp": "35914.73",
     "yes_bid_dollars": "0.2000",
-    "yes_bid_size_fp": "3658.46",
+    "yes_bid_size_fp": "3615.36",
     "yes_sub_title": "New York"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-NYK",
-  "market_captured_at": "2026-09-25T08:05:23.104Z",
+  "market_captured_at": "2026-09-25T11:54:31.365Z",
   "status": "active",
-  "last_ingested_at": "2026-09-25T08:05:23.624Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-NYK/candlesticks?start_ts=1790308801&end_ts=1790323523&period_interval=1440"
+  "last_ingested_at": "2026-09-25T11:54:31.932Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-NYK/candlesticks?start_ts=1790308801&end_ts=1790337271&period_interval=1440"
 }

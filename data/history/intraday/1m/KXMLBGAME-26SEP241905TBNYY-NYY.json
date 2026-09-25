@@ -12005,6 +12005,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T12:01:36.815Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP241905TBNYY-NYY/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12031,9 +12041,9 @@
     "occurrence_datetime": "2026-09-25T02:05:00Z",
     "open_interest_fp": "986832.00",
     "open_time": "2026-09-21T23:25:00Z",
-    "previous_price_dollars": "0.5800",
+    "previous_price_dollars": "0.5900",
     "previous_yes_ask_dollars": "0.5900",
-    "previous_yes_bid_dollars": "0.5700",
+    "previous_yes_bid_dollars": "0.5800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12053,7 +12063,7 @@
     "ticker": "KXMLBGAME-26SEP241905TBNYY-NYY",
     "title": "New York Y wins",
     "updated_time": "2026-09-25T02:08:48.828354Z",
-    "volume_24h_fp": "2388692.35",
+    "volume_24h_fp": "2385269.84",
     "volume_fp": "2394126.50",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12062,11 +12072,11 @@
     "yes_sub_title": "New York Y"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP241905TBNYY-NYY",
-  "market_captured_at": "2026-09-25T08:12:08.544Z",
+  "market_captured_at": "2026-09-25T12:01:36.084Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-25T08:12:09.165Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP241905TBNYY-NYY/candlesticks?start_ts=1790302021&end_ts=1790323928&period_interval=1",
+  "last_ingested_at": "2026-09-25T12:01:36.751Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP241905TBNYY-NYY/candlesticks?start_ts=1790302021&end_ts=1790337696&period_interval=1",
   "trims": [
     {
       "at": "2026-09-25T05:19:37.414Z",

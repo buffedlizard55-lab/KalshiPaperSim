@@ -4940,6 +4940,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T11:59:12.705Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP24ATLGB-GB/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4988,7 +4998,7 @@
     "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
     "title": "Green Bay wins",
     "updated_time": "2026-09-25T03:23:29.811062Z",
-    "volume_24h_fp": "24834758.35",
+    "volume_24h_fp": "24782597.80",
     "volume_fp": "26115940.49",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -4997,11 +5007,11 @@
     "yes_sub_title": "Green Bay"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP24ATLGB-GB",
-  "market_captured_at": "2026-09-25T08:09:57.923Z",
+  "market_captured_at": "2026-09-25T11:59:11.977Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-25T08:09:58.542Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-GB/candlesticks?start_ts=1790308801&end_ts=1790323798&period_interval=60",
+  "last_ingested_at": "2026-09-25T11:59:12.642Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-GB/candlesticks?start_ts=1790308801&end_ts=1790337552&period_interval=60",
   "trims": [
     {
       "at": "2026-09-25T05:17:14.334Z",

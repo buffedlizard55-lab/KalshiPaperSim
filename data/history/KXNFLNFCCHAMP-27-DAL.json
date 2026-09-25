@@ -8668,11 +8668,11 @@
     "no_bid_dollars": "0.9400",
     "no_sub_title": "Dallas",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "680846.93",
+    "open_interest_fp": "680981.62",
     "open_time": "2026-02-07T15:00:00Z",
-    "previous_price_dollars": "0.0500",
-    "previous_yes_ask_dollars": "0.0600",
-    "previous_yes_bid_dollars": "0.0500",
+    "previous_price_dollars": "0.0700",
+    "previous_yes_ask_dollars": "0.0700",
+    "previous_yes_bid_dollars": "0.0600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -8690,17 +8690,17 @@
     "ticker": "KXNFLNFCCHAMP-27-DAL",
     "title": "Will Dallas win the Pro Football NFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "2098.83",
-    "volume_fp": "1154317.57",
+    "volume_24h_fp": "1669.70",
+    "volume_fp": "1154452.26",
     "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "36.00",
+    "yes_ask_size_fp": "10.00",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "42548.46",
+    "yes_bid_size_fp": "41555.04",
     "yes_sub_title": "Dallas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-DAL",
-  "market_captured_at": "2026-09-25T08:06:12.980Z",
+  "market_captured_at": "2026-09-25T11:55:12.990Z",
   "status": "active",
-  "last_ingested_at": "2026-09-25T08:06:13.499Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-DAL/candlesticks?start_ts=1790308801&end_ts=1790323573&period_interval=1440"
+  "last_ingested_at": "2026-09-25T11:55:13.557Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-DAL/candlesticks?start_ts=1790308801&end_ts=1790337313&period_interval=1440"
 }
