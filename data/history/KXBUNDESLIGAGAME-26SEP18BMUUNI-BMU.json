@@ -647,6 +647,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T05:10:32.574Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -704,9 +714,9 @@
     "yes_sub_title": "Bayern Munich"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU",
-  "market_captured_at": "2026-09-24T20:06:44.636Z",
+  "market_captured_at": "2026-09-25T05:10:31.978Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-24T20:06:45.199Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBUNDESLIGAGAME/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/candlesticks?start_ts=1789790401&end_ts=1790280404&period_interval=1440"
+  "last_ingested_at": "2026-09-25T05:10:32.528Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBUNDESLIGAGAME/markets/KXBUNDESLIGAGAME-26SEP18BMUUNI-BMU/candlesticks?start_ts=1789790401&end_ts=1790313032&period_interval=1440"
 }

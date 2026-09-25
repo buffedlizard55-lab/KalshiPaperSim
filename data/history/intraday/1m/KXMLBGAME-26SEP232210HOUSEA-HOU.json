@@ -12392,6 +12392,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T05:19:05.774Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP232210HOUSEA-HOU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12418,9 +12428,9 @@
     "occurrence_datetime": "2026-09-24T05:10:00Z",
     "open_interest_fp": "2779389.34",
     "open_time": "2026-09-21T02:25:00Z",
-    "previous_price_dollars": "0.4700",
-    "previous_yes_ask_dollars": "0.4700",
-    "previous_yes_bid_dollars": "0.4600",
+    "previous_price_dollars": "0.5100",
+    "previous_yes_ask_dollars": "0.5100",
+    "previous_yes_bid_dollars": "0.5000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12440,7 +12450,7 @@
     "ticker": "KXMLBGAME-26SEP232210HOUSEA-HOU",
     "title": "Houston wins",
     "updated_time": "2026-09-24T05:39:48.57115Z",
-    "volume_24h_fp": "4827490.13",
+    "volume_24h_fp": "1794769.43",
     "volume_fp": "4923228.20",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12449,10 +12459,10 @@
     "yes_sub_title": "Houston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP232210HOUSEA-HOU",
-  "market_captured_at": "2026-09-24T20:15:31.175Z",
+  "market_captured_at": "2026-09-25T05:19:05.077Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-24T20:15:31.839Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP232210HOUSEA-HOU/candlesticks?start_ts=1790228281&end_ts=1790280931&period_interval=1",
+  "last_ingested_at": "2026-09-25T05:19:05.727Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP232210HOUSEA-HOU/candlesticks?start_ts=1790228281&end_ts=1790313545&period_interval=1",
   "trims": [
     {
       "at": "2026-09-24T05:16:38.987Z",

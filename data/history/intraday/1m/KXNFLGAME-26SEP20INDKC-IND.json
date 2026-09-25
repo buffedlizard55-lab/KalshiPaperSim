@@ -12115,6 +12115,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T05:19:44.007Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12172,11 +12182,11 @@
     "yes_sub_title": "Indianapolis"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND",
-  "market_captured_at": "2026-09-24T20:16:10.006Z",
+  "market_captured_at": "2026-09-25T05:19:41.916Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-24T20:16:11.762Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-IND/candlesticks?start_ts=1790222161&end_ts=1790280970&period_interval=1",
+  "last_ingested_at": "2026-09-25T05:19:43.960Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-IND/candlesticks?start_ts=1790308561&end_ts=1790313582&period_interval=1",
   "trims": [
     {
       "at": "2026-09-22T08:01:19.998Z",

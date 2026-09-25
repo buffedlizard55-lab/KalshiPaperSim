@@ -877,6 +877,31 @@
         "low_dollars": "0.5200",
         "open_dollars": "0.5200"
       }
+    },
+    {
+      "end_period_ts": 1790308800,
+      "open_interest_fp": "8185.87",
+      "price": {
+        "close_dollars": "0.5400",
+        "high_dollars": "0.5500",
+        "low_dollars": "0.5300",
+        "mean_dollars": "0.5421",
+        "open_dollars": "0.5400",
+        "previous_dollars": "0.5500"
+      },
+      "volume_fp": "256.46",
+      "yes_ask": {
+        "close_dollars": "0.5400",
+        "high_dollars": "0.5500",
+        "low_dollars": "0.5400",
+        "open_dollars": "0.5400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5200",
+        "high_dollars": "0.5300",
+        "low_dollars": "0.5200",
+        "open_dollars": "0.5300"
+      }
     }
   ],
   "books": [
@@ -7575,6 +7600,214 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-25T05:12:25.085Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "220945.39"
+            ],
+            [
+              "0.0200",
+              "19655.00"
+            ],
+            [
+              "0.0300",
+              "8387.00"
+            ],
+            [
+              "0.0500",
+              "508.97"
+            ],
+            [
+              "0.0600",
+              "11489.75"
+            ],
+            [
+              "0.0700",
+              "4017.31"
+            ],
+            [
+              "0.1200",
+              "650.00"
+            ],
+            [
+              "0.1300",
+              "509.14"
+            ],
+            [
+              "0.1400",
+              "559.11"
+            ],
+            [
+              "0.1500",
+              "1392.00"
+            ],
+            [
+              "0.1800",
+              "12.33"
+            ],
+            [
+              "0.1900",
+              "2137.00"
+            ],
+            [
+              "0.2000",
+              "2086.78"
+            ],
+            [
+              "0.2100",
+              "198.97"
+            ],
+            [
+              "0.2200",
+              "118.00"
+            ],
+            [
+              "0.2500",
+              "116.09"
+            ],
+            [
+              "0.2900",
+              "3.40"
+            ],
+            [
+              "0.3400",
+              "15.00"
+            ],
+            [
+              "0.3800",
+              "750.00"
+            ],
+            [
+              "0.3900",
+              "1910.00"
+            ],
+            [
+              "0.4000",
+              "2500.00"
+            ],
+            [
+              "0.4100",
+              "1138.00"
+            ],
+            [
+              "0.4200",
+              "1022.86"
+            ],
+            [
+              "0.4300",
+              "727.00"
+            ],
+            [
+              "0.4400",
+              "1643.00"
+            ],
+            [
+              "0.4500",
+              "1448.76"
+            ],
+            [
+              "0.4600",
+              "979.54"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "222760.00"
+            ],
+            [
+              "0.0200",
+              "18245.00"
+            ],
+            [
+              "0.0300",
+              "7250.00"
+            ],
+            [
+              "0.0400",
+              "4000.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "6865.01"
+            ],
+            [
+              "0.0800",
+              "201.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "300.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "957.00"
+            ],
+            [
+              "0.2300",
+              "468.00"
+            ],
+            [
+              "0.2400",
+              "2103.00"
+            ],
+            [
+              "0.3800",
+              "15.00"
+            ],
+            [
+              "0.4400",
+              "2466.00"
+            ],
+            [
+              "0.4500",
+              "700.00"
+            ],
+            [
+              "0.4600",
+              "27.19"
+            ],
+            [
+              "0.4700",
+              "14.00"
+            ],
+            [
+              "0.4900",
+              "912.68"
+            ],
+            [
+              "0.5000",
+              "3512.32"
+            ],
+            [
+              "0.5100",
+              "428.46"
+            ],
+            [
+              "0.5200",
+              "112.12"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -7594,14 +7827,14 @@
     "latest_expiration_time": "2026-10-23T01:30:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.4700",
-    "no_bid_dollars": "0.4500",
+    "no_ask_dollars": "0.4800",
+    "no_bid_dollars": "0.4600",
     "no_sub_title": "San Antonio",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-21T04:30:00Z",
-    "open_interest_fp": "8000.84",
+    "open_interest_fp": "8211.19",
     "open_time": "2026-08-20T15:28:00Z",
-    "previous_price_dollars": "0.5300",
+    "previous_price_dollars": "0.5500",
     "previous_yes_ask_dollars": "0.5400",
     "previous_yes_bid_dollars": "0.5300",
     "price_level_structure": "linear_cent",
@@ -7621,17 +7854,17 @@
     "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
     "title": "San Antonio wins",
     "updated_time": "2026-08-20T15:28:00.432079Z",
-    "volume_24h_fp": "167.56",
-    "volume_fp": "10474.81",
-    "yes_ask_dollars": "0.5500",
-    "yes_ask_size_fp": "243.15",
-    "yes_bid_dollars": "0.5300",
-    "yes_bid_size_fp": "23.89",
+    "volume_24h_fp": "285.30",
+    "volume_fp": "10699.44",
+    "yes_ask_dollars": "0.5400",
+    "yes_ask_size_fp": "979.54",
+    "yes_bid_dollars": "0.5200",
+    "yes_bid_size_fp": "112.12",
     "yes_sub_title": "San Antonio"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS",
-  "market_captured_at": "2026-09-24T20:08:41.728Z",
+  "market_captured_at": "2026-09-25T05:12:24.489Z",
   "status": "active",
-  "last_ingested_at": "2026-09-24T20:08:42.293Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-SAS/candlesticks?start_ts=1790222401&end_ts=1790280521&period_interval=1440"
+  "last_ingested_at": "2026-09-25T05:12:25.038Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-SAS/candlesticks?start_ts=1790222401&end_ts=1790313144&period_interval=1440"
 }
