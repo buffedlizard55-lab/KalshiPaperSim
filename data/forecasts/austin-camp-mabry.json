@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/TXC453",
       "relativeLocation": "Austin, TX",
       "timeZone": "America/Chicago",
-      "resolvedAt": "2026-09-25T12:49:02.216Z",
+      "resolvedAt": "2026-09-25T17:59:18.906Z",
       "pointsUrl": "https://api.weather.gov/points/30.3167,-97.7667"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -2344,6 +2344,72 @@
           "highF": 98,
           "periodName": "Today",
           "startTime": "2026-09-25T07:00:00-05:00",
+          "endTime": "2026-09-25T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-09-26",
+          "highF": 97,
+          "periodName": "Saturday",
+          "startTime": "2026-09-26T06:00:00-05:00",
+          "endTime": "2026-09-26T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 7
+        },
+        {
+          "date": "2026-09-27",
+          "highF": 100,
+          "periodName": "Sunday",
+          "startTime": "2026-09-27T06:00:00-05:00",
+          "endTime": "2026-09-27T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 4
+        },
+        {
+          "date": "2026-09-28",
+          "highF": 99,
+          "periodName": "Monday",
+          "startTime": "2026-09-28T06:00:00-05:00",
+          "endTime": "2026-09-28T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 4
+        },
+        {
+          "date": "2026-09-29",
+          "highF": 97,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-29T06:00:00-05:00",
+          "endTime": "2026-09-29T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 26
+        },
+        {
+          "date": "2026-09-30",
+          "highF": 92,
+          "periodName": "Wednesday",
+          "startTime": "2026-09-30T06:00:00-05:00",
+          "endTime": "2026-09-30T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 50
+        },
+        {
+          "date": "2026-10-01",
+          "highF": 91,
+          "periodName": "Thursday",
+          "startTime": "2026-10-01T06:00:00-05:00",
+          "endTime": "2026-10-01T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 42
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-25T17:59:18.906Z",
+      "points_url": "https://api.weather.gov/points/30.3167,-97.7667",
+      "forecast_url": "https://api.weather.gov/gridpoints/EWX/155,93/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-25T16:32:35+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-25",
+          "highF": 98,
+          "periodName": "This Afternoon",
+          "startTime": "2026-09-25T12:00:00-05:00",
           "endTime": "2026-09-25T18:00:00-05:00",
           "probabilityOfPrecipitationPct": 0
         },
