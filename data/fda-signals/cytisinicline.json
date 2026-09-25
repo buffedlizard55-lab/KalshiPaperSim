@@ -333,6 +333,23 @@
       "applicationNumbers": [],
       "newestSubmissionStatusDate": null,
       "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
+    },
+    {
+      "captured_at": "2026-09-25T17:04:35.188Z",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name%3A%22cytisinicline%22&limit=99",
+      "http_status": 404,
+      "meta": {
+        "disclaimer": null,
+        "last_updated": null,
+        "total": 0
+      },
+      "state": "NO_RECORD",
+      "approved": false,
+      "marketingStatuses": [],
+      "applications": 0,
+      "applicationNumbers": [],
+      "newestSubmissionStatusDate": null,
+      "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
     }
   ],
   "trims": []
