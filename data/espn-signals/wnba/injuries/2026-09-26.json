@@ -1,0 +1,1167 @@
+{
+ "what": "Point-in-time ESPN injury-report rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-26",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
+  ]
+ },
+ "captures": [
+  "2026-09-26T08:09:09.900Z"
+ ],
+ "teams": {
+  "3": {
+   "teamId": "3",
+   "displayName": "Dallas Wings",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "34927": {
+     "recordId": "34927",
+     "athleteName": "Costanza Verona",
+     "positionAbbr": "G",
+     "teamId": "3",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Wings",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-08-08T19:59Z|Verona's contract was temporarily suspended by the Wings Saturday.",
+       "status": "Out",
+       "date": "2026-08-08T19:59Z",
+       "shortComment": "Verona's contract was temporarily suspended by the Wings Saturday.",
+       "longComment": "Verona is signed to a developmental contract, so she has only appeared in one regular-season game for Dallas during the 2026 campaign. She will now head overseas, where she will suit up for the Italian National Team for the 2026 FIBA Women's World Cup. It's unknown whether Verona will be back with the Wings, though her departure will allow the team to sign another player to a developmental deal."
+      }
+     ]
+    },
+    "35576": {
+     "recordId": "35576",
+     "athleteName": "Azzi Fudd",
+     "positionAbbr": "G",
+     "teamId": "3",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Wings",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-08-19T20:10Z|Fudd will undergo an arthroscopic procedure to address her right knee soreness and will be sidelined for the remainder of the 2026 season.",
+       "status": "Out",
+       "date": "2026-08-19T20:10Z",
+       "shortComment": "Fudd will undergo an arthroscopic procedure to address her right knee soreness and will be sidelined for the remainder of the 2026 season.",
+       "longComment": "Fudd has been sidelined since early August due to her ongoing right knee soreness, and she'll undergo a procedure that will ultimately end her rookie season. Across 30 regular-season appearances (24 starts) this year, she averaged 13.1 points, 1.8 assists, 1.7 rebounds and 1.7 steals in 31.7 minutes per game. In her absence, Odyssey Sims, Alanna Smith and Alysha Clark have seen increased roles, and that trend will likely continue down the stretch as the Wings compete for a playoff berth."
+      }
+     ]
+    },
+    "36427": {
+     "recordId": "36427",
+     "athleteName": "Alanna Smith",
+     "positionAbbr": "F",
+     "teamId": "3",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Wings",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-17T22:24Z|Smith (lower leg) has no timetable for a return, Myah Taylor of Dallas Morning News reports.",
+       "status": "Out",
+       "date": "2026-09-17T22:24Z",
+       "shortComment": "Smith (lower leg) has no timetable for a return, Myah Taylor of Dallas Morning News reports.",
+       "longComment": "Smith suffered a lower-leg injury during the FIBA World Cup, and it sounds like she can be deemed week-to-week for the time being. Her status for the remainder of the regular season is in doubt, but she could have a chance to return for the start of the postseason in late September. Maddy Siegrist and Alysha Clark should have an opportunity for more playing time in the frontcourt going forward."
+      }
+     ]
+    },
+    "36764": {
+     "recordId": "36764",
+     "athleteName": "Alysha Clark",
+     "positionAbbr": "F",
+     "teamId": "3",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Wings",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-22T23:50Z|Clark (face) is listed as out for Wednesday's game versus the Storm.",
+       "status": "Out",
+       "date": "2026-09-22T23:50Z",
+       "shortComment": "Clark (face) is listed as out for Wednesday's game versus the Storm.",
+       "longComment": "Clark suffered a facial injury during the 87-86 loss to Phoenix on Monday. Without Clark on the floor for the season finale, Maddy Siegrist, Kitija Laksa and Aziaha James could see more minutes."
+      }
+     ]
+    }
+   }
+  },
+  "5": {
+   "teamId": "5",
+   "displayName": "Indiana Fever",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "36883": {
+     "recordId": "36883",
+     "athleteName": "Aliyah Boston",
+     "positionAbbr": "C",
+     "teamId": "5",
+     "teamAbbr": "IND",
+     "teamName": "Indiana Fever",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-25T02:30Z|Boston (lower leg) was removed from Thursday's game against the Lynx as a precaution, Tony East of The Next reports.",
+       "status": "Out",
+       "date": "2026-09-25T02:30Z",
+       "shortComment": "Boston (lower leg) was removed from Thursday's game against the Lynx as a precaution, Tony East of The Next reports.",
+       "longComment": "The Fever elected to remove Boston as a precaution after Minnesota got out to a healthy lead. Coach Stephanie White noted after the game that it was a minor flare up for Boston. She can be considered questionable for Sunday's matchup at this time, but at this point, all signs point to her being able to suit up for the start of the playoffs."
+      }
+     ]
+    },
+    "52610": {
+     "recordId": "52610",
+     "athleteName": "Tyasha Harris",
+     "positionAbbr": "G",
+     "teamId": "5",
+     "teamAbbr": "IND",
+     "teamName": "Indiana Fever",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-25T01:45Z|out",
+       "status": "Out",
+       "date": "2026-09-25T01:45Z",
+       "shortComment": "out",
+       "longComment": "out"
+      }
+     ]
+    }
+   }
+  },
+  "6": {
+   "teamId": "6",
+   "displayName": "Los Angeles Sparks",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "36839": {
+     "recordId": "36839",
+     "athleteName": "Aaliyah Nye",
+     "positionAbbr": "G",
+     "teamId": "6",
+     "teamAbbr": "LA",
+     "teamName": "Los Angeles Sparks",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-24T00:13Z|Nye (ankle) has been ruled out for Thursday's game against Golden State.",
+       "status": "Out",
+       "date": "2026-09-24T00:13Z",
+       "shortComment": "Nye (ankle) has been ruled out for Thursday's game against Golden State.",
+       "longComment": "Nye will end the campaign with a third consecutive absence due to a left ankle injury. She'll finish the season having averaged 1.0 points in 2.8 minutes per contest across 20 regular-season outings between Los Angeles and Atlanta."
+      }
+     ]
+    },
+    "36840": {
+     "recordId": "36840",
+     "athleteName": "Cameron Brink",
+     "positionAbbr": "F",
+     "teamId": "6",
+     "teamAbbr": "LA",
+     "teamName": "Los Angeles Sparks",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-24T00:25Z|Brink (ankle) is listed as out for Thursday's game against Golden State.",
+       "status": "Out",
+       "date": "2026-09-24T00:25Z",
+       "shortComment": "Brink (ankle) is listed as out for Thursday's game against Golden State.",
+       "longComment": "Brink missed the last two games but will now be sidelined for the Sparks' final game of the season. The 24-year-old averaged a career-best 9.5 points along with 5.0 rebounds, 1.5 assists and 1.8 blocks over 19.2 minutes per contest in 31 regular-season games, including one start, throughout the 2026 campaign."
+      }
+     ]
+    },
+    "36871": {
+     "recordId": "36871",
+     "athleteName": "Shyanne Sellers",
+     "positionAbbr": "G",
+     "teamId": "6",
+     "teamAbbr": "LA",
+     "teamName": "Los Angeles Sparks",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-25T01:08Z|Sellers (coach's decision) is out for Thursday's game against the Valkyries.",
+       "status": "Out",
+       "date": "2026-09-25T01:08Z",
+       "shortComment": "Sellers (coach's decision) is out for Thursday's game against the Valkyries.",
+       "longComment": "Sellers will take a seat for the season finale despite being left off the injury report initially. She appeared in two games for the Sparks after signing a developmental contract in late August."
+      }
+     ]
+    },
+    "36872": {
+     "recordId": "36872",
+     "athleteName": "Ndjakalenga Mwenentanda",
+     "positionAbbr": "G",
+     "teamId": "6",
+     "teamAbbr": "LA",
+     "teamName": "Los Angeles Sparks",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-25T01:12Z|Mwenentanda (coach's decision) has been ruled out for Thursday's game against Golden State.",
+       "status": "Out",
+       "date": "2026-09-25T01:12Z",
+       "shortComment": "Mwenentanda (coach's decision) has been ruled out for Thursday's game against Golden State.",
+       "longComment": "Mwenentanda has appeared in her team's last two games, but she'll be shut down for the Sparks' final game of the 2026 campaign. She played in seven games across stops in LA and Golden State this season."
+      }
+     ]
+    }
+   }
+  },
+  "8": {
+   "teamId": "8",
+   "displayName": "Minnesota Lynx",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "36825": {
+     "recordId": "36825",
+     "athleteName": "Olivia Miles",
+     "positionAbbr": "G",
+     "teamId": "8",
+     "teamAbbr": "MIN",
+     "teamName": "Minnesota Lynx",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T21:14Z|Miles (calf) is out for Thursday's game against the Fever.",
+       "status": "Out",
+       "date": "2026-09-23T21:14Z",
+       "shortComment": "Miles (calf) is out for Thursday's game against the Fever.",
+       "longComment": "It's possible the Lynx have an eye toward getting the rookie sensation back for the start of the playoffs Sunday. Dorka Juhasz and Maya Caldwell should remain more involved for Minnesota on Thursday."
+      }
+     ]
+    },
+    "36826": {
+     "recordId": "36826",
+     "athleteName": "Anastasiia Olairi Kosu",
+     "positionAbbr": "F",
+     "teamId": "8",
+     "teamAbbr": "MIN",
+     "teamName": "Minnesota Lynx",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T21:15Z|Kosu (foot) has been ruled out for Thursday's game against Indiana.",
+       "status": "Out",
+       "date": "2026-09-23T21:15Z",
+       "shortComment": "Kosu (foot) has been ruled out for Thursday's game against Indiana.",
+       "longComment": "Kosu will miss a fourth consecutive contest due to a right foot injury. She'll finish the 2026 regular season with averages of 3.6 points and 2.0 rebounds in 10.2 minutes per game across 30 regular-season appearances."
+      }
+     ]
+    },
+    "36868": {
+     "recordId": "36868",
+     "athleteName": "Elena Buenavida",
+     "positionAbbr": "G",
+     "teamId": "8",
+     "teamAbbr": "MIN",
+     "teamName": "Minnesota Lynx",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-24T23:30Z|Buenavida (coach's decision) is out for Thursday's game against the Fever.",
+       "status": "Out",
+       "date": "2026-09-24T23:30Z",
+       "shortComment": "Buenavida (coach's decision) is out for Thursday's game against the Fever.",
+       "longComment": "Buenavida will take a seat for Thursday's regular-season finale after initially being left off the injury report. She hasn't made an appearance for the Lynx after inking a developmental contract Aug. 11."
+      }
+     ]
+    }
+   }
+  },
+  "9": {
+   "teamId": "9",
+   "displayName": "New York Liberty",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "36751": {
+     "recordId": "36751",
+     "athleteName": "Elizabeth Balogun",
+     "positionAbbr": "G",
+     "teamId": "9",
+     "teamAbbr": "NY",
+     "teamName": "New York Liberty",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-22T21:05Z|Balogun (not with team) is out for Wednesday's game against the Dream.",
+       "status": "Out",
+       "date": "2026-09-22T21:05Z",
+       "shortComment": "Balogun (not with team) is out for Wednesday's game against the Dream.",
+       "longComment": "Balogun remains away from the Liberty for the regular-season finale Wednesday. It's unknown if she'll report to the club at any point this postseason."
+      }
+     ]
+    },
+    "36834": {
+     "recordId": "36834",
+     "athleteName": "Breanna Stewart",
+     "positionAbbr": "F",
+     "teamId": "9",
+     "teamAbbr": "NY",
+     "teamName": "New York Liberty",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T22:07Z|Stewart won't play in Wednesday's game against the Dream due to left knee soreness, per Myles Ehrlich of Winsidr.com.",
+       "status": "Out",
+       "date": "2026-09-23T22:07Z",
+       "shortComment": "Stewart won't play in Wednesday's game against the Dream due to left knee soreness, per Myles Ehrlich of Winsidr.com.",
+       "longComment": "With the postseason on the horizon, the Liberty are erring on the side of caution with the star forward in the regular-season finale. Marine Johannes and Rebecca Allen stand out as the most likely candidates to replace Stewart in the starting lineup Wednesday."
+      }
+     ]
+    },
+    "36843": {
+     "recordId": "36843",
+     "athleteName": "Jonquel Jones",
+     "positionAbbr": "C",
+     "teamId": "9",
+     "teamAbbr": "NY",
+     "teamName": "New York Liberty",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-24T01:45Z|Jones (ankle) won't return to Wednesday's game against Atlanta, Annie Costabile of The Athletic reports. She finished with 10 points (3-7 FG, 1-4 3Pt, 3-4 FT), 14 rebounds, one assist and one block over 20 minutes.",
+       "status": "Out",
+       "date": "2026-09-24T01:45Z",
+       "shortComment": "Jones (ankle) won't return to Wednesday's game against Atlanta, Annie Costabile of The Athletic reports. She finished with 10 points (3-7 FG, 1-4 3Pt, 3-4 FT), 14 rebounds, one assist and one block over 20 minutes.",
+       "longComment": "Jones exited the contest after stepping on a fan's foot. With Jones done for the remainder of the game, Han Xu and Raquel Carrera could see more minutes the rest of the way."
+      }
+     ]
+    },
+    "52675": {
+     "recordId": "52675",
+     "athleteName": "Satou Sabally",
+     "positionAbbr": "F",
+     "teamId": "9",
+     "teamAbbr": "NY",
+     "teamName": "New York Liberty",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-26T07:00Z|out",
+       "status": "Out",
+       "date": "2026-09-26T07:00Z",
+       "shortComment": "out",
+       "longComment": "out"
+      }
+     ]
+    }
+   }
+  },
+  "11": {
+   "teamId": "11",
+   "displayName": "Phoenix Mercury",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "33060": {
+     "recordId": "33060",
+     "athleteName": "Jovana Nogic",
+     "positionAbbr": "G",
+     "teamId": "11",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Mercury",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-06-28T00:25Z|Nogic (not injury related) intends to play professionally in Russia and won't return to Phoenix this season, Aya Abdeen of TheIXSports.com reports.",
+       "status": "Out",
+       "date": "2026-06-28T00:25Z",
+       "shortComment": "Nogic (not injury related) intends to play professionally in Russia and won't return to Phoenix this season, Aya Abdeen of TheIXSports.com reports.",
+       "longComment": "Nogic had her contract temporarily suspended June 20 and will now be out for the remainder of the WNBA season, as she's slated to compete overseas in Russia with an eye on leading the Serbian national team in the EuroBasket 2027 qualifiers. The guard appeared in 16 games (seven starts) for Phoenix, averaging 10.4 points, 1.6 assists and 1.1 rebounds in 20.2 minutes per contest. With Nogic out of the fold for the foreseeable future, Alexa Held stands to continue benefiting from expanded opportunities in the backcourt."
+      }
+     ]
+    },
+    "36225": {
+     "recordId": "36225",
+     "athleteName": "Kelsey Plum",
+     "positionAbbr": "G",
+     "teamId": "11",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Mercury",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-08-31T14:46Z|Plum (leg) will miss the remainder of the 2026 WNBA season, Alexa Philippou of ESPN.com reports.",
+       "status": "Out",
+       "date": "2026-08-31T14:46Z",
+       "shortComment": "Plum (leg) will miss the remainder of the 2026 WNBA season, Alexa Philippou of ESPN.com reports.",
+       "longComment": "Plum is still not feeling the effects of a lingering lower leg injury and will be shut down with the Mercury out of the playoffs. The star guard is set to become a free agent at the conclusion of the season. In five appearances with the Mercury, she averaged 15.8 points and 2.8 assists."
+      }
+     ]
+    },
+    "36876": {
+     "recordId": "36876",
+     "athleteName": "Kara Dunn",
+     "positionAbbr": "G",
+     "teamId": "11",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Mercury",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-25T01:38Z|Dunn (coach's decision) is listed as out for Thursday's game against the Aces.",
+       "status": "Out",
+       "date": "2026-09-25T01:38Z",
+       "shortComment": "Dunn (coach's decision) is listed as out for Thursday's game against the Aces.",
+       "longComment": "Dunn is signed to a developmental contract and is eligible to appear in up to 12 regular-season contests. She played in the Mercury's last four games, most recently amassing a career-high 11 points in Monday's 87-86 win over Dallas. However, the rookie won't suit up for Phoenix's final game of the year, so she will finish the 2026 campaign with averages of 6.5 points and 1.5 rebounds over 15.0 minutes in four regular-season games. Dunn also shot an efficient 57.1 percent from behind the arc."
+      }
+     ]
+    }
+   }
+  },
+  "14": {
+   "teamId": "14",
+   "displayName": "Seattle Storm",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "36352": {
+     "recordId": "36352",
+     "athleteName": "Katie Lou Samuelson",
+     "positionAbbr": "F",
+     "teamId": "14",
+     "teamAbbr": "SEA",
+     "teamName": "Seattle Storm",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-11T18:10Z|The Storm announced Friday that Samuelson underwent successful left knee surgery and will miss the remainder of the season.",
+       "status": "Out",
+       "date": "2026-09-11T18:10Z",
+       "shortComment": "The Storm announced Friday that Samuelson underwent successful left knee surgery and will miss the remainder of the season.",
+       "longComment": "Seattle's frontcourt takes another hit after losing Ezi Magbegor to a torn ACL on Thursday. Samuelson had a delayed start to the year due ACL surgery recovery, averaging 4.4 points, 2.1 rebounds and 0.8 assists in 15.3 minutes per contest over 32 games this season. The Storm should lean more heavily on Stefanie Dolson, Mackenzie Holmes and Taylor Thierry the rest of the way."
+      }
+     ]
+    },
+    "36765": {
+     "recordId": "36765",
+     "athleteName": "Zia Cooke",
+     "positionAbbr": "G",
+     "teamId": "14",
+     "teamAbbr": "SEA",
+     "teamName": "Seattle Storm",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T00:06Z|Cooke (knee) has been ruled out for Wednesday's game against Dallas.",
+       "status": "Out",
+       "date": "2026-09-23T00:06Z",
+       "shortComment": "Cooke (knee) has been ruled out for Wednesday's game against Dallas.",
+       "longComment": "Cooke will end the 2026 campaign with a third consecutive absence due to a right knee injury. She'll also finish the season having averaged career-high marks in points (7.5), rebounds (1.7) and assists (1.1) across 15.0 minutes per game in 41 regular-season appearances (one start). She's set to enter restricted free agency this offseason."
+      }
+     ]
+    },
+    "36841": {
+     "recordId": "36841",
+     "athleteName": "Taina Mair",
+     "positionAbbr": "G",
+     "teamId": "14",
+     "teamAbbr": "SEA",
+     "teamName": "Seattle Storm",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-24T01:19Z|Mair (coach's decision) has been ruled out for Wednesday's game against the Wings.",
+       "status": "Out",
+       "date": "2026-09-24T01:19Z",
+       "shortComment": "Mair (coach's decision) has been ruled out for Wednesday's game against the Wings.",
+       "longComment": "Mair will sit out Seattle's season finale. The developmental player will finish her rookie season with averages of 1.3 points and 0.5 assists in 5.1 minutes per game across 10 regular-season outings."
+      }
+     ]
+    },
+    "51241": {
+     "recordId": "51241",
+     "athleteName": "Ezi Magbegor",
+     "positionAbbr": "F",
+     "teamId": "14",
+     "teamAbbr": "SEA",
+     "teamName": "Seattle Storm",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-10T18:26Z|out",
+       "status": "Out",
+       "date": "2026-09-10T18:26Z",
+       "shortComment": "out",
+       "longComment": "out"
+      }
+     ]
+    }
+   }
+  },
+  "16": {
+   "teamId": "16",
+   "displayName": "Washington Mystics",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "52617": {
+     "recordId": "52617",
+     "athleteName": "Shakira Austin",
+     "positionAbbr": "C",
+     "teamId": "16",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Mystics",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-25T02:45Z|out",
+       "status": "Out",
+       "date": "2026-09-25T02:45Z",
+       "shortComment": "out",
+       "longComment": "out"
+      }
+     ]
+    }
+   }
+  },
+  "17": {
+   "teamId": "17",
+   "displayName": "Las Vegas Aces",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "36054": {
+     "recordId": "36054",
+     "athleteName": "NaLyssa Smith",
+     "positionAbbr": "F",
+     "teamId": "17",
+     "teamAbbr": "LV",
+     "teamName": "Las Vegas Aces",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-08-27T19:29Z|The Aces announced Thursday that Smith will be sidelined for the rest of the season after suffering a non-contact left leg injury during Sunday's game versus the Tempo, per Chelsea Leite of TSN.",
+       "status": "Out",
+       "date": "2026-08-27T19:29Z",
+       "shortComment": "The Aces announced Thursday that Smith will be sidelined for the rest of the season after suffering a non-contact left leg injury during Sunday's game versus the Tempo, per Chelsea Leite of TSN.",
+       "longComment": "It's a big blow for the defending-champion Aces ahead of the postseason. Smith started all 38 of her appearances for Las Vegas, so a spot in the first unit is now open. Brianna Turner appears to the most likely candidate to replace Smith in the starting lineup going forward."
+      }
+     ]
+    },
+    "36862": {
+     "recordId": "36862",
+     "athleteName": "Dana Evans",
+     "positionAbbr": "G",
+     "teamId": "17",
+     "teamAbbr": "LV",
+     "teamName": "Las Vegas Aces",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-24T19:38Z|Evans (back) is out for Thursday's game against the Mercury.",
+       "status": "Out",
+       "date": "2026-09-24T19:38Z",
+       "shortComment": "Evans (back) is out for Thursday's game against the Mercury.",
+       "longComment": "Evans is a late scratch for the regular-season finale Thursday with a back injury. She'll aim to return for the start of the playoffs. Mai Yamamoto and Stephanie Talbot could see more run in Evans' absence."
+      }
+     ]
+    }
+   }
+  },
+  "18": {
+   "teamId": "18",
+   "displayName": "Connecticut Sun",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "36367": {
+     "recordId": "36367",
+     "athleteName": "Kennedy Burke",
+     "positionAbbr": "G",
+     "teamId": "18",
+     "teamAbbr": "CON",
+     "teamName": "Connecticut Sun",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-14T19:53Z|The Sun announced Monday that Burke suffered a sprained AC joint in the FIBA World Cup and will miss the rest of the season.",
+       "status": "Out",
+       "date": "2026-09-14T19:53Z",
+       "shortComment": "The Sun announced Monday that Burke suffered a sprained AC joint in the FIBA World Cup and will miss the rest of the season.",
+       "longComment": "With Connecticut eliminated from playoff contention, Burke is sitting out the remaining four games on the schedule with an eye toward next season. Her absence should allow Nell Angloma and Aaliyah Edwards to handle more playing time. Burke averaged a career-high 8.8 points, 3.2 rebounds and 1.4 assists per contest in 37 games this season."
+      }
+     ]
+    },
+    "36818": {
+     "recordId": "36818",
+     "athleteName": "Brittney Griner",
+     "positionAbbr": "C",
+     "teamId": "18",
+     "teamAbbr": "CON",
+     "teamName": "Connecticut Sun",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T20:49Z|Griner (knee) is out for Thursday's game against the Tempo.",
+       "status": "Out",
+       "date": "2026-09-23T20:49Z",
+       "shortComment": "Griner (knee) is out for Thursday's game against the Tempo.",
+       "longComment": "Griner is sitting out the regular-season finale due to a knee injury. The veteran center was limited to 18 appearances this year, and she's set for unrestricted free agency this offseason."
+      }
+     ]
+    },
+    "36819": {
+     "recordId": "36819",
+     "athleteName": "Saniya Rivers",
+     "positionAbbr": "G",
+     "teamId": "18",
+     "teamAbbr": "CON",
+     "teamName": "Connecticut Sun",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T20:51Z|Rivers (ankle) is out for Thursday's game against the Tempo.",
+       "status": "Out",
+       "date": "2026-09-23T20:51Z",
+       "shortComment": "Rivers (ankle) is out for Thursday's game against the Tempo.",
+       "longComment": "Rivers is missing the regular-season finale with an ankle injury. She's under contract for next year after averaging 6.9 points, 3.1 assists and 1.1 steals per game over 38 appearances in 2026."
+      }
+     ]
+    },
+    "36820": {
+     "recordId": "36820",
+     "athleteName": "Olivia Nelson-Ododa",
+     "positionAbbr": "C",
+     "teamId": "18",
+     "teamAbbr": "CON",
+     "teamName": "Connecticut Sun",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T20:54Z|Nelson-Ododa (knee) is out for Thursday's game against the Tempo.",
+       "status": "Out",
+       "date": "2026-09-23T20:54Z",
+       "shortComment": "Nelson-Ododa (knee) is out for Thursday's game against the Tempo.",
+       "longComment": "Nelson-Ododa is sidelined for the regular-season finale with a knee injury. She has one more year left on her deal after averaging a career-high 10.1 points, 5.9 rebounds and 1.6 assists for the Sun in 2026."
+      }
+     ]
+    },
+    "36869": {
+     "recordId": "36869",
+     "athleteName": "Rayah Marshall",
+     "positionAbbr": "C",
+     "teamId": "18",
+     "teamAbbr": "CON",
+     "teamName": "Connecticut Sun",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-25T00:21Z|Marshall has been ruled out for the remainder of Thursday's game against the Tempo due to a right knee injury.",
+       "status": "Out",
+       "date": "2026-09-25T00:21Z",
+       "shortComment": "Marshall has been ruled out for the remainder of Thursday's game against the Tempo due to a right knee injury.",
+       "longComment": "Marshall suffered a knee injury shortly after checking in and won't be able to continue in this one. Nell Angloma could see a few more minutes in Marshall's absence."
+      }
+     ]
+    }
+   }
+  },
+  "19": {
+   "teamId": "19",
+   "displayName": "Chicago Sky",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "30807": {
+     "recordId": "30807",
+     "athleteName": "Rickea Jackson",
+     "positionAbbr": "F",
+     "teamId": "19",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Sky",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-05-19T13:54Z|The Sky announced Tuesday that Jackson will miss the remainder of the season after suffering a torn ACL in her left knee during Sunday's 86-79 win over the Lynx.",
+       "status": "Out",
+       "date": "2026-05-19T13:54Z",
+       "shortComment": "The Sky announced Tuesday that Jackson will miss the remainder of the season after suffering a torn ACL in her left knee during Sunday's 86-79 win over the Lynx.",
+       "longComment": "The season-ending knee injury is a devastating development for Jackson and the Sky, as the 25-year-old forward was well on her way to a career-best campaign. Through Chicago's first four games, Jackson averaged 18.0 points, 4.8 rebounds, 2.0 assists, 1.8 blocks and 1.5 three-pointers in 29.5 minutes per contest. After Jackson's early exit in Sunday's contest, Aicha Coulibaly opened the second half with the starters and looks to be the most likely candidate to move into the top unit for the Sky's next game Wednesday versus the Wings."
+      }
+     ]
+    },
+    "36296": {
+     "recordId": "36296",
+     "athleteName": "Skylar Diggins",
+     "positionAbbr": "G",
+     "teamId": "19",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Sky",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-01T14:17Z|Diggins (knee) will miss the remainder of the 2026 WNBA season, Sara Jane Gamelli of BallisLife.com reports.",
+       "status": "Out",
+       "date": "2026-09-01T14:17Z",
+       "shortComment": "Diggins (knee) will miss the remainder of the 2026 WNBA season, Sara Jane Gamelli of BallisLife.com reports.",
+       "longComment": "She will now \"focus on recovering an aggravated right knee injury.\" She hadn't played since July 3 and her rehab didn't progress as quickly as she would've hoped. She appeared in 19 games and posted averages of 14.2 points, 3.2 rebounds and 4.9 assists."
+      }
+     ]
+    },
+    "36828": {
+     "recordId": "36828",
+     "athleteName": "Natasha Cloud",
+     "positionAbbr": "G",
+     "teamId": "19",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Sky",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T21:22Z|Cloud (knee) is out for Thursday's game against the Mystics.",
+       "status": "Out",
+       "date": "2026-09-23T21:22Z",
+       "shortComment": "Cloud (knee) is out for Thursday's game against the Mystics.",
+       "longComment": "Cloud is out for the season finale Thursday with a knee injury. The veteran guard is slated to be an unrestricted free agent this winter, having averaged 11.1 points, 4.8 assists, 3.4 rebounds and 1.1 steals per game for the Sky this year."
+      }
+     ]
+    },
+    "36830": {
+     "recordId": "36830",
+     "athleteName": "Azura Stevens",
+     "positionAbbr": "F",
+     "teamId": "19",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Sky",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T21:25Z|Stevens (knee) is out for Thursday's game against the Mystics",
+       "status": "Out",
+       "date": "2026-09-23T21:25Z",
+       "shortComment": "Stevens (knee) is out for Thursday's game against the Mystics",
+       "longComment": "Steven is sidelined Thursday with a knee injury, ending her regular season. The veteran forward is under contract with the Sky for 2027, and she averaged 10.6 points, 6.1 rebounds, 2.1 assists, 0.8 steals and 0.8 blocks per game in 2026."
+      }
+     ]
+    },
+    "36831": {
+     "recordId": "36831",
+     "athleteName": "Aicha Coulibaly",
+     "positionAbbr": "G",
+     "teamId": "19",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Sky",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T21:27Z|Coulibaly (knee) is out for Thursday's game against the Mystics",
+       "status": "Out",
+       "date": "2026-09-23T21:27Z",
+       "shortComment": "Coulibaly (knee) is out for Thursday's game against the Mystics",
+       "longComment": "Coulibaly's rookie year comes to an end due to a knee injury. She'll be looking to take a step forward next year after averaging 5.2 points, 2.6 rebounds and 0.7 steals per game this year for the Sky."
+      }
+     ]
+    },
+    "36832": {
+     "recordId": "36832",
+     "athleteName": "DiJonai Carrington",
+     "positionAbbr": "G",
+     "teamId": "19",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Sky",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T21:28Z|Carrington (foot) has been ruled out for Thursday's game against the Mystics.",
+       "status": "Out",
+       "date": "2026-09-23T21:28Z",
+       "shortComment": "Carrington (foot) has been ruled out for Thursday's game against the Mystics.",
+       "longComment": "Carrington will end the season on the inactive list for a fifth consecutive contest due to a left foot injury. She'll finish the campaign having averaged 8.8 points, 3.1 rebounds, 0.6 assists and 0.6 steals in 16.2 minutes per game across 11 regular-season outings. She's set to enter unrestricted free agency this offseason following an injury-riddled year."
+      }
+     ]
+    }
+   }
+  },
+  "20": {
+   "teamId": "20",
+   "displayName": "Atlanta Dream",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "36415": {
+     "recordId": "36415",
+     "athleteName": "Brionna Jones",
+     "positionAbbr": "F",
+     "teamId": "20",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Dream",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-17T16:08Z|Jones will miss the remainder of the season after sustaining a left leg injury against the Sun on Aug. 13, Annie Costabile of The Athletic reports.",
+       "status": "Out",
+       "date": "2026-09-17T16:08Z",
+       "shortComment": "Jones will miss the remainder of the season after sustaining a left leg injury against the Sun on Aug. 13, Annie Costabile of The Athletic reports.",
+       "longComment": "This is a tough blow for a Dream team that is sitting in second place in the Eastern Conference. Jones managed to play in just nine games this campaign, finishing with averages of 8.2 points, 5.6 rebounds and 2.0 assists. Look for the Dream to use a committee approach to soak up those minutes going forward."
+      }
+     ]
+    },
+    "36835": {
+     "recordId": "36835",
+     "athleteName": "Matilde Villa",
+     "positionAbbr": "G",
+     "teamId": "20",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Dream",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T22:50Z|Villa (coach's decision) has been ruled out for Wednesday's game against New York.",
+       "status": "Out",
+       "date": "2026-09-23T22:50Z",
+       "shortComment": "Villa (coach's decision) has been ruled out for Wednesday's game against New York.",
+       "longComment": "Villa signed with Atlanta on Sept. 15 but will end the campaign without having seen any game action. She's ineligible to play in the postseason while on a developmental pact."
+      }
+     ]
+    },
+    "36844": {
+     "recordId": "36844",
+     "athleteName": "Angel Reese",
+     "positionAbbr": "F",
+     "teamId": "20",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Dream",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-24T02:18Z|Reese sustained an apparent facial injury in the second quarter of Wednesday's 83-65 win over the Liberty and did not return during the second half, finishing with six points (2-7 FG, 0-1 3Pt, 2-2 FT), six rebounds, three assists and three steals across 17 minutes.",
+       "status": "Out",
+       "date": "2026-09-24T02:18Z",
+       "shortComment": "Reese sustained an apparent facial injury in the second quarter of Wednesday's 83-65 win over the Liberty and did not return during the second half, finishing with six points (2-7 FG, 0-1 3Pt, 2-2 FT), six rebounds, three assists and three steals across 17 minutes.",
+       "longComment": "Reese caught an elbow to the face near the end of the first half and briefly exited to the locker room before returning to shoot her free throws. The 24-year-old didn't start the second half but eventually joined her teammates back on the bench, so it's unclear if she was available to return. Her status will be worth monitoring ahead of the postseason."
+      }
+     ]
+    }
+   }
+  },
+  "129689": {
+   "teamId": "129689",
+   "displayName": "Golden State Valkyries",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "30164": {
+     "recordId": "30164",
+     "athleteName": "Iliana Rupert",
+     "positionAbbr": "C",
+     "teamId": "129689",
+     "teamAbbr": "GS",
+     "teamName": "Golden State Valkyries",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-05-07T15:18Z|Rupert is pregnant, and the Valkyries have filed for a replacement contract ahead of the 2026 season, Alexa Philippou of ESPN.com reports Thursday.",
+       "status": "Out",
+       "date": "2026-05-07T15:18Z",
+       "shortComment": "Rupert is pregnant, and the Valkyries have filed for a replacement contract ahead of the 2026 season, Alexa Philippou of ESPN.com reports Thursday.",
+       "longComment": "Rupert signed a multi-year contract with Golden State during the offseason and missed the start of training camp due to an overseas commitment. Her status for the 2026 regular season now appears to be in jeopardy due to her pregnancy. The 24-year-old made 21 regular-season appearances (11 starts) for the Valkyries last year and averaged 9.3 points, 3.9 rebounds and 1.6 assists in 23.1 minutes per game. If Rupert is sidelined in 2026, Janelle Salaun, Kiah Stokes and Laeticia Amihere are candidates to see increased work."
+      }
+     ]
+    }
+   }
+  },
+  "131935": {
+   "teamId": "131935",
+   "displayName": "Toronto Tempo",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "35819": {
+     "recordId": "35819",
+     "athleteName": "Brittney Sykes",
+     "positionAbbr": "G",
+     "teamId": "131935",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Tempo",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-08-23T21:07Z|Sykes (foot) will miss the remainder of the 2026 season, Chelsea Leite of TSN reports.",
+       "status": "Out",
+       "date": "2026-08-23T21:07Z",
+       "shortComment": "Sykes (foot) will miss the remainder of the 2026 season, Chelsea Leite of TSN reports.",
+       "longComment": "This is a tough blow for Toronto, but Sykes' foot issues have continued to linger. She will finish the campaign with averages of 18.6 points, 3.5 rebounds, 3.4 assists, 1.2 steals and 0.5 blocks in 29.4 minutes per contest. Kia Nurse and Ornella Bankole could see larger roles the rest of the way with this news."
+      }
+     ]
+    },
+    "35820": {
+     "recordId": "35820",
+     "athleteName": "Aneesah Morrow",
+     "positionAbbr": "F",
+     "teamId": "131935",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Tempo",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-08-23T21:12Z|Morrow (knee) will miss the rest of the 2026 season, Chelsea Leite of TSN reports.",
+       "status": "Out",
+       "date": "2026-08-23T21:12Z",
+       "shortComment": "Morrow (knee) will miss the rest of the 2026 season, Chelsea Leite of TSN reports.",
+       "longComment": "Brittney Sykes (foot) will also miss the final eight games for Toronto. According to coach Sandy Brondello, Morrow is not facing a lengthy recovery. Kia Nurse and Ornella Bankole are candidates to step into larger roles the rest of the way."
+      }
+     ]
+    },
+    "36377": {
+     "recordId": "36377",
+     "athleteName": "Marina Mabrey",
+     "positionAbbr": "G",
+     "teamId": "131935",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Tempo",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-16T16:07Z|Mabrey (hip) will miss the final four games of the 2026 season, Zulfi Sheikh of Sportsnet reports.",
+       "status": "Out",
+       "date": "2026-09-16T16:07Z",
+       "shortComment": "Mabrey (hip) will miss the final four games of the 2026 season, Zulfi Sheikh of Sportsnet reports.",
+       "longComment": "Mabrey, who has been sidelined since mid-August, will not require surgery and is expected to make a full recovery ahead of the 2027 WNBA season. Across 32 appearances, she produced averages of 20.8 points, 3.3 rebounds, 3.7 assists and 0.9 steals."
+      }
+     ]
+    },
+    "36821": {
+     "recordId": "36821",
+     "athleteName": "Temi Fagbenle",
+     "positionAbbr": "C",
+     "teamId": "131935",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Tempo",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T20:56Z|Fagbenle (personal) is out for Thursday's game against the Sun.",
+       "status": "Out",
+       "date": "2026-09-23T20:56Z",
+       "shortComment": "Fagbenle (personal) is out for Thursday's game against the Sun.",
+       "longComment": "Fagbenle won't rejoin the team for the regular-season finale due to personal reasons. She's set for unrestricted free agency this offseason, having averaged 5.9 points, 3.4 rebounds and 1.0 assists for the Tempo this year."
+      }
+     ]
+    },
+    "36861": {
+     "recordId": "36861",
+     "athleteName": "Maria Conde",
+     "positionAbbr": "F",
+     "teamId": "131935",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Tempo",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-24T18:24Z|Conde (back) is out for Thursday's game against the Sun.",
+       "status": "Out",
+       "date": "2026-09-24T18:24Z",
+       "shortComment": "Conde (back) is out for Thursday's game against the Sun.",
+       "longComment": "Conde is sitting out the regular-season finale Thursday. The rookie forward is set to be a reserved free agent this winter but should receive a qualifying offer, having averaged 8.5 points, 4.5 rebounds and 2.5 assists per game for Toronto in 2026."
+      }
+     ]
+    },
+    "36864": {
+     "recordId": "36864",
+     "athleteName": "Maria Gakdeng",
+     "positionAbbr": "F",
+     "teamId": "131935",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Tempo",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-24T22:33Z|Gakdeng is out for Thursday's game against the Sun as a coach's decision.",
+       "status": "Out",
+       "date": "2026-09-24T22:33Z",
+       "shortComment": "Gakdeng is out for Thursday's game against the Sun as a coach's decision.",
+       "longComment": "Gakdeng's season is over before she was able to make her debut. She'll look for another developmental opportunity this offseason."
+      }
+     ]
+    },
+    "36865": {
+     "recordId": "36865",
+     "athleteName": "Kamila Borkowska",
+     "positionAbbr": "C",
+     "teamId": "131935",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Tempo",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-24T22:34Z|Borkowska (coach's decision) is out for Thursday's game against the Sun.",
+       "status": "Out",
+       "date": "2026-09-24T22:34Z",
+       "shortComment": "Borkowska (coach's decision) is out for Thursday's game against the Sun.",
+       "longComment": "Borkowska will be sidelined for her team's final matchup of the regular season. She didn't appear in a game for the Tempo after signing a developmental contract Saturday."
+      }
+     ]
+    }
+   }
+  },
+  "132052": {
+   "teamId": "132052",
+   "displayName": "Portland Fire",
+   "firstCapturedAt": "2026-09-26T08:09:09.900Z",
+   "players": {
+    "33506": {
+     "recordId": "33506",
+     "athleteName": "Sania Feagin",
+     "positionAbbr": "F",
+     "teamId": "132052",
+     "teamAbbr": "POR",
+     "teamName": "Portland Fire",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-07-09T23:15Z|Feagin (knee) was diagnosed with a torn left ACL on Thursday and will miss the rest of the 2026 campaign, WNBA reporter Kareem Copeland reports.",
+       "status": "Out",
+       "date": "2026-07-09T23:15Z",
+       "shortComment": "Feagin (knee) was diagnosed with a torn left ACL on Thursday and will miss the rest of the 2026 campaign, WNBA reporter Kareem Copeland reports.",
+       "longComment": "Feagin agreed to a developmental contract with Portland on June 24 after spending time in Los Angeles. After appearing in 16 regular-season games for the Sparks in 2025, the 23-year-old played in only three regular-season contests in 2026, logging a combined 10 minutes. Feagin had yet to make her debut with the Fire, though that will now need to wait, assuming Portland keeps her on the roster moving ahead."
+      }
+     ]
+    },
+    "34266": {
+     "recordId": "34266",
+     "athleteName": "Sarah Ashlee Barker",
+     "positionAbbr": "G",
+     "teamId": "132052",
+     "teamAbbr": "POR",
+     "teamName": "Portland Fire",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-07-24T15:18Z|The Fire announced Friday that Barker will undergo surgery to repair a torn ACL and will miss the remainder of the 2026 campaign.",
+       "status": "Out",
+       "date": "2026-07-24T15:18Z",
+       "shortComment": "The Fire announced Friday that Barker will undergo surgery to repair a torn ACL and will miss the remainder of the 2026 campaign.",
+       "longComment": "Barker was helped to the locker room in the first quarter of Wednesday's loss to the Wings, and she's now been diagnosed with a season-ending injury. The second-year guard took on a significant role for the Fire after the club selected her in the 2026 WNBA Expansion Draft. Across 26 regular-season games (15 starts), the 24-year-old averaged 10.7 points, 4.5 rebounds, 2.4 assists and 0.9 steals in 24.7 minutes per contest. Karlie Samuelson, Teja Oblak and Nyadiew Puoch are candidates for increased playing time in Barker's stead."
+      }
+     ]
+    },
+    "34949": {
+     "recordId": "34949",
+     "athleteName": "Luisa Geiselsoder",
+     "positionAbbr": "C",
+     "teamId": "132052",
+     "teamAbbr": "POR",
+     "teamName": "Portland Fire",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-08-08T22:37Z|Geiselsoder (personal) won't return this season, according to Sean Highkin of RoseGardenReport.com.",
+       "status": "Out",
+       "date": "2026-08-08T22:37Z",
+       "shortComment": "Geiselsoder (personal) won't return this season, according to Sean Highkin of RoseGardenReport.com.",
+       "longComment": "Geiselsoder will represent Germany at the 2026 FIBA Women's World Cup, and since she's been out of the rotation for a while, she's leaving early for preparation and won't return this season. She ends the season with averages of 4.5 points, 2.6 rebounds and 1.3 assists across 16.6 minutes per game in 21 appearances (nine starts)."
+      }
+     ]
+    },
+    "36720": {
+     "recordId": "36720",
+     "athleteName": "Teja Oblak",
+     "positionAbbr": "G",
+     "teamId": "132052",
+     "teamAbbr": "POR",
+     "teamName": "Portland Fire",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-21T23:56Z|Oblak (knee) has been ruled out for Tuesday's game against the Valkyries.",
+       "status": "Out",
+       "date": "2026-09-21T23:56Z",
+       "shortComment": "Oblak (knee) has been ruled out for Tuesday's game against the Valkyries.",
+       "longComment": "Oblak will end the season on the inactive list for a fourth consecutive game due to a left knee injury. The 35-year-old guard made her WNBA debut this year and will finish the 2026 campaign with averages of 5.6 points, 3.2 assists, 1.6 rebounds, 0.8 triples and 0.7 steals while shooting 36.7 percent from downtown across 13.4 minutes per game in 29 regular-season appearances (one start)."
+      }
+     ]
+    },
+    "36771": {
+     "recordId": "36771",
+     "athleteName": "Nyadiew Puoch",
+     "positionAbbr": "F",
+     "teamId": "132052",
+     "teamAbbr": "POR",
+     "teamName": "Portland Fire",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T01:07Z|Puoch (knee) is listed as out for Tuesday's game against Golden State.",
+       "status": "Out",
+       "date": "2026-09-23T01:07Z",
+       "shortComment": "Puoch (knee) is listed as out for Tuesday's game against Golden State.",
+       "longComment": "Puoch won't be available for the Fire's final game of the 2026 campaign, marking just her second absence of the season. Without Puoch in the mix, Frieda Buhner and Amy Okonkwo could see more action."
+      }
+     ]
+    },
+    "36773": {
+     "recordId": "36773",
+     "athleteName": "Holly Winterburn",
+     "positionAbbr": "G",
+     "teamId": "132052",
+     "teamAbbr": "POR",
+     "teamName": "Portland Fire",
+     "history": [
+      {
+       "captured_at": "2026-09-26T08:09:09.900Z",
+       "last_seen_at": "2026-09-26T08:09:09.900Z",
+       "fp": "Out|2026-09-23T01:22Z|Winterburn (back) has been ruled out for Tuesday's game against Golden State.",
+       "status": "Out",
+       "date": "2026-09-23T01:22Z",
+       "shortComment": "Winterburn (back) has been ruled out for Tuesday's game against Golden State.",
+       "longComment": "Winterburn will be held out of Portland's season finale due to a back injury, and she'll finish the 2026 campaign having averaged 4.0 points, 1.8 assists and 1.4 rebounds across 11.2 minutes per game in 29 regular-season appearances (one start). She began the season on a developmental deal before being converted to a standard contract, and the 25-year-old guard is set to be an unrestricted free agent this season."
+      }
+     ]
+    }
+   }
+  }
+ },
+ "last_ingested_at": "2026-09-26T08:09:09.900Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries"
+}

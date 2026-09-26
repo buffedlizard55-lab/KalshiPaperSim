@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-26T02:40:55.303Z",
+ "generatedAt": "2026-09-26T08:09:10.465Z",
  "rows": [
   {
    "league": "nba",
@@ -200,6 +200,21 @@
      "ticker": "KXNCAAFGAME-26OCT03CHSTARL-TARL",
      "rulesName": "Chicago St.",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "CLEM",
+   "kalshiName": "Clemson",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT03MIACLEM-CLEM",
+     "rulesName": "Clemson",
+     "role": "home"
     }
    ]
   },
@@ -445,6 +460,11 @@
      "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
      "rulesName": "Miami (FL)",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT03MIACLEM-CLEM",
+     "rulesName": "Miami (FL)",
+     "role": "away"
     }
    ]
   },
