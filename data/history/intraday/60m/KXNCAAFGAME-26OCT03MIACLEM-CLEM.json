@@ -2828,6 +2828,81 @@
         "low_dollars": "0.1000",
         "open_dollars": "0.1100"
       }
+    },
+    {
+      "end_period_ts": 1790402400,
+      "open_interest_fp": "4085.10",
+      "price": {
+        "close_dollars": "0.1700",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.0500",
+        "mean_dollars": "0.1326",
+        "open_dollars": "0.1700",
+        "previous_dollars": "0.1600"
+      },
+      "volume_fp": "3297.49",
+      "yes_ask": {
+        "close_dollars": "0.1700",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.1200",
+        "open_dollars": "0.1700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0900",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.1000"
+      }
+    },
+    {
+      "end_period_ts": 1790406000,
+      "open_interest_fp": "4146.62",
+      "price": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.1500",
+        "mean_dollars": "0.1611",
+        "open_dollars": "0.1500",
+        "previous_dollars": "0.1700"
+      },
+      "volume_fp": "61.52",
+      "yes_ask": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.1500",
+        "open_dollars": "0.1700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1000",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.0900"
+      }
+    },
+    {
+      "end_period_ts": 1790409600,
+      "open_interest_fp": "4191.64",
+      "price": {
+        "close_dollars": "0.1700",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.1600",
+        "mean_dollars": "0.1678",
+        "open_dollars": "0.1600",
+        "previous_dollars": "0.1600"
+      },
+      "volume_fp": "45.02",
+      "yes_ask": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.1600",
+        "open_dollars": "0.1600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1100",
+        "high_dollars": "0.1400",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.1000"
+      }
     }
   ],
   "books": [
@@ -3070,6 +3145,226 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-26T08:02:51.445Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MIACLEM-CLEM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2035687.01"
+            ],
+            [
+              "0.0200",
+              "9108.00"
+            ],
+            [
+              "0.0300",
+              "309842.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "5.00"
+            ],
+            [
+              "0.0700",
+              "67793.00"
+            ],
+            [
+              "0.1100",
+              "248538.00"
+            ],
+            [
+              "0.1200",
+              "15353.84"
+            ],
+            [
+              "0.1500",
+              "92051.00"
+            ],
+            [
+              "0.1700",
+              "23085.00"
+            ],
+            [
+              "0.2100",
+              "56176.00"
+            ],
+            [
+              "0.2200",
+              "22659.00"
+            ],
+            [
+              "0.2600",
+              "35102.00"
+            ],
+            [
+              "0.2800",
+              "5.90"
+            ],
+            [
+              "0.2900",
+              "27605.00"
+            ],
+            [
+              "0.3300",
+              "40247.00"
+            ],
+            [
+              "0.3500",
+              "1794.00"
+            ],
+            [
+              "0.3700",
+              "15848.00"
+            ],
+            [
+              "0.4100",
+              "11301.00"
+            ],
+            [
+              "0.4500",
+              "61884.00"
+            ],
+            [
+              "0.4600",
+              "10801.30"
+            ],
+            [
+              "0.5000",
+              "7701.00"
+            ],
+            [
+              "0.5100",
+              "417.00"
+            ],
+            [
+              "0.5200",
+              "59.18"
+            ],
+            [
+              "0.5400",
+              "44535.00"
+            ],
+            [
+              "0.5500",
+              "10199.99"
+            ],
+            [
+              "0.5600",
+              "4662.00"
+            ],
+            [
+              "0.6000",
+              "3691.00"
+            ],
+            [
+              "0.6400",
+              "33491.00"
+            ],
+            [
+              "0.6500",
+              "30.00"
+            ],
+            [
+              "0.6600",
+              "5000.00"
+            ],
+            [
+              "0.6800",
+              "2340.00"
+            ],
+            [
+              "0.7000",
+              "500.00"
+            ],
+            [
+              "0.7200",
+              "23965.00"
+            ],
+            [
+              "0.7300",
+              "336.00"
+            ],
+            [
+              "0.7400",
+              "112.00"
+            ],
+            [
+              "0.7500",
+              "112.00"
+            ],
+            [
+              "0.7700",
+              "1.00"
+            ],
+            [
+              "0.7800",
+              "152.00"
+            ],
+            [
+              "0.8000",
+              "2191.00"
+            ],
+            [
+              "0.8100",
+              "2161.00"
+            ],
+            [
+              "0.8200",
+              "79.00"
+            ],
+            [
+              "0.8300",
+              "1801.71"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1700243.00"
+            ],
+            [
+              "0.0200",
+              "150230.00"
+            ],
+            [
+              "0.0300",
+              "100334.00"
+            ],
+            [
+              "0.0400",
+              "41655.00"
+            ],
+            [
+              "0.0500",
+              "6471.30"
+            ],
+            [
+              "0.0600",
+              "253.00"
+            ],
+            [
+              "0.0700",
+              "93.00"
+            ],
+            [
+              "0.0900",
+              "1023.09"
+            ],
+            [
+              "0.1200",
+              "93.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3085,20 +3380,20 @@
     "expected_expiration_time": "2026-10-03T20:00:00Z",
     "expiration_time": "2026-10-05T17:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.1500",
+    "last_price_dollars": "0.1700",
     "latest_expiration_time": "2026-10-05T17:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.8900",
-    "no_bid_dollars": "0.8600",
+    "no_ask_dollars": "0.8800",
+    "no_bid_dollars": "0.8300",
     "no_sub_title": "Clemson",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-03T20:00:00Z",
-    "open_interest_fp": "3285.06",
+    "open_interest_fp": "4247.34",
     "open_time": "2026-09-19T19:08:00Z",
-    "previous_price_dollars": "0.1500",
-    "previous_yes_ask_dollars": "0.1500",
-    "previous_yes_bid_dollars": "0.1200",
+    "previous_price_dollars": "0.1200",
+    "previous_yes_ask_dollars": "0.1400",
+    "previous_yes_bid_dollars": "0.1100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3116,17 +3411,17 @@
     "ticker": "KXNCAAFGAME-26OCT03MIACLEM-CLEM",
     "title": "Clemson wins",
     "updated_time": "2026-09-19T19:08:01.348223Z",
-    "volume_24h_fp": "3785.90",
-    "volume_fp": "5021.25",
-    "yes_ask_dollars": "0.1400",
-    "yes_ask_size_fp": "6.88",
-    "yes_bid_dollars": "0.1100",
-    "yes_bid_size_fp": "28.00",
+    "volume_24h_fp": "4716.55",
+    "volume_fp": "6007.88",
+    "yes_ask_dollars": "0.1700",
+    "yes_ask_size_fp": "1801.71",
+    "yes_bid_dollars": "0.1200",
+    "yes_bid_size_fp": "975.59",
     "yes_sub_title": "Clemson"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MIACLEM-CLEM",
-  "market_captured_at": "2026-09-26T05:23:22.480Z",
+  "market_captured_at": "2026-09-26T08:02:50.712Z",
   "status": "active",
-  "last_ingested_at": "2026-09-26T05:23:23.119Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03MIACLEM-CLEM/candlesticks?start_ts=1789758480&end_ts=1790400202&period_interval=60"
+  "last_ingested_at": "2026-09-26T08:02:51.382Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03MIACLEM-CLEM/candlesticks?start_ts=1790398801&end_ts=1790409771&period_interval=60"
 }

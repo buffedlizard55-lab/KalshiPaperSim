@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T05:27:00.421Z",
+  "generatedAt": "2026-09-26T08:06:41.413Z",
   "apiBase": "https://external-api.kalshi.com/trade-api/v2",
   "periodIntervalMinutes": 1440,
   "storeDir": "data/history",
@@ -24,30 +24,30 @@
       "kept": 289,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 45,
+      "books": 47,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXAAPLCEOCHANGE/markets/KXAAPLCEOCHANGE-26/candlesticks?start_ts=1788494401&end_ts=1790400413&period_interval=1440"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXAAPLCEOCHANGE/markets/KXAAPLCEOCHANGE-26/candlesticks?start_ts=1788494401&end_ts=1790409994&period_interval=1440"
     },
     {
       "ticker": "TESLACEOCHANGE-26",
       "series": "TESLACEOCHANGE",
       "period": 1440,
       "added": 0,
-      "total": 401,
+      "total": 400,
       "kept": 400,
-      "trimmed": 1,
+      "trimmed": 0,
       "conflicts": 0,
-      "books": 55,
+      "books": 57,
       "market": "captured",
       "status": "active",
       "result": null,
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/TESLACEOCHANGE/markets/TESLACEOCHANGE-26/candlesticks?start_ts=1790395201&end_ts=1790400415&period_interval=1440"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/TESLACEOCHANGE/markets/TESLACEOCHANGE-26/candlesticks?start_ts=1790395201&end_ts=1790409995&period_interval=1440"
     },
     {
       "ticker": "KXTESLACEOCHANGE-26",
@@ -58,13 +58,13 @@
       "kept": 0,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 45,
+      "books": 47,
       "market": "captured",
       "status": "inactive",
       "result": null,
       "windows": 2,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXTESLACEOCHANGE/markets/KXTESLACEOCHANGE-26/candlesticks?start_ts=1782709260&end_ts=1790400416&period_interval=1440"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXTESLACEOCHANGE/markets/KXTESLACEOCHANGE-26/candlesticks?start_ts=1782709260&end_ts=1790409997&period_interval=1440"
     },
     {
       "ticker": "KXOPENAICEOCHANGE-26",
@@ -75,13 +75,13 @@
       "kept": 268,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 55,
+      "books": 57,
       "market": "captured",
       "status": "active",
       "result": null,
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXOPENAICEOCHANGE/markets/KXOPENAICEOCHANGE-26/candlesticks?start_ts=1790395201&end_ts=1790400418&period_interval=1440"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXOPENAICEOCHANGE/markets/KXOPENAICEOCHANGE-26/candlesticks?start_ts=1790395201&end_ts=1790409998&period_interval=1440"
     },
     {
       "ticker": "JPMCEOCHANGE-27",
@@ -92,21 +92,21 @@
       "kept": 291,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 55,
+      "books": 57,
       "market": "captured",
       "status": "active",
       "result": null,
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1790395201&end_ts=1790400419&period_interval=1440"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1790395201&end_ts=1790410000&period_interval=1440"
     }
   ],
   "totals": {
     "markets": 5,
     "barsAdded": 0,
-    "barsStored": 1249,
+    "barsStored": 1248,
     "barsKept": 1248,
-    "barsTrimmed": 1,
+    "barsTrimmed": 0,
     "conflicts": 0,
     "failures": 0
   },

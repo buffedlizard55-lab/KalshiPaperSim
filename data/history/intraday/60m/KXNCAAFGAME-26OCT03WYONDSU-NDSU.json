@@ -2405,6 +2405,71 @@
         "low_dollars": "0.8700",
         "open_dollars": "0.8900"
       }
+    },
+    {
+      "end_period_ts": 1790402400,
+      "open_interest_fp": "6452.92",
+      "price": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.9300",
+        "mean_dollars": "0.9300",
+        "open_dollars": "0.9300",
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "23.54",
+      "yes_ask": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.9300",
+        "open_dollars": "0.9300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8900",
+        "high_dollars": "0.8900",
+        "low_dollars": "0.8700",
+        "open_dollars": "0.8900"
+      }
+    },
+    {
+      "end_period_ts": 1790406000,
+      "open_interest_fp": "6452.92",
+      "price": {
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.9300",
+        "open_dollars": "0.9300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8900",
+        "high_dollars": "0.8900",
+        "low_dollars": "0.8700",
+        "open_dollars": "0.8900"
+      }
+    },
+    {
+      "end_period_ts": 1790409600,
+      "open_interest_fp": "6452.92",
+      "price": {
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.9300",
+        "open_dollars": "0.9300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8900",
+        "high_dollars": "0.8900",
+        "low_dollars": "0.8700",
+        "open_dollars": "0.8900"
+      }
     }
   ],
   "books": [
@@ -3863,6 +3928,110 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-26T08:02:50.047Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03WYONDSU-NDSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "114544.00"
+            ],
+            [
+              "0.0200",
+              "1850.00"
+            ],
+            [
+              "0.0300",
+              "532.00"
+            ],
+            [
+              "0.0400",
+              "652.74"
+            ],
+            [
+              "0.0500",
+              "4144.75"
+            ],
+            [
+              "0.0600",
+              "40.00"
+            ],
+            [
+              "0.0700",
+              "48.46"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "114535.00"
+            ],
+            [
+              "0.0200",
+              "1831.00"
+            ],
+            [
+              "0.0300",
+              "572.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1800",
+              "730.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2400",
+              "1183.00"
+            ],
+            [
+              "0.2500",
+              "576.00"
+            ],
+            [
+              "0.2600",
+              "249.00"
+            ],
+            [
+              "0.2700",
+              "141.00"
+            ],
+            [
+              "0.5900",
+              "15.00"
+            ],
+            [
+              "0.7900",
+              "15.00"
+            ],
+            [
+              "0.8300",
+              "51.45"
+            ],
+            [
+              "0.8700",
+              "262.57"
+            ],
+            [
+              "0.8800",
+              "204.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3887,10 +4056,10 @@
     "no_sub_title": "North Dakota St.",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-03T22:30:00Z",
-    "open_interest_fp": "6429.38",
+    "open_interest_fp": "6452.92",
     "open_time": "2026-09-19T22:08:00Z",
     "previous_price_dollars": "0.9300",
-    "previous_yes_ask_dollars": "0.9300",
+    "previous_yes_ask_dollars": "0.9100",
     "previous_yes_bid_dollars": "0.8600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -3909,17 +4078,17 @@
     "ticker": "KXNCAAFGAME-26OCT03WYONDSU-NDSU",
     "title": "North Dakota St. wins",
     "updated_time": "2026-09-19T22:08:01.218781Z",
-    "volume_24h_fp": "42.80",
-    "volume_fp": "6432.85",
+    "volume_24h_fp": "66.34",
+    "volume_fp": "6456.39",
     "yes_ask_dollars": "0.9300",
-    "yes_ask_size_fp": "72.06",
+    "yes_ask_size_fp": "48.46",
     "yes_bid_dollars": "0.8800",
     "yes_bid_size_fp": "204.00",
     "yes_sub_title": "North Dakota St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03WYONDSU-NDSU",
-  "market_captured_at": "2026-09-26T05:23:21.173Z",
+  "market_captured_at": "2026-09-26T08:02:49.321Z",
   "status": "active",
-  "last_ingested_at": "2026-09-26T05:23:21.810Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03WYONDSU-NDSU/candlesticks?start_ts=1790366401&end_ts=1790400201&period_interval=60"
+  "last_ingested_at": "2026-09-26T08:02:49.985Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03WYONDSU-NDSU/candlesticks?start_ts=1790398801&end_ts=1790409769&period_interval=60"
 }
