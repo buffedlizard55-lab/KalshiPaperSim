@@ -327,6 +327,31 @@
         "low_dollars": "0.9800",
         "open_dollars": "0.9900"
       }
+    },
+    {
+      "end_period_ts": 1790395200,
+      "open_interest_fp": "105373.81",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9800",
+        "mean_dollars": "0.9814",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "50625.54",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.9900",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -4589,6 +4614,226 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-26T05:18:27.311Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "153083.32"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2839552.00"
+            ],
+            [
+              "0.0200",
+              "4729.00"
+            ],
+            [
+              "0.0300",
+              "180393.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "194489.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "252320.00"
+            ],
+            [
+              "0.1200",
+              "20.00"
+            ],
+            [
+              "0.1500",
+              "111761.00"
+            ],
+            [
+              "0.1600",
+              "58285.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2100",
+              "59165.00"
+            ],
+            [
+              "0.2200",
+              "19644.00"
+            ],
+            [
+              "0.2300",
+              "69.00"
+            ],
+            [
+              "0.2600",
+              "35496.00"
+            ],
+            [
+              "0.2700",
+              "19412.00"
+            ],
+            [
+              "0.3100",
+              "31836.00"
+            ],
+            [
+              "0.3500",
+              "69250.00"
+            ],
+            [
+              "0.3600",
+              "1.00"
+            ],
+            [
+              "0.3800",
+              "18618.00"
+            ],
+            [
+              "0.4100",
+              "1.00"
+            ],
+            [
+              "0.4200",
+              "19047.00"
+            ],
+            [
+              "0.4600",
+              "28981.00"
+            ],
+            [
+              "0.4700",
+              "200.00"
+            ],
+            [
+              "0.5000",
+              "14478.00"
+            ],
+            [
+              "0.5400",
+              "10216.00"
+            ],
+            [
+              "0.5900",
+              "40414.00"
+            ],
+            [
+              "0.6000",
+              "7366.00"
+            ],
+            [
+              "0.6200",
+              "7436.00"
+            ],
+            [
+              "0.6300",
+              "2000.00"
+            ],
+            [
+              "0.6700",
+              "6763.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.7200",
+              "36525.00"
+            ],
+            [
+              "0.7400",
+              "80.00"
+            ],
+            [
+              "0.7600",
+              "5301.00"
+            ],
+            [
+              "0.8000",
+              "4000.00"
+            ],
+            [
+              "0.8100",
+              "23977.00"
+            ],
+            [
+              "0.8300",
+              "140.00"
+            ],
+            [
+              "0.8400",
+              "2824.00"
+            ],
+            [
+              "0.8800",
+              "8000.00"
+            ],
+            [
+              "0.8900",
+              "22648.00"
+            ],
+            [
+              "0.9000",
+              "748.00"
+            ],
+            [
+              "0.9100",
+              "2222.00"
+            ],
+            [
+              "0.9200",
+              "4200.00"
+            ],
+            [
+              "0.9300",
+              "510.00"
+            ],
+            [
+              "0.9400",
+              "103.42"
+            ],
+            [
+              "0.9500",
+              "38326.00"
+            ],
+            [
+              "0.9600",
+              "8631.00"
+            ],
+            [
+              "0.9700",
+              "3711.77"
+            ],
+            [
+              "0.9800",
+              "299680.44"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4613,11 +4858,11 @@
     "no_sub_title": "Texas Tech",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-09-26T20:00:00Z",
-    "open_interest_fp": "60911.05",
+    "open_interest_fp": "105533.61",
     "open_time": "2026-09-12T19:07:00Z",
     "previous_price_dollars": "0.9900",
-    "previous_yes_ask_dollars": "0.9900",
-    "previous_yes_bid_dollars": "0.9800",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.9900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4635,17 +4880,17 @@
     "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
     "title": "Texas Tech wins",
     "updated_time": "2026-09-20T10:03:06.550041Z",
-    "volume_24h_fp": "27991.60",
-    "volume_fp": "87455.94",
+    "volume_24h_fp": "50317.34",
+    "volume_fp": "132748.48",
     "yes_ask_dollars": "0.9900",
-    "yes_ask_size_fp": "13282.25",
+    "yes_ask_size_fp": "153083.32",
     "yes_bid_dollars": "0.9800",
-    "yes_bid_size_fp": "374756.38",
+    "yes_bid_size_fp": "299680.44",
     "yes_sub_title": "Texas Tech"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU",
-  "market_captured_at": "2026-09-25T20:09:42.707Z",
+  "market_captured_at": "2026-09-26T05:18:26.740Z",
   "status": "active",
-  "last_ingested_at": "2026-09-25T20:09:43.231Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1790308801&end_ts=1790366982&period_interval=1440"
+  "last_ingested_at": "2026-09-26T05:18:27.277Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1790308801&end_ts=1790399906&period_interval=1440"
 }

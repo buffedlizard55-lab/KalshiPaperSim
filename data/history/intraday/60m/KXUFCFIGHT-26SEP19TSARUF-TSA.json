@@ -5175,6 +5175,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-26T05:23:42.124Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-TSA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5232,11 +5242,11 @@
     "yes_sub_title": "Arman Tsarukyan"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-TSA",
-  "market_captured_at": "2026-09-25T20:14:52.057Z",
+  "market_captured_at": "2026-09-26T05:23:41.454Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-25T20:14:52.683Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-TSA/candlesticks?start_ts=1789876801&end_ts=1790367292&period_interval=60",
+  "last_ingested_at": "2026-09-26T05:23:42.090Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-TSA/candlesticks?start_ts=1789876801&end_ts=1790400221&period_interval=60",
   "trims": [
     {
       "at": "2026-09-20T03:34:47.887Z",
