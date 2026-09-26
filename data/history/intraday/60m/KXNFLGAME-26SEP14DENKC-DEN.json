@@ -5310,6 +5310,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-26T11:32:56.958Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-DEN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5367,11 +5377,11 @@
     "yes_sub_title": "Denver"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP14DENKC-DEN",
-  "market_captured_at": "2026-09-26T08:02:06.091Z",
+  "market_captured_at": "2026-09-26T11:32:56.325Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-26T08:02:06.755Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP14DENKC-DEN/candlesticks?start_ts=1789444801&end_ts=1790409726&period_interval=60",
+  "last_ingested_at": "2026-09-26T11:32:56.942Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP14DENKC-DEN/candlesticks?start_ts=1789444801&end_ts=1790422376&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T06:39:48.616Z",

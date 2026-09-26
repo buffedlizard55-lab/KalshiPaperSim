@@ -2072,6 +2072,46 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1790413200,
+      "open_interest_fp": "156829.44",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1790416800,
+      "open_interest_fp": "156829.44",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -5564,6 +5604,185 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-26T11:33:28.349Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4138859.72"
+            ],
+            [
+              "0.0200",
+              "8518.00"
+            ],
+            [
+              "0.0300",
+              "349482.00"
+            ],
+            [
+              "0.0400",
+              "1096.00"
+            ],
+            [
+              "0.0500",
+              "374959.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "486846.00"
+            ],
+            [
+              "0.1500",
+              "215642.00"
+            ],
+            [
+              "0.1600",
+              "83569.00"
+            ],
+            [
+              "0.2100",
+              "114157.00"
+            ],
+            [
+              "0.2200",
+              "37901.00"
+            ],
+            [
+              "0.2600",
+              "68489.00"
+            ],
+            [
+              "0.2700",
+              "37452.00"
+            ],
+            [
+              "0.3100",
+              "61425.00"
+            ],
+            [
+              "0.3500",
+              "130064.00"
+            ],
+            [
+              "0.3800",
+              "35921.00"
+            ],
+            [
+              "0.4200",
+              "36749.00"
+            ],
+            [
+              "0.4400",
+              "2856.99"
+            ],
+            [
+              "0.4600",
+              "36638.00"
+            ],
+            [
+              "0.4800",
+              "1366.00"
+            ],
+            [
+              "0.5000",
+              "27936.00"
+            ],
+            [
+              "0.5400",
+              "19711.00"
+            ],
+            [
+              "0.5900",
+              "75727.00"
+            ],
+            [
+              "0.6000",
+              "13888.00"
+            ],
+            [
+              "0.6200",
+              "14347.00"
+            ],
+            [
+              "0.6300",
+              "93.51"
+            ],
+            [
+              "0.6700",
+              "13050.00"
+            ],
+            [
+              "0.7200",
+              "60978.00"
+            ],
+            [
+              "0.7300",
+              "20.71"
+            ],
+            [
+              "0.7600",
+              "10226.00"
+            ],
+            [
+              "0.7700",
+              "2083.00"
+            ],
+            [
+              "0.8100",
+              "44839.00"
+            ],
+            [
+              "0.8200",
+              "20.71"
+            ],
+            [
+              "0.8400",
+              "5103.00"
+            ],
+            [
+              "0.8900",
+              "41469.00"
+            ],
+            [
+              "0.9000",
+              "1135.00"
+            ],
+            [
+              "0.9100",
+              "43.26"
+            ],
+            [
+              "0.9500",
+              "67618.00"
+            ],
+            [
+              "0.9600",
+              "1104.51"
+            ],
+            [
+              "0.9700",
+              "135.93"
+            ],
+            [
+              "0.9800",
+              "1200.00"
+            ],
+            [
+              "0.9900",
+              "4268071.36"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5613,14 +5832,14 @@
     "volume_24h_fp": "4193.41",
     "volume_fp": "156829.44",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "4480293.36",
+    "yes_ask_size_fp": "4268071.36",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "McNeese"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS",
-  "market_captured_at": "2026-09-26T08:02:40.963Z",
+  "market_captured_at": "2026-09-26T11:33:27.714Z",
   "status": "active",
-  "last_ingested_at": "2026-09-26T08:02:41.631Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS/candlesticks?start_ts=1790398801&end_ts=1790409761&period_interval=60"
+  "last_ingested_at": "2026-09-26T11:33:28.332Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT03MCNSLSU-MCNS/candlesticks?start_ts=1790406001&end_ts=1790422408&period_interval=60"
 }

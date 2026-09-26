@@ -10839,7 +10839,7 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "2102648.91",
     "open_time": "2026-01-21T22:00:00Z",
-    "previous_price_dollars": "0.1000",
+    "previous_price_dollars": "0.0900",
     "previous_yes_ask_dollars": "0.1000",
     "previous_yes_bid_dollars": "0.0900",
     "price_level_structure": "linear_cent",
@@ -10859,17 +10859,17 @@
     "ticker": "KXNCAAF-27-MIA",
     "title": "Will Miami (FL) win the College Football Playoff National Championship?",
     "updated_time": "2026-09-15T15:39:56.096915Z",
-    "volume_24h_fp": "10655.82",
+    "volume_24h_fp": "9824.05",
     "volume_fp": "2415440.53",
     "yes_ask_dollars": "0.1000",
-    "yes_ask_size_fp": "147835.57",
+    "yes_ask_size_fp": "147836.25",
     "yes_bid_dollars": "0.0900",
-    "yes_bid_size_fp": "43746.20",
+    "yes_bid_size_fp": "43747.32",
     "yes_sub_title": "Miami (FL)"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-MIA",
-  "market_captured_at": "2026-09-26T07:57:21.499Z",
+  "market_captured_at": "2026-09-26T11:29:00.162Z",
   "status": "active",
-  "last_ingested_at": "2026-09-26T07:57:22.064Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-MIA/candlesticks?start_ts=1790395201&end_ts=1790409441&period_interval=1440"
+  "last_ingested_at": "2026-09-26T11:29:00.680Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-MIA/candlesticks?start_ts=1790395201&end_ts=1790422140&period_interval=1440"
 }
