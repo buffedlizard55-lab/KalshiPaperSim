@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-09-26T00:51:03.674Z",
+ "startedAt": "2026-09-26T02:40:54.103Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -90,7 +90,7 @@
       "ok": true,
       "status": 200,
       "events": 5,
-      "stateRows": 10
+      "stateRows": 14
      },
      "2026-09-26": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260926",
@@ -156,7 +156,7 @@
       "ok": true,
       "status": 200,
       "events": 4,
-      "stateRows": 8
+      "stateRows": 12
      },
      "2026-09-26": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260926",
@@ -208,5 +208,5 @@
   "matched": 53,
   "unmapped": 45
  },
- "finishedAt": "2026-09-26T00:51:04.931Z"
+ "finishedAt": "2026-09-26T02:40:55.304Z"
 }
