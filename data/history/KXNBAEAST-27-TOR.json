@@ -5811,6 +5811,170 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-26T19:26:33.436Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-TOR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3895028.71"
+            ],
+            [
+              "0.0200",
+              "7400.00"
+            ],
+            [
+              "0.0300",
+              "9474.00"
+            ],
+            [
+              "0.0600",
+              "943598.00"
+            ],
+            [
+              "0.1100",
+              "514690.00"
+            ],
+            [
+              "0.1800",
+              "377170.00"
+            ],
+            [
+              "0.2000",
+              "13.41"
+            ],
+            [
+              "0.2500",
+              "292399.21"
+            ],
+            [
+              "0.3100",
+              "395448.00"
+            ],
+            [
+              "0.3900",
+              "237407.00"
+            ],
+            [
+              "0.4300",
+              "13.47"
+            ],
+            [
+              "0.4600",
+              "61415.00"
+            ],
+            [
+              "0.4800",
+              "115766.00"
+            ],
+            [
+              "0.5000",
+              "417.82"
+            ],
+            [
+              "0.5100",
+              "2131.00"
+            ],
+            [
+              "0.5500",
+              "30203.00"
+            ],
+            [
+              "0.6000",
+              "24361.00"
+            ],
+            [
+              "0.6700",
+              "16768.00"
+            ],
+            [
+              "0.6900",
+              "2971.00"
+            ],
+            [
+              "0.7500",
+              "144.00"
+            ],
+            [
+              "0.7600",
+              "176.14"
+            ],
+            [
+              "0.7700",
+              "90.00"
+            ],
+            [
+              "0.7900",
+              "2200.00"
+            ],
+            [
+              "0.8300",
+              "1399.32"
+            ],
+            [
+              "0.8400",
+              "1600.00"
+            ],
+            [
+              "0.8600",
+              "2500.00"
+            ],
+            [
+              "0.8700",
+              "578.12"
+            ],
+            [
+              "0.8800",
+              "548.04"
+            ],
+            [
+              "0.8900",
+              "3563.90"
+            ],
+            [
+              "0.9000",
+              "69997.94"
+            ],
+            [
+              "0.9100",
+              "50005.58"
+            ],
+            [
+              "0.9200",
+              "44876.08"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "321825.00"
+            ],
+            [
+              "0.0200",
+              "501.09"
+            ],
+            [
+              "0.0300",
+              "67.12"
+            ],
+            [
+              "0.0400",
+              "551.84"
+            ],
+            [
+              "0.0500",
+              "420.45"
+            ],
+            [
+              "0.0700",
+              "2609.52"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -5835,9 +5999,9 @@
     "no_sub_title": "Toronto",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "94579.06",
+    "open_interest_fp": "94590.80",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.0700",
+    "previous_price_dollars": "0.0800",
     "previous_yes_ask_dollars": "0.0800",
     "previous_yes_bid_dollars": "0.0700",
     "price_level_structure": "linear_cent",
@@ -5857,17 +6021,17 @@
     "ticker": "KXNBAEAST-27-TOR",
     "title": "Will Toronto win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "11.86",
-    "volume_fp": "117975.91",
+    "volume_24h_fp": "11.74",
+    "volume_fp": "117987.65",
     "yes_ask_dollars": "0.0800",
-    "yes_ask_size_fp": "44887.82",
+    "yes_ask_size_fp": "44876.08",
     "yes_bid_dollars": "0.0700",
     "yes_bid_size_fp": "2609.52",
     "yes_sub_title": "Toronto"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-TOR",
-  "market_captured_at": "2026-09-26T11:28:49.125Z",
+  "market_captured_at": "2026-09-26T19:26:32.906Z",
   "status": "active",
-  "last_ingested_at": "2026-09-26T11:28:49.642Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-TOR/candlesticks?start_ts=1790395201&end_ts=1790422129&period_interval=1440"
+  "last_ingested_at": "2026-09-26T19:26:33.422Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-TOR/candlesticks?start_ts=1790395201&end_ts=1790450793&period_interval=1440"
 }
