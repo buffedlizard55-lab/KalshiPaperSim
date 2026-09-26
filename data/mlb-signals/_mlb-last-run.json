@@ -1,9 +1,9 @@
 {
-  "startedAt": "2026-09-26T02:44:38.204Z",
-  "finishedAt": "2026-09-26T02:44:38.643Z",
+  "startedAt": "2026-09-26T08:10:55.282Z",
+  "finishedAt": "2026-09-26T08:10:55.627Z",
   "window": {
-    "startDate": "2026-09-24",
-    "endDate": "2026-09-25"
+    "startDate": "2026-09-25",
+    "endDate": "2026-09-26"
   },
   "requests": [
     {
@@ -12,29 +12,29 @@
       "teams": 30
     },
     {
-      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-24&endDate=2026-09-25&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright",
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-25&endDate=2026-09-26&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright",
       "http_status": 200,
       "dates": [
-        "2026-09-24",
-        "2026-09-25"
+        "2026-09-25",
+        "2026-09-26"
       ],
-      "games": 29
+      "games": 30
     }
   ],
   "dates": [
     {
-      "date": "2026-09-24",
-      "games": 12,
-      "live": 0,
-      "final": 12,
-      "appendedStateRows": 0
-    },
-    {
       "date": "2026-09-25",
       "games": 17,
-      "live": 6,
-      "final": 11,
-      "appendedStateRows": 14
+      "live": 0,
+      "final": 17,
+      "appendedStateRows": 6
+    },
+    {
+      "date": "2026-09-26",
+      "games": 13,
+      "live": 0,
+      "final": 0,
+      "appendedStateRows": 13
     }
   ],
   "failures": 0,
