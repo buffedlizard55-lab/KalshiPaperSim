@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-09-26T18:14:43.100Z",
+ "startedAt": "2026-09-26T21:15:05.586Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -90,7 +90,7 @@
       "ok": true,
       "status": 200,
       "events": 65,
-      "stateRows": 81
+      "stateRows": 117
      },
      "2026-09-27": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20260927",
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 93
+     "playerRecords": 90
     },
     "scoreboard": {
      "2026-09-26": {
@@ -156,7 +156,7 @@
       "ok": true,
       "status": 200,
       "events": 14,
-      "stateRows": 14
+      "stateRows": 19
      },
      "2026-09-27": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260927",
@@ -181,7 +181,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 55
+     "playerRecords": 53
     },
     "scoreboard": {
      "2026-09-26": {
@@ -208,7 +208,7 @@
   "matched": 53,
   "unmapped": 46
  },
- "finishedAt": "2026-09-26T18:14:45.102Z"
+ "finishedAt": "2026-09-26T21:15:07.849Z"
 }
 {
  "ok": true,
@@ -220,11 +220,11 @@
   "codeRows": 99
  }
 }
-✓ src/accumulated-history.js — 188 market(s), 13906 bar(s), 14082.9 KB
+✓ src/accumulated-history.js — 188 market(s), 13906 bar(s), 14149.3 KB
 ✓ src/forecast-data.js — 9 location(s), 371 snapshot(s), 739.1 KB
 ✓ src/fda-signal-data.js — 6 subject(s), 140 snapshot(s), 98.8 KB
-✓ src/mlb-signal-data.js — 8 date file(s), 107 game(s), 370 state row(s), 235.5 KB
-✓ src/espn-signal-data.js — 7 league(s), 156 event(s), 7632.3 KB
+✓ src/mlb-signal-data.js — 8 date file(s), 107 game(s), 378 state row(s), 238.6 KB
+✓ src/espn-signal-data.js — 7 league(s), 156 event(s), 7693.3 KB
 ✓ src/mlb-pregame-data.js — 0 date file(s), 0 row(s), 2.1 KB (no predictions yet — MLBPreGame_ModelEdge abstains)
 ✓ src/form4-signal-data.js — 0 issuer(s), 0 filing(s), 1.3 KB (no archive yet — insider strategies abstain)
     JPMCEOCHANGE-27: 291 bar(s) + market object
@@ -415,11 +415,11 @@
     KXOPENAICEOCHANGE-26: 268 bar(s) + market object
     KXTESLACEOCHANGE-26: 0 bar(s) + market object
     TESLACEOCHANGE-26: 400 bar(s) + market object
-    intraday 1m: 575 market(s), 41714 shipped bar(s) (cap 400/market) from data/history/intraday/1m
-    intraday 60m: 486 market(s), 48454 shipped bar(s) (cap 400/market) from data/history/intraday/60m
-desk-data: 106 markets (99 open) · 1294 ladder captures · 7116 bars · 112 quoted-only · 2011 KB → src/desk-data.js
-desk-data: 105 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
-desk-data: capture bound — the store holds 20523 ladders (10127 non-empty) in 36 batches; this module keeps 1294 ladders in 37 batches (36 store batch(es) represented, 0 not) — 0 season round stamp(s) and 19228 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
+    intraday 1m: 580 market(s), 41794 shipped bar(s) (cap 400/market) from data/history/intraday/1m
+    intraday 60m: 488 market(s), 48844 shipped bar(s) (cap 400/market) from data/history/intraday/60m
+desk-data: 106 markets (100 open) · 1291 ladder captures · 7103 bars · 112 quoted-only · 2007 KB → src/desk-data.js
+desk-data: 107 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
+desk-data: capture bound — the store holds 21017 ladders (10289 non-empty) in 37 batches; this module keeps 1291 ladders in 38 batches (37 store batch(es) represented, 0 not) — 0 season round stamp(s) and 19725 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
   wrote VERIFICATION.md (99.5 KB)
   wrote IRREGULARITIES.md (123.1 KB)
   README.md AUTO blocks already up to date
