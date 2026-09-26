@@ -451,6 +451,26 @@
         "NDA220359"
       ],
       "newestSubmissionStatusDate": "20260904"
+    },
+    {
+      "captured_at": "2026-09-26T04:47:49.490Z",
+      "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name%3A%22camizestrant%22&limit=99",
+      "http_status": 200,
+      "meta": {
+        "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+        "last_updated": "2026-09-24",
+        "total": 1
+      },
+      "state": "APPROVED",
+      "approved": true,
+      "marketingStatuses": [
+        "Prescription"
+      ],
+      "applications": 1,
+      "applicationNumbers": [
+        "NDA220359"
+      ],
+      "newestSubmissionStatusDate": "20260904"
     }
   ],
   "trims": []
