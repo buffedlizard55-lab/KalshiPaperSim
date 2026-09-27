@@ -4119,6 +4119,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-27T20:00:24.661Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP26ROSBAR-BAR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4167,7 +4177,7 @@
     "ticker": "KXUFCFIGHT-26SEP26ROSBAR-BAR",
     "title": "Raoni Barcelos wins",
     "updated_time": "2026-09-27T02:50:37.049853Z",
-    "volume_24h_fp": "2724197.61",
+    "volume_24h_fp": "2676231.45",
     "volume_fp": "2900029.01",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -4176,9 +4186,9 @@
     "yes_sub_title": "Raoni Barcelos"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP26ROSBAR-BAR",
-  "market_captured_at": "2026-09-27T12:12:05.212Z",
+  "market_captured_at": "2026-09-27T20:00:23.943Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-27T12:12:05.855Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP26ROSBAR-BAR/candlesticks?start_ts=1790478001&end_ts=1790511125&period_interval=60"
+  "last_ingested_at": "2026-09-27T20:00:24.605Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP26ROSBAR-BAR/candlesticks?start_ts=1790478001&end_ts=1790539224&period_interval=60"
 }

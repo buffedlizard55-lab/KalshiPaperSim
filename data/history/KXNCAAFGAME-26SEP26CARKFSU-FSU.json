@@ -5375,6 +5375,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-27T19:54:34.938Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5423,7 +5433,7 @@
     "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
     "title": "Florida St. wins",
     "updated_time": "2026-09-26T22:27:26.73878Z",
-    "volume_24h_fp": "6355.39",
+    "volume_24h_fp": "2617.95",
     "volume_fp": "32896.16",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -5432,9 +5442,9 @@
     "yes_sub_title": "Florida St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU",
-  "market_captured_at": "2026-09-27T12:06:53.278Z",
+  "market_captured_at": "2026-09-27T19:54:34.321Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-27T12:06:53.820Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/candlesticks?start_ts=1790481601&end_ts=1790510813&period_interval=1440",
+  "last_ingested_at": "2026-09-27T19:54:34.879Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/candlesticks?start_ts=1790481601&end_ts=1790538874&period_interval=1440",
   "result": "yes"
 }

@@ -6212,6 +6212,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-27T19:54:37.297Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6260,7 +6270,7 @@
     "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
     "title": "Miami (FL) wins",
     "updated_time": "2026-09-27T01:57:26.820351Z",
-    "volume_24h_fp": "17332.71",
+    "volume_24h_fp": "12162.24",
     "volume_fp": "37474.75",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -6269,9 +6279,9 @@
     "yes_sub_title": "Miami (FL)"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA",
-  "market_captured_at": "2026-09-27T12:06:54.957Z",
+  "market_captured_at": "2026-09-27T19:54:36.683Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-27T12:06:55.503Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/candlesticks?start_ts=1790481601&end_ts=1790510815&period_interval=1440",
+  "last_ingested_at": "2026-09-27T19:54:37.240Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/candlesticks?start_ts=1790481601&end_ts=1790538876&period_interval=1440",
   "result": "yes"
 }

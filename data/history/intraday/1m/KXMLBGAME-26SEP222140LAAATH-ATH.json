@@ -11765,6 +11765,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-27T20:01:39.861Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP222140LAAATH-ATH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -11822,11 +11832,11 @@
     "yes_sub_title": "A's"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP222140LAAATH-ATH",
-  "market_captured_at": "2026-09-27T12:13:11.156Z",
+  "market_captured_at": "2026-09-27T20:01:37.707Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-27T12:13:13.171Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP222140LAAATH-ATH/candlesticks?start_ts=1790485321&end_ts=1790511191&period_interval=1",
+  "last_ingested_at": "2026-09-27T20:01:39.804Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP222140LAAATH-ATH/candlesticks?start_ts=1790485321&end_ts=1790539298&period_interval=1",
   "trims": [
     {
       "at": "2026-09-23T05:05:46.222Z",

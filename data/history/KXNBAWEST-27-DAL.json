@@ -4809,6 +4809,133 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-27T19:54:20.770Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3888999.00"
+            ],
+            [
+              "0.0300",
+              "1444.00"
+            ],
+            [
+              "0.0600",
+              "936602.00"
+            ],
+            [
+              "0.1100",
+              "510874.00"
+            ],
+            [
+              "0.1800",
+              "407331.00"
+            ],
+            [
+              "0.2500",
+              "288884.00"
+            ],
+            [
+              "0.2900",
+              "638.31"
+            ],
+            [
+              "0.3200",
+              "239995.00"
+            ],
+            [
+              "0.3900",
+              "129099.00"
+            ],
+            [
+              "0.4500",
+              "305198.19"
+            ],
+            [
+              "0.5300",
+              "54528.00"
+            ],
+            [
+              "0.5600",
+              "142595.00"
+            ],
+            [
+              "0.6800",
+              "72091.00"
+            ],
+            [
+              "0.7400",
+              "22822.00"
+            ],
+            [
+              "0.7500",
+              "24987.00"
+            ],
+            [
+              "0.7900",
+              "2034.00"
+            ],
+            [
+              "0.8100",
+              "15152.00"
+            ],
+            [
+              "0.8200",
+              "409.00"
+            ],
+            [
+              "0.8300",
+              "1350.00"
+            ],
+            [
+              "0.8400",
+              "90.00"
+            ],
+            [
+              "0.8900",
+              "2991.28"
+            ],
+            [
+              "0.9200",
+              "100.00"
+            ],
+            [
+              "0.9300",
+              "100.00"
+            ],
+            [
+              "0.9400",
+              "100.00"
+            ],
+            [
+              "0.9500",
+              "524.54"
+            ],
+            [
+              "0.9600",
+              "500.45"
+            ],
+            [
+              "0.9700",
+              "7.01"
+            ],
+            [
+              "0.9800",
+              "2423.00"
+            ],
+            [
+              "0.9900",
+              "10327.71"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4833,7 +4960,7 @@
     "no_sub_title": "Dallas",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "100247.51",
+    "open_interest_fp": "100256.86",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.0100",
     "previous_yes_ask_dollars": "0.0100",
@@ -4856,17 +4983,17 @@
     "ticker": "KXNBAWEST-27-DAL",
     "title": "Will Dallas win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.581651Z",
-    "volume_24h_fp": "46759.56",
-    "volume_fp": "106023.07",
+    "volume_24h_fp": "46768.91",
+    "volume_fp": "106032.42",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "10337.06",
+    "yes_ask_size_fp": "10327.71",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Dallas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-DAL",
-  "market_captured_at": "2026-09-27T12:06:43.201Z",
+  "market_captured_at": "2026-09-27T19:54:20.156Z",
   "status": "active",
-  "last_ingested_at": "2026-09-27T12:06:43.744Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-DAL/candlesticks?start_ts=1790481601&end_ts=1790510803&period_interval=1440"
+  "last_ingested_at": "2026-09-27T19:54:20.712Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-DAL/candlesticks?start_ts=1790481601&end_ts=1790538860&period_interval=1440"
 }
