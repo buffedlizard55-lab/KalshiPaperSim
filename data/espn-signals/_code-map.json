@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-27T18:51:56.867Z",
+ "generatedAt": "2026-09-27T21:49:42.971Z",
  "rows": [
   {
    "league": "nba",
@@ -450,6 +450,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "MD",
+   "kalshiName": "Maryland",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10MDOSU-OSU",
+     "rulesName": "Maryland",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "MHU",
    "kalshiName": "Mercyhurst",
    "conflictWith": null,
@@ -622,6 +637,16 @@
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
+     "ticker": "KXNCAAFGAME-26OCT10TEXOKLA-OKLA",
+     "rulesName": "Oklahoma",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10TEXOKLA-TEX",
+     "rulesName": "Oklahoma",
+     "role": "home"
+    },
+    {
      "ticker": "KXNCAAFGAME-26SEP26OKLAUGA-UGA",
      "rulesName": "Oklahoma",
      "role": "away"
@@ -658,6 +683,11 @@
    "evidence": [
     {
      "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+     "rulesName": "Ohio St.",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10MDOSU-OSU",
      "rulesName": "Ohio St.",
      "role": "home"
     }
@@ -835,6 +865,26 @@
      "ticker": "KXNCAAFGAME-26OCT03BYUTCU-BYU",
      "rulesName": "TCU",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "TEX",
+   "kalshiName": "Texas",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10TEXOKLA-OKLA",
+     "rulesName": "Texas",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10TEXOKLA-TEX",
+     "rulesName": "Texas",
+     "role": "away"
     }
    ]
   },
@@ -1070,6 +1120,26 @@
   },
   {
    "league": "nfl",
+   "kalshiCode": "BUF",
+   "kalshiName": "Buffalo",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "2",
+    "abbr": "BUF",
+    "displayName": "Buffalo Bills",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP27LACBUF-BUF",
+     "rulesName": "Buffalo",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
    "kalshiCode": "DAL",
    "kalshiName": "Dallas",
    "conflictWith": null,
@@ -1190,6 +1260,11 @@
      "ticker": "KXNFLGAME-26AUG27LARLAC-LAR",
      "rulesName": "Los Angeles C",
      "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP27LACBUF-BUF",
+     "rulesName": "Los Angeles C",
+     "role": "away"
     }
    ]
   },
