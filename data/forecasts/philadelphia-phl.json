@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/PAC045",
       "relativeLocation": "Philadelphia, PA",
       "timeZone": "America/New_York",
-      "resolvedAt": "2026-09-27T01:31:59.607Z",
+      "resolvedAt": "2026-09-27T13:06:53.678Z",
       "pointsUrl": "https://api.weather.gov/points/39.8729,-75.2437"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -2856,6 +2856,72 @@
           "startTime": "2026-10-03T06:00:00-04:00",
           "endTime": "2026-10-03T18:00:00-04:00",
           "probabilityOfPrecipitationPct": 31
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-27T13:06:53.678Z",
+      "points_url": "https://api.weather.gov/points/39.8729,-75.2437",
+      "forecast_url": "https://api.weather.gov/gridpoints/PHI/48,75/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-27T08:11:14+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-27",
+          "highF": 66,
+          "periodName": "Today",
+          "startTime": "2026-09-27T06:00:00-04:00",
+          "endTime": "2026-09-27T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 94
+        },
+        {
+          "date": "2026-09-28",
+          "highF": 68,
+          "periodName": "Monday",
+          "startTime": "2026-09-28T06:00:00-04:00",
+          "endTime": "2026-09-28T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 42
+        },
+        {
+          "date": "2026-09-29",
+          "highF": 74,
+          "periodName": "Tuesday",
+          "startTime": "2026-09-29T06:00:00-04:00",
+          "endTime": "2026-09-29T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-09-30",
+          "highF": 78,
+          "periodName": "Wednesday",
+          "startTime": "2026-09-30T06:00:00-04:00",
+          "endTime": "2026-09-30T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 1
+        },
+        {
+          "date": "2026-10-01",
+          "highF": 81,
+          "periodName": "Thursday",
+          "startTime": "2026-10-01T06:00:00-04:00",
+          "endTime": "2026-10-01T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 1
+        },
+        {
+          "date": "2026-10-02",
+          "highF": 79,
+          "periodName": "Friday",
+          "startTime": "2026-10-02T06:00:00-04:00",
+          "endTime": "2026-10-02T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 14
+        },
+        {
+          "date": "2026-10-03",
+          "highF": 71,
+          "periodName": "Saturday",
+          "startTime": "2026-10-03T06:00:00-04:00",
+          "endTime": "2026-10-03T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 18
         }
       ]
     }
