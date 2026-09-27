@@ -9,11 +9,11 @@
  * AFTER its game's first pitch is marked untimely and is never a pre-game
  * signal. Read only through src/mlb-pregame-store.js.
  *
- * NO PREDICTIONS YET — the model-snapshot capture (scripts/archive-mlb-pregame.mjs) has not produced a pre-game snapshot; MLBPreGame_ModelEdge abstains. · generated 2026-09-27T08:39:23.747Z
+ * NO PREDICTIONS YET — the model-snapshot capture (scripts/archive-mlb-pregame.mjs) has not produced a pre-game snapshot; MLBPreGame_ModelEdge abstains. · generated 2026-09-27T08:46:16.110Z
  */
 
 export const MLB_PREGAME_DATA = {
- "generatedAt": "2026-09-27T08:39:23.747Z",
+ "generatedAt": "2026-09-27T08:46:16.110Z",
  "present": false,
  "assumption": {
   "what": "Point-in-time snapshot of the owner's MLB Monte Carlo model (MasterSite S14, MLB-Prediction-model-backtest): its own pre-game P(home win) per official gamePk.",
