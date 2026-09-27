@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-27T02:40:22.693Z",
+ "generatedAt": "2026-09-27T08:39:22.336Z",
  "rows": [
   {
    "league": "nba",
@@ -150,6 +150,26 @@
      "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
      "rulesName": "San Antonio",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "BALL",
+   "kalshiName": "Ball St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10BALLNW-BALL",
+     "rulesName": "Ball St.",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10BALLNW-NW",
+     "rulesName": "Ball St.",
+     "role": "away"
     }
    ]
   },
@@ -505,6 +525,26 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "ND",
+   "kalshiName": "Notre Dame",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10STANND-ND",
+     "rulesName": "Notre Dame",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10STANND-STAN",
+     "rulesName": "Notre Dame",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "NDSU",
    "kalshiName": "North Dakota St.",
    "conflictWith": null,
@@ -530,6 +570,31 @@
      "ticker": "KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
      "rulesName": "New Haven",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "NW",
+   "kalshiName": "Northwestern",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "77",
+    "abbr": "NU",
+    "displayName": "Northwestern Wildcats",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10BALLNW-BALL",
+     "rulesName": "Northwestern",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10BALLNW-NW",
+     "rulesName": "Northwestern",
+     "role": "home"
     }
    ]
   },
@@ -575,6 +640,11 @@
      "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
      "rulesName": "Oregon",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10UCLAORE-ORE",
+     "rulesName": "Oregon",
+     "role": "home"
     }
    ]
   },
@@ -710,6 +780,31 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "STAN",
+   "kalshiName": "Stanford",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "24",
+    "abbr": "STAN",
+    "displayName": "Stanford Cardinal",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10STANND-ND",
+     "rulesName": "Stanford",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10STANND-STAN",
+     "rulesName": "Stanford",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "TARL",
    "kalshiName": "Tarleton St.",
    "conflictWith": null,
@@ -820,6 +915,26 @@
      "ticker": "KXNCAAFGAME-26OCT03SAMUAB-UAB",
      "rulesName": "UAB",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "UCLA",
+   "kalshiName": "UCLA",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "26",
+    "abbr": "UCLA",
+    "displayName": "UCLA Bruins",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10UCLAORE-ORE",
+     "rulesName": "UCLA",
+     "role": "away"
     }
    ]
   },

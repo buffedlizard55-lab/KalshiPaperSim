@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-28",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260928"
+  ]
+ },
+ "captures": [
+  "2026-09-27T08:39:21.260Z"
+ ],
+ "events": {
+  "401872963": {
+   "eventId": "401872963",
+   "date": "2026-09-29T00:15Z",
+   "easternDate": "2026-09-28",
+   "name": "Philadelphia Eagles at Chicago Bears",
+   "shortName": "PHI @ CHI",
+   "week": 3,
+   "venue": "Soldier Field",
+   "homeAbbr": "CHI",
+   "homeTeamId": "3",
+   "homeName": "Chicago Bears",
+   "awayAbbr": "PHI",
+   "awayTeamId": "21",
+   "awayName": "Philadelphia Eagles",
+   "firstCapturedAt": "2026-09-27T08:39:21.260Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "PHI -3.5",
+    "spread": 3.5,
+    "overUnder": 42.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-27T08:39:21.260Z",
+     "last_seen_at": "2026-09-27T08:39:21.260Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "2-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-27T08:39:21.260Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260928"
+}
