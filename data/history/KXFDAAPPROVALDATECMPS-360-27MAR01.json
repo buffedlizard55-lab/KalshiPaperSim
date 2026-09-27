@@ -8261,6 +8261,214 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-27T08:27:04.172Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27MAR01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0300",
+              "2222.00"
+            ],
+            [
+              "0.0400",
+              "424.00"
+            ],
+            [
+              "0.0700",
+              "373.00"
+            ],
+            [
+              "0.0800",
+              "624.00"
+            ],
+            [
+              "0.1200",
+              "119.00"
+            ],
+            [
+              "0.1400",
+              "39.00"
+            ],
+            [
+              "0.1600",
+              "12.00"
+            ],
+            [
+              "0.3500",
+              "200.00"
+            ],
+            [
+              "0.3600",
+              "2.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3200.00"
+            ],
+            [
+              "0.0200",
+              "3540.00"
+            ],
+            [
+              "0.0300",
+              "4231.00"
+            ],
+            [
+              "0.0800",
+              "275.00"
+            ],
+            [
+              "0.2300",
+              "49.00"
+            ],
+            [
+              "0.2400",
+              "978.00"
+            ],
+            [
+              "0.2500",
+              "575.00"
+            ],
+            [
+              "0.2600",
+              "23.00"
+            ],
+            [
+              "0.4500",
+              "2.18"
+            ],
+            [
+              "0.5600",
+              "200.00"
+            ],
+            [
+              "0.5700",
+              "500.00"
+            ],
+            [
+              "0.5800",
+              "15.00"
+            ],
+            [
+              "0.5900",
+              "5.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-27T08:37:05.603Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27MAR01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0300",
+              "2222.00"
+            ],
+            [
+              "0.0400",
+              "424.00"
+            ],
+            [
+              "0.0700",
+              "373.00"
+            ],
+            [
+              "0.0800",
+              "624.00"
+            ],
+            [
+              "0.1200",
+              "119.00"
+            ],
+            [
+              "0.1400",
+              "39.00"
+            ],
+            [
+              "0.1600",
+              "12.00"
+            ],
+            [
+              "0.3500",
+              "200.00"
+            ],
+            [
+              "0.3600",
+              "2.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3200.00"
+            ],
+            [
+              "0.0200",
+              "3540.00"
+            ],
+            [
+              "0.0300",
+              "4231.00"
+            ],
+            [
+              "0.0800",
+              "275.00"
+            ],
+            [
+              "0.2300",
+              "49.00"
+            ],
+            [
+              "0.2400",
+              "978.00"
+            ],
+            [
+              "0.2500",
+              "575.00"
+            ],
+            [
+              "0.2600",
+              "23.00"
+            ],
+            [
+              "0.4500",
+              "2.18"
+            ],
+            [
+              "0.5600",
+              "200.00"
+            ],
+            [
+              "0.5700",
+              "500.00"
+            ],
+            [
+              "0.5800",
+              "15.00"
+            ],
+            [
+              "0.5900",
+              "5.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -8316,8 +8524,8 @@
     "yes_sub_title": "Before Mar 1, 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27MAR01",
-  "market_captured_at": "2026-09-27T05:41:30.492Z",
+  "market_captured_at": "2026-09-27T08:37:04.974Z",
   "status": "active",
-  "last_ingested_at": "2026-09-27T05:41:31.124Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27MAR01/candlesticks?start_ts=1790481601&end_ts=1790487690&period_interval=1440"
+  "last_ingested_at": "2026-09-27T08:37:05.590Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27MAR01/candlesticks?start_ts=1790481601&end_ts=1790498225&period_interval=1440"
 }

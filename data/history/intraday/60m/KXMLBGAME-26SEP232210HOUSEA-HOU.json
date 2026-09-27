@@ -1593,6 +1593,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-27T08:33:15.580Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP232210HOUSEA-HOU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1650,9 +1660,9 @@
     "yes_sub_title": "Houston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP232210HOUSEA-HOU",
-  "market_captured_at": "2026-09-27T05:37:23.844Z",
+  "market_captured_at": "2026-09-27T08:33:14.948Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-27T05:37:24.482Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP232210HOUSEA-HOU/candlesticks?start_ts=1790229601&end_ts=1790487444&period_interval=60"
+  "last_ingested_at": "2026-09-27T08:33:15.565Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP232210HOUSEA-HOU/candlesticks?start_ts=1790229601&end_ts=1790497995&period_interval=60"
 }

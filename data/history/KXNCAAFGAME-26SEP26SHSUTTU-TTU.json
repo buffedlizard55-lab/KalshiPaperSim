@@ -5336,6 +5336,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-27T08:29:02.592Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5384,7 +5394,7 @@
     "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-TTU",
     "title": "Texas Tech wins",
     "updated_time": "2026-09-26T19:37:46.529443Z",
-    "volume_24h_fp": "434635.87",
+    "volume_24h_fp": "428523.42",
     "volume_fp": "567406.35",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -5393,9 +5403,9 @@
     "yes_sub_title": "Texas Tech"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU",
-  "market_captured_at": "2026-09-27T05:32:58.243Z",
+  "market_captured_at": "2026-09-27T08:29:02.064Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-27T05:32:58.780Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1790395201&end_ts=1790487178&period_interval=1440",
+  "last_ingested_at": "2026-09-27T08:29:02.579Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1790481601&end_ts=1790497742&period_interval=1440",
   "result": "yes"
 }
