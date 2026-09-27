@@ -8697,8 +8697,8 @@
     "open_interest_fp": "2370.11",
     "open_time": "2026-08-20T15:28:00Z",
     "previous_price_dollars": "0.4900",
-    "previous_yes_ask_dollars": "0.4900",
-    "previous_yes_bid_dollars": "0.4500",
+    "previous_yes_ask_dollars": "0.5000",
+    "previous_yes_bid_dollars": "0.4300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -8719,14 +8719,14 @@
     "volume_24h_fp": "89.21",
     "volume_fp": "4641.01",
     "yes_ask_dollars": "0.4700",
-    "yes_ask_size_fp": "44.91",
+    "yes_ask_size_fp": "29.91",
     "yes_bid_dollars": "0.4500",
     "yes_bid_size_fp": "54.00",
     "yes_sub_title": "Oklahoma City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
-  "market_captured_at": "2026-09-27T08:28:39.023Z",
+  "market_captured_at": "2026-09-27T12:06:39.845Z",
   "status": "active",
-  "last_ingested_at": "2026-09-27T08:28:39.537Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790481601&end_ts=1790497719&period_interval=1440"
+  "last_ingested_at": "2026-09-27T12:06:40.389Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790481601&end_ts=1790510800&period_interval=1440"
 }

@@ -125,6 +125,26 @@
         "low_dollars": "0.9800",
         "open_dollars": "0.9800"
       }
+    },
+    {
+      "end_period_ts": 1790510400,
+      "open_interest_fp": "3305.00",
+      "price": {
+        "previous_dollars": "0.9800"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      }
     }
   ],
   "books": [
@@ -231,6 +251,58 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-27T12:11:42.228Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10BALLNW-NW/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "17957.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "110000.00"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "855.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2200",
+              "5000.00"
+            ],
+            [
+              "0.9600",
+              "10.00"
+            ],
+            [
+              "0.9800",
+              "441439.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -280,14 +352,14 @@
     "volume_24h_fp": "3305.00",
     "volume_fp": "3305.00",
     "yes_ask_dollars": "0.9900",
-    "yes_ask_size_fp": "17858.00",
+    "yes_ask_size_fp": "17957.00",
     "yes_bid_dollars": "0.9800",
     "yes_bid_size_fp": "441439.00",
     "yes_sub_title": "Northwestern"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10BALLNW-NW",
-  "market_captured_at": "2026-09-27T08:33:41.154Z",
+  "market_captured_at": "2026-09-27T12:11:41.538Z",
   "status": "active",
-  "last_ingested_at": "2026-09-27T08:33:41.771Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10BALLNW-NW/candlesticks?start_ts=1790485201&end_ts=1790498021&period_interval=60"
+  "last_ingested_at": "2026-09-27T12:11:42.184Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10BALLNW-NW/candlesticks?start_ts=1790496001&end_ts=1790511101&period_interval=60"
 }

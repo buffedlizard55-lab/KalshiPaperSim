@@ -9649,7 +9649,7 @@
     "latest_expiration_time": "2029-06-30T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.8900",
+    "no_ask_dollars": "0.8800",
     "no_bid_dollars": "0.8700",
     "no_sub_title": "Florida Panthers",
     "notional_value_dollars": "1.0000",
@@ -9679,14 +9679,14 @@
     "volume_24h_fp": "2785.96",
     "volume_fp": "180228.36",
     "yes_ask_dollars": "0.1300",
-    "yes_ask_size_fp": "2759.68",
-    "yes_bid_dollars": "0.1100",
-    "yes_bid_size_fp": "262.36",
+    "yes_ask_size_fp": "2156.39",
+    "yes_bid_dollars": "0.1200",
+    "yes_bid_size_fp": "245.60",
     "yes_sub_title": "Florida Panthers"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-FLA",
-  "market_captured_at": "2026-09-27T08:29:38.704Z",
+  "market_captured_at": "2026-09-27T12:07:27.714Z",
   "status": "active",
-  "last_ingested_at": "2026-09-27T08:29:39.220Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-FLA/candlesticks?start_ts=1790481601&end_ts=1790497778&period_interval=1440"
+  "last_ingested_at": "2026-09-27T12:07:28.259Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-FLA/candlesticks?start_ts=1790481601&end_ts=1790510847&period_interval=1440"
 }

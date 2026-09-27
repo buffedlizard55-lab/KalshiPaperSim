@@ -214,6 +214,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-27T12:14:20.134Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-NE/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -271,9 +281,9 @@
     "yes_sub_title": "NE Patriots"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG22PHINE-NE",
-  "market_captured_at": "2026-09-27T08:36:08.169Z",
+  "market_captured_at": "2026-09-27T12:14:18.758Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-27T08:36:09.418Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG22PHINE-NE/candlesticks?start_ts=1790411768&end_ts=1790498167&period_interval=1"
+  "last_ingested_at": "2026-09-27T12:14:20.092Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG22PHINE-NE/candlesticks?start_ts=1790424859&end_ts=1790511258&period_interval=1"
 }

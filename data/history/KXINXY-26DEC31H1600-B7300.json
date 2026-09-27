@@ -12323,7 +12323,7 @@
     "open_interest_fp": "193783.40",
     "open_time": "2025-12-23T15:00:00Z",
     "previous_price_dollars": "0.0600",
-    "previous_yes_ask_dollars": "0.0500",
+    "previous_yes_ask_dollars": "0.0600",
     "previous_yes_bid_dollars": "0.0400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -12343,17 +12343,17 @@
     "ticker": "KXINXY-26DEC31H1600-B7300",
     "title": "Will the S&P 500 be between 7200 and 7399.99 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:02.017776Z",
-    "volume_24h_fp": "1158.62",
+    "volume_24h_fp": "812.12",
     "volume_fp": "344962.72",
     "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "358.73",
+    "yes_ask_size_fp": "359.73",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "680.87",
+    "yes_bid_size_fp": "680.71",
     "yes_sub_title": "7,200 to 7,399.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7300",
-  "market_captured_at": "2026-09-27T08:27:39.290Z",
+  "market_captured_at": "2026-09-27T12:05:51.922Z",
   "status": "active",
-  "last_ingested_at": "2026-09-27T08:27:39.805Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7300/candlesticks?start_ts=1790481601&end_ts=1790497659&period_interval=1440"
+  "last_ingested_at": "2026-09-27T12:05:52.466Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7300/candlesticks?start_ts=1790481601&end_ts=1790510752&period_interval=1440"
 }
