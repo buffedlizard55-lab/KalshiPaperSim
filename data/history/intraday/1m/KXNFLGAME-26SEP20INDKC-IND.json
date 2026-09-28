@@ -12265,6 +12265,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T22:25:58.963Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12288,7 +12298,7 @@
     "no_bid_dollars": "0.0000",
     "no_sub_title": "Indianapolis",
     "notional_value_dollars": "1.0000",
-    "occurrence_datetime": "2026-09-21T03:20:00Z",
+    "occurrence_datetime": "2026-09-21T03:53:17Z",
     "open_interest_fp": "17852126.59",
     "open_time": "2026-08-25T15:33:00Z",
     "previous_price_dollars": "0.0100",
@@ -12312,7 +12322,7 @@
     "strike_type": "structured",
     "ticker": "KXNFLGAME-26SEP20INDKC-IND",
     "title": "Indianapolis wins",
-    "updated_time": "2026-09-21T04:00:25.930402Z",
+    "updated_time": "2026-09-28T19:51:58.479713Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "41397950.68",
     "yes_ask_dollars": "1.0000",
@@ -12322,11 +12332,11 @@
     "yes_sub_title": "Indianapolis"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND",
-  "market_captured_at": "2026-09-28T14:07:29.929Z",
+  "market_captured_at": "2026-09-28T22:25:56.107Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T14:07:33.121Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-IND/candlesticks?start_ts=1790567761&end_ts=1790604450&period_interval=1",
+  "last_ingested_at": "2026-09-28T22:25:58.948Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-IND/candlesticks?start_ts=1790567761&end_ts=1790634356&period_interval=1",
   "trims": [
     {
       "at": "2026-09-22T08:01:19.998Z",

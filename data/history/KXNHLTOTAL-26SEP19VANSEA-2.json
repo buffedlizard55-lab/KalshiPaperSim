@@ -1460,6 +1460,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T22:20:04.941Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1481,7 +1491,7 @@
     "no_bid_dollars": "0.0000",
     "no_sub_title": "Over 1.5 goals scored",
     "notional_value_dollars": "1.0000",
-    "occurrence_datetime": "2026-09-20T04:00:00Z",
+    "occurrence_datetime": "2026-09-20T06:24:10Z",
     "open_interest_fp": "726.97",
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.9900",
@@ -1505,7 +1515,7 @@
     "strike_type": "greater",
     "ticker": "KXNHLTOTAL-26SEP19VANSEA-2",
     "title": "Full Game: Over 1.5 goals scored",
-    "updated_time": "2026-09-20T06:40:55.035594Z",
+    "updated_time": "2026-09-28T19:50:14.929975Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "726.97",
     "yes_ask_dollars": "1.0000",
@@ -1515,9 +1525,9 @@
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2",
-  "market_captured_at": "2026-09-28T14:01:06.417Z",
+  "market_captured_at": "2026-09-28T22:20:04.408Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T14:01:06.977Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VANSEA-2/candlesticks?start_ts=1789963201&end_ts=1790604066&period_interval=1440",
+  "last_ingested_at": "2026-09-28T22:20:04.926Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VANSEA-2/candlesticks?start_ts=1789963201&end_ts=1790634004&period_interval=1440",
   "result": "yes"
 }

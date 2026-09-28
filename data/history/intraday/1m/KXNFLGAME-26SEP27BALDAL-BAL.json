@@ -12035,6 +12035,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T22:26:24.475Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27BALDAL-BAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12061,9 +12071,9 @@
     "occurrence_datetime": "2026-09-27T23:25:00Z",
     "open_interest_fp": "7558546.91",
     "open_time": "2026-09-15T16:16:00Z",
-    "previous_price_dollars": "0.6300",
-    "previous_yes_ask_dollars": "0.6300",
-    "previous_yes_bid_dollars": "0.6200",
+    "previous_price_dollars": "0.6400",
+    "previous_yes_ask_dollars": "0.6400",
+    "previous_yes_bid_dollars": "0.6300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12083,7 +12093,7 @@
     "ticker": "KXNFLGAME-26SEP27BALDAL-BAL",
     "title": "Baltimore wins",
     "updated_time": "2026-09-27T23:49:57.770915Z",
-    "volume_24h_fp": "17558589.51",
+    "volume_24h_fp": "11159109.91",
     "volume_fp": "17734843.99",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12092,11 +12102,11 @@
     "yes_sub_title": "Baltimore"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27BALDAL-BAL",
-  "market_captured_at": "2026-09-28T14:08:00.944Z",
+  "market_captured_at": "2026-09-28T22:26:23.844Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T14:08:01.607Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27BALDAL-BAL/candlesticks?start_ts=1790552821&end_ts=1790604481&period_interval=1",
+  "last_ingested_at": "2026-09-28T22:26:24.460Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27BALDAL-BAL/candlesticks?start_ts=1790552821&end_ts=1790634384&period_interval=1",
   "trims": [
     {
       "at": "2026-09-28T05:50:38.725Z",

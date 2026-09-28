@@ -2634,6 +2634,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T22:19:57.558Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2657,7 +2667,7 @@
     "no_bid_dollars": "0.0000",
     "no_sub_title": "St. Louis",
     "notional_value_dollars": "1.0000",
-    "occurrence_datetime": "2026-09-20T02:00:00Z",
+    "occurrence_datetime": "2026-09-20T03:00:12Z",
     "open_interest_fp": "15440.32",
     "open_time": "2026-09-17T00:07:00Z",
     "previous_price_dollars": "0.0100",
@@ -2681,7 +2691,7 @@
     "strike_type": "structured",
     "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
     "title": "St. Louis wins",
-    "updated_time": "2026-09-20T03:10:04.967407Z",
+    "updated_time": "2026-09-28T19:50:45.968689Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "19306.39",
     "yes_ask_dollars": "1.0000",
@@ -2691,9 +2701,9 @@
     "yes_sub_title": "St. Louis"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL",
-  "market_captured_at": "2026-09-28T14:01:00.312Z",
+  "market_captured_at": "2026-09-28T22:19:57.026Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T14:01:00.873Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-STL/candlesticks?start_ts=1789876801&end_ts=1790604060&period_interval=1440",
+  "last_ingested_at": "2026-09-28T22:19:57.543Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-STL/candlesticks?start_ts=1789876801&end_ts=1790633997&period_interval=1440",
   "result": "no"
 }

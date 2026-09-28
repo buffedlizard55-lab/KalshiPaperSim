@@ -4752,6 +4752,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T22:19:40.710Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLSPREAD-26SEP20MIASF-SF14/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4810,9 +4820,9 @@
     "yes_sub_title": "San Francisco wins by over 13.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLSPREAD-26SEP20MIASF-SF14",
-  "market_captured_at": "2026-09-28T14:00:46.363Z",
+  "market_captured_at": "2026-09-28T22:19:40.178Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T14:00:46.924Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLSPREAD/markets/KXNFLSPREAD-26SEP20MIASF-SF14/candlesticks?start_ts=1789963201&end_ts=1790604046&period_interval=1440",
+  "last_ingested_at": "2026-09-28T22:19:40.695Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLSPREAD/markets/KXNFLSPREAD-26SEP20MIASF-SF14/candlesticks?start_ts=1789963201&end_ts=1790633980&period_interval=1440",
   "result": "yes"
 }

@@ -12035,6 +12035,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T22:26:29.500Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27LVNO-LV/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12061,7 +12071,7 @@
     "occurrence_datetime": "2026-09-27T23:25:00Z",
     "open_interest_fp": "6771666.99",
     "open_time": "2026-09-15T16:16:00Z",
-    "previous_price_dollars": "0.3900",
+    "previous_price_dollars": "0.3800",
     "previous_yes_ask_dollars": "0.3900",
     "previous_yes_bid_dollars": "0.3800",
     "price_level_structure": "linear_cent",
@@ -12083,7 +12093,7 @@
     "ticker": "KXNFLGAME-26SEP27LVNO-LV",
     "title": "Las Vegas wins",
     "updated_time": "2026-09-27T23:47:37.26937Z",
-    "volume_24h_fp": "12877284.35",
+    "volume_24h_fp": "7826105.36",
     "volume_fp": "14041677.84",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12092,11 +12102,11 @@
     "yes_sub_title": "Las Vegas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27LVNO-LV",
-  "market_captured_at": "2026-09-28T14:08:06.545Z",
+  "market_captured_at": "2026-09-28T22:26:28.867Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T14:08:07.206Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LVNO-LV/candlesticks?start_ts=1790552701&end_ts=1790604486&period_interval=1",
+  "last_ingested_at": "2026-09-28T22:26:29.485Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LVNO-LV/candlesticks?start_ts=1790552701&end_ts=1790634389&period_interval=1",
   "trims": [
     {
       "at": "2026-09-28T05:50:44.546Z",

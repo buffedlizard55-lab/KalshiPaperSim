@@ -8484,6 +8484,214 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T22:19:36.501Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2626086.45"
+            ],
+            [
+              "0.0200",
+              "1701.00"
+            ],
+            [
+              "0.0300",
+              "1854.00"
+            ],
+            [
+              "0.0400",
+              "10.00"
+            ],
+            [
+              "0.0500",
+              "200.00"
+            ],
+            [
+              "0.0800",
+              "232.12"
+            ],
+            [
+              "0.1000",
+              "565118.41"
+            ],
+            [
+              "0.1300",
+              "4802.94"
+            ],
+            [
+              "0.1400",
+              "46351.00"
+            ],
+            [
+              "0.1500",
+              "9605.00"
+            ],
+            [
+              "0.1700",
+              "36.37"
+            ],
+            [
+              "0.2000",
+              "289488.00"
+            ],
+            [
+              "0.3000",
+              "222176.00"
+            ],
+            [
+              "0.3100",
+              "585.64"
+            ],
+            [
+              "0.3300",
+              "1358.80"
+            ],
+            [
+              "0.3900",
+              "365.90"
+            ],
+            [
+              "0.4000",
+              "105543.00"
+            ],
+            [
+              "0.4100",
+              "11739.00"
+            ],
+            [
+              "0.4200",
+              "4044.00"
+            ],
+            [
+              "0.4300",
+              "35.34"
+            ],
+            [
+              "0.4500",
+              "234.25"
+            ],
+            [
+              "0.4800",
+              "225.18"
+            ],
+            [
+              "0.5000",
+              "53690.00"
+            ],
+            [
+              "0.5200",
+              "537.58"
+            ],
+            [
+              "0.5300",
+              "2053.00"
+            ],
+            [
+              "0.5500",
+              "23.42"
+            ],
+            [
+              "0.5600",
+              "234.25"
+            ],
+            [
+              "0.6000",
+              "31642.00"
+            ],
+            [
+              "0.6100",
+              "112.98"
+            ],
+            [
+              "0.6200",
+              "12.98"
+            ],
+            [
+              "0.6600",
+              "4.02"
+            ],
+            [
+              "0.6700",
+              "15.63"
+            ],
+            [
+              "0.7000",
+              "19951.00"
+            ],
+            [
+              "0.7300",
+              "52.22"
+            ],
+            [
+              "0.7400",
+              "207.12"
+            ],
+            [
+              "0.7500",
+              "25.76"
+            ],
+            [
+              "0.8000",
+              "13299.76"
+            ],
+            [
+              "0.8200",
+              "28.95"
+            ],
+            [
+              "0.8300",
+              "210.38"
+            ],
+            [
+              "0.9000",
+              "61864.75"
+            ],
+            [
+              "0.9100",
+              "171737.95"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "10002.00"
+            ],
+            [
+              "0.0200",
+              "46.16"
+            ],
+            [
+              "0.0300",
+              "15258.27"
+            ],
+            [
+              "0.0400",
+              "624.07"
+            ],
+            [
+              "0.0500",
+              "334.43"
+            ],
+            [
+              "0.0600",
+              "80.19"
+            ],
+            [
+              "0.0700",
+              "30.96"
+            ],
+            [
+              "0.0800",
+              "1486.45"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -8507,10 +8715,10 @@
     "no_bid_dollars": "0.9100",
     "no_sub_title": "Minnesota",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "562650.99",
+    "open_interest_fp": "563109.26",
     "open_time": "2026-02-07T15:00:00Z",
-    "previous_price_dollars": "0.0800",
-    "previous_yes_ask_dollars": "0.0700",
+    "previous_price_dollars": "0.0900",
+    "previous_yes_ask_dollars": "0.0800",
     "previous_yes_bid_dollars": "0.0600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -8529,17 +8737,17 @@
     "ticker": "KXNFLNFCCHAMP-27-MIN",
     "title": "Will Minnesota win the Pro Football NFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "7298.65",
-    "volume_fp": "651865.58",
+    "volume_24h_fp": "6927.94",
+    "volume_fp": "652630.23",
     "yes_ask_dollars": "0.0900",
-    "yes_ask_size_fp": "239571.55",
+    "yes_ask_size_fp": "171737.95",
     "yes_bid_dollars": "0.0800",
-    "yes_bid_size_fp": "1761.55",
+    "yes_bid_size_fp": "1486.45",
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-MIN",
-  "market_captured_at": "2026-09-28T14:00:42.860Z",
+  "market_captured_at": "2026-09-28T22:19:35.969Z",
   "status": "active",
-  "last_ingested_at": "2026-09-28T14:00:43.433Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-MIN/candlesticks?start_ts=1790568001&end_ts=1790604043&period_interval=1440"
+  "last_ingested_at": "2026-09-28T22:19:36.485Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-MIN/candlesticks?start_ts=1790568001&end_ts=1790633976&period_interval=1440"
 }
