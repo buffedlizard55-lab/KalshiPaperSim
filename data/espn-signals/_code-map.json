@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-28T02:42:56.422Z",
+ "generatedAt": "2026-09-28T09:09:49.223Z",
  "rows": [
   {
    "league": "nba",
@@ -457,6 +457,11 @@
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
+     "ticker": "KXNCAAFGAME-26OCT10MDOSU-MD",
+     "rulesName": "Maryland",
+     "role": "away"
+    },
+    {
      "ticker": "KXNCAAFGAME-26OCT10MDOSU-OSU",
      "rulesName": "Maryland",
      "role": "away"
@@ -683,6 +688,11 @@
    "evidence": [
     {
      "ticker": "KXNCAAFGAME-26SEP26ILLOSU-OSU",
+     "rulesName": "Ohio St.",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10MDOSU-MD",
      "rulesName": "Ohio St.",
      "role": "home"
     },
@@ -1120,6 +1130,31 @@
   },
   {
    "league": "nfl",
+   "kalshiCode": "BAL",
+   "kalshiName": "Baltimore",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "33",
+    "abbr": "BAL",
+    "displayName": "Baltimore Ravens",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP27BALDAL-BAL",
+     "rulesName": "Baltimore",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP27BALDAL-DAL",
+     "rulesName": "Baltimore",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
    "kalshiCode": "BUF",
    "kalshiName": "Buffalo",
    "conflictWith": null,
@@ -1160,6 +1195,16 @@
      "ticker": "KXNFLGAME-26SEP13DALNYG-NYG",
      "rulesName": "Dallas",
      "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP27BALDAL-BAL",
+     "rulesName": "Dallas",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP27BALDAL-DAL",
+     "rulesName": "Dallas",
+     "role": "home"
     }
    ]
   },
@@ -1185,6 +1230,16 @@
      "ticker": "KXNFLGAME-26SEP14DENKC-KC",
      "rulesName": "Denver",
      "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP27LARDEN-DEN",
+     "rulesName": "Denver",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP27LARDEN-LAR",
+     "rulesName": "Denver",
+     "role": "home"
     }
    ]
   },
@@ -1297,9 +1352,14 @@
      "role": "away"
     },
     {
-     "ticker": "KXNFLGAME-26SEP10SFLAR-SF",
+     "ticker": "KXNFLGAME-26SEP27LARDEN-DEN",
      "rulesName": "Los Angeles R",
-     "role": "home"
+     "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP27LARDEN-LAR",
+     "rulesName": "Los Angeles R",
+     "role": "away"
     }
    ]
   },
@@ -1320,6 +1380,31 @@
      "ticker": "KXNFLGAME-26AUG27SFLV-SF",
      "rulesName": "Las Vegas",
      "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP27LVNO-LV",
+     "rulesName": "Las Vegas",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "MIN",
+   "kalshiName": "Minnesota",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "16",
+    "abbr": "MIN",
+    "displayName": "Minnesota Vikings",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP27MINTB-TB",
+     "rulesName": "Minnesota",
+     "role": "away"
     }
    ]
   },
@@ -1345,6 +1430,26 @@
      "ticker": "KXNFLGAME-26SEP09NESEA-NE",
      "rulesName": "New England",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
+   "kalshiCode": "NO",
+   "kalshiName": "New Orleans",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "18",
+    "abbr": "NO",
+    "displayName": "New Orleans Saints",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP27LVNO-LV",
+     "rulesName": "New Orleans",
+     "role": "home"
     }
    ]
   },
@@ -1420,6 +1525,11 @@
      "ticker": "KXNFLGAME-26SEP09NESEA-NE",
      "rulesName": "Seattle",
      "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP27SEAWAS-SEA",
+     "rulesName": "Seattle",
+     "role": "away"
     }
    ]
   },
@@ -1455,6 +1565,26 @@
   },
   {
    "league": "nfl",
+   "kalshiCode": "TB",
+   "kalshiName": "Tampa Bay",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "27",
+    "abbr": "TB",
+    "displayName": "Tampa Bay Buccaneers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP27MINTB-TB",
+     "rulesName": "Tampa Bay",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
    "kalshiCode": "WAS",
    "kalshiName": "Washington",
    "conflictWith": null,
@@ -1475,6 +1605,11 @@
      "ticker": "KXNFLGAME-26SEP13WASPHI-WAS",
      "rulesName": "Washington",
      "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP27SEAWAS-SEA",
+     "rulesName": "Washington",
+     "role": "home"
     }
    ]
   },

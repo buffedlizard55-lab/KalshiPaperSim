@@ -1,0 +1,237 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-29",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260929"
+  ]
+ },
+ "captures": [
+  "2026-09-28T09:09:48.492Z"
+ ],
+ "events": {
+  "401891773": {
+   "eventId": "401891773",
+   "date": "2026-09-29T21:00Z",
+   "easternDate": "2026-09-29",
+   "name": "Florida Panthers at Carolina Hurricanes",
+   "shortName": "FLA @ CAR",
+   "week": null,
+   "venue": "Lenovo Center",
+   "homeAbbr": "CAR",
+   "homeTeamId": "7",
+   "homeName": "Carolina Hurricanes",
+   "awayAbbr": "FLA",
+   "awayTeamId": "26",
+   "awayName": "Florida Panthers",
+   "firstCapturedAt": "2026-09-28T09:09:48.492Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "CAR -125",
+    "spread": -1.5,
+    "overUnder": 6.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-28T09:09:48.492Z",
+     "last_seen_at": "2026-09-28T09:09:48.492Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-0-0"
+     }
+    }
+   ]
+  },
+  "401891774": {
+   "eventId": "401891774",
+   "date": "2026-09-30T00:00Z",
+   "easternDate": "2026-09-29",
+   "name": "New York Rangers at Boston Bruins",
+   "shortName": "NYR @ BOS",
+   "week": null,
+   "venue": "TD Garden",
+   "homeAbbr": "BOS",
+   "homeTeamId": "1",
+   "homeName": "Boston Bruins",
+   "awayAbbr": "NYR",
+   "awayTeamId": "13",
+   "awayName": "New York Rangers",
+   "firstCapturedAt": "2026-09-28T09:09:48.492Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "BOS -115",
+    "spread": -1.5,
+    "overUnder": 5.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-28T09:09:48.492Z",
+     "last_seen_at": "2026-09-28T09:09:48.492Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-0-0"
+     }
+    }
+   ]
+  },
+  "401891775": {
+   "eventId": "401891775",
+   "date": "2026-09-30T02:30Z",
+   "easternDate": "2026-09-29",
+   "name": "Chicago Blackhawks at Vegas Golden Knights",
+   "shortName": "CHI @ VGK",
+   "week": null,
+   "venue": "T-Mobile Arena",
+   "homeAbbr": "VGK",
+   "homeTeamId": "37",
+   "homeName": "Vegas Golden Knights",
+   "awayAbbr": "CHI",
+   "awayTeamId": "4",
+   "awayName": "Chicago Blackhawks",
+   "firstCapturedAt": "2026-09-28T09:09:48.492Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "VGK -265",
+    "spread": -1.5,
+    "overUnder": 5.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-28T09:09:48.492Z",
+     "last_seen_at": "2026-09-28T09:09:48.492Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-0-0"
+     }
+    }
+   ]
+  },
+  "401891804": {
+   "eventId": "401891804",
+   "date": "2026-09-30T02:00Z",
+   "easternDate": "2026-09-29",
+   "name": "Vancouver Canucks at Edmonton Oilers",
+   "shortName": "VAN @ EDM",
+   "week": null,
+   "venue": "Rogers Place",
+   "homeAbbr": "EDM",
+   "homeTeamId": "6",
+   "homeName": "Edmonton Oilers",
+   "awayAbbr": "VAN",
+   "awayTeamId": "22",
+   "awayName": "Vancouver Canucks",
+   "firstCapturedAt": "2026-09-28T09:09:48.492Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "EDM -278",
+    "spread": -1.5,
+    "overUnder": 6.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-28T09:09:48.492Z",
+     "last_seen_at": "2026-09-28T09:09:48.492Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-0-0"
+     }
+    }
+   ]
+  },
+  "401891827": {
+   "eventId": "401891827",
+   "date": "2026-09-29T23:00Z",
+   "easternDate": "2026-09-29",
+   "name": "Montreal Canadiens at Toronto Maple Leafs",
+   "shortName": "MTL @ TOR",
+   "week": null,
+   "venue": "Scotiabank Arena",
+   "homeAbbr": "TOR",
+   "homeTeamId": "21",
+   "homeName": "Toronto Maple Leafs",
+   "awayAbbr": "MTL",
+   "awayTeamId": "10",
+   "awayName": "Montreal Canadiens",
+   "firstCapturedAt": "2026-09-28T09:09:48.492Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "TOR -115",
+    "spread": -1.5,
+    "overUnder": 6.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-28T09:09:48.492Z",
+     "last_seen_at": "2026-09-28T09:09:48.492Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-0-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-28T09:09:48.492Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260929"
+}
