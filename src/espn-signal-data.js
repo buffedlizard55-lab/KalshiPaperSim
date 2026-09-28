@@ -13,11 +13,11 @@
  * captured_at. Read it only through src/espn-signal-store.js, which refuses
  * any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 7 league(s) · 157 event(s) · generated 2026-09-28T01:43:33.998Z
+ * 7 league(s) · 157 event(s) · generated 2026-09-28T02:42:57.750Z
  */
 
 export const ESPN_SIGNAL_DATA = {
- "generatedAt": "2026-09-28T01:43:33.998Z",
+ "generatedAt": "2026-09-28T02:42:57.750Z",
  "present": true,
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "endpoints": {
@@ -29,7 +29,7 @@ export const ESPN_SIGNAL_DATA = {
  "codeMap": {
   "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
   "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
-  "generatedAt": "2026-09-28T00:15:58.896Z",
+  "generatedAt": "2026-09-28T02:42:56.422Z",
   "rows": [
    {
     "league": "nba",
@@ -2791,7 +2791,7 @@ export const ESPN_SIGNAL_DATA = {
      "isActive": true
     }
    ],
-   "teamsCapturedAt": "2026-09-28T00:15:58.059Z",
+   "teamsCapturedAt": "2026-09-28T02:42:55.599Z",
    "dates": {
     "2026-09-21": {
      "date": "2026-09-21",
@@ -12734,7 +12734,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.314Z",
       "2026-09-27T18:51:55.370Z",
       "2026-09-27T21:49:42.329Z",
-      "2026-09-28T00:15:58.077Z"
+      "2026-09-28T00:15:58.077Z",
+      "2026-09-28T02:42:55.618Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
      "teams": {
@@ -12753,7 +12754,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-18T23:18Z|Dennis (Achilles) has been ruled out for Saturday's Summer League game against the Wizards, Brad Rowland of the Locked On Podcast Network reports.",
            "status": "Day-To-Day",
            "date": "2026-07-18T23:18Z",
@@ -12772,7 +12773,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-18T23:19Z|Gilbert (hip) won't play in Saturday's Las Vegas Summer League game against the Wizards, Brad Rowland of the Locked On Podcast Network reports.",
            "status": "Day-To-Day",
            "date": "2026-07-18T23:19Z",
@@ -12791,7 +12792,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Out|2026-09-21T19:50Z|Veesaar was diagnosed with a torn right ACL and is expected to miss the 2026-27 season, the Hawks announced Monday.",
            "status": "Out",
            "date": "2026-09-21T19:50Z",
@@ -12810,7 +12811,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-19T00:14Z|Gueye underwent surgery Tuesday to repair a fractured left foot that he suffered during a workout last week, Brad Rowland of the Locked On Podcast Network reports.",
            "status": "Day-To-Day",
            "date": "2026-07-19T00:14Z",
@@ -12836,7 +12837,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-06-16T14:36Z|McGowens (toe) is out for Sunday's game against the Timberwolves.",
            "status": "Day-To-Day",
            "date": "2026-06-16T14:36Z",
@@ -12862,7 +12863,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-06-24T18:04Z|Giddey (ankle) could benefit from the selections of Caleb Wilson and Dailyn Swain as well as Chicago's acquisition of Nic Claxton (finger) in 2026-27.",
            "status": "Day-To-Day",
            "date": "2026-06-24T18:04Z",
@@ -12881,7 +12882,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-01T02:31Z|Collins (toe) agreed to a two-year, $17 million extension with Chicago on Tuesday, Shams Charania of ESPN reports.",
            "status": "Day-To-Day",
            "date": "2026-07-01T02:31Z",
@@ -12900,7 +12901,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-17T21:31Z|Swain is out for Friday's Summer League game against the Cavaliers due to right wrist soreness, per K.C. Johnson of Chicago Sports Network.",
            "status": "Day-To-Day",
            "date": "2026-07-17T21:31Z",
@@ -12926,7 +12927,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-25T22:58Z|Although head coach Kenny Atkinson said the starting lineup for the beginning of the 2026-27 season is not yet set, he praised Watson's (hamstring) fit in Cleveland and added that \"there's a lot of room for growth in his offensive game,\" Chris Fedor of Cleveland.com reports.",
            "status": "Day-To-Day",
            "date": "2026-09-25T22:58Z",
@@ -12952,7 +12953,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-25T15:34Z|Mavericks president Masai Ujiri said Friday that Lively (foot) is \"making good progress\" in his recovery, Mike Curtis of The Dallas Morning News reports.",
            "status": "Day-To-Day",
            "date": "2026-09-25T15:34Z",
@@ -12971,7 +12972,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-25T15:38Z|Mavericks president Masai Ujiri offered an encouraging update on Irving's recovery Friday, saying the veteran guard is \"right there\" as he works toward returning to game action, Mike Curtis of The Dallas Morning News reports.",
            "status": "Day-To-Day",
            "date": "2026-09-25T15:38Z",
@@ -12990,7 +12991,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-26T18:15Z|Aldama (undisclosed) was limited during Saturday's practice, Noah Weber of TheSmokingCuban.com reported.",
            "status": "Day-To-Day",
            "date": "2026-09-26T18:15Z",
@@ -13016,7 +13017,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-19T22:41Z|Brazile is out for Sunday's Summer League finale for undisclosed reasons, Ryan Blackburn of MileHighSports.com reports.",
            "status": "Day-To-Day",
            "date": "2026-07-19T22:41Z",
@@ -13042,7 +13043,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Out|2026-03-24T20:48Z|Moody has been diagnosed with a torn patellar tendon in his left knee, Shams Charania of ESPN reports.",
            "status": "Out",
            "date": "2026-03-24T20:48Z",
@@ -13061,7 +13062,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Out|2026-08-24T15:23Z|Butler (knee) is still in the relatively early stages of his recovery and has only recently begun getting back on the court, according to Danny Emerman of SFStandard.com.",
            "status": "Out",
            "date": "2026-08-24T15:23Z",
@@ -13087,7 +13088,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-27T04:10Z|Head coach Ime Udoka said Friday that he does not see Adams (ankle) playing in both halves of back-to-back sets to start the 2026-27 season, Will Guillory of The Athletic reports.",
            "status": "Day-To-Day",
            "date": "2026-09-27T04:10Z",
@@ -13113,7 +13114,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Out|2026-02-09T21:43Z|Furphy was diagnosed with a torn right ACL on Monday and will miss the remainder of the season, Michael Scotto of USA Today reports.",
            "status": "Out",
            "date": "2026-02-09T21:43Z",
@@ -13139,7 +13140,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-08-14T00:02Z|Beal (hip) agreed to a two-year, $13.2 million contract with Los Angeles on Thursday, Shams Charania of ESPN reports.",
            "status": "Day-To-Day",
            "date": "2026-08-14T00:02Z",
@@ -13158,7 +13159,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Out|2026-08-26T20:04Z|Miller underwent surgery Wednesday to repair a torn left rotator cuff and will be re-evaluated in six months, per Law Murray of The Athletic.",
            "status": "Out",
            "date": "2026-08-26T20:04Z",
@@ -13177,7 +13178,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-23T17:45Z|Ingram had surgery on his foot/heel during the offseason, ESPN's Brian Windhorst reported Tuesday.",
            "status": "Day-To-Day",
            "date": "2026-09-23T17:45Z",
@@ -13196,7 +13197,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-06-16T14:38Z|Niederhauser has been diagnosed with a Lisfranc injury in his right foot and will require surgery. He's been ruled out for the remainder of the 2025-26 season, Joey Linn of SI.com reports.",
            "status": "Day-To-Day",
            "date": "2026-06-16T14:38Z",
@@ -13222,7 +13223,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-08T19:52Z|Gardner (ankle) won't participate in the Las Vegas Summer League, per Ira Winderman of the South Florida Sun Sentinel.",
            "status": "Day-To-Day",
            "date": "2026-07-08T19:52Z",
@@ -13241,7 +13242,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-15T18:28Z|Conwell (hip) won't play again during the Las Vegas Summer League, per Tim Reynolds of Associated Press.",
            "status": "Day-To-Day",
            "date": "2026-07-15T18:28Z",
@@ -13279,7 +13280,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-28T16:16Z|Adebayo's (back) fantasy outlook should remain strong after Miami acquired Giannis Antetokounmpo, though his offensive role could shift alongside another high-usage frontcourt star, Ira Winderman of the South Florida Sentinel opines.",
            "status": "Day-To-Day",
            "date": "2026-07-28T16:16Z",
@@ -13298,7 +13299,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-02T16:32Z|Antetokounmpo (knee) did not participate in Greece's latest FIBA World Cup qualifying window as he focused on preparing for the 2026-27 NBA season.",
            "status": "Day-To-Day",
            "date": "2026-09-02T16:32Z",
@@ -13324,7 +13325,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-06-26T00:46Z|Porter exercised his $5.39 million player option for the 2026-27 campaign Thursday, Michael Scotto of USA Today reports.",
            "status": "Day-To-Day",
            "date": "2026-06-26T00:46Z",
@@ -13350,7 +13351,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Out|2026-04-26T17:52Z|DiVincenzo will undergo surgery Sunday to repair a ruptured right Achilles tendon that he suffered during the Timberwolves Game 4 win over the Nuggets on Saturday.",
            "status": "Out",
            "date": "2026-04-26T17:52Z",
@@ -13376,7 +13377,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-06-30T13:28Z|Brooklyn general manager Sean Marks announced Monday that Traore underwent right knee surgery and won't play in Summer League, C.J. Holmes of the New York Daily News reports.",
            "status": "Day-To-Day",
            "date": "2026-06-30T13:28Z",
@@ -13402,7 +13403,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-18T02:45Z|Diawara (finger) didn't play in Friday's 110-88 Summer League loss to the Mavericks.",
            "status": "Day-To-Day",
            "date": "2026-07-18T02:45Z",
@@ -13428,7 +13429,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-01T17:22Z|Isaac (knee) will return to the Magic on a one-year deal, Jason Beede of the Orlando Sentinel reports.",
            "status": "Day-To-Day",
            "date": "2026-07-01T17:22Z",
@@ -13447,7 +13448,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-13T14:40Z|The Magic announced Monday that Nelson will undergo surgery to repair a fracture in his left ankle, and he's expected to return to basketball activities in 3-4 months.",
            "status": "Day-To-Day",
            "date": "2026-07-13T14:40Z",
@@ -13466,7 +13467,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-02T16:17Z|Wagner (calf) did not participate in Germany's latest FIBA World Cup qualifying window as he focuses on preparing for the 2026-27 NBA season.",
            "status": "Day-To-Day",
            "date": "2026-09-02T16:17Z",
@@ -13492,7 +13493,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-25T21:44Z|Caldwell-Pope (finger) agreed to a buyout with the Grizzlies on Saturday and plans to sign a one-year, $3.9 million contract with the 76ers, Shams Charania of ESPN reports.",
            "status": "Day-To-Day",
            "date": "2026-07-25T21:44Z",
@@ -13511,7 +13512,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-17T20:15Z|Bona (foot) will be re-evaluated at the start of training camp, Derek Bodner of AllPHLY.com reports.",
            "status": "Day-To-Day",
            "date": "2026-09-17T20:15Z",
@@ -13537,7 +13538,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-19T02:49Z|Huntley (hamstring) is out for Saturday's Las Vegas Summer League finale versus the Spurs, Duane Rankin of The Arizona Republic reports.",
            "status": "Day-To-Day",
            "date": "2026-07-19T02:49Z",
@@ -13556,7 +13557,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Out|2026-09-11T16:03Z|Williams underwent surgery Thursday to repair a torn labrum in his left shoulder and will miss an extended period of time, Shams Charania of ESPN reports.",
            "status": "Out",
            "date": "2026-09-11T16:03Z",
@@ -13575,7 +13576,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-17T02:30Z|Reath (foot) agreed to a one-year veteran minimum contract with the Suns on Wednesday, John Gambadoro of Arizona Sports 98.7 FM reports.",
            "status": "Day-To-Day",
            "date": "2026-09-17T02:30Z",
@@ -13601,7 +13602,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Out|2026-08-24T20:23Z|Sharpe suffered a torn meniscus in his knee and is expected to miss six months, per Shams Charania of ESPN.",
            "status": "Out",
            "date": "2026-08-24T20:23Z",
@@ -13620,7 +13621,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-04T18:52Z|Morant is set to share the playmaking duties with Damian Lillard in Portland's starting backcourt after being traded from Memphis.",
            "status": "Day-To-Day",
            "date": "2026-09-04T18:52Z",
@@ -13646,7 +13647,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-06-25T18:21Z|Hunter (eye) has a major competitor for usage after the Kings took Darius Acuff in the 2026 WNBA Draft.",
            "status": "Day-To-Day",
            "date": "2026-06-25T18:21Z",
@@ -13665,7 +13666,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-06-29T14:02Z|LaVine (hand) exercised his $49 million player option for 2026-27 on Monday, Shams Charania of ESPN reports.",
            "status": "Day-To-Day",
            "date": "2026-06-29T14:02Z",
@@ -13684,7 +13685,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-31T15:26Z|Murray (ankle) is projected to start at power forward for the Kings in 2026-27, according to Kings beat writer Chris Watkins.",
            "status": "Day-To-Day",
            "date": "2026-07-31T15:26Z",
@@ -13710,7 +13711,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-22T19:16Z|Jones Garcia (ankle) agreed to a two-way contract with the Spurs on Wednesday, per Michael Scotto of HoopsHype.com.",
            "status": "Day-To-Day",
            "date": "2026-07-22T19:16Z",
@@ -13729,7 +13730,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Out|2026-07-19T12:33Z|Quaintance underwent right knee surgery Wednesday and has no timetable for a return, Brett Siegel of ClutchPoints.com reports.",
            "status": "Out",
            "date": "2026-07-19T12:33Z",
@@ -13755,7 +13756,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-19T22:56Z|Oweh (lower leg) didn't play in Sunday's 108-90 Summer League loss to the Nets.",
            "status": "Day-To-Day",
            "date": "2026-07-19T22:56Z",
@@ -13774,7 +13775,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-07T21:31Z|Hartenstein (ankle) participated in an offseason workout with the Thunder on Monday, Clemente Almanza of USA Today reports.",
            "status": "Day-To-Day",
            "date": "2026-09-07T21:31Z",
@@ -13793,7 +13794,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-24T16:01Z|Topic (back) will be limited when training camp begins, Clemente Almanza of USA Today reports",
            "status": "Day-To-Day",
            "date": "2026-09-24T16:01Z",
@@ -13812,7 +13813,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-24T16:04Z|Sorber will be limited to begin training camp, Clemente Almanza of USA Today reports.",
            "status": "Day-To-Day",
            "date": "2026-09-24T16:04Z",
@@ -13831,7 +13832,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-24T17:41Z|Thunder general manager Sam Presti has mentioned Mitchell (calf) multiple times as a player who could take on more minutes and make a jump this season, according to Brandon Rahbar of Daily Thunder.",
            "status": "Day-To-Day",
            "date": "2026-09-24T17:41Z",
@@ -13857,7 +13858,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-17T19:29Z|Alexander (rib) is out for Friday's Summer League game against Portland, per Ben Anderson of KSL News Salt Lake City.",
            "status": "Day-To-Day",
            "date": "2026-07-17T19:29Z",
@@ -13876,7 +13877,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-10T00:41Z|With Walker Kessler now in Los Angeles, Jackson (knee) figures to be an even more essential piece for the Jazz in 2026-27, per ESPN's Tim MacMahon.",
            "status": "Day-To-Day",
            "date": "2026-09-10T00:41Z",
@@ -13902,7 +13903,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-21T18:19Z|Young (quadriceps) has been doing sand-dune workouts during the offseason, and his trainer discussed the guard's outlook and leadership criticism Monday, Mark Medina of RG reports.",
            "status": "Day-To-Day",
            "date": "2026-09-21T18:19Z",
@@ -13921,7 +13922,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-24T15:17Z|Sarr will be a partial participant when training camp begins as he continues his recovery from surgery to repair a fractured right foot,Josh Robbins of The Athletic reports.",
            "status": "Day-To-Day",
            "date": "2026-09-24T15:17Z",
@@ -13940,7 +13941,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-24T17:25Z|General manager Will Dawkins said during Thursday's press conference that Davis (finger) is \"very much a motivated player\" and that he expects the veteran big man to bounce back in 2026-27.",
            "status": "Day-To-Day",
            "date": "2026-09-24T17:25Z",
@@ -13959,7 +13960,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Out|2026-07-30T20:11Z|The Wizards announced Thursday that Watkins has undergone surgery for a torn ACL.",
            "status": "Out",
            "date": "2026-07-30T20:11Z",
@@ -13985,7 +13986,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-19T22:24Z|Murray-Boyles (finger) won't play in Sunday's Summer League game against the Nuggets, Zulfi Sheikh of sportsnet reports.",
            "status": "Day-To-Day",
            "date": "2026-07-19T22:24Z",
@@ -14004,7 +14005,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-19T22:26Z|Hepburn (knee) won't play in Sunday's Summer League game against the Nuggets, Zulfi Sheikh of Sportsnet reports.",
            "status": "Day-To-Day",
            "date": "2026-07-19T22:26Z",
@@ -14023,7 +14024,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-19T22:30Z|Martin (knee) won't play in Sunday's Summer League game against the Nuggets, Zulfi Sheikh of Sportsnet reports.",
            "status": "Day-To-Day",
            "date": "2026-07-19T22:30Z",
@@ -14042,7 +14043,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-10T01:30Z|Bittle (lower leg) was spotted in a walking boot Wednesday, Esfandiar Baraheni of The Athletic reports.",
            "status": "Day-To-Day",
            "date": "2026-09-10T01:30Z",
@@ -14068,7 +14069,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-06-24T17:01Z|Edey's (ankle, elbow) role becomes more intriguing following Memphis' addition of Cameron Boozer.",
            "status": "Day-To-Day",
            "date": "2026-06-24T17:01Z",
@@ -14087,7 +14088,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-06-24T17:36Z|Wells (toe) should continue competing for rotation minutes on the wing despite Memphis adding Cameron Boozer with the No. 3 overall pick.",
            "status": "Day-To-Day",
            "date": "2026-06-24T17:36Z",
@@ -14106,7 +14107,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Out|2026-06-25T00:34Z|Saunders was selected by the Grizzlies with the No. 32 overall pick in the 2026 NBA Draft.",
            "status": "Out",
            "date": "2026-06-25T00:34Z",
@@ -14125,7 +14126,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-20T00:57Z|Lopez (undisclosed) is out for Sunday's Summer League championship game against the Warriors, Drew Hill of The Daily Memphian reports.",
            "status": "Day-To-Day",
            "date": "2026-07-20T00:57Z",
@@ -14144,7 +14145,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-20T01:00Z|Clayton (knee) won't play in Sunday's Summer League title game against the Warriors, Drew Hill of The Daily Memphian reports.",
            "status": "Day-To-Day",
            "date": "2026-07-20T01:00Z",
@@ -14163,7 +14164,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-07-27T18:26Z|Pippen (toe) has a chance to begin the new year as Memphis' starting point guard after Portland acquired Ja Morant in a trade with the Grizzlies earlier this offseason.",
            "status": "Day-To-Day",
            "date": "2026-07-27T18:26Z",
@@ -14189,7 +14190,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-08-25T15:58Z|Miller (shoulder) provided an update on his rehab after surgery in comments to Roderick Boone of The Charlotte Observer on Tuesday.",
            "status": "Day-To-Day",
            "date": "2026-08-25T15:58Z",
@@ -14208,7 +14209,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:55.370Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-26T21:48Z|The Hornets acquired Dillingham (wrist) from the Bulls on Saturday in exchange for Buddy Hield and cash, Shams Charania of ESPN reports.",
            "status": "Day-To-Day",
            "date": "2026-09-26T21:48Z",
@@ -14227,7 +14228,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-25T23:04Z|Knueppel will miss the preseason after suffering a left hamstring injury during an offseason workout, the Hornets announced Friday.",
            "status": "Day-To-Day",
            "date": "2026-09-25T23:04Z",
@@ -14246,7 +14247,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-09-25T23:03Z|Williams will miss the preseason after suffering a right hamstring injury, the Hornets announced Friday.",
            "status": "Day-To-Day",
            "date": "2026-09-25T23:03Z",
@@ -14265,7 +14266,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.314Z",
-           "last_seen_at": "2026-09-28T00:15:58.077Z",
+           "last_seen_at": "2026-09-28T02:42:55.618Z",
            "fp": "Day-To-Day|2026-06-16T14:32Z|The Hornets announced Thursday that Hall underwent a procedure to address a fractured right ankle and will miss the remainder of the 2025-26 campaign.",
            "status": "Day-To-Day",
            "date": "2026-06-16T14:32Z",
@@ -14290,7 +14291,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.359Z",
       "2026-09-27T18:51:55.584Z",
       "2026-09-27T21:49:42.363Z",
-      "2026-09-28T00:15:58.100Z"
+      "2026-09-28T00:15:58.100Z",
+      "2026-09-28T02:42:55.643Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)"
     }
@@ -14800,7 +14802,7 @@ export const ESPN_SIGNAL_DATA = {
      "isActive": true
     }
    ],
-   "teamsCapturedAt": "2026-09-28T00:15:58.113Z",
+   "teamsCapturedAt": "2026-09-28T02:42:55.655Z",
    "dates": {
     "2026-09-21": {
      "date": "2026-09-21",
@@ -21541,7 +21543,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.405Z",
       "2026-09-27T18:51:55.793Z",
       "2026-09-27T21:49:42.396Z",
-      "2026-09-28T00:15:58.123Z"
+      "2026-09-28T00:15:58.123Z",
+      "2026-09-28T02:42:55.665Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
      "teams": {
@@ -21560,7 +21563,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.405Z",
-           "last_seen_at": "2026-09-28T00:15:58.123Z",
+           "last_seen_at": "2026-09-28T02:42:55.665Z",
            "fp": "Out|2020-11-21T18:31Z|Jackson (undisclosed) is inactive for Saturday's game against Vanderbilt, G. Allan Taylor of The Athletic reports.",
            "status": "Out",
            "date": "2020-11-21T18:31Z",
@@ -21586,7 +21589,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.405Z",
-           "last_seen_at": "2026-09-28T00:15:58.123Z",
+           "last_seen_at": "2026-09-28T02:42:55.665Z",
            "fp": "Active|2022-11-26T22:30Z|Walker caught four passes for 77 yards and a touchdown versus UNT on Saturday.",
            "status": "Active",
            "date": "2022-11-26T22:30Z",
@@ -21612,7 +21615,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.405Z",
-           "last_seen_at": "2026-09-28T00:15:58.123Z",
+           "last_seen_at": "2026-09-28T02:42:55.665Z",
            "fp": "Active|2022-11-03T01:19Z|Bettridge made four field goals in Saturday's 14-12 victory over Miami.",
            "status": "Active",
            "date": "2022-11-03T01:19Z",
@@ -21637,7 +21640,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.448Z",
       "2026-09-27T18:51:56.002Z",
       "2026-09-27T21:49:42.429Z",
-      "2026-09-28T00:15:58.145Z"
+      "2026-09-28T00:15:58.145Z",
+      "2026-09-28T02:42:55.686Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)"
     }
@@ -22147,7 +22151,7 @@ export const ESPN_SIGNAL_DATA = {
      "isActive": true
     }
    ],
-   "teamsCapturedAt": "2026-09-28T00:15:58.158Z",
+   "teamsCapturedAt": "2026-09-28T02:42:55.700Z",
    "dates": {
     "2026-09-21": {
      "date": "2026-09-21",
@@ -22267,7 +22271,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.493Z",
       "2026-09-27T18:51:56.161Z",
       "2026-09-27T21:49:42.462Z",
-      "2026-09-28T00:15:58.168Z"
+      "2026-09-28T00:15:58.168Z",
+      "2026-09-28T02:42:55.710Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
      "teams": {}
@@ -22284,7 +22289,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.537Z",
       "2026-09-27T18:51:56.238Z",
       "2026-09-27T21:49:42.495Z",
-      "2026-09-28T00:15:58.189Z"
+      "2026-09-28T00:15:58.189Z",
+      "2026-09-28T02:42:55.731Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)"
     }
@@ -22614,7 +22620,7 @@ export const ESPN_SIGNAL_DATA = {
      "isActive": true
     }
    ],
-   "teamsCapturedAt": "2026-09-28T00:15:57.857Z",
+   "teamsCapturedAt": "2026-09-28T02:42:55.401Z",
    "dates": {
     "2026-09-21": {
      "date": "2026-09-21",
@@ -132506,7 +132512,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-27T21:49:42.268Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|21,18|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -132590,7 +132596,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-27T21:49:42.268Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|30,27|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -132674,7 +132680,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-27T21:49:42.268Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|19,17|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -132758,7 +132764,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-27T21:49:42.268Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|10,24|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -132842,7 +132848,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-27T21:49:42.268Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|24,16|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -132926,7 +132932,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-27T21:49:42.268Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|31,24|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -133010,7 +133016,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-27T21:49:42.268Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|33,31|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -133094,7 +133100,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-27T21:49:42.268Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|12,7|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -133178,7 +133184,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-27T21:49:42.268Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|35,6|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -133262,7 +133268,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-28T00:15:58.033Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|36,30|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -133346,7 +133352,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-28T00:15:58.033Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|16,23|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -133430,7 +133436,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-28T00:15:58.033Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|31,34|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -133514,7 +133520,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-28T00:15:58.033Z",
-         "last_seen_at": "2026-09-28T00:15:58.033Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
          "fp": "post|4|0|27,35|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -133575,6 +133581,26 @@ export const ESPN_SIGNAL_DATA = {
           "home": "1-1",
           "away": "1-1"
          }
+        },
+        {
+         "captured_at": "2026-09-28T02:42:55.572Z",
+         "last_seen_at": "2026-09-28T02:42:55.572Z",
+         "fp": "in|3|3|8,16|false|STATUS_IN_PROGRESS",
+         "url_ref": 0,
+         "state": "in",
+         "statusName": "STATUS_IN_PROGRESS",
+         "completed": false,
+         "period": 3,
+         "clock": 191,
+         "displayClock": "3:11",
+         "scores": {
+          "home": 8,
+          "away": 16
+         },
+         "recordsOverall": {
+          "home": "1-1",
+          "away": "1-1"
+         }
         }
        ]
       }
@@ -133588,7 +133614,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.186Z",
       "2026-09-27T18:51:54.969Z",
       "2026-09-27T21:49:42.232Z",
-      "2026-09-28T00:15:57.990Z"
+      "2026-09-28T00:15:57.990Z",
+      "2026-09-28T02:42:55.530Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
      "teams": {
@@ -133607,7 +133634,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T20:08Z|Tagovailoa (oblique) was a full participant in Tuesday's practice, Tori McElhaney of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-22T20:08Z",
@@ -133626,7 +133653,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T23:11Z|Henderson is expected to step into a starting role at cornerback in Week 3, Tori McElhaney of the Falcons' official website reports.",
            "status": "Active",
            "date": "2026-09-22T23:11Z",
@@ -133645,7 +133672,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T23:22Z|Dorlus (thumb) was a full participant in Tuesday's practice, Tori McElhaney of the Falcons' official site reports.",
            "status": "Active",
            "date": "2026-09-22T23:22Z",
@@ -133664,7 +133691,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T23:24Z|Muse (shoulder) was a full participant in Tuesday's practice, Tori McElhaney of the Falcons' official site reports.",
            "status": "Active",
            "date": "2026-09-22T23:24Z",
@@ -133683,7 +133710,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:28Z|The Falcons signed Harrison to the active roster from their practice squad Tuesday, Tori McElhaney of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-23T00:28Z",
@@ -133702,7 +133729,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:29Z|Taylor (ribs) was a full participant in Tuesday's practice, Tori McElhaney of the Falcons' official site reports.",
            "status": "Active",
            "date": "2026-09-23T00:29Z",
@@ -133721,7 +133748,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-23T23:26Z|Ebukam (hamstring) is officially listed as out for Thursday's game against the Packers, Tori McElhaney of the Falcons' official site reports.",
            "status": "Out",
            "date": "2026-09-23T23:26Z",
@@ -133740,7 +133767,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T23:01Z|Rush (coach's decision) is inactive for Thursday's game versus Green Bay but will serve as the emergency quarterback.",
            "status": "Out",
            "date": "2026-09-24T23:01Z",
@@ -133759,7 +133786,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T23:12Z|Bowman (Achilles) is available for Thursday's game versus the Packers.",
            "status": "Active",
            "date": "2026-09-24T23:12Z",
@@ -133778,7 +133805,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T23:18Z|Strand (coach's decision) is inactive for Thursday's game against the Packers.",
            "status": "Out",
            "date": "2026-09-24T23:18Z",
@@ -133797,7 +133824,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T03:30Z|Robinson rushed 29 times for 194 yards and two touchdowns and brought in both targets for 19 yards in the Falcons' 35-14 win over the Packers on Thursday.",
            "status": "Active",
            "date": "2026-09-25T03:30Z",
@@ -133816,7 +133843,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T03:37Z|London secured nine of 10 targets for 194 yards in the Falcons' 35-14 win over the Packers on Thursday.",
            "status": "Active",
            "date": "2026-09-25T03:37Z",
@@ -133835,7 +133862,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T04:27Z|Penix completed 18 of 25 passes for 256 yards with one touchdown and one interception while rushing twice for minus-2 yards in the Falcons' 35-14 win over the Packers on Thursday. He also threw a two-point conversion pass.",
            "status": "Active",
            "date": "2026-09-25T04:27Z",
@@ -133854,7 +133881,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T04:32Z|Robinson rushed 10 times for 50 yards and a touchdown and returned two kickoffs for 54 yards in the Falcons' 35-14 win over the Packers on Thursday.",
            "status": "Active",
            "date": "2026-09-25T04:32Z",
@@ -133873,7 +133900,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T04:33Z|Folk hit both field-goal attempts and all three extra-point tries in Thursday's 35-14 win over the Packers.",
            "status": "Active",
            "date": "2026-09-25T04:33Z",
@@ -133892,7 +133919,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T04:46Z|Pitts secured one of two targets for five yards in the Falcons' 35-14 win over the Packers on Thursday.",
            "status": "Active",
            "date": "2026-09-25T04:46Z",
@@ -133911,7 +133938,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T23:14Z|Dotson caught one pass on three targets for 11 yards during the Falcons' 35-14 win over the Packers on Thursday.",
            "status": "Active",
            "date": "2026-09-26T23:14Z",
@@ -133930,7 +133957,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T23:45Z|Zaccheaus brought in both of his targets for nine yards and returned one punt for four yards during the Falcons' 35-14 win over the Packers on Thursday.",
            "status": "Active",
            "date": "2026-09-26T23:45Z",
@@ -133949,7 +133976,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T23:57Z|Branch caught one pass on two targets for seven yards while logging an 18-yard punt return and a 22-yard kickoff return during the Falcons' 35-14 win over the Packers on Thursday.",
            "status": "Active",
            "date": "2026-09-26T23:57Z",
@@ -133968,7 +133995,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T00:17Z|Hooper caught both of his targets for 11 yards and a touchdown during Atlanta's 35-14 win over Green Bay on Thursday.",
            "status": "Active",
            "date": "2026-09-27T00:17Z",
@@ -133987,7 +134014,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T03:46Z|Watts recorded five tackles (three solo) and one interception during Thursday's 35-14 win over the Packers.",
            "status": "Active",
            "date": "2026-09-27T03:46Z",
@@ -134006,7 +134033,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T03:52Z|Bates recorded four tackles (one solo) and one pass defense during the Falcons' 35-14 victory over the Packers on Thursday.",
            "status": "Active",
            "date": "2026-09-27T03:52Z",
@@ -134025,7 +134052,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T22:49Z|inactive",
            "status": "Out",
            "date": "2026-09-24T22:49Z",
@@ -134044,7 +134071,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T22:49Z|inactive",
            "status": "Out",
            "date": "2026-09-24T22:49Z",
@@ -134063,7 +134090,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T22:49Z|inactive",
            "status": "Out",
            "date": "2026-09-24T22:49Z",
@@ -134184,7 +134211,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-18T08:12Z|Palmer caught one of three targets for a 43-yard touchdown in Thursday's 41-31 win over the Lions.",
            "status": "Active",
            "date": "2026-09-18T08:12Z",
@@ -134203,7 +134230,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-18T23:11Z|Knox caught both of his passes for five yards and a touchdown during the Bills' 41-31 win over the Lions on Thursday.",
            "status": "Active",
            "date": "2026-09-18T23:11Z",
@@ -134222,7 +134249,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-19T00:51Z|Davis returned one kickoff for 31 yards during Thursday's 41-31 win versus the Lions.",
            "status": "Active",
            "date": "2026-09-19T00:51Z",
@@ -134241,7 +134268,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-19T01:05Z|Hawes accrued zero targets during Thursday's 41-31 victory over Detroit.",
            "status": "Active",
            "date": "2026-09-19T01:05Z",
@@ -134260,7 +134287,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-19T03:09Z|Rousseau logged three solo tackles, including 2.0 sacks, in Thursday night's 41-31 win over the Lions.",
            "status": "Active",
            "date": "2026-09-19T03:09Z",
@@ -134279,7 +134306,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-19T03:20Z|Bernard logged five tackles (three solo) and a pass defensed in the Bills' 41-31 win over the Lions on Thursday night.",
            "status": "Active",
            "date": "2026-09-19T03:20Z",
@@ -134317,7 +134344,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-19T03:32Z|Bishop logged six tackles (five solo) in the Bills' 41-31 win over the Lions on Thursday night.",
            "status": "Active",
            "date": "2026-09-19T03:32Z",
@@ -134336,7 +134363,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-19T03:48Z|Chubb logged four tackles (two solo), including 1.5 sacks, in the Bills' 41-31 win over the Lions on Thursday night.",
            "status": "Active",
            "date": "2026-09-19T03:48Z",
@@ -134393,7 +134420,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T19:23Z|Johnson (hamstring) does not have an injury designation for Sunday's game against the Chargers, Alec White of the Bills' official site reports. \"Ty Johnson will be good to go,\" coach Joe Brady said Friday.",
            "status": "Active",
            "date": "2026-09-25T19:23Z",
@@ -134450,7 +134477,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T00:33Z|The Bills signed Dortch from the practice squad to the active roster Friday, Maddy Glabb reports.",
            "status": "Active",
            "date": "2026-09-26T00:33Z",
@@ -134469,7 +134496,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T01:05Z|The Bills placed Hancock (hamstring) on injured reserve Friday.",
            "status": "Injured Reserve",
            "date": "2026-09-26T01:05Z",
@@ -134507,7 +134534,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T15:50Z|Oliver (hip) is available for Sunday's game versus the Chargers.",
            "status": "Active",
            "date": "2026-09-27T15:50Z",
@@ -134526,7 +134553,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T15:53Z|Coleman (ankle) is listed as active for Sunday's game against the Chargers.",
            "status": "Active",
            "date": "2026-09-27T15:53Z",
@@ -134545,7 +134572,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:58Z|Bell (coach's decision) is inactive for Sunday's game against the Chargers.",
            "status": "Out",
            "date": "2026-09-27T15:58Z",
@@ -134564,7 +134591,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:40Z|Reed-Adams (elbow) is inactive for Sunday's game against the Chargers.",
            "status": "Out",
            "date": "2026-09-27T16:40Z",
@@ -134583,7 +134610,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T19:51Z|Benford (toe) has been ruled out for the rest of Sunday's game against the Chargers.",
            "status": "Questionable",
            "date": "2026-09-27T19:51Z",
@@ -134602,7 +134629,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:02Z|Cook rushed 24 times for 154 yards and a touchdown and failed to bring in his only target in the Bills' 24-16 win over the Chargers on Sunday. He also lost a fumble.",
            "status": "Active",
            "date": "2026-09-27T21:02Z",
@@ -134621,7 +134648,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:09Z|Allen completed 16 of 26 passes for 204 yards with no touchdowns and two interceptions and added eight carries for 22 yards and two touchdowns in the Bills' 24-16 win over the Chargers on Sunday. He also lost a fumble.",
            "status": "Active",
            "date": "2026-09-27T21:09Z",
@@ -134640,12 +134667,31 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:02Z|Moore brought in six of 10 targets for 67 yards in the Bills' 24-16 win over the Chargers on Sunday.",
            "status": "Active",
            "date": "2026-09-27T23:02Z",
            "shortComment": "Moore brought in six of 10 targets for 67 yards in the Bills' 24-16 win over the Chargers on Sunday.",
            "longComment": "Making his return from an early Week 2 exit due to a shoulder injury, Moore jumped right back into the swing of things by leading the Bills in receptions, receiving yards and targets. The veteran wideout has made an impact in both of his non-injury-shortened games with Josh Allen, producing an 11-167-1 line on 18 targets. Moore figures to continue commanding the majority of Allen's attention in a Week 4 home matchup against the Patriots next Sunday."
+          }
+         ]
+        },
+        "639577": {
+         "recordId": "639577",
+         "athleteName": "Dalton Kincaid",
+         "positionAbbr": "TE",
+         "teamId": "2",
+         "teamAbbr": "BUF",
+         "teamName": "Buffalo Bills",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:15Z|Kincaid secured two of three targets for 38 yards and lost a fumble in the Bills' 24-16 win over the Chargers on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T00:15Z",
+           "shortComment": "Kincaid secured two of three targets for 38 yards and lost a fumble in the Bills' 24-16 win over the Chargers on Sunday.",
+           "longComment": "Kincaid finished third in receptions and receiving yards on the afternoon for the Bills and tied for the same slotting in targets, but the tight end's downturn in production compared to the first two weeks stood out. Kincaid had opened the season with a combined 12-125-1 line on 14 targets, but the Chargers appeared to key on slowing him down Sunday and also forced the ball from him at the end of a 24-yard catch late in the third quarter for his first lost fumble since his 2023 rookie campaign. Despite the relatively quiet performance, Kincaid should remain a key figure in the air attack during a Week 4 home matchup against the Patriots next Sunday."
           }
          ]
         },
@@ -134735,7 +134781,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T17:28Z|",
            "status": "Active",
            "date": "2026-09-27T17:28Z",
@@ -134754,7 +134800,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:46Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:46Z",
@@ -134773,7 +134819,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:46Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:46Z",
@@ -134792,7 +134838,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:46Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:46Z",
@@ -134811,7 +134857,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:46Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:46Z",
@@ -134837,7 +134883,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-18T23:24Z|Woods (groin) does not carry an injury designation into Sunday's game against the Vikings.",
            "status": "Active",
            "date": "2026-09-18T23:24Z",
@@ -134856,7 +134902,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-18T23:26Z|Muhammad (ankle) does not have an injury designation for Sunday's NFC North clash against the Vikings.",
            "status": "Active",
            "date": "2026-09-18T23:26Z",
@@ -134875,7 +134921,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T22:23Z|Swift carried the ball 16 times for 45 yards and caught all five of his targets for 54 yards in Sunday's 9-3 loss to the Vikings.",
            "status": "Active",
            "date": "2026-09-20T22:23Z",
@@ -134894,7 +134940,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T22:53Z|Odunze caught three of four targets for 43 yards in Sunday's 9-3 loss to the Vikings.",
            "status": "Active",
            "date": "2026-09-20T22:53Z",
@@ -134913,7 +134959,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T22:56Z|Burden caught three of seven targets for 32 yards in Sunday's 9-3 loss to the Vikings.",
            "status": "Active",
            "date": "2026-09-20T22:56Z",
@@ -134932,7 +134978,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T23:00Z|Loveland caught one of three targets for three yards in Sunday's 9-3 loss to the Vikings.",
            "status": "Active",
            "date": "2026-09-20T23:00Z",
@@ -134951,7 +134997,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T20:38Z|Raymond caught all five targets for 40 yards in Sunday's 9-3 loss to the Vikings.",
            "status": "Active",
            "date": "2026-09-21T20:38Z",
@@ -134970,7 +135016,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T20:45Z|Kmet failed to catch his only target in Sunday's 9-3 loss to the Vikings.",
            "status": "Active",
            "date": "2026-09-21T20:45Z",
@@ -134989,7 +135035,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:39Z|Edwards recorded four tackles (two solo) during Sunday's 9-3 loss versus the Vikings.",
            "status": "Active",
            "date": "2026-09-23T01:39Z",
@@ -135008,7 +135054,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:43Z|Bush recorded four tackles (three solo) and a pass defensed during Sunday's 9-3 loss versus the Vikings.",
            "status": "Active",
            "date": "2026-09-23T01:43Z",
@@ -135027,7 +135073,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:18Z|Roush caught one of three targets for nine yards during the Bears' 9-3 loss to the Vikings on Sunday.",
            "status": "Active",
            "date": "2026-09-23T02:18Z",
@@ -135065,7 +135111,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-23T22:34Z|The Bears opened the 21-day practice window for Sewell (Achilles) on Wednesday, Kevin Fishbain of The Athletic reports.",
            "status": "Out",
            "date": "2026-09-23T22:34Z",
@@ -135084,7 +135130,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T00:28Z|The Bears opened the 21-day practice window for Turner (knee) on Wednesday, Kevin Fishbain of The Athletic reports.",
            "status": "Out",
            "date": "2026-09-24T00:28Z",
@@ -135103,7 +135149,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T19:39Z|Monangai (knee) took part in Friday's practice and was listed as a full participant, Brad Biggs of the Chicago Tribune reports.",
            "status": "Active",
            "date": "2026-09-25T19:39Z",
@@ -135160,7 +135206,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T19:04Z|Santos (hip) does not carry an injury designation into Monday's game against the Eagles.",
            "status": "Active",
            "date": "2026-09-26T19:04Z",
@@ -135179,7 +135225,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T19:17Z|Stevenson (hamstring) does not have any injury designation ahead of Monday's game against the Eagles.",
            "status": "Active",
            "date": "2026-09-26T19:17Z",
@@ -135198,7 +135244,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T12:12Z|Williams, who is ruled out for Monday's game against the Eagles, has been diagnosed with a Grade 2 hamstring strain, which doctors consider a 3-to-4-week injury, Adam Schefter and Ian Rapoport of ESPN report.",
            "status": "Out",
            "date": "2026-09-27T12:12Z",
@@ -135217,7 +135263,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T16:59Z|Keenum is in line to start Monday's game against the Eagles, Jay Glazer reported on \"Fox NFL Sunday.\"",
            "status": "Active",
            "date": "2026-09-27T16:59Z",
@@ -135236,7 +135282,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T18:27Z|Bagent (concussion) cleared the NFL's concussion protocol Sunday and doesn't have a designation for Monday's game against the Eagles.",
            "status": "Active",
            "date": "2026-09-27T18:27Z",
@@ -135274,7 +135320,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:25Z|",
            "status": "Active",
            "date": "2026-09-21T18:25Z",
@@ -135293,7 +135339,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:25Z|",
            "status": "Active",
            "date": "2026-09-21T18:25Z",
@@ -135312,7 +135358,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:25Z|",
            "status": "Active",
            "date": "2026-09-21T18:25Z",
@@ -135331,7 +135377,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:25Z|",
            "status": "Active",
            "date": "2026-09-21T18:25Z",
@@ -135350,7 +135396,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-18T19:38Z|",
            "status": "Active",
            "date": "2026-09-18T19:38Z",
@@ -135413,6 +135459,25 @@ export const ESPN_SIGNAL_DATA = {
            "date": "2026-09-28T00:00Z",
            "shortComment": "out",
            "longComment": "out"
+          }
+         ]
+        },
+        "-2018356": {
+         "recordId": "-2018356",
+         "athleteName": "Anthony Johnson Jr.",
+         "positionAbbr": "S",
+         "teamId": "3",
+         "teamAbbr": "CHI",
+         "teamName": "Chicago Bears",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Injured Reserve|2026-09-28T02:16Z|ir",
+           "status": "Injured Reserve",
+           "date": "2026-09-28T02:16Z",
+           "shortComment": "ir",
+           "longComment": "ir"
           }
          ]
         }
@@ -135585,7 +135650,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T20:57Z|Gesicki wasn't targeted in Sunday's 20-6 win over the Texans.",
            "status": "Active",
            "date": "2026-09-21T20:57Z",
@@ -135604,7 +135669,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T21:54Z|Perine logged two carries for six yards and hauled in his lone target for 16 yards during the Bengals' 20-6 win over the Texans on Sunday.",
            "status": "Active",
            "date": "2026-09-21T21:54Z",
@@ -135623,7 +135688,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:53Z|Knight recorded 12 total tackles (four solo) during Sunday's 20-6 win over Houston.",
            "status": "Active",
            "date": "2026-09-23T01:53Z",
@@ -135642,7 +135707,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:57Z|Hill recorded 10 total tackles (four solo) and four passes defensed during Sunday's 20-6 win over the Texans.",
            "status": "Active",
            "date": "2026-09-23T01:57Z",
@@ -135661,7 +135726,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:05Z|Johnson recorded four total tackles (three solo), including 2.0 sacks, during Sunday's 20-6 win over Houston.",
            "status": "Active",
            "date": "2026-09-23T02:05Z",
@@ -135680,7 +135745,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:13Z|Carter registered five total tackles (two solo) during Sunday's 20-6 win over the Texans.",
            "status": "Active",
            "date": "2026-09-23T02:13Z",
@@ -135699,7 +135764,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:24Z|Sample notched zero targets during Sunday's 20-6 victory over the Texans.",
            "status": "Active",
            "date": "2026-09-23T03:24Z",
@@ -135718,7 +135783,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:36Z|All notched two receptions (on three targets) for five yards during Sunday's 20-6 win versus the Texans.",
            "status": "Active",
            "date": "2026-09-23T03:36Z",
@@ -135737,7 +135802,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T00:38Z|Allen (knee) missed practice for the second day in a row Thursday, but it was with a rest designation, Jay Morrison of SI.com reports.",
            "status": "Active",
            "date": "2026-09-25T00:38Z",
@@ -135756,7 +135821,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T20:26Z|The Bengals placed Iosivas (thumb) on injured reserve Saturday.",
            "status": "Injured Reserve",
            "date": "2026-09-26T20:26Z",
@@ -135775,7 +135840,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T21:16Z|The Bengals elevated Hudson from the practice squad to the active roster Saturday ahead of Sunday's game against the Steelers.",
            "status": "Active",
            "date": "2026-09-26T21:16Z",
@@ -135794,7 +135859,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:44Z|Hill (Achilles) is inactive for Sunday's game against the Steelers.",
            "status": "Out",
            "date": "2026-09-27T16:44Z",
@@ -135851,7 +135916,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T19:12Z|Davis (hamstring) is questionable to return to Sunday's game against the Steelers.",
            "status": "Questionable",
            "date": "2026-09-27T19:12Z",
@@ -135870,7 +135935,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T20:12Z|Cook (ankle) has returned to Sunday's game against the Jaguars, Jay Morrison of SI.com reports.",
            "status": "Active",
            "date": "2026-09-27T20:12Z",
@@ -135889,7 +135954,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T20:50Z|Burrow completed 28 of 37 passes for 282 yards with three touchdowns and no interceptions while adding two rushes for 13 yards in the Bengals' 30-27 loss to the Steelers on Sunday. He also lost a fumble.",
            "status": "Active",
            "date": "2026-09-27T20:50Z",
@@ -135908,7 +135973,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T20:55Z|Chase brought in nine of 12 targets for 98 yards and a touchdown in the Bengals' 30-27 loss to the Steelers on Sunday.",
            "status": "Active",
            "date": "2026-09-27T20:55Z",
@@ -135927,7 +135992,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:35Z|Brown rushed 13 times for 61 yards and brought in both targets for eight yards in the Bengals' 30-27 loss to the Steelers on Sunday.",
            "status": "Active",
            "date": "2026-09-27T21:35Z",
@@ -135946,7 +136011,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:42Z|Higgins brought in six of seven targets for 90 yards and a touchdown in the Bengals' 30-27 loss to the Steelers on Sunday.",
            "status": "Active",
            "date": "2026-09-27T21:42Z",
@@ -135965,7 +136030,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:42Z|McPherson made both of his field-goal attempts and each of his three extra-point tries during Sunday's 30-27 loss to Pittsburgh.",
            "status": "Active",
            "date": "2026-09-27T23:42Z",
@@ -136098,7 +136163,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:39Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:39Z",
@@ -136117,7 +136182,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:39Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:39Z",
@@ -136136,7 +136201,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:39Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:39Z",
@@ -136155,7 +136220,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:39Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:39Z",
@@ -136174,7 +136239,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:39Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:39Z",
@@ -136193,7 +136258,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T20:15Z|questionable",
            "status": "Questionable",
            "date": "2026-09-27T20:15Z",
@@ -136238,7 +136303,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T12:31Z|The Browns plan to re-evaluate their quarterback situation following Sunday's game against the Buccaneers, with Sanders being next in line to start if Cleveland elects to bench Deshaun Watson, Ian Rapoport of ESPN reports.",
            "status": "Active",
            "date": "2026-09-20T12:31Z",
@@ -136295,7 +136360,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T00:00Z|Szmyt made all three of his field-goal attempts and both of his extra-point tries during the Browns' 23-19 win over the Buccaneers on Sunday.",
            "status": "Active",
            "date": "2026-09-21T00:00Z",
@@ -136314,7 +136379,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T00:59Z|Boston caught five of seven targets for 95 yards and a touchdown in the Browns' 23-19 win over Tampa Bay on Sunday.",
            "status": "Active",
            "date": "2026-09-21T00:59Z",
@@ -136333,7 +136398,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T02:55Z|Concepcion caught all six targets for 28 yards in Sunday's 23-19 win over the Bucs. He added one rushing attempt for minus-6 yards.",
            "status": "Active",
            "date": "2026-09-21T02:55Z",
@@ -136352,7 +136417,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T23:30Z|Jeudy failed to haul in his lone target during the Browns' 23-19 win over the Buccaneers on Sunday.",
            "status": "Active",
            "date": "2026-09-21T23:30Z",
@@ -136371,7 +136436,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:49Z|Schwesinger recorded 10 tackles (five solo) during Sunday's 23-19 win at Tampa Bay.",
            "status": "Active",
            "date": "2026-09-23T00:49Z",
@@ -136390,7 +136455,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:03Z|Sanders caught his sole target for seven yards, had two rushes for four yards and returned two kickoffs for 50 yards in Sunday's 23-19 win over the Buccaneers.",
            "status": "Active",
            "date": "2026-09-23T03:03Z",
@@ -136409,7 +136474,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:06Z|McLaughlin logged one carry for three yards and could not catch his sole target in Sunday's 23-19 win over the Buccaneers.",
            "status": "Active",
            "date": "2026-09-23T03:06Z",
@@ -136428,7 +136493,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:10Z|Whiteheart caught one of his two targets for a 17-yard touchdown in Sunday's 23-19 win over the Buccaneers.",
            "status": "Active",
            "date": "2026-09-23T03:10Z",
@@ -136523,7 +136588,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T16:16Z|Blackmon will start at outside cornerback against the Panthers on Sunday due to the absence of Tyson Campbell (ankle/hip/knee), Daniel Oyefusi of ESPN.com reports.",
            "status": "Active",
            "date": "2026-09-27T16:16Z",
@@ -136542,7 +136607,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:21Z|Green (coach's decision) is inactive but serving as the emergency third quarterback against the Panthers on Sunday, Kelsey Russo of the Browns' official site reports.",
            "status": "Out",
            "date": "2026-09-27T16:21Z",
@@ -136561,7 +136626,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T16:23Z|Delpit (shoulder) is active for Sunday's game against the Panthers, Kelsey Russo of the Browns' official site reports.",
            "status": "Active",
            "date": "2026-09-27T16:23Z",
@@ -136580,7 +136645,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:25Z|Campbell (ankle/hip/knee) is inactive for Sunday's game against the Panthers, Kelsey Russo of the Browns' official site reports.",
            "status": "Out",
            "date": "2026-09-27T16:25Z",
@@ -136599,12 +136664,50 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:26Z|Judkins rushed 18 times for 70 yards and brought in both targets for nine yards in the Browns' 21-18 win over the Panthers on Sunday.",
            "status": "Active",
            "date": "2026-09-27T22:26Z",
            "shortComment": "Judkins rushed 18 times for 70 yards and brought in both targets for nine yards in the Browns' 21-18 win over the Panthers on Sunday.",
            "longComment": "Judkins took all but one of the Browns' running backs' carries, and he was able to capitalize on an injury-hampered Panthers defense to produce his best showing of the new season. Judkins still finished under 4.0 yards per carry, but after averaging under 3.0 in each of the first two games, Sunday's effort was certainly an improvement. Judkins and the surprising 2-1 Browns now have a quick turnaround for a Week 4 home divisional clash against the Steelers on Thursday night."
+          }
+         ]
+        },
+        "639575": {
+         "recordId": "639575",
+         "athleteName": "Harold Fannin Jr.",
+         "positionAbbr": "TE",
+         "teamId": "5",
+         "teamAbbr": "CLE",
+         "teamName": "Cleveland Browns",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:08Z|Fannin brought in seven of nine targets for 51 yards and two touchdowns in the Browns' 21-18 win over the Panthers on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T00:08Z",
+           "shortComment": "Fannin brought in seven of nine targets for 51 yards and two touchdowns in the Browns' 21-18 win over the Panthers on Sunday.",
+           "longComment": "The second-year tight end led the Browns in receptions, receiving yards and targets on the afternoon, and he capped off Cleveland's upset victory with a 14-yard touchdown grab at the 1:48 mark of the fourth quarter. The score proved to be the difference in the game, and it was preceded by a two-yard scoring grab just before halftime. After a quiet Week 1, Fannin has come alive with a combined 12-125-2 line on 15 targets over the last pair of contests, affording him plenty of momentum heading into a Week 4 divisional home showdown against the Steelers on Thursday night."
+          }
+         ]
+        },
+        "639582": {
+         "recordId": "639582",
+         "athleteName": "Deshaun Watson",
+         "positionAbbr": "QB",
+         "teamId": "5",
+         "teamAbbr": "CLE",
+         "teamName": "Cleveland Browns",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:35Z|Watson completed 16 of 30 passes for 144 yards with two touchdowns and no interceptions while rushing 11 times for 45 yards in the Browns' 21-18 win over the Panthers on Sunday. He also threw a two-point conversion pass.",
+           "status": "Active",
+           "date": "2026-09-28T00:35Z",
+           "shortComment": "Watson completed 16 of 30 passes for 144 yards with two touchdowns and no interceptions while rushing 11 times for 45 yards in the Browns' 21-18 win over the Panthers on Sunday. He also threw a two-point conversion pass.",
+           "longComment": "While Watson was anything but efficient through the air for the majority of the afternoon, the veteran signal-caller avoided turnovers and fired a pair of key touchdown passes to Harold Fannin, including a game-winning scoring toss with 1:48 remaining on which Watson scrambled to buy himself time before releasing the ball on the run. Watson's mobility also played a key part throughout earlier portions of the game, as he was second on Cleveland in rushing yards with his highest total since Week 9 of the 2020 season while he was still with the Texans (he'd also rushed for 45 yards in Week 1 of the 2023 season). Watson is still clearly a work in progress in head coach Todd Monken's offense, but he appears to have an increasingly firm hold on the starting job heading into Thursday night's Week 4 divisional home clash against the Steelers."
           }
          ]
         },
@@ -136618,7 +136721,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:53Z|",
            "status": "Active",
            "date": "2026-09-25T20:53Z",
@@ -136637,7 +136740,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T20:06Z|",
            "status": "Active",
            "date": "2026-09-24T20:06Z",
@@ -136656,7 +136759,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T20:06Z|",
            "status": "Active",
            "date": "2026-09-24T20:06Z",
@@ -136675,7 +136778,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:44Z|",
            "status": "Active",
            "date": "2026-09-21T18:44Z",
@@ -136751,7 +136854,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:44Z|",
            "status": "Active",
            "date": "2026-09-21T18:44Z",
@@ -136770,7 +136873,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T15:43Z|",
            "status": "Active",
            "date": "2026-09-20T15:43Z",
@@ -136789,7 +136892,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:53Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:53Z",
@@ -136808,7 +136911,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:53Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:53Z",
@@ -136827,7 +136930,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:53Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:53Z",
@@ -136872,7 +136975,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-15T02:39Z|Mingo caught his sole target for 10 yards in Sunday's 28-20 loss to the Giants.",
            "status": "Active",
            "date": "2026-09-15T02:39Z",
@@ -136891,7 +136994,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-15T02:44Z|Turpin returned five kickoffs for 122 yards and caught his only target for eight yards in Sunday's 28-20 loss to the Giants.",
            "status": "Active",
            "date": "2026-09-15T02:44Z",
@@ -136910,7 +137013,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-16T01:36Z|Ezeiruaku tallied 10 tackles (four solo), including 0.5 sacks, during Dallas' loss to the Giants on Sunday.",
            "status": "Active",
            "date": "2026-09-16T01:36Z",
@@ -136929,7 +137032,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-16T01:49Z|Downs totaled eight tackles (four solo), including 1.0 sacks, during Dallas' loss to the Giants on Sunday.",
            "status": "Active",
            "date": "2026-09-16T01:49Z",
@@ -136967,7 +137070,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T21:45Z|Winters (shoulder) has returned to Sunday's game against the Commanders, Tommy Yarrish of the Cowboys' official site reports.",
            "status": "Active",
            "date": "2026-09-20T21:45Z",
@@ -136986,7 +137089,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T00:53Z|Ferguson caught all four of his targets for 43 yards and two touchdowns in the Cowboys' 37-20 win over the Commanders on Sunday.",
            "status": "Active",
            "date": "2026-09-21T00:53Z",
@@ -137081,7 +137184,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T15:20Z|Aubrey went 3-for-3 on field-goal attempts and made all four PATs in Sunday's 37-20 win over the Commanders.",
            "status": "Active",
            "date": "2026-09-21T15:20Z",
@@ -137119,7 +137222,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T04:09Z|Flournoy caught five of six targets for 23 yards Sunday in a 37-20 victory versus Washington.",
            "status": "Active",
            "date": "2026-09-22T04:09Z",
@@ -137214,7 +137317,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T18:27Z|The Cowboys placed Locke (foot) on injured reserve Saturday.",
            "status": "Injured Reserve",
            "date": "2026-09-26T18:27Z",
@@ -137233,7 +137336,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T18:29Z|The Cowboys signed Barron from the practice squad to the active roster Saturday.",
            "status": "Active",
            "date": "2026-09-26T18:29Z",
@@ -137252,7 +137355,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:34Z|Demercado (coach's decision) is listed as inactive Sunday against the Ravens in Rio de Janeiro.",
            "status": "Out",
            "date": "2026-09-27T19:34Z",
@@ -137271,7 +137374,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T19:34Z|Goodson is active for Sunday's game against the Ravens.",
            "status": "Active",
            "date": "2026-09-27T19:34Z",
@@ -137290,7 +137393,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T22:09Z|Thompson (hamstring) has been ruled out for the remainder of Sunday's contest against Baltimore, Nick Harris of the Fort Worth Star-Telegram reports.",
            "status": "Out",
            "date": "2026-09-27T22:09Z",
@@ -137309,12 +137412,88 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:49Z|Bell (dehydration) has returned to Sunday's contest against Baltimore, Tommy Yarrish of the Cowboys' official site reports.",
            "status": "Active",
            "date": "2026-09-27T22:49Z",
            "shortComment": "Bell (dehydration) has returned to Sunday's contest against Baltimore, Tommy Yarrish of the Cowboys' official site reports.",
            "longComment": "Bell was briefly sidelined while battling dehydration, but he has now made his way back out onto the field. The safety is operating in a starting role in the absence of Malik Hooker (forearm) and P.J. Locke (foot), and he will look to leave his mark during the final stretch of Sunday's matchup."
+          }
+         ]
+        },
+        "639617": {
+         "recordId": "639617",
+         "athleteName": "Javonte Williams",
+         "positionAbbr": "RB",
+         "teamId": "6",
+         "teamAbbr": "DAL",
+         "teamName": "Dallas Cowboys",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:52Z|Williams carried the ball 19 times for 98 yards and a touchdown in Sunday's 34-31 loss to the Ravens. He also caught two of three targets for five yards.",
+           "status": "Active",
+           "date": "2026-09-28T01:52Z",
+           "shortComment": "Williams carried the ball 19 times for 98 yards and a touchdown in Sunday's 34-31 loss to the Ravens. He also caught two of three targets for five yards.",
+           "longComment": "The veteran back gave the Cowboys a 10-0 lead in the first quarter with a two-yard TD plunge, his third trip to the end zone in three games this season, and Williams topped 100 scrimmage yards for the first time since Week 12 of 2025. Even with Sunday's strong effort, Williams has managed just 3,9 yards per carry to begin the year, a major downturn from his 4.8 mark in 2025. He'll look to keep building momentum in a Week 4 road trip to Houston."
+          }
+         ]
+        },
+        "639619": {
+         "recordId": "639619",
+         "athleteName": "CeeDee Lamb",
+         "positionAbbr": "WR",
+         "teamId": "6",
+         "teamAbbr": "DAL",
+         "teamName": "Dallas Cowboys",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:56Z|Lamb caught seven of eight targets for 112 yards in Sunday's 34-31 loss to the Ravens. He also caught a two-point conversion.",
+           "status": "Active",
+           "date": "2026-09-28T01:56Z",
+           "shortComment": "Lamb caught seven of eight targets for 112 yards in Sunday's 34-31 loss to the Ravens. He also caught a two-point conversion.",
+           "longComment": "George Pickens led the Cowboys in targets with 11, but it was Lamb who paced the team in receiving yards while the two star wideouts each tied for the team lead in receptions. This was the first game in 2026 during which Lamb failed to score a TD, but he has produced back-to-back performances of over 100 yards. He'll take a 20-309-3 line on 25 targets into a Week 4 road trip to Houston."
+          }
+         ]
+        },
+        "639622": {
+         "recordId": "639622",
+         "athleteName": "George Pickens",
+         "positionAbbr": "WR",
+         "teamId": "6",
+         "teamAbbr": "DAL",
+         "teamName": "Dallas Cowboys",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T02:03Z|Pickens caught seven of 11 targets for 82 yards in Sunday's 34-31 loss to Baltimore.",
+           "status": "Active",
+           "date": "2026-09-28T02:03Z",
+           "shortComment": "Pickens caught seven of 11 targets for 82 yards in Sunday's 34-31 loss to Baltimore.",
+           "longComment": "The fifth-year wideout led the Cowboys in targets while setting new season highs in targets, catches and receiving yards, as he begins to shake off a slow start to the campaign. Pickens is still searching for his first TD of 2026, or even his first gain of 20-plus yards, but he'll look to continue building momentum in a Week 4 road trip to Houston."
+          }
+         ]
+        },
+        "639624": {
+         "recordId": "639624",
+         "athleteName": "Dak Prescott",
+         "positionAbbr": "QB",
+         "teamId": "6",
+         "teamAbbr": "DAL",
+         "teamName": "Dallas Cowboys",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T02:10Z|Prescott completed 25 of 40 passes for 276 yards and a touchdown in Sunday's 34-31 loss to the Ravens. He added 19 rushing yards on four carries and also threw a two-point conversion to CeeDee Lamb.",
+           "status": "Active",
+           "date": "2026-09-28T02:10Z",
+           "shortComment": "Prescott completed 25 of 40 passes for 276 yards and a touchdown in Sunday's 34-31 loss to the Ravens. He added 19 rushing yards on four carries and also threw a two-point conversion to CeeDee Lamb.",
+           "longComment": "Despite the big numbers for the Cowboys on the scoreboard, Prescott had a relatively quite day in Rio, with Jake Ferguson hauling in his only TD pass in the third quarter. Prescott didn't commit any turnovers for a second straight game, and through three weeks he's completed 69.5 percent of his passes (73-for-105) for 730 yards and a 7:1 TD:INT. The veteran QB will look to stay efficient in a Week 4 road trip to Houston."
           }
          ]
         },
@@ -137328,7 +137507,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T19:04Z|",
            "status": "Active",
            "date": "2026-09-21T19:04Z",
@@ -137385,7 +137564,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T19:04Z|",
            "status": "Active",
            "date": "2026-09-21T19:04Z",
@@ -137423,7 +137602,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:04Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:04Z",
@@ -137442,7 +137621,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:04Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:04Z",
@@ -137461,7 +137640,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:04Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:04Z",
@@ -137480,7 +137659,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:04Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:04Z",
@@ -137499,7 +137678,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:04Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:04Z",
@@ -137658,7 +137837,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-16T00:38Z|Allen recorded five tackles (three solo) including 2.0 sacks during Monday's 31-10 loss at Kansas City.",
            "status": "Active",
            "date": "2026-09-16T00:38Z",
@@ -137677,7 +137856,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-16T00:44Z|Jones recorded five tackles (one solo) and an interception during Monday's 31-10 loss at Kansas City.",
            "status": "Active",
            "date": "2026-09-16T00:44Z",
@@ -137696,7 +137875,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-16T03:25Z|Hufanga made six tackles (two solo) in Monday's 31-10 loss to the Chiefs.",
            "status": "Active",
            "date": "2026-09-16T03:25Z",
@@ -137715,7 +137894,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T01:01Z|Waddle brought in eight of 10 targets for 138 yards in the Broncos' 20-13 win over the Jaguars on Sunday.",
            "status": "Active",
            "date": "2026-09-21T01:01Z",
@@ -137734,7 +137913,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T03:19Z|Sutton secured three of four targets for 25 yards in the Broncos' 20-13 win over the Jaguars on Sunday.",
            "status": "Active",
            "date": "2026-09-21T03:19Z",
@@ -137753,7 +137932,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T03:24Z|Nix completed 22 of 31 passes for 288 yards with one touchdown and one interception while adding five carries for six yards in the Broncos' 20-13 win over the Jaguars on Sunday.",
            "status": "Active",
            "date": "2026-09-21T03:24Z",
@@ -137772,7 +137951,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T23:53Z|Lutz made both of his field-goal attempts and both PATs in Sunday's 20-13 win over the Jaguars.",
            "status": "Active",
            "date": "2026-09-21T23:53Z",
@@ -137791,7 +137970,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T00:50Z|Engram hauled in his lone target for 17 yards during the Broncos' 20-13 win over the Jaguars on Sunday.",
            "status": "Active",
            "date": "2026-09-22T00:50Z",
@@ -137810,7 +137989,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T00:53Z|Bryant failed to catch his only target while adding a 16-yard rush during Sunday's 20-13 win over the Jaguars.",
            "status": "Active",
            "date": "2026-09-22T00:53Z",
@@ -137829,7 +138008,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:30Z|Singleton recorded nine total tackles (five solo) and a pass defensed in Sunday's 20-13 win over the Jaguars.",
            "status": "Active",
            "date": "2026-09-23T01:30Z",
@@ -137848,7 +138027,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:44Z|Badie rushed one time for one yard in Denver's 20-13 win over the Jaguars on Sunday. He added two catches for 28 yards on three targets.",
            "status": "Active",
            "date": "2026-09-23T03:44Z",
@@ -137867,7 +138046,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:47Z|Adkins caught all three of his targets for 32 yards and a touchdown while rushing once for six yards in Sunday's 20-13 win over the Jaguars.",
            "status": "Active",
            "date": "2026-09-23T03:47Z",
@@ -137886,7 +138065,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:58Z|Franklin caught one of two targets for 27 yards in Sunday's 20-13 win over the Jaguars.",
            "status": "Active",
            "date": "2026-09-23T03:58Z",
@@ -137905,7 +138084,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T23:23Z|Dobbins (hip) was listed as a full participant on Thursday's injury report.",
            "status": "Active",
            "date": "2026-09-24T23:23Z",
@@ -137924,7 +138103,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T23:28Z|Harvey (hamstring) was listed as a full participant on Thursday's injury report.",
            "status": "Active",
            "date": "2026-09-24T23:28Z",
@@ -137962,7 +138141,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T20:36Z|Coleman (ankle) is being placed on injured reserve Saturday, Adam Schefter of ESPN reports.",
            "status": "Injured Reserve",
            "date": "2026-09-26T20:36Z",
@@ -137981,7 +138160,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T21:40Z|The Broncos elevated Katsis from the practice squad to the active roster Saturday ahead of Sunday's game against the Rams, Aric DiLalla of the Broncos' official site reports.",
            "status": "Active",
            "date": "2026-09-26T21:40Z",
@@ -138000,7 +138179,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T23:14Z|Mims (foot) is listed as inactive Sunday versus the Rams, Aric DiLalla of the Broncos' official site reports.",
            "status": "Out",
            "date": "2026-09-27T23:14Z",
@@ -138019,7 +138198,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T22:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T22:55Z",
@@ -138038,7 +138217,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T22:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T22:55Z",
@@ -138057,7 +138236,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T22:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T22:55Z",
@@ -138076,7 +138255,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T22:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T22:55Z",
@@ -138095,7 +138274,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T22:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T22:55Z",
@@ -138114,7 +138293,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T22:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T22:55Z",
@@ -138133,7 +138312,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:51Z|",
            "status": "Active",
            "date": "2026-09-21T18:51Z",
@@ -138273,7 +138452,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-18T04:21Z|Barnes recorded seven tackles (five solo), including 1.0 sacks, in Thursday's 41-31 loss to the Bills.",
            "status": "Active",
            "date": "2026-09-18T04:21Z",
@@ -138330,7 +138509,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-18T23:08Z|TeSlaa caught two passes (on five targets) for 26 yards during the Lions' 41-31 loss to the Bills on Thursday.",
            "status": "Active",
            "date": "2026-09-18T23:08Z",
@@ -138349,7 +138528,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-19T00:46Z|Vaki recorded one carry for seven yards and caught his only target for 13 yards during Thursday's 41-31 loss at Buffalo.",
            "status": "Active",
            "date": "2026-09-19T00:46Z",
@@ -138368,7 +138547,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-19T00:49Z|Saylors logged one tackle on kick coverage and recorded two kickoff returns for 58 yards during Thursday night's 41-31 loss to the Bills.",
            "status": "Active",
            "date": "2026-09-19T00:49Z",
@@ -138387,7 +138566,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-19T03:29Z|Campbell made six tackles (two solo) in the Lions' 41-31 loss to the Bills on Thursday night.",
            "status": "Active",
            "date": "2026-09-19T03:29Z",
@@ -138406,7 +138585,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-19T03:44Z|Hutchinson logged three tackles (two solo), including 1.0 sacks, during the Lions' 41-31 loss to the Bills on Thursday night.",
            "status": "Active",
            "date": "2026-09-19T03:44Z",
@@ -138425,7 +138604,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-23T00:33Z|The Lions placed Maddox (foot) on injured reserve Tuesday.",
            "status": "Injured Reserve",
            "date": "2026-09-23T00:33Z",
@@ -138444,7 +138623,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T01:32Z|Mahogany (hip) does not have any injury designation ahead of Sunday's game against the Jets, Tim Twentyman of the Lions' official site reports.",
            "status": "Active",
            "date": "2026-09-26T01:32Z",
@@ -138463,7 +138642,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T01:34Z|Miller (knee) does not have any injury designation ahead of Sunday's game against the Jets, Tim Twentyman of the Lions' official site reports.",
            "status": "Active",
            "date": "2026-09-26T01:34Z",
@@ -138482,7 +138661,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T01:43Z|Ratledge (elbow) does not have any injury designation ahead of Sunday's game against the Jets, Tim Twentyman of the Lions' official site reports.",
            "status": "Active",
            "date": "2026-09-26T01:43Z",
@@ -138520,7 +138699,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T21:03Z|The Lions placed Harper (ankle) on injured reserve Saturday.",
            "status": "Injured Reserve",
            "date": "2026-09-26T21:03Z",
@@ -138539,7 +138718,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:09Z|Conklin (coach's decision) is inactive for Sunday's game against the Jets.",
            "status": "Out",
            "date": "2026-09-27T16:09Z",
@@ -138558,7 +138737,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:44Z|Gibbs carried the ball 20 times for 99 yards and two touchdowns while catching seven of eight targets for 65 yards and a third TD in Sunday's 31-24 win over the Jets.",
            "status": "Active",
            "date": "2026-09-27T22:44Z",
@@ -138577,7 +138756,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:48Z|St. Brown caught four of eight targets for 19 yards and a touchdown in Sunday's 31-24 win over the Jets.",
            "status": "Active",
            "date": "2026-09-27T22:48Z",
@@ -138596,7 +138775,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:55Z|Goff completed 25 of 32 passes for 269 yards and two touchdowns in Sunday's 31-24 win over the Jets. He added six rushing yards on four carries.",
            "status": "Active",
            "date": "2026-09-27T22:55Z",
@@ -138615,7 +138794,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:02Z|Williams caught all four of his targets for 49 yards in Sunday's 31-24 win over the Jets.",
            "status": "Active",
            "date": "2026-09-27T23:02Z",
@@ -138634,7 +138813,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:09Z|LaPorta caught three of four targets for 44 yards in Sunday's 31-24 win over the Jets.",
            "status": "Active",
            "date": "2026-09-27T23:09Z",
@@ -138672,7 +138851,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:05Z|",
            "status": "Active",
            "date": "2026-09-21T18:05Z",
@@ -138691,7 +138870,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:05Z|",
            "status": "Active",
            "date": "2026-09-21T18:05Z",
@@ -138710,7 +138889,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:05Z|",
            "status": "Active",
            "date": "2026-09-21T18:05Z",
@@ -138748,7 +138927,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:50Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:50Z",
@@ -138767,7 +138946,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:50Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:50Z",
@@ -138786,7 +138965,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:50Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:50Z",
@@ -138805,7 +138984,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:50Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:50Z",
@@ -138824,7 +139003,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:50Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:50Z",
@@ -138850,7 +139029,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T02:20Z|Banks (toe) has been ruled out ahead of Thursday night's game against the Falcons, Wes Hodkiewicz of the Packers' official site reports.",
            "status": "Out",
            "date": "2026-09-24T02:20Z",
@@ -138869,7 +139048,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T02:22Z|Jennings (hand) does not have any injury designation ahead of Thursday night's game against the Falcons, Wes Hodkiewicz of the Packers' official site reports.",
            "status": "Active",
            "date": "2026-09-24T02:22Z",
@@ -138888,7 +139067,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T23:14Z|Hargrave (concussion/knee) is active for Thursday Night Football against the Falcons, Mike Spofford of the Packers' official site reports.",
            "status": "Active",
            "date": "2026-09-24T23:14Z",
@@ -138907,7 +139086,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T23:20Z|Campbell (ankle) is inactive for Thursday Night Football against the Falcons, Mike Spofford of the Packers' official site reports.",
            "status": "Out",
            "date": "2026-09-24T23:20Z",
@@ -138926,7 +139105,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-25T02:48Z|Cooper is being evaluated for a possible concussion and is questionable to return to Thursday's game against the Falcons.",
            "status": "Questionable",
            "date": "2026-09-25T02:48Z",
@@ -138945,7 +139124,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T03:42Z|Burton started at left guard during the Packers' 35-14 loss to the Falcons on Thursday, Rob Demovsky of ESPN.com reports.",
            "status": "Active",
            "date": "2026-09-25T03:42Z",
@@ -138964,7 +139143,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T03:44Z|Watson brought in seven of 10 targets for 96 yards and a touchdown in the Packers' 35-14 loss to the Falcons on Thursday.",
            "status": "Active",
            "date": "2026-09-25T03:44Z",
@@ -138983,7 +139162,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T03:51Z|Golden brought in five of 12 targets for 100 yards and a touchdown in the Packers' 35-14 loss to the Falcons on Thursday.",
            "status": "Active",
            "date": "2026-09-25T03:51Z",
@@ -139002,7 +139181,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T04:02Z|Love completed 28 of 53 passes for 312 yards with two touchdowns and one interception and rushed once for no gain in the Packers' 35-14 loss to the Falcons on Thursday. He also committed a fumble recovered by Green Bay.",
            "status": "Active",
            "date": "2026-09-25T04:02Z",
@@ -139021,7 +139200,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T04:40Z|Smack went 0-for-1 on field-goal tries and 2-for-2 on extra-point attempts in Thursday's 35-14 loss to the Falcons.",
            "status": "Active",
            "date": "2026-09-25T04:40Z",
@@ -139040,7 +139219,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T04:42Z|Kraft secured four of eight targets for 26 yards in the Packers' 35-14 loss to the Falcons on Thursday. He also recovered a fumble.",
            "status": "Active",
            "date": "2026-09-25T04:42Z",
@@ -139059,7 +139238,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T04:52Z|Lloyd rushed four times for 11 yards and brought in two of three targets for seven yards in the Packers' 35-14 loss to the Falcons on Thursday.",
            "status": "Active",
            "date": "2026-09-25T04:52Z",
@@ -139078,7 +139257,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-25T22:59Z|Monk picked up an undisclosed injury toward the tail end of the Packers' 35-14 loss to the Falcons on Thursday, Rob Demovsky of ESPN.com reports.",
            "status": "Questionable",
            "date": "2026-09-25T22:59Z",
@@ -139097,7 +139276,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T17:42Z|The Packers signed Tomlinson off the Cowboys' practice squad Saturday, Ian Rapoport of NFL Network reports.",
            "status": "Active",
            "date": "2026-09-26T17:42Z",
@@ -139116,7 +139295,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T23:22Z|Johnson tallied four carries for six yards and gathered in one of three targets for 10 yards during Thursday's 35-14 loss to the Falcons.",
            "status": "Active",
            "date": "2026-09-26T23:22Z",
@@ -139135,7 +139314,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T00:37Z|Brooks caught his only target for four yards and added a tackle on special teams during the Packers' 35-14 loss to the Falcons on Thursday.",
            "status": "Active",
            "date": "2026-09-27T00:37Z",
@@ -139154,7 +139333,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T00:51Z|Moore logged three catches on seven targets for 31 yards while adding 134 yards on five kickoff returns during the Packers' 35-14 loss to the Falcons on Thursday.",
            "status": "Active",
            "date": "2026-09-27T00:51Z",
@@ -139173,7 +139352,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T01:04Z|Melton logged 21 of 66 offensive snaps during Thursday's 35-14 loss to the Falcons but did not catch his only target. He also recorded two tackles and turned two kickoff returns into 46 yards.",
            "status": "Active",
            "date": "2026-09-27T01:04Z",
@@ -139192,7 +139371,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T01:17Z|Sturdivant tallied three catches on as many targets for 22 yards during the Packers' 35-14 loss to the Falcons on Thursday.",
            "status": "Active",
            "date": "2026-09-27T01:17Z",
@@ -139211,7 +139390,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T01:43Z|Smith caught two passes on three targets for 16 yards during Thursday's 35-14 loss to Atlanta.",
            "status": "Active",
            "date": "2026-09-27T01:43Z",
@@ -139230,7 +139409,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T03:58Z|Franklin tallied 10 tackles (three solo) during the Packers' 35-14 loss to the Falcons on Thursday.",
            "status": "Active",
            "date": "2026-09-27T03:58Z",
@@ -139249,7 +139428,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T04:04Z|McKinney recorded five tackles (four solo) and one interception during the Packers' 35-14 loss to the Falcons on Thursday.",
            "status": "Active",
            "date": "2026-09-27T04:04Z",
@@ -139268,7 +139447,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T04:09Z|Williams recorded 10 tackles (four solo) during Thursday's 35-14 loss to Atlanta.",
            "status": "Active",
            "date": "2026-09-27T04:09Z",
@@ -139287,7 +139466,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T22:47Z|inactive",
            "status": "Out",
            "date": "2026-09-24T22:47Z",
@@ -139306,7 +139485,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T22:47Z|inactive",
            "status": "Out",
            "date": "2026-09-24T22:47Z",
@@ -139389,7 +139568,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T03:45Z|Helm caught both of his targets for 13 yards in the Titans' 24-20 loss to the Eagles on Sunday.",
            "status": "Active",
            "date": "2026-09-21T03:45Z",
@@ -139427,7 +139606,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T00:21Z|Ridley caught both of his targets for 35 yards during the Titans' 24-20 loss to the Eagles on Sunday.",
            "status": "Active",
            "date": "2026-09-22T00:21Z",
@@ -139446,7 +139625,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T00:34Z|Ayomanor caught two of three targets for 69 yards during the Titans' 24-20 loss to the Eagles on Sunday.",
            "status": "Active",
            "date": "2026-09-22T00:34Z",
@@ -139465,7 +139644,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:34Z|Hill recorded 10 tackles (six solo) in Sunday's 24-20 loss to the Eagles.",
            "status": "Active",
            "date": "2026-09-23T02:34Z",
@@ -139484,7 +139663,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:44Z|Hooker logged six tackles (three solo) and one pass defensed for an interception in Sunday's 24-20 loss to the Eagles.",
            "status": "Active",
            "date": "2026-09-23T02:44Z",
@@ -139503,7 +139682,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:51Z|Harris logged six tackles (four solo) and one pass defensed for an interception in Sunday's 24-20 loss to the Eagles.",
            "status": "Active",
            "date": "2026-09-23T02:51Z",
@@ -139522,7 +139701,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T00:19Z|Williams (elbow) was a full participant in Wednesday's practice.",
            "status": "Active",
            "date": "2026-09-24T00:19Z",
@@ -139598,7 +139777,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:06Z|Head coach Robert Saleh indicated Friday that the Titans will give Singleton more carries in the team's Week 3 road tilt against the Giants on Sunday, Jim Wyatt of the Titans' official site reports.",
            "status": "Active",
            "date": "2026-09-25T21:06Z",
@@ -139617,7 +139796,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T22:11Z|Bellinger (illness) does not have an injury designation heading into Sunday's game against the Giants.",
            "status": "Active",
            "date": "2026-09-25T22:11Z",
@@ -139674,7 +139853,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T16:43Z|The Titans signed Hallett from the practice squad to the active roster Saturday.",
            "status": "Active",
            "date": "2026-09-26T16:43Z",
@@ -139712,7 +139891,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T16:10Z|Flott (quadriceps) is active for Sunday's game against the Giants, Jim Wyatt of the Titans' official site reports.",
            "status": "Active",
            "date": "2026-09-27T16:10Z",
@@ -139731,7 +139910,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:12Z|Carter (coach's decision) is inactive against the Giants on Sunday, Jim Wyatt of the Titans' official site reports.",
            "status": "Out",
            "date": "2026-09-27T16:12Z",
@@ -139769,7 +139948,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:07Z|Carmona (ankle) has been ruled out for the rest of Sunday's game against the Giants, Paul Kuharsky of PaulKuharsky.com reports.",
            "status": "Out",
            "date": "2026-09-27T19:07Z",
@@ -139788,7 +139967,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:26Z|Spears (ankle) turned three carries into five yards during the Titans' 12-7 loss to the Giants on Sunday.",
            "status": "Active",
            "date": "2026-09-27T21:26Z",
@@ -139807,7 +139986,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:43Z|Ward completed 23 of 36 passes for 181 yards and a touchdown with an interception in Sunday's 12-7 loss to the Giants. He added two rushing yards on one carry.",
            "status": "Active",
            "date": "2026-09-27T21:43Z",
@@ -139826,7 +140005,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:54Z|Pollard carried the ball 17 times for 74 yards and caught all four of his targets for 22 yards in Sunday's 12-7 loss to the Giants.",
            "status": "Active",
            "date": "2026-09-27T21:54Z",
@@ -139845,7 +140024,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:00Z|Tate caught six of nine targets for 58 yards in Sunday's 12-7 loss to the Giants.",
            "status": "Active",
            "date": "2026-09-27T22:00Z",
@@ -139864,7 +140043,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:04Z|Robinson caught seven of 11 targets for 57 yards and a touchdown in Sunday's 12-7 loss to the Giants.",
            "status": "Active",
            "date": "2026-09-27T22:04Z",
@@ -139883,7 +140062,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:45Z|",
            "status": "Active",
            "date": "2026-09-25T20:45Z",
@@ -139902,7 +140081,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:45Z|",
            "status": "Active",
            "date": "2026-09-25T20:45Z",
@@ -139997,7 +140176,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:48Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:48Z",
@@ -140016,7 +140195,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:48Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:48Z",
@@ -140035,7 +140214,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:48Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:48Z",
@@ -140054,7 +140233,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:48Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:48Z",
@@ -140073,7 +140252,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:48Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:48Z",
@@ -140118,7 +140297,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-10T23:20Z|Ogletree (neck) was a full participant in practice Thursday.",
            "status": "Active",
            "date": "2026-09-10T23:20Z",
@@ -140137,7 +140316,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-15T00:39Z|Taylor-Britt's one-game suspension for violating the league's personal conduct policy was lifted Monday, Aaron Wilson of KPRC 2 Houston reports.",
            "status": "Active",
            "date": "2026-09-15T00:39Z",
@@ -140156,7 +140335,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-17T19:53Z|Richardson (groin) was a full participant at practice Thursday.",
            "status": "Active",
            "date": "2026-09-17T19:53Z",
@@ -140232,7 +140411,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T04:15Z|Downs caught seven of nine targets for 72 yards in Sunday's 33-30 overtime loss to the Chiefs.",
            "status": "Active",
            "date": "2026-09-21T04:15Z",
@@ -140251,7 +140430,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T04:15Z|Allen caught one of five targets for five yards in Sunday's 33-30 overtime loss to the Chiefs.",
            "status": "Active",
            "date": "2026-09-21T04:15Z",
@@ -140308,7 +140487,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T04:18Z|McGowan rushed twice for zero yards and had two kickoff returns for 58 yards in Sunday's 33-30 overtime loss to the Chiefs.",
            "status": "Active",
            "date": "2026-09-22T04:18Z",
@@ -140327,7 +140506,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-23T00:30Z|Clemons (toe) was placed on injured reserve by the Colts on Tuesday.",
            "status": "Injured Reserve",
            "date": "2026-09-23T00:30Z",
@@ -140346,7 +140525,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:51Z|Davis-Gaither recorded 14 total tackles (seven solo) during Sunday night's 33-30 overtime loss to the Chiefs.",
            "status": "Active",
            "date": "2026-09-23T02:51Z",
@@ -140365,7 +140544,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T04:23Z|Treadwell caught all three of his targets for 61 yards and made one tackle on kick coverage in Sunday's 33-30 overtime loss to the Chiefs.",
            "status": "Active",
            "date": "2026-09-23T04:23Z",
@@ -140441,7 +140620,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T16:10Z|Pierce (heel) was placed on injured reserve Saturday.",
            "status": "Injured Reserve",
            "date": "2026-09-26T16:10Z",
@@ -140460,7 +140639,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T16:25Z|The Colts signed Gould from the practice squad to the active roster Saturday.",
            "status": "Active",
            "date": "2026-09-26T16:25Z",
@@ -140479,7 +140658,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T16:31Z|The Colts elevated Westbrook-Ikhine from the practice squad to the active roster Saturday.",
            "status": "Active",
            "date": "2026-09-26T16:31Z",
@@ -140498,7 +140677,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:39Z|Giddens (coach's decision) is inactive for Sunday's game against the Texans.",
            "status": "Out",
            "date": "2026-09-27T15:39Z",
@@ -140517,7 +140696,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:40Z|Leonard (coach's decision) is inactive but will serve as the Colts' emergency third quarterback against the Texans on Sunday.",
            "status": "Out",
            "date": "2026-09-27T15:40Z",
@@ -140536,7 +140715,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:43Z|Slayton (coach's decision) is inactive for Sunday's game against the Texans.",
            "status": "Out",
            "date": "2026-09-27T15:43Z",
@@ -140555,7 +140734,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T15:49Z|Ward (groin) is active for Sunday's game against the Texans.",
            "status": "Active",
            "date": "2026-09-27T15:49Z",
@@ -140612,7 +140791,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T19:01Z|Latu (chest) has returned to Sunday's game against the Texans, Kevin Bowen of 107.5 The Fan Indianapolis reports.",
            "status": "Active",
            "date": "2026-09-27T19:01Z",
@@ -140631,7 +140810,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T20:52Z|Taylor rushed 23 times for 68 yards while catching two of three targets for four yards in Sunday's 19-17 win over the Texans.",
            "status": "Active",
            "date": "2026-09-27T20:52Z",
@@ -140650,7 +140829,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:00Z|Jones completed 24 of 36 passes for 235 yards, one touchdown and one interception in Sunday's 19-17 win over the Texans. He also rushed three times for five yards and fumbled three times, losing two.",
            "status": "Active",
            "date": "2026-09-27T22:00Z",
@@ -140669,7 +140848,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:01Z|Warren caught nine of 10 targets for 55 yards and added a two-yard run in Sunday's 19-17 win over the Texans.",
            "status": "Active",
            "date": "2026-09-27T22:01Z",
@@ -140688,7 +140867,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:47Z|Shrader made all four of his field-goal attempts while connecting on his lone extra-point try during the Colts' 19-17 win over the Texans on Sunday.",
            "status": "Active",
            "date": "2026-09-27T23:47Z",
@@ -140726,7 +140905,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T19:15Z|",
            "status": "Active",
            "date": "2026-09-21T19:15Z",
@@ -140783,7 +140962,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:34Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:34Z",
@@ -140802,7 +140981,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:34Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:34Z",
@@ -140821,7 +141000,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:34Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:34Z",
@@ -140999,7 +141178,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T23:11Z|Delane (shoulder) is active for Sunday's game against the Colts.",
            "status": "Active",
            "date": "2026-09-20T23:11Z",
@@ -141094,7 +141273,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T05:07Z|Worthy brought in five of seven targets for 25 yards and a touchdown in the Chiefs' 33-30 overtime win over the Colts on Sunday night.",
            "status": "Active",
            "date": "2026-09-21T05:07Z",
@@ -141113,7 +141292,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:05Z|Coach Andy Reid said Monday that Johnson could carve out a bigger role on offense as the season goes along, Charles Goldman of AtoZSports.com reports.",
            "status": "Active",
            "date": "2026-09-21T18:05Z",
@@ -141132,7 +141311,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T23:43Z|Butker went 4-for-5 on field-goal attempts and made all three of his PATs in Sunday night's 33-30 overtime win against the Colts.",
            "status": "Active",
            "date": "2026-09-21T23:43Z",
@@ -141151,7 +141330,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T04:21Z|Thornton caught all four of his targets for 86 yards in Sunday's 33-30 overtime win against the Colts.",
            "status": "Active",
            "date": "2026-09-22T04:21Z",
@@ -141170,7 +141349,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T04:22Z|Grey played 40 offensive snaps and 10 special-teams snaps in Sunday's 33-30 overtime win against the Colts.",
            "status": "Active",
            "date": "2026-09-22T04:22Z",
@@ -141189,7 +141368,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:21Z|Allen logged three offensive snaps and three special-teams snaps in Sunday's 33-30 overtime win against the Colts.",
            "status": "Active",
            "date": "2026-09-23T00:21Z",
@@ -141208,7 +141387,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:12Z|Bolton registered 13 tackles (six solo) during the Chiefs' 33-30 overtime win over the Colts on Sunday.",
            "status": "Active",
            "date": "2026-09-23T01:12Z",
@@ -141227,7 +141406,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:20Z|Hicks logged 10 tackles (five solo) during the Chiefs' 33-30 overtime win over the Colts on Sunday.",
            "status": "Active",
            "date": "2026-09-23T01:20Z",
@@ -141246,7 +141425,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T04:26Z|Royals caught both of his targets for six yards and a touchdown while logging two tackles on kick coverage in Sunday's 33-30 overtime win against the Colts.",
            "status": "Active",
            "date": "2026-09-23T04:26Z",
@@ -141265,7 +141444,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T23:09Z|Sneed (knee) does not have any injury designation ahead of Sunday's game against the Dolphins, Matt McMullen of the Chiefs' official site reports.",
            "status": "Active",
            "date": "2026-09-25T23:09Z",
@@ -141284,7 +141463,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T14:49Z|Conner (knee) has been ruled out for Sunday's game against the Dolphins.",
            "status": "Out",
            "date": "2026-09-27T14:49Z",
@@ -141303,7 +141482,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:16Z|Wiley (coach's decision) is inactive for Sunday's game against Miami, Matt McMullen of the Chiefs' official site site reports.",
            "status": "Out",
            "date": "2026-09-27T16:16Z",
@@ -141322,7 +141501,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T20:31Z|Walker rushed 18 times for 70 yards and a touchdown while catching both of his targets for three yards and a touchdown in Sunday's 24-10 win over the Dolphins.",
            "status": "Active",
            "date": "2026-09-27T20:31Z",
@@ -141341,7 +141520,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T20:33Z|Rice caught seven of nine targets for 88 yards in Sunday's 24-10 win over the Dolphins.",
            "status": "Active",
            "date": "2026-09-27T20:33Z",
@@ -141360,7 +141539,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T20:54Z|Mahomes completed 20 of 24 passes for 246 yards, two touchdowns and one interception in Sunday's 24-10 win over the Dolphins. He also rushed once for one yard.",
            "status": "Active",
            "date": "2026-09-27T20:54Z",
@@ -141379,7 +141558,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T20:56Z|Kelce caught both of his targets for 59 yards and a touchdown in Sunday's 24-10 win over the Dolphins.",
            "status": "Active",
            "date": "2026-09-27T20:56Z",
@@ -141398,7 +141577,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:01Z|",
            "status": "Active",
            "date": "2026-09-25T21:01Z",
@@ -141417,7 +141596,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T20:59Z|",
            "status": "Active",
            "date": "2026-09-24T20:59Z",
@@ -141436,7 +141615,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:42Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:42Z",
@@ -141455,7 +141634,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:05Z|inactive",
            "status": "Out",
            "date": "2026-09-27T16:05Z",
@@ -141474,7 +141653,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:42Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:42Z",
@@ -141493,7 +141672,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:42Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:42Z",
@@ -141512,7 +141691,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:42Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:42Z",
@@ -141531,7 +141710,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T19:16Z|",
            "status": "Active",
            "date": "2026-09-21T19:16Z",
@@ -141652,7 +141831,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T04:03Z|Washington rushed three times for seven yards while failing to catch his only target during Sunday's 26-14 win over the Chargers.",
            "status": "Active",
            "date": "2026-09-21T04:03Z",
@@ -141671,7 +141850,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T04:06Z|Nailor caught one of three targets for nine yards in Sunday's 26-14 win over the Chargers.",
            "status": "Active",
            "date": "2026-09-21T04:06Z",
@@ -141690,7 +141869,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T00:04Z|Gay made his sole field-goal attempt and converted three PATs in Sunday's 26-14 win over the Chargers.",
            "status": "Active",
            "date": "2026-09-22T00:04Z",
@@ -141709,7 +141888,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T00:55Z|Mendoza did not play a single snap during the Raiders' 26-14 win over the Chargers on Sunday.",
            "status": "Active",
            "date": "2026-09-22T00:55Z",
@@ -141728,7 +141907,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:22Z|Walker logged 10 tackles (five solo) in Sunday's 26-14 win over the Chargers.",
            "status": "Active",
            "date": "2026-09-23T01:22Z",
@@ -141747,7 +141926,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:30Z|Masses recorded five tackles (four solo) and two interceptions in Sunday's 26-14 win over the Chargers.",
            "status": "Active",
            "date": "2026-09-23T01:30Z",
@@ -141785,7 +141964,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T02:24Z|Dean (shoulder) was a full participant in practice Thursday.",
            "status": "Active",
            "date": "2026-09-25T02:24Z",
@@ -141804,7 +141983,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T02:30Z|Porter (foot) was a full participant in practice Thursday.",
            "status": "Active",
            "date": "2026-09-25T02:30Z",
@@ -141823,7 +142002,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T02:40Z|Young (hamstring) was a full participant in practice Thursday.",
            "status": "Active",
            "date": "2026-09-25T02:40Z",
@@ -141880,7 +142059,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-26T19:51Z|O'Connell (personal) has been ruled out ahead of Sunday's game against the Saints, Ryan McFadden of ESPN.com reports.",
            "status": "Out",
            "date": "2026-09-26T19:51Z",
@@ -141899,7 +142078,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T20:38Z|The Raiders elevated White from the practice squad to the active roster Saturday ahead of Sunday's game against the Saints.",
            "status": "Active",
            "date": "2026-09-26T20:38Z",
@@ -141937,7 +142116,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T19:00Z|Bowers (knee) is active for Sunday's Week 3 matchup against the Saints.",
            "status": "Active",
            "date": "2026-09-27T19:00Z",
@@ -141975,7 +142154,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T23:09Z|Bech suffered a broken forearm in Sunday's game against the Saints and is expected to go on injured reserve, Ian Rapoport of NFL Network reports.",
            "status": "Out",
            "date": "2026-09-27T23:09Z",
@@ -141994,12 +142173,69 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T23:40Z|Powers-Johnson (groin) is questionable to return to Sunday's game against the Saints.",
            "status": "Questionable",
            "date": "2026-09-27T23:40Z",
            "shortComment": "Powers-Johnson (groin) is questionable to return to Sunday's game against the Saints.",
            "longComment": "Powers-Johnson is being evaluated by medical staff late in the fourth quarter of Sunday's game. Caleb Rogers figures to be the next man up at right guard if Powers-Johnson is unable to return."
+          }
+         ]
+        },
+        "639585": {
+         "recordId": "639585",
+         "athleteName": "Ashton Jeanty",
+         "positionAbbr": "RB",
+         "teamId": "13",
+         "teamAbbr": "LV",
+         "teamName": "Las Vegas Raiders",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:39Z|Jeanty carried the ball 19 times for 56 yards and caught all three of his targets for 37 yards in Sunday's 35-27 win over the Saints.",
+           "status": "Active",
+           "date": "2026-09-28T00:39Z",
+           "shortComment": "Jeanty carried the ball 19 times for 56 yards and caught all three of his targets for 37 yards in Sunday's 35-27 win over the Saints.",
+           "longComment": "The second-year back topped 20 touches for a third straight game to begin the season as he settles into a bell-cow role for the Raiders. Jeanty is still looking for his first rushing touchdown of 2026, but he did haul in two TD passes from Kirk Cousins back in Week 1, and through three contests he's amassed 206 rushing yards to go along with his 13-97-2 receiving line on 16 targets. While his yardage has been strong, however, Jeanty's 3.3 YPC leaves a lot to be desired. He may need to be more efficient with his volume in Week 4 at home against Kansas City."
+          }
+         ]
+        },
+        "639590": {
+         "recordId": "639590",
+         "athleteName": "Kirk Cousins",
+         "positionAbbr": "QB",
+         "teamId": "13",
+         "teamAbbr": "LV",
+         "teamName": "Las Vegas Raiders",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:48Z|Cousins completed 22 of 33 passes for 248 yards and three touchdowns in Sunday's 35-27 win over the Saints. He added three rushing yards on three carries.",
+           "status": "Active",
+           "date": "2026-09-28T00:48Z",
+           "shortComment": "Cousins completed 22 of 33 passes for 248 yards and three touchdowns in Sunday's 35-27 win over the Saints. He added three rushing yards on three carries.",
+           "longComment": "The veteran QB got his first chance to work with Brock Bowers, but it was Michael Mayer and Cody White who were on the other end of Cousins' first two TDs of the afternoon, before he connected with his superstar tight end for a four-yard score in the fourth quarter that provided the game-winning points. Cousins has led the Raiders to a stunning 3-0 record to begin the season, completing 67.4 percent (62-for-92) of his passes for 661 yards with a 9:3 TD:INT, and 2026 first overall pick Fernando Mendoza could be waiting a while before he gets a chance to make his first NFL start. Cousins will face a much tougher test in Week 4 at home against Kansas City."
+          }
+         ]
+        },
+        "639594": {
+         "recordId": "639594",
+         "athleteName": "Michael Mayer",
+         "positionAbbr": "TE",
+         "teamId": "13",
+         "teamAbbr": "LV",
+         "teamName": "Las Vegas Raiders",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:55Z|Mayer caught all three of his targets for 32 yards and a touchdown in Sunday's 35-27 win over the Saints.",
+           "status": "Active",
+           "date": "2026-09-28T00:55Z",
+           "shortComment": "Mayer caught all three of his targets for 32 yards and a touchdown in Sunday's 35-27 win over the Saints.",
+           "longComment": "Brock Bowers made his season debut after recovering from minor knee surgery and made an immediate statement with a 10-116-1 line on 13 targets, but Mayer didn't vanish completely from the game plan as a receiver and hauled in his first score of the year in the second quarter. The three targets were still a season low for Mayer, after he compiled a 9-55-0 line on 11 looks from Kirk Cousins during Bowers' absence. As long as Bowers remains healthy, Mayer will struggle to make a consistent impact."
           }
          ]
         },
@@ -142032,7 +142268,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T21:40Z|",
            "status": "Active",
            "date": "2026-09-24T21:40Z",
@@ -142089,7 +142325,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:52Z|",
            "status": "Active",
            "date": "2026-09-21T18:52Z",
@@ -142127,7 +142363,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -142146,7 +142382,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -142165,7 +142401,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -142184,7 +142420,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -142203,7 +142439,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T19:01Z|",
            "status": "Active",
            "date": "2026-09-27T19:01Z",
@@ -142222,7 +142458,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -142305,7 +142541,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T03:50Z|Corum rushed 12 times for 79 yards and brought in his only target for 13 yards in the Rams' 28-6 win over the Giants on Monday night. He also fumbled once but recovered.",
            "status": "Active",
            "date": "2026-09-22T03:50Z",
@@ -142324,7 +142560,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T03:56Z|Stafford completed 22 of 31 passes for 327 yards with four touchdowns and one interception and rushed four times for minus-1 yard in the Rams' 28-6 win over the Giants on Monday night.",
            "status": "Active",
            "date": "2026-09-22T03:56Z",
@@ -142343,7 +142579,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T23:37Z|Mevis missed his only field-goal try and made all four of his PATs in Monday night's 28-6 win over the Giants.",
            "status": "Active",
            "date": "2026-09-22T23:37Z",
@@ -142362,7 +142598,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T23:53Z|Allen caught his only target for seven yards in Monday night's win over the Giants.",
            "status": "Active",
            "date": "2026-09-22T23:53Z",
@@ -142381,7 +142617,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T23:59Z|Mumpfield caught one of two targets for 12 yards in Monday night's win over the Giants.",
            "status": "Active",
            "date": "2026-09-22T23:59Z",
@@ -142419,7 +142655,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:14Z|Higbee played 16 offensive snaps and 11 special-teams snaps in Monday night's 28-6 win over the Giants.",
            "status": "Active",
            "date": "2026-09-23T00:14Z",
@@ -142438,7 +142674,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:18Z|Smith did not catch his only target during Monday's 28-6 win versus the Giants, but he recorded four punt returns for 32 yards and two kickoff returns for 29 yards.",
            "status": "Active",
            "date": "2026-09-23T00:18Z",
@@ -142457,7 +142693,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:19Z|Lake recorded seven tackles (six solo), three pass breakups and a forced fumble in Monday night's 28-6 win over the Giants.",
            "status": "Active",
            "date": "2026-09-23T01:19Z",
@@ -142476,7 +142712,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:26Z|Curl recorded four tackles (four solo) and a pass breakup in Monday night's win over the Giants.",
            "status": "Active",
            "date": "2026-09-23T01:26Z",
@@ -142495,7 +142731,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-24T00:22Z|The Rams placed Rivers (calf) on their injured reserve list Wednesday.",
            "status": "Injured Reserve",
            "date": "2026-09-24T00:22Z",
@@ -142533,7 +142769,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T03:36Z|Jackson (knee) was a full participant in practice Thursday.",
            "status": "Active",
            "date": "2026-09-25T03:36Z",
@@ -142590,7 +142826,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T23:41Z|Whittington (quadriceps) does not carry an injury designation ahead of Sunday's game versus Denver, Sarah Barshop of ESPN.com reports.",
            "status": "Active",
            "date": "2026-09-25T23:41Z",
@@ -142609,7 +142845,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T23:47Z|Landman (shoulder) does not carry an injury designation ahead of Sunday's game against the Broncos, Sarah Barshop of ESPN.com reports.",
            "status": "Active",
            "date": "2026-09-25T23:47Z",
@@ -142647,7 +142883,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T19:54Z|The Rams elevated Connors from the practice squad to the active roster Saturday ahead of Sunday's game against the Broncos.",
            "status": "Active",
            "date": "2026-09-26T19:54Z",
@@ -142666,7 +142902,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-27T10:57Z|Garrett (knee) is facing a six-week recovery from surgery on his left knee, but the pass rusher is determined to be back before then, Ian Rapoport of NFL Network and ESPN reports.",
            "status": "Injured Reserve",
            "date": "2026-09-27T10:57Z",
@@ -142704,7 +142940,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T23:04Z|Nacua (hip) is inactive for Sunday's game in Denver, Sarah Barshop of ESPN.com reports.",
            "status": "Out",
            "date": "2026-09-27T23:04Z",
@@ -142742,7 +142978,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T23:12Z|Simpson (coach's decision) is inactive but will serve as the Rams' emergency third quarterback for Sunday night's contest against the Broncos, Sarah Barshop of ESPN.com reports.",
            "status": "Out",
            "date": "2026-09-27T23:12Z",
@@ -142761,12 +142997,69 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T23:16Z|Kinchens (hamstring) is inactive for Sunday night's contest against Denver, Sarah Barshop of ESPN.com reports.",
            "status": "Out",
            "date": "2026-09-27T23:16Z",
            "shortComment": "Kinchens (hamstring) is inactive for Sunday night's contest against Denver, Sarah Barshop of ESPN.com reports.",
            "longComment": "Kinchens will be forced to miss a second straight game after suffering a hamstring injury Week 1 versus San Francisco. In his absence, Josh Wallace will stand to see a larger workload at safety during Sunday Night Football."
+          }
+         ]
+        },
+        "639601": {
+         "recordId": "639601",
+         "athleteName": "Terrance Ferguson",
+         "positionAbbr": "TE",
+         "teamId": "14",
+         "teamAbbr": "LAR",
+         "teamName": "Los Angeles Rams",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:05Z|Ferguson (ankle) has returned to Sunday's game against the Broncos, Stu Jackson of the Rams' official site reports.",
+           "status": "Active",
+           "date": "2026-09-28T01:05Z",
+           "shortComment": "Ferguson (ankle) has returned to Sunday's game against the Broncos, Stu Jackson of the Rams' official site reports.",
+           "longComment": "Ferguson had been deemed questionable to return after heading to the locker room in the first quarter. He was taken to the X-ray room, per Cameron DaSilva of USA Today Rams Wire, but Ferguson evidently received good news regarding his ankle injury and has been cleared to resume playing."
+          }
+         ]
+        },
+        "639604": {
+         "recordId": "639604",
+         "athleteName": "Colby Parkinson",
+         "positionAbbr": "TE",
+         "teamId": "14",
+         "teamAbbr": "LAR",
+         "teamName": "Los Angeles Rams",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:10Z|Parkinson (shoulder) has returned to Sunday's game against the Broncos, Stu Jackson of the Rams' official site reports.",
+           "status": "Active",
+           "date": "2026-09-28T01:10Z",
+           "shortComment": "Parkinson (shoulder) has returned to Sunday's game against the Broncos, Stu Jackson of the Rams' official site reports.",
+           "longComment": "Parkinson wasn't out of the game long after being deemed questionable to return in the first half. He didn't have a catch prior to the injury but will have a chance to add to his stat line as he plays through this shoulder issue, as well as a knee injury that had Parkinson listed as questionable heading into Sunday night's game."
+          }
+         ]
+        },
+        "639625": {
+         "recordId": "639625",
+         "athleteName": "Jaylen Watson",
+         "positionAbbr": "CB",
+         "teamId": "14",
+         "teamAbbr": "LAR",
+         "teamName": "Los Angeles Rams",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Out|2026-09-28T02:18Z|Watson (shoulder) has been ruled out for the rest of Sunday night's matchup with Denver, Stu Jackson of the Rams' official site reports.",
+           "status": "Out",
+           "date": "2026-09-28T02:18Z",
+           "shortComment": "Watson (shoulder) has been ruled out for the rest of Sunday night's matchup with Denver, Stu Jackson of the Rams' official site reports.",
+           "longComment": "Watson suffered a shoulder injury prior to halftime, and his night has now officially come to a premature end. With Watson unavailable, Emmanuel Forbes will continue to get added opportunities in the secondary."
           }
          ]
         },
@@ -142837,7 +143130,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T23:07Z|inactive",
            "status": "Out",
            "date": "2026-09-27T23:07Z",
@@ -142856,7 +143149,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T23:07Z|inactive",
            "status": "Out",
            "date": "2026-09-27T23:07Z",
@@ -142875,7 +143168,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T23:07Z|inactive",
            "status": "Out",
            "date": "2026-09-27T23:07Z",
@@ -142894,7 +143187,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T23:07Z|inactive",
            "status": "Out",
            "date": "2026-09-27T23:07Z",
@@ -142920,7 +143213,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-19T21:21Z|The Dolphins placed Harrison (hamstring) on injured reserve Saturday.",
            "status": "Injured Reserve",
            "date": "2026-09-19T21:21Z",
@@ -142977,7 +143270,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T00:08Z|Patterson converted two of his three field-goal attempts and his sole extra-point try during the Dolphins' 35-13 loss to the 49ers.",
            "status": "Active",
            "date": "2026-09-22T00:08Z",
@@ -142996,7 +143289,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T04:07Z|Dulcich caught two of his three targets for 17 yards in Sunday's 35-13 loss to the 49ers.",
            "status": "Active",
            "date": "2026-09-22T04:07Z",
@@ -143015,7 +143308,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T04:12Z|Washington caught four of his five targets for 43 yards, rushed once for four yards, returned a punt for seven yards and returned three kickoffs for 69 yards in Sunday's 35-13 loss to the 49ers.",
            "status": "Active",
            "date": "2026-09-22T04:12Z",
@@ -143053,7 +143346,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:43Z|Rodriguez recorded eight total tackles (three solo) during Sunday's 35-13 loss to the 49ers.",
            "status": "Active",
            "date": "2026-09-23T00:43Z",
@@ -143072,7 +143365,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:54Z|Brooks recorded three total tackles (two solo) during Sunday's 35-13 loss to San Francisco.",
            "status": "Active",
            "date": "2026-09-23T00:54Z",
@@ -143091,7 +143384,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T04:17Z|Coleman played 27 offensive snaps and saw no targets in Sunday's 35-13 loss to the 49ers.",
            "status": "Active",
            "date": "2026-09-23T04:17Z",
@@ -143148,7 +143441,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T02:07Z|Robinson has cleared the concussion protocol and is available to play in Sunday's matchup with the Chiefs, Marcel Louis-Jacques of ESPN.com reports.",
            "status": "Active",
            "date": "2026-09-25T02:07Z",
@@ -143167,7 +143460,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:07Z|Bell (knee) doesn't have an injury designation for Sunday's game against the Chiefs.",
            "status": "Active",
            "date": "2026-09-25T21:07Z",
@@ -143224,7 +143517,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:21Z|Wright (foot) is inactive for Sunday's game against the Chiefs.",
            "status": "Out",
            "date": "2026-09-27T16:21Z",
@@ -143243,7 +143536,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T16:29Z|Miller (hip/back) is active for Sunday's game against the Chiefs.",
            "status": "Active",
            "date": "2026-09-27T16:29Z",
@@ -143262,7 +143555,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:38Z|Cook (coach's decision) is inactive but will be the Dolphins' emergency third quarterback against the Chiefs on Sunday.",
            "status": "Out",
            "date": "2026-09-27T16:38Z",
@@ -143300,7 +143593,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Doubtful|2026-09-27T20:53Z|Head coach Jeff Hafley said after Sunday's 24-10 loss to the Chiefs that Achane's knee injury \"does not sound very optimistic,\" but the running back will undergo additional testing to determine the extent of the issue, Cameron Wolfe of NFL Network reports.",
            "status": "Doubtful",
            "date": "2026-09-27T20:53Z",
@@ -143319,7 +143612,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:03Z|Gordon rushed 17 times for 41 yards and a touchdown while catching all three of his targets for 14 yards in Sunday's 24-10 loss to the Chiefs.",
            "status": "Active",
            "date": "2026-09-27T21:03Z",
@@ -143338,7 +143631,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:05Z|Willis completed 20 of 36 passes for 210 yards, no touchdowns and one interception in Sunday's 24-10 loss to the Chiefs. He also rushed nine times for 56 yards and lost a fumble.",
            "status": "Active",
            "date": "2026-09-27T21:05Z",
@@ -143357,7 +143650,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:58Z|",
            "status": "Active",
            "date": "2026-09-25T20:58Z",
@@ -143414,7 +143707,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T19:05Z|",
            "status": "Active",
            "date": "2026-09-21T19:05Z",
@@ -143433,7 +143726,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T19:05Z|",
            "status": "Active",
            "date": "2026-09-21T19:05Z",
@@ -143509,7 +143802,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-18T22:04Z|",
            "status": "Active",
            "date": "2026-09-18T22:04Z",
@@ -143528,7 +143821,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T15:37Z|",
            "status": "Active",
            "date": "2026-09-27T15:37Z",
@@ -143547,7 +143840,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:36Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:36Z",
@@ -143566,7 +143859,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:36Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:36Z",
@@ -143585,7 +143878,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:36Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:36Z",
@@ -143604,7 +143897,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:36Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:36Z",
@@ -143623,7 +143916,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:36Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:36Z",
@@ -143763,7 +144056,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T21:13Z|Turner logged five tackles (three solo), including 2.0 sacks, during the Vikings' 9-3 win over the Bears on Sunday.",
            "status": "Active",
            "date": "2026-09-21T21:13Z",
@@ -143782,7 +144075,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T02:22Z|Claiborne caught his sole target for two yards in Sunday's 9-3 win over the Bears.",
            "status": "Active",
            "date": "2026-09-22T02:22Z",
@@ -143801,7 +144094,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:49Z|Cashman logged 10 tackles (six solo), including 1.0 sacks, during Sunday's win over the Bears.",
            "status": "Active",
            "date": "2026-09-23T00:49Z",
@@ -143820,7 +144113,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:58Z|Murphy tallied seven tackles (four solo) and an interception during Sunday's win over the Bears.",
            "status": "Active",
            "date": "2026-09-23T00:58Z",
@@ -143858,7 +144151,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T23:32Z|Jennings (personal) was not listed on the Vikings' injury report Wednesday.",
            "status": "Active",
            "date": "2026-09-23T23:32Z",
@@ -143877,7 +144170,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T03:36Z|Ingram-Dawkins (oblique) was a full participant in Thursday's practice.",
            "status": "Active",
            "date": "2026-09-25T03:36Z",
@@ -143915,7 +144208,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:17Z|Dallas (toe) practiced fully Friday and doesn't have a designation for Sunday's game in Tampa Bay.",
            "status": "Active",
            "date": "2026-09-25T20:17Z",
@@ -143972,7 +144265,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T21:28Z|The Vikings placed Samac (knee) on injured reserve Saturday, Craig Peters of the team's official site reports.",
            "status": "Injured Reserve",
            "date": "2026-09-26T21:28Z",
@@ -143991,7 +144284,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T19:04Z|Pace (personal) is active for Sunday's game against the Buccaneers.",
            "status": "Active",
            "date": "2026-09-27T19:04Z",
@@ -144029,7 +144322,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T22:39Z|Demmings (hamstring) has been ruled out for the remainder of Sunday's contest against the Buccaneers.",
            "status": "Out",
            "date": "2026-09-27T22:39Z",
@@ -144048,7 +144341,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T23:19Z|Oliver (arm) has been ruled out for the rest of Sunday's game against the Buccaneers, Kevin Seifert of ESPN.com reports.",
            "status": "Questionable",
            "date": "2026-09-27T23:19Z",
@@ -144067,12 +144360,69 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-28T00:09Z|Jefferson (ankle) \"got close a couple times\" to returning to Sunday's 23-16 win over the Buccaneers, head coach Kevin O'Connell said after the game, Ben Goessling of the Minnesota Star Tribune reports.",
            "status": "Questionable",
            "date": "2026-09-28T00:09Z",
            "shortComment": "Jefferson (ankle) \"got close a couple times\" to returning to Sunday's 23-16 win over the Buccaneers, head coach Kevin O'Connell said after the game, Ben Goessling of the Minnesota Star Tribune reports.",
            "longComment": "Jefferson sustained an ankle injury in the first half and was ultimately ruled out for the remainder of the game after catching both of his early targets for 32 yards. The Vikings held on without their star receiver to improve to 3-0 heading into a Week 4 home game against the Dolphins. Jefferson's ankle injury will be evaluated further, but O'Connell sounded optimistic that Jefferson may not face much, if any, additional missed time."
+          }
+         ]
+        },
+        "639599": {
+         "recordId": "639599",
+         "athleteName": "Kyler Murray",
+         "positionAbbr": "QB",
+         "teamId": "16",
+         "teamAbbr": "MIN",
+         "teamName": "Minnesota Vikings",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:03Z|Murray (concussion) completed 15 of 29 passes for 168 yards, one touchdown and one interception and took two carries for 17 yards during Sunday's 23-16 win at Tampa Bay.",
+           "status": "Active",
+           "date": "2026-09-28T01:03Z",
+           "shortComment": "Murray (concussion) completed 15 of 29 passes for 168 yards, one touchdown and one interception and took two carries for 17 yards during Sunday's 23-16 win at Tampa Bay.",
+           "longComment": "In his first game action since suffering a concussion in the first quarter of a Week 1 victory against the Packers, Murray lost No. 1 WR Justin Jefferson (ankle) in the first half Sunday but largely avoided any game-changing mistakes while leading the Vikings to a 3-0 record on the season. Murray's first TD pass with Minnesota was a 41-yard connection with Jordan Addison late in the second quarter, while his pick well inside Vikings territory in the middle of the third quarter resulted in only a made Chase McLaughlin field-goal attempt for Tampa Bay. Murray's next chance for game action is next Sunday versus the Dolphins."
+          }
+         ]
+        },
+        "639603": {
+         "recordId": "639603",
+         "athleteName": "Aaron Jones Sr.",
+         "positionAbbr": "RB",
+         "teamId": "16",
+         "teamAbbr": "MIN",
+         "teamName": "Minnesota Vikings",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:10Z|Jones tallied 17 carries for 58 yards and reeled in five of six targets for 34 yards during Sunday's 23-16 win in Tampa Bay.",
+           "status": "Active",
+           "date": "2026-09-28T01:10Z",
+           "shortComment": "Jones tallied 17 carries for 58 yards and reeled in five of six targets for 34 yards during Sunday's 23-16 win in Tampa Bay.",
+           "longComment": "After dealing with a knee injury during Week 3 prep, Jones continued to lead the Vikings backfield Sunday with Jordan Mason (thumb) on injured reserve. With the help of his first catches of the season, Jones surpassed 20 touches for a second game in a row, a span in which he's turned 45 touches into 197 yards from scrimmage. Meanwhile, reserve RBs DeeJay Dallas and Demond Claiborne combined for four touches this weekend. Jones may operate with some practice restrictions during Week 4 prep but should remain Minnesota's No. 1 back next Sunday against the Dolphins, assuming he again is available."
+          }
+         ]
+        },
+        "639607": {
+         "recordId": "639607",
+         "athleteName": "Jordan Addison",
+         "positionAbbr": "WR",
+         "teamId": "16",
+         "teamAbbr": "MIN",
+         "teamName": "Minnesota Vikings",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:16Z|Addison hauled in five of nine targets for 90 yards and one touchdown during Sunday's 23-16 victory at Tampa Bay.",
+           "status": "Active",
+           "date": "2026-09-28T01:16Z",
+           "shortComment": "Addison hauled in five of nine targets for 90 yards and one touchdown during Sunday's 23-16 victory at Tampa Bay.",
+           "longComment": "Serving as the Vikings' de facto No. 1 wide receiver after Justin Jefferson (ankle) exited in the first half and didn't return, Addison parlayed the opportunity into his productive performance of the young campaign. In particular, Addison connected with QB Kyler Murray for a 41-yard TD (his first of the season) with less than five minutes left in the second quarter. Head coach Kevin O'Connell told Ben Goessling of The Minnesota Star Tribune afterward that Minnesota isn't too worried about Jefferson's health concern, so even if he's able to suit up next Sunday versus the Dolphins, Addison could hold more sway in the offense if Jefferson isn't 100 percent."
           }
          ]
         },
@@ -144086,7 +144436,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:12Z|",
            "status": "Active",
            "date": "2026-09-25T20:12Z",
@@ -144105,7 +144455,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:12Z|",
            "status": "Active",
            "date": "2026-09-25T20:12Z",
@@ -144124,7 +144474,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T21:39Z|",
            "status": "Active",
            "date": "2026-09-24T21:39Z",
@@ -144219,7 +144569,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -144238,7 +144588,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -144257,7 +144607,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -144276,7 +144626,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -144295,7 +144645,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -144314,7 +144664,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -144333,7 +144683,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:01Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:01Z",
@@ -144435,7 +144785,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T23:44Z|Douglas caught one of two targets for nine yards Sunday in a 20-3 win over the Steelers.",
            "status": "Active",
            "date": "2026-09-21T23:44Z",
@@ -144454,7 +144804,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-23T00:27Z|The Patriots placed Onwenu (ankle) on injured reserve Tuesday.",
            "status": "Injured Reserve",
            "date": "2026-09-23T00:27Z",
@@ -144473,7 +144823,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:55Z|Elliss logged 12 tackles (seven solo), including 1.0 sacks, and forced a fumble in Sunday's 20-3 win over the Steelers.",
            "status": "Active",
            "date": "2026-09-23T01:55Z",
@@ -144492,7 +144842,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:02Z|Ponder logged five tackles (three solo), including 1.0 sacks, and recovered a fumble he returned for a touchdown in Sunday's 20-3 win over the Steelers.",
            "status": "Active",
            "date": "2026-09-23T02:02Z",
@@ -144511,7 +144861,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:10Z|Woods logged 10 tackles (eight solo) and defensed one pass in Sunday's 20-3 win over the Steelers.",
            "status": "Active",
            "date": "2026-09-23T02:10Z",
@@ -144530,7 +144880,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:17Z|Spillane logged six tackles (three solo) in Sunday's 20-3 win over the Steelers.",
            "status": "Active",
            "date": "2026-09-23T02:17Z",
@@ -144549,7 +144899,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:59Z|Williams caught one of two targets for 10 yards in Sunday's 20-3 win over the Steelers.",
            "status": "Active",
            "date": "2026-09-23T02:59Z",
@@ -144568,7 +144918,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T00:15Z|Davis (neck) was a full participant at practice Wednesday.",
            "status": "Active",
            "date": "2026-09-24T00:15Z",
@@ -144587,7 +144937,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T01:02Z|The Patriots opened the 21-day practice window for Schooler (back) on Wednesday.",
            "status": "Out",
            "date": "2026-09-24T01:02Z",
@@ -144606,7 +144956,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-24T02:28Z|The Patriots placed Pettus (ankle) on injured reserve Wednesday.",
            "status": "Injured Reserve",
            "date": "2026-09-24T02:28Z",
@@ -144682,7 +145032,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T00:48Z|Gilliam (knee) does not have any injury designation ahead of Sunday's game against the Jaguars.",
            "status": "Active",
            "date": "2026-09-26T00:48Z",
@@ -144720,7 +145070,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T01:55Z|Hutchins (knee) was placed on injured reserve Friday.",
            "status": "Injured Reserve",
            "date": "2026-09-26T01:55Z",
@@ -144739,7 +145089,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:40Z|Raridon (thigh) is listed as inactive Week 3 against the Jaguars.",
            "status": "Out",
            "date": "2026-09-27T15:40Z",
@@ -144758,7 +145108,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:42Z|Woodson (shoulder) is inactive Week 3 against the Jaguars.",
            "status": "Out",
            "date": "2026-09-27T15:42Z",
@@ -144777,7 +145127,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T16:32Z|Reed is expected to start alongside Kevin Byard at safety against the Jaguars on Sunday, Evan Lazar of the Patriots' official site reports.",
            "status": "Active",
            "date": "2026-09-27T16:32Z",
@@ -144796,7 +145146,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:35Z|Morton (coach's decision) is inactive for Sunday's game against Jacksonville but will serve as the emergency quarterback.",
            "status": "Out",
            "date": "2026-09-27T16:35Z",
@@ -144815,7 +145165,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T18:02Z|Barmore (shoulder) is questionable to return to Sunday's game against Jacksonville.",
            "status": "Questionable",
            "date": "2026-09-27T18:02Z",
@@ -144834,7 +145184,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T18:11Z|Van Roten (thigh) is questionable to return to Sunday's game against the Jaguars.",
            "status": "Questionable",
            "date": "2026-09-27T18:11Z",
@@ -144853,12 +145203,50 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:01Z|Maye completed 14 of 25 passes for 199 yards with no touchdowns and two interceptions and added four carries for 18 yards in the Patriots' 35-6 loss to the Jaguars on Sunday. He also committed two fumbles, losing one.",
            "status": "Active",
            "date": "2026-09-27T22:01Z",
            "shortComment": "Maye completed 14 of 25 passes for 199 yards with no touchdowns and two interceptions and added four carries for 18 yards in the Patriots' 35-6 loss to the Jaguars on Sunday. He also committed two fumbles, losing one.",
            "longComment": "Maye's rough afternoon also included three sacks, and the multi-interception tally was already his second of the first three games of the new season. The 2024 first-round pick was only able to lead his team to two field goals, and two of his three turnovers were followed by Jaguars touchdowns on the ensuing drive. It's clear Maye misses No. 1 target A.J. Brown (IR, ankle), and although the latter's absence wasn't anywhere near as impactful in a Week 2 win over the Steelers where the defense held Pittsburgh to three points, it was glaring in a game where New England needed to consistently score points. Brown is still slated to miss several more games, and Maye will have plenty of pressure on him in a Week 4 road matchup against Josh Allen and the Bills."
+          }
+         ]
+        },
+        "639589": {
+         "recordId": "639589",
+         "athleteName": "TreVeyon Henderson",
+         "positionAbbr": "RB",
+         "teamId": "17",
+         "teamAbbr": "NE",
+         "teamName": "New England Patriots",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:47Z|Henderson rushed eight times for 23 yards and brought in his only target for six yards in the Patriots' 35-6 loss to the Jaguars on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T00:47Z",
+           "shortComment": "Henderson rushed eight times for 23 yards and brought in his only target for six yards in the Patriots' 35-6 loss to the Jaguars on Sunday.",
+           "longComment": "Playing in his second game of the season, Henderson led the Patriots in rush attempts and rushing yards, but each of those figures were only more than those generated by backfield mate Rhamondre Stevenson. Henderson had a much more efficient showing in his Week 2 season debut with a 16-carry, 76-yard, one-touchdown showing against the Steelers, but game script had a significant impact on the volume for both of the Patriots' backs Sunday. Henderson will look to get back on track in a key Week 4 road divisional matchup against the Bills next Sunday."
+          }
+         ]
+        },
+        "639592": {
+         "recordId": "639592",
+         "athleteName": "Rhamondre Stevenson",
+         "positionAbbr": "RB",
+         "teamId": "17",
+         "teamAbbr": "NE",
+         "teamName": "New England Patriots",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:50Z|Stevenson rushed seven times for 22 yards and brought in all three targets for 16 yards in the Patriots' 35-6 loss to the Jaguars on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T00:50Z",
+           "shortComment": "Stevenson rushed seven times for 22 yards and brought in all three targets for 16 yards in the Patriots' 35-6 loss to the Jaguars on Sunday.",
+           "longComment": "As was the case with backfield mate TreVeyon Henderson, Stevenson saw his opportunities on the ground capped to an extent by a game script that saw the Patriots already down 11 by halftime and 25 heading into the fourth quarter. Stevenson was just one carry and rushing yard apiece behind Henderson's workload on the ground, and both backs will look to be more involved in a key Week 4 road matchup against the Bills next Sunday."
           }
          ]
         },
@@ -144872,7 +145260,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:03Z|",
            "status": "Active",
            "date": "2026-09-25T21:03Z",
@@ -144967,7 +145355,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:33Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:33Z",
@@ -144986,7 +145374,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:33Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:33Z",
@@ -145005,7 +145393,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:33Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:33Z",
@@ -145183,7 +145571,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:10Z|Delp gathered in his only target for eight yards during Sunday's 24-17 victory over the Ravens.",
            "status": "Active",
            "date": "2026-09-23T03:10Z",
@@ -145202,7 +145590,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T02:46Z|Stalbird (shoulder) was a full participant at the Saints' practice Wednesday.",
            "status": "Active",
            "date": "2026-09-24T02:46Z",
@@ -145221,7 +145609,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T02:11Z|Young (calf) was a full participant in Thursday's practice, Mike Triplett of NewOrleans.Football reports.",
            "status": "Active",
            "date": "2026-09-25T02:11Z",
@@ -145240,7 +145628,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T02:13Z|Sanker (knee) was a full participant in Thursday's practice, Mike Triplett of NewOrleans.Football reports.",
            "status": "Active",
            "date": "2026-09-25T02:13Z",
@@ -145278,7 +145666,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:59Z|Miller (illness) doesn't carry an injury designation ahead of Sunday's game against the Raiders.",
            "status": "Active",
            "date": "2026-09-25T21:59Z",
@@ -145354,7 +145742,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T00:47Z|Banks (ankle) underwent surgery this week, Katherine Terrell of ESPN.com reports.",
            "status": "Injured Reserve",
            "date": "2026-09-26T00:47Z",
@@ -145373,7 +145761,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T20:31Z|The Saints elevated Austin from the practice squad to the active roster Saturday ahead of Sunday's game against the Raiders.",
            "status": "Active",
            "date": "2026-09-26T20:31Z",
@@ -145392,7 +145780,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T20:35Z|The Saints elevated Moreno-Cropper from the practice squad to the active roster Saturday ahead of Sunday's game against the Raiders.",
            "status": "Active",
            "date": "2026-09-26T20:35Z",
@@ -145411,7 +145799,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:17Z|Wilson (coach's decision) is inactive but will serve as the emergency third quarterback against the Raiders on Sunday.",
            "status": "Out",
            "date": "2026-09-27T19:17Z",
@@ -145430,7 +145818,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:19Z|Emerson (shoulder) is inactive for Sunday's game against the Raiders.",
            "status": "Out",
            "date": "2026-09-27T19:19Z",
@@ -145449,7 +145837,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T21:28Z|Werner (neck) is questionable to return to Sunday's contest against the Raiders, Matthew Paras of The New Orleans Times-Picayune reports.",
            "status": "Questionable",
            "date": "2026-09-27T21:28Z",
@@ -145468,7 +145856,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:59Z|Granderson (ankle) has returned to Sunday's contest against the Raiders, Ross Jackson of WWL Louisiana reports.",
            "status": "Active",
            "date": "2026-09-27T22:59Z",
@@ -145506,12 +145894,126 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T23:33Z|Jennings has a knee injury and is questionable to return to Sunday's game against the Raiders.",
            "status": "Questionable",
            "date": "2026-09-27T23:33Z",
            "shortComment": "Jennings has a knee injury and is questionable to return to Sunday's game against the Raiders.",
            "longComment": "The linebacker recorded three tackles (two solo) and a pass breakup before exiting. Jennings played more on special teams than defense in New Orleans' first two games."
+          }
+         ]
+        },
+        "639578": {
+         "recordId": "639578",
+         "athleteName": "Travis Etienne Jr.",
+         "positionAbbr": "RB",
+         "teamId": "18",
+         "teamAbbr": "NO",
+         "teamName": "New Orleans Saints",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Questionable|2026-09-28T00:16Z|Etienne exited Sunday's 35-27 loss to the Raiders due to an injury to the same hamstring which bothered him in practice leading up to the game, head coach Kellen Moore revealed after the loss, John Hendrix of NewOrleans.Football reports.",
+           "status": "Questionable",
+           "date": "2026-09-28T00:16Z",
+           "shortComment": "Etienne exited Sunday's 35-27 loss to the Raiders due to an injury to the same hamstring which bothered him in practice leading up to the game, head coach Kellen Moore revealed after the loss, John Hendrix of NewOrleans.Football reports.",
+           "longComment": "Etienne's second-half hamstring injury was an aggravation of a previous injury, which limited his practice participation Wednesday and Thursday. Soft-tissue injuries have a tendency to linger, so it wouldn't be surprising if Etienne missed some game action to allow his hamstring to heal, especially since the Saints could opt for a cautious approach with Etienne after signing him to a four-year, $52 million contract in March. Further testing on the injury may be required before a return timetable is established, though Moore said that an update on Etienne and other injured players may be provided Monday. If Etienne were to miss any time, more touches would be available for Alvin Kamara, CJ Donaldson and Kendre Miller."
+          }
+         ]
+        },
+        "639600": {
+         "recordId": "639600",
+         "athleteName": "Chris Olave",
+         "positionAbbr": "WR",
+         "teamId": "18",
+         "teamAbbr": "NO",
+         "teamName": "New Orleans Saints",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:04Z|Olave caught nine of 13 targets for 107 yards in Sunday's 35-27 loss to the Raiders.",
+           "status": "Active",
+           "date": "2026-09-28T01:04Z",
+           "shortComment": "Olave caught nine of 13 targets for 107 yards in Sunday's 35-27 loss to the Raiders.",
+           "longComment": "The fifth-year wideout led the Saints in catches, targets and receiving yards, but all four of Tyler Shough's TD passes went to tight ends instead of Olave. Olave has hauled in more than 100 yards in two of three games to begin the season, amassing a 27-375-1 line on 36 targets, and he'll look to keep rolling in Week 4 at home against the Falcons."
+          }
+         ]
+        },
+        "639605": {
+         "recordId": "639605",
+         "athleteName": "Tyler Shough",
+         "positionAbbr": "QB",
+         "teamId": "18",
+         "teamAbbr": "NO",
+         "teamName": "New Orleans Saints",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:10Z|Shough completed 29 of 42 passes for 255 yards and four touchdowns with one interception in Sunday's 35-27 loss to the Raiders. He added 36 rushing yards on his lone carry, but also lost two fumbles.",
+           "status": "Active",
+           "date": "2026-09-28T01:10Z",
+           "shortComment": "Shough completed 29 of 42 passes for 255 yards and four touchdowns with one interception in Sunday's 35-27 loss to the Raiders. He added 36 rushing yards on his lone carry, but also lost two fumbles.",
+           "longComment": "The second-year QB was dynamic once again, tossing two TDs each to tight ends Juwan Johnson and Noah Fant, but protection issues in the absence of left tackle Kelvin Banks (ankle) ending up proving costly as all four of the Saints' fourth-quarter possessions ended in turnovers, causing them to squander a 27-22 lead. Shough has thrown eight touchdowns through three games but has also given the ball away six times (three INTs and three lost fumbles), and he'll try to clean up those issues in Week 4 at home against the Falcons."
+          }
+         ]
+        },
+        "639608": {
+         "recordId": "639608",
+         "athleteName": "Alvin Kamara",
+         "positionAbbr": "RB",
+         "teamId": "18",
+         "teamAbbr": "NO",
+         "teamName": "New Orleans Saints",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:19Z|Kamara carried the ball nine times for 36 yards and caught his only target for five yards in Sunday's 35-27 loss to the Raiders.",
+           "status": "Active",
+           "date": "2026-09-28T01:19Z",
+           "shortComment": "Kamara carried the ball nine times for 36 yards and caught his only target for five yards in Sunday's 35-27 loss to the Raiders.",
+           "longComment": "The veteran RB once again took a back seat to Travis Etienne to begin the game, but that changed after the former Jaguar aggravated a hamstring strain and left the game in the third quarter. Over the Saints' last five possessions, Kamara split the workload in the backfield with Kendre Miller, getting six touches to Miller's five. The severity of Etienne's injury isn't yet clear, but if he misses significant time, Kamara and Miller would likely continue working in tandem, with rookie CJ Donaldson also potentially mixing in as a short-yardage option."
+          }
+         ]
+        },
+        "639612": {
+         "recordId": "639612",
+         "athleteName": "Juwan Johnson",
+         "positionAbbr": "TE",
+         "teamId": "18",
+         "teamAbbr": "NO",
+         "teamName": "New Orleans Saints",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:27Z|Johnson caught all eight of his targets for 53 yards and two touchdowns in Sunday's 35-27 loss to the Raiders.",
+           "status": "Active",
+           "date": "2026-09-28T01:27Z",
+           "shortComment": "Johnson caught all eight of his targets for 53 yards and two touchdowns in Sunday's 35-27 loss to the Raiders.",
+           "longComment": "The veteran tight end continues to have an impressive start to the season, hauling in TD strikes of one and two yards from Tyler Shough. but Johnson had a tough end to his day as he fumbled to end the Saints' final possession while they were trying to mount a comeback late in the fourth quarter. Johnson has put together a 15-173-3 line on 19 targets through three games, and he'll look to atone for his miscue in a Week 4 home tilt against the Falcons."
+          }
+         ]
+        },
+        "639621": {
+         "recordId": "639621",
+         "athleteName": "Noah Fant",
+         "positionAbbr": "TE",
+         "teamId": "18",
+         "teamAbbr": "NO",
+         "teamName": "New Orleans Saints",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T02:00Z|Fant caught all four of his targets for 33 yards and two touchdowns during Sunday's 35-27 loss to Las Vegas.",
+           "status": "Active",
+           "date": "2026-09-28T02:00Z",
+           "shortComment": "Fant caught all four of his targets for 33 yards and two touchdowns during Sunday's 35-27 loss to Las Vegas.",
+           "longComment": "Fant made the most of his opportunities, connecting with quarterback Tyler Shough for a three-yard touchdown in the second quarter and a 16-yard score in the third quarter. The tight end is the No. 2 option behind Juwan Johnson at his position, but Fant has still caught eight of 12 targets for 66 yards and three scores over the first three games this year."
           }
          ]
         },
@@ -145525,7 +146027,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T21:28Z|",
            "status": "Active",
            "date": "2026-09-24T21:28Z",
@@ -145620,7 +146122,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:03Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:03Z",
@@ -145639,7 +146141,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:03Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:03Z",
@@ -145658,7 +146160,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:03Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:03Z",
@@ -145677,7 +146179,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:03Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:03Z",
@@ -145696,7 +146198,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:03Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:03Z",
@@ -145760,7 +146262,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T23:19Z|Harris turned four carries into six yards during the Giants' 28-6 loss to the Rams on Monday.",
            "status": "Active",
            "date": "2026-09-22T23:19Z",
@@ -145798,7 +146300,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T23:26Z|Mooney caught two of three targets for 48 yards in Monday night's 28-6 loss to the Rams.",
            "status": "Active",
            "date": "2026-09-22T23:26Z",
@@ -145836,7 +146338,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:05Z|Beckham played three of the Giants' 58 offensive snaps and did not see a target in Monday's 28-6 loss to the Rams.",
            "status": "Active",
            "date": "2026-09-23T00:05Z",
@@ -145855,7 +146357,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:12Z|Johnson played 16 of the Giants' 58 offensive snaps but did not haul in any of his four targets during Monday's 28-6 loss to the Rams.",
            "status": "Active",
            "date": "2026-09-23T00:12Z",
@@ -145874,7 +146376,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:37Z|Holland logged eight tackles (five solo), one pass defensed for an interception and one fumble recovery in Monday's 28-6 loss to the Rams.",
            "status": "Active",
            "date": "2026-09-23T01:37Z",
@@ -145893,7 +146395,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:44Z|Edmunds logged five assisted tackles and one pass defensed in Monday's 28-6 loss to the Rams.",
            "status": "Active",
            "date": "2026-09-23T01:44Z",
@@ -145912,7 +146414,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T02:49Z|McFadden (neck) was listed as a full participant in Wednesday's practice estimate,  Dan Salomone of the Giants' official site reports.",
            "status": "Active",
            "date": "2026-09-24T02:49Z",
@@ -145950,7 +146452,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-24T20:44Z|The Giants officially placed Dart (knee) on injured reserve Thursday, Mike Garafolo of NFL Network reports.",
            "status": "Injured Reserve",
            "date": "2026-09-24T20:44Z",
@@ -146026,7 +146528,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T01:53Z|Thomas (groin) does not have any injury designation ahead of Sunday's game against the Titans, Mike Garafolo of NFL Network reports.",
            "status": "Active",
            "date": "2026-09-26T01:53Z",
@@ -146045,7 +146547,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T21:30Z|The Giants signed Haener from the practice squad to the active roster Saturday, Dan Salomone of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-26T21:30Z",
@@ -146064,7 +146566,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T21:34Z|The Giants elevated Berrios from the practice squad to the active roster Saturday ahead of Sunday's game against the Titans, Dan Salomone of the Giants' official site reports.",
            "status": "Active",
            "date": "2026-09-26T21:34Z",
@@ -146102,7 +146604,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T16:19Z|With Tyler Nubin (calf) inactive, Washington will start at safety against the Titans on Sunday, Jordan Raanan of ESPN.com reports.",
            "status": "Active",
            "date": "2026-09-27T16:19Z",
@@ -146121,7 +146623,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:30Z|Singletary (coach's decision) is inactive for Sunday's game against the Titans, Dan Salomone of the Giants' official site reports.",
            "status": "Out",
            "date": "2026-09-27T16:30Z",
@@ -146140,7 +146642,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:39Z|Nubin (calf) is inactive for Sunday's game against the Titans, Dan Salomone of the Giants' official site reports.",
            "status": "Out",
            "date": "2026-09-27T16:39Z",
@@ -146159,7 +146661,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:43Z|Banks (calf) is inactive for Sunday's game against the Titans, Dan Salomone of the Giants' official site reports.",
            "status": "Out",
            "date": "2026-09-27T16:43Z",
@@ -146178,7 +146680,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T20:50Z|Burns will undergo an MRI for a right knee injury that he sustained during the Giants' 12-7 win over the Titans on Sunday, Pat Leonard of the New York Daily News reports.",
            "status": "Questionable",
            "date": "2026-09-27T20:50Z",
@@ -146197,7 +146699,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T20:57Z|Skattebo carried the ball 20 times for 60 yards and caught three of four targets for 40 yards in Sunday's 12-7 win over the Titans.",
            "status": "Active",
            "date": "2026-09-27T20:57Z",
@@ -146216,7 +146718,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:04Z|Nabers caught five of six targets for 26 yards in Sunday's 12-7 win over the Titans.",
            "status": "Active",
            "date": "2026-09-27T21:04Z",
@@ -146235,7 +146737,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:10Z|Winston completed 14 of 22 passes for 118 yards in Sunday's 12-7 win over Tennessee. He added 14 rushing yards on two carries.",
            "status": "Active",
            "date": "2026-09-27T21:10Z",
@@ -146254,7 +146756,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:52Z|Zvada made all four of his field-goal attempts during the Giants' 12-7 win over the Titans on Sunday.",
            "status": "Active",
            "date": "2026-09-27T23:52Z",
@@ -146273,7 +146775,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:03Z|",
            "status": "Active",
            "date": "2026-09-25T21:03Z",
@@ -146387,7 +146889,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:51Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:51Z",
@@ -146406,7 +146908,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:51Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:51Z",
@@ -146425,7 +146927,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:51Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:51Z",
@@ -146444,7 +146946,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:51Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:51Z",
@@ -146565,7 +147067,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:17Z|Davis didn't have any output in the box score during the Jets' overtime loss to the Packers on Sunday.",
            "status": "Active",
            "date": "2026-09-23T00:17Z",
@@ -146584,7 +147086,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:30Z|The Jets signed Reeder off the practice squad Tuesday.",
            "status": "Active",
            "date": "2026-09-23T00:30Z",
@@ -146603,7 +147105,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:27Z|Sherwood posted six tackles (three solo) and a pass defense during the Jets' 20-17 overtime loss to the Packers on Sunday.",
            "status": "Active",
            "date": "2026-09-23T01:27Z",
@@ -146622,7 +147124,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:38Z|Davis posted four tackles (three solo) during the Jets' 20-17 overtime loss to the Packers on Sunday.",
            "status": "Active",
            "date": "2026-09-23T01:38Z",
@@ -146641,7 +147143,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-23T21:40Z|Onyemata (groin) underwent core-muscle surgery Wednesday, Antwan V. Staley of the New York Daily News reports.",
            "status": "Injured Reserve",
            "date": "2026-09-23T21:40Z",
@@ -146660,7 +147162,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-23T21:53Z|Smith (knee) underwent surgery Wednesday to repair a torn ACL and will miss the rest of the season, Antwan V. Staley of the New York Daily News reports.",
            "status": "Injured Reserve",
            "date": "2026-09-23T21:53Z",
@@ -146774,7 +147276,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T16:14Z|The Jets elevated Sanders from the practice squad to the active roster Saturday, Zack Rosenblatt of The Athletic reports.",
            "status": "Active",
            "date": "2026-09-26T16:14Z",
@@ -146793,7 +147295,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T16:17Z|The Jets elevated Shepard from the practice squad to the active roster Saturday, Zack Rosenblatt of The Athletic reports.",
            "status": "Active",
            "date": "2026-09-26T16:17Z",
@@ -146812,7 +147314,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T16:19Z|The Jets signed Pritchett from the practice squad to the active roster Saturday, Zack Rosenblatt of The Athletic reports.",
            "status": "Active",
            "date": "2026-09-26T16:19Z",
@@ -146831,7 +147333,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-26T17:39Z|Nwangwu (back) has been ruled out ahead of Sunday's game against the Lions.",
            "status": "Out",
            "date": "2026-09-26T17:39Z",
@@ -146850,7 +147352,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:39Z|Mitchell (finger) is inactive for Sunday's game against the Lions.",
            "status": "Out",
            "date": "2026-09-27T15:39Z",
@@ -146869,7 +147371,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:16Z|Grupe (coach's decision) is inactive for Sunday's game against the Lions.",
            "status": "Out",
            "date": "2026-09-27T16:16Z",
@@ -146888,7 +147390,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:27Z|Wright (coach's decision) is inactive for Sunday's game against the Lions.",
            "status": "Out",
            "date": "2026-09-27T16:27Z",
@@ -146907,7 +147409,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T16:42Z|Ossai (foot) is active for Sunday's game against the Lions.",
            "status": "Active",
            "date": "2026-09-27T16:42Z",
@@ -146926,7 +147428,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T17:51Z|Stiggers (hand) returned to Sunday's game versus the Lions, Brian Costello of the New York Post reports.",
            "status": "Active",
            "date": "2026-09-27T17:51Z",
@@ -146945,7 +147447,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:10Z|Parham (knee) has been ruled out for the rest of Sunday's game against the Lions.",
            "status": "Out",
            "date": "2026-09-27T19:10Z",
@@ -146964,7 +147466,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T20:40Z|Hall (thigh) outlined that he \"felt something\" when running before departing Sunday's 31-24 loss to the Lions, Brian Costello of the New York Post reports.",
            "status": "Questionable",
            "date": "2026-09-27T20:40Z",
@@ -146983,7 +147485,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:14Z|Wilson caught 10 of 13 targets for 107 yards and a touchdown in Sunday's 31-24 loss to Detroit.",
            "status": "Active",
            "date": "2026-09-27T22:14Z",
@@ -147002,7 +147504,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:25Z|Smith completed 31 of 37 passes for 321 yards and three touchdowns in Sunday's 31-24 loss to the Lions. He added 12 rushing yards on two carries and threw a two-point conversion.",
            "status": "Active",
            "date": "2026-09-27T22:25Z",
@@ -147021,7 +147523,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:34Z|Sadiq caught seven of eight passes for 105 yards and a touchdown in Sunday's 31-24 loss to the Lions.",
            "status": "Active",
            "date": "2026-09-27T22:34Z",
@@ -147040,7 +147542,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T20:28Z|",
            "status": "Active",
            "date": "2026-09-23T20:28Z",
@@ -147059,7 +147561,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-23T00:35Z|ir",
            "status": "Injured Reserve",
            "date": "2026-09-23T00:35Z",
@@ -147135,7 +147637,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:48Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:48Z",
@@ -147154,7 +147656,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:48Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:48Z",
@@ -147173,7 +147675,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:48Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:48Z",
@@ -147199,7 +147701,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-18T23:33Z|DeJean (calf) does not carry an injury designation into Sunday's game against the Titans.",
            "status": "Active",
            "date": "2026-09-18T23:33Z",
@@ -147218,7 +147720,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T16:50Z|Dalton is active as the Eagles' top backup quarterback for Sunday's game against the Titans.",
            "status": "Active",
            "date": "2026-09-20T16:50Z",
@@ -147237,7 +147739,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T23:12Z|Hurts completed 26 of 37 passes for 264 yards and two touchdowns with two interceptions in Sunday's 24-20 win over Tennessee. He added 16 yards on five carries.",
            "status": "Active",
            "date": "2026-09-20T23:12Z",
@@ -147256,7 +147758,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T23:41Z|Wicks caught five of six targets for 74 yards in Sunday's 24-20 win over the Titans.",
            "status": "Active",
            "date": "2026-09-20T23:41Z",
@@ -147275,7 +147777,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T23:57Z|Lemon caught his lone target for 14 yards while turning one carry into minus-5 yards during the Eagles' 24-20 win over the Titans on Sunday.",
            "status": "Active",
            "date": "2026-09-21T23:57Z",
@@ -147294,7 +147796,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T00:00Z|Elliott converted his only field-goal attempt and made all three of his PATs in Sunday's 24-20 win over the Titans.",
            "status": "Active",
            "date": "2026-09-22T00:00Z",
@@ -147313,7 +147815,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T17:21Z|Ertz signed with the Eagles' practice squad Tuesday, Chris McPherson of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-22T17:21Z",
@@ -147332,7 +147834,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:17Z|Campbell recorded 10 total tackles (six solo) and a forced fumble during Sunday's 24-20 win over the Titans.",
            "status": "Active",
            "date": "2026-09-23T01:17Z",
@@ -147351,7 +147853,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:22Z|Baun recorded four total tackles (two solo) during Sunday's 24-20 win over Tennessee.",
            "status": "Active",
            "date": "2026-09-23T01:22Z",
@@ -147370,7 +147872,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:49Z|Mundt caught two of three targets for eight yards in Sunday's 24-20 win against the Titans.",
            "status": "Active",
            "date": "2026-09-23T02:49Z",
@@ -147389,7 +147891,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:16Z|Cooper caught two of three targets for 26 yards and a touchdown in the Eagles' 24-20 win over the Titans on Sunday.",
            "status": "Active",
            "date": "2026-09-23T03:16Z",
@@ -147408,7 +147910,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T22:22Z|Barkley (stinger) was a full practice participant Friday.",
            "status": "Active",
            "date": "2026-09-25T22:22Z",
@@ -147427,7 +147929,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T00:22Z|Carter (wrist) was a full participant in Friday's practice.",
            "status": "Active",
            "date": "2026-09-26T00:22Z",
@@ -147446,7 +147948,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T00:26Z|Mukuba (knee) was a full participant in Friday's practice.",
            "status": "Active",
            "date": "2026-09-26T00:26Z",
@@ -147465,7 +147967,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T16:38Z|Smith (hamstring) is participating in Saturday's practice, Dave Zangaro of NBC Sports Philadelphia reports.",
            "status": "Active",
            "date": "2026-09-26T16:38Z",
@@ -147484,7 +147986,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-26T20:01Z|Goedert (knee) has been ruled out for Monday's game against the Bears.",
            "status": "Out",
            "date": "2026-09-26T20:01Z",
@@ -147503,7 +148005,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T20:07Z|Bigsby (abdomen) does not carry an injury designation into Monday's game against the Bears.",
            "status": "Active",
            "date": "2026-09-26T20:07Z",
@@ -147522,7 +148024,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T20:09Z|Shipley (foot) was a limited participant in Saturday's practice but does not carry an injury designation into Monday's game against the Bears.",
            "status": "Active",
            "date": "2026-09-26T20:09Z",
@@ -147541,7 +148043,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-26T20:25Z|Brown (ankle) has been ruled out ahead of Monday's game against the Bears.",
            "status": "Out",
            "date": "2026-09-26T20:25Z",
@@ -147560,7 +148062,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-26T20:29Z|Greenard (pectoral) is listed as questionable ahead of Monday's game against the Bears.",
            "status": "Questionable",
            "date": "2026-09-26T20:29Z",
@@ -147579,7 +148081,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-26T21:21Z|Johnson (knee) has been ruled out ahead of Monday's game against the Bears.",
            "status": "Out",
            "date": "2026-09-26T21:21Z",
@@ -147598,7 +148100,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:47Z|",
            "status": "Active",
            "date": "2026-09-21T18:47Z",
@@ -147617,7 +148119,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:47Z|",
            "status": "Active",
            "date": "2026-09-21T18:47Z",
@@ -147636,7 +148138,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:47Z|",
            "status": "Active",
            "date": "2026-09-21T18:47Z",
@@ -147655,7 +148157,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:47Z|",
            "status": "Active",
            "date": "2026-09-21T18:47Z",
@@ -147681,7 +148183,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-19T00:22Z|Gibbens (shoulder) does not have an injury designation ahead of Sunday's game against the Seahawks, Tyler Drake of ArizonaSports.com reports.",
            "status": "Active",
            "date": "2026-09-19T00:22Z",
@@ -147738,7 +148240,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T19:34Z|Adams (knee) is active for Sunday's game against the Seahawks.",
            "status": "Active",
            "date": "2026-09-20T19:34Z",
@@ -147757,7 +148259,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T19:37Z|Seumalo (shoulder) is active for Sunday's game against Seattle.",
            "status": "Active",
            "date": "2026-09-20T19:37Z",
@@ -147871,7 +148373,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T03:12Z|Allgeier turned five carries into 10 yards and caught both of his targets for nine yards in Sunday's 31-7 loss to the Seahawks.",
            "status": "Active",
            "date": "2026-09-21T03:12Z",
@@ -147890,7 +148392,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T00:23Z|Ryland did not have any field-goal tries but converted on his only extra-point attempt during Sunday's 31-7 loss versus the Seahawks.",
            "status": "Active",
            "date": "2026-09-22T00:23Z",
@@ -147909,7 +148411,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T03:29Z|Bourne caught two of his three targets for 11 yards in Sunday's 31-7 loss to the Seahawks.",
            "status": "Active",
            "date": "2026-09-22T03:29Z",
@@ -147928,7 +148430,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:29Z|Baker recorded 11 tackles (seven solo), including 1.0 sacks, and a pass breakup in Sunday's loss to the Seahawks.",
            "status": "Active",
            "date": "2026-09-23T02:29Z",
@@ -147947,7 +148449,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:31Z|Wilson recorded nine tackles (four solo) in Sunday's loss to the Seahawks.",
            "status": "Active",
            "date": "2026-09-23T02:31Z",
@@ -147966,7 +148468,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-23T22:14Z|The Cardinals placed Johnson (neck) on injured reserve  Wednesday, Darren Urban of the team's official site reports.",
            "status": "Injured Reserve",
            "date": "2026-09-23T22:14Z",
@@ -147985,7 +148487,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T00:20Z|The Cardinals signed Thomas to the active roster from their practice squad Wednesday, Darren Urban of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-24T00:20Z",
@@ -148061,7 +148563,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T00:34Z|Williams (Achilles) does not carry an injury designation ahead of Sunday's game against the 49ers, Darren Urban of the Cardinals' official site reports.",
            "status": "Active",
            "date": "2026-09-26T00:34Z",
@@ -148099,7 +148601,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:46Z|Beck (coach's decision) is inactive but will serve as the emergency third quarterback against the 49ers on Sunday, Darren Urban of the Cardinals' official site reports.",
            "status": "Out",
            "date": "2026-09-27T18:46Z",
@@ -148118,7 +148620,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T18:48Z|Lopez (groin) is active for Sunday's game against the 49ers, Darren Urban of the Cardinals' official site reports.",
            "status": "Active",
            "date": "2026-09-27T18:48Z",
@@ -148137,12 +148639,107 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T18:50Z|Melton (toe) is active for Sunday's game against the 49ers, Darren Urban of the Cardinals' official site reports.",
            "status": "Active",
            "date": "2026-09-27T18:50Z",
            "shortComment": "Melton (toe) is active for Sunday's game against the 49ers, Darren Urban of the Cardinals' official site reports.",
            "longComment": "Melton logged back-to-back limited practices to end Week 3 prep and draw the questionable tag, but he's been cleared to play Sunday after going through pregame warmups. The third-year pro has four tackles (two solo) and two pass defenses through two regular-season games."
+          }
+         ]
+        },
+        "639609": {
+         "recordId": "639609",
+         "athleteName": "Jeremiyah Love",
+         "positionAbbr": "RB",
+         "teamId": "22",
+         "teamAbbr": "ARI",
+         "teamName": "Arizona Cardinals",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:20Z|Love rushed 21 times for 90 yards and brought in all five targets for 19 yards and a touchdown in the Cardinals' 36-30 loss to the 49ers on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T01:20Z",
+           "shortComment": "Love rushed 21 times for 90 yards and brought in all five targets for 19 yards and a touchdown in the Cardinals' 36-30 loss to the 49ers on Sunday.",
+           "longComment": "Sunday may have marked the official crowning of Love as the Cardinals' unquestioned lead back, as he took 19 more carries than veteran backup Tyler Allgeier. All of Love's rush attempts, rushing yardage, receptions, receiving yardage and targets were new season-high figures for the rookie first-round pick, who also recorded his first career receiving touchdown on a one-yard grab early in the fourth quarter. Love's draft pedigree and talent always made an ascension to the lead role a matter of when and not if, and it will be interesting to see how the Notre Dame product fares in what could be a favorable Week 4 road matchup against the Giants next Sunday."
+          }
+         ]
+        },
+        "639611": {
+         "recordId": "639611",
+         "athleteName": "Trey McBride",
+         "positionAbbr": "TE",
+         "teamId": "22",
+         "teamAbbr": "ARI",
+         "teamName": "Arizona Cardinals",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:25Z|McBride brought in nine of 11 targets for 75 yards in the Cardinals' 36-30 loss to the 49ers on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T01:25Z",
+           "shortComment": "McBride brought in nine of 11 targets for 75 yards in the Cardinals' 36-30 loss to the 49ers on Sunday.",
+           "longComment": "The talented tight end filled his usual workhorse role, finishing second in all of receptions, receiving yards and targets for the Cardinals behind Michael Wilson. The chemistry between McBride and Jacoby Brissett is extremely well-established after a season-plus of working together, and the former already has a 26-211-2 line on 34 targets through only three games, recording at least eight receptions and logging no fewer than 10 targets in each contest. McBride will continue to offer perhaps the best floor of any player at his position in a Week 4 road matchup against the Giants next Sunday."
+          }
+         ]
+        },
+        "639614": {
+         "recordId": "639614",
+         "athleteName": "Michael Wilson",
+         "positionAbbr": "WR",
+         "teamId": "22",
+         "teamAbbr": "ARI",
+         "teamName": "Arizona Cardinals",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:41Z|Wilson secured 11 of 17 targets for 89 yards and a touchdown in the Cardinals' 36-30 loss to the 49ers on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T01:41Z",
+           "shortComment": "Wilson secured 11 of 17 targets for 89 yards and a touchdown in the Cardinals' 36-30 loss to the 49ers on Sunday.",
+           "longComment": "Wilson's afternoon was reminiscent of several of those in his 2025 campaign, as the veteran receiver garnered a bulk of Jacoby Brissett's attention in his short- and mid-range role while leading the team in receptions, receiving yards and targets. Marvin Harrison was a bit more involved Sunday with three catches for 40 yards on five targets, but it appears clear Wilson and Trey McBride have far and away the most chemistry with Brissett. Wilson will take an 18-163-1 line on 31 targets in a Week 4 road matchup against the Giants next Sunday."
+          }
+         ]
+        },
+        "639616": {
+         "recordId": "639616",
+         "athleteName": "Marvin Harrison Jr.",
+         "positionAbbr": "WR",
+         "teamId": "22",
+         "teamAbbr": "ARI",
+         "teamName": "Arizona Cardinals",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:52Z|Harrison brought in three of five targets for 40 yards in the Cardinals' 36-30 loss to the 49ers on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T01:52Z",
+           "shortComment": "Harrison brought in three of five targets for 40 yards in the Cardinals' 36-30 loss to the 49ers on Sunday.",
+           "longComment": "Harrison was a distant third in receiving yards and tied for the same slotting in targets for the Cardinals on the afternoon. Despite the modest stat line across the board, Harrison's Sunday was certainly an improvement on his Week 2, when he was blanked and saw only one target. While his season-high reception, receiving yardage and target totals offer some solace, they fall short of satisfying frustrated fantasy managers who banked on a comeback campaign from the 2024 first-round pick. Harrison still appears to clearly be behind Michael Wilson and Trey McBride in the Cardinals' pass-catching hierarchy heading into a Week 4 road matchup against the Giants next Sunday."
+          }
+         ]
+        },
+        "639620": {
+         "recordId": "639620",
+         "athleteName": "Jacoby Brissett",
+         "positionAbbr": "QB",
+         "teamId": "22",
+         "teamAbbr": "ARI",
+         "teamName": "Arizona Cardinals",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:59Z|Brissett completed 38 of 52 passes for 280 yards with two touchdowns and no interceptions and rushed four times for four yards in the Cardinals' 36-30 loss to the 49ers on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T01:59Z",
+           "shortComment": "Brissett completed 38 of 52 passes for 280 yards with two touchdowns and no interceptions and rushed four times for four yards in the Cardinals' 36-30 loss to the 49ers on Sunday.",
+           "longComment": "Brissett put together one of his signature stat lines, parlaying massive passing volume into a solid yardage figure while remaining free of turnovers. The veteran signal-caller's pass-distribution profile was also on brand, as a whopping 28 of his pass attempts went in the direction of Michael Wilson (17 targets) and Trey McBride (11 targets). Brissett hit Wilson (five yards) and Jeremiyah Love (one yard) for his pair of touchdown passes, marking his first multi-TD tally of the season. Brissett is averaging a typically conservative 5.6 yards per attempt over his first three games, but he's thrown for over 275 yards in two of his first three games heading into a Week 4 road matchup against the Giants next Sunday."
           }
          ]
         },
@@ -148156,7 +148753,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:57Z|",
            "status": "Active",
            "date": "2026-09-25T21:57Z",
@@ -148194,7 +148791,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-18T20:55Z|",
            "status": "Active",
            "date": "2026-09-18T20:55Z",
@@ -148213,7 +148810,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:40Z|inactive",
            "status": "Out",
            "date": "2026-09-27T18:40Z",
@@ -148232,7 +148829,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:40Z|inactive",
            "status": "Out",
            "date": "2026-09-27T18:40Z",
@@ -148251,7 +148848,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:40Z|inactive",
            "status": "Out",
            "date": "2026-09-27T18:40Z",
@@ -148308,7 +148905,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:40Z|inactive",
            "status": "Out",
            "date": "2026-09-27T18:40Z",
@@ -148429,7 +149026,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T16:39Z|Fautanu (ankle) is active for Sunday's game against the Patriots.",
            "status": "Active",
            "date": "2026-09-20T16:39Z",
@@ -148486,7 +149083,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T22:38Z|Bernard caught four passes on eight targets for 35 yards during the Steelers' 20-3 loss to the Patriots on Sunday.",
            "status": "Active",
            "date": "2026-09-21T22:38Z",
@@ -148505,7 +149102,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T22:46Z|Wilson caught five of six targets for 28 yards during the Steelers' 20-3 loss to the Patriots on Sunday.",
            "status": "Active",
            "date": "2026-09-21T22:46Z",
@@ -148524,7 +149121,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T22:54Z|Freiermuth caught four passes (on five targets) for 32 yards while logging a two-yard carry during the Steelers' 20-3 loss to the Patriots on Sunday.",
            "status": "Active",
            "date": "2026-09-21T22:54Z",
@@ -148562,7 +149159,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T02:03Z|Washington caught one of his two targets for seven yards in Sunday's loss to the Patriots.",
            "status": "Active",
            "date": "2026-09-22T02:03Z",
@@ -148581,7 +149178,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:48Z|Queen recorded two tackles (zero solo) and an interception in Sunday's 20-3 loss to the Patriots.",
            "status": "Active",
            "date": "2026-09-23T02:48Z",
@@ -148695,7 +149292,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T20:54Z|The Steelers signed Homer from the practice squad to the active roster Saturday, Teresa Varley of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-26T20:54Z",
@@ -148714,7 +149311,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T20:58Z|The Steelers elevated Nichols from the practice squad to the active roster Saturday ahead of Sunday's game against the Bengals, Teresa Varley of the Steelers' official site reports.",
            "status": "Active",
            "date": "2026-09-26T20:58Z",
@@ -148733,7 +149330,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T21:23Z|The Steelers placed Dunker (knee) on injured reserve Saturday, Tom Pelissero of Netflix reports.",
            "status": "Injured Reserve",
            "date": "2026-09-26T21:23Z",
@@ -148752,7 +149349,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T15:19Z|Iheanachor will start at right tackle against the Bengals on Sunday, Ian Rapoport of NFL Network reports.",
            "status": "Active",
            "date": "2026-09-27T15:19Z",
@@ -148771,7 +149368,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T15:21Z|Hoffman will start at right guard against the Bengals on Sunday, Ian Rapoport of NFL Network reports.",
            "status": "Active",
            "date": "2026-09-27T15:21Z",
@@ -148809,7 +149406,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T15:44Z|Pittman (foot) is active for Sunday's game against the Bengals, Alan Saunders of SteelersNow.com reports.",
            "status": "Active",
            "date": "2026-09-27T15:44Z",
@@ -148828,7 +149425,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:58Z|Heidenreich (coach's decision) is inactive for Sunday's game against the Bengals.",
            "status": "Out",
            "date": "2026-09-27T15:58Z",
@@ -148847,7 +149444,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:02Z|Porter (conditioning) is inactive for Sunday's game against the Bengals.",
            "status": "Out",
            "date": "2026-09-27T16:02Z",
@@ -148866,7 +149463,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T16:04Z|Dean (ankle) is active for Sunday's game against Cincinnati.",
            "status": "Active",
            "date": "2026-09-27T16:04Z",
@@ -148885,7 +149482,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:06Z|Howard (coach's decision) is inactive but will serve as the emergency third quarterback against the Bengals on Sunday.",
            "status": "Out",
            "date": "2026-09-27T16:06Z",
@@ -148904,7 +149501,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T19:56Z|Echols is being evaluated for a possible concussion and is questionable to return to Sunday's game against the Bengals, Alan Saunders of SteelersNow.com reports.",
            "status": "Questionable",
            "date": "2026-09-27T19:56Z",
@@ -148923,7 +149520,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:47Z|Warren rushed 17 times for 127 yards and secured three of four targets for 49 yards in the Steelers' 30-27 win over the Bengals on Sunday.",
            "status": "Active",
            "date": "2026-09-27T21:47Z",
@@ -148942,7 +149539,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:39Z|Metcalf brought in three of five targets for 31 yards and a touchdown in the Steelers' 30-27 win over the Bengals on Sunday.",
            "status": "Active",
            "date": "2026-09-27T22:39Z",
@@ -148961,7 +149558,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:51Z|Rodgers completed 19 of 34 passes for 292 yards with three touchdowns and one interception while adding three rushes for 10 yards in the Steelers' 30-27 win over the Bengals on Sunday.",
            "status": "Active",
            "date": "2026-09-27T22:51Z",
@@ -148980,7 +149577,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:45Z|Boswell made all three of his field-goal attempts and each of his three extra-point tries during the Steelers' 30-27 win over the Bengals on Sunday.",
            "status": "Active",
            "date": "2026-09-27T23:45Z",
@@ -149075,7 +149672,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:38Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:38Z",
@@ -149094,7 +149691,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:38Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:38Z",
@@ -149113,7 +149710,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:38Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:38Z",
@@ -149132,7 +149729,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:38Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:38Z",
@@ -149234,7 +149831,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:51Z|Henley recorded three assisted tackles during Sunday's 26-14 loss to the Raiders.",
            "status": "Active",
            "date": "2026-09-23T01:51Z",
@@ -149253,7 +149850,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T04:15Z|Vidal didn't get a touch during Sunday's 26-14 loss to Las Vegas.",
            "status": "Active",
            "date": "2026-09-23T04:15Z",
@@ -149291,7 +149888,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-23T19:36Z|The Chargers placed Njoku (fibula) on injured reserve Wednesday.",
            "status": "Injured Reserve",
            "date": "2026-09-23T19:36Z",
@@ -149310,7 +149907,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T00:51Z|Valdes-Scantling was signed to the Chargers' active roster Wednesday.",
            "status": "Active",
            "date": "2026-09-24T00:51Z",
@@ -149329,7 +149926,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T02:46Z|Leonard (abdomen) was a full participant in Wednesday's practice.",
            "status": "Active",
            "date": "2026-09-24T02:46Z",
@@ -149348,7 +149945,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T02:22Z|James (finger) was a full participant in Thursday's practice.",
            "status": "Active",
            "date": "2026-09-25T02:22Z",
@@ -149443,7 +150040,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:49Z|Tuipulotu (hamstring) does not carry an injury designation into Sunday's game against the Bills.",
            "status": "Active",
            "date": "2026-09-25T21:49Z",
@@ -149500,7 +150097,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T20:48Z|The Chargers elevated Herbert from the practice squad to the active roster Saturday ahead of Sunday's game against the Bills.",
            "status": "Active",
            "date": "2026-09-26T20:48Z",
@@ -149519,7 +150116,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T21:25Z|The Chargers placed Pipkins (knee) on injured reserve Saturday.",
            "status": "Injured Reserve",
            "date": "2026-09-26T21:25Z",
@@ -149538,7 +150135,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T15:48Z|Shelley (hamstring) is active Week 3 against the Bills.",
            "status": "Active",
            "date": "2026-09-27T15:48Z",
@@ -149557,7 +150154,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:29Z|Uiagalelei (coach's decision) is inactive but will serve as the emergency third quarterback against the Bills on Sunday, Eric Smith of the Chargers' official site reports.",
            "status": "Out",
            "date": "2026-09-27T16:29Z",
@@ -149595,7 +150192,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:32Z|Hampton rushed 15 times for 56 yards and failed to bring in his only target in the Chargers' 24-16 loss to the Bills on Sunday.",
            "status": "Active",
            "date": "2026-09-27T22:32Z",
@@ -149614,7 +150211,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:57Z|McConkey secured four of five targets for 66 yards in the Chargers' 24-16 loss to the Bills on Sunday.",
            "status": "Active",
            "date": "2026-09-27T22:57Z",
@@ -149633,7 +150230,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:10Z|Herbert completed 20 of 34 passes for 226 yards with one touchdown and one interception and rushed four times for 17 yards in the Chargers' 24-16 loss to the Bills on Sunday.",
            "status": "Active",
            "date": "2026-09-27T23:10Z",
@@ -149652,7 +150249,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:51Z|Dicker went 3-for-4 on field-goal attempts and made his lone extra-point try during the Chargers' 24-16 loss to the Bills on Sunday.",
            "status": "Active",
            "date": "2026-09-27T23:51Z",
@@ -149671,7 +150268,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T21:37Z|",
            "status": "Active",
            "date": "2026-09-24T21:37Z",
@@ -149690,7 +150287,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T21:37Z|",
            "status": "Active",
            "date": "2026-09-24T21:37Z",
@@ -149766,7 +150363,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T15:45Z|",
            "status": "Active",
            "date": "2026-09-27T15:45Z",
@@ -149785,7 +150382,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:34Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:34Z",
@@ -149804,7 +150401,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:34Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:34Z",
@@ -149823,7 +150420,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:34Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:34Z",
@@ -149842,7 +150439,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:34Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:34Z",
@@ -149861,7 +150458,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:34Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:34Z",
@@ -149880,7 +150477,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:34Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:34Z",
@@ -149899,7 +150496,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T19:41Z|questionable",
            "status": "Questionable",
            "date": "2026-09-27T19:41Z",
@@ -150115,7 +150712,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:12Z|Sigle recorded seven tackles (three solo), including 1.0 sacks, during Sunday's 35-13 win versus the Dolphins.",
            "status": "Active",
            "date": "2026-09-23T01:12Z",
@@ -150134,7 +150731,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:16Z|Brown recorded 13 tackles (four solo) during Sunday's 35-13 win versus the Dolphins.",
            "status": "Active",
            "date": "2026-09-23T01:16Z",
@@ -150153,7 +150750,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:22Z|Warner recorded five tackles (one solo), including 0.5 sacks, and a forced fumble during Sunday's 35-13 win versus the Dolphins.",
            "status": "Active",
            "date": "2026-09-23T01:22Z",
@@ -150172,7 +150769,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T04:16Z|Juszczyk recorded two catches on two targets for 27 yards and a touchdown in Sunday's win over the Dolphins.",
            "status": "Active",
            "date": "2026-09-23T04:16Z",
@@ -150191,7 +150788,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T04:30Z|Jones did not attempt a pass and lost two yards on two end-of-game kneel-down plays during Sunday's 35-13 victory over the Dolphins.",
            "status": "Active",
            "date": "2026-09-23T04:30Z",
@@ -150210,7 +150807,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-23T23:15Z|The 49ers placed West (undisclosed) on injured reserve Wednesday.",
            "status": "Injured Reserve",
            "date": "2026-09-23T23:15Z",
@@ -150229,7 +150826,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T02:01Z|The 49ers signed Jones to the active roster Wednesday from the Vikings' practice squad.",
            "status": "Active",
            "date": "2026-09-24T02:01Z",
@@ -150324,7 +150921,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T21:17Z|The 49ers placed Robinson (ankle) on injured reserve Saturday.",
            "status": "Injured Reserve",
            "date": "2026-09-26T21:17Z",
@@ -150362,7 +150959,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T18:56Z|Jones (foot) is active for Sunday's game against the Cardinals, Brooke Evans of the 49ers' official site reports.",
            "status": "Active",
            "date": "2026-09-27T18:56Z",
@@ -150400,7 +150997,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T22:20Z|Williams (neck) is questionable to return to Sunday's game against the Cardinals, Adam Schefter of ESPN reports.",
            "status": "Questionable",
            "date": "2026-09-27T22:20Z",
@@ -150419,7 +151016,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T22:40Z|Halton (ankle) is questionable to return to Sunday's game against Arizona, Jennifer Lee Chan of NBC Sports Bay Area reports.",
            "status": "Questionable",
            "date": "2026-09-27T22:40Z",
@@ -150438,7 +151035,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:57Z|Green (head) has returned to Sunday's game against the 49ers, Eric Branch of the San Francisco Chronicle reports.",
            "status": "Active",
            "date": "2026-09-27T22:57Z",
@@ -150457,7 +151054,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T22:58Z|Greenlaw (quadriceps) is questionable to return to Sunday's game against the Cardinals, Eric Branch of the San Francisco Chronicle reports.",
            "status": "Questionable",
            "date": "2026-09-27T22:58Z",
@@ -150476,12 +151073,88 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T23:45Z|Evans has a rib/oblique injury, head coach Kyle Shanahan revealed after Sunday's 36-30 win over the Cardinals, Matt Barrows of The Athletic reports.",
            "status": "Questionable",
            "date": "2026-09-27T23:45Z",
            "shortComment": "Evans has a rib/oblique injury, head coach Kyle Shanahan revealed after Sunday's 36-30 win over the Cardinals, Matt Barrows of The Athletic reports.",
            "longComment": "Evans was ruled out of the game due to a rib injury after absorbing a big hit, but it sounds like the veteran wide receiver is also dealing with an oblique injury. Further clarification on Evans' status will surface before the 3-0 49ers host the Broncos in Week 4."
+          }
+         ]
+        },
+        "639606": {
+         "recordId": "639606",
+         "athleteName": "Christian McCaffrey",
+         "positionAbbr": "RB",
+         "teamId": "25",
+         "teamAbbr": "SF",
+         "teamName": "San Francisco 49ers",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:14Z|McCaffrey rushed 15 times for 75 yards and a touchdown while bringing in four of five targets for 41 yards in the 49ers' 36-30 win over the Cardinals on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T01:14Z",
+           "shortComment": "McCaffrey rushed 15 times for 75 yards and a touchdown while bringing in four of five targets for 41 yards in the 49ers' 36-30 win over the Cardinals on Sunday.",
+           "longComment": "McCaffrey's carry total was modest by his standards, but he still outpaced backup Kaelon Black by 11 carries and four targets while also recording a one-yard touchdown run early in the third quarter. McCaffrey was highly efficient with his rushing opportunities, and he finished second in receptions and third in targets for the 49ers on the afternoon. San Francisco's pass-catching corps suffered further attrition this weekend -- Mike Evans exited the game with rib and oblique injuries, while Demarcus Robinson (ankle) was placed on injured reserve Saturday -- so McCaffrey could continue to see his pass-game work creep up in a Week 4 home showdown against the Broncos next Sunday."
+          }
+         ]
+        },
+        "639613": {
+         "recordId": "639613",
+         "athleteName": "Brock Purdy",
+         "positionAbbr": "QB",
+         "teamId": "25",
+         "teamAbbr": "SF",
+         "teamName": "San Francisco 49ers",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:35Z|Purdy completed 15 of 27 passes for 297 yards with four touchdowns and no interceptions and rushed twice for 34 yards in the 49ers' 36-30 win over the Cardinals on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T01:35Z",
+           "shortComment": "Purdy completed 15 of 27 passes for 297 yards with four touchdowns and no interceptions and rushed twice for 34 yards in the 49ers' 36-30 win over the Cardinals on Sunday.",
+           "longComment": "Purdy's completion percentage was below his usual standards, but the fifth-year signal-caller more than made up for it with some effective downfield passing and his quartet of scoring tosses. Purdy's yardage total also got a boost from an 80-yard hook-and-lateral play in the first quarter between Mike Evans and Deebo Samuel that the latter took all the way to the house from San Francisco's 20-yard line, which also served as the quarterback's first touchdown pass of the day. Purdy would go on to connect with Evans (23 yards) and George Kittle (10, 20 yards) for his other three scoring tosses, and he now boasts a 9:1 TD:INT and 789 passing yards over his first three games heading into a tough Week 4 home showdown against the Broncos next Sunday."
+          }
+         ]
+        },
+        "639615": {
+         "recordId": "639615",
+         "athleteName": "George Kittle",
+         "positionAbbr": "TE",
+         "teamId": "25",
+         "teamAbbr": "SF",
+         "teamName": "San Francisco 49ers",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:47Z|Kittle brought in six of seven targets for 82 yards and two touchdowns in the 49ers' 36-30 win over the Cardinals on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T01:47Z",
+           "shortComment": "Kittle brought in six of seven targets for 82 yards and two touchdowns in the 49ers' 36-30 win over the Cardinals on Sunday.",
+           "longComment": "Kittle led the 49ers in receptions, receiving yards and targets on the afternoon, marking what may have been his return to both full health and a full workload following last January's Achilles tear. The veteran tight end struck from 10 and 20 yards out for his pair of fourth-quarter scoring grabs, his first multi-TD tally since Week 11 of last season. Kittle has now hit or exceeded the 80-yard mark in consecutive games, and he should remain heavily involved in a Week 4 home matchup against a Broncos defense that tends to funnel passing toward the middle of the field due to its outstanding cornerback play."
+          }
+         ]
+        },
+        "639626": {
+         "recordId": "639626",
+         "athleteName": "Deebo Samuel Sr.",
+         "positionAbbr": "WR",
+         "teamId": "25",
+         "teamAbbr": "SF",
+         "teamName": "San Francisco 49ers",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T02:26Z|Samuel turned two carries into 14 yards and scored an 80-yard touchdown during Sunday's 36-30 win over Arizona.",
+           "status": "Active",
+           "date": "2026-09-28T02:26Z",
+           "shortComment": "Samuel turned two carries into 14 yards and scored an 80-yard touchdown during Sunday's 36-30 win over Arizona.",
+           "longComment": "Samuel started off his day with a bang, receiving a lateral from fellow wideout Mike Evans during a hook-and-ladder play by San Francisco in the first quarter, taking off down the sideline for an 80-yard score. Samuel failed to catch a pass and didn't garner a target for the first time in three games this year, but he still found a way to make the most of limited opportunities. Evans suffered a rib/oblique injury in the second quarter of the victory, and if he's sidelined moving forward, Samuel will stand to operate as the team's No. 1 option at wide receiver."
           }
          ]
         },
@@ -150552,7 +151225,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T18:55Z",
@@ -150571,7 +151244,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T18:55Z",
@@ -150590,7 +151263,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T18:55Z",
@@ -150609,7 +151282,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T18:55Z",
@@ -150628,7 +151301,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T18:55Z",
@@ -150647,7 +151320,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T18:55Z",
@@ -150666,7 +151339,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T18:55Z|inactive",
            "status": "Out",
            "date": "2026-09-27T18:55Z",
@@ -150749,7 +151422,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T02:22Z|Barner caught his only target for eight yards while also adding a one-yard rushing touchdown during Sunday's 31-7 win over Arizona.",
            "status": "Active",
            "date": "2026-09-22T02:22Z",
@@ -150768,7 +151441,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T02:47Z|Shaheed caught three of six targets for 35 yards while also adding a four-yard rush, 29 yards on three punt returns and two kickoff returns for 47 yards during Sunday's 31-7 win over Arizona.",
            "status": "Active",
            "date": "2026-09-22T02:47Z",
@@ -150787,7 +151460,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:19Z|Arroyo caught his only target for 17 yards during Sunday's 31-7 win over Arizona.",
            "status": "Active",
            "date": "2026-09-23T00:19Z",
@@ -150806,7 +151479,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:23Z|Horton played 22 of the Seahawks' 70 offensive snaps and did not show up in the box score otherwise during Sunday's 31-7 win over the Cardinals.",
            "status": "Active",
            "date": "2026-09-23T00:23Z",
@@ -150825,7 +151498,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T21:24Z|The Seahawks signed Thomas from the practice squad to the active roster Wednesday, John Boyle of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-23T21:24Z",
@@ -150844,7 +151517,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-24T00:52Z|The Seahawks placed Bradford (knee) on injured reserve Wednesday, John Boyle of the team's official site reports.",
            "status": "Injured Reserve",
            "date": "2026-09-24T00:52Z",
@@ -150901,7 +151574,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T00:23Z|Kupp (back) was a full participant at the Seahawks' practice Thursday, Brady Henderson of ESPN.com reports.",
            "status": "Active",
            "date": "2026-09-25T00:23Z",
@@ -150920,7 +151593,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T02:34Z|Jones (neck) was a full participant in Thursday's practice, Brady Henderson of ESPN.com reports.",
            "status": "Active",
            "date": "2026-09-25T02:34Z",
@@ -150958,7 +151631,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-25T20:50Z|Head coach Mike Macdonald said Friday that Charbonnet (knee) returning to practice next week is potentially \"on the table,\" Corbin Smith of SI.com reports.",
            "status": "Out",
            "date": "2026-09-25T20:50Z",
@@ -150977,7 +151650,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T22:54Z|Lock will return to a backup role for Sunday's game at Washington after coach Mike Macdonald said Friday that Sam Darnold (glute) is \"going to play,\" John Boyle of the Seahawks' official site reports.",
            "status": "Active",
            "date": "2026-09-25T22:54Z",
@@ -150996,7 +151669,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T23:05Z|Holani (knee) doesn't have a designation for Sunday's contest at Washington.",
            "status": "Active",
            "date": "2026-09-25T23:05Z",
@@ -151015,7 +151688,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T23:31Z|Wilson will be the Seahawks' RB2 for Sunday's game against the Commanders after Jadarian Price (chest) was cleared to play, John Boyle of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-25T23:31Z",
@@ -151072,7 +151745,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T21:11Z|The Seahawks elevated Jones from the practice squad to the active roster Saturday ahead of Sunday's game against the Commanders, John Boyle of the Seahawks' official site reports.",
            "status": "Active",
            "date": "2026-09-26T21:11Z",
@@ -151091,7 +151764,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:36Z|Pili (concussion) has been ruled out for Sunday's game against the Commanders.",
            "status": "Out",
            "date": "2026-09-27T15:36Z",
@@ -151110,7 +151783,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:40Z|Milroe (coach's decision) is inactive for Sunday's game against Washington.",
            "status": "Out",
            "date": "2026-09-27T15:40Z",
@@ -151129,7 +151802,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:46Z|Foster (coach's decision) is inactive for Sunday's game versus the Commanders.",
            "status": "Out",
            "date": "2026-09-27T15:46Z",
@@ -151148,7 +151821,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T18:41Z|Emmanwori (hamstring) returned to Sunday's game against the Commanders, John Boyle of the Seahawks' official site reports.",
            "status": "Active",
            "date": "2026-09-27T18:41Z",
@@ -151167,7 +151840,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:21Z|Darnold completed 31 of 45 passes for 379 yards and four touchdowns with two interceptions in Sunday's 33-31 loss to the Commanders. He added five yards on his only carry.",
            "status": "Active",
            "date": "2026-09-27T23:21Z",
@@ -151186,7 +151859,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:25Z|Smith-Njigba caught 10 of 14 targets for 128 yards and two touchdowns in Sunday's 33-31 loss to the Commanders.",
            "status": "Active",
            "date": "2026-09-27T23:25Z",
@@ -151205,7 +151878,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:34Z|Price carried the ball five times for 15 yards and caught one of three targets for seven yards in Sunday's 33-31 loss to the Commanders.",
            "status": "Active",
            "date": "2026-09-27T23:34Z",
@@ -151224,7 +151897,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T23:26Z|",
            "status": "Active",
            "date": "2026-09-24T23:26Z",
@@ -151300,7 +151973,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:31Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:31Z",
@@ -151319,7 +151992,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:31Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:31Z",
@@ -151338,7 +152011,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:31Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:31Z",
@@ -151357,7 +152030,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:31Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:31Z",
@@ -151421,7 +152094,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T16:41Z|Killebrew (concussion) is active for Sunday's game against the Browns, Brianna Dix of the Buccaneers' official site reports.",
            "status": "Active",
            "date": "2026-09-20T16:41Z",
@@ -151497,7 +152170,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T00:01Z|McLaughlin made all four of his field-goal attempts and his lone extra-point try during the Buccaneers' 23-19 loss to the Browns on Sunday.",
            "status": "Active",
            "date": "2026-09-21T00:01Z",
@@ -151516,7 +152189,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T01:56Z|Gainwell rushed two times for 10 yards in Sunday's 23-19 loss to the Browns. He added three catches for five yards on four targets.",
            "status": "Active",
            "date": "2026-09-21T01:56Z",
@@ -151535,7 +152208,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T02:11Z|Godwin caught all three of his targets for 46 yards in Tampa Bay's 23-19 loss to the Browns on Sunday. He added 12 rushing yards on one attempt.",
            "status": "Active",
            "date": "2026-09-21T02:11Z",
@@ -151554,7 +152227,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T23:40Z|Otton caught five of six targets for 38 yards during the Buccaneers' 23-19 loss to the Browns on Sunday.",
            "status": "Active",
            "date": "2026-09-21T23:40Z",
@@ -151573,7 +152246,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T23:49Z|Hurst caught two passes (on seven targets) for 27 yards during the Buccaneers' 23-19 loss to the Browns on Sunday.",
            "status": "Active",
            "date": "2026-09-21T23:49Z",
@@ -151611,7 +152284,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T01:56Z|Tucker played one special-teams snap in Sunday's 23-19 loss to the Browns.",
            "status": "Active",
            "date": "2026-09-22T01:56Z",
@@ -151630,7 +152303,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:28Z|Smith recorded five total tackles (four solo), including three for a loss, during Sunday's 23-19 defeat to Cleveland.",
            "status": "Active",
            "date": "2026-09-23T02:28Z",
@@ -151649,7 +152322,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:23Z|Johnson caught one of his four targets for 49 yards and returned two punts for 14 yards in Sunday's 23-19 loss to the Browns.",
            "status": "Active",
            "date": "2026-09-23T03:23Z",
@@ -151668,7 +152341,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T01:19Z|Parrish (back) was full participant at the Buccaneers' practice Wednesday.",
            "status": "Active",
            "date": "2026-09-24T01:19Z",
@@ -151725,7 +152398,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T20:14Z|Dennis will start at inside linebacker against the Vikings on Sunday due to the absence of Jeremiah Trotter (shoulder), Rick Stroud of the Tampa Bay Times reports.",
            "status": "Active",
            "date": "2026-09-27T20:14Z",
@@ -151744,7 +152417,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T20:55Z|McMillan (knee) has been ruled out for the rest of Sunday's game against the Vikings, PewterReport.com reports.",
            "status": "Questionable",
            "date": "2026-09-27T20:55Z",
@@ -151763,12 +152436,69 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T23:52Z|Mayfield is dealing with a dislocated right thumb and will have an MRI on the injury, head coach Todd Bowles relayed after Sunday's 23-16 loss to the Vikings, Greg Auman of Fox Sports reports.",
            "status": "Questionable",
            "date": "2026-09-27T23:52Z",
            "shortComment": "Mayfield is dealing with a dislocated right thumb and will have an MRI on the injury, head coach Todd Bowles relayed after Sunday's 23-16 loss to the Vikings, Greg Auman of Fox Sports reports.",
            "longComment": "Mayfield exited Sunday's loss late in the fourth quarter after sustaining the thumb injury to his throwing hand. Jalon Daniels played Tampa Bay's final possession after Mayfield got hurt. The undrafted rookie backup failed to complete a pass and threw an interception on the game's final play. A recovery timeline for Mayfield will likely be established based on the results of his upcoming MRI, but Daniels will likely get a chance to make his first NFL start when the 0-3 Buccaneers host the 1-2 Packers in Week 4."
+          }
+         ]
+        },
+        "639588": {
+         "recordId": "639588",
+         "athleteName": "Bucky Irving",
+         "positionAbbr": "RB",
+         "teamId": "27",
+         "teamAbbr": "TB",
+         "teamName": "Tampa Bay Buccaneers",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:45Z|Irving notched 15 carries for 46 yards and two catches (on four targets) for 12 yards during Sunday's 23-16 loss to the Vikings.",
+           "status": "Active",
+           "date": "2026-09-28T00:45Z",
+           "shortComment": "Irving notched 15 carries for 46 yards and two catches (on four targets) for 12 yards during Sunday's 23-16 loss to the Vikings.",
+           "longComment": "Irving now has earned at least 15 touches in each of the Buccaneers' first three games of the campaign., but his 58 yards from scrimmage represent a season low to date. In the wake of QB Baker Mayfield dislocating his right throwing thumb late in the contest, it stands to reason that Tampa Bay will rely more on its ground game with undrafted rookie Jalon Daniels likely taking over under center next Sunday against the Packers and potentially beyond that point. In such a scenario, Irving could be poised for more volume, though his efficiency may take a hit due to facing more stacked boxes."
+          }
+         ]
+        },
+        "639593": {
+         "recordId": "639593",
+         "athleteName": "Jalon Daniels",
+         "positionAbbr": "QB",
+         "teamId": "27",
+         "teamAbbr": "TB",
+         "teamName": "Tampa Bay Buccaneers",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:53Z|Daniels took over for an injured Baker Mayfield (thumb) during Sunday's 23-16 defeat to the Vikings, with the former failing to complete any of his three passes with an interception and recording one nine-yard rush.",
+           "status": "Active",
+           "date": "2026-09-28T00:53Z",
+           "shortComment": "Daniels took over for an injured Baker Mayfield (thumb) during Sunday's 23-16 defeat to the Vikings, with the former failing to complete any of his three passes with an interception and recording one nine-yard rush.",
+           "longComment": "Mayfield threw a pick with just under two minutes left in the matchup and then remained down as he favored his right hand before immediately heading to the locker room. Daniels, an undrafted rookie, took over the offense with 28 seconds remaining and the Buccaneers down seven points, but he was unable to lead a game-winning drive while tossing an interception of his own on the last play of the contest. Head coach Todd Bowles told Greg Auman of Fox Sports that Mayfield sustained a dislocated thumb on his right throwing hand, and if the veteran signal-caller does miss time, Daniels would be poised for his first career start next Sunday against the Packers."
+          }
+         ]
+        },
+        "639610": {
+         "recordId": "639610",
+         "athleteName": "Emeka Egbuka",
+         "positionAbbr": "WR",
+         "teamId": "27",
+         "teamAbbr": "TB",
+         "teamName": "Tampa Bay Buccaneers",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:24Z|Egbuka recorded five catches (on nine targets) for 62 yards during Sunday's 23-16 loss to the Vikings.",
+           "status": "Active",
+           "date": "2026-09-28T01:24Z",
+           "shortComment": "Egbuka recorded five catches (on nine targets) for 62 yards during Sunday's 23-16 loss to the Vikings.",
+           "longComment": "Egbuka turned his highest target count in a game this season into his second-most receiving yards (behind Week 1's 63 such yards), but the Buccaneers' passing attack again was inconsistent under the direction of QB Baker Mayfield (17-for-34 for 217 yards, one TD and one interception). Mayfield suffered a dislocated thumb on his right throwing hand on the team's second-to-last possession, so if the veteran signal-caller needs to miss any time, Egubka then would be on the receiving end of passes from undrafted rookie Jalon Daniels, who didn't complete any of his three attempts Sunday."
           }
          ]
         },
@@ -151782,7 +152512,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:09Z|",
            "status": "Active",
            "date": "2026-09-25T20:09Z",
@@ -151801,7 +152531,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:45Z|",
            "status": "Active",
            "date": "2026-09-21T18:45Z",
@@ -151877,7 +152607,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:45Z|",
            "status": "Active",
            "date": "2026-09-21T18:45Z",
@@ -151915,7 +152645,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:02Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:02Z",
@@ -151934,7 +152664,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:02Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:02Z",
@@ -151953,7 +152683,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:02Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:02Z",
@@ -151972,7 +152702,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:02Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:02Z",
@@ -151991,7 +152721,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:02Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:02Z",
@@ -152010,7 +152740,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:02Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:02Z",
@@ -152112,7 +152842,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T03:59Z|Sinnott caught his only target for six yards in Sunday's 37-20 loss to the Cowboys.",
            "status": "Active",
            "date": "2026-09-22T03:59Z",
@@ -152131,7 +152861,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:47Z|Styles recorded three total tackles during Sunday's 37-20 loss to the Cowboys.",
            "status": "Active",
            "date": "2026-09-23T01:47Z",
@@ -152150,7 +152880,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:58Z|Bates played 22 offensive snaps and 14 special-teams snaps in Sunday's 37-20 loss to the Cowboys.",
            "status": "Active",
            "date": "2026-09-23T03:58Z",
@@ -152169,7 +152899,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T04:02Z|Burks failed to catch his lone target in Sunday's 37-20 loss to the Cowboys.",
            "status": "Active",
            "date": "2026-09-23T04:02Z",
@@ -152188,7 +152918,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T04:02Z|Yankoff caught his only target for 14 yards in Sunday's Week 2 loss to Dallas.",
            "status": "Active",
            "date": "2026-09-23T04:02Z",
@@ -152226,7 +152956,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T02:56Z|Coleman (finger) was a full participant at the Commanders' practice Wednesday.",
            "status": "Active",
            "date": "2026-09-24T02:56Z",
@@ -152245,7 +152975,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T03:17Z|Reaves (knee) was a full participant in practice Thursday.",
            "status": "Active",
            "date": "2026-09-25T03:17Z",
@@ -152340,7 +153070,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T23:38Z|Kinlaw (shoulder) does not have any injury designation ahead of Sunday's game against the Seahawks.",
            "status": "Active",
            "date": "2026-09-25T23:38Z",
@@ -152378,7 +153108,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:37Z|Jean-Baptiste (coach's decision) is inactive for Sunday's game against the Seahawks.",
            "status": "Out",
            "date": "2026-09-27T16:37Z",
@@ -152416,7 +153146,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:23Z|Chenal (neck) won't return to Sunday's game against the Seahawks, Nicki Jhabvala of The Athletic reports.",
            "status": "Out",
            "date": "2026-09-27T19:23Z",
@@ -152435,7 +153165,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T19:33Z|White (shoulder) has returned to Sunday's game against the Seahawks in the third quarter, JP Finlay of NBC Sports Washington reports.",
            "status": "Active",
            "date": "2026-09-27T19:33Z",
@@ -152454,7 +153184,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:43Z|Mariota completed 19 of 31 passes for 183 yards and three touchdowns in Sunday's 33-31 win over the Seahawks. He added 11 rushing yards on five carries.",
            "status": "Active",
            "date": "2026-09-27T23:43Z",
@@ -152473,7 +153203,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:47Z|Croskey-Merritt carried the ball 19 times for 36 yards and caught his only target for seven yards in Sunday's 33-31 win over the Seahawks.",
            "status": "Active",
            "date": "2026-09-27T23:47Z",
@@ -152492,7 +153222,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T23:50Z|McLaurin caught six of nine targets for 77 yards and a touchdown in Sunday's 33-31 win over the Seahawks.",
            "status": "Active",
            "date": "2026-09-27T23:50Z",
@@ -152511,7 +153241,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:22Z|",
            "status": "Active",
            "date": "2026-09-25T21:22Z",
@@ -152530,7 +153260,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:22Z|",
            "status": "Active",
            "date": "2026-09-25T21:22Z",
@@ -152549,7 +153279,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:22Z|",
            "status": "Active",
            "date": "2026-09-25T21:22Z",
@@ -152568,7 +153298,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T21:22Z|",
            "status": "Active",
            "date": "2026-09-25T21:22Z",
@@ -152587,7 +153317,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T00:33Z|",
            "status": "Active",
            "date": "2026-09-25T00:33Z",
@@ -152606,7 +153336,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T00:33Z|",
            "status": "Active",
            "date": "2026-09-25T00:33Z",
@@ -152644,7 +153374,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:35Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:35Z",
@@ -152663,7 +153393,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:35Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:35Z",
@@ -152682,7 +153412,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:35Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:35Z",
@@ -152701,7 +153431,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:35Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:35Z",
@@ -152720,7 +153450,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:35Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:35Z",
@@ -152841,7 +153571,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:50Z|Dillon handled three carries for minus-3 yards during Sunday's 34-3 win at Atlanta. He also recorded a tackle in punt coverage.",
            "status": "Active",
            "date": "2026-09-23T01:50Z",
@@ -152860,7 +153590,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-23T13:10Z|Brooks is expected to undergo surgery Wednesday to repair a core-muscle injury and is likely to miss at least six weeks, Ian Rapoport of NFL Network reports.",
            "status": "Injured Reserve",
            "date": "2026-09-23T13:10Z",
@@ -152879,7 +153609,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T23:26Z|Jones (back) was a full participant at the Panthers' practice Wednesday.",
            "status": "Active",
            "date": "2026-09-23T23:26Z",
@@ -152898,7 +153628,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T00:09Z|The Panthers signed Simmons to the active roster from their practice squad Wednesday, Darin Gantt of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-24T00:09Z",
@@ -152917,7 +153647,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T02:04Z|Brown (back) was a full participant in Wednesday's practice.",
            "status": "Active",
            "date": "2026-09-24T02:04Z",
@@ -152936,7 +153666,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T02:09Z|Gipson (head) was a full participant in Wednesday's practice.",
            "status": "Active",
            "date": "2026-09-24T02:09Z",
@@ -152974,7 +153704,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T22:34Z|Phillips (back) was a full participant in Thursday's practice.",
            "status": "Active",
            "date": "2026-09-24T22:34Z",
@@ -153050,7 +153780,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T17:56Z|The Panthers elevated Moore from the practice squad to the active roster Saturday ahead of Sunday's game against the Browns, Darin Gantt of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-26T17:56Z",
@@ -153069,7 +153799,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T17:58Z|The Panthers elevated Tyus from the practice squad to the active roster Saturday ahead of Sunday's game against the Browns, Darin Gantt of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-26T17:58Z",
@@ -153088,7 +153818,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T18:01Z|The Panthers placed Cherelus (shoulder) on injured reserve Saturday, Darin Gantt of the team's official site reports.",
            "status": "Injured Reserve",
            "date": "2026-09-26T18:01Z",
@@ -153107,7 +153837,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T18:03Z|The Panthers signed Njongmeta from the practice squad to the active roster Saturday, Darin Gantt of the team's official site reports.",
            "status": "Active",
            "date": "2026-09-26T18:03Z",
@@ -153145,7 +153875,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:45Z|Legette (knee) is inactive for Sunday's game at Cleveland, Darin Gantt of the Panthers' official site reports.",
            "status": "Out",
            "date": "2026-09-27T15:45Z",
@@ -153164,7 +153894,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:53Z|Sanders (coach's decision) is inactive for Sunday's game against the Browns, Darin Gantt of the Panthers' official site reports.",
            "status": "Out",
            "date": "2026-09-27T15:53Z",
@@ -153183,7 +153913,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:55Z|King (coach's decision) is inactive but will serve as the emergency third quarterback against the Browns on Sunday, Darin Gantt of the Panthers' official site reports.",
            "status": "Out",
            "date": "2026-09-27T15:55Z",
@@ -153202,7 +153932,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T18:01Z|Jackson (groin) has been ruled out for the rest of Sunday's game against the Browns, Kassidy Hill of the Panthers' official site reports.",
            "status": "Questionable",
            "date": "2026-09-27T18:01Z",
@@ -153221,7 +153951,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T18:15Z|Lewis (elbow) is questionable to return to Sunday's game against Cleveland, Alex Zietlow of The Charlotte Observer reports.",
            "status": "Questionable",
            "date": "2026-09-27T18:15Z",
@@ -153240,7 +153970,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T21:06Z|Coker (quadriceps) does not think his injury is serious, Joe Person of The Athletic reports.",
            "status": "Questionable",
            "date": "2026-09-27T21:06Z",
@@ -153259,12 +153989,69 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:19Z|McMillan brought in two of five targets for 17 yards in the Panthers' 21-18 loss to the Browns on Sunday.",
            "status": "Active",
            "date": "2026-09-27T22:19Z",
            "shortComment": "McMillan brought in two of five targets for 17 yards in the Panthers' 21-18 loss to the Browns on Sunday.",
            "longComment": "The Panthers' No. 1 receiver fell victim to a Browns defense that played aggressively for the second straight game. Cleveland brought pressure on Bryce Young throughout while recording a trio of sacks and picking him off once, and McMillan's production suffered as a result. McMillan's catch and receiving yardage totals tied for and qualified as the second-lowest figures of his career, respectively, making it an all-around forgettable afternoon for the second-year wideout. McMillan and the rest of the Panthers offense will look to regroup and atone for the stumble in a Week 4 primetime home showdown against the Lions next Sunday night, and McMillan will be in line for an even heavier workload than usual if Jalen Coker (quadriceps) is unable to suit up."
+          }
+         ]
+        },
+        "639579": {
+         "recordId": "639579",
+         "athleteName": "Chuba Hubbard",
+         "positionAbbr": "RB",
+         "teamId": "29",
+         "teamAbbr": "CAR",
+         "teamName": "Carolina Panthers",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:20Z|Hubbard rushed 19 times for 82 yards and brought in all four targets for 28 yards in the Panthers' 21-18 loss to the Browns on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T00:20Z",
+           "shortComment": "Hubbard rushed 19 times for 82 yards and brought in all four targets for 28 yards in the Panthers' 21-18 loss to the Browns on Sunday.",
+           "longComment": "As expected, Hubbard dominated the touches out of the Panthers backfield, outpacing AJ Dillon by 15 carries. Hubbard also played his customary pass-game role with efficacy, recording a new season high in receptions along the way. Hubbard has also upped his rushing yardage total over that of the previous contest in each game so far, and considering Jonathon Brooks (IR, abdomen) will remain unavailable for the foreseeable future, the former lines up for another workhorse role in a Week 4 home showdown against the Lions next Sunday night."
+          }
+         ]
+        },
+        "639580": {
+         "recordId": "639580",
+         "athleteName": "Bryce Young",
+         "positionAbbr": "QB",
+         "teamId": "29",
+         "teamAbbr": "CAR",
+         "teamName": "Carolina Panthers",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:24Z|Young completed 26 of 48 passes for 291 yards with one touchdown and one interception in the Panthers' 21-18 loss to the Browns on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T00:24Z",
+           "shortComment": "Young completed 26 of 48 passes for 291 yards with one touchdown and one interception in the Panthers' 21-18 loss to the Browns on Sunday.",
+           "longComment": "Young's passing yardage total was impressive in defeat, especially considering he lost No. 2 receiver Jalen Coker to a quadriceps injury during the contest. However, the fourth-year signal-caller also struggled at times against an aggressive Browns defense that sacked him three times and recorded a game-sealing interception at Cleveland's 46-yard line. After the game, per Joe Person of The Athletic, head coach Dave Canales told reporters that a lower-body injury appeared to impact Young on some throws, which may help explain some of the struggles he endured. Young still has an impressive 7:2 TD:INT and has thrown for 939 yards over his first three games heading into a Week 4 home clash with the Lions next Sunday night."
+          }
+         ]
+        },
+        "639586": {
+         "recordId": "639586",
+         "athleteName": "Darren Waller",
+         "positionAbbr": "TE",
+         "teamId": "29",
+         "teamAbbr": "CAR",
+         "teamName": "Carolina Panthers",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:42Z|Waller brought in five of eight targets for 51 yards in the Panthers' 21-18 loss to the Browns on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T00:42Z",
+           "shortComment": "Waller brought in five of eight targets for 51 yards in the Panthers' 21-18 loss to the Browns on Sunday.",
+           "longComment": "Waller continued to click frequently with Bryce Young, leading the Panthers in receptions and targets while finishing second in receiving yards with totals that all qualified as season highs. The veteran tight end has proven to be a seamless fit in head coach Dave Canales' offense, recording 10 receptions for 112 yards and two touchdowns on 13 targets over the first three games. Waller should continue to fill a prominent role in a Week 4 home matchup against the high-powered Lions next Sunday night."
           }
          ]
         },
@@ -153373,7 +154160,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:44Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:44Z",
@@ -153392,7 +154179,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:44Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:44Z",
@@ -153411,7 +154198,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:44Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:44Z",
@@ -153430,7 +154217,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:44Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:44Z",
@@ -153456,7 +154243,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-17T00:17Z|The Jaguars placed Green (elbow) on injured reserve Wednesday.",
            "status": "Injured Reserve",
            "date": "2026-09-17T00:17Z",
@@ -153475,7 +154262,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-20T18:57Z|Koziol (coach's decision) is inactive for Sunday's game against the Broncos, John Oehser of the Jaguars' official site reports.",
            "status": "Active",
            "date": "2026-09-20T18:57Z",
@@ -153513,7 +154300,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T02:37Z|Rodriguez rushed six times for 13 yards in the Jaguars' 20-13 loss to the Broncos on Sunday.",
            "status": "Active",
            "date": "2026-09-21T02:37Z",
@@ -153608,7 +154395,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T04:00Z|Strange caught both of his targets for 17 yards in Sunday's 20-13 loss to the Broncos.",
            "status": "Active",
            "date": "2026-09-21T04:00Z",
@@ -153627,7 +154414,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T15:30Z|Little went 2-for-3 on field-goal attempts and made his lone PAT in Sunday's 20-13 loss to the Broncos.",
            "status": "Active",
            "date": "2026-09-21T15:30Z",
@@ -153646,7 +154433,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T00:44Z|Hunter played six offensive snaps but didn't record a target during the Jaguars' 20-13 loss to the Broncos on Sunday.",
            "status": "Active",
            "date": "2026-09-22T00:44Z",
@@ -153665,7 +154452,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:05Z|Oluokun recorded seven total tackles (five solo) during Sunday's 20-13 loss to the Broncos.",
            "status": "Active",
            "date": "2026-09-23T01:05Z",
@@ -153684,7 +154471,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:29Z|Cameron returned two kickoffs for 50 yards in Sunday's 20-13 loss to the Broncos.",
            "status": "Active",
            "date": "2026-09-23T03:29Z",
@@ -153703,7 +154490,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T03:47Z|Abdullah carried the ball three times for 11 yards and caught his only target for two yards during Sunday's 20-13 loss to the Broncos.",
            "status": "Active",
            "date": "2026-09-23T03:47Z",
@@ -153741,7 +154528,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T22:02Z|Allen (hip) does not carry an injury designation into Sunday's game against the Patriots.",
            "status": "Active",
            "date": "2026-09-25T22:02Z",
@@ -153760,7 +154547,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T22:06Z|Hamilton (back) does not have an injury designation for Sunday's game against the Patriots.",
            "status": "Active",
            "date": "2026-09-25T22:06Z",
@@ -153779,7 +154566,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T21:08Z|Ewers is set to be the backup quarterback for the Jaguars in Sunday's game against the Patriots, Ryan O'Halloran of The Florida Times-Union reports.",
            "status": "Active",
            "date": "2026-09-26T21:08Z",
@@ -153798,7 +154585,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:37Z|Regis (elbow) is inactive Week 3 against the Patriots.",
            "status": "Out",
            "date": "2026-09-27T15:37Z",
@@ -153817,7 +154604,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T16:34Z|Williams (coach's decision) is inactive for Sunday's game against the Patriots.",
            "status": "Out",
            "date": "2026-09-27T16:34Z",
@@ -153836,12 +154623,88 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:52Z|Tuten rushed 15 times for 73 yards and a touchdown and brought in both targets for 17 yards in the Jaguars' 35-6 win over the Patriots on Sunday.",
            "status": "Active",
            "date": "2026-09-27T21:52Z",
            "shortComment": "Tuten rushed 15 times for 73 yards and a touchdown and brought in both targets for 17 yards in the Jaguars' 35-6 win over the Patriots on Sunday.",
            "longComment": "Serving as the clear lead back once again, Tuten proved himself worthy of the role with a crisp performance that saw him consistently generate useful gains versus a talented Patriots front seven. Tuten capped off his fantasy-friendly effort with his second rushing touchdown of the campaign, a one-yard run with just over eight minutes remaining to close out the scoring on the afternoon. Tuten is averaging an impressive 4.7 yards per carry and is averaging a solid 16 touches through three games, rendering him an appealing option in all formats heading into a Week 4 road showdown against the Bengals next Sunday."
+          }
+         ]
+        },
+        "639595": {
+         "recordId": "639595",
+         "athleteName": "Parker Washington",
+         "positionAbbr": "WR",
+         "teamId": "30",
+         "teamAbbr": "JAX",
+         "teamName": "Jacksonville Jaguars",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:55Z|Washington secured three of five targets for 40 yards and a touchdown in the Jaguars' 35-6 win over the Patriots on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T00:55Z",
+           "shortComment": "Washington secured three of five targets for 40 yards and a touchdown in the Jaguars' 35-6 win over the Patriots on Sunday.",
+           "longComment": "The dynamic slot receiver tied for second in receptions and targets on the afternoon for Jacksonville while also finishing as the runner-up in receiving yards. Washington also was on the receiving end of one of Trevor Lawrence's three touchdown passes of the day, recording a 17-yard scoring grab late in the third quarter. Washington's totals Sunday were season lows across the board, but he's off to a hot start with a 15-221-2 receiving line over the first three games heading into a Week 4 road showdown against the Bengals next Sunday."
+          }
+         ]
+        },
+        "639597": {
+         "recordId": "639597",
+         "athleteName": "Trevor Lawrence",
+         "positionAbbr": "QB",
+         "teamId": "30",
+         "teamAbbr": "JAX",
+         "teamName": "Jacksonville Jaguars",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:00Z|Lawrence completed 19 of 29 passes for 182 yards with three touchdowns and one interception while adding four rushes for 25 yards in the Jaguars' 35-6 win over the Patriots on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T01:00Z",
+           "shortComment": "Lawrence completed 19 of 29 passes for 182 yards with three touchdowns and one interception while adding four rushes for 25 yards in the Jaguars' 35-6 win over the Patriots on Sunday.",
+           "longComment": "Lawrence's passing yardage continued its downward trend for the second straight game, but the 2021 first overall pick threw multiple touchdown passes for the second time to open the season. Lawrence connected with Josh Cameron (12 yards), Jakobi Meyers (10 yards) and Parker Washington (17 yards) for his trio of scoring tosses, and he offered solid supplemental fantasy production with his legs. Lawrence will take 616 passing yards and a 7:2 TD:INT into a Week 4 road showdown against Joe Burrow and the Bengals next Sunday."
+          }
+         ]
+        },
+        "639602": {
+         "recordId": "639602",
+         "athleteName": "Brian Thomas Jr.",
+         "positionAbbr": "WR",
+         "teamId": "30",
+         "teamAbbr": "JAX",
+         "teamName": "Jacksonville Jaguars",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T01:08Z|Thomas secured his only target for eight yards in the Jaguars' 35-6 win over the Patriots on Sunday.",
+           "status": "Active",
+           "date": "2026-09-28T01:08Z",
+           "shortComment": "Thomas secured his only target for eight yards in the Jaguars' 35-6 win over the Patriots on Sunday.",
+           "longComment": "Thomas' minimal role in the Jaguars' air attack was glaring on a day when Trevor Lawrence threw three touchdown passes. All of Jakobi Meyers, Parker Washington, Brenton Strange, Josh Cameron and LeQuint Allen outpaced Thomas with at least one aspect of their receiving lines, the latter has a modest 7-88-0 line on 12 targets over the first three games of the campaign. Given the complementary role he seems to have fallen into, Thomas' prospects are generally dim heading into a Week 4 road matchup against the Bengals next Sunday."
+          }
+         ]
+        },
+        "639623": {
+         "recordId": "639623",
+         "athleteName": "Jakobi Meyers",
+         "positionAbbr": "WR",
+         "teamId": "30",
+         "teamAbbr": "JAX",
+         "teamName": "Jacksonville Jaguars",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T02:09Z|Meyers caught seven of eight targets for 64 yards and a touchdown during Sunday's 35-6 win over New England.",
+           "status": "Active",
+           "date": "2026-09-28T02:09Z",
+           "shortComment": "Meyers caught seven of eight targets for 64 yards and a touchdown during Sunday's 35-6 win over New England.",
+           "longComment": "Meyers led the team in targets, most notably reeling in a 10-yard score from quarterback Trevor Lawrence in the second quarter. The touchdown was the second of the year for the wide receiver, and he has now caught 10 of 11 targets for 132 yards over three contests in 2026. Parker Washington has established himself as Lawrence's favorite target, but Meyers has found himself on equal footing with fellow wideout Brian Thomas as an unpredictable fantasy asset early in the season."
           }
          ]
         },
@@ -153874,7 +154737,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:43Z|",
            "status": "Active",
            "date": "2026-09-25T20:43Z",
@@ -153893,7 +154756,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:42Z|",
            "status": "Active",
            "date": "2026-09-25T20:42Z",
@@ -153988,7 +154851,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:31Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:31Z",
@@ -154007,7 +154870,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:31Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:31Z",
@@ -154026,7 +154889,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:31Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:31Z",
@@ -154045,7 +154908,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:31Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:31Z",
@@ -154185,7 +155048,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T02:32Z|Hill rushed twice for six yards and caught two targets for 12 yards in Sunday's 24-17 loss to the Saints.",
            "status": "Active",
            "date": "2026-09-22T02:32Z",
@@ -154204,7 +155067,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T02:59Z|Wester caught one of his two targets for 14 yards in Sunday's 24-17 loss to the Saints.",
            "status": "Active",
            "date": "2026-09-22T02:59Z",
@@ -154223,7 +155086,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-22T03:09Z|Walker caught one of his two targets for 47 yards in Sunday's 24-17 loss to the Saints.",
            "status": "Active",
            "date": "2026-09-22T03:09Z",
@@ -154261,7 +155124,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T00:51Z|Smith recorded eight tackles (two solo) during the Ravens' 24-17 loss to the Saints on Sunday.",
            "status": "Active",
            "date": "2026-09-23T00:51Z",
@@ -154280,7 +155143,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T01:00Z|Hamilton tallied 13 tackles (seven solo) during the Ravens' 24-17 loss to the Saints on Sunday.",
            "status": "Active",
            "date": "2026-09-23T01:00Z",
@@ -154299,7 +155162,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T00:44Z|Madubuike (neck) was a full participant in Wednesday's practice.",
            "status": "Active",
            "date": "2026-09-24T00:44Z",
@@ -154318,7 +155181,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T23:36Z|Buchanan (knee) is expected to play in Sunday's game versus Dallas, Matt Zenitz of CBSSports.com reports.",
            "status": "Active",
            "date": "2026-09-24T23:36Z",
@@ -154356,7 +155219,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T22:44Z|Moore (ankle) does not carry an injury designation into Sunday's game against the Cowboys.",
            "status": "Active",
            "date": "2026-09-25T22:44Z",
@@ -154432,7 +155295,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:08Z|Fagnano (coach's decision) is inactive for Sunday's game against Dallas but will be available as the team's emergency quarterback if needed.",
            "status": "Out",
            "date": "2026-09-27T19:08Z",
@@ -154451,7 +155314,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:14Z|Sarratt (coach's decision) is inactive for Sunday's game against Dallas.",
            "status": "Out",
            "date": "2026-09-27T19:14Z",
@@ -154470,12 +155333,88 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T22:24Z|Andrews (hand) returned after halftime of Sunday's game against the Cowboys in Rio de Janeiro, Jeff Zrebiec of The Athletic reports.",
            "status": "Active",
            "date": "2026-09-27T22:24Z",
            "shortComment": "Andrews (hand) returned after halftime of Sunday's game against the Cowboys in Rio de Janeiro, Jeff Zrebiec of The Athletic reports.",
            "longComment": "Andrews missed some time in the second quarter due to a hand injury, but it won't stop him from rejoining Baltimore's offense after a spell in the locker room. He'll be looking to add to his one catch (on three targets) for nine yards prior to his exit."
+          }
+         ]
+        },
+        "639583": {
+         "recordId": "639583",
+         "athleteName": "Lamar Jackson",
+         "positionAbbr": "QB",
+         "teamId": "33",
+         "teamAbbr": "BAL",
+         "teamName": "Baltimore Ravens",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:36Z|Jackson completed 15 of 20 passes for 186 yards and two touchdowns while rushing six times for 50 yards in Sunday's 34-31 win over the Cowboys.",
+           "status": "Active",
+           "date": "2026-09-28T00:36Z",
+           "shortComment": "Jackson completed 15 of 20 passes for 186 yards and two touchdowns while rushing six times for 50 yards in Sunday's 34-31 win over the Cowboys.",
+           "longComment": "Jackson threw a four-yard touchdown pass to Chris Moore in the third quarter and a two-yard touchdown pass to Matthew Hibner with 1:30 remaining in the fourth quarter, but his most memorable pass was a 27-yarder to Zay Flowers on the game's penultimate play, which set up Tyler Loop's game-winning 56-yard field goal after the Ravens got the ball with seven seconds left in a tie game. Following Sunday's win over the Cowboys in Rio de Janeiro, Jackson and the Ravens will fly home from Brazil to host the 0-3 Titans in Week 4."
+          }
+         ]
+        },
+        "639584": {
+         "recordId": "639584",
+         "athleteName": "Derrick Henry",
+         "positionAbbr": "RB",
+         "teamId": "33",
+         "teamAbbr": "BAL",
+         "teamName": "Baltimore Ravens",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:37Z|Henry rushed 26 times for 89 yards and two touchdowns while catching his lone target for no gain in Sunday's 34-31 win over the Cowboys.",
+           "status": "Active",
+           "date": "2026-09-28T00:37Z",
+           "shortComment": "Henry rushed 26 times for 89 yards and two touchdowns while catching his lone target for no gain in Sunday's 34-31 win over the Cowboys.",
+           "longComment": "Henry scored a four-yard rushing touchdown in the first quarter and a three-yard rushing touchdown in the second quarter, but he was denied the hat trick in the fourth quarter, when a would-be third rushing score was ruled down at the 1-yard line on replay, and Henry's subsequent effort to get in on fourth down was stuffed. The 32-year-old Henry is showing no signs of slowing down, as he has six touchdowns through three games and is averaging just over 100 rushing yards per game heading into a Week 4 home game against the winless Titans."
+          }
+         ]
+        },
+        "639587": {
+         "recordId": "639587",
+         "athleteName": "Zay Flowers",
+         "positionAbbr": "WR",
+         "teamId": "33",
+         "teamAbbr": "BAL",
+         "teamName": "Baltimore Ravens",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:42Z|Flowers (hamstring) caught five of six targets for 84 yards and added a 20-yard rush in Sunday's 34-31 win over the Cowboys.",
+           "status": "Active",
+           "date": "2026-09-28T00:42Z",
+           "shortComment": "Flowers (hamstring) caught five of six targets for 84 yards and added a 20-yard rush in Sunday's 34-31 win over the Cowboys.",
+           "longComment": "Flowers led the Ravens in catches, targets and receiving yards in his return following a one-game absence due to a hamstring injury. His most consequential catch was a 27-yard reception on the game's penultimate play, which set up Tyler Loop's game-winning 56-yard field goal. Per Jonas Shaffer of the Baltimore Banner, Flowers knew for a while that he would be suiting up Sunday, but he was limited in practice due to concerns about the quality of the field in Rio de Janeiro. Flowers has seemingly put the injury behind him heading into a Week 4 home game against the Titans."
+          }
+         ]
+        },
+        "639596": {
+         "recordId": "639596",
+         "athleteName": "Rashod Bateman",
+         "positionAbbr": "WR",
+         "teamId": "33",
+         "teamAbbr": "BAL",
+         "teamName": "Baltimore Ravens",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.530Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
+           "fp": "Active|2026-09-28T00:56Z|Bateman caught two of three targets for 37 yards in Sunday's 34-31 win over the Cowboys.",
+           "status": "Active",
+           "date": "2026-09-28T00:56Z",
+           "shortComment": "Bateman caught two of three targets for 37 yards in Sunday's 34-31 win over the Cowboys.",
+           "longComment": "Bateman finished second on the team in receiving yards behind Zay Flowers, who compiled 84 receiving yards in the latter's return from a one-game absence due to a hamstring injury. Bateman stepped up with seven catches for 88 yards and a touchdown while Flowers was sidelined in Week 2, but Flowers is the clear No. 1 option in Baltimore's wide receiver room, as Bateman was held without a catch when Flowers was active for the season opener. Up next for Bateman and the Ravens will be a Week 4 home game against the Titans."
           }
          ]
         },
@@ -154489,7 +155428,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:55Z|",
            "status": "Active",
            "date": "2026-09-25T20:55Z",
@@ -154508,7 +155447,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-25T20:55Z|",
            "status": "Active",
            "date": "2026-09-25T20:55Z",
@@ -154527,7 +155466,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T20:08Z|",
            "status": "Active",
            "date": "2026-09-24T20:08Z",
@@ -154546,7 +155485,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T20:08Z|",
            "status": "Active",
            "date": "2026-09-24T20:08Z",
@@ -154565,7 +155504,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:21Z|",
            "status": "Active",
            "date": "2026-09-21T18:21Z",
@@ -154584,7 +155523,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T18:21Z|",
            "status": "Active",
            "date": "2026-09-21T18:21Z",
@@ -154660,7 +155599,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:00Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:00Z",
@@ -154679,7 +155618,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:00Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:00Z",
@@ -154698,7 +155637,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:00Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:00Z",
@@ -154717,7 +155656,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T19:00Z|inactive",
            "status": "Out",
            "date": "2026-09-27T19:00Z",
@@ -154743,7 +155682,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-16T21:25Z|To'oTo'o (shoulder) is expected to miss more than four games, Mike Garafolo of NFL Network reports.",
            "status": "Injured Reserve",
            "date": "2026-09-16T21:25Z",
@@ -154819,7 +155758,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T03:26Z|Marks rushed eight times for eight yards in Sunday's 20-6 loss to the Bengals. He added five catches for 27 yards on six targets.",
            "status": "Active",
            "date": "2026-09-21T03:26Z",
@@ -154838,7 +155777,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-21T15:34Z|Fairbairn went 2-for-3 on field-goal attempts in Sunday's 20-6 loss to the Bengals.",
            "status": "Active",
            "date": "2026-09-21T15:34Z",
@@ -154895,7 +155834,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:23Z|Moreau caught both of his targets for 34 yards and added a tackle on special teams during Sunday's 20-6 loss to the Bengals.",
            "status": "Active",
            "date": "2026-09-23T02:23Z",
@@ -154914,7 +155853,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:27Z|Wayne caught two of his seven targets for 33 yards in Sunday's 20-6 loss to the Bengals.",
            "status": "Active",
            "date": "2026-09-23T02:27Z",
@@ -154952,7 +155891,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:40Z|Noel caught one pass on five targets for 31 yards and added a 13-yard carry during the Texans' 20-6 loss to the Bengals on Sunday. He also returned three punts for 32 yards and one kickoff for 31 yards.",
            "status": "Active",
            "date": "2026-09-23T02:40Z",
@@ -154971,7 +155910,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-23T02:42Z|Anderson compiled eight total tackles (four solo), including 1.0 sacks, while also adding a pass defensed in Sunday's 20-6 loss to Cincinnati.",
            "status": "Active",
            "date": "2026-09-23T02:42Z",
@@ -154990,7 +155929,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-24T01:56Z|The Texans designated Stewart (quadriceps) for return from their reserve/PUP list Wednesday.",
            "status": "Out",
            "date": "2026-09-24T01:56Z",
@@ -155066,7 +156005,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-26T17:50Z|The Texans elevated Bond from the practice squad to the active roster Saturday ahead of Sunday's game against the Colts,",
            "status": "Active",
            "date": "2026-09-26T17:50Z",
@@ -155085,7 +156024,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Injured Reserve|2026-09-26T17:52Z|The Texans placed Hummel (groin) on injured reserve Saturday, Aaron Wilson of KPRC 2 Houston reports.",
            "status": "Injured Reserve",
            "date": "2026-09-26T17:52Z",
@@ -155123,7 +156062,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T14:05Z|Clowney has been progressing in his recovery from a bone bruise in his knee that has ruled him out for Sunday's game against the Colts, Aaron Wilson of KPRC 2 Houston reports.",
            "status": "Out",
            "date": "2026-09-27T14:05Z",
@@ -155142,7 +156081,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T15:56Z|Hutchinson is in line to serve as the Texans' No. 1 receiver for the second consecutive game in Sunday's Week 3 matchup against the Colts due to Nico Collins (hamstring) being ruled inactive for the contest.",
            "status": "Active",
            "date": "2026-09-27T15:56Z",
@@ -155161,7 +156100,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T16:00Z|Boutte is expected to remain in the No. 2 receiver role for Sunday's Week 3 matchup against the Colts due to Nico Collins (hamstring) being ruled inactive for the contest.",
            "status": "Active",
            "date": "2026-09-27T16:00Z",
@@ -155218,7 +156157,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T19:26Z|Al-Shaair (groin) has returned to Sunday's game against the Colts, Aaron Wilson of KPRC 2 Houston reports.",
            "status": "Active",
            "date": "2026-09-27T19:26Z",
@@ -155237,7 +156176,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Questionable|2026-09-27T19:56Z|Edwards (knee) is questionable to return to Sunday's game against the Colts.",
            "status": "Questionable",
            "date": "2026-09-27T19:56Z",
@@ -155256,7 +156195,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.232Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T20:53Z|Collins (hamstring) is making good progress in his recovery, Aaron Wilson of KPRC 2 Houston reports.",
            "status": "Out",
            "date": "2026-09-27T20:53Z",
@@ -155275,7 +156214,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:54Z|Stroud completed 16 of 27 passes for 167 yards and a touchdown while rushing twice for 10 yards in Sunday's 19-17 loss to the Colts.",
            "status": "Active",
            "date": "2026-09-27T21:54Z",
@@ -155294,7 +156233,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:57Z|Montgomery rushed 11 times for 33 yards while catching both of his targets for 15 yards in Sunday's 19-17 loss to the Colts.",
            "status": "Active",
            "date": "2026-09-27T21:57Z",
@@ -155313,7 +156252,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-28T00:15:57.990Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T21:59Z|Schultz caught all three of his targets for 30 yards in Sunday's 19-17 loss to the Colts.",
            "status": "Active",
            "date": "2026-09-27T21:59Z",
@@ -155332,7 +156271,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.186Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-24T21:29Z|",
            "status": "Active",
            "date": "2026-09-24T21:29Z",
@@ -155446,7 +156385,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:32Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:32Z",
@@ -155465,7 +156404,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:32Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:32Z",
@@ -155484,7 +156423,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:32Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:32Z",
@@ -155503,7 +156442,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Out|2026-09-27T15:32Z|inactive",
            "status": "Out",
            "date": "2026-09-27T15:32Z",
@@ -155522,7 +156461,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:54.969Z",
-           "last_seen_at": "2026-09-28T00:15:57.990Z",
+           "last_seen_at": "2026-09-28T02:42:55.530Z",
            "fp": "Active|2026-09-27T15:32Z|",
            "status": "Active",
            "date": "2026-09-27T15:32Z",
@@ -155562,7 +156501,7 @@ export const ESPN_SIGNAL_DATA = {
        "states": [
         {
          "captured_at": "2026-09-27T08:39:21.260Z",
-         "last_seen_at": "2026-09-28T00:15:58.047Z",
+         "last_seen_at": "2026-09-28T02:42:55.587Z",
          "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
          "url_ref": 0,
          "state": "pre",
@@ -155592,7 +156531,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.260Z",
       "2026-09-27T18:51:55.155Z",
       "2026-09-27T21:49:42.288Z",
-      "2026-09-28T00:15:58.047Z"
+      "2026-09-28T00:15:58.047Z",
+      "2026-09-28T02:42:55.587Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)"
     }
@@ -155922,7 +156862,7 @@ export const ESPN_SIGNAL_DATA = {
      "isActive": true
     }
    ],
-   "teamsCapturedAt": "2026-09-28T00:15:58.201Z",
+   "teamsCapturedAt": "2026-09-28T02:42:55.743Z",
    "dates": {
     "2026-09-21": {
      "date": "2026-09-21",
@@ -173060,7 +174000,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.595Z",
       "2026-09-27T18:51:56.322Z",
       "2026-09-27T21:49:42.535Z",
-      "2026-09-28T00:15:58.220Z"
+      "2026-09-28T00:15:58.220Z",
+      "2026-09-28T02:42:55.764Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
      "teams": {
@@ -173079,7 +174020,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Suspension|2026-09-21T05:14Z|McAvoy logged an even-strength goal on three shots and four PIM in a game-high 28:35 of ice time during Sunday's 3-2 shootout win over the Capitals in preseason play.",
            "status": "Suspension",
            "date": "2026-09-21T05:14Z",
@@ -173117,7 +174058,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T18:16Z|Poitras (lower body) was placed on injured reserve by the Bruins on Sunday, per Conor Ryan of The Boston Globe.",
            "status": "Injured Reserve",
            "date": "2026-09-27T18:16Z",
@@ -173143,7 +174084,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-16T16:29Z|out",
            "status": "Out",
            "date": "2026-09-16T16:29Z",
@@ -173200,7 +174141,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-25T17:07Z|Head coach Lindy Ruff said Friday that Samuelsson (lower body) could return on the early end of his week-to-week timetable.",
            "status": "Out",
            "date": "2026-09-25T17:07Z",
@@ -173238,7 +174179,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-26T22:05Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-26T22:05Z",
@@ -173257,7 +174198,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -173276,7 +174217,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T14:24Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T14:24Z",
@@ -173302,7 +174243,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-20T15:45Z|ir",
            "status": "Injured Reserve",
            "date": "2026-09-20T15:45Z",
@@ -173321,7 +174262,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-25T14:37Z|out",
            "status": "Out",
            "date": "2026-09-25T14:37Z",
@@ -173347,7 +174288,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-23T19:24Z|Head coach Jeff Blashill said Wednesday that Bedard (shoulder) isn't yet close to joining the Blackhawks for practice, Scott Powers of The Athletic reports.",
            "status": "Out",
            "date": "2026-09-23T19:24Z",
@@ -173373,7 +174314,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-24T15:48Z|Bear (upper body) is expected to be out for the next seven to 10 days, per Max Bultman of The Athletic.",
            "status": "Out",
            "date": "2026-09-24T15:48Z",
@@ -173430,7 +174371,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -173449,7 +174390,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -173494,7 +174435,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-20T15:46Z|ir",
            "status": "Injured Reserve",
            "date": "2026-09-20T15:46Z",
@@ -173532,7 +174473,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T14:42Z|ir-nr",
            "status": "Injured Reserve",
            "date": "2026-09-27T14:42Z",
@@ -173551,7 +174492,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T14:42Z|ir-nr",
            "status": "Injured Reserve",
            "date": "2026-09-27T14:42Z",
@@ -173570,7 +174511,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T14:43Z|ir-nr",
            "status": "Injured Reserve",
            "date": "2026-09-27T14:43Z",
@@ -173589,7 +174530,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T14:44Z|ir-nr",
            "status": "Injured Reserve",
            "date": "2026-09-27T14:44Z",
@@ -173615,7 +174556,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-16T19:55Z|out",
            "status": "Out",
            "date": "2026-09-16T19:55Z",
@@ -173653,7 +174594,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T18:00Z|Jarvis (shoulder) was placed on the injured non-roster list Sunday.",
            "status": "Injured Reserve",
            "date": "2026-09-27T18:00Z",
@@ -173679,7 +174620,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-17T19:39Z|Fiala (lower leg fracture) is at least three weeks away from being ready to play, Zach Dooley of the Kings' official site reports Thursday.",
            "status": "Injured Reserve",
            "date": "2026-09-17T19:39Z",
@@ -173698,7 +174639,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-24T19:45Z|Jenik (undisclosed) was placed on non-roster injured reserve by Los Angeles on Thursday, per Zach Dooley of LA Kings Insider.",
            "status": "Injured Reserve",
            "date": "2026-09-24T19:45Z",
@@ -173717,7 +174658,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-24T19:49Z|ir-nr",
            "status": "Injured Reserve",
            "date": "2026-09-24T19:49Z",
@@ -173774,7 +174715,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-26T23:50Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-26T23:50Z",
@@ -173793,12 +174734,31 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
            "shortComment": "day-to-day",
            "longComment": "day-to-day"
+          }
+         ]
+        },
+        "594078": {
+         "recordId": "594078",
+         "athleteName": "Otto Salin",
+         "positionAbbr": "D",
+         "teamId": "8",
+         "teamAbbr": "LA",
+         "teamName": "Los Angeles Kings",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.764Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
+           "fp": "Injured Reserve|2026-09-28T01:16Z|Salin (undisclosed) was placed on the injured non-roster list Sunday.",
+           "status": "Injured Reserve",
+           "date": "2026-09-28T01:16Z",
+           "shortComment": "Salin (undisclosed) was placed on the injured non-roster list Sunday.",
+           "longComment": "Once he's healthy, Salin will almost certainly be sent to AHL Ontario. The 2022 fifth-round pick accounted for three goals, five points, 22 PIM and a minus-3 rating over 43 appearances with the Reign in 2025-26. The right-shot defenseman has yet to appear in an NHL game."
           }
          ]
         }
@@ -173876,7 +174836,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-25T16:05Z|out",
            "status": "Out",
            "date": "2026-09-25T16:05Z",
@@ -173914,7 +174874,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-25T16:06Z|out",
            "status": "Out",
            "date": "2026-09-25T16:06Z",
@@ -173933,7 +174893,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T14:21Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T14:21Z",
@@ -173952,7 +174912,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T14:35Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T14:35Z",
@@ -173971,7 +174931,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T14:35Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T14:35Z",
@@ -174016,7 +174976,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-16T14:48Z|The Canadiens announced Wednesday that Guhle is recovering from a minor surgery to his adductor muscle that he underwent over the summer, and he's expected to return in 4-5 weeks.",
            "status": "Out",
            "date": "2026-09-16T14:48Z",
@@ -174054,7 +175014,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T16:19Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T16:19Z",
@@ -174080,7 +175040,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-17T17:10Z|The Devils announced Thursday that Bjugstad underwent successful surgery to repair a torn left pectoral muscle last week and will be sidelined for approximately 4-6 months.",
            "status": "Out",
            "date": "2026-09-17T17:10Z",
@@ -174118,7 +175078,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-25T02:18Z|out",
            "status": "Out",
            "date": "2026-09-25T02:18Z",
@@ -174137,7 +175097,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -174182,7 +175142,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -174208,7 +175168,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-16T17:17Z|Thompson (undisclosed) is considered week-to-week heading into training camp, Peter Baugh of The Athletic reports Wednesday.",
            "status": "Out",
            "date": "2026-09-16T17:17Z",
@@ -174227,7 +175187,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-23T14:15Z|Sykora (lower body) is expected to be out of action for 4-5 months, Colin Stephenson of Newsday reports Wednesday.",
            "status": "Out",
            "date": "2026-09-23T14:15Z",
@@ -174265,7 +175225,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T16:20Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T16:20Z",
@@ -174310,7 +175270,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-23T16:58Z|Zub (knee) isn't expected to be ready for Ottawa's season opener in Toronto on Oct. 3, per TSN 1200 Ottawa on Wednesday.",
            "status": "Out",
            "date": "2026-09-23T16:58Z",
@@ -174386,7 +175346,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T00:47Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T00:47Z",
@@ -174405,7 +175365,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T16:21Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T16:21Z",
@@ -174424,7 +175384,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T16:21Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T16:21Z",
@@ -174443,7 +175403,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T16:21Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T16:21Z",
@@ -174462,7 +175422,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T16:21Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T16:21Z",
@@ -174564,7 +175524,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -174583,12 +175543,31 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
            "shortComment": "day-to-day",
            "longComment": "day-to-day"
+          }
+         ]
+        },
+        "594079": {
+         "recordId": "594079",
+         "athleteName": "Dan Vladar",
+         "positionAbbr": "G",
+         "teamId": "15",
+         "teamAbbr": "PHI",
+         "teamName": "Philadelphia Flyers",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.764Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
+           "fp": "Day-To-Day|2026-09-28T02:19Z|Vladar (upper body) was a full participant in Sunday's practice and is on track to be ready for the Flyers' season opener against the Penguins on Wednesday, Jackie Spiegel of The Philadelphia Inquirer reports.",
+           "status": "Day-To-Day",
+           "date": "2026-09-28T02:19Z",
+           "shortComment": "Vladar (upper body) was a full participant in Sunday's practice and is on track to be ready for the Flyers' season opener against the Penguins on Wednesday, Jackie Spiegel of The Philadelphia Inquirer reports.",
+           "longComment": "Regarding Vladar's status, head coach Rick Tocchet said \"I wouldn't say he's 100 percent, but he's very hopeful. Pretty spirited practice, and he made it through; he seemed like he looked good to me. So we'll see.\" General manager Danny Briere also said Saturday that Vladar should be ready for Wednesday's regular-season opener. Furthermore, the Flyers loaned netminder Aleksei Kolosov to AHL Lehigh Valley on Sunday, which is another indication that the Flyers aren't overly concerned with Vladar's availability for Wednesday. For now, though, Vladar should still be considered day-to-day until there is official word that he is good to go."
           }
          ]
         }
@@ -174666,7 +175645,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-24T18:16Z|ir-nr",
            "status": "Injured Reserve",
            "date": "2026-09-24T18:16Z",
@@ -174685,7 +175664,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-24T18:25Z|ir-nr",
            "status": "Injured Reserve",
            "date": "2026-09-24T18:25Z",
@@ -174704,7 +175683,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-25T16:11Z|Okuliar (lower body) was placed on non-roster injured reserve Friday.",
            "status": "Injured Reserve",
            "date": "2026-09-25T16:11Z",
@@ -174780,7 +175759,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -174799,7 +175778,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T15:11Z|Rust (upper body) is being evaluated and won't participate in Sunday's practice.",
            "status": "Day-To-Day",
            "date": "2026-09-27T15:11Z",
@@ -174818,7 +175797,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T15:16Z|Broz (lower body) won't take part in Sunday's practice.",
            "status": "Day-To-Day",
            "date": "2026-09-27T15:16Z",
@@ -174837,7 +175816,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T15:21Z|Graves (lower body) is out indefinitely and was placed on injured reserve Sunday.",
            "status": "Injured Reserve",
            "date": "2026-09-27T15:21Z",
@@ -174856,7 +175835,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T15:26Z|Brazeau (lower body) was placed on injured reserve by the Penguins on Sunday.",
            "status": "Injured Reserve",
            "date": "2026-09-27T15:26Z",
@@ -174875,7 +175854,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T15:29Z|Lizotte (upper body) was placed on injured reserve Sunday.",
            "status": "Injured Reserve",
            "date": "2026-09-27T15:29Z",
@@ -174894,7 +175873,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T15:34Z|Kindel (lower body) was placed on injured reserve by the Penguins on Sunday.",
            "status": "Injured Reserve",
            "date": "2026-09-27T15:34Z",
@@ -174920,7 +175899,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-16T16:58Z|out",
            "status": "Out",
            "date": "2026-09-16T16:58Z",
@@ -174939,7 +175918,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.535Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T21:16Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T21:16Z",
@@ -174958,7 +175937,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.535Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T21:16Z|L'Heureux (lower body) is day-to-day and didn't participate in Sunday's practice, Corey Masisak of The Denver Post reports.",
            "status": "Day-To-Day",
            "date": "2026-09-27T21:16Z",
@@ -174984,7 +175963,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-17T20:17Z|Keyser has suffered a long-term upper-body injury, Curtis Pashelka of The San Jose Mercury News reports Thursday.",
            "status": "Out",
            "date": "2026-09-17T20:17Z",
@@ -175003,7 +175982,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-17T20:21Z|Musty will be out long-term due to his upper-body injury, Curtis Pashelka of The San Jose Mercury News reports Thursday.",
            "status": "Out",
            "date": "2026-09-17T20:21Z",
@@ -175022,7 +176001,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-17T20:27Z|Lund (upper body) is expected to miss around a month, Curtis Pashelka of The San Jose Mercury News reports Thursday.",
            "status": "Out",
            "date": "2026-09-17T20:27Z",
@@ -175098,7 +176077,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -175117,7 +176096,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -175136,7 +176115,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -175162,7 +176141,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-25T17:15Z|out",
            "status": "Out",
            "date": "2026-09-25T17:15Z",
@@ -175181,7 +176160,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T00:44Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T00:44Z",
@@ -175207,7 +176186,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-16T15:09Z|out",
            "status": "Out",
            "date": "2026-09-16T15:09Z",
@@ -175226,7 +176205,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-16T15:13Z|out",
            "status": "Out",
            "date": "2026-09-16T15:13Z",
@@ -175252,7 +176231,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-16T15:27Z|General manager John Chayka said Wednesday that Domi (back) failed his physical and will be out indefinitely, David Pagnotta of The Fourth Period reports.",
            "status": "Out",
            "date": "2026-09-16T15:27Z",
@@ -175271,7 +176250,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-16T15:33Z|out",
            "status": "Out",
            "date": "2026-09-16T15:33Z",
@@ -175309,7 +176288,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-24T16:54Z|Head coach Jim Hiller said Thursday that Paul (undisclosed) is considered day-to-day, David Alter of The Hockey News reports.",
            "status": "Day-To-Day",
            "date": "2026-09-24T16:54Z",
@@ -175328,7 +176307,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T16:26Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T16:26Z",
@@ -175354,7 +176333,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-25T21:40Z|ir",
            "status": "Injured Reserve",
            "date": "2026-09-25T21:40Z",
@@ -175373,7 +176352,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-25T21:46Z|Demko (hip) isn't expected to be ready for the start of the regular season, per Thomas Drance of The Athletic on Friday.",
            "status": "Injured Reserve",
            "date": "2026-09-25T21:46Z",
@@ -175392,7 +176371,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-26T16:40Z|out",
            "status": "Out",
            "date": "2026-09-26T16:40Z",
@@ -175456,7 +176435,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -175475,7 +176454,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -175501,7 +176480,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-18T17:32Z|out",
            "status": "Out",
            "date": "2026-09-18T17:32Z",
@@ -175520,7 +176499,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-19T17:40Z|Terry (hip) is slated to be out for another 2-3 months, according to Zach Cavanagh of The Sporting Tribune on Saturday.",
            "status": "Out",
            "date": "2026-09-19T17:40Z",
@@ -175596,7 +176575,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -175615,7 +176594,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -175634,7 +176613,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -175660,7 +176639,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-17T19:16Z|Marchand (lower body) is expected to spend October rehabbing, per Panthers TV Rinkside Reporter Katie Engleson on Thursday.",
            "status": "Injured Reserve",
            "date": "2026-09-17T19:16Z",
@@ -175679,7 +176658,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-17T20:53Z|Gadjovich (upper body) is out indefinitely, the team announced Thursday.",
            "status": "Injured Reserve",
            "date": "2026-09-17T20:53Z",
@@ -175717,7 +176696,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -175743,7 +176722,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Suspension|2026-09-17T01:27Z|suspension",
            "status": "Suspension",
            "date": "2026-09-17T01:27Z",
@@ -175762,7 +176741,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-25T15:45Z|out",
            "status": "Out",
            "date": "2026-09-25T15:45Z",
@@ -175781,7 +176760,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-25T16:47Z|Head coach Scott Arniel said Friday that Salomonsson (shoulder) is ahead of schedule in his recovery and could be ready to play by mid-October, Mike McIntyre of the Winnipeg Free Press reports.",
            "status": "Out",
            "date": "2026-09-25T16:47Z",
@@ -175807,7 +176786,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-25T14:10Z|ir-nr",
            "status": "Injured Reserve",
            "date": "2026-09-25T14:10Z",
@@ -175826,7 +176805,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -175852,7 +176831,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-18T22:02Z|Gustavsson (hip) is expected to return around early November, Joe Smith of The Athletic reports Friday.",
            "status": "Out",
            "date": "2026-09-18T22:02Z",
@@ -175871,7 +176850,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-26T03:05Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-26T03:05Z",
@@ -175897,7 +176876,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-17T15:50Z|out",
            "status": "Out",
            "date": "2026-09-17T15:50Z",
@@ -175935,7 +176914,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T18:51:56.322Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Day-To-Day|2026-09-27T13:59Z|day-to-day",
            "status": "Day-To-Day",
            "date": "2026-09-27T13:59Z",
@@ -176037,7 +177016,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.535Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T18:39Z|ir",
            "status": "Injured Reserve",
            "date": "2026-09-27T18:39Z",
@@ -176056,7 +177035,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T21:49:42.535Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Injured Reserve|2026-09-27T18:46Z|O'Brien (lower body) was placed on injured reserve on Sunday.",
            "status": "Injured Reserve",
            "date": "2026-09-27T18:46Z",
@@ -176082,7 +177061,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.595Z",
-           "last_seen_at": "2026-09-28T00:15:58.220Z",
+           "last_seen_at": "2026-09-28T02:42:55.764Z",
            "fp": "Out|2026-09-23T21:51Z|Lamoureux is expected to miss some time due to his upper-body injury, per Brogan Houston of the Deseret News on Wednesday.",
            "status": "Out",
            "date": "2026-09-23T21:51Z",
@@ -176107,7 +177086,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.645Z",
       "2026-09-27T18:51:56.402Z",
       "2026-09-27T21:49:42.569Z",
-      "2026-09-28T00:15:58.242Z"
+      "2026-09-28T00:15:58.242Z",
+      "2026-09-28T02:42:55.786Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)"
     }
@@ -176267,7 +177247,7 @@ export const ESPN_SIGNAL_DATA = {
      "isActive": true
     }
    ],
-   "teamsCapturedAt": "2026-09-28T00:15:58.253Z",
+   "teamsCapturedAt": "2026-09-28T02:42:55.797Z",
    "dates": {
     "2026-09-21": {
      "date": "2026-09-21",
@@ -184920,6 +185900,26 @@ export const ESPN_SIGNAL_DATA = {
           "home": "30-14",
           "away": "28-16"
          }
+        },
+        {
+         "captured_at": "2026-09-28T02:42:55.827Z",
+         "last_seen_at": "2026-09-28T02:42:55.827Z",
+         "fp": "post|4|0|92,77|true|STATUS_FINAL",
+         "url_ref": 0,
+         "state": "post",
+         "statusName": "STATUS_FINAL",
+         "completed": true,
+         "period": 4,
+         "clock": 0,
+         "displayClock": "0.0",
+         "scores": {
+          "home": 92,
+          "away": 77
+         },
+         "recordsOverall": {
+          "home": "30-14",
+          "away": "28-16"
+         }
         }
        ]
       },
@@ -184987,7 +185987,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-27T21:49:42.621Z",
-         "last_seen_at": "2026-09-28T00:15:58.282Z",
+         "last_seen_at": "2026-09-28T02:42:55.827Z",
          "fp": "post|4|0|75,91|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -185071,7 +186071,7 @@ export const ESPN_SIGNAL_DATA = {
         },
         {
          "captured_at": "2026-09-28T00:15:58.282Z",
-         "last_seen_at": "2026-09-28T00:15:58.282Z",
+         "last_seen_at": "2026-09-28T02:42:55.827Z",
          "fp": "post|4|0|102,85|true|STATUS_FINAL",
          "url_ref": 0,
          "state": "post",
@@ -185132,6 +186132,26 @@ export const ESPN_SIGNAL_DATA = {
           "home": "32-12",
           "away": "27-17"
          }
+        },
+        {
+         "captured_at": "2026-09-28T02:42:55.827Z",
+         "last_seen_at": "2026-09-28T02:42:55.827Z",
+         "fp": "in|3|0|85,56|false|STATUS_END_PERIOD",
+         "url_ref": 0,
+         "state": "in",
+         "statusName": "STATUS_END_PERIOD",
+         "completed": false,
+         "period": 3,
+         "clock": 0,
+         "displayClock": "0.0",
+         "scores": {
+          "home": 85,
+          "away": 56
+         },
+         "recordsOverall": {
+          "home": "32-12",
+          "away": "27-17"
+         }
         }
        ]
       }
@@ -185145,7 +186165,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.695Z",
       "2026-09-27T18:51:56.482Z",
       "2026-09-27T21:49:42.604Z",
-      "2026-09-28T00:15:58.269Z"
+      "2026-09-28T00:15:58.269Z",
+      "2026-09-28T02:42:55.814Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
      "teams": {
@@ -185164,7 +186185,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-08-08T19:59Z|Verona's contract was temporarily suspended by the Wings Saturday.",
            "status": "Out",
            "date": "2026-08-08T19:59Z",
@@ -185183,7 +186204,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-08-19T20:10Z|Fudd will undergo an arthroscopic procedure to address her right knee soreness and will be sidelined for the remainder of the 2026 season.",
            "status": "Out",
            "date": "2026-08-19T20:10Z",
@@ -185202,7 +186223,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-26T23:37Z|Smith (lower leg) has been ruled out for Game 1 of the first round of the playoffs against the Valkyries on Sunday.",
            "status": "Out",
            "date": "2026-09-26T23:37Z",
@@ -185228,7 +186249,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-26T19:21Z|Harris (leg) will miss the rest of the season, WNBA reporter Kareem Copeland reports.",
            "status": "Out",
            "date": "2026-09-26T19:21Z",
@@ -185292,7 +186313,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-24T00:13Z|Nye (ankle) has been ruled out for Thursday's game against Golden State.",
            "status": "Out",
            "date": "2026-09-24T00:13Z",
@@ -185311,7 +186332,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-24T00:25Z|Brink (ankle) is listed as out for Thursday's game against Golden State.",
            "status": "Out",
            "date": "2026-09-24T00:25Z",
@@ -185330,7 +186351,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-25T01:08Z|Sellers (coach's decision) is out for Thursday's game against the Valkyries.",
            "status": "Out",
            "date": "2026-09-25T01:08Z",
@@ -185349,7 +186370,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-25T01:12Z|Mwenentanda (coach's decision) has been ruled out for Thursday's game against Golden State.",
            "status": "Out",
            "date": "2026-09-25T01:12Z",
@@ -185375,7 +186396,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-24T23:30Z|Buenavida (coach's decision) is out for Thursday's game against the Fever.",
            "status": "Out",
            "date": "2026-09-24T23:30Z",
@@ -185394,7 +186415,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-26T22:05Z|Kosu (foot) is listed as out for Game 1 of the first round of the WNBA Playoffs versus the Liberty.",
            "status": "Out",
            "date": "2026-09-26T22:05Z",
@@ -185420,7 +186441,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-22T21:05Z|Balogun (not with team) is out for Wednesday's game against the Dream.",
            "status": "Out",
            "date": "2026-09-22T21:05Z",
@@ -185523,6 +186544,25 @@ export const ESPN_SIGNAL_DATA = {
            "longComment": "out"
           }
          ]
+        },
+        "52808": {
+         "recordId": "52808",
+         "athleteName": "Satou Sabally",
+         "positionAbbr": "F",
+         "teamId": "9",
+         "teamAbbr": "NY",
+         "teamName": "New York Liberty",
+         "history": [
+          {
+           "captured_at": "2026-09-28T02:42:55.814Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
+           "fp": "Out|2026-09-28T02:00Z|out",
+           "status": "Out",
+           "date": "2026-09-28T02:00Z",
+           "shortComment": "out",
+           "longComment": "out"
+          }
+         ]
         }
        }
       },
@@ -185541,7 +186581,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-06-28T00:25Z|Nogic (not injury related) intends to play professionally in Russia and won't return to Phoenix this season, Aya Abdeen of TheIXSports.com reports.",
            "status": "Out",
            "date": "2026-06-28T00:25Z",
@@ -185560,7 +186600,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-08-31T14:46Z|Plum (leg) will miss the remainder of the 2026 WNBA season, Alexa Philippou of ESPN.com reports.",
            "status": "Out",
            "date": "2026-08-31T14:46Z",
@@ -185579,7 +186619,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-25T01:38Z|Dunn (coach's decision) is listed as out for Thursday's game against the Aces.",
            "status": "Out",
            "date": "2026-09-25T01:38Z",
@@ -185605,7 +186645,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-11T18:10Z|The Storm announced Friday that Samuelson underwent successful left knee surgery and will miss the remainder of the season.",
            "status": "Out",
            "date": "2026-09-11T18:10Z",
@@ -185624,7 +186664,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T00:06Z|Cooke (knee) has been ruled out for Wednesday's game against Dallas.",
            "status": "Out",
            "date": "2026-09-23T00:06Z",
@@ -185643,7 +186683,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-24T01:19Z|Mair (coach's decision) has been ruled out for Wednesday's game against the Wings.",
            "status": "Out",
            "date": "2026-09-24T01:19Z",
@@ -185662,7 +186702,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-10T18:26Z|out",
            "status": "Out",
            "date": "2026-09-10T18:26Z",
@@ -185688,7 +186728,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-08-27T19:29Z|The Aces announced Thursday that Smith will be sidelined for the rest of the season after suffering a non-contact left leg injury during Sunday's game versus the Tempo, per Chelsea Leite of TSN.",
            "status": "Out",
            "date": "2026-08-27T19:29Z",
@@ -185707,7 +186747,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-27T00:03Z|Evans (knee) has been ruled out for Game 1 of the first round of the playoffs against the Fever on Sunday.",
            "status": "Out",
            "date": "2026-09-27T00:03Z",
@@ -185733,7 +186773,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-14T19:53Z|The Sun announced Monday that Burke suffered a sprained AC joint in the FIBA World Cup and will miss the rest of the season.",
            "status": "Out",
            "date": "2026-09-14T19:53Z",
@@ -185752,7 +186792,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T20:49Z|Griner (knee) is out for Thursday's game against the Tempo.",
            "status": "Out",
            "date": "2026-09-23T20:49Z",
@@ -185771,7 +186811,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T20:51Z|Rivers (ankle) is out for Thursday's game against the Tempo.",
            "status": "Out",
            "date": "2026-09-23T20:51Z",
@@ -185790,7 +186830,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T20:54Z|Nelson-Ododa (knee) is out for Thursday's game against the Tempo.",
            "status": "Out",
            "date": "2026-09-23T20:54Z",
@@ -185809,7 +186849,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-25T00:21Z|Marshall has been ruled out for the remainder of Thursday's game against the Tempo due to a right knee injury.",
            "status": "Out",
            "date": "2026-09-25T00:21Z",
@@ -185835,7 +186875,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-05-19T13:54Z|The Sky announced Tuesday that Jackson will miss the remainder of the season after suffering a torn ACL in her left knee during Sunday's 86-79 win over the Lynx.",
            "status": "Out",
            "date": "2026-05-19T13:54Z",
@@ -185854,7 +186894,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-01T14:17Z|Diggins (knee) will miss the remainder of the 2026 WNBA season, Sara Jane Gamelli of BallisLife.com reports.",
            "status": "Out",
            "date": "2026-09-01T14:17Z",
@@ -185873,7 +186913,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T21:22Z|Cloud (knee) is out for Thursday's game against the Mystics.",
            "status": "Out",
            "date": "2026-09-23T21:22Z",
@@ -185892,7 +186932,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T21:25Z|Stevens (knee) is out for Thursday's game against the Mystics",
            "status": "Out",
            "date": "2026-09-23T21:25Z",
@@ -185911,7 +186951,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T21:27Z|Coulibaly (knee) is out for Thursday's game against the Mystics",
            "status": "Out",
            "date": "2026-09-23T21:27Z",
@@ -185930,7 +186970,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T21:28Z|Carrington (foot) has been ruled out for Thursday's game against the Mystics.",
            "status": "Out",
            "date": "2026-09-23T21:28Z",
@@ -185956,7 +186996,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-17T16:08Z|Jones will miss the remainder of the season after sustaining a left leg injury against the Sun on Aug. 13, Annie Costabile of The Athletic reports.",
            "status": "Out",
            "date": "2026-09-17T16:08Z",
@@ -185975,7 +187015,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T22:50Z|Villa (coach's decision) has been ruled out for Wednesday's game against New York.",
            "status": "Out",
            "date": "2026-09-23T22:50Z",
@@ -186001,7 +187041,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-05-07T15:18Z|Rupert is pregnant, and the Valkyries have filed for a replacement contract ahead of the 2026 season, Alexa Philippou of ESPN.com reports Thursday.",
            "status": "Out",
            "date": "2026-05-07T15:18Z",
@@ -186027,7 +187067,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-08-23T21:07Z|Sykes (foot) will miss the remainder of the 2026 season, Chelsea Leite of TSN reports.",
            "status": "Out",
            "date": "2026-08-23T21:07Z",
@@ -186046,7 +187086,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-08-23T21:12Z|Morrow (knee) will miss the rest of the 2026 season, Chelsea Leite of TSN reports.",
            "status": "Out",
            "date": "2026-08-23T21:12Z",
@@ -186065,7 +187105,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-16T16:07Z|Mabrey (hip) will miss the final four games of the 2026 season, Zulfi Sheikh of Sportsnet reports.",
            "status": "Out",
            "date": "2026-09-16T16:07Z",
@@ -186084,7 +187124,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T20:56Z|Fagbenle (personal) is out for Thursday's game against the Sun.",
            "status": "Out",
            "date": "2026-09-23T20:56Z",
@@ -186103,7 +187143,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-24T18:24Z|Conde (back) is out for Thursday's game against the Sun.",
            "status": "Out",
            "date": "2026-09-24T18:24Z",
@@ -186122,7 +187162,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-24T22:33Z|Gakdeng is out for Thursday's game against the Sun as a coach's decision.",
            "status": "Out",
            "date": "2026-09-24T22:33Z",
@@ -186141,7 +187181,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-24T22:34Z|Borkowska (coach's decision) is out for Thursday's game against the Sun.",
            "status": "Out",
            "date": "2026-09-24T22:34Z",
@@ -186167,7 +187207,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-07-09T23:15Z|Feagin (knee) was diagnosed with a torn left ACL on Thursday and will miss the rest of the 2026 campaign, WNBA reporter Kareem Copeland reports.",
            "status": "Out",
            "date": "2026-07-09T23:15Z",
@@ -186186,7 +187226,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-07-24T15:18Z|The Fire announced Friday that Barker will undergo surgery to repair a torn ACL and will miss the remainder of the 2026 campaign.",
            "status": "Out",
            "date": "2026-07-24T15:18Z",
@@ -186205,7 +187245,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-08-08T22:37Z|Geiselsoder (personal) won't return this season, according to Sean Highkin of RoseGardenReport.com.",
            "status": "Out",
            "date": "2026-08-08T22:37Z",
@@ -186224,7 +187264,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-21T23:56Z|Oblak (knee) has been ruled out for Tuesday's game against the Valkyries.",
            "status": "Out",
            "date": "2026-09-21T23:56Z",
@@ -186243,7 +187283,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T01:07Z|Puoch (knee) is listed as out for Tuesday's game against Golden State.",
            "status": "Out",
            "date": "2026-09-23T01:07Z",
@@ -186262,7 +187302,7 @@ export const ESPN_SIGNAL_DATA = {
          "history": [
           {
            "captured_at": "2026-09-27T08:39:21.695Z",
-           "last_seen_at": "2026-09-28T00:15:58.269Z",
+           "last_seen_at": "2026-09-28T02:42:55.814Z",
            "fp": "Out|2026-09-23T01:22Z|Winterburn (back) has been ruled out for Tuesday's game against Golden State.",
            "status": "Out",
            "date": "2026-09-23T01:22Z",
@@ -186287,7 +187327,8 @@ export const ESPN_SIGNAL_DATA = {
       "2026-09-27T08:39:21.741Z",
       "2026-09-27T18:51:56.561Z",
       "2026-09-27T21:49:42.637Z",
-      "2026-09-28T00:15:58.293Z"
+      "2026-09-28T00:15:58.293Z",
+      "2026-09-28T02:42:55.838Z"
      ],
      "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)"
     }
