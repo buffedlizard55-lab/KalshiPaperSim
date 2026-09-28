@@ -5092,6 +5092,133 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T08:53:50.309Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3888999.00"
+            ],
+            [
+              "0.0300",
+              "1444.00"
+            ],
+            [
+              "0.0600",
+              "936602.00"
+            ],
+            [
+              "0.1100",
+              "510874.00"
+            ],
+            [
+              "0.1800",
+              "407331.00"
+            ],
+            [
+              "0.2500",
+              "288884.00"
+            ],
+            [
+              "0.2900",
+              "638.31"
+            ],
+            [
+              "0.3200",
+              "239995.00"
+            ],
+            [
+              "0.3900",
+              "129099.00"
+            ],
+            [
+              "0.4500",
+              "305198.19"
+            ],
+            [
+              "0.5300",
+              "54528.00"
+            ],
+            [
+              "0.5600",
+              "142595.00"
+            ],
+            [
+              "0.6800",
+              "72091.00"
+            ],
+            [
+              "0.7400",
+              "22822.00"
+            ],
+            [
+              "0.7500",
+              "24987.00"
+            ],
+            [
+              "0.7800",
+              "2027.00"
+            ],
+            [
+              "0.8100",
+              "15152.00"
+            ],
+            [
+              "0.8200",
+              "187.00"
+            ],
+            [
+              "0.8300",
+              "1554.00"
+            ],
+            [
+              "0.8400",
+              "90.00"
+            ],
+            [
+              "0.8900",
+              "2991.28"
+            ],
+            [
+              "0.9200",
+              "100.00"
+            ],
+            [
+              "0.9300",
+              "100.00"
+            ],
+            [
+              "0.9400",
+              "100.00"
+            ],
+            [
+              "0.9500",
+              "3857.54"
+            ],
+            [
+              "0.9600",
+              "500.45"
+            ],
+            [
+              "0.9700",
+              "7.01"
+            ],
+            [
+              "0.9800",
+              "9090.00"
+            ],
+            [
+              "0.9900",
+              "10327.71"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5148,8 +5275,8 @@
     "yes_sub_title": "Dallas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-DAL",
-  "market_captured_at": "2026-09-28T05:42:55.183Z",
+  "market_captured_at": "2026-09-28T08:53:49.782Z",
   "status": "active",
-  "last_ingested_at": "2026-09-28T05:42:55.708Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-DAL/candlesticks?start_ts=1790481601&end_ts=1790574175&period_interval=1440"
+  "last_ingested_at": "2026-09-28T08:53:50.297Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-DAL/candlesticks?start_ts=1790568001&end_ts=1790585630&period_interval=1440"
 }

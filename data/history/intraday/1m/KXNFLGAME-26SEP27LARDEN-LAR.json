@@ -12015,6 +12015,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T09:00:48.249Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27LARDEN-LAR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12063,7 +12073,7 @@
     "ticker": "KXNFLGAME-26SEP27LARDEN-LAR",
     "title": "Los Angeles R wins",
     "updated_time": "2026-09-28T04:01:28.234956Z",
-    "volume_24h_fp": "40406304.67",
+    "volume_24h_fp": "40399847.58",
     "volume_fp": "40567111.77",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12072,11 +12082,11 @@
     "yes_sub_title": "Los Angeles R"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27LARDEN-LAR",
-  "market_captured_at": "2026-09-28T05:50:10.311Z",
+  "market_captured_at": "2026-09-28T09:00:47.622Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T05:50:11.628Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-LAR/candlesticks?start_ts=1790488210&end_ts=1790574609&period_interval=1",
+  "last_ingested_at": "2026-09-28T09:00:48.236Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-LAR/candlesticks?start_ts=1790567821&end_ts=1790586047&period_interval=1",
   "trims": [
     {
       "at": "2026-09-28T05:50:11.951Z",

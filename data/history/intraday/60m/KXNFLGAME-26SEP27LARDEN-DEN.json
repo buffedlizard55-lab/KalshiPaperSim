@@ -4960,6 +4960,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T08:58:13.688Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27LARDEN-DEN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5008,7 +5018,7 @@
     "ticker": "KXNFLGAME-26SEP27LARDEN-DEN",
     "title": "Denver wins",
     "updated_time": "2026-09-28T04:01:28.234956Z",
-    "volume_24h_fp": "35409425.94",
+    "volume_24h_fp": "35404250.35",
     "volume_fp": "35649597.39",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -5017,11 +5027,11 @@
     "yes_sub_title": "Denver"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27LARDEN-DEN",
-  "market_captured_at": "2026-09-28T05:47:25.390Z",
+  "market_captured_at": "2026-09-28T08:58:13.061Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T05:47:26.020Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-DEN/candlesticks?start_ts=1789402560&end_ts=1790574445&period_interval=60",
+  "last_ingested_at": "2026-09-28T08:58:13.675Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-DEN/candlesticks?start_ts=1790568001&end_ts=1790585893&period_interval=60",
   "trims": [
     {
       "at": "2026-09-28T05:47:26.343Z",

@@ -12010,6 +12010,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T09:01:23.521Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27MINTB-TB/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12058,7 +12068,7 @@
     "ticker": "KXNFLGAME-26SEP27MINTB-TB",
     "title": "Tampa Bay wins",
     "updated_time": "2026-09-27T23:29:26.949836Z",
-    "volume_24h_fp": "11168737.63",
+    "volume_24h_fp": "11156029.61",
     "volume_fp": "11312328.95",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12067,11 +12077,11 @@
     "yes_sub_title": "Tampa Bay"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27MINTB-TB",
-  "market_captured_at": "2026-09-28T05:50:50.704Z",
+  "market_captured_at": "2026-09-28T09:01:22.897Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T05:50:52.025Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27MINTB-TB/candlesticks?start_ts=1790488251&end_ts=1790574650&period_interval=1",
+  "last_ingested_at": "2026-09-28T09:01:23.509Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27MINTB-TB/candlesticks?start_ts=1790551621&end_ts=1790586083&period_interval=1",
   "trims": [
     {
       "at": "2026-09-28T05:50:52.348Z",

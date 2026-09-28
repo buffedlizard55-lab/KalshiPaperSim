@@ -357,6 +357,46 @@
         "low_dollars": "0.9800",
         "open_dollars": "0.9800"
       }
+    },
+    {
+      "end_period_ts": 1790575200,
+      "open_interest_fp": "3307.00",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      }
+    },
+    {
+      "end_period_ts": 1790582400,
+      "open_interest_fp": "3307.00",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      }
     }
   ],
   "books": [
@@ -679,6 +719,74 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T08:58:52.161Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10STANND-ND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "22884.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "113410.00"
+            ],
+            [
+              "0.0200",
+              "1525.00"
+            ],
+            [
+              "0.0300",
+              "855.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "22.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.3700",
+              "3431.00"
+            ],
+            [
+              "0.3800",
+              "22.00"
+            ],
+            [
+              "0.8500",
+              "805.00"
+            ],
+            [
+              "0.9400",
+              "125.00"
+            ],
+            [
+              "0.9600",
+              "10.00"
+            ],
+            [
+              "0.9800",
+              "496940.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -728,14 +836,14 @@
     "volume_24h_fp": "3.00",
     "volume_fp": "3308.00",
     "yes_ask_dollars": "0.9900",
-    "yes_ask_size_fp": "22859.00",
+    "yes_ask_size_fp": "22884.00",
     "yes_bid_dollars": "0.9800",
     "yes_bid_size_fp": "496940.00",
     "yes_sub_title": "Notre Dame"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10STANND-ND",
-  "market_captured_at": "2026-09-28T05:48:04.965Z",
+  "market_captured_at": "2026-09-28T08:58:51.534Z",
   "status": "active",
-  "last_ingested_at": "2026-09-28T05:48:05.589Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10STANND-ND/candlesticks?start_ts=1790532001&end_ts=1790574485&period_interval=60"
+  "last_ingested_at": "2026-09-28T08:58:52.149Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10STANND-ND/candlesticks?start_ts=1790571601&end_ts=1790585931&period_interval=60"
 }

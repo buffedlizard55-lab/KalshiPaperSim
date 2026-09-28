@@ -12015,6 +12015,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T09:01:20.412Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27SEAWAS-SEA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12063,7 +12073,7 @@
     "ticker": "KXNFLGAME-26SEP27SEAWAS-SEA",
     "title": "Seattle wins",
     "updated_time": "2026-09-27T20:31:27.212497Z",
-    "volume_24h_fp": "11333176.89",
+    "volume_24h_fp": "11126092.16",
     "volume_fp": "12096610.22",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12072,11 +12082,11 @@
     "yes_sub_title": "Seattle"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27SEAWAS-SEA",
-  "market_captured_at": "2026-09-28T05:50:46.791Z",
+  "market_captured_at": "2026-09-28T09:01:19.787Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T05:50:48.134Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27SEAWAS-SEA/candlesticks?start_ts=1790488247&end_ts=1790574646&period_interval=1",
+  "last_ingested_at": "2026-09-28T09:01:20.400Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27SEAWAS-SEA/candlesticks?start_ts=1790540941&end_ts=1790586080&period_interval=1",
   "trims": [
     {
       "at": "2026-09-28T05:50:48.457Z",

@@ -4139,6 +4139,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T08:59:15.453Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP26ROSBAR-BAR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4196,9 +4206,9 @@
     "yes_sub_title": "Raoni Barcelos"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP26ROSBAR-BAR",
-  "market_captured_at": "2026-09-28T05:48:29.004Z",
+  "market_captured_at": "2026-09-28T08:59:14.827Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T05:48:29.629Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP26ROSBAR-BAR/candlesticks?start_ts=1790478001&end_ts=1790574509&period_interval=60"
+  "last_ingested_at": "2026-09-28T08:59:15.439Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP26ROSBAR-BAR/candlesticks?start_ts=1790478001&end_ts=1790585955&period_interval=60"
 }

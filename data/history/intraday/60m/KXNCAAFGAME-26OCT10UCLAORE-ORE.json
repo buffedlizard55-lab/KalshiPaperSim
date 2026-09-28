@@ -671,6 +671,71 @@
         "low_dollars": "0.5900",
         "open_dollars": "0.5900"
       }
+    },
+    {
+      "end_period_ts": 1790575200,
+      "open_interest_fp": "2256.71",
+      "price": {
+        "close_dollars": "0.6000",
+        "high_dollars": "0.6000",
+        "low_dollars": "0.6000",
+        "mean_dollars": "0.6000",
+        "open_dollars": "0.6000",
+        "previous_dollars": "0.6200"
+      },
+      "volume_fp": "11.18",
+      "yes_ask": {
+        "close_dollars": "0.8200",
+        "high_dollars": "0.8800",
+        "low_dollars": "0.7900",
+        "open_dollars": "0.8000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5900",
+        "high_dollars": "0.6200",
+        "low_dollars": "0.5900",
+        "open_dollars": "0.6200"
+      }
+    },
+    {
+      "end_period_ts": 1790578800,
+      "open_interest_fp": "2256.71",
+      "price": {
+        "previous_dollars": "0.6000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.8600",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.8200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6000",
+        "high_dollars": "0.6100",
+        "low_dollars": "0.5900",
+        "open_dollars": "0.5900"
+      }
+    },
+    {
+      "end_period_ts": 1790582400,
+      "open_interest_fp": "2256.71",
+      "price": {
+        "previous_dollars": "0.6000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.8400",
+        "high_dollars": "0.8900",
+        "low_dollars": "0.8300",
+        "open_dollars": "0.8600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5900",
+        "high_dollars": "0.6000",
+        "low_dollars": "0.5900",
+        "open_dollars": "0.6000"
+      }
     }
   ],
   "books": [
@@ -1205,6 +1270,134 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T08:58:54.645Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10UCLAORE-ORE/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "111828.00"
+            ],
+            [
+              "0.0200",
+              "3257.00"
+            ],
+            [
+              "0.0300",
+              "645.47"
+            ],
+            [
+              "0.0600",
+              "715.00"
+            ],
+            [
+              "0.0700",
+              "744.00"
+            ],
+            [
+              "0.0800",
+              "761.00"
+            ],
+            [
+              "0.1100",
+              "46.00"
+            ],
+            [
+              "0.1200",
+              "39.00"
+            ],
+            [
+              "0.1300",
+              "72.00"
+            ],
+            [
+              "0.1900",
+              "28.00"
+            ],
+            [
+              "0.2000",
+              "34.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "111050.00"
+            ],
+            [
+              "0.0200",
+              "1525.00"
+            ],
+            [
+              "0.0300",
+              "731.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "439.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "397.00"
+            ],
+            [
+              "0.0900",
+              "22.00"
+            ],
+            [
+              "0.2600",
+              "1611.00"
+            ],
+            [
+              "0.2700",
+              "22.00"
+            ],
+            [
+              "0.5000",
+              "5.00"
+            ],
+            [
+              "0.5100",
+              "15.00"
+            ],
+            [
+              "0.5200",
+              "1000.00"
+            ],
+            [
+              "0.5500",
+              "937.00"
+            ],
+            [
+              "0.5700",
+              "6.00"
+            ],
+            [
+              "0.5900",
+              "174.66"
+            ],
+            [
+              "0.6000",
+              "105.00"
+            ],
+            [
+              "0.6100",
+              "53.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1220,7 +1413,7 @@
     "expected_expiration_time": "2026-10-10T20:00:00Z",
     "expiration_time": "2026-10-12T17:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.6200",
+    "last_price_dollars": "0.8700",
     "latest_expiration_time": "2026-10-12T17:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -1229,11 +1422,11 @@
     "no_sub_title": "Oregon",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-10T20:00:00Z",
-    "open_interest_fp": "2245.53",
+    "open_interest_fp": "2272.71",
     "open_time": "2026-09-26T19:08:00Z",
-    "previous_price_dollars": "0.8400",
+    "previous_price_dollars": "0.5600",
     "previous_yes_ask_dollars": "0.9000",
-    "previous_yes_bid_dollars": "0.5800",
+    "previous_yes_bid_dollars": "0.5600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1251,17 +1444,17 @@
     "ticker": "KXNCAAFGAME-26OCT10UCLAORE-ORE",
     "title": "Oregon wins",
     "updated_time": "2026-09-26T19:08:00.1821Z",
-    "volume_24h_fp": "1397.85",
-    "volume_fp": "2568.72",
+    "volume_24h_fp": "1337.71",
+    "volume_fp": "2602.90",
     "yes_ask_dollars": "0.8000",
-    "yes_ask_size_fp": "66.00",
+    "yes_ask_size_fp": "34.00",
     "yes_bid_dollars": "0.6100",
-    "yes_bid_size_fp": "10.00",
+    "yes_bid_size_fp": "53.00",
     "yes_sub_title": "Oregon"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10UCLAORE-ORE",
-  "market_captured_at": "2026-09-28T05:48:07.509Z",
+  "market_captured_at": "2026-09-28T08:58:54.018Z",
   "status": "active",
-  "last_ingested_at": "2026-09-28T05:48:08.136Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10UCLAORE-ORE/candlesticks?start_ts=1790535601&end_ts=1790574487&period_interval=60"
+  "last_ingested_at": "2026-09-28T08:58:54.633Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10UCLAORE-ORE/candlesticks?start_ts=1790571601&end_ts=1790585934&period_interval=60"
 }

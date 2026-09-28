@@ -315,6 +315,46 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1790575200,
+      "open_interest_fp": "4409.38",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1790582400,
+      "open_interest_fp": "4409.38",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -737,6 +777,118 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T08:58:48.442Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10BALLNW-BALL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "116008.00"
+            ],
+            [
+              "0.0200",
+              "9322.00"
+            ],
+            [
+              "0.0300",
+              "8404.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "533.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1600",
+              "1902.00"
+            ],
+            [
+              "0.4000",
+              "50.00"
+            ],
+            [
+              "0.5500",
+              "25.00"
+            ],
+            [
+              "0.5600",
+              "6.63"
+            ],
+            [
+              "0.6200",
+              "16.00"
+            ],
+            [
+              "0.6300",
+              "2028.00"
+            ],
+            [
+              "0.6400",
+              "805.00"
+            ],
+            [
+              "0.6500",
+              "26.63"
+            ],
+            [
+              "0.7000",
+              "23.00"
+            ],
+            [
+              "0.7500",
+              "25.00"
+            ],
+            [
+              "0.8500",
+              "790.00"
+            ],
+            [
+              "0.8600",
+              "13.26"
+            ],
+            [
+              "0.8700",
+              "772.00"
+            ],
+            [
+              "0.8800",
+              "734.00"
+            ],
+            [
+              "0.8900",
+              "1.19"
+            ],
+            [
+              "0.9600",
+              "32.00"
+            ],
+            [
+              "0.9700",
+              "42.06"
+            ],
+            [
+              "0.9800",
+              "998415.62"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "18228.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -788,12 +940,12 @@
     "yes_ask_dollars": "0.0200",
     "yes_ask_size_fp": "998415.62",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "18491.00",
+    "yes_bid_size_fp": "18228.00",
     "yes_sub_title": "Ball St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10BALLNW-BALL",
-  "market_captured_at": "2026-09-28T05:48:01.150Z",
+  "market_captured_at": "2026-09-28T08:58:47.817Z",
   "status": "active",
-  "last_ingested_at": "2026-09-28T05:48:01.774Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10BALLNW-BALL/candlesticks?start_ts=1790532001&end_ts=1790574481&period_interval=60"
+  "last_ingested_at": "2026-09-28T08:58:48.430Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10BALLNW-BALL/candlesticks?start_ts=1790571601&end_ts=1790585928&period_interval=60"
 }
