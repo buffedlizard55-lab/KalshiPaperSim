@@ -7716,9 +7716,9 @@
     "occurrence_datetime": "2027-07-01T14:00:00Z",
     "open_interest_fp": "88521.36",
     "open_time": "2026-06-15T03:40:00Z",
-    "previous_price_dollars": "0.0700",
+    "previous_price_dollars": "0.0600",
     "previous_yes_ask_dollars": "0.0600",
-    "previous_yes_bid_dollars": "0.0500",
+    "previous_yes_bid_dollars": "0.0400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -7736,17 +7736,17 @@
     "ticker": "KXNHL-27-MIN",
     "title": "Will Minnesota Wild win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.1147Z",
-    "volume_24h_fp": "982.24",
+    "volume_24h_fp": "778.86",
     "volume_fp": "108974.30",
     "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "2980.86",
+    "yes_ask_size_fp": "2917.47",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "121.27",
+    "yes_bid_size_fp": "112.00",
     "yes_sub_title": "Minnesota Wild"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-MIN",
-  "market_captured_at": "2026-09-28T08:54:46.056Z",
+  "market_captured_at": "2026-09-28T14:00:55.083Z",
   "status": "active",
-  "last_ingested_at": "2026-09-28T08:54:46.571Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MIN/candlesticks?start_ts=1790568001&end_ts=1790585686&period_interval=1440"
+  "last_ingested_at": "2026-09-28T14:00:55.642Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MIN/candlesticks?start_ts=1790568001&end_ts=1790604055&period_interval=1440"
 }

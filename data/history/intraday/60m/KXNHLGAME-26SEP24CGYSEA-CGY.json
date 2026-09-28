@@ -2050,6 +2050,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T14:05:10.652Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP24CGYSEA-CGY/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2107,9 +2117,9 @@
     "yes_sub_title": "Calgary"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP24CGYSEA-CGY",
-  "market_captured_at": "2026-09-28T08:58:40.381Z",
+  "market_captured_at": "2026-09-28T14:05:09.934Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T08:58:40.994Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP24CGYSEA-CGY/candlesticks?start_ts=1790316001&end_ts=1790585920&period_interval=60",
+  "last_ingested_at": "2026-09-28T14:05:10.595Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP24CGYSEA-CGY/candlesticks?start_ts=1790316001&end_ts=1790604310&period_interval=60",
   "result": "no"
 }

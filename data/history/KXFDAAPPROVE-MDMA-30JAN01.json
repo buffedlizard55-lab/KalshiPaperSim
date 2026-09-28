@@ -5861,6 +5861,74 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T14:08:59.698Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-MDMA-30JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0400",
+              "274.00"
+            ],
+            [
+              "0.1300",
+              "974.00"
+            ],
+            [
+              "0.1400",
+              "200.00"
+            ],
+            [
+              "0.4900",
+              "505.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0400",
+              "1314.00"
+            ],
+            [
+              "0.0500",
+              "147.00"
+            ],
+            [
+              "0.0900",
+              "318.00"
+            ],
+            [
+              "0.2000",
+              "1057.00"
+            ],
+            [
+              "0.2100",
+              "392.00"
+            ],
+            [
+              "0.2200",
+              "51.00"
+            ],
+            [
+              "0.4300",
+              "500.00"
+            ],
+            [
+              "0.4800",
+              "27.43"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -5880,7 +5948,7 @@
     "latest_expiration_time": "2030-01-08T15:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.5300",
+    "no_ask_dollars": "0.5200",
     "no_bid_dollars": "0.4900",
     "no_sub_title": "Before Jan 1, 2030",
     "notional_value_dollars": "1.0000",
@@ -5889,7 +5957,7 @@
     "open_time": "2026-05-14T02:00:00Z",
     "previous_price_dollars": "0.5400",
     "previous_yes_ask_dollars": "0.5700",
-    "previous_yes_bid_dollars": "0.5400",
+    "previous_yes_bid_dollars": "0.5000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5907,17 +5975,17 @@
     "ticker": "KXFDAAPPROVE-MDMA-30JAN01",
     "title": "Will the FDA approve midomafetamine / MDMA for PTSD before Jan 1, 2030?",
     "updated_time": "2026-05-14T02:00:01.409774Z",
-    "volume_24h_fp": "514.56",
+    "volume_24h_fp": "509.56",
     "volume_fp": "2967.82",
     "yes_ask_dollars": "0.5100",
     "yes_ask_size_fp": "505.00",
-    "yes_bid_dollars": "0.4700",
-    "yes_bid_size_fp": "5.00",
+    "yes_bid_dollars": "0.4800",
+    "yes_bid_size_fp": "27.43",
     "yes_sub_title": "Before Jan 1, 2030"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-MDMA-30JAN01",
-  "market_captured_at": "2026-09-28T09:02:03.020Z",
+  "market_captured_at": "2026-09-28T14:08:58.976Z",
   "status": "active",
-  "last_ingested_at": "2026-09-28T09:02:03.635Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-MDMA-30JAN01/candlesticks?start_ts=1790568001&end_ts=1790586123&period_interval=1440"
+  "last_ingested_at": "2026-09-28T14:08:59.639Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-MDMA-30JAN01/candlesticks?start_ts=1790568001&end_ts=1790604539&period_interval=1440"
 }

@@ -254,6 +254,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T14:08:23.837Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG23SEATEN-TEN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -311,9 +321,9 @@
     "yes_sub_title": "TEN Titans"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG23SEATEN-TEN",
-  "market_captured_at": "2026-09-28T09:01:30.717Z",
+  "market_captured_at": "2026-09-28T14:08:22.393Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T09:01:31.960Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG23SEATEN-TEN/candlesticks?start_ts=1790499691&end_ts=1790586090&period_interval=1"
+  "last_ingested_at": "2026-09-28T14:08:23.776Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG23SEATEN-TEN/candlesticks?start_ts=1790518102&end_ts=1790604501&period_interval=1"
 }
