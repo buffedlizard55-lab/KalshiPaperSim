@@ -6650,6 +6650,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-28T05:43:09.695Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6677,7 +6687,7 @@
     "open_interest_fp": "2077805.44",
     "open_time": "2026-09-13T01:07:00Z",
     "previous_price_dollars": "0.0100",
-    "previous_yes_ask_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
     "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -6698,7 +6708,7 @@
     "ticker": "KXNCAAFGAME-26SEP26CMUMIA-CMU",
     "title": "Central Michigan wins",
     "updated_time": "2026-09-27T01:57:26.820351Z",
-    "volume_24h_fp": "1827667.50",
+    "volume_24h_fp": "0.00",
     "volume_fp": "2088273.57",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -6707,9 +6717,9 @@
     "yes_sub_title": "Central Michigan"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU",
-  "market_captured_at": "2026-09-27T19:54:35.501Z",
+  "market_captured_at": "2026-09-28T05:43:09.148Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-27T19:54:36.064Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/candlesticks?start_ts=1790481601&end_ts=1790538875&period_interval=1440",
+  "last_ingested_at": "2026-09-28T05:43:09.673Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/candlesticks?start_ts=1790481601&end_ts=1790574189&period_interval=1440",
   "result": "no"
 }
