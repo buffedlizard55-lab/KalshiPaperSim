@@ -1,0 +1,149 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-09-30",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260930"
+  ]
+ },
+ "captures": [
+  "2026-09-29T10:06:38.562Z"
+ ],
+ "events": {
+  "401891780": {
+   "eventId": "401891780",
+   "date": "2026-10-01T02:00Z",
+   "easternDate": "2026-09-30",
+   "name": "Los Angeles Kings at Colorado Avalanche",
+   "shortName": "LA @ COL",
+   "week": null,
+   "venue": "Ball Arena",
+   "homeAbbr": "COL",
+   "homeTeamId": "17",
+   "homeName": "Colorado Avalanche",
+   "awayAbbr": "LA",
+   "awayTeamId": "8",
+   "awayName": "Los Angeles Kings",
+   "firstCapturedAt": "2026-09-29T10:06:38.562Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "COL -180",
+    "spread": -1.5,
+    "overUnder": 5.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-29T10:06:38.562Z",
+     "last_seen_at": "2026-09-29T10:06:38.562Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-0-0"
+     }
+    }
+   ]
+  },
+  "401891821": {
+   "eventId": "401891821",
+   "date": "2026-09-30T23:30Z",
+   "easternDate": "2026-09-30",
+   "name": "Pittsburgh Penguins at Philadelphia Flyers",
+   "shortName": "PIT @ PHI",
+   "week": null,
+   "venue": "Xfinity Mobile Arena",
+   "homeAbbr": "PHI",
+   "homeTeamId": "15",
+   "homeName": "Philadelphia Flyers",
+   "awayAbbr": "PIT",
+   "awayTeamId": "16",
+   "awayName": "Pittsburgh Penguins",
+   "firstCapturedAt": "2026-09-29T10:06:38.562Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "PHI -135",
+    "spread": -1.5,
+    "overUnder": 6.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-29T10:06:38.562Z",
+     "last_seen_at": "2026-09-29T10:06:38.562Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-0-0"
+     }
+    }
+   ]
+  },
+  "401892431": {
+   "eventId": "401892431",
+   "date": "2026-09-30T23:30Z",
+   "easternDate": "2026-09-30",
+   "name": "New York Islanders at Toronto Maple Leafs",
+   "shortName": "NYI @ TOR",
+   "week": null,
+   "venue": "Scotiabank Arena",
+   "homeAbbr": "TOR",
+   "homeTeamId": "21",
+   "homeName": "Toronto Maple Leafs",
+   "awayAbbr": "NYI",
+   "awayTeamId": "12",
+   "awayName": "New York Islanders",
+   "firstCapturedAt": "2026-09-29T10:06:38.562Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "TOR -125",
+    "spread": -1.5,
+    "overUnder": 5.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-29T10:06:38.562Z",
+     "last_seen_at": "2026-09-29T10:06:38.562Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-0-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-29T10:06:38.562Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260930"
+}

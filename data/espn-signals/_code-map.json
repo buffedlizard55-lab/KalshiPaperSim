@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-29T03:25:18.749Z",
+ "generatedAt": "2026-09-29T10:06:39.171Z",
  "rows": [
   {
    "league": "nba",
@@ -1220,6 +1220,31 @@
   },
   {
    "league": "nfl",
+   "kalshiCode": "CHI",
+   "kalshiName": "Chicago",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "3",
+    "abbr": "CHI",
+    "displayName": "Chicago Bears",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP28PHICHI-CHI",
+     "rulesName": "Chicago",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP28PHICHI-PHI",
+     "rulesName": "Chicago",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nfl",
    "kalshiCode": "DAL",
    "kalshiName": "Dallas",
    "conflictWith": null,
@@ -1447,6 +1472,11 @@
    "espnReason": "MATCHED",
    "evidence": [
     {
+     "ticker": "KXNFLGAME-26SEP27MINTB-MIN",
+     "rulesName": "Minnesota",
+     "role": "away"
+    },
+    {
      "ticker": "KXNFLGAME-26SEP27MINTB-TB",
      "rulesName": "Minnesota",
      "role": "away"
@@ -1545,6 +1575,16 @@
      "ticker": "KXNFLGAME-26SEP13WASPHI-WAS",
      "rulesName": "Philadelphia",
      "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP28PHICHI-CHI",
+     "rulesName": "Philadelphia",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26SEP28PHICHI-PHI",
+     "rulesName": "Philadelphia",
+     "role": "away"
     }
    ]
   },
@@ -1621,6 +1661,11 @@
    },
    "espnReason": "MATCHED",
    "evidence": [
+    {
+     "ticker": "KXNFLGAME-26SEP27MINTB-MIN",
+     "rulesName": "Tampa Bay",
+     "role": "home"
+    },
     {
      "ticker": "KXNFLGAME-26SEP27MINTB-TB",
      "rulesName": "Tampa Bay",
