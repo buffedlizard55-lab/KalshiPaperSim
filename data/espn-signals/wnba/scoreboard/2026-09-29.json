@@ -12,7 +12,8 @@
   "2026-09-28T21:01:53.955Z",
   "2026-09-29T01:02:08.528Z",
   "2026-09-29T03:25:18.114Z",
-  "2026-09-29T10:06:38.670Z"
+  "2026-09-29T10:06:38.670Z",
+  "2026-09-29T19:45:36.723Z"
  ],
  "events": {
   "401918017": {
@@ -39,7 +40,7 @@
    "states": [
     {
      "captured_at": "2026-09-28T09:09:48.586Z",
-     "last_seen_at": "2026-09-29T10:06:38.670Z",
+     "last_seen_at": "2026-09-29T19:45:36.723Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -83,7 +84,7 @@
    "states": [
     {
      "captured_at": "2026-09-28T09:09:48.586Z",
-     "last_seen_at": "2026-09-29T10:06:38.670Z",
+     "last_seen_at": "2026-09-29T19:45:36.723Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -104,6 +105,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-09-29T10:06:38.670Z",
+ "last_ingested_at": "2026-09-29T19:45:36.723Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260929"
 }
