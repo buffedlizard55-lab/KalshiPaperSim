@@ -760,6 +760,106 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1790672400,
+      "open_interest_fp": "6181.82",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1790676000,
+      "open_interest_fp": "6181.82",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1790679600,
+      "open_interest_fp": "6181.82",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1790683200,
+      "open_interest_fp": "6181.82",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1790686800,
+      "open_interest_fp": "6181.82",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -1726,6 +1826,114 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T13:02:26.233Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10BALLNW-BALL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "116129.00"
+            ],
+            [
+              "0.0200",
+              "9382.00"
+            ],
+            [
+              "0.0300",
+              "8404.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "133.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1600",
+              "1831.00"
+            ],
+            [
+              "0.4000",
+              "50.00"
+            ],
+            [
+              "0.5500",
+              "25.00"
+            ],
+            [
+              "0.5600",
+              "6.07"
+            ],
+            [
+              "0.6200",
+              "16.00"
+            ],
+            [
+              "0.6300",
+              "2026.00"
+            ],
+            [
+              "0.6400",
+              "805.00"
+            ],
+            [
+              "0.6500",
+              "26.07"
+            ],
+            [
+              "0.7000",
+              "23.00"
+            ],
+            [
+              "0.7500",
+              "25.00"
+            ],
+            [
+              "0.9200",
+              "779.00"
+            ],
+            [
+              "0.9300",
+              "766.14"
+            ],
+            [
+              "0.9400",
+              "806.00"
+            ],
+            [
+              "0.9500",
+              "1.06"
+            ],
+            [
+              "0.9600",
+              "22.00"
+            ],
+            [
+              "0.9700",
+              "450.03"
+            ],
+            [
+              "0.9800",
+              "997640.18"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "14673.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1772,17 +1980,17 @@
     "ticker": "KXNCAAFGAME-26OCT10BALLNW-BALL",
     "title": "Ball St. wins",
     "updated_time": "2026-09-28T22:12:14.731175Z",
-    "volume_24h_fp": "1772.44",
+    "volume_24h_fp": "368.74",
     "volume_fp": "6181.82",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "998040.18",
+    "yes_ask_size_fp": "997640.18",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "17673.00",
+    "yes_bid_size_fp": "14673.00",
     "yes_sub_title": "Ball St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10BALLNW-BALL",
-  "market_captured_at": "2026-09-29T08:58:12.591Z",
+  "market_captured_at": "2026-09-29T13:02:25.562Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T08:58:13.258Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10BALLNW-BALL/candlesticks?start_ts=1790661601&end_ts=1790672292&period_interval=60"
+  "last_ingested_at": "2026-09-29T13:02:26.199Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10BALLNW-BALL/candlesticks?start_ts=1790668801&end_ts=1790686945&period_interval=60"
 }

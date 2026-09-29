@@ -6615,14 +6615,14 @@
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.2500",
-    "no_bid_dollars": "0.1300",
+    "no_bid_dollars": "0.0900",
     "no_sub_title": "Above 4.25%",
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "3467.58",
     "open_time": "2025-10-13T14:00:00Z",
-    "previous_price_dollars": "0.6300",
-    "previous_yes_ask_dollars": "0.6300",
-    "previous_yes_bid_dollars": "0.4900",
+    "previous_price_dollars": "0.8300",
+    "previous_yes_ask_dollars": "0.8400",
+    "previous_yes_bid_dollars": "0.8300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -6641,17 +6641,17 @@
     "ticker": "KXFED-27APR-T4.25",
     "title": "Will the upper bound of the federal funds rate be above 4.25% following the Fed's Apr 28, 2027 meeting?",
     "updated_time": "2026-04-09T14:07:28.591885Z",
-    "volume_24h_fp": "5343.25",
+    "volume_24h_fp": "82.25",
     "volume_fp": "15769.06",
-    "yes_ask_dollars": "0.8700",
-    "yes_ask_size_fp": "4.00",
+    "yes_ask_dollars": "0.9100",
+    "yes_ask_size_fp": "6.00",
     "yes_bid_dollars": "0.7500",
-    "yes_bid_size_fp": "32.10",
+    "yes_bid_size_fp": "6.75",
     "yes_sub_title": "Above 4.25%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T4.25",
-  "market_captured_at": "2026-09-29T08:51:06.489Z",
+  "market_captured_at": "2026-09-29T12:56:32.060Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T08:51:07.055Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.25/candlesticks?start_ts=1790654401&end_ts=1790671866&period_interval=1440"
+  "last_ingested_at": "2026-09-29T12:56:32.596Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.25/candlesticks?start_ts=1790654401&end_ts=1790686592&period_interval=1440"
 }

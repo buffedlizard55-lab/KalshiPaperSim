@@ -201,11 +201,11 @@ Every number here is recomputed on demand; nothing in this table is stored.
 
 `flights.json` · The hourly flight replays the 60-minute store; the micro flight replays the 1-minute store. Both paragraphs below are **computed from the store at build time** (`flightCaption` in `src/store-facts.js`), so a market that settles or a bar that lands changes the sentence. A strategy that needs intraday bars cannot be judged on daily ones, so these are separate leaderboards.
 
-**HOURLY STORE** — 512 market(s) across 53 series, 338 of them finalized with the exchange's own result (27,914 numeric closes spanning $0.00–$0.99); largest: KXHIGHNY (54 markets, 54 settled, 2,142 bars); KXNCAAFGAME (43 markets, 4,199 bars); KXNHLGAME (35 markets, 35 settled, 2,845 bars)
+**HOURLY STORE** — 513 market(s) across 53 series, 340 of them finalized with the exchange's own result (27,962 numeric closes spanning $0.00–$0.99); largest: KXHIGHNY (54 markets, 54 settled, 2,142 bars); KXNCAAFGAME (43 markets, 4,237 bars); KXNHLGAME (35 markets, 35 settled, 2,845 bars)
 
-**MICRO STORE** — 685 market(s) across 47 series, 546 of them finalized with the exchange's own result (33,723 numeric closes spanning $0.00–$1.00); largest: KXETH15M (106 markets, 106 settled, 1,696 bars); KXBTC15M (102 markets, 102 settled, 1,632 bars); KXSOL15M (99 markets, 99 settled, 1,584 bars)
+**MICRO STORE** — 686 market(s) across 47 series, 547 of them finalized with the exchange's own result (33,738 numeric closes spanning $0.00–$1.00); largest: KXETH15M (106 markets, 106 settled, 1,696 bars); KXBTC15M (102 markets, 102 settled, 1,632 bars); KXSOL15M (99 markets, 99 settled, 1,584 bars)
 
-**HOURLY (period_interval 60)** — 1724 hourly periods across 494 markets
+**HOURLY (period_interval 60)** — 1729 hourly periods across 495 markets
 
 | # | Username | Return | Trades | Real settlements booked | Real payout |
 | --- | --- | --- | --- | --- | --- |
@@ -215,31 +215,31 @@ Every number here is recomputed on demand; nothing in this table is stored.
 | 4 | **SportsSteam_Fade** | +8.89% | 72 | 62 | $270,280.68 |
 | 5 | **MEE_BoardSum** | +1.18% | 13 | 11 | $1,659.29 |
 | 6 | **WeatherLadder_MultiCity** | +0.10% | 57 | 57 | $209.81 |
-| 7 | **ForecastEdge_MultiCity** | +0.03% | 35 | 33 | $719.73 |
+| 7 | **ForecastEdge_MultiCity** | +0.03% | 35 | 34 | $719.73 |
 | 8 | **NCAAF_GameFavourite** | +0.03% | 7 | 4 | $0.46 |
 | 9 | **WeatherLadder_CheapBands** | +0.00% | 9 | 9 | $13.21 |
 | 10 | **CPI_PrintFade** | +0.00% | 1 | 1 | $0.00 |
 | 11 | **ForecastEdge_Weather** | -0.04% | 13 | 13 | $331.30 |
-| 12 | **SportsFavourite_Settle** | -0.46% | 64 | 59 | $241.69 |
+| 12 | **SportsFavourite_Settle** | -0.45% | 64 | 59 | $241.69 |
 | 13 | **WeatherFavourite_Decay** | -1.77% | 80 | 79 | $23,648.22 |
 | 14 | **FedBucket_Ladder** | -4.34% | 6 | 6 | $0.00 |
-| 15 | **MakerFlip_SpreadHarvest** | -70.55% | 6855 | 265 | $365,610.16 |
-| 16 | **PanicFade_HourlyVol** | -89.14% | 1996 | 200 | $195,208.41 |
-| 17 | **VolatilityArb_MM** | -91.23% | 13314 | 308 | $248,457.69 |
-| 18 | **PanicDip_ShockTiming** | -99.88% | 2109 | 154 | $75,521.94 |
+| 15 | **MakerFlip_SpreadHarvest** | -71.03% | 6917 | 267 | $362,383.38 |
+| 16 | **PanicFade_HourlyVol** | -89.39% | 2008 | 202 | $195,208.41 |
+| 17 | **VolatilityArb_MM** | -91.65% | 13360 | 310 | $247,725.50 |
+| 18 | **PanicDip_ShockTiming** | -99.88% | 1552 | 123 | $75,085.33 |
 | — | **HeatConfirm_500Bots** *(unranked)* | *no trades* | 0 | 0 | $0.00 |
 | — | **NBAInjury_AvailGap** *(unranked)* | *no trades* | 0 | 0 | $0.00 |
 
-**MICRO (period_interval 1)** — 10592 one-minute periods across 644 markets
+**MICRO (period_interval 1)** — 10608 one-minute periods across 645 markets
 
 | # | Username | Return | Trades | Real settlements booked | Real payout |
 | --- | --- | --- | --- | --- | --- |
-| 1 | **FadeSpike_Micro** | +224.29% | 400 | 400 | $749,812.16 |
+| 1 | **FadeSpike_Micro** | +225.10% | 401 | 401 | $751,196.02 |
 | 2 | **Crypto15M_CheapTail** | +97.99% | 307 | 307 | $227,700.16 |
 | 3 | **MLBLead_InPlay** | +0.44% | 3 | 3 | $3,427.55 |
 | 4 | **MLBTrail_Comeback** | -0.13% | 2 | 2 | $485.71 |
-| 5 | **GoldBracket_EarlyLeader** | -25.98% | 92 | 92 | $86,887.02 |
-| 6 | **MomTick_Micro** | -100.00% | 397 | 397 | $431,377.33 |
+| 5 | **GoldBracket_EarlyLeader** | -25.68% | 93 | 93 | $87,589.08 |
+| 6 | **MomTick_Micro** | -100.00% | 398 | 398 | $431,377.39 |
 | 7 | **HighProb_Scalp8095** | -100.00% | 387 | 111 | $0.00 |
 | 8 | **Crypto15M_EarlyLeader** | -100.00% | 144 | 144 | $139,066.77 |
 | — | **MLBPreGame_ModelEdge** *(unranked)* | *no trades* | 0 | 0 | $0.00 |
@@ -251,23 +251,23 @@ Every number here is recomputed on demand; nothing in this table is stored.
 > **ForecastEdge_Weather is the forward test.** It trades only where the point-in-time NWS archive (Austin (Camp Mabry): 49 snapshot(s), first 2026-09-18T13:24:29.350Z; Chicago (Midway): 49 snapshot(s), first 2026-09-18T13:24:29.350Z; Denver (DEN): 49 snapshot(s), first 2026-09-18T13:24:29.350Z; Los Angeles (LAX): 49 snapshot(s), first 2026-09-18T13:24:29.350Z; Miami (MIA): 49 snapshot(s), first 2026-09-18T13:24:29.350Z; New York (Central Park): 51 snapshot(s), first 2026-09-18T03:19:26.166Z; Philadelphia (PHL): 49 snapshot(s), first 2026-09-18T13:24:29.350Z; Phoenix (PHX): 49 snapshot(s), first 2026-09-18T13:24:29.350Z; Seattle (Sea-Tac): 49 snapshot(s), first 2026-09-18T13:24:29.350Z) has a snapshot at or before the decision bar. On the backfilled August–September brackets it correctly abstains (0 trades, unranked, reason published); its real window is the live market from 2026-09-18 onward.
 ### The Live Desk — paper orders placed on real OPEN contracts, point-in-time
 
-Cut-off **2026-09-29T09:02:35.563Z** (newest captured ladder). 95 of 106 tracked contracts had a real captured ladder at or before that instant; 30 orders were placed, 29 filled against real depth, 1 rested without crossing and was cancelled, and 0 position(s) were settled by the exchange's own result. Official fees: **$2622.9599**. The desk audit (13 invariants, D1–D13) PASSES on this run: every fill is re-derived from the captured ladder it names, every fee from the official schedule with the series multiplier, every settlement from `settlement_value_dollars`.
+Cut-off **2026-09-29T13:06:29.694Z** (newest captured ladder). 95 of 106 tracked contracts had a real captured ladder at or before that instant; 30 orders were placed, 29 filled against real depth, 1 rested without crossing and was cancelled, and 0 position(s) were settled by the exchange's own result. Official fees: **$2622.9599**. The desk audit (13 invariants, D1–D13) PASSES on this run: every fill is re-derived from the captured ladder it names, every fee from the official schedule with the series multiplier, every settlement from `settlement_value_dollars`.
 
 | # | Desk username | Return | Equity | Fills | Contracts | Unfilled | Slippage cost | Fees | Settlement PnL |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | **LiveMeanRev_Spike** | +2.65% | $102,653.29 | 1 | 616,041.55 | 883,958.45 | $0.0000 | $426.9168 | $0.00 |
 | 2 | **LiveExpiryHarvest** | -0.00% | $99,995.93 | 1 | 187 | 0 | $0.3215 | $0.9444 | $0.00 |
-| 3 | **LiveTheLeap_Momentum** | -0.01% | $99,994.83 | 2 | 3,626 | 0 | $3.0270 | $0.0000 | $0.00 |
-| 4 | **LiveNCAA_GameFavourite** | -0.02% | $99,982.58 | 3 | 1,372.29 | 24,781.71 | $1.8322 | $2.4978 | $0.00 |
-| 5 | **LiveCheapBracket_Ladder** | -0.03% | $99,967.02 | 3 | 11,037 | 0 | $25.8316 | $0.0000 | $0.00 |
-| 6 | **LiveInsider_FilingFader** | -0.04% | $99,964.44 | 1 | 503 | 0 | $20.1170 | $0.3488 | $0.00 |
-| 7 | **LiveFDA_DecisionPremium** | -0.04% | $99,964.42 | 3 | 1,437.78 | 3,991.22 | $12.6556 | $6.7345 | $0.00 |
+| 3 | **LiveTheLeap_Momentum** | -0.01% | $99,992.45 | 2 | 5,311 | 0 | $3.0376 | $0.0000 | $0.00 |
+| 4 | **LiveNCAA_GameFavourite** | -0.02% | $99,982.58 | 3 | 1,372.29 | 21,981.71 | $1.8322 | $2.4978 | $0.00 |
+| 5 | **LiveInsider_FilingFader** | -0.04% | $99,964.44 | 1 | 503 | 0 | $20.1170 | $0.3488 | $0.00 |
+| 6 | **LiveFDA_DecisionPremium** | -0.04% | $99,964.42 | 3 | 1,437.78 | 4,191.22 | $12.6556 | $6.7345 | $0.00 |
+| 7 | **LiveCheapBracket_Ladder** | -0.05% | $99,946.03 | 3 | 17,963 | 0 | $41.4109 | $0.0000 | $0.00 |
 | 8 | **LiveCEO_ChangeFav** | -0.14% | $99,855.15 | 1 | 2,438 | 0 | $68.0226 | $3.6852 | $0.00 |
-| 9 | **LiveMLB_GameFavourite** | -0.18% | $99,815.57 | 3 | 29,385 | 0 | $52.7378 | $95.3416 | $0.00 |
-| 10 | **LiveTailPremium_NO** | -0.28% | $99,716.50 | 3 | 7,716 | 0 | $206.0140 | $35.7161 | $0.00 |
+| 9 | **LiveMLB_GameFavourite** | -0.18% | $99,824.91 | 3 | 29,385 | 0 | $52.7378 | $95.3416 | $0.00 |
+| 10 | **LiveTailPremium_NO** | -0.28% | $99,716.45 | 3 | 7,701 | 0 | $206.1462 | $35.7161 | $0.00 |
 | 11 | **LiveFavourite_Settle** | -0.41% | $99,587.20 | 1 | 38,461 | 0 | $0.0000 | $220.4970 | $0.00 |
 | 12 | **LiveNFL_GameFavourite** | -0.94% | $99,063.73 | 3 | 81,060 | 0 | $207.2032 | $323.7589 | $0.00 |
-| 13 | **LiveLongshot_Convexity** | -1.59% | $98,410.38 | 3 | 281,623.29 | 452,184.71 | $1.6911 | $192.8983 | $0.00 |
+| 13 | **LiveLongshot_Convexity** | -1.59% | $98,410.48 | 3 | 282,806.29 | 452,184.71 | $0.4098 | $192.8983 | $0.00 |
 | 14 | **LiveDepthSweep_Taker** | -3.28% | $96,716.75 | 1 | 200,000 | 0 | $969.6000 | $1313.6205 | $0.00 |
 | — | **LiveMakerTouch** | *no fillable order* | $100,000.00 | 0 | 0 | 0 | $0.0000 | $0.0000 | $0.00 |
 | — | **LiveMomentum_Bars** | *no fillable order* | $100,000.00 | 0 | 0 | 0 | $0.0000 | $0.0000 | $0.00 |
@@ -281,35 +281,35 @@ Cut-off **2026-09-29T09:02:35.563Z** (newest captured ladder). 95 of 106 tracked
 
 > A desk entry that placed no fillable order at this cut-off is shown as **no fillable order**, not as 0%: no price is invented, so a strategy that finds no real size simply does not trade.
 
-The **−15h cut-off** (`2026-09-28T18:02:35.563Z`) is the one window that both trades and settles inside the captured data: 30 fills, 0 real settlement(s), $2686.1273 in official fees — the $1.00/$0.00 payouts come from the exchange's own finalization, not from a mark.
+The **−15h cut-off** (`2026-09-28T22:06:29.694Z`) is the one window that both trades and settles inside the captured data: 30 fills, 0 real settlement(s), $2686.1273 in official fees — the $1.00/$0.00 payouts come from the exchange's own finalization, not from a mark.
 
 Reproduce either run locally with `node scripts/run-live-desk.mjs` (add `--as-of=ISO` for an older cut-off); the desk is deterministic, and `scripts/run-live-desk.mjs` exits non-zero if any desk invariant fails.
 
 ### The Desk Season — one carried book across 12 real capture rounds
 
-Window **2026-09-17T23:26:44.528Z → 2026-09-29T09:02:35.563Z** (273.6 h). Every round is a real capture instant chosen by 47 ingest batch(es) over 1247 captured instants; cash, open positions and the cumulative liquidity cap are the SAME book from round 1 to the last round, and the season walks the real events BETWEEN rounds (later captured ladders, later candlesticks, and the exchange's own settlements) before the next decision. Season audit: **27 checks** (the 13 desk invariants D1–D13 re-run over the whole season plus the season's own S1–S12) PASS.
+Window **2026-09-17T23:26:44.528Z → 2026-09-29T13:06:29.694Z** (277.7 h). Every round is a real capture instant chosen by 48 ingest batch(es) over 1256 captured instants; cash, open positions and the cumulative liquidity cap are the SAME book from round 1 to the last round, and the season walks the real events BETWEEN rounds (later captured ladders, later candlesticks, and the exchange's own settlements) before the next decision. Season audit: **27 checks** (the 13 desk invariants D1–D13 re-run over the whole season plus the season's own S1–S12) PASS.
 
 | # | Round | Real capture instant | Contracts with a ladder | New ladders in this batch | Real events walked | Real settlements | Carried maker fills |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | **R01** | 2026-09-17T23:26:44.528Z | 1 | 1 | 0 (0 candle + 0 ladder quote(s)) | 0 | 0 |
 | 2 | **R02** | 2026-09-18T05:50:00.627Z | 2 | 0 | 136 (132 candle + 4 ladder quote(s)) | 0 | 0 |
-| 3 | **R03** | 2026-09-18T18:46:22.458Z | 44 | 39 | 330 (283 candle + 47 ladder quote(s)) | 0 | 1 |
-| 4 | **R04** | 2026-09-20T00:40:12.097Z | 47 | 0 | 3203 (3192 candle + 11 ladder quote(s)) | 0 | 7 |
+| 3 | **R03** | 2026-09-19T11:08:18.437Z | 45 | 28 | 1062 (1013 candle + 49 ladder quote(s)) | 0 | 2 |
+| 4 | **R04** | 2026-09-20T00:40:12.097Z | 47 | 0 | 2471 (2462 candle + 9 ladder quote(s)) | 0 | 6 |
 | 5 | **R05** | 2026-09-21T20:42:50.633Z | 47 | 0 | 1944 (1936 candle + 8 ladder quote(s)) | 0 | 6 |
 | 6 | **R06** | 2026-09-23T05:07:53.824Z | 47 | 0 | 43 (37 candle + 6 ladder quote(s)) | 0 | 0 |
-| 7 | **R07** | 2026-09-24T05:18:52.430Z | 54 | 5 | 240 (221 candle + 19 ladder quote(s)) | 0 | 0 |
-| 8 | **R08** | 2026-09-25T05:21:33.790Z | 54 | 0 | 215 (179 candle + 36 ladder quote(s)) | 0 | 0 |
-| 9 | **R09** | 2026-09-26T05:26:59.819Z | 90 | 1 | 370 (163 candle + 207 ladder quote(s)) | 0 | 0 |
-| 10 | **R10** | 2026-09-27T08:37:14.785Z | 92 | 0 | 392 (141 candle + 250 ladder quote(s)) | 1 | 0 |
-| 11 | **R11** | 2026-09-28T09:02:26.529Z | 96 | 0 | 571 (258 candle + 313 ladder quote(s)) | 0 | 0 |
-| 12 | **R12** | 2026-09-29T09:02:35.563Z | 95 | 0 | 603 (215 candle + 388 ladder quote(s)) | 0 | 0 |
+| 7 | **R07** | 2026-09-24T07:54:42.062Z | 53 | 0 | 271 (243 candle + 28 ladder quote(s)) | 0 | 0 |
+| 8 | **R08** | 2026-09-25T08:13:55.821Z | 88 | 34 | 263 (180 candle + 83 ladder quote(s)) | 0 | 0 |
+| 9 | **R09** | 2026-09-26T08:06:40.811Z | 90 | 0 | 369 (161 candle + 208 ladder quote(s)) | 0 | 6 |
+| 10 | **R10** | 2026-09-27T08:37:14.785Z | 92 | 0 | 284 (120 candle + 163 ladder quote(s)) | 1 | 6 |
+| 11 | **R11** | 2026-09-28T14:09:25.492Z | 97 | 0 | 651 (301 candle + 350 ladder quote(s)) | 0 | 1 |
+| 12 | **R12** | 2026-09-29T13:06:29.694Z | 95 | 0 | 600 (210 candle + 390 ladder quote(s)) | 0 | 1 |
 
 | # | Season username | Return | Equity | Fills | Rounds traded | Contracts | Fees | Settlement PnL | Unrealized | Max DD |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | **SeasonExpiry_LastRound** | -0.00% | $99,995.93 | 1 | 1/12 | 187 | $0.9444 | $0.00 | $-3.13 | 0.00% |
-| 2 | **SeasonIndex_CarryHold** | -0.02% | $99,982.12 | 1 | 1/12 | 183 | $1.1366 | $0.00 | $-16.74 | 0.02% |
-| 3 | **SeasonMaker_RestCarry** | -0.04% | $99,961.87 | 14 | 4/12 | 5,117.33 | $13.1915 | $0.56 | $-25.50 | 0.04% |
-| 4 | **SeasonBoardSum_Ladder** | -0.14% | $99,861.21 | 10 | 3/12 | 24,399 | $0.0000 | $0.00 | $-138.79 | 0.14% |
+| 2 | **SeasonIndex_CarryHold** | -0.02% | $99,981.21 | 1 | 1/12 | 183 | $1.1366 | $0.00 | $-17.66 | 0.02% |
+| 3 | **SeasonMaker_RestCarry** | -0.04% | $99,956.80 | 28 | 5/12 | 5,965.06 | $14.0290 | $0.56 | $-29.74 | 0.04% |
+| 4 | **SeasonBoardSum_Ladder** | -0.14% | $99,857.35 | 10 | 3/12 | 26,880 | $0.0000 | $0.00 | $-142.65 | 0.14% |
 | — | **SeasonWeather_Carry** | *no fillable order* | $100,000.00 | 0 | 0/12 | 0 | $0.0000 | $0.00 | $0.00 | 0.00% |
 | — | **SeasonControl_NoTrade** | *no fillable order* | $100,000.00 | 0 | 0/12 | 0 | $0.0000 | $0.00 | $0.00 | 0.00% |
 

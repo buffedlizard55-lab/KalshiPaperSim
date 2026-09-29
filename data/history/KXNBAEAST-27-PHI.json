@@ -13360,7 +13360,7 @@
     "expected_expiration_time": "2027-06-30T14:00:00Z",
     "expiration_time": "2029-06-29T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.2400",
+    "last_price_dollars": "0.2300",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
@@ -13369,11 +13369,11 @@
     "no_sub_title": "Philadelphia",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "414288.14",
+    "open_interest_fp": "414193.00",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.2500",
+    "previous_price_dollars": "0.2300",
     "previous_yes_ask_dollars": "0.2500",
-    "previous_yes_bid_dollars": "0.2400",
+    "previous_yes_bid_dollars": "0.2300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -13391,17 +13391,17 @@
     "ticker": "KXNBAEAST-27-PHI",
     "title": "Will Philadelphia win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "6524.01",
-    "volume_fp": "748605.45",
+    "volume_24h_fp": "6547.75",
+    "volume_fp": "748708.31",
     "yes_ask_dollars": "0.2400",
-    "yes_ask_size_fp": "6985.30",
+    "yes_ask_size_fp": "7044.35",
     "yes_bid_dollars": "0.2300",
-    "yes_bid_size_fp": "13409.62",
+    "yes_bid_size_fp": "13105.12",
     "yes_sub_title": "Philadelphia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-PHI",
-  "market_captured_at": "2026-09-29T08:52:27.010Z",
+  "market_captured_at": "2026-09-29T12:57:27.447Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T08:52:27.576Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-PHI/candlesticks?start_ts=1790654401&end_ts=1790671947&period_interval=1440"
+  "last_ingested_at": "2026-09-29T12:57:27.983Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-PHI/candlesticks?start_ts=1790654401&end_ts=1790686647&period_interval=1440"
 }

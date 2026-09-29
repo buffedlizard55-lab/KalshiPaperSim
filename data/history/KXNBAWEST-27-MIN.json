@@ -10484,7 +10484,7 @@
     "open_interest_fp": "98092.87",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.0900",
-    "previous_yes_ask_dollars": "0.0800",
+    "previous_yes_ask_dollars": "0.0900",
     "previous_yes_bid_dollars": "0.0700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -10506,14 +10506,14 @@
     "volume_24h_fp": "6992.43",
     "volume_fp": "118607.26",
     "yes_ask_dollars": "0.0900",
-    "yes_ask_size_fp": "3822.82",
+    "yes_ask_size_fp": "3823.08",
     "yes_bid_dollars": "0.0800",
     "yes_bid_size_fp": "27.17",
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-MIN",
-  "market_captured_at": "2026-09-29T08:52:40.208Z",
+  "market_captured_at": "2026-09-29T12:57:36.530Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T08:52:40.777Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-MIN/candlesticks?start_ts=1790654401&end_ts=1790671960&period_interval=1440"
+  "last_ingested_at": "2026-09-29T12:57:37.066Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-MIN/candlesticks?start_ts=1790654401&end_ts=1790686656&period_interval=1440"
 }

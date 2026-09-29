@@ -1427,6 +1427,126 @@
         "low_dollars": "0.7600",
         "open_dollars": "0.7600"
       }
+    },
+    {
+      "end_period_ts": 1790672400,
+      "open_interest_fp": "6636.29",
+      "price": {
+        "close_dollars": "0.7800",
+        "high_dollars": "0.7800",
+        "low_dollars": "0.7800",
+        "mean_dollars": "0.7800",
+        "open_dollars": "0.7800",
+        "previous_dollars": "0.7800"
+      },
+      "volume_fp": "64.33",
+      "yes_ask": {
+        "close_dollars": "0.7800",
+        "high_dollars": "0.7800",
+        "low_dollars": "0.7800",
+        "open_dollars": "0.7800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7600",
+        "high_dollars": "0.7600",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.7600"
+      }
+    },
+    {
+      "end_period_ts": 1790676000,
+      "open_interest_fp": "6636.29",
+      "price": {
+        "previous_dollars": "0.7800"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.7800",
+        "high_dollars": "0.7900",
+        "low_dollars": "0.7800",
+        "open_dollars": "0.7800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7600",
+        "high_dollars": "0.7600",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.7600"
+      }
+    },
+    {
+      "end_period_ts": 1790679600,
+      "open_interest_fp": "6683.00",
+      "price": {
+        "close_dollars": "0.7800",
+        "high_dollars": "0.7800",
+        "low_dollars": "0.7800",
+        "mean_dollars": "0.7800",
+        "open_dollars": "0.7800",
+        "previous_dollars": "0.7800"
+      },
+      "volume_fp": "46.71",
+      "yes_ask": {
+        "close_dollars": "0.7800",
+        "high_dollars": "0.7800",
+        "low_dollars": "0.7800",
+        "open_dollars": "0.7800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7600",
+        "high_dollars": "0.7600",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.7600"
+      }
+    },
+    {
+      "end_period_ts": 1790683200,
+      "open_interest_fp": "6937.50",
+      "price": {
+        "close_dollars": "0.7900",
+        "high_dollars": "0.7900",
+        "low_dollars": "0.7800",
+        "mean_dollars": "0.7817",
+        "open_dollars": "0.7800",
+        "previous_dollars": "0.7800"
+      },
+      "volume_fp": "254.50",
+      "yes_ask": {
+        "close_dollars": "0.7800",
+        "high_dollars": "0.8100",
+        "low_dollars": "0.7800",
+        "open_dollars": "0.7800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7600",
+        "high_dollars": "0.7600",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.7600"
+      }
+    },
+    {
+      "end_period_ts": 1790686800,
+      "open_interest_fp": "7000.42",
+      "price": {
+        "close_dollars": "0.7800",
+        "high_dollars": "0.7800",
+        "low_dollars": "0.7800",
+        "mean_dollars": "0.7800",
+        "open_dollars": "0.7800",
+        "previous_dollars": "0.7900"
+      },
+      "volume_fp": "62.92",
+      "yes_ask": {
+        "close_dollars": "0.7800",
+        "high_dollars": "0.7800",
+        "low_dollars": "0.7800",
+        "open_dollars": "0.7800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7600",
+        "high_dollars": "0.7600",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.7600"
+      }
     }
   ],
   "books": [
@@ -2589,6 +2709,194 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T13:02:22.307Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10TEXOKLA-TEX/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "111973.92"
+            ],
+            [
+              "0.0200",
+              "1740.20"
+            ],
+            [
+              "0.0300",
+              "752.09"
+            ],
+            [
+              "0.0400",
+              "1510.48"
+            ],
+            [
+              "0.0500",
+              "2141.00"
+            ],
+            [
+              "0.0600",
+              "337.98"
+            ],
+            [
+              "0.0700",
+              "229.51"
+            ],
+            [
+              "0.0800",
+              "1979.90"
+            ],
+            [
+              "0.0900",
+              "2270.59"
+            ],
+            [
+              "0.1000",
+              "2234.48"
+            ],
+            [
+              "0.1100",
+              "469.15"
+            ],
+            [
+              "0.1200",
+              "403.01"
+            ],
+            [
+              "0.1300",
+              "616.96"
+            ],
+            [
+              "0.1400",
+              "26.34"
+            ],
+            [
+              "0.1800",
+              "1500.00"
+            ],
+            [
+              "0.1900",
+              "700.00"
+            ],
+            [
+              "0.2000",
+              "70.29"
+            ],
+            [
+              "0.2100",
+              "48.21"
+            ],
+            [
+              "0.2200",
+              "160.08"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "111063.00"
+            ],
+            [
+              "0.0200",
+              "1881.00"
+            ],
+            [
+              "0.0300",
+              "500.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "379.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "460.00"
+            ],
+            [
+              "0.3000",
+              "100.00"
+            ],
+            [
+              "0.3100",
+              "80.00"
+            ],
+            [
+              "0.3500",
+              "1000.00"
+            ],
+            [
+              "0.3600",
+              "2093.98"
+            ],
+            [
+              "0.3700",
+              "23.00"
+            ],
+            [
+              "0.4900",
+              "1938.00"
+            ],
+            [
+              "0.5000",
+              "1.98"
+            ],
+            [
+              "0.5700",
+              "150.00"
+            ],
+            [
+              "0.6100",
+              "150.00"
+            ],
+            [
+              "0.6400",
+              "42.00"
+            ],
+            [
+              "0.6500",
+              "3.96"
+            ],
+            [
+              "0.6800",
+              "2444.00"
+            ],
+            [
+              "0.6900",
+              "1200.00"
+            ],
+            [
+              "0.7100",
+              "500.00"
+            ],
+            [
+              "0.7300",
+              "13.00"
+            ],
+            [
+              "0.7400",
+              "550.46"
+            ],
+            [
+              "0.7500",
+              "495.96"
+            ],
+            [
+              "0.7600",
+              "331.79"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2613,11 +2921,11 @@
     "no_sub_title": "Texas",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-10T22:30:00Z",
-    "open_interest_fp": "6585.79",
+    "open_interest_fp": "7000.42",
     "open_time": "2026-09-26T22:08:00Z",
-    "previous_price_dollars": "0.7900",
-    "previous_yes_ask_dollars": "0.7800",
-    "previous_yes_bid_dollars": "0.7600",
+    "previous_price_dollars": "0.8300",
+    "previous_yes_ask_dollars": "0.8300",
+    "previous_yes_bid_dollars": "0.8200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2635,17 +2943,17 @@
     "ticker": "KXNCAAFGAME-26OCT10TEXOKLA-TEX",
     "title": "Texas wins",
     "updated_time": "2026-09-26T22:08:01.193935Z",
-    "volume_24h_fp": "2781.22",
-    "volume_fp": "7752.60",
+    "volume_24h_fp": "3108.48",
+    "volume_fp": "8167.23",
     "yes_ask_dollars": "0.7800",
-    "yes_ask_size_fp": "159.24",
+    "yes_ask_size_fp": "160.08",
     "yes_bid_dollars": "0.7600",
-    "yes_bid_size_fp": "336.43",
+    "yes_bid_size_fp": "331.79",
     "yes_sub_title": "Texas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10TEXOKLA-TEX",
-  "market_captured_at": "2026-09-29T08:58:09.797Z",
+  "market_captured_at": "2026-09-29T13:02:21.636Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T08:58:10.464Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10TEXOKLA-TEX/candlesticks?start_ts=1790661601&end_ts=1790672290&period_interval=60"
+  "last_ingested_at": "2026-09-29T13:02:22.273Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10TEXOKLA-TEX/candlesticks?start_ts=1790668801&end_ts=1790686941&period_interval=60"
 }
