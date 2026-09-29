@@ -5725,6 +5725,130 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T21:03:27.631Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-UTA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3888999.00"
+            ],
+            [
+              "0.0300",
+              "1444.00"
+            ],
+            [
+              "0.0600",
+              "936602.00"
+            ],
+            [
+              "0.1100",
+              "510874.00"
+            ],
+            [
+              "0.1800",
+              "407331.00"
+            ],
+            [
+              "0.2500",
+              "288884.00"
+            ],
+            [
+              "0.3200",
+              "239995.00"
+            ],
+            [
+              "0.3700",
+              "46.79"
+            ],
+            [
+              "0.3900",
+              "129099.00"
+            ],
+            [
+              "0.4500",
+              "304263.00"
+            ],
+            [
+              "0.5300",
+              "54528.00"
+            ],
+            [
+              "0.5600",
+              "142595.00"
+            ],
+            [
+              "0.5700",
+              "2234.00"
+            ],
+            [
+              "0.6800",
+              "72091.00"
+            ],
+            [
+              "0.7400",
+              "22822.00"
+            ],
+            [
+              "0.7500",
+              "24987.00"
+            ],
+            [
+              "0.8100",
+              "15152.00"
+            ],
+            [
+              "0.8300",
+              "1350.00"
+            ],
+            [
+              "0.8700",
+              "587.58"
+            ],
+            [
+              "0.9000",
+              "3397.79"
+            ],
+            [
+              "0.9100",
+              "3000.00"
+            ],
+            [
+              "0.9300",
+              "3000.00"
+            ],
+            [
+              "0.9400",
+              "110.74"
+            ],
+            [
+              "0.9500",
+              "115.35"
+            ],
+            [
+              "0.9600",
+              "503.91"
+            ],
+            [
+              "0.9700",
+              "1128.74"
+            ],
+            [
+              "0.9800",
+              "99134.55"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -5780,8 +5904,8 @@
     "yes_sub_title": "Utah"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-UTA",
-  "market_captured_at": "2026-09-29T12:57:38.182Z",
+  "market_captured_at": "2026-09-29T21:03:26.993Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T12:57:38.718Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-UTA/candlesticks?start_ts=1790654401&end_ts=1790686658&period_interval=1440"
+  "last_ingested_at": "2026-09-29T21:03:27.566Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-UTA/candlesticks?start_ts=1790654401&end_ts=1790715807&period_interval=1440"
 }
