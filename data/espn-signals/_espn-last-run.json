@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-09-29T01:02:07.549Z",
+ "startedAt": "2026-09-29T03:25:17.535Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -24,7 +24,7 @@
       "ok": true,
       "status": 200,
       "events": 1,
-      "stateRows": 2
+      "stateRows": 3
      },
      "2026-09-29": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260929",
@@ -49,7 +49,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 65
+     "playerRecords": 66
     },
     "scoreboard": {
      "2026-09-28": {
@@ -208,5 +208,5 @@
   "matched": 62,
   "unmapped": 51
  },
- "finishedAt": "2026-09-29T01:02:09.149Z"
+ "finishedAt": "2026-09-29T03:25:18.750Z"
 }
