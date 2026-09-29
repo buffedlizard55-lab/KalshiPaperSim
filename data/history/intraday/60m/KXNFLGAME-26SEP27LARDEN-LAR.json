@@ -5000,6 +5000,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T06:04:50.366Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27LARDEN-LAR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5026,9 +5036,9 @@
     "occurrence_datetime": "2026-09-28T03:20:00Z",
     "open_interest_fp": "20254646.19",
     "open_time": "2026-09-15T16:16:00Z",
-    "previous_price_dollars": "0.5100",
-    "previous_yes_ask_dollars": "0.5100",
-    "previous_yes_bid_dollars": "0.5000",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5048,7 +5058,7 @@
     "ticker": "KXNFLGAME-26SEP27LARDEN-LAR",
     "title": "Los Angeles R wins",
     "updated_time": "2026-09-28T04:01:28.234956Z",
-    "volume_24h_fp": "39494636.39",
+    "volume_24h_fp": "0.00",
     "volume_fp": "40567111.77",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -5057,11 +5067,11 @@
     "yes_sub_title": "Los Angeles R"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27LARDEN-LAR",
-  "market_captured_at": "2026-09-28T22:23:13.180Z",
+  "market_captured_at": "2026-09-29T06:04:49.715Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-28T22:23:13.800Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-LAR/candlesticks?start_ts=1790568001&end_ts=1790634193&period_interval=60",
+  "last_ingested_at": "2026-09-29T06:04:50.343Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-LAR/candlesticks?start_ts=1790568001&end_ts=1790661890&period_interval=60",
   "trims": [
     {
       "at": "2026-09-28T05:47:22.510Z",

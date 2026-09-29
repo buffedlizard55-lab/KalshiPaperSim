@@ -978,6 +978,31 @@
         "low_dollars": "0.0900",
         "open_dollars": "0.1000"
       }
+    },
+    {
+      "end_period_ts": 1790654400,
+      "open_interest_fp": "261992.41",
+      "price": {
+        "close_dollars": "0.1200",
+        "high_dollars": "0.1400",
+        "low_dollars": "0.1200",
+        "mean_dollars": "0.1208",
+        "open_dollars": "0.1200",
+        "previous_dollars": "0.1400"
+      },
+      "volume_fp": "1383.35",
+      "yes_ask": {
+        "close_dollars": "0.1300",
+        "high_dollars": "0.1400",
+        "low_dollars": "0.1300",
+        "open_dollars": "0.1300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1200",
+        "high_dollars": "0.1300",
+        "low_dollars": "0.1100",
+        "open_dollars": "0.1200"
+      }
     }
   ],
   "books": [
@@ -10580,6 +10605,274 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T06:00:14.079Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-MIA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3895725.24"
+            ],
+            [
+              "0.0200",
+              "7200.00"
+            ],
+            [
+              "0.0300",
+              "8320.17"
+            ],
+            [
+              "0.0600",
+              "941081.71"
+            ],
+            [
+              "0.0700",
+              "21.55"
+            ],
+            [
+              "0.0800",
+              "11.74"
+            ],
+            [
+              "0.0900",
+              "100.00"
+            ],
+            [
+              "0.1100",
+              "516240.00"
+            ],
+            [
+              "0.1200",
+              "13.47"
+            ],
+            [
+              "0.1400",
+              "23.48"
+            ],
+            [
+              "0.1500",
+              "109.55"
+            ],
+            [
+              "0.1700",
+              "140.94"
+            ],
+            [
+              "0.1800",
+              "377908.00"
+            ],
+            [
+              "0.2000",
+              "128.57"
+            ],
+            [
+              "0.2300",
+              "6.73"
+            ],
+            [
+              "0.2500",
+              "290655.84"
+            ],
+            [
+              "0.2700",
+              "117.43"
+            ],
+            [
+              "0.2900",
+              "7.10"
+            ],
+            [
+              "0.3100",
+              "385333.16"
+            ],
+            [
+              "0.3200",
+              "4.51"
+            ],
+            [
+              "0.3700",
+              "45.52"
+            ],
+            [
+              "0.3800",
+              "237272.00"
+            ],
+            [
+              "0.3900",
+              "65.44"
+            ],
+            [
+              "0.4000",
+              "9.96"
+            ],
+            [
+              "0.4100",
+              "134.74"
+            ],
+            [
+              "0.4300",
+              "5.25"
+            ],
+            [
+              "0.4600",
+              "2059.62"
+            ],
+            [
+              "0.4700",
+              "132365.18"
+            ],
+            [
+              "0.4900",
+              "5.55"
+            ],
+            [
+              "0.5300",
+              "39774.59"
+            ],
+            [
+              "0.5500",
+              "30129.00"
+            ],
+            [
+              "0.5600",
+              "373.65"
+            ],
+            [
+              "0.5700",
+              "6.10"
+            ],
+            [
+              "0.6000",
+              "22452.00"
+            ],
+            [
+              "0.6100",
+              "3000.00"
+            ],
+            [
+              "0.6400",
+              "226.86"
+            ],
+            [
+              "0.6700",
+              "16412.00"
+            ],
+            [
+              "0.6800",
+              "1005.00"
+            ],
+            [
+              "0.6900",
+              "3000.00"
+            ],
+            [
+              "0.7200",
+              "90.00"
+            ],
+            [
+              "0.7300",
+              "1147.73"
+            ],
+            [
+              "0.7600",
+              "1761.50"
+            ],
+            [
+              "0.7700",
+              "37.27"
+            ],
+            [
+              "0.7800",
+              "0.67"
+            ],
+            [
+              "0.8000",
+              "3000.00"
+            ],
+            [
+              "0.8100",
+              "84.70"
+            ],
+            [
+              "0.8200",
+              "1.34"
+            ],
+            [
+              "0.8300",
+              "707.25"
+            ],
+            [
+              "0.8400",
+              "7021.34"
+            ],
+            [
+              "0.8500",
+              "7501.34"
+            ],
+            [
+              "0.8600",
+              "330.53"
+            ],
+            [
+              "0.8700",
+              "343.15"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "891093.00"
+            ],
+            [
+              "0.0200",
+              "58557.90"
+            ],
+            [
+              "0.0300",
+              "28217.00"
+            ],
+            [
+              "0.0400",
+              "6381.94"
+            ],
+            [
+              "0.0500",
+              "400.00"
+            ],
+            [
+              "0.0600",
+              "13033.24"
+            ],
+            [
+              "0.0700",
+              "6979.03"
+            ],
+            [
+              "0.0800",
+              "37165.34"
+            ],
+            [
+              "0.0900",
+              "9279.91"
+            ],
+            [
+              "0.1000",
+              "1220.10"
+            ],
+            [
+              "0.1100",
+              "9562.21"
+            ],
+            [
+              "0.1200",
+              "4966.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -10604,10 +10897,10 @@
     "no_sub_title": "Miami",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "262907.85",
+    "open_interest_fp": "261992.41",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.1400",
-    "previous_yes_ask_dollars": "0.1400",
+    "previous_price_dollars": "0.1200",
+    "previous_yes_ask_dollars": "0.1300",
     "previous_yes_bid_dollars": "0.1200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -10626,17 +10919,17 @@
     "ticker": "KXNBAEAST-27-MIA",
     "title": "Will Miami win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "467.91",
-    "volume_fp": "346008.02",
+    "volume_24h_fp": "1083.30",
+    "volume_fp": "346923.46",
     "yes_ask_dollars": "0.1300",
-    "yes_ask_size_fp": "11.12",
+    "yes_ask_size_fp": "343.15",
     "yes_bid_dollars": "0.1200",
-    "yes_bid_size_fp": "7079.00",
+    "yes_bid_size_fp": "4966.00",
     "yes_sub_title": "Miami"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-MIA",
-  "market_captured_at": "2026-09-28T22:18:43.326Z",
+  "market_captured_at": "2026-09-29T06:00:13.530Z",
   "status": "active",
-  "last_ingested_at": "2026-09-28T22:18:43.843Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-MIA/candlesticks?start_ts=1790568001&end_ts=1790633923&period_interval=1440"
+  "last_ingested_at": "2026-09-29T06:00:14.055Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-MIA/candlesticks?start_ts=1790568001&end_ts=1790661613&period_interval=1440"
 }
