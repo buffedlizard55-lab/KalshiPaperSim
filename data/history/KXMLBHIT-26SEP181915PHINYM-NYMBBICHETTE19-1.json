@@ -409,6 +409,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T08:51:44.354Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -469,9 +479,9 @@
     "yes_sub_title": "Bo Bichette: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1",
-  "market_captured_at": "2026-09-29T05:59:37.007Z",
+  "market_captured_at": "2026-09-29T08:51:43.722Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-29T05:59:37.533Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/candlesticks?start_ts=1789790401&end_ts=1790661577&period_interval=1440"
+  "last_ingested_at": "2026-09-29T08:51:44.290Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-NYMBBICHETTE19-1/candlesticks?start_ts=1789790401&end_ts=1790671903&period_interval=1440"
 }

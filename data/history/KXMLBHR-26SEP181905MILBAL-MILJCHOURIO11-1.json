@@ -409,6 +409,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T08:51:50.364Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181905MILBAL-MILJCHOURIO11-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -469,9 +479,9 @@
     "yes_sub_title": "Jackson Chourio: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181905MILBAL-MILJCHOURIO11-1",
-  "market_captured_at": "2026-09-29T05:59:42.375Z",
+  "market_captured_at": "2026-09-29T08:51:49.732Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-29T05:59:42.900Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHR/markets/KXMLBHR-26SEP181905MILBAL-MILJCHOURIO11-1/candlesticks?start_ts=1789790401&end_ts=1790661582&period_interval=1440"
+  "last_ingested_at": "2026-09-29T08:51:50.299Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHR/markets/KXMLBHR-26SEP181905MILBAL-MILJCHOURIO11-1/candlesticks?start_ts=1789790401&end_ts=1790671909&period_interval=1440"
 }

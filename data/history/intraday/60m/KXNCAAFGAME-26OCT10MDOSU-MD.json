@@ -943,6 +943,46 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1790665200,
+      "open_interest_fp": "7957.42",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1790668800,
+      "open_interest_fp": "7957.42",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -1453,6 +1493,114 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T08:58:09.130Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10MDOSU-MD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "115160.00"
+            ],
+            [
+              "0.0200",
+              "11872.00"
+            ],
+            [
+              "0.0300",
+              "6576.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "133.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "1000.00"
+            ],
+            [
+              "0.1400",
+              "46.00"
+            ],
+            [
+              "0.1500",
+              "1203.00"
+            ],
+            [
+              "0.1600",
+              "858.00"
+            ],
+            [
+              "0.1700",
+              "117.00"
+            ],
+            [
+              "0.1800",
+              "2.06"
+            ],
+            [
+              "0.5100",
+              "2504.00"
+            ],
+            [
+              "0.5200",
+              "960.00"
+            ],
+            [
+              "0.8800",
+              "571.00"
+            ],
+            [
+              "0.8900",
+              "53.04"
+            ],
+            [
+              "0.9100",
+              "735.00"
+            ],
+            [
+              "0.9200",
+              "677.00"
+            ],
+            [
+              "0.9300",
+              "790.08"
+            ],
+            [
+              "0.9400",
+              "8.38"
+            ],
+            [
+              "0.9600",
+              "10.00"
+            ],
+            [
+              "0.9700",
+              "60980.00"
+            ],
+            [
+              "0.9800",
+              "113579.84"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "13891.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1481,7 +1629,7 @@
     "open_time": "2026-09-26T19:08:00Z",
     "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0300",
-    "previous_yes_bid_dollars": "0.0100",
+    "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1502,14 +1650,14 @@
     "volume_24h_fp": "4657.49",
     "volume_fp": "7957.42",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "113577.40",
+    "yes_ask_size_fp": "113579.84",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "13596.00",
+    "yes_bid_size_fp": "13891.00",
     "yes_sub_title": "Maryland"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10MDOSU-MD",
-  "market_captured_at": "2026-09-29T06:05:26.695Z",
+  "market_captured_at": "2026-09-29T08:58:08.400Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T06:05:27.320Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10MDOSU-MD/candlesticks?start_ts=1790632801&end_ts=1790661926&period_interval=60"
+  "last_ingested_at": "2026-09-29T08:58:09.065Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10MDOSU-MD/candlesticks?start_ts=1790661601&end_ts=1790672288&period_interval=60"
 }

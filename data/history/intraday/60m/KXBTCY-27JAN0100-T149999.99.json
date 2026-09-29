@@ -5,51 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1789149600,
-      "open_interest_fp": "417411.64",
-      "price": {
-        "previous_dollars": "0.0150"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.0150",
-        "high_dollars": "0.0150",
-        "low_dollars": "0.0150",
-        "open_dollars": "0.0150"
-      },
-      "yes_bid": {
-        "close_dollars": "0.0120",
-        "high_dollars": "0.0120",
-        "low_dollars": "0.0120",
-        "open_dollars": "0.0120"
-      }
-    },
-    {
-      "end_period_ts": 1789156800,
-      "open_interest_fp": "417421.64",
-      "price": {
-        "close_dollars": "0.0150",
-        "high_dollars": "0.0150",
-        "low_dollars": "0.0150",
-        "mean_dollars": "0.0150",
-        "open_dollars": "0.0150",
-        "previous_dollars": "0.0150"
-      },
-      "volume_fp": "10.00",
-      "yes_ask": {
-        "close_dollars": "0.0160",
-        "high_dollars": "0.0160",
-        "low_dollars": "0.0140",
-        "open_dollars": "0.0150"
-      },
-      "yes_bid": {
-        "close_dollars": "0.0130",
-        "high_dollars": "0.0130",
-        "low_dollars": "0.0120",
-        "open_dollars": "0.0120"
-      }
-    },
-    {
       "end_period_ts": 1789160400,
       "open_interest_fp": "417421.64",
       "price": {
@@ -7511,6 +7466,46 @@
     },
     {
       "end_period_ts": 1790661600,
+      "open_interest_fp": "470280.02",
+      "price": {
+        "previous_dollars": "0.0230"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0230",
+        "high_dollars": "0.0230",
+        "low_dollars": "0.0230",
+        "open_dollars": "0.0230"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0220",
+        "high_dollars": "0.0220",
+        "low_dollars": "0.0220",
+        "open_dollars": "0.0220"
+      }
+    },
+    {
+      "end_period_ts": 1790665200,
+      "open_interest_fp": "470280.02",
+      "price": {
+        "previous_dollars": "0.0230"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0230",
+        "high_dollars": "0.0230",
+        "low_dollars": "0.0230",
+        "open_dollars": "0.0230"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0220",
+        "high_dollars": "0.0220",
+        "low_dollars": "0.0220",
+        "open_dollars": "0.0220"
+      }
+    },
+    {
+      "end_period_ts": 1790668800,
       "open_interest_fp": "470280.02",
       "price": {
         "previous_dollars": "0.0230"
@@ -25110,10 +25105,242 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T08:54:17.500Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-T149999.99/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0010",
+              "39270.00"
+            ],
+            [
+              "0.0100",
+              "131133.35"
+            ],
+            [
+              "0.0200",
+              "9861.00"
+            ],
+            [
+              "0.0300",
+              "5278.00"
+            ],
+            [
+              "0.0910",
+              "200.00"
+            ],
+            [
+              "0.1000",
+              "12500.00"
+            ],
+            [
+              "0.1300",
+              "113.72"
+            ],
+            [
+              "0.1600",
+              "20567.00"
+            ],
+            [
+              "0.2000",
+              "312.64"
+            ],
+            [
+              "0.3000",
+              "4565.72"
+            ],
+            [
+              "0.3800",
+              "192.11"
+            ],
+            [
+              "0.4600",
+              "1891.00"
+            ],
+            [
+              "0.4700",
+              "3839.98"
+            ],
+            [
+              "0.4800",
+              "192.30"
+            ],
+            [
+              "0.5000",
+              "2500.00"
+            ],
+            [
+              "0.5200",
+              "610.00"
+            ],
+            [
+              "0.5300",
+              "9830.00"
+            ],
+            [
+              "0.7000",
+              "1785.00"
+            ],
+            [
+              "0.7600",
+              "2083.86"
+            ],
+            [
+              "0.8000",
+              "1562.00"
+            ],
+            [
+              "0.8210",
+              "2000.00"
+            ],
+            [
+              "0.9000",
+              "1388.00"
+            ],
+            [
+              "0.9170",
+              "5.00"
+            ],
+            [
+              "0.9200",
+              "166.00"
+            ],
+            [
+              "0.9380",
+              "800.00"
+            ],
+            [
+              "0.9400",
+              "38.10"
+            ],
+            [
+              "0.9500",
+              "1448.00"
+            ],
+            [
+              "0.9510",
+              "267.00"
+            ],
+            [
+              "0.9640",
+              "1246.45"
+            ],
+            [
+              "0.9650",
+              "5930.24"
+            ],
+            [
+              "0.9660",
+              "500.00"
+            ],
+            [
+              "0.9670",
+              "122.01"
+            ],
+            [
+              "0.9720",
+              "169.40"
+            ],
+            [
+              "0.9730",
+              "584.19"
+            ],
+            [
+              "0.9750",
+              "85.00"
+            ],
+            [
+              "0.9770",
+              "889.22"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0010",
+              "921001.00"
+            ],
+            [
+              "0.0020",
+              "523.00"
+            ],
+            [
+              "0.0030",
+              "853.00"
+            ],
+            [
+              "0.0070",
+              "714.00"
+            ],
+            [
+              "0.0080",
+              "625.00"
+            ],
+            [
+              "0.0090",
+              "555.00"
+            ],
+            [
+              "0.0100",
+              "818.18"
+            ],
+            [
+              "0.0110",
+              "458.46"
+            ],
+            [
+              "0.0120",
+              "421.41"
+            ],
+            [
+              "0.0130",
+              "195.00"
+            ],
+            [
+              "0.0140",
+              "162.00"
+            ],
+            [
+              "0.0150",
+              "2961.62"
+            ],
+            [
+              "0.0160",
+              "200.79"
+            ],
+            [
+              "0.0170",
+              "6.47"
+            ],
+            [
+              "0.0180",
+              "111.27"
+            ],
+            [
+              "0.0190",
+              "18.54"
+            ],
+            [
+              "0.0200",
+              "35.25"
+            ],
+            [
+              "0.0210",
+              "292.31"
+            ],
+            [
+              "0.0220",
+              "8.38"
+            ]
+          ]
+        }
+      }
     }
   ],
-  "last_ingested_at": "2026-09-29T06:01:54.696Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1790632801&end_ts=1790661714&period_interval=60",
+  "last_ingested_at": "2026-09-29T08:54:17.436Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1790661601&end_ts=1790672057&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T00:07:33.409Z",
@@ -25322,6 +25549,14 @@
       "dropped_to_ts": 1789146000,
       "kept": 336,
       "reason": "--max-bars=336: the store keeps the newest 336 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-09-29T08:54:17.800Z",
+      "dropped": 2,
+      "dropped_from_ts": 1789149600,
+      "dropped_to_ts": 1789156800,
+      "kept": 336,
+      "reason": "--max-bars=336: the store keeps the newest 336 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }
   ],
   "marketErrors": [
@@ -25388,12 +25623,12 @@
     "volume_24h_fp": "4554.64",
     "volume_fp": "2105625.02",
     "yes_ask_dollars": "0.0230",
-    "yes_ask_size_fp": "607.18",
+    "yes_ask_size_fp": "889.22",
     "yes_bid_dollars": "0.0220",
-    "yes_bid_size_fp": "247.38",
+    "yes_bid_size_fp": "8.38",
     "yes_sub_title": "150,000 or above"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-T149999.99",
-  "market_captured_at": "2026-09-29T06:01:54.070Z",
+  "market_captured_at": "2026-09-29T08:54:16.770Z",
   "status": "active"
 }

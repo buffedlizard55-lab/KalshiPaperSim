@@ -454,6 +454,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T08:51:55.163Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -514,9 +524,9 @@
     "yes_sub_title": "Nick Pivetta: 6+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6",
-  "market_captured_at": "2026-09-29T05:59:46.667Z",
+  "market_captured_at": "2026-09-29T08:51:54.533Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-29T05:59:47.192Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6/candlesticks?start_ts=1789876801&end_ts=1790661586&period_interval=1440"
+  "last_ingested_at": "2026-09-29T08:51:55.098Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6/candlesticks?start_ts=1789876801&end_ts=1790671914&period_interval=1440"
 }

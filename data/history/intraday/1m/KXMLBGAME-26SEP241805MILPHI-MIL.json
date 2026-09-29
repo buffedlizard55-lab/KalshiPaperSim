@@ -12155,6 +12155,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T09:00:17.155Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP241805MILPHI-MIL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12212,11 +12222,11 @@
     "yes_sub_title": "Milwaukee"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP241805MILPHI-MIL",
-  "market_captured_at": "2026-09-29T06:07:25.189Z",
+  "market_captured_at": "2026-09-29T09:00:14.954Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-29T06:07:27.114Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP241805MILPHI-MIL/candlesticks?start_ts=1790643721&end_ts=1790662045&period_interval=1",
+  "last_ingested_at": "2026-09-29T09:00:17.086Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP241805MILPHI-MIL/candlesticks?start_ts=1790643721&end_ts=1790672415&period_interval=1",
   "trims": [
     {
       "at": "2026-09-25T05:19:26.146Z",

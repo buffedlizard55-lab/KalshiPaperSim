@@ -1200,6 +1200,56 @@
         "low_dollars": "0.2100",
         "open_dollars": "0.2100"
       }
+    },
+    {
+      "end_period_ts": 1790665200,
+      "open_interest_fp": "11613.80",
+      "price": {
+        "close_dollars": "0.2300",
+        "high_dollars": "0.2300",
+        "low_dollars": "0.2200",
+        "mean_dollars": "0.2284",
+        "open_dollars": "0.2300",
+        "previous_dollars": "0.2300"
+      },
+      "volume_fp": "1430.57",
+      "yes_ask": {
+        "close_dollars": "0.2300",
+        "high_dollars": "0.2300",
+        "low_dollars": "0.2200",
+        "open_dollars": "0.2300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2100",
+        "high_dollars": "0.2200",
+        "low_dollars": "0.2100",
+        "open_dollars": "0.2100"
+      }
+    },
+    {
+      "end_period_ts": 1790668800,
+      "open_interest_fp": "11622.39",
+      "price": {
+        "close_dollars": "0.2200",
+        "high_dollars": "0.2200",
+        "low_dollars": "0.2200",
+        "mean_dollars": "0.2200",
+        "open_dollars": "0.2200",
+        "previous_dollars": "0.2300"
+      },
+      "volume_fp": "8.59",
+      "yes_ask": {
+        "close_dollars": "0.2200",
+        "high_dollars": "0.2300",
+        "low_dollars": "0.2200",
+        "open_dollars": "0.2300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2100",
+        "high_dollars": "0.2100",
+        "low_dollars": "0.2100",
+        "open_dollars": "0.2100"
+      }
     }
   ],
   "books": [
@@ -1606,6 +1656,222 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T08:58:07.733Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10UCLAORE-UCLA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "112973.83"
+            ],
+            [
+              "0.0200",
+              "9202.00"
+            ],
+            [
+              "0.0300",
+              "6762.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "133.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1000",
+              "608.00"
+            ],
+            [
+              "0.1100",
+              "998.00"
+            ],
+            [
+              "0.1200",
+              "880.00"
+            ],
+            [
+              "0.1300",
+              "194.00"
+            ],
+            [
+              "0.1400",
+              "295.00"
+            ],
+            [
+              "0.1800",
+              "105.63"
+            ],
+            [
+              "0.2500",
+              "132.75"
+            ],
+            [
+              "0.2600",
+              "103.13"
+            ],
+            [
+              "0.2700",
+              "194.00"
+            ],
+            [
+              "0.2800",
+              "81.00"
+            ],
+            [
+              "0.3000",
+              "226.00"
+            ],
+            [
+              "0.3100",
+              "18.17"
+            ],
+            [
+              "0.3300",
+              "126.00"
+            ],
+            [
+              "0.3500",
+              "311.00"
+            ],
+            [
+              "0.3700",
+              "2024.00"
+            ],
+            [
+              "0.3800",
+              "39.00"
+            ],
+            [
+              "0.3900",
+              "18.17"
+            ],
+            [
+              "0.5000",
+              "13.29"
+            ],
+            [
+              "0.6200",
+              "158.66"
+            ],
+            [
+              "0.6600",
+              "2142.00"
+            ],
+            [
+              "0.6700",
+              "36.34"
+            ],
+            [
+              "0.6800",
+              "1998.00"
+            ],
+            [
+              "0.7000",
+              "1727.67"
+            ],
+            [
+              "0.7600",
+              "1651.63"
+            ],
+            [
+              "0.7700",
+              "1294.05"
+            ],
+            [
+              "0.7800",
+              "1797.41"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "113857.00"
+            ],
+            [
+              "0.0200",
+              "9057.00"
+            ],
+            [
+              "0.0300",
+              "7086.00"
+            ],
+            [
+              "0.0400",
+              "1151.84"
+            ],
+            [
+              "0.0500",
+              "2420.00"
+            ],
+            [
+              "0.0600",
+              "333.00"
+            ],
+            [
+              "0.0700",
+              "656.84"
+            ],
+            [
+              "0.0800",
+              "1984.87"
+            ],
+            [
+              "0.1000",
+              "800.00"
+            ],
+            [
+              "0.1100",
+              "2353.68"
+            ],
+            [
+              "0.1200",
+              "952.87"
+            ],
+            [
+              "0.1300",
+              "862.00"
+            ],
+            [
+              "0.1400",
+              "150.00"
+            ],
+            [
+              "0.1500",
+              "215.74"
+            ],
+            [
+              "0.1600",
+              "114.16"
+            ],
+            [
+              "0.1700",
+              "70.00"
+            ],
+            [
+              "0.1800",
+              "1.78"
+            ],
+            [
+              "0.2000",
+              "107.00"
+            ],
+            [
+              "0.2100",
+              "186.04"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1621,20 +1887,20 @@
     "expected_expiration_time": "2026-10-10T20:00:00Z",
     "expiration_time": "2026-10-12T17:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.2300",
+    "last_price_dollars": "0.2200",
     "latest_expiration_time": "2026-10-12T17:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.7900",
-    "no_bid_dollars": "0.7700",
+    "no_bid_dollars": "0.7800",
     "no_sub_title": "UCLA",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-10T20:00:00Z",
-    "open_interest_fp": "10183.23",
+    "open_interest_fp": "11626.39",
     "open_time": "2026-09-26T19:08:00Z",
-    "previous_price_dollars": "0.4300",
-    "previous_yes_ask_dollars": "0.4300",
-    "previous_yes_bid_dollars": "0.1900",
+    "previous_price_dollars": "0.3600",
+    "previous_yes_ask_dollars": "0.3800",
+    "previous_yes_bid_dollars": "0.2100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1652,17 +1918,17 @@
     "ticker": "KXNCAAFGAME-26OCT10UCLAORE-UCLA",
     "title": "UCLA wins",
     "updated_time": "2026-09-28T22:12:29.575978Z",
-    "volume_24h_fp": "9648.12",
-    "volume_fp": "11046.91",
-    "yes_ask_dollars": "0.2300",
-    "yes_ask_size_fp": "1117.50",
+    "volume_24h_fp": "11039.63",
+    "volume_fp": "12490.07",
+    "yes_ask_dollars": "0.2200",
+    "yes_ask_size_fp": "1797.41",
     "yes_bid_dollars": "0.2100",
-    "yes_bid_size_fp": "170.36",
+    "yes_bid_size_fp": "186.04",
     "yes_sub_title": "UCLA"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10UCLAORE-UCLA",
-  "market_captured_at": "2026-09-29T06:05:25.422Z",
+  "market_captured_at": "2026-09-29T08:58:07.001Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T06:05:26.046Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10UCLAORE-UCLA/candlesticks?start_ts=1790632801&end_ts=1790661925&period_interval=60"
+  "last_ingested_at": "2026-09-29T08:58:07.669Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10UCLAORE-UCLA/candlesticks?start_ts=1790661601&end_ts=1790672287&period_interval=60"
 }

@@ -738,6 +738,26 @@
         "low_dollars": "0.3000",
         "open_dollars": "0.3100"
       }
+    },
+    {
+      "end_period_ts": 1790668800,
+      "open_interest_fp": "5458.02",
+      "price": {
+        "previous_dollars": "0.4500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4500",
+        "high_dollars": "0.4500",
+        "low_dollars": "0.4500",
+        "open_dollars": "0.4500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3100",
+        "high_dollars": "0.3100",
+        "low_dollars": "0.3100",
+        "open_dollars": "0.3100"
+      }
     }
   ],
   "books": [
@@ -976,6 +996,138 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-29T08:58:14.719Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10SACBGSU-SAC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "115781.00"
+            ],
+            [
+              "0.0200",
+              "1650.00"
+            ],
+            [
+              "0.0300",
+              "722.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "133.00"
+            ],
+            [
+              "0.0600",
+              "22.76"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "166.00"
+            ],
+            [
+              "0.1200",
+              "50.00"
+            ],
+            [
+              "0.1500",
+              "133.00"
+            ],
+            [
+              "0.1600",
+              "84.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2300",
+              "18.00"
+            ],
+            [
+              "0.2400",
+              "5.24"
+            ],
+            [
+              "0.4100",
+              "15.00"
+            ],
+            [
+              "0.5500",
+              "1.17"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "119800.00"
+            ],
+            [
+              "0.0200",
+              "6430.00"
+            ],
+            [
+              "0.0300",
+              "5553.00"
+            ],
+            [
+              "0.0400",
+              "750.00"
+            ],
+            [
+              "0.0500",
+              "743.00"
+            ],
+            [
+              "0.0600",
+              "211.00"
+            ],
+            [
+              "0.0700",
+              "442.00"
+            ],
+            [
+              "0.0800",
+              "293.00"
+            ],
+            [
+              "0.1000",
+              "1221.00"
+            ],
+            [
+              "0.2300",
+              "22.00"
+            ],
+            [
+              "0.2500",
+              "1570.00"
+            ],
+            [
+              "0.2600",
+              "45.00"
+            ],
+            [
+              "0.2900",
+              "25.00"
+            ],
+            [
+              "0.3100",
+              "6.53"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1031,8 +1183,8 @@
     "yes_sub_title": "Sacramento St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10SACBGSU-SAC",
-  "market_captured_at": "2026-09-29T06:05:31.799Z",
+  "market_captured_at": "2026-09-29T08:58:13.989Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T06:05:32.425Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10SACBGSU-SAC/candlesticks?start_ts=1790632801&end_ts=1790661932&period_interval=60"
+  "last_ingested_at": "2026-09-29T08:58:14.655Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10SACBGSU-SAC/candlesticks?start_ts=1790661601&end_ts=1790672294&period_interval=60"
 }
