@@ -13,7 +13,8 @@
   "2026-09-29T01:02:08.528Z",
   "2026-09-29T03:25:18.114Z",
   "2026-09-29T10:06:38.670Z",
-  "2026-09-29T19:45:36.723Z"
+  "2026-09-29T19:45:36.723Z",
+  "2026-09-29T23:23:05.758Z"
  ],
  "events": {
   "401918017": {
@@ -40,7 +41,7 @@
    "states": [
     {
      "captured_at": "2026-09-28T09:09:48.586Z",
-     "last_seen_at": "2026-09-29T19:45:36.723Z",
+     "last_seen_at": "2026-09-29T23:23:05.758Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -101,10 +102,30 @@
       "home": "28-16",
       "away": "31-13"
      }
+    },
+    {
+     "captured_at": "2026-09-29T23:23:05.758Z",
+     "last_seen_at": "2026-09-29T23:23:05.758Z",
+     "fp": "in|2|1|46,39|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 77,
+     "displayClock": "1:17",
+     "scores": {
+      "home": 46,
+      "away": 39
+     },
+     "recordsOverall": {
+      "home": "28-16",
+      "away": "31-13"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-09-29T19:45:36.723Z",
+ "last_ingested_at": "2026-09-29T23:23:05.758Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260929"
 }
