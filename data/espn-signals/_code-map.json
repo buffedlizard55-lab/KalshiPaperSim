@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-28T21:01:54.287Z",
+ "generatedAt": "2026-09-29T01:02:09.148Z",
  "rows": [
   {
    "league": "nba",
@@ -170,6 +170,21 @@
      "ticker": "KXNCAAFGAME-26OCT10BALLNW-NW",
      "rulesName": "Ball St.",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "BGSU",
+   "kalshiName": "Bowling Green",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10SACBGSU-SAC",
+     "rulesName": "Bowling Green",
+     "role": "home"
     }
    ]
   },
@@ -675,6 +690,11 @@
      "ticker": "KXNCAAFGAME-26OCT10UCLAORE-ORE",
      "rulesName": "Oregon",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10UCLAORE-UCLA",
+     "rulesName": "Oregon",
+     "role": "home"
     }
    ]
   },
@@ -735,6 +755,26 @@
      "ticker": "KXNCAAFGAME-26OCT03INDRUTG-RUTG",
      "rulesName": "Rutgers",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "SAC",
+   "kalshiName": "Sacramento St.",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "16",
+    "abbr": "SAC",
+    "displayName": "Sacramento State Hornets",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10SACBGSU-SAC",
+     "rulesName": "Sacramento St.",
+     "role": "away"
     }
    ]
   },
@@ -993,6 +1033,11 @@
    "evidence": [
     {
      "ticker": "KXNCAAFGAME-26OCT10UCLAORE-ORE",
+     "rulesName": "UCLA",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10UCLAORE-UCLA",
      "rulesName": "UCLA",
      "role": "away"
     }
