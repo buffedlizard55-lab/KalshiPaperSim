@@ -12035,6 +12035,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-30T21:07:14.304Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP292000BOSNYY-NYY/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12083,7 +12093,7 @@
     "ticker": "KXMLBGAME-26SEP292000BOSNYY-NYY",
     "title": "New York Y wins",
     "updated_time": "2026-09-30T03:23:56.849969Z",
-    "volume_24h_fp": "9508342.91",
+    "volume_24h_fp": "9046982.37",
     "volume_fp": "10550265.89",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12092,11 +12102,11 @@
     "yes_sub_title": "New York Y"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP292000BOSNYY-NYY",
-  "market_captured_at": "2026-09-30T12:45:28.831Z",
+  "market_captured_at": "2026-09-30T21:07:13.661Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-30T12:45:29.511Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP292000BOSNYY-NYY/candlesticks?start_ts=1790738461&end_ts=1790772329&period_interval=1",
+  "last_ingested_at": "2026-09-30T21:07:14.283Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP292000BOSNYY-NYY/candlesticks?start_ts=1790738461&end_ts=1790802433&period_interval=1",
   "trims": [
     {
       "at": "2026-09-30T05:55:55.389Z",

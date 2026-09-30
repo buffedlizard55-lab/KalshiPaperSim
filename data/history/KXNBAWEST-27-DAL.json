@@ -6037,6 +6037,134 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-30T21:01:08.692Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3888999.00"
+            ],
+            [
+              "0.0300",
+              "1444.00"
+            ],
+            [
+              "0.0600",
+              "936602.00"
+            ],
+            [
+              "0.1100",
+              "510874.00"
+            ],
+            [
+              "0.1800",
+              "407331.00"
+            ],
+            [
+              "0.2500",
+              "288884.00"
+            ],
+            [
+              "0.2900",
+              "638.31"
+            ],
+            [
+              "0.3200",
+              "239995.00"
+            ],
+            [
+              "0.3900",
+              "129099.00"
+            ],
+            [
+              "0.4500",
+              "305198.19"
+            ],
+            [
+              "0.5300",
+              "54528.00"
+            ],
+            [
+              "0.5600",
+              "142595.00"
+            ],
+            [
+              "0.6300",
+              "2034.00"
+            ],
+            [
+              "0.6800",
+              "72091.00"
+            ],
+            [
+              "0.7400",
+              "22822.00"
+            ],
+            [
+              "0.7500",
+              "24987.00"
+            ],
+            [
+              "0.7600",
+              "1.94"
+            ],
+            [
+              "0.8100",
+              "15152.00"
+            ],
+            [
+              "0.8300",
+              "1350.00"
+            ],
+            [
+              "0.8400",
+              "90.00"
+            ],
+            [
+              "0.8500",
+              "1.94"
+            ],
+            [
+              "0.8900",
+              "2991.28"
+            ],
+            [
+              "0.9200",
+              "100.00"
+            ],
+            [
+              "0.9300",
+              "103.88"
+            ],
+            [
+              "0.9400",
+              "100.00"
+            ],
+            [
+              "0.9500",
+              "32.00"
+            ],
+            [
+              "0.9700",
+              "800.00"
+            ],
+            [
+              "0.9800",
+              "57459.78"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "108.28"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6084,17 +6212,17 @@
     "ticker": "KXNBAWEST-27-DAL",
     "title": "Will Dallas win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.581651Z",
-    "volume_24h_fp": "4679.01",
+    "volume_24h_fp": "0.00",
     "volume_fp": "126951.40",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "36304.27",
+    "yes_ask_size_fp": "57459.78",
     "yes_bid_dollars": "0.0100",
     "yes_bid_size_fp": "108.28",
     "yes_sub_title": "Dallas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-DAL",
-  "market_captured_at": "2026-09-30T12:38:59.738Z",
+  "market_captured_at": "2026-09-30T21:01:08.149Z",
   "status": "active",
-  "last_ingested_at": "2026-09-30T12:39:00.316Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-DAL/candlesticks?start_ts=1790740801&end_ts=1790771939&period_interval=1440"
+  "last_ingested_at": "2026-09-30T21:01:08.671Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-DAL/candlesticks?start_ts=1790740801&end_ts=1790802068&period_interval=1440"
 }

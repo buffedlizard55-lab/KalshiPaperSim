@@ -6846,7 +6846,7 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "1120708.93",
     "open_time": "2025-12-23T15:00:00Z",
-    "previous_price_dollars": "0.0500",
+    "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0400",
     "previous_yes_bid_dollars": "0.0300",
     "price_level_structure": "linear_cent",
@@ -6867,19 +6867,19 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-T19000",
     "title": "Will the Nasdaq-100 be below 19000 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:43.666782Z",
-    "volume_24h_fp": "557.29",
+    "volume_24h_fp": "547.29",
     "volume_fp": "1279917.76",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "24.22",
+    "yes_ask_size_fp": "312.64",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "110.93",
+    "yes_bid_size_fp": "10.93",
     "yes_sub_title": "18,999.99 or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T19000",
-  "market_captured_at": "2026-09-30T12:38:41.610Z",
+  "market_captured_at": "2026-09-30T21:00:46.777Z",
   "status": "active",
-  "last_ingested_at": "2026-09-30T12:38:42.188Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1790740801&end_ts=1790771921&period_interval=1440",
+  "last_ingested_at": "2026-09-30T21:00:47.299Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1790740801&end_ts=1790802047&period_interval=1440",
   "books": [
     {
       "captured_at": "2026-09-17T23:07:32.276Z",
@@ -14960,6 +14960,142 @@
             [
               "0.0300",
               "2.93"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-30T21:00:47.320Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T19000/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "125179.66"
+            ],
+            [
+              "0.1000",
+              "12500.00"
+            ],
+            [
+              "0.3000",
+              "4166.00"
+            ],
+            [
+              "0.3100",
+              "15.69"
+            ],
+            [
+              "0.3900",
+              "23.48"
+            ],
+            [
+              "0.5000",
+              "2500.00"
+            ],
+            [
+              "0.5400",
+              "13.41"
+            ],
+            [
+              "0.6700",
+              "85.75"
+            ],
+            [
+              "0.7000",
+              "16973.14"
+            ],
+            [
+              "0.7200",
+              "15000.00"
+            ],
+            [
+              "0.7300",
+              "15000.00"
+            ],
+            [
+              "0.7400",
+              "15000.00"
+            ],
+            [
+              "0.7500",
+              "15000.00"
+            ],
+            [
+              "0.7600",
+              "15005.82"
+            ],
+            [
+              "0.7700",
+              "10000.00"
+            ],
+            [
+              "0.7800",
+              "10000.00"
+            ],
+            [
+              "0.7900",
+              "10335.30"
+            ],
+            [
+              "0.8000",
+              "11564.45"
+            ],
+            [
+              "0.8100",
+              "10000.00"
+            ],
+            [
+              "0.8200",
+              "10031.27"
+            ],
+            [
+              "0.8300",
+              "10002.45"
+            ],
+            [
+              "0.8400",
+              "10000.00"
+            ],
+            [
+              "0.8500",
+              "10018.80"
+            ],
+            [
+              "0.8600",
+              "8942.50"
+            ],
+            [
+              "0.8800",
+              "100.00"
+            ],
+            [
+              "0.9400",
+              "100705.00"
+            ],
+            [
+              "0.9500",
+              "2461.08"
+            ],
+            [
+              "0.9600",
+              "312.64"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3108.00"
+            ],
+            [
+              "0.0200",
+              "100169.78"
+            ],
+            [
+              "0.0300",
+              "10.93"
             ]
           ]
         }
