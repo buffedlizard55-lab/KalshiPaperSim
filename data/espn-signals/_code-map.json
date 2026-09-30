@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-09-30T03:08:09.226Z",
+ "generatedAt": "2026-09-30T09:45:33.176Z",
  "rows": [
   {
    "league": "nba",
@@ -1760,6 +1760,16 @@
      "ticker": "KXNHLGAME-26SEP20WSHBOS-BOS",
      "rulesName": "Boston",
      "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP29NYRBOS-BOS",
+     "rulesName": "Boston",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP29NYRBOS-NYR",
+     "rulesName": "Boston",
+     "role": "home"
     }
    ]
   },
@@ -1793,6 +1803,11 @@
     },
     {
      "ticker": "KXNHLGAME-26SEP29FLACAR-CAR",
+     "rulesName": "Carolina",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP29FLACAR-FLA",
      "rulesName": "Carolina",
      "role": "home"
     }
@@ -1865,6 +1880,11 @@
      "ticker": "KXNHLGAME-26SEP21MINCHI-MIN",
      "rulesName": "Chicago",
      "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP29CHIVGK-CHI",
+     "rulesName": "Chicago",
+     "role": "away"
     }
    ]
   },
@@ -1935,6 +1955,16 @@
      "ticker": "KXNHLGAME-26SEP19WPGEDM-WPG",
      "rulesName": "Edmonton",
      "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP29VANEDM-EDM",
+     "rulesName": "Edmonton",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP29VANEDM-VAN",
+     "rulesName": "Edmonton",
+     "role": "home"
     }
    ]
   },
@@ -1968,6 +1998,11 @@
     },
     {
      "ticker": "KXNHLGAME-26SEP29FLACAR-CAR",
+     "rulesName": "Florida",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP29FLACAR-FLA",
      "rulesName": "Florida",
      "role": "away"
     }
@@ -2113,6 +2148,16 @@
     },
     {
      "ticker": "KXNHLGAME-26SEP21NYRNJ-NYR",
+     "rulesName": "New York R",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP29NYRBOS-BOS",
+     "rulesName": "New York R",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP29NYRBOS-NYR",
      "rulesName": "New York R",
      "role": "away"
     }
@@ -2328,6 +2373,16 @@
    "evidence": [
     {
      "ticker": "KXNHLGAME-26SEP19VANSEA-SEA",
+     "rulesName": "Vancouver",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP29VANEDM-EDM",
+     "rulesName": "Vancouver",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP29VANEDM-VAN",
      "rulesName": "Vancouver",
      "role": "away"
     }

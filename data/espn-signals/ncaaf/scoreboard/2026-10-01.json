@@ -1,0 +1,105 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-01",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261001"
+  ]
+ },
+ "captures": [
+  "2026-09-30T09:45:32.289Z"
+ ],
+ "events": {
+  "401862786": {
+   "eventId": "401862786",
+   "date": "2026-10-02T01:00Z",
+   "easternDate": "2026-10-01",
+   "name": "North Texas Mean Green at Tulsa Golden Hurricane",
+   "shortName": "UNT @ TLSA",
+   "week": 5,
+   "venue": "H. A. Chapman Stadium",
+   "homeAbbr": "TLSA",
+   "homeTeamId": "202",
+   "homeName": "Tulsa Golden Hurricane",
+   "awayAbbr": "UNT",
+   "awayTeamId": "249",
+   "awayName": "North Texas Mean Green",
+   "firstCapturedAt": "2026-09-30T09:45:32.289Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "TLSA -1.5",
+    "spread": -1.5,
+    "overUnder": 57.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-30T09:45:32.289Z",
+     "last_seen_at": "2026-09-30T09:45:32.289Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-1",
+      "away": "2-2"
+     }
+    }
+   ]
+  },
+  "401871049": {
+   "eventId": "401871049",
+   "date": "2026-10-02T00:00Z",
+   "easternDate": "2026-10-01",
+   "name": "Western Kentucky Hilltoppers at New Mexico State Aggies",
+   "shortName": "WKU @ NMSU",
+   "week": 5,
+   "venue": "Aggie Memorial Stadium",
+   "homeAbbr": "NMSU",
+   "homeTeamId": "166",
+   "homeName": "New Mexico State Aggies",
+   "awayAbbr": "WKU",
+   "awayTeamId": "98",
+   "awayName": "Western Kentucky Hilltoppers",
+   "firstCapturedAt": "2026-09-30T09:45:32.289Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "NMSU -2.5",
+    "spread": -2.5,
+    "overUnder": 57.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-30T09:45:32.289Z",
+     "last_seen_at": "2026-09-30T09:45:32.289Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-3",
+      "away": "1-3"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-30T09:45:32.289Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261001"
+}

@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-01",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261001"
+  ]
+ },
+ "captures": [
+  "2026-09-30T09:45:32.181Z"
+ ],
+ "events": {
+  "401872964": {
+   "eventId": "401872964",
+   "date": "2026-10-02T00:15Z",
+   "easternDate": "2026-10-01",
+   "name": "Pittsburgh Steelers at Cleveland Browns",
+   "shortName": "PIT @ CLE",
+   "week": 4,
+   "venue": "Huntington Bank Field",
+   "homeAbbr": "CLE",
+   "homeTeamId": "5",
+   "homeName": "Cleveland Browns",
+   "awayAbbr": "PIT",
+   "awayTeamId": "23",
+   "awayName": "Pittsburgh Steelers",
+   "firstCapturedAt": "2026-09-30T09:45:32.181Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "PIT -2.5",
+    "spread": 2.5,
+    "overUnder": 38.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-09-30T09:45:32.181Z",
+     "last_seen_at": "2026-09-30T09:45:32.181Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-1",
+      "away": "2-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-09-30T09:45:32.181Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261001"
+}
