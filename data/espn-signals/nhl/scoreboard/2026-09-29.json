@@ -15,7 +15,8 @@
   "2026-09-29T10:06:38.527Z",
   "2026-09-29T19:45:36.690Z",
   "2026-09-29T23:23:05.595Z",
-  "2026-09-30T02:21:01.663Z"
+  "2026-09-30T02:21:01.663Z",
+  "2026-09-30T03:08:08.605Z"
  ],
  "events": {
   "401891773": {
@@ -82,7 +83,7 @@
     },
     {
      "captured_at": "2026-09-30T02:21:01.663Z",
-     "last_seen_at": "2026-09-30T02:21:01.663Z",
+     "last_seen_at": "2026-09-30T03:08:08.605Z",
      "fp": "post|4|0|0,1|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -163,12 +164,32 @@
       "home": "0-0-0",
       "away": "0-0-0"
      }
+    },
+    {
+     "captured_at": "2026-09-30T03:08:08.605Z",
+     "last_seen_at": "2026-09-30T03:08:08.605Z",
+     "fp": "post|3|0|3,0|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 3,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
+     }
     }
    ]
   },
   "401891775": {
    "eventId": "401891775",
-   "date": "2026-09-30T02:30Z",
+   "date": "2026-09-30T02:45Z",
    "easternDate": "2026-09-29",
    "name": "Chicago Blackhawks at Vegas Golden Knights",
    "shortName": "CHI @ VGK",
@@ -201,6 +222,26 @@
      "displayClock": "0:00",
      "scores": {
       "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-0-0"
+     }
+    },
+    {
+     "captured_at": "2026-09-30T03:08:08.605Z",
+     "last_seen_at": "2026-09-30T03:08:08.605Z",
+     "fp": "in|1|7|1,0|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 448,
+     "displayClock": "7:28",
+     "scores": {
+      "home": 1,
       "away": 0
      },
      "recordsOverall": {
@@ -266,6 +307,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-0-0"
+     }
+    },
+    {
+     "captured_at": "2026-09-30T03:08:08.605Z",
+     "last_seen_at": "2026-09-30T03:08:08.605Z",
+     "fp": "in|2|18|1,1|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 1085,
+     "displayClock": "18:05",
+     "scores": {
+      "home": 1,
+      "away": 1
      },
      "recordsOverall": {
       "home": "0-0-0",
@@ -338,7 +399,7 @@
     },
     {
      "captured_at": "2026-09-30T02:21:01.663Z",
-     "last_seen_at": "2026-09-30T02:21:01.663Z",
+     "last_seen_at": "2026-09-30T03:08:08.605Z",
      "fp": "post|3|0|2,3|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -359,6 +420,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-09-30T02:21:01.663Z",
+ "last_ingested_at": "2026-09-30T03:08:08.605Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20260929"
 }
