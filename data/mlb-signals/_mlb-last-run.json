@@ -1,9 +1,9 @@
 {
-  "startedAt": "2026-09-30T03:12:24.213Z",
-  "finishedAt": "2026-09-30T03:12:24.511Z",
+  "startedAt": "2026-09-30T09:47:46.452Z",
+  "finishedAt": "2026-09-30T09:47:46.994Z",
   "window": {
-    "startDate": "2026-09-28",
-    "endDate": "2026-09-29"
+    "startDate": "2026-09-29",
+    "endDate": "2026-09-30"
   },
   "requests": [
     {
@@ -12,21 +12,29 @@
       "teams": 30
     },
     {
-      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-28&endDate=2026-09-29&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright",
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-09-29&endDate=2026-09-30&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright",
       "http_status": 200,
       "dates": [
-        "2026-09-29"
+        "2026-09-29",
+        "2026-09-30"
       ],
-      "games": 4
+      "games": 8
     }
   ],
   "dates": [
     {
       "date": "2026-09-29",
       "games": 4,
-      "live": 2,
-      "final": 2,
-      "appendedStateRows": 3
+      "live": 0,
+      "final": 4,
+      "appendedStateRows": 2
+    },
+    {
+      "date": "2026-09-30",
+      "games": 4,
+      "live": 0,
+      "final": 0,
+      "appendedStateRows": 4
     }
   ],
   "failures": 0,
