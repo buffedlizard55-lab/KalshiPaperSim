@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/COC031",
       "relativeLocation": "Denver, CO",
       "timeZone": "America/Denver",
-      "resolvedAt": "2026-09-30T13:50:37.983Z",
+      "resolvedAt": "2026-09-30T23:03:45.252Z",
       "pointsUrl": "https://api.weather.gov/points/39.8561,-104.6737"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -3516,6 +3516,72 @@
           "startTime": "2026-10-06T06:00:00-06:00",
           "endTime": "2026-10-06T18:00:00-06:00",
           "probabilityOfPrecipitationPct": 5
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-09-30T23:03:45.252Z",
+      "points_url": "https://api.weather.gov/points/39.8561,-104.6737",
+      "forecast_url": "https://api.weather.gov/gridpoints/BOU/74,66/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-09-30T18:46:37+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-09-30",
+          "highF": 68,
+          "periodName": "This Afternoon",
+          "startTime": "2026-09-30T17:00:00-06:00",
+          "endTime": "2026-09-30T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 31
+        },
+        {
+          "date": "2026-10-01",
+          "highF": 71,
+          "periodName": "Thursday",
+          "startTime": "2026-10-01T06:00:00-06:00",
+          "endTime": "2026-10-01T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 4
+        },
+        {
+          "date": "2026-10-02",
+          "highF": 80,
+          "periodName": "Friday",
+          "startTime": "2026-10-02T06:00:00-06:00",
+          "endTime": "2026-10-02T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-03",
+          "highF": 83,
+          "periodName": "Saturday",
+          "startTime": "2026-10-03T06:00:00-06:00",
+          "endTime": "2026-10-03T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-04",
+          "highF": 79,
+          "periodName": "Sunday",
+          "startTime": "2026-10-04T06:00:00-06:00",
+          "endTime": "2026-10-04T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-05",
+          "highF": 84,
+          "periodName": "Monday",
+          "startTime": "2026-10-05T06:00:00-06:00",
+          "endTime": "2026-10-05T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-06",
+          "highF": 82,
+          "periodName": "Tuesday",
+          "startTime": "2026-10-06T06:00:00-06:00",
+          "endTime": "2026-10-06T18:00:00-06:00",
+          "probabilityOfPrecipitationPct": 7
         }
       ]
     }
