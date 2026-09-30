@@ -12010,6 +12010,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-30T05:56:05.775Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP291400PHIATL-PHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12058,7 +12068,7 @@
     "ticker": "KXMLBGAME-26SEP291400PHIATL-PHI",
     "title": "Philadelphia wins",
     "updated_time": "2026-09-29T20:46:46.848947Z",
-    "volume_24h_fp": "5728722.53",
+    "volume_24h_fp": "5535349.65",
     "volume_fp": "5783077.31",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12067,11 +12077,11 @@
     "yes_sub_title": "Philadelphia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP291400PHIATL-PHI",
-  "market_captured_at": "2026-09-29T21:10:09.300Z",
+  "market_captured_at": "2026-09-30T05:56:05.129Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-09-29T21:10:10.362Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP291400PHIATL-PHI/candlesticks?start_ts=1790629809&end_ts=1790716208&period_interval=1",
+  "last_ingested_at": "2026-09-30T05:56:05.753Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP291400PHIATL-PHI/candlesticks?start_ts=1790714701&end_ts=1790747765&period_interval=1",
   "trims": [
     {
       "at": "2026-09-29T21:10:10.726Z",

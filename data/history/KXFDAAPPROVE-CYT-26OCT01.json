@@ -2035,6 +2035,26 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1790740800,
+      "open_interest_fp": "6791.23",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -5846,6 +5866,120 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-30T05:48:13.475Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1445.00"
+            ],
+            [
+              "0.0200",
+              "630.00"
+            ],
+            [
+              "0.0300",
+              "660.00"
+            ],
+            [
+              "0.0600",
+              "46.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.1400",
+              "1307.00"
+            ],
+            [
+              "0.1500",
+              "46.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.3500",
+              "550.00"
+            ],
+            [
+              "0.4100",
+              "116.00"
+            ],
+            [
+              "0.4900",
+              "716.00"
+            ],
+            [
+              "0.5100",
+              "160.00"
+            ],
+            [
+              "0.5200",
+              "45.00"
+            ],
+            [
+              "0.9300",
+              "510.00"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-30T05:58:26.671Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "725.00"
+            ],
+            [
+              "0.0600",
+              "46.00"
+            ],
+            [
+              "0.0700",
+              "100.00"
+            ],
+            [
+              "0.2000",
+              "35.00"
+            ],
+            [
+              "0.3200",
+              "21.00"
+            ],
+            [
+              "0.3500",
+              "550.00"
+            ],
+            [
+              "0.4900",
+              "716.00"
+            ],
+            [
+              "0.5200",
+              "45.00"
+            ],
+            [
+              "0.9300",
+              "510.00"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5872,9 +6006,9 @@
     "occurrence_datetime": "2026-10-01T14:00:00Z",
     "open_interest_fp": "6791.23",
     "open_time": "2026-05-14T02:00:00Z",
-    "previous_price_dollars": "0.0700",
+    "previous_price_dollars": "0.0100",
     "previous_yes_ask_dollars": "0.0700",
-    "previous_yes_bid_dollars": "0.0200",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5892,7 +6026,7 @@
     "ticker": "KXFDAAPPROVE-CYT-26OCT01",
     "title": "Will the FDA approve cytisinicline for smoking cessation before Oct 1, 2026?",
     "updated_time": "2026-06-10T02:58:24.789382Z",
-    "volume_24h_fp": "20.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "8719.96",
     "yes_ask_dollars": "0.0700",
     "yes_ask_size_fp": "510.00",
@@ -5901,8 +6035,8 @@
     "yes_sub_title": "Before Oct 1, 2026"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01",
-  "market_captured_at": "2026-09-29T21:12:53.745Z",
+  "market_captured_at": "2026-09-30T05:58:26.022Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T21:12:54.410Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CYT-26OCT01/candlesticks?start_ts=1790654401&end_ts=1790716374&period_interval=1440"
+  "last_ingested_at": "2026-09-30T05:58:26.649Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CYT-26OCT01/candlesticks?start_ts=1790740801&end_ts=1790747906&period_interval=1440"
 }

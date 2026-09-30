@@ -938,6 +938,31 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1790740800,
+      "open_interest_fp": "84059.97",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "mean_dollars": "0.0400",
+        "open_dollars": "0.0400",
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "702.76",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -7944,6 +7969,178 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-30T05:50:42.895Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-BUF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4477717.42"
+            ],
+            [
+              "0.0200",
+              "500.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "953128.00"
+            ],
+            [
+              "0.0800",
+              "140.42"
+            ],
+            [
+              "0.1100",
+              "519888.00"
+            ],
+            [
+              "0.1400",
+              "351.37"
+            ],
+            [
+              "0.1500",
+              "2.34"
+            ],
+            [
+              "0.1800",
+              "411265.00"
+            ],
+            [
+              "0.2500",
+              "294812.25"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3200",
+              "240655.42"
+            ],
+            [
+              "0.3400",
+              "46.85"
+            ],
+            [
+              "0.3900",
+              "131642.00"
+            ],
+            [
+              "0.4600",
+              "325031.00"
+            ],
+            [
+              "0.4700",
+              "46.85"
+            ],
+            [
+              "0.5300",
+              "57192.00"
+            ],
+            [
+              "0.5500",
+              "23.42"
+            ],
+            [
+              "0.5700",
+              "138451.00"
+            ],
+            [
+              "0.6000",
+              "2132.00"
+            ],
+            [
+              "0.6700",
+              "33477.00"
+            ],
+            [
+              "0.6900",
+              "59663.00"
+            ],
+            [
+              "0.7600",
+              "25177.00"
+            ],
+            [
+              "0.7700",
+              "82.00"
+            ],
+            [
+              "0.8100",
+              "15797.00"
+            ],
+            [
+              "0.8200",
+              "1000.00"
+            ],
+            [
+              "0.8300",
+              "118.92"
+            ],
+            [
+              "0.8400",
+              "1925.00"
+            ],
+            [
+              "0.8700",
+              "117.12"
+            ],
+            [
+              "0.8800",
+              "353.05"
+            ],
+            [
+              "0.9000",
+              "100.00"
+            ],
+            [
+              "0.9100",
+              "1099.00"
+            ],
+            [
+              "0.9200",
+              "1033.60"
+            ],
+            [
+              "0.9400",
+              "10000.00"
+            ],
+            [
+              "0.9500",
+              "16882.59"
+            ],
+            [
+              "0.9600",
+              "44510.27"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "33580.37"
+            ],
+            [
+              "0.0200",
+              "10311.39"
+            ],
+            [
+              "0.0300",
+              "704.16"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -7968,7 +8165,7 @@
     "no_sub_title": "Buffalo Sabres",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
-    "open_interest_fp": "84059.97",
+    "open_interest_fp": "84645.61",
     "open_time": "2026-06-15T03:40:00Z",
     "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0400",
@@ -7990,17 +8187,17 @@
     "ticker": "KXNHL-27-BUF",
     "title": "Will Buffalo Sabres win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.063613Z",
-    "volume_24h_fp": "702.76",
-    "volume_fp": "85241.14",
+    "volume_24h_fp": "1288.40",
+    "volume_fp": "85826.78",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "44804.07",
+    "yes_ask_size_fp": "44510.27",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "691.08",
+    "yes_bid_size_fp": "704.16",
     "yes_sub_title": "Buffalo Sabres"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-BUF",
-  "market_captured_at": "2026-09-29T21:04:22.251Z",
+  "market_captured_at": "2026-09-30T05:50:42.346Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T21:04:22.817Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-BUF/candlesticks?start_ts=1790654401&end_ts=1790715862&period_interval=1440"
+  "last_ingested_at": "2026-09-30T05:50:42.873Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-BUF/candlesticks?start_ts=1790654401&end_ts=1790747442&period_interval=1440"
 }

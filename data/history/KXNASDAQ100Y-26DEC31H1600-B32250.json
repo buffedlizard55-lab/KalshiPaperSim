@@ -5940,6 +5940,31 @@
         "low_dollars": "0.0700",
         "open_dollars": "0.0700"
       }
+    },
+    {
+      "end_period_ts": 1790740800,
+      "open_interest_fp": "96569.43",
+      "price": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "mean_dollars": "0.0700",
+        "open_dollars": "0.0700",
+        "previous_dollars": "0.0800"
+      },
+      "volume_fp": "78.18",
+      "yes_ask": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.0800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0700"
+      }
     }
   ],
   "books": [
@@ -10418,6 +10443,98 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-30T05:49:24.339Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32250/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142857.00"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.4800",
+              "117.43"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.7000",
+              "2040.00"
+            ],
+            [
+              "0.7600",
+              "11.74"
+            ],
+            [
+              "0.8000",
+              "1785.00"
+            ],
+            [
+              "0.8200",
+              "610.36"
+            ],
+            [
+              "0.8300",
+              "200.00"
+            ],
+            [
+              "0.9000",
+              "1587.00"
+            ],
+            [
+              "0.9100",
+              "156.06"
+            ],
+            [
+              "0.9200",
+              "4154.87"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "48.00"
+            ],
+            [
+              "0.0200",
+              "250.00"
+            ],
+            [
+              "0.0300",
+              "1079.40"
+            ],
+            [
+              "0.0400",
+              "59.00"
+            ],
+            [
+              "0.0500",
+              "273.80"
+            ],
+            [
+              "0.0600",
+              "29.36"
+            ],
+            [
+              "0.0700",
+              "621.14"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -10462,17 +10579,17 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-B32250",
     "title": "Will the Nasdaq-100 be between 32000 and 32499.99 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:46.424726Z",
-    "volume_24h_fp": "136.89",
+    "volume_24h_fp": "78.18",
     "volume_fp": "148515.70",
     "yes_ask_dollars": "0.0800",
-    "yes_ask_size_fp": "4076.87",
+    "yes_ask_size_fp": "4154.87",
     "yes_bid_dollars": "0.0700",
     "yes_bid_size_fp": "621.14",
     "yes_sub_title": "32,000 to 32,499.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32250",
-  "market_captured_at": "2026-09-29T21:02:54.564Z",
+  "market_captured_at": "2026-09-30T05:49:23.791Z",
   "status": "active",
-  "last_ingested_at": "2026-09-29T21:02:55.132Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B32250/candlesticks?start_ts=1790654401&end_ts=1790715774&period_interval=1440"
+  "last_ingested_at": "2026-09-30T05:49:24.317Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B32250/candlesticks?start_ts=1790654401&end_ts=1790747364&period_interval=1440"
 }

@@ -12045,6 +12045,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-30T05:57:24.525Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP28PHICHI-CHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12071,9 +12081,9 @@
     "occurrence_datetime": "2026-09-29T03:15:00Z",
     "open_interest_fp": "12186122.33",
     "open_time": "2026-09-15T16:16:00Z",
-    "previous_price_dollars": "0.3600",
-    "previous_yes_ask_dollars": "0.3600",
-    "previous_yes_bid_dollars": "0.3500",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12093,7 +12103,7 @@
     "ticker": "KXNFLGAME-26SEP28PHICHI-CHI",
     "title": "Chicago wins",
     "updated_time": "2026-09-29T03:17:28.336795Z",
-    "volume_24h_fp": "22401180.19",
+    "volume_24h_fp": "0.00",
     "volume_fp": "23957453.88",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12102,11 +12112,11 @@
     "yes_sub_title": "Chicago"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP28PHICHI-CHI",
-  "market_captured_at": "2026-09-29T21:11:47.027Z",
+  "market_captured_at": "2026-09-30T05:57:23.555Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-29T21:11:47.692Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP28PHICHI-CHI/candlesticks?start_ts=1790651581&end_ts=1790716307&period_interval=1",
+  "last_ingested_at": "2026-09-30T05:57:24.504Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP28PHICHI-CHI/candlesticks?start_ts=1790737981&end_ts=1790747843&period_interval=1",
   "trims": [
     {
       "at": "2026-09-29T06:08:06.698Z",
