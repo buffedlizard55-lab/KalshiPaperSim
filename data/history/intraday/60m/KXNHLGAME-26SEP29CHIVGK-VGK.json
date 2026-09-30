@@ -2139,11 +2139,46 @@
         "low_dollars": "0.7900",
         "open_dollars": "0.9200"
       }
+    },
+    {
+      "end_period_ts": 1790748000,
+      "open_interest_fp": "333760.70",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9000",
+        "mean_dollars": "0.9845",
+        "open_dollars": "0.9700",
+        "previous_dollars": "0.9800"
+      },
+      "volume_fp": "97424.54",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.9200",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.9700"
+      }
     }
   ],
   "books": [
     {
       "captured_at": "2026-09-30T05:54:43.863Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP29CHIVGK-VGK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-09-30T08:56:39.692Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP29CHIVGK-VGK/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -2199,7 +2234,7 @@
     "ticker": "KXNHLGAME-26SEP29CHIVGK-VGK",
     "title": "Vegas wins",
     "updated_time": "2026-09-30T05:33:16.832052Z",
-    "volume_24h_fp": "492604.31",
+    "volume_24h_fp": "492369.06",
     "volume_fp": "497372.32",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2208,9 +2243,9 @@
     "yes_sub_title": "Vegas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP29CHIVGK-VGK",
-  "market_captured_at": "2026-09-30T05:54:43.210Z",
+  "market_captured_at": "2026-09-30T08:56:39.064Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-09-30T05:54:43.841Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP29CHIVGK-VGK/candlesticks?start_ts=1790287500&end_ts=1790747683&period_interval=60"
+  "last_ingested_at": "2026-09-30T08:56:39.679Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP29CHIVGK-VGK/candlesticks?start_ts=1790744401&end_ts=1790758599&period_interval=60"
 }

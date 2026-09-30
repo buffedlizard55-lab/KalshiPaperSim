@@ -10016,6 +10016,81 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-09-30T08:50:53.852Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-T4000/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "125074.80"
+            ],
+            [
+              "0.0200",
+              "68.00"
+            ],
+            [
+              "0.0300",
+              "340.00"
+            ],
+            [
+              "0.1000",
+              "12500.00"
+            ],
+            [
+              "0.3000",
+              "4166.00"
+            ],
+            [
+              "0.5000",
+              "2500.00"
+            ],
+            [
+              "0.7000",
+              "1925.37"
+            ],
+            [
+              "0.7500",
+              "15.00"
+            ],
+            [
+              "0.8000",
+              "1562.00"
+            ],
+            [
+              "0.9000",
+              "1388.00"
+            ],
+            [
+              "0.9400",
+              "2105.55"
+            ],
+            [
+              "0.9500",
+              "1315.00"
+            ],
+            [
+              "0.9600",
+              "1386.05"
+            ],
+            [
+              "0.9700",
+              "267.00"
+            ],
+            [
+              "0.9800",
+              "10554.00"
+            ],
+            [
+              "0.9900",
+              "43018.47"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -10036,7 +10111,7 @@
     "no_bid_dollars": "0.9900",
     "no_sub_title": "3,999.99 or below",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "412459.15",
+    "open_interest_fp": "412506.15",
     "open_time": "2025-12-23T15:00:00Z",
     "previous_price_dollars": "0.0100",
     "previous_yes_ask_dollars": "0.0100",
@@ -10059,17 +10134,17 @@
     "ticker": "KXINXY-26DEC31H1600-T4000",
     "title": "Will the S&P 500 be below 4000 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:00.416868Z",
-    "volume_24h_fp": "0.00",
-    "volume_fp": "456802.91",
+    "volume_24h_fp": "47.00",
+    "volume_fp": "456849.91",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "43065.47",
+    "yes_ask_size_fp": "43018.47",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "3,999.99 or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-T4000",
-  "market_captured_at": "2026-09-30T05:48:49.421Z",
+  "market_captured_at": "2026-09-30T08:50:53.323Z",
   "status": "active",
-  "last_ingested_at": "2026-09-30T05:48:49.945Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1790654401&end_ts=1790747329&period_interval=1440"
+  "last_ingested_at": "2026-09-30T08:50:53.838Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-T4000/candlesticks?start_ts=1790654401&end_ts=1790758253&period_interval=1440"
 }

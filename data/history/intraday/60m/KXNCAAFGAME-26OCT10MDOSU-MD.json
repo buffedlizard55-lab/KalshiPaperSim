@@ -1428,6 +1428,66 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1790748000,
+      "open_interest_fp": "9267.54",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1790751600,
+      "open_interest_fp": "9267.54",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1790755200,
+      "open_interest_fp": "9267.54",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -2338,6 +2398,98 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-09-30T08:56:47.164Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10MDOSU-MD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "115864.85"
+            ],
+            [
+              "0.0200",
+              "11872.00"
+            ],
+            [
+              "0.0300",
+              "6576.00"
+            ],
+            [
+              "0.0400",
+              "539.00"
+            ],
+            [
+              "0.0500",
+              "133.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "250.00"
+            ],
+            [
+              "0.0900",
+              "1.64"
+            ],
+            [
+              "0.1600",
+              "251.00"
+            ],
+            [
+              "0.1700",
+              "1.50"
+            ],
+            [
+              "0.5800",
+              "15.00"
+            ],
+            [
+              "0.8800",
+              "571.00"
+            ],
+            [
+              "0.8900",
+              "53.90"
+            ],
+            [
+              "0.9100",
+              "735.00"
+            ],
+            [
+              "0.9200",
+              "680.32"
+            ],
+            [
+              "0.9300",
+              "787.96"
+            ],
+            [
+              "0.9400",
+              "10.71"
+            ],
+            [
+              "0.9700",
+              "5801.00"
+            ],
+            [
+              "0.9800",
+              "113228.94"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "13706.10"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2387,14 +2539,14 @@
     "volume_24h_fp": "1778.02",
     "volume_fp": "9735.44",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "113045.94",
+    "yes_ask_size_fp": "113228.94",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "14018.10",
+    "yes_bid_size_fp": "13706.10",
     "yes_sub_title": "Maryland"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10MDOSU-MD",
-  "market_captured_at": "2026-09-30T05:54:50.851Z",
+  "market_captured_at": "2026-09-30T08:56:46.535Z",
   "status": "active",
-  "last_ingested_at": "2026-09-30T05:54:51.476Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10MDOSU-MD/candlesticks?start_ts=1790715601&end_ts=1790747691&period_interval=60"
+  "last_ingested_at": "2026-09-30T08:56:47.150Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10MDOSU-MD/candlesticks?start_ts=1790744401&end_ts=1790758606&period_interval=60"
 }
