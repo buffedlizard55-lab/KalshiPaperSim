@@ -14,7 +14,8 @@
   "2026-09-29T03:25:18.114Z",
   "2026-09-29T10:06:38.670Z",
   "2026-09-29T19:45:36.723Z",
-  "2026-09-29T23:23:05.758Z"
+  "2026-09-29T23:23:05.758Z",
+  "2026-09-30T02:21:01.939Z"
  ],
  "events": {
   "401918017": {
@@ -53,6 +54,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "26-18",
+      "away": "33-11"
+     }
+    },
+    {
+     "captured_at": "2026-09-30T02:21:01.939Z",
+     "last_seen_at": "2026-09-30T02:21:01.939Z",
+     "fp": "in|4|6|76,60|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 4,
+     "clock": 388,
+     "displayClock": "6:28",
+     "scores": {
+      "home": 76,
+      "away": 60
      },
      "recordsOverall": {
       "home": "26-18",
@@ -122,10 +143,30 @@
       "home": "28-16",
       "away": "31-13"
      }
+    },
+    {
+     "captured_at": "2026-09-30T02:21:01.939Z",
+     "last_seen_at": "2026-09-30T02:21:01.939Z",
+     "fp": "post|4|10|99,89|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 600,
+     "displayClock": "10:00",
+     "scores": {
+      "home": 99,
+      "away": 89
+     },
+     "recordsOverall": {
+      "home": "28-16",
+      "away": "31-13"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-09-29T23:23:05.758Z",
+ "last_ingested_at": "2026-09-30T02:21:01.939Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20260929"
 }
