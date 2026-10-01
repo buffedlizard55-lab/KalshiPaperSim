@@ -10,7 +10,8 @@
   ]
  },
  "captures": [
-  "2026-10-01T10:17:19.870Z"
+  "2026-10-01T10:17:19.870Z",
+  "2026-10-01T20:37:32.544Z"
  ],
  "games": {
   "849844": {
@@ -32,8 +33,14 @@
    },
    "venue": "Truist Park",
    "probablePitchers": {
-    "away": null,
-    "home": null
+    "away": {
+     "id": 605400,
+     "fullName": "Aaron Nola"
+    },
+    "home": {
+     "id": 678061,
+     "fullName": "Ray Kerr"
+    }
    },
    "firstCapturedAt": "2026-10-01T10:17:19.870Z",
    "states": [
@@ -43,6 +50,21 @@
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
+     "inning": null,
+     "inningState": null,
+     "runs": {
+      "away": null,
+      "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-01T20:37:32.544Z",
+     "last_seen_at": "2026-10-01T20:37:32.544Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
      "inning": null,
      "inningState": null,
      "runs": {
