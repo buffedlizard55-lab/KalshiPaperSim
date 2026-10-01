@@ -2773,6 +2773,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T13:25:52.500Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26SEP30GSDAL-GS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2821,7 +2831,7 @@
     "ticker": "KXWNBAGAME-26SEP30GSDAL-GS",
     "title": "Golden State wins",
     "updated_time": "2026-10-01T04:05:46.849273Z",
-    "volume_24h_fp": "5758949.99",
+    "volume_24h_fp": "5748156.74",
     "volume_fp": "5807718.57",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2830,9 +2840,9 @@
     "yes_sub_title": "Golden State"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26SEP30GSDAL-GS",
-  "market_captured_at": "2026-10-01T09:22:21.811Z",
+  "market_captured_at": "2026-10-01T13:25:51.788Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T09:22:22.486Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP30GSDAL-GS/candlesticks?start_ts=1790830801&end_ts=1790846542&period_interval=60"
+  "last_ingested_at": "2026-10-01T13:25:52.444Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP30GSDAL-GS/candlesticks?start_ts=1790830801&end_ts=1790861152&period_interval=60"
 }
