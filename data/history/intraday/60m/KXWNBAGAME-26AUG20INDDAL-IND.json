@@ -1600,6 +1600,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:22:27.201Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG20INDDAL-IND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1617,7 +1627,6 @@
     "expiration_value": "Dallas",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-08-23T00:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -1640,6 +1649,7 @@
     "result": "no",
     "rules_primary": "If Indiana wins the Indiana vs Dallas women's Pro Basketball game originally scheduled for Aug 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within 2 days). If the cancelled game is not played or is rescheduled further than 2 days out, all markets will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 90,
     "settlement_ts": "2026-08-21T02:27:17.296902Z",
     "settlement_value_dollars": "0.0000",
@@ -1657,9 +1667,9 @@
     "yes_sub_title": "Indiana"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG20INDDAL-IND",
-  "market_captured_at": "2026-10-01T06:25:21.344Z",
+  "market_captured_at": "2026-10-01T09:22:26.078Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:25:22.376Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG20INDDAL-IND/candlesticks?start_ts=1789873201&end_ts=1790835921&period_interval=60"
+  "last_ingested_at": "2026-10-01T09:22:27.129Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG20INDDAL-IND/candlesticks?start_ts=1789873201&end_ts=1790846546&period_interval=60"
 }

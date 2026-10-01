@@ -2763,6 +2763,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:22:22.558Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26SEP30GSDAL-GS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2780,7 +2790,6 @@
     "expiration_value": "8",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-10-03T01:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -2803,6 +2812,7 @@
     "result": "no",
     "rules_primary": "If Golden State wins the Golden State vs Dallas women's Pro Basketball game originally scheduled for Sep 30, 2026, then the market resolves to Yes.",
     "rules_secondary": "If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within 2 days). If the cancelled game is not played or is rescheduled further than 2 days out, all markets will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 90,
     "settlement_ts": "2026-10-01T04:05:46.544933Z",
     "settlement_value_dollars": "0.0000",
@@ -2811,7 +2821,7 @@
     "ticker": "KXWNBAGAME-26SEP30GSDAL-GS",
     "title": "Golden State wins",
     "updated_time": "2026-10-01T04:05:46.849273Z",
-    "volume_24h_fp": "5763371.72",
+    "volume_24h_fp": "5758949.99",
     "volume_fp": "5807718.57",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2820,9 +2830,9 @@
     "yes_sub_title": "Golden State"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26SEP30GSDAL-GS",
-  "market_captured_at": "2026-10-01T06:25:17.148Z",
+  "market_captured_at": "2026-10-01T09:22:21.811Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:25:17.815Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP30GSDAL-GS/candlesticks?start_ts=1790271000&end_ts=1790835917&period_interval=60"
+  "last_ingested_at": "2026-10-01T09:22:22.486Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP30GSDAL-GS/candlesticks?start_ts=1790830801&end_ts=1790846542&period_interval=60"
 }

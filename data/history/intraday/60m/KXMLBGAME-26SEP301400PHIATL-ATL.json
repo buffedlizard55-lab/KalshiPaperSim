@@ -2095,6 +2095,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:21:46.922Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP301400PHIATL-ATL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2112,7 +2122,6 @@
     "expiration_value": "Philadelphia",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-10-03T18:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -2135,6 +2144,7 @@
     "result": "no",
     "rules_primary": "If Atlanta wins the Philadelphia vs Atlanta professional baseball game originally scheduled for Sep 30, 2026 at 2:00 PM EDT, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the Philadelphia vs Atlanta professional baseball game originally scheduled for Sep 30, 2026 at 2:00 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 120,
     "settlement_ts": "2026-09-30T21:23:06.662177Z",
     "settlement_value_dollars": "0.0000",
@@ -2143,7 +2153,7 @@
     "ticker": "KXMLBGAME-26SEP301400PHIATL-ATL",
     "title": "Atlanta wins",
     "updated_time": "2026-09-30T21:23:06.849631Z",
-    "volume_24h_fp": "8092619.78",
+    "volume_24h_fp": "8071946.08",
     "volume_fp": "8253082.82",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2152,9 +2162,9 @@
     "yes_sub_title": "Atlanta"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP301400PHIATL-ATL",
-  "market_captured_at": "2026-10-01T06:24:42.137Z",
+  "market_captured_at": "2026-10-01T09:21:46.175Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:24:42.803Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP301400PHIATL-ATL/candlesticks?start_ts=1790802001&end_ts=1790835882&period_interval=60",
+  "last_ingested_at": "2026-10-01T09:21:46.850Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP301400PHIATL-ATL/candlesticks?start_ts=1790805601&end_ts=1790846506&period_interval=60",
   "result": "no"
 }

@@ -3629,6 +3629,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:17:33.228Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20JACDEN-45/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3644,7 +3654,6 @@
     "floor_strike": 44.5,
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-22T20:05:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -3667,6 +3676,7 @@
     "result": "no",
     "rules_primary": "If Jacksonville and Denver collectively score more than 44.5 points in the Jacksonville vs Denver Pro Football game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 60,
     "settlement_ts": "2026-09-20T23:17:24.555467Z",
     "settlement_value_dollars": "0.0000",
@@ -3684,9 +3694,9 @@
     "yes_sub_title": "Over 44.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20JACDEN-45",
-  "market_captured_at": "2026-10-01T06:20:32.211Z",
+  "market_captured_at": "2026-10-01T09:17:32.584Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:20:32.777Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20JACDEN-45/candlesticks?start_ts=1789963201&end_ts=1790835632&period_interval=1440",
+  "last_ingested_at": "2026-10-01T09:17:33.157Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20JACDEN-45/candlesticks?start_ts=1789963201&end_ts=1790846252&period_interval=1440",
   "result": "no"
 }

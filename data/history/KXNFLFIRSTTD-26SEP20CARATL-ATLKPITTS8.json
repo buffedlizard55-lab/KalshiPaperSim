@@ -1986,6 +1986,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:17:17.252Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2004,7 +2014,6 @@
     "expiration_value": "first_touchdown",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-22T17:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -2028,6 +2037,7 @@
     "result": "no",
     "rules_primary": "If Kyle Pitts Sr. scores the first touchdown in Carolina vs Atlanta Pro Football game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to Kyle Pitts Sr. in the Carolina vs Atlanta professional football game originally scheduled for Sep 20, 2026. If Kyle Pitts Sr. is active but never takes a snap, the market settles to the fair market price before game start. Once Kyle Pitts Sr. takes at least one snap, even if nullified by penalty, the market settles based on touchdowns scored. If no touchdowns are scored in the game, the No Touchdown market resolves to Yes and all other player markets resolve to No.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 120,
     "settlement_ts": "2026-09-20T18:23:14.50731Z",
     "settlement_value_dollars": "0.0000",
@@ -2045,9 +2055,9 @@
     "yes_sub_title": "Kyle Pitts Sr."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8",
-  "market_captured_at": "2026-10-01T06:20:16.600Z",
+  "market_captured_at": "2026-10-01T09:17:16.608Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:20:17.167Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/candlesticks?start_ts=1789963201&end_ts=1790835616&period_interval=1440",
+  "last_ingested_at": "2026-10-01T09:17:17.181Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/candlesticks?start_ts=1789963201&end_ts=1790846236&period_interval=1440",
   "result": "no"
 }

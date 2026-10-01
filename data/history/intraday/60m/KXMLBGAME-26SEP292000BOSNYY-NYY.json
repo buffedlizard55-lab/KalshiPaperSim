@@ -1329,6 +1329,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:21:41.225Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP292000BOSNYY-NYY/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1346,7 +1356,6 @@
     "expiration_value": "New York Y",
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-03T00:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -1369,6 +1378,7 @@
     "result": "yes",
     "rules_primary": "If New York Y wins the Boston vs New York Y professional baseball game originally scheduled for Sep 29, 2026 at 8:00 PM EDT, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the Boston vs New York Y professional baseball game originally scheduled for Sep 29, 2026 at 8:00 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 120,
     "settlement_ts": "2026-09-30T03:23:56.617704Z",
     "settlement_value_dollars": "1.0000",
@@ -1386,9 +1396,9 @@
     "yes_sub_title": "New York Y"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP292000BOSNYY-NYY",
-  "market_captured_at": "2026-10-01T06:24:36.539Z",
+  "market_captured_at": "2026-10-01T09:21:40.477Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:24:37.205Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP292000BOSNYY-NYY/candlesticks?start_ts=1790740801&end_ts=1790835876&period_interval=60"
+  "last_ingested_at": "2026-10-01T09:21:41.151Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP292000BOSNYY-NYY/candlesticks?start_ts=1790740801&end_ts=1790846500&period_interval=60"
 }

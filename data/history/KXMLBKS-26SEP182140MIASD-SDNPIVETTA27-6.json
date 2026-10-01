@@ -514,6 +514,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:15:53.007Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -533,7 +543,6 @@
     "floor_strike": 5.5,
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-22T01:40:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -557,6 +566,7 @@
     "result": "no",
     "rules_primary": "If Nick Pivetta records 6+ strikeouts in the Miami vs San Diego professional baseball game originally scheduled for Sep 18, 2026 at 9:40 PM EDT, then the market resolves to Yes.",
     "rules_secondary": "Player Participation & Settlement Criteria\nIf Nick Pivetta is scratched or is not a starting pitcher, the market will resolve to the fair market price.\nIf Nick Pivetta is not a starting pitcher but later enters the game, the market will resolve to the fair market price, relief appearances will not count towards this market.\nIf Nick Pivetta is a starting pitcher and records at least one batter faced the market will settle based on strikeouts recorded.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-09-19T04:36:24.659947Z",
     "settlement_value_dollars": "0.0000",
@@ -574,9 +584,9 @@
     "yes_sub_title": "Nick Pivetta: 6+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6",
-  "market_captured_at": "2026-10-01T06:18:53.491Z",
+  "market_captured_at": "2026-10-01T09:15:52.362Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:18:54.057Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6/candlesticks?start_ts=1789876801&end_ts=1790835533&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:15:52.937Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP182140MIASD-SDNPIVETTA27-6/candlesticks?start_ts=1789876801&end_ts=1790846152&period_interval=1440"
 }

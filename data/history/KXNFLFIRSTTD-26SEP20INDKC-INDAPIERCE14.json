@@ -2050,6 +2050,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:17:18.470Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2068,7 +2078,6 @@
     "expiration_value": "first_touchdown",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-23T00:20:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -2092,6 +2101,7 @@
     "result": "no",
     "rules_primary": "If Alec Pierce scores the first touchdown in Indianapolis vs Kansas City Pro Football game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to Alec Pierce in the Indianapolis vs Kansas City professional football game originally scheduled for Sep 20, 2026. If Alec Pierce is active but never takes a snap, the market settles to the fair market price before game start. Once Alec Pierce takes at least one snap, even if nullified by penalty, the market settles based on touchdowns scored. If no touchdowns are scored in the game, the No Touchdown market resolves to Yes and all other player markets resolve to No.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 120,
     "settlement_ts": "2026-09-21T00:56:24.543418Z",
     "settlement_value_dollars": "0.0000",
@@ -2109,9 +2119,9 @@
     "yes_sub_title": "Alec Pierce"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14",
-  "market_captured_at": "2026-10-01T06:20:17.799Z",
+  "market_captured_at": "2026-10-01T09:17:17.826Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:20:18.366Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/candlesticks?start_ts=1789963201&end_ts=1790835618&period_interval=1440",
+  "last_ingested_at": "2026-10-01T09:17:18.398Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/candlesticks?start_ts=1789963201&end_ts=1790846238&period_interval=1440",
   "result": "no"
 }

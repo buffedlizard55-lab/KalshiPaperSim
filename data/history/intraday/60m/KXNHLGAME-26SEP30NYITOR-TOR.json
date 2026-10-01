@@ -2094,6 +2094,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:22:06.885Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP30NYITOR-TOR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2111,7 +2121,6 @@
     "expiration_value": "Toronto",
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-02T23:30:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -2134,6 +2143,7 @@
     "result": "yes",
     "rules_primary": "If Toronto wins the New York I vs Toronto NHL game originally scheduled for Sep 30, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 45,
     "settlement_ts": "2026-10-01T02:44:46.4699Z",
     "settlement_value_dollars": "1.0000",
@@ -2142,7 +2152,7 @@
     "ticker": "KXNHLGAME-26SEP30NYITOR-TOR",
     "title": "Toronto wins",
     "updated_time": "2026-10-01T02:44:46.551509Z",
-    "volume_24h_fp": "569919.46",
+    "volume_24h_fp": "569530.28",
     "volume_fp": "571438.59",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2151,9 +2161,9 @@
     "yes_sub_title": "Toronto"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP30NYITOR-TOR",
-  "market_captured_at": "2026-10-01T06:25:01.741Z",
+  "market_captured_at": "2026-10-01T09:22:06.138Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:25:02.410Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP30NYITOR-TOR/candlesticks?start_ts=1790287500&end_ts=1790835902&period_interval=60"
+  "last_ingested_at": "2026-10-01T09:22:06.813Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP30NYITOR-TOR/candlesticks?start_ts=1790823601&end_ts=1790846526&period_interval=60"
 }

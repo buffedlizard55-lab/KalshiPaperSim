@@ -419,6 +419,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:21:26.392Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXGOLD15M-26SEP301115-15/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -436,7 +446,6 @@
     "floor_strike": 4165.23,
     "last_price_dollars": "0.0010",
     "latest_expiration_time": "2026-10-07T15:15:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -469,6 +478,7 @@
     "result": "no",
     "rules_primary": "If the close price of the 1-minute candlestick for Gold on Sep 30, 2026 at 11:15 AM EDT is at least the close price of the 1-minute Pyth GOLD candlestick at 11:00 AM EDT on September 30, 2026 USD/|| Unit ||, then the market resolves to Yes.",
     "rules_secondary": "The settlement value is rounded to the nearest 2 decimal places. When confirming the settlement value, note the close price for the 1-minute candlestick at a given time is the price at the end of the immediately preceding one-minute interval. For example, the candlestick timestamped 4:59 PM reflects trading during 4:59:00 PM to 4:59:59 PM and closes at 5:00:00 PM. If no data is published by the specified source agency for the specified time, then the most recently available published data will be used to resolve the market.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 1,
     "settlement_ts": "2026-09-30T15:15:26.455036Z",
     "settlement_value_dollars": "0.0000",
@@ -486,9 +496,9 @@
     "yes_sub_title": "Target Price: $4,165.23"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXGOLD15M-26SEP301115-15",
-  "market_captured_at": "2026-10-01T06:24:21.716Z",
+  "market_captured_at": "2026-10-01T09:21:25.645Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:24:22.384Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP301115-15/candlesticks?start_ts=1790781361&end_ts=1790835862&period_interval=1"
+  "last_ingested_at": "2026-10-01T09:21:26.320Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26SEP301115-15/candlesticks?start_ts=1790781361&end_ts=1790846485&period_interval=1"
 }

@@ -6750,6 +6750,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:16:51.635Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6767,7 +6777,6 @@
     "expiration_value": "Miami (FL)",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-28T22:30:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -6790,6 +6799,7 @@
     "result": "no",
     "rules_primary": "If Central Michigan wins the Central Michigan vs Miami (FL) college football game originally scheduled for Sep 26, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 90,
     "settlement_ts": "2026-09-27T01:57:26.458908Z",
     "settlement_value_dollars": "0.0000",
@@ -6807,9 +6817,9 @@
     "yes_sub_title": "Central Michigan"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU",
-  "market_captured_at": "2026-10-01T06:19:51.414Z",
+  "market_captured_at": "2026-10-01T09:16:50.989Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:19:51.979Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/candlesticks?start_ts=1790481601&end_ts=1790835591&period_interval=1440",
+  "last_ingested_at": "2026-10-01T09:16:51.563Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/candlesticks?start_ts=1790481601&end_ts=1790846211&period_interval=1440",
   "result": "no"
 }

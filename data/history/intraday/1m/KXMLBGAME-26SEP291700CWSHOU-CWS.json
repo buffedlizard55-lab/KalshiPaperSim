@@ -12055,6 +12055,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:23:43.745Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP291700CWSHOU-CWS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12072,7 +12082,6 @@
     "expiration_value": "Chicago WS",
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-02T21:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -12095,6 +12104,7 @@
     "result": "yes",
     "rules_primary": "If Chicago WS wins the Chicago WS vs Houston professional baseball game originally scheduled for Sep 29, 2026 at 5:00 PM EDT, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the Chicago WS vs Houston professional baseball game originally scheduled for Sep 29, 2026 at 5:00 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 120,
     "settlement_ts": "2026-09-30T00:32:56.556258Z",
     "settlement_value_dollars": "1.0000",
@@ -12112,11 +12122,11 @@
     "yes_sub_title": "Chicago WS"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP291700CWSHOU-CWS",
-  "market_captured_at": "2026-10-01T06:26:43.300Z",
+  "market_captured_at": "2026-10-01T09:23:42.621Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:26:44.332Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP291700CWSHOU-CWS/candlesticks?start_ts=1790814661&end_ts=1790836003&period_interval=1",
+  "last_ingested_at": "2026-10-01T09:23:43.672Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP291700CWSHOU-CWS/candlesticks?start_ts=1790814661&end_ts=1790846622&period_interval=1",
   "trims": [
     {
       "at": "2026-09-30T05:56:03.174Z",

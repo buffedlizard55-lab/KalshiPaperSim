@@ -4808,6 +4808,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:17:30.793Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLSPREAD-26SEP20SEAARI-SEA4/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4826,7 +4836,6 @@
     "floor_strike": 3.5,
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-22T20:25:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -4849,6 +4858,7 @@
     "result": "yes",
     "rules_primary": "If Seattle wins by more than 3.5 points in the Seattle vs Arizona Pro Football game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 60,
     "settlement_ts": "2026-09-20T23:29:34.544224Z",
     "settlement_value_dollars": "1.0000",
@@ -4866,9 +4876,9 @@
     "yes_sub_title": "Seattle wins by over 3.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLSPREAD-26SEP20SEAARI-SEA4",
-  "market_captured_at": "2026-10-01T06:20:29.811Z",
+  "market_captured_at": "2026-10-01T09:17:30.151Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:20:30.378Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLSPREAD/markets/KXNFLSPREAD-26SEP20SEAARI-SEA4/candlesticks?start_ts=1789963201&end_ts=1790835630&period_interval=1440",
+  "last_ingested_at": "2026-10-01T09:17:30.723Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLSPREAD/markets/KXNFLSPREAD-26SEP20SEAARI-SEA4/candlesticks?start_ts=1789963201&end_ts=1790846250&period_interval=1440",
   "result": "yes"
 }

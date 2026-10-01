@@ -4524,6 +4524,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:22:41.813Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP05HOOPAR-HOO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4541,7 +4551,6 @@
     "expiration_value": "Salahdine Parnasse",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-19T20:40:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -4564,6 +4573,7 @@
     "result": "no",
     "rules_primary": "If Daniel Hooker wins the Hooker vs Parnasse professional MMA fight originally scheduled for Sep 5, 2026, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the Hooker vs Parnasse professional MMA fight originally scheduled for Sep 5, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the “UFC,” or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 298,
     "settlement_ts": "2026-09-05T22:00:35.620074Z",
     "settlement_value_dollars": "0.0000",
@@ -4581,9 +4591,9 @@
     "yes_sub_title": "Daniel Hooker"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP05HOOPAR-HOO",
-  "market_captured_at": "2026-10-01T06:25:36.074Z",
+  "market_captured_at": "2026-10-01T09:22:41.065Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:25:36.741Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP05HOOPAR-HOO/candlesticks?start_ts=1788645601&end_ts=1790835936&period_interval=60"
+  "last_ingested_at": "2026-10-01T09:22:41.740Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP05HOOPAR-HOO/candlesticks?start_ts=1788645601&end_ts=1790846561&period_interval=60"
 }

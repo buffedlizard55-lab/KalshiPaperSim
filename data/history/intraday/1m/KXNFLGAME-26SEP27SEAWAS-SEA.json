@@ -12135,6 +12135,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:25:09.975Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27SEAWAS-SEA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12152,7 +12162,6 @@
     "expiration_value": "winner",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-29T17:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -12175,6 +12184,7 @@
     "result": "no",
     "rules_primary": "If Seattle wins the Seattle vs Washington Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the team who wins the Seattle vs Washington Pro Football game originally scheduled for Sep 27, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 60,
     "settlement_ts": "2026-09-27T20:31:26.940457Z",
     "settlement_value_dollars": "0.0000",
@@ -12192,11 +12202,11 @@
     "yes_sub_title": "Seattle"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27SEAWAS-SEA",
-  "market_captured_at": "2026-10-01T06:28:07.667Z",
+  "market_captured_at": "2026-10-01T09:25:08.104Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:28:09.433Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27SEAWAS-SEA/candlesticks?start_ts=1790800141&end_ts=1790836087&period_interval=1",
+  "last_ingested_at": "2026-10-01T09:25:09.903Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27SEAWAS-SEA/candlesticks?start_ts=1790800141&end_ts=1790846708&period_interval=1",
   "trims": [
     {
       "at": "2026-09-28T05:50:48.457Z",

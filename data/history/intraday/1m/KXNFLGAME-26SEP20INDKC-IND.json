@@ -12365,6 +12365,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:24:30.809Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12382,7 +12392,6 @@
     "expiration_value": "Kansas City",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-23T00:20:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -12405,6 +12414,7 @@
     "result": "no",
     "rules_primary": "If Indianapolis wins the IND Colts vs KC Chiefs Pro Football game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the team who wins the IND Colts vs KC Chiefs Pro Football game originally scheduled for Sep 20, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 60,
     "settlement_ts": "2026-09-21T04:00:25.238619Z",
     "settlement_value_dollars": "0.0000",
@@ -12422,11 +12432,11 @@
     "yes_sub_title": "Indianapolis"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP20INDKC-IND",
-  "market_captured_at": "2026-10-01T06:27:26.701Z",
+  "market_captured_at": "2026-10-01T09:24:26.315Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:27:31.027Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-IND/candlesticks?start_ts=1790826961&end_ts=1790836047&period_interval=1",
+  "last_ingested_at": "2026-10-01T09:24:30.736Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-IND/candlesticks?start_ts=1790826961&end_ts=1790846666&period_interval=1",
   "trims": [
     {
       "at": "2026-09-22T08:01:19.998Z",

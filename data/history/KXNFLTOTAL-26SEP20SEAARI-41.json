@@ -4372,6 +4372,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:17:35.669Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20SEAARI-41/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4387,7 +4397,6 @@
     "floor_strike": 40.5,
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-22T20:25:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -4410,6 +4419,7 @@
     "result": "no",
     "rules_primary": "If Seattle and Arizona collectively score more than 40.5 points in the Seattle vs Arizona Pro Football game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 60,
     "settlement_ts": "2026-09-20T23:41:44.506282Z",
     "settlement_value_dollars": "0.0000",
@@ -4427,9 +4437,9 @@
     "yes_sub_title": "Over 40.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20SEAARI-41",
-  "market_captured_at": "2026-10-01T06:20:34.608Z",
+  "market_captured_at": "2026-10-01T09:17:35.024Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:20:35.173Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20SEAARI-41/candlesticks?start_ts=1789963201&end_ts=1790835634&period_interval=1440",
+  "last_ingested_at": "2026-10-01T09:17:35.598Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20SEAARI-41/candlesticks?start_ts=1789963201&end_ts=1790846255&period_interval=1440",
   "result": "no"
 }

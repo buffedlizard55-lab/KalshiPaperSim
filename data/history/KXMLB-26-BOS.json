@@ -27529,6 +27529,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:15:31.043Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-BOS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -27546,7 +27556,6 @@
     "expiration_value": "No",
     "last_price_dollars": "0.0010",
     "latest_expiration_time": "2028-10-31T04:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -27569,6 +27578,7 @@
     "result": "no",
     "rules_primary": "If Boston wins the 2026 Pro Baseball Championship, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-10-01T03:34:16.516692Z",
     "settlement_value_dollars": "0.0000",
@@ -27577,7 +27587,7 @@
     "ticker": "KXMLB-26-BOS",
     "title": "Will Boston win the 2026 Pro Baseball Championship?",
     "updated_time": "2026-10-01T03:34:16.800508Z",
-    "volume_24h_fp": "492317.24",
+    "volume_24h_fp": "491142.61",
     "volume_fp": "5452647.74",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -27586,9 +27596,9 @@
     "yes_sub_title": "Boston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-BOS",
-  "market_captured_at": "2026-10-01T06:18:31.615Z",
+  "market_captured_at": "2026-10-01T09:15:30.398Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:18:32.182Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-BOS/candlesticks?start_ts=1790740801&end_ts=1790835511&period_interval=1440",
+  "last_ingested_at": "2026-10-01T09:15:30.972Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-BOS/candlesticks?start_ts=1790827201&end_ts=1790846130&period_interval=1440",
   "result": "no"
 }

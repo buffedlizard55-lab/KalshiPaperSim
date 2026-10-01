@@ -1552,6 +1552,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:17:32.010Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1571,7 +1581,6 @@
     "floor_strike": 2.5,
     "last_price_dollars": "0.1000",
     "latest_expiration_time": "2026-09-22T17:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -1595,6 +1604,7 @@
     "result": "no",
     "rules_primary": "If Lamar Jackson scores at least 3+ touchdowns in the New Orleans vs Baltimore Pro Football game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to Lamar Jackson in the New Orleans vs Baltimore Pro Football game originally scheduled for Sep 20, 2026. If Lamar Jackson is active but never takes a snap, the market settles to the fair market price before game start. Once Lamar Jackson takes at least one snap, even if nullified by penalty, the market settles based on touchdowns scored.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 60,
     "settlement_ts": "2026-09-20T20:02:54.529706Z",
     "settlement_value_dollars": "0.0000",
@@ -1612,9 +1622,9 @@
     "yes_sub_title": "Lamar Jackson: 3+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3",
-  "market_captured_at": "2026-10-01T06:20:31.010Z",
+  "market_captured_at": "2026-10-01T09:17:31.367Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:20:31.578Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTD/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/candlesticks?start_ts=1789963201&end_ts=1790835631&period_interval=1440",
+  "last_ingested_at": "2026-10-01T09:17:31.938Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTD/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/candlesticks?start_ts=1789963201&end_ts=1790846251&period_interval=1440",
   "result": "no"
 }

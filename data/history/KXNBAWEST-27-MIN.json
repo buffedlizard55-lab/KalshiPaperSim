@@ -11731,6 +11731,250 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:16:39.422Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3897401.05"
+            ],
+            [
+              "0.0200",
+              "8020.00"
+            ],
+            [
+              "0.0300",
+              "7614.00"
+            ],
+            [
+              "0.0600",
+              "907018.00"
+            ],
+            [
+              "0.0800",
+              "208.91"
+            ],
+            [
+              "0.1100",
+              "408334.00"
+            ],
+            [
+              "0.1500",
+              "2607.36"
+            ],
+            [
+              "0.1600",
+              "81.47"
+            ],
+            [
+              "0.1700",
+              "8.55"
+            ],
+            [
+              "0.1800",
+              "404964.24"
+            ],
+            [
+              "0.2000",
+              "31.33"
+            ],
+            [
+              "0.2100",
+              "83.96"
+            ],
+            [
+              "0.2300",
+              "355.29"
+            ],
+            [
+              "0.2500",
+              "293122.21"
+            ],
+            [
+              "0.2600",
+              "407.38"
+            ],
+            [
+              "0.2800",
+              "279.37"
+            ],
+            [
+              "0.3200",
+              "219961.00"
+            ],
+            [
+              "0.3400",
+              "61.21"
+            ],
+            [
+              "0.3600",
+              "104.45"
+            ],
+            [
+              "0.3800",
+              "33.40"
+            ],
+            [
+              "0.3900",
+              "336129.00"
+            ],
+            [
+              "0.4100",
+              "171.15"
+            ],
+            [
+              "0.4200",
+              "208.72"
+            ],
+            [
+              "0.4400",
+              "104.54"
+            ],
+            [
+              "0.4600",
+              "10.00"
+            ],
+            [
+              "0.4700",
+              "180389.22"
+            ],
+            [
+              "0.5100",
+              "300.00"
+            ],
+            [
+              "0.5300",
+              "53582.00"
+            ],
+            [
+              "0.5400",
+              "2009.00"
+            ],
+            [
+              "0.5700",
+              "117.43"
+            ],
+            [
+              "0.5800",
+              "84248.00"
+            ],
+            [
+              "0.6000",
+              "16.67"
+            ],
+            [
+              "0.6100",
+              "10.44"
+            ],
+            [
+              "0.6600",
+              "32205.00"
+            ],
+            [
+              "0.6700",
+              "23118.00"
+            ],
+            [
+              "0.7300",
+              "104.87"
+            ],
+            [
+              "0.7400",
+              "16218.00"
+            ],
+            [
+              "0.7700",
+              "4863.00"
+            ],
+            [
+              "0.7900",
+              "2844.75"
+            ],
+            [
+              "0.8000",
+              "8.78"
+            ],
+            [
+              "0.8200",
+              "1963.30"
+            ],
+            [
+              "0.8300",
+              "600.00"
+            ],
+            [
+              "0.8400",
+              "616.36"
+            ],
+            [
+              "0.8500",
+              "3839.74"
+            ],
+            [
+              "0.8600",
+              "7167.00"
+            ],
+            [
+              "0.8700",
+              "57.16"
+            ],
+            [
+              "0.8800",
+              "14.52"
+            ],
+            [
+              "0.8900",
+              "66.46"
+            ],
+            [
+              "0.9000",
+              "65629.66"
+            ],
+            [
+              "0.9100",
+              "3361.75"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "321828.51"
+            ],
+            [
+              "0.0200",
+              "1750.00"
+            ],
+            [
+              "0.0300",
+              "670.74"
+            ],
+            [
+              "0.0400",
+              "1529.57"
+            ],
+            [
+              "0.0500",
+              "683.48"
+            ],
+            [
+              "0.0600",
+              "20617.48"
+            ],
+            [
+              "0.0700",
+              "35933.05"
+            ],
+            [
+              "0.0800",
+              "9381.70"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -11748,7 +11992,6 @@
     "expiration_value": "",
     "last_price_dollars": "0.0900",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.9200",
     "no_bid_dollars": "0.9100",
@@ -11758,8 +12001,8 @@
     "open_interest_fp": "103514.82",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.0900",
-    "previous_yes_ask_dollars": "0.0900",
-    "previous_yes_bid_dollars": "0.0800",
+    "previous_yes_ask_dollars": "0.0800",
+    "previous_yes_bid_dollars": "0.0700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -11771,6 +12014,7 @@
     "result": "",
     "rules_primary": "If Minnesota wins the Pro Basketball Western Conference Finals in the 2026-27 season, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
     "status": "active",
     "strike_type": "structured",
@@ -11782,12 +12026,12 @@
     "yes_ask_dollars": "0.0900",
     "yes_ask_size_fp": "3361.75",
     "yes_bid_dollars": "0.0800",
-    "yes_bid_size_fp": "1145.70",
+    "yes_bid_size_fp": "9381.70",
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-MIN",
-  "market_captured_at": "2026-10-01T06:19:39.104Z",
+  "market_captured_at": "2026-10-01T09:16:38.765Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T06:19:39.670Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-MIN/candlesticks?start_ts=1790740801&end_ts=1790835579&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:16:39.351Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-MIN/candlesticks?start_ts=1790827201&end_ts=1790846199&period_interval=1440"
 }

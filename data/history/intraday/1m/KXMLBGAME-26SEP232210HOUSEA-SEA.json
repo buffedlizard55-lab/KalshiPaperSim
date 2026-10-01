@@ -12460,6 +12460,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:24:10.844Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP232210HOUSEA-SEA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12477,7 +12487,6 @@
     "expiration_value": "Seattle",
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-27T02:10:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -12500,6 +12509,7 @@
     "result": "yes",
     "rules_primary": "If Seattle wins the Houston vs Seattle professional baseball game originally scheduled for Sep 23, 2026 at 10:10 PM EDT, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the Houston vs Seattle professional baseball game originally scheduled for Sep 23, 2026 at 10:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 120,
     "settlement_ts": "2026-09-24T05:39:48.317521Z",
     "settlement_value_dollars": "1.0000",
@@ -12517,10 +12527,10 @@
     "yes_sub_title": "Seattle"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP232210HOUSEA-SEA",
-  "market_captured_at": "2026-10-01T06:27:08.203Z",
+  "market_captured_at": "2026-10-01T09:24:07.472Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:27:11.432Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP232210HOUSEA-SEA/candlesticks?start_ts=1790833081&end_ts=1790836028&period_interval=1",
+  "last_ingested_at": "2026-10-01T09:24:10.771Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP232210HOUSEA-SEA/candlesticks?start_ts=1790833081&end_ts=1790846647&period_interval=1",
   "trims": [
     {
       "at": "2026-09-24T05:16:49.249Z",

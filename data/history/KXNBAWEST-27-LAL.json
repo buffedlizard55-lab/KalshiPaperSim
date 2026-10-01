@@ -9161,6 +9161,190 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:16:38.190Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-LAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3897044.44"
+            ],
+            [
+              "0.0200",
+              "8290.00"
+            ],
+            [
+              "0.0300",
+              "7484.00"
+            ],
+            [
+              "0.0400",
+              "20.89"
+            ],
+            [
+              "0.0600",
+              "910844.00"
+            ],
+            [
+              "0.0700",
+              "187.52"
+            ],
+            [
+              "0.1100",
+              "408334.00"
+            ],
+            [
+              "0.1800",
+              "409285.00"
+            ],
+            [
+              "0.2000",
+              "10.00"
+            ],
+            [
+              "0.2500",
+              "292000.00"
+            ],
+            [
+              "0.2900",
+              "78.18"
+            ],
+            [
+              "0.3200",
+              "226797.00"
+            ],
+            [
+              "0.3900",
+              "339500.31"
+            ],
+            [
+              "0.4600",
+              "74608.00"
+            ],
+            [
+              "0.4700",
+              "67.06"
+            ],
+            [
+              "0.4800",
+              "168682.10"
+            ],
+            [
+              "0.5100",
+              "312.75"
+            ],
+            [
+              "0.5200",
+              "2088.00"
+            ],
+            [
+              "0.5400",
+              "11.74"
+            ],
+            [
+              "0.5900",
+              "84702.00"
+            ],
+            [
+              "0.6300",
+              "3000.00"
+            ],
+            [
+              "0.6700",
+              "56491.00"
+            ],
+            [
+              "0.6800",
+              "282.63"
+            ],
+            [
+              "0.7300",
+              "783.42"
+            ],
+            [
+              "0.7400",
+              "17118.00"
+            ],
+            [
+              "0.7600",
+              "58.71"
+            ],
+            [
+              "0.7800",
+              "6314.25"
+            ],
+            [
+              "0.7900",
+              "3001.80"
+            ],
+            [
+              "0.8100",
+              "300.00"
+            ],
+            [
+              "0.8500",
+              "100.00"
+            ],
+            [
+              "0.8600",
+              "101.80"
+            ],
+            [
+              "0.8700",
+              "2968.40"
+            ],
+            [
+              "0.8900",
+              "633.55"
+            ],
+            [
+              "0.9000",
+              "503.60"
+            ],
+            [
+              "0.9100",
+              "6523.53"
+            ],
+            [
+              "0.9200",
+              "60803.56"
+            ],
+            [
+              "0.9300",
+              "85264.67"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "22005.00"
+            ],
+            [
+              "0.0200",
+              "1113.38"
+            ],
+            [
+              "0.0300",
+              "2567.00"
+            ],
+            [
+              "0.0400",
+              "12859.96"
+            ],
+            [
+              "0.0500",
+              "13009.64"
+            ],
+            [
+              "0.0600",
+              "26160.78"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -9178,7 +9362,6 @@
     "expiration_value": "",
     "last_price_dollars": "0.0700",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.9400",
     "no_bid_dollars": "0.9300",
@@ -9201,6 +9384,7 @@
     "result": "",
     "rules_primary": "If Los Angeles L wins the Pro Basketball Western Conference Finals in the 2026-27 season, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
     "status": "active",
     "strike_type": "structured",
@@ -9216,8 +9400,8 @@
     "yes_sub_title": "Los Angeles L"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-LAL",
-  "market_captured_at": "2026-10-01T06:19:37.902Z",
+  "market_captured_at": "2026-10-01T09:16:37.544Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T06:19:38.468Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-LAL/candlesticks?start_ts=1790740801&end_ts=1790835578&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:16:38.119Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-LAL/candlesticks?start_ts=1790827201&end_ts=1790846197&period_interval=1440"
 }

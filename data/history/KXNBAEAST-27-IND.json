@@ -7999,6 +7999,158 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:16:22.322Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-IND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3896029.00"
+            ],
+            [
+              "0.0200",
+              "11870.00"
+            ],
+            [
+              "0.0300",
+              "8664.00"
+            ],
+            [
+              "0.0600",
+              "910844.00"
+            ],
+            [
+              "0.1100",
+              "508522.00"
+            ],
+            [
+              "0.1800",
+              "409285.00"
+            ],
+            [
+              "0.2400",
+              "1433.32"
+            ],
+            [
+              "0.2500",
+              "292268.24"
+            ],
+            [
+              "0.2700",
+              "26.82"
+            ],
+            [
+              "0.2900",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "226797.00"
+            ],
+            [
+              "0.3900",
+              "339165.00"
+            ],
+            [
+              "0.4600",
+              "74608.00"
+            ],
+            [
+              "0.4800",
+              "167559.00"
+            ],
+            [
+              "0.5300",
+              "456.02"
+            ],
+            [
+              "0.5400",
+              "2149.12"
+            ],
+            [
+              "0.5700",
+              "26.82"
+            ],
+            [
+              "0.5900",
+              "85002.00"
+            ],
+            [
+              "0.6700",
+              "56491.00"
+            ],
+            [
+              "0.7100",
+              "3000.00"
+            ],
+            [
+              "0.7400",
+              "17318.00"
+            ],
+            [
+              "0.7800",
+              "6046.00"
+            ],
+            [
+              "0.7900",
+              "40.23"
+            ],
+            [
+              "0.8300",
+              "2711.92"
+            ],
+            [
+              "0.8700",
+              "100.00"
+            ],
+            [
+              "0.8800",
+              "100.00"
+            ],
+            [
+              "0.9100",
+              "500.00"
+            ],
+            [
+              "0.9200",
+              "10500.00"
+            ],
+            [
+              "0.9300",
+              "58151.69"
+            ],
+            [
+              "0.9400",
+              "98601.41"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "319824.00"
+            ],
+            [
+              "0.0200",
+              "57886.25"
+            ],
+            [
+              "0.0300",
+              "42303.09"
+            ],
+            [
+              "0.0400",
+              "21513.06"
+            ],
+            [
+              "0.0500",
+              "152.28"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -8016,7 +8168,6 @@
     "expiration_value": "",
     "last_price_dollars": "0.0600",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.9500",
     "no_bid_dollars": "0.9400",
@@ -8039,6 +8190,7 @@
     "result": "",
     "rules_primary": "If Indiana wins the Pro Basketball Eastern Conference Finals in the 2026-27 season, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
     "status": "active",
     "strike_type": "structured",
@@ -8054,8 +8206,8 @@
     "yes_sub_title": "Indiana"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-IND",
-  "market_captured_at": "2026-10-01T06:19:22.306Z",
+  "market_captured_at": "2026-10-01T09:16:21.675Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T06:19:22.871Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-IND/candlesticks?start_ts=1790740801&end_ts=1790835562&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:16:22.251Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-IND/candlesticks?start_ts=1790827201&end_ts=1790846181&period_interval=1440"
 }

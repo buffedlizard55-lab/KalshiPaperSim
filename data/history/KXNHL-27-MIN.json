@@ -9229,6 +9229,182 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:17:41.769Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4441195.07"
+            ],
+            [
+              "0.0200",
+              "500.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "934367.00"
+            ],
+            [
+              "0.0800",
+              "82.19"
+            ],
+            [
+              "0.1100",
+              "509655.00"
+            ],
+            [
+              "0.1300",
+              "10.44"
+            ],
+            [
+              "0.1400",
+              "31.27"
+            ],
+            [
+              "0.1800",
+              "408218.67"
+            ],
+            [
+              "0.2200",
+              "78.18"
+            ],
+            [
+              "0.2500",
+              "294003.76"
+            ],
+            [
+              "0.2800",
+              "352.31"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3200",
+              "251248.00"
+            ],
+            [
+              "0.3500",
+              "234.55"
+            ],
+            [
+              "0.3900",
+              "130927.00"
+            ],
+            [
+              "0.4100",
+              "332349.00"
+            ],
+            [
+              "0.5000",
+              "163474.00"
+            ],
+            [
+              "0.5100",
+              "2119.00"
+            ],
+            [
+              "0.6000",
+              "36981.00"
+            ],
+            [
+              "0.6100",
+              "74425.00"
+            ],
+            [
+              "0.6900",
+              "26310.00"
+            ],
+            [
+              "0.7400",
+              "20078.00"
+            ],
+            [
+              "0.7500",
+              "8.56"
+            ],
+            [
+              "0.7600",
+              "469.74"
+            ],
+            [
+              "0.8100",
+              "14857.00"
+            ],
+            [
+              "0.8200",
+              "1000.00"
+            ],
+            [
+              "0.8300",
+              "8.56"
+            ],
+            [
+              "0.8500",
+              "78.18"
+            ],
+            [
+              "0.8700",
+              "17.12"
+            ],
+            [
+              "0.8800",
+              "241.19"
+            ],
+            [
+              "0.9100",
+              "20940.71"
+            ],
+            [
+              "0.9200",
+              "22679.06"
+            ],
+            [
+              "0.9300",
+              "23397.83"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "302135.36"
+            ],
+            [
+              "0.0200",
+              "1112.00"
+            ],
+            [
+              "0.0300",
+              "22657.44"
+            ],
+            [
+              "0.0400",
+              "51001.01"
+            ],
+            [
+              "0.0500",
+              "863.79"
+            ],
+            [
+              "0.0600",
+              "2119.08"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -9246,7 +9422,6 @@
     "expiration_value": "",
     "last_price_dollars": "0.0700",
     "latest_expiration_time": "2029-06-30T14:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.9400",
     "no_bid_dollars": "0.9300",
@@ -9269,6 +9444,7 @@
     "result": "",
     "rules_primary": "If Minnesota Wild wins the 2026-27 Stanley Cup® Finals, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
     "status": "active",
     "strike_type": "structured",
@@ -9278,14 +9454,14 @@
     "volume_24h_fp": "855.51",
     "volume_fp": "115391.45",
     "yes_ask_dollars": "0.0700",
-    "yes_ask_size_fp": "23146.83",
+    "yes_ask_size_fp": "23397.83",
     "yes_bid_dollars": "0.0600",
-    "yes_bid_size_fp": "2112.31",
+    "yes_bid_size_fp": "2119.08",
     "yes_sub_title": "Minnesota Wild"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-MIN",
-  "market_captured_at": "2026-10-01T06:20:40.606Z",
+  "market_captured_at": "2026-10-01T09:17:41.125Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T06:20:41.172Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MIN/candlesticks?start_ts=1790740801&end_ts=1790835640&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:17:41.698Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MIN/candlesticks?start_ts=1790827201&end_ts=1790846261&period_interval=1440"
 }

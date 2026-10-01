@@ -7478,6 +7478,182 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:14:50.770Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-MDMA-30JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0400",
+              "306.00"
+            ],
+            [
+              "0.1800",
+              "887.00"
+            ],
+            [
+              "0.1900",
+              "53.00"
+            ],
+            [
+              "0.2000",
+              "37.00"
+            ],
+            [
+              "0.4900",
+              "500.00"
+            ],
+            [
+              "0.5000",
+              "5.00"
+            ],
+            [
+              "0.5100",
+              "5.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0400",
+              "795.00"
+            ],
+            [
+              "0.0600",
+              "591.00"
+            ],
+            [
+              "0.0800",
+              "451.00"
+            ],
+            [
+              "0.0900",
+              "2288.00"
+            ],
+            [
+              "0.1000",
+              "142.00"
+            ],
+            [
+              "0.2000",
+              "145.00"
+            ],
+            [
+              "0.2100",
+              "366.00"
+            ],
+            [
+              "0.2300",
+              "50.00"
+            ],
+            [
+              "0.4300",
+              "500.00"
+            ],
+            [
+              "0.4400",
+              "5.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-01T09:26:16.022Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-MDMA-30JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0400",
+              "306.00"
+            ],
+            [
+              "0.1800",
+              "887.00"
+            ],
+            [
+              "0.1900",
+              "53.00"
+            ],
+            [
+              "0.2000",
+              "37.00"
+            ],
+            [
+              "0.4900",
+              "500.00"
+            ],
+            [
+              "0.5000",
+              "5.00"
+            ],
+            [
+              "0.5100",
+              "5.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0400",
+              "795.00"
+            ],
+            [
+              "0.0600",
+              "591.00"
+            ],
+            [
+              "0.0800",
+              "451.00"
+            ],
+            [
+              "0.0900",
+              "2288.00"
+            ],
+            [
+              "0.1000",
+              "142.00"
+            ],
+            [
+              "0.2000",
+              "145.00"
+            ],
+            [
+              "0.2100",
+              "366.00"
+            ],
+            [
+              "0.2300",
+              "50.00"
+            ],
+            [
+              "0.4300",
+              "500.00"
+            ],
+            [
+              "0.4400",
+              "5.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -7495,7 +7671,6 @@
     "expiration_value": "",
     "last_price_dollars": "0.4500",
     "latest_expiration_time": "2030-01-08T15:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.5600",
     "no_bid_dollars": "0.5100",
@@ -7518,6 +7693,7 @@
     "result": "",
     "rules_primary": "If the FDA approves midomafetamine / MDMA for PTSD for marketing before Jan 1, 2030, then the market resolves to Yes.",
     "rules_secondary": "An approval is defined as:\n\nFor new drugs: FDA issuance of an approval letter for a New Drug Application (NDA) or Biologics License Application (BLA)\nFor already-marketed drugs seeking new indications: FDA approval of a supplemental NDA (sNDA) or supplemental BLA (sBLA) for the specific indication referenced\nFor generic drugs: FDA approval of an Abbreviated New Drug Application (ANDA)\nFor biosimilars: FDA approval of a 351(k) application\n\nThe following constitute approvals that trigger the Payout Criterion:\n\nStandard approval (traditional approval based on clinical benefit)\nAccelerated approval (based on surrogate endpoints)\nApproval with Risk Evaluation and Mitigation Strategy (REMS)\nApproval with restricted distribution or indication limitations, except compassionate use/expanded access programs\n\nThe following do NOT constitute approvals:\n\nComplete Response Letters (CRLs) indicating the application cannot be approved in its current form\nApprovable letters that require additional actions before approval\nTentative approvals pending patent or exclusivity expiration\nFDA requests for additional information or studies\nExtension of Prescription Drug User Fee Amendments dates\nApproval for compassionate use or expanded access programs only\nEmergency Use Authorization (EUA) without full approval\nApproval only for export or for use outside the United States\n\nIf the FDA issues a Complete Response Letter before Jan 1, 2030, the market will resolve to No unless the FDA subsequently approves midomafetamine / MDMA for PTSD after addressing the CRL concerns and before Jan 1, 2030.\n\nIf the FDA convenes an Advisory Committee that votes against approval but the FDA approves midomafetamine / MDMA for PTSD anyway before Jan 1, 2030, the market will resolve to Yes.\n\nIf midomafetamine / MDMA for PTSD receives accelerated approval that is later withdrawn before Jan 1, 2030, the market will resolve based on whether the initial accelerated approval occurred after Issuance (Yes), regardless of the subsequent withdrawal.\n\nIf the drug sponsor withdraws the application before FDA action and before Jan 1, 2030, the market will resolve to No immediately.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 1800,
     "status": "active",
     "strike_type": "custom",
@@ -7533,8 +7709,8 @@
     "yes_sub_title": "Before Jan 1, 2030"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-MDMA-30JAN01",
-  "market_captured_at": "2026-10-01T06:29:13.391Z",
+  "market_captured_at": "2026-10-01T09:26:15.274Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T06:29:14.058Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-MDMA-30JAN01/candlesticks?start_ts=1790827201&end_ts=1790836153&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:26:15.949Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-MDMA-30JAN01/candlesticks?start_ts=1790827201&end_ts=1790846775&period_interval=1440"
 }

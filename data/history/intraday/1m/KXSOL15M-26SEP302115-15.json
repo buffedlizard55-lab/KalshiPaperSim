@@ -409,6 +409,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:23:13.902Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXSOL15M-26SEP302115-15/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -426,7 +436,6 @@
     "floor_strike": 117.9517,
     "last_price_dollars": "0.9990",
     "latest_expiration_time": "2026-10-08T01:15:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -459,6 +468,7 @@
     "result": "yes",
     "rules_primary": "If the simple average of the sixty seconds of CF Benchmarks' SOLUSDRTI before 9:15 PM EDT on Sep 30, 2026 is at least the simple average of the sixty seconds of CF Benchmarks' SOLUSDRTI before 9:00 PM EDT on September 30, 2026, then the market resolves to Yes.",
     "rules_secondary": "Not all cryptocurrency price data is the same. While checking a source like Google or Coinbase may help guide your decision, the price used to determine this market is based on CF Benchmarks' corresponding Real Time Index (RTI). At the last minute before expiration, 60 RTI prices are collected. The official and final value is the average of these prices, rounded to the nearest 4 decimal places.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 1,
     "settlement_ts": "2026-10-01T01:15:06.453263Z",
     "settlement_value_dollars": "1.0000",
@@ -476,9 +486,9 @@
     "yes_sub_title": "Target Price: $117.9517"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXSOL15M-26SEP302115-15",
-  "market_captured_at": "2026-10-01T06:26:10.137Z",
+  "market_captured_at": "2026-10-01T09:23:13.155Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:26:11.172Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP302115-15/candlesticks?start_ts=1790749570&end_ts=1790835969&period_interval=1"
+  "last_ingested_at": "2026-10-01T09:23:13.830Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26SEP302115-15/candlesticks?start_ts=1790817361&end_ts=1790846593&period_interval=1"
 }

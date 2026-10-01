@@ -11895,6 +11895,302 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:17:39.327Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-COL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4465745.23"
+            ],
+            [
+              "0.0200",
+              "500.00"
+            ],
+            [
+              "0.0300",
+              "855.20"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "922830.44"
+            ],
+            [
+              "0.0700",
+              "60.63"
+            ],
+            [
+              "0.0900",
+              "0.42"
+            ],
+            [
+              "0.1000",
+              "78.49"
+            ],
+            [
+              "0.1100",
+              "511275.57"
+            ],
+            [
+              "0.1300",
+              "266.16"
+            ],
+            [
+              "0.1600",
+              "178.49"
+            ],
+            [
+              "0.1700",
+              "61.59"
+            ],
+            [
+              "0.1800",
+              "411836.00"
+            ],
+            [
+              "0.1900",
+              "149.14"
+            ],
+            [
+              "0.2000",
+              "49.34"
+            ],
+            [
+              "0.2100",
+              "18.81"
+            ],
+            [
+              "0.2400",
+              "8.55"
+            ],
+            [
+              "0.2500",
+              "298162.00"
+            ],
+            [
+              "0.2600",
+              "2354.93"
+            ],
+            [
+              "0.2700",
+              "2728.25"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3100",
+              "181.48"
+            ],
+            [
+              "0.3200",
+              "223761.35"
+            ],
+            [
+              "0.3400",
+              "759.41"
+            ],
+            [
+              "0.3500",
+              "941.96"
+            ],
+            [
+              "0.3600",
+              "174.10"
+            ],
+            [
+              "0.3700",
+              "31.39"
+            ],
+            [
+              "0.3900",
+              "364344.19"
+            ],
+            [
+              "0.4000",
+              "203.22"
+            ],
+            [
+              "0.4100",
+              "912.12"
+            ],
+            [
+              "0.4200",
+              "27.79"
+            ],
+            [
+              "0.4500",
+              "47.03"
+            ],
+            [
+              "0.4600",
+              "76662.74"
+            ],
+            [
+              "0.4700",
+              "169719.84"
+            ],
+            [
+              "0.5000",
+              "171.18"
+            ],
+            [
+              "0.5300",
+              "47.03"
+            ],
+            [
+              "0.5700",
+              "23.54"
+            ],
+            [
+              "0.5800",
+              "78924.00"
+            ],
+            [
+              "0.5900",
+              "15.69"
+            ],
+            [
+              "0.6300",
+              "6.13"
+            ],
+            [
+              "0.6400",
+              "121.27"
+            ],
+            [
+              "0.6600",
+              "26365.00"
+            ],
+            [
+              "0.6700",
+              "25745.49"
+            ],
+            [
+              "0.6900",
+              "1130.36"
+            ],
+            [
+              "0.7000",
+              "11.92"
+            ],
+            [
+              "0.7200",
+              "90.00"
+            ],
+            [
+              "0.7400",
+              "16503.00"
+            ],
+            [
+              "0.7500",
+              "353.00"
+            ],
+            [
+              "0.7600",
+              "11.92"
+            ],
+            [
+              "0.7700",
+              "4945.00"
+            ],
+            [
+              "0.7800",
+              "1001.00"
+            ],
+            [
+              "0.7900",
+              "23.84"
+            ],
+            [
+              "0.8000",
+              "1000.00"
+            ],
+            [
+              "0.8100",
+              "2667.00"
+            ],
+            [
+              "0.8200",
+              "4333.00"
+            ],
+            [
+              "0.8300",
+              "185.81"
+            ],
+            [
+              "0.8500",
+              "6500.00"
+            ],
+            [
+              "0.8600",
+              "12739.81"
+            ],
+            [
+              "0.8700",
+              "28.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "815554.00"
+            ],
+            [
+              "0.0200",
+              "89893.00"
+            ],
+            [
+              "0.0300",
+              "45698.60"
+            ],
+            [
+              "0.0400",
+              "20797.00"
+            ],
+            [
+              "0.0500",
+              "2202.00"
+            ],
+            [
+              "0.0600",
+              "1804.60"
+            ],
+            [
+              "0.0700",
+              "1185.00"
+            ],
+            [
+              "0.0800",
+              "700.00"
+            ],
+            [
+              "0.0900",
+              "2450.00"
+            ],
+            [
+              "0.1000",
+              "1808.88"
+            ],
+            [
+              "0.1100",
+              "6290.93"
+            ],
+            [
+              "0.1200",
+              "6169.14"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -11912,10 +12208,9 @@
     "expiration_value": "",
     "last_price_dollars": "0.1400",
     "latest_expiration_time": "2029-06-30T14:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.8700",
-    "no_bid_dollars": "0.8600",
+    "no_ask_dollars": "0.8800",
+    "no_bid_dollars": "0.8700",
     "no_sub_title": "Colorado Avalanche",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
@@ -11935,23 +12230,24 @@
     "result": "",
     "rules_primary": "If Colorado Avalanche wins the 2026-27 Stanley Cup® Finals, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
     "status": "active",
     "strike_type": "structured",
     "ticker": "KXNHL-27-COL",
     "title": "Will Colorado Avalanche win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.08098Z",
-    "volume_24h_fp": "29827.37",
-    "volume_fp": "179496.20",
-    "yes_ask_dollars": "0.1400",
-    "yes_ask_size_fp": "13379.66",
-    "yes_bid_dollars": "0.1300",
-    "yes_bid_size_fp": "6337.16",
+    "volume_24h_fp": "30042.54",
+    "volume_fp": "179833.36",
+    "yes_ask_dollars": "0.1300",
+    "yes_ask_size_fp": "28.00",
+    "yes_bid_dollars": "0.1200",
+    "yes_bid_size_fp": "6169.14",
     "yes_sub_title": "Colorado Avalanche"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-COL",
-  "market_captured_at": "2026-10-01T06:20:38.203Z",
+  "market_captured_at": "2026-10-01T09:17:38.682Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T06:20:38.768Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-COL/candlesticks?start_ts=1790740801&end_ts=1790835638&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:17:39.256Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-COL/candlesticks?start_ts=1790827201&end_ts=1790846258&period_interval=1440"
 }

@@ -5500,6 +5500,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:25:42.715Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26JUL-H0/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5516,7 +5526,6 @@
     "expiration_value": "Fed maintains rate",
     "last_price_dollars": "0.8200",
     "latest_expiration_time": "2026-10-28T18:01:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -5539,6 +5548,7 @@
     "result": "yes",
     "rules_primary": "If the Federal Reserve does a Hike of 0bps on July 29, 2026, then the market resolves to Yes.",
     "rules_secondary": "This market is mutually exclusive. Therefore, if the Federal Reserve hikes by 50bps, the 50bps market will resolve to Yes and the 25bps market will resolve to No. Only one bucket, at maximum, can resolve to Yes. Note 4/28/25: For the markets beginning after the May meeting, if a scheduled FOMC meeting is canceled and does not occur on its scheduled date, then the strike for \"Fed maintains rate\" will resolve to Yes and all others will resolve to No.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 297,
     "settlement_ts": "2026-07-29T18:07:36.155125Z",
     "settlement_value_dollars": "1.0000",
@@ -5557,11 +5567,11 @@
     "yes_sub_title": "Fed maintains rate"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26JUL-H0",
-  "market_captured_at": "2026-10-01T06:28:40.053Z",
+  "market_captured_at": "2026-10-01T09:25:41.214Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:28:41.448Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H0/candlesticks?start_ts=1790532001&end_ts=1790836120&period_interval=60",
+  "last_ingested_at": "2026-10-01T09:25:42.642Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H0/candlesticks?start_ts=1790532001&end_ts=1790846741&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T06:41:23.353Z",

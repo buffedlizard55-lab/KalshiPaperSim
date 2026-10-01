@@ -3224,6 +3224,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:17:50.303Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3241,7 +3251,6 @@
     "expiration_value": "Vegas",
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-22T01:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -3264,6 +3273,7 @@
     "result": "yes",
     "rules_primary": "If Vegas wins the Vegas vs Los Angeles NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
     "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 45,
     "settlement_ts": "2026-09-20T04:32:34.514911Z",
     "settlement_value_dollars": "1.0000",
@@ -3281,9 +3291,9 @@
     "yes_sub_title": "Vegas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK",
-  "market_captured_at": "2026-10-01T06:20:49.006Z",
+  "market_captured_at": "2026-10-01T09:17:49.660Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:20:49.572Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19VGKLA-VGK/candlesticks?start_ts=1789963201&end_ts=1790835649&period_interval=1440",
+  "last_ingested_at": "2026-10-01T09:17:50.232Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19VGKLA-VGK/candlesticks?start_ts=1789963201&end_ts=1790846269&period_interval=1440",
   "result": "yes"
 }

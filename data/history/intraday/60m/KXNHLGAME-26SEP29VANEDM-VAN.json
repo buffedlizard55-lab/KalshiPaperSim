@@ -2020,6 +2020,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:22:01.184Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP29VANEDM-VAN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2037,7 +2047,6 @@
     "expiration_value": "Vancouver",
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-02T02:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -2060,6 +2069,7 @@
     "result": "yes",
     "rules_primary": "If Vancouver wins the Vancouver vs Edmonton NHL game originally scheduled for Sep 29, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 45,
     "settlement_ts": "2026-09-30T04:53:06.478718Z",
     "settlement_value_dollars": "1.0000",
@@ -2077,9 +2087,9 @@
     "yes_sub_title": "Vancouver"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP29VANEDM-VAN",
-  "market_captured_at": "2026-10-01T06:24:56.150Z",
+  "market_captured_at": "2026-10-01T09:22:00.435Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:24:56.817Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP29VANEDM-VAN/candlesticks?start_ts=1790744401&end_ts=1790835896&period_interval=60"
+  "last_ingested_at": "2026-10-01T09:22:01.111Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP29VANEDM-VAN/candlesticks?start_ts=1790744401&end_ts=1790846520&period_interval=60"
 }

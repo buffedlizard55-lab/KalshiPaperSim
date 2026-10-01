@@ -1794,6 +1794,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:21:42.655Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP301700CWSHOU-HOU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1811,7 +1821,6 @@
     "expiration_value": "Chicago WS",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-10-03T21:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -1834,6 +1843,7 @@
     "result": "no",
     "rules_primary": "If Houston wins the Chicago WS vs Houston professional baseball game originally scheduled for Sep 30, 2026 at 5:00 PM EDT, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the Chicago WS vs Houston professional baseball game originally scheduled for Sep 30, 2026 at 5:00 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 120,
     "settlement_ts": "2026-10-01T00:23:46.635902Z",
     "settlement_value_dollars": "0.0000",
@@ -1842,7 +1852,7 @@
     "ticker": "KXMLBGAME-26SEP301700CWSHOU-HOU",
     "title": "Houston wins",
     "updated_time": "2026-10-01T00:23:46.849508Z",
-    "volume_24h_fp": "9509184.41",
+    "volume_24h_fp": "9503090.21",
     "volume_fp": "9584827.33",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1851,9 +1861,9 @@
     "yes_sub_title": "Houston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP301700CWSHOU-HOU",
-  "market_captured_at": "2026-10-01T06:24:37.936Z",
+  "market_captured_at": "2026-10-01T09:21:41.900Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:24:38.606Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP301700CWSHOU-HOU/candlesticks?start_ts=1790474100&end_ts=1790835878&period_interval=60"
+  "last_ingested_at": "2026-10-01T09:21:42.583Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP301700CWSHOU-HOU/candlesticks?start_ts=1790816401&end_ts=1790846502&period_interval=60"
 }

@@ -12303,6 +12303,262 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:16:14.991Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-LAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3891869.55"
+            ],
+            [
+              "0.0200",
+              "3333.00"
+            ],
+            [
+              "0.0300",
+              "777.00"
+            ],
+            [
+              "0.0500",
+              "4.68"
+            ],
+            [
+              "0.0600",
+              "1040681.00"
+            ],
+            [
+              "0.0800",
+              "1186.11"
+            ],
+            [
+              "0.1100",
+              "567644.00"
+            ],
+            [
+              "0.1300",
+              "62.42"
+            ],
+            [
+              "0.1400",
+              "445.01"
+            ],
+            [
+              "0.1800",
+              "436659.13"
+            ],
+            [
+              "0.1900",
+              "1092.46"
+            ],
+            [
+              "0.2100",
+              "29.28"
+            ],
+            [
+              "0.2400",
+              "70.27"
+            ],
+            [
+              "0.2500",
+              "342617.00"
+            ],
+            [
+              "0.2700",
+              "680.52"
+            ],
+            [
+              "0.2900",
+              "367.00"
+            ],
+            [
+              "0.3000",
+              "530.21"
+            ],
+            [
+              "0.3200",
+              "285416.33"
+            ],
+            [
+              "0.3400",
+              "780.34"
+            ],
+            [
+              "0.3500",
+              "561.88"
+            ],
+            [
+              "0.3600",
+              "218.48"
+            ],
+            [
+              "0.3800",
+              "312.13"
+            ],
+            [
+              "0.3900",
+              "153115.00"
+            ],
+            [
+              "0.4500",
+              "354370.19"
+            ],
+            [
+              "0.4600",
+              "3839.42"
+            ],
+            [
+              "0.5200",
+              "1387.42"
+            ],
+            [
+              "0.5300",
+              "65299.26"
+            ],
+            [
+              "0.5400",
+              "23.42"
+            ],
+            [
+              "0.5600",
+              "164911.00"
+            ],
+            [
+              "0.6200",
+              "234.25"
+            ],
+            [
+              "0.6300",
+              "2029.42"
+            ],
+            [
+              "0.6400",
+              "14.00"
+            ],
+            [
+              "0.6500",
+              "312.13"
+            ],
+            [
+              "0.6700",
+              "952.00"
+            ],
+            [
+              "0.6800",
+              "83795.00"
+            ],
+            [
+              "0.6900",
+              "20780.34"
+            ],
+            [
+              "0.7000",
+              "78.00"
+            ],
+            [
+              "0.7100",
+              "100.00"
+            ],
+            [
+              "0.7300",
+              "74.96"
+            ],
+            [
+              "0.7400",
+              "27065.00"
+            ],
+            [
+              "0.7500",
+              "29858.55"
+            ],
+            [
+              "0.7600",
+              "20000.00"
+            ],
+            [
+              "0.7700",
+              "79.00"
+            ],
+            [
+              "0.7800",
+              "251.58"
+            ],
+            [
+              "0.7900",
+              "23.42"
+            ],
+            [
+              "0.8000",
+              "578.13"
+            ],
+            [
+              "0.8100",
+              "17969.00"
+            ],
+            [
+              "0.8300",
+              "1247.00"
+            ],
+            [
+              "0.8400",
+              "63.00"
+            ],
+            [
+              "0.8600",
+              "880.34"
+            ],
+            [
+              "0.8800",
+              "568.51"
+            ],
+            [
+              "0.9000",
+              "50.00"
+            ],
+            [
+              "0.9100",
+              "3000.00"
+            ],
+            [
+              "0.9200",
+              "350.00"
+            ],
+            [
+              "0.9300",
+              "1111.17"
+            ],
+            [
+              "0.9400",
+              "27235.41"
+            ],
+            [
+              "0.9500",
+              "54117.56"
+            ],
+            [
+              "0.9600",
+              "144131.10"
+            ],
+            [
+              "0.9700",
+              "32696.38"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "101851.90"
+            ],
+            [
+              "0.0200",
+              "143591.16"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -12320,14 +12576,13 @@
     "expiration_value": "",
     "last_price_dollars": "0.0300",
     "latest_expiration_time": "2029-07-30T14:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.9800",
     "no_bid_dollars": "0.9700",
     "no_sub_title": "Los Angeles L",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-31T14:00:00Z",
-    "open_interest_fp": "1888938.28",
+    "open_interest_fp": "1948883.35",
     "open_time": "2026-06-14T08:00:00Z",
     "previous_price_dollars": "0.0300",
     "previous_yes_ask_dollars": "0.0300",
@@ -12343,23 +12598,24 @@
     "result": "",
     "rules_primary": "If Los Angeles L wins the 2027 Pro Basketball Finals, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
     "status": "active",
     "strike_type": "structured",
     "ticker": "KXNBA-27-LAL",
     "title": "Will Los Angeles L win the 2027 Pro Basketball Finals?",
     "updated_time": "2026-09-27T15:16:20.390341Z",
-    "volume_24h_fp": "4185.55",
-    "volume_fp": "2059693.90",
+    "volume_24h_fp": "63654.92",
+    "volume_fp": "2119693.90",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "92696.38",
+    "yes_ask_size_fp": "32696.38",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "126591.16",
+    "yes_bid_size_fp": "143591.16",
     "yes_sub_title": "Los Angeles L"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-LAL",
-  "market_captured_at": "2026-10-01T06:19:15.108Z",
+  "market_captured_at": "2026-10-01T09:16:14.345Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T06:19:15.674Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-LAL/candlesticks?start_ts=1790740801&end_ts=1790835555&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:16:14.920Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-LAL/candlesticks?start_ts=1790827201&end_ts=1790846174&period_interval=1440"
 }

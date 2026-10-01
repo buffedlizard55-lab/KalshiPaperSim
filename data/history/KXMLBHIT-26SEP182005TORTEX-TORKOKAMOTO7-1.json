@@ -487,6 +487,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:15:44.480Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -506,7 +516,6 @@
     "floor_strike": 0.5,
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-22T00:05:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -530,6 +539,7 @@
     "result": "yes",
     "rules_primary": "If Kazuma Okamoto records 1+ hits in the Toronto vs Texas professional baseball game originally scheduled for Sep 18, 2026 at 8:05 PM EDT, then the market resolves to Yes.",
     "rules_secondary": "Player Participation & Settlement Criteria\nIf Kazuma Okamoto is scratched or not included in the starting lineup, the market will resolve to the fair market price.\nIf Kazuma Okamoto starts the game but does not record a plate appearance, the market will resolve to the fair market price.\nIf Kazuma Okamoto is not in the starting lineup but later enters the game, the market will resolve to the fair market price, pinch hit at bats will not count towards the market.\nIf Kazuma Okamoto is in the starting lineup and records at least one plate appearance the market will settle based on hits recorded.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-09-19T03:16:24.603674Z",
     "settlement_value_dollars": "1.0000",
@@ -547,9 +557,9 @@
     "yes_sub_title": "Kazuma Okamoto: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1",
-  "market_captured_at": "2026-10-01T06:18:44.835Z",
+  "market_captured_at": "2026-10-01T09:15:43.835Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:18:45.402Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/candlesticks?start_ts=1789790401&end_ts=1790835525&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:15:44.408Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/candlesticks?start_ts=1789790401&end_ts=1790846144&period_interval=1440"
 }

@@ -11236,6 +11236,198 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:14:54.430Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1016.21"
+            ],
+            [
+              "0.0200",
+              "1384.00"
+            ],
+            [
+              "0.0300",
+              "406.69"
+            ],
+            [
+              "0.0400",
+              "2.22"
+            ],
+            [
+              "0.0500",
+              "1.13"
+            ],
+            [
+              "0.0700",
+              "500.00"
+            ],
+            [
+              "0.1100",
+              "1049.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7740.00"
+            ],
+            [
+              "0.0200",
+              "8550.00"
+            ],
+            [
+              "0.0300",
+              "6490.00"
+            ],
+            [
+              "0.0400",
+              "1500.00"
+            ],
+            [
+              "0.0500",
+              "382.00"
+            ],
+            [
+              "0.1600",
+              "17.98"
+            ],
+            [
+              "0.3100",
+              "500.00"
+            ],
+            [
+              "0.3700",
+              "2000.00"
+            ],
+            [
+              "0.3800",
+              "50.00"
+            ],
+            [
+              "0.5000",
+              "508.26"
+            ],
+            [
+              "0.5500",
+              "69.24"
+            ],
+            [
+              "0.8100",
+              "5.00"
+            ],
+            [
+              "0.8600",
+              "1400.00"
+            ],
+            [
+              "0.8700",
+              "404.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-01T09:26:24.572Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1016.21"
+            ],
+            [
+              "0.0200",
+              "1384.00"
+            ],
+            [
+              "0.0300",
+              "405.69"
+            ],
+            [
+              "0.0400",
+              "2.22"
+            ],
+            [
+              "0.0500",
+              "1.13"
+            ],
+            [
+              "0.0700",
+              "500.00"
+            ],
+            [
+              "0.1100",
+              "1249.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7740.00"
+            ],
+            [
+              "0.0200",
+              "8550.00"
+            ],
+            [
+              "0.0300",
+              "6490.00"
+            ],
+            [
+              "0.0400",
+              "1500.00"
+            ],
+            [
+              "0.0500",
+              "382.00"
+            ],
+            [
+              "0.1600",
+              "17.98"
+            ],
+            [
+              "0.3100",
+              "500.00"
+            ],
+            [
+              "0.3700",
+              "2000.00"
+            ],
+            [
+              "0.3800",
+              "50.00"
+            ],
+            [
+              "0.5000",
+              "508.26"
+            ],
+            [
+              "0.5500",
+              "69.24"
+            ],
+            [
+              "0.8100",
+              "5.00"
+            ],
+            [
+              "0.8600",
+              "1400.00"
+            ],
+            [
+              "0.8700",
+              "404.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -11253,7 +11445,6 @@
     "expiration_value": "",
     "last_price_dollars": "0.8900",
     "latest_expiration_time": "2028-01-08T15:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "0.1300",
     "no_bid_dollars": "0.1100",
@@ -11276,6 +11467,7 @@
     "result": "",
     "rules_primary": "If the FDA approves retatrutide (LY3437943) for marketing before Jan 1, 2028, then the market resolves to Yes.",
     "rules_secondary": "An approval is defined as:\n\nFor new drugs: FDA issuance of an approval letter for a New Drug Application (NDA) or Biologics License Application (BLA)\nFor already-marketed drugs seeking new indications: FDA approval of a supplemental NDA (sNDA) or supplemental BLA (sBLA) for the specific indication referenced\nFor generic drugs: FDA approval of an Abbreviated New Drug Application (ANDA)\nFor biosimilars: FDA approval of a 351(k) application\n\nThe following constitute approvals that trigger the Payout Criterion:\n\nStandard approval (traditional approval based on clinical benefit)\nAccelerated approval (based on surrogate endpoints)\nApproval with Risk Evaluation and Mitigation Strategy (REMS)\nApproval with restricted distribution or indication limitations, except compassionate use/expanded access programs\n\nThe following do NOT constitute approvals:\n\nComplete Response Letters (CRLs) indicating the application cannot be approved in its current form\nApprovable letters that require additional actions before approval\nTentative approvals pending patent or exclusivity expiration\nFDA requests for additional information or studies\nExtension of Prescription Drug User Fee Amendments dates\nApproval for compassionate use or expanded access programs only\nEmergency Use Authorization (EUA) without full approval\nApproval only for export or for use outside the United States\n\nIf the FDA issues a Complete Response Letter before Jan 1, 2028, the market will resolve to No unless the FDA subsequently approves retatrutide (LY3437943) after addressing the CRL concerns and before Jan 1, 2028.\n\nIf the FDA convenes an Advisory Committee that votes against approval but the FDA approves retatrutide (LY3437943) anyway before Jan 1, 2028, the market will resolve to Yes.\n\nIf retatrutide (LY3437943) receives accelerated approval that is later withdrawn before Jan 1, 2028, the market will resolve based on whether the initial accelerated approval occurred after Issuance (Yes), regardless of the subsequent withdrawal.\n\nIf the drug sponsor withdraws the application before FDA action and before Jan 1, 2028, the market will resolve to No immediately.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 1800,
     "status": "active",
     "strike_type": "custom",
@@ -11285,14 +11477,14 @@
     "volume_24h_fp": "98.11",
     "volume_fp": "2446.75",
     "yes_ask_dollars": "0.8900",
-    "yes_ask_size_fp": "1089.00",
+    "yes_ask_size_fp": "1249.00",
     "yes_bid_dollars": "0.8700",
-    "yes_bid_size_fp": "1244.00",
+    "yes_bid_size_fp": "404.00",
     "yes_sub_title": "Before Jan 1, 2028"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JAN01",
-  "market_captured_at": "2026-10-01T06:29:21.800Z",
+  "market_captured_at": "2026-10-01T09:26:23.824Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T06:29:22.468Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-28JAN01/candlesticks?start_ts=1790827201&end_ts=1790836162&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:26:24.499Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-28JAN01/candlesticks?start_ts=1790827201&end_ts=1790846784&period_interval=1440"
 }

@@ -11935,6 +11935,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:24:19.318Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP231545MINSF-SF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -11952,7 +11962,6 @@
     "expiration_value": "Minnesota",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-26T19:45:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -11975,6 +11984,7 @@
     "result": "no",
     "rules_primary": "If San Francisco wins the Minnesota vs San Francisco professional baseball game originally scheduled for Sep 23, 2026 at 3:45 PM EDT, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the Minnesota vs San Francisco professional baseball game originally scheduled for Sep 23, 2026 at 3:45 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 120,
     "settlement_ts": "2026-09-23T22:34:18.282999Z",
     "settlement_value_dollars": "0.0000",
@@ -11992,11 +12002,11 @@
     "yes_sub_title": "San Francisco"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP231545MINSF-SF",
-  "market_captured_at": "2026-10-01T06:27:16.497Z",
+  "market_captured_at": "2026-10-01T09:24:15.949Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:27:19.725Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP231545MINSF-SF/candlesticks?start_ts=1790807581&end_ts=1790836036&period_interval=1",
+  "last_ingested_at": "2026-10-01T09:24:19.246Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP231545MINSF-SF/candlesticks?start_ts=1790807581&end_ts=1790846656&period_interval=1",
   "trims": [
     {
       "at": "2026-09-24T05:16:35.461Z",

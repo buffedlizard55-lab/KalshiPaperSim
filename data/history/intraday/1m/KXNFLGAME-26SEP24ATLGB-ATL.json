@@ -12255,6 +12255,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:24:55.419Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP24ATLGB-ATL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12272,7 +12282,6 @@
     "expiration_value": "winner",
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-27T00:15:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -12295,6 +12304,7 @@
     "result": "yes",
     "rules_primary": "If Atlanta wins the Atlanta vs Green Bay Pro Football game originally scheduled for Sep 24, 2026, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the team who wins the Atlanta vs Green Bay Pro Football game originally scheduled for Sep 24, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 60,
     "settlement_ts": "2026-09-25T03:23:29.0724Z",
     "settlement_value_dollars": "1.0000",
@@ -12312,11 +12322,11 @@
     "yes_sub_title": "Atlanta"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP24ATLGB-ATL",
-  "market_captured_at": "2026-10-01T06:27:52.245Z",
+  "market_captured_at": "2026-10-01T09:24:52.423Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:27:55.110Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-ATL/candlesticks?start_ts=1790824741&end_ts=1790836072&period_interval=1",
+  "last_ingested_at": "2026-10-01T09:24:55.347Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-ATL/candlesticks?start_ts=1790824741&end_ts=1790846692&period_interval=1",
   "trims": [
     {
       "at": "2026-09-25T05:19:59.790Z",

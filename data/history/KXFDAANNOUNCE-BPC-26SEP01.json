@@ -4637,6 +4637,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:14:34.901Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26SEP01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-01T09:26:17.447Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26SEP01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4654,7 +4674,6 @@
     "expiration_value": "No",
     "last_price_dollars": "0.0200",
     "latest_expiration_time": "2026-09-08T14:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -4677,6 +4696,7 @@
     "result": "no",
     "rules_primary": "If the FDA announces Reclassification of BPC-157 to Category 1 of the Bulk Drug Substances List before Sep 1, 2026, then the market resolves to Yes.",
     "rules_secondary": "The Payout Criterion is satisfied by placement of BPC-157 in either Category 1 or Category 1 Bulk Drug Substances Under Evaluation on the 503A Bulk Drug Substances list, as either designation restores compounding eligibility. \nRemoval from Category 2 alone, without placement in Category 1, does not satisfy the Payout Criterion.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 1800,
     "settlement_ts": "2026-09-01T13:51:11.145777Z",
     "settlement_value_dollars": "0.0000",
@@ -4694,9 +4714,9 @@
     "yes_sub_title": "Before September"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26SEP01",
-  "market_captured_at": "2026-10-01T06:29:14.792Z",
+  "market_captured_at": "2026-10-01T09:26:16.698Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:29:15.459Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26SEP01/candlesticks?start_ts=1788235201&end_ts=1790836155&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:26:17.373Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26SEP01/candlesticks?start_ts=1788235201&end_ts=1790846776&period_interval=1440"
 }

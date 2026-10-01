@@ -1967,6 +1967,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:22:30.051Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26SEP22GSPDX-PDX/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1984,7 +1994,6 @@
     "expiration_value": "PDX Fire",
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-09-25T02:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -2007,6 +2016,7 @@
     "result": "yes",
     "rules_primary": "If Portland wins the Golden State vs Portland women's Pro Basketball game originally scheduled for Sep 22, 2026, then the market resolves to Yes.",
     "rules_secondary": "If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within 2 days). If the cancelled game is not played or is rescheduled further than 2 days out, all markets will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 90,
     "settlement_ts": "2026-09-23T04:52:28.245861Z",
     "settlement_value_dollars": "1.0000",
@@ -2024,9 +2034,9 @@
     "yes_sub_title": "Portland"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26SEP22GSPDX-PDX",
-  "market_captured_at": "2026-10-01T06:25:24.507Z",
+  "market_captured_at": "2026-10-01T09:22:29.302Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:25:25.175Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP22GSPDX-PDX/candlesticks?start_ts=1790139601&end_ts=1790835924&period_interval=60"
+  "last_ingested_at": "2026-10-01T09:22:29.978Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP22GSPDX-PDX/candlesticks?start_ts=1790139601&end_ts=1790846549&period_interval=60"
 }

@@ -5385,6 +5385,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:22:43.235Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-TSA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5402,7 +5412,6 @@
     "expiration_value": "Arman Tsarukyan",
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-04T02:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -5425,6 +5434,7 @@
     "result": "yes",
     "rules_primary": "If Arman Tsarukyan wins the Tsarukyan vs Ruffy professional MMA fight originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the Tsarukyan vs Ruffy professional MMA fight originally scheduled for Sep 19, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the “UFC,” or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 298,
     "settlement_ts": "2026-09-20T03:15:44.785565Z",
     "settlement_value_dollars": "1.0000",
@@ -5442,11 +5452,11 @@
     "yes_sub_title": "Arman Tsarukyan"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-TSA",
-  "market_captured_at": "2026-10-01T06:25:37.473Z",
+  "market_captured_at": "2026-10-01T09:22:42.488Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:25:38.141Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-TSA/candlesticks?start_ts=1789876801&end_ts=1790835937&period_interval=60",
+  "last_ingested_at": "2026-10-01T09:22:43.162Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-TSA/candlesticks?start_ts=1789876801&end_ts=1790846562&period_interval=60",
   "trims": [
     {
       "at": "2026-09-20T03:34:47.887Z",

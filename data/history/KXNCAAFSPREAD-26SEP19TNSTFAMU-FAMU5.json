@@ -2636,6 +2636,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:17:02.611Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2654,7 +2664,6 @@
     "floor_strike": 4.5,
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-21T23:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -2677,6 +2686,7 @@
     "result": "no",
     "rules_primary": "If Florida A&M wins by more than 4.5 points in the Tennessee St. vs Florida A&M college football game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 180,
     "settlement_ts": "2026-09-20T04:13:54.512521Z",
     "settlement_value_dollars": "0.0000",
@@ -2694,9 +2704,9 @@
     "yes_sub_title": "Florida A&M wins by over 4.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5",
-  "market_captured_at": "2026-10-01T06:20:02.212Z",
+  "market_captured_at": "2026-10-01T09:17:01.966Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:20:02.779Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5/candlesticks?start_ts=1789963201&end_ts=1790835602&period_interval=1440",
+  "last_ingested_at": "2026-10-01T09:17:02.540Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19TNSTFAMU-FAMU5/candlesticks?start_ts=1789963201&end_ts=1790846222&period_interval=1440",
   "result": "no"
 }

@@ -1588,6 +1588,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:17:08.713Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19WAGCAL-61/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1603,7 +1613,6 @@
     "floor_strike": 60.5,
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-09-21T19:30:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -1626,6 +1635,7 @@
     "result": "no",
     "rules_primary": "If the teams collectively score more than 60.5 points in the Wagner vs California college football game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 180,
     "settlement_ts": "2026-09-19T23:04:34.539614Z",
     "settlement_value_dollars": "0.0000",
@@ -1643,9 +1653,9 @@
     "yes_sub_title": "Over 60.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFTOTAL-26SEP19WAGCAL-61",
-  "market_captured_at": "2026-10-01T06:20:08.206Z",
+  "market_captured_at": "2026-10-01T09:17:08.067Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:20:08.771Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19WAGCAL-61/candlesticks?start_ts=1789876801&end_ts=1790835608&period_interval=1440",
+  "last_ingested_at": "2026-10-01T09:17:08.641Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFTOTAL/markets/KXNCAAFTOTAL-26SEP19WAGCAL-61/candlesticks?start_ts=1789876801&end_ts=1790846228&period_interval=1440",
   "result": "no"
 }

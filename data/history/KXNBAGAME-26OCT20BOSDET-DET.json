@@ -10578,6 +10578,190 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:16:29.640Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "241209.16"
+            ],
+            [
+              "0.0200",
+              "21167.00"
+            ],
+            [
+              "0.0300",
+              "6540.52"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "6685.00"
+            ],
+            [
+              "0.0700",
+              "2000.00"
+            ],
+            [
+              "0.0800",
+              "1533.00"
+            ],
+            [
+              "0.1000",
+              "60.97"
+            ],
+            [
+              "0.1200",
+              "600.00"
+            ],
+            [
+              "0.1300",
+              "521.44"
+            ],
+            [
+              "0.1400",
+              "2644.00"
+            ],
+            [
+              "0.1500",
+              "548.00"
+            ],
+            [
+              "0.1600",
+              "74.00"
+            ],
+            [
+              "0.1700",
+              "419.95"
+            ],
+            [
+              "0.2500",
+              "81.19"
+            ],
+            [
+              "0.3400",
+              "588.00"
+            ],
+            [
+              "0.3700",
+              "150.00"
+            ],
+            [
+              "0.3900",
+              "2250.00"
+            ],
+            [
+              "0.4000",
+              "2472.00"
+            ],
+            [
+              "0.4100",
+              "700.00"
+            ],
+            [
+              "0.4200",
+              "250.00"
+            ],
+            [
+              "0.4300",
+              "2214.00"
+            ],
+            [
+              "0.4400",
+              "2330.00"
+            ],
+            [
+              "0.4500",
+              "197.00"
+            ],
+            [
+              "0.4600",
+              "88.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "221862.66"
+            ],
+            [
+              "0.0200",
+              "17900.00"
+            ],
+            [
+              "0.0300",
+              "6430.00"
+            ],
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "2725.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "300.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "473.00"
+            ],
+            [
+              "0.1800",
+              "83.00"
+            ],
+            [
+              "0.2000",
+              "200.00"
+            ],
+            [
+              "0.2100",
+              "1278.00"
+            ],
+            [
+              "0.4100",
+              "2.45"
+            ],
+            [
+              "0.4200",
+              "1215.00"
+            ],
+            [
+              "0.4300",
+              "821.13"
+            ],
+            [
+              "0.5200",
+              "523.00"
+            ],
+            [
+              "0.5300",
+              "100.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -10595,18 +10779,17 @@
     "expiration_value": "",
     "last_price_dollars": "0.5200",
     "latest_expiration_time": "2026-10-22T19:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.4800",
-    "no_bid_dollars": "0.4500",
+    "no_ask_dollars": "0.4700",
+    "no_bid_dollars": "0.4600",
     "no_sub_title": "Detroit",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-20T22:00:00Z",
-    "open_interest_fp": "9947.49",
+    "open_interest_fp": "9894.62",
     "open_time": "2026-08-20T15:28:00Z",
     "previous_price_dollars": "0.5200",
     "previous_yes_ask_dollars": "0.5500",
-    "previous_yes_bid_dollars": "0.5200",
+    "previous_yes_bid_dollars": "0.5100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -10618,23 +10801,24 @@
     "result": "",
     "rules_primary": "If Detroit wins the Boston vs Detroit Pro Basketball game originally scheduled for Oct 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 45,
     "status": "active",
     "strike_type": "structured",
     "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
     "title": "Detroit wins",
     "updated_time": "2026-09-25T16:51:11.41443Z",
-    "volume_24h_fp": "468.12",
-    "volume_fp": "18310.08",
-    "yes_ask_dollars": "0.5500",
-    "yes_ask_size_fp": "324.81",
-    "yes_bid_dollars": "0.5200",
-    "yes_bid_size_fp": "215.00",
+    "volume_24h_fp": "520.99",
+    "volume_fp": "18362.95",
+    "yes_ask_dollars": "0.5400",
+    "yes_ask_size_fp": "88.00",
+    "yes_bid_dollars": "0.5300",
+    "yes_bid_size_fp": "100.00",
     "yes_sub_title": "Detroit"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET",
-  "market_captured_at": "2026-10-01T06:19:29.506Z",
+  "market_captured_at": "2026-10-01T09:16:28.997Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T06:19:30.073Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1790740801&end_ts=1790835569&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:16:29.570Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1790827201&end_ts=1790846189&period_interval=1440"
 }

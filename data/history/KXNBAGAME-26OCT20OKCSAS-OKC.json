@@ -10806,6 +10806,170 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:16:30.861Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "227247.30"
+            ],
+            [
+              "0.0200",
+              "12279.70"
+            ],
+            [
+              "0.0300",
+              "4676.66"
+            ],
+            [
+              "0.0400",
+              "4999.00"
+            ],
+            [
+              "0.0500",
+              "550.00"
+            ],
+            [
+              "0.1000",
+              "19.32"
+            ],
+            [
+              "0.1200",
+              "500.00"
+            ],
+            [
+              "0.1300",
+              "504.27"
+            ],
+            [
+              "0.2200",
+              "0.78"
+            ],
+            [
+              "0.2400",
+              "835.13"
+            ],
+            [
+              "0.2500",
+              "222.92"
+            ],
+            [
+              "0.2700",
+              "3.86"
+            ],
+            [
+              "0.4400",
+              "454.00"
+            ],
+            [
+              "0.4500",
+              "750.00"
+            ],
+            [
+              "0.4700",
+              "1500.00"
+            ],
+            [
+              "0.4800",
+              "3442.00"
+            ],
+            [
+              "0.4900",
+              "939.00"
+            ],
+            [
+              "0.5000",
+              "745.01"
+            ],
+            [
+              "0.5100",
+              "638.00"
+            ],
+            [
+              "0.5200",
+              "350.00"
+            ],
+            [
+              "0.5300",
+              "3551.20"
+            ],
+            [
+              "0.5400",
+              "687.71"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "227003.52"
+            ],
+            [
+              "0.0200",
+              "12260.00"
+            ],
+            [
+              "0.0300",
+              "4500.00"
+            ],
+            [
+              "0.0400",
+              "100.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "300.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "700.00"
+            ],
+            [
+              "0.3400",
+              "200.00"
+            ],
+            [
+              "0.3600",
+              "1252.00"
+            ],
+            [
+              "0.4100",
+              "2.45"
+            ],
+            [
+              "0.4200",
+              "1966.26"
+            ],
+            [
+              "0.4300",
+              "3414.00"
+            ],
+            [
+              "0.4400",
+              "100.00"
+            ],
+            [
+              "0.4500",
+              "100.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -10823,10 +10987,9 @@
     "expiration_value": "",
     "last_price_dollars": "0.4400",
     "latest_expiration_time": "2026-10-23T01:30:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.5600",
-    "no_bid_dollars": "0.5500",
+    "no_ask_dollars": "0.5500",
+    "no_bid_dollars": "0.5400",
     "no_sub_title": "Oklahoma City",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-21T04:30:00Z",
@@ -10846,23 +11009,24 @@
     "result": "",
     "rules_primary": "If Oklahoma City wins the Oklahoma City vs San Antonio Pro Basketball game originally scheduled for Oct 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 45,
     "status": "active",
     "strike_type": "structured",
     "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
     "title": "Oklahoma City wins",
     "updated_time": "2026-09-25T16:52:23.404685Z",
-    "volume_24h_fp": "94.08",
+    "volume_24h_fp": "85.55",
     "volume_fp": "5587.00",
-    "yes_ask_dollars": "0.4500",
-    "yes_ask_size_fp": "82.15",
-    "yes_bid_dollars": "0.4400",
-    "yes_bid_size_fp": "286.74",
+    "yes_ask_dollars": "0.4600",
+    "yes_ask_size_fp": "687.71",
+    "yes_bid_dollars": "0.4500",
+    "yes_bid_size_fp": "100.00",
     "yes_sub_title": "Oklahoma City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
-  "market_captured_at": "2026-10-01T06:19:30.704Z",
+  "market_captured_at": "2026-10-01T09:16:30.217Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T06:19:31.271Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790740801&end_ts=1790835570&period_interval=1440"
+  "last_ingested_at": "2026-10-01T09:16:30.790Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790827201&end_ts=1790846190&period_interval=1440"
 }

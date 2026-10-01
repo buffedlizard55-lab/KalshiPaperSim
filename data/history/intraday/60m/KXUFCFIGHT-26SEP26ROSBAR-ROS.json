@@ -4264,6 +4264,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:22:40.387Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP26ROSBAR-ROS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4281,7 +4291,6 @@
     "expiration_value": "Raul Rosas Jr",
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-11T01:40:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -4304,6 +4313,7 @@
     "result": "yes",
     "rules_primary": "If Raul Rosas Jr wins the Rosas Jr vs Barcelos professional MMA fight originally scheduled for Sep 26, 2026, then the market resolves to Yes.",
     "rules_secondary": "The following market refers to the Rosas Jr vs Barcelos professional MMA fight originally scheduled for Sep 26, 2026. If this fight is postponed or delayed, the market will remain open and close after the rescheduled fight has finished (within two weeks). If the fight is declared a tie or no contest, the market will resolve to 50/50 for both fighters. If the fight is cancelled or rescheduled to over two weeks away, the market will resolve to a fair price in accordance with the rules.\n\nThis market and these products have not been endorsed by Zuffa LLC, d/b/a Ultimate Fighting Championship, UFC. Any references to the “UFC,” or any other associated marks are descriptive only, and do not indicate an endorsement of this product or any affiliation between Zuffa and Kalshi.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 298,
     "settlement_ts": "2026-09-27T02:50:36.63251Z",
     "settlement_value_dollars": "1.0000",
@@ -4321,9 +4331,9 @@
     "yes_sub_title": "Raul Rosas Jr"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP26ROSBAR-ROS",
-  "market_captured_at": "2026-10-01T06:25:34.673Z",
+  "market_captured_at": "2026-10-01T09:22:39.641Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T06:25:35.341Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP26ROSBAR-ROS/candlesticks?start_ts=1790478001&end_ts=1790835934&period_interval=60"
+  "last_ingested_at": "2026-10-01T09:22:40.315Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP26ROSBAR-ROS/candlesticks?start_ts=1790478001&end_ts=1790846559&period_interval=60"
 }

@@ -5,51 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1790035200,
-      "open_interest_fp": "1935.92",
-      "price": {
-        "previous_dollars": "0.4900"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.4800",
-        "high_dollars": "0.4900",
-        "low_dollars": "0.4800",
-        "open_dollars": "0.4900"
-      },
-      "yes_bid": {
-        "close_dollars": "0.4600",
-        "high_dollars": "0.4600",
-        "low_dollars": "0.4600",
-        "open_dollars": "0.4600"
-      }
-    },
-    {
-      "end_period_ts": 1790038800,
-      "open_interest_fp": "1916.04",
-      "price": {
-        "close_dollars": "0.4600",
-        "high_dollars": "0.4600",
-        "low_dollars": "0.4600",
-        "mean_dollars": "0.4600",
-        "open_dollars": "0.4600",
-        "previous_dollars": "0.4900"
-      },
-      "volume_fp": "19.88",
-      "yes_ask": {
-        "close_dollars": "0.4800",
-        "high_dollars": "0.4800",
-        "low_dollars": "0.4800",
-        "open_dollars": "0.4800"
-      },
-      "yes_bid": {
-        "close_dollars": "0.4600",
-        "high_dollars": "0.4600",
-        "low_dollars": "0.4600",
-        "open_dollars": "0.4600"
-      }
-    },
-    {
       "end_period_ts": 1790042400,
       "open_interest_fp": "1916.04",
       "price": {
@@ -4327,6 +4282,46 @@
         "high_dollars": "0.4400",
         "low_dollars": "0.4400",
         "open_dollars": "0.4400"
+      }
+    },
+    {
+      "end_period_ts": 1790838000,
+      "open_interest_fp": "2708.82",
+      "price": {
+        "previous_dollars": "0.4400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4700",
+        "high_dollars": "0.4700",
+        "low_dollars": "0.4500",
+        "open_dollars": "0.4500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4500",
+        "high_dollars": "0.4500",
+        "low_dollars": "0.4400",
+        "open_dollars": "0.4400"
+      }
+    },
+    {
+      "end_period_ts": 1790841600,
+      "open_interest_fp": "2708.82",
+      "price": {
+        "previous_dollars": "0.4400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4700",
+        "high_dollars": "0.4700",
+        "low_dollars": "0.4700",
+        "open_dollars": "0.4700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4500",
+        "high_dollars": "0.4500",
+        "low_dollars": "0.4500",
+        "open_dollars": "0.4500"
       }
     }
   ],
@@ -19646,6 +19641,170 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T09:21:58.334Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "227247.30"
+            ],
+            [
+              "0.0200",
+              "12279.70"
+            ],
+            [
+              "0.0300",
+              "4676.66"
+            ],
+            [
+              "0.0400",
+              "4999.00"
+            ],
+            [
+              "0.0500",
+              "550.00"
+            ],
+            [
+              "0.1000",
+              "19.32"
+            ],
+            [
+              "0.1200",
+              "500.00"
+            ],
+            [
+              "0.1300",
+              "504.27"
+            ],
+            [
+              "0.2200",
+              "0.78"
+            ],
+            [
+              "0.2400",
+              "835.13"
+            ],
+            [
+              "0.2500",
+              "222.92"
+            ],
+            [
+              "0.2700",
+              "3.86"
+            ],
+            [
+              "0.4400",
+              "454.00"
+            ],
+            [
+              "0.4500",
+              "750.00"
+            ],
+            [
+              "0.4700",
+              "1500.00"
+            ],
+            [
+              "0.4800",
+              "3442.00"
+            ],
+            [
+              "0.4900",
+              "1139.00"
+            ],
+            [
+              "0.5000",
+              "1045.01"
+            ],
+            [
+              "0.5100",
+              "287.00"
+            ],
+            [
+              "0.5200",
+              "100.00"
+            ],
+            [
+              "0.5300",
+              "3551.20"
+            ],
+            [
+              "0.5400",
+              "687.71"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "227003.52"
+            ],
+            [
+              "0.0200",
+              "12260.00"
+            ],
+            [
+              "0.0300",
+              "4500.00"
+            ],
+            [
+              "0.0400",
+              "100.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "300.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.3400",
+              "200.00"
+            ],
+            [
+              "0.3600",
+              "1252.00"
+            ],
+            [
+              "0.3700",
+              "700.00"
+            ],
+            [
+              "0.4100",
+              "2.45"
+            ],
+            [
+              "0.4200",
+              "1966.26"
+            ],
+            [
+              "0.4300",
+              "3414.00"
+            ],
+            [
+              "0.4400",
+              "100.00"
+            ],
+            [
+              "0.4500",
+              "100.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -19663,10 +19822,9 @@
     "expiration_value": "",
     "last_price_dollars": "0.4400",
     "latest_expiration_time": "2026-10-23T01:30:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.5600",
-    "no_bid_dollars": "0.5500",
+    "no_ask_dollars": "0.5500",
+    "no_bid_dollars": "0.5400",
     "no_sub_title": "Oklahoma City",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-21T04:30:00Z",
@@ -19686,25 +19844,26 @@
     "result": "",
     "rules_primary": "If Oklahoma City wins the Oklahoma City vs San Antonio Pro Basketball game originally scheduled for Oct 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 45,
     "status": "active",
     "strike_type": "structured",
     "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
     "title": "Oklahoma City wins",
     "updated_time": "2026-09-25T16:52:23.404685Z",
-    "volume_24h_fp": "94.08",
+    "volume_24h_fp": "85.55",
     "volume_fp": "5587.00",
-    "yes_ask_dollars": "0.4500",
-    "yes_ask_size_fp": "82.15",
-    "yes_bid_dollars": "0.4400",
-    "yes_bid_size_fp": "286.74",
+    "yes_ask_dollars": "0.4600",
+    "yes_ask_size_fp": "687.71",
+    "yes_bid_dollars": "0.4500",
+    "yes_bid_size_fp": "100.00",
     "yes_sub_title": "Oklahoma City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
-  "market_captured_at": "2026-10-01T06:24:53.353Z",
+  "market_captured_at": "2026-10-01T09:21:57.585Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T06:24:54.018Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790802001&end_ts=1790835893&period_interval=60",
+  "last_ingested_at": "2026-10-01T09:21:58.261Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790834401&end_ts=1790846517&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T06:40:10.237Z",
@@ -20103,6 +20262,14 @@
       "dropped": 6,
       "dropped_from_ts": 1790013600,
       "dropped_to_ts": 1790031600,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-10-01T09:21:58.634Z",
+      "dropped": 2,
+      "dropped_from_ts": 1790035200,
+      "dropped_to_ts": 1790038800,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }
