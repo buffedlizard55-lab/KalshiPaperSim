@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-01T03:14:56.368Z",
+ "generatedAt": "2026-10-01T10:12:02.934Z",
  "rows": [
   {
    "league": "nba",
@@ -1890,6 +1890,31 @@
   },
   {
    "league": "nhl",
+   "kalshiCode": "COL",
+   "kalshiName": "Colorado",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "17",
+    "abbr": "COL",
+    "displayName": "Colorado Avalanche",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP30LACOL-COL",
+     "rulesName": "Colorado",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26SEP30LACOL-LA",
+     "rulesName": "Colorado",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
    "kalshiCode": "DAL",
    "kalshiName": "Dallas",
    "conflictWith": null,
@@ -2130,6 +2155,26 @@
   },
   {
    "league": "nhl",
+   "kalshiCode": "NYI",
+   "kalshiName": "New York I",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "12",
+    "abbr": "NYI",
+    "displayName": "New York Islanders",
+    "matchedBy": "displayName-qualifier-letter"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP30NYITOR-TOR",
+     "rulesName": "New York I",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
    "kalshiCode": "NYR",
    "kalshiName": "New York R",
    "conflictWith": null,
@@ -2319,6 +2364,26 @@
     {
      "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
      "rulesName": "St. Louis",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "TOR",
+   "kalshiName": "Toronto",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "21",
+    "abbr": "TOR",
+    "displayName": "Toronto Maple Leafs",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26SEP30NYITOR-TOR",
+     "rulesName": "Toronto",
      "role": "home"
     }
    ]
@@ -2530,6 +2595,31 @@
      "ticker": "KXWNBAGAME-26AUG20INDDAL-IND",
      "rulesName": "Dallas women's",
      "role": "home"
+    },
+    {
+     "ticker": "KXWNBAGAME-26SEP30GSDAL-GS",
+     "rulesName": "Dallas women's",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
+   "kalshiCode": "GS",
+   "kalshiName": "Golden State",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "129689",
+    "abbr": "GS",
+    "displayName": "Golden State Valkyries",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26SEP30GSDAL-GS",
+     "rulesName": "Golden State",
+     "role": "away"
     }
    ]
   },
@@ -2738,6 +2828,10 @@
   },
   {
    "ticker": "KXWNBAGAME-26SEP22GSPDX-PDX",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXWNBAGAME-26SEP30GSDAL-DAL",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   }
  ]

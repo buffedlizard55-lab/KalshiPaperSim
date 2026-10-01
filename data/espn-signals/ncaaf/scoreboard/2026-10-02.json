@@ -1,0 +1,149 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-02",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261002"
+  ]
+ },
+ "captures": [
+  "2026-10-01T10:12:01.915Z"
+ ],
+ "events": {
+  "401858245": {
+   "eventId": "401858245",
+   "date": "2026-10-02T23:00Z",
+   "easternDate": "2026-10-02",
+   "name": "Pittsburgh Panthers at Virginia Tech Hokies",
+   "shortName": "PITT @ VT",
+   "week": 5,
+   "venue": "Lane Stadium",
+   "homeAbbr": "VT",
+   "homeTeamId": "259",
+   "homeName": "Virginia Tech Hokies",
+   "awayAbbr": "PITT",
+   "awayTeamId": "221",
+   "awayName": "Pittsburgh Panthers",
+   "firstCapturedAt": "2026-10-01T10:12:01.915Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "VT -3",
+    "spread": -3,
+    "overUnder": 54.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-01T10:12:01.915Z",
+     "last_seen_at": "2026-10-01T10:12:01.915Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-0",
+      "away": "4-0"
+     }
+    }
+   ]
+  },
+  "401858476": {
+   "eventId": "401858476",
+   "date": "2026-10-03T00:00Z",
+   "easternDate": "2026-10-02",
+   "name": "Penn State Nittany Lions at Northwestern Wildcats",
+   "shortName": "PSU @ NU",
+   "week": 5,
+   "venue": "Ryan Field",
+   "homeAbbr": "NU",
+   "homeTeamId": "77",
+   "homeName": "Northwestern Wildcats",
+   "awayAbbr": "PSU",
+   "awayTeamId": "213",
+   "awayName": "Penn State Nittany Lions",
+   "firstCapturedAt": "2026-10-01T10:12:01.915Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "PSU -2.5",
+    "spread": 2.5,
+    "overUnder": 45.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-01T10:12:01.915Z",
+     "last_seen_at": "2026-10-01T10:12:01.915Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-1",
+      "away": "3-1"
+     }
+    }
+   ]
+  },
+  "401871050": {
+   "eventId": "401871050",
+   "date": "2026-10-02T23:00Z",
+   "easternDate": "2026-10-02",
+   "name": "Liberty Flames at Delaware Blue Hens",
+   "shortName": "LIB @ DEL",
+   "week": 5,
+   "venue": "Delaware Stadium",
+   "homeAbbr": "DEL",
+   "homeTeamId": "48",
+   "homeName": "Delaware Blue Hens",
+   "awayAbbr": "LIB",
+   "awayTeamId": "2335",
+   "awayName": "Liberty Flames",
+   "firstCapturedAt": "2026-10-01T10:12:01.915Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "LIB -7.5",
+    "spread": 7.5,
+    "overUnder": 50.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-01T10:12:01.915Z",
+     "last_seen_at": "2026-10-01T10:12:01.915Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-2",
+      "away": "3-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-01T10:12:01.915Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261002"
+}

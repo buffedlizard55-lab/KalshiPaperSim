@@ -12,7 +12,8 @@
   "2026-09-30T19:46:59.525Z",
   "2026-09-30T23:24:11.831Z",
   "2026-10-01T02:22:18.146Z",
-  "2026-10-01T03:14:55.503Z"
+  "2026-10-01T03:14:55.503Z",
+  "2026-10-01T10:12:01.688Z"
  ],
  "events": {
   "401872964": {
@@ -39,7 +40,7 @@
    "states": [
     {
      "captured_at": "2026-09-30T09:45:32.181Z",
-     "last_seen_at": "2026-10-01T03:14:55.503Z",
+     "last_seen_at": "2026-10-01T10:12:01.688Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -60,6 +61,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-01T03:14:55.503Z",
+ "last_ingested_at": "2026-10-01T10:12:01.688Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261001"
 }

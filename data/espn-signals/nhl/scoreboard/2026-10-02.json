@@ -1,0 +1,227 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-02",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261002"
+  ]
+ },
+ "captures": [
+  "2026-10-01T10:12:02.124Z"
+ ],
+ "events": {
+  "401891782": {
+   "eventId": "401891782",
+   "date": "2026-10-03T01:00Z",
+   "easternDate": "2026-10-02",
+   "name": "St. Louis Blues at Dallas Stars",
+   "shortName": "STL @ DAL",
+   "week": null,
+   "venue": "American Airlines Center",
+   "homeAbbr": "DAL",
+   "homeTeamId": "9",
+   "homeName": "Dallas Stars",
+   "awayAbbr": "STL",
+   "awayTeamId": "19",
+   "awayName": "St. Louis Blues",
+   "firstCapturedAt": "2026-10-01T10:12:02.124Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "DAL -205",
+    "spread": -1.5,
+    "overUnder": 5.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-01T10:12:02.124Z",
+     "last_seen_at": "2026-10-01T10:12:02.124Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-0-0"
+     }
+    }
+   ]
+  },
+  "401891803": {
+   "eventId": "401891803",
+   "date": "2026-10-02T22:30Z",
+   "easternDate": "2026-10-02",
+   "name": "New York Rangers at Detroit Red Wings",
+   "shortName": "NYR @ DET",
+   "week": null,
+   "venue": "Little Caesars Arena",
+   "homeAbbr": "DET",
+   "homeTeamId": "5",
+   "homeName": "Detroit Red Wings",
+   "awayAbbr": "NYR",
+   "awayTeamId": "13",
+   "awayName": "New York Rangers",
+   "firstCapturedAt": "2026-10-01T10:12:02.124Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "DET -142",
+    "spread": -1.5,
+    "overUnder": 6.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-01T10:12:02.124Z",
+     "last_seen_at": "2026-10-01T10:12:02.124Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "0-1-0"
+     }
+    }
+   ]
+  },
+  "401891831": {
+   "eventId": "401891831",
+   "date": "2026-10-03T00:00Z",
+   "easternDate": "2026-10-02",
+   "name": "Boston Bruins at Winnipeg Jets",
+   "shortName": "BOS @ WPG",
+   "week": null,
+   "venue": "Canada Life Centre",
+   "homeAbbr": "WPG",
+   "homeTeamId": "28",
+   "homeName": "Winnipeg Jets",
+   "awayAbbr": "BOS",
+   "awayTeamId": "1",
+   "awayName": "Boston Bruins",
+   "firstCapturedAt": "2026-10-01T10:12:02.124Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "WPG -108",
+    "spread": -1.5,
+    "overUnder": 5.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-01T10:12:02.124Z",
+     "last_seen_at": "2026-10-01T10:12:02.124Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-0",
+      "away": "1-0-0"
+     }
+    }
+   ]
+  },
+  "401892432": {
+   "eventId": "401892432",
+   "date": "2026-10-02T23:00Z",
+   "easternDate": "2026-10-02",
+   "name": "Washington Capitals at Carolina Hurricanes",
+   "shortName": "WSH @ CAR",
+   "week": null,
+   "venue": "Lenovo Center",
+   "homeAbbr": "CAR",
+   "homeTeamId": "7",
+   "homeName": "Carolina Hurricanes",
+   "awayAbbr": "WSH",
+   "awayTeamId": "23",
+   "awayName": "Washington Capitals",
+   "firstCapturedAt": "2026-10-01T10:12:02.124Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-01T10:12:02.124Z",
+     "last_seen_at": "2026-10-01T10:12:02.124Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0-1",
+      "away": "0-0-0"
+     }
+    }
+   ]
+  },
+  "401892433": {
+   "eventId": "401892433",
+   "date": "2026-10-03T02:00Z",
+   "easternDate": "2026-10-02",
+   "name": "Anaheim Ducks at Vegas Golden Knights",
+   "shortName": "ANA @ VGK",
+   "week": null,
+   "venue": "T-Mobile Arena",
+   "homeAbbr": "VGK",
+   "homeTeamId": "37",
+   "homeName": "Vegas Golden Knights",
+   "awayAbbr": "ANA",
+   "awayTeamId": "25",
+   "awayName": "Anaheim Ducks",
+   "firstCapturedAt": "2026-10-01T10:12:02.124Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-01T10:12:02.124Z",
+     "last_seen_at": "2026-10-01T10:12:02.124Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-0-0",
+      "away": "0-0-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-01T10:12:02.124Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261002"
+}
