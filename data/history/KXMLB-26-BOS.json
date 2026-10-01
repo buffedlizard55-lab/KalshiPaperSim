@@ -1028,6 +1028,31 @@
         "low_dollars": "0.0160",
         "open_dollars": "0.0490"
       }
+    },
+    {
+      "end_period_ts": 1790827200,
+      "open_interest_fp": "3386337.97",
+      "price": {
+        "close_dollars": "0.0010",
+        "high_dollars": "0.0310",
+        "low_dollars": "0.0010",
+        "mean_dollars": "0.0089",
+        "open_dollars": "0.0200",
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "522921.43",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0010",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0270",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0170"
+      }
     }
   ],
   "books": [
@@ -27494,11 +27519,21 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T06:18:32.247Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-BOS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
     "can_close_early": true,
-    "close_time": "2028-10-31T04:00:00Z",
+    "close_time": "2026-10-01T03:29:12Z",
     "created_time": "2025-12-16T23:26:57.633826Z",
     "custom_strike": {
       "baseball_team": "6e285aea-d5a3-419f-89e7-7061016abf87"
@@ -27508,20 +27543,21 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-11-01T04:00:00Z",
     "expiration_time": "2028-10-31T04:00:00Z",
-    "expiration_value": "",
-    "last_price_dollars": "0.0210",
+    "expiration_value": "No",
+    "last_price_dollars": "0.0010",
     "latest_expiration_time": "2028-10-31T04:00:00Z",
     "liquidity_dollars": "0.0000",
     "market_type": "binary",
-    "no_ask_dollars": "0.9800",
-    "no_bid_dollars": "0.9790",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Boston",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "3096911.36",
+    "occurrence_datetime": "2026-10-01T03:14:33.822Z",
+    "open_interest_fp": "3386337.97",
     "open_time": "2025-12-17T15:00:00Z",
-    "previous_price_dollars": "0.0460",
-    "previous_yes_ask_dollars": "0.0460",
-    "previous_yes_bid_dollars": "0.0440",
+    "previous_price_dollars": "0.0200",
+    "previous_yes_ask_dollars": "0.0200",
+    "previous_yes_bid_dollars": "0.0180",
     "price_level_structure": "deci_cent",
     "price_ranges": [
       {
@@ -27530,26 +27566,29 @@
         "step": "0.0010"
       }
     ],
-    "result": "",
+    "result": "no",
     "rules_primary": "If Boston wins the 2026 Pro Baseball Championship, then the market resolves to Yes.",
     "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
     "settlement_timer_seconds": 300,
-    "status": "active",
+    "settlement_ts": "2026-10-01T03:34:16.516692Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
     "strike_type": "structured",
     "ticker": "KXMLB-26-BOS",
     "title": "Will Boston win the 2026 Pro Baseball Championship?",
-    "updated_time": "2026-07-13T21:31:32.511076Z",
-    "volume_24h_fp": "266568.01",
-    "volume_fp": "5059007.35",
-    "yes_ask_dollars": "0.0210",
-    "yes_ask_size_fp": "1050.48",
-    "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "3.72",
+    "updated_time": "2026-10-01T03:34:16.800508Z",
+    "volume_24h_fp": "492317.24",
+    "volume_fp": "5452647.74",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Boston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-BOS",
-  "market_captured_at": "2026-09-30T21:00:11.440Z",
-  "status": "active",
-  "last_ingested_at": "2026-09-30T21:00:11.964Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-BOS/candlesticks?start_ts=1790740801&end_ts=1790802011&period_interval=1440"
+  "market_captured_at": "2026-10-01T06:18:31.615Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-01T06:18:32.182Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-BOS/candlesticks?start_ts=1790740801&end_ts=1790835511&period_interval=1440",
+  "result": "no"
 }
