@@ -6009,6 +6009,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T21:18:44.257Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-01T21:29:18.064Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6023,7 +6043,7 @@
     "exchange_index": 0,
     "expected_expiration_time": "2027-01-01T15:00:00Z",
     "expiration_time": "2026-10-08T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "No",
     "last_price_dollars": "0.0300",
     "latest_expiration_time": "2026-10-08T14:00:00Z",
     "market_type": "binary",
@@ -6031,7 +6051,7 @@
     "no_bid_dollars": "0.0000",
     "no_sub_title": "Before Oct 1, 2026",
     "notional_value_dollars": "1.0000",
-    "occurrence_datetime": "2026-07-01T14:00:00Z",
+    "occurrence_datetime": "2026-10-01T14:00:00Z",
     "open_interest_fp": "3118.47",
     "open_time": "2026-05-14T02:00:00Z",
     "previous_price_dollars": "0.0300",
@@ -6045,16 +6065,18 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "no",
     "rules_primary": "If the FDA approves CagriSema for marketing before Oct 1, 2026, then the market resolves to Yes.",
     "rules_secondary": "An approval is defined as:\n\nFor new drugs: FDA issuance of an approval letter for a New Drug Application (NDA) or Biologics License Application (BLA)\nFor already-marketed drugs seeking new indications: FDA approval of a supplemental NDA (sNDA) or supplemental BLA (sBLA) for the specific indication referenced\nFor generic drugs: FDA approval of an Abbreviated New Drug Application (ANDA)\nFor biosimilars: FDA approval of a 351(k) application\n\nThe following constitute approvals that trigger the Payout Criterion:\n\nStandard approval (traditional approval based on clinical benefit)\nAccelerated approval (based on surrogate endpoints)\nApproval with Risk Evaluation and Mitigation Strategy (REMS)\nApproval with restricted distribution or indication limitations, except compassionate use/expanded access programs\n\nThe following do NOT constitute approvals:\n\nComplete Response Letters (CRLs) indicating the application cannot be approved in its current form\nApprovable letters that require additional actions before approval\nTentative approvals pending patent or exclusivity expiration\nFDA requests for additional information or studies\nExtension of Prescription Drug User Fee Amendments dates\nApproval for compassionate use or expanded access programs only\nEmergency Use Authorization (EUA) without full approval\nApproval only for export or for use outside the United States\n\nIf the FDA issues a Complete Response Letter before Oct 1, 2026, the market will resolve to No unless the FDA subsequently approves CagriSema after addressing the CRL concerns and before Oct 1, 2026.\n\nIf the FDA convenes an Advisory Committee that votes against approval but the FDA approves CagriSema anyway before Oct 1, 2026, the market will resolve to Yes.\n\nIf CagriSema receives accelerated approval that is later withdrawn before Oct 1, 2026, the market will resolve based on whether the initial accelerated approval occurred after Issuance (Yes), regardless of the subsequent withdrawal.\n\nIf the drug sponsor withdraws the application before FDA action and before Oct 1, 2026, the market will resolve to No immediately.",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 1800,
-    "status": "closed",
+    "settlement_ts": "2026-10-01T16:58:03.976874Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
     "strike_type": "custom",
     "ticker": "KXFDAAPPROVE-CAG-26OCT01",
     "title": "Will the FDA approve CagriSema before Oct 1, 2026?",
-    "updated_time": "2026-10-01T03:59:01.279716Z",
+    "updated_time": "2026-10-01T16:58:04.331481Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "3210.92",
     "yes_ask_dollars": "1.0000",
@@ -6064,8 +6086,9 @@
     "yes_sub_title": "Before Oct 1, 2026"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01",
-  "market_captured_at": "2026-10-01T13:29:33.336Z",
-  "status": "closed",
-  "last_ingested_at": "2026-10-01T13:29:33.993Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CAG-26OCT01/candlesticks?start_ts=1790827201&end_ts=1790861373&period_interval=1440"
+  "market_captured_at": "2026-10-01T21:29:17.393Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-01T21:29:18.030Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CAG-26OCT01/candlesticks?start_ts=1790827201&end_ts=1790890157&period_interval=1440",
+  "result": "no"
 }

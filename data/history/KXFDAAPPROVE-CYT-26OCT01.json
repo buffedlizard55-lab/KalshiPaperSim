@@ -6285,6 +6285,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T21:18:47.573Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-01T21:29:15.451Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6299,7 +6319,7 @@
     "exchange_index": 0,
     "expected_expiration_time": "2027-07-08T14:00:00Z",
     "expiration_time": "2026-10-08T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "No",
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-10-08T14:00:00Z",
     "market_type": "binary",
@@ -6321,16 +6341,18 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "no",
     "rules_primary": "If the FDA approves cytisinicline for smoking cessation for marketing before Oct 1, 2026, then the market resolves to Yes.",
     "rules_secondary": "An approval is defined as:\n\nFor new drugs: FDA issuance of an approval letter for a New Drug Application (NDA) or Biologics License Application (BLA)\nFor already-marketed drugs seeking new indications: FDA approval of a supplemental NDA (sNDA) or supplemental BLA (sBLA) for the specific indication referenced\nFor generic drugs: FDA approval of an Abbreviated New Drug Application (ANDA)\nFor biosimilars: FDA approval of a 351(k) application\n\nThe following constitute approvals that trigger the Payout Criterion:\n\nStandard approval (traditional approval based on clinical benefit)\nAccelerated approval (based on surrogate endpoints)\nApproval with Risk Evaluation and Mitigation Strategy (REMS)\nApproval with restricted distribution or indication limitations, except compassionate use/expanded access programs\n\nThe following do NOT constitute approvals:\n\nComplete Response Letters (CRLs) indicating the application cannot be approved in its current form\nApprovable letters that require additional actions before approval\nTentative approvals pending patent or exclusivity expiration\nFDA requests for additional information or studies\nExtension of Prescription Drug User Fee Amendments dates\nApproval for compassionate use or expanded access programs only\nEmergency Use Authorization (EUA) without full approval\nApproval only for export or for use outside the United States\n\nIf the FDA issues a Complete Response Letter before Oct 1, 2026, the market will resolve to No unless the FDA subsequently approves cytisinicline for smoking cessation after addressing the CRL concerns and before Oct 1, 2026.\n\nIf the FDA convenes an Advisory Committee that votes against approval but the FDA approves cytisinicline for smoking cessation anyway before Oct 1, 2026, the market will resolve to Yes.\n\nIf cytisinicline for smoking cessation receives accelerated approval that is later withdrawn before Oct 1, 2026, the market will resolve based on whether the initial accelerated approval occurred after Issuance (Yes), regardless of the subsequent withdrawal.\n\nIf the drug sponsor withdraws the application before FDA action and before Oct 1, 2026, the market will resolve to No immediately.",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 1800,
-    "status": "closed",
+    "settlement_ts": "2026-10-01T16:58:03.976973Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
     "strike_type": "custom",
     "ticker": "KXFDAAPPROVE-CYT-26OCT01",
     "title": "Will the FDA approve cytisinicline for smoking cessation before Oct 1, 2026?",
-    "updated_time": "2026-10-01T03:59:00.778861Z",
+    "updated_time": "2026-10-01T16:58:04.33158Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "8719.96",
     "yes_ask_dollars": "1.0000",
@@ -6340,8 +6362,9 @@
     "yes_sub_title": "Before Oct 1, 2026"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01",
-  "market_captured_at": "2026-10-01T13:29:30.584Z",
-  "status": "closed",
-  "last_ingested_at": "2026-10-01T13:29:31.243Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CYT-26OCT01/candlesticks?start_ts=1790827201&end_ts=1790861370&period_interval=1440"
+  "market_captured_at": "2026-10-01T21:29:14.782Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-01T21:29:15.418Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CYT-26OCT01/candlesticks?start_ts=1790827201&end_ts=1790890155&period_interval=1440",
+  "result": "no"
 }

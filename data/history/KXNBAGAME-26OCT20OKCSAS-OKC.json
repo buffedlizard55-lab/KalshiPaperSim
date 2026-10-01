@@ -10970,6 +10970,162 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T21:20:20.540Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "227247.30"
+            ],
+            [
+              "0.0200",
+              "6019.70"
+            ],
+            [
+              "0.0300",
+              "4676.66"
+            ],
+            [
+              "0.0400",
+              "4999.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.1000",
+              "19.32"
+            ],
+            [
+              "0.1200",
+              "500.00"
+            ],
+            [
+              "0.1300",
+              "504.27"
+            ],
+            [
+              "0.2200",
+              "0.78"
+            ],
+            [
+              "0.2400",
+              "835.13"
+            ],
+            [
+              "0.2500",
+              "222.92"
+            ],
+            [
+              "0.2700",
+              "3.86"
+            ],
+            [
+              "0.4400",
+              "454.00"
+            ],
+            [
+              "0.4500",
+              "750.00"
+            ],
+            [
+              "0.4700",
+              "1500.00"
+            ],
+            [
+              "0.4800",
+              "938.00"
+            ],
+            [
+              "0.4900",
+              "1139.00"
+            ],
+            [
+              "0.5000",
+              "200.01"
+            ],
+            [
+              "0.5100",
+              "1895.00"
+            ],
+            [
+              "0.5200",
+              "691.00"
+            ],
+            [
+              "0.5300",
+              "1207.14"
+            ],
+            [
+              "0.5400",
+              "627.15"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "227003.52"
+            ],
+            [
+              "0.0200",
+              "6000.00"
+            ],
+            [
+              "0.0300",
+              "4500.00"
+            ],
+            [
+              "0.0500",
+              "500.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "300.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1400",
+              "2147.00"
+            ],
+            [
+              "0.3400",
+              "200.00"
+            ],
+            [
+              "0.4100",
+              "2.45"
+            ],
+            [
+              "0.4200",
+              "999.07"
+            ],
+            [
+              "0.4300",
+              "200.00"
+            ],
+            [
+              "0.4400",
+              "100.00"
+            ],
+            [
+              "0.4500",
+              "100.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -10997,7 +11153,7 @@
     "open_time": "2026-08-20T15:28:00Z",
     "previous_price_dollars": "0.4500",
     "previous_yes_ask_dollars": "0.4500",
-    "previous_yes_bid_dollars": "0.4300",
+    "previous_yes_bid_dollars": "0.4400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -11016,17 +11172,17 @@
     "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
     "title": "Oklahoma City wins",
     "updated_time": "2026-09-25T16:52:23.404685Z",
-    "volume_24h_fp": "85.55",
+    "volume_24h_fp": "57.61",
     "volume_fp": "5587.00",
     "yes_ask_dollars": "0.4600",
-    "yes_ask_size_fp": "658.15",
+    "yes_ask_size_fp": "627.15",
     "yes_bid_dollars": "0.4500",
     "yes_bid_size_fp": "100.00",
     "yes_sub_title": "Oklahoma City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
-  "market_captured_at": "2026-10-01T13:20:37.228Z",
+  "market_captured_at": "2026-10-01T21:20:19.970Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T13:20:37.786Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790827201&end_ts=1790860837&period_interval=1440"
+  "last_ingested_at": "2026-10-01T21:20:20.506Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1790827201&end_ts=1790889620&period_interval=1440"
 }

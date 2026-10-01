@@ -12115,6 +12115,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-01T21:28:40.996Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27MINTB-MIN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12172,11 +12182,11 @@
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27MINTB-MIN",
-  "market_captured_at": "2026-10-01T13:28:53.895Z",
+  "market_captured_at": "2026-10-01T21:28:39.317Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T13:28:55.625Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27MINTB-MIN/candlesticks?start_ts=1790810821&end_ts=1790861334&period_interval=1",
+  "last_ingested_at": "2026-10-01T21:28:40.963Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27MINTB-MIN/candlesticks?start_ts=1790810821&end_ts=1790890119&period_interval=1",
   "trims": [
     {
       "at": "2026-09-29T06:08:33.759Z",
