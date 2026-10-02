@@ -5457,18 +5457,18 @@
     "expiration_time": "2027-01-08T05:00:00Z",
     "expiration_value": "",
     "floor_strike": 149999.99,
-    "last_price_dollars": "0.0210",
+    "last_price_dollars": "0.0130",
     "latest_expiration_time": "2027-01-08T05:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.9810",
-    "no_bid_dollars": "0.9800",
+    "no_ask_dollars": "0.9890",
+    "no_bid_dollars": "0.9870",
     "no_sub_title": "150,000 or above",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "470144.03",
+    "open_interest_fp": "469162.99",
     "open_time": "2026-02-25T23:25:29Z",
-    "previous_price_dollars": "0.0180",
-    "previous_yes_ask_dollars": "0.0180",
-    "previous_yes_bid_dollars": "0.0170",
+    "previous_price_dollars": "0.0210",
+    "previous_yes_ask_dollars": "0.0200",
+    "previous_yes_bid_dollars": "0.0190",
     "price_level_structure": "deci_cent",
     "price_ranges": [
       {
@@ -5487,19 +5487,19 @@
     "ticker": "KXBTCY-27JAN0100-T149999.99",
     "title": "BTC price  on Jan 1, 2027?",
     "updated_time": "2026-04-09T10:28:28.983572Z",
-    "volume_24h_fp": "2590.38",
-    "volume_fp": "2114687.73",
-    "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "308.00",
-    "yes_bid_dollars": "0.0190",
-    "yes_bid_size_fp": "9.90",
+    "volume_24h_fp": "8122.86",
+    "volume_fp": "2120538.39",
+    "yes_ask_dollars": "0.0130",
+    "yes_ask_size_fp": "428.22",
+    "yes_bid_dollars": "0.0110",
+    "yes_bid_size_fp": "162.00",
     "yes_sub_title": "150,000 or above"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-T149999.99",
-  "market_captured_at": "2026-10-02T12:38:17.976Z",
+  "market_captured_at": "2026-10-02T20:57:32.108Z",
   "status": "active",
-  "last_ingested_at": "2026-10-02T12:38:18.514Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1790913601&end_ts=1790944698&period_interval=1440",
+  "last_ingested_at": "2026-10-02T20:57:32.638Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-T149999.99/candlesticks?start_ts=1790913601&end_ts=1790974652&period_interval=1440",
   "books": [
     {
       "captured_at": "2026-09-17T23:07:31.276Z",
@@ -20552,6 +20552,234 @@
             [
               "0.0170",
               "29.89"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-02T20:57:32.666Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-T149999.99/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0010",
+              "39270.00"
+            ],
+            [
+              "0.0100",
+              "147682.57"
+            ],
+            [
+              "0.0200",
+              "9861.00"
+            ],
+            [
+              "0.0300",
+              "5260.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.0910",
+              "200.00"
+            ],
+            [
+              "0.1000",
+              "12500.00"
+            ],
+            [
+              "0.1300",
+              "113.72"
+            ],
+            [
+              "0.1600",
+              "24149.00"
+            ],
+            [
+              "0.2000",
+              "312.64"
+            ],
+            [
+              "0.3000",
+              "4565.72"
+            ],
+            [
+              "0.3400",
+              "789.11"
+            ],
+            [
+              "0.3800",
+              "192.11"
+            ],
+            [
+              "0.4700",
+              "3814.99"
+            ],
+            [
+              "0.4800",
+              "192.30"
+            ],
+            [
+              "0.4810",
+              "1539.01"
+            ],
+            [
+              "0.5000",
+              "2500.00"
+            ],
+            [
+              "0.5200",
+              "610.00"
+            ],
+            [
+              "0.5300",
+              "5865.00"
+            ],
+            [
+              "0.7000",
+              "1785.00"
+            ],
+            [
+              "0.8000",
+              "1562.00"
+            ],
+            [
+              "0.9000",
+              "1388.00"
+            ],
+            [
+              "0.9010",
+              "0.06"
+            ],
+            [
+              "0.9170",
+              "5.00"
+            ],
+            [
+              "0.9200",
+              "166.00"
+            ],
+            [
+              "0.9380",
+              "800.00"
+            ],
+            [
+              "0.9400",
+              "38.10"
+            ],
+            [
+              "0.9500",
+              "1315.00"
+            ],
+            [
+              "0.9510",
+              "0.12"
+            ],
+            [
+              "0.9600",
+              "211.00"
+            ],
+            [
+              "0.9640",
+              "1246.45"
+            ],
+            [
+              "0.9650",
+              "5930.24"
+            ],
+            [
+              "0.9660",
+              "400.00"
+            ],
+            [
+              "0.9670",
+              "17.25"
+            ],
+            [
+              "0.9750",
+              "85.00"
+            ],
+            [
+              "0.9760",
+              "164.14"
+            ],
+            [
+              "0.9770",
+              "200.00"
+            ],
+            [
+              "0.9780",
+              "494.91"
+            ],
+            [
+              "0.9790",
+              "99.60"
+            ],
+            [
+              "0.9800",
+              "212.00"
+            ],
+            [
+              "0.9810",
+              "64.34"
+            ],
+            [
+              "0.9820",
+              "1246.54"
+            ],
+            [
+              "0.9830",
+              "274.57"
+            ],
+            [
+              "0.9860",
+              "1924.45"
+            ],
+            [
+              "0.9870",
+              "428.22"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0010",
+              "919092.10"
+            ],
+            [
+              "0.0020",
+              "5024.25"
+            ],
+            [
+              "0.0030",
+              "5000.00"
+            ],
+            [
+              "0.0050",
+              "20000.00"
+            ],
+            [
+              "0.0060",
+              "2000.00"
+            ],
+            [
+              "0.0070",
+              "10000.00"
+            ],
+            [
+              "0.0080",
+              "75.00"
+            ],
+            [
+              "0.0100",
+              "400.00"
+            ],
+            [
+              "0.0110",
+              "162.00"
             ]
           ]
         }

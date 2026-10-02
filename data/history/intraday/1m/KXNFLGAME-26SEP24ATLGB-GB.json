@@ -12315,6 +12315,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T21:07:09.657Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP24ATLGB-GB/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12372,11 +12382,11 @@
     "yes_sub_title": "Green Bay"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP24ATLGB-GB",
-  "market_captured_at": "2026-10-02T12:47:02.799Z",
+  "market_captured_at": "2026-10-02T21:07:06.643Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-02T12:47:05.798Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-GB/candlesticks?start_ts=1790911141&end_ts=1790945223&period_interval=1",
+  "last_ingested_at": "2026-10-02T21:07:09.623Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-GB/candlesticks?start_ts=1790911141&end_ts=1790975226&period_interval=1",
   "trims": [
     {
       "at": "2026-09-25T05:19:57.693Z",

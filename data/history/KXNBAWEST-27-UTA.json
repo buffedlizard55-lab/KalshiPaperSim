@@ -6910,6 +6910,130 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T20:59:30.468Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-UTA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3888999.00"
+            ],
+            [
+              "0.0300",
+              "1444.00"
+            ],
+            [
+              "0.0600",
+              "936602.00"
+            ],
+            [
+              "0.1100",
+              "510874.00"
+            ],
+            [
+              "0.1800",
+              "407331.00"
+            ],
+            [
+              "0.2500",
+              "288884.00"
+            ],
+            [
+              "0.3200",
+              "239995.00"
+            ],
+            [
+              "0.3700",
+              "46.79"
+            ],
+            [
+              "0.3900",
+              "129099.00"
+            ],
+            [
+              "0.4500",
+              "304263.00"
+            ],
+            [
+              "0.5300",
+              "54528.00"
+            ],
+            [
+              "0.5600",
+              "142595.00"
+            ],
+            [
+              "0.6200",
+              "2042.00"
+            ],
+            [
+              "0.6800",
+              "72091.00"
+            ],
+            [
+              "0.7400",
+              "22822.00"
+            ],
+            [
+              "0.7500",
+              "24987.00"
+            ],
+            [
+              "0.8100",
+              "15152.00"
+            ],
+            [
+              "0.8300",
+              "1350.00"
+            ],
+            [
+              "0.8700",
+              "1387.58"
+            ],
+            [
+              "0.9000",
+              "3397.79"
+            ],
+            [
+              "0.9100",
+              "3150.00"
+            ],
+            [
+              "0.9300",
+              "3000.00"
+            ],
+            [
+              "0.9400",
+              "110.74"
+            ],
+            [
+              "0.9500",
+              "115.35"
+            ],
+            [
+              "0.9600",
+              "500503.91"
+            ],
+            [
+              "0.9700",
+              "10500.63"
+            ],
+            [
+              "0.9800",
+              "120336.55"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -6933,7 +7057,7 @@
     "no_sub_title": "Utah",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "43849.29",
+    "open_interest_fp": "48528.30",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0200",
@@ -6956,17 +7080,17 @@
     "ticker": "KXNBAWEST-27-UTA",
     "title": "Will Utah win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "0.00",
-    "volume_fp": "51347.06",
+    "volume_24h_fp": "4679.01",
+    "volume_fp": "56026.07",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "134723.65",
+    "yes_ask_size_fp": "120336.55",
     "yes_bid_dollars": "0.0100",
     "yes_bid_size_fp": "1.00",
     "yes_sub_title": "Utah"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-UTA",
-  "market_captured_at": "2026-10-02T12:39:46.721Z",
+  "market_captured_at": "2026-10-02T20:59:29.902Z",
   "status": "active",
-  "last_ingested_at": "2026-10-02T12:39:47.260Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-UTA/candlesticks?start_ts=1790913601&end_ts=1790944786&period_interval=1440"
+  "last_ingested_at": "2026-10-02T20:59:30.435Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-UTA/candlesticks?start_ts=1790913601&end_ts=1790974770&period_interval=1440"
 }

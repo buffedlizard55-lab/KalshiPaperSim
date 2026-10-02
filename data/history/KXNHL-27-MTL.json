@@ -9767,6 +9767,190 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T21:00:25.725Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-MTL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4466335.38"
+            ],
+            [
+              "0.0200",
+              "500.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0600",
+              "947091.00"
+            ],
+            [
+              "0.1100",
+              "516596.00"
+            ],
+            [
+              "0.1800",
+              "410316.00"
+            ],
+            [
+              "0.2500",
+              "294214.00"
+            ],
+            [
+              "0.2800",
+              "37.50"
+            ],
+            [
+              "0.3000",
+              "912.55"
+            ],
+            [
+              "0.3200",
+              "244803.09"
+            ],
+            [
+              "0.3900",
+              "131480.00"
+            ],
+            [
+              "0.4100",
+              "1783.40"
+            ],
+            [
+              "0.4500",
+              "323293.00"
+            ],
+            [
+              "0.4600",
+              "656.34"
+            ],
+            [
+              "0.5200",
+              "23.42"
+            ],
+            [
+              "0.5300",
+              "55535.00"
+            ],
+            [
+              "0.5400",
+              "2037.00"
+            ],
+            [
+              "0.5600",
+              "139300.00"
+            ],
+            [
+              "0.6200",
+              "281.29"
+            ],
+            [
+              "0.6700",
+              "31613.00"
+            ],
+            [
+              "0.6800",
+              "58617.00"
+            ],
+            [
+              "0.7000",
+              "37.50"
+            ],
+            [
+              "0.7500",
+              "25351.00"
+            ],
+            [
+              "0.8000",
+              "90.00"
+            ],
+            [
+              "0.8100",
+              "15431.00"
+            ],
+            [
+              "0.8200",
+              "1023.42"
+            ],
+            [
+              "0.8300",
+              "1309.94"
+            ],
+            [
+              "0.8500",
+              "1081.20"
+            ],
+            [
+              "0.8600",
+              "150.00"
+            ],
+            [
+              "0.8700",
+              "1004.38"
+            ],
+            [
+              "0.8800",
+              "124.85"
+            ],
+            [
+              "0.8900",
+              "1000.00"
+            ],
+            [
+              "0.9000",
+              "1028.63"
+            ],
+            [
+              "0.9100",
+              "1024.44"
+            ],
+            [
+              "0.9200",
+              "4002.49"
+            ],
+            [
+              "0.9300",
+              "18039.67"
+            ],
+            [
+              "0.9400",
+              "509629.82"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "221.03"
+            ],
+            [
+              "0.0200",
+              "505352.71"
+            ],
+            [
+              "0.0300",
+              "2132.97"
+            ],
+            [
+              "0.0400",
+              "20838.87"
+            ],
+            [
+              "0.0500",
+              "465.63"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -9790,7 +9974,7 @@
     "no_sub_title": "Montréal Canadiens",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
-    "open_interest_fp": "152647.08",
+    "open_interest_fp": "153725.76",
     "open_time": "2026-06-15T03:40:00Z",
     "previous_price_dollars": "0.0500",
     "previous_yes_ask_dollars": "0.0500",
@@ -9813,17 +9997,17 @@
     "ticker": "KXNHL-27-MTL",
     "title": "Will Montréal Canadiens win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.119801Z",
-    "volume_24h_fp": "5038.22",
-    "volume_fp": "165415.41",
+    "volume_24h_fp": "5179.26",
+    "volume_fp": "166494.09",
     "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "510221.36",
+    "yes_ask_size_fp": "509629.82",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "471.60",
+    "yes_bid_size_fp": "465.63",
     "yes_sub_title": "Montréal Canadiens"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-MTL",
-  "market_captured_at": "2026-10-02T12:40:28.137Z",
+  "market_captured_at": "2026-10-02T21:00:25.158Z",
   "status": "active",
-  "last_ingested_at": "2026-10-02T12:40:28.674Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MTL/candlesticks?start_ts=1790913601&end_ts=1790944828&period_interval=1440"
+  "last_ingested_at": "2026-10-02T21:00:25.693Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MTL/candlesticks?start_ts=1790913601&end_ts=1790974825&period_interval=1440"
 }
