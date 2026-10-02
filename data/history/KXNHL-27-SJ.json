@@ -1038,6 +1038,31 @@
         "low_dollars": "0.0400",
         "open_dollars": "0.0400"
       }
+    },
+    {
+      "end_period_ts": 1790913600,
+      "open_interest_fp": "230505.56",
+      "price": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0541",
+        "open_dollars": "0.0500",
+        "previous_dollars": "0.0500"
+      },
+      "volume_fp": "34645.67",
+      "yes_ask": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0400"
+      }
     }
   ],
   "books": [
@@ -10156,6 +10181,222 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T06:01:17.601Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-SJ/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4481772.66"
+            ],
+            [
+              "0.0200",
+              "500.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "6.00"
+            ],
+            [
+              "0.0600",
+              "953128.00"
+            ],
+            [
+              "0.1000",
+              "225.03"
+            ],
+            [
+              "0.1100",
+              "519934.85"
+            ],
+            [
+              "0.1800",
+              "411265.00"
+            ],
+            [
+              "0.1900",
+              "93.76"
+            ],
+            [
+              "0.2400",
+              "356.30"
+            ],
+            [
+              "0.2500",
+              "294578.00"
+            ],
+            [
+              "0.2800",
+              "281.29"
+            ],
+            [
+              "0.2900",
+              "67.06"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3200",
+              "240632.00"
+            ],
+            [
+              "0.3900",
+              "131642.00"
+            ],
+            [
+              "0.4600",
+              "325237.27"
+            ],
+            [
+              "0.4700",
+              "390.94"
+            ],
+            [
+              "0.4800",
+              "18.75"
+            ],
+            [
+              "0.5000",
+              "575.49"
+            ],
+            [
+              "0.5300",
+              "57192.00"
+            ],
+            [
+              "0.5400",
+              "2029.00"
+            ],
+            [
+              "0.5700",
+              "138462.74"
+            ],
+            [
+              "0.5800",
+              "375.05"
+            ],
+            [
+              "0.6300",
+              "28.58"
+            ],
+            [
+              "0.6400",
+              "1560.69"
+            ],
+            [
+              "0.6600",
+              "330.24"
+            ],
+            [
+              "0.6700",
+              "33477.00"
+            ],
+            [
+              "0.6900",
+              "59663.00"
+            ],
+            [
+              "0.7600",
+              "25177.00"
+            ],
+            [
+              "0.7700",
+              "9.09"
+            ],
+            [
+              "0.8000",
+              "1264.30"
+            ],
+            [
+              "0.8100",
+              "15707.00"
+            ],
+            [
+              "0.8200",
+              "1005.00"
+            ],
+            [
+              "0.8300",
+              "9.09"
+            ],
+            [
+              "0.8400",
+              "1925.00"
+            ],
+            [
+              "0.8500",
+              "768.86"
+            ],
+            [
+              "0.8600",
+              "150.00"
+            ],
+            [
+              "0.8700",
+              "118.18"
+            ],
+            [
+              "0.8800",
+              "1271.28"
+            ],
+            [
+              "0.8900",
+              "152.27"
+            ],
+            [
+              "0.9100",
+              "1000.00"
+            ],
+            [
+              "0.9200",
+              "14506.94"
+            ],
+            [
+              "0.9300",
+              "14762.71"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "6104.00"
+            ],
+            [
+              "0.0200",
+              "1272.98"
+            ],
+            [
+              "0.0300",
+              "2400.25"
+            ],
+            [
+              "0.0400",
+              "4972.83"
+            ],
+            [
+              "0.0500",
+              "2061.12"
+            ],
+            [
+              "0.0600",
+              "1113.01"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -10171,15 +10412,15 @@
     "expected_expiration_time": "2027-07-01T14:00:00Z",
     "expiration_time": "2029-06-30T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0500",
+    "last_price_dollars": "0.0600",
     "latest_expiration_time": "2029-06-30T14:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.9600",
-    "no_bid_dollars": "0.9500",
+    "no_ask_dollars": "0.9400",
+    "no_bid_dollars": "0.9300",
     "no_sub_title": "San Jose Sharks",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-01T14:00:00Z",
-    "open_interest_fp": "199807.73",
+    "open_interest_fp": "234819.93",
     "open_time": "2026-06-15T03:40:00Z",
     "previous_price_dollars": "0.0500",
     "previous_yes_ask_dollars": "0.0500",
@@ -10202,17 +10443,17 @@
     "ticker": "KXNHL-27-SJ",
     "title": "Will San Jose Sharks win the 2026-27 Stanley Cup® Finals?",
     "updated_time": "2026-07-13T22:30:41.15927Z",
-    "volume_24h_fp": "4712.27",
-    "volume_fp": "209869.06",
-    "yes_ask_dollars": "0.0500",
-    "yes_ask_size_fp": "13802.64",
-    "yes_bid_dollars": "0.0400",
-    "yes_bid_size_fp": "583.49",
+    "volume_24h_fp": "37754.07",
+    "volume_fp": "247081.07",
+    "yes_ask_dollars": "0.0700",
+    "yes_ask_size_fp": "14762.71",
+    "yes_bid_dollars": "0.0600",
+    "yes_bid_size_fp": "1113.01",
     "yes_sub_title": "San Jose Sharks"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-SJ",
-  "market_captured_at": "2026-10-01T21:21:26.389Z",
+  "market_captured_at": "2026-10-02T06:01:17.066Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T21:21:26.924Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-SJ/candlesticks?start_ts=1790827201&end_ts=1790889686&period_interval=1440"
+  "last_ingested_at": "2026-10-02T06:01:17.586Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-SJ/candlesticks?start_ts=1790827201&end_ts=1790920877&period_interval=1440"
 }

@@ -1053,6 +1053,31 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1790913600,
+      "open_interest_fp": "682914.17",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "827.22",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -11833,6 +11858,230 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T06:01:01.805Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-NYG/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2629891.90"
+            ],
+            [
+              "0.0200",
+              "9001.00"
+            ],
+            [
+              "0.0300",
+              "7057.00"
+            ],
+            [
+              "0.0400",
+              "10.00"
+            ],
+            [
+              "0.0500",
+              "204.00"
+            ],
+            [
+              "0.1000",
+              "200.00"
+            ],
+            [
+              "0.1100",
+              "581945.00"
+            ],
+            [
+              "0.1300",
+              "1171.28"
+            ],
+            [
+              "0.1400",
+              "152.26"
+            ],
+            [
+              "0.1700",
+              "31868.63"
+            ],
+            [
+              "0.1800",
+              "100.00"
+            ],
+            [
+              "0.1900",
+              "2621.96"
+            ],
+            [
+              "0.2000",
+              "200.00"
+            ],
+            [
+              "0.2100",
+              "253663.27"
+            ],
+            [
+              "0.2400",
+              "9.37"
+            ],
+            [
+              "0.2500",
+              "167.05"
+            ],
+            [
+              "0.2700",
+              "150.02"
+            ],
+            [
+              "0.2800",
+              "117.12"
+            ],
+            [
+              "0.3100",
+              "206353.40"
+            ],
+            [
+              "0.3500",
+              "307.45"
+            ],
+            [
+              "0.3600",
+              "315.69"
+            ],
+            [
+              "0.3800",
+              "187.52"
+            ],
+            [
+              "0.4100",
+              "100289.00"
+            ],
+            [
+              "0.4500",
+              "317.75"
+            ],
+            [
+              "0.4600",
+              "206.27"
+            ],
+            [
+              "0.4800",
+              "93.64"
+            ],
+            [
+              "0.4900",
+              "11590.99"
+            ],
+            [
+              "0.5100",
+              "52547.00"
+            ],
+            [
+              "0.5200",
+              "1402.09"
+            ],
+            [
+              "0.5600",
+              "234.25"
+            ],
+            [
+              "0.6100",
+              "30645.00"
+            ],
+            [
+              "0.6200",
+              "4427.00"
+            ],
+            [
+              "0.6300",
+              "2034.00"
+            ],
+            [
+              "0.6400",
+              "218.49"
+            ],
+            [
+              "0.6600",
+              "312.13"
+            ],
+            [
+              "0.6700",
+              "312.13"
+            ],
+            [
+              "0.7100",
+              "20871.00"
+            ],
+            [
+              "0.7900",
+              "187.52"
+            ],
+            [
+              "0.8000",
+              "2.13"
+            ],
+            [
+              "0.8200",
+              "12795.00"
+            ],
+            [
+              "0.8400",
+              "121.21"
+            ],
+            [
+              "0.8500",
+              "1331.44"
+            ],
+            [
+              "0.8600",
+              "152.13"
+            ],
+            [
+              "0.8800",
+              "105.00"
+            ],
+            [
+              "0.9100",
+              "1863.60"
+            ],
+            [
+              "0.9200",
+              "3100.00"
+            ],
+            [
+              "0.9300",
+              "4.26"
+            ],
+            [
+              "0.9400",
+              "1637.24"
+            ],
+            [
+              "0.9500",
+              "149.68"
+            ],
+            [
+              "0.9600",
+              "2.85"
+            ],
+            [
+              "0.9700",
+              "3513.55"
+            ],
+            [
+              "0.9800",
+              "102836.34"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "13206.27"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -11855,7 +12104,7 @@
     "no_bid_dollars": "0.9800",
     "no_sub_title": "New York G",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "682961.05",
+    "open_interest_fp": "682914.17",
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.0100",
     "previous_yes_ask_dollars": "0.0100",
@@ -11878,17 +12127,17 @@
     "ticker": "KXNFLNFCCHAMP-27-NYG",
     "title": "Will New York G win the Pro Football NFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "2208.32",
-    "volume_fp": "860125.36",
+    "volume_24h_fp": "733.71",
+    "volume_fp": "860172.24",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "103351.68",
+    "yes_ask_size_fp": "102836.34",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "13265.15",
+    "yes_bid_size_fp": "13206.27",
     "yes_sub_title": "New York G"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-NYG",
-  "market_captured_at": "2026-10-01T21:21:09.791Z",
+  "market_captured_at": "2026-10-02T06:01:01.271Z",
   "status": "active",
-  "last_ingested_at": "2026-10-01T21:21:10.326Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-NYG/candlesticks?start_ts=1790827201&end_ts=1790889670&period_interval=1440"
+  "last_ingested_at": "2026-10-02T06:01:01.790Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-NYG/candlesticks?start_ts=1790827201&end_ts=1790920861&period_interval=1440"
 }

@@ -2124,6 +2124,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T06:05:15.082Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP30NYITOR-TOR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2149,9 +2159,9 @@
     "occurrence_datetime": "2026-10-01T02:30:00Z",
     "open_interest_fp": "378871.15",
     "open_time": "2026-09-25T22:05:00Z",
-    "previous_price_dollars": "0.5500",
-    "previous_yes_ask_dollars": "0.5500",
-    "previous_yes_bid_dollars": "0.5400",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2172,7 +2182,7 @@
     "ticker": "KXNHLGAME-26SEP30NYITOR-TOR",
     "title": "Toronto wins",
     "updated_time": "2026-10-01T02:44:46.551509Z",
-    "volume_24h_fp": "507185.58",
+    "volume_24h_fp": "0.00",
     "volume_fp": "571438.59",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2181,9 +2191,9 @@
     "yes_sub_title": "Toronto"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP30NYITOR-TOR",
-  "market_captured_at": "2026-10-01T21:25:28.897Z",
+  "market_captured_at": "2026-10-02T06:05:14.450Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-01T21:25:29.534Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP30NYITOR-TOR/candlesticks?start_ts=1790823601&end_ts=1790889929&period_interval=60"
+  "last_ingested_at": "2026-10-02T06:05:15.067Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP30NYITOR-TOR/candlesticks?start_ts=1790823601&end_ts=1790921114&period_interval=60"
 }
