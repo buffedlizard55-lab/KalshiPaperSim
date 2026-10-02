@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-02T03:16:05.507Z",
+ "generatedAt": "2026-10-02T09:50:16.854Z",
  "rows": [
   {
    "league": "nba",
@@ -30,6 +30,31 @@
   },
   {
    "league": "nba",
+   "kalshiCode": "DEN",
+   "kalshiName": "Denver",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "7",
+    "abbr": "DEN",
+    "displayName": "Denver Nuggets",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT04UTADEN-DEN",
+     "rulesName": "Denver",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT04UTADEN-UTA",
+     "rulesName": "Denver",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nba",
    "kalshiCode": "DET",
    "kalshiName": "Detroit",
    "conflictWith": null,
@@ -50,6 +75,26 @@
      "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
      "rulesName": "Detroit",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "LAL",
+   "kalshiName": "Los Angeles L",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "13",
+    "abbr": "LAL",
+    "displayName": "Los Angeles Lakers",
+    "matchedBy": "displayName-qualifier-letter"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT05LALSAC-SAC",
+     "rulesName": "Los Angeles L",
+     "role": "away"
     }
    ]
   },
@@ -130,6 +175,26 @@
   },
   {
    "league": "nba",
+   "kalshiCode": "SAC",
+   "kalshiName": "Sacramento",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "23",
+    "abbr": "SAC",
+    "displayName": "Sacramento Kings",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT05LALSAC-SAC",
+     "rulesName": "Sacramento",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nba",
    "kalshiCode": "SAS",
    "kalshiName": "San Antonio",
    "conflictWith": null,
@@ -150,6 +215,31 @@
      "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
      "rulesName": "San Antonio",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "UTA",
+   "kalshiName": "Utah",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "26",
+    "abbr": "UTAH",
+    "displayName": "Utah Jazz",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT04UTADEN-DEN",
+     "rulesName": "Utah",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT04UTADEN-UTA",
+     "rulesName": "Utah",
+     "role": "away"
     }
    ]
   },
@@ -2007,6 +2097,16 @@
    "espnReason": "MATCHED",
    "evidence": [
     {
+     "ticker": "KXNHLGAME-26OCT01FLASJ-FLA",
+     "rulesName": "Florida",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT01FLASJ-SJ",
+     "rulesName": "Florida",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP20CARFLA-CAR",
      "rulesName": "Florida",
      "role": "home"
@@ -2018,16 +2118,6 @@
     },
     {
      "ticker": "KXNHLGAME-26SEP22FLACAR-FLA",
-     "rulesName": "Florida",
-     "role": "away"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP29FLACAR-CAR",
-     "rulesName": "Florida",
-     "role": "away"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP29FLACAR-FLA",
      "rulesName": "Florida",
      "role": "away"
     }
@@ -2322,6 +2412,16 @@
    "espnReason": "MATCHED",
    "evidence": [
     {
+     "ticker": "KXNHLGAME-26OCT01FLASJ-FLA",
+     "rulesName": "San Jose",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT01FLASJ-SJ",
+     "rulesName": "San Jose",
+     "role": "home"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
      "rulesName": "San Jose",
      "role": "away"
@@ -2333,11 +2433,6 @@
     },
     {
      "ticker": "KXNHLGAME-26SEP22VGKSJ-SJ",
-     "rulesName": "San Jose",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP22VGKSJ-VGK",
      "rulesName": "San Jose",
      "role": "home"
     }
@@ -2640,6 +2735,11 @@
      "ticker": "KXWNBAGAME-26AUG20INDDAL-IND",
      "rulesName": "Indiana",
      "role": "away"
+    },
+    {
+     "ticker": "KXWNBAGAME-26OCT01INDLV-IND",
+     "rulesName": "Indiana",
+     "role": "away"
     }
    ]
   },
@@ -2666,20 +2766,15 @@
   {
    "league": "wnba",
    "kalshiCode": "LV",
-   "kalshiName": "Las Vegas",
-   "conflictWith": null,
-   "espn": {
-    "teamId": "17",
-    "abbr": "LV",
-    "displayName": "Las Vegas Aces",
-    "matchedBy": "displayName-prefix"
-   },
-   "espnReason": "MATCHED",
+   "kalshiName": "Las Vegas women's",
+   "conflictWith": "Las Vegas",
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
-     "ticker": "KXWNBAGAME-26AUG06LVIND-LV",
-     "rulesName": "Las Vegas",
-     "role": "away"
+     "ticker": "KXWNBAGAME-26OCT01INDLV-IND",
+     "rulesName": "Las Vegas women's",
+     "role": "home"
     }
    ]
   },
@@ -2776,6 +2871,14 @@
   },
   {
    "ticker": "KXNFLGAME-26AUG23SEATEN-TEN",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT01PITCLE-CLE",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT01PITCLE-PIT",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {

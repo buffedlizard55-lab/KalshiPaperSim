@@ -11,7 +11,8 @@
   "2026-10-01T10:12:01.915Z",
   "2026-10-01T20:04:29.592Z",
   "2026-10-01T23:55:44.399Z",
-  "2026-10-02T03:16:04.331Z"
+  "2026-10-02T03:16:04.331Z",
+  "2026-10-02T09:50:15.745Z"
  ],
  "events": {
   "401858245": {
@@ -38,7 +39,7 @@
    "states": [
     {
      "captured_at": "2026-10-01T10:12:01.915Z",
-     "last_seen_at": "2026-10-02T03:16:04.331Z",
+     "last_seen_at": "2026-10-02T09:50:15.745Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -82,7 +83,7 @@
    "states": [
     {
      "captured_at": "2026-10-01T10:12:01.915Z",
-     "last_seen_at": "2026-10-02T03:16:04.331Z",
+     "last_seen_at": "2026-10-02T09:50:15.745Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -126,7 +127,7 @@
    "states": [
     {
      "captured_at": "2026-10-01T10:12:01.915Z",
-     "last_seen_at": "2026-10-02T03:16:04.331Z",
+     "last_seen_at": "2026-10-02T09:50:15.745Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -147,6 +148,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-02T03:16:04.331Z",
+ "last_ingested_at": "2026-10-02T09:50:15.745Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261002"
 }

@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-02T03:16:03.303Z",
+ "startedAt": "2026-10-02T09:50:14.796Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -19,15 +19,15 @@
      "playerRecords": 800
     },
     "scoreboard": {
-     "2026-10-01": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261001",
-      "ok": true,
-      "status": 200,
-      "events": 1,
-      "stateRows": 2
-     },
      "2026-10-02": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261002",
+      "ok": true,
+      "status": 200,
+      "events": 0,
+      "stateRows": 0
+     },
+     "2026-10-03": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261003",
       "ok": true,
       "status": 200,
       "events": 0,
@@ -52,19 +52,19 @@
      "playerRecords": 59
     },
     "scoreboard": {
-     "2026-10-01": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261001",
-      "ok": true,
-      "status": 200,
-      "events": 0,
-      "stateRows": 0
-     },
      "2026-10-02": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261002",
       "ok": true,
       "status": 200,
       "events": 0,
       "stateRows": 0
+     },
+     "2026-10-03": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261003",
+      "ok": true,
+      "status": 200,
+      "events": 1,
+      "stateRows": 1
      }
     }
    }
@@ -85,19 +85,19 @@
      "playerRecords": 3
     },
     "scoreboard": {
-     "2026-10-01": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261001",
-      "ok": true,
-      "status": 200,
-      "events": 2,
-      "stateRows": 4
-     },
      "2026-10-02": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261002",
       "ok": true,
       "status": 200,
       "events": 3,
       "stateRows": 3
+     },
+     "2026-10-03": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261003",
+      "ok": true,
+      "status": 200,
+      "events": 54,
+      "stateRows": 54
      }
     }
    }
@@ -118,15 +118,15 @@
      "playerRecords": 0
     },
     "scoreboard": {
-     "2026-10-01": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20261001",
+     "2026-10-02": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20261002",
       "ok": true,
       "status": 200,
       "events": 0,
       "stateRows": 0
      },
-     "2026-10-02": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20261002",
+     "2026-10-03": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20261003",
       "ok": true,
       "status": 200,
       "events": 0,
@@ -151,19 +151,19 @@
      "playerRecords": 113
     },
     "scoreboard": {
-     "2026-10-01": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261001",
-      "ok": true,
-      "status": 200,
-      "events": 8,
-      "stateRows": 19
-     },
      "2026-10-02": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261002",
       "ok": true,
       "status": 200,
       "events": 5,
       "stateRows": 5
+     },
+     "2026-10-03": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261003",
+      "ok": true,
+      "status": 200,
+      "events": 13,
+      "stateRows": 13
      }
     }
    }
@@ -184,19 +184,19 @@
      "playerRecords": 50
     },
     "scoreboard": {
-     "2026-10-01": {
-      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261001",
-      "ok": true,
-      "status": 200,
-      "events": 1,
-      "stateRows": 2
-     },
      "2026-10-02": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261002",
       "ok": true,
       "status": 200,
       "events": 1,
       "stateRows": 1
+     },
+     "2026-10-03": {
+      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261003",
+      "ok": true,
+      "status": 200,
+      "events": 0,
+      "stateRows": 0
      }
     }
    }
@@ -204,9 +204,9 @@
  },
  "errors": [],
  "codeMap": {
-  "rows": 118,
-  "matched": 67,
-  "unmapped": 51
+  "rows": 122,
+  "matched": 70,
+  "unmapped": 52
  },
- "finishedAt": "2026-10-02T03:16:05.508Z"
+ "finishedAt": "2026-10-02T09:50:16.855Z"
 }
