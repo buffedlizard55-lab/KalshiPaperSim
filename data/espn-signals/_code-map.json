@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-02T19:43:44.709Z",
+ "generatedAt": "2026-10-02T23:31:30.379Z",
  "rows": [
   {
    "league": "nba",
@@ -94,6 +94,26 @@
     {
      "ticker": "KXNBAGAME-26OCT05LALSAC-SAC",
      "rulesName": "Los Angeles L",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "MIA",
+   "kalshiName": "Miami",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "14",
+    "abbr": "MIA",
+    "displayName": "Miami Heat",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT03MIATOR-MIA",
+     "rulesName": "Miami",
      "role": "away"
     }
    ]
@@ -214,6 +234,26 @@
     {
      "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
      "rulesName": "San Antonio",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "TOR",
+   "kalshiName": "Toronto",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "28",
+    "abbr": "TOR",
+    "displayName": "Toronto Raptors",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT03MIATOR-MIA",
+     "rulesName": "Toronto",
      "role": "home"
     }
    ]

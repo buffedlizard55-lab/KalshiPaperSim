@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-02T19:43:43.532Z",
+ "startedAt": "2026-10-02T23:31:28.763Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -90,7 +90,7 @@
       "ok": true,
       "status": 200,
       "events": 3,
-      "stateRows": 3
+      "stateRows": 5
      },
      "2026-10-03": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261003",
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 110
+     "playerRecords": 107
     },
     "scoreboard": {
      "2026-10-02": {
@@ -156,7 +156,7 @@
       "ok": true,
       "status": 200,
       "events": 5,
-      "stateRows": 5
+      "stateRows": 7
      },
      "2026-10-03": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261003",
@@ -204,11 +204,11 @@
  },
  "errors": [],
  "codeMap": {
-  "rows": 122,
-  "matched": 70,
+  "rows": 124,
+  "matched": 72,
   "unmapped": 52
  },
- "finishedAt": "2026-10-02T19:43:44.710Z"
+ "finishedAt": "2026-10-02T23:31:30.379Z"
 }
 {
  "ok": true,
@@ -217,14 +217,14 @@
   "scoreboards": 78,
   "injuries": 72,
   "teams": 209,
-  "codeRows": 122
+  "codeRows": 124
  }
 }
-✓ src/accumulated-history.js — 188 market(s), 14528 bar(s), 17520.8 KB
-✓ src/forecast-data.js — 9 location(s), 533 snapshot(s), 1057.2 KB
+✓ src/accumulated-history.js — 188 market(s), 14528 bar(s), 17652.3 KB
+✓ src/forecast-data.js — 9 location(s), 542 snapshot(s), 1074.9 KB
 ✓ src/fda-signal-data.js — 6 subject(s), 242 snapshot(s), 166.0 KB
 ✓ src/mlb-signal-data.js — 12 date file(s), 131 game(s), 491 state row(s), 306.7 KB
-✓ src/espn-signal-data.js — 7 league(s), 258 event(s), 15867.5 KB
+✓ src/espn-signal-data.js — 7 league(s), 258 event(s), 15969.8 KB
 ✓ src/mlb-pregame-data.js — 0 date file(s), 0 row(s), 2.1 KB (no predictions yet — MLBPreGame_ModelEdge abstains)
 ✓ src/form4-signal-data.js — 0 issuer(s), 0 filing(s), 1.3 KB (no archive yet — insider strategies abstain)
     JPMCEOCHANGE-27: 297 bar(s) + market object
@@ -415,11 +415,11 @@
     KXOPENAICEOCHANGE-26: 274 bar(s) + market object
     KXTESLACEOCHANGE-26: 0 bar(s) + market object
     TESLACEOCHANGE-26: 400 bar(s) + market object
-    intraday 1m: 814 market(s), 58194 shipped bar(s) (cap 400/market) from data/history/intraday/1m
-    intraday 60m: 564 market(s), 54784 shipped bar(s) (cap 400/market) from data/history/intraday/60m
-desk-data: 106 markets (96 open) · 1366 ladder captures · 7160 bars · 116 quoted-only · 2066 KB → src/desk-data.js
-desk-data: 138 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
-desk-data: capture bound — the store holds 31248 ladders (13155 non-empty) in 60 batches; this module keeps 1366 ladders in 61 batches (60 store batch(es) represented, 0 not) — 0 season round stamp(s) and 29881 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
+    intraday 1m: 836 market(s), 58546 shipped bar(s) (cap 400/market) from data/history/intraday/1m
+    intraday 60m: 566 market(s), 54942 shipped bar(s) (cap 400/market) from data/history/intraday/60m
+desk-data: 106 markets (96 open) · 1343 ladder captures · 7101 bars · 118 quoted-only · 2047 KB → src/desk-data.js
+desk-data: 140 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
+desk-data: capture bound — the store holds 31744 ladders (13307 non-empty) in 61 batches; this module keeps 1343 ladders in 62 batches (61 store batch(es) represented, 0 not) — 0 season round stamp(s) and 30400 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
   wrote VERIFICATION.md (99.5 KB)
   wrote IRREGULARITIES.md (123.1 KB)
   README.md AUTO blocks already up to date
