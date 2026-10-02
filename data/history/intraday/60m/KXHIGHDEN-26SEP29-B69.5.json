@@ -1267,6 +1267,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T12:42:05.516Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26SEP29-B69.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1283,7 +1293,6 @@
     "floor_strike": 69,
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-10-06T14:00:00Z",
-    "liquidity_dollars": "0.0000",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
@@ -1292,9 +1301,9 @@
     "occurrence_datetime": "2026-09-30T14:00:00Z",
     "open_interest_fp": "15996.02",
     "open_time": "2026-09-28T14:00:00Z",
-    "previous_price_dollars": "0.3100",
-    "previous_yes_ask_dollars": "0.3400",
-    "previous_yes_bid_dollars": "0.3100",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1306,6 +1315,7 @@
     "result": "no",
     "rules_primary": "If the maximum temperature recorded at Denver (CLIDEN) for Sep 29, 2026, is between 69-70° fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
+    "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
     "settlement_ts": "2026-09-30T13:09:16.453866Z",
     "settlement_value_dollars": "0.0000",
@@ -1314,7 +1324,7 @@
     "ticker": "KXHIGHDEN-26SEP29-B69.5",
     "title": "Will the maximum temperature be 69-70° on Sep 29, 2026?",
     "updated_time": "2026-09-30T13:09:16.665942Z",
-    "volume_24h_fp": "14498.63",
+    "volume_24h_fp": "0.00",
     "volume_fp": "21745.97",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1323,9 +1333,9 @@
     "yes_sub_title": "69° to 70°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26SEP29-B69.5",
-  "market_captured_at": "2026-09-30T21:03:42.893Z",
+  "market_captured_at": "2026-10-02T12:42:04.843Z",
   "status": "finalized",
-  "last_ingested_at": "2026-09-30T21:03:43.516Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP29-B69.5/candlesticks?start_ts=1790755201&end_ts=1790802223&period_interval=60",
+  "last_ingested_at": "2026-10-02T12:42:05.480Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26SEP29-B69.5/candlesticks?start_ts=1790755201&end_ts=1790944925&period_interval=60",
   "result": "no"
 }

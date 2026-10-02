@@ -864,6 +864,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T12:44:48.654Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26OCT01INDLV-IND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -889,9 +899,9 @@
     "occurrence_datetime": "2026-10-02T04:00:00Z",
     "open_interest_fp": "2140693.99",
     "open_time": "2026-09-30T18:40:00Z",
-    "previous_price_dollars": "0.3800",
-    "previous_yes_ask_dollars": "0.3800",
-    "previous_yes_bid_dollars": "0.3700",
+    "previous_price_dollars": "0.3600",
+    "previous_yes_ask_dollars": "0.3600",
+    "previous_yes_bid_dollars": "0.3500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -912,7 +922,7 @@
     "ticker": "KXWNBAGAME-26OCT01INDLV-IND",
     "title": "Indiana wins",
     "updated_time": "2026-10-02T03:43:14.338705Z",
-    "volume_24h_fp": "3663313.33",
+    "volume_24h_fp": "3643429.08",
     "volume_fp": "3698096.41",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -921,9 +931,9 @@
     "yes_sub_title": "Indiana"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26OCT01INDLV-IND",
-  "market_captured_at": "2026-10-02T08:55:04.499Z",
+  "market_captured_at": "2026-10-02T12:44:47.983Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-02T08:55:05.123Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26OCT01INDLV-IND/candlesticks?start_ts=1790913601&end_ts=1790931304&period_interval=60"
+  "last_ingested_at": "2026-10-02T12:44:48.619Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26OCT01INDLV-IND/candlesticks?start_ts=1790913601&end_ts=1790945088&period_interval=60"
 }

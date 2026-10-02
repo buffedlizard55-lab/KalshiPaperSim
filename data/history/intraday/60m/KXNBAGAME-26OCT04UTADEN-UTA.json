@@ -652,6 +652,91 @@
         "low_dollars": "0.3600",
         "open_dollars": "0.3800"
       }
+    },
+    {
+      "end_period_ts": 1790931600,
+      "open_interest_fp": "2581.81",
+      "price": {
+        "close_dollars": "0.3900",
+        "high_dollars": "0.4200",
+        "low_dollars": "0.3900",
+        "mean_dollars": "0.4050",
+        "open_dollars": "0.4200",
+        "previous_dollars": "0.3900"
+      },
+      "volume_fp": "4298.18",
+      "yes_ask": {
+        "close_dollars": "0.4200",
+        "high_dollars": "0.4300",
+        "low_dollars": "0.3900",
+        "open_dollars": "0.3900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4000",
+        "high_dollars": "0.4000",
+        "low_dollars": "0.3600",
+        "open_dollars": "0.3600"
+      }
+    },
+    {
+      "end_period_ts": 1790935200,
+      "open_interest_fp": "2581.81",
+      "price": {
+        "previous_dollars": "0.3900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4200",
+        "high_dollars": "0.4200",
+        "low_dollars": "0.4200",
+        "open_dollars": "0.4200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3900",
+        "high_dollars": "0.4000",
+        "low_dollars": "0.3900",
+        "open_dollars": "0.4000"
+      }
+    },
+    {
+      "end_period_ts": 1790938800,
+      "open_interest_fp": "2581.81",
+      "price": {
+        "previous_dollars": "0.3900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4100",
+        "high_dollars": "0.4200",
+        "low_dollars": "0.4100",
+        "open_dollars": "0.4200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3900",
+        "high_dollars": "0.3900",
+        "low_dollars": "0.3900",
+        "open_dollars": "0.3900"
+      }
+    },
+    {
+      "end_period_ts": 1790942400,
+      "open_interest_fp": "2581.81",
+      "price": {
+        "previous_dollars": "0.3900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4000",
+        "high_dollars": "0.4100",
+        "low_dollars": "0.4000",
+        "open_dollars": "0.4100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3900",
+        "high_dollars": "0.3900",
+        "low_dollars": "0.3900",
+        "open_dollars": "0.3900"
+      }
     }
   ],
   "books": [
@@ -974,6 +1059,162 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T12:44:19.629Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT04UTADEN-UTA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "310453.00"
+            ],
+            [
+              "0.0200",
+              "12699.00"
+            ],
+            [
+              "0.0300",
+              "954.00"
+            ],
+            [
+              "0.0400",
+              "230.00"
+            ],
+            [
+              "0.0500",
+              "671.00"
+            ],
+            [
+              "0.0600",
+              "82.00"
+            ],
+            [
+              "0.1200",
+              "500.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.1800",
+              "10.00"
+            ],
+            [
+              "0.2100",
+              "6.61"
+            ],
+            [
+              "0.5100",
+              "150.00"
+            ],
+            [
+              "0.5400",
+              "10.00"
+            ],
+            [
+              "0.5500",
+              "2174.00"
+            ],
+            [
+              "0.5600",
+              "780.00"
+            ],
+            [
+              "0.5700",
+              "484.00"
+            ],
+            [
+              "0.5800",
+              "769.00"
+            ],
+            [
+              "0.5900",
+              "1940.00"
+            ],
+            [
+              "0.6000",
+              "647.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "311235.00"
+            ],
+            [
+              "0.0200",
+              "13347.00"
+            ],
+            [
+              "0.0300",
+              "1412.00"
+            ],
+            [
+              "0.0400",
+              "464.00"
+            ],
+            [
+              "0.0500",
+              "778.00"
+            ],
+            [
+              "0.0600",
+              "166.00"
+            ],
+            [
+              "0.1100",
+              "500.00"
+            ],
+            [
+              "0.1200",
+              "300.00"
+            ],
+            [
+              "0.1300",
+              "500.00"
+            ],
+            [
+              "0.2100",
+              "52.00"
+            ],
+            [
+              "0.3100",
+              "2323.00"
+            ],
+            [
+              "0.3200",
+              "700.00"
+            ],
+            [
+              "0.3300",
+              "150.00"
+            ],
+            [
+              "0.3500",
+              "1299.00"
+            ],
+            [
+              "0.3600",
+              "788.00"
+            ],
+            [
+              "0.3700",
+              "787.00"
+            ],
+            [
+              "0.3800",
+              "1400.00"
+            ],
+            [
+              "0.3900",
+              "6.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -992,16 +1233,16 @@
     "last_price_dollars": "0.3900",
     "latest_expiration_time": "2026-10-06T23:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.6000",
-    "no_bid_dollars": "0.5800",
+    "no_ask_dollars": "0.6100",
+    "no_bid_dollars": "0.6000",
     "no_sub_title": "Utah",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-05T02:00:00Z",
     "open_interest_fp": "2581.81",
     "open_time": "2026-10-01T00:04:00.786482Z",
     "previous_price_dollars": "0.0000",
-    "previous_yes_ask_dollars": "0.8700",
-    "previous_yes_bid_dollars": "0.1300",
+    "previous_yes_ask_dollars": "0.2800",
+    "previous_yes_bid_dollars": "0.2200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1022,15 +1263,15 @@
     "updated_time": "2026-10-01T00:04:01.534195Z",
     "volume_24h_fp": "5954.95",
     "volume_fp": "5954.95",
-    "yes_ask_dollars": "0.4200",
-    "yes_ask_size_fp": "857.00",
-    "yes_bid_dollars": "0.4000",
-    "yes_bid_size_fp": "3.00",
+    "yes_ask_dollars": "0.4000",
+    "yes_ask_size_fp": "647.00",
+    "yes_bid_dollars": "0.3900",
+    "yes_bid_size_fp": "6.00",
     "yes_sub_title": "Utah"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT04UTADEN-UTA",
-  "market_captured_at": "2026-10-02T08:54:36.678Z",
+  "market_captured_at": "2026-10-02T12:44:18.956Z",
   "status": "active",
-  "last_ingested_at": "2026-10-02T08:54:37.301Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT04UTADEN-UTA/candlesticks?start_ts=1790920801&end_ts=1790931276&period_interval=60"
+  "last_ingested_at": "2026-10-02T12:44:19.593Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT04UTADEN-UTA/candlesticks?start_ts=1790928001&end_ts=1790945059&period_interval=60"
 }

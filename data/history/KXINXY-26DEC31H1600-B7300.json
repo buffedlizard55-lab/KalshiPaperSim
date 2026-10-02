@@ -14195,7 +14195,7 @@
     "last_price_dollars": "0.0800",
     "latest_expiration_time": "2027-01-08T00:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.9300",
+    "no_ask_dollars": "0.9400",
     "no_bid_dollars": "0.9200",
     "no_sub_title": "7,200 to 7,399.99",
     "notional_value_dollars": "1.0000",
@@ -14226,14 +14226,14 @@
     "volume_24h_fp": "1023.14",
     "volume_fp": "357711.04",
     "yes_ask_dollars": "0.0800",
-    "yes_ask_size_fp": "2383.85",
-    "yes_bid_dollars": "0.0700",
-    "yes_bid_size_fp": "608.75",
+    "yes_ask_size_fp": "2383.81",
+    "yes_bid_dollars": "0.0600",
+    "yes_bid_size_fp": "166.09",
     "yes_sub_title": "7,200 to 7,399.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7300",
-  "market_captured_at": "2026-10-02T08:48:44.687Z",
+  "market_captured_at": "2026-10-02T12:38:52.012Z",
   "status": "active",
-  "last_ingested_at": "2026-10-02T08:48:45.209Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7300/candlesticks?start_ts=1790913601&end_ts=1790930924&period_interval=1440"
+  "last_ingested_at": "2026-10-02T12:38:52.550Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7300/candlesticks?start_ts=1790913601&end_ts=1790944732&period_interval=1440"
 }
