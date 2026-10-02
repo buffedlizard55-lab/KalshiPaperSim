@@ -12,11 +12,11 @@
  * refuses any snapshot captured AFTER the decision time (the anti-lookahead
  * rule).
  *
- * 6 subject(s) · 230 shipped snapshot(s) · generated 2026-10-02T03:19:56.845Z
+ * 6 subject(s) · 236 shipped snapshot(s) · generated 2026-10-02T05:26:06.067Z
  */
 
 export const FDA_SIGNAL_DATA = {
- "generatedAt": "2026-10-02T03:19:56.845Z",
+ "generatedAt": "2026-10-02T05:26:06.067Z",
  "present": true,
  "subjects": {
   "camizestrant": {
@@ -31,8 +31,8 @@ export const FDA_SIGNAL_DATA = {
    },
    "what": "Point-in-time Drugs@FDA state for this subject: one snapshot per archive run. `approved` is derived from the verbatim marketing_status strings (a documented English-string test); every other field is verbatim from the official response.",
    "endpoint": "https://api.fda.gov/drug/drugsfda.json",
-   "snapshotCount": 39,
-   "shippedSnapshots": 39,
+   "snapshotCount": 40,
+   "shippedSnapshots": 40,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -814,6 +814,26 @@ export const FDA_SIGNAL_DATA = {
       "NDA220359"
      ],
      "newestSubmissionStatusDate": "20260904"
+    },
+    {
+     "captured_at": "2026-10-02T05:25:23.708Z",
+     "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name%3A%22camizestrant%22&limit=99",
+     "http_status": 200,
+     "meta": {
+      "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+      "last_updated": "2026-09-30",
+      "total": 1
+     },
+     "state": "APPROVED",
+     "approved": true,
+     "marketingStatuses": [
+      "Prescription"
+     ],
+     "applications": 1,
+     "applicationNumbers": [
+      "NDA220359"
+     ],
+     "newestSubmissionStatusDate": "20260904"
     }
    ]
   },
@@ -832,8 +852,8 @@ export const FDA_SIGNAL_DATA = {
    },
    "what": "Point-in-time Drugs@FDA state for this subject: one snapshot per archive run. `approved` is derived from the verbatim marketing_status strings (a documented English-string test); every other field is verbatim from the official response.",
    "endpoint": "https://api.fda.gov/drug/drugsfda.json",
-   "snapshotCount": 38,
-   "shippedSnapshots": 38,
+   "snapshotCount": 39,
+   "shippedSnapshots": 39,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -1481,6 +1501,23 @@ export const FDA_SIGNAL_DATA = {
      "applicationNumbers": [],
      "newestSubmissionStatusDate": null,
      "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
+    },
+    {
+     "captured_at": "2026-10-02T05:24:57.372Z",
+     "url": "https://api.fda.gov/drug/drugsfda.json?search=sponsor_name%3A%22compass%20pathways%22&limit=99",
+     "http_status": 404,
+     "meta": {
+      "disclaimer": null,
+      "last_updated": null,
+      "total": 0
+     },
+     "state": "NO_RECORD",
+     "approved": false,
+     "marketingStatuses": [],
+     "applications": 0,
+     "applicationNumbers": [],
+     "newestSubmissionStatusDate": null,
+     "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
     }
    ]
   },
@@ -1495,8 +1532,8 @@ export const FDA_SIGNAL_DATA = {
    },
    "what": "Point-in-time Drugs@FDA state for this subject: one snapshot per archive run. `approved` is derived from the verbatim marketing_status strings (a documented English-string test); every other field is verbatim from the official response.",
    "endpoint": "https://api.fda.gov/drug/drugsfda.json",
-   "snapshotCount": 38,
-   "shippedSnapshots": 38,
+   "snapshotCount": 39,
+   "shippedSnapshots": 39,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -2144,6 +2181,23 @@ export const FDA_SIGNAL_DATA = {
      "applicationNumbers": [],
      "newestSubmissionStatusDate": null,
      "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
+    },
+    {
+     "captured_at": "2026-10-02T05:25:37.651Z",
+     "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name%3A%22cytisinicline%22&limit=99",
+     "http_status": 404,
+     "meta": {
+      "disclaimer": null,
+      "last_updated": null,
+      "total": 0
+     },
+     "state": "NO_RECORD",
+     "approved": false,
+     "marketingStatuses": [],
+     "applications": 0,
+     "applicationNumbers": [],
+     "newestSubmissionStatusDate": null,
+     "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
     }
    ]
   },
@@ -2158,8 +2212,8 @@ export const FDA_SIGNAL_DATA = {
    },
    "what": "Point-in-time Drugs@FDA state for this subject: one snapshot per archive run. `approved` is derived from the verbatim marketing_status strings (a documented English-string test); every other field is verbatim from the official response.",
    "endpoint": "https://api.fda.gov/drug/drugsfda.json",
-   "snapshotCount": 39,
-   "shippedSnapshots": 39,
+   "snapshotCount": 40,
+   "shippedSnapshots": 40,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -2941,6 +2995,26 @@ export const FDA_SIGNAL_DATA = {
       "NDA219908"
      ],
      "newestSubmissionStatusDate": "20260714"
+    },
+    {
+     "captured_at": "2026-10-02T05:25:50.824Z",
+     "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name%3A%22gedatolisib%22&limit=99",
+     "http_status": 200,
+     "meta": {
+      "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+      "last_updated": "2026-09-30",
+      "total": 1
+     },
+     "state": "APPROVED",
+     "approved": true,
+     "marketingStatuses": [
+      "Prescription"
+     ],
+     "applications": 1,
+     "applicationNumbers": [
+      "NDA219908"
+     ],
+     "newestSubmissionStatusDate": "20260714"
     }
    ]
   },
@@ -2955,8 +3029,8 @@ export const FDA_SIGNAL_DATA = {
    },
    "what": "Point-in-time Drugs@FDA state for this subject: one snapshot per archive run. `approved` is derived from the verbatim marketing_status strings (a documented English-string test); every other field is verbatim from the official response.",
    "endpoint": "https://api.fda.gov/drug/drugsfda.json",
-   "snapshotCount": 38,
-   "shippedSnapshots": 38,
+   "snapshotCount": 39,
+   "shippedSnapshots": 39,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -3604,6 +3678,23 @@ export const FDA_SIGNAL_DATA = {
      "applicationNumbers": [],
      "newestSubmissionStatusDate": null,
      "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
+    },
+    {
+     "captured_at": "2026-10-02T05:26:04.667Z",
+     "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name%3A%22midomafetamine%22&limit=99",
+     "http_status": 404,
+     "meta": {
+      "disclaimer": null,
+      "last_updated": null,
+      "total": 0
+     },
+     "state": "NO_RECORD",
+     "approved": false,
+     "marketingStatuses": [],
+     "applications": 0,
+     "applicationNumbers": [],
+     "newestSubmissionStatusDate": null,
+     "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
     }
    ]
   },
@@ -3622,8 +3713,8 @@ export const FDA_SIGNAL_DATA = {
    },
    "what": "Point-in-time Drugs@FDA state for this subject: one snapshot per archive run. `approved` is derived from the verbatim marketing_status strings (a documented English-string test); every other field is verbatim from the official response.",
    "endpoint": "https://api.fda.gov/drug/drugsfda.json",
-   "snapshotCount": 38,
-   "shippedSnapshots": 38,
+   "snapshotCount": 39,
+   "shippedSnapshots": 39,
    "droppedOldestSnapshots": 0,
    "snapshots": [
     {
@@ -4257,6 +4348,23 @@ export const FDA_SIGNAL_DATA = {
     },
     {
      "captured_at": "2026-10-01T23:51:49.920Z",
+     "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name%3A%22retatrutide%22&limit=99",
+     "http_status": 404,
+     "meta": {
+      "disclaimer": null,
+      "last_updated": null,
+      "total": 0
+     },
+     "state": "NO_RECORD",
+     "approved": false,
+     "marketingStatuses": [],
+     "applications": 0,
+     "applicationNumbers": [],
+     "newestSubmissionStatusDate": null,
+     "notFoundError": "openFDA 404 NOT_FOUND \"No matches found!\" — the documented empty-result response, archived as NO_RECORD"
+    },
+    {
+     "captured_at": "2026-10-02T05:25:10.540Z",
      "url": "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name%3A%22retatrutide%22&limit=99",
      "http_status": 404,
      "meta": {
