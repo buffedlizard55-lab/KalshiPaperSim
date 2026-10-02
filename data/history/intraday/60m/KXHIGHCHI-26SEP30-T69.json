@@ -1571,6 +1571,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T08:51:38.074Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHCHI-26SEP30-T69/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1595,7 +1605,7 @@
     "open_interest_fp": "119679.39",
     "open_time": "2026-09-29T14:00:00Z",
     "previous_price_dollars": "0.0100",
-    "previous_yes_ask_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
     "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -1617,7 +1627,7 @@
     "ticker": "KXHIGHCHI-26SEP30-T69",
     "title": "Will the maximum temperature be <69° on Sep 30, 2026?",
     "updated_time": "2026-10-01T12:09:44.334652Z",
-    "volume_24h_fp": "1999.66",
+    "volume_24h_fp": "0.00",
     "volume_fp": "124963.81",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1626,9 +1636,9 @@
     "yes_sub_title": "68° or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHCHI-26SEP30-T69",
-  "market_captured_at": "2026-10-02T06:02:04.190Z",
+  "market_captured_at": "2026-10-02T08:51:37.433Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-02T06:02:04.808Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP30-T69/candlesticks?start_ts=1790838001&end_ts=1790920924&period_interval=60",
+  "last_ingested_at": "2026-10-02T08:51:38.054Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26SEP30-T69/candlesticks?start_ts=1790838001&end_ts=1790931097&period_interval=60",
   "result": "no"
 }

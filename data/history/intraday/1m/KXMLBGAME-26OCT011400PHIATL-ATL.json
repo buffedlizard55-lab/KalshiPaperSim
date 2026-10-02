@@ -12015,6 +12015,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T08:56:00.374Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT011400PHIATL-ATL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12063,7 +12073,7 @@
     "ticker": "KXMLBGAME-26OCT011400PHIATL-ATL",
     "title": "Atlanta wins",
     "updated_time": "2026-10-02T03:09:34.349955Z",
-    "volume_24h_fp": "9012837.54",
+    "volume_24h_fp": "8996886.82",
     "volume_fp": "9109292.61",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12072,11 +12082,11 @@
     "yes_sub_title": "Atlanta"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT011400PHIATL-ATL",
-  "market_captured_at": "2026-10-02T06:06:29.441Z",
+  "market_captured_at": "2026-10-02T08:55:59.732Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-02T06:06:30.399Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT011400PHIATL-ATL/candlesticks?start_ts=1790834789&end_ts=1790921188&period_interval=1",
+  "last_ingested_at": "2026-10-02T08:56:00.355Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT011400PHIATL-ATL/candlesticks?start_ts=1790910421&end_ts=1790931360&period_interval=1",
   "trims": [
     {
       "at": "2026-10-02T06:06:30.713Z",

@@ -10069,6 +10069,146 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T08:48:03.668Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4227.00"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.4900",
+              "1242.00"
+            ],
+            [
+              "0.5000",
+              "53.00"
+            ],
+            [
+              "0.6400",
+              "8.21"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ],
+            [
+              "0.8800",
+              "5.00"
+            ],
+            [
+              "0.9100",
+              "1300.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2053.45"
+            ],
+            [
+              "0.0200",
+              "1126.00"
+            ],
+            [
+              "0.0400",
+              "1.78"
+            ],
+            [
+              "0.0600",
+              "2829.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-02T08:58:34.142Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4227.00"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.4900",
+              "1242.00"
+            ],
+            [
+              "0.5000",
+              "53.00"
+            ],
+            [
+              "0.5100",
+              "3.00"
+            ],
+            [
+              "0.6400",
+              "8.21"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ],
+            [
+              "0.8800",
+              "5.00"
+            ],
+            [
+              "0.9100",
+              "1300.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2053.45"
+            ],
+            [
+              "0.0200",
+              "1126.00"
+            ],
+            [
+              "0.0400",
+              "1.78"
+            ],
+            [
+              "0.0600",
+              "2829.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -10095,7 +10235,7 @@
     "open_interest_fp": "6307.71",
     "open_time": "2026-03-24T14:00:00Z",
     "previous_price_dollars": "0.0600",
-    "previous_yes_ask_dollars": "0.0900",
+    "previous_yes_ask_dollars": "0.1200",
     "previous_yes_bid_dollars": "0.0600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -10124,8 +10264,8 @@
     "yes_sub_title": "Before November"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01",
-  "market_captured_at": "2026-10-02T06:09:02.815Z",
+  "market_captured_at": "2026-10-02T08:58:33.499Z",
   "status": "active",
-  "last_ingested_at": "2026-10-02T06:09:03.432Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26NOV01/candlesticks?start_ts=1790913601&end_ts=1790921343&period_interval=1440"
+  "last_ingested_at": "2026-10-02T08:58:34.122Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26NOV01/candlesticks?start_ts=1790913601&end_ts=1790931513&period_interval=1440"
 }

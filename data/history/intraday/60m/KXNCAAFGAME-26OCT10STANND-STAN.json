@@ -2282,6 +2282,46 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1790924400,
+      "open_interest_fp": "20022.87",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1790928000,
+      "open_interest_fp": "20022.87",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -3880,6 +3920,102 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-02T08:54:52.500Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10STANND-STAN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "121340.00"
+            ],
+            [
+              "0.0200",
+              "10732.00"
+            ],
+            [
+              "0.0300",
+              "5512.00"
+            ],
+            [
+              "0.0400",
+              "2756.00"
+            ],
+            [
+              "0.0500",
+              "133.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "26.00"
+            ],
+            [
+              "0.1700",
+              "184.00"
+            ],
+            [
+              "0.1800",
+              "29.04"
+            ],
+            [
+              "0.3300",
+              "46.79"
+            ],
+            [
+              "0.4200",
+              "150.00"
+            ],
+            [
+              "0.4700",
+              "36.00"
+            ],
+            [
+              "0.4800",
+              "3.98"
+            ],
+            [
+              "0.9200",
+              "732.00"
+            ],
+            [
+              "0.9300",
+              "717.00"
+            ],
+            [
+              "0.9400",
+              "762.96"
+            ],
+            [
+              "0.9500",
+              "418.30"
+            ],
+            [
+              "0.9600",
+              "10.71"
+            ],
+            [
+              "0.9700",
+              "5123.62"
+            ],
+            [
+              "0.9800",
+              "1089355.71"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "11139.10"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3929,14 +4065,14 @@
     "volume_24h_fp": "1431.46",
     "volume_fp": "20490.77",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "1089356.17",
+    "yes_ask_size_fp": "1089355.71",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "11367.10",
+    "yes_bid_size_fp": "11139.10",
     "yes_sub_title": "Stanford"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10STANND-STAN",
-  "market_captured_at": "2026-10-02T06:05:16.949Z",
+  "market_captured_at": "2026-10-02T08:54:51.858Z",
   "status": "active",
-  "last_ingested_at": "2026-10-02T06:05:17.566Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10STANND-STAN/candlesticks?start_ts=1790888401&end_ts=1790921117&period_interval=60"
+  "last_ingested_at": "2026-10-02T08:54:52.481Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10STANND-STAN/candlesticks?start_ts=1790920801&end_ts=1790931292&period_interval=60"
 }
