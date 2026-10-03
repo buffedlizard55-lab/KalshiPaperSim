@@ -2847,6 +2847,71 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1791018000,
+      "open_interest_fp": "24778.89",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1791021600,
+      "open_interest_fp": "24778.89",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1791025200,
+      "open_interest_fp": "25276.25",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0168",
+        "open_dollars": "0.0200",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "731.31",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -4924,6 +4989,106 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T11:48:16.045Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10STANND-STAN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "14915.00"
+            ],
+            [
+              "0.0200",
+              "10757.00"
+            ],
+            [
+              "0.0300",
+              "5512.00"
+            ],
+            [
+              "0.0400",
+              "3694.00"
+            ],
+            [
+              "0.0500",
+              "559.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "26.00"
+            ],
+            [
+              "0.1700",
+              "125.00"
+            ],
+            [
+              "0.3300",
+              "46.79"
+            ],
+            [
+              "0.4700",
+              "67.00"
+            ],
+            [
+              "0.4800",
+              "26.80"
+            ],
+            [
+              "0.7100",
+              "140.37"
+            ],
+            [
+              "0.8300",
+              "140.00"
+            ],
+            [
+              "0.8400",
+              "5.80"
+            ],
+            [
+              "0.9200",
+              "882.00"
+            ],
+            [
+              "0.9300",
+              "717.00"
+            ],
+            [
+              "0.9400",
+              "988.95"
+            ],
+            [
+              "0.9500",
+              "431.18"
+            ],
+            [
+              "0.9600",
+              "1199.50"
+            ],
+            [
+              "0.9700",
+              "5194.39"
+            ],
+            [
+              "0.9800",
+              "1082477.32"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1786.10"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4947,7 +5112,7 @@
     "no_sub_title": "Stanford",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-10T22:30:00Z",
-    "open_interest_fp": "24778.89",
+    "open_interest_fp": "25276.25",
     "open_time": "2026-09-26T22:08:00Z",
     "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0200",
@@ -4970,17 +5135,17 @@
     "ticker": "KXNCAAFGAME-26OCT10STANND-STAN",
     "title": "Stanford wins",
     "updated_time": "2026-09-26T22:08:01.125597Z",
-    "volume_24h_fp": "12294.82",
-    "volume_fp": "32785.59",
+    "volume_24h_fp": "13026.13",
+    "volume_fp": "33516.90",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "1082737.28",
+    "yes_ask_size_fp": "1082477.32",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "2020.05",
+    "yes_bid_size_fp": "1786.10",
     "yes_sub_title": "Stanford"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10STANND-STAN",
-  "market_captured_at": "2026-10-03T08:33:03.570Z",
+  "market_captured_at": "2026-10-03T11:48:15.386Z",
   "status": "active",
-  "last_ingested_at": "2026-10-03T08:33:04.239Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10STANND-STAN/candlesticks?start_ts=1791003601&end_ts=1791016383&period_interval=60"
+  "last_ingested_at": "2026-10-03T11:48:16.016Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10STANND-STAN/candlesticks?start_ts=1791014401&end_ts=1791028095&period_interval=60"
 }

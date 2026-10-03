@@ -454,6 +454,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T11:51:16.870Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG23SEATEN-SEA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -511,9 +521,9 @@
     "yes_sub_title": "SEA Seahawks"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26AUG23SEATEN-SEA",
-  "market_captured_at": "2026-10-03T08:36:22.094Z",
+  "market_captured_at": "2026-10-03T11:51:15.550Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-03T08:36:23.498Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG23SEATEN-SEA/candlesticks?start_ts=1790930182&end_ts=1791016581&period_interval=1"
+  "last_ingested_at": "2026-10-03T11:51:16.842Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG23SEATEN-SEA/candlesticks?start_ts=1790941875&end_ts=1791028274&period_interval=1"
 }

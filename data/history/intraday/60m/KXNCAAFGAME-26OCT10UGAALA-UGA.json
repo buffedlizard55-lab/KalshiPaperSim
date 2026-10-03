@@ -3598,6 +3598,71 @@
         "low_dollars": "0.5600",
         "open_dollars": "0.5600"
       }
+    },
+    {
+      "end_period_ts": 1791018000,
+      "open_interest_fp": "6117.09",
+      "price": {
+        "close_dollars": "0.5700",
+        "high_dollars": "0.5700",
+        "low_dollars": "0.5700",
+        "mean_dollars": "0.5700",
+        "open_dollars": "0.5700",
+        "previous_dollars": "0.5700"
+      },
+      "volume_fp": "17.03",
+      "yes_ask": {
+        "close_dollars": "0.5700",
+        "high_dollars": "0.5700",
+        "low_dollars": "0.5700",
+        "open_dollars": "0.5700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.5600",
+        "low_dollars": "0.5600",
+        "open_dollars": "0.5600"
+      }
+    },
+    {
+      "end_period_ts": 1791021600,
+      "open_interest_fp": "6117.09",
+      "price": {
+        "previous_dollars": "0.5700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.5700",
+        "high_dollars": "0.5700",
+        "low_dollars": "0.5700",
+        "open_dollars": "0.5700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.5600",
+        "low_dollars": "0.5600",
+        "open_dollars": "0.5600"
+      }
+    },
+    {
+      "end_period_ts": 1791025200,
+      "open_interest_fp": "6117.09",
+      "price": {
+        "previous_dollars": "0.5700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.5700",
+        "high_dollars": "0.5700",
+        "low_dollars": "0.5700",
+        "open_dollars": "0.5700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.5600",
+        "low_dollars": "0.5600",
+        "open_dollars": "0.5600"
+      }
     }
   ],
   "books": [
@@ -4148,6 +4213,278 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T11:48:22.512Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10UGAALA-UGA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "115079.77"
+            ],
+            [
+              "0.0200",
+              "9680.00"
+            ],
+            [
+              "0.0300",
+              "6190.23"
+            ],
+            [
+              "0.0400",
+              "9480.00"
+            ],
+            [
+              "0.0500",
+              "4674.99"
+            ],
+            [
+              "0.0600",
+              "719.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "2994.00"
+            ],
+            [
+              "0.0900",
+              "222.00"
+            ],
+            [
+              "0.1000",
+              "735.01"
+            ],
+            [
+              "0.1100",
+              "41.00"
+            ],
+            [
+              "0.1200",
+              "175.00"
+            ],
+            [
+              "0.1300",
+              "29.00"
+            ],
+            [
+              "0.1400",
+              "2.83"
+            ],
+            [
+              "0.1600",
+              "60.61"
+            ],
+            [
+              "0.1800",
+              "2075.00"
+            ],
+            [
+              "0.1900",
+              "2106.00"
+            ],
+            [
+              "0.2000",
+              "22.00"
+            ],
+            [
+              "0.2100",
+              "2151.24"
+            ],
+            [
+              "0.2200",
+              "3696.00"
+            ],
+            [
+              "0.2300",
+              "531.00"
+            ],
+            [
+              "0.2400",
+              "389.00"
+            ],
+            [
+              "0.2500",
+              "91.10"
+            ],
+            [
+              "0.2600",
+              "1000.00"
+            ],
+            [
+              "0.2700",
+              "140.00"
+            ],
+            [
+              "0.2900",
+              "150.00"
+            ],
+            [
+              "0.3000",
+              "33.04"
+            ],
+            [
+              "0.3100",
+              "1008.93"
+            ],
+            [
+              "0.3500",
+              "150.00"
+            ],
+            [
+              "0.3600",
+              "1000.00"
+            ],
+            [
+              "0.3700",
+              "168.00"
+            ],
+            [
+              "0.3800",
+              "458.36"
+            ],
+            [
+              "0.3900",
+              "24.86"
+            ],
+            [
+              "0.4000",
+              "295.86"
+            ],
+            [
+              "0.4100",
+              "3000.00"
+            ],
+            [
+              "0.4200",
+              "377.08"
+            ],
+            [
+              "0.4300",
+              "4527.01"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "113590.00"
+            ],
+            [
+              "0.0200",
+              "8270.00"
+            ],
+            [
+              "0.0300",
+              "7060.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "3096.00"
+            ],
+            [
+              "0.0900",
+              "333.00"
+            ],
+            [
+              "0.1000",
+              "820.00"
+            ],
+            [
+              "0.1100",
+              "486.00"
+            ],
+            [
+              "0.1200",
+              "156.00"
+            ],
+            [
+              "0.1300",
+              "359.00"
+            ],
+            [
+              "0.1400",
+              "418.00"
+            ],
+            [
+              "0.1500",
+              "131.00"
+            ],
+            [
+              "0.1600",
+              "43.00"
+            ],
+            [
+              "0.2000",
+              "131.00"
+            ],
+            [
+              "0.2100",
+              "166.00"
+            ],
+            [
+              "0.3300",
+              "2014.00"
+            ],
+            [
+              "0.3400",
+              "260.00"
+            ],
+            [
+              "0.3500",
+              "428.00"
+            ],
+            [
+              "0.4100",
+              "140.00"
+            ],
+            [
+              "0.4500",
+              "40.00"
+            ],
+            [
+              "0.5000",
+              "1000.00"
+            ],
+            [
+              "0.5100",
+              "150.00"
+            ],
+            [
+              "0.5200",
+              "225.00"
+            ],
+            [
+              "0.5300",
+              "1142.00"
+            ],
+            [
+              "0.5400",
+              "333.90"
+            ],
+            [
+              "0.5500",
+              "177.69"
+            ],
+            [
+              "0.5600",
+              "3589.31"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4171,7 +4508,7 @@
     "no_sub_title": "Georgia",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-10T20:00:00Z",
-    "open_interest_fp": "6117.09",
+    "open_interest_fp": "6176.69",
     "open_time": "2026-09-26T19:08:00Z",
     "previous_price_dollars": "0.6000",
     "previous_yes_ask_dollars": "0.6000",
@@ -4194,17 +4531,17 @@
     "ticker": "KXNCAAFGAME-26OCT10UGAALA-UGA",
     "title": "Georgia wins",
     "updated_time": "2026-09-28T22:12:30.031562Z",
-    "volume_24h_fp": "2019.96",
-    "volume_fp": "6723.34",
+    "volume_24h_fp": "2079.56",
+    "volume_fp": "6782.94",
     "yes_ask_dollars": "0.5700",
-    "yes_ask_size_fp": "4688.87",
+    "yes_ask_size_fp": "4527.01",
     "yes_bid_dollars": "0.5600",
-    "yes_bid_size_fp": "589.03",
+    "yes_bid_size_fp": "3589.31",
     "yes_sub_title": "Georgia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10UGAALA-UGA",
-  "market_captured_at": "2026-10-03T08:33:10.588Z",
+  "market_captured_at": "2026-10-03T11:48:21.851Z",
   "status": "active",
-  "last_ingested_at": "2026-10-03T08:33:11.258Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10UGAALA-UGA/candlesticks?start_ts=1791003601&end_ts=1791016390&period_interval=60"
+  "last_ingested_at": "2026-10-03T11:48:22.483Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10UGAALA-UGA/candlesticks?start_ts=1791014401&end_ts=1791028102&period_interval=60"
 }

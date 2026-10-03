@@ -2040,6 +2040,46 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1791018000,
+      "open_interest_fp": "4841.48",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1791021600,
+      "open_interest_fp": "4841.48",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -2214,6 +2254,94 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T11:48:23.805Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10STETUST-STET/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "120127.00"
+            ],
+            [
+              "0.0200",
+              "9917.00"
+            ],
+            [
+              "0.0300",
+              "7644.00"
+            ],
+            [
+              "0.0400",
+              "967.00"
+            ],
+            [
+              "0.0500",
+              "504.00"
+            ],
+            [
+              "0.0600",
+              "350.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "250.00"
+            ],
+            [
+              "0.1700",
+              "475.00"
+            ],
+            [
+              "0.5300",
+              "70.00"
+            ],
+            [
+              "0.5700",
+              "50.00"
+            ],
+            [
+              "0.5800",
+              "123.00"
+            ],
+            [
+              "0.8200",
+              "140.00"
+            ],
+            [
+              "0.9200",
+              "60.00"
+            ],
+            [
+              "0.9500",
+              "250.00"
+            ],
+            [
+              "0.9600",
+              "489.00"
+            ],
+            [
+              "0.9700",
+              "91809.52"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7977.00"
+            ],
+            [
+              "0.0200",
+              "1841.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2263,14 +2391,14 @@
     "volume_24h_fp": "2989.80",
     "volume_fp": "4841.48",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "91529.52",
+    "yes_ask_size_fp": "91809.52",
     "yes_bid_dollars": "0.0200",
     "yes_bid_size_fp": "1841.00",
     "yes_sub_title": "Stetson"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10STETUST-STET",
-  "market_captured_at": "2026-10-03T08:33:11.995Z",
+  "market_captured_at": "2026-10-03T11:48:23.144Z",
   "status": "active",
-  "last_ingested_at": "2026-10-03T08:33:12.663Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10STETUST-STET/candlesticks?start_ts=1790996401&end_ts=1791016392&period_interval=60"
+  "last_ingested_at": "2026-10-03T11:48:23.775Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10STETUST-STET/candlesticks?start_ts=1791010801&end_ts=1791028103&period_interval=60"
 }
