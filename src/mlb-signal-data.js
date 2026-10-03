@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 12 date file(s) · 131 game(s) · 491 state row(s) · generated 2026-10-03T09:12:17.960Z
+ * 13 date file(s) · 135 game(s) · 495 state row(s) · generated 2026-10-03T09:14:22.856Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-03T09:12:17.960Z",
+ "generatedAt": "2026-10-03T09:14:22.856Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-10-03T03:06:07.982Z",
+  "last_confirmed_at": "2026-10-03T09:14:21.325Z",
   "teams": [
    {
     "id": 108,
@@ -12193,6 +12193,208 @@ export const MLB_SIGNAL_DATA = {
         "home": 6
        },
        "winner": "home",
+       "url_ref": 0
+      }
+     ]
+    }
+   }
+  },
+  "2026-10-03": {
+   "date": "2026-10-03",
+   "what": "Point-in-time official MLB game state for this US-Eastern calendar date: one state row per CHANGE of (status, inning, inning state, runs, winner), each with the capture instant it was first seen; captures[] lists every run that read this date so staleness at any past time is measurable. Team codes are the official MLB abbreviations. Read only through src/mlb-signal-store.js (no row after the decision time is ever returned).",
+   "source": {
+    "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
+    "copyright": "Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt",
+    "terms": "http://gdx.mlb.com/components/copyright.txt",
+    "urls": [
+     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-02&endDate=2026-10-03&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
+    ]
+   },
+   "captures": [
+    "2026-10-03T09:14:21.326Z"
+   ],
+   "games": {
+    "849828": {
+     "gamePk": 849828,
+     "gameDate": "2026-10-03T20:00:00Z",
+     "officialDate": "2026-10-03",
+     "gameType": "D",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 144,
+      "abbreviation": "ATL",
+      "name": "Atlanta Braves"
+     },
+     "home": {
+      "id": 119,
+      "abbreviation": "LAD",
+      "name": "Los Angeles Dodgers"
+     },
+     "venue": "UNIQLO Field at Dodger Stadium",
+     "probablePitchers": {
+      "away": null,
+      "home": {
+       "id": 669373,
+       "fullName": "Tarik Skubal"
+      }
+     },
+     "firstCapturedAt": "2026-10-03T09:14:21.326Z",
+     "states": [
+      {
+       "captured_at": "2026-10-03T09:14:21.326Z",
+       "last_seen_at": "2026-10-03T09:14:21.326Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "849829": {
+     "gamePk": 849829,
+     "gameDate": "2026-10-03T17:00:00Z",
+     "officialDate": "2026-10-03",
+     "gameType": "D",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 145,
+      "abbreviation": "CWS",
+      "name": "Chicago White Sox"
+     },
+     "home": {
+      "id": 114,
+      "abbreviation": "CLE",
+      "name": "Cleveland Guardians"
+     },
+     "venue": "Progressive Field",
+     "probablePitchers": {
+      "away": {
+       "id": 696146,
+       "fullName": "Hagen Smith"
+      },
+      "home": {
+       "id": 800048,
+       "fullName": "Parker Messick"
+      }
+     },
+     "firstCapturedAt": "2026-10-03T09:14:21.326Z",
+     "states": [
+      {
+       "captured_at": "2026-10-03T09:14:21.326Z",
+       "last_seen_at": "2026-10-03T09:14:21.326Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "849830": {
+     "gamePk": 849830,
+     "gameDate": "2026-10-04T00:30:00Z",
+     "officialDate": "2026-10-03",
+     "gameType": "D",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 135,
+      "abbreviation": "SD",
+      "name": "San Diego Padres"
+     },
+     "home": {
+      "id": 158,
+      "abbreviation": "MIL",
+      "name": "Milwaukee Brewers"
+     },
+     "venue": "American Family Field",
+     "probablePitchers": {
+      "away": {
+       "id": 592662,
+       "fullName": "Robbie Ray"
+      },
+      "home": {
+       "id": 694819,
+       "fullName": "Jacob Misiorowski"
+      }
+     },
+     "firstCapturedAt": "2026-10-03T09:14:21.326Z",
+     "states": [
+      {
+       "captured_at": "2026-10-03T09:14:21.326Z",
+       "last_seen_at": "2026-10-03T09:14:21.326Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "849835": {
+     "gamePk": 849835,
+     "gameDate": "2026-10-03T22:30:00Z",
+     "officialDate": "2026-10-03",
+     "gameType": "D",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 147,
+      "abbreviation": "NYY",
+      "name": "New York Yankees"
+     },
+     "home": {
+      "id": 139,
+      "abbreviation": "TB",
+      "name": "Tampa Bay Rays"
+     },
+     "venue": "Tropicana Field",
+     "probablePitchers": {
+      "away": {
+       "id": 543037,
+       "fullName": "Gerrit Cole"
+      },
+      "home": {
+       "id": 656876,
+       "fullName": "Drew Rasmussen"
+      }
+     },
+     "firstCapturedAt": "2026-10-03T09:14:21.326Z",
+     "states": [
+      {
+       "captured_at": "2026-10-03T09:14:21.326Z",
+       "last_seen_at": "2026-10-03T09:14:21.326Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
        "url_ref": 0
       }
      ]
