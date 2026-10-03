@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-03T03:02:01.785Z",
+ "generatedAt": "2026-10-03T09:12:16.685Z",
  "rows": [
   {
    "league": "nba",
@@ -280,6 +280,21 @@
      "ticker": "KXNBAGAME-26OCT04UTADEN-UTA",
      "rulesName": "Utah",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "ALA",
+   "kalshiName": "Alabama",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10UGAALA-UGA",
+     "rulesName": "Alabama",
+     "role": "home"
     }
    ]
   },
@@ -1015,6 +1030,26 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "STET",
+   "kalshiName": "Stetson",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "56",
+    "abbr": "STET",
+    "displayName": "Stetson Hatters",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10STETUST-STET",
+     "rulesName": "Stetson",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "TARL",
    "kalshiName": "Tarleton St.",
    "conflictWith": null,
@@ -1182,6 +1217,11 @@
    "espnReason": "AMBIGUOUS_PREFIX_MATCH",
    "evidence": [
     {
+     "ticker": "KXNCAAFGAME-26OCT10UGAALA-UGA",
+     "rulesName": "Georgia",
+     "role": "away"
+    },
+    {
      "ticker": "KXNCAAFGAME-26SEP26OKLAUGA-UGA",
      "rulesName": "Georgia",
      "role": "home"
@@ -1239,6 +1279,21 @@
     {
      "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
      "rulesName": "USC",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "UST",
+   "kalshiName": "St. Thomas",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10STETUST-STET",
+     "rulesName": "St. Thomas",
      "role": "home"
     }
    ]
@@ -1847,6 +1902,16 @@
    "espnReason": "MATCHED",
    "evidence": [
     {
+     "ticker": "KXNHLGAME-26OCT02ANAVGK-ANA",
+     "rulesName": "Anaheim",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT02ANAVGK-VGK",
+     "rulesName": "Anaheim",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
      "rulesName": "Anaheim",
      "role": "home"
@@ -1858,11 +1923,6 @@
     },
     {
      "ticker": "KXNHLGAME-26SEP23LAANA-ANA",
-     "rulesName": "Anaheim",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP23LAANA-LA",
      "rulesName": "Anaheim",
      "role": "home"
     }
@@ -2065,6 +2125,11 @@
      "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
      "rulesName": "Dallas",
      "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT02STLDAL-DAL",
+     "rulesName": "Dallas",
+     "role": "home"
     }
    ]
   },
@@ -2500,6 +2565,11 @@
      "ticker": "KXNHLGAME-26SEP19DALSTL-STL",
      "rulesName": "St. Louis",
      "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT02STLDAL-DAL",
+     "rulesName": "St. Louis",
+     "role": "away"
     }
    ]
   },
@@ -2607,6 +2677,16 @@
      "role": "away"
     },
     {
+     "ticker": "KXNHLGAME-26OCT02ANAVGK-ANA",
+     "rulesName": "Vegas",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT02ANAVGK-VGK",
+     "rulesName": "Vegas",
+     "role": "home"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP19VGKLA-LA",
      "rulesName": "Vegas",
      "role": "away"
@@ -2615,16 +2695,6 @@
      "ticker": "KXNHLGAME-26SEP22VGKSJ-SJ",
      "rulesName": "Vegas",
      "role": "away"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP22VGKSJ-VGK",
-     "rulesName": "Vegas",
-     "role": "away"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP24UTAVGK-UTA",
-     "rulesName": "Vegas",
-     "role": "home"
     }
    ]
   },
@@ -2722,15 +2792,10 @@
    "league": "wnba",
    "kalshiCode": "DAL",
    "kalshiName": "Dallas women's",
-   "conflictWith": null,
+   "conflictWith": "Dallas",
    "espn": null,
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
-    {
-     "ticker": "KXWNBAGAME-26AUG20INDDAL-IND",
-     "rulesName": "Dallas women's",
-     "role": "home"
-    },
     {
      "ticker": "KXWNBAGAME-26SEP30GSDAL-GS",
      "rulesName": "Dallas women's",
@@ -2742,7 +2807,7 @@
    "league": "wnba",
    "kalshiCode": "GS",
    "kalshiName": "Golden State",
-   "conflictWith": null,
+   "conflictWith": "Golden State women's",
    "espn": {
     "teamId": "129689",
     "abbr": "GS",
@@ -2967,6 +3032,10 @@
   },
   {
    "ticker": "KXWNBAGAME-26AUG24GSMIN-MIN",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXWNBAGAME-26OCT02DALGS-GS",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
