@@ -10,7 +10,8 @@
   ]
  },
  "captures": [
-  "2026-10-03T09:14:21.326Z"
+  "2026-10-03T09:14:21.326Z",
+  "2026-10-03T18:52:47.576Z"
  ],
  "games": {
   "849828": {
@@ -32,7 +33,10 @@
    },
    "venue": "UNIQLO Field at Dodger Stadium",
    "probablePitchers": {
-    "away": null,
+    "away": {
+     "id": 689266,
+     "fullName": "Dylan Dodd"
+    },
     "home": {
      "id": 669373,
      "fullName": "Tarik Skubal"
@@ -51,6 +55,21 @@
      "runs": {
       "away": null,
       "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-03T18:52:47.576Z",
+     "last_seen_at": "2026-10-03T18:52:47.576Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
      },
      "winner": null,
      "url_ref": 0
@@ -101,6 +120,21 @@
      },
      "winner": null,
      "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-03T18:52:47.576Z",
+     "last_seen_at": "2026-10-03T18:52:47.576Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 6,
+     "inningState": "Top",
+     "runs": {
+      "away": 2,
+      "home": 0
+     },
+     "winner": null,
+     "url_ref": 0
     }
    ]
   },
@@ -136,7 +170,7 @@
    "states": [
     {
      "captured_at": "2026-10-03T09:14:21.326Z",
-     "last_seen_at": "2026-10-03T09:14:21.326Z",
+     "last_seen_at": "2026-10-03T18:52:47.576Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -183,7 +217,7 @@
    "states": [
     {
      "captured_at": "2026-10-03T09:14:21.326Z",
-     "last_seen_at": "2026-10-03T09:14:21.326Z",
+     "last_seen_at": "2026-10-03T18:52:47.576Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
