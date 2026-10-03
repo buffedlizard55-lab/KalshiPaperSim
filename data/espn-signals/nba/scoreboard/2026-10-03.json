@@ -11,7 +11,8 @@
   "2026-10-02T09:50:15.624Z",
   "2026-10-02T19:43:43.970Z",
   "2026-10-02T23:31:29.284Z",
-  "2026-10-03T02:18:11.848Z"
+  "2026-10-03T02:18:11.848Z",
+  "2026-10-03T03:02:00.728Z"
  ],
  "events": {
   "401902644": {
@@ -33,7 +34,7 @@
    "states": [
     {
      "captured_at": "2026-10-02T09:50:15.624Z",
-     "last_seen_at": "2026-10-03T02:18:11.848Z",
+     "last_seen_at": "2026-10-03T03:02:00.728Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -54,6 +55,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-03T02:18:11.848Z",
+ "last_ingested_at": "2026-10-03T03:02:00.728Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261003"
 }
