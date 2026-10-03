@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T11:52:05.532Z",
+  "generatedAt": "2026-10-03T19:35:43.860Z",
   "apiBase": "https://external-api.kalshi.com/trade-api/v2",
   "periodIntervalMinutes": 60,
   "storeDir": "data/history/intraday/60m",
@@ -24,13 +24,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H0/candlesticks?start_ts=1789581601&end_ts=1791028301&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H0/candlesticks?start_ts=1789581601&end_ts=1791056120&period_interval=60"
     },
     {
       "ticker": "KXFEDDECISION-26JUL-H0",
@@ -41,13 +41,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
       "windows": 3,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H0/candlesticks?start_ts=1790532001&end_ts=1791028302&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H0/candlesticks?start_ts=1790532001&end_ts=1791056121&period_interval=60"
     },
     {
       "ticker": "KXFEDDECISION-26SEP-H26",
@@ -58,13 +58,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H26/candlesticks?start_ts=1789581601&end_ts=1791028304&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H26/candlesticks?start_ts=1789581601&end_ts=1791056123&period_interval=60"
     },
     {
       "ticker": "KXFEDDECISION-26JUL-H25",
@@ -75,13 +75,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 3,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H25/candlesticks?start_ts=1790532001&end_ts=1791028305&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H25/candlesticks?start_ts=1790532001&end_ts=1791056124&period_interval=60"
     },
     {
       "ticker": "KXFEDDECISION-26SEP-H25",
@@ -92,13 +92,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H25/candlesticks?start_ts=1789581601&end_ts=1791028307&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-H25/candlesticks?start_ts=1789581601&end_ts=1791056126&period_interval=60"
     },
     {
       "ticker": "KXFEDDECISION-26JUL-H26",
@@ -109,13 +109,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 3,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H26/candlesticks?start_ts=1790532001&end_ts=1791028308&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-H26/candlesticks?start_ts=1790532001&end_ts=1791056127&period_interval=60"
     },
     {
       "ticker": "KXFEDDECISION-26SEP-C25",
@@ -126,13 +126,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-C25/candlesticks?start_ts=1789581601&end_ts=1791028310&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26SEP-C25/candlesticks?start_ts=1789581601&end_ts=1791056129&period_interval=60"
     },
     {
       "ticker": "KXFEDDECISION-26JUL-C25",
@@ -143,13 +143,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 3,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-C25/candlesticks?start_ts=1790532001&end_ts=1791028312&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-C25/candlesticks?start_ts=1790532001&end_ts=1791056130&period_interval=60"
     },
     {
       "ticker": "KXCPIYOY-26JUL-T3.4",
@@ -160,13 +160,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 2,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.4/candlesticks?start_ts=1789131601&end_ts=1791028314&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.4/candlesticks?start_ts=1789131601&end_ts=1791056132&period_interval=60"
     },
     {
       "ticker": "KXCPIYOY-26JUL-T3.3",
@@ -177,13 +177,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
       "windows": 2,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.3/candlesticks?start_ts=1789131601&end_ts=1791028315&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.3/candlesticks?start_ts=1789131601&end_ts=1791056134&period_interval=60"
     },
     {
       "ticker": "KXCPIYOY-26AUG-T3.4",
@@ -194,13 +194,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26AUG-T3.4/candlesticks?start_ts=1789131601&end_ts=1791028317&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26AUG-T3.4/candlesticks?start_ts=1789131601&end_ts=1791056135&period_interval=60"
     },
     {
       "ticker": "KXCPIYOY-26AUG-T3.3",
@@ -211,13 +211,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 60,
+      "books": 61,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26AUG-T3.3/candlesticks?start_ts=1789131601&end_ts=1791028318&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26AUG-T3.3/candlesticks?start_ts=1789131601&end_ts=1791056137&period_interval=60"
     },
     {
       "ticker": "KXCPIYOY-26JUL-T3.5",
@@ -228,30 +228,30 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 49,
+      "books": 50,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 2,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.5/candlesticks?start_ts=1789131601&end_ts=1791028320&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.5/candlesticks?start_ts=1789131601&end_ts=1791056138&period_interval=60"
     },
     {
       "ticker": "KXCPIYOY-26SEP-T3.6",
       "series": "KXCPIYOY",
       "period": 60,
-      "added": 1,
-      "total": 201,
+      "added": 5,
+      "total": 205,
       "kept": 200,
-      "trimmed": 1,
+      "trimmed": 5,
       "conflicts": 0,
-      "books": 8,
+      "books": 9,
       "market": "captured",
       "status": "active",
       "result": null,
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26SEP-T3.6/candlesticks?start_ts=1791014401&end_ts=1791028321&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26SEP-T3.6/candlesticks?start_ts=1791021601&end_ts=1791056140&period_interval=60"
     },
     {
       "ticker": "KXCPIYOY-26JUL-T3.2",
@@ -262,13 +262,13 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 49,
+      "books": 50,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
       "windows": 2,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.2/candlesticks?start_ts=1789131601&end_ts=1791028322&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26JUL-T3.2/candlesticks?start_ts=1789131601&end_ts=1791056141&period_interval=60"
     },
     {
       "ticker": "KXCPIYOY-26AUG-T3.5",
@@ -279,21 +279,21 @@
       "kept": 200,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 49,
+      "books": 50,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 1,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26AUG-T3.5/candlesticks?start_ts=1789131601&end_ts=1791028324&period_interval=60"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26AUG-T3.5/candlesticks?start_ts=1789131601&end_ts=1791056142&period_interval=60"
     }
   ],
   "totals": {
     "markets": 16,
-    "barsAdded": 1,
-    "barsStored": 3201,
+    "barsAdded": 5,
+    "barsStored": 3205,
     "barsKept": 3200,
-    "barsTrimmed": 1,
+    "barsTrimmed": 5,
     "conflicts": 0,
     "failures": 0
   },

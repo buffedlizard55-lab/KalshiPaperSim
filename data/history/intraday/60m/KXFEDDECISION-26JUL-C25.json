@@ -5565,6 +5565,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T19:35:31.817Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26JUL-C25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5622,11 +5632,11 @@
     "yes_sub_title": "Cut 25bps"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26JUL-C25",
-  "market_captured_at": "2026-10-03T11:51:51.943Z",
+  "market_captured_at": "2026-10-03T19:35:30.532Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-03T11:51:53.234Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-C25/candlesticks?start_ts=1790532001&end_ts=1791028312&period_interval=60",
+  "last_ingested_at": "2026-10-03T19:35:31.797Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26JUL-C25/candlesticks?start_ts=1790532001&end_ts=1791056130&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T06:41:36.938Z",
