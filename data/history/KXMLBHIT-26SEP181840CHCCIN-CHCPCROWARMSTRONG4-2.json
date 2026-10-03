@@ -529,6 +529,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T08:26:29.959Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -589,9 +599,9 @@
     "yes_sub_title": "Pete Crow-Armstrong: 2+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2",
-  "market_captured_at": "2026-10-03T05:34:19.194Z",
+  "market_captured_at": "2026-10-03T08:26:29.323Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-03T05:34:19.764Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2/candlesticks?start_ts=1789790401&end_ts=1791005659&period_interval=1440"
+  "last_ingested_at": "2026-10-03T08:26:29.893Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CHCPCROWARMSTRONG4-2/candlesticks?start_ts=1789790401&end_ts=1791015989&period_interval=1440"
 }

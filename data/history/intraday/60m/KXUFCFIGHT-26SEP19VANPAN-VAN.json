@@ -5804,6 +5804,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T08:33:27.198Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19VANPAN-VAN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5861,10 +5871,10 @@
     "yes_sub_title": "Joshua Van"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19VANPAN-VAN",
-  "market_captured_at": "2026-10-03T05:41:17.662Z",
+  "market_captured_at": "2026-10-03T08:33:26.463Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-03T05:41:18.331Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19VANPAN-VAN/candlesticks?start_ts=1789880401&end_ts=1791006077&period_interval=60",
+  "last_ingested_at": "2026-10-03T08:33:27.132Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19VANPAN-VAN/candlesticks?start_ts=1789880401&end_ts=1791016406&period_interval=60",
   "trims": [
     {
       "at": "2026-09-20T03:34:42.241Z",

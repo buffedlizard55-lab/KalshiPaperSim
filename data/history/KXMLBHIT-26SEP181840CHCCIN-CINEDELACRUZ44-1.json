@@ -529,6 +529,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T08:26:31.163Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -589,9 +599,9 @@
     "yes_sub_title": "Elly De La Cruz: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1",
-  "market_captured_at": "2026-10-03T05:34:20.401Z",
+  "market_captured_at": "2026-10-03T08:26:30.528Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-03T05:34:20.971Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1/candlesticks?start_ts=1789790401&end_ts=1791005660&period_interval=1440"
+  "last_ingested_at": "2026-10-03T08:26:31.097Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CINEDELACRUZ44-1/candlesticks?start_ts=1789790401&end_ts=1791015990&period_interval=1440"
 }

@@ -2015,6 +2015,31 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1791010800,
+      "open_interest_fp": "4841.48",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0300",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "936.40",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -2101,6 +2126,94 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T08:33:12.730Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10STETUST-STET/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "120227.00"
+            ],
+            [
+              "0.0200",
+              "9917.00"
+            ],
+            [
+              "0.0300",
+              "7644.00"
+            ],
+            [
+              "0.0400",
+              "975.00"
+            ],
+            [
+              "0.0500",
+              "340.00"
+            ],
+            [
+              "0.0600",
+              "528.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "250.00"
+            ],
+            [
+              "0.1700",
+              "482.00"
+            ],
+            [
+              "0.5300",
+              "70.00"
+            ],
+            [
+              "0.5700",
+              "50.00"
+            ],
+            [
+              "0.5800",
+              "123.00"
+            ],
+            [
+              "0.8200",
+              "140.00"
+            ],
+            [
+              "0.9200",
+              "158.00"
+            ],
+            [
+              "0.9500",
+              "250.00"
+            ],
+            [
+              "0.9600",
+              "52.00"
+            ],
+            [
+              "0.9700",
+              "91529.52"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "8289.00"
+            ],
+            [
+              "0.0200",
+              "1841.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2124,7 +2237,7 @@
     "no_sub_title": "Stetson",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-10T21:00:00Z",
-    "open_interest_fp": "3905.08",
+    "open_interest_fp": "4841.48",
     "open_time": "2026-09-26T19:08:00Z",
     "previous_price_dollars": "0.0300",
     "previous_yes_ask_dollars": "0.0300",
@@ -2147,17 +2260,17 @@
     "ticker": "KXNCAAFGAME-26OCT10STETUST-STET",
     "title": "Stetson wins",
     "updated_time": "2026-09-26T19:08:00.1821Z",
-    "volume_24h_fp": "2053.40",
-    "volume_fp": "3905.08",
+    "volume_24h_fp": "2989.80",
+    "volume_fp": "4841.48",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "92242.92",
+    "yes_ask_size_fp": "91529.52",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "1721.00",
+    "yes_bid_size_fp": "1841.00",
     "yes_sub_title": "Stetson"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT10STETUST-STET",
-  "market_captured_at": "2026-10-03T05:41:03.190Z",
+  "market_captured_at": "2026-10-03T08:33:11.995Z",
   "status": "active",
-  "last_ingested_at": "2026-10-03T05:41:03.866Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10STETUST-STET/candlesticks?start_ts=1790363280&end_ts=1791006063&period_interval=60"
+  "last_ingested_at": "2026-10-03T08:33:12.663Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT10STETUST-STET/candlesticks?start_ts=1790996401&end_ts=1791016392&period_interval=60"
 }

@@ -944,6 +944,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T08:28:53.509Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXTESLACEOCHANGE-26/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-03T08:37:48.978Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXTESLACEOCHANGE-26/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -995,8 +1015,8 @@
     "yes_sub_title": "Before 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXTESLACEOCHANGE-26",
-  "market_captured_at": "2026-10-03T05:45:41.342Z",
+  "market_captured_at": "2026-10-03T08:37:47.877Z",
   "status": "inactive",
-  "last_ingested_at": "2026-10-03T05:45:42.380Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXTESLACEOCHANGE/markets/KXTESLACEOCHANGE-26/candlesticks?start_ts=1782709260&end_ts=1791006341&period_interval=1440"
+  "last_ingested_at": "2026-10-03T08:37:48.912Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXTESLACEOCHANGE/markets/KXTESLACEOCHANGE-26/candlesticks?start_ts=1782709260&end_ts=1791016668&period_interval=1440"
 }
