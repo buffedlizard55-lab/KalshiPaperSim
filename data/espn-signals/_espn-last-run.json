@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-03T09:12:14.528Z",
+ "startedAt": "2026-10-03T18:30:11.532Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -49,7 +49,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 61
+     "playerRecords": 60
     },
     "scoreboard": {
      "2026-10-03": {
@@ -90,7 +90,7 @@
       "ok": true,
       "status": 200,
       "events": 54,
-      "stateRows": 54
+      "stateRows": 69
      },
      "2026-10-04": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261004",
@@ -208,5 +208,5 @@
   "matched": 73,
   "unmapped": 54
  },
- "finishedAt": "2026-10-03T09:12:16.685Z"
+ "finishedAt": "2026-10-03T18:30:12.801Z"
 }
