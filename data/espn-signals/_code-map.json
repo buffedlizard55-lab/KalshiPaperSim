@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-03T18:30:12.800Z",
+ "generatedAt": "2026-10-03T21:43:52.619Z",
  "rows": [
   {
    "league": "nba",
@@ -113,6 +113,11 @@
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT03MIATOR-MIA",
+     "rulesName": "Miami",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT03MIATOR-TOR",
      "rulesName": "Miami",
      "role": "away"
     }
@@ -255,6 +260,11 @@
      "ticker": "KXNBAGAME-26OCT03MIATOR-MIA",
      "rulesName": "Toronto",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT03MIATOR-TOR",
+     "rulesName": "Toronto",
+     "role": "home"
     }
    ]
   },
@@ -385,6 +395,46 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "CHSO",
+   "kalshiName": "Charleston Southern",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT16CHSOCLEM-CHSO",
+     "rulesName": "Charleston Southern",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT16CHSOCLEM-CLEM",
+     "rulesName": "Charleston Southern",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "CIT",
+   "kalshiName": "The Citadel",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT17CITTXAM-CIT",
+     "rulesName": "The Citadel",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17CITTXAM-TXAM",
+     "rulesName": "The Citadel",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "CLEM",
    "kalshiName": "Clemson",
    "conflictWith": null,
@@ -393,6 +443,16 @@
    "evidence": [
     {
      "ticker": "KXNCAAFGAME-26OCT03MIACLEM-CLEM",
+     "rulesName": "Clemson",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT16CHSOCLEM-CHSO",
+     "rulesName": "Clemson",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT16CHSOCLEM-CLEM",
      "rulesName": "Clemson",
      "role": "home"
     }
@@ -885,6 +945,26 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "PSU",
+   "kalshiName": "Penn St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT10USCPSU-PSU",
+     "rulesName": "Penn St.",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10USCPSU-USC",
+     "rulesName": "Penn St.",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "RUTG",
    "kalshiName": "Rutgers",
    "conflictWith": null,
@@ -1137,6 +1217,16 @@
      "role": "away"
     },
     {
+     "ticker": "KXNCAAFGAME-26OCT17CITTXAM-CIT",
+     "rulesName": "Texas A&M",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17CITTXAM-TXAM",
+     "rulesName": "Texas A&M",
+     "role": "home"
+    },
+    {
      "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
      "rulesName": "Texas A&M",
      "role": "away"
@@ -1280,6 +1370,16 @@
      "ticker": "KXNCAAFGAME-26SEP26OREUSC-ORE",
      "rulesName": "USC",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10USCPSU-PSU",
+     "rulesName": "USC",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT10USCPSU-USC",
+     "rulesName": "USC",
+     "role": "away"
     }
    ]
   },
