@@ -6628,6 +6628,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T05:35:36.046Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6685,9 +6695,9 @@
     "yes_sub_title": "SMU"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU",
-  "market_captured_at": "2026-10-02T20:59:42.051Z",
+  "market_captured_at": "2026-10-03T05:35:35.410Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-02T20:59:42.584Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU/candlesticks?start_ts=1790568001&end_ts=1790974782&period_interval=1440",
+  "last_ingested_at": "2026-10-03T05:35:35.979Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26MOSUSMU-SMU/candlesticks?start_ts=1790568001&end_ts=1791005735&period_interval=1440",
   "result": "yes"
 }

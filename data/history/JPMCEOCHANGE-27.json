@@ -6859,6 +6859,26 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1791000000,
+      "open_interest_fp": "5797.60",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -13993,6 +14013,150 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T05:32:58.627Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2316.74"
+            ],
+            [
+              "0.0200",
+              "3333.00"
+            ],
+            [
+              "0.4200",
+              "43.27"
+            ],
+            [
+              "0.4600",
+              "93.92"
+            ],
+            [
+              "0.5000",
+              "500.00"
+            ],
+            [
+              "0.6000",
+              "369.00"
+            ],
+            [
+              "0.6200",
+              "1303.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.8200",
+              "2.00"
+            ],
+            [
+              "0.8700",
+              "468.51"
+            ],
+            [
+              "0.9300",
+              "1000.00"
+            ],
+            [
+              "0.9600",
+              "500.00"
+            ],
+            [
+              "0.9700",
+              "0.41"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1504.46"
+            ],
+            [
+              "0.0200",
+              "12.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-03T05:45:45.273Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2316.74"
+            ],
+            [
+              "0.0200",
+              "3333.00"
+            ],
+            [
+              "0.4200",
+              "43.27"
+            ],
+            [
+              "0.4600",
+              "93.92"
+            ],
+            [
+              "0.5000",
+              "500.00"
+            ],
+            [
+              "0.6000",
+              "369.00"
+            ],
+            [
+              "0.6200",
+              "1303.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.8200",
+              "2.00"
+            ],
+            [
+              "0.8700",
+              "468.51"
+            ],
+            [
+              "0.9300",
+              "1000.00"
+            ],
+            [
+              "0.9600",
+              "500.00"
+            ],
+            [
+              "0.9700",
+              "0.41"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1504.46"
+            ],
+            [
+              "0.0200",
+              "12.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -14009,7 +14173,7 @@
     "latest_expiration_time": "2027-01-02T15:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.9800",
-    "no_bid_dollars": "0.9600",
+    "no_bid_dollars": "0.9700",
     "no_sub_title": "Before 2027",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-07-02T12:00:00Z",
@@ -14038,15 +14202,15 @@
     "updated_time": "2026-07-02T15:59:50.043493Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "17220.83",
-    "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "668.00",
+    "yes_ask_dollars": "0.0300",
+    "yes_ask_size_fp": "0.41",
     "yes_bid_dollars": "0.0200",
     "yes_bid_size_fp": "12.00",
     "yes_sub_title": "Before 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27",
-  "market_captured_at": "2026-10-02T21:08:49.688Z",
+  "market_captured_at": "2026-10-03T05:45:44.538Z",
   "status": "active",
-  "last_ingested_at": "2026-10-02T21:08:50.323Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1790913601&end_ts=1790975329&period_interval=1440"
+  "last_ingested_at": "2026-10-03T05:45:45.206Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1791000001&end_ts=1791006344&period_interval=1440"
 }

@@ -3402,6 +3402,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T05:40:47.015Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT01FLASJ-SJ/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3427,9 +3437,9 @@
     "occurrence_datetime": "2026-10-02T05:00:00Z",
     "open_interest_fp": "560623.07",
     "open_time": "2026-09-25T22:05:00Z",
-    "previous_price_dollars": "0.4400",
-    "previous_yes_ask_dollars": "0.4400",
-    "previous_yes_bid_dollars": "0.4300",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3450,7 +3460,7 @@
     "ticker": "KXNHLGAME-26OCT01FLASJ-SJ",
     "title": "San Jose wins",
     "updated_time": "2026-10-02T04:57:14.338162Z",
-    "volume_24h_fp": "872090.04",
+    "volume_24h_fp": "0.00",
     "volume_fp": "915447.09",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3459,9 +3469,9 @@
     "yes_sub_title": "San Jose"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT01FLASJ-SJ",
-  "market_captured_at": "2026-10-02T21:04:25.315Z",
+  "market_captured_at": "2026-10-03T05:40:46.279Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-02T21:04:25.946Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT01FLASJ-SJ/candlesticks?start_ts=1790917201&end_ts=1790975065&period_interval=60"
+  "last_ingested_at": "2026-10-03T05:40:46.948Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT01FLASJ-SJ/candlesticks?start_ts=1790917201&end_ts=1791006046&period_interval=60"
 }

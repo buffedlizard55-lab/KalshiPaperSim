@@ -4334,6 +4334,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-03T05:41:22.631Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP26ROSBAR-ROS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4391,9 +4401,9 @@
     "yes_sub_title": "Raul Rosas Jr"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP26ROSBAR-ROS",
-  "market_captured_at": "2026-10-02T21:04:59.582Z",
+  "market_captured_at": "2026-10-03T05:41:21.893Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-02T21:05:00.212Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP26ROSBAR-ROS/candlesticks?start_ts=1790478001&end_ts=1790975099&period_interval=60"
+  "last_ingested_at": "2026-10-03T05:41:22.564Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP26ROSBAR-ROS/candlesticks?start_ts=1790478001&end_ts=1791006082&period_interval=60"
 }
