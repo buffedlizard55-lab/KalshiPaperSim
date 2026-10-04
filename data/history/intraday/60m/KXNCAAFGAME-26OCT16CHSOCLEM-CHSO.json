@@ -497,6 +497,81 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1791108000,
+      "open_interest_fp": "19171.57",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.93",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1791111600,
+      "open_interest_fp": "19171.57",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "93.51",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1791115200,
+      "open_interest_fp": "19171.57",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "280.55",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -688,6 +763,77 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-04T12:30:32.628Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "113205.00"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "511.00"
+            ],
+            [
+              "0.0400",
+              "1000.00"
+            ],
+            [
+              "0.0500",
+              "427.00"
+            ],
+            [
+              "0.0600",
+              "26.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "26.00"
+            ],
+            [
+              "0.5700",
+              "467.59"
+            ],
+            [
+              "0.8400",
+              "140.00"
+            ],
+            [
+              "0.9000",
+              "1022.28"
+            ],
+            [
+              "0.9600",
+              "93.51"
+            ],
+            [
+              "0.9700",
+              "89.30"
+            ],
+            [
+              "0.9800",
+              "22.00"
+            ],
+            [
+              "0.9900",
+              "2334906.24"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -734,17 +880,17 @@
     "ticker": "KXNCAAFGAME-26OCT16CHSOCLEM-CHSO",
     "title": "Charleston Southern wins",
     "updated_time": "2026-10-03T01:07:00.587891Z",
-    "volume_24h_fp": "22221.34",
-    "volume_fp": "22221.34",
+    "volume_24h_fp": "22596.33",
+    "volume_fp": "22596.33",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "2335281.23",
+    "yes_ask_size_fp": "2334906.24",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Charleston Southern"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO",
-  "market_captured_at": "2026-10-04T08:46:36.855Z",
+  "market_captured_at": "2026-10-04T12:30:31.986Z",
   "status": "active",
-  "last_ingested_at": "2026-10-04T08:46:37.523Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO/candlesticks?start_ts=1791093601&end_ts=1791103597&period_interval=60"
+  "last_ingested_at": "2026-10-04T12:30:32.608Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO/candlesticks?start_ts=1791093601&end_ts=1791117032&period_interval=60"
 }

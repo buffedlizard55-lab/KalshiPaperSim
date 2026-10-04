@@ -17421,7 +17421,7 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "2355298.89",
     "open_time": "2026-01-21T22:00:00Z",
-    "previous_price_dollars": "0.0300",
+    "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0300",
     "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
@@ -17442,17 +17442,17 @@
     "ticker": "KXNCAAF-27-MISS",
     "title": "Will Ole Miss win the College Football Playoff National Championship?",
     "updated_time": "2026-09-15T15:39:56.116155Z",
-    "volume_24h_fp": "71383.44",
-    "volume_fp": "5367971.23",
+    "volume_24h_fp": "71162.91",
+    "volume_fp": "5368626.68",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "206152.23",
+    "yes_ask_size_fp": "205779.68",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "24885.15",
+    "yes_bid_size_fp": "24641.08",
     "yes_sub_title": "Ole Miss"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-MISS",
-  "market_captured_at": "2026-10-04T08:41:05.507Z",
+  "market_captured_at": "2026-10-04T12:25:52.729Z",
   "status": "active",
-  "last_ingested_at": "2026-10-04T08:41:06.075Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-MISS/candlesticks?start_ts=1791086401&end_ts=1791103265&period_interval=1440"
+  "last_ingested_at": "2026-10-04T12:25:53.253Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-MISS/candlesticks?start_ts=1791086401&end_ts=1791116752&period_interval=1440"
 }

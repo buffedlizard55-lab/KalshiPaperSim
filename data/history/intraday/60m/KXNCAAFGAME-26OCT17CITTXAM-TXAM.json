@@ -275,6 +275,77 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-04T12:30:35.156Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CITTXAM-TXAM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "6300.00"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "551.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "527.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "309.00"
+            ],
+            [
+              "0.2100",
+              "1.00"
+            ],
+            [
+              "0.3000",
+              "1.00"
+            ],
+            [
+              "0.4000",
+              "1.00"
+            ],
+            [
+              "0.4900",
+              "1.00"
+            ],
+            [
+              "0.8400",
+              "140.00"
+            ],
+            [
+              "0.9700",
+              "233.37"
+            ],
+            [
+              "0.9900",
+              "333826.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -330,8 +401,8 @@
     "yes_sub_title": "Texas A&M"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CITTXAM-TXAM",
-  "market_captured_at": "2026-10-04T08:46:39.658Z",
+  "market_captured_at": "2026-10-04T12:30:34.514Z",
   "status": "active",
-  "last_ingested_at": "2026-10-04T08:46:40.325Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CITTXAM-TXAM/candlesticks?start_ts=1791075601&end_ts=1791103599&period_interval=60"
+  "last_ingested_at": "2026-10-04T12:30:35.136Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CITTXAM-TXAM/candlesticks?start_ts=1791075601&end_ts=1791117034&period_interval=60"
 }

@@ -182,6 +182,66 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-04T12:30:38.951Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "115206.00"
+            ],
+            [
+              "0.0200",
+              "2550.00"
+            ],
+            [
+              "0.0300",
+              "1060.00"
+            ],
+            [
+              "0.0400",
+              "774.00"
+            ],
+            [
+              "0.0500",
+              "59.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.8100",
+              "140.00"
+            ],
+            [
+              "0.9400",
+              "22.00"
+            ],
+            [
+              "0.9600",
+              "99288.18"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "14215.00"
+            ],
+            [
+              "0.0200",
+              "1625.00"
+            ],
+            [
+              "0.0300",
+              "499.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -237,8 +297,8 @@
     "yes_sub_title": "Elon"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON",
-  "market_captured_at": "2026-10-04T08:46:43.867Z",
+  "market_captured_at": "2026-10-04T12:30:38.308Z",
   "status": "active",
-  "last_ingested_at": "2026-10-04T08:46:44.535Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON/candlesticks?start_ts=1790989560&end_ts=1791103604&period_interval=60"
+  "last_ingested_at": "2026-10-04T12:30:38.931Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON/candlesticks?start_ts=1791097201&end_ts=1791117038&period_interval=60"
 }

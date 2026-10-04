@@ -2669,6 +2669,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-04T12:30:30.099Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP29FLACAR-CAR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2726,9 +2736,9 @@
     "yes_sub_title": "Carolina"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP29FLACAR-CAR",
-  "market_captured_at": "2026-10-04T08:46:34.048Z",
+  "market_captured_at": "2026-10-04T12:30:29.456Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-04T08:46:34.716Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP29FLACAR-CAR/candlesticks?start_ts=1790730001&end_ts=1791103594&period_interval=60",
+  "last_ingested_at": "2026-10-04T12:30:30.079Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP29FLACAR-CAR/candlesticks?start_ts=1790730001&end_ts=1791117029&period_interval=60",
   "result": "no"
 }

@@ -8753,6 +8753,66 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-04T12:34:44.542Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-28JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2272.00"
+            ],
+            [
+              "0.0200",
+              "110.00"
+            ],
+            [
+              "0.0700",
+              "201.00"
+            ],
+            [
+              "0.0800",
+              "3.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5605.00"
+            ],
+            [
+              "0.0300",
+              "3333.00"
+            ],
+            [
+              "0.0400",
+              "110.00"
+            ],
+            [
+              "0.1100",
+              "49.00"
+            ],
+            [
+              "0.3500",
+              "1.00"
+            ],
+            [
+              "0.4500",
+              "265.00"
+            ],
+            [
+              "0.8400",
+              "200.00"
+            ],
+            [
+              "0.8500",
+              "5.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -8807,8 +8867,8 @@
     "yes_sub_title": "Before 2028"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-28JAN01",
-  "market_captured_at": "2026-10-04T08:51:20.199Z",
+  "market_captured_at": "2026-10-04T12:34:43.900Z",
   "status": "active",
-  "last_ingested_at": "2026-10-04T08:51:20.867Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-28JAN01/candlesticks?start_ts=1791086401&end_ts=1791103880&period_interval=1440"
+  "last_ingested_at": "2026-10-04T12:34:44.522Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-28JAN01/candlesticks?start_ts=1791086401&end_ts=1791117284&period_interval=1440"
 }
