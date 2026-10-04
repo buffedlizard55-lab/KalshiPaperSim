@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T19:35:19.639Z",
+  "generatedAt": "2026-10-04T06:20:24.218Z",
   "apiBase": "https://external-api.kalshi.com/trade-api/v2",
   "periodIntervalMinutes": 1,
   "storeDir": "data/history/intraday/1m",
@@ -24,13 +24,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 20,
+      "books": 21,
       "market": "captured",
       "status": "finalized",
       "result": "no",
-      "windows": 5,
+      "windows": 6,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP28PHICHI-PHI/candlesticks?start_ts=1790997181&end_ts=1791056042&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP28PHICHI-PHI/candlesticks?start_ts=1791083581&end_ts=1791094733&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP20INDKC-IND",
@@ -41,13 +41,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 47,
+      "books": 48,
       "market": "captured",
       "status": "finalized",
       "result": "no",
-      "windows": 13,
+      "windows": 14,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-IND/candlesticks?start_ts=1790999761&end_ts=1791056045&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-IND/candlesticks?start_ts=1791086161&end_ts=1791094736&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP27LARDEN-LAR",
@@ -58,13 +58,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 24,
+      "books": 25,
       "market": "captured",
       "status": "finalized",
       "result": "no",
-      "windows": 6,
+      "windows": 7,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-LAR/candlesticks?start_ts=1790999821&end_ts=1791056050&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-LAR/candlesticks?start_ts=1791086221&end_ts=1791094742&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
@@ -75,13 +75,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 47,
+      "books": 48,
       "market": "captured",
       "status": "finalized",
       "result": "no",
-      "windows": 12,
+      "windows": 13,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP21NYGLAR-NYG/candlesticks?start_ts=1790997181&end_ts=1791056053&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP21NYGLAR-NYG/candlesticks?start_ts=1791083581&end_ts=1791094746&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26OCT01PITCLE-PIT",
@@ -92,13 +92,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 8,
+      "books": 9,
       "market": "captured",
       "status": "finalized",
       "result": "no",
-      "windows": 2,
+      "windows": 3,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT01PITCLE-PIT/candlesticks?start_ts=1790999101&end_ts=1791056058&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT01PITCLE-PIT/candlesticks?start_ts=1791085501&end_ts=1791094751&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP27LARDEN-DEN",
@@ -109,13 +109,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 24,
+      "books": 25,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 6,
+      "windows": 7,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-DEN/candlesticks?start_ts=1790999821&end_ts=1791056060&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-DEN/candlesticks?start_ts=1791086221&end_ts=1791094753&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP20INDKC-KC",
@@ -126,13 +126,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 47,
+      "books": 48,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 13,
+      "windows": 14,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-KC/candlesticks?start_ts=1790999761&end_ts=1791056062&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20INDKC-KC/candlesticks?start_ts=1791086161&end_ts=1791094757&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP17DETBUF-DET",
@@ -143,13 +143,13 @@
       "kept": 0,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 47,
+      "books": 48,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 3,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP17DETBUF-DET/candlesticks?start_ts=1790969668&end_ts=1791056067&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP17DETBUF-DET/candlesticks?start_ts=1791008363&end_ts=1791094762&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26OCT01PITCLE-CLE",
@@ -160,13 +160,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 8,
+      "books": 9,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 2,
+      "windows": 3,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT01PITCLE-CLE/candlesticks?start_ts=1790999101&end_ts=1791056069&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT01PITCLE-CLE/candlesticks?start_ts=1791085501&end_ts=1791094765&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
@@ -177,13 +177,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 36,
+      "books": 37,
       "market": "captured",
       "status": "finalized",
       "result": "no",
-      "windows": 9,
+      "windows": 10,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-GB/candlesticks?start_ts=1790997541&end_ts=1791056071&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-GB/candlesticks?start_ts=1791083941&end_ts=1791094767&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
@@ -194,13 +194,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 36,
+      "books": 37,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 9,
+      "windows": 10,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-ATL/candlesticks?start_ts=1790997541&end_ts=1791056075&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP24ATLGB-ATL/candlesticks?start_ts=1791083941&end_ts=1791094771&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP28PHICHI-CHI",
@@ -211,13 +211,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 20,
+      "books": 21,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 5,
+      "windows": 6,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP28PHICHI-CHI/candlesticks?start_ts=1790997181&end_ts=1791056079&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP28PHICHI-CHI/candlesticks?start_ts=1791083581&end_ts=1791094776&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP27BALDAL-DAL",
@@ -228,13 +228,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 24,
+      "books": 25,
       "market": "captured",
       "status": "finalized",
       "result": "no",
-      "windows": 6,
+      "windows": 7,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27BALDAL-DAL/candlesticks?start_ts=1790984821&end_ts=1791056081&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27BALDAL-DAL/candlesticks?start_ts=1791071221&end_ts=1791094779&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP27BALDAL-BAL",
@@ -245,13 +245,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 24,
+      "books": 25,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 6,
+      "windows": 7,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27BALDAL-BAL/candlesticks?start_ts=1790984821&end_ts=1791056084&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27BALDAL-BAL/candlesticks?start_ts=1791071221&end_ts=1791094783&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP17DETBUF-BUF",
@@ -262,13 +262,13 @@
       "kept": 0,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 47,
+      "books": 48,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
       "windows": 3,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP17DETBUF-BUF/candlesticks?start_ts=1790969687&end_ts=1791056086&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP17DETBUF-BUF/candlesticks?start_ts=1791008386&end_ts=1791094785&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP27LVNO-LV",
@@ -279,13 +279,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 24,
+      "books": 25,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 6,
+      "windows": 7,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LVNO-LV/candlesticks?start_ts=1790984701&end_ts=1791056089&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LVNO-LV/candlesticks?start_ts=1791071101&end_ts=1791094788&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP27SEAWAS-SEA",
@@ -296,13 +296,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 24,
+      "books": 25,
       "market": "captured",
       "status": "finalized",
       "result": "no",
-      "windows": 6,
+      "windows": 7,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27SEAWAS-SEA/candlesticks?start_ts=1790972941&end_ts=1791056092&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27SEAWAS-SEA/candlesticks?start_ts=1791059341&end_ts=1791094792&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26AUG23SEATEN-SEA",
@@ -313,13 +313,13 @@
       "kept": 0,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 47,
+      "books": 48,
       "market": "captured",
       "status": "finalized",
       "result": "no",
       "windows": 3,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG23SEATEN-SEA/candlesticks?start_ts=1790969695&end_ts=1791056094&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG23SEATEN-SEA/candlesticks?start_ts=1791008395&end_ts=1791094794&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP27MINTB-TB",
@@ -330,13 +330,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 24,
+      "books": 25,
       "market": "captured",
       "status": "finalized",
       "result": "no",
-      "windows": 6,
+      "windows": 7,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27MINTB-TB/candlesticks?start_ts=1790983621&end_ts=1791056097&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27MINTB-TB/candlesticks?start_ts=1791070021&end_ts=1791094797&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
@@ -347,13 +347,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 47,
+      "books": 48,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 12,
+      "windows": 13,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP21NYGLAR-LAR/candlesticks?start_ts=1790997181&end_ts=1791056100&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP21NYGLAR-LAR/candlesticks?start_ts=1791083581&end_ts=1791094801&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP20PHITEN-PHI",
@@ -364,13 +364,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 47,
+      "books": 48,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 13,
+      "windows": 14,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20PHITEN-PHI/candlesticks?start_ts=1790971621&end_ts=1791056104&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20PHITEN-PHI/candlesticks?start_ts=1791058021&end_ts=1791094807&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26AUG23SEATEN-TEN",
@@ -381,13 +381,13 @@
       "kept": 0,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 47,
+      "books": 48,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
       "windows": 3,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG23SEATEN-TEN/candlesticks?start_ts=1790969710&end_ts=1791056109&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26AUG23SEATEN-TEN/candlesticks?start_ts=1791008413&end_ts=1791094812&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP20LVLAC-LV",
@@ -398,13 +398,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 43,
+      "books": 44,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 13,
+      "windows": 14,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20LVLAC-LV/candlesticks?start_ts=1790982781&end_ts=1791056111&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP20LVLAC-LV/candlesticks?start_ts=1791069181&end_ts=1791094815&period_interval=1"
     },
     {
       "ticker": "KXNFLGAME-26SEP27MINTB-MIN",
@@ -415,13 +415,13 @@
       "kept": 480,
       "trimmed": 0,
       "conflicts": 0,
-      "books": 20,
+      "books": 21,
       "market": "captured",
       "status": "finalized",
       "result": "yes",
-      "windows": 6,
+      "windows": 7,
       "error": null,
-      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27MINTB-MIN/candlesticks?start_ts=1790983621&end_ts=1791056117&period_interval=1"
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27MINTB-MIN/candlesticks?start_ts=1791070021&end_ts=1791094821&period_interval=1"
     }
   ],
   "totals": {

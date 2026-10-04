@@ -3,7 +3,117 @@
   "series_ticker": "KXNCAAFGAME",
   "period_interval": 60,
   "source": "live_api",
-  "candlesticks": [],
+  "candlesticks": [
+    {
+      "end_period_ts": 1791057600,
+      "open_interest_fp": "6200.00",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9500",
+        "mean_dollars": "0.9899",
+        "open_dollars": "0.9500"
+      },
+      "volume_fp": "6200.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.9500",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1791064800,
+      "open_interest_fp": "6200.00",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    },
+    {
+      "end_period_ts": 1791068400,
+      "open_interest_fp": "6200.00",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    },
+    {
+      "end_period_ts": 1791072000,
+      "open_interest_fp": "6200.00",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "mean_dollars": "0.9900",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "125.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    },
+    {
+      "end_period_ts": 1791075600,
+      "open_interest_fp": "6200.00",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    }
+  ],
   "books": [
     {
       "captured_at": "2026-10-03T19:31:58.809Z",
@@ -39,6 +149,57 @@
             [
               "0.9900",
               "438862.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-04T06:16:40.676Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CITTXAM-TXAM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "6312.00"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "551.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "527.00"
+            ],
+            [
+              "0.2000",
+              "309.00"
+            ],
+            [
+              "0.8400",
+              "140.00"
+            ],
+            [
+              "0.9700",
+              "201.12"
+            ],
+            [
+              "0.9900",
+              "333826.00"
             ]
           ]
         }
@@ -89,17 +250,17 @@
     "ticker": "KXNCAAFGAME-26OCT17CITTXAM-TXAM",
     "title": "Texas A&M wins",
     "updated_time": "2026-10-03T19:07:00.298463Z",
-    "volume_24h_fp": "6200.00",
-    "volume_fp": "6200.00",
+    "volume_24h_fp": "6325.00",
+    "volume_fp": "6325.00",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "438862.00",
+    "yes_bid_size_fp": "333826.00",
     "yes_sub_title": "Texas A&M"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CITTXAM-TXAM",
-  "market_captured_at": "2026-10-03T19:31:58.164Z",
+  "market_captured_at": "2026-10-04T06:16:39.965Z",
   "status": "active",
-  "last_ingested_at": "2026-10-03T19:31:58.788Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CITTXAM-TXAM/candlesticks?start_ts=1790968020&end_ts=1791055918&period_interval=60"
+  "last_ingested_at": "2026-10-04T06:16:40.623Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CITTXAM-TXAM/candlesticks?start_ts=1790968020&end_ts=1791094600&period_interval=60"
 }

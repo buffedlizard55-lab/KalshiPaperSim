@@ -257,6 +257,116 @@
         "low_dollars": "0.9000",
         "open_dollars": "0.9200"
       }
+    },
+    {
+      "end_period_ts": 1791057600,
+      "open_interest_fp": "8552.25",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9700",
+        "mean_dollars": "0.9863",
+        "open_dollars": "0.9700",
+        "previous_dollars": "0.9700"
+      },
+      "volume_fp": "7289.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9000",
+        "open_dollars": "0.9000"
+      }
+    },
+    {
+      "end_period_ts": 1791068400,
+      "open_interest_fp": "8552.25",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    },
+    {
+      "end_period_ts": 1791072000,
+      "open_interest_fp": "8552.25",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    },
+    {
+      "end_period_ts": 1791075600,
+      "open_interest_fp": "8552.25",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "mean_dollars": "0.9900",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "18.70",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    },
+    {
+      "end_period_ts": 1791093600,
+      "open_interest_fp": "8552.25",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -322,6 +432,77 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-04T06:16:39.310Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CLEM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "106849.00"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "550.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "25.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "446.00"
+            ],
+            [
+              "0.0900",
+              "392.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.6000",
+              "125.00"
+            ],
+            [
+              "0.8300",
+              "140.00"
+            ],
+            [
+              "0.9000",
+              "964.77"
+            ],
+            [
+              "0.9700",
+              "82.00"
+            ],
+            [
+              "0.9800",
+              "800.00"
+            ],
+            [
+              "0.9900",
+              "337314.30"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -348,8 +529,8 @@
     "open_interest_fp": "8552.25",
     "open_time": "2026-10-03T01:07:00Z",
     "previous_price_dollars": "0.0000",
-    "previous_yes_ask_dollars": "0.0000",
-    "previous_yes_bid_dollars": "0.0000",
+    "previous_yes_ask_dollars": "0.9300",
+    "previous_yes_bid_dollars": "0.1000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -368,17 +549,17 @@
     "ticker": "KXNCAAFGAME-26OCT16CHSOCLEM-CLEM",
     "title": "Clemson wins",
     "updated_time": "2026-10-03T01:07:00.587891Z",
-    "volume_24h_fp": "8552.25",
-    "volume_fp": "8552.25",
+    "volume_24h_fp": "8570.95",
+    "volume_fp": "8570.95",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "219042.00",
+    "yes_bid_size_fp": "337314.30",
     "yes_sub_title": "Clemson"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CLEM",
-  "market_captured_at": "2026-10-03T19:31:56.900Z",
+  "market_captured_at": "2026-10-04T06:16:38.601Z",
   "status": "active",
-  "last_ingested_at": "2026-10-03T19:31:57.523Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CLEM/candlesticks?start_ts=1790903220&end_ts=1791055917&period_interval=60"
+  "last_ingested_at": "2026-10-04T06:16:39.257Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CLEM/candlesticks?start_ts=1791054001&end_ts=1791094598&period_interval=60"
 }
