@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-04T18:30:43.741Z",
+ "generatedAt": "2026-10-04T21:53:56.545Z",
  "rows": [
   {
    "league": "nba",
@@ -662,6 +662,11 @@
      "role": "home"
     },
     {
+     "ticker": "KXNCAAFGAME-26OCT16MSSTLSU-LSU",
+     "rulesName": "LSU",
+     "role": "home"
+    },
+    {
      "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
      "rulesName": "LSU",
      "role": "home"
@@ -764,6 +769,21 @@
     {
      "ticker": "KXNCAAFGAME-26SEP26MOSUSMU-SMU",
      "rulesName": "Missouri St.",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "MSST",
+   "kalshiName": "Mississippi St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT16MSSTLSU-LSU",
+     "rulesName": "Mississippi St.",
      "role": "away"
     }
    ]
@@ -3144,6 +3164,10 @@
   },
   {
    "ticker": "KXNFLGAME-26OCT01PITCLE-PIT",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT04DALHOU-DAL",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
