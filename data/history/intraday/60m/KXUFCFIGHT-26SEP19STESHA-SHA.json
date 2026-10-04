@@ -5455,6 +5455,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-04T08:47:01.808Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19STESHA-SHA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5512,11 +5522,11 @@
     "yes_sub_title": "Sean Sharaf"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19STESHA-SHA",
-  "market_captured_at": "2026-10-04T06:16:59.637Z",
+  "market_captured_at": "2026-10-04T08:47:01.074Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-04T06:17:00.291Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19STESHA-SHA/candlesticks?start_ts=1789873201&end_ts=1791094619&period_interval=60",
+  "last_ingested_at": "2026-10-04T08:47:01.743Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19STESHA-SHA/candlesticks?start_ts=1789873201&end_ts=1791103621&period_interval=60",
   "trims": [
     {
       "at": "2026-09-20T03:07:25.803Z",

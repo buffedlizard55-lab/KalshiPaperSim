@@ -3240,6 +3240,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-04T08:46:31.976Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-ANA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3297,9 +3307,9 @@
     "yes_sub_title": "Anaheim"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-ANA",
-  "market_captured_at": "2026-10-04T06:16:31.769Z",
+  "market_captured_at": "2026-10-04T08:46:31.242Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-04T06:16:32.423Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT02ANAVGK-ANA/candlesticks?start_ts=1791003601&end_ts=1791094592&period_interval=60"
+  "last_ingested_at": "2026-10-04T08:46:31.910Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT02ANAVGK-ANA/candlesticks?start_ts=1791003601&end_ts=1791103591&period_interval=60"
 }

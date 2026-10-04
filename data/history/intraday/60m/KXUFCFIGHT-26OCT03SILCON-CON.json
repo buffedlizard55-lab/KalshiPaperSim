@@ -4925,6 +4925,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-04T08:47:06.018Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT03SILCON-CON/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4952,7 +4962,7 @@
     "open_time": "2026-09-20T04:45:00Z",
     "previous_price_dollars": "0.3600",
     "previous_yes_ask_dollars": "0.3600",
-    "previous_yes_bid_dollars": "0.3400",
+    "previous_yes_bid_dollars": "0.3500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4973,7 +4983,7 @@
     "ticker": "KXUFCFIGHT-26OCT03SILCON-CON",
     "title": "Wang Cong wins",
     "updated_time": "2026-10-04T03:00:37.531799Z",
-    "volume_24h_fp": "3981553.32",
+    "volume_24h_fp": "3969267.16",
     "volume_fp": "4104767.80",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -4982,11 +4992,11 @@
     "yes_sub_title": "Wang Cong"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT03SILCON-CON",
-  "market_captured_at": "2026-10-04T06:17:03.742Z",
+  "market_captured_at": "2026-10-04T08:47:05.285Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-04T06:17:04.401Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT03SILCON-CON/candlesticks?start_ts=1789793100&end_ts=1791094624&period_interval=60",
+  "last_ingested_at": "2026-10-04T08:47:05.953Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT03SILCON-CON/candlesticks?start_ts=1791082801&end_ts=1791103625&period_interval=60",
   "trims": [
     {
       "at": "2026-10-04T06:17:04.755Z",

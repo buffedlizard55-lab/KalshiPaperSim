@@ -621,6 +621,73 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-04T08:46:37.589Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "113056.00"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "511.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "427.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "26.00"
+            ],
+            [
+              "0.5700",
+              "467.59"
+            ],
+            [
+              "0.5800",
+              "26.00"
+            ],
+            [
+              "0.8400",
+              "140.00"
+            ],
+            [
+              "0.9000",
+              "1022.28"
+            ],
+            [
+              "0.9700",
+              "86.87"
+            ],
+            [
+              "0.9800",
+              "22.00"
+            ],
+            [
+              "0.9900",
+              "2335281.23"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -676,8 +743,8 @@
     "yes_sub_title": "Charleston Southern"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO",
-  "market_captured_at": "2026-10-04T06:16:37.236Z",
+  "market_captured_at": "2026-10-04T08:46:36.855Z",
   "status": "active",
-  "last_ingested_at": "2026-10-04T06:16:37.891Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO/candlesticks?start_ts=1791054001&end_ts=1791094597&period_interval=60"
+  "last_ingested_at": "2026-10-04T08:46:37.523Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO/candlesticks?start_ts=1791093601&end_ts=1791103597&period_interval=60"
 }

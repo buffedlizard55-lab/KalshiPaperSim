@@ -70,6 +70,31 @@
         "low_dollars": "0.9600",
         "open_dollars": "0.9600"
       }
+    },
+    {
+      "end_period_ts": 1791097200,
+      "open_interest_fp": "1197.00",
+      "price": {
+        "close_dollars": "0.9600",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.9600",
+        "mean_dollars": "0.9600",
+        "open_dollars": "0.9600",
+        "previous_dollars": "0.9700"
+      },
+      "volume_fp": "67.00",
+      "yes_ask": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9600",
+        "high_dollars": "0.9600",
+        "low_dollars": "0.9600",
+        "open_dollars": "0.9600"
+      }
     }
   ],
   "books": [
@@ -140,6 +165,94 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-04T08:46:43.197Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17ELONSTAN-STAN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "14992.00"
+            ],
+            [
+              "0.0200",
+              "2550.00"
+            ],
+            [
+              "0.0300",
+              "510.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "113460.00"
+            ],
+            [
+              "0.0200",
+              "13623.00"
+            ],
+            [
+              "0.0300",
+              "6868.00"
+            ],
+            [
+              "0.0400",
+              "1267.00"
+            ],
+            [
+              "0.0500",
+              "354.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.1500",
+              "56.00"
+            ],
+            [
+              "0.1600",
+              "79.00"
+            ],
+            [
+              "0.2000",
+              "38.00"
+            ],
+            [
+              "0.2100",
+              "1.00"
+            ],
+            [
+              "0.2900",
+              "1.00"
+            ],
+            [
+              "0.3800",
+              "1.00"
+            ],
+            [
+              "0.4800",
+              "1.00"
+            ],
+            [
+              "0.8100",
+              "140.00"
+            ],
+            [
+              "0.9600",
+              "98803.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -155,7 +268,7 @@
     "expected_expiration_time": "2026-10-18T02:30:00Z",
     "expiration_time": "2026-10-19T23:30:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.9700",
+    "last_price_dollars": "0.9600",
     "latest_expiration_time": "2026-10-19T23:30:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.0400",
@@ -163,7 +276,7 @@
     "no_sub_title": "Stanford",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-18T02:30:00Z",
-    "open_interest_fp": "1130.00",
+    "open_interest_fp": "1197.00",
     "open_time": "2026-10-04T01:06:00Z",
     "previous_price_dollars": "0.0000",
     "previous_yes_ask_dollars": "0.0000",
@@ -186,17 +299,17 @@
     "ticker": "KXNCAAFGAME-26OCT17ELONSTAN-STAN",
     "title": "Stanford wins",
     "updated_time": "2026-10-04T01:06:00.942595Z",
-    "volume_24h_fp": "1130.00",
-    "volume_fp": "1130.00",
+    "volume_24h_fp": "1197.00",
+    "volume_fp": "1197.00",
     "yes_ask_dollars": "0.9700",
     "yes_ask_size_fp": "510.00",
     "yes_bid_dollars": "0.9600",
-    "yes_bid_size_fp": "98870.00",
+    "yes_bid_size_fp": "98803.00",
     "yes_sub_title": "Stanford"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17ELONSTAN-STAN",
-  "market_captured_at": "2026-10-04T06:16:42.702Z",
+  "market_captured_at": "2026-10-04T08:46:42.462Z",
   "status": "active",
-  "last_ingested_at": "2026-10-04T06:16:43.358Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17ELONSTAN-STAN/candlesticks?start_ts=1790989560&end_ts=1791094603&period_interval=60"
+  "last_ingested_at": "2026-10-04T08:46:43.131Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17ELONSTAN-STAN/candlesticks?start_ts=1791090001&end_ts=1791103602&period_interval=60"
 }
