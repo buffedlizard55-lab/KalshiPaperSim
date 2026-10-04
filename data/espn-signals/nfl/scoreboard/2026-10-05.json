@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-05",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261005"
+  ]
+ },
+ "captures": [
+  "2026-10-04T10:04:02.343Z"
+ ],
+ "events": {
+  "401872979": {
+   "eventId": "401872979",
+   "date": "2026-10-06T00:15Z",
+   "easternDate": "2026-10-05",
+   "name": "Atlanta Falcons at New Orleans Saints",
+   "shortName": "ATL @ NO",
+   "week": 4,
+   "venue": "Caesars Superdome",
+   "homeAbbr": "NO",
+   "homeTeamId": "18",
+   "homeName": "New Orleans Saints",
+   "awayAbbr": "ATL",
+   "awayTeamId": "1",
+   "awayName": "Atlanta Falcons",
+   "firstCapturedAt": "2026-10-04T10:04:02.343Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "NO -1.5",
+    "spread": -1.5,
+    "overUnder": 47.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-04T10:04:02.343Z",
+     "last_seen_at": "2026-10-04T10:04:02.343Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-2",
+      "away": "1-2"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-04T10:04:02.343Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261005"
+}

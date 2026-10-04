@@ -1,0 +1,173 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-05",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261005"
+  ]
+ },
+ "captures": [
+  "2026-10-04T10:04:02.465Z"
+ ],
+ "events": {
+  "401892445": {
+   "eventId": "401892445",
+   "date": "2026-10-05T23:00Z",
+   "easternDate": "2026-10-05",
+   "name": "Philadelphia Flyers at Tampa Bay Lightning",
+   "shortName": "PHI @ TB",
+   "week": null,
+   "venue": "Benchmark International Arena",
+   "homeAbbr": "TB",
+   "homeTeamId": "20",
+   "homeName": "Tampa Bay Lightning",
+   "awayAbbr": "PHI",
+   "awayTeamId": "15",
+   "awayName": "Philadelphia Flyers",
+   "firstCapturedAt": "2026-10-04T10:04:02.465Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-04T10:04:02.465Z",
+     "last_seen_at": "2026-10-04T10:04:02.465Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1-0",
+      "away": "0-1-2"
+     }
+    }
+   ]
+  },
+  "401892446": {
+   "eventId": "401892446",
+   "date": "2026-10-05T23:30Z",
+   "easternDate": "2026-10-05",
+   "name": "Ottawa Senators at Boston Bruins",
+   "shortName": "OTT @ BOS",
+   "week": null,
+   "venue": "TD Garden",
+   "homeAbbr": "BOS",
+   "homeTeamId": "1",
+   "homeName": "Boston Bruins",
+   "awayAbbr": "OTT",
+   "awayTeamId": "14",
+   "awayName": "Ottawa Senators",
+   "firstCapturedAt": "2026-10-04T10:04:02.465Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-04T10:04:02.465Z",
+     "last_seen_at": "2026-10-04T10:04:02.465Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-1-0",
+      "away": "1-0-0"
+     }
+    }
+   ]
+  },
+  "401892447": {
+   "eventId": "401892447",
+   "date": "2026-10-05T23:30Z",
+   "easternDate": "2026-10-05",
+   "name": "Winnipeg Jets at Pittsburgh Penguins",
+   "shortName": "WPG @ PIT",
+   "week": null,
+   "venue": "PPG Paints Arena",
+   "homeAbbr": "PIT",
+   "homeTeamId": "16",
+   "homeName": "Pittsburgh Penguins",
+   "awayAbbr": "WPG",
+   "awayTeamId": "28",
+   "awayName": "Winnipeg Jets",
+   "firstCapturedAt": "2026-10-04T10:04:02.465Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-04T10:04:02.465Z",
+     "last_seen_at": "2026-10-04T10:04:02.465Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-0-0",
+      "away": "0-0-1"
+     }
+    }
+   ]
+  },
+  "401892448": {
+   "eventId": "401892448",
+   "date": "2026-10-06T00:00Z",
+   "easternDate": "2026-10-05",
+   "name": "San Jose Sharks at Dallas Stars",
+   "shortName": "SJ @ DAL",
+   "week": null,
+   "venue": "American Airlines Center",
+   "homeAbbr": "DAL",
+   "homeTeamId": "9",
+   "homeName": "Dallas Stars",
+   "awayAbbr": "SJ",
+   "awayTeamId": "18",
+   "awayName": "San Jose Sharks",
+   "firstCapturedAt": "2026-10-04T10:04:02.465Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-04T10:04:02.465Z",
+     "last_seen_at": "2026-10-04T10:04:02.465Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-2-0",
+      "away": "2-0-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-04T10:04:02.465Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261005"
+}

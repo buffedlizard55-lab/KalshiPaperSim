@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-04T03:30:54.845Z",
+ "generatedAt": "2026-10-04T10:04:03.271Z",
  "rows": [
   {
    "league": "nba",
@@ -489,6 +489,26 @@
     {
      "ticker": "KXNCAAFGAME-26SEP26EIUSDST-SDST",
      "rulesName": "Eastern Illinois",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "ELON",
+   "kalshiName": "Elon",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT17ELONSTAN-ELON",
+     "rulesName": "Elon",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17ELONSTAN-STAN",
+     "rulesName": "Elon",
      "role": "away"
     }
    ]
@@ -1105,6 +1125,16 @@
      "ticker": "KXNCAAFGAME-26OCT10STANND-STAN",
      "rulesName": "Stanford",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17ELONSTAN-ELON",
+     "rulesName": "Stanford",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17ELONSTAN-STAN",
+     "rulesName": "Stanford",
+     "role": "home"
     }
    ]
   },
@@ -1400,6 +1430,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "VMI",
+   "kalshiName": "VMI",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT17VMIWOF-VMI",
+     "rulesName": "VMI",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "WKU",
    "kalshiName": "Western Kentucky",
    "conflictWith": null,
@@ -1414,6 +1459,21 @@
     {
      "ticker": "KXNCAAFGAME-26SEP26MHUWKU-WKU",
      "rulesName": "Western Kentucky",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "WOF",
+   "kalshiName": "Wofford",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT17VMIWOF-VMI",
+     "rulesName": "Wofford",
      "role": "home"
     }
    ]
