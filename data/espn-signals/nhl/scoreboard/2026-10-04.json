@@ -10,7 +10,8 @@
  "captures": [
   "2026-10-03T09:12:15.931Z",
   "2026-10-03T18:30:12.005Z",
-  "2026-10-03T21:43:52.157Z"
+  "2026-10-03T21:43:52.157Z",
+  "2026-10-04T00:19:39.682Z"
  ],
  "events": {
   "401891778": {
@@ -37,7 +38,7 @@
    "states": [
     {
      "captured_at": "2026-10-03T09:12:15.931Z",
-     "last_seen_at": "2026-10-03T21:43:52.157Z",
+     "last_seen_at": "2026-10-04T00:19:39.682Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -81,7 +82,7 @@
    "states": [
     {
      "captured_at": "2026-10-03T09:12:15.931Z",
-     "last_seen_at": "2026-10-03T21:43:52.157Z",
+     "last_seen_at": "2026-10-04T00:19:39.682Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -120,7 +121,7 @@
    "states": [
     {
      "captured_at": "2026-10-03T09:12:15.931Z",
-     "last_seen_at": "2026-10-03T21:43:52.157Z",
+     "last_seen_at": "2026-10-04T00:19:39.682Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -159,7 +160,7 @@
    "states": [
     {
      "captured_at": "2026-10-03T09:12:15.931Z",
-     "last_seen_at": "2026-10-03T21:43:52.157Z",
+     "last_seen_at": "2026-10-04T00:19:39.682Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -198,7 +199,7 @@
    "states": [
     {
      "captured_at": "2026-10-03T09:12:15.931Z",
-     "last_seen_at": "2026-10-03T21:43:52.157Z",
+     "last_seen_at": "2026-10-04T00:19:39.682Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -219,6 +220,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-03T21:43:52.157Z",
+ "last_ingested_at": "2026-10-04T00:19:39.682Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261004"
 }
