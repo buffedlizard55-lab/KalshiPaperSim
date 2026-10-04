@@ -10,7 +10,8 @@
   ]
  },
  "captures": [
-  "2026-10-04T10:06:35.603Z"
+  "2026-10-04T10:06:35.603Z",
+  "2026-10-04T18:52:07.890Z"
  ],
  "games": {
   "849823": {
@@ -32,7 +33,10 @@
    },
    "venue": "UNIQLO Field at Dodger Stadium",
    "probablePitchers": {
-    "away": null,
+    "away": {
+     "id": 678061,
+     "fullName": "Ray Kerr"
+    },
     "home": {
      "id": 605483,
      "fullName": "Blake Snell"
@@ -42,7 +46,7 @@
    "states": [
     {
      "captured_at": "2026-10-04T10:06:35.603Z",
-     "last_seen_at": "2026-10-04T10:06:35.603Z",
+     "last_seen_at": "2026-10-04T18:52:07.890Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -98,6 +102,21 @@
      "runs": {
       "away": null,
       "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-04T18:52:07.890Z",
+     "last_seen_at": "2026-10-04T18:52:07.890Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
      },
      "winner": null,
      "url_ref": 0

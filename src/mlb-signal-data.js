@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 14 date file(s) · 137 game(s) · 509 state row(s) · generated 2026-10-04T18:30:44.705Z
+ * 14 date file(s) · 137 game(s) · 510 state row(s) · generated 2026-10-04T18:52:09.015Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-04T18:30:44.705Z",
+ "generatedAt": "2026-10-04T18:52:09.015Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-10-04T10:06:35.602Z",
+  "last_confirmed_at": "2026-10-04T18:52:07.889Z",
   "teams": [
    {
     "id": 108,
@@ -12217,7 +12217,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-10-03T21:52:38.963Z",
     "2026-10-04T00:11:16.070Z",
     "2026-10-04T03:33:59.282Z",
-    "2026-10-04T10:06:35.603Z"
+    "2026-10-04T10:06:35.603Z",
+    "2026-10-04T18:52:07.890Z"
    ],
    "games": {
     "849828": {
@@ -12297,7 +12298,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-04T00:11:16.070Z",
-       "last_seen_at": "2026-10-04T10:06:35.603Z",
+       "last_seen_at": "2026-10-04T18:52:07.890Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -12374,7 +12375,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-03T21:52:38.963Z",
-       "last_seen_at": "2026-10-04T10:06:35.603Z",
+       "last_seen_at": "2026-10-04T18:52:07.890Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -12481,7 +12482,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-04T10:06:35.603Z",
-       "last_seen_at": "2026-10-04T10:06:35.603Z",
+       "last_seen_at": "2026-10-04T18:52:07.890Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -12573,7 +12574,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-04T03:33:59.282Z",
-       "last_seen_at": "2026-10-04T10:06:35.603Z",
+       "last_seen_at": "2026-10-04T18:52:07.890Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -12602,7 +12603,8 @@ export const MLB_SIGNAL_DATA = {
     ]
    },
    "captures": [
-    "2026-10-04T10:06:35.603Z"
+    "2026-10-04T10:06:35.603Z",
+    "2026-10-04T18:52:07.890Z"
    ],
    "games": {
     "849823": {
@@ -12624,7 +12626,10 @@ export const MLB_SIGNAL_DATA = {
      },
      "venue": "UNIQLO Field at Dodger Stadium",
      "probablePitchers": {
-      "away": null,
+      "away": {
+       "id": 678061,
+       "fullName": "Ray Kerr"
+      },
       "home": {
        "id": 605483,
        "fullName": "Blake Snell"
@@ -12634,7 +12639,7 @@ export const MLB_SIGNAL_DATA = {
      "states": [
       {
        "captured_at": "2026-10-04T10:06:35.603Z",
-       "last_seen_at": "2026-10-04T10:06:35.603Z",
+       "last_seen_at": "2026-10-04T18:52:07.890Z",
        "abstractGameState": "Preview",
        "detailedState": "Scheduled",
        "codedGameState": "S",
@@ -12690,6 +12695,21 @@ export const MLB_SIGNAL_DATA = {
        "runs": {
         "away": null,
         "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      },
+      {
+       "captured_at": "2026-10-04T18:52:07.890Z",
+       "last_seen_at": "2026-10-04T18:52:07.890Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Pre-Game",
+       "codedGameState": "P",
+       "inning": 1,
+       "inningState": "Top",
+       "runs": {
+        "away": 0,
+        "home": 0
        },
        "winner": null,
        "url_ref": 0
