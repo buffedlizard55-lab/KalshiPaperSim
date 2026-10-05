@@ -3108,6 +3108,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-05T23:01:53.166Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT01FLASJ-FLA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3165,9 +3175,9 @@
     "yes_sub_title": "Florida"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT01FLASJ-FLA",
-  "market_captured_at": "2026-10-05T14:49:37.818Z",
+  "market_captured_at": "2026-10-05T23:01:52.438Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-05T14:49:38.442Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT01FLASJ-FLA/candlesticks?start_ts=1790917201&end_ts=1791211778&period_interval=60"
+  "last_ingested_at": "2026-10-05T23:01:53.103Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT01FLASJ-FLA/candlesticks?start_ts=1790917201&end_ts=1791241312&period_interval=60"
 }

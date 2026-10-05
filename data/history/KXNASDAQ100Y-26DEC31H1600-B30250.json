@@ -14372,6 +14372,198 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-05T22:55:58.015Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30250/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "143052.33"
+            ],
+            [
+              "0.0200",
+              "250.00"
+            ],
+            [
+              "0.0300",
+              "166.00"
+            ],
+            [
+              "0.0400",
+              "125.00"
+            ],
+            [
+              "0.0500",
+              "100.00"
+            ],
+            [
+              "0.0700",
+              "12500.00"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.1600",
+              "593.17"
+            ],
+            [
+              "0.1700",
+              "5037.50"
+            ],
+            [
+              "0.2700",
+              "2500.00"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.3100",
+              "600.00"
+            ],
+            [
+              "0.3600",
+              "18.75"
+            ],
+            [
+              "0.3700",
+              "1533.05"
+            ],
+            [
+              "0.4000",
+              "93.76"
+            ],
+            [
+              "0.4500",
+              "88.00"
+            ],
+            [
+              "0.4700",
+              "500.00"
+            ],
+            [
+              "0.4800",
+              "83.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5100",
+              "78.00"
+            ],
+            [
+              "0.5400",
+              "64.00"
+            ],
+            [
+              "0.5700",
+              "61.00"
+            ],
+            [
+              "0.6000",
+              "58.00"
+            ],
+            [
+              "0.6300",
+              "47.00"
+            ],
+            [
+              "0.6600",
+              "45.00"
+            ],
+            [
+              "0.6900",
+              "43.00"
+            ],
+            [
+              "0.7000",
+              "2040.00"
+            ],
+            [
+              "0.7200",
+              "34.00"
+            ],
+            [
+              "0.7500",
+              "33.00"
+            ],
+            [
+              "0.7600",
+              "281.84"
+            ],
+            [
+              "0.7800",
+              "32.00"
+            ],
+            [
+              "0.8000",
+              "1785.00"
+            ],
+            [
+              "0.8100",
+              "2030.00"
+            ],
+            [
+              "0.8400",
+              "29.00"
+            ],
+            [
+              "0.8700",
+              "28.00"
+            ],
+            [
+              "0.8800",
+              "323.89"
+            ],
+            [
+              "0.8900",
+              "174.73"
+            ],
+            [
+              "0.9000",
+              "4075.67"
+            ],
+            [
+              "0.9100",
+              "4966.29"
+            ],
+            [
+              "0.9200",
+              "1101.24"
+            ],
+            [
+              "0.9300",
+              "15.66"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5.64"
+            ],
+            [
+              "0.0300",
+              "3594.90"
+            ],
+            [
+              "0.0400",
+              "84.00"
+            ],
+            [
+              "0.0600",
+              "187.78"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -14385,14 +14577,14 @@
     "expiration_time": "2027-01-08T00:00:00Z",
     "expiration_value": "",
     "floor_strike": 30000,
-    "last_price_dollars": "0.0500",
+    "last_price_dollars": "0.0600",
     "latest_expiration_time": "2027-01-08T00:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.9600",
-    "no_bid_dollars": "0.9400",
+    "no_ask_dollars": "0.9400",
+    "no_bid_dollars": "0.9300",
     "no_sub_title": "30,000 to 30,499.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "95312.78",
+    "open_interest_fp": "96740.11",
     "open_time": "2025-12-23T15:00:00Z",
     "previous_price_dollars": "0.0600",
     "previous_yes_ask_dollars": "0.0500",
@@ -14416,17 +14608,17 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-B30250",
     "title": "Will the Nasdaq-100 be between 30000 and 30499.99 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:46.06703Z",
-    "volume_24h_fp": "346.00",
-    "volume_fp": "135974.06",
-    "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "1429.89",
-    "yes_bid_dollars": "0.0400",
-    "yes_bid_size_fp": "100000.00",
+    "volume_24h_fp": "1797.60",
+    "volume_fp": "137425.66",
+    "yes_ask_dollars": "0.0700",
+    "yes_ask_size_fp": "15.66",
+    "yes_bid_dollars": "0.0600",
+    "yes_bid_size_fp": "187.78",
     "yes_sub_title": "30,000 to 30,499.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B30250",
-  "market_captured_at": "2026-10-05T14:44:40.285Z",
+  "market_captured_at": "2026-10-05T22:55:57.389Z",
   "status": "active",
-  "last_ingested_at": "2026-10-05T14:44:40.808Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B30250/candlesticks?start_ts=1791086401&end_ts=1791211480&period_interval=1440"
+  "last_ingested_at": "2026-10-05T22:55:57.952Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B30250/candlesticks?start_ts=1791086401&end_ts=1791240957&period_interval=1440"
 }

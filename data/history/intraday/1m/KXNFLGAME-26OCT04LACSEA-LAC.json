@@ -12035,6 +12035,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-05T23:05:36.294Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT04LACSEA-LAC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12060,9 +12070,9 @@
     "occurrence_datetime": "2026-10-04T23:25:00Z",
     "open_interest_fp": "9281343.33",
     "open_time": "2026-09-22T04:05:00Z",
-    "previous_price_dollars": "0.2500",
-    "previous_yes_ask_dollars": "0.2500",
-    "previous_yes_bid_dollars": "0.2400",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "0.0200",
+    "previous_yes_bid_dollars": "0.0100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12083,7 +12093,7 @@
     "ticker": "KXNFLGAME-26OCT04LACSEA-LAC",
     "title": "Los Angeles C wins",
     "updated_time": "2026-10-04T23:49:27.535451Z",
-    "volume_24h_fp": "14506800.24",
+    "volume_24h_fp": "8103833.04",
     "volume_fp": "14737435.85",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12092,11 +12102,11 @@
     "yes_sub_title": "Los Angeles C"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT04LACSEA-LAC",
-  "market_captured_at": "2026-10-05T14:52:54.811Z",
+  "market_captured_at": "2026-10-05T23:05:35.566Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-05T14:52:55.435Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT04LACSEA-LAC/candlesticks?start_ts=1791157621&end_ts=1791211975&period_interval=1",
+  "last_ingested_at": "2026-10-05T23:05:36.231Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT04LACSEA-LAC/candlesticks?start_ts=1791157621&end_ts=1791241535&period_interval=1",
   "trims": [
     {
       "at": "2026-10-05T06:11:07.083Z",

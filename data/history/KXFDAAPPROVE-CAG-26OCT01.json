@@ -6289,6 +6289,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-05T22:54:40.144Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-05T23:06:18.197Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6311,7 +6331,7 @@
     "no_bid_dollars": "0.0000",
     "no_sub_title": "Before Oct 1, 2026",
     "notional_value_dollars": "1.0000",
-    "occurrence_datetime": "2026-10-01T14:00:00Z",
+    "occurrence_datetime": "2026-10-01T16:03:56Z",
     "open_interest_fp": "3118.47",
     "open_time": "2026-05-14T02:00:00Z",
     "previous_price_dollars": "0.0300",
@@ -6336,7 +6356,7 @@
     "strike_type": "custom",
     "ticker": "KXFDAAPPROVE-CAG-26OCT01",
     "title": "Will the FDA approve CagriSema before Oct 1, 2026?",
-    "updated_time": "2026-10-01T16:58:04.331481Z",
+    "updated_time": "2026-10-05T19:15:16.405747Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "3210.92",
     "yes_ask_dollars": "1.0000",
@@ -6346,9 +6366,9 @@
     "yes_sub_title": "Before Oct 1, 2026"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAG-26OCT01",
-  "market_captured_at": "2026-10-05T14:53:32.233Z",
+  "market_captured_at": "2026-10-05T23:06:17.469Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-05T14:53:32.857Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CAG-26OCT01/candlesticks?start_ts=1790827201&end_ts=1791212012&period_interval=1440",
+  "last_ingested_at": "2026-10-05T23:06:18.134Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CAG-26OCT01/candlesticks?start_ts=1790827201&end_ts=1791241577&period_interval=1440",
   "result": "no"
 }

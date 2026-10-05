@@ -6565,6 +6565,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-05T22:54:43.727Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-05T23:06:15.408Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6587,7 +6607,7 @@
     "no_bid_dollars": "0.0000",
     "no_sub_title": "Before Oct 1, 2026",
     "notional_value_dollars": "1.0000",
-    "occurrence_datetime": "2026-10-01T14:00:00Z",
+    "occurrence_datetime": "2026-10-01T16:04:03Z",
     "open_interest_fp": "6791.23",
     "open_time": "2026-05-14T02:00:00Z",
     "previous_price_dollars": "0.0100",
@@ -6612,7 +6632,7 @@
     "strike_type": "custom",
     "ticker": "KXFDAAPPROVE-CYT-26OCT01",
     "title": "Will the FDA approve cytisinicline for smoking cessation before Oct 1, 2026?",
-    "updated_time": "2026-10-01T16:58:04.33158Z",
+    "updated_time": "2026-10-05T19:15:16.338509Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "8719.96",
     "yes_ask_dollars": "1.0000",
@@ -6622,9 +6642,9 @@
     "yes_sub_title": "Before Oct 1, 2026"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CYT-26OCT01",
-  "market_captured_at": "2026-10-05T14:53:29.681Z",
+  "market_captured_at": "2026-10-05T23:06:14.678Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-05T14:53:30.305Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CYT-26OCT01/candlesticks?start_ts=1790827201&end_ts=1791212009&period_interval=1440",
+  "last_ingested_at": "2026-10-05T23:06:15.344Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CYT-26OCT01/candlesticks?start_ts=1790827201&end_ts=1791241574&period_interval=1440",
   "result": "no"
 }
