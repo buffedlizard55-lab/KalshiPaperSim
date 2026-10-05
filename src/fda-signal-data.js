@@ -12,11 +12,11 @@
  * refuses any snapshot captured AFTER the decision time (the anti-lookahead
  * rule).
  *
- * 6 subject(s) · 290 shipped snapshot(s) · generated 2026-10-04T23:01:56.953Z
+ * 6 subject(s) · 290 shipped snapshot(s) · generated 2026-10-05T00:24:17.793Z
  */
 
 export const FDA_SIGNAL_DATA = {
- "generatedAt": "2026-10-04T23:01:56.953Z",
+ "generatedAt": "2026-10-05T00:24:17.793Z",
  "present": true,
  "subjects": {
   "camizestrant": {

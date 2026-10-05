@@ -15,7 +15,8 @@
   "2026-10-04T03:30:54.044Z",
   "2026-10-04T10:04:02.369Z",
   "2026-10-04T18:30:42.819Z",
-  "2026-10-04T21:53:55.072Z"
+  "2026-10-04T21:53:55.072Z",
+  "2026-10-05T00:24:15.611Z"
  ],
  "events": {
   "401914127": {
@@ -49,6 +50,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0",
+      "away": "0-0"
+     }
+    },
+    {
+     "captured_at": "2026-10-05T00:24:15.611Z",
+     "last_seen_at": "2026-10-05T00:24:15.611Z",
+     "fp": "in|2|0|52,63|false|STATUS_HALFTIME",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_HALFTIME",
+     "completed": false,
+     "period": 2,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 52,
+      "away": 63
      },
      "recordsOverall": {
       "home": "0-0",
@@ -93,10 +114,30 @@
       "home": "0-0",
       "away": "0-0"
      }
+    },
+    {
+     "captured_at": "2026-10-05T00:24:15.611Z",
+     "last_seen_at": "2026-10-05T00:24:15.611Z",
+     "fp": "in|2|0|55,43|false|STATUS_HALFTIME",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_HALFTIME",
+     "completed": false,
+     "period": 2,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 55,
+      "away": 43
+     },
+     "recordsOverall": {
+      "home": "0-0",
+      "away": "0-0"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-04T21:53:55.072Z",
+ "last_ingested_at": "2026-10-05T00:24:15.611Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261004"
 }
