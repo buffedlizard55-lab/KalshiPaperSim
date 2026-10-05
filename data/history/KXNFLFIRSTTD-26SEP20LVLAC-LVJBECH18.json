@@ -2780,6 +2780,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-05T09:27:27.474Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2839,9 +2849,9 @@
     "yes_sub_title": "Jack Bech"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18",
-  "market_captured_at": "2026-10-05T06:03:31.334Z",
+  "market_captured_at": "2026-10-05T09:27:26.845Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-05T06:03:31.850Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18/candlesticks?start_ts=1789963201&end_ts=1791180211&period_interval=1440",
+  "last_ingested_at": "2026-10-05T09:27:27.411Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20LVLAC-LVJBECH18/candlesticks?start_ts=1789963201&end_ts=1791192447&period_interval=1440",
   "result": "no"
 }

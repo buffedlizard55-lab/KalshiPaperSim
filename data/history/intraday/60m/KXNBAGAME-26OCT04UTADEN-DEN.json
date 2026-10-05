@@ -4295,6 +4295,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-05T09:32:02.399Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT04UTADEN-DEN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4320,9 +4330,9 @@
     "occurrence_datetime": "2026-10-05T02:00:00Z",
     "open_interest_fp": "398281.92",
     "open_time": "2026-10-01T00:04:00.786482Z",
-    "previous_price_dollars": "0.6000",
-    "previous_yes_ask_dollars": "0.6000",
-    "previous_yes_bid_dollars": "0.5800",
+    "previous_price_dollars": "0.6100",
+    "previous_yes_ask_dollars": "0.6100",
+    "previous_yes_bid_dollars": "0.5900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4343,7 +4353,7 @@
     "ticker": "KXNBAGAME-26OCT04UTADEN-DEN",
     "title": "Denver wins",
     "updated_time": "2026-10-05T03:06:17.520446Z",
-    "volume_24h_fp": "739654.60",
+    "volume_24h_fp": "737350.13",
     "volume_fp": "753839.59",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -4352,9 +4362,9 @@
     "yes_sub_title": "Denver"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT04UTADEN-DEN",
-  "market_captured_at": "2026-10-05T06:07:33.768Z",
+  "market_captured_at": "2026-10-05T09:32:01.669Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-05T06:07:34.383Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT04UTADEN-DEN/candlesticks?start_ts=1791140401&end_ts=1791180454&period_interval=60",
+  "last_ingested_at": "2026-10-05T09:32:02.334Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT04UTADEN-DEN/candlesticks?start_ts=1791172801&end_ts=1791192721&period_interval=60",
   "result": "no"
 }
