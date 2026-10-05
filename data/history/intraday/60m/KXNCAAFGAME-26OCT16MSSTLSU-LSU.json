@@ -1216,6 +1216,116 @@
         "low_dollars": "0.4300",
         "open_dollars": "0.5700"
       }
+    },
+    {
+      "end_period_ts": 1791194400,
+      "open_interest_fp": "1026.49",
+      "price": {
+        "previous_dollars": "0.6300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.6100",
+        "high_dollars": "0.8000",
+        "low_dollars": "0.6100",
+        "open_dollars": "0.7500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4700",
+        "high_dollars": "0.5600",
+        "low_dollars": "0.3900",
+        "open_dollars": "0.5500"
+      }
+    },
+    {
+      "end_period_ts": 1791198000,
+      "open_interest_fp": "1026.49",
+      "price": {
+        "previous_dollars": "0.6300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.6700",
+        "high_dollars": "0.8200",
+        "low_dollars": "0.5800",
+        "open_dollars": "0.6100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4300",
+        "high_dollars": "0.5200",
+        "low_dollars": "0.3800",
+        "open_dollars": "0.4700"
+      }
+    },
+    {
+      "end_period_ts": 1791201600,
+      "open_interest_fp": "948.52",
+      "price": {
+        "close_dollars": "0.3800",
+        "high_dollars": "0.4400",
+        "low_dollars": "0.3800",
+        "mean_dollars": "0.3863",
+        "open_dollars": "0.4400",
+        "previous_dollars": "0.6300"
+      },
+      "volume_fp": "111.74",
+      "yes_ask": {
+        "close_dollars": "0.5500",
+        "high_dollars": "0.7300",
+        "low_dollars": "0.4900",
+        "open_dollars": "0.6700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4300",
+        "high_dollars": "0.4900",
+        "low_dollars": "0.3800",
+        "open_dollars": "0.4300"
+      }
+    },
+    {
+      "end_period_ts": 1791205200,
+      "open_interest_fp": "948.52",
+      "price": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.5600",
+        "low_dollars": "0.5500",
+        "mean_dollars": "0.5531",
+        "open_dollars": "0.5500",
+        "previous_dollars": "0.3800"
+      },
+      "volume_fp": "8.66",
+      "yes_ask": {
+        "close_dollars": "0.5500",
+        "high_dollars": "0.7300",
+        "low_dollars": "0.5200",
+        "open_dollars": "0.5500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4300",
+        "high_dollars": "0.4900",
+        "low_dollars": "0.3800",
+        "open_dollars": "0.4300"
+      }
+    },
+    {
+      "end_period_ts": 1791208800,
+      "open_interest_fp": "948.52",
+      "price": {
+        "previous_dollars": "0.5600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.6900",
+        "high_dollars": "0.8100",
+        "low_dollars": "0.5200",
+        "open_dollars": "0.5500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4600",
+        "high_dollars": "0.4900",
+        "low_dollars": "0.3800",
+        "open_dollars": "0.4300"
+      }
     }
   ],
   "books": [
@@ -1706,6 +1816,226 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-05T14:49:53.724Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT16MSSTLSU-LSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "621334.82"
+            ],
+            [
+              "0.0200",
+              "11280.00"
+            ],
+            [
+              "0.0300",
+              "64514.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "34496.00"
+            ],
+            [
+              "0.0600",
+              "504.00"
+            ],
+            [
+              "0.0700",
+              "273.51"
+            ],
+            [
+              "0.0800",
+              "25361.00"
+            ],
+            [
+              "0.1000",
+              "140.00"
+            ],
+            [
+              "0.1100",
+              "27893.55"
+            ],
+            [
+              "0.1400",
+              "11207.00"
+            ],
+            [
+              "0.1700",
+              "4544.00"
+            ],
+            [
+              "0.1800",
+              "1609.00"
+            ],
+            [
+              "0.1900",
+              "105.00"
+            ],
+            [
+              "0.2000",
+              "22.77"
+            ],
+            [
+              "0.2100",
+              "3000.00"
+            ],
+            [
+              "0.2300",
+              "118.00"
+            ],
+            [
+              "0.3000",
+              "27.00"
+            ],
+            [
+              "0.3100",
+              "83.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "894444.00"
+            ],
+            [
+              "0.0200",
+              "11100.00"
+            ],
+            [
+              "0.0300",
+              "60455.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "31541.00"
+            ],
+            [
+              "0.0600",
+              "66369.00"
+            ],
+            [
+              "0.0700",
+              "56289.00"
+            ],
+            [
+              "0.0900",
+              "6.00"
+            ],
+            [
+              "0.1100",
+              "65295.00"
+            ],
+            [
+              "0.1200",
+              "447.00"
+            ],
+            [
+              "0.1300",
+              "413.00"
+            ],
+            [
+              "0.1400",
+              "11014.00"
+            ],
+            [
+              "0.1500",
+              "3.00"
+            ],
+            [
+              "0.1700",
+              "13775.00"
+            ],
+            [
+              "0.1800",
+              "15346.00"
+            ],
+            [
+              "0.1900",
+              "3.00"
+            ],
+            [
+              "0.2000",
+              "11267.00"
+            ],
+            [
+              "0.2300",
+              "9334.00"
+            ],
+            [
+              "0.2400",
+              "2.00"
+            ],
+            [
+              "0.2500",
+              "140.00"
+            ],
+            [
+              "0.2600",
+              "7943.00"
+            ],
+            [
+              "0.2900",
+              "5769.00"
+            ],
+            [
+              "0.3100",
+              "25.00"
+            ],
+            [
+              "0.3200",
+              "4822.00"
+            ],
+            [
+              "0.3500",
+              "3664.66"
+            ],
+            [
+              "0.3700",
+              "767.00"
+            ],
+            [
+              "0.3800",
+              "124.00"
+            ],
+            [
+              "0.3900",
+              "695.84"
+            ],
+            [
+              "0.4200",
+              "56.00"
+            ],
+            [
+              "0.4300",
+              "29.00"
+            ],
+            [
+              "0.4700",
+              "29.44"
+            ],
+            [
+              "0.4800",
+              "2.00"
+            ],
+            [
+              "0.4900",
+              "16.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1721,19 +2051,19 @@
     "expected_expiration_time": "2026-10-17T03:00:00Z",
     "expiration_time": "2026-10-19T00:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.6300",
+    "last_price_dollars": "0.6200",
     "latest_expiration_time": "2026-10-19T00:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.5200",
-    "no_bid_dollars": "0.3700",
+    "no_ask_dollars": "0.5100",
+    "no_bid_dollars": "0.3100",
     "no_sub_title": "LSU",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-17T03:00:00Z",
-    "open_interest_fp": "1026.49",
+    "open_interest_fp": "978.96",
     "open_time": "2026-10-03T01:06:00Z",
-    "previous_price_dollars": "0.7300",
-    "previous_yes_ask_dollars": "0.8700",
-    "previous_yes_bid_dollars": "0.7100",
+    "previous_price_dollars": "0.7800",
+    "previous_yes_ask_dollars": "0.7600",
+    "previous_yes_bid_dollars": "0.6800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1752,17 +2082,17 @@
     "ticker": "KXNCAAFGAME-26OCT16MSSTLSU-LSU",
     "title": "LSU wins",
     "updated_time": "2026-10-03T01:06:00.665837Z",
-    "volume_24h_fp": "362.61",
-    "volume_fp": "1265.01",
-    "yes_ask_dollars": "0.6300",
-    "yes_ask_size_fp": "15.00",
-    "yes_bid_dollars": "0.4800",
-    "yes_bid_size_fp": "2.00",
+    "volume_24h_fp": "519.45",
+    "volume_fp": "1424.85",
+    "yes_ask_dollars": "0.6900",
+    "yes_ask_size_fp": "83.00",
+    "yes_bid_dollars": "0.4900",
+    "yes_bid_size_fp": "16.00",
     "yes_sub_title": "LSU"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT16MSSTLSU-LSU",
-  "market_captured_at": "2026-10-05T09:32:29.624Z",
+  "market_captured_at": "2026-10-05T14:49:53.077Z",
   "status": "active",
-  "last_ingested_at": "2026-10-05T09:32:30.289Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT16MSSTLSU-LSU/candlesticks?start_ts=1791180001&end_ts=1791192749&period_interval=60"
+  "last_ingested_at": "2026-10-05T14:49:53.702Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT16MSSTLSU-LSU/candlesticks?start_ts=1791190801&end_ts=1791211793&period_interval=60"
 }

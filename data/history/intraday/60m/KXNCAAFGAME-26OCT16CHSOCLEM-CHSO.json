@@ -897,6 +897,71 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1791201600,
+      "open_interest_fp": "33872.06",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1791205200,
+      "open_interest_fp": "34339.65",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "467.59",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
+    },
+    {
+      "end_period_ts": 1791208800,
+      "open_interest_fp": "34339.65",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -1532,6 +1597,209 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-05T14:49:48.643Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2438931.00"
+            ],
+            [
+              "0.0200",
+              "10420.00"
+            ],
+            [
+              "0.0300",
+              "235809.00"
+            ],
+            [
+              "0.0400",
+              "10479.00"
+            ],
+            [
+              "0.0500",
+              "250186.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "300155.00"
+            ],
+            [
+              "0.1500",
+              "143640.00"
+            ],
+            [
+              "0.1600",
+              "70272.00"
+            ],
+            [
+              "0.1700",
+              "526.00"
+            ],
+            [
+              "0.2100",
+              "76040.00"
+            ],
+            [
+              "0.2200",
+              "25245.00"
+            ],
+            [
+              "0.2600",
+              "51757.00"
+            ],
+            [
+              "0.2800",
+              "42766.00"
+            ],
+            [
+              "0.3200",
+              "24741.00"
+            ],
+            [
+              "0.3600",
+              "91592.00"
+            ],
+            [
+              "0.4000",
+              "23912.00"
+            ],
+            [
+              "0.4400",
+              "24439.00"
+            ],
+            [
+              "0.4700",
+              "8436.00"
+            ],
+            [
+              "0.4800",
+              "22656.00"
+            ],
+            [
+              "0.5000",
+              "1000.00"
+            ],
+            [
+              "0.5100",
+              "26.00"
+            ],
+            [
+              "0.5200",
+              "13797.00"
+            ],
+            [
+              "0.5600",
+              "13114.00"
+            ],
+            [
+              "0.5700",
+              "467.59"
+            ],
+            [
+              "0.6100",
+              "49550.00"
+            ],
+            [
+              "0.6200",
+              "6104.00"
+            ],
+            [
+              "0.6400",
+              "10408.00"
+            ],
+            [
+              "0.6500",
+              "26.00"
+            ],
+            [
+              "0.6900",
+              "8686.00"
+            ],
+            [
+              "0.7400",
+              "36437.00"
+            ],
+            [
+              "0.7600",
+              "6887.00"
+            ],
+            [
+              "0.7900",
+              "15.00"
+            ],
+            [
+              "0.8000",
+              "6265.00"
+            ],
+            [
+              "0.8100",
+              "93.51"
+            ],
+            [
+              "0.8200",
+              "6.40"
+            ],
+            [
+              "0.8400",
+              "29461.00"
+            ],
+            [
+              "0.8700",
+              "3297.00"
+            ],
+            [
+              "0.8800",
+              "6.40"
+            ],
+            [
+              "0.8900",
+              "15.00"
+            ],
+            [
+              "0.9000",
+              "1022.28"
+            ],
+            [
+              "0.9200",
+              "26970.00"
+            ],
+            [
+              "0.9300",
+              "1292.00"
+            ],
+            [
+              "0.9400",
+              "12.80"
+            ],
+            [
+              "0.9600",
+              "9445.42"
+            ],
+            [
+              "0.9700",
+              "240.00"
+            ],
+            [
+              "0.9800",
+              "44133.32"
+            ],
+            [
+              "0.9900",
+              "2321035.35"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1555,7 +1823,7 @@
     "no_sub_title": "Charleston Southern",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-17T03:00:00Z",
-    "open_interest_fp": "33872.06",
+    "open_interest_fp": "34339.65",
     "open_time": "2026-10-03T01:07:00Z",
     "previous_price_dollars": "0.0100",
     "previous_yes_ask_dollars": "0.0100",
@@ -1578,17 +1846,17 @@
     "ticker": "KXNCAAFGAME-26OCT16CHSOCLEM-CHSO",
     "title": "Charleston Southern wins",
     "updated_time": "2026-10-03T01:07:00.587891Z",
-    "volume_24h_fp": "23019.79",
-    "volume_fp": "45242.06",
+    "volume_24h_fp": "22645.73",
+    "volume_fp": "45709.65",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "2321508.08",
+    "yes_ask_size_fp": "2321035.35",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Charleston Southern"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO",
-  "market_captured_at": "2026-10-05T09:32:24.033Z",
+  "market_captured_at": "2026-10-05T14:49:47.997Z",
   "status": "active",
-  "last_ingested_at": "2026-10-05T09:32:24.700Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO/candlesticks?start_ts=1791180001&end_ts=1791192744&period_interval=60"
+  "last_ingested_at": "2026-10-05T14:49:48.621Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT16CHSOCLEM-CHSO/candlesticks?start_ts=1791190801&end_ts=1791211788&period_interval=60"
 }

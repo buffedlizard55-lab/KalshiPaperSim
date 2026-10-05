@@ -9426,6 +9426,90 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-05T14:53:34.154Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-MDMA-30JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2030.00"
+            ],
+            [
+              "0.0200",
+              "2360.00"
+            ],
+            [
+              "0.0300",
+              "1900.00"
+            ],
+            [
+              "0.0400",
+              "2046.00"
+            ],
+            [
+              "0.0900",
+              "316.00"
+            ],
+            [
+              "0.1100",
+              "129.00"
+            ],
+            [
+              "0.1700",
+              "126.00"
+            ],
+            [
+              "0.2000",
+              "1102.00"
+            ],
+            [
+              "0.2200",
+              "349.00"
+            ],
+            [
+              "0.2300",
+              "142.00"
+            ],
+            [
+              "0.2500",
+              "98.00"
+            ],
+            [
+              "0.2600",
+              "49.00"
+            ],
+            [
+              "0.4900",
+              "505.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0400",
+              "543.00"
+            ],
+            [
+              "0.1800",
+              "705.00"
+            ],
+            [
+              "0.1900",
+              "187.00"
+            ],
+            [
+              "0.4300",
+              "500.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -9444,7 +9528,7 @@
     "last_price_dollars": "0.4500",
     "latest_expiration_time": "2030-01-08T15:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.5600",
+    "no_ask_dollars": "0.5700",
     "no_bid_dollars": "0.4900",
     "no_sub_title": "Before Jan 1, 2030",
     "notional_value_dollars": "1.0000",
@@ -9476,13 +9560,13 @@
     "volume_fp": "2995.25",
     "yes_ask_dollars": "0.5100",
     "yes_ask_size_fp": "505.00",
-    "yes_bid_dollars": "0.4400",
-    "yes_bid_size_fp": "5.00",
+    "yes_bid_dollars": "0.4300",
+    "yes_bid_size_fp": "500.00",
     "yes_sub_title": "Before Jan 1, 2030"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-MDMA-30JAN01",
-  "market_captured_at": "2026-10-05T09:36:38.899Z",
+  "market_captured_at": "2026-10-05T14:53:33.508Z",
   "status": "active",
-  "last_ingested_at": "2026-10-05T09:36:39.564Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-MDMA-30JAN01/candlesticks?start_ts=1791172801&end_ts=1791192999&period_interval=1440"
+  "last_ingested_at": "2026-10-05T14:53:34.132Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-MDMA-30JAN01/candlesticks?start_ts=1791172801&end_ts=1791212013&period_interval=1440"
 }

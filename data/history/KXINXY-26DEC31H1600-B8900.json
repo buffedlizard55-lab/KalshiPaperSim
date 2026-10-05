@@ -11570,7 +11570,7 @@
     "open_time": "2025-12-23T15:00:00Z",
     "previous_price_dollars": "0.0100",
     "previous_yes_ask_dollars": "0.0200",
-    "previous_yes_bid_dollars": "0.0000",
+    "previous_yes_bid_dollars": "0.0100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -11593,14 +11593,14 @@
     "volume_24h_fp": "0.00",
     "volume_fp": "291350.68",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "12372.00",
+    "yes_ask_size_fp": "12380.00",
     "yes_bid_dollars": "0.0100",
     "yes_bid_size_fp": "509.49",
     "yes_sub_title": "8,800 to 9,000"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8900",
-  "market_captured_at": "2026-10-05T09:25:37.759Z",
+  "market_captured_at": "2026-10-05T14:44:17.056Z",
   "status": "active",
-  "last_ingested_at": "2026-10-05T09:25:38.323Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B8900/candlesticks?start_ts=1791172801&end_ts=1791192338&period_interval=1440"
+  "last_ingested_at": "2026-10-05T14:44:17.583Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B8900/candlesticks?start_ts=1791172801&end_ts=1791211457&period_interval=1440"
 }

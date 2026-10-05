@@ -5,31 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1789657200,
-      "open_interest_fp": "323362.08",
-      "price": {
-        "close_dollars": "0.0100",
-        "high_dollars": "0.0100",
-        "low_dollars": "0.0100",
-        "mean_dollars": "0.0100",
-        "open_dollars": "0.0100",
-        "previous_dollars": "0.0100"
-      },
-      "volume_fp": "2337.93",
-      "yes_ask": {
-        "close_dollars": "0.0100",
-        "high_dollars": "0.0100",
-        "low_dollars": "0.0100",
-        "open_dollars": "0.0100"
-      },
-      "yes_bid": {
-        "close_dollars": "0.0000",
-        "high_dollars": "0.0000",
-        "low_dollars": "0.0000",
-        "open_dollars": "0.0000"
-      }
-    },
-    {
       "end_period_ts": 1789660800,
       "open_interest_fp": "323362.08",
       "price": {
@@ -4693,6 +4668,31 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1791198000,
+      "open_interest_fp": "778857.76",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "187.03",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -4870,6 +4870,173 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-05T14:53:14.789Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26OCT-C25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "768607.46"
+            ],
+            [
+              "0.0200",
+              "10201.00"
+            ],
+            [
+              "0.0300",
+              "7025.19"
+            ],
+            [
+              "0.0700",
+              "777.00"
+            ],
+            [
+              "0.1100",
+              "25000.00"
+            ],
+            [
+              "0.1200",
+              "125493.00"
+            ],
+            [
+              "0.1300",
+              "2337.97"
+            ],
+            [
+              "0.1900",
+              "93.51"
+            ],
+            [
+              "0.2000",
+              "1187.03"
+            ],
+            [
+              "0.2400",
+              "93.51"
+            ],
+            [
+              "0.2500",
+              "134.12"
+            ],
+            [
+              "0.2800",
+              "184.49"
+            ],
+            [
+              "0.3800",
+              "233.95"
+            ],
+            [
+              "0.4100",
+              "100.00"
+            ],
+            [
+              "0.4800",
+              "1171.28"
+            ],
+            [
+              "0.4900",
+              "6903.00"
+            ],
+            [
+              "0.5000",
+              "2129.33"
+            ],
+            [
+              "0.5100",
+              "3408.00"
+            ],
+            [
+              "0.5800",
+              "312.00"
+            ],
+            [
+              "0.6000",
+              "5187.00"
+            ],
+            [
+              "0.6200",
+              "93.51"
+            ],
+            [
+              "0.6400",
+              "70.27"
+            ],
+            [
+              "0.6500",
+              "5000.00"
+            ],
+            [
+              "0.6600",
+              "5650.00"
+            ],
+            [
+              "0.6900",
+              "7767.82"
+            ],
+            [
+              "0.7000",
+              "333.00"
+            ],
+            [
+              "0.7100",
+              "2.00"
+            ],
+            [
+              "0.7600",
+              "2092.00"
+            ],
+            [
+              "0.8000",
+              "5187.00"
+            ],
+            [
+              "0.9000",
+              "2360.50"
+            ],
+            [
+              "0.9100",
+              "32.00"
+            ],
+            [
+              "0.9200",
+              "112.00"
+            ],
+            [
+              "0.9300",
+              "93.00"
+            ],
+            [
+              "0.9400",
+              "455.00"
+            ],
+            [
+              "0.9500",
+              "4865.01"
+            ],
+            [
+              "0.9600",
+              "57623.21"
+            ],
+            [
+              "0.9700",
+              "116.00"
+            ],
+            [
+              "0.9800",
+              "101202.28"
+            ],
+            [
+              "0.9900",
+              "1884998.30"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4891,7 +5058,7 @@
     "no_bid_dollars": "0.9900",
     "no_sub_title": "Cut 25bps",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "778670.73",
+    "open_interest_fp": "778857.76",
     "open_time": "2025-09-29T14:00:00Z",
     "previous_price_dollars": "0.0100",
     "previous_yes_ask_dollars": "0.0100",
@@ -4915,25 +5082,33 @@
     "ticker": "KXFEDDECISION-26OCT-C25",
     "title": "Will the Federal Reserve Cut rates by 25bps at their October 2026 meeting?",
     "updated_time": "2026-09-30T18:52:10.739024Z",
-    "volume_24h_fp": "6183.76",
-    "volume_fp": "897510.99",
+    "volume_24h_fp": "5996.74",
+    "volume_fp": "897698.02",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "1885185.33",
+    "yes_ask_size_fp": "1884998.30",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Cut 25bps"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26OCT-C25",
-  "market_captured_at": "2026-10-05T09:36:15.924Z",
+  "market_captured_at": "2026-10-05T14:53:14.142Z",
   "status": "active",
-  "last_ingested_at": "2026-10-05T09:36:17.848Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26OCT-C25/candlesticks?start_ts=1788600976&end_ts=1791192975&period_interval=60",
+  "last_ingested_at": "2026-10-05T14:53:14.767Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26OCT-C25/candlesticks?start_ts=1791176401&end_ts=1791211994&period_interval=60",
   "trims": [
     {
       "at": "2026-10-05T09:36:18.213Z",
       "dropped": 1582,
       "dropped_from_ts": 1780826400,
       "dropped_to_ts": 1789642800,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-10-05T14:53:15.090Z",
+      "dropped": 1,
+      "dropped_from_ts": 1789657200,
+      "dropped_to_ts": 1789657200,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }
