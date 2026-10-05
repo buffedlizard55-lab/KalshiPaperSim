@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-05T03:11:08.019Z",
+ "generatedAt": "2026-10-05T10:31:05.052Z",
  "rows": [
   {
    "league": "nba",
@@ -74,6 +74,51 @@
     {
      "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
      "rulesName": "Detroit",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "GSW",
+   "kalshiName": "Golden State",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "9",
+    "abbr": "GS",
+    "displayName": "Golden State Warriors",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT04GSWLAC-GSW",
+     "rulesName": "Golden State",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT04GSWLAC-LAC",
+     "rulesName": "Golden State",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "LAC",
+   "kalshiName": "Los Angeles C",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT04GSWLAC-GSW",
+     "rulesName": "Los Angeles C",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT04GSWLAC-LAC",
+     "rulesName": "Los Angeles C",
      "role": "home"
     }
    ]
@@ -3168,6 +3213,26 @@
   },
   {
    "ticker": "KXNFLGAME-26OCT04DALHOU-DAL",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT04DETCAR-CAR",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT04DETCAR-DET",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT04KCLV-KC",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT04KCLV-LV",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT04LACSEA-LAC",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
