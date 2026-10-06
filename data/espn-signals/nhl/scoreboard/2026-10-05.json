@@ -15,7 +15,8 @@
   "2026-10-05T03:11:07.174Z",
   "2026-10-05T10:31:04.102Z",
   "2026-10-05T21:47:36.028Z",
-  "2026-10-06T02:02:14.803Z"
+  "2026-10-06T02:02:14.803Z",
+  "2026-10-06T03:58:57.309Z"
  ],
  "events": {
   "401892445": {
@@ -57,7 +58,7 @@
     },
     {
      "captured_at": "2026-10-06T02:02:14.803Z",
-     "last_seen_at": "2026-10-06T02:02:14.803Z",
+     "last_seen_at": "2026-10-06T03:58:57.309Z",
      "fp": "post|3|0|4,1|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -133,6 +134,26 @@
       "home": "2-1-0",
       "away": "1-0-0"
      }
+    },
+    {
+     "captured_at": "2026-10-06T03:58:57.309Z",
+     "last_seen_at": "2026-10-06T03:58:57.309Z",
+     "fp": "post|3|0|1,4|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 1,
+      "away": 4
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
+     }
     }
    ]
   },
@@ -191,6 +212,26 @@
      "recordsOverall": {
       "home": "2-0-0",
       "away": "1-0-1"
+     }
+    },
+    {
+     "captured_at": "2026-10-06T03:58:57.309Z",
+     "last_seen_at": "2026-10-06T03:58:57.309Z",
+     "fp": "post|3|0|2,3|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 2,
+      "away": 3
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
      }
     }
    ]
@@ -251,10 +292,30 @@
       "home": "0-2-0",
       "away": "2-0-0"
      }
+    },
+    {
+     "captured_at": "2026-10-06T03:58:57.309Z",
+     "last_seen_at": "2026-10-06T03:58:57.309Z",
+     "fp": "post|3|0|5,0|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 5,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-06T02:02:14.803Z",
+ "last_ingested_at": "2026-10-06T03:58:57.309Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261005"
 }

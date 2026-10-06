@@ -10,7 +10,8 @@
  "captures": [
   "2026-10-05T10:31:04.076Z",
   "2026-10-05T21:47:36.001Z",
-  "2026-10-06T02:02:14.761Z"
+  "2026-10-06T02:02:14.761Z",
+  "2026-10-06T03:58:57.277Z"
  ],
  "teams": {
   "1": {
@@ -18,6 +19,25 @@
    "displayName": "Boston Bruins",
    "firstCapturedAt": "2026-10-05T10:31:04.076Z",
    "players": {
+    "593387": {
+     "recordId": "593387",
+     "athleteName": "Charlie McAvoy",
+     "positionAbbr": "D",
+     "teamId": "1",
+     "teamAbbr": "BOS",
+     "teamName": "Boston Bruins",
+     "history": [
+      {
+       "captured_at": "2026-10-06T03:58:57.277Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
+       "fp": "Suspension|2026-09-21T05:14Z|McAvoy logged an even-strength goal on three shots and four PIM in a game-high 28:35 of ice time during Sunday's 3-2 shootout win over the Capitals in preseason play.",
+       "status": "Suspension",
+       "date": "2026-09-21T05:14Z",
+       "shortComment": "McAvoy logged an even-strength goal on three shots and four PIM in a game-high 28:35 of ice time during Sunday's 3-2 shootout win over the Capitals in preseason play.",
+       "longComment": "McAvoy is set to serve a six-game suspension to begin the year after slashing the Sabres' Zach Benson during the Bruins' first-round series loss last season. While the right-shot defenseman's draft stock may have dipped ever so slightly because of the suspension, fantasy managers should keep in mind that McAvoy is coming off a career-best year (11 goals, 61 points in 69 regular-season games), so don't let him fall too far in upcoming drafts. The 28-year-old is eligible to make his 2026-27 debut Oct. 13 in San Jose."
+      }
+     ]
+    },
     "594005": {
      "recordId": "594005",
      "athleteName": "Matthew Poitras",
@@ -54,7 +74,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T20:35Z|ir",
        "status": "Injured Reserve",
        "date": "2026-09-28T20:35Z",
@@ -73,7 +93,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T20:52Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-28T20:52Z",
@@ -92,7 +112,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T20:58Z|Leinonen (lower body) was placed on the injured non-roster list Monday.",
        "status": "Injured Reserve",
        "date": "2026-09-28T20:58Z",
@@ -111,7 +131,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T17:28Z|Timmins (lower body) doesn't have a timeline for his return yet, according to Heather Engel of NHL.com on Tuesday.",
        "status": "Injured Reserve",
        "date": "2026-09-29T17:28Z",
@@ -130,7 +150,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-01T20:40Z|ir",
        "status": "Injured Reserve",
        "date": "2026-10-01T20:40Z",
@@ -156,7 +176,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T21:15Z|Huberdeau (hip) was placed on injured reserve Monday, per Pat Steinberg of QR Calgary 770 AM.",
        "status": "Injured Reserve",
        "date": "2026-09-28T21:15Z",
@@ -239,7 +259,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-05T16:01Z|Bedard (shoulder) was on the ice for Monday's practice session, Scott Powers of The Athletic reports.",
        "status": "Injured Reserve",
        "date": "2026-10-05T16:01Z",
@@ -258,7 +278,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Out|2026-10-05T17:40Z|Mangiapane (lower body) is week-to-week, per Ben Pope of the Chicago Sun-Times on Monday.",
        "status": "Out",
        "date": "2026-10-05T17:40Z",
@@ -284,7 +304,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T19:11Z|The Red Wings placed Bernard-Docker (upper body) on injured reserve Monday, Ansar Khan of MLive.com reports.",
        "status": "Injured Reserve",
        "date": "2026-09-28T19:11Z",
@@ -303,7 +323,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T21:32Z|Bear (upper body) was placed on the injured non-roster list Monday.",
        "status": "Injured Reserve",
        "date": "2026-09-28T21:32Z",
@@ -322,7 +342,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T21:36Z|Stillman (undisclosed) was moved to the injured non-roster list Monday.",
        "status": "Injured Reserve",
        "date": "2026-09-28T21:36Z",
@@ -341,7 +361,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Out|2026-09-30T14:09Z|Edvinsson, who is a restricted free agent, has returned to Sweden to resume his training, per Andreas III Johnsson of Goteborgs-Posten on Wednesday.",
        "status": "Out",
        "date": "2026-09-30T14:09Z",
@@ -360,7 +380,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-02T20:22Z|Larkin (upper body) was placed on non-roster injured reserve Friday, per the NHL media site.",
        "status": "Injured Reserve",
        "date": "2026-10-02T20:22Z",
@@ -398,7 +418,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Day-To-Day|2026-10-05T13:03Z|day-to-day",
        "status": "Day-To-Day",
        "date": "2026-10-05T13:03Z",
@@ -424,7 +444,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T17:52Z|Janmark (undisclosed) does not have a timetable for his return from injury.",
        "status": "Injured Reserve",
        "date": "2026-09-29T17:52Z",
@@ -494,6 +514,24 @@
        "date": "2026-09-29T16:22Z",
        "shortComment": "ir-nr",
        "longComment": "ir-nr"
+      },
+      {
+       "captured_at": "2026-10-06T03:58:57.277Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
+       "fp": "Injured Reserve|2026-09-29T17:53Z|Andersen (knee) isn't expected back until \"maybe\" December, head coach Mike Babcock told NHL.com on Tuesday.",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T17:53Z",
+       "shortComment": "Andersen (knee) isn't expected back until \"maybe\" December, head coach Mike Babcock told NHL.com on Tuesday.",
+       "longComment": "Andersen, who signed a one-year, $1 million contract with Edmonton in July, is still rehabbing from a knee injury. He posted a 16-14-5 record with a 3.05 GAA and an .874 save percentage in 35 appearances for Carolina during the 2025-26 regular season. Once he's ready to play in the 2026-27 campaign with the Oilers, Andersen could compete for starts with Tristan Jarry and Devon Levi."
+      },
+      {
+       "captured_at": "2026-10-06T03:58:57.277Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
+       "fp": "Injured Reserve|2026-09-29T16:22Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T16:22Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
       }
      ]
     },
@@ -552,7 +590,7 @@
       },
       {
        "captured_at": "2026-10-06T02:02:14.761Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T16:23Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T16:23Z",
@@ -571,7 +609,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-01T14:05Z|Savoie (lower body) was shifted to long-term injured reserve Thursday.",
        "status": "Injured Reserve",
        "date": "2026-10-01T14:05Z",
@@ -590,7 +628,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-01T14:08Z|The Oilers placed Nugent-Hopkins (lower body) on injured reserve Thursday.",
        "status": "Injured Reserve",
        "date": "2026-10-01T14:08Z",
@@ -609,7 +647,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-01T14:11Z|Regula (undisclosed) was designated for long-term injured reserve Thursday.",
        "status": "Injured Reserve",
        "date": "2026-10-01T14:11Z",
@@ -628,12 +666,31 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Out|2026-10-01T19:00Z|Hyman (undisclosed) is expected to be out of action for two weeks, Oilers play-by-play announcer Jack Michaels reports Thursday.",
        "status": "Out",
        "date": "2026-10-01T19:00Z",
        "shortComment": "Hyman (undisclosed) is expected to be out of action for two weeks, Oilers play-by-play announcer Jack Michaels reports Thursday.",
        "longComment": "Based on Hyman's timeline, he should be expected to miss at least the next six games, if not longer. With the veteran forward on the shelf, Max Jones looks set to move into a top-six role, especially with Ryan Nugent-Hopkins (lower body) on injured reserve. Once cleared to play, Hyman figures to return to his spot on Connor McDavid's wing, a plum assignment that comes with plenty of production."
+      }
+     ]
+    },
+    "594837": {
+     "recordId": "594837",
+     "athleteName": "Jason Dickinson",
+     "positionAbbr": "C",
+     "teamId": "6",
+     "teamAbbr": "EDM",
+     "teamName": "Edmonton Oilers",
+     "history": [
+      {
+       "captured_at": "2026-10-06T03:58:57.277Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
+       "fp": "Injured Reserve|2026-10-06T02:03Z|Dickinson (foot) is working his way toward full health and might make his season debut in Anaheim on Wednesday, per Jamie Umbach of the Oilers' official site.",
+       "status": "Injured Reserve",
+       "date": "2026-10-06T02:03Z",
+       "shortComment": "Dickinson (foot) is working his way toward full health and might make his season debut in Anaheim on Wednesday, per Jamie Umbach of the Oilers' official site.",
+       "longComment": "Dickinson skated between Trent Frederic and Kasperi Kapanen on the second line during Monday's practice, which is a good indication that Dickinson is closing on being ready to suit up in a game. According to Umbach, Dickinson's teammates and head coach Mike Babcock are hoping the 31-year-old center will be ready for Wednesday's road divisional matchup against the Ducks. Dickinson will certainly help the Oilers defensively once he's in the lineup, as Edmonton has struggled in its own zone to begin the year. The Ontario native missed the entirety of training camp, however, so it may take him a bit to get up to game speed."
       }
      ]
     }
@@ -654,7 +711,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Out|2026-09-16T19:55Z|out",
        "status": "Out",
        "date": "2026-09-16T19:55Z",
@@ -673,7 +730,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-27T18:00Z|Jarvis (shoulder) was placed on the injured non-roster list Sunday.",
        "status": "Injured Reserve",
        "date": "2026-09-27T18:00Z",
@@ -699,7 +756,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-17T19:39Z|Fiala (lower leg fracture) is at least three weeks away from being ready to play, Zach Dooley of the Kings' official site reports Thursday.",
        "status": "Injured Reserve",
        "date": "2026-09-17T19:39Z",
@@ -718,7 +775,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-24T19:45Z|Jenik (undisclosed) was placed on non-roster injured reserve by Los Angeles on Thursday, per Zach Dooley of LA Kings Insider.",
        "status": "Injured Reserve",
        "date": "2026-09-24T19:45Z",
@@ -737,7 +794,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-24T19:49Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-24T19:49Z",
@@ -756,7 +813,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T01:16Z|Salin (undisclosed) was placed on the injured non-roster list Sunday.",
        "status": "Injured Reserve",
        "date": "2026-09-28T01:16Z",
@@ -782,7 +839,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T16:16Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T16:16Z",
@@ -839,7 +896,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T16:18Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T16:18Z",
@@ -858,7 +915,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T16:19Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T16:19Z",
@@ -877,7 +934,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-01T15:15Z|The Stars placed Duchene (lower body) on long-term injured reserve Thursday, retroactive to Sept. 29.",
        "status": "Injured Reserve",
        "date": "2026-10-01T15:15Z",
@@ -922,7 +979,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T16:38Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T16:38Z",
@@ -941,7 +998,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T16:39Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T16:39Z",
@@ -960,7 +1017,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Day-To-Day|2026-10-04T01:32Z|day-to-day",
        "status": "Day-To-Day",
        "date": "2026-10-04T01:32Z",
@@ -979,7 +1036,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Day-To-Day|2026-10-04T12:31Z|day-to-day",
        "status": "Day-To-Day",
        "date": "2026-10-04T12:31Z",
@@ -998,7 +1055,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-05T16:22Z|Head coach Martin St. Louis said Monday that Guhle (groin) is getting close to being ready to play, Stu Cowan of The Montreal Gazette reports.",
        "status": "Injured Reserve",
        "date": "2026-10-05T16:22Z",
@@ -1024,7 +1081,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T23:43Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-28T23:43Z",
@@ -1043,7 +1100,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T23:58Z|Kovacevic (knee) will begin the 2026-27 regular season on the injured non-roster list, per Mike Morreale of NHL.com.",
        "status": "Injured Reserve",
        "date": "2026-09-28T23:58Z",
@@ -1062,7 +1119,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-02T17:31Z|Casey will be out of action for 6-8 weeks after undergoing a knee procedure, Kristy Flannery of The Hockey News reports Friday.",
        "status": "Injured Reserve",
        "date": "2026-10-02T17:31Z",
@@ -1100,7 +1157,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Out|2026-10-05T16:43Z|out",
        "status": "Out",
        "date": "2026-10-05T16:43Z",
@@ -1126,7 +1183,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-30T14:58Z|Barzal (knee) might resume skating this weekend or early next week, Andrew Gross of Newsday reports Wednesday.",
        "status": "Injured Reserve",
        "date": "2026-09-30T14:58Z",
@@ -1152,7 +1209,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T01:35Z|ir",
        "status": "Injured Reserve",
        "date": "2026-09-29T01:35Z",
@@ -1171,7 +1228,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T16:39Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T16:39Z",
@@ -1190,7 +1247,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-01T17:24Z|ir",
        "status": "Injured Reserve",
        "date": "2026-10-01T17:24Z",
@@ -1228,7 +1285,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Out|2026-10-05T17:24Z|out",
        "status": "Out",
        "date": "2026-10-05T17:24Z",
@@ -1305,6 +1362,24 @@
        "date": "2026-09-28T21:51Z",
        "shortComment": "ir-nr",
        "longComment": "ir-nr"
+      },
+      {
+       "captured_at": "2026-10-06T03:58:57.277Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
+       "fp": "Injured Reserve|2026-09-28T22:02Z|MacDermid (upper body) was moved to the injured non-roster list Monday.",
+       "status": "Injured Reserve",
+       "date": "2026-09-28T22:02Z",
+       "shortComment": "MacDermid (upper body) was moved to the injured non-roster list Monday.",
+       "longComment": "MacDermid doesn't have a timeline for his return. He contributed one assist, four shots on goal, 18 hits and 33 PIM in 19 appearances for Ottawa during the 2025-26 regular season."
+      },
+      {
+       "captured_at": "2026-10-06T03:58:57.277Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
+       "fp": "Injured Reserve|2026-09-28T21:51Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-28T21:51Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
       }
      ]
     },
@@ -1318,7 +1393,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T16:40Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T16:40Z",
@@ -1375,7 +1450,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-05T15:08Z|Burakovsky (upper body) was placed on injured reserve Monday, according to Bruce Garrioch of Postmedia.",
        "status": "Injured Reserve",
        "date": "2026-10-05T15:08Z",
@@ -1394,12 +1469,31 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Out|2026-10-05T16:09Z|out",
        "status": "Out",
        "date": "2026-10-05T16:09Z",
        "shortComment": "out",
        "longComment": "out"
+      }
+     ]
+    },
+    "594838": {
+     "recordId": "594838",
+     "athleteName": "Linus Ullmark",
+     "positionAbbr": "G",
+     "teamId": "14",
+     "teamAbbr": "OTT",
+     "teamName": "Ottawa Senators",
+     "history": [
+      {
+       "captured_at": "2026-10-06T03:58:57.277Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
+       "fp": "Day-To-Day|2026-10-06T03:19Z|day-to-day",
+       "status": "Day-To-Day",
+       "date": "2026-10-06T03:19Z",
+       "shortComment": "day-to-day",
+       "longComment": "day-to-day"
       }
      ]
     }
@@ -1439,7 +1533,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T20:52Z|Grans (lower body) was put on the injured non-roster list Monday.",
        "status": "Injured Reserve",
        "date": "2026-09-28T20:52Z",
@@ -1515,7 +1609,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-05T16:05Z|ir",
        "status": "Injured Reserve",
        "date": "2026-10-05T16:05Z",
@@ -1534,7 +1628,7 @@
      "history": [
       {
        "captured_at": "2026-10-06T02:02:14.761Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Out|2026-10-05T22:41Z|out",
        "status": "Out",
        "date": "2026-10-05T22:41Z",
@@ -1560,7 +1654,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-27T15:21Z|Graves (lower body) is out indefinitely and was placed on injured reserve Sunday.",
        "status": "Injured Reserve",
        "date": "2026-09-27T15:21Z",
@@ -1579,7 +1673,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-27T15:26Z|Brazeau (lower body) was placed on injured reserve by the Penguins on Sunday.",
        "status": "Injured Reserve",
        "date": "2026-09-27T15:26Z",
@@ -1598,7 +1692,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T18:20Z|ir",
        "status": "Injured Reserve",
        "date": "2026-09-28T18:20Z",
@@ -1624,7 +1718,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T22:41Z|Merkulov (undisclosed) was put on non-roster injured reserve Monday.",
        "status": "Injured Reserve",
        "date": "2026-09-28T22:41Z",
@@ -1643,7 +1737,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T04:22Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T04:22Z",
@@ -1662,7 +1756,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T18:51Z|O'Connor (lower body) won't play at the beginning of the 2026-27 campaign, Aarif Deen of Colorado Hockey Now reports.",
        "status": "Injured Reserve",
        "date": "2026-09-29T18:51Z",
@@ -1681,7 +1775,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T18:56Z|L'Heureux (lower body) won't be available for the start of the 2026-27 campaign, per Aarif Deen of Colorado Hockey Now on Tuesday.",
        "status": "Injured Reserve",
        "date": "2026-09-29T18:56Z",
@@ -1707,7 +1801,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T22:10Z|Keyser (upper body) was placed on non-roster injured reserve by the Sharks on Monday, Curtis Pashelka of The San Jose Mercury News reports.",
        "status": "Injured Reserve",
        "date": "2026-09-28T22:10Z",
@@ -1726,7 +1820,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T22:15Z|Lund (upper body) was placed on non-roster injured reserve by the Sharks on Monday, Curtis Pashelka of The San Jose Mercury News reports.",
        "status": "Injured Reserve",
        "date": "2026-09-28T22:15Z",
@@ -1745,7 +1839,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T22:20Z|Musty (upper body) was put on non-roster injured reserve Monday, according to Curtis Pashelka of The San Jose Mercury News.",
        "status": "Injured Reserve",
        "date": "2026-09-28T22:20Z",
@@ -1764,7 +1858,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T22:21Z|Barre-Boulet (undisclosed) will begin the 2026-27 regular season on injured reserve, per Curtis Pashelka of The San Jose Mercury News.",
        "status": "Injured Reserve",
        "date": "2026-09-28T22:21Z",
@@ -1783,7 +1877,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T22:30Z|Gaudette (upper body) will begin the 2026-27 regular season on the injured non-roster list, per Curtis Pashelka of The San Jose Mercury News.",
        "status": "Injured Reserve",
        "date": "2026-09-28T22:30Z",
@@ -1810,6 +1904,25 @@
        "longComment": "out"
       }
      ]
+    },
+    "594844": {
+     "recordId": "594844",
+     "athleteName": "Macklin Celebrini",
+     "positionAbbr": "C",
+     "teamId": "18",
+     "teamAbbr": "SJ",
+     "teamName": "San Jose Sharks",
+     "history": [
+      {
+       "captured_at": "2026-10-06T03:58:57.277Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
+       "fp": "Out|2026-10-06T03:42Z|out",
+       "status": "Out",
+       "date": "2026-10-06T03:42Z",
+       "shortComment": "out",
+       "longComment": "out"
+      }
+     ]
     }
    }
   },
@@ -1828,7 +1941,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T15:40Z|ir",
        "status": "Injured Reserve",
        "date": "2026-09-28T15:40Z",
@@ -1847,7 +1960,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T16:48Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T16:48Z",
@@ -1866,7 +1979,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-30T19:39Z|Tucker had arthroscopic knee surgery and will be re-assessed in six weeks, the team announced Wednesday.",
        "status": "Injured Reserve",
        "date": "2026-09-30T19:39Z",
@@ -1904,7 +2017,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-05T21:20Z|ir",
        "status": "Injured Reserve",
        "date": "2026-10-05T21:20Z",
@@ -1930,7 +2043,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T19:17Z|The Lightning placed James (hand) on non-roster injured reserve Monday.",
        "status": "Injured Reserve",
        "date": "2026-09-28T19:17Z",
@@ -1949,7 +2062,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T19:18Z|Gourde (hip) was placed on the injured non-roster list Monday.",
        "status": "Injured Reserve",
        "date": "2026-09-28T19:18Z",
@@ -1987,7 +2100,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Out|2026-10-05T14:48Z|Lilleberg (undisclosed) has been ruled out for Monday's game against the Flyers and is expected to miss approximately one week, Eduardo A. Encina of the Tampa Bay Times reports.",
        "status": "Out",
        "date": "2026-10-05T14:48Z",
@@ -2013,7 +2126,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T14:24Z|Merzlikins is expected to miss 4-6 months to begin the 2026-27 regular season while recovering from a shoulder injury, per Luke Fox of Sportsnet.",
        "status": "Injured Reserve",
        "date": "2026-09-29T14:24Z",
@@ -2032,7 +2145,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T04:30Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T04:30Z",
@@ -2051,7 +2164,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T14:55Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T14:55Z",
@@ -2070,7 +2183,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-30T18:51Z|Domi (back) was transferred from the non-roster list to long-term injured reserve Wednesday, per PuckPedia.",
        "status": "Injured Reserve",
        "date": "2026-09-30T18:51Z",
@@ -2089,7 +2202,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-30T21:47Z|Joshua (abdomen) has been moved from the non-roster list to long-term injured reserve, PuckPedia reports Wednesday.",
        "status": "Injured Reserve",
        "date": "2026-09-30T21:47Z",
@@ -2115,7 +2228,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-25T21:40Z|ir",
        "status": "Injured Reserve",
        "date": "2026-09-25T21:40Z",
@@ -2134,7 +2247,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T17:58Z|Co-president of hockey operations Henrik Sedin said Monday that he hopes Demko (hip) will be ready to return before Christmas, Kevin Woodley of NHL.com reports.",
        "status": "Injured Reserve",
        "date": "2026-09-28T17:58Z",
@@ -2153,7 +2266,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T17:03Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T17:03Z",
@@ -2172,7 +2285,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T17:05Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T17:05Z",
@@ -2191,7 +2304,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T17:06Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T17:06Z",
@@ -2229,7 +2342,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Day-To-Day|2026-10-05T13:03Z|day-to-day",
        "status": "Day-To-Day",
        "date": "2026-10-05T13:03Z",
@@ -2255,7 +2368,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T21:48Z|Sandin (knee) will begin the 2026-27 regular season on the injured non-roster list.",
        "status": "Injured Reserve",
        "date": "2026-09-28T21:48Z",
@@ -2274,7 +2387,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T17:07Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T17:07Z",
@@ -2312,7 +2425,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Day-To-Day|2026-10-05T16:23Z|Roy (lower body) is day-to-day, per Sammi Silber of The Hockey News on Monday.",
        "status": "Day-To-Day",
        "date": "2026-10-05T16:23Z",
@@ -2338,7 +2451,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T00:06Z|ir",
        "status": "Injured Reserve",
        "date": "2026-09-29T00:06Z",
@@ -2357,7 +2470,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-30T14:53Z|Terry (hip) was moved from the non-roster list to long-term injured reserve Wednesday, Zach Cavanagh of The Sporting Tribune reports.",
        "status": "Injured Reserve",
        "date": "2026-09-30T14:53Z",
@@ -2376,7 +2489,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-30T15:57Z|ir",
        "status": "Injured Reserve",
        "date": "2026-09-30T15:57Z",
@@ -2402,7 +2515,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-17T20:53Z|Gadjovich (upper body) is out indefinitely, the team announced Thursday.",
        "status": "Injured Reserve",
        "date": "2026-09-17T20:53Z",
@@ -2421,7 +2534,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T16:37Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T16:37Z",
@@ -2440,7 +2553,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-03T18:39Z|ir-lt",
        "status": "Injured Reserve",
        "date": "2026-10-03T18:39Z",
@@ -2459,7 +2572,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Day-To-Day|2026-10-05T04:27Z|day-to-day",
        "status": "Day-To-Day",
        "date": "2026-10-05T04:27Z",
@@ -2485,7 +2598,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Day-To-Day|2026-10-04T12:31Z|day-to-day",
        "status": "Day-To-Day",
        "date": "2026-10-04T12:31Z",
@@ -2511,7 +2624,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T15:54Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T15:54Z",
@@ -2530,7 +2643,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T15:54Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T15:54Z",
@@ -2549,7 +2662,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T15:55Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-09-29T15:55Z",
@@ -2568,7 +2681,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-02T20:25Z|ir-nr",
        "status": "Injured Reserve",
        "date": "2026-10-02T20:25Z",
@@ -2594,7 +2707,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T21:28Z|Gustavsson (hip) was placed on injured reserve Monday, according to Dylan Loucks of The Hockey News.",
        "status": "Injured Reserve",
        "date": "2026-09-28T21:28Z",
@@ -2613,7 +2726,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T16:21Z|Faber underwent a procedure to repair his fractured skull and is without a timetable to return, per Michael Russo of The Athletic.",
        "status": "Injured Reserve",
        "date": "2026-09-29T16:21Z",
@@ -2632,7 +2745,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Day-To-Day|2026-10-05T15:51Z|day-to-day",
        "status": "Day-To-Day",
        "date": "2026-10-05T15:51Z",
@@ -2658,7 +2771,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-29T15:35Z|ir",
        "status": "Injured Reserve",
        "date": "2026-09-29T15:35Z",
@@ -2677,7 +2790,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T21:47:36.001Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Day-To-Day|2026-10-05T13:03Z|day-to-day",
        "status": "Day-To-Day",
        "date": "2026-10-05T13:03Z",
@@ -2703,7 +2816,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-01T00:06Z|O'Brien (lower body) was placed on non-roster injured reserve Wednesday.",
        "status": "Injured Reserve",
        "date": "2026-10-01T00:06Z",
@@ -2722,7 +2835,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-10-03T16:31Z|Melanson (upper body) was placed on injured reserve Saturday.",
        "status": "Injured Reserve",
        "date": "2026-10-03T16:31Z",
@@ -2748,7 +2861,7 @@
      "history": [
       {
        "captured_at": "2026-10-05T10:31:04.076Z",
-       "last_seen_at": "2026-10-06T02:02:14.761Z",
+       "last_seen_at": "2026-10-06T03:58:57.277Z",
        "fp": "Injured Reserve|2026-09-28T21:02Z|ir",
        "status": "Injured Reserve",
        "date": "2026-09-28T21:02Z",
@@ -2760,6 +2873,6 @@
    }
   }
  },
- "last_ingested_at": "2026-10-06T02:02:14.761Z",
+ "last_ingested_at": "2026-10-06T03:58:57.277Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries"
 }
