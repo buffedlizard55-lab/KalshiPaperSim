@@ -1,0 +1,139 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-07",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261007"
+  ]
+ },
+ "captures": [
+  "2026-10-06T11:03:48.814Z"
+ ],
+ "events": {
+  "401891830": {
+   "eventId": "401891830",
+   "date": "2026-10-07T23:30Z",
+   "easternDate": "2026-10-07",
+   "name": "Pittsburgh Penguins at Washington Capitals",
+   "shortName": "PIT @ WSH",
+   "week": null,
+   "venue": "Capital One Arena",
+   "homeAbbr": "WSH",
+   "homeTeamId": "23",
+   "homeName": "Washington Capitals",
+   "awayAbbr": "PIT",
+   "awayTeamId": "16",
+   "awayName": "Pittsburgh Penguins",
+   "firstCapturedAt": "2026-10-06T11:03:48.814Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "WSH -170",
+    "spread": -1.5,
+    "overUnder": 6.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-06T11:03:48.814Z",
+     "last_seen_at": "2026-10-06T11:03:48.814Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1-0",
+      "away": "2-1-0"
+     }
+    }
+   ]
+  },
+  "401892455": {
+   "eventId": "401892455",
+   "date": "2026-10-07T23:30Z",
+   "easternDate": "2026-10-07",
+   "name": "Colorado Avalanche at Winnipeg Jets",
+   "shortName": "COL @ WPG",
+   "week": null,
+   "venue": "Canada Life Centre",
+   "homeAbbr": "WPG",
+   "homeTeamId": "28",
+   "homeName": "Winnipeg Jets",
+   "awayAbbr": "COL",
+   "awayTeamId": "17",
+   "awayName": "Colorado Avalanche",
+   "firstCapturedAt": "2026-10-06T11:03:48.814Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-06T11:03:48.814Z",
+     "last_seen_at": "2026-10-06T11:03:48.814Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-0-1",
+      "away": "2-0-0"
+     }
+    }
+   ]
+  },
+  "401892456": {
+   "eventId": "401892456",
+   "date": "2026-10-08T02:00Z",
+   "easternDate": "2026-10-07",
+   "name": "Edmonton Oilers at Anaheim Ducks",
+   "shortName": "EDM @ ANA",
+   "week": null,
+   "venue": "Honda Center",
+   "homeAbbr": "ANA",
+   "homeTeamId": "25",
+   "homeName": "Anaheim Ducks",
+   "awayAbbr": "EDM",
+   "awayTeamId": "6",
+   "awayName": "Edmonton Oilers",
+   "firstCapturedAt": "2026-10-06T11:03:48.814Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-06T11:03:48.814Z",
+     "last_seen_at": "2026-10-06T11:03:48.814Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-0-0",
+      "away": "2-0-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-06T11:03:48.814Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261007"
+}

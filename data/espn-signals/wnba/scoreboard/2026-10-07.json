@@ -1,0 +1,105 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-07",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261007"
+  ]
+ },
+ "captures": [
+  "2026-10-06T11:03:48.971Z"
+ ],
+ "events": {
+  "401918297": {
+   "eventId": "401918297",
+   "date": "2026-10-07T23:30Z",
+   "easternDate": "2026-10-07",
+   "name": "New York Liberty at Atlanta Dream",
+   "shortName": "NY @ ATL",
+   "week": null,
+   "venue": "State Farm Arena",
+   "homeAbbr": "ATL",
+   "homeTeamId": "20",
+   "homeName": "Atlanta Dream",
+   "awayAbbr": "NY",
+   "awayTeamId": "9",
+   "awayName": "New York Liberty",
+   "firstCapturedAt": "2026-10-06T11:03:48.971Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "ATL -2.5",
+    "spread": -2.5,
+    "overUnder": 170.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-06T11:03:48.971Z",
+     "last_seen_at": "2026-10-06T11:03:48.971Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "30-14",
+      "away": "26-18"
+     }
+    }
+   ]
+  },
+  "401918298": {
+   "eventId": "401918298",
+   "date": "2026-10-08T01:30Z",
+   "easternDate": "2026-10-07",
+   "name": "Las Vegas Aces at Golden State Valkyries",
+   "shortName": "LV @ GS",
+   "week": null,
+   "venue": "Chase Center",
+   "homeAbbr": "GS",
+   "homeTeamId": "129689",
+   "homeName": "Golden State Valkyries",
+   "awayAbbr": "LV",
+   "awayTeamId": "17",
+   "awayName": "Las Vegas Aces",
+   "firstCapturedAt": "2026-10-06T11:03:48.971Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "GS -1.5",
+    "spread": -1.5,
+    "overUnder": 157.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-06T11:03:48.971Z",
+     "last_seen_at": "2026-10-06T11:03:48.971Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "32-12",
+      "away": "31-13"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-06T11:03:48.971Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261007"
+}

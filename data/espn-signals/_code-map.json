@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-06T03:58:57.914Z",
+ "generatedAt": "2026-10-06T11:03:49.463Z",
  "rows": [
   {
    "league": "nba",
@@ -75,6 +75,11 @@
      "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
      "rulesName": "Detroit",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT05PHXDET-PHX",
+     "rulesName": "Detroit",
+     "role": "home"
     }
    ]
   },
@@ -136,6 +141,11 @@
    },
    "espnReason": "MATCHED",
    "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT05LALSAC-LAL",
+     "rulesName": "Los Angeles L",
+     "role": "away"
+    },
     {
      "ticker": "KXNBAGAME-26OCT05LALSAC-SAC",
      "rulesName": "Los Angeles L",
@@ -265,6 +275,26 @@
   },
   {
    "league": "nba",
+   "kalshiCode": "PHX",
+   "kalshiName": "Phoenix",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "21",
+    "abbr": "PHX",
+    "displayName": "Phoenix Suns",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT05PHXDET-PHX",
+     "rulesName": "Phoenix",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
    "kalshiCode": "SAC",
    "kalshiName": "Sacramento",
    "conflictWith": null,
@@ -276,6 +306,11 @@
    },
    "espnReason": "MATCHED",
    "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT05LALSAC-LAL",
+     "rulesName": "Sacramento",
+     "role": "home"
+    },
     {
      "ticker": "KXNBAGAME-26OCT05LALSAC-SAC",
      "rulesName": "Sacramento",
@@ -3273,6 +3308,14 @@
   },
   {
    "ticker": "KXNFLGAME-26OCT04LACSEA-LAC",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT05ATLNO-ATL",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT05ATLNO-NO",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
