@@ -3166,6 +3166,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-06T21:15:53.789Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3225,9 +3235,9 @@
     "yes_sub_title": "Saquon Barkley"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26",
-  "market_captured_at": "2026-10-06T13:22:50.268Z",
+  "market_captured_at": "2026-10-06T21:15:53.210Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-06T13:22:50.786Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26/candlesticks?start_ts=1789963201&end_ts=1791292970&period_interval=1440",
+  "last_ingested_at": "2026-10-06T21:15:53.751Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20PHITEN-PHISBARKLEY26/candlesticks?start_ts=1789963201&end_ts=1791321353&period_interval=1440",
   "result": "no"
 }

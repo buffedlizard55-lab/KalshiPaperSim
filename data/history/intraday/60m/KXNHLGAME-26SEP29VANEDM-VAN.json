@@ -2240,6 +2240,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-06T21:20:23.699Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP29VANEDM-VAN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2297,9 +2307,9 @@
     "yes_sub_title": "Vancouver"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP29VANEDM-VAN",
-  "market_captured_at": "2026-10-06T13:26:54.297Z",
+  "market_captured_at": "2026-10-06T21:20:23.017Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-06T13:26:54.915Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP29VANEDM-VAN/candlesticks?start_ts=1790744401&end_ts=1791293214&period_interval=60"
+  "last_ingested_at": "2026-10-06T21:20:23.658Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP29VANEDM-VAN/candlesticks?start_ts=1790744401&end_ts=1791321623&period_interval=60"
 }

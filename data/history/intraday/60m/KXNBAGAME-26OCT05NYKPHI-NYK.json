@@ -2957,6 +2957,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-06T21:20:07.828Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT05NYKPHI-NYK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2982,9 +2992,9 @@
     "occurrence_datetime": "2026-10-06T02:00:00Z",
     "open_interest_fp": "516180.24",
     "open_time": "2026-10-01T00:04:04.736094Z",
-    "previous_price_dollars": "0.4900",
-    "previous_yes_ask_dollars": "0.4900",
-    "previous_yes_bid_dollars": "0.4800",
+    "previous_price_dollars": "0.6200",
+    "previous_yes_ask_dollars": "0.6200",
+    "previous_yes_bid_dollars": "0.6100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3005,7 +3015,7 @@
     "ticker": "KXNBAGAME-26OCT05NYKPHI-NYK",
     "title": "New York wins",
     "updated_time": "2026-10-06T01:59:17.525383Z",
-    "volume_24h_fp": "929660.06",
+    "volume_24h_fp": "858997.18",
     "volume_fp": "941197.59",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3014,9 +3024,9 @@
     "yes_sub_title": "New York"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT05NYKPHI-NYK",
-  "market_captured_at": "2026-10-06T13:26:39.303Z",
+  "market_captured_at": "2026-10-06T21:20:07.140Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-06T13:26:39.921Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT05NYKPHI-NYK/candlesticks?start_ts=1791252001&end_ts=1791293199&period_interval=60",
+  "last_ingested_at": "2026-10-06T21:20:07.781Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT05NYKPHI-NYK/candlesticks?start_ts=1791252001&end_ts=1791321607&period_interval=60",
   "result": "no"
 }
