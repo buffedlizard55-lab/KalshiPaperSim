@@ -7897,6 +7897,62 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-06T13:30:54.980Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JUL01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3005.00"
+            ],
+            [
+              "0.0200",
+              "51.00"
+            ],
+            [
+              "0.0300",
+              "100.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "2629.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2005.00"
+            ],
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0500",
+              "148.00"
+            ],
+            [
+              "0.3600",
+              "1539.00"
+            ],
+            [
+              "0.8700",
+              "1620.00"
+            ],
+            [
+              "0.8800",
+              "5.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -7952,8 +8008,8 @@
     "yes_sub_title": "Before Jul 1, 2028"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JUL01",
-  "market_captured_at": "2026-10-06T09:23:27.290Z",
+  "market_captured_at": "2026-10-06T13:30:54.348Z",
   "status": "active",
-  "last_ingested_at": "2026-10-06T09:23:27.906Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-28JUL01/candlesticks?start_ts=1791259201&end_ts=1791278607&period_interval=1440"
+  "last_ingested_at": "2026-10-06T13:30:54.965Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-28JUL01/candlesticks?start_ts=1791259201&end_ts=1791293454&period_interval=1440"
 }

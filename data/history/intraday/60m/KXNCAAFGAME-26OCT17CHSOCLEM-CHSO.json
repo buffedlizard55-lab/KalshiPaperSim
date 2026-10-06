@@ -145,6 +145,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-06T13:27:01.177Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -202,9 +212,9 @@
     "yes_sub_title": "Charleston Southern"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO",
-  "market_captured_at": "2026-10-06T09:19:35.185Z",
+  "market_captured_at": "2026-10-06T13:27:00.545Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-06T09:19:35.798Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO/candlesticks?start_ts=1791248401&end_ts=1791278375&period_interval=60",
+  "last_ingested_at": "2026-10-06T13:27:01.162Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO/candlesticks?start_ts=1791248401&end_ts=1791293220&period_interval=60",
   "result": "scalar"
 }

@@ -15785,6 +15785,74 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-06T13:31:07.975Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2316.74"
+            ],
+            [
+              "0.0200",
+              "3333.00"
+            ],
+            [
+              "0.4200",
+              "43.27"
+            ],
+            [
+              "0.4600",
+              "93.92"
+            ],
+            [
+              "0.5000",
+              "500.00"
+            ],
+            [
+              "0.6000",
+              "369.00"
+            ],
+            [
+              "0.6200",
+              "1368.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.8200",
+              "2.00"
+            ],
+            [
+              "0.8700",
+              "468.51"
+            ],
+            [
+              "0.9600",
+              "1668.00"
+            ],
+            [
+              "0.9700",
+              "0.41"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1503.46"
+            ],
+            [
+              "0.0200",
+              "12.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -15837,8 +15905,8 @@
     "yes_sub_title": "Before 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27",
-  "market_captured_at": "2026-10-06T09:23:40.221Z",
+  "market_captured_at": "2026-10-06T13:31:07.344Z",
   "status": "active",
-  "last_ingested_at": "2026-10-06T09:23:40.837Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1791000001&end_ts=1791278620&period_interval=1440"
+  "last_ingested_at": "2026-10-06T13:31:07.959Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1791000001&end_ts=1791293467&period_interval=1440"
 }

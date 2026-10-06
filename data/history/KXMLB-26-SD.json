@@ -32762,11 +32762,11 @@
     "no_bid_dollars": "0.9720",
     "no_sub_title": "San Diego",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "5145045.30",
+    "open_interest_fp": "5144240.34",
     "open_time": "2025-12-17T15:00:00Z",
-    "previous_price_dollars": "0.0310",
-    "previous_yes_ask_dollars": "0.0300",
-    "previous_yes_bid_dollars": "0.0280",
+    "previous_price_dollars": "0.0280",
+    "previous_yes_ask_dollars": "0.0280",
+    "previous_yes_bid_dollars": "0.0270",
     "price_level_structure": "deci_cent",
     "price_ranges": [
       {
@@ -32785,17 +32785,17 @@
     "ticker": "KXMLB-26-SD",
     "title": "Will San Diego win the 2026 Pro Baseball Championship?",
     "updated_time": "2026-07-13T21:35:15.63415Z",
-    "volume_24h_fp": "181967.67",
-    "volume_fp": "7459664.96",
+    "volume_24h_fp": "178531.38",
+    "volume_fp": "7463400.09",
     "yes_ask_dollars": "0.0280",
-    "yes_ask_size_fp": "203.56",
+    "yes_ask_size_fp": "335.00",
     "yes_bid_dollars": "0.0270",
-    "yes_bid_size_fp": "85.82",
+    "yes_bid_size_fp": "66.09",
     "yes_sub_title": "San Diego"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-SD",
-  "market_captured_at": "2026-10-06T09:13:45.676Z",
+  "market_captured_at": "2026-10-06T13:21:42.525Z",
   "status": "active",
-  "last_ingested_at": "2026-10-06T09:13:46.190Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SD/candlesticks?start_ts=1791259201&end_ts=1791278025&period_interval=1440"
+  "last_ingested_at": "2026-10-06T13:21:43.041Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SD/candlesticks?start_ts=1791259201&end_ts=1791292902&period_interval=1440"
 }

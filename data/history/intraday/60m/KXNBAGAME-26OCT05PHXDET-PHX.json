@@ -2411,6 +2411,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-06T13:26:43.686Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT05PHXDET-PHX/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2459,7 +2469,7 @@
     "ticker": "KXNBAGAME-26OCT05PHXDET-PHX",
     "title": "Phoenix wins",
     "updated_time": "2026-10-06T01:59:17.525383Z",
-    "volume_24h_fp": "757408.04",
+    "volume_24h_fp": "757314.72",
     "volume_fp": "758846.07",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2468,9 +2478,9 @@
     "yes_sub_title": "Phoenix"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT05PHXDET-PHX",
-  "market_captured_at": "2026-10-06T09:19:17.764Z",
+  "market_captured_at": "2026-10-06T13:26:43.054Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-06T09:19:18.381Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT05PHXDET-PHX/candlesticks?start_ts=1791252001&end_ts=1791278358&period_interval=60"
+  "last_ingested_at": "2026-10-06T13:26:43.671Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT05PHXDET-PHX/candlesticks?start_ts=1791252001&end_ts=1791293203&period_interval=60"
 }

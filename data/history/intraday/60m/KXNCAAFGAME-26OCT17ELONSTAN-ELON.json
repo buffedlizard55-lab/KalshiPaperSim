@@ -305,6 +305,26 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1791291600,
+      "open_interest_fp": "1211.78",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -1435,6 +1455,186 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-06T13:27:03.679Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1045528.00"
+            ],
+            [
+              "0.0200",
+              "2622.00"
+            ],
+            [
+              "0.0300",
+              "73324.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "43725.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "121023.00"
+            ],
+            [
+              "0.1700",
+              "51110.00"
+            ],
+            [
+              "0.2300",
+              "27445.00"
+            ],
+            [
+              "0.2600",
+              "18218.00"
+            ],
+            [
+              "0.2900",
+              "6344.00"
+            ],
+            [
+              "0.3200",
+              "11067.00"
+            ],
+            [
+              "0.3300",
+              "22.00"
+            ],
+            [
+              "0.3500",
+              "6383.00"
+            ],
+            [
+              "0.3800",
+              "6990.00"
+            ],
+            [
+              "0.4100",
+              "5174.00"
+            ],
+            [
+              "0.4200",
+              "22.00"
+            ],
+            [
+              "0.4400",
+              "4586.00"
+            ],
+            [
+              "0.4700",
+              "2755.00"
+            ],
+            [
+              "0.5000",
+              "2758.00"
+            ],
+            [
+              "0.5100",
+              "39.00"
+            ],
+            [
+              "0.5300",
+              "2448.00"
+            ],
+            [
+              "0.5600",
+              "1842.00"
+            ],
+            [
+              "0.5900",
+              "1844.00"
+            ],
+            [
+              "0.6200",
+              "2375.00"
+            ],
+            [
+              "0.6300",
+              "268.00"
+            ],
+            [
+              "0.6500",
+              "1197.00"
+            ],
+            [
+              "0.6800",
+              "1198.00"
+            ],
+            [
+              "0.7100",
+              "1198.00"
+            ],
+            [
+              "0.7200",
+              "150.00"
+            ],
+            [
+              "0.7400",
+              "734.00"
+            ],
+            [
+              "0.7700",
+              "735.00"
+            ],
+            [
+              "0.8000",
+              "735.00"
+            ],
+            [
+              "0.8100",
+              "388.00"
+            ],
+            [
+              "0.8800",
+              "25.00"
+            ],
+            [
+              "0.9300",
+              "23.42"
+            ],
+            [
+              "0.9400",
+              "22.00"
+            ],
+            [
+              "0.9500",
+              "467.00"
+            ],
+            [
+              "0.9600",
+              "99268.22"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "15011.00"
+            ],
+            [
+              "0.0200",
+              "2089.00"
+            ],
+            [
+              "0.0300",
+              "743.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1490,8 +1690,8 @@
     "yes_sub_title": "Elon"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON",
-  "market_captured_at": "2026-10-06T09:19:37.672Z",
+  "market_captured_at": "2026-10-06T13:27:03.043Z",
   "status": "active",
-  "last_ingested_at": "2026-10-06T09:19:38.288Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON/candlesticks?start_ts=1791266401&end_ts=1791278377&period_interval=60"
+  "last_ingested_at": "2026-10-06T13:27:03.664Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON/candlesticks?start_ts=1791273601&end_ts=1791293223&period_interval=60"
 }

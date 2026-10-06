@@ -12773,8 +12773,8 @@
     "open_interest_fp": "168940.36",
     "open_time": "2026-06-15T03:40:00Z",
     "previous_price_dollars": "0.0500",
-    "previous_yes_ask_dollars": "0.0600",
-    "previous_yes_bid_dollars": "0.0500",
+    "previous_yes_ask_dollars": "0.0500",
+    "previous_yes_bid_dollars": "0.0400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12796,14 +12796,14 @@
     "volume_24h_fp": "1102.27",
     "volume_fp": "183570.88",
     "yes_ask_dollars": "0.0500",
-    "yes_ask_size_fp": "5909.89",
+    "yes_ask_size_fp": "5951.13",
     "yes_bid_dollars": "0.0400",
-    "yes_bid_size_fp": "11270.60",
+    "yes_bid_size_fp": "10897.60",
     "yes_sub_title": "Montréal Canadiens"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHL-27-MTL",
-  "market_captured_at": "2026-10-06T09:15:34.566Z",
+  "market_captured_at": "2026-10-06T13:23:04.427Z",
   "status": "active",
-  "last_ingested_at": "2026-10-06T09:15:35.080Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MTL/candlesticks?start_ts=1791259201&end_ts=1791278134&period_interval=1440"
+  "last_ingested_at": "2026-10-06T13:23:04.945Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHL/markets/KXNHL-27-MTL/candlesticks?start_ts=1791259201&end_ts=1791292984&period_interval=1440"
 }

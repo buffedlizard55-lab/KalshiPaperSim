@@ -2683,6 +2683,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-06T13:26:38.684Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT05LALSAC-LAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2708,9 +2718,9 @@
     "occurrence_datetime": "2026-10-06T05:00:00Z",
     "open_interest_fp": "848292.41",
     "open_time": "2026-10-01T00:04:07.58396Z",
-    "previous_price_dollars": "0.6100",
-    "previous_yes_ask_dollars": "0.6100",
-    "previous_yes_bid_dollars": "0.6000",
+    "previous_price_dollars": "0.6600",
+    "previous_yes_ask_dollars": "0.6600",
+    "previous_yes_bid_dollars": "0.6500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2731,7 +2741,7 @@
     "ticker": "KXNBAGAME-26OCT05LALSAC-LAL",
     "title": "Los Angeles L wins",
     "updated_time": "2026-10-06T04:49:07.524269Z",
-    "volume_24h_fp": "1420473.32",
+    "volume_24h_fp": "1419522.33",
     "volume_fp": "1426289.45",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2740,9 +2750,9 @@
     "yes_sub_title": "Los Angeles L"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT05LALSAC-LAL",
-  "market_captured_at": "2026-10-06T09:19:12.782Z",
+  "market_captured_at": "2026-10-06T13:26:38.053Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-06T09:19:13.399Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT05LALSAC-LAL/candlesticks?start_ts=1791262801&end_ts=1791278353&period_interval=60"
+  "last_ingested_at": "2026-10-06T13:26:38.669Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT05LALSAC-LAL/candlesticks?start_ts=1791262801&end_ts=1791293198&period_interval=60"
 }
