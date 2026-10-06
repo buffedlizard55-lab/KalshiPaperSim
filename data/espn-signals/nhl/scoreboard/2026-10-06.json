@@ -13,7 +13,8 @@
   "2026-10-06T02:02:14.845Z",
   "2026-10-06T03:58:57.341Z",
   "2026-10-06T11:03:48.774Z",
-  "2026-10-06T19:57:55.634Z"
+  "2026-10-06T19:57:55.634Z",
+  "2026-10-06T23:37:08.814Z"
  ],
  "events": {
   "401891779": {
@@ -40,7 +41,7 @@
    "states": [
     {
      "captured_at": "2026-10-05T10:31:04.129Z",
-     "last_seen_at": "2026-10-06T19:57:55.634Z",
+     "last_seen_at": "2026-10-06T23:37:08.814Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -84,7 +85,7 @@
    "states": [
     {
      "captured_at": "2026-10-05T10:31:04.129Z",
-     "last_seen_at": "2026-10-06T19:57:55.634Z",
+     "last_seen_at": "2026-10-06T23:37:08.814Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -145,6 +146,26 @@
       "home": "1-0-1",
       "away": "1-1-1"
      }
+    },
+    {
+     "captured_at": "2026-10-06T23:37:08.814Z",
+     "last_seen_at": "2026-10-06T23:37:08.814Z",
+     "fp": "in|1|9|2,2|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 577,
+     "displayClock": "9:37",
+     "scores": {
+      "home": 2,
+      "away": 2
+     },
+     "recordsOverall": {
+      "home": "1-0-1",
+      "away": "1-1-1"
+     }
     }
    ]
   },
@@ -179,6 +200,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-2-0",
+      "away": "1-1-0"
+     }
+    },
+    {
+     "captured_at": "2026-10-06T23:37:08.814Z",
+     "last_seen_at": "2026-10-06T23:37:08.814Z",
+     "fp": "in|1|3|0,2|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 234,
+     "displayClock": "3:54",
+     "scores": {
+      "home": 0,
+      "away": 2
      },
      "recordsOverall": {
       "home": "1-2-0",
@@ -223,6 +264,26 @@
       "home": "0-2-0",
       "away": "1-0-0"
      }
+    },
+    {
+     "captured_at": "2026-10-06T23:37:08.814Z",
+     "last_seen_at": "2026-10-06T23:37:08.814Z",
+     "fp": "in|1|5|2,1|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 345,
+     "displayClock": "5:45",
+     "scores": {
+      "home": 2,
+      "away": 1
+     },
+     "recordsOverall": {
+      "home": "0-2-0",
+      "away": "2-0-0"
+     }
     }
    ]
   },
@@ -262,6 +323,26 @@
       "home": "1-1-0",
       "away": "2-1-0"
      }
+    },
+    {
+     "captured_at": "2026-10-06T23:37:08.814Z",
+     "last_seen_at": "2026-10-06T23:37:08.814Z",
+     "fp": "in|1|8|0,1|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 503,
+     "displayClock": "8:23",
+     "scores": {
+      "home": 0,
+      "away": 1
+     },
+     "recordsOverall": {
+      "home": "1-1-0",
+      "away": "2-1-0"
+     }
     }
    ]
   },
@@ -293,6 +374,26 @@
      "period": 0,
      "clock": 0,
      "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-1-0",
+      "away": "1-1-0"
+     }
+    },
+    {
+     "captured_at": "2026-10-06T23:37:08.814Z",
+     "last_seen_at": "2026-10-06T23:37:08.814Z",
+     "fp": "in|1|20|0,0|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 1200,
+     "displayClock": "20:00",
      "scores": {
       "home": 0,
       "away": 0
@@ -340,6 +441,26 @@
       "home": "1-1-0",
       "away": "2-0-0"
      }
+    },
+    {
+     "captured_at": "2026-10-06T23:37:08.814Z",
+     "last_seen_at": "2026-10-06T23:37:08.814Z",
+     "fp": "in|1|2|0,0|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 121,
+     "displayClock": "2:01",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1-0",
+      "away": "2-0-0"
+     }
     }
    ]
   },
@@ -362,7 +483,7 @@
    "states": [
     {
      "captured_at": "2026-10-05T10:31:04.129Z",
-     "last_seen_at": "2026-10-06T19:57:55.634Z",
+     "last_seen_at": "2026-10-06T23:37:08.814Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -383,6 +504,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-06T19:57:55.634Z",
+ "last_ingested_at": "2026-10-06T23:37:08.814Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261006"
 }
