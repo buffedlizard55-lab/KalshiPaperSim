@@ -228,6 +228,51 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1791255600,
+      "open_interest_fp": "1599.66",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
+    },
+    {
+      "end_period_ts": 1791266400,
+      "open_interest_fp": "1616.32",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "mean_dollars": "0.0400",
+        "open_dollars": "0.0400",
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "16.66",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -1134,6 +1179,190 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-06T06:47:15.328Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17VMIWOF-VMI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1002921.00"
+            ],
+            [
+              "0.0200",
+              "12732.00"
+            ],
+            [
+              "0.0300",
+              "74259.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "41190.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "129156.00"
+            ],
+            [
+              "0.1500",
+              "18044.00"
+            ],
+            [
+              "0.1700",
+              "48116.00"
+            ],
+            [
+              "0.2300",
+              "27549.00"
+            ],
+            [
+              "0.2600",
+              "14590.00"
+            ],
+            [
+              "0.2900",
+              "6616.00"
+            ],
+            [
+              "0.3200",
+              "9833.00"
+            ],
+            [
+              "0.3500",
+              "6657.00"
+            ],
+            [
+              "0.3800",
+              "5771.00"
+            ],
+            [
+              "0.3900",
+              "22.00"
+            ],
+            [
+              "0.4100",
+              "4774.00"
+            ],
+            [
+              "0.4400",
+              "3491.00"
+            ],
+            [
+              "0.4600",
+              "29.00"
+            ],
+            [
+              "0.4700",
+              "2872.00"
+            ],
+            [
+              "0.5000",
+              "2876.00"
+            ],
+            [
+              "0.5100",
+              "22.00"
+            ],
+            [
+              "0.5300",
+              "2553.00"
+            ],
+            [
+              "0.5600",
+              "1922.00"
+            ],
+            [
+              "0.5700",
+              "248.00"
+            ],
+            [
+              "0.5900",
+              "1469.00"
+            ],
+            [
+              "0.6000",
+              "19664.00"
+            ],
+            [
+              "0.6100",
+              "428.00"
+            ],
+            [
+              "0.6200",
+              "1249.00"
+            ],
+            [
+              "0.6300",
+              "31.00"
+            ],
+            [
+              "0.6500",
+              "1250.00"
+            ],
+            [
+              "0.6800",
+              "763.00"
+            ],
+            [
+              "0.7100",
+              "764.00"
+            ],
+            [
+              "0.7400",
+              "764.00"
+            ],
+            [
+              "0.7600",
+              "513.00"
+            ],
+            [
+              "0.8000",
+              "150.00"
+            ],
+            [
+              "0.8100",
+              "140.00"
+            ],
+            [
+              "0.9300",
+              "23.42"
+            ],
+            [
+              "0.9500",
+              "409.00"
+            ],
+            [
+              "0.9600",
+              "98541.68"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "16569.00"
+            ],
+            [
+              "0.0200",
+              "1964.00"
+            ],
+            [
+              "0.0300",
+              "2382.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1157,7 +1386,7 @@
     "no_sub_title": "VMI",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-17T20:30:00Z",
-    "open_interest_fp": "1599.66",
+    "open_interest_fp": "1616.32",
     "open_time": "2026-10-03T19:08:00Z",
     "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0400",
@@ -1180,17 +1409,17 @@
     "ticker": "KXNCAAFGAME-26OCT17VMIWOF-VMI",
     "title": "VMI wins",
     "updated_time": "2026-10-03T19:08:00.345139Z",
-    "volume_24h_fp": "46.84",
-    "volume_fp": "1599.66",
+    "volume_24h_fp": "40.08",
+    "volume_fp": "1616.32",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "98400.34",
+    "yes_ask_size_fp": "98541.68",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "624.00",
+    "yes_bid_size_fp": "2382.00",
     "yes_sub_title": "VMI"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17VMIWOF-VMI",
-  "market_captured_at": "2026-10-05T23:02:07.767Z",
+  "market_captured_at": "2026-10-06T06:47:14.610Z",
   "status": "active",
-  "last_ingested_at": "2026-10-05T23:02:08.431Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17VMIWOF-VMI/candlesticks?start_ts=1791180001&end_ts=1791241328&period_interval=60"
+  "last_ingested_at": "2026-10-06T06:47:15.270Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17VMIWOF-VMI/candlesticks?start_ts=1791234001&end_ts=1791269234&period_interval=60"
 }

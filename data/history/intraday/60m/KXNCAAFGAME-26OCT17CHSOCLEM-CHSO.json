@@ -27,6 +27,46 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1791244800,
+      "open_interest_fp": "2800.00",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.0800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1791248400,
+      "open_interest_fp": "2800.00",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.0800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -85,11 +125,21 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-06T06:47:13.950Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
     "can_close_early": true,
-    "close_time": "2026-10-19T16:00:00Z",
+    "close_time": "2026-10-06T00:39:56Z",
     "created_time": "2026-10-05T22:02:31.195836Z",
     "custom_strike": {
       "football_team": "09c4de81-5187-42d0-b559-593874942123"
@@ -103,8 +153,8 @@
     "last_price_dollars": "0.0200",
     "latest_expiration_time": "2026-10-19T16:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.9900",
-    "no_bid_dollars": "0.9200",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Charleston Southern",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-17T19:00:00Z",
@@ -121,27 +171,30 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "scalar",
     "rules_primary": "If Charleston Southern wins the Charleston Southern vs Clemson college football game originally scheduled for Oct 17, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 90,
-    "status": "active",
+    "settlement_ts": "2026-10-06T00:41:27.117949Z",
+    "settlement_value_dollars": "0.0200",
+    "status": "finalized",
     "strike_type": "structured",
     "ticker": "KXNCAAFGAME-26OCT17CHSOCLEM-CHSO",
     "title": "Charleston Southern wins",
-    "updated_time": "2026-10-05T22:06:00.907985Z",
+    "updated_time": "2026-10-06T00:41:27.516482Z",
     "volume_24h_fp": "2800.00",
     "volume_fp": "2800.00",
-    "yes_ask_dollars": "0.0800",
-    "yes_ask_size_fp": "125.00",
-    "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "14979.00",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Charleston Southern"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO",
-  "market_captured_at": "2026-10-05T23:02:06.373Z",
-  "status": "active",
-  "last_ingested_at": "2026-10-05T23:02:07.039Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO/candlesticks?start_ts=1791151560&end_ts=1791241326&period_interval=60"
+  "market_captured_at": "2026-10-06T06:47:13.231Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-06T06:47:13.892Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO/candlesticks?start_ts=1791241201&end_ts=1791269233&period_interval=60",
+  "result": "scalar"
 }
