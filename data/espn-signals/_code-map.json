@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-05T21:47:36.966Z",
+ "generatedAt": "2026-10-06T02:02:15.674Z",
  "rows": [
   {
    "league": "nba",
@@ -190,6 +190,16 @@
      "ticker": "KXNBAGAME-26OCT20PHINYK-NYK",
      "rulesName": "New York",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT05NYKPHI-NYK",
+     "rulesName": "New York",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT05NYKPHI-PHI",
+     "rulesName": "New York",
+     "role": "away"
     }
    ]
   },
@@ -240,6 +250,16 @@
      "ticker": "KXNBAGAME-26OCT20PHINYK-NYK",
      "rulesName": "Philadelphia",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT05NYKPHI-NYK",
+     "rulesName": "Philadelphia",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT05NYKPHI-PHI",
+     "rulesName": "Philadelphia",
+     "role": "home"
     }
    ]
   },
@@ -455,6 +475,16 @@
      "ticker": "KXNCAAFGAME-26OCT16CHSOCLEM-CLEM",
      "rulesName": "Charleston Southern",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17CHSOCLEM-CHSO",
+     "rulesName": "Charleston Southern",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17CHSOCLEM-CLEM",
+     "rulesName": "Charleston Southern",
+     "role": "away"
     }
    ]
   },
@@ -498,6 +528,16 @@
     },
     {
      "ticker": "KXNCAAFGAME-26OCT16CHSOCLEM-CLEM",
+     "rulesName": "Clemson",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17CHSOCLEM-CHSO",
+     "rulesName": "Clemson",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17CHSOCLEM-CLEM",
      "rulesName": "Clemson",
      "role": "home"
     }
