@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/TXC453",
       "relativeLocation": "Austin, TX",
       "timeZone": "America/Chicago",
-      "resolvedAt": "2026-10-06T18:56:14.223Z",
+      "resolvedAt": "2026-10-06T23:06:28.041Z",
       "pointsUrl": "https://api.weather.gov/points/30.3167,-97.7667"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -4704,6 +4704,72 @@
           "startTime": "2026-10-12T06:00:00-05:00",
           "endTime": "2026-10-12T18:00:00-05:00",
           "probabilityOfPrecipitationPct": 20
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-10-06T23:06:28.041Z",
+      "points_url": "https://api.weather.gov/points/30.3167,-97.7667",
+      "forecast_url": "https://api.weather.gov/gridpoints/EWX/155,93/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-10-06T22:32:27+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-10-07",
+          "highF": 89,
+          "periodName": "Wednesday",
+          "startTime": "2026-10-07T06:00:00-05:00",
+          "endTime": "2026-10-07T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 1
+        },
+        {
+          "date": "2026-10-08",
+          "highF": 89,
+          "periodName": "Thursday",
+          "startTime": "2026-10-08T06:00:00-05:00",
+          "endTime": "2026-10-08T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 1
+        },
+        {
+          "date": "2026-10-09",
+          "highF": 87,
+          "periodName": "Friday",
+          "startTime": "2026-10-09T06:00:00-05:00",
+          "endTime": "2026-10-09T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 6
+        },
+        {
+          "date": "2026-10-10",
+          "highF": 87,
+          "periodName": "Saturday",
+          "startTime": "2026-10-10T06:00:00-05:00",
+          "endTime": "2026-10-10T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 5
+        },
+        {
+          "date": "2026-10-11",
+          "highF": 88,
+          "periodName": "Sunday",
+          "startTime": "2026-10-11T06:00:00-05:00",
+          "endTime": "2026-10-11T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 5
+        },
+        {
+          "date": "2026-10-12",
+          "highF": 89,
+          "periodName": "Columbus Day",
+          "startTime": "2026-10-12T06:00:00-05:00",
+          "endTime": "2026-10-12T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 20
+        },
+        {
+          "date": "2026-10-13",
+          "highF": 89,
+          "periodName": "Tuesday",
+          "startTime": "2026-10-13T06:00:00-05:00",
+          "endTime": "2026-10-13T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 14
         }
       ]
     }
