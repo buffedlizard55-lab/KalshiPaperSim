@@ -659,6 +659,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T21:34:11.249Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -719,9 +729,9 @@
     "yes_sub_title": "Chase Burns: 5+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5",
-  "market_captured_at": "2026-10-07T13:28:19.091Z",
+  "market_captured_at": "2026-10-07T21:34:10.702Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-07T13:28:19.619Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/candlesticks?start_ts=1789790401&end_ts=1791379699&period_interval=1440"
+  "last_ingested_at": "2026-10-07T21:34:11.226Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840CHCCIN-CINCBURNS26-5/candlesticks?start_ts=1789790401&end_ts=1791408850&period_interval=1440"
 }

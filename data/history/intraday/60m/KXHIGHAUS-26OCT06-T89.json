@@ -1142,6 +1142,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T21:37:11.200Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26OCT06-T89/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1165,9 +1175,9 @@
     "occurrence_datetime": "2026-10-07T14:00:00Z",
     "open_interest_fp": "21868.33",
     "open_time": "2026-10-05T14:00:00Z",
-    "previous_price_dollars": "0.6800",
-    "previous_yes_ask_dollars": "0.6900",
-    "previous_yes_bid_dollars": "0.6800",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.9900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1188,7 +1198,7 @@
     "ticker": "KXHIGHAUS-26OCT06-T89",
     "title": "Will the maximum temperature be >89° on Oct 6, 2026?",
     "updated_time": "2026-10-07T12:09:27.515357Z",
-    "volume_24h_fp": "26914.66",
+    "volume_24h_fp": "5169.13",
     "volume_fp": "35415.21",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1197,9 +1207,9 @@
     "yes_sub_title": "90° or above"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26OCT06-T89",
-  "market_captured_at": "2026-10-07T13:30:50.179Z",
+  "market_captured_at": "2026-10-07T21:37:10.553Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-07T13:30:50.806Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26OCT06-T89/candlesticks?start_ts=1791356401&end_ts=1791379850&period_interval=60",
+  "last_ingested_at": "2026-10-07T21:37:11.178Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26OCT06-T89/candlesticks?start_ts=1791356401&end_ts=1791409030&period_interval=60",
   "result": "yes"
 }

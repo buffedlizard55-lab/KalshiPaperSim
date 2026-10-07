@@ -2743,6 +2743,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T21:35:15.740Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2801,9 +2811,9 @@
     "yes_sub_title": "South Dakota St. wins by over 10.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11",
-  "market_captured_at": "2026-10-07T13:29:07.712Z",
+  "market_captured_at": "2026-10-07T21:35:15.194Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-07T13:29:08.241Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/candlesticks?start_ts=1789876801&end_ts=1791379747&period_interval=1440",
+  "last_ingested_at": "2026-10-07T21:35:15.717Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19YSUSDST-SDST11/candlesticks?start_ts=1789876801&end_ts=1791408915&period_interval=1440",
   "result": "no"
 }
