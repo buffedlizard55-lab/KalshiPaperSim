@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-07T10:33:24.861Z",
+ "generatedAt": "2026-10-07T20:23:51.893Z",
  "rows": [
   {
    "league": "nba",
@@ -795,6 +795,11 @@
      "ticker": "KXNCAAFGAME-26OCT03INDRUTG-RUTG",
      "rulesName": "Indiana",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17OSUIND-OSU",
+     "rulesName": "Indiana",
+     "role": "home"
     }
    ]
   },
@@ -1160,6 +1165,11 @@
      "ticker": "KXNCAAFGAME-26OCT10MDOSU-OSU",
      "rulesName": "Ohio St.",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17OSUIND-OSU",
+     "rulesName": "Ohio St.",
+     "role": "away"
     }
    ]
   },
