@@ -6933,9 +6933,9 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "231879.95",
     "open_time": "2025-12-23T15:00:00Z",
-    "previous_price_dollars": "0.2900",
-    "previous_yes_ask_dollars": "0.2900",
-    "previous_yes_bid_dollars": "0.2700",
+    "previous_price_dollars": "0.3100",
+    "previous_yes_ask_dollars": "0.3200",
+    "previous_yes_bid_dollars": "0.3100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -6955,19 +6955,19 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-T33000",
     "title": "Will the Nasdaq-100 be above 33000 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:46.616883Z",
-    "volume_24h_fp": "6058.94",
+    "volume_24h_fp": "5273.69",
     "volume_fp": "487523.15",
     "yes_ask_dollars": "0.2900",
-    "yes_ask_size_fp": "7.00",
+    "yes_ask_size_fp": "224.41",
     "yes_bid_dollars": "0.2800",
-    "yes_bid_size_fp": "3.00",
+    "yes_bid_size_fp": "76.00",
     "yes_sub_title": "33,000.01 or above"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T33000",
-  "market_captured_at": "2026-10-07T09:03:46.248Z",
+  "market_captured_at": "2026-10-07T13:28:33.671Z",
   "status": "active",
-  "last_ingested_at": "2026-10-07T09:03:46.808Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1791345601&end_ts=1791363826&period_interval=1440",
+  "last_ingested_at": "2026-10-07T13:28:34.199Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T33000/candlesticks?start_ts=1791345601&end_ts=1791379713&period_interval=1440",
   "books": [
     {
       "captured_at": "2026-09-17T23:07:33.253Z",

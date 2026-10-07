@@ -2602,6 +2602,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T13:33:21.560Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT06DENUTA-UTA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2628,7 +2638,7 @@
     "open_interest_fp": "490836.69",
     "open_time": "2026-10-01T00:04:15.294014Z",
     "previous_price_dollars": "0.4900",
-    "previous_yes_ask_dollars": "0.4900",
+    "previous_yes_ask_dollars": "0.5000",
     "previous_yes_bid_dollars": "0.4800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -2650,7 +2660,7 @@
     "ticker": "KXNBAGAME-26OCT06DENUTA-UTA",
     "title": "Utah wins",
     "updated_time": "2026-10-07T03:37:07.522481Z",
-    "volume_24h_fp": "945527.68",
+    "volume_24h_fp": "943545.73",
     "volume_fp": "949449.75",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2659,9 +2669,9 @@
     "yes_sub_title": "Utah"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT06DENUTA-UTA",
-  "market_captured_at": "2026-10-07T09:09:25.198Z",
+  "market_captured_at": "2026-10-07T13:33:20.844Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-07T09:09:25.860Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT06DENUTA-UTA/candlesticks?start_ts=1791345601&end_ts=1791364165&period_interval=60"
+  "last_ingested_at": "2026-10-07T13:33:21.534Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT06DENUTA-UTA/candlesticks?start_ts=1791345601&end_ts=1791380001&period_interval=60"
 }

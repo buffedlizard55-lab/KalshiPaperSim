@@ -12345,6 +12345,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T13:35:45.394Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP28PHICHI-PHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12402,11 +12412,11 @@
     "yes_sub_title": "Philadelphia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP28PHICHI-PHI",
-  "market_captured_at": "2026-10-07T09:11:58.397Z",
+  "market_captured_at": "2026-10-07T13:35:42.115Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-07T09:12:01.939Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP28PHICHI-PHI/candlesticks?start_ts=1791342781&end_ts=1791364318&period_interval=1",
+  "last_ingested_at": "2026-10-07T13:35:45.368Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP28PHICHI-PHI/candlesticks?start_ts=1791342781&end_ts=1791380142&period_interval=1",
   "trims": [
     {
       "at": "2026-09-29T06:07:43.062Z",

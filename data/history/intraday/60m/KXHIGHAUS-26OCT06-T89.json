@@ -1132,6 +1132,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T13:30:50.832Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26OCT06-T89/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1143,7 +1153,7 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-10-07T19:00:00Z",
     "expiration_time": "2026-10-13T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "90.00",
     "floor_strike": 89,
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-13T14:00:00Z",
@@ -1155,9 +1165,9 @@
     "occurrence_datetime": "2026-10-07T14:00:00Z",
     "open_interest_fp": "21868.33",
     "open_time": "2026-10-05T14:00:00Z",
-    "previous_price_dollars": "0.6100",
-    "previous_yes_ask_dollars": "0.6200",
-    "previous_yes_bid_dollars": "0.6100",
+    "previous_price_dollars": "0.6800",
+    "previous_yes_ask_dollars": "0.6900",
+    "previous_yes_bid_dollars": "0.6800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1166,17 +1176,19 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If the maximum temperature recorded at Austin (CLIAUS) for Oct 6, 2026, is greater than 89° fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
-    "status": "closed",
+    "settlement_ts": "2026-10-07T12:09:27.118102Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "greater",
     "ticker": "KXHIGHAUS-26OCT06-T89",
     "title": "Will the maximum temperature be >89° on Oct 6, 2026?",
-    "updated_time": "2026-10-07T06:00:03.51352Z",
-    "volume_24h_fp": "28931.94",
+    "updated_time": "2026-10-07T12:09:27.515357Z",
+    "volume_24h_fp": "26914.66",
     "volume_fp": "35415.21",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1185,8 +1197,9 @@
     "yes_sub_title": "90° or above"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26OCT06-T89",
-  "market_captured_at": "2026-10-07T09:06:44.297Z",
-  "status": "closed",
-  "last_ingested_at": "2026-10-07T09:06:44.960Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26OCT06-T89/candlesticks?start_ts=1791352801&end_ts=1791364004&period_interval=60"
+  "market_captured_at": "2026-10-07T13:30:50.179Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-07T13:30:50.806Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26OCT06-T89/candlesticks?start_ts=1791356401&end_ts=1791379850&period_interval=60",
+  "result": "yes"
 }

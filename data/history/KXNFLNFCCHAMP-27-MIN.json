@@ -15416,7 +15416,7 @@
     "latest_expiration_time": "2027-02-22T15:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.9300",
-    "no_bid_dollars": "0.9100",
+    "no_bid_dollars": "0.9200",
     "no_sub_title": "Minnesota",
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "657181.97",
@@ -15444,15 +15444,15 @@
     "updated_time": "2026-07-13T21:35:20.467445Z",
     "volume_24h_fp": "84.82",
     "volume_fp": "768692.75",
-    "yes_ask_dollars": "0.0900",
-    "yes_ask_size_fp": "103479.97",
+    "yes_ask_dollars": "0.0800",
+    "yes_ask_size_fp": "3.00",
     "yes_bid_dollars": "0.0700",
-    "yes_bid_size_fp": "11595.96",
+    "yes_bid_size_fp": "14483.74",
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-MIN",
-  "market_captured_at": "2026-10-07T09:04:56.029Z",
+  "market_captured_at": "2026-10-07T13:29:21.481Z",
   "status": "active",
-  "last_ingested_at": "2026-10-07T09:04:56.589Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-MIN/candlesticks?start_ts=1791345601&end_ts=1791363896&period_interval=1440"
+  "last_ingested_at": "2026-10-07T13:29:22.010Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-MIN/candlesticks?start_ts=1791345601&end_ts=1791379761&period_interval=1440"
 }

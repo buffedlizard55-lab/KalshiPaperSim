@@ -15605,7 +15605,7 @@
     "occurrence_datetime": "2026-10-20T22:00:00Z",
     "open_interest_fp": "10165.07",
     "open_time": "2026-08-20T15:28:00Z",
-    "previous_price_dollars": "0.5400",
+    "previous_price_dollars": "0.5200",
     "previous_yes_ask_dollars": "0.5400",
     "previous_yes_bid_dollars": "0.5200",
     "price_level_structure": "linear_cent",
@@ -15626,17 +15626,17 @@
     "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
     "title": "Detroit wins",
     "updated_time": "2026-09-25T16:51:11.41443Z",
-    "volume_24h_fp": "77.39",
+    "volume_24h_fp": "115.32",
     "volume_fp": "19015.13",
     "yes_ask_dollars": "0.5400",
     "yes_ask_size_fp": "572.28",
     "yes_bid_dollars": "0.5300",
-    "yes_bid_size_fp": "166.16",
+    "yes_bid_size_fp": "206.16",
     "yes_sub_title": "Detroit"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET",
-  "market_captured_at": "2026-10-07T09:04:02.813Z",
+  "market_captured_at": "2026-10-07T13:28:45.041Z",
   "status": "active",
-  "last_ingested_at": "2026-10-07T09:04:03.373Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1791345601&end_ts=1791363843&period_interval=1440"
+  "last_ingested_at": "2026-10-07T13:28:45.569Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1791345601&end_ts=1791379725&period_interval=1440"
 }

@@ -2239,6 +2239,186 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T13:33:40.812Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1045529.00"
+            ],
+            [
+              "0.0200",
+              "2622.00"
+            ],
+            [
+              "0.0300",
+              "73474.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "43725.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "121023.00"
+            ],
+            [
+              "0.1700",
+              "51110.00"
+            ],
+            [
+              "0.2300",
+              "27445.00"
+            ],
+            [
+              "0.2600",
+              "18218.00"
+            ],
+            [
+              "0.2900",
+              "6344.00"
+            ],
+            [
+              "0.3200",
+              "11067.00"
+            ],
+            [
+              "0.3300",
+              "22.00"
+            ],
+            [
+              "0.3500",
+              "6383.00"
+            ],
+            [
+              "0.3800",
+              "6990.00"
+            ],
+            [
+              "0.3900",
+              "77.00"
+            ],
+            [
+              "0.4100",
+              "5174.00"
+            ],
+            [
+              "0.4200",
+              "22.00"
+            ],
+            [
+              "0.4400",
+              "4586.00"
+            ],
+            [
+              "0.4700",
+              "2755.00"
+            ],
+            [
+              "0.5000",
+              "2758.00"
+            ],
+            [
+              "0.5100",
+              "39.00"
+            ],
+            [
+              "0.5300",
+              "2448.00"
+            ],
+            [
+              "0.5600",
+              "1842.00"
+            ],
+            [
+              "0.5900",
+              "1844.00"
+            ],
+            [
+              "0.6200",
+              "1845.00"
+            ],
+            [
+              "0.6500",
+              "1197.00"
+            ],
+            [
+              "0.6800",
+              "1198.00"
+            ],
+            [
+              "0.7100",
+              "1198.00"
+            ],
+            [
+              "0.7400",
+              "734.00"
+            ],
+            [
+              "0.7700",
+              "735.00"
+            ],
+            [
+              "0.8000",
+              "735.00"
+            ],
+            [
+              "0.8100",
+              "388.00"
+            ],
+            [
+              "0.9200",
+              "10.00"
+            ],
+            [
+              "0.9300",
+              "23.42"
+            ],
+            [
+              "0.9400",
+              "22.00"
+            ],
+            [
+              "0.9500",
+              "467.00"
+            ],
+            [
+              "0.9600",
+              "99080.83"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "15312.00"
+            ],
+            [
+              "0.0200",
+              "2089.00"
+            ],
+            [
+              "0.0300",
+              "643.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2262,7 +2442,7 @@
     "no_sub_title": "Elon",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-18T02:30:00Z",
-    "open_interest_fp": "1211.78",
+    "open_interest_fp": "1399.17",
     "open_time": "2026-10-04T01:06:00Z",
     "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0400",
@@ -2285,17 +2465,17 @@
     "ticker": "KXNCAAFGAME-26OCT17ELONSTAN-ELON",
     "title": "Elon wins",
     "updated_time": "2026-10-04T01:06:00.942595Z",
-    "volume_24h_fp": "0.00",
-    "volume_fp": "1225.78",
+    "volume_24h_fp": "187.39",
+    "volume_fp": "1413.17",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "99268.22",
+    "yes_ask_size_fp": "99080.83",
     "yes_bid_dollars": "0.0300",
     "yes_bid_size_fp": "643.00",
     "yes_sub_title": "Elon"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON",
-  "market_captured_at": "2026-10-07T09:09:45.904Z",
+  "market_captured_at": "2026-10-07T13:33:40.158Z",
   "status": "active",
-  "last_ingested_at": "2026-10-07T09:09:46.565Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON/candlesticks?start_ts=1791324001&end_ts=1791364186&period_interval=60"
+  "last_ingested_at": "2026-10-07T13:33:40.786Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17ELONSTAN-ELON/candlesticks?start_ts=1791363601&end_ts=1791380020&period_interval=60"
 }

@@ -12025,6 +12025,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T13:34:53.988Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT062130MILSD-SD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12073,7 +12083,7 @@
     "ticker": "KXMLBGAME-26OCT062130MILSD-SD",
     "title": "San Diego wins",
     "updated_time": "2026-10-07T05:09:28.051245Z",
-    "volume_24h_fp": "9097216.44",
+    "volume_24h_fp": "9053038.34",
     "volume_fp": "9283226.49",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12082,11 +12092,11 @@
     "yes_sub_title": "San Diego"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT062130MILSD-SD",
-  "market_captured_at": "2026-10-07T09:11:05.284Z",
+  "market_captured_at": "2026-10-07T13:34:53.334Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-07T09:11:05.946Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT062130MILSD-SD/candlesticks?start_ts=1791349621&end_ts=1791364265&period_interval=1",
+  "last_ingested_at": "2026-10-07T13:34:53.962Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT062130MILSD-SD/candlesticks?start_ts=1791349621&end_ts=1791380093&period_interval=1",
   "trims": [
     {
       "at": "2026-10-07T06:24:48.551Z",
