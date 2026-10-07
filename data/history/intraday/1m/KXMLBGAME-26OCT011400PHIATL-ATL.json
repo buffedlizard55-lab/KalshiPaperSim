@@ -12215,6 +12215,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T09:11:12.373Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT011400PHIATL-ATL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12272,11 +12282,11 @@
     "yes_sub_title": "Atlanta"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT011400PHIATL-ATL",
-  "market_captured_at": "2026-10-07T06:24:51.769Z",
+  "market_captured_at": "2026-10-07T09:11:09.854Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-07T06:24:54.013Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT011400PHIATL-ATL/candlesticks?start_ts=1791342421&end_ts=1791354292&period_interval=1",
+  "last_ingested_at": "2026-10-07T09:11:12.315Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT011400PHIATL-ATL/candlesticks?start_ts=1791342421&end_ts=1791364270&period_interval=1",
   "trims": [
     {
       "at": "2026-10-02T06:06:30.713Z",

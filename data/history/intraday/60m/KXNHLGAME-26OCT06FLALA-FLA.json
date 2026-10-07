@@ -3393,6 +3393,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T09:09:31.441Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT06FLALA-FLA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3418,7 +3428,7 @@
     "occurrence_datetime": "2026-10-07T05:00:00Z",
     "open_interest_fp": "574171.00",
     "open_time": "2026-09-30T04:06:00Z",
-    "previous_price_dollars": "0.5300",
+    "previous_price_dollars": "0.5200",
     "previous_yes_ask_dollars": "0.5300",
     "previous_yes_bid_dollars": "0.5200",
     "price_level_structure": "linear_cent",
@@ -3441,7 +3451,7 @@
     "ticker": "KXNHLGAME-26OCT06FLALA-FLA",
     "title": "Florida wins",
     "updated_time": "2026-10-07T05:11:37.520502Z",
-    "volume_24h_fp": "1014291.72",
+    "volume_24h_fp": "1013606.23",
     "volume_fp": "1018357.58",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3450,9 +3460,9 @@
     "yes_sub_title": "Florida"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT06FLALA-FLA",
-  "market_captured_at": "2026-10-07T06:23:15.224Z",
+  "market_captured_at": "2026-10-07T09:09:30.722Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-07T06:23:15.850Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT06FLALA-FLA/candlesticks?start_ts=1790654760&end_ts=1791354195&period_interval=60"
+  "last_ingested_at": "2026-10-07T09:09:31.383Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT06FLALA-FLA/candlesticks?start_ts=1791352801&end_ts=1791364171&period_interval=60"
 }

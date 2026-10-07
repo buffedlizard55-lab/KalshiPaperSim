@@ -163,6 +163,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T09:09:42.487Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CLEM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -220,9 +230,9 @@
     "yes_sub_title": "Clemson"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CLEM",
-  "market_captured_at": "2026-10-07T06:23:25.400Z",
+  "market_captured_at": "2026-10-07T09:09:41.768Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-07T06:23:26.023Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CLEM/candlesticks?start_ts=1791248401&end_ts=1791354205&period_interval=60",
+  "last_ingested_at": "2026-10-07T09:09:42.429Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CLEM/candlesticks?start_ts=1791248401&end_ts=1791364182&period_interval=60",
   "result": "scalar"
 }
