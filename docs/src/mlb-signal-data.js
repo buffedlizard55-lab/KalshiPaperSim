@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 16 date file(s) · 141 game(s) · 530 state row(s) · generated 2026-10-07T10:33:26.291Z
+ * 17 date file(s) · 145 game(s) · 535 state row(s) · generated 2026-10-07T10:35:50.415Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-07T10:33:26.291Z",
+ "generatedAt": "2026-10-07T10:35:50.415Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-10-07T03:30:37.626Z",
+  "last_confirmed_at": "2026-10-07T10:35:49.019Z",
   "teams": [
    {
     "id": 108,
@@ -13020,7 +13020,8 @@ export const MLB_SIGNAL_DATA = {
     "copyright": "Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt",
     "terms": "http://gdx.mlb.com/components/copyright.txt",
     "urls": [
-     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-05&endDate=2026-10-06&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
+     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-05&endDate=2026-10-06&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright",
+     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-06&endDate=2026-10-07&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
     ]
    },
    "captures": [
@@ -13028,7 +13029,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-10-06T11:18:56.429Z",
     "2026-10-06T20:37:37.732Z",
     "2026-10-07T00:04:52.682Z",
-    "2026-10-07T03:30:37.627Z"
+    "2026-10-07T03:30:37.627Z",
+    "2026-10-07T10:35:49.020Z"
    ],
    "games": {
     "849819": {
@@ -13108,7 +13110,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-07T03:30:37.627Z",
-       "last_seen_at": "2026-10-07T03:30:37.627Z",
+       "last_seen_at": "2026-10-07T10:35:49.020Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -13194,6 +13196,223 @@ export const MLB_SIGNAL_DATA = {
        "runs": {
         "away": 2,
         "home": 3
+       },
+       "winner": null,
+       "url_ref": 0
+      },
+      {
+       "captured_at": "2026-10-07T10:35:49.020Z",
+       "last_seen_at": "2026-10-07T10:35:49.020Z",
+       "abstractGameState": "Final",
+       "detailedState": "Final",
+       "codedGameState": "F",
+       "inning": 9,
+       "inningState": "Top",
+       "runs": {
+        "away": 3,
+        "home": 4
+       },
+       "winner": "home",
+       "url_ref": 1
+      }
+     ]
+    }
+   }
+  },
+  "2026-10-07": {
+   "date": "2026-10-07",
+   "what": "Point-in-time official MLB game state for this US-Eastern calendar date: one state row per CHANGE of (status, inning, inning state, runs, winner), each with the capture instant it was first seen; captures[] lists every run that read this date so staleness at any past time is measurable. Team codes are the official MLB abbreviations. Read only through src/mlb-signal-store.js (no row after the decision time is ever returned).",
+   "source": {
+    "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
+    "copyright": "Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt",
+    "terms": "http://gdx.mlb.com/components/copyright.txt",
+    "urls": [
+     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-06&endDate=2026-10-07&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
+    ]
+   },
+   "captures": [
+    "2026-10-07T10:35:49.020Z"
+   ],
+   "games": {
+    "849822": {
+     "gamePk": 849822,
+     "gameDate": "2026-10-07T22:00:00Z",
+     "officialDate": "2026-10-07",
+     "gameType": "D",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 119,
+      "abbreviation": "LAD",
+      "name": "Los Angeles Dodgers"
+     },
+     "home": {
+      "id": 144,
+      "abbreviation": "ATL",
+      "name": "Atlanta Braves"
+     },
+     "venue": "Truist Park",
+     "probablePitchers": {
+      "away": {
+       "id": 607192,
+       "fullName": "Tyler Glasnow"
+      },
+      "home": {
+       "id": 641816,
+       "fullName": "Tyler Mahle"
+      }
+     },
+     "firstCapturedAt": "2026-10-07T10:35:49.020Z",
+     "states": [
+      {
+       "captured_at": "2026-10-07T10:35:49.020Z",
+       "last_seen_at": "2026-10-07T10:35:49.020Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "849827": {
+     "gamePk": 849827,
+     "gameDate": "2026-10-08T02:00:00Z",
+     "officialDate": "2026-10-07",
+     "gameType": "D",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 158,
+      "abbreviation": "MIL",
+      "name": "Milwaukee Brewers"
+     },
+     "home": {
+      "id": 135,
+      "abbreviation": "SD",
+      "name": "San Diego Padres"
+     },
+     "venue": "Petco Park",
+     "probablePitchers": {
+      "away": null,
+      "home": {
+       "id": 621111,
+       "fullName": "Walker Buehler"
+      }
+     },
+     "firstCapturedAt": "2026-10-07T10:35:49.020Z",
+     "states": [
+      {
+       "captured_at": "2026-10-07T10:35:49.020Z",
+       "last_seen_at": "2026-10-07T10:35:49.020Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "849833": {
+     "gamePk": 849833,
+     "gameDate": "2026-10-07T20:00:00Z",
+     "officialDate": "2026-10-07",
+     "gameType": "D",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 114,
+      "abbreviation": "CLE",
+      "name": "Cleveland Guardians"
+     },
+     "home": {
+      "id": 145,
+      "abbreviation": "CWS",
+      "name": "Chicago White Sox"
+     },
+     "venue": "Rate Field",
+     "probablePitchers": {
+      "away": {
+       "id": 682982,
+       "fullName": "Daniel Espino"
+      },
+      "home": {
+       "id": 656794,
+       "fullName": "Sean Newcomb"
+      }
+     },
+     "firstCapturedAt": "2026-10-07T10:35:49.020Z",
+     "states": [
+      {
+       "captured_at": "2026-10-07T10:35:49.020Z",
+       "last_seen_at": "2026-10-07T10:35:49.020Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      }
+     ]
+    },
+    "849838": {
+     "gamePk": 849838,
+     "gameDate": "2026-10-08T00:00:00Z",
+     "officialDate": "2026-10-07",
+     "gameType": "D",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 139,
+      "abbreviation": "TB",
+      "name": "Tampa Bay Rays"
+     },
+     "home": {
+      "id": 147,
+      "abbreviation": "NYY",
+      "name": "New York Yankees"
+     },
+     "venue": "Yankee Stadium",
+     "probablePitchers": {
+      "away": {
+       "id": 607259,
+       "fullName": "Nick Martinez"
+      },
+      "home": {
+       "id": 608331,
+       "fullName": "Max Fried"
+      }
+     },
+     "firstCapturedAt": "2026-10-07T10:35:49.020Z",
+     "states": [
+      {
+       "captured_at": "2026-10-07T10:35:49.020Z",
+       "last_seen_at": "2026-10-07T10:35:49.020Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
        },
        "winner": null,
        "url_ref": 0
