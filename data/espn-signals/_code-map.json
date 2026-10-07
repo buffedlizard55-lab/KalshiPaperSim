@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-07T03:27:07.820Z",
+ "generatedAt": "2026-10-07T10:33:24.861Z",
  "rows": [
   {
    "league": "nba",
@@ -50,6 +50,16 @@
      "ticker": "KXNBAGAME-26OCT04UTADEN-UTA",
      "rulesName": "Denver",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT06DENUTA-DEN",
+     "rulesName": "Denver",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT06DENUTA-UTA",
+     "rulesName": "Denver",
+     "role": "away"
     }
    ]
   },
@@ -105,6 +115,11 @@
      "ticker": "KXNBAGAME-26OCT04GSWLAC-LAC",
      "rulesName": "Golden State",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT06LALGSW-LAL",
+     "rulesName": "Golden State",
+     "role": "home"
     }
    ]
   },
@@ -150,6 +165,11 @@
      "ticker": "KXNBAGAME-26OCT05LALSAC-SAC",
      "rulesName": "Los Angeles L",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT06LALGSW-LAL",
+     "rulesName": "Los Angeles L",
+     "role": "away"
     }
    ]
   },
@@ -174,6 +194,31 @@
     {
      "ticker": "KXNBAGAME-26OCT03MIATOR-TOR",
      "rulesName": "Miami",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "NOP",
+   "kalshiName": "New Orleans",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "3",
+    "abbr": "NO",
+    "displayName": "New Orleans Pelicans",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT06NOPOKC-NOP",
+     "rulesName": "New Orleans",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT06NOPOKC-OKC",
+     "rulesName": "New Orleans",
      "role": "away"
     }
    ]
@@ -235,6 +280,16 @@
      "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
      "rulesName": "Oklahoma City",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT06NOPOKC-NOP",
+     "rulesName": "Oklahoma City",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT06NOPOKC-OKC",
+     "rulesName": "Oklahoma City",
+     "role": "home"
     }
    ]
   },
@@ -390,6 +445,16 @@
      "ticker": "KXNBAGAME-26OCT04UTADEN-UTA",
      "rulesName": "Utah",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT06DENUTA-DEN",
+     "rulesName": "Utah",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT06DENUTA-UTA",
+     "rulesName": "Utah",
+     "role": "home"
     }
    ]
   },
@@ -455,6 +520,11 @@
      "ticker": "KXNCAAFGAME-26OCT03BYUTCU-BYU",
      "rulesName": "BYU",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17NDBYU-BYU",
+     "rulesName": "BYU",
+     "role": "home"
     }
    ]
   },
@@ -940,6 +1010,11 @@
      "ticker": "KXNCAAFGAME-26OCT10STANND-STAN",
      "rulesName": "Notre Dame",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17NDBYU-BYU",
+     "rulesName": "Notre Dame",
+     "role": "away"
     }
    ]
   },
@@ -2512,19 +2587,19 @@
      "role": "away"
     },
     {
+     "ticker": "KXNHLGAME-26OCT06FLALA-FLA",
+     "rulesName": "Florida",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT06FLALA-LA",
+     "rulesName": "Florida",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP20CARFLA-CAR",
      "rulesName": "Florida",
      "role": "home"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP22FLACAR-CAR",
-     "rulesName": "Florida",
-     "role": "away"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP22FLACAR-FLA",
-     "rulesName": "Florida",
-     "role": "away"
     }
    ]
   },
@@ -2547,24 +2622,24 @@
      "role": "home"
     },
     {
+     "ticker": "KXNHLGAME-26OCT03LASJ-SJ",
+     "rulesName": "Los Angeles",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT06FLALA-FLA",
+     "rulesName": "Los Angeles",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT06FLALA-LA",
+     "rulesName": "Los Angeles",
+     "role": "home"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP19VGKLA-LA",
      "rulesName": "Los Angeles",
      "role": "home"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP22UTALA-LA",
-     "rulesName": "Los Angeles",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP22UTALA-UTA",
-     "rulesName": "Los Angeles",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP23LAANA-ANA",
-     "rulesName": "Los Angeles",
-     "role": "away"
     }
    ]
   },
@@ -2827,6 +2902,11 @@
      "role": "home"
     },
     {
+     "ticker": "KXNHLGAME-26OCT03LASJ-SJ",
+     "rulesName": "San Jose",
+     "role": "home"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
      "rulesName": "San Jose",
      "role": "away"
@@ -2835,11 +2915,6 @@
      "ticker": "KXNHLGAME-26SEP20SJANA-SJ",
      "rulesName": "San Jose",
      "role": "away"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP22VGKSJ-SJ",
-     "rulesName": "San Jose",
-     "role": "home"
     }
    ]
   },

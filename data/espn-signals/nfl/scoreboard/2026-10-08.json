@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-08",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261008"
+  ]
+ },
+ "captures": [
+  "2026-10-07T10:33:19.112Z"
+ ],
+ "events": {
+  "401872980": {
+   "eventId": "401872980",
+   "date": "2026-10-09T00:15Z",
+   "easternDate": "2026-10-08",
+   "name": "Tampa Bay Buccaneers at Dallas Cowboys",
+   "shortName": "TB @ DAL",
+   "week": 5,
+   "venue": "AT&T Stadium",
+   "homeAbbr": "DAL",
+   "homeTeamId": "6",
+   "homeName": "Dallas Cowboys",
+   "awayAbbr": "TB",
+   "awayTeamId": "27",
+   "awayName": "Tampa Bay Buccaneers",
+   "firstCapturedAt": "2026-10-07T10:33:19.112Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "DAL -8.5",
+    "spread": -8.5,
+    "overUnder": 47.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-07T10:33:19.112Z",
+     "last_seen_at": "2026-10-07T10:33:19.112Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-2",
+      "away": "0-4"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-07T10:33:19.112Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261008"
+}
