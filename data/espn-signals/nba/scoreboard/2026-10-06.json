@@ -15,7 +15,8 @@
   "2026-10-06T11:03:48.289Z",
   "2026-10-06T19:57:55.134Z",
   "2026-10-06T23:37:08.655Z",
-  "2026-10-07T02:50:37.635Z"
+  "2026-10-07T02:50:37.635Z",
+  "2026-10-07T03:27:06.865Z"
  ],
  "events": {
   "401898389": {
@@ -57,7 +58,7 @@
     },
     {
      "captured_at": "2026-10-07T02:50:37.635Z",
-     "last_seen_at": "2026-10-07T02:50:37.635Z",
+     "last_seen_at": "2026-10-07T03:27:06.865Z",
      "fp": "post|4|0|110,116|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -133,6 +134,26 @@
       "home": "0-1",
       "away": "1-0"
      }
+    },
+    {
+     "captured_at": "2026-10-07T03:27:06.865Z",
+     "last_seen_at": "2026-10-07T03:27:06.865Z",
+     "fp": "in|2|0|81,53|false|STATUS_HALFTIME",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_HALFTIME",
+     "completed": false,
+     "period": 2,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 81,
+      "away": 53
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "1-0"
+     }
     }
    ]
   },
@@ -195,7 +216,7 @@
     },
     {
      "captured_at": "2026-10-07T02:50:37.635Z",
-     "last_seen_at": "2026-10-07T02:50:37.635Z",
+     "last_seen_at": "2026-10-07T03:27:06.865Z",
      "fp": "post|4|0|90,124|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -271,10 +292,30 @@
       "home": "1-0",
       "away": "0-1"
      }
+    },
+    {
+     "captured_at": "2026-10-07T03:27:06.865Z",
+     "last_seen_at": "2026-10-07T03:27:06.865Z",
+     "fp": "in|4|3|97,107|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 4,
+     "clock": 223,
+     "displayClock": "3:43",
+     "scores": {
+      "home": 97,
+      "away": 107
+     },
+     "recordsOverall": {
+      "home": "1-0",
+      "away": "0-1"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-07T02:50:37.635Z",
+ "last_ingested_at": "2026-10-07T03:27:06.865Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261006"
 }
