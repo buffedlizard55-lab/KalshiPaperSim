@@ -165,6 +165,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T06:23:27.315Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -190,8 +200,8 @@
     "occurrence_datetime": "2026-10-17T19:00:00Z",
     "open_interest_fp": "2800.00",
     "open_time": "2026-10-05T22:06:00Z",
-    "previous_price_dollars": "0.0000",
-    "previous_yes_ask_dollars": "0.0000",
+    "previous_price_dollars": "0.0200",
+    "previous_yes_ask_dollars": "1.0000",
     "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -213,7 +223,7 @@
     "ticker": "KXNCAAFGAME-26OCT17CHSOCLEM-CHSO",
     "title": "Charleston Southern wins",
     "updated_time": "2026-10-06T00:41:27.516482Z",
-    "volume_24h_fp": "2800.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "2800.00",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -222,9 +232,9 @@
     "yes_sub_title": "Charleston Southern"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO",
-  "market_captured_at": "2026-10-06T21:20:29.622Z",
+  "market_captured_at": "2026-10-07T06:23:26.668Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-06T21:20:30.262Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO/candlesticks?start_ts=1791248401&end_ts=1791321629&period_interval=60",
+  "last_ingested_at": "2026-10-07T06:23:27.293Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17CHSOCLEM-CHSO/candlesticks?start_ts=1791248401&end_ts=1791354206&period_interval=60",
   "result": "scalar"
 }

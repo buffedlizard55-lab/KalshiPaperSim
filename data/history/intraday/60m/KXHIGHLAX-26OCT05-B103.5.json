@@ -1661,6 +1661,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T06:20:05.157Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHLAX-26OCT05-B103.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1708,7 +1718,7 @@
     "ticker": "KXHIGHLAX-26OCT05-B103.5",
     "title": "Will the maximum temperature be 103-104° on Oct 5, 2026?",
     "updated_time": "2026-10-06T14:12:07.516949Z",
-    "volume_24h_fp": "91242.37",
+    "volume_24h_fp": "11030.16",
     "volume_fp": "306835.77",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1717,9 +1727,9 @@
     "yes_sub_title": "103° to 104°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHLAX-26OCT05-B103.5",
-  "market_captured_at": "2026-10-06T21:17:00.435Z",
+  "market_captured_at": "2026-10-07T06:20:04.512Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-06T21:17:01.076Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26OCT05-B103.5/candlesticks?start_ts=1791277201&end_ts=1791321420&period_interval=60",
+  "last_ingested_at": "2026-10-07T06:20:05.136Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHLAX/markets/KXHIGHLAX-26OCT05-B103.5/candlesticks?start_ts=1791277201&end_ts=1791354004&period_interval=60",
   "result": "no"
 }

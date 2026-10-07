@@ -5959,6 +5959,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-07T06:23:46.711Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-RUF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6016,11 +6026,11 @@
     "yes_sub_title": "Mauricio Ruffy"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19TSARUF-RUF",
-  "market_captured_at": "2026-10-06T21:20:48.489Z",
+  "market_captured_at": "2026-10-07T06:23:46.066Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-06T21:20:49.129Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-RUF/candlesticks?start_ts=1789876801&end_ts=1791321648&period_interval=60",
+  "last_ingested_at": "2026-10-07T06:23:46.688Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19TSARUF-RUF/candlesticks?start_ts=1789876801&end_ts=1791354226&period_interval=60",
   "trims": [
     {
       "at": "2026-09-20T03:07:23.256Z",
