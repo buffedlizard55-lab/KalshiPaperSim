@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 17 date file(s) · 145 game(s) · 538 state row(s) · generated 2026-10-08T00:23:53.616Z
+ * 17 date file(s) · 145 game(s) · 542 state row(s) · generated 2026-10-08T00:31:34.282Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-08T00:23:53.616Z",
+ "generatedAt": "2026-10-08T00:31:34.282Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-10-07T20:52:24.050Z",
+  "last_confirmed_at": "2026-10-08T00:31:32.515Z",
   "teams": [
    {
     "id": 108,
@@ -13031,7 +13031,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-10-07T00:04:52.682Z",
     "2026-10-07T03:30:37.627Z",
     "2026-10-07T10:35:49.020Z",
-    "2026-10-07T20:52:24.051Z"
+    "2026-10-07T20:52:24.051Z",
+    "2026-10-08T00:31:32.516Z"
    ],
    "games": {
     "849819": {
@@ -13111,7 +13112,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-07T03:30:37.627Z",
-       "last_seen_at": "2026-10-07T20:52:24.051Z",
+       "last_seen_at": "2026-10-08T00:31:32.516Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -13203,7 +13204,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-07T10:35:49.020Z",
-       "last_seen_at": "2026-10-07T20:52:24.051Z",
+       "last_seen_at": "2026-10-08T00:31:32.516Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -13233,7 +13234,8 @@ export const MLB_SIGNAL_DATA = {
    },
    "captures": [
     "2026-10-07T10:35:49.020Z",
-    "2026-10-07T20:52:24.051Z"
+    "2026-10-07T20:52:24.051Z",
+    "2026-10-08T00:31:32.516Z"
    ],
    "games": {
     "849822": {
@@ -13295,6 +13297,21 @@ export const MLB_SIGNAL_DATA = {
        },
        "winner": null,
        "url_ref": 0
+      },
+      {
+       "captured_at": "2026-10-08T00:31:32.516Z",
+       "last_seen_at": "2026-10-08T00:31:32.516Z",
+       "abstractGameState": "Live",
+       "detailedState": "In Progress",
+       "codedGameState": "I",
+       "inning": 7,
+       "inningState": "Bottom",
+       "runs": {
+        "away": 3,
+        "home": 1
+       },
+       "winner": null,
+       "url_ref": 0
       }
      ]
     },
@@ -13317,7 +13334,10 @@ export const MLB_SIGNAL_DATA = {
      },
      "venue": "Petco Park",
      "probablePitchers": {
-      "away": null,
+      "away": {
+       "id": 688107,
+       "fullName": "Robert Gasser"
+      },
       "home": {
        "id": 621111,
        "fullName": "Walker Buehler"
@@ -13336,6 +13356,21 @@ export const MLB_SIGNAL_DATA = {
        "runs": {
         "away": null,
         "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      },
+      {
+       "captured_at": "2026-10-08T00:31:32.516Z",
+       "last_seen_at": "2026-10-08T00:31:32.516Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Pre-Game",
+       "codedGameState": "P",
+       "inning": 1,
+       "inningState": "Top",
+       "runs": {
+        "away": 0,
+        "home": 0
        },
        "winner": null,
        "url_ref": 0
@@ -13401,6 +13436,21 @@ export const MLB_SIGNAL_DATA = {
        },
        "winner": null,
        "url_ref": 0
+      },
+      {
+       "captured_at": "2026-10-08T00:31:32.516Z",
+       "last_seen_at": "2026-10-08T00:31:32.516Z",
+       "abstractGameState": "Final",
+       "detailedState": "Final",
+       "codedGameState": "F",
+       "inning": 9,
+       "inningState": "Bottom",
+       "runs": {
+        "away": 9,
+        "home": 3
+       },
+       "winner": "away",
+       "url_ref": 0
       }
      ]
     },
@@ -13457,6 +13507,21 @@ export const MLB_SIGNAL_DATA = {
        "codedGameState": "P",
        "inning": 1,
        "inningState": "Top",
+       "runs": {
+        "away": 0,
+        "home": 0
+       },
+       "winner": null,
+       "url_ref": 0
+      },
+      {
+       "captured_at": "2026-10-08T00:31:32.516Z",
+       "last_seen_at": "2026-10-08T00:31:32.516Z",
+       "abstractGameState": "Live",
+       "detailedState": "In Progress",
+       "codedGameState": "I",
+       "inning": 2,
+       "inningState": "Bottom",
        "runs": {
         "away": 0,
         "home": 0
