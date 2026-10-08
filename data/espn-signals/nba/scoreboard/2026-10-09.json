@@ -1,0 +1,95 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-09",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261009"
+  ]
+ },
+ "captures": [
+  "2026-10-08T11:03:36.674Z"
+ ],
+ "events": {
+  "401898395": {
+   "eventId": "401898395",
+   "date": "2026-10-09T12:00Z",
+   "easternDate": "2026-10-09",
+   "name": "Houston Rockets at Dallas Mavericks",
+   "shortName": "HOU VS DAL",
+   "week": null,
+   "venue": "Venetian Arena",
+   "homeAbbr": "DAL",
+   "homeTeamId": "6",
+   "homeName": "Dallas Mavericks",
+   "awayAbbr": "HOU",
+   "awayTeamId": "10",
+   "awayName": "Houston Rockets",
+   "firstCapturedAt": "2026-10-08T11:03:36.674Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-08T11:03:36.674Z",
+     "last_seen_at": "2026-10-08T11:03:36.674Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0",
+      "away": "0-0"
+     }
+    }
+   ]
+  },
+  "401908940": {
+   "eventId": "401908940",
+   "date": "2026-10-10T00:00Z",
+   "easternDate": "2026-10-09",
+   "name": "Memphis Grizzlies at Chicago Bulls",
+   "shortName": "MEM @ CHI",
+   "week": null,
+   "venue": "United Center",
+   "homeAbbr": "CHI",
+   "homeTeamId": "4",
+   "homeName": "Chicago Bulls",
+   "awayAbbr": "MEM",
+   "awayTeamId": "29",
+   "awayName": "Memphis Grizzlies",
+   "firstCapturedAt": "2026-10-08T11:03:36.674Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-08T11:03:36.674Z",
+     "last_seen_at": "2026-10-08T11:03:36.674Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-0",
+      "away": "1-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-08T11:03:36.674Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261009"
+}

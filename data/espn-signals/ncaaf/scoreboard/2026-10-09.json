@@ -1,0 +1,237 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-09",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261009"
+  ]
+ },
+ "captures": [
+  "2026-10-08T11:03:36.864Z"
+ ],
+ "events": {
+  "401856826": {
+   "eventId": "401856826",
+   "date": "2026-10-10T02:15Z",
+   "easternDate": "2026-10-09",
+   "name": "Iowa State Cyclones at BYU Cougars",
+   "shortName": "ISU @ BYU",
+   "week": 6,
+   "venue": "LaVell Edwards Stadium",
+   "homeAbbr": "BYU",
+   "homeTeamId": "252",
+   "homeName": "BYU Cougars",
+   "awayAbbr": "ISU",
+   "awayTeamId": "66",
+   "awayName": "Iowa State Cyclones",
+   "firstCapturedAt": "2026-10-08T11:03:36.864Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "BYU -10",
+    "spread": -10,
+    "overUnder": 46.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-08T11:03:36.864Z",
+     "last_seen_at": "2026-10-08T11:03:36.864Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-0",
+      "away": "3-2"
+     }
+    }
+   ]
+  },
+  "401858254": {
+   "eventId": "401858254",
+   "date": "2026-10-09T23:00Z",
+   "easternDate": "2026-10-09",
+   "name": "Florida State Seminoles at Louisville Cardinals",
+   "shortName": "FSU @ LOU",
+   "week": 6,
+   "venue": "L&N Federal Credit Union Stadium",
+   "homeAbbr": "LOU",
+   "homeTeamId": "97",
+   "homeName": "Louisville Cardinals",
+   "awayAbbr": "FSU",
+   "awayTeamId": "52",
+   "awayName": "Florida State Seminoles",
+   "firstCapturedAt": "2026-10-08T11:03:36.864Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "LOU -3.5",
+    "spread": -3.5,
+    "overUnder": 59.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-08T11:03:36.864Z",
+     "last_seen_at": "2026-10-08T11:03:36.864Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "3-2"
+     }
+    }
+   ]
+  },
+  "401858487": {
+   "eventId": "401858487",
+   "date": "2026-10-10T01:00Z",
+   "easternDate": "2026-10-09",
+   "name": "Iowa Hawkeyes at Washington Huskies",
+   "shortName": "IOWA @ WASH",
+   "week": 6,
+   "venue": "Husky Stadium",
+   "homeAbbr": "WASH",
+   "homeTeamId": "264",
+   "homeName": "Washington Huskies",
+   "awayAbbr": "IOWA",
+   "awayTeamId": "2294",
+   "awayName": "Iowa Hawkeyes",
+   "firstCapturedAt": "2026-10-08T11:03:36.864Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "WASH -3",
+    "spread": -3,
+    "overUnder": 41.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-08T11:03:36.864Z",
+     "last_seen_at": "2026-10-08T11:03:36.864Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-2",
+      "away": "4-1"
+     }
+    }
+   ]
+  },
+  "401860922": {
+   "eventId": "401860922",
+   "date": "2026-10-10T01:00Z",
+   "easternDate": "2026-10-09",
+   "name": "Washington State Cougars at Utah State Aggies",
+   "shortName": "WSU @ USU",
+   "week": 6,
+   "venue": "Maverik Stadium",
+   "homeAbbr": "USU",
+   "homeTeamId": "328",
+   "homeName": "Utah State Aggies",
+   "awayAbbr": "WSU",
+   "awayTeamId": "265",
+   "awayName": "Washington State Cougars",
+   "firstCapturedAt": "2026-10-08T11:03:36.864Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "USU -5.5",
+    "spread": -5.5,
+    "overUnder": 44.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-08T11:03:36.864Z",
+     "last_seen_at": "2026-10-08T11:03:36.864Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-4",
+      "away": "1-4"
+     }
+    }
+   ]
+  },
+  "401864519": {
+   "eventId": "401864519",
+   "date": "2026-10-10T01:00Z",
+   "easternDate": "2026-10-09",
+   "name": "Wyoming Cowboys at San José State Spartans",
+   "shortName": "WYO @ SJSU",
+   "week": 6,
+   "venue": "CEFCU Stadium",
+   "homeAbbr": "SJSU",
+   "homeTeamId": "23",
+   "homeName": "San José State Spartans",
+   "awayAbbr": "WYO",
+   "awayTeamId": "2751",
+   "awayName": "Wyoming Cowboys",
+   "firstCapturedAt": "2026-10-08T11:03:36.864Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "SJSU -6",
+    "spread": -6,
+    "overUnder": 42.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-08T11:03:36.864Z",
+     "last_seen_at": "2026-10-08T11:03:36.864Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-2",
+      "away": "2-3"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-08T11:03:36.864Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261009"
+}

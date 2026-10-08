@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-08T03:41:40.442Z",
+ "generatedAt": "2026-10-08T11:03:38.224Z",
  "rows": [
   {
    "league": "nba",
@@ -120,6 +120,31 @@
      "ticker": "KXNBAGAME-26OCT06LALGSW-LAL",
      "rulesName": "Golden State",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT07GSWPOR-GSW",
+     "rulesName": "Golden State",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "IND",
+   "kalshiName": "Indiana",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "11",
+    "abbr": "IND",
+    "displayName": "Indiana Pacers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT07MININD-MIN",
+     "rulesName": "Indiana",
+     "role": "home"
     }
    ]
   },
@@ -194,6 +219,46 @@
     {
      "ticker": "KXNBAGAME-26OCT03MIATOR-TOR",
      "rulesName": "Miami",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "MIL",
+   "kalshiName": "Milwaukee",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "15",
+    "abbr": "MIL",
+    "displayName": "Milwaukee Bucks",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT07MILOKC-MIL",
+     "rulesName": "Milwaukee",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "MIN",
+   "kalshiName": "Minnesota",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "16",
+    "abbr": "MIN",
+    "displayName": "Minnesota Timberwolves",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT07MININD-MIN",
+     "rulesName": "Minnesota",
      "role": "away"
     }
    ]
@@ -290,6 +355,11 @@
      "ticker": "KXNBAGAME-26OCT06NOPOKC-OKC",
      "rulesName": "Oklahoma City",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT07MILOKC-MIL",
+     "rulesName": "Oklahoma City",
+     "role": "home"
     }
    ]
   },
@@ -345,6 +415,26 @@
      "ticker": "KXNBAGAME-26OCT05PHXDET-PHX",
      "rulesName": "Phoenix",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "POR",
+   "kalshiName": "Portland",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "22",
+    "abbr": "POR",
+    "displayName": "Portland Trail Blazers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT07GSWPOR-GSW",
+     "rulesName": "Portland",
+     "role": "home"
     }
    ]
   },
@@ -523,6 +613,11 @@
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17NDBYU-BYU",
+     "rulesName": "BYU",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17NDBYU-ND",
      "rulesName": "BYU",
      "role": "home"
     }
@@ -745,6 +840,11 @@
      "ticker": "KXNCAAFGAME-26OCT17FSUMIA-FSU",
      "rulesName": "Florida St.",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17FSUMIA-MIA",
+     "rulesName": "Florida St.",
+     "role": "away"
     }
    ]
   },
@@ -960,6 +1060,11 @@
      "ticker": "KXNCAAFGAME-26OCT17FSUMIA-FSU",
      "rulesName": "Miami (FL)",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17FSUMIA-MIA",
+     "rulesName": "Miami (FL)",
+     "role": "home"
     }
    ]
   },
@@ -1028,6 +1133,11 @@
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17NDBYU-BYU",
+     "rulesName": "Notre Dame",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17NDBYU-ND",
      "rulesName": "Notre Dame",
      "role": "away"
     }
@@ -2307,17 +2417,17 @@
      "role": "away"
     },
     {
+     "ticker": "KXNHLGAME-26OCT07EDMANA-EDM",
+     "rulesName": "Anaheim",
+     "role": "home"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
      "rulesName": "Anaheim",
      "role": "home"
     },
     {
      "ticker": "KXNHLGAME-26SEP20SJANA-SJ",
-     "rulesName": "Anaheim",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP23LAANA-ANA",
      "rulesName": "Anaheim",
      "role": "home"
     }
@@ -2487,6 +2597,11 @@
    "espnReason": "MATCHED",
    "evidence": [
     {
+     "ticker": "KXNHLGAME-26OCT07COLWPG-COL",
+     "rulesName": "Colorado",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP30LACOL-COL",
      "rulesName": "Colorado",
      "role": "home"
@@ -2561,6 +2676,11 @@
    },
    "espnReason": "MATCHED",
    "evidence": [
+    {
+     "ticker": "KXNHLGAME-26OCT07EDMANA-EDM",
+     "rulesName": "Edmonton",
+     "role": "away"
+    },
     {
      "ticker": "KXNHLGAME-26SEP19WPGEDM-EDM",
      "rulesName": "Edmonton",
@@ -3107,6 +3227,11 @@
    "espnReason": "MATCHED",
    "evidence": [
     {
+     "ticker": "KXNHLGAME-26OCT07COLWPG-COL",
+     "rulesName": "Winnipeg",
+     "role": "home"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP19WPGEDM-EDM",
      "rulesName": "Winnipeg",
      "role": "away"
@@ -3158,6 +3283,11 @@
    "evidence": [
     {
      "ticker": "KXWNBAGAME-26AUG16INDATL-IND",
+     "rulesName": "Atlanta women's",
+     "role": "home"
+    },
+    {
+     "ticker": "KXWNBAGAME-26OCT07NYATL-NY",
      "rulesName": "Atlanta women's",
      "role": "home"
     }
@@ -3266,15 +3396,20 @@
   {
    "league": "wnba",
    "kalshiCode": "LV",
-   "kalshiName": "Las Vegas women's",
-   "conflictWith": "Las Vegas",
-   "espn": null,
-   "espnReason": "NO_ESPN_NAME_MATCH",
+   "kalshiName": "Las Vegas",
+   "conflictWith": "Las Vegas women's",
+   "espn": {
+    "teamId": "17",
+    "abbr": "LV",
+    "displayName": "Las Vegas Aces",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
-     "ticker": "KXWNBAGAME-26OCT01INDLV-IND",
-     "rulesName": "Las Vegas women's",
-     "role": "home"
+     "ticker": "KXWNBAGAME-26OCT07LVGS-LV",
+     "rulesName": "Las Vegas",
+     "role": "away"
     }
    ]
   },
@@ -3290,6 +3425,26 @@
      "ticker": "KXWNBAGAME-26AUG06LAMIN-LA",
      "rulesName": "Minnesota women's",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "wnba",
+   "kalshiCode": "NY",
+   "kalshiName": "New York",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "9",
+    "abbr": "NY",
+    "displayName": "New York Liberty",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXWNBAGAME-26OCT07NYATL-NY",
+     "rulesName": "New York",
+     "role": "away"
     }
    ]
   },
