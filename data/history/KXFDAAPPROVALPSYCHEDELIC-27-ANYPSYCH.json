@@ -5,26 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1756872000,
-      "open_interest_fp": "1304.00",
-      "price": {
-        "previous_dollars": "0.2800"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.3400",
-        "high_dollars": "0.3400",
-        "low_dollars": "0.3400",
-        "open_dollars": "0.3400"
-      },
-      "yes_bid": {
-        "close_dollars": "0.2900",
-        "high_dollars": "0.2900",
-        "low_dollars": "0.2700",
-        "open_dollars": "0.2900"
-      }
-    },
-    {
       "end_period_ts": 1756958400,
       "open_interest_fp": "1798.00",
       "price": {
@@ -9922,6 +9902,31 @@
         "high_dollars": "0.2100",
         "low_dollars": "0.1500",
         "open_dollars": "0.1900"
+      }
+    },
+    {
+      "end_period_ts": 1791432000,
+      "open_interest_fp": "92340.77",
+      "price": {
+        "close_dollars": "0.2200",
+        "high_dollars": "0.2500",
+        "low_dollars": "0.1400",
+        "mean_dollars": "0.1713",
+        "open_dollars": "0.1500",
+        "previous_dollars": "0.1600"
+      },
+      "volume_fp": "1799.13",
+      "yes_ask": {
+        "close_dollars": "0.2500",
+        "high_dollars": "0.2500",
+        "low_dollars": "0.1600",
+        "open_dollars": "0.1900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2000",
+        "high_dollars": "0.2300",
+        "low_dollars": "0.1400",
+        "open_dollars": "0.1500"
       }
     }
   ],
@@ -41981,6 +41986,526 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-08T06:26:21.359Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1240.04"
+            ],
+            [
+              "0.0200",
+              "355.41"
+            ],
+            [
+              "0.0300",
+              "10.35"
+            ],
+            [
+              "0.0400",
+              "15.38"
+            ],
+            [
+              "0.0500",
+              "17.95"
+            ],
+            [
+              "0.0600",
+              "27.03"
+            ],
+            [
+              "0.0700",
+              "5.51"
+            ],
+            [
+              "0.0800",
+              "20.62"
+            ],
+            [
+              "0.0900",
+              "101.11"
+            ],
+            [
+              "0.1100",
+              "3.40"
+            ],
+            [
+              "0.1200",
+              "36.05"
+            ],
+            [
+              "0.1400",
+              "18.78"
+            ],
+            [
+              "0.1500",
+              "12.61"
+            ],
+            [
+              "0.1600",
+              "149.17"
+            ],
+            [
+              "0.1700",
+              "25.25"
+            ],
+            [
+              "0.1800",
+              "157.28"
+            ],
+            [
+              "0.2000",
+              "41.19"
+            ],
+            [
+              "0.2300",
+              "26.98"
+            ],
+            [
+              "0.2400",
+              "52.00"
+            ],
+            [
+              "0.2500",
+              "1188.17"
+            ],
+            [
+              "0.2600",
+              "550.00"
+            ],
+            [
+              "0.2700",
+              "4.68"
+            ],
+            [
+              "0.2800",
+              "24.51"
+            ],
+            [
+              "0.2900",
+              "19.54"
+            ],
+            [
+              "0.3000",
+              "77.42"
+            ],
+            [
+              "0.3100",
+              "28.77"
+            ],
+            [
+              "0.3400",
+              "36.32"
+            ],
+            [
+              "0.3500",
+              "100.00"
+            ],
+            [
+              "0.3600",
+              "1572.00"
+            ],
+            [
+              "0.3700",
+              "14.19"
+            ],
+            [
+              "0.3800",
+              "600.00"
+            ],
+            [
+              "0.3900",
+              "5.00"
+            ],
+            [
+              "0.4000",
+              "31.07"
+            ],
+            [
+              "0.4100",
+              "5.50"
+            ],
+            [
+              "0.4200",
+              "53.17"
+            ],
+            [
+              "0.4300",
+              "109.98"
+            ],
+            [
+              "0.5000",
+              "248.60"
+            ],
+            [
+              "0.5200",
+              "19.23"
+            ],
+            [
+              "0.5400",
+              "22.92"
+            ],
+            [
+              "0.5500",
+              "419.60"
+            ],
+            [
+              "0.5600",
+              "372.00"
+            ],
+            [
+              "0.7400",
+              "242.06"
+            ],
+            [
+              "0.7500",
+              "700.00"
+            ],
+            [
+              "0.7600",
+              "80.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2327.90"
+            ],
+            [
+              "0.0200",
+              "1316.32"
+            ],
+            [
+              "0.0300",
+              "669.79"
+            ],
+            [
+              "0.0400",
+              "518.89"
+            ],
+            [
+              "0.0500",
+              "2555.65"
+            ],
+            [
+              "0.0600",
+              "388.53"
+            ],
+            [
+              "0.0700",
+              "490.64"
+            ],
+            [
+              "0.0800",
+              "37.00"
+            ],
+            [
+              "0.0900",
+              "3652.31"
+            ],
+            [
+              "0.1000",
+              "521.35"
+            ],
+            [
+              "0.1100",
+              "292.71"
+            ],
+            [
+              "0.1200",
+              "60.00"
+            ],
+            [
+              "0.1300",
+              "48.00"
+            ],
+            [
+              "0.1800",
+              "740.66"
+            ],
+            [
+              "0.1900",
+              "328.36"
+            ],
+            [
+              "0.2000",
+              "203.94"
+            ],
+            [
+              "0.2100",
+              "1.36"
+            ],
+            [
+              "0.2200",
+              "179.98"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-08T06:37:32.665Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1240.04"
+            ],
+            [
+              "0.0200",
+              "355.41"
+            ],
+            [
+              "0.0300",
+              "10.35"
+            ],
+            [
+              "0.0400",
+              "15.38"
+            ],
+            [
+              "0.0500",
+              "17.95"
+            ],
+            [
+              "0.0600",
+              "27.03"
+            ],
+            [
+              "0.0700",
+              "5.51"
+            ],
+            [
+              "0.0800",
+              "20.62"
+            ],
+            [
+              "0.0900",
+              "101.11"
+            ],
+            [
+              "0.1100",
+              "3.40"
+            ],
+            [
+              "0.1200",
+              "36.05"
+            ],
+            [
+              "0.1400",
+              "18.78"
+            ],
+            [
+              "0.1500",
+              "12.61"
+            ],
+            [
+              "0.1600",
+              "149.17"
+            ],
+            [
+              "0.1700",
+              "25.25"
+            ],
+            [
+              "0.1800",
+              "157.28"
+            ],
+            [
+              "0.2000",
+              "41.19"
+            ],
+            [
+              "0.2300",
+              "26.98"
+            ],
+            [
+              "0.2400",
+              "52.00"
+            ],
+            [
+              "0.2500",
+              "1188.17"
+            ],
+            [
+              "0.2600",
+              "550.00"
+            ],
+            [
+              "0.2700",
+              "4.68"
+            ],
+            [
+              "0.2800",
+              "24.51"
+            ],
+            [
+              "0.2900",
+              "19.54"
+            ],
+            [
+              "0.3000",
+              "77.42"
+            ],
+            [
+              "0.3100",
+              "28.77"
+            ],
+            [
+              "0.3400",
+              "36.32"
+            ],
+            [
+              "0.3500",
+              "100.00"
+            ],
+            [
+              "0.3600",
+              "1572.00"
+            ],
+            [
+              "0.3700",
+              "14.19"
+            ],
+            [
+              "0.3800",
+              "600.00"
+            ],
+            [
+              "0.3900",
+              "5.00"
+            ],
+            [
+              "0.4000",
+              "31.07"
+            ],
+            [
+              "0.4100",
+              "5.50"
+            ],
+            [
+              "0.4200",
+              "53.17"
+            ],
+            [
+              "0.4300",
+              "109.98"
+            ],
+            [
+              "0.5000",
+              "248.60"
+            ],
+            [
+              "0.5200",
+              "19.23"
+            ],
+            [
+              "0.5400",
+              "22.92"
+            ],
+            [
+              "0.5500",
+              "419.60"
+            ],
+            [
+              "0.5600",
+              "372.00"
+            ],
+            [
+              "0.7400",
+              "242.06"
+            ],
+            [
+              "0.7500",
+              "700.00"
+            ],
+            [
+              "0.7600",
+              "80.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2327.90"
+            ],
+            [
+              "0.0200",
+              "1316.32"
+            ],
+            [
+              "0.0300",
+              "669.79"
+            ],
+            [
+              "0.0400",
+              "518.89"
+            ],
+            [
+              "0.0500",
+              "2555.65"
+            ],
+            [
+              "0.0600",
+              "388.53"
+            ],
+            [
+              "0.0700",
+              "490.64"
+            ],
+            [
+              "0.0800",
+              "37.00"
+            ],
+            [
+              "0.0900",
+              "3652.31"
+            ],
+            [
+              "0.1000",
+              "521.35"
+            ],
+            [
+              "0.1100",
+              "292.71"
+            ],
+            [
+              "0.1200",
+              "60.00"
+            ],
+            [
+              "0.1300",
+              "48.00"
+            ],
+            [
+              "0.1800",
+              "561.77"
+            ],
+            [
+              "0.1900",
+              "328.36"
+            ],
+            [
+              "0.2000",
+              "203.94"
+            ],
+            [
+              "0.2100",
+              "1.36"
+            ],
+            [
+              "0.2200",
+              "197.98"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -41996,15 +42521,15 @@
     "last_price_dollars": "0.2400",
     "latest_expiration_time": "2027-01-08T15:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.7900",
+    "no_ask_dollars": "0.7800",
     "no_bid_dollars": "0.7600",
     "no_sub_title": "Any psychedelic substance for medical use",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "92180.63",
+    "open_interest_fp": "92350.59",
     "open_time": "2025-07-17T14:00:00Z",
-    "previous_price_dollars": "0.1700",
-    "previous_yes_ask_dollars": "0.2000",
-    "previous_yes_bid_dollars": "0.1800",
+    "previous_price_dollars": "0.2000",
+    "previous_yes_ask_dollars": "0.1900",
+    "previous_yes_bid_dollars": "0.1500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -42023,19 +42548,19 @@
     "ticker": "KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
     "title": "Will the FDA approve Any psychedelic substance for medical use this year?",
     "updated_time": "2026-05-20T22:50:27.450124Z",
-    "volume_24h_fp": "1549.67",
-    "volume_fp": "401115.85",
+    "volume_24h_fp": "1293.95",
+    "volume_fp": "401521.30",
     "yes_ask_dollars": "0.2400",
-    "yes_ask_size_fp": "91.69",
-    "yes_bid_dollars": "0.2100",
-    "yes_bid_size_fp": "1.00",
+    "yes_ask_size_fp": "80.00",
+    "yes_bid_dollars": "0.2200",
+    "yes_bid_size_fp": "197.98",
     "yes_sub_title": "Any psychedelic substance for medical use"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH",
-  "market_captured_at": "2026-10-07T21:43:49.591Z",
+  "market_captured_at": "2026-10-08T06:37:31.987Z",
   "status": "active",
-  "last_ingested_at": "2026-10-07T21:43:50.215Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALPSYCHEDELIC/markets/KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH/candlesticks?start_ts=1791345601&end_ts=1791409429&period_interval=1440",
+  "last_ingested_at": "2026-10-08T06:37:32.627Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALPSYCHEDELIC/markets/KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH/candlesticks?start_ts=1791432001&end_ts=1791441452&period_interval=1440",
   "trims": [
     {
       "at": "2026-09-19T11:07:45.920Z",
@@ -42186,6 +42711,14 @@
       "dropped": 1,
       "dropped_from_ts": 1756785600,
       "dropped_to_ts": 1756785600,
+      "kept": 400,
+      "reason": "--max-bars=400: the store keeps the newest 400 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-10-08T06:37:32.965Z",
+      "dropped": 1,
+      "dropped_from_ts": 1756872000,
+      "dropped_to_ts": 1756872000,
       "kept": 400,
       "reason": "--max-bars=400: the store keeps the newest 400 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }

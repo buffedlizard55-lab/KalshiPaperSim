@@ -12045,6 +12045,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-08T06:34:57.218Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT062130MILSD-SD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12070,9 +12080,9 @@
     "occurrence_datetime": "2026-10-07T04:30:00Z",
     "open_interest_fp": "5708288.38",
     "open_time": "2026-10-02T03:25:00Z",
-    "previous_price_dollars": "0.5600",
-    "previous_yes_ask_dollars": "0.5600",
-    "previous_yes_bid_dollars": "0.5500",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12093,7 +12103,7 @@
     "ticker": "KXMLBGAME-26OCT062130MILSD-SD",
     "title": "San Diego wins",
     "updated_time": "2026-10-07T05:09:28.051245Z",
-    "volume_24h_fp": "8475646.93",
+    "volume_24h_fp": "0.00",
     "volume_fp": "9283226.49",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12102,11 +12112,11 @@
     "yes_sub_title": "San Diego"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT062130MILSD-SD",
-  "market_captured_at": "2026-10-07T21:41:16.086Z",
+  "market_captured_at": "2026-10-08T06:34:56.201Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-07T21:41:16.712Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT062130MILSD-SD/candlesticks?start_ts=1791349621&end_ts=1791409276&period_interval=1",
+  "last_ingested_at": "2026-10-08T06:34:57.180Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT062130MILSD-SD/candlesticks?start_ts=1791436021&end_ts=1791441296&period_interval=1",
   "trims": [
     {
       "at": "2026-10-07T06:24:48.551Z",

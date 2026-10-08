@@ -2822,6 +2822,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-08T06:32:59.376Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT06NOPOKC-OKC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2847,9 +2857,9 @@
     "occurrence_datetime": "2026-10-07T03:00:00Z",
     "open_interest_fp": "728241.64",
     "open_time": "2026-10-01T00:04:12.785316Z",
-    "previous_price_dollars": "0.5000",
-    "previous_yes_ask_dollars": "0.5000",
-    "previous_yes_bid_dollars": "0.4900",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2870,7 +2880,7 @@
     "ticker": "KXNBAGAME-26OCT06NOPOKC-OKC",
     "title": "Oklahoma City wins",
     "updated_time": "2026-10-07T02:37:07.523739Z",
-    "volume_24h_fp": "1847401.21",
+    "volume_24h_fp": "0.00",
     "volume_fp": "1920084.56",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2879,9 +2889,9 @@
     "yes_sub_title": "Oklahoma City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT06NOPOKC-OKC",
-  "market_captured_at": "2026-10-07T21:39:33.228Z",
+  "market_captured_at": "2026-10-08T06:32:58.687Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-07T21:39:33.854Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT06NOPOKC-OKC/candlesticks?start_ts=1791342001&end_ts=1791409173&period_interval=60"
+  "last_ingested_at": "2026-10-08T06:32:59.330Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT06NOPOKC-OKC/candlesticks?start_ts=1791342001&end_ts=1791441178&period_interval=60"
 }
