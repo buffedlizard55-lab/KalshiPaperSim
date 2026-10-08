@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-07T20:23:51.893Z",
+ "generatedAt": "2026-10-08T00:23:51.828Z",
  "rows": [
   {
    "league": "nba",
@@ -740,6 +740,11 @@
      "ticker": "KXNCAAFGAME-26SEP26CARKFSU-FSU",
      "rulesName": "Florida St.",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17FSUMIA-FSU",
+     "rulesName": "Florida St.",
+     "role": "away"
     }
    ]
   },
@@ -950,6 +955,11 @@
      "ticker": "KXNCAAFGAME-26OCT03MIACLEM-CLEM",
      "rulesName": "Miami (FL)",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17FSUMIA-FSU",
+     "rulesName": "Miami (FL)",
+     "role": "home"
     }
    ]
   },

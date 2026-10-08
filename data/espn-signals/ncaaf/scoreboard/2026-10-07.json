@@ -14,7 +14,8 @@
   "2026-10-07T02:50:37.839Z",
   "2026-10-07T03:27:06.901Z",
   "2026-10-07T10:33:19.403Z",
-  "2026-10-07T20:23:50.609Z"
+  "2026-10-07T20:23:50.609Z",
+  "2026-10-08T00:23:50.646Z"
  ],
  "events": {
   "401871051": {
@@ -58,12 +59,32 @@
       "home": "1-3",
       "away": "3-2"
      }
+    },
+    {
+     "captured_at": "2026-10-08T00:23:50.646Z",
+     "last_seen_at": "2026-10-08T00:23:50.646Z",
+     "fp": "in|2|1|9,14|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 89,
+     "displayClock": "1:29",
+     "scores": {
+      "home": 9,
+      "away": 14
+     },
+     "recordsOverall": {
+      "home": "1-3",
+      "away": "3-2"
+     }
     }
    ]
   },
   "401871066": {
    "eventId": "401871066",
-   "date": "2026-10-07T23:30Z",
+   "date": "2026-10-08T00:04Z",
    "easternDate": "2026-10-07",
    "name": "New Mexico State Aggies at Florida International Panthers",
    "shortName": "NMSU @ FIU",
@@ -102,10 +123,30 @@
       "home": "2-2",
       "away": "2-3"
      }
+    },
+    {
+     "captured_at": "2026-10-08T00:23:50.646Z",
+     "last_seen_at": "2026-10-08T00:23:50.646Z",
+     "fp": "in|1|9|0,0|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 583,
+     "displayClock": "9:43",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-2",
+      "away": "2-3"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-07T20:23:50.609Z",
+ "last_ingested_at": "2026-10-08T00:23:50.646Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261007"
 }
