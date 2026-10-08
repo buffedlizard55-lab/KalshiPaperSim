@@ -8571,7 +8571,7 @@
     "last_price_dollars": "0.9600",
     "latest_expiration_time": "2027-05-05T18:05:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.1900",
+    "no_ask_dollars": "0.1300",
     "no_bid_dollars": "0.0200",
     "no_sub_title": "Above 3.25%",
     "notional_value_dollars": "1.0000",
@@ -8603,13 +8603,13 @@
     "volume_fp": "16831.87",
     "yes_ask_dollars": "0.9800",
     "yes_ask_size_fp": "1000.00",
-    "yes_bid_dollars": "0.8100",
-    "yes_bid_size_fp": "35.61",
+    "yes_bid_dollars": "0.8700",
+    "yes_bid_size_fp": "22.00",
     "yes_sub_title": "Above 3.25%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T3.25",
-  "market_captured_at": "2026-10-08T09:18:32.742Z",
+  "market_captured_at": "2026-10-08T13:33:37.490Z",
   "status": "active",
-  "last_ingested_at": "2026-10-08T09:18:33.299Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T3.25/candlesticks?start_ts=1791432001&end_ts=1791451112&period_interval=1440"
+  "last_ingested_at": "2026-10-08T13:33:38.018Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T3.25/candlesticks?start_ts=1791432001&end_ts=1791466417&period_interval=1440"
 }

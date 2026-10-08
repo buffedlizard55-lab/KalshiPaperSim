@@ -17671,6 +17671,86 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-08T13:43:33.580Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-27JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2031.55"
+            ],
+            [
+              "0.0200",
+              "640.00"
+            ],
+            [
+              "0.2500",
+              "100.49"
+            ],
+            [
+              "0.2600",
+              "2319.00"
+            ],
+            [
+              "0.3000",
+              "22.00"
+            ],
+            [
+              "0.3100",
+              "200.00"
+            ],
+            [
+              "0.6000",
+              "4840.00"
+            ],
+            [
+              "0.6300",
+              "8021.01"
+            ],
+            [
+              "0.6400",
+              "0.27"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2005.00"
+            ],
+            [
+              "0.0200",
+              "3263.00"
+            ],
+            [
+              "0.0600",
+              "245.92"
+            ],
+            [
+              "0.0700",
+              "241.00"
+            ],
+            [
+              "0.0900",
+              "49.46"
+            ],
+            [
+              "0.1100",
+              "2.07"
+            ],
+            [
+              "0.2500",
+              "1520.00"
+            ],
+            [
+              "0.2800",
+              "9.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -17726,8 +17806,8 @@
     "yes_sub_title": "Before 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-27JAN01",
-  "market_captured_at": "2026-10-08T09:30:00.913Z",
+  "market_captured_at": "2026-10-08T13:43:32.926Z",
   "status": "active",
-  "last_ingested_at": "2026-10-08T09:30:01.571Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-27JAN01/candlesticks?start_ts=1791432001&end_ts=1791451801&period_interval=1440"
+  "last_ingested_at": "2026-10-08T13:43:33.554Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-27JAN01/candlesticks?start_ts=1791432001&end_ts=1791467013&period_interval=1440"
 }

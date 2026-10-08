@@ -12521,6 +12521,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-08T13:42:54.052Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT04DALHOU-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12578,10 +12588,10 @@
     "yes_sub_title": "Dallas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT04DALHOU-DAL",
-  "market_captured_at": "2026-10-08T09:29:17.238Z",
+  "market_captured_at": "2026-10-08T13:42:52.414Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-08T09:29:18.973Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT04DALHOU-DAL/candlesticks?start_ts=1791404101&end_ts=1791451757&period_interval=1",
+  "last_ingested_at": "2026-10-08T13:42:54.025Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT04DALHOU-DAL/candlesticks?start_ts=1791404101&end_ts=1791466972&period_interval=1",
   "trims": [
     {
       "at": "2026-10-04T19:58:38.501Z",

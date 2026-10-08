@@ -995,6 +995,91 @@
         "low_dollars": "0.0700",
         "open_dollars": "0.0700"
       }
+    },
+    {
+      "end_period_ts": 1791453600,
+      "open_interest_fp": "2098.87",
+      "price": {
+        "previous_dollars": "0.0900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0900",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.0900",
+        "open_dollars": "0.1200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0700"
+      }
+    },
+    {
+      "end_period_ts": 1791457200,
+      "open_interest_fp": "2392.46",
+      "price": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0800",
+        "mean_dollars": "0.0800",
+        "open_dollars": "0.0800",
+        "previous_dollars": "0.0900"
+      },
+      "volume_fp": "293.59",
+      "yes_ask": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.0900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0700"
+      }
+    },
+    {
+      "end_period_ts": 1791460800,
+      "open_interest_fp": "2392.46",
+      "price": {
+        "previous_dollars": "0.0800"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.0800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0700"
+      }
+    },
+    {
+      "end_period_ts": 1791464400,
+      "open_interest_fp": "2392.46",
+      "price": {
+        "previous_dollars": "0.0800"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0800",
+        "open_dollars": "0.0800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0700"
+      }
     }
   ],
   "books": [
@@ -1453,6 +1538,186 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-08T13:39:34.048Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17FSUMIA-FSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "99020.00"
+            ],
+            [
+              "0.0200",
+              "1572.00"
+            ],
+            [
+              "0.0300",
+              "511.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "427.00"
+            ],
+            [
+              "0.0600",
+              "22.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "502.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1000",
+              "200.00"
+            ],
+            [
+              "0.1100",
+              "409.00"
+            ],
+            [
+              "0.6900",
+              "168.00"
+            ],
+            [
+              "0.7000",
+              "150.00"
+            ],
+            [
+              "0.7100",
+              "135.00"
+            ],
+            [
+              "0.7200",
+              "121.00"
+            ],
+            [
+              "0.7300",
+              "109.00"
+            ],
+            [
+              "0.7400",
+              "97.00"
+            ],
+            [
+              "0.7500",
+              "87.00"
+            ],
+            [
+              "0.7600",
+              "78.00"
+            ],
+            [
+              "0.7700",
+              "210.00"
+            ],
+            [
+              "0.7800",
+              "63.00"
+            ],
+            [
+              "0.7900",
+              "57.00"
+            ],
+            [
+              "0.8000",
+              "51.00"
+            ],
+            [
+              "0.8100",
+              "46.00"
+            ],
+            [
+              "0.8200",
+              "41.00"
+            ],
+            [
+              "0.8300",
+              "37.00"
+            ],
+            [
+              "0.8400",
+              "33.00"
+            ],
+            [
+              "0.8500",
+              "30.00"
+            ],
+            [
+              "0.8600",
+              "27.00"
+            ],
+            [
+              "0.8700",
+              "24.00"
+            ],
+            [
+              "0.8800",
+              "576.00"
+            ],
+            [
+              "0.8900",
+              "650.00"
+            ],
+            [
+              "0.9000",
+              "321.00"
+            ],
+            [
+              "0.9100",
+              "1100.00"
+            ],
+            [
+              "0.9200",
+              "3292.82"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "104273.00"
+            ],
+            [
+              "0.0200",
+              "5537.00"
+            ],
+            [
+              "0.0300",
+              "2266.00"
+            ],
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0500",
+              "3235.00"
+            ],
+            [
+              "0.0600",
+              "3253.00"
+            ],
+            [
+              "0.0700",
+              "44.71"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1468,17 +1733,17 @@
     "expected_expiration_time": "2026-10-18T02:00:00Z",
     "expiration_time": "2026-10-19T23:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0900",
+    "last_price_dollars": "0.0800",
     "latest_expiration_time": "2026-10-19T23:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.9300",
-    "no_bid_dollars": "0.9000",
+    "no_bid_dollars": "0.9200",
     "no_sub_title": "Florida St.",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-18T02:00:00Z",
-    "open_interest_fp": "2098.87",
+    "open_interest_fp": "2686.05",
     "open_time": "2026-10-05T22:06:00Z",
-    "previous_price_dollars": "0.1000",
+    "previous_price_dollars": "0.0800",
     "previous_yes_ask_dollars": "0.0800",
     "previous_yes_bid_dollars": "0.0700",
     "price_level_structure": "linear_cent",
@@ -1499,17 +1764,17 @@
     "ticker": "KXNCAAFGAME-26OCT17FSUMIA-FSU",
     "title": "Florida St. wins",
     "updated_time": "2026-10-05T22:06:00.907985Z",
-    "volume_24h_fp": "1962.29",
-    "volume_fp": "2098.87",
-    "yes_ask_dollars": "0.1000",
-    "yes_ask_size_fp": "122.00",
+    "volume_24h_fp": "2197.26",
+    "volume_fp": "2686.05",
+    "yes_ask_dollars": "0.0800",
+    "yes_ask_size_fp": "3292.82",
     "yes_bid_dollars": "0.0700",
     "yes_bid_size_fp": "44.71",
     "yes_sub_title": "Florida St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17FSUMIA-FSU",
-  "market_captured_at": "2026-10-08T09:25:42.502Z",
+  "market_captured_at": "2026-10-08T13:39:33.392Z",
   "status": "active",
-  "last_ingested_at": "2026-10-08T09:25:43.159Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17FSUMIA-FSU/candlesticks?start_ts=1791439201&end_ts=1791451542&period_interval=60"
+  "last_ingested_at": "2026-10-08T13:39:34.021Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17FSUMIA-FSU/candlesticks?start_ts=1791446401&end_ts=1791466773&period_interval=60"
 }

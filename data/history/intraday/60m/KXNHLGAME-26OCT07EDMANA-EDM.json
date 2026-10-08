@@ -3109,6 +3109,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-08T13:39:23.759Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT07EDMANA-EDM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3157,7 +3167,7 @@
     "ticker": "KXNHLGAME-26OCT07EDMANA-EDM",
     "title": "Edmonton wins",
     "updated_time": "2026-10-08T04:49:07.519495Z",
-    "volume_24h_fp": "649118.18",
+    "volume_24h_fp": "645600.00",
     "volume_fp": "654377.98",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3166,9 +3176,9 @@
     "yes_sub_title": "Edmonton"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT07EDMANA-EDM",
-  "market_captured_at": "2026-10-08T09:25:31.493Z",
+  "market_captured_at": "2026-10-08T13:39:23.102Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-08T09:25:32.152Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT07EDMANA-EDM/candlesticks?start_ts=1791435601&end_ts=1791451531&period_interval=60"
+  "last_ingested_at": "2026-10-08T13:39:23.732Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT07EDMANA-EDM/candlesticks?start_ts=1791435601&end_ts=1791466763&period_interval=60"
 }
