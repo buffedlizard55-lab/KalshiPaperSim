@@ -15,7 +15,8 @@
   "2026-10-07T03:27:06.873Z",
   "2026-10-07T10:33:19.240Z",
   "2026-10-07T20:23:50.480Z",
-  "2026-10-08T00:23:50.552Z"
+  "2026-10-08T00:23:50.552Z",
+  "2026-10-08T03:41:39.413Z"
  ],
  "events": {
   "401898391": {
@@ -79,6 +80,26 @@
       "home": "1-0",
       "away": "0-0"
      }
+    },
+    {
+     "captured_at": "2026-10-08T03:41:39.413Z",
+     "last_seen_at": "2026-10-08T03:41:39.413Z",
+     "fp": "post|4|12|118,122|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 118,
+      "away": 122
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "1-0"
+     }
     }
    ]
   },
@@ -137,6 +158,26 @@
      "recordsOverall": {
       "home": "0-1",
       "away": "0-1"
+     }
+    },
+    {
+     "captured_at": "2026-10-08T03:41:39.413Z",
+     "last_seen_at": "2026-10-08T03:41:39.413Z",
+     "fp": "post|4|12|126,128|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 126,
+      "away": 128
+     },
+     "recordsOverall": {
+      "home": "0-2",
+      "away": "1-1"
      }
     }
    ]
@@ -202,6 +243,26 @@
       "home": "0-0",
       "away": "0-1"
      }
+    },
+    {
+     "captured_at": "2026-10-08T03:41:39.413Z",
+     "last_seen_at": "2026-10-08T03:41:39.413Z",
+     "fp": "post|4|12|124,117|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 124,
+      "away": 117
+     },
+     "recordsOverall": {
+      "home": "1-0",
+      "away": "0-2"
+     }
     }
    ]
   },
@@ -266,6 +327,26 @@
       "home": "0-0",
       "away": "1-0"
      }
+    },
+    {
+     "captured_at": "2026-10-08T03:41:39.413Z",
+     "last_seen_at": "2026-10-08T03:41:39.413Z",
+     "fp": "post|4|12|123,112|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 123,
+      "away": 112
+     },
+     "recordsOverall": {
+      "home": "1-0",
+      "away": "1-1"
+     }
     }
    ]
   },
@@ -305,10 +386,30 @@
       "home": "0-0",
       "away": "0-1"
      }
+    },
+    {
+     "captured_at": "2026-10-08T03:41:39.413Z",
+     "last_seen_at": "2026-10-08T03:41:39.413Z",
+     "fp": "in|3|5|75,74|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 3,
+     "clock": 330,
+     "displayClock": "5:30",
+     "scores": {
+      "home": 75,
+      "away": 74
+     },
+     "recordsOverall": {
+      "home": "0-0",
+      "away": "1-1"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-08T00:23:50.552Z",
+ "last_ingested_at": "2026-10-08T03:41:39.413Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261007"
 }
