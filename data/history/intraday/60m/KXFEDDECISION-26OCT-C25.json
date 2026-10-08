@@ -6766,6 +6766,177 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-08T09:29:37.574Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26OCT-C25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "768609.46"
+            ],
+            [
+              "0.0200",
+              "10201.00"
+            ],
+            [
+              "0.0300",
+              "7025.19"
+            ],
+            [
+              "0.0700",
+              "777.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "25000.00"
+            ],
+            [
+              "0.1300",
+              "2337.97"
+            ],
+            [
+              "0.1400",
+              "467.59"
+            ],
+            [
+              "0.1900",
+              "93.51"
+            ],
+            [
+              "0.2000",
+              "1187.03"
+            ],
+            [
+              "0.2400",
+              "93.51"
+            ],
+            [
+              "0.2500",
+              "134.12"
+            ],
+            [
+              "0.2800",
+              "184.49"
+            ],
+            [
+              "0.3800",
+              "233.95"
+            ],
+            [
+              "0.3900",
+              "2337.97"
+            ],
+            [
+              "0.4100",
+              "100.00"
+            ],
+            [
+              "0.4800",
+              "1171.28"
+            ],
+            [
+              "0.4900",
+              "3505.00"
+            ],
+            [
+              "0.5000",
+              "1123.33"
+            ],
+            [
+              "0.5100",
+              "3879.00"
+            ],
+            [
+              "0.5800",
+              "312.00"
+            ],
+            [
+              "0.6000",
+              "5187.00"
+            ],
+            [
+              "0.6200",
+              "93.51"
+            ],
+            [
+              "0.6400",
+              "70.27"
+            ],
+            [
+              "0.6500",
+              "5000.00"
+            ],
+            [
+              "0.6600",
+              "5650.00"
+            ],
+            [
+              "0.6900",
+              "4095.82"
+            ],
+            [
+              "0.7000",
+              "333.00"
+            ],
+            [
+              "0.8000",
+              "5187.00"
+            ],
+            [
+              "0.8800",
+              "74.81"
+            ],
+            [
+              "0.9000",
+              "2436.26"
+            ],
+            [
+              "0.9100",
+              "32.00"
+            ],
+            [
+              "0.9200",
+              "1062.00"
+            ],
+            [
+              "0.9300",
+              "93.00"
+            ],
+            [
+              "0.9400",
+              "31.00"
+            ],
+            [
+              "0.9500",
+              "4865.01"
+            ],
+            [
+              "0.9600",
+              "2696.72"
+            ],
+            [
+              "0.9700",
+              "5310.18"
+            ],
+            [
+              "0.9800",
+              "65138.28"
+            ],
+            [
+              "0.9900",
+              "1709979.50"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6787,7 +6958,7 @@
     "no_bid_dollars": "0.9900",
     "no_sub_title": "Cut 25bps",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "824418.18",
+    "open_interest_fp": "824427.53",
     "open_time": "2025-09-29T14:00:00Z",
     "previous_price_dollars": "0.0100",
     "previous_yes_ask_dollars": "0.0100",
@@ -6811,19 +6982,19 @@
     "ticker": "KXFEDDECISION-26OCT-C25",
     "title": "Will the Federal Reserve Cut rates by 25bps at their October 2026 meeting?",
     "updated_time": "2026-09-30T18:52:10.739024Z",
-    "volume_24h_fp": "21458.80",
-    "volume_fp": "943258.44",
+    "volume_24h_fp": "21435.15",
+    "volume_fp": "943267.79",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "1709983.88",
+    "yes_ask_size_fp": "1709979.50",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Cut 25bps"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26OCT-C25",
-  "market_captured_at": "2026-10-08T06:37:18.381Z",
+  "market_captured_at": "2026-10-08T09:29:36.859Z",
   "status": "active",
-  "last_ingested_at": "2026-10-08T06:37:19.019Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26OCT-C25/candlesticks?start_ts=1791406801&end_ts=1791441438&period_interval=60",
+  "last_ingested_at": "2026-10-08T09:29:37.518Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26OCT-C25/candlesticks?start_ts=1791435601&end_ts=1791451777&period_interval=60",
   "trims": [
     {
       "at": "2026-10-05T09:36:18.213Z",

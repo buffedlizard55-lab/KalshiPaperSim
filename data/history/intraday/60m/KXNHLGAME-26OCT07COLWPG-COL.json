@@ -3677,6 +3677,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-08T09:25:30.834Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT07COLWPG-COL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3725,7 +3735,7 @@
     "ticker": "KXNHLGAME-26OCT07COLWPG-COL",
     "title": "Colorado wins",
     "updated_time": "2026-10-08T02:23:07.521808Z",
-    "volume_24h_fp": "694399.04",
+    "volume_24h_fp": "693450.48",
     "volume_fp": "705011.72",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3734,9 +3744,9 @@
     "yes_sub_title": "Colorado"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT07COLWPG-COL",
-  "market_captured_at": "2026-10-08T06:33:16.376Z",
+  "market_captured_at": "2026-10-08T09:25:30.119Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-08T06:33:17.057Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT07COLWPG-COL/candlesticks?start_ts=1790730360&end_ts=1791441196&period_interval=60"
+  "last_ingested_at": "2026-10-08T09:25:30.777Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT07COLWPG-COL/candlesticks?start_ts=1791428401&end_ts=1791451530&period_interval=60"
 }
