@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/CAC037",
       "relativeLocation": "Los Angeles, CA",
       "timeZone": "America/Los_Angeles",
-      "resolvedAt": "2026-10-08T19:18:56.369Z",
+      "resolvedAt": "2026-10-08T23:46:50.296Z",
       "pointsUrl": "https://api.weather.gov/points/33.9425,-118.4081"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -5050,6 +5050,72 @@
           "highF": 85,
           "periodName": "This Afternoon",
           "startTime": "2026-10-08T12:00:00-07:00",
+          "endTime": "2026-10-08T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 2
+        },
+        {
+          "date": "2026-10-09",
+          "highF": 80,
+          "periodName": "Friday",
+          "startTime": "2026-10-09T06:00:00-07:00",
+          "endTime": "2026-10-09T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 1
+        },
+        {
+          "date": "2026-10-10",
+          "highF": 78,
+          "periodName": "Saturday",
+          "startTime": "2026-10-10T06:00:00-07:00",
+          "endTime": "2026-10-10T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 16
+        },
+        {
+          "date": "2026-10-11",
+          "highF": 75,
+          "periodName": "Sunday",
+          "startTime": "2026-10-11T06:00:00-07:00",
+          "endTime": "2026-10-11T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 46
+        },
+        {
+          "date": "2026-10-12",
+          "highF": 67,
+          "periodName": "Columbus Day",
+          "startTime": "2026-10-12T06:00:00-07:00",
+          "endTime": "2026-10-12T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 58
+        },
+        {
+          "date": "2026-10-13",
+          "highF": 68,
+          "periodName": "Tuesday",
+          "startTime": "2026-10-13T06:00:00-07:00",
+          "endTime": "2026-10-13T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 25
+        },
+        {
+          "date": "2026-10-14",
+          "highF": 71,
+          "periodName": "Wednesday",
+          "startTime": "2026-10-14T06:00:00-07:00",
+          "endTime": "2026-10-14T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 2
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-10-08T23:46:50.296Z",
+      "points_url": "https://api.weather.gov/points/33.9425,-118.4081",
+      "forecast_url": "https://api.weather.gov/gridpoints/LOX/148,41/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-10-08T18:26:38+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-10-08",
+          "highF": 85,
+          "periodName": "Today",
+          "startTime": "2026-10-08T11:00:00-07:00",
           "endTime": "2026-10-08T18:00:00-07:00",
           "probabilityOfPrecipitationPct": 2
         },
