@@ -12,7 +12,8 @@
   "2026-10-08T20:27:59.883Z",
   "2026-10-09T00:37:31.244Z",
   "2026-10-09T03:47:04.309Z",
-  "2026-10-09T11:02:46.841Z"
+  "2026-10-09T11:02:46.841Z",
+  "2026-10-09T19:58:54.431Z"
  ],
  "events": {
   "401898395": {
@@ -51,6 +52,26 @@
       "home": "0-0",
       "away": "0-0"
      }
+    },
+    {
+     "captured_at": "2026-10-09T19:58:54.431Z",
+     "last_seen_at": "2026-10-09T19:58:54.431Z",
+     "fp": "post|4|0|117,135|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 117,
+      "away": 135
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "1-0"
+     }
     }
    ]
   },
@@ -73,7 +94,7 @@
    "states": [
     {
      "captured_at": "2026-10-08T11:03:36.674Z",
-     "last_seen_at": "2026-10-09T11:02:46.841Z",
+     "last_seen_at": "2026-10-09T19:58:54.431Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -94,6 +115,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-09T11:02:46.841Z",
+ "last_ingested_at": "2026-10-09T19:58:54.431Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261009"
 }
