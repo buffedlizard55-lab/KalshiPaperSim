@@ -20007,6 +20007,282 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T21:15:53.631Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-MIA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3889588.48"
+            ],
+            [
+              "0.0300",
+              "733.17"
+            ],
+            [
+              "0.0600",
+              "941081.71"
+            ],
+            [
+              "0.0700",
+              "25021.55"
+            ],
+            [
+              "0.0800",
+              "44.13"
+            ],
+            [
+              "0.0900",
+              "100.00"
+            ],
+            [
+              "0.1100",
+              "516240.00"
+            ],
+            [
+              "0.1200",
+              "13.47"
+            ],
+            [
+              "0.1300",
+              "86.50"
+            ],
+            [
+              "0.1400",
+              "180.47"
+            ],
+            [
+              "0.1500",
+              "109.55"
+            ],
+            [
+              "0.1700",
+              "10140.94"
+            ],
+            [
+              "0.1800",
+              "377908.00"
+            ],
+            [
+              "0.1900",
+              "28.00"
+            ],
+            [
+              "0.2000",
+              "128.57"
+            ],
+            [
+              "0.2100",
+              "235.49"
+            ],
+            [
+              "0.2300",
+              "6.73"
+            ],
+            [
+              "0.2500",
+              "290655.84"
+            ],
+            [
+              "0.2700",
+              "5117.43"
+            ],
+            [
+              "0.2900",
+              "7.10"
+            ],
+            [
+              "0.3100",
+              "385333.16"
+            ],
+            [
+              "0.3200",
+              "4.51"
+            ],
+            [
+              "0.3700",
+              "3045.52"
+            ],
+            [
+              "0.3800",
+              "237272.00"
+            ],
+            [
+              "0.3900",
+              "65.44"
+            ],
+            [
+              "0.4000",
+              "9.96"
+            ],
+            [
+              "0.4100",
+              "134.74"
+            ],
+            [
+              "0.4300",
+              "5.25"
+            ],
+            [
+              "0.4400",
+              "2116.00"
+            ],
+            [
+              "0.4600",
+              "25.62"
+            ],
+            [
+              "0.4700",
+              "133335.18"
+            ],
+            [
+              "0.4800",
+              "98.12"
+            ],
+            [
+              "0.4900",
+              "5.55"
+            ],
+            [
+              "0.5300",
+              "39774.59"
+            ],
+            [
+              "0.5500",
+              "30129.00"
+            ],
+            [
+              "0.5600",
+              "373.65"
+            ],
+            [
+              "0.5700",
+              "6.10"
+            ],
+            [
+              "0.6000",
+              "22452.00"
+            ],
+            [
+              "0.6100",
+              "3000.00"
+            ],
+            [
+              "0.6400",
+              "226.86"
+            ],
+            [
+              "0.6700",
+              "16412.00"
+            ],
+            [
+              "0.6800",
+              "1357.00"
+            ],
+            [
+              "0.6900",
+              "3000.00"
+            ],
+            [
+              "0.7000",
+              "75.00"
+            ],
+            [
+              "0.7100",
+              "4.94"
+            ],
+            [
+              "0.7300",
+              "1237.73"
+            ],
+            [
+              "0.7600",
+              "1761.50"
+            ],
+            [
+              "0.7700",
+              "35.23"
+            ],
+            [
+              "0.7800",
+              "104.94"
+            ],
+            [
+              "0.8200",
+              "500.00"
+            ],
+            [
+              "0.8300",
+              "5600.00"
+            ],
+            [
+              "0.8400",
+              "862.67"
+            ],
+            [
+              "0.8500",
+              "99.04"
+            ],
+            [
+              "0.8600",
+              "0.74"
+            ],
+            [
+              "0.8700",
+              "25.21"
+            ],
+            [
+              "0.8800",
+              "23519.10"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "890911.00"
+            ],
+            [
+              "0.0200",
+              "58561.22"
+            ],
+            [
+              "0.0300",
+              "28218.22"
+            ],
+            [
+              "0.0400",
+              "6381.04"
+            ],
+            [
+              "0.0500",
+              "2906.00"
+            ],
+            [
+              "0.0600",
+              "2270.78"
+            ],
+            [
+              "0.0700",
+              "191.82"
+            ],
+            [
+              "0.0800",
+              "31.13"
+            ],
+            [
+              "0.0900",
+              "9907.33"
+            ],
+            [
+              "0.1000",
+              "51503.52"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -20022,19 +20298,19 @@
     "expected_expiration_time": "2027-06-30T14:00:00Z",
     "expiration_time": "2029-06-29T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.1100",
+    "last_price_dollars": "0.1200",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.9000",
-    "no_bid_dollars": "0.8900",
+    "no_bid_dollars": "0.8800",
     "no_sub_title": "Miami",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "269797.55",
+    "open_interest_fp": "269807.76",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.0900",
-    "previous_yes_ask_dollars": "0.1100",
-    "previous_yes_bid_dollars": "0.1000",
+    "previous_price_dollars": "0.1200",
+    "previous_yes_ask_dollars": "0.1200",
+    "previous_yes_bid_dollars": "0.1100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -20053,17 +20329,17 @@
     "ticker": "KXNBAEAST-27-MIA",
     "title": "Will Miami win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "998.42",
-    "volume_fp": "363900.94",
-    "yes_ask_dollars": "0.1100",
-    "yes_ask_size_fp": "559.22",
+    "volume_24h_fp": "1155.42",
+    "volume_fp": "364237.92",
+    "yes_ask_dollars": "0.1200",
+    "yes_ask_size_fp": "23519.10",
     "yes_bid_dollars": "0.1000",
-    "yes_bid_size_fp": "51565.23",
+    "yes_bid_size_fp": "51503.52",
     "yes_sub_title": "Miami"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-MIA",
-  "market_captured_at": "2026-10-09T13:21:50.069Z",
+  "market_captured_at": "2026-10-09T21:15:53.062Z",
   "status": "active",
-  "last_ingested_at": "2026-10-09T13:21:50.638Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-MIA/candlesticks?start_ts=1791518401&end_ts=1791552110&period_interval=1440"
+  "last_ingested_at": "2026-10-09T21:15:53.598Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-MIA/candlesticks?start_ts=1791518401&end_ts=1791580553&period_interval=1440"
 }

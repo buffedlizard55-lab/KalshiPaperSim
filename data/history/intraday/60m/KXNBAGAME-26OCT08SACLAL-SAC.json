@@ -2941,6 +2941,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T21:20:55.595Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT08SACLAL-SAC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2989,7 +2999,7 @@
     "ticker": "KXNBAGAME-26OCT08SACLAL-SAC",
     "title": "Sacramento wins",
     "updated_time": "2026-10-09T05:23:13.945085Z",
-    "volume_24h_fp": "3424705.50",
+    "volume_24h_fp": "3409810.77",
     "volume_fp": "3430281.20",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2998,9 +3008,9 @@
     "yes_sub_title": "Sacramento"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT08SACLAL-SAC",
-  "market_captured_at": "2026-10-09T13:26:49.053Z",
+  "market_captured_at": "2026-10-09T21:20:54.926Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T13:26:49.725Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT08SACLAL-SAC/candlesticks?start_ts=1791525601&end_ts=1791552409&period_interval=60"
+  "last_ingested_at": "2026-10-09T21:20:55.560Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT08SACLAL-SAC/candlesticks?start_ts=1791525601&end_ts=1791580855&period_interval=60"
 }

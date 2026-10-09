@@ -3238,6 +3238,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T21:17:13.387Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-WSH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3295,9 +3305,9 @@
     "yes_sub_title": "Washington"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP20WSHBOS-WSH",
-  "market_captured_at": "2026-10-09T13:22:54.382Z",
+  "market_captured_at": "2026-10-09T21:17:12.818Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T13:22:54.952Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP20WSHBOS-WSH/candlesticks?start_ts=1789963201&end_ts=1791552174&period_interval=1440",
+  "last_ingested_at": "2026-10-09T21:17:13.353Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP20WSHBOS-WSH/candlesticks?start_ts=1789963201&end_ts=1791580633&period_interval=1440",
   "result": "no"
 }

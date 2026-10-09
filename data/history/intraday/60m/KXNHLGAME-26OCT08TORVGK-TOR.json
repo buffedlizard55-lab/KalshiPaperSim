@@ -2651,6 +2651,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T21:21:08.641Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT08TORVGK-TOR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2699,7 +2709,7 @@
     "ticker": "KXNHLGAME-26OCT08TORVGK-TOR",
     "title": "Toronto wins",
     "updated_time": "2026-10-09T05:01:33.941106Z",
-    "volume_24h_fp": "1219596.85",
+    "volume_24h_fp": "1217850.71",
     "volume_fp": "1222171.82",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2708,9 +2718,9 @@
     "yes_sub_title": "Toronto"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT08TORVGK-TOR",
-  "market_captured_at": "2026-10-09T13:27:03.134Z",
+  "market_captured_at": "2026-10-09T21:21:07.973Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T13:27:03.802Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT08TORVGK-TOR/candlesticks?start_ts=1791525601&end_ts=1791552423&period_interval=60"
+  "last_ingested_at": "2026-10-09T21:21:08.608Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT08TORVGK-TOR/candlesticks?start_ts=1791525601&end_ts=1791580868&period_interval=60"
 }

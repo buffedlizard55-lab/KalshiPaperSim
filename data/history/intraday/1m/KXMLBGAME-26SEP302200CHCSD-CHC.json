@@ -12350,6 +12350,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T21:23:13.689Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP302200CHCSD-CHC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12407,11 +12417,11 @@
     "yes_sub_title": "Chicago C"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP302200CHCSD-CHC",
-  "market_captured_at": "2026-10-09T13:29:10.773Z",
+  "market_captured_at": "2026-10-09T21:23:10.335Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T13:29:14.396Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP302200CHCSD-CHC/candlesticks?start_ts=1791522421&end_ts=1791552551&period_interval=1",
+  "last_ingested_at": "2026-10-09T21:23:13.656Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP302200CHCSD-CHC/candlesticks?start_ts=1791522421&end_ts=1791580990&period_interval=1",
   "trims": [
     {
       "at": "2026-10-01T06:26:28.637Z",

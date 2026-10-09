@@ -12195,6 +12195,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T21:25:01.159Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT04KCLV-KC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12252,11 +12262,11 @@
     "yes_sub_title": "Kansas City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT04KCLV-KC",
-  "market_captured_at": "2026-10-09T13:31:09.687Z",
+  "market_captured_at": "2026-10-09T21:24:59.147Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T13:31:11.837Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT04KCLV-KC/candlesticks?start_ts=1791503221&end_ts=1791552669&period_interval=1",
+  "last_ingested_at": "2026-10-09T21:25:01.125Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT04KCLV-KC/candlesticks?start_ts=1791503221&end_ts=1791581099&period_interval=1",
   "trims": [
     {
       "at": "2026-10-05T06:11:02.046Z",

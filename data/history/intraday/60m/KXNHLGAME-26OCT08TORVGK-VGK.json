@@ -2565,6 +2565,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T21:21:06.032Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT08TORVGK-VGK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2613,7 +2623,7 @@
     "ticker": "KXNHLGAME-26OCT08TORVGK-VGK",
     "title": "Vegas wins",
     "updated_time": "2026-10-09T05:01:33.941106Z",
-    "volume_24h_fp": "1860017.17",
+    "volume_24h_fp": "1848953.64",
     "volume_fp": "1866402.51",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2622,9 +2632,9 @@
     "yes_sub_title": "Vegas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT08TORVGK-VGK",
-  "market_captured_at": "2026-10-09T13:27:00.323Z",
+  "market_captured_at": "2026-10-09T21:21:05.364Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T13:27:00.991Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT08TORVGK-VGK/candlesticks?start_ts=1791525601&end_ts=1791552420&period_interval=60"
+  "last_ingested_at": "2026-10-09T21:21:05.998Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT08TORVGK-VGK/candlesticks?start_ts=1791525601&end_ts=1791580865&period_interval=60"
 }
