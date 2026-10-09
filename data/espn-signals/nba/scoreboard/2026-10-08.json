@@ -14,7 +14,8 @@
   "2026-10-08T03:41:39.421Z",
   "2026-10-08T11:03:36.626Z",
   "2026-10-08T20:27:59.839Z",
-  "2026-10-09T00:37:31.236Z"
+  "2026-10-09T00:37:31.236Z",
+  "2026-10-09T03:47:04.269Z"
  ],
  "events": {
   "401898392": {
@@ -72,6 +73,26 @@
      "recordsOverall": {
       "home": "0-0",
       "away": "0-0"
+     }
+    },
+    {
+     "captured_at": "2026-10-09T03:47:04.269Z",
+     "last_seen_at": "2026-10-09T03:47:04.269Z",
+     "fp": "post|4|12|113,124|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 113,
+      "away": 124
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "1-0"
      }
     }
    ]
@@ -132,6 +153,26 @@
       "home": "1-0",
       "away": "1-0"
      }
+    },
+    {
+     "captured_at": "2026-10-09T03:47:04.269Z",
+     "last_seen_at": "2026-10-09T03:47:04.269Z",
+     "fp": "post|4|12|128,118|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 128,
+      "away": 118
+     },
+     "recordsOverall": {
+      "home": "2-0",
+      "away": "1-1"
+     }
     }
    ]
   },
@@ -191,12 +232,32 @@
       "home": "0-0",
       "away": "0-1"
      }
+    },
+    {
+     "captured_at": "2026-10-09T03:47:04.269Z",
+     "last_seen_at": "2026-10-09T03:47:04.269Z",
+     "fp": "post|4|12|116,123|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 116,
+      "away": 123
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "1-1"
+     }
     }
    ]
   },
   "401898717": {
    "eventId": "401898717",
-   "date": "2026-10-09T02:30Z",
+   "date": "2026-10-09T02:45Z",
    "easternDate": "2026-10-08",
    "name": "Sacramento Kings at Los Angeles Lakers",
    "shortName": "SAC @ LAL",
@@ -225,6 +286,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "0-1"
+     }
+    },
+    {
+     "captured_at": "2026-10-09T03:47:04.269Z",
+     "last_seen_at": "2026-10-09T03:47:04.269Z",
+     "fp": "in|2|0|53,41|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 46.7,
+     "displayClock": "46.7",
+     "scores": {
+      "home": 53,
+      "away": 41
      },
      "recordsOverall": {
       "home": "1-1",
@@ -289,6 +370,26 @@
       "home": "1-0",
       "away": "1-0"
      }
+    },
+    {
+     "captured_at": "2026-10-09T03:47:04.269Z",
+     "last_seen_at": "2026-10-09T03:47:04.269Z",
+     "fp": "post|4|12|114,108|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 114,
+      "away": 108
+     },
+     "recordsOverall": {
+      "home": "2-0",
+      "away": "1-1"
+     }
     }
    ]
   },
@@ -348,10 +449,30 @@
       "home": "0-1",
       "away": "0-0"
      }
+    },
+    {
+     "captured_at": "2026-10-09T03:47:04.269Z",
+     "last_seen_at": "2026-10-09T03:47:04.269Z",
+     "fp": "post|4|12|109,111|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 109,
+      "away": 111
+     },
+     "recordsOverall": {
+      "home": "0-2",
+      "away": "1-0"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-09T00:37:31.236Z",
+ "last_ingested_at": "2026-10-09T03:47:04.269Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261008"
 }
