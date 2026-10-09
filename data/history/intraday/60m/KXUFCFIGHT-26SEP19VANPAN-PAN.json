@@ -6399,6 +6399,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T09:32:59.448Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19VANPAN-PAN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6456,10 +6466,10 @@
     "yes_sub_title": "Alexandre Pantoja"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP19VANPAN-PAN",
-  "market_captured_at": "2026-10-09T06:34:43.912Z",
+  "market_captured_at": "2026-10-09T09:32:58.785Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T06:34:44.559Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19VANPAN-PAN/candlesticks?start_ts=1789880401&end_ts=1791527684&period_interval=60",
+  "last_ingested_at": "2026-10-09T09:32:59.417Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP19VANPAN-PAN/candlesticks?start_ts=1789880401&end_ts=1791538379&period_interval=60",
   "trims": [
     {
       "at": "2026-09-20T03:07:29.619Z",

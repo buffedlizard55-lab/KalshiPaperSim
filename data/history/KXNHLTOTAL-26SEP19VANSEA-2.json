@@ -1780,6 +1780,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T09:28:44.350Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1835,9 +1845,9 @@
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VANSEA-2",
-  "market_captured_at": "2026-10-09T06:30:21.038Z",
+  "market_captured_at": "2026-10-09T09:28:43.787Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T06:30:21.583Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VANSEA-2/candlesticks?start_ts=1789963201&end_ts=1791527421&period_interval=1440",
+  "last_ingested_at": "2026-10-09T09:28:44.320Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VANSEA-2/candlesticks?start_ts=1789963201&end_ts=1791538124&period_interval=1440",
   "result": "yes"
 }

@@ -9401,6 +9401,146 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T09:26:02.002Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-29JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3005.00"
+            ],
+            [
+              "0.0200",
+              "650.00"
+            ],
+            [
+              "0.0400",
+              "900.00"
+            ],
+            [
+              "0.0600",
+              "200.00"
+            ],
+            [
+              "0.0700",
+              "2806.11"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7845.00"
+            ],
+            [
+              "0.0200",
+              "8710.00"
+            ],
+            [
+              "0.0300",
+              "6220.00"
+            ],
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0700",
+              "5000.00"
+            ],
+            [
+              "0.0800",
+              "46.00"
+            ],
+            [
+              "0.0900",
+              "32.00"
+            ],
+            [
+              "0.1000",
+              "13.00"
+            ],
+            [
+              "0.6000",
+              "1.00"
+            ],
+            [
+              "0.9200",
+              "2388.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-09T09:37:02.594Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-29JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3005.00"
+            ],
+            [
+              "0.0200",
+              "650.00"
+            ],
+            [
+              "0.0400",
+              "900.00"
+            ],
+            [
+              "0.0600",
+              "200.00"
+            ],
+            [
+              "0.0700",
+              "2906.11"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7845.00"
+            ],
+            [
+              "0.0200",
+              "8710.00"
+            ],
+            [
+              "0.0300",
+              "6220.00"
+            ],
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0900",
+              "32.00"
+            ],
+            [
+              "0.1100",
+              "5000.00"
+            ],
+            [
+              "0.1200",
+              "51.00"
+            ],
+            [
+              "0.6000",
+              "1.00"
+            ],
+            [
+              "0.9200",
+              "2488.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -9450,14 +9590,14 @@
     "volume_24h_fp": "0.00",
     "volume_fp": "155.06",
     "yes_ask_dollars": "0.9300",
-    "yes_ask_size_fp": "2668.62",
+    "yes_ask_size_fp": "2906.11",
     "yes_bid_dollars": "0.9200",
-    "yes_bid_size_fp": "2388.00",
+    "yes_bid_size_fp": "2488.00",
     "yes_sub_title": "Before Jan 1, 2029"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-29JAN01",
-  "market_captured_at": "2026-10-09T06:39:02.222Z",
+  "market_captured_at": "2026-10-09T09:37:01.933Z",
   "status": "active",
-  "last_ingested_at": "2026-10-09T06:39:02.868Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-29JAN01/candlesticks?start_ts=1791518401&end_ts=1791527942&period_interval=1440"
+  "last_ingested_at": "2026-10-09T09:37:02.564Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-29JAN01/candlesticks?start_ts=1791518401&end_ts=1791538622&period_interval=1440"
 }
