@@ -5185,6 +5185,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T06:34:54.308Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT03FIGTAL-FIG/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5242,11 +5252,11 @@
     "yes_sub_title": "Deiveson Figueiredo"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT03FIGTAL-FIG",
-  "market_captured_at": "2026-10-08T21:37:01.266Z",
+  "market_captured_at": "2026-10-09T06:34:53.619Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-08T21:37:01.901Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT03FIGTAL-FIG/candlesticks?start_ts=1791082801&end_ts=1791495421&period_interval=60",
+  "last_ingested_at": "2026-10-09T06:34:54.266Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT03FIGTAL-FIG/candlesticks?start_ts=1791082801&end_ts=1791527693&period_interval=60",
   "trims": [
     {
       "at": "2026-10-04T06:17:06.124Z",

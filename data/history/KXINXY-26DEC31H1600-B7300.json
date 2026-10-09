@@ -7162,6 +7162,31 @@
         "low_dollars": "0.0500",
         "open_dollars": "0.0500"
       }
+    },
+    {
+      "end_period_ts": 1791518400,
+      "open_interest_fp": "208637.15",
+      "price": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "mean_dollars": "0.0500",
+        "open_dollars": "0.0500",
+        "previous_dollars": "0.0600"
+      },
+      "volume_fp": "150.12",
+      "yes_ask": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      }
     }
   ],
   "books": [
@@ -18192,6 +18217,214 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T06:27:56.136Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7300/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142897.00"
+            ],
+            [
+              "0.0200",
+              "250.00"
+            ],
+            [
+              "0.0300",
+              "506.00"
+            ],
+            [
+              "0.0400",
+              "125.00"
+            ],
+            [
+              "0.0500",
+              "100.00"
+            ],
+            [
+              "0.0700",
+              "12500.00"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.1400",
+              "583.02"
+            ],
+            [
+              "0.1500",
+              "117.43"
+            ],
+            [
+              "0.1700",
+              "5000.00"
+            ],
+            [
+              "0.1800",
+              "39.00"
+            ],
+            [
+              "0.2700",
+              "2500.00"
+            ],
+            [
+              "0.2800",
+              "234.58"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.3400",
+              "18.51"
+            ],
+            [
+              "0.3700",
+              "1500.00"
+            ],
+            [
+              "0.4500",
+              "88.00"
+            ],
+            [
+              "0.4700",
+              "500.00"
+            ],
+            [
+              "0.4800",
+              "83.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5100",
+              "78.00"
+            ],
+            [
+              "0.5400",
+              "64.00"
+            ],
+            [
+              "0.5700",
+              "61.00"
+            ],
+            [
+              "0.6000",
+              "58.00"
+            ],
+            [
+              "0.6300",
+              "47.00"
+            ],
+            [
+              "0.6600",
+              "45.00"
+            ],
+            [
+              "0.6900",
+              "43.00"
+            ],
+            [
+              "0.7000",
+              "2040.00"
+            ],
+            [
+              "0.7200",
+              "134.00"
+            ],
+            [
+              "0.7500",
+              "33.00"
+            ],
+            [
+              "0.7800",
+              "32.00"
+            ],
+            [
+              "0.7900",
+              "72.71"
+            ],
+            [
+              "0.8000",
+              "1785.00"
+            ],
+            [
+              "0.8100",
+              "30.00"
+            ],
+            [
+              "0.8400",
+              "29.00"
+            ],
+            [
+              "0.8500",
+              "70.50"
+            ],
+            [
+              "0.8600",
+              "1200.00"
+            ],
+            [
+              "0.8700",
+              "28.00"
+            ],
+            [
+              "0.8900",
+              "4.00"
+            ],
+            [
+              "0.9000",
+              "9084.13"
+            ],
+            [
+              "0.9100",
+              "8001.00"
+            ],
+            [
+              "0.9200",
+              "2373.57"
+            ],
+            [
+              "0.9300",
+              "3140.66"
+            ],
+            [
+              "0.9400",
+              "8257.49"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2819.00"
+            ],
+            [
+              "0.0200",
+              "545.00"
+            ],
+            [
+              "0.0300",
+              "585.18"
+            ],
+            [
+              "0.0400",
+              "1702.72"
+            ],
+            [
+              "0.0500",
+              "994.98"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -18214,7 +18447,7 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "208637.15",
     "open_time": "2025-12-23T15:00:00Z",
-    "previous_price_dollars": "0.0600",
+    "previous_price_dollars": "0.0500",
     "previous_yes_ask_dollars": "0.0600",
     "previous_yes_bid_dollars": "0.0500",
     "price_level_structure": "linear_cent",
@@ -18236,7 +18469,7 @@
     "ticker": "KXINXY-26DEC31H1600-B7300",
     "title": "Will the S&P 500 be between 7200 and 7399.99 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:02.017776Z",
-    "volume_24h_fp": "150.12",
+    "volume_24h_fp": "61.96",
     "volume_fp": "361760.41",
     "yes_ask_dollars": "0.0600",
     "yes_ask_size_fp": "8257.49",
@@ -18245,8 +18478,8 @@
     "yes_sub_title": "7,200 to 7,399.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7300",
-  "market_captured_at": "2026-10-08T21:30:11.045Z",
+  "market_captured_at": "2026-10-09T06:27:55.548Z",
   "status": "active",
-  "last_ingested_at": "2026-10-08T21:30:11.580Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7300/candlesticks?start_ts=1791432001&end_ts=1791495011&period_interval=1440"
+  "last_ingested_at": "2026-10-09T06:27:56.092Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7300/candlesticks?start_ts=1791432001&end_ts=1791527275&period_interval=1440"
 }

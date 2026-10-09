@@ -1228,6 +1228,31 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1791518400,
+      "open_interest_fp": "790384.53",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0188",
+        "open_dollars": "0.0200",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "11440.58",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -14742,6 +14767,266 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T06:29:42.981Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-PIT/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2618874.51"
+            ],
+            [
+              "0.0200",
+              "1121.00"
+            ],
+            [
+              "0.0300",
+              "1454.00"
+            ],
+            [
+              "0.0400",
+              "322.13"
+            ],
+            [
+              "0.0500",
+              "200.00"
+            ],
+            [
+              "0.0600",
+              "31.21"
+            ],
+            [
+              "0.0700",
+              "25000.00"
+            ],
+            [
+              "0.0900",
+              "93.58"
+            ],
+            [
+              "0.1000",
+              "200.00"
+            ],
+            [
+              "0.1100",
+              "578744.00"
+            ],
+            [
+              "0.1600",
+              "218.49"
+            ],
+            [
+              "0.1700",
+              "10000.00"
+            ],
+            [
+              "0.1900",
+              "218.49"
+            ],
+            [
+              "0.2000",
+              "200.00"
+            ],
+            [
+              "0.2200",
+              "248117.00"
+            ],
+            [
+              "0.2400",
+              "569.64"
+            ],
+            [
+              "0.2500",
+              "280.00"
+            ],
+            [
+              "0.2700",
+              "5000.00"
+            ],
+            [
+              "0.2800",
+              "250.00"
+            ],
+            [
+              "0.3100",
+              "225.00"
+            ],
+            [
+              "0.3200",
+              "191454.00"
+            ],
+            [
+              "0.3400",
+              "205.00"
+            ],
+            [
+              "0.3500",
+              "998.82"
+            ],
+            [
+              "0.3700",
+              "3000.00"
+            ],
+            [
+              "0.3800",
+              "157.00"
+            ],
+            [
+              "0.4000",
+              "150.00"
+            ],
+            [
+              "0.4100",
+              "100.00"
+            ],
+            [
+              "0.4300",
+              "97458.00"
+            ],
+            [
+              "0.4600",
+              "65.00"
+            ],
+            [
+              "0.4700",
+              "1000.00"
+            ],
+            [
+              "0.4900",
+              "102.00"
+            ],
+            [
+              "0.5200",
+              "96.00"
+            ],
+            [
+              "0.5300",
+              "51214.00"
+            ],
+            [
+              "0.5500",
+              "90.00"
+            ],
+            [
+              "0.5800",
+              "86.00"
+            ],
+            [
+              "0.6100",
+              "165.00"
+            ],
+            [
+              "0.6200",
+              "2042.00"
+            ],
+            [
+              "0.6400",
+              "30968.00"
+            ],
+            [
+              "0.6600",
+              "312.13"
+            ],
+            [
+              "0.6700",
+              "59.00"
+            ],
+            [
+              "0.7000",
+              "57.00"
+            ],
+            [
+              "0.7100",
+              "195.46"
+            ],
+            [
+              "0.7300",
+              "41.00"
+            ],
+            [
+              "0.7400",
+              "22935.00"
+            ],
+            [
+              "0.7600",
+              "39.00"
+            ],
+            [
+              "0.7900",
+              "37.00"
+            ],
+            [
+              "0.8200",
+              "36.00"
+            ],
+            [
+              "0.8300",
+              "500.00"
+            ],
+            [
+              "0.8500",
+              "8131.00"
+            ],
+            [
+              "0.8600",
+              "2271.00"
+            ],
+            [
+              "0.8800",
+              "312.13"
+            ],
+            [
+              "0.8900",
+              "23.74"
+            ],
+            [
+              "0.9000",
+              "801.00"
+            ],
+            [
+              "0.9100",
+              "11.54"
+            ],
+            [
+              "0.9200",
+              "1.00"
+            ],
+            [
+              "0.9300",
+              "132.21"
+            ],
+            [
+              "0.9400",
+              "8.48"
+            ],
+            [
+              "0.9500",
+              "1192.00"
+            ],
+            [
+              "0.9600",
+              "4.58"
+            ],
+            [
+              "0.9700",
+              "152185.80"
+            ],
+            [
+              "0.9800",
+              "221013.01"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1029395.69"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -14764,9 +15049,9 @@
     "no_bid_dollars": "0.9800",
     "no_sub_title": "Pittsburgh",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "790362.08",
+    "open_interest_fp": "790618.48",
     "open_time": "2026-02-07T15:00:00Z",
-    "previous_price_dollars": "0.0100",
+    "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0200",
     "previous_yes_bid_dollars": "0.0100",
     "price_level_structure": "linear_cent",
@@ -14787,17 +15072,17 @@
     "ticker": "KXNFLAFCCHAMP-27-PIT",
     "title": "Will Pittsburgh win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "10091.76",
-    "volume_fp": "922222.39",
+    "volume_24h_fp": "1849.00",
+    "volume_fp": "923805.16",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "213895.89",
+    "yes_ask_size_fp": "221013.01",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "1026451.30",
+    "yes_bid_size_fp": "1029395.69",
     "yes_sub_title": "Pittsburgh"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-PIT",
-  "market_captured_at": "2026-10-08T21:31:55.613Z",
+  "market_captured_at": "2026-10-09T06:29:42.392Z",
   "status": "active",
-  "last_ingested_at": "2026-10-08T21:31:56.151Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-PIT/candlesticks?start_ts=1791432001&end_ts=1791495115&period_interval=1440"
+  "last_ingested_at": "2026-10-09T06:29:42.938Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-PIT/candlesticks?start_ts=1791432001&end_ts=1791527382&period_interval=1440"
 }

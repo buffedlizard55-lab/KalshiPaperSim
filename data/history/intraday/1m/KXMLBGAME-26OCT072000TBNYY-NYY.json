@@ -12045,6 +12045,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T06:36:15.931Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT072000TBNYY-NYY/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12070,9 +12080,9 @@
     "occurrence_datetime": "2026-10-08T03:00:00Z",
     "open_interest_fp": "5279219.73",
     "open_time": "2026-10-02T03:25:00Z",
-    "previous_price_dollars": "0.6100",
-    "previous_yes_ask_dollars": "0.6100",
-    "previous_yes_bid_dollars": "0.6000",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12093,7 +12103,7 @@
     "ticker": "KXMLBGAME-26OCT072000TBNYY-NYY",
     "title": "New York Y wins",
     "updated_time": "2026-10-08T03:18:28.043406Z",
-    "volume_24h_fp": "8455638.21",
+    "volume_24h_fp": "0.00",
     "volume_fp": "8815933.12",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12102,11 +12112,11 @@
     "yes_sub_title": "New York Y"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT072000TBNYY-NYY",
-  "market_captured_at": "2026-10-08T21:38:13.597Z",
+  "market_captured_at": "2026-10-09T06:36:14.898Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-08T21:38:14.234Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT072000TBNYY-NYY/candlesticks?start_ts=1791429361&end_ts=1791495493&period_interval=1",
+  "last_ingested_at": "2026-10-09T06:36:15.888Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT072000TBNYY-NYY/candlesticks?start_ts=1791515761&end_ts=1791527775&period_interval=1",
   "trims": [
     {
       "at": "2026-10-08T06:35:07.572Z",

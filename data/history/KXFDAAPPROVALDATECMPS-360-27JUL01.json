@@ -3735,6 +3735,26 @@
         "low_dollars": "0.7900",
         "open_dollars": "0.7900"
       }
+    },
+    {
+      "end_period_ts": 1791518400,
+      "open_interest_fp": "3282.45",
+      "price": {
+        "previous_dollars": "0.7900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.8400",
+        "high_dollars": "0.8600",
+        "low_dollars": "0.8300",
+        "open_dollars": "0.8300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7900",
+        "high_dollars": "0.7900",
+        "low_dollars": "0.3700",
+        "open_dollars": "0.7900"
+      }
     }
   ],
   "books": [
@@ -16741,6 +16761,230 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T06:27:16.397Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3346.93"
+            ],
+            [
+              "0.0200",
+              "1264.00"
+            ],
+            [
+              "0.0300",
+              "1114.38"
+            ],
+            [
+              "0.0400",
+              "304.45"
+            ],
+            [
+              "0.0500",
+              "9.71"
+            ],
+            [
+              "0.0600",
+              "200.00"
+            ],
+            [
+              "0.0700",
+              "15.24"
+            ],
+            [
+              "0.0800",
+              "8.77"
+            ],
+            [
+              "0.1300",
+              "200.00"
+            ],
+            [
+              "0.1400",
+              "2.15"
+            ],
+            [
+              "0.1500",
+              "29.12"
+            ],
+            [
+              "0.1600",
+              "1.35"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "6194.00"
+            ],
+            [
+              "0.0200",
+              "2240.00"
+            ],
+            [
+              "0.0300",
+              "2100.00"
+            ],
+            [
+              "0.0400",
+              "888.00"
+            ],
+            [
+              "0.0500",
+              "70.00"
+            ],
+            [
+              "0.2500",
+              "108.72"
+            ],
+            [
+              "0.2700",
+              "368.00"
+            ],
+            [
+              "0.2800",
+              "37.00"
+            ],
+            [
+              "0.3600",
+              "5.00"
+            ],
+            [
+              "0.3700",
+              "339.00"
+            ],
+            [
+              "0.4400",
+              "19.00"
+            ],
+            [
+              "0.4500",
+              "27.35"
+            ],
+            [
+              "0.7800",
+              "200.00"
+            ],
+            [
+              "0.7900",
+              "1.59"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-09T06:39:05.584Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3346.93"
+            ],
+            [
+              "0.0200",
+              "1264.00"
+            ],
+            [
+              "0.0300",
+              "1114.38"
+            ],
+            [
+              "0.0400",
+              "304.45"
+            ],
+            [
+              "0.0500",
+              "9.71"
+            ],
+            [
+              "0.0600",
+              "200.00"
+            ],
+            [
+              "0.0700",
+              "15.24"
+            ],
+            [
+              "0.0800",
+              "8.77"
+            ],
+            [
+              "0.1300",
+              "200.00"
+            ],
+            [
+              "0.1400",
+              "2.15"
+            ],
+            [
+              "0.1500",
+              "29.12"
+            ],
+            [
+              "0.1600",
+              "1.35"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "6194.00"
+            ],
+            [
+              "0.0200",
+              "2240.00"
+            ],
+            [
+              "0.0300",
+              "2100.00"
+            ],
+            [
+              "0.0400",
+              "888.00"
+            ],
+            [
+              "0.0600",
+              "49.00"
+            ],
+            [
+              "0.2500",
+              "108.72"
+            ],
+            [
+              "0.3600",
+              "5.00"
+            ],
+            [
+              "0.3700",
+              "339.00"
+            ],
+            [
+              "0.3800",
+              "27.35"
+            ],
+            [
+              "0.4600",
+              "65.00"
+            ],
+            [
+              "0.7800",
+              "200.00"
+            ],
+            [
+              "0.7900",
+              "1.59"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -16795,8 +17039,8 @@
     "yes_sub_title": "Before July 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27JUL01",
-  "market_captured_at": "2026-10-08T21:40:56.893Z",
+  "market_captured_at": "2026-10-09T06:39:04.896Z",
   "status": "active",
-  "last_ingested_at": "2026-10-08T21:40:57.533Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/candlesticks?start_ts=1791432001&end_ts=1791495657&period_interval=1440"
+  "last_ingested_at": "2026-10-09T06:39:05.541Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27JUL01/candlesticks?start_ts=1791518401&end_ts=1791527945&period_interval=1440"
 }
