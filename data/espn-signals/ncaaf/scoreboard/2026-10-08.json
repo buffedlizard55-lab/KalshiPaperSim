@@ -13,7 +13,8 @@
   "2026-10-08T00:23:50.668Z",
   "2026-10-08T03:41:39.456Z",
   "2026-10-08T11:03:36.815Z",
-  "2026-10-08T20:28:00.013Z"
+  "2026-10-08T20:28:00.013Z",
+  "2026-10-09T00:37:31.267Z"
  ],
  "events": {
   "401862794": {
@@ -52,6 +53,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-1",
+      "away": "4-1"
+     }
+    },
+    {
+     "captured_at": "2026-10-09T00:37:31.267Z",
+     "last_seen_at": "2026-10-09T00:37:31.267Z",
+     "fp": "in|2|7|10,14|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 473,
+     "displayClock": "7:53",
+     "scores": {
+      "home": 10,
+      "away": 14
      },
      "recordsOverall": {
       "home": "4-1",
@@ -101,6 +122,26 @@
       "home": "2-3",
       "away": "3-2"
      }
+    },
+    {
+     "captured_at": "2026-10-09T00:37:31.267Z",
+     "last_seen_at": "2026-10-09T00:37:31.267Z",
+     "fp": "in|2|6|20,14|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 376,
+     "displayClock": "6:16",
+     "scores": {
+      "home": 20,
+      "away": 14
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "3-2"
+     }
     }
    ]
   },
@@ -140,6 +181,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-1",
+      "away": "1-3"
+     }
+    },
+    {
+     "captured_at": "2026-10-09T00:37:31.267Z",
+     "last_seen_at": "2026-10-09T00:37:31.267Z",
+     "fp": "in|2|0|14,3|false|STATUS_HALFTIME",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_HALFTIME",
+     "completed": false,
+     "period": 2,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 14,
+      "away": 3
      },
      "recordsOverall": {
       "home": "4-1",
@@ -189,10 +250,30 @@
       "home": "1-4",
       "away": "1-3"
      }
+    },
+    {
+     "captured_at": "2026-10-09T00:37:31.267Z",
+     "last_seen_at": "2026-10-09T00:37:31.267Z",
+     "fp": "in|2|0|21,6|false|STATUS_HALFTIME",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_HALFTIME",
+     "completed": false,
+     "period": 2,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 21,
+      "away": 6
+     },
+     "recordsOverall": {
+      "home": "1-4",
+      "away": "1-3"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-08T20:28:00.013Z",
+ "last_ingested_at": "2026-10-09T00:37:31.267Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261008"
 }

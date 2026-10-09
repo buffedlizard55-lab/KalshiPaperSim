@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-08T20:27:59.011Z",
+ "startedAt": "2026-10-09T00:37:30.753Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -24,7 +24,7 @@
       "ok": true,
       "status": 200,
       "events": 1,
-      "stateRows": 1
+      "stateRows": 2
      },
      "2026-10-09": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261009",
@@ -49,7 +49,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 96
+     "playerRecords": 112
     },
     "scoreboard": {
      "2026-10-08": {
@@ -57,7 +57,7 @@
       "ok": true,
       "status": 200,
       "events": 6,
-      "stateRows": 6
+      "stateRows": 11
      },
      "2026-10-09": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261009",
@@ -90,7 +90,7 @@
       "ok": true,
       "status": 200,
       "events": 4,
-      "stateRows": 4
+      "stateRows": 8
      },
      "2026-10-09": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261009",
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 113
+     "playerRecords": 115
     },
     "scoreboard": {
      "2026-10-08": {
@@ -156,7 +156,7 @@
       "ok": true,
       "status": 200,
       "events": 10,
-      "stateRows": 10
+      "stateRows": 18
      },
      "2026-10-09": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261009",
@@ -181,7 +181,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 49
+     "playerRecords": 50
     },
     "scoreboard": {
      "2026-10-08": {
@@ -208,5 +208,5 @@
   "matched": 82,
   "unmapped": 61
  },
- "finishedAt": "2026-10-08T20:28:01.356Z"
+ "finishedAt": "2026-10-09T00:37:32.263Z"
 }
