@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-09T03:47:05.641Z",
+ "generatedAt": "2026-10-09T11:02:48.109Z",
  "rows": [
   {
    "league": "nba",
@@ -195,6 +195,16 @@
      "ticker": "KXNBAGAME-26OCT06LALGSW-LAL",
      "rulesName": "Los Angeles L",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT08SACLAL-LAL",
+     "rulesName": "Los Angeles L",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT08SACLAL-SAC",
+     "rulesName": "Los Angeles L",
+     "role": "home"
     }
    ]
   },
@@ -460,6 +470,16 @@
      "ticker": "KXNBAGAME-26OCT05LALSAC-SAC",
      "rulesName": "Sacramento",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT08SACLAL-LAL",
+     "rulesName": "Sacramento",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT08SACLAL-SAC",
+     "rulesName": "Sacramento",
+     "role": "away"
     }
    ]
   },
@@ -3102,6 +3122,16 @@
    "espnReason": "MATCHED",
    "evidence": [
     {
+     "ticker": "KXNHLGAME-26OCT08TORVGK-TOR",
+     "rulesName": "Toronto",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT08TORVGK-VGK",
+     "rulesName": "Toronto",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP30NYITOR-TOR",
      "rulesName": "Toronto",
      "role": "home"
@@ -3202,14 +3232,14 @@
      "role": "home"
     },
     {
-     "ticker": "KXNHLGAME-26SEP19VGKLA-LA",
+     "ticker": "KXNHLGAME-26OCT08TORVGK-TOR",
      "rulesName": "Vegas",
-     "role": "away"
+     "role": "home"
     },
     {
-     "ticker": "KXNHLGAME-26SEP22VGKSJ-SJ",
+     "ticker": "KXNHLGAME-26OCT08TORVGK-VGK",
      "rulesName": "Vegas",
-     "role": "away"
+     "role": "home"
     }
    ]
   },
@@ -3566,6 +3596,14 @@
   },
   {
    "ticker": "KXNFLGAME-26OCT05ATLNO-NO",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT08TBDAL-DAL",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT08TBDAL-TB",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
