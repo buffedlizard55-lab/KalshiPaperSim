@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/NYC061",
       "relativeLocation": "New York, NY",
       "timeZone": "America/New_York",
-      "resolvedAt": "2026-10-09T07:28:14.146Z",
+      "resolvedAt": "2026-10-09T18:51:43.502Z",
       "pointsUrl": "https://api.weather.gov/points/40.7829,-73.9654"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -5313,6 +5313,72 @@
           "date": "2026-10-09",
           "highF": 71,
           "periodName": "Friday",
+          "startTime": "2026-10-09T06:00:00-04:00",
+          "endTime": "2026-10-09T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-10",
+          "highF": 69,
+          "periodName": "Saturday",
+          "startTime": "2026-10-10T06:00:00-04:00",
+          "endTime": "2026-10-10T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-11",
+          "highF": 66,
+          "periodName": "Sunday",
+          "startTime": "2026-10-11T06:00:00-04:00",
+          "endTime": "2026-10-11T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 90
+        },
+        {
+          "date": "2026-10-12",
+          "highF": 69,
+          "periodName": "Columbus Day",
+          "startTime": "2026-10-12T06:00:00-04:00",
+          "endTime": "2026-10-12T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 63
+        },
+        {
+          "date": "2026-10-13",
+          "highF": 73,
+          "periodName": "Tuesday",
+          "startTime": "2026-10-13T06:00:00-04:00",
+          "endTime": "2026-10-13T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 16
+        },
+        {
+          "date": "2026-10-14",
+          "highF": 68,
+          "periodName": "Wednesday",
+          "startTime": "2026-10-14T06:00:00-04:00",
+          "endTime": "2026-10-14T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 15
+        },
+        {
+          "date": "2026-10-15",
+          "highF": 65,
+          "periodName": "Thursday",
+          "startTime": "2026-10-15T06:00:00-04:00",
+          "endTime": "2026-10-15T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 5
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-10-09T18:51:43.502Z",
+      "points_url": "https://api.weather.gov/points/40.7829,-73.9654",
+      "forecast_url": "https://api.weather.gov/gridpoints/OKX/34,45/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-10-09T08:28:49+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-10-09",
+          "highF": 71,
+          "periodName": "Today",
           "startTime": "2026-10-09T06:00:00-04:00",
           "endTime": "2026-10-09T18:00:00-04:00",
           "probabilityOfPrecipitationPct": 0
