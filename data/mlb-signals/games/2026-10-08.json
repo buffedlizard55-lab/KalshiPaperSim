@@ -12,7 +12,8 @@
  "captures": [
   "2026-10-08T11:06:49.361Z",
   "2026-10-08T20:54:18.468Z",
-  "2026-10-09T00:45:35.375Z"
+  "2026-10-09T00:45:35.375Z",
+  "2026-10-09T03:50:37.031Z"
  ],
  "games": {
   "849832": {
@@ -88,6 +89,21 @@
       "home": 0
      },
      "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-09T03:50:37.031Z",
+     "last_seen_at": "2026-10-09T03:50:37.031Z",
+     "abstractGameState": "Final",
+     "detailedState": "Game Over",
+     "codedGameState": "O",
+     "inning": 9,
+     "inningState": "Bottom",
+     "runs": {
+      "away": 9,
+      "home": 5
+     },
+     "winner": "away",
      "url_ref": 0
     }
    ]
