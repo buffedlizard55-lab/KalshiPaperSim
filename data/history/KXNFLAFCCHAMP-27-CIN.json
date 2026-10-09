@@ -19937,7 +19937,7 @@
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.0800",
     "previous_yes_ask_dollars": "0.0700",
-    "previous_yes_bid_dollars": "0.0500",
+    "previous_yes_bid_dollars": "0.0600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -19959,14 +19959,14 @@
     "volume_24h_fp": "1472.49",
     "volume_fp": "775093.86",
     "yes_ask_dollars": "0.0800",
-    "yes_ask_size_fp": "168010.17",
+    "yes_ask_size_fp": "196140.42",
     "yes_bid_dollars": "0.0700",
-    "yes_bid_size_fp": "1349.15",
+    "yes_bid_size_fp": "1573.38",
     "yes_sub_title": "Cincinnati"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-CIN",
-  "market_captured_at": "2026-10-09T09:28:02.122Z",
+  "market_captured_at": "2026-10-09T13:22:24.900Z",
   "status": "active",
-  "last_ingested_at": "2026-10-09T09:28:02.653Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-CIN/candlesticks?start_ts=1791518401&end_ts=1791538082&period_interval=1440"
+  "last_ingested_at": "2026-10-09T13:22:25.471Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-CIN/candlesticks?start_ts=1791518401&end_ts=1791552145&period_interval=1440"
 }

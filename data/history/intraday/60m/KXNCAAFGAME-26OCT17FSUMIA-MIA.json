@@ -1541,6 +1541,91 @@
         "low_dollars": "0.9200",
         "open_dollars": "0.9200"
       }
+    },
+    {
+      "end_period_ts": 1791540000,
+      "open_interest_fp": "2882.38",
+      "price": {
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9200",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.9200",
+        "open_dollars": "0.9300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9200",
+        "low_dollars": "0.9000",
+        "open_dollars": "0.9200"
+      }
+    },
+    {
+      "end_period_ts": 1791543600,
+      "open_interest_fp": "2882.38",
+      "price": {
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9200",
+        "high_dollars": "0.9200",
+        "low_dollars": "0.9200",
+        "open_dollars": "0.9200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9100",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9100"
+      }
+    },
+    {
+      "end_period_ts": 1791547200,
+      "open_interest_fp": "2887.78",
+      "price": {
+        "close_dollars": "0.9200",
+        "high_dollars": "0.9200",
+        "low_dollars": "0.9200",
+        "mean_dollars": "0.9200",
+        "open_dollars": "0.9200",
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "5.40",
+      "yes_ask": {
+        "close_dollars": "0.9200",
+        "high_dollars": "0.9200",
+        "low_dollars": "0.9200",
+        "open_dollars": "0.9200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9100",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9100"
+      }
+    },
+    {
+      "end_period_ts": 1791550800,
+      "open_interest_fp": "2887.78",
+      "price": {
+        "previous_dollars": "0.9200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9200",
+        "high_dollars": "0.9200",
+        "low_dollars": "0.9200",
+        "open_dollars": "0.9200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9100",
+        "low_dollars": "0.9000",
+        "open_dollars": "0.9100"
+      }
     }
   ],
   "books": [
@@ -2607,6 +2692,182 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T13:27:19.364Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17FSUMIA-MIA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "125130.00"
+            ],
+            [
+              "0.0200",
+              "4353.00"
+            ],
+            [
+              "0.0300",
+              "1611.00"
+            ],
+            [
+              "0.0400",
+              "1800.00"
+            ],
+            [
+              "0.0500",
+              "2880.88"
+            ],
+            [
+              "0.0600",
+              "778.00"
+            ],
+            [
+              "0.0700",
+              "387.00"
+            ],
+            [
+              "0.0800",
+              "48.28"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "107896.00"
+            ],
+            [
+              "0.0200",
+              "10917.00"
+            ],
+            [
+              "0.0300",
+              "7487.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "30.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "418.00"
+            ],
+            [
+              "0.0900",
+              "419.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.4200",
+              "309.00"
+            ],
+            [
+              "0.6900",
+              "168.00"
+            ],
+            [
+              "0.7000",
+              "150.00"
+            ],
+            [
+              "0.7100",
+              "135.00"
+            ],
+            [
+              "0.7200",
+              "121.00"
+            ],
+            [
+              "0.7300",
+              "109.00"
+            ],
+            [
+              "0.7400",
+              "237.00"
+            ],
+            [
+              "0.7500",
+              "87.00"
+            ],
+            [
+              "0.7600",
+              "78.00"
+            ],
+            [
+              "0.7700",
+              "70.00"
+            ],
+            [
+              "0.7800",
+              "63.00"
+            ],
+            [
+              "0.7900",
+              "57.00"
+            ],
+            [
+              "0.8000",
+              "51.00"
+            ],
+            [
+              "0.8100",
+              "46.00"
+            ],
+            [
+              "0.8200",
+              "41.00"
+            ],
+            [
+              "0.8300",
+              "37.00"
+            ],
+            [
+              "0.8400",
+              "133.00"
+            ],
+            [
+              "0.8500",
+              "30.00"
+            ],
+            [
+              "0.8600",
+              "27.00"
+            ],
+            [
+              "0.8700",
+              "24.00"
+            ],
+            [
+              "0.8800",
+              "432.00"
+            ],
+            [
+              "0.8900",
+              "782.00"
+            ],
+            [
+              "0.9000",
+              "1215.00"
+            ],
+            [
+              "0.9100",
+              "110.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2622,19 +2883,19 @@
     "expected_expiration_time": "2026-10-18T02:00:00Z",
     "expiration_time": "2026-10-19T23:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.9300",
+    "last_price_dollars": "0.9200",
     "latest_expiration_time": "2026-10-19T23:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.0800",
-    "no_bid_dollars": "0.0700",
+    "no_ask_dollars": "0.0900",
+    "no_bid_dollars": "0.0800",
     "no_sub_title": "Miami (FL)",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-18T02:00:00Z",
-    "open_interest_fp": "2882.38",
+    "open_interest_fp": "2887.78",
     "open_time": "2026-10-05T22:06:00Z",
     "previous_price_dollars": "0.9300",
-    "previous_yes_ask_dollars": "0.9300",
-    "previous_yes_bid_dollars": "0.9000",
+    "previous_yes_ask_dollars": "0.9400",
+    "previous_yes_bid_dollars": "0.9300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2653,17 +2914,17 @@
     "ticker": "KXNCAAFGAME-26OCT17FSUMIA-MIA",
     "title": "Miami (FL) wins",
     "updated_time": "2026-10-05T22:06:00.907985Z",
-    "volume_24h_fp": "465.11",
-    "volume_fp": "3163.18",
-    "yes_ask_dollars": "0.9300",
-    "yes_ask_size_fp": "294.00",
-    "yes_bid_dollars": "0.9200",
-    "yes_bid_size_fp": "319.00",
+    "volume_24h_fp": "470.51",
+    "volume_fp": "3168.58",
+    "yes_ask_dollars": "0.9200",
+    "yes_ask_size_fp": "48.28",
+    "yes_bid_dollars": "0.9100",
+    "yes_bid_size_fp": "110.00",
     "yes_sub_title": "Miami (FL)"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17FSUMIA-MIA",
-  "market_captured_at": "2026-10-09T09:32:44.540Z",
+  "market_captured_at": "2026-10-09T13:27:18.628Z",
   "status": "active",
-  "last_ingested_at": "2026-10-09T09:32:45.172Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17FSUMIA-MIA/candlesticks?start_ts=1791525601&end_ts=1791538364&period_interval=60"
+  "last_ingested_at": "2026-10-09T13:27:19.296Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17FSUMIA-MIA/candlesticks?start_ts=1791536401&end_ts=1791552438&period_interval=60"
 }

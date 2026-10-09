@@ -11758,6 +11758,66 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T13:31:52.862Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-MDMA-30JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0400",
+              "1302.01"
+            ],
+            [
+              "0.0900",
+              "305.00"
+            ],
+            [
+              "0.1800",
+              "704.00"
+            ],
+            [
+              "0.2100",
+              "371.00"
+            ],
+            [
+              "0.2200",
+              "191.00"
+            ],
+            [
+              "0.4900",
+              "505.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "50.00"
+            ],
+            [
+              "0.0400",
+              "481.00"
+            ],
+            [
+              "0.1200",
+              "1054.00"
+            ],
+            [
+              "0.1300",
+              "196.00"
+            ],
+            [
+              "0.4300",
+              "500.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -11813,8 +11873,8 @@
     "yes_sub_title": "Before Jan 1, 2030"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-MDMA-30JAN01",
-  "market_captured_at": "2026-10-09T09:36:52.858Z",
+  "market_captured_at": "2026-10-09T13:31:52.124Z",
   "status": "active",
-  "last_ingested_at": "2026-10-09T09:36:53.489Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-MDMA-30JAN01/candlesticks?start_ts=1791518401&end_ts=1791538613&period_interval=1440"
+  "last_ingested_at": "2026-10-09T13:31:52.794Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-MDMA-30JAN01/candlesticks?start_ts=1791518401&end_ts=1791552712&period_interval=1440"
 }

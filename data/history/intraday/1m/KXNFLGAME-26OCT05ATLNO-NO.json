@@ -12145,6 +12145,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T13:30:50.002Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT05ATLNO-NO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12202,11 +12212,11 @@
     "yes_sub_title": "New Orleans"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT05ATLNO-NO",
-  "market_captured_at": "2026-10-09T09:35:54.908Z",
+  "market_captured_at": "2026-10-09T13:30:48.156Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T09:35:56.532Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT05ATLNO-NO/candlesticks?start_ts=1791516661&end_ts=1791538555&period_interval=1",
+  "last_ingested_at": "2026-10-09T13:30:49.935Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT05ATLNO-NO/candlesticks?start_ts=1791516661&end_ts=1791552648&period_interval=1",
   "trims": [
     {
       "at": "2026-10-06T06:50:29.449Z",

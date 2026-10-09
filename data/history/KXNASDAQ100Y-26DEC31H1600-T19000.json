@@ -7087,14 +7087,14 @@
     "yes_ask_dollars": "0.0200",
     "yes_ask_size_fp": "4302.00",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "2684.37",
+    "yes_bid_size_fp": "102684.37",
     "yes_sub_title": "18,999.99 or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-T19000",
-  "market_captured_at": "2026-10-09T09:27:08.379Z",
+  "market_captured_at": "2026-10-09T13:21:41.125Z",
   "status": "active",
-  "last_ingested_at": "2026-10-09T09:27:08.912Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1791518401&end_ts=1791538028&period_interval=1440",
+  "last_ingested_at": "2026-10-09T13:21:41.696Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-T19000/candlesticks?start_ts=1791518401&end_ts=1791552101&period_interval=1440",
   "books": [
     {
       "captured_at": "2026-09-17T23:07:32.276Z",

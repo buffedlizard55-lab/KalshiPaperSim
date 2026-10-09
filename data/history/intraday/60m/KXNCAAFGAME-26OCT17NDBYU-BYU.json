@@ -1776,6 +1776,91 @@
         "low_dollars": "0.1800",
         "open_dollars": "0.1800"
       }
+    },
+    {
+      "end_period_ts": 1791540000,
+      "open_interest_fp": "4962.08",
+      "price": {
+        "previous_dollars": "0.2000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.1900",
+        "high_dollars": "0.2000",
+        "low_dollars": "0.1900",
+        "open_dollars": "0.2000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1800",
+        "high_dollars": "0.1800",
+        "low_dollars": "0.1800",
+        "open_dollars": "0.1800"
+      }
+    },
+    {
+      "end_period_ts": 1791543600,
+      "open_interest_fp": "5056.77",
+      "price": {
+        "close_dollars": "0.2000",
+        "high_dollars": "0.2000",
+        "low_dollars": "0.2000",
+        "mean_dollars": "0.2000",
+        "open_dollars": "0.2000",
+        "previous_dollars": "0.2000"
+      },
+      "volume_fp": "94.69",
+      "yes_ask": {
+        "close_dollars": "0.2000",
+        "high_dollars": "0.2000",
+        "low_dollars": "0.1900",
+        "open_dollars": "0.1900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1800",
+        "high_dollars": "0.1800",
+        "low_dollars": "0.1800",
+        "open_dollars": "0.1800"
+      }
+    },
+    {
+      "end_period_ts": 1791547200,
+      "open_interest_fp": "5056.77",
+      "price": {
+        "previous_dollars": "0.2000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.2000",
+        "high_dollars": "0.2000",
+        "low_dollars": "0.2000",
+        "open_dollars": "0.2000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1800",
+        "high_dollars": "0.1800",
+        "low_dollars": "0.1800",
+        "open_dollars": "0.1800"
+      }
+    },
+    {
+      "end_period_ts": 1791550800,
+      "open_interest_fp": "5056.77",
+      "price": {
+        "previous_dollars": "0.2000"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.2000",
+        "high_dollars": "0.2000",
+        "low_dollars": "0.2000",
+        "open_dollars": "0.2000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1800",
+        "high_dollars": "0.1800",
+        "low_dollars": "0.1800",
+        "open_dollars": "0.1800"
+      }
     }
   ],
   "books": [
@@ -3714,6 +3799,250 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-09T13:27:17.953Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17NDBYU-BYU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "98789.43"
+            ],
+            [
+              "0.0200",
+              "1572.00"
+            ],
+            [
+              "0.0300",
+              "511.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "427.00"
+            ],
+            [
+              "0.0600",
+              "29.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "484.00"
+            ],
+            [
+              "0.0900",
+              "180.00"
+            ],
+            [
+              "0.1000",
+              "196.00"
+            ],
+            [
+              "0.1100",
+              "181.00"
+            ],
+            [
+              "0.1900",
+              "5.55"
+            ],
+            [
+              "0.3700",
+              "94.69"
+            ],
+            [
+              "0.3900",
+              "24.90"
+            ],
+            [
+              "0.4000",
+              "415.53"
+            ],
+            [
+              "0.4400",
+              "5.22"
+            ],
+            [
+              "0.5600",
+              "202.00"
+            ],
+            [
+              "0.5700",
+              "180.00"
+            ],
+            [
+              "0.5800",
+              "161.00"
+            ],
+            [
+              "0.5900",
+              "144.00"
+            ],
+            [
+              "0.6000",
+              "129.00"
+            ],
+            [
+              "0.6100",
+              "115.00"
+            ],
+            [
+              "0.6200",
+              "103.00"
+            ],
+            [
+              "0.6300",
+              "92.00"
+            ],
+            [
+              "0.6400",
+              "83.00"
+            ],
+            [
+              "0.6500",
+              "74.00"
+            ],
+            [
+              "0.6600",
+              "206.00"
+            ],
+            [
+              "0.6700",
+              "65.00"
+            ],
+            [
+              "0.6800",
+              "58.00"
+            ],
+            [
+              "0.6900",
+              "58.32"
+            ],
+            [
+              "0.7000",
+              "51.04"
+            ],
+            [
+              "0.7100",
+              "42.00"
+            ],
+            [
+              "0.7200",
+              "43.36"
+            ],
+            [
+              "0.7300",
+              "34.00"
+            ],
+            [
+              "0.7400",
+              "33.64"
+            ],
+            [
+              "0.7500",
+              "42.08"
+            ],
+            [
+              "0.7600",
+              "31.00"
+            ],
+            [
+              "0.7800",
+              "1039.00"
+            ],
+            [
+              "0.7900",
+              "1660.00"
+            ],
+            [
+              "0.8000",
+              "397.66"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "101149.00"
+            ],
+            [
+              "0.0200",
+              "3072.00"
+            ],
+            [
+              "0.0300",
+              "2168.00"
+            ],
+            [
+              "0.0400",
+              "1704.00"
+            ],
+            [
+              "0.0500",
+              "718.00"
+            ],
+            [
+              "0.0600",
+              "2052.00"
+            ],
+            [
+              "0.0700",
+              "2196.00"
+            ],
+            [
+              "0.0800",
+              "1996.72"
+            ],
+            [
+              "0.0900",
+              "1611.00"
+            ],
+            [
+              "0.1000",
+              "1489.00"
+            ],
+            [
+              "0.1100",
+              "1431.72"
+            ],
+            [
+              "0.1200",
+              "1490.00"
+            ],
+            [
+              "0.1300",
+              "1465.00"
+            ],
+            [
+              "0.1400",
+              "816.88"
+            ],
+            [
+              "0.1500",
+              "2000.00"
+            ],
+            [
+              "0.1600",
+              "445.00"
+            ],
+            [
+              "0.1700",
+              "482.54"
+            ],
+            [
+              "0.1800",
+              "80.68"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3737,7 +4066,7 @@
     "no_sub_title": "BYU",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-18T02:30:00Z",
-    "open_interest_fp": "4962.08",
+    "open_interest_fp": "5104.11",
     "open_time": "2026-10-05T22:06:00Z",
     "previous_price_dollars": "0.1900",
     "previous_yes_ask_dollars": "0.1900",
@@ -3760,17 +4089,17 @@
     "ticker": "KXNCAAFGAME-26OCT17NDBYU-BYU",
     "title": "BYU wins",
     "updated_time": "2026-10-05T22:06:00.94973Z",
-    "volume_24h_fp": "1932.76",
-    "volume_fp": "5081.18",
+    "volume_24h_fp": "1631.80",
+    "volume_fp": "5223.21",
     "yes_ask_dollars": "0.2000",
-    "yes_ask_size_fp": "300.00",
+    "yes_ask_size_fp": "397.66",
     "yes_bid_dollars": "0.1800",
-    "yes_bid_size_fp": "334.21",
+    "yes_bid_size_fp": "80.68",
     "yes_sub_title": "BYU"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17NDBYU-BYU",
-  "market_captured_at": "2026-10-09T09:32:43.245Z",
+  "market_captured_at": "2026-10-09T13:27:17.214Z",
   "status": "active",
-  "last_ingested_at": "2026-10-09T09:32:43.876Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17NDBYU-BYU/candlesticks?start_ts=1791525601&end_ts=1791538363&period_interval=60"
+  "last_ingested_at": "2026-10-09T13:27:17.887Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17NDBYU-BYU/candlesticks?start_ts=1791536401&end_ts=1791552437&period_interval=60"
 }
