@@ -2611,6 +2611,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-10T12:41:16.867Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT09MEMCHI-CHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2636,9 +2646,9 @@
     "occurrence_datetime": "2026-10-10T03:00:00Z",
     "open_interest_fp": "826483.25",
     "open_time": "2026-10-04T15:59:41.984142Z",
-    "previous_price_dollars": "0.5900",
-    "previous_yes_ask_dollars": "0.5900",
-    "previous_yes_bid_dollars": "0.5700",
+    "previous_price_dollars": "0.5800",
+    "previous_yes_ask_dollars": "0.5800",
+    "previous_yes_bid_dollars": "0.5600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2659,7 +2669,7 @@
     "ticker": "KXNBAGAME-26OCT09MEMCHI-CHI",
     "title": "Chicago wins",
     "updated_time": "2026-10-10T02:41:43.93461Z",
-    "volume_24h_fp": "2008686.56",
+    "volume_24h_fp": "2008132.47",
     "volume_fp": "2011456.05",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2668,9 +2678,9 @@
     "yes_sub_title": "Chicago"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT09MEMCHI-CHI",
-  "market_captured_at": "2026-10-10T08:53:49.313Z",
+  "market_captured_at": "2026-10-10T12:41:16.173Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-10T08:53:49.955Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT09MEMCHI-CHI/candlesticks?start_ts=1791601201&end_ts=1791622429&period_interval=60"
+  "last_ingested_at": "2026-10-10T12:41:16.821Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT09MEMCHI-CHI/candlesticks?start_ts=1791601201&end_ts=1791636076&period_interval=60"
 }

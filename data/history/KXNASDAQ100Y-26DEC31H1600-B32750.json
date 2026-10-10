@@ -16787,8 +16787,8 @@
     "open_interest_fp": "98465.58",
     "open_time": "2025-12-23T15:00:00Z",
     "previous_price_dollars": "0.0600",
-    "previous_yes_ask_dollars": "0.0600",
-    "previous_yes_bid_dollars": "0.0500",
+    "previous_yes_ask_dollars": "0.0700",
+    "previous_yes_bid_dollars": "0.0600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -16808,17 +16808,17 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-B32750",
     "title": "Will the Nasdaq-100 be between 32500 and 33000 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:46.516856Z",
-    "volume_24h_fp": "537.03",
+    "volume_24h_fp": "0.00",
     "volume_fp": "184888.50",
     "yes_ask_dollars": "0.0600",
     "yes_ask_size_fp": "1.00",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "465.52",
+    "yes_bid_size_fp": "464.86",
     "yes_sub_title": "32,500 to 33,000"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B32750",
-  "market_captured_at": "2026-10-10T08:48:28.138Z",
+  "market_captured_at": "2026-10-10T12:36:15.649Z",
   "status": "active",
-  "last_ingested_at": "2026-10-10T08:48:28.672Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B32750/candlesticks?start_ts=1791604801&end_ts=1791622108&period_interval=1440"
+  "last_ingested_at": "2026-10-10T12:36:16.199Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B32750/candlesticks?start_ts=1791604801&end_ts=1791635775&period_interval=1440"
 }

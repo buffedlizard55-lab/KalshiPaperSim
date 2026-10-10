@@ -30329,11 +30329,11 @@
     "no_bid_dollars": "0.8000",
     "no_sub_title": "7,800 to 7,999.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "262401.83",
+    "open_interest_fp": "262417.96",
     "open_time": "2025-12-23T15:00:00Z",
-    "previous_price_dollars": "0.1900",
-    "previous_yes_ask_dollars": "0.2100",
-    "previous_yes_bid_dollars": "0.1900",
+    "previous_price_dollars": "0.1800",
+    "previous_yes_ask_dollars": "0.1900",
+    "previous_yes_bid_dollars": "0.1800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -30353,17 +30353,17 @@
     "ticker": "KXINXY-26DEC31H1600-B7900",
     "title": "Will the S&P 500 be between 7800 and 7999.99 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:02.374335Z",
-    "volume_24h_fp": "2149.76",
-    "volume_fp": "534589.06",
+    "volume_24h_fp": "1851.65",
+    "volume_fp": "534605.42",
     "yes_ask_dollars": "0.2000",
-    "yes_ask_size_fp": "72.88",
+    "yes_ask_size_fp": "56.52",
     "yes_bid_dollars": "0.1800",
-    "yes_bid_size_fp": "156.24",
+    "yes_bid_size_fp": "223.24",
     "yes_sub_title": "7,800 to 7,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7900",
-  "market_captured_at": "2026-10-10T08:47:47.269Z",
+  "market_captured_at": "2026-10-10T12:35:44.148Z",
   "status": "active",
-  "last_ingested_at": "2026-10-10T08:47:47.803Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7900/candlesticks?start_ts=1791604801&end_ts=1791622067&period_interval=1440"
+  "last_ingested_at": "2026-10-10T12:35:44.697Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7900/candlesticks?start_ts=1791604801&end_ts=1791635744&period_interval=1440"
 }

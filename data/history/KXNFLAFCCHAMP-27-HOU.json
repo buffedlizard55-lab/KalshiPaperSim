@@ -20484,9 +20484,9 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "655625.71",
     "open_time": "2026-02-07T15:00:00Z",
-    "previous_price_dollars": "0.0400",
-    "previous_yes_ask_dollars": "0.0300",
-    "previous_yes_bid_dollars": "0.0200",
+    "previous_price_dollars": "0.0300",
+    "previous_yes_ask_dollars": "0.0400",
+    "previous_yes_bid_dollars": "0.0300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -20505,17 +20505,17 @@
     "ticker": "KXNFLAFCCHAMP-27-HOU",
     "title": "Will Houston win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:31:32.511076Z",
-    "volume_24h_fp": "879.97",
+    "volume_24h_fp": "853.55",
     "volume_fp": "996211.92",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "265430.47",
+    "yes_ask_size_fp": "293339.74",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "23.77",
+    "yes_bid_size_fp": "228098.84",
     "yes_sub_title": "Houston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-HOU",
-  "market_captured_at": "2026-10-10T08:49:25.806Z",
+  "market_captured_at": "2026-10-10T12:36:59.919Z",
   "status": "active",
-  "last_ingested_at": "2026-10-10T08:49:26.343Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-HOU/candlesticks?start_ts=1791604801&end_ts=1791622166&period_interval=1440"
+  "last_ingested_at": "2026-10-10T12:37:00.468Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-HOU/candlesticks?start_ts=1791604801&end_ts=1791635820&period_interval=1440"
 }
