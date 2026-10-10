@@ -14,12 +14,13 @@
   "2026-10-09T03:47:04.469Z",
   "2026-10-09T11:02:46.921Z",
   "2026-10-09T19:58:54.486Z",
-  "2026-10-09T23:53:53.279Z"
+  "2026-10-09T23:53:53.279Z",
+  "2026-10-10T03:30:11.193Z"
  ],
  "events": {
   "401856826": {
    "eventId": "401856826",
-   "date": "2026-10-10T02:15Z",
+   "date": "2026-10-10T02:30Z",
    "easternDate": "2026-10-09",
    "name": "Iowa State Cyclones at BYU Cougars",
    "shortName": "ISU @ BYU",
@@ -53,6 +54,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-0",
+      "away": "3-2"
+     }
+    },
+    {
+     "captured_at": "2026-10-10T03:30:11.193Z",
+     "last_seen_at": "2026-10-10T03:30:11.193Z",
+     "fp": "in|2|4|7,3|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 295,
+     "displayClock": "4:55",
+     "scores": {
+      "home": 7,
+      "away": 3
      },
      "recordsOverall": {
       "home": "4-0",
@@ -122,6 +143,26 @@
       "home": "2-3",
       "away": "3-2"
      }
+    },
+    {
+     "captured_at": "2026-10-10T03:30:11.193Z",
+     "last_seen_at": "2026-10-10T03:30:11.193Z",
+     "fp": "post|4|0|44,20|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 44,
+      "away": 20
+     },
+     "recordsOverall": {
+      "home": "3-3",
+      "away": "3-3"
+     }
     }
    ]
   },
@@ -161,6 +202,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-2",
+      "away": "4-1"
+     }
+    },
+    {
+     "captured_at": "2026-10-10T03:30:11.193Z",
+     "last_seen_at": "2026-10-10T03:30:11.193Z",
+     "fp": "in|3|2|10,34|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 3,
+     "clock": 139,
+     "displayClock": "2:19",
+     "scores": {
+      "home": 10,
+      "away": 34
      },
      "recordsOverall": {
       "home": "3-2",
@@ -210,6 +271,26 @@
       "home": "1-4",
       "away": "1-4"
      }
+    },
+    {
+     "captured_at": "2026-10-10T03:30:11.193Z",
+     "last_seen_at": "2026-10-10T03:30:11.193Z",
+     "fp": "in|3|8|3,16|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 3,
+     "clock": 539,
+     "displayClock": "8:59",
+     "scores": {
+      "home": 3,
+      "away": 16
+     },
+     "recordsOverall": {
+      "home": "1-4",
+      "away": "1-4"
+     }
     }
    ]
   },
@@ -254,10 +335,30 @@
       "home": "3-2",
       "away": "2-3"
      }
+    },
+    {
+     "captured_at": "2026-10-10T03:30:11.193Z",
+     "last_seen_at": "2026-10-10T03:30:11.193Z",
+     "fp": "in|4|14|13,6|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 4,
+     "clock": 866,
+     "displayClock": "14:26",
+     "scores": {
+      "home": 13,
+      "away": 6
+     },
+     "recordsOverall": {
+      "home": "3-2",
+      "away": "2-3"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-09T23:53:53.279Z",
+ "last_ingested_at": "2026-10-10T03:30:11.193Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261009"
 }
