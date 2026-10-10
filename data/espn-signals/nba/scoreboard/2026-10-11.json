@@ -1,0 +1,173 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-11",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261011"
+  ]
+ },
+ "captures": [
+  "2026-10-10T10:09:27.041Z"
+ ],
+ "events": {
+  "401898400": {
+   "eventId": "401898400",
+   "date": "2026-10-11T10:00Z",
+   "easternDate": "2026-10-11",
+   "name": "Dallas Mavericks at Houston Rockets",
+   "shortName": "DAL VS HOU",
+   "week": null,
+   "venue": "Venetian Arena",
+   "homeAbbr": "HOU",
+   "homeTeamId": "10",
+   "homeName": "Houston Rockets",
+   "awayAbbr": "DAL",
+   "awayTeamId": "6",
+   "awayName": "Dallas Mavericks",
+   "firstCapturedAt": "2026-10-10T10:09:27.041Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-10T10:09:27.041Z",
+     "last_seen_at": "2026-10-10T10:09:27.041Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-0",
+      "away": "0-1"
+     }
+    }
+   ]
+  },
+  "401898401": {
+   "eventId": "401898401",
+   "date": "2026-10-11T22:30Z",
+   "easternDate": "2026-10-11",
+   "name": "Orlando Magic at Cleveland Cavaliers",
+   "shortName": "ORL @ CLE",
+   "week": null,
+   "venue": "Rocket Arena",
+   "homeAbbr": "CLE",
+   "homeTeamId": "5",
+   "homeName": "Cleveland Cavaliers",
+   "awayAbbr": "ORL",
+   "awayTeamId": "19",
+   "awayName": "Orlando Magic",
+   "firstCapturedAt": "2026-10-10T10:09:27.041Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-10T10:09:27.041Z",
+     "last_seen_at": "2026-10-10T10:09:27.041Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "1-0"
+     }
+    }
+   ]
+  },
+  "401901821": {
+   "eventId": "401901821",
+   "date": "2026-10-11T23:00Z",
+   "easternDate": "2026-10-11",
+   "name": "Milwaukee Bucks at Charlotte Hornets",
+   "shortName": "MIL @ CHA",
+   "week": null,
+   "venue": "Spectrum Center",
+   "homeAbbr": "CHA",
+   "homeTeamId": "30",
+   "homeName": "Charlotte Hornets",
+   "awayAbbr": "MIL",
+   "awayTeamId": "15",
+   "awayName": "Milwaukee Bucks",
+   "firstCapturedAt": "2026-10-10T10:09:27.041Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-10T10:09:27.041Z",
+     "last_seen_at": "2026-10-10T10:09:27.041Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "1-1"
+     }
+    }
+   ]
+  },
+  "401908941": {
+   "eventId": "401908941",
+   "date": "2026-10-12T01:00Z",
+   "easternDate": "2026-10-11",
+   "name": "Chicago Bulls at Denver Nuggets",
+   "shortName": "CHI @ DEN",
+   "week": null,
+   "venue": "Ball Arena",
+   "homeAbbr": "DEN",
+   "homeTeamId": "7",
+   "homeName": "Denver Nuggets",
+   "awayAbbr": "CHI",
+   "awayTeamId": "4",
+   "awayName": "Chicago Bulls",
+   "firstCapturedAt": "2026-10-10T10:09:27.041Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-10T10:09:27.041Z",
+     "last_seen_at": "2026-10-10T10:09:27.041Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "1-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-10T10:09:27.041Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261011"
+}

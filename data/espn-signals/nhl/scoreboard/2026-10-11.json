@@ -1,0 +1,134 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-11",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261011"
+  ]
+ },
+ "captures": [
+  "2026-10-10T10:09:27.149Z"
+ ],
+ "events": {
+  "401892482": {
+   "eventId": "401892482",
+   "date": "2026-10-11T21:00Z",
+   "easternDate": "2026-10-11",
+   "name": "Seattle Kraken at Washington Capitals",
+   "shortName": "SEA @ WSH",
+   "week": null,
+   "venue": "Capital One Arena",
+   "homeAbbr": "WSH",
+   "homeTeamId": "23",
+   "homeName": "Washington Capitals",
+   "awayAbbr": "SEA",
+   "awayTeamId": "124292",
+   "awayName": "Seattle Kraken",
+   "firstCapturedAt": "2026-10-10T10:09:27.149Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-10T10:09:27.149Z",
+     "last_seen_at": "2026-10-10T10:09:27.149Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-1-0",
+      "away": "3-2-0"
+     }
+    }
+   ]
+  },
+  "401892483": {
+   "eventId": "401892483",
+   "date": "2026-10-11T22:00Z",
+   "easternDate": "2026-10-11",
+   "name": "Vancouver Canucks at New York Rangers",
+   "shortName": "VAN @ NYR",
+   "week": null,
+   "venue": "Madison Square Garden",
+   "homeAbbr": "NYR",
+   "homeTeamId": "13",
+   "homeName": "New York Rangers",
+   "awayAbbr": "VAN",
+   "awayTeamId": "22",
+   "awayName": "Vancouver Canucks",
+   "firstCapturedAt": "2026-10-10T10:09:27.149Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-10T10:09:27.149Z",
+     "last_seen_at": "2026-10-10T10:09:27.149Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-2-0",
+      "away": "2-3-0"
+     }
+    }
+   ]
+  },
+  "401892484": {
+   "eventId": "401892484",
+   "date": "2026-10-11T23:00Z",
+   "easternDate": "2026-10-11",
+   "name": "Carolina Hurricanes at Philadelphia Flyers",
+   "shortName": "CAR @ PHI",
+   "week": null,
+   "venue": "Xfinity Mobile Arena",
+   "homeAbbr": "PHI",
+   "homeTeamId": "15",
+   "homeName": "Philadelphia Flyers",
+   "awayAbbr": "CAR",
+   "awayTeamId": "7",
+   "awayName": "Carolina Hurricanes",
+   "firstCapturedAt": "2026-10-10T10:09:27.149Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-10T10:09:27.149Z",
+     "last_seen_at": "2026-10-10T10:09:27.149Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-3-2",
+      "away": "3-1-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-10T10:09:27.149Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261011"
+}

@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-10T03:30:12.416Z",
+ "generatedAt": "2026-10-10T10:09:28.069Z",
  "rows": [
   {
    "league": "nba",
@@ -25,6 +25,31 @@
      "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
      "rulesName": "Boston",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "CHI",
+   "kalshiName": "Chicago",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "4",
+    "abbr": "CHI",
+    "displayName": "Chicago Bulls",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT09MEMCHI-CHI",
+     "rulesName": "Chicago",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT09MEMCHI-MEM",
+     "rulesName": "Chicago",
+     "role": "home"
     }
    ]
   },
@@ -205,6 +230,31 @@
      "ticker": "KXNBAGAME-26OCT08SACLAL-SAC",
      "rulesName": "Los Angeles L",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "MEM",
+   "kalshiName": "Memphis",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "29",
+    "abbr": "MEM",
+    "displayName": "Memphis Grizzlies",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT09MEMCHI-CHI",
+     "rulesName": "Memphis",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT09MEMCHI-MEM",
+     "rulesName": "Memphis",
+     "role": "away"
     }
    ]
   },
@@ -585,6 +635,26 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "AUB",
+   "kalshiName": "Auburn",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "2",
+    "abbr": "AUB",
+    "displayName": "Auburn Tigers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT17AUBUGA-AUB",
+     "rulesName": "Auburn",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "BALL",
    "kalshiName": "Ball St.",
    "conflictWith": null,
@@ -920,6 +990,11 @@
      "ticker": "KXNCAAFGAME-26OCT03INDRUTG-RUTG",
      "rulesName": "Indiana",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17OSUIND-IND",
+     "rulesName": "Indiana",
+     "role": "home"
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17OSUIND-OSU",
@@ -1305,6 +1380,11 @@
      "ticker": "KXNCAAFGAME-26OCT10MDOSU-OSU",
      "rulesName": "Ohio St.",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17OSUIND-IND",
+     "rulesName": "Ohio St.",
+     "role": "away"
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17OSUIND-OSU",
@@ -1705,6 +1785,11 @@
      "ticker": "KXNCAAFGAME-26OCT10UGAALA-UGA",
      "rulesName": "Georgia",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17AUBUGA-AUB",
+     "rulesName": "Georgia",
+     "role": "home"
     },
     {
      "ticker": "KXNCAAFGAME-26SEP26OKLAUGA-UGA",
@@ -3372,6 +3457,11 @@
    "espnReason": "MATCHED",
    "evidence": [
     {
+     "ticker": "KXWNBAGAME-26OCT09GSLV-GS",
+     "rulesName": "Golden State",
+     "role": "away"
+    },
+    {
      "ticker": "KXWNBAGAME-26SEP30GSDAL-GS",
      "rulesName": "Golden State",
      "role": "away"
@@ -3426,20 +3516,15 @@
   {
    "league": "wnba",
    "kalshiCode": "LV",
-   "kalshiName": "Las Vegas",
-   "conflictWith": "Las Vegas women's",
-   "espn": {
-    "teamId": "17",
-    "abbr": "LV",
-    "displayName": "Las Vegas Aces",
-    "matchedBy": "displayName-prefix"
-   },
-   "espnReason": "MATCHED",
+   "kalshiName": "Las Vegas women's",
+   "conflictWith": "Las Vegas",
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
-     "ticker": "KXWNBAGAME-26OCT07LVGS-LV",
-     "rulesName": "Las Vegas",
-     "role": "away"
+     "ticker": "KXWNBAGAME-26OCT09GSLV-GS",
+     "rulesName": "Las Vegas women's",
+     "role": "home"
     }
    ]
   },
