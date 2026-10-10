@@ -1207,6 +1207,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-10T08:51:37.178Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26OCT08-B83.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1233,7 +1243,7 @@
     "open_time": "2026-10-07T14:00:00Z",
     "previous_price_dollars": "0.9900",
     "previous_yes_ask_dollars": "1.0000",
-    "previous_yes_bid_dollars": "0.9900",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1263,9 +1273,9 @@
     "yes_sub_title": "83° to 84°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26OCT08-B83.5",
-  "market_captured_at": "2026-10-10T06:13:58.129Z",
+  "market_captured_at": "2026-10-10T08:51:36.504Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-10T06:13:58.743Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26OCT08-B83.5/candlesticks?start_ts=1791532801&end_ts=1791612838&period_interval=60",
+  "last_ingested_at": "2026-10-10T08:51:37.141Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26OCT08-B83.5/candlesticks?start_ts=1791532801&end_ts=1791622296&period_interval=60",
   "result": "yes"
 }
