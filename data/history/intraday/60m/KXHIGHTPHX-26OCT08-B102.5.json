@@ -1198,6 +1198,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-10T06:14:17.404Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26OCT08-B102.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1222,9 +1232,9 @@
     "occurrence_datetime": "2026-10-09T14:00:00Z",
     "open_interest_fp": "69796.33",
     "open_time": "2026-10-07T14:00:00Z",
-    "previous_price_dollars": "0.8000",
-    "previous_yes_ask_dollars": "0.8300",
-    "previous_yes_bid_dollars": "0.8000",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "0.0100",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1245,7 +1255,7 @@
     "ticker": "KXHIGHTPHX-26OCT08-B102.5",
     "title": "Will the maximum temperature be 102-103° on Oct 8, 2026?",
     "updated_time": "2026-10-09T14:11:23.92995Z",
-    "volume_24h_fp": "69566.03",
+    "volume_24h_fp": "0.00",
     "volume_fp": "76313.29",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1254,9 +1264,9 @@
     "yes_sub_title": "102° to 103°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTPHX-26OCT08-B102.5",
-  "market_captured_at": "2026-10-09T21:19:07.019Z",
+  "market_captured_at": "2026-10-10T06:14:16.779Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T21:19:07.655Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26OCT08-B102.5/candlesticks?start_ts=1791532801&end_ts=1791580747&period_interval=60",
+  "last_ingested_at": "2026-10-10T06:14:17.392Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTPHX/markets/KXHIGHTPHX-26OCT08-B102.5/candlesticks?start_ts=1791532801&end_ts=1791612857&period_interval=60",
   "result": "no"
 }

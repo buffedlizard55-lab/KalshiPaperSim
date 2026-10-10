@@ -739,6 +739,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-10T06:15:51.227Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT081700CLECWS-CWS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -764,9 +774,9 @@
     "occurrence_datetime": "2026-10-09T00:00:00Z",
     "open_interest_fp": "6945822.19",
     "open_time": "2026-10-07T23:55:00Z",
-    "previous_price_dollars": "0.4900",
-    "previous_yes_ask_dollars": "0.4900",
-    "previous_yes_bid_dollars": "0.4800",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -787,7 +797,7 @@
     "ticker": "KXMLBGAME-26OCT081700CLECWS-CWS",
     "title": "Chicago WS wins",
     "updated_time": "2026-10-09T03:53:53.946363Z",
-    "volume_24h_fp": "12203832.80",
+    "volume_24h_fp": "0.00",
     "volume_fp": "13301863.28",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -796,9 +806,9 @@
     "yes_sub_title": "Chicago WS"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT081700CLECWS-CWS",
-  "market_captured_at": "2026-10-09T21:20:45.795Z",
+  "market_captured_at": "2026-10-10T06:15:50.599Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T21:20:46.430Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT081700CLECWS-CWS/candlesticks?start_ts=1791518401&end_ts=1791580846&period_interval=60"
+  "last_ingested_at": "2026-10-10T06:15:51.215Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT081700CLECWS-CWS/candlesticks?start_ts=1791518401&end_ts=1791612950&period_interval=60"
 }

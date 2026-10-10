@@ -1547,6 +1547,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-10T06:12:30.733Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1605,9 +1615,9 @@
     "yes_sub_title": "Dallas wins by over 2.5 goals"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL3",
-  "market_captured_at": "2026-10-09T21:17:15.031Z",
+  "market_captured_at": "2026-10-10T06:12:30.207Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T21:17:15.567Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLSPREAD/markets/KXNHLSPREAD-26SEP19DALSTL-DAL3/candlesticks?start_ts=1789876801&end_ts=1791580635&period_interval=1440",
+  "last_ingested_at": "2026-10-10T06:12:30.721Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLSPREAD/markets/KXNHLSPREAD-26SEP19DALSTL-DAL3/candlesticks?start_ts=1789876801&end_ts=1791612750&period_interval=1440",
   "result": "no"
 }

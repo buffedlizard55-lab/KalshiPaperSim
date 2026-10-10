@@ -2951,6 +2951,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-10T06:15:59.926Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT08SACLAL-SAC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2976,9 +2986,9 @@
     "occurrence_datetime": "2026-10-09T05:30:00Z",
     "open_interest_fp": "1572328.28",
     "open_time": "2026-10-02T21:02:29.600599Z",
-    "previous_price_dollars": "0.2100",
-    "previous_yes_ask_dollars": "0.2100",
-    "previous_yes_bid_dollars": "0.2000",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2999,7 +3009,7 @@
     "ticker": "KXNBAGAME-26OCT08SACLAL-SAC",
     "title": "Sacramento wins",
     "updated_time": "2026-10-09T05:23:13.945085Z",
-    "volume_24h_fp": "3409810.77",
+    "volume_24h_fp": "0.00",
     "volume_fp": "3430281.20",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3008,9 +3018,9 @@
     "yes_sub_title": "Sacramento"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT08SACLAL-SAC",
-  "market_captured_at": "2026-10-09T21:20:54.926Z",
+  "market_captured_at": "2026-10-10T06:15:59.299Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-09T21:20:55.560Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT08SACLAL-SAC/candlesticks?start_ts=1791525601&end_ts=1791580855&period_interval=60"
+  "last_ingested_at": "2026-10-10T06:15:59.914Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT08SACLAL-SAC/candlesticks?start_ts=1791525601&end_ts=1791612959&period_interval=60"
 }
