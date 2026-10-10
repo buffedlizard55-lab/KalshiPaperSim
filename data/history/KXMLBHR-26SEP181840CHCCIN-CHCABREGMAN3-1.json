@@ -749,6 +749,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-10T20:20:12.084Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -809,9 +819,9 @@
     "yes_sub_title": "Alex Bregman: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1",
-  "market_captured_at": "2026-10-10T12:35:58.628Z",
+  "market_captured_at": "2026-10-10T20:20:11.547Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-10T12:35:59.179Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHR/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1/candlesticks?start_ts=1789790401&end_ts=1791635758&period_interval=1440"
+  "last_ingested_at": "2026-10-10T20:20:12.067Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHR/markets/KXMLBHR-26SEP181840CHCCIN-CHCABREGMAN3-1/candlesticks?start_ts=1789790401&end_ts=1791663611&period_interval=1440"
 }

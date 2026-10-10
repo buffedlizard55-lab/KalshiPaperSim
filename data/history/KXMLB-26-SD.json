@@ -35311,6 +35311,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-10T20:20:03.627Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-SD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -35368,9 +35378,9 @@
     "yes_sub_title": "San Diego"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-SD",
-  "market_captured_at": "2026-10-10T12:35:51.819Z",
+  "market_captured_at": "2026-10-10T20:20:03.092Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-10T12:35:52.368Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SD/candlesticks?start_ts=1791518401&end_ts=1791635752&period_interval=1440",
+  "last_ingested_at": "2026-10-10T20:20:03.610Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SD/candlesticks?start_ts=1791518401&end_ts=1791663603&period_interval=1440",
   "result": "no"
 }
