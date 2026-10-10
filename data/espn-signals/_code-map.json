@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-10T19:06:29.826Z",
+ "generatedAt": "2026-10-10T22:37:58.768Z",
  "rows": [
   {
    "league": "nba",
@@ -2522,17 +2522,17 @@
      "role": "away"
     },
     {
+     "ticker": "KXNHLGAME-26OCT07EDMANA-ANA",
+     "rulesName": "Anaheim",
+     "role": "home"
+    },
+    {
      "ticker": "KXNHLGAME-26OCT07EDMANA-EDM",
      "rulesName": "Anaheim",
      "role": "home"
     },
     {
      "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
-     "rulesName": "Anaheim",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP20SJANA-SJ",
      "rulesName": "Anaheim",
      "role": "home"
     }
@@ -2782,6 +2782,11 @@
    "espnReason": "MATCHED",
    "evidence": [
     {
+     "ticker": "KXNHLGAME-26OCT07EDMANA-ANA",
+     "rulesName": "Edmonton",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26OCT07EDMANA-EDM",
      "rulesName": "Edmonton",
      "role": "away"
@@ -2798,11 +2803,6 @@
     },
     {
      "ticker": "KXNHLGAME-26SEP29VANEDM-EDM",
-     "rulesName": "Edmonton",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP29VANEDM-VAN",
      "rulesName": "Edmonton",
      "role": "home"
     }
