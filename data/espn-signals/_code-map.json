@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-11T19:18:54.689Z",
+ "generatedAt": "2026-10-11T23:00:30.300Z",
  "rows": [
   {
    "league": "nba",
@@ -1275,6 +1275,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "NEB",
+   "kalshiName": "Nebraska",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT17NEBORE-NEB",
+     "rulesName": "Nebraska",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "NHC",
    "kalshiName": "New Haven",
    "conflictWith": null,
@@ -1375,6 +1390,11 @@
      "ticker": "KXNCAAFGAME-26OCT10UCLAORE-UCLA",
      "rulesName": "Oregon",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17NEBORE-NEB",
+     "rulesName": "Oregon",
+     "role": "home"
     }
    ]
   },
@@ -1425,6 +1445,21 @@
      "ticker": "KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
      "rulesName": "Austin Peay",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "PITT",
+   "kalshiName": "Pittsburgh",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT23PITTMIA-MIA",
+     "rulesName": "Pittsburgh",
+     "role": "away"
     }
    ]
   },
@@ -3724,6 +3759,14 @@
   },
   {
    "ticker": "KXNFLGAME-26OCT08TBDAL-TB",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT11PHIJAC-JAC",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT11PHIJAC-PHI",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
