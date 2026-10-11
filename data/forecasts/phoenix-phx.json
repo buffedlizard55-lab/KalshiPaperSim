@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/AZC013",
       "relativeLocation": "Phoenix, AZ",
       "timeZone": "America/Phoenix",
-      "resolvedAt": "2026-10-11T14:07:32.539Z",
+      "resolvedAt": "2026-10-11T22:58:08.155Z",
       "pointsUrl": "https://api.weather.gov/points/33.4342,-112.0116"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -5694,6 +5694,72 @@
           "startTime": "2026-10-17T06:00:00-07:00",
           "endTime": "2026-10-17T18:00:00-07:00",
           "probabilityOfPrecipitationPct": 1
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-10-11T22:58:08.155Z",
+      "points_url": "https://api.weather.gov/points/33.4342,-112.0116",
+      "forecast_url": "https://api.weather.gov/gridpoints/PSR/161,57/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-10-11T20:08:12+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-10-11",
+          "highF": 86,
+          "periodName": "This Afternoon",
+          "startTime": "2026-10-11T13:00:00-07:00",
+          "endTime": "2026-10-11T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 33
+        },
+        {
+          "date": "2026-10-12",
+          "highF": 81,
+          "periodName": "Columbus Day",
+          "startTime": "2026-10-12T06:00:00-07:00",
+          "endTime": "2026-10-12T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 50
+        },
+        {
+          "date": "2026-10-13",
+          "highF": 77,
+          "periodName": "Tuesday",
+          "startTime": "2026-10-13T06:00:00-07:00",
+          "endTime": "2026-10-13T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 23
+        },
+        {
+          "date": "2026-10-14",
+          "highF": 79,
+          "periodName": "Wednesday",
+          "startTime": "2026-10-14T06:00:00-07:00",
+          "endTime": "2026-10-14T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-15",
+          "highF": 86,
+          "periodName": "Thursday",
+          "startTime": "2026-10-15T06:00:00-07:00",
+          "endTime": "2026-10-15T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-16",
+          "highF": 87,
+          "periodName": "Friday",
+          "startTime": "2026-10-16T06:00:00-07:00",
+          "endTime": "2026-10-16T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 9
+        },
+        {
+          "date": "2026-10-17",
+          "highF": 85,
+          "periodName": "Saturday",
+          "startTime": "2026-10-17T06:00:00-07:00",
+          "endTime": "2026-10-17T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 5
         }
       ]
     }
