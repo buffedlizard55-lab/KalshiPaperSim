@@ -1,0 +1,134 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-12",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261012"
+  ]
+ },
+ "captures": [
+  "2026-10-11T10:04:05.157Z"
+ ],
+ "events": {
+  "401892485": {
+   "eventId": "401892485",
+   "date": "2026-10-12T17:00Z",
+   "easternDate": "2026-10-12",
+   "name": "Florida Panthers at Buffalo Sabres",
+   "shortName": "FLA @ BUF",
+   "week": null,
+   "venue": "KeyBank Center",
+   "homeAbbr": "BUF",
+   "homeTeamId": "2",
+   "homeName": "Buffalo Sabres",
+   "awayAbbr": "FLA",
+   "awayTeamId": "26",
+   "awayName": "Florida Panthers",
+   "firstCapturedAt": "2026-10-11T10:04:05.157Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-11T10:04:05.157Z",
+     "last_seen_at": "2026-10-11T10:04:05.157Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-3-0",
+      "away": "2-1-2"
+     }
+    }
+   ]
+  },
+  "401892486": {
+   "eventId": "401892486",
+   "date": "2026-10-12T23:00Z",
+   "easternDate": "2026-10-12",
+   "name": "Ottawa Senators at New Jersey Devils",
+   "shortName": "OTT @ NJ",
+   "week": null,
+   "venue": "Prudential Center",
+   "homeAbbr": "NJ",
+   "homeTeamId": "11",
+   "homeName": "New Jersey Devils",
+   "awayAbbr": "OTT",
+   "awayTeamId": "14",
+   "awayName": "Ottawa Senators",
+   "firstCapturedAt": "2026-10-11T10:04:05.157Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-11T10:04:05.157Z",
+     "last_seen_at": "2026-10-11T10:04:05.157Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-2-0",
+      "away": "4-1-0"
+     }
+    }
+   ]
+  },
+  "401892487": {
+   "eventId": "401892487",
+   "date": "2026-10-13T00:00Z",
+   "easternDate": "2026-10-12",
+   "name": "Vegas Golden Knights at Minnesota Wild",
+   "shortName": "VGK @ MIN",
+   "week": null,
+   "venue": "Grand Casino Arena",
+   "homeAbbr": "MIN",
+   "homeTeamId": "30",
+   "homeName": "Minnesota Wild",
+   "awayAbbr": "VGK",
+   "awayTeamId": "37",
+   "awayName": "Vegas Golden Knights",
+   "firstCapturedAt": "2026-10-11T10:04:05.157Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-11T10:04:05.157Z",
+     "last_seen_at": "2026-10-11T10:04:05.157Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-1-1",
+      "away": "5-1-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-11T10:04:05.157Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261012"
+}

@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-12",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261012"
+  ]
+ },
+ "captures": [
+  "2026-10-11T10:04:04.837Z"
+ ],
+ "events": {
+  "401872994": {
+   "eventId": "401872994",
+   "date": "2026-10-13T00:15Z",
+   "easternDate": "2026-10-12",
+   "name": "Buffalo Bills at Los Angeles Rams",
+   "shortName": "BUF @ LAR",
+   "week": 5,
+   "venue": "SoFi Stadium",
+   "homeAbbr": "LAR",
+   "homeTeamId": "14",
+   "homeName": "Los Angeles Rams",
+   "awayAbbr": "BUF",
+   "awayTeamId": "2",
+   "awayName": "Buffalo Bills",
+   "firstCapturedAt": "2026-10-11T10:04:04.837Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "LAR -3.5",
+    "spread": -3.5,
+    "overUnder": 54.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-11T10:04:04.837Z",
+     "last_seen_at": "2026-10-11T10:04:04.837Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-2",
+      "away": "3-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-11T10:04:04.837Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261012"
+}

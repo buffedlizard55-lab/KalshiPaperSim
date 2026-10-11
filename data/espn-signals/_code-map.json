@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-11T03:03:15.141Z",
+ "generatedAt": "2026-10-11T10:04:06.229Z",
  "rows": [
   {
    "league": "nba",
@@ -1195,6 +1195,26 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "MURR",
+   "kalshiName": "Murray St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT24MURRSDST-MURR",
+     "rulesName": "Murray St.",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT24MURRSDST-SDST",
+     "rulesName": "Murray St.",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "NCST",
    "kalshiName": "NC St.",
    "conflictWith": null,
@@ -1506,6 +1526,16 @@
    "espn": null,
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT24MURRSDST-MURR",
+     "rulesName": "South Dakota St.",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT24MURRSDST-SDST",
+     "rulesName": "South Dakota St.",
+     "role": "home"
+    },
     {
      "ticker": "KXNCAAFGAME-26SEP26EIUSDST-SDST",
      "rulesName": "South Dakota St.",
@@ -2532,9 +2562,9 @@
      "role": "home"
     },
     {
-     "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
+     "ticker": "KXNHLGAME-26OCT10ANACGY-ANA",
      "rulesName": "Anaheim",
-     "role": "home"
+     "role": "away"
     }
    ]
   },
@@ -2626,6 +2656,11 @@
    },
    "espnReason": "MATCHED",
    "evidence": [
+    {
+     "ticker": "KXNHLGAME-26OCT10ANACGY-ANA",
+     "rulesName": "Calgary",
+     "role": "home"
+    },
     {
      "ticker": "KXNHLGAME-26SEP20SEACGY-CGY",
      "rulesName": "Calgary",
@@ -2882,9 +2917,9 @@
      "role": "home"
     },
     {
-     "ticker": "KXNHLGAME-26SEP19VGKLA-LA",
+     "ticker": "KXNHLGAME-26OCT10LAVGK-VGK",
      "rulesName": "Los Angeles",
-     "role": "home"
+     "role": "away"
     }
    ]
   },

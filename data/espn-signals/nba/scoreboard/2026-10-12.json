@@ -1,0 +1,212 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-12",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261012"
+  ]
+ },
+ "captures": [
+  "2026-10-11T10:04:04.927Z"
+ ],
+ "events": {
+  "401898402": {
+   "eventId": "401898402",
+   "date": "2026-10-12T23:00Z",
+   "easternDate": "2026-10-12",
+   "name": "Oklahoma City Thunder at Atlanta Hawks",
+   "shortName": "OKC @ ATL",
+   "week": null,
+   "venue": "State Farm Arena",
+   "homeAbbr": "ATL",
+   "homeTeamId": "1",
+   "homeName": "Atlanta Hawks",
+   "awayAbbr": "OKC",
+   "awayTeamId": "25",
+   "awayName": "Oklahoma City Thunder",
+   "firstCapturedAt": "2026-10-11T10:04:04.927Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-11T10:04:04.927Z",
+     "last_seen_at": "2026-10-11T10:04:04.927Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-1",
+      "away": "0-2"
+     }
+    }
+   ]
+  },
+  "401898721": {
+   "eventId": "401898721",
+   "date": "2026-10-13T01:00Z",
+   "easternDate": "2026-10-12",
+   "name": "San Antonio Spurs at Utah Jazz",
+   "shortName": "SA @ UTAH",
+   "week": null,
+   "venue": "Delta Center",
+   "homeAbbr": "UTAH",
+   "homeTeamId": "26",
+   "homeName": "Utah Jazz",
+   "awayAbbr": "SA",
+   "awayTeamId": "24",
+   "awayName": "San Antonio Spurs",
+   "firstCapturedAt": "2026-10-11T10:04:04.927Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-11T10:04:04.927Z",
+     "last_seen_at": "2026-10-11T10:04:04.927Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "0-2"
+     }
+    }
+   ]
+  },
+  "401901824": {
+   "eventId": "401901824",
+   "date": "2026-10-12T23:00Z",
+   "easternDate": "2026-10-12",
+   "name": "Brooklyn Nets at Washington Wizards",
+   "shortName": "BKN @ WSH",
+   "week": null,
+   "venue": "Capital One Arena",
+   "homeAbbr": "WSH",
+   "homeTeamId": "27",
+   "homeName": "Washington Wizards",
+   "awayAbbr": "BKN",
+   "awayTeamId": "17",
+   "awayName": "Brooklyn Nets",
+   "firstCapturedAt": "2026-10-11T10:04:04.927Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-11T10:04:04.927Z",
+     "last_seen_at": "2026-10-11T10:04:04.927Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-0",
+      "away": "2-0"
+     }
+    }
+   ]
+  },
+  "401914124": {
+   "eventId": "401914124",
+   "date": "2026-10-12T23:30Z",
+   "easternDate": "2026-10-12",
+   "name": "Minnesota Timberwolves at New York Knicks",
+   "shortName": "MIN @ NY",
+   "week": null,
+   "venue": "Madison Square Garden",
+   "homeAbbr": "NY",
+   "homeTeamId": "18",
+   "homeName": "New York Knicks",
+   "awayAbbr": "MIN",
+   "awayTeamId": "16",
+   "awayName": "Minnesota Timberwolves",
+   "firstCapturedAt": "2026-10-11T10:04:04.927Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-11T10:04:04.927Z",
+     "last_seen_at": "2026-10-11T10:04:04.927Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-2",
+      "away": "2-1"
+     }
+    }
+   ]
+  },
+  "401914130": {
+   "eventId": "401914130",
+   "date": "2026-10-12T20:00Z",
+   "easternDate": "2026-10-12",
+   "name": "London Lions at Portland Trail Blazers",
+   "shortName": "LON @ POR",
+   "week": null,
+   "venue": "Moda Center",
+   "homeAbbr": "POR",
+   "homeTeamId": "22",
+   "homeName": "Portland Trail Blazers",
+   "awayAbbr": "LON",
+   "awayTeamId": "134478",
+   "awayName": "London Lions",
+   "firstCapturedAt": "2026-10-11T10:04:04.927Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-11T10:04:04.927Z",
+     "last_seen_at": "2026-10-11T10:04:04.927Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-0",
+      "away": null
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-11T10:04:04.927Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261012"
+}
