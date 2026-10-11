@@ -13,11 +13,11 @@
  * captured_at. Read it only through src/espn-signal-store.js, which refuses
  * any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 7 league(s) · 447 event(s) · generated 2026-10-11T10:04:08.512Z
+ * 7 league(s) · 447 event(s) · generated 2026-10-11T10:07:33.804Z
  */
 
 export const ESPN_SIGNAL_DATA = {
- "generatedAt": "2026-10-11T10:04:08.512Z",
+ "generatedAt": "2026-10-11T10:07:33.804Z",
  "present": true,
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "endpoints": {
