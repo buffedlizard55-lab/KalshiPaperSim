@@ -1002,11 +1002,41 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1791702000,
+      "open_interest_fp": "34364.34",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
     {
       "captured_at": "2026-10-11T06:10:57.784Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHCHI-26OCT10-B79.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-11T09:12:51.601Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHCHI-26OCT10-B79.5/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -1038,9 +1068,9 @@
     "occurrence_datetime": "2026-10-11T14:00:00Z",
     "open_interest_fp": "34364.34",
     "open_time": "2026-10-09T14:00:00Z",
-    "previous_price_dollars": "0.2000",
-    "previous_yes_ask_dollars": "0.2100",
-    "previous_yes_bid_dollars": "0.2000",
+    "previous_price_dollars": "0.0800",
+    "previous_yes_ask_dollars": "0.0800",
+    "previous_yes_bid_dollars": "0.0700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1059,7 +1089,7 @@
     "ticker": "KXHIGHCHI-26OCT10-B79.5",
     "title": "Will the maximum temperature be 79-80° on Oct 10, 2026?",
     "updated_time": "2026-10-11T06:00:03.429903Z",
-    "volume_24h_fp": "57239.82",
+    "volume_24h_fp": "55442.54",
     "volume_fp": "60938.95",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1068,8 +1098,8 @@
     "yes_sub_title": "79° to 80°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHCHI-26OCT10-B79.5",
-  "market_captured_at": "2026-10-11T06:10:57.137Z",
+  "market_captured_at": "2026-10-11T09:12:50.966Z",
   "status": "closed",
-  "last_ingested_at": "2026-10-11T06:10:57.763Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26OCT10-B79.5/candlesticks?start_ts=1791468000&end_ts=1791699057&period_interval=60"
+  "last_ingested_at": "2026-10-11T09:12:51.585Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26OCT10-B79.5/candlesticks?start_ts=1791698401&end_ts=1791709971&period_interval=60"
 }

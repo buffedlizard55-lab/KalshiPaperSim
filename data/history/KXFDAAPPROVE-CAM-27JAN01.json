@@ -3322,6 +3322,26 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-11T09:09:24.471Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAM-27JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-11T09:20:25.933Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAM-27JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3379,9 +3399,9 @@
     "yes_sub_title": "Before Jan 1, 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-CAM-27JAN01",
-  "market_captured_at": "2026-10-11T06:18:41.374Z",
+  "market_captured_at": "2026-10-11T09:20:25.236Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-11T06:18:41.997Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CAM-27JAN01/candlesticks?start_ts=1788926401&end_ts=1791699521&period_interval=1440"
+  "last_ingested_at": "2026-10-11T09:20:25.916Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-CAM-27JAN01/candlesticks?start_ts=1788926401&end_ts=1791710425&period_interval=1440"
 }

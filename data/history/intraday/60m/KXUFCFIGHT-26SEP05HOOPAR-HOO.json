@@ -4924,6 +4924,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-11T09:16:20.423Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP05HOOPAR-HOO/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4981,9 +4991,9 @@
     "yes_sub_title": "Daniel Hooker"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP05HOOPAR-HOO",
-  "market_captured_at": "2026-10-11T06:14:27.794Z",
+  "market_captured_at": "2026-10-11T09:16:19.471Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-11T06:14:28.744Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP05HOOPAR-HOO/candlesticks?start_ts=1791237601&end_ts=1791699268&period_interval=60"
+  "last_ingested_at": "2026-10-11T09:16:20.407Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP05HOOPAR-HOO/candlesticks?start_ts=1791237601&end_ts=1791710179&period_interval=60"
 }
