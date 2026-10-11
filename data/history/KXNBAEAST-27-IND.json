@@ -14968,6 +14968,190 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-11T20:35:08.193Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-IND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3888999.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0600",
+              "910844.00"
+            ],
+            [
+              "0.0700",
+              "25000.00"
+            ],
+            [
+              "0.1100",
+              "508522.00"
+            ],
+            [
+              "0.1400",
+              "140.73"
+            ],
+            [
+              "0.1700",
+              "10000.00"
+            ],
+            [
+              "0.1800",
+              "409285.00"
+            ],
+            [
+              "0.2400",
+              "1433.32"
+            ],
+            [
+              "0.2500",
+              "292268.24"
+            ],
+            [
+              "0.2700",
+              "5026.82"
+            ],
+            [
+              "0.2900",
+              "43.00"
+            ],
+            [
+              "0.3200",
+              "226797.00"
+            ],
+            [
+              "0.3700",
+              "3000.00"
+            ],
+            [
+              "0.3900",
+              "339165.00"
+            ],
+            [
+              "0.4600",
+              "74608.00"
+            ],
+            [
+              "0.4700",
+              "995.00"
+            ],
+            [
+              "0.4800",
+              "167559.00"
+            ],
+            [
+              "0.5300",
+              "456.02"
+            ],
+            [
+              "0.5400",
+              "2165.12"
+            ],
+            [
+              "0.5700",
+              "26.82"
+            ],
+            [
+              "0.5900",
+              "85002.00"
+            ],
+            [
+              "0.6700",
+              "56491.00"
+            ],
+            [
+              "0.7100",
+              "3000.00"
+            ],
+            [
+              "0.7400",
+              "17318.00"
+            ],
+            [
+              "0.7800",
+              "6046.00"
+            ],
+            [
+              "0.7900",
+              "132.21"
+            ],
+            [
+              "0.8300",
+              "2711.92"
+            ],
+            [
+              "0.8400",
+              "100.00"
+            ],
+            [
+              "0.8500",
+              "1.98"
+            ],
+            [
+              "0.8700",
+              "100.00"
+            ],
+            [
+              "0.8800",
+              "100.00"
+            ],
+            [
+              "0.8900",
+              "31.26"
+            ],
+            [
+              "0.9000",
+              "5003.96"
+            ],
+            [
+              "0.9100",
+              "549.28"
+            ],
+            [
+              "0.9200",
+              "512.36"
+            ],
+            [
+              "0.9300",
+              "17164.41"
+            ],
+            [
+              "0.9400",
+              "92680.05"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "321926.04"
+            ],
+            [
+              "0.0200",
+              "56326.68"
+            ],
+            [
+              "0.0300",
+              "49913.69"
+            ],
+            [
+              "0.0400",
+              "3145.53"
+            ],
+            [
+              "0.0500",
+              "20611.27"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -14993,7 +15177,7 @@
     "occurrence_datetime": "2027-06-30T14:00:00Z",
     "open_interest_fp": "135550.04",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.0500",
+    "previous_price_dollars": "0.0600",
     "previous_yes_ask_dollars": "0.0600",
     "previous_yes_bid_dollars": "0.0500",
     "price_level_structure": "linear_cent",
@@ -15014,17 +15198,17 @@
     "ticker": "KXNBAEAST-27-IND",
     "title": "Will Indiana win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "1391.57",
+    "volume_24h_fp": "1329.20",
     "volume_fp": "146724.86",
     "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "92180.05",
+    "yes_ask_size_fp": "92680.05",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "19817.92",
+    "yes_bid_size_fp": "20611.27",
     "yes_sub_title": "Indiana"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-IND",
-  "market_captured_at": "2026-10-11T12:54:40.215Z",
+  "market_captured_at": "2026-10-11T20:35:07.665Z",
   "status": "active",
-  "last_ingested_at": "2026-10-11T12:54:40.753Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-IND/candlesticks?start_ts=1791691201&end_ts=1791723280&period_interval=1440"
+  "last_ingested_at": "2026-10-11T20:35:08.180Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-IND/candlesticks?start_ts=1791691201&end_ts=1791750907&period_interval=1440"
 }

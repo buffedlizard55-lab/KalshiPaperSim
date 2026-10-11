@@ -2731,6 +2731,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-11T20:40:09.751Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT08TORVGK-TOR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2788,9 +2798,9 @@
     "yes_sub_title": "Toronto"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT08TORVGK-TOR",
-  "market_captured_at": "2026-10-11T12:59:34.245Z",
+  "market_captured_at": "2026-10-11T20:40:09.120Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-11T12:59:34.881Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT08TORVGK-TOR/candlesticks?start_ts=1791525601&end_ts=1791723574&period_interval=60"
+  "last_ingested_at": "2026-10-11T20:40:09.737Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT08TORVGK-TOR/candlesticks?start_ts=1791525601&end_ts=1791751209&period_interval=60"
 }

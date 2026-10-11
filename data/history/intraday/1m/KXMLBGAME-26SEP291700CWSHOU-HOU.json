@@ -12460,6 +12460,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-11T20:42:21.104Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP291700CWSHOU-HOU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12517,11 +12527,11 @@
     "yes_sub_title": "Houston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP291700CWSHOU-HOU",
-  "market_captured_at": "2026-10-11T13:01:41.846Z",
+  "market_captured_at": "2026-10-11T20:42:16.997Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-11T13:01:46.197Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP291700CWSHOU-HOU/candlesticks?start_ts=1791678661&end_ts=1791723702&period_interval=1",
+  "last_ingested_at": "2026-10-11T20:42:21.090Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP291700CWSHOU-HOU/candlesticks?start_ts=1791678661&end_ts=1791751337&period_interval=1",
   "trims": [
     {
       "at": "2026-09-30T05:55:57.017Z",

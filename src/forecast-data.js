@@ -10,11 +10,11 @@
  * only through src/forecast-store.js, which refuses any snapshot captured
  * AFTER the decision time (the anti-lookahead rule).
  *
- * 9 location(s) · 776 shipped snapshot(s) · generated 2026-10-11T19:47:13.492Z
+ * 9 location(s) · 776 shipped snapshot(s) · generated 2026-10-11T20:45:44.079Z
  */
 
 export const FORECAST_DATA = {
- "generatedAt": "2026-10-11T19:47:13.492Z",
+ "generatedAt": "2026-10-11T20:45:44.079Z",
  "present": true,
  "locations": {
   "austin-camp-mabry": {
