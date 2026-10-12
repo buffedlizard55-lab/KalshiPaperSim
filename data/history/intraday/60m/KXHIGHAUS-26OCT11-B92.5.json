@@ -977,11 +977,41 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1791788400,
+      "open_interest_fp": "34123.94",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
     {
       "captured_at": "2026-10-12T06:21:06.181Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26OCT11-B92.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-12T09:37:48.906Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26OCT11-B92.5/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -1034,7 +1064,7 @@
     "ticker": "KXHIGHAUS-26OCT11-B92.5",
     "title": "Will the maximum temperature be 92-93° on Oct 11, 2026?",
     "updated_time": "2026-10-12T06:00:00.928878Z",
-    "volume_24h_fp": "37810.81",
+    "volume_24h_fp": "37737.91",
     "volume_fp": "39459.12",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1043,8 +1073,8 @@
     "yes_sub_title": "92° to 93°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26OCT11-B92.5",
-  "market_captured_at": "2026-10-12T06:21:05.507Z",
+  "market_captured_at": "2026-10-12T09:37:48.243Z",
   "status": "closed",
-  "last_ingested_at": "2026-10-12T06:21:06.146Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26OCT11-B92.5/candlesticks?start_ts=1791554400&end_ts=1791786065&period_interval=60"
+  "last_ingested_at": "2026-10-12T09:37:48.875Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26OCT11-B92.5/candlesticks?start_ts=1791784801&end_ts=1791797868&period_interval=60"
 }

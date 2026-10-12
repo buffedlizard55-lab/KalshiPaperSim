@@ -12015,6 +12015,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-12T09:43:13.030Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT11BALATL-BAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12063,7 +12073,7 @@
     "ticker": "KXNFLGAME-26OCT11BALATL-BAL",
     "title": "Baltimore wins",
     "updated_time": "2026-10-12T03:53:19.983388Z",
-    "volume_24h_fp": "51432943.81",
+    "volume_24h_fp": "51422931.13",
     "volume_fp": "51810664.75",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12072,11 +12082,11 @@
     "yes_sub_title": "Baltimore"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT11BALATL-BAL",
-  "market_captured_at": "2026-10-12T06:26:39.940Z",
+  "market_captured_at": "2026-10-12T09:43:12.367Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-12T06:26:41.291Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT11BALATL-BAL/candlesticks?start_ts=1791700000&end_ts=1791786399&period_interval=1",
+  "last_ingested_at": "2026-10-12T09:43:13.000Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT11BALATL-BAL/candlesticks?start_ts=1791776941&end_ts=1791798192&period_interval=1",
   "trims": [
     {
       "at": "2026-10-12T06:26:41.625Z",
