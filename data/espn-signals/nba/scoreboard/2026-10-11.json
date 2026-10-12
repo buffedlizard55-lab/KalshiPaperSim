@@ -16,7 +16,8 @@
   "2026-10-11T10:04:04.908Z",
   "2026-10-11T19:18:53.615Z",
   "2026-10-11T23:00:29.254Z",
-  "2026-10-12T02:11:25.923Z"
+  "2026-10-12T02:11:25.923Z",
+  "2026-10-12T03:26:27.323Z"
  ],
  "events": {
   "401898400": {
@@ -58,7 +59,7 @@
     },
     {
      "captured_at": "2026-10-11T19:18:53.615Z",
-     "last_seen_at": "2026-10-12T02:11:25.923Z",
+     "last_seen_at": "2026-10-12T03:26:27.323Z",
      "fp": "post|4|0|115,132|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -137,7 +138,7 @@
     },
     {
      "captured_at": "2026-10-12T02:11:25.923Z",
-     "last_seen_at": "2026-10-12T02:11:25.923Z",
+     "last_seen_at": "2026-10-12T03:26:27.323Z",
      "fp": "post|4|0|119,105|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -196,7 +197,7 @@
     },
     {
      "captured_at": "2026-10-12T02:11:25.923Z",
-     "last_seen_at": "2026-10-12T02:11:25.923Z",
+     "last_seen_at": "2026-10-12T03:26:27.323Z",
      "fp": "post|4|12|105,90|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -272,10 +273,30 @@
       "home": "1-1",
       "away": "1-1"
      }
+    },
+    {
+     "captured_at": "2026-10-12T03:26:27.323Z",
+     "last_seen_at": "2026-10-12T03:26:27.323Z",
+     "fp": "in|4|5|117,113|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 4,
+     "clock": 332,
+     "displayClock": "5:32",
+     "scores": {
+      "home": 117,
+      "away": 113
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "1-1"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-12T02:11:25.923Z",
+ "last_ingested_at": "2026-10-12T03:26:27.323Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261011"
 }
