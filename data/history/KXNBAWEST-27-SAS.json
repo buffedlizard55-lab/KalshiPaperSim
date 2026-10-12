@@ -1278,6 +1278,31 @@
         "low_dollars": "0.3200",
         "open_dollars": "0.3200"
       }
+    },
+    {
+      "end_period_ts": 1791777600,
+      "open_interest_fp": "41155.36",
+      "price": {
+        "close_dollars": "0.3400",
+        "high_dollars": "0.3400",
+        "low_dollars": "0.3400",
+        "mean_dollars": "0.3400",
+        "open_dollars": "0.3400",
+        "previous_dollars": "0.3400"
+      },
+      "volume_fp": "205.22",
+      "yes_ask": {
+        "close_dollars": "0.3400",
+        "high_dollars": "0.3400",
+        "low_dollars": "0.3400",
+        "open_dollars": "0.3400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3200",
+        "high_dollars": "0.3300",
+        "low_dollars": "0.3200",
+        "open_dollars": "0.3200"
+      }
     }
   ],
   "books": [
@@ -19648,6 +19673,242 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-12T06:18:48.822Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-SAS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3889140.69"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0400",
+              "8.43"
+            ],
+            [
+              "0.0600",
+              "933146.00"
+            ],
+            [
+              "0.0700",
+              "25016.86"
+            ],
+            [
+              "0.1000",
+              "41.77"
+            ],
+            [
+              "0.1100",
+              "508988.00"
+            ],
+            [
+              "0.1200",
+              "2.28"
+            ],
+            [
+              "0.1300",
+              "13.29"
+            ],
+            [
+              "0.1400",
+              "20.49"
+            ],
+            [
+              "0.1500",
+              "12.94"
+            ],
+            [
+              "0.1700",
+              "10000.00"
+            ],
+            [
+              "0.2000",
+              "61.47"
+            ],
+            [
+              "0.2100",
+              "471873.00"
+            ],
+            [
+              "0.2300",
+              "1.31"
+            ],
+            [
+              "0.2500",
+              "350.89"
+            ],
+            [
+              "0.2700",
+              "314544.00"
+            ],
+            [
+              "0.2900",
+              "2078.00"
+            ],
+            [
+              "0.3300",
+              "199145.00"
+            ],
+            [
+              "0.3500",
+              "10.20"
+            ],
+            [
+              "0.3700",
+              "2840.00"
+            ],
+            [
+              "0.3800",
+              "34623.00"
+            ],
+            [
+              "0.3900",
+              "66734.00"
+            ],
+            [
+              "0.4600",
+              "39179.00"
+            ],
+            [
+              "0.4700",
+              "3000.00"
+            ],
+            [
+              "0.4900",
+              "300.00"
+            ],
+            [
+              "0.5000",
+              "9375.00"
+            ],
+            [
+              "0.5100",
+              "90.00"
+            ],
+            [
+              "0.5700",
+              "500.00"
+            ],
+            [
+              "0.5800",
+              "500.00"
+            ],
+            [
+              "0.5900",
+              "500.00"
+            ],
+            [
+              "0.6000",
+              "7464.00"
+            ],
+            [
+              "0.6100",
+              "1961.79"
+            ],
+            [
+              "0.6200",
+              "5103.37"
+            ],
+            [
+              "0.6300",
+              "50039.02"
+            ],
+            [
+              "0.6400",
+              "20786.95"
+            ],
+            [
+              "0.6500",
+              "30475.31"
+            ],
+            [
+              "0.6600",
+              "7818.42"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1952319.00"
+            ],
+            [
+              "0.0300",
+              "147002.00"
+            ],
+            [
+              "0.0500",
+              "88200.00"
+            ],
+            [
+              "0.0800",
+              "2536.00"
+            ],
+            [
+              "0.1100",
+              "130599.00"
+            ],
+            [
+              "0.1200",
+              "234.75"
+            ],
+            [
+              "0.1300",
+              "204050.00"
+            ],
+            [
+              "0.1500",
+              "15043.00"
+            ],
+            [
+              "0.1700",
+              "53721.00"
+            ],
+            [
+              "0.2100",
+              "19872.00"
+            ],
+            [
+              "0.2200",
+              "3521.00"
+            ],
+            [
+              "0.2300",
+              "526.00"
+            ],
+            [
+              "0.2700",
+              "231.00"
+            ],
+            [
+              "0.2800",
+              "5000.00"
+            ],
+            [
+              "0.2900",
+              "498.99"
+            ],
+            [
+              "0.3000",
+              "37.77"
+            ],
+            [
+              "0.3100",
+              "5809.17"
+            ],
+            [
+              "0.3200",
+              "6175.92"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -19671,7 +19932,7 @@
     "no_sub_title": "San Antonio",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "41155.36",
+    "open_interest_fp": "41163.69",
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.3400",
     "previous_yes_ask_dollars": "0.3400",
@@ -19694,17 +19955,17 @@
     "ticker": "KXNBAWEST-27-SAS",
     "title": "Will San Antonio win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "339.49",
-    "volume_fp": "56246.35",
+    "volume_24h_fp": "213.55",
+    "volume_fp": "56254.68",
     "yes_ask_dollars": "0.3400",
-    "yes_ask_size_fp": "9186.31",
+    "yes_ask_size_fp": "7818.42",
     "yes_bid_dollars": "0.3200",
-    "yes_bid_size_fp": "6175.04",
+    "yes_bid_size_fp": "6175.92",
     "yes_sub_title": "San Antonio"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-SAS",
-  "market_captured_at": "2026-10-11T20:35:23.409Z",
+  "market_captured_at": "2026-10-12T06:18:48.252Z",
   "status": "active",
-  "last_ingested_at": "2026-10-11T20:35:23.924Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1791691201&end_ts=1791750923&period_interval=1440"
+  "last_ingested_at": "2026-10-12T06:18:48.788Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1791691201&end_ts=1791785928&period_interval=1440"
 }

@@ -2828,6 +2828,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-12T06:23:56.388Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT10ANACGY-ANA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2853,9 +2863,9 @@
     "occurrence_datetime": "2026-10-11T05:00:00Z",
     "open_interest_fp": "376117.63",
     "open_time": "2026-10-04T04:06:00Z",
-    "previous_price_dollars": "0.5100",
-    "previous_yes_ask_dollars": "0.5100",
-    "previous_yes_bid_dollars": "0.5000",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2876,7 +2886,7 @@
     "ticker": "KXNHLGAME-26OCT10ANACGY-ANA",
     "title": "Anaheim wins",
     "updated_time": "2026-10-11T04:53:08.932671Z",
-    "volume_24h_fp": "657566.38",
+    "volume_24h_fp": "0.00",
     "volume_fp": "692226.46",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2885,9 +2895,9 @@
     "yes_sub_title": "Anaheim"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT10ANACGY-ANA",
-  "market_captured_at": "2026-10-11T20:40:14.116Z",
+  "market_captured_at": "2026-10-12T06:23:55.719Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-11T20:40:14.731Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT10ANACGY-ANA/candlesticks?start_ts=1791694801&end_ts=1791751214&period_interval=60"
+  "last_ingested_at": "2026-10-12T06:23:56.354Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT10ANACGY-ANA/candlesticks?start_ts=1791694801&end_ts=1791786236&period_interval=60"
 }

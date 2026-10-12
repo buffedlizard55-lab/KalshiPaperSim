@@ -6784,6 +6784,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-12T06:19:01.046Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6841,9 +6851,9 @@
     "yes_sub_title": "Ohio St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU",
-  "market_captured_at": "2026-10-11T20:35:34.941Z",
+  "market_captured_at": "2026-10-12T06:19:00.477Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-11T20:35:35.457Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/candlesticks?start_ts=1790481601&end_ts=1791750935&period_interval=1440",
+  "last_ingested_at": "2026-10-12T06:19:01.012Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26ILLOSU-OSU/candlesticks?start_ts=1790481601&end_ts=1791785940&period_interval=1440",
   "result": "yes"
 }
