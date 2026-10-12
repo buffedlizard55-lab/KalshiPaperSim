@@ -15,7 +15,8 @@
   "2026-10-11T03:03:13.463Z",
   "2026-10-11T10:04:04.908Z",
   "2026-10-11T19:18:53.615Z",
-  "2026-10-11T23:00:29.254Z"
+  "2026-10-11T23:00:29.254Z",
+  "2026-10-12T02:11:25.923Z"
  ],
  "events": {
   "401898400": {
@@ -57,7 +58,7 @@
     },
     {
      "captured_at": "2026-10-11T19:18:53.615Z",
-     "last_seen_at": "2026-10-11T23:00:29.254Z",
+     "last_seen_at": "2026-10-12T02:11:25.923Z",
      "fp": "post|4|0|115,132|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -133,6 +134,26 @@
       "home": "0-1",
       "away": "1-0"
      }
+    },
+    {
+     "captured_at": "2026-10-12T02:11:25.923Z",
+     "last_seen_at": "2026-10-12T02:11:25.923Z",
+     "fp": "post|4|0|119,105|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 119,
+      "away": 105
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "1-1"
+     }
     }
    ]
   },
@@ -171,6 +192,26 @@
      "recordsOverall": {
       "home": "0-1",
       "away": "1-1"
+     }
+    },
+    {
+     "captured_at": "2026-10-12T02:11:25.923Z",
+     "last_seen_at": "2026-10-12T02:11:25.923Z",
+     "fp": "post|4|12|105,90|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 105,
+      "away": 90
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "1-2"
      }
     }
    ]
@@ -211,10 +252,30 @@
       "home": "1-1",
       "away": "1-1"
      }
+    },
+    {
+     "captured_at": "2026-10-12T02:11:25.923Z",
+     "last_seen_at": "2026-10-12T02:11:25.923Z",
+     "fp": "in|2|4|49,57|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 250,
+     "displayClock": "4:10",
+     "scores": {
+      "home": 49,
+      "away": 57
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "1-1"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-11T23:00:29.254Z",
+ "last_ingested_at": "2026-10-12T02:11:25.923Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261011"
 }
