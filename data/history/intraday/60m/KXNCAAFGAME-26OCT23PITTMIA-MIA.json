@@ -1284,6 +1284,166 @@
         "low_dollars": "0.7600",
         "open_dollars": "0.8200"
       }
+    },
+    {
+      "end_period_ts": 1791820800,
+      "open_interest_fp": "4745.08",
+      "price": {
+        "previous_dollars": "0.8300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.8800",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7900",
+        "high_dollars": "0.8700",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.7900"
+      }
+    },
+    {
+      "end_period_ts": 1791824400,
+      "open_interest_fp": "4745.08",
+      "price": {
+        "previous_dollars": "0.8300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8500",
+        "high_dollars": "0.8600",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.7900"
+      }
+    },
+    {
+      "end_period_ts": 1791828000,
+      "open_interest_fp": "4745.08",
+      "price": {
+        "previous_dollars": "0.8300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.8800",
+        "open_dollars": "0.9300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8400",
+        "high_dollars": "0.8500",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.8500"
+      }
+    },
+    {
+      "end_period_ts": 1791831600,
+      "open_interest_fp": "4745.08",
+      "price": {
+        "previous_dollars": "0.8300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.8900",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7900",
+        "high_dollars": "0.8600",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.8400"
+      }
+    },
+    {
+      "end_period_ts": 1791835200,
+      "open_interest_fp": "4745.08",
+      "price": {
+        "previous_dollars": "0.8300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9200",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7900",
+        "high_dollars": "0.7900",
+        "low_dollars": "0.7900",
+        "open_dollars": "0.7900"
+      }
+    },
+    {
+      "end_period_ts": 1791838800,
+      "open_interest_fp": "4745.08",
+      "price": {
+        "previous_dollars": "0.8300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9200",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7900",
+        "high_dollars": "0.7900",
+        "low_dollars": "0.7900",
+        "open_dollars": "0.7900"
+      }
+    },
+    {
+      "end_period_ts": 1791842400,
+      "open_interest_fp": "4745.08",
+      "price": {
+        "previous_dollars": "0.8300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9200",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7900",
+        "high_dollars": "0.7900",
+        "low_dollars": "0.7900",
+        "open_dollars": "0.7900"
+      }
+    },
+    {
+      "end_period_ts": 1791846000,
+      "open_interest_fp": "4745.08",
+      "price": {
+        "previous_dollars": "0.8300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9200",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.9100",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8600",
+        "high_dollars": "0.8700",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.7900"
+      }
     }
   ],
   "books": [
@@ -1782,6 +1942,130 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-12T23:19:46.441Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT23PITTMIA-MIA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "101325.00"
+            ],
+            [
+              "0.0200",
+              "119.11"
+            ],
+            [
+              "0.0400",
+              "737.03"
+            ],
+            [
+              "0.0500",
+              "696.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0700",
+              "58.00"
+            ],
+            [
+              "0.0800",
+              "25.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "104796.00"
+            ],
+            [
+              "0.0200",
+              "10037.00"
+            ],
+            [
+              "0.0300",
+              "5981.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "50.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "1000.00"
+            ],
+            [
+              "0.1100",
+              "297.00"
+            ],
+            [
+              "0.1200",
+              "442.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2900",
+              "815.00"
+            ],
+            [
+              "0.3100",
+              "253.00"
+            ],
+            [
+              "0.3300",
+              "497.00"
+            ],
+            [
+              "0.3500",
+              "432.00"
+            ],
+            [
+              "0.3600",
+              "148.00"
+            ],
+            [
+              "0.6200",
+              "730.00"
+            ],
+            [
+              "0.6500",
+              "265.00"
+            ],
+            [
+              "0.7500",
+              "525.00"
+            ],
+            [
+              "0.7600",
+              "9.00"
+            ],
+            [
+              "0.7800",
+              "15.00"
+            ],
+            [
+              "0.7900",
+              "9.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1800,16 +2084,16 @@
     "last_price_dollars": "0.8300",
     "latest_expiration_time": "2026-10-26T00:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.1900",
-    "no_bid_dollars": "0.0900",
+    "no_ask_dollars": "0.2100",
+    "no_bid_dollars": "0.0800",
     "no_sub_title": "Miami (FL)",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-24T03:00:00Z",
     "open_interest_fp": "4745.08",
     "open_time": "2026-10-10T01:07:00Z",
-    "previous_price_dollars": "0.9800",
-    "previous_yes_ask_dollars": "0.9400",
-    "previous_yes_bid_dollars": "0.7800",
+    "previous_price_dollars": "0.8200",
+    "previous_yes_ask_dollars": "0.9200",
+    "previous_yes_bid_dollars": "0.8500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1827,18 +2111,18 @@
     "strike_type": "structured",
     "ticker": "KXNCAAFGAME-26OCT23PITTMIA-MIA",
     "title": "Miami (FL) wins",
-    "updated_time": "2026-10-10T01:07:00.440034Z",
-    "volume_24h_fp": "165.46",
+    "updated_time": "2026-10-12T19:11:31.099602Z",
+    "volume_24h_fp": "148.43",
     "volume_fp": "4842.85",
-    "yes_ask_dollars": "0.9100",
-    "yes_ask_size_fp": "18.00",
-    "yes_bid_dollars": "0.8100",
-    "yes_bid_size_fp": "12.00",
+    "yes_ask_dollars": "0.9200",
+    "yes_ask_size_fp": "25.00",
+    "yes_bid_dollars": "0.7900",
+    "yes_bid_size_fp": "9.00",
     "yes_sub_title": "Miami (FL)"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT23PITTMIA-MIA",
-  "market_captured_at": "2026-10-12T15:36:15.278Z",
+  "market_captured_at": "2026-10-12T23:19:45.778Z",
   "status": "active",
-  "last_ingested_at": "2026-10-12T15:36:15.950Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT23PITTMIA-MIA/candlesticks?start_ts=1791795601&end_ts=1791819375&period_interval=60"
+  "last_ingested_at": "2026-10-12T23:19:46.412Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT23PITTMIA-MIA/candlesticks?start_ts=1791817201&end_ts=1791847186&period_interval=60"
 }

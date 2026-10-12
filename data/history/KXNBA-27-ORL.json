@@ -15968,6 +15968,198 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-12T23:14:16.872Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-ORL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3888999.00"
+            ],
+            [
+              "0.0200",
+              "3333.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0600",
+              "1053271.00"
+            ],
+            [
+              "0.0700",
+              "37500.00"
+            ],
+            [
+              "0.1100",
+              "574512.00"
+            ],
+            [
+              "0.1700",
+              "15000.00"
+            ],
+            [
+              "0.1800",
+              "437875.00"
+            ],
+            [
+              "0.1900",
+              "100.13"
+            ],
+            [
+              "0.2500",
+              "342972.00"
+            ],
+            [
+              "0.2700",
+              "7500.00"
+            ],
+            [
+              "0.3000",
+              "500.00"
+            ],
+            [
+              "0.3200",
+              "275301.00"
+            ],
+            [
+              "0.3400",
+              "31.21"
+            ],
+            [
+              "0.3700",
+              "4500.00"
+            ],
+            [
+              "0.3900",
+              "153271.00"
+            ],
+            [
+              "0.4600",
+              "362557.00"
+            ],
+            [
+              "0.4700",
+              "1499.00"
+            ],
+            [
+              "0.5100",
+              "46.79"
+            ],
+            [
+              "0.5200",
+              "1800.00"
+            ],
+            [
+              "0.5300",
+              "68397.00"
+            ],
+            [
+              "0.5700",
+              "165575.00"
+            ],
+            [
+              "0.5900",
+              "2173.00"
+            ],
+            [
+              "0.6700",
+              "41262.00"
+            ],
+            [
+              "0.7000",
+              "80140.00"
+            ],
+            [
+              "0.7100",
+              "100.00"
+            ],
+            [
+              "0.7200",
+              "20000.00"
+            ],
+            [
+              "0.7300",
+              "72.00"
+            ],
+            [
+              "0.7700",
+              "28737.00"
+            ],
+            [
+              "0.8000",
+              "9981.71"
+            ],
+            [
+              "0.8100",
+              "18614.00"
+            ],
+            [
+              "0.8200",
+              "20701.85"
+            ],
+            [
+              "0.8300",
+              "5090.00"
+            ],
+            [
+              "0.8400",
+              "118.00"
+            ],
+            [
+              "0.8500",
+              "3542.00"
+            ],
+            [
+              "0.8600",
+              "20000.00"
+            ],
+            [
+              "0.9000",
+              "105.00"
+            ],
+            [
+              "0.9200",
+              "55.00"
+            ],
+            [
+              "0.9300",
+              "10075.00"
+            ],
+            [
+              "0.9400",
+              "66.05"
+            ],
+            [
+              "0.9500",
+              "90.88"
+            ],
+            [
+              "0.9600",
+              "837.55"
+            ],
+            [
+              "0.9700",
+              "100188.00"
+            ],
+            [
+              "0.9800",
+              "712308.50"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "110.73"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -15991,9 +16183,9 @@
     "no_sub_title": "Orlando",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-31T14:00:00Z",
-    "open_interest_fp": "871422.92",
+    "open_interest_fp": "871563.29",
     "open_time": "2026-06-14T08:00:00Z",
-    "previous_price_dollars": "0.0100",
+    "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0200",
     "previous_yes_bid_dollars": "0.0100",
     "price_level_structure": "linear_cent",
@@ -16014,17 +16206,17 @@
     "ticker": "KXNBA-27-ORL",
     "title": "Will Orlando win the 2027 Pro Basketball Finals?",
     "updated_time": "2026-09-27T15:16:20.390341Z",
-    "volume_24h_fp": "108.58",
-    "volume_fp": "1292154.11",
+    "volume_24h_fp": "233.95",
+    "volume_fp": "1292294.48",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "692448.87",
+    "yes_ask_size_fp": "712308.50",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "10.73",
+    "yes_bid_size_fp": "110.73",
     "yes_sub_title": "Orlando"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-ORL",
-  "market_captured_at": "2026-10-12T15:30:42.637Z",
+  "market_captured_at": "2026-10-12T23:14:16.298Z",
   "status": "active",
-  "last_ingested_at": "2026-10-12T15:30:43.208Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-ORL/candlesticks?start_ts=1791777601&end_ts=1791819042&period_interval=1440"
+  "last_ingested_at": "2026-10-12T23:14:16.836Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-ORL/candlesticks?start_ts=1791777601&end_ts=1791846856&period_interval=1440"
 }
