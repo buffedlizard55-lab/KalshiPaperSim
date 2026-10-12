@@ -2681,6 +2681,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-12T15:35:59.023Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT09MEMCHI-MEM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2738,9 +2748,9 @@
     "yes_sub_title": "Memphis"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT09MEMCHI-MEM",
-  "market_captured_at": "2026-10-12T09:40:25.032Z",
+  "market_captured_at": "2026-10-12T15:35:58.280Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-12T09:40:25.664Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT09MEMCHI-MEM/candlesticks?start_ts=1791601201&end_ts=1791798025&period_interval=60"
+  "last_ingested_at": "2026-10-12T15:35:58.953Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT09MEMCHI-MEM/candlesticks?start_ts=1791601201&end_ts=1791819358&period_interval=60"
 }

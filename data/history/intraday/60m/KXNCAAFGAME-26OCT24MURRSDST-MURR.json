@@ -305,6 +305,31 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1791817200,
+      "open_interest_fp": "3620.24",
+      "price": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "mean_dollars": "0.0200",
+        "open_dollars": "0.0200",
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "46.79",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -667,6 +692,74 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-12T15:36:18.849Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "14829.00"
+            ],
+            [
+              "0.0200",
+              "12410.00"
+            ],
+            [
+              "0.0300",
+              "8144.00"
+            ],
+            [
+              "0.0400",
+              "685.00"
+            ],
+            [
+              "0.0500",
+              "267.00"
+            ],
+            [
+              "0.0600",
+              "355.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.8800",
+              "140.00"
+            ],
+            [
+              "0.8900",
+              "125.00"
+            ],
+            [
+              "0.9500",
+              "46.79"
+            ],
+            [
+              "0.9700",
+              "547.00"
+            ],
+            [
+              "0.9800",
+              "441624.76"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5001.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -690,7 +783,7 @@
     "no_sub_title": "Murray St.",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-24T22:00:00Z",
-    "open_interest_fp": "3573.45",
+    "open_interest_fp": "3620.24",
     "open_time": "2026-10-10T19:08:00Z",
     "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0200",
@@ -713,17 +806,17 @@
     "ticker": "KXNCAAFGAME-26OCT24MURRSDST-MURR",
     "title": "Murray St. wins",
     "updated_time": "2026-10-10T19:08:00.751298Z",
-    "volume_24h_fp": "142.37",
-    "volume_fp": "3574.45",
+    "volume_24h_fp": "189.16",
+    "volume_fp": "3621.24",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "441671.55",
+    "yes_ask_size_fp": "441624.76",
     "yes_bid_dollars": "0.0100",
     "yes_bid_size_fp": "5001.00",
     "yes_sub_title": "Murray St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR",
-  "market_captured_at": "2026-10-12T09:40:43.186Z",
+  "market_captured_at": "2026-10-12T15:36:18.107Z",
   "status": "active",
-  "last_ingested_at": "2026-10-12T09:40:43.818Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/candlesticks?start_ts=1791784801&end_ts=1791798043&period_interval=60"
+  "last_ingested_at": "2026-10-12T15:36:18.780Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/candlesticks?start_ts=1791792001&end_ts=1791819378&period_interval=60"
 }

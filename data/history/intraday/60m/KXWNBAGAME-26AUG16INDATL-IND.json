@@ -954,6 +954,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-12T15:36:27.339Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG16INDATL-IND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1011,9 +1021,9 @@
     "yes_sub_title": "Indiana"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26AUG16INDATL-IND",
-  "market_captured_at": "2026-10-12T09:40:49.667Z",
+  "market_captured_at": "2026-10-12T15:36:26.597Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-12T09:40:50.300Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG16INDATL-IND/candlesticks?start_ts=1789206049&end_ts=1791798048&period_interval=60"
+  "last_ingested_at": "2026-10-12T15:36:27.269Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26AUG16INDATL-IND/candlesticks?start_ts=1789227386&end_ts=1791819385&period_interval=60"
 }
