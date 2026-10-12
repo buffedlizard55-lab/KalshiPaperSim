@@ -1,0 +1,212 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-13",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261013"
+  ]
+ },
+ "captures": [
+  "2026-10-12T11:20:51.692Z"
+ ],
+ "events": {
+  "401898403": {
+   "eventId": "401898403",
+   "date": "2026-10-13T23:00Z",
+   "easternDate": "2026-10-13",
+   "name": "Cleveland Cavaliers at Orlando Magic",
+   "shortName": "CLE @ ORL",
+   "week": null,
+   "venue": "Kia Center",
+   "homeAbbr": "ORL",
+   "homeTeamId": "19",
+   "homeName": "Orlando Magic",
+   "awayAbbr": "CLE",
+   "awayTeamId": "5",
+   "awayName": "Cleveland Cavaliers",
+   "firstCapturedAt": "2026-10-12T11:20:51.692Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-12T11:20:51.692Z",
+     "last_seen_at": "2026-10-12T11:20:51.692Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "1-1"
+     }
+    }
+   ]
+  },
+  "401898718": {
+   "eventId": "401898718",
+   "date": "2026-10-14T02:00Z",
+   "easternDate": "2026-10-13",
+   "name": "Golden State Warriors at Los Angeles Lakers",
+   "shortName": "GS VS LAL",
+   "week": null,
+   "venue": "T-Mobile Arena",
+   "homeAbbr": "LAL",
+   "homeTeamId": "13",
+   "homeName": "Los Angeles Lakers",
+   "awayAbbr": "GS",
+   "awayTeamId": "9",
+   "awayName": "Golden State Warriors",
+   "firstCapturedAt": "2026-10-12T11:20:51.692Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-12T11:20:51.692Z",
+     "last_seen_at": "2026-10-12T11:20:51.692Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-1",
+      "away": "2-2"
+     }
+    }
+   ]
+  },
+  "401901826": {
+   "eventId": "401901826",
+   "date": "2026-10-14T02:00Z",
+   "easternDate": "2026-10-13",
+   "name": "Portland Trail Blazers at Sacramento Kings",
+   "shortName": "POR @ SAC",
+   "week": null,
+   "venue": "Golden 1 Center",
+   "homeAbbr": "SAC",
+   "homeTeamId": "23",
+   "homeName": "Sacramento Kings",
+   "awayAbbr": "POR",
+   "awayTeamId": "22",
+   "awayName": "Portland Trail Blazers",
+   "firstCapturedAt": "2026-10-12T11:20:51.692Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-12T11:20:51.692Z",
+     "last_seen_at": "2026-10-12T11:20:51.692Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-3",
+      "away": "1-0"
+     }
+    }
+   ]
+  },
+  "401908621": {
+   "eventId": "401908621",
+   "date": "2026-10-14T00:00Z",
+   "easternDate": "2026-10-13",
+   "name": "Indiana Pacers at Oklahoma City Thunder",
+   "shortName": "IND @ OKC",
+   "week": null,
+   "venue": "Paycom Center",
+   "homeAbbr": "OKC",
+   "homeTeamId": "25",
+   "homeName": "Oklahoma City Thunder",
+   "awayAbbr": "IND",
+   "awayTeamId": "11",
+   "awayName": "Indiana Pacers",
+   "firstCapturedAt": "2026-10-12T11:20:51.692Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-12T11:20:51.692Z",
+     "last_seen_at": "2026-10-12T11:20:51.692Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-2",
+      "away": "1-1"
+     }
+    }
+   ]
+  },
+  "401908944": {
+   "eventId": "401908944",
+   "date": "2026-10-13T23:00Z",
+   "easternDate": "2026-10-13",
+   "name": "New York Knicks at Toronto Raptors",
+   "shortName": "NY @ TOR",
+   "week": null,
+   "venue": "Scotiabank Arena",
+   "homeAbbr": "TOR",
+   "homeTeamId": "28",
+   "homeName": "Toronto Raptors",
+   "awayAbbr": "NY",
+   "awayTeamId": "18",
+   "awayName": "New York Knicks",
+   "firstCapturedAt": "2026-10-12T11:20:51.692Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-12T11:20:51.692Z",
+     "last_seen_at": "2026-10-12T11:20:51.692Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "0-2"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-12T11:20:51.692Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261013"
+}

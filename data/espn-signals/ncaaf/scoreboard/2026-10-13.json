@@ -1,0 +1,105 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-13",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261013"
+  ]
+ },
+ "captures": [
+  "2026-10-12T11:20:51.719Z"
+ ],
+ "events": {
+  "401871053": {
+   "eventId": "401871053",
+   "date": "2026-10-14T00:00Z",
+   "easternDate": "2026-10-13",
+   "name": "Florida International Panthers at Jacksonville State Gamecocks",
+   "shortName": "FIU @ JXST",
+   "week": 7,
+   "venue": "AmFirst Stadium",
+   "homeAbbr": "JXST",
+   "homeTeamId": "55",
+   "homeName": "Jacksonville State Gamecocks",
+   "awayAbbr": "FIU",
+   "awayTeamId": "2229",
+   "awayName": "Florida International Panthers",
+   "firstCapturedAt": "2026-10-12T11:20:51.719Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "JXST -3",
+    "spread": -3,
+    "overUnder": 43.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-12T11:20:51.719Z",
+     "last_seen_at": "2026-10-12T11:20:51.719Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-2",
+      "away": "3-2"
+     }
+    }
+   ]
+  },
+  "401871067": {
+   "eventId": "401871067",
+   "date": "2026-10-13T23:00Z",
+   "easternDate": "2026-10-13",
+   "name": "Delaware Blue Hens at Middle Tennessee Blue Raiders",
+   "shortName": "DEL @ MTSU",
+   "week": 7,
+   "venue": "Johnny \"Red\" Floyd Stadium",
+   "homeAbbr": "MTSU",
+   "homeTeamId": "2393",
+   "homeName": "Middle Tennessee Blue Raiders",
+   "awayAbbr": "DEL",
+   "awayTeamId": "48",
+   "awayName": "Delaware Blue Hens",
+   "firstCapturedAt": "2026-10-12T11:20:51.719Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "DEL -2.5",
+    "spread": 2.5,
+    "overUnder": 47.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-12T11:20:51.719Z",
+     "last_seen_at": "2026-10-12T11:20:51.719Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "2-3"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-12T11:20:51.719Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261013"
+}

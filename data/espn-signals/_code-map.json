@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-12T03:26:28.635Z",
+ "generatedAt": "2026-10-12T11:20:52.784Z",
  "rows": [
   {
    "league": "nba",
@@ -1165,6 +1165,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "MICH",
+   "kalshiName": "Michigan",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT17PSUMICH-PSU",
+     "rulesName": "Michigan",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "MOSU",
    "kalshiName": "Missouri St.",
    "conflictWith": null,
@@ -1480,6 +1495,11 @@
      "ticker": "KXNCAAFGAME-26OCT10USCPSU-USC",
      "rulesName": "Penn St.",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17PSUMICH-PSU",
+     "rulesName": "Penn St.",
+     "role": "away"
     }
    ]
   },
@@ -3762,11 +3782,27 @@
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
+   "ticker": "KXNFLGAME-26OCT11BALATL-ATL",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT11BALATL-BAL",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
    "ticker": "KXNFLGAME-26OCT11PHIJAC-JAC",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
    "ticker": "KXNFLGAME-26OCT11PHIJAC-PHI",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT11SFSEA-SEA",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT11SFSEA-SF",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
