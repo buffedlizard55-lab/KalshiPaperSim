@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-12T11:20:52.784Z",
+ "generatedAt": "2026-10-12T22:22:40.440Z",
  "rows": [
   {
    "league": "nba",
@@ -1300,6 +1300,11 @@
      "ticker": "KXNCAAFGAME-26OCT17NEBORE-NEB",
      "rulesName": "Nebraska",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17NEBORE-ORE",
+     "rulesName": "Nebraska",
+     "role": "away"
     }
    ]
   },
@@ -1408,6 +1413,11 @@
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17NEBORE-NEB",
+     "rulesName": "Oregon",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17NEBORE-ORE",
      "rulesName": "Oregon",
      "role": "home"
     }

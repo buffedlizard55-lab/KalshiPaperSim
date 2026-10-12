@@ -13,7 +13,8 @@
   "2026-10-11T23:00:29.283Z",
   "2026-10-12T02:11:25.956Z",
   "2026-10-12T03:26:27.346Z",
-  "2026-10-12T11:20:51.685Z"
+  "2026-10-12T11:20:51.685Z",
+  "2026-10-12T22:22:38.122Z"
  ],
  "events": {
   "401898402": {
@@ -35,7 +36,7 @@
    "states": [
     {
      "captured_at": "2026-10-11T10:04:04.927Z",
-     "last_seen_at": "2026-10-12T11:20:51.685Z",
+     "last_seen_at": "2026-10-12T22:22:38.122Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -74,7 +75,7 @@
    "states": [
     {
      "captured_at": "2026-10-11T10:04:04.927Z",
-     "last_seen_at": "2026-10-12T11:20:51.685Z",
+     "last_seen_at": "2026-10-12T22:22:38.122Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -113,7 +114,7 @@
    "states": [
     {
      "captured_at": "2026-10-11T10:04:04.927Z",
-     "last_seen_at": "2026-10-12T11:20:51.685Z",
+     "last_seen_at": "2026-10-12T22:22:38.122Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -152,7 +153,7 @@
    "states": [
     {
      "captured_at": "2026-10-11T10:04:04.927Z",
-     "last_seen_at": "2026-10-12T11:20:51.685Z",
+     "last_seen_at": "2026-10-12T22:22:38.122Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -208,10 +209,30 @@
       "home": "1-0",
       "away": null
      }
+    },
+    {
+     "captured_at": "2026-10-12T22:22:38.122Z",
+     "last_seen_at": "2026-10-12T22:22:38.122Z",
+     "fp": "post|4|0|119,66|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 119,
+      "away": 66
+     },
+     "recordsOverall": {
+      "home": "2-0",
+      "away": null
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-12T11:20:51.685Z",
+ "last_ingested_at": "2026-10-12T22:22:38.122Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261012"
 }
