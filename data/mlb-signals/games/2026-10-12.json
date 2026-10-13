@@ -11,7 +11,8 @@
  },
  "captures": [
   "2026-10-12T11:17:56.471Z",
-  "2026-10-12T22:38:49.437Z"
+  "2026-10-12T22:38:49.437Z",
+  "2026-10-13T03:12:39.921Z"
  ],
  "games": {
   "849812": {
@@ -72,6 +73,21 @@
       "home": 3
      },
      "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-13T03:12:39.921Z",
+     "last_seen_at": "2026-10-13T03:12:39.921Z",
+     "abstractGameState": "Final",
+     "detailedState": "Final",
+     "codedGameState": "F",
+     "inning": 9,
+     "inningState": "Top",
+     "runs": {
+      "away": 4,
+      "home": 7
+     },
+     "winner": "home",
      "url_ref": 0
     }
    ]
@@ -134,6 +150,21 @@
       "home": 0
      },
      "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-13T03:12:39.921Z",
+     "last_seen_at": "2026-10-13T03:12:39.921Z",
+     "abstractGameState": "Final",
+     "detailedState": "Final",
+     "codedGameState": "F",
+     "inning": 9,
+     "inningState": "Bottom",
+     "runs": {
+      "away": 7,
+      "home": 3
+     },
+     "winner": "away",
      "url_ref": 0
     }
    ]
