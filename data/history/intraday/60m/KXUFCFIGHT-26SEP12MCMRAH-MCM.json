@@ -2899,6 +2899,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-13T21:40:10.858Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP12MCMRAH-MCM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2956,9 +2966,9 @@
     "yes_sub_title": "Tommy McMillen"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP12MCMRAH-MCM",
-  "market_captured_at": "2026-10-13T14:21:39.816Z",
+  "market_captured_at": "2026-10-13T21:40:09.745Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-13T14:21:40.788Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12MCMRAH-MCM/candlesticks?start_ts=1791849601&end_ts=1791901300&period_interval=60"
+  "last_ingested_at": "2026-10-13T21:40:10.790Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26SEP12MCMRAH-MCM/candlesticks?start_ts=1791849601&end_ts=1791927610&period_interval=60"
 }
