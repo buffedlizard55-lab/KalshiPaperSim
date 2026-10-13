@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-12T22:22:40.440Z",
+ "generatedAt": "2026-10-13T03:10:06.741Z",
  "rows": [
   {
    "league": "nba",
@@ -1172,6 +1172,11 @@
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
+     "ticker": "KXNCAAFGAME-26OCT17PSUMICH-MICH",
+     "rulesName": "Michigan",
+     "role": "home"
+    },
+    {
      "ticker": "KXNCAAFGAME-26OCT17PSUMICH-PSU",
      "rulesName": "Michigan",
      "role": "home"
@@ -1204,6 +1209,21 @@
     {
      "ticker": "KXNCAAFGAME-26OCT16MSSTLSU-LSU",
      "rulesName": "Mississippi St.",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "MSU",
+   "kalshiName": "Michigan St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT23MSUUCLA-MSU",
+     "rulesName": "Michigan St.",
      "role": "away"
     }
    ]
@@ -1505,6 +1525,11 @@
      "ticker": "KXNCAAFGAME-26OCT10USCPSU-USC",
      "rulesName": "Penn St.",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT17PSUMICH-MICH",
+     "rulesName": "Penn St.",
+     "role": "away"
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17PSUMICH-PSU",
@@ -1865,6 +1890,11 @@
      "ticker": "KXNCAAFGAME-26OCT10UCLAORE-UCLA",
      "rulesName": "UCLA",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT23MSUUCLA-MSU",
+     "rulesName": "UCLA",
+     "role": "home"
     }
    ]
   },
@@ -2670,6 +2700,31 @@
   },
   {
    "league": "nhl",
+   "kalshiCode": "BUF",
+   "kalshiName": "Buffalo",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "2",
+    "abbr": "BUF",
+    "displayName": "Buffalo Sabres",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26OCT12FLABUF-BUF",
+     "rulesName": "Buffalo",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT12FLABUF-FLA",
+     "rulesName": "Buffalo",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
    "kalshiCode": "CAR",
    "kalshiName": "Carolina",
    "conflictWith": null,
@@ -2942,9 +2997,9 @@
      "role": "away"
     },
     {
-     "ticker": "KXNHLGAME-26SEP20CARFLA-CAR",
+     "ticker": "KXNHLGAME-26OCT12FLABUF-BUF",
      "rulesName": "Florida",
-     "role": "home"
+     "role": "away"
     }
    ]
   },

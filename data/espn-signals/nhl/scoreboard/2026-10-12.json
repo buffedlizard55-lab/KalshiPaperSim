@@ -14,7 +14,8 @@
   "2026-10-12T02:11:26.351Z",
   "2026-10-12T03:26:27.620Z",
   "2026-10-12T11:20:51.780Z",
-  "2026-10-12T22:22:39.316Z"
+  "2026-10-12T22:22:39.316Z",
+  "2026-10-13T03:10:05.942Z"
  ],
  "events": {
   "401892485": {
@@ -56,7 +57,7 @@
     },
     {
      "captured_at": "2026-10-12T22:22:39.316Z",
-     "last_seen_at": "2026-10-12T22:22:39.316Z",
+     "last_seen_at": "2026-10-13T03:10:05.942Z",
      "fp": "post|3|0|5,3|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -112,6 +113,26 @@
       "home": "2-2-0",
       "away": "4-1-0"
      }
+    },
+    {
+     "captured_at": "2026-10-13T03:10:05.942Z",
+     "last_seen_at": "2026-10-13T03:10:05.942Z",
+     "fp": "post|3|0|1,4|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 1,
+      "away": 4
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
+     }
     }
    ]
   },
@@ -151,10 +172,30 @@
       "home": "3-1-1",
       "away": "5-1-0"
      }
+    },
+    {
+     "captured_at": "2026-10-13T03:10:05.942Z",
+     "last_seen_at": "2026-10-13T03:10:05.942Z",
+     "fp": "post|3|0|4,2|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 4,
+      "away": 2
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-12T22:22:39.316Z",
+ "last_ingested_at": "2026-10-13T03:10:05.942Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261012"
 }
