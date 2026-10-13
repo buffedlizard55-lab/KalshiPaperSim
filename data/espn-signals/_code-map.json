@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-13T04:41:08.422Z",
+ "generatedAt": "2026-10-13T12:22:33.661Z",
  "rows": [
   {
    "league": "nba",
@@ -1635,6 +1635,36 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "SELA",
+   "kalshiName": "Southeastern Louisiana",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT24SELASFA-SFA",
+     "rulesName": "Southeastern Louisiana",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "SFA",
+   "kalshiName": "Stephen F. Austin",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT24SELASFA-SFA",
+     "rulesName": "Stephen F. Austin",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "SHSU",
    "kalshiName": "Sam Houston",
    "conflictWith": null,
@@ -1740,6 +1770,11 @@
      "ticker": "KXNCAAFGAME-26OCT03CHSTARL-TARL",
      "rulesName": "Tarleton St.",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT24TARLUWGA-UWGA",
+     "rulesName": "Tarleton St.",
+     "role": "away"
     }
    ]
   },
@@ -1999,6 +2034,21 @@
     {
      "ticker": "KXNCAAFGAME-26OCT10STETUST-STET",
      "rulesName": "St. Thomas",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "UWGA",
+   "kalshiName": "West Georgia",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT24TARLUWGA-UWGA",
+     "rulesName": "West Georgia",
      "role": "home"
     }
    ]
@@ -3868,6 +3918,14 @@
   },
   {
    "ticker": "KXNFLGAME-26OCT11SFSEA-SF",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT12BUFLAR-BUF",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT12BUFLAR-LAR",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {
