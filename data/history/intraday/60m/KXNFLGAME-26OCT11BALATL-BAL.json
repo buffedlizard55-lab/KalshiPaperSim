@@ -5010,6 +5010,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-13T07:04:47.358Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT11BALATL-BAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5035,9 +5045,9 @@
     "occurrence_datetime": "2026-10-12T03:20:00Z",
     "open_interest_fp": "19411151.18",
     "open_time": "2026-09-29T04:05:00Z",
-    "previous_price_dollars": "0.3900",
-    "previous_yes_ask_dollars": "0.3900",
-    "previous_yes_bid_dollars": "0.3800",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5058,7 +5068,7 @@
     "ticker": "KXNFLGAME-26OCT11BALATL-BAL",
     "title": "Baltimore wins",
     "updated_time": "2026-10-12T03:53:19.983388Z",
-    "volume_24h_fp": "50609951.13",
+    "volume_24h_fp": "0.00",
     "volume_fp": "51810664.75",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -5067,11 +5077,11 @@
     "yes_sub_title": "Baltimore"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT11BALATL-BAL",
-  "market_captured_at": "2026-10-12T23:19:04.288Z",
+  "market_captured_at": "2026-10-13T07:04:46.642Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-12T23:19:04.921Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT11BALATL-BAL/candlesticks?start_ts=1791777601&end_ts=1791847144&period_interval=60",
+  "last_ingested_at": "2026-10-13T07:04:47.302Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT11BALATL-BAL/candlesticks?start_ts=1791777601&end_ts=1791875086&period_interval=60",
   "trims": [
     {
       "at": "2026-10-12T06:23:20.053Z",
