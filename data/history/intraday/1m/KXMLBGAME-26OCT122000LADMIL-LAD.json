@@ -12420,6 +12420,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-13T14:22:17.768Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT122000LADMIL-LAD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12468,7 +12478,7 @@
     "ticker": "KXMLBGAME-26OCT122000LADMIL-LAD",
     "title": "Los Angeles D wins",
     "updated_time": "2026-10-13T00:34:05.954913Z",
-    "volume_24h_fp": "16689782.15",
+    "volume_24h_fp": "16495576.75",
     "volume_fp": "17054007.91",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12477,10 +12487,10 @@
     "yes_sub_title": "Los Angeles D"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT122000LADMIL-LAD",
-  "market_captured_at": "2026-10-13T09:46:49.068Z",
+  "market_captured_at": "2026-10-13T14:22:17.104Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-13T09:46:49.694Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT122000LADMIL-LAD/candlesticks?start_ts=1791851401&end_ts=1791884809&period_interval=1",
+  "last_ingested_at": "2026-10-13T14:22:17.738Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT122000LADMIL-LAD/candlesticks?start_ts=1791851401&end_ts=1791901337&period_interval=1",
   "trims": [
     {
       "at": "2026-10-12T23:21:03.735Z",

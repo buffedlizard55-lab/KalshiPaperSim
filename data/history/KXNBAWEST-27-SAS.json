@@ -20929,7 +20929,7 @@
     "open_time": "2026-06-16T20:00:00Z",
     "previous_price_dollars": "0.3400",
     "previous_yes_ask_dollars": "0.3400",
-    "previous_yes_bid_dollars": "0.3200",
+    "previous_yes_bid_dollars": "0.3300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -20953,12 +20953,12 @@
     "yes_ask_dollars": "0.3400",
     "yes_ask_size_fp": "9250.42",
     "yes_bid_dollars": "0.3200",
-    "yes_bid_size_fp": "5875.23",
+    "yes_bid_size_fp": "505875.23",
     "yes_sub_title": "San Antonio"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-SAS",
-  "market_captured_at": "2026-10-13T09:40:47.458Z",
+  "market_captured_at": "2026-10-13T14:16:27.294Z",
   "status": "active",
-  "last_ingested_at": "2026-10-13T09:40:47.986Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1791864001&end_ts=1791884447&period_interval=1440"
+  "last_ingested_at": "2026-10-13T14:16:27.829Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1791864001&end_ts=1791900987&period_interval=1440"
 }

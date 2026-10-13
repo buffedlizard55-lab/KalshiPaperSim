@@ -422,6 +422,111 @@
         "low_dollars": "0.0700",
         "open_dollars": "0.0700"
       }
+    },
+    {
+      "end_period_ts": 1791885600,
+      "open_interest_fp": "2212.74",
+      "price": {
+        "previous_dollars": "0.6900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.6400",
+        "high_dollars": "0.6900",
+        "low_dollars": "0.5600",
+        "open_dollars": "0.6500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1900",
+        "high_dollars": "0.2500",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.1800"
+      }
+    },
+    {
+      "end_period_ts": 1791889200,
+      "open_interest_fp": "2212.74",
+      "price": {
+        "previous_dollars": "0.6900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.6400",
+        "high_dollars": "0.6800",
+        "low_dollars": "0.5900",
+        "open_dollars": "0.6400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2100",
+        "high_dollars": "0.2400",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.1900"
+      }
+    },
+    {
+      "end_period_ts": 1791892800,
+      "open_interest_fp": "2212.74",
+      "price": {
+        "previous_dollars": "0.6900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.5800",
+        "high_dollars": "0.6800",
+        "low_dollars": "0.5700",
+        "open_dollars": "0.6400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2800",
+        "high_dollars": "0.3000",
+        "low_dollars": "0.2100",
+        "open_dollars": "0.2100"
+      }
+    },
+    {
+      "end_period_ts": 1791896400,
+      "open_interest_fp": "2212.74",
+      "price": {
+        "previous_dollars": "0.6900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.5500",
+        "high_dollars": "0.6600",
+        "low_dollars": "0.5500",
+        "open_dollars": "0.5800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3300",
+        "high_dollars": "0.3500",
+        "low_dollars": "0.0900",
+        "open_dollars": "0.2800"
+      }
+    },
+    {
+      "end_period_ts": 1791900000,
+      "open_interest_fp": "2218.74",
+      "price": {
+        "close_dollars": "0.3200",
+        "high_dollars": "0.3300",
+        "low_dollars": "0.3200",
+        "mean_dollars": "0.3283",
+        "open_dollars": "0.3300",
+        "previous_dollars": "0.6900"
+      },
+      "volume_fp": "6.00",
+      "yes_ask": {
+        "close_dollars": "0.4700",
+        "high_dollars": "0.8800",
+        "low_dollars": "0.3300",
+        "open_dollars": "0.5500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2000",
+        "high_dollars": "0.5100",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.3300"
+      }
     }
   ],
   "books": [
@@ -600,6 +705,98 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-13T14:21:18.381Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24TARLUWGA-UWGA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "105683.00"
+            ],
+            [
+              "0.0200",
+              "2622.00"
+            ],
+            [
+              "0.0300",
+              "944.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "267.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "250.00"
+            ],
+            [
+              "0.1100",
+              "46.00"
+            ],
+            [
+              "0.1900",
+              "140.00"
+            ],
+            [
+              "0.2800",
+              "50.00"
+            ],
+            [
+              "0.3000",
+              "2.00"
+            ],
+            [
+              "0.3100",
+              "500.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "104276.00"
+            ],
+            [
+              "0.0200",
+              "1948.00"
+            ],
+            [
+              "0.0300",
+              "501.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "145.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -615,15 +812,15 @@
     "expected_expiration_time": "2026-10-24T21:00:00Z",
     "expiration_time": "2026-10-26T18:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.6900",
+    "last_price_dollars": "0.3200",
     "latest_expiration_time": "2026-10-26T18:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.8300",
-    "no_bid_dollars": "0.3300",
+    "no_ask_dollars": "0.9100",
+    "no_bid_dollars": "0.1300",
     "no_sub_title": "West Georgia",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-24T21:00:00Z",
-    "open_interest_fp": "2212.74",
+    "open_interest_fp": "2218.74",
     "open_time": "2026-10-10T19:08:00Z",
     "previous_price_dollars": "0.0000",
     "previous_yes_ask_dollars": "0.9100",
@@ -646,17 +843,17 @@
     "ticker": "KXNCAAFGAME-26OCT24TARLUWGA-UWGA",
     "title": "West Georgia wins",
     "updated_time": "2026-10-10T19:08:00.751298Z",
-    "volume_24h_fp": "2212.74",
-    "volume_fp": "2212.74",
-    "yes_ask_dollars": "0.6700",
-    "yes_ask_size_fp": "250.00",
-    "yes_bid_dollars": "0.1700",
-    "yes_bid_size_fp": "32.00",
+    "volume_24h_fp": "2218.74",
+    "volume_fp": "2218.74",
+    "yes_ask_dollars": "0.8700",
+    "yes_ask_size_fp": "700.00",
+    "yes_bid_dollars": "0.0900",
+    "yes_bid_size_fp": "1.00",
     "yes_sub_title": "West Georgia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24TARLUWGA-UWGA",
-  "market_captured_at": "2026-10-13T09:45:51.465Z",
+  "market_captured_at": "2026-10-13T14:21:17.715Z",
   "status": "active",
-  "last_ingested_at": "2026-10-13T09:45:52.092Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24TARLUWGA-UWGA/candlesticks?start_ts=1791874801&end_ts=1791884751&period_interval=60"
+  "last_ingested_at": "2026-10-13T14:21:18.350Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24TARLUWGA-UWGA/candlesticks?start_ts=1791882001&end_ts=1791901278&period_interval=60"
 }

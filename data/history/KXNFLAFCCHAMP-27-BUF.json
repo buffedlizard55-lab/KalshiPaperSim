@@ -27605,11 +27605,11 @@
     "no_bid_dollars": "0.7900",
     "no_sub_title": "Buffalo",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "490121.07",
+    "open_interest_fp": "490210.95",
     "open_time": "2026-02-07T15:00:00Z",
-    "previous_price_dollars": "0.2000",
-    "previous_yes_ask_dollars": "0.2000",
-    "previous_yes_bid_dollars": "0.1900",
+    "previous_price_dollars": "0.1900",
+    "previous_yes_ask_dollars": "0.1900",
+    "previous_yes_bid_dollars": "0.1800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -27628,17 +27628,17 @@
     "ticker": "KXNFLAFCCHAMP-27-BUF",
     "title": "Will Buffalo win the Pro Football AFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "8045.42",
-    "volume_fp": "764385.22",
+    "volume_24h_fp": "8128.00",
+    "volume_fp": "764681.37",
     "yes_ask_dollars": "0.2100",
-    "yes_ask_size_fp": "109072.16",
+    "yes_ask_size_fp": "337885.01",
     "yes_bid_dollars": "0.2000",
-    "yes_bid_size_fp": "2468.70",
+    "yes_bid_size_fp": "2267.18",
     "yes_sub_title": "Buffalo"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-BUF",
-  "market_captured_at": "2026-10-13T09:41:13.324Z",
+  "market_captured_at": "2026-10-13T14:16:46.969Z",
   "status": "active",
-  "last_ingested_at": "2026-10-13T09:41:13.851Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-BUF/candlesticks?start_ts=1791864001&end_ts=1791884473&period_interval=1440"
+  "last_ingested_at": "2026-10-13T14:16:47.502Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-BUF/candlesticks?start_ts=1791864001&end_ts=1791901007&period_interval=1440"
 }
