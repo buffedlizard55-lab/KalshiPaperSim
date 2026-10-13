@@ -382,6 +382,46 @@
         "low_dollars": "0.0700",
         "open_dollars": "0.0900"
       }
+    },
+    {
+      "end_period_ts": 1791878400,
+      "open_interest_fp": "2212.74",
+      "price": {
+        "previous_dollars": "0.6900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.6800",
+        "high_dollars": "0.6800",
+        "low_dollars": "0.5800",
+        "open_dollars": "0.5800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0800"
+      }
+    },
+    {
+      "end_period_ts": 1791882000,
+      "open_interest_fp": "2212.74",
+      "price": {
+        "previous_dollars": "0.6900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.6500",
+        "high_dollars": "0.6800",
+        "low_dollars": "0.6200",
+        "open_dollars": "0.6800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1800",
+        "high_dollars": "0.2200",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0700"
+      }
     }
   ],
   "books": [
@@ -476,6 +516,90 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-13T09:45:52.114Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24TARLUWGA-UWGA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "105683.00"
+            ],
+            [
+              "0.0200",
+              "2622.00"
+            ],
+            [
+              "0.0300",
+              "944.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "667.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.2200",
+              "3140.00"
+            ],
+            [
+              "0.3100",
+              "3000.00"
+            ],
+            [
+              "0.3200",
+              "221.00"
+            ],
+            [
+              "0.3300",
+              "250.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "104276.00"
+            ],
+            [
+              "0.0200",
+              "1962.00"
+            ],
+            [
+              "0.0300",
+              "500.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "429.00"
+            ],
+            [
+              "0.0800",
+              "217.00"
+            ],
+            [
+              "0.0900",
+              "56.00"
+            ],
+            [
+              "0.1700",
+              "32.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -494,8 +618,8 @@
     "last_price_dollars": "0.6900",
     "latest_expiration_time": "2026-10-26T18:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.9200",
-    "no_bid_dollars": "0.4200",
+    "no_ask_dollars": "0.8300",
+    "no_bid_dollars": "0.3300",
     "no_sub_title": "West Georgia",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-24T21:00:00Z",
@@ -524,15 +648,15 @@
     "updated_time": "2026-10-10T19:08:00.751298Z",
     "volume_24h_fp": "2212.74",
     "volume_fp": "2212.74",
-    "yes_ask_dollars": "0.5800",
-    "yes_ask_size_fp": "190.00",
-    "yes_bid_dollars": "0.0800",
-    "yes_bid_size_fp": "156.00",
+    "yes_ask_dollars": "0.6700",
+    "yes_ask_size_fp": "250.00",
+    "yes_bid_dollars": "0.1700",
+    "yes_bid_size_fp": "32.00",
     "yes_sub_title": "West Georgia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24TARLUWGA-UWGA",
-  "market_captured_at": "2026-10-13T07:05:34.915Z",
+  "market_captured_at": "2026-10-13T09:45:51.465Z",
   "status": "active",
-  "last_ingested_at": "2026-10-13T07:05:35.576Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24TARLUWGA-UWGA/candlesticks?start_ts=1791572880&end_ts=1791875135&period_interval=60"
+  "last_ingested_at": "2026-10-13T09:45:52.092Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24TARLUWGA-UWGA/candlesticks?start_ts=1791874801&end_ts=1791884751&period_interval=60"
 }

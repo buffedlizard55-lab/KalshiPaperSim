@@ -493,6 +493,94 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-13T09:45:54.662Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24SELASFA-SFA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "99118.00"
+            ],
+            [
+              "0.0200",
+              "2747.00"
+            ],
+            [
+              "0.0300",
+              "889.00"
+            ],
+            [
+              "0.0400",
+              "627.00"
+            ],
+            [
+              "0.0500",
+              "327.00"
+            ],
+            [
+              "0.0600",
+              "345.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "100406.00"
+            ],
+            [
+              "0.0200",
+              "2747.00"
+            ],
+            [
+              "0.0300",
+              "1166.00"
+            ],
+            [
+              "0.0400",
+              "1000.00"
+            ],
+            [
+              "0.0500",
+              "401.00"
+            ],
+            [
+              "0.0600",
+              "333.00"
+            ],
+            [
+              "0.0700",
+              "585.00"
+            ],
+            [
+              "0.1000",
+              "1536.00"
+            ],
+            [
+              "0.1100",
+              "140.00"
+            ],
+            [
+              "0.1300",
+              "437.00"
+            ],
+            [
+              "0.2000",
+              "1677.00"
+            ],
+            [
+              "0.2100",
+              "23.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -544,12 +632,12 @@
     "yes_ask_dollars": "0.9300",
     "yes_ask_size_fp": "300.00",
     "yes_bid_dollars": "0.2100",
-    "yes_bid_size_fp": "152.00",
+    "yes_bid_size_fp": "23.00",
     "yes_sub_title": "Stephen F. Austin"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24SELASFA-SFA",
-  "market_captured_at": "2026-10-13T07:05:37.669Z",
+  "market_captured_at": "2026-10-13T09:45:54.013Z",
   "status": "active",
-  "last_ingested_at": "2026-10-13T07:05:38.332Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24SELASFA-SFA/candlesticks?start_ts=1791583680&end_ts=1791875137&period_interval=60"
+  "last_ingested_at": "2026-10-13T09:45:54.639Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24SELASFA-SFA/candlesticks?start_ts=1791874801&end_ts=1791884754&period_interval=60"
 }
