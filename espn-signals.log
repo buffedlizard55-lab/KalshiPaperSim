@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-13T20:29:44.488Z",
+ "startedAt": "2026-10-13T23:51:39.758Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -49,7 +49,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 137
+     "playerRecords": 130
     },
     "scoreboard": {
      "2026-10-13": {
@@ -57,7 +57,7 @@
       "ok": true,
       "status": 200,
       "events": 5,
-      "stateRows": 5
+      "stateRows": 7
      },
      "2026-10-14": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261014",
@@ -90,7 +90,7 @@
       "ok": true,
       "status": 200,
       "events": 2,
-      "stateRows": 2
+      "stateRows": 3
      },
      "2026-10-14": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261014",
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 125
+     "playerRecords": 124
     },
     "scoreboard": {
      "2026-10-13": {
@@ -156,7 +156,7 @@
       "ok": true,
       "status": 200,
       "events": 16,
-      "stateRows": 16
+      "stateRows": 23
      },
      "2026-10-14": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261014",
@@ -204,11 +204,11 @@
  },
  "errors": [],
  "codeMap": {
-  "rows": 155,
+  "rows": 157,
   "matched": 85,
-  "unmapped": 70
+  "unmapped": 72
  },
- "finishedAt": "2026-10-13T20:29:46.743Z"
+ "finishedAt": "2026-10-13T23:51:42.064Z"
 }
 {
  "ok": true,
@@ -217,14 +217,14 @@
   "scoreboards": 144,
   "injuries": 138,
   "teams": 209,
-  "codeRows": 155
+  "codeRows": 157
  }
 }
-✓ src/accumulated-history.js — 188 market(s), 15619 bar(s), 23003.8 KB
-✓ src/forecast-data.js — 9 location(s), 821 snapshot(s), 1623.9 KB
-✓ src/fda-signal-data.js — 6 subject(s), 428 snapshot(s), 288.6 KB
-✓ src/mlb-signal-data.js — 22 date file(s), 151 game(s), 566 state row(s), 369.8 KB
-✓ src/espn-signal-data.js — 7 league(s), 481 event(s), 31903.3 KB
+✓ src/accumulated-history.js — 188 market(s), 15619 bar(s), 23109.8 KB
+✓ src/forecast-data.js — 9 location(s), 830 snapshot(s), 1641.6 KB
+✓ src/fda-signal-data.js — 6 subject(s), 434 snapshot(s), 292.6 KB
+✓ src/mlb-signal-data.js — 22 date file(s), 151 game(s), 567 state row(s), 370.2 KB
+✓ src/espn-signal-data.js — 7 league(s), 481 event(s), 31958.4 KB
 ✓ src/mlb-pregame-data.js — 0 date file(s), 0 row(s), 2.1 KB (no predictions yet — MLBPreGame_ModelEdge abstains)
 ✓ src/form4-signal-data.js — 0 issuer(s), 0 filing(s), 1.3 KB (no archive yet — insider strategies abstain)
     JPMCEOCHANGE-27: 305 bar(s) + market object
@@ -415,11 +415,11 @@
     KXOPENAICEOCHANGE-26: 285 bar(s) + market object
     KXTESLACEOCHANGE-26: 0 bar(s) + market object
     TESLACEOCHANGE-26: 400 bar(s) + market object
-    intraday 1m: 1234 market(s), 80162 shipped bar(s) (cap 400/market) from data/history/intraday/1m
-    intraday 60m: 703 market(s), 67592 shipped bar(s) (cap 400/market) from data/history/intraday/60m
-desk-data: 106 markets (87 open) · 1458 ladder captures · 7222 bars · 118 quoted-only · 2170 KB → src/desk-data.js
-desk-data: 196 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
-desk-data: capture bound — the store holds 50961 ladders (18397 non-empty) in 104 batches; this module keeps 1458 ladders in 105 batches (104 store batch(es) represented, 0 not) — 0 season round stamp(s) and 49502 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
+    intraday 1m: 1249 market(s), 80402 shipped bar(s) (cap 400/market) from data/history/intraday/1m
+    intraday 60m: 707 market(s), 67756 shipped bar(s) (cap 400/market) from data/history/intraday/60m
+desk-data: 106 markets (87 open) · 1422 ladder captures · 7106 bars · 120 quoted-only · 2140 KB → src/desk-data.js
+desk-data: 200 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
+desk-data: capture bound — the store holds 51457 ladders (18545 non-empty) in 105 batches; this module keeps 1422 ladders in 106 batches (105 store batch(es) represented, 0 not) — 0 season round stamp(s) and 50034 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
   wrote VERIFICATION.md (99.5 KB)
   wrote IRREGULARITIES.md (123.1 KB)
   README.md AUTO blocks already up to date

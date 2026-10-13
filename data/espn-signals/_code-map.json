@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-13T20:29:46.743Z",
+ "generatedAt": "2026-10-13T23:51:42.063Z",
  "rows": [
   {
    "league": "nba",
@@ -940,6 +940,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "HAMP",
+   "kalshiName": "Hampton",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT24MONMHAMP-MONM",
+     "rulesName": "Hampton",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "HCU",
    "kalshiName": "Houston Christian",
    "conflictWith": null,
@@ -1180,6 +1195,21 @@
      "ticker": "KXNCAAFGAME-26OCT17PSUMICH-PSU",
      "rulesName": "Michigan",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "MONM",
+   "kalshiName": "Monmouth",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT24MONMHAMP-MONM",
+     "rulesName": "Monmouth",
+     "role": "away"
     }
    ]
   },
