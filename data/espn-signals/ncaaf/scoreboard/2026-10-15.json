@@ -1,0 +1,149 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-15",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261015"
+  ]
+ },
+ "captures": [
+  "2026-10-14T08:14:43.799Z"
+ ],
+ "events": {
+  "401860923": {
+   "eventId": "401860923",
+   "date": "2026-10-16T00:00Z",
+   "easternDate": "2026-10-15",
+   "name": "Colorado State Rams at Texas State Bobcats",
+   "shortName": "CSU @ TXST",
+   "week": 7,
+   "venue": "UFCU Stadium",
+   "homeAbbr": "TXST",
+   "homeTeamId": "326",
+   "homeName": "Texas State Bobcats",
+   "awayAbbr": "CSU",
+   "awayTeamId": "36",
+   "awayName": "Colorado State Rams",
+   "firstCapturedAt": "2026-10-14T08:14:43.799Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "TXST -14",
+    "spread": -14,
+    "overUnder": 69.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-14T08:14:43.799Z",
+     "last_seen_at": "2026-10-14T08:14:43.799Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "2-3"
+     }
+    }
+   ]
+  },
+  "401862800": {
+   "eventId": "401862800",
+   "date": "2026-10-15T23:30Z",
+   "easternDate": "2026-10-15",
+   "name": "East Carolina Pirates at UAB Blazers",
+   "shortName": "ECU @ UAB",
+   "week": 7,
+   "venue": "Protective Stadium",
+   "homeAbbr": "UAB",
+   "homeTeamId": "5",
+   "homeName": "UAB Blazers",
+   "awayAbbr": "ECU",
+   "awayTeamId": "151",
+   "awayName": "East Carolina Pirates",
+   "firstCapturedAt": "2026-10-14T08:14:43.799Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "ECU -4.5",
+    "spread": 4.5,
+    "overUnder": 47.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-14T08:14:43.799Z",
+     "last_seen_at": "2026-10-14T08:14:43.799Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-3",
+      "away": "3-2"
+     }
+    }
+   ]
+  },
+  "401869950": {
+   "eventId": "401869950",
+   "date": "2026-10-15T23:30Z",
+   "easternDate": "2026-10-15",
+   "name": "Georgia Southern Eagles at Old Dominion Monarchs",
+   "shortName": "GASO @ ODU",
+   "week": 7,
+   "venue": "S.B. Ballard Stadium",
+   "homeAbbr": "ODU",
+   "homeTeamId": "295",
+   "homeName": "Old Dominion Monarchs",
+   "awayAbbr": "GASO",
+   "awayTeamId": "290",
+   "awayName": "Georgia Southern Eagles",
+   "firstCapturedAt": "2026-10-14T08:14:43.799Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "GASO -3.5",
+    "spread": 3.5,
+    "overUnder": 47.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-14T08:14:43.799Z",
+     "last_seen_at": "2026-10-14T08:14:43.799Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-4",
+      "away": "2-4"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-14T08:14:43.799Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261015"
+}

@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-14T02:50:15.073Z",
+ "generatedAt": "2026-10-14T08:14:44.953Z",
  "rows": [
   {
    "league": "nba",
@@ -150,6 +150,11 @@
      "ticker": "KXNBAGAME-26OCT07GSWPOR-GSW",
      "rulesName": "Golden State",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT13GSWLAL-GSW",
+     "rulesName": "Golden State",
+     "role": "away"
     }
    ]
   },
@@ -170,6 +175,11 @@
      "ticker": "KXNBAGAME-26OCT07MININD-MIN",
      "rulesName": "Indiana",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT13INDOKC-IND",
+     "rulesName": "Indiana",
+     "role": "away"
     }
    ]
   },
@@ -2762,17 +2772,22 @@
      "role": "home"
     },
     {
+     "ticker": "KXNHLGAME-26OCT13BOSSJ-BOS",
+     "rulesName": "Boston",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT13BOSSJ-SJ",
+     "rulesName": "Boston",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP20WSHBOS-BOS",
      "rulesName": "Boston",
      "role": "home"
     },
     {
      "ticker": "KXNHLGAME-26SEP29NYRBOS-BOS",
-     "rulesName": "Boston",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP29NYRBOS-NYR",
      "rulesName": "Boston",
      "role": "home"
     }
@@ -2942,6 +2957,11 @@
      "role": "away"
     },
     {
+     "ticker": "KXNHLGAME-26OCT13COLDAL-DAL",
+     "rulesName": "Colorado",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP30LACOL-COL",
      "rulesName": "Colorado",
      "role": "home"
@@ -2978,6 +2998,11 @@
     },
     {
      "ticker": "KXNHLGAME-26OCT02STLDAL-DAL",
+     "rulesName": "Dallas",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT13COLDAL-DAL",
      "rulesName": "Dallas",
      "role": "home"
     }
@@ -3027,17 +3052,17 @@
      "role": "away"
     },
     {
+     "ticker": "KXNHLGAME-26OCT13EDMLA-EDM",
+     "rulesName": "Edmonton",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP19WPGEDM-EDM",
      "rulesName": "Edmonton",
      "role": "home"
     },
     {
      "ticker": "KXNHLGAME-26SEP19WPGEDM-WPG",
-     "rulesName": "Edmonton",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNHLGAME-26SEP29VANEDM-EDM",
      "rulesName": "Edmonton",
      "role": "home"
     }
@@ -3387,14 +3412,14 @@
      "role": "home"
     },
     {
-     "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
+     "ticker": "KXNHLGAME-26OCT13BOSSJ-BOS",
      "rulesName": "San Jose",
-     "role": "away"
+     "role": "home"
     },
     {
-     "ticker": "KXNHLGAME-26SEP20SJANA-SJ",
+     "ticker": "KXNHLGAME-26OCT13BOSSJ-SJ",
      "rulesName": "San Jose",
-     "role": "away"
+     "role": "home"
     }
    ]
   },
