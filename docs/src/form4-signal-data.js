@@ -12,11 +12,11 @@
  * src/form4-signal-store.js, which refuses any filing accepted AFTER the
  * decision time (the anti-lookahead rule).
  *
- * NO ARCHIVE YET — no filings have been captured; every Form-4-signal-dependent strategy abstains until the archive exists. · generated 2026-10-14T17:04:07.894Z
+ * NO ARCHIVE YET — no filings have been captured; every Form-4-signal-dependent strategy abstains until the archive exists. · generated 2026-10-14T18:03:47.771Z
  */
 
 export const FORM4_SIGNAL_DATA = {
- "generatedAt": "2026-10-14T17:04:07.894Z",
+ "generatedAt": "2026-10-14T18:03:47.771Z",
  "present": false,
  "endpoint": "https://www.sec.gov/cgi-bin/browse-edgar",
  "archives": "https://www.sec.gov/Archives/edgar/data",
