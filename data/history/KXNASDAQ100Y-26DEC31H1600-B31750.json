@@ -6230,6 +6230,31 @@
         "low_dollars": "0.0400",
         "open_dollars": "0.0800"
       }
+    },
+    {
+      "end_period_ts": 1791950400,
+      "open_interest_fp": "96394.95",
+      "price": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0800",
+        "low_dollars": "0.0600",
+        "mean_dollars": "0.0703",
+        "open_dollars": "0.0600",
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "785.61",
+      "yes_ask": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      }
     }
   ],
   "books": [
@@ -17744,6 +17769,198 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-14T05:11:59.539Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31750/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "143511.14"
+            ],
+            [
+              "0.0200",
+              "250.00"
+            ],
+            [
+              "0.0300",
+              "166.00"
+            ],
+            [
+              "0.0400",
+              "125.00"
+            ],
+            [
+              "0.0500",
+              "100.00"
+            ],
+            [
+              "0.0700",
+              "10000.00"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.1700",
+              "4000.00"
+            ],
+            [
+              "0.2500",
+              "3.35"
+            ],
+            [
+              "0.2700",
+              "2000.00"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.3700",
+              "1200.00"
+            ],
+            [
+              "0.4500",
+              "88.00"
+            ],
+            [
+              "0.4700",
+              "400.00"
+            ],
+            [
+              "0.4800",
+              "83.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5100",
+              "78.00"
+            ],
+            [
+              "0.5400",
+              "64.00"
+            ],
+            [
+              "0.5700",
+              "61.00"
+            ],
+            [
+              "0.6000",
+              "58.00"
+            ],
+            [
+              "0.6300",
+              "47.00"
+            ],
+            [
+              "0.6600",
+              "45.00"
+            ],
+            [
+              "0.6900",
+              "43.00"
+            ],
+            [
+              "0.7000",
+              "2040.00"
+            ],
+            [
+              "0.7200",
+              "34.00"
+            ],
+            [
+              "0.7500",
+              "2033.00"
+            ],
+            [
+              "0.7600",
+              "4.18"
+            ],
+            [
+              "0.7800",
+              "32.00"
+            ],
+            [
+              "0.7900",
+              "40.23"
+            ],
+            [
+              "0.8000",
+              "1315.02"
+            ],
+            [
+              "0.8100",
+              "34.18"
+            ],
+            [
+              "0.8400",
+              "29.27"
+            ],
+            [
+              "0.8500",
+              "107.05"
+            ],
+            [
+              "0.8600",
+              "8.36"
+            ],
+            [
+              "0.8700",
+              "2134.87"
+            ],
+            [
+              "0.8800",
+              "2065.80"
+            ],
+            [
+              "0.8900",
+              "2005.44"
+            ],
+            [
+              "0.9000",
+              "1577.32"
+            ],
+            [
+              "0.9100",
+              "388.64"
+            ],
+            [
+              "0.9200",
+              "5927.33"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1676.63"
+            ],
+            [
+              "0.0200",
+              "1510.24"
+            ],
+            [
+              "0.0300",
+              "1103.00"
+            ],
+            [
+              "0.0400",
+              "4720.36"
+            ],
+            [
+              "0.0500",
+              "58.54"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -17764,11 +17981,11 @@
     "no_bid_dollars": "0.9200",
     "no_sub_title": "31,500 to 31,999.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "96365.03",
+    "open_interest_fp": "96394.95",
     "open_time": "2025-12-23T15:00:00Z",
-    "previous_price_dollars": "0.1000",
-    "previous_yes_ask_dollars": "0.1000",
-    "previous_yes_bid_dollars": "0.0900",
+    "previous_price_dollars": "0.0400",
+    "previous_yes_ask_dollars": "0.0700",
+    "previous_yes_bid_dollars": "0.0500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -17788,17 +18005,17 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-B31750",
     "title": "Will the Nasdaq-100 be between 31500 and 31999.99 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:46.317479Z",
-    "volume_24h_fp": "2647.32",
-    "volume_fp": "138033.17",
+    "volume_24h_fp": "785.61",
+    "volume_fp": "138063.28",
     "yes_ask_dollars": "0.0800",
-    "yes_ask_size_fp": "20.60",
+    "yes_ask_size_fp": "5927.33",
     "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "125.72",
+    "yes_bid_size_fp": "58.54",
     "yes_sub_title": "31,500 to 31,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31750",
-  "market_captured_at": "2026-10-13T21:33:31.000Z",
+  "market_captured_at": "2026-10-14T05:11:58.922Z",
   "status": "active",
-  "last_ingested_at": "2026-10-13T21:33:31.575Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B31750/candlesticks?start_ts=1791864001&end_ts=1791927211&period_interval=1440"
+  "last_ingested_at": "2026-10-14T05:11:59.482Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B31750/candlesticks?start_ts=1791864001&end_ts=1791954719&period_interval=1440"
 }

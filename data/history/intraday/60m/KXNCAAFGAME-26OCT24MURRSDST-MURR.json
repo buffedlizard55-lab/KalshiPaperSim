@@ -690,6 +690,71 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1791943200,
+      "open_interest_fp": "4474.02",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1791946800,
+      "open_interest_fp": "4497.41",
+      "price": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "mean_dollars": "0.0200",
+        "open_dollars": "0.0200",
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "23.39",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1791954000,
+      "open_interest_fp": "4497.41",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -1444,6 +1509,70 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-14T05:18:01.946Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "14852.88"
+            ],
+            [
+              "0.0200",
+              "12410.00"
+            ],
+            [
+              "0.0300",
+              "8144.00"
+            ],
+            [
+              "0.0400",
+              "849.00"
+            ],
+            [
+              "0.0500",
+              "267.00"
+            ],
+            [
+              "0.0600",
+              "22.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.8800",
+              "140.00"
+            ],
+            [
+              "0.9500",
+              "46.79"
+            ],
+            [
+              "0.9600",
+              "10.00"
+            ],
+            [
+              "0.9700",
+              "197.00"
+            ],
+            [
+              "0.9800",
+              "440747.59"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5382.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1467,7 +1596,7 @@
     "no_sub_title": "Murray St.",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-24T22:00:00Z",
-    "open_interest_fp": "4474.02",
+    "open_interest_fp": "4497.41",
     "open_time": "2026-10-10T19:08:00Z",
     "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0200",
@@ -1490,17 +1619,17 @@
     "ticker": "KXNCAAFGAME-26OCT24MURRSDST-MURR",
     "title": "Murray St. wins",
     "updated_time": "2026-10-10T19:08:00.751298Z",
-    "volume_24h_fp": "853.78",
-    "volume_fp": "4475.02",
+    "volume_24h_fp": "496.29",
+    "volume_fp": "4498.41",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "440770.98",
+    "yes_ask_size_fp": "440747.59",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "5000.00",
+    "yes_bid_size_fp": "5382.00",
     "yes_sub_title": "Murray St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR",
-  "market_captured_at": "2026-10-13T21:39:42.890Z",
+  "market_captured_at": "2026-10-14T05:18:01.228Z",
   "status": "active",
-  "last_ingested_at": "2026-10-13T21:39:43.561Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/candlesticks?start_ts=1791900001&end_ts=1791927583&period_interval=60"
+  "last_ingested_at": "2026-10-14T05:18:01.890Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/candlesticks?start_ts=1791907201&end_ts=1791955081&period_interval=60"
 }

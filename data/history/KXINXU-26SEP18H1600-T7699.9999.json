@@ -849,6 +849,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-14T05:11:05.237Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXU-26SEP18H1600-T7699.9999/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -907,9 +917,9 @@
     "yes_sub_title": "7,700 or above"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXU-26SEP18H1600-T7699.9999",
-  "market_captured_at": "2026-10-13T21:32:34.562Z",
+  "market_captured_at": "2026-10-14T05:11:04.617Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-13T21:32:35.141Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXU/markets/KXINXU-26SEP18H1600-T7699.9999/candlesticks?start_ts=1789790401&end_ts=1791927154&period_interval=1440"
+  "last_ingested_at": "2026-10-14T05:11:05.180Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXU/markets/KXINXU-26SEP18H1600-T7699.9999/candlesticks?start_ts=1789790401&end_ts=1791954664&period_interval=1440"
 }
