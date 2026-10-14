@@ -3294,6 +3294,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-14T08:00:11.017Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT13GSWLAL-GSW/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3319,9 +3329,9 @@
     "occurrence_datetime": "2026-10-14T05:00:00Z",
     "open_interest_fp": "1351806.77",
     "open_time": "2026-10-07T02:06:08.065633Z",
-    "previous_price_dollars": "0.4500",
-    "previous_yes_ask_dollars": "0.4500",
-    "previous_yes_bid_dollars": "0.4400",
+    "previous_price_dollars": "0.4400",
+    "previous_yes_ask_dollars": "0.4300",
+    "previous_yes_bid_dollars": "0.4200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3342,7 +3352,7 @@
     "ticker": "KXNBAGAME-26OCT13GSWLAL-GSW",
     "title": "Golden State wins",
     "updated_time": "2026-10-14T04:27:09.937748Z",
-    "volume_24h_fp": "2799664.14",
+    "volume_24h_fp": "2798491.56",
     "volume_fp": "2807485.00",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3351,9 +3361,9 @@
     "yes_sub_title": "Golden State"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT13GSWLAL-GSW",
-  "market_captured_at": "2026-10-14T05:17:36.415Z",
+  "market_captured_at": "2026-10-14T08:00:10.367Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-14T05:17:37.077Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT13GSWLAL-GSW/candlesticks?start_ts=1791252368&end_ts=1791955056&period_interval=60"
+  "last_ingested_at": "2026-10-14T08:00:10.994Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT13GSWLAL-GSW/candlesticks?start_ts=1791954001&end_ts=1791964810&period_interval=60"
 }

@@ -2894,6 +2894,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-14T07:55:50.169Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2952,9 +2962,9 @@
     "yes_sub_title": "Northern Arizona wins by over 24.5 points"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25",
-  "market_captured_at": "2026-10-14T05:12:50.905Z",
+  "market_captured_at": "2026-10-14T07:55:49.622Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-14T05:12:51.466Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25/candlesticks?start_ts=1789963201&end_ts=1791954771&period_interval=1440",
+  "last_ingested_at": "2026-10-14T07:55:50.147Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19NAUUTU-NAU25/candlesticks?start_ts=1789963201&end_ts=1791964549&period_interval=1440",
   "result": "no"
 }
