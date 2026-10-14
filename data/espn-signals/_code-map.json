@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-14T19:08:53.981Z",
+ "generatedAt": "2026-10-14T22:20:38.609Z",
  "rows": [
   {
    "league": "nba",
@@ -1030,6 +1030,26 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "IOWA",
+   "kalshiName": "Iowa",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "66",
+    "abbr": "ISU",
+    "displayName": "Iowa State Cyclones",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT23IOWAMINN-MINN",
+     "rulesName": "Iowa",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "LAM",
    "kalshiName": "Lamar",
    "conflictWith": null,
@@ -1204,6 +1224,21 @@
     {
      "ticker": "KXNCAAFGAME-26OCT17PSUMICH-PSU",
      "rulesName": "Michigan",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "MINN",
+   "kalshiName": "Minnesota",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT23IOWAMINN-MINN",
+     "rulesName": "Minnesota",
      "role": "home"
     }
    ]
