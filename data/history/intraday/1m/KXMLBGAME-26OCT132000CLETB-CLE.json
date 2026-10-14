@@ -12020,6 +12020,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-14T12:04:10.055Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT132000CLETB-CLE/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12068,7 +12078,7 @@
     "ticker": "KXMLBGAME-26OCT132000CLETB-CLE",
     "title": "Cleveland wins",
     "updated_time": "2026-10-14T02:59:25.452268Z",
-    "volume_24h_fp": "8458810.80",
+    "volume_24h_fp": "8440822.13",
     "volume_fp": "8574812.50",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12077,11 +12087,11 @@
     "yes_sub_title": "Cleveland"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT132000CLETB-CLE",
-  "market_captured_at": "2026-10-14T08:02:45.916Z",
+  "market_captured_at": "2026-10-14T12:04:09.414Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-14T08:02:46.541Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT132000CLETB-CLE/candlesticks?start_ts=1791946621&end_ts=1791964966&period_interval=1",
+  "last_ingested_at": "2026-10-14T12:04:10.037Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT132000CLETB-CLE/candlesticks?start_ts=1791946621&end_ts=1791979449&period_interval=1",
   "trims": [
     {
       "at": "2026-10-14T05:20:30.583Z",

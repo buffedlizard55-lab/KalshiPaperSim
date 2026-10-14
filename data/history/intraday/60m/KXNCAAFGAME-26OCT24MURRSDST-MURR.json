@@ -1677,6 +1677,66 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-14T12:01:58.833Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "14733.88"
+            ],
+            [
+              "0.0200",
+              "12410.00"
+            ],
+            [
+              "0.0300",
+              "8144.00"
+            ],
+            [
+              "0.0400",
+              "1075.00"
+            ],
+            [
+              "0.0500",
+              "267.00"
+            ],
+            [
+              "0.0600",
+              "355.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.8800",
+              "140.00"
+            ],
+            [
+              "0.9500",
+              "46.79"
+            ],
+            [
+              "0.9700",
+              "197.00"
+            ],
+            [
+              "0.9800",
+              "440747.59"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5100.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1723,7 +1783,7 @@
     "ticker": "KXNCAAFGAME-26OCT24MURRSDST-MURR",
     "title": "Murray St. wins",
     "updated_time": "2026-10-10T19:08:00.751298Z",
-    "volume_24h_fp": "28.39",
+    "volume_24h_fp": "23.39",
     "volume_fp": "4498.41",
     "yes_ask_dollars": "0.0200",
     "yes_ask_size_fp": "440747.59",
@@ -1732,8 +1792,8 @@
     "yes_sub_title": "Murray St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR",
-  "market_captured_at": "2026-10-14T08:00:33.340Z",
+  "market_captured_at": "2026-10-14T12:01:58.191Z",
   "status": "active",
-  "last_ingested_at": "2026-10-14T08:00:33.968Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/candlesticks?start_ts=1791954001&end_ts=1791964833&period_interval=60"
+  "last_ingested_at": "2026-10-14T12:01:58.813Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/candlesticks?start_ts=1791961201&end_ts=1791979318&period_interval=60"
 }
