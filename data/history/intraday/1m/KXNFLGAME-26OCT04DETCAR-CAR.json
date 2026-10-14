@@ -12395,6 +12395,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-14T20:32:53.879Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT04DETCAR-CAR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12452,11 +12462,11 @@
     "yes_sub_title": "Carolina"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT04DETCAR-CAR",
-  "market_captured_at": "2026-10-14T12:06:17.547Z",
+  "market_captured_at": "2026-10-14T20:32:49.835Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-14T12:06:21.061Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT04DETCAR-CAR/candlesticks?start_ts=1791949381&end_ts=1791979577&period_interval=1",
+  "last_ingested_at": "2026-10-14T20:32:53.814Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT04DETCAR-CAR/candlesticks?start_ts=1791949381&end_ts=1792009970&period_interval=1",
   "trims": [
     {
       "at": "2026-10-05T06:10:53.192Z",

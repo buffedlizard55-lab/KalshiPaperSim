@@ -5,26 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1791183600,
-      "open_interest_fp": "64253.24",
-      "price": {
-        "previous_dollars": "0.0100"
-      },
-      "volume_fp": "0.00",
-      "yes_ask": {
-        "close_dollars": "0.0200",
-        "high_dollars": "0.0200",
-        "low_dollars": "0.0200",
-        "open_dollars": "0.0200"
-      },
-      "yes_bid": {
-        "close_dollars": "0.0100",
-        "high_dollars": "0.0100",
-        "low_dollars": "0.0100",
-        "open_dollars": "0.0100"
-      }
-    },
-    {
       "end_period_ts": 1791187200,
       "open_interest_fp": "64086.24",
       "price": {
@@ -4343,6 +4323,31 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1791982800,
+      "open_interest_fp": "108347.18",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0378",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "336.98",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -4581,6 +4586,16 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-14T20:33:19.463Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPIYOY-26SEP-T3.8/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4591,20 +4606,20 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-10-14T14:00:00Z",
     "expiration_time": "2027-01-13T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "3.7",
     "floor_strike": 3.8,
     "last_price_dollars": "0.0300",
     "latest_expiration_time": "2027-01-13T14:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.9700",
-    "no_bid_dollars": "0.9600",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Above 3.8%",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-14T14:00:00Z",
-    "open_interest_fp": "108269.19",
+    "open_interest_fp": "108347.18",
     "open_time": "2026-06-09T22:25:00Z",
-    "previous_price_dollars": "0.0100",
-    "previous_yes_ask_dollars": "0.0100",
+    "previous_price_dollars": "0.0200",
+    "previous_yes_ask_dollars": "0.0200",
     "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -4614,30 +4629,32 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "no",
     "rules_primary": "If the Consumer Price Index (CPI) increases by more than 3.8% in the twelve months ending September 2026 (as represented by the one-decimal place value reported by the Bureau of Labor Statistics), then the market resolves to Yes.",
     "rules_secondary": "In the case of a delay in data caused by a federal government shutdown impacting the reliability of the Source Agency, the market’s latest Expiration Date will be extended to the sooner of the release of the Underlying or six months after the end of the\ngovernment shutdown",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
-    "status": "active",
+    "settlement_ts": "2026-10-14T13:03:49.108244Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
     "strike_type": "greater",
     "subtitle": "3.8",
     "ticker": "KXCPIYOY-26SEP-T3.8",
     "title": "Will the rate of CPI inflation be above 3.8% for the year ending in September 2026?",
-    "updated_time": "2026-06-09T22:25:00.706244Z",
-    "volume_24h_fp": "40282.98",
-    "volume_fp": "184415.14",
-    "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "654.00",
-    "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "144.37",
+    "updated_time": "2026-10-14T13:03:49.430556Z",
+    "volume_24h_fp": "37361.99",
+    "volume_fp": "184751.12",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Above 3.8%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPIYOY-26SEP-T3.8",
-  "market_captured_at": "2026-10-14T12:06:43.319Z",
-  "status": "active",
-  "last_ingested_at": "2026-10-14T12:06:43.943Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26SEP-T3.8/candlesticks?start_ts=1791964801&end_ts=1791979603&period_interval=60",
+  "market_captured_at": "2026-10-14T20:33:18.726Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-14T20:33:19.399Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26SEP-T3.8/candlesticks?start_ts=1791979201&end_ts=1792009999&period_interval=60",
   "trims": [
     {
       "at": "2026-10-14T05:23:22.359Z",
@@ -4662,6 +4679,15 @@
       "dropped_to_ts": 1791180000,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-10-14T20:33:19.764Z",
+      "dropped": 1,
+      "dropped_from_ts": 1791183600,
+      "dropped_to_ts": 1791183600,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }
-  ]
+  ],
+  "result": "no"
 }

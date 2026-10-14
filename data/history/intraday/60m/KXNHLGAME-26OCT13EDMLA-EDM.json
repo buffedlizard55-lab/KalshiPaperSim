@@ -3012,6 +3012,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-14T20:27:47.654Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT13EDMLA-EDM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3037,9 +3047,9 @@
     "occurrence_datetime": "2026-10-14T05:30:00Z",
     "open_interest_fp": "719738.33",
     "open_time": "2026-10-07T04:06:00Z",
-    "previous_price_dollars": "0.5400",
-    "previous_yes_ask_dollars": "0.5400",
-    "previous_yes_bid_dollars": "0.5300",
+    "previous_price_dollars": "0.5500",
+    "previous_yes_ask_dollars": "0.5500",
+    "previous_yes_bid_dollars": "0.5400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3060,7 +3070,7 @@
     "ticker": "KXNHLGAME-26OCT13EDMLA-EDM",
     "title": "Edmonton wins",
     "updated_time": "2026-10-14T05:17:14.933937Z",
-    "volume_24h_fp": "996174.98",
+    "volume_24h_fp": "968447.64",
     "volume_fp": "1001709.81",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3069,9 +3079,9 @@
     "yes_sub_title": "Edmonton"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT13EDMLA-EDM",
-  "market_captured_at": "2026-10-14T12:01:53.132Z",
+  "market_captured_at": "2026-10-14T20:27:46.917Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-14T12:01:53.755Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT13EDMLA-EDM/candlesticks?start_ts=1791957601&end_ts=1791979313&period_interval=60"
+  "last_ingested_at": "2026-10-14T20:27:47.589Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT13EDMLA-EDM/candlesticks?start_ts=1791957601&end_ts=1792009667&period_interval=60"
 }

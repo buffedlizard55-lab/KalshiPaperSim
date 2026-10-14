@@ -5,31 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1791237600,
-      "open_interest_fp": "43664.56",
-      "price": {
-        "close_dollars": "0.8400",
-        "high_dollars": "0.8400",
-        "low_dollars": "0.8400",
-        "mean_dollars": "0.8400",
-        "open_dollars": "0.8400",
-        "previous_dollars": "0.8400"
-      },
-      "volume_fp": "5.88",
-      "yes_ask": {
-        "close_dollars": "0.8400",
-        "high_dollars": "0.8400",
-        "low_dollars": "0.8400",
-        "open_dollars": "0.8400"
-      },
-      "yes_bid": {
-        "close_dollars": "0.8300",
-        "high_dollars": "0.8300",
-        "low_dollars": "0.8300",
-        "open_dollars": "0.8300"
-      }
-    },
-    {
       "end_period_ts": 1791241200,
       "open_interest_fp": "43664.56",
       "price": {
@@ -4728,6 +4703,31 @@
         "low_dollars": "0.8800",
         "open_dollars": "0.8800"
       }
+    },
+    {
+      "end_period_ts": 1791982800,
+      "open_interest_fp": "66961.42",
+      "price": {
+        "close_dollars": "0.8600",
+        "high_dollars": "0.9100",
+        "low_dollars": "0.8600",
+        "mean_dollars": "0.8656",
+        "open_dollars": "0.8600",
+        "previous_dollars": "0.8800"
+      },
+      "volume_fp": "599.72",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.8600",
+        "open_dollars": "0.8900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.8800",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.8800"
+      }
     }
   ],
   "books": [
@@ -8330,6 +8330,16 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-14T20:33:12.354Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPIYOY-26SEP-T3.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -8340,21 +8350,21 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-10-14T14:00:00Z",
     "expiration_time": "2027-01-13T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "3.7",
     "floor_strike": 3.5,
     "last_price_dollars": "0.8600",
     "latest_expiration_time": "2027-01-13T14:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.1400",
-    "no_bid_dollars": "0.1100",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Above 3.5%",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-14T14:00:00Z",
-    "open_interest_fp": "66841.88",
+    "open_interest_fp": "66961.42",
     "open_time": "2026-06-09T22:25:00Z",
-    "previous_price_dollars": "0.8800",
-    "previous_yes_ask_dollars": "0.8800",
-    "previous_yes_bid_dollars": "0.8700",
+    "previous_price_dollars": "0.8700",
+    "previous_yes_ask_dollars": "0.8700",
+    "previous_yes_bid_dollars": "0.8600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -8363,30 +8373,32 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If the Consumer Price Index (CPI) increases by more than 3.5% in the twelve months ending September 2026 (as represented by the one-decimal place value reported by the Bureau of Labor Statistics), then the market resolves to Yes.",
     "rules_secondary": "In the case of a delay in data caused by a federal government shutdown impacting the reliability of the Source Agency, the market’s latest Expiration Date will be extended to the sooner of the release of the Underlying or six months after the end of the\ngovernment shutdown",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
-    "status": "active",
+    "settlement_ts": "2026-10-14T13:03:49.108244Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "greater",
     "subtitle": "3.5",
     "ticker": "KXCPIYOY-26SEP-T3.5",
     "title": "Will the rate of CPI inflation be above 3.5% for the year ending in September 2026?",
-    "updated_time": "2026-06-09T22:25:00.706244Z",
-    "volume_24h_fp": "11181.81",
-    "volume_fp": "223683.01",
-    "yes_ask_dollars": "0.8900",
-    "yes_ask_size_fp": "137.00",
-    "yes_bid_dollars": "0.8600",
-    "yes_bid_size_fp": "25000.00",
+    "updated_time": "2026-10-14T13:03:49.430556Z",
+    "volume_24h_fp": "8429.32",
+    "volume_fp": "224147.99",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Above 3.5%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPIYOY-26SEP-T3.5",
-  "market_captured_at": "2026-10-14T12:06:36.958Z",
-  "status": "active",
-  "last_ingested_at": "2026-10-14T12:06:37.582Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26SEP-T3.5/candlesticks?start_ts=1791964801&end_ts=1791979597&period_interval=60",
+  "market_captured_at": "2026-10-14T20:33:11.619Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-14T20:33:12.289Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26SEP-T3.5/candlesticks?start_ts=1791979201&end_ts=1792009991&period_interval=60",
   "trims": [
     {
       "at": "2026-10-09T06:38:43.662Z",
@@ -8571,6 +8583,15 @@
       "dropped_to_ts": 1791234000,
       "kept": 200,
       "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-10-14T20:33:12.655Z",
+      "dropped": 1,
+      "dropped_from_ts": 1791237600,
+      "dropped_to_ts": 1791237600,
+      "kept": 200,
+      "reason": "--max-bars=200: the store keeps the newest 200 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }
-  ]
+  ],
+  "result": "yes"
 }
