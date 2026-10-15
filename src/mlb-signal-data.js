@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 24 date file(s) · 154 game(s) · 577 state row(s) · generated 2026-10-15T18:51:19.643Z
+ * 24 date file(s) · 154 game(s) · 578 state row(s) · generated 2026-10-15T19:31:58.670Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-15T18:51:19.643Z",
+ "generatedAt": "2026-10-15T19:31:58.670Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-10-15T08:02:08.224Z",
+  "last_confirmed_at": "2026-10-15T19:31:56.673Z",
   "teams": [
    {
     "id": 108,
@@ -14299,7 +14299,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-10-14T22:46:40.392Z",
     "2026-10-15T01:02:08.251Z",
     "2026-10-15T02:33:12.345Z",
-    "2026-10-15T08:02:08.225Z"
+    "2026-10-15T08:02:08.225Z",
+    "2026-10-15T19:31:56.674Z"
    ],
    "games": {
     "849811": {
@@ -14394,7 +14395,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-15T08:02:08.225Z",
-       "last_seen_at": "2026-10-15T08:02:08.225Z",
+       "last_seen_at": "2026-10-15T19:31:56.674Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -14423,7 +14424,8 @@ export const MLB_SIGNAL_DATA = {
     ]
    },
    "captures": [
-    "2026-10-15T08:02:08.225Z"
+    "2026-10-15T08:02:08.225Z",
+    "2026-10-15T19:31:56.674Z"
    ],
    "games": {
     "849810": {
@@ -14445,7 +14447,10 @@ export const MLB_SIGNAL_DATA = {
      },
      "venue": "UNIQLO Field at Dodger Stadium",
      "probablePitchers": {
-      "away": null,
+      "away": {
+       "id": 675660,
+       "fullName": "Shane Drohan"
+      },
       "home": {
        "id": 607192,
        "fullName": "Tyler Glasnow"
@@ -14455,7 +14460,7 @@ export const MLB_SIGNAL_DATA = {
      "states": [
       {
        "captured_at": "2026-10-15T08:02:08.225Z",
-       "last_seen_at": "2026-10-15T08:02:08.225Z",
+       "last_seen_at": "2026-10-15T19:31:56.674Z",
        "abstractGameState": "Preview",
        "detailedState": "Scheduled",
        "codedGameState": "S",
@@ -14511,6 +14516,21 @@ export const MLB_SIGNAL_DATA = {
        "runs": {
         "away": null,
         "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      },
+      {
+       "captured_at": "2026-10-15T19:31:56.674Z",
+       "last_seen_at": "2026-10-15T19:31:56.674Z",
+       "abstractGameState": "Live",
+       "detailedState": "In Progress",
+       "codedGameState": "I",
+       "inning": 8,
+       "inningState": "Bottom",
+       "runs": {
+        "away": 2,
+        "home": 3
        },
        "winner": null,
        "url_ref": 0

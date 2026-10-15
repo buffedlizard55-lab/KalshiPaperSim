@@ -10,7 +10,8 @@
   ]
  },
  "captures": [
-  "2026-10-15T08:02:08.225Z"
+  "2026-10-15T08:02:08.225Z",
+  "2026-10-15T19:31:56.674Z"
  ],
  "games": {
   "849810": {
@@ -32,7 +33,10 @@
    },
    "venue": "UNIQLO Field at Dodger Stadium",
    "probablePitchers": {
-    "away": null,
+    "away": {
+     "id": 675660,
+     "fullName": "Shane Drohan"
+    },
     "home": {
      "id": 607192,
      "fullName": "Tyler Glasnow"
@@ -42,7 +46,7 @@
    "states": [
     {
      "captured_at": "2026-10-15T08:02:08.225Z",
-     "last_seen_at": "2026-10-15T08:02:08.225Z",
+     "last_seen_at": "2026-10-15T19:31:56.674Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
@@ -98,6 +102,21 @@
      "runs": {
       "away": null,
       "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-15T19:31:56.674Z",
+     "last_seen_at": "2026-10-15T19:31:56.674Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 8,
+     "inningState": "Bottom",
+     "runs": {
+      "away": 2,
+      "home": 3
      },
      "winner": null,
      "url_ref": 0
