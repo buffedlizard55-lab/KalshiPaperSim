@@ -3440,6 +3440,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-15T05:05:55.420Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT13COLDAL-DAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3465,9 +3475,9 @@
     "occurrence_datetime": "2026-10-14T03:30:00Z",
     "open_interest_fp": "930047.77",
     "open_time": "2026-10-07T01:06:00Z",
-    "previous_price_dollars": "0.5200",
-    "previous_yes_ask_dollars": "0.5200",
-    "previous_yes_bid_dollars": "0.5100",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3488,7 +3498,7 @@
     "ticker": "KXNHLGAME-26OCT13COLDAL-DAL",
     "title": "Dallas wins",
     "updated_time": "2026-10-14T03:25:04.935413Z",
-    "volume_24h_fp": "613288.44",
+    "volume_24h_fp": "0.00",
     "volume_fp": "1169488.82",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3497,9 +3507,9 @@
     "yes_sub_title": "Dallas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT13COLDAL-DAL",
-  "market_captured_at": "2026-10-14T20:27:42.710Z",
+  "market_captured_at": "2026-10-15T05:05:54.694Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-14T20:27:43.379Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT13COLDAL-DAL/candlesticks?start_ts=1791950401&end_ts=1792009663&period_interval=60"
+  "last_ingested_at": "2026-10-15T05:05:55.360Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT13COLDAL-DAL/candlesticks?start_ts=1791950401&end_ts=1792040754&period_interval=60"
 }
