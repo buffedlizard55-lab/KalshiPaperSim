@@ -2872,6 +2872,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-15T20:08:51.344Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT14DENLAC-DEN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2920,7 +2930,7 @@
     "ticker": "KXNBAGAME-26OCT14DENLAC-DEN",
     "title": "Denver wins",
     "updated_time": "2026-10-15T04:59:09.43532Z",
-    "volume_24h_fp": "3310138.16",
+    "volume_24h_fp": "3304869.61",
     "volume_fp": "3311650.51",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2929,9 +2939,9 @@
     "yes_sub_title": "Denver"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT14DENLAC-DEN",
-  "market_captured_at": "2026-10-15T11:38:21.663Z",
+  "market_captured_at": "2026-10-15T20:08:50.709Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-15T11:38:22.289Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT14DENLAC-DEN/candlesticks?start_ts=1792040401&end_ts=1792064301&period_interval=60"
+  "last_ingested_at": "2026-10-15T20:08:51.328Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT14DENLAC-DEN/candlesticks?start_ts=1792040401&end_ts=1792094931&period_interval=60"
 }
