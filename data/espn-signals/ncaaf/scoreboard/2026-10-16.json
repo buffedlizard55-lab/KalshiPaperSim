@@ -1,0 +1,149 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-16",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261016"
+  ]
+ },
+ "captures": [
+  "2026-10-15T07:59:15.450Z"
+ ],
+ "events": {
+  "401858493": {
+   "eventId": "401858493",
+   "date": "2026-10-17T00:00Z",
+   "easternDate": "2026-10-16",
+   "name": "Washington Huskies at Purdue Boilermakers",
+   "shortName": "WASH @ PUR",
+   "week": 7,
+   "venue": "Ross-Ade Stadium",
+   "homeAbbr": "PUR",
+   "homeTeamId": "2509",
+   "homeName": "Purdue Boilermakers",
+   "awayAbbr": "WASH",
+   "awayTeamId": "264",
+   "awayName": "Washington Huskies",
+   "firstCapturedAt": "2026-10-15T07:59:15.450Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "PUR -3.5",
+    "spread": -3.5,
+    "overUnder": 51.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-15T07:59:15.450Z",
+     "last_seen_at": "2026-10-15T07:59:15.450Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-3",
+      "away": "3-3"
+     }
+    }
+   ]
+  },
+  "401862801": {
+   "eventId": "401862801",
+   "date": "2026-10-16T23:30Z",
+   "easternDate": "2026-10-16",
+   "name": "Memphis Tigers at Tulane Green Wave",
+   "shortName": "MEM @ TULN",
+   "week": 7,
+   "venue": "Yulman Stadium",
+   "homeAbbr": "TULN",
+   "homeTeamId": "2655",
+   "homeName": "Tulane Green Wave",
+   "awayAbbr": "MEM",
+   "awayTeamId": "235",
+   "awayName": "Memphis Tigers",
+   "firstCapturedAt": "2026-10-15T07:59:15.450Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "MEM -7",
+    "spread": 7,
+    "overUnder": 55.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-15T07:59:15.450Z",
+     "last_seen_at": "2026-10-15T07:59:15.450Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "5-1"
+     }
+    }
+   ]
+  },
+  "401869844": {
+   "eventId": "401869844",
+   "date": "2026-10-17T00:00Z",
+   "easternDate": "2026-10-16",
+   "name": "App State Mountaineers at Coastal Carolina Chanticleers",
+   "shortName": "APP @ CCU",
+   "week": 7,
+   "venue": "Brooks Stadium (SC)",
+   "homeAbbr": "CCU",
+   "homeTeamId": "324",
+   "homeName": "Coastal Carolina Chanticleers",
+   "awayAbbr": "APP",
+   "awayTeamId": "2026",
+   "awayName": "App State Mountaineers",
+   "firstCapturedAt": "2026-10-15T07:59:15.450Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "APP -1.5",
+    "spread": 1.5,
+    "overUnder": 49.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-15T07:59:15.450Z",
+     "last_seen_at": "2026-10-15T07:59:15.450Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-4",
+      "away": "3-2"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-15T07:59:15.450Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261016"
+}

@@ -1,0 +1,95 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-16",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261016"
+  ]
+ },
+ "captures": [
+  "2026-10-15T07:59:15.770Z"
+ ],
+ "events": {
+  "401892517": {
+   "eventId": "401892517",
+   "date": "2026-10-17T01:00Z",
+   "easternDate": "2026-10-16",
+   "name": "Pittsburgh Penguins at Colorado Avalanche",
+   "shortName": "PIT @ COL",
+   "week": null,
+   "venue": "Ball Arena",
+   "homeAbbr": "COL",
+   "homeTeamId": "17",
+   "homeName": "Colorado Avalanche",
+   "awayAbbr": "PIT",
+   "awayTeamId": "16",
+   "awayName": "Pittsburgh Penguins",
+   "firstCapturedAt": "2026-10-15T07:59:15.770Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-15T07:59:15.770Z",
+     "last_seen_at": "2026-10-15T07:59:15.770Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-2-1",
+      "away": "3-3-1"
+     }
+    }
+   ]
+  },
+  "401892518": {
+   "eventId": "401892518",
+   "date": "2026-10-17T02:00Z",
+   "easternDate": "2026-10-16",
+   "name": "Boston Bruins at Anaheim Ducks",
+   "shortName": "BOS @ ANA",
+   "week": null,
+   "venue": "Honda Center",
+   "homeAbbr": "ANA",
+   "homeTeamId": "25",
+   "homeName": "Anaheim Ducks",
+   "awayAbbr": "BOS",
+   "awayTeamId": "1",
+   "awayName": "Boston Bruins",
+   "firstCapturedAt": "2026-10-15T07:59:15.770Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-15T07:59:15.770Z",
+     "last_seen_at": "2026-10-15T07:59:15.770Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-2-0",
+      "away": "5-2-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-15T07:59:15.770Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261016"
+}

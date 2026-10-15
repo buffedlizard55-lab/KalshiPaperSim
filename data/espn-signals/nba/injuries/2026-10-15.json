@@ -1,0 +1,2785 @@
+{
+ "what": "Point-in-time ESPN injury-report rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-15",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries"
+  ]
+ },
+ "captures": [
+  "2026-10-15T07:59:15.214Z"
+ ],
+ "teams": {
+  "1": {
+   "teamId": "1",
+   "displayName": "Atlanta Hawks",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534133": {
+     "recordId": "534133",
+     "athleteName": "Dyson Daniels",
+     "positionAbbr": "G",
+     "teamId": "1",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Hawks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-12T21:27Z|Daniels (rest) has been ruled out for Monday's preseason game against the Thunder, Brad Rowland of the Locked On Podcast Network reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-12T21:27Z",
+       "shortComment": "Daniels (rest) has been ruled out for Monday's preseason game against the Thunder, Brad Rowland of the Locked On Podcast Network reports.",
+       "longComment": "Daniels and most of Atlanta's regulars will rest during the Hawks' penultimate preseason contest. He tallied 13 points (6-16 FG, 1-3 3Pt), 11 rebounds, an assist and a steal across 21 minutes in Thursday's 123-116 preseason win over the Spurs but struggled with his shot against the Pacers on Saturday."
+      }
+     ]
+    },
+    "534134": {
+     "recordId": "534134",
+     "athleteName": "Jalen Johnson",
+     "positionAbbr": "F",
+     "teamId": "1",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Hawks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-12T21:29Z|Johnson (rest) won't play in Monday's preseason game against the Thunder, Brad Rowland of the Locked On Podcast Network reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-12T21:29Z",
+       "shortComment": "Johnson (rest) won't play in Monday's preseason game against the Thunder, Brad Rowland of the Locked On Podcast Network reports.",
+       "longComment": "Johnson and most of Atlanta's regulars won't suit up for the penultimate preseason contest. He tallied 20 points (8-12 FG, 2-2 3Pt, 2-3 FT), seven rebounds and three assists over 25 minutes in Saturday's 119-117 preseason win over the Pacers."
+      }
+     ]
+    },
+    "534135": {
+     "recordId": "534135",
+     "athleteName": "Luguentz Dort",
+     "positionAbbr": "G",
+     "teamId": "1",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Hawks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-12T21:30Z|Dort (rest) is out for Monday's preseason game against the Thunder, per Brad Rowland of the Locked On Podcast Network.",
+       "status": "Day-To-Day",
+       "date": "2026-10-12T21:30Z",
+       "shortComment": "Dort (rest) is out for Monday's preseason game against the Thunder, per Brad Rowland of the Locked On Podcast Network.",
+       "longComment": "Dort is sitting out Monday for maintenance purposes. The veteran swingman's next chance to play is Friday against Dallas."
+      }
+     ]
+    },
+    "534136": {
+     "recordId": "534136",
+     "athleteName": "CJ McCollum",
+     "positionAbbr": "G",
+     "teamId": "1",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Hawks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-12T21:32Z|McCollum (rest) won't play in Monday's preseason game against the Thunder, Brad Rowland of the Locked On Podcast Network reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-12T21:32Z",
+       "shortComment": "McCollum (rest) won't play in Monday's preseason game against the Thunder, Brad Rowland of the Locked On Podcast Network reports.",
+       "longComment": "McCollum and most of Atlanta's regulars won't play in the penultimate preseason game. He recorded 12 points (2-4 FG, 1-2 3Pt, 7-7 FT) and five rebounds across 19 minutes in Saturday's 119-117 preseason win over the Pacers."
+      }
+     ]
+    },
+    "534137": {
+     "recordId": "534137",
+     "athleteName": "Onyeka Okongwu",
+     "positionAbbr": "F",
+     "teamId": "1",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Hawks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-12T21:33Z|Okongwu (rest) is out for Monday's preseason game against the Thunder, per Brad Rowland of the Locked On Podcast Network.",
+       "status": "Day-To-Day",
+       "date": "2026-10-12T21:33Z",
+       "shortComment": "Okongwu (rest) is out for Monday's preseason game against the Thunder, per Brad Rowland of the Locked On Podcast Network.",
+       "longComment": "Okongwu is getting the night off Monday with Atlanta resting a number of starters. His next chance to play arrives Friday against Dallas."
+      }
+     ]
+    },
+    "534138": {
+     "recordId": "534138",
+     "athleteName": "Aaron Wiggins",
+     "positionAbbr": "G",
+     "teamId": "1",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Hawks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-12T21:33Z|Wiggins (rest) won't play in Monday's preseason game against the Thunder, Brad Rowland of the Locked On Podcast Network reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-12T21:33Z",
+       "shortComment": "Wiggins (rest) won't play in Monday's preseason game against the Thunder, Brad Rowland of the Locked On Podcast Network reports.",
+       "longComment": "Wiggins and most of Atlanta's regulars won't play in the penultimate preseason game. He finished with 13 points (4-9 FG, 3-6 3Pt, 2-2 FT), two rebounds, an assist and two steals across 20 minutes off the bench in Saturday's 119-117 preseason win over the Pacers."
+      }
+     ]
+    },
+    "534140": {
+     "recordId": "534140",
+     "athleteName": "Keshon Gilbert",
+     "positionAbbr": "G",
+     "teamId": "1",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Hawks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-12T21:36Z|Gilbert (knee) won't play in Monday's preseason game against the Thunder, per Brad Rowland of the Locked On Podcast Network.",
+       "status": "Day-To-Day",
+       "date": "2026-10-12T21:36Z",
+       "shortComment": "Gilbert (knee) won't play in Monday's preseason game against the Thunder, per Brad Rowland of the Locked On Podcast Network.",
+       "longComment": "Gilbert continues to deal with patella tendinitis. His last chance to appear this preseason is Friday against the Mavericks."
+      }
+     ]
+    },
+    "-57577": {
+     "recordId": "-57577",
+     "athleteName": "Henri Veesaar",
+     "positionAbbr": "C",
+     "teamId": "1",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Hawks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-09-21T19:50Z|Veesaar was diagnosed with a torn right ACL and is expected to miss the 2026-27 season, the Hawks announced Monday.",
+       "status": "Out",
+       "date": "2026-09-21T19:50Z",
+       "shortComment": "Veesaar was diagnosed with a torn right ACL and is expected to miss the 2026-27 season, the Hawks announced Monday.",
+       "longComment": "Veesaar suffered the injury during a workout on Sept. 15, and an MRI confirmed the diagnosis. The No. 52 overall pick in the 2026 NBA Draft, Veesaar was expected to spend a lot of time with Atlanta's G League affiliate this season."
+      }
+     ]
+    },
+    "-56292": {
+     "recordId": "-56292",
+     "athleteName": "Mouhamed Gueye",
+     "positionAbbr": "F",
+     "teamId": "1",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Hawks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-07-19T00:14Z|Gueye underwent surgery Tuesday to repair a fractured left foot that he suffered during a workout last week, Brad Rowland of the Locked On Podcast Network reports.",
+       "status": "Day-To-Day",
+       "date": "2026-07-19T00:14Z",
+       "shortComment": "Gueye underwent surgery Tuesday to repair a fractured left foot that he suffered during a workout last week, Brad Rowland of the Locked On Podcast Network reports.",
+       "longComment": "Gueye will be re-evaluated by medical staff in 3-to-4 months, which means he'll miss all of training camp and preseason and likely the start of the 2026-27 regular season. It's a brutal blow for the fourth-year big man, given that the Hawks used the No. 23 overall pick of the 2026 NBA Draft to select St. John's product Zuby Ejiofor. Gueye's absence means Ejiofor will have more opportunities in the preseason, and the rookie could establish a key role off the bench behind Onyeka Okongwu and projected backup center Jock Landale (ankle)."
+      }
+     ]
+    }
+   }
+  },
+  "2": {
+   "teamId": "2",
+   "displayName": "Boston Celtics",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534456": {
+     "recordId": "534456",
+     "athleteName": "Devin Carter",
+     "positionAbbr": "G",
+     "teamId": "2",
+     "teamAbbr": "BOS",
+     "teamName": "Boston Celtics",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T23:43Z|Carter (illness) won't play in Wednesday's preseason game against Charlotte, Bobby Krivitsky of Forbes.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T23:43Z",
+       "shortComment": "Carter (illness) won't play in Wednesday's preseason game against Charlotte, Bobby Krivitsky of Forbes.com reports.",
+       "longComment": "Carter will miss a second consecutive game due to an illness. His next chance to suit up could come Friday against Philadelphia."
+      }
+     ]
+    }
+   }
+  },
+  "3": {
+   "teamId": "3",
+   "displayName": "New Orleans Pelicans",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534466": {
+     "recordId": "534466",
+     "athleteName": "Dejounte Murray",
+     "positionAbbr": "G",
+     "teamId": "3",
+     "teamAbbr": "NO",
+     "teamName": "New Orleans Pelicans",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T00:23Z|Murray (toe) won't play in Wednesday's game versus the Mavericks, Ron Harrod reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T00:23Z",
+       "shortComment": "Murray (toe) won't play in Wednesday's game versus the Mavericks, Ron Harrod reports.",
+       "longComment": "Murray has appeared in just one preseason game due to a toe injury. The Pelicans play their final exhibition Friday versus Washington, though it's unknown if Murray will suit up for that contest."
+      }
+     ]
+    }
+   }
+  },
+  "4": {
+   "teamId": "4",
+   "displayName": "Chicago Bulls",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "533197": {
+     "recordId": "533197",
+     "athleteName": "Nic Claxton",
+     "positionAbbr": "C",
+     "teamId": "4",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Bulls",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-05T18:00Z|Claxton tweaked his hamstring and will be re-evaluated in two weeks, Chuck Swirsky of the Bulls Radio Network of the Bulls Radio Network reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-05T18:00Z",
+       "shortComment": "Claxton tweaked his hamstring and will be re-evaluated in two weeks, Chuck Swirsky of the Bulls Radio Network of the Bulls Radio Network reports.",
+       "longComment": "This is a huge blow for Claxton and it rules him out for the entire preseason. For now, fantasy managers can consider him questionable for Opening Night on Oct. 21 against the Raptors. Jalen Smith is the next man up on the depth chart for Chicago, followed by Zach Collins (toe)."
+      }
+     ]
+    },
+    "534245": {
+     "recordId": "534245",
+     "athleteName": "Zach Collins",
+     "positionAbbr": "F",
+     "teamId": "4",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Bulls",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T19:11Z|Collins (toe) is progressing in his recovery but has been ruled out for Wednesday's preseason meeting with the Bucks, K.C. Johnson of Chicago Sports Network reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T19:11Z",
+       "shortComment": "Collins (toe) is progressing in his recovery but has been ruled out for Wednesday's preseason meeting with the Bucks, K.C. Johnson of Chicago Sports Network reports.",
+       "longComment": "Collins has yet to suit up in the preseason due to a toe injury but is making progress ahead of the regular season. The big man's final chance to suit up in the preseason will come Friday against Minnesota."
+      }
+     ]
+    },
+    "534490": {
+     "recordId": "534490",
+     "athleteName": "Tobe Awaka",
+     "positionAbbr": "F",
+     "teamId": "4",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Bulls",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T02:43Z|Awaka (knee) was unavailable for Wednesday's preseason game against Milwaukee, Joel Lorenzi of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T02:43Z",
+       "shortComment": "Awaka (knee) was unavailable for Wednesday's preseason game against Milwaukee, Joel Lorenzi of The Athletic reports.",
+       "longComment": "Awaka missed practice Tuesday and was ultimately sidelined Wednesday while managing a knee injury he sustained Friday against Memphis. The rookie's next chance to suit up will come Friday against Minnesota."
+      }
+     ]
+    },
+    "534491": {
+     "recordId": "534491",
+     "athleteName": "Isaac Okoro",
+     "positionAbbr": "F",
+     "teamId": "4",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Bulls",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T02:44Z|Okoro (undisclosed) was unavailable for Wednesday's preseason game against Milwaukee, Joel Lorenzi of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T02:44Z",
+       "shortComment": "Okoro (undisclosed) was unavailable for Wednesday's preseason game against Milwaukee, Joel Lorenzi of The Athletic reports.",
+       "longComment": "Okoro missed practice Tuesday and was ultimately sidelined Wednesday due to an undisclosed issue. The wing's next chance to suit up will come Friday against Minnesota."
+      }
+     ]
+    }
+   }
+  },
+  "5": {
+   "teamId": "5",
+   "displayName": "Cleveland Cavaliers",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534266": {
+     "recordId": "534266",
+     "athleteName": "Khalifa Diop",
+     "positionAbbr": "C",
+     "teamId": "5",
+     "teamAbbr": "CLE",
+     "teamName": "Cleveland Cavaliers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T22:07Z|Diop (knee) won't play in Tuesday's preseason game against the Magic, Serena Winters of FanDuel Sports Network Ohio reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T22:07Z",
+       "shortComment": "Diop (knee) won't play in Tuesday's preseason game against the Magic, Serena Winters of FanDuel Sports Network Ohio reports.",
+       "longComment": "Diop is away from the team while tending to a knee injury. His next chance to rejoin Cleveland comes next Thursday for the season opener against the 76ers."
+      }
+     ]
+    },
+    "534267": {
+     "recordId": "534267",
+     "athleteName": "Sam Merrill",
+     "positionAbbr": "G",
+     "teamId": "5",
+     "teamAbbr": "CLE",
+     "teamName": "Cleveland Cavaliers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T22:09Z|Merrill (elbow) has been ruled out for Tuesday's preseason game against the Magic, Serena Winters of FanDuel Sports Network Ohio reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T22:09Z",
+       "shortComment": "Merrill (elbow) has been ruled out for Tuesday's preseason game against the Magic, Serena Winters of FanDuel Sports Network Ohio reports.",
+       "longComment": "Merrill will be held out of Cleveland's preseason finale due to right elbow soreness. The 30-year-old sharpshooter's next opportunity to play will come in the Cavaliers' regular-season opener against Philadelphia on Thursday, Oct. 22."
+      }
+     ]
+    },
+    "534268": {
+     "recordId": "534268",
+     "athleteName": "Nae'Qwan Tomlin",
+     "positionAbbr": "F",
+     "teamId": "5",
+     "teamAbbr": "CLE",
+     "teamName": "Cleveland Cavaliers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T22:09Z|Tomlin (back) won't play in Tuesday's preseason game against the Magic, Serena Winters of FanDuel Sports Network Ohio reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T22:09Z",
+       "shortComment": "Tomlin (back) won't play in Tuesday's preseason game against the Magic, Serena Winters of FanDuel Sports Network Ohio reports.",
+       "longComment": "Tomlin is away from the team while tending to a back injury. He carries no timetable for a return."
+      }
+     ]
+    }
+   }
+  },
+  "6": {
+   "teamId": "6",
+   "displayName": "Dallas Mavericks",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534424": {
+     "recordId": "534424",
+     "athleteName": "Kyrie Irving",
+     "positionAbbr": "G",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:23Z|Irving (rest) won't play Wednesday against the Pelicans, Mike Curtis of The Dallas Morning News reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:23Z",
+       "shortComment": "Irving (rest) won't play Wednesday against the Pelicans, Mike Curtis of The Dallas Morning News reports.",
+       "longComment": "Irving is sitting out this exhibition Wednesday. Friday's game against the Hawks marks his last chance for a tune-up."
+      }
+     ]
+    },
+    "534425": {
+     "recordId": "534425",
+     "athleteName": "Cooper Flagg",
+     "positionAbbr": "F",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:24Z|Flagg (rest) won't play Wednesday against the Pelicans, Mike Curtis of The Dallas Morning News reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:24Z",
+       "shortComment": "Flagg (rest) won't play Wednesday against the Pelicans, Mike Curtis of The Dallas Morning News reports.",
+       "longComment": "Flagg is getting Wednesday night off for rest purposes. He'll look to return Friday against the Hawks in what could be a dress rehearsal for the Mavericks."
+      }
+     ]
+    },
+    "534426": {
+     "recordId": "534426",
+     "athleteName": "Daniel Gafford",
+     "positionAbbr": "F",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:25Z|Gafford (rest) won't play Wednesday against the Pelicans, Mike Curtis of The Dallas Morning News reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:25Z",
+       "shortComment": "Gafford (rest) won't play Wednesday against the Pelicans, Mike Curtis of The Dallas Morning News reports.",
+       "longComment": "The big man is receiving a maintenance day Wednesday. His next chance to play comes Friday against the Hawks."
+      }
+     ]
+    },
+    "534427": {
+     "recordId": "534427",
+     "athleteName": "Morez Johnson Jr.",
+     "positionAbbr": "F",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:27Z|Johnson (rest) won't play Wednesday against the Pelicans, Mike Curtis of The Dallas Morning News reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:27Z",
+       "shortComment": "Johnson (rest) won't play Wednesday against the Pelicans, Mike Curtis of The Dallas Morning News reports.",
+       "longComment": "The rookie first-rounder missed the start of training camp with leg soreness, so Dallas is taking a cautious approach. Johnson could return for Friday's preseason finale against the Hawks."
+      }
+     ]
+    },
+    "534428": {
+     "recordId": "534428",
+     "athleteName": "Santi Aldama",
+     "positionAbbr": "F",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:34Z|Aldama (knee) has been ruled out for Wednesday's preseason game against New Orleans, Grant Afseth of DallasHoopsJournal.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:34Z",
+       "shortComment": "Aldama (knee) has been ruled out for Wednesday's preseason game against New Orleans, Grant Afseth of DallasHoopsJournal.com reports.",
+       "longComment": "Aldama is still recovering from right knee surgery in March and has been limited during training camp. The forward's next chance to suit up will come Friday against Atlanta, though a formal timeline for his return to game action has yet to be established."
+      }
+     ]
+    },
+    "534429": {
+     "recordId": "534429",
+     "athleteName": "Dereck Lively II",
+     "positionAbbr": "C",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:40Z|Lively (foot) has been ruled out for Wednesday's preseason game against New Orleans, Grant Afseth of DallasHoopsJournal.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:40Z",
+       "shortComment": "Lively (foot) has been ruled out for Wednesday's preseason game against New Orleans, Grant Afseth of DallasHoopsJournal.com reports.",
+       "longComment": "Lively underwent right foot surgery in December and has progressed to some shooting and on-court work, but the big man isn't quite ready to return to game action. His next chance to suit up will come Friday against Atlanta, though there's been no indication of an imminent return, and Lively could ultimately miss time to begin the regular season."
+      }
+     ]
+    },
+    "534430": {
+     "recordId": "534430",
+     "athleteName": "Marcus Sasser",
+     "positionAbbr": "G",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:43Z|Sasser (adductor) has been ruled out for Wednesday's preseason game against New Orleans, Grant Afseth of DallasHoopsJournal.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:43Z",
+       "shortComment": "Sasser (adductor) has been ruled out for Wednesday's preseason game against New Orleans, Grant Afseth of DallasHoopsJournal.com reports.",
+       "longComment": "Sasser has yet to appear in a preseason game due to left adductor tightness. His next chance to play will come Friday against Atlanta."
+      }
+     ]
+    },
+    "534433": {
+     "recordId": "534433",
+     "athleteName": "Jett Howard",
+     "positionAbbr": "G",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:47Z|Howard (illness) has been ruled out for Wednesday's preseason game against New Orleans, Grant Afseth of DallasHoopsJournal.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:47Z",
+       "shortComment": "Howard (illness) has been ruled out for Wednesday's preseason game against New Orleans, Grant Afseth of DallasHoopsJournal.com reports.",
+       "longComment": "Howard appeared in Dallas' first two preseason games but will be sidelined Wednesday due to an illness. His next chance to suit up will come Friday against Atlanta."
+      }
+     ]
+    },
+    "534496": {
+     "recordId": "534496",
+     "athleteName": "Moussa Cisse",
+     "positionAbbr": "C",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T03:14Z|Cisse exited Wednesday's 101-97 preseason loss to New Orleans due to a left ankle sprain.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T03:14Z",
+       "shortComment": "Cisse exited Wednesday's 101-97 preseason loss to New Orleans due to a left ankle sprain.",
+       "longComment": "Cisse exited early, though Dallas head coach Dusty May downplayed the severity of the injury. \"They said he tweaked an ankle and I don't think preseason is a reason to push it,\" May said, per source. As such, the Mavericks could opt to hold Cisse out of Friday's preseason finale against Atlanta."
+      }
+     ]
+    }
+   }
+  },
+  "7": {
+   "teamId": "7",
+   "displayName": "Denver Nuggets",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534246": {
+     "recordId": "534246",
+     "athleteName": "Spencer Jones",
+     "positionAbbr": "F",
+     "teamId": "7",
+     "teamAbbr": "DEN",
+     "teamName": "Denver Nuggets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T19:28Z|Jones (hamstring) remains limited to non-contact work, Vinny Benedetto of The Denver Gazette reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T19:28Z",
+       "shortComment": "Jones (hamstring) remains limited to non-contact work, Vinny Benedetto of The Denver Gazette reports.",
+       "longComment": "It appears unlikely that Jones will be recovered from a hamstring injury in time to receive any preseason reps. Given where he's at in his rehab, Jones' status for the start of the regular season is in limbo as well."
+      }
+     ]
+    },
+    "534475": {
+     "recordId": "534475",
+     "athleteName": "DeMar DeRozan",
+     "positionAbbr": "G",
+     "teamId": "7",
+     "teamAbbr": "DEN",
+     "teamName": "Denver Nuggets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T01:16Z|DeRozan (rest) won't play in Wednesday's preseason game against the Clippers, Katy Winge of Altitude Sports reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T01:16Z",
+       "shortComment": "DeRozan (rest) won't play in Wednesday's preseason game against the Clippers, Katy Winge of Altitude Sports reports.",
+       "longComment": "The Nuggets' starters will all suit up versus Los Angeles, though the team will be without its top bench option. DeRozan has had a quiet preseason, averaging 4.7 points, 1.3 rebounds and 1.3 assists across 10.2 minutes per contest. However, it's reasonable to assume he will be much more productive come the start of the regular season."
+      }
+     ]
+    },
+    "534525": {
+     "recordId": "534525",
+     "athleteName": "Julian Strawther",
+     "positionAbbr": "G",
+     "teamId": "7",
+     "teamAbbr": "DEN",
+     "teamName": "Denver Nuggets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T05:19Z|Strawther (knee) will undergo an MRI on Thursday morning, Katy Winge of Altitude Sports reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T05:19Z",
+       "shortComment": "Strawther (knee) will undergo an MRI on Thursday morning, Katy Winge of Altitude Sports reports.",
+       "longComment": "Strawther exited to the locker room in the third quarter of Wednesday's loss to the Clippers after his left knee bent awkwardly following contact while handling the ball. \"All you can do is hope for the best,\" said Nuggets head coach David Adelman. An extended absence for Strawther would test Denver's depth on the wing with Spencer Jones (hamstring) not yet cleared for contact."
+      }
+     ]
+    }
+   }
+  },
+  "9": {
+   "teamId": "9",
+   "displayName": "Golden State Warriors",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "532849": {
+     "recordId": "532849",
+     "athleteName": "Moses Moody",
+     "positionAbbr": "G",
+     "teamId": "9",
+     "teamAbbr": "GS",
+     "teamName": "Golden State Warriors",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-09-28T15:06Z|Moody has progressed to light on-court activities as he continues his recovery from a ruptured left patellar tendon, Evan Webeck of The Mercury News reports.",
+       "status": "Out",
+       "date": "2026-09-28T15:06Z",
+       "shortComment": "Moody has progressed to light on-court activities as he continues his recovery from a ruptured left patellar tendon, Evan Webeck of The Mercury News reports.",
+       "longComment": "Moody suffered the injury March 23 and underwent season-ending surgery four days later. The 24-year-old had been targeting September to resume running and on-court work, so his latest progress appears to keep his rehabilitation on track, though he remains without a firm timetable for his return to game action."
+      }
+     ]
+    },
+    "533069": {
+     "recordId": "533069",
+     "athleteName": "Jimmy Butler III",
+     "positionAbbr": "F",
+     "teamId": "9",
+     "teamAbbr": "GS",
+     "teamName": "Golden State Warriors",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-02T18:48Z|The Warriors hope to have Butler (knee) back early in 2027, per Keith Watkins of Yahoo Sports.",
+       "status": "Out",
+       "date": "2026-10-02T18:48Z",
+       "shortComment": "The Warriors hope to have Butler (knee) back early in 2027, per Keith Watkins of Yahoo Sports.",
+       "longComment": "Butler is still months away from retaking the floor, according to Nick Friedell of The Athletic, so a season debut at some point December might be too optimistic. The star forward remains without a definitive timeline for a return after undergoing ACL surgery in early February, which typically carries at least a nine-month recovery period. Butler makes sense as an injury stash at the end of fantasy drafts, but managers should likely be bracing for him to miss at least the first two months of the regular season."
+      }
+     ]
+    },
+    "534121": {
+     "recordId": "534121",
+     "athleteName": "Al Horford",
+     "positionAbbr": "C",
+     "teamId": "9",
+     "teamAbbr": "GS",
+     "teamName": "Golden State Warriors",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-12T19:41Z|Horford (rest) won't play in Tuesday's preseason game against the Lakers, per Nick Friedell of The Athletic.",
+       "status": "Day-To-Day",
+       "date": "2026-10-12T19:41Z",
+       "shortComment": "Horford (rest) won't play in Tuesday's preseason game against the Lakers, per Nick Friedell of The Athletic.",
+       "longComment": "The veteran center isn't making the trip to Las Vegas for this exhibition. He'll look to return for Friday's preseason finale versus Portland."
+      }
+     ]
+    },
+    "534327": {
+     "recordId": "534327",
+     "athleteName": "Draymond Green",
+     "positionAbbr": "F",
+     "teamId": "9",
+     "teamAbbr": "GS",
+     "teamName": "Golden State Warriors",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T01:40Z|Green (rest) has been ruled out for Tuesday's preseason game against the Lakers, Law Murray of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T01:40Z",
+       "shortComment": "Green (rest) has been ruled out for Tuesday's preseason game against the Lakers, Law Murray of The Athletic reports.",
+       "longComment": "The veteran big man will be held out of Tuesday's contest, with his last chance to suit up in the preseason coming Friday against Portland. Charles Bassey will get the starting nod in Green's absence."
+      }
+     ]
+    },
+    "534413": {
+     "recordId": "534413",
+     "athleteName": "Kristaps Porzingis",
+     "positionAbbr": "C",
+     "teamId": "9",
+     "teamAbbr": "GS",
+     "teamName": "Golden State Warriors",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T20:29Z|Porzingis (undisclosed) returned Thursday to the Warriors' practice facility, per Anthony Slater of ESPN.com.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T20:29Z",
+       "shortComment": "Porzingis (undisclosed) returned Thursday to the Warriors' practice facility, per Anthony Slater of ESPN.com.",
+       "longComment": "Head coach Steve Kerr still has no update on Porzingis' timeline for a return, per Luca Evans of the San Francisco Chronicle. With so much camp time missed, the big man's status for the start of the regular season remains in serious doubt at this point."
+      }
+     ]
+    }
+   }
+  },
+  "10": {
+   "teamId": "10",
+   "displayName": "Houston Rockets",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "533733": {
+     "recordId": "533733",
+     "athleteName": "Kevin Durant",
+     "positionAbbr": "F",
+     "teamId": "10",
+     "teamAbbr": "HOU",
+     "teamName": "Houston Rockets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-09T15:03Z|Durant will not play in Sunday's preseason rematch against Dallas, Varun Shankar of the Houston Chronicle reports. The forward finished Friday's preseason contest with 15 points (7-12 FG, 1-1 3Pt, 0-1 FT), two assists and one block in 23 minutes.",
+       "status": "Day-To-Day",
+       "date": "2026-10-09T15:03Z",
+       "shortComment": "Durant will not play in Sunday's preseason rematch against Dallas, Varun Shankar of the Houston Chronicle reports. The forward finished Friday's preseason contest with 15 points (7-12 FG, 1-1 3Pt, 0-1 FT), two assists and one block in 23 minutes.",
+       "longComment": "According to coach Ime Udoka, Durant was initially scheduled to play only the first half Friday but requested additional minutes to build chemistry with Fred VanVleet and his other new teammates. The veteran forward's absence Sunday appears to be a planned precaution rather than an injury-related setback, and Houston should have additional minutes available for its other wings and forwards"
+      }
+     ]
+    },
+    "533985": {
+     "recordId": "533985",
+     "athleteName": "Fred VanVleet",
+     "positionAbbr": "G",
+     "teamId": "10",
+     "teamAbbr": "HOU",
+     "teamName": "Houston Rockets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-11T10:01Z|VanVleet (rest) isn't expected to play in Sunday's preseason game against the Mavericks, Will Guillory of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-11T10:01Z",
+       "shortComment": "VanVleet (rest) isn't expected to play in Sunday's preseason game against the Mavericks, Will Guillory of The Athletic reports.",
+       "longComment": "VanVleet made his first appearance since suffering an ACL injury more than a year ago, finishing with 17 points (5-12 FG, 5-12 3Pt, 2-3 FT), seven assists, two rebounds and two steals in 24 minutes during Friday's 135-117 preseason win over Dallas. The veteran point guard will likely be limited throughout the 2026-27 season, but he's on track to be the starting point guard on Opening Night."
+      }
+     ]
+    },
+    "533986": {
+     "recordId": "533986",
+     "athleteName": "Alperen Sengun",
+     "positionAbbr": "C",
+     "teamId": "10",
+     "teamAbbr": "HOU",
+     "teamName": "Houston Rockets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-11T10:05Z|Sengun (rest) isn't expected to play in Sunday's preseason game against the Mavericks, Will Guillory of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-11T10:05Z",
+       "shortComment": "Sengun (rest) isn't expected to play in Sunday's preseason game against the Mavericks, Will Guillory of The Athletic reports.",
+       "longComment": "Sengun recorded 16 points (6-9 FG, 0-2 3Pt, 4-5 FT), 10 rebounds, 10 assists, one steal and three blocks in 22 minutes during Friday's 135-117 preseason win over Dallas but will take a seat Sunday. Sengun is coming off another impressive year, averaging 20.4 points, 8.9 rebounds, 6.2 assists, 1.2 steals and 1.1 blocks in 33.3 minutes per game across 72 regular-season appearances in 2025-26. However, the star center shot just 69.1 percent from the charity stripe and 30.5 percent from downtown. He's been focused on improving in those areas this offseason, and an uptick in efficiency would be a significant step toward becoming a more well-rounded player."
+      }
+     ]
+    },
+    "533987": {
+     "recordId": "533987",
+     "athleteName": "Steven Adams",
+     "positionAbbr": "C",
+     "teamId": "10",
+     "teamAbbr": "HOU",
+     "teamName": "Houston Rockets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-11T10:06Z|Adams (rest) isn't expected to play in Sunday's preseason game against the Mavericks, Will Guillory of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-11T10:06Z",
+       "shortComment": "Adams (rest) isn't expected to play in Sunday's preseason game against the Mavericks, Will Guillory of The Athletic reports.",
+       "longComment": "Adams totaled two points (1-1 FG), three rebounds, one assist and one steal in 14 minutes during Friday's 135-117 preseason win over the Mavericks, marking his first game action since undergoing ankle surgery in January. The veteran center is expected to be the primary backup to Alperen Sengun this season."
+      }
+     ]
+    }
+   }
+  },
+  "11": {
+   "teamId": "11",
+   "displayName": "Indiana Pacers",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "518463": {
+     "recordId": "518463",
+     "athleteName": "Johnny Furphy",
+     "positionAbbr": "G",
+     "teamId": "11",
+     "teamAbbr": "IND",
+     "teamName": "Indiana Pacers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-02-09T21:43Z|Furphy was diagnosed with a torn right ACL on Monday and will miss the remainder of the season, Michael Scotto of USA Today reports.",
+       "status": "Out",
+       "date": "2026-02-09T21:43Z",
+       "shortComment": "Furphy was diagnosed with a torn right ACL on Monday and will miss the remainder of the season, Michael Scotto of USA Today reports.",
+       "longComment": "Furphy started in 21 of 35 regular-season appearances for the Pacers, posting averages of 5.1 points, 4.4 rebounds, 1.2 assists and 0.7 three-pointers in 18.4 minutes per contest. While no timetable has been announced, Furphy's absence could extend through the beginning of the 2026-27 season. With this news, the Pacers will likely lean more on Ben Sheppard, Kam Jones and Quenton Jackson moving forward."
+      }
+     ]
+    },
+    "534304": {
+     "recordId": "534304",
+     "athleteName": "Andrew Nembhard",
+     "positionAbbr": "G",
+     "teamId": "11",
+     "teamAbbr": "IND",
+     "teamName": "Indiana Pacers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T00:16Z|Nembhard (undisclosed) won't play in Tuesday's preseason game against the Thunder, Scott Agness of FieldhouseFiles.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T00:16Z",
+       "shortComment": "Nembhard (undisclosed) won't play in Tuesday's preseason game against the Thunder, Scott Agness of FieldhouseFiles.com reports.",
+       "longComment": "It's unclear if Nembhard is dealing with an injury, though it's possible he's just receiving a rest day. His final chance to play before the regular season will come Friday against Milwaukee."
+      }
+     ]
+    },
+    "534305": {
+     "recordId": "534305",
+     "athleteName": "Aaron Nesmith",
+     "positionAbbr": "G",
+     "teamId": "11",
+     "teamAbbr": "IND",
+     "teamName": "Indiana Pacers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T00:17Z|Nesmith will be rested for Tuesday's preseason game against the Thunder, Scott Agness of FieldhouseFiles.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T00:17Z",
+       "shortComment": "Nesmith will be rested for Tuesday's preseason game against the Thunder, Scott Agness of FieldhouseFiles.com reports.",
+       "longComment": "Nesmith has already seen a healthy amount of reps in the preseason. The Pacers will have one more exhibition left on the schedule following this contest."
+      }
+     ]
+    },
+    "534306": {
+     "recordId": "534306",
+     "athleteName": "Jarace Walker",
+     "positionAbbr": "F",
+     "teamId": "11",
+     "teamAbbr": "IND",
+     "teamName": "Indiana Pacers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T00:18Z|Walker (undisclosed) won't play in Tuesday's preseason game against the Thunder, Scott Agness of FieldhouseFiles.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T00:18Z",
+       "shortComment": "Walker (undisclosed) won't play in Tuesday's preseason game against the Thunder, Scott Agness of FieldhouseFiles.com reports.",
+       "longComment": "It's unclear why Walker will be held out of the Pacers' penultimate preseason game. His final chance to play before the regular season will come against the Bucks on Friday."
+      }
+     ]
+    },
+    "534307": {
+     "recordId": "534307",
+     "athleteName": "T.J. McConnell",
+     "positionAbbr": "G",
+     "teamId": "11",
+     "teamAbbr": "IND",
+     "teamName": "Indiana Pacers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T00:19Z|McConnell (undisclosed) will not play in Tuesday's preseason matchup against Oklahoma City, Scott Agness of Fieldhouse Files reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T00:19Z",
+       "shortComment": "McConnell (undisclosed) will not play in Tuesday's preseason matchup against Oklahoma City, Scott Agness of Fieldhouse Files reports.",
+       "longComment": "McConnell has yet to appear in a preseason contest and has also missed practice time, though Indiana hasn't disclosed the reason for his absence. The veteran guard will sit out alongside Andrew Nembhard, Aaron Nesmith and Jarace Walker, potentially opening additional opportunities for the Pacers' younger players. McConnell's final chance to suit up during the preseason will come Friday against Milwaukee."
+      }
+     ]
+    }
+   }
+  },
+  "12": {
+   "teamId": "12",
+   "displayName": "LA Clippers",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "532401": {
+     "recordId": "532401",
+     "athleteName": "Jordan Miller",
+     "positionAbbr": "G",
+     "teamId": "12",
+     "teamAbbr": "LAC",
+     "teamName": "LA Clippers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-08-26T20:04Z|Miller underwent surgery Wednesday to repair a torn left rotator cuff and will be re-evaluated in six months, per Law Murray of The Athletic.",
+       "status": "Out",
+       "date": "2026-08-26T20:04Z",
+       "shortComment": "Miller underwent surgery Wednesday to repair a torn left rotator cuff and will be re-evaluated in six months, per Law Murray of The Athletic.",
+       "longComment": "It's a tough break for Miller, who had an opportunity to battle for a reserve role during training camp in the fall. The timeline for a return is likely to keep him on the shelf until after the All-Star break. Miller's extended stay on the sidelines gives Kobe Sanders a chance to crack the Clippers' rotation."
+      }
+     ]
+    },
+    "532875": {
+     "recordId": "532875",
+     "athleteName": "Brandon Ingram",
+     "positionAbbr": "F",
+     "teamId": "28",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Raptors",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-09-28T18:01Z|Ingram won't be ready for the start of the season due to a partially torn Achilles, per Joey Linn of SI.com.",
+       "status": "Out",
+       "date": "2026-09-28T18:01Z",
+       "shortComment": "Ingram won't be ready for the start of the season due to a partially torn Achilles, per Joey Linn of SI.com.",
+       "longComment": "The Clippers learned about the injury this summer, though it's unclear exactly how far along Ingram is in his recovery. The star forward's timeline for a return is unclear, clouding his fantasy outlook in the meantime. Darius Garland should take on all the usage he can handle in Ingram's stead, while Kris Dunn and Max Strus could have additional streaming appeal early in the year."
+      }
+     ]
+    },
+    "532876": {
+     "recordId": "532876",
+     "athleteName": "Yanic Konan Niederhauser",
+     "positionAbbr": "C",
+     "teamId": "12",
+     "teamAbbr": "LAC",
+     "teamName": "LA Clippers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-09-28T18:07Z|Niederhauser (foot) won't be ready for the start of the season, Law Murray of The Athletic reports.",
+       "status": "Out",
+       "date": "2026-09-28T18:07Z",
+       "shortComment": "Niederhauser (foot) won't be ready for the start of the season, Law Murray of The Athletic reports.",
+       "longComment": "Niederhauser is progressing from March surgery but won't be able to suit up to begin the year. The Clippers are likely to take a cautious approach with the 2025 first-rounder. Isaiah Jackson should occupy the backup center spot behind Brook Lopez early in the campaign."
+      }
+     ]
+    },
+    "533234": {
+     "recordId": "533234",
+     "athleteName": "Max Strus",
+     "positionAbbr": "G",
+     "teamId": "12",
+     "teamAbbr": "LAC",
+     "teamName": "LA Clippers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-05T22:21Z|Strus has been diagnosed with a partially torn plantar fascia in his right foot and he will be re-evaluated in four weeks, Ohm Youngmisuk of ESPN.com reports.",
+       "status": "Out",
+       "date": "2026-10-05T22:21Z",
+       "shortComment": "Strus has been diagnosed with a partially torn plantar fascia in his right foot and he will be re-evaluated in four weeks, Ohm Youngmisuk of ESPN.com reports.",
+       "longComment": "Plantar fascia injuries can be tricky to recover from, with the only remedy typically being prolonged rest, so don't be surprised if Strus' absence extends well beyond this initial four-week window. With Strus now set to miss at least the first few weeks of the season, and Bradley Beal (knee) uncertain for opening night, Keaton Wagler could be thrust into the first unit sooner than expected."
+      }
+     ]
+    },
+    "534472": {
+     "recordId": "534472",
+     "athleteName": "Bradley Beal",
+     "positionAbbr": "G",
+     "teamId": "12",
+     "teamAbbr": "LAC",
+     "teamName": "LA Clippers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-15T01:03Z|Beal (knee) will not be ready for the start of the regular season, NBA writer Justin Russo reports.",
+       "status": "Out",
+       "date": "2026-10-15T01:03Z",
+       "shortComment": "Beal (knee) will not be ready for the start of the regular season, NBA writer Justin Russo reports.",
+       "longComment": "Beal is dealing with knee inflammation that will keep him sidelined for Opening Night. While it's unclear how long the Clippers will be without the veteran guard, Darius Garland, Keaton Wagler and Kris Dunn should dominate the backcourt minutes in his absence. Beal's 2025-26 campaign was cut short by a hip injury after he averaged 8.2 points and 1.7 assists in 20.6 minutes across just six regular-season appearances."
+      }
+     ]
+    },
+    "534473": {
+     "recordId": "534473",
+     "athleteName": "Kobe Sanders",
+     "positionAbbr": "G",
+     "teamId": "12",
+     "teamAbbr": "LAC",
+     "teamName": "LA Clippers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T01:08Z|Sanders (hip) won't play in Wednesday's preseason game against the Nuggets, NBA writer Justin Russo reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T01:08Z",
+       "shortComment": "Sanders (hip) won't play in Wednesday's preseason game against the Nuggets, NBA writer Justin Russo reports.",
+       "longComment": "While Sanders isn't available for the Clippers' final preseason game, the team is optimistic he will be cleared to suit up for Opening Night against the Kings. With Max Strus (foot), Bradley Beal (knee) and Brandon Ingram (Achilles) all sidelined to begin the 2026-27 campaign, Sanders might be in line for a more prominent role. The 24-year-old appeared in 68 regular-season games as a rookie in 2024-25, starting 16 of them, averaging 7.3 points, 2.3 rebounds and 1.6 assists over 19.9 minutes per contest."
+      }
+     ]
+    },
+    "534483": {
+     "recordId": "534483",
+     "athleteName": "Kris Dunn",
+     "positionAbbr": "G",
+     "teamId": "12",
+     "teamAbbr": "LAC",
+     "teamName": "LA Clippers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T02:00Z|Dunn (rest) has been ruled out for Wednesday's preseason game against the Nuggets, independent Clippers reporter Joey Linn reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T02:00Z",
+       "shortComment": "Dunn (rest) has been ruled out for Wednesday's preseason game against the Nuggets, independent Clippers reporter Joey Linn reports.",
+       "longComment": "After appearing in each of the Clippers' first two preseason games, Dunn will be sidelined Wednesday for rest purposes. The veteran guard's next chance to suit up will come in the club's regular-season opener Oct. 21 against the Kings, when he could see an elevated role with Bradley Beal (knee) ruled out for Opening Night."
+      }
+     ]
+    }
+   }
+  },
+  "13": {
+   "teamId": "13",
+   "displayName": "Los Angeles Lakers",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534309": {
+     "recordId": "534309",
+     "athleteName": "Luka Doncic",
+     "positionAbbr": "G",
+     "teamId": "13",
+     "teamAbbr": "LAL",
+     "teamName": "Los Angeles Lakers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T00:33Z|Doncic will be rested for Tuesday's preseason game against the Warriors, Khobi Price of The California Post reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T00:33Z",
+       "shortComment": "Doncic will be rested for Tuesday's preseason game against the Warriors, Khobi Price of The California Post reports.",
+       "longComment": "There is no injury to report and this is reported to be a planned night off for Doncic. He will have one more chance to get some exhibition reps in Friday against Denver."
+      }
+     ]
+    },
+    "534310": {
+     "recordId": "534310",
+     "athleteName": "Ziaire Williams",
+     "positionAbbr": "F",
+     "teamId": "13",
+     "teamAbbr": "LAL",
+     "teamName": "Los Angeles Lakers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T00:35Z|Williams (foot) will not play in Tuesday's preseason matchup against Golden State, Khobi Price of The California Post reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T00:35Z",
+       "shortComment": "Williams (foot) will not play in Tuesday's preseason matchup against Golden State, Khobi Price of The California Post reports.",
+       "longComment": "Williams continues to deal with a foot contusion that has kept him out of recent preseason action. Coach JJ Redick indicated that the forward remains day-to-day, suggesting the injury isn't considered a long-term concern. Williams' next opportunity to suit up will come Friday against Denver in the Lakers' preseason finale."
+      }
+     ]
+    },
+    "534311": {
+     "recordId": "534311",
+     "athleteName": "Adou Thiero",
+     "positionAbbr": "F",
+     "teamId": "13",
+     "teamAbbr": "LAL",
+     "teamName": "Los Angeles Lakers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T00:37Z|Thiero (undisclosed) is out for Tuesday's preseason game against the Warriors, Khobi Price of The California Post reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T00:37Z",
+       "shortComment": "Thiero (undisclosed) is out for Tuesday's preseason game against the Warriors, Khobi Price of The California Post reports.",
+       "longComment": "Thiero is among several Lakers players who have been ruled out, though the team hasn't specified the reason for his absence. Coach JJ Redick indicated that the young forward remains day-to-day, leaving open the possibility of a return for Friday's preseason finale against Denver."
+      }
+     ]
+    },
+    "534312": {
+     "recordId": "534312",
+     "athleteName": "Collin Sexton",
+     "positionAbbr": "G",
+     "teamId": "13",
+     "teamAbbr": "LAL",
+     "teamName": "Los Angeles Lakers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T00:39Z|Sexton (lower leg) has been ruled out for Tuesday's preseason game against the Warriors, Khobi Price of The California Post reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T00:39Z",
+       "shortComment": "Sexton (lower leg) has been ruled out for Tuesday's preseason game against the Warriors, Khobi Price of The California Post reports.",
+       "longComment": "Sexton remains day-to-day with a lower-leg injury. His final chance to suit up in the preseason will come Friday against the Nuggets."
+      }
+     ]
+    },
+    "534313": {
+     "recordId": "534313",
+     "athleteName": "Cameron Carr",
+     "positionAbbr": "G",
+     "teamId": "13",
+     "teamAbbr": "LAL",
+     "teamName": "Los Angeles Lakers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T00:41Z|Carr (undisclosed) has been ruled out for Tuesday's preseason matchup with the Warriors, Khobi Price of The California Post reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T00:41Z",
+       "shortComment": "Carr (undisclosed) has been ruled out for Tuesday's preseason matchup with the Warriors, Khobi Price of The California Post reports.",
+       "longComment": "Carr remains day-to-day but will miss a second straight game due to an undisclosed injury. His final chance to play again in the preseason will come Friday against Denver."
+      }
+     ]
+    }
+   }
+  },
+  "14": {
+   "teamId": "14",
+   "displayName": "Miami Heat",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534416": {
+     "recordId": "534416",
+     "athleteName": "Bam Adebayo",
+     "positionAbbr": "C",
+     "teamId": "14",
+     "teamAbbr": "MIA",
+     "teamName": "Miami Heat",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T21:49Z|Adebayo (groin) won't play in Wednesday's preseason game against the Nets, Eric Nehm of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T21:49Z",
+       "shortComment": "Adebayo (groin) won't play in Wednesday's preseason game against the Nets, Eric Nehm of The Athletic reports.",
+       "longComment": "The star big man is dealing with minor right groin tightness. Friday's game against the Magic is his next chance to play."
+      }
+     ]
+    },
+    "534418": {
+     "recordId": "534418",
+     "athleteName": "Pelle Larsson",
+     "positionAbbr": "G",
+     "teamId": "14",
+     "teamAbbr": "MIA",
+     "teamName": "Miami Heat",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T21:55Z|Larsson (illness) won't play in Wednesday's preseason game against the Nets, Eric Nehm of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T21:55Z",
+       "shortComment": "Larsson (illness) won't play in Wednesday's preseason game against the Nets, Eric Nehm of The Athletic reports.",
+       "longComment": "Larsson was initially deemed doubtful to play Thursday. He remains day-to-day while dealing with an illness."
+      }
+     ]
+    },
+    "534487": {
+     "recordId": "534487",
+     "athleteName": "Kylor Kelley",
+     "positionAbbr": "C",
+     "teamId": "14",
+     "teamAbbr": "MIA",
+     "teamName": "Miami Heat",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T02:20Z|Kelley (calf) did not play during Saturday's 144-128 preseason win over Brooklyn.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T02:20Z",
+       "shortComment": "Kelley (calf) did not play during Saturday's 144-128 preseason win over Brooklyn.",
+       "longComment": "Kelley signed a deal with Miami on Thursday but has yet to see any game action. His current health status hasn't been disclosed, though the big man's Summer League stint was cut short by a right calf strain that could still be a factor. Kelley's final chance to suit up during the preseason will come Friday against the Magic."
+      }
+     ]
+    },
+    "-57629": {
+     "recordId": "-57629",
+     "athleteName": "Dru Smith",
+     "positionAbbr": "G",
+     "teamId": "14",
+     "teamAbbr": "MIA",
+     "teamName": "Miami Heat",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-01T16:15Z|Smith will miss a couple weeks with a strained right calf, Ira Winderman of the South Florida Sun Sentinel reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-01T16:15Z",
+       "shortComment": "Smith will miss a couple weeks with a strained right calf, Ira Winderman of the South Florida Sun Sentinel reports.",
+       "longComment": "This is a tough blow for the point guard who was penciled in as the top backup behind Davion Mitchell. If he indeed misses a couple weeks, he could be back in time for their final preseason contest Oct. 16."
+      }
+     ]
+    }
+   }
+  },
+  "15": {
+   "teamId": "15",
+   "displayName": "Milwaukee Bucks",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534436": {
+     "recordId": "534436",
+     "athleteName": "Gary Trent Jr.",
+     "positionAbbr": "G",
+     "teamId": "15",
+     "teamAbbr": "MIL",
+     "teamName": "Milwaukee Bucks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:53Z|Trent (rest) won't play Wednesday against the Bulls, K.C. Johnson of Chicago Sports Network reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:53Z",
+       "shortComment": "Trent (rest) won't play Wednesday against the Bulls, K.C. Johnson of Chicago Sports Network reports.",
+       "longComment": "The Bucks are giving the veteran swingman Wednesday night off. His next chance for preseason action is Friday against the Pacers."
+      }
+     ]
+    },
+    "534437": {
+     "recordId": "534437",
+     "athleteName": "Jaime Jaquez Jr.",
+     "positionAbbr": "F",
+     "teamId": "15",
+     "teamAbbr": "MIL",
+     "teamName": "Milwaukee Bucks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:54Z|Jaquez (rest) won't play Wednesday against the Bulls, K.C. Johnson of Chicago Sports Network reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:54Z",
+       "shortComment": "Jaquez (rest) won't play Wednesday against the Bulls, K.C. Johnson of Chicago Sports Network reports.",
+       "longComment": "The Bucks are set to rest a number of key players for this exhibition. Jaquez's last chance for preseason reps comes Friday against the Pacers."
+      }
+     ]
+    },
+    "534439": {
+     "recordId": "534439",
+     "athleteName": "Kyle Kuzma",
+     "positionAbbr": "F",
+     "teamId": "15",
+     "teamAbbr": "MIL",
+     "teamName": "Milwaukee Bucks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:57Z|Kuzma (rest) won't play Wednesday against the Bulls, K.C. Johnson of Chicago Sports Network reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:57Z",
+       "shortComment": "Kuzma (rest) won't play Wednesday against the Bulls, K.C. Johnson of Chicago Sports Network reports.",
+       "longComment": "Kuzma is joining a number of Milwaukee regulars on the sidelines for this exhibition. Friday's matchup with the Pacers is his next chance to play."
+      }
+     ]
+    },
+    "534440": {
+     "recordId": "534440",
+     "athleteName": "Tyler Herro",
+     "positionAbbr": "G",
+     "teamId": "15",
+     "teamAbbr": "MIL",
+     "teamName": "Milwaukee Bucks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T22:59Z|Herro (rest) won't play Wednesday against the Bulls, K.C. Johnson of Chicago Sports Network reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T22:59Z",
+       "shortComment": "Herro (rest) won't play Wednesday against the Bulls, K.C. Johnson of Chicago Sports Network reports.",
+       "longComment": "The star guard is receiving a rest day Wednesday. His last chance for exhibition reps arrives Friday against the Pacers."
+      }
+     ]
+    },
+    "534471": {
+     "recordId": "534471",
+     "athleteName": "Nate Ament",
+     "positionAbbr": "F",
+     "teamId": "15",
+     "teamAbbr": "MIL",
+     "teamName": "Milwaukee Bucks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T00:52Z|Ament (ankle) is out for Wednesday's preseason game against Chicago, Cameron Ezeir of CBS Milwaukee reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T00:52Z",
+       "shortComment": "Ament (ankle) is out for Wednesday's preseason game against Chicago, Cameron Ezeir of CBS Milwaukee reports.",
+       "longComment": "Ament will remain sidelined due to a left ankle sprain he sustained Oct. 7 against Oklahoma City. His availability for Friday's matchup against Indiana remains uncertain, though Milwaukee head coach Taylor Jenkins suggested the rookie should be ready for Opening Night."
+      }
+     ]
+    },
+    "534477": {
+     "recordId": "534477",
+     "athleteName": "Ryan Rollins",
+     "positionAbbr": "G",
+     "teamId": "15",
+     "teamAbbr": "MIL",
+     "teamName": "Milwaukee Bucks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T01:26Z|Rollins (rest) won't play in Wednesday's preseason game against Chicago, Cameron Ezeir of CBS58 reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T01:26Z",
+       "shortComment": "Rollins (rest) won't play in Wednesday's preseason game against Chicago, Cameron Ezeir of CBS58 reports.",
+       "longComment": "Rollins will take the night off before possibly suiting up for Friday's preseason meeting with the Pacers. The 24-year-old has played relatively well during the preseason (three games), averaging 13.0 points, 3.7 rebounds, 3.3 assists, 1.7 blocks and 1.3 steals over 19.4 minutes per contest."
+      }
+     ]
+    },
+    "534479": {
+     "recordId": "534479",
+     "athleteName": "AJ Green",
+     "positionAbbr": "G",
+     "teamId": "15",
+     "teamAbbr": "MIL",
+     "teamName": "Milwaukee Bucks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T01:31Z|Green (rest) won't play in Wednesday's preseason game against Chicago, Cameron Ezeir of CBS58 reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T01:31Z",
+       "shortComment": "Green (rest) won't play in Wednesday's preseason game against Chicago, Cameron Ezeir of CBS58 reports.",
+       "longComment": "Green has played in two of Milwaukee's preseason contests. His final opportunity to get on the floor before the start of the 2026-27 campaign will come Friday in Indiana."
+      }
+     ]
+    },
+    "534480": {
+     "recordId": "534480",
+     "athleteName": "Myles Turner",
+     "positionAbbr": "C",
+     "teamId": "15",
+     "teamAbbr": "MIL",
+     "teamName": "Milwaukee Bucks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T01:38Z|Turner (rest) won't play in Wednesday's preseason game against Chicago, Cameron Ezeir of CBS58 reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T01:38Z",
+       "shortComment": "Turner (rest) won't play in Wednesday's preseason game against Chicago, Cameron Ezeir of CBS58 reports.",
+       "longComment": "Turner started in all three of Milwaukee's preseason games thus far, averaging 10.3 points, 4.0 rebounds, 1.0 steals and 2.7 blocks over 21.7 minutes per contest. It's unknown if he will suit up for Friday's preseason meeting with the Pacers, Milwaukee's final exhibition before the start of the regular season on Oct. 21 in Washington."
+      }
+     ]
+    },
+    "534481": {
+     "recordId": "534481",
+     "athleteName": "Kevin Porter Jr.",
+     "positionAbbr": "G",
+     "teamId": "15",
+     "teamAbbr": "MIL",
+     "teamName": "Milwaukee Bucks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T01:49Z|Porter (rest) won't play in Wednesday's preseason game against Chicago, Cameron Ezeir of CBS58 reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T01:49Z",
+       "shortComment": "Porter (rest) won't play in Wednesday's preseason game against Chicago, Cameron Ezeir of CBS58 reports.",
+       "longComment": "Porter has appeared in two of the Bucks' preseason games. His final chance to play before the start of the regular season will come Friday against Indiana."
+      }
+     ]
+    }
+   }
+  },
+  "16": {
+   "teamId": "16",
+   "displayName": "Minnesota Timberwolves",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "533214": {
+     "recordId": "533214",
+     "athleteName": "Donte DiVincenzo",
+     "positionAbbr": "G",
+     "teamId": "16",
+     "teamAbbr": "MIN",
+     "teamName": "Minnesota Timberwolves",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-05T20:53Z|DiVincenzo (Achilles) remains confident that he'll return during the 2026-27 season, Jon Krawczynski of The Athletic reports.",
+       "status": "Out",
+       "date": "2026-10-05T20:53Z",
+       "shortComment": "DiVincenzo (Achilles) remains confident that he'll return during the 2026-27 season, Jon Krawczynski of The Athletic reports.",
+       "longComment": "DiVincenzo is approaching six months since tearing his right Achilles during the first round of the playoffs and has been rehabbing with the expectation that he'll play at some point this season. The veteran guard has sought advice from Jayson Tatum, Tyrese Haliburton and Damian Lillard during his recovery, though Minnesota has yet to establish a timetable for his return."
+      }
+     ]
+    },
+    "534492": {
+     "recordId": "534492",
+     "athleteName": "Enrique Freeman",
+     "positionAbbr": "F",
+     "teamId": "16",
+     "teamAbbr": "MIN",
+     "teamName": "Minnesota Timberwolves",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T02:49Z|Freeman (shoulder) did not play in Wednesday's 128-106 preseason loss to Detroit.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T02:49Z",
+       "shortComment": "Freeman (shoulder) did not play in Wednesday's 128-106 preseason loss to Detroit.",
+       "longComment": "Freeman exited Saturday's contest against Miami due to a right shoulder injury and has since missed two consecutive games. The forward's final opportunity to suit up during the preseason will come Friday against Chicago."
+      }
+     ]
+    },
+    "534493": {
+     "recordId": "534493",
+     "athleteName": "Rocco Zikarsky",
+     "positionAbbr": "C",
+     "teamId": "16",
+     "teamAbbr": "MIN",
+     "teamName": "Minnesota Timberwolves",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T02:53Z|Zikarsky (undisclosed) was unavailable for Wednesday's 128-106 preseason loss to Detroit.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T02:53Z",
+       "shortComment": "Zikarsky (undisclosed) was unavailable for Wednesday's 128-106 preseason loss to Detroit.",
+       "longComment": "Zikarsky appeared in two of Minnesota's first three preseason games but has been unavailable for the club's past two contests. His next chance to suit up will come Friday against Chicago."
+      }
+     ]
+    }
+   }
+  },
+  "17": {
+   "teamId": "17",
+   "displayName": "Brooklyn Nets",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534410": {
+     "recordId": "534410",
+     "athleteName": "Joshua Jefferson",
+     "positionAbbr": "F",
+     "teamId": "17",
+     "teamAbbr": "BKN",
+     "teamName": "Brooklyn Nets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T19:24Z|Jefferson (back) won't play in Wednesday's preseason game versus the Heat, per Erik Slater of ClutchPoints.com.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T19:24Z",
+       "shortComment": "Jefferson (back) won't play in Wednesday's preseason game versus the Heat, per Erik Slater of ClutchPoints.com.",
+       "longComment": "The rookie first-rounder will now have been sidelined for the entire preseason with a back injury, costing him valuable reps this fall. His status is up in the air for Wednesday's regular-season opener against the Hornets."
+      }
+     ]
+    }
+   }
+  },
+  "18": {
+   "teamId": "18",
+   "displayName": "New York Knicks",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534183": {
+     "recordId": "534183",
+     "athleteName": "OG Anunoby",
+     "positionAbbr": "F",
+     "teamId": "18",
+     "teamAbbr": "NY",
+     "teamName": "New York Knicks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T02:40Z|Anunoby totaled 15 points (4-8 FG, 1-3 3Pt, 6-6 FT), three steals, two rebounds and one assist over 22 minutes in Monday's 122-104 preseason loss to Minnesota. He won't play Tuesday against Toronto for rest purposes, Stefan Bondy of The New York Post reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T02:40Z",
+       "shortComment": "Anunoby totaled 15 points (4-8 FG, 1-3 3Pt, 6-6 FT), three steals, two rebounds and one assist over 22 minutes in Monday's 122-104 preseason loss to Minnesota. He won't play Tuesday against Toronto for rest purposes, Stefan Bondy of The New York Post reports.",
+       "longComment": "Anunoby put forth a solid scoring effort, fueled by perfection at the charity stripe, while also tallying a team-high three steals in the loss. The veteran wing has scored in double figures in each of his three preseason appearances, but he'll be inactive for the second half of the back-to-back set Tuesday at Toronto. Anunoby's next chance to suit up will come Thursday, also against the Raptors."
+      }
+     ]
+    },
+    "534184": {
+     "recordId": "534184",
+     "athleteName": "Mikal Bridges",
+     "positionAbbr": "G",
+     "teamId": "18",
+     "teamAbbr": "NY",
+     "teamName": "New York Knicks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T02:47Z|Bridges finished with nine points (3-6 FG, 1-2 3Pt, 2-2 FT), two rebounds and two assists over 22 minutes in Monday's 122-104 preseason loss to the Timberwolves.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T02:47Z",
+       "shortComment": "Bridges finished with nine points (3-6 FG, 1-2 3Pt, 2-2 FT), two rebounds and two assists over 22 minutes in Monday's 122-104 preseason loss to the Timberwolves.",
+       "longComment": "According to Stefan Bondy of The New York Post, Mike Brown said that he will hold out his regular starters for Tuesday's game in Toronto for rest purposes. With Bridges and the rest of the first unit unavailable, Jordan Clarkson might see a large uptick in usage."
+      }
+     ]
+    },
+    "534185": {
+     "recordId": "534185",
+     "athleteName": "Karl-Anthony Towns",
+     "positionAbbr": "C",
+     "teamId": "18",
+     "teamAbbr": "NY",
+     "teamName": "New York Knicks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T02:47Z|Towns ended with 11 points (3-6 FG, 1-4 3Pt, 4-4 FT), four assists, two rebounds and one steal over 22 minutes in Monday's 122-104 preseason loss to Minnesota. He won't play Tuesday against Toronto for rest purposes, Stefan Bondy of The New York Post reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T02:47Z",
+       "shortComment": "Towns ended with 11 points (3-6 FG, 1-4 3Pt, 4-4 FT), four assists, two rebounds and one steal over 22 minutes in Monday's 122-104 preseason loss to Minnesota. He won't play Tuesday against Toronto for rest purposes, Stefan Bondy of The New York Post reports.",
+       "longComment": "Towns was solid, if unspectacular, as New York fell to 0-3 in preseason play. The standout center has played in each of the first three contests but will take a seat for the second half of the back-to-back set Tuesday at Toronto. Towns' next chance to suit up will come Thursday at home against the Raptors."
+      }
+     ]
+    },
+    "-57922": {
+     "recordId": "-57922",
+     "athleteName": "Josh Hart",
+     "positionAbbr": "G",
+     "teamId": "18",
+     "teamAbbr": "NY",
+     "teamName": "New York Knicks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T02:40Z|Hart recorded two points (1-2 FG, 0-1 3Pt), three rebounds, three assists and one steal over 22 minutes in Monday's 122-104 preseason loss to the Timberwolves.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T02:40Z",
+       "shortComment": "Hart recorded two points (1-2 FG, 0-1 3Pt), three rebounds, three assists and one steal over 22 minutes in Monday's 122-104 preseason loss to the Timberwolves.",
+       "longComment": "Per Stefan Bondy of The New York Post, Hart will sit out Tuesday's exhibition for rest, as it is the second night of a back-to-back set during the preseason. Hart's absence should open up minutes for Landry Shamet and Jordan Clarkson."
+      }
+     ]
+    },
+    "-57920": {
+     "recordId": "-57920",
+     "athleteName": "Jalen Brunson",
+     "positionAbbr": "G",
+     "teamId": "18",
+     "teamAbbr": "NY",
+     "teamName": "New York Knicks",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T02:20Z|Brunson (rest) won't suit up for Tuesday's preseason game in Toronto, Stefan Bondy of The New York Post reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T02:20Z",
+       "shortComment": "Brunson (rest) won't suit up for Tuesday's preseason game in Toronto, Stefan Bondy of The New York Post reports.",
+       "longComment": "It's the second night of a back-to-back set in the preseason, so the Knicks will sit out their entire starting unit. Expect more minutes for Miles McBride and Tyler Kolek."
+      }
+     ]
+    }
+   }
+  },
+  "19": {
+   "teamId": "19",
+   "displayName": "Orlando Magic",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534260": {
+     "recordId": "534260",
+     "athleteName": "Jonathan Isaac",
+     "positionAbbr": "F",
+     "teamId": "19",
+     "teamAbbr": "ORL",
+     "teamName": "Orlando Magic",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T21:27Z|Isaac (knee) won't play in Tuesday's preseason game against Cleveland, Jason Beede of the Orlando Sentinel reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T21:27Z",
+       "shortComment": "Isaac (knee) won't play in Tuesday's preseason game against Cleveland, Jason Beede of the Orlando Sentinel reports.",
+       "longComment": "The oft-injured forward is back with the team after attending to a personal matter but remains sidelined with a knee injury. Friday's exhibition against the Heat marks Isaac's last chance for preseason reps."
+      }
+     ]
+    },
+    "534261": {
+     "recordId": "534261",
+     "athleteName": "Anthony Black",
+     "positionAbbr": "G",
+     "teamId": "19",
+     "teamAbbr": "ORL",
+     "teamName": "Orlando Magic",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T21:28Z|Black (ankle) has been ruled out for Tuesday's preseason game against Cleveland, Jason Beede of the Orlando Sentinel reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T21:28Z",
+       "shortComment": "Black (ankle) has been ruled out for Tuesday's preseason game against Cleveland, Jason Beede of the Orlando Sentinel reports.",
+       "longComment": "Black has yet to play this preseason and will remain on the inactive list Tuesday with a sprained right ankle. His last chance to play ahead of the regular season will come Friday against Miami."
+      }
+     ]
+    },
+    "534264": {
+     "recordId": "534264",
+     "athleteName": "Nikola Vucevic",
+     "positionAbbr": "C",
+     "teamId": "19",
+     "teamAbbr": "ORL",
+     "teamName": "Orlando Magic",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T21:48Z|Vucevic (rest) is out for Tuesday's preseason game against the Cavaliers.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T21:48Z",
+       "shortComment": "Vucevic (rest) is out for Tuesday's preseason game against the Cavaliers.",
+       "longComment": "It appears to be a routine maintenance day for the veteran big man. Friday's matchup versus the Heat marks his next chance to play."
+      }
+     ]
+    },
+    "-57605": {
+     "recordId": "-57605",
+     "athleteName": "Izaiyah Nelson",
+     "positionAbbr": "F",
+     "teamId": "19",
+     "teamAbbr": "ORL",
+     "teamName": "Orlando Magic",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-09-28T21:33Z|Team president Jeff Weltman said Monday that Nelson (ankle) remains about a month away from returning to the court after offseason surgery, per Philip Rossman-Reich of OrlandoMagicDaily.com.",
+       "status": "Out",
+       "date": "2026-09-28T21:33Z",
+       "shortComment": "Team president Jeff Weltman said Monday that Nelson (ankle) remains about a month away from returning to the court after offseason surgery, per Philip Rossman-Reich of OrlandoMagicDaily.com.",
+       "longComment": "With Nelson still in recovery mode from the left ankle surgery he underwent this summer, his path back to game action remains delayed for the early part of the season. The rookie big man is on a two-way contract with the Magic, so his short-term absence mainly affects his developmental timeline rather than Orlando's regular rotation."
+      }
+     ]
+    }
+   }
+  },
+  "20": {
+   "teamId": "20",
+   "displayName": "Philadelphia 76ers",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "533362": {
+     "recordId": "533362",
+     "athleteName": "Ariel Hukporti",
+     "positionAbbr": "C",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-06T19:17Z|Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN.",
+       "status": "Out",
+       "date": "2026-10-06T19:17Z",
+       "shortComment": "Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN.",
+       "longComment": "Hukporti went down with an Achilles injury in Monday's preseason opener against the Knicks, and an MRI has since revealed a rupture. He signed a one-year deal with the 76ers over the summer, so Hukporti will be an unrestricted free agent come season's end. With Hukporti's year already finished, Adem Bona (foot) should assume the backup center role behind Joel Embiid once healthy."
+      }
+     ]
+    },
+    "533865": {
+     "recordId": "533865",
+     "athleteName": "Joel Embiid",
+     "positionAbbr": "C",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-10T22:47Z|Embiid (rest) is out for Saturday's exhibition against the Celtics, Tony Jones of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-10T22:47Z",
+       "shortComment": "Embiid (rest) is out for Saturday's exhibition against the Celtics, Tony Jones of The Athletic reports.",
+       "longComment": "Head coach Nick Nurse is resting most of the vets for Saturday's exhibition, so Jabari Walker could get all the run he can handle. Embiid should return for Friday's preseason rematch with Boston."
+      }
+     ]
+    },
+    "533866": {
+     "recordId": "533866",
+     "athleteName": "Jaylen Brown",
+     "positionAbbr": "G",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-10T22:49Z|Brown (rest) won't suit up for Saturday's preseason game in Boston, Tony Jones of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-10T22:49Z",
+       "shortComment": "Brown (rest) won't suit up for Saturday's preseason game in Boston, Tony Jones of The Athletic reports.",
+       "longComment": "Brown will skip his first meeting against his former team in Boston, but he should be able to get back out there for Friday's rematch with the Celtics. Justin Edwards and Dean Wade will help pick up the slack Saturday with Brown unavailable."
+      }
+     ]
+    },
+    "533868": {
+     "recordId": "533868",
+     "athleteName": "Kentavious Caldwell-Pope",
+     "positionAbbr": "G",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-10T22:52Z|Caldwell-Pope (rest) won't play in Saturday's exhibition against the Celtics, Tony Jones of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-10T22:52Z",
+       "shortComment": "Caldwell-Pope (rest) won't play in Saturday's exhibition against the Celtics, Tony Jones of The Athletic reports.",
+       "longComment": "LeBron James (rest), Joel Embiid (rest) and Jaylen Brown (rest) will join Caldwell-Pope on the inactive list for Saturday's exhibition, which may result in major minutes for Rayan Rupert and Caleb Love. Caldwell-Pope's next chance to play will come Friday in a rematch with the Celtics."
+      }
+     ]
+    },
+    "533878": {
+     "recordId": "533878",
+     "athleteName": "LeBron James",
+     "positionAbbr": "F",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-10T23:03Z|James (rest) won't be available for Saturday's preseason contest against the Celtics, Tony Jones of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-10T23:03Z",
+       "shortComment": "James (rest) won't be available for Saturday's preseason contest against the Celtics, Tony Jones of The Athletic reports.",
+       "longComment": "The Sixers will be resting several players for this contest, and James is one of the many projected starters who will be taking a seat alongside Joel Embiid and Jaylen Brown. The 76ers will manage James' workload carefully with an eye toward having him ready for the regular-season opener against the Knicks on Tuesday, Oct. 20."
+      }
+     ]
+    },
+    "534107": {
+     "recordId": "534107",
+     "athleteName": "Anfernee Simons",
+     "positionAbbr": "G",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-12T17:24Z|Simons (hamstring) was limited at Monday's practice, Ky Carlin of USA Today reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-12T17:24Z",
+       "shortComment": "Simons (hamstring) was limited at Monday's practice, Ky Carlin of USA Today reports.",
+       "longComment": "Simons continues to deal with tightness in his hamstring, though he's trending in the right direction. For now, he's questionable at best for the next preseason game Oct. 16 against the Celtics."
+      }
+     ]
+    },
+    "534108": {
+     "recordId": "534108",
+     "athleteName": "Adem Bona",
+     "positionAbbr": "C",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-12T17:27Z|Bona (foot) practiced in a limited fashion Monday, per Ky Carlin of USA Today.",
+       "status": "Day-To-Day",
+       "date": "2026-10-12T17:27Z",
+       "shortComment": "Bona (foot) practiced in a limited fashion Monday, per Ky Carlin of USA Today.",
+       "longComment": "Bona is already expected to miss Friday's preseason finale against Boston, but he's still aiming to be ready for the start of the regular season. Once healthy, Bona is in line to serve as the No. 2 center behind Joel Embiid."
+      }
+     ]
+    },
+    "534231": {
+     "recordId": "534231",
+     "athleteName": "Dominick Barlow",
+     "positionAbbr": "F",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T17:29Z|Barlow (back) was unable to practice Tuesday, Noah Levick of NBC Sports Philadelphia reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T17:29Z",
+       "shortComment": "Barlow (back) was unable to practice Tuesday, Noah Levick of NBC Sports Philadelphia reports.",
+       "longComment": "Barlow has missed the entire preseason so far and remains without a timetable to return. He can be considered questionable at best for Friday's preseason finale against Boston."
+      }
+     ]
+    },
+    "-57633": {
+     "recordId": "-57633",
+     "athleteName": "Tacko Fall",
+     "positionAbbr": "C",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-01T22:07Z|Fall was diagnosed with a left hip strain Thursday and will miss at least two weeks, Kyle Neubeck of AllPHLY.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-01T22:07Z",
+       "shortComment": "Fall was diagnosed with a left hip strain Thursday and will miss at least two weeks, Kyle Neubeck of AllPHLY.com reports.",
+       "longComment": "This is a tough blow for Fall, as he's already facing an uphill battle to make the final roster. A return Oct. 16 isn't out of the question based on this timetable."
+      }
+     ]
+    }
+   }
+  },
+  "21": {
+   "teamId": "21",
+   "displayName": "Phoenix Suns",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "532554": {
+     "recordId": "532554",
+     "athleteName": "Mark Williams",
+     "positionAbbr": "C",
+     "teamId": "21",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Suns",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-09-11T16:03Z|Williams underwent surgery Thursday to repair a torn labrum in his left shoulder and will miss an extended period of time, Shams Charania of ESPN reports.",
+       "status": "Out",
+       "date": "2026-09-11T16:03Z",
+       "shortComment": "Williams underwent surgery Thursday to repair a torn labrum in his left shoulder and will miss an extended period of time, Shams Charania of ESPN reports.",
+       "longComment": "This is a tough blow for the center with training camp right around the corner. With his status for Opening Night in jeopardy, this will put a lot of eyes on Oso Ighodaro and Khaman Maluach, with the latter already drawing buzz during the Summer League. More clarity on Williams' timeline should be known in the coming weeks."
+      }
+     ]
+    },
+    "534446": {
+     "recordId": "534446",
+     "athleteName": "Devin Booker",
+     "positionAbbr": "G",
+     "teamId": "21",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Suns",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T23:11Z|Booker (rest) won't play in Wednesday's preseason game against the Spurs, Matt Guzman of SI.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T23:11Z",
+       "shortComment": "Booker (rest) won't play in Wednesday's preseason game against the Spurs, Matt Guzman of SI.com reports.",
+       "longComment": "Booker will get another night off Wednesday. His final chance to get on the floor this preseason will come Friday against the Jazz."
+      }
+     ]
+    },
+    "534447": {
+     "recordId": "534447",
+     "athleteName": "Jalen Green",
+     "positionAbbr": "G",
+     "teamId": "21",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Suns",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T23:14Z|Green (rest) won't play Wednesday versus the Spurs, Matt Guzman of SI.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T23:14Z",
+       "shortComment": "Green (rest) won't play Wednesday versus the Spurs, Matt Guzman of SI.com reports.",
+       "longComment": "Green was expected to sit this one out, so the latest update isn't surprising. His final chance to suit up before the start of the regular season will come Friday against Utah."
+      }
+     ]
+    },
+    "534449": {
+     "recordId": "534449",
+     "athleteName": "Miles Bridges",
+     "positionAbbr": "F",
+     "teamId": "21",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Suns",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T23:17Z|Bridges (rest) won't play Wednesday against the Spurs, Matt Guzman of SI.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T23:17Z",
+       "shortComment": "Bridges (rest) won't play Wednesday against the Spurs, Matt Guzman of SI.com reports.",
+       "longComment": "Bridges and the other veterans on the roster will sit this one out. His final opportunity to get on the floor before the start of the regular season will come Friday versus the Jazz."
+      }
+     ]
+    },
+    "534451": {
+     "recordId": "534451",
+     "athleteName": "Collin Gillespie",
+     "positionAbbr": "G",
+     "teamId": "21",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Suns",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T23:21Z|Gillespie (rest) won't play in Wednesday's game against the Spurs, Matt Guzman of SI.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T23:21Z",
+       "shortComment": "Gillespie (rest) won't play in Wednesday's game against the Spurs, Matt Guzman of SI.com reports.",
+       "longComment": "Gillespie has appeared in three preseason games for the Suns in 2026, averaging 16.9 minutes per contest. However, as expected, the 27-year-old will rest Wednesday, with his final chance to see more preseason action coming Friday versus Utah."
+      }
+     ]
+    },
+    "534455": {
+     "recordId": "534455",
+     "athleteName": "Oso Ighodaro",
+     "positionAbbr": "F",
+     "teamId": "21",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Suns",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T23:38Z|Ighodaro (rest) won't play in Wednesday's preseason game against the Spurs, Matt Guzman of SI.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T23:38Z",
+       "shortComment": "Ighodaro (rest) won't play in Wednesday's preseason game against the Spurs, Matt Guzman of SI.com reports.",
+       "longComment": "Ighodaro averaged 17.5 minutes in the Suns' first three preseason games, though he will take the night off Wednesday to rest. His final chance to play before the start of the 2026-27 campaign will come Friday versus Utah."
+      }
+     ]
+    },
+    "-57963": {
+     "recordId": "-57963",
+     "athleteName": "Dillon Brooks",
+     "positionAbbr": "F",
+     "teamId": "21",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Suns",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T16:40Z|Brooks is unlikely to suit up for Wednesday's preseason meeting with San Antonio after sitting out the full morning shootaround, Duane Rankin of The Arizona Republic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T16:40Z",
+       "shortComment": "Brooks is unlikely to suit up for Wednesday's preseason meeting with San Antonio after sitting out the full morning shootaround, Duane Rankin of The Arizona Republic reports.",
+       "longComment": "Brooks joins a lengthy list of Phoenix players expected to be unavailable, opening additional opportunities on the wing. With the Suns' preseason schedule wrapping up Friday against Utah, his next appearance could come in that contest."
+      }
+     ]
+    }
+   }
+  },
+  "22": {
+   "teamId": "22",
+   "displayName": "Portland Trail Blazers",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "532395": {
+     "recordId": "532395",
+     "athleteName": "Shaedon Sharpe",
+     "positionAbbr": "G",
+     "teamId": "22",
+     "teamAbbr": "POR",
+     "teamName": "Portland Trail Blazers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-08-24T20:23Z|Sharpe suffered a torn meniscus in his knee and is expected to miss six months, per Shams Charania of ESPN.",
+       "status": "Out",
+       "date": "2026-08-24T20:23Z",
+       "shortComment": "Sharpe suffered a torn meniscus in his knee and is expected to miss six months, per Shams Charania of ESPN.",
+       "longComment": "It's a tough blow to the Trail Blazers' depth on the wing ahead of training camp. Sharpe, who is now likely to be sidelined until after the All-Star break, had been ticketed for a reserve role behind Toumani Camara following an injury-plagued 2025-26 campaign, which saw average a career-high 20.8 points, 1.4 steals and 2.1 three-pointers per game over 50 regular-season appearances. The door is now open for Vit Krejci and Jeremy Sochan to compete for bench minutes during camp."
+      }
+     ]
+    },
+    "534254": {
+     "recordId": "534254",
+     "athleteName": "Chris Youngblood",
+     "positionAbbr": "G",
+     "teamId": "22",
+     "teamAbbr": "POR",
+     "teamName": "Portland Trail Blazers",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T19:45Z|Youngblood (calf) has been ruled out for Tuesday's preseason game against the Kings.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T19:45Z",
+       "shortComment": "Youngblood (calf) has been ruled out for Tuesday's preseason game against the Kings.",
+       "longComment": "Youngblood will miss his second exhibition game in as many days due to left calf soreness. His final chance to play again in the preseason will come Friday against Golden State."
+      }
+     ]
+    }
+   }
+  },
+  "23": {
+   "teamId": "23",
+   "displayName": "Sacramento Kings",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534019": {
+     "recordId": "534019",
+     "athleteName": "Maxime Raynaud",
+     "positionAbbr": "C",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-11T18:14Z|Raynaud has been diagnosed with a right knee subluxation and will be re-evaluated in approximately two weeks, Michael Scotto of HoopsHype.com reports.",
+       "status": "Out",
+       "date": "2026-10-11T18:14Z",
+       "shortComment": "Raynaud has been diagnosed with a right knee subluxation and will be re-evaluated in approximately two weeks, Michael Scotto of HoopsHype.com reports.",
+       "longComment": "Raynaud was taken back to the locker room in a wheelchair during Saturday's preseason loss to the Warriors, though he's seemingly avoided a serious injury. The big man will still begin the regular season on the inactive list, leaving additional minutes available for the likes of Precious Achiuwa and Dylan Cardwell (rest)."
+      }
+     ]
+    },
+    "534258": {
+     "recordId": "534258",
+     "athleteName": "Dylan Cardwell",
+     "positionAbbr": "C",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-13T20:57Z|Cardwell will miss at least two weeks with a left calf strain, Anthony Slater of ESPN.com reports.",
+       "status": "Out",
+       "date": "2026-10-13T20:57Z",
+       "shortComment": "Cardwell will miss at least two weeks with a left calf strain, Anthony Slater of ESPN.com reports.",
+       "longComment": "Sacramento's frontcourt takes another blow after losing Maxime Raynaud (knee) for several weeks over the weekend. The Kings figure to depend heavily upon Domantas Sabonis at center to open the season, while Precious Achiuwa should play a featured role off the bench to help pick up the slack."
+      }
+     ]
+    },
+    "534314": {
+     "recordId": "534314",
+     "athleteName": "Zach LaVine",
+     "positionAbbr": "G",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T00:57Z|LaVine (rest) will not play in Tuesday's preseason matchup against Portland, Matt George of ABC 10 Sacramento reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T00:57Z",
+       "shortComment": "LaVine (rest) will not play in Tuesday's preseason matchup against Portland, Matt George of ABC 10 Sacramento reports.",
+       "longComment": "LaVine is among eight Kings players ruled out for Tuesday's contest. His next opportunity to play will come Friday against San Antonio in the preseason finale."
+      }
+     ]
+    },
+    "534315": {
+     "recordId": "534315",
+     "athleteName": "Domantas Sabonis",
+     "positionAbbr": "F",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T00:59Z|Sabonis (undisclosed) will not play in Tuesday's preseason matchup against Portland, Matt George of ABC 10 Sacramento reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T00:59Z",
+       "shortComment": "Sabonis (undisclosed) will not play in Tuesday's preseason matchup against Portland, Matt George of ABC 10 Sacramento reports.",
+       "longComment": "Sabonis joins several Sacramento regulars on the sidelines Tuesday, though no reason for his absence was provided. With both Sabonis and Maxime Raynaud (knee) unavailable, the Kings will need to rely on other frontcourt options against the Trail Blazers. Sabonis' next opportunity to suit up will come Friday against San Antonio."
+      }
+     ]
+    },
+    "534316": {
+     "recordId": "534316",
+     "athleteName": "Malik Monk",
+     "positionAbbr": "G",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T01:00Z|Monk (rest) is out for Tuesday's preseason game against Portland, Matt George of ABC 10 Sacramento reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T01:00Z",
+       "shortComment": "Monk (rest) is out for Tuesday's preseason game against Portland, Matt George of ABC 10 Sacramento reports.",
+       "longComment": "Monk is one of several Kings guards who will be unavailable Tuesday, joining Zach LaVine, Ben Simmons and Darius Acuff on the sidelines. His next chance to see preseason action will come Friday against San Antonio."
+      }
+     ]
+    },
+    "534317": {
+     "recordId": "534317",
+     "athleteName": "Darius Acuff Jr.",
+     "positionAbbr": "G",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T01:02Z|Acuff (rest) has been ruled out for Tuesday's preseason game against Portland, Matt George of ABC 10 Sacramento reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T01:02Z",
+       "shortComment": "Acuff (rest) has been ruled out for Tuesday's preseason game against Portland, Matt George of ABC 10 Sacramento reports.",
+       "longComment": "The Kings will be extremely shorthanded Tuesday, as they're resting several regulars. Acuff's final chance to play in the preseason will come Friday against the Spurs."
+      }
+     ]
+    },
+    "534318": {
+     "recordId": "534318",
+     "athleteName": "De'Andre Hunter",
+     "positionAbbr": "F",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T01:04Z|Hunter (rest) has been ruled out for Tuesday's preseason game against the Trail Blazers, Matt George of ABC 10 Sacramento reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T01:04Z",
+       "shortComment": "Hunter (rest) has been ruled out for Tuesday's preseason game against the Trail Blazers, Matt George of ABC 10 Sacramento reports.",
+       "longComment": "Hunter will join several other regulars on the inactive list. His final chance to play in the preseason will come Friday against the Spurs."
+      }
+     ]
+    },
+    "534319": {
+     "recordId": "534319",
+     "athleteName": "Ben Simmons",
+     "positionAbbr": "G",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T01:06Z|Simmons (rest) won't play in Tuesday's preseason game against the Trail Blazers, Matt George of ABC 10 Sacramento reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T01:06Z",
+       "shortComment": "Simmons (rest) won't play in Tuesday's preseason game against the Trail Blazers, Matt George of ABC 10 Sacramento reports.",
+       "longComment": "Simmons will get the night off Tuesday. His final chance to play in the preseason will come against the Spurs on Friday."
+      }
+     ]
+    },
+    "-57961": {
+     "recordId": "-57961",
+     "athleteName": "Precious Achiuwa",
+     "positionAbbr": "F",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T10:40Z|Precious Achiuwa exited Tuesday's game with a right ankle injury and did not return, per Jason Anderson of the Sacramento Bee.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T10:40Z",
+       "shortComment": "Precious Achiuwa exited Tuesday's game with a right ankle injury and did not return, per Jason Anderson of the Sacramento Bee.",
+       "longComment": "Achiuwa started at center and posted a double-double before leaving late with a right ankle injury and being ruled out. With Maxime Raynaud (knee) and Dylan Cardwell (calf) each expected to miss at least two weeks, the severity of the ankle injury matters a lot for Sacramento's frontcourt depth."
+      }
+     ]
+    }
+   }
+  },
+  "24": {
+   "teamId": "24",
+   "displayName": "San Antonio Spurs",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "533142": {
+     "recordId": "533142",
+     "athleteName": "Tobias Harris",
+     "positionAbbr": "F",
+     "teamId": "24",
+     "teamAbbr": "SA",
+     "teamName": "San Antonio Spurs",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-05T01:27Z|Spurs head coach Mitch Johnson said they will not rush Tobias Harris (calf) back to the court, Jared Weiss of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-05T01:27Z",
+       "shortComment": "Spurs head coach Mitch Johnson said they will not rush Tobias Harris (calf) back to the court, Jared Weiss of The Athletic reports.",
+       "longComment": "\"It's a calf strain, the seriousness is what it is,\" said Johnson. \"We won't rush him at all. I guess the question will be is he ready for the season opener? Totally questionable and we will not push that at all. So, we'll take it slow. There is no concern of this level of seriousness, and at the same time, we will not rush him at all.\" It sounds like Harris, who has already been ruled out for the preseason, is in danger of missing opening night. His absence will open up minutes for Julian Champagnie, Keldon Johnson and Harrison Barnes."
+      }
+     ]
+    },
+    "533226": {
+     "recordId": "533226",
+     "athleteName": "Jayden Quaintance",
+     "positionAbbr": "F",
+     "teamId": "24",
+     "teamAbbr": "SA",
+     "teamName": "San Antonio Spurs",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-05T21:43Z|Quaintance has been around the team but has not yet been cleared for basketball activities, Matt Guzman of SI.com reports.",
+       "status": "Out",
+       "date": "2026-10-05T21:43Z",
+       "shortComment": "Quaintance has been around the team but has not yet been cleared for basketball activities, Matt Guzman of SI.com reports.",
+       "longComment": "The Spurs are expected to exercise extreme caution with the big man, as Quaintance suffered a torn ACL and meniscus with Arizona State in February 2025 before appearing in only four games with Kentucky last season due to severe complications and persistent swelling. The 19-year-old underwent a cleanup procedure on his meniscus in mid-July, and the Spurs will likely want him at 100 percent before ramping him up to basketball activities."
+      }
+     ]
+    },
+    "534441": {
+     "recordId": "534441",
+     "athleteName": "Julian Champagnie",
+     "positionAbbr": "F",
+     "teamId": "24",
+     "teamAbbr": "SA",
+     "teamName": "San Antonio Spurs",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T23:00Z|Champagnie (rest) has been ruled out for Wednesday's preseason game against Phoenix, Matt Guzman of SI.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T23:00Z",
+       "shortComment": "Champagnie (rest) has been ruled out for Wednesday's preseason game against Phoenix, Matt Guzman of SI.com reports.",
+       "longComment": "Champagnie started San Antonio's first three preseason games but will get Wednesday off for rest purposes. His next chance to suit up will come Friday against Sacramento."
+      }
+     ]
+    },
+    "534444": {
+     "recordId": "534444",
+     "athleteName": "Keldon Johnson",
+     "positionAbbr": "F",
+     "teamId": "24",
+     "teamAbbr": "SA",
+     "teamName": "San Antonio Spurs",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T23:06Z|Johnson (rest) has been ruled out for Wednesday's preseason game against Phoenix, Matt Guzman of SI.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T23:06Z",
+       "shortComment": "Johnson (rest) has been ruled out for Wednesday's preseason game against Phoenix, Matt Guzman of SI.com reports.",
+       "longComment": "Johnson will get a rest day after playing in each of San Antonio's first three preseason games. His next chance to suit up will come Friday against Sacramento."
+      }
+     ]
+    },
+    "534445": {
+     "recordId": "534445",
+     "athleteName": "Luke Kornet",
+     "positionAbbr": "C",
+     "teamId": "24",
+     "teamAbbr": "SA",
+     "teamName": "San Antonio Spurs",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-14T23:08Z|Kornet (rest) won't play in Wednesday's preseason game against the Suns, Matt Guzman of SI.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-14T23:08Z",
+       "shortComment": "Kornet (rest) won't play in Wednesday's preseason game against the Suns, Matt Guzman of SI.com reports.",
+       "longComment": "Kornet has appeared in all three of the Spurs' preseason games. As a result, he will take the night off Wednesday, with his final opportunity to suit up before the start of the 2026-27 campaign coming Friday versus Sacramento."
+      }
+     ]
+    }
+   }
+  },
+  "25": {
+   "teamId": "25",
+   "displayName": "Oklahoma City Thunder",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534269": {
+     "recordId": "534269",
+     "athleteName": "Nikola Topic",
+     "positionAbbr": "G",
+     "teamId": "25",
+     "teamAbbr": "OKC",
+     "teamName": "Oklahoma City Thunder",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T22:26Z|Topic (back) won't play Tuesday against Indiana, Clemente Almanza of USA Today reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T22:26Z",
+       "shortComment": "Topic (back) won't play Tuesday against Indiana, Clemente Almanza of USA Today reports.",
+       "longComment": "Topic is sitting out this exhibition with a back injury. He has no timeline for a return ahead of Thursday's game against the Rockets."
+      }
+     ]
+    },
+    "534270": {
+     "recordId": "534270",
+     "athleteName": "Thomas Sorber",
+     "positionAbbr": "C",
+     "teamId": "25",
+     "teamAbbr": "OKC",
+     "teamName": "Oklahoma City Thunder",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T22:28Z|Sorber (knee) won't play Tuesday against the Pacers, Clemente Almanza of USA Today reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T22:28Z",
+       "shortComment": "Sorber (knee) won't play Tuesday against the Pacers, Clemente Almanza of USA Today reports.",
+       "longComment": "Sorber continues to nurse a knee injury Tuesday. His next chance to play is Thursday against the Rockets."
+      }
+     ]
+    },
+    "534271": {
+     "recordId": "534271",
+     "athleteName": "Ajay Mitchell",
+     "positionAbbr": "G",
+     "teamId": "25",
+     "teamAbbr": "OKC",
+     "teamName": "Oklahoma City Thunder",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T22:29Z|Mitchell (rest) won't play in Tuesday's preseason game against the Pacers, Clemente Almanza of USA Today reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T22:29Z",
+       "shortComment": "Mitchell (rest) won't play in Tuesday's preseason game against the Pacers, Clemente Almanza of USA Today reports.",
+       "longComment": "Mitchell is out for both ends of this back-to-back set. His next chance to play is Thursday against the Rockets."
+      }
+     ]
+    },
+    "534272": {
+     "recordId": "534272",
+     "athleteName": "Chet Holmgren",
+     "positionAbbr": "C",
+     "teamId": "25",
+     "teamAbbr": "OKC",
+     "teamName": "Oklahoma City Thunder",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T22:32Z|Holmgren (quadriceps) has been ruled out for Tuesday's preseason game against the Pacers, Clemente Almanza of USA Today reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T22:32Z",
+       "shortComment": "Holmgren (quadriceps) has been ruled out for Tuesday's preseason game against the Pacers, Clemente Almanza of USA Today reports.",
+       "longComment": "Holmgren has yet to play in the preseason due to a quad contusion and will remain on the inactive list in the second leg of this back-to-back set. The big man's final chance to suit up before the regular season will come Thursday versus Houston."
+      }
+     ]
+    },
+    "534273": {
+     "recordId": "534273",
+     "athleteName": "Jaylin Williams",
+     "positionAbbr": "F",
+     "teamId": "25",
+     "teamAbbr": "OKC",
+     "teamName": "Oklahoma City Thunder",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T22:35Z|Williams (heel) has been ruled out for Tuesday's preseason game against the Pacers, Clemente Almanza of USA Today reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T22:35Z",
+       "shortComment": "Williams (heel) has been ruled out for Tuesday's preseason game against the Pacers, Clemente Almanza of USA Today reports.",
+       "longComment": "Williams is still dealing with a heel injury and won't play in the second half of this back-to-back set. The big man's final chance to see game action ahead of the regular season will come Thursday against Houston."
+      }
+     ]
+    },
+    "534476": {
+     "recordId": "534476",
+     "athleteName": "Otega Oweh",
+     "positionAbbr": "G",
+     "teamId": "25",
+     "teamAbbr": "OKC",
+     "teamName": "Oklahoma City Thunder",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-15T01:22Z|Oweh (Achilles) underwent surgery Wednesday and will miss the entirety of the 2026-27 season, Brandon Rahbar of DailyThunder.com reports.",
+       "status": "Out",
+       "date": "2026-10-15T01:22Z",
+       "shortComment": "Oweh (Achilles) underwent surgery Wednesday and will miss the entirety of the 2026-27 season, Brandon Rahbar of DailyThunder.com reports.",
+       "longComment": "Oweh exited Tuesday's preseason game against the Pacers with a non-contact injury that was later diagnosed as a ruptured right Achilles tendon. The No. 41 overall pick in the 2026 NBA Draft already faced an uphill battle for playing time on a loaded Thunder roster and will now miss his entire rookie campaign. Depending on his recovery progress, Oweh could be a candidate to participate in the 2027 Summer League."
+      }
+     ]
+    }
+   }
+  },
+  "26": {
+   "teamId": "26",
+   "displayName": "Utah Jazz",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "533498": {
+     "recordId": "533498",
+     "athleteName": "Jusuf Nurkic",
+     "positionAbbr": "C",
+     "teamId": "26",
+     "teamAbbr": "UTAH",
+     "teamName": "Utah Jazz",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-07T23:07Z|Nurkic will miss at least the next four weeks due to a partial plantar plate tear of second toe in right foot, Chris Haynes of NBA TV reports.",
+       "status": "Out",
+       "date": "2026-10-07T23:07Z",
+       "shortComment": "Nurkic will miss at least the next four weeks due to a partial plantar plate tear of second toe in right foot, Chris Haynes of NBA TV reports.",
+       "longComment": "Nurkic will begin the 2026-27 season on the sidelines, and given the tricky nature of foot injuries for big men, it wouldn't be shocking to see his absence extend beyond this initial four-week window. Jaren Jackson will likely spend more time at center while Nurkic is out, and there will be more minutes available for Jaxson Hayes and Mo Bamba."
+      }
+     ]
+    },
+    "533835": {
+     "recordId": "533835",
+     "athleteName": "Kyle Filipowski",
+     "positionAbbr": "F",
+     "teamId": "26",
+     "teamAbbr": "UTAH",
+     "teamName": "Utah Jazz",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-10T20:12Z|Jazz head coach Will Hardy said Saturday that Filipowski is progressing well and doing the necessary steps to get back on the court, but the big man doesn't have a return timeline, Shreyas Laddha of The Salt Lake Tribune reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-10T20:12Z",
+       "shortComment": "Jazz head coach Will Hardy said Saturday that Filipowski is progressing well and doing the necessary steps to get back on the court, but the big man doesn't have a return timeline, Shreyas Laddha of The Salt Lake Tribune reports.",
+       "longComment": "Filipowski tweaked his back while lifting in the 2025-26 offseason, which caused painful sciatica down his leg throughout the campaign and limited his explosiveness. This offseason, he underwent surgery to fix the herniated disc in his back that was causing the pain, and he's still rehabbing. With Jusuf Nurkic (foot) slated to miss Opening Night, Filipowski's availability moving forward will be one to monitor closely."
+      }
+     ]
+    },
+    "534170": {
+     "recordId": "534170",
+     "athleteName": "Blake Hinson",
+     "positionAbbr": "F",
+     "teamId": "26",
+     "teamAbbr": "UTAH",
+     "teamName": "Utah Jazz",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T00:09Z|Hinson (adductor) has been ruled out for Monday's preseason game against San Antonio.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T00:09Z",
+       "shortComment": "Hinson (adductor) has been ruled out for Monday's preseason game against San Antonio.",
+       "longComment": "Hinson is managing a left adductor injury that'll keep him sidelined Monday. The forward appeared in Utah's first two preseason games, and his next chance to suit up will come Friday against Phoenix."
+      }
+     ]
+    }
+   }
+  },
+  "27": {
+   "teamId": "27",
+   "displayName": "Washington Wizards",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "533019": {
+     "recordId": "533019",
+     "athleteName": "Tristan Vukcevic",
+     "positionAbbr": "F",
+     "teamId": "27",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Wizards",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-01T19:11Z|The Wizards announced Thursday that Vukcevic (hip) will be re-evaluated in four weeks.",
+       "status": "Out",
+       "date": "2026-10-01T19:11Z",
+       "shortComment": "The Wizards announced Thursday that Vukcevic (hip) will be re-evaluated in four weeks.",
+       "longComment": "Although the big man will remain a limited participant in training camp as he continues his rehab from a hip impingement, it sounds like his absence from game action will extend into the regular season. Deandre Ayton should have the backup center role all to himself until Vukcevic is cleared to retake the floor."
+      }
+     ]
+    },
+    "534131": {
+     "recordId": "534131",
+     "athleteName": "Anthony Davis",
+     "positionAbbr": "F",
+     "teamId": "27",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Wizards",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-12T21:24Z|Davis (rest) is out for Monday's preseason game against the Nets, Josh Robbins of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-12T21:24Z",
+       "shortComment": "Davis (rest) is out for Monday's preseason game against the Nets, Josh Robbins of The Athletic reports.",
+       "longComment": "Davis is getting the night off Monday for maintenance purposes. The star big man's next chance to play is Friday against the Pelicans."
+      }
+     ]
+    },
+    "534177": {
+     "recordId": "534177",
+     "athleteName": "Khris Middleton",
+     "positionAbbr": "F",
+     "teamId": "27",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Wizards",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T01:54Z|Middleton (rest) was unavailable for Monday's 131-122 preseason loss to Brooklyn, Greg Finberg of Wizardscentral.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T01:54Z",
+       "shortComment": "Middleton (rest) was unavailable for Monday's 131-122 preseason loss to Brooklyn, Greg Finberg of Wizardscentral.com reports.",
+       "longComment": "Middleton has yet to play in the preseason as he ramps up his conditioning. The veteran forward's next chance to suit up will come Friday against New Orleans."
+      }
+     ]
+    },
+    "-57028": {
+     "recordId": "-57028",
+     "athleteName": "Jamir Watkins",
+     "positionAbbr": "G",
+     "teamId": "27",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Wizards",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-07-30T20:11Z|The Wizards announced Thursday that Watkins has undergone surgery for a torn ACL.",
+       "status": "Out",
+       "date": "2026-07-30T20:11Z",
+       "shortComment": "The Wizards announced Thursday that Watkins has undergone surgery for a torn ACL.",
+       "longComment": "Watkins, a two-way player for the Wizards, suffered the injury during the Summer League. Although Washington has yet to offer a timetable for a return, a typical recovery time for the procedure is approximately 9-to-12 months. That leaves Watkins in serious jeopardy of missing most, if not all, of the 2026-27 season, and it remains to be seen if the team will continue keeping him around on a two-way roster spot while he's injured."
+      }
+     ]
+    }
+   }
+  },
+  "28": {
+   "teamId": "28",
+   "displayName": "Toronto Raptors",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "534263": {
+     "recordId": "534263",
+     "athleteName": "Nate Bittle",
+     "positionAbbr": "C",
+     "teamId": "28",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Raptors",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-13T21:35Z|Bittle (foot) is still in a walking boot, but he has a follow-up appointment Wednesday and could ditch the boot if all goes well, Blake Murphy of Sportsnet.ca reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-13T21:35Z",
+       "shortComment": "Bittle (foot) is still in a walking boot, but he has a follow-up appointment Wednesday and could ditch the boot if all goes well, Blake Murphy of Sportsnet.ca reports.",
+       "longComment": "Bittle can presumably be ruled out for the remainder of the preseason as he works his way back to full health. The big man was spotted in a walking boot in early September and remains without a clear timetable for a return to game action."
+      }
+     ]
+    }
+   }
+  },
+  "29": {
+   "teamId": "29",
+   "displayName": "Memphis Grizzlies",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "533795": {
+     "recordId": "533795",
+     "athleteName": "Isaiah Stewart",
+     "positionAbbr": "C",
+     "teamId": "29",
+     "teamAbbr": "MEM",
+     "teamName": "Memphis Grizzlies",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Out|2026-10-09T23:01Z|The Grizzlies announced Friday that Stewart (ankle) will miss at least two weeks.",
+       "status": "Out",
+       "date": "2026-10-09T23:01Z",
+       "shortComment": "The Grizzlies announced Friday that Stewart (ankle) will miss at least two weeks.",
+       "longComment": "Stewart, who was traded from Detroit to Memphis over the summer, sustained a left ankle sprain in the team's preseason opener and is now likely to miss Opening Night. His absence opens the door for Quinten Post to move into the backup center role behind Zach Edey in the interim."
+      }
+     ]
+    },
+    "533805": {
+     "recordId": "533805",
+     "athleteName": "Micah Peavy",
+     "positionAbbr": "G",
+     "teamId": "29",
+     "teamAbbr": "MEM",
+     "teamName": "Memphis Grizzlies",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-10T02:41Z|Peavy (ankle) did not see the floor in Friday's 104-100 preseason win over the Bulls.",
+       "status": "Day-To-Day",
+       "date": "2026-10-10T02:41Z",
+       "shortComment": "Peavy (ankle) did not see the floor in Friday's 104-100 preseason win over the Bulls.",
+       "longComment": "Peavy missed a third consecutive contest due to an ankle injury. His final chance to play in the preseason will come next Friday against Charlotte."
+      }
+     ]
+    }
+   }
+  },
+  "30": {
+   "teamId": "30",
+   "displayName": "Charlotte Hornets",
+   "firstCapturedAt": "2026-10-15T07:59:15.214Z",
+   "players": {
+    "532844": {
+     "recordId": "532844",
+     "athleteName": "Kon Knueppel",
+     "positionAbbr": "G",
+     "teamId": "30",
+     "teamAbbr": "CHA",
+     "teamName": "Charlotte Hornets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-09-28T14:25Z|Hornets general manager Jeff Peterson said Monday that he \"doesn't know\" whether Knueppel (hamstring) will be available for the team's regular-season opener against the Nets, Owen Watterson of SI.com reports.",
+       "status": "Day-To-Day",
+       "date": "2026-09-28T14:25Z",
+       "shortComment": "Hornets general manager Jeff Peterson said Monday that he \"doesn't know\" whether Knueppel (hamstring) will be available for the team's regular-season opener against the Nets, Owen Watterson of SI.com reports.",
+       "longComment": "Knueppel's status for Opening Night remains uncertain as he continues to work his way back from his left hamstring injury. Peterson's comments suggest the Hornets aren't ready to rule out the second-year wing, though his availability will likely become clearer as training camp progresses. He has already been ruled out for the entire preseason, to be clear."
+      }
+     ]
+    },
+    "533215": {
+     "recordId": "533215",
+     "athleteName": "Coby White",
+     "positionAbbr": "G",
+     "teamId": "30",
+     "teamAbbr": "CHA",
+     "teamName": "Charlotte Hornets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-05T20:56Z|The Hornets announced Monday that White suffered a left calf strain during training camp and will not play during the preseason.",
+       "status": "Day-To-Day",
+       "date": "2026-10-05T20:56Z",
+       "shortComment": "The Hornets announced Monday that White suffered a left calf strain during training camp and will not play during the preseason.",
+       "longComment": "White missed time with a left calf strain last season and is now in jeopardy of starting the regular season on the inactive list. If the 26-year-old guard is forced to miss time beyond the preseason, Christian Anderson and Dennis Schroder would likely see increased playing time."
+      }
+     ]
+    },
+    "533223": {
+     "recordId": "533223",
+     "athleteName": "Kylan Boswell",
+     "positionAbbr": "G",
+     "teamId": "30",
+     "teamAbbr": "CHA",
+     "teamName": "Charlotte Hornets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-05T21:28Z|Boswell is rehabbing a right knee injury, and he's hopeful to be cleared for basketball activities prior to the start of the G League season in late October.",
+       "status": "Day-To-Day",
+       "date": "2026-10-05T21:28Z",
+       "shortComment": "Boswell is rehabbing a right knee injury, and he's hopeful to be cleared for basketball activities prior to the start of the G League season in late October.",
+       "longComment": "It doesn't sound like the two-way guard will be available for the preseason, but he's hopeful to not miss any time during the G League season. Boswell is not expected to be a significant part of the Hornets' rotation this season."
+      }
+     ]
+    },
+    "534485": {
+     "recordId": "534485",
+     "athleteName": "Grayson Allen",
+     "positionAbbr": "G",
+     "teamId": "30",
+     "teamAbbr": "CHA",
+     "teamName": "Charlotte Hornets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-10-15T02:05Z|Allen (knee) did not play in Wednesday's 114-93 preseason loss to the Celtics.",
+       "status": "Day-To-Day",
+       "date": "2026-10-15T02:05Z",
+       "shortComment": "Allen (knee) did not play in Wednesday's 114-93 preseason loss to the Celtics.",
+       "longComment": "Allen missed Sunday's game due to right knee soreness and remained sidelined for Wednesday's defeat. His final chance to suit up during the preseason will come Friday against the Grizzlies."
+      }
+     ]
+    },
+    "-57589": {
+     "recordId": "-57589",
+     "athleteName": "Grant Williams",
+     "positionAbbr": "F",
+     "teamId": "30",
+     "teamAbbr": "CHA",
+     "teamName": "Charlotte Hornets",
+     "history": [
+      {
+       "captured_at": "2026-10-15T07:59:15.214Z",
+       "last_seen_at": "2026-10-15T07:59:15.214Z",
+       "fp": "Day-To-Day|2026-09-25T23:03Z|Williams will miss the preseason after suffering a right hamstring injury, the Hornets announced Friday.",
+       "status": "Day-To-Day",
+       "date": "2026-09-25T23:03Z",
+       "shortComment": "Williams will miss the preseason after suffering a right hamstring injury, the Hornets announced Friday.",
+       "longComment": "Williams will be re-evaluated the first week of the regular season, putting his status for Opening Night in the air. Williams will have a difficult path to minutes this season as he competes with the likes of Naz Reid, Royce O'Neale and Tidjane Salaun."
+      }
+     ]
+    }
+   }
+  }
+ },
+ "last_ingested_at": "2026-10-15T07:59:15.214Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries"
+}
