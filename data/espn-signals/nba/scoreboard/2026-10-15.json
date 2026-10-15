@@ -14,7 +14,8 @@
   "2026-10-15T00:37:25.595Z",
   "2026-10-15T02:29:13.858Z",
   "2026-10-15T07:59:15.253Z",
-  "2026-10-15T18:51:17.024Z"
+  "2026-10-15T18:51:17.024Z",
+  "2026-10-15T21:55:14.437Z"
  ],
  "events": {
   "401908622": {
@@ -36,7 +37,7 @@
    "states": [
     {
      "captured_at": "2026-10-14T08:14:43.765Z",
-     "last_seen_at": "2026-10-15T18:51:17.024Z",
+     "last_seen_at": "2026-10-15T21:55:14.437Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -75,7 +76,7 @@
    "states": [
     {
      "captured_at": "2026-10-14T08:14:43.765Z",
-     "last_seen_at": "2026-10-15T18:51:17.024Z",
+     "last_seen_at": "2026-10-15T21:55:14.437Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -96,6 +97,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-15T18:51:17.024Z",
+ "last_ingested_at": "2026-10-15T21:55:14.437Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261015"
 }

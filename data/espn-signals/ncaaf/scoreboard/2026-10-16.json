@@ -9,7 +9,8 @@
  },
  "captures": [
   "2026-10-15T07:59:15.450Z",
-  "2026-10-15T18:51:17.170Z"
+  "2026-10-15T18:51:17.170Z",
+  "2026-10-15T21:55:14.536Z"
  ],
  "events": {
   "401858493": {
@@ -36,7 +37,7 @@
    "states": [
     {
      "captured_at": "2026-10-15T07:59:15.450Z",
-     "last_seen_at": "2026-10-15T18:51:17.170Z",
+     "last_seen_at": "2026-10-15T21:55:14.536Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -80,7 +81,7 @@
    "states": [
     {
      "captured_at": "2026-10-15T07:59:15.450Z",
-     "last_seen_at": "2026-10-15T18:51:17.170Z",
+     "last_seen_at": "2026-10-15T21:55:14.536Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -124,7 +125,7 @@
    "states": [
     {
      "captured_at": "2026-10-15T07:59:15.450Z",
-     "last_seen_at": "2026-10-15T18:51:17.170Z",
+     "last_seen_at": "2026-10-15T21:55:14.536Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -145,6 +146,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-15T18:51:17.170Z",
+ "last_ingested_at": "2026-10-15T21:55:14.536Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261016"
 }
