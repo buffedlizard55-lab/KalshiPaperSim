@@ -977,6 +977,26 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1792044000,
+      "open_interest_fp": "41565.52",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -1176,6 +1196,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-15T07:45:19.035Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT14-B80.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1203,9 +1233,9 @@
     "occurrence_datetime": "2026-10-15T14:00:00Z",
     "open_interest_fp": "41565.52",
     "open_time": "2026-10-13T14:00:00Z",
-    "previous_price_dollars": "0.1600",
-    "previous_yes_ask_dollars": "0.1600",
-    "previous_yes_bid_dollars": "0.1500",
+    "previous_price_dollars": "0.1700",
+    "previous_yes_ask_dollars": "0.1700",
+    "previous_yes_bid_dollars": "0.1600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1224,7 +1254,7 @@
     "ticker": "KXHIGHNY-26OCT14-B80.5",
     "title": "Will the maximum temperature be 80-81° on Oct 14, 2026?",
     "updated_time": "2026-10-15T05:00:00.929264Z",
-    "volume_24h_fp": "54659.54",
+    "volume_24h_fp": "52545.54",
     "volume_fp": "59815.13",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1233,8 +1263,8 @@
     "yes_sub_title": "80° to 81°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT14-B80.5",
-  "market_captured_at": "2026-10-15T05:04:27.094Z",
+  "market_captured_at": "2026-10-15T07:45:18.291Z",
   "status": "closed",
-  "last_ingested_at": "2026-10-15T05:04:27.760Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26OCT14-B80.5/candlesticks?start_ts=1792008001&end_ts=1792040667&period_interval=60"
+  "last_ingested_at": "2026-10-15T07:45:18.965Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26OCT14-B80.5/candlesticks?start_ts=1792040401&end_ts=1792050318&period_interval=60"
 }

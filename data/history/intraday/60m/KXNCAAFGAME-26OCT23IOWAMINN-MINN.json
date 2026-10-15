@@ -2419,6 +2419,51 @@
         "low_dollars": "0.2800",
         "open_dollars": "0.3300"
       }
+    },
+    {
+      "end_period_ts": 1792044000,
+      "open_interest_fp": "4016.78",
+      "price": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3500",
+        "mean_dollars": "0.3521",
+        "open_dollars": "0.3600",
+        "previous_dollars": "0.4200"
+      },
+      "volume_fp": "14.58",
+      "yes_ask": {
+        "close_dollars": "0.3900",
+        "high_dollars": "0.4600",
+        "low_dollars": "0.3800",
+        "open_dollars": "0.4300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.2500",
+        "open_dollars": "0.3600"
+      }
+    },
+    {
+      "end_period_ts": 1792047600,
+      "open_interest_fp": "4016.78",
+      "price": {
+        "previous_dollars": "0.3500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4100",
+        "high_dollars": "0.4600",
+        "low_dollars": "0.3900",
+        "open_dollars": "0.3900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3700",
+        "high_dollars": "0.3900",
+        "low_dollars": "0.2700",
+        "open_dollars": "0.3500"
+      }
     }
   ],
   "books": [
@@ -2685,6 +2730,90 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-15T07:46:57.857Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT23IOWAMINN-MINN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "105083.00"
+            ],
+            [
+              "0.0200",
+              "2550.00"
+            ],
+            [
+              "0.0300",
+              "944.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "267.00"
+            ],
+            [
+              "0.0700",
+              "320.17"
+            ],
+            [
+              "0.2500",
+              "10.35"
+            ],
+            [
+              "0.5100",
+              "1958.00"
+            ],
+            [
+              "0.5200",
+              "2129.00"
+            ],
+            [
+              "0.5300",
+              "1897.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "103701.00"
+            ],
+            [
+              "0.0200",
+              "1600.00"
+            ],
+            [
+              "0.0300",
+              "500.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "301.00"
+            ],
+            [
+              "0.1500",
+              "300.00"
+            ],
+            [
+              "0.2300",
+              "1938.00"
+            ],
+            [
+              "0.3600",
+              "47.20"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2700,18 +2829,18 @@
     "expected_expiration_time": "2026-10-24T03:00:00Z",
     "expiration_time": "2026-10-26T00:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.4200",
+    "last_price_dollars": "0.3500",
     "latest_expiration_time": "2026-10-26T00:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.6300",
-    "no_bid_dollars": "0.6100",
+    "no_ask_dollars": "0.6400",
+    "no_bid_dollars": "0.5300",
     "no_sub_title": "Minnesota",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-24T03:00:00Z",
-    "open_interest_fp": "4005.20",
+    "open_interest_fp": "4016.78",
     "open_time": "2026-10-10T01:07:00Z",
     "previous_price_dollars": "0.3500",
-    "previous_yes_ask_dollars": "0.3400",
+    "previous_yes_ask_dollars": "0.3500",
     "previous_yes_bid_dollars": "0.3100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -2731,17 +2860,17 @@
     "ticker": "KXNCAAFGAME-26OCT23IOWAMINN-MINN",
     "title": "Minnesota wins",
     "updated_time": "2026-10-10T01:07:00.440034Z",
-    "volume_24h_fp": "3133.18",
-    "volume_fp": "4073.03",
-    "yes_ask_dollars": "0.3900",
-    "yes_ask_size_fp": "84.45",
-    "yes_bid_dollars": "0.3700",
-    "yes_bid_size_fp": "7.00",
+    "volume_24h_fp": "3147.76",
+    "volume_fp": "4087.61",
+    "yes_ask_dollars": "0.4700",
+    "yes_ask_size_fp": "1897.00",
+    "yes_bid_dollars": "0.3600",
+    "yes_bid_size_fp": "47.20",
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT23IOWAMINN-MINN",
-  "market_captured_at": "2026-10-15T05:06:05.808Z",
+  "market_captured_at": "2026-10-15T07:46:57.114Z",
   "status": "active",
-  "last_ingested_at": "2026-10-15T05:06:06.473Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT23IOWAMINN-MINN/candlesticks?start_ts=1792008001&end_ts=1792040766&period_interval=60"
+  "last_ingested_at": "2026-10-15T07:46:57.788Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT23IOWAMINN-MINN/candlesticks?start_ts=1792040401&end_ts=1792050417&period_interval=60"
 }

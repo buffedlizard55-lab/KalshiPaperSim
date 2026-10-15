@@ -1957,6 +1957,62 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-15T07:46:55.025Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "14733.88"
+            ],
+            [
+              "0.0200",
+              "12410.00"
+            ],
+            [
+              "0.0300",
+              "8144.00"
+            ],
+            [
+              "0.0400",
+              "1186.00"
+            ],
+            [
+              "0.0500",
+              "267.00"
+            ],
+            [
+              "0.0600",
+              "22.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.9500",
+              "46.79"
+            ],
+            [
+              "0.9700",
+              "197.00"
+            ],
+            [
+              "0.9800",
+              "440747.59"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5100.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2012,8 +2068,8 @@
     "yes_sub_title": "Murray St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR",
-  "market_captured_at": "2026-10-15T05:06:03.030Z",
+  "market_captured_at": "2026-10-15T07:46:54.284Z",
   "status": "active",
-  "last_ingested_at": "2026-10-15T05:06:03.695Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/candlesticks?start_ts=1791961201&end_ts=1792040763&period_interval=60"
+  "last_ingested_at": "2026-10-15T07:46:54.955Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24MURRSDST-MURR/candlesticks?start_ts=1792026001&end_ts=1792050414&period_interval=60"
 }
