@@ -24042,8 +24042,8 @@
     "last_price_dollars": "0.5000",
     "latest_expiration_time": "2026-10-22T19:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.5300",
-    "no_bid_dollars": "0.4800",
+    "no_ask_dollars": "0.5200",
+    "no_bid_dollars": "0.5000",
     "no_sub_title": "Boston",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-20T22:00:00Z",
@@ -24072,15 +24072,15 @@
     "updated_time": "2026-09-25T16:51:11.406686Z",
     "volume_24h_fp": "348.75",
     "volume_fp": "27838.78",
-    "yes_ask_dollars": "0.5200",
-    "yes_ask_size_fp": "289.00",
-    "yes_bid_dollars": "0.4700",
-    "yes_bid_size_fp": "399.00",
+    "yes_ask_dollars": "0.5000",
+    "yes_ask_size_fp": "660.00",
+    "yes_bid_dollars": "0.4800",
+    "yes_bid_size_fp": "698.25",
     "yes_sub_title": "Boston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS",
-  "market_captured_at": "2026-10-15T07:41:01.288Z",
+  "market_captured_at": "2026-10-15T11:33:55.756Z",
   "status": "active",
-  "last_ingested_at": "2026-10-15T07:41:01.863Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1792036801&end_ts=1792050061&period_interval=1440"
+  "last_ingested_at": "2026-10-15T11:33:56.279Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1792036801&end_ts=1792064036&period_interval=1440"
 }

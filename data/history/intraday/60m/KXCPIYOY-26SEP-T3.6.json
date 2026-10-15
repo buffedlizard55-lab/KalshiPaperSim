@@ -13522,6 +13522,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-15T11:43:24.762Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPIYOY-26SEP-T3.6/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -13544,7 +13554,7 @@
     "occurrence_datetime": "2026-10-14T14:00:00Z",
     "open_interest_fp": "124738.48",
     "open_time": "2026-06-09T22:25:00Z",
-    "previous_price_dollars": "0.5000",
+    "previous_price_dollars": "0.4500",
     "previous_yes_ask_dollars": "0.5000",
     "previous_yes_bid_dollars": "0.4600",
     "price_level_structure": "linear_cent",
@@ -13568,7 +13578,7 @@
     "ticker": "KXCPIYOY-26SEP-T3.6",
     "title": "Will the rate of CPI inflation be above 3.6% for the year ending in September 2026?",
     "updated_time": "2026-10-14T13:03:49.430556Z",
-    "volume_24h_fp": "8200.66",
+    "volume_24h_fp": "6840.98",
     "volume_fp": "421231.01",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -13577,10 +13587,10 @@
     "yes_sub_title": "Above 3.6%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXCPIYOY-26SEP-T3.6",
-  "market_captured_at": "2026-10-15T07:52:11.019Z",
+  "market_captured_at": "2026-10-15T11:43:24.118Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-15T07:52:11.693Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26SEP-T3.6/candlesticks?start_ts=1791982801&end_ts=1792050731&period_interval=60",
+  "last_ingested_at": "2026-10-15T11:43:24.742Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXCPIYOY/markets/KXCPIYOY-26SEP-T3.6/candlesticks?start_ts=1791982801&end_ts=1792064604&period_interval=60",
   "trims": [
     {
       "at": "2026-10-01T21:29:11.518Z",

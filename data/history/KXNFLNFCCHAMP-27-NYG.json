@@ -23140,7 +23140,7 @@
     "expected_expiration_time": "2027-02-08T15:00:00Z",
     "expiration_time": "2027-02-22T15:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0200",
+    "last_price_dollars": "0.0100",
     "latest_expiration_time": "2027-02-22T15:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.9900",
@@ -23170,17 +23170,17 @@
     "ticker": "KXNFLNFCCHAMP-27-NYG",
     "title": "Will New York G win the Pro Football NFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "1475.44",
-    "volume_fp": "913489.49",
+    "volume_24h_fp": "1014.40",
+    "volume_fp": "913559.67",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "161403.82",
+    "yes_ask_size_fp": "161355.35",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "17087.74",
+    "yes_bid_size_fp": "25939.56",
     "yes_sub_title": "New York G"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-NYG",
-  "market_captured_at": "2026-10-15T07:41:58.545Z",
+  "market_captured_at": "2026-10-15T11:34:33.296Z",
   "status": "active",
-  "last_ingested_at": "2026-10-15T07:41:59.119Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-NYG/candlesticks?start_ts=1792036801&end_ts=1792050118&period_interval=1440"
+  "last_ingested_at": "2026-10-15T11:34:33.818Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-NYG/candlesticks?start_ts=1792036801&end_ts=1792064073&period_interval=1440"
 }
