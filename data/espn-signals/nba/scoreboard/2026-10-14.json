@@ -15,7 +15,8 @@
   "2026-10-14T02:50:13.536Z",
   "2026-10-14T08:14:43.757Z",
   "2026-10-14T19:08:52.645Z",
-  "2026-10-14T22:20:37.070Z"
+  "2026-10-14T22:20:37.070Z",
+  "2026-10-15T00:37:25.556Z"
  ],
  "events": {
   "401898404": {
@@ -49,6 +50,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-1",
+      "away": "3-0"
+     }
+    },
+    {
+     "captured_at": "2026-10-15T00:37:25.556Z",
+     "last_seen_at": "2026-10-15T00:37:25.556Z",
+     "fp": "in|2|3|61,55|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 214,
+     "displayClock": "3:34",
+     "scores": {
+      "home": 61,
+      "away": 55
      },
      "recordsOverall": {
       "home": "2-1",
@@ -93,6 +114,26 @@
       "home": "2-0",
       "away": "1-1"
      }
+    },
+    {
+     "captured_at": "2026-10-15T00:37:25.556Z",
+     "last_seen_at": "2026-10-15T00:37:25.556Z",
+     "fp": "in|2|0|54,44|false|STATUS_HALFTIME",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_HALFTIME",
+     "completed": false,
+     "period": 2,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 54,
+      "away": 44
+     },
+     "recordsOverall": {
+      "home": "2-0",
+      "away": "1-1"
+     }
     }
    ]
   },
@@ -127,6 +168,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-3",
+      "away": "1-2"
+     }
+    },
+    {
+     "captured_at": "2026-10-15T00:37:25.556Z",
+     "last_seen_at": "2026-10-15T00:37:25.556Z",
+     "fp": "in|1|1|17,20|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 78,
+     "displayClock": "1:18",
+     "scores": {
+      "home": 17,
+      "away": 20
      },
      "recordsOverall": {
       "home": "0-3",
@@ -171,6 +232,26 @@
       "home": "1-1",
       "away": "1-1"
      }
+    },
+    {
+     "captured_at": "2026-10-15T00:37:25.556Z",
+     "last_seen_at": "2026-10-15T00:37:25.556Z",
+     "fp": "in|1|0|18,24|false|STATUS_END_PERIOD",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_END_PERIOD",
+     "completed": false,
+     "period": 1,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 18,
+      "away": 24
+     },
+     "recordsOverall": {
+      "home": "1-1",
+      "away": "1-1"
+     }
     }
    ]
   },
@@ -205,6 +286,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-2",
+      "away": "1-2"
+     }
+    },
+    {
+     "captured_at": "2026-10-15T00:37:25.556Z",
+     "last_seen_at": "2026-10-15T00:37:25.556Z",
+     "fp": "in|1|1|14,19|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 61,
+     "displayClock": "1:01",
+     "scores": {
+      "home": 14,
+      "away": 19
      },
      "recordsOverall": {
       "home": "1-2",
@@ -249,6 +350,26 @@
       "home": "3-1",
       "away": "1-1"
      }
+    },
+    {
+     "captured_at": "2026-10-15T00:37:25.556Z",
+     "last_seen_at": "2026-10-15T00:37:25.556Z",
+     "fp": "in|1|2|31,25|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 139,
+     "displayClock": "2:19",
+     "scores": {
+      "home": 31,
+      "away": 25
+     },
+     "recordsOverall": {
+      "home": "3-1",
+      "away": "1-1"
+     }
     }
    ]
   },
@@ -271,7 +392,7 @@
    "states": [
     {
      "captured_at": "2026-10-13T04:41:06.942Z",
-     "last_seen_at": "2026-10-14T22:20:37.070Z",
+     "last_seen_at": "2026-10-15T00:37:25.556Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -292,6 +413,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-14T22:20:37.070Z",
+ "last_ingested_at": "2026-10-15T00:37:25.556Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261014"
 }
