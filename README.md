@@ -220,15 +220,15 @@ Every number here is recomputed on demand; nothing in this table is stored.
 | 9 | **ForecastEdge_MultiCity** | -0.12% | 87 | 83 | $1,208.79 |
 | 10 | **HeatConfirm_500Bots** | -0.16% | 8 | 2 | $0.00 |
 | 11 | **SportsFavourite_Settle** | -0.54% | 116 | 107 | $346.56 |
-| 12 | **NBAInjury_AvailGap** | -0.58% | 3 | 3 | $0.00 |
-| 13 | **WeatherFavourite_Decay** | -3.05% | 115 | 112 | $27,761.83 |
-| 14 | **FedBucket_Ladder** | -4.37% | 9 | 7 | $0.00 |
-| 15 | **SportsSteam_Fade** | -28.00% | 150 | 133 | $575,928.75 |
-| 16 | **SportsLine_Momentum** | -40.99% | 168 | 144 | $713,114.76 |
-| 17 | **MakerFlip_SpreadHarvest** | -97.02% | 9652 | 432 | $408,984.26 |
-| 18 | **VolatilityArb_MM** | -97.47% | 19960 | 491 | $236,154.64 |
-| 19 | **PanicFade_HourlyVol** | -99.23% | 2346 | 260 | $195,208.41 |
-| 20 | **PanicDip_ShockTiming** | -99.89% | 2286 | 182 | $74,056.98 |
+| 12 | **WeatherFavourite_Decay** | -3.05% | 115 | 112 | $27,761.83 |
+| 13 | **FedBucket_Ladder** | -4.37% | 9 | 7 | $0.00 |
+| 14 | **SportsSteam_Fade** | -28.00% | 150 | 133 | $575,928.75 |
+| 15 | **SportsLine_Momentum** | -40.99% | 168 | 144 | $713,114.76 |
+| 16 | **MakerFlip_SpreadHarvest** | -97.02% | 9652 | 432 | $408,984.26 |
+| 17 | **VolatilityArb_MM** | -97.47% | 19960 | 491 | $236,154.64 |
+| 18 | **PanicFade_HourlyVol** | -99.23% | 2346 | 260 | $195,208.41 |
+| 19 | **PanicDip_ShockTiming** | -99.89% | 2286 | 182 | $74,056.98 |
+| — | **NBAInjury_AvailGap** *(unranked)* | *no trades* | 0 | 0 | $0.00 |
 
 **MICRO (period_interval 1)** — 23310 one-minute periods across 1304 markets
 
