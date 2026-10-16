@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-16T18:35:42.456Z",
+ "generatedAt": "2026-10-16T21:40:19.481Z",
  "rows": [
   {
    "league": "nba",
@@ -1260,6 +1260,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "MISS",
+   "kalshiName": "Ole Miss",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT24MISSTEX-MISS",
+     "rulesName": "Ole Miss",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "MONM",
    "kalshiName": "Monmouth",
    "conflictWith": null,
@@ -1900,6 +1915,11 @@
      "ticker": "KXNCAAFGAME-26OCT10TEXOKLA-TEX",
      "rulesName": "Texas",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT24MISSTEX-MISS",
+     "rulesName": "Texas",
+     "role": "home"
     }
    ]
   },
