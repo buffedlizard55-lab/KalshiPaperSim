@@ -1250,6 +1250,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-16T19:46:33.240Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHCHI-26OCT15-T66/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1264,7 +1274,7 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-10-16T19:00:00Z",
     "expiration_time": "2026-10-22T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "66.00",
     "floor_strike": 66,
     "last_price_dollars": "0.0100",
     "latest_expiration_time": "2026-10-22T14:00:00Z",
@@ -1276,9 +1286,9 @@
     "occurrence_datetime": "2026-10-16T14:00:00Z",
     "open_interest_fp": "29233.70",
     "open_time": "2026-10-14T14:00:00Z",
-    "previous_price_dollars": "0.6600",
-    "previous_yes_ask_dollars": "0.6700",
-    "previous_yes_bid_dollars": "0.6600",
+    "previous_price_dollars": "0.7000",
+    "previous_yes_ask_dollars": "0.6600",
+    "previous_yes_bid_dollars": "0.6500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1287,17 +1297,19 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "no",
     "rules_primary": "If the maximum temperature recorded at Chicago (CLIMDW) for Oct 15, 2026, is greater than 66° fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
-    "status": "closed",
+    "settlement_ts": "2026-10-16T12:08:31.789431Z",
+    "settlement_value_dollars": "0.0000",
+    "status": "finalized",
     "strike_type": "greater",
     "ticker": "KXHIGHCHI-26OCT15-T66",
     "title": "Will the maximum temperature be >66° on Oct 15, 2026?",
-    "updated_time": "2026-10-16T06:00:03.648838Z",
-    "volume_24h_fp": "66890.46",
+    "updated_time": "2026-10-16T12:08:32.150668Z",
+    "volume_24h_fp": "51732.25",
     "volume_fp": "76042.14",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1306,8 +1318,9 @@
     "yes_sub_title": "67° or above"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHCHI-26OCT15-T66",
-  "market_captured_at": "2026-10-16T11:30:31.189Z",
-  "status": "closed",
-  "last_ingested_at": "2026-10-16T11:30:31.815Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26OCT15-T66/candlesticks?start_ts=1792134001&end_ts=1792150231&period_interval=60"
+  "market_captured_at": "2026-10-16T19:46:32.495Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-16T19:46:33.171Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHCHI/markets/KXHIGHCHI-26OCT15-T66/candlesticks?start_ts=1792134001&end_ts=1792179992&period_interval=60",
+  "result": "no"
 }

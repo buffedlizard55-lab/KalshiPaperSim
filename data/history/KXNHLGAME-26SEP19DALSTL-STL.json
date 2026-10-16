@@ -3174,6 +3174,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-16T19:45:33.790Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3231,9 +3241,9 @@
     "yes_sub_title": "St. Louis"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19DALSTL-STL",
-  "market_captured_at": "2026-10-16T11:29:43.304Z",
+  "market_captured_at": "2026-10-16T19:45:33.148Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-16T11:29:43.832Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-STL/candlesticks?start_ts=1789876801&end_ts=1792150183&period_interval=1440",
+  "last_ingested_at": "2026-10-16T19:45:33.720Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19DALSTL-STL/candlesticks?start_ts=1789876801&end_ts=1792179933&period_interval=1440",
   "result": "no"
 }
