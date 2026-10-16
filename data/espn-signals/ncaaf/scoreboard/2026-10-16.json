@@ -15,7 +15,8 @@
   "2026-10-16T02:23:31.618Z",
   "2026-10-16T07:46:00.361Z",
   "2026-10-16T18:35:41.300Z",
-  "2026-10-16T21:40:18.258Z"
+  "2026-10-16T21:40:18.258Z",
+  "2026-10-16T23:53:17.815Z"
  ],
  "events": {
   "401858493": {
@@ -42,7 +43,7 @@
    "states": [
     {
      "captured_at": "2026-10-15T07:59:15.450Z",
-     "last_seen_at": "2026-10-16T21:40:18.258Z",
+     "last_seen_at": "2026-10-16T23:53:17.815Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -103,6 +104,26 @@
       "home": "2-3",
       "away": "5-1"
      }
+    },
+    {
+     "captured_at": "2026-10-16T23:53:17.815Z",
+     "last_seen_at": "2026-10-16T23:53:17.815Z",
+     "fp": "in|1|8|0,3|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 513,
+     "displayClock": "8:33",
+     "scores": {
+      "home": 0,
+      "away": 3
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "5-1"
+     }
     }
    ]
   },
@@ -130,7 +151,7 @@
    "states": [
     {
      "captured_at": "2026-10-15T07:59:15.450Z",
-     "last_seen_at": "2026-10-16T21:40:18.258Z",
+     "last_seen_at": "2026-10-16T23:53:17.815Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -151,6 +172,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-16T21:40:18.258Z",
+ "last_ingested_at": "2026-10-16T23:53:17.815Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261016"
 }
