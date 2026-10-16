@@ -12015,6 +12015,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-16T07:38:04.137Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT15SEADEN-DEN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12063,7 +12073,7 @@
     "ticker": "KXNFLGAME-26OCT15SEADEN-DEN",
     "title": "Denver wins",
     "updated_time": "2026-10-16T03:39:18.749004Z",
-    "volume_24h_fp": "26264052.68",
+    "volume_24h_fp": "26220983.91",
     "volume_fp": "26989847.76",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12072,11 +12082,11 @@
     "yes_sub_title": "Denver"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT15SEADEN-DEN",
-  "market_captured_at": "2026-10-16T05:02:44.876Z",
+  "market_captured_at": "2026-10-16T07:38:03.409Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-16T05:02:46.533Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT15SEADEN-DEN/candlesticks?start_ts=1792040565&end_ts=1792126964&period_interval=1",
+  "last_ingested_at": "2026-10-16T07:38:04.075Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT15SEADEN-DEN/candlesticks?start_ts=1792121701&end_ts=1792136283&period_interval=1",
   "trims": [
     {
       "at": "2026-10-16T05:02:46.961Z",

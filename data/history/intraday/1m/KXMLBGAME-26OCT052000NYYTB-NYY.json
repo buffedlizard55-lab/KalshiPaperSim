@@ -12410,6 +12410,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-16T07:35:31.833Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT052000NYYTB-NYY/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12467,11 +12477,11 @@
     "yes_sub_title": "New York Y"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT052000NYYTB-NYY",
-  "market_captured_at": "2026-10-16T04:59:41.508Z",
+  "market_captured_at": "2026-10-16T07:35:27.453Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-16T04:59:46.554Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT052000NYYTB-NYY/candlesticks?start_ts=1792120621&end_ts=1792126781&period_interval=1",
+  "last_ingested_at": "2026-10-16T07:35:31.771Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT052000NYYTB-NYY/candlesticks?start_ts=1792120621&end_ts=1792136127&period_interval=1",
   "trims": [
     {
       "at": "2026-10-06T06:48:29.557Z",

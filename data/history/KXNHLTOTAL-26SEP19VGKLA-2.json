@@ -1827,6 +1827,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-16T07:29:11.534Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VGKLA-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1882,9 +1892,9 @@
     "yes_sub_title": "Over 1.5 goals scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLTOTAL-26SEP19VGKLA-2",
-  "market_captured_at": "2026-10-16T04:52:21.128Z",
+  "market_captured_at": "2026-10-16T07:29:10.904Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-16T04:52:21.760Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VGKLA-2/candlesticks?start_ts=1789963201&end_ts=1792126341&period_interval=1440",
+  "last_ingested_at": "2026-10-16T07:29:11.471Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLTOTAL/markets/KXNHLTOTAL-26SEP19VGKLA-2/candlesticks?start_ts=1789963201&end_ts=1792135751&period_interval=1440",
   "result": "yes"
 }

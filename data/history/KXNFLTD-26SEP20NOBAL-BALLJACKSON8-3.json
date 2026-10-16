@@ -2002,6 +2002,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-16T07:28:45.209Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2062,9 +2072,9 @@
     "yes_sub_title": "Lamar Jackson: 3+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3",
-  "market_captured_at": "2026-10-16T04:51:50.373Z",
+  "market_captured_at": "2026-10-16T07:28:44.580Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-16T04:51:51.007Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTD/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/candlesticks?start_ts=1789963201&end_ts=1792126310&period_interval=1440",
+  "last_ingested_at": "2026-10-16T07:28:45.146Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTD/markets/KXNFLTD-26SEP20NOBAL-BALLJACKSON8-3/candlesticks?start_ts=1789963201&end_ts=1792135724&period_interval=1440",
   "result": "no"
 }

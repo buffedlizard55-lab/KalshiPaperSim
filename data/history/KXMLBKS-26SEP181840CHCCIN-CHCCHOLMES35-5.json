@@ -919,6 +919,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-16T07:27:04.651Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CHCCHOLMES35-5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -979,9 +989,9 @@
     "yes_sub_title": "Clay Holmes: 5+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840CHCCIN-CHCCHOLMES35-5",
-  "market_captured_at": "2026-10-16T04:49:52.646Z",
+  "market_captured_at": "2026-10-16T07:27:04.024Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-16T04:49:53.279Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840CHCCIN-CHCCHOLMES35-5/candlesticks?start_ts=1789790401&end_ts=1792126192&period_interval=1440"
+  "last_ingested_at": "2026-10-16T07:27:04.589Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840CHCCIN-CHCCHOLMES35-5/candlesticks?start_ts=1789790401&end_ts=1792135624&period_interval=1440"
 }
