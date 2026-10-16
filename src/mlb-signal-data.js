@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 25 date file(s) · 155 game(s) · 584 state row(s) · generated 2026-10-16T18:35:43.945Z
+ * 25 date file(s) · 155 game(s) · 584 state row(s) · generated 2026-10-16T19:06:29.401Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-16T18:35:43.945Z",
+ "generatedAt": "2026-10-16T19:06:29.401Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-10-16T07:47:08.526Z",
+  "last_confirmed_at": "2026-10-16T19:06:27.645Z",
   "teams": [
    {
     "id": 108,
@@ -14433,7 +14433,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-10-15T22:39:48.787Z",
     "2026-10-16T00:43:55.553Z",
     "2026-10-16T02:27:30.867Z",
-    "2026-10-16T07:47:08.527Z"
+    "2026-10-16T07:47:08.527Z",
+    "2026-10-16T19:06:27.646Z"
    ],
    "games": {
     "849810": {
@@ -14528,7 +14529,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-16T07:47:08.527Z",
-       "last_seen_at": "2026-10-16T07:47:08.527Z",
+       "last_seen_at": "2026-10-16T19:06:27.646Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -14605,7 +14606,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-15T22:39:48.787Z",
-       "last_seen_at": "2026-10-16T07:47:08.527Z",
+       "last_seen_at": "2026-10-16T19:06:27.646Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -14634,7 +14635,8 @@ export const MLB_SIGNAL_DATA = {
     ]
    },
    "captures": [
-    "2026-10-16T07:47:08.527Z"
+    "2026-10-16T07:47:08.527Z",
+    "2026-10-16T19:06:27.646Z"
    ],
    "games": {
     "849817": {
@@ -14660,13 +14662,16 @@ export const MLB_SIGNAL_DATA = {
        "id": 607259,
        "fullName": "Nick Martinez"
       },
-      "home": null
+      "home": {
+       "id": 542888,
+       "fullName": "Shawn Armstrong"
+      }
      },
      "firstCapturedAt": "2026-10-16T07:47:08.527Z",
      "states": [
       {
        "captured_at": "2026-10-16T07:47:08.527Z",
-       "last_seen_at": "2026-10-16T07:47:08.527Z",
+       "last_seen_at": "2026-10-16T19:06:27.646Z",
        "abstractGameState": "Preview",
        "detailedState": "Scheduled",
        "codedGameState": "S",

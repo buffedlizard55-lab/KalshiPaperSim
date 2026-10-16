@@ -10,7 +10,8 @@
   ]
  },
  "captures": [
-  "2026-10-16T07:47:08.527Z"
+  "2026-10-16T07:47:08.527Z",
+  "2026-10-16T19:06:27.646Z"
  ],
  "games": {
   "849817": {
@@ -36,13 +37,16 @@
      "id": 607259,
      "fullName": "Nick Martinez"
     },
-    "home": null
+    "home": {
+     "id": 542888,
+     "fullName": "Shawn Armstrong"
+    }
    },
    "firstCapturedAt": "2026-10-16T07:47:08.527Z",
    "states": [
     {
      "captured_at": "2026-10-16T07:47:08.527Z",
-     "last_seen_at": "2026-10-16T07:47:08.527Z",
+     "last_seen_at": "2026-10-16T19:06:27.646Z",
      "abstractGameState": "Preview",
      "detailedState": "Scheduled",
      "codedGameState": "S",
