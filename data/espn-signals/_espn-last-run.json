@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-16T07:45:59.937Z",
+ "startedAt": "2026-10-16T18:35:40.466Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -43,7 +43,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/teams",
      "ok": true,
      "status": 200,
-     "rows": 0
+     "rows": 30
     },
     "injuries": {
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
@@ -140,8 +140,9 @@
    "steps": {
     "teams": {
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/teams",
-     "ok": false,
-     "status": 404
+     "ok": true,
+     "status": 200,
+     "rows": 32
     },
     "injuries": {
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
@@ -201,19 +202,11 @@
    }
   }
  },
- "errors": [
-  {
-   "league": "nhl",
-   "step": "teams",
-   "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/teams",
-   "ok": false,
-   "status": 404
-  }
- ],
+ "errors": [],
  "codeMap": {
   "rows": 159,
-  "matched": 65,
-  "unmapped": 94
+  "matched": 86,
+  "unmapped": 73
  },
- "finishedAt": "2026-10-16T07:46:01.656Z"
+ "finishedAt": "2026-10-16T18:35:42.460Z"
 }

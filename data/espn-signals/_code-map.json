@@ -1,15 +1,20 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-16T07:46:01.656Z",
+ "generatedAt": "2026-10-16T18:35:42.456Z",
  "rows": [
   {
    "league": "nba",
    "kalshiCode": "BOS",
    "kalshiName": "Boston",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "2",
+    "abbr": "BOS",
+    "displayName": "Boston Celtics",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
@@ -28,8 +33,13 @@
    "kalshiCode": "CHI",
    "kalshiName": "Chicago",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "4",
+    "abbr": "CHI",
+    "displayName": "Chicago Bulls",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT09MEMCHI-CHI",
@@ -48,8 +58,13 @@
    "kalshiCode": "DEN",
    "kalshiName": "Denver",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "7",
+    "abbr": "DEN",
+    "displayName": "Denver Nuggets",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT04UTADEN-DEN",
@@ -83,8 +98,13 @@
    "kalshiCode": "DET",
    "kalshiName": "Detroit",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "8",
+    "abbr": "DET",
+    "displayName": "Detroit Pistons",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
@@ -108,8 +128,13 @@
    "kalshiCode": "GSW",
    "kalshiName": "Golden State",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "9",
+    "abbr": "GS",
+    "displayName": "Golden State Warriors",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT04GSWLAC-GSW",
@@ -143,8 +168,13 @@
    "kalshiCode": "IND",
    "kalshiName": "Indiana",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "11",
+    "abbr": "IND",
+    "displayName": "Indiana Pacers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT07MININD-MIN",
@@ -164,7 +194,7 @@
    "kalshiName": "Los Angeles C",
    "conflictWith": null,
    "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT04GSWLAC-GSW",
@@ -193,8 +223,13 @@
    "kalshiCode": "LAL",
    "kalshiName": "Los Angeles L",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "13",
+    "abbr": "LAL",
+    "displayName": "Los Angeles Lakers",
+    "matchedBy": "displayName-qualifier-letter"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT05LALSAC-LAL",
@@ -228,8 +263,13 @@
    "kalshiCode": "MEM",
    "kalshiName": "Memphis",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "29",
+    "abbr": "MEM",
+    "displayName": "Memphis Grizzlies",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT09MEMCHI-CHI",
@@ -248,8 +288,13 @@
    "kalshiCode": "MIA",
    "kalshiName": "Miami",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "14",
+    "abbr": "MIA",
+    "displayName": "Miami Heat",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT03MIATOR-MIA",
@@ -268,8 +313,13 @@
    "kalshiCode": "MIL",
    "kalshiName": "Milwaukee",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "15",
+    "abbr": "MIL",
+    "displayName": "Milwaukee Bucks",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT07MILOKC-MIL",
@@ -283,8 +333,13 @@
    "kalshiCode": "MIN",
    "kalshiName": "Minnesota",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "16",
+    "abbr": "MIN",
+    "displayName": "Minnesota Timberwolves",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT07MININD-MIN",
@@ -298,8 +353,13 @@
    "kalshiCode": "NOP",
    "kalshiName": "New Orleans",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "3",
+    "abbr": "NO",
+    "displayName": "New Orleans Pelicans",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT06NOPOKC-NOP",
@@ -318,8 +378,13 @@
    "kalshiCode": "NYK",
    "kalshiName": "New York",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "18",
+    "abbr": "NY",
+    "displayName": "New York Knicks",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
@@ -348,8 +413,13 @@
    "kalshiCode": "OKC",
    "kalshiName": "Oklahoma City",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "25",
+    "abbr": "OKC",
+    "displayName": "Oklahoma City Thunder",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
@@ -383,8 +453,13 @@
    "kalshiCode": "PHI",
    "kalshiName": "Philadelphia",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "20",
+    "abbr": "PHI",
+    "displayName": "Philadelphia 76ers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
@@ -413,8 +488,13 @@
    "kalshiCode": "PHX",
    "kalshiName": "Phoenix",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "21",
+    "abbr": "PHX",
+    "displayName": "Phoenix Suns",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT05PHXDET-PHX",
@@ -428,8 +508,13 @@
    "kalshiCode": "POR",
    "kalshiName": "Portland",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "22",
+    "abbr": "POR",
+    "displayName": "Portland Trail Blazers",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT07GSWPOR-GSW",
@@ -443,8 +528,13 @@
    "kalshiCode": "SAC",
    "kalshiName": "Sacramento",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "23",
+    "abbr": "SAC",
+    "displayName": "Sacramento Kings",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT05LALSAC-LAL",
@@ -473,8 +563,13 @@
    "kalshiCode": "SAS",
    "kalshiName": "San Antonio",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "24",
+    "abbr": "SA",
+    "displayName": "San Antonio Spurs",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
@@ -493,8 +588,13 @@
    "kalshiCode": "TOR",
    "kalshiName": "Toronto",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "28",
+    "abbr": "TOR",
+    "displayName": "Toronto Raptors",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT03MIATOR-MIA",
@@ -513,8 +613,13 @@
    "kalshiCode": "UTA",
    "kalshiName": "Utah",
    "conflictWith": null,
-   "espn": null,
-   "espnReason": "NO_TEAM_TABLE_CAPTURED_YET",
+   "espn": {
+    "teamId": "26",
+    "abbr": "UTAH",
+    "displayName": "Utah Jazz",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
    "evidence": [
     {
      "ticker": "KXNBAGAME-26OCT04UTADEN-DEN",
