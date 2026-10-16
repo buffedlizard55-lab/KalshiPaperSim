@@ -29704,7 +29704,7 @@
     "open_interest_fp": "2596685.72",
     "open_time": "2026-01-21T22:00:00Z",
     "previous_price_dollars": "0.0100",
-    "previous_yes_ask_dollars": "0.0200",
+    "previous_yes_ask_dollars": "0.0100",
     "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -29727,14 +29727,14 @@
     "volume_24h_fp": "95338.77",
     "volume_fp": "3794590.17",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "629.80",
+    "yes_ask_size_fp": "627.70",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Oregon"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-ORE",
-  "market_captured_at": "2026-10-16T07:28:01.485Z",
+  "market_captured_at": "2026-10-16T11:29:02.976Z",
   "status": "active",
-  "last_ingested_at": "2026-10-16T07:28:02.051Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-ORE/candlesticks?start_ts=1792123201&end_ts=1792135681&period_interval=1440"
+  "last_ingested_at": "2026-10-16T11:29:03.502Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-ORE/candlesticks?start_ts=1792123201&end_ts=1792150143&period_interval=1440"
 }

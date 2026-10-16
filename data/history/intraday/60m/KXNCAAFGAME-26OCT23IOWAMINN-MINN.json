@@ -2999,6 +2999,91 @@
         "low_dollars": "0.2400",
         "open_dollars": "0.3300"
       }
+    },
+    {
+      "end_period_ts": 1792137600,
+      "open_interest_fp": "4397.71",
+      "price": {
+        "previous_dollars": "0.3900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.3800",
+        "high_dollars": "0.4600",
+        "low_dollars": "0.3800",
+        "open_dollars": "0.3800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3400",
+        "high_dollars": "0.3700",
+        "low_dollars": "0.2600",
+        "open_dollars": "0.3400"
+      }
+    },
+    {
+      "end_period_ts": 1792141200,
+      "open_interest_fp": "4384.61",
+      "price": {
+        "close_dollars": "0.3600",
+        "high_dollars": "0.3800",
+        "low_dollars": "0.3600",
+        "mean_dollars": "0.3763",
+        "open_dollars": "0.3800",
+        "previous_dollars": "0.3900"
+      },
+      "volume_fp": "33.20",
+      "yes_ask": {
+        "close_dollars": "0.3900",
+        "high_dollars": "0.4300",
+        "low_dollars": "0.3800",
+        "open_dollars": "0.3800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3800",
+        "low_dollars": "0.2600",
+        "open_dollars": "0.3400"
+      }
+    },
+    {
+      "end_period_ts": 1792144800,
+      "open_interest_fp": "4384.61",
+      "price": {
+        "previous_dollars": "0.3600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.3800",
+        "high_dollars": "0.4300",
+        "low_dollars": "0.3800",
+        "open_dollars": "0.3900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3500",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3000",
+        "open_dollars": "0.3500"
+      }
+    },
+    {
+      "end_period_ts": 1792148400,
+      "open_interest_fp": "4384.61",
+      "price": {
+        "previous_dollars": "0.3600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.3900",
+        "high_dollars": "0.4500",
+        "low_dollars": "0.3700",
+        "open_dollars": "0.3800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3300",
+        "high_dollars": "0.3600",
+        "low_dollars": "0.3000",
+        "open_dollars": "0.3500"
+      }
     }
   ],
   "books": [
@@ -3837,6 +3922,118 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-16T11:33:47.821Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT23IOWAMINN-MINN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "105083.00"
+            ],
+            [
+              "0.0200",
+              "2550.00"
+            ],
+            [
+              "0.0300",
+              "944.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "648.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0700",
+              "320.17"
+            ],
+            [
+              "0.2500",
+              "10.35"
+            ],
+            [
+              "0.4600",
+              "140.00"
+            ],
+            [
+              "0.5200",
+              "2129.00"
+            ],
+            [
+              "0.5300",
+              "1897.00"
+            ],
+            [
+              "0.5400",
+              "4791.48"
+            ],
+            [
+              "0.5600",
+              "48.00"
+            ],
+            [
+              "0.5700",
+              "45.00"
+            ],
+            [
+              "0.5800",
+              "40.00"
+            ],
+            [
+              "0.5900",
+              "111.62"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "103702.00"
+            ],
+            [
+              "0.0200",
+              "2025.00"
+            ],
+            [
+              "0.0300",
+              "750.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "301.00"
+            ],
+            [
+              "0.1500",
+              "440.00"
+            ],
+            [
+              "0.2300",
+              "4938.00"
+            ],
+            [
+              "0.2400",
+              "20.20"
+            ],
+            [
+              "0.3100",
+              "59.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3852,19 +4049,19 @@
     "expected_expiration_time": "2026-10-24T03:00:00Z",
     "expiration_time": "2026-10-26T00:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.3900",
+    "last_price_dollars": "0.3600",
     "latest_expiration_time": "2026-10-26T00:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.6600",
-    "no_bid_dollars": "0.6100",
+    "no_ask_dollars": "0.6900",
+    "no_bid_dollars": "0.5900",
     "no_sub_title": "Minnesota",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-24T03:00:00Z",
-    "open_interest_fp": "4397.71",
+    "open_interest_fp": "4384.61",
     "open_time": "2026-10-10T01:07:00Z",
     "previous_price_dollars": "0.3500",
-    "previous_yes_ask_dollars": "0.4700",
-    "previous_yes_bid_dollars": "0.3600",
+    "previous_yes_ask_dollars": "0.3600",
+    "previous_yes_bid_dollars": "0.3400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3883,17 +4080,17 @@
     "ticker": "KXNCAAFGAME-26OCT23IOWAMINN-MINN",
     "title": "Minnesota wins",
     "updated_time": "2026-10-10T01:07:00.440034Z",
-    "volume_24h_fp": "448.31",
-    "volume_fp": "4535.92",
-    "yes_ask_dollars": "0.3900",
-    "yes_ask_size_fp": "47.42",
-    "yes_bid_dollars": "0.3400",
-    "yes_bid_size_fp": "15.93",
+    "volume_24h_fp": "481.51",
+    "volume_fp": "4569.12",
+    "yes_ask_dollars": "0.4100",
+    "yes_ask_size_fp": "111.62",
+    "yes_bid_dollars": "0.3100",
+    "yes_bid_size_fp": "59.00",
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT23IOWAMINN-MINN",
-  "market_captured_at": "2026-10-16T07:33:32.210Z",
+  "market_captured_at": "2026-10-16T11:33:47.169Z",
   "status": "active",
-  "last_ingested_at": "2026-10-16T07:33:32.877Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT23IOWAMINN-MINN/candlesticks?start_ts=1792123201&end_ts=1792136012&period_interval=60"
+  "last_ingested_at": "2026-10-16T11:33:47.797Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT23IOWAMINN-MINN/candlesticks?start_ts=1792134001&end_ts=1792150427&period_interval=60"
 }

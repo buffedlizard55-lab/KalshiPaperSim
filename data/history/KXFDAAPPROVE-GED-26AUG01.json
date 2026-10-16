@@ -2187,8 +2187,8 @@
   "market_captured_at": "2026-09-20T11:34:22.496Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-16T07:26:04.774Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-GED-26AUG01/candlesticks?start_ts=1784088001&end_ts=1792135564&period_interval=1440",
+  "last_ingested_at": "2026-10-16T11:27:44.465Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-GED-26AUG01/candlesticks?start_ts=1784088001&end_ts=1792150064&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-09-21T12:51:36.411Z",
@@ -2682,6 +2682,11 @@
     },
     {
       "at": "2026-10-16T07:26:04.211Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-GED-26AUG01",
+      "error": "{\"error\":{\"code\":\"not_found\",\"message\":\"not found\"}}"
+    },
+    {
+      "at": "2026-10-16T11:27:43.941Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-GED-26AUG01",
       "error": "{\"error\":{\"code\":\"not_found\",\"message\":\"not found\"}}"
     }
@@ -3180,6 +3185,11 @@
     {
       "at": "2026-10-16T07:26:04.525Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-GED-26AUG01/candlesticks?start_ts=1784088001&end_ts=1792135564&period_interval=1440",
+      "error": "{\"error\":{\"code\":\"not_found\",\"message\":\"not found\"}}"
+    },
+    {
+      "at": "2026-10-16T11:27:44.215Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-GED-26AUG01/candlesticks?start_ts=1784088001&end_ts=1792150064&period_interval=1440",
       "error": "{\"error\":{\"code\":\"not_found\",\"message\":\"not found\"}}"
     }
   ]

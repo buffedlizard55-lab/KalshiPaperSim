@@ -1505,6 +1505,26 @@
         "low_dollars": "0.9800",
         "open_dollars": "0.9800"
       }
+    },
+    {
+      "end_period_ts": 1792144800,
+      "open_interest_fp": "4126.01",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      }
     }
   ],
   "books": [
@@ -2791,6 +2811,62 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-16T11:33:49.098Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24MURRSDST-SDST/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "6684.99"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5282.00"
+            ],
+            [
+              "0.0200",
+              "1905.00"
+            ],
+            [
+              "0.0300",
+              "905.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "50.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.8800",
+              "140.00"
+            ],
+            [
+              "0.9700",
+              "72.00"
+            ],
+            [
+              "0.9800",
+              "96709.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2846,8 +2922,8 @@
     "yes_sub_title": "South Dakota St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT24MURRSDST-SDST",
-  "market_captured_at": "2026-10-16T07:33:33.604Z",
+  "market_captured_at": "2026-10-16T11:33:48.447Z",
   "status": "active",
-  "last_ingested_at": "2026-10-16T07:33:34.269Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24MURRSDST-SDST/candlesticks?start_ts=1792119601&end_ts=1792136013&period_interval=60"
+  "last_ingested_at": "2026-10-16T11:33:49.075Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT24MURRSDST-SDST/candlesticks?start_ts=1792134001&end_ts=1792150428&period_interval=60"
 }
