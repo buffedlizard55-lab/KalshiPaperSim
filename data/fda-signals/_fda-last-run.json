@@ -1,48 +1,48 @@
 {
-  "startedAt": "2026-10-17T18:24:43.619Z",
-  "finishedAt": "2026-10-17T18:25:52.067Z",
+  "startedAt": "2026-10-17T22:13:49.020Z",
+  "finishedAt": "2026-10-17T22:14:57.461Z",
   "subjects": [
     {
       "slug": "comp360-psilocybin",
       "ok": true,
       "state": "NO_RECORD",
       "total": 0,
-      "snapshots": 84
+      "snapshots": 85
     },
     {
       "slug": "retatrutide",
       "ok": true,
       "state": "NO_RECORD",
       "total": 0,
-      "snapshots": 84
+      "snapshots": 85
     },
     {
       "slug": "camizestrant",
       "ok": true,
       "state": "APPROVED",
       "total": 1,
-      "snapshots": 85
+      "snapshots": 86
     },
     {
       "slug": "cytisinicline",
       "ok": true,
       "state": "NO_RECORD",
       "total": 0,
-      "snapshots": 84
+      "snapshots": 85
     },
     {
       "slug": "gedatolisib",
       "ok": true,
       "state": "APPROVED",
       "total": 1,
-      "snapshots": 85
+      "snapshots": 86
     },
     {
       "slug": "midomafetamine-mdma",
       "ok": true,
       "state": "NO_RECORD",
       "total": 0,
-      "snapshots": 84
+      "snapshots": 85
     }
   ],
   "failures": 0,
@@ -51,19 +51,19 @@
       "url": "https://api.fda.gov/drug/drugsfda.json?limit=1",
       "ok": true,
       "http_status": 200,
-      "ms": 2103
+      "ms": 538
     },
     {
       "url": "https://api.weather.gov/alerts/active?limit=1",
       "ok": false,
-      "http_status": 500,
-      "ms": 232
+      "http_status": 400,
+      "ms": 140
     },
     {
       "url": "https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip",
       "ok": true,
       "http_status": 200,
-      "ms": 103
+      "ms": 170
     }
   ]
 }
