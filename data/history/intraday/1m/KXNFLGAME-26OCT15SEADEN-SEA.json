@@ -12045,6 +12045,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-17T04:57:17.597Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT15SEADEN-SEA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12070,9 +12080,9 @@
     "occurrence_datetime": "2026-10-16T03:15:00Z",
     "open_interest_fp": "22047139.48",
     "open_time": "2026-10-06T04:05:00Z",
-    "previous_price_dollars": "0.5700",
-    "previous_yes_ask_dollars": "0.5700",
-    "previous_yes_bid_dollars": "0.5600",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12093,7 +12103,7 @@
     "ticker": "KXNFLGAME-26OCT15SEADEN-SEA",
     "title": "Seattle wins",
     "updated_time": "2026-10-16T03:39:18.749004Z",
-    "volume_24h_fp": "49564270.83",
+    "volume_24h_fp": "0.00",
     "volume_fp": "51743447.82",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12102,11 +12112,11 @@
     "yes_sub_title": "Seattle"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT15SEADEN-SEA",
-  "market_captured_at": "2026-10-16T19:53:14.100Z",
+  "market_captured_at": "2026-10-17T04:57:16.652Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-16T19:53:14.776Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT15SEADEN-SEA/candlesticks?start_ts=1792121701&end_ts=1792180394&period_interval=1",
+  "last_ingested_at": "2026-10-17T04:57:17.586Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT15SEADEN-SEA/candlesticks?start_ts=1792208101&end_ts=1792213036&period_interval=1",
   "trims": [
     {
       "at": "2026-10-16T05:00:55.998Z",

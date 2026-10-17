@@ -3667,6 +3667,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-17T04:54:16.832Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT13BOSSJ-BOS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3724,9 +3734,9 @@
     "yes_sub_title": "Boston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT13BOSSJ-BOS",
-  "market_captured_at": "2026-10-16T19:49:55.305Z",
+  "market_captured_at": "2026-10-17T04:54:16.202Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-16T19:49:55.980Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT13BOSSJ-BOS/candlesticks?start_ts=1791957601&end_ts=1792180195&period_interval=60",
+  "last_ingested_at": "2026-10-17T04:54:16.821Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT13BOSSJ-BOS/candlesticks?start_ts=1791957601&end_ts=1792212856&period_interval=60",
   "result": "yes"
 }

@@ -1276,6 +1276,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-17T04:52:04.768Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26OCT15-B70.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1326,7 +1336,7 @@
     "ticker": "KXHIGHPHIL-26OCT15-B70.5",
     "title": "Will the maximum temperature be 70-71° on Oct 15, 2026?",
     "updated_time": "2026-10-16T11:09:17.150212Z",
-    "volume_24h_fp": "17717.68",
+    "volume_24h_fp": "0.00",
     "volume_fp": "38129.57",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1335,9 +1345,9 @@
     "yes_sub_title": "70° to 71°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26OCT15-B70.5",
-  "market_captured_at": "2026-10-16T19:47:27.540Z",
+  "market_captured_at": "2026-10-17T04:52:04.138Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-16T19:47:28.213Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26OCT15-B70.5/candlesticks?start_ts=1792130401&end_ts=1792180047&period_interval=60",
+  "last_ingested_at": "2026-10-17T04:52:04.756Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26OCT15-B70.5/candlesticks?start_ts=1792130401&end_ts=1792212724&period_interval=60",
   "result": "no"
 }
