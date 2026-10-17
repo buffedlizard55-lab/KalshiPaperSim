@@ -1,0 +1,95 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-18",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261018"
+  ]
+ },
+ "captures": [
+  "2026-10-17T06:59:56.047Z"
+ ],
+ "events": {
+  "401892533": {
+   "eventId": "401892533",
+   "date": "2026-10-18T22:00Z",
+   "easternDate": "2026-10-18",
+   "name": "Columbus Blue Jackets at Minnesota Wild",
+   "shortName": "CBJ @ MIN",
+   "week": null,
+   "venue": "Grand Casino Arena",
+   "homeAbbr": "MIN",
+   "homeTeamId": "30",
+   "homeName": "Minnesota Wild",
+   "awayAbbr": "CBJ",
+   "awayTeamId": "29",
+   "awayName": "Columbus Blue Jackets",
+   "firstCapturedAt": "2026-10-17T06:59:56.047Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:56.047Z",
+     "last_seen_at": "2026-10-17T06:59:56.047Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-2-1",
+      "away": "2-3-0"
+     }
+    }
+   ]
+  },
+  "401892534": {
+   "eventId": "401892534",
+   "date": "2026-10-19T00:00Z",
+   "easternDate": "2026-10-18",
+   "name": "Carolina Hurricanes at Calgary Flames",
+   "shortName": "CAR @ CGY",
+   "week": null,
+   "venue": "Scotiabank Saddledome",
+   "homeAbbr": "CGY",
+   "homeTeamId": "3",
+   "homeName": "Calgary Flames",
+   "awayAbbr": "CAR",
+   "awayTeamId": "7",
+   "awayName": "Carolina Hurricanes",
+   "firstCapturedAt": "2026-10-17T06:59:56.047Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:56.047Z",
+     "last_seen_at": "2026-10-17T06:59:56.047Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-6-0",
+      "away": "6-1-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-17T06:59:56.047Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261018"
+}

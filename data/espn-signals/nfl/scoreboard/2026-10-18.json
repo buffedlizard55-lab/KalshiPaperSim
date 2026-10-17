@@ -1,0 +1,545 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-18",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261018"
+  ]
+ },
+ "captures": [
+  "2026-10-17T06:59:55.628Z"
+ ],
+ "events": {
+  "401872996": {
+   "eventId": "401872996",
+   "date": "2026-10-18T13:30Z",
+   "easternDate": "2026-10-18",
+   "name": "Houston Texans at Jacksonville Jaguars",
+   "shortName": "HOU VS JAX",
+   "week": 6,
+   "venue": "Wembley Stadium",
+   "homeAbbr": "JAX",
+   "homeTeamId": "30",
+   "homeName": "Jacksonville Jaguars",
+   "awayAbbr": "HOU",
+   "awayTeamId": "34",
+   "awayName": "Houston Texans",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "JAX -2.5",
+    "spread": -2.5,
+    "overUnder": 42.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-1",
+      "away": "1-4"
+     }
+    }
+   ]
+  },
+  "401872997": {
+   "eventId": "401872997",
+   "date": "2026-10-18T17:00Z",
+   "easternDate": "2026-10-18",
+   "name": "Baltimore Ravens at Cleveland Browns",
+   "shortName": "BAL @ CLE",
+   "week": 6,
+   "venue": "Huntington Bank Field",
+   "homeAbbr": "CLE",
+   "homeTeamId": "5",
+   "homeName": "Cleveland Browns",
+   "awayAbbr": "BAL",
+   "awayTeamId": "33",
+   "awayName": "Baltimore Ravens",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "BAL -3",
+    "spread": 3,
+    "overUnder": 39.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-2",
+      "away": "4-1"
+     }
+    }
+   ]
+  },
+  "401872998": {
+   "eventId": "401872998",
+   "date": "2026-10-18T17:00Z",
+   "easternDate": "2026-10-18",
+   "name": "Carolina Panthers at Philadelphia Eagles",
+   "shortName": "CAR @ PHI",
+   "week": 6,
+   "venue": "Lincoln Financial Field",
+   "homeAbbr": "PHI",
+   "homeTeamId": "21",
+   "homeName": "Philadelphia Eagles",
+   "awayAbbr": "CAR",
+   "awayTeamId": "29",
+   "awayName": "Carolina Panthers",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "CAR -3",
+    "spread": 3,
+    "overUnder": 39.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "2-2"
+     }
+    }
+   ]
+  },
+  "401872999": {
+   "eventId": "401872999",
+   "date": "2026-10-18T17:00Z",
+   "easternDate": "2026-10-18",
+   "name": "Chicago Bears at Atlanta Falcons",
+   "shortName": "CHI @ ATL",
+   "week": 6,
+   "venue": "Mercedes-Benz Stadium",
+   "homeAbbr": "ATL",
+   "homeTeamId": "1",
+   "homeName": "Atlanta Falcons",
+   "awayAbbr": "CHI",
+   "awayTeamId": "3",
+   "awayName": "Chicago Bears",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "CHI -1.5",
+    "spread": 1.5,
+    "overUnder": 52.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "3-2"
+     }
+    }
+   ]
+  },
+  "401873000": {
+   "eventId": "401873000",
+   "date": "2026-10-18T17:00Z",
+   "easternDate": "2026-10-18",
+   "name": "New Orleans Saints at New York Giants",
+   "shortName": "NO @ NYG",
+   "week": 6,
+   "venue": "MetLife Stadium",
+   "homeAbbr": "NYG",
+   "homeTeamId": "19",
+   "homeName": "New York Giants",
+   "awayAbbr": "NO",
+   "awayTeamId": "18",
+   "awayName": "New Orleans Saints",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "NO -1.5",
+    "spread": 1.5,
+    "overUnder": 46.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-1-1",
+      "away": "1-4"
+     }
+    }
+   ]
+  },
+  "401873001": {
+   "eventId": "401873001",
+   "date": "2026-10-18T17:00Z",
+   "easternDate": "2026-10-18",
+   "name": "New York Jets at New England Patriots",
+   "shortName": "NYJ @ NE",
+   "week": 6,
+   "venue": "Gillette Stadium",
+   "homeAbbr": "NE",
+   "homeTeamId": "17",
+   "homeName": "New England Patriots",
+   "awayAbbr": "NYJ",
+   "awayTeamId": "20",
+   "awayName": "New York Jets",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "NE -7.5",
+    "spread": -7.5,
+    "overUnder": 43.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-2",
+      "away": "2-3"
+     }
+    }
+   ]
+  },
+  "401873002": {
+   "eventId": "401873002",
+   "date": "2026-10-18T17:00Z",
+   "easternDate": "2026-10-18",
+   "name": "Pittsburgh Steelers at Tampa Bay Buccaneers",
+   "shortName": "PIT @ TB",
+   "week": 6,
+   "venue": "Raymond James Stadium",
+   "homeAbbr": "TB",
+   "homeTeamId": "27",
+   "homeName": "Tampa Bay Buccaneers",
+   "awayAbbr": "PIT",
+   "awayTeamId": "23",
+   "awayName": "Pittsburgh Steelers",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "PIT -2.5",
+    "spread": 2.5,
+    "overUnder": 38.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-4",
+      "away": "3-2"
+     }
+    }
+   ]
+  },
+  "401873003": {
+   "eventId": "401873003",
+   "date": "2026-10-18T17:00Z",
+   "easternDate": "2026-10-18",
+   "name": "Tennessee Titans at Indianapolis Colts",
+   "shortName": "TEN @ IND",
+   "week": 6,
+   "venue": "Lucas Oil Stadium",
+   "homeAbbr": "IND",
+   "homeTeamId": "11",
+   "homeName": "Indianapolis Colts",
+   "awayAbbr": "TEN",
+   "awayTeamId": "10",
+   "awayName": "Tennessee Titans",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "IND -7",
+    "spread": -7,
+    "overUnder": 44.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "0-5"
+     }
+    }
+   ]
+  },
+  "401873004": {
+   "eventId": "401873004",
+   "date": "2026-10-18T20:05Z",
+   "easternDate": "2026-10-18",
+   "name": "Arizona Cardinals at Los Angeles Rams",
+   "shortName": "ARI @ LAR",
+   "week": 6,
+   "venue": "SoFi Stadium",
+   "homeAbbr": "LAR",
+   "homeTeamId": "14",
+   "homeName": "Los Angeles Rams",
+   "awayAbbr": "ARI",
+   "awayTeamId": "22",
+   "awayName": "Arizona Cardinals",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "LAR -12.5",
+    "spread": -12.5,
+    "overUnder": 51.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "1-4"
+     }
+    }
+   ]
+  },
+  "401873005": {
+   "eventId": "401873005",
+   "date": "2026-10-18T20:25Z",
+   "easternDate": "2026-10-18",
+   "name": "Buffalo Bills at Las Vegas Raiders",
+   "shortName": "BUF @ LV",
+   "week": 6,
+   "venue": "Allegiant Stadium",
+   "homeAbbr": "LV",
+   "homeTeamId": "13",
+   "homeName": "Las Vegas Raiders",
+   "awayAbbr": "BUF",
+   "awayTeamId": "2",
+   "awayName": "Buffalo Bills",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "BUF -4.5",
+    "spread": 4.5,
+    "overUnder": 53.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-2",
+      "away": "4-1"
+     }
+    }
+   ]
+  },
+  "401873006": {
+   "eventId": "401873006",
+   "date": "2026-10-18T20:25Z",
+   "easternDate": "2026-10-18",
+   "name": "Los Angeles Chargers at Kansas City Chiefs",
+   "shortName": "LAC @ KC",
+   "week": 6,
+   "venue": "Arrowhead Stadium",
+   "homeAbbr": "KC",
+   "homeTeamId": "12",
+   "homeName": "Kansas City Chiefs",
+   "awayAbbr": "LAC",
+   "awayTeamId": "24",
+   "awayName": "Los Angeles Chargers",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "KC -7.5",
+    "spread": -7.5,
+    "overUnder": 41.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-0",
+      "away": "0-5"
+     }
+    }
+   ]
+  },
+  "401873007": {
+   "eventId": "401873007",
+   "date": "2026-10-19T00:20Z",
+   "easternDate": "2026-10-18",
+   "name": "Dallas Cowboys at Green Bay Packers",
+   "shortName": "DAL @ GB",
+   "week": 6,
+   "venue": "Lambeau Field",
+   "homeAbbr": "GB",
+   "homeTeamId": "9",
+   "homeName": "Green Bay Packers",
+   "awayAbbr": "DAL",
+   "awayTeamId": "6",
+   "awayName": "Dallas Cowboys",
+   "firstCapturedAt": "2026-10-17T06:59:55.628Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "GB -1.5",
+    "spread": -1.5,
+    "overUnder": 53.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-17T06:59:55.628Z",
+     "last_seen_at": "2026-10-17T06:59:55.628Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-2",
+      "away": "2-3"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-17T06:59:55.628Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261018"
+}

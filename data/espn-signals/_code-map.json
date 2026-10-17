@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-17T02:15:50.720Z",
+ "generatedAt": "2026-10-17T06:59:57.257Z",
  "rows": [
   {
    "league": "nba",
@@ -23,6 +23,11 @@
     },
     {
      "ticker": "KXNBAGAME-26OCT20BOSDET-DET",
+     "rulesName": "Boston",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT16BOSPHI-BOS",
      "rulesName": "Boston",
      "role": "away"
     }
@@ -478,6 +483,11 @@
     },
     {
      "ticker": "KXNBAGAME-26OCT05NYKPHI-PHI",
+     "rulesName": "Philadelphia",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT16BOSPHI-BOS",
      "rulesName": "Philadelphia",
      "role": "home"
     }
@@ -1410,6 +1420,11 @@
      "ticker": "KXNCAAFGAME-26OCT03WYONDSU-NDSU",
      "rulesName": "North Dakota St.",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT24NDSUUNM-NDSU",
+     "rulesName": "North Dakota St.",
+     "role": "away"
     }
    ]
   },
@@ -2080,6 +2095,21 @@
      "ticker": "KXNCAAFGAME-26OCT03UKSCAR-UK",
      "rulesName": "Kentucky",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "UNM",
+   "kalshiName": "New Mexico",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT24NDSUUNM-NDSU",
+     "rulesName": "New Mexico",
+     "role": "home"
     }
    ]
   },
@@ -2852,12 +2882,12 @@
      "role": "away"
     },
     {
-     "ticker": "KXNHLGAME-26SEP20WSHBOS-BOS",
+     "ticker": "KXNHLGAME-26OCT16BOSANA-BOS",
      "rulesName": "Boston",
-     "role": "home"
+     "role": "away"
     },
     {
-     "ticker": "KXNHLGAME-26SEP29NYRBOS-BOS",
+     "ticker": "KXNHLGAME-26SEP20WSHBOS-BOS",
      "rulesName": "Boston",
      "role": "home"
     }
