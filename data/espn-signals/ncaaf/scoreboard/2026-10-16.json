@@ -16,7 +16,8 @@
   "2026-10-16T07:46:00.361Z",
   "2026-10-16T18:35:41.300Z",
   "2026-10-16T21:40:18.258Z",
-  "2026-10-16T23:53:17.815Z"
+  "2026-10-16T23:53:17.815Z",
+  "2026-10-17T02:15:49.555Z"
  ],
  "events": {
   "401858493": {
@@ -55,6 +56,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-3",
+      "away": "3-3"
+     }
+    },
+    {
+     "captured_at": "2026-10-17T02:15:49.555Z",
+     "last_seen_at": "2026-10-17T02:15:49.555Z",
+     "fp": "in|3|9|17,24|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 3,
+     "clock": 586,
+     "displayClock": "9:46",
+     "scores": {
+      "home": 17,
+      "away": 24
      },
      "recordsOverall": {
       "home": "3-3",
@@ -124,6 +145,26 @@
       "home": "2-3",
       "away": "5-1"
      }
+    },
+    {
+     "captured_at": "2026-10-17T02:15:49.555Z",
+     "last_seen_at": "2026-10-17T02:15:49.555Z",
+     "fp": "in|4|12|23,10|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 4,
+     "clock": 763,
+     "displayClock": "12:43",
+     "scores": {
+      "home": 23,
+      "away": 10
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "5-1"
+     }
     }
    ]
   },
@@ -168,10 +209,30 @@
       "home": "2-4",
       "away": "3-2"
      }
+    },
+    {
+     "captured_at": "2026-10-17T02:15:49.555Z",
+     "last_seen_at": "2026-10-17T02:15:49.555Z",
+     "fp": "in|3|7|24,21|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 3,
+     "clock": 479,
+     "displayClock": "7:59",
+     "scores": {
+      "home": 24,
+      "away": 21
+     },
+     "recordsOverall": {
+      "home": "2-4",
+      "away": "3-2"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-16T23:53:17.815Z",
+ "last_ingested_at": "2026-10-17T02:15:49.555Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261016"
 }
