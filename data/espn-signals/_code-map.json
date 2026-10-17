@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-17T17:43:41.623Z",
+ "generatedAt": "2026-10-17T20:00:17.789Z",
  "rows": [
   {
    "league": "nba",
@@ -665,6 +665,11 @@
      "ticker": "KXNCAAFGAME-26OCT10UGAALA-UGA",
      "rulesName": "Alabama",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT24TXAMALA-TXAM",
+     "rulesName": "Alabama",
+     "role": "home"
     }
    ]
   },
@@ -1278,6 +1283,11 @@
    "evidence": [
     {
      "ticker": "KXNCAAFGAME-26OCT24MISSTEX-MISS",
+     "rulesName": "Ole Miss",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT24MISSTEX-TEX",
      "rulesName": "Ole Miss",
      "role": "away"
     }
@@ -1935,6 +1945,11 @@
      "ticker": "KXNCAAFGAME-26OCT24MISSTEX-MISS",
      "rulesName": "Texas",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT24MISSTEX-TEX",
+     "rulesName": "Texas",
+     "role": "home"
     }
    ]
   },
@@ -1980,6 +1995,11 @@
      "ticker": "KXNCAAFGAME-26OCT17CITTXAM-TXAM",
      "rulesName": "Texas A&M",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT24TXAMALA-TXAM",
+     "rulesName": "Texas A&M",
+     "role": "away"
     },
     {
      "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
