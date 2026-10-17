@@ -1329,6 +1329,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-17T10:50:41.167Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26OCT16-T73/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1376,7 +1386,7 @@
     "ticker": "KXHIGHAUS-26OCT16-T73",
     "title": "Will the maximum temperature be <73° on Oct 16, 2026?",
     "updated_time": "2026-10-17T06:00:03.148767Z",
-    "volume_24h_fp": "77940.78",
+    "volume_24h_fp": "73870.55",
     "volume_fp": "94715.12",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1385,8 +1395,8 @@
     "yes_sub_title": "72° or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26OCT16-T73",
-  "market_captured_at": "2026-10-17T07:11:39.949Z",
+  "market_captured_at": "2026-10-17T10:50:40.519Z",
   "status": "closed",
-  "last_ingested_at": "2026-10-17T07:11:40.582Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26OCT16-T73/candlesticks?start_ts=1792209601&end_ts=1792221100&period_interval=60"
+  "last_ingested_at": "2026-10-17T10:50:41.145Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26OCT16-T73/candlesticks?start_ts=1792220401&end_ts=1792234240&period_interval=60"
 }

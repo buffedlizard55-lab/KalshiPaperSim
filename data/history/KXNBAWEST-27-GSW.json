@@ -19020,7 +19020,7 @@
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.9800",
-    "no_bid_dollars": "0.9600",
+    "no_bid_dollars": "0.9700",
     "no_sub_title": "Golden State",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
@@ -19049,15 +19049,15 @@
     "updated_time": "2026-07-24T17:16:34.541284Z",
     "volume_24h_fp": "3033.74",
     "volume_fp": "96826.90",
-    "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "87250.72",
+    "yes_ask_dollars": "0.0300",
+    "yes_ask_size_fp": "20.00",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "51215.01",
+    "yes_bid_size_fp": "51316.01",
     "yes_sub_title": "Golden State"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-GSW",
-  "market_captured_at": "2026-10-17T07:09:22.934Z",
+  "market_captured_at": "2026-10-17T10:48:47.120Z",
   "status": "active",
-  "last_ingested_at": "2026-10-17T07:09:23.467Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-GSW/candlesticks?start_ts=1792209601&end_ts=1792220963&period_interval=1440"
+  "last_ingested_at": "2026-10-17T10:48:47.643Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-GSW/candlesticks?start_ts=1792209601&end_ts=1792234127&period_interval=1440"
 }

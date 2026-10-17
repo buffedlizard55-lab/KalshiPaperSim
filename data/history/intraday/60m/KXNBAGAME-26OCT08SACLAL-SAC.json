@@ -3251,6 +3251,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-17T10:53:13.798Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT08SACLAL-SAC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3308,9 +3318,9 @@
     "yes_sub_title": "Sacramento"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT08SACLAL-SAC",
-  "market_captured_at": "2026-10-17T07:14:15.043Z",
+  "market_captured_at": "2026-10-17T10:53:13.150Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-17T07:14:15.677Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT08SACLAL-SAC/candlesticks?start_ts=1791525601&end_ts=1792221255&period_interval=60"
+  "last_ingested_at": "2026-10-17T10:53:13.777Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT08SACLAL-SAC/candlesticks?start_ts=1791525601&end_ts=1792234393&period_interval=60"
 }

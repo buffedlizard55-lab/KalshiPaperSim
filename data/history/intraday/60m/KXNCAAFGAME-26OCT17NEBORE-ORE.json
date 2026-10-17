@@ -3087,6 +3087,81 @@
         "low_dollars": "0.6900",
         "open_dollars": "0.6900"
       }
+    },
+    {
+      "end_period_ts": 1792224000,
+      "open_interest_fp": "14447.63",
+      "price": {
+        "close_dollars": "0.7000",
+        "high_dollars": "0.7000",
+        "low_dollars": "0.7000",
+        "mean_dollars": "0.7000",
+        "open_dollars": "0.7000",
+        "previous_dollars": "0.7000"
+      },
+      "volume_fp": "8.79",
+      "yes_ask": {
+        "close_dollars": "0.7000",
+        "high_dollars": "0.7000",
+        "low_dollars": "0.7000",
+        "open_dollars": "0.7000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6900",
+        "high_dollars": "0.6900",
+        "low_dollars": "0.6900",
+        "open_dollars": "0.6900"
+      }
+    },
+    {
+      "end_period_ts": 1792227600,
+      "open_interest_fp": "14520.39",
+      "price": {
+        "close_dollars": "0.7000",
+        "high_dollars": "0.7000",
+        "low_dollars": "0.7000",
+        "mean_dollars": "0.7000",
+        "open_dollars": "0.7000",
+        "previous_dollars": "0.7000"
+      },
+      "volume_fp": "72.76",
+      "yes_ask": {
+        "close_dollars": "0.7000",
+        "high_dollars": "0.7000",
+        "low_dollars": "0.7000",
+        "open_dollars": "0.7000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6900",
+        "high_dollars": "0.6900",
+        "low_dollars": "0.6900",
+        "open_dollars": "0.6900"
+      }
+    },
+    {
+      "end_period_ts": 1792231200,
+      "open_interest_fp": "14528.90",
+      "price": {
+        "close_dollars": "0.7000",
+        "high_dollars": "0.7000",
+        "low_dollars": "0.7000",
+        "mean_dollars": "0.7000",
+        "open_dollars": "0.7000",
+        "previous_dollars": "0.7000"
+      },
+      "volume_fp": "8.51",
+      "yes_ask": {
+        "close_dollars": "0.7000",
+        "high_dollars": "0.7000",
+        "low_dollars": "0.7000",
+        "open_dollars": "0.7000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6900",
+        "high_dollars": "0.6900",
+        "low_dollars": "0.6900",
+        "open_dollars": "0.6900"
+      }
     }
   ],
   "books": [
@@ -8905,6 +8980,318 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-17T10:53:36.758Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17NEBORE-ORE/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2911982.76"
+            ],
+            [
+              "0.0200",
+              "6010.00"
+            ],
+            [
+              "0.0300",
+              "340517.00"
+            ],
+            [
+              "0.0400",
+              "96821.00"
+            ],
+            [
+              "0.0500",
+              "173387.38"
+            ],
+            [
+              "0.0600",
+              "64166.00"
+            ],
+            [
+              "0.0700",
+              "107960.00"
+            ],
+            [
+              "0.0800",
+              "145014.00"
+            ],
+            [
+              "0.0900",
+              "18177.00"
+            ],
+            [
+              "0.1000",
+              "71171.74"
+            ],
+            [
+              "0.1100",
+              "107660.00"
+            ],
+            [
+              "0.1200",
+              "90560.33"
+            ],
+            [
+              "0.1300",
+              "10512.58"
+            ],
+            [
+              "0.1400",
+              "26306.00"
+            ],
+            [
+              "0.1500",
+              "1953.00"
+            ],
+            [
+              "0.1600",
+              "966.00"
+            ],
+            [
+              "0.1700",
+              "142.00"
+            ],
+            [
+              "0.1800",
+              "1.00"
+            ],
+            [
+              "0.1900",
+              "2400.00"
+            ],
+            [
+              "0.2000",
+              "8141.00"
+            ],
+            [
+              "0.2100",
+              "23091.00"
+            ],
+            [
+              "0.2200",
+              "4279.00"
+            ],
+            [
+              "0.2300",
+              "3824.00"
+            ],
+            [
+              "0.2400",
+              "7545.00"
+            ],
+            [
+              "0.2600",
+              "12773.69"
+            ],
+            [
+              "0.2700",
+              "71570.40"
+            ],
+            [
+              "0.2800",
+              "638241.60"
+            ],
+            [
+              "0.2900",
+              "855205.46"
+            ],
+            [
+              "0.3000",
+              "1162650.09"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2409361.00"
+            ],
+            [
+              "0.0200",
+              "5330.10"
+            ],
+            [
+              "0.0300",
+              "243552.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "120315.00"
+            ],
+            [
+              "0.0700",
+              "119191.00"
+            ],
+            [
+              "0.1000",
+              "33955.00"
+            ],
+            [
+              "0.1100",
+              "253913.74"
+            ],
+            [
+              "0.1500",
+              "93585.00"
+            ],
+            [
+              "0.1700",
+              "40850.00"
+            ],
+            [
+              "0.2100",
+              "31138.00"
+            ],
+            [
+              "0.2200",
+              "29432.00"
+            ],
+            [
+              "0.2500",
+              "44035.90"
+            ],
+            [
+              "0.2600",
+              "3338.00"
+            ],
+            [
+              "0.2800",
+              "24000.00"
+            ],
+            [
+              "0.3100",
+              "81926.00"
+            ],
+            [
+              "0.3200",
+              "18589.00"
+            ],
+            [
+              "0.3400",
+              "17233.00"
+            ],
+            [
+              "0.3700",
+              "49840.00"
+            ],
+            [
+              "0.3800",
+              "152.00"
+            ],
+            [
+              "0.3900",
+              "7021.00"
+            ],
+            [
+              "0.4000",
+              "4000.00"
+            ],
+            [
+              "0.4100",
+              "6213.00"
+            ],
+            [
+              "0.4300",
+              "5425.00"
+            ],
+            [
+              "0.4400",
+              "160.00"
+            ],
+            [
+              "0.4500",
+              "25215.00"
+            ],
+            [
+              "0.4600",
+              "2954.00"
+            ],
+            [
+              "0.4800",
+              "6805.00"
+            ],
+            [
+              "0.5000",
+              "18279.00"
+            ],
+            [
+              "0.5100",
+              "966.00"
+            ],
+            [
+              "0.5200",
+              "336.00"
+            ],
+            [
+              "0.5300",
+              "112.00"
+            ],
+            [
+              "0.5400",
+              "272.00"
+            ],
+            [
+              "0.5600",
+              "4001.00"
+            ],
+            [
+              "0.5800",
+              "4250.00"
+            ],
+            [
+              "0.5900",
+              "141.00"
+            ],
+            [
+              "0.6000",
+              "25291.00"
+            ],
+            [
+              "0.6100",
+              "179.00"
+            ],
+            [
+              "0.6200",
+              "888.00"
+            ],
+            [
+              "0.6300",
+              "1153.00"
+            ],
+            [
+              "0.6400",
+              "4982.00"
+            ],
+            [
+              "0.6500",
+              "11525.76"
+            ],
+            [
+              "0.6600",
+              "26987.41"
+            ],
+            [
+              "0.6700",
+              "55976.09"
+            ],
+            [
+              "0.6800",
+              "51070.17"
+            ],
+            [
+              "0.6900",
+              "41730.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -8928,11 +9315,11 @@
     "no_sub_title": "Oregon",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-18T06:00:00Z",
-    "open_interest_fp": "14438.84",
+    "open_interest_fp": "14563.86",
     "open_time": "2026-10-11T19:06:00Z",
-    "previous_price_dollars": "0.7100",
-    "previous_yes_ask_dollars": "0.7100",
-    "previous_yes_bid_dollars": "0.7000",
+    "previous_price_dollars": "0.6900",
+    "previous_yes_ask_dollars": "0.7000",
+    "previous_yes_bid_dollars": "0.6900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -8951,17 +9338,17 @@
     "ticker": "KXNCAAFGAME-26OCT17NEBORE-ORE",
     "title": "Oregon wins",
     "updated_time": "2026-10-11T19:06:00.92233Z",
-    "volume_24h_fp": "8400.08",
-    "volume_fp": "14816.21",
+    "volume_24h_fp": "4894.35",
+    "volume_fp": "14941.23",
     "yes_ask_dollars": "0.7000",
-    "yes_ask_size_fp": "1157280.11",
+    "yes_ask_size_fp": "1162650.09",
     "yes_bid_dollars": "0.6900",
-    "yes_bid_size_fp": "39398.00",
+    "yes_bid_size_fp": "41730.00",
     "yes_sub_title": "Oregon"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT17NEBORE-ORE",
-  "market_captured_at": "2026-10-17T07:14:38.423Z",
+  "market_captured_at": "2026-10-17T10:53:36.100Z",
   "status": "active",
-  "last_ingested_at": "2026-10-17T07:14:39.057Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17NEBORE-ORE/candlesticks?start_ts=1792209601&end_ts=1792221278&period_interval=60"
+  "last_ingested_at": "2026-10-17T10:53:36.735Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT17NEBORE-ORE/candlesticks?start_ts=1792220401&end_ts=1792234416&period_interval=60"
 }
