@@ -12390,6 +12390,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-17T18:57:26.406Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT072200MILSD-SD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12447,11 +12457,11 @@
     "yes_sub_title": "San Diego"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT072200MILSD-SD",
-  "market_captured_at": "2026-10-17T10:55:07.908Z",
+  "market_captured_at": "2026-10-17T18:57:22.833Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-17T10:55:11.457Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT072200MILSD-SD/candlesticks?start_ts=1792213921&end_ts=1792234508&period_interval=1",
+  "last_ingested_at": "2026-10-17T18:57:26.385Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT072200MILSD-SD/candlesticks?start_ts=1792213921&end_ts=1792263443&period_interval=1",
   "trims": [
     {
       "at": "2026-10-08T06:34:39.427Z",
