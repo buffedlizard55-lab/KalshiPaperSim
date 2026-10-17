@@ -12,7 +12,8 @@
  "captures": [
   "2026-10-17T07:04:24.028Z",
   "2026-10-17T18:00:42.409Z",
-  "2026-10-17T20:15:28.491Z"
+  "2026-10-17T20:15:28.491Z",
+  "2026-10-17T22:20:01.623Z"
  ],
  "games": {
   "849816": {
@@ -71,6 +72,21 @@
      "runs": {
       "away": null,
       "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-17T22:20:01.623Z",
+     "last_seen_at": "2026-10-17T22:20:01.623Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
      },
      "winner": null,
      "url_ref": 0
