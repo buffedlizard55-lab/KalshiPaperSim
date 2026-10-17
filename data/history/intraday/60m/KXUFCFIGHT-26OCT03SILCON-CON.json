@@ -5445,6 +5445,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-17T07:14:57.281Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT03SILCON-CON/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5502,11 +5512,11 @@
     "yes_sub_title": "Wang Cong"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT03SILCON-CON",
-  "market_captured_at": "2026-10-17T04:54:42.335Z",
+  "market_captured_at": "2026-10-17T07:14:56.619Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-17T04:54:42.948Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT03SILCON-CON/candlesticks?start_ts=1791082801&end_ts=1792212882&period_interval=60",
+  "last_ingested_at": "2026-10-17T07:14:57.252Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT03SILCON-CON/candlesticks?start_ts=1791082801&end_ts=1792221296&period_interval=60",
   "trims": [
     {
       "at": "2026-10-04T06:17:04.755Z",
