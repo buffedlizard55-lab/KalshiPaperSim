@@ -13,13 +13,14 @@
   "2026-10-16T07:47:08.527Z",
   "2026-10-16T19:06:27.646Z",
   "2026-10-16T22:06:43.096Z",
-  "2026-10-17T00:30:27.034Z"
+  "2026-10-17T00:30:27.034Z",
+  "2026-10-17T02:20:02.158Z"
  ],
  "games": {
   "849817": {
    "gamePk": 849817,
    "gameDate": "2026-10-17T00:00:00Z",
-   "officialDate": "2026-10-16",
+   "officialDate": "2026-10-18",
    "gameType": "L",
    "doubleHeader": "N",
    "gameNumber": 1,
@@ -87,6 +88,21 @@
      "runs": {
       "away": 0,
       "home": 0
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-17T02:20:02.158Z",
+     "last_seen_at": "2026-10-17T02:20:02.158Z",
+     "abstractGameState": "Final",
+     "detailedState": "Postponed",
+     "codedGameState": "D",
+     "inning": null,
+     "inningState": null,
+     "runs": {
+      "away": null,
+      "home": null
      },
      "winner": null,
      "url_ref": 0
