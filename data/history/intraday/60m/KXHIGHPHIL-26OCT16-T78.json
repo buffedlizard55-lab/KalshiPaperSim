@@ -1168,6 +1168,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-18T07:29:25.485Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26OCT16-T78/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1196,7 +1206,7 @@
     "open_time": "2026-10-15T14:00:00Z",
     "previous_price_dollars": "0.9900",
     "previous_yes_ask_dollars": "1.0000",
-    "previous_yes_bid_dollars": "0.9900",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1226,9 +1236,9 @@
     "yes_sub_title": "77° or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHPHIL-26OCT16-T78",
-  "market_captured_at": "2026-10-18T04:58:10.314Z",
+  "market_captured_at": "2026-10-18T07:29:24.836Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-18T04:58:10.929Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26OCT16-T78/candlesticks?start_ts=1792216801&end_ts=1792299490&period_interval=60",
+  "last_ingested_at": "2026-10-18T07:29:25.463Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHPHIL/markets/KXHIGHPHIL-26OCT16-T78/candlesticks?start_ts=1792216801&end_ts=1792308565&period_interval=60",
   "result": "yes"
 }

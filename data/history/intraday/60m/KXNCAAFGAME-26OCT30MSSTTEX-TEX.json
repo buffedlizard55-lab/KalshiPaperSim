@@ -593,6 +593,51 @@
         "low_dollars": "0.5400",
         "open_dollars": "0.5400"
       }
+    },
+    {
+      "end_period_ts": 1792303200,
+      "open_interest_fp": "1059.57",
+      "price": {
+        "previous_dollars": "0.5400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.8700",
+        "high_dollars": "0.9100",
+        "low_dollars": "0.7700",
+        "open_dollars": "0.8900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6200",
+        "high_dollars": "0.7200",
+        "low_dollars": "0.5500",
+        "open_dollars": "0.7200"
+      }
+    },
+    {
+      "end_period_ts": 1792306800,
+      "open_interest_fp": "1060.12",
+      "price": {
+        "close_dollars": "0.8900",
+        "high_dollars": "0.8900",
+        "low_dollars": "0.8900",
+        "mean_dollars": "0.8900",
+        "open_dollars": "0.8900",
+        "previous_dollars": "0.5400"
+      },
+      "volume_fp": "0.55",
+      "yes_ask": {
+        "close_dollars": "0.7900",
+        "high_dollars": "0.9100",
+        "low_dollars": "0.7900",
+        "open_dollars": "0.8700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6600",
+        "high_dollars": "0.7000",
+        "low_dollars": "0.5500",
+        "open_dollars": "0.6200"
+      }
     }
   ],
   "books": [
@@ -807,6 +852,246 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-18T07:31:51.966Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT30MSSTTEX-TEX/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1301430.85"
+            ],
+            [
+              "0.0200",
+              "133349.00"
+            ],
+            [
+              "0.0300",
+              "101986.00"
+            ],
+            [
+              "0.0400",
+              "37784.00"
+            ],
+            [
+              "0.0500",
+              "15640.00"
+            ],
+            [
+              "0.0600",
+              "3353.00"
+            ],
+            [
+              "0.0700",
+              "414.39"
+            ],
+            [
+              "0.0800",
+              "90.71"
+            ],
+            [
+              "0.0900",
+              "26.25"
+            ],
+            [
+              "0.1000",
+              "62.00"
+            ],
+            [
+              "0.1700",
+              "4.00"
+            ],
+            [
+              "0.1800",
+              "4.00"
+            ],
+            [
+              "0.1900",
+              "10.00"
+            ],
+            [
+              "0.2000",
+              "5.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1549097.00"
+            ],
+            [
+              "0.0200",
+              "10614.00"
+            ],
+            [
+              "0.0300",
+              "158873.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "75627.00"
+            ],
+            [
+              "0.0700",
+              "75088.00"
+            ],
+            [
+              "0.0800",
+              "45879.00"
+            ],
+            [
+              "0.1000",
+              "50.00"
+            ],
+            [
+              "0.1100",
+              "164955.00"
+            ],
+            [
+              "0.1500",
+              "58868.00"
+            ],
+            [
+              "0.1600",
+              "27267.55"
+            ],
+            [
+              "0.1800",
+              "18609.00"
+            ],
+            [
+              "0.1900",
+              "915.00"
+            ],
+            [
+              "0.2100",
+              "30304.00"
+            ],
+            [
+              "0.2400",
+              "17341.00"
+            ],
+            [
+              "0.2700",
+              "34950.00"
+            ],
+            [
+              "0.2800",
+              "18361.00"
+            ],
+            [
+              "0.2900",
+              "9354.00"
+            ],
+            [
+              "0.3100",
+              "8054.00"
+            ],
+            [
+              "0.3300",
+              "26697.00"
+            ],
+            [
+              "0.3400",
+              "1698.00"
+            ],
+            [
+              "0.3500",
+              "5754.00"
+            ],
+            [
+              "0.3600",
+              "232.00"
+            ],
+            [
+              "0.3700",
+              "4405.00"
+            ],
+            [
+              "0.3900",
+              "4151.00"
+            ],
+            [
+              "0.4100",
+              "17048.00"
+            ],
+            [
+              "0.4200",
+              "3208.00"
+            ],
+            [
+              "0.4400",
+              "13584.00"
+            ],
+            [
+              "0.4500",
+              "854.00"
+            ],
+            [
+              "0.4600",
+              "864.00"
+            ],
+            [
+              "0.4700",
+              "748.00"
+            ],
+            [
+              "0.4800",
+              "748.00"
+            ],
+            [
+              "0.4900",
+              "748.00"
+            ],
+            [
+              "0.5000",
+              "864.00"
+            ],
+            [
+              "0.5100",
+              "864.00"
+            ],
+            [
+              "0.5200",
+              "336.00"
+            ],
+            [
+              "0.5300",
+              "112.00"
+            ],
+            [
+              "0.5400",
+              "76.13"
+            ],
+            [
+              "0.5500",
+              "169.00"
+            ],
+            [
+              "0.6500",
+              "50.00"
+            ],
+            [
+              "0.6600",
+              "7.00"
+            ],
+            [
+              "0.6700",
+              "1.00"
+            ],
+            [
+              "0.6800",
+              "3.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -822,19 +1107,19 @@
     "expected_expiration_time": "2026-10-31T03:00:00Z",
     "expiration_time": "2026-11-02T00:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.5400",
+    "last_price_dollars": "0.8900",
     "latest_expiration_time": "2026-11-02T00:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.2800",
-    "no_bid_dollars": "0.1100",
+    "no_ask_dollars": "0.3200",
+    "no_bid_dollars": "0.2100",
     "no_sub_title": "Texas",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-31T03:00:00Z",
-    "open_interest_fp": "1059.57",
+    "open_interest_fp": "1060.12",
     "open_time": "2026-10-17T01:08:00Z",
-    "previous_price_dollars": "0.0000",
-    "previous_yes_ask_dollars": "0.9300",
-    "previous_yes_bid_dollars": "0.1000",
+    "previous_price_dollars": "0.3000",
+    "previous_yes_ask_dollars": "0.7800",
+    "previous_yes_bid_dollars": "0.6000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -853,17 +1138,17 @@
     "ticker": "KXNCAAFGAME-26OCT30MSSTTEX-TEX",
     "title": "Texas wins",
     "updated_time": "2026-10-17T01:08:00.2378Z",
-    "volume_24h_fp": "1200.94",
-    "volume_fp": "1200.94",
-    "yes_ask_dollars": "0.8900",
-    "yes_ask_size_fp": "1.00",
-    "yes_bid_dollars": "0.7200",
-    "yes_bid_size_fp": "5.38",
+    "volume_24h_fp": "313.49",
+    "volume_fp": "1201.49",
+    "yes_ask_dollars": "0.7900",
+    "yes_ask_size_fp": "10.00",
+    "yes_bid_dollars": "0.6800",
+    "yes_bid_size_fp": "3.00",
     "yes_sub_title": "Texas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT30MSSTTEX-TEX",
-  "market_captured_at": "2026-10-18T05:00:31.976Z",
+  "market_captured_at": "2026-10-18T07:31:51.317Z",
   "status": "active",
-  "last_ingested_at": "2026-10-18T05:00:32.596Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT30MSSTTEX-TEX/candlesticks?start_ts=1792112880&end_ts=1792299632&period_interval=60"
+  "last_ingested_at": "2026-10-18T07:31:51.944Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT30MSSTTEX-TEX/candlesticks?start_ts=1792299601&end_ts=1792308711&period_interval=60"
 }
