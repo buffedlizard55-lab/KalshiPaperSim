@@ -117,6 +117,66 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0700"
       }
+    },
+    {
+      "end_period_ts": 1792310400,
+      "open_interest_fp": "1038.79",
+      "price": {
+        "previous_dollars": "0.1200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.1200",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.1200",
+        "open_dollars": "0.1200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      }
+    },
+    {
+      "end_period_ts": 1792314000,
+      "open_interest_fp": "1038.79",
+      "price": {
+        "previous_dollars": "0.1200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.1200",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.1200",
+        "open_dollars": "0.1200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0600"
+      }
+    },
+    {
+      "end_period_ts": 1792317600,
+      "open_interest_fp": "1038.79",
+      "price": {
+        "previous_dollars": "0.1200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.1100",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.1100",
+        "open_dollars": "0.1200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0700",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0600"
+      }
     }
   ],
   "books": [
@@ -215,6 +275,118 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-18T11:15:28.029Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31UTEPNDSU-UTEP/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "99090.00"
+            ],
+            [
+              "0.0200",
+              "1614.00"
+            ],
+            [
+              "0.0300",
+              "944.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "267.00"
+            ],
+            [
+              "0.0600",
+              "350.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "404.00"
+            ],
+            [
+              "0.0900",
+              "222.00"
+            ],
+            [
+              "0.1100",
+              "116.00"
+            ],
+            [
+              "0.4600",
+              "43.00"
+            ],
+            [
+              "0.5600",
+              "17.00"
+            ],
+            [
+              "0.6600",
+              "7.00"
+            ],
+            [
+              "0.7800",
+              "140.00"
+            ],
+            [
+              "0.7900",
+              "53.00"
+            ],
+            [
+              "0.8500",
+              "20.00"
+            ],
+            [
+              "0.8600",
+              "20.00"
+            ],
+            [
+              "0.8800",
+              "964.21"
+            ],
+            [
+              "0.8900",
+              "6.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "97731.00"
+            ],
+            [
+              "0.0200",
+              "1764.00"
+            ],
+            [
+              "0.0300",
+              "500.00"
+            ],
+            [
+              "0.0400",
+              "30.00"
+            ],
+            [
+              "0.0500",
+              "11.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -233,8 +405,8 @@
     "last_price_dollars": "0.1200",
     "latest_expiration_time": "2026-11-02T19:30:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.9500",
-    "no_bid_dollars": "0.8800",
+    "no_ask_dollars": "0.9400",
+    "no_bid_dollars": "0.8900",
     "no_sub_title": "UTEP",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-31T22:30:00Z",
@@ -263,15 +435,15 @@
     "updated_time": "2026-10-17T22:07:00.33233Z",
     "volume_24h_fp": "1038.79",
     "volume_fp": "1038.79",
-    "yes_ask_dollars": "0.1200",
-    "yes_ask_size_fp": "1137.21",
-    "yes_bid_dollars": "0.0500",
-    "yes_bid_size_fp": "11.00",
+    "yes_ask_dollars": "0.1100",
+    "yes_ask_size_fp": "6.00",
+    "yes_bid_dollars": "0.0600",
+    "yes_bid_size_fp": "1.00",
     "yes_sub_title": "UTEP"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31UTEPNDSU-UTEP",
-  "market_captured_at": "2026-10-18T07:31:52.590Z",
+  "market_captured_at": "2026-10-18T11:15:27.366Z",
   "status": "active",
-  "last_ingested_at": "2026-10-18T07:31:53.218Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT31UTEPNDSU-UTEP/candlesticks?start_ts=1792188420&end_ts=1792308712&period_interval=60"
+  "last_ingested_at": "2026-10-18T11:15:27.999Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT31UTEPNDSU-UTEP/candlesticks?start_ts=1792306801&end_ts=1792322127&period_interval=60"
 }

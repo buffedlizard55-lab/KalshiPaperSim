@@ -22095,7 +22095,7 @@
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.9400",
-    "no_bid_dollars": "0.9200",
+    "no_bid_dollars": "0.9300",
     "no_sub_title": "Cleveland",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
@@ -22124,15 +22124,15 @@
     "updated_time": "2026-07-24T17:17:07.618476Z",
     "volume_24h_fp": "799.54",
     "volume_fp": "127743.20",
-    "yes_ask_dollars": "0.0800",
-    "yes_ask_size_fp": "37074.73",
+    "yes_ask_dollars": "0.0700",
+    "yes_ask_size_fp": "13.44",
     "yes_bid_dollars": "0.0600",
-    "yes_bid_size_fp": "33074.50",
+    "yes_bid_size_fp": "33083.78",
     "yes_sub_title": "Cleveland"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-CLE",
-  "market_captured_at": "2026-10-18T07:26:22.670Z",
+  "market_captured_at": "2026-10-18T11:10:17.732Z",
   "status": "active",
-  "last_ingested_at": "2026-10-18T07:26:23.194Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-CLE/candlesticks?start_ts=1792296001&end_ts=1792308382&period_interval=1440"
+  "last_ingested_at": "2026-10-18T11:10:18.266Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-CLE/candlesticks?start_ts=1792296001&end_ts=1792321817&period_interval=1440"
 }
