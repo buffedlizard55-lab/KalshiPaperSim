@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-18T17:45:32.269Z",
+ "generatedAt": "2026-10-18T20:00:18.874Z",
  "rows": [
   {
    "league": "nba",
@@ -970,6 +970,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "FLA",
+   "kalshiName": "Florida",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "AMBIGUOUS_PREFIX_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT31FLAUGA-FLA",
+     "rulesName": "Florida",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "FSU",
    "kalshiName": "Florida St.",
    "conflictWith": null,
@@ -1514,6 +1529,31 @@
     {
      "ticker": "KXNCAAFGAME-26OCT17NEBORE-ORE",
      "rulesName": "Nebraska",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT30WASHNEB-WASH",
+     "rulesName": "Nebraska",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "NEV",
+   "kalshiName": "Nevada",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT30NEVUCLA-NEV",
+     "rulesName": "Nevada",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT30NEVUCLA-UCLA",
+     "rulesName": "Nevada",
      "role": "away"
     }
    ]
@@ -2140,6 +2180,16 @@
      "ticker": "KXNCAAFGAME-26OCT23MSUUCLA-MSU",
      "rulesName": "UCLA",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT30NEVUCLA-NEV",
+     "rulesName": "UCLA",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT30NEVUCLA-UCLA",
+     "rulesName": "UCLA",
+     "role": "home"
     }
    ]
   },
@@ -2158,6 +2208,11 @@
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17AUBUGA-AUB",
+     "rulesName": "Georgia",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT31FLAUGA-FLA",
      "rulesName": "Georgia",
      "role": "home"
     },
@@ -2314,6 +2369,21 @@
     {
      "ticker": "KXNCAAFGAME-26OCT31VMICHAT-VMI",
      "rulesName": "VMI",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "WASH",
+   "kalshiName": "Washington",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT30WASHNEB-WASH",
+     "rulesName": "Washington",
      "role": "away"
     }
    ]
