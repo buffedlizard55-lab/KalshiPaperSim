@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-18T02:16:01.501Z",
+ "generatedAt": "2026-10-18T07:16:15.016Z",
  "rows": [
   {
    "league": "nba",
@@ -770,6 +770,26 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "CHAT",
+   "kalshiName": "Chattanooga",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT31VMICHAT-CHAT",
+     "rulesName": "Chattanooga",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT31VMICHAT-VMI",
+     "rulesName": "Chattanooga",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "CHS",
    "kalshiName": "Chicago St.",
    "conflictWith": null,
@@ -1335,6 +1355,16 @@
      "ticker": "KXNCAAFGAME-26OCT16MSSTLSU-LSU",
      "rulesName": "Mississippi St.",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT30MSSTTEX-MSST",
+     "rulesName": "Mississippi St.",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT30MSSTTEX-TEX",
+     "rulesName": "Mississippi St.",
+     "role": "away"
     }
    ]
   },
@@ -1370,6 +1400,26 @@
      "ticker": "KXNCAAFGAME-26OCT24MURRSDST-SDST",
      "rulesName": "Murray St.",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "NAVY",
+   "kalshiName": "Navy",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT31NDNAVY-NAVY",
+     "rulesName": "Navy",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT31NDNAVY-ND",
+     "rulesName": "Navy",
+     "role": "home"
     }
    ]
   },
@@ -1413,6 +1463,11 @@
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17NDBYU-ND",
+     "rulesName": "Notre Dame",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT31NDNAVY-NAVY",
      "rulesName": "Notre Dame",
      "role": "away"
     }
@@ -1950,6 +2005,11 @@
      "ticker": "KXNCAAFGAME-26OCT24MISSTEX-TEX",
      "rulesName": "Texas",
      "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT30MSSTTEX-MSST",
+     "rulesName": "Texas",
+     "role": "home"
     }
    ]
   },
@@ -2223,6 +2283,16 @@
    "evidence": [
     {
      "ticker": "KXNCAAFGAME-26OCT17VMIWOF-VMI",
+     "rulesName": "VMI",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT31VMICHAT-CHAT",
+     "rulesName": "VMI",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT31VMICHAT-VMI",
      "rulesName": "VMI",
      "role": "away"
     }
@@ -2907,9 +2977,9 @@
      "role": "away"
     },
     {
-     "ticker": "KXNHLGAME-26SEP20WSHBOS-BOS",
+     "ticker": "KXNHLGAME-26OCT17BOSLA-BOS",
      "rulesName": "Boston",
-     "role": "home"
+     "role": "away"
     }
    ]
   },

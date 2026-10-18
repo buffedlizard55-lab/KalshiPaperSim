@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-19",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261019"
+  ]
+ },
+ "captures": [
+  "2026-10-18T07:16:13.395Z"
+ ],
+ "events": {
+  "401873008": {
+   "eventId": "401873008",
+   "date": "2026-10-20T00:15Z",
+   "easternDate": "2026-10-19",
+   "name": "Washington Commanders at San Francisco 49ers",
+   "shortName": "WSH @ SF",
+   "week": 6,
+   "venue": "Levi's Stadium",
+   "homeAbbr": "SF",
+   "homeTeamId": "25",
+   "homeName": "San Francisco 49ers",
+   "awayAbbr": "WSH",
+   "awayTeamId": "28",
+   "awayName": "Washington Commanders",
+   "firstCapturedAt": "2026-10-18T07:16:13.395Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "SF -7.5",
+    "spread": -7.5,
+    "overUnder": 52.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-18T07:16:13.395Z",
+     "last_seen_at": "2026-10-18T07:16:13.395Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-0",
+      "away": "1-3-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-18T07:16:13.395Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261019"
+}
