@@ -2822,6 +2822,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-18T05:00:07.652Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT16BOSPHI-BOS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2847,9 +2857,9 @@
     "occurrence_datetime": "2026-10-17T02:00:00Z",
     "open_interest_fp": "1048894.45",
     "open_time": "2026-10-09T23:06:15.481074Z",
-    "previous_price_dollars": "0.4000",
-    "previous_yes_ask_dollars": "0.4000",
-    "previous_yes_bid_dollars": "0.3900",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2870,7 +2880,7 @@
     "ticker": "KXNBAGAME-26OCT16BOSPHI-BOS",
     "title": "Boston wins",
     "updated_time": "2026-10-17T01:41:32.163688Z",
-    "volume_24h_fp": "3423691.05",
+    "volume_24h_fp": "0.00",
     "volume_fp": "3487431.87",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2879,9 +2889,9 @@
     "yes_sub_title": "Boston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT16BOSPHI-BOS",
-  "market_captured_at": "2026-10-17T18:55:27.255Z",
+  "market_captured_at": "2026-10-18T05:00:07.021Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-17T18:55:27.880Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT16BOSPHI-BOS/candlesticks?start_ts=1792202401&end_ts=1792263327&period_interval=60"
+  "last_ingested_at": "2026-10-18T05:00:07.639Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT16BOSPHI-BOS/candlesticks?start_ts=1792202401&end_ts=1792299607&period_interval=60"
 }

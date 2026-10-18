@@ -3291,6 +3291,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-18T04:56:25.931Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3348,9 +3358,9 @@
     "yes_sub_title": "Chicago"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI",
-  "market_captured_at": "2026-10-17T18:51:43.358Z",
+  "market_captured_at": "2026-10-18T04:56:25.402Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-17T18:51:43.884Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-CHI/candlesticks?start_ts=1789876801&end_ts=1792263103&period_interval=1440",
+  "last_ingested_at": "2026-10-18T04:56:25.918Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-CHI/candlesticks?start_ts=1789876801&end_ts=1792299385&period_interval=1440",
   "result": "no"
 }

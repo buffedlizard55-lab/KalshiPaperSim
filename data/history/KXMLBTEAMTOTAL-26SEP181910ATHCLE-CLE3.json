@@ -987,6 +987,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-18T04:54:53.588Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1045,9 +1055,9 @@
     "yes_sub_title": "Cleveland over 2.5 runs scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3",
-  "market_captured_at": "2026-10-17T18:50:08.698Z",
+  "market_captured_at": "2026-10-18T04:54:53.057Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-17T18:50:09.224Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3/candlesticks?start_ts=1789790401&end_ts=1792263008&period_interval=1440"
+  "last_ingested_at": "2026-10-18T04:54:53.575Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181910ATHCLE-CLE3/candlesticks?start_ts=1789790401&end_ts=1792299293&period_interval=1440"
 }

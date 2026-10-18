@@ -1428,6 +1428,31 @@
         "low_dollars": "0.3200",
         "open_dollars": "0.3300"
       }
+    },
+    {
+      "end_period_ts": 1792296000,
+      "open_interest_fp": "42389.43",
+      "price": {
+        "close_dollars": "0.3200",
+        "high_dollars": "0.3400",
+        "low_dollars": "0.3200",
+        "mean_dollars": "0.3351",
+        "open_dollars": "0.3300",
+        "previous_dollars": "0.3300"
+      },
+      "volume_fp": "59.71",
+      "yes_ask": {
+        "close_dollars": "0.3300",
+        "high_dollars": "0.3400",
+        "low_dollars": "0.3300",
+        "open_dollars": "0.3300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.3200",
+        "high_dollars": "0.3200",
+        "low_dollars": "0.3200",
+        "open_dollars": "0.3200"
+      }
     }
   ],
   "books": [
@@ -24318,6 +24343,266 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-18T04:55:30.313Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-SAS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3889137.88"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0400",
+              "8.43"
+            ],
+            [
+              "0.0600",
+              "933146.00"
+            ],
+            [
+              "0.0700",
+              "15016.86"
+            ],
+            [
+              "0.1000",
+              "41.77"
+            ],
+            [
+              "0.1100",
+              "508988.00"
+            ],
+            [
+              "0.1200",
+              "2.28"
+            ],
+            [
+              "0.1300",
+              "13.29"
+            ],
+            [
+              "0.1400",
+              "20.49"
+            ],
+            [
+              "0.1500",
+              "12.94"
+            ],
+            [
+              "0.1700",
+              "6000.00"
+            ],
+            [
+              "0.2000",
+              "61.47"
+            ],
+            [
+              "0.2100",
+              "471873.00"
+            ],
+            [
+              "0.2300",
+              "1.31"
+            ],
+            [
+              "0.2500",
+              "673.05"
+            ],
+            [
+              "0.2700",
+              "312544.00"
+            ],
+            [
+              "0.2800",
+              "250.00"
+            ],
+            [
+              "0.3000",
+              "2030.00"
+            ],
+            [
+              "0.3100",
+              "225.00"
+            ],
+            [
+              "0.3300",
+              "199145.00"
+            ],
+            [
+              "0.3400",
+              "205.00"
+            ],
+            [
+              "0.3500",
+              "10.20"
+            ],
+            [
+              "0.3700",
+              "1800.00"
+            ],
+            [
+              "0.3800",
+              "34780.00"
+            ],
+            [
+              "0.3900",
+              "66734.00"
+            ],
+            [
+              "0.4000",
+              "150.00"
+            ],
+            [
+              "0.4300",
+              "139.00"
+            ],
+            [
+              "0.4600",
+              "39244.00"
+            ],
+            [
+              "0.4700",
+              "3240.00"
+            ],
+            [
+              "0.4900",
+              "300.00"
+            ],
+            [
+              "0.5000",
+              "9375.00"
+            ],
+            [
+              "0.5100",
+              "90.00"
+            ],
+            [
+              "0.5700",
+              "20.00"
+            ],
+            [
+              "0.5800",
+              "500.00"
+            ],
+            [
+              "0.5900",
+              "500.00"
+            ],
+            [
+              "0.6000",
+              "500.00"
+            ],
+            [
+              "0.6100",
+              "9416.10"
+            ],
+            [
+              "0.6200",
+              "5000.00"
+            ],
+            [
+              "0.6300",
+              "50061.07"
+            ],
+            [
+              "0.6400",
+              "20075.34"
+            ],
+            [
+              "0.6500",
+              "20021.62"
+            ],
+            [
+              "0.6600",
+              "17328.21"
+            ],
+            [
+              "0.6700",
+              "20.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1952784.75"
+            ],
+            [
+              "0.0300",
+              "147002.00"
+            ],
+            [
+              "0.0500",
+              "88200.00"
+            ],
+            [
+              "0.0700",
+              "231.00"
+            ],
+            [
+              "0.0900",
+              "2224.00"
+            ],
+            [
+              "0.1100",
+              "130599.00"
+            ],
+            [
+              "0.1300",
+              "204050.00"
+            ],
+            [
+              "0.1500",
+              "15043.00"
+            ],
+            [
+              "0.1700",
+              "53721.00"
+            ],
+            [
+              "0.2100",
+              "19872.00"
+            ],
+            [
+              "0.2200",
+              "3290.00"
+            ],
+            [
+              "0.2300",
+              "1105.00"
+            ],
+            [
+              "0.2700",
+              "231.00"
+            ],
+            [
+              "0.2800",
+              "5000.00"
+            ],
+            [
+              "0.2900",
+              "5737.64"
+            ],
+            [
+              "0.3000",
+              "4476.00"
+            ],
+            [
+              "0.3100",
+              "1433.26"
+            ],
+            [
+              "0.3200",
+              "469.92"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -24333,7 +24618,7 @@
     "expected_expiration_time": "2027-06-30T14:00:00Z",
     "expiration_time": "2029-06-29T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.3400",
+    "last_price_dollars": "0.3200",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.6800",
@@ -24343,7 +24628,7 @@
     "occurrence_datetime": "2027-06-30T14:00:00Z",
     "open_interest_fp": "42389.43",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.3400",
+    "previous_price_dollars": "0.3300",
     "previous_yes_ask_dollars": "0.3300",
     "previous_yes_bid_dollars": "0.3200",
     "price_level_structure": "linear_cent",
@@ -24364,17 +24649,17 @@
     "ticker": "KXNBAWEST-27-SAS",
     "title": "Will San Antonio win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "71.37",
-    "volume_fp": "57578.73",
+    "volume_24h_fp": "59.71",
+    "volume_fp": "57581.54",
     "yes_ask_dollars": "0.3300",
     "yes_ask_size_fp": "20.00",
     "yes_bid_dollars": "0.3200",
-    "yes_bid_size_fp": "472.73",
+    "yes_bid_size_fp": "469.92",
     "yes_sub_title": "San Antonio"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-SAS",
-  "market_captured_at": "2026-10-17T18:50:46.348Z",
+  "market_captured_at": "2026-10-18T04:55:29.784Z",
   "status": "active",
-  "last_ingested_at": "2026-10-17T18:50:46.874Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1792209601&end_ts=1792263046&period_interval=1440"
+  "last_ingested_at": "2026-10-18T04:55:30.299Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1792209601&end_ts=1792299330&period_interval=1440"
 }
