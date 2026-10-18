@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/CAC037",
       "relativeLocation": "Los Angeles, CA",
       "timeZone": "America/Los_Angeles",
-      "resolvedAt": "2026-10-18T01:09:33.694Z",
+      "resolvedAt": "2026-10-18T06:00:10.069Z",
       "pointsUrl": "https://api.weather.gov/points/33.9425,-118.4081"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -7221,6 +7221,72 @@
       "forecast_url": "https://api.weather.gov/gridpoints/LOX/148,41/forecast",
       "forecastGenerator": "BaselineForecastGenerator",
       "updateTime": "2026-10-18T00:41:41+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-10-18",
+          "highF": 79,
+          "periodName": "Sunday",
+          "startTime": "2026-10-18T06:00:00-07:00",
+          "endTime": "2026-10-18T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-19",
+          "highF": 73,
+          "periodName": "Monday",
+          "startTime": "2026-10-19T06:00:00-07:00",
+          "endTime": "2026-10-19T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-20",
+          "highF": 72,
+          "periodName": "Tuesday",
+          "startTime": "2026-10-20T06:00:00-07:00",
+          "endTime": "2026-10-20T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 4
+        },
+        {
+          "date": "2026-10-21",
+          "highF": 71,
+          "periodName": "Wednesday",
+          "startTime": "2026-10-21T06:00:00-07:00",
+          "endTime": "2026-10-21T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 59
+        },
+        {
+          "date": "2026-10-22",
+          "highF": 67,
+          "periodName": "Thursday",
+          "startTime": "2026-10-22T06:00:00-07:00",
+          "endTime": "2026-10-22T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 63
+        },
+        {
+          "date": "2026-10-23",
+          "highF": 69,
+          "periodName": "Friday",
+          "startTime": "2026-10-23T06:00:00-07:00",
+          "endTime": "2026-10-23T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 4
+        },
+        {
+          "date": "2026-10-24",
+          "highF": 72,
+          "periodName": "Saturday",
+          "startTime": "2026-10-24T06:00:00-07:00",
+          "endTime": "2026-10-24T18:00:00-07:00",
+          "probabilityOfPrecipitationPct": 5
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-10-18T06:00:10.069Z",
+      "points_url": "https://api.weather.gov/points/33.9425,-118.4081",
+      "forecast_url": "https://api.weather.gov/gridpoints/LOX/148,41/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-10-18T01:11:42+00:00",
       "units": "us",
       "days": [
         {
