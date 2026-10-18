@@ -13738,6 +13738,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-18T18:55:17.209Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-SEA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -13794,9 +13804,9 @@
     "yes_sub_title": "Seattle"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-SEA",
-  "market_captured_at": "2026-10-18T11:09:47.468Z",
+  "market_captured_at": "2026-10-18T18:55:16.644Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-18T11:09:48.001Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SEA/candlesticks?start_ts=1790308801&end_ts=1792321787&period_interval=1440",
+  "last_ingested_at": "2026-10-18T18:55:17.179Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-SEA/candlesticks?start_ts=1790308801&end_ts=1792349716&period_interval=1440",
   "result": "no"
 }
