@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-18T07:16:15.016Z",
+ "generatedAt": "2026-10-18T17:45:32.269Z",
  "rows": [
   {
    "league": "nba",
@@ -1490,6 +1490,11 @@
      "ticker": "KXNCAAFGAME-26OCT24NDSUUNM-NDSU",
      "rulesName": "North Dakota St.",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT31UTEPNDSU-UTEP",
+     "rulesName": "North Dakota St.",
+     "role": "home"
     }
    ]
   },
@@ -2255,6 +2260,21 @@
      "ticker": "KXNCAAFGAME-26OCT10STETUST-STET",
      "rulesName": "St. Thomas",
      "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "UTEP",
+   "kalshiName": "UTEP",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT31UTEPNDSU-UTEP",
+     "rulesName": "UTEP",
+     "role": "away"
     }
    ]
   },
