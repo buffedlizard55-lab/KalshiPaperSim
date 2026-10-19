@@ -12,7 +12,8 @@
   "2026-10-18T17:45:31.403Z",
   "2026-10-18T20:00:17.696Z",
   "2026-10-18T22:21:33.079Z",
-  "2026-10-19T00:27:43.350Z"
+  "2026-10-19T00:27:43.350Z",
+  "2026-10-19T02:31:28.631Z"
  ],
  "events": {
   "401918306": {
@@ -39,7 +40,7 @@
    "states": [
     {
      "captured_at": "2026-10-18T07:16:13.909Z",
-     "last_seen_at": "2026-10-19T00:27:43.350Z",
+     "last_seen_at": "2026-10-19T02:31:28.631Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -60,6 +61,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-19T00:27:43.350Z",
+ "last_ingested_at": "2026-10-19T02:31:28.631Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261019"
 }
