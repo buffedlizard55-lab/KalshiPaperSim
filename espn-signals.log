@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-19T20:20:38.736Z",
+ "startedAt": "2026-10-19T23:49:08.700Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -49,7 +49,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 95
+     "playerRecords": 90
     },
     "scoreboard": {
      "2026-10-19": {
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 130
+     "playerRecords": 128
     },
     "scoreboard": {
      "2026-10-19": {
@@ -156,7 +156,7 @@
       "ok": true,
       "status": 200,
       "events": 4,
-      "stateRows": 4
+      "stateRows": 7
      },
      "2026-10-20": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261020",
@@ -208,7 +208,7 @@
   "matched": 86,
   "unmapped": 83
  },
- "finishedAt": "2026-10-19T20:20:40.847Z"
+ "finishedAt": "2026-10-19T23:49:10.800Z"
 }
 {
  "ok": true,
@@ -220,11 +220,11 @@
   "codeRows": 169
  }
 }
-✓ src/accumulated-history.js — 190 market(s), 16394 bar(s), 25458.0 KB
-✓ src/forecast-data.js — 9 location(s), 1055 snapshot(s), 2083.4 KB
-✓ src/fda-signal-data.js — 6 subject(s), 548 snapshot(s), 367.7 KB
-✓ src/mlb-signal-data.js — 28 date file(s), 158 game(s), 599 state row(s), 400.5 KB
-✓ src/espn-signal-data.js — 7 league(s), 619 event(s), 40673.2 KB
+✓ src/accumulated-history.js — 190 market(s), 16394 bar(s), 25598.9 KB
+✓ src/forecast-data.js — 9 location(s), 1064 snapshot(s), 2101.1 KB
+✓ src/fda-signal-data.js — 6 subject(s), 554 snapshot(s), 371.7 KB
+✓ src/mlb-signal-data.js — 28 date file(s), 158 game(s), 600 state row(s), 401.0 KB
+✓ src/espn-signal-data.js — 7 league(s), 619 event(s), 40744.1 KB
 ✓ src/mlb-pregame-data.js — 0 date file(s), 0 row(s), 2.1 KB (no predictions yet — MLBPreGame_ModelEdge abstains)
 ✓ src/form4-signal-data.js — 0 issuer(s), 0 filing(s), 1.3 KB (no archive yet — insider strategies abstain)
     JPMCEOCHANGE-27: 311 bar(s) + market object
@@ -417,11 +417,11 @@
     KXOPENAICEOCHANGE-26: 291 bar(s) + market object
     KXTESLACEOCHANGE-26: 0 bar(s) + market object
     TESLACEOCHANGE-26: 400 bar(s) + market object
-    intraday 1m: 1428 market(s), 87442 shipped bar(s) (cap 400/market) from data/history/intraday/1m
-    intraday 60m: 788 market(s), 74613 shipped bar(s) (cap 400/market) from data/history/intraday/60m
-desk-data: 106 markets (88 open) · 1464 ladder captures · 7149 bars · 117 quoted-only · 2184 KB → src/desk-data.js
-desk-data: 245 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
-desk-data: capture bound — the store holds 61759 ladders (21269 non-empty) in 128 batches; this module keeps 1464 ladders in 129 batches (128 store batch(es) represented, 0 not) — 0 season round stamp(s) and 60294 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
+    intraday 1m: 1454 market(s), 87858 shipped bar(s) (cap 400/market) from data/history/intraday/1m
+    intraday 60m: 789 market(s), 74689 shipped bar(s) (cap 400/market) from data/history/intraday/60m
+desk-data: 106 markets (85 open) · 1467 ladder captures · 7154 bars · 117 quoted-only · 2186 KB → src/desk-data.js
+desk-data: 246 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
+desk-data: capture bound — the store holds 62257 ladders (21415 non-empty) in 129 batches; this module keeps 1467 ladders in 130 batches (129 store batch(es) represented, 0 not) — 0 season round stamp(s) and 60789 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
   wrote VERIFICATION.md (99.5 KB)
   wrote IRREGULARITIES.md (123.1 KB)
   README.md AUTO blocks already up to date

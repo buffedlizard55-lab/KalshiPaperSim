@@ -9,7 +9,8 @@
  },
  "captures": [
   "2026-10-19T08:21:26.625Z",
-  "2026-10-19T20:20:39.278Z"
+  "2026-10-19T20:20:39.278Z",
+  "2026-10-19T23:49:09.257Z"
  ],
  "events": {
   "401909088": {
@@ -36,7 +37,7 @@
    "states": [
     {
      "captured_at": "2026-10-19T08:21:26.625Z",
-     "last_seen_at": "2026-10-19T20:20:39.278Z",
+     "last_seen_at": "2026-10-19T23:49:09.257Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -80,7 +81,7 @@
    "states": [
     {
      "captured_at": "2026-10-19T08:21:26.625Z",
-     "last_seen_at": "2026-10-19T20:20:39.278Z",
+     "last_seen_at": "2026-10-19T23:49:09.257Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -124,7 +125,7 @@
    "states": [
     {
      "captured_at": "2026-10-19T08:21:26.625Z",
-     "last_seen_at": "2026-10-19T20:20:39.278Z",
+     "last_seen_at": "2026-10-19T23:49:09.257Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -145,6 +146,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-19T20:20:39.278Z",
+ "last_ingested_at": "2026-10-19T23:49:09.257Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261020"
 }
