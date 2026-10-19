@@ -1,0 +1,149 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-20",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261020"
+  ]
+ },
+ "captures": [
+  "2026-10-19T08:21:26.625Z"
+ ],
+ "events": {
+  "401909088": {
+   "eventId": "401909088",
+   "date": "2026-10-20T19:00Z",
+   "easternDate": "2026-10-20",
+   "name": "Boston Celtics at Detroit Pistons",
+   "shortName": "BOS @ DET",
+   "week": null,
+   "venue": "Little Caesars Arena",
+   "homeAbbr": "DET",
+   "homeTeamId": "8",
+   "homeName": "Detroit Pistons",
+   "awayAbbr": "BOS",
+   "awayTeamId": "2",
+   "awayName": "Boston Celtics",
+   "firstCapturedAt": "2026-10-19T08:21:26.625Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "DET -1.5",
+    "spread": -1.5,
+    "overUnder": 222.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-19T08:21:26.625Z",
+     "last_seen_at": "2026-10-19T08:21:26.625Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0",
+      "away": "0-0"
+     }
+    }
+   ]
+  },
+  "401909089": {
+   "eventId": "401909089",
+   "date": "2026-10-20T23:00Z",
+   "easternDate": "2026-10-20",
+   "name": "Philadelphia 76ers at New York Knicks",
+   "shortName": "PHI @ NY",
+   "week": null,
+   "venue": "Madison Square Garden",
+   "homeAbbr": "NY",
+   "homeTeamId": "18",
+   "homeName": "New York Knicks",
+   "awayAbbr": "PHI",
+   "awayTeamId": "20",
+   "awayName": "Philadelphia 76ers",
+   "firstCapturedAt": "2026-10-19T08:21:26.625Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "NY -4.5",
+    "spread": -4.5,
+    "overUnder": 231.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-19T08:21:26.625Z",
+     "last_seen_at": "2026-10-19T08:21:26.625Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0",
+      "away": "0-0"
+     }
+    }
+   ]
+  },
+  "401909090": {
+   "eventId": "401909090",
+   "date": "2026-10-21T01:30Z",
+   "easternDate": "2026-10-20",
+   "name": "Oklahoma City Thunder at San Antonio Spurs",
+   "shortName": "OKC @ SA",
+   "week": null,
+   "venue": "Frost Bank Center",
+   "homeAbbr": "SA",
+   "homeTeamId": "24",
+   "homeName": "San Antonio Spurs",
+   "awayAbbr": "OKC",
+   "awayTeamId": "25",
+   "awayName": "Oklahoma City Thunder",
+   "firstCapturedAt": "2026-10-19T08:21:26.625Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "SA -2.5",
+    "spread": -2.5,
+    "overUnder": 231.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-19T08:21:26.625Z",
+     "last_seen_at": "2026-10-19T08:21:26.625Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0",
+      "away": "0-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-19T08:21:26.625Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261020"
+}

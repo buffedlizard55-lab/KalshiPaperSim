@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-19T02:31:29.229Z",
+ "generatedAt": "2026-10-19T08:21:28.290Z",
  "rows": [
   {
    "league": "nba",
@@ -1044,6 +1044,21 @@
     {
      "ticker": "KXNCAAFGAME-26SEP26HCUUNT-UNT",
      "rulesName": "Houston Christian",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "HOU",
+   "kalshiName": "Houston",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT24HOUUTAH-HOU",
+     "rulesName": "Houston",
      "role": "away"
     }
    ]
@@ -2314,6 +2329,21 @@
     {
      "ticker": "KXNCAAFGAME-26OCT10STETUST-STET",
      "rulesName": "St. Thomas",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "UTAH",
+   "kalshiName": "Utah",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT24HOUUTAH-HOU",
+     "rulesName": "Utah",
      "role": "home"
     }
    ]
@@ -4289,6 +4319,14 @@
   },
   {
    "ticker": "KXNFLGAME-26OCT15SEADEN-SEA",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT18DALGB-DAL",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT18DALGB-GB",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {

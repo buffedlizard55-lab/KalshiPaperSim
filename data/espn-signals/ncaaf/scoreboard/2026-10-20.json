@@ -1,0 +1,149 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-20",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261020"
+  ]
+ },
+ "captures": [
+  "2026-10-19T08:21:26.786Z"
+ ],
+ "events": {
+  "401871055": {
+   "eventId": "401871055",
+   "date": "2026-10-20T23:00Z",
+   "easternDate": "2026-10-20",
+   "name": "Middle Tennessee Blue Raiders at Florida International Panthers",
+   "shortName": "MTSU @ FIU",
+   "week": 8,
+   "venue": "Pitbull Stadium",
+   "homeAbbr": "FIU",
+   "homeTeamId": "2229",
+   "homeName": "Florida International Panthers",
+   "awayAbbr": "MTSU",
+   "awayTeamId": "2393",
+   "awayName": "Middle Tennessee Blue Raiders",
+   "firstCapturedAt": "2026-10-19T08:21:26.786Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "FIU -10.5",
+    "spread": -10.5,
+    "overUnder": 45.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-19T08:21:26.786Z",
+     "last_seen_at": "2026-10-19T08:21:26.786Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-3",
+      "away": "3-3"
+     }
+    }
+   ]
+  },
+  "401871069": {
+   "eventId": "401871069",
+   "date": "2026-10-20T23:00Z",
+   "easternDate": "2026-10-20",
+   "name": "Missouri State Bears at Delaware Blue Hens",
+   "shortName": "MOST @ DEL",
+   "week": 8,
+   "venue": "Delaware Stadium",
+   "homeAbbr": "DEL",
+   "homeTeamId": "48",
+   "homeName": "Delaware Blue Hens",
+   "awayAbbr": "MOST",
+   "awayTeamId": "2623",
+   "awayName": "Missouri State Bears",
+   "firstCapturedAt": "2026-10-19T08:21:26.786Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "DEL -3",
+    "spread": -3,
+    "overUnder": 51.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-19T08:21:26.786Z",
+     "last_seen_at": "2026-10-19T08:21:26.786Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-4",
+      "away": "2-4"
+     }
+    }
+   ]
+  },
+  "401871092": {
+   "eventId": "401871092",
+   "date": "2026-10-20T23:30Z",
+   "easternDate": "2026-10-20",
+   "name": "South Alabama Jaguars at Marshall Thundering Herd",
+   "shortName": "USA @ MRSH",
+   "week": 8,
+   "venue": "Joan C. Edwards Stadium",
+   "homeAbbr": "MRSH",
+   "homeTeamId": "276",
+   "homeName": "Marshall Thundering Herd",
+   "awayAbbr": "USA",
+   "awayTeamId": "6",
+   "awayName": "South Alabama Jaguars",
+   "firstCapturedAt": "2026-10-19T08:21:26.786Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "USA -2.5",
+    "spread": 2.5,
+    "overUnder": 64.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-19T08:21:26.786Z",
+     "last_seen_at": "2026-10-19T08:21:26.786Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-3",
+      "away": "4-2"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-19T08:21:26.786Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261020"
+}
