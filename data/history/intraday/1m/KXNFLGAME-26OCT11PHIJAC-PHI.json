@@ -12315,6 +12315,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T13:31:15.060Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT11PHIJAC-PHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12337,7 +12347,7 @@
     "no_bid_dollars": "0.0000",
     "no_sub_title": "Philadelphia",
     "notional_value_dollars": "1.0000",
-    "occurrence_datetime": "2026-10-11T16:30:00Z",
+    "occurrence_datetime": "2026-10-11T17:13:07Z",
     "open_interest_fp": "13220534.56",
     "open_time": "2026-09-29T04:05:00Z",
     "previous_price_dollars": "0.0100",
@@ -12362,7 +12372,7 @@
     "strike_type": "structured",
     "ticker": "KXNFLGAME-26OCT11PHIJAC-PHI",
     "title": "Philadelphia wins",
-    "updated_time": "2026-10-11T17:21:09.985334Z",
+    "updated_time": "2026-10-19T12:36:30.131732Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "31895240.90",
     "yes_ask_dollars": "1.0000",
@@ -12372,11 +12382,11 @@
     "yes_sub_title": "Philadelphia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT11PHIJAC-PHI",
-  "market_captured_at": "2026-10-19T08:11:34.939Z",
+  "market_captured_at": "2026-10-19T13:31:12.053Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-19T08:11:37.807Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT11PHIJAC-PHI/candlesticks?start_ts=1792343821&end_ts=1792397495&period_interval=1",
+  "last_ingested_at": "2026-10-19T13:31:15.028Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT11PHIJAC-PHI/candlesticks?start_ts=1792343821&end_ts=1792416672&period_interval=1",
   "trims": [
     {
       "at": "2026-10-11T20:43:26.065Z",

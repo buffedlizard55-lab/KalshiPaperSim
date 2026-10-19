@@ -12265,6 +12265,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T13:29:48.135Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT12BUFLAR-BUF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12287,7 +12297,7 @@
     "no_bid_dollars": "0.0000",
     "no_sub_title": "Buffalo",
     "notional_value_dollars": "1.0000",
-    "occurrence_datetime": "2026-10-13T03:15:00Z",
+    "occurrence_datetime": "2026-10-13T03:44:50Z",
     "open_interest_fp": "20953633.09",
     "open_time": "2026-09-29T04:06:00Z",
     "previous_price_dollars": "0.9900",
@@ -12312,7 +12322,7 @@
     "strike_type": "structured",
     "ticker": "KXNFLGAME-26OCT12BUFLAR-BUF",
     "title": "Buffalo wins",
-    "updated_time": "2026-10-13T04:48:34.353977Z",
+    "updated_time": "2026-10-19T12:36:54.028154Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "57487787.45",
     "yes_ask_dollars": "1.0000",
@@ -12322,11 +12332,11 @@
     "yes_sub_title": "Buffalo"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT12BUFLAR-BUF",
-  "market_captured_at": "2026-10-19T08:10:11.901Z",
+  "market_captured_at": "2026-10-19T13:29:45.459Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-19T08:10:14.450Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT12BUFLAR-BUF/candlesticks?start_ts=1792381741&end_ts=1792397412&period_interval=1",
+  "last_ingested_at": "2026-10-19T13:29:48.104Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT12BUFLAR-BUF/candlesticks?start_ts=1792381741&end_ts=1792416585&period_interval=1",
   "trims": [
     {
       "at": "2026-10-13T07:08:19.115Z",

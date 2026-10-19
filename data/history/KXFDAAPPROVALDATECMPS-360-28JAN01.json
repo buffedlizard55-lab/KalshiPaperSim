@@ -14881,6 +14881,66 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T13:32:47.160Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-28JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2272.00"
+            ],
+            [
+              "0.0200",
+              "110.00"
+            ],
+            [
+              "0.0700",
+              "202.00"
+            ],
+            [
+              "0.0800",
+              "7.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5605.00"
+            ],
+            [
+              "0.0300",
+              "3333.00"
+            ],
+            [
+              "0.0600",
+              "38.00"
+            ],
+            [
+              "0.3500",
+              "1.00"
+            ],
+            [
+              "0.3900",
+              "303.00"
+            ],
+            [
+              "0.4000",
+              "46.00"
+            ],
+            [
+              "0.8400",
+              "200.00"
+            ],
+            [
+              "0.8500",
+              "5.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -14906,8 +14966,8 @@
     "open_interest_fp": "554.66",
     "open_time": "2026-03-24T14:00:00Z",
     "previous_price_dollars": "0.9200",
-    "previous_yes_ask_dollars": "0.9200",
-    "previous_yes_bid_dollars": "0.8500",
+    "previous_yes_ask_dollars": "0.9100",
+    "previous_yes_bid_dollars": "0.8800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -14935,8 +14995,8 @@
     "yes_sub_title": "Before 2028"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-28JAN01",
-  "market_captured_at": "2026-10-19T08:13:05.358Z",
+  "market_captured_at": "2026-10-19T13:32:46.494Z",
   "status": "active",
-  "last_ingested_at": "2026-10-19T08:13:05.976Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-28JAN01/candlesticks?start_ts=1792382401&end_ts=1792397585&period_interval=1440"
+  "last_ingested_at": "2026-10-19T13:32:47.128Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-28JAN01/candlesticks?start_ts=1792382401&end_ts=1792416766&period_interval=1440"
 }

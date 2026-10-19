@@ -1019,6 +1019,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T13:25:35.031Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT18-B56.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1034,7 +1044,7 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-10-19T19:00:00Z",
     "expiration_time": "2026-10-25T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "57.00",
     "floor_strike": 56,
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-25T14:00:00Z",
@@ -1046,9 +1056,9 @@
     "occurrence_datetime": "2026-10-19T14:00:00Z",
     "open_interest_fp": "37611.82",
     "open_time": "2026-10-17T14:00:00Z",
-    "previous_price_dollars": "0.4900",
-    "previous_yes_ask_dollars": "0.5000",
-    "previous_yes_bid_dollars": "0.4900",
+    "previous_price_dollars": "0.4600",
+    "previous_yes_ask_dollars": "0.4700",
+    "previous_yes_bid_dollars": "0.4600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1057,17 +1067,19 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If the maximum temperature recorded at New York City (CLINYC) for Oct 18, 2026, is between 56-57° fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
-    "status": "closed",
+    "settlement_ts": "2026-10-19T11:08:56.787092Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "between",
     "ticker": "KXHIGHNY-26OCT18-B56.5",
     "title": "Will the maximum temperature be 56-57° on Oct 18, 2026?",
-    "updated_time": "2026-10-19T05:00:00.149247Z",
-    "volume_24h_fp": "48748.80",
+    "updated_time": "2026-10-19T11:08:57.150446Z",
+    "volume_24h_fp": "47525.78",
     "volume_fp": "52434.32",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1076,8 +1088,9 @@
     "yes_sub_title": "56° to 57°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT18-B56.5",
-  "market_captured_at": "2026-10-19T08:06:09.592Z",
-  "status": "closed",
-  "last_ingested_at": "2026-10-19T08:06:10.214Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26OCT18-B56.5/candlesticks?start_ts=1792386001&end_ts=1792397169&period_interval=60"
+  "market_captured_at": "2026-10-19T13:25:34.366Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-19T13:25:35.000Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26OCT18-B56.5/candlesticks?start_ts=1792389601&end_ts=1792416334&period_interval=60",
+  "result": "yes"
 }

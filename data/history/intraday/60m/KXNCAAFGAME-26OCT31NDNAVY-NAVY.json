@@ -925,6 +925,111 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1792400400,
+      "open_interest_fp": "51533.94",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1792404000,
+      "open_interest_fp": "51533.94",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1792407600,
+      "open_interest_fp": "51533.94",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1792411200,
+      "open_interest_fp": "61439.41",
+      "price": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "mean_dollars": "0.0200",
+        "open_dollars": "0.0200",
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "9905.47",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1792414800,
+      "open_interest_fp": "61439.41",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
     }
   ],
   "books": [
@@ -1495,6 +1600,126 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T13:26:46.143Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31NDNAVY-NAVY/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "12460.00"
+            ],
+            [
+              "0.0200",
+              "9054.00"
+            ],
+            [
+              "0.0300",
+              "7704.00"
+            ],
+            [
+              "0.0400",
+              "8797.00"
+            ],
+            [
+              "0.0500",
+              "667.00"
+            ],
+            [
+              "0.0600",
+              "350.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "28.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1400",
+              "935.80"
+            ],
+            [
+              "0.1500",
+              "28.00"
+            ],
+            [
+              "0.1700",
+              "193.00"
+            ],
+            [
+              "0.4700",
+              "165.00"
+            ],
+            [
+              "0.4800",
+              "42.47"
+            ],
+            [
+              "0.5200",
+              "76.00"
+            ],
+            [
+              "0.6200",
+              "32.00"
+            ],
+            [
+              "0.6400",
+              "93.58"
+            ],
+            [
+              "0.6500",
+              "42.47"
+            ],
+            [
+              "0.7200",
+              "6.00"
+            ],
+            [
+              "0.8800",
+              "390.00"
+            ],
+            [
+              "0.9300",
+              "350.00"
+            ],
+            [
+              "0.9400",
+              "2037.95"
+            ],
+            [
+              "0.9500",
+              "84.94"
+            ],
+            [
+              "0.9600",
+              "1940.00"
+            ],
+            [
+              "0.9700",
+              "158.23"
+            ],
+            [
+              "0.9800",
+              "959066.38"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7083.42"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1518,7 +1743,7 @@
     "no_sub_title": "Navy",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-31T19:00:00Z",
-    "open_interest_fp": "51533.94",
+    "open_interest_fp": "61439.41",
     "open_time": "2026-10-17T16:06:00Z",
     "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0200",
@@ -1541,17 +1766,17 @@
     "ticker": "KXNCAAFGAME-26OCT31NDNAVY-NAVY",
     "title": "Navy wins",
     "updated_time": "2026-10-17T16:06:01.719429Z",
-    "volume_24h_fp": "35961.31",
-    "volume_fp": "54388.13",
+    "volume_24h_fp": "32707.88",
+    "volume_fp": "64293.60",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "968340.73",
+    "yes_ask_size_fp": "959066.38",
     "yes_bid_dollars": "0.0100",
     "yes_bid_size_fp": "7083.42",
     "yes_sub_title": "Navy"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31NDNAVY-NAVY",
-  "market_captured_at": "2026-10-19T08:07:18.323Z",
+  "market_captured_at": "2026-10-19T13:26:45.474Z",
   "status": "active",
-  "last_ingested_at": "2026-10-19T08:07:18.947Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT31NDNAVY-NAVY/candlesticks?start_ts=1792386001&end_ts=1792397238&period_interval=60"
+  "last_ingested_at": "2026-10-19T13:26:46.111Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT31NDNAVY-NAVY/candlesticks?start_ts=1792396801&end_ts=1792416405&period_interval=60"
 }
