@@ -5280,6 +5280,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T21:20:45.243Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT11BALATL-BAL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5337,11 +5347,11 @@
     "yes_sub_title": "Baltimore"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT11BALATL-BAL",
-  "market_captured_at": "2026-10-19T13:26:06.436Z",
+  "market_captured_at": "2026-10-19T21:20:44.597Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-19T13:26:07.072Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT11BALATL-BAL/candlesticks?start_ts=1791777601&end_ts=1792416366&period_interval=60",
+  "last_ingested_at": "2026-10-19T21:20:45.221Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT11BALATL-BAL/candlesticks?start_ts=1791777601&end_ts=1792444844&period_interval=60",
   "trims": [
     {
       "at": "2026-10-12T06:23:20.053Z",

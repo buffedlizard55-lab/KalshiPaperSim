@@ -2536,6 +2536,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T21:16:56.162Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2595,9 +2605,9 @@
     "yes_sub_title": "Kyle Pitts Sr."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8",
-  "market_captured_at": "2026-10-19T13:22:19.930Z",
+  "market_captured_at": "2026-10-19T21:16:55.613Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-19T13:22:20.464Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/candlesticks?start_ts=1789963201&end_ts=1792416140&period_interval=1440",
+  "last_ingested_at": "2026-10-19T21:16:56.140Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20CARATL-ATLKPITTS8/candlesticks?start_ts=1789963201&end_ts=1792444615&period_interval=1440",
   "result": "no"
 }

@@ -21331,6 +21331,198 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T21:15:53.887Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31250/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142876.78"
+            ],
+            [
+              "0.0200",
+              "250.00"
+            ],
+            [
+              "0.0300",
+              "166.00"
+            ],
+            [
+              "0.0400",
+              "125.00"
+            ],
+            [
+              "0.0500",
+              "252.00"
+            ],
+            [
+              "0.0700",
+              "10000.00"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1700",
+              "4000.00"
+            ],
+            [
+              "0.1800",
+              "600.00"
+            ],
+            [
+              "0.2700",
+              "2000.00"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.3700",
+              "1200.00"
+            ],
+            [
+              "0.3800",
+              "23.48"
+            ],
+            [
+              "0.4500",
+              "88.00"
+            ],
+            [
+              "0.4700",
+              "400.00"
+            ],
+            [
+              "0.4800",
+              "83.00"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5100",
+              "78.00"
+            ],
+            [
+              "0.5400",
+              "64.00"
+            ],
+            [
+              "0.5700",
+              "61.00"
+            ],
+            [
+              "0.6000",
+              "58.00"
+            ],
+            [
+              "0.6200",
+              "20.00"
+            ],
+            [
+              "0.6300",
+              "67.00"
+            ],
+            [
+              "0.6600",
+              "45.00"
+            ],
+            [
+              "0.6900",
+              "43.00"
+            ],
+            [
+              "0.7000",
+              "2087.03"
+            ],
+            [
+              "0.7200",
+              "34.00"
+            ],
+            [
+              "0.7500",
+              "33.00"
+            ],
+            [
+              "0.7600",
+              "11.74"
+            ],
+            [
+              "0.7800",
+              "32.00"
+            ],
+            [
+              "0.8000",
+              "1768.41"
+            ],
+            [
+              "0.8100",
+              "30.00"
+            ],
+            [
+              "0.8400",
+              "29.00"
+            ],
+            [
+              "0.8600",
+              "2000.00"
+            ],
+            [
+              "0.8700",
+              "2061.42"
+            ],
+            [
+              "0.8800",
+              "2819.91"
+            ],
+            [
+              "0.8900",
+              "702.19"
+            ],
+            [
+              "0.9000",
+              "980.22"
+            ],
+            [
+              "0.9100",
+              "596.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "645.78"
+            ],
+            [
+              "0.0200",
+              "3253.86"
+            ],
+            [
+              "0.0300",
+              "2145.80"
+            ],
+            [
+              "0.0400",
+              "149.03"
+            ],
+            [
+              "0.0500",
+              "1108.06"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -21344,14 +21536,14 @@
     "expiration_time": "2027-01-08T00:00:00Z",
     "expiration_value": "",
     "floor_strike": 31000,
-    "last_price_dollars": "0.0300",
+    "last_price_dollars": "0.0800",
     "latest_expiration_time": "2027-01-08T00:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.9700",
-    "no_bid_dollars": "0.9600",
+    "no_ask_dollars": "0.9500",
+    "no_bid_dollars": "0.9100",
     "no_sub_title": "31,000 to 31,499.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "101741.13",
+    "open_interest_fp": "105031.85",
     "open_time": "2025-12-23T15:00:00Z",
     "previous_price_dollars": "0.0400",
     "previous_yes_ask_dollars": "0.0400",
@@ -21375,17 +21567,17 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-B31250",
     "title": "Will the Nasdaq-100 be between 31000 and 31499.99 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:46.216957Z",
-    "volume_24h_fp": "12.00",
-    "volume_fp": "156276.75",
-    "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "2255.77",
-    "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "1787.18",
+    "volume_24h_fp": "3432.07",
+    "volume_fp": "159696.82",
+    "yes_ask_dollars": "0.0900",
+    "yes_ask_size_fp": "596.00",
+    "yes_bid_dollars": "0.0500",
+    "yes_bid_size_fp": "1108.06",
     "yes_sub_title": "31,000 to 31,499.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B31250",
-  "market_captured_at": "2026-10-19T13:21:32.167Z",
+  "market_captured_at": "2026-10-19T21:15:53.342Z",
   "status": "active",
-  "last_ingested_at": "2026-10-19T13:21:32.701Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B31250/candlesticks?start_ts=1792382401&end_ts=1792416092&period_interval=1440"
+  "last_ingested_at": "2026-10-19T21:15:53.865Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B31250/candlesticks?start_ts=1792382401&end_ts=1792444553&period_interval=1440"
 }
