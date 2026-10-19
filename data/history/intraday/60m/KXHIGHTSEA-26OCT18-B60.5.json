@@ -932,6 +932,46 @@
         "low_dollars": "0.9900",
         "open_dollars": "0.9900"
       }
+    },
+    {
+      "end_period_ts": 1792389600,
+      "open_interest_fp": "17488.99",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    },
+    {
+      "end_period_ts": 1792393200,
+      "open_interest_fp": "17488.99",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -1077,6 +1117,16 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T08:05:28.283Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26OCT18-B60.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1097,7 +1147,7 @@
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-25T14:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.0100",
+    "no_ask_dollars": "1.0000",
     "no_bid_dollars": "0.0000",
     "no_sub_title": "60° to 61°",
     "notional_value_dollars": "1.0000",
@@ -1105,8 +1155,8 @@
     "open_interest_fp": "17488.99",
     "open_time": "2026-10-17T14:00:00Z",
     "previous_price_dollars": "0.3300",
-    "previous_yes_ask_dollars": "0.3300",
-    "previous_yes_bid_dollars": "0.3200",
+    "previous_yes_ask_dollars": "0.3500",
+    "previous_yes_bid_dollars": "0.2900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1120,22 +1170,22 @@
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
-    "status": "active",
+    "status": "closed",
     "strike_type": "between",
     "ticker": "KXHIGHTSEA-26OCT18-B60.5",
     "title": "Will the maximum temperature be 60-61° on Oct 18, 2026?",
-    "updated_time": "2026-10-17T14:00:02.347267Z",
-    "volume_24h_fp": "20860.34",
+    "updated_time": "2026-10-19T08:00:00.148993Z",
+    "volume_24h_fp": "20758.70",
     "volume_fp": "21393.64",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
-    "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "8512.50",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "60° to 61°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26OCT18-B60.5",
-  "market_captured_at": "2026-10-19T05:08:16.635Z",
-  "status": "active",
-  "last_ingested_at": "2026-10-19T05:08:17.303Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26OCT18-B60.5/candlesticks?start_ts=1792159200&end_ts=1792386496&period_interval=60"
+  "market_captured_at": "2026-10-19T08:05:27.645Z",
+  "status": "closed",
+  "last_ingested_at": "2026-10-19T08:05:28.266Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26OCT18-B60.5/candlesticks?start_ts=1792386001&end_ts=1792397127&period_interval=60"
 }
