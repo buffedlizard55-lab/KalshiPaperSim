@@ -1220,6 +1220,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T05:09:07.427Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT17-B62.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1247,9 +1257,9 @@
     "occurrence_datetime": "2026-10-18T14:00:00Z",
     "open_interest_fp": "29269.75",
     "open_time": "2026-10-16T14:00:00Z",
-    "previous_price_dollars": "0.9000",
-    "previous_yes_ask_dollars": "0.9100",
-    "previous_yes_bid_dollars": "0.8900",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1270,7 +1280,7 @@
     "ticker": "KXHIGHNY-26OCT17-B62.5",
     "title": "Will the maximum temperature be 62-63° on Oct 17, 2026?",
     "updated_time": "2026-10-18T11:18:22.150314Z",
-    "volume_24h_fp": "19959.85",
+    "volume_24h_fp": "0.00",
     "volume_fp": "52047.92",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1279,9 +1289,9 @@
     "yes_sub_title": "62° to 63°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT17-B62.5",
-  "market_captured_at": "2026-10-18T19:00:14.414Z",
+  "market_captured_at": "2026-10-19T05:09:06.705Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-18T19:00:15.050Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26OCT17-B62.5/candlesticks?start_ts=1792303201&end_ts=1792350014&period_interval=60",
+  "last_ingested_at": "2026-10-19T05:09:07.368Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26OCT17-B62.5/candlesticks?start_ts=1792303201&end_ts=1792386547&period_interval=60",
   "result": "yes"
 }

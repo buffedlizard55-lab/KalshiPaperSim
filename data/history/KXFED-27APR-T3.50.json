@@ -1258,6 +1258,26 @@
         "low_dollars": "0.9000",
         "open_dollars": "0.9000"
       }
+    },
+    {
+      "end_period_ts": 1792382400,
+      "open_interest_fp": "2855.68",
+      "price": {
+        "previous_dollars": "0.9500"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9000",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.9000",
+        "open_dollars": "0.9000"
+      }
     }
   ],
   "books": [
@@ -11352,6 +11372,134 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T05:03:08.062Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T3.50/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0200",
+              "500.00"
+            ],
+            [
+              "0.0300",
+              "66.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "732090.00"
+            ],
+            [
+              "0.0200",
+              "6550.00"
+            ],
+            [
+              "0.0300",
+              "6520.00"
+            ],
+            [
+              "0.0900",
+              "65157.00"
+            ],
+            [
+              "0.1800",
+              "22967.00"
+            ],
+            [
+              "0.2300",
+              "550.00"
+            ],
+            [
+              "0.2700",
+              "6347.00"
+            ],
+            [
+              "0.2900",
+              "1.00"
+            ],
+            [
+              "0.3600",
+              "2276.00"
+            ],
+            [
+              "0.4000",
+              "7879.00"
+            ],
+            [
+              "0.4100",
+              "342.00"
+            ],
+            [
+              "0.4500",
+              "2750.00"
+            ],
+            [
+              "0.5100",
+              "4818.00"
+            ],
+            [
+              "0.5200",
+              "1153.00"
+            ],
+            [
+              "0.5300",
+              "128.25"
+            ],
+            [
+              "0.5500",
+              "200.00"
+            ],
+            [
+              "0.5600",
+              "203.04"
+            ],
+            [
+              "0.5900",
+              "132.00"
+            ],
+            [
+              "0.6000",
+              "150.04"
+            ],
+            [
+              "0.7000",
+              "100.00"
+            ],
+            [
+              "0.7100",
+              "74.62"
+            ],
+            [
+              "0.7200",
+              "9.00"
+            ],
+            [
+              "0.7300",
+              "56.13"
+            ],
+            [
+              "0.7400",
+              "85.00"
+            ],
+            [
+              "0.7500",
+              "48.25"
+            ],
+            [
+              "0.8900",
+              "55.00"
+            ],
+            [
+              "0.9000",
+              "2.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -11404,8 +11552,8 @@
     "yes_sub_title": "Above 3.50%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T3.50",
-  "market_captured_at": "2026-10-18T18:54:42.428Z",
+  "market_captured_at": "2026-10-19T05:03:07.439Z",
   "status": "active",
-  "last_ingested_at": "2026-10-18T18:54:42.962Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T3.50/candlesticks?start_ts=1792296001&end_ts=1792349682&period_interval=1440"
+  "last_ingested_at": "2026-10-19T05:03:08.003Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T3.50/candlesticks?start_ts=1792296001&end_ts=1792386187&period_interval=1440"
 }

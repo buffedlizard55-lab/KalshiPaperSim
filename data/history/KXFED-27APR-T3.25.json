@@ -1258,6 +1258,26 @@
         "low_dollars": "0.8300",
         "open_dollars": "0.8800"
       }
+    },
+    {
+      "end_period_ts": 1792382400,
+      "open_interest_fp": "2291.21",
+      "price": {
+        "previous_dollars": "0.9600"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8300",
+        "high_dollars": "0.9000",
+        "low_dollars": "0.8200",
+        "open_dollars": "0.8900"
+      }
     }
   ],
   "books": [
@@ -12064,6 +12084,126 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-19T05:03:06.873Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T3.25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0200",
+              "1000.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "739701.00"
+            ],
+            [
+              "0.0200",
+              "6740.00"
+            ],
+            [
+              "0.0300",
+              "7960.00"
+            ],
+            [
+              "0.1100",
+              "78835.00"
+            ],
+            [
+              "0.2100",
+              "23702.00"
+            ],
+            [
+              "0.2200",
+              "328.89"
+            ],
+            [
+              "0.3100",
+              "4910.00"
+            ],
+            [
+              "0.3300",
+              "2635.00"
+            ],
+            [
+              "0.3700",
+              "9326.00"
+            ],
+            [
+              "0.4100",
+              "1194.00"
+            ],
+            [
+              "0.4200",
+              "267.00"
+            ],
+            [
+              "0.4400",
+              "727.00"
+            ],
+            [
+              "0.4600",
+              "3920.00"
+            ],
+            [
+              "0.4700",
+              "253.00"
+            ],
+            [
+              "0.4900",
+              "3694.00"
+            ],
+            [
+              "0.5000",
+              "27.22"
+            ],
+            [
+              "0.5100",
+              "66.00"
+            ],
+            [
+              "0.5200",
+              "193.36"
+            ],
+            [
+              "0.5300",
+              "43.95"
+            ],
+            [
+              "0.5400",
+              "48.00"
+            ],
+            [
+              "0.5500",
+              "56.00"
+            ],
+            [
+              "0.6700",
+              "83.23"
+            ],
+            [
+              "0.8000",
+              "57.35"
+            ],
+            [
+              "0.8100",
+              "35.61"
+            ],
+            [
+              "0.8200",
+              "2.00"
+            ],
+            [
+              "0.8300",
+              "27.22"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -12087,7 +12227,7 @@
     "open_time": "2025-10-13T14:00:00Z",
     "previous_price_dollars": "0.9600",
     "previous_yes_ask_dollars": "0.9800",
-    "previous_yes_bid_dollars": "0.9000",
+    "previous_yes_bid_dollars": "0.8900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12116,8 +12256,8 @@
     "yes_sub_title": "Above 3.25%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T3.25",
-  "market_captured_at": "2026-10-18T18:54:41.329Z",
+  "market_captured_at": "2026-10-19T05:03:06.250Z",
   "status": "active",
-  "last_ingested_at": "2026-10-18T18:54:41.861Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T3.25/candlesticks?start_ts=1792296001&end_ts=1792349681&period_interval=1440"
+  "last_ingested_at": "2026-10-19T05:03:06.813Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T3.25/candlesticks?start_ts=1792296001&end_ts=1792386186&period_interval=1440"
 }
