@@ -24257,9 +24257,9 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "233427.03",
     "open_time": "2025-12-23T15:00:00Z",
-    "previous_price_dollars": "0.0200",
-    "previous_yes_ask_dollars": "0.0300",
-    "previous_yes_bid_dollars": "0.0200",
+    "previous_price_dollars": "0.0400",
+    "previous_yes_ask_dollars": "0.0400",
+    "previous_yes_bid_dollars": "0.0300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -24279,17 +24279,17 @@
     "ticker": "KXINXY-26DEC31H1600-B7100",
     "title": "Will the S&P 500 be between 7000 and 7199.99 on Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:42:01.966909Z",
-    "volume_24h_fp": "444.61",
+    "volume_24h_fp": "371.50",
     "volume_fp": "339876.71",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "42.53",
+    "yes_ask_size_fp": "35.35",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "303.23",
+    "yes_bid_size_fp": "301.22",
     "yes_sub_title": "7,000 to 7,199.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B7100",
-  "market_captured_at": "2026-10-20T07:51:09.213Z",
+  "market_captured_at": "2026-10-20T11:41:11.447Z",
   "status": "active",
-  "last_ingested_at": "2026-10-20T07:51:09.780Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7100/candlesticks?start_ts=1792468801&end_ts=1792482669&period_interval=1440"
+  "last_ingested_at": "2026-10-20T11:41:12.012Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B7100/candlesticks?start_ts=1792468801&end_ts=1792496471&period_interval=1440"
 }

@@ -23351,7 +23351,7 @@
     "expected_expiration_time": "2027-06-30T14:00:00Z",
     "expiration_time": "2029-06-29T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0700",
+    "last_price_dollars": "0.0600",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.9400",
@@ -23382,17 +23382,17 @@
     "ticker": "KXNBAWEST-27-LAL",
     "title": "Will Los Angeles L win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "3524.50",
-    "volume_fp": "98953.11",
+    "volume_24h_fp": "4698.87",
+    "volume_fp": "100127.48",
     "yes_ask_dollars": "0.0700",
-    "yes_ask_size_fp": "77561.96",
+    "yes_ask_size_fp": "82161.72",
     "yes_bid_dollars": "0.0600",
-    "yes_bid_size_fp": "20561.20",
+    "yes_bid_size_fp": "19385.15",
     "yes_sub_title": "Los Angeles L"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-LAL",
-  "market_captured_at": "2026-10-20T07:52:28.499Z",
+  "market_captured_at": "2026-10-20T11:42:09.988Z",
   "status": "active",
-  "last_ingested_at": "2026-10-20T07:52:29.065Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-LAL/candlesticks?start_ts=1792468801&end_ts=1792482748&period_interval=1440"
+  "last_ingested_at": "2026-10-20T11:42:10.556Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-LAL/candlesticks?start_ts=1792468801&end_ts=1792496530&period_interval=1440"
 }

@@ -29481,11 +29481,11 @@
     "no_sub_title": "Minnesota",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "161215.72",
+    "open_interest_fp": "161386.80",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.1400",
-    "previous_yes_ask_dollars": "0.1400",
-    "previous_yes_bid_dollars": "0.1200",
+    "previous_price_dollars": "0.1100",
+    "previous_yes_ask_dollars": "0.1100",
+    "previous_yes_bid_dollars": "0.1000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -29504,17 +29504,17 @@
     "ticker": "KXNBAWEST-27-MIN",
     "title": "Will Minnesota win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "2287.69",
-    "volume_fp": "201342.17",
+    "volume_24h_fp": "2415.64",
+    "volume_fp": "201513.25",
     "yes_ask_dollars": "0.1100",
-    "yes_ask_size_fp": "48382.93",
+    "yes_ask_size_fp": "548206.49",
     "yes_bid_dollars": "0.1000",
     "yes_bid_size_fp": "100.00",
     "yes_sub_title": "Minnesota"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-MIN",
-  "market_captured_at": "2026-10-20T07:52:29.697Z",
+  "market_captured_at": "2026-10-20T11:42:10.876Z",
   "status": "active",
-  "last_ingested_at": "2026-10-20T07:52:30.267Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-MIN/candlesticks?start_ts=1792468801&end_ts=1792482749&period_interval=1440"
+  "last_ingested_at": "2026-10-20T11:42:11.443Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-MIN/candlesticks?start_ts=1792468801&end_ts=1792496531&period_interval=1440"
 }
