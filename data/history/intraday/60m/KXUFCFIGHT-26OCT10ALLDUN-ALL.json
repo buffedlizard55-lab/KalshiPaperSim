@@ -3507,6 +3507,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-20T07:58:29.966Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT10ALLDUN-ALL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3564,9 +3574,9 @@
     "yes_sub_title": "Brendan Allen"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT10ALLDUN-ALL",
-  "market_captured_at": "2026-10-20T05:14:01.553Z",
+  "market_captured_at": "2026-10-20T07:58:29.234Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-20T05:14:02.227Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT10ALLDUN-ALL/candlesticks?start_ts=1791691201&end_ts=1792473241&period_interval=60"
+  "last_ingested_at": "2026-10-20T07:58:29.902Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT10ALLDUN-ALL/candlesticks?start_ts=1791691201&end_ts=1792483109&period_interval=60"
 }

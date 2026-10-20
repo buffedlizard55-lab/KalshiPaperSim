@@ -3035,6 +3035,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-20T07:57:49.337Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT14DENLAC-LAC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3092,9 +3102,9 @@
     "yes_sub_title": "Los Angeles C"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT14DENLAC-LAC",
-  "market_captured_at": "2026-10-20T05:13:20.280Z",
+  "market_captured_at": "2026-10-20T07:57:48.604Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-20T05:13:20.954Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT14DENLAC-LAC/candlesticks?start_ts=1792040401&end_ts=1792473200&period_interval=60"
+  "last_ingested_at": "2026-10-20T07:57:49.273Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT14DENLAC-LAC/candlesticks?start_ts=1792040401&end_ts=1792483068&period_interval=60"
 }

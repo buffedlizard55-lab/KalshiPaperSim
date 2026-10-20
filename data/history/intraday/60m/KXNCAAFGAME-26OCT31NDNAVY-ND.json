@@ -871,6 +871,56 @@
         "low_dollars": "0.9900",
         "open_dollars": "0.9900"
       }
+    },
+    {
+      "end_period_ts": 1792476000,
+      "open_interest_fp": "17655.81",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "mean_dollars": "0.9900",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "280.85",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
+    },
+    {
+      "end_period_ts": 1792479600,
+      "open_interest_fp": "17655.81",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "mean_dollars": "0.9900",
+        "open_dollars": "0.9900",
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "9.52",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -1600,6 +1650,113 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-20T07:58:04.734Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31NDNAVY-ND/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5432.00"
+            ],
+            [
+              "0.0200",
+              "1814.00"
+            ],
+            [
+              "0.0300",
+              "2544.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "100.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.5300",
+              "75.00"
+            ],
+            [
+              "0.6000",
+              "200.00"
+            ],
+            [
+              "0.6200",
+              "32.00"
+            ],
+            [
+              "0.7300",
+              "6.00"
+            ],
+            [
+              "0.8400",
+              "5.00"
+            ],
+            [
+              "0.8900",
+              "145.00"
+            ],
+            [
+              "0.9000",
+              "1.00"
+            ],
+            [
+              "0.9100",
+              "150.00"
+            ],
+            [
+              "0.9200",
+              "1.00"
+            ],
+            [
+              "0.9300",
+              "1.00"
+            ],
+            [
+              "0.9400",
+              "2005.00"
+            ],
+            [
+              "0.9500",
+              "2.00"
+            ],
+            [
+              "0.9600",
+              "3.00"
+            ],
+            [
+              "0.9700",
+              "216694.21"
+            ],
+            [
+              "0.9800",
+              "638.00"
+            ],
+            [
+              "0.9900",
+              "192.76"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1646,17 +1803,17 @@
     "ticker": "KXNCAAFGAME-26OCT31NDNAVY-ND",
     "title": "Notre Dame wins",
     "updated_time": "2026-10-17T16:06:01.719429Z",
-    "volume_24h_fp": "6342.33",
-    "volume_fp": "21368.89",
+    "volume_24h_fp": "6632.70",
+    "volume_fp": "21659.26",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
     "yes_bid_dollars": "0.9900",
-    "yes_bid_size_fp": "487.37",
+    "yes_bid_size_fp": "192.76",
     "yes_sub_title": "Notre Dame"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31NDNAVY-ND",
-  "market_captured_at": "2026-10-20T05:13:35.914Z",
+  "market_captured_at": "2026-10-20T07:58:04.003Z",
   "status": "active",
-  "last_ingested_at": "2026-10-20T05:13:36.592Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT31NDNAVY-ND/candlesticks?start_ts=1792443601&end_ts=1792473216&period_interval=60"
+  "last_ingested_at": "2026-10-20T07:58:04.670Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT31NDNAVY-ND/candlesticks?start_ts=1792472401&end_ts=1792483084&period_interval=60"
 }
