@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-20T02:44:18.953Z",
+ "generatedAt": "2026-10-20T08:11:00.059Z",
  "rows": [
   {
    "league": "nba",
@@ -2315,6 +2315,11 @@
      "ticker": "KXNCAAFGAME-26OCT10USCPSU-USC",
      "rulesName": "USC",
      "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT31OSUUSC-USC",
+     "rulesName": "USC",
+     "role": "home"
     }
    ]
   },
@@ -3662,6 +3667,11 @@
    "espnReason": "MATCHED",
    "evidence": [
     {
+     "ticker": "KXNHLGAME-26OCT19PITUTA-PIT",
+     "rulesName": "Pittsburgh",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP22DETPIT-PIT",
      "rulesName": "Pittsburgh",
      "role": "home"
@@ -3821,6 +3831,11 @@
    },
    "espnReason": "MATCHED",
    "evidence": [
+    {
+     "ticker": "KXNHLGAME-26OCT19PITUTA-PIT",
+     "rulesName": "Utah",
+     "role": "home"
+    },
     {
      "ticker": "KXNHLGAME-26SEP22UTALA-LA",
      "rulesName": "Utah",
@@ -4327,6 +4342,14 @@
   },
   {
    "ticker": "KXNFLGAME-26OCT18DALGB-GB",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT19WASSF-SF",
+   "reason": "AMBIGUOUS_PAIR_SPLIT"
+  },
+  {
+   "ticker": "KXNFLGAME-26OCT19WASSF-WAS",
    "reason": "AMBIGUOUS_PAIR_SPLIT"
   },
   {

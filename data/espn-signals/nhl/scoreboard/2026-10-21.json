@@ -1,0 +1,95 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-21",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261021"
+  ]
+ },
+ "captures": [
+  "2026-10-20T08:10:58.728Z"
+ ],
+ "events": {
+  "401892550": {
+   "eventId": "401892550",
+   "date": "2026-10-21T23:30Z",
+   "easternDate": "2026-10-21",
+   "name": "Philadelphia Flyers at Buffalo Sabres",
+   "shortName": "PHI @ BUF",
+   "week": null,
+   "venue": "KeyBank Center",
+   "homeAbbr": "BUF",
+   "homeTeamId": "2",
+   "homeName": "Buffalo Sabres",
+   "awayAbbr": "PHI",
+   "awayTeamId": "15",
+   "awayName": "Philadelphia Flyers",
+   "firstCapturedAt": "2026-10-20T08:10:58.728Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-20T08:10:58.728Z",
+     "last_seen_at": "2026-10-20T08:10:58.728Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3-2",
+      "away": "2-6-3"
+     }
+    }
+   ]
+  },
+  "401892551": {
+   "eventId": "401892551",
+   "date": "2026-10-21T23:30Z",
+   "easternDate": "2026-10-21",
+   "name": "Florida Panthers at Ottawa Senators",
+   "shortName": "FLA @ OTT",
+   "week": null,
+   "venue": "Canadian Tire Centre",
+   "homeAbbr": "OTT",
+   "homeTeamId": "14",
+   "homeName": "Ottawa Senators",
+   "awayAbbr": "FLA",
+   "awayTeamId": "26",
+   "awayName": "Florida Panthers",
+   "firstCapturedAt": "2026-10-20T08:10:58.728Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-20T08:10:58.728Z",
+     "last_seen_at": "2026-10-20T08:10:58.728Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-3-0",
+      "away": "5-2-2"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-20T08:10:58.728Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261021"
+}
