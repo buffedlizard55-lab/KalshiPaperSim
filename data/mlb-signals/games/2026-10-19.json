@@ -12,7 +12,8 @@
  "captures": [
   "2026-10-19T08:17:53.269Z",
   "2026-10-19T20:47:15.739Z",
-  "2026-10-20T00:00:29.163Z"
+  "2026-10-20T00:00:29.163Z",
+  "2026-10-20T02:49:15.460Z"
  ],
  "games": {
   "849815": {
@@ -86,6 +87,21 @@
      "runs": {
       "away": 0,
       "home": 0
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-20T02:49:15.460Z",
+     "last_seen_at": "2026-10-20T02:49:15.460Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 8,
+     "inningState": "Middle",
+     "runs": {
+      "away": 3,
+      "home": 5
      },
      "winner": null,
      "url_ref": 0
