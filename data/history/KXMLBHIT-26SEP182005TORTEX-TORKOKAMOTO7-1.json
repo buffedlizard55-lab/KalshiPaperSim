@@ -1067,6 +1067,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-20T20:09:10.419Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1127,9 +1137,9 @@
     "yes_sub_title": "Kazuma Okamoto: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1",
-  "market_captured_at": "2026-10-20T11:41:30.085Z",
+  "market_captured_at": "2026-10-20T20:09:09.833Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-20T11:41:30.656Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/candlesticks?start_ts=1789790401&end_ts=1792496490&period_interval=1440"
+  "last_ingested_at": "2026-10-20T20:09:10.378Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP182005TORTEX-TORKOKAMOTO7-1/candlesticks?start_ts=1789790401&end_ts=1792526950&period_interval=1440"
 }

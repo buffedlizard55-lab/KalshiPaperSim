@@ -1228,6 +1228,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-20T20:12:36.825Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26OCT19-B71.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1243,7 +1253,7 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-10-20T19:00:00Z",
     "expiration_time": "2026-10-26T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "71.00",
     "floor_strike": 71,
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-26T14:00:00Z",
@@ -1255,9 +1265,9 @@
     "occurrence_datetime": "2026-10-20T14:00:00Z",
     "open_interest_fp": "16078.69",
     "open_time": "2026-10-18T14:00:00Z",
-    "previous_price_dollars": "0.3400",
-    "previous_yes_ask_dollars": "0.3900",
-    "previous_yes_bid_dollars": "0.3600",
+    "previous_price_dollars": "0.1300",
+    "previous_yes_ask_dollars": "0.1200",
+    "previous_yes_bid_dollars": "0.0900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1266,17 +1276,19 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If the maximum temperature recorded at Denver (CLIDEN) for Oct 19, 2026, is between 71-72° fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
-    "status": "closed",
+    "settlement_ts": "2026-10-20T13:08:46.78192Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "between",
     "ticker": "KXHIGHDEN-26OCT19-B71.5",
     "title": "Will the maximum temperature be 71-72° on Oct 19, 2026?",
-    "updated_time": "2026-10-20T07:00:00.148736Z",
-    "volume_24h_fp": "32181.05",
+    "updated_time": "2026-10-20T13:08:47.150003Z",
+    "volume_24h_fp": "26869.74",
     "volume_fp": "34722.79",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1285,8 +1297,9 @@
     "yes_sub_title": "71° to 72°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26OCT19-B71.5",
-  "market_captured_at": "2026-10-20T11:44:28.821Z",
-  "status": "closed",
-  "last_ingested_at": "2026-10-20T11:44:29.492Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26OCT19-B71.5/candlesticks?start_ts=1792479601&end_ts=1792496669&period_interval=60"
+  "market_captured_at": "2026-10-20T20:12:36.138Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-20T20:12:36.784Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26OCT19-B71.5/candlesticks?start_ts=1792483201&end_ts=1792527156&period_interval=60",
+  "result": "yes"
 }

@@ -12035,6 +12035,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-20T20:20:44.955Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT19WASSF-SF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12083,7 +12093,7 @@
     "ticker": "KXNFLGAME-26OCT19WASSF-SF",
     "title": "San Francisco wins",
     "updated_time": "2026-10-20T03:27:18.711516Z",
-    "volume_24h_fp": "26714509.38",
+    "volume_24h_fp": "25767337.87",
     "volume_fp": "27739028.84",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12092,11 +12102,11 @@
     "yes_sub_title": "San Francisco"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT19WASSF-SF",
-  "market_captured_at": "2026-10-20T11:52:59.299Z",
+  "market_captured_at": "2026-10-20T20:20:44.267Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-20T11:52:59.967Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT19WASSF-SF/candlesticks?start_ts=1792466581&end_ts=1792497179&period_interval=1",
+  "last_ingested_at": "2026-10-20T20:20:44.914Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT19WASSF-SF/candlesticks?start_ts=1792466581&end_ts=1792527644&period_interval=1",
   "trims": [
     {
       "at": "2026-10-20T05:19:27.358Z",
