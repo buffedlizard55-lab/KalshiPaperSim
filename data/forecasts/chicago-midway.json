@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/ILC031",
       "relativeLocation": "Chicago, IL",
       "timeZone": "America/Chicago",
-      "resolvedAt": "2026-10-20T01:53:31.623Z",
+      "resolvedAt": "2026-10-20T12:46:49.110Z",
       "pointsUrl": "https://api.weather.gov/points/41.7868,-87.7522"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -7872,6 +7872,72 @@
           "startTime": "2026-10-26T06:00:00-05:00",
           "endTime": "2026-10-26T18:00:00-05:00",
           "probabilityOfPrecipitationPct": 9
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-10-20T12:46:49.110Z",
+      "points_url": "https://api.weather.gov/points/41.7868,-87.7522",
+      "forecast_url": "https://api.weather.gov/gridpoints/LOT/72,69/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-10-20T10:46:10+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-10-20",
+          "highF": 67,
+          "periodName": "Today",
+          "startTime": "2026-10-20T06:00:00-05:00",
+          "endTime": "2026-10-20T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-21",
+          "highF": 71,
+          "periodName": "Wednesday",
+          "startTime": "2026-10-21T06:00:00-05:00",
+          "endTime": "2026-10-21T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-22",
+          "highF": 70,
+          "periodName": "Thursday",
+          "startTime": "2026-10-22T06:00:00-05:00",
+          "endTime": "2026-10-22T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-23",
+          "highF": 67,
+          "periodName": "Friday",
+          "startTime": "2026-10-23T06:00:00-05:00",
+          "endTime": "2026-10-23T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-24",
+          "highF": 68,
+          "periodName": "Saturday",
+          "startTime": "2026-10-24T06:00:00-05:00",
+          "endTime": "2026-10-24T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 0
+        },
+        {
+          "date": "2026-10-25",
+          "highF": 70,
+          "periodName": "Sunday",
+          "startTime": "2026-10-25T06:00:00-05:00",
+          "endTime": "2026-10-25T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 3
+        },
+        {
+          "date": "2026-10-26",
+          "highF": 66,
+          "periodName": "Monday",
+          "startTime": "2026-10-26T06:00:00-05:00",
+          "endTime": "2026-10-26T18:00:00-05:00",
+          "probabilityOfPrecipitationPct": 7
         }
       ]
     }
