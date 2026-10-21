@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-21T02:38:32.014Z",
+ "generatedAt": "2026-10-21T08:13:41.002Z",
  "rows": [
   {
    "league": "nba",
@@ -655,6 +655,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "AFA",
+   "kalshiName": "Air Force",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT31CONNAFA-CONN",
+     "rulesName": "Air Force",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "ALA",
    "kalshiName": "Alabama",
    "conflictWith": null,
@@ -909,6 +924,26 @@
     {
      "ticker": "KXNCAAFGAME-26SEP26CMUMIA-MIA",
      "rulesName": "Central Michigan",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "CONN",
+   "kalshiName": "UConn",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "41",
+    "abbr": "CONN",
+    "displayName": "UConn Huskies",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT31CONNAFA-CONN",
+     "rulesName": "UConn",
      "role": "away"
     }
    ]
@@ -3784,6 +3819,26 @@
     {
      "ticker": "KXNHLGAME-26OCT02STLDAL-DAL",
      "rulesName": "St. Louis",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nhl",
+   "kalshiCode": "TB",
+   "kalshiName": "Tampa Bay",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "20",
+    "abbr": "TB",
+    "displayName": "Tampa Bay Lightning",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNHLGAME-26OCT20TBVGK-VGK",
+     "rulesName": "Tampa Bay",
      "role": "away"
     }
    ]

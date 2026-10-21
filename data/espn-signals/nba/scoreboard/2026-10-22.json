@@ -1,0 +1,105 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-22",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261022"
+  ]
+ },
+ "captures": [
+  "2026-10-21T08:13:39.586Z"
+ ],
+ "events": {
+  "401909093": {
+   "eventId": "401909093",
+   "date": "2026-10-22T23:00Z",
+   "easternDate": "2026-10-22",
+   "name": "Cleveland Cavaliers at Philadelphia 76ers",
+   "shortName": "CLE @ PHI",
+   "week": null,
+   "venue": "Xfinity Mobile Arena",
+   "homeAbbr": "PHI",
+   "homeTeamId": "20",
+   "homeName": "Philadelphia 76ers",
+   "awayAbbr": "CLE",
+   "awayTeamId": "5",
+   "awayName": "Cleveland Cavaliers",
+   "firstCapturedAt": "2026-10-21T08:13:39.586Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "PHI -2.5",
+    "spread": -2.5,
+    "overUnder": 235.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-21T08:13:39.586Z",
+     "last_seen_at": "2026-10-21T08:13:39.586Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-0",
+      "away": "0-0"
+     }
+    }
+   ]
+  },
+  "401909094": {
+   "eventId": "401909094",
+   "date": "2026-10-23T01:30Z",
+   "easternDate": "2026-10-22",
+   "name": "Denver Nuggets at Oklahoma City Thunder",
+   "shortName": "DEN @ OKC",
+   "week": null,
+   "venue": "Paycom Center",
+   "homeAbbr": "OKC",
+   "homeTeamId": "25",
+   "homeName": "Oklahoma City Thunder",
+   "awayAbbr": "DEN",
+   "awayTeamId": "7",
+   "awayName": "Denver Nuggets",
+   "firstCapturedAt": "2026-10-21T08:13:39.586Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "OKC -7.5",
+    "spread": -7.5,
+    "overUnder": 235.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-21T08:13:39.586Z",
+     "last_seen_at": "2026-10-21T08:13:39.586Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-0",
+      "away": "0-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-21T08:13:39.586Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261022"
+}

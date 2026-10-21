@@ -1,0 +1,149 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-22",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261022"
+  ]
+ },
+ "captures": [
+  "2026-10-21T08:13:39.742Z"
+ ],
+ "events": {
+  "401862807": {
+   "eventId": "401862807",
+   "date": "2026-10-22T23:30Z",
+   "easternDate": "2026-10-22",
+   "name": "East Carolina Pirates at Memphis Tigers",
+   "shortName": "ECU @ MEM",
+   "week": 8,
+   "venue": "Simmons Bank Liberty Stadium",
+   "homeAbbr": "MEM",
+   "homeTeamId": "235",
+   "homeName": "Memphis Tigers",
+   "awayAbbr": "ECU",
+   "awayTeamId": "151",
+   "awayName": "East Carolina Pirates",
+   "firstCapturedAt": "2026-10-21T08:13:39.742Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "MEM -10",
+    "spread": -10,
+    "overUnder": 54.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-21T08:13:39.742Z",
+     "last_seen_at": "2026-10-21T08:13:39.742Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-2",
+      "away": "3-3"
+     }
+    }
+   ]
+  },
+  "401869845": {
+   "eventId": "401869845",
+   "date": "2026-10-22T23:00Z",
+   "easternDate": "2026-10-22",
+   "name": "James Madison Dukes at App State Mountaineers",
+   "shortName": "JMU @ APP",
+   "week": 8,
+   "venue": "Kidd Brewer Stadium",
+   "homeAbbr": "APP",
+   "homeTeamId": "2026",
+   "homeName": "App State Mountaineers",
+   "awayAbbr": "JMU",
+   "awayTeamId": "256",
+   "awayName": "James Madison Dukes",
+   "firstCapturedAt": "2026-10-21T08:13:39.742Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "JMU -10.5",
+    "spread": 10.5,
+    "overUnder": 56.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-21T08:13:39.742Z",
+     "last_seen_at": "2026-10-21T08:13:39.742Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-2",
+      "away": "7-0"
+     }
+    }
+   ]
+  },
+  "401871056": {
+   "eventId": "401871056",
+   "date": "2026-10-22T23:00Z",
+   "easternDate": "2026-10-22",
+   "name": "Liberty Flames at Kennesaw State Owls",
+   "shortName": "LIB @ KENN",
+   "week": 8,
+   "venue": "Walens Family Field at Fifth Third Stadium",
+   "homeAbbr": "KENN",
+   "homeTeamId": "338",
+   "homeName": "Kennesaw State Owls",
+   "awayAbbr": "LIB",
+   "awayTeamId": "2335",
+   "awayName": "Liberty Flames",
+   "firstCapturedAt": "2026-10-21T08:13:39.742Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "LIB -10",
+    "spread": 10,
+    "overUnder": 50.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-21T08:13:39.742Z",
+     "last_seen_at": "2026-10-21T08:13:39.742Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-5",
+      "away": "5-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-21T08:13:39.742Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261022"
+}

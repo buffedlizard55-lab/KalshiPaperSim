@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-22",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261022"
+  ]
+ },
+ "captures": [
+  "2026-10-21T08:13:39.426Z"
+ ],
+ "events": {
+  "401873010": {
+   "eventId": "401873010",
+   "date": "2026-10-23T00:15Z",
+   "easternDate": "2026-10-22",
+   "name": "New England Patriots at Chicago Bears",
+   "shortName": "NE @ CHI",
+   "week": 7,
+   "venue": "Soldier Field",
+   "homeAbbr": "CHI",
+   "homeTeamId": "3",
+   "homeName": "Chicago Bears",
+   "awayAbbr": "NE",
+   "awayTeamId": "17",
+   "awayName": "New England Patriots",
+   "firstCapturedAt": "2026-10-21T08:13:39.426Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "CHI -3",
+    "spread": -3,
+    "overUnder": 50.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-21T08:13:39.426Z",
+     "last_seen_at": "2026-10-21T08:13:39.426Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-2",
+      "away": "4-2"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-21T08:13:39.426Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261022"
+}
