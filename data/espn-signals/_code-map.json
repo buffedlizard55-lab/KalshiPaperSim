@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-21T08:13:41.002Z",
+ "generatedAt": "2026-10-21T19:05:38.972Z",
  "rows": [
   {
    "league": "nba",
@@ -1093,6 +1093,11 @@
    "evidence": [
     {
      "ticker": "KXNCAAFGAME-26OCT24HOUUTAH-HOU",
+     "rulesName": "Houston",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT24HOUUTAH-UTAH",
      "rulesName": "Houston",
      "role": "away"
     }
@@ -2383,6 +2388,11 @@
    "evidence": [
     {
      "ticker": "KXNCAAFGAME-26OCT24HOUUTAH-HOU",
+     "rulesName": "Utah",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26OCT24HOUUTAH-UTAH",
      "rulesName": "Utah",
      "role": "home"
     }
