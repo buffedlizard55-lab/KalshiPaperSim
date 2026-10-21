@@ -2660,6 +2660,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-21T20:25:11.553Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2719,9 +2729,9 @@
     "yes_sub_title": "Alec Pierce"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14",
-  "market_captured_at": "2026-10-21T11:54:34.803Z",
+  "market_captured_at": "2026-10-21T20:25:10.918Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-21T11:54:35.330Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/candlesticks?start_ts=1789963201&end_ts=1792583675&period_interval=1440",
+  "last_ingested_at": "2026-10-21T20:25:11.487Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLFIRSTTD/markets/KXNFLFIRSTTD-26SEP20INDKC-INDAPIERCE14/candlesticks?start_ts=1789963201&end_ts=1792614311&period_interval=1440",
   "result": "no"
 }
