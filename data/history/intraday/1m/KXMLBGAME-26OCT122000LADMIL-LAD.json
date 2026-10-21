@@ -12720,6 +12720,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-21T05:16:18.643Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT122000LADMIL-LAD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12777,10 +12787,10 @@
     "yes_sub_title": "Los Angeles D"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT122000LADMIL-LAD",
-  "market_captured_at": "2026-10-20T20:16:37.034Z",
+  "market_captured_at": "2026-10-21T05:16:14.915Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-20T20:16:40.091Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT122000LADMIL-LAD/candlesticks?start_ts=1792456201&end_ts=1792527397&period_interval=1",
+  "last_ingested_at": "2026-10-21T05:16:18.575Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT122000LADMIL-LAD/candlesticks?start_ts=1792542601&end_ts=1792559775&period_interval=1",
   "trims": [
     {
       "at": "2026-10-12T23:21:03.735Z",

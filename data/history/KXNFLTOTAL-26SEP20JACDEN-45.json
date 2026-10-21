@@ -4219,6 +4219,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-21T05:10:09.930Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20JACDEN-45/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4274,9 +4284,9 @@
     "yes_sub_title": "Over 44.5 points scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLTOTAL-26SEP20JACDEN-45",
-  "market_captured_at": "2026-10-20T20:10:52.475Z",
+  "market_captured_at": "2026-10-21T05:10:09.289Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-20T20:10:53.021Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20JACDEN-45/candlesticks?start_ts=1789963201&end_ts=1792527052&period_interval=1440",
+  "last_ingested_at": "2026-10-21T05:10:09.862Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLTOTAL/markets/KXNFLTOTAL-26SEP20JACDEN-45/candlesticks?start_ts=1789963201&end_ts=1792559409&period_interval=1440",
   "result": "no"
 }

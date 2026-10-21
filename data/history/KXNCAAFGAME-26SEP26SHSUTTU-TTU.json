@@ -6046,6 +6046,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-21T05:09:34.634Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6103,9 +6113,9 @@
     "yes_sub_title": "Texas Tech"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU",
-  "market_captured_at": "2026-10-20T20:10:19.487Z",
+  "market_captured_at": "2026-10-21T05:09:33.992Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-20T20:10:20.030Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1790481601&end_ts=1792527019&period_interval=1440",
+  "last_ingested_at": "2026-10-21T05:09:34.564Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26SHSUTTU-TTU/candlesticks?start_ts=1790481601&end_ts=1792559374&period_interval=1440",
   "result": "yes"
 }

@@ -12045,6 +12045,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-21T05:18:54.308Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT19WASSF-WAS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12070,9 +12080,9 @@
     "occurrence_datetime": "2026-10-20T03:15:00Z",
     "open_interest_fp": "20225229.33",
     "open_time": "2026-10-06T04:06:00Z",
-    "previous_price_dollars": "0.2200",
-    "previous_yes_ask_dollars": "0.2200",
-    "previous_yes_bid_dollars": "0.2100",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12093,7 +12103,7 @@
     "ticker": "KXNFLGAME-26OCT19WASSF-WAS",
     "title": "Washington wins",
     "updated_time": "2026-10-20T03:27:18.711516Z",
-    "volume_24h_fp": "48375314.71",
+    "volume_24h_fp": "0.00",
     "volume_fp": "51087701.72",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12102,11 +12112,11 @@
     "yes_sub_title": "Washington"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT19WASSF-WAS",
-  "market_captured_at": "2026-10-20T20:18:55.108Z",
+  "market_captured_at": "2026-10-21T05:18:53.193Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-20T20:18:55.753Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT19WASSF-WAS/candlesticks?start_ts=1792466581&end_ts=1792527535&period_interval=1",
+  "last_ingested_at": "2026-10-21T05:18:54.240Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT19WASSF-WAS/candlesticks?start_ts=1792552981&end_ts=1792559933&period_interval=1",
   "trims": [
     {
       "at": "2026-10-20T05:17:28.548Z",

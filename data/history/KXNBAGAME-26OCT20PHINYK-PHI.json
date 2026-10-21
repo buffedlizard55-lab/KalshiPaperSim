@@ -1527,6 +1527,31 @@
         "low_dollars": "0.3700",
         "open_dollars": "0.3800"
       }
+    },
+    {
+      "end_period_ts": 1792555200,
+      "open_interest_fp": "5232027.70",
+      "price": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.2300",
+        "mean_dollars": "0.5475",
+        "open_dollars": "0.3900",
+        "previous_dollars": "0.3900"
+      },
+      "volume_fp": "13985250.65",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.2300",
+        "open_dollars": "0.3900"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.3800"
+      }
     }
   ],
   "books": [
@@ -33481,11 +33506,21 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-21T05:09:11.509Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
     "can_close_early": true,
-    "close_time": "2026-10-22T23:00:00Z",
+    "close_time": "2026-10-21T02:01:16Z",
     "created_time": "2026-08-20T15:23:57.911731Z",
     "custom_strike": {
       "basketball_team": "0554528d-586b-461f-827b-801cf93e8a8e"
@@ -33495,20 +33530,20 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-10-21T05:00:00Z",
     "expiration_time": "2026-10-22T23:00:00Z",
-    "expiration_value": "",
-    "last_price_dollars": "0.3900",
+    "expiration_value": "Philadelphia",
+    "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-22T23:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.6200",
-    "no_bid_dollars": "0.6100",
+    "no_ask_dollars": "1.0000",
+    "no_bid_dollars": "0.0000",
     "no_sub_title": "Philadelphia",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-21T02:00:00Z",
-    "open_interest_fp": "550230.82",
+    "open_interest_fp": "5232027.70",
     "open_time": "2026-08-20T15:28:00Z",
-    "previous_price_dollars": "0.3800",
-    "previous_yes_ask_dollars": "0.3800",
-    "previous_yes_bid_dollars": "0.3700",
+    "previous_price_dollars": "0.3900",
+    "previous_yes_ask_dollars": "0.3900",
+    "previous_yes_bid_dollars": "0.3800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -33517,27 +33552,30 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If Philadelphia wins the Philadelphia vs New York Pro Basketball game originally scheduled for Oct 20, 2026, then the market resolves to Yes.",
     "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 45,
-    "status": "active",
+    "settlement_ts": "2026-10-21T02:04:17.243458Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "structured",
     "ticker": "KXNBAGAME-26OCT20PHINYK-PHI",
     "title": "Philadelphia wins",
-    "updated_time": "2026-09-25T16:51:26.336061Z",
-    "volume_24h_fp": "389024.54",
-    "volume_fp": "602609.73",
-    "yes_ask_dollars": "0.3900",
-    "yes_ask_size_fp": "1300652.54",
-    "yes_bid_dollars": "0.3800",
-    "yes_bid_size_fp": "94640.37",
+    "updated_time": "2026-10-21T02:04:17.675825Z",
+    "volume_24h_fp": "13945485.54",
+    "volume_fp": "14239908.35",
+    "yes_ask_dollars": "1.0000",
+    "yes_ask_size_fp": "0.00",
+    "yes_bid_dollars": "0.0000",
+    "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Philadelphia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-PHI",
-  "market_captured_at": "2026-10-20T20:09:57.686Z",
-  "status": "active",
-  "last_ingested_at": "2026-10-20T20:09:58.229Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-PHI/candlesticks?start_ts=1792468801&end_ts=1792526997&period_interval=1440"
+  "market_captured_at": "2026-10-21T05:09:10.870Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-21T05:09:11.441Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-PHI/candlesticks?start_ts=1792468801&end_ts=1792559351&period_interval=1440",
+  "result": "yes"
 }
