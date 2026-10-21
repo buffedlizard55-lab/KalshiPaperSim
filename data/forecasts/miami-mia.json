@@ -14,7 +14,7 @@
       "county": "https://api.weather.gov/zones/county/FLC086",
       "relativeLocation": "Miami Springs, FL",
       "timeZone": "America/New_York",
-      "resolvedAt": "2026-10-21T13:00:03.531Z",
+      "resolvedAt": "2026-10-21T18:06:56.277Z",
       "pointsUrl": "https://api.weather.gov/points/25.7959,-80.287"
     },
     "firstResolvedAt": "2026-09-18T13:24:29.350Z"
@@ -8152,6 +8152,72 @@
           "highF": 85,
           "periodName": "Today",
           "startTime": "2026-10-21T09:00:00-04:00",
+          "endTime": "2026-10-21T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 8
+        },
+        {
+          "date": "2026-10-22",
+          "highF": 84,
+          "periodName": "Thursday",
+          "startTime": "2026-10-22T06:00:00-04:00",
+          "endTime": "2026-10-22T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 23
+        },
+        {
+          "date": "2026-10-23",
+          "highF": 84,
+          "periodName": "Friday",
+          "startTime": "2026-10-23T06:00:00-04:00",
+          "endTime": "2026-10-23T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 34
+        },
+        {
+          "date": "2026-10-24",
+          "highF": 84,
+          "periodName": "Saturday",
+          "startTime": "2026-10-24T06:00:00-04:00",
+          "endTime": "2026-10-24T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 68
+        },
+        {
+          "date": "2026-10-25",
+          "highF": 82,
+          "periodName": "Sunday",
+          "startTime": "2026-10-25T06:00:00-04:00",
+          "endTime": "2026-10-25T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 83
+        },
+        {
+          "date": "2026-10-26",
+          "highF": 84,
+          "periodName": "Monday",
+          "startTime": "2026-10-26T06:00:00-04:00",
+          "endTime": "2026-10-26T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 57
+        },
+        {
+          "date": "2026-10-27",
+          "highF": 84,
+          "periodName": "Tuesday",
+          "startTime": "2026-10-27T06:00:00-04:00",
+          "endTime": "2026-10-27T18:00:00-04:00",
+          "probabilityOfPrecipitationPct": 36
+        }
+      ]
+    },
+    {
+      "captured_at": "2026-10-21T18:06:56.277Z",
+      "points_url": "https://api.weather.gov/points/25.7959,-80.287",
+      "forecast_url": "https://api.weather.gov/gridpoints/MFL/106,51/forecast",
+      "forecastGenerator": "BaselineForecastGenerator",
+      "updateTime": "2026-10-21T08:02:46+00:00",
+      "units": "us",
+      "days": [
+        {
+          "date": "2026-10-21",
+          "highF": 85,
+          "periodName": "This Afternoon",
+          "startTime": "2026-10-21T13:00:00-04:00",
           "endTime": "2026-10-21T18:00:00-04:00",
           "probabilityOfPrecipitationPct": 8
         },
