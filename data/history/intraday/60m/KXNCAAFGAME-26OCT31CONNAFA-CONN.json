@@ -379,6 +379,162 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-21T08:01:23.775Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31CONNAFA-CONN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "97892.00"
+            ],
+            [
+              "0.0200",
+              "1615.00"
+            ],
+            [
+              "0.0300",
+              "1011.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "268.00"
+            ],
+            [
+              "0.0600",
+              "351.00"
+            ],
+            [
+              "0.0700",
+              "301.00"
+            ],
+            [
+              "0.0800",
+              "378.00"
+            ],
+            [
+              "0.0900",
+              "276.00"
+            ],
+            [
+              "0.1000",
+              "201.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1500",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "33.00"
+            ],
+            [
+              "0.2000",
+              "1.00"
+            ],
+            [
+              "0.2200",
+              "181.00"
+            ],
+            [
+              "0.3200",
+              "62.00"
+            ],
+            [
+              "0.3500",
+              "1.00"
+            ],
+            [
+              "0.4200",
+              "15.00"
+            ],
+            [
+              "0.5500",
+              "140.00"
+            ],
+            [
+              "0.6300",
+              "2050.00"
+            ],
+            [
+              "0.6500",
+              "1849.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "96533.00"
+            ],
+            [
+              "0.0200",
+              "1765.00"
+            ],
+            [
+              "0.0300",
+              "567.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "516.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0700",
+              "301.00"
+            ],
+            [
+              "0.0800",
+              "1.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "1845.00"
+            ],
+            [
+              "0.1200",
+              "258.00"
+            ],
+            [
+              "0.2100",
+              "140.00"
+            ],
+            [
+              "0.3000",
+              "882.00"
+            ],
+            [
+              "0.3100",
+              "75.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -434,8 +590,8 @@
     "yes_sub_title": "UConn"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31CONNAFA-CONN",
-  "market_captured_at": "2026-10-21T05:15:01.836Z",
+  "market_captured_at": "2026-10-21T08:01:23.116Z",
   "status": "active",
-  "last_ingested_at": "2026-10-21T05:15:02.511Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT31CONNAFA-CONN/candlesticks?start_ts=1792177560&end_ts=1792559702&period_interval=60"
+  "last_ingested_at": "2026-10-21T08:01:23.747Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT31CONNAFA-CONN/candlesticks?start_ts=1792533601&end_ts=1792569683&period_interval=60"
 }

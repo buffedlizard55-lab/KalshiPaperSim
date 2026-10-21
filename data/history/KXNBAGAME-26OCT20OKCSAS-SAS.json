@@ -32148,6 +32148,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-21T07:56:05.669Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -32196,7 +32206,7 @@
     "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
     "title": "San Antonio wins",
     "updated_time": "2026-10-21T04:31:22.698145Z",
-    "volume_24h_fp": "17783537.16",
+    "volume_24h_fp": "17766326.99",
     "volume_fp": "17866794.23",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -32205,9 +32215,9 @@
     "yes_sub_title": "San Antonio"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-SAS",
-  "market_captured_at": "2026-10-21T05:09:08.432Z",
+  "market_captured_at": "2026-10-21T07:56:05.114Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-21T05:09:09.005Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-SAS/candlesticks?start_ts=1792468801&end_ts=1792559348&period_interval=1440",
+  "last_ingested_at": "2026-10-21T07:56:05.643Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-SAS/candlesticks?start_ts=1792555201&end_ts=1792569365&period_interval=1440",
   "result": "no"
 }

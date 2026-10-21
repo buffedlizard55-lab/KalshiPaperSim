@@ -30232,6 +30232,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-21T07:56:02.400Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -30280,7 +30290,7 @@
     "ticker": "KXNBAGAME-26OCT20BOSDET-BOS",
     "title": "Boston wins",
     "updated_time": "2026-10-20T21:38:17.178797Z",
-    "volume_24h_fp": "9635225.03",
+    "volume_24h_fp": "9617069.71",
     "volume_fp": "9762155.80",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -30289,9 +30299,9 @@
     "yes_sub_title": "Boston"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-BOS",
-  "market_captured_at": "2026-10-21T05:09:04.775Z",
+  "market_captured_at": "2026-10-21T07:56:01.846Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-21T05:09:05.348Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1792468801&end_ts=1792559345&period_interval=1440",
+  "last_ingested_at": "2026-10-21T07:56:02.374Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-BOS/candlesticks?start_ts=1792555201&end_ts=1792569362&period_interval=1440",
   "result": "no"
 }

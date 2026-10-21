@@ -1895,6 +1895,76 @@
         "low_dollars": "0.2000",
         "open_dollars": "0.2100"
       }
+    },
+    {
+      "end_period_ts": 1792562400,
+      "open_interest_fp": "18849.58",
+      "price": {
+        "close_dollars": "0.2800",
+        "high_dollars": "0.2800",
+        "low_dollars": "0.2400",
+        "mean_dollars": "0.2661",
+        "open_dollars": "0.2600",
+        "previous_dollars": "0.2800"
+      },
+      "volume_fp": "80.69",
+      "yes_ask": {
+        "close_dollars": "0.2700",
+        "high_dollars": "0.2900",
+        "low_dollars": "0.2700",
+        "open_dollars": "0.2800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2100",
+        "high_dollars": "0.2600",
+        "low_dollars": "0.1700",
+        "open_dollars": "0.2600"
+      }
+    },
+    {
+      "end_period_ts": 1792566000,
+      "open_interest_fp": "18871.38",
+      "price": {
+        "close_dollars": "0.2100",
+        "high_dollars": "0.2700",
+        "low_dollars": "0.2100",
+        "mean_dollars": "0.2422",
+        "open_dollars": "0.2700",
+        "previous_dollars": "0.2800"
+      },
+      "volume_fp": "34.94",
+      "yes_ask": {
+        "close_dollars": "0.2500",
+        "high_dollars": "0.2800",
+        "low_dollars": "0.2500",
+        "open_dollars": "0.2700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2000",
+        "high_dollars": "0.2400",
+        "low_dollars": "0.1700",
+        "open_dollars": "0.2100"
+      }
+    },
+    {
+      "end_period_ts": 1792569600,
+      "open_interest_fp": "18871.38",
+      "price": {
+        "previous_dollars": "0.2100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.2800",
+        "high_dollars": "0.2900",
+        "low_dollars": "0.2500",
+        "open_dollars": "0.2500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.2100",
+        "high_dollars": "0.2400",
+        "low_dollars": "0.1800",
+        "open_dollars": "0.2000"
+      }
     }
   ],
   "books": [
@@ -4501,6 +4571,310 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-21T08:01:19.916Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31FLAUGA-FLA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1749750.54"
+            ],
+            [
+              "0.0200",
+              "1615.00"
+            ],
+            [
+              "0.0300",
+              "162995.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "81256.00"
+            ],
+            [
+              "0.0600",
+              "351.00"
+            ],
+            [
+              "0.0700",
+              "80390.00"
+            ],
+            [
+              "0.0800",
+              "10.23"
+            ],
+            [
+              "0.0900",
+              "62.89"
+            ],
+            [
+              "0.1000",
+              "6.01"
+            ],
+            [
+              "0.1100",
+              "192525.57"
+            ],
+            [
+              "0.1500",
+              "65533.00"
+            ],
+            [
+              "0.1600",
+              "10.85"
+            ],
+            [
+              "0.1700",
+              "27406.20"
+            ],
+            [
+              "0.1800",
+              "1.00"
+            ],
+            [
+              "0.1900",
+              "1.00"
+            ],
+            [
+              "0.2100",
+              "26024.83"
+            ],
+            [
+              "0.2200",
+              "19738.00"
+            ],
+            [
+              "0.2500",
+              "20205.80"
+            ],
+            [
+              "0.2800",
+              "17993.00"
+            ],
+            [
+              "0.3100",
+              "34898.00"
+            ],
+            [
+              "0.3200",
+              "13938.99"
+            ],
+            [
+              "0.3500",
+              "11970.00"
+            ],
+            [
+              "0.3800",
+              "27696.00"
+            ],
+            [
+              "0.3900",
+              "5464.00"
+            ],
+            [
+              "0.4000",
+              "24.00"
+            ],
+            [
+              "0.4100",
+              "6790.00"
+            ],
+            [
+              "0.4200",
+              "467.00"
+            ],
+            [
+              "0.4300",
+              "175.00"
+            ],
+            [
+              "0.4400",
+              "4983.00"
+            ],
+            [
+              "0.4500",
+              "1.00"
+            ],
+            [
+              "0.4700",
+              "19601.00"
+            ],
+            [
+              "0.4900",
+              "2601.00"
+            ],
+            [
+              "0.5000",
+              "73.26"
+            ],
+            [
+              "0.5100",
+              "15286.00"
+            ],
+            [
+              "0.5200",
+              "712.00"
+            ],
+            [
+              "0.5300",
+              "712.00"
+            ],
+            [
+              "0.5400",
+              "712.00"
+            ],
+            [
+              "0.5500",
+              "336.00"
+            ],
+            [
+              "0.5600",
+              "112.00"
+            ],
+            [
+              "0.5700",
+              "196.65"
+            ],
+            [
+              "0.5800",
+              "84.65"
+            ],
+            [
+              "0.5900",
+              "1.00"
+            ],
+            [
+              "0.6000",
+              "3.30"
+            ],
+            [
+              "0.6200",
+              "1.00"
+            ],
+            [
+              "0.6300",
+              "140.00"
+            ],
+            [
+              "0.6500",
+              "1886.00"
+            ],
+            [
+              "0.6600",
+              "2237.30"
+            ],
+            [
+              "0.6700",
+              "1909.00"
+            ],
+            [
+              "0.6800",
+              "19983.79"
+            ],
+            [
+              "0.6900",
+              "20.00"
+            ],
+            [
+              "0.7000",
+              "40110.76"
+            ],
+            [
+              "0.7100",
+              "3807.92"
+            ],
+            [
+              "0.7200",
+              "25.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1601954.00"
+            ],
+            [
+              "0.0200",
+              "62045.00"
+            ],
+            [
+              "0.0300",
+              "95402.00"
+            ],
+            [
+              "0.0400",
+              "525.00"
+            ],
+            [
+              "0.0500",
+              "52352.80"
+            ],
+            [
+              "0.0600",
+              "35986.00"
+            ],
+            [
+              "0.0700",
+              "31432.00"
+            ],
+            [
+              "0.0800",
+              "18931.54"
+            ],
+            [
+              "0.0900",
+              "13228.53"
+            ],
+            [
+              "0.1000",
+              "4981.07"
+            ],
+            [
+              "0.1100",
+              "1317.00"
+            ],
+            [
+              "0.1200",
+              "2051.00"
+            ],
+            [
+              "0.1300",
+              "119.23"
+            ],
+            [
+              "0.1400",
+              "2.00"
+            ],
+            [
+              "0.1600",
+              "73.91"
+            ],
+            [
+              "0.1800",
+              "708.66"
+            ],
+            [
+              "0.1900",
+              "413.84"
+            ],
+            [
+              "0.2000",
+              "295.64"
+            ],
+            [
+              "0.2100",
+              "57.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -4516,19 +4890,19 @@
     "expected_expiration_time": "2026-10-31T22:30:00Z",
     "expiration_time": "2026-11-02T19:30:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.2500",
+    "last_price_dollars": "0.2100",
     "latest_expiration_time": "2026-11-02T19:30:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.7400",
-    "no_bid_dollars": "0.7100",
+    "no_ask_dollars": "0.7900",
+    "no_bid_dollars": "0.7200",
     "no_sub_title": "Florida",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-31T22:30:00Z",
-    "open_interest_fp": "18805.38",
+    "open_interest_fp": "18871.38",
     "open_time": "2026-10-17T22:07:00Z",
-    "previous_price_dollars": "0.3000",
+    "previous_price_dollars": "0.3200",
     "previous_yes_ask_dollars": "0.3100",
-    "previous_yes_bid_dollars": "0.2900",
+    "previous_yes_bid_dollars": "0.2800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -4547,17 +4921,17 @@
     "ticker": "KXNCAAFGAME-26OCT31FLAUGA-FLA",
     "title": "Florida wins",
     "updated_time": "2026-10-17T22:07:00.33233Z",
-    "volume_24h_fp": "6010.64",
-    "volume_fp": "19441.92",
-    "yes_ask_dollars": "0.2900",
-    "yes_ask_size_fp": "1634.92",
-    "yes_bid_dollars": "0.2600",
-    "yes_bid_size_fp": "56.00",
+    "volume_24h_fp": "5993.80",
+    "volume_fp": "19545.06",
+    "yes_ask_dollars": "0.2800",
+    "yes_ask_size_fp": "25.00",
+    "yes_bid_dollars": "0.2100",
+    "yes_bid_size_fp": "57.00",
     "yes_sub_title": "Florida"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31FLAUGA-FLA",
-  "market_captured_at": "2026-10-21T05:14:57.588Z",
+  "market_captured_at": "2026-10-21T08:01:19.258Z",
   "status": "active",
-  "last_ingested_at": "2026-10-21T05:14:58.263Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT31FLAUGA-FLA/candlesticks?start_ts=1792526401&end_ts=1792559697&period_interval=60"
+  "last_ingested_at": "2026-10-21T08:01:19.888Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT31FLAUGA-FLA/candlesticks?start_ts=1792558801&end_ts=1792569679&period_interval=60"
 }
