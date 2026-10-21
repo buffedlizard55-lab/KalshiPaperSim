@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-21T19:05:36.604Z",
+ "startedAt": "2026-10-21T22:25:13.226Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -49,7 +49,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 80
+     "playerRecords": 74
     },
     "scoreboard": {
      "2026-10-21": {
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 130
+     "playerRecords": 128
     },
     "scoreboard": {
      "2026-10-21": {
@@ -208,7 +208,7 @@
   "matched": 88,
   "unmapped": 84
  },
- "finishedAt": "2026-10-21T19:05:38.973Z"
+ "finishedAt": "2026-10-21T22:25:15.075Z"
 }
 {
  "ok": true,
@@ -220,11 +220,11 @@
   "codeRows": 172
  }
 }
-✓ src/accumulated-history.js — 192 market(s), 16767 bar(s), 26238.9 KB
+✓ src/accumulated-history.js — 193 market(s), 16767 bar(s), 26324.8 KB
 ✓ src/forecast-data.js — 9 location(s), 1127 snapshot(s), 2224.7 KB
 ✓ src/fda-signal-data.js — 6 subject(s), 584 snapshot(s), 391.4 KB
 ✓ src/mlb-signal-data.js — 28 date file(s), 158 game(s), 603 state row(s), 402.9 KB
-✓ src/espn-signal-data.js — 7 league(s), 626 event(s), 42267.2 KB
+✓ src/espn-signal-data.js — 7 league(s), 626 event(s), 42366.5 KB
 ✓ src/mlb-pregame-data.js — 0 date file(s), 0 row(s), 2.1 KB (no predictions yet — MLBPreGame_ModelEdge abstains)
 ✓ src/form4-signal-data.js — 0 issuer(s), 0 filing(s), 1.3 KB (no archive yet — insider strategies abstain)
     JPMCEOCHANGE-27: 313 bar(s) + market object
@@ -250,6 +250,7 @@
     KXFDAAPPROVALDATECMPS-360-27OCT01: 173 bar(s) + market object
     KXFDAAPPROVALDATECMPS-360-28JAN01: 150 bar(s) + market object
     KXFDAAPPROVALPSYCHEDELIC-27-ANYPSYCH: 400 bar(s) + market object
+    KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH: 0 bar(s) + market object
     KXFDAAPPROVE-CAG-26OCT01: 94 bar(s) + market object
     KXFDAAPPROVE-CAM-26OCT01: 91 bar(s) + market object
     KXFDAAPPROVE-CAM-27JAN01: 84 bar(s) + market object
@@ -419,11 +420,11 @@
     KXOPENAICEOCHANGE-26: 293 bar(s) + market object
     KXTESLACEOCHANGE-26: 0 bar(s) + market object
     TESLACEOCHANGE-26: 400 bar(s) + market object
-    intraday 1m: 1518 market(s), 90034 shipped bar(s) (cap 400/market) from data/history/intraday/1m
-    intraday 60m: 803 market(s), 75854 shipped bar(s) (cap 400/market) from data/history/intraday/60m
-desk-data: 106 markets (84 open) · 1505 ladder captures · 7144 bars · 120 quoted-only · 2186 KB → src/desk-data.js
-desk-data: 256 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
-desk-data: capture bound — the store holds 65371 ladders (22223 non-empty) in 136 batches; this module keeps 1505 ladders in 137 batches (136 store batch(es) represented, 0 not) — 0 season round stamp(s) and 63865 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
+    intraday 1m: 1533 market(s), 90274 shipped bar(s) (cap 400/market) from data/history/intraday/1m
+    intraday 60m: 803 market(s), 75923 shipped bar(s) (cap 400/market) from data/history/intraday/60m
+desk-data: 106 markets (85 open) · 1522 ladder captures · 7189 bars · 120 quoted-only · 2200 KB → src/desk-data.js
+desk-data: 257 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
+desk-data: capture bound — the store holds 65872 ladders (22365 non-empty) in 137 batches; this module keeps 1522 ladders in 138 batches (137 store batch(es) represented, 0 not) — 0 season round stamp(s) and 64349 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
   wrote VERIFICATION.md (99.5 KB)
   wrote IRREGULARITIES.md (123.1 KB)
   README.md AUTO blocks already up to date
