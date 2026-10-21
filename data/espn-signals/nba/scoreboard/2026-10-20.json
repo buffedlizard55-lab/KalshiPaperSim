@@ -15,7 +15,8 @@
   "2026-10-20T08:10:58.313Z",
   "2026-10-20T18:53:10.780Z",
   "2026-10-20T22:02:31.247Z",
-  "2026-10-21T00:40:18.125Z"
+  "2026-10-21T00:40:18.125Z",
+  "2026-10-21T02:38:30.613Z"
  ],
  "events": {
   "401909088": {
@@ -62,7 +63,7 @@
     },
     {
      "captured_at": "2026-10-20T22:02:31.247Z",
-     "last_seen_at": "2026-10-21T00:40:18.125Z",
+     "last_seen_at": "2026-10-21T02:38:30.613Z",
      "fp": "post|4|0|121,113|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -143,12 +144,32 @@
       "home": "0-0",
       "away": "0-0"
      }
+    },
+    {
+     "captured_at": "2026-10-21T02:38:30.613Z",
+     "last_seen_at": "2026-10-21T02:38:30.613Z",
+     "fp": "post|4|12|100,106|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 100,
+      "away": 106
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "1-0"
+     }
     }
    ]
   },
   "401909090": {
    "eventId": "401909090",
-   "date": "2026-10-21T01:30Z",
+   "date": "2026-10-21T01:50Z",
    "easternDate": "2026-10-20",
    "name": "Oklahoma City Thunder at San Antonio Spurs",
    "shortName": "OKC @ SA",
@@ -187,10 +208,30 @@
       "home": "0-0",
       "away": "0-0"
      }
+    },
+    {
+     "captured_at": "2026-10-21T02:38:30.613Z",
+     "last_seen_at": "2026-10-21T02:38:30.613Z",
+     "fp": "in|2|6|33,46|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 419,
+     "displayClock": "6:59",
+     "scores": {
+      "home": 33,
+      "away": 46
+     },
+     "recordsOverall": {
+      "home": "0-0",
+      "away": "0-0"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-21T00:40:18.125Z",
+ "last_ingested_at": "2026-10-21T02:38:30.613Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261020"
 }
