@@ -37638,11 +37638,11 @@
     "no_sub_title": "Miami",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-31T14:00:00Z",
-    "open_interest_fp": "2196957.24",
+    "open_interest_fp": "2199207.58",
     "open_time": "2026-06-14T08:00:00Z",
-    "previous_price_dollars": "0.0600",
-    "previous_yes_ask_dollars": "0.0600",
-    "previous_yes_bid_dollars": "0.0500",
+    "previous_price_dollars": "0.0400",
+    "previous_yes_ask_dollars": "0.0500",
+    "previous_yes_bid_dollars": "0.0400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -37661,17 +37661,17 @@
     "ticker": "KXNBA-27-MIA",
     "title": "Will Miami win the 2027 Pro Basketball Finals?",
     "updated_time": "2026-09-27T15:16:20.390341Z",
-    "volume_24h_fp": "52876.12",
-    "volume_fp": "3459882.45",
+    "volume_24h_fp": "31669.91",
+    "volume_fp": "3462132.79",
     "yes_ask_dollars": "0.0500",
-    "yes_ask_size_fp": "70570.72",
+    "yes_ask_size_fp": "28370.01",
     "yes_bid_dollars": "0.0400",
-    "yes_bid_size_fp": "311714.73",
+    "yes_bid_size_fp": "811867.52",
     "yes_sub_title": "Miami"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-MIA",
-  "market_captured_at": "2026-10-21T07:55:50.954Z",
+  "market_captured_at": "2026-10-21T11:53:53.641Z",
   "status": "active",
-  "last_ingested_at": "2026-10-21T07:55:51.483Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-MIA/candlesticks?start_ts=1792555201&end_ts=1792569351&period_interval=1440"
+  "last_ingested_at": "2026-10-21T11:53:54.165Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-MIA/candlesticks?start_ts=1792555201&end_ts=1792583633&period_interval=1440"
 }

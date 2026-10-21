@@ -34927,7 +34927,7 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "2742479.12",
     "open_time": "2026-01-21T22:00:00Z",
-    "previous_price_dollars": "0.0100",
+    "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0200",
     "previous_yes_bid_dollars": "0.0100",
     "price_level_structure": "linear_cent",
@@ -34948,17 +34948,17 @@
     "ticker": "KXNCAAF-27-ORE",
     "title": "Will Oregon win the College Football Playoff National Championship?",
     "updated_time": "2026-09-15T15:39:56.076464Z",
-    "volume_24h_fp": "6668.24",
+    "volume_24h_fp": "6168.24",
     "volume_fp": "3994558.00",
     "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "9931.24",
+    "yes_ask_size_fp": "16011.77",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "198812.25",
+    "yes_bid_size_fp": "198811.25",
     "yes_sub_title": "Oregon"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAF-27-ORE",
-  "market_captured_at": "2026-10-21T07:56:19.286Z",
+  "market_captured_at": "2026-10-21T11:54:14.647Z",
   "status": "active",
-  "last_ingested_at": "2026-10-21T07:56:19.815Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-ORE/candlesticks?start_ts=1792555201&end_ts=1792569379&period_interval=1440"
+  "last_ingested_at": "2026-10-21T11:54:15.173Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAF/markets/KXNCAAF-27-ORE/candlesticks?start_ts=1792555201&end_ts=1792583654&period_interval=1440"
 }
