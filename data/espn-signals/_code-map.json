@@ -1,8 +1,33 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-22T02:36:11.474Z",
+ "generatedAt": "2026-10-22T08:20:18.320Z",
  "rows": [
+  {
+   "league": "nba",
+   "kalshiCode": "ATL",
+   "kalshiName": "Atlanta",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "1",
+    "abbr": "ATL",
+    "displayName": "Atlanta Hawks",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT21ATLORL-ATL",
+     "rulesName": "Atlanta",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT21ATLORL-ORL",
+     "rulesName": "Atlanta",
+     "role": "away"
+    }
+   ]
+  },
   {
    "league": "nba",
    "kalshiCode": "BOS",
@@ -190,6 +215,11 @@
      "ticker": "KXNBAGAME-26OCT13INDOKC-IND",
      "rulesName": "Indiana",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT21INDNOP-IND",
+     "rulesName": "Indiana",
+     "role": "away"
     }
    ]
   },
@@ -310,6 +340,16 @@
      "ticker": "KXNBAGAME-26OCT03MIATOR-TOR",
      "rulesName": "Miami",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT21MINMIA-MIA",
+     "rulesName": "Miami",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT21MINMIA-MIN",
+     "rulesName": "Miami",
+     "role": "home"
     }
    ]
   },
@@ -350,6 +390,16 @@
      "ticker": "KXNBAGAME-26OCT07MININD-MIN",
      "rulesName": "Minnesota",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT21MINMIA-MIA",
+     "rulesName": "Minnesota",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT21MINMIA-MIN",
+     "rulesName": "Minnesota",
+     "role": "away"
     }
    ]
   },
@@ -375,6 +425,11 @@
      "ticker": "KXNBAGAME-26OCT06NOPOKC-OKC",
      "rulesName": "New Orleans",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT21INDNOP-IND",
+     "rulesName": "New Orleans",
+     "role": "home"
     }
    ]
   },
@@ -449,6 +504,31 @@
     {
      "ticker": "KXNBAGAME-26OCT07MILOKC-MIL",
      "rulesName": "Oklahoma City",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "ORL",
+   "kalshiName": "Orlando",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "19",
+    "abbr": "ORL",
+    "displayName": "Orlando Magic",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT21ATLORL-ATL",
+     "rulesName": "Orlando",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT21ATLORL-ORL",
+     "rulesName": "Orlando",
      "role": "home"
     }
    ]

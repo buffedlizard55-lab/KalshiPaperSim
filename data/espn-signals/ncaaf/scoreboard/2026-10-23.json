@@ -1,0 +1,237 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-23",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261023"
+  ]
+ },
+ "captures": [
+  "2026-10-22T08:20:17.006Z"
+ ],
+ "events": {
+  "401858271": {
+   "eventId": "401858271",
+   "date": "2026-10-23T23:00Z",
+   "easternDate": "2026-10-23",
+   "name": "Duke Blue Devils at Virginia Cavaliers",
+   "shortName": "DUKE @ UVA",
+   "week": 8,
+   "venue": "Scott Stadium",
+   "homeAbbr": "UVA",
+   "homeTeamId": "258",
+   "homeName": "Virginia Cavaliers",
+   "awayAbbr": "DUKE",
+   "awayTeamId": "150",
+   "awayName": "Duke Blue Devils",
+   "firstCapturedAt": "2026-10-22T08:20:17.006Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "UVA -1.5",
+    "spread": -1.5,
+    "overUnder": 47.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-22T08:20:17.006Z",
+     "last_seen_at": "2026-10-22T08:20:17.006Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "4-2"
+     }
+    }
+   ]
+  },
+  "401858272": {
+   "eventId": "401858272",
+   "date": "2026-10-24T02:30Z",
+   "easternDate": "2026-10-23",
+   "name": "NC State Wolfpack at Stanford Cardinal",
+   "shortName": "NCSU @ STAN",
+   "week": 8,
+   "venue": "Stanford Stadium",
+   "homeAbbr": "STAN",
+   "homeTeamId": "24",
+   "homeName": "Stanford Cardinal",
+   "awayAbbr": "NCSU",
+   "awayTeamId": "152",
+   "awayName": "NC State Wolfpack",
+   "firstCapturedAt": "2026-10-22T08:20:17.006Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "NCSU -6.5",
+    "spread": 6.5,
+    "overUnder": 55.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-22T08:20:17.006Z",
+     "last_seen_at": "2026-10-22T08:20:17.006Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-4",
+      "away": "3-3"
+     }
+    }
+   ]
+  },
+  "401861965": {
+   "eventId": "401861965",
+   "date": "2026-10-23T23:00Z",
+   "easternDate": "2026-10-23",
+   "name": "Massachusetts Minutemen at UConn Huskies",
+   "shortName": "MASS @ CONN",
+   "week": 8,
+   "venue": "Pratt & Whitney Stadium",
+   "homeAbbr": "CONN",
+   "homeTeamId": "41",
+   "homeName": "UConn Huskies",
+   "awayAbbr": "MASS",
+   "awayTeamId": "113",
+   "awayName": "Massachusetts Minutemen",
+   "firstCapturedAt": "2026-10-22T08:20:17.006Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "CONN -14.5",
+    "spread": -14.5,
+    "overUnder": 50.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-22T08:20:17.006Z",
+     "last_seen_at": "2026-10-22T08:20:17.006Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-3",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401862808": {
+   "eventId": "401862808",
+   "date": "2026-10-24T00:30Z",
+   "easternDate": "2026-10-23",
+   "name": "Army Black Knights at Tulsa Golden Hurricane",
+   "shortName": "ARMY @ TLSA",
+   "week": 8,
+   "venue": "H. A. Chapman Stadium",
+   "homeAbbr": "TLSA",
+   "homeTeamId": "202",
+   "homeName": "Tulsa Golden Hurricane",
+   "awayAbbr": "ARMY",
+   "awayTeamId": "349",
+   "awayName": "Army Black Knights",
+   "firstCapturedAt": "2026-10-22T08:20:17.006Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "TLSA -1.5",
+    "spread": -1.5,
+    "overUnder": 54.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-22T08:20:17.006Z",
+     "last_seen_at": "2026-10-22T08:20:17.006Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "4-2"
+     }
+    }
+   ]
+  },
+  "401864525": {
+   "eventId": "401864525",
+   "date": "2026-10-24T01:00Z",
+   "easternDate": "2026-10-23",
+   "name": "Air Force Falcons at Wyoming Cowboys",
+   "shortName": "AFA @ WYO",
+   "week": 8,
+   "venue": "War Memorial Stadium",
+   "homeAbbr": "WYO",
+   "homeTeamId": "2751",
+   "homeName": "Wyoming Cowboys",
+   "awayAbbr": "AFA",
+   "awayTeamId": "2005",
+   "awayName": "Air Force Falcons",
+   "firstCapturedAt": "2026-10-22T08:20:17.006Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "AF -5.5",
+    "spread": 5.5,
+    "overUnder": 45.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-22T08:20:17.006Z",
+     "last_seen_at": "2026-10-22T08:20:17.006Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "5-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-22T08:20:17.006Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261023"
+}
