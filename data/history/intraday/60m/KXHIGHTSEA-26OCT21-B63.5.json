@@ -999,6 +999,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T20:23:43.466Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26OCT21-B63.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1014,7 +1024,7 @@
     "exchange_index": 0,
     "expected_expiration_time": "2026-10-22T19:00:00Z",
     "expiration_time": "2026-10-28T14:00:00Z",
-    "expiration_value": "",
+    "expiration_value": "64.00",
     "floor_strike": 63,
     "last_price_dollars": "0.9900",
     "latest_expiration_time": "2026-10-28T14:00:00Z",
@@ -1026,9 +1036,9 @@
     "occurrence_datetime": "2026-10-22T14:00:00Z",
     "open_interest_fp": "8894.16",
     "open_time": "2026-10-20T14:00:00Z",
-    "previous_price_dollars": "0.0800",
-    "previous_yes_ask_dollars": "0.0800",
-    "previous_yes_bid_dollars": "0.0700",
+    "previous_price_dollars": "0.4200",
+    "previous_yes_ask_dollars": "0.4200",
+    "previous_yes_bid_dollars": "0.4100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1037,17 +1047,19 @@
         "step": "0.0100"
       }
     ],
-    "result": "",
+    "result": "yes",
     "rules_primary": "If the maximum temperature recorded at Seattle (CLISEA) for Oct 21, 2026, is between 63-64° fahrenheit according to The Weather Company, then the market resolves to Yes.",
     "rules_secondary": "Not all weather data is the same. While checking a source like AccuWeather or Google Weather may help guide your decision, the official and final value used to determine this market is the maximum/minimum temperature as reported by the Weather Company.\n\nReading weather data\nPreliminary Weather Company data may be subject to rounding and conversion differences from the final reported value.\nUse caution when interpreting preliminary Weather Company readings.\n\nIf it is determined in the sole discretion of the Exchange that there is a material error in the initial non-preliminary publication, Expiration may be held until the publication of a non-materially-erroneous data revision or until the Expiration Date, whichever comes first. If no data is available at the end of this period, all markets will resolve to the last fair price determined by Kalshi. Please note, a status of \"Final\" on weather.com/kalshi is provided for convenience only, and does not guarantee data to be error-free and thus exempt from the above.",
     "settlement_bounds_type": "default",
     "settlement_timer_seconds": 300,
-    "status": "closed",
+    "settlement_ts": "2026-10-22T14:11:05.03961Z",
+    "settlement_value_dollars": "1.0000",
+    "status": "finalized",
     "strike_type": "between",
     "ticker": "KXHIGHTSEA-26OCT21-B63.5",
     "title": "Will the maximum temperature be 63-64° on Oct 21, 2026?",
-    "updated_time": "2026-10-22T09:00:01.825313Z",
-    "volume_24h_fp": "16212.62",
+    "updated_time": "2026-10-22T14:11:05.325595Z",
+    "volume_24h_fp": "12943.33",
     "volume_fp": "17411.69",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1056,8 +1068,9 @@
     "yes_sub_title": "63° to 64°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHTSEA-26OCT21-B63.5",
-  "market_captured_at": "2026-10-22T12:00:49.040Z",
-  "status": "closed",
-  "last_ingested_at": "2026-10-22T12:00:49.675Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26OCT21-B63.5/candlesticks?start_ts=1792418400&end_ts=1792670449&period_interval=60"
+  "market_captured_at": "2026-10-22T20:23:42.742Z",
+  "status": "finalized",
+  "last_ingested_at": "2026-10-22T20:23:43.406Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHTSEA/markets/KXHIGHTSEA-26OCT21-B63.5/candlesticks?start_ts=1792663201&end_ts=1792700623&period_interval=60",
+  "result": "yes"
 }

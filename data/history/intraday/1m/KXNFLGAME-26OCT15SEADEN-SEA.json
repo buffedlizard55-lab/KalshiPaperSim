@@ -12265,6 +12265,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T20:29:41.774Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT15SEADEN-SEA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12322,11 +12332,11 @@
     "yes_sub_title": "Seattle"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT15SEADEN-SEA",
-  "market_captured_at": "2026-10-22T12:06:16.815Z",
+  "market_captured_at": "2026-10-22T20:29:38.878Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-22T12:06:19.441Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT15SEADEN-SEA/candlesticks?start_ts=1792640101&end_ts=1792670777&period_interval=1",
+  "last_ingested_at": "2026-10-22T20:29:41.714Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT15SEADEN-SEA/candlesticks?start_ts=1792640101&end_ts=1792700979&period_interval=1",
   "trims": [
     {
       "at": "2026-10-16T05:00:55.998Z",
