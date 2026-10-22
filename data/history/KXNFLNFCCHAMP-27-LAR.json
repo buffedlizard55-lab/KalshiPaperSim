@@ -1553,6 +1553,31 @@
         "low_dollars": "0.0900",
         "open_dollars": "0.1000"
       }
+    },
+    {
+      "end_period_ts": 1792641600,
+      "open_interest_fp": "569838.58",
+      "price": {
+        "close_dollars": "0.1100",
+        "high_dollars": "0.1300",
+        "low_dollars": "0.1100",
+        "mean_dollars": "0.1203",
+        "open_dollars": "0.1300",
+        "previous_dollars": "0.1200"
+      },
+      "volume_fp": "1744.91",
+      "yes_ask": {
+        "close_dollars": "0.1200",
+        "high_dollars": "0.1300",
+        "low_dollars": "0.1200",
+        "open_dollars": "0.1300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1100",
+        "high_dollars": "0.1200",
+        "low_dollars": "0.1100",
+        "open_dollars": "0.1200"
+      }
     }
   ],
   "books": [
@@ -33475,6 +33500,330 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T05:13:01.120Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-LAR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2661887.34"
+            ],
+            [
+              "0.0200",
+              "5351.00"
+            ],
+            [
+              "0.0300",
+              "3837.00"
+            ],
+            [
+              "0.0400",
+              "10.00"
+            ],
+            [
+              "0.0500",
+              "397.17"
+            ],
+            [
+              "0.0700",
+              "5026.99"
+            ],
+            [
+              "0.0900",
+              "637370.32"
+            ],
+            [
+              "0.1000",
+              "200.00"
+            ],
+            [
+              "0.1100",
+              "2.00"
+            ],
+            [
+              "0.1200",
+              "223.08"
+            ],
+            [
+              "0.1300",
+              "7.60"
+            ],
+            [
+              "0.1400",
+              "37227.91"
+            ],
+            [
+              "0.1500",
+              "119.58"
+            ],
+            [
+              "0.1600",
+              "61.97"
+            ],
+            [
+              "0.1700",
+              "261309.02"
+            ],
+            [
+              "0.1800",
+              "183.73"
+            ],
+            [
+              "0.1900",
+              "318.48"
+            ],
+            [
+              "0.2000",
+              "241.80"
+            ],
+            [
+              "0.2100",
+              "38.00"
+            ],
+            [
+              "0.2200",
+              "9.89"
+            ],
+            [
+              "0.2300",
+              "853.19"
+            ],
+            [
+              "0.2400",
+              "200.77"
+            ],
+            [
+              "0.2500",
+              "2107.69"
+            ],
+            [
+              "0.2600",
+              "238913.55"
+            ],
+            [
+              "0.2700",
+              "1000.00"
+            ],
+            [
+              "0.2800",
+              "452.23"
+            ],
+            [
+              "0.3000",
+              "133.27"
+            ],
+            [
+              "0.3100",
+              "694.36"
+            ],
+            [
+              "0.3200",
+              "19.00"
+            ],
+            [
+              "0.3300",
+              "76.00"
+            ],
+            [
+              "0.3400",
+              "156057.51"
+            ],
+            [
+              "0.3600",
+              "483.31"
+            ],
+            [
+              "0.3700",
+              "1248.45"
+            ],
+            [
+              "0.3800",
+              "236.00"
+            ],
+            [
+              "0.3900",
+              "13612.00"
+            ],
+            [
+              "0.4000",
+              "358.80"
+            ],
+            [
+              "0.4100",
+              "100.00"
+            ],
+            [
+              "0.4200",
+              "73825.00"
+            ],
+            [
+              "0.4300",
+              "280.35"
+            ],
+            [
+              "0.4500",
+              "730.33"
+            ],
+            [
+              "0.4600",
+              "2154.00"
+            ],
+            [
+              "0.4700",
+              "200.00"
+            ],
+            [
+              "0.4900",
+              "208.59"
+            ],
+            [
+              "0.5000",
+              "256.54"
+            ],
+            [
+              "0.5100",
+              "42030.00"
+            ],
+            [
+              "0.5200",
+              "7445.69"
+            ],
+            [
+              "0.5500",
+              "136.00"
+            ],
+            [
+              "0.5800",
+              "129.00"
+            ],
+            [
+              "0.5900",
+              "24132.00"
+            ],
+            [
+              "0.6100",
+              "200.90"
+            ],
+            [
+              "0.6400",
+              "193.00"
+            ],
+            [
+              "0.6700",
+              "89.00"
+            ],
+            [
+              "0.6800",
+              "14917.00"
+            ],
+            [
+              "0.6900",
+              "588.15"
+            ],
+            [
+              "0.7000",
+              "105.00"
+            ],
+            [
+              "0.7100",
+              "26.55"
+            ],
+            [
+              "0.7200",
+              "109.78"
+            ],
+            [
+              "0.7300",
+              "61.00"
+            ],
+            [
+              "0.7500",
+              "20.00"
+            ],
+            [
+              "0.7600",
+              "59.00"
+            ],
+            [
+              "0.7700",
+              "9.96"
+            ],
+            [
+              "0.7900",
+              "47.00"
+            ],
+            [
+              "0.8400",
+              "200.00"
+            ],
+            [
+              "0.8500",
+              "100224.17"
+            ],
+            [
+              "0.8600",
+              "2658.15"
+            ],
+            [
+              "0.8700",
+              "270684.76"
+            ],
+            [
+              "0.8800",
+              "11836.51"
+            ],
+            [
+              "0.8900",
+              "120.82"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1083888.79"
+            ],
+            [
+              "0.0200",
+              "118851.00"
+            ],
+            [
+              "0.0300",
+              "61308.00"
+            ],
+            [
+              "0.0400",
+              "26232.00"
+            ],
+            [
+              "0.0500",
+              "206.00"
+            ],
+            [
+              "0.0600",
+              "217.40"
+            ],
+            [
+              "0.0700",
+              "619.83"
+            ],
+            [
+              "0.0800",
+              "1127.91"
+            ],
+            [
+              "0.0900",
+              "286.24"
+            ],
+            [
+              "0.1000",
+              "71.29"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -33490,18 +33839,18 @@
     "expected_expiration_time": "2027-02-08T15:00:00Z",
     "expiration_time": "2027-02-22T15:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.1200",
+    "last_price_dollars": "0.1000",
     "latest_expiration_time": "2027-02-22T15:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.8800",
-    "no_bid_dollars": "0.8700",
+    "no_ask_dollars": "0.9000",
+    "no_bid_dollars": "0.8900",
     "no_sub_title": "Los Angeles R",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "569857.81",
+    "open_interest_fp": "569838.58",
     "open_time": "2026-02-07T15:00:00Z",
-    "previous_price_dollars": "0.1000",
-    "previous_yes_ask_dollars": "0.1100",
-    "previous_yes_bid_dollars": "0.1000",
+    "previous_price_dollars": "0.1300",
+    "previous_yes_ask_dollars": "0.1300",
+    "previous_yes_bid_dollars": "0.1200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -33520,17 +33869,17 @@
     "ticker": "KXNFLNFCCHAMP-27-LAR",
     "title": "Will Los Angeles R win the Pro Football NFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "4379.38",
-    "volume_fp": "1085108.57",
-    "yes_ask_dollars": "0.1300",
-    "yes_ask_size_fp": "300589.03",
-    "yes_bid_dollars": "0.1200",
-    "yes_bid_size_fp": "390.86",
+    "volume_24h_fp": "1668.70",
+    "volume_fp": "1086257.49",
+    "yes_ask_dollars": "0.1100",
+    "yes_ask_size_fp": "120.82",
+    "yes_bid_dollars": "0.1000",
+    "yes_bid_size_fp": "71.29",
     "yes_sub_title": "Los Angeles R"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-LAR",
-  "market_captured_at": "2026-10-21T20:25:15.771Z",
+  "market_captured_at": "2026-10-22T05:13:00.482Z",
   "status": "active",
-  "last_ingested_at": "2026-10-21T20:25:16.339Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-LAR/candlesticks?start_ts=1792555201&end_ts=1792614316&period_interval=1440"
+  "last_ingested_at": "2026-10-22T05:13:01.052Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-LAR/candlesticks?start_ts=1792555201&end_ts=1792645980&period_interval=1440"
 }

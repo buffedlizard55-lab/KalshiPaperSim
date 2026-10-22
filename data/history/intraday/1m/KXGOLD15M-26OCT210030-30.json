@@ -439,6 +439,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T05:16:59.861Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXGOLD15M-26OCT210030-30/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -464,8 +474,8 @@
     "occurrence_datetime": "2026-10-21T04:35:00Z",
     "open_interest_fp": "225133.18",
     "open_time": "2026-10-21T04:15:00Z",
-    "previous_price_dollars": "0.0000",
-    "previous_yes_ask_dollars": "0.0000",
+    "previous_price_dollars": "0.0010",
+    "previous_yes_ask_dollars": "1.0000",
     "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "tapered_deci_cent",
     "price_ranges": [
@@ -497,7 +507,7 @@
     "ticker": "KXGOLD15M-26OCT210030-30",
     "title": "Gold price up in next 15 mins?",
     "updated_time": "2026-10-21T04:30:22.150891Z",
-    "volume_24h_fp": "643561.84",
+    "volume_24h_fp": "0.00",
     "volume_fp": "643561.84",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -506,9 +516,9 @@
     "yes_sub_title": "Target Price: $4,123.11"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXGOLD15M-26OCT210030-30",
-  "market_captured_at": "2026-10-21T20:29:07.697Z",
+  "market_captured_at": "2026-10-22T05:16:58.752Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-21T20:29:08.368Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26OCT210030-30/candlesticks?start_ts=1792557061&end_ts=1792614547&period_interval=1"
+  "last_ingested_at": "2026-10-22T05:16:59.793Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXGOLD15M/markets/KXGOLD15M-26OCT210030-30/candlesticks?start_ts=1792643461&end_ts=1792646219&period_interval=1"
 }

@@ -3,7 +3,26 @@
   "series_ticker": "KXFDAAPPROVALPSYCHEDELIC",
   "period_interval": 1440,
   "source": "live_api",
-  "candlesticks": [],
+  "candlesticks": [
+    {
+      "end_period_ts": 1792641600,
+      "open_interest_fp": "0.00",
+      "price": {},
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.7000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.7000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.6900",
+        "high_dollars": "0.6900",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    }
+  ],
   "books": [
     {
       "captured_at": "2026-10-21T20:36:47.470Z",
@@ -56,6 +75,130 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T05:10:17.125Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1300.00"
+            ],
+            [
+              "0.0200",
+              "13.00"
+            ],
+            [
+              "0.0400",
+              "120.00"
+            ],
+            [
+              "0.0500",
+              "2767.00"
+            ],
+            [
+              "0.2600",
+              "200.00"
+            ],
+            [
+              "0.3000",
+              "2209.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1200.00"
+            ],
+            [
+              "0.1600",
+              "100.00"
+            ],
+            [
+              "0.2200",
+              "50.00"
+            ],
+            [
+              "0.2300",
+              "2202.00"
+            ],
+            [
+              "0.6600",
+              "200.00"
+            ],
+            [
+              "0.6900",
+              "3466.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-22T05:24:57.449Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1300.00"
+            ],
+            [
+              "0.0400",
+              "100.00"
+            ],
+            [
+              "0.0500",
+              "2767.00"
+            ],
+            [
+              "0.0600",
+              "60.00"
+            ],
+            [
+              "0.2600",
+              "200.00"
+            ],
+            [
+              "0.3000",
+              "1959.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1200.00"
+            ],
+            [
+              "0.0200",
+              "13.00"
+            ],
+            [
+              "0.1600",
+              "100.00"
+            ],
+            [
+              "0.2300",
+              "2202.00"
+            ],
+            [
+              "0.2400",
+              "46.00"
+            ],
+            [
+              "0.6600",
+              "200.00"
+            ],
+            [
+              "0.6900",
+              "3216.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -101,14 +244,14 @@
     "volume_24h_fp": "0.00",
     "volume_fp": "0.00",
     "yes_ask_dollars": "0.7000",
-    "yes_ask_size_fp": "610.00",
+    "yes_ask_size_fp": "1959.00",
     "yes_bid_dollars": "0.6900",
-    "yes_bid_size_fp": "1784.00",
+    "yes_bid_size_fp": "3216.00",
     "yes_sub_title": "any psychedelic substance for medical use"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH",
-  "market_captured_at": "2026-10-21T20:36:46.738Z",
+  "market_captured_at": "2026-10-22T05:24:56.713Z",
   "status": "active",
-  "last_ingested_at": "2026-10-21T20:36:47.405Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALPSYCHEDELIC/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH/candlesticks?start_ts=1792512000&end_ts=1792615007&period_interval=1440"
+  "last_ingested_at": "2026-10-22T05:24:57.382Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALPSYCHEDELIC/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH/candlesticks?start_ts=1792641601&end_ts=1792646697&period_interval=1440"
 }

@@ -3906,6 +3906,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T05:17:45.731Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT13BOSSJ-SJ/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3963,9 +3973,9 @@
     "yes_sub_title": "San Jose"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT13BOSSJ-SJ",
-  "market_captured_at": "2026-10-21T20:29:56.676Z",
+  "market_captured_at": "2026-10-22T05:17:44.990Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-21T20:29:57.345Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT13BOSSJ-SJ/candlesticks?start_ts=1791957601&end_ts=1792614596&period_interval=60",
+  "last_ingested_at": "2026-10-22T05:17:45.663Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT13BOSSJ-SJ/candlesticks?start_ts=1791957601&end_ts=1792646265&period_interval=60",
   "result": "no"
 }

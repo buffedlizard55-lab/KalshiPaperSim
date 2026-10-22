@@ -1248,6 +1248,31 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1792641600,
+      "open_interest_fp": "60053.49",
+      "price": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0158",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "632.29",
+      "yes_ask": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -19443,6 +19468,237 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T05:12:19.826Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-UTA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3888999.00"
+            ],
+            [
+              "0.0300",
+              "667.00"
+            ],
+            [
+              "0.0600",
+              "936602.00"
+            ],
+            [
+              "0.0700",
+              "10000.00"
+            ],
+            [
+              "0.1100",
+              "510874.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1700",
+              "4000.00"
+            ],
+            [
+              "0.1800",
+              "407331.00"
+            ],
+            [
+              "0.2500",
+              "289164.00"
+            ],
+            [
+              "0.2700",
+              "2000.00"
+            ],
+            [
+              "0.2800",
+              "250.00"
+            ],
+            [
+              "0.3100",
+              "225.00"
+            ],
+            [
+              "0.3200",
+              "239995.00"
+            ],
+            [
+              "0.3400",
+              "205.00"
+            ],
+            [
+              "0.3700",
+              "1246.79"
+            ],
+            [
+              "0.3800",
+              "157.00"
+            ],
+            [
+              "0.3900",
+              "129099.00"
+            ],
+            [
+              "0.4000",
+              "150.00"
+            ],
+            [
+              "0.4300",
+              "139.00"
+            ],
+            [
+              "0.4500",
+              "304263.00"
+            ],
+            [
+              "0.4600",
+              "65.00"
+            ],
+            [
+              "0.4700",
+              "400.00"
+            ],
+            [
+              "0.4900",
+              "102.00"
+            ],
+            [
+              "0.5200",
+              "96.00"
+            ],
+            [
+              "0.5300",
+              "54528.00"
+            ],
+            [
+              "0.5500",
+              "90.00"
+            ],
+            [
+              "0.5600",
+              "142595.00"
+            ],
+            [
+              "0.5800",
+              "86.00"
+            ],
+            [
+              "0.6100",
+              "65.00"
+            ],
+            [
+              "0.6200",
+              "2044.00"
+            ],
+            [
+              "0.6400",
+              "62.00"
+            ],
+            [
+              "0.6700",
+              "59.00"
+            ],
+            [
+              "0.6800",
+              "72091.00"
+            ],
+            [
+              "0.7000",
+              "57.00"
+            ],
+            [
+              "0.7300",
+              "41.00"
+            ],
+            [
+              "0.7400",
+              "22822.00"
+            ],
+            [
+              "0.7500",
+              "24987.00"
+            ],
+            [
+              "0.7600",
+              "39.00"
+            ],
+            [
+              "0.7900",
+              "37.00"
+            ],
+            [
+              "0.8100",
+              "15152.00"
+            ],
+            [
+              "0.8200",
+              "36.00"
+            ],
+            [
+              "0.8300",
+              "1350.00"
+            ],
+            [
+              "0.8400",
+              "90.00"
+            ],
+            [
+              "0.8700",
+              "587.58"
+            ],
+            [
+              "0.8900",
+              "21.00"
+            ],
+            [
+              "0.9000",
+              "3398.79"
+            ],
+            [
+              "0.9100",
+              "3001.00"
+            ],
+            [
+              "0.9200",
+              "1.00"
+            ],
+            [
+              "0.9300",
+              "501.00"
+            ],
+            [
+              "0.9400",
+              "601.00"
+            ],
+            [
+              "0.9500",
+              "601.00"
+            ],
+            [
+              "0.9600",
+              "2492.91"
+            ],
+            [
+              "0.9700",
+              "2961.92"
+            ],
+            [
+              "0.9800",
+              "186112.95"
+            ],
+            [
+              "0.9900",
+              "200.00"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -19458,17 +19714,17 @@
     "expected_expiration_time": "2027-06-30T14:00:00Z",
     "expiration_time": "2029-06-29T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0100",
+    "last_price_dollars": "0.0200",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "1.0000",
-    "no_bid_dollars": "0.9800",
+    "no_bid_dollars": "0.9900",
     "no_sub_title": "Utah",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "59485.72",
+    "open_interest_fp": "60053.49",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.0100",
+    "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0100",
     "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
@@ -19489,17 +19745,17 @@
     "ticker": "KXNBAWEST-27-UTA",
     "title": "Will Utah win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "7236.54",
-    "volume_fp": "67184.49",
-    "yes_ask_dollars": "0.0200",
-    "yes_ask_size_fp": "135076.77",
+    "volume_24h_fp": "632.29",
+    "volume_fp": "67752.26",
+    "yes_ask_dollars": "0.0100",
+    "yes_ask_size_fp": "200.00",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Utah"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-UTA",
-  "market_captured_at": "2026-10-21T20:24:34.752Z",
+  "market_captured_at": "2026-10-22T05:12:19.186Z",
   "status": "active",
-  "last_ingested_at": "2026-10-21T20:24:35.320Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-UTA/candlesticks?start_ts=1792555201&end_ts=1792614275&period_interval=1440"
+  "last_ingested_at": "2026-10-22T05:12:19.757Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-UTA/candlesticks?start_ts=1792555201&end_ts=1792645939&period_interval=1440"
 }
