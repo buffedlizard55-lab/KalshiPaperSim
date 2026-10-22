@@ -10,7 +10,8 @@
  "captures": [
   "2026-10-21T08:13:39.586Z",
   "2026-10-21T19:05:37.588Z",
-  "2026-10-21T22:25:13.677Z"
+  "2026-10-21T22:25:13.677Z",
+  "2026-10-22T00:52:54.066Z"
  ],
  "events": {
   "401909093": {
@@ -37,7 +38,7 @@
    "states": [
     {
      "captured_at": "2026-10-21T08:13:39.586Z",
-     "last_seen_at": "2026-10-21T22:25:13.677Z",
+     "last_seen_at": "2026-10-22T00:52:54.066Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -81,7 +82,7 @@
    "states": [
     {
      "captured_at": "2026-10-21T08:13:39.586Z",
-     "last_seen_at": "2026-10-21T22:25:13.677Z",
+     "last_seen_at": "2026-10-22T00:52:54.066Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -102,6 +103,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-21T22:25:13.677Z",
+ "last_ingested_at": "2026-10-22T00:52:54.066Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261022"
 }
