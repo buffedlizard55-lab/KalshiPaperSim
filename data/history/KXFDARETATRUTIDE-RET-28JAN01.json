@@ -27490,6 +27490,118 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T12:09:12.288Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "9142.21"
+            ],
+            [
+              "0.0200",
+              "6880.00"
+            ],
+            [
+              "0.0300",
+              "5561.69"
+            ],
+            [
+              "0.0400",
+              "2584.22"
+            ],
+            [
+              "0.0500",
+              "2551.13"
+            ],
+            [
+              "0.0600",
+              "95.00"
+            ],
+            [
+              "0.0700",
+              "318.00"
+            ],
+            [
+              "0.0800",
+              "247.00"
+            ],
+            [
+              "0.0900",
+              "49.00"
+            ],
+            [
+              "0.1000",
+              "46.00"
+            ],
+            [
+              "0.1200",
+              "16.12"
+            ],
+            [
+              "0.2200",
+              "500.00"
+            ],
+            [
+              "0.2900",
+              "6001.72"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "8746.00"
+            ],
+            [
+              "0.0200",
+              "8550.00"
+            ],
+            [
+              "0.0300",
+              "6490.00"
+            ],
+            [
+              "0.0400",
+              "1500.00"
+            ],
+            [
+              "0.0500",
+              "550.00"
+            ],
+            [
+              "0.1600",
+              "17.98"
+            ],
+            [
+              "0.2000",
+              "125.84"
+            ],
+            [
+              "0.3100",
+              "500.00"
+            ],
+            [
+              "0.3300",
+              "1695.00"
+            ],
+            [
+              "0.5000",
+              "508.26"
+            ],
+            [
+              "0.5500",
+              "69.24"
+            ],
+            [
+              "0.7000",
+              "2443.68"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -27539,16 +27651,16 @@
     "volume_24h_fp": "0.00",
     "volume_fp": "6231.52",
     "yes_ask_dollars": "0.7100",
-    "yes_ask_size_fp": "6000.72",
+    "yes_ask_size_fp": "6001.72",
     "yes_bid_dollars": "0.7000",
-    "yes_bid_size_fp": "2435.16",
+    "yes_bid_size_fp": "2443.68",
     "yes_sub_title": "Before Jan 1, 2028"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-28JAN01",
-  "market_captured_at": "2026-10-22T05:25:12.264Z",
+  "market_captured_at": "2026-10-22T12:09:11.627Z",
   "status": "active",
-  "last_ingested_at": "2026-10-22T07:51:21.020Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-28JAN01/candlesticks?start_ts=1792641601&end_ts=1792655480&period_interval=1440",
+  "last_ingested_at": "2026-10-22T12:09:12.258Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-28JAN01/candlesticks?start_ts=1792641601&end_ts=1792670951&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:20.506Z",

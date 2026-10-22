@@ -5,106 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1791162000,
-      "open_interest_fp": "419776.35",
-      "price": {
-        "close_dollars": "0.0080",
-        "high_dollars": "0.0090",
-        "low_dollars": "0.0080",
-        "mean_dollars": "0.0090",
-        "open_dollars": "0.0090",
-        "previous_dollars": "0.0100"
-      },
-      "volume_fp": "272.00",
-      "yes_ask": {
-        "close_dollars": "0.0100",
-        "high_dollars": "0.0100",
-        "low_dollars": "0.0080",
-        "open_dollars": "0.0100"
-      },
-      "yes_bid": {
-        "close_dollars": "0.0080",
-        "high_dollars": "0.0090",
-        "low_dollars": "0.0070",
-        "open_dollars": "0.0090"
-      }
-    },
-    {
-      "end_period_ts": 1791165600,
-      "open_interest_fp": "420759.61",
-      "price": {
-        "close_dollars": "0.0060",
-        "high_dollars": "0.0080",
-        "low_dollars": "0.0060",
-        "mean_dollars": "0.0065",
-        "open_dollars": "0.0080",
-        "previous_dollars": "0.0080"
-      },
-      "volume_fp": "1928.68",
-      "yes_ask": {
-        "close_dollars": "0.0070",
-        "high_dollars": "0.0100",
-        "low_dollars": "0.0070",
-        "open_dollars": "0.0100"
-      },
-      "yes_bid": {
-        "close_dollars": "0.0060",
-        "high_dollars": "0.0080",
-        "low_dollars": "0.0060",
-        "open_dollars": "0.0080"
-      }
-    },
-    {
-      "end_period_ts": 1791176400,
-      "open_interest_fp": "419694.33",
-      "price": {
-        "close_dollars": "0.0060",
-        "high_dollars": "0.0070",
-        "low_dollars": "0.0060",
-        "mean_dollars": "0.0061",
-        "open_dollars": "0.0070",
-        "previous_dollars": "0.0060"
-      },
-      "volume_fp": "10295.52",
-      "yes_ask": {
-        "close_dollars": "0.0060",
-        "high_dollars": "0.0080",
-        "low_dollars": "0.0060",
-        "open_dollars": "0.0070"
-      },
-      "yes_bid": {
-        "close_dollars": "0.0050",
-        "high_dollars": "0.0070",
-        "low_dollars": "0.0050",
-        "open_dollars": "0.0060"
-      }
-    },
-    {
-      "end_period_ts": 1791180000,
-      "open_interest_fp": "419694.33",
-      "price": {
-        "close_dollars": "0.0060",
-        "high_dollars": "0.0060",
-        "low_dollars": "0.0060",
-        "mean_dollars": "0.0060",
-        "open_dollars": "0.0060",
-        "previous_dollars": "0.0060"
-      },
-      "volume_fp": "300.00",
-      "yes_ask": {
-        "close_dollars": "0.0060",
-        "high_dollars": "0.0060",
-        "low_dollars": "0.0060",
-        "open_dollars": "0.0060"
-      },
-      "yes_bid": {
-        "close_dollars": "0.0050",
-        "high_dollars": "0.0050",
-        "low_dollars": "0.0050",
-        "open_dollars": "0.0050"
-      }
-    },
-    {
       "end_period_ts": 1791187200,
       "open_interest_fp": "419694.33",
       "price": {
@@ -7447,6 +7347,91 @@
         "high_dollars": "0.0110",
         "low_dollars": "0.0100",
         "open_dollars": "0.0110"
+      }
+    },
+    {
+      "end_period_ts": 1792648800,
+      "open_interest_fp": "447813.71",
+      "price": {
+        "previous_dollars": "0.0110"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0110",
+        "high_dollars": "0.0110",
+        "low_dollars": "0.0110",
+        "open_dollars": "0.0110"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1792656000,
+      "open_interest_fp": "447813.71",
+      "price": {
+        "previous_dollars": "0.0110"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0110",
+        "high_dollars": "0.0110",
+        "low_dollars": "0.0110",
+        "open_dollars": "0.0110"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1792663200,
+      "open_interest_fp": "447813.71",
+      "price": {
+        "previous_dollars": "0.0110"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0110",
+        "high_dollars": "0.0110",
+        "low_dollars": "0.0110",
+        "open_dollars": "0.0110"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1792666800,
+      "open_interest_fp": "447221.78",
+      "price": {
+        "close_dollars": "0.0110",
+        "high_dollars": "0.0110",
+        "low_dollars": "0.0110",
+        "mean_dollars": "0.0110",
+        "open_dollars": "0.0110",
+        "previous_dollars": "0.0110"
+      },
+      "volume_fp": "591.93",
+      "yes_ask": {
+        "close_dollars": "0.0110",
+        "high_dollars": "0.0110",
+        "low_dollars": "0.0110",
+        "open_dollars": "0.0110"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
       }
     }
   ],
@@ -63346,10 +63331,338 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T11:58:50.123Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B47500/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0010",
+              "43547.02"
+            ],
+            [
+              "0.0020",
+              "7470.67"
+            ],
+            [
+              "0.0100",
+              "127797.71"
+            ],
+            [
+              "0.0200",
+              "1111.00"
+            ],
+            [
+              "0.0700",
+              "217.17"
+            ],
+            [
+              "0.1000",
+              "12500.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1700",
+              "954.34"
+            ],
+            [
+              "0.2000",
+              "250.05"
+            ],
+            [
+              "0.2100",
+              "694.30"
+            ],
+            [
+              "0.2200",
+              "546.09"
+            ],
+            [
+              "0.2300",
+              "0.41"
+            ],
+            [
+              "0.2600",
+              "156.50"
+            ],
+            [
+              "0.3000",
+              "4166.00"
+            ],
+            [
+              "0.3200",
+              "16.08"
+            ],
+            [
+              "0.3400",
+              "106.58"
+            ],
+            [
+              "0.4600",
+              "434.78"
+            ],
+            [
+              "0.5000",
+              "4028.54"
+            ],
+            [
+              "0.5200",
+              "104.00"
+            ],
+            [
+              "0.5500",
+              "98.00"
+            ],
+            [
+              "0.5800",
+              "93.00"
+            ],
+            [
+              "0.6100",
+              "71.00"
+            ],
+            [
+              "0.6400",
+              "67.00"
+            ],
+            [
+              "0.6700",
+              "64.00"
+            ],
+            [
+              "0.7000",
+              "1860.37"
+            ],
+            [
+              "0.7300",
+              "44.00"
+            ],
+            [
+              "0.7500",
+              "1000.00"
+            ],
+            [
+              "0.7600",
+              "42.00"
+            ],
+            [
+              "0.7900",
+              "186.79"
+            ],
+            [
+              "0.8000",
+              "1562.00"
+            ],
+            [
+              "0.8200",
+              "128.40"
+            ],
+            [
+              "0.8700",
+              "2000.00"
+            ],
+            [
+              "0.8800",
+              "142.20"
+            ],
+            [
+              "0.8900",
+              "10.00"
+            ],
+            [
+              "0.8980",
+              "20.00"
+            ],
+            [
+              "0.9000",
+              "1390.00"
+            ],
+            [
+              "0.9100",
+              "2.00"
+            ],
+            [
+              "0.9120",
+              "80.16"
+            ],
+            [
+              "0.9170",
+              "155.00"
+            ],
+            [
+              "0.9180",
+              "2438.32"
+            ],
+            [
+              "0.9190",
+              "158.00"
+            ],
+            [
+              "0.9200",
+              "85.57"
+            ],
+            [
+              "0.9290",
+              "142.00"
+            ],
+            [
+              "0.9300",
+              "2.00"
+            ],
+            [
+              "0.9320",
+              "854.21"
+            ],
+            [
+              "0.9400",
+              "315.55"
+            ],
+            [
+              "0.9480",
+              "20.00"
+            ],
+            [
+              "0.9500",
+              "1432.00"
+            ],
+            [
+              "0.9560",
+              "800.00"
+            ],
+            [
+              "0.9580",
+              "101.00"
+            ],
+            [
+              "0.9600",
+              "1202.00"
+            ],
+            [
+              "0.9620",
+              "3000.00"
+            ],
+            [
+              "0.9650",
+              "1077.15"
+            ],
+            [
+              "0.9660",
+              "88.00"
+            ],
+            [
+              "0.9670",
+              "2000.00"
+            ],
+            [
+              "0.9690",
+              "2400.00"
+            ],
+            [
+              "0.9700",
+              "1.00"
+            ],
+            [
+              "0.9720",
+              "3075.00"
+            ],
+            [
+              "0.9750",
+              "3000.00"
+            ],
+            [
+              "0.9770",
+              "61.00"
+            ],
+            [
+              "0.9800",
+              "2617.02"
+            ],
+            [
+              "0.9810",
+              "48.00"
+            ],
+            [
+              "0.9820",
+              "3222.00"
+            ],
+            [
+              "0.9830",
+              "173.00"
+            ],
+            [
+              "0.9840",
+              "43.00"
+            ],
+            [
+              "0.9850",
+              "195.35"
+            ],
+            [
+              "0.9870",
+              "1200.00"
+            ],
+            [
+              "0.9880",
+              "1520.01"
+            ],
+            [
+              "0.9890",
+              "1652.28"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0010",
+              "7002.00"
+            ],
+            [
+              "0.0020",
+              "11000.00"
+            ],
+            [
+              "0.0030",
+              "11000.00"
+            ],
+            [
+              "0.0040",
+              "63407.83"
+            ],
+            [
+              "0.0050",
+              "650.00"
+            ],
+            [
+              "0.0060",
+              "460.02"
+            ],
+            [
+              "0.0070",
+              "607.86"
+            ],
+            [
+              "0.0080",
+              "571.06"
+            ],
+            [
+              "0.0090",
+              "49.67"
+            ],
+            [
+              "0.0100",
+              "553.50"
+            ]
+          ]
+        }
+      }
     }
   ],
-  "last_ingested_at": "2026-10-22T05:13:45.115Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B47500/candlesticks?start_ts=1792612801&end_ts=1792646024&period_interval=60",
+  "last_ingested_at": "2026-10-22T11:58:50.093Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXBTCY/markets/KXBTCY-27JAN0100-B47500/candlesticks?start_ts=1792645201&end_ts=1792670329&period_interval=60",
   "trims": [
     {
       "at": "2026-09-18T00:07:31.104Z",
@@ -64286,6 +64599,14 @@
       "dropped_to_ts": 1791158400,
       "kept": 336,
       "reason": "--max-bars=336: the store keeps the newest 336 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-10-22T11:58:50.423Z",
+      "dropped": 4,
+      "dropped_from_ts": 1791162000,
+      "dropped_to_ts": 1791180000,
+      "kept": 336,
+      "reason": "--max-bars=336: the store keeps the newest 336 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }
   ],
   "marketErrors": [
@@ -64327,7 +64648,7 @@
     "no_bid_dollars": "0.9890",
     "no_sub_title": "45,000 to 49,999.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "447813.71",
+    "open_interest_fp": "447212.78",
     "open_time": "2026-02-25T23:25:29Z",
     "previous_price_dollars": "0.0130",
     "previous_yes_ask_dollars": "0.0130",
@@ -64350,15 +64671,15 @@
     "ticker": "KXBTCY-27JAN0100-B47500",
     "title": "BTC price  on Jan 1, 2027?",
     "updated_time": "2026-04-09T10:28:07.783582Z",
-    "volume_24h_fp": "2530.79",
-    "volume_fp": "2676648.55",
+    "volume_24h_fp": "3131.72",
+    "volume_fp": "2677249.48",
     "yes_ask_dollars": "0.0110",
-    "yes_ask_size_fp": "2253.21",
+    "yes_ask_size_fp": "1652.28",
     "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "811.20",
+    "yes_bid_size_fp": "553.50",
     "yes_sub_title": "45,000 to 49,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXBTCY-27JAN0100-B47500",
-  "market_captured_at": "2026-10-22T05:13:44.443Z",
+  "market_captured_at": "2026-10-22T11:58:49.461Z",
   "status": "active"
 }
