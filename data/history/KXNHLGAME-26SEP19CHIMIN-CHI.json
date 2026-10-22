@@ -3421,6 +3421,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T07:53:51.399Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3480,7 +3490,21 @@
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI",
   "market_captured_at": "2026-10-22T05:13:22.378Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-22T05:13:22.951Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-CHI/candlesticks?start_ts=1789876801&end_ts=1792646002&period_interval=1440",
-  "result": "no"
+  "last_ingested_at": "2026-10-22T07:53:51.386Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-CHI/candlesticks?start_ts=1789876801&end_ts=1792655631&period_interval=1440",
+  "result": "no",
+  "marketErrors": [
+    {
+      "at": "2026-10-22T07:53:50.872Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19CHIMIN-CHI",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ],
+  "fetchErrors": [
+    {
+      "at": "2026-10-22T07:53:51.136Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19CHIMIN-CHI/candlesticks?start_ts=1789876801&end_ts=1792655631&period_interval=1440",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ]
 }

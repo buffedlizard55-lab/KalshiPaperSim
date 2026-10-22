@@ -199,6 +199,50 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T07:51:11.636Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "1300.00"
+            ],
+            [
+              "0.0700",
+              "1929.00"
+            ],
+            [
+              "0.2600",
+              "200.00"
+            ],
+            [
+              "0.3000",
+              "1181.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1200.00"
+            ],
+            [
+              "0.2500",
+              "2414.00"
+            ],
+            [
+              "0.6600",
+              "200.00"
+            ],
+            [
+              "0.6900",
+              "4031.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -252,6 +296,20 @@
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH",
   "market_captured_at": "2026-10-22T05:24:56.713Z",
   "status": "active",
-  "last_ingested_at": "2026-10-22T05:24:57.382Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALPSYCHEDELIC/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH/candlesticks?start_ts=1792641601&end_ts=1792646697&period_interval=1440"
+  "last_ingested_at": "2026-10-22T07:51:11.623Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALPSYCHEDELIC/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH/candlesticks?start_ts=1792641601&end_ts=1792655471&period_interval=1440",
+  "marketErrors": [
+    {
+      "at": "2026-10-22T07:51:11.109Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ],
+  "fetchErrors": [
+    {
+      "at": "2026-10-22T07:51:11.373Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALPSYCHEDELIC/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH/candlesticks?start_ts=1792641601&end_ts=1792655471&period_interval=1440",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ]
 }

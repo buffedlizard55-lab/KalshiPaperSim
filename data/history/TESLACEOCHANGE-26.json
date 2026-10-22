@@ -43574,6 +43574,142 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T07:54:07.818Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "13769.20"
+            ],
+            [
+              "0.0200",
+              "8810.00"
+            ],
+            [
+              "0.0300",
+              "5100.00"
+            ],
+            [
+              "0.0400",
+              "100.00"
+            ],
+            [
+              "0.0500",
+              "1000.00"
+            ],
+            [
+              "0.0800",
+              "888.00"
+            ],
+            [
+              "0.1400",
+              "1867.00"
+            ],
+            [
+              "0.1500",
+              "91.00"
+            ],
+            [
+              "0.1600",
+              "1000.00"
+            ],
+            [
+              "0.2600",
+              "600.00"
+            ],
+            [
+              "0.3500",
+              "500.00"
+            ],
+            [
+              "0.3700",
+              "1.00"
+            ],
+            [
+              "0.5100",
+              "200.00"
+            ],
+            [
+              "0.5300",
+              "205.00"
+            ],
+            [
+              "0.5500",
+              "1927.00"
+            ],
+            [
+              "0.5800",
+              "125.00"
+            ],
+            [
+              "0.6300",
+              "2006.00"
+            ],
+            [
+              "0.6400",
+              "187.52"
+            ],
+            [
+              "0.7000",
+              "3.00"
+            ],
+            [
+              "0.7100",
+              "1500.00"
+            ],
+            [
+              "0.7300",
+              "256.65"
+            ],
+            [
+              "0.7500",
+              "100.00"
+            ],
+            [
+              "0.8000",
+              "510.00"
+            ],
+            [
+              "0.8100",
+              "100.00"
+            ],
+            [
+              "0.8200",
+              "100.00"
+            ],
+            [
+              "0.9000",
+              "402.70"
+            ],
+            [
+              "0.9100",
+              "100.00"
+            ],
+            [
+              "0.9200",
+              "259.87"
+            ],
+            [
+              "0.9400",
+              "1019.00"
+            ],
+            [
+              "0.9500",
+              "8210.63"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "16248.98"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -43627,8 +43763,8 @@
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26",
   "market_captured_at": "2026-10-22T05:25:25.563Z",
   "status": "active",
-  "last_ingested_at": "2026-10-22T05:25:26.235Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/TESLACEOCHANGE/markets/TESLACEOCHANGE-26/candlesticks?start_ts=1792641601&end_ts=1792646725&period_interval=1440",
+  "last_ingested_at": "2026-10-22T07:54:07.805Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/TESLACEOCHANGE/markets/TESLACEOCHANGE-26/candlesticks?start_ts=1792641601&end_ts=1792655647&period_interval=1440",
   "trims": [
     {
       "at": "2026-09-20T11:34:43.929Z",
@@ -43893,6 +44029,20 @@
       "dropped_to_ts": 1757995200,
       "kept": 400,
       "reason": "--max-bars=400: the store keeps the newest 400 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    }
+  ],
+  "marketErrors": [
+    {
+      "at": "2026-10-22T07:54:07.290Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ],
+  "fetchErrors": [
+    {
+      "at": "2026-10-22T07:54:07.554Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/TESLACEOCHANGE/markets/TESLACEOCHANGE-26/candlesticks?start_ts=1792641601&end_ts=1792655647&period_interval=1440",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
     }
   ]
 }

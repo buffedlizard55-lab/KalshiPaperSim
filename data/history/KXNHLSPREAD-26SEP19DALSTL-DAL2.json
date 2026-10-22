@@ -1789,6 +1789,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T07:53:57.648Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1849,7 +1859,21 @@
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2",
   "market_captured_at": "2026-10-22T05:13:29.652Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-22T05:13:30.222Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLSPREAD/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/candlesticks?start_ts=1789876801&end_ts=1792646009&period_interval=1440",
-  "result": "no"
+  "last_ingested_at": "2026-10-22T07:53:57.635Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLSPREAD/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/candlesticks?start_ts=1789876801&end_ts=1792655637&period_interval=1440",
+  "result": "no",
+  "marketErrors": [
+    {
+      "at": "2026-10-22T07:53:57.122Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ],
+  "fetchErrors": [
+    {
+      "at": "2026-10-22T07:53:57.385Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLSPREAD/markets/KXNHLSPREAD-26SEP19DALSTL-DAL2/candlesticks?start_ts=1789876801&end_ts=1792655637&period_interval=1440",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ]
 }

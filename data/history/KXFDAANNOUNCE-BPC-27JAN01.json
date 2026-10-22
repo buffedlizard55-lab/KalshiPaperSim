@@ -28976,6 +28976,118 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T07:51:04.319Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-27JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "8742.55"
+            ],
+            [
+              "0.0200",
+              "7990.00"
+            ],
+            [
+              "0.0300",
+              "4790.00"
+            ],
+            [
+              "0.1000",
+              "1865.00"
+            ],
+            [
+              "0.1100",
+              "408.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1400",
+              "22.00"
+            ],
+            [
+              "0.1900",
+              "180.00"
+            ],
+            [
+              "0.2000",
+              "77.00"
+            ],
+            [
+              "0.2500",
+              "131.23"
+            ],
+            [
+              "0.2600",
+              "167.00"
+            ],
+            [
+              "0.2900",
+              "1713.00"
+            ],
+            [
+              "0.3000",
+              "555.00"
+            ],
+            [
+              "0.5300",
+              "200.00"
+            ],
+            [
+              "0.5400",
+              "5.20"
+            ],
+            [
+              "0.7500",
+              "400.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2006.00"
+            ],
+            [
+              "0.0200",
+              "1000.00"
+            ],
+            [
+              "0.0300",
+              "10.00"
+            ],
+            [
+              "0.0500",
+              "1038.00"
+            ],
+            [
+              "0.0600",
+              "245.92"
+            ],
+            [
+              "0.0900",
+              "49.46"
+            ],
+            [
+              "0.1100",
+              "2.07"
+            ],
+            [
+              "0.1800",
+              "200.00"
+            ],
+            [
+              "0.1900",
+              "5.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -29033,6 +29145,20 @@
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-27JAN01",
   "market_captured_at": "2026-10-22T05:25:06.601Z",
   "status": "active",
-  "last_ingested_at": "2026-10-22T05:25:07.270Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-27JAN01/candlesticks?start_ts=1792641601&end_ts=1792646706&period_interval=1440"
+  "last_ingested_at": "2026-10-22T07:51:04.305Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-27JAN01/candlesticks?start_ts=1792641601&end_ts=1792655464&period_interval=1440",
+  "marketErrors": [
+    {
+      "at": "2026-10-22T07:51:03.792Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-27JAN01",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ],
+  "fetchErrors": [
+    {
+      "at": "2026-10-22T07:51:04.056Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-27JAN01/candlesticks?start_ts=1792641601&end_ts=1792655464&period_interval=1440",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ]
 }

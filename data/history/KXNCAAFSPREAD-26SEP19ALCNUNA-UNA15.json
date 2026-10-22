@@ -2912,6 +2912,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T07:53:12.770Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2972,7 +2982,21 @@
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15",
   "market_captured_at": "2026-10-22T05:12:37.409Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-22T05:12:37.980Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/candlesticks?start_ts=1789963201&end_ts=1792645957&period_interval=1440",
-  "result": "yes"
+  "last_ingested_at": "2026-10-22T07:53:12.757Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/candlesticks?start_ts=1789963201&end_ts=1792655592&period_interval=1440",
+  "result": "yes",
+  "marketErrors": [
+    {
+      "at": "2026-10-22T07:53:12.244Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ],
+  "fetchErrors": [
+    {
+      "at": "2026-10-22T07:53:12.508Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFSPREAD/markets/KXNCAAFSPREAD-26SEP19ALCNUNA-UNA15/candlesticks?start_ts=1789963201&end_ts=1792655592&period_interval=1440",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ]
 }

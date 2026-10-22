@@ -28159,6 +28159,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-22T07:51:54.449Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-BOS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -28218,7 +28228,21 @@
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-BOS",
   "market_captured_at": "2026-10-22T05:11:06.274Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-22T05:11:06.847Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-BOS/candlesticks?start_ts=1790827201&end_ts=1792645866&period_interval=1440",
-  "result": "no"
+  "last_ingested_at": "2026-10-22T07:51:54.436Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-BOS/candlesticks?start_ts=1790827201&end_ts=1792655514&period_interval=1440",
+  "result": "no",
+  "marketErrors": [
+    {
+      "at": "2026-10-22T07:51:53.922Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-BOS",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ],
+  "fetchErrors": [
+    {
+      "at": "2026-10-22T07:51:54.186Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-BOS/candlesticks?start_ts=1790827201&end_ts=1792655514&period_interval=1440",
+      "error": "{\"error\":{\"code\":\"service_unavailable\",\"message\":\"service_unavailable\"}}"
+    }
+  ]
 }
