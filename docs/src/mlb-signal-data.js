@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 28 date file(s) · 158 game(s) · 603 state row(s) · generated 2026-10-23T08:12:21.292Z
+ * 29 date file(s) · 159 game(s) · 604 state row(s) · generated 2026-10-23T08:17:19.441Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-23T08:12:21.292Z",
+ "generatedAt": "2026-10-23T08:17:19.441Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-10-23T02:43:31.948Z",
+  "last_confirmed_at": "2026-10-23T08:17:17.876Z",
   "teams": [
    {
     "id": 108,
@@ -15159,6 +15159,70 @@ export const MLB_SIGNAL_DATA = {
        },
        "winner": "home",
        "url_ref": 1
+      }
+     ]
+    }
+   }
+  },
+  "2026-10-23": {
+   "date": "2026-10-23",
+   "what": "Point-in-time official MLB game state for this US-Eastern calendar date: one state row per CHANGE of (status, inning, inning state, runs, winner), each with the capture instant it was first seen; captures[] lists every run that read this date so staleness at any past time is measurable. Team codes are the official MLB abbreviations. Read only through src/mlb-signal-store.js (no row after the decision time is ever returned).",
+   "source": {
+    "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
+    "copyright": "Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt",
+    "terms": "http://gdx.mlb.com/components/copyright.txt",
+    "urls": [
+     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-23&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
+    ]
+   },
+   "captures": [
+    "2026-10-23T08:17:17.877Z"
+   ],
+   "games": {
+    "849805": {
+     "gamePk": 849805,
+     "gameDate": "2026-10-24T00:00:00Z",
+     "officialDate": "2026-10-23",
+     "gameType": "W",
+     "doubleHeader": "N",
+     "gameNumber": 1,
+     "away": {
+      "id": 139,
+      "abbreviation": "TB",
+      "name": "Tampa Bay Rays"
+     },
+     "home": {
+      "id": 158,
+      "abbreviation": "MIL",
+      "name": "Milwaukee Brewers"
+     },
+     "venue": "American Family Field",
+     "probablePitchers": {
+      "away": {
+       "id": 607259,
+       "fullName": "Nick Martinez"
+      },
+      "home": {
+       "id": 694819,
+       "fullName": "Jacob Misiorowski"
+      }
+     },
+     "firstCapturedAt": "2026-10-23T08:17:17.877Z",
+     "states": [
+      {
+       "captured_at": "2026-10-23T08:17:17.877Z",
+       "last_seen_at": "2026-10-23T08:17:17.877Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Scheduled",
+       "codedGameState": "S",
+       "inning": null,
+       "inningState": null,
+       "runs": {
+        "away": null,
+        "home": null
+       },
+       "winner": null,
+       "url_ref": 0
       }
      ]
     }
