@@ -13,7 +13,8 @@
   "2026-10-22T22:24:05.946Z",
   "2026-10-23T00:55:29.345Z",
   "2026-10-23T02:40:04.871Z",
-  "2026-10-23T08:12:17.371Z"
+  "2026-10-23T08:12:17.371Z",
+  "2026-10-23T18:51:52.109Z"
  ],
  "events": {
   "401892564": {
@@ -35,7 +36,7 @@
    "states": [
     {
      "captured_at": "2026-10-22T08:20:17.114Z",
-     "last_seen_at": "2026-10-23T08:12:17.371Z",
+     "last_seen_at": "2026-10-23T18:51:52.109Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -74,7 +75,7 @@
    "states": [
     {
      "captured_at": "2026-10-22T08:20:17.114Z",
-     "last_seen_at": "2026-10-23T08:12:17.371Z",
+     "last_seen_at": "2026-10-23T18:51:52.109Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -95,6 +96,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-23T08:12:17.371Z",
+ "last_ingested_at": "2026-10-23T18:51:52.109Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261023"
 }
