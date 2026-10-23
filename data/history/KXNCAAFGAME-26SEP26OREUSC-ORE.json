@@ -11443,6 +11443,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-23T20:07:57.847Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -11500,10 +11510,10 @@
     "yes_sub_title": "Oregon"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26OREUSC-ORE",
-  "market_captured_at": "2026-10-23T11:47:04.920Z",
+  "market_captured_at": "2026-10-23T20:07:57.268Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-23T11:47:05.476Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26OREUSC-ORE/candlesticks?start_ts=1790481601&end_ts=1792756025&period_interval=1440",
+  "last_ingested_at": "2026-10-23T20:07:57.809Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26OREUSC-ORE/candlesticks?start_ts=1790481601&end_ts=1792786077&period_interval=1440",
   "result": "yes",
   "marketErrors": [
     {

@@ -3553,6 +3553,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-23T20:12:44.851Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT22UTASEA-UTA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3601,7 +3611,7 @@
     "ticker": "KXNHLGAME-26OCT22UTASEA-UTA",
     "title": "Utah wins",
     "updated_time": "2026-10-23T04:57:13.834314Z",
-    "volume_24h_fp": "1298714.56",
+    "volume_24h_fp": "1295660.75",
     "volume_fp": "1334680.98",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3610,9 +3620,9 @@
     "yes_sub_title": "Utah"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT22UTASEA-UTA",
-  "market_captured_at": "2026-10-23T11:51:45.814Z",
+  "market_captured_at": "2026-10-23T20:12:44.172Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-23T11:51:46.472Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT22UTASEA-UTA/candlesticks?start_ts=1792731601&end_ts=1792756306&period_interval=60"
+  "last_ingested_at": "2026-10-23T20:12:44.812Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT22UTASEA-UTA/candlesticks?start_ts=1792731601&end_ts=1792786364&period_interval=60"
 }
