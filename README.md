@@ -209,14 +209,14 @@ Every number here is recomputed on demand; nothing in this table is stored.
 | # | Username | Return | Trades | Real settlements booked | Real payout |
 | --- | --- | --- | --- | --- | --- |
 | 1 | **SportsUnderdog_Sweep** | +135.45% | 110 | 87 | $439,370.76 |
-| 2 | **NFLInjury_AvailGap** | +12.30% | 3 | 3 | $20,355.58 |
-| 3 | **SportsSteam_Fade** | +2.62% | 169 | 149 | $666,840.61 |
-| 4 | **MEE_BoardSum** | +0.98% | 28 | 25 | $1,884.47 |
-| 5 | **WeatherLadder_MultiCity** | +0.11% | 90 | 90 | $291.72 |
-| 6 | **WeatherLadder_CheapBands** | +0.04% | 16 | 16 | $57.83 |
-| 7 | **CPI_PrintFade** | +0.00% | 2 | 1 | $0.00 |
-| 8 | **NCAAF_GameFavourite** | -0.07% | 18 | 4 | $0.46 |
-| 9 | **ForecastEdge_Weather** | -0.08% | 45 | 44 | $679.82 |
+| 2 | **SportsSteam_Fade** | +2.62% | 169 | 149 | $666,840.61 |
+| 3 | **MEE_BoardSum** | +0.98% | 28 | 25 | $1,884.47 |
+| 4 | **WeatherLadder_MultiCity** | +0.11% | 90 | 90 | $291.72 |
+| 5 | **WeatherLadder_CheapBands** | +0.04% | 16 | 16 | $57.83 |
+| 6 | **CPI_PrintFade** | +0.00% | 2 | 1 | $0.00 |
+| 7 | **NCAAF_GameFavourite** | -0.07% | 18 | 4 | $0.46 |
+| 8 | **ForecastEdge_Weather** | -0.08% | 45 | 44 | $679.82 |
+| 9 | **NFLInjury_AvailGap** | -0.10% | 1 | 1 | $0.00 |
 | 10 | **HeatConfirm_500Bots** | -0.16% | 8 | 2 | $0.00 |
 | 11 | **ForecastEdge_MultiCity** | -0.27% | 104 | 103 | $1,479.66 |
 | 12 | **SportsFavourite_Settle** | -0.53% | 128 | 115 | $360.03 |
