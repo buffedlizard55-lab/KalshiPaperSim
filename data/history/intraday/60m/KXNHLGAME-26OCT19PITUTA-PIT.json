@@ -3605,6 +3605,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-23T05:25:19.322Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT19PITUTA-PIT/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3662,9 +3672,9 @@
     "yes_sub_title": "Pittsburgh"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT19PITUTA-PIT",
-  "market_captured_at": "2026-10-22T20:25:35.451Z",
+  "market_captured_at": "2026-10-23T05:25:18.680Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-22T20:25:36.112Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT19PITUTA-PIT/candlesticks?start_ts=1792468801&end_ts=1792700735&period_interval=60"
+  "last_ingested_at": "2026-10-23T05:25:19.302Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT19PITUTA-PIT/candlesticks?start_ts=1792468801&end_ts=1792733118&period_interval=60"
 }

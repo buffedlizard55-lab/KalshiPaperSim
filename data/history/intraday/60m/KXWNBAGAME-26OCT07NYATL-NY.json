@@ -3294,6 +3294,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-23T05:25:39.541Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26OCT07NYATL-NY/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3351,9 +3361,9 @@
     "yes_sub_title": "New York"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26OCT07NYATL-NY",
-  "market_captured_at": "2026-10-22T20:25:56.227Z",
+  "market_captured_at": "2026-10-23T05:25:38.899Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-22T20:25:56.890Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26OCT07NYATL-NY/candlesticks?start_ts=1791428401&end_ts=1792700756&period_interval=60"
+  "last_ingested_at": "2026-10-23T05:25:39.522Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26OCT07NYATL-NY/candlesticks?start_ts=1791428401&end_ts=1792733139&period_interval=60"
 }

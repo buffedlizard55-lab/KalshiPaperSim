@@ -429,6 +429,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-23T05:26:21.757Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXSOL15M-26OCT212030-30/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -454,8 +464,8 @@
     "occurrence_datetime": "2026-10-22T00:35:00Z",
     "open_interest_fp": "52178.82",
     "open_time": "2026-10-22T00:15:00Z",
-    "previous_price_dollars": "0.0000",
-    "previous_yes_ask_dollars": "0.0000",
+    "previous_price_dollars": "0.9990",
+    "previous_yes_ask_dollars": "1.0000",
     "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "tapered_deci_cent",
     "price_ranges": [
@@ -487,7 +497,7 @@
     "ticker": "KXSOL15M-26OCT212030-30",
     "title": "SOL price up in next 15 mins?",
     "updated_time": "2026-10-22T00:30:02.653737Z",
-    "volume_24h_fp": "170211.63",
+    "volume_24h_fp": "0.00",
     "volume_fp": "170211.63",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -496,9 +506,9 @@
     "yes_sub_title": "Target Price: $107.1390"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXSOL15M-26OCT212030-30",
-  "market_captured_at": "2026-10-22T20:26:39.221Z",
+  "market_captured_at": "2026-10-23T05:26:20.794Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-22T20:26:39.886Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26OCT212030-30/candlesticks?start_ts=1792629061&end_ts=1792700799&period_interval=1"
+  "last_ingested_at": "2026-10-23T05:26:21.738Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXSOL15M/markets/KXSOL15M-26OCT212030-30/candlesticks?start_ts=1792715461&end_ts=1792733181&period_interval=1"
 }
