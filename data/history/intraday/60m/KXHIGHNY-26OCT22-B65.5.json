@@ -967,11 +967,41 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1792735200,
+      "open_interest_fp": "34295.04",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
     {
       "captured_at": "2026-10-23T05:24:10.780Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT22-B65.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-23T07:55:52.370Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT22-B65.5/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -1006,9 +1036,9 @@
     "occurrence_datetime": "2026-10-23T14:00:00Z",
     "open_interest_fp": "34295.04",
     "open_time": "2026-10-21T14:00:00Z",
-    "previous_price_dollars": "0.6600",
-    "previous_yes_ask_dollars": "0.6600",
-    "previous_yes_bid_dollars": "0.6500",
+    "previous_price_dollars": "0.6200",
+    "previous_yes_ask_dollars": "0.6700",
+    "previous_yes_bid_dollars": "0.6200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1027,7 +1057,7 @@
     "ticker": "KXHIGHNY-26OCT22-B65.5",
     "title": "Will the maximum temperature be 65-66° on Oct 22, 2026?",
     "updated_time": "2026-10-23T05:00:03.325047Z",
-    "volume_24h_fp": "53533.41",
+    "volume_24h_fp": "53222.91",
     "volume_fp": "56784.05",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1036,8 +1066,8 @@
     "yes_sub_title": "65° to 66°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT22-B65.5",
-  "market_captured_at": "2026-10-23T05:24:10.134Z",
+  "market_captured_at": "2026-10-23T07:55:51.648Z",
   "status": "closed",
-  "last_ingested_at": "2026-10-23T05:24:10.761Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26OCT22-B65.5/candlesticks?start_ts=1792504800&end_ts=1792733050&period_interval=60"
+  "last_ingested_at": "2026-10-23T07:55:52.311Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26OCT22-B65.5/candlesticks?start_ts=1792731601&end_ts=1792742151&period_interval=60"
 }
