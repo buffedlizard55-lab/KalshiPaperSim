@@ -37503,7 +37503,7 @@
     "open_time": "2026-02-07T15:00:00Z",
     "previous_price_dollars": "0.0700",
     "previous_yes_ask_dollars": "0.0700",
-    "previous_yes_bid_dollars": "0.0400",
+    "previous_yes_bid_dollars": "0.0600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -37525,16 +37525,16 @@
     "volume_24h_fp": "2157.25",
     "volume_fp": "957247.44",
     "yes_ask_dollars": "0.0900",
-    "yes_ask_size_fp": "5501.65",
+    "yes_ask_size_fp": "5474.43",
     "yes_bid_dollars": "0.0700",
-    "yes_bid_size_fp": "99.45",
+    "yes_bid_size_fp": "230143.00",
     "yes_sub_title": "Denver"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLAFCCHAMP-27-DEN",
-  "market_captured_at": "2026-10-23T07:52:12.949Z",
+  "market_captured_at": "2026-10-23T11:47:16.227Z",
   "status": "active",
-  "last_ingested_at": "2026-10-23T07:52:13.510Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-DEN/candlesticks?start_ts=1792728001&end_ts=1792741933&period_interval=1440",
+  "last_ingested_at": "2026-10-23T11:47:16.783Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLAFCCHAMP/markets/KXNFLAFCCHAMP-27-DEN/candlesticks?start_ts=1792728001&end_ts=1792756036&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:53:22.673Z",
