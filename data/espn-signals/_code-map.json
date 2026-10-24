@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-24T02:38:12.134Z",
+ "generatedAt": "2026-10-24T09:44:44.028Z",
  "rows": [
   {
    "league": "nba",
@@ -55,6 +55,11 @@
      "ticker": "KXNBAGAME-26OCT16BOSPHI-BOS",
      "rulesName": "Boston",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT23NYKBOS-NYK",
+     "rulesName": "Boston",
+     "role": "home"
     }
    ]
   },
@@ -80,6 +85,11 @@
      "ticker": "KXNBAGAME-26OCT09MEMCHI-MEM",
      "rulesName": "Chicago",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT23CHIMIL-MIL",
+     "rulesName": "Chicago",
+     "role": "away"
     }
    ]
   },
@@ -214,6 +224,26 @@
     {
      "ticker": "KXNBAGAME-26OCT13GSWLAL-GSW",
      "rulesName": "Golden State",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "HOU",
+   "kalshiName": "Houston",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "10",
+    "abbr": "HOU",
+    "displayName": "Houston Rockets",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT23HOUSAS-SAS",
+     "rulesName": "Houston",
      "role": "away"
     }
    ]
@@ -395,6 +425,11 @@
      "ticker": "KXNBAGAME-26OCT07MILOKC-MIL",
      "rulesName": "Milwaukee",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT23CHIMIL-MIL",
+     "rulesName": "Milwaukee",
+     "role": "home"
     }
    ]
   },
@@ -488,6 +523,11 @@
     },
     {
      "ticker": "KXNBAGAME-26OCT05NYKPHI-PHI",
+     "rulesName": "New York",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT23NYKBOS-NYK",
      "rulesName": "New York",
      "role": "away"
     }
@@ -693,6 +733,11 @@
     },
     {
      "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
+     "rulesName": "San Antonio",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT23HOUSAS-SAS",
      "rulesName": "San Antonio",
      "role": "home"
     }

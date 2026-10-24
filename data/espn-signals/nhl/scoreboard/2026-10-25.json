@@ -1,0 +1,212 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-25",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261025"
+  ]
+ },
+ "captures": [
+  "2026-10-24T09:44:42.704Z"
+ ],
+ "events": {
+  "401891807": {
+   "eventId": "401891807",
+   "date": "2026-10-25T23:00Z",
+   "easternDate": "2026-10-25",
+   "name": "Montreal Canadiens at Winnipeg Jets",
+   "shortName": "MTL @ WPG",
+   "week": null,
+   "venue": "Princess Auto Stadium",
+   "homeAbbr": "WPG",
+   "homeTeamId": "28",
+   "homeName": "Winnipeg Jets",
+   "awayAbbr": "MTL",
+   "awayTeamId": "10",
+   "awayName": "Montreal Canadiens",
+   "firstCapturedAt": "2026-10-24T09:44:42.704Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-24T09:44:42.704Z",
+     "last_seen_at": "2026-10-24T09:44:42.704Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3-3",
+      "away": "5-3-2"
+     }
+    }
+   ]
+  },
+  "401892578": {
+   "eventId": "401892578",
+   "date": "2026-10-25T19:00Z",
+   "easternDate": "2026-10-25",
+   "name": "Florida Panthers at Chicago Blackhawks",
+   "shortName": "FLA @ CHI",
+   "week": null,
+   "venue": "United Center",
+   "homeAbbr": "CHI",
+   "homeTeamId": "4",
+   "homeName": "Chicago Blackhawks",
+   "awayAbbr": "FLA",
+   "awayTeamId": "26",
+   "awayName": "Florida Panthers",
+   "firstCapturedAt": "2026-10-24T09:44:42.704Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-24T09:44:42.704Z",
+     "last_seen_at": "2026-10-24T09:44:42.704Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-7-0",
+      "away": "5-4-2"
+     }
+    }
+   ]
+  },
+  "401892579": {
+   "eventId": "401892579",
+   "date": "2026-10-25T22:00Z",
+   "easternDate": "2026-10-25",
+   "name": "New York Islanders at Dallas Stars",
+   "shortName": "NYI @ DAL",
+   "week": null,
+   "venue": "American Airlines Center",
+   "homeAbbr": "DAL",
+   "homeTeamId": "9",
+   "homeName": "Dallas Stars",
+   "awayAbbr": "NYI",
+   "awayTeamId": "12",
+   "awayName": "New York Islanders",
+   "firstCapturedAt": "2026-10-24T09:44:42.704Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-24T09:44:42.704Z",
+     "last_seen_at": "2026-10-24T09:44:42.704Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-3-1",
+      "away": "5-3-2"
+     }
+    }
+   ]
+  },
+  "401892580": {
+   "eventId": "401892580",
+   "date": "2026-10-26T00:00Z",
+   "easternDate": "2026-10-25",
+   "name": "Colorado Avalanche at Nashville Predators",
+   "shortName": "COL @ NSH",
+   "week": null,
+   "venue": "Bridgestone Arena",
+   "homeAbbr": "NSH",
+   "homeTeamId": "27",
+   "homeName": "Nashville Predators",
+   "awayAbbr": "COL",
+   "awayTeamId": "17",
+   "awayName": "Colorado Avalanche",
+   "firstCapturedAt": "2026-10-24T09:44:42.704Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-24T09:44:42.704Z",
+     "last_seen_at": "2026-10-24T09:44:42.704Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-3-3",
+      "away": "6-4-1"
+     }
+    }
+   ]
+  },
+  "401892581": {
+   "eventId": "401892581",
+   "date": "2026-10-26T02:00Z",
+   "easternDate": "2026-10-25",
+   "name": "Minnesota Wild at Vancouver Canucks",
+   "shortName": "MIN @ VAN",
+   "week": null,
+   "venue": "Rogers Arena",
+   "homeAbbr": "VAN",
+   "homeTeamId": "22",
+   "homeName": "Vancouver Canucks",
+   "awayAbbr": "MIN",
+   "awayTeamId": "30",
+   "awayName": "Minnesota Wild",
+   "firstCapturedAt": "2026-10-24T09:44:42.704Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-24T09:44:42.704Z",
+     "last_seen_at": "2026-10-24T09:44:42.704Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-9-1",
+      "away": "6-3-2"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-24T09:44:42.704Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261025"
+}

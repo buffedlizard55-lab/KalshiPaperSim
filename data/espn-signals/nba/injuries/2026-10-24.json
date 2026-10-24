@@ -1,0 +1,1529 @@
+{
+ "what": "Point-in-time ESPN injury-report rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-24",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries"
+  ]
+ },
+ "captures": [
+  "2026-10-24T09:44:42.329Z"
+ ],
+ "teams": {
+  "1": {
+   "teamId": "1",
+   "displayName": "Atlanta Hawks",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "-58751": {
+     "recordId": "-58751",
+     "athleteName": "Mouhamed Gueye",
+     "positionAbbr": "F",
+     "teamId": "1",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Hawks",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-19T19:38Z|Gueye underwent surgery Tuesday to repair a fractured left foot that he suffered during a workout last week, Brad Rowland of the Locked On Podcast Network reports.",
+       "status": "Out",
+       "date": "2026-10-19T19:38Z",
+       "shortComment": "Gueye underwent surgery Tuesday to repair a fractured left foot that he suffered during a workout last week, Brad Rowland of the Locked On Podcast Network reports.",
+       "longComment": "Gueye will be re-evaluated by medical staff in 3-to-4 months, which means he'll miss all of training camp and preseason and likely the start of the 2026-27 regular season. It's a brutal blow for the fourth-year big man, given that the Hawks used the No. 23 overall pick of the 2026 NBA Draft to select St. John's product Zuby Ejiofor. Gueye's absence means Ejiofor will have more opportunities in the preseason, and the rookie could establish a key role off the bench behind Onyeka Okongwu and projected backup center Jock Landale (ankle)."
+      }
+     ]
+    },
+    "-57577": {
+     "recordId": "-57577",
+     "athleteName": "Henri Veesaar",
+     "positionAbbr": "C",
+     "teamId": "1",
+     "teamAbbr": "ATL",
+     "teamName": "Atlanta Hawks",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-09-21T19:50Z|Veesaar was diagnosed with a torn right ACL and is expected to miss the 2026-27 season, the Hawks announced Monday.",
+       "status": "Out",
+       "date": "2026-09-21T19:50Z",
+       "shortComment": "Veesaar was diagnosed with a torn right ACL and is expected to miss the 2026-27 season, the Hawks announced Monday.",
+       "longComment": "Veesaar suffered the injury during a workout on Sept. 15, and an MRI confirmed the diagnosis. The No. 52 overall pick in the 2026 NBA Draft, Veesaar was expected to spend a lot of time with Atlanta's G League affiliate this season."
+      }
+     ]
+    }
+   }
+  },
+  "2": {
+   "teamId": "2",
+   "displayName": "Boston Celtics",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535118": {
+     "recordId": "535118",
+     "athleteName": "Devin Carter",
+     "positionAbbr": "G",
+     "teamId": "2",
+     "teamAbbr": "BOS",
+     "teamName": "Boston Celtics",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-18T14:49Z|Carter has been diagnosed with mononucleosis and is without a timetable for a return, Gary Washburn of The Boston Globe reports.",
+       "status": "Out",
+       "date": "2026-10-18T14:49Z",
+       "shortComment": "Carter has been diagnosed with mononucleosis and is without a timetable for a return, Gary Washburn of The Boston Globe reports.",
+       "longComment": "Carter missed Boston's final three preseason games with the illness and is now expected to miss time to begin the regular season. He can be considered week-to-week until Boston provides an update on his progress. The 2024 first-rounder signed a two-way pact with the Celtics on Saturday and will provide backcourt depth for the club."
+      }
+     ]
+    }
+   }
+  },
+  "3": {
+   "teamId": "3",
+   "displayName": "New Orleans Pelicans",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535762": {
+     "recordId": "535762",
+     "athleteName": "Yves Missi",
+     "positionAbbr": "C",
+     "teamId": "3",
+     "teamAbbr": "NO",
+     "teamName": "New Orleans Pelicans",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T02:46Z|Missi won't return to Friday's game against the Jazz due to a left knee injury.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T02:46Z",
+       "shortComment": "Missi won't return to Friday's game against the Jazz due to a left knee injury.",
+       "longComment": "Missi needed to be helped to the locker room after colliding with Zion Williamson, and while we don't know the extent of this knee injury, getting ruled out so quickly is not encouraging. If he needs to miss time, Derik Queen and Herbert Jones would benefit."
+      }
+     ]
+    }
+   }
+  },
+  "4": {
+   "teamId": "4",
+   "displayName": "Chicago Bulls",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535149": {
+     "recordId": "535149",
+     "athleteName": "Nic Claxton",
+     "positionAbbr": "C",
+     "teamId": "4",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Bulls",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-19T17:38Z|Claxton (hamstring) will be re-evaluated in two weeks, K.C. Johnson of Chicago Sports Network reports.",
+       "status": "Out",
+       "date": "2026-10-19T17:38Z",
+       "shortComment": "Claxton (hamstring) will be re-evaluated in two weeks, K.C. Johnson of Chicago Sports Network reports.",
+       "longComment": "This is a tough blow for the Bulls as they will be without their starting center for the first seven games of the regular season. Meanwhile, Zach Collins' (toe) status remains in the air. This could set up Jalen Smith for a solid workload to open the season."
+      }
+     ]
+    }
+   }
+  },
+  "6": {
+   "teamId": "6",
+   "displayName": "Dallas Mavericks",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535576": {
+     "recordId": "535576",
+     "athleteName": "Dereck Lively II",
+     "positionAbbr": "C",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-22T20:10Z|Lively (foot) has been ruled out for Friday's game against the Pacers.",
+       "status": "Out",
+       "date": "2026-10-22T20:10Z",
+       "shortComment": "Lively (foot) has been ruled out for Friday's game against the Pacers.",
+       "longComment": "Lively underwent right foot surgery last December and remains without a clear timetable to return. The big man can be considered week-to-week until the Mavericks offer an update on his status. In the meantime, Moussa Cisse and Morez Johnson are candidates for increased minutes."
+      }
+     ]
+    },
+    "535754": {
+     "recordId": "535754",
+     "athleteName": "Cooper Flagg",
+     "positionAbbr": "F",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-24T02:18Z|Head coach Dusty May said Flagg (shoulder) will be evaluated in the next couple of days, Mike Curtis of The Dallas Morning News reports.",
+       "status": "Out",
+       "date": "2026-10-24T02:18Z",
+       "shortComment": "Head coach Dusty May said Flagg (shoulder) will be evaluated in the next couple of days, Mike Curtis of The Dallas Morning News reports.",
+       "longComment": "Flagg can presumably be ruled out for Saturday's game against San Antonio after leaving Friday's win over Indiana and not returning. The star forward was hit while in the air and took a hard fall, landing on his left shoulder. With Flagg sidelined, Naji Marshall, Zaccharie Risacher and Marcus Sasser are candidates for increased burn."
+      }
+     ]
+    },
+    "-59598": {
+     "recordId": "-59598",
+     "athleteName": "Caleb Martin",
+     "positionAbbr": "F",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:06Z|Martin (thumb) has been ruled out for Fridays' game against the Pacers.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:06Z",
+       "shortComment": "Martin (thumb) has been ruled out for Fridays' game against the Pacers.",
+       "longComment": "Martin will miss his second consecutive contest as he continues recovering from a sprained right thumb. He'll look to make his season debut against the Spurs in the back half of a back-to-back set on Saturday."
+      }
+     ]
+    },
+    "-59596": {
+     "recordId": "-59596",
+     "athleteName": "Jett Howard",
+     "positionAbbr": "G",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:06Z|Howard (calf) is out for Friday's game in Indiana.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:06Z",
+       "shortComment": "Howard (calf) is out for Friday's game in Indiana.",
+       "longComment": "This will be Howard's second straight game on the sidelines. His next chance to play will come Saturday against the Spurs."
+      }
+     ]
+    },
+    "-59595": {
+     "recordId": "-59595",
+     "athleteName": "Tarik Biberovic",
+     "positionAbbr": "F",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:06Z|Biberovic (heel) is out for Friday's game against Indiana.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:06Z",
+       "shortComment": "Biberovic (heel) is out for Friday's game against Indiana.",
+       "longComment": "Biberovic (heel) will miss his second straight game to begin the 2026-27 campaign due to right heel bursitis. His next chance to suit up will come on Saturday versus the Spurs."
+      }
+     ]
+    },
+    "-59594": {
+     "recordId": "-59594",
+     "athleteName": "Santi Aldama",
+     "positionAbbr": "F",
+     "teamId": "6",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Mavericks",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:06Z|Aldama (knee) has been ruled out for Friday's game against the Pacers.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:06Z",
+       "shortComment": "Aldama (knee) has been ruled out for Friday's game against the Pacers.",
+       "longComment": "Aldama has been progressing in his recovery from the right knee surgery he underwent in March. He was a limited participant in Tuesday's practice but will miss a second straight game to begin the regular season. The big man's next opportunity to suit up will come Saturday against San Antonio."
+      }
+     ]
+    }
+   }
+  },
+  "7": {
+   "teamId": "7",
+   "displayName": "Denver Nuggets",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "534858": {
+     "recordId": "534858",
+     "athleteName": "Julian Strawther",
+     "positionAbbr": "G",
+     "teamId": "7",
+     "teamAbbr": "DEN",
+     "teamName": "Denver Nuggets",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-17T00:52Z|Strawther (knee) was diagnosed with a left knee sprain Friday and will be re-evaluated in six weeks, Vinny Benedetto of The Denver Gazette reports.",
+       "status": "Out",
+       "date": "2026-10-17T00:52Z",
+       "shortComment": "Strawther (knee) was diagnosed with a left knee sprain Friday and will be re-evaluated in six weeks, Vinny Benedetto of The Denver Gazette reports.",
+       "longComment": "Strawther suffered the injury in Wednesday's preseason game against the Clippers. The 24-year-old has appeared in 172 regular-season games for the Nuggets since entering the league in 2023, averaging 7.1 points, 2.0 rebounds and 1.1 assists over 16.2 minutes per contest. He was in line to compete for an expanded role during the 2026-27 campaign. While that may be the case once Strawther is cleared to suit up, Tyus Jones and potentially Ryan Nembhard are candidates to receive more minutes in the interim."
+      }
+     ]
+    },
+    "535714": {
+     "recordId": "535714",
+     "athleteName": "Alpha Diallo",
+     "positionAbbr": "F",
+     "teamId": "7",
+     "teamAbbr": "DEN",
+     "teamName": "Denver Nuggets",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-23T23:06Z|Diallo is questionable for Saturday's game versus the Pelicans due to a right wrist sprain.",
+       "status": "Day-To-Day",
+       "date": "2026-10-23T23:06Z",
+       "shortComment": "Diallo is questionable for Saturday's game versus the Pelicans due to a right wrist sprain.",
+       "longComment": "Diallo tweaked his wrist in the season opener and is now listed as questionable to face the Pelicans on Saturday. If he can't give it a go, Bryce Hopkins and Cam Whitmore could be more involved in the rotation."
+      }
+     ]
+    },
+    "535715": {
+     "recordId": "535715",
+     "athleteName": "Cameron Johnson",
+     "positionAbbr": "F",
+     "teamId": "7",
+     "teamAbbr": "DEN",
+     "teamName": "Denver Nuggets",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-23T23:08Z|Johnson (ankle) has been ruled out for Saturday's game against New Orleans.",
+       "status": "Out",
+       "date": "2026-10-23T23:08Z",
+       "shortComment": "Johnson (ankle) has been ruled out for Saturday's game against New Orleans.",
+       "longComment": "Johnson exited Thursday's season-opening loss to the Thunder with a right ankle sprain and will now be held out of Saturday's contest. His next chance to play will come Monday against the Warriors. DeMar DeRozan, Trevon Brazile and Alpha Diallo (wrist), who is listed as questionable, are candidates for increased playing time in Johnson's stead."
+      }
+     ]
+    },
+    "535716": {
+     "recordId": "535716",
+     "athleteName": "Spencer Jones",
+     "positionAbbr": "F",
+     "teamId": "7",
+     "teamAbbr": "DEN",
+     "teamName": "Denver Nuggets",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-23T23:09Z|Jones (hamstring) is out for Saturday's game against the Pelicans.",
+       "status": "Out",
+       "date": "2026-10-23T23:09Z",
+       "shortComment": "Jones (hamstring) is out for Saturday's game against the Pelicans.",
+       "longComment": "This will be Jones' second straight game on the sidelines. His next chance to play will come Monday versus the Warriors."
+      }
+     ]
+    }
+   }
+  },
+  "8": {
+   "teamId": "8",
+   "displayName": "Detroit Pistons",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535759": {
+     "recordId": "535759",
+     "athleteName": "Jalen Duren",
+     "positionAbbr": "C",
+     "teamId": "8",
+     "teamAbbr": "DET",
+     "teamName": "Detroit Pistons",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T02:40Z|Duren (thigh) exited Friday's 128-111 win over the Heat in the second quarter and did not return, finishing with four points (2-4 FG), six rebounds, three assists, one steal and one block across 10 minutes.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T02:40Z",
+       "shortComment": "Duren (thigh) exited Friday's 128-111 win over the Heat in the second quarter and did not return, finishing with four points (2-4 FG), six rebounds, three assists, one steal and one block across 10 minutes.",
+       "longComment": "Duren was deemed questionable to return with a right thigh injury after exiting to the locker room, and he never checked back in. If the big man is forced to miss additional time, Paul Reed would likely step into the starting five. Duren's next chance to play will come Sunday at Philadelphia."
+      }
+     ]
+    },
+    "535779": {
+     "recordId": "535779",
+     "athleteName": "Ausar Thompson",
+     "positionAbbr": "G",
+     "teamId": "8",
+     "teamAbbr": "DET",
+     "teamName": "Detroit Pistons",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:06Z|Thompson exited Friday's game with an undisclosed injury and did not return, finishing with four points (2-5 FG, 0-1 3Pt), three rebounds, four assists, one steal, one block and three turnovers across 19 minutes in a 128-111 win over the Heat.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:06Z",
+       "shortComment": "Thompson exited Friday's game with an undisclosed injury and did not return, finishing with four points (2-5 FG, 0-1 3Pt), three rebounds, four assists, one steal, one block and three turnovers across 19 minutes in a 128-111 win over the Heat.",
+       "longComment": "Head coach JB Bickerstaff did not provide an update on Thompson after the game, so for now, he should be considered questionable for Sunday's meeting with the 76ers. If Thompson is forced to the sidelines, there would be more minutes available for Isaiah Joe, Kevin Huerter and Ronald Holland."
+      }
+     ]
+    }
+   }
+  },
+  "9": {
+   "teamId": "9",
+   "displayName": "Golden State Warriors",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "534699": {
+     "recordId": "534699",
+     "athleteName": "Jimmy Butler III",
+     "positionAbbr": "F",
+     "teamId": "9",
+     "teamAbbr": "GS",
+     "teamName": "Golden State Warriors",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-16T16:11Z|Butler (knee) could return sometime between January and February as he continues recovering from a torn right ACL, Anthony Slater of ESPN reports.",
+       "status": "Out",
+       "date": "2026-10-16T16:11Z",
+       "shortComment": "Butler (knee) could return sometime between January and February as he continues recovering from a torn right ACL, Anthony Slater of ESPN reports.",
+       "longComment": "Butler, who underwent surgery after suffering the injury Jan. 19, has progressed to individual court work but still has several rehabilitation milestones to clear. His next step involves landing comfortably after a game-speed jump. Coach Steve Kerr is hopeful Butler can rejoin Golden State for the latter portion of the season, though no official return date has been announced. The 37-year-old forward remains a significant part of the Warriors' plans and could provide a substantial boost during the second half of the campaign."
+      }
+     ]
+    },
+    "534700": {
+     "recordId": "534700",
+     "athleteName": "Moses Moody",
+     "positionAbbr": "G",
+     "teamId": "9",
+     "teamAbbr": "GS",
+     "teamName": "Golden State Warriors",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-16T16:14Z|Moody (knee) is progressing toward a potential return between December and January after rupturing his left patellar tendon in March, Anthony Slater of ESPN reports.",
+       "status": "Out",
+       "date": "2026-10-16T16:14Z",
+       "shortComment": "Moody (knee) is progressing toward a potential return between December and January after rupturing his left patellar tendon in March, Anthony Slater of ESPN reports.",
+       "longComment": "Moody has been limited to individual court work, but team sources indicate he's ahead of Jimmy Butler (knee) in the rehabilitation process and is expected to return before the veteran forward. The 24-year-old still has several recovery checkpoints to complete, and Golden State has not established an official timetable. His eventual return would help replenish a Warriors wing rotation that will open the season without both Moody and Butler."
+      }
+     ]
+    },
+    "535362": {
+     "recordId": "535362",
+     "athleteName": "Kristaps Porzingis",
+     "positionAbbr": "C",
+     "teamId": "9",
+     "teamAbbr": "GS",
+     "teamName": "Golden State Warriors",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-21T18:27Z|Porzingis is contemplating his future in basketball as he deals with recurring symptoms from the autoimmune condition termed as postural orthostatic tachycardia syndrome, per Shams Charania of ESPN.",
+       "status": "Out",
+       "date": "2026-10-21T18:27Z",
+       "shortComment": "Porzingis is contemplating his future in basketball as he deals with recurring symptoms from the autoimmune condition termed as postural orthostatic tachycardia syndrome, per Shams Charania of ESPN.",
+       "longComment": "Charania also notes Golden State has started exploring trade routes for Porzingis, who is already considered out indefinitely to begin the 2026-27 season. Fantasy managers shouldn't expect the big man to get back on the floor anytime soon, whether it be for the Warriors or perhaps another team, and it sounds like stepping away from the game is on the table for Porzingis at this point."
+      }
+     ]
+    },
+    "535691": {
+     "recordId": "535691",
+     "athleteName": "Charles Bassey",
+     "positionAbbr": "C",
+     "teamId": "9",
+     "teamAbbr": "GS",
+     "teamName": "Golden State Warriors",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-23T20:04Z|Bassey (knee) is out for Friday's game versus the Grizzlies.",
+       "status": "Out",
+       "date": "2026-10-23T20:04Z",
+       "shortComment": "Bassey (knee) is out for Friday's game versus the Grizzlies.",
+       "longComment": "The big man is nursing right patellar tendinopathy and can be considered day-to-day. Even with Kristaps Porzingis out of action, Bassey is unlikely to play a significant role once healthy."
+      }
+     ]
+    }
+   }
+  },
+  "10": {
+   "teamId": "10",
+   "displayName": "Houston Rockets",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535720": {
+     "recordId": "535720",
+     "athleteName": "Reed Sheppard",
+     "positionAbbr": "G",
+     "teamId": "10",
+     "teamAbbr": "HOU",
+     "teamName": "Houston Rockets",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-24T00:21Z|Sheppard (knee) is out for Friday's game in San Antonio.",
+       "status": "Out",
+       "date": "2026-10-24T00:21Z",
+       "shortComment": "Sheppard (knee) is out for Friday's game in San Antonio.",
+       "longComment": "Sheppard was listed as doubtful and now we have official confirmation that he'll be inactive. With Sheppard unavailable, Marcus Smart and Bogdan Bogdanovic will have the chance for some extra minutes."
+      }
+     ]
+    }
+   }
+  },
+  "11": {
+   "teamId": "11",
+   "displayName": "Indiana Pacers",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "518463": {
+     "recordId": "518463",
+     "athleteName": "Johnny Furphy",
+     "positionAbbr": "G",
+     "teamId": "11",
+     "teamAbbr": "IND",
+     "teamName": "Indiana Pacers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-02-09T21:43Z|Furphy was diagnosed with a torn right ACL on Monday and will miss the remainder of the season, Michael Scotto of USA Today reports.",
+       "status": "Out",
+       "date": "2026-02-09T21:43Z",
+       "shortComment": "Furphy was diagnosed with a torn right ACL on Monday and will miss the remainder of the season, Michael Scotto of USA Today reports.",
+       "longComment": "Furphy started in 21 of 35 regular-season appearances for the Pacers, posting averages of 5.1 points, 4.4 rebounds, 1.2 assists and 0.7 three-pointers in 18.4 minutes per contest. While no timetable has been announced, Furphy's absence could extend through the beginning of the 2026-27 season. With this news, the Pacers will likely lean more on Ben Sheppard, Kam Jones and Quenton Jackson moving forward."
+      }
+     ]
+    },
+    "535711": {
+     "recordId": "535711",
+     "athleteName": "Ben Sheppard",
+     "positionAbbr": "G",
+     "teamId": "11",
+     "teamAbbr": "IND",
+     "teamName": "Indiana Pacers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-23T22:53Z|Sheppard has been diagnosed with a torn meniscus in his left knee and is without a timetable for a return to game action, Scott Agness of FieldhouseFiles.com reports.",
+       "status": "Out",
+       "date": "2026-10-23T22:53Z",
+       "shortComment": "Sheppard has been diagnosed with a torn meniscus in his left knee and is without a timetable for a return to game action, Scott Agness of FieldhouseFiles.com reports.",
+       "longComment": "Sheppard can be considered out indefinitely until the Pacers offer an update on his timeline to return. In the meantime, Jarace Walker and Quenton Jackson will likely see increased playing time."
+      }
+     ]
+    },
+    "-59603": {
+     "recordId": "-59603",
+     "athleteName": "T.J. McConnell",
+     "positionAbbr": "G",
+     "teamId": "11",
+     "teamAbbr": "IND",
+     "teamName": "Indiana Pacers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:07Z|McConnell (hamstring) is out for Friday's game against Dallas.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:07Z",
+       "shortComment": "McConnell (hamstring) is out for Friday's game against Dallas.",
+       "longComment": "The veteran point guard continues to battle a hamstring strain. His next chance to make his season debut comes Sunday in Brooklyn."
+      }
+     ]
+    }
+   }
+  },
+  "12": {
+   "teamId": "12",
+   "displayName": "LA Clippers",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "532401": {
+     "recordId": "532401",
+     "athleteName": "Jordan Miller",
+     "positionAbbr": "G",
+     "teamId": "12",
+     "teamAbbr": "LAC",
+     "teamName": "LA Clippers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-08-26T20:04Z|Miller underwent surgery Wednesday to repair a torn left rotator cuff and will be re-evaluated in six months, per Law Murray of The Athletic.",
+       "status": "Out",
+       "date": "2026-08-26T20:04Z",
+       "shortComment": "Miller underwent surgery Wednesday to repair a torn left rotator cuff and will be re-evaluated in six months, per Law Murray of The Athletic.",
+       "longComment": "It's a tough break for Miller, who had an opportunity to battle for a reserve role during training camp in the fall. The timeline for a return is likely to keep him on the shelf until after the All-Star break. Miller's extended stay on the sidelines gives Kobe Sanders a chance to crack the Clippers' rotation."
+      }
+     ]
+    },
+    "532875": {
+     "recordId": "532875",
+     "athleteName": "Brandon Ingram",
+     "positionAbbr": "F",
+     "teamId": "28",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Raptors",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-09-28T18:01Z|Ingram won't be ready for the start of the season due to a partially torn Achilles, per Joey Linn of SI.com.",
+       "status": "Out",
+       "date": "2026-09-28T18:01Z",
+       "shortComment": "Ingram won't be ready for the start of the season due to a partially torn Achilles, per Joey Linn of SI.com.",
+       "longComment": "The Clippers learned about the injury this summer, though it's unclear exactly how far along Ingram is in his recovery. The star forward's timeline for a return is unclear, clouding his fantasy outlook in the meantime. Darius Garland should take on all the usage he can handle in Ingram's stead, while Kris Dunn and Max Strus could have additional streaming appeal early in the year."
+      }
+     ]
+    },
+    "532876": {
+     "recordId": "532876",
+     "athleteName": "Yanic Konan Niederhauser",
+     "positionAbbr": "C",
+     "teamId": "12",
+     "teamAbbr": "LAC",
+     "teamName": "LA Clippers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-09-28T18:07Z|Niederhauser (foot) won't be ready for the start of the season, Law Murray of The Athletic reports.",
+       "status": "Out",
+       "date": "2026-09-28T18:07Z",
+       "shortComment": "Niederhauser (foot) won't be ready for the start of the season, Law Murray of The Athletic reports.",
+       "longComment": "Niederhauser is progressing from March surgery but won't be able to suit up to begin the year. The Clippers are likely to take a cautious approach with the 2025 first-rounder. Isaiah Jackson should occupy the backup center spot behind Brook Lopez early in the campaign."
+      }
+     ]
+    },
+    "533234": {
+     "recordId": "533234",
+     "athleteName": "Max Strus",
+     "positionAbbr": "G",
+     "teamId": "12",
+     "teamAbbr": "LAC",
+     "teamName": "LA Clippers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-05T22:21Z|Strus has been diagnosed with a partially torn plantar fascia in his right foot and he will be re-evaluated in four weeks, Ohm Youngmisuk of ESPN.com reports.",
+       "status": "Out",
+       "date": "2026-10-05T22:21Z",
+       "shortComment": "Strus has been diagnosed with a partially torn plantar fascia in his right foot and he will be re-evaluated in four weeks, Ohm Youngmisuk of ESPN.com reports.",
+       "longComment": "Plantar fascia injuries can be tricky to recover from, with the only remedy typically being prolonged rest, so don't be surprised if Strus' absence extends well beyond this initial four-week window. With Strus now set to miss at least the first few weeks of the season, and Bradley Beal (knee) uncertain for opening night, Keaton Wagler could be thrust into the first unit sooner than expected."
+      }
+     ]
+    },
+    "534472": {
+     "recordId": "534472",
+     "athleteName": "Bradley Beal",
+     "positionAbbr": "G",
+     "teamId": "12",
+     "teamAbbr": "LAC",
+     "teamName": "LA Clippers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-15T01:03Z|Beal (knee) will not be ready for the start of the regular season, NBA writer Justin Russo reports.",
+       "status": "Out",
+       "date": "2026-10-15T01:03Z",
+       "shortComment": "Beal (knee) will not be ready for the start of the regular season, NBA writer Justin Russo reports.",
+       "longComment": "Beal is dealing with knee inflammation that will keep him sidelined for Opening Night. While it's unclear how long the Clippers will be without the veteran guard, Darius Garland, Keaton Wagler and Kris Dunn should dominate the backcourt minutes in his absence. Beal's 2025-26 campaign was cut short by a hip injury after he averaged 8.2 points and 1.7 assists in 20.6 minutes across just six regular-season appearances."
+      }
+     ]
+    }
+   }
+  },
+  "13": {
+   "teamId": "13",
+   "displayName": "Los Angeles Lakers",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535627": {
+     "recordId": "535627",
+     "athleteName": "Cameron Carr",
+     "positionAbbr": "G",
+     "teamId": "13",
+     "teamAbbr": "LAL",
+     "teamName": "Los Angeles Lakers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-23T00:10Z|Carr (oblique) is out for Friday's game against the Clippers.",
+       "status": "Out",
+       "date": "2026-10-23T00:10Z",
+       "shortComment": "Carr (oblique) is out for Friday's game against the Clippers.",
+       "longComment": "Carr isn't quite ready to make his NBA debut, but he can continue to be considered day-to-day. His next chance to take the court will arrive Sunday in Utah."
+      }
+     ]
+    },
+    "535692": {
+     "recordId": "535692",
+     "athleteName": "Jake LaRavia",
+     "positionAbbr": "F",
+     "teamId": "13",
+     "teamAbbr": "LAL",
+     "teamName": "Los Angeles Lakers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-23T20:05Z|LaRavia (ankle) has been ruled out for Friday's game against the Clippers, Mark Medina of TheSportingTribune.com reports.",
+       "status": "Out",
+       "date": "2026-10-23T20:05Z",
+       "shortComment": "LaRavia (ankle) has been ruled out for Friday's game against the Clippers, Mark Medina of TheSportingTribune.com reports.",
+       "longComment": "LaRavia will miss Friday's contest with a right ankle sprain he sustained in Wednesday's season-opening win over the Warriors. With the 24-year-old forward sidelined, Quentin Grimes, Matisse Thybulle and Sandro Mamukelashvili could all see a bump in minutes. LaRavia's next chance to play will come Sunday at Utah."
+      }
+     ]
+    },
+    "-59342": {
+     "recordId": "-59342",
+     "athleteName": "Adou Thiero",
+     "positionAbbr": "F",
+     "teamId": "13",
+     "teamAbbr": "LAL",
+     "teamName": "Los Angeles Lakers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-23T00:10Z|Thiero (knee) is out for Friday's game against the Clippers.",
+       "status": "Out",
+       "date": "2026-10-23T00:10Z",
+       "shortComment": "Thiero (knee) is out for Friday's game against the Clippers.",
+       "longComment": "Thiero will miss a second straight game, and the young forward has yet to make his debut in 2026-27. His next chance will come against the Jazz on Sunday, but even if he gets the green light, he's not expected to have a sizable role in the rotation."
+      }
+     ]
+    }
+   }
+  },
+  "16": {
+   "teamId": "16",
+   "displayName": "Minnesota Timberwolves",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "533214": {
+     "recordId": "533214",
+     "athleteName": "Donte DiVincenzo",
+     "positionAbbr": "G",
+     "teamId": "16",
+     "teamAbbr": "MIN",
+     "teamName": "Minnesota Timberwolves",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-05T20:53Z|DiVincenzo (Achilles) remains confident that he'll return during the 2026-27 season, Jon Krawczynski of The Athletic reports.",
+       "status": "Out",
+       "date": "2026-10-05T20:53Z",
+       "shortComment": "DiVincenzo (Achilles) remains confident that he'll return during the 2026-27 season, Jon Krawczynski of The Athletic reports.",
+       "longComment": "DiVincenzo is approaching six months since tearing his right Achilles during the first round of the playoffs and has been rehabbing with the expectation that he'll play at some point this season. The veteran guard has sought advice from Jayson Tatum, Tyrese Haliburton and Damian Lillard during his recovery, though Minnesota has yet to establish a timetable for his return."
+      }
+     ]
+    }
+   }
+  },
+  "17": {
+   "teamId": "17",
+   "displayName": "Brooklyn Nets",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535699": {
+     "recordId": "535699",
+     "athleteName": "Tyler Bilodeau",
+     "positionAbbr": "F",
+     "teamId": "17",
+     "teamAbbr": "BKN",
+     "teamName": "Brooklyn Nets",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-23T21:08Z|Bilodeau (shoulder) has been ruled out for Saturday's game in Cleveland.",
+       "status": "Out",
+       "date": "2026-10-23T21:08Z",
+       "shortComment": "Bilodeau (shoulder) has been ruled out for Saturday's game in Cleveland.",
+       "longComment": "This will be Bilodeau's second straight game on the sidelines. His next chance to play will come Sunday against the Pacers."
+      }
+     ]
+    }
+   }
+  },
+  "19": {
+   "teamId": "19",
+   "displayName": "Orlando Magic",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535097": {
+     "recordId": "535097",
+     "athleteName": "Noah Penda",
+     "positionAbbr": "F",
+     "teamId": "19",
+     "teamAbbr": "ORL",
+     "teamName": "Orlando Magic",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-17T22:19Z|Penda was diagnosed with a partially torn right hamstring Saturday, Jason Beede of the Orlando Sentinel reports.",
+       "status": "Out",
+       "date": "2026-10-17T22:19Z",
+       "shortComment": "Penda was diagnosed with a partially torn right hamstring Saturday, Jason Beede of the Orlando Sentinel reports.",
+       "longComment": "Penda suffered the hamstring tear in Friday's 136-115 preseason win over the Heat. It's unknown how long the injury will keep the 21-year-old off the floor. However, since it's a different injury than the one he suffered in the same hamstring during training camp, the team may take a cautious approach regarding his return. Penda, the No. 32 overall pick in the 2025 NBA Draft, averaged 3.8 points, 3.2 rebounds and 1.2 assists over 12.8 minutes per outing in 59 regular-season games in 2025-26. While he's not expected to be a mainstay in the rotation throughout the 2026-27 campaign, his absence could open up a few minutes for Tristan Da Silva."
+      }
+     ]
+    },
+    "535742": {
+     "recordId": "535742",
+     "athleteName": "Paolo Banchero",
+     "positionAbbr": "F",
+     "teamId": "19",
+     "teamAbbr": "ORL",
+     "teamName": "Orlando Magic",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T01:55Z|Banchero didn't check back in during the fourth quarter of Friday's 115-93 loss to the Timberwolves after being deemed doubtful to return. He finished with 14 points (5-11 FG, 0-2 3Pt, 2-4 FT), six rebounds, five assists and one steal across 26 minutes.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T01:55Z",
+       "shortComment": "Banchero didn't check back in during the fourth quarter of Friday's 115-93 loss to the Timberwolves after being deemed doubtful to return. He finished with 14 points (5-11 FG, 0-2 3Pt, 2-4 FT), six rebounds, five assists and one steal across 26 minutes.",
+       "longComment": "Banchero exited to the locker room in the third quarter after tweaking his right ankle. He briefly returned to action in the third but didn't see the floor in the fourth due to ankle soreness. The star forward can be considered questionable for Sunday's game at New York until the Magic offer an update on his status."
+      }
+     ]
+    },
+    "-59601": {
+     "recordId": "-59601",
+     "athleteName": "Jonathan Isaac",
+     "positionAbbr": "F",
+     "teamId": "19",
+     "teamAbbr": "ORL",
+     "teamName": "Orlando Magic",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:07Z|Isaac (knee) is out for Friday's game against Minnesota.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:07Z",
+       "shortComment": "Isaac (knee) is out for Friday's game against Minnesota.",
+       "longComment": "The oft-injured forward isn't ready to make his season debut. His next chance to do so arrives Sunday in New York, when Orlando takes on the defending-champion Knicks."
+      }
+     ]
+    },
+    "-59600": {
+     "recordId": "-59600",
+     "athleteName": "Anthony Black",
+     "positionAbbr": "G",
+     "teamId": "19",
+     "teamAbbr": "ORL",
+     "teamName": "Orlando Magic",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:07Z|Black (ankle) has been ruled out for Friday's game against Minnesota but participated in shootaround and has experienced no setbacks in his recovery, Jason Beede of the Orlando Sentinel reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:07Z",
+       "shortComment": "Black (ankle) has been ruled out for Friday's game against Minnesota but participated in shootaround and has experienced no setbacks in his recovery, Jason Beede of the Orlando Sentinel reports.",
+       "longComment": "\"He's doing a good job, still ramping up and looked good,\" coach Sean Sweeney said. Black continues to make encouraging progress from a right ankle sprain that sidelined him throughout the preseason. His participation in shootaround is a positive sign, though the Magic have yet to establish a timetable for his return. He'll look to carve out a role in Orlando's backcourt once cleared to play."
+      }
+     ]
+    },
+    "-57605": {
+     "recordId": "-57605",
+     "athleteName": "Izaiyah Nelson",
+     "positionAbbr": "F",
+     "teamId": "19",
+     "teamAbbr": "ORL",
+     "teamName": "Orlando Magic",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-09-28T21:33Z|Team president Jeff Weltman said Monday that Nelson (ankle) remains about a month away from returning to the court after offseason surgery, per Philip Rossman-Reich of OrlandoMagicDaily.com.",
+       "status": "Out",
+       "date": "2026-09-28T21:33Z",
+       "shortComment": "Team president Jeff Weltman said Monday that Nelson (ankle) remains about a month away from returning to the court after offseason surgery, per Philip Rossman-Reich of OrlandoMagicDaily.com.",
+       "longComment": "With Nelson still in recovery mode from the left ankle surgery he underwent this summer, his path back to game action remains delayed for the early part of the season. The rookie big man is on a two-way contract with the Magic, so his short-term absence mainly affects his developmental timeline rather than Orlando's regular rotation."
+      }
+     ]
+    }
+   }
+  },
+  "20": {
+   "teamId": "20",
+   "displayName": "Philadelphia 76ers",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "533362": {
+     "recordId": "533362",
+     "athleteName": "Ariel Hukporti",
+     "positionAbbr": "C",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-06T19:17Z|Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN.",
+       "status": "Out",
+       "date": "2026-10-06T19:17Z",
+       "shortComment": "Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN.",
+       "longComment": "Hukporti went down with an Achilles injury in Monday's preseason opener against the Knicks, and an MRI has since revealed a rupture. He signed a one-year deal with the 76ers over the summer, so Hukporti will be an unrestricted free agent come season's end. With Hukporti's year already finished, Adem Bona (foot) should assume the backup center role behind Joel Embiid once healthy."
+      }
+     ]
+    },
+    "535173": {
+     "recordId": "535173",
+     "athleteName": "Dominick Barlow",
+     "positionAbbr": "F",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-19T21:07Z|Barlow will miss at least the next two weeks of action due to a lumbar spine bone stress response, Adam Aaronson of PhillyVoice.com reports.",
+       "status": "Out",
+       "date": "2026-10-19T21:07Z",
+       "shortComment": "Barlow will miss at least the next two weeks of action due to a lumbar spine bone stress response, Adam Aaronson of PhillyVoice.com reports.",
+       "longComment": "The back issue cost Barlow the entire preseason, and now he'll begin the regular season on the sidelines. The earliest we could see Barlow back on the court would be Nov. 2, but it wouldn't be shocking to see his absence extend beyond this loose, two-week window."
+      }
+     ]
+    },
+    "535696": {
+     "recordId": "535696",
+     "athleteName": "LeBron James",
+     "positionAbbr": "F",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-23T21:03Z|James (back) is questionable for Saturday's game against the Bucks.",
+       "status": "Day-To-Day",
+       "date": "2026-10-23T21:03Z",
+       "shortComment": "James (back) is questionable for Saturday's game against the Bucks.",
+       "longComment": "The 76ers are considering giving James the night off Saturday for the first leg of a back-to-back set. If James sits out, Kentavious Caldwell-Pope stands out as the most likely candidate to step into the starting lineup."
+      }
+     ]
+    },
+    "535698": {
+     "recordId": "535698",
+     "athleteName": "Dean Wade",
+     "positionAbbr": "F",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-23T21:07Z|Wade is listed as questionable for Saturday's game against the Bucks due to a left ankle sprain.",
+       "status": "Day-To-Day",
+       "date": "2026-10-23T21:07Z",
+       "shortComment": "Wade is listed as questionable for Saturday's game against the Bucks due to a left ankle sprain.",
+       "longComment": "Wade is in jeopardy of missing a third straight game to begin the regular season. If the veteran forward is unable to suit up, Kentavious Caldwell-Pope and Jabari Walker would be candidates to see a bump in minutes."
+      }
+     ]
+    },
+    "535701": {
+     "recordId": "535701",
+     "athleteName": "Tacko Fall",
+     "positionAbbr": "C",
+     "teamId": "20",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia 76ers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-23T21:10Z|Fall (quadriceps) is out for Saturday's game against the Bucks.",
+       "status": "Out",
+       "date": "2026-10-23T21:10Z",
+       "shortComment": "Fall (quadriceps) is out for Saturday's game against the Bucks.",
+       "longComment": "Fall still isn't ready for his 76ers debut due to a quadriceps strain. Once cleared to make his season debut, the two-way player could see most of his action come with the G League's Delaware Blue Coats."
+      }
+     ]
+    }
+   }
+  },
+  "21": {
+   "teamId": "21",
+   "displayName": "Phoenix Suns",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "532554": {
+     "recordId": "532554",
+     "athleteName": "Mark Williams",
+     "positionAbbr": "C",
+     "teamId": "21",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Suns",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-09-11T16:03Z|Williams underwent surgery Thursday to repair a torn labrum in his left shoulder and will miss an extended period of time, Shams Charania of ESPN reports.",
+       "status": "Out",
+       "date": "2026-09-11T16:03Z",
+       "shortComment": "Williams underwent surgery Thursday to repair a torn labrum in his left shoulder and will miss an extended period of time, Shams Charania of ESPN reports.",
+       "longComment": "This is a tough blow for the center with training camp right around the corner. With his status for Opening Night in jeopardy, this will put a lot of eyes on Oso Ighodaro and Khaman Maluach, with the latter already drawing buzz during the Summer League. More clarity on Williams' timeline should be known in the coming weeks."
+      }
+     ]
+    },
+    "535721": {
+     "recordId": "535721",
+     "athleteName": "Oso Ighodaro",
+     "positionAbbr": "F",
+     "teamId": "21",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Suns",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T00:24Z|Ighodaro (oblique) is listed as doubtful for Saturday's game against Golden State.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T00:24Z",
+       "shortComment": "Ighodaro (oblique) is listed as doubtful for Saturday's game against Golden State.",
+       "longComment": "Head coach Jordan Ott previously said Ighodaro wouldn't play Saturday, though the doubtful tag suggests there's still a small chance he will suit up. In the likely event that the big man is ruled out, Khaman Maluach, Koa Peat, Rasheer Fleming and Duop Reath could see increased playing time."
+      }
+     ]
+    },
+    "-59621": {
+     "recordId": "-59621",
+     "athleteName": "Luke Kennard",
+     "positionAbbr": "G",
+     "teamId": "21",
+     "teamAbbr": "PHX",
+     "teamName": "Phoenix Suns",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T09:00Z|Kennard (knee) is questionable to play Saturday against the Warriors.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T09:00Z",
+       "shortComment": "Kennard (knee) is questionable to play Saturday against the Warriors.",
+       "longComment": "A decision on Kennard's status will be made closer to Saturday's contest. If he ends up being ruled out again, as he didn't play Wednesday against the Trail Blazers, then Jordan Goodwin should be more involved off the bench."
+      }
+     ]
+    }
+   }
+  },
+  "22": {
+   "teamId": "22",
+   "displayName": "Portland Trail Blazers",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "532395": {
+     "recordId": "532395",
+     "athleteName": "Shaedon Sharpe",
+     "positionAbbr": "G",
+     "teamId": "22",
+     "teamAbbr": "POR",
+     "teamName": "Portland Trail Blazers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-08-24T20:23Z|Sharpe suffered a torn meniscus in his knee and is expected to miss six months, per Shams Charania of ESPN.",
+       "status": "Out",
+       "date": "2026-08-24T20:23Z",
+       "shortComment": "Sharpe suffered a torn meniscus in his knee and is expected to miss six months, per Shams Charania of ESPN.",
+       "longComment": "It's a tough blow to the Trail Blazers' depth on the wing ahead of training camp. Sharpe, who is now likely to be sidelined until after the All-Star break, had been ticketed for a reserve role behind Toumani Camara following an injury-plagued 2025-26 campaign, which saw average a career-high 20.8 points, 1.4 steals and 2.1 three-pointers per game over 50 regular-season appearances. The door is now open for Vit Krejci and Jeremy Sochan to compete for bench minutes during camp."
+      }
+     ]
+    },
+    "535619": {
+     "recordId": "535619",
+     "athleteName": "Chris Youngblood",
+     "positionAbbr": "G",
+     "teamId": "22",
+     "teamAbbr": "POR",
+     "teamName": "Portland Trail Blazers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-22T23:48Z|Youngblood (ankle) is out for Friday's game against the Kings.",
+       "status": "Out",
+       "date": "2026-10-22T23:48Z",
+       "shortComment": "Youngblood (ankle) is out for Friday's game against the Kings.",
+       "longComment": "Youngblood will have to wait to make his 2026-27 season debut, and he'll miss a second consecutive game while dealing with left ankle soreness. His next chance to play will come against the Lakers on Tuesday, Nov. 27."
+      }
+     ]
+    },
+    "535620": {
+     "recordId": "535620",
+     "athleteName": "Branden Carlson",
+     "positionAbbr": "C",
+     "teamId": "22",
+     "teamAbbr": "POR",
+     "teamName": "Portland Trail Blazers",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-22T23:48Z|Carlson (concussion) has been ruled out for Friday's game against Sacramento.",
+       "status": "Out",
+       "date": "2026-10-22T23:48Z",
+       "shortComment": "Carlson (concussion) has been ruled out for Friday's game against Sacramento.",
+       "longComment": "Carlson is still in the league's concussion protocol and will remain on the inactive list for a second consecutive contest to begin the regular season. The big man's next opportunity to play will come Tuesday against the Lakers."
+      }
+     ]
+    }
+   }
+  },
+  "23": {
+   "teamId": "23",
+   "displayName": "Sacramento Kings",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "534545": {
+     "recordId": "534545",
+     "athleteName": "Maxime Raynaud",
+     "positionAbbr": "C",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-15T14:36Z|Raynaud (knee) is expected to miss at least the first five or six games of the regular season, and potentially longer, Frankie Cartoscelli of KHTK Sactown Sports 1140 reports.",
+       "status": "Out",
+       "date": "2026-10-15T14:36Z",
+       "shortComment": "Raynaud (knee) is expected to miss at least the first five or six games of the regular season, and potentially longer, Frankie Cartoscelli of KHTK Sactown Sports 1140 reports.",
+       "longComment": "Raynaud is recovering from a right patellar subluxation and appears set to begin the campaign on the sidelines. The young center appeared in 74 games last season, helping anchor Sacramento's frontcourt while Domantas Sabonis battled injuries. With Dylan Cardwell also sidelined, the Kings will be especially dependent on Sabonis until their reserve centers return."
+      }
+     ]
+    },
+    "534546": {
+     "recordId": "534546",
+     "athleteName": "Dylan Cardwell",
+     "positionAbbr": "C",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-15T14:40Z|Cardwell (calf) is expected to miss at least the first five or six games of the regular season, with a longer absence possible, Frankie Cartoscelli of KHTK Sactown Sports 1140 reports.",
+       "status": "Out",
+       "date": "2026-10-15T14:40Z",
+       "shortComment": "Cardwell (calf) is expected to miss at least the first five or six games of the regular season, with a longer absence possible, Frankie Cartoscelli of KHTK Sactown Sports 1140 reports.",
+       "longComment": "Cardwell appeared in 44 games last season, providing frontcourt depth while Domantas Sabonis dealt with injuries. Sacramento will also be without Maxime Raynaud (knee) to begin the campaign, leaving the team thin at center behind Sabonis. Cardwell's return timetable remains uncertain, but his absence could create additional opportunities for the Kings' remaining frontcourt reserves."
+      }
+     ]
+    },
+    "535308": {
+     "recordId": "535308",
+     "athleteName": "Ben Simmons",
+     "positionAbbr": "G",
+     "teamId": "23",
+     "teamAbbr": "SAC",
+     "teamName": "Sacramento Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-21T04:22Z|Simmons underwent successful surgery Tuesday to repair a torn right Achilles tendon, James Ham of ESPN 1320 Sacramento reports.",
+       "status": "Out",
+       "date": "2026-10-21T04:22Z",
+       "shortComment": "Simmons underwent successful surgery Tuesday to repair a torn right Achilles tendon, James Ham of ESPN 1320 Sacramento reports.",
+       "longComment": "Simmons had a quality preseason, averaging 10.5 points, 4.0 rebounds and 4.0 assists over 17.4 minutes per contest (two games). The 30-year-old was on track to suit up for the Kings on opening night, though those plans were halted after he suffered a torn Achilles tendon during practice. Now, Simmons will focus on rehab. However, it's unknown what the future holds regarding his career in the NBA."
+      }
+     ]
+    }
+   }
+  },
+  "24": {
+   "teamId": "24",
+   "displayName": "San Antonio Spurs",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "533226": {
+     "recordId": "533226",
+     "athleteName": "Jayden Quaintance",
+     "positionAbbr": "F",
+     "teamId": "24",
+     "teamAbbr": "SA",
+     "teamName": "San Antonio Spurs",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-05T21:43Z|Quaintance has been around the team but has not yet been cleared for basketball activities, Matt Guzman of SI.com reports.",
+       "status": "Out",
+       "date": "2026-10-05T21:43Z",
+       "shortComment": "Quaintance has been around the team but has not yet been cleared for basketball activities, Matt Guzman of SI.com reports.",
+       "longComment": "The Spurs are expected to exercise extreme caution with the big man, as Quaintance suffered a torn ACL and meniscus with Arizona State in February 2025 before appearing in only four games with Kentucky last season due to severe complications and persistent swelling. The 19-year-old underwent a cleanup procedure on his meniscus in mid-July, and the Spurs will likely want him at 100 percent before ramping him up to basketball activities."
+      }
+     ]
+    },
+    "535612": {
+     "recordId": "535612",
+     "athleteName": "Tobias Harris",
+     "positionAbbr": "F",
+     "teamId": "24",
+     "teamAbbr": "SA",
+     "teamName": "San Antonio Spurs",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-22T22:03Z|Harris (calf) is out for Friday's game against the Rockets.",
+       "status": "Out",
+       "date": "2026-10-22T22:03Z",
+       "shortComment": "Harris (calf) is out for Friday's game against the Rockets.",
+       "longComment": "The veteran forward still isn't ready to make his Spurs debut due to a left calf strain. Harris is up against a quick turnaround if he wants to suit up in time for Saturday's matchup with the Mavericks. Both Devin Vassell and Julian Champagnie stand out as worthy streaming candidates until Harris is cleared to play."
+      }
+     ]
+    }
+   }
+  },
+  "25": {
+   "teamId": "25",
+   "displayName": "Oklahoma City Thunder",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535377": {
+     "recordId": "535377",
+     "athleteName": "Thomas Sorber",
+     "positionAbbr": "C",
+     "teamId": "25",
+     "teamAbbr": "OKC",
+     "teamName": "Oklahoma City Thunder",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-21T22:08Z|Sorber (knee) is listed as out for Thursday's game against Denver.",
+       "status": "Out",
+       "date": "2026-10-21T22:08Z",
+       "shortComment": "Sorber (knee) is listed as out for Thursday's game against Denver.",
+       "longComment": "Sorber is still working his way back from offseason knee surgery and remains without a firm return date. He should be considered week-to-week until there is a more definitive update."
+      }
+     ]
+    },
+    "535379": {
+     "recordId": "535379",
+     "athleteName": "Nikola Topic",
+     "positionAbbr": "G",
+     "teamId": "25",
+     "teamAbbr": "OKC",
+     "teamName": "Oklahoma City Thunder",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-21T22:13Z|Topic (back) won't play in Thursday's game against the Nuggets.",
+       "status": "Out",
+       "date": "2026-10-21T22:13Z",
+       "shortComment": "Topic (back) won't play in Thursday's game against the Nuggets.",
+       "longComment": "Topic is out again Thursday, as expected. He doesn't have a definitive return date, so he should be considered week-to-week."
+      }
+     ]
+    },
+    "535688": {
+     "recordId": "535688",
+     "athleteName": "Otega Oweh",
+     "positionAbbr": "G",
+     "teamId": "25",
+     "teamAbbr": "OKC",
+     "teamName": "Oklahoma City Thunder",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-23T18:52Z|The Thunder plan to waive Oweh (Achilles) on Friday.",
+       "status": "Out",
+       "date": "2026-10-23T18:52Z",
+       "shortComment": "The Thunder plan to waive Oweh (Achilles) on Friday.",
+       "longComment": "Oweh, a rookie second-round pick, was set to be a two-way player for Oklahoma City but suffered a ruptured right Achilles tendon in a preseason game, which will sideline him for the entire 2026-27 campaign. Following a long road to recovery, Oweh might have to settle for an Exhibit 10 deal next summer."
+      }
+     ]
+    }
+   }
+  },
+  "26": {
+   "teamId": "26",
+   "displayName": "Utah Jazz",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "533498": {
+     "recordId": "533498",
+     "athleteName": "Jusuf Nurkic",
+     "positionAbbr": "C",
+     "teamId": "26",
+     "teamAbbr": "UTAH",
+     "teamName": "Utah Jazz",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-07T23:07Z|Nurkic will miss at least the next four weeks due to a partial plantar plate tear of second toe in right foot, Chris Haynes of NBA TV reports.",
+       "status": "Out",
+       "date": "2026-10-07T23:07Z",
+       "shortComment": "Nurkic will miss at least the next four weeks due to a partial plantar plate tear of second toe in right foot, Chris Haynes of NBA TV reports.",
+       "longComment": "Nurkic will begin the 2026-27 season on the sidelines, and given the tricky nature of foot injuries for big men, it wouldn't be shocking to see his absence extend beyond this initial four-week window. Jaren Jackson will likely spend more time at center while Nurkic is out, and there will be more minutes available for Jaxson Hayes and Mo Bamba."
+      }
+     ]
+    },
+    "-59319": {
+     "recordId": "-59319",
+     "athleteName": "Trey Alexander",
+     "positionAbbr": "G",
+     "teamId": "26",
+     "teamAbbr": "UTAH",
+     "teamName": "Utah Jazz",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-22T23:02Z|Alexander won't play Wednesday against the Grizzlies due to a left knee bone bruise.",
+       "status": "Out",
+       "date": "2026-10-22T23:02Z",
+       "shortComment": "Alexander won't play Wednesday against the Grizzlies due to a left knee bone bruise.",
+       "longComment": "Alexander sat out Friday's preseason finale with what the team initially described as a left knee injury, but we now know he's dealing with a bone bruise. Don't be surprised if Alexander misses Friday's game against the Pelicans as well."
+      }
+     ]
+    }
+   }
+  },
+  "27": {
+   "teamId": "27",
+   "displayName": "Washington Wizards",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "533019": {
+     "recordId": "533019",
+     "athleteName": "Tristan Vukcevic",
+     "positionAbbr": "F",
+     "teamId": "27",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Wizards",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-01T19:11Z|The Wizards announced Thursday that Vukcevic (hip) will be re-evaluated in four weeks.",
+       "status": "Out",
+       "date": "2026-10-01T19:11Z",
+       "shortComment": "The Wizards announced Thursday that Vukcevic (hip) will be re-evaluated in four weeks.",
+       "longComment": "Although the big man will remain a limited participant in training camp as he continues his rehab from a hip impingement, it sounds like his absence from game action will extend into the regular season. Deandre Ayton should have the backup center role all to himself until Vukcevic is cleared to retake the floor."
+      }
+     ]
+    },
+    "-59610": {
+     "recordId": "-59610",
+     "athleteName": "AJ Dybantsa",
+     "positionAbbr": "F",
+     "teamId": "27",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Wizards",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:11Z|Dybantsa (ankle) is out for Friday's game against the Raptors, Josh Robbins of The Athletic reports.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:11Z",
+       "shortComment": "Dybantsa (ankle) is out for Friday's game against the Raptors, Josh Robbins of The Athletic reports.",
+       "longComment": "The rookie No. 1 pick remains day-to-day according to coach Brian Keefe. Friday's game is the front end of a back-to-back set, and considering the day-to-day designation, a return against the Bulls on Saturday could be on the table. In the meantime, the Wizards will likely continue to lean on Bilal Coulibaly."
+      }
+     ]
+    },
+    "-57028": {
+     "recordId": "-57028",
+     "athleteName": "Jamir Watkins",
+     "positionAbbr": "G",
+     "teamId": "27",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Wizards",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-07-30T20:11Z|The Wizards announced Thursday that Watkins has undergone surgery for a torn ACL.",
+       "status": "Out",
+       "date": "2026-07-30T20:11Z",
+       "shortComment": "The Wizards announced Thursday that Watkins has undergone surgery for a torn ACL.",
+       "longComment": "Watkins, a two-way player for the Wizards, suffered the injury during the Summer League. Although Washington has yet to offer a timetable for a return, a typical recovery time for the procedure is approximately 9-to-12 months. That leaves Watkins in serious jeopardy of missing most, if not all, of the 2026-27 season, and it remains to be seen if the team will continue keeping him around on a two-way roster spot while he's injured."
+      }
+     ]
+    }
+   }
+  },
+  "28": {
+   "teamId": "28",
+   "displayName": "Toronto Raptors",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535212": {
+     "recordId": "535212",
+     "athleteName": "Nate Bittle",
+     "positionAbbr": "C",
+     "teamId": "28",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Raptors",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-20T18:05Z|Bittle (foot) is out for Wednesday's season opener against the Bulls.",
+       "status": "Out",
+       "date": "2026-10-20T18:05Z",
+       "shortComment": "Bittle (foot) is out for Wednesday's season opener against the Bulls.",
+       "longComment": "Bittle, who just landed a two-way deal with Toronto, continues to recover from a foot fracture. The rookie big man didn't appear in the preseason and has no timetable for a return to the floor."
+      }
+     ]
+    }
+   }
+  },
+  "29": {
+   "teamId": "29",
+   "displayName": "Memphis Grizzlies",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535736": {
+     "recordId": "535736",
+     "athleteName": "Cedric Coward",
+     "positionAbbr": "F",
+     "teamId": "29",
+     "teamAbbr": "MEM",
+     "teamName": "Memphis Grizzlies",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-24T01:36Z|Coward (wrist) has been ruled out for Friday's game against the Warriors.",
+       "status": "Out",
+       "date": "2026-10-24T01:36Z",
+       "shortComment": "Coward (wrist) has been ruled out for Friday's game against the Warriors.",
+       "longComment": "Coward will miss Friday's contest due to a left wrist sprain, and his next chance to suit up will come Sunday against Sacramento. With the 23-year-old swingman sidelined, Jerami Grant, Scotty Pippen, Cam Spencer and GG Jackson are all candidates for a bump in minutes."
+      }
+     ]
+    }
+   }
+  },
+  "30": {
+   "teamId": "30",
+   "displayName": "Charlotte Hornets",
+   "firstCapturedAt": "2026-10-24T09:44:42.329Z",
+   "players": {
+    "535247": {
+     "recordId": "535247",
+     "athleteName": "Kylan Boswell",
+     "positionAbbr": "G",
+     "teamId": "30",
+     "teamAbbr": "CHA",
+     "teamName": "Charlotte Hornets",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Out|2026-10-20T20:55Z|Boswell (knee) is out for Wednesday's season opener against the Nets.",
+       "status": "Out",
+       "date": "2026-10-20T20:55Z",
+       "shortComment": "Boswell (knee) is out for Wednesday's season opener against the Nets.",
+       "longComment": "Boswell continues to rehab after right knee surgery. The hope in early October was that he would be cleared for basketball activities prior to the start of the G League season, which begins in early November."
+      }
+     ]
+    },
+    "-59608": {
+     "recordId": "-59608",
+     "athleteName": "Grant Williams",
+     "positionAbbr": "F",
+     "teamId": "30",
+     "teamAbbr": "CHA",
+     "teamName": "Charlotte Hornets",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:10Z|Williams (hamstring) is out for Friday's game against the Hawks.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:10Z",
+       "shortComment": "Williams (hamstring) is out for Friday's game against the Hawks.",
+       "longComment": "A hamstring strain continues to leave Williams on the shelf. Sion James played 27 minutes during an Opening Night start in Brooklyn and carries some deep-league streaming appeal."
+      }
+     ]
+    },
+    "-59607": {
+     "recordId": "-59607",
+     "athleteName": "Coby White",
+     "positionAbbr": "G",
+     "teamId": "30",
+     "teamAbbr": "CHA",
+     "teamName": "Charlotte Hornets",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:10Z|White (calf) is out for Friday's game against the Hawks.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:10Z",
+       "shortComment": "White (calf) is out for Friday's game against the Hawks.",
+       "longComment": "The combo guard can be viewed as day-to-day while on the mend with a calf strain. Until White is cleared for game action, Dennis Schroder should continue to start at point guard for the Hornets and makes for a viable streaming choice."
+      }
+     ]
+    },
+    "-59606": {
+     "recordId": "-59606",
+     "athleteName": "Kon Knueppel",
+     "positionAbbr": "G",
+     "teamId": "30",
+     "teamAbbr": "CHA",
+     "teamName": "Charlotte Hornets",
+     "history": [
+      {
+       "captured_at": "2026-10-24T09:44:42.329Z",
+       "last_seen_at": "2026-10-24T09:44:42.329Z",
+       "fp": "Day-To-Day|2026-10-24T03:10Z|Knueppel (hamstring) is out for Friday's game against the Hawks.",
+       "status": "Day-To-Day",
+       "date": "2026-10-24T03:10Z",
+       "shortComment": "Knueppel (hamstring) is out for Friday's game against the Hawks.",
+       "longComment": "The sharpshooter can be treated as day-to-day while he recovers from a preseason hamstring strain. With Knueppel sidelined, Grayson Allen should be rostered in the majority of fantasy formats as a high-end streaming option."
+      }
+     ]
+    }
+   }
+  }
+ },
+ "last_ingested_at": "2026-10-24T09:44:42.329Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries"
+}
