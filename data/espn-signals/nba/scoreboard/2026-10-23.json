@@ -15,7 +15,8 @@
   "2026-10-23T02:40:04.383Z",
   "2026-10-23T08:12:17.197Z",
   "2026-10-23T18:51:51.981Z",
-  "2026-10-23T21:49:32.853Z"
+  "2026-10-23T21:49:32.853Z",
+  "2026-10-24T00:12:35.731Z"
  ],
  "events": {
   "401909095": {
@@ -59,6 +60,26 @@
       "home": "0-1",
       "away": "0-1"
      }
+    },
+    {
+     "captured_at": "2026-10-24T00:12:35.731Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
+     "fp": "in|2|1|47,42|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 98,
+     "displayClock": "1:38",
+     "scores": {
+      "home": 47,
+      "away": 42
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "0-1"
+     }
     }
    ]
   },
@@ -86,7 +107,7 @@
    "states": [
     {
      "captured_at": "2026-10-22T08:20:16.958Z",
-     "last_seen_at": "2026-10-23T21:49:32.853Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -147,6 +168,26 @@
       "home": "1-0",
       "away": "1-0"
      }
+    },
+    {
+     "captured_at": "2026-10-24T00:12:35.731Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
+     "fp": "in|2|0|43,68|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 43,
+      "away": 68
+     },
+     "recordsOverall": {
+      "home": "1-0",
+      "away": "1-0"
+     }
     }
    ]
   },
@@ -186,6 +227,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-0",
+      "away": "0-1"
+     }
+    },
+    {
+     "captured_at": "2026-10-24T00:12:35.731Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
+     "fp": "in|2|2|39,67|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 135,
+     "displayClock": "2:15",
+     "scores": {
+      "home": 39,
+      "away": 67
      },
      "recordsOverall": {
       "home": "1-0",
@@ -235,6 +296,26 @@
       "home": "0-1",
       "away": "1-0"
      }
+    },
+    {
+     "captured_at": "2026-10-24T00:12:35.731Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
+     "fp": "in|2|0|45,57|false|STATUS_HALFTIME",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_HALFTIME",
+     "completed": false,
+     "period": 2,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 45,
+      "away": 57
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "1-0"
+     }
     }
    ]
   },
@@ -279,6 +360,26 @@
       "home": "1-0",
       "away": "1-0"
      }
+    },
+    {
+     "captured_at": "2026-10-24T00:12:35.731Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
+     "fp": "in|2|1|49,59|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 91,
+     "displayClock": "1:31",
+     "scores": {
+      "home": 49,
+      "away": 59
+     },
+     "recordsOverall": {
+      "home": "1-0",
+      "away": "1-0"
+     }
     }
    ]
   },
@@ -315,6 +416,26 @@
      "period": 0,
      "clock": 0,
      "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-1",
+      "away": "1-0"
+     }
+    },
+    {
+     "captured_at": "2026-10-24T00:12:35.731Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
+     "fp": "in|1|11|0,0|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 1,
+     "clock": 710,
+     "displayClock": "11:50",
      "scores": {
       "home": 0,
       "away": 0
@@ -387,6 +508,26 @@
       "home": "0-1",
       "away": "0-1"
      }
+    },
+    {
+     "captured_at": "2026-10-24T00:12:35.731Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
+     "fp": "post|4|12|125,132|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 720,
+     "displayClock": "12:00",
+     "scores": {
+      "home": 125,
+      "away": 132
+     },
+     "recordsOverall": {
+      "home": "0-2",
+      "away": "1-1"
+     }
     }
    ]
   },
@@ -414,7 +555,7 @@
    "states": [
     {
      "captured_at": "2026-10-22T08:20:16.958Z",
-     "last_seen_at": "2026-10-23T21:49:32.853Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -458,7 +599,7 @@
    "states": [
     {
      "captured_at": "2026-10-22T08:20:16.958Z",
-     "last_seen_at": "2026-10-23T21:49:32.853Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -502,7 +643,7 @@
    "states": [
     {
      "captured_at": "2026-10-22T08:20:16.958Z",
-     "last_seen_at": "2026-10-23T21:49:32.853Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -546,7 +687,7 @@
    "states": [
     {
      "captured_at": "2026-10-22T08:20:16.958Z",
-     "last_seen_at": "2026-10-23T21:49:32.853Z",
+     "last_seen_at": "2026-10-24T00:12:35.731Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -567,6 +708,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-23T21:49:32.853Z",
+ "last_ingested_at": "2026-10-24T00:12:35.731Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261023"
 }
