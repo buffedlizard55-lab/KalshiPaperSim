@@ -3465,11 +3465,46 @@
         "low_dollars": "0.2800",
         "open_dollars": "0.5800"
       }
+    },
+    {
+      "end_period_ts": 1792818000,
+      "open_interest_fp": "4704082.12",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.7400",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.1494",
+        "open_dollars": "0.5600",
+        "previous_dollars": "0.5700"
+      },
+      "volume_fp": "2909072.38",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.5700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.6300",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.5500"
+      }
     }
   ],
   "books": [
     {
       "captured_at": "2026-10-24T04:59:46.451Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT23HOUSAS-SAS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-24T08:16:48.013Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT23HOUSAS-SAS/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -3502,9 +3537,9 @@
     "occurrence_datetime": "2026-10-24T04:30:00Z",
     "open_interest_fp": "4704082.12",
     "open_time": "2026-10-17T01:36:06.528518Z",
-    "previous_price_dollars": "0.6500",
+    "previous_price_dollars": "0.6600",
     "previous_yes_ask_dollars": "0.6600",
-    "previous_yes_bid_dollars": "0.6400",
+    "previous_yes_bid_dollars": "0.6500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3525,7 +3560,7 @@
     "ticker": "KXNBAGAME-26OCT23HOUSAS-SAS",
     "title": "San Antonio wins",
     "updated_time": "2026-10-24T04:21:32.843746Z",
-    "volume_24h_fp": "8332004.27",
+    "volume_24h_fp": "8327325.56",
     "volume_fp": "8342482.87",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3534,9 +3569,9 @@
     "yes_sub_title": "San Antonio"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT23HOUSAS-SAS",
-  "market_captured_at": "2026-10-24T04:59:45.773Z",
+  "market_captured_at": "2026-10-24T08:16:47.368Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-24T04:59:46.416Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT23HOUSAS-SAS/candlesticks?start_ts=1792114566&end_ts=1792817986&period_interval=60"
+  "last_ingested_at": "2026-10-24T08:16:47.993Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT23HOUSAS-SAS/candlesticks?start_ts=1792814401&end_ts=1792829807&period_interval=60"
 }

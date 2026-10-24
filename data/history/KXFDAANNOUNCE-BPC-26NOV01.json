@@ -24956,6 +24956,158 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-24T08:10:11.574Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4228.00"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.2800",
+              "2424.00"
+            ],
+            [
+              "0.2900",
+              "103.00"
+            ],
+            [
+              "0.6400",
+              "8.21"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ],
+            [
+              "0.8900",
+              "400.00"
+            ],
+            [
+              "0.9100",
+              "1562.91"
+            ],
+            [
+              "0.9200",
+              "7.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2082.45"
+            ],
+            [
+              "0.0200",
+              "266.00"
+            ],
+            [
+              "0.0300",
+              "566.00"
+            ],
+            [
+              "0.0500",
+              "4957.10"
+            ],
+            [
+              "0.0600",
+              "50.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-24T08:23:34.967Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4228.00"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.2800",
+              "2424.00"
+            ],
+            [
+              "0.2900",
+              "103.00"
+            ],
+            [
+              "0.6400",
+              "8.21"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ],
+            [
+              "0.8900",
+              "400.00"
+            ],
+            [
+              "0.9100",
+              "1562.91"
+            ],
+            [
+              "0.9200",
+              "7.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2082.45"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "566.00"
+            ],
+            [
+              "0.0500",
+              "4957.10"
+            ],
+            [
+              "0.0600",
+              "50.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -25011,10 +25163,10 @@
     "yes_sub_title": "Before November"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01",
-  "market_captured_at": "2026-10-24T05:06:54.886Z",
+  "market_captured_at": "2026-10-24T08:23:34.327Z",
   "status": "active",
-  "last_ingested_at": "2026-10-24T05:06:55.521Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26NOV01/candlesticks?start_ts=1792814401&end_ts=1792818415&period_interval=1440",
+  "last_ingested_at": "2026-10-24T08:23:34.946Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26NOV01/candlesticks?start_ts=1792814401&end_ts=1792830214&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:01.704Z",

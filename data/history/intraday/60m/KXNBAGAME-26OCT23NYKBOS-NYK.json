@@ -3809,6 +3809,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-24T08:16:49.280Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT23NYKBOS-NYK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3857,7 +3867,7 @@
     "ticker": "KXNBAGAME-26OCT23NYKBOS-NYK",
     "title": "New York wins",
     "updated_time": "2026-10-24T01:50:02.845676Z",
-    "volume_24h_fp": "7536675.12",
+    "volume_24h_fp": "7481271.03",
     "volume_fp": "7646837.74",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3866,9 +3876,9 @@
     "yes_sub_title": "New York"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT23NYKBOS-NYK",
-  "market_captured_at": "2026-10-24T04:59:47.088Z",
+  "market_captured_at": "2026-10-24T08:16:48.636Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-24T04:59:47.728Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT23NYKBOS-NYK/candlesticks?start_ts=1792105578&end_ts=1792817987&period_interval=60"
+  "last_ingested_at": "2026-10-24T08:16:49.260Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT23NYKBOS-NYK/candlesticks?start_ts=1792807201&end_ts=1792829808&period_interval=60"
 }

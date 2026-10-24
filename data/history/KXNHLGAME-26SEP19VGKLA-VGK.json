@@ -3914,6 +3914,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-24T08:13:08.912Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3971,10 +3981,10 @@
     "yes_sub_title": "Vegas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26SEP19VGKLA-VGK",
-  "market_captured_at": "2026-10-24T04:55:58.943Z",
+  "market_captured_at": "2026-10-24T08:13:08.367Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-24T04:55:59.483Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19VGKLA-VGK/candlesticks?start_ts=1789963201&end_ts=1792817759&period_interval=1440",
+  "last_ingested_at": "2026-10-24T08:13:08.892Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26SEP19VGKLA-VGK/candlesticks?start_ts=1789963201&end_ts=1792829588&period_interval=1440",
   "result": "yes",
   "marketErrors": [
     {

@@ -14279,6 +14279,118 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-24T08:10:38.282Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T4.00/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0400",
+              "9.59"
+            ],
+            [
+              "0.0500",
+              "8.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "761664.00"
+            ],
+            [
+              "0.0200",
+              "8390.00"
+            ],
+            [
+              "0.0300",
+              "6910.00"
+            ],
+            [
+              "0.0500",
+              "36212.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1000",
+              "14901.00"
+            ],
+            [
+              "0.1500",
+              "5992.00"
+            ],
+            [
+              "0.1600",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "1112.00"
+            ],
+            [
+              "0.2500",
+              "2103.00"
+            ],
+            [
+              "0.2600",
+              "550.00"
+            ],
+            [
+              "0.2700",
+              "19.00"
+            ],
+            [
+              "0.3500",
+              "654.00"
+            ],
+            [
+              "0.3600",
+              "763.00"
+            ],
+            [
+              "0.4000",
+              "859.00"
+            ],
+            [
+              "0.4200",
+              "89.00"
+            ],
+            [
+              "0.4500",
+              "1834.00"
+            ],
+            [
+              "0.4600",
+              "59.00"
+            ],
+            [
+              "0.4700",
+              "113.41"
+            ],
+            [
+              "0.4800",
+              "1.00"
+            ],
+            [
+              "0.8300",
+              "9.34"
+            ],
+            [
+              "0.8400",
+              "14.67"
+            ],
+            [
+              "0.8600",
+              "18.28"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -14300,9 +14412,9 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "6845.43",
     "open_time": "2025-10-13T14:00:00Z",
-    "previous_price_dollars": "0.9800",
-    "previous_yes_ask_dollars": "0.8800",
-    "previous_yes_bid_dollars": "0.6900",
+    "previous_price_dollars": "0.8800",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.4000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -14322,19 +14434,19 @@
     "ticker": "KXFED-27APR-T4.00",
     "title": "Will the upper bound of the federal funds rate be above 4.00% following the Fed's Apr 28, 2027 meeting?",
     "updated_time": "2026-04-09T14:07:28.491921Z",
-    "volume_24h_fp": "11.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "20860.87",
     "yes_ask_dollars": "0.9500",
     "yes_ask_size_fp": "8.00",
     "yes_bid_dollars": "0.8600",
-    "yes_bid_size_fp": "11.28",
+    "yes_bid_size_fp": "18.28",
     "yes_sub_title": "Above 4.00%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T4.00",
-  "market_captured_at": "2026-10-24T04:53:21.636Z",
+  "market_captured_at": "2026-10-24T08:10:37.739Z",
   "status": "active",
-  "last_ingested_at": "2026-10-24T04:53:22.174Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.00/candlesticks?start_ts=1792728001&end_ts=1792817601&period_interval=1440",
+  "last_ingested_at": "2026-10-24T08:10:38.261Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.00/candlesticks?start_ts=1792814401&end_ts=1792829437&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:27.820Z",
