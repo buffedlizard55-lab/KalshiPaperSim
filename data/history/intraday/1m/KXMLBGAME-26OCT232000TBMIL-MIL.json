@@ -12035,6 +12035,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-24T19:08:18.350Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT232000TBMIL-MIL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12083,7 +12093,7 @@
     "ticker": "KXMLBGAME-26OCT232000TBMIL-MIL",
     "title": "Milwaukee wins",
     "updated_time": "2026-10-24T03:34:08.363205Z",
-    "volume_24h_fp": "7783828.58",
+    "volume_24h_fp": "7368087.31",
     "volume_fp": "13107499.99",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12092,11 +12102,11 @@
     "yes_sub_title": "Milwaukee"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT232000TBMIL-MIL",
-  "market_captured_at": "2026-10-24T11:13:03.913Z",
+  "market_captured_at": "2026-10-24T19:08:17.697Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-24T11:13:04.564Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT232000TBMIL-MIL/candlesticks?start_ts=1792812721&end_ts=1792840384&period_interval=1",
+  "last_ingested_at": "2026-10-24T19:08:18.327Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT232000TBMIL-MIL/candlesticks?start_ts=1792812721&end_ts=1792868897&period_interval=1",
   "trims": [
     {
       "at": "2026-10-24T05:01:47.383Z",

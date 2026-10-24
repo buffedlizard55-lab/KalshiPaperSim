@@ -2743,6 +2743,71 @@
         "low_dollars": "0.9300",
         "open_dollars": "0.9300"
       }
+    },
+    {
+      "end_period_ts": 1792850400,
+      "open_interest_fp": "12477.32",
+      "price": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.9400",
+        "mean_dollars": "0.9400",
+        "open_dollars": "0.9400",
+        "previous_dollars": "0.9400"
+      },
+      "volume_fp": "1.05",
+      "yes_ask": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.9400",
+        "open_dollars": "0.9400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.9300",
+        "open_dollars": "0.9300"
+      }
+    },
+    {
+      "end_period_ts": 1792861200,
+      "open_interest_fp": "12477.32",
+      "price": {
+        "previous_dollars": "0.9400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.9400",
+        "open_dollars": "0.9400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.9300",
+        "open_dollars": "0.9300"
+      }
+    },
+    {
+      "end_period_ts": 1792868400,
+      "open_interest_fp": "12477.32",
+      "price": {
+        "previous_dollars": "0.9400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.9400",
+        "open_dollars": "0.9400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9300",
+        "high_dollars": "0.9300",
+        "low_dollars": "0.9300",
+        "open_dollars": "0.9300"
+      }
     }
   ],
   "books": [
@@ -7349,6 +7414,230 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-24T19:06:52.339Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT30NEVUCLA-UCLA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "563321.00"
+            ],
+            [
+              "0.0200",
+              "2269.00"
+            ],
+            [
+              "0.0300",
+              "3.00"
+            ],
+            [
+              "0.0400",
+              "2237.97"
+            ],
+            [
+              "0.0500",
+              "193.29"
+            ],
+            [
+              "0.0600",
+              "951.95"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1992847.00"
+            ],
+            [
+              "0.0200",
+              "8784.00"
+            ],
+            [
+              "0.0300",
+              "192051.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "75800.00"
+            ],
+            [
+              "0.0700",
+              "59478.00"
+            ],
+            [
+              "0.0900",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "185356.00"
+            ],
+            [
+              "0.1400",
+              "8262.00"
+            ],
+            [
+              "0.1500",
+              "99869.00"
+            ],
+            [
+              "0.1700",
+              "20725.00"
+            ],
+            [
+              "0.1800",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "26.00"
+            ],
+            [
+              "0.2100",
+              "54635.00"
+            ],
+            [
+              "0.2200",
+              "20344.00"
+            ],
+            [
+              "0.2400",
+              "67.00"
+            ],
+            [
+              "0.2600",
+              "38781.00"
+            ],
+            [
+              "0.2900",
+              "39686.00"
+            ],
+            [
+              "0.3000",
+              "2.00"
+            ],
+            [
+              "0.3100",
+              "29754.00"
+            ],
+            [
+              "0.3500",
+              "15682.00"
+            ],
+            [
+              "0.3800",
+              "16324.00"
+            ],
+            [
+              "0.3900",
+              "1.00"
+            ],
+            [
+              "0.4000",
+              "1.00"
+            ],
+            [
+              "0.4100",
+              "12138.00"
+            ],
+            [
+              "0.4200",
+              "31731.00"
+            ],
+            [
+              "0.4600",
+              "8427.00"
+            ],
+            [
+              "0.5000",
+              "23120.00"
+            ],
+            [
+              "0.5100",
+              "2.00"
+            ],
+            [
+              "0.5200",
+              "6278.00"
+            ],
+            [
+              "0.5600",
+              "5382.00"
+            ],
+            [
+              "0.6000",
+              "19776.00"
+            ],
+            [
+              "0.6300",
+              "40.00"
+            ],
+            [
+              "0.6400",
+              "3471.00"
+            ],
+            [
+              "0.6800",
+              "14478.00"
+            ],
+            [
+              "0.7100",
+              "2479.00"
+            ],
+            [
+              "0.7500",
+              "12538.00"
+            ],
+            [
+              "0.7600",
+              "1342.00"
+            ],
+            [
+              "0.8000",
+              "20111.00"
+            ],
+            [
+              "0.8100",
+              "512.00"
+            ],
+            [
+              "0.8200",
+              "282.00"
+            ],
+            [
+              "0.8600",
+              "1900.00"
+            ],
+            [
+              "0.8800",
+              "150.00"
+            ],
+            [
+              "0.9000",
+              "122.29"
+            ],
+            [
+              "0.9100",
+              "5002.00"
+            ],
+            [
+              "0.9300",
+              "5.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -7372,10 +7661,10 @@
     "no_sub_title": "UCLA",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-10-31T03:00:00Z",
-    "open_interest_fp": "12476.27",
+    "open_interest_fp": "12477.32",
     "open_time": "2026-10-17T01:13:00Z",
-    "previous_price_dollars": "0.9200",
-    "previous_yes_ask_dollars": "0.9500",
+    "previous_price_dollars": "0.9500",
+    "previous_yes_ask_dollars": "0.9400",
     "previous_yes_bid_dollars": "0.9100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -7395,17 +7684,17 @@
     "ticker": "KXNCAAFGAME-26OCT30NEVUCLA-UCLA",
     "title": "UCLA wins",
     "updated_time": "2026-10-19T18:12:12.293404Z",
-    "volume_24h_fp": "187.48",
-    "volume_fp": "20805.75",
+    "volume_24h_fp": "178.05",
+    "volume_fp": "20806.80",
     "yes_ask_dollars": "0.9400",
-    "yes_ask_size_fp": "963.00",
+    "yes_ask_size_fp": "951.95",
     "yes_bid_dollars": "0.9300",
     "yes_bid_size_fp": "5.00",
     "yes_sub_title": "UCLA"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT30NEVUCLA-UCLA",
-  "market_captured_at": "2026-10-24T11:11:33.210Z",
+  "market_captured_at": "2026-10-24T19:06:51.688Z",
   "status": "active",
-  "last_ingested_at": "2026-10-24T11:11:33.864Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT30NEVUCLA-UCLA/candlesticks?start_ts=1792825201&end_ts=1792840293&period_interval=60"
+  "last_ingested_at": "2026-10-24T19:06:52.315Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26OCT30NEVUCLA-UCLA/candlesticks?start_ts=1792839601&end_ts=1792868811&period_interval=60"
 }

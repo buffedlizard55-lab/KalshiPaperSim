@@ -12035,6 +12035,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-24T19:08:19.633Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT232000TBMIL-TB/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12060,9 +12070,9 @@
     "occurrence_datetime": "2026-10-24T03:00:00Z",
     "open_interest_fp": "7169839.17",
     "open_time": "2026-10-20T03:41:00Z",
-    "previous_price_dollars": "0.3800",
-    "previous_yes_ask_dollars": "0.3800",
-    "previous_yes_bid_dollars": "0.3700",
+    "previous_price_dollars": "0.3700",
+    "previous_yes_ask_dollars": "0.3700",
+    "previous_yes_bid_dollars": "0.3600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -12083,7 +12093,7 @@
     "ticker": "KXMLBGAME-26OCT232000TBMIL-TB",
     "title": "Tampa Bay wins",
     "updated_time": "2026-10-24T03:34:08.363205Z",
-    "volume_24h_fp": "12570307.15",
+    "volume_24h_fp": "12339470.31",
     "volume_fp": "13027986.40",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12092,11 +12102,11 @@
     "yes_sub_title": "Tampa Bay"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT232000TBMIL-TB",
-  "market_captured_at": "2026-10-24T11:13:05.260Z",
+  "market_captured_at": "2026-10-24T19:08:18.981Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-24T11:13:05.910Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT232000TBMIL-TB/candlesticks?start_ts=1792812721&end_ts=1792840385&period_interval=1",
+  "last_ingested_at": "2026-10-24T19:08:19.609Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT232000TBMIL-TB/candlesticks?start_ts=1792812721&end_ts=1792868899&period_interval=1",
   "trims": [
     {
       "at": "2026-10-24T05:01:49.069Z",
