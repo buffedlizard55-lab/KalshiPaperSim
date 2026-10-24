@@ -13,7 +13,8 @@
   "2026-10-23T08:17:17.877Z",
   "2026-10-23T19:37:01.679Z",
   "2026-10-23T22:35:50.576Z",
-  "2026-10-24T01:00:46.930Z"
+  "2026-10-24T01:00:46.930Z",
+  "2026-10-24T02:42:59.905Z"
  ],
  "games": {
   "849805": {
@@ -87,6 +88,21 @@
      "runs": {
       "away": 0,
       "home": 2
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-24T02:42:59.905Z",
+     "last_seen_at": "2026-10-24T02:42:59.905Z",
+     "abstractGameState": "Live",
+     "detailedState": "In Progress",
+     "codedGameState": "I",
+     "inning": 8,
+     "inningState": "Top",
+     "runs": {
+      "away": 1,
+      "home": 3
      },
      "winner": null,
      "url_ref": 0
