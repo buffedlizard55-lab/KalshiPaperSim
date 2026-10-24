@@ -13,7 +13,8 @@
   "2026-10-23T21:49:33.274Z",
   "2026-10-24T00:12:36.721Z",
   "2026-10-24T02:38:10.926Z",
-  "2026-10-24T09:44:42.779Z"
+  "2026-10-24T09:44:42.779Z",
+  "2026-10-24T17:50:45.271Z"
  ],
  "events": {
   "401918308": {
@@ -57,10 +58,30 @@
       "home": "30-14",
       "away": "32-12"
      }
+    },
+    {
+     "captured_at": "2026-10-24T17:50:45.271Z",
+     "last_seen_at": "2026-10-24T17:50:45.271Z",
+     "fp": "in|2|5|20,24|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 2,
+     "clock": 349,
+     "displayClock": "5:49",
+     "scores": {
+      "home": 20,
+      "away": 24
+     },
+     "recordsOverall": {
+      "home": "30-14",
+      "away": "32-12"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-24T09:44:42.779Z",
+ "last_ingested_at": "2026-10-24T17:50:45.271Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261024"
 }
