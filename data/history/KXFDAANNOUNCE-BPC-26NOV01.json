@@ -4613,6 +4613,31 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0900"
       }
+    },
+    {
+      "end_period_ts": 1792814400,
+      "open_interest_fp": "9511.26",
+      "price": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0700",
+        "low_dollars": "0.0500",
+        "mean_dollars": "0.0674",
+        "open_dollars": "0.0700",
+        "previous_dollars": "0.0500"
+      },
+      "volume_fp": "773.47",
+      "yes_ask": {
+        "close_dollars": "0.0800",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      }
     }
   ],
   "books": [
@@ -24779,6 +24804,158 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-24T04:52:54.316Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4228.00"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.3500",
+              "1896.00"
+            ],
+            [
+              "0.3600",
+              "54.00"
+            ],
+            [
+              "0.6400",
+              "8.21"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ],
+            [
+              "0.8900",
+              "400.00"
+            ],
+            [
+              "0.9100",
+              "1292.91"
+            ],
+            [
+              "0.9200",
+              "7.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2082.45"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "566.00"
+            ],
+            [
+              "0.0500",
+              "4807.10"
+            ],
+            [
+              "0.0600",
+              "50.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-24T05:06:55.556Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4228.00"
+            ],
+            [
+              "0.0200",
+              "550.00"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.3500",
+              "1896.00"
+            ],
+            [
+              "0.3600",
+              "54.00"
+            ],
+            [
+              "0.6400",
+              "8.21"
+            ],
+            [
+              "0.8000",
+              "3.00"
+            ],
+            [
+              "0.8900",
+              "400.00"
+            ],
+            [
+              "0.9100",
+              "1292.91"
+            ],
+            [
+              "0.9200",
+              "7.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2082.45"
+            ],
+            [
+              "0.0200",
+              "200.00"
+            ],
+            [
+              "0.0300",
+              "566.00"
+            ],
+            [
+              "0.0500",
+              "4807.10"
+            ],
+            [
+              "0.0600",
+              "50.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -24794,11 +24971,11 @@
     "expected_expiration_time": "2027-01-01T15:00:00Z",
     "expiration_time": "2026-11-08T15:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0700",
+    "last_price_dollars": "0.0500",
     "latest_expiration_time": "2026-11-08T15:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.9400",
-    "no_bid_dollars": "0.9300",
+    "no_bid_dollars": "0.9200",
     "no_sub_title": "Before November",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-04-16T02:00:00Z",
@@ -24825,19 +25002,19 @@
     "ticker": "KXFDAANNOUNCE-BPC-26NOV01",
     "title": "When will FDA announce Reclassification of BPC-157 to Category 1 of the Bulk Drug Substances List?",
     "updated_time": "2026-04-20T15:03:22.743027Z",
-    "volume_24h_fp": "670.57",
-    "volume_fp": "21483.30",
-    "yes_ask_dollars": "0.0700",
-    "yes_ask_size_fp": "90.44",
+    "volume_24h_fp": "773.47",
+    "volume_fp": "21586.20",
+    "yes_ask_dollars": "0.0800",
+    "yes_ask_size_fp": "7.00",
     "yes_bid_dollars": "0.0600",
-    "yes_bid_size_fp": "7.00",
+    "yes_bid_size_fp": "50.00",
     "yes_sub_title": "Before November"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01",
-  "market_captured_at": "2026-10-23T20:19:43.493Z",
+  "market_captured_at": "2026-10-24T05:06:54.886Z",
   "status": "active",
-  "last_ingested_at": "2026-10-23T20:19:44.131Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26NOV01/candlesticks?start_ts=1792728001&end_ts=1792786783&period_interval=1440",
+  "last_ingested_at": "2026-10-24T05:06:55.521Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26NOV01/candlesticks?start_ts=1792814401&end_ts=1792818415&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:01.704Z",

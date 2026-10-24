@@ -1149,6 +1149,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-24T04:54:01.254Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1209,11 +1219,11 @@
     "yes_sub_title": "Bryce Harper: 1+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1",
-  "market_captured_at": "2026-10-23T20:06:47.635Z",
+  "market_captured_at": "2026-10-24T04:54:00.676Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-23T20:06:48.177Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/candlesticks?start_ts=1789790401&end_ts=1792786007&period_interval=1440",
+  "last_ingested_at": "2026-10-24T04:54:01.218Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181915PHINYM-PHIBHARPER3-1/candlesticks?start_ts=1789790401&end_ts=1792817640&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:52:04.371Z",

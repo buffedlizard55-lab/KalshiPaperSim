@@ -7247,6 +7247,31 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0400"
       }
+    },
+    {
+      "end_period_ts": 1792814400,
+      "open_interest_fp": "44741.56",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0385",
+        "open_dollars": "0.0400",
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "49.43",
+      "yes_ask": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -36081,6 +36106,270 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-24T04:56:10.648Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXOPENAICEOCHANGE-26/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2737.44"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "888.00"
+            ],
+            [
+              "0.0400",
+              "1000.00"
+            ],
+            [
+              "0.0500",
+              "1111.00"
+            ],
+            [
+              "0.1500",
+              "6.01"
+            ],
+            [
+              "0.1800",
+              "61.60"
+            ],
+            [
+              "0.2300",
+              "3.62"
+            ],
+            [
+              "0.2500",
+              "1405.80"
+            ],
+            [
+              "0.2800",
+              "201.17"
+            ],
+            [
+              "0.2900",
+              "14.00"
+            ],
+            [
+              "0.3100",
+              "42.65"
+            ],
+            [
+              "0.3300",
+              "33.68"
+            ],
+            [
+              "0.4200",
+              "28.90"
+            ],
+            [
+              "0.4500",
+              "72.99"
+            ],
+            [
+              "0.4900",
+              "14.00"
+            ],
+            [
+              "0.5700",
+              "14.00"
+            ],
+            [
+              "0.5800",
+              "1139.00"
+            ],
+            [
+              "0.5900",
+              "24.00"
+            ],
+            [
+              "0.6400",
+              "120.00"
+            ],
+            [
+              "0.6700",
+              "3.40"
+            ],
+            [
+              "0.7000",
+              "49.00"
+            ],
+            [
+              "0.7100",
+              "246.28"
+            ],
+            [
+              "0.9100",
+              "500.00"
+            ],
+            [
+              "0.9200",
+              "48.65"
+            ],
+            [
+              "0.9500",
+              "18.80"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "8456.34"
+            ],
+            [
+              "0.0200",
+              "664.43"
+            ],
+            [
+              "0.0300",
+              "474.05"
+            ],
+            [
+              "0.0400",
+              "89.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-24T05:07:14.610Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXOPENAICEOCHANGE-26/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2737.44"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "888.00"
+            ],
+            [
+              "0.0400",
+              "1000.00"
+            ],
+            [
+              "0.0500",
+              "1111.00"
+            ],
+            [
+              "0.1500",
+              "6.01"
+            ],
+            [
+              "0.1800",
+              "61.60"
+            ],
+            [
+              "0.2300",
+              "3.62"
+            ],
+            [
+              "0.2500",
+              "1405.80"
+            ],
+            [
+              "0.2800",
+              "201.17"
+            ],
+            [
+              "0.2900",
+              "14.00"
+            ],
+            [
+              "0.3100",
+              "42.65"
+            ],
+            [
+              "0.3300",
+              "33.68"
+            ],
+            [
+              "0.4200",
+              "28.90"
+            ],
+            [
+              "0.4500",
+              "72.99"
+            ],
+            [
+              "0.4900",
+              "14.00"
+            ],
+            [
+              "0.5700",
+              "14.00"
+            ],
+            [
+              "0.5800",
+              "1139.00"
+            ],
+            [
+              "0.5900",
+              "24.00"
+            ],
+            [
+              "0.6400",
+              "120.00"
+            ],
+            [
+              "0.6700",
+              "3.40"
+            ],
+            [
+              "0.7000",
+              "49.00"
+            ],
+            [
+              "0.7100",
+              "246.28"
+            ],
+            [
+              "0.9100",
+              "500.00"
+            ],
+            [
+              "0.9200",
+              "48.65"
+            ],
+            [
+              "0.9500",
+              "18.80"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "8456.34"
+            ],
+            [
+              "0.0200",
+              "664.43"
+            ],
+            [
+              "0.0300",
+              "474.05"
+            ],
+            [
+              "0.0400",
+              "89.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -36099,11 +36388,11 @@
     "no_bid_dollars": "0.9500",
     "no_sub_title": "Hires",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "44748.99",
+    "open_interest_fp": "44741.56",
     "open_time": "2026-01-01T05:01:00Z",
-    "previous_price_dollars": "0.0400",
+    "previous_price_dollars": "0.0300",
     "previous_yes_ask_dollars": "0.0500",
-    "previous_yes_bid_dollars": "0.0400",
+    "previous_yes_bid_dollars": "0.0300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -36121,19 +36410,19 @@
     "ticker": "KXOPENAICEOCHANGE-26",
     "title": "Will OpenAI change its CEO?",
     "updated_time": "2026-04-09T09:39:57.767568Z",
-    "volume_24h_fp": "303.20",
-    "volume_fp": "116719.22",
+    "volume_24h_fp": "49.43",
+    "volume_fp": "116768.65",
     "yes_ask_dollars": "0.0500",
-    "yes_ask_size_fp": "35.80",
+    "yes_ask_size_fp": "18.80",
     "yes_bid_dollars": "0.0400",
-    "yes_bid_size_fp": "28.00",
+    "yes_bid_size_fp": "89.00",
     "yes_sub_title": "Hires"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXOPENAICEOCHANGE-26",
-  "market_captured_at": "2026-10-23T20:20:02.686Z",
+  "market_captured_at": "2026-10-24T05:07:13.938Z",
   "status": "active",
-  "last_ingested_at": "2026-10-23T20:20:03.326Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXOPENAICEOCHANGE/markets/KXOPENAICEOCHANGE-26/candlesticks?start_ts=1792728001&end_ts=1792786802&period_interval=1440",
+  "last_ingested_at": "2026-10-24T05:07:14.575Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXOPENAICEOCHANGE/markets/KXOPENAICEOCHANGE-26/candlesticks?start_ts=1792814401&end_ts=1792818434&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:54:05.464Z",

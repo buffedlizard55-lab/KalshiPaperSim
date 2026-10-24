@@ -1323,6 +1323,31 @@
         "low_dollars": "0.7500",
         "open_dollars": "0.7600"
       }
+    },
+    {
+      "end_period_ts": 1792814400,
+      "open_interest_fp": "5713.39",
+      "price": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.9400",
+        "mean_dollars": "0.9400",
+        "open_dollars": "0.9400",
+        "previous_dollars": "0.9300"
+      },
+      "volume_fp": "0.83",
+      "yes_ask": {
+        "close_dollars": "0.9400",
+        "high_dollars": "0.9400",
+        "low_dollars": "0.9400",
+        "open_dollars": "0.9400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.7600",
+        "high_dollars": "0.7600",
+        "low_dollars": "0.7600",
+        "open_dollars": "0.7600"
+      }
     }
   ],
   "books": [
@@ -15709,6 +15734,110 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-24T04:53:23.322Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T4.25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "116858.00"
+            ],
+            [
+              "0.0200",
+              "1363.00"
+            ],
+            [
+              "0.0300",
+              "550.00"
+            ],
+            [
+              "0.0600",
+              "50.17"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "522467.54"
+            ],
+            [
+              "0.0200",
+              "7432.00"
+            ],
+            [
+              "0.0300",
+              "6142.00"
+            ],
+            [
+              "0.0600",
+              "24898.00"
+            ],
+            [
+              "0.1200",
+              "4280.00"
+            ],
+            [
+              "0.1300",
+              "7.25"
+            ],
+            [
+              "0.2600",
+              "971.00"
+            ],
+            [
+              "0.3500",
+              "550.00"
+            ],
+            [
+              "0.3700",
+              "1699.00"
+            ],
+            [
+              "0.3800",
+              "1722.00"
+            ],
+            [
+              "0.4000",
+              "209.00"
+            ],
+            [
+              "0.4100",
+              "47.29"
+            ],
+            [
+              "0.6600",
+              "1500.00"
+            ],
+            [
+              "0.6700",
+              "83.08"
+            ],
+            [
+              "0.6800",
+              "50.00"
+            ],
+            [
+              "0.6900",
+              "22.37"
+            ],
+            [
+              "0.7400",
+              "42.00"
+            ],
+            [
+              "0.7500",
+              "23.06"
+            ],
+            [
+              "0.7600",
+              "1.48"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -15731,7 +15860,7 @@
     "open_interest_fp": "5713.39",
     "open_time": "2025-10-13T14:00:00Z",
     "previous_price_dollars": "0.9300",
-    "previous_yes_ask_dollars": "0.9300",
+    "previous_yes_ask_dollars": "0.9400",
     "previous_yes_bid_dollars": "0.7600",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -15761,10 +15890,10 @@
     "yes_sub_title": "Above 4.25%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T4.25",
-  "market_captured_at": "2026-10-23T20:06:09.421Z",
+  "market_captured_at": "2026-10-24T04:53:22.748Z",
   "status": "active",
-  "last_ingested_at": "2026-10-23T20:06:09.959Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.25/candlesticks?start_ts=1792728001&end_ts=1792785969&period_interval=1440",
+  "last_ingested_at": "2026-10-24T04:53:23.286Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.25/candlesticks?start_ts=1792728001&end_ts=1792817602&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:28.865Z",
