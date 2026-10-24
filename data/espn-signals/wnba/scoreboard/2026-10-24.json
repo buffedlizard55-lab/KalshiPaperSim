@@ -14,7 +14,8 @@
   "2026-10-24T00:12:36.721Z",
   "2026-10-24T02:38:10.926Z",
   "2026-10-24T09:44:42.779Z",
-  "2026-10-24T17:50:45.271Z"
+  "2026-10-24T17:50:45.271Z",
+  "2026-10-24T20:06:40.600Z"
  ],
  "events": {
   "401918308": {
@@ -78,10 +79,30 @@
       "home": "30-14",
       "away": "32-12"
      }
+    },
+    {
+     "captured_at": "2026-10-24T20:06:40.600Z",
+     "last_seen_at": "2026-10-24T20:06:40.600Z",
+     "fp": "post|4|0|62,67|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 62,
+      "away": 67
+     },
+     "recordsOverall": {
+      "home": "30-14",
+      "away": "32-12"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-24T17:50:45.271Z",
+ "last_ingested_at": "2026-10-24T20:06:40.600Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261024"
 }
