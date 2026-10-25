@@ -37215,9 +37215,9 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "579248.08",
     "open_time": "2026-02-07T15:00:00Z",
-    "previous_price_dollars": "0.1000",
-    "previous_yes_ask_dollars": "0.0900",
-    "previous_yes_bid_dollars": "0.0800",
+    "previous_price_dollars": "0.0800",
+    "previous_yes_ask_dollars": "0.1000",
+    "previous_yes_bid_dollars": "0.0900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -37236,19 +37236,19 @@
     "ticker": "KXNFLNFCCHAMP-27-LAR",
     "title": "Will Los Angeles R win the Pro Football NFC Championship?",
     "updated_time": "2026-07-13T21:35:20.467445Z",
-    "volume_24h_fp": "10145.92",
+    "volume_24h_fp": "10140.67",
     "volume_fp": "1118096.64",
     "yes_ask_dollars": "0.1000",
-    "yes_ask_size_fp": "5.88",
+    "yes_ask_size_fp": "2.74",
     "yes_bid_dollars": "0.0900",
-    "yes_bid_size_fp": "45.04",
+    "yes_bid_size_fp": "39.48",
     "yes_sub_title": "Los Angeles R"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLNFCCHAMP-27-LAR",
-  "market_captured_at": "2026-10-25T07:47:34.793Z",
+  "market_captured_at": "2026-10-25T11:35:46.774Z",
   "status": "active",
-  "last_ingested_at": "2026-10-25T07:47:35.314Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-LAR/candlesticks?start_ts=1792900801&end_ts=1792914455&period_interval=1440",
+  "last_ingested_at": "2026-10-25T11:35:47.337Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLNFCCHAMP/markets/KXNFLNFCCHAMP-27-LAR/candlesticks?start_ts=1792900801&end_ts=1792928147&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:53:32.076Z",

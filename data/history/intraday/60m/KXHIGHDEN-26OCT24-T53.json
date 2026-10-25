@@ -937,6 +937,26 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1792915200,
+      "open_interest_fp": "24311.58",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -1327,6 +1347,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-25T11:37:40.227Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26OCT24-T53/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1375,7 +1405,7 @@
     "ticker": "KXHIGHDEN-26OCT24-T53",
     "title": "Will the maximum temperature be <53° on Oct 24, 2026?",
     "updated_time": "2026-10-25T07:00:00.323622Z",
-    "volume_24h_fp": "23688.10",
+    "volume_24h_fp": "22752.25",
     "volume_fp": "24415.18",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1384,8 +1414,8 @@
     "yes_sub_title": "52° or below"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHDEN-26OCT24-T53",
-  "market_captured_at": "2026-10-25T07:49:26.823Z",
+  "market_captured_at": "2026-10-25T11:37:39.501Z",
   "status": "closed",
-  "last_ingested_at": "2026-10-25T07:49:27.449Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26OCT24-T53/candlesticks?start_ts=1792904401&end_ts=1792914567&period_interval=60"
+  "last_ingested_at": "2026-10-25T11:37:40.166Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHDEN/markets/KXHIGHDEN-26OCT24-T53/candlesticks?start_ts=1792911601&end_ts=1792928259&period_interval=60"
 }

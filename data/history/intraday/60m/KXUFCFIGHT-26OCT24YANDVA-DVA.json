@@ -4980,6 +4980,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-25T11:40:45.896Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24YANDVA-DVA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5028,7 +5038,7 @@
     "ticker": "KXUFCFIGHT-26OCT24YANDVA-DVA",
     "title": "Merab Dvalishvili wins",
     "updated_time": "2026-10-24T20:40:32.845363Z",
-    "volume_24h_fp": "3907617.34",
+    "volume_24h_fp": "3895318.59",
     "volume_fp": "4182138.10",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -5037,11 +5047,11 @@
     "yes_sub_title": "Merab Dvalishvili"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24YANDVA-DVA",
-  "market_captured_at": "2026-10-25T07:52:15.595Z",
+  "market_captured_at": "2026-10-25T11:40:45.172Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-25T07:52:16.219Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24YANDVA-DVA/candlesticks?start_ts=1792875601&end_ts=1792914735&period_interval=60",
+  "last_ingested_at": "2026-10-25T11:40:45.835Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24YANDVA-DVA/candlesticks?start_ts=1792875601&end_ts=1792928445&period_interval=60",
   "trims": [
     {
       "at": "2026-10-25T05:10:47.502Z",
