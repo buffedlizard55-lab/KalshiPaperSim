@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-26",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261026"
+  ]
+ },
+ "captures": [
+  "2026-10-25T08:05:16.600Z"
+ ],
+ "events": {
+  "401873009": {
+   "eventId": "401873009",
+   "date": "2026-10-27T00:15Z",
+   "easternDate": "2026-10-26",
+   "name": "Dallas Cowboys at Philadelphia Eagles",
+   "shortName": "DAL @ PHI",
+   "week": 7,
+   "venue": "Lincoln Financial Field",
+   "homeAbbr": "PHI",
+   "homeTeamId": "21",
+   "homeName": "Philadelphia Eagles",
+   "awayAbbr": "DAL",
+   "awayTeamId": "6",
+   "awayName": "Dallas Cowboys",
+   "firstCapturedAt": "2026-10-25T08:05:16.600Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "DAL -4.5",
+    "spread": 4.5,
+    "overUnder": 44.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-25T08:05:16.600Z",
+     "last_seen_at": "2026-10-25T08:05:16.600Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-4",
+      "away": "2-4"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-25T08:05:16.600Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261026"
+}

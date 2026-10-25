@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-25T02:26:41.841Z",
+ "generatedAt": "2026-10-25T08:05:20.369Z",
  "rows": [
   {
    "league": "nba",
@@ -59,6 +59,26 @@
     {
      "ticker": "KXNBAGAME-26OCT23NYKBOS-NYK",
      "rulesName": "Boston",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "nba",
+   "kalshiCode": "CHA",
+   "kalshiName": "Charlotte",
+   "conflictWith": null,
+   "espn": {
+    "teamId": "30",
+    "abbr": "CHA",
+    "displayName": "Charlotte Hornets",
+    "matchedBy": "displayName-prefix"
+   },
+   "espnReason": "MATCHED",
+   "evidence": [
+    {
+     "ticker": "KXNBAGAME-26OCT24MIACHA-MIA",
+     "rulesName": "Charlotte",
      "role": "home"
     }
    ]
@@ -405,6 +425,11 @@
      "ticker": "KXNBAGAME-26OCT21MINMIA-MIN",
      "rulesName": "Miami",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT24MIACHA-MIA",
+     "rulesName": "Miami",
+     "role": "away"
     }
    ]
   },
@@ -2235,6 +2260,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "TENN",
+   "kalshiName": "Tennessee",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26NOV07UKTENN-UK",
+     "rulesName": "Tennessee",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "TEX",
    "kalshiName": "Texas",
    "conflictWith": null,
@@ -2264,6 +2304,26 @@
     {
      "ticker": "KXNCAAFGAME-26OCT30MSSTTEX-MSST",
      "rulesName": "Texas",
+     "role": "home"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "TNTC",
+   "kalshiName": "Tennessee Tech",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26NOV07VMITNTC-TNTC",
+     "rulesName": "Tennessee Tech",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26NOV07VMITNTC-VMI",
+     "rulesName": "Tennessee Tech",
      "role": "home"
     }
    ]
@@ -2447,6 +2507,11 @@
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
+     "ticker": "KXNCAAFGAME-26NOV07UKTENN-UK",
+     "rulesName": "Kentucky",
+     "role": "away"
+    },
+    {
      "ticker": "KXNCAAFGAME-26OCT03UKSCAR-UK",
      "rulesName": "Kentucky",
      "role": "away"
@@ -2601,6 +2666,16 @@
    "espn": null,
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26NOV07VMITNTC-TNTC",
+     "rulesName": "VMI",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26NOV07VMITNTC-VMI",
+     "rulesName": "VMI",
+     "role": "away"
+    },
     {
      "ticker": "KXNCAAFGAME-26OCT17VMIWOF-VMI",
      "rulesName": "VMI",

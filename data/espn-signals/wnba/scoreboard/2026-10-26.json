@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-26",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261026"
+  ]
+ },
+ "captures": [
+  "2026-10-25T08:05:19.052Z"
+ ],
+ "events": {
+  "401918309": {
+   "eventId": "401918309",
+   "date": "2026-10-27T00:00Z",
+   "easternDate": "2026-10-26",
+   "name": "Atlanta Dream at Golden State Valkyries",
+   "shortName": "ATL @ GS",
+   "week": null,
+   "venue": "Chase Center",
+   "homeAbbr": "GS",
+   "homeTeamId": "129689",
+   "homeName": "Golden State Valkyries",
+   "awayAbbr": "ATL",
+   "awayTeamId": "20",
+   "awayName": "Atlanta Dream",
+   "firstCapturedAt": "2026-10-25T08:05:19.052Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "GS -1.5",
+    "spread": -1.5,
+    "overUnder": 149.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-25T08:05:19.052Z",
+     "last_seen_at": "2026-10-25T08:05:19.052Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "32-12",
+      "away": "30-14"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-25T08:05:19.052Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates=20261026"
+}
