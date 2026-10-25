@@ -3192,6 +3192,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-25T05:10:19.187Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT23CHIMIL-MIL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3217,9 +3227,9 @@
     "occurrence_datetime": "2026-10-23T23:00:00Z",
     "open_interest_fp": "2662833.04",
     "open_time": "2026-10-16T20:06:05.990913Z",
-    "previous_price_dollars": "0.5300",
-    "previous_yes_ask_dollars": "0.5300",
-    "previous_yes_bid_dollars": "0.5200",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3240,7 +3250,7 @@
     "ticker": "KXNBAGAME-26OCT23CHIMIL-MIL",
     "title": "Milwaukee wins",
     "updated_time": "2026-10-23T22:47:27.84037Z",
-    "volume_24h_fp": "5522021.71",
+    "volume_24h_fp": "0.00",
     "volume_fp": "6028686.07",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3249,9 +3259,9 @@
     "yes_sub_title": "Milwaukee"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT23CHIMIL-MIL",
-  "market_captured_at": "2026-10-24T19:06:31.218Z",
+  "market_captured_at": "2026-10-25T05:10:18.537Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-24T19:06:31.845Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT23CHIMIL-MIL/candlesticks?start_ts=1792796401&end_ts=1792868791&period_interval=60"
+  "last_ingested_at": "2026-10-25T05:10:19.164Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT23CHIMIL-MIL/candlesticks?start_ts=1792796401&end_ts=1792905018&period_interval=60"
 }

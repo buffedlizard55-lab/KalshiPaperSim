@@ -13075,6 +13075,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-25T05:15:18.824Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27LARDEN-DEN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -13132,11 +13142,11 @@
     "yes_sub_title": "Denver"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26SEP27LARDEN-DEN",
-  "market_captured_at": "2026-10-24T19:11:26.774Z",
+  "market_captured_at": "2026-10-25T05:15:09.400Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-24T19:11:35.898Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-DEN/candlesticks?start_ts=1792814221&end_ts=1792869087&period_interval=1",
+  "last_ingested_at": "2026-10-25T05:15:18.802Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26SEP27LARDEN-DEN/candlesticks?start_ts=1792900621&end_ts=1792905309&period_interval=1",
   "trims": [
     {
       "at": "2026-09-28T05:50:19.054Z",

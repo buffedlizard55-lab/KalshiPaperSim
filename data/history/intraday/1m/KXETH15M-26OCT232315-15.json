@@ -439,6 +439,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-25T05:11:12.846Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXETH15M-26OCT232315-15/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -464,8 +474,8 @@
     "occurrence_datetime": "2026-10-24T03:20:00Z",
     "open_interest_fp": "99258.89",
     "open_time": "2026-10-24T03:00:00Z",
-    "previous_price_dollars": "0.0000",
-    "previous_yes_ask_dollars": "0.0000",
+    "previous_price_dollars": "0.9990",
+    "previous_yes_ask_dollars": "1.0000",
     "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "tapered_deci_cent",
     "price_ranges": [
@@ -497,7 +507,7 @@
     "ticker": "KXETH15M-26OCT232315-15",
     "title": "ETH price up in next 15 mins?",
     "updated_time": "2026-10-24T03:15:02.826514Z",
-    "volume_24h_fp": "383546.95",
+    "volume_24h_fp": "0.00",
     "volume_fp": "383546.95",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -506,9 +516,9 @@
     "yes_sub_title": "Target Price: $2,381.84"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXETH15M-26OCT232315-15",
-  "market_captured_at": "2026-10-24T19:07:28.580Z",
+  "market_captured_at": "2026-10-25T05:11:11.875Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-24T19:07:29.207Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26OCT232315-15/candlesticks?start_ts=1792811761&end_ts=1792868848&period_interval=1"
+  "last_ingested_at": "2026-10-25T05:11:12.824Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXETH15M/markets/KXETH15M-26OCT232315-15/candlesticks?start_ts=1792898161&end_ts=1792905072&period_interval=1"
 }
