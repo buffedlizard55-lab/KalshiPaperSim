@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 30 date file(s) · 160 game(s) · 612 state row(s) · generated 2026-10-25T08:05:23.107Z
+ * 30 date file(s) · 160 game(s) · 613 state row(s) · generated 2026-10-25T08:11:16.220Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-25T08:05:23.107Z",
+ "generatedAt": "2026-10-25T08:11:16.220Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-10-25T02:32:03.324Z",
+  "last_confirmed_at": "2026-10-25T08:11:13.810Z",
   "teams": [
    {
     "id": 108,
@@ -15307,7 +15307,8 @@ export const MLB_SIGNAL_DATA = {
     "copyright": "Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt",
     "terms": "http://gdx.mlb.com/components/copyright.txt",
     "urls": [
-     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-24&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
+     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-24&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright",
+     "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-24&endDate=2026-10-25&hydrate=linescore%2CprobablePitcher%2Cteam&fields=dates%2Cdate%2Cgames%2CgamePk%2CgameDate%2CofficialDate%2CgameType%2CdoubleHeader%2CgameNumber%2Cstatus%2CabstractGameState%2CdetailedState%2CcodedGameState%2CstatusCode%2Cteams%2Caway%2Chome%2Cteam%2Cid%2Cabbreviation%2Cname%2Cscore%2CisWinner%2CprobablePitcher%2CfullName%2Clinescore%2CcurrentInning%2CcurrentInningOrdinal%2CinningState%2CinningHalf%2CisTopInning%2CscheduledInnings%2Cruns%2Cvenue%2Ccopyright"
     ]
    },
    "captures": [
@@ -15316,7 +15317,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-10-24T21:08:48.272Z",
     "2026-10-24T23:16:15.413Z",
     "2026-10-25T01:11:57.514Z",
-    "2026-10-25T02:32:03.326Z"
+    "2026-10-25T02:32:03.326Z",
+    "2026-10-25T08:11:13.812Z"
    ],
    "games": {
     "849802": {
@@ -15408,6 +15410,21 @@ export const MLB_SIGNAL_DATA = {
        },
        "winner": null,
        "url_ref": 0
+      },
+      {
+       "captured_at": "2026-10-25T08:11:13.812Z",
+       "last_seen_at": "2026-10-25T08:11:13.812Z",
+       "abstractGameState": "Final",
+       "detailedState": "Final",
+       "codedGameState": "F",
+       "inning": 9,
+       "inningState": "Top",
+       "runs": {
+        "away": 4,
+        "home": 5
+       },
+       "winner": "home",
+       "url_ref": 1
       }
      ]
     }
