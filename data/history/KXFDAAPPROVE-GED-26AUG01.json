@@ -2397,6 +2397,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-25T19:24:56.748Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-GED-26AUG01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2457,8 +2467,8 @@
   "market_captured_at": "2026-09-20T11:34:22.496Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-25T11:33:52.752Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-GED-26AUG01/candlesticks?start_ts=1784088001&end_ts=1792928032&period_interval=1440",
+  "last_ingested_at": "2026-10-25T19:24:56.689Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-GED-26AUG01/candlesticks?start_ts=1784088001&end_ts=1792956296&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-09-21T12:51:36.411Z",
@@ -3137,6 +3147,11 @@
     },
     {
       "at": "2026-10-25T11:33:52.189Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-GED-26AUG01",
+      "error": "{\"error\":{\"code\":\"not_found\",\"message\":\"not found\"}}"
+    },
+    {
+      "at": "2026-10-25T19:24:56.128Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVE-GED-26AUG01",
       "error": "{\"error\":{\"code\":\"not_found\",\"message\":\"not found\"}}"
     }
@@ -3820,6 +3835,11 @@
     {
       "at": "2026-10-25T11:33:52.502Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-GED-26AUG01/candlesticks?start_ts=1784088001&end_ts=1792928032&period_interval=1440",
+      "error": "{\"error\":{\"code\":\"not_found\",\"message\":\"not found\"}}"
+    },
+    {
+      "at": "2026-10-25T19:24:56.440Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVE/markets/KXFDAAPPROVE-GED-26AUG01/candlesticks?start_ts=1784088001&end_ts=1792956296&period_interval=1440",
       "error": "{\"error\":{\"code\":\"not_found\",\"message\":\"not found\"}}"
     }
   ]

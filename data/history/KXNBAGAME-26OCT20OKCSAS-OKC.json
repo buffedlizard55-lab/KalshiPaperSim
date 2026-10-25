@@ -30627,6 +30627,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-25T19:26:40.124Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -30684,10 +30694,10 @@
     "yes_sub_title": "Oklahoma City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20OKCSAS-OKC",
-  "market_captured_at": "2026-10-25T11:35:08.865Z",
+  "market_captured_at": "2026-10-25T19:26:39.499Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-25T11:35:09.431Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1792641601&end_ts=1792928109&period_interval=1440",
+  "last_ingested_at": "2026-10-25T19:26:40.064Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20OKCSAS-OKC/candlesticks?start_ts=1792641601&end_ts=1792956399&period_interval=1440",
   "result": "yes",
   "marketErrors": [
     {

@@ -3733,6 +3733,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-25T19:32:29.380Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26SEP30GSDAL-GS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3790,9 +3800,9 @@
     "yes_sub_title": "Golden State"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26SEP30GSDAL-GS",
-  "market_captured_at": "2026-10-25T11:40:31.256Z",
+  "market_captured_at": "2026-10-25T19:32:28.658Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-25T11:40:31.923Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP30GSDAL-GS/candlesticks?start_ts=1790830801&end_ts=1792928431&period_interval=60"
+  "last_ingested_at": "2026-10-25T19:32:29.321Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP30GSDAL-GS/candlesticks?start_ts=1790830801&end_ts=1792956748&period_interval=60"
 }
