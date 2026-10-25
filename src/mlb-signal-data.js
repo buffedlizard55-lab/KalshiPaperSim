@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 30 date file(s) · 160 game(s) · 611 state row(s) · generated 2026-10-25T02:26:44.430Z
+ * 30 date file(s) · 160 game(s) · 612 state row(s) · generated 2026-10-25T02:32:05.779Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-25T02:26:44.430Z",
+ "generatedAt": "2026-10-25T02:32:05.779Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-10-25T01:11:57.513Z",
+  "last_confirmed_at": "2026-10-25T02:32:03.324Z",
   "teams": [
    {
     "id": 108,
@@ -15186,7 +15186,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-10-24T18:28:50.374Z",
     "2026-10-24T21:08:48.272Z",
     "2026-10-24T23:16:15.413Z",
-    "2026-10-25T01:11:57.514Z"
+    "2026-10-25T01:11:57.514Z",
+    "2026-10-25T02:32:03.326Z"
    ],
    "games": {
     "849805": {
@@ -15281,7 +15282,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-24T10:13:20.206Z",
-       "last_seen_at": "2026-10-25T01:11:57.514Z",
+       "last_seen_at": "2026-10-25T02:32:03.326Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -15314,7 +15315,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-10-24T18:28:50.374Z",
     "2026-10-24T21:08:48.272Z",
     "2026-10-24T23:16:15.413Z",
-    "2026-10-25T01:11:57.514Z"
+    "2026-10-25T01:11:57.514Z",
+    "2026-10-25T02:32:03.326Z"
    ],
    "games": {
     "849802": {
@@ -15388,6 +15390,21 @@ export const MLB_SIGNAL_DATA = {
        "runs": {
         "away": 4,
         "home": 2
+       },
+       "winner": null,
+       "url_ref": 0
+      },
+      {
+       "captured_at": "2026-10-25T02:32:03.326Z",
+       "last_seen_at": "2026-10-25T02:32:03.326Z",
+       "abstractGameState": "Live",
+       "detailedState": "In Progress",
+       "codedGameState": "I",
+       "inning": 6,
+       "inningState": "Bottom",
+       "runs": {
+        "away": 4,
+        "home": 4
        },
        "winner": null,
        "url_ref": 0
