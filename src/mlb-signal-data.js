@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 30 date file(s) · 160 game(s) · 613 state row(s) · generated 2026-10-25T20:56:26.351Z
+ * 30 date file(s) · 160 game(s) · 613 state row(s) · generated 2026-10-25T21:11:35.796Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-25T20:56:26.351Z",
+ "generatedAt": "2026-10-25T21:11:35.796Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-10-25T18:40:22.672Z",
+  "last_confirmed_at": "2026-10-25T21:11:33.409Z",
   "teams": [
    {
     "id": 108,
@@ -15319,7 +15319,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-10-25T01:11:57.514Z",
     "2026-10-25T02:32:03.326Z",
     "2026-10-25T08:11:13.812Z",
-    "2026-10-25T18:40:22.673Z"
+    "2026-10-25T18:40:22.673Z",
+    "2026-10-25T21:11:33.410Z"
    ],
    "games": {
     "849802": {
@@ -15414,7 +15415,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-25T08:11:13.812Z",
-       "last_seen_at": "2026-10-25T18:40:22.673Z",
+       "last_seen_at": "2026-10-25T21:11:33.410Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
