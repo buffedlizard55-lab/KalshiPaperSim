@@ -4875,6 +4875,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-25T07:52:20.058Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24VOLEVL-EVL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4923,7 +4933,7 @@
     "ticker": "KXUFCFIGHT-26OCT24VOLEVL-EVL",
     "title": "Movsar Evloev wins",
     "updated_time": "2026-10-24T21:20:37.849355Z",
-    "volume_24h_fp": "3361143.53",
+    "volume_24h_fp": "3346773.27",
     "volume_fp": "3673668.46",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -4932,11 +4942,11 @@
     "yes_sub_title": "Movsar Evloev"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24VOLEVL-EVL",
-  "market_captured_at": "2026-10-25T05:10:50.376Z",
+  "market_captured_at": "2026-10-25T07:52:19.413Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-25T05:10:51.007Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24VOLEVL-EVL/candlesticks?start_ts=1791765900&end_ts=1792905050&period_interval=60",
+  "last_ingested_at": "2026-10-25T07:52:20.037Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24VOLEVL-EVL/candlesticks?start_ts=1792879201&end_ts=1792914739&period_interval=60",
   "trims": [
     {
       "at": "2026-10-25T05:10:51.329Z",

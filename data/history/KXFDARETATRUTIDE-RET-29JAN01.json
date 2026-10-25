@@ -16906,6 +16906,142 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-25T07:45:22.358Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-29JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3508.00"
+            ],
+            [
+              "0.0200",
+              "2164.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.1000",
+              "6987.20"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7846.00"
+            ],
+            [
+              "0.0200",
+              "8710.00"
+            ],
+            [
+              "0.0300",
+              "6220.00"
+            ],
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0500",
+              "84.00"
+            ],
+            [
+              "0.2000",
+              "100.00"
+            ],
+            [
+              "0.3500",
+              "2658.00"
+            ],
+            [
+              "0.3600",
+              "49.00"
+            ],
+            [
+              "0.6000",
+              "1.00"
+            ],
+            [
+              "0.8900",
+              "5086.00"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-25T07:58:32.060Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-29JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3508.00"
+            ],
+            [
+              "0.0200",
+              "2160.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.1000",
+              "6987.20"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "7846.00"
+            ],
+            [
+              "0.0200",
+              "8710.00"
+            ],
+            [
+              "0.0300",
+              "6220.00"
+            ],
+            [
+              "0.0400",
+              "2000.00"
+            ],
+            [
+              "0.0500",
+              "84.00"
+            ],
+            [
+              "0.2000",
+              "100.00"
+            ],
+            [
+              "0.3700",
+              "2510.00"
+            ],
+            [
+              "0.3800",
+              "51.00"
+            ],
+            [
+              "0.6000",
+              "1.00"
+            ],
+            [
+              "0.8900",
+              "4935.20"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -16955,16 +17091,16 @@
     "volume_24h_fp": "0.00",
     "volume_fp": "157.06",
     "yes_ask_dollars": "0.9000",
-    "yes_ask_size_fp": "6922.59",
+    "yes_ask_size_fp": "6987.20",
     "yes_bid_dollars": "0.8900",
-    "yes_bid_size_fp": "5086.00",
+    "yes_bid_size_fp": "4935.20",
     "yes_sub_title": "Before Jan 1, 2029"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-29JAN01",
-  "market_captured_at": "2026-10-25T05:17:07.980Z",
+  "market_captured_at": "2026-10-25T07:58:31.417Z",
   "status": "active",
-  "last_ingested_at": "2026-10-25T05:17:08.604Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-29JAN01/candlesticks?start_ts=1792900801&end_ts=1792905428&period_interval=1440",
+  "last_ingested_at": "2026-10-25T07:58:32.039Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-29JAN01/candlesticks?start_ts=1792900801&end_ts=1792915111&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:22.594Z",

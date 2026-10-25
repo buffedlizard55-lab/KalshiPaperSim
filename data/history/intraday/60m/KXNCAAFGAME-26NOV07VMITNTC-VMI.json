@@ -145,6 +145,26 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1792911600,
+      "open_interest_fp": "1685.19",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -247,6 +267,118 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-25T07:52:00.990Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07VMITNTC-VMI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "93547.00"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "944.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "267.00"
+            ],
+            [
+              "0.0600",
+              "350.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.2100",
+              "11.74"
+            ],
+            [
+              "0.2400",
+              "46.21"
+            ],
+            [
+              "0.4200",
+              "4.00"
+            ],
+            [
+              "0.8000",
+              "140.00"
+            ],
+            [
+              "0.8700",
+              "1.00"
+            ],
+            [
+              "0.8800",
+              "1.00"
+            ],
+            [
+              "0.8900",
+              "1.00"
+            ],
+            [
+              "0.9000",
+              "40.00"
+            ],
+            [
+              "0.9100",
+              "1.00"
+            ],
+            [
+              "0.9200",
+              "0.21"
+            ],
+            [
+              "0.9300",
+              "20.00"
+            ],
+            [
+              "0.9400",
+              "10.00"
+            ],
+            [
+              "0.9500",
+              "51.00"
+            ],
+            [
+              "0.9600",
+              "221955.15"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "10925.00"
+            ],
+            [
+              "0.0200",
+              "1560.00"
+            ],
+            [
+              "0.0300",
+              "505.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -298,12 +430,12 @@
     "yes_ask_dollars": "0.0400",
     "yes_ask_size_fp": "221955.15",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "500.00",
+    "yes_bid_size_fp": "505.00",
     "yes_sub_title": "VMI"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07VMITNTC-VMI",
-  "market_captured_at": "2026-10-25T05:10:31.271Z",
+  "market_captured_at": "2026-10-25T07:52:00.343Z",
   "status": "active",
-  "last_ingested_at": "2026-10-25T05:10:31.898Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07VMITNTC-VMI/candlesticks?start_ts=1792793700&end_ts=1792905031&period_interval=60"
+  "last_ingested_at": "2026-10-25T07:52:00.969Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07VMITNTC-VMI/candlesticks?start_ts=1792900801&end_ts=1792914720&period_interval=60"
 }
