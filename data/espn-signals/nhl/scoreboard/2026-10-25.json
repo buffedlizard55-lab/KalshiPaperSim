@@ -16,7 +16,8 @@
   "2026-10-25T02:26:40.422Z",
   "2026-10-25T08:05:18.447Z",
   "2026-10-25T18:08:20.626Z",
-  "2026-10-25T20:56:22.361Z"
+  "2026-10-25T20:56:22.361Z",
+  "2026-10-25T23:00:39.265Z"
  ],
  "events": {
   "401891807": {
@@ -38,7 +39,7 @@
    "states": [
     {
      "captured_at": "2026-10-24T09:44:42.704Z",
-     "last_seen_at": "2026-10-25T20:56:22.361Z",
+     "last_seen_at": "2026-10-25T23:00:39.265Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -114,6 +115,26 @@
       "home": "3-7-0",
       "away": "5-4-2"
      }
+    },
+    {
+     "captured_at": "2026-10-25T23:00:39.265Z",
+     "last_seen_at": "2026-10-25T23:00:39.265Z",
+     "fp": "post|3|0|2,3|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 3,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 2,
+      "away": 3
+     },
+     "recordsOverall": {
+      "home": null,
+      "away": null
+     }
     }
    ]
   },
@@ -153,6 +174,26 @@
       "home": "6-3-1",
       "away": "5-3-2"
      }
+    },
+    {
+     "captured_at": "2026-10-25T23:00:39.265Z",
+     "last_seen_at": "2026-10-25T23:00:39.265Z",
+     "fp": "in|1|0|2,1|false|STATUS_END_PERIOD",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_END_PERIOD",
+     "completed": false,
+     "period": 1,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 2,
+      "away": 1
+     },
+     "recordsOverall": {
+      "home": "6-3-1",
+      "away": "5-3-2"
+     }
     }
    ]
   },
@@ -175,7 +216,7 @@
    "states": [
     {
      "captured_at": "2026-10-24T09:44:42.704Z",
-     "last_seen_at": "2026-10-25T20:56:22.361Z",
+     "last_seen_at": "2026-10-25T23:00:39.265Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -214,7 +255,7 @@
    "states": [
     {
      "captured_at": "2026-10-24T09:44:42.704Z",
-     "last_seen_at": "2026-10-25T20:56:22.361Z",
+     "last_seen_at": "2026-10-25T23:00:39.265Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -235,6 +276,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-25T20:56:22.361Z",
+ "last_ingested_at": "2026-10-25T23:00:39.265Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261025"
 }
