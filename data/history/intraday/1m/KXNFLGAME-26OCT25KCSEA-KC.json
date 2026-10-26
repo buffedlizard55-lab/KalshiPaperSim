@@ -12035,6 +12035,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T21:23:59.466Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT25KCSEA-KC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12083,7 +12093,7 @@
     "ticker": "KXNFLGAME-26OCT25KCSEA-KC",
     "title": "Kansas City wins",
     "updated_time": "2026-10-26T03:23:21.900496Z",
-    "volume_24h_fp": "45255388.28",
+    "volume_24h_fp": "43553803.86",
     "volume_fp": "47177924.67",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12092,11 +12102,11 @@
     "yes_sub_title": "Kansas City"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT25KCSEA-KC",
-  "market_captured_at": "2026-10-26T13:18:30.263Z",
+  "market_captured_at": "2026-10-26T21:23:58.734Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-26T13:18:30.930Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT25KCSEA-KC/candlesticks?start_ts=1792984741&end_ts=1793020710&period_interval=1",
+  "last_ingested_at": "2026-10-26T21:23:59.403Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT25KCSEA-KC/candlesticks?start_ts=1792984741&end_ts=1793049839&period_interval=1",
   "trims": [
     {
       "at": "2026-10-26T05:18:54.420Z",

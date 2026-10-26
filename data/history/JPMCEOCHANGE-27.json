@@ -24935,6 +24935,150 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T21:11:40.169Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2316.74"
+            ],
+            [
+              "0.0200",
+              "3333.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.4200",
+              "43.27"
+            ],
+            [
+              "0.4600",
+              "93.92"
+            ],
+            [
+              "0.5000",
+              "500.00"
+            ],
+            [
+              "0.5400",
+              "1956.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.8200",
+              "2.00"
+            ],
+            [
+              "0.8700",
+              "468.51"
+            ],
+            [
+              "0.9300",
+              "500.00"
+            ],
+            [
+              "0.9500",
+              "3170.00"
+            ],
+            [
+              "0.9600",
+              "2.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1696.95"
+            ],
+            [
+              "0.0200",
+              "91.31"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-26T21:27:36.924Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2316.74"
+            ],
+            [
+              "0.0200",
+              "3333.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.4200",
+              "43.27"
+            ],
+            [
+              "0.4600",
+              "93.92"
+            ],
+            [
+              "0.5000",
+              "500.00"
+            ],
+            [
+              "0.5400",
+              "1956.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.8200",
+              "2.00"
+            ],
+            [
+              "0.8700",
+              "468.51"
+            ],
+            [
+              "0.9300",
+              "500.00"
+            ],
+            [
+              "0.9500",
+              "3170.00"
+            ],
+            [
+              "0.9600",
+              "2.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1696.95"
+            ],
+            [
+              "0.0200",
+              "91.31"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -24959,7 +25103,7 @@
     "open_time": "2025-11-18T01:00:00Z",
     "previous_price_dollars": "0.0700",
     "previous_yes_ask_dollars": "0.0500",
-    "previous_yes_bid_dollars": "0.0100",
+    "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -24987,10 +25131,10 @@
     "yes_sub_title": "Before 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/JPMCEOCHANGE-27",
-  "market_captured_at": "2026-10-26T13:22:07.170Z",
+  "market_captured_at": "2026-10-26T21:27:36.196Z",
   "status": "active",
-  "last_ingested_at": "2026-10-26T13:22:07.835Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1792987201&end_ts=1793020927&period_interval=1440",
+  "last_ingested_at": "2026-10-26T21:27:36.861Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/JPMCEOCHANGE/markets/JPMCEOCHANGE-27/candlesticks?start_ts=1792987201&end_ts=1793050056&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:50:47.002Z",

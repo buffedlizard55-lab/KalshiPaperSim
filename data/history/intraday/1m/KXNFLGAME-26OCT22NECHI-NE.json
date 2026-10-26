@@ -12155,6 +12155,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T21:25:35.499Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT22NECHI-NE/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12177,7 +12187,7 @@
     "no_bid_dollars": "0.0000",
     "no_sub_title": "New England",
     "notional_value_dollars": "1.0000",
-    "occurrence_datetime": "2026-10-23T03:15:00Z",
+    "occurrence_datetime": "2026-10-23T03:19:44Z",
     "open_interest_fp": "20070094.22",
     "open_time": "2026-10-13T04:05:00Z",
     "previous_price_dollars": "0.0100",
@@ -12202,7 +12212,7 @@
     "strike_type": "structured",
     "ticker": "KXNFLGAME-26OCT22NECHI-NE",
     "title": "New England wins",
-    "updated_time": "2026-10-23T03:28:50.410106Z",
+    "updated_time": "2026-10-26T18:29:44.508785Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "34084023.02",
     "yes_ask_dollars": "1.0000",
@@ -12212,11 +12222,11 @@
     "yes_sub_title": "New England"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT22NECHI-NE",
-  "market_captured_at": "2026-10-26T13:20:04.759Z",
+  "market_captured_at": "2026-10-26T21:25:33.671Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-26T13:20:06.521Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT22NECHI-NE/candlesticks?start_ts=1792985041&end_ts=1793020805&period_interval=1",
+  "last_ingested_at": "2026-10-26T21:25:35.436Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT22NECHI-NE/candlesticks?start_ts=1792985041&end_ts=1793049933&period_interval=1",
   "trims": [
     {
       "at": "2026-10-23T05:30:29.193Z",

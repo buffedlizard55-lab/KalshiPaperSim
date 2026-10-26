@@ -54238,6 +54238,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T21:12:58.080Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -54260,7 +54270,7 @@
     "no_bid_dollars": "0.0000",
     "no_sub_title": "Los Angeles D",
     "notional_value_dollars": "1.0000",
-    "occurrence_datetime": "2026-10-16T02:59:27.419Z",
+    "occurrence_datetime": "2026-10-20T03:23:33Z",
     "open_interest_fp": "5910458.90",
     "open_time": "2025-12-17T15:00:00Z",
     "previous_price_dollars": "0.0010",
@@ -54285,7 +54295,7 @@
     "strike_type": "structured",
     "ticker": "KXMLB-26-LAD",
     "title": "Will Los Angeles D win the 2026 Pro Baseball Championship?",
-    "updated_time": "2026-10-16T03:18:37.157359Z",
+    "updated_time": "2026-10-26T18:29:44.752197Z",
     "volume_24h_fp": "0.00",
     "volume_fp": "11723102.63",
     "yes_ask_dollars": "1.0000",
@@ -54295,10 +54305,10 @@
     "yes_sub_title": "Los Angeles D"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-LAD",
-  "market_captured_at": "2026-10-26T13:08:11.487Z",
+  "market_captured_at": "2026-10-26T21:12:57.451Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-26T13:08:12.055Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-LAD/candlesticks?start_ts=1792123201&end_ts=1793020091&period_interval=1440",
+  "last_ingested_at": "2026-10-26T21:12:58.017Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-LAD/candlesticks?start_ts=1792123201&end_ts=1793049177&period_interval=1440",
   "result": "no",
   "marketErrors": [
     {

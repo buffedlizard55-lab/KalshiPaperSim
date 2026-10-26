@@ -5030,6 +5030,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T21:20:02.723Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24YANDVA-DVA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5087,11 +5097,11 @@
     "yes_sub_title": "Merab Dvalishvili"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24YANDVA-DVA",
-  "market_captured_at": "2026-10-26T13:14:37.393Z",
+  "market_captured_at": "2026-10-26T21:20:01.994Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-26T13:14:38.060Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24YANDVA-DVA/candlesticks?start_ts=1792875601&end_ts=1793020477&period_interval=60",
+  "last_ingested_at": "2026-10-26T21:20:02.661Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24YANDVA-DVA/candlesticks?start_ts=1792875601&end_ts=1793049602&period_interval=60",
   "trims": [
     {
       "at": "2026-10-25T05:10:47.502Z",
