@@ -12965,6 +12965,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T08:12:23.472Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT01PITCLE-PIT/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -13022,11 +13032,11 @@
     "yes_sub_title": "Pittsburgh"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT01PITCLE-PIT",
-  "market_captured_at": "2026-10-26T05:19:44.628Z",
+  "market_captured_at": "2026-10-26T08:12:15.155Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-26T05:19:54.083Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT01PITCLE-PIT/candlesticks?start_ts=1792986301&end_ts=1792991984&period_interval=1",
+  "last_ingested_at": "2026-10-26T08:12:23.455Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT01PITCLE-PIT/candlesticks?start_ts=1792986301&end_ts=1793002335&period_interval=1",
   "trims": [
     {
       "at": "2026-10-02T06:07:33.341Z",

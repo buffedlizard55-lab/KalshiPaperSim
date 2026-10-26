@@ -474,6 +474,46 @@
         "low_dollars": "0.1500",
         "open_dollars": "0.5400"
       }
+    },
+    {
+      "end_period_ts": 1792994400,
+      "open_interest_fp": "1582.00",
+      "price": {
+        "previous_dollars": "0.6300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9100",
+        "high_dollars": "0.9200",
+        "low_dollars": "0.8900",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8000",
+        "high_dollars": "0.8000",
+        "low_dollars": "0.1500",
+        "open_dollars": "0.5900"
+      }
+    },
+    {
+      "end_period_ts": 1792998000,
+      "open_interest_fp": "1582.00",
+      "price": {
+        "previous_dollars": "0.6300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.8900",
+        "high_dollars": "0.9100",
+        "low_dollars": "0.8900",
+        "open_dollars": "0.9100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.8000",
+        "high_dollars": "0.8000",
+        "low_dollars": "0.7900",
+        "open_dollars": "0.8000"
+      }
     }
   ],
   "books": [
@@ -680,6 +720,118 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T08:07:48.565Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07UTUUCD-UCD/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "100391.00"
+            ],
+            [
+              "0.0200",
+              "2550.00"
+            ],
+            [
+              "0.0300",
+              "966.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "290.00"
+            ],
+            [
+              "0.0700",
+              "301.00"
+            ],
+            [
+              "0.0900",
+              "204.00"
+            ],
+            [
+              "0.1000",
+              "14.00"
+            ],
+            [
+              "0.1100",
+              "16.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "98825.00"
+            ],
+            [
+              "0.0200",
+              "1550.00"
+            ],
+            [
+              "0.0300",
+              "501.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "22.00"
+            ],
+            [
+              "0.0600",
+              "140.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "22.00"
+            ],
+            [
+              "0.1300",
+              "10.00"
+            ],
+            [
+              "0.1400",
+              "10.00"
+            ],
+            [
+              "0.1500",
+              "20.00"
+            ],
+            [
+              "0.1600",
+              "24.00"
+            ],
+            [
+              "0.1700",
+              "14.00"
+            ],
+            [
+              "0.7000",
+              "5.00"
+            ],
+            [
+              "0.7900",
+              "10.00"
+            ],
+            [
+              "0.8000",
+              "4.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -698,7 +850,7 @@
     "last_price_dollars": "0.6300",
     "latest_expiration_time": "2026-11-10T00:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.3400",
+    "no_ask_dollars": "0.2000",
     "no_bid_dollars": "0.1100",
     "no_sub_title": "UC Davis",
     "notional_value_dollars": "1.0000",
@@ -707,7 +859,7 @@
     "open_time": "2026-10-25T01:08:00Z",
     "previous_price_dollars": "0.0000",
     "previous_yes_ask_dollars": "0.9200",
-    "previous_yes_bid_dollars": "0.1600",
+    "previous_yes_bid_dollars": "0.1100",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -729,14 +881,14 @@
     "volume_24h_fp": "1582.00",
     "volume_fp": "1582.00",
     "yes_ask_dollars": "0.8900",
-    "yes_ask_size_fp": "15.00",
-    "yes_bid_dollars": "0.6600",
+    "yes_ask_size_fp": "16.00",
+    "yes_bid_dollars": "0.8000",
     "yes_bid_size_fp": "4.00",
     "yes_sub_title": "UC Davis"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07UTUUCD-UCD",
-  "market_captured_at": "2026-10-26T05:14:35.894Z",
+  "market_captured_at": "2026-10-26T08:07:47.928Z",
   "status": "active",
-  "last_ingested_at": "2026-10-26T05:14:36.562Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07UTUUCD-UCD/candlesticks?start_ts=1792954801&end_ts=1792991676&period_interval=60"
+  "last_ingested_at": "2026-10-26T08:07:48.548Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07UTUUCD-UCD/candlesticks?start_ts=1792990801&end_ts=1793002068&period_interval=60"
 }

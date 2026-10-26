@@ -3145,6 +3145,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T08:07:32.204Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT25DETPHI-PHI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3170,9 +3180,9 @@
     "occurrence_datetime": "2026-10-26T02:30:00Z",
     "open_interest_fp": "3858535.36",
     "open_time": "2026-10-18T23:36:14.806274Z",
-    "previous_price_dollars": "0.5700",
-    "previous_yes_ask_dollars": "0.5700",
-    "previous_yes_bid_dollars": "0.5600",
+    "previous_price_dollars": "0.5500",
+    "previous_yes_ask_dollars": "0.5500",
+    "previous_yes_bid_dollars": "0.5400",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3193,7 +3203,7 @@
     "ticker": "KXNBAGAME-26OCT25DETPHI-PHI",
     "title": "Philadelphia wins",
     "updated_time": "2026-10-26T02:15:30.338479Z",
-    "volume_24h_fp": "6505056.76",
+    "volume_24h_fp": "6501261.15",
     "volume_fp": "6537289.73",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3202,9 +3212,9 @@
     "yes_sub_title": "Philadelphia"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT25DETPHI-PHI",
-  "market_captured_at": "2026-10-26T05:14:17.729Z",
+  "market_captured_at": "2026-10-26T08:07:31.568Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-26T05:14:18.398Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT25DETPHI-PHI/candlesticks?start_ts=1792280174&end_ts=1792991658&period_interval=60"
+  "last_ingested_at": "2026-10-26T08:07:32.187Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT25DETPHI-PHI/candlesticks?start_ts=1792983601&end_ts=1793002051&period_interval=60"
 }

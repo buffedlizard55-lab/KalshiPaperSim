@@ -761,6 +761,90 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T08:07:51.081Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07VMITNTC-TNTC/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "14566.00"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "941.90"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "98000.00"
+            ],
+            [
+              "0.0200",
+              "1550.00"
+            ],
+            [
+              "0.0300",
+              "1195.00"
+            ],
+            [
+              "0.0400",
+              "709.00"
+            ],
+            [
+              "0.0500",
+              "22.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "22.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2100",
+              "15.00"
+            ],
+            [
+              "0.2900",
+              "1.00"
+            ],
+            [
+              "0.3800",
+              "1.00"
+            ],
+            [
+              "0.4800",
+              "1.00"
+            ],
+            [
+              "0.8600",
+              "140.00"
+            ],
+            [
+              "0.9600",
+              "99977.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -786,7 +870,7 @@
     "occurrence_datetime": "2026-11-07T22:30:00Z",
     "open_interest_fp": "1112.10",
     "open_time": "2026-10-24T22:15:00Z",
-    "previous_price_dollars": "0.9500",
+    "previous_price_dollars": "0.9600",
     "previous_yes_ask_dollars": "0.9700",
     "previous_yes_bid_dollars": "0.9600",
     "price_level_structure": "linear_cent",
@@ -807,7 +891,7 @@
     "ticker": "KXNCAAFGAME-26NOV07VMITNTC-TNTC",
     "title": "Tennessee Tech wins",
     "updated_time": "2026-10-24T22:52:07.287725Z",
-    "volume_24h_fp": "22.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "1134.10",
     "yes_ask_dollars": "0.9700",
     "yes_ask_size_fp": "941.90",
@@ -816,8 +900,8 @@
     "yes_sub_title": "Tennessee Tech"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07VMITNTC-TNTC",
-  "market_captured_at": "2026-10-26T05:14:38.686Z",
+  "market_captured_at": "2026-10-26T08:07:50.442Z",
   "status": "active",
-  "last_ingested_at": "2026-10-26T05:14:39.352Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07VMITNTC-TNTC/candlesticks?start_ts=1792918801&end_ts=1792991678&period_interval=60"
+  "last_ingested_at": "2026-10-26T08:07:51.064Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07VMITNTC-TNTC/candlesticks?start_ts=1792972801&end_ts=1793002070&period_interval=60"
 }

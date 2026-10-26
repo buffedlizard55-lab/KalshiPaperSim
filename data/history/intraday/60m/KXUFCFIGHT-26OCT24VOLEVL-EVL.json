@@ -4915,6 +4915,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T08:08:08.708Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24VOLEVL-EVL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -4972,11 +4982,11 @@
     "yes_sub_title": "Movsar Evloev"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24VOLEVL-EVL",
-  "market_captured_at": "2026-10-26T05:14:58.241Z",
+  "market_captured_at": "2026-10-26T08:08:08.071Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-26T05:14:58.908Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24VOLEVL-EVL/candlesticks?start_ts=1792879201&end_ts=1792991698&period_interval=60",
+  "last_ingested_at": "2026-10-26T08:08:08.691Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24VOLEVL-EVL/candlesticks?start_ts=1792879201&end_ts=1793002088&period_interval=60",
   "trims": [
     {
       "at": "2026-10-25T05:10:51.329Z",
