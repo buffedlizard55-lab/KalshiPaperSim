@@ -16578,6 +16578,58 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T13:21:58.608Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27OCT01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3383.00"
+            ],
+            [
+              "0.0200",
+              "415.00"
+            ],
+            [
+              "0.1000",
+              "200.00"
+            ],
+            [
+              "0.1100",
+              "5.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5605.00"
+            ],
+            [
+              "0.0300",
+              "2222.00"
+            ],
+            [
+              "0.1800",
+              "37.00"
+            ],
+            [
+              "0.1900",
+              "681.00"
+            ],
+            [
+              "0.8100",
+              "200.00"
+            ],
+            [
+              "0.8200",
+              "25.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -16632,10 +16684,10 @@
     "yes_sub_title": "Before October 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALDATECMPS-360-27OCT01",
-  "market_captured_at": "2026-10-26T08:14:33.356Z",
+  "market_captured_at": "2026-10-26T13:21:57.878Z",
   "status": "active",
-  "last_ingested_at": "2026-10-26T08:14:33.975Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27OCT01/candlesticks?start_ts=1792987201&end_ts=1793002473&period_interval=1440",
+  "last_ingested_at": "2026-10-26T13:21:58.543Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALDATECMPS/markets/KXFDAAPPROVALDATECMPS-360-27OCT01/candlesticks?start_ts=1792987201&end_ts=1793020918&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:07.972Z",
