@@ -3598,6 +3598,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T05:14:12.874Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT24MIACHA-MIA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3623,9 +3633,9 @@
     "occurrence_datetime": "2026-10-25T01:00:00Z",
     "open_interest_fp": "3686907.02",
     "open_time": "2026-10-17T22:06:22.067849Z",
-    "previous_price_dollars": "0.5800",
-    "previous_yes_ask_dollars": "0.5800",
-    "previous_yes_bid_dollars": "0.5700",
+    "previous_price_dollars": "0.0100",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3646,7 +3656,7 @@
     "ticker": "KXNBAGAME-26OCT24MIACHA-MIA",
     "title": "Miami wins",
     "updated_time": "2026-10-25T00:42:17.844395Z",
-    "volume_24h_fp": "7340380.95",
+    "volume_24h_fp": "0.00",
     "volume_fp": "7649481.68",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3655,9 +3665,9 @@
     "yes_sub_title": "Miami"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT24MIACHA-MIA",
-  "market_captured_at": "2026-10-25T19:32:03.698Z",
+  "market_captured_at": "2026-10-26T05:14:12.143Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-25T19:32:04.363Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT24MIACHA-MIA/candlesticks?start_ts=1792890001&end_ts=1792956723&period_interval=60"
+  "last_ingested_at": "2026-10-26T05:14:12.811Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT24MIACHA-MIA/candlesticks?start_ts=1792890001&end_ts=1792991652&period_interval=60"
 }

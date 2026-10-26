@@ -3631,6 +3631,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T05:14:22.648Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT22CAREDM-EDM/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3688,9 +3698,9 @@
     "yes_sub_title": "Edmonton"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT22CAREDM-EDM",
-  "market_captured_at": "2026-10-25T19:32:13.398Z",
+  "market_captured_at": "2026-10-26T05:14:21.919Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-25T19:32:14.062Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT22CAREDM-EDM/candlesticks?start_ts=1792731601&end_ts=1792956733&period_interval=60"
+  "last_ingested_at": "2026-10-26T05:14:22.585Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT22CAREDM-EDM/candlesticks?start_ts=1792731601&end_ts=1792991662&period_interval=60"
 }

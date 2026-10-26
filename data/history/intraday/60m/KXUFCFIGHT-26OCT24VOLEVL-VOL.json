@@ -5025,6 +5025,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T05:14:51.983Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24VOLEVL-VOL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5050,9 +5060,9 @@
     "occurrence_datetime": "2026-10-25T00:10:00Z",
     "open_interest_fp": "4326479.44",
     "open_time": "2026-10-13T00:45:00Z",
-    "previous_price_dollars": "0.5100",
-    "previous_yes_ask_dollars": "0.5100",
-    "previous_yes_bid_dollars": "0.5000",
+    "previous_price_dollars": "0.9900",
+    "previous_yes_ask_dollars": "1.0000",
+    "previous_yes_bid_dollars": "0.0000",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -5073,7 +5083,7 @@
     "ticker": "KXUFCFIGHT-26OCT24VOLEVL-VOL",
     "title": "Alex Volkanovski wins",
     "updated_time": "2026-10-24T21:20:37.849355Z",
-    "volume_24h_fp": "4071166.01",
+    "volume_24h_fp": "0.00",
     "volume_fp": "5410326.63",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -5082,11 +5092,11 @@
     "yes_sub_title": "Alex Volkanovski"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24VOLEVL-VOL",
-  "market_captured_at": "2026-10-25T19:32:39.752Z",
+  "market_captured_at": "2026-10-26T05:14:51.255Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-25T19:32:40.417Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24VOLEVL-VOL/candlesticks?start_ts=1792879201&end_ts=1792956760&period_interval=60",
+  "last_ingested_at": "2026-10-26T05:14:51.920Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24VOLEVL-VOL/candlesticks?start_ts=1792879201&end_ts=1792991691&period_interval=60",
   "trims": [
     {
       "at": "2026-10-25T05:10:44.950Z",

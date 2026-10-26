@@ -3572,6 +3572,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T05:14:11.476Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT23HOUSAS-SAS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3629,9 +3639,9 @@
     "yes_sub_title": "San Antonio"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT23HOUSAS-SAS",
-  "market_captured_at": "2026-10-25T19:32:02.313Z",
+  "market_captured_at": "2026-10-26T05:14:10.749Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-25T19:32:02.976Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT23HOUSAS-SAS/candlesticks?start_ts=1792818001&end_ts=1792956722&period_interval=60"
+  "last_ingested_at": "2026-10-26T05:14:11.414Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT23HOUSAS-SAS/candlesticks?start_ts=1792818001&end_ts=1792991651&period_interval=60"
 }

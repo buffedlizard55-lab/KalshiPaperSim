@@ -3643,6 +3643,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-26T05:14:21.253Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT22UTASEA-UTA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3700,9 +3710,9 @@
     "yes_sub_title": "Utah"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT22UTASEA-UTA",
-  "market_captured_at": "2026-10-25T19:32:12.013Z",
+  "market_captured_at": "2026-10-26T05:14:20.523Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-25T19:32:12.676Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT22UTASEA-UTA/candlesticks?start_ts=1792731601&end_ts=1792956732&period_interval=60"
+  "last_ingested_at": "2026-10-26T05:14:21.190Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT22UTASEA-UTA/candlesticks?start_ts=1792731601&end_ts=1792991660&period_interval=60"
 }
