@@ -18,7 +18,8 @@
   "2026-10-25T18:08:20.234Z",
   "2026-10-25T20:56:22.214Z",
   "2026-10-25T23:00:39.057Z",
-  "2026-10-26T01:06:42.235Z"
+  "2026-10-26T01:06:42.235Z",
+  "2026-10-26T02:26:27.296Z"
  ],
  "events": {
   "401873011": {
@@ -65,7 +66,7 @@
     },
     {
      "captured_at": "2026-10-25T18:08:20.234Z",
-     "last_seen_at": "2026-10-26T01:06:42.235Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
      "fp": "post|4|0|10,16|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -149,7 +150,7 @@
     },
     {
      "captured_at": "2026-10-25T20:56:22.214Z",
-     "last_seen_at": "2026-10-26T01:06:42.235Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
      "fp": "post|4|0|13,35|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -233,7 +234,7 @@
     },
     {
      "captured_at": "2026-10-25T20:56:22.214Z",
-     "last_seen_at": "2026-10-26T01:06:42.235Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
      "fp": "post|4|0|24,27|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -317,7 +318,7 @@
     },
     {
      "captured_at": "2026-10-25T20:56:22.214Z",
-     "last_seen_at": "2026-10-26T01:06:42.235Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
      "fp": "post|4|0|16,10|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -401,7 +402,7 @@
     },
     {
      "captured_at": "2026-10-25T20:56:22.214Z",
-     "last_seen_at": "2026-10-26T01:06:42.235Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
      "fp": "post|4|0|25,28|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -485,7 +486,7 @@
     },
     {
      "captured_at": "2026-10-25T20:56:22.214Z",
-     "last_seen_at": "2026-10-26T01:06:42.235Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
      "fp": "post|5|0|21,27|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -569,7 +570,7 @@
     },
     {
      "captured_at": "2026-10-25T20:56:22.214Z",
-     "last_seen_at": "2026-10-26T01:06:42.235Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
      "fp": "post|4|0|29,20|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -653,7 +654,7 @@
     },
     {
      "captured_at": "2026-10-25T20:56:22.214Z",
-     "last_seen_at": "2026-10-26T01:06:42.235Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
      "fp": "post|4|0|13,43|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -757,7 +758,7 @@
     },
     {
      "captured_at": "2026-10-26T01:06:42.235Z",
-     "last_seen_at": "2026-10-26T01:06:42.235Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
      "fp": "post|4|0|16,30|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -861,7 +862,7 @@
     },
     {
      "captured_at": "2026-10-26T01:06:42.235Z",
-     "last_seen_at": "2026-10-26T01:06:42.235Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
      "fp": "post|4|0|20,17|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -965,7 +966,7 @@
     },
     {
      "captured_at": "2026-10-26T01:06:42.235Z",
-     "last_seen_at": "2026-10-26T01:06:42.235Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
      "fp": "post|4|0|21,35|true|STATUS_FINAL",
      "url_ref": 0,
      "state": "post",
@@ -1046,10 +1047,30 @@
       "home": "3-3",
       "away": "5-0"
      }
+    },
+    {
+     "captured_at": "2026-10-26T02:26:27.296Z",
+     "last_seen_at": "2026-10-26T02:26:27.296Z",
+     "fp": "in|3|2|13,0|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 3,
+     "clock": 136,
+     "displayClock": "2:16",
+     "scores": {
+      "home": 13,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-3",
+      "away": "5-0"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-26T01:06:42.235Z",
+ "last_ingested_at": "2026-10-26T02:26:27.296Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261025"
 }

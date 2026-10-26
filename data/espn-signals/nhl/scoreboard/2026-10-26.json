@@ -12,7 +12,8 @@
   "2026-10-25T18:08:20.648Z",
   "2026-10-25T20:56:22.368Z",
   "2026-10-25T23:00:39.277Z",
-  "2026-10-26T01:06:42.477Z"
+  "2026-10-26T01:06:42.477Z",
+  "2026-10-26T02:26:28.052Z"
  ],
  "events": {
   "401892582": {
@@ -34,7 +35,7 @@
    "states": [
     {
      "captured_at": "2026-10-25T08:05:18.568Z",
-     "last_seen_at": "2026-10-26T01:06:42.477Z",
+     "last_seen_at": "2026-10-26T02:26:28.052Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -73,7 +74,7 @@
    "states": [
     {
      "captured_at": "2026-10-25T08:05:18.568Z",
-     "last_seen_at": "2026-10-26T01:06:42.477Z",
+     "last_seen_at": "2026-10-26T02:26:28.052Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -112,7 +113,7 @@
    "states": [
     {
      "captured_at": "2026-10-25T08:05:18.568Z",
-     "last_seen_at": "2026-10-26T01:06:42.477Z",
+     "last_seen_at": "2026-10-26T02:26:28.052Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -133,6 +134,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-26T01:06:42.477Z",
+ "last_ingested_at": "2026-10-26T02:26:28.052Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261026"
 }
