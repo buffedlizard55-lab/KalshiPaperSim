@@ -1,0 +1,105 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-27",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261027"
+  ]
+ },
+ "captures": [
+  "2026-10-26T08:20:44.993Z"
+ ],
+ "events": {
+  "401871071": {
+   "eventId": "401871071",
+   "date": "2026-10-27T23:00Z",
+   "easternDate": "2026-10-27",
+   "name": "Delaware Blue Hens at Western Kentucky Hilltoppers",
+   "shortName": "DEL @ WKU",
+   "week": 9,
+   "venue": "Houchens Industries-L.T. Smith Stadium",
+   "homeAbbr": "WKU",
+   "homeTeamId": "98",
+   "homeName": "Western Kentucky Hilltoppers",
+   "awayAbbr": "DEL",
+   "awayTeamId": "48",
+   "awayName": "Delaware Blue Hens",
+   "firstCapturedAt": "2026-10-26T08:20:44.993Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "WKU -1.5",
+    "spread": -1.5,
+    "overUnder": 55.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-26T08:20:44.993Z",
+     "last_seen_at": "2026-10-26T08:20:44.993Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-4",
+      "away": "3-4"
+     }
+    }
+   ]
+  },
+  "401871072": {
+   "eventId": "401871072",
+   "date": "2026-10-28T00:00Z",
+   "easternDate": "2026-10-27",
+   "name": "Sam Houston Bearkats at Missouri State Bears",
+   "shortName": "SHSU @ MOST",
+   "week": 9,
+   "venue": "Robert W. Plaster Stadium",
+   "homeAbbr": "MOST",
+   "homeTeamId": "2623",
+   "homeName": "Missouri State Bears",
+   "awayAbbr": "SHSU",
+   "awayTeamId": "2534",
+   "awayName": "Sam Houston Bearkats",
+   "firstCapturedAt": "2026-10-26T08:20:44.993Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "MOST -6.5",
+    "spread": -6.5,
+    "overUnder": 49.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-26T08:20:44.993Z",
+     "last_seen_at": "2026-10-26T08:20:44.993Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-5",
+      "away": "1-6"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-26T08:20:44.993Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261027"
+}

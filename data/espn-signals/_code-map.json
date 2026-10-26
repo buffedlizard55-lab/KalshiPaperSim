@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-26T02:26:29.035Z",
+ "generatedAt": "2026-10-26T08:20:46.226Z",
  "rows": [
   {
    "league": "nba",
@@ -205,6 +205,11 @@
      "ticker": "KXNBAGAME-26OCT05PHXDET-PHX",
      "rulesName": "Detroit",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT25DETPHI-PHI",
+     "rulesName": "Detroit",
+     "role": "away"
     }
    ]
   },
@@ -1497,14 +1502,14 @@
      "role": "away"
     },
     {
-     "ticker": "KXNCAAFGAME-26OCT03MIACLEM-CLEM",
+     "ticker": "KXNCAAFGAME-26NOV07MIAND-ND",
      "rulesName": "Miami (FL)",
      "role": "away"
     },
     {
-     "ticker": "KXNCAAFGAME-26OCT17FSUMIA-FSU",
+     "ticker": "KXNCAAFGAME-26OCT03MIACLEM-CLEM",
      "rulesName": "Miami (FL)",
-     "role": "home"
+     "role": "away"
     }
    ]
   },
@@ -1702,6 +1707,11 @@
      "role": "home"
     },
     {
+     "ticker": "KXNCAAFGAME-26NOV07MIAND-ND",
+     "rulesName": "Notre Dame",
+     "role": "home"
+    },
+    {
      "ticker": "KXNCAAFGAME-26OCT10STANND-ND",
      "rulesName": "Notre Dame",
      "role": "home"
@@ -1713,11 +1723,6 @@
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17NDBYU-BYU",
-     "rulesName": "Notre Dame",
-     "role": "away"
-    },
-    {
-     "ticker": "KXNCAAFGAME-26OCT17NDBYU-ND",
      "rulesName": "Notre Dame",
      "role": "away"
     }
@@ -2267,6 +2272,11 @@
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
+     "ticker": "KXNCAAFGAME-26NOV07UKTENN-TENN",
+     "rulesName": "Tennessee",
+     "role": "home"
+    },
+    {
      "ticker": "KXNCAAFGAME-26NOV07UKTENN-UK",
      "rulesName": "Tennessee",
      "role": "home"
@@ -2521,6 +2531,11 @@
    "espn": null,
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26NOV07UKTENN-TENN",
+     "rulesName": "Kentucky",
+     "role": "away"
+    },
     {
      "ticker": "KXNCAAFGAME-26NOV07UKTENN-UK",
      "rulesName": "Kentucky",
@@ -3002,6 +3017,11 @@
      "role": "home"
     },
     {
+     "ticker": "KXNFLGAME-26OCT25KCSEA-KC",
+     "rulesName": "Kansas City",
+     "role": "away"
+    },
+    {
      "ticker": "KXNFLGAME-26SEP14DENKC-KC",
      "rulesName": "Kansas City",
      "role": "home"
@@ -3258,6 +3278,11 @@
     },
     {
      "ticker": "KXNFLGAME-26SEP09NESEA-NE",
+     "rulesName": "Seattle",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNFLGAME-26OCT25KCSEA-KC",
      "rulesName": "Seattle",
      "role": "home"
     },
