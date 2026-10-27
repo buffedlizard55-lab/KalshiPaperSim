@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-27T19:48:52.717Z",
+ "generatedAt": "2026-10-27T23:27:10.958Z",
  "rows": [
   {
    "league": "nba",
@@ -867,6 +867,16 @@
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
+     "ticker": "KXNCAAFGAME-26NOV07ALALSU-ALA",
+     "rulesName": "Alabama",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26NOV07ALALSU-LSU",
+     "rulesName": "Alabama",
+     "role": "away"
+    },
+    {
      "ticker": "KXNCAAFGAME-26OCT10UGAALA-UGA",
      "rulesName": "Alabama",
      "role": "home"
@@ -1407,22 +1417,22 @@
      "role": "home"
     },
     {
+     "ticker": "KXNCAAFGAME-26NOV07ALALSU-ALA",
+     "rulesName": "LSU",
+     "role": "home"
+    },
+    {
+     "ticker": "KXNCAAFGAME-26NOV07ALALSU-LSU",
+     "rulesName": "LSU",
+     "role": "home"
+    },
+    {
      "ticker": "KXNCAAFGAME-26OCT03MCNSLSU-LSU",
      "rulesName": "LSU",
      "role": "home"
     },
     {
      "ticker": "KXNCAAFGAME-26OCT03MCNSLSU-MCNS",
-     "rulesName": "LSU",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNCAAFGAME-26OCT16MSSTLSU-LSU",
-     "rulesName": "LSU",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
      "rulesName": "LSU",
      "role": "home"
     }

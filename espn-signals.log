@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-27T19:48:50.441Z",
+ "startedAt": "2026-10-27T23:27:08.991Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -49,7 +49,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 85
+     "playerRecords": 94
     },
     "scoreboard": {
      "2026-10-27": {
@@ -90,7 +90,7 @@
       "ok": true,
       "status": 200,
       "events": 2,
-      "stateRows": 2
+      "stateRows": 3
      },
      "2026-10-28": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261028",
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 127
+     "playerRecords": 126
     },
     "scoreboard": {
      "2026-10-27": {
@@ -156,7 +156,7 @@
       "ok": true,
       "status": 200,
       "events": 11,
-      "stateRows": 11
+      "stateRows": 12
      },
      "2026-10-28": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261028",
@@ -208,7 +208,7 @@
   "matched": 93,
   "unmapped": 90
  },
- "finishedAt": "2026-10-27T19:48:52.717Z"
+ "finishedAt": "2026-10-27T23:27:10.959Z"
 }
 {
  "ok": true,
@@ -220,11 +220,11 @@
   "codeRows": 183
  }
 }
-✓ src/accumulated-history.js — 193 market(s), 17355 bar(s), 28462.5 KB
-✓ src/forecast-data.js — 9 location(s), 1352 snapshot(s), 2666.5 KB
+✓ src/accumulated-history.js — 193 market(s), 17355 bar(s), 28606.3 KB
+✓ src/forecast-data.js — 9 location(s), 1361 snapshot(s), 2684.2 KB
 ✓ src/fda-signal-data.js — 6 subject(s), 704 snapshot(s), 470.5 KB
-✓ src/mlb-signal-data.js — 32 date file(s), 162 game(s), 619 state row(s), 419.7 KB
-✓ src/espn-signal-data.js — 7 league(s), 652 event(s), 42915.5 KB
+✓ src/mlb-signal-data.js — 32 date file(s), 162 game(s), 620 state row(s), 420.1 KB
+✓ src/espn-signal-data.js — 7 league(s), 652 event(s), 42971.5 KB
 ✓ src/mlb-pregame-data.js — 0 date file(s), 0 row(s), 2.1 KB (no predictions yet — MLBPreGame_ModelEdge abstains)
 ✓ src/form4-signal-data.js — 0 issuer(s), 0 filing(s), 1.3 KB (no archive yet — insider strategies abstain)
     JPMCEOCHANGE-27: 319 bar(s) + market object
@@ -420,11 +420,11 @@
     KXOPENAICEOCHANGE-26: 299 bar(s) + market object
     KXTESLACEOCHANGE-26: 0 bar(s) + market object
     TESLACEOCHANGE-26: 400 bar(s) + market object
-    intraday 1m: 1718 market(s), 95858 shipped bar(s) (cap 400/market) from data/history/intraday/1m
-    intraday 60m: 865 market(s), 82900 shipped bar(s) (cap 400/market) from data/history/intraday/60m
-desk-data: 106 markets (83 open) · 1549 ladder captures · 7119 bars · 119 quoted-only · 2208 KB → src/desk-data.js
-desk-data: 273 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
-desk-data: capture bound — the store holds 75929 ladders (24991 non-empty) in 160 batches; this module keeps 1549 ladders in 161 batches (160 store batch(es) represented, 0 not) — 0 season round stamp(s) and 74379 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
+    intraday 1m: 1741 market(s), 96226 shipped bar(s) (cap 400/market) from data/history/intraday/1m
+    intraday 60m: 869 market(s), 83057 shipped bar(s) (cap 400/market) from data/history/intraday/60m
+desk-data: 106 markets (83 open) · 1524 ladder captures · 7107 bars · 120 quoted-only · 2195 KB → src/desk-data.js
+desk-data: 277 laddered market(s) dropped by --max-markets=100 (the rule is recorded in the module's coverage block)
+desk-data: capture bound — the store holds 76431 ladders (25136 non-empty) in 161 batches; this module keeps 1524 ladders in 162 batches (161 store batch(es) represented, 0 not) — 0 season round stamp(s) and 74906 capture instant(s) are evicted from the MODULE, never from data/history; listed in coverage.captureEviction
   wrote VERIFICATION.md (99.5 KB)
   wrote IRREGULARITIES.md (123.1 KB)
   README.md AUTO blocks already up to date
