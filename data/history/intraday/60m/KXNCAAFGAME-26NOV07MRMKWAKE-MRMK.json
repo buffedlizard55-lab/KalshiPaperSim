@@ -330,6 +330,156 @@
         "low_dollars": "0.0100",
         "open_dollars": "0.0100"
       }
+    },
+    {
+      "end_period_ts": 1793106000,
+      "open_interest_fp": "5102.24",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1793109600,
+      "open_interest_fp": "5102.24",
+      "price": {
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1793120400,
+      "open_interest_fp": "5136.03",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0323",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "57.79",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      }
+    },
+    {
+      "end_period_ts": 1793124000,
+      "open_interest_fp": "5255.98",
+      "price": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "mean_dollars": "0.0390",
+        "open_dollars": "0.0300",
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "119.95",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1793127600,
+      "open_interest_fp": "5255.98",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1793131200,
+      "open_interest_fp": "5255.98",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1793134800,
+      "open_interest_fp": "5255.98",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -644,6 +794,118 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-27T21:05:10.332Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07MRMKWAKE-MRMK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "102568.00"
+            ],
+            [
+              "0.0200",
+              "1501.00"
+            ],
+            [
+              "0.0300",
+              "946.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "268.00"
+            ],
+            [
+              "0.0600",
+              "373.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "372.00"
+            ],
+            [
+              "0.0900",
+              "237.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1300",
+              "57.79"
+            ],
+            [
+              "0.1400",
+              "14.00"
+            ],
+            [
+              "0.4200",
+              "4.00"
+            ],
+            [
+              "0.8800",
+              "1.00"
+            ],
+            [
+              "0.8900",
+              "1.00"
+            ],
+            [
+              "0.9000",
+              "1.00"
+            ],
+            [
+              "0.9100",
+              "50.00"
+            ],
+            [
+              "0.9200",
+              "1.00"
+            ],
+            [
+              "0.9400",
+              "1.00"
+            ],
+            [
+              "0.9500",
+              "11.00"
+            ],
+            [
+              "0.9600",
+              "2134.55"
+            ],
+            [
+              "0.9700",
+              "1000.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "6282.00"
+            ],
+            [
+              "0.0200",
+              "39.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -659,19 +921,19 @@
     "expected_expiration_time": "2026-11-07T23:30:00Z",
     "expiration_time": "2026-11-09T20:30:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0200",
+    "last_price_dollars": "0.0400",
     "latest_expiration_time": "2026-11-09T20:30:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.9900",
+    "no_ask_dollars": "0.9800",
     "no_bid_dollars": "0.9700",
     "no_sub_title": "Merrimack",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-11-07T23:30:00Z",
-    "open_interest_fp": "5102.24",
+    "open_interest_fp": "5255.98",
     "open_time": "2026-10-26T19:06:00Z",
-    "previous_price_dollars": "0.0000",
-    "previous_yes_ask_dollars": "0.0000",
-    "previous_yes_bid_dollars": "0.0000",
+    "previous_price_dollars": "0.7200",
+    "previous_yes_ask_dollars": "0.7300",
+    "previous_yes_bid_dollars": "0.4800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -690,17 +952,17 @@
     "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-MRMK",
     "title": "Merrimack wins",
     "updated_time": "2026-10-26T19:06:00.297527Z",
-    "volume_24h_fp": "5603.24",
-    "volume_fp": "5603.24",
+    "volume_24h_fp": "5779.98",
+    "volume_fp": "5780.98",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "30.44",
-    "yes_bid_dollars": "0.0100",
-    "yes_bid_size_fp": "8982.00",
+    "yes_ask_size_fp": "1000.00",
+    "yes_bid_dollars": "0.0200",
+    "yes_bid_size_fp": "39.00",
     "yes_sub_title": "Merrimack"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07MRMKWAKE-MRMK",
-  "market_captured_at": "2026-10-27T12:22:05.490Z",
+  "market_captured_at": "2026-10-27T21:05:09.607Z",
   "status": "active",
-  "last_ingested_at": "2026-10-27T12:22:06.122Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07MRMKWAKE-MRMK/candlesticks?start_ts=1793088001&end_ts=1793103725&period_interval=60"
+  "last_ingested_at": "2026-10-27T21:05:10.273Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07MRMKWAKE-MRMK/candlesticks?start_ts=1793095201&end_ts=1793135109&period_interval=60"
 }

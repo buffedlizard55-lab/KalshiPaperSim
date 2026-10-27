@@ -30954,6 +30954,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-27T20:59:33.179Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -31011,10 +31021,10 @@
     "yes_sub_title": "New York"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20PHINYK-NYK",
-  "market_captured_at": "2026-10-27T12:17:17.664Z",
+  "market_captured_at": "2026-10-27T20:59:32.538Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-27T12:17:18.192Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-NYK/candlesticks?start_ts=1792555201&end_ts=1793103437&period_interval=1440",
+  "last_ingested_at": "2026-10-27T20:59:33.119Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20PHINYK-NYK/candlesticks?start_ts=1792555201&end_ts=1793134772&period_interval=1440",
   "result": "no",
   "marketErrors": [
     {

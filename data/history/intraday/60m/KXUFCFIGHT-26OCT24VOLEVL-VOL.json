@@ -5095,6 +5095,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-27T21:05:29.762Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24VOLEVL-VOL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5152,11 +5162,11 @@
     "yes_sub_title": "Alex Volkanovski"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24VOLEVL-VOL",
-  "market_captured_at": "2026-10-27T12:22:23.472Z",
+  "market_captured_at": "2026-10-27T21:05:29.038Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-27T12:22:24.099Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24VOLEVL-VOL/candlesticks?start_ts=1792879201&end_ts=1793103743&period_interval=60",
+  "last_ingested_at": "2026-10-27T21:05:29.702Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24VOLEVL-VOL/candlesticks?start_ts=1792879201&end_ts=1793135129&period_interval=60",
   "trims": [
     {
       "at": "2026-10-25T05:10:44.950Z",
