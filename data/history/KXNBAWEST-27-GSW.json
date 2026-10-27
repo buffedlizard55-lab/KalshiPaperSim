@@ -1543,6 +1543,31 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1793073600,
+      "open_interest_fp": "84851.62",
+      "price": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0200",
+        "mean_dollars": "0.0200",
+        "open_dollars": "0.0200",
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "402.87",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -25941,6 +25966,242 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-27T05:24:09.185Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-GSW/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3892616.50"
+            ],
+            [
+              "0.0200",
+              "3240.00"
+            ],
+            [
+              "0.0300",
+              "3168.00"
+            ],
+            [
+              "0.0600",
+              "907018.00"
+            ],
+            [
+              "0.0700",
+              "10000.00"
+            ],
+            [
+              "0.1100",
+              "509795.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1700",
+              "39912.00"
+            ],
+            [
+              "0.2000",
+              "403046.00"
+            ],
+            [
+              "0.2500",
+              "280.00"
+            ],
+            [
+              "0.2700",
+              "2000.00"
+            ],
+            [
+              "0.2800",
+              "250.00"
+            ],
+            [
+              "0.2900",
+              "384619.00"
+            ],
+            [
+              "0.3100",
+              "225.00"
+            ],
+            [
+              "0.3400",
+              "205.00"
+            ],
+            [
+              "0.3600",
+              "70.70"
+            ],
+            [
+              "0.3700",
+              "1628.87"
+            ],
+            [
+              "0.3800",
+              "157.00"
+            ],
+            [
+              "0.4000",
+              "150.00"
+            ],
+            [
+              "0.4100",
+              "382005.00"
+            ],
+            [
+              "0.4300",
+              "263.85"
+            ],
+            [
+              "0.4500",
+              "51.06"
+            ],
+            [
+              "0.4600",
+              "65.00"
+            ],
+            [
+              "0.4700",
+              "400.00"
+            ],
+            [
+              "0.4900",
+              "102.00"
+            ],
+            [
+              "0.5000",
+              "210453.00"
+            ],
+            [
+              "0.5100",
+              "12690.42"
+            ],
+            [
+              "0.5200",
+              "96.00"
+            ],
+            [
+              "0.5500",
+              "125.13"
+            ],
+            [
+              "0.5600",
+              "59000.00"
+            ],
+            [
+              "0.5700",
+              "111.00"
+            ],
+            [
+              "0.5800",
+              "86.00"
+            ],
+            [
+              "0.6100",
+              "65.00"
+            ],
+            [
+              "0.6200",
+              "98704.00"
+            ],
+            [
+              "0.6300",
+              "4963.00"
+            ],
+            [
+              "0.6400",
+              "62.00"
+            ],
+            [
+              "0.6700",
+              "59.00"
+            ],
+            [
+              "0.7000",
+              "37411.00"
+            ],
+            [
+              "0.7300",
+              "41.00"
+            ],
+            [
+              "0.7400",
+              "28288.00"
+            ],
+            [
+              "0.7500",
+              "300.00"
+            ],
+            [
+              "0.7600",
+              "429.94"
+            ],
+            [
+              "0.7700",
+              "222.64"
+            ],
+            [
+              "0.7900",
+              "37.00"
+            ],
+            [
+              "0.8200",
+              "15235.00"
+            ],
+            [
+              "0.8900",
+              "21.00"
+            ],
+            [
+              "0.9000",
+              "1.00"
+            ],
+            [
+              "0.9100",
+              "1.00"
+            ],
+            [
+              "0.9200",
+              "96.30"
+            ],
+            [
+              "0.9300",
+              "17.80"
+            ],
+            [
+              "0.9400",
+              "7.66"
+            ],
+            [
+              "0.9500",
+              "585.64"
+            ],
+            [
+              "0.9600",
+              "122614.12"
+            ],
+            [
+              "0.9700",
+              "113952.86"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "114996.06"
+            ],
+            [
+              "0.0200",
+              "15.35"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -25956,7 +26217,7 @@
     "expected_expiration_time": "2027-06-30T14:00:00Z",
     "expiration_time": "2029-06-29T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0200",
+    "last_price_dollars": "0.0300",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.9800",
@@ -25964,9 +26225,9 @@
     "no_sub_title": "Golden State",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "84850.62",
+    "open_interest_fp": "86935.76",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.0300",
+    "previous_price_dollars": "0.0200",
     "previous_yes_ask_dollars": "0.0300",
     "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
@@ -25987,19 +26248,19 @@
     "ticker": "KXNBAWEST-27-GSW",
     "title": "Will Golden State win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "538.51",
-    "volume_fp": "115826.76",
+    "volume_24h_fp": "2487.01",
+    "volume_fp": "117911.90",
     "yes_ask_dollars": "0.0300",
-    "yes_ask_size_fp": "112771.30",
+    "yes_ask_size_fp": "113952.86",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "3144.35",
+    "yes_bid_size_fp": "15.35",
     "yes_sub_title": "Golden State"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-GSW",
-  "market_captured_at": "2026-10-26T21:14:03.385Z",
+  "market_captured_at": "2026-10-27T05:24:08.649Z",
   "status": "active",
-  "last_ingested_at": "2026-10-26T21:14:03.951Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-GSW/candlesticks?start_ts=1792987201&end_ts=1793049243&period_interval=1440",
+  "last_ingested_at": "2026-10-27T05:24:09.168Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-GSW/candlesticks?start_ts=1792987201&end_ts=1793078648&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:52:52.403Z",

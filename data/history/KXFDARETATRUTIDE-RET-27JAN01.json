@@ -3720,6 +3720,26 @@
         "low_dollars": "0.0300",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1793073600,
+      "open_interest_fp": "12909.04",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      }
     }
   ],
   "books": [
@@ -35597,6 +35617,230 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-27T05:22:33.787Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-27JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2703.22"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0400",
+              "1500.00"
+            ],
+            [
+              "0.1200",
+              "86.75"
+            ],
+            [
+              "0.1600",
+              "550.00"
+            ],
+            [
+              "0.1700",
+              "84.00"
+            ],
+            [
+              "0.2200",
+              "79.12"
+            ],
+            [
+              "0.2300",
+              "156.06"
+            ],
+            [
+              "0.2500",
+              "18.80"
+            ],
+            [
+              "0.2600",
+              "43.36"
+            ],
+            [
+              "0.2800",
+              "20.62"
+            ],
+            [
+              "0.3100",
+              "21.55"
+            ],
+            [
+              "0.4100",
+              "3095.00"
+            ],
+            [
+              "0.4200",
+              "25.00"
+            ],
+            [
+              "0.4600",
+              "2.78"
+            ],
+            [
+              "0.6400",
+              "1000.00"
+            ],
+            [
+              "0.6500",
+              "74.43"
+            ],
+            [
+              "0.9200",
+              "6260.00"
+            ],
+            [
+              "0.9300",
+              "47.71"
+            ],
+            [
+              "0.9400",
+              "80.38"
+            ],
+            [
+              "0.9500",
+              "703.18"
+            ],
+            [
+              "0.9600",
+              "3865.12"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2050.04"
+            ],
+            [
+              "0.0200",
+              "170.26"
+            ],
+            [
+              "0.0300",
+              "19826.25"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-27T05:35:39.083Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-27JAN01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2703.22"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0400",
+              "1500.00"
+            ],
+            [
+              "0.1200",
+              "86.75"
+            ],
+            [
+              "0.1600",
+              "550.00"
+            ],
+            [
+              "0.1700",
+              "84.00"
+            ],
+            [
+              "0.2200",
+              "79.12"
+            ],
+            [
+              "0.2300",
+              "156.06"
+            ],
+            [
+              "0.2500",
+              "18.80"
+            ],
+            [
+              "0.2600",
+              "43.36"
+            ],
+            [
+              "0.2800",
+              "20.62"
+            ],
+            [
+              "0.3100",
+              "21.55"
+            ],
+            [
+              "0.4100",
+              "3095.00"
+            ],
+            [
+              "0.4200",
+              "25.00"
+            ],
+            [
+              "0.4600",
+              "2.78"
+            ],
+            [
+              "0.6400",
+              "1000.00"
+            ],
+            [
+              "0.6500",
+              "74.43"
+            ],
+            [
+              "0.9200",
+              "6260.00"
+            ],
+            [
+              "0.9300",
+              "47.71"
+            ],
+            [
+              "0.9400",
+              "80.38"
+            ],
+            [
+              "0.9500",
+              "703.18"
+            ],
+            [
+              "0.9600",
+              "3865.12"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2050.04"
+            ],
+            [
+              "0.0200",
+              "170.26"
+            ],
+            [
+              "0.0300",
+              "19826.25"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -35644,19 +35888,19 @@
     "ticker": "KXFDARETATRUTIDE-RET-27JAN01",
     "title": "When will the FDA approve retatrutide (LY3437943)?",
     "updated_time": "2026-07-23T01:11:17.290586Z",
-    "volume_24h_fp": "14.00",
+    "volume_24h_fp": "0.00",
     "volume_fp": "44724.72",
     "yes_ask_dollars": "0.0400",
-    "yes_ask_size_fp": "1435.41",
+    "yes_ask_size_fp": "3865.12",
     "yes_bid_dollars": "0.0300",
-    "yes_bid_size_fp": "31104.39",
+    "yes_bid_size_fp": "19826.25",
     "yes_sub_title": "Before Jan 1, 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDARETATRUTIDE-RET-27JAN01",
-  "market_captured_at": "2026-10-26T21:27:15.725Z",
+  "market_captured_at": "2026-10-27T05:35:38.447Z",
   "status": "active",
-  "last_ingested_at": "2026-10-26T21:27:16.388Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-27JAN01/candlesticks?start_ts=1792987201&end_ts=1793050036&period_interval=1440",
+  "last_ingested_at": "2026-10-27T05:35:39.066Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDARETATRUTIDE/markets/KXFDARETATRUTIDE-RET-27JAN01/candlesticks?start_ts=1793073601&end_ts=1793079338&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:18.413Z",
