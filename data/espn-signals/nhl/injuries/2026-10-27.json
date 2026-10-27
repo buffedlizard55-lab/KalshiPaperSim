@@ -1,0 +1,2642 @@
+{
+ "what": "Point-in-time ESPN injury-report rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-27",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries"
+  ]
+ },
+ "captures": [
+  "2026-10-27T09:04:10.293Z"
+ ],
+ "teams": {
+  "2": {
+   "teamId": "2",
+   "displayName": "Buffalo Sabres",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594118": {
+     "recordId": "594118",
+     "athleteName": "Jack Rathbone",
+     "positionAbbr": "D",
+     "teamId": "2",
+     "teamAbbr": "BUF",
+     "teamName": "Buffalo Sabres",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-28T20:52Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-28T20:52Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "594177": {
+     "recordId": "594177",
+     "athleteName": "Conor Timmins",
+     "positionAbbr": "D",
+     "teamId": "2",
+     "teamAbbr": "BUF",
+     "teamName": "Buffalo Sabres",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T17:28Z|Timmins (lower body) doesn't have a timeline for his return yet, according to Heather Engel of NHL.com on Tuesday.",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T17:28Z",
+       "shortComment": "Timmins (lower body) doesn't have a timeline for his return yet, according to Heather Engel of NHL.com on Tuesday.",
+       "longComment": "After getting hurt in Saturday's preseason finale against Pittsburgh, Timmins is on injured reserve for the beginning of the 2026-27 campaign. He registered eight assists, 44 shots on goal, 81 blocked shots and 29 hits in 39 regular-season appearances with Buffalo in 2025-26."
+      }
+     ]
+    },
+    "595732": {
+     "recordId": "595732",
+     "athleteName": "Matt Grzelcyk",
+     "positionAbbr": "D",
+     "teamId": "2",
+     "teamAbbr": "BUF",
+     "teamName": "Buffalo Sabres",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-13T20:51Z|Grzelcyk (lower body) suffered a \"flare-up\" and could be out for at least \"a few days,\" head coach Lindy Ruff told Rachel Lenzi of The Buffalo News on Tuesday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-13T20:51Z",
+       "shortComment": "Grzelcyk (lower body) suffered a \"flare-up\" and could be out for at least \"a few days,\" head coach Lindy Ruff told Rachel Lenzi of The Buffalo News on Tuesday.",
+       "longComment": "Buffalo placed Grzelcyk on injured reserve Tuesday. He hasn't played since Opening Night against Columbus on Oct. 1. With Rasmus Dahlin (upper body) and Grzelcyk unavailable, the Sabres recalled Dennis Gilbert from AHL Rochester to play against Montreal on Tuesday."
+      }
+     ]
+    },
+    "596015": {
+     "recordId": "596015",
+     "athleteName": "Alex Lyon",
+     "positionAbbr": "G",
+     "teamId": "2",
+     "teamAbbr": "BUF",
+     "teamName": "Buffalo Sabres",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-15T17:59Z|Lyon (upper body) had a setback in his recovery and is without a timeline to return, the team announced Thursday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-15T17:59Z",
+       "shortComment": "Lyon (upper body) had a setback in his recovery and is without a timeline to return, the team announced Thursday.",
+       "longComment": "According to the team, Lyon was originally expected to be in the crease for Tuesday's road clash with Montreal before suffering his setback. Even once given the all-clear, there may not be enough games to go around to make Lyon more than a low-end fantasy target, especially as long as Buffalo continues rostering three goalies."
+      }
+     ]
+    },
+    "596782": {
+     "recordId": "596782",
+     "athleteName": "Sam Carrick",
+     "positionAbbr": "C",
+     "teamId": "2",
+     "teamAbbr": "BUF",
+     "teamName": "Buffalo Sabres",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-21T20:09Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-21T20:09Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "597265": {
+     "recordId": "597265",
+     "athleteName": "Justin Danforth",
+     "positionAbbr": "RW",
+     "teamId": "2",
+     "teamAbbr": "BUF",
+     "teamName": "Buffalo Sabres",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Day-To-Day|2026-10-25T13:09Z|day-to-day",
+       "status": "Day-To-Day",
+       "date": "2026-10-25T13:09Z",
+       "shortComment": "day-to-day",
+       "longComment": "day-to-day"
+      }
+     ]
+    },
+    "597402": {
+     "recordId": "597402",
+     "athleteName": "Jiri Kulich",
+     "positionAbbr": "C",
+     "teamId": "2",
+     "teamAbbr": "BUF",
+     "teamName": "Buffalo Sabres",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-26T19:41Z|Kulich has been placed in concussion protocol, per Rachel Lenzi of The Buffalo News on Monday.",
+       "status": "Out",
+       "date": "2026-10-26T19:41Z",
+       "shortComment": "Kulich has been placed in concussion protocol, per Rachel Lenzi of The Buffalo News on Monday.",
+       "longComment": "Kulich missed Saturday's 4-3 overtime loss to Washington and won't join his teammates for the California portion of Buffalo's road trip. The Sabres visit San Jose on Tuesday, Anaheim on Thursday and Los Angeles on Saturday. It's unclear when Kulich will be available to return to the lineup. He has one goal, two assists, nine shots on net, three blocked shots and seven hits in eight appearances this season."
+      }
+     ]
+    }
+   }
+  },
+  "3": {
+   "teamId": "3",
+   "displayName": "Calgary Flames",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "596562": {
+     "recordId": "596562",
+     "athleteName": "Samuel Honzek",
+     "positionAbbr": "LW",
+     "teamId": "3",
+     "teamAbbr": "CGY",
+     "teamName": "Calgary Flames",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-20T03:51Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-20T03:51Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "597121": {
+     "recordId": "597121",
+     "athleteName": "Jonathan Huberdeau",
+     "positionAbbr": "LW",
+     "teamId": "3",
+     "teamAbbr": "CGY",
+     "teamName": "Calgary Flames",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-24T18:14Z|Huberdeau (hip) skated with his teammates Saturday, but he isn't close to returning, Pat Steinberg of QR Calgary 770 AM reports.",
+       "status": "Injured Reserve",
+       "date": "2026-10-24T18:14Z",
+       "shortComment": "Huberdeau (hip) skated with his teammates Saturday, but he isn't close to returning, Pat Steinberg of QR Calgary 770 AM reports.",
+       "longComment": "Huberdeau is expected to periodically join his teammates for morning skates and practices as part of his return-to-play process. He underwent hip surgery in February and hasn't been in the lineup yet this season."
+      }
+     ]
+    }
+   }
+  },
+  "4": {
+   "teamId": "4",
+   "displayName": "Chicago Blackhawks",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "597361": {
+     "recordId": "597361",
+     "athleteName": "Bowen Byram",
+     "positionAbbr": "D",
+     "teamId": "4",
+     "teamAbbr": "CHI",
+     "teamName": "Chicago Blackhawks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Day-To-Day|2026-10-26T13:11Z|day-to-day",
+       "status": "Day-To-Day",
+       "date": "2026-10-26T13:11Z",
+       "shortComment": "day-to-day",
+       "longComment": "day-to-day"
+      }
+     ]
+    }
+   }
+  },
+  "5": {
+   "teamId": "5",
+   "displayName": "Detroit Red Wings",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594880": {
+     "recordId": "594880",
+     "athleteName": "Marco Kasper",
+     "positionAbbr": "C",
+     "teamId": "5",
+     "teamAbbr": "DET",
+     "teamName": "Detroit Red Wings",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-06T15:39Z|Kasper (upper body) has been given a week-to-week timetable for return.",
+       "status": "Injured Reserve",
+       "date": "2026-10-06T15:39Z",
+       "shortComment": "Kasper (upper body) has been given a week-to-week timetable for return.",
+       "longComment": "Head coach Todd McLellan confirmed that Kasper will miss at least a week after being placed on injured reserve. The 22-year-old center played in Detroit's Opening Night matchup against the Rangers, but wasn't able to suit up against Winnipeg on Sunday. He's coming off a sophomore slump offensively, where he posted nine goals and 19 points across 81 regular-season games in 2025-26. However, Kasper does a lot of work without the puck for the Red Wings, who will hope to have him back on the earlier side of his week-to-week timeline for return. In his absence, Nate Danielson will likely be a regular contributor up the center of the ice."
+      }
+     ]
+    },
+    "594910": {
+     "recordId": "594910",
+     "athleteName": "Mason Appleton",
+     "positionAbbr": "C",
+     "teamId": "5",
+     "teamAbbr": "DET",
+     "teamName": "Detroit Red Wings",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-06T21:08Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-06T21:08Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "595897": {
+     "recordId": "595897",
+     "athleteName": "Simon Edvinsson",
+     "positionAbbr": "D",
+     "teamId": "5",
+     "teamAbbr": "DET",
+     "teamName": "Detroit Red Wings",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-14T15:15Z|Edvinsson (contract dispute) is on the Red Wings' injured, non-roster list, per the NHL media site Wednesday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-14T15:15Z",
+       "shortComment": "Edvinsson (contract dispute) is on the Red Wings' injured, non-roster list, per the NHL media site Wednesday.",
+       "longComment": "Edvinsson is continuing to hold out for a new contract as a restricted free agent, with no clear end in sight. It's possible a trade materializes at some point, though he would still need to agree to terms on a new contract with a different NHL club. Last season, Edvinsson recorded nine goals and 16 assists in 72 regular-season contests."
+      }
+     ]
+    },
+    "597412": {
+     "recordId": "597412",
+     "athleteName": "Daniil Tarasov",
+     "positionAbbr": "G",
+     "teamId": "5",
+     "teamAbbr": "DET",
+     "teamName": "Detroit Red Wings",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-27T01:18Z|out",
+       "status": "Out",
+       "date": "2026-10-27T01:18Z",
+       "shortComment": "out",
+       "longComment": "out"
+      }
+     ]
+    },
+    "597413": {
+     "recordId": "597413",
+     "athleteName": "Albert Johansson",
+     "positionAbbr": "D",
+     "teamId": "5",
+     "teamAbbr": "DET",
+     "teamName": "Detroit Red Wings",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-27T02:01Z|out",
+       "status": "Out",
+       "date": "2026-10-27T02:01Z",
+       "shortComment": "out",
+       "longComment": "out"
+      }
+     ]
+    }
+   }
+  },
+  "6": {
+   "teamId": "6",
+   "displayName": "Edmonton Oilers",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594178": {
+     "recordId": "594178",
+     "athleteName": "Mattias Janmark",
+     "positionAbbr": "C",
+     "teamId": "6",
+     "teamAbbr": "EDM",
+     "teamName": "Edmonton Oilers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T17:52Z|Janmark (undisclosed) does not have a timetable for his return from injury.",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T17:52Z",
+       "shortComment": "Janmark (undisclosed) does not have a timetable for his return from injury.",
+       "longComment": "Janmark underwent an undisclosed procedure earlier in the year, but he's currently shelved until further notice. The 33-year-old winger was limited in 2025-26, where he compiled a goal and eight points across 43 regular-season outings. In his absence, Mathieu Joseph and Max Jones are expected to serve as the team's left wingers in the bottom six to open the 2026-27 campaign."
+      }
+     ]
+    },
+    "594179": {
+     "recordId": "594179",
+     "athleteName": "Frederik Andersen",
+     "positionAbbr": "G",
+     "teamId": "6",
+     "teamAbbr": "EDM",
+     "teamName": "Edmonton Oilers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T17:53Z|Andersen (knee) isn't expected back until \"maybe\" December, head coach Mike Babcock told NHL.com on Tuesday.",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T17:53Z",
+       "shortComment": "Andersen (knee) isn't expected back until \"maybe\" December, head coach Mike Babcock told NHL.com on Tuesday.",
+       "longComment": "Andersen, who signed a one-year, $1 million contract with Edmonton in July, is still rehabbing from a knee injury. He posted a 16-14-5 record with a 3.05 GAA and an .874 save percentage in 35 appearances for Carolina during the 2025-26 regular season. Once he's ready to play in the 2026-27 campaign with the Oilers, Andersen could compete for starts with Tristan Jarry and Devon Levi."
+      },
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T16:22Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T16:22Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "594319": {
+     "recordId": "594319",
+     "athleteName": "Matt Savoie",
+     "positionAbbr": "C",
+     "teamId": "6",
+     "teamAbbr": "EDM",
+     "teamName": "Edmonton Oilers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-01T14:05Z|Savoie (lower body) was shifted to long-term injured reserve Thursday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-01T14:05Z",
+       "shortComment": "Savoie (lower body) was shifted to long-term injured reserve Thursday.",
+       "longComment": "By moving Savoie to LTIR, the Oilers will get some cap relief while he is sidelined, as their injuries have started to pile up. The 22-year-old forward logged all 82 regular-season games in his rookie campaign, generating 18 goals and 19 assists, including seven power-play points. Considering Savoie is expected to miss at least the first two weeks of the season, fantasy managers probably shouldn't be expecting him to significantly outperform those numbers in 2026-27."
+      }
+     ]
+    },
+    "594322": {
+     "recordId": "594322",
+     "athleteName": "Alec Regula",
+     "positionAbbr": "D",
+     "teamId": "6",
+     "teamAbbr": "EDM",
+     "teamName": "Edmonton Oilers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-01T14:11Z|Regula (undisclosed) was designated for long-term injured reserve Thursday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-01T14:11Z",
+       "shortComment": "Regula (undisclosed) was designated for long-term injured reserve Thursday.",
+       "longComment": "Regula continues to work his way back from offseason surgery that caused him to miss the entire preseason. With the shift to LTIR, the 26-year-old defenseman can be expected to miss at least the next nine games, having already been out of action for one, though it could be longer, considering the team hasn't provided a specific update."
+      }
+     ]
+    },
+    "596859": {
+     "recordId": "596859",
+     "athleteName": "Jason Dickinson",
+     "positionAbbr": "C",
+     "teamId": "6",
+     "teamAbbr": "EDM",
+     "teamName": "Edmonton Oilers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-22T21:06Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-22T21:06Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "596899": {
+     "recordId": "596899",
+     "athleteName": "Mattias Ekholm",
+     "positionAbbr": "D",
+     "teamId": "6",
+     "teamAbbr": "EDM",
+     "teamName": "Edmonton Oilers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-23T04:29Z|Ekholm (undisclosed) will miss at least a week after getting injured versus the Hurricanes on Thursday, Jason Gregor of Sports 1440 Edmonton reports.",
+       "status": "Out",
+       "date": "2026-10-23T04:29Z",
+       "shortComment": "Ekholm (undisclosed) will miss at least a week after getting injured versus the Hurricanes on Thursday, Jason Gregor of Sports 1440 Edmonton reports.",
+       "longComment": "Ekholm was hurt on a hit by William Carrier in the third period of Thursday's game. For now, Shakir Mukhamadullin will fill in on the third pairing while Jake Walman will pick up some top-four usage. However, the Oilers' defense has been a little shaky to start the season, so a roster move could still be in order."
+      }
+     ]
+    },
+    "597116": {
+     "recordId": "597116",
+     "athleteName": "Devon Levi",
+     "positionAbbr": "G",
+     "teamId": "6",
+     "teamAbbr": "EDM",
+     "teamName": "Edmonton Oilers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-24T17:37Z|Levi (undisclosed) is expected to miss a few weeks, per Jason Gregor of Sports 1440 Edmonton.",
+       "status": "Injured Reserve",
+       "date": "2026-10-24T17:37Z",
+       "shortComment": "Levi (undisclosed) is expected to miss a few weeks, per Jason Gregor of Sports 1440 Edmonton.",
+       "longComment": "Levi landed on injured reserve Friday after reportedly sustaining an injury during Thursday's 6-5 loss to the Hurricanes. Prior to going down, the 24-year-old netminder posted a 6-1-0 record, a 3.11 GAA and an .887 save percentage across seven appearances. In his absence, Tristan Jarry is poised to serve as the lead netminder. Given Levi's current injury timetable, he is expected to rejoin the Oilers' lineup roughly in mid-November."
+      }
+     ]
+    },
+    "597416": {
+     "recordId": "597416",
+     "athleteName": "Zach Hyman",
+     "positionAbbr": "LW",
+     "teamId": "6",
+     "teamAbbr": "EDM",
+     "teamName": "Edmonton Oilers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Day-To-Day|2026-10-27T06:07Z|day-to-day",
+       "status": "Day-To-Day",
+       "date": "2026-10-27T06:07Z",
+       "shortComment": "day-to-day",
+       "longComment": "day-to-day"
+      }
+     ]
+    }
+   }
+  },
+  "7": {
+   "teamId": "7",
+   "displayName": "Carolina Hurricanes",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "596031": {
+     "recordId": "596031",
+     "athleteName": "Jordan Staal",
+     "positionAbbr": "C",
+     "teamId": "7",
+     "teamAbbr": "CAR",
+     "teamName": "Carolina Hurricanes",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-15T21:54Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-15T21:54Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "597376": {
+     "recordId": "597376",
+     "athleteName": "Alexander Nikishin",
+     "positionAbbr": "D",
+     "teamId": "7",
+     "teamAbbr": "CAR",
+     "teamName": "Carolina Hurricanes",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-26T16:39Z|Nikishin (not injury related) will need some time before he makes his 2026-27 debut, according to Cory Lavalette of the North State Journal on Monday.",
+       "status": "Out",
+       "date": "2026-10-26T16:39Z",
+       "shortComment": "Nikishin (not injury related) will need some time before he makes his 2026-27 debut, according to Cory Lavalette of the North State Journal on Monday.",
+       "longComment": "After agreeing to a one-year, $3 million contract with the Hurricanes on Sunday, Nikishin hasn't joined the team yet. Head coach Rod Brind'Amour told reporters Monday that Nikishin will need a \"mini training camp\" to get up to speed. It's unclear when the 25-year-old Nikishin will be available to play. He registered 11 goals, 33 points, 33 PIM, 132 hits and 94 blocked shots in 81 regular-season appearances with Carolina in 2025-26."
+      }
+     ]
+    },
+    "597378": {
+     "recordId": "597378",
+     "athleteName": "Mark Jankowski",
+     "positionAbbr": "C",
+     "teamId": "7",
+     "teamAbbr": "CAR",
+     "teamName": "Carolina Hurricanes",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-26T16:49Z|Jankowski (lower body) won't play against Boston on Tuesday, per Ryan Henkel of The Hockey News.",
+       "status": "Out",
+       "date": "2026-10-26T16:49Z",
+       "shortComment": "Jankowski (lower body) won't play against Boston on Tuesday, per Ryan Henkel of The Hockey News.",
+       "longComment": "Jankowski will miss his fifth straight game with a lower-body injury, but he is expected to rejoin his teammates for Tuesday's morning skate. He has contributed six goals, one assist, 15 shots on net, six hits and four blocked shots in nine appearances this season."
+      }
+     ]
+    }
+   }
+  },
+  "8": {
+   "teamId": "8",
+   "displayName": "Los Angeles Kings",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "593257": {
+     "recordId": "593257",
+     "athleteName": "Kevin Fiala",
+     "positionAbbr": "LW",
+     "teamId": "8",
+     "teamAbbr": "LA",
+     "teamName": "Los Angeles Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-17T19:39Z|Fiala (lower leg fracture) is at least three weeks away from being ready to play, Zach Dooley of the Kings' official site reports Thursday.",
+       "status": "Injured Reserve",
+       "date": "2026-09-17T19:39Z",
+       "shortComment": "Fiala (lower leg fracture) is at least three weeks away from being ready to play, Zach Dooley of the Kings' official site reports Thursday.",
+       "longComment": "Fiala is slated to begin skating on his own next week, so he is making progress. He hasn't played since suffering the injury during the 2026 Winter Olympics. Fiala is expected to serve in a top-six capacity and will likely also be part of the first power-play unit once he's healthy."
+      }
+     ]
+    },
+    "593687": {
+     "recordId": "593687",
+     "athleteName": "Jan Jenik",
+     "positionAbbr": "C",
+     "teamId": "8",
+     "teamAbbr": "LA",
+     "teamName": "Los Angeles Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-24T19:45Z|Jenik (undisclosed) was placed on non-roster injured reserve by Los Angeles on Thursday, per Zach Dooley of LA Kings Insider.",
+       "status": "Injured Reserve",
+       "date": "2026-09-24T19:45Z",
+       "shortComment": "Jenik (undisclosed) was placed on non-roster injured reserve by Los Angeles on Thursday, per Zach Dooley of LA Kings Insider.",
+       "longComment": "Jenik had nine goals, 17 points and 29 PIM in 43 AHL regular-season outings between Belleville and Ontario in 2025-26. He will probably be sent to the minors once he's recovered from his injury."
+      }
+     ]
+    },
+    "593688": {
+     "recordId": "593688",
+     "athleteName": "Jakub Dvorak",
+     "positionAbbr": "D",
+     "teamId": "8",
+     "teamAbbr": "LA",
+     "teamName": "Los Angeles Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-24T19:49Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-24T19:49Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "595345": {
+     "recordId": "595345",
+     "athleteName": "Alex Turcotte",
+     "positionAbbr": "C",
+     "teamId": "8",
+     "teamAbbr": "LA",
+     "teamName": "Los Angeles Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-10T18:09Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-10T18:09Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "597407": {
+     "recordId": "597407",
+     "athleteName": "Mats Zuccarello",
+     "positionAbbr": "RW",
+     "teamId": "8",
+     "teamAbbr": "LA",
+     "teamName": "Los Angeles Kings",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-26T21:18Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-26T21:18Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    }
+   }
+  },
+  "9": {
+   "teamId": "9",
+   "displayName": "Dallas Stars",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594174": {
+     "recordId": "594174",
+     "athleteName": "Cameron Hughes",
+     "positionAbbr": "C",
+     "teamId": "9",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Stars",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T16:16Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T16:16Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "594177": {
+     "recordId": "594177",
+     "athleteName": "Luke Krys",
+     "positionAbbr": "D",
+     "teamId": "9",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Stars",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T16:18Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T16:18Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "595599": {
+     "recordId": "595599",
+     "athleteName": "Matt Duchene",
+     "positionAbbr": "C",
+     "teamId": "9",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Stars",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-12T16:46Z|Duchene will be out for approximately three months after undergoing surgery to repair a core injury, the team announced Monday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-12T16:46Z",
+       "shortComment": "Duchene will be out for approximately three months after undergoing surgery to repair a core injury, the team announced Monday.",
+       "longComment": "The Stars placed Duchene on long-term injured reserve just before the start of the 2026-27 campaign. It remains unclear when he will return, but his new timeline could keep him out until at least mid-January. Duchene posted 16 goals, 45 points and 89 shots on net in 57 regular-season appearances for Dallas in 2025-26."
+      }
+     ]
+    },
+    "597126": {
+     "recordId": "597126",
+     "athleteName": "Esa Lindell",
+     "positionAbbr": "D",
+     "teamId": "9",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Stars",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-24T18:25Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-24T18:25Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "597129": {
+     "recordId": "597129",
+     "athleteName": "Oskar Back",
+     "positionAbbr": "C",
+     "teamId": "9",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Stars",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-24T18:32Z|Back was placed on long-term injured reserve on Saturday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-24T18:32Z",
+       "shortComment": "Back was placed on long-term injured reserve on Saturday.",
+       "longComment": "Back's shift to long-term injured reserve was done in tandem with Esa Lindell's retroactive placement on IR. The 26-year-old Back sustained his finger injury during the Stars' clash with the Avalanche on Oct. 14. Prior to going down, the center had posted an assist, two PIM, four shots on net, five hits and nine blocked shots over seven outings. In his absence, Colin Blackwell should continue to see a consistent role."
+      }
+     ]
+    },
+    "597358": {
+     "recordId": "597358",
+     "athleteName": "Radek Faksa",
+     "positionAbbr": "C",
+     "teamId": "9",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Stars",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Day-To-Day|2026-10-26T13:11Z|day-to-day",
+       "status": "Day-To-Day",
+       "date": "2026-10-26T13:11Z",
+       "shortComment": "day-to-day",
+       "longComment": "day-to-day"
+      }
+     ]
+    },
+    "597360": {
+     "recordId": "597360",
+     "athleteName": "Sam Steel",
+     "positionAbbr": "C",
+     "teamId": "9",
+     "teamAbbr": "DAL",
+     "teamName": "Dallas Stars",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Day-To-Day|2026-10-26T13:11Z|day-to-day",
+       "status": "Day-To-Day",
+       "date": "2026-10-26T13:11Z",
+       "shortComment": "day-to-day",
+       "longComment": "day-to-day"
+      }
+     ]
+    }
+   }
+  },
+  "10": {
+   "teamId": "10",
+   "displayName": "Montreal Canadiens",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594183": {
+     "recordId": "594183",
+     "athleteName": "Lucas Condotta",
+     "positionAbbr": "LW",
+     "teamId": "10",
+     "teamAbbr": "MTL",
+     "teamName": "Montreal Canadiens",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T16:38Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T16:38Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "594185": {
+     "recordId": "594185",
+     "athleteName": "Bryce Pickford",
+     "positionAbbr": "D",
+     "teamId": "10",
+     "teamAbbr": "MTL",
+     "teamName": "Montreal Canadiens",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T16:39Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T16:39Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "594913": {
+     "recordId": "594913",
+     "athleteName": "Ivan Demidov",
+     "positionAbbr": "RW",
+     "teamId": "10",
+     "teamAbbr": "MTL",
+     "teamName": "Montreal Canadiens",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-06T21:16Z|Demidov (lower body) was placed on injured reserve by the Canadiens on Tuesday, per the NHL media site.",
+       "status": "Injured Reserve",
+       "date": "2026-10-06T21:16Z",
+       "shortComment": "Demidov (lower body) was placed on injured reserve by the Canadiens on Tuesday, per the NHL media site.",
+       "longComment": "Demidov's placement on injured reserve is simply procedural after the Canadiens announced Tuesday that he'll be sidelined for 2-4 weeks due to a lower-body injury. The 20-year-old appeared in all 82 regular-season games for Montreal last year and recorded 19 goals, 43 assists, 34 PIM, 28 hits and 26 blocked shots while averaging 15:30 of ice time."
+      }
+     ]
+    },
+    "595358": {
+     "recordId": "595358",
+     "athleteName": "Sam Montembeault",
+     "positionAbbr": "G",
+     "teamId": "10",
+     "teamAbbr": "MTL",
+     "teamName": "Montreal Canadiens",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-10T21:20Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-10T21:20Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "596822": {
+     "recordId": "596822",
+     "athleteName": "Nick Suzuki",
+     "positionAbbr": "C",
+     "teamId": "10",
+     "teamAbbr": "MTL",
+     "teamName": "Montreal Canadiens",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-22T15:30Z|out",
+       "status": "Out",
+       "date": "2026-10-22T15:30Z",
+       "shortComment": "out",
+       "longComment": "out"
+      }
+     ]
+    }
+   }
+  },
+  "11": {
+   "teamId": "11",
+   "displayName": "New Jersey Devils",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594455": {
+     "recordId": "594455",
+     "athleteName": "Seamus Casey",
+     "positionAbbr": "D",
+     "teamId": "11",
+     "teamAbbr": "NJ",
+     "teamName": "New Jersey Devils",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-02T17:31Z|Casey will be out of action for 6-8 weeks after undergoing a knee procedure, Kristy Flannery of The Hockey News reports Friday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-02T17:31Z",
+       "shortComment": "Casey will be out of action for 6-8 weeks after undergoing a knee procedure, Kristy Flannery of The Hockey News reports Friday.",
+       "longComment": "Casey figures to miss at least 19 more games if he is on the short end of his recovery timeline. While it's certainly a blow that will stretch the Devils' defensive depth, Casey would likely have served as a healthy scratch more often than not. Once given the all-clear, the 22-year-old Florida native could be headed to the minors in order to get his legs back under him."
+      }
+     ]
+    },
+    "597375": {
+     "recordId": "597375",
+     "athleteName": "Connor Hellebuyck",
+     "positionAbbr": "G",
+     "teamId": "11",
+     "teamAbbr": "NJ",
+     "teamName": "New Jersey Devils",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-26T16:36Z|Head coach Sheldon Keefe said Monday that Hellebuyck (not injury related) intends to play during the Devils' upcoming three-game road trip, Amanda Stein of the Devils' official site reports.",
+       "status": "Out",
+       "date": "2026-10-26T16:36Z",
+       "shortComment": "Head coach Sheldon Keefe said Monday that Hellebuyck (not injury related) intends to play during the Devils' upcoming three-game road trip, Amanda Stein of the Devils' official site reports.",
+       "longComment": "While Hellebuyck appears to be close to making his team debut, Keefe said that there are \"several boxes they'll need to tick\" before the Devils officially give the green light to their new netminder. If Hellebuyck is held out during New Jersey's back-to-back set that includes a game against Dallas on Tuesday and a matchup against Colorado on Wednesday, Jake Allen and Remi Poirier would likely handle goaltending duties for the Devils."
+      }
+     ]
+    }
+   }
+  },
+  "12": {
+   "teamId": "12",
+   "displayName": "New York Islanders",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "596007": {
+     "recordId": "596007",
+     "athleteName": "Mathew Barzal",
+     "positionAbbr": "C",
+     "teamId": "12",
+     "teamAbbr": "NYI",
+     "teamName": "New York Islanders",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-15T16:57Z|Barzal (knee) will not join the Islanders for their two-game road trip, Andrew Gross of Newsday reports Thursday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-15T16:57Z",
+       "shortComment": "Barzal (knee) will not join the Islanders for their two-game road trip, Andrew Gross of Newsday reports Thursday.",
+       "longComment": "Barzal racked up 72 points in 81 regular-season games last year, including 20 power-play points and four game-winning goals. At this point, the team hasn't offered any specific recovery timeline for the 29-year-old center. Whenever Barzal returns, it should be in a top-six role that includes time with the man advantage."
+      }
+     ]
+    },
+    "596510": {
+     "recordId": "596510",
+     "athleteName": "Alexander Romanov",
+     "positionAbbr": "D",
+     "teamId": "12",
+     "teamAbbr": "NYI",
+     "teamName": "New York Islanders",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-19T13:56Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-19T13:56Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "597383": {
+     "recordId": "597383",
+     "athleteName": "Calum Ritchie",
+     "positionAbbr": "C",
+     "teamId": "12",
+     "teamAbbr": "NYI",
+     "teamName": "New York Islanders",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-26T17:28Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-26T17:28Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "597384": {
+     "recordId": "597384",
+     "athleteName": "Matias Maccelli",
+     "positionAbbr": "LW",
+     "teamId": "12",
+     "teamAbbr": "NYI",
+     "teamName": "New York Islanders",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-26T17:31Z|Maccelli (lower body) was placed on injured reserve Monday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-26T17:31Z",
+       "shortComment": "Maccelli (lower body) was placed on injured reserve Monday.",
+       "longComment": "After suffering a lower-body injury against Toronto on Oct. 17, Maccelli has sat out the last three games. He was expected to miss 2-4 weeks, so his move to the IR list won't impact his timeline. Maccelli has earned two goals, six points and 13 shots on net in eight appearances this season."
+      }
+     ]
+    }
+   }
+  },
+  "13": {
+   "teamId": "13",
+   "displayName": "New York Rangers",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594156": {
+     "recordId": "594156",
+     "athleteName": "Adam Sykora",
+     "positionAbbr": "LW",
+     "teamId": "13",
+     "teamAbbr": "NYR",
+     "teamName": "New York Rangers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T01:35Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T01:35Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "594184": {
+     "recordId": "594184",
+     "athleteName": "Aidan Thompson",
+     "positionAbbr": "C",
+     "teamId": "13",
+     "teamAbbr": "NYR",
+     "teamName": "New York Rangers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T16:39Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T16:39Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "595329": {
+     "recordId": "595329",
+     "athleteName": "Joonas Korpisalo",
+     "positionAbbr": "G",
+     "teamId": "13",
+     "teamAbbr": "NYR",
+     "teamName": "New York Rangers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-10T17:11Z|Korpisalo (lower body) will miss at least four more weeks, per Elliotte Friedman of Sportsnet on Saturday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-10T17:11Z",
+       "shortComment": "Korpisalo (lower body) will miss at least four more weeks, per Elliotte Friedman of Sportsnet on Saturday.",
+       "longComment": "Korpisalo has already missed the first six games of the season and remains on injured reserve. The Rangers announced Saturday that Igor Shesterkin (lower body) will miss the remainder of the 2026-27 campaign. With Korpisalo and Shesterkin unavailable, Dylan Garand is currently the Rangers' No. 1 goaltender."
+      }
+     ]
+    },
+    "595332": {
+     "recordId": "595332",
+     "athleteName": "Joe Veleno",
+     "positionAbbr": "C",
+     "teamId": "13",
+     "teamAbbr": "NYR",
+     "teamName": "New York Rangers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-10T17:18Z|Veleno (lower body) was placed on long-term injured reserve Saturday, Vince Z. Mercogliano of The Athletic reports.",
+       "status": "Injured Reserve",
+       "date": "2026-10-10T17:18Z",
+       "shortComment": "Veleno (lower body) was placed on long-term injured reserve Saturday, Vince Z. Mercogliano of The Athletic reports.",
+       "longComment": "Veleno has already missed the last two games, and he is slated to miss at least three more months. He hasn't earned a point in four appearances this season, but he has contributed two shots on goal, five blocked shots and seven hits."
+      }
+     ]
+    },
+    "595531": {
+     "recordId": "595531",
+     "athleteName": "Igor Shesterkin",
+     "positionAbbr": "G",
+     "teamId": "13",
+     "teamAbbr": "NYR",
+     "teamName": "New York Rangers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-11T21:06Z|Shesterkin will require surgery and a lengthy rehab process to address his season-ending right knee injury, Vince Z. Mercogliano of The Athletic reports Sunday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-11T21:06Z",
+       "shortComment": "Shesterkin will require surgery and a lengthy rehab process to address his season-ending right knee injury, Vince Z. Mercogliano of The Athletic reports Sunday.",
+       "longComment": "Shesterkin was hurt during Friday's game against the Capitals when his right leg got jammed into the post while returning to the crease on a scrambled play, and the Rangers ruled him out for the season a day later. He was placed on injured reserve Sunday, and the team has now provided some clarification on the exact nature of his injury. Dylan Garand is slated to serve as the Rangers' No. 1 option in the crease until Joonas Korpisalo (lower body) is back in action."
+      }
+     ]
+    }
+   }
+  },
+  "14": {
+   "teamId": "14",
+   "displayName": "Ottawa Senators",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "595985": {
+     "recordId": "595985",
+     "athleteName": "William Eklund",
+     "positionAbbr": "LW",
+     "teamId": "14",
+     "teamAbbr": "OTT",
+     "teamName": "Ottawa Senators",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-15T15:24Z|Eklund had surgery to repair a torn ankle tendon and will be out 10-12 weeks, Bruce Garrioch of Postmedia reports Thursday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-15T15:24Z",
+       "shortComment": "Eklund had surgery to repair a torn ankle tendon and will be out 10-12 weeks, Bruce Garrioch of Postmedia reports Thursday.",
+       "longComment": "Eklund's timeline would seem to indicate that he will be out of action until the calendar flips to 2027, though it's possible he makes a late-December return if on the early side of his timeline. While the 24-year-old winger is already on injured reserve, he could be a candidate for long-term injured reserve if the Senators need the cap space to make a move."
+      }
+     ]
+    },
+    "596858": {
+     "recordId": "596858",
+     "athleteName": "Linus Ullmark",
+     "positionAbbr": "G",
+     "teamId": "14",
+     "teamAbbr": "OTT",
+     "teamName": "Ottawa Senators",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-22T21:03Z|Ullmark (lower body) is expected to miss the next 1-2 weeks, Claire Hanna of TSN reports Thursday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-22T21:03Z",
+       "shortComment": "Ullmark (lower body) is expected to miss the next 1-2 weeks, Claire Hanna of TSN reports Thursday.",
+       "longComment": "Ullmark was placed on injured reserve after suffering the injury during Wednesday's game against Florida, so we already knew that he'd miss at least a week, and it seems he's not expected to miss much more than that. The 33-year-old has a 7-1-0 record, 1.33 GAA and .945 save percentage in eight appearances this campaign. Jonas Johansson has been called up from the minors, and he's set to be Samuel Ersson's understudy for Thursday's home game against San Jose."
+      }
+     ]
+    },
+    "597415": {
+     "recordId": "597415",
+     "athleteName": "Thomas Chabot",
+     "positionAbbr": "D",
+     "teamId": "14",
+     "teamAbbr": "OTT",
+     "teamName": "Ottawa Senators",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-27T03:28Z|Chabot (upper body) was a full participant in Monday's practice in Vegas and is nearing a return to the lineup, according to Bruce Garrioch of Postmedia.",
+       "status": "Out",
+       "date": "2026-10-27T03:28Z",
+       "shortComment": "Chabot (upper body) was a full participant in Monday's practice in Vegas and is nearing a return to the lineup, according to Bruce Garrioch of Postmedia.",
+       "longComment": "While Chabot was a full participant in Monday's practice, Garrioch noted that the 29-year-old skated on an extra defensive pairing, so a decision on his availability for Tuesday's game against the Golden Knights won't be made until after the morning skate. Regarding Chabot's outlook going forward, head coach Travis Green said, \"I'm not sure if he's going to go tomorrow, but he's definitely close to playing. We'll see.\" If he ends up sitting out Tuesday, Chabot's next opportunity to return to the lineup will be in Los Angeles on Thursday."
+      }
+     ]
+    }
+   }
+  },
+  "15": {
+   "teamId": "15",
+   "displayName": "Philadelphia Flyers",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "595327": {
+     "recordId": "595327",
+     "athleteName": "Nikita Grebenkin",
+     "positionAbbr": "RW",
+     "teamId": "15",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia Flyers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-10T16:58Z|Grebenkin (back) underwent successful surgery and is expected to miss at least four months.",
+       "status": "Injured Reserve",
+       "date": "2026-10-10T16:58Z",
+       "shortComment": "Grebenkin (back) underwent successful surgery and is expected to miss at least four months.",
+       "longComment": "Grebenkin's upper-body injury has been revealed to be an issue with his back, which he has successfully had repaired. The 23-year-old winger is expected to miss the majority of the 2026-27 campaign, but his current timeline for return, barring any setbacks, projects him back sometime after the All-Star break in mid-February. When he does return, Grebenkin will look to build off a positive rookie campaign, where he compiled four goals, 14 points, 32 shots on net, 86 hits and 17 blocked shots across 55 regular-season outings in 2025-26."
+      }
+     ]
+    },
+    "595520": {
+     "recordId": "595520",
+     "athleteName": "Travis Konecny",
+     "positionAbbr": "RW",
+     "teamId": "15",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia Flyers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-11T18:01Z|Konecny (lower body) was placed on injured reserve Sunday, according to the NHL media site.",
+       "status": "Injured Reserve",
+       "date": "2026-10-11T18:01Z",
+       "shortComment": "Konecny (lower body) was placed on injured reserve Sunday, according to the NHL media site.",
+       "longComment": "Konecny sat out Saturday's 5-1 loss to Boston and will miss additional time after moving to the IR list. It's unclear when he will be ready to return to the lineup, but he won't be an option for at least the next three games, starting with Sunday's matchup against Carolina."
+      }
+     ]
+    },
+    "596548": {
+     "recordId": "596548",
+     "athleteName": "Owen Tippett",
+     "positionAbbr": "RW",
+     "teamId": "15",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia Flyers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-19T17:54Z|Tippett (upper body) was placed on injured reserve Monday, per the NHL media site.",
+       "status": "Injured Reserve",
+       "date": "2026-10-19T17:54Z",
+       "shortComment": "Tippett (upper body) was placed on injured reserve Monday, per the NHL media site.",
+       "longComment": "Tippett will miss his second straight game against Colorado on Monday due to an upper-body injury, and he won't be eligible to play against Buffalo on Wednesday. However, it's unclear when he will be available to return. Tippett has contributed one goal, two points, 21 shots on net and 23 hits in nine appearances this season."
+      }
+     ]
+    },
+    "597018": {
+     "recordId": "597018",
+     "athleteName": "Cam York",
+     "positionAbbr": "D",
+     "teamId": "15",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia Flyers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-23T17:24Z|Head coach Rick Tocchet said Friday that he isn't sure whether York (upper body) will be able to suit up Saturday against the Ducks, Jordan Hall of NBC Sports Philadelphia reports.",
+       "status": "Injured Reserve",
+       "date": "2026-10-23T17:24Z",
+       "shortComment": "Head coach Rick Tocchet said Friday that he isn't sure whether York (upper body) will be able to suit up Saturday against the Ducks, Jordan Hall of NBC Sports Philadelphia reports.",
+       "longComment": "York participated in Friday's practice session, and while it's not yet clear whether he'll be available to return to game action a day later, he seems to be trending in the right direction. A better idea of his status for Saturday's matchup could come into focus based on his participation in the Flyers' morning skate, but if York is held out against Anaheim, his next opportunity to return would be Tuesday against the Blue Jackets."
+      }
+     ]
+    },
+    "597377": {
+     "recordId": "597377",
+     "athleteName": "Rasmus Ristolainen",
+     "positionAbbr": "D",
+     "teamId": "15",
+     "teamAbbr": "PHI",
+     "teamName": "Philadelphia Flyers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-26T16:48Z|The Flyers announced Monday that Ristolainen is expected to miss approximately two weeks due to an upper-body injury.",
+       "status": "Out",
+       "date": "2026-10-26T16:48Z",
+       "shortComment": "The Flyers announced Monday that Ristolainen is expected to miss approximately two weeks due to an upper-body injury.",
+       "longComment": "Ristolainen returned to game action Saturday against the Ducks following a nine-game absence due to an upper-body injury, but he's now facing another multi-week absence. He'll likely be in the mix to return at some point in early-to-mid November, but the Flyers' blue line could get a boost soon since Cam York (upper body) has been practicing recently and appears to be trending toward a return."
+      }
+     ]
+    }
+   }
+  },
+  "16": {
+   "teamId": "16",
+   "displayName": "Pittsburgh Penguins",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "593985": {
+     "recordId": "593985",
+     "athleteName": "Ryan Graves",
+     "positionAbbr": "D",
+     "teamId": "16",
+     "teamAbbr": "PIT",
+     "teamName": "Pittsburgh Penguins",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-27T15:21Z|Graves (lower body) is out indefinitely and was placed on injured reserve Sunday.",
+       "status": "Injured Reserve",
+       "date": "2026-09-27T15:21Z",
+       "shortComment": "Graves (lower body) is out indefinitely and was placed on injured reserve Sunday.",
+       "longComment": "Graves will miss the beginning of the 2026-27 campaign, and it's unclear when he will be ready to return. He contributed one goal, 21 shots on net, 38 blocked shots and 23 hits in 22 regular-season appearances for Pittsburgh in 2025-26."
+      }
+     ]
+    },
+    "593986": {
+     "recordId": "593986",
+     "athleteName": "Justin Brazeau",
+     "positionAbbr": "RW",
+     "teamId": "16",
+     "teamAbbr": "PIT",
+     "teamName": "Pittsburgh Penguins",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-27T15:26Z|Brazeau (lower body) was placed on injured reserve by the Penguins on Sunday.",
+       "status": "Injured Reserve",
+       "date": "2026-09-27T15:26Z",
+       "shortComment": "Brazeau (lower body) was placed on injured reserve by the Penguins on Sunday.",
+       "longComment": "Brazeau is currently considered week-to-week while recovering from the lower-body injury he sustained in the preseason. The 28-year-old winger is coming off a career year, where he posted 17 goals, 34 points, 104 shots on net, 90 hits and 44 blocked shots across 64 regular-season outings. When he recovers, he'll likely factor into the Penguins' bottom six on a somewhat regular basis."
+      }
+     ]
+    },
+    "595604": {
+     "recordId": "595604",
+     "athleteName": "Trevor van Riemsdyk",
+     "positionAbbr": "D",
+     "teamId": "16",
+     "teamAbbr": "PIT",
+     "teamName": "Pittsburgh Penguins",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-12T17:51Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-12T17:51Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "596810": {
+     "recordId": "596810",
+     "athleteName": "Ben Kindel",
+     "positionAbbr": "C",
+     "teamId": "16",
+     "teamAbbr": "PIT",
+     "teamName": "Pittsburgh Penguins",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-22T13:59Z|Kindel (undisclosed) was placed on injured reserve Thursday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-22T13:59Z",
+       "shortComment": "Kindel (undisclosed) was placed on injured reserve Thursday.",
+       "longComment": "Kindel's status hasn't been updated by the team, so it shouldn't come as a surprise to see him shifted to injured reserve. While he won't be an option for the Penguins' next two games as a result, it could certainly be longer as the club awaits more information regarding his health."
+      }
+     ]
+    },
+    "596825": {
+     "recordId": "596825",
+     "athleteName": "Bryan Rust",
+     "positionAbbr": "RW",
+     "teamId": "16",
+     "teamAbbr": "PIT",
+     "teamName": "Pittsburgh Penguins",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-22T15:54Z|Rust (lower body) will be re-evaluated in six weeks, Michelle Crechiolo of the Penguins' official site reports Thursday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-22T15:54Z",
+       "shortComment": "Rust (lower body) will be re-evaluated in six weeks, Michelle Crechiolo of the Penguins' official site reports Thursday.",
+       "longComment": "Rust has offered decent offensive production through seven games this year, registering three goals, two assists and nine shots. With the 34year-old winger facing an extended absence, the team has already placed him on injured reserve and could still move him to LTIR in the coming days. For now, Thomas Novak will get first crack at playing on the top line with Sidney Crosby, though his hold on Rust's spot should be considered tenuous at best."
+      }
+     ]
+    },
+    "597088": {
+     "recordId": "597088",
+     "athleteName": "Samuel Girard",
+     "positionAbbr": "D",
+     "teamId": "16",
+     "teamAbbr": "PIT",
+     "teamName": "Pittsburgh Penguins",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-24T14:04Z|Girard (undisclosed) was placed on injured reserve Saturday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-24T14:04Z",
+       "shortComment": "Girard (undisclosed) was placed on injured reserve Saturday.",
+       "longComment": "Girard has missed the last two games with an injury and will be unavailable for Saturday's matchup against Nashville. It's unclear when he will be ready to return to the lineup.  In a corresponding move, Pittsburgh recalled Avery Hayes from AHL Wilkes-Barre/Scranton on Saturday."
+      }
+     ]
+    },
+    "597257": {
+     "recordId": "597257",
+     "athleteName": "Evgeni Malkin",
+     "positionAbbr": "C",
+     "teamId": "16",
+     "teamAbbr": "PIT",
+     "teamName": "Pittsburgh Penguins",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Day-To-Day|2026-10-25T13:09Z|day-to-day",
+       "status": "Day-To-Day",
+       "date": "2026-10-25T13:09Z",
+       "shortComment": "day-to-day",
+       "longComment": "day-to-day"
+      }
+     ]
+    },
+    "597264": {
+     "recordId": "597264",
+     "athleteName": "Egor Chinakhov",
+     "positionAbbr": "RW",
+     "teamId": "16",
+     "teamAbbr": "PIT",
+     "teamName": "Pittsburgh Penguins",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Day-To-Day|2026-10-25T13:09Z|day-to-day",
+       "status": "Day-To-Day",
+       "date": "2026-10-25T13:09Z",
+       "shortComment": "day-to-day",
+       "longComment": "day-to-day"
+      }
+     ]
+    }
+   }
+  },
+  "17": {
+   "teamId": "17",
+   "displayName": "Colorado Avalanche",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "597046": {
+     "recordId": "597046",
+     "athleteName": "Zachary L'Heureux",
+     "positionAbbr": "LW",
+     "teamId": "17",
+     "teamAbbr": "COL",
+     "teamName": "Colorado Avalanche",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-23T21:39Z|ir-lt",
+       "status": "Injured Reserve",
+       "date": "2026-10-23T21:39Z",
+       "shortComment": "ir-lt",
+       "longComment": "ir-lt"
+      }
+     ]
+    },
+    "597359": {
+     "recordId": "597359",
+     "athleteName": "Nicolas Roy",
+     "positionAbbr": "C",
+     "teamId": "17",
+     "teamAbbr": "COL",
+     "teamName": "Colorado Avalanche",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Day-To-Day|2026-10-26T13:11Z|day-to-day",
+       "status": "Day-To-Day",
+       "date": "2026-10-26T13:11Z",
+       "shortComment": "day-to-day",
+       "longComment": "day-to-day"
+      }
+     ]
+    }
+   }
+  },
+  "18": {
+   "teamId": "18",
+   "displayName": "San Jose Sharks",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594142": {
+     "recordId": "594142",
+     "athleteName": "Kyle Keyser",
+     "positionAbbr": "G",
+     "teamId": "18",
+     "teamAbbr": "SJ",
+     "teamName": "San Jose Sharks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-28T22:10Z|Keyser (upper body) was placed on non-roster injured reserve by the Sharks on Monday, Curtis Pashelka of The San Jose Mercury News reports.",
+       "status": "Injured Reserve",
+       "date": "2026-09-28T22:10Z",
+       "shortComment": "Keyser (upper body) was placed on non-roster injured reserve by the Sharks on Monday, Curtis Pashelka of The San Jose Mercury News reports.",
+       "longComment": "The Sharks announced in mid-September that Keyser was facing a long-term absence due to an upper-body injury, so his placement on non-roster injured reserve isn't particularly surprising. Once he's cleared to return, the 27-year-old will likely report to AHL San Jose."
+      }
+     ]
+    },
+    "594145": {
+     "recordId": "594145",
+     "athleteName": "Quentin Musty",
+     "positionAbbr": "LW",
+     "teamId": "18",
+     "teamAbbr": "SJ",
+     "teamName": "San Jose Sharks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-28T22:20Z|Musty (upper body) was put on non-roster injured reserve Monday, according to Curtis Pashelka of The San Jose Mercury News.",
+       "status": "Injured Reserve",
+       "date": "2026-09-28T22:20Z",
+       "shortComment": "Musty (upper body) was put on non-roster injured reserve Monday, according to Curtis Pashelka of The San Jose Mercury News.",
+       "longComment": "It was relayed Sept. 17 that Musty will be out long term due to his upper-body injury, so his placement on IR-NR doesn't come as a surprise. The 21-year-old had a relatively solid first full season with AHL San Jose in 2025-26, accounting for 21 goals, 45 points and a minus-14 rating over 61 regular-season games. The left-shot winger will likely continue his development with the Barracuda once he moves past his injury."
+      }
+     ]
+    },
+    "596831": {
+     "recordId": "596831",
+     "athleteName": "Alexander Wennberg",
+     "positionAbbr": "C",
+     "teamId": "18",
+     "teamAbbr": "SJ",
+     "teamName": "San Jose Sharks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-22T16:26Z|out",
+       "status": "Out",
+       "date": "2026-10-22T16:26Z",
+       "shortComment": "out",
+       "longComment": "out"
+      }
+     ]
+    },
+    "597110": {
+     "recordId": "597110",
+     "athleteName": "Igor Chernyshov",
+     "positionAbbr": "LW",
+     "teamId": "18",
+     "teamAbbr": "SJ",
+     "teamName": "San Jose Sharks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-24T16:32Z|Chernyshov (upper body) is week-to-week, per Sheng Peng of San Jose Hockey Now on Saturday.",
+       "status": "Out",
+       "date": "2026-10-24T16:32Z",
+       "shortComment": "Chernyshov (upper body) is week-to-week, per Sheng Peng of San Jose Hockey Now on Saturday.",
+       "longComment": "Chernyshov suffered an injury in Thursday's 6-2 win over Ottawa, and he is facing an extended absence. He has earned two goals, four points, 12 shots on net, seven blocked shots and six hits in 11 appearances this season. With Chernyshov unavailable, Collin Graf is projected to skate on the top line against Boston on Saturday."
+      }
+     ]
+    }
+   }
+  },
+  "19": {
+   "teamId": "19",
+   "displayName": "St. Louis Blues",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594084": {
+     "recordId": "594084",
+     "athleteName": "Logan Mailloux",
+     "positionAbbr": "D",
+     "teamId": "19",
+     "teamAbbr": "STL",
+     "teamName": "St. Louis Blues",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-28T15:40Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-09-28T15:40Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "594281": {
+     "recordId": "594281",
+     "athleteName": "Tyler Tucker",
+     "positionAbbr": "D",
+     "teamId": "19",
+     "teamAbbr": "STL",
+     "teamName": "St. Louis Blues",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-30T19:39Z|Tucker had arthroscopic knee surgery and will be re-assessed in six weeks, the team announced Wednesday.",
+       "status": "Injured Reserve",
+       "date": "2026-09-30T19:39Z",
+       "shortComment": "Tucker had arthroscopic knee surgery and will be re-assessed in six weeks, the team announced Wednesday.",
+       "longComment": "Based on Tucker's timeline, he shouldn't be expected back until mid-November, though it could certainly be longer. With Logan Mailloux (hand) also sidelined long-term, Adam Jiricek could see an extended run on the blue line. For his part, even once cleared to play, Tucker is unlikely to offer much in the way of fantasy value given his limited offensive upside."
+      }
+     ]
+    },
+    "594832": {
+     "recordId": "594832",
+     "athleteName": "Alexey Toropchenko",
+     "positionAbbr": "RW",
+     "teamId": "19",
+     "teamAbbr": "STL",
+     "teamName": "St. Louis Blues",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-05T21:20Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-05T21:20Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "595356": {
+     "recordId": "595356",
+     "athleteName": "Dillon Dube",
+     "positionAbbr": "C",
+     "teamId": "19",
+     "teamAbbr": "STL",
+     "teamName": "St. Louis Blues",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-10T21:13Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-10T21:13Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "595648": {
+     "recordId": "595648",
+     "athleteName": "Torey Krug",
+     "positionAbbr": "D",
+     "teamId": "19",
+     "teamAbbr": "STL",
+     "teamName": "St. Louis Blues",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-13T01:42Z|Krug (ankle) was placed on long-term injured reserve by the Blues on Monday, per PuckPedia.",
+       "status": "Injured Reserve",
+       "date": "2026-10-13T01:42Z",
+       "shortComment": "Krug (ankle) was placed on long-term injured reserve by the Blues on Monday, per PuckPedia.",
+       "longComment": "Krug's move to long-term injured reserve was partially a financial decision, as it allows the Blues to exceed the salary cap by $4 million. The 35-year-old blueliner hasn't played since the 2023-24 campaign, but he hasn't officially ruled out a return. Regardless of when he decides to hang up his skates, the 13-year NHL veteran will be remembered as an excellent two-way player, as he currently sits at 483 points, 621 hits and 832 blocked shots across 778 regular-season outings."
+      }
+     ]
+    },
+    "596489": {
+     "recordId": "596489",
+     "athleteName": "Ross Johnston",
+     "positionAbbr": "LW",
+     "teamId": "19",
+     "teamAbbr": "STL",
+     "teamName": "St. Louis Blues",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-19T02:33Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-19T02:33Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    }
+   }
+  },
+  "20": {
+   "teamId": "20",
+   "displayName": "Tampa Bay Lightning",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594107": {
+     "recordId": "594107",
+     "athleteName": "Yanni Gourde",
+     "positionAbbr": "C",
+     "teamId": "20",
+     "teamAbbr": "TB",
+     "teamName": "Tampa Bay Lightning",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-28T19:18Z|Gourde (hip) was placed on the injured non-roster list Monday.",
+       "status": "Injured Reserve",
+       "date": "2026-09-28T19:18Z",
+       "shortComment": "Gourde (hip) was placed on the injured non-roster list Monday.",
+       "longComment": "Gourde won't be available to play until at least December after having offseason hip surgery. He contributed 19 assists, 28 points, 114 shots on net, 115 hits and 66 PIM in 82 regular-season games with Tampa Bay in 2025-26."
+      }
+     ]
+    },
+    "597208": {
+     "recordId": "597208",
+     "athleteName": "Zemgus Girgensons",
+     "positionAbbr": "C",
+     "teamId": "20",
+     "teamAbbr": "TB",
+     "teamName": "Tampa Bay Lightning",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Day-To-Day|2026-10-25T05:10Z|day-to-day",
+       "status": "Day-To-Day",
+       "date": "2026-10-25T05:10Z",
+       "shortComment": "day-to-day",
+       "longComment": "day-to-day"
+      }
+     ]
+    },
+    "597259": {
+     "recordId": "597259",
+     "athleteName": "Victor Hedman",
+     "positionAbbr": "D",
+     "teamId": "20",
+     "teamAbbr": "TB",
+     "teamName": "Tampa Bay Lightning",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Day-To-Day|2026-10-25T13:09Z|day-to-day",
+       "status": "Day-To-Day",
+       "date": "2026-10-25T13:09Z",
+       "shortComment": "day-to-day",
+       "longComment": "day-to-day"
+      }
+     ]
+    }
+   }
+  },
+  "21": {
+   "teamId": "21",
+   "displayName": "Toronto Maple Leafs",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594162": {
+     "recordId": "594162",
+     "athleteName": "Elvis Merzlikins",
+     "positionAbbr": "G",
+     "teamId": "21",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Maple Leafs",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T14:24Z|Merzlikins is expected to miss 4-6 months to begin the 2026-27 regular season while recovering from a shoulder injury, per Luke Fox of Sportsnet.",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T14:24Z",
+       "shortComment": "Merzlikins is expected to miss 4-6 months to begin the 2026-27 regular season while recovering from a shoulder injury, per Luke Fox of Sportsnet.",
+       "longComment": "Less than 24 hours after Merzlikins was traded to the Maple Leafs, a timetable for his return to action has been provided. The 32-year-old backstop had an up and down season in 2025-26, where he posted a 14-11-3 record, a 3.39 GAA and an .883 save percentage across 30 regular-season outings. He won't be rushed into action, as the Leafs new goaltender tandem of Sergei Bobrovsky and Anthony Stolarz are still expected to handle the majority of reps between the pipes this upcoming season. However, when Merzlikins is ready to return, he's the clear No. 3 option in Toronto's organization and could still see some playing time at the NHL level if he isn't sent down to AHL Toronto."
+      }
+     ]
+    },
+    "594164": {
+     "recordId": "594164",
+     "athleteName": "William Villeneuve",
+     "positionAbbr": "D",
+     "teamId": "21",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Maple Leafs",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T04:30Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T04:30Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "594166": {
+     "recordId": "594166",
+     "athleteName": "Cade Webber",
+     "positionAbbr": "D",
+     "teamId": "21",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Maple Leafs",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T14:55Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T14:55Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "594278": {
+     "recordId": "594278",
+     "athleteName": "Max Domi",
+     "positionAbbr": "C",
+     "teamId": "21",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Maple Leafs",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-30T18:51Z|Domi (back) was transferred from the non-roster list to long-term injured reserve Wednesday, per PuckPedia.",
+       "status": "Injured Reserve",
+       "date": "2026-09-30T18:51Z",
+       "shortComment": "Domi (back) was transferred from the non-roster list to long-term injured reserve Wednesday, per PuckPedia.",
+       "longComment": "There's no timetable for Domi's return after he had complications while undergoing surgery over the summer. The 31-year-old had 12 goals, 36 points and 95 PIM in 80 regular-season appearances with Toronto in 2025-26. Domi will likely serve in a middle-six capacity once he's ready to return."
+      }
+     ]
+    },
+    "595975": {
+     "recordId": "595975",
+     "athleteName": "Chris Tanev",
+     "positionAbbr": "D",
+     "teamId": "21",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Maple Leafs",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-15T14:30Z|The Maple Leafs announced Thursday that Tanev (lower body) is considered week-to-week, Mark Masters of TSN reports.",
+       "status": "Injured Reserve",
+       "date": "2026-10-15T14:30Z",
+       "shortComment": "The Maple Leafs announced Thursday that Tanev (lower body) is considered week-to-week, Mark Masters of TSN reports.",
+       "longComment": "Tanev landed on injured reserve Sunday after he suffered an upper-body injury against Colorado on Saturday. Thursday's update indicates that he'll likely need to spend more than the minimum amount of time on injured reserve before he's in the mix to return to game action. Nick Blankenburg will likely continue to see time in Toronto's lineup while Tanev is sidelined."
+      }
+     ]
+    },
+    "596037": {
+     "recordId": "596037",
+     "athleteName": "Miles Wood",
+     "positionAbbr": "LW",
+     "teamId": "21",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Maple Leafs",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-15T22:35Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-15T22:35Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "596238": {
+     "recordId": "596238",
+     "athleteName": "Dakota Joshua",
+     "positionAbbr": "C",
+     "teamId": "21",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Maple Leafs",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-17T14:02Z|Joshua (abdomen) was sent to AHL Toronto on Friday for a conditioning stint.",
+       "status": "Injured Reserve",
+       "date": "2026-10-17T14:02Z",
+       "shortComment": "Joshua (abdomen) was sent to AHL Toronto on Friday for a conditioning stint.",
+       "longComment": "Joshua hasn't played this season yet because of a core muscle injury. He practiced with the Marlies on Friday, according to Joshua Kloke of The Athletic, but it's unclear when the 30-year-old forward will be available to play in the minors. Joshua had 10 goals, 18 points, 49 PIM and 195 hits in 55 NHL regular-season appearances for the Maple Leafs in 2025-26."
+      }
+     ]
+    },
+    "596291": {
+     "recordId": "596291",
+     "athleteName": "John Tavares",
+     "positionAbbr": "C",
+     "teamId": "21",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Maple Leafs",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-17T20:19Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-17T20:19Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "596884": {
+     "recordId": "596884",
+     "athleteName": "Marshall Rifai",
+     "positionAbbr": "D",
+     "teamId": "21",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Maple Leafs",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-23T02:22Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-23T02:22Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "597001": {
+     "recordId": "597001",
+     "athleteName": "Nick Blankenburg",
+     "positionAbbr": "D",
+     "teamId": "21",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Maple Leafs",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-23T15:29Z|Blankenburg (undisclosed) was placed on injured reserve by the Maple Leafs on Friday, David Alter of The Hockey News reports.",
+       "status": "Injured Reserve",
+       "date": "2026-10-23T15:29Z",
+       "shortComment": "Blankenburg (undisclosed) was placed on injured reserve by the Maple Leafs on Friday, David Alter of The Hockey News reports.",
+       "longComment": "Blankenburg exited Thursday's matchup against the Rangers due to an undisclosed injury, and while the exact nature and severity haven't yet been revealed, he'll be forced to miss at least a week. Marshall Rifai (lower body) was also placed on injured reserve Friday, so Dakota Mermis and Cole McWard were called up to provide additional depth on the Maple Leafs' blue line."
+      }
+     ]
+    },
+    "597414": {
+     "recordId": "597414",
+     "athleteName": "Kirill Marchenko",
+     "positionAbbr": "RW",
+     "teamId": "21",
+     "teamAbbr": "TOR",
+     "teamName": "Toronto Maple Leafs",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-27T02:39Z|out",
+       "status": "Out",
+       "date": "2026-10-27T02:39Z",
+       "shortComment": "out",
+       "longComment": "out"
+      }
+     ]
+    }
+   }
+  },
+  "22": {
+   "teamId": "22",
+   "displayName": "Vancouver Canucks",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594095": {
+     "recordId": "594095",
+     "athleteName": "Thatcher Demko",
+     "positionAbbr": "G",
+     "teamId": "22",
+     "teamAbbr": "VAN",
+     "teamName": "Vancouver Canucks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-28T17:58Z|Co-president of hockey operations Henrik Sedin said Monday that he hopes Demko (hip) will be ready to return before Christmas, Kevin Woodley of NHL.com reports.",
+       "status": "Injured Reserve",
+       "date": "2026-09-28T17:58Z",
+       "shortComment": "Co-president of hockey operations Henrik Sedin said Monday that he hopes Demko (hip) will be ready to return before Christmas, Kevin Woodley of NHL.com reports.",
+       "longComment": "Demko missed the second half of the 2025-26 season after undergoing hip surgery in January, and he was officially placed on injured reserve last week. He doesn't yet have a clear timetable for when he'll be back in action, but Sedin said that Demko is \"taking steps every day\" in his recovery process. While Demko is sidelined, Kevin Lankinen and Leevi Merilainen should compete for starts in the Canucks' crease."
+      }
+     ]
+    },
+    "594189": {
+     "recordId": "594189",
+     "athleteName": "Mackenzie MacEachern",
+     "positionAbbr": "LW",
+     "teamId": "22",
+     "teamAbbr": "VAN",
+     "teamName": "Vancouver Canucks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T17:03Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T17:03Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "594190": {
+     "recordId": "594190",
+     "athleteName": "Akil Thomas",
+     "positionAbbr": "C",
+     "teamId": "22",
+     "teamAbbr": "VAN",
+     "teamName": "Vancouver Canucks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T17:05Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T17:05Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    }
+   }
+  },
+  "23": {
+   "teamId": "23",
+   "displayName": "Washington Capitals",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594192": {
+     "recordId": "594192",
+     "athleteName": "Patrick Thomas",
+     "positionAbbr": "C",
+     "teamId": "23",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Capitals",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T17:07Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T17:07Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "595585": {
+     "recordId": "595585",
+     "athleteName": "Rasmus Sandin",
+     "positionAbbr": "D",
+     "teamId": "23",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Capitals",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-12T14:27Z|Sandin (knee) was placed on long-term injured reserve Monday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-12T14:27Z",
+       "shortComment": "Sandin (knee) was placed on long-term injured reserve Monday.",
+       "longComment": "Sandin is still recovering from knee surgery, and moving to LTIR won't impact his timeline. After having his right ACL repaired in late April, he received a timetable of 6-9 months for his recovery. Sandin registered five goals, 29 points, 90 shots on net, 127 blocked shots and 88 hits in 73 games for Washington during the 2025-26 regular season."
+      }
+     ]
+    },
+    "597041": {
+     "recordId": "597041",
+     "athleteName": "Vincent Desharnais",
+     "positionAbbr": "D",
+     "teamId": "23",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Capitals",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-23T20:39Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-23T20:39Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "597374": {
+     "recordId": "597374",
+     "athleteName": "Logan Thompson",
+     "positionAbbr": "G",
+     "teamId": "23",
+     "teamAbbr": "WSH",
+     "teamName": "Washington Capitals",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-26T16:22Z|Thompson (lower body) participated in Monday's practice and remains day-to-day ahead of Wednesday's home matchup against Philadelphia, per Sammi Silber of The District Standard.",
+       "status": "Injured Reserve",
+       "date": "2026-10-26T16:22Z",
+       "shortComment": "Thompson (lower body) participated in Monday's practice and remains day-to-day ahead of Wednesday's home matchup against Philadelphia, per Sammi Silber of The District Standard.",
+       "longComment": "Thompson missed Saturday's 4-3 overtime win over Buffalo due to a lower-body injury, but he is progressing. He has posted a 4-3-0 record, a 2.90 GAA and a .901 save percentage in seven appearances this season. Thompson remains on injured reserve, and it's unclear when he will be available to return to the lineup. Charlie Lindgren will handle the No. 1 role for the Capitals until Thompson is healthy, and Mitchell Gibson will serve as the backup."
+      }
+     ]
+    }
+   }
+  },
+  "25": {
+   "teamId": "25",
+   "displayName": "Anaheim Ducks",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594251": {
+     "recordId": "594251",
+     "athleteName": "Troy Terry",
+     "positionAbbr": "RW",
+     "teamId": "25",
+     "teamAbbr": "ANA",
+     "teamName": "Anaheim Ducks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-30T14:53Z|Terry (hip) was moved from the non-roster list to long-term injured reserve Wednesday, Zach Cavanagh of The Sporting Tribune reports.",
+       "status": "Injured Reserve",
+       "date": "2026-09-30T14:53Z",
+       "shortComment": "Terry (hip) was moved from the non-roster list to long-term injured reserve Wednesday, Zach Cavanagh of The Sporting Tribune reports.",
+       "longComment": "Terry isn't expected to be back until mid-November at the earliest, so this transfer doesn't impact his timetable. He had 19 goals and 57 points in 61 regular-season appearances in 2025-26. Terry should occupy a top-six role and play on the first power-play unit once he's healthy."
+      }
+     ]
+    },
+    "595699": {
+     "recordId": "595699",
+     "athleteName": "Ryan Poehling",
+     "positionAbbr": "C",
+     "teamId": "25",
+     "teamAbbr": "ANA",
+     "teamName": "Anaheim Ducks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-13T17:19Z|Poehling (knee) is expected to miss 6-8 weeks with an MCL sprain.",
+       "status": "Injured Reserve",
+       "date": "2026-10-13T17:19Z",
+       "shortComment": "Poehling (knee) is expected to miss 6-8 weeks with an MCL sprain.",
+       "longComment": "Poehling was placed on injured reserve Tuesday morning, and the specifics of his injury have revealed that he's set to likely be sidelined into late November. In his absence, Roger McQueen, the 10th overall pick from the 2025 NHL Entry Draft, is expected to play in the team's middle six up the center of the ice. The 27-year-old Poehling was off to a solid start to the 2026-27 campaign prior to going down, posting a pair of points and solid category-coverage numbers across five games."
+      }
+     ]
+    },
+    "596179": {
+     "recordId": "596179",
+     "athleteName": "Ian Moore",
+     "positionAbbr": "D",
+     "teamId": "25",
+     "teamAbbr": "ANA",
+     "teamName": "Anaheim Ducks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-16T18:17Z|Head coach Joel Quenneville said Friday that Moore (lower body) is still \"a ways from skating,\" Patrick Present of The Hockey News reports.",
+       "status": "Injured Reserve",
+       "date": "2026-10-16T18:17Z",
+       "shortComment": "Head coach Joel Quenneville said Friday that Moore (lower body) is still \"a ways from skating,\" Patrick Present of The Hockey News reports.",
+       "longComment": "Moore has been on injured reserve since the start of the regular season due to a lower-body injury he sustained on the first day of training camp. While he was given a return timetable of 2-4 weeks in mid-September, he's slated to miss more time than that, and he seems to have several steps to clear before he's in the mix to return to game action."
+      }
+     ]
+    },
+    "597043": {
+     "recordId": "597043",
+     "athleteName": "Pavel Mintyukov",
+     "positionAbbr": "D",
+     "teamId": "25",
+     "teamAbbr": "ANA",
+     "teamName": "Anaheim Ducks",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-23T21:08Z|Mintyukov (lower body) was put on injured reserve Thursday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-23T21:08Z",
+       "shortComment": "Mintyukov (lower body) was put on injured reserve Thursday.",
+       "longComment": "Mintyukov last played Tuesday against the Islanders, so this move might be retroactive to that date. Travis Mitchell was summoned from AHL San Diego in a corresponding move. Mintyukov had two assists, two PIM, five shots, one hit and 16 blocks in nine appearances before sustaining the injury. Nick Jensen might play regularly during Mintyukov's absence."
+      }
+     ]
+    }
+   }
+  },
+  "26": {
+   "teamId": "26",
+   "displayName": "Florida Panthers",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "593266": {
+     "recordId": "593266",
+     "athleteName": "Jonah Gadjovich",
+     "positionAbbr": "LW",
+     "teamId": "26",
+     "teamAbbr": "FLA",
+     "teamName": "Florida Panthers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-17T20:53Z|Gadjovich (upper body) is out indefinitely, the team announced Thursday.",
+       "status": "Injured Reserve",
+       "date": "2026-09-17T20:53Z",
+       "shortComment": "Gadjovich (upper body) is out indefinitely, the team announced Thursday.",
+       "longComment": "Gadjovich hasn't played since Oct. 25, 2025 because of the injury. He had three assists, seven PIM and 30 hits in 10 regular-season appearances last campaign. Gadjovich is expected to see time on the fourth line once he's available."
+      }
+     ]
+    },
+    "594906": {
+     "recordId": "594906",
+     "athleteName": "Aleksander Barkov",
+     "positionAbbr": "C",
+     "teamId": "26",
+     "teamAbbr": "FLA",
+     "teamName": "Florida Panthers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-06T18:38Z|Barkov (lower body) will be out for approximately 6-8 weeks, Jameson Olive of the Panthers' official site reports Tuesday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-06T18:38Z",
+       "shortComment": "Barkov (lower body) will be out for approximately 6-8 weeks, Jameson Olive of the Panthers' official site reports Tuesday.",
+       "longComment": "Barkov opted for non-surgical rehab after suffering a lower-body injury in Thursday's 4-3 overtime loss to San Jose. Florida placed Barkov on long-term injured reserve Saturday. He didn't earn a point in his first two appearances of the 2026-27 campaign, but he recorded two shots on net, two blocked shots and one hit."
+      }
+     ]
+    },
+    "595632": {
+     "recordId": "595632",
+     "athleteName": "Brad Marchand",
+     "positionAbbr": "LW",
+     "teamId": "26",
+     "teamAbbr": "FLA",
+     "teamName": "Florida Panthers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-12T21:11Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-12T21:11Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "596647": {
+     "recordId": "596647",
+     "athleteName": "Jacob Markstrom",
+     "positionAbbr": "G",
+     "teamId": "26",
+     "teamAbbr": "FLA",
+     "teamName": "Florida Panthers",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-20T21:23Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-20T21:23Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    }
+   }
+  },
+  "28": {
+   "teamId": "28",
+   "displayName": "Winnipeg Jets",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594172": {
+     "recordId": "594172",
+     "athleteName": "Garrett Brown",
+     "positionAbbr": "C",
+     "teamId": "28",
+     "teamAbbr": "WPG",
+     "teamName": "Winnipeg Jets",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T15:55Z|ir-nr",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T15:55Z",
+       "shortComment": "ir-nr",
+       "longComment": "ir-nr"
+      }
+     ]
+    },
+    "596522": {
+     "recordId": "596522",
+     "athleteName": "Josh Morrissey",
+     "positionAbbr": "D",
+     "teamId": "28",
+     "teamAbbr": "WPG",
+     "teamName": "Winnipeg Jets",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-19T15:39Z|Morrissey (wrist) was placed on injured reserve Monday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-19T15:39Z",
+       "shortComment": "Morrissey (wrist) was placed on injured reserve Monday.",
+       "longComment": "The Jets recalled Brayden Yager from AHL Manitoba on Monday in a corresponding move. Morrissey is week-to-week and has missed Winnipeg's last four games due to a wrist injury. He has collected three assists, 12 shots on net and five blocked shots in four appearances this season."
+      }
+     ]
+    },
+    "597009": {
+     "recordId": "597009",
+     "athleteName": "Nick Bjugstad",
+     "positionAbbr": "C",
+     "teamId": "28",
+     "teamAbbr": "WPG",
+     "teamName": "Winnipeg Jets",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-23T16:48Z|Bjugstad (pectoral), Dawson Mercer, Nico Daws, Alexander Command and a pair of draft picks were traded to the Jets from the Devils on Friday in exchange for Connor Hellebuyck.",
+       "status": "Injured Reserve",
+       "date": "2026-10-23T16:48Z",
+       "shortComment": "Bjugstad (pectoral), Dawson Mercer, Nico Daws, Alexander Command and a pair of draft picks were traded to the Jets from the Devils on Friday in exchange for Connor Hellebuyck.",
+       "longComment": "Bjugstad underwent surgery to repair a torn left pectoral muscle in September, and he was transferred to long-term injured reserve in early October. The 34-year-old isn't expected to be in the mix to return to game action until at least January, but he'll likely have the chance to compete for a bottom-six role once he's cleared to suit up."
+      }
+     ]
+    },
+    "597036": {
+     "recordId": "597036",
+     "athleteName": "Vladislav Namestnikov",
+     "positionAbbr": "C",
+     "teamId": "28",
+     "teamAbbr": "WPG",
+     "teamName": "Winnipeg Jets",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-23T18:11Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-23T18:11Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    }
+   }
+  },
+  "30": {
+   "teamId": "30",
+   "displayName": "Minnesota Wild",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594171": {
+     "recordId": "594171",
+     "athleteName": "Brock Faber",
+     "positionAbbr": "D",
+     "teamId": "30",
+     "teamAbbr": "MIN",
+     "teamName": "Minnesota Wild",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-29T16:21Z|Faber underwent a procedure to repair his fractured skull and is without a timetable to return, per Michael Russo of The Athletic.",
+       "status": "Injured Reserve",
+       "date": "2026-09-29T16:21Z",
+       "shortComment": "Faber underwent a procedure to repair his fractured skull and is without a timetable to return, per Michael Russo of The Athletic.",
+       "longComment": "Faber left Friday's preseason contest against the Stars in the second period with his confirmed skull fracture. The 24-year-old's status will be closely monitored in the coming days until a timetable for his return is provided. Faber's role is not one that can be easily filled, as he exploded for 15 goals, 51 points, 173 shots on net and 148 blocked shots across 80 regular-season games in the 2025-26 campaign. He's a worthy candidate to occupy the IR spot in fantasy until he's able to return to Minnesota's top defensive pairing."
+      }
+     ]
+    },
+    "595206": {
+     "recordId": "595206",
+     "athleteName": "Nick Foligno",
+     "positionAbbr": "LW",
+     "teamId": "30",
+     "teamAbbr": "MIN",
+     "teamName": "Minnesota Wild",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-09T15:50Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-09T15:50Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "595638": {
+     "recordId": "595638",
+     "athleteName": "Marcus Foligno",
+     "positionAbbr": "LW",
+     "teamId": "30",
+     "teamAbbr": "MIN",
+     "teamName": "Minnesota Wild",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-12T22:12Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-12T22:12Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "596475": {
+     "recordId": "596475",
+     "athleteName": "Filip Gustavsson",
+     "positionAbbr": "G",
+     "teamId": "30",
+     "teamAbbr": "MIN",
+     "teamName": "Minnesota Wild",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-18T21:23Z|Head coach John Hynes said Sunday that Gustavsson (hip) is slated to miss at least another month, Dylan Loucks of The Hockey News reports.",
+       "status": "Injured Reserve",
+       "date": "2026-10-18T21:23Z",
+       "shortComment": "Head coach John Hynes said Sunday that Gustavsson (hip) is slated to miss at least another month, Dylan Loucks of The Hockey News reports.",
+       "longComment": "Gustavsson was moved to long-term injured reserve earlier in October, so Sunday's update isn't particularly surprising. The 28-year-old netminder recently began skating on his own, but he still has several steps to take in his recovery before he's in the mix to return to game action. Jesper Wallstedt and Calvin Pickard should continue to handle goaltending duties in Gustavsson's absence."
+      }
+     ]
+    }
+   }
+  },
+  "37": {
+   "teamId": "37",
+   "displayName": "Vegas Golden Knights",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "596781": {
+     "recordId": "596781",
+     "athleteName": "Parker Wotherspoon",
+     "positionAbbr": "D",
+     "teamId": "37",
+     "teamAbbr": "VGK",
+     "teamName": "Vegas Golden Knights",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-21T19:24Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-10-21T19:24Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    }
+   }
+  },
+  "124292": {
+   "teamId": "124292",
+   "displayName": "Seattle Kraken",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594287": {
+     "recordId": "594287",
+     "athleteName": "Jake O'Brien",
+     "positionAbbr": "C",
+     "teamId": "124292",
+     "teamAbbr": "SEA",
+     "teamName": "Seattle Kraken",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-01T00:06Z|O'Brien (lower body) was placed on non-roster injured reserve Wednesday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-01T00:06Z",
+       "shortComment": "O'Brien (lower body) was placed on non-roster injured reserve Wednesday.",
+       "longComment": "O'Brien was initially announced on injured reserve Sunday, but his status has since been clarified. He is considered week-to-week at this time. The Kraken have a few options for when he gets healthy -- as a 19-year-old first-round pick (2025), he is eligible for the AHL if Seattle thinks that would be best for his development."
+      }
+     ]
+    },
+    "595090": {
+     "recordId": "595090",
+     "athleteName": "Ryan Lindgren",
+     "positionAbbr": "D",
+     "teamId": "124292",
+     "teamAbbr": "SEA",
+     "teamName": "Seattle Kraken",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-08T16:38Z|Lindgren (upper body) was placed on injured reserve by the Kraken on Thursday and is expected to miss four to six weeks.",
+       "status": "Injured Reserve",
+       "date": "2026-10-08T16:38Z",
+       "shortComment": "Lindgren (upper body) was placed on injured reserve by the Kraken on Thursday and is expected to miss four to six weeks.",
+       "longComment": "Lindgren suffered the upper-body injury in the first period of Tuesday's clash against the Golden Knights before he ultimately was removed from the game ahead of the second stanza. Prior to going down, the 28-year-old blueliner compiled a plus-three rating, seven PIM, three shots on goal and four blocked shots across four outings to begin the 2026-27 campaign. While he is sidelined over the next four to six weeks, Josh Mahura is expected to see an increased role."
+      }
+     ]
+    },
+    "595353": {
+     "recordId": "595353",
+     "athleteName": "Jacob Melanson",
+     "positionAbbr": "RW",
+     "teamId": "124292",
+     "teamAbbr": "SEA",
+     "teamName": "Seattle Kraken",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-10T19:49Z|Melanson's upper-body injury was diagnosed Saturday as an anterior mediastinum hematoma with vascular pseudo aneurysm. He will continue to be evaluated and is out indefinitely.",
+       "status": "Injured Reserve",
+       "date": "2026-10-10T19:49Z",
+       "shortComment": "Melanson's upper-body injury was diagnosed Saturday as an anterior mediastinum hematoma with vascular pseudo aneurysm. He will continue to be evaluated and is out indefinitely.",
+       "longComment": "The Kraken said that there would be a \"gradual progression to return to hockey,\" so Melanson shouldn't be expected to play for a while. The 23-year-old suffered the injury in Seattle's Season Opener against Calgary on Oct. 1. Melanson had two goals and five points in 36 regular-season outings with the Kraken in 2025-26."
+      }
+     ]
+    },
+    "597280": {
+     "recordId": "597280",
+     "athleteName": "Jared McCann",
+     "positionAbbr": "LW",
+     "teamId": "124292",
+     "teamAbbr": "SEA",
+     "teamName": "Seattle Kraken",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-25T17:08Z|McCann (lower body) will be out for approximately 10 weeks, the team announced Sunday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-25T17:08Z",
+       "shortComment": "McCann (lower body) will be out for approximately 10 weeks, the team announced Sunday.",
+       "longComment": "McCann had one goal in five games before sitting out Saturday's 5-1 loss to Minnesota. He has earned five assists, eight points, 28 shots on net, three blocked shots and six hits in 11 appearances this season. With McCann unavailable, Kaapo Kakko moved up to the top line in Saturday's game."
+      }
+     ]
+    }
+   }
+  },
+  "129764": {
+   "teamId": "129764",
+   "displayName": "Utah Mammoth",
+   "firstCapturedAt": "2026-10-27T09:04:10.293Z",
+   "players": {
+    "594121": {
+     "recordId": "594121",
+     "athleteName": "Maveric Lamoureux",
+     "positionAbbr": "D",
+     "teamId": "129764",
+     "teamAbbr": "UTA",
+     "teamName": "Utah Mammoth",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-09-28T21:02Z|ir",
+       "status": "Injured Reserve",
+       "date": "2026-09-28T21:02Z",
+       "shortComment": "ir",
+       "longComment": "ir"
+      }
+     ]
+    },
+    "596646": {
+     "recordId": "596646",
+     "athleteName": "Michael Carcone",
+     "positionAbbr": "LW",
+     "teamId": "129764",
+     "teamAbbr": "UTA",
+     "teamName": "Utah Mammoth",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Injured Reserve|2026-10-20T21:18Z|Carcone (upper body) was placed on injured reserve by the Mammoth on Tuesday.",
+       "status": "Injured Reserve",
+       "date": "2026-10-20T21:18Z",
+       "shortComment": "Carcone (upper body) was placed on injured reserve by the Mammoth on Tuesday.",
+       "longComment": "Carcone's shift to injured reserve was done in correspondence to the team's call up of Artyom Duda, who could be filling in for the injured John Marino (upper body). Prior to the IR move, the 30-year-old Carcone posted two points, 17 shots on net and 11 hits across five appearances. His placement on injured reserve leaves him out of the picture for at least another week, but he could have a chance to return prior to the end of October."
+      }
+     ]
+    },
+    "597120": {
+     "recordId": "597120",
+     "athleteName": "John Marino",
+     "positionAbbr": "D",
+     "teamId": "129764",
+     "teamAbbr": "UTA",
+     "teamName": "Utah Mammoth",
+     "history": [
+      {
+       "captured_at": "2026-10-27T09:04:10.293Z",
+       "last_seen_at": "2026-10-27T09:04:10.293Z",
+       "fp": "Out|2026-10-24T17:55Z|out",
+       "status": "Out",
+       "date": "2026-10-24T17:55Z",
+       "shortComment": "out",
+       "longComment": "out"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "last_ingested_at": "2026-10-27T09:04:10.293Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries"
+}

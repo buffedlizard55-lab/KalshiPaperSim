@@ -1,0 +1,173 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-28",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261028"
+  ]
+ },
+ "captures": [
+  "2026-10-27T09:04:10.372Z"
+ ],
+ "events": {
+  "401892596": {
+   "eventId": "401892596",
+   "date": "2026-10-28T23:30Z",
+   "easternDate": "2026-10-28",
+   "name": "Philadelphia Flyers at Washington Capitals",
+   "shortName": "PHI @ WSH",
+   "week": null,
+   "venue": "Capital One Arena",
+   "homeAbbr": "WSH",
+   "homeTeamId": "23",
+   "homeName": "Washington Capitals",
+   "awayAbbr": "PHI",
+   "awayTeamId": "15",
+   "awayName": "Philadelphia Flyers",
+   "firstCapturedAt": "2026-10-27T09:04:10.372Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-27T09:04:10.372Z",
+     "last_seen_at": "2026-10-27T09:04:10.372Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-4-0",
+      "away": "3-7-3"
+     }
+    }
+   ]
+  },
+  "401892597": {
+   "eventId": "401892597",
+   "date": "2026-10-29T00:30Z",
+   "easternDate": "2026-10-28",
+   "name": "Calgary Flames at Edmonton Oilers",
+   "shortName": "CGY @ EDM",
+   "week": null,
+   "venue": "Rogers Place",
+   "homeAbbr": "EDM",
+   "homeTeamId": "6",
+   "homeName": "Edmonton Oilers",
+   "awayAbbr": "CGY",
+   "awayTeamId": "3",
+   "awayName": "Calgary Flames",
+   "firstCapturedAt": "2026-10-27T09:04:10.372Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-27T09:04:10.372Z",
+     "last_seen_at": "2026-10-27T09:04:10.372Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "8-2-2",
+      "away": "5-6-0"
+     }
+    }
+   ]
+  },
+  "401892598": {
+   "eventId": "401892598",
+   "date": "2026-10-29T01:00Z",
+   "easternDate": "2026-10-28",
+   "name": "New Jersey Devils at Colorado Avalanche",
+   "shortName": "NJ @ COL",
+   "week": null,
+   "venue": "Ball Arena",
+   "homeAbbr": "COL",
+   "homeTeamId": "17",
+   "homeName": "Colorado Avalanche",
+   "awayAbbr": "NJ",
+   "awayTeamId": "11",
+   "awayName": "New Jersey Devils",
+   "firstCapturedAt": "2026-10-27T09:04:10.372Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-27T09:04:10.372Z",
+     "last_seen_at": "2026-10-27T09:04:10.372Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-5-1",
+      "away": "7-4-0"
+     }
+    }
+   ]
+  },
+  "401892599": {
+   "eventId": "401892599",
+   "date": "2026-10-29T02:00Z",
+   "easternDate": "2026-10-28",
+   "name": "Toronto Maple Leafs at Seattle Kraken",
+   "shortName": "TOR @ SEA",
+   "week": null,
+   "venue": "Climate Pledge Arena",
+   "homeAbbr": "SEA",
+   "homeTeamId": "124292",
+   "homeName": "Seattle Kraken",
+   "awayAbbr": "TOR",
+   "awayTeamId": "21",
+   "awayName": "Toronto Maple Leafs",
+   "firstCapturedAt": "2026-10-27T09:04:10.372Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-27T09:04:10.372Z",
+     "last_seen_at": "2026-10-27T09:04:10.372Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "7-4-1",
+      "away": "7-5-2"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-27T09:04:10.372Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261028"
+}

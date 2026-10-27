@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-27T03:01:33.833Z",
+ "generatedAt": "2026-10-27T09:04:11.566Z",
  "rows": [
   {
    "league": "nba",
@@ -135,6 +135,11 @@
      "ticker": "KXNBAGAME-26OCT22CLEPHI-PHI",
      "rulesName": "Cleveland",
      "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT26MINCLE-MIN",
+     "rulesName": "Cleveland",
+     "role": "home"
     }
    ]
   },
@@ -488,6 +493,11 @@
     },
     {
      "ticker": "KXNBAGAME-26OCT21MINMIA-MIN",
+     "rulesName": "Minnesota",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT26MINCLE-MIN",
      "rulesName": "Minnesota",
      "role": "away"
     }
@@ -1606,6 +1616,11 @@
    "espn": null,
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-MRMK",
+     "rulesName": "Merrimack",
+     "role": "away"
+    },
     {
      "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-WAKE",
      "rulesName": "Merrimack",
@@ -2762,6 +2777,11 @@
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
+     "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-MRMK",
+     "rulesName": "Wake Forest",
+     "role": "home"
+    },
+    {
      "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-WAKE",
      "rulesName": "Wake Forest",
      "role": "home"
@@ -2948,6 +2968,11 @@
    "evidence": [
     {
      "ticker": "KXNFLGAME-26SEP13DALNYG-DAL",
+     "rulesName": "Dallas",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNFLGAME-26OCT26DALPHI-PHI",
      "rulesName": "Dallas",
      "role": "away"
     },
@@ -3266,6 +3291,11 @@
    },
    "espnReason": "MATCHED",
    "evidence": [
+    {
+     "ticker": "KXNFLGAME-26OCT26DALPHI-PHI",
+     "rulesName": "Philadelphia",
+     "role": "home"
+    },
     {
      "ticker": "KXNFLGAME-26SEP13WASPHI-PHI",
      "rulesName": "Philadelphia",
@@ -3728,6 +3758,16 @@
    "evidence": [
     {
      "ticker": "KXNHLGAME-26OCT20DETSEA-SEA",
+     "rulesName": "Detroit",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT26DETEDM-DET",
+     "rulesName": "Detroit",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT26DETEDM-EDM",
      "rulesName": "Detroit",
      "role": "away"
     },
