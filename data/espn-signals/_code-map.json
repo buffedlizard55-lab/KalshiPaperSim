@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-26T20:17:42.767Z",
+ "generatedAt": "2026-10-26T23:57:11.200Z",
  "rows": [
   {
    "league": "nba",
@@ -1600,6 +1600,21 @@
   },
   {
    "league": "ncaaf",
+   "kalshiCode": "MRMK",
+   "kalshiName": "Merrimack",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-WAKE",
+     "rulesName": "Merrimack",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
    "kalshiCode": "MSST",
    "kalshiName": "Mississippi St.",
    "conflictWith": null,
@@ -2735,6 +2750,21 @@
      "ticker": "KXNCAAFGAME-26OCT31VMICHAT-VMI",
      "rulesName": "VMI",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "WAKE",
+   "kalshiName": "Wake Forest",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-WAKE",
+     "rulesName": "Wake Forest",
+     "role": "home"
     }
    ]
   },
