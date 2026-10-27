@@ -11,18 +11,18 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 32 date file(s) · 162 game(s) · 620 state row(s) · generated 2026-10-27T23:45:03.577Z
+ * 32 date file(s) · 162 game(s) · 621 state row(s) · generated 2026-10-27T23:50:05.399Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-27T23:45:03.577Z",
+ "generatedAt": "2026-10-27T23:50:05.399Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
  "teams": {
   "url": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2026&fields=teams%2Cid%2Cname%2Cabbreviation%2CteamName%2ClocationName%2CshortName%2CfranchiseName%2CclubName%2Ccopyright",
   "captured_at": "2026-09-20T05:25:27.222Z",
-  "last_confirmed_at": "2026-10-27T20:18:00.932Z",
+  "last_confirmed_at": "2026-10-27T23:50:02.953Z",
   "teams": [
    {
     "id": 108,
@@ -15453,7 +15453,8 @@ export const MLB_SIGNAL_DATA = {
     "2026-10-27T00:08:30.787Z",
     "2026-10-27T03:06:33.648Z",
     "2026-10-27T09:08:39.210Z",
-    "2026-10-27T20:18:00.934Z"
+    "2026-10-27T20:18:00.934Z",
+    "2026-10-27T23:50:02.955Z"
    ],
    "games": {
     "849804": {
@@ -15548,7 +15549,7 @@ export const MLB_SIGNAL_DATA = {
       },
       {
        "captured_at": "2026-10-27T09:08:39.210Z",
-       "last_seen_at": "2026-10-27T20:18:00.934Z",
+       "last_seen_at": "2026-10-27T23:50:02.955Z",
        "abstractGameState": "Final",
        "detailedState": "Final",
        "codedGameState": "F",
@@ -15578,7 +15579,8 @@ export const MLB_SIGNAL_DATA = {
    },
    "captures": [
     "2026-10-27T09:08:39.210Z",
-    "2026-10-27T20:18:00.934Z"
+    "2026-10-27T20:18:00.934Z",
+    "2026-10-27T23:50:02.955Z"
    ],
    "games": {
     "849803": {
@@ -15600,7 +15602,10 @@ export const MLB_SIGNAL_DATA = {
      },
      "venue": "Tropicana Field",
      "probablePitchers": {
-      "away": null,
+      "away": {
+       "id": 669160,
+       "fullName": "Dustin May"
+      },
       "home": {
        "id": 643377,
        "fullName": "Griffin Jax"
@@ -15634,6 +15639,21 @@ export const MLB_SIGNAL_DATA = {
        "runs": {
         "away": null,
         "home": null
+       },
+       "winner": null,
+       "url_ref": 0
+      },
+      {
+       "captured_at": "2026-10-27T23:50:02.955Z",
+       "last_seen_at": "2026-10-27T23:50:02.955Z",
+       "abstractGameState": "Preview",
+       "detailedState": "Pre-Game",
+       "codedGameState": "P",
+       "inning": 1,
+       "inningState": "Top",
+       "runs": {
+        "away": 0,
+        "home": 0
        },
        "winner": null,
        "url_ref": 0
