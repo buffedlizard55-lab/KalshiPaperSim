@@ -972,11 +972,41 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1793080800,
+      "open_interest_fp": "43111.18",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
     {
       "captured_at": "2026-10-27T05:27:38.714Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT26-B70.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-27T08:17:28.557Z",
       "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT26-B70.5/orderbook",
       "orderbook": {
         "orderbook_fp": {
@@ -1033,7 +1063,7 @@
     "ticker": "KXHIGHNY-26OCT26-B70.5",
     "title": "Will the maximum temperature be 70-71° on Oct 26, 2026?",
     "updated_time": "2026-10-27T05:00:03.324293Z",
-    "volume_24h_fp": "70734.73",
+    "volume_24h_fp": "70177.92",
     "volume_fp": "73327.56",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1042,8 +1072,8 @@
     "yes_sub_title": "70° to 71°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHNY-26OCT26-B70.5",
-  "market_captured_at": "2026-10-27T05:27:38.075Z",
+  "market_captured_at": "2026-10-27T08:17:27.812Z",
   "status": "closed",
-  "last_ingested_at": "2026-10-27T05:27:38.697Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26OCT26-B70.5/candlesticks?start_ts=1792850400&end_ts=1793078858&period_interval=60"
+  "last_ingested_at": "2026-10-27T08:17:28.486Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHNY/markets/KXHIGHNY-26OCT26-B70.5/candlesticks?start_ts=1793077201&end_ts=1793089048&period_interval=60"
 }
