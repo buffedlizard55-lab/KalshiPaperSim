@@ -12285,6 +12285,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-27T12:25:18.968Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT192008CLETB-CLE/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12342,11 +12352,11 @@
     "yes_sub_title": "Cleveland"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT192008CLETB-CLE",
-  "market_captured_at": "2026-10-27T08:22:44.972Z",
+  "market_captured_at": "2026-10-27T12:25:16.017Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-27T08:22:48.264Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT192008CLETB-CLE/candlesticks?start_ts=1793070421&end_ts=1793089365&period_interval=1",
+  "last_ingested_at": "2026-10-27T12:25:18.942Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT192008CLETB-CLE/candlesticks?start_ts=1793070421&end_ts=1793103916&period_interval=1",
   "trims": [
     {
       "at": "2026-10-20T05:16:24.737Z",

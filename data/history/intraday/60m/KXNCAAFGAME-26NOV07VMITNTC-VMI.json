@@ -1448,6 +1448,102 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-27T12:22:11.286Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07VMITNTC-VMI/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "93746.00"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "945.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "267.00"
+            ],
+            [
+              "0.0600",
+              "350.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "250.00"
+            ],
+            [
+              "0.2100",
+              "11.74"
+            ],
+            [
+              "0.4200",
+              "4.00"
+            ],
+            [
+              "0.7600",
+              "55.00"
+            ],
+            [
+              "0.8000",
+              "140.00"
+            ],
+            [
+              "0.8100",
+              "28.00"
+            ],
+            [
+              "0.9200",
+              "1042.21"
+            ],
+            [
+              "0.9300",
+              "1089.00"
+            ],
+            [
+              "0.9400",
+              "923.00"
+            ],
+            [
+              "0.9500",
+              "460.00"
+            ],
+            [
+              "0.9600",
+              "222838.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "10925.00"
+            ],
+            [
+              "0.0200",
+              "1560.00"
+            ],
+            [
+              "0.0300",
+              "495.80"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1503,8 +1599,8 @@
     "yes_sub_title": "VMI"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07VMITNTC-VMI",
-  "market_captured_at": "2026-10-27T08:19:15.769Z",
+  "market_captured_at": "2026-10-27T12:22:10.631Z",
   "status": "active",
-  "last_ingested_at": "2026-10-27T08:19:16.443Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07VMITNTC-VMI/candlesticks?start_ts=1793077201&end_ts=1793089156&period_interval=60"
+  "last_ingested_at": "2026-10-27T12:22:11.260Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07VMITNTC-VMI/candlesticks?start_ts=1793080801&end_ts=1793103730&period_interval=60"
 }
