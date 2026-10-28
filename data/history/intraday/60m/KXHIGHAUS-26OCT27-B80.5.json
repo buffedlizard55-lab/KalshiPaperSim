@@ -982,6 +982,26 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1793170800,
+      "open_interest_fp": "21447.09",
+      "price": {
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -1149,6 +1169,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-28T08:54:50.654Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26OCT27-B80.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1177,9 +1207,9 @@
     "occurrence_datetime": "2026-10-28T14:00:00Z",
     "open_interest_fp": "21447.09",
     "open_time": "2026-10-26T14:00:00Z",
-    "previous_price_dollars": "0.2500",
-    "previous_yes_ask_dollars": "0.2400",
-    "previous_yes_bid_dollars": "0.2300",
+    "previous_price_dollars": "0.2800",
+    "previous_yes_ask_dollars": "0.2800",
+    "previous_yes_bid_dollars": "0.2700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1198,7 +1228,7 @@
     "ticker": "KXHIGHAUS-26OCT27-B80.5",
     "title": "Will the maximum temperature be 80-81° on Oct 27, 2026?",
     "updated_time": "2026-10-28T06:00:03.324063Z",
-    "volume_24h_fp": "29193.99",
+    "volume_24h_fp": "28845.57",
     "volume_fp": "30757.94",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1207,8 +1237,8 @@
     "yes_sub_title": "80° to 81°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHAUS-26OCT27-B80.5",
-  "market_captured_at": "2026-10-28T06:05:31.533Z",
+  "market_captured_at": "2026-10-28T08:54:50.014Z",
   "status": "closed",
-  "last_ingested_at": "2026-10-28T06:05:32.171Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26OCT27-B80.5/candlesticks?start_ts=1793134801&end_ts=1793167531&period_interval=60"
+  "last_ingested_at": "2026-10-28T08:54:50.635Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHAUS/markets/KXHIGHAUS-26OCT27-B80.5/candlesticks?start_ts=1793167201&end_ts=1793177690&period_interval=60"
 }

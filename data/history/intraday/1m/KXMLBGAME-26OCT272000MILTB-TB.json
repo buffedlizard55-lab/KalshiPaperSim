@@ -12015,6 +12015,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-28T08:59:19.357Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT272000MILTB-TB/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12040,8 +12050,8 @@
     "occurrence_datetime": "2026-10-28T03:00:00Z",
     "open_interest_fp": "5700267.62",
     "open_time": "2026-10-20T03:41:00Z",
-    "previous_price_dollars": "0.4400",
-    "previous_yes_ask_dollars": "0.4400",
+    "previous_price_dollars": "0.4300",
+    "previous_yes_ask_dollars": "0.4300",
     "previous_yes_bid_dollars": "0.4200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
@@ -12063,7 +12073,7 @@
     "ticker": "KXMLBGAME-26OCT272000MILTB-TB",
     "title": "Tampa Bay wins",
     "updated_time": "2026-10-28T04:36:16.371869Z",
-    "volume_24h_fp": "11601650.31",
+    "volume_24h_fp": "11571860.59",
     "volume_fp": "11818550.16",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -12072,11 +12082,11 @@
     "yes_sub_title": "Tampa Bay"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT272000MILTB-TB",
-  "market_captured_at": "2026-10-28T06:10:13.379Z",
+  "market_captured_at": "2026-10-28T08:59:18.716Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-28T06:10:14.388Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT272000MILTB-TB/candlesticks?start_ts=1793081413&end_ts=1793167812&period_interval=1",
+  "last_ingested_at": "2026-10-28T08:59:19.339Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT272000MILTB-TB/candlesticks?start_ts=1793161921&end_ts=1793177959&period_interval=1",
   "trims": [
     {
       "at": "2026-10-28T06:10:14.717Z",

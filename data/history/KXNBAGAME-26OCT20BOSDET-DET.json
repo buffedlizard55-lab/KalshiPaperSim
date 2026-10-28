@@ -31006,6 +31006,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-28T08:52:25.951Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -31063,10 +31073,10 @@
     "yes_sub_title": "Detroit"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT20BOSDET-DET",
-  "market_captured_at": "2026-10-28T06:03:01.380Z",
+  "market_captured_at": "2026-10-28T08:52:25.409Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-28T06:03:01.915Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1792555201&end_ts=1793167381&period_interval=1440",
+  "last_ingested_at": "2026-10-28T08:52:25.932Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT20BOSDET-DET/candlesticks?start_ts=1792555201&end_ts=1793177545&period_interval=1440",
   "result": "yes",
   "marketErrors": [
     {
