@@ -8996,7 +8996,7 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-B29250",
     "title": "Will the Nasdaq-100 be between 29000 and 29499.99 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:45.816895Z",
-    "volume_24h_fp": "335.31",
+    "volume_24h_fp": "0.00",
     "volume_fp": "133874.57",
     "yes_ask_dollars": "0.0700",
     "yes_ask_size_fp": "10440.55",
@@ -9005,10 +9005,10 @@
     "yes_sub_title": "29,000 to 29,499.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B29250",
-  "market_captured_at": "2026-10-28T08:52:00.909Z",
+  "market_captured_at": "2026-10-28T12:59:41.156Z",
   "status": "active",
-  "last_ingested_at": "2026-10-28T08:52:01.430Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B29250/candlesticks?start_ts=1793160001&end_ts=1793177521&period_interval=1440",
+  "last_ingested_at": "2026-10-28T12:59:41.682Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B29250/candlesticks?start_ts=1793160001&end_ts=1793192381&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:52:22.086Z",

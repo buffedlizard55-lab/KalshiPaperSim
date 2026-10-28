@@ -17296,9 +17296,9 @@
     "notional_value_dollars": "1.0000",
     "open_interest_fp": "5680.38",
     "open_time": "2025-10-13T14:00:00Z",
-    "previous_price_dollars": "0.9400",
+    "previous_price_dollars": "0.6900",
     "previous_yes_ask_dollars": "0.9400",
-    "previous_yes_bid_dollars": "0.7600",
+    "previous_yes_bid_dollars": "0.6900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -17318,19 +17318,19 @@
     "ticker": "KXFED-27APR-T4.25",
     "title": "Will the upper bound of the federal funds rate be above 4.25% following the Fed's Apr 28, 2027 meeting?",
     "updated_time": "2026-04-09T14:07:28.591885Z",
-    "volume_24h_fp": "134.37",
+    "volume_24h_fp": "0.00",
     "volume_fp": "18647.01",
     "yes_ask_dollars": "0.9400",
     "yes_ask_size_fp": "50.17",
     "yes_bid_dollars": "0.6900",
-    "yes_bid_size_fp": "4.53",
+    "yes_bid_size_fp": "4.39",
     "yes_sub_title": "Above 4.25%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T4.25",
-  "market_captured_at": "2026-10-28T08:51:05.524Z",
+  "market_captured_at": "2026-10-28T12:58:59.070Z",
   "status": "active",
-  "last_ingested_at": "2026-10-28T08:51:06.045Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.25/candlesticks?start_ts=1793160001&end_ts=1793177465&period_interval=1440",
+  "last_ingested_at": "2026-10-28T12:58:59.593Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.25/candlesticks?start_ts=1793160001&end_ts=1793192339&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:28.865Z",

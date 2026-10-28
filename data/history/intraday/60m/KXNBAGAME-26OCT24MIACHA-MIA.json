@@ -3698,6 +3698,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-28T13:04:34.277Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT24MIACHA-MIA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3755,9 +3765,9 @@
     "yes_sub_title": "Miami"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT24MIACHA-MIA",
-  "market_captured_at": "2026-10-28T08:57:18.353Z",
+  "market_captured_at": "2026-10-28T13:04:33.628Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-28T08:57:18.976Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT24MIACHA-MIA/candlesticks?start_ts=1792890001&end_ts=1793177838&period_interval=60"
+  "last_ingested_at": "2026-10-28T13:04:34.254Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT24MIACHA-MIA/candlesticks?start_ts=1792890001&end_ts=1793192673&period_interval=60"
 }

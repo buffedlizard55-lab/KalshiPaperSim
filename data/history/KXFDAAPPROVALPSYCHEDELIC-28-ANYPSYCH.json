@@ -3693,6 +3693,62 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-28T13:11:11.491Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "302.79"
+            ],
+            [
+              "0.0200",
+              "1248.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0600",
+              "133.00"
+            ],
+            [
+              "0.2600",
+              "200.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "200.00"
+            ],
+            [
+              "0.0200",
+              "4.00"
+            ],
+            [
+              "0.0300",
+              "2505.00"
+            ],
+            [
+              "0.0400",
+              "151.00"
+            ],
+            [
+              "0.3000",
+              "7.97"
+            ],
+            [
+              "0.6500",
+              "200.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3705,17 +3761,17 @@
     "expected_expiration_time": "2028-01-01T15:00:00Z",
     "expiration_time": "2028-01-08T15:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.7400",
+    "last_price_dollars": "0.6600",
     "latest_expiration_time": "2028-01-08T15:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.3400",
+    "no_ask_dollars": "0.3500",
     "no_bid_dollars": "0.2600",
     "no_sub_title": "any psychedelic substance for medical use",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2028-01-01T15:00:00Z",
-    "open_interest_fp": "41.51",
+    "open_interest_fp": "41.33",
     "open_time": "2026-10-21T16:00:00Z",
-    "previous_price_dollars": "0.6000",
+    "previous_price_dollars": "0.7400",
     "previous_yes_ask_dollars": "0.7400",
     "previous_yes_bid_dollars": "0.6600",
     "price_level_structure": "linear_cent",
@@ -3735,19 +3791,19 @@
     "ticker": "KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH",
     "title": "Will the FDA approve any psychedelic substance for medical use before 2028?",
     "updated_time": "2026-10-23T17:14:55.512477Z",
-    "volume_24h_fp": "0.18",
-    "volume_fp": "116.76",
+    "volume_24h_fp": "6.99",
+    "volume_fp": "123.75",
     "yes_ask_dollars": "0.7400",
     "yes_ask_size_fp": "200.00",
-    "yes_bid_dollars": "0.6600",
+    "yes_bid_dollars": "0.6500",
     "yes_bid_size_fp": "200.00",
     "yes_sub_title": "any psychedelic substance for medical use"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH",
-  "market_captured_at": "2026-10-28T09:03:51.379Z",
+  "market_captured_at": "2026-10-28T13:11:10.846Z",
   "status": "active",
-  "last_ingested_at": "2026-10-28T09:03:51.998Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALPSYCHEDELIC/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH/candlesticks?start_ts=1793160001&end_ts=1793178231&period_interval=1440",
+  "last_ingested_at": "2026-10-28T13:11:11.469Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAAPPROVALPSYCHEDELIC/markets/KXFDAAPPROVALPSYCHEDELIC-28-ANYPSYCH/candlesticks?start_ts=1793160001&end_ts=1793193071&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:11.109Z",
