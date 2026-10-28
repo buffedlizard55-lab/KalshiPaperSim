@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-28T03:12:13.626Z",
+ "generatedAt": "2026-10-28T09:44:18.567Z",
  "rows": [
   {
    "league": "nba",
@@ -715,6 +715,16 @@
      "ticker": "KXNBAGAME-26OCT07GSWPOR-GSW",
      "rulesName": "Portland",
      "role": "home"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT27PORLAL-LAL",
+     "rulesName": "Portland",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNBAGAME-26OCT27PORLAL-POR",
+     "rulesName": "Portland",
+     "role": "away"
     }
    ]
   },
@@ -1932,6 +1942,11 @@
      "role": "away"
     },
     {
+     "ticker": "KXNCAAFGAME-26NOV07OREOSU-ORE",
+     "rulesName": "Oregon",
+     "role": "away"
+    },
+    {
      "ticker": "KXNCAAFGAME-26OCT10UCLAORE-ORE",
      "rulesName": "Oregon",
      "role": "home"
@@ -1943,11 +1958,6 @@
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17NEBORE-NEB",
-     "rulesName": "Oregon",
-     "role": "home"
-    },
-    {
-     "ticker": "KXNCAAFGAME-26OCT17NEBORE-ORE",
      "rulesName": "Oregon",
      "role": "home"
     }
@@ -1967,6 +1977,11 @@
      "role": "home"
     },
     {
+     "ticker": "KXNCAAFGAME-26NOV07OREOSU-ORE",
+     "rulesName": "Ohio St.",
+     "role": "home"
+    },
+    {
      "ticker": "KXNCAAFGAME-26OCT10MDOSU-MD",
      "rulesName": "Ohio St.",
      "role": "home"
@@ -1978,11 +1993,6 @@
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17OSUIND-IND",
-     "rulesName": "Ohio St.",
-     "role": "away"
-    },
-    {
-     "ticker": "KXNCAAFGAME-26OCT17OSUIND-OSU",
      "rulesName": "Ohio St.",
      "role": "away"
     }

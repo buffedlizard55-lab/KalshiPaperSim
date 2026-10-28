@@ -1,0 +1,61 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-29",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261029"
+  ]
+ },
+ "captures": [
+  "2026-10-28T09:44:16.498Z"
+ ],
+ "events": {
+  "401873023": {
+   "eventId": "401873023",
+   "date": "2026-10-30T00:15Z",
+   "easternDate": "2026-10-29",
+   "name": "Carolina Panthers at Green Bay Packers",
+   "shortName": "CAR @ GB",
+   "week": 8,
+   "venue": "Lambeau Field",
+   "homeAbbr": "GB",
+   "homeTeamId": "9",
+   "homeName": "Green Bay Packers",
+   "awayAbbr": "CAR",
+   "awayTeamId": "29",
+   "awayName": "Carolina Panthers",
+   "firstCapturedAt": "2026-10-28T09:44:16.498Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "GB -3.5",
+    "spread": -3.5,
+    "overUnder": 47.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-28T09:44:16.498Z",
+     "last_seen_at": "2026-10-28T09:44:16.498Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "3-3"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-28T09:44:16.498Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261029"
+}

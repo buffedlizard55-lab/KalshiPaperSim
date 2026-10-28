@@ -1,0 +1,105 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-29",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261029"
+  ]
+ },
+ "captures": [
+  "2026-10-28T09:44:16.844Z"
+ ],
+ "events": {
+  "401862812": {
+   "eventId": "401862812",
+   "date": "2026-10-29T23:30Z",
+   "easternDate": "2026-10-29",
+   "name": "Florida Atlantic Owls at North Texas Mean Green",
+   "shortName": "FAU @ UNT",
+   "week": 9,
+   "venue": "DATCU Stadium",
+   "homeAbbr": "UNT",
+   "homeTeamId": "249",
+   "homeName": "North Texas Mean Green",
+   "awayAbbr": "FAU",
+   "awayTeamId": "2226",
+   "awayName": "Florida Atlantic Owls",
+   "firstCapturedAt": "2026-10-28T09:44:16.844Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "UNT -13.5",
+    "spread": -13.5,
+    "overUnder": 77.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-28T09:44:16.844Z",
+     "last_seen_at": "2026-10-28T09:44:16.844Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-2",
+      "away": "5-2"
+     }
+    }
+   ]
+  },
+  "401869963": {
+   "eventId": "401869963",
+   "date": "2026-10-29T23:30Z",
+   "easternDate": "2026-10-29",
+   "name": "Troy Trojans at James Madison Dukes",
+   "shortName": "TROY @ JMU",
+   "week": 9,
+   "venue": "Bridgeforth Stadium",
+   "homeAbbr": "JMU",
+   "homeTeamId": "256",
+   "homeName": "James Madison Dukes",
+   "awayAbbr": "TROY",
+   "awayTeamId": "2653",
+   "awayName": "Troy Trojans",
+   "firstCapturedAt": "2026-10-28T09:44:16.844Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "JMU -21",
+    "spread": -21,
+    "overUnder": 49.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-28T09:44:16.844Z",
+     "last_seen_at": "2026-10-28T09:44:16.844Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "7-1",
+      "away": "3-4"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-28T09:44:16.844Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261029"
+}

@@ -1,0 +1,134 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-29",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261029"
+  ]
+ },
+ "captures": [
+  "2026-10-28T09:44:16.678Z"
+ ],
+ "events": {
+  "401909893": {
+   "eventId": "401909893",
+   "date": "2026-10-30T00:00Z",
+   "easternDate": "2026-10-29",
+   "name": "Cleveland Cavaliers at Atlanta Hawks",
+   "shortName": "CLE @ ATL",
+   "week": null,
+   "venue": "State Farm Arena",
+   "homeAbbr": "ATL",
+   "homeTeamId": "1",
+   "homeName": "Atlanta Hawks",
+   "awayAbbr": "CLE",
+   "awayTeamId": "5",
+   "awayName": "Cleveland Cavaliers",
+   "firstCapturedAt": "2026-10-28T09:44:16.678Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-28T09:44:16.678Z",
+     "last_seen_at": "2026-10-28T09:44:16.678Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-2",
+      "away": "2-1"
+     }
+    }
+   ]
+  },
+  "401909894": {
+   "eventId": "401909894",
+   "date": "2026-10-30T00:00Z",
+   "easternDate": "2026-10-29",
+   "name": "Sacramento Kings at New Orleans Pelicans",
+   "shortName": "SAC @ NO",
+   "week": null,
+   "venue": "Smoothie King Center",
+   "homeAbbr": "NO",
+   "homeTeamId": "3",
+   "homeName": "New Orleans Pelicans",
+   "awayAbbr": "SAC",
+   "awayTeamId": "23",
+   "awayName": "Sacramento Kings",
+   "firstCapturedAt": "2026-10-28T09:44:16.678Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-28T09:44:16.678Z",
+     "last_seen_at": "2026-10-28T09:44:16.678Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-3",
+      "away": "0-4"
+     }
+    }
+   ]
+  },
+  "401909895": {
+   "eventId": "401909895",
+   "date": "2026-10-30T02:00Z",
+   "easternDate": "2026-10-29",
+   "name": "Memphis Grizzlies at Portland Trail Blazers",
+   "shortName": "MEM @ POR",
+   "week": null,
+   "venue": "Moda Center",
+   "homeAbbr": "POR",
+   "homeTeamId": "22",
+   "homeName": "Portland Trail Blazers",
+   "awayAbbr": "MEM",
+   "awayTeamId": "29",
+   "awayName": "Memphis Grizzlies",
+   "firstCapturedAt": "2026-10-28T09:44:16.678Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-28T09:44:16.678Z",
+     "last_seen_at": "2026-10-28T09:44:16.678Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-0",
+      "away": "4-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-28T09:44:16.678Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261029"
+}
