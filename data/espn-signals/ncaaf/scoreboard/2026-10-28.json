@@ -11,7 +11,8 @@
   "2026-10-27T09:04:10.054Z",
   "2026-10-27T19:48:51.458Z",
   "2026-10-27T23:27:09.465Z",
-  "2026-10-28T02:34:37.404Z"
+  "2026-10-28T02:34:37.404Z",
+  "2026-10-28T03:12:11.795Z"
  ],
  "events": {
   "401871057": {
@@ -38,7 +39,7 @@
    "states": [
     {
      "captured_at": "2026-10-27T09:04:10.054Z",
-     "last_seen_at": "2026-10-28T02:34:37.404Z",
+     "last_seen_at": "2026-10-28T03:12:11.795Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -82,7 +83,7 @@
    "states": [
     {
      "captured_at": "2026-10-27T09:04:10.054Z",
-     "last_seen_at": "2026-10-28T02:34:37.404Z",
+     "last_seen_at": "2026-10-28T03:12:11.795Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -103,6 +104,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-28T02:34:37.404Z",
+ "last_ingested_at": "2026-10-28T03:12:11.795Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261028"
 }
