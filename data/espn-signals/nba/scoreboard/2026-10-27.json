@@ -14,7 +14,8 @@
   "2026-10-27T03:01:32.356Z",
   "2026-10-27T09:04:09.858Z",
   "2026-10-27T19:48:51.240Z",
-  "2026-10-27T23:27:09.419Z"
+  "2026-10-27T23:27:09.419Z",
+  "2026-10-28T02:34:37.355Z"
  ],
  "events": {
   "401909877": {
@@ -53,6 +54,26 @@
       "home": "1-1",
       "away": "0-3"
      }
+    },
+    {
+     "captured_at": "2026-10-28T02:34:37.355Z",
+     "last_seen_at": "2026-10-28T02:34:37.355Z",
+     "fp": "post|5|0|125,124|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 5,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 125,
+      "away": 124
+     },
+     "recordsOverall": {
+      "home": "3-1",
+      "away": "0-4"
+     }
     }
    ]
   },
@@ -87,6 +108,26 @@
      "scores": {
       "home": 0,
       "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-3",
+      "away": "3-0"
+     }
+    },
+    {
+     "captured_at": "2026-10-28T02:34:37.355Z",
+     "last_seen_at": "2026-10-28T02:34:37.355Z",
+     "fp": "in|4|5|99,84|false|STATUS_IN_PROGRESS",
+     "url_ref": 0,
+     "state": "in",
+     "statusName": "STATUS_IN_PROGRESS",
+     "completed": false,
+     "period": 4,
+     "clock": 324,
+     "displayClock": "5:24",
+     "scores": {
+      "home": 99,
+      "away": 84
      },
      "recordsOverall": {
       "home": "0-3",
@@ -131,6 +172,26 @@
       "home": "1-2",
       "away": "0-3"
      }
+    },
+    {
+     "captured_at": "2026-10-28T02:34:37.355Z",
+     "last_seen_at": "2026-10-28T02:34:37.355Z",
+     "fp": "post|4|0|130,103|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 130,
+      "away": 103
+     },
+     "recordsOverall": {
+      "home": "2-2",
+      "away": "0-4"
+     }
     }
    ]
   },
@@ -153,7 +214,7 @@
    "states": [
     {
      "captured_at": "2026-10-26T08:20:44.924Z",
-     "last_seen_at": "2026-10-27T23:27:09.419Z",
+     "last_seen_at": "2026-10-28T02:34:37.355Z",
      "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
      "url_ref": 0,
      "state": "pre",
@@ -174,6 +235,6 @@
    ]
   }
  },
- "last_ingested_at": "2026-10-27T23:27:09.419Z",
+ "last_ingested_at": "2026-10-28T02:34:37.355Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261027"
 }
