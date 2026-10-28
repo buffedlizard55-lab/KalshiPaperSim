@@ -10,7 +10,8 @@
   ]
  },
  "captures": [
-  "2026-10-28T09:49:44.024Z"
+  "2026-10-28T09:49:44.024Z",
+  "2026-10-28T20:39:35.038Z"
  ],
  "games": {
   "849799": {
@@ -36,7 +37,10 @@
      "id": 694819,
      "fullName": "Jacob Misiorowski"
     },
-    "home": null
+    "home": {
+     "id": 656876,
+     "fullName": "Drew Rasmussen"
+    }
    },
    "firstCapturedAt": "2026-10-28T09:49:44.024Z",
    "states": [
@@ -51,6 +55,21 @@
      "runs": {
       "away": null,
       "home": null
+     },
+     "winner": null,
+     "url_ref": 0
+    },
+    {
+     "captured_at": "2026-10-28T20:39:35.038Z",
+     "last_seen_at": "2026-10-28T20:39:35.038Z",
+     "abstractGameState": "Preview",
+     "detailedState": "Pre-Game",
+     "codedGameState": "P",
+     "inning": 1,
+     "inningState": "Top",
+     "runs": {
+      "away": 0,
+      "home": 0
      },
      "winner": null,
      "url_ref": 0
