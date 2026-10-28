@@ -1269,6 +1269,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-28T06:02:15.750Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1329,11 +1339,11 @@
     "yes_sub_title": "Sal Stewart: 2+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2",
-  "market_captured_at": "2026-10-27T20:58:39.036Z",
+  "market_captured_at": "2026-10-28T06:02:15.186Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-27T20:58:39.600Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2/candlesticks?start_ts=1789790401&end_ts=1793134719&period_interval=1440",
+  "last_ingested_at": "2026-10-28T06:02:15.720Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBHIT/markets/KXMLBHIT-26SEP181840CHCCIN-CINSSTEWART27-2/candlesticks?start_ts=1789790401&end_ts=1793167335&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:52:02.288Z",

@@ -12755,6 +12755,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-28T06:13:26.562Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT08TBDAL-TB/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12812,11 +12822,11 @@
     "yes_sub_title": "Tampa Bay"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT08TBDAL-TB",
-  "market_captured_at": "2026-10-27T21:10:34.663Z",
+  "market_captured_at": "2026-10-28T06:13:19.579Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-27T21:10:41.859Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT08TBDAL-TB/candlesticks?start_ts=1793071201&end_ts=1793135434&period_interval=1",
+  "last_ingested_at": "2026-10-28T06:13:26.532Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT08TBDAL-TB/candlesticks?start_ts=1793157601&end_ts=1793167999&period_interval=1",
   "trims": [
     {
       "at": "2026-10-09T06:37:27.863Z",
