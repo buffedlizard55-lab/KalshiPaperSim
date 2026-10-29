@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-29T03:38:19.056Z",
+ "generatedAt": "2026-10-29T10:24:07.938Z",
  "rows": [
   {
    "league": "nba",
@@ -3717,7 +3717,7 @@
      "role": "home"
     },
     {
-     "ticker": "KXNHLGAME-26SEP30LACOL-COL",
+     "ticker": "KXNHLGAME-26OCT28NJCOL-COL",
      "rulesName": "Colorado",
      "role": "home"
     }
@@ -3991,6 +3991,11 @@
    },
    "espnReason": "MATCHED",
    "evidence": [
+    {
+     "ticker": "KXNHLGAME-26OCT28NJCOL-COL",
+     "rulesName": "New Jersey",
+     "role": "away"
+    },
     {
      "ticker": "KXNHLGAME-26SEP21NYRNJ-NJ",
      "rulesName": "New Jersey",

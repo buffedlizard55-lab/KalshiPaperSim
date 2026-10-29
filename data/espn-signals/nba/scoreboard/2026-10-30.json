@@ -1,0 +1,412 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-30",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261030"
+  ]
+ },
+ "captures": [
+  "2026-10-29T10:24:06.549Z"
+ ],
+ "events": {
+  "401909277": {
+   "eventId": "401909277",
+   "date": "2026-10-30T23:00Z",
+   "easternDate": "2026-10-30",
+   "name": "Charlotte Hornets at Washington Wizards",
+   "shortName": "CHA @ WSH",
+   "week": null,
+   "venue": "Capital One Arena",
+   "homeAbbr": "WSH",
+   "homeTeamId": "27",
+   "homeName": "Washington Wizards",
+   "awayAbbr": "CHA",
+   "awayTeamId": "30",
+   "awayName": "Charlotte Hornets",
+   "firstCapturedAt": "2026-10-29T10:24:06.549Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.549Z",
+     "last_seen_at": "2026-10-29T10:24:06.549Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "3-2"
+     }
+    }
+   ]
+  },
+  "401909278": {
+   "eventId": "401909278",
+   "date": "2026-10-30T23:30Z",
+   "easternDate": "2026-10-30",
+   "name": "Chicago Bulls at Boston Celtics",
+   "shortName": "CHI @ BOS",
+   "week": null,
+   "venue": "TD Garden",
+   "homeAbbr": "BOS",
+   "homeTeamId": "2",
+   "homeName": "Boston Celtics",
+   "awayAbbr": "CHI",
+   "awayTeamId": "4",
+   "awayName": "Chicago Bulls",
+   "firstCapturedAt": "2026-10-29T10:24:06.549Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.549Z",
+     "last_seen_at": "2026-10-29T10:24:06.549Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-1",
+      "away": "1-4"
+     }
+    }
+   ]
+  },
+  "401909279": {
+   "eventId": "401909279",
+   "date": "2026-10-30T23:30Z",
+   "easternDate": "2026-10-30",
+   "name": "Detroit Pistons at Brooklyn Nets",
+   "shortName": "DET @ BKN",
+   "week": null,
+   "venue": "Barclays Center",
+   "homeAbbr": "BKN",
+   "homeTeamId": "17",
+   "homeName": "Brooklyn Nets",
+   "awayAbbr": "DET",
+   "awayTeamId": "8",
+   "awayName": "Detroit Pistons",
+   "firstCapturedAt": "2026-10-29T10:24:06.549Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.549Z",
+     "last_seen_at": "2026-10-29T10:24:06.549Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-4",
+      "away": "4-1"
+     }
+    }
+   ]
+  },
+  "401909280": {
+   "eventId": "401909280",
+   "date": "2026-10-30T23:30Z",
+   "easternDate": "2026-10-30",
+   "name": "New York Knicks at Philadelphia 76ers",
+   "shortName": "NY @ PHI",
+   "week": null,
+   "venue": "Xfinity Mobile Arena",
+   "homeAbbr": "PHI",
+   "homeTeamId": "20",
+   "homeName": "Philadelphia 76ers",
+   "awayAbbr": "NY",
+   "awayTeamId": "18",
+   "awayName": "New York Knicks",
+   "firstCapturedAt": "2026-10-29T10:24:06.549Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.549Z",
+     "last_seen_at": "2026-10-29T10:24:06.549Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-1",
+      "away": "2-3"
+     }
+    }
+   ]
+  },
+  "401909281": {
+   "eventId": "401909281",
+   "date": "2026-10-30T23:30Z",
+   "easternDate": "2026-10-30",
+   "name": "Orlando Magic at Toronto Raptors",
+   "shortName": "ORL @ TOR",
+   "week": null,
+   "venue": "Scotiabank Arena",
+   "homeAbbr": "TOR",
+   "homeTeamId": "28",
+   "homeName": "Toronto Raptors",
+   "awayAbbr": "ORL",
+   "awayTeamId": "19",
+   "awayName": "Orlando Magic",
+   "firstCapturedAt": "2026-10-29T10:24:06.549Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.549Z",
+     "last_seen_at": "2026-10-29T10:24:06.549Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-1",
+      "away": "1-3"
+     }
+    }
+   ]
+  },
+  "401909282": {
+   "eventId": "401909282",
+   "date": "2026-10-31T00:00Z",
+   "easternDate": "2026-10-30",
+   "name": "Indiana Pacers at Miami Heat",
+   "shortName": "IND @ MIA",
+   "week": null,
+   "venue": "Kaseya Center",
+   "homeAbbr": "MIA",
+   "homeTeamId": "14",
+   "homeName": "Miami Heat",
+   "awayAbbr": "IND",
+   "awayTeamId": "11",
+   "awayName": "Indiana Pacers",
+   "firstCapturedAt": "2026-10-29T10:24:06.549Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.549Z",
+     "last_seen_at": "2026-10-29T10:24:06.549Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-4",
+      "away": "2-3"
+     }
+    }
+   ]
+  },
+  "401909283": {
+   "eventId": "401909283",
+   "date": "2026-10-31T00:00Z",
+   "easternDate": "2026-10-30",
+   "name": "Houston Rockets at Dallas Mavericks",
+   "shortName": "HOU @ DAL",
+   "week": null,
+   "venue": "American Airlines Center",
+   "homeAbbr": "DAL",
+   "homeTeamId": "6",
+   "homeName": "Dallas Mavericks",
+   "awayAbbr": "HOU",
+   "awayTeamId": "10",
+   "awayName": "Houston Rockets",
+   "firstCapturedAt": "2026-10-29T10:24:06.549Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.549Z",
+     "last_seen_at": "2026-10-29T10:24:06.549Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-2",
+      "away": "5-0"
+     }
+    }
+   ]
+  },
+  "401909284": {
+   "eventId": "401909284",
+   "date": "2026-10-31T00:00Z",
+   "easternDate": "2026-10-30",
+   "name": "LA Clippers at Minnesota Timberwolves",
+   "shortName": "LAC @ MIN",
+   "week": null,
+   "venue": "Target Center",
+   "homeAbbr": "MIN",
+   "homeTeamId": "16",
+   "homeName": "Minnesota Timberwolves",
+   "awayAbbr": "LAC",
+   "awayTeamId": "12",
+   "awayName": "LA Clippers",
+   "firstCapturedAt": "2026-10-29T10:24:06.549Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.549Z",
+     "last_seen_at": "2026-10-29T10:24:06.549Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-2",
+      "away": "1-3"
+     }
+    }
+   ]
+  },
+  "401909285": {
+   "eventId": "401909285",
+   "date": "2026-10-31T02:00Z",
+   "easternDate": "2026-10-30",
+   "name": "Los Angeles Lakers at Golden State Warriors",
+   "shortName": "LAL @ GS",
+   "week": null,
+   "venue": "Chase Center",
+   "homeAbbr": "GS",
+   "homeTeamId": "9",
+   "homeName": "Golden State Warriors",
+   "awayAbbr": "LAL",
+   "awayTeamId": "13",
+   "awayName": "Los Angeles Lakers",
+   "firstCapturedAt": "2026-10-29T10:24:06.549Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.549Z",
+     "last_seen_at": "2026-10-29T10:24:06.549Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-3",
+      "away": "4-1"
+     }
+    }
+   ]
+  },
+  "401909286": {
+   "eventId": "401909286",
+   "date": "2026-10-31T02:00Z",
+   "easternDate": "2026-10-30",
+   "name": "Denver Nuggets at Phoenix Suns",
+   "shortName": "DEN @ PHX",
+   "week": null,
+   "venue": "Mortgage Matchup Center",
+   "homeAbbr": "PHX",
+   "homeTeamId": "21",
+   "homeName": "Phoenix Suns",
+   "awayAbbr": "DEN",
+   "awayTeamId": "7",
+   "awayName": "Denver Nuggets",
+   "firstCapturedAt": "2026-10-29T10:24:06.549Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": null,
+    "spread": null,
+    "overUnder": 233.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.549Z",
+     "last_seen_at": "2026-10-29T10:24:06.549Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0.0",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-2",
+      "away": "2-2"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-29T10:24:06.549Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261030"
+}

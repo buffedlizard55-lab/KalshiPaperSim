@@ -1,0 +1,134 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-30",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261030"
+  ]
+ },
+ "captures": [
+  "2026-10-29T10:24:07.057Z"
+ ],
+ "events": {
+  "401892611": {
+   "eventId": "401892611",
+   "date": "2026-10-30T22:00Z",
+   "easternDate": "2026-10-30",
+   "name": "New Jersey Devils at Vegas Golden Knights",
+   "shortName": "NJ @ VGK",
+   "week": null,
+   "venue": "T-Mobile Arena",
+   "homeAbbr": "VGK",
+   "homeTeamId": "37",
+   "homeName": "Vegas Golden Knights",
+   "awayAbbr": "NJ",
+   "awayTeamId": "11",
+   "awayName": "New Jersey Devils",
+   "firstCapturedAt": "2026-10-29T10:24:07.057Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:07.057Z",
+     "last_seen_at": "2026-10-29T10:24:07.057Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "9-4-1",
+      "away": "8-5-0"
+     }
+    }
+   ]
+  },
+  "401892612": {
+   "eventId": "401892612",
+   "date": "2026-10-30T23:00Z",
+   "easternDate": "2026-10-30",
+   "name": "Winnipeg Jets at Florida Panthers",
+   "shortName": "WPG @ FLA",
+   "week": null,
+   "venue": "Amerant Bank Arena",
+   "homeAbbr": "FLA",
+   "homeTeamId": "26",
+   "homeName": "Florida Panthers",
+   "awayAbbr": "WPG",
+   "awayTeamId": "28",
+   "awayName": "Winnipeg Jets",
+   "firstCapturedAt": "2026-10-29T10:24:07.057Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:07.057Z",
+     "last_seen_at": "2026-10-29T10:24:07.057Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "7-4-2",
+      "away": "4-5-3"
+     }
+    }
+   ]
+  },
+  "401892613": {
+   "eventId": "401892613",
+   "date": "2026-10-31T00:00Z",
+   "easternDate": "2026-10-30",
+   "name": "Seattle Kraken at Calgary Flames",
+   "shortName": "SEA @ CGY",
+   "week": null,
+   "venue": "Scotiabank Saddledome",
+   "homeAbbr": "CGY",
+   "homeTeamId": "3",
+   "homeName": "Calgary Flames",
+   "awayAbbr": "SEA",
+   "awayTeamId": "124292",
+   "awayName": "Seattle Kraken",
+   "firstCapturedAt": "2026-10-29T10:24:07.057Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:07.057Z",
+     "last_seen_at": "2026-10-29T10:24:07.057Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-7-0",
+      "away": "8-4-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-29T10:24:07.057Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261030"
+}

@@ -1,0 +1,149 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-30",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261030"
+  ]
+ },
+ "captures": [
+  "2026-10-29T10:24:06.717Z"
+ ],
+ "events": {
+  "401856844": {
+   "eventId": "401856844",
+   "date": "2026-10-30T23:30Z",
+   "easternDate": "2026-10-30",
+   "name": "Baylor Bears at UCF Knights",
+   "shortName": "BAY @ UCF",
+   "week": 9,
+   "venue": "Acrisure Bounce House",
+   "homeAbbr": "UCF",
+   "homeTeamId": "2116",
+   "homeName": "UCF Knights",
+   "awayAbbr": "BAY",
+   "awayTeamId": "239",
+   "awayName": "Baylor Bears",
+   "firstCapturedAt": "2026-10-29T10:24:06.717Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "UCF -1.5",
+    "spread": -1.5,
+    "overUnder": 47.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.717Z",
+     "last_seen_at": "2026-10-29T10:24:06.717Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401862813": {
+   "eventId": "401862813",
+   "date": "2026-10-30T23:00Z",
+   "easternDate": "2026-10-30",
+   "name": "Tulane Green Wave at Charlotte 49ers",
+   "shortName": "TULN @ CLT",
+   "week": 9,
+   "venue": "Jerry Richardson Stadium",
+   "homeAbbr": "CLT",
+   "homeTeamId": "2429",
+   "homeName": "Charlotte 49ers",
+   "awayAbbr": "TULN",
+   "awayTeamId": "2655",
+   "awayName": "Tulane Green Wave",
+   "firstCapturedAt": "2026-10-29T10:24:06.717Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "TULN -9.5",
+    "spread": 9.5,
+    "overUnder": 47.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.717Z",
+     "last_seen_at": "2026-10-29T10:24:06.717Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-6",
+      "away": "3-4"
+     }
+    }
+   ]
+  },
+  "401866451": {
+   "eventId": "401866451",
+   "date": "2026-10-31T02:30Z",
+   "easternDate": "2026-10-30",
+   "name": "Kent State Golden Flashes at Sacramento State Hornets",
+   "shortName": "KENT @ SAC",
+   "week": 9,
+   "venue": "Hornet Stadium",
+   "homeAbbr": "SAC",
+   "homeTeamId": "16",
+   "homeName": "Sacramento State Hornets",
+   "awayAbbr": "KENT",
+   "awayTeamId": "2309",
+   "awayName": "Kent State Golden Flashes",
+   "firstCapturedAt": "2026-10-29T10:24:06.717Z",
+   "oddsContextOnly": {
+    "providerName": "DraftKings",
+    "details": "KENT -8.5",
+    "spread": 8.5,
+    "overUnder": 46.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-29T10:24:06.717Z",
+     "last_seen_at": "2026-10-29T10:24:06.717Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-7",
+      "away": "3-5"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-29T10:24:06.717Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261030"
+}
