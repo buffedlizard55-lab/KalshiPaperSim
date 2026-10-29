@@ -3763,6 +3763,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T06:16:20.813Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT22CAREDM-CAR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3820,9 +3830,9 @@
     "yes_sub_title": "Carolina"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT22CAREDM-CAR",
-  "market_captured_at": "2026-10-28T21:26:20.649Z",
+  "market_captured_at": "2026-10-29T06:16:20.166Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-28T21:26:21.278Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT22CAREDM-CAR/candlesticks?start_ts=1792731601&end_ts=1793222780&period_interval=60"
+  "last_ingested_at": "2026-10-29T06:16:20.791Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT22CAREDM-CAR/candlesticks?start_ts=1792731601&end_ts=1793254580&period_interval=60"
 }

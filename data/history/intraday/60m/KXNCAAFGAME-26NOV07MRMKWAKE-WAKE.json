@@ -817,6 +817,106 @@
         "low_dollars": "0.9700",
         "open_dollars": "0.9700"
       }
+    },
+    {
+      "end_period_ts": 1793224800,
+      "open_interest_fp": "3634.58",
+      "price": {
+        "previous_dollars": "0.9700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1793228400,
+      "open_interest_fp": "3634.58",
+      "price": {
+        "previous_dollars": "0.9700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1793232000,
+      "open_interest_fp": "3634.58",
+      "price": {
+        "previous_dollars": "0.9700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1793239200,
+      "open_interest_fp": "3634.58",
+      "price": {
+        "previous_dollars": "0.9700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
+    },
+    {
+      "end_period_ts": 1793242800,
+      "open_interest_fp": "3634.58",
+      "price": {
+        "previous_dollars": "0.9700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.9800",
+        "high_dollars": "0.9800",
+        "low_dollars": "0.9800",
+        "open_dollars": "0.9800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9700",
+        "high_dollars": "0.9700",
+        "low_dollars": "0.9700",
+        "open_dollars": "0.9700"
+      }
     }
   ],
   "books": [
@@ -1955,6 +2055,106 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T06:16:29.741Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07MRMKWAKE-WAKE/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "6569.00"
+            ],
+            [
+              "0.0200",
+              "1501.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "97225.00"
+            ],
+            [
+              "0.0200",
+              "1551.00"
+            ],
+            [
+              "0.0300",
+              "1213.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "1.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "380.00"
+            ],
+            [
+              "0.0900",
+              "301.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.1300",
+              "1.00"
+            ],
+            [
+              "0.1400",
+              "20.00"
+            ],
+            [
+              "0.1600",
+              "21.00"
+            ],
+            [
+              "0.1800",
+              "21.00"
+            ],
+            [
+              "0.1900",
+              "20.00"
+            ],
+            [
+              "0.2000",
+              "45.00"
+            ],
+            [
+              "0.3500",
+              "10.00"
+            ],
+            [
+              "0.4500",
+              "1.00"
+            ],
+            [
+              "0.8800",
+              "140.00"
+            ],
+            [
+              "0.9700",
+              "884.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2004,14 +2204,14 @@
     "volume_24h_fp": "0.00",
     "volume_fp": "3773.22",
     "yes_ask_dollars": "0.9800",
-    "yes_ask_size_fp": "3064.70",
+    "yes_ask_size_fp": "1501.00",
     "yes_bid_dollars": "0.9700",
     "yes_bid_size_fp": "884.00",
     "yes_sub_title": "Wake Forest"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07MRMKWAKE-WAKE",
-  "market_captured_at": "2026-10-28T21:26:29.610Z",
+  "market_captured_at": "2026-10-29T06:16:29.095Z",
   "status": "active",
-  "last_ingested_at": "2026-10-28T21:26:30.238Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07MRMKWAKE-WAKE/candlesticks?start_ts=1793192401&end_ts=1793222789&period_interval=60"
+  "last_ingested_at": "2026-10-29T06:16:29.720Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07MRMKWAKE-WAKE/candlesticks?start_ts=1793221201&end_ts=1793254589&period_interval=60"
 }

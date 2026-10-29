@@ -7372,6 +7372,26 @@
         "low_dollars": "0.0400",
         "open_dollars": "0.0400"
       }
+    },
+    {
+      "end_period_ts": 1793246400,
+      "open_interest_fp": "44676.17",
+      "price": {
+        "previous_dollars": "0.0400"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0600",
+        "high_dollars": "0.0600",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      }
     }
   ],
   "books": [
@@ -41034,6 +41054,246 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T06:12:35.864Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXOPENAICEOCHANGE-26/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2737.44"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "889.00"
+            ],
+            [
+              "0.0400",
+              "1000.00"
+            ],
+            [
+              "0.0500",
+              "1111.00"
+            ],
+            [
+              "0.1800",
+              "61.60"
+            ],
+            [
+              "0.2300",
+              "3.62"
+            ],
+            [
+              "0.2500",
+              "1405.80"
+            ],
+            [
+              "0.2800",
+              "201.17"
+            ],
+            [
+              "0.3100",
+              "42.65"
+            ],
+            [
+              "0.3300",
+              "33.68"
+            ],
+            [
+              "0.4200",
+              "28.90"
+            ],
+            [
+              "0.4500",
+              "72.99"
+            ],
+            [
+              "0.4600",
+              "1357.00"
+            ],
+            [
+              "0.4700",
+              "1.00"
+            ],
+            [
+              "0.6400",
+              "120.00"
+            ],
+            [
+              "0.6700",
+              "3.40"
+            ],
+            [
+              "0.7000",
+              "49.00"
+            ],
+            [
+              "0.7100",
+              "300.30"
+            ],
+            [
+              "0.9100",
+              "500.00"
+            ],
+            [
+              "0.9200",
+              "20.52"
+            ],
+            [
+              "0.9300",
+              "317.73"
+            ],
+            [
+              "0.9400",
+              "119.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "9047.99"
+            ],
+            [
+              "0.0200",
+              "179.16"
+            ],
+            [
+              "0.0300",
+              "333.53"
+            ],
+            [
+              "0.0400",
+              "12.25"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-29T06:23:22.110Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXOPENAICEOCHANGE-26/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "2737.44"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "889.00"
+            ],
+            [
+              "0.0400",
+              "1000.00"
+            ],
+            [
+              "0.0500",
+              "1111.00"
+            ],
+            [
+              "0.1800",
+              "61.60"
+            ],
+            [
+              "0.2300",
+              "3.62"
+            ],
+            [
+              "0.2500",
+              "1405.80"
+            ],
+            [
+              "0.2800",
+              "201.17"
+            ],
+            [
+              "0.3100",
+              "42.65"
+            ],
+            [
+              "0.3300",
+              "33.68"
+            ],
+            [
+              "0.4200",
+              "28.90"
+            ],
+            [
+              "0.4500",
+              "72.99"
+            ],
+            [
+              "0.4600",
+              "1357.00"
+            ],
+            [
+              "0.4700",
+              "1.00"
+            ],
+            [
+              "0.6400",
+              "120.00"
+            ],
+            [
+              "0.6700",
+              "3.40"
+            ],
+            [
+              "0.7000",
+              "49.00"
+            ],
+            [
+              "0.7100",
+              "300.30"
+            ],
+            [
+              "0.9100",
+              "500.00"
+            ],
+            [
+              "0.9200",
+              "20.52"
+            ],
+            [
+              "0.9300",
+              "317.73"
+            ],
+            [
+              "0.9400",
+              "119.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "8547.99"
+            ],
+            [
+              "0.0200",
+              "679.16"
+            ],
+            [
+              "0.0300",
+              "333.53"
+            ],
+            [
+              "0.0400",
+              "12.25"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -41074,19 +41334,19 @@
     "ticker": "KXOPENAICEOCHANGE-26",
     "title": "Will OpenAI change its CEO?",
     "updated_time": "2026-04-09T09:39:57.767568Z",
-    "volume_24h_fp": "1.03",
+    "volume_24h_fp": "0.00",
     "volume_fp": "117448.54",
     "yes_ask_dollars": "0.0600",
-    "yes_ask_size_fp": "19.00",
+    "yes_ask_size_fp": "119.00",
     "yes_bid_dollars": "0.0400",
     "yes_bid_size_fp": "12.25",
     "yes_sub_title": "Hires"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXOPENAICEOCHANGE-26",
-  "market_captured_at": "2026-10-28T21:33:22.469Z",
+  "market_captured_at": "2026-10-29T06:23:21.465Z",
   "status": "active",
-  "last_ingested_at": "2026-10-28T21:33:23.094Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXOPENAICEOCHANGE/markets/KXOPENAICEOCHANGE-26/candlesticks?start_ts=1793160001&end_ts=1793223202&period_interval=1440",
+  "last_ingested_at": "2026-10-29T06:23:22.088Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXOPENAICEOCHANGE/markets/KXOPENAICEOCHANGE-26/candlesticks?start_ts=1793246401&end_ts=1793255001&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:54:05.464Z",
