@@ -80225,6 +80225,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T08:46:41.079Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -80250,9 +80260,9 @@
     "occurrence_datetime": "2026-10-29T03:04:01.199Z",
     "open_interest_fp": "7030294.14",
     "open_time": "2025-12-17T15:00:00Z",
-    "previous_price_dollars": "0.9090",
-    "previous_yes_ask_dollars": "0.9090",
-    "previous_yes_bid_dollars": "0.9060",
+    "previous_price_dollars": "0.9030",
+    "previous_yes_ask_dollars": "0.9070",
+    "previous_yes_bid_dollars": "0.9040",
     "price_level_structure": "deci_cent",
     "price_ranges": [
       {
@@ -80273,7 +80283,7 @@
     "ticker": "KXMLB-26-MIL",
     "title": "Will Milwaukee win the 2026 Pro Baseball Championship?",
     "updated_time": "2026-10-29T03:19:45.843036Z",
-    "volume_24h_fp": "1064765.11",
+    "volume_24h_fp": "1047515.37",
     "volume_fp": "15574922.66",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -80282,10 +80292,10 @@
     "yes_sub_title": "Milwaukee"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLB-26-MIL",
-  "market_captured_at": "2026-10-29T06:10:20.742Z",
+  "market_captured_at": "2026-10-29T08:46:40.491Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-29T06:10:21.266Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-MIL/candlesticks?start_ts=1793160001&end_ts=1793254220&period_interval=1440",
+  "last_ingested_at": "2026-10-29T08:46:41.035Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLB/markets/KXMLB-26-MIL/candlesticks?start_ts=1793246401&end_ts=1793263600&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:56.020Z",

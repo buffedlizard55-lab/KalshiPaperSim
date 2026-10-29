@@ -5075,6 +5075,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T08:53:28.895Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24YANDVA-YAN/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -5132,11 +5142,11 @@
     "yes_sub_title": "Petr Yan"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26OCT24YANDVA-YAN",
-  "market_captured_at": "2026-10-29T06:16:47.234Z",
+  "market_captured_at": "2026-10-29T08:53:28.205Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-29T06:16:47.860Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24YANDVA-YAN/candlesticks?start_ts=1792875601&end_ts=1793254607&period_interval=60",
+  "last_ingested_at": "2026-10-29T08:53:28.851Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXUFCFIGHT/markets/KXUFCFIGHT-26OCT24YANDVA-YAN/candlesticks?start_ts=1792875601&end_ts=1793264008&period_interval=60",
   "trims": [
     {
       "at": "2026-10-25T05:10:50.053Z",

@@ -1372,6 +1372,46 @@
         "low_dollars": "0.4000",
         "open_dollars": "0.4000"
       }
+    },
+    {
+      "end_period_ts": 1793257200,
+      "open_interest_fp": "7537.61",
+      "price": {
+        "previous_dollars": "0.4200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4100",
+        "high_dollars": "0.4200",
+        "low_dollars": "0.4100",
+        "open_dollars": "0.4200"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4000",
+        "high_dollars": "0.4000",
+        "low_dollars": "0.4000",
+        "open_dollars": "0.4000"
+      }
+    },
+    {
+      "end_period_ts": 1793260800,
+      "open_interest_fp": "7537.61",
+      "price": {
+        "previous_dollars": "0.4200"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.4100",
+        "high_dollars": "0.4100",
+        "low_dollars": "0.4100",
+        "open_dollars": "0.4100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.4000",
+        "high_dollars": "0.4000",
+        "low_dollars": "0.4000",
+        "open_dollars": "0.4000"
+      }
     }
   ],
   "books": [
@@ -3078,6 +3118,190 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T08:53:04.477Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07ALALSU-ALA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "101087.50"
+            ],
+            [
+              "0.0200",
+              "11411.00"
+            ],
+            [
+              "0.0300",
+              "6077.46"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "268.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "25.00"
+            ],
+            [
+              "0.0900",
+              "2067.00"
+            ],
+            [
+              "0.1000",
+              "24.00"
+            ],
+            [
+              "0.1600",
+              "45.76"
+            ],
+            [
+              "0.1700",
+              "459.00"
+            ],
+            [
+              "0.2100",
+              "51.55"
+            ],
+            [
+              "0.2200",
+              "22.62"
+            ],
+            [
+              "0.2500",
+              "261.69"
+            ],
+            [
+              "0.2600",
+              "211.10"
+            ],
+            [
+              "0.2700",
+              "9.42"
+            ],
+            [
+              "0.2800",
+              "97.00"
+            ],
+            [
+              "0.4200",
+              "146.00"
+            ],
+            [
+              "0.4300",
+              "15.95"
+            ],
+            [
+              "0.5000",
+              "2124.00"
+            ],
+            [
+              "0.5100",
+              "1915.86"
+            ],
+            [
+              "0.5200",
+              "1849.04"
+            ],
+            [
+              "0.5400",
+              "704.00"
+            ],
+            [
+              "0.5900",
+              "1.25"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "101761.00"
+            ],
+            [
+              "0.0200",
+              "15761.00"
+            ],
+            [
+              "0.0300",
+              "7202.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "1088.00"
+            ],
+            [
+              "0.0700",
+              "487.00"
+            ],
+            [
+              "0.0800",
+              "193.00"
+            ],
+            [
+              "0.0900",
+              "24.00"
+            ],
+            [
+              "0.1300",
+              "46.00"
+            ],
+            [
+              "0.1400",
+              "0.68"
+            ],
+            [
+              "0.2800",
+              "1963.00"
+            ],
+            [
+              "0.2900",
+              "0.64"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.3300",
+              "91.00"
+            ],
+            [
+              "0.3500",
+              "1107.96"
+            ],
+            [
+              "0.3800",
+              "1.67"
+            ],
+            [
+              "0.3900",
+              "102.25"
+            ],
+            [
+              "0.4000",
+              "41.47"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3124,7 +3348,7 @@
     "ticker": "KXNCAAFGAME-26NOV07ALALSU-ALA",
     "title": "Alabama wins",
     "updated_time": "2026-10-26T22:06:00.366516Z",
-    "volume_24h_fp": "2948.57",
+    "volume_24h_fp": "2867.75",
     "volume_fp": "8083.65",
     "yes_ask_dollars": "0.4100",
     "yes_ask_size_fp": "1.25",
@@ -3133,8 +3357,8 @@
     "yes_sub_title": "Alabama"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07ALALSU-ALA",
-  "market_captured_at": "2026-10-29T06:16:23.981Z",
+  "market_captured_at": "2026-10-29T08:53:03.785Z",
   "status": "active",
-  "last_ingested_at": "2026-10-29T06:16:24.606Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07ALALSU-ALA/candlesticks?start_ts=1793221201&end_ts=1793254584&period_interval=60"
+  "last_ingested_at": "2026-10-29T08:53:04.433Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07ALALSU-ALA/candlesticks?start_ts=1793253601&end_ts=1793263984&period_interval=60"
 }

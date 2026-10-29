@@ -31731,6 +31731,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T08:59:34.972Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26OCT-H0/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -31755,7 +31765,7 @@
     "occurrence_datetime": "2026-10-28T17:50:40.882Z",
     "open_interest_fp": "6408043.06",
     "open_time": "2025-09-29T14:00:00Z",
-    "previous_price_dollars": "0.9500",
+    "previous_price_dollars": "0.9600",
     "previous_yes_ask_dollars": "0.9600",
     "previous_yes_bid_dollars": "0.9500",
     "price_level_structure": "linear_cent",
@@ -31779,7 +31789,7 @@
     "ticker": "KXFEDDECISION-26OCT-H0",
     "title": "Will the Federal Reserve Hike rates by 0bps at their October 2026 meeting?",
     "updated_time": "2026-10-28T18:06:30.330852Z",
-    "volume_24h_fp": "1918697.42",
+    "volume_24h_fp": "1896992.20",
     "volume_fp": "11381225.69",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -31788,10 +31798,10 @@
     "yes_sub_title": "Fed maintains rate"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26OCT-H0",
-  "market_captured_at": "2026-10-29T06:22:34.696Z",
+  "market_captured_at": "2026-10-29T08:59:34.282Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-29T06:22:35.322Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26OCT-H0/candlesticks?start_ts=1793210401&end_ts=1793254954&period_interval=60",
+  "last_ingested_at": "2026-10-29T08:59:34.928Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26OCT-H0/candlesticks?start_ts=1793210401&end_ts=1793264374&period_interval=60",
   "trims": [
     {
       "at": "2026-10-05T09:36:10.374Z",

@@ -23581,6 +23581,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T08:59:39.340Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26OCT-C25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -23629,7 +23639,7 @@
     "ticker": "KXFEDDECISION-26OCT-C25",
     "title": "Will the Federal Reserve Cut rates by 25bps at their October 2026 meeting?",
     "updated_time": "2026-10-28T18:06:30.330852Z",
-    "volume_24h_fp": "69753.35",
+    "volume_24h_fp": "68699.42",
     "volume_fp": "1656752.47",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -23638,10 +23648,10 @@
     "yes_sub_title": "Cut 25bps"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26OCT-C25",
-  "market_captured_at": "2026-10-29T06:22:38.843Z",
+  "market_captured_at": "2026-10-29T08:59:38.650Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-29T06:22:39.468Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26OCT-C25/candlesticks?start_ts=1793210401&end_ts=1793254959&period_interval=60",
+  "last_ingested_at": "2026-10-29T08:59:39.296Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26OCT-C25/candlesticks?start_ts=1793210401&end_ts=1793264378&period_interval=60",
   "trims": [
     {
       "at": "2026-10-05T09:36:18.213Z",

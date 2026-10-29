@@ -6325,6 +6325,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T08:47:56.200Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -6382,10 +6392,10 @@
     "yes_sub_title": "Florida St."
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU",
-  "market_captured_at": "2026-10-29T06:11:31.958Z",
+  "market_captured_at": "2026-10-29T08:47:55.609Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-29T06:11:32.483Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/candlesticks?start_ts=1790481601&end_ts=1793254292&period_interval=1440",
+  "last_ingested_at": "2026-10-29T08:47:56.157Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CARKFSU-FSU/candlesticks?start_ts=1790481601&end_ts=1793263675&period_interval=1440",
   "result": "yes",
   "marketErrors": [
     {

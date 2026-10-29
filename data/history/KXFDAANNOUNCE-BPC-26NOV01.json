@@ -28044,6 +28044,166 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T08:45:41.865Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3251.00"
+            ],
+            [
+              "0.0200",
+              "4000.00"
+            ],
+            [
+              "0.0300",
+              "16.63"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.3300",
+              "1724.00"
+            ],
+            [
+              "0.5500",
+              "200.00"
+            ],
+            [
+              "0.5700",
+              "90.00"
+            ],
+            [
+              "0.6900",
+              "100.00"
+            ],
+            [
+              "0.8900",
+              "62.06"
+            ],
+            [
+              "0.9200",
+              "80.56"
+            ],
+            [
+              "0.9300",
+              "7.34"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1001.00"
+            ],
+            [
+              "0.0200",
+              "46.09"
+            ],
+            [
+              "0.0300",
+              "92.18"
+            ],
+            [
+              "0.0500",
+              "4742.00"
+            ],
+            [
+              "0.0600",
+              "4967.19"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-29T09:00:03.544Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3251.00"
+            ],
+            [
+              "0.0200",
+              "4000.00"
+            ],
+            [
+              "0.0300",
+              "15.63"
+            ],
+            [
+              "0.1800",
+              "18.95"
+            ],
+            [
+              "0.2500",
+              "5.17"
+            ],
+            [
+              "0.3300",
+              "1724.00"
+            ],
+            [
+              "0.5500",
+              "200.00"
+            ],
+            [
+              "0.5700",
+              "90.00"
+            ],
+            [
+              "0.6900",
+              "100.00"
+            ],
+            [
+              "0.8900",
+              "62.06"
+            ],
+            [
+              "0.9200",
+              "80.56"
+            ],
+            [
+              "0.9300",
+              "7.34"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1001.00"
+            ],
+            [
+              "0.0200",
+              "46.09"
+            ],
+            [
+              "0.0300",
+              "92.18"
+            ],
+            [
+              "0.0500",
+              "4742.00"
+            ],
+            [
+              "0.0600",
+              "4967.19"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -28070,8 +28230,8 @@
     "open_interest_fp": "13944.21",
     "open_time": "2026-03-24T14:00:00Z",
     "previous_price_dollars": "0.1300",
-    "previous_yes_ask_dollars": "0.1800",
-    "previous_yes_bid_dollars": "0.0800",
+    "previous_yes_ask_dollars": "0.1900",
+    "previous_yes_bid_dollars": "0.0900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -28093,16 +28253,16 @@
     "volume_24h_fp": "7200.52",
     "volume_fp": "32948.12",
     "yes_ask_dollars": "0.0700",
-    "yes_ask_size_fp": "82.34",
+    "yes_ask_size_fp": "7.34",
     "yes_bid_dollars": "0.0600",
-    "yes_bid_size_fp": "6818.25",
+    "yes_bid_size_fp": "4967.19",
     "yes_sub_title": "Before November"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFDAANNOUNCE-BPC-26NOV01",
-  "market_captured_at": "2026-10-29T06:23:01.837Z",
+  "market_captured_at": "2026-10-29T09:00:02.855Z",
   "status": "active",
-  "last_ingested_at": "2026-10-29T06:23:02.460Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26NOV01/candlesticks?start_ts=1793246401&end_ts=1793254982&period_interval=1440",
+  "last_ingested_at": "2026-10-29T09:00:03.500Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFDAANNOUNCE/markets/KXFDAANNOUNCE-BPC-26NOV01/candlesticks?start_ts=1793246401&end_ts=1793264403&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:01.704Z",

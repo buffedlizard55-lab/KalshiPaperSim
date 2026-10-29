@@ -1327,6 +1327,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T08:47:01.567Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1385,11 +1395,11 @@
     "yes_sub_title": "Chicago C over 4.5 runs scored"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC5",
-  "market_captured_at": "2026-10-29T06:10:40.489Z",
+  "market_captured_at": "2026-10-29T08:47:00.976Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-29T06:10:41.014Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC5/candlesticks?start_ts=1789790401&end_ts=1793254240&period_interval=1440",
+  "last_ingested_at": "2026-10-29T08:47:01.523Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBTEAMTOTAL/markets/KXMLBTEAMTOTAL-26SEP181840CHCCIN-CHC5/candlesticks?start_ts=1789790401&end_ts=1793263621&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:52:14.791Z",
