@@ -11,11 +11,11 @@
  * allowed to read. Read it only through src/mlb-signal-store.js, which
  * refuses any row captured AFTER the decision time (the anti-lookahead rule).
  *
- * 33 date file(s) · 163 game(s) · 627 state row(s) · generated 2026-10-29T23:21:19.449Z
+ * 33 date file(s) · 163 game(s) · 627 state row(s) · generated 2026-10-29T23:56:28.923Z
  */
 
 export const MLB_SIGNAL_DATA = {
- "generatedAt": "2026-10-29T23:21:19.449Z",
+ "generatedAt": "2026-10-29T23:56:28.923Z",
  "present": true,
  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
  "droppedOldestDates": 0,
