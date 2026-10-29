@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-28T20:03:18.540Z",
+ "startedAt": "2026-10-29T00:05:39.855Z",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
  "userAgent": "KalshiPaperSim/1.0 (https://github.com/buffedlizard55-lab/KalshiPaperSim; research)",
  "leagues": {
@@ -49,7 +49,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 93
+     "playerRecords": 88
     },
     "scoreboard": {
      "2026-10-28": {
@@ -57,7 +57,7 @@
       "ok": true,
       "status": 200,
       "events": 12,
-      "stateRows": 12
+      "stateRows": 17
      },
      "2026-10-29": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261029",
@@ -90,7 +90,7 @@
       "ok": true,
       "status": 200,
       "events": 2,
-      "stateRows": 2
+      "stateRows": 3
      },
      "2026-10-29": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261029",
@@ -148,7 +148,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 131
+     "playerRecords": 129
     },
     "scoreboard": {
      "2026-10-28": {
@@ -156,7 +156,7 @@
       "ok": true,
       "status": 200,
       "events": 4,
-      "stateRows": 4
+      "stateRows": 5
      },
      "2026-10-29": {
       "url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261029",
@@ -181,7 +181,7 @@
      "url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/wnba/injuries",
      "ok": true,
      "status": 200,
-     "playerRecords": 49
+     "playerRecords": 50
     },
     "scoreboard": {
      "2026-10-28": {
@@ -208,5 +208,5 @@
   "matched": 93,
   "unmapped": 90
  },
- "finishedAt": "2026-10-28T20:03:20.763Z"
+ "finishedAt": "2026-10-29T00:05:42.384Z"
 }
