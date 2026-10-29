@@ -2469,6 +2469,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T13:11:39.275Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT27PORLAL-POR/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2526,9 +2536,9 @@
     "yes_sub_title": "Portland"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT27PORLAL-POR",
-  "market_captured_at": "2026-10-29T08:52:42.394Z",
+  "market_captured_at": "2026-10-29T13:11:38.555Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-29T08:52:43.041Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT27PORLAL-POR/candlesticks?start_ts=1793167201&end_ts=1793263962&period_interval=60"
+  "last_ingested_at": "2026-10-29T13:11:39.217Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT27PORLAL-POR/candlesticks?start_ts=1793167201&end_ts=1793279498&period_interval=60"
 }

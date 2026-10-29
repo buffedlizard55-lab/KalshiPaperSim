@@ -28797,9 +28797,9 @@
     "occurrence_datetime": "2027-06-30T14:00:00Z",
     "open_interest_fp": "348407.53",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.1100",
-    "previous_yes_ask_dollars": "0.1100",
-    "previous_yes_bid_dollars": "0.1000",
+    "previous_price_dollars": "0.1000",
+    "previous_yes_ask_dollars": "0.1000",
+    "previous_yes_bid_dollars": "0.0900",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -28818,19 +28818,19 @@
     "ticker": "KXNBAEAST-27-TOR",
     "title": "Will Toronto win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "248.66",
+    "volume_24h_fp": "235.18",
     "volume_fp": "377226.59",
     "yes_ask_dollars": "0.1000",
-    "yes_ask_size_fp": "752.34",
+    "yes_ask_size_fp": "762.42",
     "yes_bid_dollars": "0.0900",
-    "yes_bid_size_fp": "1338.11",
+    "yes_bid_size_fp": "7762.54",
     "yes_sub_title": "Toronto"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-TOR",
-  "market_captured_at": "2026-10-29T08:47:33.967Z",
+  "market_captured_at": "2026-10-29T13:06:45.505Z",
   "status": "active",
-  "last_ingested_at": "2026-10-29T08:47:34.513Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-TOR/candlesticks?start_ts=1793246401&end_ts=1793263654&period_interval=1440",
+  "last_ingested_at": "2026-10-29T13:06:46.064Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-TOR/candlesticks?start_ts=1793246401&end_ts=1793279205&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:52:44.037Z",

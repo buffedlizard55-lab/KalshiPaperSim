@@ -12695,6 +12695,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T13:18:12.018Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT11SFSEA-SF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12752,11 +12762,11 @@
     "yes_sub_title": "San Francisco"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT11SFSEA-SF",
-  "market_captured_at": "2026-10-29T08:58:53.427Z",
+  "market_captured_at": "2026-10-29T13:18:05.155Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-29T08:58:59.970Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT11SFSEA-SF/candlesticks?start_ts=1793231101&end_ts=1793264333&period_interval=1",
+  "last_ingested_at": "2026-10-29T13:18:11.960Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT11SFSEA-SF/candlesticks?start_ts=1793231101&end_ts=1793279885&period_interval=1",
   "trims": [
     {
       "at": "2026-10-12T06:27:43.489Z",

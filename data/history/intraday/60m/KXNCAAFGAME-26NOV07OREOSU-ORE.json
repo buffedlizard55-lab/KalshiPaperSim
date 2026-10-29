@@ -612,6 +612,86 @@
         "low_dollars": "0.1600",
         "open_dollars": "0.1600"
       }
+    },
+    {
+      "end_period_ts": 1793268000,
+      "open_interest_fp": "3699.64",
+      "price": {
+        "previous_dollars": "0.1700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.1700",
+        "high_dollars": "0.1800",
+        "low_dollars": "0.1700",
+        "open_dollars": "0.1800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.1600",
+        "open_dollars": "0.1600"
+      }
+    },
+    {
+      "end_period_ts": 1793271600,
+      "open_interest_fp": "3699.64",
+      "price": {
+        "previous_dollars": "0.1700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.1700",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.1700",
+        "open_dollars": "0.1700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.1600",
+        "open_dollars": "0.1600"
+      }
+    },
+    {
+      "end_period_ts": 1793275200,
+      "open_interest_fp": "3699.64",
+      "price": {
+        "previous_dollars": "0.1700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.1700",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.1700",
+        "open_dollars": "0.1700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.1600",
+        "open_dollars": "0.1600"
+      }
+    },
+    {
+      "end_period_ts": 1793278800,
+      "open_interest_fp": "3699.64",
+      "price": {
+        "previous_dollars": "0.1700"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.1700",
+        "high_dollars": "0.1700",
+        "low_dollars": "0.1700",
+        "open_dollars": "0.1700"
+      },
+      "yes_bid": {
+        "close_dollars": "0.1600",
+        "high_dollars": "0.1600",
+        "low_dollars": "0.1600",
+        "open_dollars": "0.1600"
+      }
     }
   ],
   "books": [
@@ -1614,6 +1694,162 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T13:12:08.312Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07OREOSU-ORE/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "98733.00"
+            ],
+            [
+              "0.0200",
+              "1500.00"
+            ],
+            [
+              "0.0300",
+              "948.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "267.00"
+            ],
+            [
+              "0.0600",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "420.00"
+            ],
+            [
+              "0.0900",
+              "291.00"
+            ],
+            [
+              "0.1000",
+              "23.00"
+            ],
+            [
+              "0.1300",
+              "1.00"
+            ],
+            [
+              "0.4200",
+              "4.00"
+            ],
+            [
+              "0.7300",
+              "140.00"
+            ],
+            [
+              "0.7400",
+              "1905.00"
+            ],
+            [
+              "0.7500",
+              "10.00"
+            ],
+            [
+              "0.7600",
+              "3995.00"
+            ],
+            [
+              "0.7900",
+              "10.00"
+            ],
+            [
+              "0.8100",
+              "424.00"
+            ],
+            [
+              "0.8200",
+              "1637.00"
+            ],
+            [
+              "0.8300",
+              "1133.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "99366.00"
+            ],
+            [
+              "0.0200",
+              "2986.00"
+            ],
+            [
+              "0.0300",
+              "1620.00"
+            ],
+            [
+              "0.0400",
+              "1001.00"
+            ],
+            [
+              "0.0500",
+              "405.00"
+            ],
+            [
+              "0.0600",
+              "338.00"
+            ],
+            [
+              "0.0700",
+              "783.00"
+            ],
+            [
+              "0.0800",
+              "4672.00"
+            ],
+            [
+              "0.0900",
+              "4098.00"
+            ],
+            [
+              "0.1000",
+              "775.00"
+            ],
+            [
+              "0.1100",
+              "1000.00"
+            ],
+            [
+              "0.1200",
+              "196.00"
+            ],
+            [
+              "0.1300",
+              "1.00"
+            ],
+            [
+              "0.1400",
+              "1.00"
+            ],
+            [
+              "0.1500",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "20.00"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1633,15 +1869,15 @@
     "latest_expiration_time": "2026-11-09T20:30:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.8400",
-    "no_bid_dollars": "0.8200",
+    "no_bid_dollars": "0.8300",
     "no_sub_title": "Oregon",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-11-07T23:30:00Z",
     "open_interest_fp": "3699.64",
     "open_time": "2026-10-27T19:06:00Z",
-    "previous_price_dollars": "0.2700",
-    "previous_yes_ask_dollars": "0.2700",
-    "previous_yes_bid_dollars": "0.1900",
+    "previous_price_dollars": "0.1900",
+    "previous_yes_ask_dollars": "0.2600",
+    "previous_yes_bid_dollars": "0.1800",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1660,17 +1896,17 @@
     "ticker": "KXNCAAFGAME-26NOV07OREOSU-ORE",
     "title": "Oregon wins",
     "updated_time": "2026-10-27T19:06:00.260387Z",
-    "volume_24h_fp": "35.28",
+    "volume_24h_fp": "33.28",
     "volume_fp": "3702.13",
-    "yes_ask_dollars": "0.1800",
-    "yes_ask_size_fp": "987.00",
+    "yes_ask_dollars": "0.1700",
+    "yes_ask_size_fp": "1133.00",
     "yes_bid_dollars": "0.1600",
     "yes_bid_size_fp": "20.00",
     "yes_sub_title": "Oregon"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07OREOSU-ORE",
-  "market_captured_at": "2026-10-29T08:53:10.472Z",
+  "market_captured_at": "2026-10-29T13:12:07.592Z",
   "status": "active",
-  "last_ingested_at": "2026-10-29T08:53:11.119Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07OREOSU-ORE/candlesticks?start_ts=1793246401&end_ts=1793263990&period_interval=60"
+  "last_ingested_at": "2026-10-29T13:12:08.254Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07OREOSU-ORE/candlesticks?start_ts=1793260801&end_ts=1793279527&period_interval=60"
 }
