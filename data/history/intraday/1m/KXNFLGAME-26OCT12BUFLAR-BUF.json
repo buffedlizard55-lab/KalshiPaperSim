@@ -12665,6 +12665,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-29T21:36:35.694Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT12BUFLAR-BUF/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12722,11 +12732,11 @@
     "yes_sub_title": "Buffalo"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT12BUFLAR-BUF",
-  "market_captured_at": "2026-10-29T13:15:39.564Z",
+  "market_captured_at": "2026-10-29T21:36:29.471Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-29T13:15:46.015Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT12BUFLAR-BUF/candlesticks?start_ts=1793245741&end_ts=1793279739&period_interval=1",
+  "last_ingested_at": "2026-10-29T21:36:35.651Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT12BUFLAR-BUF/candlesticks?start_ts=1793245741&end_ts=1793309789&period_interval=1",
   "trims": [
     {
       "at": "2026-10-13T07:08:19.115Z",
