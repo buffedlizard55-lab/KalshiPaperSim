@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-29T20:02:29.250Z",
+ "generatedAt": "2026-10-30T00:00:53.545Z",
  "rows": [
   {
    "league": "nba",
@@ -4480,6 +4480,11 @@
      "ticker": "KXWNBAGAME-26OCT07NYATL-NY",
      "rulesName": "Atlanta women's",
      "role": "home"
+    },
+    {
+     "ticker": "KXWNBAGAME-26OCT29GSATL-GS",
+     "rulesName": "Atlanta women's",
+     "role": "home"
     }
    ]
   },
@@ -4533,6 +4538,11 @@
    "evidence": [
     {
      "ticker": "KXWNBAGAME-26OCT09GSLV-GS",
+     "rulesName": "Golden State",
+     "role": "away"
+    },
+    {
+     "ticker": "KXWNBAGAME-26OCT29GSATL-GS",
      "rulesName": "Golden State",
      "role": "away"
     },
