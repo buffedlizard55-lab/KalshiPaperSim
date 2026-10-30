@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-30T03:41:11.675Z",
+ "generatedAt": "2026-10-30T10:28:34.813Z",
  "rows": [
   {
    "league": "nba",
@@ -961,6 +961,11 @@
    "espn": null,
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26NOV07BYUUTAH-UTAH",
+     "rulesName": "BYU",
+     "role": "away"
+    },
     {
      "ticker": "KXNCAAFGAME-26OCT03BYUTCU-BYU",
      "rulesName": "BYU",
@@ -2697,6 +2702,11 @@
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
+     "ticker": "KXNCAAFGAME-26NOV07BYUUTAH-UTAH",
+     "rulesName": "Utah",
+     "role": "home"
+    },
+    {
      "ticker": "KXNCAAFGAME-26OCT24HOUUTAH-HOU",
      "rulesName": "Utah",
      "role": "home"
@@ -4076,6 +4086,16 @@
    },
    "espnReason": "MATCHED",
    "evidence": [
+    {
+     "ticker": "KXNHLGAME-26OCT29OTTLA-LA",
+     "rulesName": "Ottawa",
+     "role": "away"
+    },
+    {
+     "ticker": "KXNHLGAME-26OCT29OTTLA-OTT",
+     "rulesName": "Ottawa",
+     "role": "away"
+    },
     {
      "ticker": "KXNHLGAME-26SEP21OTTMTL-MTL",
      "rulesName": "Ottawa",

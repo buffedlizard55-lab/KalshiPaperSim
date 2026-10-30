@@ -1,0 +1,2085 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-10-31",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261031"
+  ]
+ },
+ "captures": [
+  "2026-10-30T10:28:33.088Z"
+ ],
+ "events": {
+  "401856733": {
+   "eventId": "401856733",
+   "date": "2026-10-31T23:45Z",
+   "easternDate": "2026-10-31",
+   "name": "Missouri Tigers at Arkansas Razorbacks",
+   "shortName": "MIZ @ ARK",
+   "week": 9,
+   "venue": "Donald W. Reynolds Razorback Stadium",
+   "homeAbbr": "ARK",
+   "homeTeamId": "8",
+   "homeName": "Arkansas Razorbacks",
+   "awayAbbr": "MIZ",
+   "awayTeamId": "142",
+   "awayName": "Missouri Tigers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "MIZ -10",
+    "spread": 10,
+    "overUnder": 48.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-4",
+      "away": "5-2"
+     }
+    }
+   ]
+  },
+  "401856734": {
+   "eventId": "401856734",
+   "date": "2026-10-31T19:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Florida Gators at Georgia Bulldogs",
+   "shortName": "FLA VS UGA",
+   "week": 9,
+   "venue": "Mercedes-Benz Stadium",
+   "homeAbbr": "UGA",
+   "homeTeamId": "61",
+   "homeName": "Georgia Bulldogs",
+   "awayAbbr": "FLA",
+   "awayTeamId": "57",
+   "awayName": "Florida Gators",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "UGA -12.5",
+    "spread": -12.5,
+    "overUnder": 56.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-1",
+      "away": "5-2"
+     }
+    }
+   ]
+  },
+  "401856735": {
+   "eventId": "401856735",
+   "date": "2026-10-31T16:45Z",
+   "easternDate": "2026-10-31",
+   "name": "Auburn Tigers at Ole Miss Rebels",
+   "shortName": "AUB @ MISS",
+   "week": 9,
+   "venue": "Vaught-Hemingway Stadium",
+   "homeAbbr": "MISS",
+   "homeTeamId": "145",
+   "homeName": "Ole Miss Rebels",
+   "awayAbbr": "AUB",
+   "awayTeamId": "2",
+   "awayName": "Auburn Tigers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "MISS -11.5",
+    "spread": -11.5,
+    "overUnder": 57.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-2",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401856736": {
+   "eventId": "401856736",
+   "date": "2026-10-31T20:15Z",
+   "easternDate": "2026-10-31",
+   "name": "South Carolina Gamecocks at Oklahoma Sooners",
+   "shortName": "SC @ OU",
+   "week": 9,
+   "venue": "Memorial Stadium (Norman, OK)",
+   "homeAbbr": "OU",
+   "homeTeamId": "201",
+   "homeName": "Oklahoma Sooners",
+   "awayAbbr": "SC",
+   "awayTeamId": "2579",
+   "awayName": "South Carolina Gamecocks",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "OU -3.5",
+    "spread": -3.5,
+    "overUnder": 44.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401856737": {
+   "eventId": "401856737",
+   "date": "2026-10-31T23:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Mississippi State Bulldogs at Texas Longhorns",
+   "shortName": "MSST @ TEX",
+   "week": 9,
+   "venue": "DKR-Texas Memorial Stadium",
+   "homeAbbr": "TEX",
+   "homeTeamId": "251",
+   "homeName": "Texas Longhorns",
+   "awayAbbr": "MSST",
+   "awayTeamId": "344",
+   "awayName": "Mississippi State Bulldogs",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "TEX -20.5",
+    "spread": -20.5,
+    "overUnder": 50.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-2",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401856842": {
+   "eventId": "401856842",
+   "date": "2026-10-31T16:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Arizona Wildcats at Texas Tech Red Raiders",
+   "shortName": "ARIZ @ TTU",
+   "week": 9,
+   "venue": "Galaxy Stadium",
+   "homeAbbr": "TTU",
+   "homeTeamId": "2641",
+   "homeName": "Texas Tech Red Raiders",
+   "awayAbbr": "ARIZ",
+   "awayTeamId": "12",
+   "awayName": "Arizona Wildcats",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "TTU -3.5",
+    "spread": -3.5,
+    "overUnder": 54.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-1",
+      "away": "6-1"
+     }
+    }
+   ]
+  },
+  "401856843": {
+   "eventId": "401856843",
+   "date": "2026-10-31T19:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Arizona State Sun Devils at BYU Cougars",
+   "shortName": "ASU @ BYU",
+   "week": 9,
+   "venue": "LaVell Edwards Stadium",
+   "homeAbbr": "BYU",
+   "homeTeamId": "252",
+   "homeName": "BYU Cougars",
+   "awayAbbr": "ASU",
+   "awayTeamId": "9",
+   "awayName": "Arizona State Sun Devils",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "BYU -16.5",
+    "spread": -16.5,
+    "overUnder": 48.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-1",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401856845": {
+   "eventId": "401856845",
+   "date": "2026-10-31T19:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Kansas Jayhawks at TCU Horned Frogs",
+   "shortName": "KU @ TCU",
+   "week": 9,
+   "venue": "Amon G. Carter Stadium",
+   "homeAbbr": "TCU",
+   "homeTeamId": "2628",
+   "homeName": "TCU Horned Frogs",
+   "awayAbbr": "KU",
+   "awayTeamId": "2305",
+   "awayName": "Kansas Jayhawks",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "TCU -6.5",
+    "spread": -6.5,
+    "overUnder": 45.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-4",
+      "away": "3-4"
+     }
+    }
+   ]
+  },
+  "401856846": {
+   "eventId": "401856846",
+   "date": "2026-10-31T18:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Kansas State Wildcats at Colorado Buffaloes",
+   "shortName": "KSU @ COLO",
+   "week": 9,
+   "venue": "Folsom Field",
+   "homeAbbr": "COLO",
+   "homeTeamId": "38",
+   "homeName": "Colorado Buffaloes",
+   "awayAbbr": "KSU",
+   "awayTeamId": "2306",
+   "awayName": "Kansas State Wildcats",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "COLO -1.5",
+    "spread": -1.5,
+    "overUnder": 46.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-5",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401856847": {
+   "eventId": "401856847",
+   "date": "2026-10-31T23:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Oklahoma State Cowboys at Iowa State Cyclones",
+   "shortName": "OKST @ ISU",
+   "week": 9,
+   "venue": "Jack Trice Stadium",
+   "homeAbbr": "ISU",
+   "homeTeamId": "66",
+   "homeName": "Iowa State Cyclones",
+   "awayAbbr": "OKST",
+   "awayTeamId": "197",
+   "awayName": "Oklahoma State Cowboys",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "OKST -9.5",
+    "spread": 9.5,
+    "overUnder": 57.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-4",
+      "away": "5-2"
+     }
+    }
+   ]
+  },
+  "401856848": {
+   "eventId": "401856848",
+   "date": "2026-10-31T19:45Z",
+   "easternDate": "2026-10-31",
+   "name": "Utah Utes at Cincinnati Bearcats",
+   "shortName": "UTAH @ CIN",
+   "week": 9,
+   "venue": "Nippert Stadium",
+   "homeAbbr": "CIN",
+   "homeTeamId": "2132",
+   "homeName": "Cincinnati Bearcats",
+   "awayAbbr": "UTAH",
+   "awayTeamId": "254",
+   "awayName": "Utah Utes",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "UTAH -7",
+    "spread": 7,
+    "overUnder": 56.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-2",
+      "away": "7-0"
+     }
+    }
+   ]
+  },
+  "401858277": {
+   "eventId": "401858277",
+   "date": "2026-10-31T16:00Z",
+   "easternDate": "2026-10-31",
+   "name": "California Golden Bears at NC State Wolfpack",
+   "shortName": "CAL @ NCSU",
+   "week": 9,
+   "venue": "Carter-Finley Stadium",
+   "homeAbbr": "NCSU",
+   "homeTeamId": "152",
+   "homeName": "NC State Wolfpack",
+   "awayAbbr": "CAL",
+   "awayTeamId": "25",
+   "awayName": "California Golden Bears",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "NCSU -7",
+    "spread": -7,
+    "overUnder": 56.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-4",
+      "away": "3-5"
+     }
+    }
+   ]
+  },
+  "401858278": {
+   "eventId": "401858278",
+   "date": "2026-10-31T16:00Z",
+   "easternDate": "2026-10-31",
+   "name": "SMU Mustangs at Syracuse Orange",
+   "shortName": "SMU @ SYR",
+   "week": 9,
+   "venue": "JMA Wireless Dome",
+   "homeAbbr": "SYR",
+   "homeTeamId": "183",
+   "homeName": "Syracuse Orange",
+   "awayAbbr": "SMU",
+   "awayTeamId": "2567",
+   "awayName": "SMU Mustangs",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "SMU -10.5",
+    "spread": 10.5,
+    "overUnder": 57.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-4",
+      "away": "6-1"
+     }
+    }
+   ]
+  },
+  "401858279": {
+   "eventId": "401858279",
+   "date": "2026-10-31T16:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Boston College Eagles at Duke Blue Devils",
+   "shortName": "BC @ DUKE",
+   "week": 9,
+   "venue": "Wallace Wade Stadium",
+   "homeAbbr": "DUKE",
+   "homeTeamId": "150",
+   "homeName": "Duke Blue Devils",
+   "awayAbbr": "BC",
+   "awayTeamId": "103",
+   "awayName": "Boston College Eagles",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "DUKE -7",
+    "spread": -7,
+    "overUnder": 48.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-2",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401858280": {
+   "eventId": "401858280",
+   "date": "2026-10-31T23:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Clemson Tigers at Florida State Seminoles",
+   "shortName": "CLEM @ FSU",
+   "week": 9,
+   "venue": "Doak Campbell Stadium",
+   "homeAbbr": "FSU",
+   "homeTeamId": "52",
+   "homeName": "Florida State Seminoles",
+   "awayAbbr": "CLEM",
+   "awayTeamId": "228",
+   "awayName": "Clemson Tigers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "FSU -6",
+    "spread": -6,
+    "overUnder": 50.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-4",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401858281": {
+   "eventId": "401858281",
+   "date": "2026-10-31T23:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Georgia Tech Yellow Jackets at Pittsburgh Panthers",
+   "shortName": "GT @ PITT",
+   "week": 9,
+   "venue": "Acrisure Stadium",
+   "homeAbbr": "PITT",
+   "homeTeamId": "221",
+   "homeName": "Pittsburgh Panthers",
+   "awayAbbr": "GT",
+   "awayTeamId": "59",
+   "awayName": "Georgia Tech Yellow Jackets",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "PITT -7.5",
+    "spread": -7.5,
+    "overUnder": 54.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-3",
+      "away": "2-5"
+     }
+    }
+   ]
+  },
+  "401858282": {
+   "eventId": "401858282",
+   "date": "2026-10-31T23:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Miami Hurricanes at North Carolina Tar Heels",
+   "shortName": "MIA @ UNC",
+   "week": 9,
+   "venue": "Kenan Stadium",
+   "homeAbbr": "UNC",
+   "homeTeamId": "153",
+   "homeName": "North Carolina Tar Heels",
+   "awayAbbr": "MIA",
+   "awayTeamId": "2390",
+   "awayName": "Miami Hurricanes",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "MIA -14",
+    "spread": 14,
+    "overUnder": 53.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "7-0"
+     }
+    }
+   ]
+  },
+  "401858283": {
+   "eventId": "401858283",
+   "date": "2026-10-31T19:15Z",
+   "easternDate": "2026-10-31",
+   "name": "Stanford Cardinal at Louisville Cardinals",
+   "shortName": "STAN @ LOU",
+   "week": 9,
+   "venue": "L&N Federal Credit Union Stadium",
+   "homeAbbr": "LOU",
+   "homeTeamId": "97",
+   "homeName": "Louisville Cardinals",
+   "awayAbbr": "STAN",
+   "awayTeamId": "24",
+   "awayName": "Stanford Cardinal",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "LOU -22.5",
+    "spread": -22.5,
+    "overUnder": 60.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "4-4"
+     }
+    }
+   ]
+  },
+  "401858284": {
+   "eventId": "401858284",
+   "date": "2026-10-31T19:45Z",
+   "easternDate": "2026-10-31",
+   "name": "Virginia Cavaliers at Wake Forest Demon Deacons",
+   "shortName": "UVA @ WAKE",
+   "week": 9,
+   "venue": "Allegacy Federal Credit Union Stadium",
+   "homeAbbr": "WAKE",
+   "homeTeamId": "154",
+   "homeName": "Wake Forest Demon Deacons",
+   "awayAbbr": "UVA",
+   "awayTeamId": "258",
+   "awayName": "Virginia Cavaliers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "WAKE -12.5",
+    "spread": -12.5,
+    "overUnder": 48.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-1",
+      "away": "4-4"
+     }
+    }
+   ]
+  },
+  "401858501": {
+   "eventId": "401858501",
+   "date": "2026-10-31T19:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Minnesota Golden Gophers at Indiana Hoosiers",
+   "shortName": "MINN @ IU",
+   "week": 9,
+   "venue": "Memorial Stadium (Bloomington, IN)",
+   "homeAbbr": "IU",
+   "homeTeamId": "84",
+   "homeName": "Indiana Hoosiers",
+   "awayAbbr": "MINN",
+   "awayTeamId": "135",
+   "awayName": "Minnesota Golden Gophers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "IU -20.5",
+    "spread": -20.5,
+    "overUnder": 41.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "7-1",
+      "away": "5-2"
+     }
+    }
+   ]
+  },
+  "401858502": {
+   "eventId": "401858502",
+   "date": "2026-10-31T16:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Wisconsin Badgers at Iowa Hawkeyes",
+   "shortName": "WIS @ IOWA",
+   "week": 9,
+   "venue": "Kinnick Stadium",
+   "homeAbbr": "IOWA",
+   "homeTeamId": "2294",
+   "homeName": "Iowa Hawkeyes",
+   "awayAbbr": "WIS",
+   "awayTeamId": "275",
+   "awayName": "Wisconsin Badgers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "IOWA -2.5",
+    "spread": -2.5,
+    "overUnder": 36.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-2",
+      "away": "5-2"
+     }
+    }
+   ]
+  },
+  "401858503": {
+   "eventId": "401858503",
+   "date": "2026-10-31T16:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Illinois Fighting Illini at Maryland Terrapins",
+   "shortName": "ILL @ MD",
+   "week": 9,
+   "venue": "SECU Stadium",
+   "homeAbbr": "MD",
+   "homeTeamId": "120",
+   "homeName": "Maryland Terrapins",
+   "awayAbbr": "ILL",
+   "awayTeamId": "356",
+   "awayName": "Illinois Fighting Illini",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "ILL -2.5",
+    "spread": 2.5,
+    "overUnder": 54.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-5",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401858504": {
+   "eventId": "401858504",
+   "date": "2026-11-01T00:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Washington Huskies at Nebraska Cornhuskers",
+   "shortName": "WASH @ NEB",
+   "week": 9,
+   "venue": "Memorial Stadium (Lincoln, NE)",
+   "homeAbbr": "NEB",
+   "homeTeamId": "158",
+   "homeName": "Nebraska Cornhuskers",
+   "awayAbbr": "WASH",
+   "awayTeamId": "264",
+   "awayName": "Washington Huskies",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "NEB -7.5",
+    "spread": -7.5,
+    "overUnder": 50.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-2",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401858505": {
+   "eventId": "401858505",
+   "date": "2026-10-31T19:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Northwestern Wildcats at Oregon Ducks",
+   "shortName": "NU @ ORE",
+   "week": 9,
+   "venue": "Autzen Stadium",
+   "homeAbbr": "ORE",
+   "homeTeamId": "2483",
+   "homeName": "Oregon Ducks",
+   "awayAbbr": "NU",
+   "awayTeamId": "77",
+   "awayName": "Northwestern Wildcats",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "ORE -3.5",
+    "spread": -3.5,
+    "overUnder": 47.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "6-1"
+     }
+    }
+   ]
+  },
+  "401858506": {
+   "eventId": "401858506",
+   "date": "2026-10-31T20:15Z",
+   "easternDate": "2026-10-31",
+   "name": "Purdue Boilermakers at Penn State Nittany Lions",
+   "shortName": "PUR @ PSU",
+   "week": 9,
+   "venue": "Beaver Stadium",
+   "homeAbbr": "PSU",
+   "homeTeamId": "213",
+   "homeName": "Penn State Nittany Lions",
+   "awayAbbr": "PUR",
+   "awayTeamId": "2509",
+   "awayName": "Purdue Boilermakers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "PSU -10",
+    "spread": -10,
+    "overUnder": 54.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-4",
+      "away": "3-4"
+     }
+    }
+   ]
+  },
+  "401858507": {
+   "eventId": "401858507",
+   "date": "2026-10-31T16:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Michigan Wolverines at Rutgers Scarlet Knights",
+   "shortName": "MICH @ RUTG",
+   "week": 9,
+   "venue": "SHI Stadium",
+   "homeAbbr": "RUTG",
+   "homeTeamId": "164",
+   "homeName": "Rutgers Scarlet Knights",
+   "awayAbbr": "MICH",
+   "awayTeamId": "130",
+   "awayName": "Michigan Wolverines",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "MICH -15.5",
+    "spread": 15.5,
+    "overUnder": 45.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-5",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401858508": {
+   "eventId": "401858508",
+   "date": "2026-10-31T20:15Z",
+   "easternDate": "2026-10-31",
+   "name": "Nevada Wolf Pack at UCLA Bruins",
+   "shortName": "NEV @ UCLA",
+   "week": 9,
+   "venue": "Rose Bowl",
+   "homeAbbr": "UCLA",
+   "homeTeamId": "26",
+   "homeName": "UCLA Bruins",
+   "awayAbbr": "NEV",
+   "awayTeamId": "2440",
+   "awayName": "Nevada Wolf Pack",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "UCLA -22.5",
+    "spread": -22.5,
+    "overUnder": 43.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "7-0",
+      "away": "3-4"
+     }
+    }
+   ]
+  },
+  "401858509": {
+   "eventId": "401858509",
+   "date": "2026-10-31T23:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Ohio State Buckeyes at USC Trojans",
+   "shortName": "OSU @ USC",
+   "week": 9,
+   "venue": "Los Angeles Memorial Coliseum",
+   "homeAbbr": "USC",
+   "homeTeamId": "30",
+   "homeName": "USC Trojans",
+   "awayAbbr": "OSU",
+   "awayTeamId": "194",
+   "awayName": "Ohio State Buckeyes",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "OSU -6.5",
+    "spread": 6.5,
+    "overUnder": 51.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-2",
+      "away": "6-1"
+     }
+    }
+   ]
+  },
+  "401859185": {
+   "eventId": "401859185",
+   "date": "2026-10-31T16:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Notre Dame Fighting Irish at Navy Midshipmen",
+   "shortName": "ND VS NAVY",
+   "week": 9,
+   "venue": "Gillette Stadium",
+   "homeAbbr": "NAVY",
+   "homeTeamId": "2426",
+   "homeName": "Navy Midshipmen",
+   "awayAbbr": "ND",
+   "awayTeamId": "87",
+   "awayName": "Notre Dame Fighting Irish",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "ND -30.5",
+    "spread": 30.5,
+    "overUnder": 56.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-5",
+      "away": "6-1"
+     }
+    }
+   ]
+  },
+  "401860908": {
+   "eventId": "401860908",
+   "date": "2026-11-01T02:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Texas State Bobcats at Boise State Broncos",
+   "shortName": "TXST @ BOIS",
+   "week": 9,
+   "venue": "Albertsons Stadium",
+   "homeAbbr": "BOIS",
+   "homeTeamId": "68",
+   "homeName": "Boise State Broncos",
+   "awayAbbr": "TXST",
+   "awayTeamId": "326",
+   "awayName": "Texas State Bobcats",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "BOIS -11.5",
+    "spread": -11.5,
+    "overUnder": 63.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-1",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401860909": {
+   "eventId": "401860909",
+   "date": "2026-10-31T23:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Washington State Cougars at San Diego State Aztecs",
+   "shortName": "WSU @ SDSU",
+   "week": 9,
+   "venue": "Snapdragon Stadium",
+   "homeAbbr": "SDSU",
+   "homeTeamId": "21",
+   "homeName": "San Diego State Aztecs",
+   "awayAbbr": "WSU",
+   "awayTeamId": "265",
+   "awayName": "Washington State Cougars",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "SDSU -2.5",
+    "spread": -2.5,
+    "overUnder": 48.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-5",
+      "away": "1-7"
+     }
+    }
+   ]
+  },
+  "401860910": {
+   "eventId": "401860910",
+   "date": "2026-10-31T19:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Colorado State Rams at Utah State Aggies",
+   "shortName": "CSU @ USU",
+   "week": 9,
+   "venue": "Maverik Stadium",
+   "homeAbbr": "USU",
+   "homeTeamId": "328",
+   "homeName": "Utah State Aggies",
+   "awayAbbr": "CSU",
+   "awayTeamId": "36",
+   "awayName": "Colorado State Rams",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "USU -6.5",
+    "spread": -6.5,
+    "overUnder": 63.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-5",
+      "away": "3-4"
+     }
+    }
+   ]
+  },
+  "401860924": {
+   "eventId": "401860924",
+   "date": "2026-11-01T03:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Oregon State Beavers at Fresno State Bulldogs",
+   "shortName": "ORST @ FRES",
+   "week": 9,
+   "venue": "Valley Children's Stadium",
+   "homeAbbr": "FRES",
+   "homeTeamId": "278",
+   "homeName": "Fresno State Bulldogs",
+   "awayAbbr": "ORST",
+   "awayTeamId": "204",
+   "awayName": "Oregon State Beavers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "ORST -6",
+    "spread": 6,
+    "overUnder": 58.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "5-2"
+     }
+    }
+   ]
+  },
+  "401861966": {
+   "eventId": "401861966",
+   "date": "2026-10-31T19:00Z",
+   "easternDate": "2026-10-31",
+   "name": "UConn Huskies at Air Force Falcons",
+   "shortName": "CONN @ AFA",
+   "week": 9,
+   "venue": "Falcon Stadium",
+   "homeAbbr": "AFA",
+   "homeTeamId": "2005",
+   "homeName": "Air Force Falcons",
+   "awayAbbr": "CONN",
+   "awayTeamId": "41",
+   "awayName": "UConn Huskies",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "AF -1.5",
+    "spread": -1.5,
+    "overUnder": 51.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-2",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401862814": {
+   "eventId": "401862814",
+   "date": "2026-11-01T00:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Army Black Knights at Memphis Tigers",
+   "shortName": "ARMY @ MEM",
+   "week": 9,
+   "venue": "Simmons Bank Liberty Stadium",
+   "homeAbbr": "MEM",
+   "homeTeamId": "235",
+   "homeName": "Memphis Tigers",
+   "awayAbbr": "ARMY",
+   "awayTeamId": "349",
+   "awayName": "Army Black Knights",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "MEM -6.5",
+    "spread": -6.5,
+    "overUnder": 60.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-2",
+      "away": "5-2"
+     }
+    }
+   ]
+  },
+  "401862815": {
+   "eventId": "401862815",
+   "date": "2026-10-31T19:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Temple Owls at East Carolina Pirates",
+   "shortName": "TEM @ ECU",
+   "week": 9,
+   "venue": "Dowdy-Ficklen Stadium",
+   "homeAbbr": "ECU",
+   "homeTeamId": "151",
+   "homeName": "East Carolina Pirates",
+   "awayAbbr": "TEM",
+   "awayTeamId": "218",
+   "awayName": "Temple Owls",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "ECU -4.5",
+    "spread": -4.5,
+    "overUnder": 49.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-4",
+      "away": "2-5"
+     }
+    }
+   ]
+  },
+  "401862816": {
+   "eventId": "401862816",
+   "date": "2026-10-31T16:00Z",
+   "easternDate": "2026-10-31",
+   "name": "UAB Blazers at South Florida Bulls",
+   "shortName": "UAB @ USF",
+   "week": 9,
+   "venue": "Raymond James Stadium",
+   "homeAbbr": "USF",
+   "homeTeamId": "58",
+   "homeName": "South Florida Bulls",
+   "awayAbbr": "UAB",
+   "awayTeamId": "5",
+   "awayName": "UAB Blazers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "USF -7.5",
+    "spread": -7.5,
+    "overUnder": 42.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-2",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401864529": {
+   "eventId": "401864529",
+   "date": "2026-10-31T20:00Z",
+   "easternDate": "2026-10-31",
+   "name": "New Mexico Lobos at San José State Spartans",
+   "shortName": "UNM @ SJSU",
+   "week": 9,
+   "venue": "CEFCU Stadium",
+   "homeAbbr": "SJSU",
+   "homeTeamId": "23",
+   "homeName": "San José State Spartans",
+   "awayAbbr": "UNM",
+   "awayTeamId": "167",
+   "awayName": "New Mexico Lobos",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "UNM -14.5",
+    "spread": 14.5,
+    "overUnder": 42.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-4",
+      "away": "6-1"
+     }
+    }
+   ]
+  },
+  "401864530": {
+   "eventId": "401864530",
+   "date": "2026-11-01T02:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Northern Illinois Huskies at UNLV Rebels",
+   "shortName": "NIU @ UNLV",
+   "week": 9,
+   "venue": "Allegiant Stadium",
+   "homeAbbr": "UNLV",
+   "homeTeamId": "2439",
+   "homeName": "UNLV Rebels",
+   "awayAbbr": "NIU",
+   "awayTeamId": "2459",
+   "awayName": "Northern Illinois Huskies",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "UNLV -23.5",
+    "spread": -23.5,
+    "overUnder": 54.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "0-7"
+     }
+    }
+   ]
+  },
+  "401864531": {
+   "eventId": "401864531",
+   "date": "2026-10-31T19:30Z",
+   "easternDate": "2026-10-31",
+   "name": "UTEP Miners at North Dakota State Bison",
+   "shortName": "UTEP @ NDSU",
+   "week": 9,
+   "venue": "Fargodome",
+   "homeAbbr": "NDSU",
+   "homeTeamId": "2449",
+   "homeName": "North Dakota State Bison",
+   "awayAbbr": "UTEP",
+   "awayTeamId": "2638",
+   "awayName": "UTEP Miners",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "NDSU -24.5",
+    "spread": -24.5,
+    "overUnder": 43.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-2",
+      "away": "1-6"
+     }
+    }
+   ]
+  },
+  "401866452": {
+   "eventId": "401866452",
+   "date": "2026-10-31T16:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Bowling Green Falcons at Western Michigan Broncos",
+   "shortName": "BGSU @ WMU",
+   "week": 9,
+   "venue": "Waldo Stadium",
+   "homeAbbr": "WMU",
+   "homeTeamId": "2711",
+   "homeName": "Western Michigan Broncos",
+   "awayAbbr": "BGSU",
+   "awayTeamId": "189",
+   "awayName": "Bowling Green Falcons",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "WMU -13.5",
+    "spread": -13.5,
+    "overUnder": 44.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-3",
+      "away": "2-6"
+     }
+    }
+   ]
+  },
+  "401869846": {
+   "eventId": "401869846",
+   "date": "2026-10-31T22:30Z",
+   "easternDate": "2026-10-31",
+   "name": "App State Mountaineers at Georgia Southern Eagles",
+   "shortName": "APP @ GASO",
+   "week": 9,
+   "venue": "Allen E. Paulson Stadium",
+   "homeAbbr": "GASO",
+   "homeTeamId": "290",
+   "homeName": "Georgia Southern Eagles",
+   "awayAbbr": "APP",
+   "awayTeamId": "2026",
+   "awayName": "App State Mountaineers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "GASO -5.5",
+    "spread": -5.5,
+    "overUnder": 56.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-4",
+      "away": "5-2"
+     }
+    }
+   ]
+  },
+  "401869944": {
+   "eventId": "401869944",
+   "date": "2026-10-31T18:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Coastal Carolina Chanticleers at Georgia State Panthers",
+   "shortName": "CCU @ GAST",
+   "week": 9,
+   "venue": "Center Parc Stadium",
+   "homeAbbr": "GAST",
+   "homeTeamId": "2247",
+   "homeName": "Georgia State Panthers",
+   "awayAbbr": "CCU",
+   "awayTeamId": "324",
+   "awayName": "Coastal Carolina Chanticleers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "GAST -4.5",
+    "spread": -4.5,
+    "overUnder": 55.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "2-5"
+     }
+    }
+   ]
+  },
+  "401871059": {
+   "eventId": "401871059",
+   "date": "2026-10-31T19:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Florida International Panthers at Liberty Flames",
+   "shortName": "FIU @ LIB",
+   "week": 9,
+   "venue": "Williams Stadium (VA)",
+   "homeAbbr": "LIB",
+   "homeTeamId": "2335",
+   "homeName": "Liberty Flames",
+   "awayAbbr": "FIU",
+   "awayTeamId": "2229",
+   "awayName": "Florida International Panthers",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "LIB -14",
+    "spread": -14,
+    "overUnder": 45.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "6-1",
+      "away": "3-4"
+     }
+    }
+   ]
+  },
+  "401871095": {
+   "eventId": "401871095",
+   "date": "2026-10-31T19:30Z",
+   "easternDate": "2026-10-31",
+   "name": "Southern Miss Golden Eagles at UL Monroe Warhawks",
+   "shortName": "USM @ ULM",
+   "week": 9,
+   "venue": "Malone Stadium",
+   "homeAbbr": "ULM",
+   "homeTeamId": "2433",
+   "homeName": "UL Monroe Warhawks",
+   "awayAbbr": "USM",
+   "awayTeamId": "2572",
+   "awayName": "Southern Miss Golden Eagles",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "USM -3.5",
+    "spread": 3.5,
+    "overUnder": 55.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "1-6",
+      "away": "2-5"
+     }
+    }
+   ]
+  },
+  "401871096": {
+   "eventId": "401871096",
+   "date": "2026-10-31T17:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Marshall Thundering Herd at Old Dominion Monarchs",
+   "shortName": "MRSH @ ODU",
+   "week": 9,
+   "venue": "S.B. Ballard Stadium",
+   "homeAbbr": "ODU",
+   "homeTeamId": "295",
+   "homeName": "Old Dominion Monarchs",
+   "awayAbbr": "MRSH",
+   "awayTeamId": "276",
+   "awayName": "Marshall Thundering Herd",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "MRSH -3",
+    "spread": 3,
+    "overUnder": 45.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "2-6",
+      "away": "4-3"
+     }
+    }
+   ]
+  },
+  "401871097": {
+   "eventId": "401871097",
+   "date": "2026-10-31T19:00Z",
+   "easternDate": "2026-10-31",
+   "name": "Louisiana Tech Bulldogs at South Alabama Jaguars",
+   "shortName": "LT @ USA",
+   "week": 9,
+   "venue": "Hancock Whitney Stadium",
+   "homeAbbr": "USA",
+   "homeTeamId": "6",
+   "homeName": "South Alabama Jaguars",
+   "awayAbbr": "LT",
+   "awayTeamId": "2348",
+   "awayName": "Louisiana Tech Bulldogs",
+   "firstCapturedAt": "2026-10-30T10:28:33.088Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "LT -6",
+    "spread": 6,
+    "overUnder": 58.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-30T10:28:33.088Z",
+     "last_seen_at": "2026-10-30T10:28:33.088Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "4-3",
+      "away": "5-2"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-30T10:28:33.088Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261031"
+}
