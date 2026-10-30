@@ -1210,6 +1210,46 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
+    },
+    {
+      "end_period_ts": 1793361600,
+      "open_interest_fp": "5634.07",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1793365200,
+      "open_interest_fp": "5634.07",
+      "price": {
+        "previous_dollars": "0.0300"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "0.0300",
+        "high_dollars": "0.0300",
+        "low_dollars": "0.0300",
+        "open_dollars": "0.0300"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
+        "open_dollars": "0.0200"
+      }
     }
   ],
   "books": [
@@ -2540,6 +2580,102 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T13:06:26.905Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07MRMKWAKE-MRMK/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "102527.06"
+            ],
+            [
+              "0.0200",
+              "1504.00"
+            ],
+            [
+              "0.0300",
+              "948.00"
+            ],
+            [
+              "0.0400",
+              "503.00"
+            ],
+            [
+              "0.0500",
+              "270.00"
+            ],
+            [
+              "0.0600",
+              "504.00"
+            ],
+            [
+              "0.0700",
+              "302.00"
+            ],
+            [
+              "0.0800",
+              "434.00"
+            ],
+            [
+              "0.0900",
+              "256.00"
+            ],
+            [
+              "0.1000",
+              "25.00"
+            ],
+            [
+              "0.1100",
+              "15.00"
+            ],
+            [
+              "0.3200",
+              "78.03"
+            ],
+            [
+              "0.4200",
+              "4.00"
+            ],
+            [
+              "0.8000",
+              "70.00"
+            ],
+            [
+              "0.8800",
+              "140.00"
+            ],
+            [
+              "0.9100",
+              "50.00"
+            ],
+            [
+              "0.9500",
+              "10.00"
+            ],
+            [
+              "0.9600",
+              "565.00"
+            ],
+            [
+              "0.9700",
+              "418.46"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "5677.00"
+            ],
+            [
+              "0.0200",
+              "0.01"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -2565,9 +2701,9 @@
     "occurrence_datetime": "2026-11-07T23:30:00Z",
     "open_interest_fp": "5634.07",
     "open_time": "2026-10-26T19:06:00Z",
-    "previous_price_dollars": "0.0200",
+    "previous_price_dollars": "0.0300",
     "previous_yes_ask_dollars": "0.0300",
-    "previous_yes_bid_dollars": "0.0100",
+    "previous_yes_bid_dollars": "0.0200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -2586,7 +2722,7 @@
     "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-MRMK",
     "title": "Merrimack wins",
     "updated_time": "2026-10-26T19:06:00.297527Z",
-    "volume_24h_fp": "407.10",
+    "volume_24h_fp": "407.09",
     "volume_fp": "6245.87",
     "yes_ask_dollars": "0.0300",
     "yes_ask_size_fp": "418.46",
@@ -2595,8 +2731,8 @@
     "yes_sub_title": "Merrimack"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07MRMKWAKE-MRMK",
-  "market_captured_at": "2026-10-30T08:59:07.952Z",
+  "market_captured_at": "2026-10-30T13:06:26.156Z",
   "status": "active",
-  "last_ingested_at": "2026-10-30T08:59:08.582Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07MRMKWAKE-MRMK/candlesticks?start_ts=1793336401&end_ts=1793350748&period_interval=60"
+  "last_ingested_at": "2026-10-30T13:06:26.832Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07MRMKWAKE-MRMK/candlesticks?start_ts=1793336401&end_ts=1793365586&period_interval=60"
 }

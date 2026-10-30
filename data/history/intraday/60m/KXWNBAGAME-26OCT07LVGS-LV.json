@@ -3432,6 +3432,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T13:06:41.165Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26OCT07LVGS-LV/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3489,9 +3499,9 @@
     "yes_sub_title": "Las Vegas"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXWNBAGAME-26OCT07LVGS-LV",
-  "market_captured_at": "2026-10-30T08:59:20.750Z",
+  "market_captured_at": "2026-10-30T13:06:40.415Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-30T08:59:21.375Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26OCT07LVGS-LV/candlesticks?start_ts=1791435601&end_ts=1793350761&period_interval=60"
+  "last_ingested_at": "2026-10-30T13:06:41.091Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26OCT07LVGS-LV/candlesticks?start_ts=1791435601&end_ts=1793365600&period_interval=60"
 }
