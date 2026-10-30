@@ -974,6 +974,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T08:56:08.864Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHMIA-26OCT29-B85.5/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1002,9 +1012,9 @@
     "occurrence_datetime": "2026-10-30T14:00:00Z",
     "open_interest_fp": "62972.11",
     "open_time": "2026-10-28T14:00:00Z",
-    "previous_price_dollars": "0.1900",
-    "previous_yes_ask_dollars": "0.1800",
-    "previous_yes_bid_dollars": "0.1600",
+    "previous_price_dollars": "0.1800",
+    "previous_yes_ask_dollars": "0.2500",
+    "previous_yes_bid_dollars": "0.1500",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -1023,7 +1033,7 @@
     "ticker": "KXHIGHMIA-26OCT29-B85.5",
     "title": "Will the maximum temperature be 85-86° on Oct 29, 2026?",
     "updated_time": "2026-10-30T05:00:00.902802Z",
-    "volume_24h_fp": "66067.89",
+    "volume_24h_fp": "65869.36",
     "volume_fp": "68160.69",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -1032,8 +1042,8 @@
     "yes_sub_title": "85° to 86°"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXHIGHMIA-26OCT29-B85.5",
-  "market_captured_at": "2026-10-30T06:14:04.947Z",
+  "market_captured_at": "2026-10-30T08:56:08.212Z",
   "status": "closed",
-  "last_ingested_at": "2026-10-30T06:14:05.565Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26OCT29-B85.5/candlesticks?start_ts=1793109600&end_ts=1793340845&period_interval=60"
+  "last_ingested_at": "2026-10-30T08:56:08.840Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXHIGHMIA/markets/KXHIGHMIA-26OCT29-B85.5/candlesticks?start_ts=1793340001&end_ts=1793350568&period_interval=60"
 }

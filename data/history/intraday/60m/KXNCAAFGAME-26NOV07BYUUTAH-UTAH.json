@@ -1518,6 +1518,56 @@
         "low_dollars": "0.5400",
         "open_dollars": "0.5400"
       }
+    },
+    {
+      "end_period_ts": 1793343600,
+      "open_interest_fp": "3511.56",
+      "price": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.5600",
+        "low_dollars": "0.5600",
+        "mean_dollars": "0.5600",
+        "open_dollars": "0.5600",
+        "previous_dollars": "0.5600"
+      },
+      "volume_fp": "43.30",
+      "yes_ask": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.5600",
+        "low_dollars": "0.5600",
+        "open_dollars": "0.5600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5400",
+        "high_dollars": "0.5400",
+        "low_dollars": "0.5400",
+        "open_dollars": "0.5400"
+      }
+    },
+    {
+      "end_period_ts": 1793347200,
+      "open_interest_fp": "3513.29",
+      "price": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.5600",
+        "low_dollars": "0.5600",
+        "mean_dollars": "0.5600",
+        "open_dollars": "0.5600",
+        "previous_dollars": "0.5600"
+      },
+      "volume_fp": "1.73",
+      "yes_ask": {
+        "close_dollars": "0.5600",
+        "high_dollars": "0.5600",
+        "low_dollars": "0.5600",
+        "open_dollars": "0.5600"
+      },
+      "yes_bid": {
+        "close_dollars": "0.5400",
+        "high_dollars": "0.5400",
+        "low_dollars": "0.5400",
+        "open_dollars": "0.5400"
+      }
     }
   ],
   "books": [
@@ -1788,6 +1838,266 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T08:59:11.162Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07BYUUTAH-UTAH/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "106718.00"
+            ],
+            [
+              "0.0200",
+              "14227.00"
+            ],
+            [
+              "0.0300",
+              "8065.00"
+            ],
+            [
+              "0.0400",
+              "504.00"
+            ],
+            [
+              "0.0500",
+              "312.57"
+            ],
+            [
+              "0.0600",
+              "2076.99"
+            ],
+            [
+              "0.0700",
+              "913.00"
+            ],
+            [
+              "0.0800",
+              "311.00"
+            ],
+            [
+              "0.0900",
+              "2.00"
+            ],
+            [
+              "0.1000",
+              "302.00"
+            ],
+            [
+              "0.1100",
+              "596.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1300",
+              "77.00"
+            ],
+            [
+              "0.1500",
+              "255.00"
+            ],
+            [
+              "0.1600",
+              "4.21"
+            ],
+            [
+              "0.1700",
+              "3.00"
+            ],
+            [
+              "0.1800",
+              "3.00"
+            ],
+            [
+              "0.1900",
+              "3.00"
+            ],
+            [
+              "0.2000",
+              "3.00"
+            ],
+            [
+              "0.2100",
+              "2.00"
+            ],
+            [
+              "0.2200",
+              "2.00"
+            ],
+            [
+              "0.2300",
+              "2.00"
+            ],
+            [
+              "0.2400",
+              "2.00"
+            ],
+            [
+              "0.2500",
+              "3.00"
+            ],
+            [
+              "0.2600",
+              "2.00"
+            ],
+            [
+              "0.2700",
+              "2.00"
+            ],
+            [
+              "0.2800",
+              "1.00"
+            ],
+            [
+              "0.2900",
+              "113.00"
+            ],
+            [
+              "0.3000",
+              "1.28"
+            ],
+            [
+              "0.3200",
+              "2091.00"
+            ],
+            [
+              "0.3300",
+              "2039.96"
+            ],
+            [
+              "0.3400",
+              "2002.90"
+            ],
+            [
+              "0.3500",
+              "5.82"
+            ],
+            [
+              "0.3700",
+              "487.00"
+            ],
+            [
+              "0.4000",
+              "325.00"
+            ],
+            [
+              "0.4100",
+              "606.00"
+            ],
+            [
+              "0.4200",
+              "3329.00"
+            ],
+            [
+              "0.4300",
+              "112.00"
+            ],
+            [
+              "0.4400",
+              "249.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "103721.00"
+            ],
+            [
+              "0.0200",
+              "12379.00"
+            ],
+            [
+              "0.0300",
+              "10218.00"
+            ],
+            [
+              "0.0400",
+              "502.00"
+            ],
+            [
+              "0.0500",
+              "1.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "783.00"
+            ],
+            [
+              "0.1000",
+              "222.00"
+            ],
+            [
+              "0.1100",
+              "155.00"
+            ],
+            [
+              "0.1200",
+              "464.00"
+            ],
+            [
+              "0.1300",
+              "301.00"
+            ],
+            [
+              "0.1400",
+              "94.00"
+            ],
+            [
+              "0.2500",
+              "1.00"
+            ],
+            [
+              "0.2600",
+              "1.00"
+            ],
+            [
+              "0.4300",
+              "2087.00"
+            ],
+            [
+              "0.4500",
+              "270.00"
+            ],
+            [
+              "0.4600",
+              "130.00"
+            ],
+            [
+              "0.5000",
+              "76.00"
+            ],
+            [
+              "0.5100",
+              "1055.00"
+            ],
+            [
+              "0.5200",
+              "3000.00"
+            ],
+            [
+              "0.5300",
+              "213.27"
+            ],
+            [
+              "0.5400",
+              "114.18"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -1811,7 +2121,7 @@
     "no_sub_title": "Utah",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2026-11-07T20:00:00Z",
-    "open_interest_fp": "3468.26",
+    "open_interest_fp": "3599.90",
     "open_time": "2026-10-26T22:06:00Z",
     "previous_price_dollars": "0.5700",
     "previous_yes_ask_dollars": "0.5700",
@@ -1834,17 +2144,17 @@
     "ticker": "KXNCAAFGAME-26NOV07BYUUTAH-UTAH",
     "title": "Utah wins",
     "updated_time": "2026-10-26T22:06:00.366516Z",
-    "volume_24h_fp": "2172.56",
-    "volume_fp": "4264.22",
+    "volume_24h_fp": "2217.59",
+    "volume_fp": "4395.86",
     "yes_ask_dollars": "0.5600",
-    "yes_ask_size_fp": "232.02",
+    "yes_ask_size_fp": "249.00",
     "yes_bid_dollars": "0.5400",
-    "yes_bid_size_fp": "119.88",
+    "yes_bid_size_fp": "114.18",
     "yes_sub_title": "Utah"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07BYUUTAH-UTAH",
-  "market_captured_at": "2026-10-30T06:17:00.852Z",
+  "market_captured_at": "2026-10-30T08:59:10.511Z",
   "status": "active",
-  "last_ingested_at": "2026-10-30T06:17:01.468Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07BYUUTAH-UTAH/candlesticks?start_ts=1792965960&end_ts=1793341021&period_interval=60"
+  "last_ingested_at": "2026-10-30T08:59:11.137Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07BYUUTAH-UTAH/candlesticks?start_ts=1793340001&end_ts=1793350750&period_interval=60"
 }
