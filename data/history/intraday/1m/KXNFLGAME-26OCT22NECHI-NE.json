@@ -12315,6 +12315,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T21:14:01.324Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT22NECHI-NE/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12372,11 +12382,11 @@
     "yes_sub_title": "New England"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNFLGAME-26OCT22NECHI-NE",
-  "market_captured_at": "2026-10-30T13:12:01.191Z",
+  "market_captured_at": "2026-10-30T21:13:58.415Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-30T13:12:04.498Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT22NECHI-NE/candlesticks?start_ts=1793330641&end_ts=1793365921&period_interval=1",
+  "last_ingested_at": "2026-10-30T21:14:01.304Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNFLGAME/markets/KXNFLGAME-26OCT22NECHI-NE/candlesticks?start_ts=1793330641&end_ts=1793394838&period_interval=1",
   "trims": [
     {
       "at": "2026-10-23T05:30:29.193Z",

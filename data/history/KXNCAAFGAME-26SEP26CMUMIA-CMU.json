@@ -7630,6 +7630,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T21:04:07.370Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -7687,10 +7697,10 @@
     "yes_sub_title": "Central Michigan"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU",
-  "market_captured_at": "2026-10-30T13:01:10.238Z",
+  "market_captured_at": "2026-10-30T21:04:06.824Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-30T13:01:10.818Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/candlesticks?start_ts=1790481601&end_ts=1793365270&period_interval=1440",
+  "last_ingested_at": "2026-10-30T21:04:07.350Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-CMU/candlesticks?start_ts=1790481601&end_ts=1793394247&period_interval=1440",
   "result": "no",
   "marketErrors": [
     {

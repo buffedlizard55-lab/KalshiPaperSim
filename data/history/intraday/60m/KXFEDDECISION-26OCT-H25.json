@@ -38629,6 +38629,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T21:15:26.274Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26OCT-H25/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -38686,10 +38696,10 @@
     "yes_sub_title": "Hike 25bps"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFEDDECISION-26OCT-H25",
-  "market_captured_at": "2026-10-30T13:13:41.486Z",
+  "market_captured_at": "2026-10-30T21:15:25.632Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-30T13:13:42.162Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26OCT-H25/candlesticks?start_ts=1793210401&end_ts=1793366021&period_interval=60",
+  "last_ingested_at": "2026-10-30T21:15:26.254Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFEDDECISION/markets/KXFEDDECISION-26OCT-H25/candlesticks?start_ts=1793210401&end_ts=1793394925&period_interval=60",
   "trims": [
     {
       "at": "2026-10-05T09:36:12.987Z",

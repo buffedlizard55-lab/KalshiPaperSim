@@ -3289,6 +3289,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T21:08:48.204Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT29OTTLA-OTT/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3314,9 +3324,9 @@
     "occurrence_datetime": "2026-10-30T05:00:00Z",
     "open_interest_fp": "778741.79",
     "open_time": "2026-10-23T04:09:00Z",
-    "previous_price_dollars": "0.5100",
-    "previous_yes_ask_dollars": "0.5100",
-    "previous_yes_bid_dollars": "0.5000",
+    "previous_price_dollars": "0.5300",
+    "previous_yes_ask_dollars": "0.5300",
+    "previous_yes_bid_dollars": "0.5200",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -3337,7 +3347,7 @@
     "ticker": "KXNHLGAME-26OCT29OTTLA-OTT",
     "title": "Ottawa wins",
     "updated_time": "2026-10-30T04:59:08.908114Z",
-    "volume_24h_fp": "1312788.14",
+    "volume_24h_fp": "1306579.70",
     "volume_fp": "1315841.08",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3346,9 +3356,9 @@
     "yes_sub_title": "Ottawa"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT29OTTLA-OTT",
-  "market_captured_at": "2026-10-30T13:06:10.456Z",
+  "market_captured_at": "2026-10-30T21:08:47.558Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-30T13:06:11.132Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT29OTTLA-OTT/candlesticks?start_ts=1793336401&end_ts=1793365570&period_interval=60"
+  "last_ingested_at": "2026-10-30T21:08:48.184Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT29OTTLA-OTT/candlesticks?start_ts=1793336401&end_ts=1793394527&period_interval=60"
 }

@@ -35015,6 +35015,226 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T21:03:57.719Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-SAS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3889242.69"
+            ],
+            [
+              "0.0300",
+              "668.00"
+            ],
+            [
+              "0.0400",
+              "8.43"
+            ],
+            [
+              "0.0600",
+              "933146.00"
+            ],
+            [
+              "0.0700",
+              "651.86"
+            ],
+            [
+              "0.1000",
+              "810.77"
+            ],
+            [
+              "0.1100",
+              "508988.00"
+            ],
+            [
+              "0.1300",
+              "13.29"
+            ],
+            [
+              "0.1400",
+              "20.49"
+            ],
+            [
+              "0.1500",
+              "530.56"
+            ],
+            [
+              "0.2000",
+              "437.47"
+            ],
+            [
+              "0.2200",
+              "487754.00"
+            ],
+            [
+              "0.2300",
+              "1.31"
+            ],
+            [
+              "0.2500",
+              "465.77"
+            ],
+            [
+              "0.2600",
+              "28.64"
+            ],
+            [
+              "0.2900",
+              "335040.05"
+            ],
+            [
+              "0.3000",
+              "2034.00"
+            ],
+            [
+              "0.3400",
+              "206534.00"
+            ],
+            [
+              "0.3500",
+              "10.20"
+            ],
+            [
+              "0.4000",
+              "34623.00"
+            ],
+            [
+              "0.4300",
+              "68465.00"
+            ],
+            [
+              "0.4700",
+              "3000.00"
+            ],
+            [
+              "0.4900",
+              "300.00"
+            ],
+            [
+              "0.5100",
+              "31467.00"
+            ],
+            [
+              "0.5200",
+              "5000.00"
+            ],
+            [
+              "0.5300",
+              "2249.00"
+            ],
+            [
+              "0.5400",
+              "90.00"
+            ],
+            [
+              "0.5500",
+              "1.36"
+            ],
+            [
+              "0.5900",
+              "5.00"
+            ],
+            [
+              "0.6000",
+              "200.80"
+            ],
+            [
+              "0.6300",
+              "50020.04"
+            ],
+            [
+              "0.6400",
+              "74151.92"
+            ],
+            [
+              "0.6500",
+              "16358.53"
+            ],
+            [
+              "0.6600",
+              "103383.92"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "1952319.00"
+            ],
+            [
+              "0.0300",
+              "147003.00"
+            ],
+            [
+              "0.0500",
+              "88200.00"
+            ],
+            [
+              "0.0700",
+              "2857.00"
+            ],
+            [
+              "0.1100",
+              "130599.00"
+            ],
+            [
+              "0.1300",
+              "204050.00"
+            ],
+            [
+              "0.1500",
+              "15133.00"
+            ],
+            [
+              "0.1700",
+              "53400.00"
+            ],
+            [
+              "0.2100",
+              "19872.00"
+            ],
+            [
+              "0.2200",
+              "3300.00"
+            ],
+            [
+              "0.2300",
+              "2222.00"
+            ],
+            [
+              "0.2400",
+              "2443.00"
+            ],
+            [
+              "0.2800",
+              "5000.00"
+            ],
+            [
+              "0.2900",
+              "5500.00"
+            ],
+            [
+              "0.3000",
+              "25897.26"
+            ],
+            [
+              "0.3100",
+              "213.47"
+            ],
+            [
+              "0.3200",
+              "41.33"
+            ],
+            [
+              "0.3300",
+              "3580.37"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -35038,11 +35258,11 @@
     "no_sub_title": "San Antonio",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "114460.97",
+    "open_interest_fp": "115045.90",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.3200",
-    "previous_yes_ask_dollars": "0.3300",
-    "previous_yes_bid_dollars": "0.3200",
+    "previous_price_dollars": "0.3400",
+    "previous_yes_ask_dollars": "0.3400",
+    "previous_yes_bid_dollars": "0.3300",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -35061,19 +35281,19 @@
     "ticker": "KXNBAWEST-27-SAS",
     "title": "Will San Antonio win the Pro Basketball Western Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:16:34.541284Z",
-    "volume_24h_fp": "21121.70",
-    "volume_fp": "136482.00",
+    "volume_24h_fp": "21695.88",
+    "volume_fp": "137169.03",
     "yes_ask_dollars": "0.3400",
-    "yes_ask_size_fp": "53490.61",
+    "yes_ask_size_fp": "103383.92",
     "yes_bid_dollars": "0.3300",
-    "yes_bid_size_fp": "4115.76",
+    "yes_bid_size_fp": "3580.37",
     "yes_sub_title": "San Antonio"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAWEST-27-SAS",
-  "market_captured_at": "2026-10-30T13:01:02.030Z",
+  "market_captured_at": "2026-10-30T21:03:57.176Z",
   "status": "active",
-  "last_ingested_at": "2026-10-30T13:01:02.606Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1793332801&end_ts=1793365262&period_interval=1440",
+  "last_ingested_at": "2026-10-30T21:03:57.698Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAWEST/markets/KXNBAWEST-27-SAS/candlesticks?start_ts=1793332801&end_ts=1793394237&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:52:55.541Z",
