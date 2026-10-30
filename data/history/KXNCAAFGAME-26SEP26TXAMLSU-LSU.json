@@ -9889,6 +9889,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T06:12:16.018Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -9946,10 +9956,10 @@
     "yes_sub_title": "LSU"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU",
-  "market_captured_at": "2026-10-29T21:27:55.019Z",
+  "market_captured_at": "2026-10-30T06:12:15.491Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-29T21:27:55.564Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU/candlesticks?start_ts=1790481601&end_ts=1793309275&period_interval=1440",
+  "last_ingested_at": "2026-10-30T06:12:16.006Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26TXAMLSU-LSU/candlesticks?start_ts=1790481601&end_ts=1793340735&period_interval=1440",
   "result": "yes",
   "marketErrors": [
     {

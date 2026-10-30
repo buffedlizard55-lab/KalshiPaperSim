@@ -1753,6 +1753,31 @@
         "low_dollars": "0.0200",
         "open_dollars": "0.0300"
       }
+    },
+    {
+      "end_period_ts": 1793332800,
+      "open_interest_fp": "361649.39",
+      "price": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0400",
+        "mean_dollars": "0.0500",
+        "open_dollars": "0.0500",
+        "previous_dollars": "0.0500"
+      },
+      "volume_fp": "17034.47",
+      "yes_ask": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0400",
+        "high_dollars": "0.0400",
+        "low_dollars": "0.0400",
+        "open_dollars": "0.0400"
+      }
     }
   ],
   "books": [
@@ -38519,6 +38544,266 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T06:11:45.669Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-MIA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3889810.26"
+            ],
+            [
+              "0.0300",
+              "737.17"
+            ],
+            [
+              "0.0600",
+              "941081.71"
+            ],
+            [
+              "0.0700",
+              "97.22"
+            ],
+            [
+              "0.0800",
+              "511.95"
+            ],
+            [
+              "0.0900",
+              "100.00"
+            ],
+            [
+              "0.1000",
+              "9.40"
+            ],
+            [
+              "0.1100",
+              "516240.00"
+            ],
+            [
+              "0.1200",
+              "13.47"
+            ],
+            [
+              "0.1300",
+              "1024.14"
+            ],
+            [
+              "0.1400",
+              "29.36"
+            ],
+            [
+              "0.1500",
+              "109.55"
+            ],
+            [
+              "0.1700",
+              "140.94"
+            ],
+            [
+              "0.2000",
+              "401977.57"
+            ],
+            [
+              "0.2100",
+              "235.49"
+            ],
+            [
+              "0.2200",
+              "156.99"
+            ],
+            [
+              "0.2300",
+              "6.73"
+            ],
+            [
+              "0.2500",
+              "3.84"
+            ],
+            [
+              "0.2700",
+              "117.43"
+            ],
+            [
+              "0.2900",
+              "387874.10"
+            ],
+            [
+              "0.3100",
+              "25.16"
+            ],
+            [
+              "0.3200",
+              "4.51"
+            ],
+            [
+              "0.3700",
+              "45.52"
+            ],
+            [
+              "0.3900",
+              "65.44"
+            ],
+            [
+              "0.4000",
+              "4.98"
+            ],
+            [
+              "0.4100",
+              "380176.74"
+            ],
+            [
+              "0.4600",
+              "25.62"
+            ],
+            [
+              "0.4700",
+              "587.18"
+            ],
+            [
+              "0.4800",
+              "137.36"
+            ],
+            [
+              "0.4900",
+              "5.55"
+            ],
+            [
+              "0.5000",
+              "203859.00"
+            ],
+            [
+              "0.5300",
+              "55.59"
+            ],
+            [
+              "0.5500",
+              "626.95"
+            ],
+            [
+              "0.5600",
+              "58195.65"
+            ],
+            [
+              "0.5700",
+              "6.10"
+            ],
+            [
+              "0.6100",
+              "100735.00"
+            ],
+            [
+              "0.6300",
+              "2022.00"
+            ],
+            [
+              "0.6400",
+              "226.86"
+            ],
+            [
+              "0.6900",
+              "40072.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.7300",
+              "1137.29"
+            ],
+            [
+              "0.7400",
+              "26072.00"
+            ],
+            [
+              "0.7500",
+              "468.31"
+            ],
+            [
+              "0.7600",
+              "1761.50"
+            ],
+            [
+              "0.7700",
+              "2035.23"
+            ],
+            [
+              "0.7800",
+              "100.00"
+            ],
+            [
+              "0.7900",
+              "6.42"
+            ],
+            [
+              "0.8000",
+              "90.00"
+            ],
+            [
+              "0.8100",
+              "14587.00"
+            ],
+            [
+              "0.8200",
+              "6.42"
+            ],
+            [
+              "0.8500",
+              "69.50"
+            ],
+            [
+              "0.8900",
+              "65.40"
+            ],
+            [
+              "0.9000",
+              "207.21"
+            ],
+            [
+              "0.9100",
+              "12.84"
+            ],
+            [
+              "0.9200",
+              "10091.13"
+            ],
+            [
+              "0.9300",
+              "30031.66"
+            ],
+            [
+              "0.9400",
+              "90327.17"
+            ],
+            [
+              "0.9500",
+              "9739.58"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "4728.54"
+            ],
+            [
+              "0.0200",
+              "46592.20"
+            ],
+            [
+              "0.0300",
+              "12176.80"
+            ],
+            [
+              "0.0400",
+              "1546.68"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -38534,7 +38819,7 @@
     "expected_expiration_time": "2027-06-30T14:00:00Z",
     "expiration_time": "2029-06-29T14:00:00Z",
     "expiration_value": "",
-    "last_price_dollars": "0.0500",
+    "last_price_dollars": "0.0400",
     "latest_expiration_time": "2029-06-29T14:00:00Z",
     "market_type": "binary",
     "no_ask_dollars": "0.9600",
@@ -38542,9 +38827,9 @@
     "no_sub_title": "Miami",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-06-30T14:00:00Z",
-    "open_interest_fp": "361649.39",
+    "open_interest_fp": "361625.14",
     "open_time": "2026-06-16T20:00:00Z",
-    "previous_price_dollars": "0.0400",
+    "previous_price_dollars": "0.0500",
     "previous_yes_ask_dollars": "0.0500",
     "previous_yes_bid_dollars": "0.0400",
     "price_level_structure": "linear_cent",
@@ -38565,19 +38850,19 @@
     "ticker": "KXNBAEAST-27-MIA",
     "title": "Will Miami win the Pro Basketball Eastern Conference Finals in the 2026-27 season?",
     "updated_time": "2026-07-24T17:17:07.618476Z",
-    "volume_24h_fp": "17354.17",
-    "volume_fp": "531731.54",
+    "volume_24h_fp": "16964.96",
+    "volume_fp": "531855.79",
     "yes_ask_dollars": "0.0500",
-    "yes_ask_size_fp": "59426.17",
+    "yes_ask_size_fp": "9614.58",
     "yes_bid_dollars": "0.0400",
-    "yes_bid_size_fp": "1570.38",
+    "yes_bid_size_fp": "1546.68",
     "yes_sub_title": "Miami"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAEAST-27-MIA",
-  "market_captured_at": "2026-10-29T21:27:21.951Z",
+  "market_captured_at": "2026-10-30T06:11:45.142Z",
   "status": "active",
-  "last_ingested_at": "2026-10-29T21:27:22.496Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-MIA/candlesticks?start_ts=1793246401&end_ts=1793309242&period_interval=1440",
+  "last_ingested_at": "2026-10-30T06:11:45.657Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAEAST/markets/KXNBAEAST-27-MIA/candlesticks?start_ts=1793246401&end_ts=1793340705&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:52:40.900Z",

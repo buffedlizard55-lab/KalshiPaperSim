@@ -1638,6 +1638,31 @@
         "low_dollars": "0.0000",
         "open_dollars": "0.0000"
       }
+    },
+    {
+      "end_period_ts": 1793332800,
+      "open_interest_fp": "1145918.22",
+      "price": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "mean_dollars": "0.0100",
+        "open_dollars": "0.0100",
+        "previous_dollars": "0.0100"
+      },
+      "volume_fp": "21976.98",
+      "yes_ask": {
+        "close_dollars": "0.0100",
+        "high_dollars": "0.0100",
+        "low_dollars": "0.0100",
+        "open_dollars": "0.0100"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0000",
+        "high_dollars": "0.0000",
+        "low_dollars": "0.0000",
+        "open_dollars": "0.0000"
+      }
     }
   ],
   "books": [
@@ -28825,6 +28850,149 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-30T06:11:41.488Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-ORL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3888999.00"
+            ],
+            [
+              "0.0200",
+              "3333.00"
+            ],
+            [
+              "0.0300",
+              "671.00"
+            ],
+            [
+              "0.0600",
+              "1053271.00"
+            ],
+            [
+              "0.1100",
+              "574512.00"
+            ],
+            [
+              "0.2000",
+              "438528.00"
+            ],
+            [
+              "0.2900",
+              "441718.00"
+            ],
+            [
+              "0.3000",
+              "1500.00"
+            ],
+            [
+              "0.3400",
+              "31.21"
+            ],
+            [
+              "0.3800",
+              "230897.00"
+            ],
+            [
+              "0.4600",
+              "362557.00"
+            ],
+            [
+              "0.5100",
+              "46.79"
+            ],
+            [
+              "0.5700",
+              "165575.00"
+            ],
+            [
+              "0.6500",
+              "53608.00"
+            ],
+            [
+              "0.7000",
+              "80140.00"
+            ],
+            [
+              "0.7100",
+              "100.00"
+            ],
+            [
+              "0.7700",
+              "36072.00"
+            ],
+            [
+              "0.7800",
+              "2053.00"
+            ],
+            [
+              "0.8000",
+              "9981.71"
+            ],
+            [
+              "0.8200",
+              "701.85"
+            ],
+            [
+              "0.8300",
+              "25720.00"
+            ],
+            [
+              "0.8400",
+              "155.73"
+            ],
+            [
+              "0.8500",
+              "1048.00"
+            ],
+            [
+              "0.9000",
+              "50.00"
+            ],
+            [
+              "0.9100",
+              "9.19"
+            ],
+            [
+              "0.9200",
+              "2.00"
+            ],
+            [
+              "0.9300",
+              "1.00"
+            ],
+            [
+              "0.9400",
+              "1.00"
+            ],
+            [
+              "0.9500",
+              "14.62"
+            ],
+            [
+              "0.9600",
+              "223.28"
+            ],
+            [
+              "0.9700",
+              "15100.00"
+            ],
+            [
+              "0.9800",
+              "685140.34"
+            ],
+            [
+              "0.9900",
+              "515590.91"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -28848,7 +29016,7 @@
     "no_sub_title": "Orlando",
     "notional_value_dollars": "1.0000",
     "occurrence_datetime": "2027-07-31T14:00:00Z",
-    "open_interest_fp": "1145450.63",
+    "open_interest_fp": "1145918.22",
     "open_time": "2026-06-14T08:00:00Z",
     "previous_price_dollars": "0.0100",
     "previous_yes_ask_dollars": "0.0100",
@@ -28871,19 +29039,19 @@
     "ticker": "KXNBA-27-ORL",
     "title": "Will Orlando win the 2027 Pro Basketball Finals?",
     "updated_time": "2026-09-27T15:16:20.390341Z",
-    "volume_24h_fp": "23009.39",
-    "volume_fp": "1573646.43",
+    "volume_24h_fp": "21976.98",
+    "volume_fp": "1574114.02",
     "yes_ask_dollars": "0.0100",
-    "yes_ask_size_fp": "511119.05",
+    "yes_ask_size_fp": "515627.91",
     "yes_bid_dollars": "0.0000",
     "yes_bid_size_fp": "0.00",
     "yes_sub_title": "Orlando"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBA-27-ORL",
-  "market_captured_at": "2026-10-29T21:27:17.387Z",
+  "market_captured_at": "2026-10-30T06:11:40.962Z",
   "status": "active",
-  "last_ingested_at": "2026-10-29T21:27:17.932Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-ORL/candlesticks?start_ts=1793246401&end_ts=1793309237&period_interval=1440",
+  "last_ingested_at": "2026-10-30T06:11:41.476Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBA/markets/KXNBA-27-ORL/candlesticks?start_ts=1793246401&end_ts=1793340701&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:52:36.720Z",
