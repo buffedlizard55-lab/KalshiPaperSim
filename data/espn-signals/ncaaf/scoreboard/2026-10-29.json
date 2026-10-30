@@ -14,7 +14,8 @@
   "2026-10-29T03:38:17.375Z",
   "2026-10-29T10:24:06.675Z",
   "2026-10-29T20:02:27.551Z",
-  "2026-10-30T00:00:51.824Z"
+  "2026-10-30T00:00:51.824Z",
+  "2026-10-30T03:41:10.172Z"
  ],
  "events": {
   "401862812": {
@@ -77,6 +78,26 @@
      "recordsOverall": {
       "home": "5-2",
       "away": "5-2"
+     }
+    },
+    {
+     "captured_at": "2026-10-30T03:41:10.172Z",
+     "last_seen_at": "2026-10-30T03:41:10.172Z",
+     "fp": "post|4|0|48,41|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 4,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 48,
+      "away": 41
+     },
+     "recordsOverall": {
+      "home": "6-2",
+      "away": "5-3"
      }
     }
    ]
@@ -142,10 +163,30 @@
       "home": "7-1",
       "away": "3-4"
      }
+    },
+    {
+     "captured_at": "2026-10-30T03:41:10.172Z",
+     "last_seen_at": "2026-10-30T03:41:10.172Z",
+     "fp": "post|5|0|21,24|true|STATUS_FINAL",
+     "url_ref": 0,
+     "state": "post",
+     "statusName": "STATUS_FINAL",
+     "completed": true,
+     "period": 5,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 21,
+      "away": 24
+     },
+     "recordsOverall": {
+      "home": "7-2",
+      "away": "4-4"
+     }
     }
    ]
   }
  },
- "last_ingested_at": "2026-10-30T00:00:51.824Z",
+ "last_ingested_at": "2026-10-30T03:41:10.172Z",
  "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261029"
 }
