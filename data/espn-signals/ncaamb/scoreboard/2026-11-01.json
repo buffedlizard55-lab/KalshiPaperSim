@@ -1,0 +1,105 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-11-01",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20261101"
+  ]
+ },
+ "captures": [
+  "2026-10-31T10:01:43.929Z"
+ ],
+ "events": {
+  "401920409": {
+   "eventId": "401920409",
+   "date": "2026-11-02T04:59Z",
+   "easternDate": "2026-11-01",
+   "name": "Liberty Flames at High Point Panthers",
+   "shortName": "LIB VS HPU",
+   "week": null,
+   "venue": "Rock Hill Sports & Event Center",
+   "homeAbbr": "HPU",
+   "homeTeamId": "2272",
+   "homeName": "High Point Panthers",
+   "awayAbbr": "LIB",
+   "awayTeamId": "2335",
+   "awayName": "Liberty Flames",
+   "firstCapturedAt": "2026-10-31T10:01:43.929Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "HPU -7.5",
+    "spread": -7.5,
+    "overUnder": 154.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-31T10:01:43.929Z",
+     "last_seen_at": "2026-10-31T10:01:43.929Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0",
+      "away": "0-0"
+     }
+    }
+   ]
+  },
+  "401920982": {
+   "eventId": "401920982",
+   "date": "2026-11-01T14:30Z",
+   "easternDate": "2026-11-01",
+   "name": "Notre Dame Fighting Irish at Villanova Wildcats",
+   "shortName": "ND VS VILL",
+   "week": null,
+   "venue": "Palazzo dello Sport",
+   "homeAbbr": "VILL",
+   "homeTeamId": "222",
+   "homeName": "Villanova Wildcats",
+   "awayAbbr": "ND",
+   "awayTeamId": "87",
+   "awayName": "Notre Dame Fighting Irish",
+   "firstCapturedAt": "2026-10-31T10:01:43.929Z",
+   "oddsContextOnly": {
+    "providerName": "Draft Kings",
+    "details": "VILL -7.5",
+    "spread": -7.5,
+    "overUnder": 147.5
+   },
+   "states": [
+    {
+     "captured_at": "2026-10-31T10:01:43.929Z",
+     "last_seen_at": "2026-10-31T10:01:43.929Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "0-0",
+      "away": "0-0"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-31T10:01:43.929Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=20261101"
+}

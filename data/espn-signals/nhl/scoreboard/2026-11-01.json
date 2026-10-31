@@ -1,0 +1,212 @@
+{
+ "what": "Point-in-time ESPN game-state rows — one row per change (TRUSTED BUT NOT OFFICIAL)",
+ "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
+ "date": "2026-11-01",
+ "source": {
+  "urls": [
+   "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261101"
+  ]
+ },
+ "captures": [
+  "2026-10-31T10:01:44.011Z"
+ ],
+ "events": {
+  "401892624": {
+   "eventId": "401892624",
+   "date": "2026-11-01T18:00Z",
+   "easternDate": "2026-11-01",
+   "name": "Winnipeg Jets at Carolina Hurricanes",
+   "shortName": "WPG @ CAR",
+   "week": null,
+   "venue": "Lenovo Center",
+   "homeAbbr": "CAR",
+   "homeTeamId": "7",
+   "homeName": "Carolina Hurricanes",
+   "awayAbbr": "WPG",
+   "awayTeamId": "28",
+   "awayName": "Winnipeg Jets",
+   "firstCapturedAt": "2026-10-31T10:01:44.011Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-31T10:01:44.011Z",
+     "last_seen_at": "2026-10-31T10:01:44.011Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "11-2-2",
+      "away": "4-7-3"
+     }
+    }
+   ]
+  },
+  "401892625": {
+   "eventId": "401892625",
+   "date": "2026-11-01T20:30Z",
+   "easternDate": "2026-11-01",
+   "name": "Minnesota Wild at Washington Capitals",
+   "shortName": "MIN @ WSH",
+   "week": null,
+   "venue": "Capital One Arena",
+   "homeAbbr": "WSH",
+   "homeTeamId": "23",
+   "homeName": "Washington Capitals",
+   "awayAbbr": "MIN",
+   "awayTeamId": "30",
+   "awayName": "Minnesota Wild",
+   "firstCapturedAt": "2026-10-31T10:01:44.011Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-31T10:01:44.011Z",
+     "last_seen_at": "2026-10-31T10:01:44.011Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "8-4-0",
+      "away": "9-3-3"
+     }
+    }
+   ]
+  },
+  "401892626": {
+   "eventId": "401892626",
+   "date": "2026-11-01T21:00Z",
+   "easternDate": "2026-11-01",
+   "name": "Utah Mammoth at Philadelphia Flyers",
+   "shortName": "UTA @ PHI",
+   "week": null,
+   "venue": "Xfinity Mobile Arena",
+   "homeAbbr": "PHI",
+   "homeTeamId": "15",
+   "homeName": "Philadelphia Flyers",
+   "awayAbbr": "UTA",
+   "awayTeamId": "129764",
+   "awayName": "Utah Mammoth",
+   "firstCapturedAt": "2026-10-31T10:01:44.011Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-31T10:01:44.011Z",
+     "last_seen_at": "2026-10-31T10:01:44.011Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "3-8-4",
+      "away": "9-5-0"
+     }
+    }
+   ]
+  },
+  "401892627": {
+   "eventId": "401892627",
+   "date": "2026-11-01T23:00Z",
+   "easternDate": "2026-11-01",
+   "name": "Edmonton Oilers at New York Rangers",
+   "shortName": "EDM @ NYR",
+   "week": null,
+   "venue": "Madison Square Garden",
+   "homeAbbr": "NYR",
+   "homeTeamId": "13",
+   "homeName": "New York Rangers",
+   "awayAbbr": "EDM",
+   "awayTeamId": "6",
+   "awayName": "Edmonton Oilers",
+   "firstCapturedAt": "2026-10-31T10:01:44.011Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-31T10:01:44.011Z",
+     "last_seen_at": "2026-10-31T10:01:44.011Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "7-6-1",
+      "away": "9-2-2"
+     }
+    }
+   ]
+  },
+  "401892628": {
+   "eventId": "401892628",
+   "date": "2026-11-02T01:00Z",
+   "easternDate": "2026-11-01",
+   "name": "Ottawa Senators at Anaheim Ducks",
+   "shortName": "OTT @ ANA",
+   "week": null,
+   "venue": "Honda Center",
+   "homeAbbr": "ANA",
+   "homeTeamId": "25",
+   "homeName": "Anaheim Ducks",
+   "awayAbbr": "OTT",
+   "awayTeamId": "14",
+   "awayName": "Ottawa Senators",
+   "firstCapturedAt": "2026-10-31T10:01:44.011Z",
+   "oddsContextOnly": null,
+   "states": [
+    {
+     "captured_at": "2026-10-31T10:01:44.011Z",
+     "last_seen_at": "2026-10-31T10:01:44.011Z",
+     "fp": "pre|0|0|0,0|false|STATUS_SCHEDULED",
+     "url_ref": 0,
+     "state": "pre",
+     "statusName": "STATUS_SCHEDULED",
+     "completed": false,
+     "period": 0,
+     "clock": 0,
+     "displayClock": "0:00",
+     "scores": {
+      "home": 0,
+      "away": 0
+     },
+     "recordsOverall": {
+      "home": "5-7-1",
+      "away": "8-5-1"
+     }
+    }
+   ]
+  }
+ },
+ "last_ingested_at": "2026-10-31T10:01:44.011Z",
+ "last_ingest_url": "https://site.web.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261101"
+}

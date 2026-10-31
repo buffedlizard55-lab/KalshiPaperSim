@@ -1,7 +1,7 @@
 {
  "what": "Kalshi ticker code ↔ ESPN team, built ONLY from contract rules text + captured ESPN team tables. An unmapped code is never guessed.",
  "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
- "generatedAt": "2026-10-31T03:25:48.613Z",
+ "generatedAt": "2026-10-31T10:01:44.949Z",
  "rows": [
   {
    "league": "nba",
@@ -962,6 +962,11 @@
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
     {
+     "ticker": "KXNCAAFGAME-26NOV07BYUUTAH-BYU",
+     "rulesName": "BYU",
+     "role": "away"
+    },
+    {
      "ticker": "KXNCAAFGAME-26NOV07BYUUTAH-UTAH",
      "rulesName": "BYU",
      "role": "away"
@@ -1159,6 +1164,21 @@
     {
      "ticker": "KXNCAAFGAME-26OCT31CONNAFA-CONN",
      "rulesName": "UConn",
+     "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "DSU",
+   "kalshiName": "Delaware St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT31DSUNORF-DSU",
+     "rulesName": "Delaware St.",
      "role": "away"
     }
    ]
@@ -1865,6 +1885,21 @@
      "ticker": "KXNCAAFGAME-26OCT03NHCPEAY-PEAY",
      "rulesName": "New Haven",
      "role": "away"
+    }
+   ]
+  },
+  {
+   "league": "ncaaf",
+   "kalshiCode": "NORF",
+   "kalshiName": "Norfolk St.",
+   "conflictWith": null,
+   "espn": null,
+   "espnReason": "NO_ESPN_NAME_MATCH",
+   "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26OCT31DSUNORF-DSU",
+     "rulesName": "Norfolk St.",
+     "role": "home"
     }
    ]
   },
@@ -2701,6 +2736,11 @@
    "espn": null,
    "espnReason": "NO_ESPN_NAME_MATCH",
    "evidence": [
+    {
+     "ticker": "KXNCAAFGAME-26NOV07BYUUTAH-BYU",
+     "rulesName": "Utah",
+     "role": "home"
+    },
     {
      "ticker": "KXNCAAFGAME-26NOV07BYUUTAH-UTAH",
      "rulesName": "Utah",
@@ -4007,6 +4047,11 @@
      "role": "away"
     },
     {
+     "ticker": "KXNHLGAME-26OCT30NJVGK-VGK",
+     "rulesName": "New Jersey",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP21NYRNJ-NJ",
      "rulesName": "New Jersey",
      "role": "home"
@@ -4177,14 +4222,14 @@
      "role": "home"
     },
     {
-     "ticker": "KXNHLGAME-26SEP19VANSEA-SEA",
+     "ticker": "KXNHLGAME-26OCT28TORSEA-TOR",
      "rulesName": "Seattle",
      "role": "home"
     },
     {
-     "ticker": "KXNHLGAME-26SEP20SEACGY-CGY",
+     "ticker": "KXNHLGAME-26SEP19VANSEA-SEA",
      "rulesName": "Seattle",
-     "role": "away"
+     "role": "home"
     }
    ]
   },
@@ -4302,6 +4347,11 @@
      "role": "away"
     },
     {
+     "ticker": "KXNHLGAME-26OCT28TORSEA-TOR",
+     "rulesName": "Toronto",
+     "role": "away"
+    },
+    {
      "ticker": "KXNHLGAME-26SEP30NYITOR-TOR",
      "rulesName": "Toronto",
      "role": "home"
@@ -4361,6 +4411,11 @@
    },
    "espnReason": "MATCHED",
    "evidence": [
+    {
+     "ticker": "KXNHLGAME-26OCT29VANSJ-SJ",
+     "rulesName": "Vancouver",
+     "role": "away"
+    },
     {
      "ticker": "KXNHLGAME-26SEP19VANSEA-SEA",
      "rulesName": "Vancouver",
