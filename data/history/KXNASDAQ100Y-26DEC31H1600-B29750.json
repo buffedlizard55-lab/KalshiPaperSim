@@ -6475,6 +6475,31 @@
         "low_dollars": "0.0600",
         "open_dollars": "0.0600"
       }
+    },
+    {
+      "end_period_ts": 1793419200,
+      "open_interest_fp": "110899.92",
+      "price": {
+        "close_dollars": "0.1000",
+        "high_dollars": "0.1000",
+        "low_dollars": "0.0700",
+        "mean_dollars": "0.0909",
+        "open_dollars": "0.0800",
+        "previous_dollars": "0.0800"
+      },
+      "volume_fp": "14132.36",
+      "yes_ask": {
+        "close_dollars": "0.1000",
+        "high_dollars": "0.1000",
+        "low_dollars": "0.0700",
+        "open_dollars": "0.0800"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0900",
+        "high_dollars": "0.0900",
+        "low_dollars": "0.0600",
+        "open_dollars": "0.0700"
+      }
     }
   ],
   "books": [
@@ -26021,6 +26046,150 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-31T06:06:54.331Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B29750/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "142951.06"
+            ],
+            [
+              "0.0300",
+              "1545.00"
+            ],
+            [
+              "0.0600",
+              "7.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1000",
+              "14285.00"
+            ],
+            [
+              "0.1100",
+              "375.00"
+            ],
+            [
+              "0.2400",
+              "20.00"
+            ],
+            [
+              "0.3000",
+              "4761.00"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.4500",
+              "1.17"
+            ],
+            [
+              "0.5000",
+              "2857.00"
+            ],
+            [
+              "0.5100",
+              "3.56"
+            ],
+            [
+              "0.5800",
+              "5.00"
+            ],
+            [
+              "0.6500",
+              "9.40"
+            ],
+            [
+              "0.7000",
+              "2253.97"
+            ],
+            [
+              "0.7600",
+              "82.08"
+            ],
+            [
+              "0.7700",
+              "3.56"
+            ],
+            [
+              "0.8000",
+              "1785.00"
+            ],
+            [
+              "0.8200",
+              "7.28"
+            ],
+            [
+              "0.8500",
+              "140.85"
+            ],
+            [
+              "0.8700",
+              "167.65"
+            ],
+            [
+              "0.8800",
+              "271.50"
+            ],
+            [
+              "0.8900",
+              "8.48"
+            ],
+            [
+              "0.9000",
+              "2158.75"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2000.00"
+            ],
+            [
+              "0.0200",
+              "1029.98"
+            ],
+            [
+              "0.0300",
+              "12134.70"
+            ],
+            [
+              "0.0400",
+              "721.54"
+            ],
+            [
+              "0.0500",
+              "1448.42"
+            ],
+            [
+              "0.0600",
+              "1188.32"
+            ],
+            [
+              "0.0700",
+              "39.59"
+            ],
+            [
+              "0.0800",
+              "4114.61"
+            ],
+            [
+              "0.0900",
+              "38.99"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -26034,18 +26203,18 @@
     "expiration_time": "2027-01-08T00:00:00Z",
     "expiration_value": "",
     "floor_strike": 29500,
-    "last_price_dollars": "0.0900",
+    "last_price_dollars": "0.1000",
     "latest_expiration_time": "2027-01-08T00:00:00Z",
     "market_type": "binary",
-    "no_ask_dollars": "0.9200",
+    "no_ask_dollars": "0.9100",
     "no_bid_dollars": "0.9000",
     "no_sub_title": "29,500 to 29,999.99",
     "notional_value_dollars": "1.0000",
-    "open_interest_fp": "108162.18",
+    "open_interest_fp": "110909.32",
     "open_time": "2025-12-23T15:00:00Z",
-    "previous_price_dollars": "0.0700",
-    "previous_yes_ask_dollars": "0.0700",
-    "previous_yes_bid_dollars": "0.0600",
+    "previous_price_dollars": "0.0800",
+    "previous_yes_ask_dollars": "0.0800",
+    "previous_yes_bid_dollars": "0.0700",
     "price_level_structure": "linear_cent",
     "price_ranges": [
       {
@@ -26065,19 +26234,19 @@
     "ticker": "KXNASDAQ100Y-26DEC31H1600-B29750",
     "title": "Will the Nasdaq-100 be between 29500 and 29999.99 at the end of Dec 31, 2026 at 4pm EST?",
     "updated_time": "2026-04-09T09:41:45.916894Z",
-    "volume_24h_fp": "15784.14",
-    "volume_fp": "196493.36",
+    "volume_24h_fp": "14141.76",
+    "volume_fp": "199345.93",
     "yes_ask_dollars": "0.1000",
-    "yes_ask_size_fp": "5001.47",
-    "yes_bid_dollars": "0.0800",
-    "yes_bid_size_fp": "4112.23",
+    "yes_ask_size_fp": "2158.75",
+    "yes_bid_dollars": "0.0900",
+    "yes_bid_size_fp": "38.99",
     "yes_sub_title": "29,500 to 29,999.99"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNASDAQ100Y-26DEC31H1600-B29750",
-  "market_captured_at": "2026-10-30T21:03:23.968Z",
+  "market_captured_at": "2026-10-31T06:06:53.699Z",
   "status": "active",
-  "last_ingested_at": "2026-10-30T21:03:24.489Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B29750/candlesticks?start_ts=1793332801&end_ts=1793394204&period_interval=1440",
+  "last_ingested_at": "2026-10-31T06:06:54.265Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNASDAQ100Y/markets/KXNASDAQ100Y-26DEC31H1600-B29750/candlesticks?start_ts=1793332801&end_ts=1793426813&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:52:23.130Z",

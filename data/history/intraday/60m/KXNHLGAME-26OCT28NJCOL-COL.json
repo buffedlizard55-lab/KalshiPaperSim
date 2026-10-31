@@ -3628,6 +3628,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-31T06:12:54.227Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT28NJCOL-COL/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -3685,9 +3695,9 @@
     "yes_sub_title": "Colorado"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT28NJCOL-COL",
-  "market_captured_at": "2026-10-30T21:08:52.635Z",
+  "market_captured_at": "2026-10-31T06:12:53.494Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-30T21:08:53.260Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT28NJCOL-COL/candlesticks?start_ts=1793246401&end_ts=1793394532&period_interval=60"
+  "last_ingested_at": "2026-10-31T06:12:54.162Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNHLGAME/markets/KXNHLGAME-26OCT28NJCOL-COL/candlesticks?start_ts=1793246401&end_ts=1793427173&period_interval=60"
 }

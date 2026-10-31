@@ -5,31 +5,6 @@
   "source": "live_api",
   "candlesticks": [
     {
-      "end_period_ts": 1758772800,
-      "open_interest_fp": "10115.00",
-      "price": {
-        "close_dollars": "0.2300",
-        "high_dollars": "0.2300",
-        "low_dollars": "0.2300",
-        "mean_dollars": "0.2300",
-        "open_dollars": "0.2300",
-        "previous_dollars": "0.2500"
-      },
-      "volume_fp": "3.00",
-      "yes_ask": {
-        "close_dollars": "0.2300",
-        "high_dollars": "0.2400",
-        "low_dollars": "0.2300",
-        "open_dollars": "0.2400"
-      },
-      "yes_bid": {
-        "close_dollars": "0.2000",
-        "high_dollars": "0.2000",
-        "low_dollars": "0.2000",
-        "open_dollars": "0.2000"
-      }
-    },
-    {
       "end_period_ts": 1758859200,
       "open_interest_fp": "10115.00",
       "price": {
@@ -9386,6 +9361,31 @@
         "close_dollars": "0.0200",
         "high_dollars": "0.0200",
         "low_dollars": "0.0100",
+        "open_dollars": "0.0200"
+      }
+    },
+    {
+      "end_period_ts": 1793419200,
+      "open_interest_fp": "35333.00",
+      "price": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "mean_dollars": "0.0500",
+        "open_dollars": "0.0500",
+        "previous_dollars": "0.0200"
+      },
+      "volume_fp": "27.10",
+      "yes_ask": {
+        "close_dollars": "0.0500",
+        "high_dollars": "0.0500",
+        "low_dollars": "0.0500",
+        "open_dollars": "0.0500"
+      },
+      "yes_bid": {
+        "close_dollars": "0.0200",
+        "high_dollars": "0.0200",
+        "low_dollars": "0.0200",
         "open_dollars": "0.0200"
       }
     }
@@ -51310,6 +51310,246 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-31T06:08:54.422Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "8670.20"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0400",
+              "100.00"
+            ],
+            [
+              "0.0500",
+              "1000.00"
+            ],
+            [
+              "0.0800",
+              "888.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "1000.00"
+            ],
+            [
+              "0.2600",
+              "600.00"
+            ],
+            [
+              "0.3500",
+              "500.00"
+            ],
+            [
+              "0.3700",
+              "1.00"
+            ],
+            [
+              "0.5100",
+              "200.00"
+            ],
+            [
+              "0.5300",
+              "2391.00"
+            ],
+            [
+              "0.6400",
+              "187.52"
+            ],
+            [
+              "0.7000",
+              "3.00"
+            ],
+            [
+              "0.7100",
+              "1500.00"
+            ],
+            [
+              "0.7300",
+              "256.65"
+            ],
+            [
+              "0.7500",
+              "100.00"
+            ],
+            [
+              "0.8000",
+              "510.00"
+            ],
+            [
+              "0.8100",
+              "100.00"
+            ],
+            [
+              "0.8200",
+              "100.00"
+            ],
+            [
+              "0.9000",
+              "402.70"
+            ],
+            [
+              "0.9100",
+              "100.00"
+            ],
+            [
+              "0.9200",
+              "259.87"
+            ],
+            [
+              "0.9400",
+              "1019.00"
+            ],
+            [
+              "0.9500",
+              "8663.64"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "17076.49"
+            ],
+            [
+              "0.0200",
+              "50.99"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "captured_at": "2026-10-31T06:21:23.202Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "8670.20"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0400",
+              "100.00"
+            ],
+            [
+              "0.0500",
+              "1000.00"
+            ],
+            [
+              "0.0800",
+              "888.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1600",
+              "1000.00"
+            ],
+            [
+              "0.2600",
+              "600.00"
+            ],
+            [
+              "0.3500",
+              "500.00"
+            ],
+            [
+              "0.3700",
+              "1.00"
+            ],
+            [
+              "0.5100",
+              "200.00"
+            ],
+            [
+              "0.5300",
+              "2391.00"
+            ],
+            [
+              "0.6400",
+              "187.52"
+            ],
+            [
+              "0.7000",
+              "3.00"
+            ],
+            [
+              "0.7100",
+              "1500.00"
+            ],
+            [
+              "0.7300",
+              "256.65"
+            ],
+            [
+              "0.7500",
+              "100.00"
+            ],
+            [
+              "0.8000",
+              "510.00"
+            ],
+            [
+              "0.8100",
+              "100.00"
+            ],
+            [
+              "0.8200",
+              "100.00"
+            ],
+            [
+              "0.9000",
+              "402.70"
+            ],
+            [
+              "0.9100",
+              "100.00"
+            ],
+            [
+              "0.9200",
+              "259.87"
+            ],
+            [
+              "0.9400",
+              "1019.00"
+            ],
+            [
+              "0.9500",
+              "8686.64"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "17076.49"
+            ],
+            [
+              "0.0200",
+              "50.99"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -51352,19 +51592,19 @@
     "ticker": "TESLACEOCHANGE-26",
     "title": "Musk out as Tesla CEO before 2026?",
     "updated_time": "2026-04-09T09:31:32.766769Z",
-    "volume_24h_fp": "26.86",
-    "volume_fp": "93249.54",
+    "volume_24h_fp": "27.10",
+    "volume_fp": "93249.78",
     "yes_ask_dollars": "0.0500",
-    "yes_ask_size_fp": "8473.14",
+    "yes_ask_size_fp": "8686.64",
     "yes_bid_dollars": "0.0200",
-    "yes_bid_size_fp": "50.75",
+    "yes_bid_size_fp": "50.99",
     "yes_sub_title": "Before 2027"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/TESLACEOCHANGE-26",
-  "market_captured_at": "2026-10-30T21:16:08.007Z",
+  "market_captured_at": "2026-10-31T06:21:22.475Z",
   "status": "active",
-  "last_ingested_at": "2026-10-30T21:16:08.629Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/TESLACEOCHANGE/markets/TESLACEOCHANGE-26/candlesticks?start_ts=1793332801&end_ts=1793394968&period_interval=1440",
+  "last_ingested_at": "2026-10-31T06:21:23.139Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/TESLACEOCHANGE/markets/TESLACEOCHANGE-26/candlesticks?start_ts=1793419201&end_ts=1793427682&period_interval=1440",
   "trims": [
     {
       "at": "2026-09-20T11:34:43.929Z",
@@ -51691,6 +51931,14 @@
       "dropped": 1,
       "dropped_from_ts": 1758686400,
       "dropped_to_ts": 1758686400,
+      "kept": 400,
+      "reason": "--max-bars=400: the store keeps the newest 400 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
+    },
+    {
+      "at": "2026-10-31T06:21:23.503Z",
+      "dropped": 1,
+      "dropped_from_ts": 1758772800,
+      "dropped_to_ts": 1758772800,
       "kept": 400,
       "reason": "--max-bars=400: the store keeps the newest 400 bar(s) so an intraday series cannot grow without bound. Oldest bars are dropped and recorded here, never silently."
     }
