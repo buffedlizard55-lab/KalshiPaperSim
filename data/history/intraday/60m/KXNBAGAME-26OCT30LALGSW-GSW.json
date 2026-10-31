@@ -2265,6 +2265,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-31T08:46:09.368Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30LALGSW-GSW/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -2313,7 +2323,7 @@
     "ticker": "KXNBAGAME-26OCT30LALGSW-GSW",
     "title": "Golden State wins",
     "updated_time": "2026-10-31T04:55:49.424308Z",
-    "volume_24h_fp": "10739469.59",
+    "volume_24h_fp": "10729891.01",
     "volume_fp": "10775991.56",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -2322,9 +2332,9 @@
     "yes_sub_title": "Golden State"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30LALGSW-GSW",
-  "market_captured_at": "2026-10-31T06:12:42.298Z",
+  "market_captured_at": "2026-10-31T08:46:08.729Z",
   "result": "yes",
   "status": "finalized",
-  "last_ingested_at": "2026-10-31T06:12:42.967Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT30LALGSW-GSW/candlesticks?start_ts=1792980359&end_ts=1793427162&period_interval=60"
+  "last_ingested_at": "2026-10-31T08:46:09.353Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26OCT30LALGSW-GSW/candlesticks?start_ts=1793422801&end_ts=1793436369&period_interval=60"
 }

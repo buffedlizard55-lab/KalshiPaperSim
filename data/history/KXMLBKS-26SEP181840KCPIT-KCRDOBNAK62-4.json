@@ -1369,6 +1369,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-31T08:40:47.116Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840KCPIT-KCRDOBNAK62-4/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -1429,11 +1439,11 @@
     "yes_sub_title": "Randy Dobnak: 4+"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBKS-26SEP181840KCPIT-KCRDOBNAK62-4",
-  "market_captured_at": "2026-10-31T06:06:39.320Z",
+  "market_captured_at": "2026-10-31T08:40:46.573Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-31T06:06:39.888Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840KCPIT-KCRDOBNAK62-4/candlesticks?start_ts=1789790401&end_ts=1793426799&period_interval=1440",
+  "last_ingested_at": "2026-10-31T08:40:47.101Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBKS/markets/KXMLBKS-26SEP181840KCPIT-KCRDOBNAK62-4/candlesticks?start_ts=1789790401&end_ts=1793436046&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:52:11.667Z",

@@ -12920,6 +12920,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-31T08:49:22.743Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT071600CLECWS-CWS/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -12977,11 +12987,11 @@
     "yes_sub_title": "Chicago WS"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXMLBGAME-26OCT071600CLECWS-CWS",
-  "market_captured_at": "2026-10-31T06:16:15.401Z",
+  "market_captured_at": "2026-10-31T08:49:14.670Z",
   "result": "no",
   "status": "finalized",
-  "last_ingested_at": "2026-10-31T06:16:24.502Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT071600CLECWS-CWS/candlesticks?start_ts=1793402881&end_ts=1793427375&period_interval=1",
+  "last_ingested_at": "2026-10-31T08:49:22.677Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26OCT071600CLECWS-CWS/candlesticks?start_ts=1793402881&end_ts=1793436554&period_interval=1",
   "trims": [
     {
       "at": "2026-10-08T06:34:42.781Z",

@@ -24604,6 +24604,73 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-31T08:40:27.072Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8900/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "125000.31"
+            ],
+            [
+              "0.0300",
+              "400.30"
+            ],
+            [
+              "0.1000",
+              "12500.00"
+            ],
+            [
+              "0.1200",
+              "467.90"
+            ],
+            [
+              "0.3000",
+              "4166.00"
+            ],
+            [
+              "0.5000",
+              "2500.00"
+            ],
+            [
+              "0.7000",
+              "1785.00"
+            ],
+            [
+              "0.8000",
+              "1562.00"
+            ],
+            [
+              "0.9000",
+              "1388.00"
+            ],
+            [
+              "0.9500",
+              "13319.00"
+            ],
+            [
+              "0.9600",
+              "14118.72"
+            ],
+            [
+              "0.9700",
+              "10992.61"
+            ],
+            [
+              "0.9800",
+              "37328.49"
+            ],
+            [
+              "0.9900",
+              "18987.13"
+            ]
+          ],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -24657,10 +24724,10 @@
     "yes_sub_title": "8,800 to 9,000"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXINXY-26DEC31H1600-B8900",
-  "market_captured_at": "2026-10-31T06:06:16.518Z",
+  "market_captured_at": "2026-10-31T08:40:26.539Z",
   "status": "active",
-  "last_ingested_at": "2026-10-31T06:06:17.084Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B8900/candlesticks?start_ts=1793332801&end_ts=1793426776&period_interval=1440",
+  "last_ingested_at": "2026-10-31T08:40:27.057Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXINXY/markets/KXINXY-26DEC31H1600-B8900/candlesticks?start_ts=1793419201&end_ts=1793436026&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:51.833Z",

@@ -7222,6 +7222,16 @@
           "yes_dollars": []
         }
       }
+    },
+    {
+      "captured_at": "2026-10-31T08:41:43.034Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": []
+        }
+      }
     }
   ],
   "market": {
@@ -7279,10 +7289,10 @@
     "yes_sub_title": "Miami (FL)"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA",
-  "market_captured_at": "2026-10-31T06:07:42.960Z",
+  "market_captured_at": "2026-10-31T08:41:42.498Z",
   "status": "finalized",
-  "last_ingested_at": "2026-10-31T06:07:43.528Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/candlesticks?start_ts=1790481601&end_ts=1793426863&period_interval=1440",
+  "last_ingested_at": "2026-10-31T08:41:43.019Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP26CMUMIA-MIA/candlesticks?start_ts=1790481601&end_ts=1793436102&period_interval=1440",
   "result": "yes",
   "marketErrors": [
     {

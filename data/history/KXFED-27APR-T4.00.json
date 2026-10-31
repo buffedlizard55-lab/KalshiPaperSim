@@ -16138,6 +16138,61 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-31T08:40:02.809Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T4.00/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "754953.34"
+            ],
+            [
+              "0.0200",
+              "4736.00"
+            ],
+            [
+              "0.0300",
+              "1.00"
+            ],
+            [
+              "0.0500",
+              "36212.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1000",
+              "14901.00"
+            ],
+            [
+              "0.1500",
+              "5992.00"
+            ],
+            [
+              "0.1600",
+              "45.00"
+            ],
+            [
+              "0.2000",
+              "1112.00"
+            ],
+            [
+              "0.2200",
+              "100.00"
+            ],
+            [
+              "0.2300",
+              "71.36"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -16190,10 +16245,10 @@
     "yes_sub_title": "Above 4.00%"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXFED-27APR-T4.00",
-  "market_captured_at": "2026-10-31T06:05:48.911Z",
+  "market_captured_at": "2026-10-31T08:40:02.277Z",
   "status": "active",
-  "last_ingested_at": "2026-10-31T06:05:49.476Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.00/candlesticks?start_ts=1793332801&end_ts=1793426749&period_interval=1440",
+  "last_ingested_at": "2026-10-31T08:40:02.794Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXFED/markets/KXFED-27APR-T4.00/candlesticks?start_ts=1793419201&end_ts=1793436002&period_interval=1440",
   "marketErrors": [
     {
       "at": "2026-10-22T07:51:27.820Z",
