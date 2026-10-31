@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-31T08:54:48.883Z",
+ "generatedAt": "2026-10-31T12:53:13.107Z",
  "audit": "game-window-captures",
  "version": 2,
  "offline": true,
  "rule": "Tradeable window = the market object's own open_time → close_time. Event window = point-in-time knowledge from data/mlb-signals/ (OFFICIAL statsapi.mlb.com: scheduled first pitch + observed Final) or data/espn-signals/ (TRUSTED BUT NOT OFFICIAL: observed pre/in/post transitions; ESPN publishes NO start time). occurrence_datetime is never used as an event bound — no game time is ever parsed out of a ticker string.",
  "sources": {
-  "stores": 2962,
-  "storesRead": 2962,
+  "stores": 2965,
+  "storesRead": 2965,
   "historyDir": "data/history",
   "mlbArchivePresent": true,
   "espnArchivePresent": true,
@@ -18,15 +18,15 @@
  },
  "totals": {
   "stores": 598,
-  "ladders": 18843,
-  "laddersNonEmpty": 3150,
+  "ladders": 18939,
+  "laddersNonEmpty": 3158,
   "phases": {
    "PRE_OPEN": 0,
    "TRADEABLE_PRE_EVENT": 44,
    "IN_PLAY": 11,
    "TRADEABLE_POST_EVENT": 0,
-   "TRADEABLE_EVENT_UNVERIFIED": 3095,
-   "POST_CLOSE": 15693,
+   "TRADEABLE_EVENT_UNVERIFIED": 3103,
+   "POST_CLOSE": 15781,
    "UNKNOWN": 0
   },
   "nonEmptyByPhase": {
@@ -34,7 +34,7 @@
    "TRADEABLE_PRE_EVENT": 44,
    "IN_PLAY": 11,
    "TRADEABLE_POST_EVENT": 0,
-   "TRADEABLE_EVENT_UNVERIFIED": 3095,
+   "TRADEABLE_EVENT_UNVERIFIED": 3103,
    "POST_CLOSE": 0,
    "UNKNOWN": 0
   },
@@ -48,7 +48,7 @@
   "storeFilesDisagreeingWithResolution": 30,
   "openStoresByNewestRecord": 103,
   "openStoresByTheirOwnFileStatus": 133,
-  "tradeableNonEmpty": 3150
+  "tradeableNonEmpty": 3158
  },
  "statusReconciliation": {
   "rule": {
@@ -69,7 +69,7 @@
     "resolved": {
      "status": "finalized",
      "result": "no",
-     "marketCapturedAt": "2026-10-31T08:41:21.372Z",
+     "marketCapturedAt": "2026-10-31T12:36:21.215Z",
      "source": "data/history/KXNBAGAME-26OCT20BOSDET-BOS.json"
     },
     "staleFiles": [
@@ -93,7 +93,7 @@
     "resolved": {
      "status": "finalized",
      "result": "yes",
-     "marketCapturedAt": "2026-10-31T08:41:22.430Z",
+     "marketCapturedAt": "2026-10-31T12:36:22.099Z",
      "source": "data/history/KXNBAGAME-26OCT20BOSDET-DET.json"
     },
     "staleFiles": [
@@ -117,7 +117,7 @@
     "resolved": {
      "status": "finalized",
      "result": "yes",
-     "marketCapturedAt": "2026-10-31T08:41:23.487Z",
+     "marketCapturedAt": "2026-10-31T12:36:22.980Z",
      "source": "data/history/KXNBAGAME-26OCT20OKCSAS-OKC.json"
     },
     "staleFiles": [
@@ -141,7 +141,7 @@
     "resolved": {
      "status": "finalized",
      "result": "no",
-     "marketCapturedAt": "2026-10-31T08:41:24.548Z",
+     "marketCapturedAt": "2026-10-31T12:36:23.862Z",
      "source": "data/history/KXNBAGAME-26OCT20OKCSAS-SAS.json"
     },
     "staleFiles": [
@@ -165,7 +165,7 @@
     "resolved": {
      "status": "finalized",
      "result": "no",
-     "marketCapturedAt": "2026-10-31T08:41:25.606Z",
+     "marketCapturedAt": "2026-10-31T12:36:24.748Z",
      "source": "data/history/KXNBAGAME-26OCT20PHINYK-NYK.json"
     },
     "staleFiles": [
@@ -189,7 +189,7 @@
     "resolved": {
      "status": "finalized",
      "result": "yes",
-     "marketCapturedAt": "2026-10-31T08:41:26.662Z",
+     "marketCapturedAt": "2026-10-31T12:36:25.630Z",
      "source": "data/history/KXNBAGAME-26OCT20PHINYK-PHI.json"
     },
     "staleFiles": [
@@ -213,7 +213,7 @@
     "resolved": {
      "status": "finalized",
      "result": "yes",
-     "marketCapturedAt": "2026-10-31T08:41:40.390Z",
+     "marketCapturedAt": "2026-10-31T12:36:37.071Z",
      "source": "data/history/KXNCAAFGAME-26SEP26CARKFSU-FSU.json"
     },
     "staleFiles": [
@@ -237,7 +237,7 @@
     "resolved": {
      "status": "finalized",
      "result": "no",
-     "marketCapturedAt": "2026-10-31T08:41:41.447Z",
+     "marketCapturedAt": "2026-10-31T12:36:37.948Z",
      "source": "data/history/KXNCAAFGAME-26SEP26CMUMIA-CMU.json"
     },
     "staleFiles": [
@@ -261,7 +261,7 @@
     "resolved": {
      "status": "finalized",
      "result": "yes",
-     "marketCapturedAt": "2026-10-31T08:41:42.498Z",
+     "marketCapturedAt": "2026-10-31T12:36:38.826Z",
      "source": "data/history/KXNCAAFGAME-26SEP26CMUMIA-MIA.json"
     },
     "staleFiles": [
@@ -285,7 +285,7 @@
     "resolved": {
      "status": "finalized",
      "result": "yes",
-     "marketCapturedAt": "2026-10-31T08:41:43.552Z",
+     "marketCapturedAt": "2026-10-31T12:36:39.701Z",
      "source": "data/history/KXNCAAFGAME-26SEP26ILLOSU-OSU.json"
     },
     "staleFiles": [
@@ -309,7 +309,7 @@
     "resolved": {
      "status": "finalized",
      "result": "yes",
-     "marketCapturedAt": "2026-10-31T08:41:44.607Z",
+     "marketCapturedAt": "2026-10-31T12:36:40.577Z",
      "source": "data/history/KXNCAAFGAME-26SEP26MOSUSMU-SMU.json"
     },
     "staleFiles": [
@@ -333,7 +333,7 @@
     "resolved": {
      "status": "finalized",
      "result": "yes",
-     "marketCapturedAt": "2026-10-31T08:41:45.661Z",
+     "marketCapturedAt": "2026-10-31T12:36:41.455Z",
      "source": "data/history/KXNCAAFGAME-26SEP26OREUSC-ORE.json"
     },
     "staleFiles": [
@@ -357,7 +357,7 @@
     "resolved": {
      "status": "finalized",
      "result": "yes",
-     "marketCapturedAt": "2026-10-31T08:41:46.713Z",
+     "marketCapturedAt": "2026-10-31T12:36:42.334Z",
      "source": "data/history/KXNCAAFGAME-26SEP26SHSUTTU-TTU.json"
     },
     "staleFiles": [
@@ -381,7 +381,7 @@
     "resolved": {
      "status": "finalized",
      "result": "yes",
-     "marketCapturedAt": "2026-10-31T08:41:47.766Z",
+     "marketCapturedAt": "2026-10-31T12:36:43.211Z",
      "source": "data/history/KXNCAAFGAME-26SEP26TXAMLSU-LSU.json"
     },
     "staleFiles": [
@@ -405,7 +405,7 @@
     "resolved": {
      "status": "finalized",
      "result": "yes",
-     "marketCapturedAt": "2026-10-31T08:42:32.014Z",
+     "marketCapturedAt": "2026-10-31T12:37:20.128Z",
      "source": "data/history/KXNHLGAME-26SEP19VGKLA-VGK.json"
     },
     "staleFiles": [
@@ -423,7 +423,7 @@
     "resolved": {
      "status": "finalized",
      "result": "no",
-     "marketCapturedAt": "2026-10-31T08:42:33.064Z",
+     "marketCapturedAt": "2026-10-31T12:37:21.005Z",
      "source": "data/history/KXNHLGAME-26SEP20WSHBOS-WSH.json"
     },
     "staleFiles": [
@@ -490,7 +490,7 @@
    "rawOpenStores": 0,
    "settledStores": 186,
    "distinctTickers": 129,
-   "ladders": 5152,
+   "ladders": 5184,
    "laddersNonEmpty": 13,
    "joinSources": {
     "UNVERIFIED": 55,
@@ -511,7 +511,7 @@
    "inPlayCaptures": 11,
    "postEventCaptures": 0,
    "unverifiedEventCaptures": 2,
-   "postCloseCaptures": 5139,
+   "postCloseCaptures": 5171,
    "preEventNonEmpty": 0,
    "inPlayNonEmpty": 11,
    "postEventNonEmpty": 0,
@@ -527,7 +527,7 @@
    "rawOpenStores": 12,
    "settledStores": 69,
    "distinctTickers": 57,
-   "ladders": 2214,
+   "ladders": 2222,
    "laddersNonEmpty": 1183,
    "joinSources": {
     "ESPN_OBSERVED": 65,
@@ -546,7 +546,7 @@
    "inPlayCaptures": 0,
    "postEventCaptures": 0,
    "unverifiedEventCaptures": 1142,
-   "postCloseCaptures": 1031,
+   "postCloseCaptures": 1039,
    "preEventNonEmpty": 41,
    "inPlayNonEmpty": 0,
    "postEventNonEmpty": 0,
@@ -562,14 +562,13 @@
    "rawOpenStores": 118,
    "settledStores": 26,
    "distinctTickers": 112,
-   "ladders": 2572,
-   "laddersNonEmpty": 1706,
+   "ladders": 2580,
+   "laddersNonEmpty": 1714,
    "joinSources": {
     "UNVERIFIED": 128
    },
    "joinReasons": {
-    "CODE_UNMAPPED_TO_ESPN": 127,
-    "TEAM_CODE_NOT_IN_MAP": 1
+    "CODE_UNMAPPED_TO_ESPN": 128
    },
    "verdicts": {
     "TRADEABLE_LADDER_EVENT_UNVERIFIED": 128
@@ -578,15 +577,15 @@
    "preEventCaptures": 0,
    "inPlayCaptures": 0,
    "postEventCaptures": 0,
-   "unverifiedEventCaptures": 1706,
+   "unverifiedEventCaptures": 1714,
    "postCloseCaptures": 866,
    "preEventNonEmpty": 0,
    "inPlayNonEmpty": 0,
    "postEventNonEmpty": 0,
-   "unverifiedEventNonEmpty": 1706,
+   "unverifiedEventNonEmpty": 1714,
    "postCloseNonEmpty": 0,
-   "tradeableNonEmpty": 1706,
-   "summary": "0 in-play ladders, but 1706 non-empty ladder(s) inside the tradeable window whose event window is UNVERIFIED (not claimed as in-play)"
+   "tradeableNonEmpty": 1714,
+   "summary": "0 in-play ladders, but 1714 non-empty ladder(s) inside the tradeable window whose event window is UNVERIFIED (not claimed as in-play)"
   },
   {
    "series": "KXNFLGAME",
@@ -595,7 +594,7 @@
    "rawOpenStores": 1,
    "settledStores": 92,
    "distinctTickers": 70,
-   "ladders": 5104,
+   "ladders": 5136,
    "laddersNonEmpty": 2,
    "joinSources": {
     "UNVERIFIED": 62,
@@ -614,7 +613,7 @@
    "inPlayCaptures": 0,
    "postEventCaptures": 0,
    "unverifiedEventCaptures": 2,
-   "postCloseCaptures": 5102,
+   "postCloseCaptures": 5134,
    "preEventNonEmpty": 0,
    "inPlayNonEmpty": 0,
    "postEventNonEmpty": 0,
@@ -630,14 +629,14 @@
    "rawOpenStores": 2,
    "settledStores": 99,
    "distinctTickers": 87,
-   "ladders": 2276,
+   "ladders": 2284,
    "laddersNonEmpty": 246,
    "joinSources": {
-    "UNVERIFIED": 60,
-    "ESPN_OBSERVED": 39
+    "UNVERIFIED": 63,
+    "ESPN_OBSERVED": 36
    },
    "joinReasons": {
-    "NO_ARCHIVED_EVENT": 52,
+    "NO_ARCHIVED_EVENT": 55,
     "TEAMS_MATCH_BUT_DATE_DIFFERS": 8
    },
    "verdicts": {
@@ -650,7 +649,7 @@
    "inPlayCaptures": 0,
    "postEventCaptures": 0,
    "unverifiedEventCaptures": 243,
-   "postCloseCaptures": 2030,
+   "postCloseCaptures": 2038,
    "preEventNonEmpty": 3,
    "inPlayNonEmpty": 0,
    "postEventNonEmpty": 0,
@@ -666,7 +665,7 @@
    "rawOpenStores": 0,
    "settledStores": 20,
    "distinctTickers": 20,
-   "ladders": 1360,
+   "ladders": 1368,
    "laddersNonEmpty": 0,
    "joinSources": {
     "UNVERIFIED": 20
@@ -683,14 +682,14 @@
    "inPlayCaptures": 0,
    "postEventCaptures": 0,
    "unverifiedEventCaptures": 0,
-   "postCloseCaptures": 1360,
+   "postCloseCaptures": 1368,
    "preEventNonEmpty": 0,
    "inPlayNonEmpty": 0,
    "postEventNonEmpty": 0,
    "unverifiedEventNonEmpty": 0,
    "postCloseNonEmpty": 0,
    "tradeableNonEmpty": 0,
-   "summary": "0 usable ladders: 1360 capture(s) after close_time (0 of those non-empty) — irregularity #60"
+   "summary": "0 usable ladders: 1368 capture(s) after close_time (0 of those non-empty) — irregularity #60"
   }
  ],
  "deskReserves": [
@@ -712,7 +711,7 @@
    "auditStores": 186,
    "auditOpenStores": 0,
    "auditSettledStores": 186,
-   "auditLadders": 5152,
+   "auditLadders": 5184,
    "auditInPlayNonEmpty": 11,
    "auditTradeableNonEmpty": 13,
    "explainsDeskReserve": "the desk kept 0 of 6 slot(s) because EVERY KXMLBGAME contract in this store is already finalized by the exchange; the audit's ladders for them (11 in-play, 13 tradeable-window non-empty) belong to settled contracts and are historical measurement data, not tradeable slots"
@@ -745,7 +744,7 @@
    "auditStores": 93,
    "auditOpenStores": 1,
    "auditSettledStores": 92,
-   "auditLadders": 5104,
+   "auditLadders": 5136,
    "auditInPlayNonEmpty": 0,
    "auditTradeableNonEmpty": 2,
    "explainsDeskReserve": "the desk kept 1 of its 4 floor / 10 ceiling slot(s) and the audit found 2 non-empty ladder(s) inside the tradeable window for this series (0 of them in-play) — consistent"
@@ -853,7 +852,7 @@
    "auditStores": 69,
    "auditOpenStores": 0,
    "auditSettledStores": 69,
-   "auditLadders": 2214,
+   "auditLadders": 2222,
    "auditInPlayNonEmpty": 0,
    "auditTradeableNonEmpty": 1183,
    "explainsDeskReserve": "the desk kept 0 of 6 slot(s) because EVERY KXNBAGAME contract in this store is already finalized by the exchange; the audit's ladders for them (0 in-play, 1183 tradeable-window non-empty) belong to settled contracts and are historical measurement data, not tradeable slots"
@@ -897,8 +896,8 @@
     "KXNCAAFGAME-26OCT17CITTXAM-TXAM",
     "KXNCAAFGAME-26OCT10BALLNW-BALL",
     "KXNCAAFGAME-26OCT30NEVUCLA-UCLA",
-    "KXNCAAFGAME-26OCT10STANND-ND",
     "KXNCAAFGAME-26NOV07MIAND-ND",
+    "KXNCAAFGAME-26OCT10STANND-ND",
     "KXNCAAFGAME-26OCT10TEXOKLA-OKLA",
     "KXNCAAFGAME-26OCT23PITTMIA-MIA",
     "KXNCAAFGAME-26NOV07UKTENN-TENN",
@@ -906,9 +905,9 @@
     "KXNCAAFGAME-26OCT10MDOSU-MD",
     "KXNCAAFGAME-26NOV07MRMKWAKE-MRMK",
     "KXNCAAFGAME-26OCT31VMICHAT-VMI",
-    "KXNCAAFGAME-26OCT17VMIWOF-VMI",
     "KXNCAAFGAME-26NOV07ALALSU-ALA",
     "KXNCAAFGAME-26NOV07MRMKWAKE-WAKE",
+    "KXNCAAFGAME-26OCT17VMIWOF-VMI",
     "KXNCAAFGAME-26OCT03WYONDSU-NDSU",
     "KXNCAAFGAME-26OCT17ELONSTAN-ELON",
     "KXNCAAFGAME-26OCT17ELONSTAN-STAN",
@@ -944,6 +943,7 @@
     "KXNCAAFGAME-26OCT03SAMUAB-UAB",
     "KXNCAAFGAME-26OCT16MSSTLSU-LSU",
     "KXNCAAFGAME-26OCT17OSUIND-IND",
+    "KXNCAAFGAME-26NOV07BYUUTAH-BYU",
     "KXNCAAFGAME-26OCT03MIACLEM-CLEM",
     "KXNCAAFGAME-26OCT10STETUST-STET",
     "KXNCAAFGAME-26OCT10UGAALA-UGA",
@@ -951,10 +951,9 @@
     "KXNCAAFGAME-26OCT24NDSUUNM-NDSU",
     "KXNCAAFGAME-26OCT24SELASFA-SFA",
     "KXNCAAFGAME-26OCT30MSSTTEX-TEX",
-    "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
-    "KXNCAAFGAME-26NOV07BYUUTAH-BYU",
-    "KXNCAAFGAME-26OCT31CONNAFA-CONN",
     "KXNCAAFGAME-26OCT31DSUNORF-DSU",
+    "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
+    "KXNCAAFGAME-26OCT31CONNAFA-CONN",
     "KXNCAAFGAME-26OCT31UTEPNDSU-UTEP",
     "KXNCAAFGAME-26SEP26TXAMLSU-TXAM",
     "KXNCAAFGAME-26OCT03INDRUTG-RUTG",
@@ -1098,6 +1097,13 @@
      "inDeskModule": false
     },
     {
+     "ticker": "KXNCAAFGAME-26NOV07UKTENN-UK",
+     "usableLadders": 27,
+     "inPlayLadders": 0,
+     "stores": 1,
+     "inDeskModule": true
+    },
+    {
      "ticker": "KXNCAAFGAME-26OCT10STANND-STAN",
      "usableLadders": 27,
      "inPlayLadders": 0,
@@ -1114,13 +1120,6 @@
     {
      "ticker": "KXNCAAFGAME-26OCT31NDNAVY-ND",
      "usableLadders": 27,
-     "inPlayLadders": 0,
-     "stores": 1,
-     "inDeskModule": true
-    },
-    {
-     "ticker": "KXNCAAFGAME-26NOV07UKTENN-UK",
-     "usableLadders": 26,
      "inPlayLadders": 0,
      "stores": 1,
      "inDeskModule": true
@@ -1156,6 +1155,13 @@
     {
      "ticker": "KXNCAAFGAME-26OCT17NEBORE-NEB",
      "usableLadders": 25,
+     "inPlayLadders": 0,
+     "stores": 1,
+     "inDeskModule": true
+    },
+    {
+     "ticker": "KXNCAAFGAME-26NOV07MIAND-MIA",
+     "usableLadders": 24,
      "inPlayLadders": 0,
      "stores": 1,
      "inDeskModule": true
@@ -1210,11 +1216,11 @@
      "inDeskModule": true
     },
     {
-     "ticker": "KXNCAAFGAME-26NOV07MIAND-MIA",
+     "ticker": "KXNCAAFGAME-26NOV07MIAND-ND",
      "usableLadders": 23,
      "inPlayLadders": 0,
      "stores": 1,
-     "inDeskModule": true
+     "inDeskModule": false
     },
     {
      "ticker": "KXNCAAFGAME-26OCT10STANND-ND",
@@ -1229,13 +1235,6 @@
      "inPlayLadders": 0,
      "stores": 1,
      "inDeskModule": true
-    },
-    {
-     "ticker": "KXNCAAFGAME-26NOV07MIAND-ND",
-     "usableLadders": 22,
-     "inPlayLadders": 0,
-     "stores": 1,
-     "inDeskModule": false
     },
     {
      "ticker": "KXNCAAFGAME-26OCT17NEBORE-ORE",
@@ -1288,7 +1287,7 @@
     },
     {
      "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-MRMK",
-     "usableLadders": 18,
+     "usableLadders": 19,
      "inPlayLadders": 0,
      "stores": 1,
      "inDeskModule": false
@@ -1315,22 +1314,22 @@
      "inDeskModule": true
     },
     {
-     "ticker": "KXNCAAFGAME-26OCT17VMIWOF-VMI",
+     "ticker": "KXNCAAFGAME-26NOV07ALALSU-ALA",
      "usableLadders": 16,
      "inPlayLadders": 0,
      "stores": 1,
      "inDeskModule": false
     },
     {
-     "ticker": "KXNCAAFGAME-26NOV07ALALSU-ALA",
-     "usableLadders": 15,
+     "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-WAKE",
+     "usableLadders": 16,
      "inPlayLadders": 0,
      "stores": 1,
      "inDeskModule": false
     },
     {
-     "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-WAKE",
-     "usableLadders": 15,
+     "ticker": "KXNCAAFGAME-26OCT17VMIWOF-VMI",
+     "usableLadders": 16,
      "inPlayLadders": 0,
      "stores": 1,
      "inDeskModule": false
@@ -1602,6 +1601,13 @@
      "inDeskModule": false
     },
     {
+     "ticker": "KXNCAAFGAME-26NOV07BYUUTAH-BYU",
+     "usableLadders": 3,
+     "inPlayLadders": 0,
+     "stores": 1,
+     "inDeskModule": false
+    },
+    {
      "ticker": "KXNCAAFGAME-26OCT03MIACLEM-CLEM",
      "usableLadders": 3,
      "inPlayLadders": 0,
@@ -1651,6 +1657,13 @@
      "inDeskModule": false
     },
     {
+     "ticker": "KXNCAAFGAME-26OCT31DSUNORF-DSU",
+     "usableLadders": 3,
+     "inPlayLadders": 0,
+     "stores": 1,
+     "inDeskModule": false
+    },
+    {
      "ticker": "KXNCAAFGAME-26SEP26SHSUTTU-SHSU",
      "usableLadders": 3,
      "inPlayLadders": 0,
@@ -1658,21 +1671,7 @@
      "inDeskModule": false
     },
     {
-     "ticker": "KXNCAAFGAME-26NOV07BYUUTAH-BYU",
-     "usableLadders": 2,
-     "inPlayLadders": 0,
-     "stores": 1,
-     "inDeskModule": false
-    },
-    {
      "ticker": "KXNCAAFGAME-26OCT31CONNAFA-CONN",
-     "usableLadders": 2,
-     "inPlayLadders": 0,
-     "stores": 1,
-     "inDeskModule": false
-    },
-    {
-     "ticker": "KXNCAAFGAME-26OCT31DSUNORF-DSU",
      "usableLadders": 2,
      "inPlayLadders": 0,
      "stores": 1,
@@ -1808,10 +1807,10 @@
    "auditStores": 128,
    "auditOpenStores": 102,
    "auditSettledStores": 26,
-   "auditLadders": 2572,
+   "auditLadders": 2580,
    "auditInPlayNonEmpty": 0,
-   "auditTradeableNonEmpty": 1706,
-   "explainsDeskReserve": "the desk kept 20 of its 4 floor / 20 ceiling slot(s) and the audit found 1706 non-empty ladder(s) inside the tradeable window for this series (0 of them in-play) — consistent"
+   "auditTradeableNonEmpty": 1714,
+   "explainsDeskReserve": "the desk kept 20 of its 4 floor / 20 ceiling slot(s) and the audit found 1714 non-empty ladder(s) inside the tradeable window for this series (0 of them in-play) — consistent"
   },
   {
    "series": "KXNHLGAME",
@@ -1846,7 +1845,7 @@
    "auditStores": 99,
    "auditOpenStores": 0,
    "auditSettledStores": 99,
-   "auditLadders": 2276,
+   "auditLadders": 2284,
    "auditInPlayNonEmpty": 0,
    "auditTradeableNonEmpty": 246,
    "explainsDeskReserve": "the desk kept 0 of 4 slot(s) because EVERY KXNHLGAME contract in this store is already finalized by the exchange; the audit's ladders for them (0 in-play, 246 tradeable-window non-empty) belong to settled contracts and are historical measurement data, not tradeable slots"
@@ -1860,7 +1859,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:39:34.856Z",
+   "marketCapturedAt": "2026-10-31T12:34:52.399Z",
    "tradeableWindow": {
     "openIso": "2026-09-04T00:35:00Z",
     "closeIso": "2026-09-18T20:28:19Z",
@@ -1973,7 +1972,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:41:21.372Z",
+   "marketCapturedAt": "2026-10-31T12:36:21.215Z",
    "tradeableWindow": {
     "openIso": "2026-08-20T15:28:00Z",
     "closeIso": "2026-10-20T21:37:28Z",
@@ -2086,7 +2085,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:41:22.430Z",
+   "marketCapturedAt": "2026-10-31T12:36:22.099Z",
    "tradeableWindow": {
     "openIso": "2026-08-20T15:28:00Z",
     "closeIso": "2026-10-20T21:37:28Z",
@@ -2199,7 +2198,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:41:23.487Z",
+   "marketCapturedAt": "2026-10-31T12:36:22.980Z",
    "tradeableWindow": {
     "openIso": "2026-08-20T15:28:00Z",
     "closeIso": "2026-10-21T04:26:18Z",
@@ -2312,7 +2311,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:41:24.548Z",
+   "marketCapturedAt": "2026-10-31T12:36:23.862Z",
    "tradeableWindow": {
     "openIso": "2026-08-20T15:28:00Z",
     "closeIso": "2026-10-21T04:26:18Z",
@@ -2425,7 +2424,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:41:25.606Z",
+   "marketCapturedAt": "2026-10-31T12:36:24.748Z",
    "tradeableWindow": {
     "openIso": "2026-08-20T15:28:00Z",
     "closeIso": "2026-10-21T02:01:16Z",
@@ -2538,7 +2537,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:41:26.662Z",
+   "marketCapturedAt": "2026-10-31T12:36:25.630Z",
    "tradeableWindow": {
     "openIso": "2026-08-20T15:28:00Z",
     "closeIso": "2026-10-21T02:01:16Z",
@@ -2651,7 +2650,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:41:40.390Z",
+   "marketCapturedAt": "2026-10-31T12:36:37.071Z",
    "tradeableWindow": {
     "openIso": "2026-09-12T19:07:00Z",
     "closeIso": "2026-09-26T22:24:57Z",
@@ -2764,7 +2763,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:41:41.447Z",
+   "marketCapturedAt": "2026-10-31T12:36:37.948Z",
    "tradeableWindow": {
     "openIso": "2026-09-13T01:07:00Z",
     "closeIso": "2026-09-27T01:54:49Z",
@@ -2877,7 +2876,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:41:42.498Z",
+   "marketCapturedAt": "2026-10-31T12:36:38.826Z",
    "tradeableWindow": {
     "openIso": "2026-09-13T01:07:00Z",
     "closeIso": "2026-09-27T01:54:49Z",
@@ -2990,7 +2989,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:41:43.552Z",
+   "marketCapturedAt": "2026-10-31T12:36:39.701Z",
    "tradeableWindow": {
     "openIso": "2026-09-12T19:07:00Z",
     "closeIso": "2026-09-26T19:40:30Z",
@@ -3103,7 +3102,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:41:44.607Z",
+   "marketCapturedAt": "2026-10-31T12:36:40.577Z",
    "tradeableWindow": {
     "openIso": "2026-09-12T19:07:00Z",
     "closeIso": "2026-09-27T04:34:45Z",
@@ -3216,7 +3215,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:41:45.661Z",
+   "marketCapturedAt": "2026-10-31T12:36:41.455Z",
    "tradeableWindow": {
     "openIso": "2026-09-12T19:07:00Z",
     "closeIso": "2026-09-27T03:20:01Z",
@@ -3329,7 +3328,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:41:46.713Z",
+   "marketCapturedAt": "2026-10-31T12:36:42.334Z",
    "tradeableWindow": {
     "openIso": "2026-09-12T19:07:00Z",
     "closeIso": "2026-09-26T19:35:12Z",
@@ -3442,7 +3441,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:41:47.766Z",
+   "marketCapturedAt": "2026-10-31T12:36:43.211Z",
    "tradeableWindow": {
     "openIso": "2026-09-12T19:07:00Z",
     "closeIso": "2026-09-27T03:10:02Z",
@@ -3555,7 +3554,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:42:27.806Z",
+   "marketCapturedAt": "2026-10-31T12:37:16.619Z",
    "tradeableWindow": {
     "openIso": "2026-09-17T00:07:00Z",
     "closeIso": "2026-09-20T03:11:16Z",
@@ -3668,7 +3667,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:42:28.857Z",
+   "marketCapturedAt": "2026-10-31T12:37:17.496Z",
    "tradeableWindow": {
     "openIso": "2026-09-17T00:07:00Z",
     "closeIso": "2026-09-20T03:11:16Z",
@@ -3781,7 +3780,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:42:29.908Z",
+   "marketCapturedAt": "2026-10-31T12:37:18.374Z",
    "tradeableWindow": {
     "openIso": "2026-09-17T00:07:00Z",
     "closeIso": "2026-09-20T03:09:12Z",
@@ -3894,7 +3893,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:42:30.962Z",
+   "marketCapturedAt": "2026-10-31T12:37:19.250Z",
    "tradeableWindow": {
     "openIso": "2026-09-17T00:07:00Z",
     "closeIso": "2026-09-20T03:09:12Z",
@@ -4007,7 +4006,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:42:32.014Z",
+   "marketCapturedAt": "2026-10-31T12:37:20.128Z",
    "tradeableWindow": {
     "openIso": "2026-09-17T00:07:00Z",
     "closeIso": "2026-09-20T04:31:47Z",
@@ -4120,7 +4119,7 @@
    "periodMinutes": 1440,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:42:33.064Z",
+   "marketCapturedAt": "2026-10-31T12:37:21.005Z",
    "tradeableWindow": {
     "openIso": "2026-09-17T16:05:00Z",
     "closeIso": "2026-09-21T00:39:39Z",
@@ -5137,7 +5136,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:48:27.128Z",
+   "marketCapturedAt": "2026-10-31T12:43:52.444Z",
    "tradeableWindow": {
     "openIso": "2026-10-02T03:25:00Z",
     "closeIso": "2026-10-05T03:28:34Z",
@@ -5158,9 +5157,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 105,
+   "ladders": 106,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 105,
+   "laddersEmpty": 106,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -5168,7 +5167,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 105,
+    "POST_CLOSE": 106,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -5181,7 +5180,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-05T06:09:00.911Z",
-   "lastCapture": "2026-10-31T08:48:36.075Z",
+   "lastCapture": "2026-10-31T12:44:02.603Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-05T03:28:34Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -5476,7 +5475,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:49:49.756Z",
+   "marketCapturedAt": "2026-10-31T12:45:24.691Z",
    "tradeableWindow": {
     "openIso": "2026-10-01T04:40:00Z",
     "closeIso": "2026-10-06T03:15:28Z",
@@ -5497,9 +5496,9 @@
     "detail": "the archive had already observed this game Final at 2026-10-06T04:02:38.185Z"
    },
    "bars": 480,
-   "ladders": 101,
+   "ladders": 102,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 101,
+   "laddersEmpty": 102,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -5507,7 +5506,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 101,
+    "POST_CLOSE": 102,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -5520,7 +5519,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-06T06:48:29.257Z",
-   "lastCapture": "2026-10-31T08:49:58.760Z",
+   "lastCapture": "2026-10-31T12:45:34.488Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-06T03:15:28Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -5702,7 +5701,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:49:05.614Z",
+   "marketCapturedAt": "2026-10-31T12:44:35.691Z",
    "tradeableWindow": {
     "openIso": "2026-10-02T03:25:00Z",
     "closeIso": "2026-10-07T01:09:56Z",
@@ -5723,9 +5722,9 @@
     "detail": "the archive had already observed this game Final at 2026-10-07T03:30:37.627Z"
    },
    "bars": 480,
-   "ladders": 97,
+   "ladders": 98,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 97,
+   "laddersEmpty": 98,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -5733,7 +5732,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 97,
+    "POST_CLOSE": 98,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -5746,7 +5745,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-07T06:24:38.268Z",
-   "lastCapture": "2026-10-31T08:49:14.048Z",
+   "lastCapture": "2026-10-31T12:44:45.125Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-07T01:09:56Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -5815,7 +5814,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:47:58.829Z",
+   "marketCapturedAt": "2026-10-31T12:43:20.489Z",
    "tradeableWindow": {
     "openIso": "2026-10-02T03:25:00Z",
     "closeIso": "2026-10-07T05:05:24Z",
@@ -5836,9 +5835,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 97,
+   "ladders": 98,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 97,
+   "laddersEmpty": 98,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -5846,7 +5845,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 97,
+    "POST_CLOSE": 98,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -5859,7 +5858,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-07T06:24:31.498Z",
-   "lastCapture": "2026-10-31T08:48:07.107Z",
+   "lastCapture": "2026-10-31T12:43:29.925Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-07T05:05:24Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -6041,7 +6040,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:49:14.670Z",
+   "marketCapturedAt": "2026-10-31T12:44:45.791Z",
    "tradeableWindow": {
     "openIso": "2026-10-02T03:25:00Z",
     "closeIso": "2026-10-07T23:27:41Z",
@@ -6062,9 +6061,9 @@
     "detail": "the archive had already observed this game Final at 2026-10-08T00:31:32.516Z"
    },
    "bars": 480,
-   "ladders": 93,
+   "ladders": 94,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 93,
+   "laddersEmpty": 94,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -6072,7 +6071,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 93,
+    "POST_CLOSE": 94,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -6085,7 +6084,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-08T06:34:42.480Z",
-   "lastCapture": "2026-10-31T08:49:22.743Z",
+   "lastCapture": "2026-10-31T12:44:54.858Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-07T23:27:41Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -6493,7 +6492,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:48:56.886Z",
+   "marketCapturedAt": "2026-10-31T12:44:25.950Z",
    "tradeableWindow": {
     "openIso": "2026-10-07T06:55:00Z",
     "closeIso": "2026-10-08T05:10:05Z",
@@ -6514,9 +6513,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 93,
+   "ladders": 94,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 93,
+   "laddersEmpty": 94,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -6524,7 +6523,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 93,
+    "POST_CLOSE": 94,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -6537,7 +6536,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-08T06:34:39.127Z",
-   "lastCapture": "2026-10-31T08:49:04.994Z",
+   "lastCapture": "2026-10-31T12:44:35.024Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-08T05:10:05Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -6606,7 +6605,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:48:09.646Z",
+   "marketCapturedAt": "2026-10-31T12:43:32.710Z",
    "tradeableWindow": {
     "openIso": "2026-10-07T23:55:00Z",
     "closeIso": "2026-10-09T03:49:52Z",
@@ -6627,9 +6626,9 @@
     "detail": "the official MLB archive has no game matching this contract's own ticker/date."
    },
    "bars": 480,
-   "ladders": 89,
+   "ladders": 90,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 89,
+   "laddersEmpty": 90,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -6637,7 +6636,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 89,
+    "POST_CLOSE": 90,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -6650,7 +6649,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-09T06:35:36.207Z",
-   "lastCapture": "2026-10-31T08:48:17.305Z",
+   "lastCapture": "2026-10-31T12:43:41.430Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-09T03:49:52Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -6719,7 +6718,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:48:36.715Z",
+   "marketCapturedAt": "2026-10-31T12:44:03.269Z",
    "tradeableWindow": {
     "openIso": "2026-10-08T16:55:00Z",
     "closeIso": "2026-10-12T03:14:03Z",
@@ -6740,9 +6739,9 @@
     "detail": "the archive had already observed this game Final at 2026-10-12T03:30:24.531Z"
    },
    "bars": 480,
-   "ladders": 77,
+   "ladders": 78,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 77,
+   "laddersEmpty": 78,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -6750,7 +6749,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 77,
+    "POST_CLOSE": 78,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -6763,7 +6762,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-12T06:25:15.517Z",
-   "lastCapture": "2026-10-31T08:48:43.388Z",
+   "lastCapture": "2026-10-31T12:44:10.886Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-12T03:14:03Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -6832,7 +6831,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:47:42.332Z",
+   "marketCapturedAt": "2026-10-31T12:43:01.793Z",
    "tradeableWindow": {
     "openIso": "2026-10-08T16:55:00Z",
     "closeIso": "2026-10-13T00:29:02Z",
@@ -6853,9 +6852,9 @@
     "detail": "the official MLB archive has no game matching this contract's own ticker/date."
    },
    "bars": 480,
-   "ladders": 74,
+   "ladders": 75,
    "laddersNonEmpty": 1,
-   "laddersEmpty": 73,
+   "laddersEmpty": 74,
    "tradeableNonEmpty": 1,
    "phases": {
     "PRE_OPEN": 0,
@@ -6863,7 +6862,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 1,
-    "POST_CLOSE": 73,
+    "POST_CLOSE": 74,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -6876,7 +6875,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-12T23:21:03.435Z",
-   "lastCapture": "2026-10-31T08:47:48.698Z",
+   "lastCapture": "2026-10-31T12:43:09.047Z",
    "verdict": "TRADEABLE_LADDER_EVENT_UNVERIFIED",
    "verdictWhy": "1 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (TEAMS_MATCH_BUT_TIME_DIFFERS), so they are NOT claimed as in-play",
    "examples": [
@@ -7171,7 +7170,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:47:35.987Z",
+   "marketCapturedAt": "2026-10-31T12:42:54.591Z",
    "tradeableWindow": {
     "openIso": "2026-10-08T16:55:00Z",
     "closeIso": "2026-10-15T03:15:28Z",
@@ -7192,9 +7191,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 65,
+   "ladders": 66,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 65,
+   "laddersEmpty": 66,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -7202,7 +7201,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 65,
+    "POST_CLOSE": 66,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -7215,7 +7214,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-15T05:07:13.951Z",
-   "lastCapture": "2026-10-31T08:47:41.711Z",
+   "lastCapture": "2026-10-31T12:43:01.126Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-15T03:15:28Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -7284,7 +7283,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:47:52.487Z",
+   "marketCapturedAt": "2026-10-31T12:43:13.285Z",
    "tradeableWindow": {
     "openIso": "2026-10-08T16:55:00Z",
     "closeIso": "2026-10-15T03:15:28Z",
@@ -7305,9 +7304,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 65,
+   "ladders": 66,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 65,
+   "laddersEmpty": 66,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -7315,7 +7314,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 65,
+    "POST_CLOSE": 66,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -7328,7 +7327,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-15T05:07:17.872Z",
-   "lastCapture": "2026-10-31T08:47:58.208Z",
+   "lastCapture": "2026-10-31T12:43:19.823Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-15T03:15:28Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -7397,7 +7396,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:49:34.992Z",
+   "marketCapturedAt": "2026-10-31T12:45:08.169Z",
    "tradeableWindow": {
     "openIso": "2026-10-08T16:55:00Z",
     "closeIso": "2026-10-16T03:10:24Z",
@@ -7418,9 +7417,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 61,
+   "ladders": 62,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 61,
+   "laddersEmpty": 62,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -7428,7 +7427,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 61,
+    "POST_CLOSE": 62,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -7441,7 +7440,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-16T04:59:40.773Z",
-   "lastCapture": "2026-10-31T08:49:40.391Z",
+   "lastCapture": "2026-10-31T12:45:14.343Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-16T03:10:24Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -7510,7 +7509,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:47:29.954Z",
+   "marketCapturedAt": "2026-10-31T12:42:47.736Z",
    "tradeableWindow": {
     "openIso": "2026-10-08T16:55:00Z",
     "closeIso": "2026-10-16T03:10:24Z",
@@ -7531,9 +7530,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 61,
+   "ladders": 62,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 61,
+   "laddersEmpty": 62,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -7541,7 +7540,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 61,
+    "POST_CLOSE": 62,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -7554,7 +7553,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-16T04:58:40.714Z",
-   "lastCapture": "2026-10-31T08:47:35.365Z",
+   "lastCapture": "2026-10-31T12:42:53.928Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-16T03:10:24Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -7736,7 +7735,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:49:44.182Z",
+   "marketCapturedAt": "2026-10-31T12:45:18.580Z",
    "tradeableWindow": {
     "openIso": "2026-10-11T03:25:00Z",
     "closeIso": "2026-10-18T03:20:22Z",
@@ -7757,9 +7756,9 @@
     "detail": "the official MLB archive has no game matching this contract's own ticker/date."
    },
    "bars": 480,
-   "ladders": 53,
+   "ladders": 54,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 53,
+   "laddersEmpty": 54,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -7767,7 +7766,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 53,
+    "POST_CLOSE": 54,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -7780,7 +7779,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-18T05:02:27.585Z",
-   "lastCapture": "2026-10-31T08:49:49.077Z",
+   "lastCapture": "2026-10-31T12:45:24.023Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-18T03:20:22Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -7962,7 +7961,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:48:17.926Z",
+   "marketCapturedAt": "2026-10-31T12:43:42.096Z",
    "tradeableWindow": {
     "openIso": "2026-10-20T03:41:00Z",
     "closeIso": "2026-10-24T03:30:05Z",
@@ -7983,9 +7982,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 30,
+   "ladders": 31,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 30,
+   "laddersEmpty": 31,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -7993,7 +7992,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 30,
+    "POST_CLOSE": 31,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -8006,7 +8005,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-24T05:01:47.084Z",
-   "lastCapture": "2026-10-31T08:48:20.782Z",
+   "lastCapture": "2026-10-31T12:43:45.368Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-24T03:30:05Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -8075,7 +8074,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:48:21.404Z",
+   "marketCapturedAt": "2026-10-31T12:43:46.032Z",
    "tradeableWindow": {
     "openIso": "2026-10-20T03:41:00Z",
     "closeIso": "2026-10-24T03:30:05Z",
@@ -8096,9 +8095,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 30,
+   "ladders": 31,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 30,
+   "laddersEmpty": 31,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -8106,7 +8105,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 30,
+    "POST_CLOSE": 31,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -8119,7 +8118,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-24T05:01:48.768Z",
-   "lastCapture": "2026-10-31T08:48:24.302Z",
+   "lastCapture": "2026-10-31T12:43:49.297Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-24T03:30:05Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -8188,7 +8187,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:47:49.321Z",
+   "marketCapturedAt": "2026-10-31T12:43:09.713Z",
    "tradeableWindow": {
     "openIso": "2026-10-20T03:41:00Z",
     "closeIso": "2026-10-25T03:50:17Z",
@@ -8209,9 +8208,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 26,
+   "ladders": 27,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 26,
+   "laddersEmpty": 27,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -8219,7 +8218,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 26,
+    "POST_CLOSE": 27,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -8232,7 +8231,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-25T05:11:46.971Z",
-   "lastCapture": "2026-10-31T08:47:51.865Z",
+   "lastCapture": "2026-10-31T12:43:12.621Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-25T03:50:17Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -8301,7 +8300,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:49:41.013Z",
+   "marketCapturedAt": "2026-10-31T12:45:15.008Z",
    "tradeableWindow": {
     "openIso": "2026-10-20T03:41:00Z",
     "closeIso": "2026-10-25T03:50:17Z",
@@ -8322,9 +8321,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 26,
+   "ladders": 27,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 26,
+   "laddersEmpty": 27,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -8332,7 +8331,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 26,
+    "POST_CLOSE": 27,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -8345,7 +8344,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-25T05:13:06.652Z",
-   "lastCapture": "2026-10-31T08:49:43.561Z",
+   "lastCapture": "2026-10-31T12:45:17.913Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-25T03:50:17Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -8414,7 +8413,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:47:27.748Z",
+   "marketCapturedAt": "2026-10-31T12:42:45.256Z",
    "tradeableWindow": {
     "openIso": "2026-10-20T03:41:00Z",
     "closeIso": "2026-10-28T04:31:14Z",
@@ -8435,9 +8434,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 14,
+   "ladders": 15,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 14,
+   "laddersEmpty": 15,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -8445,7 +8444,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 14,
+    "POST_CLOSE": 15,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -8458,7 +8457,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-28T06:09:26.433Z",
-   "lastCapture": "2026-10-31T08:47:29.333Z",
+   "lastCapture": "2026-10-31T12:42:47.069Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-28T04:31:14Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -8527,7 +8526,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:48:24.922Z",
+   "marketCapturedAt": "2026-10-31T12:43:49.961Z",
    "tradeableWindow": {
     "openIso": "2026-10-20T03:41:00Z",
     "closeIso": "2026-10-28T04:31:14Z",
@@ -8548,9 +8547,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 14,
+   "ladders": 15,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 14,
+   "laddersEmpty": 15,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -8558,7 +8557,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 14,
+    "POST_CLOSE": 15,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -8571,7 +8570,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-28T06:10:14.417Z",
-   "lastCapture": "2026-10-31T08:48:26.507Z",
+   "lastCapture": "2026-10-31T12:43:51.778Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-28T04:31:14Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -8640,7 +8639,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:48:44.009Z",
+   "marketCapturedAt": "2026-10-31T12:44:11.550Z",
    "tradeableWindow": {
     "openIso": "2026-10-28T05:25:00Z",
     "closeIso": "2026-10-29T03:14:32Z",
@@ -8661,9 +8660,9 @@
     "detail": "the archive had already observed this game Final at 2026-10-29T03:43:30.010Z"
    },
    "bars": 480,
-   "ladders": 10,
+   "ladders": 11,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 10,
+   "laddersEmpty": 11,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -8671,7 +8670,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 10,
+    "POST_CLOSE": 11,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -8684,7 +8683,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-29T06:18:37.032Z",
-   "lastCapture": "2026-10-31T08:48:45.277Z",
+   "lastCapture": "2026-10-31T12:44:13.000Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-29T03:14:32Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -8753,7 +8752,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:48:07.727Z",
+   "marketCapturedAt": "2026-10-31T12:43:30.590Z",
    "tradeableWindow": {
     "openIso": "2026-10-28T05:25:00Z",
     "closeIso": "2026-10-29T03:14:32Z",
@@ -8774,9 +8773,9 @@
     "detail": "the archive had already observed this game Final at 2026-10-29T03:43:30.010Z"
    },
    "bars": 480,
-   "ladders": 10,
+   "ladders": 11,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 10,
+   "laddersEmpty": 11,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -8784,7 +8783,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 10,
+    "POST_CLOSE": 11,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -8797,7 +8796,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-29T06:18:04.394Z",
-   "lastCapture": "2026-10-31T08:48:09.026Z",
+   "lastCapture": "2026-10-31T12:43:32.042Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-29T03:14:32Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -16582,7 +16581,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:49:23.364Z",
+   "marketCapturedAt": "2026-10-31T12:44:55.524Z",
    "tradeableWindow": {
     "openIso": "2026-09-28T01:55:00Z",
     "closeIso": "2026-09-30T03:19:48Z",
@@ -16603,9 +16602,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 125,
+   "ladders": 126,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 125,
+   "laddersEmpty": 126,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -16613,7 +16612,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 125,
+    "POST_CLOSE": 126,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -16626,7 +16625,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-09-30T05:55:55.088Z",
-   "lastCapture": "2026-10-31T08:49:34.372Z",
+   "lastCapture": "2026-10-31T12:45:07.500Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-09-30T03:19:48Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -17034,7 +17033,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:48:45.902Z",
+   "marketCapturedAt": "2026-10-31T12:44:13.665Z",
    "tradeableWindow": {
     "openIso": "2026-09-28T01:55:00Z",
     "closeIso": "2026-09-30T21:19:58Z",
@@ -17055,9 +17054,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 480,
-   "ladders": 122,
+   "ladders": 123,
    "laddersNonEmpty": 1,
-   "laddersEmpty": 121,
+   "laddersEmpty": 122,
    "tradeableNonEmpty": 1,
    "phases": {
     "PRE_OPEN": 0,
@@ -17065,7 +17064,7 @@
     "IN_PLAY": 1,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 121,
+    "POST_CLOSE": 122,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -17078,7 +17077,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-09-30T21:07:15.916Z",
-   "lastCapture": "2026-10-31T08:48:56.265Z",
+   "lastCapture": "2026-10-31T12:44:25.285Z",
    "verdict": "IN_PLAY_LADDER",
    "verdictWhy": "1 ladder(s) captured while the event was under way (1 of them non-empty)",
    "examples": [
@@ -20311,7 +20310,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:52:09.206Z",
+   "marketCapturedAt": "2026-10-31T12:48:02.609Z",
    "tradeableWindow": {
     "openIso": "2026-09-22T04:05:00Z",
     "closeIso": "2026-10-02T03:43:24Z",
@@ -20332,9 +20331,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 480,
-   "ladders": 117,
+   "ladders": 118,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 117,
+   "laddersEmpty": 118,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -20342,7 +20341,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 117,
+    "POST_CLOSE": 118,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -20355,7 +20354,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-02T06:07:44.210Z",
-   "lastCapture": "2026-10-31T08:52:19.049Z",
+   "lastCapture": "2026-10-31T12:48:13.863Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-02T03:43:24Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -20424,7 +20423,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:51:02.559Z",
+   "marketCapturedAt": "2026-10-31T12:46:46.878Z",
    "tradeableWindow": {
     "openIso": "2026-09-22T04:05:00Z",
     "closeIso": "2026-10-02T03:43:24Z",
@@ -20445,9 +20444,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 480,
-   "ladders": 117,
+   "ladders": 118,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 117,
+   "laddersEmpty": 118,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -20455,7 +20454,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 117,
+    "POST_CLOSE": 118,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -20468,7 +20467,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-02T06:07:33.040Z",
-   "lastCapture": "2026-10-31T08:51:12.413Z",
+   "lastCapture": "2026-10-31T12:46:58.131Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-02T03:43:24Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -20763,7 +20762,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:52:26.967Z",
+   "marketCapturedAt": "2026-10-31T12:48:22.814Z",
    "tradeableWindow": {
     "openIso": "2026-09-22T04:05:00Z",
     "closeIso": "2026-10-05T03:41:22Z",
@@ -20784,9 +20783,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 480,
-   "ladders": 105,
+   "ladders": 106,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 105,
+   "laddersEmpty": 106,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -20794,7 +20793,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 105,
+    "POST_CLOSE": 106,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -20807,7 +20806,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-05T06:10:39.030Z",
-   "lastCapture": "2026-10-31T08:52:35.867Z",
+   "lastCapture": "2026-10-31T12:48:32.974Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-05T03:41:22Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -20989,7 +20988,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:51:59.696Z",
+   "marketCapturedAt": "2026-10-31T12:47:51.785Z",
    "tradeableWindow": {
     "openIso": "2026-09-22T04:05:00Z",
     "closeIso": "2026-10-04T23:45:23Z",
@@ -21010,9 +21009,9 @@
     "detail": "the archive had observed \"post\" at 2026-10-05T00:24:15.443Z"
    },
    "bars": 480,
-   "ladders": 105,
+   "ladders": 106,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 105,
+   "laddersEmpty": 106,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -21020,7 +21019,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 105,
+    "POST_CLOSE": 106,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -21033,7 +21032,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-05T06:10:33.042Z",
-   "lastCapture": "2026-10-31T08:52:08.584Z",
+   "lastCapture": "2026-10-31T12:48:01.944Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-04T23:45:23Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -21441,7 +21440,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:51:13.035Z",
+   "marketCapturedAt": "2026-10-31T12:46:58.796Z",
    "tradeableWindow": {
     "openIso": "2026-09-29T04:05:00Z",
     "closeIso": "2026-10-09T03:19:37Z",
@@ -21462,9 +21461,9 @@
     "detail": "the archive had observed \"post\" at 2026-10-09T03:47:04.096Z"
    },
    "bars": 480,
-   "ladders": 89,
+   "ladders": 90,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 89,
+   "laddersEmpty": 90,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -21472,7 +21471,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 89,
+    "POST_CLOSE": 90,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -21485,7 +21484,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-09T06:37:12.802Z",
-   "lastCapture": "2026-10-31T08:51:20.667Z",
+   "lastCapture": "2026-10-31T12:47:07.506Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-09T03:19:37Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -21554,7 +21553,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:51:36.840Z",
+   "marketCapturedAt": "2026-10-31T12:47:25.819Z",
    "tradeableWindow": {
     "openIso": "2026-09-29T04:05:00Z",
     "closeIso": "2026-10-09T03:19:37Z",
@@ -21575,9 +21574,9 @@
     "detail": "the archive had observed \"post\" at 2026-10-09T03:47:04.096Z"
    },
    "bars": 480,
-   "ladders": 89,
+   "ladders": 90,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 89,
+   "laddersEmpty": 90,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -21585,7 +21584,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 89,
+    "POST_CLOSE": 90,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -21598,7 +21597,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-09T06:37:27.562Z",
-   "lastCapture": "2026-10-31T08:51:44.485Z",
+   "lastCapture": "2026-10-31T12:47:34.530Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-09T03:19:37Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -21667,7 +21666,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:51:52.403Z",
+   "marketCapturedAt": "2026-10-31T12:47:43.489Z",
    "tradeableWindow": {
     "openIso": "2026-09-29T04:05:00Z",
     "closeIso": "2026-10-12T03:47:15Z",
@@ -21688,9 +21687,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-12T03:26:27.211Z"
    },
    "bars": 480,
-   "ladders": 77,
+   "ladders": 78,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 77,
+   "laddersEmpty": 78,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -21698,7 +21697,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 77,
+    "POST_CLOSE": 78,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -21711,7 +21710,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-12T06:27:30.833Z",
-   "lastCapture": "2026-10-31T08:51:59.074Z",
+   "lastCapture": "2026-10-31T12:47:51.119Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-12T03:47:15Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -21780,7 +21779,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:50:17.810Z",
+   "marketCapturedAt": "2026-10-31T12:45:56.152Z",
    "tradeableWindow": {
     "openIso": "2026-09-29T04:05:00Z",
     "closeIso": "2026-10-12T03:47:15Z",
@@ -21801,9 +21800,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-12T03:26:27.211Z"
    },
    "bars": 480,
-   "ladders": 77,
+   "ladders": 78,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 77,
+   "laddersEmpty": 78,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -21811,7 +21810,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 77,
+    "POST_CLOSE": 78,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -21824,7 +21823,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-12T06:26:41.325Z",
-   "lastCapture": "2026-10-31T08:50:24.491Z",
+   "lastCapture": "2026-10-31T12:46:03.771Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-12T03:47:15Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -22006,7 +22005,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:51:45.105Z",
+   "marketCapturedAt": "2026-10-31T12:47:35.195Z",
    "tradeableWindow": {
     "openIso": "2026-09-29T04:05:00Z",
     "closeIso": "2026-10-11T17:16:07Z",
@@ -22027,9 +22026,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 480,
-   "ladders": 78,
+   "ladders": 79,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 78,
+   "laddersEmpty": 79,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -22037,7 +22036,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 78,
+    "POST_CLOSE": 79,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -22050,7 +22049,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-11T20:43:25.765Z",
-   "lastCapture": "2026-10-31T08:51:51.783Z",
+   "lastCapture": "2026-10-31T12:47:42.823Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-11T17:16:07Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -22232,7 +22231,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:52:19.670Z",
+   "marketCapturedAt": "2026-10-31T12:48:14.530Z",
    "tradeableWindow": {
     "openIso": "2026-09-29T04:05:00Z",
     "closeIso": "2026-10-11T23:43:21Z",
@@ -22253,9 +22252,9 @@
     "detail": "the archive had observed \"post\" at 2026-10-12T02:11:25.772Z"
    },
    "bars": 480,
-   "ladders": 77,
+   "ladders": 78,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 77,
+   "laddersEmpty": 78,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -22263,7 +22262,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 77,
+    "POST_CLOSE": 78,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -22276,7 +22275,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-12T06:27:43.189Z",
-   "lastCapture": "2026-10-31T08:52:26.345Z",
+   "lastCapture": "2026-10-31T12:48:22.148Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-11T23:43:21Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -22345,7 +22344,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:49:59.406Z",
+   "marketCapturedAt": "2026-10-31T12:45:35.225Z",
    "tradeableWindow": {
     "openIso": "2026-09-29T04:06:00Z",
     "closeIso": "2026-10-13T03:48:50Z",
@@ -22366,9 +22365,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-13T03:10:05.244Z"
    },
    "bars": 480,
-   "ladders": 73,
+   "ladders": 74,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 73,
+   "laddersEmpty": 74,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -22376,7 +22375,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 73,
+    "POST_CLOSE": 74,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -22389,7 +22388,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-13T07:08:18.814Z",
-   "lastCapture": "2026-10-31T08:50:05.764Z",
+   "lastCapture": "2026-10-31T12:45:42.478Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-13T03:48:50Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -22458,7 +22457,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:50:38.742Z",
+   "marketCapturedAt": "2026-10-31T12:46:19.859Z",
    "tradeableWindow": {
     "openIso": "2026-09-29T04:06:00Z",
     "closeIso": "2026-10-13T03:48:50Z",
@@ -22479,9 +22478,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-13T03:10:05.244Z"
    },
    "bars": 480,
-   "ladders": 73,
+   "ladders": 74,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 73,
+   "laddersEmpty": 74,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -22489,7 +22488,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 73,
+    "POST_CLOSE": 74,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -22502,7 +22501,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-13T07:08:29.098Z",
-   "lastCapture": "2026-10-31T08:50:45.110Z",
+   "lastCapture": "2026-10-31T12:46:27.106Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-13T03:48:50Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -22571,7 +22570,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:52:41.242Z",
+   "marketCapturedAt": "2026-10-31T12:48:39.024Z",
    "tradeableWindow": {
     "openIso": "2026-10-06T04:05:00Z",
     "closeIso": "2026-10-16T03:34:14Z",
@@ -22592,9 +22591,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-16T02:23:31.526Z"
    },
    "bars": 480,
-   "ladders": 57,
+   "ladders": 58,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 57,
+   "laddersEmpty": 58,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -22602,7 +22601,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 57,
+    "POST_CLOSE": 58,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -22615,7 +22614,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-16T05:02:46.661Z",
-   "lastCapture": "2026-10-31T08:52:46.636Z",
+   "lastCapture": "2026-10-31T12:48:45.195Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-16T03:34:14Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -22684,7 +22683,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:50:25.112Z",
+   "marketCapturedAt": "2026-10-31T12:46:04.436Z",
    "tradeableWindow": {
     "openIso": "2026-10-06T04:05:00Z",
     "closeIso": "2026-10-16T03:34:14Z",
@@ -22705,9 +22704,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-16T02:23:31.526Z"
    },
    "bars": 480,
-   "ladders": 61,
+   "ladders": 62,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 61,
+   "laddersEmpty": 62,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -22715,7 +22714,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 61,
+    "POST_CLOSE": 62,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -22728,7 +22727,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-16T05:00:55.697Z",
-   "lastCapture": "2026-10-31T08:50:30.519Z",
+   "lastCapture": "2026-10-31T12:46:10.610Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-16T03:34:14Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -22797,7 +22796,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:50:45.730Z",
+   "marketCapturedAt": "2026-10-31T12:46:27.769Z",
    "tradeableWindow": {
     "openIso": "2026-10-06T04:06:00Z",
     "closeIso": "2026-10-19T03:47:14Z",
@@ -22818,9 +22817,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-19T02:31:27.973Z"
    },
    "bars": 480,
-   "ladders": 49,
+   "ladders": 50,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 49,
+   "laddersEmpty": 50,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -22828,7 +22827,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 49,
+    "POST_CLOSE": 50,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -22841,7 +22840,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-19T05:14:00.757Z",
-   "lastCapture": "2026-10-31T08:50:50.183Z",
+   "lastCapture": "2026-10-31T12:46:32.845Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-19T03:47:14Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -22910,7 +22909,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:52:49.788Z",
+   "marketCapturedAt": "2026-10-31T12:48:48.699Z",
    "tradeableWindow": {
     "openIso": "2026-10-06T04:06:00Z",
     "closeIso": "2026-10-19T03:47:14Z",
@@ -22931,9 +22930,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-19T02:31:27.973Z"
    },
    "bars": 480,
-   "ladders": 22,
+   "ladders": 23,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 22,
+   "laddersEmpty": 23,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -22941,7 +22940,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 22,
+    "POST_CLOSE": 23,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -22954,7 +22953,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-19T05:15:59.745Z",
-   "lastCapture": "2026-10-31T08:52:54.233Z",
+   "lastCapture": "2026-10-31T12:48:53.772Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-19T03:47:14Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -23023,7 +23022,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:52:36.491Z",
+   "marketCapturedAt": "2026-10-31T12:48:33.639Z",
    "tradeableWindow": {
     "openIso": "2026-10-06T04:06:00Z",
     "closeIso": "2026-10-20T03:21:17Z",
@@ -23044,9 +23043,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-20T02:44:17.310Z"
    },
    "bars": 480,
-   "ladders": 45,
+   "ladders": 46,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 45,
+   "laddersEmpty": 46,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -23054,7 +23053,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 45,
+    "POST_CLOSE": 46,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -23067,7 +23066,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-20T05:19:27.059Z",
-   "lastCapture": "2026-10-31T08:52:40.622Z",
+   "lastCapture": "2026-10-31T12:48:38.358Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-20T03:21:17Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -23136,7 +23135,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:50:31.144Z",
+   "marketCapturedAt": "2026-10-31T12:46:11.275Z",
    "tradeableWindow": {
     "openIso": "2026-10-06T04:06:00Z",
     "closeIso": "2026-10-20T03:21:17Z",
@@ -23157,9 +23156,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-20T02:44:17.310Z"
    },
    "bars": 480,
-   "ladders": 45,
+   "ladders": 46,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 45,
+   "laddersEmpty": 46,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -23167,7 +23166,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 45,
+    "POST_CLOSE": 46,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -23180,7 +23179,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-20T05:17:28.248Z",
-   "lastCapture": "2026-10-31T08:50:35.273Z",
+   "lastCapture": "2026-10-31T12:46:15.990Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-20T03:21:17Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -23249,7 +23248,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:51:33.036Z",
+   "marketCapturedAt": "2026-10-31T12:47:21.529Z",
    "tradeableWindow": {
     "openIso": "2026-10-13T04:05:00Z",
     "closeIso": "2026-10-23T03:23:44Z",
@@ -23270,9 +23269,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-23T02:40:04.175Z"
    },
    "bars": 480,
-   "ladders": 34,
+   "ladders": 35,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 34,
+   "laddersEmpty": 35,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -23280,7 +23279,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 34,
+    "POST_CLOSE": 35,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -23293,7 +23292,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-23T05:30:28.893Z",
-   "lastCapture": "2026-10-31T08:51:36.218Z",
+   "lastCapture": "2026-10-31T12:47:25.155Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-23T03:23:44Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -23362,7 +23361,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:50:35.894Z",
+   "marketCapturedAt": "2026-10-31T12:46:16.656Z",
    "tradeableWindow": {
     "openIso": "2026-10-13T04:06:00Z",
     "closeIso": "2026-10-26T03:17:17Z",
@@ -23383,9 +23382,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-26T02:26:27.296Z"
    },
    "bars": 480,
-   "ladders": 22,
+   "ladders": 23,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 22,
+   "laddersEmpty": 23,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -23393,7 +23392,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 22,
+    "POST_CLOSE": 23,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -23406,7 +23405,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-26T05:18:54.120Z",
-   "lastCapture": "2026-10-31T08:50:38.120Z",
+   "lastCapture": "2026-10-31T12:46:19.193Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-26T03:17:17Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -23475,7 +23474,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:52:47.259Z",
+   "marketCapturedAt": "2026-10-31T12:48:45.861Z",
    "tradeableWindow": {
     "openIso": "2026-10-13T04:06:00Z",
     "closeIso": "2026-10-27T03:20:04Z",
@@ -23496,9 +23495,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-27T03:01:32.280Z"
    },
    "bars": 480,
-   "ladders": 18,
+   "ladders": 19,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 18,
+   "laddersEmpty": 19,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -23506,7 +23505,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 18,
+    "POST_CLOSE": 19,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -23519,7 +23518,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-27T05:34:58.414Z",
-   "lastCapture": "2026-10-31T08:52:49.168Z",
+   "lastCapture": "2026-10-31T12:48:48.034Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-27T03:20:04Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -25925,7 +25924,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:51:21.287Z",
+   "marketCapturedAt": "2026-10-31T12:47:08.170Z",
    "tradeableWindow": {
     "openIso": "2026-09-15T16:16:00Z",
     "closeIso": "2026-09-28T03:55:22Z",
@@ -25946,9 +25945,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 480,
-   "ladders": 133,
+   "ladders": 134,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 133,
+   "laddersEmpty": 134,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -25956,7 +25955,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 133,
+    "POST_CLOSE": 134,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -25969,7 +25968,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-09-28T05:50:18.754Z",
-   "lastCapture": "2026-10-31T08:51:32.414Z",
+   "lastCapture": "2026-10-31T12:47:20.864Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-09-28T03:55:22Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -26038,7 +26037,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:50:50.804Z",
+   "marketCapturedAt": "2026-10-31T12:46:33.513Z",
    "tradeableWindow": {
     "openIso": "2026-09-15T16:16:00Z",
     "closeIso": "2026-09-28T03:55:22Z",
@@ -26059,9 +26058,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 480,
-   "ladders": 133,
+   "ladders": 134,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 133,
+   "laddersEmpty": 134,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -26069,7 +26068,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 133,
+    "POST_CLOSE": 134,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -26082,7 +26081,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-09-28T05:50:11.650Z",
-   "lastCapture": "2026-10-31T08:51:01.936Z",
+   "lastCapture": "2026-10-31T12:46:46.211Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-09-28T03:55:22Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -26716,7 +26715,7 @@
    "periodMinutes": 1,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:50:06.384Z",
+   "marketCapturedAt": "2026-10-31T12:45:43.146Z",
    "tradeableWindow": {
     "openIso": "2026-09-15T16:16:00Z",
     "closeIso": "2026-09-29T03:11:23Z",
@@ -26737,9 +26736,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 480,
-   "ladders": 129,
+   "ladders": 130,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 129,
+   "laddersEmpty": 130,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -26747,7 +26746,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 129,
+    "POST_CLOSE": 130,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -26760,7 +26759,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-09-29T06:07:42.761Z",
-   "lastCapture": "2026-10-31T08:50:17.191Z",
+   "lastCapture": "2026-10-31T12:45:55.486Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-09-29T03:11:23Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -28298,7 +28297,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:02.466Z",
+   "marketCapturedAt": "2026-10-31T12:41:10.222Z",
    "tradeableWindow": {
     "openIso": "2026-10-02T03:25:00Z",
     "closeIso": "2026-10-07T05:05:24Z",
@@ -28319,9 +28318,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 123,
-   "ladders": 97,
+   "ladders": 98,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 97,
+   "laddersEmpty": 98,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -28329,7 +28328,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 97,
+    "POST_CLOSE": 98,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -28342,7 +28341,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-07T06:22:52.962Z",
-   "lastCapture": "2026-10-31T08:46:03.098Z",
+   "lastCapture": "2026-10-31T12:41:10.946Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-07T05:05:24Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -28976,7 +28975,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:45:58.703Z",
+   "marketCapturedAt": "2026-10-31T12:41:06.032Z",
    "tradeableWindow": {
     "openIso": "2026-10-08T16:55:00Z",
     "closeIso": "2026-10-13T00:29:02Z",
@@ -28997,9 +28996,9 @@
     "detail": "the official MLB archive has no game matching this contract's own ticker/date."
    },
    "bars": 104,
-   "ladders": 74,
+   "ladders": 75,
    "laddersNonEmpty": 1,
-   "laddersEmpty": 73,
+   "laddersEmpty": 74,
    "tradeableNonEmpty": 1,
    "phases": {
     "PRE_OPEN": 0,
@@ -29007,7 +29006,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 1,
-    "POST_CLOSE": 73,
+    "POST_CLOSE": 74,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -29020,7 +29019,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-12T23:19:19.215Z",
-   "lastCapture": "2026-10-31T08:45:59.335Z",
+   "lastCapture": "2026-10-31T12:41:06.755Z",
    "verdict": "TRADEABLE_LADDER_EVENT_UNVERIFIED",
    "verdictWhy": "1 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (TEAMS_MATCH_BUT_TIME_DIFFERS), so they are NOT claimed as in-play",
    "examples": [
@@ -29089,7 +29088,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:45:57.449Z",
+   "marketCapturedAt": "2026-10-31T12:41:04.644Z",
    "tradeableWindow": {
     "openIso": "2026-10-08T16:55:00Z",
     "closeIso": "2026-10-15T03:15:28Z",
@@ -29110,9 +29109,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 153,
-   "ladders": 65,
+   "ladders": 66,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 65,
+   "laddersEmpty": 66,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -29120,7 +29119,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 65,
+    "POST_CLOSE": 66,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -29133,7 +29132,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-15T05:05:24.855Z",
-   "lastCapture": "2026-10-31T08:45:58.084Z",
+   "lastCapture": "2026-10-31T12:41:05.369Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-15T03:15:28Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -29202,7 +29201,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:46:01.206Z",
+   "marketCapturedAt": "2026-10-31T12:41:08.832Z",
    "tradeableWindow": {
     "openIso": "2026-10-08T16:55:00Z",
     "closeIso": "2026-10-15T03:15:28Z",
@@ -29223,9 +29222,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 152,
-   "ladders": 65,
+   "ladders": 66,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 65,
+   "laddersEmpty": 66,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -29233,7 +29232,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 65,
+    "POST_CLOSE": 66,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -29246,7 +29245,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-15T05:05:27.634Z",
-   "lastCapture": "2026-10-31T08:46:01.848Z",
+   "lastCapture": "2026-10-31T12:41:09.558Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-15T03:15:28Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -29315,7 +29314,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:45:56.195Z",
+   "marketCapturedAt": "2026-10-31T12:41:03.257Z",
    "tradeableWindow": {
     "openIso": "2026-10-08T16:55:00Z",
     "closeIso": "2026-10-16T03:10:24Z",
@@ -29336,9 +29335,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 172,
-   "ladders": 61,
+   "ladders": 62,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 61,
+   "laddersEmpty": 62,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -29346,7 +29345,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 61,
+    "POST_CLOSE": 62,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -29359,7 +29358,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-16T04:56:35.416Z",
-   "lastCapture": "2026-10-31T08:45:56.832Z",
+   "lastCapture": "2026-10-31T12:41:03.981Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-16T03:10:24Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -29654,7 +29653,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:45:59.952Z",
+   "marketCapturedAt": "2026-10-31T12:41:07.418Z",
    "tradeableWindow": {
     "openIso": "2026-10-20T03:41:00Z",
     "closeIso": "2026-10-25T03:50:17Z",
@@ -29675,9 +29674,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 120,
-   "ladders": 26,
+   "ladders": 27,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 26,
+   "laddersEmpty": 27,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -29685,7 +29684,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 26,
+    "POST_CLOSE": 27,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -29698,7 +29697,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-25T05:10:03.909Z",
-   "lastCapture": "2026-10-31T08:46:00.588Z",
+   "lastCapture": "2026-10-31T12:41:08.169Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-25T03:50:17Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -29767,7 +29766,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:45:54.945Z",
+   "marketCapturedAt": "2026-10-31T12:41:01.871Z",
    "tradeableWindow": {
     "openIso": "2026-10-20T03:41:00Z",
     "closeIso": "2026-10-28T04:31:14Z",
@@ -29788,9 +29787,9 @@
     "detail": "the archive had not observed this game Final at the ladder instant"
    },
    "bars": 191,
-   "ladders": 14,
+   "ladders": 15,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 14,
+   "laddersEmpty": 15,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -29798,7 +29797,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 14,
+    "POST_CLOSE": 15,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -29811,7 +29810,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-28T06:07:45.889Z",
-   "lastCapture": "2026-10-31T08:45:55.576Z",
+   "lastCapture": "2026-10-31T12:41:02.594Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-28T04:31:14Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -29880,7 +29879,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:03.715Z",
+   "marketCapturedAt": "2026-10-31T12:41:11.609Z",
    "tradeableWindow": {
     "openIso": "2026-10-28T05:25:00Z",
     "closeIso": "2026-10-29T03:14:32Z",
@@ -29901,9 +29900,9 @@
     "detail": "the archive had already observed this game Final at 2026-10-29T03:43:30.010Z"
    },
    "bars": 23,
-   "ladders": 10,
+   "ladders": 11,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 10,
+   "laddersEmpty": 11,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -29911,7 +29910,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 10,
+    "POST_CLOSE": 11,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -29924,7 +29923,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-29T06:16:00.464Z",
-   "lastCapture": "2026-10-31T08:46:04.349Z",
+   "lastCapture": "2026-10-31T12:41:12.335Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-29T03:14:32Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -39454,7 +39453,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:46:04.967Z",
+   "marketCapturedAt": "2026-10-31T12:41:12.999Z",
    "tradeableWindow": {
     "openIso": "2026-10-15T23:06:19.038339Z",
     "closeIso": "2026-10-23T01:55:52Z",
@@ -39475,9 +39474,9 @@
     "detail": "the archive had observed \"post\" at 2026-10-23T02:40:04.339Z"
    },
    "bars": 151,
-   "ladders": 34,
+   "ladders": 35,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 34,
+   "laddersEmpty": 35,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -39485,7 +39484,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 34,
+    "POST_CLOSE": 35,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -39498,7 +39497,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-23T05:25:02.874Z",
-   "lastCapture": "2026-10-31T08:46:05.601Z",
+   "lastCapture": "2026-10-31T12:41:13.723Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-23T01:55:52Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -39567,7 +39566,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:12.491Z",
+   "marketCapturedAt": "2026-10-31T12:41:21.359Z",
    "tradeableWindow": {
     "openIso": "2026-10-16T01:36:02.589763Z",
     "closeIso": "2026-10-23T04:20:09Z",
@@ -39588,9 +39587,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-23T02:40:04.339Z"
    },
    "bars": 170,
-   "ladders": 34,
+   "ladders": 35,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 34,
+   "laddersEmpty": 35,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -39598,7 +39597,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 34,
+    "POST_CLOSE": 35,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -39611,7 +39610,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-23T05:25:04.139Z",
-   "lastCapture": "2026-10-31T08:46:13.127Z",
+   "lastCapture": "2026-10-31T12:41:22.083Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-23T04:20:09Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -40358,7 +40357,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:13.745Z",
+   "marketCapturedAt": "2026-10-31T12:41:22.747Z",
    "tradeableWindow": {
     "openIso": "2026-10-20T02:06:26.320023Z",
     "closeIso": "2026-10-27T04:31:37Z",
@@ -40379,9 +40378,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-27T03:01:32.343Z"
    },
    "bars": 148,
-   "ladders": 18,
+   "ladders": 19,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 18,
+   "laddersEmpty": 19,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -40389,7 +40388,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 18,
+    "POST_CLOSE": 19,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -40402,7 +40401,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-27T05:28:50.050Z",
-   "lastCapture": "2026-10-31T08:46:14.378Z",
+   "lastCapture": "2026-10-31T12:41:23.472Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-27T04:31:37Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -40471,7 +40470,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:09.986Z",
+   "marketCapturedAt": "2026-10-31T12:41:18.584Z",
    "tradeableWindow": {
     "openIso": "2026-10-19T23:06:46.606094Z",
     "closeIso": "2026-10-27T02:02:09Z",
@@ -40492,9 +40491,9 @@
     "detail": "the archive had observed \"post\" at 2026-10-27T03:01:32.343Z"
    },
    "bars": 157,
-   "ladders": 18,
+   "ladders": 19,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 18,
+   "laddersEmpty": 19,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -40502,7 +40501,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 18,
+    "POST_CLOSE": 19,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -40515,7 +40514,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-27T05:28:47.533Z",
-   "lastCapture": "2026-10-31T08:46:10.620Z",
+   "lastCapture": "2026-10-31T12:41:19.309Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-27T02:02:09Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -40584,7 +40583,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:06.218Z",
+   "marketCapturedAt": "2026-10-31T12:41:14.384Z",
    "tradeableWindow": {
     "openIso": "2026-10-24T03:06:30.095678Z",
     "closeIso": "2026-10-28T05:57:43Z",
@@ -40605,9 +40604,9 @@
     "detail": "the archive had observed \"pre\" at 2026-10-26T08:20:44.924Z"
    },
    "bars": 97,
-   "ladders": 14,
+   "ladders": 15,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 14,
+   "laddersEmpty": 15,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -40615,7 +40614,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 14,
+    "POST_CLOSE": 15,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -40628,7 +40627,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-28T06:07:57.556Z",
-   "lastCapture": "2026-10-31T08:46:06.853Z",
+   "lastCapture": "2026-10-31T12:41:15.108Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-28T05:57:43Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -40697,7 +40696,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:46:07.476Z",
+   "marketCapturedAt": "2026-10-31T12:41:15.769Z",
    "tradeableWindow": {
     "openIso": "2026-10-24T03:06:30.095678Z",
     "closeIso": "2026-10-28T05:57:43Z",
@@ -40718,9 +40717,9 @@
     "detail": "the archive had observed \"pre\" at 2026-10-26T08:20:44.924Z"
    },
    "bars": 98,
-   "ladders": 14,
+   "ladders": 15,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 14,
+   "laddersEmpty": 15,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -40728,7 +40727,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 14,
+    "POST_CLOSE": 15,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -40741,7 +40740,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-28T06:07:58.855Z",
-   "lastCapture": "2026-10-31T08:46:08.112Z",
+   "lastCapture": "2026-10-31T12:41:16.538Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-28T05:57:43Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -40810,7 +40809,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:46:08.729Z",
+   "marketCapturedAt": "2026-10-31T12:41:17.199Z",
    "tradeableWindow": {
     "openIso": "2026-10-27T02:05:59.805231Z",
     "closeIso": "2026-10-31T04:51:46Z",
@@ -40831,9 +40830,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-31T03:25:46.807Z"
    },
    "bars": 96,
-   "ladders": 2,
+   "ladders": 3,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 2,
+   "laddersEmpty": 3,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -40841,7 +40840,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 2,
+    "POST_CLOSE": 3,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -40854,7 +40853,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-31T06:12:43.031Z",
-   "lastCapture": "2026-10-31T08:46:09.368Z",
+   "lastCapture": "2026-10-31T12:41:17.921Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-31T04:51:46Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -40872,6 +40871,18 @@
     },
     {
      "captured_at": "2026-10-31T08:46:09.368Z",
+     "phase": "POST_CLOSE",
+     "yesLevels": 0,
+     "noLevels": 0,
+     "why": "captured after market.close_time (2026-10-31T04:51:46Z) — the official API returns an empty book there (#60)",
+     "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30LALGSW-GSW/orderbook",
+     "eventSource": "ESPN_OBSERVED",
+     "eventJoinKey": "eventId 401909285 (LAL @ GS)",
+     "eventReason": null,
+     "eventDetail": "the archive had observed \"in\" at 2026-10-31T03:25:46.807Z"
+    },
+    {
+     "captured_at": "2026-10-31T12:41:17.921Z",
      "phase": "POST_CLOSE",
      "yesLevels": 0,
      "noLevels": 0,
@@ -40899,7 +40910,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:11.240Z",
+   "marketCapturedAt": "2026-10-31T12:41:19.971Z",
    "tradeableWindow": {
     "openIso": "2026-10-27T02:05:59.805231Z",
     "closeIso": "2026-10-31T04:51:46Z",
@@ -40920,9 +40931,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-31T03:25:46.807Z"
    },
    "bars": 91,
-   "ladders": 2,
+   "ladders": 3,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 2,
+   "laddersEmpty": 3,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -40930,7 +40941,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 2,
+    "POST_CLOSE": 3,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -40943,7 +40954,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-31T06:12:45.831Z",
-   "lastCapture": "2026-10-31T08:46:11.873Z",
+   "lastCapture": "2026-10-31T12:41:20.695Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-31T04:51:46Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -40961,6 +40972,18 @@
     },
     {
      "captured_at": "2026-10-31T08:46:11.873Z",
+     "phase": "POST_CLOSE",
+     "yesLevels": 0,
+     "noLevels": 0,
+     "why": "captured after market.close_time (2026-10-31T04:51:46Z) — the official API returns an empty book there (#60)",
+     "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT30LALGSW-LAL/orderbook",
+     "eventSource": "ESPN_OBSERVED",
+     "eventJoinKey": "eventId 401909285 (LAL @ GS)",
+     "eventReason": null,
+     "eventDetail": "the archive had observed \"in\" at 2026-10-31T03:25:46.807Z"
+    },
+    {
+     "captured_at": "2026-10-31T12:41:20.695Z",
      "phase": "POST_CLOSE",
      "yesLevels": 0,
      "noLevels": 0,
@@ -40988,7 +41011,7 @@
    "periodMinutes": 60,
    "status": "active",
    "result": null,
-   "marketCapturedAt": "2026-10-31T08:46:27.524Z",
+   "marketCapturedAt": "2026-10-31T12:41:38.034Z",
    "tradeableWindow": {
     "openIso": "2026-10-26T22:06:00Z",
     "closeIso": "2026-11-09T20:30:00Z",
@@ -41008,17 +41031,17 @@
     "reason": "CODE_UNMAPPED_TO_ESPN",
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
-   "bars": 104,
-   "ladders": 15,
-   "laddersNonEmpty": 15,
+   "bars": 108,
+   "ladders": 16,
+   "laddersNonEmpty": 16,
    "laddersEmpty": 0,
-   "tradeableNonEmpty": 15,
+   "tradeableNonEmpty": 16,
    "phases": {
     "PRE_OPEN": 0,
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 15,
+    "TRADEABLE_EVENT_UNVERIFIED": 16,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
@@ -41027,14 +41050,14 @@
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 15,
+    "TRADEABLE_EVENT_UNVERIFIED": 16,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-27T21:05:15.881Z",
-   "lastCapture": "2026-10-31T08:46:28.158Z",
+   "lastCapture": "2026-10-31T12:41:38.760Z",
    "verdict": "TRADEABLE_LADDER_EVENT_UNVERIFIED",
-   "verdictWhy": "15 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
+   "verdictWhy": "16 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
    "examples": [
     {
      "captured_at": "2026-10-27T21:05:15.881Z",
@@ -41092,7 +41115,7 @@
    "resolvedResult": null,
    "settled": false,
    "openForTrading": true,
-   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T08:46:27.524Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07ALALSU-ALA.json) says \"active\""
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T12:41:38.034Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07ALALSU-ALA.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26NOV07ALALSU-LSU",
@@ -41214,7 +41237,7 @@
    "periodMinutes": 60,
    "status": "active",
    "result": null,
-   "marketCapturedAt": "2026-10-31T08:46:33.785Z",
+   "marketCapturedAt": "2026-10-31T12:41:45.013Z",
    "tradeableWindow": {
     "openIso": "2026-10-26T22:06:00Z",
     "closeIso": "2026-11-09T17:00:00Z",
@@ -41234,17 +41257,17 @@
     "reason": "CODE_UNMAPPED_TO_ESPN",
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
-   "bars": 97,
-   "ladders": 2,
-   "laddersNonEmpty": 2,
+   "bars": 101,
+   "ladders": 3,
+   "laddersNonEmpty": 3,
    "laddersEmpty": 0,
-   "tradeableNonEmpty": 2,
+   "tradeableNonEmpty": 3,
    "phases": {
     "PRE_OPEN": 0,
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 2,
+    "TRADEABLE_EVENT_UNVERIFIED": 3,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
@@ -41253,14 +41276,14 @@
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 2,
+    "TRADEABLE_EVENT_UNVERIFIED": 3,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-31T06:13:11.028Z",
-   "lastCapture": "2026-10-31T08:46:34.418Z",
+   "lastCapture": "2026-10-31T12:41:45.738Z",
    "verdict": "TRADEABLE_LADDER_EVENT_UNVERIFIED",
-   "verdictWhy": "2 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
+   "verdictWhy": "3 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
    "examples": [
     {
      "captured_at": "2026-10-31T06:13:11.028Z",
@@ -41285,6 +41308,18 @@
      "eventJoinKey": null,
      "eventReason": "CODE_UNMAPPED_TO_ESPN",
      "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
+    },
+    {
+     "captured_at": "2026-10-31T12:41:45.738Z",
+     "phase": "TRADEABLE_EVENT_UNVERIFIED",
+     "yesLevels": 29,
+     "noLevels": 44,
+     "why": "event window not joined: CODE_UNMAPPED_TO_ESPN",
+     "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07BYUUTAH-BYU/orderbook",
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "CODE_UNMAPPED_TO_ESPN",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07BYUUTAH-BYU/orderbook",
@@ -41294,7 +41329,7 @@
    "resolvedResult": null,
    "settled": false,
    "openForTrading": true,
-   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T08:46:33.785Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07BYUUTAH-BYU.json) says \"active\""
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T12:41:45.013Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07BYUUTAH-BYU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26NOV07BYUUTAH-UTAH",
@@ -41416,7 +41451,7 @@
    "periodMinutes": 60,
    "status": "active",
    "result": null,
-   "marketCapturedAt": "2026-10-31T08:46:26.269Z",
+   "marketCapturedAt": "2026-10-31T12:41:36.645Z",
    "tradeableWindow": {
     "openIso": "2026-10-25T01:07:00Z",
     "closeIso": "2026-11-10T00:30:00Z",
@@ -41436,17 +41471,17 @@
     "reason": "CODE_UNMAPPED_TO_ESPN",
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
-   "bars": 145,
-   "ladders": 23,
-   "laddersNonEmpty": 23,
+   "bars": 149,
+   "ladders": 24,
+   "laddersNonEmpty": 24,
    "laddersEmpty": 0,
-   "tradeableNonEmpty": 23,
+   "tradeableNonEmpty": 24,
    "phases": {
     "PRE_OPEN": 0,
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 23,
+    "TRADEABLE_EVENT_UNVERIFIED": 24,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
@@ -41455,14 +41490,14 @@
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 23,
+    "TRADEABLE_EVENT_UNVERIFIED": 24,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-25T19:32:26.609Z",
-   "lastCapture": "2026-10-31T08:46:26.904Z",
+   "lastCapture": "2026-10-31T12:41:37.370Z",
    "verdict": "TRADEABLE_LADDER_EVENT_UNVERIFIED",
-   "verdictWhy": "23 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
+   "verdictWhy": "24 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
    "examples": [
     {
      "captured_at": "2026-10-25T19:32:26.609Z",
@@ -41520,7 +41555,7 @@
    "resolvedResult": null,
    "settled": false,
    "openForTrading": true,
-   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T08:46:26.269Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07MIAND-MIA.json) says \"active\""
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T12:41:36.645Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07MIAND-MIA.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26NOV07MIAND-ND",
@@ -41529,7 +41564,7 @@
    "periodMinutes": 60,
    "status": "active",
    "result": null,
-   "marketCapturedAt": "2026-10-31T08:46:31.279Z",
+   "marketCapturedAt": "2026-10-31T12:41:42.236Z",
    "tradeableWindow": {
     "openIso": "2026-10-25T01:07:00Z",
     "closeIso": "2026-11-10T00:30:00Z",
@@ -41549,17 +41584,17 @@
     "reason": "CODE_UNMAPPED_TO_ESPN",
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
-   "bars": 137,
-   "ladders": 22,
-   "laddersNonEmpty": 22,
+   "bars": 141,
+   "ladders": 23,
+   "laddersNonEmpty": 23,
    "laddersEmpty": 0,
-   "tradeableNonEmpty": 22,
+   "tradeableNonEmpty": 23,
    "phases": {
     "PRE_OPEN": 0,
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 22,
+    "TRADEABLE_EVENT_UNVERIFIED": 23,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
@@ -41568,14 +41603,14 @@
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 22,
+    "TRADEABLE_EVENT_UNVERIFIED": 23,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-26T05:14:33.833Z",
-   "lastCapture": "2026-10-31T08:46:31.914Z",
+   "lastCapture": "2026-10-31T12:41:42.961Z",
    "verdict": "TRADEABLE_LADDER_EVENT_UNVERIFIED",
-   "verdictWhy": "22 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
+   "verdictWhy": "23 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
    "examples": [
     {
      "captured_at": "2026-10-26T05:14:33.833Z",
@@ -41633,7 +41668,7 @@
    "resolvedResult": null,
    "settled": false,
    "openForTrading": true,
-   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T08:46:31.279Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07MIAND-ND.json) says \"active\""
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T12:41:42.236Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07MIAND-ND.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-MRMK",
@@ -41642,7 +41677,7 @@
    "periodMinutes": 60,
    "status": "active",
    "result": null,
-   "marketCapturedAt": "2026-10-31T08:46:28.776Z",
+   "marketCapturedAt": "2026-10-31T12:41:39.424Z",
    "tradeableWindow": {
     "openIso": "2026-10-26T19:06:00Z",
     "closeIso": "2026-11-09T20:30:00Z",
@@ -41662,17 +41697,17 @@
     "reason": "CODE_UNMAPPED_TO_ESPN",
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
-   "bars": 70,
-   "ladders": 18,
-   "laddersNonEmpty": 18,
+   "bars": 71,
+   "ladders": 19,
+   "laddersNonEmpty": 19,
    "laddersEmpty": 0,
-   "tradeableNonEmpty": 18,
+   "tradeableNonEmpty": 19,
    "phases": {
     "PRE_OPEN": 0,
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 18,
+    "TRADEABLE_EVENT_UNVERIFIED": 19,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
@@ -41681,14 +41716,14 @@
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 18,
+    "TRADEABLE_EVENT_UNVERIFIED": 19,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-27T05:29:08.919Z",
-   "lastCapture": "2026-10-31T08:46:29.411Z",
+   "lastCapture": "2026-10-31T12:41:40.185Z",
    "verdict": "TRADEABLE_LADDER_EVENT_UNVERIFIED",
-   "verdictWhy": "18 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
+   "verdictWhy": "19 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
    "examples": [
     {
      "captured_at": "2026-10-27T05:29:08.919Z",
@@ -41746,7 +41781,7 @@
    "resolvedResult": null,
    "settled": false,
    "openForTrading": true,
-   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T08:46:28.776Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07MRMKWAKE-MRMK.json) says \"active\""
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T12:41:39.424Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07MRMKWAKE-MRMK.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-WAKE",
@@ -41755,7 +41790,7 @@
    "periodMinutes": 60,
    "status": "active",
    "result": null,
-   "marketCapturedAt": "2026-10-31T08:46:30.027Z",
+   "marketCapturedAt": "2026-10-31T12:41:40.847Z",
    "tradeableWindow": {
     "openIso": "2026-10-26T19:06:00Z",
     "closeIso": "2026-11-09T20:30:00Z",
@@ -41775,17 +41810,17 @@
     "reason": "CODE_UNMAPPED_TO_ESPN",
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
-   "bars": 55,
-   "ladders": 15,
-   "laddersNonEmpty": 15,
+   "bars": 56,
+   "ladders": 16,
+   "laddersNonEmpty": 16,
    "laddersEmpty": 0,
-   "tradeableNonEmpty": 15,
+   "tradeableNonEmpty": 16,
    "phases": {
     "PRE_OPEN": 0,
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 15,
+    "TRADEABLE_EVENT_UNVERIFIED": 16,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
@@ -41794,14 +41829,14 @@
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 15,
+    "TRADEABLE_EVENT_UNVERIFIED": 16,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-26T21:19:47.359Z",
-   "lastCapture": "2026-10-31T08:46:30.660Z",
+   "lastCapture": "2026-10-31T12:41:41.572Z",
    "verdict": "TRADEABLE_LADDER_EVENT_UNVERIFIED",
-   "verdictWhy": "15 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
+   "verdictWhy": "16 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
    "examples": [
     {
      "captured_at": "2026-10-26T21:19:47.359Z",
@@ -41859,7 +41894,7 @@
    "resolvedResult": null,
    "settled": false,
    "openForTrading": true,
-   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T08:46:30.027Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07MRMKWAKE-WAKE.json) says \"active\""
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T12:41:40.847Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07MRMKWAKE-WAKE.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26NOV07OREOSU-ORE",
@@ -42094,7 +42129,7 @@
    "periodMinutes": 60,
    "status": "active",
    "result": null,
-   "marketCapturedAt": "2026-10-31T08:46:25.014Z",
+   "marketCapturedAt": "2026-10-31T12:41:35.253Z",
    "tradeableWindow": {
     "openIso": "2026-10-24T22:07:00Z",
     "closeIso": "2026-11-09T20:00:00Z",
@@ -42114,17 +42149,17 @@
     "reason": "CODE_UNMAPPED_TO_ESPN",
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
-   "bars": 152,
-   "ladders": 26,
-   "laddersNonEmpty": 26,
+   "bars": 156,
+   "ladders": 27,
+   "laddersNonEmpty": 27,
    "laddersEmpty": 0,
-   "tradeableNonEmpty": 26,
+   "tradeableNonEmpty": 27,
    "phases": {
     "PRE_OPEN": 0,
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 26,
+    "TRADEABLE_EVENT_UNVERIFIED": 27,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
@@ -42133,14 +42168,14 @@
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 26,
+    "TRADEABLE_EVENT_UNVERIFIED": 27,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-25T05:10:30.647Z",
-   "lastCapture": "2026-10-31T08:46:25.648Z",
+   "lastCapture": "2026-10-31T12:41:35.981Z",
    "verdict": "TRADEABLE_LADDER_EVENT_UNVERIFIED",
-   "verdictWhy": "26 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
+   "verdictWhy": "27 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
    "examples": [
     {
      "captured_at": "2026-10-25T05:10:30.647Z",
@@ -42198,7 +42233,7 @@
    "resolvedResult": null,
    "settled": false,
    "openForTrading": true,
-   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T08:46:25.014Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07UKTENN-UK.json) says \"active\""
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T12:41:35.253Z in data/history/intraday/60m/KXNCAAFGAME-26NOV07UKTENN-UK.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26NOV07UTUUCD-UCD",
@@ -50250,7 +50285,7 @@
    "periodMinutes": 60,
    "status": "active",
    "result": null,
-   "marketCapturedAt": "2026-10-31T08:46:32.534Z",
+   "marketCapturedAt": "2026-10-31T12:41:43.623Z",
    "tradeableWindow": {
     "openIso": "2026-10-25T22:18:00Z",
     "closeIso": "2026-11-02T19:00:00Z",
@@ -50267,20 +50302,20 @@
     "matchedBy": null,
     "officialStartIso": null,
     "startKind": null,
-    "reason": "TEAM_CODE_NOT_IN_MAP",
+    "reason": "CODE_UNMAPPED_TO_ESPN",
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
-   "bars": 93,
-   "ladders": 2,
-   "laddersNonEmpty": 2,
+   "bars": 97,
+   "ladders": 3,
+   "laddersNonEmpty": 3,
    "laddersEmpty": 0,
-   "tradeableNonEmpty": 2,
+   "tradeableNonEmpty": 3,
    "phases": {
     "PRE_OPEN": 0,
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 2,
+    "TRADEABLE_EVENT_UNVERIFIED": 3,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
@@ -50289,25 +50324,25 @@
     "TRADEABLE_PRE_EVENT": 0,
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
-    "TRADEABLE_EVENT_UNVERIFIED": 2,
+    "TRADEABLE_EVENT_UNVERIFIED": 3,
     "POST_CLOSE": 0,
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-31T06:13:09.629Z",
-   "lastCapture": "2026-10-31T08:46:33.167Z",
+   "lastCapture": "2026-10-31T12:41:44.349Z",
    "verdict": "TRADEABLE_LADDER_EVENT_UNVERIFIED",
-   "verdictWhy": "2 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (TEAM_CODE_NOT_IN_MAP), so they are NOT claimed as in-play",
+   "verdictWhy": "3 non-empty ladder(s) sit inside the tradeable window (open_time → close_time) but no event window could be joined at those instants (CODE_UNMAPPED_TO_ESPN), so they are NOT claimed as in-play",
    "examples": [
     {
      "captured_at": "2026-10-31T06:13:09.629Z",
      "phase": "TRADEABLE_EVENT_UNVERIFIED",
      "yesLevels": 34,
      "noLevels": 46,
-     "why": "event window not joined: TEAM_CODE_NOT_IN_MAP",
+     "why": "event window not joined: CODE_UNMAPPED_TO_ESPN",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31DSUNORF-DSU/orderbook",
      "eventSource": "UNVERIFIED",
      "eventJoinKey": null,
-     "eventReason": "TEAM_CODE_NOT_IN_MAP",
+     "eventReason": "CODE_UNMAPPED_TO_ESPN",
      "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     },
     {
@@ -50315,11 +50350,23 @@
      "phase": "TRADEABLE_EVENT_UNVERIFIED",
      "yesLevels": 29,
      "noLevels": 46,
-     "why": "event window not joined: TEAM_CODE_NOT_IN_MAP",
+     "why": "event window not joined: CODE_UNMAPPED_TO_ESPN",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31DSUNORF-DSU/orderbook",
      "eventSource": "UNVERIFIED",
      "eventJoinKey": null,
-     "eventReason": "TEAM_CODE_NOT_IN_MAP",
+     "eventReason": "CODE_UNMAPPED_TO_ESPN",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
+    },
+    {
+     "captured_at": "2026-10-31T12:41:44.349Z",
+     "phase": "TRADEABLE_EVENT_UNVERIFIED",
+     "yesLevels": 36,
+     "noLevels": 46,
+     "why": "event window not joined: CODE_UNMAPPED_TO_ESPN",
+     "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26OCT31DSUNORF-DSU/orderbook",
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "CODE_UNMAPPED_TO_ESPN",
      "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     }
    ],
@@ -50330,7 +50377,7 @@
    "resolvedResult": null,
    "settled": false,
    "openForTrading": true,
-   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T08:46:32.534Z in data/history/intraday/60m/KXNCAAFGAME-26OCT31DSUNORF-DSU.json) says \"active\""
+   "statusWhy": "no store file carries a settlement; the newest observation (2026-10-31T12:41:43.623Z in data/history/intraday/60m/KXNCAAFGAME-26OCT31DSUNORF-DSU.json) says \"active\""
   },
   {
    "ticker": "KXNCAAFGAME-26OCT31FLAUGA-FLA",
@@ -53191,7 +53238,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:45:47.428Z",
+   "marketCapturedAt": "2026-10-31T12:40:53.551Z",
    "tradeableWindow": {
     "openIso": "2026-09-29T04:05:00Z",
     "closeIso": "2026-10-12T03:47:15Z",
@@ -53212,9 +53259,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-12T03:26:27.211Z"
    },
    "bars": 200,
-   "ladders": 77,
+   "ladders": 78,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 77,
+   "laddersEmpty": 78,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -53222,7 +53269,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 77,
+    "POST_CLOSE": 78,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -53235,7 +53282,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-12T06:23:19.753Z",
-   "lastCapture": "2026-10-31T08:45:48.064Z",
+   "lastCapture": "2026-10-31T12:40:54.275Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-12T03:47:15Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -53304,7 +53351,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:45:44.603Z",
+   "marketCapturedAt": "2026-10-31T12:40:50.383Z",
    "tradeableWindow": {
     "openIso": "2026-09-29T04:06:00Z",
     "closeIso": "2026-10-13T03:48:50Z",
@@ -53325,9 +53372,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-13T03:10:05.244Z"
    },
    "bars": 200,
-   "ladders": 73,
+   "ladders": 74,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 73,
+   "laddersEmpty": 74,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -53335,7 +53382,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 73,
+    "POST_CLOSE": 74,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -53348,7 +53395,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-13T07:04:44.602Z",
-   "lastCapture": "2026-10-31T08:45:45.238Z",
+   "lastCapture": "2026-10-31T12:40:51.108Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-13T03:48:50Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -53417,7 +53464,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:45:52.441Z",
+   "marketCapturedAt": "2026-10-31T12:40:59.097Z",
    "tradeableWindow": {
     "openIso": "2026-09-29T04:06:00Z",
     "closeIso": "2026-10-13T03:48:50Z",
@@ -53438,9 +53485,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-13T03:10:05.244Z"
    },
    "bars": 200,
-   "ladders": 73,
+   "ladders": 74,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 73,
+   "laddersEmpty": 74,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -53448,7 +53495,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 73,
+    "POST_CLOSE": 74,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -53461,7 +53508,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-13T07:04:48.739Z",
-   "lastCapture": "2026-10-31T08:45:53.075Z",
+   "lastCapture": "2026-10-31T12:40:59.821Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-13T03:48:50Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -53530,7 +53577,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:45:48.683Z",
+   "marketCapturedAt": "2026-10-31T12:40:54.938Z",
    "tradeableWindow": {
     "openIso": "2026-10-06T04:05:00Z",
     "closeIso": "2026-10-16T03:34:14Z",
@@ -53551,9 +53598,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-16T02:23:31.526Z"
    },
    "bars": 200,
-   "ladders": 61,
+   "ladders": 62,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 61,
+   "laddersEmpty": 62,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -53561,7 +53608,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 61,
+    "POST_CLOSE": 62,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -53574,7 +53621,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-16T04:56:27.438Z",
-   "lastCapture": "2026-10-31T08:45:49.317Z",
+   "lastCapture": "2026-10-31T12:40:55.661Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-16T03:34:14Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -53643,7 +53690,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:45:53.693Z",
+   "marketCapturedAt": "2026-10-31T12:41:00.483Z",
    "tradeableWindow": {
     "openIso": "2026-10-06T04:06:00Z",
     "closeIso": "2026-10-19T03:47:14Z",
@@ -53664,9 +53711,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-19T02:31:27.973Z"
    },
    "bars": 200,
-   "ladders": 49,
+   "ladders": 50,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 49,
+   "laddersEmpty": 50,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -53674,7 +53721,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 49,
+    "POST_CLOSE": 50,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -53687,7 +53734,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-19T05:09:41.933Z",
-   "lastCapture": "2026-10-31T08:45:54.326Z",
+   "lastCapture": "2026-10-31T12:41:01.207Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-19T03:47:14Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -53756,7 +53803,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:45:49.937Z",
+   "marketCapturedAt": "2026-10-31T12:40:56.323Z",
    "tradeableWindow": {
     "openIso": "2026-10-06T04:06:00Z",
     "closeIso": "2026-10-20T03:21:17Z",
@@ -53777,9 +53824,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-20T02:44:17.310Z"
    },
    "bars": 200,
-   "ladders": 45,
+   "ladders": 46,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 45,
+   "laddersEmpty": 46,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -53787,7 +53834,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 45,
+    "POST_CLOSE": 46,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -53800,7 +53847,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-20T05:12:55.446Z",
-   "lastCapture": "2026-10-31T08:45:50.569Z",
+   "lastCapture": "2026-10-31T12:40:57.047Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-20T03:21:17Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -53869,7 +53916,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:45:51.189Z",
+   "marketCapturedAt": "2026-10-31T12:40:57.711Z",
    "tradeableWindow": {
     "openIso": "2026-10-13T04:06:00Z",
     "closeIso": "2026-10-26T03:17:17Z",
@@ -53890,9 +53937,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-26T02:26:27.296Z"
    },
    "bars": 200,
-   "ladders": 22,
+   "ladders": 23,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 22,
+   "laddersEmpty": 23,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -53900,7 +53947,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 22,
+    "POST_CLOSE": 23,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -53913,7 +53960,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-26T05:13:53.319Z",
-   "lastCapture": "2026-10-31T08:45:51.822Z",
+   "lastCapture": "2026-10-31T12:40:58.435Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-26T03:17:17Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -55790,7 +55837,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:45:45.858Z",
+   "marketCapturedAt": "2026-10-31T12:40:51.773Z",
    "tradeableWindow": {
     "openIso": "2026-09-15T16:16:00Z",
     "closeIso": "2026-09-29T03:11:23Z",
@@ -55811,9 +55858,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 200,
-   "ladders": 129,
+   "ladders": 130,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 129,
+   "laddersEmpty": 130,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -55821,7 +55868,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 129,
+    "POST_CLOSE": 130,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -55834,7 +55881,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-09-29T06:04:47.813Z",
-   "lastCapture": "2026-10-31T08:45:46.809Z",
+   "lastCapture": "2026-10-31T12:40:52.887Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-09-29T03:11:23Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -56139,15 +56186,15 @@
     "occurrenceEqualsCloseTime": false
    },
    "eventWindow": {
-    "source": "ESPN_OBSERVED",
+    "source": "UNVERIFIED",
     "verified": false,
-    "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
-    "joinKey": "eventId 401892433 (ANA @ VGK)",
-    "matchedBy": "eastern-date+away+home",
+    "trust": null,
+    "joinKey": null,
+    "matchedBy": null,
     "officialStartIso": null,
-    "startKind": "NO PUBLISHED START TIME — ESPN gives a date only; the window is the archive's own observed state transitions",
-    "reason": null,
-    "detail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+    "startKind": null,
+    "reason": "NO_ARCHIVED_EVENT",
+    "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 142,
    "ladders": 31,
@@ -56184,10 +56231,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T04:43:21Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-ANA/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401892433 (ANA @ VGK)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     },
     {
      "captured_at": "2026-10-03T08:32:58.690Z",
@@ -56196,10 +56243,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T04:43:21Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-ANA/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401892433 (ANA @ VGK)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     },
     {
      "captured_at": "2026-10-03T11:48:10.871Z",
@@ -56208,10 +56255,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T04:43:21Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-ANA/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401892433 (ANA @ VGK)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     },
     {
      "captured_at": "2026-10-03T19:31:51.211Z",
@@ -56220,10 +56267,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T04:43:21Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-ANA/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401892433 (ANA @ VGK)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-ANA/orderbook",
@@ -56252,15 +56299,15 @@
     "occurrenceEqualsCloseTime": false
    },
    "eventWindow": {
-    "source": "ESPN_OBSERVED",
+    "source": "UNVERIFIED",
     "verified": false,
-    "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
-    "joinKey": "eventId 401892433 (ANA @ VGK)",
-    "matchedBy": "eastern-date+away+home",
+    "trust": null,
+    "joinKey": null,
+    "matchedBy": null,
     "officialStartIso": null,
-    "startKind": "NO PUBLISHED START TIME — ESPN gives a date only; the window is the archive's own observed state transitions",
-    "reason": null,
-    "detail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+    "startKind": null,
+    "reason": "NO_ARCHIVED_EVENT",
+    "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 138,
    "ladders": 31,
@@ -56297,10 +56344,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T04:43:21Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-VGK/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401892433 (ANA @ VGK)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     },
     {
      "captured_at": "2026-10-03T08:32:51.663Z",
@@ -56309,10 +56356,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T04:43:21Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-VGK/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401892433 (ANA @ VGK)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     },
     {
      "captured_at": "2026-10-03T11:48:04.409Z",
@@ -56321,10 +56368,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T04:43:21Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-VGK/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401892433 (ANA @ VGK)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     },
     {
      "captured_at": "2026-10-03T19:31:44.888Z",
@@ -56333,10 +56380,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T04:43:21Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-VGK/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401892433 (ANA @ VGK)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02ANAVGK-VGK/orderbook",
@@ -56365,15 +56412,15 @@
     "occurrenceEqualsCloseTime": false
    },
    "eventWindow": {
-    "source": "ESPN_OBSERVED",
+    "source": "UNVERIFIED",
     "verified": false,
-    "trust": "ESPN PUBLIC JSON — TRUSTED BUT NOT OFFICIAL (aggregator, not a league feed)",
-    "joinKey": "eventId 401891782 (STL @ DAL)",
-    "matchedBy": "eastern-date+away+home",
+    "trust": null,
+    "joinKey": null,
+    "matchedBy": null,
     "officialStartIso": null,
-    "startKind": "NO PUBLISHED START TIME — ESPN gives a date only; the window is the archive's own observed state transitions",
-    "reason": null,
-    "detail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+    "startKind": null,
+    "reason": "NO_ARCHIVED_EVENT",
+    "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 149,
    "ladders": 28,
@@ -56410,10 +56457,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T03:59:57Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02STLDAL-DAL/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401891782 (STL @ DAL)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     },
     {
      "captured_at": "2026-10-03T08:32:57.285Z",
@@ -56422,10 +56469,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T03:59:57Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02STLDAL-DAL/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401891782 (STL @ DAL)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     },
     {
      "captured_at": "2026-10-03T11:48:09.580Z",
@@ -56434,10 +56481,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T03:59:57Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02STLDAL-DAL/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401891782 (STL @ DAL)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     },
     {
      "captured_at": "2026-10-03T19:31:49.946Z",
@@ -56446,10 +56493,10 @@
      "noLevels": 0,
      "why": "captured after market.close_time (2026-10-03T03:59:57Z) — the official API returns an empty book there (#60)",
      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02STLDAL-DAL/orderbook",
-     "eventSource": "ESPN_OBSERVED",
-     "eventJoinKey": "eventId 401891782 (STL @ DAL)",
-     "eventReason": null,
-     "eventDetail": "the archive had observed \"in\" at 2026-10-03T03:02:00.959Z"
+     "eventSource": "UNVERIFIED",
+     "eventJoinKey": null,
+     "eventReason": "NO_ARCHIVED_EVENT",
+     "eventDetail": "the ESPN archive has no event matching this contract's own ticker/date."
     }
    ],
    "orderbookUrl": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT02STLDAL-DAL/orderbook",
@@ -59632,7 +59679,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:46:17.505Z",
+   "marketCapturedAt": "2026-10-31T12:41:26.926Z",
    "tradeableWindow": {
     "openIso": "2026-10-20T04:06:00Z",
     "closeIso": "2026-10-27T04:23:19Z",
@@ -59653,9 +59700,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-27T03:01:32.495Z"
    },
    "bars": 150,
-   "ladders": 18,
+   "ladders": 19,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 18,
+   "laddersEmpty": 19,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -59663,7 +59710,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 18,
+    "POST_CLOSE": 19,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -59676,7 +59723,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-27T05:29:01.377Z",
-   "lastCapture": "2026-10-31T08:46:18.138Z",
+   "lastCapture": "2026-10-31T12:41:27.652Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-27T04:23:19Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -59745,7 +59792,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:14.996Z",
+   "marketCapturedAt": "2026-10-31T12:41:24.148Z",
    "tradeableWindow": {
     "openIso": "2026-10-20T04:06:00Z",
     "closeIso": "2026-10-27T04:23:19Z",
@@ -59766,9 +59813,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-27T03:01:32.495Z"
    },
    "bars": 150,
-   "ladders": 18,
+   "ladders": 19,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 18,
+   "laddersEmpty": 19,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -59776,7 +59823,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 18,
+    "POST_CLOSE": 19,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -59789,7 +59836,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-27T05:28:57.601Z",
-   "lastCapture": "2026-10-31T08:46:15.630Z",
+   "lastCapture": "2026-10-31T12:41:24.872Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-27T04:23:19Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -59858,7 +59905,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:46:18.757Z",
+   "marketCapturedAt": "2026-10-31T12:41:28.315Z",
    "tradeableWindow": {
     "openIso": "2026-10-22T01:13:00Z",
     "closeIso": "2026-10-29T03:41:29Z",
@@ -59879,9 +59926,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-29T03:38:17.525Z"
    },
    "bars": 166,
-   "ladders": 10,
+   "ladders": 11,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 10,
+   "laddersEmpty": 11,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -59889,7 +59936,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 10,
+    "POST_CLOSE": 11,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -59902,7 +59949,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-29T06:16:19.542Z",
-   "lastCapture": "2026-10-31T08:46:19.391Z",
+   "lastCapture": "2026-10-31T12:41:29.039Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-29T03:41:29Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -59971,7 +60018,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:23.761Z",
+   "marketCapturedAt": "2026-10-31T12:41:33.864Z",
    "tradeableWindow": {
     "openIso": "2026-10-22T04:06:00Z",
     "closeIso": "2026-10-29T04:39:40Z",
@@ -59992,9 +60039,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-29T03:38:17.525Z"
    },
    "bars": 145,
-   "ladders": 2,
+   "ladders": 3,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 2,
+   "laddersEmpty": 3,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -60002,7 +60049,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 2,
+    "POST_CLOSE": 3,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -60015,7 +60062,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-31T06:12:59.830Z",
-   "lastCapture": "2026-10-31T08:46:24.395Z",
+   "lastCapture": "2026-10-31T12:41:34.589Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-29T04:39:40Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -60033,6 +60080,18 @@
     },
     {
      "captured_at": "2026-10-31T08:46:24.395Z",
+     "phase": "POST_CLOSE",
+     "yesLevels": 0,
+     "noLevels": 0,
+     "why": "captured after market.close_time (2026-10-29T04:39:40Z) — the official API returns an empty book there (#60)",
+     "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT28TORSEA-TOR/orderbook",
+     "eventSource": "ESPN_OBSERVED",
+     "eventJoinKey": "eventId 401892599 (TOR @ SEA)",
+     "eventReason": null,
+     "eventDetail": "the archive had observed \"in\" at 2026-10-29T03:38:17.525Z"
+    },
+    {
+     "captured_at": "2026-10-31T12:41:34.589Z",
      "phase": "POST_CLOSE",
      "yesLevels": 0,
      "noLevels": 0,
@@ -60060,7 +60119,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:46:20.009Z",
+   "marketCapturedAt": "2026-10-31T12:41:29.700Z",
    "tradeableWindow": {
     "openIso": "2026-10-23T04:09:00Z",
     "closeIso": "2026-10-30T04:57:21Z",
@@ -60081,9 +60140,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-30T03:41:10.291Z"
    },
    "bars": 161,
-   "ladders": 6,
+   "ladders": 7,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 6,
+   "laddersEmpty": 7,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -60091,7 +60150,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 6,
+    "POST_CLOSE": 7,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -60104,7 +60163,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-30T06:16:51.463Z",
-   "lastCapture": "2026-10-31T08:46:20.643Z",
+   "lastCapture": "2026-10-31T12:41:30.426Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-30T04:57:21Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -60173,7 +60232,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:16.249Z",
+   "marketCapturedAt": "2026-10-31T12:41:25.534Z",
    "tradeableWindow": {
     "openIso": "2026-10-23T04:09:00Z",
     "closeIso": "2026-10-30T04:57:21Z",
@@ -60194,9 +60253,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-30T03:41:10.291Z"
    },
    "bars": 153,
-   "ladders": 6,
+   "ladders": 7,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 6,
+   "laddersEmpty": 7,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -60204,7 +60263,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 6,
+    "POST_CLOSE": 7,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -60217,7 +60276,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-30T06:16:45.218Z",
-   "lastCapture": "2026-10-31T08:46:16.884Z",
+   "lastCapture": "2026-10-31T12:41:26.263Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-30T04:57:21Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -60286,7 +60345,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:46:21.260Z",
+   "marketCapturedAt": "2026-10-31T12:41:31.087Z",
    "tradeableWindow": {
     "openIso": "2026-10-23T04:09:00Z",
     "closeIso": "2026-10-30T04:27:28Z",
@@ -60307,9 +60366,9 @@
     "detail": "the archive had observed \"in\" at 2026-10-30T03:41:10.291Z"
    },
    "bars": 153,
-   "ladders": 2,
+   "ladders": 3,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 2,
+   "laddersEmpty": 3,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -60317,7 +60376,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 2,
+    "POST_CLOSE": 3,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -60330,7 +60389,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-31T06:12:57.025Z",
-   "lastCapture": "2026-10-31T08:46:21.893Z",
+   "lastCapture": "2026-10-31T12:41:31.811Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-30T04:27:28Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -60348,6 +60407,18 @@
     },
     {
      "captured_at": "2026-10-31T08:46:21.893Z",
+     "phase": "POST_CLOSE",
+     "yesLevels": 0,
+     "noLevels": 0,
+     "why": "captured after market.close_time (2026-10-30T04:27:28Z) — the official API returns an empty book there (#60)",
+     "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT29VANSJ-SJ/orderbook",
+     "eventSource": "ESPN_OBSERVED",
+     "eventJoinKey": "eventId 401892610 (VAN @ SJ)",
+     "eventReason": null,
+     "eventDetail": "the archive had observed \"in\" at 2026-10-30T03:41:10.291Z"
+    },
+    {
+     "captured_at": "2026-10-31T12:41:31.811Z",
      "phase": "POST_CLOSE",
      "yesLevels": 0,
      "noLevels": 0,
@@ -60375,7 +60446,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:22.511Z",
+   "marketCapturedAt": "2026-10-31T12:41:32.474Z",
    "tradeableWindow": {
     "openIso": "2026-10-23T22:06:00Z",
     "closeIso": "2026-10-31T00:37:55Z",
@@ -60396,9 +60467,9 @@
     "detail": "the archive had observed \"post\" at 2026-10-31T02:42:42.290Z"
    },
    "bars": 143,
-   "ladders": 2,
+   "ladders": 3,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 2,
+   "laddersEmpty": 3,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -60406,7 +60477,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 2,
+    "POST_CLOSE": 3,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -60419,7 +60490,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-31T06:12:58.426Z",
-   "lastCapture": "2026-10-31T08:46:23.143Z",
+   "lastCapture": "2026-10-31T12:41:33.200Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-31T00:37:55Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -60437,6 +60508,18 @@
     },
     {
      "captured_at": "2026-10-31T08:46:23.143Z",
+     "phase": "POST_CLOSE",
+     "yesLevels": 0,
+     "noLevels": 0,
+     "why": "captured after market.close_time (2026-10-31T00:37:55Z) — the official API returns an empty book there (#60)",
+     "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNHLGAME-26OCT30NJVGK-VGK/orderbook",
+     "eventSource": "ESPN_OBSERVED",
+     "eventJoinKey": "eventId 401892611 (NJ @ VGK)",
+     "eventReason": null,
+     "eventDetail": "the archive had observed \"post\" at 2026-10-31T02:42:42.290Z"
+    },
+    {
+     "captured_at": "2026-10-31T12:41:33.200Z",
      "phase": "POST_CLOSE",
      "yesLevels": 0,
      "noLevels": 0,
@@ -66713,7 +66796,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:37.855Z",
+   "marketCapturedAt": "2026-10-31T12:41:49.577Z",
    "tradeableWindow": {
     "openIso": "2026-10-01T04:40:00Z",
     "closeIso": "2026-10-03T03:25:05Z",
@@ -66734,9 +66817,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 48,
-   "ladders": 113,
+   "ladders": 114,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 113,
+   "laddersEmpty": 114,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -66744,7 +66827,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 113,
+    "POST_CLOSE": 114,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -66757,7 +66840,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-03T05:41:08.164Z",
-   "lastCapture": "2026-10-31T08:46:38.491Z",
+   "lastCapture": "2026-10-31T12:41:50.301Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-03T03:25:05Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -66826,7 +66909,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:46:36.605Z",
+   "marketCapturedAt": "2026-10-31T12:41:48.190Z",
    "tradeableWindow": {
     "openIso": "2026-10-01T04:40:00Z",
     "closeIso": "2026-10-03T03:25:05Z",
@@ -66847,9 +66930,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 47,
-   "ladders": 113,
+   "ladders": 114,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 113,
+   "laddersEmpty": 114,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -66857,7 +66940,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 113,
+    "POST_CLOSE": 114,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -66870,7 +66953,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-03T05:41:06.754Z",
-   "lastCapture": "2026-10-31T08:46:37.238Z",
+   "lastCapture": "2026-10-31T12:41:48.914Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-03T03:25:05Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -66939,7 +67022,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:44.438Z",
+   "marketCapturedAt": "2026-10-31T12:41:56.880Z",
    "tradeableWindow": {
     "openIso": "2026-10-03T08:30:00Z",
     "closeIso": "2026-10-08T04:05:04Z",
@@ -66960,9 +67043,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 106,
-   "ladders": 93,
+   "ladders": 94,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 93,
+   "laddersEmpty": 94,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -66970,7 +67053,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 93,
+    "POST_CLOSE": 94,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -66983,7 +67066,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-08T06:33:38.871Z",
-   "lastCapture": "2026-10-31T08:46:45.072Z",
+   "lastCapture": "2026-10-31T12:41:57.606Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-08T04:05:04Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -67052,7 +67135,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:43.180Z",
+   "marketCapturedAt": "2026-10-31T12:41:55.493Z",
    "tradeableWindow": {
     "openIso": "2026-10-03T08:30:00Z",
     "closeIso": "2026-10-08T02:09:50Z",
@@ -67073,9 +67156,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 111,
-   "ladders": 93,
+   "ladders": 94,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 93,
+   "laddersEmpty": 94,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -67083,7 +67166,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 93,
+    "POST_CLOSE": 94,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -67096,7 +67179,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-08T06:33:37.465Z",
-   "lastCapture": "2026-10-31T08:46:43.816Z",
+   "lastCapture": "2026-10-31T12:41:56.218Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-08T02:09:50Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -67165,7 +67248,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:46:41.931Z",
+   "marketCapturedAt": "2026-10-31T12:41:54.106Z",
    "tradeableWindow": {
     "openIso": "2026-10-03T08:40:00Z",
     "closeIso": "2026-10-10T04:04:51Z",
@@ -67186,9 +67269,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 149,
-   "ladders": 85,
+   "ladders": 86,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 85,
+   "laddersEmpty": 86,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -67196,7 +67279,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 85,
+    "POST_CLOSE": 86,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -67209,7 +67292,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-10T06:16:35.978Z",
-   "lastCapture": "2026-10-31T08:46:42.563Z",
+   "lastCapture": "2026-10-31T12:41:54.831Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-10T04:04:51Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -67278,7 +67361,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:39.107Z",
+   "marketCapturedAt": "2026-10-31T12:41:50.964Z",
    "tradeableWindow": {
     "openIso": "2026-10-24T20:11:00Z",
     "closeIso": "2026-10-29T18:52:05Z",
@@ -67299,9 +67382,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 118,
-   "ladders": 7,
+   "ladders": 8,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 7,
+   "laddersEmpty": 8,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -67309,7 +67392,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 7,
+    "POST_CLOSE": 8,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -67322,7 +67405,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-29T21:33:07.571Z",
-   "lastCapture": "2026-10-31T08:46:39.743Z",
+   "lastCapture": "2026-10-31T12:41:51.689Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-29T18:52:05Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -67504,7 +67587,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "yes",
-   "marketCapturedAt": "2026-10-31T08:46:40.361Z",
+   "marketCapturedAt": "2026-10-31T12:41:52.350Z",
    "tradeableWindow": {
     "openIso": "2026-09-25T17:30:00Z",
     "closeIso": "2026-10-01T04:03:10Z",
@@ -67525,9 +67608,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 113,
-   "ladders": 121,
+   "ladders": 122,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 121,
+   "laddersEmpty": 122,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -67535,7 +67618,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 121,
+    "POST_CLOSE": 122,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -67548,7 +67631,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-01T06:25:20.677Z",
-   "lastCapture": "2026-10-31T08:46:41.312Z",
+   "lastCapture": "2026-10-31T12:41:53.439Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-01T04:03:10Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -67617,7 +67700,7 @@
    "periodMinutes": 60,
    "status": "finalized",
    "result": "no",
-   "marketCapturedAt": "2026-10-31T08:46:35.037Z",
+   "marketCapturedAt": "2026-10-31T12:41:46.400Z",
    "tradeableWindow": {
     "openIso": "2026-09-25T17:30:00Z",
     "closeIso": "2026-10-01T04:03:10Z",
@@ -67638,9 +67721,9 @@
     "detail": "the ESPN archive has no event matching this contract's own ticker/date."
    },
    "bars": 115,
-   "ladders": 121,
+   "ladders": 122,
    "laddersNonEmpty": 0,
-   "laddersEmpty": 121,
+   "laddersEmpty": 122,
    "tradeableNonEmpty": 0,
    "phases": {
     "PRE_OPEN": 0,
@@ -67648,7 +67731,7 @@
     "IN_PLAY": 0,
     "TRADEABLE_POST_EVENT": 0,
     "TRADEABLE_EVENT_UNVERIFIED": 0,
-    "POST_CLOSE": 121,
+    "POST_CLOSE": 122,
     "UNKNOWN": 0
    },
    "nonEmptyByPhase": {
@@ -67661,7 +67744,7 @@
     "UNKNOWN": 0
    },
    "firstCapture": "2026-10-01T06:25:17.879Z",
-   "lastCapture": "2026-10-31T08:46:35.988Z",
+   "lastCapture": "2026-10-31T12:41:47.513Z",
    "verdict": "POST_CLOSE_ONLY",
    "verdictWhy": "every ladder was captured after this contract's own close_time (2026-10-01T04:03:10Z), where the official API returns an empty book — irregularity #60; 0 non-empty",
    "examples": [
@@ -67739,7 +67822,7 @@
   },
   {
    "series": "KXNBAGAME",
-   "what": "2214 captured ladder(s): 0 usable in-play, 1183 non-empty inside the tradeable window, 1031 taken after the exchange's own close_time (0 of those non-empty)",
+   "what": "2222 captured ladder(s): 0 usable in-play, 1183 non-empty inside the tradeable window, 1039 taken after the exchange's own close_time (0 of those non-empty)",
    "settledOnly": true,
    "eventSources": {
     "ESPN_OBSERVED": 65,
@@ -67752,20 +67835,19 @@
   },
   {
    "series": "KXNCAAFGAME",
-   "what": "2572 captured ladder(s): 0 usable in-play, 1706 non-empty inside the tradeable window, 866 taken after the exchange's own close_time (0 of those non-empty)",
+   "what": "2580 captured ladder(s): 0 usable in-play, 1714 non-empty inside the tradeable window, 866 taken after the exchange's own close_time (0 of those non-empty)",
    "settledOnly": false,
    "eventSources": {
     "UNVERIFIED": 128
    },
    "joinReasons": {
-    "CODE_UNMAPPED_TO_ESPN": 127,
-    "TEAM_CODE_NOT_IN_MAP": 1
+    "CODE_UNMAPPED_TO_ESPN": 128
    },
-   "unblocker": "128 KXNCAAFGAME store(s) are still OPEN but no ladder was captured inside a verified/observed event window (CODE_UNMAPPED_TO_ESPN:127, TEAM_CODE_NOT_IN_MAP:1) — the unblocker is a with_books capture during the game plus an event window the archives can join"
+   "unblocker": "128 KXNCAAFGAME store(s) are still OPEN but no ladder was captured inside a verified/observed event window (CODE_UNMAPPED_TO_ESPN:128) — the unblocker is a with_books capture during the game plus an event window the archives can join"
   },
   {
    "series": "KXNFLGAME",
-   "what": "5104 captured ladder(s): 0 usable in-play, 2 non-empty inside the tradeable window, 5102 taken after the exchange's own close_time (0 of those non-empty)",
+   "what": "5136 captured ladder(s): 0 usable in-play, 2 non-empty inside the tradeable window, 5134 taken after the exchange's own close_time (0 of those non-empty)",
    "settledOnly": false,
    "eventSources": {
     "UNVERIFIED": 62,
@@ -67779,21 +67861,21 @@
   },
   {
    "series": "KXNHLGAME",
-   "what": "2276 captured ladder(s): 0 usable in-play, 246 non-empty inside the tradeable window, 2030 taken after the exchange's own close_time (0 of those non-empty)",
+   "what": "2284 captured ladder(s): 0 usable in-play, 246 non-empty inside the tradeable window, 2038 taken after the exchange's own close_time (0 of those non-empty)",
    "settledOnly": true,
    "eventSources": {
-    "UNVERIFIED": 60,
-    "ESPN_OBSERVED": 39
+    "UNVERIFIED": 63,
+    "ESPN_OBSERVED": 36
    },
    "joinReasons": {
-    "NO_ARCHIVED_EVENT": 52,
+    "NO_ARCHIVED_EVENT": 55,
     "TEAMS_MATCH_BUT_DATE_DIFFERS": 8
    },
    "unblocker": "every KXNHLGAME contract in this store is already finalized by the exchange, so no future capture can add an in-play ladder for THEM — the unblocker is a with_books capture of the NEXT KXNHLGAME slate while it is in play (the 00:30/02:30 UTC game-window passes in .github/workflows/daily-history.yml)"
   },
   {
    "series": "KXWNBAGAME",
-   "what": "1360 captured ladder(s): 0 usable in-play, 0 non-empty inside the tradeable window, 1360 taken after the exchange's own close_time (0 of those non-empty)",
+   "what": "1368 captured ladder(s): 0 usable in-play, 0 non-empty inside the tradeable window, 1368 taken after the exchange's own close_time (0 of those non-empty)",
    "settledOnly": true,
    "eventSources": {
     "UNVERIFIED": 20
@@ -67805,5 +67887,5 @@
    "unblocker": "every KXWNBAGAME contract in this store is already finalized by the exchange, so no future capture can add an in-play ladder for THEM — the unblocker is a with_books capture of the NEXT KXWNBAGAME slate while it is in play (the 00:30/02:30 UTC game-window passes in .github/workflows/daily-history.yml)"
   }
  ],
- "honestNote": "11 non-empty ladder(s) were captured inside a verified/observed event window across 1 series (KXMLBGAME). 3095 further non-empty ladder(s) sit inside the tradeable window with an UNVERIFIED event window and are NOT counted as in-play."
+ "honestNote": "11 non-empty ladder(s) were captured inside a verified/observed event window across 1 series (KXMLBGAME). 3103 further non-empty ladder(s) sit inside the tradeable window with an UNVERIFIED event window and are NOT counted as in-play."
 }

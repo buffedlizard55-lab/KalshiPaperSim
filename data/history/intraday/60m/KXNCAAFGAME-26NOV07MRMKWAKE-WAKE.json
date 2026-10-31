@@ -1172,6 +1172,26 @@
         "low_dollars": "0.9900",
         "open_dollars": "0.9900"
       }
+    },
+    {
+      "end_period_ts": 1793437200,
+      "open_interest_fp": "11854.62",
+      "price": {
+        "previous_dollars": "0.9900"
+      },
+      "volume_fp": "0.00",
+      "yes_ask": {
+        "close_dollars": "1.0000",
+        "high_dollars": "1.0000",
+        "low_dollars": "1.0000",
+        "open_dollars": "1.0000"
+      },
+      "yes_bid": {
+        "close_dollars": "0.9900",
+        "high_dollars": "0.9900",
+        "low_dollars": "0.9900",
+        "open_dollars": "0.9900"
+      }
     }
   ],
   "books": [
@@ -3008,6 +3028,165 @@
           ]
         }
       }
+    },
+    {
+      "captured_at": "2026-10-31T12:41:41.572Z",
+      "url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07MRMKWAKE-WAKE/orderbook",
+      "orderbook": {
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "3397.00"
+            ],
+            [
+              "0.0200",
+              "1651.00"
+            ],
+            [
+              "0.0300",
+              "2545.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "436.00"
+            ],
+            [
+              "0.0600",
+              "209.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "1.00"
+            ],
+            [
+              "0.1200",
+              "1.00"
+            ],
+            [
+              "0.1300",
+              "1.00"
+            ],
+            [
+              "0.1400",
+              "20.00"
+            ],
+            [
+              "0.1600",
+              "21.00"
+            ],
+            [
+              "0.1800",
+              "21.00"
+            ],
+            [
+              "0.1900",
+              "20.00"
+            ],
+            [
+              "0.2000",
+              "45.00"
+            ],
+            [
+              "0.2200",
+              "1.00"
+            ],
+            [
+              "0.2300",
+              "1.00"
+            ],
+            [
+              "0.3100",
+              "1.00"
+            ],
+            [
+              "0.3200",
+              "1.00"
+            ],
+            [
+              "0.3500",
+              "10.00"
+            ],
+            [
+              "0.4100",
+              "1.00"
+            ],
+            [
+              "0.4200",
+              "1.00"
+            ],
+            [
+              "0.4500",
+              "1.00"
+            ],
+            [
+              "0.4700",
+              "1.00"
+            ],
+            [
+              "0.4800",
+              "1.00"
+            ],
+            [
+              "0.6000",
+              "200.00"
+            ],
+            [
+              "0.9000",
+              "140.00"
+            ],
+            [
+              "0.9100",
+              "1.00"
+            ],
+            [
+              "0.9200",
+              "1.00"
+            ],
+            [
+              "0.9300",
+              "2.00"
+            ],
+            [
+              "0.9400",
+              "1.00"
+            ],
+            [
+              "0.9500",
+              "1.00"
+            ],
+            [
+              "0.9600",
+              "2.00"
+            ],
+            [
+              "0.9700",
+              "869.99"
+            ],
+            [
+              "0.9800",
+              "857.74"
+            ],
+            [
+              "0.9900",
+              "22686.06"
+            ]
+          ]
+        }
+      }
     }
   ],
   "market": {
@@ -3054,7 +3233,7 @@
     "ticker": "KXNCAAFGAME-26NOV07MRMKWAKE-WAKE",
     "title": "Wake Forest wins",
     "updated_time": "2026-10-26T19:06:00.297527Z",
-    "volume_24h_fp": "8220.03",
+    "volume_24h_fp": "8214.94",
     "volume_fp": "11993.27",
     "yes_ask_dollars": "1.0000",
     "yes_ask_size_fp": "0.00",
@@ -3063,8 +3242,8 @@
     "yes_sub_title": "Wake Forest"
   },
   "market_url": "https://external-api.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26NOV07MRMKWAKE-WAKE",
-  "market_captured_at": "2026-10-31T08:46:30.027Z",
+  "market_captured_at": "2026-10-31T12:41:40.847Z",
   "status": "active",
-  "last_ingested_at": "2026-10-31T08:46:30.645Z",
-  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07MRMKWAKE-WAKE/candlesticks?start_ts=1793426401&end_ts=1793436390&period_interval=60"
+  "last_ingested_at": "2026-10-31T12:41:41.512Z",
+  "last_ingest_url": "https://external-api.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26NOV07MRMKWAKE-WAKE/candlesticks?start_ts=1793433601&end_ts=1793450501&period_interval=60"
 }
